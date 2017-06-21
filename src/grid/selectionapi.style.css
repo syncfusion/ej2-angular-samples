@@ -1,0 +1,13 @@
+.e-gridlist .e-tbar-btn.e-btn,
+.e-gridlist .e-btn  {
+    box-shadow: none;
+    text-transform: none;
+}
+
+.e-mastertext {
+    font-size: 15px;
+    font-family: Roboto;
+    font-weight: 300;
+    opacity: 0.87;
+    padding: 1em;
+}

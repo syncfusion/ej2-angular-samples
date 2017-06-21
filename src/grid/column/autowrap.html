@@ -1,0 +1,32 @@
+<div class="control-section">
+    <ej-grid [dataSource]='data' allowPaging='true' allowTextWrap='true' height='400'>
+        <e-columns>
+            <e-column field='Inventor' headerText='Inventor Name' width='180' textAlign="right"></e-column>
+            <e-column field='NumberofPatentFamilies' headerText="Number of Patent Families" width='180' textAlign="right"></e-column>
+            <e-column field='Country' headerText='Country' width='140'></e-column>
+            <e-column field='Active' width='120'></e-column>
+            <e-column field='Mainfieldsofinvention' headerText='Main fields of invention' width='200'></e-column>
+        </e-columns>
+    </ej-grid>
+
+    <div style="margin-top: 10px; text-align: right">Source:
+        <a href="https://en.wikipedia.org/wiki/List_of_prolific_inventors" target='_blank'>Wikipedia: List of Profolic inventors</a>
+    </div>
+
+    <div id='description'>
+        <p>Auto wrap cell content can be enabled using <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#allowtextwrap-boolean">
+        allowTextWrap
+        </a></code> property of the Grid. 
+            Setting this property will wrap cell text on multiple lines. 
+            This feature is useful when we are having large texts inside the cell.</p>
+        <p>Setting this property will wrap the text in both content cell and header cell.</p>
+         <p>In this demo, the <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#allowtextwrap-boolean">
+        allowTextWrap
+        </a></code> property is enabled and you can also see that the <strong>Main fields of invention</strong> column 
+        whose content exceeded the cell width is wrapped into multiple lines.
+    </p>
+    </div>
+
+</div>

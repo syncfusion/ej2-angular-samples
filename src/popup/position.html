@@ -1,0 +1,53 @@
+<div class="col-lg-8 control-section">
+<div #target id="target"  ></div>
+        <ej-popup #pop id="pop" [offsetX]='offX' [offsetY]='offY' style="display:none;"  [position]='pos' > <div style="margin:35px 25px;">Popup</div></ej-popup>
+
+</div>
+<div class="col-lg-4 property-section">
+    <table id="property" class="property-panel-table" title="Properties" title="Properties">
+        <tr>
+            <td>
+                <div>Position-X</div>
+            </td>
+            <td>
+                <div>
+                    <select id="PosX" #PosX (change)='showEvent()'>
+                        <option>left</option>
+                        <option>center</option>
+                        <option>right</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>Position-y</div>
+            </td>
+            <td>
+                <div>
+                    <select id="PosY" #PosY (change)='showEvent()'>
+                        <option>top</option>
+                        <option>center</option>
+                        <option>bottom</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+    <style>
+        #target{
+        height: 300px;width: 300px;
+        display: block;
+        float: left;
+        margin: 140px;
+        border: solid 1px #d4d4d4;
+        }
+        #pop{
+        position:absolute;font-size: 14px;
+         background-color: rgba(154, 154, 154, 0.49);
+         height:100px;
+         width:100px;
+         border-radius: 4px;
+    }
+    </style>

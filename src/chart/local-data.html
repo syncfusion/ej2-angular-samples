@@ -1,0 +1,15 @@
+<div class="control-section">
+    <ej-chart style='display:block;' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'>
+        <e-series-collection>
+            <e-series [dataSource]='series1' type='Line' xName='x' yName='y' name='Product X' width=2 [animation]='animation'> </e-series>
+            <e-series [dataSource]='series2' type='Line' xName='x' yName='y' name='Product Y' width=2 [animation]='animation'> </e-series>
+        </e-series-collection>
+    </ej-chart>
+</div>
+  <div id="description">
+        <p>The Chart supports data binding. 
+        The <code>dataSource</code> property can be assigned either with the array of JavaScript objects or instance of <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/data/api-dataManager.html">DataManager</a></code>.</p>
+        <p>In this demo, the array of JavaScript objects is assigned as the data source to the Chart.</p>
+    </div>
+ 

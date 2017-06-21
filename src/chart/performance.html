@@ -1,0 +1,43 @@
+<div class="control-section">
+   <div class="col-md-9">
+                <ej-chart #chart style="display:block;" (loaded)="onChartLoad($event)" [primaryXAxis]='primaryXAxis' >
+                    <e-series-collection>
+                        <e-series type='Line' xName='x' yName='y'> </e-series>
+                    </e-series-collection>
+                </ej-chart>
+     </div>
+     <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+           <div class="property-panel-header">Properties</div>
+           <div class="property-panel-content">
+              <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                 <tr style="height: 50px">
+                      <td style="width: 80%">
+                         <div> <button ej-button cssClass="e-info" (click)="onChange($event)" style="text-transform:none !important">Load 100K Points</button></div>
+                      </td>
+                 </tr>
+                 <tr style="height: 50px">
+                      <td style="width: 30%">
+                          <div>Time Taken</div>
+                      </td>
+                      <td style="width: 70%">
+                           <div>
+                               <span id="performanceTime">0ms</span>
+                           </div>
+                      </td>
+                 </tr>
+              </table>
+           </div>
+        </div>
+     </div>
+</div>
+<div id="description">
+    <p>
+     Chart includes several data rendering optimizations to achieve the best possible performance when plotting large volumes of data as well as handling high frequency real-time data.In this demo, chart is rendered with 100K points.
+    </p> 
+</div>
+<style>
+.control-section {
+        min-height: 450px;
+    }
+</style>

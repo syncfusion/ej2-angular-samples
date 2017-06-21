@@ -1,0 +1,41 @@
+#button-control {
+        width: 100%;
+        margin-top: 10%;
+        text-align: center;
+}
+    
+    @media only screen and (max-width: 500px) {
+        #button-control {
+            margin-left: -3%;
+        }
+    }
+    
+    .button-section {
+        width: 80%;
+        margin: auto;
+    }
+    
+    #button-control .col-xs-12 {
+        margin-bottom: 30px;
+    }
+
+    #button-control .e-btn-icon::before {
+        position: relative;
+        top: 1px;
+    }
+    
+    .e-play-icon::before {
+        content: '\e798';
+    }
+    
+    .e-pause-icon::before {
+        content: '\e753';
+    }
+    
+    .e-open-icon::before {
+        content: '\e782';
+    }
+    
+    .e-prev-icon::before {
+        content: '\e797';
+    }

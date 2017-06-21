@@ -1,0 +1,35 @@
+<div class="control-section">
+    <ej-chart style='display:block;width: 92%' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' 
+        [title]='title' [tooltip]='tooltip' [crosshair]='crosshair'>
+        <e-series-collection>
+            <e-series [dataSource]='john' type='Line' xName='x' yName='y' name='John' width=2 [marker]='marker'> </e-series>
+            <e-series [dataSource]='andrew' type='Line' xName='x' yName='y' name='Andrew' width=2 [marker]='marker'>
+            </e-series>
+            <e-series [dataSource]='thomas' type='Line' xName='x' yName='y' name='Thomas' width=2 [marker]='marker'>
+            </e-series>
+            <e-series [dataSource]='mark' type='Line' xName='x' yName='y' name='Mark' width=2 [marker]='marker'> </e-series>
+            <e-series [dataSource]='william' type='Line' xName='x' yName='y' name='William' width=2 [marker]='marker'>
+            </e-series>
+        </e-series-collection>
+    </ej-chart>
+</div>
+<div id="description">
+    <p>
+        This sample demonstrates the trackball behavior in chart. Trackball is used to track a data point closer to the current mouse position or touch contact point.
+        You can show tooltip for individual point or group of points closer to mouse position using <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#tooltip-tooltipoptionsmodel">shared</a></code> properties in tooltip.
+    </p>
+    <p>
+        Hover the chart area to view trackball and its tooltip. Touch and hold to enable trackball in touch enabled devices. 
+    </p>
+       <br>
+      <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Chart component features are segregated into individual feature-wise modules. To use trackball, we need to inject
+            <code>TooltipService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+        <p>
+            More information on the tooltip can be found in this
+            <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#tooltip-tooltipoptionsmodel">documentation section</a>.
+        </p> 
+</div>

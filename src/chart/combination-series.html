@@ -1,0 +1,29 @@
+<div class="control-section">
+        <div >
+            <ej-chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [legendSettings]='legend'
+                [title]='title' [tooltip]='tooltip'>
+                <e-series-collection>
+                    <e-series [dataSource]='data' type='StackingColumn' xName='x' yName='y' name='Private Consumption'> </e-series>
+                    <e-series [dataSource]='data1' type='StackingColumn' xName='x' yName='y' name='Government Consumption'> </e-series>
+                    <e-series [dataSource]='data2' type='StackingColumn' xName='x' yName='y' name='Investment'> </e-series>
+                    <e-series [dataSource]='data3' type='StackingColumn' xName='x' yName='y' name='Net Foreign Trade'> </e-series>
+                    <e-series [dataSource]='data4' type='Line' xName='x' yName='y' name='GDP' width=2 opacity=0.6 [marker]='marker'> </e-series>
+                </e-series-collection>
+            </ej-chart>
+        </div>
+        <div style="float: right; margin-right: 10px; margin-top: -5px">Source:
+            <a href="http://perspectives.pictet.com/2016/01/29/growth-accelerated-markedly-in-france-and-spain-in-2015/" target="_blank">perspectives.pictet.com</a>
+        </div>
+</div>
+<div id="description">
+   <p>
+    In this example, you can see how to render and configure the different type of charts. You can render any combination of series in chart except bar.
+    Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+   </p>
+    <br>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            In this example, we have used line and column series. To use column and line feature, we need to inject
+            <code>ColumnService</code> <code>LineService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+</div>

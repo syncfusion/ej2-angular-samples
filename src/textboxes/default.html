@@ -1,0 +1,302 @@
+<div class="col-lg-12 control-section">
+    <div class="content-wrapper">
+        <div class="row" style="padding: 10px 0px 0px">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6"><b>Floating Label</b></div>
+        </div>
+        <div class="row" style="padding: 5px 0px">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div class="e-float-input">
+                    <input type="text" required>
+                    <span class="e-float-line"></span>
+                    <label class="e-float-text">First Name</label>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div class="e-float-input e-rtl">
+                    <input type="text" required>
+                    <span class="e-float-line"></span>
+                    <label class="e-float-text">Last Name</label>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding: 5px 0px">
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <div class="e-float-input e-input-group">
+                    <input type="text" required (focus)="focusIn($event.target)" (blur)="focusOut($event.target)">
+                    <span class="e-float-line"></span>
+                    <label class="e-float-text">Country</label>
+                    <span class="e-input-group-icon e-spin-down" (mouseup)="onMouseUp($event.target)" (mousedown)="onMouseDown($event.target)"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6"><b>Inputs</b></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div class="e-input-group">
+                    <input class="e-input" type="text" placeholder="Enter Name" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"
+                    />
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div class="e-input-group e-rtl">
+                    <input class="e-input" type="text" placeholder="Last Name" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div class="e-input-group">
+                    <input class="e-input" type="password" placeholder="Password" value="password" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"
+                    />
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div class="e-input-group">
+                    <input class="e-input" type="email" placeholder="Enter Email" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div class="e-input-group e-disabled">
+                    <input class="e-input" type="text" placeholder="Disabled" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"
+                        disabled />
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div class="e-input-group">
+                    <input class="e-input" type="text" placeholder="Enter Name" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"
+                        value="Readonly" readonly/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6"><b>Textarea</b></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div class="e-input-group">
+                    <textarea class="e-input" rows="3" placeholder="Present Address" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)">Current Address:
+2050 Bamako Place,
+Washington.</textarea>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div class="e-input-group">
+                    <textarea class="e-input" rows="3" placeholder="Present Address" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)">Permanent Address:
+2050 Bamako Place,
+Washington.</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6"><b>Validation States</b></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+                <div class="e-input-group e-success">
+                    <input class="e-input" type="text" placeholder="Success" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"
+                    />
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+                <div class="e-input-group e-warning">
+                    <input class="e-input" type="text" placeholder="Warning" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"
+                    />
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+                <div class="e-input-group e-error">
+                    <input class="e-input" type="text" placeholder="Error" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6"><b>Sizing</b></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div class="e-input-group e-small">
+                    <input class="e-input" type="text" placeholder="Small" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"
+                    />
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div class="e-input-group">
+                    <input class="e-input" type="text" placeholder="Normal" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6"><b>Input & Elements</b></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div class="e-input-group">
+                    <input class="e-input" type="text" placeholder="Date of Birth" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"
+                    />
+                    <span class="e-input-group-icon e-input-calendar" (mouseup)="onMouseUp($event.target)" (mousedown)="onMouseDown($event.target)"></span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div class="e-input-group">
+                    <span class="e-input-group-icon e-input-picture" (mouseup)="onMouseUp($event.target)" (mousedown)="onMouseDown($event.target)"></span>
+                    <input class="e-input" type="text" placeholder="Upload Picture" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        A text box is an input element that allows to get input from the user. It allows the user either to edit or display the input values.
+    </p>
+    <br>
+    <table style="width:100%">
+        <tr>
+            <th>Types</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Floating Label</td>
+            <td>You can render floating textbox with <b>e-float-input</b> class added and need to maintain the following structure
+                of elements.
+                <ul>
+                    <li>Create group element with <b>e-float-input</b> class added.</li>
+                    <li>Input element with <b>required</b> attribute.</li>
+                    <li>Span element with <b>e-float-line</b> class.</li>
+                    <li>Label element with <b>e-float-text</b> class.</li>
+                </ul> </td>
+        </tr>
+        <tr>
+            <td>Floating Label & Elements</td>
+            <td>You can render floating textbox with icons added with in group element <b>e-input-group</b> and need to maintain
+                the following structure of elements.
+                <ul>
+                    <li>Create group element with <b>e-float-input</b> class added.</li>
+                    <li>Input element with <b>required</b> attribute.</li>
+                    <li>Span element with <b>e-float-line</b> class.</li>
+                    <li>Label element with <b>e-float-text</b> class.</li>
+                    <li>Append or prepend the span element with class <b>e-input-group-icon</b> added.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Default Textbox</td>
+            <td>
+                <div style="padding-bottom: 10px"> You can render text box by adding class as <b>e-input</b>.You can also render textbox as group by adding
+                    parent element with <b>e-input-group</b> class added.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>RTL Textbox</td>
+            <td>
+                <div style="padding-bottom: 10px">Set <b>e-input</b> and <b>e-rtl</b> classes to render text box in right to left direction. For rendering
+                    group in RTL mode , class list will be like <b>e-input-group e-rtl</b>.</div>
+            </td>
+        </tr>
+        <tr>
+            <td>Disabled Textbox</td>
+            <td>
+                <div style="padding-bottom: 10px">You set html disabled attribute to text box. For parent group element , you can disable it by adding <b>e-disabled</b>                    class.</div>
+            </td>
+        </tr>
+        <tr>
+            <td>Readonly Textbox</td>
+            <td>
+                <div style="padding-bottom: 10px">You set html readonly attribute to text box.</div>
+            </td>
+        </tr>
+        <tr>
+            <td>Validation states</td>
+            <td>
+                <div style="padding-bottom: 10px">You can apply validation states success, warning, error to the text box with the corresponding classes added
+                    to the input element such as <b>e-success</b>, <b>e-warning</b>, <b>e-error</b>.</div>
+            </td>
+        </tr>
+        <tr>
+            <td>Sizing</td>
+            <td>
+                <div style="padding-bottom: 10px">You can render small sizing text box by adding <b>e-small</b> class to the input element. By default normal
+                    size considered.</div>
+            </td>
+        </tr>
+        <tr>
+            <td>Input & elements</td>
+            <td>You can render textbox with icons in the below format,
+                <ul>
+                    <li>Create group element with <b>e-input-group</b> class added.</li>
+                    <li>Add input element with <b>e-input</b> and span element with <b>e-input-group-icon</b> inside the input
+                        group element.</li>
+                    <li>You can add the icon either before or after the textbox by placing <b>e-input-group-icon</b> class named
+                        element in specific place.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br>
+</div>
+<style>
+    .e-input-picture:before {
+        content: '\e7b3';
+        font-family: e-icons;
+    }
+    
+    .e-input-calendar:before {
+        content: '\e7b5';
+        font-family: e-icons;
+    }
+    
+    .content-wrapper {
+        width: 90%;
+        margin: 0 auto;
+        min-width: 185px;
+    }
+    
+    .content-wrapper div.row {
+        padding: 15px 0px;
+    }
+    
+    .e-input-group.e-small {
+        padding-top: 5px;
+    }
+    
+    .control-label {
+        padding: 24px 0px 0px 0px;
+        font-size: 12px;
+        opacity: 0.54;
+    }
+    
+    @media only screen and (max-width: 480px) {
+        .content-wrapper,
+        {
+            width: 92%;
+        }
+        .col-xs-6,
+        .col-xs-4,
+        .col-xs-12 {
+            padding: 10px 5px;
+            width: 100%;
+        }
+        .content-wrapper div.row {
+            padding: 0px;
+        }
+    }
+    
+    #description {
+        float: left;
+    }
+    
+    #description td {
+        vertical-align: top;
+    }
+</style>

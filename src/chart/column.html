@@ -1,0 +1,34 @@
+<div class="control-section">
+        <div>
+            <ej-chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+                [title]='title' [tooltip]='tooltip'>
+                <e-series-collection>
+                    <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Gold' width=2> </e-series>
+                    <e-series [dataSource]='data1' type='Column' xName='x' yName='y' name='Silver' width=2> </e-series>
+                    <e-series [dataSource]='data2' type='Column' xName='x' yName='y' name='Bronze' width=2> </e-series>
+                </e-series-collection>
+            </ej-chart>
+        </div>
+        <div style="float: right; margin-right: 10px; margin-top: -5px">Source:
+            <a href="https://en.wikipedia.org/wiki/2016_Summer_Olympics_medal_table" target="_blank">en.wikipedia.org</a>
+        </div>
+</div>
+<div id="description">
+    <p>
+    In this example, you can see how to render and configure the column type charts. Column type charts are used for comparing the frequency, count, total or average of data in different categories.
+    You can use <code>border</code>, <code>fill</code> properties to customize the data appearance. <code>dataLabel</code> is used to represent individual data and its value.
+    </p>
+    <p>
+    Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <br>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Chart component features are segregated into individual feature-wise modules. To use column feature, we need to inject
+            <code>ColumnService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+        <p>
+            More information on the column series can be found in this
+            <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#columnseriesmodule-columnseries">documentation section</a>.
+        </p>
+</div>

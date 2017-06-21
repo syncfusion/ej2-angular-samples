@@ -1,0 +1,76 @@
+<div class="sb-content e-view">
+    <div class="left-panel e-view">
+        <left-pane class="e-view"></left-pane>
+    </div>
+    <div class="control-panel e-view" (click)=onControlPanClick()>
+        <div class="sb-cnt-header e-view">
+            <div class="sb-cnt-header-cnt left">
+                <div id="slide-nav" aria-controls="left-panel" (click)="onSlideMenuClick($event)" class="e-slide-nav e-icons"></div>
+            </div>
+            <div class="sb-cnt-header-cnt middle" id="sample-head">
+                <div class="sample-name">{{sampleName}}</div>
+            </div>
+            <div id="switch" class='switcher  e-bigger'>
+                <button id="mouse" class="active" title="Default control sizes, optimized for use with mouse">Mouse</button>
+                <div class="switch-splittor"></div>
+                <button id="touch" title="Increased padding for actionable items to accommodate user touches">Touch</button>
+            </div>
+            <div class='sb-cnt-header-cnt right'>
+                <div class='nav-btn'>
+                    <button id="prev-sample" class="btn btn-default e-icon-prev e-icons" (click)="onPrevClick()" aria-label="previous sample"></button>
+                </div>
+                <div class='nav-btn'>
+                    <button id="next-sample" class="btn btn-default e-icon-next e-icons" (click)="onNextClick()" aria-label="next sample"></button>
+                </div>
+            </div>
+        </div>
+        <div id="control-container" (scroll)='onContentScroll($event)' class="e-view adjust-cnt-header v-scroll">
+            <div class="control-fluid" style="min-height:calc(100% - 60px)">
+                <div class="container-fluid">
+                    <div id="control-content">
+                        <router-outlet></router-outlet>
+
+                    </div>
+                </div>
+            </div>
+            <div id='source-tab'>
+                <ul class="nav nav-tabs" id='source-nav-tab' role="tablist" (click)="onSourceTabClick($event)">
+
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content e-source-pane" id='source-content'>
+
+                </div>
+            </div>
+            <div class='footer' role="contentinfo">
+                <div class="footer-left">
+                    <span>Copyright © 2001-2017 Syncfusion Inc.</span>
+                </div>
+                <div class="footer-right">
+                    <a href="//www.syncfusion.com" target="_blank">
+                        <div class="footer-logo"></div>
+                    </a>
+                </div>
+            </div>
+            <!--<div id="source-panel">
+                <div id="source-tab">
+                    <ul class='nav nav-tabs'>
+                        <li class="active" id='hcode'><a id='htab'>Markup</a></li>
+                        <li id='tcode'><a id='ttab'>Code</a></li>
+                    </ul>
+                    <div id="html-tab" class="lang-tab">
+                        <pre>
+                                    <code id="html-source" class="xml"></code>
+                                </pre>
+                    </div>
+                    <div id="ts-tab" class="lang-tab">
+                        <pre>
+                                    <code id="ts-source" class="javascript"></code>
+                                </pre>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>

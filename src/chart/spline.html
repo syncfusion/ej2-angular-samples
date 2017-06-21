@@ -1,0 +1,34 @@
+<div class="control-section">
+        <div>
+            <ej-chart id='chartcontainer' style='display:block;' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+                [title]='title' [tooltip]='tooltip'>
+                <e-series-collection>
+                    <e-series [dataSource]='data' type='Spline' xName='x' yName='y' name='Max Temp' width=2 [marker]='marker'> </e-series>
+                    <e-series [dataSource]='data1' type='Spline' xName='x' yName='y' name='Avg Temp' width=2 [marker]='marker'> </e-series>
+                    <e-series [dataSource]='data2' type='Spline' xName='x' yName='y' name='Min Temp' width=2 [marker]='marker'> </e-series>
+                </e-series-collection>
+            </ej-chart>
+        </div>
+        <div style="float: right; margin-right: 10px; margin-top: -5px">Source:
+            <a href="https://www.worldweatheronline.com/mooresville-weather/north-carolina/us.aspx" target="_blank">www.worldweatheronline.com</a>
+        </div>
+</div>
+<div id="description">
+     <p>
+        In this example, you can see how to render and configure the spline type charts. Spline chart connects each point in series through a curved line.
+        You can use <code>dashArray</code>, <code>width</code>, <code>fill</code> properties to customize the spline. <code>marker</code> and <code>dataLabel</code> are used to represent individual data and its value.
+    </p>
+    <p>
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+   <br>
+      <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Chart component features are segregated into individual feature-wise modules. To use spline series, we need to inject
+            <code>SplineService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+        <p>
+            More information on the spline series can be found in this
+            <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#splineseriesmodule-splineseries">documentation section</a>.
+        </p> 
+</div>

@@ -1,0 +1,41 @@
+<div class="control-section">
+    <div class='e-mastertext'>Select column name to toggle visibility</div>
+    <ej-toolbar class='e-gridlist' (clicked)="onClicked($event)">
+        <e-items>
+            <e-item text='Order ID'></e-item>
+            <e-item text='Customer Name'></e-item>
+            <e-item text='Order Date'></e-item>
+            <e-item text='Freight'></e-item>
+            <e-item text='Shipped Date'></e-item>
+            <e-item text='Ship Country'></e-item>
+        </e-items>
+    </ej-toolbar>
+    <br/>
+    <ej-grid #grid [dataSource]='data | slice:0:10' (dataBound)="dataBound()">
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right"></e-column>
+            <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign="right"></e-column>
+            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right"></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign="right"></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='150'></e-column>
+        </e-columns>
+    </ej-grid>
+
+    <div id="description">
+        <p>The Grid column can be showed/hidden dynamically using <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#showcolumns">showColumns
+        </a></code> and <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#hidecolumns">hideColumns
+        </a></code> method of the Grid.</p>
+        <p>In this demo, the columns can be showed and hidden by clicking the column name in the toolbar. And the column`s visibility is toggled based on the <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/grid/api-columnDirective.html#headertext-string">columns->headerText
+        </a></code> value.</p>
+        <br>
+        <p>The <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/grid/api-columnDirective.html#visible-boolean">columns->visible
+        </a></code> property specifies the visibility of a column. To hide a column at the initial rendering, set the <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/grid/api-columnDirective.html#visible-boolean">columns->visible
+        </a></code> property to false.</p>
+    </div>
+</div>

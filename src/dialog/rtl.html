@@ -1,0 +1,14 @@
+<div class="control-section">
+
+    <button ej-button id='rtlbtn' #rtlButton (click)="rtlBtnClick()">Open</button>
+
+    <ej-dialog #rtlDialog [buttons]='rtlDlgButtons' [header]='header' [animationSettings]='animationSettings' [content]='content' [enableRtl]='enableRtl' [showCloseIcon]='showCloseIcon' [target]='target' [width]='width' (open)="dialogOpen()"
+        (close)="dialogClose()">
+    </ej-dialog>
+</div>
+<div id="description">
+    <p>
+        This sample is rendered with Arabic language and written from Right to Left. 
+        To enable this RTL support in Dialog set enableRTL property as true.
+    </p>
+</div>

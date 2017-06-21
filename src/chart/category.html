@@ -1,0 +1,32 @@
+<div class="control-section">
+        <div>
+            <ej-chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+                [title]='title' [tooltip]='tooltip' (pointRender)='pointRender($event)'>
+                <e-series-collection>
+                    <e-series [dataSource]='data' type='Bar' xName='x' yName='y' width=2> </e-series>
+                </e-series-collection>
+            </ej-chart>
+        </div>
+        <div style="float: right; margin-right: 10px; margin-top: -5px">Source:
+            <a href="http://www.internetworldstats.com/top20.htm" target="_blank">www.internetworldstats.com</a>
+        </div>
+</div>
+<div id="description">
+  <p>
+  Category axis is used to represent the categories in data. To render category axis, set <code>valueType</code> in axis to <code>Category</code>.
+  Category label can placed between the ticks or on the ticks, based on <code>labelPlacement</code> property. 
+  </p>
+  <p>
+  Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+  </p>
+    <br>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Chart component features are segregated into individual feature-wise modules. To use category feature, we need to inject
+            <code>CategoryService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+        <p>
+            More information on the category series can be found in this
+            <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#categorymodule-category">documentation section</a>.
+        </p>
+</div>

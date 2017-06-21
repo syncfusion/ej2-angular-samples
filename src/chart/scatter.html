@@ -1,0 +1,28 @@
+<div class="control-section">
+        <ej-chart style='display:block;' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+              [tooltip]='tooltip'>
+            <e-series-collection>
+                 <e-series [dataSource]='series1' type='Scatter' xName='x' yName='y' opacity = '0.7' name='Male' width=2 [marker]='marker'> </e-series>
+                 <e-series [dataSource]='series2' type='Scatter' xName='x' yName='y' opacity = '0.7' name='Female' width=2 [marker]='marker'> </e-series>
+            </e-series-collection>
+        </ej-chart>
+</div>
+<div id="description">  
+    <p>
+        In this example, you can see how to render and configure the scatter type charts. Scatter charts are used to plot financial or scientific data.
+        You can use <code>shape</code> property in the marker to change the scatter shape. <code>dataLabel</code> is used to represent individual data value.
+     </p>
+     <p>   
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <br>
+      <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Chart component features are segregated into individual feature-wise modules. To use scatter series, we need to inject
+            <code>ScatterService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+        <p>
+            More information on the Scatter series can be found in this
+            <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#scatterseriesmodule-scatterseries">documentation section</a>.
+        </p> 
+</div>

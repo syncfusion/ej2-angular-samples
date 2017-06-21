@@ -1,0 +1,25 @@
+<div class="control-section">
+    <ej-grid [dataSource]="data | slice:0:12">
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="center"></e-column>
+            <e-column headerText='Order Details' [columns]='orderColumns'></e-column>
+            <e-column headerText='Ship Details' [columns]='shipColumns'></e-column>
+        </e-columns>
+    </ej-grid>
+     <div id="description">
+        <p>The Grid columns can be stacked/grouped inorder to show multiple level of column headers. It can be done by
+            setting the <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/grid/api-columnDirective.html#columns-any">
+        columns->columns
+        </a></code> property.
+        </p>         
+        <p>
+            In this demo, the columns <strong>OrderDate, Freight</strong> are grouped under <strong>Order Details</strong>,
+            the columns <strong>ShippedDate, ShipCountry</strong> are grouped under <strong>Ship Details</strong>. 
+        </p>
+         <p>
+            More information on the stacked header configuration can be found in this 
+            <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/grid/api-columnDirective.html#columns-any">documentation section</a>.
+        </p>
+    </div>
+</div>

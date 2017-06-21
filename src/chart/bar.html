@@ -1,0 +1,34 @@
+<div class="control-section">
+        <div>
+            <ej-chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+                [title]='title' [tooltip]='tooltip'>
+                <e-series-collection>
+                    <e-series [dataSource]='data' type='Bar' xName='x' yName='y' name='Imports' width=2> </e-series>
+                    <e-series [dataSource]='data1' type='Bar' xName='x' yName='y' name='Exports' width=2> </e-series>
+                </e-series-collection>
+            </ej-chart>
+        </div>
+        <div style="float: right; margin-right: 10px; margin-top: -5px">Source:
+            <a href="https://www.gov.uk/" target='_blank'>www.gov.uk</a>
+        </div>
+</div>
+<div id="description">
+    <p>
+    In this example, you can see how to render and configure the bar type charts. Similar to column charts, but the orientation of y axis is horizontal instead of vertical.
+    You can use <code>border</code>, <code>fill</code> properties to customize the data appearance. <code>dataLabel</code> is used to represent individual data and its value.
+    </p>
+    <p>
+    Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+   <br>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Chart component features are segregated into individual feature-wise modules. To use bar series feature, we need to inject
+            <code>BarService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+        <p>
+            More information on the bar series can be found in this
+            <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#barseriesmodule-barseries">documentation section</a>.
+        </p> 
+    
+</div>

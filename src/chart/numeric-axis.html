@@ -1,0 +1,28 @@
+<div class="control-section">
+        <div>
+            <ej-chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+                [title]='title' [tooltip]='tooltip'>
+                <e-series-collection>
+                    <e-series [dataSource]='data' type='Column' xName='x' yName='y' fill = '#1e90ff' name='England' width=2> </e-series>
+                    <e-series [dataSource]='data1' type='Column' xName='x' yName='y' fill = '#b22222' name='West Indies' width=2> </e-series>
+                </e-series-collection>
+            </ej-chart>
+        </div>
+        <div style="float: right; margin-right: 10px; margin-top: -5px">Source:
+            <a href="http://www.espncricinfo.com/icc-world-twenty20-2016/engine/current/match/951373.html" target="_blank" target="_blank">www.espncricinfo.com</a>
+        </div>
+</div>
+<div id="description">
+   <p>
+        Numeric axis is used to plot numeric data in chart. To render numeric axis, set <code>valueType</code> in axis to <code>Double</code>.
+    </p>
+    <p>
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+   </p>
+     <p>
+        More information on the axis can be found in this
+        <a target="_blank" 
+        href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#primaryxaxis-axismodel">
+        documentation section</a>.
+    </p>
+</div>

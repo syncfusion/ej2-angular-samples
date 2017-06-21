@@ -1,0 +1,29 @@
+<div class="control-section">
+        <div>
+            <ej-chart style='display:block;' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'>
+                <e-series-collection>
+                    <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='Warmest' width=2 [marker]='marker1'> </e-series>
+                    <e-series [dataSource]='data2' type='Line' xName='x' yName='y' name='Coldest' width=2 [marker]='marker2'> </e-series>
+                </e-series-collection>
+            </ej-chart>
+        </div>
+        <div style="float: right; margin-right: 10px; margin-top: -5px">Source:
+            <a href="http://www.yr.no/place/USA/Alaska/Hatcher_Pass/statistics.html" target="_blank">www.yr.no</a>
+        </div>
+</div>
+<div id="description">    
+    <p>
+        DateTime data is used in this sample and data values are represented using dataLabel. Date time axis uses date time scale and displays the date time values as axis labels. To render dateTime axis, set <code>valueType</code> in axis to <code>DateTime</code>.
+        Format for the axis label will be calculated based on intervalType of axis or we can set the format through <code>labelFormat</code> property in axis.
+    </p>   
+    <br>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Chart component features are segregated into individual feature-wise modules. To use DateTime Axis, we need to inject
+            <code>DateTimeService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+        <p>
+            More information on the DateTime can be found in this
+            <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#datetimemodule-datetime">documentation section</a>.
+        </p>     
+</div>

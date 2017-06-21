@@ -1,0 +1,34 @@
+<div class="control-section">
+    <ej-grid [dataSource]='data' allowPaging='true' allowSorting="true" [allowGrouping]="true" [groupSettings]="groupOptions"
+        height="320">
+        <e-columns>
+            <e-column field='Inventor' headerText='Inventor Name' width='180'></e-column>
+            <e-column field='NumberofPatentFamilies' headerText="Number of Patent Families" width='220' textAlign="right"></e-column>
+            <e-column field='Country' headerText='Country' width='140'></e-column>
+            <e-column field='Active' width='120'></e-column>
+            <e-column field='Mainfieldsofinvention' headerText='Main fields of invention' width='200'></e-column>
+        </e-columns>
+    </ej-grid>
+    <div style="margin-top: 10px; text-align: right">Source:
+        <a href="https://en.wikipedia.org/wiki/List_of_prolific_inventors" target='_blank'>Wikipedia: List of Profolic inventors</a>
+    </div>
+
+    <div id="description">
+        <p>The Grid control has options to group the records based on the required column. When grouping is applied, grouped
+            records are organized into a hierarchical structure to facilitate easier expand and collapse of records. To enable
+            grouping, set <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#allowgrouping-boolean">
+        allowGrouping</a></code> property as true.</p>
+        <p>Columns can be grouped by simply dragging the column header and drop on the group drop area.</p>
+        <p>In this demo, to group a specify column, drag and drop the column in the group drop area.</p>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Grid component features are segregated into individual feature-wise modules. To use grouping feature, we need to inject
+            <code>GroupService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+        <p>
+            More information on the grouping feature configuration can be found in this
+            <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#groupsettings-groupsettingsmodel">documentation section</a>.
+        </p>
+    </div>
+</div>
