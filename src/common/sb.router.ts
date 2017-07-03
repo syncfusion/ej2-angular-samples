@@ -10,19 +10,21 @@ import { NumericModule } from '../numerictextbox/numericTextBox.module';
 import { ChartSampleModule } from '../chart/chart.module';
 import { DialogSampleModule } from '../dialog/dialog.module';
 import { TextboxesModule } from '../textboxes/textboxes.module';
+import { TooltipSampleModule } from '../tooltip/tooltip.module';
 
-const  appRoutes:  any  =  [
-    {  path:  'chart',  loadChildren:  ChartSampleModule  },
-    {  path:  'grid',  loadChildren:  GridSampleModule  },
-    {  path:  'form-validator',  loadChildren:  FormValidatorModule  },
-    {  path:  'Button',  loadChildren:  ButtonModule  },
-    {  path:  'calendar',  loadChildren:  CalendarSampleModule  },
-    {  path:  'numerictextbox',  loadChildren:  NumericModule  },
-    {  path:  'listview',  loadChildren:  ListViewSampleModule  },
-    {  path:  'dialog',  loadChildren:  DialogSampleModule  },
-    {  path:  'textboxes',  loadChildren:  TextboxesModule  },
-    {  path:  'toolbar',  loadChildren:  ToolbarSampleModule  },
-    {  path:  '',  redirectTo:  'chart/line',  pathMatch:  'full'  }
+const appRoutes: any = [
+    { path: 'chart', loadChildren: ChartSampleModule },
+    { path: 'grid', loadChildren: GridSampleModule },
+    { path: 'form-validator', loadChildren: FormValidatorModule },
+    { path: 'Button', loadChildren: ButtonModule },
+    { path: 'calendar', loadChildren: CalendarSampleModule },
+    { path: 'numerictextbox', loadChildren: NumericModule },
+    { path: 'listview', loadChildren: ListViewSampleModule },
+    { path: 'dialog', loadChildren: DialogSampleModule },
+    { path: 'textboxes', loadChildren: TextboxesModule },
+    { path: 'toolbar', loadChildren: ToolbarSampleModule },
+    { path: 'tooltip', loadChildren: TooltipSampleModule },
+    { path: '', redirectTo: 'chart/line', pathMatch: 'full' }
 ]; 
 
 @NgModule({
@@ -37,6 +39,7 @@ const  appRoutes:  any  =  [
         TextboxesModule,
         DialogSampleModule,
         ToolbarSampleModule,
+        TooltipSampleModule,
         RouterModule.forRoot(appRoutes)
     ],
 

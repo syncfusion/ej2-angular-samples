@@ -1,0 +1,70 @@
+<div class="control-section">
+    <div class="col-lg-8" style="min-height:inherit;">
+        <ej-tooltip #tooltip content='Lets go green & Save Earth !!!' style="display:block;position:absolute;left:calc( 50% - 60px);top:45%;">
+            <button ej-button>Show Tooltip</button>
+        </ej-tooltip>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties">
+                    <tbody>
+                        <tr>
+                            <td style="width: 30%">
+                                <div>Position</div>
+                            </td>
+                            <td style="width: 70%;padding-right: 10px">
+                                <div>
+                                    <select id="positions" (change)="onChange($event.target.value)" class="form-control">
+                                        <option value="top left">Top Left</option>
+                                        <option value="top center" selected>Top Center</option>
+                                        <option value="top right">Top Right</option>
+                                        <option value="bottom left">Bottom Left</option>
+                                        <option value="bottom center">Bottom Center</option>
+                                        <option value="bottom right">Bottom Right</option>
+                                        <option value="left top">Left Top</option>
+                                        <option value="left center">Left Center</option>
+                                        <option value="left bottom">Left Bottom</option>
+                                        <option value="right top">Right Top</option>
+                                        <option value="right center">Right Center</option>
+                                        <option value="right bottom">Right Bottom</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        This sample illustrates a tooltip, that gets opened on hovering the target labelled “Hover Me”. The tooltip can be shown
+        on 12 possible positions, by selecting the appropriate position values provided in the dropdown. The applicable tooltip
+        positions are as follows,
+    </p>
+    <ul>
+        <li><code>top left</code></li>
+        <li><code>top center</code></li>
+        <li><code>top right</code></li>
+        <li><code>bottom left</code></li>
+        <li><code>bottom center</code></li>
+        <li><code>bottom right</code></li>
+        <li><code>left top</code></li>
+        <li><code>left center</code></li>
+        <li><code>left bottom</code></li>
+        <li><code>right top</code></li>
+        <li><code>right center</code></li>
+        <li><code>right bottom</code></li>
+    </ul>
+    <p>
+        In case, if the tooltip needs to be opened on mobile devices, tap hold on the target labelled “Hover Me” instead of hovering
+        and by default, it closes after 1.5 seconds on lift.
+    </p>
+    <p>
+        More information on Tooltip instantiation can be found in this
+        <a href="http://ej2.syncfusion.com/angular/documentation/tooltip/getting-started.html" target="_blank"> documentation section</a>.
+    </p>
+</div>

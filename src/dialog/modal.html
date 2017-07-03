@@ -1,5 +1,5 @@
 <div class="control-section" style="padding:10px;position:relative;">
-    <div id="modalTarget" #targetModal class="col-md-9 control-section">
+    <div id="modalTarget" #targetModal class="col-md-9 control-section" style="height:350px;">
         <button ej-button id='modalbtn' #modalButton (click)="modalBtnClick()">Open</button>
 
         <ej-dialog id="modalDialog" #modalDialog [isModal]='isModal' [header]='header' [target]='target' [width]='width' [buttons]='buttons' [animationSettings]='animationSettings' [content]='content' (open)="modalDlgOpen()" (close)="modalDlgClose()"

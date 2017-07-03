@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'tbicons';
+    src: url('src/toolbar/images/fonts/tbicons.ttf?gcjn6a') format('truetype'),
+     url('src/toolbar/images/fonts/tbicons.woff?gcjn6a') format('woff'),
+     url('src/toolbar/images/fonts/tbicons.svg?gcjn6a#tbicons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.e-bigger .e-tbar-btn .tb-icons {
+    font-size: 18px;
+}
+
+.e-tbar-btn .tb-icons {
+    font-family: 'tbicons';
+    speak: none;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+
+.e-cut-icon:before {
+    content: "\e612"
+}
+
+.e-copy-icon:before {
+    content: "\e611"
+}
+
+.e-paste-icon:before {
+    content: "\e617"
+}
+
+.e-bold-icon:before {
+    content: "\e60d"
+}
+
+.e-underline-icon:before {
+    content: "\e61d";
+    font-size: 17px;
+}
+
+.e-italic-icon:before {
+    content: "\e615"
+}
+
+#Toolbar {
+    margin: 10px auto;
+}
+
+.toolbarContainer {
+    width: 250px;
+    margin: 0 auto;
+}
+
+.e-bigger .toolbarContainer {
+    width: 330px;
+}
+
+.e-bigger .e-tooltip-wrap p {
+    font-size: 13px;
+}
+
+.e-bigger .e-tooltip-wrap h6 {
+    font-size: 14px;
+}
+
+.contentWrap {
+    padding: 3px 0;
+    line-height: 16px;
+}
+
+.logo {
+    padding-right: 6px;
+    height: 16px;
+    width: 22px;
+}
+
+.def {
+    float: right;
+}
+
+#countrylist {
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    width: 170px;
+    margin: 0 auto;
+}
+
+.listheader {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+@media (max-width: 481px) {
+    #countrylist {
+        margin: 0;
+    }
+    .listheader {
+        text-align: left;
+    }
+}
+
+#targetContainer {
+    display: block;
+    margin: 15px;
+    border: 1px solid #dddddd;
+    min-height: 350px;
+    position: relative;
+}
+
+#demoSmart {
+    width: 100px;
+    height: 100px;
+    background: url('src/tooltip/images/smartposition.png') no-repeat;
+    background-size: 100px 100px;
+    position: absolute;
+    left: calc( 50% - 50px);
+    top: calc( 50% - 50px);
+}

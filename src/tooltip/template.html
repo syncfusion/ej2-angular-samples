@@ -1,0 +1,28 @@
+<div class="control-section">
+    <ej-tooltip #tooltip target=".toolbarContainer [title]" (beforeRender)="onBeforeRender($event)" [showTipPointer]='false'
+        [offsetX]='70' [width]='170'>
+        <div class="toolbarContainer">
+            <ej-toolbar id="Toolbar">
+                <e-items>
+                    <e-item prefixIcon='e-cut-icon tb-icons' tooltipText='Cut'></e-item>
+                    <e-item prefixIcon='e-copy-icon tb-icons' tooltipText='Copy'></e-item>
+                    <e-item prefixIcon='e-paste-icon tb-icons' tooltipText='Paste'></e-item>
+                    <e-item type='Separator'></e-item>
+                    <e-item prefixIcon='e-bold-icon tb-icons' tooltipText='Bold'></e-item>
+                    <e-item prefixIcon='e-underline-icon tb-icons' tooltipText='Underline'></e-item>
+                    <e-item prefixIcon='e-italic-icon tb-icons' tooltipText='Italic'></e-item>
+                </e-items>
+            </ej-toolbar>
+        </div>
+    </ej-tooltip>
+</div>
+<div id="description">
+    <p>This sample illustrates the way to display the template content on the tooltip. With the usage of Template, the user
+        can format and structure the HTML content to be displayed on tooltip as per their application needs.</p>
+    <p>In this sample, tooltip is integrated with toolbar component to display the respective icon’s information. Here, the
+        HTML template design is compiled and then the resultant output display is directly assigned to the <code> content</code>property
+        of the tooltip. The template compilation process needs to be done on the <code>beforeRender</code> event of the tooltip.</p>
+    <p>More information on setting template content on Tooltip can be found in this
+        <a href="http://ej2.syncfusion.com/angular/documentation/tooltip/content.html#template-content" target="_blank"> documentation section</a>.
+    </p>
+</div>

@@ -8,6 +8,7 @@ import { calendarAppRoutes } from '../calendar/calendar.module';
 import { chartAppRoutes } from '../chart/chart.module';
 import { dialogAppRoutes } from '../dialog/dialog.module';
 import { textboxesAppRoutes } from '../textboxes/textboxes.module';
+import { tooltipAppRoutes } from '../tooltip/tooltip.module';
 export let samplesList: any = [
     {
         'name': 'Chart', 'category': 'Datavisualization', 'order': '01', 'path': 'chart', 'samples': chartAppRoutes
@@ -38,5 +39,8 @@ export let samplesList: any = [
     },
     {
         'name': 'Toolbar', 'category': 'Navigation', 'order': '05', 'path': 'toolbar', 'samples': toolbarAppRoutes
+    },
+    {
+        'name': 'Tooltip', 'category': 'Layout', 'order': '04', 'path': 'tooltip', 'samples': tooltipAppRoutes
     }
 ];
