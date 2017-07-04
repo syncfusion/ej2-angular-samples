@@ -1,6 +1,6 @@
 <div class="control-section">
     <div class='e-mastertext'>Select column name to toggle visibility</div>
-    <ej-toolbar class='e-gridlist' (clicked)="onClicked($event)">
+    <ej-toolbar class='e-gridlist' (clicked)="onClicked($event.originalEvent)">
         <e-items>
             <e-item text='Order ID'></e-item>
             <e-item text='Customer Name'></e-item>

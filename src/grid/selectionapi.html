@@ -1,6 +1,6 @@
 <div class="control-section">
     <div class='e-mastertext'>Selection Type / Selection Mode</div>
-    <ej-toolbar class='e-gridlist' (clicked)="onChangeType($event)">
+    <ej-toolbar class='e-gridlist' (clicked)="onChangeType($event.originalEvent)">
         <e-items>
             <e-item text='Multiple' cssClass='e-gtype'></e-item>
             <e-item text='Row' cssClass='e-gmode'></e-item>

@@ -1,6 +1,6 @@
 <div class="control-section">
     <div class='e-mastertext'>Select Grid Line</div>
-    <ej-toolbar class='e-gridlist' (clicked)="onClicked($event.target)">
+    <ej-toolbar class='e-gridlist' (clicked)="onClicked($event.originalEvent.target)">
         <e-items>
             <e-item text='Default' cssClass="e-ghidden"></e-item>
             <e-item text='None'></e-item>
