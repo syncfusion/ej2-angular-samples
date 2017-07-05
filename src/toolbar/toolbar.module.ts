@@ -8,7 +8,7 @@ import { PopupToolbarComponent } from './popup.component';
 import { RtlToolbarComponent } from './rtl.component';
 import { SharedModule } from '../common/shared.module';
 export const toolbarAppRoutes: Object[] = [
-    { path: 'toolbar/default', component: DefaultToolbarComponent, name: 'Default Functionality', category: 'Toolbar' },
+    { path: 'toolbar/default', component: DefaultToolbarComponent, name: 'Default Functionalities', category: 'Toolbar' },
     { path: 'toolbar/popup', component: PopupToolbarComponent, name: 'Popup', category: 'Toolbar' },
     { path: 'toolbar/rtl', component: RtlToolbarComponent, name: 'RTL', category: 'Toolbar' }
 ];
