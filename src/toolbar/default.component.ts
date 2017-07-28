@@ -1,4 +1,4 @@
-import { Component,ViewEncapsulation, Inject } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 
 /**
  * Default Toolbar Component
@@ -6,11 +6,11 @@ import { Component,ViewEncapsulation, Inject } from '@angular/core';
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
-    styleUrls:['toolbar.component.css'],
+    styleUrls: ['toolbar.component.css'],
     encapsulation: ViewEncapsulation.None
 })
 export class DefaultToolbarComponent {
-    constructor(@Inject('sourceFiles') private sourceFiles:any) {
-         sourceFiles.files = ['toolbar.component.css'];
+    constructor( @Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['toolbar.component.css'];
     }
 }

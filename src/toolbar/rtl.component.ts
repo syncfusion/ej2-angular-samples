@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, Inject  } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 
 /**
  * Rtl Toolbar Component
@@ -10,7 +10,7 @@ import { Component, ViewEncapsulation, Inject  } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class RtlToolbarComponent {
-    constructor(@Inject('sourceFiles') private sourceFiles:any) {
-         sourceFiles.files = ['toolbar.component.css'];
+    constructor( @Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['toolbar.component.css'];
     }
 }

@@ -1,11 +1,10 @@
 @font-face {
     font-family: 'tbicons';
-    src: url('src/toolbar/images/fonts/tbicons.ttf?gcjn6a') format('truetype'),
-    url('src/toolbar/images/fonts/tbicons.woff?gcjn6a') format('woff'),
-    url('src/toolbar/images/fonts/tbicons.svg?gcjn6a#tbicons') format('svg');
+    src: url('src/toolbar/images/fonts/tbicons.ttf?gcjn6a') format('truetype'), url('src/toolbar/images/fonts/tbicons.woff?gcjn6a') format('woff'), url('src/toolbar/images/fonts/tbicons.svg?gcjn6a#tbicons') format('svg');
     font-weight: normal;
     font-style: normal;
 }
+
 .tb-icons {
     font-family: 'tbicons';
     speak: none;
@@ -15,109 +14,142 @@
     font-variant: normal;
     text-transform: none;
 }
+
 .e-tbar-btn.e-btn .tb-icons {
-        font-size: 16px;
+    font-size: 16px;
 }
+
 .e-cut-icon:before {
     content: "\e612"
 }
+
 .e-copy-icon:before {
     content: "\e611"
 }
+
 .e-paste-icon:before {
     content: "\e617"
 }
+
 .e-color-icon:before {
     content: "\e610";
     font-size: 18px;
 }
+
 .e-bold-icon:before {
     content: "\e60d"
 }
+
 .e-underline-icon:before {
     content: "\e61d";
     font-size: 17px;
 }
+
 .e-alignleft-icon:before {
     content: "\e60b"
 }
+
 .e-alignright-icon:before {
     content: "\e60c"
 }
+
 .e-aligncenter-icon:before {
     content: "\e609"
 }
+
 .e-alignjustify-icon:before {
     content: "\e60a"
 }
+
 .e-upload-icon:before {
     content: "\e61e"
 }
+
 .e-download-icon:before {
     content: "\e613"
 }
+
 .e-indent-icon:before {
     content: "\e61c"
 }
+
 .e-outdent-icon:before {
     content: "\e61b"
 }
+
 .e-clear-icon:before {
     content: "\e60f"
 }
+
 .e-reload-icon:before {
     content: "\e618"
 }
+
 .e-export-icon:before {
     content: "\e614";
     font-size: 22px;
 }
+
 .e-italic-icon:before {
-    content:  "\e615"
+    content: "\e615"
 }
+
 .e-bullets-icon:before {
-    content:  "\e60e";
+    content: "\e60e";
     font-size: 18px;
 }
+
 .e-numbering-icon:before {
-    content:  "\e616";    
+    content: "\e616";
     font-size: 19px;
 }
+
 .e-undo-icon:before {
     content: "\e608"
 }
+
 .e-redo-icon:before {
     content: "\e606"
 }
+
 .e-line-icon:before {
     content: "\e604"
 }
+
 .e-radar-icon:before {
     content: "\e602"
 }
+
 .e-doughnut-icon:before {
     content: "\e601"
 }
+
 .e-bubble-icon:before {
     content: "\e600"
 }
+
 .e-table-icon:before {
-   content: '\e607'
+    content: '\e607'
 }
+
 .e-picture-icon:before {
     content: '\e605'
 }
+
 .e-design-icon:before {
     content: '\e603'
 }
+
 .e-ascending-icon:before {
-    content:  "\e619";
+    content: "\e619";
     font-size: 23px;
 }
+
 .e-descending-icon:before {
-    content:  "\e61a";
+    content: "\e61a";
     font-size: 23px;
 }
+
 @media only screen and (min-width: 1224px) {
     .e-sample-resize-container {
         width: 70%;
@@ -129,6 +161,7 @@
         width: 50%;
     }
 }
-.e-sample-resize-container {            
-        margin: auto;
+
+.e-sample-resize-container {
+    margin: auto;
 }
