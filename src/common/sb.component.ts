@@ -158,7 +158,20 @@ export class SBController {
             mouseButton.element.classList.remove('active');
             touchButton.element.classList.add('active');
         }
-
+        let mouseOrTouch: string = localStorage.getItem('ej2-ng-switch');
+        if(mouseOrTouch) {
+            if(mouseOrTouch === 'mouse') {
+                document.body.classList.remove('e-bigger');
+            } else {
+                document.body.classList.add('e-bigger');
+            }
+            let target: HTMLElement = <HTMLElement>select('#'+mouseOrTouch);
+            let current: string = mouseOrTouch === 'mouse' ? 'touch' : 'mouse';
+            let curSelected: HTMLElement = <HTMLElement>select('#'+current);
+            curSelected.classList.remove('active');
+            target.classList.add('active');
+        }
+        localStorage.removeItem('ej2-ng-switch');
     }
 
     ngAfterViewInit(): void {
@@ -219,15 +232,10 @@ export class SBController {
         let curSelected: HTMLElement = <HTMLElement>select('.switcher .active');
         if (curSelected.id === targetId) {
             return;
-        }
-        if (targetId === 'mouse') {
-            document.body.classList.remove('e-bigger');
         } else {
-            document.body.classList.add('e-bigger');
+            localStorage.setItem('ej2-ng-switch', targetId);
+            location.reload();
         }
-        curSelected.classList.remove('active');
-        (<HTMLElement>e.target).classList.add('active');
-        window.dispatchEvent(new Event('resize'));
     }
     onSourceTabClick(e: Event): void {
         let curEle: HTMLElement = e.target as HTMLElement;
