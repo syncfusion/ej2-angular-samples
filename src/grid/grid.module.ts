@@ -22,6 +22,8 @@ import { SearchComponent } from './searching.component';
 import { ScrollComponent } from './scrolling.component';
 import { GridLinesComponent } from './gridlines.component';
 import { DragAndDropComponent } from './draganddrop.component';
+import { AggregateComponent } from './aggregatedefault.component';
+import { AggregateGroupComponent } from './aggregategroup.component';
 import { SharedModule } from '../common/shared.module';
 
 export const gridRouteConfig: Object[] = [
@@ -43,13 +45,17 @@ export const gridRouteConfig: Object[] = [
     { 'path': 'grid/column/autowrap', component: AutoWrapComponent, name: 'AutoWrap Column cells',  order: '03', category: 'Column' },
     { 'path': 'grid/column/reorder', component: ReorderComponent, name: 'Reorder Columns', order: '03', category: 'Column' },
     { 'path': 'grid/selection', component: SelectionComponent, name: 'Default Selection', order: '04', category: 'Selection' },
-    { 'path': 'grid/selectionapi', component: SelectionApiComponent, name: 'Selection API', order: '04', category: 'Selection'}
+    { 'path': 'grid/selectionapi', component: SelectionApiComponent, name: 'Selection API', order: '04', category: 'Selection'},
+    { 'path': 'grid/aggregatedefault', component: AggregateComponent, name: 'Default Aggregate', order: '05', category: 'Aggregate', 
+    type: 'new' },
+    { 'path': 'grid/aggregategroup', component: AggregateGroupComponent,
+    name: 'Group and Caption aggregate', order: '05', category: 'Aggregate', type: 'new' }
 ];
 
 let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     LocalDataComponent, DataBindingComponent, ShowHideComponent, MasterComponent, DetailComponent, ReorderComponent,
     GroupComponent, StackedHeaderComponent, AutoWrapComponent, SortComponent, PageComponent, FilterComponent, SelectionComponent,
-    ScrollComponent, SearchComponent, SelectionApiComponent, DragAndDropComponent];
+    ScrollComponent, SearchComponent, SelectionApiComponent, DragAndDropComponent, AggregateComponent, AggregateGroupComponent];
 
 @NgModule({
     imports: [RouterModule.forChild(gridRouteConfig), CommonModule, HttpModule, ToolbarModule, GridModule, SharedModule],

@@ -1,0 +1,93 @@
+<div class="control-section">
+<ej-grid [dataSource]="data" [allowPaging]="true" [allowGrouping]="true" [groupSettings]="groupSettings">
+    <e-columns>
+        <e-column field='CategoryName' headerText='Category Name' width='170'></e-column>
+        <e-column field='ProductName' headerText='Product Name' width='150'></e-column>
+        <e-column field='QuantityPerUnit' headerText='Quantity per unit' width='180' textAlign="right"></e-column>
+        <e-column field='UnitsInStock' headerText='Units In Stock' width='150' textAlign="right"></e-column>
+        <e-column field='Discontinued' width='170' textAlign="center" [displayAsCheckBox]="true" type="boolean"></e-column>
+    </e-columns>
+    <e-aggregates>
+        <e-aggregate>
+            <e-columns>
+                <e-column type="sum" field="UnitsInStock">
+                      <template #groupFooterTemplate let-data>Total units: {{data.sum}}</template>
+                </e-column>
+            </e-columns>
+        </e-aggregate>
+        <e-aggregate>
+            <e-columns>
+                <e-column type="truecount" field="Discontinued">
+                    <template #groupFooterTemplate let-data>Discontinued: {{data.truecount}}</template>
+                </e-column>
+            </e-columns>
+        </e-aggregate>
+        <e-aggregate>
+            <e-columns>
+                <e-column type="max" field="UnitsInStock">
+                    <template #groupCaptionTemplate let-data>Maximum: {{data.max}}</template>             
+                </e-column>
+            </e-columns>
+        </e-aggregate>
+    </e-aggregates>
+</ej-grid>
+
+<div id="description">
+    <p>The Grid supports aggregates which will be displayed at the footer, group footer and group caption of the Grid.
+    The aggregate configurations can be provided by the <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-grid.html">
+        aggregates
+        </a></code> property.</p>
+    <p>The built-in aggregates are,</p>
+     <ul>
+        <li><code>sum</code></li>     
+        <li><code>average</code></li>     
+        <li><code>min</code></li>     
+        <li><code>max</code></li>     
+        <li><code>count</code></li>     
+        <li><code>truecount</code></li>     
+        <li><code>falsecount</code></li>     
+        <li><code>custom</code> - Requires the <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-aggregateColumn.html#customaggregate-string">
+        customAggregate
+        </a></code> property to perform aggregation.
+        The custom aggregate value can be accessed inside template using the key <code>custom</code></li>     
+    </ul>    
+    <p>
+        In this demo, the <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-aggregateColumn.html#groupfootertemplate-string">
+        groupFooterTemplate</a></code> property is used to display group footer aggregation for the <strong><i>Unit In Stocks</i></strong> and <strong><i>Discontinued</i></strong> columns and <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-aggregateColumn.html#groupcaptiontemplate-string">
+        groupCaptionTemplate</a></code> property is used to display group caption aggregation for the <strong><i>Unit In Stocks</i></strong> column.
+    </p>    
+    <p>    To enable group footer aggregation for <strong><i>Unit In Stocks</i></strong> column, the <code>sum</code> aggregate type is used by setting the <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-aggregateColumn.html#type-string---string">
+        type</a></code> and the <code><a target="_blank" class="code"
+ href="http://ej2.syncfusion.com/documentation/grid/api-aggregateColumn.html#field-string">
+        field</a></code> property is set as <strong><i>UnitsInStock</i></strong> which will be used to perform aggregation.
+        The aggregate value is accessed inside the <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-aggregateColumn.html#groupfootertemplate-string">
+        groupFooterTemplate</a></code> using its <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-aggregateColumn.html#type-string---string">
+        type</a></code> name (<code>sum</code>).
+    </p>
+    <p>    To enable group caption aggregation for <strong><i>Unit In Stocks</i></strong> column, the <code>max</code> aggregate type is used by setting the <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-aggregateColumn.html#type-string---string">
+        type</a></code> and the <code><a target="_blank" class="code"
+ href="http://ej2.syncfusion.com/documentation/grid/api-aggregateColumn.html#field-string">
+        field</a></code> property is set as <strong><i>UnitsInStock</i></strong> which will be used to perform aggregation.
+        The aggregate value is accessed inside the<code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-aggregateColumn.html#groupcaptiontemplate-string">
+        groupCaptionTemplate</a></code> using its <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-aggregateColumn.html#type-string---string">
+        type</a></code> name (<code>max</code>).
+    </p>
+    
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Grid component features are segregated into individual feature-wise modules. To use aggregate feature, we need to inject
+        <code>AggregateService</code> into the <code>@NgModule.providers</code> section.  Since grouping feature is required
+            to show group aggreations, we also need to inject <code>GroupService</code>.  
+    </p>
+</div>
+</div>
