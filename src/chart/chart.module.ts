@@ -10,7 +10,7 @@ import {
      CategoryService, SplineSeriesService,  AreaSeriesService, DateTimeService, MarkerService, StackingAreaSeriesService,
       StackingBarSeriesService, StackingColumnSeriesService, ScatterSeriesService, StepLineSeriesService,
      LogarithmicService, BarSeriesService, ColumnSeriesService, TooltipService, CrosshairService,
-    ZoomService, SelectionService, LegendService, DataLabelService,
+    ZoomService, SelectionService, LegendService, DataLabelService, BubbleSeriesService, RangeColumnSeriesService
 } from '@syncfusion/ej2-ng-charts';
 
 import { LineChartComponent } from './line.component';
@@ -29,6 +29,10 @@ import { CategoryChartComponent } from './category.component';
 import { StackedBarChartComponent } from './stacked-bar.component';
 import { StackedColumnChartComponent } from './stacked-column.component';
 import { StepLineChartComponent } from './step-line.component';
+import { PercentStackedColumnChartComponent } from './stacked-column100.component';
+import { PercentStackedBarChartComponent } from './stacked-bar100.component';
+import { PercentStackedAreaChartComponent } from './stacked-area100.component';
+import { RangeColumnChartComponent } from './range-column.component';
 import { SymbolsChartComponent } from './symbols.component';
 import { ScatterChartComponent } from './scatter.component';
 import { TrackBallChartComponent } from './trackball.component';
@@ -37,6 +41,7 @@ import { LocalDataChartComponent } from './local-data.component';
 import { SelectionChartComponent } from './selection.component';
 import { PerformanceChartComponent } from './performance.component';
 import { ZoomingChartComponent } from './zooming.component';
+import { BubbleChartComponent } from './bubble.component';
 import { SharedModule } from '../common/shared.module';
 export const chartAppRoutes: Object[] = [
     { path: 'chart/line', component: LineChartComponent, name: 'Line', order:'01' ,category: 'Series' },
@@ -45,10 +50,18 @@ export const chartAppRoutes: Object[] = [
     { path: 'chart/area', component: AreaChartComponent, name: 'Area', order:'01',category: 'Series' },
     { path: 'chart/spline', component: SplineChartComponent, name: 'Spline', order:'01',category: 'Series' },
     { path: 'chart/stacked-column', component: StackedColumnChartComponent, name: 'Stacked Column',order:'01', category: 'Series' },
+    { path: 'chart/stacked-column100', component: PercentStackedColumnChartComponent, name: '100% Stacked Column',
+    order: '01', category: 'Series',  type: 'new'},
+    { path: 'chart/range-column', component: RangeColumnChartComponent, name: 'Range Column',order:'01',category: 'Series',  type: 'new'},
     { path: 'chart/stacked-bar', component: StackedBarChartComponent, name: 'Stacked Bar',order:'01', category: 'Series' },
+    { path: 'chart/stacked-bar100', component: PercentStackedBarChartComponent, name: '100% Stacked Bar', order: '01',
+      category: 'Series', type: 'new' },
     { path: 'chart/stacked-area', component: StackedAreaChartComponent, name: 'Stacked Area', order:'01',category: 'Series' },
+    { path: 'chart/stacked-area100', component: PercentStackedAreaChartComponent, name: '100% Stacked Area',order:'01', 
+      category: 'Series',  type: 'new'},
     { path: 'chart/step-line', component: StepLineChartComponent, name: 'StepLine', order:'01',category: 'Series' },
     { path: 'chart/scatter', component: ScatterChartComponent, name: 'Scatter', order:'01',category: 'Series' },
+    { path: 'chart/bubble', component: BubbleChartComponent, name: 'Bubble', order: '01', category:'Series', type: 'new'},
     { path: 'chart/combination-series', component: CombinationSeriesChartComponent,
      name: 'Combination Series', order:'01',category: 'Series' },
     { path: 'chart/performance', component: PerformanceChartComponent, name: 'Performance',order:'01', category: 'Series' },
@@ -73,7 +86,8 @@ let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, Ba
     ScatterChartComponent, CombinationSeriesChartComponent, PerformanceChartComponent, NumericAxisChartComponent,
     CategoryChartComponent, LogarithmicAxisChartComponent, MultipleAxesChartComponent, SymbolsChartComponent, SelectionChartComponent,
     CrosshairChartComponent, TrackBallChartComponent, ZoomingChartComponent, LocalDataChartComponent, RemoteDataChartComponent,
-    DateTimeAxisChartComponent];
+    PercentStackedAreaChartComponent, PercentStackedBarChartComponent, PercentStackedColumnChartComponent, DateTimeAxisChartComponent,
+    BubbleChartComponent, RangeColumnChartComponent];
 @NgModule({
     imports: [chartRouter, ChartModule, SharedModule, ButtonModule],
     exports: [],
@@ -81,7 +95,7 @@ let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, Ba
     providers: [LineSeriesService, AreaSeriesService, DateTimeService, CategoryService, MarkerService, StackingAreaSeriesService,
         TooltipService, CrosshairService, SplineSeriesService, StackingBarSeriesService, StackingColumnSeriesService, ScatterSeriesService,
         StepLineSeriesService, LogarithmicService, BarSeriesService, ColumnSeriesService, ZoomService, SelectionService, LegendService,
-        DataLabelService
+        DataLabelService, BubbleSeriesService, RangeColumnSeriesService
     ]
 })
 export class ChartSampleModule {

@@ -11,7 +11,7 @@ import { textboxesAppRoutes } from '../textboxes/textboxes.module';
 import { tooltipAppRoutes } from '../tooltip/tooltip.module';
 export let samplesList: any = [
     {
-        'name': 'Chart', 'category': 'Datavisualization', 'order': '01', 'path': 'chart', 'samples': chartAppRoutes
+        'name': 'Chart', 'category': 'Datavisualization', 'order': '01', 'path': 'chart', 'samples': chartAppRoutes, 'type': 'update'
     },
     {
         'name': 'Grid', 'category': 'Grids', 'order': '02', 'path': 'grid', 'samples': gridRouteConfig, 'type': 'update'

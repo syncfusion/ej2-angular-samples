@@ -1,0 +1,31 @@
+<div class="control-section">
+    <div>
+        <ej-chart style='display:block;' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='StackingArea100' xName='x' yName='y' name='Organic'> </e-series>
+                <e-series [dataSource]='data1' type='StackingArea100' xName='x' yName='y' name='Fair-trade'> </e-series>
+                <e-series [dataSource]='data2' type='StackingArea100' xName='x' yName='y' name='Veg Alternatives'> </e-series>
+                <e-series [dataSource]='data3' type='StackingArea100' xName='x' yName='y' name='Others'> </e-series>
+            </e-series-collection>
+        </ej-chart>
+    </div>
+    <div style="float: right;margin-right: 10px; margin-top: -5px">Source:
+        <a href="https://www.gov.uk/" target="_blank">www.gov.uk</a>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the 100% stacking area type charts. You can use <code>fill</code> properties to customize the 100% stacking area.        
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use 100% stacked area series, we need to
+        inject
+        <code>StackingAreaService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information on the 100% stacked area series can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#stackingareaseriesmodule-stackingareaseries">documentation section</a>.
+    </p>
+</div>

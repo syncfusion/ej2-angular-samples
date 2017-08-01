@@ -1,0 +1,28 @@
+<div class="control-section">
+  <ej-chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
+    [tooltip]='tooltip'>
+    <e-series-collection>
+      <e-series [dataSource]='data' type='StackingBar100' xName='x' yName='y' name='Apple'> </e-series>
+      <e-series [dataSource]='data' type='StackingBar100' xName='x' yName='y1' name='Orange'> </e-series>
+      <e-series [dataSource]='data' type='StackingBar100' xName='x' yName='y2' name='Wastage'> </e-series>
+    </e-series-collection>
+    </ej-chart>
+</div>
+<div id="description">
+  <p>
+    In this example, you can see how to render and configure the 100% stacking bar type charts. You can use <code>border</code>,
+    <code>fill</code> properties to customize the vertical bar.
+  </p>
+
+  <br>
+  <p style="font-weight: 500">Injecting Module</p>
+  <p>
+    Chart component features are segregated into individual feature-wise modules. To use 100% stacked bar series, we need to
+    inject
+    <code>StackingBarService</code> into the <code>@NgModule.providers</code> section.
+  </p>
+  <p>
+    More information on the 100% stacked bar series can be found in this
+    <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#stackingbarseriesmodule-stackingbarseries">documentation section</a>.
+  </p>
+</div>
