@@ -23,7 +23,6 @@ export class RTLDialogComponent {
     public hide: any;
     ngAfterViewInit():void{
         document.getElementById('rtlbtn').focus();
-        this.rtlDialog.show();
     }
     dialogClose() {
         document.getElementById('rtlbtn').style.display = '';

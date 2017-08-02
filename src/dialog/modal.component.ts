@@ -21,7 +21,6 @@ export class ModalDialogComponent {
     public hide: any;
     ngAfterViewInit():void{
         document.getElementById('modalbtn').focus();
-        this.modalDialog.show();
     }
     modalBtnClick() {
         this.modalDialog.show();

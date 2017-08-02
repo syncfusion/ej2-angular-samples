@@ -26,7 +26,6 @@ export class AjaxDialogComponent implements OnInit{
     }
     ngAfterViewInit():void{
         document.getElementById('ajaxBtn').focus();
-        this.dialog.show();
     }
     public header: string = 'Twitter';
     public content: string = this.ajaxData;

@@ -5,15 +5,15 @@
 
     <button ej-button class='dlgbtn' #promptButton (click)="promptBtnClick()">Prompt</button>
 
-    <ej-dialog #alertDialog [buttons]='alertDlgButtons' [header]='alertHeader' [animationSettings]='animationSettings' [content]='alertContent' [showCloseIcon]='showCloseIcon' (open)="dialogOpen()" (close)="dialogClose()" [target]='target'
+    <ej-dialog #alertDialog [buttons]='alertDlgButtons' [visible]='visible' [header]='alertHeader' [animationSettings]='animationSettings' [content]='alertContent' [showCloseIcon]='showCloseIcon' (open)="dialogOpen()" (close)="dialogClose()" [target]='target'
         [width]='alertWidth'>
     </ej-dialog>
 
-    <ej-dialog #confirmDialog [buttons]='confirmDlgButtons' [header]='confirmHeader' [animationSettings]='animationSettings' [content]='confirmContent' [showCloseIcon]='confirmCloseIcon' (open)="dialogOpen()" (close)="dialogClose()" [target]='target'
+    <ej-dialog #confirmDialog [buttons]='confirmDlgButtons' [visible]='hidden' [header]='confirmHeader' [animationSettings]='animationSettings' [content]='confirmContent' [showCloseIcon]='confirmCloseIcon' (open)="dialogOpen()" (close)="dialogClose()" [target]='target'
         [width]='confirmWidth'>
     </ej-dialog>
 
-    <ej-dialog #promptDialog [buttons]='promptDlgButtons' [header]='promptHeader' [animationSettings]='animationSettings' [showCloseIcon]='showCloseIcon' [target]='target' (open)="dialogOpen()" (close)="dialogClose()" [width]='promptWidth'>
+    <ej-dialog #promptDialog [buttons]='promptDlgButtons' [visible]='hidden' [header]='promptHeader' [animationSettings]='animationSettings' [showCloseIcon]='showCloseIcon' [target]='target' (open)="dialogOpen()" (close)="dialogClose()" [width]='promptWidth'>
         <table style="border-collapse: separate;border-spacing: 10px;width:100%;padding: 0px 20px 20px;">
             <tr>
                 <td>SSID:</td>

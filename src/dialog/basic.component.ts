@@ -21,6 +21,8 @@ export class DefaultDialogComponent {
     public alertContent: string = '10% of battery remaining';
     public confirmContent: string = '<span>Are you sure you want to permanently delete all of these items?</span>';
     public showCloseIcon: Boolean = false;
+    public visible: Boolean = true;
+    public hidden: Boolean = false;
     public confirmCloseIcon: Boolean = true;
     public target: string = '.control-section';
     public alertWidth: string = '250px';
@@ -30,7 +32,6 @@ export class DefaultDialogComponent {
     public hide: any;
     ngAfterViewInit():void{
         document.getElementById('alertbtn').focus();
-        this.alertDialog.show();
         document.getElementById('password').addEventListener("focus", function () {
             this.parentElement.classList.add('e-input-focus');
         });
