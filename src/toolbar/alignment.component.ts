@@ -8,7 +8,7 @@ ele = ele + '<div class="e-mail-id">user@example.com</div></div>';
 @Component({
     selector: 'control-content',
     templateUrl: 'alignment.html',
-    styleUrls: ['alignment.component.css'],
+    styleUrls: ['toolbar.component.css'],
     encapsulation: ViewEncapsulation.None
 })
 export class AlignToolbarComponent {
