@@ -1,17 +1,14 @@
 <div class="control-section">
     <div class="col-lg-8 content-wrapper">
         <div class="content">
-           <div>
-            <div class="control-label">Numeric TextBox</div>
-            <ej-numerictextbox [value]="numericValue" [locale]="locale" ></ej-numerictextbox>
+        <div class="wrapper">
+            <ej-numerictextbox #numeric [value]="numericValue" placeholder="Geben Sie den Wert ein" [locale]="locale" ></ej-numerictextbox>
         </div>
-        <div>
-            <div class="control-label">Percentage TextBox</div>
-            <ej-numerictextbox format="p2" [value]="percentValue" [min]="min" [max]="max" [step]="step" [locale]="locale"></ej-numerictextbox>
+        <div class="wrapper">
+            <ej-numerictextbox #percentage format="p2" placeholder="Geben Sie den Prozentsatz ein" [value]="percentValue" [min]="min" [max]="max" [step]="step" [locale]="locale"></ej-numerictextbox>
         </div>
-        <div>
-            <div class="control-label">Currency TextBox</div>
-            <ej-numerictextbox format="c2" [value]="currencyValue" [locale]="locale" [currency]="currency" ></ej-numerictextbox>
+        <div class='wrapper'>
+            <ej-numerictextbox #currencyTextBox format="c2" placeholder="Geben Sie die Währung ein" [value]="currencyValue" [locale]="locale" [currency]="currency" ></ej-numerictextbox>
         </div>
       </div>
     </div>
@@ -58,10 +55,8 @@
         padding: 20px 0px;
     }
 
-    .control-label {
-        padding: 24px 0px 0px 0px;
-        font-size: 12px;
-        opacity: 0.54;
+    .wrapper {
+        margin-top: 40px;
     }
 
 </style>

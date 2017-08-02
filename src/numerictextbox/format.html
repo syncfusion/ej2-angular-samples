@@ -1,15 +1,12 @@
 <div class="control-section">
     <div class="content-wrapper">
-        <div>
-            <div class="control-label">Kilometers</div>
+        <div class="wrapper">
             <ej-numerictextbox placeholder="Enter the distance" value="250" format="###.### km" min="0"></ej-numerictextbox>
         </div>
-        <div>
-            <div class="control-label">Service Tax</div>
+        <div class="wrapper">
             <ej-numerictextbox placeholder="Enter the tax" value="25" format="### '%'" min="0" max="100"></ej-numerictextbox>
         </div>
-        <div>
-            <div class="control-label">Fare</div>
+        <div class="wrapper">
             <ej-numerictextbox placeholder="Enter the amount" value="1025" format="$ ###.##" min="0"></ej-numerictextbox>
         </div>
     </div>
@@ -28,10 +25,9 @@
         margin: 0 auto;
         min-width: 185px;
     }
-    
-    .control-label {
-        padding: 24px 0px 0px 0px;
-        font-size: 12px;
-        opacity: 0.54;
+
+    .wrapper {
+        margin-top: 40px;
     }
+      
 </style>
