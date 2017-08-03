@@ -33,7 +33,7 @@ export class SpecialCalendarComponent {
         }
     }
     onValueChange(args: any) {
-        let title: string = (<HTMLElement>event.currentTarget).querySelector(".e-link").getAttribute('data-val');
+        let title: string = (<HTMLElement>event.currentTarget).querySelector(".e-day").getAttribute('data-val');
         title = title == null ? "" : " ( "+title+" )";
         (<HTMLInputElement>document.getElementById('selected')).textContent = 'Selected Value: ' + args.value.toLocaleDateString() + title;
     }
