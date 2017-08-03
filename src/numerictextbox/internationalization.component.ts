@@ -1,18 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { loadCldr, L10n } from '@syncfusion/ej2-base';
-import { NumericTextBoxComponent } from '@syncfusion/ej2-ng-inputs';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'internationalization.html',
 })
 export class InternationalizationController {
-    @ViewChild('numeric')
-    public numeric: NumericTextBoxComponent;
-    @ViewChild('percentage')
-    public percentage: NumericTextBoxComponent;
-    @ViewChild('currencyTextBox')
-    public currencyTextBox: NumericTextBoxComponent;    
     locale: string = 'de';
     currency: string = 'EUR';
     numericValue: number = 10;
@@ -25,17 +18,20 @@ export class InternationalizationController {
          L10n.load({
             'en': {
                 'numerictextbox': {
-                    incrementTitle: 'Increment value', decrementTitle: 'Decrement value'
+                    incrementTitle: 'Increment value', decrementTitle: 'Decrement value',
+                    placeholder: 'Enter the value'
                 }
             },
             'de': {
                 'numerictextbox': {
-                    incrementTitle: 'Wert erhöhen', decrementTitle: 'Dekrementwert'
+                    incrementTitle: 'Wert erhöhen', decrementTitle: 'Dekrementwert',
+                    placeholder: 'Geben Sie den Wert ein'
                 }
             },
             'zh': {
                 'numerictextbox': {
-                    incrementTitle: '增值', decrementTitle: '遞減值'
+                    incrementTitle: '增值', decrementTitle: '遞減值',
+                    placeholder: '輸入值'
                 }
             }
         });
@@ -53,19 +49,10 @@ export class InternationalizationController {
         this.locale = culture;
         if (culture === 'zh') {
             this.currency = 'CNY';
-            this.numeric.placeholder = '输入值';
-            this.currencyTextBox.placeholder = '输入货币';
-            this.percentage.placeholder = '输入百分比';
         } else if (culture === 'de') {
             this.currency = 'EUR';
-            this.numeric.placeholder = 'Geben Sie den Wert ein';
-            this.currencyTextBox.placeholder = 'Geben Sie die Währung ein';
-            this.percentage.placeholder = 'Geben Sie den Prozentsatz ein';
         } else {
             this.currency = 'USD';
-            this.numeric.placeholder = 'Enter the value';
-            this.currencyTextBox.placeholder = 'Enter the currency';
-            this.percentage.placeholder = 'Enter the percentage';
         }
     }
     constructor() { }
