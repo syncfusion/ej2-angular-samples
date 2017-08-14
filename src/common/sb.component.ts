@@ -294,6 +294,33 @@ export class SBController {
         document.body.classList.remove('sb-overlay');
         document.querySelector('.sb-loading').classList.add('hidden');
     }
+    getStringWithOutDescription(code: string): string {
+        let lines: string[] = code.split('\n');
+        let desStartLine: number = null;
+        let desEndLine: number = null;
+        let desInsideDivCnt: number = 0;
+        for (let i: number = 0; i < lines.length; i++) {
+            let curLine: string = lines[i];
+            if (desStartLine) {
+                if (/<div/g.test(curLine)) {
+                    desInsideDivCnt = desInsideDivCnt + 1;
+                }
+                if (desInsideDivCnt && /<\/div>/g.test(curLine)) {
+                    desInsideDivCnt = desInsideDivCnt - 1;
+                } else if (!desEndLine && /<\/div>/g.test(curLine)) {
+                    desEndLine = i + 1;
+                }
+            }
+            if (/description/g.test(curLine)) {
+                desStartLine = i;
+            }
+        }
+        if (desEndLine && desStartLine) {
+            lines.splice(desStartLine, desEndLine - desStartLine);
+        }
+        return lines.join('\n');
+    }
+
     updateTabs(data: any, type: string, fileName: string, isInitial?: boolean): void {
         let hele: Element = document.getElementById('source-nav-tab');
         let hcontent: Element = document.getElementById('source-content');
@@ -311,12 +338,7 @@ export class SBController {
         cont = cont.replace(idRegex, fileName);
         cont = cont.replace('{3}', type);
         if (type === 'xml') {
-            let htmlCode: HTMLElement = createElement('div', { innerHTML: iContent });
-            let description: Element = htmlCode.querySelector('#description');
-            if (description) {
-                detach(description);
-            }
-            iContent = htmlCode.innerHTML;
+            iContent = this.getStringWithOutDescription(iContent);
             iContent = iContent.replace(/&/g, '&amp;')
                 .replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         }
