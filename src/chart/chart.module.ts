@@ -4,14 +4,7 @@
 import { NgModule, ModuleWithProviders, Type } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ButtonModule } from '@syncfusion/ej2-ng-buttons';
-
-import {
-    ChartModule, LineSeriesService,
-     CategoryService, SplineSeriesService,  AreaSeriesService, DateTimeService, MarkerService, StackingAreaSeriesService,
-      StackingBarSeriesService, StackingColumnSeriesService, ScatterSeriesService, StepLineSeriesService,
-     LogarithmicService, BarSeriesService, ColumnSeriesService, TooltipService, CrosshairService,
-    ZoomService, SelectionService, LegendService, DataLabelService, BubbleSeriesService, RangeColumnSeriesService
-} from '@syncfusion/ej2-ng-charts';
+import { ChartAllModule } from '@syncfusion/ej2-ng-charts';
 
 import { LineChartComponent } from './line.component';
 import { AreaChartComponent } from './area.component';
@@ -89,14 +82,10 @@ let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, Ba
     PercentStackedAreaChartComponent, PercentStackedBarChartComponent, PercentStackedColumnChartComponent, DateTimeAxisChartComponent,
     BubbleChartComponent, RangeColumnChartComponent];
 @NgModule({
-    imports: [chartRouter, ChartModule, SharedModule, ButtonModule],
+    imports: [chartRouter, ChartAllModule, SharedModule, ButtonModule],
     exports: [],
     declarations: declarations,
-    providers: [LineSeriesService, AreaSeriesService, DateTimeService, CategoryService, MarkerService, StackingAreaSeriesService,
-        TooltipService, CrosshairService, SplineSeriesService, StackingBarSeriesService, StackingColumnSeriesService, ScatterSeriesService,
-        StepLineSeriesService, LogarithmicService, BarSeriesService, ColumnSeriesService, ZoomService, SelectionService, LegendService,
-        DataLabelService, BubbleSeriesService, RangeColumnSeriesService
-    ]
+    providers: [ChartAllModule]
 })
 export class ChartSampleModule {
 }

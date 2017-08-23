@@ -4,6 +4,7 @@ import { listAppRoutes } from '../listview/listview.module';
 import { gridRouteConfig } from '../grid/grid.module';
 import { toolbarAppRoutes } from '../toolbar/toolbar.module';
 import { numericAppRoutes } from '../numerictextbox/numericTextBox.module';
+import { dropdownlistAppRoutes } from '../dropdownlist/dropdownlist.module';
 import { calendarAppRoutes } from '../calendar/calendar.module';
 import { chartAppRoutes } from '../chart/chart.module';
 import { dialogAppRoutes } from '../dialog/dialog.module';
@@ -24,6 +25,9 @@ export let samplesList: any = [
     },
     {
         'name': 'Calendar', 'category': 'Editors', 'order': '03', 'path': 'calendar', 'samples': calendarAppRoutes
+    },
+    {
+        'name': 'DropDownList', 'category': 'Editors', 'order': '03', 'path': 'dropdownlist', 'samples': dropdownlistAppRoutes, 'type': 'new'
     },
     {
         'name': 'NumericTextBox', 'category': 'Editors', 'order': '03', 'path': 'numerictextbox', 'samples': numericAppRoutes

@@ -1,0 +1,25 @@
+.e-input-group .e-spinner-icon {
+    background-image: url(./styles/images/Medium-36px-spin.gif) !important;
+    background-size: 12px 12px !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+}
+
+.e-input-group .e-spinner-icon::before {
+    content: '';
+}
+
+.e-bigger .e-ddl-device .e-spinner-icon {
+    background-image: url(./styles/images/Medium-36px-spin.gif) !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: 30px 30px !important;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    position: absolute;
+    top: 25%;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+}

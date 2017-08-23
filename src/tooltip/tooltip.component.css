@@ -85,6 +85,8 @@
 }
 
 .e-tooltip-wrap .logo {
+    border: 0;
+    box-sizing: border-box;
     padding-right: 6px;
     height: 16px;
     width: 22px;
@@ -125,7 +127,7 @@
 #demoSmart {
     width: 100px;
     height: 100px;
-    background-image: url('./src/tooltip/images/smartposition.png');
+    background-image: url('http://ej2.syncfusion.com/demos/src/tooltip/images/smartposition.png');
     background-size: 100px 100px;
     position: absolute;
     left: calc( 50% - 50px);

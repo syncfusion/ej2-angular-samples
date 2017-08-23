@@ -1,0 +1,17 @@
+<div class="control-section">
+    <div class='control-wrapper' style='width: 250px; margin: 0 auto'>
+        <div style='padding-top: 35px;'>
+            <ej-dropdownlist #countryList id='countryList' [dataSource]='country' [fields]='countryFields' (change)='onChange1()' [placeholder]='countryWaterMark'></ej-dropdownlist>
+        </div>
+        <div style='padding-top: 35px;'>
+            <ej-dropdownlist #stateList id='stateList' [dataSource]='state' [fields]='stateFields' (change)='onChange2()' [placeholder]='stateWaterMark' [enabled]='false'></ej-dropdownlist>
+        </div>
+        <div style='padding-top: 35px;'>
+            <ej-dropdownlist #cityList id='cityList' [dataSource]='cities' [fields]='cityFields' [placeholder]='cityWaterMark' [enabled]='false'></ej-dropdownlist>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>The <code>Cascading</code> DropDownList is a series of dependent DropDownList components, in which data of one DropDownList will load based on its parent DropDownList selected value. This can achieved by using <code>change</code> event of parent DropDownList.</p>
+    <p>In this sample, if a country is selected from countries DropDownList, then respective states will load in second DropDownList and the same has done between states and cities DropDownList.</p>
+</div>

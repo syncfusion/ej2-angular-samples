@@ -1,0 +1,31 @@
+<div class="control-section">
+    <div id='content' style="margin: 0px auto; width:250px; padding-top: 40px;">
+        <ej-dropdownlist id='dropdownlist-template' [dataSource]='data' [fields]='fields' [popupHeight]='height' [placeholder]='watermark'>
+            <template #headerTemplate>
+                <div class="head"> <span class="photo">Photo</span> <span style="margin-left:15px;">Employee Info</span></div>
+            </template>
+            <template #itemTemplate let-data>
+                <div><img class="empImage" src="src/dropdownlist/Employees/{{data.eimg}}.png" alt="employee" />
+                    <div class="ename"> {{data.name}} </div>
+                    <div class="job"> {{data.job}} </div>
+                </div>
+            </template>
+            <template #valueTemplate let-data>
+                <div><img class="valueTemp" src="src/dropdownlist/Employees/{{data.eimg}}.png" height="26px" width="26px" alt="employee" />
+                    <div class="name"> {{data.name}} </div>
+                </div>
+            </template>
+        </ej-dropdownlist>
+
+    </div>
+</div>
+
+<div id="description">
+    <p>The DropDownList component provides a way to use a custom layout for its items and selected value which is shown in input using <code>template</code> feature.</p>
+    <p>In this sample, used below list of templates in DropDownList</p>
+    <ul>
+        <li><code>ItemTemplate</code> - To customize the list item's content.</li>
+        <li><code>ValueTemplate</code> - To customize the value element content which holds the selected item's text.</li>
+        <li><code>HeaderTemplate</code> - To customize the header element.</li>
+    </ul>
+</div>

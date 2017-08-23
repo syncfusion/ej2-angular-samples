@@ -1,0 +1,34 @@
+<div class="control-section">
+    <div class="col-lg-9  content-wrapper" style="height: 350px">
+        <div style="margin: 0px auto; width:250px; padding-top: 40px;">
+            <ej-dropdownlist id='sample-list' #sample [dataSource]='sportsData' (change)='onChange($event)' [value]='value' [fields]='fields' [placeholder]='waterMark' [popupHeight]='height'></ej-dropdownlist>
+        </div>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties" style="width: 100%; margin:10px">
+                    <tr>
+                        <td style="padding:5px; width:25%">Value</td>
+                        <td>:<span id='value' style='padding-left:10px'>Game3</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:5px; width:25%">Text</td>
+                        <td>:<span id='text' style='padding-left:10px'>Basketball</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:5px; width:25%">Index</td>
+                        <td>:<span id='index' style='padding-left:10px'>2</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>The <code>DropDownList</code> component contains a list of predefined values, from which the user can choose a single value. </p>
+    <p>The default sample illustrate the use of DropDownList that allowing end-users to select an item from <code>options</code> list and the selected item's <code>value</code>, <code>text</code> and <code>index</code> property values are displayed in the
+        property panel.
+    </p>
+</div>

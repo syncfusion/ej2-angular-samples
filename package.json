@@ -23,6 +23,7 @@
 		"@syncfusion/ej2-ng-lists": "*",
 		"@syncfusion/ej2-ng-grids": "*",
 		"@syncfusion/ej2-ng-charts": "*",
+		"@syncfusion/ej2-ng-dropdowns": "*",
 		"@syncfusion/ej2-ng-calendars": "*",
 		"@syncfusion/ej2-ng-navigations": "*",
 		"@syncfusion/ej2-ng-inputs": "*",

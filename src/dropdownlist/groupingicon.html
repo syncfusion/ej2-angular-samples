@@ -1,0 +1,25 @@
+<div class="control-section">
+    <div class="content-wrapper">
+        <div id='group' class='col-lg-6'>
+            <div class="content">
+                <h4>Grouping</h4>
+                <ej-dropdownlist #grouping id='grouping' [dataSource]='vegetableData' [placeholder]='groupWaterMark' [fields]='groupFields' [popupHeight]='height'></ej-dropdownlist>
+            </div>
+        </div>
+        <div id='icon' class='col-lg-6'>
+            <div class="content">
+                <h4> Icons</h4>
+                <ej-dropdownlist #icon id='icons' [dataSource]='socialMediaData' [placeholder]='iconWaterMark' [fields]='iconFields' [popupHeight]='height'></ej-dropdownlist>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>The DropDownList allows to grouping the relevant items under a corresponding category by mapping the <code>groupBy</code> field, and allows to load the list items with icons.</p>
+
+    <p>The grouping sample illustrates how the vegetables are grouped based on its category.</p>
+
+    <p>The 2nd DropDownList is populated with icons which renders by mapping the <code>iconCss</code> field.</p>
+
+</div>
