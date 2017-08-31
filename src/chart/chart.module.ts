@@ -80,7 +80,7 @@ export const chartAppRoutes: Object[] = [
         category: 'Accumulation Series', type: 'new'
     },
     {
-        path: 'chart/clubpoint', component: ClubpointPieComponent, name: 'ClubPoint', order: '02',
+        path: 'chart/clubpoint', component: ClubpointPieComponent, name: 'Grouping', order: '02',
         category: 'Accumulation Series', type: 'new'
     },
     { path: 'chart/local-data', component: LocalDataChartComponent, name: 'Local Data', order:'03',category: 'Data Binding' },
