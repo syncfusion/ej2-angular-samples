@@ -37,7 +37,7 @@ export let samplesList: any = [
         'name': 'NumericTextBox', 'category': 'Editors', 'order': '03', 'path': 'numerictextbox', 'samples': numericAppRoutes
     },
     {
-        'name': 'TextBoxes', 'category': 'Editors', 'order': '03', 'path': 'inputboxes', 'samples': textboxesAppRoutes
+        'name': 'TextBoxes', 'category': 'Editors', 'order': '03', 'path': 'inputboxes', 'samples': textboxesAppRoutes , 'type': 'update'
     },
     {
         'name': 'ListView', 'category': 'Layout', 'order': '04', 'path': 'listview', 'samples': listAppRoutes

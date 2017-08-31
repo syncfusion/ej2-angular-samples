@@ -1,9 +1,9 @@
 <div class="col-lg-12 control-section">
     <div class="content-wrapper">
-        <div class="row" style="padding: 10px 0px 0px">
+        <div class="row">
             <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6"><b>Floating Label</b></div>
         </div>
-        <div class="row" style="padding: 5px 0px">
+        <div class="row">
             <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
                 <div class="e-float-input">
                     <input type="text" required>
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="padding: 5px 0px">
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
                 <div class="e-float-input e-input-group">
                     <input type="text" required (focus)="focusIn($event.target)" (blur)="focusOut($event.target)">
@@ -145,10 +145,11 @@ Washington.</textarea>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
-                <div class="e-input-group">
+                <div class="e-input-group e-float-icon-left">
                     <span class="e-input-group-icon e-input-picture" (mouseup)="onMouseUp($event.target)" (mousedown)="onMouseDown($event.target)"></span>
-                    <input class="e-input" type="text" placeholder="Upload Picture" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"
-                    />
+                    <div class="e-input-in-wrap">
+                      <input class="e-input" type="text" placeholder="Upload Picture" (focus)="focusInLeft($event.target)" (blur)="focusOutLeft($event.target)"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -245,58 +246,3 @@ Washington.</textarea>
     </table>
     <br>
 </div>
-<style>
-    .e-input-picture:before {
-        content: '\e7b3';
-        font-family: e-icons;
-    }
-    
-    .e-input-calendar:before {
-        content: '\e7b5';
-        font-family: e-icons;
-    }
-    
-    .content-wrapper {
-        width: 90%;
-        margin: 0 auto;
-        min-width: 185px;
-    }
-    
-    .content-wrapper div.row {
-        padding: 15px 0px;
-    }
-    
-    .e-input-group.e-small {
-        padding-top: 5px;
-    }
-    
-    .control-label {
-        padding: 24px 0px 0px 0px;
-        font-size: 12px;
-        opacity: 0.54;
-    }
-    
-    @media only screen and (max-width: 480px) {
-        .content-wrapper,
-        {
-            width: 92%;
-        }
-        .col-xs-6,
-        .col-xs-4,
-        .col-xs-12 {
-            padding: 10px 5px;
-            width: 100%;
-        }
-        .content-wrapper div.row {
-            padding: 0px;
-        }
-    }
-    
-    #description {
-        float: left;
-    }
-    
-    #description td {
-        vertical-align: top;
-    }
-</style>

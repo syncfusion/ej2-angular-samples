@@ -1,0 +1,53 @@
+  .e-input-picture:before {
+    content: '\e7b3';
+    font-family: e-icons;
+  }
+
+  .e-input-calendar:before {
+    content: "";
+    font-family: e-icons;
+    font-size: 13px;
+  }
+
+  .content-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    min-width: 185px;
+  }
+
+  .content-wrapper div.row {
+    padding: 15px 0px;
+  }
+
+  .e-input-group.e-small {
+    padding-top: 5px;
+  }
+    
+  .control-label {
+    padding: 24px 0px 0px 0px;
+    font-size: 12px;
+    opacity: 0.54;
+  }
+    
+  @media only screen and (max-width: 480px) {
+    .content-wrapper {
+      width: 92%;
+    }
+    .col-xs-6,
+    .col-xs-4,
+    .col-xs-12 {
+      padding: 10px 5px;
+      width: 100%;
+    }
+    .content-wrapper div.row {
+      padding: 0px;
+    }
+  }
+    
+  #description {
+    float: left;
+  }
+    
+  #description td {
+    vertical-align: top;
+  }
