@@ -28,6 +28,7 @@ import { ColumnTemplateComponent } from './columntemplate.component';
 import { RowTemplateComponent } from './rowtemplate.component';
 import { DetailTemplateComponent } from './detailtemplate.component';
 import { HierarchyComponent } from './hierarchy.component';
+import { VirtualizationComponent } from './virtualization.component';
 import { SharedModule } from '../common/shared.module';
 
 export const gridRouteConfig: Object[] = [
@@ -37,36 +38,50 @@ export const gridRouteConfig: Object[] = [
     { 'path': 'grid/filtering', component: FilterComponent, name: 'Filtering', order: '01', category: 'Grid' },
     { 'path': 'grid/grouping', component: GroupComponent, name: 'Grouping', order: '01', category: 'Grid' },
     { 'path': 'grid/sorting', component: SortComponent, name: 'Sorting', order: '01', category: 'Grid' },
-    { 'path': 'grid/scrolling', component: ScrollComponent, name: 'Scrolling', order: '01', category: 'Grid' },
     { 'path': 'grid/searching', component: SearchComponent, name: 'Searching', order: '01', category: 'Grid' },
     { 'path': 'grid/masterdetail', component: MasterComponent, name: 'Master/Detail', order: '01', category: 'Grid' },
-    { 'path': 'grid/draganddrop', component: DragAndDropComponent, name: 'Row Drag And Drop', order: '01', category: 'Grid',
-    hideOnDevice: true },
+    {
+        'path': 'grid/draganddrop', component: DragAndDropComponent, name: 'Row Drag And Drop', order: '01', category: 'Grid',
+        hideOnDevice: true
+    },
     { 'path': 'grid/localdata', component: LocalDataComponent, 'name': 'Local Binding', order: '02', category: 'Data Binding' },
     { 'path': 'grid/remotedata', component: DataBindingComponent, 'name': 'Remote Binding', order: '02', category: 'Data Binding' },
-    { 'path': 'grid/column/showhide', component: ShowHideComponent, 'name': 'Show Hide Column',  order: '03', category: 'Column' },
+    { 'path': 'grid/column/showhide', component: ShowHideComponent, 'name': 'Show Hide Column', order: '03', category: 'Column' },
     { 'path': 'grid/column/stackedheader', component: StackedHeaderComponent, name: 'Stacked Header', order: '03', category: 'Column' },
-    { 'path': 'grid/column/autowrap', component: AutoWrapComponent, name: 'AutoWrap Column cells',  order: '03', category: 'Column' },
+    { 'path': 'grid/column/autowrap', component: AutoWrapComponent, name: 'AutoWrap Column cells', order: '03', category: 'Column' },
     { 'path': 'grid/column/reorder', component: ReorderComponent, name: 'Reorder Columns', order: '03', category: 'Column' },
     { 'path': 'grid/selection', component: SelectionComponent, name: 'Default Selection', order: '04', category: 'Selection' },
-    { 'path': 'grid/selectionapi', component: SelectionApiComponent, name: 'Selection API', order: '04', category: 'Selection'},
-    { 'path': 'grid/aggregatedefault', component: AggregateComponent, name: 'Default Aggregate', order: '05', category: 'Aggregate', 
-    type: 'new' },
-    { 'path': 'grid/aggregategroup', component: AggregateGroupComponent,
-    name: 'Group and Caption aggregate', order: '05', category: 'Aggregate', type: 'new' },
-    { 'path': 'grid/columntemplate', component: ColumnTemplateComponent, name: 'Column Template', order: '03',
-    category: 'Column', type: 'new'},
-    { 'path': 'grid/rowtemplate', component: RowTemplateComponent, name: 'Row Template', order: '01', category: 'Grid', type: 'new'},
-    { 'path': 'grid/detailtemplate', component: DetailTemplateComponent, name: 'Detail Template', order: '01',
-    category: 'Grid', type: 'new'},
-    { 'path': 'grid/hierarchy', component: HierarchyComponent, name: 'Hierarchy', order: '01', category: 'Grid', type: 'new'}
+    { 'path': 'grid/selectionapi', component: SelectionApiComponent, name: 'Selection API', order: '04', category: 'Selection' },
+    {
+        'path': 'grid/aggregatedefault', component: AggregateComponent, name: 'Default Aggregate', order: '05', category: 'Aggregate',
+        type: 'update'
+    },
+    {
+        'path': 'grid/aggregategroup', component: AggregateGroupComponent,
+        name: 'Group and Caption aggregate', order: '05', category: 'Aggregate', type: 'update'
+    },
+    {
+        'path': 'grid/columntemplate', component: ColumnTemplateComponent, name: 'Column Template', order: '03',
+        category: 'Column', type: 'update'
+    },
+    { 'path': 'grid/rowtemplate', component: RowTemplateComponent, name: 'Row Template', order: '01', category: 'Grid', type: 'update' },
+    {
+        'path': 'grid/detailtemplate', component: DetailTemplateComponent, name: 'Detail Template', order: '01',
+        category: 'Grid', type: 'update'
+    },
+    { 'path': 'grid/hierarchy', component: HierarchyComponent, name: 'Hierarchy Grid', order: '01', category: 'Grid', type: 'new' },
+    { 'path': 'grid/scrolling', component: ScrollComponent, name: 'Default Scrolling', order: '06', category: 'Scrolling' },
+    {
+        'path': 'grid/virtualization', component: VirtualizationComponent, name: 'Virtual Scrolling', order: '06',
+        category: 'Scrolling', type: 'new'
+    }
 ];
 
 let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     LocalDataComponent, DataBindingComponent, ShowHideComponent, MasterComponent, DetailComponent, ReorderComponent,
     GroupComponent, StackedHeaderComponent, AutoWrapComponent, SortComponent, PageComponent, FilterComponent, SelectionComponent,
     ScrollComponent, SearchComponent, SelectionApiComponent, DragAndDropComponent, AggregateComponent, AggregateGroupComponent,
-    RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent];
+    RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent, VirtualizationComponent];
 
 @NgModule({
     imports: [RouterModule.forChild(gridRouteConfig), CommonModule, HttpModule, ToolbarModule, GridAllModule, SharedModule],
