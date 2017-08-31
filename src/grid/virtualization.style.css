@@ -1,0 +1,22 @@
+.image {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-image: url('src/grid/images/spinner.gif');
+        background-position: center;
+        width: 16px;
+        height: 35px;
+    }
+
+    .e-bigger .image {
+        height: 48px;
+    }
+    
+    #popup {
+        position: absolute;
+        background-color: transparent;
+        display: none;
+        z-index: 100;
+    }
+    .e-info{
+        margin: 5px 5px 5px 0;
+    }
