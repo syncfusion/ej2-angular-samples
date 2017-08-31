@@ -21,8 +21,31 @@
 #group-list {
     float: right;
 }
-h4 {
+#flat-list h4, #group-list h4 {
     padding-left: 15px;
+}
+.e-listview .e-list-icon {
+    height: 24px;
+    width: 30px;
+}
+#listview {
+    max-width: 500px;
+    margin: auto;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+}
+.folder {
+    background-repeat: no-repeat;
+    background-image: url('http://ej2.syncfusion.com/demos/src/listview/images/file_icons.png');
+    background-position: -5px -465px;
+    background-size: 302%;
+}
+
+.file {
+    background-repeat: no-repeat;
+    background-image: url('http://ej2.syncfusion.com/demos/src/listview/images/file_icons.png');
+    background-position: -5px -151px;
+    background-size: 302%;
 }
 @media (max-width: 590px) {
     #flat-list, #group-list {

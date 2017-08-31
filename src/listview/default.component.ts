@@ -11,16 +11,16 @@ import { Component, Inject } from '@angular/core';
 export class DefaultListViewComponent {
 
     public data: Object[] = [
-        { text: 'Hennessey Venom' },
-        { text: 'Bugatti Chiron' },
-        { text: 'Bugatti Veyron Super Sport' },
-        { text: 'SSC Ultimate Aero' },
-        { text: 'Koenigsegg CCR' },
-        { text: 'McLaren F1' },
-        { text: 'Aston Martin One- 77' },
-        { text: 'Jaguar XJ220' },
-        { text: 'McLaren P1' },
-        { text: 'Ferrari LaFerrari' },
+        { text: 'Hennessey Venom', id: 'list-01' },
+        { text: 'Bugatti Chiron', id: 'list-02' },
+        { text: 'Bugatti Veyron Super Sport', id: 'list-03' },
+        { text: 'SSC Ultimate Aero', id: 'list-04' },
+        { text: 'Koenigsegg CCR', id: 'list-05' },
+        { text: 'McLaren F1', id: 'list-06' },
+        { text: 'Aston Martin One- 77', id: 'list-07' },
+        { text: 'Jaguar XJ220', id: 'list-08' },
+        { text: 'McLaren P1', id: 'list-09' },
+        { text: 'Ferrari LaFerrari', id: 'list-10' },
     ];
 
     public groupData: { [key: string]: Object }[] = [
@@ -78,7 +78,7 @@ export class DefaultListViewComponent {
 
     public fields: Object = { groupBy: 'category' };
 
-constructor(@Inject('sourceFiles') private sourceFiles:any) {
+    constructor(@Inject('sourceFiles') private sourceFiles:any) {
          sourceFiles.files = ['listview.css'];
     }
 

@@ -23,15 +23,11 @@ export class RTLListViewComponent {
         { text: 'ڈنمارک' },
         { text: 'ملائیشیا' },
         { text: 'نیوزی لینڈ' },
-        { text: 'ناروے' },
-        { text: 'سوئٹزر لینڈ' },
-        { text: 'پیرو'},
-        { text: 'میکسیکو'},
-        { text: 'کینیڈا'},
-        { text: 'ایکواڈور'},
-        { text: 'کویت'}
+        { text: 'ناروے' }
     ];
-    public height: string = '400px';
+    
+    public headerTitle: string = 'اسم الدولة';
+    
     constructor(@Inject('sourceFiles') private sourceFiles:any) {
          sourceFiles.files = ['listview.css'];
     }

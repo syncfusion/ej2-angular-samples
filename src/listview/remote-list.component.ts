@@ -11,12 +11,12 @@ import { DataManager, Query, ODataV4Adaptor } from '@syncfusion/ej2-data';
 export class RemoteListViewComponent {
 
     public data: DataManager = new DataManager({
-        url: 'http://services.odata.org/V4/Northwind/Northwind.svc', adaptor: new ODataV4Adaptor
+        url: 'http://services.odata.org/V4/Northwind/Northwind.svc',
+        adaptor: new ODataV4Adaptor
     });
-    public query: Query = new Query().from('Products').select('ProductID,ProductName').take(30);
+    public query: Query = new Query().from('Products').select('ProductID,ProductName').take(10);
     public fields: Object = { id: 'ProductID', text: 'ProductName' };
     public headerTitle: string = 'Products';
-    public height: string = '400px';
 
      constructor(@Inject('sourceFiles') private sourceFiles:any) {
          sourceFiles.files = ['listview.css'];
