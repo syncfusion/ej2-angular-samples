@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { CircularGaugeComponent } from '@syncfusion/ej2-ng-circulargauge';
 import { GaugeDirection, isCompleteAngle } from '@syncfusion/ej2-circulargauge';
+import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
  * multiple axis in gauge
@@ -21,7 +22,7 @@ export class MultipleAxisComponent {
     };
     public majorTicks1: Object = {
         position: 'Inside',
-        width: 2,
+        width: 0.7,
         height: 10,
         color: '#757575'
 
@@ -33,7 +34,7 @@ export class MultipleAxisComponent {
     };
     public minorTicks1: Object = {
         position: 'Inside',
-        width: 2,
+        width: 0.7,
         height: 5,
         color: '#757575'
 
@@ -68,7 +69,35 @@ export class MultipleAxisComponent {
         height: 5,
         color: '#E84011'
     };
+    public axis: DropDownList; public direction: DropDownList;
 
+    ngOnInit(): void {
+        this.axis = new DropDownList({
+            index: 0, width: 110,
+            change: () => {
+                this.axisIndex = +this.axis.value;
+                this.direction.value = this.circulargauge.axes[this.axisIndex].direction;
+                let startAngle: number = this.circulargauge.axes[this.axisIndex].startAngle;
+                let endAngle: number = this.circulargauge.axes[this.axisIndex].endAngle;
+                document.getElementById('start').innerHTML = 'Start Angle <span> &nbsp;&nbsp;&nbsp;' + startAngle;
+                document.getElementById('end').innerHTML = 'End Angle <span> &nbsp;&nbsp;&nbsp;' + endAngle;
+                (<HTMLInputElement>document.getElementById('startAngle')).value = startAngle.toString();
+                (<HTMLInputElement>document.getElementById('endAngle')).value = endAngle.toString();
+            }
+        });
+        this.axis.appendTo('#axisIndex');
+    
+        this.direction = new DropDownList({
+            index: 0, width: 110,
+            change: () => {
+                this.circulargauge.axes[this.axisIndex].direction = <GaugeDirection>this.direction.value.toString();
+                this.circulargauge.axes[0].pointers[0].animation.enable = false;
+                this.circulargauge.axes[1].pointers[0].animation.enable = false;
+                this.circulargauge.refresh();
+            }
+        });
+        this.direction.appendTo('#axisDirection');
+    }
     ngAfterViewInit(): void {
         document.getElementById('axisIndex').onchange = () => {
             this.axisIndex = parseInt((<HTMLInputElement>document.getElementById('axisIndex')).value, 10);

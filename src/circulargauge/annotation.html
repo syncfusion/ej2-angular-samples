@@ -1,7 +1,7 @@
 <div class="control-section">
     <ej-circulargauge id="clock-container" #gauge1 style='display:block;' centerX='45%' (loaded)='loaded($event)' (resized)='resize($event)'>
         <e-axes>
-            <e-axis radius='75%' startAngle=0 endAngle=0 minimum=0 maximum=12 [majorTicks]='majorTicks' [minorTicks]='minorTicks' [lineStyle]='lineStyle'
+            <e-axis [radius]='annotationRadius' startAngle=0 endAngle=0 minimum=0 maximum=12 [majorTicks]='majorTicks' [minorTicks]='minorTicks' [lineStyle]='lineStyle'
                 [labelStyle]='labelStyle'>
                 <e-ranges>
                     <e-range start=0 end=3 color='rgba(29,29,29,0.6)'>

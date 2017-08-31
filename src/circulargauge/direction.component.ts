@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { CircularGaugeComponent } from '@syncfusion/ej2-ng-circulargauge';
 import { IAxisLabelRenderEventArgs } from '@syncfusion/ej2-circulargauge';
+import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
  * multiple axis in gauge
@@ -65,19 +66,31 @@ export class DirectionComponent {
         },
         animation: { enable: false }
     }];
-    ngAfterViewInit(): void {
-        document.getElementById('poiterColor').onchange = () => {
-            let rangeColor: string = (<HTMLInputElement>document.getElementById('poiterColor')).value;
-            this.circulargauge.axes[0].pointers[0].color = rangeColor;
-            this.circulargauge.refresh();
-        };
+    public pointerColor: DropDownList; public labelColor: DropDownList;
+    ngOnInit(): void {
+        this.pointerColor = new DropDownList({
+            index: 0,
+            placeholder: 'Select Range Bar Color',
+            width: 100,
+            change: () => {
+                let rangeColor: string = this.pointerColor.value.toString();
+                this.circulargauge.axes[0].pointers[0].color = rangeColor;
+                this.circulargauge.refresh();
+            }
+        });
+        this.pointerColor.appendTo('#poiterColor');
     
-        document.getElementById('labelColor').onchange = () => {
-            let rangeColor: string = (<HTMLInputElement>document.getElementById('labelColor')).value;
-            this.circulargauge.axes[0].ranges[0].color = rangeColor;
-            this.circulargauge.refresh();
-        };
-
+        this.labelColor = new DropDownList({
+            index: 0,
+            placeholder: 'Select Range Bar Color',
+            width: 100,
+            change: () => {
+                let rangeColor: string = this.labelColor.value.toString();
+                this.circulargauge.axes[0].ranges[0].color = rangeColor;
+                this.circulargauge.refresh();
+            }
+        });
+        this.labelColor.appendTo('#labelColor');
     }
     constructor() {
         // code

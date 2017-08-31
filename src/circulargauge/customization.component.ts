@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { CircularGaugeComponent } from '@syncfusion/ej2-ng-circulargauge';
 import { CircularGauge } from '@syncfusion/ej2-circulargauge';
 import { DynamicDataSerive } from './customization.service';
+import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
  * multiple axis in gauge
@@ -42,7 +43,76 @@ export class CustomizationComponent {
         animation: { duration: 0 },
         pointerWidth: 9,
         cap: { radius: 10, color: '#424242', border: { width: 0 } }
-    }]
+    }];
+    public barColor: DropDownList; public rangeColor: DropDownList; public pointerColor: DropDownList;
+    ngOnInit(): void {
+        this.barColor = new DropDownList({
+            index: 0,
+            width: 100,
+            change: () => {
+                let barColor: string = this.barColor.value.toString();
+                if (!this.isClicked) {
+                    if (this.isUsage) {
+                        this.usageGauge.axes[0].pointers[0].color = barColor;
+                        this.usageGauge.refresh();
+                    } else {
+                        this.randomGauge.axes[0].pointers[0].color = barColor;
+                        this.randomGauge.refresh();
+                    }
+                } else {
+                    this.gauge1.axes[0].pointers[0].color = barColor;
+                    this.gauge1.refresh();
+                    this.randomGauge.axes[0].pointers[0].color = barColor;
+                }
+            }
+        });
+        this.barColor.appendTo('#barColor');
+        this.rangeColor = new DropDownList({
+            index: 0,
+            width: 100,
+            change: () => {
+                let barColor: string = this.rangeColor.value.toString();
+                if (!this.isClicked) {
+                    if (this.isUsage) {
+                        this.usageGauge.axes[0].ranges[0].color = barColor;
+                        this.usageGauge.refresh();
+                    } else {
+                        this.randomGauge.axes[0].ranges[0].color = barColor;
+                        this.randomGauge.refresh();
+                    }
+                } else {
+                    this.gauge1.axes[0].ranges[0].color = barColor;
+                    this.gauge1.refresh();
+                    this.randomGauge.axes[0].ranges[0].color = barColor;
+                }
+            }
+        });
+        this.rangeColor.appendTo('#rangeColor');
+        this.pointerColor = new DropDownList({
+            index: 0,
+            width: 100,
+            change: () => {
+                let barColor: string = this.pointerColor.value.toString();
+                if (!this.isClicked) {
+                    if (!this.isUsage) {
+                        this.randomGauge.axes[0].pointers[1].color = barColor;
+                        this.randomGauge.axes[0].pointers[1].cap.border.color = barColor;
+                        this.randomGauge.axes[0].pointers[1].cap.color = barColor;
+                        this.randomGauge.refresh();
+                    }
+                } else {
+                    this.gauge1.axes[0].pointers[1].color = barColor;
+                    this.gauge1.axes[0].pointers[1].cap.border.color = barColor;
+                    this.gauge1.axes[0].pointers[1].cap.color = barColor;
+                    this.gauge1.refresh();
+                    this.randomGauge.axes[0].pointers[1].color = barColor;
+                    this.randomGauge.axes[0].pointers[1].cap.border.color = barColor;
+                    this.randomGauge.axes[0].pointers[1].cap.color = barColor;
+                }
+            }
+        });
+        this.pointerColor.appendTo('#pointerColor');
+    }
     ngAfterViewInit(): void {
         document.getElementById('usage').onclick = () => {
             if (this.isClicked) {
@@ -54,19 +124,16 @@ export class CustomizationComponent {
             this.usageGauge.appendTo('#customization-container');
             this.isUsage = true;
             let element: HTMLSelectElement = <HTMLSelectElement>document.getElementById('currentValue');
-            let barElement: HTMLSelectElement = <HTMLSelectElement>document.getElementById('barColor');
-            let rangeElement: HTMLSelectElement = <HTMLSelectElement>document.getElementById('rangeColor');
-            let pointerElement: HTMLSelectElement = <HTMLSelectElement>document.getElementById('pointerColor');
             let pointElement: HTMLSelectElement = <HTMLSelectElement>document.getElementById('pointColor');
             element.min = '0.5';
             element.max = '100';
             element.value = this.usageGauge.axes[0].pointers[0].value.toString();
             document.getElementById('currentPointerValue').innerHTML = ' Current Value <span> &nbsp;&nbsp;&nbsp;'
                 + this.usageGauge.axes[0].pointers[0].value + '</span>';
-            barElement.value = this.usageGauge.axes[0].pointers[0].color;
-            rangeElement.value = this.usageGauge.axes[0].ranges[0].color;
-            pointerElement.style.visibility = 'hidden';
-            pointElement.style.visibility = 'hidden';
+            this.barColor.value = this.usageGauge.axes[0].pointers[0].color;
+            this.rangeColor.value = this.usageGauge.axes[0].ranges[0].color;
+            this.pointerColor.enabled = false;
+            pointElement.className = 'e-disabled';
             let currentElement: HTMLSelectElement = <HTMLSelectElement>document.getElementById('usage');
             let existElement: HTMLSelectElement = <HTMLSelectElement>document.getElementById('random');
             currentElement.style.border = '2px solid #E0E0E0';
@@ -86,20 +153,17 @@ export class CustomizationComponent {
             currentElement.style.border = '2px solid #E0E0E0';
             existElement.style.border = '';
             let element: HTMLSelectElement = <HTMLSelectElement>document.getElementById('currentValue');
-            let barElement: HTMLSelectElement = <HTMLSelectElement>document.getElementById('barColor');
-            let rangeElement: HTMLSelectElement = <HTMLSelectElement>document.getElementById('rangeColor');
-            let pointerElement: HTMLSelectElement = <HTMLSelectElement>document.getElementById('pointerColor');
             let pointElement: HTMLSelectElement = <HTMLSelectElement>document.getElementById('pointColor');
-            pointerElement.style.visibility = 'visible';
-            pointElement.style.visibility = 'visible';
+            pointElement.className = 'e-enabled';
+            this.pointerColor.enabled = true;
             element.min = '1000';
             element.max = '2000';
             element.value = this.randomGauge.axes[0].pointers[0].value.toString();
             document.getElementById('currentPointerValue').innerHTML = 'Current Value <span> &nbsp;&nbsp;&nbsp;' +
                 this.randomGauge.axes[0].pointers[0].value + '</span>';
-            barElement.value = this.randomGauge.axes[0].pointers[0].color;
-            rangeElement.value = this.randomGauge.axes[0].ranges[0].color;
-            pointerElement.value = this.randomGauge.axes[0].pointers[1].color;
+            this.barColor.value = this.randomGauge.axes[0].pointers[0].color;
+            this.rangeColor.value = this.randomGauge.axes[0].ranges[0].color;
+            this.pointerColor.value = this.randomGauge.axes[0].pointers[1].color;
         };
 
         document.getElementById('currentValue').onpointermove = document.getElementById('currentValue').ontouchmove =
@@ -125,59 +189,10 @@ export class CustomizationComponent {
                 document.getElementById('currentPointerValue').innerHTML = 'Current Value <span> &nbsp;&nbsp;&nbsp;' + value + '</span>';
             };
 
-        document.getElementById('barColor').onchange = () => {
-            let barColor: string = (<HTMLInputElement>document.getElementById('barColor')).value;
-            if (!this.isClicked) {
-                if (this.isUsage) {
-                    this.usageGauge.axes[0].pointers[0].color = barColor;
-                    this.usageGauge.refresh();
-                } else {
-                    this.randomGauge.axes[0].pointers[0].color = barColor;
-                    this.randomGauge.refresh();
-                }
-            } else {
-                this.gauge1.axes[0].pointers[0].color = barColor;
-                this.gauge1.refresh();
-                this.randomGauge.axes[0].pointers[0].color = barColor;
-            }
-        };
+        
 
-        document.getElementById('rangeColor').onchange = () => {
-            let barColor: string = (<HTMLInputElement>document.getElementById('rangeColor')).value;
-            if (!this.isClicked) {
-                if (this.isUsage) {
-                    this.usageGauge.axes[0].ranges[0].color = barColor;
-                    this.usageGauge.refresh();
-                } else {
-                    this.randomGauge.axes[0].ranges[0].color = barColor;
-                    this.randomGauge.refresh();
-                }
-            } else {
-                this.gauge1.axes[0].ranges[0].color = barColor;
-                this.gauge1.refresh();
-                this.randomGauge.axes[0].ranges[0].color = barColor;
-            }
-        };
-
-        document.getElementById('pointerColor').onchange = () => {
-            let barColor: string = (<HTMLInputElement>document.getElementById('pointerColor')).value;
-            if (!this.isClicked) {
-                if (!this.isUsage) {
-                    this.randomGauge.axes[0].pointers[1].color = barColor;
-                    this.randomGauge.axes[0].pointers[1].cap.border.color = barColor;
-                    this.randomGauge.axes[0].pointers[1].cap.color = barColor;
-                    this.randomGauge.refresh();
-                }
-            } else {
-                this.gauge1.axes[0].pointers[1].color = barColor;
-                this.gauge1.axes[0].pointers[1].cap.border.color = barColor;
-                this.gauge1.axes[0].pointers[1].cap.color = barColor;
-                this.gauge1.refresh();
-                this.randomGauge.axes[0].pointers[1].color = barColor;
-                this.randomGauge.axes[0].pointers[1].cap.border.color = barColor;
-                this.randomGauge.axes[0].pointers[1].cap.color = barColor;
-            }
-        };
+       
+        
     }
     constructor() {
         // code

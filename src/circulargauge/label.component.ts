@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { CircularGaugeComponent } from '@syncfusion/ej2-ng-circulargauge';
 import { Position, TickModel } from '@syncfusion/ej2-circulargauge';
+import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
  * multiple axis in gauge
@@ -32,10 +33,10 @@ export class LabelComponent {
         }
     };
     public majorTicks1: Object = {
-        position: 'Inside', color: '#757575', width: 2, height: 10, interval: 20
+        position: 'Inside', color: 'black', width: 0.7, height: 10, interval: 20
     };
     public minorTicks1: Object = {
-        position: 'Inside', color: '#757575', height: 5, width: 2, interval: 10
+        position: 'Inside', color: 'black', height: 5, width: 0.7, interval: 10
     };
 
     public ranges: Object[] = [{
@@ -43,39 +44,51 @@ export class LabelComponent {
         color: '#8BC34A', radius: '60%'
     }];
     public pointers: Object[] = [];
+    public ticks: DropDownList; public tickPosition: DropDownList; public labelPosition: DropDownList;
+    ngOnInit(): void {
+        this.ticks = new DropDownList({
+            index: 0, width: 100,
+            change: () => {
+                let value: string = this.ticks.value.toString();
+                let tick: TickModel; this.isMajorTicks = value === 'major';
+                if (this.isMajorTicks) {
+                    tick = this.circulargauge.axes[0].majorTicks;
+                } else {
+                    tick = this.circulargauge.axes[0].minorTicks;
+                }
+                this.tickPosition.value = tick.position;
+                (<HTMLInputElement>document.getElementById('tickOffset')).value = tick.offset.toString();
+                (<HTMLInputElement>document.getElementById('tickHeight')).value = tick.height.toString();
+                document.getElementById('offset').innerHTML = 'Tick Offset <span>&nbsp;&nbsp;&nbsp;' + tick.offset;
+                document.getElementById('height').innerHTML = 'Tick Height <span>&nbsp;&nbsp;&nbsp;' + tick.height;
+            }
+        });
+        this.ticks.appendTo('#Ticks');
+    
+        this.tickPosition = new DropDownList({
+            index: 0, width: 100,
+            change: () => {
+                let value: string = this.tickPosition.value.toString();
+                if (this.isMajorTicks) {
+                    this.circulargauge.axes[0].majorTicks.position = <Position>value;
+                } else {
+                    this.circulargauge.axes[0].minorTicks.position = <Position>value;
+                }
+                this.circulargauge.refresh();
+            }
+        });
+        this.tickPosition.appendTo('#tickposition');
+    
+        this.labelPosition = new DropDownList({
+            index: 0, width: 100,
+            change: () => {
+                this.circulargauge.axes[0].labelStyle.position = <Position>this.labelPosition.value.toString();
+                this.circulargauge.refresh();
+            }
+        });
+        this.labelPosition.appendTo('#labelposition');
+    }
     ngAfterViewInit(): void {
-        document.getElementById('Ticks').onchange = () => {
-            let value: string = (<HTMLInputElement>document.getElementById('Ticks')).value;
-            let tick: TickModel;
-            this.isMajorTicks = value === 'major';
-            if (this.isMajorTicks) {
-                tick = this.circulargauge.axes[0].majorTicks;
-            } else {
-                tick = this.circulargauge.axes[0].minorTicks;
-            }
-            (<HTMLInputElement>document.getElementById('tickposition')).value = tick.position;
-            (<HTMLInputElement>document.getElementById('tickOffset')).value = tick.offset.toString();
-            (<HTMLInputElement>document.getElementById('tickHeight')).value = tick.height.toString();
-            document.getElementById('offset').innerHTML = 'Tick Offset <span>&nbsp;&nbsp;&nbsp;' + tick.offset;
-            document.getElementById('height').innerHTML = 'Tick Height <span>&nbsp;&nbsp;&nbsp;' + tick.height;
-        };
-
-        document.getElementById('tickposition').onchange = () => {
-            let value: string = (<HTMLInputElement>document.getElementById('tickposition')).value;
-            if (this.isMajorTicks) {
-                this.circulargauge.axes[0].majorTicks.position = <Position>value;
-            } else {
-                this.circulargauge.axes[0].minorTicks.position = <Position>value;
-            }
-            this.circulargauge.refresh();
-        };
-
-        document.getElementById('labelposition').onchange = () => {
-            let value: string = (<HTMLInputElement>document.getElementById('labelposition')).value;
-            this.circulargauge.axes[0].labelStyle.position = <Position>value;
-            this.circulargauge.refresh();
-        };
-
         document.getElementById('tickOffset').onpointermove = document.getElementById('tickOffset').ontouchmove =
             document.getElementById('tickOffset').onchange = () => {
                 let value: number = parseInt((<HTMLInputElement>document.getElementById('tickOffset')).value, 10);

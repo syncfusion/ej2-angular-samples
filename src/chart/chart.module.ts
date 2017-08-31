@@ -62,26 +62,26 @@ export const chartAppRoutes: Object[] = [
     { path: 'chart/combination-series', component: CombinationSeriesChartComponent, name: 'Combination Series', 
        order:'01', category: 'Series' },
     { path: 'chart/performance', component: PerformanceChartComponent, name: 'Performance',order:'01', category: 'Series' },
-    { path: 'chart/default-pie', component: DefaultPieComponent, name: 'Pie', order: '02', category: 'Accumulation Series'},
+    { path: 'chart/default-pie', component: DefaultPieComponent, name: 'Pie', order: '02', category: 'Accumulation Series', type: 'new'},
     {
         path: 'chart/default-doughnut', component: DefaultDoughnutComponent, name: 'Pie With Legend', order: '02',
-        category: 'Accumulation Series'
+        category: 'Accumulation Series', type: 'new'
     },
     {
         path: 'chart/semi-pie', component: SemiPieComponent, name: 'Semi Accumulation Series', order: '02',
-        category: 'Accumulation Series'
+        category: 'Accumulation Series', type: 'new'
     },
     {
         path: 'chart/smart-labels', component: SmartLabelsComponent, name: 'Smart Labels', order: '02',
-        category: 'Accumulation Series'
+        category: 'Accumulation Series', type: 'new'
     },
     {
         path: 'chart/drilldown-pie', component: DrilldownPieComponent, name: 'Drilldown', order: '02',
-        category: 'Accumulation Series'
+        category: 'Accumulation Series', type: 'new'
     },
     {
         path: 'chart/clubpoint', component: ClubpointPieComponent, name: 'ClubPoint', order: '02',
-        category: 'Accumulation Series'
+        category: 'Accumulation Series', type: 'new'
     },
     { path: 'chart/local-data', component: LocalDataChartComponent, name: 'Local Data', order:'03',category: 'Data Binding' },
     { path: 'chart/remote-data', component: RemoteDataChartComponent, name: 'Remote Data',order:'03', category: 'Data Binding' },

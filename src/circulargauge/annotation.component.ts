@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { CircularGaugeComponent, CircularGauge, Pointer } from '@syncfusion/ej2-ng-circulargauge';
 import { IAnnotationRenderEventArgs, ILoadedEventArgs, IResizeEventArgs } from '@syncfusion/ej2-circulargauge';
 import { AnnotationDataSerive } from './annotation.service';
+import { Browser } from '@syncfusion/ej2-base';
 /**
  * Annotation
  */
@@ -38,6 +39,7 @@ export class AnnotationComponent {
         width: 2, height: 14, interval: 1,
         color: 'rgb(29,29,29)'
     };
+    public annotationRadius: string = Browser.isDevice ? '90%' : '75%';
     public minorTicks: Object = {
         height: 4, width: 1, interval: 0.2,
         color: 'rgb(29,29,29)'
@@ -79,7 +81,7 @@ export class AnnotationComponent {
         duration: 500
     };
     public resize(args: IResizeEventArgs): void {
-        location.reload();
+        window.location.reload();
     }
     public loaded(args: ILoadedEventArgs): void {
         let intervalExecute: boolean = true;
