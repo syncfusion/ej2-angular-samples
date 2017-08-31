@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 /**
- * Thermometer linear gauge
+ * Linear gauge Data sample
  */
 @Component({
     selector: 'control-content',

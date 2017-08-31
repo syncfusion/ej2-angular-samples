@@ -32,7 +32,11 @@ export class TooltipComponent {
         }
     ];
     public Container: Object = {
-        width: 140
+        width: 140,
+        border: {
+            width: 2,
+            color: '#a6a6a6'
+        }
     };
     public Tooltip: Object = {
         enable: true,

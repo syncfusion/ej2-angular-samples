@@ -3,7 +3,7 @@ import { LinearGaugeComponent } from '@syncfusion/ej2-ng-lineargauge';
 import { IMouseEventArgs } from '@syncfusion/ej2-lineargauge';
 
 /**
- * Tooltip linear gauge
+ *  linear gauge style sample
  */
 @Component({
     selector: 'control-content',

@@ -120,12 +120,6 @@ export class AxesComponent {
             this.gauge.axes[0].pointers[0].placement = <Placement>ele.value;
             this.gauge.refresh();
         };
-
-        document.getElementById('markerType').onchange = () => {
-            let ele: HTMLSelectElement = <HTMLSelectElement>document.getElementById('markerType');
-            this.gauge.axes[0].pointers[0].markerType = <MarkerType>ele.value;
-            this.gauge.refresh();
-        };
     };
 
     private getRandomArbitrary(min: number, max: number): number {
