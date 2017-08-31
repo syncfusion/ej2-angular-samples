@@ -60,7 +60,7 @@ export class PercentStackedAreaChartComponent {
         majorTickLines: { width: 0 }
     };
     public primaryYAxis: Object = {
-        title: 'Spend in Percentage',
+        title: 'Spend in Percentage (%)',
         majorTickLines: { width: 0 }
     };
     public title: string = 'Trend in Sales of Ethical Produce';

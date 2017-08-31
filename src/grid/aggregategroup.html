@@ -1,5 +1,5 @@
 <div class="control-section">
-<ej-grid [dataSource]="data" [allowPaging]="true" [allowGrouping]="true" [groupSettings]="groupSettings">
+<ej-grid [dataSource]="data" [allowPaging]="true" [allowGrouping]="true" [pageSettings]='pageOption' [groupSettings]="groupSettings">
     <e-columns>
         <e-column field='CategoryName' headerText='Category Name' width='170'></e-column>
         <e-column field='ProductName' headerText='Product Name' width='150'></e-column>
@@ -11,21 +11,21 @@
         <e-aggregate>
             <e-columns>
                 <e-column type="sum" field="UnitsInStock">
-                      <template #groupFooterTemplate let-data>Total units: {{data.sum}}</template>
+                      <ng-template #groupFooterTemplate let-data>Total units: {{data.sum}}</ng-template>
                 </e-column>
             </e-columns>
         </e-aggregate>
         <e-aggregate>
             <e-columns>
                 <e-column type="truecount" field="Discontinued">
-                    <template #groupFooterTemplate let-data>Discontinued: {{data.truecount}}</template>
+                    <ng-template #groupFooterTemplate let-data>Discontinued: {{data.truecount}}</ng-template>
                 </e-column>
             </e-columns>
         </e-aggregate>
         <e-aggregate>
             <e-columns>
                 <e-column type="max" field="UnitsInStock">
-                    <template #groupCaptionTemplate let-data>Maximum: {{data.max}}</template>             
+                    <ng-template #groupCaptionTemplate let-data>Maximum: {{data.max}}</ng-template>             
                 </e-column>
             </e-columns>
         </e-aggregate>

@@ -1,0 +1,95 @@
+<div class="control-section">
+    <div class="col-md-8">
+        <ej-circulargauge #customization='' id='customization-container' style='display:block;' centerY='70%'>
+            <e-axes>
+                <e-axis startAngle=300 endAngle=60 radius='80%' minimum=999 maximum=2000 [majorTicks]="majorTicks" [minorTicks]="minorTicks"
+                    [labelStyle]="labelStyle" [pointers]="pointers" [lineStyle]="lineStyle">
+                    <e-annotations>
+                        <e-annotation content='<div style="color:#666666;font-size:35px;">1800</div>' angle=0 radius='110%'>
+                        </e-annotation>
+                    </e-annotations>
+                    <e-ranges>
+                        <e-range start=1000 end=2000 radius='90%' [startWidth]="rangeWidth" [endWidth]="rangeWidth" color='#E0E0E0'></e-range>
+                    </e-ranges>
+                </e-axis>
+            </e-axes>
+        </ej-circulargauge>
+    </div>
+    <div class="col-md-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties" style="width: 100%">
+                    <tr style="height: 50px">
+                        <td>
+                            <img id='random' src="src/circulargauge/images/gauge1.png" style="margin-left:25px;margin-top:10px;border: 2px solid #E0E0E0"
+                            />
+                        </td>
+                        <td>
+                            <img id='usage' src="src/circulargauge/images/gauge2.png" style="margin-left:25px;margin-top:10px;" />
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td>
+                            <div id='currentPointerValue'>&nbsp;Current Value <span> &nbsp;&nbsp;&nbsp;1800</span> </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="range" id="currentValue" value="1800" min="1000" max="2000" style="width:90%" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td>
+                            <div id='rangebarColor'>&nbsp;RangeBar Color</div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="color" id="barColor" value="#FFDD00" style="width:50%" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td>
+                            <div id='range'>&nbsp;Range Color</div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="color" id="rangeColor" value="#E0E0E0" style="width:50%;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td>
+                            <div id='pointColor'>&nbsp;Pointer Color</div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="color" id="pointerColor" value="#424242" style="width:50%" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p style="font-weight: 500">Description</p>
+    <p>
+        In this example, you can see how to customize the ranges, pointers and annotation of an axis in the circular gauge.
+        In this sample, an axis is shown with one range and two pointers and options
+        to customize the range color and pointer color properties with property panel.
+    </p>
+    <p>
+        More information on the range customization can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/documentation">documentation section</a>.
+    </p>
+</div>
+
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

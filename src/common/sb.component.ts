@@ -1,11 +1,12 @@
-import { Component, ElementRef, HostListener, Inject, Input } from '@angular/core';
+import { Component, ElementRef, HostListener, Inject, Input, ViewChild } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
-import { select, isVisible, createElement, detach } from '@syncfusion/ej2-base/dom';
+import { select, isVisible, createElement } from '@syncfusion/ej2-base';
 import { Button } from '@syncfusion/ej2-buttons';
 import { Http, Response } from '@angular/http';
 import { Browser } from '@syncfusion/ej2-base';
 import { samplesList } from './samplelist';
 import { LPController, MyWindow } from './lp.component';
+import { ListViewComponent, SelectEventArgs } from '@syncfusion/ej2-ng-lists';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
@@ -14,11 +15,13 @@ declare let window: MyWindow;
 const typeMapper: { [key: string]: string } = {
     ts: 'typescript',
     html: 'xml',
-    css: 'css'
+    css: 'css',
+    json: 'json'
 };
 const idRegex: RegExp = /\{0\}/g;
 const sourceHeader: string = '<li class="nav-item {2}" role="presentation"><a class="nav-link" target-content="{0}" role="tab" {1}>{0}</a></li>';
 const sourcecontent: string = '<div class="tab-pane {2}" id="{0}" role="tabpanel" {4}><pre><code class="{3}">{1}</code></pre></div>';
+const plnk: string = '<li class="plnk" style="float:right"><a id="plnkr">Open in Plunker</a></li>';
 declare let hljs: any;
 /**
  * App Controller
@@ -26,7 +29,7 @@ declare let hljs: any;
 @Component({
     selector: 'ng-app',
     templateUrl: 'page.html',
-    providers: [LPController]
+    providers: []
 })
 export class SBController {
     public controlList: { [key: string]: Object }[] = samplesList;
@@ -37,11 +40,12 @@ export class SBController {
     public currentControl: string = '';
     public prevControl: string = '';
     public grpNavButton: HTMLElement;
+    @ViewChild('leftPane')
+    public leftControl: LPController;
     constructor(
         private ngEle: ElementRef,
         @Inject('sourceFiles') private sourceFiles: any,
         private router: Router,
-        private leftControl: LPController,
         private activatedRoute: ActivatedRoute, private http: Http) {
         for (let routes of this.router.config) {
             if ((!Browser.isDevice || !(<any>routes).hideOnDevice) && routes.path.indexOf('/') !== -1) {
@@ -67,15 +71,17 @@ export class SBController {
             this.router.navigateByUrl(prevList);
         }
     }
+
     enableLoader(): void {
         document.body.classList.add('sb-overlay');
         document.querySelector('.sb-loading').classList.remove('hidden');
     }
+
     setSelectListItemSelect(id: string): void {
         this.enableNavClick();
         if (!window.isInteractedList) {
-            let listObj: any = (this.leftControl.ngEle.nativeElement.querySelector('#control-list') as any).ej2_instances[0];
-            if (this.prevControl !== this.currentControl) {
+            let listObj: any = this.leftControl.listObj;
+            if (this.prevControl !== this.currentControl && listObj) {
                 listObj.animation.duration = 0;
                 listObj.back();
                 listObj.selectItem({ 'id': this.currentControl });
@@ -90,6 +96,7 @@ export class SBController {
         this.enableNavClick();
         let currentIndex: number = this.pathRoutes.indexOf(location.hash.replace('#/', ''));
         let nextList: string = this.pathRoutes[currentIndex + 1];
+        this.grpNavButton.classList.add('disabled');
         if ((this.pathRoutes.length < currentIndex + 2)) {
             this.grpNavButton.children[1].classList.add('disabled');
         }
@@ -138,13 +145,15 @@ export class SBController {
             .subscribe((event: any) => {
                 this.leftControl.showBackButton();
                 this.grpNavButton.classList.remove('disabled');
-                this.setSelectListItemSelect(location.hash.replace('#/', ''));
-                //console.log(this.files);
                 if (Browser.isDevice) {
                     this.hideWaitingPopup();
                 } else {
                     this.updateSourceTab(location.hash);
                 }
+                // Need to remove once created event has been supported
+                setTimeout(() => {
+                    this.setSelectListItemSelect(location.hash.replace('#/', ''));
+                });
             });
         if (Browser.isDevice) {
             this.toggleSourceVisibilty(true);
@@ -159,15 +168,15 @@ export class SBController {
             touchButton.element.classList.add('active');
         }
         let mouseOrTouch: string = localStorage.getItem('ej2-ng-switch');
-        if(mouseOrTouch) {
-            if(mouseOrTouch === 'mouse') {
+        if (mouseOrTouch) {
+            if (mouseOrTouch === 'mouse') {
                 document.body.classList.remove('e-bigger');
             } else {
                 document.body.classList.add('e-bigger');
             }
-            let target: HTMLElement = <HTMLElement>select('#'+mouseOrTouch);
+            let target: HTMLElement = <HTMLElement>select('#' + mouseOrTouch);
             let current: string = mouseOrTouch === 'mouse' ? 'touch' : 'mouse';
-            let curSelected: HTMLElement = <HTMLElement>select('#'+current);
+            let curSelected: HTMLElement = <HTMLElement>select('#' + current);
             curSelected.classList.remove('active');
             target.classList.add('active');
         }
@@ -255,9 +264,11 @@ export class SBController {
     }
 
     updateSourceTab(path: string): void {
+        let pfile: string;
         let localPath: string = path.replace('#', 'src');
         let tsRequest: Observable<Response> = this.http.get(localPath + '.component.ts');
         let htmlRequst: Observable<Response> = this.http.get(localPath + '.html');
+        let plunk: Observable<Response> = this.http.get(localPath + '-plnkr.json');
         let observableCollection: Observable<Response>[] = [htmlRequst, tsRequest];
         if (this.sourceFiles.files.length) {
             let splitPath: string[] = localPath.split('/');
@@ -268,6 +279,7 @@ export class SBController {
             }
             this.sourceFiles.files = [];
         }
+        observableCollection.push(plunk);
         Observable.forkJoin(observableCollection).subscribe(
             (resultCollection: any) => {
                 this.toggleSourceVisibilty();
@@ -322,6 +334,10 @@ export class SBController {
     }
 
     updateTabs(data: any, type: string, fileName: string, isInitial?: boolean): void {
+        if (type === 'json') {
+            this.plunker(data);
+            return;
+        }
         let hele: Element = document.getElementById('source-nav-tab');
         let hcontent: Element = document.getElementById('source-content');
         let actString: string = isInitial ? 'active' : '';
@@ -346,6 +362,7 @@ export class SBController {
         cont.splice(1, 0, iContent);
         cont = cont.join('');
         hele.innerHTML += header;
+        hele.innerHTML += isInitial ? plnk : '';
         hcontent.innerHTML += cont;
         codeCollection = hcontent.getElementsByTagName('code');
         hljs.highlightBlock(codeCollection[codeCollection.length - 1]);
@@ -353,5 +370,24 @@ export class SBController {
 
     toggleSourceVisibilty(flag?: boolean): void {
         document.getElementById('source-tab').classList[flag ? 'add' : 'remove']('hidden');
+    }
+    plunker(results: string): void {
+        let plnkr: { [key: string]: Object } = JSON.parse(results);
+        let form: HTMLFormElement = <HTMLFormElement>createElement('form');
+        form.setAttribute('action', 'http://plnkr.co/edit/?p=preview');
+        form.setAttribute('method', 'post');
+        form.setAttribute('target', '_blank');
+        form.id = 'plnkr-form';
+        form.style.display = 'none';
+        document.body.appendChild(form);
+        let plunks: string[] = Object.keys(plnkr);
+        for (let x: number = 0; x < plunks.length; x++) {
+            let ip: HTMLElement = createElement('input');
+            ip.setAttribute('type', 'hidden');
+            ip.setAttribute('value', <string>plnkr[plunks[x]]);
+            ip.setAttribute('name', 'files[' + plunks[x] + ']');
+            form.appendChild(ip);
+        }
+        document.getElementById('plnkr').addEventListener('click', () => { form.submit(); });
     }
 }

@@ -12,31 +12,46 @@ import { Component, ViewEncapsulation } from '@angular/core';
 export class PercentStackedBarChartComponent {
 
     public data: Object[] = [
-        { x: 'Jan', y: 6, y1: 6, y2: 1 }, { x: 'Feb', y: 8, y1: 8, y2: 1.5 },
-        { x: 'Mar', y: 12, y1: 11, y2: 2 }, { x: 'Apr', y: 15, y1: 16, y2: 2.5 },
-        { x: 'May', y: 20, y1: 21, y2: 3 }, { x: 'Jun', y: 24, y1: 25, y2: 3.5 },
-        { x: 'Jul', y: 28, y1: 27, y2: 4 }, { x: 'Aug', y: 32, y1: 31, y2: 4.5 },
-        { x: 'Sep', y: 33, y1: 34, y2: 5 }, { x: 'Oct', y: 35, y1: 34, y2: 5.5 },
-        { x: 'Nov', y: 40, y1: 41, y2: 6 }, { x: 'Dec', y: 42, y1: 42, y2: 6.5 }
+        { x: '2005', y: 28 }, { x: '2006', y: 25 },
+        { x: '2007', y: 26 }, { x: '2008', y: 27 },
+        { x: '2009', y: 32 }, { x: '2010', y: 35 },
+        { x: '2011', y: 30 }
     ];
-
+    public data1: Object[] = [
+        { x: '2005', y: 31 }, { x: '2006', y: 28 },
+        { x: '2007', y: 30 }, { x: '2008', y: 36 },
+        { x: '2009', y: 36 }, { x: '2010', y: 39 },
+        { x: '2011', y: 37 }
+    ];
+    public data2: Object[] = [
+        { x: '2005', y: 36 }, { x: '2006', y: 32 },
+        { x: '2007', y: 34 }, { x: '2008', y: 41 },
+        { x: '2009', y: 42 }, { x: '2010', y: 42 },
+        { x: '2011', y: 43 }
+    ];
+    public data3: Object[] = [
+        { x: '2005', y: 39 }, { x: '2006', y: 36 },
+        { x: '2007', y: 40 }, { x: '2008', y: 44 },
+        { x: '2009', y: 45 }, { x: '2010', y: 50 },
+        { x: '2011', y: 46 }
+    ];
     public primaryXAxis: Object = {
-        title: 'Months',
+        title: 'Years',
         valueType: 'Category',
         edgeLabelPlacement: 'Shift',
     };
     public primaryYAxis: Object = {
         title: 'Percentage (%)',
-        edgeLabelPlacement: 'Shift'
-
+        rangePadding:  'None',
+        edgeLabelPlacement: 'Shift',
     };
     public tooltip: Object = {
         enable: true,
         format: '${point.x} <br>${series.name} : ${point.y} (${point.percent}%)'
     };
-    public title: string = 'Sales Comparison';
-
+    public title: string = 'Inflation - Consumer Price';
     constructor() {
-        //code
+       //code
     };
+
 }

@@ -9,6 +9,7 @@ import { AggregateService } from '@syncfusion/ej2-ng-grids';
 })
 export class AggregateComponent implements OnInit {
     public data: Object[];
+    public pageOption: Object = {pageCount: 5};
 
     public ngOnInit(): void {
         this.data = orderData;

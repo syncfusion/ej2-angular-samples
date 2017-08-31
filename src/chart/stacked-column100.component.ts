@@ -11,29 +11,63 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class PercentStackedColumnChartComponent {
 
-    public chartData: Object[] = [
-        { x: '2006', y: 900, y1: 190, y2: 250, y3: 150 },
-        { x: '2007', y: 544, y1: 226, y2: 145, y3: 120 },
-        { x: '2008', y: 880, y1: 194, y2: 190, y3: 115 },
-        { x: '2009', y: 675, y1: 250, y2: 220, y3: 125 },
-        { x: '2010', y: 765, y1: 222, y2: 225, y3: 132 },
-        { x: '2011', y: 679, y1: 181, y2: 135, y3: 137 },
-        { x: '2012', y: 770, y1: 128, y2: 152, y3: 110 },
+    public data: Object[] = [
+        { x: '2014', y: 111.1 },
+        { x: '2015', y: 127.3 },
+        { x: '2016', y: 143.4 },
+        { x: '2017', y: 159.9 },
+        { x: '2018', y: 175.4 },
+        { x: '2019', y: 189.0 },
+        { x: '2020', y: 202.7 }
+    ];
+    public data1: Object[] = [
+        { x: '2014', y: 76.9 },
+        { x: '2015', y: 99.5 },
+        { x: '2016', y: 121.7 },
+        { x: '2017', y: 142.5 },
+        { x: '2018', y: 166.7 },
+        { x: '2019', y: 182.9 },
+        { x: '2020', y: 197.3 }
+    ];
+    public data2: Object[] = [
+        { x: '2014', y: 66.1 },
+        { x: '2015', y: 79.3 },
+        { x: '2016', y: 91.3 },
+        { x: '2017', y: 102.4 },
+        { x: '2018', y: 112.9 },
+        { x: '2019', y: 122.4 },
+        { x: '2020', y: 120.9 }
+    ];
+    public data3: Object[] = [
+        { x: '2014', y: 34.1 },
+        { x: '2015', y: 38.2 },
+        { x: '2016', y: 44.0 },
+        { x: '2017', y: 51.6 },
+        { x: '2018', y: 61.9 },
+        { x: '2019', y: 71.5 },
+        { x: '2020', y: 82.0 }
     ];
     public primaryXAxis: Object = {
         title: 'Years',
+        line: { width: 0 },
+        majorGridLines: { width: 1 },
+        minorGridLines: { width: 1 },
+        minorTickLines: { width: 1 },
         valueType: 'Category',
+        interval: 1,
         labelIntersectAction : 'Rotate45'
     };
     public primaryYAxis: Object = {
-        title: 'GDP (%) Per Annum',
-        rangePadding: 'None',
+        title: 'Sales in Percentage (%)',
+        majorGridLines: { width: 1 },
+        minorGridLines: { width: 1 },
+        minorTickLines: { width: 1 }
     };
     public tooltip: Object = {
         enable: true,
         format: '${point.x} <br>${series.name} : ${point.y} (${point.percent}%)'
     };
-    public title: string = 'Gross Domestic Product Growth';
+    public title: string = 'Mobile Game Market by Country';
     constructor() {
         //code
     };

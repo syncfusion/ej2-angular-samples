@@ -9,6 +9,7 @@ import { AggregateService, GroupService } from '@syncfusion/ej2-ng-grids';
 })
 export class AggregateGroupComponent implements OnInit {
     public data: Object[];
+    public pageOption: Object = {pageCount: 5};
     public groupSettings: { [x: string]: Object } = { showDropArea: false, columns: ['CategoryName'] };
 
     public ngOnInit(): void {

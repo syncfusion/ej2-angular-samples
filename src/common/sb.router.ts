@@ -7,14 +7,16 @@ import { ButtonModule } from '../button/button.module';
 import { ListViewSampleModule } from '../listview/listview.module';
 import { GridSampleModule } from '../grid/grid.module';
 import { ToolbarSampleModule } from '../toolbar/toolbar.module';
-import { NumericModule } from '../numerictextbox/numericTextBox.module';
+import { NumericModule } from '../numerictextbox/numerictextbox.module';
 import { ChartSampleModule } from '../chart/chart.module';
 import { DialogSampleModule } from '../dialog/dialog.module';
 import { TextboxesModule } from '../textboxes/textboxes.module';
 import { TooltipSampleModule } from '../tooltip/tooltip.module';
+import { CircularGaugeSampleModule } from '../circulargauge/circulargauge.module';
 
 const appRoutes: any = [
     { path: 'chart', loadChildren: ChartSampleModule },
+    { path: 'circulargauge', loadChildren: CircularGaugeSampleModule },
     { path: 'grid', loadChildren: GridSampleModule },
     { path: 'form-validator', loadChildren: FormValidatorModule },
     { path: 'Button', loadChildren: ButtonModule },
@@ -32,6 +34,7 @@ const appRoutes: any = [
 @NgModule({
     imports: [
         ChartSampleModule,
+        CircularGaugeSampleModule,
         GridSampleModule,
         FormValidatorModule,
         ButtonModule,

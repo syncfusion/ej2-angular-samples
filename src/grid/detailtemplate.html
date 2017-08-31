@@ -1,6 +1,6 @@
 <div class="control-section">
     <ej-grid #grid [dataSource]='data' id='Grid'>
-        <template #detailTemplate let-data>
+        <ng-template #detailTemplate let-data>
             <table class="detailtable" width="100%">
                 <colgroup>
                     <col width="35%">
@@ -45,7 +45,7 @@
                     </tr>
                 </tbody>
             </table>
-        </template>
+        </ng-template>
         <e-columns>
             <e-column field='EmployeeID' headerText='Employee ID' width='125' textAling='right'></e-column>
             <e-column field='FirstName' headerText='Name' width='120'></e-column>

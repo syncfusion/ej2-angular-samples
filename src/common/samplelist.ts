@@ -3,16 +3,20 @@ import { buttonAppRoutes } from '../button/button.module';
 import { listAppRoutes } from '../listview/listview.module';
 import { gridRouteConfig } from '../grid/grid.module';
 import { toolbarAppRoutes } from '../toolbar/toolbar.module';
-import { numericAppRoutes } from '../numerictextbox/numericTextBox.module';
+import { numericAppRoutes } from '../numerictextbox/numerictextbox.module';
 import { dropdownlistAppRoutes } from '../dropdownlist/dropdownlist.module';
 import { calendarAppRoutes } from '../calendar/calendar.module';
 import { chartAppRoutes } from '../chart/chart.module';
 import { dialogAppRoutes } from '../dialog/dialog.module';
+import { circulargaugeAppRoutes } from '../circulargauge/circulargauge.module';
 import { textboxesAppRoutes } from '../textboxes/textboxes.module';
 import { tooltipAppRoutes } from '../tooltip/tooltip.module';
 export let samplesList: any = [
     {
         'name': 'Chart', 'category': 'Datavisualization', 'order': '01', 'path': 'chart', 'samples': chartAppRoutes, 'type': 'update'
+    },
+    {
+        'name': 'CircularGauge', 'category': 'Datavisualization', 'order': '01', 'path': 'circulargauge', 'samples': circulargaugeAppRoutes, "type": "new"
     },
     {
         'name': 'Grid', 'category': 'Grids', 'order': '02', 'path': 'grid', 'samples': gridRouteConfig, 'type': 'update'

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { data } from '../data';
 import { GridComponent } from '@syncfusion/ej2-ng-grids';
-import { addClass, removeClass } from '@syncfusion/ej2-base/dom';
+import { addClass, removeClass } from '@syncfusion/ej2-base';
 
 @Component({
     selector: 'ej2-grid-container',

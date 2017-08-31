@@ -155,7 +155,9 @@ control-content {
     content: "\e901";
     font-size: 14px;
 }
-
+.e-icon-warning::before {
+    content: '\e7c4';
+}
 .switcher {
     width: 250px;
     float: left;
@@ -213,7 +215,21 @@ control-content {
     height: 100%;
     border-right: 1px solid #dddddd;
 }
-
+.e-samplestatus {
+    margin: 7px 9px;
+    position: absolute;
+    height: 13px;
+    width: 66px;
+}
+.e-samplestatus.new {
+    background: url('images/SB_icon/new-light.svg') no-repeat;
+}
+.e-samplestatus.update {
+    background: url('images/SB_icon/updated-light.svg') no-repeat;
+}
+.e-samplestatus.preview {
+    background: url('images/SB_icon/preview-light.svg') no-repeat;
+}
 #control-list {
     border-right: 1px solid #dddddd;
     top: 48px;
@@ -222,7 +238,9 @@ control-content {
     bottom: 0px;
     position: absolute;
     -webkit-overflow-scrolling: touch;
-    -webkit-perspective: 1000px;
+    -webkit-transform: translateZ(0px);
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-perspective: 1000;
 }
 
 .left-tree-head {

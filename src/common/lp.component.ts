@@ -1,11 +1,10 @@
-import { Component, Inject, ElementRef } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ListView, SelectEventArgs } from '@syncfusion/ej2-ng-lists';
+import { ListViewComponent, SelectEventArgs } from '@syncfusion/ej2-ng-lists';
 import { samplesList } from './samplelist';
-import {Browser} from '@syncfusion/ej2-base';
-import { extend,getValue } from '@syncfusion/ej2-base/util';
-import {DataManager, Query}  from '@syncfusion/ej2-data';
+import { Browser, extend } from '@syncfusion/ej2-base';
+import { DataManager, Query } from '@syncfusion/ej2-data';
 export interface MyWindow extends Window {
     isInteractedList: boolean;
 }
@@ -25,28 +24,23 @@ export class LPController {
     public fields: Object = { text: 'name', id: 'path', groupBy: 'order', child: 'samples' };
     private contentPan: any;
     private leftPan: any;
-    public listObj: ListView;
+
+    @ViewChild('controlList')
+    public listObj: ListViewComponent;
+
+    public dataSource: Object[] = this.getDataSource();
 
     constructor(public ngEle: ElementRef, private router: Router) {
-        this.listObj = new ListView(
-            {
-                fields: this.fields, dataSource: <any>this.getDataSource(), headerTitle: 'All Controls',
-                select: this.onSampleClick.bind(this),
-                groupTemplate: '${if(items[0]["category"])}<div class="e-text-content">' +
-                '<span class="e-list-text">${items[0].category}</span>' +
-                '</div>${/if}'
-            }
-        );
     }
 
     onSampleClick(e: SelectEventArgs) {
         window.isInteractedList = e.isInteracted;
         if (e.isInteracted) {
             if (e.data.component && location.hash.replace('/#', '') !== e.data.path) {
-                 document.body.classList.add('sb-overlay');
-                 document.querySelector('.sb-loading').classList.remove('hidden');
-                 this.router.navigateByUrl(<string>e.data.path);
-                 this.slideOut();
+                document.body.classList.add('sb-overlay');
+                document.querySelector('.sb-loading').classList.remove('hidden');
+                this.router.navigateByUrl(<string>e.data.path);
+                this.slideOut();
             } else {
                 this.showBackButton();
             }
@@ -66,7 +60,7 @@ export class LPController {
     showBackButton(hide?: Boolean): void {
         let icon: HTMLElement = this.ngEle.nativeElement.querySelector('#tree-back > .e-icon-back');
         icon.style.display = hide ? 'none' : '';
-        }
+    }
 
     onBackClick(): void {
         this.showBackButton(true);
@@ -76,7 +70,6 @@ export class LPController {
     ngAfterViewInit(): void {
         this.contentPan = document.querySelector('.control-panel');
         this.leftPan = document.querySelector('.left-panel');
-        this.listObj.appendTo(this.ngEle.nativeElement.querySelector('#control-list'));
     }
 
     slideOut(): void {

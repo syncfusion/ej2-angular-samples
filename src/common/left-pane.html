@@ -6,5 +6,19 @@
             <span class="e-text" id="sidebar-title">ALL CONTROLS</span>
         </div>
     </div>
-    <div id="control-list"> </div>
+    <ej-listview #controlList id="control-list" [fields]='fields' [dataSource]='dataSource' headerTitle='All Controls' (select)='onSampleClick($event)'>
+        <ng-template #template let-data>
+            <div class="e-text-content">
+                <div *ngIf="data.samples" class="e-icons e-icon-collapsible"></div>
+                <span class="e-list-text" role="list-item">{{data.name}}
+                    <span *ngIf="data.type" class="e-samplestatus {{data.type}}"></span>
+                </span>
+            </div>
+        </ng-template>
+        <ng-template #groupTemplate let-data>
+            <div class="e-text-content">
+                <span class="e-list-text">{{data.items[0].category}}</span>
+            </div>
+        </ng-template>
+    </ej-listview>
 </div>

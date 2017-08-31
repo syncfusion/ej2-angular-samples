@@ -1,5 +1,5 @@
 <div class="control-section">
-    <ej-grid [dataSource]="data" [allowPaging]="true">
+    <ej-grid [dataSource]="data" [allowPaging]="true" [pageSettings]='pageOption'>
         <e-columns>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
             <e-column field='Freight' headerText='Freight' width='150' format='C2' textAlign="right"></e-column>
@@ -10,14 +10,14 @@
             <e-aggregate>
                 <e-columns>
                     <e-column type="sum" field="Freight" format="C2">
-                        <template #footerTemplate let-data>Sum: {{data.sum}}</template>
+                        <ng-template #footerTemplate let-data>Sum: {{data.sum}}</ng-template>
                     </e-column>
                 </e-columns>
             </e-aggregate>
             <e-aggregate>
                 <e-columns>
                     <e-column type="average" field="Freight" format="C2">
-                        <template #footerTemplate let-data>Average: {{data.average}}</template>
+                        <ng-template #footerTemplate let-data>Average: {{data.average}}</ng-template>
                     </e-column>
                 </e-columns>
             </e-aggregate>

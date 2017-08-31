@@ -29,7 +29,7 @@ export class RangeColumnChartComponent {
     ];
 
     public primaryXAxis: Object = {
-        title: 'Months',
+        title: 'Month',
         valueType: 'Category'
     };
     public primaryYAxis: Object = {
@@ -39,7 +39,7 @@ export class RangeColumnChartComponent {
     public title: string = 'Maximum and Minimum Temperature';
     public tooltip: Object = {
         enable: true,
-        format: '${point.x}<br>High : ${point.high}<br>Low : ${point.low}'
+        format: '${point.x}<br>high: ${point.high}<br>low: ${point.low}'
     };
     constructor() {
         //code

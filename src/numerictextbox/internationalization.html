@@ -1,14 +1,14 @@
 <div class="control-section">
     <div class="col-lg-8 content-wrapper">
         <div class="content">
-            <div class="wrapper">
-            <ej-numerictextbox [locale]="locale" [value]="numericValue"></ej-numerictextbox>
+        <div class="wrapper">
+            <ej-numerictextbox #numeric [value]="numericValue" [placeholder]="numericPlaceholder" [locale]="locale" ></ej-numerictextbox>
         </div>
-         <div class="wrapper">
-            <ej-numerictextbox format="p2" [locale]="locale" [value]="percentValue" [step]="step" [max]="max" [min]="min"></ej-numerictextbox>
+        <div class="wrapper">
+            <ej-numerictextbox #percentage format="p2" [placeholder]="percentPlaceholder" [value]="percentValue" [min]="min" [max]="max" [step]="step" [locale]="locale"></ej-numerictextbox>
         </div>
-         <div class="wrapper">
-            <ej-numerictextbox format="c2" [locale]="locale" [value]="currencyValue" [currency]="currency"></ej-numerictextbox>
+        <div class='wrapper'>
+            <ej-numerictextbox #currencyTextBox format="c2" [placeholder]="currencyPlaceholder" [value]="currencyValue" [locale]="locale" [currency]="currency" ></ej-numerictextbox>
         </div>
       </div>
     </div>
@@ -16,14 +16,14 @@
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
-              <table title="Properties" class="property-panel-table" id="property">
-                <tbody><tr>
+              <table id="property" class="property-panel-table" title="Properties">
+                <tr>
                   <td>
                     <div>Culture</div>
                   </td>
                   <td>
                     <div>
-                      <select class="form-control" id="cultures" (change)="changeLocale()">
+                      <select id="cultures" class="form-control" (change)="changeLocale()">
                         <option value="de">de</option>
                         <option value="zh">zh</option>
                         <option value="en">en</option>
@@ -31,18 +31,19 @@
                     </div>
                   </td>
                 </tr>
-              </tbody></table>
+              </table>
             </div>
         </div>
     </div>
 </div>
-
 <div id="description">
     <p>
-        The NumericTextBox comes with built-in internationalization support to adapt based on culture. You can change the culture of the component using ‘locale’ property, which format the currency symbol, decimal separator, and group separators.</p>
+        The NumericTextBox comes with built-in internationalization support to adapt based on culture. You can change the culture of the component using
+		<a href="http://ej2.syncfusion.com/angular/documentation/numerictextbox/api-numericTextBoxComponent.html#locale-string" target="_blank">locale</a>
+		property, which format the currency symbol, decimal separator, and group separators.</p>
         <p>In this demo, NumericTextBox control renders with German culture; You can change to other cultures via the ‘culture’ option from the properties panel.</p>
-        <p>More information on the internationalization configuration can be found in this <a href="http://ej2.syncfusion.com/documentation/base/intl.html"
-            target="_blank"> documentation section</a>.</p>
+        <p>More information on the internationalization configuration can be found in this
+		<a href= "http://ej2.syncfusion.com/angular/documentation/numerictextbox/internationalization.html" target="_blank"> documentation section</a>.</p>
 </div>
 <style>
     .property-panel-content {

@@ -4,7 +4,7 @@
             <e-column field='Employee Image' headerText='Employee Image' width='150' textAlign='center'></e-column>
             <e-column field='Employee Details' headerText='Employee Details' width='300' textAling='left'></e-column>
         </e-columns>
-        <template #rowTemplate let-data>
+        <ng-template #rowTemplate let-data>
             <tr>
                 <td class="rowphoto">
                     <img src="src/grid/images/{{data.EmployeeID}}.png" alt="{{data.EmployeeID}}" />
@@ -47,7 +47,7 @@
                     </table>
                 </td>
             </tr>
-        </template>
+        </ng-template>
     </ej-grid>
 
 

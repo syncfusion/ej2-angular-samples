@@ -1,0 +1,64 @@
+<div class="control-section">
+    <div class="col-md-8">
+        <ej-accumulationchart #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title">
+            <e-accumulation-series-collection>
+                <e-accumulation-series [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%" radius="100%" [dataLabel]="dataLabel">
+                </e-accumulation-series>
+            </e-accumulation-series-collection>
+        </ej-accumulationchart>
+    </div>
+    <div class="col-md-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div>Start Angle:
+                                <p id="startangle" style="font-weight: normal;">270</p>
+                            </div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div data-role="rangeslider">
+                                <input type="range" name="range-min" id="range-min" value="270" min="0" max="360" (mousemove)='startangle($event)' (touchmove)='startangle($event)' (change)='startangle($event)' autocomplete="off" style="margin-left: -5px">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div>End Angle:
+                                <p id="endangle" style="font-weight: normal;">90</p>
+                            </div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div data-role="rangeslider">
+                                <input type="range" name="range-min" id="range-max" value="90" min="0" max="360" (mousemove)='endangle($event)' (touchmove)='endangle($event)' (change)='endangle($event)' autocomplete="off" style="margin-left: -5px">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div>Inner Radius:
+                                <p id="innerradius" style="font-weight: normal;">0.40</p>
+                            </div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div data-role="rangeslider">
+                                <input type="range" name="innerRadius" id="inner-radius" value="40" min="0" max="50" (mousemove)='onChange($event)' (touchmove)='onChange($event)' (change)='onChange($event)' autocomplete="off" style="margin-left: -5px">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p> In this example, you can see how to render semi pie and doughnut chart. Using <code>startAngle</code>, <code>endAngle</code> properties, we can achieve this semi pie chart. Property panel to change the angle is provided with this sample.</p>
+    <p> <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.</p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

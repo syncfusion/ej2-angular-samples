@@ -2,7 +2,7 @@ import { NgModule, Type, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { GridModule, PageService } from '@syncfusion/ej2-ng-grids';
+import { GridAllModule } from '@syncfusion/ej2-ng-grids';
 import { ToolbarModule } from '@syncfusion/ej2-ng-navigations';
 import { DefaultComponent } from './default.component';
 import { DataBindingComponent } from './remotedata.component';
@@ -27,6 +27,7 @@ import { AggregateGroupComponent } from './aggregategroup.component';
 import { ColumnTemplateComponent } from './columntemplate.component';
 import { RowTemplateComponent } from './rowtemplate.component';
 import { DetailTemplateComponent } from './detailtemplate.component';
+import { HierarchyComponent } from './hierarchy.component';
 import { SharedModule } from '../common/shared.module';
 
 export const gridRouteConfig: Object[] = [
@@ -57,19 +58,20 @@ export const gridRouteConfig: Object[] = [
     category: 'Column', type: 'new'},
     { 'path': 'grid/rowtemplate', component: RowTemplateComponent, name: 'Row Template', order: '01', category: 'Grid', type: 'new'},
     { 'path': 'grid/detailtemplate', component: DetailTemplateComponent, name: 'Detail Template', order: '01',
-    category: 'Grid', type: 'new'}
+    category: 'Grid', type: 'new'},
+    { 'path': 'grid/hierarchy', component: HierarchyComponent, name: 'Hierarchy', order: '01', category: 'Grid', type: 'new'}
 ];
 
 let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     LocalDataComponent, DataBindingComponent, ShowHideComponent, MasterComponent, DetailComponent, ReorderComponent,
     GroupComponent, StackedHeaderComponent, AutoWrapComponent, SortComponent, PageComponent, FilterComponent, SelectionComponent,
     ScrollComponent, SearchComponent, SelectionApiComponent, DragAndDropComponent, AggregateComponent, AggregateGroupComponent,
-    RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent];
+    RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent];
 
 @NgModule({
-    imports: [RouterModule.forChild(gridRouteConfig), CommonModule, HttpModule, ToolbarModule, GridModule, SharedModule],
+    imports: [RouterModule.forChild(gridRouteConfig), CommonModule, HttpModule, ToolbarModule, GridAllModule, SharedModule],
     declarations: declarations,
-    providers: [PageService],
+    providers: [GridAllModule],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridSampleModule { }
