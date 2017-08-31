@@ -33,10 +33,10 @@ export class LabelComponent {
         }
     };
     public majorTicks1: Object = {
-        position: 'Inside', color: 'black', width: 0.7, height: 10, interval: 20
+        position: 'Inside', color: 'black', width: 0.5, height: 10, interval: 20
     };
     public minorTicks1: Object = {
-        position: 'Inside', color: 'black', height: 5, width: 0.7, interval: 10
+        position: 'Inside', color: 'black', height: 5, width: 0.5, interval: 10
     };
 
     public ranges: Object[] = [{

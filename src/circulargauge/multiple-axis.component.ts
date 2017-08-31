@@ -22,7 +22,7 @@ export class MultipleAxisComponent {
     };
     public majorTicks1: Object = {
         position: 'Inside',
-        width: 0.7,
+        width: 0.5,
         height: 10,
         color: '#757575'
 
@@ -34,7 +34,7 @@ export class MultipleAxisComponent {
     };
     public minorTicks1: Object = {
         position: 'Inside',
-        width: 0.7,
+        width: 0.5,
         height: 5,
         color: '#757575'
 
@@ -59,13 +59,13 @@ export class MultipleAxisComponent {
     };
     public majorTicks2: Object = {
         position: 'Outside',
-        width: 2,
+        width: 0.5,
         height: 10,
         color: '#E84011'
     };
     public minorTicks2: Object = {
         position: 'Outside',
-        width: 2,
+        width: 0.5,
         height: 5,
         color: '#E84011'
     };

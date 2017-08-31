@@ -23,7 +23,7 @@ export class RangeComponent {
         font: { size: '12px', color: '#424242', fontFamily: 'Roboto', fontStyle: 'Regular' }
     };
     public majorTicks: Object = {
-        height: 10, offset: 10, color: 'black', width: 0.7
+        height: 10, offset: 10, color: 'black', width: 0.5
     };
     public minorTicks: Object = {
         height: 0, width: 0.5
