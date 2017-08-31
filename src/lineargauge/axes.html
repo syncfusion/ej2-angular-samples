@@ -1,0 +1,126 @@
+<div class="control-section">
+    <div class="col-md-8">
+        <ej-lineargauge id='axisContainer' #gauge style='display:block;' orientation='Horizontal' [axes]='Axes' [annotations]='Annotation'>
+        </ej-lineargauge>
+    </div>
+    <div class="col-md-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tr>
+                        <td>
+                            <div id='minValue'>Axis Minimum <span>&nbsp;&nbsp;&nbsp;0</span> </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="range" step='5' id="min" value="0" min="0" max="100" style="width:90%;height:34px" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id='maxValue'>Axis Maximum <span>&nbsp;&nbsp;&nbsp;100</span> </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="range" step='5' id="max" value="100" min="0" max="100" style="width:90%;height:34px" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Axis Inversed</div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="checkbox" id='axisInversed' />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Axis Opposed</div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="checkbox" id='opposed' />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Label Format</div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text" value="{value}" id='format' class="form-control" style="width:90%" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Pointer type</div>
+                        </td>
+                        <td>
+                            <div>
+                                <select name="selectIndex" autocomplete="off" id="pointerType" class="form-control" style="width:90%">
+                        <option value="Marker" selected>Marker</option>
+                        <option value="Bar">Bar</option>
+                     </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Marker Placement</div>
+                        </td>
+                        <td>
+                            <div>
+                                <select name="selectIndex" autocomplete="off" id="pointerPlace" class="form-control" style="width:90%">
+                        <option value="Near">Near</option>
+                        <option value="Center">Center</option>
+                         <option value="Far" selected>Far</option>
+                     </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Marker Type</div>
+                        </td>
+                        <td>
+                            <div>
+                                <select name="selectIndex" autocomplete="off" id="markerType" class="form-control" style="width:90%">
+                        <option value="Triangle">Triangle</option>
+                        <option value="Diamond">Diamond</option>
+                        <option value="Rectangle">Rectangle</option>
+                        <option value="InvertedTriangle" selected>Inverted Triangle</option>
+                        <option value="Circle">Circle</option>
+                        <option value="Arrow">Arrow</option>
+                        <option value="InvertedArrow">InvertedArrow</option>
+                     </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to customize the axes and pointers. Use <code>format</code> of labelStyle property
+        to customize the axis labels and use <code>type</code>, <code>markerType</code> and <code>placement</code> properties
+        to customize the pointers in linear gauge.
+    </p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+
+    .property-panel-section {
+        height: 380px;
+    }
+</style>

@@ -13,10 +13,12 @@ import { DialogSampleModule } from '../dialog/dialog.module';
 import { TextboxesModule } from '../textboxes/textboxes.module';
 import { TooltipSampleModule } from '../tooltip/tooltip.module';
 import { CircularGaugeSampleModule } from '../circulargauge/circulargauge.module';
+import { LinearGaugeSampleModule } from '../lineargauge/lineargauge.module';
 
 const appRoutes: any = [
     { path: 'chart', loadChildren: ChartSampleModule },
     { path: 'circulargauge', loadChildren: CircularGaugeSampleModule },
+    { path: 'lineargauge', loadChildren: LinearGaugeSampleModule },
     { path: 'grid', loadChildren: GridSampleModule },
     { path: 'form-validator', loadChildren: FormValidatorModule },
     { path: 'Button', loadChildren: ButtonModule },
@@ -35,6 +37,7 @@ const appRoutes: any = [
     imports: [
         ChartSampleModule,
         CircularGaugeSampleModule,
+        LinearGaugeSampleModule,
         GridSampleModule,
         FormValidatorModule,
         ButtonModule,

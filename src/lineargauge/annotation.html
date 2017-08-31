@@ -1,0 +1,50 @@
+<script id='tool' type="text/x-template">
+    <div id='templateWrap'>
+        <img src='src/lineargauge/images/charging.png'>
+        <div class='des'>
+            <span>Energy &nbsp;&nbsp;:&nbsp; 60%</span>
+        </div>
+    </div>
+</script>
+<style>
+    #templateWrap img {
+        border-radius: 30px;
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+    }
+
+    #templateWrap .des {
+        float: right;
+        padding-left: 10px;
+        line-height: 30px;
+    }
+
+    #targetContainer .text-center {
+        color: rgba(0, 0, 0, 0.54);
+    }
+</style>
+<div class="control-section">
+    <ej-lineargauge id='annotationContainer' style='display:block;' orientation='Horizontal' [rangePalettes]='Palette' [axes]='Axes'
+        [annotations]='Annotation'>
+    </ej-lineargauge>
+</div>
+<div id="description">
+    <p>
+        In this sample we have used annotations to indicate low, moderate and high ranges. Annotations are used to place the texts,
+        shapes or images anywhere in the gauge. You can use <code>content</code>, <code>x</code>, <code>y</code>,
+        <code>zIndex</code> properties to customize the annotations. And you can specify the id of the element that needs
+        to be displayed, in the content property.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>Linear gauge component features are segregated into individual feature-wise modules. To render annotation, we need to
+        inject
+        <code>AnnotationsService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

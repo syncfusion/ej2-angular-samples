@@ -9,6 +9,7 @@ import { calendarAppRoutes } from '../calendar/calendar.module';
 import { chartAppRoutes } from '../chart/chart.module';
 import { dialogAppRoutes } from '../dialog/dialog.module';
 import { circulargaugeAppRoutes } from '../circulargauge/circulargauge.module';
+import { lineargaugeAppRoutes } from '../lineargauge/lineargauge.module';
 import { textboxesAppRoutes } from '../textboxes/textboxes.module';
 import { tooltipAppRoutes } from '../tooltip/tooltip.module';
 export let samplesList: any = [
@@ -17,6 +18,9 @@ export let samplesList: any = [
     },
     {
         'name': 'CircularGauge', 'category': 'Datavisualization', 'order': '01', 'path': 'circulargauge', 'samples': circulargaugeAppRoutes, "type": "new"
+    },
+    {
+        'name': 'LinearGauge', 'category': 'Datavisualization', 'order': '01', 'path': 'lineargauge', 'samples': lineargaugeAppRoutes, "type": "new"
     },
     {
         'name': 'Grid', 'category': 'Grids', 'order': '02', 'path': 'grid', 'samples': gridRouteConfig, 'type': 'update'
