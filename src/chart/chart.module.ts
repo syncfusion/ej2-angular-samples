@@ -40,7 +40,7 @@ import { DefaultDoughnutComponent } from './default-doughnut.component';
 import { SemiPieComponent } from './semi-pie.component';
 import { SmartLabelsComponent } from './smart-labels.component';
 import { DrilldownPieComponent } from './drilldown-pie.component';
-import { ClubpointPieComponent } from './clubpoint.component';
+import { GroupingPieComponent } from './grouping.component';
 import { SharedModule } from '../common/shared.module';
 export const chartAppRoutes: Object[] = [
     { path: 'chart/line', component: LineChartComponent, name: 'Line', order:'01' ,category: 'Series' },
@@ -80,7 +80,7 @@ export const chartAppRoutes: Object[] = [
         category: 'Accumulation Series', type: 'new'
     },
     {
-        path: 'chart/clubpoint', component: ClubpointPieComponent, name: 'Grouping', order: '02',
+        path: 'chart/grouping', component: GroupingPieComponent, name: 'Grouping', order: '02',
         category: 'Accumulation Series', type: 'new'
     },
     { path: 'chart/local-data', component: LocalDataChartComponent, name: 'Local Data', order:'03',category: 'Data Binding' },
@@ -105,7 +105,7 @@ let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, Ba
     CrosshairChartComponent, TrackBallChartComponent, ZoomingChartComponent, LocalDataChartComponent, RemoteDataChartComponent,
     PercentStackedAreaChartComponent, PercentStackedBarChartComponent, PercentStackedColumnChartComponent, DefaultPieComponent,
     DateTimeAxisChartComponent, RangeColumnChartComponent, DefaultDoughnutComponent, SemiPieComponent, SmartLabelsComponent,
-    DrilldownPieComponent, ClubpointPieComponent];
+    DrilldownPieComponent, GroupingPieComponent];
 @NgModule({
     imports: [chartRouter, ChartAllModule, SharedModule, ButtonModule, AccumulationChartAllModule],
     exports: [],

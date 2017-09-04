@@ -7,10 +7,10 @@ import { AccumulationChartComponent, IAccTextRenderEventArgs, AccumulationChart,
  */
 @Component({
     selector: 'control-content',
-    templateUrl: 'clubpoint.html',
+    templateUrl: 'grouping.html',
     encapsulation: ViewEncapsulation.None
 })
-export class ClubpointPieComponent {
+export class GroupingPieComponent {
     public data: Object[] = [
         { 'x': 'China', y: 26, text: 'China: 26' },
         { 'x': 'Russia', y: 19, text: 'Russia: 19' },
@@ -31,7 +31,7 @@ export class ClubpointPieComponent {
     @ViewChild('pie')
     public pie: AccumulationChartComponent | AccumulationChart;
     public onTextRender(args: IAccTextRenderEventArgs): void {
-        args.text = args.point.x + ' ' + args.point.y + ' Medals';
+        args.text = args.point.x + ' ' + args.point.y;
     }
     public onPointRender(args: IAccPointRenderEventArgs): void {
         if ((args.point.x as string).indexOf('Others') > -1) {
