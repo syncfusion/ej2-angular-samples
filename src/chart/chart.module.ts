@@ -23,6 +23,7 @@ import { CategoryChartComponent } from './category.component';
 import { StackedBarChartComponent } from './stacked-bar.component';
 import { StackedColumnChartComponent } from './stacked-column.component';
 import { StepLineChartComponent } from './step-line.component';
+import { StepAreaChartComponent } from './step-area.component';
 import { SymbolsChartComponent } from './symbols.component';
 import { ScatterChartComponent } from './scatter.component';
 import { BubbleChartComponent } from './bubble.component';
@@ -57,6 +58,7 @@ export const chartAppRoutes: Object[] = [
     { path: 'chart/stacked-area100', component: PercentStackedAreaChartComponent, name: '100% Stacked Area',order:'01',category: 'Series' },
     { path: 'chart/range-column', component: RangeColumnChartComponent, name: 'Range Column',order:'01',category: 'Series' },
     { path: 'chart/step-line', component: StepLineChartComponent, name: 'StepLine', order:'01',category: 'Series' },
+    { path: 'chart/step-area', component: StepAreaChartComponent, name: 'StepArea', order:'01',category: 'Series',type:'new' },
     { path: 'chart/scatter', component: ScatterChartComponent, name: 'Scatter', order:'01',category: 'Series' },
     { path: 'chart/bubble', component: BubbleChartComponent, name: 'Bubble', order:'01', category: 'Series'},
     { path: 'chart/combination-series', component: CombinationSeriesChartComponent, name: 'Combination Series', 
@@ -99,7 +101,7 @@ export const chartAppRoutes: Object[] = [
 
 export const chartRouter: ModuleWithProviders = RouterModule.forChild(chartAppRoutes);
 let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, BarChartComponent, AreaChartComponent,
-    SplineChartComponent, StackedColumnChartComponent, StackedBarChartComponent, StackedAreaChartComponent, StepLineChartComponent,
+    SplineChartComponent, StackedColumnChartComponent, StackedBarChartComponent, StackedAreaChartComponent, StepLineChartComponent,StepAreaChartComponent,
     ScatterChartComponent, BubbleChartComponent, CombinationSeriesChartComponent, PerformanceChartComponent, NumericAxisChartComponent,
     CategoryChartComponent, LogarithmicAxisChartComponent, MultipleAxesChartComponent, SymbolsChartComponent, SelectionChartComponent,
     CrosshairChartComponent, TrackBallChartComponent, ZoomingChartComponent, LocalDataChartComponent, RemoteDataChartComponent,

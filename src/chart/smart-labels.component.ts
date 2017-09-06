@@ -64,10 +64,10 @@ export class SmartLabelsComponent {
     public endAngle: number = 360;
     public title: string = 'Rio Olympics Gold ';
     public onLoad(args: IAccLoadedEventArgs): void {
-        if (args.pie.availableSize.width < 400) {
-            args.pie.legendSettings.visible = false;
+        if (args.accumulation.availableSize.width < 400) {
+            args.accumulation.legendSettings.visible = false;
         } else {
-            args.pie.legendSettings.visible = true;
+            args.accumulation.legendSettings.visible = true;
         }
     }
     constructor() {

@@ -24,12 +24,12 @@ export class DefaultDoughnutComponent {
     public pie: AccumulationChartComponent | AccumulationChart;
     public onAnimationComplete(args: IAccAnimationCompleteEventArgs) : void {
         let centerTitle: HTMLDivElement = document.getElementById('center_title') as HTMLDivElement;
-        centerTitle.style.fontSize = this.getFontSize(args.pie.initialClipRect.width);
+        centerTitle.style.fontSize = this.getFontSize(args.accumulation.initialClipRect.width);
         let rect: ClientRect = centerTitle.getBoundingClientRect();
-        centerTitle.style.top = (args.pie.center.y + args.pie.element.offsetTop - (rect.height / 2)) + 'px';
-        centerTitle.style.left = (args.pie.center.x + args.pie.element.offsetLeft - (rect.width / 2))  + 'px';
+        centerTitle.style.top = (args.accumulation.center.y + args.accumulation.element.offsetTop - (rect.height / 2)) + 'px';
+        centerTitle.style.left = (args.accumulation.center.x + args.accumulation.element.offsetLeft - (rect.width / 2))  + 'px';
         centerTitle.style.visibility = 'visible';
-        let points: AccPoints[] = args.pie.visibleSeries[0].points;
+        let points: AccPoints[] = args.accumulation.visibleSeries[0].points;
         for (let point of points) {
             if (point.labelPosition === 'Outside' && point.labelVisible) {
                 let label: Element = document.getElementById('container_datalabel_Series_0_text_' + point.index);
