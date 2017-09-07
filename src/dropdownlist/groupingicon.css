@@ -15,16 +15,7 @@
  }
 .e-list-icon {
     font-family: 'e-icons' !important;
-    margin: 4px 26px 0 -16px;
     color: rgba(0, 0, 0, .57);
-    line-height: 1;
-    font-size: 16px;
-    height: 20px;
-    width: 20px;
-}
-.e-bigger .e-list-icon {
-    font-size: 20px;
-    margin: 4px 32px 0 -16px;
 }
 .twitter:before {
     content: "\e700";
