@@ -15,53 +15,63 @@ export class VirtualizationComponent implements OnInit {
 
     @ViewChild('grid')
     public grid: GridComponent;
-    public ngOnInit(): void {}
+    public date1: number;
+    public date2: number;
+    public flag: boolean = true;
+    public ngOnInit(): void { }
 
     onClick = (args: any) => {
-        for (let i: number = 0; i < 100000; i++) {
-            if (!this.virtualData.length){
-                this.show();
+        this.show();
+        if (!this.virtualData.length) {
+            for (let i: number = 0; i < 100000; i++) {
+                this.virtualData.push({
+                    'FIELD1': this.names[Math.floor(Math.random() * this.names.length)],
+                    'FIELD2': 1967 + (i % 10),
+                    'FIELD3': Math.floor(Math.random() * 200),
+                    'FIELD4': Math.floor(Math.random() * 100),
+                    'FIELD5': Math.floor(Math.random() * 2000),
+                    'FIELD6': Math.floor(Math.random() * 1000),
+                    'FIELD7': Math.floor(Math.random() * 100),
+                    'FIELD8': Math.floor(Math.random() * 10),
+                    'FIELD9': Math.floor(Math.random() * 10),
+                    'FIELD10': Math.floor(Math.random() * 100),
+                    'FIELD11': Math.floor(Math.random() * 100),
+                    'FIELD12': Math.floor(Math.random() * 1000),
+                    'FIELD13': Math.floor(Math.random() * 10),
+                    'FIELD14': Math.floor(Math.random() * 10),
+                    'FIELD15': Math.floor(Math.random() * 1000),
+                    'FIELD16': Math.floor(Math.random() * 200),
+                    'FIELD17': Math.floor(Math.random() * 300),
+                    'FIELD18': Math.floor(Math.random() * 400),
+                    'FIELD19': Math.floor(Math.random() * 500),
+                    'FIELD20': Math.floor(Math.random() * 700),
+                    'FIELD21': Math.floor(Math.random() * 800),
+                    'FIELD22': Math.floor(Math.random() * 1000),
+                    'FIELD23': Math.floor(Math.random() * 2000),
+                    'FIELD24': Math.floor(Math.random() * 150),
+                    'FIELD25': Math.floor(Math.random() * 1000),
+                    'FIELD26': Math.floor(Math.random() * 100),
+                    'FIELD27': Math.floor(Math.random() * 400),
+                    'FIELD28': Math.floor(Math.random() * 600),
+                    'FIELD29': Math.floor(Math.random() * 500),
+                    'FIELD30': Math.floor(Math.random() * 300),
+                });
             }
-            this.virtualData.push({
-                'FIELD1': this.names[Math.floor(Math.random() * this.names.length)],
-                'FIELD2': 1967 + (i % 10),
-                'FIELD3': Math.floor(Math.random() * 200),
-                'FIELD4': Math.floor(Math.random() * 100),
-                'FIELD5': Math.floor(Math.random() * 2000),
-                'FIELD6': Math.floor(Math.random() * 1000),
-                'FIELD7': Math.floor(Math.random() * 100),
-                'FIELD8': Math.floor(Math.random() * 10),
-                'FIELD9': Math.floor(Math.random() * 10),
-                'FIELD10': Math.floor(Math.random() * 100),
-                'FIELD11': Math.floor(Math.random() * 100),
-                'FIELD12': Math.floor(Math.random() * 1000),
-                'FIELD13': Math.floor(Math.random() * 10),
-                'FIELD14': Math.floor(Math.random() * 10),
-                'FIELD15': Math.floor(Math.random() * 1000),
-                'FIELD16': Math.floor(Math.random() * 200),
-                'FIELD17': Math.floor(Math.random() * 300),
-                'FIELD18': Math.floor(Math.random() * 400),
-                'FIELD19': Math.floor(Math.random() * 500),
-                'FIELD20': Math.floor(Math.random() * 700),
-                'FIELD21': Math.floor(Math.random() * 800),
-                'FIELD22': Math.floor(Math.random() * 1000),
-                'FIELD23': Math.floor(Math.random() * 2000),
-                'FIELD24': Math.floor(Math.random() * 150),
-                'FIELD25': Math.floor(Math.random() * 1000),
-                'FIELD26': Math.floor(Math.random() * 100),
-                'FIELD27': Math.floor(Math.random() * 400),
-                'FIELD28': Math.floor(Math.random() * 600),
-                'FIELD29': Math.floor(Math.random() * 500),
-                'FIELD30': Math.floor(Math.random() * 300),
-            });
+            this.grid.dataSource = this.virtualData;
         }
-        this.grid.dataSource = this.virtualData;
+        this.flag = true;
+        this.date1 = new Date().getTime();
         this.grid.refresh();
     }
     show(): void {
         document.getElementById('popup').style.display = 'inline-block';
     }
     hide(): void {
+        if (this.flag && this.date1) {
+            this.date2 = new Date().getTime();
+            document.getElementById('performanceTime').innerHTML = 'Time Taken: ' + (this.date2 - this.date1) + 'ms';
+            this.flag = false;
+        }
         document.getElementById('popup').style.display = 'none';
     }
 }

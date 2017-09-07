@@ -2,7 +2,7 @@
     <ej-grid #grid [dataSource]='data' height=335 width='auto'>
         <e-columns>
             <e-column field='Employee Image' headerText='Employee Image' width='150' textAlign='center'></e-column>
-            <e-column field='Employee Details' headerText='Employee Details' width='300' textAling='left'></e-column>
+            <e-column field='Employee Details' headerText='Employee Details' width='300' textAlign='left'></e-column>
         </e-columns>
         <ng-template #rowTemplate let-data>
             <tr>
@@ -25,23 +25,17 @@
                                 <td>{{data.LastName}} </td>
                             </tr>
                             <tr>
-                                <td class="CardHeader">Title
-                                </td>
+                                <td class="CardHeader">Title</td>
 
-                                <td>{{data.Title}}
-                                </td>
+                                <td>{{data.Title}}</td>
                             </tr>
                             <tr>
-                                <td class="CardHeader">Birth Date
-                                </td>
-                                <td>{{format(data.BirthDate)}}
-                                </td>
+                                <td class="CardHeader">Birth Date</td>
+                                <td>{{format(data.BirthDate)}}</td>
                             </tr>
                             <tr>
-                                <td class="CardHeader">Hire Date
-                                </td>
-                                <td>{{format(data.HireDate)}}
-                                </td>
+                                <td class="CardHeader">Hire Date</td>
+                                <td>{{format(data.HireDate)}}</td>
                             </tr>
                         </tbody>
                     </table>

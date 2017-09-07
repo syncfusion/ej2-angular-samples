@@ -1,8 +1,11 @@
-<div class="control-section">
-    <button ej-button (click)='onClick($event)' cssClass='e-info'>Load 100K Data</button>
-    <span id="popup">
-        <span id="gif" class="image"></span>
-    </span>
+<div class="control-section">      
+    <div class='div-button'>
+        <button ej-button (click)='onClick($event)' cssClass='e-info'>Load 100K Data</button>
+        <span id="popup">
+            <span id="gif" class="image"></span>
+        </span>
+        <span id="performanceTime">Time Taken: 0 ms</span>
+    </div>
     <ej-grid #grid [dataSource]='virtualData' [enableVirtualization]='true' [enableColumnVirtualization]='true' height='600' (dataBound)='hide()'>
         <e-columns>
             <e-column field='FIELD1' headerText='Player Name' width='120'></e-column>
