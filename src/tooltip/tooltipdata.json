@@ -2,36 +2,43 @@
     {
         "Id": "1",
         "Country": "Australia",
-        "Sports": "Cricket"
+        "Sports": "Cricket",
+        "Class": "sports-icon-cricket"
     },
     {
         "Id": "2",
         "Country": "Bhutan",
-        "Sports": "Archery"
+        "Sports": "Archery",
+        "Class": "sports-icon-archery"
     },
     {
         "Id": "3",
         "Country": "China",
-        "Sports": "Table tennis"
+        "Sports": "Table tennis",
+        "Class": "sports-icon-table-tennis"
     },
     {
         "Id": "4",
         "Country": "Cuba",
-        "Sports": "Baseball"
+        "Sports": "Baseball",
+        "Class": "sports-icon-baseball"
     },
     {
         "Id": "5",
         "Country": "India",
-        "Sports": "Hockey"
+        "Sports": "Hockey",
+        "Class": "sports-icon-hockey"
     },
     {
         "Id": "6",
         "Country": "Switzerland",
-        "Sports": "Shooting"
+        "Sports": "Shooting",
+        "Class": "sports-icon-shooting"
     },
     {
         "Id": "7",
         "Country": "United States",
-        "Sports": "Baseball"
+        "Sports": "Baseball",
+        "Class": "sports-icon-baseball"
     }
 ]

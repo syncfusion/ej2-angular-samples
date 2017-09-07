@@ -40,8 +40,8 @@ export class AjaxContentTooltipComponent {
                 for (let i: number = 0; i < result.length; i++) {
                     if (result[i].Id === args.target.getAttribute('data-content')) {
                         /* tslint:disable */
-                        this.tooltipControl.content = "<div class='contentWrap'><img src='src/tooltip/images/"
-                            + result[i].Sports + ".png' class='logo' /><div class='def'>" + result[i].Sports + "</div></div>";
+                        this.tooltipControl.content = "<div class='contentWrap'><span class=" + result[i].Class 
+                            + "></span><div class='def'>" + result[i].Sports + "</div></div>";
                         /* tslint:enable */
                     }
                 }
