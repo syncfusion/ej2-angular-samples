@@ -23,7 +23,7 @@ export class DialogEditComponent implements OnInit {
         this.toolbar = ['add', 'edit', 'delete', 'update', 'cancel'];
         this.orderidrules = { required: true };
         this.customeridrules = { required: true };
-        this.freightrules =  { range: [0, 1000] };
+        this.freightrules =  { required: true };
         this.editparams = { params: { popupHeight: '300px' }};
         this.pageSettings = { pageCount: 5};
     }
