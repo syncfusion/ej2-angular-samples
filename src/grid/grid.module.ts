@@ -29,6 +29,10 @@ import { RowTemplateComponent } from './rowtemplate.component';
 import { DetailTemplateComponent } from './detailtemplate.component';
 import { HierarchyComponent } from './hierarchy.component';
 import { VirtualizationComponent } from './virtualization.component';
+import { NormalEditComponent } from './normal-edit.component';
+import { DialogEditComponent } from './dialog-editing.component';
+import { BatchEditComponent } from './batch-editing.component';
+import { ColumnChooserComponent } from './columnchooser.component';
 import { SharedModule } from '../common/shared.module';
 
 export const gridRouteConfig: Object[] = [
@@ -74,14 +78,31 @@ export const gridRouteConfig: Object[] = [
     {
         'path': 'grid/virtualization', component: VirtualizationComponent, name: 'Virtual Scrolling', order: '06',
         category: 'Scrolling', type: 'new'
-    }
+    },
+    {
+        'path': 'grid/normal-editing', component: NormalEditComponent, name: 'Inline On Loacal Data', order: '07',
+        category: 'Editing', type: 'new'
+    },
+    {
+        'path': 'grid/dialog-editing', component: DialogEditComponent, name: 'Dialog On Loacal Data', order: '07',
+        category: 'Editing', type: 'new'
+    },
+    {
+        'path': 'grid/batch-editing', component: BatchEditComponent, name: 'Batch Editing', order: '07',
+        category: 'Editing', type: 'new'
+    },
+    {
+        'path': 'grid/columnchooser', component: ColumnChooserComponent, name: 'Column Chooser', order: '01',
+        category: 'Grid', type: 'new'
+    },
 ];
 
 let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     LocalDataComponent, DataBindingComponent, ShowHideComponent, MasterComponent, DetailComponent, ReorderComponent,
     GroupComponent, StackedHeaderComponent, AutoWrapComponent, SortComponent, PageComponent, FilterComponent, SelectionComponent,
     ScrollComponent, SearchComponent, SelectionApiComponent, DragAndDropComponent, AggregateComponent, AggregateGroupComponent,
-    RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent, VirtualizationComponent];
+    RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent, VirtualizationComponent,
+    NormalEditComponent, DialogEditComponent, BatchEditComponent, ColumnChooserComponent];
 
 @NgModule({
     imports: [RouterModule.forChild(gridRouteConfig), CommonModule, HttpModule, ToolbarModule, GridAllModule, SharedModule],

@@ -1,0 +1,24 @@
+<div class="control-section">
+    <ej-grid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' [toolbar]='toolbar'>
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right" isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
+            <e-column field='CustomerID' headerText='Customer ID' width='120' textAlign="right" [validationRules]='customeridrules'></e-column>
+            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right" editType='numericedit' [validationRules]='freightrules'></e-column>
+            <e-column field='ShipName' headerText='Ship Name' width='170'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='150' editType='dropdownedit' [edit]='editparams'></e-column>
+        </e-columns>
+    </ej-grid>
+    <div id="description">
+        <p>
+            Dialog Editing is used to edit rows through dialog component. You can start editing by double clicking a row or toolbar `Edit`
+            button and then you can change the row values.
+        </p>
+        <p>In this demo, dialog editing is enabled by defining mode as `dialog`.</p>
+        <br>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Grid component features are segregated into individual feature-wise modules. To use editing feature, we need to inject
+            <code>EditService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+    </div>
+</div>
