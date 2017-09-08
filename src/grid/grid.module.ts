@@ -78,11 +78,11 @@ export const gridRouteConfig: Object[] = [
         category: 'Scrolling', type: 'new'
     },
     {
-        'path': 'grid/normal-editing', component: NormalEditComponent, name: 'Inline On Loacal Data', order: '07',
+        'path': 'grid/normal-edit', component: NormalEditComponent, name: 'Inline Editing', order: '07',
         category: 'Editing', type: 'new'
     },
     {
-        'path': 'grid/dialog-editing', component: DialogEditComponent, name: 'Dialog On Loacal Data', order: '07',
+        'path': 'grid/dialog-editing', component: DialogEditComponent, name: 'Dialog Editing', order: '07',
         category: 'Editing', type: 'new'
     }
 ];

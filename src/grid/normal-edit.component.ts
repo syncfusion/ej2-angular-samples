@@ -3,7 +3,7 @@ import { orderDatas } from './data';
 import { EditService, ToolbarService, PageService } from '@syncfusion/ej2-ng-grids';
 
 @Component({
-    selector: 'ej-griddialogedit',
+    selector: 'ej-gridnormaledit',
     templateUrl: 'normal-edit.html',
     providers: [ ToolbarService, EditService, PageService]
 })
