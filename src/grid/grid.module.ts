@@ -31,6 +31,7 @@ import { HierarchyComponent } from './hierarchy.component';
 import { VirtualizationComponent } from './virtualization.component';
 import { NormalEditComponent } from './normal-edit.component';
 import { DialogEditComponent } from './dialog-editing.component';
+import { BatchEditComponent } from './batch-editing.component';
 import { SharedModule } from '../common/shared.module';
 import { ColumnChooserComponent } from './column/columnchooser.component';
 
@@ -57,27 +58,26 @@ export const gridRouteConfig: Object[] = [
     { 'path': 'grid/selection', component: SelectionComponent, name: 'Default Selection', order: '04', category: 'Selection' },
     { 'path': 'grid/selectionapi', component: SelectionApiComponent, name: 'Selection API', order: '04', category: 'Selection' },
     {
-        'path': 'grid/aggregatedefault', component: AggregateComponent, name: 'Default Aggregate', order: '05', category: 'Aggregate',
-        type: 'update'
+        'path': 'grid/aggregatedefault', component: AggregateComponent, name: 'Default Aggregate', order: '05', category: 'Aggregate'
     },
     {
         'path': 'grid/aggregategroup', component: AggregateGroupComponent,
-        name: 'Group and Caption aggregate', order: '05', category: 'Aggregate', type: 'update'
+        name: 'Group and Caption aggregate', order: '05', category: 'Aggregate'
     },
     {
         'path': 'grid/columntemplate', component: ColumnTemplateComponent, name: 'Column Template', order: '03',
-        category: 'Column', type: 'update'
+        category: 'Column'
     },
-    { 'path': 'grid/rowtemplate', component: RowTemplateComponent, name: 'Row Template', order: '01', category: 'Grid', type: 'update' },
+    { 'path': 'grid/rowtemplate', component: RowTemplateComponent, name: 'Row Template', order: '01', category: 'Grid' },
     {
         'path': 'grid/detailtemplate', component: DetailTemplateComponent, name: 'Detail Template', order: '01',
-        category: 'Grid', type: 'update'
+        category: 'Grid'
     },
-    { 'path': 'grid/hierarchy', component: HierarchyComponent, name: 'Hierarchy Grid', order: '01', category: 'Grid', type: 'new' },
+    { 'path': 'grid/hierarchy', component: HierarchyComponent, name: 'Hierarchy Grid', order: '01', category: 'Grid' },
     { 'path': 'grid/scrolling', component: ScrollComponent, name: 'Default Scrolling', order: '06', category: 'Scrolling' },
     {
         'path': 'grid/virtualization', component: VirtualizationComponent, name: 'Virtual Scrolling', order: '06',
-        category: 'Scrolling', type: 'new'
+        category: 'Scrolling'
     },
     {
         'path': 'grid/normal-edit', component: NormalEditComponent, name: 'Inline Editing', order: '07',
@@ -85,6 +85,10 @@ export const gridRouteConfig: Object[] = [
     },
     {
         'path': 'grid/dialog-editing', component: DialogEditComponent, name: 'Dialog Editing', order: '07',
+        category: 'Editing', type: 'new'
+    },
+    {
+        'path': 'grid/batch-editing', component: BatchEditComponent, name: 'Batch Editing', order: '07',
         category: 'Editing', type: 'new'
     }
 ];
@@ -94,7 +98,7 @@ let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     GroupComponent, StackedHeaderComponent, AutoWrapComponent, SortComponent, PageComponent, FilterComponent, SelectionComponent,
     ScrollComponent, SearchComponent, SelectionApiComponent, DragAndDropComponent, AggregateComponent, AggregateGroupComponent,
     RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent, VirtualizationComponent,
-    NormalEditComponent, DialogEditComponent, ColumnChooserComponent];
+    NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent];
 
 @NgModule({
     imports: [RouterModule.forChild(gridRouteConfig), CommonModule, HttpModule, ToolbarModule, GridAllModule, SharedModule],

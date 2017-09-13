@@ -12,6 +12,6 @@ export class ColumnChooserComponent implements OnInit {
     public toolbar: string[];
     ngOnInit(): void {
          this.data = data;
-          this.toolbar = ['columnchooser'];
+         this.toolbar = ['columnchooser'];
     }
 }
