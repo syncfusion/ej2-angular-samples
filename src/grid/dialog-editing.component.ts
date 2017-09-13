@@ -20,7 +20,7 @@ export class DialogEditComponent implements OnInit {
     public ngOnInit(): void {
         this.data = orderDatas;
         this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'dialog' };
-        this.toolbar = ['add', 'edit', 'delete', 'update', 'cancel'];
+        this.toolbar = ['add', 'edit', 'delete'];
         this.orderidrules = { required: true };
         this.customeridrules = { required: true };
         this.freightrules =  { required: true };

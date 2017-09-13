@@ -5,17 +5,32 @@
             <e-column field='CustomerID' headerText='Customer ID' width='120' textAlign="right" [validationRules]='customeridrules'></e-column>
             <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right" editType='numericedit' [validationRules]='freightrules'></e-column>
             <e-column field='ShipName' headerText='Ship Name' width='170'></e-column>
-            <e-column field='ShipCountry' headerText='Ship Country' width='150' editType='dropdownedit' [edit]='editparams' ></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='150' editType='dropdownedit' [edit]='editparams'></e-column>
         </e-columns>
     </ej-grid>
     <div id="description">
-        <p>
-            Batch editing mode is used to send bulk request (add, update and delete) to Grid. You can start editing by double clicking
-            a cell and can change cell value. Edited cell will be highlighted while navigating to next cell or any other
-            row, so that you know which fields or cells has been edited.
+        <p> The Grid supports CRUD operations. This CRUD operations can be configured in Grid using
+            <code><a target="_blank" class="code" href="http://ej2.syncfusion.com/angular/documentation/grid/api-editSettings.html">
+            editSettings</a></code>. Also, It has different modes to manipulate the datasource.
         </p>
-        <p>In this demo, batch editing is enabled by defining mode as `batch`.</p>
-        <br>
+        <p>The available modes are,</p>
+        <ul>
+            <li><code>Inline</code></li>
+            <li><code>Dialog</code></li>
+            <li><code>Batch</code></li>
+        </ul>
+        <p>
+            In this demo, Batch mode is enabled for Editing by defining <code><a target="_blank" class="code"
+            href="http://ej2.syncfusion.com/angular/documentation/grid/api-editSettings.html#mode-string">
+            editSettings.mode
+            </a></code> as <code>batch</code>. You can start editing by double clicking a cell and can change cell value.
+            The edited cell will be highlighted while navigating to a new cell, so that you know which cells had been edited.
+            You can bulk save the edited data to datasource by click on the toolbar's <code>update</code> button or by externally
+            invoking the <code><a target="_blank" class="code"
+            href="http://ej2.syncfusion.com/angular/documentation/grid/api-edit.html#batchsave">
+            batchSave
+            </a></code> method.
+        </p>
         <p style="font-weight: 500">Injecting Module</p>
         <p>
             Grid component features are segregated into individual feature-wise modules. To use editing feature, we need to inject
