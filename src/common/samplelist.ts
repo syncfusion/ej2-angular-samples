@@ -6,6 +6,7 @@ import { toolbarAppRoutes } from '../toolbar/toolbar.module';
 import { numericAppRoutes } from '../numerictextbox/numerictextbox.module';
 import { dropdownlistAppRoutes } from '../dropdownlist/dropdownlist.module';
 import { calendarAppRoutes } from '../calendar/calendar.module';
+import { datePickerAppRoutes } from '../datepicker/datepicker.module';
 import { chartAppRoutes } from '../chart/chart.module';
 import { dialogAppRoutes } from '../dialog/dialog.module';
 import { circulargaugeAppRoutes } from '../circulargauge/circulargauge.module';
@@ -33,6 +34,9 @@ export let samplesList: any = [
     },
     {
         'name': 'Calendar', 'category': 'Editors', 'order': '03', 'path': 'calendar', 'samples': calendarAppRoutes
+    },
+    {
+        'name': 'DatePicker', 'category': 'Editors', 'order': '03', 'path': 'datepicker', 'samples': datePickerAppRoutes, type: "new"
     },
     {
         'name': 'DropDownList', 'category': 'Editors', 'order': '03', 'path': 'dropdownlist', 'samples': dropdownlistAppRoutes, 'type': 'new'

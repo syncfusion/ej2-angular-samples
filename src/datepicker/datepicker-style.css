@@ -1,0 +1,134 @@
+#control_wrapper {
+    max-width: 246px;
+    margin: 30px auto;
+    padding-top: 50px;
+}
+
+.control-section {
+    margin: 25px auto;
+}
+
+#control_wrapper #container {
+    min-height: 300px;
+}
+
+.e-bigger #control_wrapper #container {
+    min-height: 380px;
+}
+
+span.e-icons.highlight {
+    margin-top: -13px;
+    display: block;
+    margin-left: 4px;
+}
+
+span.e-icons.highlight,
+span.e-icons.highlight:before {
+    color: rgb(0, 0, 255);
+}
+
+span.e-icons.highlight:before {
+    content: "\e865";
+    vertical-align: middle;
+    margin-right: 3px;
+    font-size: 4px;
+    position: relative;
+    top: -1px;
+    font-weight: normal;
+}
+
+.e-selected span.e-icons.highlight:before {
+    color: #fff;
+}
+
+span.e-icons.highlight {
+    margin-top: -11px;
+    display: block;
+    margin-left: 4px;
+}
+
+.e-calendar .e-content span.special,
+.e-calendar .e-content span.daycell {
+    font-weight: bold;
+}
+
+.e-calendar .e-content span.special {
+    color: red;
+}
+
+.e-calendar .e-content span.daycell {
+    color: #ff9e00;
+}
+
+.form-group .content-wrapper {
+    float: left;
+    padding: 0 10px;
+}
+
+.property-panel-content {
+    padding: 0 10px 10px 0;
+}
+
+.content {
+    width: 43%;
+    margin: 0 auto;
+    min-width: 185px;
+    padding: 20px 0px;
+}
+
+.control-label {
+    padding: 24px 0px 0px 0px;
+    font-size: 12px;
+    opacity: 0.54;
+}
+
+.e-calendar.e-rtl{
+    max-width: 332px;
+}
+
+.e-bigger .e-calendar.e-rtl {
+    max-width: 332px;
+}
+.e-calendar .e-content span.special {
+    border-radius: 50%;
+}
+
+span.special.e-day.federal {
+    color: orangered;
+}
+
+span.special.e-day.luther {
+    color: rgba(0, 0, 255, 1);
+}
+
+span.special.e-day.Washington {
+    color: rgba(60, 118, 61, 1);
+}
+
+span.special.e-day.memorial {
+    color: rgba(138, 109, 59, 1);
+}
+
+span.special.e-day.independence {
+    color: rgba(64, 255, 229, 1);
+}
+
+span.special.e-day.labour {
+    color: rgba(169, 68, 66, 1);
+}
+
+span.special.e-day.columbus {
+    color: rgba(139, 0, 139, 1);
+}
+
+span.special.e-day.veterans {
+    color: rgba(152, 251, 152, 1);
+}
+
+span.special.e-day.thanksgiving {
+    color: rgba(100, 149, 237, 1);
+}
+
+span.special.e-day.christmas {
+    color: rgba(255, 69, 0, 1);
+}
