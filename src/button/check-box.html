@@ -1,0 +1,27 @@
+<div class="control-section">
+    <div class="checkbox-control">
+        <div class="row">
+            <ej-checkbox #checkbox label="CheckBox: true" [checked]="true" (change)="changeHandler()"></ej-checkbox>
+        </div>
+        <div class="row">
+            <ej-checkbox label="Checked, Disabled" [checked]="true" [disabled] = "true"></ej-checkbox>
+        </div>
+        <div class="row">
+            <ej-checkbox label="Indeterminate, Disabled" [indeterminate] = "true" [disabled] = "true"></ej-checkbox>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        CheckBox is a graphical user interface element that allows you to select one or more options from the choices. It contains
+        checked, unchecked and indeterminate states.
+    </p>
+    <p>
+        In this sample, Checked state is acheived using <b>checked</b> property, indeterminate state is acheived using <b>indeterminate</b> property and disabled state is acheived using <b>disabled</b> property.
+    </p>
+    <p>
+        More information about CheckBox can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/check-box/getting-started.html">
+        documentation section</a>.
+    </p>
+</div>
