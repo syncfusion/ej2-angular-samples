@@ -15,7 +15,7 @@ export class ModalDialogComponent {
     public width: string = '335px';
     public header: string = 'Software Update';
     public content: string = 'Your current software version is up to date.';
-    public buttons: Object[] = [{ click: this.dlgButtonClick, buttonModel: { content: 'Ok', cssClass: 'e-flat', isPrimary: true } }];
+    public buttons: Object[] = [{ click: this.dlgButtonClick, buttonModel: { content: 'OK', cssClass: 'e-flat', isPrimary: true } }];
     public isModal: Boolean = true;
     public animationSettings: Object = { effect: 'None' };
     public hide: any;

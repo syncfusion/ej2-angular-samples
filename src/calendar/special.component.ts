@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
+import { ChangedEventArgs } from '@syncfusion/ej2-calendars';
 
 /**
 
@@ -32,8 +33,8 @@ export class SpecialCalendarComponent {
             args.element.className = 'daycell';
         }
     }
-    onValueChange(args: any) {
-        let title: string = (<HTMLElement>event.currentTarget).querySelector(".e-day").getAttribute('data-val');
+    onValueChange(args: ChangedEventArgs) {
+        let title: string = (<HTMLElement>args.event.currentTarget).querySelector(".e-day").getAttribute('data-val');
         title = title == null ? "" : " ( "+title+" )";
         (<HTMLInputElement>document.getElementById('selected')).textContent = 'Selected Value: ' + args.value.toLocaleDateString() + title;
     }
