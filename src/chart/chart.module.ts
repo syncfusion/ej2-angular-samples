@@ -42,6 +42,7 @@ import { SemiPieComponent } from './semi-pie.component';
 import { SmartLabelsComponent } from './smart-labels.component';
 import { DrilldownPieComponent } from './drilldown-pie.component';
 import { GroupingPieComponent } from './grouping.component';
+import { InversedAxisChartComponent } from './inversed.component';
 import { SharedModule } from '../common/shared.module';
 export const chartAppRoutes: Object[] = [
     { path: 'chart/line', component: LineChartComponent, name: 'Line', order:'01' ,category: 'Series' },
@@ -92,6 +93,7 @@ export const chartAppRoutes: Object[] = [
     { path: 'chart/category', component: CategoryChartComponent, name: 'Category Axis', order:'04', category: 'Chart Axes' },
     { path: 'chart/logarithmic', component: LogarithmicAxisChartComponent, name: 'Logarithmic Axis', order:'04', category: 'Chart Axes' },
     { path: 'chart/multiple-axes', component: MultipleAxesChartComponent, name: 'Multiple Axes',order:'04', category: 'Chart Axes' },
+    { path: 'chart/inversed', component: InversedAxisChartComponent, name: 'Inversed Axes', order:'04', category: 'Chart Axes', type: 'new'},
     { path: 'chart/symbols', component: SymbolsChartComponent, name: 'Symbols',order:'05', category: 'Chart Symbols' },
     { path: 'chart/selection', component: SelectionChartComponent, name: 'Selection',order:'06', category: 'User Interaction' },
     { path: 'chart/crosshair', component: CrosshairChartComponent, name: 'Crosshair',order:'06', category: 'User Interaction' },
@@ -107,7 +109,7 @@ let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, Ba
     CrosshairChartComponent, TrackBallChartComponent, ZoomingChartComponent, LocalDataChartComponent, RemoteDataChartComponent,
     PercentStackedAreaChartComponent, PercentStackedBarChartComponent, PercentStackedColumnChartComponent, DefaultPieComponent,
     DateTimeAxisChartComponent, RangeColumnChartComponent, DefaultDoughnutComponent, SemiPieComponent, SmartLabelsComponent,
-    DrilldownPieComponent, GroupingPieComponent];
+    DrilldownPieComponent, GroupingPieComponent, InversedAxisChartComponent];
 @NgModule({
     imports: [chartRouter, ChartAllModule, SharedModule, ButtonModule, AccumulationChartAllModule],
     exports: [],
