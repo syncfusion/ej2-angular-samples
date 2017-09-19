@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { FormValidatorModule } from '../form-validator/form-validator.module';
 import { DropDownListSampleModule } from '../dropdownlist/dropdownlist.module';
 import { CalendarSampleModule } from '../calendar/calendar.module';
+import { DatePickerSampleModule } from '../datepicker/datepicker.module';
 import { ButtonModule } from '../button/button.module';
 import { ListViewSampleModule } from '../listview/listview.module';
 import { GridSampleModule } from '../grid/grid.module';
@@ -24,6 +25,7 @@ const appRoutes: any = [
     { path: 'Button', loadChildren: ButtonModule },
     { path: 'dropdownlist', loadChildren: DropDownListSampleModule },
     { path: 'calendar', loadChildren: CalendarSampleModule },
+    { path: 'datepicker', loadChildren: DatePickerSampleModule },
     { path: 'numerictextbox', loadChildren: NumericModule },
     { path: 'listview', loadChildren: ListViewSampleModule },
     { path: 'dialog', loadChildren: DialogSampleModule },
@@ -43,6 +45,7 @@ const appRoutes: any = [
         ButtonModule,
         DropDownListSampleModule,
         CalendarSampleModule,
+        DatePickerSampleModule,
         NumericModule,
         ListViewSampleModule,
         TextboxesModule,
