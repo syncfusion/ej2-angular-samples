@@ -1,0 +1,44 @@
+<div class="control-section">
+    <ej-grid [dataSource]='data' allowResizing= 'true' height= '400'>
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' minWidth='120' width='200' maxWidth='300' textAlign="right"></e-column>
+            <e-column field='CustomerName' headerText='Customer Name' width='200'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='200' format="yMd" textAlign="right"></e-column>
+            <e-column field='Freight' headerText='Freight' width='150' format='C2' textAlign="right"></e-column>
+            <e-column field='ShipName' headerText='Ship Name' width='300'></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' allowResizing ='false' width='200' format="yMd" textAlign="right"></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='200'></e-column>
+            <e-column field='ShipCity' headerText='Ship City' width='200'></e-column>
+        </e-columns>
+    </ej-grid>
+    <div id="description">
+        <p>The Grid columns can be resized by clicking and dragging at the right corner of columns header. To enable column resize behavior, set <code><a target="_blank" class="code"
+            href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#allowresizing-boolean">allowResizing
+            </a></code> property as true. You can also prevent to resize the particular column by setting
+            <code><a target="_blank" class="code"
+            href="http://ej2.syncfusion.com/angular/documentation/grid/api-columnDirective.html#allowresizing-any">columns->allowResizing
+            </a></code> as false in columns definition.
+    
+            And, when double click at the right corner of column header, the respective column width will auto adjusted to its fit by <code><a target="_blank" class="code"
+                href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#autofitcolumns">autoFitColumns
+                </a></code> method.
+    
+        </p>
+        <br/>
+    
+        <p>
+            In this demo, allowResizing feature have enabled through by setting the <code> allowResizing property </code> to true and <b>Order ID</b> column can be resized
+             between the range of  <code><a target="_blank" class="code"
+                href="http://ej2.syncfusion.com/angular/documentation/grid/api-columnDirective.html#minwidth-any">minWidth (120px)
+                </a></code> and <code><a target="_blank" class="code"
+                    href="http://ej2.syncfusion.com/angular/documentation/grid/api-columnDirective.html#maxwidth-any">maxWidth (300px).
+                    </a></code> Also, column resizing has disabled in <b>Shipped Date</b> column. 
+        </p>
+    
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Grid component features are segregated into individual feature-wise modules. To use Resize feature, we need to inject
+            <code>ResizeService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+    </div>
+	</div>

@@ -34,6 +34,7 @@ import { DialogEditComponent } from './dialog-editing.component';
 import { BatchEditComponent } from './batch-editing.component';
 import { SharedModule } from '../common/shared.module';
 import { ColumnChooserComponent } from './column/columnchooser.component';
+import { ColumnResizingComponent } from './column/columnresizing.component';
 
 export const gridRouteConfig: Object[] = [
     { 'path': 'grid/default', component: DefaultComponent, 'name': 'Default Functionalities', order: '01', category: 'Grid' },
@@ -54,7 +55,8 @@ export const gridRouteConfig: Object[] = [
     { 'path': 'grid/column/stackedheader', component: StackedHeaderComponent, name: 'Stacked Header', order: '03', category: 'Column' },
     { 'path': 'grid/column/autowrap', component: AutoWrapComponent, name: 'AutoWrap Column cells', order: '03', category: 'Column' },
     { 'path': 'grid/column/reorder', component: ReorderComponent, name: 'Reorder Columns', order: '03', category: 'Column' },
-	{ 'path': 'grid/column/columnchooser', component: ColumnChooserComponent, name: 'Column Chooser', order: '03', category: 'Column', type: 'new' },
+    { 'path': 'grid/column/columnchooser', component: ColumnChooserComponent, name: 'Column Chooser', order: '03', category: 'Column', type: 'new' },
+    { 'path': 'grid/column/columnresizing', component: ColumnResizingComponent, name: 'Column Resizing', order: '03', category: 'Column', type: 'new' },
     { 'path': 'grid/selection', component: SelectionComponent, name: 'Default Selection', order: '04', category: 'Selection' },
     { 'path': 'grid/selectionapi', component: SelectionApiComponent, name: 'Selection API', order: '04', category: 'Selection' },
     {
@@ -98,7 +100,7 @@ let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     GroupComponent, StackedHeaderComponent, AutoWrapComponent, SortComponent, PageComponent, FilterComponent, SelectionComponent,
     ScrollComponent, SearchComponent, SelectionApiComponent, DragAndDropComponent, AggregateComponent, AggregateGroupComponent,
     RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent, VirtualizationComponent,
-    NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent];
+    NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent, ColumnResizingComponent];
 
 @NgModule({
     imports: [RouterModule.forChild(gridRouteConfig), CommonModule, HttpModule, ToolbarModule, GridAllModule, SharedModule],
