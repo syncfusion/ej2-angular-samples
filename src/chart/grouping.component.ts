@@ -58,7 +58,7 @@ export class GroupingPieComponent {
         this.pie.refreshSeries();
         this.pie.refreshChart();
     };
-    public clubvalue: string = '6';
+    public clubvalue: string = '10';
     public startAngle: number = 0;
     public endAngle: number = 360;
     public tooltip: Object = { enable: true, format: '${point.x} <br> ${point.y} Medals' };
