@@ -24,6 +24,7 @@ const sourcecontent: string = '<div class="tab-pane {2}" id="{0}" role="tabpanel
 const plnk: string = '<li class="plnk" style="float:right"><a id="plnkr">Open in Plunker</a></li>';
 const themes: string[] = ['material', 'fabric'];
 let selectedTheme: string;
+let themeFlag: boolean = true;
 declare let hljs: any;
 /**
  * App Controller
@@ -146,7 +147,7 @@ export class SBController {
             .subscribe((event: any) => {
                 let hashTheme: string = location.hash.split('/')[1];
                 let theme: string = localStorage.getItem('ej2-theme');
-                if (!hashTheme || theme || (selectedTheme && selectedTheme !== hashTheme)) {
+                if (!hashTheme || theme || (selectedTheme && selectedTheme !== hashTheme) || themeFlag) {
                     let activeTheme: Element = select('.active-theme');
                     if (activeTheme) {
                         activeTheme.classList.remove('active-theme');
@@ -482,6 +483,7 @@ function loadTheme(theme: string): void {
         doc.href = './styles/' + theme + '.css';
         select('#themeswitcher-icon').setAttribute('src', 'styles/images/SB_icon/SB_Switcher_icon_' + theme + '.png');
         document.body.classList.add(theme);
+        themeFlag = false;
     });
 }
 
