@@ -3,7 +3,7 @@ import { Router,NavigationStart , NavigationEnd, ActivatedRoute } from '@angular
 import { select, isVisible, createElement } from '@syncfusion/ej2-base';
 import { Button } from '@syncfusion/ej2-buttons';
 import { Http, Response } from '@angular/http';
-import { Browser, enableRipple } from '@syncfusion/ej2-base';
+import { Browser, enableRipple, detach } from '@syncfusion/ej2-base';
 import { samplesList } from './samplelist';
 import { LPController, MyWindow } from './lp.component';
 import { ListViewComponent, SelectEventArgs } from '@syncfusion/ej2-ng-lists';
@@ -474,9 +474,9 @@ function loadTheme(theme: string): void {
 
 function hideLoader(): void {
     document.querySelector('.sb-loading').classList.add('hidden');
-    if (select('#overlay')) {
-        let overlay: HTMLElement = <HTMLElement>select('#overlay');
-        overlay.remove();
+    let overlay: Element = select('#overlay');
+    if (overlay) {
+        detach(overlay);
     }
 }
 
