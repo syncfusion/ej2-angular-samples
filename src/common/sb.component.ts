@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, Inject, Input, ViewChild } from '@angular/core';
 import { Router,NavigationStart , NavigationEnd, ActivatedRoute } from '@angular/router';
-import { select, isVisible, createElement } from '@syncfusion/ej2-base';
+import { select, isVisible, createElement, Ajax } from '@syncfusion/ej2-base';
 import { Button } from '@syncfusion/ej2-buttons';
 import { Http, Response } from '@angular/http';
 import { Browser, enableRipple, detach } from '@syncfusion/ej2-base';
@@ -81,6 +81,13 @@ export class SBController {
 
     setSelectListItemSelect(id: string): void {
         this.enableNavClick();
+        let paths: string[] = this.pathRoutes;
+        let path: string = ':theme/' + id;
+        if (paths.length - 1 <= paths.indexOf(path)) {
+            this.grpNavButton.children[1].classList.add('disabled');
+        } else if (paths.indexOf(path) <= 0) {
+            this.grpNavButton.children[0].classList.add('disabled');
+        }
         if (!window.isInteractedList) {
             let listObj: any = this.leftControl.listObj;
             if (this.prevControl !== this.currentControl && listObj) {
@@ -180,7 +187,8 @@ export class SBController {
                 // Need to remove once created event has been supported
                 setTimeout(() => {
                     let hash: string[] = location.hash.split('/');
-                    this.setSelectListItemSelect(hash[2] + '/' + hash[3]);
+                    hash = hash.slice(2);
+                    this.setSelectListItemSelect(hash.join('/'));
                 });
             });
         this.router.events
@@ -310,9 +318,8 @@ export class SBController {
 
     updateSourceTab(path: string): void {
         let pathArray: string[] = path.split('/');
-        let realPath: string[] = [];
-        realPath.push('src', pathArray[2], pathArray[3]);
-        let localPath: string = realPath.join('/');
+        pathArray = pathArray.slice(2);
+        let localPath: string = 'src/' + pathArray.join('/');
         let tsRequest: Observable<Response> = this.http.get(localPath + '.component.ts');
         let htmlRequst: Observable<Response> = this.http.get(localPath + '.html');
         let plunk: Observable<Response> = this.http.get(localPath + '-plnkr.json');
@@ -460,16 +467,20 @@ export class SBController {
     }
     getHash(): string {
         let hash: string[] = location.hash.split('/');
-        return ':theme/' + hash[2] + '/' + hash[3];
+        hash = hash.slice(2);
+        return ':theme/' + hash.join('/');
     }
 }
 
 function loadTheme(theme: string): void {
     selectedTheme = theme;
-    let doc: HTMLFormElement = <HTMLFormElement>select('#themelink');
-    doc.href = './styles/' + theme + '.css';
-    select('#themeswitcher-icon').setAttribute('src', 'styles/images/SB_icon/SB_Switcher_icon_' + theme + '.png');
-    document.body.classList.add(theme);
+    let ajax: Ajax = new Ajax('./styles/' + theme + '.css','GET',true);
+    ajax.send().then((result:any) =>{
+        let doc: HTMLFormElement = <HTMLFormElement>select('#themelink');
+        doc.href = './styles/' + theme + '.css';
+        select('#themeswitcher-icon').setAttribute('src', 'styles/images/SB_icon/SB_Switcher_icon_' + theme + '.png');
+        document.body.classList.add(theme);
+    });
 }
 
 function hideLoader(): void {
