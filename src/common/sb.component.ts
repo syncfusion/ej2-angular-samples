@@ -295,6 +295,7 @@ export class SBController {
             return;
         } else {
             localStorage.setItem('ej2-ng-switch', targetId);
+            localStorage.setItem('ej2-theme', location.hash.split('/')[1]);
             location.reload();
         }
     }
@@ -458,6 +459,7 @@ export class SBController {
         themeName = themeName.toLowerCase();
         themeName = (themes.indexOf(themeName) !== -1) ? themeName : 'material';
         localStorage.setItem('ej2-theme', themeName);
+        localStorage.setItem('ej2-ng-switch', select('.switcher .active').id);
         location.reload();
     }
     closeThemeSelection(): void {
