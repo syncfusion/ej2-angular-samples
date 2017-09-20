@@ -1,5 +1,5 @@
 <div class="control-section">
-     <ej-chart style='display:block; width: 92%' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [crosshair]='crosshairLabel'>
+     <ej-chart style='display:block; width: 92%' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [crosshair]='crosshairLabel' (load)='load($event)'>
          <e-axes>
             <e-axis rowIndex=0 opposedPosition=true name='yAxis' title='Rainfall (MM)' [crosshairTooltip]='crosshairLabel' [majorGridLines]='majorGridLines'
                 [minimum]='0' [maximum]='160' [interval]='20'>

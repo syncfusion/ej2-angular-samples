@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ChartComponent } from '@syncfusion/ej2-ng-charts';
+import { ChartComponent, ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 import { SelectionMode } from '@syncfusion/ej2-charts';
 /**
  * Selection
@@ -98,6 +98,11 @@ export class SelectionChartComponent {
     public legend: Object = {
         visible: true,
         toggleVisibility: false
+    };
+
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
     public title: string = 'Age Distribution by Country';
     constructor() {

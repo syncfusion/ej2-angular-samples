@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { AccumulationChartComponent, IAccTextRenderEventArgs, AccumulationChart,
-         IAccPointRenderEventArgs } from '@syncfusion/ej2-ng-charts';
+         IAccPointRenderEventArgs, IAccLoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Club Point Sample
@@ -57,6 +57,10 @@ export class GroupingPieComponent {
         this.pie.removeSvg();
         this.pie.refreshSeries();
         this.pie.refreshChart();
+    };
+    public load(args: IAccLoadedEventArgs): void {
+            let selectedTheme: string = location.hash.split('/')[1];
+            args.accumulation.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
     public clubvalue: string = '10';
     public startAngle: number = 0;

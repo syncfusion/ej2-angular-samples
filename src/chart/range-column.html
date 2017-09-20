@@ -1,6 +1,6 @@
 <div class="control-section">
     <div>
-        <ej-chart id='chartcontainer' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip'>
+        <ej-chart id='chartcontainer' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data1' type='RangeColumn' xName='x' high='high' low='low' name='India' width=2> </e-series>
                 <e-series [dataSource]='data2' type='RangeColumn' xName='x' high='high' low='low' name='Germany' width=2> </e-series>

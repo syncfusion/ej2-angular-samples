@@ -1,6 +1,6 @@
 <div class="control-section">
         <ej-chart style='display:block;' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-              [tooltip]='tooltip'>
+              [tooltip]='tooltip' (load)='load($event)'>
             <e-series-collection>
                  <e-series [dataSource]='series1' type='Scatter' xName='x' yName='y' opacity = '0.7' name='Male' width=2 [marker]='marker'> </e-series>
                  <e-series [dataSource]='series2' type='Scatter' xName='x' yName='y' opacity = '0.7' name='Female' width=2 [marker]='marker'> </e-series>

@@ -1,7 +1,7 @@
 <div class="control-section">
         <div>
             <ej-chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-                [title]='title' [tooltip]='tooltip'>
+                [title]='title' [tooltip]='tooltip' (load)='load($event)'>
                 <e-series-collection>
                     <e-series [dataSource]='data' type='Bar' xName='x' yName='y' name='Imports' width=2> </e-series>
                     <e-series [dataSource]='data1' type='Bar' xName='x' yName='y' name='Exports' width=2> </e-series>

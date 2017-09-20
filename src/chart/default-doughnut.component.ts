@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { AccumulationChart, AccumulationChartComponent, IAccAnimationCompleteEventArgs, AccPoints,
-         IAccTextRenderEventArgs } from '@syncfusion/ej2-ng-charts';
+         IAccTextRenderEventArgs, IAccLoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Doughnut Sample
@@ -66,6 +66,10 @@ export class DefaultDoughnutComponent {
             size: '14px'
         }
     };
+    public load(args: IAccLoadedEventArgs): void {
+            let selectedTheme: string = location.hash.split('/')[1];
+            args.accumulation.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+    }
     public startAngle: number = 0;
     public endAngle: number = 360;
     public tooltip: Object = { enable: true, format: '${point.x} <br> Composition: ${point.y}%' };

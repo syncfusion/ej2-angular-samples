@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ChartComponent } from '@syncfusion/ej2-ng-charts';
+import { ChartComponent, ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Performance
@@ -46,6 +46,11 @@ export class PerformanceChartComponent {
             document.getElementById('performanceTime').innerHTML = (dt2 - this.dt1) + 'ms';
         }
         this.dt1 = 0;
+    };
+
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
 
 }

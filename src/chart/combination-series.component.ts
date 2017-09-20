@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Combination Series
@@ -72,6 +73,10 @@ export class CombinationSeriesChartComponent {
         height: 10,
         width: 10,
         opacity: 0.6
+    };
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
     public tooltip: Object = {
         enable: true,

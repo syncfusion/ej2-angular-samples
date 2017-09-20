@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Stacked bar Series
@@ -40,6 +41,10 @@ export class StackedBarChartComponent {
     public tooltip: Object = {
         enable: true,
         format: '${series.name}<br>${point.x} : ${point.y}'
+    };
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
     public title: string = 'Sales Comparison';
     constructor() {

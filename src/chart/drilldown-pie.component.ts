@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { AccumulationChartComponent, IMouseEventArgs, indexFinder, Index, IAccTextRenderEventArgs,
-         AccumulationChart } from '@syncfusion/ej2-ng-charts';
+         AccumulationChart, IAccLoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Drilldown Sample
@@ -92,6 +92,10 @@ export class DrilldownPieComponent {
         document.getElementById('symbol').style.visibility = 'hidden';
         document.getElementById('text').style.visibility = 'hidden';
     }
+    public load(args: IAccLoadedEventArgs): void {
+            let selectedTheme: string = location.hash.split('/')[1];
+            args.accumulation.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+    };
     constructor() {
         //code
     };

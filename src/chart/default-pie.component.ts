@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { AccumulationChartComponent, AccumulationChart } from '@syncfusion/ej2-ng-charts';
+import { AccumulationChartComponent, AccumulationChart, IAccLoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Default Pie
@@ -80,6 +80,10 @@ export class DefaultPieComponent {
         font: {
             size: '14px'
         }
+    };
+    public load(args: IAccLoadedEventArgs): void {
+            let selectedTheme: string = location.hash.split('/')[1];
+            args.accumulation.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
     public startAngle: number = 0;
     public endAngle: number = 360;

@@ -1,6 +1,6 @@
 <div class="control-section">
     <div class="col-md-8">
-        <ej-accumulationchart id="container" #pie style='display:block;  width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title">
+        <ej-accumulationchart id="container" #pie style='display:block;  width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='load($event)'>
             <e-accumulation-series-collection>
                 <e-accumulation-series [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" radius="70%" [dataLabel]="dataLabel" explode=true explodeOffset='10%' [explodeIndex]='5'>
                 </e-accumulation-series>

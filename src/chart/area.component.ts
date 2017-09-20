@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Area Series
@@ -44,6 +45,10 @@ export class AreaChartComponent {
         lineStyle: { width: 0 },
         majorTickLines: { width: 0 },
         labelFormat: '{value}M'
+    };
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
     public title: string = 'Average Sales Comparison';
     constructor() {

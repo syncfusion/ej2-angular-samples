@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
  * inversed Axis
@@ -43,6 +44,11 @@ export class InversedAxisChartComponent {
 
     public legend: Object = {
         visible: true
+    };
+
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
 
     public title: string = 'Exchange Rate';

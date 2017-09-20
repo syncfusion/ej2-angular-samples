@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-
+import { ILoadedEventArgs} from '@syncfusion/ej2-ng-charts';
 /**
  * Column Series
  */
@@ -38,6 +38,10 @@ export class ColumnChartComponent {
     public tooltip: Object = {
         enable: true,
         format: '${series.name}<br>${point.x} : ${point.y}'
+    };
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
     constructor() {
         //code

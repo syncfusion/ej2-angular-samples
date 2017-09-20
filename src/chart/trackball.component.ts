@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Trackball
@@ -73,6 +74,10 @@ export class TrackBallChartComponent {
         majorTickLines: { width: 0 },
         minimum: 10, maximum: 90,
         lineStyle: { width: 0 },
+    };
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
     public title: string = 'Average Sales per Person';
     public marker: Object = { visible: true };

@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Stacked Area Series
@@ -21,7 +22,7 @@ export class PercentStackedAreaChartComponent {
         { x: new Date(2011, 0, 1), y: 1.38 }, { x: new Date(2012, 0, 1), y: 1.66 },
         { x: new Date(2013, 0, 1), y: 1.66 }, { x: new Date(2014, 0, 1), y: 1.67 }
     ];
-    public data1: Object[] = [
+    public data1: Object[]  = [
         { x: new Date(2000, 0, 1), y: 0.03 },
         { x: new Date(2001, 0, 1), y: 0.05 }, { x: new Date(2002, 0, 1), y: 0.06 },
         { x: new Date(2003, 0, 1), y: 0.09 }, { x: new Date(2004, 0, 1), y: 0.14 },
@@ -62,6 +63,10 @@ export class PercentStackedAreaChartComponent {
     public primaryYAxis: Object = {
         title: 'Spend in Percentage (%)',
         majorTickLines: { width: 0 }
+    };
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
     public title: string = 'Trend in Sales of Ethical Produce';
     constructor() {

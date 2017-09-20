@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Stacked bar Series
@@ -48,6 +49,10 @@ export class PercentStackedBarChartComponent {
     public tooltip: Object = {
         enable: true,
         format: '${point.x} <br>${series.name} : ${point.y} (${point.percent}%)'
+    };
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
     public title: string = 'Inflation - Consumer Price';
     constructor() {

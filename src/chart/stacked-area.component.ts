@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Stacked Area Series
@@ -66,6 +67,10 @@ export class StackedAreaChartComponent {
         interval: 1,
         labelFormat: '{value}B',
         majorTickLines: { width: 0 }
+    };
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
     public title: string = 'Trend in Sales of Ethical Produce';
     constructor() {

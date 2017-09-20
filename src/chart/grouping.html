@@ -1,6 +1,6 @@
 <div class="control-section">
     <div class="col-md-8">
-        <ej-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (textRender)="onTextRender($event)" (pointRender)="onPointRender($event)">
+        <ej-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (textRender)="onTextRender($event)" (pointRender)="onPointRender($event)" (load)='load($event)'>
             <e-accumulation-series-collection>
                 <e-accumulation-series [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" radius="70%" [dataLabel]="dataLabel" [groupTo]='clubvalue'>
                 </e-accumulation-series>
@@ -20,7 +20,7 @@
                         </td>
                         <td style="width: 40%;">
                             <div data-role="rangeslider">
-                                <input type="range" name="clubvalue" value="6" min="0" max="27" (touchmove)='onClubvalue($event)' (pointermove)='onClubvalue($event)' (change)='onClubvalue($event)' autocomplete="off" id="clubvalue" style="margin-left: -5px">                                </div>
+                                <input type="range" name="clubvalue" value="10" min="0" max="27" (touchmove)='onClubvalue($event)' (pointermove)='onClubvalue($event)' (change)='onClubvalue($event)' autocomplete="off" id="clubvalue" style="margin-left: -5px">                                </div>
                         </td>
                     </tr>
                 </table>

@@ -11,7 +11,7 @@
 </style>
 
 <div class="control-section">
-        <ej-chart style='display:block;width: 92%' [chartArea] = 'chartArea' [primaryXAxis]='primaryXAxis' [legendSettings]='legend' [zoomSettings]='zoomSettings' [title]='title' [primaryYAxis]='primaryYAxis'>
+        <ej-chart style='display:block;width: 92%' [chartArea] = 'chartArea' [primaryXAxis]='primaryXAxis' [legendSettings]='legend' [zoomSettings]='zoomSettings' [title]='title' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='series1' type='Area' xName='x' yName='y' [animation]='animation' fill='url(#gradient-chart)' [border]='border'> </e-series>
             </e-series-collection>

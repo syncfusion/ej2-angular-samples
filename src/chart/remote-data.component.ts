@@ -40,6 +40,8 @@ export class RemoteDataChartComponent {
         div.style.top = (height ? height : 300 / 2 - 25) + 'px';
         div.style.left = (width / 2 - 25) + 'px';
         div.style.display = '';
+        let selectedTheme: string = location.hash.split('/')[1];
+        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
     public primaryXAxis: Object = {
         rangePadding: 'Additional',

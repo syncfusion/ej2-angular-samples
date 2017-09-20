@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ChartDataService } from './chartdata.service';
+import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Crosshair 
@@ -22,6 +23,11 @@ export class LocalDataChartComponent {
         title: 'Price ($)',
         labelFormat: '${value}',
         rangePadding: 'None'
+    };
+
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
     public title: string = 'Stock Price Analysis';
     public animation: Object = {enable: true};

@@ -1,5 +1,5 @@
 <div class="control-section">
-        <ej-chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'  [title]='title' [tooltip]='tooltip'>
+        <ej-chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'  [title]='title' [tooltip]='tooltip' (load)='load($event)'>
               <e-axes>
                  <e-axis rowIndex=0 name='yAxis1' opposedPosition='true' title='Temperature (Celsius)' [majorGridLines]='majorGridLines' labelFormat='{value}°C'
                       [minimum]='24' [maximum]='36' [interval]='2'>

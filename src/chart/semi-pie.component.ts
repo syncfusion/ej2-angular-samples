@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { AccumulationChartComponent } from '@syncfusion/ej2-ng-charts';
+import { AccumulationChartComponent, IAccLoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Semi Pie Sample
@@ -57,6 +57,10 @@ export class SemiPieComponent {
         this.pie.refreshSeries();
         this.pie.refreshChart();
     };
+    public load(args: IAccLoadedEventArgs): void {
+            let selectedTheme: string = location.hash.split('/')[1];
+            args.accumulation.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+    }
     public startAngle: number = 270;
     public endAngle: number = 90;
     public tooltip: Object = { enable: true, format: '${point.x} : ${point.y}' };

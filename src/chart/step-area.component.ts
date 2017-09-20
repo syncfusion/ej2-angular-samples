@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts'; 
 
 /**
  * Step area Series
@@ -30,6 +31,10 @@ export class StepAreaChartComponent {
         title: 'Production (billion kWh)',
         valueType: 'Double',
         labelFormat: '{value}B'
+    };
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
     public title: string = 'Electricity- Production';
     constructor() {

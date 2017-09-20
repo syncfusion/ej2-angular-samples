@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ChartDataService } from './chartdata.service';
+import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Scatter Series
@@ -36,6 +37,11 @@ export class ScatterChartComponent {
         enable: true,
         enableAnimation: false,
         format: '${series.name}<br>Height: ${point.x}<br>Weight: ${point.y}'
+    };
+
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
     };
     public title: string = 'Height vs Weight';
     public series1: Object = ChartDataService.prototype.GetScatterData().series1;
