@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 
-    <link href="./styles/material.css" rel="stylesheet" />
+    <link href="./styles/material.css" rel="stylesheet" id="themelink" />
     <link href="./styles/index.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/highlight.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
@@ -34,7 +34,15 @@
                     <div class="sb-logo" title="Essential JS 2 for Angular"></div>
                 </a>
             </div>
-            <div class="sb-h-content sb-h-right" role="main"></div>
+            <div class="sb-h-content sb-h-right" role="main">
+                <div id="themeswitcher" class="themeicon"><img id="themeswitcher-icon" src='styles/images/SB_icon/SB_Switcher_icon_material.png'></div>
+                <div id="selectdiv" class='e-hidden'>                
+                    <ul id="themelist" class="options">
+                        <li class="e-list" id="material"><span class='switch-text'>Material</span><span class='switch-icon material'></span></a></li>
+                        <li class="e-list" id="fabric"><span class='switch-text'>Fabric</span><span class='switch-icon fabric'></span></a></li>                          
+                    </ul>
+                </div>
+            </div>
         </div>
         <ng-app class="e-view audjust-sb-header animate-sb-header"></ng-app>
     </div>

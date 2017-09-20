@@ -11,10 +11,10 @@ import { AjaxContentTooltipComponent } from './ajaxcontent.component';
 import { DraggableTooltipComponent } from './smartposition.component';
 import { SharedModule } from '../common/shared.module';
 export const tooltipAppRoutes: Object[] = [
-    { path: 'tooltip/default', component: DefaultTooltipComponent, name: 'Default Functionalities', category: 'Tooltip' },
-    { path: 'tooltip/template', component: TemplateTooltipComponent, name: 'Template', category: 'Tooltip' },
-    { path: 'tooltip/ajaxcontent', component: AjaxContentTooltipComponent, name: 'Ajax Content', category: 'Tooltip' },
-    { path: 'tooltip/smartposition', component: DraggableTooltipComponent, name: 'Smart Positioning', category: 'Tooltip' }
+    { path: ':theme/tooltip/default', component: DefaultTooltipComponent, name: 'Default Functionalities', category: 'Tooltip' },
+    { path: ':theme/tooltip/template', component: TemplateTooltipComponent, name: 'Template', category: 'Tooltip' },
+    { path: ':theme/tooltip/ajaxcontent', component: AjaxContentTooltipComponent, name: 'Ajax Content', category: 'Tooltip' },
+    { path: ':theme/tooltip/smartposition', component: DraggableTooltipComponent, name: 'Smart Positioning', category: 'Tooltip' }
 ];
 
 export const tooltipRouter: ModuleWithProviders = RouterModule.forChild(tooltipAppRoutes);

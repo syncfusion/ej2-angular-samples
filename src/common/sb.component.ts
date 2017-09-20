@@ -1,9 +1,9 @@
 import { Component, ElementRef, HostListener, Inject, Input, ViewChild } from '@angular/core';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Router,NavigationStart , NavigationEnd, ActivatedRoute } from '@angular/router';
 import { select, isVisible, createElement } from '@syncfusion/ej2-base';
 import { Button } from '@syncfusion/ej2-buttons';
 import { Http, Response } from '@angular/http';
-import { Browser } from '@syncfusion/ej2-base';
+import { Browser, enableRipple } from '@syncfusion/ej2-base';
 import { samplesList } from './samplelist';
 import { LPController, MyWindow } from './lp.component';
 import { ListViewComponent, SelectEventArgs } from '@syncfusion/ej2-ng-lists';
@@ -22,6 +22,8 @@ const idRegex: RegExp = /\{0\}/g;
 const sourceHeader: string = '<li class="nav-item {2}" role="presentation"><a class="nav-link" target-content="{0}" role="tab" {1}>{0}</a></li>';
 const sourcecontent: string = '<div class="tab-pane {2}" id="{0}" role="tabpanel" {4}><pre><code class="{3}">{1}</code></pre></div>';
 const plnk: string = '<li class="plnk" style="float:right"><a id="plnkr">Open in Plunker</a></li>';
+const themes: string[] = ['material', 'fabric'];
+let selectedTheme: string;
 declare let hljs: any;
 /**
  * App Controller
@@ -60,7 +62,7 @@ export class SBController {
     onPrevClick(): void {
         this.prevControl = this.currentControl;
         this.enableNavClick();
-        let currentIndex: number = this.pathRoutes.indexOf(location.hash.replace('#/', ''));
+        let currentIndex: number = this.pathRoutes.indexOf(this.getHash());
         if ((currentIndex) <= 1) {
             this.grpNavButton.children[0].classList.add('disabled');
         }
@@ -85,7 +87,10 @@ export class SBController {
                 listObj.animation.duration = 0;
                 listObj.back();
                 listObj.selectItem({ 'id': this.currentControl });
+            } else if (select('.e-content').children.length === 1) {
+                listObj.selectItem({ 'id': this.currentControl });
             }
+            id = ':theme/' + id;
             listObj.selectItem({ 'id': id });
             listObj.animation.duration = 400;
         }
@@ -94,7 +99,7 @@ export class SBController {
     onNextClick(): void {
         this.prevControl = this.currentControl;
         this.enableNavClick();
-        let currentIndex: number = this.pathRoutes.indexOf(location.hash.replace('#/', ''));
+        let currentIndex: number = this.pathRoutes.indexOf(this.getHash());
         let nextList: string = this.pathRoutes[currentIndex + 1];
         this.grpNavButton.classList.add('disabled');
         if ((this.pathRoutes.length < currentIndex + 2)) {
@@ -130,6 +135,27 @@ export class SBController {
 
     ngOnInit(): void {
         this.router.events
+            .filter((event: NavigationStart) => event instanceof NavigationStart)
+            .subscribe((event: any) => {
+                let hashTheme: string = location.hash.split('/')[1];
+                let theme: string = localStorage.getItem('ej2-theme');
+                if (!hashTheme || theme || (selectedTheme && selectedTheme !== hashTheme)) {
+                    let activeTheme: Element = select('.active-theme');
+                    if (activeTheme) {
+                        activeTheme.classList.remove('active-theme');
+                    }
+                    localStorage.removeItem('ej2-theme');
+                    if (themes.indexOf(theme) === -1) {
+                        theme = location.hash.split('/')[1];
+                        theme = themes.indexOf(theme) !== -1 ? theme : selectedTheme;
+                    }
+                    theme = themes.indexOf(theme) !== -1 ? theme : 'material';
+                    document.getElementById(theme).classList.add('active-theme');
+                    loadTheme(theme);
+                    this.closeThemeSelection();
+                }
+            });
+        this.router.events
             .filter((event: NavigationEnd) => event instanceof NavigationEnd)
             .map(() => this.activatedRoute)
             .map((route: any) => {
@@ -138,7 +164,8 @@ export class SBController {
             })
             .filter((route: any) => route.outlet === 'primary')
             .mergeMap((route: any) => {
-                this.currentControl = route.routeConfig.path.split('/')[0];
+                this.currentControl = route.routeConfig.path.split('/')[1];
+                this.prevControl = !this.prevControl ? this.currentControl : this.prevControl;
                 this.sampleName = this.initCap(this.currentControl) + ' / ' + route.routeConfig.name;
                 return route.data;
             })
@@ -152,9 +179,22 @@ export class SBController {
                 }
                 // Need to remove once created event has been supported
                 setTimeout(() => {
-                    this.setSelectListItemSelect(location.hash.replace('#/', ''));
+                    let hash: string[] = location.hash.split('/');
+                    this.setSelectListItemSelect(hash[2] + '/' + hash[3]);
                 });
             });
+        this.router.events
+            .filter((event: NavigationEnd) => event instanceof NavigationEnd)
+                .subscribe((event: any) => {
+                    let hash: string[] = location.hash.split('/');
+                    if (!document.querySelector('.active-theme')){
+                        document.getElementById(hash[1] || 'material').classList.add('active-theme');
+                    }
+                    hash[1] = document.querySelector('.active-theme').id;
+                    enableRipple(hash[1] === 'material');
+                    let href: string = location.href.split('#')[0];
+                    history.replaceState({}, 'theme', href + hash.join('/'));
+                });
         if (Browser.isDevice) {
             this.toggleSourceVisibilty(true);
         }
@@ -181,6 +221,8 @@ export class SBController {
             target.classList.add('active');
         }
         localStorage.removeItem('ej2-ng-switch');
+        select('#themeswitcher').addEventListener('click', this.toggleTheme);
+        select('#themelist').addEventListener('click', this.changeTheme);
     }
 
     ngAfterViewInit(): void {
@@ -204,6 +246,7 @@ export class SBController {
         if (this.contentPan.classList.contains('control-animate')) {
             this.slideOut();
         }
+        this.closeThemeSelection();
     }
 
     @HostListener('window:resize', ['$event'])
@@ -212,6 +255,7 @@ export class SBController {
     }
 
     onContentScroll(evt: any) {
+        this.closeThemeSelection();
         if (!Browser.isDevice) { return; }
         let content: HTMLElement = <HTMLElement>select('#control-container');
         let sbHeader: HTMLElement = <HTMLElement>select('.sb-header');
@@ -261,11 +305,14 @@ export class SBController {
             hiddenContent.classList.add('active');
             hiddenContent.removeAttribute('aria-hidden');
         }
+        this.closeThemeSelection();
     }
 
     updateSourceTab(path: string): void {
-        let pfile: string;
-        let localPath: string = path.replace('#', 'src');
+        let pathArray: string[] = path.split('/');
+        let realPath: string[] = [];
+        realPath.push('src', pathArray[2], pathArray[3]);
+        let localPath: string = realPath.join('/');
         let tsRequest: Observable<Response> = this.http.get(localPath + '.component.ts');
         let htmlRequst: Observable<Response> = this.http.get(localPath + '.html');
         let plunk: Observable<Response> = this.http.get(localPath + '-plnkr.json');
@@ -295,6 +342,9 @@ export class SBController {
                     count++;
                 }
                 this.hideWaitingPopup();
+                if (!select('#overlay')) {
+                    hideLoader();
+                }
             },
             (res: any) => {
                 this.toggleSourceVisibilty(true);
@@ -390,4 +440,46 @@ export class SBController {
         }
         document.getElementById('plnkr').addEventListener('click', () => { form.submit(); });
     }
+    toggleTheme(): void {
+        let target: HTMLElement = document.getElementById('selectdiv');
+        target.classList.toggle('e-hidden');
+        select('#themeswitcher').classList.toggle('active');
+    }
+    changeTheme(arg: MouseEvent): void {
+        let target: Element = <Element>arg.target;
+        let themeName: string = target.textContent || target.className.split(' ')[1];
+        themeName = themeName.toLowerCase();
+        themeName = (themes.indexOf(themeName) !== -1) ? themeName : 'material';
+        localStorage.setItem('ej2-theme', themeName);
+        location.reload();
+    }
+    closeThemeSelection(): void {
+        if (!select('#selectdiv').classList.contains('e-hidden')) {
+            this.toggleTheme();
+        }
+    }
+    getHash(): string {
+        let hash: string[] = location.hash.split('/');
+        return ':theme/' + hash[2] + '/' + hash[3];
+    }
 }
+
+function loadTheme(theme: string): void {
+    selectedTheme = theme;
+    let doc: HTMLFormElement = <HTMLFormElement>select('#themelink');
+    doc.href = './styles/' + theme + '.css';
+    select('#themeswitcher-icon').setAttribute('src', 'styles/images/SB_icon/SB_Switcher_icon_' + theme + '.png');
+    document.body.classList.add(theme);
+}
+
+function hideLoader(): void {
+    document.querySelector('.sb-loading').classList.add('hidden');
+    if (select('#overlay')) {
+        let overlay: HTMLElement = <HTMLElement>select('#overlay');
+        overlay.remove();
+    }
+}
+
+window.onload = () => {
+    hideLoader();
+ };

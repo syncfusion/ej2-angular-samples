@@ -7,10 +7,10 @@ import { RemoteListViewComponent } from './remote-list.component';
 import { NestedListViewComponent } from './nested-list.component';
 import { SharedModule } from '../common/shared.module';
 export const listAppRoutes: Object[] = [
-    { path: 'listview/default', component: DefaultListViewComponent, name: 'Default Functionalities', category: 'ListView' },
-    { path: 'listview/remote-list', component: RemoteListViewComponent, name: 'Remote List', category: 'ListView' },
-    { path: 'listview/nested-list', component: NestedListViewComponent, name: 'Nested List', category: 'ListView' },
-    { path: 'listview/rtl', component: RTLListViewComponent, name: 'RTL', category: 'ListView' }
+    { path: ':theme/listview/default', component: DefaultListViewComponent, name: 'Default Functionalities', category: 'ListView' },
+    { path: ':theme/listview/remote-list', component: RemoteListViewComponent, name: 'Remote List', category: 'ListView' },
+    { path: ':theme/listview/nested-list', component: NestedListViewComponent, name: 'Nested List', category: 'ListView' },
+    { path: ':theme/listview/rtl', component: RTLListViewComponent, name: 'RTL', category: 'ListView' }
 ];
 
 export const ListviewRouter: ModuleWithProviders = RouterModule.forChild(listAppRoutes);

@@ -32,7 +32,7 @@ const appRoutes: any = [
     { path: 'textboxes', loadChildren: TextboxesModule },
     { path: 'toolbar', loadChildren: ToolbarSampleModule },
     { path: 'tooltip', loadChildren: TooltipSampleModule },
-    { path: '', redirectTo: 'chart/line', pathMatch: 'full' }
+    { path: '', redirectTo: 'material/chart/line', pathMatch: 'full' }
 ]; 
 
 @NgModule({

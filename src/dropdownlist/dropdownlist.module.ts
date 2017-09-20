@@ -10,12 +10,12 @@ import { FilteringDropDownListComponent } from './filtering.component';
 import { SharedModule } from '../common/shared.module';
 
 export const dropdownlistAppRoutes: Object[] = [
-    { path: 'dropdownlist/default', component: DefaultDropDownListComponent, name: 'Default Functionalities', category: 'DropDownList' },
-    { path: 'dropdownlist/groupingicon', component: GroupAndIconDropDownListComponent, name: 'Grouping and Icons', category: 'DropDownList' },
-    { path: 'dropdownlist/databinding', component: DataBindingDropDownListComponent, name: 'Data Binding', category: 'DropDownList' },
-    { path: 'dropdownlist/template', component: TemplateDropDownListComponent, name: 'Template', category: 'DropDownList' },
-    { path: 'dropdownlist/filtering', component: FilteringDropDownListComponent, name: 'Filtering', category: 'DropDownList' },
-    { path: 'dropdownlist/cascading', component: CascadingDropDownListComponent, name: 'Cascading', category: 'DropDownList' },
+    { path: ':theme/dropdownlist/default', component: DefaultDropDownListComponent, name: 'Default Functionalities', category: 'DropDownList' },
+    { path: ':theme/dropdownlist/groupingicon', component: GroupAndIconDropDownListComponent, name: 'Grouping and Icons', category: 'DropDownList' },
+    { path: ':theme/dropdownlist/databinding', component: DataBindingDropDownListComponent, name: 'Data Binding', category: 'DropDownList' },
+    { path: ':theme/dropdownlist/template', component: TemplateDropDownListComponent, name: 'Template', category: 'DropDownList' },
+    { path: ':theme/dropdownlist/filtering', component: FilteringDropDownListComponent, name: 'Filtering', category: 'DropDownList' },
+    { path: ':theme/dropdownlist/cascading', component: CascadingDropDownListComponent, name: 'Cascading', category: 'DropDownList' },
 ];
 
 export const DropDownListRouter: ModuleWithProviders = RouterModule.forChild(dropdownlistAppRoutes);

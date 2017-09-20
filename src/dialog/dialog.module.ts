@@ -8,10 +8,10 @@ import { AjaxDialogComponent } from './ajax.component';
 import { SharedModule } from '../common/shared.module';
 
 export const dialogAppRoutes: Object[] = [
-    { path: 'dialog/basic', component: DefaultDialogComponent, name: 'Basic Usage', category: 'Dialog' },
-    { path: 'dialog/modal', component: ModalDialogComponent, name: 'Modal', category: 'Dialog' },
-    { path: 'dialog/ajax', component: AjaxDialogComponent, name: 'Ajax Content', category: 'Dialog' },
-    { path: 'dialog/rtl', component: RTLDialogComponent, name: 'RTL', category: 'Dialog' }
+    { path: ':theme/dialog/basic', component: DefaultDialogComponent, name: 'Basic Usage', category: 'Dialog' },
+    { path: ':theme/dialog/modal', component: ModalDialogComponent, name: 'Modal', category: 'Dialog' },
+    { path: ':theme/dialog/ajax', component: AjaxDialogComponent, name: 'Ajax Content', category: 'Dialog' },
+    { path: ':theme/dialog/rtl', component: RTLDialogComponent, name: 'RTL', category: 'Dialog' }
 ];
 
 export const DialogRouter: ModuleWithProviders = RouterModule.forChild(dialogAppRoutes);

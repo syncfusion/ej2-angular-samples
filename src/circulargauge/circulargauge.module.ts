@@ -21,18 +21,18 @@ import { DirectionComponent } from './direction.component';
 
 
 export const circulargaugeAppRoutes: Object[] = [
-    { path: 'circulargauge/default', component: DefaultComponent, name: 'Default', order: '01', category: 'Circular Gauge'},
-    { path: 'circulargauge/range', component: RangeComponent, name: 'Range', order: '01', category: 'Circular Gauge' },
-    { path: 'circulargauge/label', component: LabelComponent, name: 'Ticks and Labels', order: '01', category: 'Circular Gauge'},
-    { path: 'circulargauge/annotation', component: AnnotationComponent , name: 'Annotation', order: '01', category: 'Circular Gauge'},
-    { path: 'circulargauge/customization', component: CustomizationComponent, name: 'Gauge Customization', order: '01', category: 'Circular Gauge'},
-    { path: 'circulargauge/direction', component: DirectionComponent, name: 'Direction Compass', order: '01', category: 'Circular Gauge'},
-    { path: 'circulargauge/pointer-image', component: PointerImageComponent, name: 'Pointer Image', order: '02', category: 'Pointer'},
-    { path: 'circulargauge/pointers', component: PointersComponent, name: 'Pointer Customization', order: '02', category: 'Pointer'},
-    { path: 'circulargauge/multiple-axis', component: MultipleAxisComponent, name: 'Multiple Axis', order: '03', category: 'Axes'},
-    { path: 'circulargauge/user-interactions', component: UserInteractionComponent, name: 'Pointer Drag', order: '04', category: 'User Interaction'},
-    { path: 'circulargauge/tooltip', component: TooltipComponent, name: 'Tooltip', order: '04', category: 'User Interaction'},
-    { path: 'circulargauge/sampledata', component: SampleDataComponent , name: 'Data Sample', order: '05', category: 'Live'}
+    { path: ':theme/circulargauge/default', component: DefaultComponent, name: 'Default', order: '01', category: 'Circular Gauge'},
+    { path: ':theme/circulargauge/range', component: RangeComponent, name: 'Range', order: '01', category: 'Circular Gauge' },
+    { path: ':theme/circulargauge/label', component: LabelComponent, name: 'Ticks and Labels', order: '01', category: 'Circular Gauge'},
+    { path: ':theme/circulargauge/annotation', component: AnnotationComponent , name: 'Annotation', order: '01', category: 'Circular Gauge'},
+    { path: ':theme/circulargauge/customization', component: CustomizationComponent, name: 'Gauge Customization', order: '01', category: 'Circular Gauge'},
+    { path: ':theme/circulargauge/direction', component: DirectionComponent, name: 'Direction Compass', order: '01', category: 'Circular Gauge'},
+    { path: ':theme/circulargauge/pointer-image', component: PointerImageComponent, name: 'Pointer Image', order: '02', category: 'Pointer'},
+    { path: ':theme/circulargauge/pointers', component: PointersComponent, name: 'Pointer Customization', order: '02', category: 'Pointer'},
+    { path: ':theme/circulargauge/multiple-axis', component: MultipleAxisComponent, name: 'Multiple Axis', order: '03', category: 'Axes'},
+    { path: ':theme/circulargauge/user-interactions', component: UserInteractionComponent, name: 'Pointer Drag', order: '04', category: 'User Interaction'},
+    { path: ':theme/circulargauge/tooltip', component: TooltipComponent, name: 'Tooltip', order: '04', category: 'User Interaction'},
+    { path: ':theme/circulargauge/sampledata', component: SampleDataComponent , name: 'Data Sample', order: '05', category: 'Live'}
 ];
 
 export const circularRouter: ModuleWithProviders = RouterModule.forChild(circulargaugeAppRoutes);

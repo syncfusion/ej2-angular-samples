@@ -5,7 +5,7 @@ import { SharedModule } from '../common/shared.module';
 
 export const formValidatorAppRoutes: Object[] = [
     {
-        path: 'form-validator/default',
+        path: ':theme/form-validator/default',
         component: DefaultFormValidatorComponent,
         name: 'Default Functionalities',
         category: 'Form-Validator'

@@ -10,11 +10,11 @@ import { RangesCalendarComponent } from './range.component';
 import { InternationalizationComponent } from './internationalization.component';
 import { SharedModule } from '../common/shared.module';
 export const calendarAppRoutes: Object[] = [
-    { path: 'calendar/default', component: DefaultCalendarComponent, name: 'Default Functionalities', category: 'Calendar' },
-    { path: 'calendar/special', component: SpecialCalendarComponent, name: 'Special Dates', category: 'Calendar' },
-    { path: 'calendar/disabled', component: DisabledCalendarComponent, name: 'Disable Dates', category: 'Calendar' },
-    { path: 'calendar/range', component: RangesCalendarComponent, name: 'Date Range', category: 'Calendar' },
-    { path: 'calendar/internationalization', component: InternationalizationComponent, name: 'Internationalization', category: 'Calendar' }
+    { path: ':theme/calendar/default', component: DefaultCalendarComponent, name: 'Default Functionalities', category: 'Calendar' },
+    { path: ':theme/calendar/special', component: SpecialCalendarComponent, name: 'Special Dates', category: 'Calendar' },
+    { path: ':theme/calendar/disabled', component: DisabledCalendarComponent, name: 'Disable Dates', category: 'Calendar' },
+    { path: ':theme/calendar/range', component: RangesCalendarComponent, name: 'Date Range', category: 'Calendar' },
+    { path: ':theme/calendar/internationalization', component: InternationalizationComponent, name: 'Internationalization', category: 'Calendar' }
 ];
 
 export const CalendarRouter: ModuleWithProviders = RouterModule.forChild(calendarAppRoutes);

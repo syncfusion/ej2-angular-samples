@@ -2,7 +2,11 @@
 
 body {
     overflow: hidden;
-    font-family: Roboto, Segoe UI;
+    font-family: "Segoe UI","GeezaPro","DejaVu Serif";
+}
+
+.material {
+    font-family: "Roboto","Segoe UI","GeezaPro","DejaVu Serif";
 }
 
 body * {
@@ -41,16 +45,99 @@ control-content {
     color: #80bee8;
 }
 
-.sb-header>.sb-h-content {
+.sb-header>.sb-h-left {
     display: table-cell;
     height: 62px;
     overflow: hidden;
     vertical-align: middle;
 }
 
-.sb-header>.sb-h-left,
-.sb-header>.sb-h-right {
+.sb-header>.sb-h-left {
     padding-left: 10px;
+}
+
+.sb-header>.sb-h-right {
+    float: right;
+    height: 100%;
+    padding-right: 16px;
+}
+.switch-icon.material {
+    background: url(images/SB_icon/material.png) no-repeat 100% 100%;
+}
+.switch-icon.fabric {
+    background: url(images/SB_icon/fabric.png) no-repeat 100% 100%;
+}
+.switch-icon {
+    display: block;
+    float: right;
+    height: 28px;
+    width: 28px;
+}
+#themeswitcher-icon {
+    padding-top: 3px;
+}
+
+.themeicon {
+    height: 100%;
+    width: 60px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+#themeswitcher {
+    height: 100%;
+    width: 60px;
+    cursor: pointer;
+    margin-left: 7px;
+}
+#themeswitcher :hover {
+    background: #3397DA;
+}
+#themeswitcher.active {
+    background: #3397DA;
+}
+#selectdiv {
+    width: 230px;
+    position: absolute;
+    z-index: 1000;
+    right: 16px;
+    box-shadow: 0px 0px 25px -5px #9a9a9a;
+}
+
+ul#themelist {
+    list-style: none;
+    padding-left: 0px;
+    border: 1px solid #EAEAEA;
+    background: white;
+    margin-bottom: 0px;
+}
+
+.options li {
+    line-height: 28px;
+    padding: 10px 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+    font-size: 14px;
+}
+.options li:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.active-theme {
+    background: #DEDFE0;
+}
+
+.e-hidden {
+    display: none;
+}
+
+#overlay {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    background-color: white;
 }
 
 .sb-logo {
@@ -476,6 +563,47 @@ control-content {
     overflow-x: initial;
 }
 
+@media screen and (max-width: 400px) and (min-width: 375px){
+    #selectdiv {
+        right: 0px;
+    }
+    .sb-header>.sb-h-right {
+        padding-right: 0px;
+    }
+}
+
+@media screen and (max-width: 359px) {
+    #selectdiv {
+        display: none;
+    }
+    .sb-header>.sb-h-right {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #selectdiv {
+        right: 0px;
+    }
+    .sb-header>.sb-h-right {
+        padding-right: 0px;
+    }
+    .sb-header>.sb-h-left {
+        padding-left: 0px;
+    }
+    #themeswitcher {
+        margin-left: 0px;
+        width: 50px;
+    }
+    #themeswitcher-icon {
+        height: 100%;
+        width: 50px;
+    }
+    .options li {
+        padding: 10px;
+    }
+}
+
 @media screen and (max-width: 480px) and (min-width: 150px){
 
 #source-nav-tab {
@@ -603,7 +731,7 @@ a.code:link, a.code:visited {
 
 @media screen and (min-width: 150px) and (max-width: 480px) {
     .sb-logo {
-        width: 300;
+        width: 300px;
         background: url('images/SB_icon/sb-logo-mobile.png') no-repeat;
     }
     .sample-name {

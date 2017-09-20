@@ -6,8 +6,8 @@ import { CheckBoxController } from './check-box.component';
 import { SharedModule } from '../common/shared.module';
 
 export const buttonAppRoutes: Object[] = [
-    { path: 'button/default', component: DefaultButtonController, name: 'Default Functionalities', category: 'Button' },
-    { path: 'button/check-box', component: CheckBoxController, name: 'CheckBox', category: 'Button', type: 'new' }
+    { path: ':theme/button/default', component: DefaultButtonController, name: 'Default Functionalities', category: 'Button' },
+    { path: ':theme/button/check-box', component: CheckBoxController, name: 'CheckBox', category: 'Button', type: 'new' }
 ];
 
 export const buttonRouter: ModuleWithProviders = RouterModule.forChild(buttonAppRoutes);

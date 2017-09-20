@@ -6,8 +6,8 @@ import { PopupPositionViewComponent } from './position.component';
 import { SharedModule } from '../common/shared.module';
 
 export const popupAppRoutes: Object[] = [
-    { path: 'popup/basic', component: DefaultPopupViewComponent, name: 'Basic Usage', category: 'Popup' },
-    { path: 'popup/Position', component: PopupPositionViewComponent, name: 'Position', category: 'Popup' }
+    { path: ':theme/popup/basic', component: DefaultPopupViewComponent, name: 'Basic Usage', category: 'Popup' },
+    { path: ':theme/popup/Position', component: PopupPositionViewComponent, name: 'Position', category: 'Popup' }
 ];
 export const popupRouter: ModuleWithProviders = RouterModule.forChild(popupAppRoutes);
 

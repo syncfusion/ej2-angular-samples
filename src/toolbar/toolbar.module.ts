@@ -9,10 +9,10 @@ import { RtlToolbarComponent } from './rtl.component';
 import { AlignToolbarComponent } from './alignment.component';
 import { SharedModule } from '../common/shared.module';
 export const toolbarAppRoutes: Object[] = [
-    { path: 'toolbar/default', component: DefaultToolbarComponent, name: 'Default Functionalities', category: 'Toolbar', 'type': 'update' },
-    { path: 'toolbar/popup', component: PopupToolbarComponent, name: 'Popup', category: 'Toolbar' },
-    { path: 'toolbar/alignment', component: AlignToolbarComponent, name: 'Alignment', category: 'Toolbar' },
-    { path: 'toolbar/rtl', component: RtlToolbarComponent, name: 'RTL', category: 'Toolbar' }
+    { path: ':theme/toolbar/default', component: DefaultToolbarComponent, name: 'Default Functionalities', category: 'Toolbar', 'type': 'update' },
+    { path: ':theme/toolbar/popup', component: PopupToolbarComponent, name: 'Popup', category: 'Toolbar' },
+    { path: ':theme/toolbar/alignment', component: AlignToolbarComponent, name: 'Alignment', category: 'Toolbar' },
+    { path: ':theme/toolbar/rtl', component: RtlToolbarComponent, name: 'RTL', category: 'Toolbar' }
 
 ];
 
