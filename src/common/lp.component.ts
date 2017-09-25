@@ -35,11 +35,12 @@ export class LPController {
 
     onSampleClick(e: SelectEventArgs) {
         window.isInteractedList = e.isInteracted;
+        let data: { [key: string]: Object } = e.data;
         if (e.isInteracted) {
-            if (e.data.component && location.hash.replace('/#', '') !== e.data.path) {
+            if (data.component && location.hash.replace('/#', '') !== data.path) {
                 document.body.classList.add('sb-overlay');
                 document.querySelector('.sb-loading').classList.remove('hidden');
-                this.router.navigateByUrl(<string>e.data.path);
+                this.router.navigateByUrl(<string>data.path);
                 this.slideOut();
             } else {
                 this.showBackButton();
