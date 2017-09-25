@@ -1,22 +1,26 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DefaultButtonController } from './default.component';
-import { CheckBoxModule  } from '@syncfusion/ej2-ng-buttons';
+import { CheckBoxModule, RadioButtonModule  } from '@syncfusion/ej2-ng-buttons';
 import { CheckBoxController } from './check-box.component';
+import { RadioButtonController } from './radio-button.component';
 import { SharedModule } from '../common/shared.module';
 
 export const buttonAppRoutes: Object[] = [
     { path: ':theme/button/default', component: DefaultButtonController, name: 'Default Functionalities', category: 'Button' },
-    { path: ':theme/button/check-box', component: CheckBoxController, name: 'CheckBox', category: 'Button', type: 'new' }
+    { path: ':theme/button/check-box', component: CheckBoxController, name: 'CheckBox', category: 'Button', type: 'new' },
+    { path: ':theme/button/radio-button', component: RadioButtonController, name: 'RadioButton', category: 'Button', type: 'new' }
 ];
 
 export const buttonRouter: ModuleWithProviders = RouterModule.forChild(buttonAppRoutes);
 
 @NgModule({
-    imports: [buttonRouter, CheckBoxModule, SharedModule],
+    imports: [buttonRouter, CheckBoxModule, RadioButtonModule, SharedModule],
     declarations: [
         DefaultButtonController,
-        CheckBoxController
-    ]
+        CheckBoxController,
+        RadioButtonController
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ButtonModule { }
