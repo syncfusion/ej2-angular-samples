@@ -13,6 +13,7 @@ import { circulargaugeAppRoutes } from '../circulargauge/circulargauge.module';
 import { lineargaugeAppRoutes } from '../lineargauge/lineargauge.module';
 import { textboxesAppRoutes } from '../textboxes/textboxes.module';
 import { tooltipAppRoutes } from '../tooltip/tooltip.module';
+import { timePickerAppRoutes } from '../timepicker/timepicker.module';
 export let samplesList: any = [
     {
         'name': 'Chart', 'category': 'Datavisualization', 'order': '01', 'path': 'chart', 'samples': chartAppRoutes, 'type': 'update'
@@ -40,6 +41,9 @@ export let samplesList: any = [
     },
     {
         'name': 'DropDownList', 'category': 'Editors', 'order': '03', 'path': 'dropdownlist', 'samples': dropdownlistAppRoutes, 'type': 'new'
+    },
+    {
+        "name": "TimePicker", "category": "Editors", 'order': '03', "path": "timepicker", "samples": timePickerAppRoutes, type: "new"
     },
     {
         'name': 'NumericTextBox', 'category': 'Editors', 'order': '03', 'path': 'numerictextbox', 'samples': numericAppRoutes

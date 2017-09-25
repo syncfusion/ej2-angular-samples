@@ -1,0 +1,65 @@
+<div class="control-section range">
+    <div id="component_wrapper">
+        <div class="pane">
+            <div class="tabs-wrap">
+                <div class="wrap">
+                    <ej-timepicker #startTime id='startPicker' [placeholder]='startText' (change)='onEnableEndTime($event)'></ej-timepicker>
+                </div>
+            </div>
+            <div class="tabs-wrap" style="clear: both">
+                <div class="wrap">
+                    <ej-timepicker #endTime id='endPicker' [placeholder]='endText' [enabled]='false'></ej-timepicker>
+                </div>
+            </div>
+            <div class="tabs-wrap" style="clear: both">
+                <div class="wrap">
+                    <ej-checkbox id="dayRange" label="Business Hours" (change)="changeTime()"></ej-checkbox>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>Time Range sample illustrates appointment time selection scenario with start and end time option. Here, two TimePicker
+        components are used to select start and end time.</p>
+    <p>
+        Before the start time selection, the end time TimePicker is in disable state. When, the start time is selected, then only
+        able to select the end time or else, want to select the entire business hours 9:00 to 18:00 check the <code>Business Hours</code>        option. Once this option is checked, both TimePicker components goes to readonly state.
+    </p>
+    <p>More information on the time range restriction can be found in this
+        <a href="http://ej2.syncfusion.com/angular/documentation/timepicker/time-range.html" target="_blank">
+         documentation section</a>.</p>
+</div>
+<style>
+    .control-section {
+        margin: 30px;
+    }
+
+    #component_wrapper {
+        display: block;
+        margin: 0 auto;
+        float: none;
+        padding: 2% 0;
+        max-width: 300px;
+        border: none;
+    }
+
+    .control-section.range {
+        min-height: 230px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        margin: 30px;
+        padding: 3%;
+    }
+
+    .e-bigger .control-section {
+        margin-top: 60px;
+    }
+
+    .e-bigger .control-section.range {
+        border: none;
+    }
+
+    .range .tabs-wrap {
+        padding: 12px 0px;
+    }
+</style>

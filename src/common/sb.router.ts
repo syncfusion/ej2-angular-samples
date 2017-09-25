@@ -4,6 +4,7 @@ import { FormValidatorModule } from '../form-validator/form-validator.module';
 import { DropDownListSampleModule } from '../dropdownlist/dropdownlist.module';
 import { CalendarSampleModule } from '../calendar/calendar.module';
 import { DatePickerSampleModule } from '../datepicker/datepicker.module';
+import { TimePickerSampleModule } from '../timepicker/timepicker.module';
 import { ButtonModule } from '../button/button.module';
 import { ListViewSampleModule } from '../listview/listview.module';
 import { GridSampleModule } from '../grid/grid.module';
@@ -26,6 +27,7 @@ const appRoutes: any = [
     { path: 'dropdownlist', loadChildren: DropDownListSampleModule },
     { path: 'calendar', loadChildren: CalendarSampleModule },
     { path: 'datepicker', loadChildren: DatePickerSampleModule },
+    { path: 'timepicker', loadChildren: TimePickerSampleModule },
     { path: 'numerictextbox', loadChildren: NumericModule },
     { path: 'listview', loadChildren: ListViewSampleModule },
     { path: 'dialog', loadChildren: DialogSampleModule },
@@ -46,6 +48,7 @@ const appRoutes: any = [
         DropDownListSampleModule,
         CalendarSampleModule,
         DatePickerSampleModule,
+        TimePickerSampleModule,
         NumericModule,
         ListViewSampleModule,
         TextboxesModule,

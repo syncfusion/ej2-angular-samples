@@ -1,0 +1,25 @@
+
+.control-section {
+    margin: 30px;
+}
+
+#control_wrapper #container {
+    min-height: 300px;
+}
+
+.e-bigger #control_wrapper #container {
+    min-height: 380px;
+}
+
+#description{
+    clear: both;
+}
+
+.form-group .content-wrapper {
+    float: left;
+    padding: 0 10px;
+}
+
+.property-panel-content {
+    padding: 0 10px 10px 0;
+}

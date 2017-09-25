@@ -8,11 +8,11 @@
     </div>
     <ej-listview #controlList id="control-list" [fields]='fields' [dataSource]='dataSource' headerTitle='All Controls' (select)='onSampleClick($event)'>
         <ng-template #template let-data>
-            <div class="e-text-content">
-                <div *ngIf="data.samples" class="e-icons e-icon-collapsible"></div>
-                <span class="e-list-text" role="list-item">{{data.name}}
+            <div class="e-text-content e-icon-wrapper">
+                <span class="e-list-text" role="listitem">{{data.name}}
                     <span *ngIf="data.type" class="e-samplestatus {{data.type}}"></span>
                 </span>
+				<div *ngIf="data.samples" class="e-icons e-icon-collapsible"></div>
             </div>
         </ng-template>
         <ng-template #groupTemplate let-data>
