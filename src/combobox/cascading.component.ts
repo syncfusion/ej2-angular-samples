@@ -1,17 +1,17 @@
 /**
- * DropDownList Cascading Sample
+ * ComboBox Cascading Sample
  */
 import { Component, ViewChild } from '@angular/core';
 import { Query } from '@syncfusion/ej2-data';
-import { DropDownListComponent } from '@syncfusion/ej2-ng-dropdowns';
+import { ComboBoxComponent } from '@syncfusion/ej2-ng-dropdowns';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'cascading.html',
-    styleUrls: ['dropdownlist.css']
+    styleUrls: ['combobox.css']
 })
 
-export class CascadingDropDownListComponent {
+export class CascadingComboBoxComponent {
     public country: { [key: string]: Object }[] = [
         { countryName: 'Australia', countryId: '2' },
         { countryName: 'United States', countryId: '1' }
@@ -51,26 +51,38 @@ export class CascadingDropDownListComponent {
     public stateWaterMark: string = 'Select a state';
     public cityWaterMark: string = 'Select a city';
     @ViewChild('countryList')
-    public countryObj: DropDownListComponent;
+    public countryObj: ComboBoxComponent;
     @ViewChild('stateList')
-    public stateObj: DropDownListComponent;
+    public stateObj: ComboBoxComponent;
     @ViewChild('cityList')
-    public cityObj: DropDownListComponent;
+    public cityObj: ComboBoxComponent;
     public onChange1(): void {
-        this.stateObj.enabled = true;
-        let tempQuery: Query = new Query().where('countryId', 'equal', this.countryObj.value);
-        this.stateObj.query = tempQuery;
-        this.stateObj.text = null;
+        if (this.countryObj.value === null) {
+            this.stateObj.enabled = false;
+            this.cityObj.enabled = false;
+            this.stateObj.value = null;
+            this.cityObj.value = null;
+        } else {
+            this.stateObj.enabled = true;
+            let tempQuery: Query = new Query().where('countryId', 'equal', this.countryObj.value);
+            this.stateObj.query = tempQuery;
+            this.stateObj.value = null;
+            this.cityObj.value = null;
+            this.cityObj.enabled = false;
+        }
         this.stateObj.dataBind();
-        this.cityObj.text = null;
-        this.cityObj.enabled = false;
         this.cityObj.dataBind();
     }
     public onChange2(): void {
-        this.cityObj.enabled = true;
-        let tempQuery1: Query = new Query().where('stateId', 'equal', this.stateObj.value);
-        this.cityObj.query = tempQuery1;
-        this.cityObj.text = null;
+        if (this.stateObj.value === null) {
+            this.cityObj.enabled = false;
+            this.cityObj.value = null;
+        } else {
+            this.cityObj.enabled = true;
+            let tempQuery: Query = new Query().where('stateId', 'equal', this.stateObj.value);
+            this.cityObj.query = tempQuery;
+            this.cityObj.value = null;
+        }
         this.cityObj.dataBind();
     }
 }

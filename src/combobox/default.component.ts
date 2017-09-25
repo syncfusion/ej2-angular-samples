@@ -1,15 +1,15 @@
 /**
- * DropDownList Default functionality Sample
+ * ComboBox Defaut functionality Sample
  */
-import { Component, ViewChild } from '@angular/core';
-import { DropDownListComponent } from '@syncfusion/ej2-ng-dropdowns';
+import { Component, ViewChild, NgModule } from '@angular/core';
+import { ComboBoxComponent } from '@syncfusion/ej2-ng-dropdowns';
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html'
 })
-export class DefaultDropDownListComponent {
+export class DefaultComboBoxComponent {
     @ViewChild('sample')
-    public listObj: DropDownListComponent;
+    public comboBoxObj: ComboBoxComponent;
     public sportsData: Object[] = [
         { id: 'Game1', game: 'American Football' },
         { id: 'Game2', game: 'Badminton' },
@@ -23,14 +23,13 @@ export class DefaultDropDownListComponent {
         { id: 'Game10', game: 'Tennis' }
     ];
     public fields: Object = { text: 'game', value: 'id' };
-    public height: string = '220px';
-    public waterMark: string = 'Select a game';
+    public height: string = '250px';
     public value: string = 'Game3';
+    public waterMark: string = 'Select a game';
     public onChange(args: any): void {
-        let value: Element = document.getElementById('value');
         let text: Element = document.getElementById('text');
-        value.innerHTML = this.listObj.value.toString();
-        text.innerHTML = this.listObj.text;
+        this.value = this.comboBoxObj.value === null ? 'null' : this.comboBoxObj.value.toString();
+        text.innerHTML = this.comboBoxObj.text === null ? 'null' : this.comboBoxObj.text.toString();
     }
     ngAfterViewInit(e: any): void {
         this.onChange(e);

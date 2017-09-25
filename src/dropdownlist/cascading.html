@@ -1,17 +1,26 @@
 <div class="control-section">
     <div class='control-wrapper' style='width: 250px; margin: 0 auto'>
         <div style='padding-top: 35px;'>
-            <ej-dropdownlist #countryList id='countryList' [dataSource]='country' [fields]='countryFields' (change)='onChange1()' [placeholder]='countryWaterMark'></ej-dropdownlist>
+            <ej-dropdownlist #countryList id='country' [dataSource]='country' [fields]='countryFields' (change)='onChange1()' [placeholder]='countryWaterMark'></ej-dropdownlist>
         </div>
         <div style='padding-top: 35px;'>
-            <ej-dropdownlist #stateList id='stateList' [dataSource]='state' [fields]='stateFields' (change)='onChange2()' [placeholder]='stateWaterMark' [enabled]='false'></ej-dropdownlist>
+            <ej-dropdownlist #stateList id='state' [dataSource]='state' [fields]='stateFields' (change)='onChange2()' [placeholder]='stateWaterMark'
+                [enabled]='false'></ej-dropdownlist>
         </div>
         <div style='padding-top: 35px;'>
-            <ej-dropdownlist #cityList id='cityList' [dataSource]='cities' [fields]='cityFields' [placeholder]='cityWaterMark' [enabled]='false'></ej-dropdownlist>
+            <ej-dropdownlist #cityList id='city' [dataSource]='cities' [fields]='cityFields' [placeholder]='cityWaterMark' [enabled]='false'></ej-dropdownlist>
         </div>
     </div>
 </div>
 <div id="description">
-    <p>The <code>Cascading</code> DropDownList is a series of dependent DropDownList components, in which data of one DropDownList will load based on its parent DropDownList selected value. This can achieved by using <code>change</code> event of parent DropDownList.</p>
-    <p>In this sample, if a country is selected from countries DropDownList, then respective states will load in second DropDownList and the same has done between states and cities DropDownList.</p>
+    <p>The <code>Cascading</code> DropDownList is the series of DropDownList, where the value of one DropDownList depends on
+        the another DropDownList value. This can be configured by making use of the <code>change</code> event of parent DropDownList.
+        Within that change event handler, you should load the data to child DropDownList based on selected value of parent
+        DropDownList.
+    </p>
+    <p>In this sample, if a country is selected from countries DropDownList, then respective states will load in second DropDownList
+        and the same has done between states and cities DropDownList.</p>
+    <p> More information on the Cascading feature configuration can be found in this
+        <a href="../documentation/drop-down-list/how-to.html#configure-the-cascading-combobox" target="_blank"> documentation section</a>.
+    </p>
 </div>

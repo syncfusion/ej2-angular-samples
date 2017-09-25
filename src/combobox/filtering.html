@@ -1,0 +1,15 @@
+<div class="control-section">
+    <div style="margin: 0px auto; width:250px; padding-top: 40px;">
+        <ej-combobox id='country' [dataSource]='data' [fields]='fields' (filtering)='onFiltering($event)' [popupHeight]='height' [allowFiltering]='true'
+            [placeholder]='watermark'></ej-combobox>
+    </div>
+</div>
+
+<div id="description">
+    <p>The ComboBox has built-in support to filter the data source when <code>allowFiltering</code> enabled. And it performs when type characters in the search box. In <code>filtering</code> event, you can filter down the data source and return the resulted
+        data to ComboBox via <code>updateData</code> method to display its list items.</p>
+    <p>In this sample illustrates that, query the data source and passed the resulted data to ComboBox through the <code>updateData</code> method in <code>filtering</code> event.</p>
+    <p> More information on the filtering feature configuration can be found in this
+        <a href="../documentation/combo-box/filtering.html" target="_blank"> documentation section</a>.
+    </p>
+</div>

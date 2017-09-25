@@ -1,5 +1,5 @@
 /**
- * DropDownList Template Sample
+ * ComboBox Template Sample
  */
 import { Component, ViewEncapsulation } from '@angular/core';
 
@@ -9,7 +9,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
     styleUrls: ['template.css'],
     encapsulation: ViewEncapsulation.None
 })
-export class TemplateDropDownListComponent {
+export class TemplateComboBoxComponent {
     public data: { [key: string]: Object }[] = [
         { name: 'Andrew Fuller', eimg: '7', designation: 'Team Lead', country: 'England' },
         { name: 'Anne Dodsworth', eimg: '1', designation: 'Developer', country: 'USA' },

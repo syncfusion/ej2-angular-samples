@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormValidatorModule } from '../form-validator/form-validator.module';
 import { DropDownListSampleModule } from '../dropdownlist/dropdownlist.module';
+import { ComboBoxSampleModule } from '../combobox/combobox.module';
 import { CalendarSampleModule } from '../calendar/calendar.module';
 import { DatePickerSampleModule } from '../datepicker/datepicker.module';
 import { TimePickerSampleModule } from '../timepicker/timepicker.module';
@@ -25,6 +26,7 @@ const appRoutes: any = [
     { path: 'form-validator', loadChildren: FormValidatorModule },
     { path: 'Button', loadChildren: ButtonModule },
     { path: 'dropdownlist', loadChildren: DropDownListSampleModule },
+    { path: 'combobox', loadChildren: ComboBoxSampleModule },
     { path: 'calendar', loadChildren: CalendarSampleModule },
     { path: 'datepicker', loadChildren: DatePickerSampleModule },
     { path: 'timepicker', loadChildren: TimePickerSampleModule },
@@ -35,7 +37,7 @@ const appRoutes: any = [
     { path: 'toolbar', loadChildren: ToolbarSampleModule },
     { path: 'tooltip', loadChildren: TooltipSampleModule },
     { path: '', redirectTo: 'material/chart/line', pathMatch: 'full' }
-]; 
+];
 
 @NgModule({
     imports: [
@@ -45,6 +47,7 @@ const appRoutes: any = [
         GridSampleModule,
         FormValidatorModule,
         ButtonModule,
+        ComboBoxSampleModule,
         DropDownListSampleModule,
         CalendarSampleModule,
         DatePickerSampleModule,

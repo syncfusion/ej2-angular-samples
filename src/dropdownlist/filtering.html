@@ -1,12 +1,16 @@
 <div class="control-section">
     <div class='content' style="width: 280px;margin: 0 auto; padding-top:40px">
-        <ej-dropdownlist id='dropdownlist-searching' [dataSource]='data' (actionFailure)='onActionFailure()' (actionComplete)='onActionComplete()' (actionBegin)='onActionBegin()' [fields]='fields' (filtering)='onFiltering($event)' [filterBarPlaceholder]="filterPlaceholder"
+        <ej-dropdownlist id='country' [dataSource]='data' [fields]='fields' (filtering)='onFiltering($event)' [filterBarPlaceholder]="filterPlaceholder"
             [popupHeight]='height' [allowFiltering]='true' [placeholder]='watermark'></ej-dropdownlist>
     </div>
 </div>
 
 <div id="description">
-    <p>The DropDownList has built-in support to filter the data source when <code>allowFiltering</code> enabled. And it performs when type characters in the search box. In <code>filtering</code> event, you can filter down the data source and return the resulted
-        data to DropDownList via <code>updateData</code> method to display its list items.</p>
-    <p>In this sample illustrates that, query the data source and passed the resulted data to DropDownList through the <code>updateData</code> method in <code>filtering</code> event.</p>
+    <p>The DropDownList has built-in support to filter the data source when <code>allowFiltering</code> enabled. And it performs
+        when type characters in the search box. In <code>filtering</code> event, you can filter down the data source and
+        return the resulted data to DropDownList via <code>updateData</code> method to display its list items.</p>
+    <p>In this sample illustrates that, query the data source and passed the resulted data to DropDownList through the <code>updateData</code>        method in <code>filtering</code> event.</p>
+    <p> More information on the filtering feature configuration can be found in this
+        <a href="../documentation/drop-down-list/filtering.html" target="_blank"> documentation section</a>.
+    </p>
 </div>

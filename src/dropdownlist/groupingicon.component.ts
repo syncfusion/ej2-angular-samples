@@ -1,3 +1,6 @@
+/**
+ * DropDownList Grouping & Icons Samples
+ */
 import { Component, ViewEncapsulation } from '@angular/core';
 @Component({
     selector: 'control-content',

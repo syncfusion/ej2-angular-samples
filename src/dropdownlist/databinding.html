@@ -3,13 +3,14 @@
         <div id='local' class='col-lg-6' style="margin: 0 auto;padding-top: 25px;">
             <div style="width: 250px;margin: 0 auto;">
                 <h4> Local Data</h4>
-                <ej-dropdownlist id='local' #sample1 [dataSource]='sportsData' [fields]='localFields' [placeholder]='localWaterMark' [popupHeight]='height'></ej-dropdownlist>
+                <ej-dropdownlist id='games' #sample1 [dataSource]='sportsData' [fields]='localFields' [placeholder]='localWaterMark' [popupHeight]='height'></ej-dropdownlist>
             </div>
         </div>
         <div id='remote' class='col-lg-6' style="margin: 0 auto;padding-top: 25px;">
             <div style="width: 250px;margin: 0 auto;">
                 <h4>Remote Data</h4>
-                <ej-dropdownlist id='remote' #sample2 [dataSource]='data' (actionFailure)='onActionFailure()' (actionComplete)='onActionComplete()' (actionBegin)='onActionBegin()' [fields]='remoteFields' [query]='query' [popupHeight]='height' [placeholder]='remoteWaterMark'></ej-dropdownlist>
+                <ej-dropdownlist id='customers' #sample2 [dataSource]='data' (actionFailure)='onActionFailure()' (actionComplete)='onActionComplete()'
+                    (actionBegin)='onActionBegin()' [fields]='remoteFields' [query]='query' [popupHeight]='height' [placeholder]='remoteWaterMark' sortOrder='Ascending'></ej-dropdownlist>
             </div>
         </div>
     </div>
@@ -17,15 +18,18 @@
 
 
 <div id="description">
-    <p>The DropDownList supports data binding. Here bind the data from Local and remote services by using <code>dataSource</code> property.</p>
-    <p>The DataManager, which will act as an interface between service endpoint and DropDownList, will require the below minimal information to interact with service endpoint properly.
+    <p>The DropDownList supports data binding. Here bind the data from Local and remote services by using <code>dataSource</code>        property.</p>
+    <p>The DataManager, which will act as an interface between service endpoint and DropDownList, will require the below minimal
+        information to interact with service endpoint properly.
     </p>
     <ul>
         <li><code>DataManager->url</code> - Defines the service endpoint to fetch data</li>
-        <li><code>DataManager->adaptor</code> - Defines the adaptor option. By default, <code>ODataAdaptor</code> is used for remote binding.</li>
+        <li><code>DataManager->adaptor</code> - Defines the adaptor option. By default, <code>ODataAdaptor</code> is used for
+            remote binding.</li>
     </ul>
     <p>The adaptor is responsible for processing response and request from/to the service endpoint.
-        <code>@syncfusion/ej2-data</code> package provides some predefined adaptors which are designed to interact with particular service endpoints. They are,</p>
+        <code>@syncfusion/ej2-data</code> package provides some predefined adaptors which are designed to interact with particular
+        service endpoints. They are,</p>
     <ul>
         <li><code>UrlAdaptor</code> - Use this to interact any remote services.</li>
         <li><code>ODataAdaptor</code> - Use this to interact with OData endpoints.</li>
@@ -33,6 +37,10 @@
         <li><code>WebApiAdaptor</code> - Use this to interact with Web API created under OData standards.</li>
         <li><code>WebMethodAdaptor</code> - Use this to interact with web methods.</li>
     </ul>
-    <p>In this sample, the local data is bound to a collection of sports data and the remote data is bound to a collection of customer data as an instance of <code>DataManager</code>.
+    <p>In this sample, the local data is bound to a collection of sports data and the remote data is bound to a collection of
+        customer data as an instance of <code>DataManager</code>.
+    </p>
+    <p> More information on the data binding feature configuration can be found in this
+        <a href="../documentation/drop-down-list/data-binding.html" target="_blank"> documentation section</a>.
     </p>
 </div>

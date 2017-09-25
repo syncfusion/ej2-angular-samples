@@ -1,5 +1,5 @@
 /**
- * DropDownList Filtering Sample
+ * ComboBox Filtering Sample
  */
 import { Component } from '@angular/core';
 import { Query } from '@syncfusion/ej2-data';
@@ -10,7 +10,7 @@ import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
     selector: 'control-content',
     templateUrl: 'filtering.html'
 })
-export class FilteringDropDownListComponent {
+export class FilteringComboBoxComponent {
     public data: { [key: string]: Object; }[] = [
         { name: 'Australia', code: 'AU' },
         { name: 'Bermuda', code: 'BM' },
@@ -35,7 +35,6 @@ export class FilteringDropDownListComponent {
     public fields: Object = { text: 'name', value: 'code' };
     public height: string = '220px';
     public watermark: string = 'Select a country';
-    public filterPlaceholder: string = 'Search';
     public onFiltering: EmitType<FilteringEventArgs> = (e: FilteringEventArgs) => {
         let query: Query = new Query();
         query = (e.text !== '') ? query.where('name', 'startswith', e.text, true) : query;

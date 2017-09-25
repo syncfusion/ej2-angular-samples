@@ -1,0 +1,33 @@
+<div class="control-section">
+    <div class="col-lg-8  content-wrapper" style="height: 350px">
+        <div id='content' style="margin: 0 auto; width:250px; padding-top: 30px">
+            <ej-combobox id='games' #sample [dataSource]='sportsData' (change)='onChange($event)' [fields]='fields' [(value)]='value' [placeholder]='waterMark' [popupHeight]='height'></ej-combobox>
+        </div>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties" style="width: 100%; margin:10px">
+                    <tr>
+                        <td style="padding:5px; width:25%">Value</td>
+                        <td>:<input type='text' id='values' [(ngModel)]='value' class='e-input' style='margin-left:10px; width:140px'/></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:20px 5px; width:25%">Text</td>
+                        <td>:<span id='text' style='padding-left:10px'></span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>The <code>ComboBox</code> component allows the user to type a value or choose an option from the list of predefined options.</p>
+    <p>The default sample illustrate the use of ComboBox that allowing end-users to select an item from <code>options</code> list and the selected item's <code>value</code> and <code>text</code> property values are displayed in the property
+        panel. Also, this sample illustrates how to work the value property with two-way binding functionality in ComboBox.
+    </p>
+    <p>  More information on the ComboBox instantiation can be found in this
+        <a href="../documentation/combo-box/getting-started.html" target="_blank"> documentation section</a>.
+    </p>
+</div>

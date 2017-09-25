@@ -1,15 +1,24 @@
 /**
- * DropDownList Remote-Data & Local-Data Samples
+ * ComboBox Remote-Data & Local-Data Samples
  */
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Query, DataManager, ODataV4Adaptor } from '@syncfusion/ej2-data';
+import { ComboBoxComponent } from '@syncfusion/ej2-ng-dropdowns';
+import { CheckBoxComponent } from '@syncfusion/ej2-ng-buttons';
+
 @Component({
     selector: 'control-content',
     templateUrl: 'databinding.html',
     styleUrls: ['databinding.css'],
     encapsulation: ViewEncapsulation.None
 })
-export class DataBindingDropDownListComponent {
+export class DataBindingComboBoxComponent {
+    @ViewChild('local')
+    public localObj: ComboBoxComponent;
+    @ViewChild('remote')
+    public remoteObj: ComboBoxComponent;
+    @ViewChild('checkbox')
+    public checkboxObj: CheckBoxComponent;
     public sportsData: Object[] = [
         { id: 'Game1', game: 'American Football' },
         { id: 'Game2', game: 'Badminton' },
@@ -31,7 +40,7 @@ export class DataBindingDropDownListComponent {
     });
     public query: Query = new Query().select(['ContactName', 'CustomerID']);
     public remoteFields: Object = { text: 'ContactName', value: 'CustomerID' };
-    public height: string = '200px';
+    public height: string = '250px';
     public remoteWaterMark: string = 'Select a customer';
     public onActionBegin(): void {
         let element: HTMLElement[] = <HTMLElement[] & NodeListOf<Element>>
@@ -47,5 +56,11 @@ export class DataBindingDropDownListComponent {
     }
     public onActionFailure(): void {
         this.onActionComplete();
+    }
+    public onChange(): void {
+        this.localObj.autofill = this.checkboxObj.checked;
+        this.localObj.dataBind();
+        this.remoteObj.autofill = this.checkboxObj.checked;
+        this.remoteObj.dataBind();
     }
 }

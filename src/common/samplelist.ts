@@ -5,6 +5,7 @@ import { gridRouteConfig } from '../grid/grid.module';
 import { toolbarAppRoutes } from '../toolbar/toolbar.module';
 import { numericAppRoutes } from '../numerictextbox/numerictextbox.module';
 import { dropdownlistAppRoutes } from '../dropdownlist/dropdownlist.module';
+import { comboboxAppRoutes } from '../combobox/combobox.module';
 import { calendarAppRoutes } from '../calendar/calendar.module';
 import { datePickerAppRoutes } from '../datepicker/datepicker.module';
 import { chartAppRoutes } from '../chart/chart.module';
@@ -41,6 +42,9 @@ export let samplesList: any = [
     },
     {
         'name': 'DropDownList', 'category': 'Editors', 'order': '03', 'path': 'dropdownlist', 'samples': dropdownlistAppRoutes, 'type': 'new'
+    },
+    {
+        'name': 'ComboBox', 'category': 'Editors', 'order': '03', 'path': 'combobox', 'samples': comboboxAppRoutes, 'type': 'new'
     },
     {
         "name": "TimePicker", "category": "Editors", 'order': '03', "path": "timepicker", "samples": timePickerAppRoutes, type: "new"
