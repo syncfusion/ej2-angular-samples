@@ -40,13 +40,13 @@ export class RangeTimePickerComponent {
 
     public changeTime(): void {
         let element: HTMLInputElement = <HTMLInputElement>document.getElementById('dayRange');
+        this.isStartTimeChange = false;
         if (element.checked) {
             this.startObject.value = new Date('9/6/2017 9:00');
             this.endObject.enabled = true;
             this.endObject.value = new Date('9/6/2017 18:00');
             this.startObject.readonly = true;
             this.endObject.readonly = true;
-            this.isStartTimeChange = false;
         } else {
             this.endObject.value = null;
             this.startObject.value = null;
@@ -54,7 +54,6 @@ export class RangeTimePickerComponent {
             this.startObject.readonly = false;
             this.endObject.readonly = false;
             this.endObject.enabled = false;
-            this.isStartTimeChange = true;
         }
     }
 
