@@ -174,7 +174,9 @@ export class SBController {
             .mergeMap((route: any) => {
                 this.currentControl = route.routeConfig.path.split('/')[1];
                 this.prevControl = !this.prevControl ? this.currentControl : this.prevControl;
-                this.sampleName = this.initCap(this.currentControl) + ' / ' + route.routeConfig.name;
+                let catRegex: RegExp = new RegExp(route.routeConfig.category, 'i');
+                this.sampleName = (this.initCap(this.currentControl) + ((!catRegex.test(this.currentControl)) ?
+                    (' / ' + route.routeConfig.category) : '') + ' / ' + route.routeConfig.name);
                 return route.data;
             })
             .subscribe((event: any) => {
