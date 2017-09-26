@@ -41,7 +41,7 @@ export let samplesList: any = [
         'name': 'DatePicker', 'category': 'Editors', 'order': '03', 'path': 'datepicker', 'samples': datePickerAppRoutes, type: "new"
     },
     {
-        'name': 'DropDownList', 'category': 'Editors', 'order': '03', 'path': 'dropdownlist', 'samples': dropdownlistAppRoutes, 'type': 'new'
+        'name': 'DropDownList', 'category': 'Editors', 'order': '03', 'path': 'dropdownlist', 'samples': dropdownlistAppRoutes
     },
     {
         'name': 'ComboBox', 'category': 'Editors', 'order': '03', 'path': 'combobox', 'samples': comboboxAppRoutes, 'type': 'new'
