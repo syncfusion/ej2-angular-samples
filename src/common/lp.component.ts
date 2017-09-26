@@ -35,7 +35,7 @@ export class LPController {
 
     onSampleClick(e: SelectEventArgs) {
         window.isInteractedList = e.isInteracted;
-        let data: { [key: string]: Object } = e.data;
+        let data: { [key: string]: Object } = e.data as { [key: string]: Object };
         if (e.isInteracted) {
             if (data.component && location.hash.replace('/#', '') !== data.path) {
                 document.body.classList.add('sb-overlay');
