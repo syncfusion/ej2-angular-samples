@@ -44,6 +44,8 @@ import { DrilldownPieComponent } from './drilldown-pie.component';
 import { GroupingPieComponent } from './grouping.component';
 import { InversedAxisChartComponent } from './inversed.component';
 import { SharedModule } from '../common/shared.module';
+import { AnnotationChartComponent } from './annotation.component';
+import { DataLabelComponent } from './datalabel-template.component';
 export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/line', component: LineChartComponent, name: 'Line', order:'01' ,category: 'Series' },
     { path: ':theme/chart/column', component: ColumnChartComponent, name: 'Column',order:'01', category: 'Series' },
@@ -94,7 +96,9 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/logarithmic', component: LogarithmicAxisChartComponent, name: 'Logarithmic Axis', order:'04', category: 'Chart Axes' },
     { path: ':theme/chart/multiple-axes', component: MultipleAxesChartComponent, name: 'Multiple Axes',order:'04', category: 'Chart Axes' },
     { path: ':theme/chart/inversed', component: InversedAxisChartComponent, name: 'Inversed Axes', order:'04', category: 'Chart Axes', type: 'new'},
-    { path: ':theme/chart/symbols', component: SymbolsChartComponent, name: 'Symbols',order:'05', category: 'Chart Symbols' },
+    { path: ':theme/chart/symbols', component: SymbolsChartComponent, name: 'Symbols',order:'05', category: 'Chart Customization' },
+    { path: ':theme/chart/annotation', component: AnnotationChartComponent, name: 'Annotation', order: '05', category: 'Chart Customization', type: 'new'},
+    { path: ':theme/chart/datalabel-template', component: DataLabelComponent, name: 'Datalabel Template', order: '05', category: 'Chart Customization', type: 'new' },
     { path: ':theme/chart/selection', component: SelectionChartComponent, name: 'Selection',order:'06', category: 'User Interaction' },
     { path: ':theme/chart/crosshair', component: CrosshairChartComponent, name: 'Crosshair',order:'06', category: 'User Interaction' },
     { path: ':theme/chart/trackball', component: TrackBallChartComponent, name: 'TrackBall', order:'06',category: 'User Interaction' },
@@ -109,7 +113,7 @@ let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, Ba
     CrosshairChartComponent, TrackBallChartComponent, ZoomingChartComponent, LocalDataChartComponent, RemoteDataChartComponent,
     PercentStackedAreaChartComponent, PercentStackedBarChartComponent, PercentStackedColumnChartComponent, DefaultPieComponent,
     DateTimeAxisChartComponent, RangeColumnChartComponent, DefaultDoughnutComponent, SemiPieComponent, SmartLabelsComponent,
-    DrilldownPieComponent, GroupingPieComponent, InversedAxisChartComponent];
+    DrilldownPieComponent, GroupingPieComponent, InversedAxisChartComponent, AnnotationChartComponent, DataLabelComponent];
 @NgModule({
     imports: [chartRouter, ChartAllModule, SharedModule, ButtonModule, AccumulationChartAllModule],
     exports: [],

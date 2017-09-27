@@ -1,0 +1,23 @@
+<div class="control-section">
+        <ej-chart style='display:block' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+                (load)='load($event)' (textRender)='textRender($event)'>
+                <e-series-collection>
+                        <e-series [dataSource]='data' type='Line' xName='x' yName='y' name='Male' width=2 [marker]='marker1' legendShape='Rectangle'>
+                        </e-series>
+                        <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='Female' width=2 [marker]='marker2' legendShape='Rectangle'>
+                        </e-series>
+                </e-series-collection>
+                </ej-chart>
+</div>
+<div id="description">
+        <p>
+                Label content can be formatted by using the template option in dataLabel. Inside the template, you can add the placeholder
+                text to display corresponding data points value.
+        </p>
+        <br>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+                Chart component features are segregated into individual feature-wise modules. To use DataLabel, we need to inject
+                <code>DataLabelService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+</div>
