@@ -1,5 +1,5 @@
 /* Common */
-
+ 
 body {
     overflow: hidden;
     font-family: "Segoe UI","GeezaPro","DejaVu Serif";
@@ -72,6 +72,10 @@ control-content {
     float: right;
     height: 28px;
     width: 28px;
+}
+#switch button {
+    background-color: transparent;
+    border-color: transparent; 
 }
 #themeswitcher-icon {
     padding-top: 3px;
