@@ -592,15 +592,18 @@ ul#themelist {
         padding-right: 0px;
     }
     .sb-header>.sb-h-left {
-        padding-left: 0px;
+        padding-left: 10px;
+        padding-top: 10px;
     }
     #themeswitcher {
         margin-left: 0px;
-        width: 50px;
     }
     #themeswitcher-icon {
         height: 100%;
-        width: 50px;
+    }
+    .sb-logo {
+        width: 270px;
+        background: url('images/SB_icon/sb-logo-mobile-small.png') no-repeat;
     }
     .options li {
         padding: 10px;
@@ -732,11 +735,13 @@ a.code:link, a.code:visited {
     }
 }
 
-@media screen and (min-width: 150px) and (max-width: 480px) {
+@media screen and (min-width: 375px) and (max-width: 480px) {
     .sb-logo {
         width: 300px;
         background: url('images/SB_icon/sb-logo-mobile.png') no-repeat;
     }
+}
+@media screen and (min-width: 150px) and (max-width: 480px) {
     .sample-name {
         font-size: 13px;
     }
