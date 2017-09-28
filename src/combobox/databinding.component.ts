@@ -59,8 +59,6 @@ export class DataBindingComboBoxComponent {
     }
     public onChange(): void {
         this.localObj.autofill = this.checkboxObj.checked;
-        this.localObj.dataBind();
         this.remoteObj.autofill = this.checkboxObj.checked;
-        this.remoteObj.dataBind();
     }
 }

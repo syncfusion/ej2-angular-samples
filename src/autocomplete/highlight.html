@@ -1,0 +1,30 @@
+<div class="control-section">
+    <div class="col-lg-8  content-wrapper" style="height: 350px">
+        <div id='content' style="margin: 0 auto; width:250px; padding-top: 30px">
+            <ej-autocomplete id='sample-list' #sample [dataSource]='countriesData' [highlight]='true' [fields]='fields' placeholder='e.g. Australia'></ej-autocomplete>
+        </div>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content" style="padding: 10px;">
+                <table id="property" title="Properties" style="width: 100%;">
+                    <tr>
+                        <td style="width:50%">FilterType :</td>
+                        <td style="padding-top: 10px">
+                            <ej-dropdownlist id='filter' [dataSource]='filterData' (change)='onChange($event)' [width]='width' text='Contains' placeholder='Find a type'></ej-dropdownlist>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>The AutoComplete has built-in support to highlight the searched characters on suggested list items when <code>highlight</code>        enabled.</p>
+
+    <p>In this sample illustrates that, highlight the searched characters on country suggestion list items.</p>
+    <p> More information on the highlight search feature configuration can be found in this
+        <a href="../documentation/auto-complete/how-to.html#custom-highlight-search" target="_blank"> documentation section</a>.
+    </p>
+</div>

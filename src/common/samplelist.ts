@@ -6,6 +6,7 @@ import { toolbarAppRoutes } from '../toolbar/toolbar.module';
 import { numericAppRoutes } from '../numerictextbox/numerictextbox.module';
 import { dropdownlistAppRoutes } from '../dropdownlist/dropdownlist.module';
 import { comboboxAppRoutes } from '../combobox/combobox.module';
+import { autoCompleteAppRoutes } from '../autocomplete/autocomplete.module';
 import { calendarAppRoutes } from '../calendar/calendar.module';
 import { datePickerAppRoutes } from '../datepicker/datepicker.module';
 import { chartAppRoutes } from '../chart/chart.module';
@@ -46,6 +47,9 @@ export let samplesList: any = [
     {
         'name': 'ComboBox', 'category': 'Editors', 'order': '03', 'path': 'combobox', 'samples': comboboxAppRoutes, 'type': 'new'
     },
+    {
+        'name': 'AutoComplete', 'category': 'Editors', 'order': '03', 'path': 'autocomplete', 'samples': autoCompleteAppRoutes, 'type': 'new'
+    },    
     {
         "name": "TimePicker", "category": "Editors", 'order': '03', "path": "timepicker", "samples": timePickerAppRoutes, type: "new"
     },

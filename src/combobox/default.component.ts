@@ -27,9 +27,16 @@ export class DefaultComboBoxComponent {
     public value: string = 'Game3';
     public waterMark: string = 'Select a game';
     public onChange(args: any): void {
+        let valueEle: HTMLInputElement = document.getElementsByClassName('e-input')[0] as HTMLInputElement;
         let text: Element = document.getElementById('text');
-        this.value = this.comboBoxObj.value === null ? 'null' : this.comboBoxObj.value.toString();
-        text.innerHTML = this.comboBoxObj.text === null ? 'null' : this.comboBoxObj.text.toString();
+        if (this.comboBoxObj.value === "null" || this.comboBoxObj.value === null || this.comboBoxObj.value === "") {
+            valueEle.value = '';
+        }
+        if (this.comboBoxObj.text === "null" || this.comboBoxObj.text === null || this.comboBoxObj.text === "") {
+            text.innerHTML =  'null';
+        } else {
+            text.innerHTML = this.comboBoxObj.text.toString();
+        }
     }
     ngAfterViewInit(e: any): void {
         this.onChange(e);

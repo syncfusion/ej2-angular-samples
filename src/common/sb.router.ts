@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { FormValidatorModule } from '../form-validator/form-validator.module';
 import { DropDownListSampleModule } from '../dropdownlist/dropdownlist.module';
 import { ComboBoxSampleModule } from '../combobox/combobox.module';
+import { AutoCompleteSampleModule } from '../autocomplete/autocomplete.module';
 import { CalendarSampleModule } from '../calendar/calendar.module';
 import { DatePickerSampleModule } from '../datepicker/datepicker.module';
 import { TimePickerSampleModule } from '../timepicker/timepicker.module';
@@ -27,6 +28,7 @@ const appRoutes: any = [
     { path: 'Button', loadChildren: ButtonModule },
     { path: 'dropdownlist', loadChildren: DropDownListSampleModule },
     { path: 'combobox', loadChildren: ComboBoxSampleModule },
+    { path: 'autocomplete', loadChildren: AutoCompleteSampleModule },
     { path: 'calendar', loadChildren: CalendarSampleModule },
     { path: 'datepicker', loadChildren: DatePickerSampleModule },
     { path: 'timepicker', loadChildren: TimePickerSampleModule },
@@ -47,6 +49,7 @@ const appRoutes: any = [
         GridSampleModule,
         FormValidatorModule,
         ButtonModule,
+        AutoCompleteSampleModule,
         ComboBoxSampleModule,
         DropDownListSampleModule,
         CalendarSampleModule,
