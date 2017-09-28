@@ -2,79 +2,87 @@
     <div class="content-wrapper" style="margin-bottom: 25px">
         <form id="formId" class="form-horizontal">
             <div class="e-float-input">
-                <input type="text" id="required" name="Required" required />
+                <input type="text" id="required" name="Required" data-required-message="Required field" required />
                 <span class="e-float-line"></span>
                 <label class="e-float-text" for="required">Required</label>
             </div>
             <div class="e-float-input">
-                <input type="text" id="email" name="Email" required />
+                <input type="text" id="email" name="Email" data-validation="email" data-email-message="Please enter valid email address."
+                    data-required-message="Required field" required />
                 <span class="e-float-line"></span>
                 <label class="e-float-text" for="email">Email</label>
             </div>
             <div class="e-float-input">
-                <input type="text" id="url" name="Url" required />
+                <input type="text" id="url" name="Url" data-validation="url" data-url-message="Please enter valid url." data-required-message="Required field"
+                    required />
                 <span class="e-float-line"></span>
                 <label class="e-float-text" for="url">URL</label>
             </div>
             <div class="e-float-input">
-                <input type="text" id="date" name="Date" required />
+                <input type="text" id="date" name="Date" data-validation="date" data-date-message="Please enter valid date." data-required-message="Required field"
+                    required />
                 <span class="e-float-line"></span>
                 <label class="e-float-text" for="date">Date</label>
             </div>
             <div class="e-float-input">
-                <input type="text" id="dateIso" name="DateISO" required />
+                <input type="text" id="dateIso" name="DateISO" dateIso="true" data-dateIso-message="Please enter valid dateISO format(YYYY-MM-DD)."
+                    data-required-message="Required field" required />
                 <span class="e-float-line"></span>
                 <label class="e-float-text" for="dateIso">Date ISO (YYYY-MM-DD)</label>
             </div>
             <div class="e-float-input">
-                <input type="text" id="number" name="Number" required />
+                <input type="text" id="number" name="Number" data-validation="number" data-number-message="Please enter Integer or Decimal only."
+                    data-required-message="Required field" required />
                 <span class="e-float-line"></span>
                 <label class="e-float-text" for="number">Integer or Decimal</label>
             </div>
             <div class="e-float-input">
-                <input type="text" id="digits" name="Digits" required />
+                <input type="text" id="digits" name="Digits" digits="true" data-digits-message="Please enter digits only." data-required-message="Required field"
+                    required />
                 <span class="e-float-line"></span>
                 <label class="e-float-text" for="digits">Positive Integer</label>
             </div>
             <div class="e-float-input">
-                <input type="text" id="maxlen" name="MaxLength" required />
+                <input type="text" id="maxlen" name="MaxLength" maxlength="5" data-maxlength-message="Please enter no more than 5 characters."
+                    data-required-message="Required field" required />
                 <span class="e-float-line"></span>
                 <label class="e-float-text" for="maxlen">Maximum 5 characters</label>
             </div>
             <div class="e-float-input">
-                <input type="text" id="minlen" name="MinLength" required />
+                <input type="text" id="minlen" name="MinLength" minlength="5" data-minlength-message="Please enter at least 5 characters."
+                    data-required-message="Required field" required />
                 <span class="e-float-line"></span>
                 <label class="e-float-text" for="minlen">Minimum 5 characters</label>
             </div>
             <div class="e-float-input">
-                <input type="text" id="rangelen" name="RangeLength" required />
+                <input type="text" id="rangelen" name="RangeLength" rangelength="[5, 10]" data-rangelength-message="Please enter a value between 5 and 10 characters long."
+                    data-required-message="Required field" required />
                 <span class="e-float-line"></span>
                 <label class="e-float-text" for="rangelen">Characters length between 5 to 10</label>
             </div>
             <div class="e-float-input">
-                <input type="text" id="range" name="Range" required />
+                <input type="text" id="range" name="Range" range="[5, 10]" data-range-message="Please enter a value between 5 and 10." data-required-message="Required field"
+                    required />
                 <span class="e-float-line"></span>
                 <label class="e-float-text" for="range">Value between 5 to 10</label>
             </div>
             <div class="e-float-input">
-                <input type="text" id="max" name="Max" required />
+                <input type="text" id="max" name="Max" max="5" data-max-message="Please enter a value less than or equal to 5." data-required-message="Required field"
+                    required />
                 <span class="e-float-line"></span>
                 <label class="e-float-text" for="max">Max (maximum value 5)</label>
             </div>
             <div class="e-float-input">
-                <input type="text" id="min" name="Min" required />
+                <input type="text" id="min" name="Min" min="5" data-min-message="Please enter a value greater than or equal to 5." data-required-message="Required field"
+                    required />
                 <span class="e-float-line"></span>
                 <label class="e-float-text" for="min">Min (minimum value 5)</label>
             </div>
             <div class="e-float-input">
-                <input type="text" id="regex" name="Regex" required />
+                <input type="text" id="regex" name="Regex" regex="^[a-zA-Z]+$" data-regex-message="accepts alphabets only" data-required-message="Required field"
+                    required />
                 <span class="e-float-line"></span>
                 <label class="e-float-text" for="regex">Regex (accepts alphabets only)</label>
-            </div>
-            <div class="e-float-input">
-                <input type="text" id="custom" name="Custom" required />
-                <span class="e-float-line"></span>
-                <label class="e-float-text" for="custom">Custom Function (maximum 5 characters)</label>
             </div>
             <div class="row">
                 <div style="float: left;margin: 0 10% 0 30%">
