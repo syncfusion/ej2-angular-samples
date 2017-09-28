@@ -40,7 +40,7 @@ export class RangeColumnChartComponent {
     public title: string = 'Maximum and Minimum Temperature';
     public tooltip: Object = {
         enable: true,
-        format: '${point.x}<br>high: ${point.high}<br>low: ${point.low}'
+        format: '${point.x}<br>High: ${point.high}<br>Low: ${point.low}'
     };
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
