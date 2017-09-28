@@ -9,10 +9,6 @@ body {
     font-family: "Roboto","Segoe UI","GeezaPro","DejaVu Serif";
 }
 
-body * {
-    user-select: none;
-}
-
 .h-scroll {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -66,6 +62,9 @@ control-content {
 }
 .switch-icon.fabric {
     background: url(images/SB_icon/fabric.png) no-repeat 100% 100%;
+}
+.switch-icon.bootstrap {
+    background: url(images/SB_icon/bootstrap.png) no-repeat 100% 100%;
 }
 .switch-icon {
     display: block;

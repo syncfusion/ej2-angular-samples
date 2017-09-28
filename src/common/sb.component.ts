@@ -22,7 +22,7 @@ const idRegex: RegExp = /\{0\}/g;
 const sourceHeader: string = '<li class="nav-item {2}" role="presentation"><a class="nav-link" target-content="{0}" role="tab" {1}>{0}</a></li>';
 const sourcecontent: string = '<div class="tab-pane {2}" id="{0}" role="tabpanel" {4}><pre><code class="{3}">{1}</code></pre></div>';
 const plnk: string = '<li class="plnk" style="float:right"><a id="plnkr">Open in Plunker</a></li>';
-const themes: string[] = ['material', 'fabric'];
+const themes: string[] = ['material', 'fabric', 'bootstrap'];
 let selectedTheme: string;
 let themeFlag: boolean = true;
 declare let hljs: any;
