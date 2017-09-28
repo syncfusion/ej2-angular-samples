@@ -49,7 +49,7 @@ export class DataBindingAutoCompleteComponent {
     });
     public suggestionCount: number = 5;
     public query: Query = new Query().select(['ProductID', 'ProductName']);
-    public remoteFields: Object = { text: 'ProductName', value: 'ProductID' };
+    public remoteFields: Object = { value: 'ProductName' };
     public remoteWaterMark: string = 'e.g. Alice Mutton';
     public loader: HTMLElement;
     public onActionBegin(): void {
