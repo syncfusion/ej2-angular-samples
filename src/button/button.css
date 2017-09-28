@@ -19,11 +19,6 @@
         margin-bottom: 30px;
     }
 
-    #button-control .e-btn-icon::before {
-        position: relative;
-        top: 1px;
-    }
-    
     .e-play-icon::before {
         content: '\e798';
     }
@@ -36,6 +31,6 @@
         content: '\e782';
     }
     
-    .e-prev-icon::before {
-        content: '\e797';
+    .e-add-icon::before {
+        content: '\e823';
     }
