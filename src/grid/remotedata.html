@@ -1,11 +1,11 @@
 <div class="control-section">
     <ej-grid #grid [dataSource]='data' allowPaging='true' (actionBegin)='show()' (actionComplete)='hide()' (created)='show()' (dataBound)='hide()'>
         <e-columns>
-            <e-column field='ProductID' headerText='ID' width='120'></e-column>
+            <e-column field='ProductID' headerText='ID' width='120' textAlign="right"></e-column>
             <e-column field='ProductName' headerText='Name' width='160'></e-column>
-            <e-column field='UnitPrice' headerText='Unit Price' format="C1" width='120'></e-column>
-            <e-column field='UnitsInStock' headerText='Units In Stock' width='150'textAlign="right"></e-column>
-            <e-column field='Discontinued' headerText='Discontinued' width='150' displayAsCheckBox="true"></e-column>
+            <e-column field='UnitPrice' headerText='Unit Price' format="C1" width='120' textAlign="right"></e-column>
+            <e-column field='UnitsInStock' headerText='Units In Stock' width='150' textAlign="right"></e-column>
+            <e-column field='Discontinued' headerText='Discontinued' width='150' displayAsCheckBox="true" ></e-column>
         </e-columns>
     </ej-grid>
 
