@@ -1,8 +1,21 @@
 <div class="control-section">
-    <div class="col-lg-12  content-wrapper" style="height: 350px">
+    <div class="col-lg-8  content-wrapper" style="height: 350px">
         <div id='content' style="margin: 0 auto; width:250px; padding-top: 30px">
-            <ej-autocomplete id='games' #sample [dataSource]='sportsData' [value]='value'
-                [placeholder]='waterMark'></ej-autocomplete>
+            <ej-autocomplete id='games' #sample [dataSource]='sportsData' [(value)]='value'
+                [placeholder]='waterMark' [fields]='fields' (change)='onChange($event)'></ej-autocomplete>
+        </div>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties" style="width: 100%; margin:10px">
+                    <tr>
+                        <td style="padding:5px; width:25%">Value</td>
+                        <td>:<input type='text' id='values' [(ngModel)]='value' class='e-input' style='margin-left:10px; width:140px'/></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </div>

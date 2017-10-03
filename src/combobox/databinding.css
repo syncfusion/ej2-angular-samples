@@ -31,6 +31,6 @@
     background: transparent;
 }
 
-.e-input-group.e-ddl .e-input-group-icon.e-spinner-icon {
-    border: none;
+.e-combobox .e-input-group.e-ddl .e-input-group-icon.e-spinner-icon {
+    border-left: 1px solid transparent;
 }
