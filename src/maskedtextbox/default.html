@@ -1,0 +1,46 @@
+<div class="control-section">
+    <div class="content-wrapper">
+        <div>
+            <div class="control-label">Mobile Number</div>
+            <ej-maskedtextbox mask="000-000-0000"></ej-maskedtextbox>
+        </div>
+        <div>
+            <div class="control-label">Country ISO Code</div>
+            <ej-maskedtextbox mask=">LL / LLL"></ej-maskedtextbox>
+        </div>
+        <div>
+            <div class="control-label">D.O.B</div>
+            <ej-maskedtextbox mask="00/00/0000"></ej-maskedtextbox>
+        </div>
+        <div>
+            <div class="control-label">Product Key</div>
+            <ej-maskedtextbox mask=">AAAAA-AAAAA-AAAAA-AAAAA"></ej-maskedtextbox>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        The <b>MaskedTextBox</b> is a textbox extended component which allows the user to enter the valid input only based
+        on the provided <b><a href="../documentation/maskedtextbox/api-maskedTextBoxComponent.html#mask-string" target="_blank">mask</a></b>.
+        It is used to get the input with specific formats like Phone number, Date, Time, IP, Social security number etc...
+        <p>MaskedTextBox supports list of <b><a href="../documentation/maskedtextbox/mask-configuration.html#standard-mask-elements" target="_blank"> mask elements</a></b> based
+            on the standard
+            <b><a href="https://msdn.microsoft.com/en-us/library/system.windows.forms.maskedtextbox.mask(v=vs.110).aspx" target="_blank"> MSDN</a></b> mask
+            elements.</p>
+        <p>In this demo, the mask was formed with standard mask elements to showcase the Phone number, Country code
+            and so on.</p>
+        <p>More information about the MaskedTextBox instantiation can be found in this <b><a href="../documentation/maskedtextbox/getting-started.html" target="_blank">documentation</a></b>            section.</p>
+</div>
+<style>
+    .content-wrapper {
+        width: 30%;
+        margin: 0 auto;
+        min-width: 185px;
+    }
+
+    .control-label {
+        padding: 24px 0px 10px 0px;
+        font-size: 12px;
+        opacity: 0.54;
+    }
+</style>

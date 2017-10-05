@@ -1,0 +1,42 @@
+<div class="control-section">
+    <div class="content-wrapper">
+        <div>
+            <div class="control-label">Time (ex: 10:00 PM, 10:00 AM)</div>
+            <ej-maskedtextbox mask="00:00 >PM" [customCharacters]="customMaskChar" floatLabelType="Never"></ej-maskedtextbox>
+        </div>
+        <div>
+            <div class="control-label">IP Address (ex: 212.212.111.222)</div>
+            <ej-maskedtextbox mask="[0-2][0-5][0-5].[0-2][0-5][0-5].[0-2][0-5][0-5].[0-2][0-5][0-5]" floatLabelType="Never"></ej-maskedtextbox>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>The custom mask can be achieved by the following ways:</p>
+    <p style="font-weight: 500">Custom characters:</p>
+    <p>You can form the <b><a href="../documentation/maskedtextbox/api-maskedTextBoxComponent.html#mask-string" target="_blank">mask</a></b>        with any non-mask elements (literals), and you can configure the behavior of that non-mask element as mask element
+        through
+        <b><a href="../documentation/maskedtextbox/api-maskedTextBoxComponent.html#customcharacters-object" target="_blank">customCharacters</a></b>        property.
+    </p>
+    <p>In this demo, the “Time” mask '99 : 99 >PM' contains the literals P and M, where it was configured to allow the inputs
+        as 'P', 'A', 'p', 'a' and 'M', 'm'.</p>
+    <p style="font-weight: 500">Regular expression:</p>
+    <p>Alternatively, you can use regular expressions as mask element to validate the input of the particular input place.
+    </p>
+    <p>Here, in the “IP Address” example, each character was masked by an regular expression to allow a particular range of
+        values.
+    </p>
+    <p>For more information, you can refer the <b><a href="../documentation/maskedtextbox/mask-configuration.html#custom-characters" target="_blank">Custom characters</a></b>        and
+        <b><a href="../documentation/maskedtextbox/mask-configuration.html#regular-expression" target="_blank">Regular expression</a></b>        sections from the documentation.</p>
+</div>
+<style>
+    .content-wrapper {
+        width: 30%;
+        margin: 0 auto;
+        min-width: 185px;
+    }
+    
+    .control-label {
+        padding: 24px 0px 10px 0px;
+        font-size: 12px;
+    }
+</style>
