@@ -20,11 +20,6 @@ export class GlobalizationComponent {
                     placeholder: 'Wählen Sie ein Datum'
                 }
             },
-            'zh': {
-                'datepicker': {
-                    placeholder: '选择日期'
-                }
-            },
             'en': {
                 'datepicker': {
                     placeholder: 'Choose a date'
@@ -39,18 +34,18 @@ export class GlobalizationComponent {
 
         loadCldr(
             require('../common/cldr-data/supplemental/numberingSystems.json'),
-            require('../common/cldr-data/main/zh/ca-gregorian.json'),
-            require('../common/cldr-data/main/zh/numbers.json'),
             require('../common/cldr-data/main/de/ca-gregorian.json'),
             require('../common/cldr-data/main/de/numbers.json'),
+            require('../common/cldr-data/main/de/timeZoneNames.json'),
             require('../common/cldr-data/main/ar/ca-gregorian.json'),
             require('../common/cldr-data/main/ar/numbers.json'),
+            require('../common/cldr-data/main/ar/timeZoneNames.json')
         );
     }
     changeLocale() {
         let culture: string = (document.getElementById('cultures') as HTMLSelectElement).value;
         this.ejDatePicker.locale = culture;
-        this.ejDatePicker.locale === 'ar' ? this.ejDatePicker.enableRtl = true : this.ejDatePicker.enableRtl = false;      
+        this.ejDatePicker.locale === 'ar' ? this.ejDatePicker.enableRtl = true : this.ejDatePicker.enableRtl = false;
         this.ejDatePicker.dataBind();
 
     }

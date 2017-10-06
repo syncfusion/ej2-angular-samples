@@ -10,17 +10,12 @@ import { loadCldr, L10n } from '@syncfusion/ej2-base';
 export class InternationalizationComponent {
     public date: Object = new Date();
     locale: string = 'de';
-    ngOnInit(): void {   
+    ngOnInit(): void {
         loadCldr(
             require('../common/cldr-data/supplemental/numberingSystems.json'),
-            require('../common/cldr-data/main/zh/ca-gregorian.json'),
-            require('../common/cldr-data/main/zh/timeZoneNames.json'),
-            require('../common/cldr-data/main/zh/numbers.json'),
-            require('../common/cldr-data/main/zh/currencies.json'),
             require('../common/cldr-data/main/de/ca-gregorian.json'),
-            require('../common/cldr-data/main/de/timeZoneNames.json'),
             require('../common/cldr-data/main/de/numbers.json'),
-            require('../common/cldr-data/main/de/currencies.json')
+            require('../common/cldr-data/main/de/timeZoneNames.json')
         );
     }
     changeLocale() {
@@ -30,7 +25,7 @@ export class InternationalizationComponent {
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['calendar-style.css'];
     }
-     onValueChange(args: any):void {
-        (<HTMLInputElement>document.getElementById('selected')).textContent = 'Selected Value: ' + args.value.toLocaleDateString();    
+    onValueChange(args: any): void {
+        (<HTMLInputElement>document.getElementById('selected')).textContent = 'Selected Value: ' + args.value.toLocaleDateString();
     }
 }
