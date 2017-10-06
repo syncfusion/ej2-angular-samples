@@ -15,6 +15,7 @@ import { circulargaugeAppRoutes } from '../circulargauge/circulargauge.module';
 import { lineargaugeAppRoutes } from '../lineargauge/lineargauge.module';
 import { textboxesAppRoutes } from '../textboxes/textboxes.module';
 import { tooltipAppRoutes } from '../tooltip/tooltip.module';
+import { maskedTextBoxAppRoutes } from '../maskedtextbox/maskedtextbox.module';
 import { timePickerAppRoutes } from '../timepicker/timepicker.module';
 export let samplesList: any = [
     {
@@ -70,5 +71,8 @@ export let samplesList: any = [
     },
     {
         'name': 'Tooltip', 'category': 'Layout', 'order': '04', 'path': 'tooltip', 'samples': tooltipAppRoutes
+    },
+    {
+        'name': 'MaskedTextBox', 'category': 'Editors', 'order': '03', 'path': 'maskedtextbox', 'samples': maskedTextBoxAppRoutes, "type": "new"
     }
 ];

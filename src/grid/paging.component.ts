@@ -11,6 +11,6 @@ export class PageComponent implements OnInit {
 
     ngOnInit(): void {
         this.data = data;
-        this.initialPage = { pageSize: 9, pageCount: 8 };
+        this.initialPage = { pageSizes: true, pageCount: 4 };
     }
 }

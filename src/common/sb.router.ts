@@ -18,6 +18,7 @@ import { TextboxesModule } from '../textboxes/textboxes.module';
 import { TooltipSampleModule } from '../tooltip/tooltip.module';
 import { CircularGaugeSampleModule } from '../circulargauge/circulargauge.module';
 import { LinearGaugeSampleModule } from '../lineargauge/lineargauge.module';
+import { MaskedTextBoxSampleModule } from '../maskedtextbox/maskedtextbox.module';
 
 const appRoutes: any = [
     { path: 'chart', loadChildren: ChartSampleModule },
@@ -38,6 +39,7 @@ const appRoutes: any = [
     { path: 'textboxes', loadChildren: TextboxesModule },
     { path: 'toolbar', loadChildren: ToolbarSampleModule },
     { path: 'tooltip', loadChildren: TooltipSampleModule },
+    { path: 'maskedtextbox', loadChildren: MaskedTextBoxSampleModule },
     { path: '', redirectTo: 'material/chart/line', pathMatch: 'full' }
 ];
 
@@ -61,6 +63,7 @@ const appRoutes: any = [
         DialogSampleModule,
         ToolbarSampleModule,
         TooltipSampleModule,
+        MaskedTextBoxSampleModule,
         RouterModule.forRoot(appRoutes)
     ],
 

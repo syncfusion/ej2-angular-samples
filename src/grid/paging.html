@@ -9,24 +9,28 @@
         </e-columns>
     </ej-grid>
     <div id="description">
-        <p>Paging allows you to display the contents of the Grid component in page segments. The number of items on a page is
-            determined by the <code><a target="_blank" class="code"
+        <p>Paging allows you to display the contents of the Grid in page segments. By default, paging is disabled. To enable
+            paging, set <code><a target="_blank" class="code"
+            href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#allowpaging-boolean">
+            allowPaging
+            </a></code> property to true.
+            <code><a target="_blank" class="code"
         href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#pagesettings-pagesettingsmodel">
-        pageSettings->pageSize
-        </a></code> property. If no value is specified for the <code><a target="_blank" class="code"
-        href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#pagesettings-pagesettingsmodel">
-        pageSettings->pageSize
-        </a></code> property, the Grid will display 12 items on a page. By default, paging is disabled. To enable paging, set <code><a target="_blank" class="code"
-        href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#allowpaging-boolean">
-        allowPaging
-        </a></code> property to true.</p>
+        pageSettings->pageSizes
+        </a></code> property enables a dropdown in pager which allows you to change the number of records in
+            Grid dynamically.
+        </p>
         <p>
-        In this demo, the Grid is rendered with its default page settings, also the 
-        <code><a target="_blank" class="code"
+            In this demo, the Grid is rendered with
+            <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#pagesettings-pagesettingsmodel">
+        pageSettings->pageSizes
+        </a></code>set to true, and
+            <code><a target="_blank" class="code"
         href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#pagesettings-pagesettingsmodel">
         pageSettings->pageCount
-        </a></code> is set to 5.
-    </p>
+        </a></code>set to 4.
+        </p>
         <br>
         <p style="font-weight: 500">Injecting Module</p>
         <p>
