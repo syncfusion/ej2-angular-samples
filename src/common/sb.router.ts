@@ -6,6 +6,7 @@ import { ComboBoxSampleModule } from '../combobox/combobox.module';
 import { AutoCompleteSampleModule } from '../autocomplete/autocomplete.module';
 import { CalendarSampleModule } from '../calendar/calendar.module';
 import { DatePickerSampleModule } from '../datepicker/datepicker.module';
+import { DateRangePickerSampleModule } from '../daterangepicker/daterangepicker.module';
 import { TimePickerSampleModule } from '../timepicker/timepicker.module';
 import { ButtonModule } from '../button/button.module';
 import { ListViewSampleModule } from '../listview/listview.module';
@@ -32,6 +33,7 @@ const appRoutes: any = [
     { path: 'autocomplete', loadChildren: AutoCompleteSampleModule },
     { path: 'calendar', loadChildren: CalendarSampleModule },
     { path: 'datepicker', loadChildren: DatePickerSampleModule },
+    { path: 'daterangepicker', loadChildren: DateRangePickerSampleModule },
     { path: 'timepicker', loadChildren: TimePickerSampleModule },
     { path: 'numerictextbox', loadChildren: NumericModule },
     { path: 'listview', loadChildren: ListViewSampleModule },
@@ -56,6 +58,7 @@ const appRoutes: any = [
         DropDownListSampleModule,
         CalendarSampleModule,
         DatePickerSampleModule,
+        DateRangePickerSampleModule,
         TimePickerSampleModule,
         NumericModule,
         ListViewSampleModule,

@@ -9,6 +9,7 @@ import { comboboxAppRoutes } from '../combobox/combobox.module';
 import { autoCompleteAppRoutes } from '../autocomplete/autocomplete.module';
 import { calendarAppRoutes } from '../calendar/calendar.module';
 import { datePickerAppRoutes } from '../datepicker/datepicker.module';
+import { dateRangePickerAppRoutes } from '../daterangepicker/daterangepicker.module';
 import { chartAppRoutes } from '../chart/chart.module';
 import { dialogAppRoutes } from '../dialog/dialog.module';
 import { circulargaugeAppRoutes } from '../circulargauge/circulargauge.module';
@@ -41,6 +42,9 @@ export let samplesList: any = [
     },
     {
         'name': 'DatePicker', 'category': 'Editors', 'order': '03', 'path': 'datepicker', 'samples': datePickerAppRoutes, type: "new"
+    },
+    {
+        'name': 'DateRangePicker', 'category': 'Editors', 'order': '03', 'path': 'daterangepicker', 'samples': dateRangePickerAppRoutes, type: "new"
     },
     {
         'name': 'DropDownList', 'category': 'Editors', 'order': '03', 'path': 'dropdownlist', 'samples': dropdownlistAppRoutes
