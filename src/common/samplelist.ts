@@ -18,6 +18,7 @@ import { textboxesAppRoutes } from '../textboxes/textboxes.module';
 import { tooltipAppRoutes } from '../tooltip/tooltip.module';
 import { maskedTextBoxAppRoutes } from '../maskedtextbox/maskedtextbox.module';
 import { timePickerAppRoutes } from '../timepicker/timepicker.module';
+import { multiselectAppRoutes } from '../multiselect/multiselect.module';
 export let samplesList: any = [
     {
         'name': 'Chart', 'category': 'Datavisualization', 'order': '01', 'path': 'chart', 'samples': chartAppRoutes, 'type': 'update'
@@ -55,6 +56,9 @@ export let samplesList: any = [
     {
         'name': 'AutoComplete', 'category': 'Editors', 'order': '03', 'path': 'autocomplete', 'samples': autoCompleteAppRoutes, 'type': 'new'
     },    
+    {
+        "name": "MultiSelect", "category": "Editors", 'order': '03', "path": "multiselect", "samples": multiselectAppRoutes, "type": "new"
+    },
     {
         "name": "TimePicker", "category": "Editors", 'order': '03', "path": "timepicker", "samples": timePickerAppRoutes, type: "new"
     },

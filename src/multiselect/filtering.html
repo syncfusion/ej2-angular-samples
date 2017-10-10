@@ -1,0 +1,14 @@
+<div class="control-section">
+    <div class="control-styles">
+        <h4>Filtering</h4>
+        <ej-multiselect id='multiselect-filtering' [dataSource]='data' [fields]='fields' (filtering)='onFiltering($event)' [allowFiltering]='true'
+            [placeholder]='watermarks'></ej-multiselect>
+    </div>
+</div>
+
+<div id="description">
+    <p>The MultiSelect has built-in support to filter the data source when <code>allowFiltering</code> enabled. And it performs
+        when type characters in the component. In <code>filtering</code> event, you can filter down the data source and
+        return the resulted data to MultiSelect via <code>updateData</code> method to display its list items.</p>
+    <p>In this sample illustrates that, query the data source and passed the resulted data to MultiSelect through the <code>updateData</code>        method in <code>filtering</code> event.</p>
+</div>

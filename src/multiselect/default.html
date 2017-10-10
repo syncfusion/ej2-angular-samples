@@ -1,0 +1,29 @@
+<div class="control-section" style="height: 500px">
+       
+        <div id='content'>
+            <div class="control-styles">
+            <h4> Default Mode</h4>
+            <ej-multiselect id='sample-list1' [dataSource]='sportsData' [mode]='default' [fields]='fields' [placeholder]='waterMark'></ej-multiselect>
+            </div>
+        </div>
+        
+        <div class="control-styles">
+            <h4>Box Mode</h4>
+            <ej-multiselect id='sample-list2' [dataSource]='sportsData' [mode]='box' [fields]='fields' [placeholder]='waterMark'></ej-multiselect>
+        </div>
+        
+        <div class="control-styles">
+            <h4>Delimiter Mode</h4>
+            <ej-multiselect id='sample-list3' [dataSource]='sportsData' [mode]='delimiter' [fields]='fields' [placeholder]='waterMark'></ej-multiselect>
+        </div>
+</div>
+<div id="description">
+    <p>The <code>MultiSelect</code> component contains a list of predefined values, from which the user can choose a multiple
+        values. </p>
+    <p>The default sample demostrates <code>MultiSelect</code>, in a following UI modes</p>
+    <ul>
+        <li><b>Default</b></li>
+        <li><b>Box</b></li>
+        <li><b>Delimiter</b></li>
+    </ul>
+</div>
