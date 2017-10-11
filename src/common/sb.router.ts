@@ -69,6 +69,7 @@ const appRoutes: any = [
         TextboxesModule,
         DialogSampleModule,
         ToolbarSampleModule,
+        AccordionSampleModule,
         TooltipSampleModule,
         MaskedTextBoxSampleModule,
         MultiSelectSampleModule,
