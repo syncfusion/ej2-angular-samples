@@ -3,6 +3,7 @@ import { buttonAppRoutes } from '../button/button.module';
 import { listAppRoutes } from '../listview/listview.module';
 import { gridRouteConfig } from '../grid/grid.module';
 import { toolbarAppRoutes } from '../toolbar/toolbar.module';
+import { accordionAppRoutes } from '../accordion/accordion.module';
 import { numericAppRoutes } from '../numerictextbox/numerictextbox.module';
 import { dropdownlistAppRoutes } from '../dropdownlist/dropdownlist.module';
 import { comboboxAppRoutes } from '../combobox/combobox.module';
@@ -73,6 +74,9 @@ export let samplesList: any = [
     },
     {
         'name': 'Dialog', 'category': 'Layout', 'order': '04', 'path': 'dialog', 'samples': dialogAppRoutes
+    },
+    {
+        'name': 'Accordion', 'category': 'Navigation', 'order': '05', 'path': 'accordion', 'samples': accordionAppRoutes, "type": "new"
     },
     {
         'name': 'Toolbar', 'category': 'Navigation', 'order': '05', 'path': 'toolbar', 'samples': toolbarAppRoutes, 'type': 'update'

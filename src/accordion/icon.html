@@ -1,0 +1,63 @@
+<div class="control-section accordion-control-section">
+
+    <div class="e-sample-resize-container">
+        <ej-accordion>
+            <e-accordionitems>
+                <e-accordionitem expanded='true' header='Athletics' iconCss='e-athletics e-acrdn-icons'>
+                    <ng-template #content let-data>
+                        <div id='athletics' style="display:none">
+                            <li><span class='e-acrdn-icons e-content-icon marathon'></span> Marathon</li>
+                            <li><span class='e-acrdn-icons e-content-icon javelin'></span> Javelin Throw</li>
+                            <li><span class='e-acrdn-icons e-content-icon discus'></span> Discus Throw</li>
+                            <li><span class='e-acrdn-icons e-content-icon highjump'></span> High Jump</li>
+                            <li><span class='e-acrdn-icons e-content-icon longjump'></span> Long Jump</li>
+                        </div>
+                    </ng-template>
+                </e-accordionitem>
+                <e-accordionitem header='Water Games' iconCss='e-water-game e-acrdn-icons'>
+                    <ng-template #content let-data>
+                        <div id='water_games' style="display:none">
+                            <li><span class='e-acrdn-icons e-content-icon dive'></span> Diving</li>
+                            <li><span class='e-acrdn-icons e-content-icon swimming'></span> Swimming</li>
+                            <li><span class='e-acrdn-icons e-content-icon marathan_swim'></span> Marathon Swimming</li>
+                            <li><span class='e-acrdn-icons e-content-icon sync_swim'></span> Synchronized Swimming</li>
+                            <li><span class='e-acrdn-icons e-content-icon waterpolo'></span> Water Polo</li>
+                        </div>
+                    </ng-template>
+                </e-accordionitem>
+                <e-accordionitem header='Racing' iconCss='e-racing-games e-acrdn-icons'>
+                    <ng-template #content let-data>
+                        <div id='racing_games' style="display:none">
+                            <li><span class='e-acrdn-icons e-content-icon cycle_BMX'></span> Cycling BMX</li>
+                            <li> <span class='e-acrdn-icons e-content-icon cycle_Mountain'></span> Cycling Mountain Bike</li>
+                            <li> <span class='e-acrdn-icons e-content-icon cycle'></span> Cycle Racing</li>
+                            <li> <span class='e-acrdn-icons e-content-icon sailing'></span> Sailing</li>
+                            <li> <span class='e-acrdn-icons e-content-icon rowing'></span> Rowing</li>
+                        </div>
+                    </ng-template>
+                </e-accordionitem>
+                <e-accordionitem header='Indoor Games' iconCss='e-indoor-games e-acrdn-icons'>
+                    <ng-template #content let-data>
+                        <div id='indoor_games' style="display:none">
+                            <li><span class='e-acrdn-icons e-content-icon tennis'></span> Table Tennis</li>
+                            <li> <span class='e-acrdn-icons e-content-icon badminton'></span> Badminton</li>
+                            <li> <span class='e-acrdn-icons e-content-icon volleyball'></span> Volleyball</li>
+                            <li> <span class='e-acrdn-icons e-content-icon boxing'></span> Boxing</li>
+                            <li> <span class='e-acrdn-icons e-content-icon swimming_In'></span> Swimming</li>
+                        </div>
+                    </ng-template>
+                </e-accordionitem>
+            </e-accordionitems>
+        </ej-accordion>
+    </div>
+</div>
+<div id="description">
+    <p>
+        This Accordion is populated with icons which renders by mapping the <code>iconCss</code> field. This sample illustrates
+        the some of the games list.
+    </p>
+    <p>
+        More information about Accordion can be found in this <a target="_blank" href="http://ej2.syncfusion.com/documentation/angular/accordion/getting-started.html">
+            documentation</a> section.
+    </p>
+</div>

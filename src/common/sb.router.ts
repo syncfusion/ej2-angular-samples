@@ -12,6 +12,7 @@ import { ButtonModule } from '../button/button.module';
 import { ListViewSampleModule } from '../listview/listview.module';
 import { GridSampleModule } from '../grid/grid.module';
 import { ToolbarSampleModule } from '../toolbar/toolbar.module';
+import { AccordionSampleModule } from '../accordion/accordion.module';
 import { NumericModule } from '../numerictextbox/numerictextbox.module';
 import { ChartSampleModule } from '../chart/chart.module';
 import { DialogSampleModule } from '../dialog/dialog.module';
@@ -41,6 +42,7 @@ const appRoutes: any = [
     { path: 'dialog', loadChildren: DialogSampleModule },
     { path: 'textboxes', loadChildren: TextboxesModule },
     { path: 'toolbar', loadChildren: ToolbarSampleModule },
+    { path: 'accordion', loadChildren: AccordionSampleModule },
     { path: 'tooltip', loadChildren: TooltipSampleModule },
     { path: 'maskedtextbox', loadChildren: MaskedTextBoxSampleModule },
     { path: 'multiselect', loadChildren: MultiSelectSampleModule },
