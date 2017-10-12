@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';
-import { MenuAnimationSettings } from '@syncfusion/ej2-navigations';
+import { MenuAnimationSettings, MenuItemModel } from '@syncfusion/ej2-navigations';
 /**
  * Default ContextMenu Controller
  */
@@ -19,7 +19,7 @@ export class DefaultContextMenuController {
             args.item.classList.add('e-disabled');
         }
     }
-    public menuItems: { [key: string]: Object }[] = [
+    public menuItems:  MenuItemModel[] = [
         {
             text: 'Cut',
             iconCss: 'e-cm-icons e-cut'
