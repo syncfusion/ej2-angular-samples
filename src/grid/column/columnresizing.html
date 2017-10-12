@@ -2,13 +2,13 @@
     <ej-grid [dataSource]='data' allowResizing= 'true' height= '400'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' minWidth='120' width='200' maxWidth='300' textAlign="right"></e-column>
-            <e-column field='CustomerName' headerText='Customer Name' width='200'></e-column>
-            <e-column field='OrderDate' headerText='Order Date' width='200' format="yMd" textAlign="right"></e-column>
-            <e-column field='Freight' headerText='Freight' width='150' format='C2' textAlign="right"></e-column>
-            <e-column field='ShipName' headerText='Ship Name' width='300'></e-column>
+            <e-column field='CustomerName' headerText='Customer Name' minWidth='8' width='200'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' minWidth='8' width='200' format="yMd" textAlign="right"></e-column>
+            <e-column field='Freight' headerText='Freight' minWidth='8' width='150' format='C2' textAlign="right"></e-column>
+            <e-column field='ShipName' headerText='Ship Name' minWidth='8' width='300'></e-column>
             <e-column field='ShippedDate' headerText='Shipped Date' [allowResizing] = 'false' width='200' format="yMd" textAlign="right"></e-column>
-            <e-column field='ShipCountry' headerText='Ship Country'  width='200'></e-column>
-            <e-column field='ShipCity' headerText='Ship City' width='200'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' minWidth='8'  width='200'></e-column>
+            <e-column field='ShipCity' headerText='Ship City' minWidth='8' width='200'></e-column>
         </e-columns>
     </ej-grid>
     <div id="description">

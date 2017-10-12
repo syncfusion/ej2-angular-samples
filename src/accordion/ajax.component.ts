@@ -12,11 +12,11 @@ import { AccordionComponent } from '@syncfusion/ej2-ng-navigations';
     styleUrls: ['accordion.component.css'],
     encapsulation: ViewEncapsulation.None
 })
-export class AjaxAccordionComponent implements OnInit {
+export class AjaxAccordionComponent  {
     @ViewChild('accordion')
     public acrdn: AccordionComponent;
     public ajaxData: string;
-    ngOnInit(): void {
+    ngAfterViewInit(): void {
       let ajax: Ajax = new Ajax('./src/accordion/Ajax_content.html', 'GET', true);
       ajax.send().then();
       ajax.onSuccess = (data: string): void => {
