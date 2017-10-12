@@ -28,7 +28,7 @@ export class GroupAndIconAutoCompleteComponent {
         { class: 'facebook', socialMedia: 'Facebook', id: 'media1' },
         { class: 'google-plus', socialMedia: 'Google Plus', id: 'media2' },
         { class: 'instagram', socialMedia: 'Instagram', id: 'media3' },
-        { class: 'reddit', socialMedia: 'Reddit', id: 'media4' },
+        { class: 'linkedin', socialMedia: 'LinkedIn', id: 'media4' },
         { class: 'skype', socialMedia: 'Skype', id: 'media5' },
         { class: 'tumblr', socialMedia: 'Tumblr', id: 'media6' },
         { class: 'twitter', socialMedia: 'Twitter', id: 'media7' },

@@ -35,7 +35,7 @@ export class GroupAndIconDropDownListComponent {
         { class: 'vimeo', socialMedia: 'Vimeo', id: 'media7' },
         { class: 'instagram', socialMedia: 'Instagram', id: 'media8' },
         { class: 'youtube', socialMedia: 'YouTube', id: 'media9' },
-        { class: 'reddit', socialMedia: 'Reddit', id: 'media10' }
+        { class: 'linkedin', socialMedia: 'LinkedIn', id: 'media10' }
     ];
     public iconFields: Object = { text: 'socialMedia', iconCss: 'class', value: 'id' };
     public iconWaterMark: string = 'Select a social media';
