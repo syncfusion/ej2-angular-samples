@@ -1,0 +1,17 @@
+<div class="contextmenu-section">
+    <div id="contextmenu-control">
+        <div id="target">{{content}}</div>
+        <ej-contextmenu target='#target' [items]='menuItems' [animationSettings]='animationSettings' (beforeItemRender)='addDisabled($event)'></ej-contextmenu>
+    </div>
+</div>
+<div id="description">
+                  <p>
+                      ContextMenu is a graphical user interface that appears on user right click / touch hold action. It has support to provide a single level/ multiple levels of ContextMenu.
+                  </p>
+                  <p>
+                      In this demo, <b>target</b> property is set as <b>'#target'</b>. Hence, on right clicking the target element, ContextMenu will open.
+                  </p>
+                  <p>
+                      More information about ContextMenu can be found in this <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/context-menu/getting-started.html"> documentation section</a>.
+                  </p>
+</div>
