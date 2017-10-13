@@ -35,6 +35,8 @@ import { BatchEditComponent } from './batch-editing.component';
 import { SharedModule } from '../common/shared.module';
 import { ColumnChooserComponent } from './column/columnchooser.component';
 import { ColumnResizingComponent } from './column/columnresizing.component';
+import { ExportingComponent } from './exporting.component';
+import { MultipleExportingComponent } from './multiple-exporting.component';
 
 export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/default', component: DefaultComponent, 'name': 'Default Functionalities', order: '01', category: 'Grid' },
@@ -92,7 +94,17 @@ export const gridRouteConfig: Object[] = [
     {
         'path': ':theme/grid/batch-editing', component: BatchEditComponent, name: 'Batch Editing', order: '07',
         category: 'Editing', type: 'new'
-    }
+    },
+
+    {
+        'path': ':theme/grid/exporting', component: ExportingComponent, name: 'Basic', order: '08',
+        category: 'Exporting', type: 'new'
+    },
+    {
+        'path': ':theme/grid/multiple-exporting', component: MultipleExportingComponent, name: 'Multiple Exporting', order: '08',
+        category: 'Exporting', type: 'new'
+    },
+    { path: ':theme/grid/:sample', redirectTo: 'material/grid/default' },
 ];
 
 let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
@@ -100,7 +112,8 @@ let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     GroupComponent, StackedHeaderComponent, AutoWrapComponent, SortComponent, PageComponent, FilterComponent, SelectionComponent,
     ScrollComponent, SearchComponent, SelectionApiComponent, DragAndDropComponent, AggregateComponent, AggregateGroupComponent,
     RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent, VirtualizationComponent,
-    NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent, ColumnResizingComponent];
+    NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent, ColumnResizingComponent,
+    ExportingComponent, MultipleExportingComponent];
 
 @NgModule({
     imports: [RouterModule.forChild(gridRouteConfig), CommonModule, HttpModule, ToolbarModule, GridAllModule, SharedModule],
