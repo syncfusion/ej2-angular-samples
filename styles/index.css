@@ -2,11 +2,11 @@
  
 body {
     overflow: hidden;
-    font-family: "Segoe UI","GeezaPro","DejaVu Serif";
+    font-family: "Segoe UI","GeezaPro","DejaVu Serif", "sans-serif";
 }
 
 .material {
-    font-family: "Roboto","Segoe UI","GeezaPro","DejaVu Serif";
+    font-family: "Roboto","Segoe UI","GeezaPro","DejaVu Serif", "sans-serif";
 }
 
 .h-scroll {
