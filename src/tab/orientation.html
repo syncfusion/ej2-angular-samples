@@ -1,0 +1,58 @@
+<div class="control-section">
+    <div class="col-lg-8 content-wrapper">
+        <ej-tab id="tab_orientation" #orientationTab [showCloseButton]='enableClose' heightAdjustMode='Auto'>
+            <e-tabitems>
+                <e-tabitem [header]='headerText[0]' [content]='content0'></e-tabitem>
+                <e-tabitem [header]='headerText[1]' [content]='content1'></e-tabitem>
+                <e-tabitem [header]='headerText[2]' [content]='content2'></e-tabitem>
+            </e-tabitems>
+        </ej-tab>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties">
+                    <tr>
+                        <td style="width:50%">Header Placement:</td>
+                        <td style="width:50%">
+                            <ej-dropdownlist id='header-place' width='90%' #place [dataSource]='dataPlace' (change)='placeChange($event)' [value]='placeValue' [fields]='placeFields'>
+                            </ej-dropdownlist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:50%">Header Styles:</td>
+                        <td style="width:50%">
+                            <ej-dropdownlist id='header-styles' width='90%' #styles [dataSource]='dataStyles' (change)='styleChange($event)' [value]='styleValue' [fields]='styleFields'>
+                            </ej-dropdownlist>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        The <code>Tab</code> allows to place the header section inside the Tab component either at <code>top / bottom</code> position by using <code>headerPlacement</code> property.
+    </p>
+    <p>
+        This sample illustrates the use of header placement and <code>showCloseButton</code> property.
+        Users can change the header position by changing the drop-down value options and can close the Tab item by clicking close icon in header.<br/><br/>
+
+        The User can also view different header styles of Tab component by selecting options from `Header Styles` drop-down.
+        Header styles changed by adding predefined classes in Tab root element and it class names listed below
+    </p>
+    <br/>
+    <ul>
+        <li>Material and Fabric theme differentiates all the available tab header styles such as <code>e-fill</code>, <code>e-background e-accent</code>.</li>
+        <li>In bootstrap theme, all the styles such as <code>e-fill</code> & <code>e-background e-accent</code> will have the same look with no difference.</li>
+    </ul>
+    <p>
+        If above classes not included in root element default style will applied in Tab component.
+    </p>
+    <p>
+        More information about Tab can be found in this <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/tab/getting-started.html">
+        documentation</a> section.
+    </p>
+</div>

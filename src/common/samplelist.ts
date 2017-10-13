@@ -21,6 +21,7 @@ import { maskedTextBoxAppRoutes } from '../maskedtextbox/maskedtextbox.module';
 import { timePickerAppRoutes } from '../timepicker/timepicker.module';
 import { multiselectAppRoutes } from '../multiselect/multiselect.module';
 import { contextMenuAppRoutes } from '../contextmenu/contextmenu.module';
+import { tabAppRoutes } from '../tab/tab.module';
 export let samplesList: any = [
     {
         'name': 'Chart', 'category': 'Datavisualization', 'order': '01', 'path': 'chart', 'samples': chartAppRoutes, 'type': 'update'
@@ -90,5 +91,8 @@ export let samplesList: any = [
     },
     {
         'name': 'ContextMenu', 'category': 'Navigation', 'order': '05', 'path': 'contextmenu', 'samples': contextMenuAppRoutes, "type": "new"
+    },
+    {
+        'name': 'Tab', 'category': 'Navigation', 'order': '05', 'path': 'tab', 'samples': tabAppRoutes, 'type': 'new'
     }
 ];

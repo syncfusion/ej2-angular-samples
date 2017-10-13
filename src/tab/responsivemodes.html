@@ -1,0 +1,51 @@
+<div class="control-section">
+    <div class="col-lg-8 content-wrapper">
+        <div class="e-sample-resize-container">
+            <ej-tab id="tab_adaptive" #adaptiveTab heightAdjustMode='Content'>
+                <e-tabitems>
+                    <e-tabitem [header]='headerText[0]' [content]="content0"></e-tabitem>
+                    <e-tabitem [header]='headerText[1]' [content]="content1"></e-tabitem>
+                    <e-tabitem [header]='headerText[2]' [content]="content2"></e-tabitem>
+                    <e-tabitem [header]='headerText[3]' [content]="content3"></e-tabitem>
+                    <e-tabitem [header]='headerText[4]' [content]="content4"></e-tabitem>
+                    <e-tabitem [header]='headerText[5]' [content]="content5"></e-tabitem>
+                    <e-tabitem [header]='headerText[6]' [content]="content6"></e-tabitem>
+                    <e-tabitem [header]='headerText[7]' [content]="content7"></e-tabitem>
+                </e-tabitems>
+            </ej-tab>
+        </div>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties">
+                    <tr>
+                        <td style="width:50%">
+                            <div>Mode:</div>
+                        </td>
+                        <td style="width:50%">
+                            <ej-dropdownlist id='overflow-modes' width='90%' #modes [dataSource]='data' (change)='onChange($event)' [value]='value' [fields]='fields'>
+                            </ej-dropdownlist>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        The <code>Tab</code> is adaptable to the available space when the tab items exceed the view space.
+    </p>
+    <p>
+        You can assign overflowMode property value as <code>Scrollable / Popup</code>. By default scrollable mode of tab is enabled when 
+        tab item exceeds the view range.
+        In this sample, users can change the <code>overflowMode</code> by selecting the dropdown options.
+    </p>
+    <p>
+        More information about Tab can be found in this <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/tab/getting-started.html">
+        documentation</a> section.
+    </p>
+</div>

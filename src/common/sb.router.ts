@@ -23,6 +23,7 @@ import { LinearGaugeSampleModule } from '../lineargauge/lineargauge.module';
 import { MaskedTextBoxSampleModule } from '../maskedtextbox/maskedtextbox.module';
 import { MultiSelectSampleModule } from '../multiselect/multiselect.module';
 import { MenuModule } from '../contextmenu/contextmenu.module';
+import { TabSampleModule } from '../tab/tab.module';
 
 const appRoutes: any = [
     { path: 'chart', loadChildren: ChartSampleModule },
@@ -48,6 +49,7 @@ const appRoutes: any = [
     { path: 'maskedtextbox', loadChildren: MaskedTextBoxSampleModule },
     { path: 'multiselect', loadChildren: MultiSelectSampleModule },
     { path: 'contextmenu', loadChildren: MenuModule },
+    { path: 'tab', loadChildren: TabSampleModule },
     { path: '', redirectTo: 'material/chart/line', pathMatch: 'full' }
 ];
 
@@ -76,6 +78,7 @@ const appRoutes: any = [
         MaskedTextBoxSampleModule,
         MultiSelectSampleModule,
         MenuModule,
+        TabSampleModule,
         RouterModule.forRoot(appRoutes)
     ],
 
