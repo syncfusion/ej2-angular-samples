@@ -22,6 +22,7 @@ import { CircularGaugeSampleModule } from '../circulargauge/circulargauge.module
 import { LinearGaugeSampleModule } from '../lineargauge/lineargauge.module';
 import { MaskedTextBoxSampleModule } from '../maskedtextbox/maskedtextbox.module';
 import { MultiSelectSampleModule } from '../multiselect/multiselect.module';
+import { MenuModule } from '../contextmenu/contextmenu.module';
 
 const appRoutes: any = [
     { path: 'chart', loadChildren: ChartSampleModule },
@@ -46,6 +47,7 @@ const appRoutes: any = [
     { path: 'tooltip', loadChildren: TooltipSampleModule },
     { path: 'maskedtextbox', loadChildren: MaskedTextBoxSampleModule },
     { path: 'multiselect', loadChildren: MultiSelectSampleModule },
+    { path: 'contextmenu', loadChildren: MenuModule },
     { path: '', redirectTo: 'material/chart/line', pathMatch: 'full' }
 ];
 
@@ -73,6 +75,7 @@ const appRoutes: any = [
         TooltipSampleModule,
         MaskedTextBoxSampleModule,
         MultiSelectSampleModule,
+        MenuModule,
         RouterModule.forRoot(appRoutes)
     ],
 
