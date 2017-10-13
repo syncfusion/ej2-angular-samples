@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
 import { Ajax} from '@syncfusion/ej2-base';
 import { ExpandEventArgs, Accordion} from '@syncfusion/ej2-navigations';
 import { AccordionComponent } from '@syncfusion/ej2-ng-navigations';
@@ -12,7 +12,7 @@ import { AccordionComponent } from '@syncfusion/ej2-ng-navigations';
     styleUrls: ['accordion.component.css'],
     encapsulation: ViewEncapsulation.None
 })
-export class AjaxAccordionComponent  {
+export class AjaxAccordionComponent implements AfterViewInit  {
     @ViewChild('accordion')
     public acrdn: AccordionComponent;
     public ajaxData: string;
@@ -20,8 +20,12 @@ export class AjaxAccordionComponent  {
       let ajax: Ajax = new Ajax('./src/accordion/Ajax_content.html', 'GET', true);
       ajax.send().then();
       ajax.onSuccess = (data: string): void => {
-         this.acrdn.items[0].content = data;
+        this.acrdn.items[0].content = data;
+        if (this.acrdn.element.childElementCount !== 0) {
          this.acrdn.refresh();
+        } else {
+         this.acrdn.dataBind();
+        }
       };
     }
     public content: string = this.ajaxData;
