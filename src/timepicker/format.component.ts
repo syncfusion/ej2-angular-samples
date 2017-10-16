@@ -14,5 +14,5 @@ export class FormatTimePickerComponent {
 
     public value: Date = new Date();
     public interval: number = 60;
-    public customFormat : string = 'dd/MM/yyyy HH:mm';
+    public customFormat : string = 'HH:mm';
 }
