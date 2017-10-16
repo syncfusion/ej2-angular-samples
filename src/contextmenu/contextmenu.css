@@ -18,7 +18,7 @@
     text-transform: none;
 }
 
-#target {
+#contextmenutarget {
     border: 1px dashed;
     height: 250px;
     padding: 10px;
@@ -41,104 +41,104 @@
      width: auto;
     }
 
-    #target {
+    #contextmenutarget {
         line-height: 17;
     }
 }
 
-.e-cut::before {
+.e-menu-item .e-cut::before {
     content: '\e264';
 }
 
-.e-paste::before {
+.e-menu-item .e-paste::before {
     content: '\e959';
 }
 
-.e-font::before {
+.e-menu-item .e-font::before {
     content: '\e262';
 }
 
-.e-copy::before {
+.e-menu-item .e-copy::before {
     content: '\e263';
 }
 
-.e-link::before {
+.e-menu-item .e-link::before {
     content: '\e265';
 }
 
-.e-comment::before {
+.e-menu-item .e-comment::before {
     content: '\e267';
 }
 
-.e-pastetext::before {
+.e-menu-item .e-pastetext::before {
     content: '\e261';
 }
 
-.e-pastespecial::before {
+.e-menu-item .e-pastespecial::before {
     content: '\e260';
 }
 
-.fabric .e-cut::before {
+.fabric .e-menu-item .e-cut::before {
     content: '\e251';
 }
 
-.fabric .e-paste::before {
+.fabric .e-menu-item .e-paste::before {
     content: '\e940';
 }
 
-.fabric .e-font::before {
+.fabric .e-menu-item .e-font::before {
     content: '\e252';
 }
 
-.fabric .e-copy::before {
+.fabric .e-menu-item .e-copy::before {
     content: '\e255';
 }
 
-.fabric .e-link::before {
+.fabric .e-menu-item .e-link::before {
     content: '\e254';
 }
 
-.fabric .e-comment::before {
+.fabric .e-menu-item .e-comment::before {
     content: '\e253';
 }
 
-.fabric .e-pastetext::before {
+.fabric .e-menu-item .e-pastetext::before {
     content: '\e258';
 }
 
-.fabric .e-pastespecial::before {
+.fabric .e-menu-item .e-pastespecial::before {
     content: '\e256';
 }
 
-.bootstrap .e-cut::before {
+.bootstrap .e-menu-item .e-cut::before {
     content: '\e248';
 }
 
-.bootstrap .e-paste::before {
+.bootstrap .e-menu-item .e-paste::before {
     content: '\e95a';
 }
 
-.bootstrap .e-font::before {
+.bootstrap .e-menu-item .e-font::before {
     content: '\e247';
 }
 
-.bootstrap .e-copy::before {
+.bootstrap .e-menu-item .e-copy::before {
     content: '\e249';
 }
 
-.bootstrap .e-link::before {
+.bootstrap .e-menu-item .e-link::before {
     content: '\e245';
 }
 
-.bootstrap .e-comment::before {
+.bootstrap .e-menu-item .e-comment::before {
     content: '\e246';
 }
 
-.bootstrap .e-pastetext::before {
+.bootstrap .e-menu-item .e-pastetext::before {
     content: '\e257';
 }
 
-.bootstrap .e-pastespecial::before {
+.bootstrap .e-menu-item .e-pastespecial::before {
     content: '\e259';
 }
 

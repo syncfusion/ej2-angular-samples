@@ -9,7 +9,7 @@ import { SharedModule } from '../common/shared.module';
 export const buttonAppRoutes: Object[] = [
     { path: ':theme/button/default', component: DefaultButtonController, name: 'Default Functionalities', category: 'Button' },
     { path: ':theme/button/check-box', component: CheckBoxController, name: 'CheckBox', category: 'Button' },
-    { path: ':theme/button/radio-button', component: RadioButtonController, name: 'RadioButton', category: 'Button', type: 'new' }
+    { path: ':theme/button/radio-button', component: RadioButtonController, name: 'RadioButton', category: 'Button' }
 ];
 
 export const buttonRouter: ModuleWithProviders = RouterModule.forChild(buttonAppRoutes);
