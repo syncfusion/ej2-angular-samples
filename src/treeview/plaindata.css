@@ -1,0 +1,12 @@
+.nested-data, .list-data {
+    padding: 15px;
+    margin-bottom: 25px;
+}
+.content {
+    margin: 0 auto;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+}
+.content h4 {
+    padding: 0 10px;
+}

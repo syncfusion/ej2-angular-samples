@@ -6,6 +6,7 @@ import { toolbarAppRoutes } from '../toolbar/toolbar.module';
 import { accordionAppRoutes } from '../accordion/accordion.module';
 import { numericAppRoutes } from '../numerictextbox/numerictextbox.module';
 import { dropdownlistAppRoutes } from '../dropdownlist/dropdownlist.module';
+import { treeAppRoutes } from '../treeview/treeview.module';
 import { comboboxAppRoutes } from '../combobox/combobox.module';
 import { autoCompleteAppRoutes } from '../autocomplete/autocomplete.module';
 import { calendarAppRoutes } from '../calendar/calendar.module';
@@ -82,6 +83,9 @@ export let samplesList: any = [
     },
     {
         'name': 'Toolbar', 'category': 'Navigation', 'order': '05', 'path': 'toolbar', 'samples': toolbarAppRoutes
+    },
+     {
+        'name': 'TreeView', 'category': 'Navigation', 'order': '05', 'path': 'treeview', 'samples': treeAppRoutes, "type": "new"
     },
     {
         'name': 'Tooltip', 'category': 'Layout', 'order': '04', 'path': 'tooltip', 'samples': tooltipAppRoutes

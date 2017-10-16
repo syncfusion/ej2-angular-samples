@@ -1,0 +1,21 @@
+<div class="control-section" style="overflow:hidden;">
+    <div class="col-lg-12">
+        <div class='col-lg-6 nested-data'>
+            <div class='content'>
+                <h4>Hierarchical Data</h4>
+                <ej-treeview id="tree" [fields]='fields'></ej-treeview>
+            </div>
+        </div>
+        <div class='col-lg-6 list-data'>
+            <div class='content'>
+                <h4>List Data</h4>
+                <ej-treeview id="listtree" [fields]='listfields'></ej-treeview>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>The TreeView component loads the data through the <code>dataSource</code> property, where the data can be either local data or remote data. In case of local data, the data structure can be hierarchical data or list data (with self-referential format i.e., mapped with id and parentID fields).</p>
+    <p>In this demo, the first TreeView was bound with hierarchical data which contains array of nested objects. And the second TreeView was bound with the list type data where the parent-child relation was referred by <b>id</b> and <b>parentID</b> mapping fields.</p>
+    <p>For more information, you can refer the <a href="../documentation/treeview/data-binding.html" target="_blank">Data Binding</a> section from the documentation.</p>
+</div>

@@ -1,0 +1,18 @@
+<div class="control-section" style="overflow:hidden;">
+    <div class="col-lg-12">
+    <div class="control_wrapper">
+        <span id="loading">Loading...</span>
+        <ej-treeview id="remote" [fields]='field' (created)='show()' (dataBound)='hide()'></ej-treeview>
+    </div>
+    </div>
+</div>
+<div id="description">
+    <p>The <code>TreeView</code> component loads the data through the <code>dataSource</code> property, where the data can be either local data or remote data. In case of remote data, the data can be load from any remote services though our <code>DataManager</code>.</p>
+    <p>The DataManager will act as an interface between the service endpoint and the TreeView, which will require the below minimal information to interact with service endpoint.</p>
+    <ul>
+        <li><code>DataManager->url</code> - Defines the service endpoint to fetch data.</li>
+        <li><code>DataManager->adaptor</code> - Defines the adaptor option. By default, ODataAdaptor is used for remote binding.</li>
+    </ul>
+    <p>In this demo, the TreeView was bound with the dataSource from Northwind remote service by using the DataManager instance.</p>
+    <p>For more information, you can refer the <a href="../documentation/treeview/data-binding.html" target="_blank">Data Binding</a> section from the documentation.</p>
+</div>

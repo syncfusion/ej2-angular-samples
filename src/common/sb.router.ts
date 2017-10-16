@@ -10,6 +10,7 @@ import { DateRangePickerSampleModule } from '../daterangepicker/daterangepicker.
 import { TimePickerSampleModule } from '../timepicker/timepicker.module';
 import { ButtonModule } from '../button/button.module';
 import { ListViewSampleModule } from '../listview/listview.module';
+import { TreeViewSampleModule } from '../treeview/treeview.module';
 import { GridSampleModule } from '../grid/grid.module';
 import { ToolbarSampleModule } from '../toolbar/toolbar.module';
 import { AccordionSampleModule } from '../accordion/accordion.module';
@@ -45,6 +46,7 @@ const appRoutes: any = [
     { path: 'textboxes', loadChildren: TextboxesModule },
     { path: 'toolbar', loadChildren: ToolbarSampleModule },
     { path: 'accordion', loadChildren: AccordionSampleModule },
+    { path: 'treeview', loadChildren: TreeViewSampleModule },
     { path: 'tooltip', loadChildren: TooltipSampleModule },
     { path: 'maskedtextbox', loadChildren: MaskedTextBoxSampleModule },
     { path: 'multiselect', loadChildren: MultiSelectSampleModule },
@@ -74,6 +76,7 @@ const appRoutes: any = [
         DialogSampleModule,
         ToolbarSampleModule,
         AccordionSampleModule,
+        TreeViewSampleModule,
         TooltipSampleModule,
         MaskedTextBoxSampleModule,
         MultiSelectSampleModule,

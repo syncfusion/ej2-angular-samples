@@ -1,0 +1,24 @@
+.control_wrapper {
+    max-width: 500px;
+    margin: auto;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+}
+.custom.e-treeview .e-fullrow {
+    height: 72px;
+}
+.custom.e-treeview .e-list-text {
+    line-height: normal;
+}
+.eimage {
+    float: left;
+    padding: 11px 16px 11px 0;
+}
+.ename {
+    font-size: 16px;
+    padding: 14px 0 0;
+}
+.ejob {
+    font-size: 14px;
+    opacity: .87;
+}
