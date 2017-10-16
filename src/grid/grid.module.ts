@@ -104,7 +104,6 @@ export const gridRouteConfig: Object[] = [
         'path': ':theme/grid/multiple-exporting', component: MultipleExportingComponent, name: 'Multiple Exporting', order: '08',
         category: 'Exporting', type: 'new'
     },
-    { path: ':theme/grid/:sample', redirectTo: 'material/grid/default' },
 ];
 
 let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
