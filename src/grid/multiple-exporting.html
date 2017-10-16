@@ -1,7 +1,7 @@
 <div class="control-section">
     <div>
         <p><b>First Grid</b></p>
-        <ej-grid #firstgrid [dataSource]='firstGridData' allowPaging='true' [toolbar]='toolbar' (toolbarClick)='toolbarClick($event)'
+        <ej-grid #firstgrid [dataSource]='firstGridData' [toolbar]='toolbar' (toolbarClick)='toolbarClick($event)'
             [allowExcelExport]='true' [allowPdfExport]='true'>
             <e-columns>
                 <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right" isPrimaryKey='true'></e-column>
@@ -15,7 +15,7 @@
     <br/>
     <div>
         <p><b>Second Grid</b></p>
-        <ej-grid #secondgrid [dataSource]='secondGridData' allowPaging='true' [allowExcelExport]='true' [allowPdfExport]='true'>
+        <ej-grid #secondgrid [dataSource]='secondGridData' [allowExcelExport]='true' [allowPdfExport]='true'>
             <e-columns>
                 <e-column field='EmployeeID' headerText='Employee ID' width='120' isPrimaryKey='true'></e-column>
                 <e-column field='FirstName' headerText='First Name' width='120'></e-column>

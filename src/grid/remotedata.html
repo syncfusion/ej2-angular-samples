@@ -1,5 +1,5 @@
 <div class="control-section">
-    <ej-grid #grid [dataSource]='data' allowPaging='true' (actionBegin)='show()' (actionComplete)='hide()' (created)='show()' (dataBound)='hide()'>
+    <ej-grid #grid [dataSource]='data' allowPaging='true'>
         <e-columns>
             <e-column field='ProductID' headerText='ID' width='120' textAlign="right"></e-column>
             <e-column field='ProductName' headerText='Name' width='160'></e-column>
@@ -8,10 +8,6 @@
             <e-column field='Discontinued' headerText='Discontinued' width='150' displayAsCheckBox="true" ></e-column>
         </e-columns>
     </ej-grid>
-
-    <div id='waitingpopup' class='waitingpopup' style="display: none">
-        <span id='gif' class='image'></span>
-    </div>
 
     <div id="description">
         <p>The Grid supports data binding. The <code><a target="_blank" class="code"

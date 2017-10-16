@@ -6,8 +6,7 @@ const SERVICE_URI: string = 'http://services.odata.org/V4/Northwind/Northwind.sv
 
 @Component({
     selector: 'ej2-griddatabind',
-    templateUrl: 'remotedata.html',
-    styleUrls: ['remotedata.style.css']
+    templateUrl: 'remotedata.html'
 })
 export class DataBindingComponent implements OnInit {
     public data: DataManager;
@@ -17,21 +16,5 @@ export class DataBindingComponent implements OnInit {
 
     ngOnInit(): void {
         this.data = new DataManager({ url: SERVICE_URI, adaptor: new ODataV4Adaptor });
-    }
-
-    public show(): void {
-        let div: HTMLElement = document.getElementById('waitingpopup');
-        let width: number = this.grid.element.offsetWidth;
-        let height: number = this.grid.element.offsetHeight;
-        div.style.top = (height / 2 - 25) + 'px';
-        div.style.left = (width / 2 - 25) + 'px';
-        if (!this.grid.element.querySelector('#waitingpopup')) {
-            this.grid.element.appendChild(div);
-        }
-        (<HTMLElement>div).style.display = '';
-    }
-    public hide(): void {
-        let div: HTMLElement = document.getElementById('waitingpopup') as HTMLElement;
-        div.style.display = 'none';
     }
 }
