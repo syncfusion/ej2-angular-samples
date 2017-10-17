@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';
-import { MenuAnimationSettings, MenuItemModel } from '@syncfusion/ej2-navigations';
+import { MenuAnimationSettings, BeforeItemRenderEventArgs, MenuItemModel } from '@syncfusion/ej2-navigations';
 /**
  * Default ContextMenu Controller
  */
@@ -14,7 +14,7 @@ import { MenuAnimationSettings, MenuItemModel } from '@syncfusion/ej2-navigation
 export class DefaultContextMenuController {
     public content: string = '';
     public animationSettings: MenuAnimationSettings = {};
-    public addDisabled  (args: any) {
+    public addDisabled  (args: BeforeItemRenderEventArgs) {
         if (args.data.text === 'Link') {
             args.item.classList.add('e-disabled');
         }
