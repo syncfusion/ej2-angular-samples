@@ -41,7 +41,7 @@ import { MultipleExportingComponent } from './multiple-exporting.component';
 export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/default', component: DefaultComponent, 'name': 'Default Functionalities', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/gridlines', component: GridLinesComponent, 'name': 'Grid Lines', order: '01', category: 'Grid' },
-    { 'path': ':theme/grid/paging', component: PageComponent, name: 'Paging', order: '01', category: 'Grid', type: 'update' },
+    { 'path': ':theme/grid/paging', component: PageComponent, name: 'Paging', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/filtering', component: FilterComponent, name: 'Filtering', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/grouping', component: GroupComponent, name: 'Grouping', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/sorting', component: SortComponent, name: 'Sorting', order: '01', category: 'Grid' },
@@ -57,8 +57,8 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/column/stackedheader', component: StackedHeaderComponent, name: 'Stacked Header', order: '03', category: 'Column' },
     { 'path': ':theme/grid/column/autowrap', component: AutoWrapComponent, name: 'AutoWrap Column cells', order: '03', category: 'Column' },
     { 'path': ':theme/grid/column/reorder', component: ReorderComponent, name: 'Reorder Columns', order: '03', category: 'Column' },
-    { 'path': ':theme/grid/column/columnchooser', component: ColumnChooserComponent, name: 'Column Chooser', order: '03', category: 'Column', type: 'new' },
-    { 'path': ':theme/grid/column/columnresizing', component: ColumnResizingComponent, name: 'Column Resizing', order: '03', category: 'Column', type: 'new' },
+    { 'path': ':theme/grid/column/columnchooser', component: ColumnChooserComponent, name: 'Column Chooser', order: '03', category: 'Column' },
+    { 'path': ':theme/grid/column/columnresizing', component: ColumnResizingComponent, name: 'Column Resizing', order: '03', category: 'Column' },
     { 'path': ':theme/grid/selection', component: SelectionComponent, name: 'Default Selection', order: '04', category: 'Selection' },
     { 'path': ':theme/grid/selectionapi', component: SelectionApiComponent, name: 'Selection API', order: '04', category: 'Selection' },
     {
@@ -85,24 +85,24 @@ export const gridRouteConfig: Object[] = [
     },
     {
         'path': ':theme/grid/normal-edit', component: NormalEditComponent, name: 'Inline Editing', order: '07',
-        category: 'Editing', type: 'new'
+        category: 'Editing'
     },
     {
         'path': ':theme/grid/dialog-editing', component: DialogEditComponent, name: 'Dialog Editing', order: '07',
-        category: 'Editing', type: 'new'
+        category: 'Editing'
     },
     {
         'path': ':theme/grid/batch-editing', component: BatchEditComponent, name: 'Batch Editing', order: '07',
-        category: 'Editing', type: 'new'
+        category: 'Editing'
     },
 
     {
         'path': ':theme/grid/exporting', component: ExportingComponent, name: 'Basic', order: '08',
-        category: 'Exporting', type: 'new'
+        category: 'Exporting'
     },
     {
         'path': ':theme/grid/multiple-exporting', component: MultipleExportingComponent, name: 'Multiple Exporting', order: '08',
-        category: 'Exporting', type: 'new'
+        category: 'Exporting'
     },
 ];
 
