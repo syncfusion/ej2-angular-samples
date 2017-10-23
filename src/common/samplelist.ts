@@ -79,7 +79,7 @@ export let samplesList: any = [
         'name': 'Dialog', 'category': 'Layout', 'order': '04', 'path': 'dialog', 'samples': dialogAppRoutes
     },
     {
-        'name': 'Accordion', 'category': 'Navigation', 'order': '05', 'path': 'accordion', 'samples': accordionAppRoutes, "type": "new"
+        'name': 'Accordion', 'category': 'Navigation', 'order': '05', 'path': 'accordion', 'samples': accordionAppRoutes
     },
     {
         'name': 'Toolbar', 'category': 'Navigation', 'order': '05', 'path': 'toolbar', 'samples': toolbarAppRoutes
@@ -97,6 +97,6 @@ export let samplesList: any = [
         'name': 'ContextMenu', 'category': 'Navigation', 'order': '05', 'path': 'contextmenu', 'samples': contextMenuAppRoutes, "type": "new"
     },
     {
-        'name': 'Tab', 'category': 'Navigation', 'order': '05', 'path': 'tab', 'samples': tabAppRoutes, 'type': 'new'
+        'name': 'Tab', 'category': 'Navigation', 'order': '05', 'path': 'tab', 'samples': tabAppRoutes
     }
 ];
