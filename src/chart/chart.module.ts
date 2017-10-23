@@ -61,32 +61,32 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/stacked-area100', component: PercentStackedAreaChartComponent, name: '100% Stacked Area',order:'01',category: 'Series' },
     { path: ':theme/chart/range-column', component: RangeColumnChartComponent, name: 'Range Column',order:'01',category: 'Series' },
     { path: ':theme/chart/step-line', component: StepLineChartComponent, name: 'StepLine', order:'01',category: 'Series' },
-    { path: ':theme/chart/step-area', component: StepAreaChartComponent, name: 'StepArea', order:'01',category: 'Series',type:'new' },
+    { path: ':theme/chart/step-area', component: StepAreaChartComponent, name: 'StepArea', order:'01',category: 'Series' },
     { path: ':theme/chart/scatter', component: ScatterChartComponent, name: 'Scatter', order:'01',category: 'Series' },
     { path: ':theme/chart/bubble', component: BubbleChartComponent, name: 'Bubble', order:'01', category: 'Series'},
     { path: ':theme/chart/combination-series', component: CombinationSeriesChartComponent, name: 'Combination Series', 
        order:'01', category: 'Series' },
     { path: ':theme/chart/performance', component: PerformanceChartComponent, name: 'Performance',order:'01', category: 'Series' },
-    { path: ':theme/chart/default-pie', component: DefaultPieComponent, name: 'Pie', order: '02', category: 'Accumulation Series', type: 'new'},
+    { path: ':theme/chart/default-pie', component: DefaultPieComponent, name: 'Pie', order: '02', category: 'Accumulation Series' },
     {
         path: ':theme/chart/default-doughnut', component: DefaultDoughnutComponent, name: 'Pie With Legend', order: '02',
-        category: 'Accumulation Series', type: 'new'
+        category: 'Accumulation Series'
     },
     {
         path: ':theme/chart/semi-pie', component: SemiPieComponent, name: 'Semi Accumulation Series', order: '02',
-        category: 'Accumulation Series', type: 'new'
+        category: 'Accumulation Series'
     },
     {
         path: ':theme/chart/smart-labels', component: SmartLabelsComponent, name: 'Smart Labels', order: '02',
-        category: 'Accumulation Series', type: 'new'
+        category: 'Accumulation Series'
     },
     {
         path: ':theme/chart/drilldown-pie', component: DrilldownPieComponent, name: 'Drilldown', order: '02',
-        category: 'Accumulation Series', type: 'new'
+        category: 'Accumulation Series'
     },
     {
         path: ':theme/chart/grouping', component: GroupingPieComponent, name: 'Grouping', order: '02',
-        category: 'Accumulation Series', type: 'new'
+        category: 'Accumulation Series'
     },
     { path: ':theme/chart/local-data', component: LocalDataChartComponent, name: 'Local Data', order:'03',category: 'Data Binding' },
     { path: ':theme/chart/remote-data', component: RemoteDataChartComponent, name: 'Remote Data',order:'03', category: 'Data Binding' },
@@ -95,10 +95,10 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/category', component: CategoryChartComponent, name: 'Category Axis', order:'04', category: 'Chart Axes' },
     { path: ':theme/chart/logarithmic', component: LogarithmicAxisChartComponent, name: 'Logarithmic Axis', order:'04', category: 'Chart Axes' },
     { path: ':theme/chart/multiple-axes', component: MultipleAxesChartComponent, name: 'Multiple Axes',order:'04', category: 'Chart Axes' },
-    { path: ':theme/chart/inversed', component: InversedAxisChartComponent, name: 'Inversed Axes', order:'04', category: 'Chart Axes', type: 'new'},
+    { path: ':theme/chart/inversed', component: InversedAxisChartComponent, name: 'Inversed Axes', order:'04', category: 'Chart Axes'},
     { path: ':theme/chart/symbols', component: SymbolsChartComponent, name: 'Symbols',order:'05', category: 'Chart Customization' },
-    { path: ':theme/chart/annotation', component: AnnotationChartComponent, name: 'Annotation', order: '05', category: 'Chart Customization', type: 'new'},
-    { path: ':theme/chart/datalabel-template', component: DataLabelComponent, name: 'Datalabel Template', order: '05', category: 'Chart Customization', type: 'new' },
+    { path: ':theme/chart/annotation', component: AnnotationChartComponent, name: 'Annotation', order: '05', category: 'Chart Customization' },
+    { path: ':theme/chart/datalabel-template', component: DataLabelComponent, name: 'Datalabel Template', order: '05', category: 'Chart Customization' },
     { path: ':theme/chart/selection', component: SelectionChartComponent, name: 'Selection',order:'06', category: 'User Interaction' },
     { path: ':theme/chart/crosshair', component: CrosshairChartComponent, name: 'Crosshair',order:'06', category: 'User Interaction' },
     { path: ':theme/chart/trackball', component: TrackBallChartComponent, name: 'TrackBall', order:'06',category: 'User Interaction' },

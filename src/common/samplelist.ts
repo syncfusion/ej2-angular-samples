@@ -25,13 +25,13 @@ import { contextMenuAppRoutes } from '../contextmenu/contextmenu.module';
 import { tabAppRoutes } from '../tab/tab.module';
 export let samplesList: any = [
     {
-        'name': 'Chart', 'category': 'Datavisualization', 'order': '01', 'path': 'chart', 'samples': chartAppRoutes, 'type': 'update'
+        'name': 'Chart', 'category': 'Datavisualization', 'order': '01', 'path': 'chart', 'samples': chartAppRoutes
     },
     {
-        'name': 'CircularGauge', 'category': 'Datavisualization', 'order': '01', 'path': 'circulargauge', 'samples': circulargaugeAppRoutes, "type": "new"
+        'name': 'CircularGauge', 'category': 'Datavisualization', 'order': '01', 'path': 'circulargauge', 'samples': circulargaugeAppRoutes
     },
     {
-        'name': 'LinearGauge', 'category': 'Datavisualization', 'order': '01', 'path': 'lineargauge', 'samples': lineargaugeAppRoutes, "type": "new"
+        'name': 'LinearGauge', 'category': 'Datavisualization', 'order': '01', 'path': 'lineargauge', 'samples': lineargaugeAppRoutes
     },
     {
         'name': 'Grid', 'category': 'Grids', 'order': '02', 'path': 'grid', 'samples': gridRouteConfig
@@ -55,13 +55,13 @@ export let samplesList: any = [
         'name': 'DropDownList', 'category': 'Editors', 'order': '03', 'path': 'dropdownlist', 'samples': dropdownlistAppRoutes
     },
     {
-        'name': 'ComboBox', 'category': 'Editors', 'order': '03', 'path': 'combobox', 'samples': comboboxAppRoutes, 'type': 'new'
+        'name': 'ComboBox', 'category': 'Editors', 'order': '03', 'path': 'combobox', 'samples': comboboxAppRoutes
     },
     {
-        'name': 'AutoComplete', 'category': 'Editors', 'order': '03', 'path': 'autocomplete', 'samples': autoCompleteAppRoutes, 'type': 'new'
+        'name': 'AutoComplete', 'category': 'Editors', 'order': '03', 'path': 'autocomplete', 'samples': autoCompleteAppRoutes
     },    
     {
-        "name": "MultiSelect", "category": "Editors", 'order': '03', "path": "multiselect", "samples": multiselectAppRoutes, "type": "new"
+        "name": "MultiSelect", "category": "Editors", 'order': '03', "path": "multiselect", "samples": multiselectAppRoutes
     },
     {
         "name": "TimePicker", "category": "Editors", 'order': '03', "path": "timepicker", "samples": timePickerAppRoutes
@@ -85,13 +85,13 @@ export let samplesList: any = [
         'name': 'Toolbar', 'category': 'Navigation', 'order': '05', 'path': 'toolbar', 'samples': toolbarAppRoutes
     },
      {
-        'name': 'TreeView', 'category': 'Navigation', 'order': '05', 'path': 'treeview', 'samples': treeAppRoutes, "type": "new"
+        'name': 'TreeView', 'category': 'Navigation', 'order': '05', 'path': 'treeview', 'samples': treeAppRoutes
     },
     {
         'name': 'Tooltip', 'category': 'Layout', 'order': '04', 'path': 'tooltip', 'samples': tooltipAppRoutes
     },
     {
-        'name': 'MaskedTextBox', 'category': 'Editors', 'order': '03', 'path': 'maskedtextbox', 'samples': maskedTextBoxAppRoutes, "type": "new"
+        'name': 'MaskedTextBox', 'category': 'Editors', 'order': '03', 'path': 'maskedtextbox', 'samples': maskedTextBoxAppRoutes
     },
     {
         'name': 'ContextMenu', 'category': 'Navigation', 'order': '05', 'path': 'contextmenu', 'samples': contextMenuAppRoutes, "type": "new"
