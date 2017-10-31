@@ -13,10 +13,6 @@
                 <e-column type="sum" field="UnitsInStock">
                       <ng-template #groupFooterTemplate let-data>Total units: {{data.sum}}</ng-template>
                 </e-column>
-            </e-columns>
-        </e-aggregate>
-        <e-aggregate>
-            <e-columns>
                 <e-column type="truecount" field="Discontinued">
                     <ng-template #groupFooterTemplate let-data>Discontinued: {{data.truecount}}</ng-template>
                 </e-column>
