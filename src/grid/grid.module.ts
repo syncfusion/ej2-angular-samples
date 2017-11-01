@@ -37,6 +37,7 @@ import { ColumnChooserComponent } from './column/columnchooser.component';
 import { ColumnResizingComponent } from './column/columnresizing.component';
 import { ExportingComponent } from './exporting.component';
 import { MultipleExportingComponent } from './multiple-exporting.component';
+import { CheckboxSelectionComponent } from './checkboxselection.component';
 import { ClipboardComponent } from './clipboard.component';
 
 export const gridRouteConfig: Object[] = [
@@ -62,6 +63,7 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/column/columnresizing', component: ColumnResizingComponent, name: 'Column Resizing', order: '03', category: 'Column' },
     { 'path': ':theme/grid/selection', component: SelectionComponent, name: 'Default Selection', order: '04', category: 'Selection' },
     { 'path': ':theme/grid/selectionapi', component: SelectionApiComponent, name: 'Selection API', order: '04', category: 'Selection' },
+    { 'path': ':theme/grid/checkboxselection', component: CheckboxSelectionComponent, name: 'Checkbox Selection', order: '04', category: 'Selection', type: 'new'},
     {
         'path': ':theme/grid/aggregatedefault', component: AggregateComponent, name: 'Default Aggregate', order: '05', category: 'Aggregate'
     },
@@ -114,7 +116,7 @@ let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     ScrollComponent, SearchComponent, SelectionApiComponent, DragAndDropComponent, AggregateComponent, AggregateGroupComponent,
     RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent, VirtualizationComponent,
     NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent, ColumnResizingComponent,
-    ExportingComponent, MultipleExportingComponent, ClipboardComponent];
+    ExportingComponent, MultipleExportingComponent, CheckboxSelectionComponent, ClipboardComponent];
 
 @NgModule({
     imports: [RouterModule.forChild(gridRouteConfig), CommonModule, HttpModule, ToolbarModule, GridAllModule, SharedModule],
