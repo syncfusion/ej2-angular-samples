@@ -16,6 +16,8 @@ export class DefaultButtonController {
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['button.css'];
     }
+
+    //Toggle button click event handler
     btnClick() {
         if (this.toggleBtn.element.classList.contains('e-active')) {
             this.toggleBtn.content = 'Play';

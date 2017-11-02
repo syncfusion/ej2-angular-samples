@@ -19,6 +19,7 @@ export class CheckBoxController {
          sourceFiles.files = ['check-box.css'];
     }
 
+    // function to handle the CheckBox change event
     public changeHandler() : void {
         this.checkbox.label = 'CheckBox: ' + this.checkbox.checked;
     }

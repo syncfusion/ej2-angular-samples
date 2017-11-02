@@ -18,7 +18,7 @@
     #button-control .col-xs-12 {
         margin-bottom: 30px;
     }
-
+    
     .e-play-icon::before {
         content: '\e798';
     }
@@ -30,7 +30,7 @@
     .e-open-icon::before {
         content: '\e782';
     }
-    
+
     .e-add-icon::before {
         content: '\e823';
     }
