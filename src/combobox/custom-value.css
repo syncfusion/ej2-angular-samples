@@ -1,0 +1,9 @@
+.control-section {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+#nodata {
+    height: 55px;
+    opacity: .7;
+}

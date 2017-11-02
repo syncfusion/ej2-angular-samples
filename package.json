@@ -41,6 +41,7 @@
 		"@types/node": "^6.0.46",
 		"es6-module-loader": "^0.17.11",
 		"gulp-clean": "^0.3.2",
+		"fuse.js": "^3.2.0",
 		"karma-systemjs": "^0.16.0",
 		"systemjs-plugin-babel": "0.0.17",
 		"es6-promise": "^3.2.1",

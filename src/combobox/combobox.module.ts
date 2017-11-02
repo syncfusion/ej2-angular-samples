@@ -9,13 +9,15 @@ import { DataBindingComboBoxComponent } from './databinding.component';
 import { TemplateComboBoxComponent } from './template.component';
 import { CascadingComboBoxComponent } from './cascading.component';
 import { FilteringComboBoxComponent } from './filtering.component';
+import { CustomValueComboBoxComponent } from './custom-value.component';
 import { SharedModule } from '../common/shared.module';
 export const comboboxAppRoutes: Object[] = [
     { path: ':theme/combobox/default', component: DefaultComboBoxComponent, name: 'Default Functionalities', category: 'ComboBox' },
     { path: ':theme/combobox/groupingicon', component: GroupAndIconComboBoxComponent, name: 'Grouping and Icons', category: 'ComboBox' },
     { path: ':theme/combobox/databinding', component: DataBindingComboBoxComponent, name: 'Data Binding', category: 'ComboBox' },
+    { path: ':theme/combobox/custom-value', component: CustomValueComboBoxComponent, name: 'Custom Value', category: 'ComboBox' },
     { path: ':theme/combobox/template', component: TemplateComboBoxComponent, name: 'Template', category: 'ComboBox' },
-     { path: ':theme/combobox/filtering', component: FilteringComboBoxComponent, name: 'Filtering', category: 'ComboBox' },
+    { path: ':theme/combobox/filtering', component: FilteringComboBoxComponent, name: 'Filtering', category: 'ComboBox' },
     { path: ':theme/combobox/cascading', component: CascadingComboBoxComponent, name: 'Cascading', category: 'ComboBox' }
 
 ];
@@ -28,6 +30,7 @@ export const ComboBoxRouter: ModuleWithProviders = RouterModule.forChild(combobo
         DefaultComboBoxComponent,
         GroupAndIconComboBoxComponent,
         DataBindingComboBoxComponent,
+        CustomValueComboBoxComponent,
         TemplateComboBoxComponent,
         CascadingComboBoxComponent,
         FilteringComboBoxComponent

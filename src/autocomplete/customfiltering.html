@@ -1,0 +1,20 @@
+<div class="control-section">
+    <div id='content' style="margin: 0px auto; width:300px; padding-top: 40px;">
+        <ej-autocomplete id='books' [dataSource]='booksData' [fields]='fields' (filtering)='onFiltering($event)' [placeholder]='watermark'>
+        </ej-autocomplete>
+    </div>
+</div>
+
+<div id="description">
+    <p> The AutoComplete can be customized to showcase the suggestion list by using
+        <code>filtering</code> event. In that, you can use your own libraries to filter the data and update it to AutoComplete suggestion list
+        via
+        <code>updateData</code> method.
+    </p>
+
+    <p>In this sample, used Fuse.js library for custom filtering of books data.</p>
+    <p>
+        For more information about Fuse.js can be found in this
+        <a href="http://fusejs.io/" target="_blank"> reference link</a>.
+    </p>
+</div>

@@ -5,14 +5,14 @@
                 <div class="head"> <span class="photo">Photo</span> <span style="margin-left:17px;">Employee Info</span></div>
             </ng-template>
             <ng-template #itemTemplate let-data>
-                <div><img class="empImage" src="src/dropdownlist/Employees/{{data.eimg}}.png" alt="employee" />
-                    <div class="ename"> {{data.name}} </div>
-                    <div class="job"> {{data.designation}} </div>
+                <div><img class="empImage" src="src/dropdownlist/Employees/{{data.Eimg}}.png" alt="employee" />
+                    <div class="ename"> {{data.Name}} </div>
+                    <div class="job"> {{data.Designation}} </div>
                 </div>
             </ng-template>
             <ng-template #valueTemplate let-data>
-                <div><img class="valueTemp" src="src/dropdownlist/Employees/{{data.eimg}}.png" height="26px" width="26px" alt="employee" />
-                    <div class="name"> {{data.name}} </div>
+                <div><img class="valueTemp" src="src/dropdownlist/Employees/{{data.Eimg}}.png" height="26px" width="26px" alt="employee" />
+                    <div class="name"> {{data.Name}} </div>
                 </div>
             </ng-template>
         </ej-dropdownlist>
@@ -20,14 +20,17 @@
 </div>
 
 <div id="description">
-    <p>The DropDownList component provides a way to use a custom layout for its items and selected value which is shown in input using <code>template</code> feature.</p>
-    <p>In this sample, used below list of templates in DropDownList</p>
+    <p>The DropDownList has been provided with several options to customize each list items, group title, selected value, header
+    and footer elements.
+    </p>
+
+    <p>This sample uses the following list of templates in DropDownList</p>
     <ul>
         <li><code>ItemTemplate</code> - To customize the list item's content.</li>
-        <li><code>ValueTemplate</code> - To customize the value element content which holds the selected item's text.</li>
+        <li><code>ValueTemplate</code> - To customize the value element content that holds the selected item's text.</li>
         <li><code>HeaderTemplate</code> - To customize the header element.</li>
     </ul>
-    <p> More information on the template feature configuration can be found in this
-        <a href="../documentation/drop-down-list/templates.html" target="_blank"> documentation section</a>.
+    <p> More information on the template feature configuration can be found in the
+        <a href="http://ej2.syncfusion.com/documentation/drop-down-list/templates.html" target="_blank"> documentation section</a>.
     </p>
 </div>

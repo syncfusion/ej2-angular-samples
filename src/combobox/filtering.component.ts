@@ -12,32 +12,32 @@ import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
 })
 export class FilteringComboBoxComponent {
     public data: { [key: string]: Object; }[] = [
-        { name: 'Australia', code: 'AU' },
-        { name: 'Bermuda', code: 'BM' },
-        { name: 'Canada', code: 'CA' },
-        { name: 'Cameroon', code: 'CM' },
-        { name: 'Denmark', code: 'DK' },
-        { name: 'France', code: 'FR' },
-        { name: 'Finland', code: 'FI' },
-        { name: 'Germany', code: 'DE' },
-        { name: 'Greenland', code: 'GL' },
-        { name: 'Hong Kong', code: 'HK' },
-        { name: 'India', code: 'IN' },
-        { name: 'Italy', code: 'IT' },
-        { name: 'Japan', code: 'JP' },
-        { name: 'Mexico', code: 'MX' },
-        { name: 'Norway', code: 'NO' },
-        { name: 'Poland', code: 'PL' },
-        { name: 'Switzerland', code: 'CH' },
-        { name: 'United Kingdom', code: 'GB' },
-        { name: 'United States', code: 'US' }
+        { Name: 'Australia', Code: 'AU' },
+        { Name: 'Bermuda', Code: 'BM' },
+        { Name: 'Canada', Code: 'CA' },
+        { Name: 'Cameroon', Code: 'CM' },
+        { Name: 'Denmark', Code: 'DK' },
+        { Name: 'France', Code: 'FR' },
+        { Name: 'Finland', Code: 'FI' },
+        { Name: 'Germany', Code: 'DE' },
+        { Name: 'Greenland', Code: 'GL' },
+        { Name: 'Hong Kong', Code: 'HK' },
+        { Name: 'India', Code: 'IN' },
+        { Name: 'Italy', Code: 'IT' },
+        { Name: 'Japan', Code: 'JP' },
+        { Name: 'Mexico', Code: 'MX' },
+        { Name: 'Norway', Code: 'NO' },
+        { Name: 'Poland', Code: 'PL' },
+        { Name: 'Switzerland', Code: 'CH' },
+        { Name: 'United Kingdom', Code: 'GB' },
+        { Name: 'United States', Code: 'US' }
     ];
-    public fields: Object = { text: 'name', value: 'code' };
+    public fields: Object = { text: 'Name', value: 'Code' };
     public height: string = '220px';
     public watermark: string = 'Select a country';
     public onFiltering: EmitType<FilteringEventArgs> = (e: FilteringEventArgs) => {
         let query: Query = new Query();
-        query = (e.text !== '') ? query.where('name', 'startswith', e.text, true) : query;
+        query = (e.text !== '') ? query.where('Name', 'startswith', e.text, true) : query;
         e.updateData(this.data, query);
     }
 }

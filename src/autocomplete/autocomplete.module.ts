@@ -8,6 +8,7 @@ import { GroupAndIconAutoCompleteComponent } from './groupingicon.component';
 import { DataBindingAutoCompleteComponent } from './databinding.component';
 import { TemplateAutoCompleteComponent } from './template.component';
 import { HighlightAutoCompleteComponent } from './highlight.component';
+import { CustomFilteringAutoCompleteComponent } from './customfiltering.component';
 import { SharedModule } from '../common/shared.module';
 export const autoCompleteAppRoutes: Object[] = [
     {
@@ -29,6 +30,10 @@ export const autoCompleteAppRoutes: Object[] = [
     {
         path: ':theme/autocomplete/highlight', component: HighlightAutoCompleteComponent,
         name: 'Highlight', category: 'AutoComplete'
+    },
+    {
+        path: ':theme/autocomplete/customfiltering', component: CustomFilteringAutoCompleteComponent,
+        name: 'Custom Filtering', category: 'AutoComplete'
     }
 ];
 
@@ -41,7 +46,8 @@ export const AutoCompleteRouter: ModuleWithProviders = RouterModule.forChild(aut
         GroupAndIconAutoCompleteComponent,
         DataBindingAutoCompleteComponent,
         TemplateAutoCompleteComponent,
-        HighlightAutoCompleteComponent
+        HighlightAutoCompleteComponent,
+        CustomFilteringAutoCompleteComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

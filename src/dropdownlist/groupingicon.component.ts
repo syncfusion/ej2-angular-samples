@@ -10,33 +10,33 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class GroupAndIconDropDownListComponent {
     public vegetableData: { [key: string]: Object }[] = [
-        { vegetable: 'Cabbage', category: 'Leafy and Salad', id: 'item1' },
-        { vegetable: 'Spinach', category: 'Leafy and Salad', id: 'item2' },
-        { vegetable: 'Wheat grass', category: 'Leafy and Salad', id: 'item3' },
-        { vegetable: 'Yarrow', category: 'Leafy and Salad', id: 'item4' },
-        { vegetable: 'Pumpkins', category: 'Leafy and Salad', id: 'item5' },
-        { vegetable: 'Chickpea', category: 'Beans', id: 'item6' },
-        { vegetable: 'Green bean', category: 'Beans', id: 'item7' },
-        { vegetable: 'Horse gram', category: 'Beans', id: 'item8' },
-        { vegetable: 'Garlic', category: 'Bulb and Stem', id: 'item9' },
-        { vegetable: 'Nopal', category: 'Bulb and Stem', id: 'item10' },
-        { vegetable: 'Onion', category: 'Bulb and Stem', id: 'item11' }
+        { Vegetable: 'Cabbage', Category: 'Leafy and Salad', Id: 'item1' },
+        { Vegetable: 'Spinach', Category: 'Leafy and Salad', Id: 'item2' },
+        { Vegetable: 'Wheat grass', Category: 'Leafy and Salad', Id: 'item3' },
+        { Vegetable: 'Yarrow', Category: 'Leafy and Salad', Id: 'item4' },
+        { Vegetable: 'Pumpkins', Category: 'Leafy and Salad', Id: 'item5' },
+        { Vegetable: 'Chickpea', Category: 'Beans', Id: 'item6' },
+        { Vegetable: 'Green bean', Category: 'Beans', Id: 'item7' },
+        { Vegetable: 'Horse gram', Category: 'Beans', Id: 'item8' },
+        { Vegetable: 'Garlic', Category: 'Bulb and Stem', Id: 'item9' },
+        { Vegetable: 'Nopal', Category: 'Bulb and Stem', Id: 'item10' },
+        { Vegetable: 'Onion', Category: 'Bulb and Stem', Id: 'item11' }
     ];
-    public groupFields: Object = { groupBy: 'category', text: 'vegetable', value: 'id' };
+    public groupFields: Object = { groupBy: 'Category', text: 'Vegetable', value: 'Id' };
     public height: string = '200px';
     public groupWaterMark: string = 'Select a vegetable';
     public socialMediaData: Object[] = [
-        { class: 'facebook', socialMedia: 'Facebook', id: 'media1' },
-        { class: 'twitter', socialMedia: 'Twitter', id: 'media2' },
-        { class: 'whatsapp', socialMedia: 'WhatsApp', id: 'media3' },
-        { class: 'tumblr', socialMedia: 'Tumblr', id: 'media4' },
-        { class: 'google-plus', socialMedia: 'Google Plus', id: 'media5' },
-        { class: 'skype', socialMedia: 'Skype', id: 'media6' },
-        { class: 'vimeo', socialMedia: 'Vimeo', id: 'media7' },
-        { class: 'instagram', socialMedia: 'Instagram', id: 'media8' },
-        { class: 'youtube', socialMedia: 'YouTube', id: 'media9' },
-        { class: 'linkedin', socialMedia: 'LinkedIn', id: 'media10' }
+        { Class: 'facebook', SocialMedia: 'Facebook', Id: 'media1' },
+        { Class: 'twitter', SocialMedia: 'Twitter', Id: 'media2' },
+        { Class: 'whatsapp', SocialMedia: 'WhatsApp', Id: 'media3' },
+        { Class: 'tumblr', SocialMedia: 'Tumblr', Id: 'media4' },
+        { Class: 'google-plus', SocialMedia: 'Google Plus', Id: 'media5' },
+        { Class: 'skype', SocialMedia: 'Skype', Id: 'media6' },
+        { Class: 'vimeo', SocialMedia: 'Vimeo', Id: 'media7' },
+        { Class: 'instagram', SocialMedia: 'Instagram', Id: 'media8' },
+        { Class: 'youtube', SocialMedia: 'YouTube', Id: 'media9' },
+        { Class: 'linkedin', SocialMedia: 'LinkedIn', Id: 'media10' },
     ];
-    public iconFields: Object = { text: 'socialMedia', iconCss: 'class', value: 'id' };
+    public iconFields: Object = { text: 'SocialMedia', iconCss: 'Class', value: 'Id' };
     public iconWaterMark: string = 'Select a social media';
 }

@@ -5,9 +5,9 @@
                 <div class="head"> <span class="photo">Photo</span> <span style="margin-left:17px;">Employee Info</span></div>
             </ng-template>
             <ng-template #itemTemplate let-data>
-                <div><img class="empImage" src="src/combobox/Employees/{{data.eimg}}.png" alt="employee" />
-                    <div class="ename"> {{data.name}} </div>
-                    <div class="job"> {{data.designation}} </div>
+                <div><img class="empImage" src="src/combobox/Employees/{{data.Eimg}}.png" alt="employee" />
+                    <div class="ename"> {{data.Name}} </div>
+                    <div class="job"> {{data.Designation}} </div>
                 </div>
             </ng-template>
         </ej-combobox>
@@ -15,14 +15,15 @@
 </div>
 
 <div id="description">
-    <p>The ComboBox has been provided with several options to customize each list items, group title, header and footer
-        elements.</p>
-    <p>In this sample, used below list of templates in ComboBox</p>
+    <p>The ComboBox has been provided with several options to customize each list items, group title, header and footer elements.
+    </p>
+
+    <p>This sample uses the following list of templates in ComboBox</p>
     <ul>
         <li><code>ItemTemplate</code> - To customize the list item's content.</li>
         <li><code>HeaderTemplate</code> - To customize the header element.</li>
     </ul>
-    <p> More information on the template feature configuration can be found in this
-        <a href="../documentation/combo-box/templates.html" target="_blank"> documentation section</a>.
+    <p> More information on the template feature configuration can be found in the
+        <a href="http://ej2.syncfusion.com/documentation/combo-box/templates.html" target="_blank"> documentation section</a>.
     </p>
 </div>

@@ -1,16 +1,18 @@
 /**
- * DropDownList Filtering Sample
+ * ComboBox Filtering Sample
  */
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Query } from '@syncfusion/ej2-data';
 import { EmitType } from '@syncfusion/ej2-base';
 import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
+import { ComboBoxComponent } from '@syncfusion/ej2-ng-dropdowns';
 
 @Component({
     selector: 'control-content',
-    templateUrl: 'filtering.html'
+    styleUrls: ['custom-value.css'],
+    templateUrl: 'custom-value.html'
 })
-export class FilteringDropDownListComponent {
+export class CustomValueComboBoxComponent {
     public data: { [key: string]: Object; }[] = [
         { Name: 'Australia', Code: 'AU' },
         { Name: 'Bermuda', Code: 'BM' },
@@ -23,22 +25,24 @@ export class FilteringDropDownListComponent {
         { Name: 'Greenland', Code: 'GL' },
         { Name: 'Hong Kong', Code: 'HK' },
         { Name: 'India', Code: 'IN' },
-        { Name: 'Italy', Code: 'IT' },
-        { Name: 'Japan', Code: 'JP' },
-        { Name: 'Mexico', Code: 'MX' },
-        { Name: 'Norway', Code: 'NO' },
-        { Name: 'Poland', Code: 'PL' },
-        { Name: 'Switzerland', Code: 'CH' },
-        { Name: 'United Kingdom', Code: 'GB' },
-        { Name: 'United States', Code: 'US' }
+        { Name: 'Italy', Code: 'IT' }
     ];
     public fields: Object = { text: 'Name', value: 'Code' };
     public height: string = '220px';
     public watermark: string = 'Select a country';
-    public filterPlaceholder: string = 'Search';
     public onFiltering: EmitType<FilteringEventArgs> = (e: FilteringEventArgs) => {
         let query: Query = new Query();
         query = (e.text !== '') ? query.where('Name', 'startswith', e.text, true) : query;
         e.updateData(this.data, query);
+    }
+    @ViewChild('sample')
+    public comboObj: ComboBoxComponent;
+    public addNewItem = () => {
+        let customValue: string = (document.getElementsByClassName('e-input')[0] as HTMLInputElement).value;
+        let newItem: { [key: string]: Object; } = {'Name': customValue, 'Code': customValue };
+        (this.comboObj.dataSource as Object[]).push(newItem);
+        this.comboObj.hidePopup();
+        this.comboObj.addItem(newItem);
+        this.comboObj.value = customValue;
     }
 }

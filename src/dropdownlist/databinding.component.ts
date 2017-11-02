@@ -11,18 +11,18 @@ import { Query, DataManager, ODataV4Adaptor } from '@syncfusion/ej2-data';
 })
 export class DataBindingDropDownListComponent {
     public sportsData: Object[] = [
-        { id: 'Game1', game: 'American Football' },
-        { id: 'Game2', game: 'Badminton' },
-        { id: 'Game3', game: 'Basketball' },
-        { id: 'Game4', game: 'Cricket' },
-        { id: 'Game5', game: 'Football' },
-        { id: 'Game6', game: 'Golf' },
-        { id: 'Game7', game: 'Hockey' },
-        { id: 'Game8', game: 'Rugby' },
-        { id: 'Game9', game: 'Snooker' },
-        { id: 'Game10', game: 'Tennis' }
+        { Id: 'Game1', Game: 'American Football' },
+        { Id: 'Game2', Game: 'Badminton' },
+        { Id: 'Game3', Game: 'Basketball' },
+        { Id: 'Game4', Game: 'Cricket' },
+        { Id: 'Game5', Game: 'Football' },
+        { Id: 'Game6', Game: 'Golf' },
+        { Id: 'Game7', Game: 'Hockey' },
+        { Id: 'Game8', Game: 'Rugby' },
+        { Id: 'Game9', Game: 'Snooker' },
+        { Id: 'Game10', Game: 'Tennis' }
     ];
-    public localFields: Object = { text: 'game', value: 'id' };
+    public localFields: Object = { text: 'Game', value: 'Id' };
     public localWaterMark: string = 'Select a game';
     public data: DataManager = new DataManager({
         url: 'http://services.odata.org/V4/Northwind/Northwind.svc/Customers',

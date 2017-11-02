@@ -13,40 +13,40 @@ import { ComboBoxComponent } from '@syncfusion/ej2-ng-dropdowns';
 
 export class CascadingComboBoxComponent {
     public country: { [key: string]: Object }[] = [
-        { countryName: 'Australia', countryId: '2' },
-        { countryName: 'United States', countryId: '1' }
+        { CountryName: 'Australia', CountryId: '2' },
+        { CountryName: 'United States', CountryId: '1' }
     ];
     public state: { [key: string]: Object }[] = [
-        { stateName: 'New York', countryId: '1', stateId: '101' },
-        { stateName: 'Queensland', countryId: '2', stateId: '104' },
-        { stateName: 'Tasmania ', countryId: '2', stateId: '105' },
-        { stateName: 'Victoria', countryId: '2', stateId: '106' },
-        { stateName: 'Virginia ', countryId: '1', stateId: '102' },
-        { stateName: 'Washington', countryId: '1', stateId: '103' }
+        { StateName: 'New York', CountryId: '1', StateId: '101' },
+        { StateName: 'Queensland', CountryId: '2', StateId: '104' },
+        { StateName: 'Tasmania ', CountryId: '2', StateId: '105' },
+        { StateName: 'Victoria', CountryId: '2', StateId: '106' },
+        { StateName: 'Virginia ', CountryId: '1', StateId: '102' },
+        { StateName: 'Washington', CountryId: '1', StateId: '103' }
     ];
     public cities: { [key: string]: Object }[] = [
-        { cityName: 'Aberdeen', stateId: '103', cityId: 207 },
-        { cityName: 'Alexandria', stateId: '102', cityId: 204 },
-        { cityName: 'Albany', stateId: '101', cityId: 201 },
-        { cityName: 'Beacon ', stateId: '101', cityId: 202 },
-        { cityName: 'Brisbane ', stateId: '104', cityId: 211 },
-        { cityName: 'Cairns', stateId: '104', cityId: 212 },
-        { cityName: 'Colville ', stateId: '103', cityId: 208 },
-        { cityName: 'Devonport', stateId: '105', cityId: 215 },
-        { cityName: 'Emporia', stateId: '102', cityId: 206 },
-        { cityName: 'Geelong', stateId: '106', cityId: 218 },
-        { cityName: 'Hampton ', stateId: '102', cityId: 205 },
-        { cityName: 'Healesville ', stateId: '106', cityId: 217 },
-        { cityName: 'Hobart', stateId: '105', cityId: 213 },
-        { cityName: 'Launceston ', stateId: '105', cityId: 214 },
-        { cityName: 'Lockport', stateId: '101', cityId: 203 },
-        { cityName: 'Melbourne', stateId: '106', cityId: 216 },
-        { cityName: 'Pasco', stateId: '103', cityId: 209 },
-        { cityName: 'Townsville', stateId: '104', cityId: 210 }
+        { CityName: 'Aberdeen', StateId: '103', CityId: 207 },
+        { CityName: 'Alexandria', StateId: '102', CityId: 204 },
+        { CityName: 'Albany', StateId: '101', CityId: 201 },
+        { CityName: 'Beacon ', StateId: '101', CityId: 202 },
+        { CityName: 'Brisbane ', StateId: '104', CityId: 211 },
+        { CityName: 'Cairns', StateId: '104', CityId: 212 },
+        { CityName: 'Colville ', StateId: '103', CityId: 208 },
+        { CityName: 'Devonport', StateId: '105', CityId: 215 },
+        { CityName: 'Emporia', StateId: '102', CityId: 206 },
+        { CityName: 'Geelong', StateId: '106', CityId: 218 },
+        { CityName: 'Hampton ', StateId: '102', CityId: 205 },
+        { CityName: 'Healesville ', StateId: '106', CityId: 217 },
+        { CityName: 'Hobart', StateId: '105', CityId: 213 },
+        { CityName: 'Launceston ', StateId: '105', CityId: 214 },
+        { CityName: 'Lockport', StateId: '101', CityId: 203 },
+        { CityName: 'Melbourne', StateId: '106', CityId: 216 },
+        { CityName: 'Pasco', StateId: '103', CityId: 209 },
+        { CityName: 'Townsville', StateId: '104', CityId: 210 }
     ];
-    public countryFields: Object = { value: 'countryId', text: 'countryName' };
-    public stateFields: Object = { value: 'stateId', text: 'stateName' };
-    public cityFields: Object = { text: 'cityName', value: 'cityId' };
+    public countryFields: Object = { value: 'CountryId', text: 'CountryName' };
+    public stateFields: Object = { value: 'StateId', text: 'StateName' };
+    public cityFields: Object = { text: 'CityName', value: 'CityId' };
     public countryWaterMark: string = 'Select a country';
     public stateWaterMark: string = 'Select a state';
     public cityWaterMark: string = 'Select a city';
@@ -64,7 +64,7 @@ export class CascadingComboBoxComponent {
             this.cityObj.value = null;
         } else {
             this.stateObj.enabled = true;
-            let tempQuery: Query = new Query().where('countryId', 'equal', this.countryObj.value);
+            let tempQuery: Query = new Query().where('CountryId', 'equal', this.countryObj.value);
             this.stateObj.query = tempQuery;
             this.stateObj.value = null;
             this.cityObj.value = null;
@@ -79,7 +79,7 @@ export class CascadingComboBoxComponent {
             this.cityObj.value = null;
         } else {
             this.cityObj.enabled = true;
-            let tempQuery: Query = new Query().where('stateId', 'equal', this.stateObj.value);
+            let tempQuery: Query = new Query().where('StateId', 'equal', this.stateObj.value);
             this.cityObj.query = tempQuery;
             this.cityObj.value = null;
         }
