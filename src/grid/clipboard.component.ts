@@ -19,13 +19,12 @@ export class ClipboardComponent implements OnInit {
         this.data = data.slice(0, 30);
         this.selectOptions = { type: 'multiple' };
         this.toolbar = [{ text: 'Copy', tooltipText: 'Copy', prefixIcon: 'e-copy', id: 'copy' },
-            { text: 'Copy With Header', tooltipText: 'Copy With Header', prefixIcon: 'e-copy', id: 'copyHeader' }];
+        { text: 'Copy With Header', tooltipText: 'Copy With Header', prefixIcon: 'e-copy', id: 'copyHeader' }];
     }
 
     clickHandler(args: ClickEventArgs): void {
-        let target: Element = (args.originalEvent.target as HTMLElement).closest('.e-toolbar-item');
         let withHeader: boolean = false;
-        if (target.textContent === 'Copy With Header') {
+        if (args.item.id === 'copyHeader') {
             withHeader = true;
         }
         this.grid.copy(withHeader);
