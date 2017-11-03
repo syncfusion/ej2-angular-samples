@@ -43,15 +43,15 @@ const appRoutes: any = [
     { path: 'numerictextbox', loadChildren: NumericModule },
     { path: 'listview', loadChildren: ListViewSampleModule },
     { path: 'dialog', loadChildren: DialogSampleModule },
-    { path: 'textboxes', loadChildren: TextboxesModule },
-    { path: 'toolbar', loadChildren: ToolbarSampleModule },
-    { path: 'accordion', loadChildren: AccordionSampleModule },
+    { path: ':theme/toolbar/:sample', redirectTo: 'material/toolbar/default' },
+    { path: ':theme/accordion/:sample', redirectTo: 'material/accordion/default' },
+    { path: ':theme/textboxes/:sample', redirectTo: 'material/textboxes/default' },
     { path: 'treeview', loadChildren: TreeViewSampleModule },
     { path: 'tooltip', loadChildren: TooltipSampleModule },
     { path: 'maskedtextbox', loadChildren: MaskedTextBoxSampleModule },
     { path: 'multiselect', loadChildren: MultiSelectSampleModule },
     { path: 'contextmenu', loadChildren: MenuModule },
-    { path: 'tab', loadChildren: TabSampleModule },
+    { path: ':theme/tab/:sample', redirectTo: 'material/tab/default' },
     { path: '', redirectTo: 'material/chart/line', pathMatch: 'full' }
 ];
 
