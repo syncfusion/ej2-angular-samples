@@ -1,5 +1,10 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates plotting local data for stock price analysis of two products for a period.
+    </p>
+</div>
 <div class="control-section">
-    <ej-chart style='display:block;' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
+    <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)' [tooltip]='tooltip'>
         <e-series-collection>
             <e-series [dataSource]='series1' type='Line' xName='x' yName='y' name='Product X' width=2 [animation]='animation'> </e-series>
             <e-series [dataSource]='series2' type='Line' xName='x' yName='y' name='Product Y' width=2 [animation]='animation'> </e-series>

@@ -1,6 +1,8 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { AccumulationChartComponent, IMouseEventArgs, indexFinder, Index, IAccTextRenderEventArgs,
-         AccumulationChart, IAccLoadedEventArgs } from '@syncfusion/ej2-ng-charts';
+import {
+    AccumulationChartComponent, IMouseEventArgs, indexFinder, Index, IAccTextRenderEventArgs,
+    AccumulationChart, IAccLoadedEventArgs, AccumulationTheme, getElement
+} from '@syncfusion/ej2-ng-charts';
 
 /**
  * Drilldown Sample
@@ -31,9 +33,11 @@ export class DrilldownPieComponent {
 
     @ViewChild('pie')
     public pie: AccumulationChartComponent | AccumulationChart;
+    //Initializing Legend
     public legendSettings: Object = {
         visible: false,
     };
+    //Initializing Datalabel
     public dataLabel: Object = {
         visible: true, position: 'Inside', connectorStyle: { type: 'Curve', length: '5%' }, font: { size: '14px', color: 'white' }
     };
@@ -47,6 +51,11 @@ export class DrilldownPieComponent {
     public onChartMouseClick(args: IMouseEventArgs): void {
         let index: Index = indexFinder(args.target);
         if (document.getElementById('container_Series_' + index.series + '_Point_' + index.point)) {
+            this.pie.annotations = [{
+                content: '<div id="back" style="cursor:pointer;padding:3px;width:30px; height:30px;">' +
+                '<img src="./src/chart/images/back.png" id="back" />', region: 'Series', x: '50%', y: '50%'
+            }];
+            this.pie.series[0].innerRadius = '30%';
             switch (index.point) {
                 case 0:
                     this.pie.series[0].dataSource = this.suvs;
@@ -79,6 +88,22 @@ export class DrilldownPieComponent {
             document.getElementById('symbol').style.visibility = 'visible';
             document.getElementById('text').style.visibility = 'visible';
         }
+        if (args.target.indexOf('back') > -1) {
+            this.pie.annotations[0].content = null;
+            this.pie.series[0].dataSource = this.data;
+            this.pie.series[0].dataLabel = this.dataLabel;
+            this.pie.title = this.title;
+            this.pie.legendSettings.visible = false;
+            this.pie.visibleSeries[0].explodeIndex = this.explodeIndex;
+            this.pie.enableSmartLabels = false;
+            this.pie.series[0].innerRadius = '0%';
+            this.pie.refresh();
+            (getElement('category') as HTMLElement).style.visibility = 'hidden';
+            document.getElementById('symbol').style.visibility = 'hidden';
+            document.getElementById('text').style.visibility = 'hidden';
+            
+        }
+        this.pie.refresh();
     }
     public onClick(e: MouseEvent): void {
         this.pie.series[0].dataSource = this.data;
@@ -87,14 +112,27 @@ export class DrilldownPieComponent {
         this.pie.legendSettings.visible = false;
         this.pie.visibleSeries[0].explodeIndex = this.explodeIndex;
         this.pie.enableSmartLabels = false;
+        this.pie.annotations[0].content = null;
+        this.pie.series[0].dataSource = this.data;
+        this.pie.series[0].dataLabel = this.dataLabel;
+        this.pie.title = this.title;
+        this.pie.legendSettings.visible = false;
+        this.pie.visibleSeries[0].explodeIndex = this.explodeIndex;
+        this.pie.enableSmartLabels = false;
+        this.pie.series[0].innerRadius = '0%';
+        this.pie.refresh();
+        (getElement('category') as HTMLElement).style.visibility = 'hidden';
+        document.getElementById('symbol').style.visibility = 'hidden';
+        document.getElementById('text').style.visibility = 'hidden';
         this.pie.refresh();
         (e.target as HTMLButtonElement).style.visibility = 'hidden';
         document.getElementById('symbol').style.visibility = 'hidden';
         document.getElementById('text').style.visibility = 'hidden';
     }
     public load(args: IAccLoadedEventArgs): void {
-            let selectedTheme: string = location.hash.split('/')[1];
-            args.accumulation.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     };
     constructor() {
         //code

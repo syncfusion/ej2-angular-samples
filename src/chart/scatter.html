@@ -1,5 +1,10 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates scatter series for height and weight comparision of male and female.
+    </p>
+</div>
 <div class="control-section">
-        <ej-chart style='display:block;' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+        <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
               [tooltip]='tooltip' (load)='load($event)'>
             <e-series-collection>
                  <e-series [dataSource]='series1' type='Scatter' xName='x' yName='y' opacity = '0.7' name='Male' width=2 [marker]='marker'> </e-series>

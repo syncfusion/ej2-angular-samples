@@ -1,8 +1,13 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates inversed position of horizontal axis and vertical axis to plot exchange rate over a period.
+    </p>
+</div>
 <div class="control-section">
-        <ej-chart style='display:block;' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-         [tooltip]='tooltip' [legendSettings]='legend' (load)='load($event)'>
+        <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+         [tooltip]='tooltip' [legendSettings]='legend' (load)='load($event)' (pointRender)='pointRender($event)'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Years' [marker]='marker'>
+                <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Rate' [marker]='marker'>
                 </e-series>                
            </e-series-collection>
        </ej-chart>

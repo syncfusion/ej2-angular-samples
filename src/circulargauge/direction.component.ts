@@ -23,6 +23,7 @@ export class DirectionComponent {
     public onLabelRender(args: IAxisLabelRenderEventArgs): void {
         args.text = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', ''][args.value];
     }
+    //Initializing LabelStyle
     public labelStyle: Object = {
         font: {
             size: '12px', color: '#333333', fontFamily: 'Roboto'
@@ -31,6 +32,7 @@ export class DirectionComponent {
         autoAngle: true,
         hiddenLabel: 'Last'
     };
+    //Initializing majorTicks
     public majorTicks: Object = {
         height: 15,
         interval: 1,

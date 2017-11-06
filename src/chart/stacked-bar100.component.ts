@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Stacked bar Series
@@ -13,48 +14,36 @@ import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 export class PercentStackedBarChartComponent {
 
     public data: Object[] = [
-        { x: '2005', y: 28 }, { x: '2006', y: 25 },
-        { x: '2007', y: 26 }, { x: '2008', y: 27 },
-        { x: '2009', y: 32 }, { x: '2010', y: 35 },
-        { x: '2011', y: 30 }
+        { x: 'Jan', y: 6, y1: 6, y2: 1 }, { x: 'Feb', y: 8, y1: 8, y2: 1.5 },
+        { x: 'Mar', y: 12, y1: 11, y2: 2 }, { x: 'Apr', y: 15, y1: 16, y2: 2.5 },
+        { x: 'May', y: 20, y1: 21, y2: 3 }, { x: 'Jun', y: 24, y1: 25, y2: 3.5 }
     ];
-    public data1: Object[] = [
-        { x: '2005', y: 31 }, { x: '2006', y: 28 },
-        { x: '2007', y: 30 }, { x: '2008', y: 36 },
-        { x: '2009', y: 36 }, { x: '2010', y: 39 },
-        { x: '2011', y: 37 }
-    ];
-    public data2: Object[] = [
-        { x: '2005', y: 36 }, { x: '2006', y: 32 },
-        { x: '2007', y: 34 }, { x: '2008', y: 41 },
-        { x: '2009', y: 42 }, { x: '2010', y: 42 },
-        { x: '2011', y: 43 }
-    ];
-    public data3: Object[] = [
-        { x: '2005', y: 39 }, { x: '2006', y: 36 },
-        { x: '2007', y: 40 }, { x: '2008', y: 44 },
-        { x: '2009', y: 45 }, { x: '2010', y: 50 },
-        { x: '2011', y: 46 }
-    ];
+    //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Years',
         valueType: 'Category',
-        edgeLabelPlacement: 'Shift',
+        majorGridLines: { width: 0 },
     };
+    //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Percentage (%)',
-        rangePadding:  'None',
-        edgeLabelPlacement: 'Shift',
+        edgeLabelPlacement: 'Shift'
     };
+    //Initializing Tooltip
     public tooltip: Object = {
-        enable: true,
-        format: '${point.x} <br>${series.name} : ${point.y} (${point.percent}%)'
+        enable: true
     };
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     };
-    public title: string = 'Inflation - Consumer Price';
+    public chartArea: Object = {
+        border: {
+            width: 0
+        }
+    };
+    public width: string = Browser.isDevice ? '100%' : '60%';
+
+    public title: string = 'Sales Comparison';
     constructor() {
        //code
     };

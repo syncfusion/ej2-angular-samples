@@ -1,3 +1,8 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates zooming feature in chart. You can pinch on chart or by using mouse scroll, zooming on a chart can be performed. 
+    </p>
+</div>
 <style>
     #gradient-chart stop {
 	    stop-color: #BDEDE9;
@@ -11,7 +16,7 @@
 </style>
 
 <div class="control-section">
-        <ej-chart style='display:block;width: 92%' [chartArea] = 'chartArea' [primaryXAxis]='primaryXAxis' [legendSettings]='legend' [zoomSettings]='zoomSettings' [title]='title' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
+        <ej-chart style='display:block;width: 92%' [chartArea]='chartArea' [width]='width' align='center' [chartArea] = 'chartArea' [primaryXAxis]='primaryXAxis' [legendSettings]='legend' [zoomSettings]='zoomSettings' [title]='title' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='series1' type='Area' xName='x' yName='y' [animation]='animation' fill='url(#gradient-chart)' [border]='border'> </e-series>
             </e-series-collection>

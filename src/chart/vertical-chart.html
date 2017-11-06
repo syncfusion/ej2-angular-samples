@@ -1,0 +1,25 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates vertical chart such that orientation of x-axis is changed to vertical and orientation of y-axis is changed to horizontal.
+    </p>
+</div>
+<div class="control-section">
+    <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
+        [primaryYAxis]='primaryYAxis' [title]='title' [isTransposed]='vertical' (load)='load($event)' (loaded)='loaded($event)'>
+        <e-series-collection>
+            <e-series [dataSource]='data1' type='Line' xName='x' yName='y' width=2 [animation]='animation1'>
+            </e-series>
+        </e-series-collection>
+    </ej-chart>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the vertical type charts. To render a chart in vertical manner,
+        you can use
+        <code>isTransposed</code> in chart.
+    </p>
+    <p>
+        More information on the isTransposed can be found in this &nbsp;
+        <a target="_blank" href="http://ej2.syncfusion.com/react/documentation/chart/api-series.html#type-chartseriestype">documentation section</a>.
+    </p>
+</div>

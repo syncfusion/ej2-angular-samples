@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ChartDataService } from './chartdata.service';
-import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
+import { Browser } from '@syncfusion/ej2-base';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Scatter Series
@@ -12,20 +13,29 @@ import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
     encapsulation: ViewEncapsulation.None
 })
 export class ScatterChartComponent {
+    public chartArea: Object = {
+        border: {
+            width: 0
+        }
+    };
+    public width: string = Browser.isDevice ? '100%' : '60%';
 
+    //Initializing Primary X Axis
     public primaryXAxis: Object = {
         title: 'Height (cm)',
-        minimum: 120,
-        maximum: 180,
+        minimum: 145,
+        maximum: 185,
+        majorGridLines: { width: 0 },
         edgeLabelPlacement: 'Shift',
         labelFormat: '{value}cm'
     };
+    //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         title: 'Weight (kg)',
-        labelFormat: '{value}kg',
-        rangePadding: 'None',
         minimum: 60,
-        maximum: 90
+        maximum: 90,
+        labelFormat: '{value}kg',
+        rangePadding: 'None'
 
     };
     public marker: Object = {
@@ -34,14 +44,13 @@ export class ScatterChartComponent {
        width: 10
     };
     public tooltip: Object = {
-        enable: true,
-        enableAnimation: false,
-        format: '${series.name}<br>Height: ${point.x}<br>Weight: ${point.y}'
+        enable: true
     };
 
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     };
     public title: string = 'Height vs Weight';
     public series1: Object = ChartDataService.prototype.GetScatterData().series1;

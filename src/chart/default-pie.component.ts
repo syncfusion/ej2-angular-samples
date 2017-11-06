@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { AccumulationChartComponent, AccumulationChart, IAccLoadedEventArgs } from '@syncfusion/ej2-ng-charts';
+import { AccumulationChartComponent, AccumulationChart, IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Default Pie
@@ -11,11 +11,10 @@ import { AccumulationChartComponent, AccumulationChart, IAccLoadedEventArgs } fr
 })
 export class DefaultPieComponent {
     public data: Object[] = [
-        { 'x': 'Chrome', y: 37.42, text: 'Chrome 37.42%' }, { 'x': 'UC Browser', y: 16.94, text: 'UC Browser 16.94%' },
-        { 'x': 'iPhone', y: 17.94, text: 'iPhone 17.94%' },
-        { 'x': 'Internet Explorer Mobile', y: 2.04, text: 'Internet Explorer Mobile 2.04%' },
-        { 'x': 'Others', y: 3.69, text: 'Others 3.69%' }, { 'x': 'Opera mini', y: 11.37, text: 'Opera mini 11.37%' },
-        { 'x': 'Android', y: 11.73, text: 'Android 11.73%' }
+        { 'x': 'Chrome', y: 37.42, text: '37.42%' }, { 'x': 'UC Browser', y: 16.94, text: '16.94%' },
+        { 'x': 'iPhone', y: 17.94, text: '17.94%' },
+        { 'x': 'Others', y: 3.69, text: '3.69%' }, { 'x': 'Opera', y: 11.37, text: '11.37%' },
+        { 'x': 'Android', y: 11.73, text: '11.73%' }
     ];
 
     @ViewChild('pie')
@@ -34,15 +33,6 @@ export class DefaultPieComponent {
         let radius: string = (document.getElementById('pieradius') as HTMLSelectElement).value;
         this.pie.series[0].radius = radius + '%';
         document.getElementById('radius').innerHTML = (parseInt(radius, 10) / 100).toFixed(2);
-        this.pie.series[0].animation.enable = false;
-        this.pie.removeSvg();
-        this.pie.refreshSeries();
-        this.pie.refreshChart();
-    };
-    public pieinnerradius(e: Event): void {
-        let radius: string = (document.getElementById('pieinnerradius') as HTMLSelectElement).value;
-        this.pie.series[0].innerRadius = radius + '%';
-        document.getElementById('innerradius').innerHTML = (parseInt(radius, 10) / 100).toFixed(2);
         this.pie.series[0].animation.enable = false;
         this.pie.removeSvg();
         this.pie.refreshSeries();
@@ -69,21 +59,23 @@ export class DefaultPieComponent {
     public animation: Object = {
         enable: false
     };
+    //Initializing Legend
     public legendSettings: Object = {
         visible: false,
     };
+    //Initializing Datalabel
     public dataLabel: Object = {
         visible: true,
-        position: 'Outside',
-        name: 'text',
-        connectorStyle: { type: 'Curve', length: '10%' },
+        position: 'Inside', name: 'text',
         font: {
-            size: '14px'
+            fontWeight: '600',
+            color: '#ffffff'
         }
     };
     public load(args: IAccLoadedEventArgs): void {
-            let selectedTheme: string = location.hash.split('/')[1];
-            args.accumulation.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     };
     public startAngle: number = 0;
     public endAngle: number = 360;

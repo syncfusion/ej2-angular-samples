@@ -1,0 +1,91 @@
+import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { ILoadedEventArgs, IZoomCompleteEventArgs, ChartComponent, ChartTheme, ISeriesRenderEventArgs } from '@syncfusion/ej2-ng-charts';
+import { Browser } from '@syncfusion/ej2-base';
+
+/**
+ * Range Area Series
+ */
+@Component({
+  selector: 'control-content',
+  templateUrl: 'rangearea.html',
+  styleUrls: ['chart.style.css'],
+  encapsulation: ViewEncapsulation.None
+})
+
+export class RangeAreaComponent {
+  //Initializing Primary X Axis
+  public primaryXAxis: Object = {
+    valueType: 'DateTime',
+    edgeLabelPlacement: 'Shift',
+    majorGridLines: { width: 0 },
+    skeleton: 'MMM'
+  };
+  //Initializing Primary Y Axis
+  public primaryYAxis: Object = {
+    labelFormat: '{value}˚C',
+    lineStyle: { width: 0 },
+    majorTickLines: { width: 0 }
+  };
+  public legend: Object = {
+    visible: false
+  }
+
+  public zoomSettings: Object = {
+    enableSelectionZooming: true,
+    mode: 'X'
+  };
+  public title: string = 'Maximum and Minimum Temperature';
+  public tooltip: Object = {
+    enable: false
+  };
+  public chartArea: Object = {
+    border: {
+      width: 0
+    }
+  };
+  public width: string = Browser.isDevice ? '100%' : '80%';
+
+  public opacity: number = 0.4;
+  public border: Object = { width: 2 };
+  public load(args: ILoadedEventArgs): void {
+    let selectedTheme: string = location.hash.split('/')[1];
+    selectedTheme = selectedTheme ? selectedTheme : 'Material';
+    args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+  };
+  public data: Object[] = this.getData();
+  public getData(): Object[] {
+    let pointCollection: Object[] = [];
+    let value: number = 35;
+    let point: Object;
+
+    for (let i: number = 1; i < 360; i++) {
+      if (Math.random() > .5) {
+        value += Math.random();
+      } else {
+        value -= Math.random();
+      }
+      point = {
+        x: new Date(2015, 0, i),
+        high: value, low: value - 10
+      };
+      pointCollection.push(point);
+    }
+    return pointCollection;
+  }
+  public seriesRender(args: ISeriesRenderEventArgs): void {
+    let theme: ChartTheme = args.series.chart.theme;
+    let color: string;
+    if (theme === 'Material') {
+      color = '#004c46';
+    } else if (theme === 'Bootstrap') {
+      color = '#402c5c';
+    } else {
+      color = '#1b2e4e';
+    }
+    args.series.border.color = color;
+  };
+  constructor() {
+    //code
+  };
+
+}

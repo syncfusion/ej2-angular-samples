@@ -1,3 +1,8 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates customization axes in linear gauge. You can change minimium and maximum value of pointer by using <code>Axis Minimum</code> and <code>Axis Maximum</code> in property panel. Inversed and opposed position of an axis can be changed by <code>Axis Inversed</code> and <code>Axis Opposed</code>. Type of pointer and placing marker can be customized by <code>Pointer Type</code> and <code>Marker Placement</code>.
+     </p>
+</div>
 <div class="control-section">
     <div class="col-md-8">
         <ej-lineargauge id='axisContainer' #gauge style='display:block;' orientation='Horizontal' [axes]='Axes' [annotations]='Annotation'>
@@ -64,7 +69,7 @@
                         </td>
                         <td>
                             <div>
-                                <select name="selectIndex" autocomplete="off" id="pointerType" class="form-control" style="width:90%">
+                                <select name="pointerType" autocomplete="off" id="pointerType" class="form-control" style="width:90%">
                         <option value="Marker" selected>Marker</option>
                         <option value="Bar">Bar</option>
                      </select>
@@ -77,7 +82,7 @@
                         </td>
                         <td>
                             <div>
-                                <select name="selectIndex" autocomplete="off" id="pointerPlace" class="form-control" style="width:90%">
+                                <select name="pointerPlace" autocomplete="off" id="pointerPlace" class="form-control" style="width:90%">
                         <option value="Near">Near</option>
                         <option value="Center">Center</option>
                          <option value="Far" selected>Far</option>

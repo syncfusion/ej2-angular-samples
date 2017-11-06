@@ -9,6 +9,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class DefaultComponent {
+    //Initializing Axes
     public Axes: Object[] = [{
         line: {
             color: '#9E9E9E'
@@ -38,7 +39,7 @@ export class DefaultComponent {
         }
     }];
     public Annotation: Object = [{
-        content: '<div id="pointer" style="width:70px"><h1 style="font-size:14px;color:#424242">10 Kms</h1></div>',
+        content: '<div id="pointer" style="width:70px"><h1 style="font-size:14px;color:#424242">10 MPH</h1></div>',
         axisIndex: 0,
         axisValue: 10,
         x: 10,

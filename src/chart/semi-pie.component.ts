@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { AccumulationChartComponent, IAccLoadedEventArgs } from '@syncfusion/ej2-ng-charts';
+import { AccumulationChartComponent, IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-ng-charts';
 
 /**
  * Semi Pie Sample
@@ -19,10 +19,12 @@ export class SemiPieComponent {
         { x: 'United Kingdom', y: 70.9, text: 'United Kingdom' },
         { x: 'United States', y: 45.0, text: 'United States' }
     ];
+    //Initializing Legend
     public legendSettings: Object = {
         visible: false,
         position: 'Top'
     };
+    //Initializing DataLabel
     public dataLabel: Object = {
         visible: true, position: 'Outside',
         connectorStyle: { length: '10%' }, name: 'text',
@@ -58,8 +60,9 @@ export class SemiPieComponent {
         this.pie.refreshChart();
     };
     public load(args: IAccLoadedEventArgs): void {
-            let selectedTheme: string = location.hash.split('/')[1];
-            args.accumulation.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     }
     public startAngle: number = 270;
     public endAngle: number = 90;

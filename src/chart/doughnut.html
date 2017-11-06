@@ -1,0 +1,27 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates doughnut chart for a project break down statistics.
+    </p>
+</div>
+<div class="control-section">
+    <ej-accumulationchart id="container" #pie style='display:block;  width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip"
+        [title]="title" (load)='load($event)'>
+        <e-accumulation-series-collection>
+            <e-accumulation-series [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%"
+                radius="70%" [dataLabel]="dataLabel" explode=true explodeOffset='10%' [explodeIndex]='3'>
+            </e-accumulation-series>
+        </e-accumulation-series-collection>
+    </ej-accumulationchart>
+    <div id="description">
+        <p> In this example, you can see how to render and configure the pie chart. You can use
+            <code>border</code>,
+            <code>fill</code> properties to customize the pie point.
+            <code>dataLabel</code> are used to represent individual data and its value.</p>
+        <p>
+            <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.</p>
+    </div>
+    <style>
+        .control-section {
+            min-height: 450px;
+        }
+    </style>

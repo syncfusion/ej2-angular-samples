@@ -1,13 +1,13 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
-    ILoadedEventArgs, IMouseEventArgs, ChartComponent, IAccLoadedEventArgs,
-    SelectionMode
+    ILoadedEventArgs, IMouseEventArgs, ChartComponent, IAccLoadedEventArgs, AccumulationTheme,
+    SelectionMode, ChartTheme, Series
 } from '@syncfusion/ej2-ng-charts';
 import {
     AccumulationChart, AccumulationDataLabel
 } from '@syncfusion/ej2-charts';
 AccumulationChart.Inject(AccumulationDataLabel);
-
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Area Series
@@ -24,8 +24,9 @@ export class AnnotationChartComponent {
     @ViewChild('chart')
     public chart: ChartComponent;
     public legend: Object = {
-        visible: false
+        visible: true
     };
+    //Initializing dataSource
     public dataSource: Object = [
         { x: '2014', y0: 51, y1: 77, y2: 66, y3: 34 }, { x: '2015', y0: 67, y1: 49, y2: 19, y3: 38 },
         { x: '2016', y0: 143, y1: 121, y2: 91, y3: 44 }, { x: '2017', y0: 19, y1: 28, y2: 65, y3: 51 },
@@ -36,6 +37,7 @@ export class AnnotationChartComponent {
         { x: 'UK', y: 111 }, { x: 'Germany', y: 76 },
         { x: 'France', y: 66 }, { x: 'Italy', y: 34 }
     ];
+    //Initializing Primary X Axis
     public primaryXAxis: Object = {
         title: 'Years',
         majorGridLines: { width: 0 }, minorGridLines: { width: 1 },
@@ -43,16 +45,30 @@ export class AnnotationChartComponent {
         labelIntersectAction: 'Rotate45',
         valueType: 'Category'
     };
-    public chartArea: Object = { border: { width: 0 } };
+    public chartArea: Object = {
+        border: {
+            width: 0
+        }
+    };
+    public width: string = Browser.isDevice ? '100%' : '80%';
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    };
+    //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         title: 'Sales in Billions', lineStyle: { width: 0 },
         minimum: 0, maximum: 700, interval: 100,
         majorGridLines: { width: 1 }, minorGridLines: { width: 1 },
         majorTickLines: { width: 0 }, minorTickLines: { width: 0 }, labelFormat: '{value}B',
     };
-    public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+    public getValue(series: Series[], pointIndex: number, y: number): string {
+        let totalValue: number = 0;
+        for (let ser of series) {
+            totalValue += ser.points[pointIndex].y as number;
+        }
+        return (Math.round((y / totalValue) * 100)) + '%';
     };
     public title: string = 'Mobile Game Market by Country';
     public selectedDataIndexes: any[] = [{ series: 0, point: 0 }];
@@ -63,9 +79,11 @@ export class AnnotationChartComponent {
             let pointIndex: number = parseInt(args.target[args.target.length - 1], 10);
             this.pieDataSource = [];
             for (let series of this.chart.visibleSeries) {
+                let value: number = series.points[pointIndex].y as number;
                 this.pieDataSource.push({
                     'x': series.name,
-                    'y': series.points[pointIndex].y
+                    'y': value,
+                    'text': this.getValue(this.chart.visibleSeries, pointIndex, value)
                 });
             }
             this.pie.series[0].dataSource = this.pieDataSource;
@@ -78,17 +96,17 @@ export class AnnotationChartComponent {
     public loaded(args: ILoadedEventArgs): void {
         if (this.render) {
             this.pie.destroy();
+            let selectedTheme: string = location.hash.split('/')[1];
+            selectedTheme = selectedTheme ? selectedTheme : 'Material';
+            let theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
             this.pie = new AccumulationChart({
                 background: 'transparent',
                 series: [{
                     radius: '65%', animation: { enable: false },
                     dataSource: this.pieDataSource,
-                    xName: 'x', yName: 'y', dataLabel: { visible: true, position: 'Inside', font: { color: 'white' } },
+                    xName: 'x', yName: 'y', dataLabel: { visible: true, position: 'Inside', font: { color: 'white' }, name: 'text' },
                 }],
-                load: (args: IAccLoadedEventArgs) => {
-                    let selectedTheme: string = location.hash.split('/')[1];
-                    args.accumulation.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
-                },
+                theme: theme,
                 legendSettings: { visible: false }
             });
             this.pie.appendTo('#chart_annotation');
@@ -103,11 +121,12 @@ export class AnnotationChartComponent {
             series: [{
                 radius: '65%', animation: { enable: false },
                 dataSource: this.pieDataSource,
-                xName: 'x', yName: 'y', dataLabel: { visible: true, position: 'Inside', font: { color: 'white' } },
+                xName: 'x', yName: 'y', dataLabel: { visible: true, position: 'Inside', name: 'text' },
             }],
             load: (args: IAccLoadedEventArgs) => {
                 let selectedTheme: string = location.hash.split('/')[1];
-                args.accumulation.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+                selectedTheme = selectedTheme ? selectedTheme : 'Material';
+                args.accumulation.theme = (selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
             },
             legendSettings: { visible: false }
         });

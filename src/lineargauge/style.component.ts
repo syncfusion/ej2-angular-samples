@@ -15,6 +15,7 @@ export class StyleComponent {
     @ViewChild('linear')
     public linear: LinearGaugeComponent;
 
+    //Initializing Axes
     public Axes1: Object[] = [{
         line: {
             color: '#9E9E9E'

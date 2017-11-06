@@ -40,7 +40,7 @@ export class ChartDataService {
                 value -= Math.random();
             }
             value = value < 60 ? 60 : value > 90 ? 90 : value;
-            point1 = { x: 120 + (i / 2), y: value.toFixed(1) };
+            point1 = { x: (145 + (i / 3)).toFixed(1), y: value.toFixed(1) };
             series1.push(point1);
         }
         for (i = 1; i < 120; i++) {
@@ -50,10 +50,9 @@ export class ChartDataService {
                 value1 -= Math.random();
             }
             value1 = value1 < 60 ? 60 : value1 > 90 ? 90 : value1;
-            point1 = { x: 120 + (i / 2), y: value1.toFixed(1) };
+            point1 = { x: (145 + (i / 3)).toFixed(1), y: value1.toFixed(1) };
             series2.push(point1);
         }
-
         return { 'series1': series1, 'series2': series2 };
     }
     GetLocalData(): any {
@@ -95,5 +94,35 @@ export class ChartDataService {
             series1.push(point1);
         }
         return { 'series1': series1 };
+    }
+    GetPolarSplineData(): any {
+        let cardData: Object[] = [];
+        let biDirData: Object[] = [];
+        let omniDirData: Object[] = [];
+        let point1: Object;
+        let point2: Object;
+    
+        for (let x: number = -180; x < 180; x++) {
+          point1 = { x: x, y: -12.6 * (1 - Math.cos(x * 3.14 / 180)) };
+          cardData.push(point1);
+          point2 = { x: x, y: -3};
+          omniDirData.push(point2);
+        }
+    
+        for (let x: number = -180; x < -90; x++) {
+          point1 = { x: x, y: -26 * (1 + Math.cos(x * 3.14 / 180))};
+          biDirData.push(point1);
+        }
+    
+        for (let x: number = -90; x < 90; x++) {
+          point1 = { x: x, y: -26 * (1 - Math.cos(x * 3.14 / 180))};
+          biDirData.push(point1);
+        }
+    
+        for (let x: number = 90; x < 180; x++) {
+          point1 = { x: x, y: -26 * (1 + Math.cos(x * 3.14 / 180))};
+          biDirData.push(point1);
+        }
+        return { 'series1': cardData, 'series2': omniDirData, 'series3': biDirData };
     }
 }

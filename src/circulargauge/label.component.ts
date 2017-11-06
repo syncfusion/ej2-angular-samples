@@ -21,6 +21,7 @@ export class LabelComponent {
     public margin: Object = {
         left: 0, right: 0, top: 0, bottom: 0
     };
+    //Initializing Border
     public border: Object = { color: 'transparent', width: 4 };
     public lineStyle1: Object = {
         width: 2, color: '#9E9E9E'
@@ -33,10 +34,10 @@ export class LabelComponent {
         }
     };
     public majorTicks1: Object = {
-        position: 'Inside', color: 'black', width: 0.5, height: 10, interval: 20
+        position: 'Inside', color: '#757575', width: 2, height: 10, interval: 20
     };
     public minorTicks1: Object = {
-        position: 'Inside', color: 'black', height: 5, width: 0.5, interval: 10
+        position: 'Inside', color: '#757575', height: 5, width: 2, interval: 10
     };
 
     public ranges: Object[] = [{
@@ -47,7 +48,7 @@ export class LabelComponent {
     public ticks: DropDownList; public tickPosition: DropDownList; public labelPosition: DropDownList;
     ngOnInit(): void {
         this.ticks = new DropDownList({
-            index: 0, width: 100,
+            index: 0, width: 120,
             change: () => {
                 let value: string = this.ticks.value.toString();
                 let tick: TickModel; this.isMajorTicks = value === 'major';
@@ -66,7 +67,7 @@ export class LabelComponent {
         this.ticks.appendTo('#Ticks');
     
         this.tickPosition = new DropDownList({
-            index: 0, width: 100,
+            index: 0, width: 120,
             change: () => {
                 let value: string = this.tickPosition.value.toString();
                 if (this.isMajorTicks) {

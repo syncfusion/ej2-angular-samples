@@ -1,0 +1,34 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates Accumulation Distribution indicator in the chart. 
+   </p>
+</div>
+<div class="control-section">
+    <div>
+        <ej-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [crosshair] = 'crosshair' [zoomSettings] = 'zoomSettings'
+        [axes] = 'axes' [rows]='rows' [legendSettings]='legendSettings' (axisLabelRender)= 'axisLabelRender($event)' [chartArea]= 'chartArea' (load)='load($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='data1' type='Candle' xName='x' high='high' low='low' open='open' close='close' volume='volume' name='Apple Inc'> </e-series>
+            </e-series-collection>
+            <e-indicators>
+                <e-indicator type='AccumulationDistribution' xName='x' field="Close" yAxisName='secondary' fill="blue" [period]='period' seriesName="Apple Inc"> </e-indicator>
+            </e-indicators>
+        </ej-chart>
+    </div>
+</div>
+<div id='description'>
+    <p>
+        In this example, you can see how to render and configure the Accumulation Distribution Indicator. Accumulation Distribution Indicator is used to represent the price movements in stock. You can use <code>border</code>, <code>fill</code> properities to customize
+        the data appearance.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use Accumulation Distribution Indicator, we need to inject
+        <code>AccumulationDistributionIndicatorService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information on the Accumulation Distribution Indicator can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#rangecolumnseriesmodule-rangecolumnseries">documentation section</a>.
+    </p>
+</div>

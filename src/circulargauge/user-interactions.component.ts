@@ -22,17 +22,18 @@ export class UserInteractionComponent {
         useRangeColor: true
     };
 
+    //Initializing MajorTicks
     public majorTicks: Object = {
         useRangeColor: true
     };
-    public content1: string = '<div style="font-size: 14px;color:#E5C31C;font-weight: lighter;font-style: oblique;"><span>70 km/h</span></div>';
+    public content1: string = '<div style="font-size: 14px;color:#E5C31C;font-weight: lighter;font-style: oblique;"><span>70 MPH</span></div>';
     public minorTicks: Object = {
         useRangeColor: true
     };public dragMove(args: IPointerDragEventArgs): void {
         this.pointerValue = Math.round(args.currentValue);
         document.getElementById('pointerValue').innerHTML = 'Pointer Value <span> &nbsp;&nbsp;&nbsp;' + this.pointerValue;
         (<HTMLInputElement>document.getElementById('value')).value = this.pointerValue.toString();
-        this.circulargauge.setAnnotationValue(0, 0, this.content + this.pointerValue + ' km/h</span></div>');
+        this.circulargauge.setAnnotationValue(0, 0, this.content + this.pointerValue + ' MPH</span></div>');
     };
     public dragEnd(args: IPointerDragEventArgs): void {
         this.pointerValue = Math.round(args.currentValue);
@@ -58,7 +59,7 @@ export class UserInteractionComponent {
         circulargauge.setPointerValue(0, 1, pointerValue);
         circulargauge.setPointerValue(0, 0, pointerValue);
         this.content = '<div style="font-size: 14px;color:' + color + ';font-weight: lighter;font-style: oblique;"><span>';
-        circulargauge.setAnnotationValue(0, 0, this.content + pointerValue + ' km/h</span></div>');
+        circulargauge.setAnnotationValue(0, 0, this.content + pointerValue + ' MPH</span></div>');
     }
     ngAfterViewInit(): void {
         document.getElementById('value').onpointermove = document.getElementById('value').ontouchmove =

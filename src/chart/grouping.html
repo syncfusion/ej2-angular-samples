@@ -1,3 +1,8 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates grouping for pie chart. You can change grouping value by using <code>Group To</code> property. 
+    </p>
+</div>
 <div class="control-section">
     <div class="col-md-8">
         <ej-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (textRender)="onTextRender($event)" (pointRender)="onPointRender($event)" (load)='load($event)'>
@@ -20,7 +25,8 @@
                         </td>
                         <td style="width: 40%;">
                             <div data-role="rangeslider">
-                                <input type="range" name="clubvalue" value="10" min="0" max="27" (touchmove)='onClubvalue($event)' (pointermove)='onClubvalue($event)' (change)='onClubvalue($event)' autocomplete="off" id="clubvalue" style="margin-left: -5px">                                </div>
+                                <input type="range" name="clubvalue" value="10" min="0" max="27" (touchmove)='onClubvalue($event)' (pointermove)='onClubvalue($event)' (change)='onClubvalue($event)' autocomplete="off" id="clubvalue" style="width:90%">
+                            </div>
                         </td>
                     </tr>
                 </table>

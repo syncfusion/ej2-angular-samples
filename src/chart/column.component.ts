@@ -1,5 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs} from '@syncfusion/ej2-ng-charts';
+import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { Browser } from '@syncfusion/ej2-base';
 /**
  * Column Series
  */
@@ -12,37 +13,40 @@ import { ILoadedEventArgs} from '@syncfusion/ej2-ng-charts';
 export class ColumnChartComponent {
 
     public data: Object[] = [
-        { x: 'USA', y: 46 }, { x: 'GBR', y: 27 }, { x: 'CHN', y: 26 }, { x: 'RUS', y: 19 },
-        { x: 'GER', y: 17 }, { x: 'JAP', y: 12 }, { x: 'FRA', y: 10 }
+        { x: 'USA', y: 46 }, { x: 'GBR', y: 27 }, { x: 'CHN', y: 26 }
     ];
     public data1: Object[] = [
-        { x: 'USA', y: 37 }, { x: 'GBR', y: 23 }, { x: 'CHN', y: 18 }, { x: 'RUS', y: 17 },
-        { x: 'GER', y: 10 }, { x: 'JAP', y: 8 }, { x: 'FRA', y: 18 }
+        { x: 'USA', y: 37 }, { x: 'GBR', y: 23 }, { x: 'CHN', y: 18 }
     ];
     public data2: Object[] = [
-        { x: 'USA', y: 38 }, { x: 'GBR', y: 17 }, { x: 'CHN', y: 26 }, { x: 'RUS', y: 19 },
-        { x: 'GER', y: 15 }, { x: 'JAP', y: 21 }, { x: 'FRA', y: 14 }
+        { x: 'USA', y: 38 }, { x: 'GBR', y: 17 }, { x: 'CHN', y: 26 }
     ];
+    //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Countries',
-        valueType: 'Category',
-        interval: 1
+        valueType: 'Category', interval: 1, majorGridLines: { width: 0 }
     };
+    //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Medals',
-        minimum: 0,
-        maximum: 50,
-        interval: 5
+        minimum: 0, maximum: 50, interval: 10, majorGridLines: { width: 0 },
+        majorTickLines: { width: 0 }, lineStyle: { width: 0 }, labelStyle: { color: 'transparent' }
     };
-    public title: string = 'Olympic Medals - RIO';
+    public marker: Object = { dataLabel: { visible: true, position: 'Top', font: { fontWeight: '600', color: '#ffffff' } } }
+    public title: string = 'Olympic Medal Counts - RIO';
     public tooltip: Object = {
-        enable: true,
-        format: '${series.name}<br>${point.x} : ${point.y}'
+        enable: true
     };
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     };
+    public chartArea: Object = {
+        border: {
+            width: 0
+        }
+    };
+    public width: string = Browser.isDevice ? '100%' : '60%';
+
     constructor() {
         //code
     };

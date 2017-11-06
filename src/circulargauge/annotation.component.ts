@@ -18,6 +18,7 @@ export class AnnotationComponent {
     public tooltipInterval: number;
 
     public clockInterval: number;
+    //Initializing LabelStyle
     public labelStyle: Object = {
         hiddenLabel: 'First',
         font: { color: 'rgb(29,29,29)' },
@@ -35,6 +36,7 @@ export class AnnotationComponent {
     public start: number = 0;
     public end: number = 3;
     public width: number = 10;
+    //Initializing majorTicks
     public majorTicks: Object = {
         width: 2, height: 14, interval: 1,
         color: 'rgb(29,29,29)'

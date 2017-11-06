@@ -1,9 +1,14 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates rendering of category axis for a chart by using internet users of different country.
+    </p>
+</div>
 <div class="control-section">
         <div>
-            <ej-chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-                [title]='title' [tooltip]='tooltip' (pointRender)='pointRender($event)'>
+            <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+                [title]='title' [tooltip]='tooltip' (pointRender)='pointRender($event)' [legendSettings]='legend'>
                 <e-series-collection>
-                    <e-series [dataSource]='data' type='Bar' xName='x' yName='y' width=2> </e-series>
+                    <e-series [dataSource]='data' type='Bar' name='Users' xName='x' yName='y' width=2, [marker]='marker'> </e-series>
                 </e-series-collection>
             </ej-chart>
         </div>

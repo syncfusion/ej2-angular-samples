@@ -1,10 +1,15 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates rendering of numeric axis for chart by using England and West indies cricket match.
+    </p>
+</div>
 <div class="control-section">
         <div>
-            <ej-chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-                [title]='title' [tooltip]='tooltip'>
+            <ej-chart style='display:block;'[chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+                [title]='title' [tooltip]='tooltip' (axisLabelRender)='labelRender($event)'>
                 <e-series-collection>
-                    <e-series [dataSource]='data' type='Column' xName='x' yName='y' fill = '#1e90ff' name='England' width=2> </e-series>
-                    <e-series [dataSource]='data1' type='Column' xName='x' yName='y' fill = '#b22222' name='West Indies' width=2> </e-series>
+                    <e-series [dataSource]='data' type='Column' xName='x' yName='y' fill = '#1e90ff' name='England' width=2 [marker]='marker'> </e-series>
+                    <e-series [dataSource]='data1' type='Column' xName='x' yName='y' fill = '#b22222' name='West Indies' width=2 [marker]='marker'> </e-series>
                 </e-series-collection>
             </ej-chart>
         </div>

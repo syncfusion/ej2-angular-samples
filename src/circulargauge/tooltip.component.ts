@@ -17,6 +17,7 @@ export class TooltipComponent {
     public cap: Object = { radius: 10, border: { color: '#33BCBD', width: 5 } };
     public animation: Object = { enable: true, duration: 1500 };
     public title: string = 'Tooltip Customization'
+    //Initializing titleStyle
     public titleStyle: Object = { size: '15px', color: 'grey' };
     public majorTicks: Object = { color: 'white', offset: -5, height: 12 };
     public minorTicks: Object = { width: 0 };
@@ -24,12 +25,13 @@ export class TooltipComponent {
     public lineStyle: Object = { width: 0 };
 
 
+    //Initializing Tooltip
     public tooltip: Object = {
         enable: true,
         template: '<div id="templateWrap">'
         + '<img src="src/circulargauge/images/range1.png"/>'
         + '<img src="src/circulargauge/images/range3.png" />'
-        + '<div class="des" style="float: right;padding-left: 10px;line-height: 30px;"><span>140 KM</span></div></div>',
+        + '<div class="des" style="float: right;padding-left: 10px;line-height: 30px;"><span>140 MPH</span></div></div>',
         border: {
             color: '#33BCBD',
             width: 2
@@ -49,7 +51,7 @@ export class TooltipComponent {
         }
         args.textStyle.color = color;
         args.border.color = color;
-        content.children[1].children[0].innerHTML = '<span>' + value + ' KM</span>';
+        content.children[1].children[0].innerHTML = '<span>' + value + ' MPH</span>';
         this.circulargauge.axes[0].pointers[0].animation.enable = false;
         this.circulargauge.axes[0].pointers[0].color = color;
         this.circulargauge.axes[0].pointers[0].cap.border.color = color;

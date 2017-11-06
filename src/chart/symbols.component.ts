@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Chart Symbols
@@ -33,64 +34,51 @@ export class SymbolsChartComponent {
         { x: 'LATAM', y: 46.7, text: 'Latin America' },
         { x: 'MEA', y: 61.5, text: 'Middle East Africa' },
         { x: 'NA', y: 64, text: 'North America' }];
-    public data3: Object[] = [
-        { x: 'WW', y: 50, text: 'World Wide' },
-        { x: 'EU', y: 63.6, text: 'Europe' },
-        { x: 'APAC', y: 20.9, text: 'Asia Pacific' },
-        { x: 'LATAM', y: 65.1, text: 'Latin America' },
-        { x: 'MEA', y: 73, text: 'Middle East Africa' },
-        { x: 'NA', y: 81.4, text: 'North America' }];
+    //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Countries',
-        valueType: 'Category',
-        edgeLabelPlacement: 'Shift',
-        interval: 1, labelIntersectAction : 'Rotate45'
+        title: 'Countries', valueType: 'Category',
+        interval: 1, labelIntersectAction: 'Rotate45',
+        majorGridLines: { width: 0 },
     };
+    //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Penetration (%)',
-        rangePadding: 'None',
-        labelFormat: '{value}%',
-        minimum: 0,
-        maximum: 90
+        title: 'Penetration', rangePadding: 'None',
+        labelFormat: '{value}%', minimum: 0,
+        lineStyle: { width: 0 },
+        maximum: 75, interval: 15
     };
     public legend: Object = {
         visible: false
     };
+    //Initializing Marker
     public marker1: Object = {
-        visible: true,
-        width: 10,
-        height: 10,
-        shape: 'Diamond',
-        dataLabel: { name: 'text' }
+        visible: true, width: 10, height: 10,
+        shape: 'Diamond', dataLabel: { name: 'text' }
     };
     public marker2: Object = {
-        visible: true,
-        width: 10,
-        height: 10,
-        shape: 'Pentagon',
-        dataLabel: { name: 'text' }
+        visible: true, width: 10, height: 10,
+        shape: 'Pentagon', dataLabel: { name: 'text' }
     };
     public marker3: Object = {
         visible: true,
-        width: 10,
-        height: 10,
+        width: 10, height: 10,
         shape: 'Triangle',
         dataLabel: { name: 'text' }
     };
-    public marker4: Object = {
-        visible: true,
-        width: 10,
-        height: 10,
-        shape: 'Circle',
-        dataLabel: { name: 'text' }
-    };
     public tooltip: Object = {
-        enable: true,
-        format: '${series.name} <br> ${point.text} : ${point.y}'
+        enable: true
     };
+    public chartArea: Object = {
+        border: {
+            width: 0
+        }
+    };
+
+    public width: string = Browser.isDevice ? '100%' : '60%';
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     };
     public title: string = 'FB Penetration of Internet Audience';
     constructor() {

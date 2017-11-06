@@ -1,11 +1,14 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates step line series type in the chart.
+    </p>
+</div>
 <div class="control-section">
-    <ej-chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+    <ej-chart style='display:block;' align='center' [chartArea]='chartArea' [width]='width' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
         [title]='title' [tooltip]='tooltip' (load)='load($event)' >
         <e-series-collection>
             <e-series [dataSource]='data' type='StepLine' xName='x' yName='y' name='China' width=2 [marker]='marker'> </e-series>
             <e-series [dataSource]='data1' type='StepLine' xName='x' yName='y' name='Australia' width=2 [marker]='marker'> </e-series>
-            <e-series [dataSource]='data2' type='StepLine' xName='x' yName='y' name='Japan' width=2 [marker]='marker'>
-            </e-series>
         </e-series-collection>
     </ej-chart>
 </div>

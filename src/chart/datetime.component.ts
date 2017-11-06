@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs} from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * DateTime Axis
@@ -12,74 +13,61 @@ import { ILoadedEventArgs} from '@syncfusion/ej2-ng-charts';
 })
 export class DateTimeAxisChartComponent {
     public data1: Object[] = [
-        { x: new Date(2016, 0, 1), y: -7.1 },
-        { x: new Date(2016, 1, 1), y: -3.7 },
-        { x: new Date(2016, 2, 1), y: 0.8 },
         { x: new Date(2016, 3, 1), y: 6.3 },
-        { x: new Date(2016, 4, 1), y: 13.3 },
-        { x: new Date(2016, 5, 1), y: 18.0 },
-        { x: new Date(2016, 6, 1), y: 19.8 },
-        { x: new Date(2016, 7, 1), y: 18.1 },
-        { x: new Date(2016, 8, 1), y: 13.1 },
-        { x: new Date(2016, 9, 1), y: 4.1 },
-        { x: new Date(2016, 10, 1), y: -3.8 },
-        { x: new Date(2016, 11, 1), y: -6.8 },
+        { x: new Date(2016, 4, 1), y: 13.3 }, { x: new Date(2016, 5, 1), y: 18.0 },
+        { x: new Date(2016, 6, 1), y: 19.8 }, { x: new Date(2016, 7, 1), y: 18.1 },
+        { x: new Date(2016, 8, 1), y: 13.1 }, { x: new Date(2016, 9, 1), y: 4.1 }
     ];
     public data2: Object[] = [
-        { x: new Date(2016, 0, 1), y: -17.4 },
-        { x: new Date(2016, 1, 1), y: -15.6 },
-        { x: new Date(2016, 2, 1), y: -12.3 },
         { x: new Date(2016, 3, 1), y: -5.3 },
-        { x: new Date(2016, 4, 1), y: 1.0 },
-        { x: new Date(2016, 5, 1), y: 6.9 },
-        { x: new Date(2016, 6, 1), y: 9.4 },
-        { x: new Date(2016, 7, 1), y: 7.6 },
-        { x: new Date(2016, 8, 1), y: 2.6 },
-        { x: new Date(2016, 9, 1), y: -4.9 },
-        { x: new Date(2016, 10, 1), y: -13.4 },
-        { x: new Date(2016, 11, 1), y: -16.4 },
+        { x: new Date(2016, 4, 1), y: 1.0 }, { x: new Date(2016, 5, 1), y: 6.9 },
+        { x: new Date(2016, 6, 1), y: 9.4 }, { x: new Date(2016, 7, 1), y: 7.6 },
+        { x: new Date(2016, 8, 1), y: 2.6 }, { x: new Date(2016, 9, 1), y: -4.9 }
     ];
+    //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Months',
         valueType: 'DateTime',
-        labelFormat: 'yMMM',
-        edgeLabelPlacement: 'Shift'
+        labelFormat: 'MMM',
+        edgeLabelPlacement: 'Shift',
+        majorGridLines: { width: 0 }
     };
+    //Initializing Primary X Axis
     public primaryYAxis: Object = {
-        title: 'Temperature (Celsius)',
+
         minimum: -20,
-        maximum: 25, interval: 5,
+        maximum: 30,
+        interval: 10,
+        edgeLabelPlacement: 'Shift',
         labelFormat: '{value}°C',
-        edgeLabelPlacement: 'Shift'
+        lineStyle: { width: 0 },
+        majorTickLines: { width: 0 },
+        minorTickLines: { width: 0 }
     };
-    public marker: Object = {
-        visible: true,
-        height: 10,
-        width: 10,
-        shape: 'Diamond',
-        dataLabel: { visible: true, position: 'Top' }
-    };
+    //Initializing Marker
     public marker1: Object = {
         visible: true,
-        height: 10,
-        width: 10,
-        shape: 'Circle',
+        height: 10, width: 10,
+        shape: 'Pentagon',
         dataLabel: { visible: true, position: 'Top' }
     };
     public marker2: Object = {
-        visible: true,
-        height: 10,
-        width: 10,
-        shape: 'Pentagon',
+        visible: true, height: 10, width: 10, shape: 'Diamond',
         dataLabel: { visible: true, position: 'Bottom' }
     };
+    public chartArea: Object = {
+        border: {
+            width: 0
+        }
+    };
+    public width: string = Browser.isDevice ? '100%' : '60%';
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     };
     public title: string = 'Alaska Weather Statistics - 2016';
     constructor() {
         //code
-     };
+    };
 
 }

@@ -1,6 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { LinearGaugeComponent } from '@syncfusion/ej2-ng-lineargauge';
-import { Point, Placement, MarkerType } from '@syncfusion/ej2-lineargauge';
+import { Point, Placement, MarkerType, Pointer } from '@syncfusion/ej2-lineargauge';
+import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
  * Thermometer linear gauge
@@ -13,14 +14,21 @@ import { Point, Placement, MarkerType } from '@syncfusion/ej2-lineargauge';
 export class AxesComponent {
     @ViewChild('gauge')
     public gauge: LinearGaugeComponent;
+    @ViewChild('pointerType')
+    public pointerType: DropDownList;
+    @ViewChild('pointerPlace')
+    public markerPlacement: DropDownList;
+    //Initializing Annotation
     public Annotation: Object[] = [{
-        content: '<div id="pointer" style="width:70px"><h1 style="font-size:14px;color:#424242">10 Kms</h1></div>',
+        content: '<div id="pointer" style="width:70px"><h1 style="font-size:14px;' +
+        'color:#424242">${axes[0].pointers[0].currentValue} MPH</h1></div>',
         axisIndex: 0,
         axisValue: 10,
         x: 10,
         y: 60
     }];
 
+    //Initializing Axes
     public Axes: Object[] = [{
         line: {
             color: '#9E9E9E'
@@ -47,6 +55,27 @@ export class AxesComponent {
             offset: 48
         }
     }];
+    ngOnInit(): void {
+        this.pointerType = new DropDownList({
+            index: 0, width: 100,
+            change: () => {
+                this.gauge.axes[0].pointers[0].type = <Point>this.pointerType.value;
+                this.markerPlacement.enabled = (<Point>this.pointerType.value === 'Marker') ? true : false;
+                this.markerPlacement.readonly = (<Point>this.pointerType.value === 'Marker') ? false : true;
+                this.gauge.refresh();
+            }
+        });
+        this.pointerType.appendTo('#pointerType');
+
+        this.markerPlacement = new DropDownList({
+            index: 0, width: 100,
+            change: () => {
+                this.gauge.axes[0].pointers[0].placement = <Placement>this.markerPlacement.value;
+                this.gauge.refresh();
+            }
+        });
+        this.markerPlacement.appendTo('#pointerPlace');
+    }
     constructor() {
         //code
     };
@@ -87,6 +116,8 @@ export class AxesComponent {
                 this.gauge.axes[0].maximum = parseInt(max.value, 10);
                 document.getElementById('minValue').innerHTML = 'Axis Minimum <span>&nbsp;&nbsp;&nbsp;' + min.value;
                 this.gauge.refresh();
+                this.gauge.annotations[0].axisValue = (<Pointer>this.gauge.axes[0].pointers[0]).currentValue;
+                this.gauge.refresh();
             };
 
         document.getElementById('max').ontouchmove = document.getElementById('max').onpointermove =
@@ -97,27 +128,13 @@ export class AxesComponent {
                 this.gauge.axes[0].minimum = parseInt(min.value, 10);
                 document.getElementById('maxValue').innerHTML = 'Axis Maximum <span>&nbsp;&nbsp;&nbsp;' + max.value;
                 this.gauge.refresh();
+                this.gauge.annotations[0].axisValue = (<Pointer>this.gauge.axes[0].pointers[0]).currentValue;
+                this.gauge.refresh();
             };
 
         document.getElementById('format').onchange = () => {
             let ele: HTMLInputElement = <HTMLInputElement>document.getElementById('format');
             this.gauge.axes[0].labelStyle.format = ele.value.indexOf('{value}') > -1 ? ele.value : this.gauge.axes[0].labelStyle.format;
-            this.gauge.refresh();
-        };
-
-        document.getElementById('pointerType').onchange = () => {
-            let place: HTMLSelectElement = <HTMLSelectElement>document.getElementById('pointerPlace');
-            let ele: HTMLSelectElement = <HTMLSelectElement>document.getElementById('pointerType');
-            let marker: HTMLSelectElement = <HTMLSelectElement>document.getElementById('markerType');
-            this.gauge.axes[0].pointers[0].type = <Point>ele.value;
-            place.disabled = (<Point>ele.value === 'Marker') ? false : true;
-            marker.disabled = (<Point>ele.value === 'Marker') ? false : true;
-            this.gauge.refresh();
-        };
-
-        document.getElementById('pointerPlace').onchange = () => {
-            let ele: HTMLSelectElement = <HTMLSelectElement>document.getElementById('pointerPlace');
-            this.gauge.axes[0].pointers[0].placement = <Placement>ele.value;
             this.gauge.refresh();
         };
     };

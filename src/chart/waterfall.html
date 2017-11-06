@@ -1,0 +1,46 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates waterfall series for a company's various expenses and income.
+    </p>
+</div>
+<div class="control-section">
+    <div>
+        <ej-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip'
+        [legendSettings]='legendSettings' [chartArea]='chartArea' (textRender)='textRender($event)' (load)='load($event)' (axisLabelRender)='axisLabelRender($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='dataSource' type='Waterfall' xName='x' yName='y' name='USA' [columnWidth]='columnWidth'
+                [connector]='connector' [intermediateSumIndexes]='intermediate' [sumIndexes]='sum' [marker]='marker' negativeFillColor='#e56590'> </e-series>
+            </e-series-collection>
+        </ej-chart>
+    </div>
+</div>
+<div id='description'>
+    <p>
+        In this example, you can see how to render and configure the Waterfall type series. Waterfall type charts are used for
+        datas having five values  in y-axis. You can use <code>border</code>, <code>fill</code> properities to customize
+        the data appearance. <code>dataLabel</code> is used to represent individual data and its value.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use Waterfall feature, we need to inject
+        <code>WaterfallService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information on the column series can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#rangecolumnseriesmodule-rangecolumnseries">documentation section</a>.
+    </p>
+</div>
+<style>
+#chartcontainer_Series_0_Connector_ {
+        stroke-dasharray: 10;
+        -webkit-animation: dash 1s linear infinite;
+        animation: dash 1s linear infinite;
+    }
+
+    @keyframes dash {
+        to {
+            stroke-dashoffset: -20;
+        }
+    }
+</style>

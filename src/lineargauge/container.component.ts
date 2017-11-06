@@ -1,6 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { LinearGaugeComponent } from '@syncfusion/ej2-ng-lineargauge';
 import { ContainerType, Orientation } from '@syncfusion/ej2-lineargauge';
+import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
  * Container linear gauge
@@ -13,6 +14,11 @@ import { ContainerType, Orientation } from '@syncfusion/ej2-lineargauge';
 export class ContainerComponent {
     @ViewChild('gauge')
     public gauge: LinearGaugeComponent;
+    @ViewChild('orientationMode')
+    public orientation: DropDownList;
+    @ViewChild('containerMode')
+    public container: DropDownList;
+    //Initializing Axes
     public Axes: Object[] = [{
         minimum: 0,
         maximum: 180,
@@ -72,18 +78,25 @@ export class ContainerComponent {
     constructor() {
         //code
     };
-
-    ngAfterViewInit(): void {
-        document.getElementById('containerMode').onchange = () => {
-            let ele: HTMLSelectElement = <HTMLSelectElement>document.getElementById('containerMode');
-            this.gauge.container.type = <ContainerType>ele.value;
-            this.gauge.refresh();
-        };
-        document.getElementById('orientationMode').onchange = () => {
-            let ele: HTMLSelectElement = <HTMLSelectElement>document.getElementById('orientationMode');
-            this.gauge.orientation = <Orientation>ele.value;
-            this.gauge.refresh();
-        };
+    ngOnInit(): void {
+        this.orientation = new DropDownList({
+            index: 0, width: 100,
+            change: () => {
+                let value: string = this.orientation.value.toString();
+                this.gauge.orientation = <Orientation>value;
+                this.gauge.refresh();
+            }
+        });
+        this.orientation.appendTo('#orientationMode');
+        this.container = new DropDownList({
+            index: 0, width: 100,
+            change: () => {
+                let value: string = this.container.value.toString();
+                this.gauge.container.type = <ContainerType>value;
+                this.gauge.refresh();
+            }
+        });
+        this.container.appendTo('#containerMode');
     }
 }
 

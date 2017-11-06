@@ -1,0 +1,39 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates spline type series in inverted manner.
+    </p>
+</div>
+<div class="control-section">
+    <ej-chart style='display:block' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+        [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' isTransposed='true' [width]='width'>
+        <e-series-collection>
+            <e-series [dataSource]='data' type='Spline' xName='x' yName='y' name='London' width=2 [marker]='marker'> </e-series>
+            <e-series [dataSource]='data1' type='Spline' xName='x' yName='y' name='France' width=2 [marker]='marker'> </e-series>
+        </e-series-collection>
+    </ej-chart>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the spline type charts. Spline chart connects each point in series
+        through a curved line. You can use
+        <code>dashArray</code>,
+        <code>width</code>,
+        <code>fill</code> properties to customize the spline.
+        <code>marker</code> and
+        <code>dataLabel</code> are used to represent individual data and its value.
+    </p>
+    <p>
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use spline series, we need to inject
+        <code>SplineSeries</code> module using
+        <code>Chart.Inject(SplineSeries)</code> method.
+    </p>
+    <p>
+        More information on the spline series can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/documentation/chart/api-series.html#type-chartseriestype">documentation section</a>.
+    </p>
+</div>

@@ -11,6 +11,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 export class AnnotationComponent {
     public Palette: String[] = ['#30b32d', '#ffdd00', '#f03e3e'];
 
+    //Initializing Axes
     public Axes: Object[] = [{
         maximum: 90,
         labelStyle: {
@@ -58,6 +59,7 @@ export class AnnotationComponent {
             endWidth: 50
         }]
     }];
+    //Initializing Annotation
     public Annotation: Object[] = [
         {
             content: '<div id="title" style="width:200px;"><p style="font-size:18px;">CPU Utilization</p></div>',

@@ -15,14 +15,14 @@ import { TooltipComponent } from './tooltip.component';
 import { StyleComponent } from './style.component';
 
 export const lineargaugeAppRoutes: Object[] = [
-    { path: ':theme/lineargauge/default', component: DefaultComponent, name: 'Default', order: '01', category: 'LinearGauge' },
-    { path: ':theme/lineargauge/container', component: ContainerComponent, name: 'Container', order: '01', category: 'LinearGauge' },
-    { path: ':theme/lineargauge/ranges', component: RangesComponent, name: 'Ranges', order: '01', category: 'LinearGauge' },
-    { path: ':theme/lineargauge/data', component: DataComponent, name: 'Data Sample', order: '01', category: 'LinearGauge' },
-    { path: ':theme/lineargauge/axes', component: AxesComponent, name: 'Axes and Pointers', order: '01', category: 'LinearGauge' },
-    { path: ':theme/lineargauge/annotation', component: AnnotationComponent, name: 'Annotation', order: '01', category: 'LinearGauge' },
-    { path: ':theme/lineargauge/tooltip', component: TooltipComponent, name: 'Tooltip', order: '01', category: 'LinearGauge' },
-    { path: ':theme/lineargauge/style', component: StyleComponent, name: 'Styles', order: '01', category: 'LinearGauge' }
+    { path: ':theme/lineargauge/default', component: DefaultComponent, name: 'Default', order: '01', category: 'Linear Gauge' },
+    { path: ':theme/lineargauge/container', component: ContainerComponent, name: 'Container', order: '01', category: 'Linear Gauge' },
+    { path: ':theme/lineargauge/ranges', component: RangesComponent, name: 'Ranges', order: '01', category: 'Linear Gauge' },
+    { path: ':theme/lineargauge/data', component: DataComponent, name: 'Data Sample', order: '01', category: 'Linear Gauge' },
+    { path: ':theme/lineargauge/axes', component: AxesComponent, name: 'Axes and Pointers', order: '01', category: 'Linear Gauge' },
+    { path: ':theme/lineargauge/annotation', component: AnnotationComponent, name: 'Annotation', order: '01', category: 'Linear Gauge' },
+    { path: ':theme/lineargauge/tooltip', component: TooltipComponent, name: 'Tooltip', order: '01', category: 'Linear Gauge' },
+    { path: ':theme/lineargauge/style', component: StyleComponent, name: 'Styles', order: '01', category: 'Linear Gauge' }
 ];
 
 export const linearRouter: ModuleWithProviders = RouterModule.forChild(lineargaugeAppRoutes);

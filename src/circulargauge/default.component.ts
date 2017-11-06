@@ -15,6 +15,7 @@ export class DefaultComponent {
     public lineStyle: Object = {
         width: 8, color: '#E0E0E0'
     };
+    //Initializing Label Style
     public labelStyle: Object = {
         font: {
             color: '#424242',

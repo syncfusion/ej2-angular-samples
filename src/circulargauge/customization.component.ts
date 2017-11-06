@@ -21,6 +21,7 @@ export class CustomizationComponent {
     public randomGauge: CircularGauge = new CircularGauge(DynamicDataSerive.prototype.GetSubGauge1().gauge2);
     public isUsage: boolean = false;
     public isClicked: boolean = true;
+    //Initializing majorTicks
     public majorTicks: Object = {
         width: 0
     }
@@ -32,6 +33,7 @@ export class CustomizationComponent {
         font: { size: '0px' }
     }
     public rangeWidth: number = 30;
+    //Initializing Pointers
     public pointers: Object = [{
         type: 'RangeBar',
         value: 1800, radius: '90%',
@@ -114,6 +116,18 @@ export class CustomizationComponent {
         this.pointerColor.appendTo('#pointerColor');
     }
     ngAfterViewInit(): void {
+        let selectedTheme: string = location.hash.split('/')[1]; let color: string;
+        if (selectedTheme === 'bootstrap') {
+            color = '#a16ee5';
+        } else if (selectedTheme === 'fabric') {
+            color = '#1783FF';
+        } else {
+            color = '#ff4081';
+        }
+        let exisLine: HTMLSelectElement = <HTMLSelectElement>document.getElementById('usage_line');
+        let currentLine: HTMLSelectElement = <HTMLSelectElement>document.getElementById('random_line');
+        exisLine.style.background = color; currentLine.style.background = color;
+
         document.getElementById('usage').onclick = () => {
             if (this.isClicked) {
                 this.gauge1.destroy();
@@ -138,6 +152,10 @@ export class CustomizationComponent {
             let existElement: HTMLSelectElement = <HTMLSelectElement>document.getElementById('random');
             currentElement.style.border = '2px solid #E0E0E0';
             existElement.style.border = '';
+            let currentLine: HTMLSelectElement = <HTMLSelectElement>document.getElementById('usage_line');
+            let exisLine: HTMLSelectElement = <HTMLSelectElement>document.getElementById('random_line');
+            currentLine.style.display = 'block';
+            exisLine.style.display = 'none';
         };
         document.getElementById('random').onclick = () => {
             if (this.isClicked) {
@@ -164,6 +182,9 @@ export class CustomizationComponent {
             this.barColor.value = this.randomGauge.axes[0].pointers[0].color;
             this.rangeColor.value = this.randomGauge.axes[0].ranges[0].color;
             this.pointerColor.value = this.randomGauge.axes[0].pointers[1].color;
+            let exisLine: HTMLSelectElement = <HTMLSelectElement>document.getElementById('usage_line');
+            let currentLine: HTMLSelectElement = <HTMLSelectElement>document.getElementById('random_line');
+            currentLine.style.display = 'block'; exisLine.style.display = 'none';
         };
 
         document.getElementById('currentValue').onpointermove = document.getElementById('currentValue').ontouchmove =

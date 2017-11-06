@@ -1,3 +1,8 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates customization of range in linear gauge. Ranges of linear gauge are seperated into three categories Low, Medium and High. For each range, start, end and color can be changed by <code>Range Start</code>, <code>Range End</code> and <code>Range Color</code> respectively. Start and end width of axis for each range can be changed by <code>Start Width</code> and <code>End Width</code>.
+    </p>
+</div>
 <div class="control-section">
     <div class="col-md-8">
         <ej-lineargauge id='rangeContainer' #gauge style='display:block;' orientation='Horizontal' [axes]='Axes' [annotations]='Annotation'>
@@ -14,7 +19,7 @@
                         </td>
                         <td>
                             <div>
-                                <select name="selectIndex" autocomplete="off" id="rangeIndex" class="form-control" style="width:90%">
+                                <select name="rangeIndex" autocomplete="off" id="rangeIndex" class="form-control" style="width:90%">
                         <option value="0" selected>Low</option>
                         <option value="1">Moderate</option>
                         <option value="2">High</option>
@@ -38,7 +43,7 @@
                         </td>
                         <td>
                             <div>
-                                <select name="selectIndex" autocomplete="off" id="useRangeColor" class="form-control" style="width:90%">
+                                <select name="useRangeColor" autocomplete="off" id="useRangeColor" class="form-control" style="width:90%">
                                             <option value="font" selected>Default Color</option>
                                         <option value="range">Range Color</option>
                                      </select>

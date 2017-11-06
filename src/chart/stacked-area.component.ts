@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Stacked Area Series
@@ -11,6 +12,12 @@ import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
     encapsulation: ViewEncapsulation.None
 })
 export class StackedAreaChartComponent {
+    public chartArea: Object = {
+        border: {
+            width: 0
+        }
+    };
+    public width: string = Browser.isDevice ? '100%' : '60%';
 
     public data: Object[] = [
         { x: new Date(2000, 0, 1), y: 0.61 },
@@ -52,25 +59,29 @@ export class StackedAreaChartComponent {
         { x: new Date(2011, 0, 1), y: 1.82 }, { x: new Date(2012, 0, 1), y: 2.16 },
         { x: new Date(2013, 0, 1), y: 2.51 }, { x: new Date(2014, 0, 1), y: 2.61 }
     ];
+    //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Years',
         valueType: 'DateTime',
         intervalType: 'Years',
+        majorGridLines: { width: 0 },
         labelFormat: 'y',
-        edgeLabelPlacement: 'Shift',
-        majorTickLines: { width: 0 }
+        edgeLabelPlacement: 'Shift'
     };
+    //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Spend in Billions',
+        title: 'Spends',
         minimum: 0,
         maximum: 7,
         interval: 1,
+        majorGridLines: { width: 0 },
         labelFormat: '{value}B',
+        opposedPosition: true,
         majorTickLines: { width: 0 }
     };
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     };
     public title: string = 'Trend in Sales of Ethical Produce';
     constructor() {

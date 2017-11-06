@@ -1,14 +1,14 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates multiple axis chart by plotting temperature in celsious in an axis and temperature in farenheit in another axis.
+    </p>
+</div>
 <div class="control-section">
-        <ej-chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'  [title]='title' [tooltip]='tooltip' (load)='load($event)'>
-              <e-axes>
-                 <e-axis rowIndex=0 name='yAxis1' opposedPosition='true' title='Temperature (Celsius)' [majorGridLines]='majorGridLines' labelFormat='{value}°C'
-                      [minimum]='24' [maximum]='36' [interval]='2'>
-                 </e-axis>
-              </e-axes>
+        <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'  [title]='title' [tooltip]='tooltip' (load)='load($event)' [annotations]='annotations' [axes]='axis' [legendSettings]='legend'>
               <e-series-collection>
                    <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Germany' width=2> 
                    </e-series>
-                   <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='Japan' width=2 yAxisName='yAxis1' [marker]='marker'>
+                   <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='Japan' width=2 yAxisName='yAxis' [marker]='marker'>
                    </e-series>
               </e-series-collection>
         </ej-chart>

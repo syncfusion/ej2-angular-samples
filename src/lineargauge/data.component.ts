@@ -19,6 +19,7 @@ export class DataComponent {
         offset: 30
     };
 
+    //Initializing Annotation
     public Annotation1: Object[] = [
         {
             content: '<div id="title" style="width:300px;"> <img style="float:left" src'
@@ -38,7 +39,7 @@ export class DataComponent {
             y: -130
         },
         {
-            content: '<div id="pointerText" style="width:60px;"><p style="font-size:15px;color:#30b32d;">10 Kms</p></div>',
+            content: '<div id="pointerText" style="width:60px;"><p style="font-size:15px;color:#30b32d;">10 MPH</p></div>',
             axisIndex: 0,
             axisValue: 10,
             y: -65
@@ -93,7 +94,7 @@ export class DataComponent {
         y: -110
     },
     {
-        content: '<div id="pointerText" style="width:60px;"><p style="font-size:15px;color:#30b32d;">28 Kms</p></div>',
+        content: '<div id="pointerText" style="width:60px;"><p style="font-size:15px;color:#30b32d;">28 MPH</p></div>',
         axisIndex: 0,
         axisValue: 28,
         y: -70

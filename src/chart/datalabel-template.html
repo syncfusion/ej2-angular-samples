@@ -1,6 +1,11 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates datalabel template support. In this sample, images are placed as datalabel by means of templates.
+    </p>
+</div>
 <div class="control-section">
-        <ej-chart style='display:block' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-                (load)='load($event)' (textRender)='textRender($event)'>
+        <ej-chart style='display:block' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+                (load)='load($event)' (textRender)='textRender($event)' [titleStyle]='titleStyle'>
                 <e-series-collection>
                         <e-series [dataSource]='data' type='Line' xName='x' yName='y' name='Male' width=2 [marker]='marker1'>
                         </e-series>

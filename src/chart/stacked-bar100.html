@@ -1,11 +1,15 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates 100 percent stacked bar series type in the chart.
+    </p>
+</div>
 <div class="control-section">
-          <ej-chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' 
+          <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' 
                [title]='title' [tooltip]='tooltip' (load)='load($event)'>
               <e-series-collection>
-                   <e-series [dataSource]='data' type='StackingBar100' xName='x' yName='y' name='Japan'> </e-series>
-                   <e-series [dataSource]='data1' type='StackingBar100' xName='x' yName='y' name='Germany'> </e-series>
-                   <e-series [dataSource]='data2' type='StackingBar100' xName='x' yName='y' name='England'> </e-series>
-                   <e-series [dataSource]='data3' type='StackingBar100' xName='x' yName='y' name='France'> </e-series>
+                   <e-series [dataSource]='data' type='StackingBar100' xName='x' yName='y' name='Apple'> </e-series>
+                   <e-series [dataSource]='data' type='StackingBar100' xName='x' yName='y1' name='Orange'> </e-series>
+                   <e-series [dataSource]='data' type='StackingBar100' xName='x' yName='y2' name='Wastage'> </e-series>
                </e-series-collection>
           </ej-chart>
 </div>

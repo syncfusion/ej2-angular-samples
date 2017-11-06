@@ -13,6 +13,7 @@ import { ITooltipRenderEventArgs, IAxisLabelRenderEventArgs, ILoadedEventArgs, I
 export class TooltipComponent {
     @ViewChild('gauge')
     public gauge: LinearGaugeComponent;
+    //Initializing Annotation
     public Annotation: Object[] = [
         {
             content: '<div id="first"><h1 style="font-size:15px">Inches</h1></div>',
@@ -107,7 +108,7 @@ export class TooltipComponent {
         }
     }
     public renderTooltip(args: ITooltipRenderEventArgs): void {
-        args.content = (args.axis.visibleRange.max === 25) ? Number(args.content).toFixed(1) + ' cms' : Number(args.content).toFixed(1) + ' inches';
+        args.content = (args.axis.visibleRange.max === 25) ? Number(args.content).toFixed(1) + ' cm' : Number(args.content).toFixed(1) + ' in';
     }
 
     public gaugeLoaded(args: ILoadedEventArgs): void {

@@ -1,13 +1,18 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates combination series of stacked column and line series for annual GDP growth of France.
+    </p>
+</div>
 <div class="control-section">
         <div >
-            <ej-chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [legendSettings]='legend'
+            <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [legendSettings]='legend'
                 [title]='title' [tooltip]='tooltip' (load)='load($event)'>
                 <e-series-collection>
                     <e-series [dataSource]='data' type='StackingColumn' xName='x' yName='y' name='Private Consumption'> </e-series>
                     <e-series [dataSource]='data1' type='StackingColumn' xName='x' yName='y' name='Government Consumption'> </e-series>
                     <e-series [dataSource]='data2' type='StackingColumn' xName='x' yName='y' name='Investment'> </e-series>
                     <e-series [dataSource]='data3' type='StackingColumn' xName='x' yName='y' name='Net Foreign Trade'> </e-series>
-                    <e-series [dataSource]='data4' type='Line' xName='x' yName='y' name='GDP' width=2 opacity=0.6 [marker]='marker'> </e-series>
+                    <e-series [dataSource]='data4' type='Line' xName='x' yName='y' name='GDP' width=2 [marker]='marker'> </e-series>
                 </e-series-collection>
             </ej-chart>
         </div>

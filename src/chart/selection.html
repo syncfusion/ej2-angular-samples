@@ -1,3 +1,8 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates selection feature in chart. To select a specific point, you can click on a point. You can change selection mode, by changing <code>Selection Mode</code> in properities. Also, multiple selection could be enabled by <code>Enable MultiplecSelection</code>.
+    </p>
+</div>
 <div class="control-section">
     <div class="col-md-8">
             <ej-chart #chart style='display:block; width: 92%' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [legendSettings]='legend' [title]='title'
@@ -15,25 +20,22 @@
           <div class="property-panel-content">
             <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
                 <tr style="height: 50px">
-                    <td style="width: 60%">
+                    <td style="width: 50%">
                         <div>Selection Mode:</div>
                     </td>
-                    <td style="width: 40%;">
+                    <td style="width: 50%;">
                         <div>
-                            <select name="selectIndex" (change)='onChange($event)' autocomplete="off" id="selmode" style="margin-left: -5px">
+                            <select name="selectIndex" autocomplete="off" id="selmode" style="margin-left: -25px">
                                 <option value="Point">Point</option>
                                 <option value="Series">Series</option>
                                 <option value="Cluster">Cluster</option>
-                                <option value='DragXY'>DragXY</option>
-                                <option value="DragX">DragX</option>
-                                <option value="DragY">DragY</option>
                                 <option value="None">None</option>
                             </select>
                         </div>
                     </td>
                 </tr>
                 <tr style="height: 50px">
-                    <td style="width: 60%">
+                    <td style="width: 80%">
                         <div>Enable MultipleSelection:</div>
                     </td>
                     <td style="width: 40%;">

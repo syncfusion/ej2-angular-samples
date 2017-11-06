@@ -1,0 +1,32 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates area series with empty points.
+    </p>
+</div>
+<div class="control-section">
+        <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [chartArea]='chartArea' [width]='width' align='center' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='Area' xName='x' yName='y' name='France' opacity=0.8 width=2 border-color='transparent'>
+                </e-series>
+                <e-series [dataSource]='data1' type='Area' xName='x' yName='y' name='US' opacity=0.8  width=2  border-color='transparent'>
+                </e-series>
+           </e-series-collection>
+       </ej-chart>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the area type charts. Similar to line type series, but the area get closed and filled with series color.
+        You can use <code>border</code>, <code>fill</code> properties to customize the area. <code>marker</code> and <code>dataLabel</code> are used to represent individual data and its value.
+        Legend is enabled in this example with series type shape.
+     </p> 
+     <br>
+         <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Chart component features are segregated into individual feature-wise modules. To use area series feature, we need to inject
+            <code>AreaService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+        <p>
+            More information on the area series can be found in this
+            <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#areaseriesmodule-areaseries">documentation section</a>.
+        </p>   
+</div>

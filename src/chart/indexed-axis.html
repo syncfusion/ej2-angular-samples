@@ -1,0 +1,53 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates rendering of indexed category axis for a chart by using two series.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-md-9">
+        <ej-chart style='display:block;' #chart id='chartcontainer' [primaryXAxis]='primaryXAxis' [tooltip]='tooltip' [crosshair]='crosshairLabel'
+            [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='data1' type='Column' xName='x' yName='y' name='2015' width=2 [marker]='marker'> </e-series>
+                <e-series [dataSource]='data2' type='Column' xName='x' yName='y' name='2016' width=2 [marker]='marker1'> </e-series>
+            </e-series-collection>
+        </ej-chart>
+    </div>
+    <div class="col-md-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div>Indexed:</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="checkbox" (change)='isIndexed($event)' id="isIndexed" checked>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to indexed axis in chart. For indexed category axis you can use <code>isIndexed</code> property.
+    </p>
+    <p>
+        Hover the chart area to view trackball and its tooltip. Touch and hold to enable trackball in touch enabled devices.
+    </p>
+    <br>
+    <p>
+        More information on the indexed axis can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#datetimemodule-datetime">documentation section</a>.
+    </p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

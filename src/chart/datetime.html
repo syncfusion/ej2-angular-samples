@@ -1,6 +1,11 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates rendering of date time axis for chart by using weather statistics of Alaska for a year.
+    </p>
+</div>
 <div class="control-section">
         <div>
-            <ej-chart style='display:block;' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)'>
+            <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)'>
                 <e-series-collection>
                     <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='Warmest' width=2 [marker]='marker1'> </e-series>
                     <e-series [dataSource]='data2' type='Line' xName='x' yName='y' name='Coldest' width=2 [marker]='marker2'> </e-series>

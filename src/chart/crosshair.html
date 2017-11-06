@@ -1,14 +1,14 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates crosshair feature in chart. To see crosshair, hover or touch this chart and you can see instantaneous values of where you hovered.
+    </p>
+</div>
 <div class="control-section">
-     <ej-chart style='display:block; width: 92%' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [crosshair]='crosshairLabel' (load)='load($event)'>
-         <e-axes>
-            <e-axis rowIndex=0 opposedPosition=true name='yAxis' title='Rainfall (MM)' [crosshairTooltip]='crosshairLabel' [majorGridLines]='majorGridLines'
-                [minimum]='0' [maximum]='160' [interval]='20'>
-            </e-axis>
-         </e-axes>
+     <ej-chart style='display:block; width: 92%' [chartArea]='chartArea' [width]='width' align='center' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [axes]='axes' [title]='title' [crosshair]='crosshairLabel' (load)='load($event)' [legendSettings]='legend'>
          <e-series-collection>
-             <e-series [dataSource]='series1' type='Line' xName='x' yName='y' name='Temperature' [border]='border' width=2>
+             <e-series [dataSource]='series1' type='Line' xName='xDate' yName='High' width=2 [border]='border' [marker]='marker'>
              </e-series>
-             <e-series [dataSource]='series2' type='Line' xName='x' yName='y' name='Rainfall' yAxisName='yAxis' width=2>
+             <e-series [dataSource]='series2' type='HiloOpenClose' xName='xDate' yAxisName='yAxis' high='High' low='Low' open='Open' close='Close' bearFillColor= '#2ecd71' bullFillColor= '#e74c3d'>
              </e-series>
          </e-series-collection>
     </ej-chart>

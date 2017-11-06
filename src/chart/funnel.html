@@ -1,0 +1,63 @@
+<div class="control-section">
+    <div class="col-md-9">
+        <ej-accumulationchart id="container" #funnel style='display:block;  width: 92%'  [tooltip]="tooltip" [title]="title" 
+        (load)='load($event)' (resized)='onChartResized($event)'>
+            <e-accumulation-series-collection>
+                <e-accumulation-series [dataSource]='data' xName='x' yName='y' [neckWidth]="neckWidth" [neckHeight]="neckHeight" [gapRatio]="gapRatio"
+                [emptyPointSettings]="emptyPointSettings" width = "60%" height = "80%" [explode]="explode" [dataLabel]="dataLabel" type='Funnel'> </e-accumulation-series>
+            </e-accumulation-series-collection>
+        </ej-accumulationchart>
+    </div>
+    <div class="col-md-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tr style="height: 50px">
+                        <td style="width: 30%">
+                            <div>Neck Width:
+                                <p id="neckWidth" style="font-weight: normal;">15%</p>
+                            </div>
+                        </td>
+                        <td style="width: 70%;">
+                            <div data-role="rangeslider">
+                                <input type="range" name="range-min" value="15" min="0" max="45" (touchmove)='funnelNeckWidth($event)' (pointermove)='funnelNeckWidth($event)' (change)='funnelNeckWidth($event)' autocomplete="off" id="funnelNeckWidth" style="width:90%">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 30%">
+                            <div>Neck Height:
+                                <p id="neckHeight" style="font-weight: normal;">18%</p>
+                            </div>
+                        </td>
+                        <td style="width: 70%;">
+                            <div data-role="rangeslider">
+                                <input type="range" name="range-min" id="funnelNeckHeight" value="18" min="0" max="50" (touchmove)='funnelNeckHeight($event)' (pointermove)='funnelNeckHeight($event)' (change)='funnelNeckHeight($event)' autocomplete="off" style="width:90%">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates funnel chart for website visitors for various purposes. You can change neck height and neck width of a funnel chart using <code>Neck Width</code> and <code>Neck Height</code> in the property panel.
+    </p>
+</div>
+<div id="description">
+    <p> In this example, you can see how to render and configure the funnel chart.<code>dataLabel</code> are used to represent individual data and its value.</p>
+    <p> <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.</p>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use Funnel feature, we need to inject
+        <code>FunnelService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

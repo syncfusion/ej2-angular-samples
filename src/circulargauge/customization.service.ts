@@ -12,10 +12,10 @@ export class DynamicDataSerive {
             axes: [{
                 annotations: [{
                     content: '<div style="color:#666666;font-size:35px;">50.5GB</div>',
-                    angle: 180, radius: '0%'
+                    angle: 180, radius: '0%', zIndex:'1'
                 }, {
                     content: '<div style="color:#757575;font-size:15px;">Used</div>',
-                    angle: 180, radius: '25%',
+                    angle: 180, radius: '25%', zIndex:'1',
                     textStyle: {
                         fontFamily: 'Roboto',
                         color: '#9E9E9E',
@@ -50,7 +50,7 @@ export class DynamicDataSerive {
                 annotations: [{
                     content: '<div style="color:#666666;font-size:35px;">1800</div>',
                     angle: 0,
-                    radius: '110%'
+                    radius: '110%', zIndex:'1'
                 }],
                 lineStyle: { width: 0 },
                 startAngle: 300, endAngle: 60,

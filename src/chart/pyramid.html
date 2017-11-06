@@ -1,0 +1,33 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates pyramid chart for food comparision.
+    </p>
+</div>
+<div class="control-section">
+    <div>
+        <ej-accumulationchart id="container" #pyramid style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip"
+            [title]="title" (load)='load($event)' (resized)='onChartResized($event)'>
+            <e-accumulation-series-collection>
+                <e-accumulation-series [dataSource]='data' xName='x' yName='y' [neckWidth]="neckWidth" [gapRatio]="gapRatio" [emptyPointSettings]="emptyPointSettings"
+                    width="45%" height="80%" [explode]="explode" [dataLabel]="dataLabel" type='Pyramid'> </e-accumulation-series>
+            </e-accumulation-series-collection>
+        </ej-accumulationchart>
+    </div>
+</div>
+<div id="description">
+    <p> In this example, you can see how to render pyramid chart. <code>dataLabel</code> are used to represent individual data
+        and its value.</p>
+    <p> <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch
+        enabled devices.</p>
+    <p> <code>Legends</code> are disabled in this example, the information about it can be read using <code>Tooltips</code>.</p>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use Pyramid feature, we need to inject
+        <code>PyramidService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

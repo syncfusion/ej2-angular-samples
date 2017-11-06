@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Trackball
@@ -39,49 +40,38 @@ export class TrackBallChartComponent {
         { x: new Date(2005, 2, 11), y: 66 }, { x: new Date(2005, 9, 11), y: 65 },
         { x: new Date(2006, 2, 11), y: 79 }
     ];
-
-    public mark: Object[] = [
-        { x: new Date(2000, 2, 11), y: 75 }, { x: new Date(2000, 9, 14), y: 75 },
-        { x: new Date(2001, 2, 11), y: 68 }, { x: new Date(2001, 9, 16), y: 75 },
-        { x: new Date(2002, 2, 7), y: 71 }, { x: new Date(2002, 9, 7), y: 69 },
-        { x: new Date(2003, 2, 11), y: 81 }, { x: new Date(2003, 9, 14), y: 84 },
-        { x: new Date(2004, 2, 6), y: 85 }, { x: new Date(2004, 9, 6), y: 87 },
-        { x: new Date(2005, 2, 11), y: 75 }, { x: new Date(2005, 9, 11), y: 70 },
-        { x: new Date(2006, 2, 11), y: 85 }
-    ];
-
-    public william: Object[] = [
-        { x: new Date(2000, 2, 11), y: 85 }, { x: new Date(2000, 9, 14), y: 83 },
-        { x: new Date(2001, 2, 11), y: 85 }, { x: new Date(2001, 9, 16), y: 87 },
-        { x: new Date(2002, 2, 7), y: 82 }, { x: new Date(2002, 9, 7), y: 74 },
-        { x: new Date(2003, 2, 11), y: 73 }, { x: new Date(2003, 9, 14), y: 75 },
-        { x: new Date(2004, 2, 6), y: 73 }, { x: new Date(2004, 9, 6), y: 60 },
-        { x: new Date(2005, 2, 11), y: 48 }, { x: new Date(2005, 9, 11), y: 55 },
-        { x: new Date(2006, 2, 11), y: 40 }
-    ];
+    //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Years',
-        minimum: new Date(2000, 1, 1), maximum: new Date(2006, 2, 11),
-        intervalType: 'Years',
+        inimum: new Date(2000, 1, 1), maximum: new Date(2006, 2, 11),
         valueType: 'DateTime',
+        skeleton: 'y',
         lineStyle: { width: 0 },
         majorGridLines: { width: 0 },
         edgeLabelPlacement: 'Shift'
     };
+    //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Revenue in Millions',
+        title: 'Revenue',
         labelFormat: '{value}M',
         majorTickLines: { width: 0 },
-        minimum: 10, maximum: 90,
+        minimum: 10, maximum: 80,
         lineStyle: { width: 0 },
     };
+    public chartArea: Object = {
+        border: {
+            width: 0
+        }
+    };
+
+    public width: string = Browser.isDevice ? '100%' : '60%';
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     };
     public title: string = 'Average Sales per Person';
     public marker: Object = { visible: true };
-    public tooltip: Object = { enable: true, shared: true, format: '${series.name} : ${point.x} : ${point.y}' };
+    public tooltip: Object = { enable: true, shared: true };
     public crosshair: Object = { enable: true, lineType: 'Vertical' };
     constructor() {
         //code

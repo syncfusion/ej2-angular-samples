@@ -1,11 +1,14 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates area series type in the chart.
+    </p>
+</div>
 <div class="control-section">
-        <ej-chart style='display:block;' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
+        <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Area' xName='x' yName='y' name='Product A' opacity=0.5 width=2 border-color='transparent'>
                 </e-series>
                 <e-series [dataSource]='data1' type='Area' xName='x' yName='y' name='Product B' opacity=0.5 width=2  border-color='transparent'>
-                </e-series>
-                <e-series [dataSource]='data2' type='Area' xName='x' yName='y' name='Product C' opacity=0.5 width=2  border-color='transparent'>
                 </e-series>
            </e-series-collection>
        </ej-chart>

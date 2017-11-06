@@ -1,0 +1,72 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates empty point rendering for chart. You can change mode of empty point by using <code>Empty Point Mode</code> in property panel.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-lg-8">
+        <ej-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
+            [tooltip]='tooltip' (load)='load($event)' [legendSettings] = 'legendSettings'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Profit' width=2 [marker]='marker'>
+                </e-series>
+            </e-series-collection>
+        </ej-chart>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tr style="height: 50px">
+                        <td style="width: 50%">
+                            <div>Series Type:</div>
+                        </td>
+                        <td style="width: 50%;">
+                            <div>
+                                <select name="selectIndex" autocomplete="off" id="seriestype" style="width:90%">
+                                             <option value="Column">Column</option>
+                                             <option value="Area">Area</option>
+                                             <option value="Spline">Spline</option>
+                                         </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 50%">
+                            <div>Empty Point Mode:</div>
+                        </td>
+                        <td style="width: 50%;">
+                            <div>
+                                <select name="selectIndex" autocomplete="off" id="emptyPointMode" style="width:90%">
+                                    <option value="Gap">Gap</option>
+                                    <option value="Drop">Drop</option>
+                                    <option value="Average">Average</option>
+                                    <option value="Zero">Zero</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the empty points. You can use <code>border</code>,
+        <code>fill</code>, <code>mode</code> properties to customize the empty points.
+    </p>
+    <p>
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <p>
+        More information on the empty points can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#columnseriesmodule-columnseries">documentation section</a>.
+    </p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

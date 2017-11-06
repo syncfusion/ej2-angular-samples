@@ -15,6 +15,7 @@ export class PointerImageComponent {
         color: '#00CC66'
     };
     public rangeWidth: number= 25;
+    //Initializing titleStyle
     public titleStyle: Object = { size: '18px' };
     public title: string = 'Short Put Distance';
     public font2: Object = {

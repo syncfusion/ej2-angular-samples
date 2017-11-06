@@ -1,5 +1,10 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates performance of EJ2 chart such that it calculates time required to render 100K points when you click <code>Load 100K Points</code>.
+    </p>
+</div>
 <div class="control-section">
-   <div class="col-md-9">
+   <div class="col-lg-9">
                 <ej-chart #chart style="display:block;" (loaded)="onChartLoad($event)" [primaryXAxis]='primaryXAxis' (load)='load($event)' >
                     <e-series-collection>
                         <e-series type='Line' xName='x' yName='y'> </e-series>

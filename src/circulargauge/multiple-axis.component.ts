@@ -20,21 +20,23 @@ export class MultipleAxisComponent {
     public lineStyle1: Object = {
         width: 1.5, color: '#9E9E9E'
     };
+    //Initializing MajorTicks
     public majorTicks1: Object = {
         position: 'Inside',
-        width: 0.5,
+        width: 2,
         height: 10,
         color: '#757575'
 
     };
     public title: string = 'Gauge with Multiple Axes';
+    //Initializing TitleStyle
     public titleStyle: Object = {
         color: 'gray',
         size: '16px'
     };
     public minorTicks1: Object = {
         position: 'Inside',
-        width: 0.5,
+        width: 2,
         height: 5,
         color: '#757575'
 
@@ -59,13 +61,13 @@ export class MultipleAxisComponent {
     };
     public majorTicks2: Object = {
         position: 'Outside',
-        width: 0.5,
+        width: 2,
         height: 10,
         color: '#E84011'
     };
     public minorTicks2: Object = {
         position: 'Outside',
-        width: 0.5,
+        width: 2,
         height: 5,
         color: '#E84011'
     };

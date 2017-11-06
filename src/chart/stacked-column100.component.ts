@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts'
-
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts'
+import { Browser } from '@syncfusion/ej2-base';
 /**
  * Stacked Column Series
  */
@@ -13,66 +13,49 @@ import { ILoadedEventArgs } from '@syncfusion/ej2-ng-charts'
 export class PercentStackedColumnChartComponent {
 
     public data: Object[] = [
-        { x: '2014', y: 111.1 },
-        { x: '2015', y: 127.3 },
-        { x: '2016', y: 143.4 },
-        { x: '2017', y: 159.9 },
-        { x: '2018', y: 175.4 },
-        { x: '2019', y: 189.0 },
-        { x: '2020', y: 202.7 }
+        { x: '2006', y: 900, y1: 190, y2: 250, y3: 150 },
+        { x: '2007', y: 544, y1: 226, y2: 145, y3: 120 },
+        { x: '2008', y: 880, y1: 194, y2: 190, y3: 115 },
+        { x: '2009', y: 675, y1: 250, y2: 220, y3: 125 }
     ];
-    public data1: Object[] = [
-        { x: '2014', y: 76.9 },
-        { x: '2015', y: 99.5 },
-        { x: '2016', y: 121.7 },
-        { x: '2017', y: 142.5 },
-        { x: '2018', y: 166.7 },
-        { x: '2019', y: 182.9 },
-        { x: '2020', y: 197.3 }
-    ];
-    public data2: Object[] = [
-        { x: '2014', y: 66.1 },
-        { x: '2015', y: 79.3 },
-        { x: '2016', y: 91.3 },
-        { x: '2017', y: 102.4 },
-        { x: '2018', y: 112.9 },
-        { x: '2019', y: 122.4 },
-        { x: '2020', y: 120.9 }
-    ];
-    public data3: Object[] = [
-        { x: '2014', y: 34.1 },
-        { x: '2015', y: 38.2 },
-        { x: '2016', y: 44.0 },
-        { x: '2017', y: 51.6 },
-        { x: '2018', y: 61.9 },
-        { x: '2019', y: 71.5 },
-        { x: '2020', y: 82.0 }
-    ];
+    //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Years',
-        line: { width: 0 },
-        majorGridLines: { width: 1 },
-        minorGridLines: { width: 1 },
-        minorTickLines: { width: 1 },
         valueType: 'Category',
-        interval: 1,
-        labelIntersectAction : 'Rotate45'
+        labelIntersectAction: 'Rotate45',
+        majorGridLines: { width: 0 },
+        minorGridLines: { width: 0 },
+        majorTickLines: { width: 0 },
+        minorTickLines: { width: 0 }
     };
+    //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Sales in Percentage (%)',
+        title: 'GDP (%) per Annum',
+        rangePadding: 'None',
+        interval: 20,
+        majorTickLines: { width: 0 },
         majorGridLines: { width: 1 },
         minorGridLines: { width: 1 },
-        minorTickLines: { width: 1 }
+        minorTickLines: { width: 0 },
+        lineStyle: {
+            width: 0
+        }
     };
     public tooltip: Object = {
-        enable: true,
-        format: '${point.x} <br>${series.name} : ${point.y} (${point.percent}%)'
+        enable: true
     };
+    public chartArea: Object = {
+        border: {
+            width: 0
+        }
+    };
+    public width: string = Browser.isDevice ? '100%' : '60%';
+
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     };
-    public title: string = 'Mobile Game Market by Country';
+    public title: string = 'Gross Domestic Product Growth';
     constructor() {
         //code
     };

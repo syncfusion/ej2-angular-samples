@@ -1,3 +1,8 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates semi pie chart for agriculture land percentages of various countries.
+    </p>
+</div>
 <div class="control-section">
     <div class="col-md-8">
         <ej-accumulationchart #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='load($event)'>
@@ -20,7 +25,7 @@
                         </td>
                         <td style="width: 40%;">
                             <div data-role="rangeslider">
-                                <input type="range" name="range-min" id="range-min" value="270" min="0" max="360" (mousemove)='startangle($event)' (touchmove)='startangle($event)' (change)='startangle($event)' autocomplete="off" style="margin-left: -5px">
+                                <input type="range" name="range-min" id="range-min" value="270" min="0" max="360" (mousemove)='startangle($event)' (touchmove)='startangle($event)' (change)='startangle($event)' autocomplete="off" style="width:90%">
                             </div>
                         </td>
                     </tr>
@@ -32,7 +37,7 @@
                         </td>
                         <td style="width: 40%;">
                             <div data-role="rangeslider">
-                                <input type="range" name="range-min" id="range-max" value="90" min="0" max="360" (mousemove)='endangle($event)' (touchmove)='endangle($event)' (change)='endangle($event)' autocomplete="off" style="margin-left: -5px">
+                                <input type="range" name="range-min" id="range-max" value="90" min="0" max="360" (mousemove)='endangle($event)' (touchmove)='endangle($event)' (change)='endangle($event)' autocomplete="off" style="width:90%">
                             </div>
                         </td>
                     </tr>
@@ -44,7 +49,7 @@
                         </td>
                         <td style="width: 40%;">
                             <div data-role="rangeslider">
-                                <input type="range" name="innerRadius" id="inner-radius" value="40" min="0" max="50" (mousemove)='onChange($event)' (touchmove)='onChange($event)' (change)='onChange($event)' autocomplete="off" style="margin-left: -5px">
+                                <input type="range" name="innerRadius" id="inner-radius" value="40" min="0" max="50" (mousemove)='onChange($event)' (touchmove)='onChange($event)' (change)='onChange($event)' autocomplete="off" style="width:90%">
                             </div>
                         </td>
                     </tr>

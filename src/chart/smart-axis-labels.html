@@ -1,0 +1,92 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates smart labels placing for cartesian axis.You can change label intersect action by using <code>Intersect Action</code> and edge label placement can be changed by <code>Edge Label Placement</code>.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-md-8">
+        <ej-chart #chart style='display:block;' id='chartcontainer' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
+            (load)='load($event)' [tooltip]='tooltip' (pointRender)='pointRender($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='Column' xName='x' yName='y' width=2 [marker]='marker'>
+                </e-series>
+            </e-series-collection>
+        </ej-chart>
+    </div>
+    <div class="col-md-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tr style="height: 50px">
+                        <td style="width: 40%">
+                            <div>Intersect Action:</div>
+                        </td>
+                        <td style="width: 60%;">
+                            <div>
+                                <select name="Intersect" autocomplete="off" id="intersecttype" style="width: 90%;">
+                                    <option value="Hide">Hide</option>
+                                    <option value="Trim">Trim</option>
+                                    <option value="Wrap">Wrap</option>
+                                    <option value="MultipleRows">MultipleRows</option>
+                                    <option value="Rotate45">Rotate45</option>
+                                    <option value="Rotate90">Rotate90</option>
+                                    <option value="None">None</option>
+                                         </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div>Edge Label Placement:</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <select name="EdgeLabel" autocomplete="off" id="labelplacement" style="width:90%">
+                                    <option value="None">None</option>
+                                    <option value="Hide">Hide</option>
+                                    <option value="Shift">Shift</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to arrange the axis labels smartly. When the Axis labels overlap with each other based on
+        the chart dimensions and label size, you can use the <code>labelIntersectAction</code> property of the axis
+        to avoid overlapping.
+    </p>
+    <p>Chart supports the following by which can be set using <code>labelIntersectAction</code> property.
+    </p>
+    <ul>
+        <li><code>Hide</code> - Hide the label when it intersect.</li>
+        <li><code>Trim</code> - Trim the label when it intersect.</li>
+        <li><code>Wrap</code> - Wrap the label when it intersect.</li>
+        <li><code>MultipleRows</code> - Arrange the label in multiple row when it intersect.</li>
+        <li><code>Rotate45</code> - Rotate the label to 45 degree when it intersect.</li>
+        <li><code>Rotate90</code> - Rotate the label to 90 degree when it intersect.</li>
+        <li><code>None</code> - Shows all the labels.</li>
+    </ul>
+    <br>
+    <p>Chart supports three types of edge labels placement which can be set using <code>edgeLabelPlacement</code> property.
+    </p>
+    <ul>
+        <li><code>None</code> - No action will be performed.</li>
+        <li><code>Hide</code> - Edge label will be hidden .</li>
+        <li><code>Shift</code> - Shifts the edge labels.</li>
+    </ul>
+    <p>
+        More information on the smart axis labels can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/documentation/chart/api-axis.html#valuetype-valuetype">documentation section</a>.
+    </p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

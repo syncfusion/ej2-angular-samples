@@ -22,7 +22,9 @@ export class SampleDataComponent {
     public majorTicks: Object = { width: 0 };
     public lineStyle: Object = { width: 0 };
     public minorTicks: Object = { width: 0 };
+    //Initializing LabelStyle
     public labelStyle: Object = { font: { size: '0' } };
+    //Initializing Annotation
     public annotation1: string = "<div id='templateWrap'><img class='imageStyle' src='src/circulargauge/images/positive.png' />" +
     "<div class='fontDes'>${pointers[0].value}%</div></div></div>";
     public annotation2: string = "<div class='fontDes1'>Germany</div>"
@@ -134,7 +136,7 @@ export class SampleDataComponent {
                 'Country': 'UK',
                 'Sales': 600,
                 'Target': 700,
-                'vsTarget': 100
+                'vsTarget': -100
             }
         ];
     }
@@ -164,7 +166,7 @@ export class SampleDataComponent {
                             'Country': 'UK',
                             'Sales': 600,
                             'Target': 700,
-                            'vsTarget': gridData3
+                            'vsTarget': -gridData3
                         }
                     ];
 

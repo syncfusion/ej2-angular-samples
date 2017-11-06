@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs} from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * logarithmic Axis
@@ -24,23 +25,24 @@ export class LogarithmicAxisChartComponent {
         { x: new Date(2003, 0, 1), y: 6000 },
         { x: new Date(2004, 0, 1), y: 8000 },
         { x: new Date(2005, 0, 1), y: 11000 }];
+    //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Years',
         labelFormat: 'y',
         valueType: 'DateTime',
         edgeLabelPlacement: 'Shift'
     };
+    //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         valueType: 'Logarithmic',
+        edgeLabelPlacement: 'Shift',
         minorTicksPerInterval: 5,
-        majorGridLines: { width: 1.5, opacity: 0.8 },
-        minorTickLines: { width: 0, size: 4 },
+        majorGridLines: { width: 1.5 },
+        minorTickLines: { width: 0, height: 4 },
         minimum: 0,
         maximum: 100000,
         interval: 1,
-        title: 'Profit ($)',
-        labelFormat: '${value}',
-        edgeLabelPlacement: 'Shift'
+        title: 'Profit',
+        labelFormat: '${value}'
     };
     public legend: Object = {
         visible: false
@@ -51,12 +53,18 @@ export class LogarithmicAxisChartComponent {
         width: 10
     };
     public tooltip: Object = {
-        enable: true,
-        format: '${series.name}<br> ${point.x} : ${point.y}'
+        enable: true
     };
+    public chartArea: Object = {
+        border: {
+            width: 1
+        }
+    };
+    public width: string = Browser.isDevice ? '100%' : '60%';
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     };
     public title: string = 'Product X Growth [1995-2005]';
     constructor() {

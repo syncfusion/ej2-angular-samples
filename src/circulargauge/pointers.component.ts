@@ -19,6 +19,7 @@ export class PointersComponent {
     public sixthgauge: CircularGaugeComponent;
 
     public lineStyle1: Object = { width: 3, color: '#ff5985' };
+    //Initializing LabelStyle
     public labelStyle1: Object = {
         position: 'Outside',
         font: { size: '0px', color: '#ff5985' }

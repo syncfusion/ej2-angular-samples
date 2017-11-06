@@ -15,12 +15,14 @@ export class UpdateComponent {
     public updateGauge: LinearGaugeComponent;
     public toolTipInterval: number;
     private element: HTMLElement = document.getElementById('updateGauge');
+    //Initializing Container
     public Container: Object = {
         height: 350,
         width: 20,
         offset: -85,
         backgroundColor: '#d6d1d1'
     };
+    //Initializing Annotation
     public Annotation: Object[] = [
         {
             content: '<div id="systolic" style="width:200px;color:#808080"><h1 style="font-size:13px">Systolic:-</h1></div>',

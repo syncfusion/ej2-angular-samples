@@ -1,5 +1,10 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates step area series type in the chart.
+    </p>
+</div>
 <div class="control-section">
-    <ej-chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+    <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
         [title]='title' (load)='load($event)'>
         <e-series-collection>
             <e-series [dataSource]='data' type='StepArea' xName='x' yName='y' name='Renewable' width=2> </e-series>

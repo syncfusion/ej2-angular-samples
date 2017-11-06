@@ -1,8 +1,13 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates fetching remote data for the chart.
+    </p>
+</div>
 <div class="control-section">
-    <ej-chart #chart style='display:block;' id='chartcontainer' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-         [legendSettings]='legend' [title]='title' [tooltip]='tooltip'(axisLabelRender)='labelRender($event)' (loaded)='loadedChart($event)' (load)='loadChart($event)'>
+    <ej-chart #chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+         [legendSettings]='legend' [title]='title' [tooltip]='tooltip'(axisLabelRender)='labelRender($event)' (loaded)='loadedChart($event)' (load)='loadChart($event)' (pointRender)='pointRender($event)'>
         <e-series-collection>
-            <e-series [dataSource]='data' type='Column' xName='Assignee' yName='Estimate' [query]='query' name='Inprogress' width=2>
+            <e-series [dataSource]='data' type='Column' xName='Assignee' yName='Estimate' [query]='query' name='Inprogress' width=2 [marker]='marker'>
             </e-series>
         </e-series-collection>
     </ej-chart>
