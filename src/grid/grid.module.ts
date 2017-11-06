@@ -55,7 +55,7 @@ export const gridRouteConfig: Object[] = [
         hideOnDevice: true
     },
     {
-        'path': ':theme/grid/rowheight', component: RowHeightComponent, name: 'Row Height', order: '01', category: 'Grid', type: 'new'
+        'path': ':theme/grid/rowheight', component: RowHeightComponent, name: 'Row Height', order: '01', category: 'Grid'
     },
     { 'path': ':theme/grid/localdata', component: LocalDataComponent, 'name': 'Local Binding', order: '02', category: 'Data Binding' },
     { 'path': ':theme/grid/remotedata', component: DataBindingComponent, 'name': 'Remote Binding', order: '02', category: 'Data Binding' },
@@ -67,7 +67,7 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/column/columnresizing', component: ColumnResizingComponent, name: 'Column Resizing', order: '03', category: 'Column' },
     { 'path': ':theme/grid/selection', component: SelectionComponent, name: 'Default Selection', order: '04', category: 'Selection' },
     { 'path': ':theme/grid/selectionapi', component: SelectionApiComponent, name: 'Selection API', order: '04', category: 'Selection' },
-    { 'path': ':theme/grid/checkboxselection', component: CheckboxSelectionComponent, name: 'Checkbox Selection', order: '04', category: 'Selection', type: 'new'},
+    { 'path': ':theme/grid/checkboxselection', component: CheckboxSelectionComponent, name: 'Checkbox Selection', order: '04', category: 'Selection'},
     {
         'path': ':theme/grid/aggregatedefault', component: AggregateComponent, name: 'Default Aggregate', order: '05', category: 'Aggregate'
     },
@@ -111,7 +111,7 @@ export const gridRouteConfig: Object[] = [
         'path': ':theme/grid/multiple-exporting', component: MultipleExportingComponent, name: 'Multiple Exporting', order: '08',
         category: 'Exporting'
     },
-    { 'path': ':theme/grid/clipboard', component: ClipboardComponent, name: 'Clipboard', order: '01', category: 'Grid', type: 'new' }
+    { 'path': ':theme/grid/clipboard', component: ClipboardComponent, name: 'Clipboard', order: '01', category: 'Grid' }
 ];
 
 let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
