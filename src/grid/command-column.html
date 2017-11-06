@@ -1,0 +1,41 @@
+<div class="control-section">
+    <ej-grid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings'>
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right" isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
+            <e-column field='CustomerID' headerText='Customer ID' width='120' textAlign="right" [validationRules]='customeridrules'></e-column>
+            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right" editType='numericedit' [validationRules]='freightrules'></e-column>
+            <e-column field='ShipName' headerText='Ship Name' width='170'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='150' editType='dropdownedit' [edit]='editparams'></e-column>
+            <e-column headerText='Manage Records' width='160' [commands]='commands'></e-column>
+        </e-columns>
+    </ej-grid>
+    <div id="description">
+        <p>
+            The Grid provides an option to render CRUD action buttons in a column by using the CommandColumn feature. The
+            <code><a target="_blank" class="code"
+            href="http://ej2.syncfusion.com/angular/documentation/grid/api-column.html#commands-commandmodel">columns->commands
+            </a></code> property accepts array of <code><a target="_blank" class="code"
+                href="http://ej2.syncfusion.com/angular/documentation/grid/api-commandModel.html">CommandModel
+            </a></code> object. The predefined command button can be defined by using <code><a target="_blank" class="code"
+                href="http://ej2.syncfusion.com/angular/documentation/grid/api-commandModel.html#type-string">type
+            </a></code> property.
+        </p>
+        <p>The built-in command button are,</p>
+        <ul>
+            <li><code>edit</code></li>
+            <li><code>delete</code></li>
+            <li><code>cancel</code></li>
+            <li><code>save</code></li>
+        </ul>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Grid features are segregated into individual feature-wise modules. To use commandColumn feature, 
+            we need to inject <code>CommandColumnService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+        <p>
+            More information on the commandcolumn configuration can be found in this
+            <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/grid/column.html#command-column">
+       documentation section</a>.
+        </p>
+    </div>
+</div>
