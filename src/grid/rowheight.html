@@ -1,0 +1,21 @@
+<div class="control-section">
+    <ej-grid [dataSource]='data' allowPaging='true' [pageSettings]='initialPage' rowHeight = '50'>
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' width='80' textAlign="right"></e-column>
+            <e-column field='CustomerName' headerText='Customer Name' width='170'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='135' format="yMd" textAlign="right"></e-column>
+            <e-column field='Freight' headerText='Freight' width='160' format='C2' textAlign="right"></e-column>
+        </e-columns>
+    </ej-grid>
+
+    <div id="description">
+        <p>
+            The Grid has support to provide <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#rowheight-number">rowHeight
+        </a></code> property.
+        </p>
+        <p>
+           In this demo, the row height for all the Grid rows is set as <b>50px</b> using the <b>rowHeight</b> property
+        </p>
+    </div>
+</div>
