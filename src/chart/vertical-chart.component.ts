@@ -24,6 +24,9 @@ export class VerticalChartComponent {
     public primaryYAxis: Object = {
         title: 'Vilocity (m/s)', majorGridLines: { width: 0 }, minimum: -15, maximum: 15, interval: 5
     };
+    public marker: Object = {
+        visible: false
+    };
     public animation1: Object = {
         enable: false
     };

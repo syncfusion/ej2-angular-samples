@@ -4,13 +4,15 @@
     </p>
 </div>
 <div class="control-section">
-    <ej-chart style='display:block' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-        [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' isTransposed='true' [width]='width'>
-        <e-series-collection>
-            <e-series [dataSource]='data' type='Spline' xName='x' yName='y' name='London' width=2 [marker]='marker'> </e-series>
-            <e-series [dataSource]='data1' type='Spline' xName='x' yName='y' name='France' width=2 [marker]='marker'> </e-series>
-        </e-series-collection>
-    </ej-chart>
+    <div align='center'>
+        <ej-chart style='display:block' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' isTransposed='true' [width]='width'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='Spline' xName='x' yName='y' name='London' width=2 [marker]='marker'> </e-series>
+                <e-series [dataSource]='data1' type='Spline' xName='x' yName='y' name='France' width=2 [marker]='marker'> </e-series>
+            </e-series-collection>
+        </ej-chart>
+    </div>
 </div>
 <div id="description">
     <p>

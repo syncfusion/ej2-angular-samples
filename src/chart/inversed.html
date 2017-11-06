@@ -4,21 +4,24 @@
     </p>
 </div>
 <div class="control-section">
-        <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-         [tooltip]='tooltip' [legendSettings]='legend' (load)='load($event)' (pointRender)='pointRender($event)'>
+    <div align='center'>
+        <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [title]='title'
+            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [legendSettings]='legend' (load)='load($event)'
+            (pointRender)='pointRender($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Rate' [marker]='marker'>
-                </e-series>                
-           </e-series-collection>
-       </ej-chart>
+                </e-series>
+            </e-series-collection>
+        </ej-chart>
+    </div>
 </div>
 <div id="description">
     <p>
-    In this example, you can see how to inverse an axis in chart. Here both the X and Y axis are inversed using <code>isInversed</code> property.        
+        In this example, you can see how to inverse an axis in chart. Here both the X and Y axis are inversed using <code>isInversed</code>        property.
     </p>
     <p> DataLabel are used to represent individual data and its value.</p>
-     <p>
-      Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    <p>
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
     </p>
     <p>
         More information on inversed axis can be found in this

@@ -1,28 +1,33 @@
 <div id="action-description">
     <p>
-        This sample demonstrates multiple axis chart by plotting temperature in celsious in an axis and temperature in farenheit in another axis.
+        This sample demonstrates multiple axis chart by plotting temperature in celsious in an axis and temperature in farenheit
+        in another axis.
     </p>
 </div>
 <div class="control-section">
-        <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'  [title]='title' [tooltip]='tooltip' (load)='load($event)' [annotations]='annotations' [axes]='axis' [legendSettings]='legend'>
-              <e-series-collection>
-                   <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Germany' width=2> 
-                   </e-series>
-                   <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='Japan' width=2 yAxisName='yAxis' [marker]='marker'>
-                   </e-series>
-              </e-series-collection>
+    <div align='center'>
+        <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
+            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [annotations]='annotations'
+            [axes]='axis' [legendSettings]='legend'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Germany' width=2>
+                </e-series>
+                <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='Japan' width=2 yAxisName='yAxis' [marker]='marker'>
+                </e-series>
+            </e-series-collection>
         </ej-chart>
+    </div>
 </div>
 <div id="description">
-        <p>
-        In this example, you can see how to render and configure multipe axes. Use axes collection to render secondary axis to the chart and bind it to the specify series.
-        You can also customize the axis line and its labels similar to primary axis.
-        </p>
-        <p> 
+    <p>
+        In this example, you can see how to render and configure multipe axes. Use axes collection to render secondary axis to the
+        chart and bind it to the specify series. You can also customize the axis line and its labels similar to primary axis.
+    </p>
+    <p>
         Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
-        </p>
-         <p>
-            More information on the multipe axis can be found in this
-            <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#axes-axismodel">documentation section</a>.
-        </p> 
+    </p>
+    <p>
+        More information on the multipe axis can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#axes-axismodel">documentation section</a>.
+    </p>
 </div>

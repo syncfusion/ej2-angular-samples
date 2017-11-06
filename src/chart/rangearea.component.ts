@@ -26,6 +26,9 @@ export class RangeAreaComponent {
     lineStyle: { width: 0 },
     majorTickLines: { width: 0 }
   };
+  public marker :Object = {
+    visible :false
+  }
   public legend: Object = {
     visible: false
   }

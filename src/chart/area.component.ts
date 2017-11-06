@@ -45,6 +45,9 @@ export class AreaChartComponent {
         majorGridLines: { width: 0 },
         labelFormat: '{value}M'
     };
+    public marker: Object = {
+        visible: false
+    };
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';

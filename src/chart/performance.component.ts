@@ -34,6 +34,7 @@ export class PerformanceChartComponent {
         this.chart.series[0].dataSource = series1;
         this.chart.series[0].xName = 'x';
         this.chart.series[0].yName = 'y';
+        this.chart.series[0].marker.visible = false;
         this.chart.refresh();
     }
     constructor() {

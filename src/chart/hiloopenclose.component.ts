@@ -45,6 +45,9 @@ export class HiloOpenCloseChartComponent {
         enable: true,
         shared: true
     };
+    public marker: Object = {
+        visible: false
+    };
     public crosshair: Object = {
         enable: true,
         lineType: 'Vertical'

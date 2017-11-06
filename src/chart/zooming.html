@@ -1,59 +1,68 @@
 <div id="action-description">
     <p>
-        This sample demonstrates zooming feature in chart. You can pinch on chart or by using mouse scroll, zooming on a chart can be performed. 
+        This sample demonstrates zooming feature in chart. You can pinch on chart or by using mouse scroll, zooming on a chart can
+        be performed.
     </p>
 </div>
 <style>
     #gradient-chart stop {
-	    stop-color: #BDEDE9;
+        stop-color: #BDEDE9;
     }
+
     #gradient-chart stop[offset="0"] {
-	    stop-opacity: 0.75;
+        stop-opacity: 0.75;
     }
+
     #gradient-chart stop[offset="1"] {
-	    stop-opacity: 0;
+        stop-opacity: 0;
     }
 </style>
 
 <div class="control-section">
-        <ej-chart style='display:block;width: 92%' [chartArea]='chartArea' [width]='width' align='center' [chartArea] = 'chartArea' [primaryXAxis]='primaryXAxis' [legendSettings]='legend' [zoomSettings]='zoomSettings' [title]='title' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
+    <div align='center'>
+        <ej-chart style='display:block;width: 92%' [chartArea]='chartArea' [width]='width' align='center' [chartArea]='chartArea'
+            [primaryXAxis]='primaryXAxis' [legendSettings]='legend' [zoomSettings]='zoomSettings' [title]='title' [primaryYAxis]='primaryYAxis'
+            (load)='load($event)'>
             <e-series-collection>
-                <e-series [dataSource]='series1' type='Area' xName='x' yName='y' [animation]='animation' fill='url(#gradient-chart)' [border]='border'> </e-series>
+                <e-series [dataSource]='series1' type='Area' xName='x' yName='y' [animation]='animation' fill='url(#gradient-chart)' [border]='border'>
+                </e-series>
             </e-series-collection>
         </ej-chart>
+    </div>
 </div>
 <div id="description">
-   <p>This sample demonstrates the zooming and panning behavior in chart.</p>
-   <ul>
-       <li>Click and drag the mouse on a chart area to enable selection zooming.</li>
-       <li>Hover the mouse on the toolbar at the top right corner of chart area to switch between zooming and panning.</li>
-       <li>Pinch in and pinch out the chart area to zoom in or zoom out the chart in touch enabled devices.</li>
-       <li>Touch and drag to pan the chart.</li>
-       <li>Double tap to reset the zoomed chart.</li>
-   </ul>
-    <p>Chart component supports four types of zooming which can be set using <code>enableSelectionZooming</code>, <code>enablePinchZooming</code>, <code>enableMouseWheelZooming</code>, <code>enableDeferredZooming</code> property.
-    <p>Chart supports two mode of zooming which can be set using <code><a target="_blank" class="code"
-        href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#zoomsettings-zoomsettingsmodel">mode</a></code> property.
-    </p>
+    <p>This sample demonstrates the zooming and panning behavior in chart.</p>
     <ul>
-         <li><code>XY</code> - Zoom the chart with respect to both the axis.</li>
-         <li><code>X</code> - Zoom the chart with respect to horizontal axis.</li>
-         <li><code>Y</code> - Zoom the chart with respect to vertical axis.</li>
-    </ul>     
-    <br>
-    <p style="font-weight: 500">Injecting Module</p> 
-    <p>
-         Chart component features are segregated into individual feature-wise modules. To use zooming, we need to inject
-         <code>ZoomService</code> into the <code>@NgModule.providers</code> section.
-     </p>
-     <p>
-         More information on the Zooming can be found in this
-         <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#zoomsettings-zoomsettingsmodel">documentation section</a>.
-     </p> 
+        <li>Click and drag the mouse on a chart area to enable selection zooming.</li>
+        <li>Hover the mouse on the toolbar at the top right corner of chart area to switch between zooming and panning.</li>
+        <li>Pinch in and pinch out the chart area to zoom in or zoom out the chart in touch enabled devices.</li>
+        <li>Touch and drag to pan the chart.</li>
+        <li>Double tap to reset the zoomed chart.</li>
+    </ul>
+    <p>Chart component supports four types of zooming which can be set using <code>enableSelectionZooming</code>, <code>enablePinchZooming</code>,
+        <code>enableMouseWheelZooming</code>, <code>enableDeferredZooming</code> property.
+        <p>Chart supports two mode of zooming which can be set using <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#zoomsettings-zoomsettingsmodel">mode</a></code>            property.
+        </p>
+        <ul>
+            <li><code>XY</code> - Zoom the chart with respect to both the axis.</li>
+            <li><code>X</code> - Zoom the chart with respect to horizontal axis.</li>
+            <li><code>Y</code> - Zoom the chart with respect to vertical axis.</li>
+        </ul>
+        <br>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Chart component features are segregated into individual feature-wise modules. To use zooming, we need to inject
+            <code>ZoomService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+        <p>
+            More information on the Zooming can be found in this
+            <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#zoomsettings-zoomsettingsmodel">documentation section</a>.
+        </p>
 </div>
 <svg style="height: 0">
-	<defs>
-        <linearGradient id="gradient-chart" x1="0"  x2="0" y1="0" y2="1">
+    <defs>
+        <linearGradient id="gradient-chart" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0" />
             <stop offset="1" />
         </linearGradient>

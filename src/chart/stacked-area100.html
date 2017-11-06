@@ -4,13 +4,13 @@
     </p>
 </div>
 <div class="control-section">
-        <div>
+        <div align='center'>
             <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)'>
                 <e-series-collection>
-                    <e-series [dataSource]='data' type='StackingArea100' xName='x' yName='y' name='Organic'> </e-series>
-                    <e-series [dataSource]='data1' type='StackingArea100' xName='x' yName='y' name='Fair-trade'> </e-series>
-                    <e-series [dataSource]='data2' type='StackingArea100' xName='x' yName='y' name='Veg Alternatives'> </e-series>
-                    <e-series [dataSource]='data3' type='StackingArea100' xName='x' yName='y' name='Others'> </e-series>
+                    <e-series [dataSource]='data' type='StackingArea100' xName='x' yName='y' [marker]='marker' name='Organic'> </e-series>
+                    <e-series [dataSource]='data1' type='StackingArea100' xName='x' yName='y' [marker]='marker' name='Fair-trade'> </e-series>
+                    <e-series [dataSource]='data2' type='StackingArea100' xName='x' yName='y' [marker]='marker' name='Veg Alternatives'> </e-series>
+                    <e-series [dataSource]='data3' type='StackingArea100' xName='x' yName='y' [marker]='marker' name='Others'> </e-series>
                 </e-series-collection>
             </ej-chart>
         </div>

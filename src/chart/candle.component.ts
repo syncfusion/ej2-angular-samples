@@ -66,6 +66,9 @@ export class CandleChartComponent {
     public chartArea: Object = {
         border: { width: 0 }
     };
+    public marker: Object = {
+        visible: false
+    };
     public axisLabelRender(args: IAxisLabelRenderEventArgs): void {
         if (args.axis.name === 'primaryYAxis') {
             args.text = this.getLabelText(+args.text);

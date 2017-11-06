@@ -80,7 +80,7 @@ export class ExportChartComponent {
     ngOnInit(): void {
         this.exportType = new DropDownList({
             index: 0,
-            width: 100,
+            width: 90,
         });
         this.exportType.appendTo('#exporttype');
     }

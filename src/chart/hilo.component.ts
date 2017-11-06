@@ -33,6 +33,9 @@ export class HiloChartComponent {
         lineStyle: { width: 0 },
         majorTickLines: { width: 0 }
     };
+    public marker: Object = {
+        visible: false
+    };
     //Initializing Zooming
     public zoomSettings: Object = {
         enableMouseWheelZooming: true,

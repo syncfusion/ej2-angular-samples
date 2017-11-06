@@ -67,6 +67,9 @@ export class StackedAreaChartComponent {
         labelFormat: 'y',
         edgeLabelPlacement: 'Shift'
     };
+    public marker: Object = {
+        visible: false
+    };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         title: 'Spends',

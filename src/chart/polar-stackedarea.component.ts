@@ -38,6 +38,9 @@ export class PolarStackedAreaChartComponent {
         interval: 5000,
         maximum: 20000
     };
+    public marker: Object = {
+        visible: false
+    };
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';

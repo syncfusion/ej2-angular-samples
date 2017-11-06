@@ -1,34 +1,39 @@
 <div id="action-description">
     <p>
-        This sample demonstrates crosshair feature in chart. To see crosshair, hover or touch this chart and you can see instantaneous values of where you hovered.
+        This sample demonstrates crosshair feature in chart. To see crosshair, hover or touch this chart and you can see instantaneous
+        values of where you hovered.
     </p>
 </div>
 <div class="control-section">
-     <ej-chart style='display:block; width: 92%' [chartArea]='chartArea' [width]='width' align='center' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [axes]='axes' [title]='title' [crosshair]='crosshairLabel' (load)='load($event)' [legendSettings]='legend'>
-         <e-series-collection>
-             <e-series [dataSource]='series1' type='Line' xName='xDate' yName='High' width=2 [border]='border' [marker]='marker'>
-             </e-series>
-             <e-series [dataSource]='series2' type='HiloOpenClose' xName='xDate' yAxisName='yAxis' high='High' low='Low' open='Open' close='Close' bearFillColor= '#2ecd71' bullFillColor= '#e74c3d'>
-             </e-series>
-         </e-series-collection>
-    </ej-chart>
+    <div align='center'>
+        <ej-chart style='display:block; width: 92%' [chartArea]='chartArea' [width]='width' align='center' [primaryXAxis]='primaryXAxis'
+            [primaryYAxis]='primaryYAxis' [axes]='axes' [title]='title' [crosshair]='crosshairLabel' (load)='load($event)' [legendSettings]='legend'>
+            <e-series-collection>
+                <e-series [dataSource]='series1' type='Line' xName='xDate' yName='High' width=2 [border]='border' [marker]='marker'>
+                </e-series>
+                <e-series [dataSource]='series2' type='HiloOpenClose' xName='xDate' yAxisName='yAxis' high='High' low='Low' open='Open' close='Close'
+                    bearFillColor='#2ecd71' bullFillColor='#e74c3d'>
+                </e-series>
+            </e-series-collection>
+        </ej-chart>
+    </div>
 </div>
 <div id="description">
     <p>
         This sample demonstrates the crosshair behavior in chart. Crosshair is used to inspect or focus on an individual data point.
         You can customize the axis tooltip using <code>crosshairTooltip</code> properties in axis.
     </p>
-    <p> 
-     Hover the chart area to view crosshair and its tooltip. Touch and hold to enable crosshair in touch enabled devices. 
+    <p>
+        Hover the chart area to view crosshair and its tooltip. Touch and hold to enable crosshair in touch enabled devices.
     </p>
-     <br>
-        <p style="font-weight: 500">Injecting Module</p>
-        <p>
-            Chart component features are segregated into individual feature-wise modules. To use crosshair feature, we need to inject
-            <code>CrosshairService</code> into the <code>@NgModule.providers</code> section.
-        </p>
-        <p>
-            More information on the crosshair can be found in this
-            <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#crosshair-crosshairoptionsmodel">documentation section</a>.
-        </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use crosshair feature, we need to inject
+        <code>CrosshairService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information on the crosshair can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#crosshair-crosshairoptionsmodel">documentation section</a>.
+    </p>
 </div>

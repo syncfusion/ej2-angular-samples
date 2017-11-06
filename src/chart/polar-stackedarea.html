@@ -7,13 +7,13 @@
     <div class="col-lg-9">
         <ej-chart #chart style='display:block;' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Polar' drawType='StackingArea' xName='x' yName='y' name='2013' width=2>
+                <e-series [dataSource]='data' type='Polar' [marker]='marker'drawType='StackingArea' xName='x' yName='y' name='2013' width=2>
                 </e-series>
-                <e-series [dataSource]='data' type='Polar' drawType='StackingArea' xName='x' yName='y1' name='2014' width=2>
+                <e-series [dataSource]='data' type='Polar' [marker]='marker'drawType='StackingArea' xName='x' yName='y1' name='2014' width=2>
                 </e-series>
-                <e-series [dataSource]='data' type='Polar' drawType='StackingArea' xName='x' yName='y2' name='2015' width=2>
+                <e-series [dataSource]='data' type='Polar' [marker]='marker'drawType='StackingArea' xName='x' yName='y2' name='2015' width=2>
                 </e-series>
-                <e-series [dataSource]='data' type='Polar' drawType='StackingArea' xName='x' yName='y3' name='2016' width=2>
+                <e-series [dataSource]='data' type='Polar' [marker]='marker'drawType='StackingArea' xName='x' yName='y3' name='2016' width=2>
                 </e-series>
             </e-series-collection>
         </ej-chart>
