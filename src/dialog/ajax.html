@@ -1,12 +1,20 @@
 <div class="control-section" style="padding:10px;position:relative;">
+    <!-- Create Button to open the Dialog -->
     <button ej-button id='ajaxBtn' #ajaxButton (click)="ajaxBtnClick()">Open</button>
-
+    <!-- Render the Dialog -->
     <ej-dialog #dialog [header]='header' [height]='ajaxHeight' [content]='content' [animationSettings]='animationSettings' [showCloseIcon]='showCloseIcon' [target]='target' [width]='width' (open)="dialogOpen()" (close)="dialogClose()">
     </ej-dialog>
 </div>
+<div id="action-description">
+    <p>
+    This sample demonstrates that the content of Dialog can be loaded from external source using Ajax library.
+    Click on “Open” button to show the Dialog again if it is closed.
+    </p>
+</div>
 <div id="description">
     <p>
-        This sample illustrates the external webpage content loaded inside the dialog by using AJAX library.
+            Using AJAX library, AJAX request will be made and the requested content will be received
+            on the Ajax success event. After that, the Dialog will be rendered using the received content.
     </p>
 </div>
 <style>

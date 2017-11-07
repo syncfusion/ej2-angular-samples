@@ -14,8 +14,8 @@ export class RTLDialogComponent {
     rtlBtnClick() {
         this.rtlDialog.show();
     }
-    public header: string = 'الحوار';
-    public content: string = '<div>انقر فوق موافق للمتابعة أو انقر فوق عدم الموافقة على إلغاء التثبيت والانتهاء.</div>';
+    public header: string = 'Delete File';
+    public content: string = '<div>Are you sure you want to delete sea.jpg?</div>';
     public showCloseIcon: Boolean = true;
     public width: string = '300px';
     public enableRtl: Boolean = true;
@@ -24,14 +24,16 @@ export class RTLDialogComponent {
     ngAfterViewInit():void{
         document.getElementById('rtlbtn').focus();
     }
+    // On Dialog close, 'Open' Button will be shown
     dialogClose() {
         document.getElementById('rtlbtn').style.display = '';
     }
+    // On Dialog open, 'Open' Button will be hidden
     dialogOpen() {
         document.getElementById('rtlbtn').style.display = 'none';
     }
 
-    public rtlDlgButtons: Object[] = [{ click: this.rtlDlgBtnClick, buttonModel: { content: 'يوافق على', cssClass: 'e-flat', isPrimary: true } }, { click: this.rtlDlgBtnClick, buttonModel: { cssClass: 'e-flat', content: 'تعارض' } }];
+    public rtlDlgButtons: Object[] = [{ click: this.rtlDlgBtnClick, buttonModel: { content: 'Yes', cssClass: 'e-flat', isPrimary: true } }, { click: this.rtlDlgBtnClick, buttonModel: { cssClass: 'e-flat', content: 'No' } }];
     rtlDlgBtnClick() {
         this.hide();
     }

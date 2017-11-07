@@ -17,10 +17,12 @@ export class AjaxDialogComponent implements OnInit{
         let ajax: Ajax = new Ajax('./src/dialog/twitter.html', 'GET', true);
         ajax.send().then();
         ajax.onSuccess = (data: string): void => {
+            // Loading Dialog content on AJAX success
             this.ajaxData = data;
             this.content=data;         
         };
     }
+    // Dialog will be opened on button click
     ajaxBtnClick() {
         this.dialog.show();
     }
@@ -34,9 +36,11 @@ export class AjaxDialogComponent implements OnInit{
     public ajaxHeight: string = '270px';
     public width: string = '500px';
     public animationSettings: Object = { effect: 'None' };
+    // Button will be shown, when Dialog has been closed
     dialogClose() {
         document.getElementById('ajaxBtn').style.display = '';
     }
+    // Button will be hidden, when Dialog has been opened
     dialogOpen() {
         document.getElementById('ajaxBtn').style.display = 'none';
     }

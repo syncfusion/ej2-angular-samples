@@ -1,15 +1,24 @@
 <div class="control-section">
 
+    <!-- Render Button to open the Dialog -->
     <button ej-button id='rtlbtn' #rtlButton (click)="rtlBtnClick()">Open</button>
 
+    <!-- Render Dialog in RTL format by setting 'enableRtl' as true -->
     <ej-dialog #rtlDialog [buttons]='rtlDlgButtons' [header]='header' [animationSettings]='animationSettings' [content]='content' [enableRtl]='enableRtl' [showCloseIcon]='showCloseIcon' [target]='target' [width]='width' (open)="dialogOpen()"
         (close)="dialogClose()">
     </ej-dialog>
 </div>
+<div id="action-description">
+    <p>
+    This sample demonstrates that the RTL mode of Dialog component,
+    that displays content from right-to-left direction.
+    Click on “Open” button to show the Dialog again if it is closed.
+    </p>
+</div>
 <div id="description">
     <p>
-        This sample is rendered with Arabic language and written from Right to Left. 
-        To enable this RTL support in Dialog set enableRTL property as true.
+        This sample is rendered with English language, and written from right-to-left. 
+        To enable this RTL support in Dialog, set enableRTL property as true.
     </p>
 </div>
 <style>

@@ -9,6 +9,7 @@ import { DialogComponent } from '@syncfusion/ej2-ng-popups';
     templateUrl: 'basic.html',
 })
 export class DefaultDialogComponent {
+    // Define Dialog properties
     @ViewChild('alertDialog')
     public alertDialog: DialogComponent;
     @ViewChild('confirmDialog')
@@ -32,9 +33,11 @@ export class DefaultDialogComponent {
     public hide: any;
     ngAfterViewInit():void{
         document.getElementById('alertbtn').focus();
+        // Styles will be added while focusing password field
         document.getElementById('password').addEventListener("focus", function () {
             this.parentElement.classList.add('e-input-focus');
         });
+        // Styles will be removed while focus out from password field
         document.getElementById('password').addEventListener("blur", function () {
             this.parentElement.classList.remove('e-input-focus');
             });
@@ -49,30 +52,36 @@ export class DefaultDialogComponent {
         this.hide();
     }
 
+    // Render the Buttons to open corresponding Dialogs
     public alertDlgButtons: Object[] = [{ click: this.alertDlgBtnClick, buttonModel: { content: 'Dismiss', cssClass: 'e-flat', isPrimary: true } }];
     public confirmDlgButtons: Object[] = [{ click: this.confirmDlgBtnClick, buttonModel: { content: 'Yes', cssClass: 'e-flat', isPrimary: true } }, { click: this.confirmDlgBtnClick, buttonModel: { cssClass: 'e-flat', content: 'No' } }];
     public promptDlgButtons: Object[] = [{ click: this.promptDlgBtnClick, buttonModel: { content: 'Connect', cssClass: 'e-flat', isPrimary: true } }, { click: this.promptDlgBtnClick, buttonModel: { cssClass: 'e-flat', content: 'Cancel' } }];
 
+    // While clicking alert button, open the alert Dialog
     alertBtnClick() {
         this.alertDialog.show();
         this.dialogOpen();
     }
 
+    // While clicking confirm button, open the confirm Dialog
     confirmBtnClick() {
         this.confirmDialog.show();
         this.dialogOpen();
     }
 
+    // While clicking prompt button, open the prompt Dialog
     promptBtnClick() {
         this.promptDialog.show();
         this.dialogOpen();
     }
 
+    // On Dialog close, show the buttons
     dialogClose() {
         (document.querySelectorAll('.dlgbtn')[0] as HTMLElement).classList.remove('e-btn-hide');
         (document.querySelectorAll('.dlgbtn')[1] as HTMLElement).classList.remove('e-btn-hide');
         (document.querySelectorAll('.dlgbtn')[2] as HTMLElement).classList.remove('e-btn-hide');
     }
+    // On Dialog open, hide the buttons
     dialogOpen() {
         (document.querySelectorAll('.dlgbtn')[0] as HTMLElement).classList.add('e-btn-hide');
         (document.querySelectorAll('.dlgbtn')[1] as HTMLElement).classList.add('e-btn-hide');

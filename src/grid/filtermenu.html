@@ -1,0 +1,34 @@
+<div class="control-section">
+    <ej-toolbar class='e-gridlist' (clicked)="onClicked($event.originalEvent)">
+        <e-items>
+            <e-item text='menu'></e-item>
+            <e-item text='checkbox'></e-item>
+        </e-items>
+    </ej-toolbar>
+    <ej-grid #grid [dataSource]='data | slice:0:200' allowPaging='true' allowFiltering='true' [pageSettings]='pageSettings' [filterSettings]='filterSettings'>
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right"></e-column>
+            <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign="right"></e-column>
+            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right"></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign="right"></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='150'></e-column>
+        </e-columns>
+    </ej-grid>
+
+    <div id="description">
+        <p>The filtering feature enables the user to view the reduced amount of records based on filter criteria. It can be
+            enabled by setting <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-grid.html#allowfitering-boolean">allowFiltering
+        </a></code> property as true. </p>
+        <p>Grid supports the following filter types. They are </p>
+        <ul>
+            <li><code>filter bar</code></li>
+            <li><code>menu</code></li>
+            <li><code>check box</code></li>
+        </ul>
+        you can change the filter type by setting <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-filterSettings.html?lang=typescript#type-string">filterSettings->type</a></code>
+        <p> In this demo, filter menu enabled by default , you can switch to other filter type by using dropdown.
+
+    </div>

@@ -1,7 +1,8 @@
 <div class="control-section" style="padding:10px;position:relative;">
     <div id="modalTarget" #targetModal class="col-md-9 control-section" style="height:350px;">
+        <!-- Render Button to open the modal Dialog -->
         <button ej-button id='modalbtn' #modalButton (click)="modalBtnClick()">Open</button>
-
+        <!-- Render modal Dialog -->
         <ej-dialog id="modalDialog" #modalDialog [isModal]='isModal' [header]='header' [target]='target' [width]='width' [buttons]='buttons' [animationSettings]='animationSettings' [content]='content' (open)="modalDlgOpen()" (close)="modalDlgClose()"
             (overlayClick)="overlayClick()">
         </ej-dialog>
@@ -17,6 +18,7 @@
                         </td>
                         <td style="width: 30%;">
                             <div>
+                                <!-- Checkbox to enable / disable the overlay click -->
                                 <input type="checkbox" id="checkbox" class="checkbox" />
                             </div>
                         </td>
@@ -26,17 +28,20 @@
         </div>
     </div>
 </div>
+<div id="action-description">
+    <p>
+    This sample demonstrates that the modal behavior of Dialog component.
+    Choose "Close on overlay" option from property panel to decide whether the Dialog will be closed on click on the overlay.
+    Click on “Open” button to show the Dialog again if it is closed.
+    </p>
+</div>
 <div id="description">
     <p>
-        A modal prevents the access to the parent application, so the user should interact with dialog compulsory before continuing
-        parent.
+        A modal prevents the access to the parent application, so that the user should interact with the Dialog compulsory before continuing
+        the parent application.
     </p>
-    <p>
-        In this demo, we enabled the modal in Dialog and check the "Close on overlay click" option if you want to close the Dialog
-        on overlay click.
-    </p>
-    <p>More information on the modal behavior of dialog can be found in this 
-    <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/dialog/getting-started.html#modal-dialog">
+    <p>More information on the modal behavior of Dialog can be found in the
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/dialog/getting-started.html#modal-dialog">
         documentation section</a>.</p>
 </div>
 <style>

@@ -14,6 +14,7 @@ import { ReorderComponent } from './column/reorder.component';
 import { SortComponent } from './sorting.component';
 import { PageComponent } from './paging.component';
 import { FilterComponent } from './filtering.component';
+import { FilteringMenuComponent } from './filtermenu.component';
 import { SelectionComponent } from './selection.component';
 import { SelectionApiComponent } from './selectionapi.component';
 import { GroupComponent } from './grouping.component';
@@ -47,6 +48,7 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/gridlines', component: GridLinesComponent, 'name': 'Grid Lines', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/paging', component: PageComponent, name: 'Paging', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/filtering', component: FilterComponent, name: 'Filtering', order: '01', category: 'Grid' },
+	{ 'path': ':theme/grid/filtermenu', component: FilteringMenuComponent, name: 'FilteringMenu', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/grouping', component: GroupComponent, name: 'Grouping', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/sorting', component: SortComponent, name: 'Sorting', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/searching', component: SearchComponent, name: 'Searching', order: '01', category: 'Grid' },
@@ -125,7 +127,7 @@ let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent, VirtualizationComponent,
     NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent, ColumnResizingComponent,
     ExportingComponent, MultipleExportingComponent, CheckboxSelectionComponent, ClipboardComponent, CommandColumnComponent,
-    RowHeightComponent];
+    RowHeightComponent, FilteringMenuComponent];
 
 @NgModule({
     imports: [RouterModule.forChild(gridRouteConfig), CommonModule, HttpModule, ToolbarModule, GridAllModule, SharedModule],
