@@ -20,9 +20,11 @@ export class AjaxAccordionComponent implements AfterViewInit  {
       let ajax: Ajax = new Ajax('./src/accordion/Ajax_content.html', 'GET', true);
       ajax.send().then();
       ajax.onSuccess = (data: string): void => {
+        // Loading Accordion content on AJAX success  
         this.acrdn.items[0].content = data;
         if (this.acrdn.element.childElementCount !== 0) {
-         this.acrdn.refresh();
+            // Refreshing Accoridon Component with AJAX content
+            this.acrdn.refresh();
         } else {
          this.acrdn.dataBind();
         }
@@ -34,6 +36,7 @@ export class AjaxAccordionComponent implements AfterViewInit  {
             if (e.element.querySelectorAll('.e-accordion').length > 0) {
                 return;
             }
+            //Initialize Nested Accordion component
             let nestAcrdn: Accordion = new Accordion({
                 expandMode: 'Single',
                 items: [
@@ -42,6 +45,7 @@ export class AjaxAccordionComponent implements AfterViewInit  {
                     { header: 'Video Recording', content: '#Video_Rec_features' },
                 ]
             });
+            //Render initialized Nested Accordion component
             nestAcrdn.appendTo('#nested_Acc');
         }
     }

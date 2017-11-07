@@ -1,11 +1,12 @@
 <div id="action-description">
     <p>
-        This sample demonstrates rendering <code>Accordion</code> content from external source using <code>Ajax</code> library. The content of panel “Video Recording” is loaded from external element.
+        This sample demonstrates rendering <code>Accordion</code> content from external source using <code>Ajax</code> library. The content of panel “Network & Connectivity” is loaded from external element.
     </p>
 </div>
 <div class="control-section accordion-control-section">
     <div class="e-sample-resize-container">
         <div class="product_title"> iPhone X Product Specification </div>
+        <!-- Render the Accoridon Component -->
         <ej-accordion #accordion expandMode='Single' (expanding)="expand($event)">
             <e-accordionitems>
                 <e-accordionitem header='Network & Connectivity' [content]='content' expanded='true'></e-accordionitem>

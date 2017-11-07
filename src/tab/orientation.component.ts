@@ -24,19 +24,35 @@ export class OrientationTabComponent {
         sourceFiles.files = ['tab.component.css'];
     }
 
+    // Mapping Tab items Header property
     public headerText: Object = [{ text: 'Rome' }, { text: 'Paris' }, { text: 'London' }];
+
+    // Mapping DropDownList dataSource property
     public dataPlace: Object[] = [
         { id: 'top', position: 'Top' }, { id: 'bottom', position: 'Bottom' }
     ];
+
+    // Mapping DropDownList dataSource property
     public dataStyles: Object[] = [
         { id: 'default', class: 'Default' }, { id: 'fill', class: 'Fill' }, { id: 'accent', class: 'Accent' }
     ];
+
+    // Mapping DropDownList fields property
     public placeFields: Object = { text: 'position', value: 'id' };
+
+    // Mapping DropDownlist fields property
     public styleFields: Object = { text: 'class', value: 'id' };
+
+    // Mapping DropDownList value property
     public placeValue: string = 'top';
+
+    // Mapping DropDownList value property
     public styleValue: string = 'default';
+
+    // Mapping Tab items showCloseButton property
     public enableClose: boolean = true;
 
+    // Mapping Tab items Content property
     public content0: string = '<div class="content-title"><div class="cnt-text">Employee Info</div></div><div id="rome">' +
         '<div class="template-container"><div class="left"><img class="empImg" src="src/dropdownlist/Employees/1.png" ' +
         'alt="Anne Dodsworth" /></div><div class="left info"><div class="name">Anne Dodsworth</div> <div class="role">' +
@@ -46,6 +62,7 @@ export class OrientationTabComponent {
         'class="left"><img class="empImg" src="src/dropdownlist/Employees/3.png" alt="Andrew Fuller" /></div><div ' +
         'class="left info"><div class="name">Andrew Fuller</div> <div class="role">Developer</div></div></div></div>';
 
+    // Mapping Tab items Content property    
     public content1: string = '<div class="content-title"><div class="cnt-text">Employee Info</div></div><div id="rome">' +
         '<div class="template-container"><div class="left"><img class="empImg" src="src/dropdownlist/Employees/4.png" ' +
         'alt="Robert King" /></div><div class="left info"><div class="name">Robert King</div> <div class="role">' +
@@ -55,6 +72,7 @@ export class OrientationTabComponent {
         'class="left"><img class="empImg" src="src/dropdownlist/Employees/6.png" alt="Margaret Peacock" /></div><div ' +
         'class="left info"><div class="name">Margaret Peacock</div> <div class="role">Developer</div></div></div></div>';
 
+    // Mapping Tab items Content property    
     public content2: string = '<div class="content-title"><div class="cnt-text">Employee Info</div></div><div id="rome">' +
         '<div id="ripple" class="template-container"><div class="left"><img class="empImg" src="src/dropdownlist/Employees/7.png" ' +
         'alt="Janet Leverling" /></div><div class="left info"><div class="name">Janet Leverling</div> <div class="role">' +
@@ -64,8 +82,10 @@ export class OrientationTabComponent {
         'class="left"><img class="empImg" src="src/dropdownlist/Employees/9.png" alt="Nancy Davolio" /></div><div ' +
         'class="left info"><div class="name">Nancy Davolio</div> <div class="role">Product Manager</div></div></div></div>';
 
+    // Change event funtion for DropDownList component    
     public placeChange(e: Object): void {
         this.placeValue = this.placeObj.value.toString();
+        //set headerPlacement property to Tab Component
         if (this.placeObj.value === 'bottom') {
             this.tabObj.headerPlacement = 'Bottom';
         } else {
@@ -74,6 +94,7 @@ export class OrientationTabComponent {
         this.tabObj.dataBind();
     }
 
+    // Change event funtion for DropDownList component
     public styleChange(e: Object): void {
         this.styleValue = this.styleObj.value.toString();
         this.removeStyleClass();

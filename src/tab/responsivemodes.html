@@ -6,6 +6,7 @@
 <div class="control-section">
     <div class="col-lg-8 content-wrapper">
         <div class="e-sample-resize-container">
+            <!-- Render the Tab Component -->
             <ej-tab id="tab_adaptive" #adaptiveTab heightAdjustMode='Content'>
                 <e-tabitems>
                     <e-tabitem [header]='headerText[0]' [content]="content0"></e-tabitem>
@@ -30,6 +31,7 @@
                             <div>Mode:</div>
                         </td>
                         <td style="width:50%">
+                            <!-- Render DropDownList for Switching Tab properties -->
                             <ej-dropdownlist id='overflow-modes' width='90%' #modes [dataSource]='data' (change)='onChange($event)' [value]='value' [fields]='fields'>
                             </ej-dropdownlist>
                         </td>

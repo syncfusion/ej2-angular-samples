@@ -72,6 +72,8 @@
     .e-mail-item {
         margin-top: 8px;
         border-bottom: 1px solid #d3d3d3;
+		height: 100%;
+        overflow: hidden;
     }
 
     .e-mail-image {
