@@ -60,6 +60,7 @@ export class IconsTreeViewComponent {
         }
     ];
     public field:Object ={ dataSource: this.hierarchicalData, id: 'nodeId', text: 'nodeText', child: 'nodeChild', iconCss: 'icon', imageUrl: 'image' };
+    // Load icons for TreeView
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['icons.component.css'];
     }

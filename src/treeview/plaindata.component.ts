@@ -10,6 +10,7 @@ import { Component, Inject } from '@angular/core';
 })
 export class PlainTreeViewComponent {
 
+    // Hierarchical data source for TreeView component
     public continents: { [key: string]: Object; }[] = [
         {
             code: 'NA', name: 'North America', expanded: true, countries: [
@@ -62,6 +63,7 @@ export class PlainTreeViewComponent {
     ];
     public fields: object = { dataSource: this.continents, id: 'code', text: 'name', child: 'countries' };
 
+    // Self-referential list data source for TreeView component
     public localData: Object[] = [
         { id: 1, name: 'Discover Music', hasChild: true, expanded: true },
         { id: 2, pid: 1, name: 'Hot Singles', selected: true },

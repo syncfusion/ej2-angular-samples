@@ -9,6 +9,7 @@ import { Component, Inject } from '@angular/core';
 })
 export class DefaultTreeViewComponent {
 
+   // Hierarchical data source for TreeView component
    public hierarchicalData: Object[] = [
         { id: '01', name: 'Local Disk (C:)', expanded: true,
             subChild: [
@@ -97,6 +98,7 @@ export class DefaultTreeViewComponent {
             ]
         }
     ];
+    // Mapping TreeView fields property with data source properties
     public field:Object ={ dataSource: this.hierarchicalData, id: 'id', text: 'name', child: 'subChild' };
 
 }

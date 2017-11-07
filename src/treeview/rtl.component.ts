@@ -11,46 +11,53 @@ export class RTLTreeViewComponent {
 
     public hierarchicalData: Object[] = [
         {
-            id: 1, name: 'ASP.NET MVC Team', expanded: true,
+            id: 1, name: 'Web Controls', expanded: true,
             child: [
-                { id: 2, pid: 1, name: 'Smith' },
-                { id: 3, pid: 1, name: 'Johnson' },
-                { id: 4, pid: 1, name: 'Anderson' },
-            ]
-        },
-        {
-            id: 5, name: 'Windows Team',
-            child: [
-                { id: 6, pid: 5, name: 'Clark' },
-                { id: 7, pid: 5, name: 'Wright' },
-                { id: 8, pid: 5, name: 'Lopez' },
-            ]
-        },
-        {
-            id: 9, name: 'Web Team',
-            child: [
-                { id: 11, pid: 9, name: 'Joshua' },
-                { id: 12, pid: 9, name: 'Matthew' },
-                { id: 13, pid: 9, name: 'David' },
-            ]
-        },
-        {
-            id: 14, name: 'Build Team',
-            child: [
-                { id: 15, pid: 14, name: 'Ryan' },
-                { id: 16, pid: 14, name: 'Justin' },
-                { id: 17, pid: 14, name: 'Robert' },
-            ]
-        },
-        {
-            id: 18, name: 'WPF Team',
-            child: [
-                { id: 19, pid: 18, name: 'Brown' },
-                { id: 20, pid: 18, name: 'Johnson' },
-                { id: 21, pid: 18, name: 'Miller' },
+                {
+                    id: 2, pid: 1, name: 'Calendar', child: [
+                        { id: 7, pid: 2, name: 'Constructors' },
+                        { id: 8, pid: 2, name: 'Properties' },
+                        { id: 9, pid: 2, name: 'Methods' },
+                        { id: 10, pid: 2, name: 'Events' }
+                    ]
+                },
+                {
+                    id: 3, pid: 1, name: 'Data Grid', child: [
+                        { id: 11, pid: 3, name: 'Constructors' },
+                        { id: 12, pid: 3, name: 'Fields' },
+                        { id: 13, pid: 3, name: 'Properties' },
+                        { id: 14, pid: 3, name: 'Methods' },
+                        { id: 15, pid: 3, name: 'Events' }
+                    ]
+                },
+                {
+                    id: 4, pid: 1, name: 'DropDownList', child: [
+                        { id: 16, pid: 4, name: 'Constructors' },
+                        { id: 17, pid: 4, name: 'Properties' },
+                        { id: 18, pid: 4, name: 'Methods' }
+                    ]
+                },
+                {
+                    id: 5, pid: 1, name: 'Menu', child: [
+                        { id: 19, pid: 5, name: 'Constructors' },
+                        { id: 20, pid: 5, name: 'Fields' },
+                        { id: 21, pid: 5, name: 'Properties' },
+                        { id: 22, pid: 5, name: 'Methods' },
+                        { id: 23, pid: 5, name: 'Events' }
+                    ]
+                },
+                {
+                    id: 6, pid: 1, name: 'TextBox', child: [
+                        { id: 20, pid: 6, name: 'Constructors' },
+                        { id: 21, pid: 6, name: 'Properties' },
+                        { id: 22, pid: 6, name: 'Methods' },
+                        { id: 23, pid: 6, name: 'Events' }
+                    ]
+                }
             ]
         }
     ];
     public field:Object = { dataSource: this.hierarchicalData, id: 'id', text: 'name', child: 'child' };
+    // Enable RTL option in TreeView
     public enableRtl:boolean = true;
 }

@@ -9,6 +9,7 @@ import { Component, Inject } from '@angular/core';
 })
 export class EditTreeViewComponent {
 
+   // Hierarchical data source for TreeView component
    public hierarchicalData: Object[] = [
         {
             id: 1, name: 'Discover Music', expanded: true,
@@ -54,5 +55,6 @@ export class EditTreeViewComponent {
         }
     ];
     public field:Object ={ dataSource: this.hierarchicalData, id: 'id', text: 'name', child: 'child' };
+    // Enable TreeView editing option
     public allowEditing:boolean = true;
 }

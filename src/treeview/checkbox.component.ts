@@ -9,6 +9,7 @@ import { Component, Inject } from '@angular/core';
 })
 export class CheckboxTreeViewComponent {
 
+   // Data source for TreeView component
    public countries: Object[] = [
         { id: 1, name: 'Australia', hasChild: true, expanded: true },
         { id: 2, pid: 1, name: 'New South Wales' },
@@ -36,5 +37,6 @@ export class CheckboxTreeViewComponent {
         { id: 25, pid: 21, name: 'Punjab' }
     ];
     public field:Object ={ dataSource: this.countries, id: 'id', parentID: 'pid', text: 'name', hasChildren: 'hasChild' };
+    // Enable the checkbox for TreeView
     public showCheckBox:boolean = true;
 }

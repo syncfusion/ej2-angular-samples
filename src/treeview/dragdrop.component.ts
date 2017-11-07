@@ -9,6 +9,7 @@ import { Component, Inject } from '@angular/core';
 })
 export class DragdropTreeViewComponent {
 
+   // Hierarchical data source for TreeView component
    public hierarchicalData: Object[] = [
         {
             id: 1, name: 'ASP.NET MVC Team', expanded: true,
@@ -51,7 +52,10 @@ export class DragdropTreeViewComponent {
             ]
         }
     ];
+    // Mapping TreeView fields property with data source properties
     public field:Object ={ dataSource: this.hierarchicalData, id: 'id', text: 'name', child: 'child', selected: 'isSelected' };
+    // Allow multi selection
     public allowMultiSelection:boolean = true;
+    // Allow drag and drop
     public allowDragAndDrop:boolean = true;
 }

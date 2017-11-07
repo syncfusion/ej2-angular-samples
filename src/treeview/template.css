@@ -13,6 +13,9 @@
 .eimage {
     float: left;
     padding: 11px 16px 11px 0;
+    height: 48px;
+    width: 48px;
+    box-sizing: content-box;
 }
 .ename {
     font-size: 16px;

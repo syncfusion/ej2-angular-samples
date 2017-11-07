@@ -25,6 +25,7 @@ export class InternationalizationController {
     percentPlaceholder: string = "Geben Sie den Prozentsatz ein";
     currencyPlaceholder: string = "Geben Sie die Währung ein";
     ngOnInit(): void {
+        // Loading English, German and Chinese cultures
         L10n.load({
             'en': {
                 'numerictextbox': {
@@ -51,6 +52,8 @@ export class InternationalizationController {
             require('../common/cldr-data/supplemental/currencyData.json')
         );
     }
+
+    // While changing culture 'locale', 'currency' and 'placeholder' values will be modified.
     changeLocale() {
         let culture: string = (document.getElementById('cultures') as HTMLSelectElement).value;
         this.locale = culture;

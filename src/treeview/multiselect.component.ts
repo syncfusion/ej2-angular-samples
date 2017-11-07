@@ -36,5 +36,6 @@ export class MultiselectTreeViewComponent {
         { id: 25, pid: 21, name: 'Punjab' }
     ];
     public field:Object ={ dataSource: this.localData, id: 'id', parentID: 'pid', text: 'name', hasChildren: 'hasChild', selected: 'isSelected' };
+    // Enable multi tree node selection
     public allowMultiSelection:boolean = true;
 }

@@ -1,15 +1,25 @@
 <div class="control-section">
-    <div class="content-wrapper">
-        <div class="wrapper">
-            <ej-numerictextbox placeholder="Enter the distance" value="250" format="###.### km" min="0" floatLabelType="Auto"></ej-numerictextbox>
+<div class="content-wrapper">
+    <div>
+        <div class="control-label">Enter the distance
         </div>
-        <div class="wrapper">
-            <ej-numerictextbox placeholder="Enter the tax" value="25" format="### '%'" min="0" max="100" floatLabelType="Auto"></ej-numerictextbox>
-        </div>
-        <div class="wrapper">
-            <ej-numerictextbox placeholder="Enter the amount" value="1025" format="$ ###.##" min="0" floatLabelType="Auto"></ej-numerictextbox>
-        </div>
+        <!-- Render Numeric Textbox with custom format -->
+        <ej-numerictextbox value="250" format="###.### km" min="0"></ej-numerictextbox>
     </div>
+    <div>
+        <div class="control-label">Enter the tax
+        </div>
+        <!-- Render Percentage Textbox with custom format -->
+        <ej-numerictextbox value="25" format="### '%'" min="0" max="100"></ej-numerictextbox>
+    </div>
+    <div>
+        <div class="control-label">Enter the amount
+        </div>
+        <!-- Render Currency Textbox with custom format -->
+        <ej-numerictextbox value="1025" format="$ ###.##" min="0"></ej-numerictextbox>
+    </div>
+
+</div>
 </div>
 <div id="description">
     <p>
@@ -27,8 +37,10 @@
         margin: 0 auto;
         min-width: 185px;
     }
-    
-    .wrapper {
-        margin-top: 40px;
+
+    .control-label {
+        padding: 24px 0px 10px 0px;
+        font-size: 12px;
     }
+    
 </style>

@@ -1,8 +1,10 @@
 <div class="control-section">
     <div class="col-lg-8 content-wrapper">
-        <div class="wrapper content">
-            <ej-numerictextbox id="range" value="15" [min]="minValue" [max]="maxValue" [step]="step" placeholder="Numeric TextBox" floatLabelType="Auto"></ej-numerictextbox>
-        </div>
+        <div class="content">
+            <div class="control-label">Numeric TextBox
+            </div>
+            <ej-numerictextbox id="range" value="15" [min]="minValue" [max]="maxValue" [step]="step"></ej-numerictextbox>
+            </div>
     </div>
     <div class="col-lg-4 property-section">
         <div class="property-panel-section">
@@ -75,12 +77,10 @@
     .property-panel-content {
         padding: 0 10px 10px 0;
     }
-    
-    .content {
-        width: 43%;
-        margin: 0 auto;
-        min-width: 185px;
-        padding: 25px 0px;
+
+    .control-label {
+        padding: 24px 0px 10px 0px;
+        font-size: 12px;
     }
     
     .wrapper {
@@ -93,5 +93,11 @@
     
     #buttonApply {
         float: right;
+    }
+    .content {
+        width: 43%;
+        margin: 0 auto;
+        min-width: 185px;
+        padding: 25px 0px;
     }
 </style>
