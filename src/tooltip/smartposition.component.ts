@@ -1,29 +1,37 @@
+/**
+ * Tooltip smart position sample
+ */
+
 import { Component, ViewChild, ViewEncapsulation, Inject, OnInit } from '@angular/core';
 import { TooltipComponent } from '@syncfusion/ej2-ng-popups';
 import { Draggable } from '@syncfusion/ej2-base';
-/**
- * Tooltip Component
- */
+
 @Component({
     selector: 'control-content',
     templateUrl: 'smartposition.html',
     styleUrls: ['tooltip.component.css'],
     encapsulation: ViewEncapsulation.None
 })
+
 export class DraggableTooltipComponent implements OnInit {
     @ViewChild('tooltip')
     public tooltipControl: TooltipComponent;
+
+    //Set tooltip animation
     public tooltipAnimation: Object = {
         open: { effect: 'None' },
         close: { effect: 'None' }
     };
+
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['tooltip.component.css'];
     }
 
     ngOnInit(): void {
+
+        //Handle tooltip smart positioning.
         let ele: HTMLElement = document.getElementById('demoSmart');
-        let drag: Draggable = new Draggable(ele, {
+        let drag: Draggable = new Draggable(ele, { //Initialize Draggable for tooltip element
             clone: false,
             dragArea: '#targetContainer',
             drag: (args: any) => {

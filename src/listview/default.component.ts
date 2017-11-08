@@ -1,15 +1,18 @@
+/**
+ * ListView Default Sample
+ */
+
 import { Component, Inject } from '@angular/core';
 
-/**
- * Default ListView Component
- */
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
     styleUrls:['listview.css']
 })
+
 export class DefaultListViewComponent {
 
+    //Define an array of JSON data
     public data: Object[] = [
         { text: 'Hennessey Venom', id: 'list-01' },
         { text: 'Bugatti Chiron', id: 'list-02' },
@@ -23,6 +26,7 @@ export class DefaultListViewComponent {
         { text: 'Ferrari LaFerrari', id: 'list-10' },
     ];
 
+    //Define an array of JSON data
     public groupData: { [key: string]: Object }[] = [
         {
             'text': 'Audi A4',
@@ -76,6 +80,7 @@ export class DefaultListViewComponent {
         }
     ];
 
+    //Map the appropriate columns to fields property
     public fields: Object = { groupBy: 'category' };
 
     constructor(@Inject('sourceFiles') private sourceFiles:any) {

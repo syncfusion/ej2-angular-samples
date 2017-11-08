@@ -1,16 +1,19 @@
+/**
+ * ListView Nested Sample
+ */
+
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
 
-/**
- * Nested ListView component
- */
 @Component({
     selector: 'control-content',
     templateUrl: 'nested-list.html',
     styleUrls: ['listview.css'],
     encapsulation: ViewEncapsulation.None
 })
+
 export class NestedListViewComponent {
 
+    //Define an array of JSON data
     public data: { [key: string]: Object }[] = [
         {
             id: '01', text: 'Music', icon: 'folder',
@@ -71,10 +74,12 @@ export class NestedListViewComponent {
         },
     ];
 
+    //Map appropriate columns to fields property
     public fields: { [key: string]: string } = {
         iconCss: 'icon', tooltip: 'text'
     };
 
+    //Set header title
     public headerTitle: string = 'Folders';
 
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
