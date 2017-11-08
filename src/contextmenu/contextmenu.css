@@ -25,7 +25,8 @@
     position: relative;
     text-align: center;
     color: gray;
-    line-height: 16;
+    line-height: 17;
+    font-size: 14px;
 }
 
 #contextmenu-control {
@@ -42,7 +43,8 @@
     }
 
     #contextmenutarget {
-        line-height: 17;
+        line-height: 19;
+        font-size: 12px;
     }
 }
 

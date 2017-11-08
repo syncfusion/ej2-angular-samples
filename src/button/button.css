@@ -1,6 +1,6 @@
 #button-control {
         width: 100%;
-        margin-top: 10%;
+        margin: 8% 0;
         text-align: center;
 }
     
@@ -16,7 +16,7 @@
     }
     
     #button-control .col-xs-12 {
-        margin-bottom: 30px;
+        margin: 15px 0;
     }
     
     .e-play-icon::before {

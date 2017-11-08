@@ -1,12 +1,10 @@
 .checkbox-control {
-    margin-left: 40%;
-    margin-top: 8%;
+    margin: 12% 0 12% 40%;
 }
 
 @media only screen and (max-width: 700px) {
     .checkbox-control {
-        margin-left: 35%;
-        margin-top: 27%;
+        margin: 20% 0 0 32%;
     }
 
     .control-section {
@@ -16,12 +14,12 @@
 
 @media only screen and (max-width: 500px) {
     .checkbox-control {
-        margin-left: 35%;
+        margin-left: 20%;
         margin-top: 27%;
         margin-bottom: 27%;
     }
 }
 
 .control-section .row {
-    margin-top: 20px;
+    margin: 20px 0;
 }
