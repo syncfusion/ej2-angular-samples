@@ -5,14 +5,13 @@
 </div>
 <div class="control-section">
     <div class="col-lg-9">
-        <ej-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
-            [tooltip]='tooltip' (load)='load($event)'>
+        <ej-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Polar' drawType='Column' xName='x' yName='y' name='Mobile Subscriptions' [border]='border'>
+                <e-series [marker]='marker' [dataSource]='data' type='Polar' drawType='Column' xName='x' yName='y' name='Mobile Subscriptions' [border]='border'>
                 </e-series>
-                <e-series [dataSource]='data' type='Polar' drawType='Column' xName='x' yName='y1' name='Population in Millions' [border]='border'>
+                <e-series [marker]='marker' [dataSource]='data' type='Polar' drawType='Column' xName='x' yName='y1' name='Population in Millions' [border]='border'>
                 </e-series>
-                <e-series [dataSource]='data' type='Polar' drawType='Column' xName='x' yName='y2' name='3G/4G Subscriptions' [border]='border'>
+                <e-series [marker]='marker' [dataSource]='data' type='Polar' drawType='Column' xName='x' yName='y2' name='3G/4G Subscriptions' [border]='border'>
                 </e-series>
             </e-series-collection>
         </ej-chart>
@@ -42,10 +41,8 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the column type charts. Column type charts are used for comparing
-        the frequency, count, total or average of data in different categories. You can use <code>border</code>,
-        <code>fill</code> properties to customize the data appearance. <code>dataLabel</code> is used to represent individual
-        data and its value.
+        In this example, you can see how to render and configure the column type charts. Column type charts are used for comparing the frequency, count, total or average of data in different categories. You can use <code>border</code>,
+        <code>fill</code> properties to customize the data appearance. <code>dataLabel</code> is used to represent individual data and its value.
     </p>
     <p>
         Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.

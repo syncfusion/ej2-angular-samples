@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-ng-charts';
 import { ChartSeriesType } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Area Series
@@ -32,7 +33,9 @@ export class PolarAreaChartComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'Category',
-        labelPlacement: 'OnTicks'
+        labelPlacement: 'OnTicks',
+        interval: 1,
+        coefficient: Browser.isDevice ? 80 : 100
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

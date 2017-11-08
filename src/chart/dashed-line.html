@@ -4,20 +4,16 @@
     </p>
 </div>
 <div class="control-section">
-    <div align='center'>
-        <ej-chart style='display:block' align='center' id='dashed-chartcontainer' [chartArea]='chartArea' [title]='title' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)' [crosshair]='crosshair' [width]='width'>
-            <e-series-collection>
-                <e-series [dataSource]='data' type='Line' xName='x' yName='y' name='Banana' dashArray='5' width=2 [marker]='marker'> </e-series>
-                <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='Apple' dashArray='10' width=2 [marker]='marker1'> </e-series>
-            </e-series-collection>
-        </ej-chart>
-    </div>
+    <ej-chart style='display:block' align='center' id='dashed-chartcontainer' [chartArea]='chartArea' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)' [crosshair]='crosshair' [width]='width'>
+        <e-series-collection>
+            <e-series [dataSource]='data' type='Line' xName='x' yName='y' name='Banana' dashArray='5' width=2 [marker]='marker'> </e-series>
+            <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='Apple' dashArray='10' width=2 [marker]='marker1'> </e-series>
+        </e-series-collection>
+    </ej-chart>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the line type charts. Line type charts are used to represent time-dependent
-        data, showing trends in data at equal intervals. You can use
+        In this example, you can see how to render and configure the line type charts. Line type charts are used to represent time-dependent data, showing trends in data at equal intervals. You can use
         <code>dashArray</code>,
         <code>width</code>,
         <code>fill</code> properties to customize the line.
@@ -43,25 +39,33 @@
     #control-container {
         padding: 0px !important;
     }
-
+    
     #dashed-chartcontainer_Series_1,
     #dashed-chartcontainer_Series_0 {
-        stroke-dasharray: 10;
+        stroke-dasharray: 10px 10px;
+        stroke-linejoin: round;
+        stroke-linecap: round;
         -webkit-animation: dash 1s linear infinite;
         animation: dash 1s linear infinite;
     }
-
+    
     #dashed-chartcontainer_Series_0_Point_3_Symbol {
         -webkit-animation: opac 1s ease-out infinite;
         animation: opac 1s ease-out infinite;
     }
-
-    @keyframes dash {
-        to {
-            stroke-dashoffset: -20;
+    
+    @-webkit-keyframes dash {
+        100% {
+            stroke-dashoffset: -20px;
         }
     }
-
+    
+    @keyframes dash {
+        100% {
+            stroke-dashoffset: -20px;
+        }
+    }
+    
     @keyframes opac {
         0% {
             stroke-opacity: 1;

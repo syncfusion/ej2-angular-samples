@@ -4,21 +4,19 @@
     </p>
 </div>
 <div class="control-section">
-    <div align='center'>
-        <ej-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip'
-        [legendSettings]='legendSettings' [chartArea]='chartArea' (textRender)='textRender($event)' (load)='load($event)' (axisLabelRender)='axisLabelRender($event)'>
+    <div>
+        <ej-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [legendSettings]='legendSettings' [chartArea]='chartArea'
+            (textRender)='textRender($event)' (load)='load($event)' (axisLabelRender)='axisLabelRender($event)'>
             <e-series-collection>
-                <e-series [dataSource]='dataSource' type='Waterfall' xName='x' yName='y' name='USA' [columnWidth]='columnWidth'
-                [connector]='connector' [intermediateSumIndexes]='intermediate' [sumIndexes]='sum' [marker]='marker' negativeFillColor='#e56590'> </e-series>
+                <e-series [dataSource]='dataSource' type='Waterfall' xName='x' yName='y' name='USA' [columnWidth]='columnWidth' [connector]='connector' [intermediateSumIndexes]='intermediate' [sumIndexes]='sum' [marker]='marker' negativeFillColor='#e56590'> </e-series>
             </e-series-collection>
         </ej-chart>
     </div>
 </div>
 <div id='description'>
     <p>
-        In this example, you can see how to render and configure the Waterfall type series. Waterfall type charts are used for
-        datas having five values  in y-axis. You can use <code>border</code>, <code>fill</code> properities to customize
-        the data appearance. <code>dataLabel</code> is used to represent individual data and its value.
+        In this example, you can see how to render and configure the Waterfall type series. Waterfall type charts are used for datas having five values in y-axis. You can use <code>border</code>, <code>fill</code> properities to customize the data appearance.
+        <code>dataLabel</code> is used to represent individual data and its value.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
@@ -32,15 +30,23 @@
     </p>
 </div>
 <style>
-#chartcontainer_Series_0_Connector_ {
-        stroke-dasharray: 10;
+    #chartcontainer_Series_0_Connector_ {
+        stroke-dasharray: 10px 10px;
+        stroke-linejoin: round;
+        stroke-linecap: round;
         -webkit-animation: dash 1s linear infinite;
         animation: dash 1s linear infinite;
     }
-
+    
+    @-webkit-keyframes dash {
+        100% {
+            stroke-dashoffset: -20px;
+        }
+    }
+    
     @keyframes dash {
-        to {
-            stroke-dashoffset: -20;
+        100% {
+            stroke-dashoffset: -20px;
         }
     }
 </style>

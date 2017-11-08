@@ -130,7 +130,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/waterfall', component: WaterfallChartComponent, name: 'Waterfall', order: '06', category: 'Other Types' },
     { path: ':theme/chart/box-whisker', component: BoxandWhiskerChartComponent, name: 'Box and Whisker', order: '06', category: 'Other Types' },
     { path: ':theme/chart/error-bar', component: ErrorBarChartComponent, name: 'Error Bar', order: '06', category: 'Other Types' },
-    { path: ':theme/chart/trend-lines', component: TrendLineChartComponent, name: 'TrendLines', order: '06', category: 'Other Types' },
+    { path: ':theme/chart/trend-lines', component: TrendLineChartComponent, name: 'Trendlines', order: '06', category: 'Other Types' },
     {
         path: ':theme/chart/combination-series', component: CombinationSeriesChartComponent, name: 'Combination Series',
         order: '06', category: 'Other Types'
@@ -193,7 +193,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/datetime', component: DateTimeAxisChartComponent, name: 'DateTime Axis', order: '11', category: 'Chart Axes' },
     { path: ':theme/chart/category', component: CategoryChartComponent, name: 'Category Axis', order: '11', category: 'Chart Axes' },
     { path: ':theme/chart/indexd-axis', component: IndexedAxisChartComponent, name: 'Indexd Category Axis', order: '11', category: 'Chart Axes' },
-    { path: ':theme/chart/logarithmic', component: LogarithmicAxisChartComponent, name: 'Logarithmic Axis', order: '11', category: 'Chart Axes' },
+    { path: ':theme/chart/logarithmic', component: LogarithmicAxisChartComponent, name: 'Log Axis', order: '11', category: 'Chart Axes' },
     { path: ':theme/chart/multiple-axes', component: MultipleAxesChartComponent, name: 'Multiple Axes', order: '11', category: 'Chart Axes' },
     { path: ':theme/chart/inversed', component: InversedAxisChartComponent, name: 'Inversed Axes', order: '11', category: 'Chart Axes' },
     { path: ':theme/chart/stripline', component: StripLineChartComponent, name: 'Strip Line', order: '11', category: 'Chart Axes' },
@@ -205,8 +205,8 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/vertical-chart', component: VerticalChartComponent, name: 'Vertical Chart', order: '12', category: 'Chart Customization' },
     { path: ':theme/chart/empty-point', component: EmptyPointChartComponent, name: 'Empty Points', order: '12', category: 'Chart Customization' },
 
-    { path: ':theme/chart/print', component: PrintChartComponent, name: 'Print', order: '13', category: 'Print and Export', type: 'new' },
-    { path: ':theme/chart/export', component: ExportChartComponent, name: 'Export', order: '13', category: 'Print and Export', type: 'new' },
+    { path: ':theme/chart/print', component: PrintChartComponent, name: 'Print', order: '13', category: 'Print and Export' },
+    { path: ':theme/chart/export', component: ExportChartComponent, name: 'Export', order: '13', category: 'Print and Export' },
 
     { path: ':theme/chart/selection', component: SelectionChartComponent, name: 'Selection', order: '14', category: 'User Interaction' },
     { path: ':theme/chart/range-selection', component: RangeSelectionChartComponent, name: 'Range Selection', order: '14', category: 'User Interaction' },

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, Series, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, Series, ChartTheme, getElement } from '@syncfusion/ej2-ng-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -56,7 +56,7 @@ export class VerticalChartComponent {
     public liveData(data: any[], series: Series): any[] {
         this.count = this.count + 1;
         let newData: any[] = data;
-        if (this.count > 350) {
+        if (this.count > 350 || getElement('chart-vertical') === null) {
             clearInterval(this.clrInterval);
         } else if (this.count > 300) {
             newData.push({ x: this.getXValue(data), y: this.getYValue(0, 0) });

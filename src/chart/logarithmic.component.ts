@@ -41,7 +41,7 @@ export class LogarithmicAxisChartComponent {
         minimum: 0,
         maximum: 100000,
         interval: 1,
-        title: 'Profit',
+        title: Browser.isDevice ? '' : 'Profit',
         labelFormat: '${value}'
     };
     public legend: Object = {
@@ -53,7 +53,8 @@ export class LogarithmicAxisChartComponent {
         width: 10
     };
     public tooltip: Object = {
-        enable: true
+        enable: true,
+        header: 'Profit'
     };
     public chartArea: Object = {
         border: {

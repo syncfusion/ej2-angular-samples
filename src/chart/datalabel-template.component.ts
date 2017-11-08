@@ -72,7 +72,7 @@ export class DataLabelComponent {
     public primaryYAxis: AxisModel = {
         minimum: 900, maximum: 1300,
         labelFormat: '{value}M',
-        title: 'Population',
+        title: Browser.isDevice ? '' : 'Population',
         labelStyle: {
             color: '#606060', fontFamily: 'Roboto',
             fontStyle: 'medium', size: '14px'

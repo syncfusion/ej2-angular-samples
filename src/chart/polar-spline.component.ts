@@ -3,6 +3,7 @@ import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-ng
 import { ChartDataService } from './chartdata.service';
 import { ChartSeriesType } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Column Series
@@ -23,7 +24,8 @@ export class PolarSplineChartComponent {
         minimum: -180,
         maximum: 180,
         interval: 30,
-        labelFormat: '{value}°'
+        labelFormat: '{value}°',
+        coefficient: Browser.isDevice ? 80 : 100
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

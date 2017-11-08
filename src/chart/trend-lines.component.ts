@@ -100,6 +100,7 @@ export class TrendLineChartComponent {
                 let type: string = this.trendLineType.value.toString();
                 this.chart.series[0].dataSource = [];
                 this.chart.series[0].trendlines[0].type = <TrendlineTypes>type;
+                this.chart.series[0].trendlines[0].name = <TrendlineTypes>type;
                 let forwardForecast: boolean; let backwardForecast: boolean; let polynomialOrder: boolean; let period: boolean;
                 if (type !== 'Power') {
                     this.chart.series[0].dataSource = this.series1;

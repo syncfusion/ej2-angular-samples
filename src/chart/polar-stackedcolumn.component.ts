@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-ng-charts';
 import { ChartSeriesType } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Area Series
@@ -36,7 +37,8 @@ export class PolarStackedColumnChartComponent {
     public primaryXAxis: Object = {
         valueType: 'Category',
         labelPlacement: 'OnTicks',
-        interval: 1
+        interval: 1,
+        coefficient: Browser.isDevice ? 80 : 100
     };
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

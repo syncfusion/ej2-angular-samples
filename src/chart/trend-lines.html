@@ -1,17 +1,16 @@
 <div id="action-description">
     <p>
-        This sample demonstrates trend line for comparision of indian rupees and US dollar. By using property panel, you can change type of trend line by <code>TrendLine Type</code>, forward and backward forecasting of trendlines can be changed by <code>Foreward Forecasting</code> and
+        This sample demonstrates trend line for comparision of indian rupees and US dollar. By using property panel, you can change type of trend line by <code>TrendLine Type</code>, forward and backward forecasting of trendlines can be changed by <code>Foreward Forecasting</code>        and
         <code>Backward Forecast</code> respectively. And also polynomial and period for a trenlines can be changed by <code>Polynomial order</code> and <code>Period</code>.
     </p>
 </div>
 <div class="control-section">
     <div class="col-lg-8">
-        <ej-chart #chart id='chartcontainer' style='display:block; width: 92%' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip'
-            [chartArea]='chartArea' [title]='title' [legendSettings]='legendSettings' (load)='load($event)'>
+        <ej-chart #chart id='chartcontainer' style='display:block; width: 92%' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [chartArea]='chartArea' [title]='title' [legendSettings]='legendSettings' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='series1' type='Scatter' xName='x' yName='y' fill="#0066FF" name='Apple Inc'>
                     <e-trendlines>
-                        <e-trendline type='Linear' width=3 [marker]='marker'>
+                        <e-trendline type='Linear' width=3 [marker]='marker' name='Linear'>
                         </e-trendline>
                     </e-trendlines>
                 </e-series>
@@ -67,8 +66,7 @@
                         </td>
                         <td style="width: 20%;padding-left: 10px; padding-right: 10px">
                             <div class="control-label">
-                                <ej-numerictextbox #polynomialOrder id="polynomialOrder" [value]="value" [min]="min" [max]="max" [step]="step" width=120 (change)='checkPolynomialOrder($event)'
-                                    disabled=true></ej-numerictextbox>
+                                <ej-numerictextbox #polynomialOrder id="polynomialOrder" [value]="value" [min]="min" [max]="max" [step]="step" width=120 (change)='checkPolynomialOrder($event)' disabled=true></ej-numerictextbox>
                             </div>
                         </td>
                     </tr>
@@ -89,8 +87,7 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the Trend Lines. Trend Lines is used to represent the price movements
-        in stock. You can use <code>border</code>, <code>fill</code> properities to customize the data appearance.
+        In this example, you can see how to render and configure the Trend Lines. Trend Lines is used to represent the price movements in stock. You can use <code>border</code>, <code>fill</code> properities to customize the data appearance.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
@@ -104,16 +101,16 @@
     </p>
 </div>
 <style>
-        .control-section {
+    .control-section {
         min-height: 450px;
     }
-
+    
     #chartcontainer_Series_0_TrendLine_0 {
         stroke-dasharray: 10;
         -webkit-animation: dash 1s linear infinite;
         animation: dash 1s linear infinite;
     }
-
+    
     @keyframes dash {
         to {
             stroke-dashoffset: -20;
