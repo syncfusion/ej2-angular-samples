@@ -2,8 +2,9 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ListViewComponent, SelectEventArgs } from '@syncfusion/ej2-ng-lists';
+import { TreeViewComponent, NodeSelectEventArgs } from '@syncfusion/ej2-ng-navigations';
 import { samplesList } from './samplelist';
-import { Browser, extend } from '@syncfusion/ej2-base';
+import { Browser, extend, Animation, addClass } from '@syncfusion/ej2-base';
 import { DataManager, Query } from '@syncfusion/ej2-data';
 export interface MyWindow extends Window {
     isInteractedList: boolean;
@@ -13,7 +14,7 @@ declare let window: MyWindow;
 
 
 /**
- * 
+ * Left Panel Control
  */
 @Component({
     selector: 'left-pane',
@@ -21,61 +22,133 @@ declare let window: MyWindow;
 })
 export class LPController {
 
-    public fields: Object = { text: 'name', id: 'path', groupBy: 'order', child: 'samples' };
-    private contentPan: any;
-    private leftPan: any;
+    public controlSampleData: { [key: string]: object } = {};
+    public listData: any = [];
+    public fields: Object = { dataSource: this.getTreeviewList(samplesList), id: 'id', parentID: 'pid', text: 'name', hasChildren: 'hasChild', htmlAttributes: 'url', child: 'samples' };
+    public listFields: Object = { id: 'uid', text: 'name', groupBy: 'order', htmlAttributes: 'data' };
+    public app: any;
+    public navElement: Element
 
     @ViewChild('controlList')
-    public listObj: ListViewComponent;
+    public listComponent: ListViewComponent;
 
-    public dataSource: Object[] = this.getDataSource();
+    @ViewChild('controlTree')
+    public treeComponent: TreeViewComponent;
 
     constructor(public ngEle: ElementRef, private router: Router) {
     }
 
-    onSampleClick(e: SelectEventArgs) {
-        window.isInteractedList = e.isInteracted;
-        let data: { [key: string]: Object } = e.data as { [key: string]: Object };
-        if (e.isInteracted) {
-            if (data.component && location.hash.replace('/#', '') !== data.path) {
-                document.body.classList.add('sb-overlay');
-                document.querySelector('.sb-loading').classList.remove('hidden');
-                this.router.navigateByUrl(<string>data.path);
-                this.slideOut();
-            } else {
-                this.showBackButton();
-            }
-        }
-    }
-    getDataSource(): Object[] {
-        if (Browser.isDevice) {
-            let tempList: { samples: object[] }[] = <{ samples: object[] }[]>extend([], samplesList);
-            for (let temp of tempList) {
-                let data: DataManager = new DataManager(temp.samples);
-                temp.samples = data.executeLocal(new Query().where('hideOnDevice', 'notEqual', true));
-            }
-            return tempList;
-        }
-        return samplesList;
-    }
-    showBackButton(hide?: Boolean): void {
-        let icon: HTMLElement = this.ngEle.nativeElement.querySelector('#tree-back > .e-icon-back');
-        icon.style.display = hide ? 'none' : '';
+    onAllControlClick(e: SelectEventArgs) {
+        this.viewSwitch(this.ngEle.nativeElement.querySelector("#controlSamples"), this.ngEle.nativeElement.querySelector("#controlTree"), true)
     }
 
-    onBackClick(): void {
-        this.showBackButton(true);
-        this.listObj.back();
+    getTreeviewList(list: any[]): any[] | { [key: string]: Object }[] {
+        let id: number = 1;
+        let pid: number;
+        let tempList: any[] = [];
+        let category: string = '';
+        let categories: string[] = [];
+        for (let i: number = 0; i < list.length; i++) {
+            if (categories.indexOf(list[i].category) === -1) {
+                categories = categories.concat(list[i].category);
+            }
+        }
+        for (let j: number = 0; j < categories.length; j++) {
+            tempList = tempList.concat({ id: id, name: categories[j], hasChild: true, expanded: true });
+            pid = id;
+            for (let k: number = 0; k < list.length; k++) {
+                if (list[k].category === categories[j]) {
+                    id += 1;
+                    tempList = tempList.concat(
+                        {
+                            id: id,
+                            pid: pid,
+                            name: list[k].name,
+                            url: {
+                                'data-path': list[k].samples[0].path,
+                                'control-name': list[k].path,
+                            }
+                        });
+                    this.controlSampleData[list[k].path] = this.getSamples(list[k].samples, list[k].name);
+                    this.listData = this.listData.concat(this.controlSampleData[list[k].path]);
+                }
+            }
+        }
+        return tempList;
+    }
+
+    getSamples(samples: any, controlName: string): any {
+        let tempSamples: any = [];
+        for (let i: number = 0; i < samples.length; i++) {
+            tempSamples[i] = samples[i];
+            tempSamples[i].data = { 'sample-name': samples[i].name, 'data-path': '/' + samples[i].path };
+            tempSamples[i].uid = '' + i;
+            tempSamples[i].cName = controlName;
+            tempSamples[i].searchValue = controlName + ' ' + samples[i].name;
+        }
+        return tempSamples;
+    }
+
+    viewSwitch(from: HTMLElement, to: HTMLElement, reverse?: boolean): void {
+        let anim: Animation = new Animation({ duration: 500, timingFunction: 'ease' });
+        from.style.overflowY = 'hidden';
+        to.classList.remove('sb-hide');
+        anim.animate(from, {
+            name: reverse ? 'SlideRightOut' : 'SlideLeftOut', end: (): void => {
+                from.style.overflowY = '';
+                from.classList.add('sb-hide');
+            }
+        });
+        anim.animate(to, { name: reverse ? 'SlideLeftIn' : 'SlideRightIn' });
+    }
+
+    onComponentSelect(e: NodeSelectEventArgs) {
+        let path: string = e.node.getAttribute('data-path');
+        if (location.hash.replace('/#', '') !== path) {
+            this.navigateSample(path.replace(':theme', this.getCurrentTheme()));
+            this.listComponent.dataSource = <any>this.controlSampleData[path.split('/')[1]];
+            this.viewSwitch(this.ngEle.nativeElement.querySelector("#controlTree"), this.ngEle.nativeElement.querySelector("#controlSamples"))
+        }
+        addClass([this.app.mobileOverlay], 'sb-hide');
+    }
+
+    onSampleSelect(e: SelectEventArgs) {
+        let path: string = (<any>e.data).path;
+        if (location.hash.replace('/#', '') !== path) {
+            this.navigateSample(path.replace(':theme', this.getCurrentTheme()));
+        }
+        addClass([this.app.mobileOverlay], 'sb-hide');
+    }
+
+    getCurrentTheme(): string {
+        return location.hash.split('/')[1];
+    }
+
+    navigateSample(path: string) {
+        this.router.navigateByUrl(path);
     }
 
     ngAfterViewInit(): void {
-        this.contentPan = document.querySelector('.control-panel');
-        this.leftPan = document.querySelector('.left-panel');
+        this.listComponent.dataSource = <any>(this.controlSampleData[location.hash.split('/')[2]] || this.controlSampleData.chart);
+        this.navElement = this.ngEle.nativeElement.querySelector('.sb-control-navigation');
     }
 
-    slideOut(): void {
-        this.leftPan.classList.remove('toggled');
-        this.contentPan.classList.remove('control-animate');
+    onWindowResize(mobile: boolean): void {
+        if (mobile) {
+            this.setMobileView();
+        } else {
+            this.setDesktopView();
+        }
+    }
+
+    setMobileView() {
+        this.navElement.classList.remove('e-view');
+    }
+
+    setDesktopView() {
+        if (this.navElement.classList.contains('e-view')) {
+            this.navElement.classList.add('e-view');
+        }
     }
 
 }

@@ -22,30 +22,126 @@
 </head>
 
 <body class="e-view">
-    <div class="e-view sample-browser">
-        <div class="sb-loading">
-            <svg class="circular" height="40" width="40">
-                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="6" stroke-miterlimit="10" />
-            </svg>
+    <div class="sample-browser e-view">
+        <div class="sb-mobile-overlay sb-hide"></div>
+        <div class="sb-mobile-left-pane sb-hide"></div>
+        <div class="sb-mobile-right-pane sb-hide">
+            <div class="sb-mobile-preference sb-hide"></div>
+            <div class="sb-mobile-prop-pane sb-hide"></div>
+            <div class="sb-mobile-right-pane-close sb-icons"></div>
         </div>
-        <div class="sb-header" role="banner">
-            <div class="sb-h-content sb-h-left">
-                <a href="index.html" style="display:block">
-                    <div class="sb-logo" title="Essential JS 2 for Angular"></div>
-                </a>
+        <div id="sample-header" class="sb-header e-view" role="banner">
+            <div class="sb-header-left sb-left sb-table">
+                <div class="sb-header-item sb-table-cell">
+                    <div id="sb-toggle-left" class="sb-slide-nav sb-icons sb-icon-Hamburger" aria-label="all controls navigation"></div>
+                </div>
+                <div class="sb-header-item sb-table-cell">
+                    <div id="sb-header-text" class="e-sb-header-text">
+                        <span class="sb-header-text-left">Essential JS 2 for</span>
+                        <span class="sb-header-text-right">Angular</span>
+                    </div>
+                </div>
+                <div class="sb-header-item sb-table-cell sb-lang-toggler-wrapper">
+                    <span id="sb-switcher" class="sb-lang-toggler sb-icons sb-icon-Dropdown"></span>
+                </div>
             </div>
-            <div class="sb-h-content sb-h-right" role="main">
-                <div id="themeswitcher" class="themeicon"><img id="themeswitcher-icon" src='styles/images/SB_icon/SB_Switcher_icon_material.png'></div>
-                <div id="selectdiv" class='e-hidden'>                
-                    <ul id="themelist" class="options">
-                        <li class="e-list" id="material"><span class='switch-text'>Material</span><span class='switch-icon material'></span></a></li>
-                        <li class="e-list" id="fabric"><span class='switch-text'>Fabric</span><span class='switch-icon fabric'></span></a></li>                          
-                        <li class="e-list" id="bootstrap"><span class='switch-text'>Bootstrap</span><span class='switch-icon bootstrap'></span></a></li>                          
-                    </ul>
+            <div class="sb-header-right sb-right sb-table">
+                <div class="sb-header-item sb-table-cell">
+                    <div id="header-theme-switcher" class="theme-wrapper">
+                        <div id="sb-theme-text" class="sb-theme-text">
+                            <span class="sb-header-text-left">CHOOSE THEME</span>
+                        </div>
+                        <div class="sb-theme-switcher-wrapper">
+                            <span id="sb-theme-switcher" class="sb-theme-switch sb-icons sb-icon-Dropdown"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-header-item sb-table-cell sb-search-wrapper">
+                    <div class="sb-search-btn" id="sb-trigger-search">
+                        <span class="sb-settings sb-icons sb-icon-Search"></span>
+                    </div>
+                </div>
+                <div class="sb-header-item sb-table-cell sb-settings-wrapper">
+                    <div class="sb-setting-btn">
+                        <span class="sb-settings sb-icons sb-icon-Settings-Preferences"></span>
+                    </div>
+                </div>
+                <div class="sb-header-item sb-table-cell  sb-header-settings sb-icons"></div>
+                <div class="sb-header-splitter sb-download-splitter"></div>
+                <div class="sb-header-item sb-table-cell sb-download-wrapper">
+                    <button id="download-now" class="sb-download-btn">
+                        <a href="https://www.syncfusion.com/" target="_blankss">
+                            <span class="sb-download-text">Download Now</span>
+                        </a>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div id="sb-popup-section" class="sb-popups">
+            <div id="sb-switcher-popup" class="sb-switch-popup">
+                <ul id="switch-sb">
+                    <li class="sb-current"><a>Angular</a></li>
+                    <li>
+                        <a id="ts">TypeScript</a>
+                    </li>
+                    <li>
+                        <a id="react">React</a>
+                    </li>
+                    <li>
+                        <a id="javascript">JavaScript</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="theme-switcher-popup" class="sb-theme-popup">
+                <ul id="themelist" class="options">
+                    <li class="active" id="material">
+                        <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Material</span>
+                    </li>
+                    <li id="fabric">
+                        <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Fabric</span>
+                    </li>
+                    <li class="e-list" id="bootstrap">
+                        <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Bootstrap</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="settings-popup" class="sb-setting-popup">
+                <div class="sb-setting-header">
+                    <span> Preferences
+                    </span>
+                </div>
+                <div class="sb-setting-content">
+                    <div class="sb-setting-item sb-setting-theme-section">
+                        <div class="setting-label">
+                            <div class="sb-icons sb-setting-icons sb-icon-Palette"></div>
+                            <div class="sb-setting-text">Theme Selection</div>
+                        </div>
+                        <div class="setting-content  setting-theme-change">
+                            <select id="sb-setting-theme" class="sb-setting-theme-select">
+                                <option value="material">Material</option>
+                                <option value="fabric">Fabric</option>
+                                <option value="bootstrap">bootstrap</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="sb-setting-item sb-responsive-section">
+                        <div class="setting-label">
+                            <div class="sb-icons sb-setting-icons sb-icon-Responsive"></div>
+                            <div class="sb-setting-text">Mode Selection</div>
+                        </div>
+                        <div class="setting-content btn-group setting-responsive">
+                            <div id="touch" class="sb-responsive-items">Touch</div>
+                            <div id="mouse" class="sb-responsive-items active">Mouse</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <ng-app class="e-view audjust-sb-header animate-sb-header"></ng-app>
+        <ng-app class="sb-content e-view"></ng-app>
     </div>
 
 </body>
