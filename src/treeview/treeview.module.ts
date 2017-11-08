@@ -1,6 +1,5 @@
 import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { TreeViewModule } from '@syncfusion/ej2-ng-navigations';
 
 import { DefaultTreeViewComponent } from './default.component';
 import { IconsTreeViewComponent } from './icons.component';
@@ -22,7 +21,7 @@ export const treeAppRoutes: Object[] = [
     { path: ':theme/treeview/checkbox', component: CheckboxTreeViewComponent, name: 'Checkbox', order: '01', category: 'TreeView' },
     { path: ':theme/treeview/editing', component: EditTreeViewComponent, name: 'Node Editing', order: '01', category: 'TreeView' },
     { path: ':theme/treeview/multiselect', component: MultiselectTreeViewComponent, name: 'Multiple Selection', order: '01', category: 'TreeView', hideOnDevice: true },
-    { path: ':theme/treeview/dragdrop', component: DragdropTreeViewComponent, name: 'Drag and Drop', order: '01', category: 'TreeView' },
+    { path: ':theme/treeview/dragdrop', component: DragdropTreeViewComponent, name: 'Drag and Drop', order: '01', category: 'TreeView', hideOnDevice: true },
     { path: ':theme/treeview/template', component: TemplateTreeViewComponent, name: 'Template', order: '01', category: 'TreeView' },
     { path: ':theme/treeview/rtl', component: RTLTreeViewComponent, name: 'RTL', order: '01', category: 'TreeView' },
     { path: ':theme/treeview/plaindata', component: PlainTreeViewComponent, name: 'Local Data', order: '02', category: 'Data Binding' },
@@ -32,7 +31,7 @@ export const treeAppRoutes: Object[] = [
 export const TreeviewRouter: ModuleWithProviders = RouterModule.forChild(treeAppRoutes);
 
 @NgModule({
-    imports: [TreeviewRouter, TreeViewModule, SharedModule],
+    imports: [TreeviewRouter, SharedModule],
     declarations: [
         DefaultTreeViewComponent,
         IconsTreeViewComponent,

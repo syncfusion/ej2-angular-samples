@@ -1,0 +1,68 @@
+<div class="control-section">
+    <ej-grid [dataSource]='data' id="gridcomp" allowPaging='true' allowExcelExport='true' allowPdfExport='true' allowGrouping='true'
+        allowSorting='true' [contextMenuItems]="contextMenuItems" [groupSettings]='groupOptions' [editSettings]='editing'>
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right" isPrimaryKey='true'></e-column>
+            <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
+            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right" editType='numericedit'></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign="right"></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='150'></e-column>
+            <e-column field='ShipCity' headerText='Ship City' width='150'></e-column>
+        </e-columns>
+    </ej-grid>
+    <div id="description">
+        <p>
+            Grid has options to show the context menu when right click on it. To configure the items in context menu, you should define
+            either default or custom item in
+            <code><a target="_blank" class="code"
+                href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#contextmenuitems-contextmenuitem---contextmenuitemmodel">contextMenuItems
+                </a></code>. Each item will be shown based on it target. The default items are
+            <br>
+        </p>
+        <ul>
+            <li>
+                <code>edit</code> - Edit the current record.</li>
+            <li>
+                <code>delete</code> - Delete the current record.</li>
+            <li>
+                <code>save</code> - Save the edited record.</li>
+            <li>
+                <code>cancel</code> - Cancel the edited state.</li>
+            <li>
+                <code>copy</code> - Copy the selected records.</li>
+            <li>
+                <code>pdfExport</code> - Export the grid as Pdf format.</li>
+            <li>
+                <code>excelExport</code> - Export the grid as Excel format.</li>
+            <li>
+                <code>csvExport</code> - Export the grid as CSV format.</li>
+            <li>
+                <code>sortAscending</code> - Sort the current column in ascending order.</li>
+            <li>
+                <code>sortDescending</code> - Sort the current column in descending order.</li>
+            <li>
+                <code>firstPage</code> - Go to the first page.</li>
+            <li>
+                <code>prevPage</code> - Go to the previous page.</li>
+            <li>
+                <code>lastPage</code> - Go to the last page.</li>
+            <li>
+                <code>nextPage</code> - Go to the next page.</li>
+        </ul>
+
+        <br/>
+
+        <p>
+            In this demo, Context Menu feature has enabled by defining the
+            <code> contextMenuItems </code> property with all default items.
+
+        </p>
+
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Grid component features are segregated into individual feature-wise modules. To use Context Menu feature, we need to inject
+            <code>ContextMenuService</code> into the
+            <code>@NgModule.providers</code> section.
+        </p>
+    </div>
+</div>
