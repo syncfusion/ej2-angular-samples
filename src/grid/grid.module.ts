@@ -41,7 +41,6 @@ import { MultipleExportingComponent } from './multiple-exporting.component';
 import { CheckboxSelectionComponent } from './checkboxselection.component';
 import { CommandColumnComponent } from './command-column.component';
 import { ClipboardComponent } from './clipboard.component';
-import { RowHeightComponent } from './rowheight.component';
 
 export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/default', component: DefaultComponent, 'name': 'Default Functionalities', order: '01', category: 'Grid' },
@@ -56,9 +55,6 @@ export const gridRouteConfig: Object[] = [
     {
         'path': ':theme/grid/draganddrop', component: DragAndDropComponent, name: 'Row Drag And Drop', order: '01', category: 'Grid',
         hideOnDevice: true
-    },
-    {
-        'path': ':theme/grid/rowheight', component: RowHeightComponent, name: 'Row Height', order: '01', category: 'Grid'
     },
     { 'path': ':theme/grid/localdata', component: LocalDataComponent, 'name': 'Local Binding', order: '02', category: 'Data Binding' },
     { 'path': ':theme/grid/remotedata', component: DataBindingComponent, 'name': 'Remote Binding', order: '02', category: 'Data Binding' },
@@ -127,7 +123,7 @@ let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent, VirtualizationComponent,
     NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent, ColumnResizingComponent,
     ExportingComponent, MultipleExportingComponent, CheckboxSelectionComponent, ClipboardComponent, CommandColumnComponent,
-    RowHeightComponent, FilteringMenuComponent];
+    FilteringMenuComponent];
 
 @NgModule({
     imports: [RouterModule.forChild(gridRouteConfig), CommonModule, HttpModule, ToolbarModule, GridAllModule, SharedModule],
