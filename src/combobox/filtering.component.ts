@@ -11,6 +11,7 @@ import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
     templateUrl: 'filtering.html'
 })
 export class FilteringComboBoxComponent {
+    //define the filtering data
     public data: { [key: string]: Object; }[] = [
         { Name: 'Australia', Code: 'AU' },
         { Name: 'Bermuda', Code: 'BM' },
@@ -32,12 +33,18 @@ export class FilteringComboBoxComponent {
         { Name: 'United Kingdom', Code: 'GB' },
         { Name: 'United States', Code: 'US' }
     ];
+    // maps the appropriate column to fields property
     public fields: Object = { text: 'Name', value: 'Code' };
+    // set the height of the popup element
     public height: string = '220px';
+    // set the placeholder to ComboBox input element
     public watermark: string = 'Select a country';
+    // filtering event handler to filter a Country
     public onFiltering: EmitType<FilteringEventArgs> = (e: FilteringEventArgs) => {
         let query: Query = new Query();
+        //frame the query based on search string with filter type.
         query = (e.text !== '') ? query.where('Name', 'startswith', e.text, true) : query;
+        //pass the filter data source, filter query to updateData method.
         e.updateData(this.data, query);
     }
 }

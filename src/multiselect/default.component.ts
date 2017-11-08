@@ -7,6 +7,7 @@ import { MultiSelectComponent } from '@syncfusion/ej2-ng-dropdowns';
     encapsulation: ViewEncapsulation.None
 })
 export class DefaultMultiselectComponent {
+    // define the JSON of data
     public sportsData: Object[] = [
         { Id: 'Game1', Game: 'American Football' },
         { Id: 'Game2', Game: 'Badminton' },
@@ -19,8 +20,11 @@ export class DefaultMultiselectComponent {
         { Id: 'Game9', Game: 'Snooker' },
         { Id: 'Game10', Game: 'Tennis' }
     ];
+    // maps the appropriate column to fields property
     public fields: Object = { text: 'Game', value: 'Id' };
-    public waterMark: string = 'Favorite Sports';
+    // set the placeholder to MultiSelect input element
+    public waterMark: string = 'Favorite Sports';    
+    // set the type of mode for how to visualized the selected items in input element.
     public default : string = 'default';
     public box : string = 'box';
     public delimiter : string = 'delimiter';

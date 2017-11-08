@@ -9,6 +9,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class GroupAndIconAutoCompleteComponent {
+    // defined the array of vegetables data
     public vegetableData: { [key: string]: Object }[] = [
         { Vegetable: 'Cabbage', Category: 'Leafy and Salad', Id: 'item1' },
         { Vegetable: 'Chickpea', Category: 'Beans', Id: 'item2' },
@@ -22,8 +23,11 @@ export class GroupAndIconAutoCompleteComponent {
         { Vegetable: 'Wheat grass', Category: 'Leafy and Salad', Id: 'item10' },
         { Vegetable: 'Yarrow', Category: 'Leafy and Salad', Id: 'item11' }
     ];
+    // maps the Category column to groupBy fields
     public groupFields: Object = { groupBy: 'Category', value: 'Vegetable' };
+    // set the placeholder to the AutoComplete input
     public groupWaterMark: string = 'e.g. Cabbage';
+    // defined the array of social media data
     public socialMediaData: Object[] = [
         { Class: 'facebook', SocialMedia: 'Facebook', Id: 'media1' },
         { Class: 'google-plus', SocialMedia: 'Google Plus', Id: 'media2' },
@@ -35,7 +39,9 @@ export class GroupAndIconAutoCompleteComponent {
         { Class: 'vimeo', SocialMedia: 'Vimeo', Id: 'media8' },
         { Class: 'whatsapp', SocialMedia: 'WhatsApp', Id: 'media9' },
         { Class: 'youtube', SocialMedia: 'YouTube', Id: 'media10' }
-    ];
+    ];    
+    // maps the Class column to iconCss fields
     public iconFields: Object = { iconCss: 'Class', value: 'SocialMedia' };
+    // set the placeholder to the AutoComplete input
     public iconWaterMark: string = 'e.g. Facebook';
 }

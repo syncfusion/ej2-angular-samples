@@ -6,6 +6,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class GroupMultiSelectComponent {
+    //define the data with category
     public vegetableData: { [key: string]: Object }[] = [
         { Vegetable: 'Cabbage', Category: 'Leafy and Salad', Id: 'item1' },
         { Vegetable: 'Chickpea', Category: 'Beans', Id: 'item2' },
@@ -19,6 +20,8 @@ export class GroupMultiSelectComponent {
         { Vegetable: 'Wheat grass', Category: 'Leafy and Salad', Id: 'item10' },
         { Vegetable: 'Yarrow', Category: 'Leafy and Salad', Id: 'item11' }
     ];
+    // map the groupBy field with category column
     public groupFields: Object = { groupBy: 'Category', text: 'Vegetable', value: 'Id' };
+    // set the placeholder to the MultiSelect input
     public groupWaterMark: string = 'Select vegetables';
 }

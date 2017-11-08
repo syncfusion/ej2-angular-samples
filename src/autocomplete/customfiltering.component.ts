@@ -11,6 +11,7 @@ import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
     templateUrl: 'customfiltering.html'
 })
 export class CustomFilteringAutoCompleteComponent {
+    // define the JSON of books data
     public booksData: { [key: string]: Object; }[] = [
         { BookName: 'Support Vector Machines Succinctly', BookID: 'BOOK1' }, { BookName: 'Scala Succinctly', BookID: 'BOOK2' },
         { BookName: 'Application Security in .NET Succinctly', BookID: 'BOOK3' },
@@ -52,23 +53,30 @@ export class CustomFilteringAutoCompleteComponent {
         { BookName: 'ASP.NET MVC 4 Mobile Websites Succinctly', BookID: 'BOOK58' },
         { BookName: 'jQuery Succinctly', BookID: 'BOOK59' }, { BookName: 'JavaScript Succinctly', BookID: 'BOOK60' },
     ];
+    // maps the appropriate column to fields property
     public fields: Object = { value: 'BookName' };
+    // set placeholder to AutoComplete input element
     public watermark: string = 'e.g. Node.js Succinctly';
+    //Bind the filter event
     public onFiltering: EmitType<FilteringEventArgs> = (e: FilteringEventArgs) => {
         let options: Object = {
             keys: ['BookName'],
             includeMatches: true,
             findAllMatches: true
         };
+        // create object from Fuse constructor
         let fuse: Fuse = new Fuse(this.booksData, options);
+        // store the search result data based on typed characters
         let result: any = fuse.search(e.text);
         let data: { [key: string]: Object; }[] = [];
         for (let i: number = 0; i < result.length; i++) {
             data.push(result[i].item as any);
         }
+        // pass the filter data source to updateData method.
         e.updateData(data, null);
         let popupElement: HTMLElement = document.getElementById('books_popup');
         let lists: Element[] = <NodeListOf<Element> & Element[]>popupElement.querySelectorAll('.e-list-item');
+        // For highlight the typed characters, pass the result data and list items to highlightSearch method.
         this.highlightSearch(lists, result);
     }
 

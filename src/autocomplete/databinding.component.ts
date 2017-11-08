@@ -40,37 +40,28 @@ export class DataBindingAutoCompleteComponent {
         { Name: 'United Kingdom', Code: 'GB' },
         { Name: 'United States', Code: 'US' }
     ];
+    // maps the local data column to fields property
     public localFields: Object = { value: 'Name' };
+    //set the placeholder to AutoComplete input
     public localWaterMark: string = 'e.g. Australia';
+    //bind the DataManager instance to dataSource property
     public data: DataManager = new DataManager({
         url: 'http://services.odata.org/V4/Northwind/Northwind.svc/Products',
         adaptor: new ODataV4Adaptor,
         crossDomain: true
     });
+    // set the count for displays the suggestion items.
     public suggestionCount: number = 5;
     public query: Query = new Query().select(['ProductID', 'ProductName']);
+    // maps the remote data column to fields property
     public remoteFields: Object = { value: 'ProductName' };
+    //set the placeholder to AutoComplete input
     public remoteWaterMark: string = 'e.g. Alice Mutton';
-    public loader: HTMLElement;
-    public onActionBegin(): void {
-        let spinner: HTMLElement = <HTMLElement>document.querySelector('.e-spinner-icon');
-        if (!spinner) {
-            this.loader = <HTMLElement>document.querySelectorAll('.e-clear-icon')[1];
-            this.loader.classList.remove('e-clear-icon');
-            this.loader.classList.add('e-spinner-icon');
-            this.loader.classList.add('e-input-group-icon');
-        }
-    }
-    public onActionComplete(): void {
-        this.loader.classList.remove('e-spinner-icon');
-        this.loader.classList.remove('e-input-group-icon');
-        this.loader.classList.add('e-clear-icon');
-    }
-    public onActionFailure(): void {
-        this.onActionComplete();
-    }
+    // bind change event
     public onChange(): void {
+        // enable or disable the autofill in remote data AutoComplete based on CheckBox checked state
         this.localObj.autofill = this.checkboxObj.checked;
+        // enable or disable the autofill in local data AutoComplete based on CheckBox checked state
         this.remoteObj.autofill = this.checkboxObj.checked;
     }
 }

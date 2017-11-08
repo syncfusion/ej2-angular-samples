@@ -8,7 +8,8 @@ import { MultiSelectComponent } from '@syncfusion/ej2-ng-dropdowns';
     encapsulation: ViewEncapsulation.None
 })
 export class CustomTagMultiSelectComponent {
-public gameList: { [key: string]: Object }[] = [
+    // define the JSON of data
+    public gameList: { [key: string]: Object }[] = [
         { Id: 'Game1', Game: 'American Football' },
         { Id: 'Game2', Game: 'Badminton' },
         { Id: 'Game3', Game: 'Basketball' },
@@ -20,8 +21,11 @@ public gameList: { [key: string]: Object }[] = [
         { Id: 'Game9', Game: 'Snooker' },
         { Id: 'Game10', Game: 'Tennis' },
     ];
-public fields: object = {text: 'Game', value: 'Id'};
-public waterMark: string = 'Favorite sports';
-public box : string = 'box';
+    // map the appropriate columns to fields property
+    public fields: object = {text: 'Game', value: 'Id'};
+    // set the placeholder to MultiSelect input element
+    public waterMark: string = 'Favorite sports';
+    // set the type of mode for how to visualized the selected items in input element.
+    public box : string = 'box';
 
 }

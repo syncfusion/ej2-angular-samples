@@ -7,6 +7,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class TemplateMultiSelectComponent {
+    // define the JSON of data
     public multidata: { [key: string]: Object }[] = [
         { Name: 'Andrew Fuller', Eimg: '7', Job: 'Team Lead', Country: 'England' },
         { Name: 'Anne Dodsworth', Eimg: '1', Job: 'Developer', Country: 'USA' },
@@ -18,7 +19,10 @@ export class TemplateMultiSelectComponent {
         { Name: 'Robert King', Eimg: '8', Job: 'Developer ', Country: 'England' },
         { Name: 'Steven Buchanan', Eimg: '10', Job: 'CEO', Country: 'England' }
     ];
+    // maps the appropriate column to fields property
     public multifields: Object = { text: 'Name', value: 'Eimg' };
+    //set the placeholder to MultiSelect input
     public multiwatermark: string = 'Select employees';
+    // set the type of mode for how to visualized the selected items in input element.
     public box : string = 'box';
 }

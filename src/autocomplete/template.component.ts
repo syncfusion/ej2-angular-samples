@@ -10,6 +10,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class TemplateAutoCompleteComponent {
+    // defined the array of data
     public data: { [key: string]: Object }[] = [
         { Name: 'Andrew Fuller', Eimg: '7', Designation: 'Team Lead', Country: 'England' },
         { Name: 'Anne Dodsworth', Eimg: '1', Designation: 'Developer', Country: 'USA' },
@@ -21,6 +22,8 @@ export class TemplateAutoCompleteComponent {
         { Name: 'Robert King', Eimg: '8', Designation: 'Developer ', Country: 'England' },
         { Name: 'Steven Buchanan', Eimg: '10', Designation: 'CEO', Country: 'England' }
     ];
+    // maps the appropriate column to fields property
     public fields: Object = { value: 'Name' };
+    // set the placeholder to the AutoComplete input
     public watermark: string = 'e.g. Andrew Fuller';
 }

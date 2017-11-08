@@ -10,6 +10,7 @@ import { AutoCompleteComponent, ChangeEventArgs, FilterType} from '@syncfusion/e
 export class HighlightAutoCompleteComponent {
     @ViewChild('sample')
     public autoCompleteObj: AutoCompleteComponent;
+    // defined the array of data
     public countriesData: { [key: string]: Object; }[] = [
         { Name: 'Australia', Code: 'AU' },
         { Name: 'Bermuda', Code: 'BM' },
@@ -31,9 +32,13 @@ export class HighlightAutoCompleteComponent {
         { Name: 'United Kingdom', Code: 'GB' },
         { Name: 'United States', Code: 'US' }
     ];
+    // maps the appropriate column to fields property
     public fields: Object = { value: 'Name' };
+    // set the array of string data to DropDownList dataSource property
     public filterData: string[] = ['Contains', 'StartsWith', 'EndsWith'];
+    // set width of DropDownList element.
     public width: string = '150px';
+    // bind change event to modify the filter type of AutoComplete element.
     public onChange(e: ChangeEventArgs): void {
         this.autoCompleteObj.filterType = <FilterType>e.itemData;
     }

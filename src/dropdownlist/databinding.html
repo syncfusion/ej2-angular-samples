@@ -1,3 +1,9 @@
+<div id="action-description">
+    <p>This sample demonstrates the different data binding supports of the DropDownList. Click the DropDownList element and select an item from the suggestion list. At the very first time, when click on the remote data DropDownList,
+        the loader icon will be shown until the remote request get the data from the server and display it.
+    </p>
+</div>
+
 <div class="control-section">
     <div class="content-wrapper">
         <div id='local' class='col-lg-6' style="margin: 0 auto;padding-top: 25px;">
@@ -9,8 +15,7 @@
         <div id='remote' class='col-lg-6' style="margin: 0 auto;padding-top: 25px;">
             <div style="width: 250px;margin: 0 auto;">
                 <h4>Remote Data</h4>
-                <ej-dropdownlist id='customers' #sample2 [dataSource]='data' (actionFailure)='onActionFailure()' (actionComplete)='onActionComplete()'
-                    (actionBegin)='onActionBegin()' [fields]='remoteFields' [query]='query' [popupHeight]='height' [placeholder]='remoteWaterMark' sortOrder='Ascending'></ej-dropdownlist>
+                <ej-dropdownlist id='customers' #sample2 [dataSource]='data' [fields]='remoteFields' [query]='query' [popupHeight]='height' [placeholder]='remoteWaterMark' sortOrder='Ascending'></ej-dropdownlist>
             </div>
         </div>
     </div>

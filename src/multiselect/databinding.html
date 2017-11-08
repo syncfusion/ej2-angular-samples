@@ -1,3 +1,9 @@
+<div id="action-description">
+    <p>This sample demonstrates the different data binding supports of the MultiSelect. Click the MultiSelect element and choose one or more items from the suggestion list. At the very first time, when clicked on the remote data MultiSelect,
+        the loader icon will be shown until the remote request get the data from server and display it.
+    </p>
+</div>
+
 <div class="control-section"> 
         <div id='local'>
             <div class="control-styles">
@@ -8,8 +14,7 @@
         <div id='remote'>
             <div  class="control-styles">
                 <h4>Remote Data</h4>
-                <ej-multiselect id='remoteData' #remote [dataSource]='data' [fields]='remoteFields' [query]='query' (actionFailure)='onActionFailure()' (actionComplete)='onActionComplete()'
-                    (actionBegin)='onActionBegin()' [placeholder]='remoteWaterMark' sortOrder='Ascending'></ej-multiselect>
+                <ej-multiselect id='remoteData' #remote [dataSource]='data' [fields]='remoteFields' [query]='query' [placeholder]='remoteWaterMark' sortOrder='Ascending'></ej-multiselect>
             </div>
         </div> 
 </div>

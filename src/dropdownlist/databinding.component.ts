@@ -10,6 +10,7 @@ import { Query, DataManager, ODataV4Adaptor } from '@syncfusion/ej2-data';
     encapsulation: ViewEncapsulation.None
 })
 export class DataBindingDropDownListComponent {
+    // define the JSON of data
     public sportsData: Object[] = [
         { Id: 'Game1', Game: 'American Football' },
         { Id: 'Game2', Game: 'Badminton' },
@@ -22,30 +23,22 @@ export class DataBindingDropDownListComponent {
         { Id: 'Game9', Game: 'Snooker' },
         { Id: 'Game10', Game: 'Tennis' }
     ];
+    // maps the local data column to fields property
     public localFields: Object = { text: 'Game', value: 'Id' };
+    // set the placeholder to DropDownList input element
     public localWaterMark: string = 'Select a game';
+    // bind the DataManager instance to dataSource property
     public data: DataManager = new DataManager({
         url: 'http://services.odata.org/V4/Northwind/Northwind.svc/Customers',
         adaptor: new ODataV4Adaptor,
         crossDomain: true
     });
+    // bind the Query instance to query property
     public query: Query = new Query().select(['ContactName', 'CustomerID']);
+    // maps the remote data column to fields property
     public remoteFields: Object = { text: 'ContactName', value: 'CustomerID' };
+    // set the height of the popup element
     public height: string = '200px';
+    // set the placeholder to DropDownList input element
     public remoteWaterMark: string = 'Select a customer';
-    public onActionBegin(): void {
-        let element: HTMLElement[] = <HTMLElement[] & NodeListOf<Element>>
-            document.querySelector('.control-section').querySelectorAll('.e-input-group-icon');
-        element[1].classList.add('e-spinner-icon');
-        element[1].classList.remove('e-ddl-icon', 'e-search-icon');
-    }
-    public onActionComplete(): void {
-        let element: HTMLElement[] = <HTMLElement[] & NodeListOf<Element>>
-            document.querySelector('.control-section').querySelectorAll('.e-input-group-icon');
-        element[1].classList.add('e-ddl-icon', 'e-search-icon');
-        element[1].classList.remove('e-spinner-icon');
-    }
-    public onActionFailure(): void {
-        this.onActionComplete();
-    }
 }

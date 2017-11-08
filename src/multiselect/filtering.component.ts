@@ -10,6 +10,7 @@ import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
     encapsulation: ViewEncapsulation.None
 })
 export class FilteringMultiSelectComponent {
+    // define the JSON of filtering data
     public data: { [key: string]: Object; }[] = [
         { Name: 'Australia', Code: 'AU' },
         { Name: 'Bermuda', Code: 'BM' },
@@ -31,37 +32,17 @@ export class FilteringMultiSelectComponent {
         { Name: 'United Kingdom', Code: 'GB' },
         { Name: 'United States', Code: 'US' }
     ];
+
     public query: Query = new Query();
+    // maps the appropriate column to fields property
     public fields: Object = { text: 'Name', value: 'Code' };
     public watermarks: string = 'Select countries';
-    public onFiltering: EmitType<FilteringEventArgs> = this.debounce(
-        (e: FilteringEventArgs) => {
-            let query: Query = new Query();
-            query = (e.text !== '') ? query.where('Name', 'startswith', e.text, true) : query;
-            e.updateData(this.data, query);
-        },
-        200);
-
-    public debounce(func: Function, wait?: number): EmitType<FilteringEventArgs> {
-        let timeout: number;
-        let isTypedFirst: boolean = false;
-        /* tslint:disable */
-        return function () {
-            /* tslint:enable */
-            let context: object = this, args: IArguments = arguments;
-            let later: Function = () => {
-                timeout = null;
-                if (!isTypedFirst) { func.apply(context, args); }
-            };
-            let callNow: boolean = !isTypedFirst && !timeout;
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-            if (callNow) {
-                isTypedFirst = true;
-                func.apply(context, args);
-            } else {
-                isTypedFirst = false;
-            }
-        };
+    // filtering event handler to filter a country
+    public onFiltering: EmitType<FilteringEventArgs> = (e: FilteringEventArgs) => {
+        let query: Query = new Query();
+        //frame the query based on search string with filter type.
+        query = (e.text !== '') ? query.where('Name', 'startswith', e.text, true) : query;
+        //pass the filter data source, filter query to updateData method.
+        e.updateData(this.data, query);
     };
 }

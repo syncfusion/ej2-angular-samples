@@ -2,7 +2,6 @@ import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/
 import { RouterModule } from '@angular/router';
 import { MultiSelectModule } from '@syncfusion/ej2-ng-dropdowns';
 import { DefaultMultiselectComponent } from './default.component';
-import { FormsModule }   from '@angular/forms';
 import { GroupMultiSelectComponent } from './grouping.component';
 import { DataBindingMultiSelectComponent } from './databinding.component';
 import { TemplateMultiSelectComponent } from './template.component';
@@ -22,7 +21,7 @@ export const multiselectAppRoutes: Object[] = [
 export const MultiSelectRouter: ModuleWithProviders = RouterModule.forChild(multiselectAppRoutes);
 
 @NgModule({
-    imports: [MultiSelectRouter, MultiSelectModule, SharedModule, FormsModule],
+    imports: [MultiSelectRouter, MultiSelectModule, SharedModule],
     declarations: [
         DefaultMultiselectComponent,
         GroupMultiSelectComponent,

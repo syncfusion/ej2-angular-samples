@@ -1,3 +1,8 @@
+<div id="action-description">
+    <p>This sample demonstrates the different data binding supports of the ComboBox. Type a character(s) in the ComboBox element and the remaining characters are automatically filled based on the first matched item.
+        Also, provided option to enable/disable this <code>autofill</code> feature in the property panel.</p>
+</div>
+
 <div class="control-section">
     <div class="col-lg-9 content-wrapper">
         <div id='local' class='col-lg-6' style="margin: 0 auto;padding-top: 15px;">
@@ -10,8 +15,7 @@
         <div id='remote' class='col-lg-6' style="margin: 0 auto;padding-top: 15px;">
             <div style="width: 250px; margin: 0 auto;">
                 <h4>Remote Data</h4>
-                <ej-combobox id='customers' #remote [dataSource]='data' (actionFailure)='onActionFailure()' (actionComplete)='onActionComplete()'
-                    (actionBegin)='onActionBegin()' [fields]='remoteFields' [autofill]='true' [query]='query' [popupHeight]='height'
+                <ej-combobox id='customers' #remote [dataSource]='data' [fields]='remoteFields' [autofill]='true' [query]='query' [popupHeight]='height'
                     [placeholder]='remoteWaterMark' sortOrder='Ascending'></ej-combobox>
             </div>
         </div>

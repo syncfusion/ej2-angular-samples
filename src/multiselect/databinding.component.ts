@@ -9,6 +9,7 @@ import { MultiSelectComponent, DropDownListComponent } from '@syncfusion/ej2-ng-
     encapsulation: ViewEncapsulation.None
 })
 export class DataBindingMultiSelectComponent {
+    // define the JSON of data
     public countries: { [key: string]: Object; }[] = [
     { Name: 'Australia', Code: 'AU' },
         { Name: 'Bermuda', Code: 'BM' },
@@ -30,33 +31,20 @@ export class DataBindingMultiSelectComponent {
         { Name: 'United Kingdom', Code: 'GB' },
         { Name: 'United States', Code: 'US' }
     ];
-
-    public typeData: string[] = [ 'box', 'default', 'delimiter' ];
+    // maps the local data column to fields property
     public localFields: Object = { text: 'Name', value: 'Code' };
+    // set the placeholder to MultiSelect input element
     public localWaterMark: string = 'Select countries';
+    // bind the DataManager instance to dataSource property
     public data: DataManager = new DataManager({
         url: 'http://services.odata.org/V4/Northwind/Northwind.svc/Customers',
         adaptor: new ODataV4Adaptor,
         crossDomain: true
     });
+    // bind the Query instance to query property
     public query: Query = new Query().select(['ContactName', 'CustomerID']);
+    // maps the remote data column to fields property
     public remoteFields: Object = { text: 'ContactName', value: 'CustomerID' };
+    // set the placeholder to MultiSelect input element
     public remoteWaterMark: string = 'Select customers';
-    public onActionBegin(): void {
-         let element: HTMLElement[] = <HTMLElement[] & NodeListOf<Element>>
-                document.querySelector('.control-section').querySelectorAll('.e-chips-close.e-icon');
-            element[1].classList.remove('e-close-hooker');
-            element[1].classList.add('e-spinner-icon');
-            element[1].style.display = 'block';
-    }
-    public onActionComplete(): void {
-        let element: HTMLElement[] = <HTMLElement[] & NodeListOf<Element>>
-            document.querySelector('.control-section').querySelectorAll('.e-chips-close.e-icon');
-        element[1].classList.add('e-close-hooker');
-        element[1].classList.remove('e-spinner-icon');
-        element[1].style.display = 'none';
-    }
-    public onActionFailure(): void {
-        this.onActionComplete();
-    }
 }
