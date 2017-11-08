@@ -97,8 +97,8 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/line', component: LineChartComponent, name: 'Line', order: '01', category: 'Line Charts' },
     { path: ':theme/chart/spline', component: SplineChartComponent, name: 'Spline', order: '01', category: 'Line Charts' },
     { path: ':theme/chart/step-line', component: StepLineChartComponent, name: 'StepLine', order: '01', category: 'Line Charts' },
-    { path: ':theme/chart/inversed-spline', component: DashedLineChartComponent, name: 'Dashed Line', order: '01', category: 'Line Charts' },
-    { path: ':theme/chart/dashed-line', component: InversedSplineChartComponent, name: 'Inversed Line', order: '01', category: 'Line Charts' },
+    { path: ':theme/chart/dashed-line', component: DashedLineChartComponent, name: 'Dashed Line', order: '01', category: 'Line Charts' },
+    { path: ':theme/chart/inversed-spline', component: InversedSplineChartComponent, name: 'Inversed Spline', order: '01', category: 'Line Charts' },
 
     { path: ':theme/chart/area', component: AreaChartComponent, name: 'Area', order: '02', category: 'Area Charts' },
     { path: ':theme/chart/step-area', component: StepAreaChartComponent, name: 'StepArea', order: '02', category: 'Area Charts' },
@@ -136,83 +136,83 @@ export const chartAppRoutes: Object[] = [
         order: '06', category: 'Other Types'
     },
     {
-        path: ':theme/chart/pareto-series', component: ParetoSeriesChartComponent, name: 'Pareto Series',
+        path: ':theme/chart/pareto-series', component: ParetoSeriesChartComponent, name: 'Pareto Chart',
         order: '06', category: 'Other Types'
     },
-    { path: ':theme/chart/performance', component: PerformanceChartComponent, name: 'Performance', order: '06', category: 'Other Types' },
+    { path: ':theme/chart/performance', component: PerformanceChartComponent, name: 'Benchmark', order: '07', category: 'Performance' },
 
 
-    { path: ':theme/chart/adindicator', component: AccumulationDistributionComponent, name: 'Accumulation Distribution', order: '07', category: 'Technical Indicators' },
-    { path: ':theme/chart/atrindicator', component: AtrIndicatorComponent, name: 'ATR', order: '07', category: 'Technical Indicators' },
-    { path: ':theme/chart/bollinger', component: BollingerIndicatorComponent, name: 'Bollinger', order: '07', category: 'Technical Indicators' },
-    { path: ':theme/chart/ema', component: EmaIndicatorComponent, name: 'EMA', order: '07', category: 'Technical Indicators' },
-    { path: ':theme/chart/macd', component: MacdIndicatorComponent, name: 'MACD', order: '07', category: 'Technical Indicators' },
-    { path: ':theme/chart/momentum', component: MomentumIndicatorComponent, name: 'Momentum', order: '07', category: 'Technical Indicators' },
-    { path: ':theme/chart/rsi', component: RsiIndicatorComponent, name: 'RSI', order: '07', category: 'Technical Indicators' }, 
-    { path: ':theme/chart/sma', component: SmaIndicatorComponent, name: 'SMA', order: '07', category: 'Technical Indicators' },
-    { path: ':theme/chart/stochastic', component: StochasticIndicatorComponent, name: 'Stochastic', order: '07', category: 'Technical Indicators' },
-    { path: ':theme/chart/tma', component: TmaIndicatorComponent, name: 'TMA', order: '07', category: 'Technical Indicators' },
+    { path: ':theme/chart/adindicator', component: AccumulationDistributionComponent, name: 'Accumulation Distribution', order: '08', category: 'Technical Indicators' },
+    { path: ':theme/chart/atrindicator', component: AtrIndicatorComponent, name: 'ATR', order: '08', category: 'Technical Indicators' },
+    { path: ':theme/chart/bollinger', component: BollingerIndicatorComponent, name: 'Bollinger', order: '08', category: 'Technical Indicators' },
+    { path: ':theme/chart/ema', component: EmaIndicatorComponent, name: 'EMA', order: '08', category: 'Technical Indicators' },
+    { path: ':theme/chart/macd', component: MacdIndicatorComponent, name: 'MACD', order: '08', category: 'Technical Indicators' },
+    { path: ':theme/chart/momentum', component: MomentumIndicatorComponent, name: 'Momentum', order: '08', category: 'Technical Indicators' },
+    { path: ':theme/chart/rsi', component: RsiIndicatorComponent, name: 'RSI', order: '08', category: 'Technical Indicators' }, 
+    { path: ':theme/chart/sma', component: SmaIndicatorComponent, name: 'SMA', order: '08', category: 'Technical Indicators' },
+    { path: ':theme/chart/stochastic', component: StochasticIndicatorComponent, name: 'Stochastic', order: '08', category: 'Technical Indicators' },
+    { path: ':theme/chart/tma', component: TmaIndicatorComponent, name: 'TMA', order: '08', category: 'Technical Indicators' },
 
 
-    { path: ':theme/chart/default-pie', component: DefaultPieComponent, name: 'Pie', order: '08', category: 'Accumulation Charts' },
-    { path: ':theme/chart/doughnut', component: DoughnutComponent, name: 'Doughnut', order: '08', category: 'Accumulation Charts' },
-    { path: ':theme/chart/pyramid', component: PyramidComponent, name: 'Pyramid', order: '08', category: 'Accumulation Charts' },
-    { path: ':theme/chart/funnel', component: FunnelComponent, name: 'Funnel', order: '08', category: 'Accumulation Charts' },
+    { path: ':theme/chart/default-pie', component: DefaultPieComponent, name: 'Pie', order: '09', category: 'Accumulation Charts' },
+    { path: ':theme/chart/doughnut', component: DoughnutComponent, name: 'Doughnut', order: '09', category: 'Accumulation Charts' },
+    { path: ':theme/chart/pyramid', component: PyramidComponent, name: 'Pyramid', order: '09', category: 'Accumulation Charts' },
+    { path: ':theme/chart/funnel', component: FunnelComponent, name: 'Funnel', order: '09', category: 'Accumulation Charts' },
     {
-        path: ':theme/chart/default-doughnut', component: DefaultDoughnutComponent, name: 'Pie With Legend', order: '08', category: 'Accumulation Charts'
+        path: ':theme/chart/default-doughnut', component: DefaultDoughnutComponent, name: 'Pie With Legend', order: '09', category: 'Accumulation Charts'
     },
     {
-        path: ':theme/chart/semi-pie', component: SemiPieComponent, name: 'Semi Pie', order: '08', category: 'Accumulation Charts'
+        path: ':theme/chart/semi-pie', component: SemiPieComponent, name: 'Semi Pie', order: '09', category: 'Accumulation Charts'
     },
     {
-        path: ':theme/chart/smart-labels', component: SmartLabelsComponent, name: 'Smart Labels', order: '08', category: 'Accumulation Charts'
+        path: ':theme/chart/smart-labels', component: SmartLabelsComponent, name: 'Smart Labels', order: '09', category: 'Accumulation Charts'
     },
     {
-        path: ':theme/chart/drilldown-pie', component: DrilldownPieComponent, name: 'Drilldown', order: '08', category: 'Accumulation Charts'
+        path: ':theme/chart/drilldown-pie', component: DrilldownPieComponent, name: 'Drilldown', order: '09', category: 'Accumulation Charts'
     },    
     {
-        path: ':theme/chart/grouping', component: GroupingPieComponent, name: 'Grouping', order: '08', category: 'Accumulation Charts'
+        path: ':theme/chart/grouping', component: GroupingPieComponent, name: 'Grouping', order: '09', category: 'Accumulation Charts'
     },{
-        path: ':theme/chart/pie-empty-point', component: PieEmptyPointChartComponent, name: 'Empty Points', order: '08', category: 'Accumulation Charts'
+        path: ':theme/chart/pie-empty-point', component: PieEmptyPointChartComponent, name: 'Empty Points', order: '09', category: 'Accumulation Charts'
     },
 
 
-    { path: ':theme/chart/polar-line', component: PolarLineChartComponent, name: 'Line', order: '09', category: 'Polar Radar' },
-    { path: ':theme/chart/polar-spline', component: PolarSplineChartComponent, name: 'Spline', order: '09', category: 'Polar Radar' },
-    { path: ':theme/chart/polar-scatter', component: PolarScatterChartComponent, name: 'Scatter', order: '09', category: 'Polar Radar' },
-    { path: ':theme/chart/polar-area', component: PolarAreaChartComponent, name: 'Area', order: '09', category: 'Polar Radar' },
-    { path: ':theme/chart/polar-stackedarea', component: PolarStackedAreaChartComponent, name: 'Stacked Area', order: '09', category: 'Polar Radar' },
-    { path: ':theme/chart/polar-column', component: PolarColumnChartComponent, name: 'Column', order: '09', category: 'Polar Radar' },
-    { path: ':theme/chart/polar-rangecolumn', component: PolarRangeColumnChartComponent, name: 'Range Column', order: '09', category: 'Polar Radar' },
-    { path: ':theme/chart/polar-stackedcolumn', component: PolarStackedColumnChartComponent, name: 'Stacked Column', order: '09', category: 'Polar Radar' },
+    { path: ':theme/chart/polar-line', component: PolarLineChartComponent, name: 'Line', order: '10', category: 'Polar Radar' },
+    { path: ':theme/chart/polar-spline', component: PolarSplineChartComponent, name: 'Spline', order: '10', category: 'Polar Radar' },
+    { path: ':theme/chart/polar-scatter', component: PolarScatterChartComponent, name: 'Scatter', order: '10', category: 'Polar Radar' },
+    { path: ':theme/chart/polar-area', component: PolarAreaChartComponent, name: 'Area', order: '10', category: 'Polar Radar' },
+    { path: ':theme/chart/polar-stackedarea', component: PolarStackedAreaChartComponent, name: 'Stacked Area', order: '10', category: 'Polar Radar' },
+    { path: ':theme/chart/polar-column', component: PolarColumnChartComponent, name: 'Column', order: '10', category: 'Polar Radar' },
+    { path: ':theme/chart/polar-stackedcolumn', component: PolarStackedColumnChartComponent, name: 'Stacked Column', order: '10', category: 'Polar Radar' },
+    { path: ':theme/chart/polar-rangecolumn', component: PolarRangeColumnChartComponent, name: 'Range Column', order: '10', category: 'Polar Radar' },
 
-    { path: ':theme/chart/local-data', component: LocalDataChartComponent, name: 'Local Data', order: '10', category: 'Data Binding' },
-    { path: ':theme/chart/remote-data', component: RemoteDataChartComponent, name: 'Remote Data', order: '10', category: 'Data Binding' },
+    { path: ':theme/chart/local-data', component: LocalDataChartComponent, name: 'Local Data', order: '11', category: 'Data Binding' },
+    { path: ':theme/chart/remote-data', component: RemoteDataChartComponent, name: 'Remote Data', order: '11', category: 'Data Binding' },
 
-    { path: ':theme/chart/numeric-axis', component: NumericAxisChartComponent, name: 'Numeric Axis', order: '11', category: 'Chart Axes' },
-    { path: ':theme/chart/datetime', component: DateTimeAxisChartComponent, name: 'DateTime Axis', order: '11', category: 'Chart Axes' },
-    { path: ':theme/chart/category', component: CategoryChartComponent, name: 'Category Axis', order: '11', category: 'Chart Axes' },
-    { path: ':theme/chart/indexd-axis', component: IndexedAxisChartComponent, name: 'Indexd Category Axis', order: '11', category: 'Chart Axes' },
-    { path: ':theme/chart/logarithmic', component: LogarithmicAxisChartComponent, name: 'Log Axis', order: '11', category: 'Chart Axes' },
-    { path: ':theme/chart/multiple-axes', component: MultipleAxesChartComponent, name: 'Multiple Axes', order: '11', category: 'Chart Axes' },
-    { path: ':theme/chart/inversed', component: InversedAxisChartComponent, name: 'Inversed Axes', order: '11', category: 'Chart Axes' },
-    { path: ':theme/chart/stripline', component: StripLineChartComponent, name: 'Strip Line', order: '11', category: 'Chart Axes' },
-    { path: ':theme/chart/smart-axis-labels', component: SmartAxisLabelsChartComponent, name: 'Smart Axis Labels', order: '11', category: 'Chart Axes' },
+    { path: ':theme/chart/numeric-axis', component: NumericAxisChartComponent, name: 'Numeric Axis', order: '12', category: 'Chart Axes' },
+    { path: ':theme/chart/datetime', component: DateTimeAxisChartComponent, name: 'DateTime Axis', order: '12', category: 'Chart Axes' },
+    { path: ':theme/chart/category', component: CategoryChartComponent, name: 'Category Axis', order: '12', category: 'Chart Axes' },
+    { path: ':theme/chart/indexd-axis', component: IndexedAxisChartComponent, name: 'Indexd Category Axis', order: '12', category: 'Chart Axes' },
+    { path: ':theme/chart/logarithmic', component: LogarithmicAxisChartComponent, name: 'Log Axis', order: '12', category: 'Chart Axes' },
+    { path: ':theme/chart/multiple-axes', component: MultipleAxesChartComponent, name: 'Multiple Axes', order: '12', category: 'Chart Axes' },
+    { path: ':theme/chart/inversed', component: InversedAxisChartComponent, name: 'Inversed Axes', order: '12', category: 'Chart Axes' },
+    { path: ':theme/chart/stripline', component: StripLineChartComponent, name: 'Strip Line', order: '12', category: 'Chart Axes' },
+    { path: ':theme/chart/smart-axis-labels', component: SmartAxisLabelsChartComponent, name: 'Smart Labels', order: '12', category: 'Chart Axes' },
 
-    { path: ':theme/chart/symbols', component: SymbolsChartComponent, name: 'Symbols', order: '12', category: 'Chart Customization' },
-    { path: ':theme/chart/annotation', component: AnnotationChartComponent, name: 'Annotation', order: '12', category: 'Chart Customization' },
-    { path: ':theme/chart/datalabel-template', component: DataLabelComponent, name: 'Datalabel Template', order: '12', category: 'Chart Customization' },
-    { path: ':theme/chart/vertical-chart', component: VerticalChartComponent, name: 'Vertical Chart', order: '12', category: 'Chart Customization' },
-    { path: ':theme/chart/empty-point', component: EmptyPointChartComponent, name: 'Empty Points', order: '12', category: 'Chart Customization' },
+    { path: ':theme/chart/symbols', component: SymbolsChartComponent, name: 'Symbols', order: '13', category: 'Chart Customization' },
+    { path: ':theme/chart/annotation', component: AnnotationChartComponent, name: 'Annotation', order: '13', category: 'Chart Customization' },
+    { path: ':theme/chart/datalabel-template', component: DataLabelComponent, name: 'Datalabel Template', order: '13', category: 'Chart Customization' },
+    { path: ':theme/chart/vertical-chart', component: VerticalChartComponent, name: 'Vertical Chart', order: '13', category: 'Chart Customization' },
+    { path: ':theme/chart/empty-point', component: EmptyPointChartComponent, name: 'Empty Points', order: '13', category: 'Chart Customization' },
 
-    { path: ':theme/chart/print', component: PrintChartComponent, name: 'Print', order: '13', category: 'Print and Export' },
-    { path: ':theme/chart/export', component: ExportChartComponent, name: 'Export', order: '13', category: 'Print and Export' },
+    { path: ':theme/chart/print', component: PrintChartComponent, name: 'Print', order: '14', category: 'Print and Export' },
+    { path: ':theme/chart/export', component: ExportChartComponent, name: 'Export', order: '14', category: 'Print and Export' },
 
-    { path: ':theme/chart/selection', component: SelectionChartComponent, name: 'Selection', order: '14', category: 'User Interaction' },
-    { path: ':theme/chart/range-selection', component: RangeSelectionChartComponent, name: 'Range Selection', order: '14', category: 'User Interaction' },
-    { path: ':theme/chart/crosshair', component: CrosshairChartComponent, name: 'Crosshair', order: '14', category: 'User Interaction' },
-    { path: ':theme/chart/trackball', component: TrackBallChartComponent, name: 'TrackBall', order: '14', category: 'User Interaction' },
-    { path: ':theme/chart/zooming', component: ZoomingChartComponent, name: 'Zooming and Panning', order: '14', category: 'User Interaction' },
+    { path: ':theme/chart/selection', component: SelectionChartComponent, name: 'Selection', order: '15', category: 'User Interaction' },
+    { path: ':theme/chart/range-selection', component: RangeSelectionChartComponent, name: 'Range Selection', order: '15', category: 'User Interaction' },
+    { path: ':theme/chart/crosshair', component: CrosshairChartComponent, name: 'Crosshair', order: '15', category: 'User Interaction' },
+    { path: ':theme/chart/trackball', component: TrackBallChartComponent, name: 'TrackBall', order: '15', category: 'User Interaction' },
+    { path: ':theme/chart/zooming', component: ZoomingChartComponent, name: 'Zooming and Panning', order: '15', category: 'User Interaction' },
 ];
 
 export const chartRouter: ModuleWithProviders = RouterModule.forChild(chartAppRoutes);

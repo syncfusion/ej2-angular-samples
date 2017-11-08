@@ -79,11 +79,11 @@ export class RangeAreaComponent {
     let theme: ChartTheme = args.series.chart.theme;
     let color: string;
     if (theme === 'Material') {
-      color = '#004c46';
+      color = '#008E83';
     } else if (theme === 'Bootstrap') {
-      color = '#402c5c';
+      color = '#7953AC';
     } else {
-      color = '#1b2e4e';
+      color = '#335693';
     }
     args.series.border.color = color;
   };

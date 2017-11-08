@@ -20,7 +20,7 @@ export class PolarColumnChartComponent {
         //{text: 'India', 		x: 'IND', 		y: 893.3, y1: 1237, y2: 41.95},
         { text: 'Japan', x: 'JPN', y: 137.9, y1: 127.6, y2: 108.8 },
         //{text: 'USA', 			x: 'USA', 			y: 345.2, y1: 313.9, y2: 287.4},
-        { text: 'Indonesia', x: 'Indonesia', y: 85.0, y1: 246.9, y2: 45.5 },
+        { text: 'Indonesia', x: 'IDN', y: 85.0, y1: 246.9, y2: 45.5 },
         //{text: 'Brazil', 		x: 'IDN', 		y: 272.6, y1: 137.2, y2: 110.2 },
         { text: 'Russia', x: 'RUS', y: 237.1, y1: 143.5, y2: 41.2 },
         { text: 'Vietnam', x: 'VNM', y: 127.7, y1: 88.8, y2: 18.0 },

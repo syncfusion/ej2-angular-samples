@@ -1,13 +1,12 @@
 <div id="action-description">
     <p>
-        This sample demonstrates polar series with line type for weather statistics for alaska. You can change <code>Series Type</code> in property panel. Start angle of as series can be changed by <code>Start Angle</code> and 
-        Series can be closed by enabling <code>Enabled</code> and inversed axis can be acheived by <code>Inversed</code> in property panel.
+        This sample demonstrates polar series with line type for weather statistics for alaska. You can change <code>Series Type</code> in property panel. Start angle of as series can be changed by <code>Start Angle</code> and Series can be closed by
+        enabling <code>Enabled</code> and inversed axis can be acheived by <code>Inversed</code> in property panel.
     </p>
 </div>
 <div class="control-section">
     <div class="col-lg-9">
-        <ej-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
-            [tooltip]='tooltip' (load)='load($event)'>
+        <ej-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Polar' drawType='Line' xName='x' yName='y' name='Warmest' width=2 [marker]='marker'>
                 </e-series>
@@ -46,7 +45,7 @@
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 50%">
-                            <div>Start Angle:</div>
+                            <div id="st-lbl">Start Angle: 0</div>
                         </td>
                         <td style="width: 50%;">
                             <div>
@@ -71,10 +70,8 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the column type charts. Column type charts are used for comparing
-        the frequency, count, total or average of data in different categories. You can use <code>border</code>,
-        <code>fill</code> properties to customize the data appearance. <code>dataLabel</code> is used to represent individual
-        data and its value.
+        In this example, you can see how to render and configure the column type charts. Column type charts are used for comparing the frequency, count, total or average of data in different categories. You can use <code>border</code>,
+        <code>fill</code> properties to customize the data appearance. <code>dataLabel</code> is used to represent individual data and its value.
     </p>
     <p>
         Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.

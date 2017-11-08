@@ -5,7 +5,7 @@
 </div>
 <div class="control-section">
     <div align='center'>
-        <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [title]='title' [primaryXAxis]='primaryXAxis'
+        <ej-chart id='charts' style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [title]='title' [primaryXAxis]='primaryXAxis'
             [primaryYAxis]='primaryYAxis' (load)='load($event)' [tooltip]='tooltip'>
             <e-series-collection>
                 <e-series [dataSource]='series1' type='Line' xName='x' yName='y' name='Product X' width=2 [animation]='animation'> </e-series>

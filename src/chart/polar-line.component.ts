@@ -82,8 +82,9 @@ export class PolarLineChartComponent {
         this.chart.dataBind();
     }
     public startAngle(e: Event): void {
-        let element: HTMLInputElement = <HTMLInputElement>e.target;
-        this.chart.primaryXAxis.startAngle = parseInt(element.value, 10);
+        let value: number = parseInt((<HTMLInputElement>e.target).value, 10);
+        this.chart.primaryXAxis.startAngle = value;
+        document.getElementById('st-lbl').innerHTML = 'Start Angle: ' + value;
         this.chart.refresh();
     }
     public seriesType: DropDownList;

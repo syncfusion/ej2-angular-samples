@@ -5,8 +5,7 @@
 </div>
 <div class="control-section">
     <div class="col-lg-9">
-        <ej-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
-            (load)='load($event)' [chartArea]='chartArea'(pointRender)='pointRender($event)'>
+        <ej-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)' [chartArea]='chartArea' (pointRender)='pointRender($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Column' xName='x' yName='y' width=2>
                 </e-series>
@@ -37,15 +36,14 @@
                         </td>
                         <td style="width: 40%;">
                             <div class="e-float-input" style='margin-top: 0px;'>
-                                <input type="text" value="Chart" id="fileName" style="margin-left: -10px">
+                                <input type="text" value="Chart" id="fileName">
                             </div>
                         </td>
                     </tr>
                     <tr id="button-control" style="height: 50px" align='center'>
-                        <td align='center'>
+                        <td align='center' colspan="2">
                             <div>
-                                <button ej-button cssClass="e-flat" iconCss='e-icons e-play-icon' (click)='onClick($event)' style="text-transform:none !important"
-                                    id="togglebtn">EXPORT</button>
+                                <button ej-button cssClass="e-flat" iconCss='e-icons e-play-icon' (click)='onClick($event)' style="text-transform:none !important" id="togglebtn">EXPORT</button>
                             </div>
                         </td>
                     </tr>
@@ -56,8 +54,7 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the print. The rendered chart can be printed directly from the browser
-        by calling the public method print.
+        In this example, you can see how to render and configure the print. The rendered chart can be printed directly from the browser by calling the public method print.
     </p>
     <p>
         More information on the print can be found in this
@@ -68,13 +65,16 @@
     .control-section {
         min-height: 450px;
     }
+    
     #button-control {
         width: 100%;
         text-align: center;
     }
+    
     #control-container {
         padding: 0px !important;
     }
+    
     .e-play-icon::before {
         content: '\e813';
     }

@@ -34,8 +34,8 @@ export class AnnotationChartComponent {
         { x: '2020', y0: 72, y1: 97, y2: 65, y3: 82 }
     ];
     public pieDataSource: Object[] = [
-        { x: 'UK', y: 111 }, { x: 'Germany', y: 76 },
-        { x: 'France', y: 66 }, { x: 'Italy', y: 34 }
+        { x: 'UK', y: 51, text: '22%' }, { x: 'Germany', y: 77, text: '34%' },
+        { x: 'France', y: 66, text: '29%' }, { x: 'Italy', y: 34, text: '15%' }
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
@@ -126,7 +126,7 @@ export class AnnotationChartComponent {
             load: (args: IAccLoadedEventArgs) => {
                 let selectedTheme: string = location.hash.split('/')[1];
                 selectedTheme = selectedTheme ? selectedTheme : 'Material';
-                args.accumulation.theme = (selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+                args.accumulation.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
             },
             legendSettings: { visible: false }
         });

@@ -27,7 +27,6 @@ export class IndexedAxisChartComponent {
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Countries',
         valueType: 'Category',
         interval: 1, crosshairTooltip: { enable: true },
         isIndexed: true
@@ -35,7 +34,8 @@ export class IndexedAxisChartComponent {
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         minimum: 0, interval: 2, maximum: 8,
-        title: 'GDP Growth Rate (%)'
+        title: 'GDP Growth Rate',
+        labelFormat: '{value}%'
     };
     public marker: Object = {
         visible: true,

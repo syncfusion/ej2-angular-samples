@@ -36,7 +36,7 @@ export class PieEmptyPointChartComponent {
             color: '#ffffff'
         }
     };
-    public title: string = 'Annual Product-wise Profit Analysis';
+    public title: string = 'Annual Product-Wise Profit Analysis';
     public legend: Object = { visible: false};
     public emptyPointSettings: Object = {
         fill: '#e6e6e6',
