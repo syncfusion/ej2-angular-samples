@@ -37,7 +37,7 @@ import { SharedModule } from '../common/shared.module';
 import { ColumnChooserComponent } from './column/columnchooser.component';
 import { ColumnResizingComponent } from './column/columnresizing.component';
 import { ExportingComponent } from './exporting.component';
-import { MultipleExportingComponent } from './multiple-exporting.component';
+import { AdvanceExportingComponent } from './advance-exporting.component';
 import { CheckboxSelectionComponent } from './checkboxselection.component';
 import { CommandColumnComponent } from './command-column.component';
 import { ClipboardComponent } from './clipboard.component';
@@ -112,8 +112,8 @@ export const gridRouteConfig: Object[] = [
         'path': ':theme/grid/exporting', component: ExportingComponent, name: 'Basic', order: '08',
         category: 'Exporting'
     },
-    {
-        'path': ':theme/grid/multiple-exporting', component: MultipleExportingComponent, name: 'Multiple Exporting', order: '08',
+    {        
+        'path': ':theme/grid/advance-exporting', component: AdvanceExportingComponent, name: 'Advance Exporting', order: '08',
         category: 'Exporting'
     },
     { 'path': ':theme/grid/clipboard', component: ClipboardComponent, name: 'Clipboard', order: '01', category: 'Grid' },
@@ -137,7 +137,7 @@ let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     ScrollComponent, SearchComponent, SelectionApiComponent, DragAndDropComponent, AggregateComponent, AggregateGroupComponent,
     RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent, VirtualizationComponent,
     NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent, ColumnResizingComponent,
-    ExportingComponent, MultipleExportingComponent, CheckboxSelectionComponent, ClipboardComponent, CommandColumnComponent,
+    ExportingComponent, AdvanceExportingComponent, CheckboxSelectionComponent, ClipboardComponent, CommandColumnComponent,
     FilteringMenuComponent, ColumnSpanningComponent, ContextMenuComponent, ColumnMenuComponent];
 
 @NgModule({
