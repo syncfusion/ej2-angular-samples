@@ -1,4 +1,9 @@
 <div class="control-section">
+    <div id="action-description">
+        <p>This sample demonstrates the usage of column menu in Grid component. Click on multiple icon of each column to show the column
+            menu.
+        </p>
+    </div>
     <ej-grid [dataSource]='data' id="gridcomp" allowPaging='true' allowGrouping='true' allowSorting='true' showColumnMenu='true'
         [groupSettings]='groupOptions' allowFiltering='true' [filterSettings]='filterSettings'>
         <e-columns>
@@ -6,7 +11,7 @@
             <e-column field='CustomerName' headerText='Customer Name' width='150' showInColumnChooser='false'></e-column>
             <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right"></e-column>
             <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign="right"></e-column>
-            <e-column field='ShipCountry' headerText='Ship Country' width='150'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' visible='false' width='150'></e-column>
             <e-column field='ShipCity' headerText='Ship City' width='150'></e-column>
         </e-columns>
     </ej-grid>
