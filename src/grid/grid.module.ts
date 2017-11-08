@@ -41,6 +41,9 @@ import { MultipleExportingComponent } from './multiple-exporting.component';
 import { CheckboxSelectionComponent } from './checkboxselection.component';
 import { CommandColumnComponent } from './command-column.component';
 import { ClipboardComponent } from './clipboard.component';
+import { ContextMenuComponent } from './contextmenu.component';
+import { ColumnMenuComponent } from './column/columnmenu.component';
+import { ColumnSpanningComponent } from './column/columnspanning.component';
 
 export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/default', component: DefaultComponent, 'name': 'Default Functionalities', order: '01', category: 'Grid' },
@@ -113,7 +116,19 @@ export const gridRouteConfig: Object[] = [
         'path': ':theme/grid/multiple-exporting', component: MultipleExportingComponent, name: 'Multiple Exporting', order: '08',
         category: 'Exporting'
     },
-    { 'path': ':theme/grid/clipboard', component: ClipboardComponent, name: 'Clipboard', order: '01', category: 'Grid' }
+    { 'path': ':theme/grid/clipboard', component: ClipboardComponent, name: 'Clipboard', order: '01', category: 'Grid' },
+    {
+        'path': ':theme/grid/column/columnspanning', component: ColumnSpanningComponent, name: 'Column Spanning', order: '03',
+        category: 'Column', type: 'new'
+    },
+    {
+        'path': ':theme/grid/column/columnmenu', component: ColumnMenuComponent, name: 'Column Menu', order: '03',
+        category: 'Column', type: 'new'
+    },
+    {
+        'path': ':theme/grid/contextmenu', component: ContextMenuComponent, name: 'Context Menu', order: '01',
+        category: 'Grid', type: 'new'
+    }
 ];
 
 let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
@@ -123,7 +138,7 @@ let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent, VirtualizationComponent,
     NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent, ColumnResizingComponent,
     ExportingComponent, MultipleExportingComponent, CheckboxSelectionComponent, ClipboardComponent, CommandColumnComponent,
-    FilteringMenuComponent];
+    FilteringMenuComponent, ColumnSpanningComponent, ContextMenuComponent, ColumnMenuComponent];
 
 @NgModule({
     imports: [RouterModule.forChild(gridRouteConfig), CommonModule, HttpModule, ToolbarModule, GridAllModule, SharedModule],
