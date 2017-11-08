@@ -1,17 +1,14 @@
-/**
- * Tooltip template sample
- */
-
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { TooltipComponent, TooltipEventArgs } from '@syncfusion/ej2-ng-popups';
-
+/**
+ * Tooltip Component
+ */
 @Component({
     selector: 'control-content',
     templateUrl: 'template.html',
     styleUrls: ['tooltip.component.css'],
     encapsulation: ViewEncapsulation.None
 })
-
 export class TemplateTooltipComponent {
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['tooltip.component.css'];
@@ -20,7 +17,6 @@ export class TemplateTooltipComponent {
     @ViewChild('tooltip')
     public control: TooltipComponent;
 
-    //Tooltip content customization.
     onBeforeRender(args: TooltipEventArgs) {
         let data: any = [
             { title: 'Bold', name: 'Bold (Ctrl+B)', description: 'Makes your text bold.' },

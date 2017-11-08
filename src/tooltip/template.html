@@ -1,17 +1,7 @@
-<div id="action-description">
-        <p>This sample demonstrates the Template functionalities of the Tooltip. Hover the toolbar options to open the tooltip. For Mobile devices, touch and
-             hold the toolbar options to open the tooltip.
-</p>
-</div>
-
 <div class="control-section">
-
-    <!-- Tooltip element -->
     <ej-tooltip #tooltip target=".toolbarContainer [title]" (beforeRender)="onBeforeRender($event)" [showTipPointer]='false'
         [offsetX]='70' [width]='170'>
         <div class="toolbarContainer">
-
-            <!-- Toolbar element -->
             <ej-toolbar id="Toolbar">
                 <e-items>
                     <e-item prefixIcon='e-cut-icon tb-icons' tooltipText='Cut'></e-item>
@@ -26,15 +16,13 @@
         </div>
     </ej-tooltip>
 </div>
-
 <div id="description">
     <p>This sample illustrates the way to display the template content on the tooltip. With the usage of Template, the user
-        can format and structure the HTML content to be displayed on the tooltip as per their application needs.</p>
-    <p>In this sample, the tooltip is integrated with toolbar component to display the respective icon’s information. Here,
-        the HTML template design is compiled and then the resultant output display is directly assigned to the
-        <code> content</code>property of the tooltip. The template compilation process needs to be done on the
-        <code>beforeRender</code> event of the tooltip.</p>
-    <p>More information about setting template content on the Tooltip can be found in the
+        can format and structure the HTML content to be displayed on tooltip as per their application needs.</p>
+    <p>In this sample, tooltip is integrated with toolbar component to display the respective icon’s information. Here, the
+        HTML template design is compiled and then the resultant output display is directly assigned to the <code> content</code>property
+        of the tooltip. The template compilation process needs to be done on the <code>beforeRender</code> event of the tooltip.</p>
+    <p>More information on setting template content on Tooltip can be found in this
         <a href="http://ej2.syncfusion.com/angular/documentation/tooltip/content.html#template-content" target="_blank"> documentation section</a>.
     </p>
 </div>
