@@ -64,6 +64,11 @@ export class SBController {
     public aniObject: Animation = new Animation({ duration: 400 });
     public mobileOverlay: Element;
     public searchBox: AutoComplete;
+    public loader: Element;
+    public resizeManualTrigger: boolean = false;
+    public currentViewMode: string = '';
+    public previousViewMode: string = '';
+    public viewModeChanged: boolean = false;
 
     //Bread Crumb Object
     public breadCrumbObject:
@@ -258,8 +263,12 @@ export class SBController {
                 this.updateDescription();
                 this.setListItemSelect();
                 this.createOpenNewButton();
+                this.updateViewMode();
                 this.setResponsive();
                 this.setPropertyBorder();
+                if (this.currentControl !== this.prevControl) {
+                    this.updateListViewDS();
+                }
             });
 
         this.router.events
@@ -275,6 +284,7 @@ export class SBController {
                 history.replaceState({}, 'theme', href + hash.join('/'));
                 this.setThemeItemActive(location.hash.split('/')[1]);
                 this.setSbLink();
+                this.hideShowSBLoader(true);
             });
         // select('.copycode').addEventListener('click', this.copyCode);
         // new Tooltip({ content: 'Copied', position: 'bottom center', opensOn: 'click', closeDelay: 500 }, '.copy-tooltip');
@@ -323,6 +333,7 @@ export class SBController {
         this.breadCrumbObject.sample = this.ngEle.nativeElement.querySelector('.sb-bread-crumb-text>.crumb-sample');
         this.footer = select('.sb-footer');
         this.mobileOverlay = select('.sb-mobile-overlay ');
+        this.loader = select('.sb-body-overlay');
         this.themeDropDown.appendTo('#sb-setting-theme');
         this.searchBox.dataSource = this.leftControl.listData;
         this.searchBox.dataBind();
@@ -333,18 +344,41 @@ export class SBController {
         this.wireEvents();
     }
 
+    hideShowSBLoader(hide?: boolean) {
+        if (hide) {
+            addClass([this.loader], 'sb-hide');
+        } else {
+            this.loader.classList.remove('sb-hide');
+        }
+    }
+
     switchTheme(str: string): void {
         let hash: string[] = location.hash.split('/');
         if (hash[1] !== str) {
             hash[1] = str;
             location.hash = hash.join('/');
+            location.reload();
         }
-        location.reload();
+    }
+
+    updateViewMode() {
+        this.isMobile = window.matchMedia('(max-width:550px)').matches;
+        this.isTablet = window.matchMedia('(min-width:550px) and (max-width: 850px)').matches;
+        this.isDesktop = window.matchMedia('(min-width:850px)').matches;
+        this.currentViewMode = this.isMobile ? 'mobile' : this.isTablet ? 'tablet' : 'desktop';
+        this.previousViewMode = this.previousViewMode === '' ? this.currentViewMode : this.previousViewMode;
+        this.viewModeChanged = this.currentViewMode !== this.previousViewMode;
+        this.previousViewMode = this.currentViewMode;
     }
 
     onSBResize(event: any) {
-        this.setResponsive();
+        this.updateViewMode();
+        if (!this.resizeManualTrigger && this.viewModeChanged) {
+            this.setResponsive();
+        }
     }
+
+
 
     onDocClick(e: Event) {
         if (closest(<Element>e.target, '.theme-wrapper') === null && this.themePopup.element.classList.contains('e-popup-open')) {
@@ -373,7 +407,7 @@ export class SBController {
         select('.sb-header-settings').addEventListener('click', this.onOpenPreferenceButtonClick.bind(this));
         select('#prev-sample').addEventListener('click', this.onPrevButtonClick.bind(this));
         select('#next-sample').addEventListener('click', this.onNextButtonClick.bind(this));
-        select('#sb-toggle-left').addEventListener('click', this.toggleLeftPane.bind(this));
+        select('#sb-toggle-left').addEventListener('click', this.onNavButtonClick.bind(this));
         select('.sb-mobile-setting').addEventListener('click', this.toggleMobilePropertyPanel.bind(this));
         select('.sb-settings').addEventListener('click', this.onSearchButtonClick.bind(this));
         select('.e-search-overlay').addEventListener('click', this.onSearchOverlayClick.bind(this));
@@ -413,6 +447,19 @@ export class SBController {
             window.isInteractedList = false;
             this.router.navigateByUrl(nextList);
         }
+    }
+
+    onNavButtonClick() {
+        if (this.isMobile) {
+            this.toggleLeftPane()
+        } else {
+            if (isVisible(this.leftControl.ngEle.nativeElement)) {
+                this.toggleLeftPaneOnDesktop(true);
+            } else {
+                this.toggleLeftPaneOnDesktop();
+            }
+        }
+
     }
 
     onMobileOverlayClick() {
@@ -476,6 +523,10 @@ export class SBController {
         })[0];
     }
 
+    updateListViewDS(): void {
+        this.leftControl.updateListViewDataSource();
+    }
+
     setListItemSelect(): void {
         let path: string[] = location.hash.split('/');
         path.splice(0, 2);
@@ -499,6 +550,7 @@ export class SBController {
             actElement.classList.remove('active')
         }
         select('#' + theme).classList.add('active');
+        this.themeDropDown.value = theme;
     }
 
     setMouseOrTouch(str: string): void {
@@ -512,27 +564,24 @@ export class SBController {
             document.body.classList.add('e-bigger');
         }
         document.querySelector('.setting-responsive #' + str).classList.add('active');
+        location.reload();
     }
 
     setResponsive(): void {
-        this.isMobile = window.matchMedia('(max-width:550px)').matches;
-        this.isTablet = window.matchMedia('(min-width:550px) and (max-width: 850px)').matches;
-        this.isDesktop = window.matchMedia('(min-width:850px)').matches;
         this.leftControl.ngEle.nativeElement.style.display = '';
-        if (this.isTablet || this.isMobile) {
-            this.tab.hideTab(1);
-        } else {
-            this.tab.hideTab(1, false);
-        }
         if (this.isMobile) {
             this.leftControl.onWindowResize(true);
             this.leftControl.ngEle.nativeElement.style.display = 'none';
+        } else if (this.isTablet) {
+            this.toggleLeftPaneOnDesktop(true);
+        } else if (this.isDesktop) {
+            this.toggleLeftPaneOnDesktop();
         }
-        this.updatePropertyPanel();
         this.themePopup.hide();
         this.settingsPopup.hide();
         this.switcherPopup.hide();
         this.updatePropertyPanel();
+        addClass([this.mobileOverlay], 'sb-hide');
     }
 
     updatePropertyPanel(): void {
@@ -596,7 +645,33 @@ export class SBController {
                 this.mobileOverlay.classList.remove('sb-hide');
             }
         }
+    }
 
+    toggleLeftPaneOnDesktop(close?: boolean) {
+        let rightPane: HTMLElement = <HTMLElement>select('.sb-right-pane');
+        if (this.isTablet === true || this.isDesktop === true) {
+            if (close) {
+                rightPane.style.left = "0px";
+                this.aniObject.animate(this.leftControl.ngEle.nativeElement, {
+                    name: 'SlideLeftOut', end: (): void => {
+                        this.leftControl.ngEle.nativeElement.style.display = 'none';
+                        this.resizeManualTrigger = true;
+                        window.dispatchEvent(new Event('resize'));
+                        this.resizeManualTrigger = false;
+                    }
+                });
+            } else {
+                this.leftControl.ngEle.nativeElement.style.display = '';
+                rightPane.style.left = "";
+                this.aniObject.animate(this.leftControl.ngEle.nativeElement, {
+                    name: 'SlideLeftIn', end: (): void => {
+                        this.resizeManualTrigger = true;
+                        window.dispatchEvent(new Event('resize'));
+                        this.resizeManualTrigger = false;
+                    }
+                });
+            }
+        }
     }
 
     closeLeftPane(): void {

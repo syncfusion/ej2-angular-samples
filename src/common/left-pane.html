@@ -19,7 +19,8 @@
             <div class="e-icons back-icon"></div>
             <div class="control-name">ALL CONTROLS</div>
         </div>
-        <ej-listview id="controlList" #controlList class="e-view" [dataSource]="listData" [fields]="listFields" (select)='onSampleSelect($event)'>
+        <ej-listview id="controlList" #controlList class="e-view" [dataSource]="listData" [fields]="listFields" (select)='onSampleSelect($event)'
+            (actionComplete)='afterListviewRendered($event)'>
             <ng-template #template let-data>
                 <div class="e-text-content e-icon-wrapper">
                     <span class="e-list-text" role="listitem">{{data.name}}
@@ -43,11 +44,13 @@
             <div class="sb-mobile-header-button">
                 About</div>
         </a>
-        <div class="sb-mobile-header-button">Pricing</div>
+        <a href="https://www.syncfusion.com/products/essential-js2" target="_blank">
+            <div class="sb-mobile-header-button">Pricing</div>
+        </a>
     </div>
     <div class="sb-footer-left">
         <div class="sb-footer-links">
-            <a href="http://ej2.syncfusion.com/react/documentation/" target="_blank">
+            <a href="http://ej2.syncfusion.com/angular/documentation/" target="_blank">
                 <div class="sb-footer-link">Documentation</div>
             </a>
             <a href="https://www.syncfusion.com/forums/" target="_blank">
