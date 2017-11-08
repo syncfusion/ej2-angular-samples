@@ -1,17 +1,21 @@
+/**
+ * Loading ajax content sample
+ */
+
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { TooltipComponent, TooltipEventArgs } from '@syncfusion/ej2-ng-popups';
 import { Http } from '@angular/http';
-/**
- * Tooltip Component
- */
+
 @Component({
     selector: 'control-content',
     templateUrl: 'ajaxcontent.html',
     styleUrls: ['tooltip.component.css'],
     encapsulation: ViewEncapsulation.None
 })
+
 export class AjaxContentTooltipComponent {
 
+    //Define an Array of JSON data
     public listViewData: { [key: string]: Object }[] = [
         { id: '1', text: 'Australia' },
         { id: '2', text: 'Bhutan' },
@@ -21,6 +25,8 @@ export class AjaxContentTooltipComponent {
         { id: '6', text: 'Switzerland' },
         { id: '7', text: 'United States' }
     ];
+
+    //Map appropriate columns to fields property
     public fields: Object = { text: 'text', tooltip: 'id' };
 
     @ViewChild('tooltip')
@@ -29,6 +35,10 @@ export class AjaxContentTooltipComponent {
     constructor( @Inject('sourceFiles') private sourceFiles: any, @Inject(Http) public http: Http) {
         sourceFiles.files = ['tooltip.component.css'];
     }
+
+/**
+ * Process tooltip ajax content.
+ */
 
     onBeforeRender(args: TooltipEventArgs) {
         this.tooltipControl.content = 'Loading...';
@@ -40,7 +50,7 @@ export class AjaxContentTooltipComponent {
                 for (let i: number = 0; i < result.length; i++) {
                     if (result[i].Id === args.target.getAttribute('data-content')) {
                         /* tslint:disable */
-                        this.tooltipControl.content = "<div class='contentWrap'><span class=" + result[i].Class 
+                        this.tooltipControl.content = "<div class='contentWrap'><span class=" + result[i].Class
                             + "></span><div class='def'>" + result[i].Sports + "</div></div>";
                         /* tslint:enable */
                     }
