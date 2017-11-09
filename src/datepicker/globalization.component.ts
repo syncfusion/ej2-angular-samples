@@ -14,6 +14,7 @@ export class GlobalizationComponent {
     public date: Object = new Date();
     locale: string = 'de';
     ngOnInit(): void {
+        /*loads the localization text*/
         L10n.load({
             'de': {
                 'datepicker': {
@@ -32,8 +33,9 @@ export class GlobalizationComponent {
             }
         });
 
+        /*  loadCldr method to load the culture specific JSON file.*/
         loadCldr(
-            require('../common/cldr-data/supplemental/numberingSystems.json'),
+            require('../common/cldr-data/supplemental/numberingSystems.json'),  
             require('../common/cldr-data/main/de/ca-gregorian.json'),
             require('../common/cldr-data/main/de/numbers.json'),
             require('../common/cldr-data/main/de/timeZoneNames.json'),
@@ -43,9 +45,10 @@ export class GlobalizationComponent {
         );
     }
     changeLocale() {
+	/*Apply selected locale to the component*/
         let culture: string = (document.getElementById('cultures') as HTMLSelectElement).value;
         this.ejDatePicker.locale = culture;
-        this.ejDatePicker.locale === 'ar' ? this.ejDatePicker.enableRtl = true : this.ejDatePicker.enableRtl = false;
+        this.ejDatePicker.locale === 'ar' ? this.ejDatePicker.enableRtl = true : this.ejDatePicker.enableRtl = false;      
         this.ejDatePicker.dataBind();
 
     }

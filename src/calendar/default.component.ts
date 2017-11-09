@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, Inject } from '@angular/core';
 
 /**
 
- * Default Calendar Component
+ * Default Calendar component
  */
 @Component({
     selector: 'control-content',
@@ -16,6 +16,7 @@ export class DefaultCalendarComponent {
          sourceFiles.files = ['calendar-style.css'];
     }
     onValueChange(args: any):void {
+        /*Displays selected date in the label*/
         (<HTMLInputElement>document.getElementById('selected')).textContent = 'Selected Value: ' + args.value.toLocaleDateString();
     }
 }

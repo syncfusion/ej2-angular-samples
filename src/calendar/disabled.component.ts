@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, Inject } from '@angular/core';
 
 /**
 
- * Default Calendar Component
+ * Default Calendar component
 
  */
 @Component({
@@ -17,11 +17,13 @@ export class DisabledCalendarComponent {
          sourceFiles.files = ['calendar-style.css'];
     }
     onLoad(args: any){
+    /*Date need to be disabled*/
         if (args.date.getDay() === 0 || args.date.getDay() === 6) {
             args.isDisabled = true;
         }
     }
     onValueChange(args: any) {
+	/*Displays selected date in the label*/
         (<HTMLInputElement>document.getElementById('selected')).textContent = 'Selected Value: ' + args.value.toLocaleDateString();
     }
 }

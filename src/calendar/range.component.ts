@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, Inject } from '@angular/core';
 
 /**
 
- * Default Calendar Component
+ * Default Calendar component
  */
 @Component({
     selector: 'control-content',
@@ -15,8 +15,9 @@ export class RangesCalendarComponent {
     public maxDate: Object = new Date("05/27/2017");
     constructor(@Inject('sourceFiles') private sourceFiles:any) {
          sourceFiles.files = ['calendar-style.css'];
-    }
+    }    
     onValueChange(args: any):void {
+	/*Displays selected date in the label*/
         (<HTMLInputElement>document.getElementById('selected')).textContent = 'Selected Value: ' + args.value.toLocaleDateString();
     }
 }

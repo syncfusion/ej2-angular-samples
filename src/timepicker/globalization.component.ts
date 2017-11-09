@@ -18,6 +18,7 @@ export class GlobalizationComponent {
     public listObj: DropDownListComponent;
     public cultureData: string[] = ['ar', 'de', 'en', 'vi', 'zh'];
     ngOnInit(): void {
+        /*loads the localization text*/
         L10n.load({
             'de': {
                 'timepicker': { placeholder: 'Wählen Sie Zeit' }
@@ -35,6 +36,7 @@ export class GlobalizationComponent {
                 'timepicker': { placeholder: 'حدد الوقت' }
             }
         });
+        /*  loadCldr method to load the culture specific JSON file.*/
         loadCldr(
             require('../common/cldr-data/supplemental/numberingSystems.json'),
             require('../common/cldr-data/main/zh/ca-gregorian.json'),
@@ -48,6 +50,7 @@ export class GlobalizationComponent {
         );
     }
     changeLocale() {
+	/*Apply selected locale to the component*/
         let culture: string = this.listObj.text;
         this.locale = culture;
         this.ejTimePicker.enableRtl = culture === 'ar' ? true : false;

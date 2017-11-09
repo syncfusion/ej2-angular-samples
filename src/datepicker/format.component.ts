@@ -9,8 +9,9 @@ import { loadCldr, L10n } from '@syncfusion/ej2-base';
 })
 export class FormatDatePickerComponent {
     public date: Object = new Date();
-    public format: string = 'dd-MMM-yy';
+    public format: string = 'dd-MMM-yy';    
     changeFormat() {
+	/*Apply selected format to the component*/
         let dateFormat: string = (document.getElementById('dateFormats') as HTMLSelectElement).value;
         this.format = dateFormat;
     }

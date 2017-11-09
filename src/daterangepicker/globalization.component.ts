@@ -13,6 +13,7 @@ export class GlobalizationComponent {
     public date: Object = new Date();
     locale: string = 'de';
     ngOnInit(): void {
+	/*loads the localization text*/
         L10n.load({
             'de': {
                 'daterangepicker': {
@@ -52,6 +53,7 @@ export class GlobalizationComponent {
             }
         });
 
+        /*  loadCldr method to load the culture specific JSON file.*/
         loadCldr(
             require('../common/cldr-data/supplemental/numberingSystems.json'),  
             require('../common/cldr-data/main/de/ca-gregorian.json'),
@@ -63,6 +65,7 @@ export class GlobalizationComponent {
         );
     }
     changeLocale() {
+	/*Apply selected locale to the component*/
         let culture: string = (document.getElementById('cultures') as HTMLSelectElement).value;
         this.ejDateRangePicker.locale = culture;
         this.ejDateRangePicker.locale === 'ar' ? this.ejDateRangePicker.enableRtl = true : this.ejDateRangePicker.enableRtl = false;

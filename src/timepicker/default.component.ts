@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, Inject, OnInit, ViewChild } from '@angula
 import { TimePickerComponent } from '@syncfusion/ej2-ng-calendars/src';
 /**
 
- * Default TimePicker Component
+ * Default TimePicker component
  */
 @Component({
     selector: 'control-content',

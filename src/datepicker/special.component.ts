@@ -12,8 +12,8 @@ export class SpecialDatePickerComponent {
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['datepicker-style.css'];
     }
-
     onLoad(args: any) {
+	/*Date need to be customized*/
         if (+args.date === +new Date('1/2/2017')) {
             let span: HTMLElement;
             span = document.createElement('span');

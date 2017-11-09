@@ -19,13 +19,15 @@ export class InternationalizationComponent {
         );
     }
     changeLocale() {
+	/*Apply selected locale to the component*/
         let culture: string = (document.getElementById('cultures') as HTMLSelectElement).value;
         this.locale = culture;
     }
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['calendar-style.css'];
-    }
-    onValueChange(args: any): void {
-        (<HTMLInputElement>document.getElementById('selected')).textContent = 'Selected Value: ' + args.value.toLocaleDateString();
+    }    
+     onValueChange(args: any):void {
+	 /*Displays selected date in the label*/
+        (<HTMLInputElement>document.getElementById('selected')).textContent = 'Selected Value: ' + args.value.toLocaleDateString();    
     }
 }

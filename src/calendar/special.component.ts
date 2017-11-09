@@ -3,7 +3,7 @@ import { ChangedEventArgs } from '@syncfusion/ej2-calendars';
 
 /**
 
- * Default Calendar Component
+ * Default Calendar component
  */
 @Component({
     selector: 'control-content',
@@ -14,8 +14,9 @@ import { ChangedEventArgs } from '@syncfusion/ej2-calendars';
 export class SpecialCalendarComponent {
      constructor(@Inject('sourceFiles') private sourceFiles:any) {
          sourceFiles.files = ['calendar-style.css'];
-    }
+    }    
     onLoad(args: any) {
+	/*Date need to be customized*/
         if (args.date.getDate() === 10) {
             let span: HTMLElement;
             span = document.createElement('span');
@@ -32,9 +33,10 @@ export class SpecialCalendarComponent {
         if (args.date.getDate() === 20) {
             args.element.className = 'daycell';
         }
-    }
-    onValueChange(args: ChangedEventArgs) {
-        let title: string = (<HTMLElement>args.event.currentTarget).querySelector(".e-day").getAttribute('data-val');
+    }    
+    onValueChange(args: any) {
+	/*Displays selected date in the label*/
+        let title: string = (<HTMLElement>event.currentTarget).querySelector(".e-day").getAttribute('data-val');
         title = title == null ? "" : " ( "+title+" )";
         (<HTMLInputElement>document.getElementById('selected')).textContent = 'Selected Value: ' + args.value.toLocaleDateString() + title;
     }

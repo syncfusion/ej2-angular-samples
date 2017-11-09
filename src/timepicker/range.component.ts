@@ -3,7 +3,7 @@ import { TimePickerComponent, ChangeEventArgs } from '@syncfusion/ej2-ng-calenda
 
 /**
 
- * TimePicker Component
+ * TimePicker component
  */
 @Component({
     selector: 'control-content',
@@ -25,6 +25,7 @@ export class RangeTimePickerComponent {
     }
 
     public onEnableEndTime(args: ChangeEventArgs): void {
+	/*Enables end time if start time is selected*/
         let value: Date;
         if (this.isStartTimeChange) {
             this.endObject.enabled = true;
@@ -39,9 +40,11 @@ export class RangeTimePickerComponent {
     }
 
     public changeTime(): void {
+	/*To determine whether we have selected business hours or not*/
         let element: HTMLInputElement = <HTMLInputElement>document.getElementById('dayRange');
         this.isStartTimeChange = false;
         if (element.checked) {
+            /*Business hours*/
             this.startObject.value = new Date('9/6/2017 9:00');
             this.endObject.enabled = true;
             this.endObject.value = new Date('9/6/2017 18:00');
