@@ -2,15 +2,6 @@
     font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif";
 }
 
-.e-view {
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
 .sb-left {
     float: left;
 }
@@ -37,7 +28,7 @@
 
 @font-face {
     font-family: 'sbicons';
-    src: url('images/sb_icons/fonts/icons.ttf?gcjn6a') format('truetype'), url('images/sb_icons/fonts/icons.woff?gcjn6a') format('woff'), url('images/sb_icons/fonts/icons.svg?gcjn6a#sbicons') format('svg');
+    src: url('images/sb-icons/fonts/icons.ttf?gcjn6a') format('truetype'), url('images/sb_icons/fonts/icons.woff?gcjn6a') format('woff'), url('images/sb_icons/fonts/icons.svg?gcjn6a#sbicons') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -185,6 +176,7 @@
 .sb-setting-btn {
     width: 32px;
     height: 27px;
+    border-radius: 2px;
     text-align: center;
 }
 
@@ -273,10 +265,11 @@
 
 .theme-wrapper {
     height: 32px;
-    width: 128px;
+    width: 145px;
     margin-top: 5px;
     cursor: default;
-    padding-left: 3px;
+    padding: 0px 10px;
+    border-radius: 2px;
 }
 
 .theme-wrapper>div {
@@ -319,7 +312,7 @@
 }
 
 .switch-text {
-    padding-left: 16px;
+    padding-left: 8px;
 }
 
 .sb-switch-popup ul {
@@ -363,9 +356,9 @@
 }
 
 .sb-theme-select {
-    padding-left: 18px;
+    padding-left: 12px;
     vertical-align: middle;
-    font-size: 18px;
+    font-size: 24px;
     color: #ffffff;
 }
 
@@ -391,7 +384,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(126, 125, 125, 0.54);
+    background-color: rgba(126, 125, 125, 0.78);
 }
 
 #search-input-wrapper {
@@ -639,7 +632,7 @@
     top: 27px;
     font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif";
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 500;
     padding-left: 16px;
 }
 
@@ -686,6 +679,11 @@
     padding-left: 10px;
 }
 
+#controlTree {
+    overflow-y: auto;
+    position: absolute;
+}
+
 .sb-left-pane #sb-left-back {
     padding: 12px 20px;
     width: 100%;
@@ -701,21 +699,15 @@
     overflow-y: auto;
     position: absolute;
     padding-left: 5px;
-    top: 40px;
+    top: 50px;
 }
 
-#controlSamples {
+.sb-control-navigation {
     top: 66px;
 }
 
 .sb-control-list-top {
     top: 116px;
-}
-
-#controlTree {
-    overflow-y: auto;
-    top: 66px;
-    height: calc(100% - 66px);
 }
 
 .sb-left-back {
@@ -767,6 +759,10 @@
     padding-left: 26px;
     padding-right: 36px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.sb-animate-left {
     transition-duration: 400ms;
     transition-property: left;
 }
@@ -912,7 +908,7 @@ a.code:visited {
 
 .sb-toolbar-splitter {
     border-left: 1px solid rgb(196, 196, 196);
-    height: 32px;
+    height: 34px;
     margin-top: 3px;
 }
 
@@ -971,6 +967,10 @@ button#tab-navigation-prev {
     position: absolute;
     right: 0px;
     display: inline-flex;
+}
+
+.e-bigger .sb-content-toolbar {
+    padding: 5px 0px;
 }
 
 .sb-bread-crumb-text>div.seperator {
@@ -1086,7 +1086,7 @@ propertye pane
 }
 
 .sb-footer-logo-icon {
-    background: url(images/sb_icons/Syncfusion-logo.svg) no-repeat right;
+    background: url(images/sb-icons/Syncfusion-logo.svg) no-repeat right;
     height: 40px;
     width: 140px;
 }
@@ -1094,6 +1094,22 @@ propertye pane
 .sb-highlight {
     font-weight: bold;
     vertical-align: baseline !important;
+}
+
+#sb-content>.sb-content-tab-header .sb-icons {
+    padding-right: 3px;
+}
+
+
+/*Mobile Lower Resolution*/
+
+@media (max-width: 335px) {
+    #sb-header-text {
+        padding-left: 12px;
+    }
+    .sb-header-preview {
+        width: 65px;
+    }
 }
 
 
@@ -1350,7 +1366,7 @@ propertye pane
         color: #5a5a5a;
     }
     .sb-mobilefooter {
-        top: 93%;
+        top: 91%;
         background-color: #e6e4e4;
         font-size: 15px;
         display: inline-block;
@@ -1383,7 +1399,7 @@ propertye pane
         padding-bottom: 5px;
     }
     .sb-mobile-logo {
-        background: url(images/sb_icons/Syncfusion-mobile-logo.svg) no-repeat;
+        background: url(images/sb-icons/Syncfusion-mobile-logo.svg) no-repeat;
         width: 27px;
         height: 27px;
         display: table-cell;
@@ -1425,6 +1441,10 @@ propertye pane
     }
     .atlwdg-popup {
         width: 100% !important
+    }
+    span.sb-icon-Next,
+    span.sb-icon-Previous {
+        font-size: 18px !important;
     }
 }
 

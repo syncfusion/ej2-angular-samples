@@ -15,7 +15,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 declare let window: MyWindow;
-let sbObj: { [index: string]: string } = { 'react': 'react', 'typescript': '' }
+let sbObj: { [index: string]: string } = { 'react': 'react', 'javascript': 'javascript' }
 let sbArray: string[] = ['react', 'ts', 'javascript'];
 let urlRegex: RegExp = /(npmci\.syncfusion\.com|ej2\.syncfusion\.com)(\/)(development|production)*/;
 let sampleRegex: RegExp = /#\/(([^\/]+\/)+[^\/\.]+)/;
@@ -34,6 +34,7 @@ const themes: string[] = ['material', 'fabric', 'bootstrap'];
 let selectedTheme: string;
 let themeFlag: boolean = true;
 let slideFlag: boolean = false;
+
 
 
 declare let hljs: any;
@@ -60,6 +61,7 @@ export class SBController {
     public isTablet: boolean;
     public isMobile: boolean;
     public isDesktop: boolean;
+    public isInitialRender: boolean = true;
     public footer: Element;
     public aniObject: Animation = new Animation({ duration: 400 });
     public mobileOverlay: Element;
@@ -69,6 +71,7 @@ export class SBController {
     public currentViewMode: string = '';
     public previousViewMode: string = '';
     public viewModeChanged: boolean = false;
+    public resizeTimer: number = 0;
 
     //Bread Crumb Object
     public breadCrumbObject:
@@ -105,9 +108,14 @@ export class SBController {
                 }
             }
         });
+
+        let proxy: any = this
         this.sourceTab = new Tab({
             items: [],
             headerPlacement: 'Bottom', cssClass: 'sb-source-code-section', selected: function (e: any) {
+                if (e.selectedIndex === 0) {
+                    proxy.renderCopyCode();
+                }
                 if (e.isSwiped) {
                     e.cancel = true;
                 }
@@ -178,6 +186,17 @@ export class SBController {
         let tabContentToolbar: Element = createElement('div', { className: 'sb-content-toolbar', innerHTML: contentToolbarTemplate });
         let tabHeader: Element = document.getElementById('sb-content-header');
         tabHeader.appendChild(tabContentToolbar);
+    }
+
+    renderCopyCode() {
+        // Copy To Clipboard Element
+        let ele: HTMLElement = createElement('div', { className: 'copy-tooltip', innerHTML: '<div class="e-icons copycode"></div>' });
+        document.getElementById('sb-source-tab').appendChild(ele);
+        ele.addEventListener('click', this.copyCode.bind(this));
+        let copiedTooltip: Tooltip = new Tooltip(
+            {
+                content: 'Copied', position: 'bottom center', opensOn: 'click', closeDelay: 500
+            }, '.copy-tooltip');
 
     }
 
@@ -220,6 +239,7 @@ export class SBController {
         this.router.events
             .filter((event: NavigationStart) => event instanceof NavigationStart)
             .subscribe((event: any) => {
+                this.hideShowSBLoader();
                 this.tab.selectedItem = 0;
                 this.tab.dataBind();
                 let hashTheme: string = location.hash.split('/')[1];
@@ -264,8 +284,11 @@ export class SBController {
                 this.setListItemSelect();
                 this.createOpenNewButton();
                 this.updateViewMode();
-                this.setResponsive();
                 this.setPropertyBorder();
+                if (this.isInitialRender) {
+                    this.updateStaticView();
+                }
+                this.updatePropertyPanel();
                 if (this.currentControl !== this.prevControl) {
                     this.updateListViewDS();
                 }
@@ -285,14 +308,19 @@ export class SBController {
                 this.setThemeItemActive(location.hash.split('/')[1]);
                 this.setSbLink();
                 this.hideShowSBLoader(true);
+                let themeName: string = localStorage.getItem('pointer') || (window.screen.width > 1366 ? 'touch' : 'mouse');
+                if (themeName) {
+                    this.setMouseOrTouch(select('#' + themeName).innerHTML.toLowerCase(), false);
+                    localStorage.removeItem('pointer');
+                }
+                this.isInitialRender = false;
             });
-        // select('.copycode').addEventListener('click', this.copyCode);
-        // new Tooltip({ content: 'Copied', position: 'bottom center', opensOn: 'click', closeDelay: 500 }, '.copy-tooltip');
     }
 
     private copyCode(): void {
+        let copyElem: HTMLElement = select('#sb-source-tab .e-item.e-active') as HTMLElement;
         let textArea: HTMLTextAreaElement = createElement('textArea') as HTMLTextAreaElement;
-        textArea.textContent = select('.tab-pane.active').textContent.trim();
+        textArea.textContent = copyElem.textContent.trim();
         document.body.appendChild(textArea);
         textArea.select();
         document.execCommand('copy');
@@ -304,12 +332,12 @@ export class SBController {
         this.ngEle.nativeElement.querySelector('.description-section').innerHTML = '';
         if (this.ngEle.nativeElement.querySelector('#description')) {
             this.ngEle.nativeElement.querySelector('.description-section')
-                .append(this.ngEle.nativeElement.querySelector('#description'));
+                .appendChild(this.ngEle.nativeElement.querySelector('#description'));
         }
         this.ngEle.nativeElement.querySelector('.sb-action-description').innerHTML = '';
         if (this.ngEle.nativeElement.querySelector('#action-description') !== null) {
             this.ngEle.nativeElement.querySelector('.sb-action-description')
-                .append(this.ngEle.nativeElement.querySelector('#action-description'));
+                .appendChild(this.ngEle.nativeElement.querySelector('#action-description'));
         }
     }
 
@@ -342,9 +370,13 @@ export class SBController {
         this.renderSBPopup();
         this.renderTabToolBar();
         this.wireEvents();
+        this.setResponsive();
     }
 
-    hideShowSBLoader(hide?: boolean) {
+    hideShowSBLoader(hide?: boolean): void {
+        if (!this.loader) {
+            return;
+        }
         if (hide) {
             addClass([this.loader], 'sb-hide');
         } else {
@@ -357,8 +389,34 @@ export class SBController {
         if (hash[1] !== str) {
             hash[1] = str;
             location.hash = hash.join('/');
+            if (document.querySelector('.sb-responsive-items.active').innerHTML.toLowerCase() === 'touch') {
+                localStorage.setItem('pointer', document.querySelector('.sb-responsive-items.active').innerHTML.toLowerCase());
+            }
             location.reload();
         }
+    }
+
+    updateStaticView() {
+        Animation.stop(this.leftControl.ngEle.nativeElement);
+        let rightPane: HTMLElement = <HTMLElement>select('.sb-right-pane');
+        rightPane.style.left = "";
+        this.leftControl.ngEle.nativeElement.style.display = '';
+        if (this.isMobile) {
+            this.leftControl.ngEle.nativeElement.style.display = 'none';
+            this.leftControl.setMobileView();            
+        }else{
+            addClass([this.leftControl.ngEle.nativeElement.querySelector('.sb-control-navigation')],'e-view')
+        }
+        this.hideAllPopups();
+        this.updatePropertyPanel();
+        
+        addClass([this.mobileOverlay], 'sb-hide');
+    }
+
+    hideAllPopups() {
+        this.themePopup.hide();
+        this.settingsPopup.hide();
+        this.switcherPopup.hide();
     }
 
     updateViewMode() {
@@ -373,12 +431,11 @@ export class SBController {
 
     onSBResize(event: any) {
         this.updateViewMode();
+        clearTimeout(this.resizeTimer);
         if (!this.resizeManualTrigger && this.viewModeChanged) {
             this.setResponsive();
         }
     }
-
-
 
     onDocClick(e: Event) {
         if (closest(<Element>e.target, '.theme-wrapper') === null && this.themePopup.element.classList.contains('e-popup-open')) {
@@ -419,14 +476,11 @@ export class SBController {
 
     onPrevButtonClick(): void {
         this.prevControl = this.currentControl;
-        // this.enableNavClick();
         let currentIndex: number = this.pathRoutes.indexOf(this.getHash());
         if ((currentIndex) <= 1) {
-            // this.grpNavButton.children[0].classList.add('disabled');
         }
         let prevList: string = this.pathRoutes[currentIndex - 1];
         if (currentIndex !== 0 && currentIndex !== -1) {
-            // this.enableLoader();
             window.isInteractedList = false;
             this.router.navigateByUrl(prevList);
         }
@@ -434,29 +488,24 @@ export class SBController {
 
     onNextButtonClick(): void {
         this.prevControl = this.currentControl;
-        // this.enableNavClick();
         let currentIndex: number = this.pathRoutes.indexOf(this.getHash());
         let nextList: string = this.pathRoutes[currentIndex + 1];
-        // this.grpNavButton.classList.add('disabled');
         if ((this.pathRoutes.length < currentIndex + 2)) {
-            // this.grpNavButton.children[1].classList.add('disabled');
         }
-        // this.scrollToElement(nextList);
         if (currentIndex !== (this.pathRoutes.length - 1) && currentIndex !== -1) {
-            // this.enableLoader();
             window.isInteractedList = false;
             this.router.navigateByUrl(nextList);
         }
     }
 
-    onNavButtonClick() {
+    onNavButtonClick(e: any) {
         if (this.isMobile) {
-            this.toggleLeftPane()
+            this.toggleLeftPane(e);
         } else {
             if (isVisible(this.leftControl.ngEle.nativeElement)) {
                 this.toggleLeftPaneOnDesktop(true);
             } else {
-                this.toggleLeftPaneOnDesktop();
+                this.toggleLeftPaneOnDesktop(e);
             }
         }
 
@@ -551,36 +600,32 @@ export class SBController {
         }
         select('#' + theme).classList.add('active');
         this.themeDropDown.value = theme;
+        document.body.classList.add(theme);        
     }
 
-    setMouseOrTouch(str: string): void {
+    setMouseOrTouch(str: string, reload?: boolean): void {
         let activeEle: Element = document.querySelector('.setting-responsive .active');
         if (activeEle) {
             activeEle.classList.remove('active');
         }
+        this.addPointerClass(str);
+        if (localStorage.getItem('pointer') !== str && reload !== false) {
+            location.reload();
+        }
+        localStorage.setItem('pointer', str)
+    }
+
+    addPointerClass(str: string): void {
         if (str === 'mouse') {
             document.body.classList.remove('e-bigger');
         } else {
             document.body.classList.add('e-bigger');
         }
         document.querySelector('.setting-responsive #' + str).classList.add('active');
-        location.reload();
     }
 
     setResponsive(): void {
-        this.leftControl.ngEle.nativeElement.style.display = '';
-        if (this.isMobile) {
-            this.leftControl.onWindowResize(true);
-            this.leftControl.ngEle.nativeElement.style.display = 'none';
-        } else if (this.isTablet) {
-            this.toggleLeftPaneOnDesktop(true);
-        } else if (this.isDesktop) {
-            this.toggleLeftPaneOnDesktop();
-        }
-        this.themePopup.hide();
-        this.settingsPopup.hide();
-        this.switcherPopup.hide();
-        this.updatePropertyPanel();
+        this.updateStaticView();
         addClass([this.mobileOverlay], 'sb-hide');
     }
 
@@ -650,23 +695,33 @@ export class SBController {
     toggleLeftPaneOnDesktop(close?: boolean) {
         let rightPane: HTMLElement = <HTMLElement>select('.sb-right-pane');
         if (this.isTablet === true || this.isDesktop === true) {
-            if (close) {
+            if (close === true) {
+                addClass([rightPane], 'sb-animate-left');
                 rightPane.style.left = "0px";
                 this.aniObject.animate(this.leftControl.ngEle.nativeElement, {
                     name: 'SlideLeftOut', end: (): void => {
                         this.leftControl.ngEle.nativeElement.style.display = 'none';
+                        rightPane.classList.remove('sb-animate-left')
                         this.resizeManualTrigger = true;
                         window.dispatchEvent(new Event('resize'));
+                        if (Browser.isDevice) {
+                            window.dispatchEvent(new Event('orientationchange'));
+                        }
                         this.resizeManualTrigger = false;
                     }
                 });
             } else {
                 this.leftControl.ngEle.nativeElement.style.display = '';
                 rightPane.style.left = "";
+                addClass([rightPane], 'sb-animate-left');
                 this.aniObject.animate(this.leftControl.ngEle.nativeElement, {
                     name: 'SlideLeftIn', end: (): void => {
+                        rightPane.classList.remove('sb-animate-left')
                         this.resizeManualTrigger = true;
                         window.dispatchEvent(new Event('resize'));
+                        if (Browser.isDevice) {
+                            window.dispatchEvent(new Event('orientationchange'));
+                        }
                         this.resizeManualTrigger = false;
                     }
                 });
@@ -786,6 +841,10 @@ export class SBController {
 
     plunker(results: string): void {
         let plnkr: { [key: string]: Object } = JSON.parse(results);
+        let prevForm: Element = select('#plnkr-form');
+        if (prevForm) {
+            detach(prevForm);
+        }
         let form: HTMLFormElement = <HTMLFormElement>createElement('form');
         form.setAttribute('action', 'http://plnkr.co/edit/?p=preview');
         form.setAttribute('method', 'post');
@@ -818,7 +877,6 @@ function loadTheme(theme: string): void {
         let doc: HTMLFormElement = <HTMLFormElement>select('#themelink');
         doc.href = './styles/' + theme + '.css';
         // select('#themeswitcher-icon').setAttribute('src', 'styles/images/SB_icon/SB_Switcher_icon_' + theme + '.png');
-        document.body.classList.add(theme);
         themeFlag = false;
     });
 }

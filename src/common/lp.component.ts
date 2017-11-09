@@ -24,7 +24,7 @@ export class LPController {
 
     public controlSampleData: { [key: string]: object } = {};
     public listData: any = [];
-    public fields: Object = { dataSource: this.getTreeviewList(this.getDataSource()), id: 'id', parentID: 'pid', text: 'name', hasChildren: 'hasChild', htmlAttributes: 'url', child: 'samples', query: new Query().sortBy('order') };
+    public fields: Object = { dataSource: this.getTreeviewList(this.getDataSource()), id: 'id', parentID: 'pid', text: 'name', hasChildren: 'hasChild', htmlAttributes: 'url', child: 'samples', query:new Query().sortBy('order') };
     public listFields: Object = { id: 'uid', text: 'name', groupBy: 'order', htmlAttributes: 'data' };
     public app: any;
     public navElement: Element
@@ -60,8 +60,8 @@ export class LPController {
         let tempList: any[] = [];
         let category: string = '';
         let categories: string[] = [];
-        let res: any = new DataManager(list).executeLocal(new Query().sortBy('order').select('category'));
-        categories = res.filter((val: string, ind: number) => { return res.indexOf(val) == ind; })
+        let res: any =  new DataManager(list).executeLocal(new Query().sortBy('order').select('category'));
+        categories = res.filter((val: string,ind:number) => { return res.indexOf(val) == ind; })
         for (let j: number = 0; j < categories.length; j++) {
             tempList = tempList.concat({ id: id, name: categories[j], hasChild: true, expanded: true });
             pid = id;
@@ -111,7 +111,7 @@ export class LPController {
         anim.animate(to, { name: reverse ? 'SlideLeftIn' : 'SlideRightIn' });
     }
 
-    afterListviewRendered(e: any): void {
+    afterListviewRendered(e:any):void{
         this.app.setListItemSelect();
     }
 
@@ -122,6 +122,9 @@ export class LPController {
             this.listComponent.dataSource = <any>this.controlSampleData[path.split('/')[1]];
             this.viewSwitch(this.ngEle.nativeElement.querySelector("#controlTree"), this.ngEle.nativeElement.querySelector("#controlSamples"))
         }
+        if(!this.app.isDesktop){
+            this.app.onNavButtonClick(true);            
+        }
         addClass([this.app.mobileOverlay], 'sb-hide');
     }
 
@@ -129,6 +132,9 @@ export class LPController {
         let path: string = (<any>e.data).path;
         if (location.hash.replace('/#', '') !== path) {
             this.navigateSample(path.replace(':theme', this.getCurrentTheme()));
+        }
+        if(!this.app.isDesktop){
+            this.app.onNavButtonClick(true);            
         }
         addClass([this.app.mobileOverlay], 'sb-hide');
     }
@@ -141,7 +147,7 @@ export class LPController {
         this.router.navigateByUrl(path);
     }
 
-    updateListViewDataSource() {
+    updateListViewDataSource(){
         this.listComponent.dataSource = <any>(this.controlSampleData[location.hash.split('/')[2]] || this.controlSampleData.chart);
     }
 
