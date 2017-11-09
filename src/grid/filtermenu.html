@@ -5,7 +5,7 @@
             <e-item text='checkbox'></e-item>
         </e-items>
     </ej-toolbar>
-    <ej-grid #grid [dataSource]='data | slice:0:200' allowPaging='true' allowFiltering='true' [pageSettings]='pageSettings' [filterSettings]='filterSettings'>
+    <ej-grid #grid [dataSource]='data' allowPaging='true' allowFiltering='true' [pageSettings]='pageSettings' [filterSettings]='filterSettings'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right"></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>

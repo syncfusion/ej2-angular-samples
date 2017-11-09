@@ -16,7 +16,7 @@ export class FilteringMenuComponent implements OnInit {
     public grid: GridComponent;
 
     ngOnInit(): void {
-        this.data = data;
+        this.data = data.slice(0, 200);
         this.pageSettings = { pageCount: 8 };
         this.filterSettings = { type: 'menu' };
     }
