@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { GridAllModule } from '@syncfusion/ej2-ng-grids';
+import { NumericTextBoxAllModule } from '@syncfusion/ej2-ng-inputs';
 import { ToolbarModule } from '@syncfusion/ej2-ng-navigations';
 import { DefaultComponent } from './default.component';
 import { DataBindingComponent } from './remotedata.component';
@@ -44,9 +45,10 @@ import { ClipboardComponent } from './clipboard.component';
 import { ContextMenuComponent } from './contextmenu.component';
 import { ColumnMenuComponent } from './column/columnmenu.component';
 import { ColumnSpanningComponent } from './column/columnspanning.component';
+import { FrozenRowsComponent } from './column/frozenrows.component';
 
 export const gridRouteConfig: Object[] = [
-    { 'path': ':theme/grid/default', component: DefaultComponent, 'name': 'Default Functionalities', order: '01', category: 'Grid' },
+     { 'path': ':theme/grid/default', component: DefaultComponent, 'name': 'Default Functionalities', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/gridlines', component: GridLinesComponent, 'name': 'Grid Lines', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/paging', component: PageComponent, name: 'Paging', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/filtering', component: FilterComponent, name: 'Filtering', order: '01', category: 'Grid' },
@@ -122,6 +124,10 @@ export const gridRouteConfig: Object[] = [
         category: 'Column', type: 'new'
     },
     {
+        'path': ':theme/grid/column/frozenrows', component: FrozenRowsComponent, name: 'Frozen Rows and Columns', order: '03',
+        category: 'Column', type: 'new'
+    },
+    {
         'path': ':theme/grid/column/columnmenu', component: ColumnMenuComponent, name: 'Column Menu', order: '03',
         category: 'Column', type: 'new'
     },
@@ -129,6 +135,7 @@ export const gridRouteConfig: Object[] = [
         'path': ':theme/grid/contextmenu', component: ContextMenuComponent, name: 'Context Menu', order: '01',
         category: 'Grid', type: 'new'
     }
+
 ];
 
 let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
@@ -138,10 +145,10 @@ let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent, VirtualizationComponent,
     NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent, ColumnResizingComponent,
     ExportingComponent, AdvanceExportingComponent, CheckboxSelectionComponent, ClipboardComponent, CommandColumnComponent,
-    FilteringMenuComponent, ColumnSpanningComponent, ContextMenuComponent, ColumnMenuComponent];
+    FilteringMenuComponent, ColumnSpanningComponent, ContextMenuComponent, ColumnMenuComponent, FrozenRowsComponent];
 
 @NgModule({
-    imports: [RouterModule.forChild(gridRouteConfig), CommonModule, HttpModule, ToolbarModule, GridAllModule, SharedModule],
+    imports: [RouterModule.forChild(gridRouteConfig), CommonModule, HttpModule, ToolbarModule, GridAllModule, SharedModule, NumericTextBoxAllModule],
     declarations: declarations,
     providers: [GridAllModule],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
