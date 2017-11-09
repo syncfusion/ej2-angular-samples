@@ -5,7 +5,7 @@ import { ChartComponent } from '@syncfusion/ej2-ng-charts';
 import { Chart } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 /**
- * Remote-Data
+ * Sample for Remote-Data binding
  */
 @Component({
     selector: 'control-content',

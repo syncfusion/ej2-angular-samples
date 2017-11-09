@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
 import { Browser } from '@syncfusion/ej2-base';
 /**
- * Bar Series
+ * Sample for Bar Series
  */
 @Component({
     selector: 'control-content',

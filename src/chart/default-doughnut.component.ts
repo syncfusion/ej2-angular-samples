@@ -5,7 +5,7 @@ import {
 } from '@syncfusion/ej2-ng-charts';
 
 /**
- * Doughnut Sample
+ * Sample for Doughnut chart
  */
 @Component({
     selector: 'control-content',

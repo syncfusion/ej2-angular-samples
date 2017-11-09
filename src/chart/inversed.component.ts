@@ -3,7 +3,7 @@ import { ILoadedEventArgs, IPointRenderEventArgs, ChartTheme } from '@syncfusion
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * inversed Axis
+ * Sample for Inversed Axis
  */
 @Component({
     selector: 'control-content',

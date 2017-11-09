@@ -3,7 +3,7 @@ import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
 import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 /**
- * MACD Indicator
+ * Sample for MACD Indicator
  */
 @Component({
     selector: 'control-content',

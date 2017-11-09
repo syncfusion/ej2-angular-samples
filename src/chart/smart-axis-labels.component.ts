@@ -6,7 +6,7 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 
 /**
- * Area Series
+ * Sample for smart axis labels Positions
  */
 @Component({
     selector: 'control-content',

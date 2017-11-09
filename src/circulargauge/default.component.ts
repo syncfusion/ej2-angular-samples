@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 /**
- * Area Series
+ * Sample for default circular gauge
  */
 @Component({
     selector: 'control-content',

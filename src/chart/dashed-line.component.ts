@@ -3,7 +3,7 @@ import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Line Series
+ * Sample for Line Series with dashed line
  */
 @Component({
     selector: 'control-content',

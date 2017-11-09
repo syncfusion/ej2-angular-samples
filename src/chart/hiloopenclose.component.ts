@@ -4,7 +4,7 @@ import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * HiloOpenClose Series
+ * Sample for HiloOpenClose Series
  */
 @Component({
     selector: 'control-content',

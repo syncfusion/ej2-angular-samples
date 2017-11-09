@@ -4,7 +4,7 @@ import { ChartSeriesType, EmptyPointMode, ChartTheme } from '@syncfusion/ej2-cha
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
- * Area Series
+ * Sample for empty points
  */
 @Component({
     selector: 'control-content',

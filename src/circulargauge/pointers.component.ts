@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { CircularGaugeComponent } from '@syncfusion/ej2-ng-circulargauge';
 
 /**
- * pointers in gauge
+ * Sample for Pointers
  */
 @Component({
     selector: 'control-content',

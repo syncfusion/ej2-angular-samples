@@ -3,7 +3,7 @@ import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Multiple Axes
+ * Sample for Multiple Axes
  */
 @Component({
     selector: 'control-content',

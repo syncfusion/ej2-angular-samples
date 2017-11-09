@@ -4,7 +4,7 @@ import { ExportType, ChartTheme, IPointRenderEventArgs } from '@syncfusion/ej2-c
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
- * Area Series
+ * Sample for chart export
  */
 @Component({
     selector: 'control-content',

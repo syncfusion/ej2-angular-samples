@@ -3,7 +3,7 @@ import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Range Column Series
+ * Sample for RangeColumn series
  */
 @Component({
     selector: 'control-content',

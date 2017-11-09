@@ -2,7 +2,7 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { AccumulationChartComponent, AccumulationChart, IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-ng-charts';
 
 /**
- * Default Pie
+ * Sample for Pie chart
  */
 @Component({
     selector: 'control-content',

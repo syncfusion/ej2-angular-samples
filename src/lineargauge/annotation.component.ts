@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 /**
- * Annotation linear gauge
+ * Sample for Annotation in linear gauge
  */
 @Component({
     selector: 'control-content',

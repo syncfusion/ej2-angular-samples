@@ -6,7 +6,7 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Column Series
+ * Sample for Polar series with drawType Spline
  */
 @Component({
     selector: 'control-content',

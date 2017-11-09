@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { IPointRenderEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
 import { Browser } from '@syncfusion/ej2-base';
 /**
- * Category axis
+ * Sample for Category axis
  */
 @Component({
     selector: 'control-content',

@@ -4,7 +4,7 @@ import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Candle Series
+ * Sample for Candle Series
  */
 @Component({
     selector: 'control-content',

@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 /**
- * Default linear gauge
+ * Sample for Default linear gauge
  */
 @Component({
     selector: 'control-content',

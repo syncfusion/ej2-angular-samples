@@ -4,7 +4,7 @@ import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Crosshair 
+ * Sample for local data binding
  */
 @Component({
     selector: 'control-content',

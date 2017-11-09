@@ -4,7 +4,7 @@ import { Position, TickModel } from '@syncfusion/ej2-circulargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
- * multiple axis in gauge
+ * Samples for labels
  */
 
 @Component({

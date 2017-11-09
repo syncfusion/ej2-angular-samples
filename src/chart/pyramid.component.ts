@@ -2,7 +2,7 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { AccumulationChart, AccumulationChartComponent, IAccLoadedEventArgs, IAccResizeEventArgs, AccumulationTheme } from '@syncfusion/ej2-ng-charts';
 
 /**
- * Pyramid Sample
+ * Sample for Pyramid chart
  */
 @Component({
     selector: 'control-content',

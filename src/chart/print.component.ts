@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IPointRenderEventArgs, ChartComponent } from '@syncfusion/ej2-ng-charts';
 /**
- * Category axis
+ * Sample for Chart Print
  */
 @Component({
     selector: 'control-content',

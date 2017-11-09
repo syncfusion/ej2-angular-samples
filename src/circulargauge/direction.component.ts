@@ -4,7 +4,7 @@ import { IAxisLabelRenderEventArgs } from '@syncfusion/ej2-circulargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
- * multiple axis in gauge
+ * Sample for direction compass
  */
 
 @Component({

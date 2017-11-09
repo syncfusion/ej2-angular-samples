@@ -3,7 +3,7 @@ import { ChartComponent, ILoadedEventArgs, TrendlineTypes } from '@syncfusion/ej
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { NumericTextBox } from '@syncfusion/ej2-inputs';
 /**
- * Selection
+ * Sample for trendlines
  */
 @Component({
     selector: 'control-content',

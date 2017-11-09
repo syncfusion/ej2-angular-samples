@@ -4,7 +4,7 @@ import {chartData} from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Accumulation Distribution
+ * Sample for Accumulation Distribution
  */
 @Component({
     selector: 'control-content',

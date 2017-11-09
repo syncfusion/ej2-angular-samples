@@ -5,7 +5,7 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { NumericTextBox } from '@syncfusion/ej2-ng-inputs'
 
 /**
- * Area Series
+ * Sample for Error bar 
  */
 @Component({
     selector: 'control-content',

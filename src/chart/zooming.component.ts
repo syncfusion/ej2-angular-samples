@@ -3,7 +3,7 @@ import { ChartDataService } from './chartdata.service';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
 import { Browser } from '@syncfusion/ej2-base';
 /**
- * Trackball
+ * Sample for Zooming in chart
  */
 @Component({
     selector: 'control-content',

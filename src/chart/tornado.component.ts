@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ILoadedEventArgs, ChartComponent, ChartTheme, ITooltipRenderEventArgs } from '@syncfusion/ej2-ng-charts';
 import { Browser } from '@syncfusion/ej2-base';
 /**
- * Tornado Chart
+ * Sample for Tornado Chart
  */
 @Component({
     selector: 'control-content',

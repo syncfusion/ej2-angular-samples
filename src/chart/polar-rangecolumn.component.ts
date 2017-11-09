@@ -4,7 +4,7 @@ import { ChartSeriesType } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
- * Area Series
+ * Sample for Polar series with drawType rangecolumn
  */
 @Component({
     selector: 'control-content',

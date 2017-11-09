@@ -4,7 +4,7 @@ import { Point, Placement, MarkerType, Pointer } from '@syncfusion/ej2-lineargau
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
- * Thermometer linear gauge
+ * Sample for thermometer model
  */
 @Component({
     selector: 'control-content',

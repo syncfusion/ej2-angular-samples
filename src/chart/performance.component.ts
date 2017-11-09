@@ -2,7 +2,7 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ChartComponent, ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
 
 /**
- * Performance
+ * Sample for Chart Performance
  */
 @Component({
     selector: 'control-content',

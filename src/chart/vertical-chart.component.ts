@@ -3,7 +3,7 @@ import { ILoadedEventArgs, Series, ChartTheme, getElement } from '@syncfusion/ej
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Multiple Axes
+ * Sample for vertical chart
  */
 @Component({
     selector: 'control-content',

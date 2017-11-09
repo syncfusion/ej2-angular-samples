@@ -5,7 +5,7 @@ import {
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Numeric Axis
+ * Sample for Numeric Axis
  */
 @Component({
     selector: 'control-content',

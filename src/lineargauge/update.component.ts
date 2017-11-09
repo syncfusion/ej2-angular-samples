@@ -2,7 +2,7 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { LinearGaugeComponent } from '@syncfusion/ej2-ng-lineargauge';
 import { ILoadedEventArgs } from '@syncfusion/ej2-lineargauge';
 /**
- * Tooltip linear gauge
+ * Sample for update
  */
 @Component({
     selector: 'control-content',

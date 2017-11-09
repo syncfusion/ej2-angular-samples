@@ -4,7 +4,7 @@ import { ContainerType, Orientation } from '@syncfusion/ej2-lineargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
- * Container linear gauge
+ * Sample for containers
  */
 @Component({
     selector: 'control-content',

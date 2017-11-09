@@ -3,7 +3,7 @@ import { AccumulationChartComponent, IAccTextRenderEventArgs, AccumulationChart,
          IAccPointRenderEventArgs, IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-ng-charts';
 
 /**
- * Club Point Sample
+ * Sample for groping in pie chart
  */
 @Component({
     selector: 'control-content',

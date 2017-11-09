@@ -4,7 +4,7 @@ import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Stochastic Indicator
+ * Sample for Stochastic Indicator
  */
 @Component({
     selector: 'control-content',

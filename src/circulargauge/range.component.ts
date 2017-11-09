@@ -3,7 +3,7 @@ import { CircularGaugeComponent } from '@syncfusion/ej2-ng-circulargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
- * Area Series
+ * Sample for Ranges
  */
 @Component({
     selector: 'control-content',

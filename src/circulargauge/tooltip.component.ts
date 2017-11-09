@@ -3,7 +3,7 @@ import { ITooltipRenderEventArgs } from '@syncfusion/ej2-circulargauge';
 import { CircularGaugeComponent } from '@syncfusion/ej2-ng-circulargauge';
 
 /**
- * tooltip for circular gauge
+ * Sample for tooltip
  */
 @Component({
     selector: 'control-content',

@@ -4,7 +4,7 @@ import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * RSI Indicator
+ * Sample for RSI Indicator
  */
 @Component({
     selector: 'control-content',

@@ -4,7 +4,7 @@ import { IAnnotationRenderEventArgs, ILoadedEventArgs, IResizeEventArgs } from '
 import { AnnotationDataSerive } from './annotation.service';
 import { Browser } from '@syncfusion/ej2-base';
 /**
- * Annotation
+ * Sample for annotation
  */
 @Component({
     selector: 'control-content',

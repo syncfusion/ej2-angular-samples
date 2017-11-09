@@ -3,7 +3,7 @@ import { LinearGaugeComponent } from '@syncfusion/ej2-ng-lineargauge';
 import { IMouseEventArgs } from '@syncfusion/ej2-lineargauge';
 
 /**
- *  linear gauge style sample
+ *  Sample for styles
  */
 @Component({
     selector: 'control-content',

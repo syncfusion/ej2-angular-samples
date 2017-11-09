@@ -5,7 +5,7 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Area Series
+ * Sample for Polar series with drawType Line
  */
 @Component({
     selector: 'control-content',

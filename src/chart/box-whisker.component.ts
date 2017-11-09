@@ -3,7 +3,7 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { ILoadedEventArgs, ChartComponent, BoxPlotMode, IPointRenderEventArgs, ChartTheme, getSaturationColor } from '@syncfusion/ej2-ng-charts';
 
 /**
- * DateTime Axis
+ * Sample for box and whisker series
  */
 @Component({
     selector: 'control-content',

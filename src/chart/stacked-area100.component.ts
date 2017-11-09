@@ -3,7 +3,7 @@ import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Stacked Area Series
+ * Sample for 100 percent Stacked Area Series
  */
 @Component({
     selector: 'control-content',

@@ -3,7 +3,7 @@ import { ChartComponent, ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng
 import { SelectionMode } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 /**
- * Selection
+ * Sample for Selection in chart
  */
 @Component({
     selector: 'control-content',

@@ -3,7 +3,7 @@ import { IPointerDragEventArgs, CircularGaugeComponent } from '@syncfusion/ej2-n
 import { getRangeColor, Range } from '@syncfusion/ej2-circulargauge';
 
 /**
- * user interaction in gauge
+ * Sample for Pointer drag
  */
 @Component({
     selector: 'control-content',

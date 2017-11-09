@@ -4,7 +4,7 @@ import { Browser } from '@syncfusion/ej2-base';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
 
 /**
- * Scatter Series
+ * Sample for Scatter Series
  */
 @Component({
     selector: 'control-content',

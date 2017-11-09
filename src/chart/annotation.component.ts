@@ -10,7 +10,7 @@ AccumulationChart.Inject(AccumulationDataLabel);
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Area Series
+ * Sample for Annotation in chart
  */
 @Component({
     selector: 'control-content',

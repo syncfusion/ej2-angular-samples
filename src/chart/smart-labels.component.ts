@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-ng-charts';
 
 /**
- * Smart Labels Sample
+ * Sample for Smart Labels in Pie chart
  */
 @Component({
     selector: 'control-content',

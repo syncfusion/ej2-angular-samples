@@ -3,7 +3,7 @@ import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Area Series
+ * Sample for Area Series empty points
  */
 @Component({
     selector: 'control-content',

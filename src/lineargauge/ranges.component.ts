@@ -4,7 +4,7 @@ import { Position } from '@syncfusion/ej2-lineargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
- * Default linear gauge
+ * Sample for Ranges
  */
 @Component({
     selector: 'control-content',

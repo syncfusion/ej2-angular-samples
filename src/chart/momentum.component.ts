@@ -4,7 +4,7 @@ import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Momentum Indicator
+ * Sample for Momentum Indicator
  */
 @Component({
     selector: 'control-content',

@@ -4,7 +4,7 @@ import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * EMA Indicator
+ * Sample for EMA Indicator
  */
 @Component({
     selector: 'control-content',

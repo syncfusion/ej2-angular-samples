@@ -3,7 +3,7 @@ import { ILoadedEventArgs, IZoomCompleteEventArgs, ChartComponent, ChartTheme, I
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Range Area Series
+ * Sample for Range Area Series
  */
 @Component({
   selector: 'control-content',

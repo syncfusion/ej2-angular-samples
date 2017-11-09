@@ -5,7 +5,7 @@ import { DynamicDataSerive } from './customization.service';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
- * multiple axis in gauge
+ * Sample for customization of gauge
  */
 
 @Component({

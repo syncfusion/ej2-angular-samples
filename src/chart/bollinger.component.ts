@@ -4,7 +4,7 @@ import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Bollinger Indicator
+ * Sample fro Bollinger Band Indicator
  */
 @Component({
     selector: 'control-content',

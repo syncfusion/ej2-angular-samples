@@ -4,7 +4,7 @@ import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Hilo Series
+ * Sample for Hilo Series
  */
 @Component({
     selector: 'control-content',

@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 /**
- * multiple axis in gauge
+ * Sample for pointer image in circular gauge
  */
 
 @Component({

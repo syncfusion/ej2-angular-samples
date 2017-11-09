@@ -3,7 +3,7 @@ import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
 import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 /**
- * TMA Indicator
+ * Sample for TMA Indicator
  */
 @Component({
     selector: 'control-content',

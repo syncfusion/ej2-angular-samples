@@ -3,7 +3,7 @@ import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-ng
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
- * Step line Series
+ * Sample for stripLines
  */
 @Component({
     selector: 'control-content',

@@ -4,7 +4,7 @@ import {chartData} from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * Average True Range
+ * Sample for ATR indicator
  */
 @Component({
     selector: 'control-content',

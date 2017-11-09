@@ -5,7 +5,7 @@ import { Browser } from '@syncfusion/ej2-base';
 import { axesData } from './financial-data';
 
 /**
- * Crosshair 
+ * Sample for Crosshair in chart
  */
 @Component({
     selector: 'control-content',

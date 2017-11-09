@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { IPointRenderEventArgs } from '@syncfusion/ej2-ng-charts';
 import { Browser } from '@syncfusion/ej2-base';
 /**
- * Bubble Series
+ * Sample for Bubble Series
  */
 @Component({
     selector: 'control-content',

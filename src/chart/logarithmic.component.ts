@@ -3,7 +3,7 @@ import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * logarithmic Axis
+ * Sample for Logarithmic Axis
  */
 @Component({
     selector: 'control-content',

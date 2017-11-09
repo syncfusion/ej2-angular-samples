@@ -3,7 +3,7 @@ import { LinearGaugeComponent } from '@syncfusion/ej2-ng-lineargauge';
 import { ITooltipRenderEventArgs, IAxisLabelRenderEventArgs, ILoadedEventArgs, ILoadEventArgs, IResizeEventArgs } from '@syncfusion/ej2-lineargauge';
 
 /**
- * Tooltip linear gauge
+ * Sample for tooltip
  */
 @Component({
     selector: 'control-content',

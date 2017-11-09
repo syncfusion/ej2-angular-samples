@@ -4,7 +4,7 @@ import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
- * SMA Indicator
+ * Sample for SMA Indicator
  */
 @Component({
     selector: 'control-content',

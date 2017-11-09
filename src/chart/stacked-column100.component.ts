@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts'
 import { Browser } from '@syncfusion/ej2-base';
 /**
- * Stacked Column Series
+ * Sample for Stacked Column Series
  */
 @Component({
     selector: 'control-content',

@@ -3,7 +3,7 @@ import { CircularGaugeComponent } from '@syncfusion/ej2-ng-circulargauge';
 import { GridComponent } from '@syncfusion/ej2-ng-grids';
 
 /**
- * pointers in gauge
+ * Sample for data sample
  */
 @Component({
     selector: 'control-content',

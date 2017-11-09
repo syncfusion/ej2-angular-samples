@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-ng-charts';
 
 /**
- * DateTime Axis
+ * Sample for indexed category axis
  */
 @Component({
     selector: 'control-content',

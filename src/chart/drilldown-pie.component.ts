@@ -5,7 +5,7 @@ import {
 } from '@syncfusion/ej2-ng-charts';
 
 /**
- * Drilldown Sample
+ * Sample for Drilldown in Pie chart
  */
 @Component({
     selector: 'control-content',

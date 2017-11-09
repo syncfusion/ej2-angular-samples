@@ -5,7 +5,7 @@ import {
 } from '@syncfusion/ej2-ng-charts';
 
 /**
- * Default Pie
+ * Sample for Funnel Chart
  */
 @Component({
     selector: 'control-content',

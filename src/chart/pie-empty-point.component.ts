@@ -4,7 +4,7 @@ import { EmptyPointMode } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
- * Area Series
+ * Sample for Pie chart empty points
  */
 @Component({
     selector: 'control-content',
