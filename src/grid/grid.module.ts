@@ -50,7 +50,7 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/gridlines', component: GridLinesComponent, 'name': 'Grid Lines', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/paging', component: PageComponent, name: 'Paging', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/filtering', component: FilterComponent, name: 'Filtering', order: '01', category: 'Grid' },
-	{ 'path': ':theme/grid/filtermenu', component: FilteringMenuComponent, name: 'FilteringMenu', order: '01', category: 'Grid' },
+	{ 'path': ':theme/grid/filtermenu', component: FilteringMenuComponent, name: 'Filter Menu', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/grouping', component: GroupComponent, name: 'Grouping', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/sorting', component: SortComponent, name: 'Sorting', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/searching', component: SearchComponent, name: 'Searching', order: '01', category: 'Grid' },
