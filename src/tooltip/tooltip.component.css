@@ -68,7 +68,7 @@
 }
 
 .e-bigger .toolbarContainer {
-    width: 330px;
+    width: 350px;
 }
 
 .e-bigger .e-tooltip-wrap p {
@@ -82,6 +82,12 @@
 .e-tooltip-wrap .contentWrap {
     padding: 3px 0;
     line-height: 16px;
+}
+
+@media screen and (max-width: 420px) {
+    .e-bigger .toolbarContainer {
+        width: 75%;
+    }
 }
 
 @font-face {
@@ -140,8 +146,9 @@
 #countrylist {
     border: 1px solid #dddddd;
     border-radius: 3px;
-    width: 170px;
+    max-width: 170px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .listheader {
@@ -165,7 +172,7 @@
 		position: relative;
 		top: 1px;
 	}
-	
+
 }
 
 #targetContainer {
