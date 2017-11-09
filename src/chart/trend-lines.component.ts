@@ -79,6 +79,9 @@ export class TrendLineChartComponent {
     public marker: object = {
         visible: false
     };
+    public marker1: Object = {
+        visible :true
+    }
     public legendSettings: Object = { visible: false };
     public min: number = 1;
     public max: number = 20;

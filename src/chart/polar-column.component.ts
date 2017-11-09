@@ -35,7 +35,8 @@ export class PolarColumnChartComponent {
     public primaryXAxis: Object = {
         valueType: 'Category',
         labelPlacement: 'OnTicks',
-        coefficient: Browser.isDevice ? 80 : 100
+        coefficient: Browser.isDevice ? 80 : 100,
+        interval : 1
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

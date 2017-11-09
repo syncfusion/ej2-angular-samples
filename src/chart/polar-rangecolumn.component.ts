@@ -27,7 +27,8 @@ export class PolarRangeColumnChartComponent {
         valueType: 'Category',
         title: 'Months',
         labelPlacement: 'OnTicks',
-        startAngle: 90
+        startAngle: 90,
+        interval: 1
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
