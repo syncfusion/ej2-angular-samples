@@ -6,20 +6,3 @@
 .e-bigger .control-styles {
     width:300px;
 }
-.e-spinner-icon {
-    background-image: url(./styles/images/Medium-36px-spin.gif) !important;
-    background-size: 16px 16px !important;
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
-    top: 2px;
-    position: relative;
-    left: 24px;
-}
-
-.e-bigger .e-spinner-icon {
-    top: 4px;
-}
-
-.e-spinner-icon {
-    border: none;
-}

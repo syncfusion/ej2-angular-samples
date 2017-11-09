@@ -19,18 +19,3 @@
 .content-wrapper {
     min-height: 350px;
 }
-
-.e-input-group .e-spinner-icon.e-input-group-icon:active {
-    background: transparent;
-}
-
-.e-input-group .e-input-group-icon.e-spinner-icon {
-    background-image: url(./styles/images/Medium-36px-spin.gif) !important;
-    background-size: 12px 12px !important;
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
-    top: -2px;
-}
-.e-input-group.e-ddl .e-input-group-icon.e-spinner-icon {
-    border: none;
-}
