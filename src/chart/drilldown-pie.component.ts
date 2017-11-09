@@ -59,22 +59,22 @@ export class DrilldownPieComponent {
             switch (index.point) {
                 case 0:
                     this.pie.series[0].dataSource = this.suvs;
-                    this.pie.title = 'Automobile Sales in the SUV segment';
+                    this.pie.title = 'Automobile Sales in the SUV Segment';
                     document.getElementById('text').innerHTML = 'SUV';
                     break;
                 case 1:
                     this.pie.series[0].dataSource = this.cars;
-                    this.pie.title = 'Automobile Sales in the Car segment';
+                    this.pie.title = 'Automobile Sales in the Car Segment';
                     document.getElementById('text').innerHTML = 'Car';
                     break;
                 case 2:
                     this.pie.series[0].dataSource = this.pickups;
-                    this.pie.title = 'Automobile Sales in the Pickup segment';
+                    this.pie.title = 'Automobile Sales in the Pickup Segment';
                     document.getElementById('text').innerHTML = 'Pickup';
                     break;
                 case 3:
                     this.pie.series[0].dataSource = this.minivans;
-                    this.pie.title = 'Automobile Sales in the Minivan segment';
+                    this.pie.title = 'Automobile Sales in the Minivan Segment';
                     document.getElementById('text').innerHTML = 'Minivan';
                     break;
             }

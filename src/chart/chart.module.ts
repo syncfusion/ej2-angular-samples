@@ -96,12 +96,12 @@ import { ExportChartComponent } from './export.component';
 export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/line', component: LineChartComponent, name: 'Line', order: '01', category: 'Line Charts' },
     { path: ':theme/chart/spline', component: SplineChartComponent, name: 'Spline', order: '01', category: 'Line Charts' },
-    { path: ':theme/chart/step-line', component: StepLineChartComponent, name: 'StepLine', order: '01', category: 'Line Charts' },
+    { path: ':theme/chart/step-line', component: StepLineChartComponent, name: 'Step Line', order: '01', category: 'Line Charts' },
     { path: ':theme/chart/dashed-line', component: DashedLineChartComponent, name: 'Dashed Line', order: '01', category: 'Line Charts' },
     { path: ':theme/chart/inversed-spline', component: InversedSplineChartComponent, name: 'Inversed Spline', order: '01', category: 'Line Charts' },
 
     { path: ':theme/chart/area', component: AreaChartComponent, name: 'Area', order: '02', category: 'Area Charts' },
-    { path: ':theme/chart/step-area', component: StepAreaChartComponent, name: 'StepArea', order: '02', category: 'Area Charts' },
+    { path: ':theme/chart/step-area', component: StepAreaChartComponent, name: 'Step Area', order: '02', category: 'Area Charts' },
     { path: ':theme/chart/stacked-area', component: StackedAreaChartComponent, name: 'Stacked Area', order: '02', category: 'Area Charts' },
     { path: ':theme/chart/stacked-area100', component: PercentStackedAreaChartComponent, name: '100% Stacked Area', order: '02', category: 'Area Charts' },
     { path: ':theme/chart/area-empty', component: EmptyAreaChartComponent, name: 'Area - Empty Points', order: '02', category: 'Area Charts' },
@@ -139,19 +139,20 @@ export const chartAppRoutes: Object[] = [
         path: ':theme/chart/pareto-series', component: ParetoSeriesChartComponent, name: 'Pareto Chart',
         order: '06', category: 'Other Types'
     },
-    { path: ':theme/chart/performance', component: PerformanceChartComponent, name: 'Benchmark', order: '07', category: 'Performance' },
 
 
-    { path: ':theme/chart/adindicator', component: AccumulationDistributionComponent, name: 'Accumulation Distribution', order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/atrindicator', component: AtrIndicatorComponent, name: 'ATR', order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/bollinger', component: BollingerIndicatorComponent, name: 'Bollinger', order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/ema', component: EmaIndicatorComponent, name: 'EMA', order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/macd', component: MacdIndicatorComponent, name: 'MACD', order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/momentum', component: MomentumIndicatorComponent, name: 'Momentum', order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/rsi', component: RsiIndicatorComponent, name: 'RSI', order: '08', category: 'Technical Indicators' }, 
-    { path: ':theme/chart/sma', component: SmaIndicatorComponent, name: 'SMA', order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/stochastic', component: StochasticIndicatorComponent, name: 'Stochastic', order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/tma', component: TmaIndicatorComponent, name: 'TMA', order: '08', category: 'Technical Indicators' },
+    { path: ':theme/chart/adindicator', component: AccumulationDistributionComponent, name: 'Accumulation Distribution', order: '07', category: 'Technical Indicators' },
+    { path: ':theme/chart/atrindicator', component: AtrIndicatorComponent, name: 'ATR', order: '07', category: 'Technical Indicators' },
+    { path: ':theme/chart/bollinger', component: BollingerIndicatorComponent, name: 'Bollinger', order: '07', category: 'Technical Indicators' },
+    { path: ':theme/chart/ema', component: EmaIndicatorComponent, name: 'EMA', order: '07', category: 'Technical Indicators' },
+    { path: ':theme/chart/macd', component: MacdIndicatorComponent, name: 'MACD', order: '07', category: 'Technical Indicators' },
+    { path: ':theme/chart/momentum', component: MomentumIndicatorComponent, name: 'Momentum', order: '07', category: 'Technical Indicators' },
+    { path: ':theme/chart/rsi', component: RsiIndicatorComponent, name: 'RSI', order: '07', category: 'Technical Indicators' }, 
+    { path: ':theme/chart/sma', component: SmaIndicatorComponent, name: 'SMA', order: '07', category: 'Technical Indicators' },
+    { path: ':theme/chart/stochastic', component: StochasticIndicatorComponent, name: 'Stochastic', order: '07', category: 'Technical Indicators' },
+    { path: ':theme/chart/tma', component: TmaIndicatorComponent, name: 'TMA', order: '07', category: 'Technical Indicators' },
+
+    { path: ':theme/chart/performance', component: PerformanceChartComponent, name: 'Benchmark', order: '08', category: 'Performance' },
 
 
     { path: ':theme/chart/default-pie', component: DefaultPieComponent, name: 'Pie', order: '09', category: 'Accumulation Charts' },
@@ -179,9 +180,9 @@ export const chartAppRoutes: Object[] = [
 
     { path: ':theme/chart/polar-line', component: PolarLineChartComponent, name: 'Line', order: '10', category: 'Polar Radar' },
     { path: ':theme/chart/polar-spline', component: PolarSplineChartComponent, name: 'Spline', order: '10', category: 'Polar Radar' },
-    { path: ':theme/chart/polar-scatter', component: PolarScatterChartComponent, name: 'Scatter', order: '10', category: 'Polar Radar' },
     { path: ':theme/chart/polar-area', component: PolarAreaChartComponent, name: 'Area', order: '10', category: 'Polar Radar' },
     { path: ':theme/chart/polar-stackedarea', component: PolarStackedAreaChartComponent, name: 'Stacked Area', order: '10', category: 'Polar Radar' },
+    { path: ':theme/chart/polar-scatter', component: PolarScatterChartComponent, name: 'Scatter', order: '10', category: 'Polar Radar' },
     { path: ':theme/chart/polar-column', component: PolarColumnChartComponent, name: 'Column', order: '10', category: 'Polar Radar' },
     { path: ':theme/chart/polar-stackedcolumn', component: PolarStackedColumnChartComponent, name: 'Stacked Column', order: '10', category: 'Polar Radar' },
     { path: ':theme/chart/polar-rangecolumn', component: PolarRangeColumnChartComponent, name: 'Range Column', order: '10', category: 'Polar Radar' },

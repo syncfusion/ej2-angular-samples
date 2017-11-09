@@ -69,7 +69,7 @@ export class GroupingPieComponent {
     public startAngle: number = 0;
     public endAngle: number = 360;
     public tooltip: Object = { enable: true, format: '${point.x} <br> ${point.y} Medals' };
-    public title: string = 'Rio Olympics Gold ';
+    public title: string = 'RIO Olympics Gold ';
     constructor() {
         //code
     };

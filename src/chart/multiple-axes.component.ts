@@ -58,6 +58,7 @@ export class MultipleAxesChartComponent {
     };
     public axis: Object = [{
         majorGridLines: { width: 0 },
+        majorTickLines: { width: 0 },
         rowIndex: 0, opposedPosition: true,
         lineStyle: { width: 0 },
         minimum: 24, maximum: 36, interval: 2,

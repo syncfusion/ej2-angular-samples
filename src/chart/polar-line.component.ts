@@ -85,7 +85,9 @@ export class PolarLineChartComponent {
         let value: number = parseInt((<HTMLInputElement>e.target).value, 10);
         this.chart.primaryXAxis.startAngle = value;
         document.getElementById('st-lbl').innerHTML = 'Start Angle: ' + value;
+        this.chart.animateSeries =  false;
         this.chart.refresh();
+        this.chart.animateSeries =  true;
     }
     public seriesType: DropDownList;
     ngOnInit(): void {

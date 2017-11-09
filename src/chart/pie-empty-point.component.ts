@@ -51,7 +51,7 @@ export class PieEmptyPointChartComponent {
             change: () => {
                 let mode: string = this.emptyPointMode.value.toString();
                 this.chart.series[0].emptyPointSettings.mode = <EmptyPointMode>mode;
-                this.chart.series[0].emptyPointSettings.fill = '#f03e3e';
+                this.chart.series[0].emptyPointSettings.fill = '#e6e6e6';
                 this.chart.refresh();
             }
         });

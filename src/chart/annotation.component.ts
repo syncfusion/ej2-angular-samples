@@ -24,7 +24,8 @@ export class AnnotationChartComponent {
     @ViewChild('chart')
     public chart: ChartComponent;
     public legend: Object = {
-        visible: true
+        visible: true,
+        toggleVisibility: false
     };
     //Initializing dataSource
     public dataSource: Object = [

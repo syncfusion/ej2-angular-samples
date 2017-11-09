@@ -63,7 +63,6 @@ export class TrendLineChartComponent {
     }
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Months',
         majorGridLines: { width : 0}
     };
     //Initializing Primary Y Axis

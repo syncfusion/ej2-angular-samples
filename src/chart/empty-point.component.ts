@@ -41,7 +41,7 @@ export class EmptyPointChartComponent {
     public tooltip: Object = {
         enable: true
     };
-    public title: string = 'Annual Product-wise Profit Analysis';
+    public title: string = 'Annual Product-Wise Profit Analysis';
     @ViewChild('chart')
     public chart: ChartComponent;
     public legendSettings: Object = {
@@ -66,6 +66,7 @@ export class EmptyPointChartComponent {
             change: () => {
                 let mode: string = this.pointMode.value.toString();
                 this.chart.series[0].emptyPointSettings.mode = <EmptyPointMode>mode;
+                this.chart.series[0].emptyPointSettings.fill = '#e6e6e6';
                 this.chart.refresh();
             }
         });

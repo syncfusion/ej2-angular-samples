@@ -79,7 +79,6 @@ export class StackedAreaChartComponent {
         majorGridLines: { width: 0 },
         labelFormat: '{value}B',
         opposedPosition: true,
-        majorTickLines: { width: 0 }
     };
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

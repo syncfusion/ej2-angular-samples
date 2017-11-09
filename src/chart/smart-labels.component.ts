@@ -40,7 +40,7 @@ export class SmartLabelsComponent {
     };
     public startAngle: number = 0;
     public endAngle: number = 360;
-    public title: string = 'Rio Olympics Gold ';
+    public title: string = 'RIO Olympics Gold ';
     public onLoad(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';

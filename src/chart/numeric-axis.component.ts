@@ -66,7 +66,7 @@ export class NumericAxisChartComponent {
     public width: string = Browser.isDevice ? '100%' : '60%';
     
      public tooltip: Object = {
-        enable: true, format: '${point.x}th Over : ${point.y} Runs'
+        enable: true, format: '${point.x}th Over : <b>${point.y} Runs</b>'
     };
     public title: string = 'England vs West Indies';
     constructor() {
