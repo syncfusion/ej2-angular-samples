@@ -4,8 +4,8 @@
     </p>
 </div>
 <div class="control-section">
-    <ej-grid [dataSource]='data' id="gridcomp" allowPaging='true' allowExcelExport='true' allowPdfExport='true' allowGrouping='true'
-        allowSorting='true' [contextMenuItems]="contextMenuItems" [groupSettings]='groupOptions' [editSettings]='editing'>
+    <ej-grid [dataSource]='data' id="gridcomp" allowPaging='true' allowExcelExport='true' allowPdfExport='true' allowSorting='true'
+        [contextMenuItems]="contextMenuItems" [editSettings]='editing'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right" isPrimaryKey='true'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
