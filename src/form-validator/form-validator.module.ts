@@ -8,7 +8,7 @@ export const formValidatorAppRoutes: Object[] = [
         path: ':theme/form-validator/default',
         component: DefaultFormValidatorComponent,
         name: 'Default Functionalities',
-        category: 'Form-Validator'
+        category: 'Form Validator'
     }
 ];
 

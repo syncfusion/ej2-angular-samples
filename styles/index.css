@@ -1536,3 +1536,13 @@ propertye pane
 .sb-hide {
     display: none;
 }
+
+/* Description Format */
+
+#description {
+    margin: 30px;
+    padding: 15px;
+    background: #f0f0f0;
+    border: 1px solid #dddddd;
+    display: block;
+}

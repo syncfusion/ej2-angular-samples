@@ -16,10 +16,12 @@ export class DefaultFormValidatorComponent implements OnInit {
 
     ngOnInit(): void {
         this.formValidator = {
+            // Initialize custom placement
             customPlacement: (inputElement: HTMLElement, errorElement: HTMLElement) => {
                 inputElement.parentElement.appendChild(errorElement);
             }
         };
+        // Initialize form-validator
         let formObj: FormValidator;
         formObj = new FormValidator('#formId', this.formValidator);
     }
