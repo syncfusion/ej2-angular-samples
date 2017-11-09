@@ -1,10 +1,10 @@
 <div class="control-section">
-    <ej-toolbar class='e-gridlist' (clicked)="onClicked($event.originalEvent)">
-        <e-items>
-            <e-item text='menu'></e-item>
-            <e-item text='checkbox'></e-item>
-        </e-items>
-    </ej-toolbar>
+    <div class="select-wrap">
+        <select (change)="onChange($event.target.value)">
+        <option value='menu'>Menu</option>
+        <option value='checkbox'>Checkbox</option>
+        </select>
+    </div>
     <ej-grid #grid [dataSource]='data' allowPaging='true' allowFiltering='true' [pageSettings]='pageSettings' [filterSettings]='filterSettings'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right"></e-column>

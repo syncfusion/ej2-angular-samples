@@ -5,6 +5,7 @@ import { GridComponent, FilterService, FilterType } from '@syncfusion/ej2-ng-gri
 @Component({
     selector: 'ej-gridfiltermenu',
     templateUrl: 'filtermenu.html',
+    styleUrls: ['filter.style.css'],
     providers: [FilterService]
 })
 export class FilteringMenuComponent implements OnInit {
@@ -20,17 +21,8 @@ export class FilteringMenuComponent implements OnInit {
         this.pageSettings = { pageCount: 8 };
         this.filterSettings = { type: 'menu' };
     }
-    public onClicked(e: HTMLElement): void {
-        let element: HTMLElement = e;
-
-        if (!element.classList.contains('e-tbar-btn-text') && !element.classList.contains('e-tbar-btn')) {
-            return;
-        }
-
-        element = <HTMLElement>(element.tagName === 'BUTTON' ? element.firstElementChild : element);
-        document.getElementsByClassName('e-ghidden')[0].classList.remove('e-ghidden');
-        element.parentElement.parentElement.classList.add('e-ghidden');
-        this.grid.filterSettings.type = <FilterType>element.innerHTML.toLowerCase();
-		this.grid.clearFiltering();
+    public onChange(e: string): void {
+        this.grid.filterSettings.type = <FilterType>e;
+        this.grid.clearFiltering();
     }
 }
