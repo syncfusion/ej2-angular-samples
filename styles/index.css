@@ -682,6 +682,7 @@
 #controlTree {
     overflow-y: auto;
     position: absolute;
+    -webkit-overflow-scrolling: touch;
 }
 
 .sb-left-pane #sb-left-back {
@@ -700,6 +701,7 @@
     position: absolute;
     padding-left: 5px;
     top: 50px;
+    -webkit-overflow-scrolling: touch;
 }
 
 .sb-control-navigation {
@@ -1169,6 +1171,7 @@ propertye pane
     .sb-left-pane {
         position: fixed;
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
     .sb-left-footer {
         padding-top: 20px;
