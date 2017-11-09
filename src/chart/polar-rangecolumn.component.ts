@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-ng-charts';
 import { ChartSeriesType } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Sample for Polar series with drawType rangecolumn
@@ -28,7 +29,8 @@ export class PolarRangeColumnChartComponent {
         title: 'Months',
         labelPlacement: 'OnTicks',
         startAngle: 90,
-        interval: 1
+        interval: 1,
+        coefficient: Browser.isDevice ? 80 : 100
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

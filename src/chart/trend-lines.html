@@ -8,9 +8,9 @@
     <div class="col-lg-8">
         <ej-chart #chart id='chartcontainer' style='display:block; width: 92%' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [chartArea]='chartArea' [title]='title' [legendSettings]='legendSettings' (load)='load($event)'>
             <e-series-collection>
-                <e-series [dataSource]='series1' type='Spline' xName='x' yName='y' fill="#0066FF" name='Rupees' [marker]='marker1'>
+                <e-series [dataSource]='series1' type='Spline' xName='x' yName='y' name='Rupees' [marker]='marker1'>
                     <e-trendlines>
-                        <e-trendline type='Linear' width=3 [marker]='marker' name='Linear'>
+                        <e-trendline type='Linear' width=3 [marker]='marker' name='Linear' fill='#C64A75'>
                         </e-trendline>
                     </e-trendlines>
                 </e-series>
