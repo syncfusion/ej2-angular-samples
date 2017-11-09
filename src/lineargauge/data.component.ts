@@ -28,7 +28,7 @@ export class DataComponent {
             axisIndex: 0,
             axisValue: 0,
             x: 150,
-            y: -180
+            y: -180, zIndex: '1'
         },
         {
             content: '<div id="running" style="width:100px;"><img style="height:25px;width:25px;float:left" src="src/lineargauge' +
@@ -36,13 +36,13 @@ export class DataComponent {
             axisIndex: 0,
             axisValue: 0,
             x: 50,
-            y: -130
+            y: -130, zIndex: '1'
         },
         {
             content: '<div id="pointerText" style="width:60px;"><p style="font-size:15px;color:#30b32d;">10 MPH</p></div>',
             axisIndex: 0,
             axisValue: 10,
-            y: -65
+            y: -65, zIndex: '1'
         }
     ];
 

@@ -8,7 +8,7 @@
     <div class="col-lg-8">
         <ej-chart #chart id='chartcontainer' style='display:block; width: 92%' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [chartArea]='chartArea' [title]='title' [legendSettings]='legendSettings' (load)='load($event)'>
             <e-series-collection>
-                <e-series [dataSource]='series1' type='Scatter' xName='x' yName='y' fill="#0066FF" name='Apple Inc'>
+                <e-series [dataSource]='series1' type='Spline' xName='x' yName='y' fill="#0066FF" name='Rupees'>
                     <e-trendlines>
                         <e-trendline type='Linear' width=3 [marker]='marker' name='Linear'>
                         </e-trendline>

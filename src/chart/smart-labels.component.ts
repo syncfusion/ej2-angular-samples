@@ -11,6 +11,7 @@ import { IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-ng-chart
 })
 export class SmartLabelsComponent {
     public data: Object[] = [
+        { 'x': 'USA', y: 46, text: 'United States of America: 46' }, 
         { 'x': 'China', y: 26, text: 'China: 26' },
         { 'x': 'Russia', y: 19, text: 'Russia: 19' },
         { 'x': 'Germany', y: 17, text: 'Germany: 17' },
@@ -40,6 +41,10 @@ export class SmartLabelsComponent {
     };
     public startAngle: number = 0;
     public endAngle: number = 360;
+    //Initializing Tooltip
+    public tooltip: Object = {
+        enable: true, format: '${point.x} : ${point.y}'
+    };
     public title: string = 'RIO Olympics Gold ';
     public onLoad(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

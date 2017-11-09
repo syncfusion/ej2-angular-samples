@@ -50,7 +50,9 @@ export class HiloOpenCloseChartComponent {
     };
     public crosshair: Object = {
         enable: true,
-        lineType: 'Vertical'
+        lineType: 'Vertical', line: {
+            width: 0,
+        }
     };
     public legendSettings: Object = {
       visible: false

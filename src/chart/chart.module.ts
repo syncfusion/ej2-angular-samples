@@ -108,7 +108,7 @@ export const chartAppRoutes: Object[] = [
 
     { path: ':theme/chart/column', component: ColumnChartComponent, name: 'Column', order: '03', category: 'Bar Charts' },
     { path: ':theme/chart/rounded-column', component: RoundedColumnChartComponent, name: 'Rounded Column', order: '03', category: 'Bar Charts' },
-    { path: ':theme/chart/column-placement', component: PlacementColumnChartComponent, name: 'Side by Placement', order: '03', category: 'Bar Charts' },
+    { path: ':theme/chart/column-placement', component: PlacementColumnChartComponent, name: 'Back to Back Column', order: '03', category: 'Bar Charts' },
     { path: ':theme/chart/bar', component: BarChartComponent, name: 'Bar', order: '03', category: 'Bar Charts' },
     { path: ':theme/chart/stacked-column', component: StackedColumnChartComponent, name: 'Stacked Column', order: '03', category: 'Bar Charts' },
     { path: ':theme/chart/stacked-column100', component: PercentStackedColumnChartComponent, name: '100% Stacked Column', order: '03', category: 'Bar Charts' },
@@ -184,7 +184,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/polar-stackedarea', component: PolarStackedAreaChartComponent, name: 'Stacked Area', order: '10', category: 'Polar Radar' },
     { path: ':theme/chart/polar-scatter', component: PolarScatterChartComponent, name: 'Scatter', order: '10', category: 'Polar Radar' },
     { path: ':theme/chart/polar-column', component: PolarColumnChartComponent, name: 'Column', order: '10', category: 'Polar Radar' },
-    { path: ':theme/chart/polar-stackedcolumn', component: PolarStackedColumnChartComponent, name: 'Stacked Column', order: '10', category: 'Polar Radar' },
+    { path: ':theme/chart/polar-stackedcolumn', component: PolarStackedColumnChartComponent, name: 'Wind Rose', order: '10', category: 'Polar Radar' },
     { path: ':theme/chart/polar-rangecolumn', component: PolarRangeColumnChartComponent, name: 'Range Column', order: '10', category: 'Polar Radar' },
 
     { path: ':theme/chart/local-data', component: LocalDataChartComponent, name: 'Local Data', order: '11', category: 'Data Binding' },

@@ -11,13 +11,13 @@ import { AccumulationChartComponent, IAccLoadedEventArgs, AccumulationTheme } fr
 })
 export class SemiPieComponent {
     public data: Object[] = [
-        { x: 'Australia', y: 53.3, text: 'Australia' },
-        { x: 'China', y: 55.7, text: 'China' },
-        { x: 'India', y: 60.5, text: 'India' },
-        { x: 'Japan', y: 12.5, text: 'Japan' },
-        { x: 'South Africa', y: 79.4, text: 'South Africa' },
-        { x: 'United Kingdom', y: 70.9, text: 'United Kingdom' },
-        { x: 'United States', y: 45.0, text: 'United States' }
+        { x: 'Australia', y: 53, text: 'AUS: 14%' },
+        { x: 'China', y: 56, text: 'CHN: 15%' },
+        { x: 'India', y: 61, text: 'IND: 16%' },
+        { x: 'Japan', y: 13, text: 'JPN: 3%' },
+        { x: 'South Africa', y: 79, text: 'ZAF: 21%' },
+        { x: 'United Kingdom', y: 71, text: 'UK: 19%' },
+        { x: 'United States', y: 45, text: 'USA: 12%' }
     ];
     //Initializing Legend
     public legendSettings: Object = {
@@ -66,7 +66,7 @@ export class SemiPieComponent {
     }
     public startAngle: number = 270;
     public endAngle: number = 90;
-    public tooltip: Object = { enable: true, format: '${point.x} : ${point.y}' };
+    public tooltip: Object = { enable: true, format: '${point.text}' };
     public title: string = 'Agricultural Land percentage';
     constructor() {
         //code

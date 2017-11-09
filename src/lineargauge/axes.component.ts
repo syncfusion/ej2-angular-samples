@@ -25,7 +25,7 @@ export class AxesComponent {
         axisIndex: 0,
         axisValue: 10,
         x: 10,
-        y: 60
+        y: 60, zIndex: '1'
     }];
 
     //Initializing Axes

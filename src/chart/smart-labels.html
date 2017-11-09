@@ -5,7 +5,7 @@
 </div>
 <div class="control-section">
     <div>
-        <ej-accumulationchart style='display:block; width: 92%' [legendSettings]="legendSettings" [title]="title" (load)='onLoad($event)'>
+        <ej-accumulationchart style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='onLoad($event)'>
             <e-accumulation-series-collection>
                 <e-accumulation-series [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" [dataLabel]="dataLabel"> </e-accumulation-series>
             </e-accumulation-series-collection>

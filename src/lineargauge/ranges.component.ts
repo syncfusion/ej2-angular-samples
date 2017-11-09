@@ -74,7 +74,7 @@ export class RangesComponent {
         content: '<div id="pointer" style="width:20px"><h1 style="font-size:18px;color:#424242">35</h1></div>',
         axisIndex: 0,
         axisValue: 35,
-        y: -50
+        y: -50, zIndex: '1'
     }];
     constructor() {
         // code

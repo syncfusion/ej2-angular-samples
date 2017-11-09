@@ -44,6 +44,7 @@ export class NumericAxisChartComponent {
         title: 'Death Overs',
         minimum: 15,
         maximum: 21,
+        interval: 1,
         majorGridLines: { width: 0 }
     };
     public labelRender(args: IAxisLabelRenderEventArgs): void {

@@ -40,6 +40,14 @@ export class LocalDataChartComponent {
     public tooltip: Object = {
         enable: true, shared: true
     }
+    public crosshair: Object = {
+        enable: true,
+        line: {
+            color: 'rgba(204,214,235,0.25)',
+            width: Browser.isDevice ? 50 : 20,
+        },
+        lineType: 'Vertical'
+    };
     public width: string = Browser.isDevice ? '100%' : '80%';
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

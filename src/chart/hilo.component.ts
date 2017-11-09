@@ -60,7 +60,9 @@ export class HiloChartComponent {
     };
     public crosshair: Object = {
         enable: true,
-        lineType: 'Vertical'
+        lineType: 'Vertical', line: {
+            width: 0,
+        }
     };
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

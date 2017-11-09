@@ -65,7 +65,7 @@ export class AnnotationComponent {
             content: '<div id="title" style="width:200px;"><p style="font-size:18px;">CPU Utilization</p></div>',
             horizontalAlignment: 'Center',
             x: 35,
-            y: 50
+            y: 50, zIndex: '1',
         },
         {
             content: '<div id="low"><img style="height:25px;width:25px;" src="src/lineargauge/images/Low.png"/></div>',
@@ -92,19 +92,19 @@ export class AnnotationComponent {
             content: '<div id="lowText"><p style="font-size:15px;color:#248622;">Low</p></div>',
             axisIndex: 0,
             axisValue: 15,
-            y: 20
+            y: 20, zIndex: '1',
         },
         {
             content: '<div id="moderateText"><p style="font-size:15px;color:#ba9e2a;">Moderate</p></div>',
             axisIndex: 0,
             axisValue: 45,
-            y: 20
+            y: 20, zIndex: '1',
         },
         {
             content: '<div id="highText"><p style="font-size:15px;color:#b42f2f;">High</p></div>',
             axisIndex: 0,
             axisValue: 75,
-            y: 20
+            y: 20, zIndex: '1',
         }
     ];
     constructor() {

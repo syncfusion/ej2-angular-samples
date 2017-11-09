@@ -17,8 +17,7 @@ export class RangeAreaComponent {
   public primaryXAxis: Object = {
     valueType: 'DateTime',
     edgeLabelPlacement: 'Shift',
-    majorGridLines: { width: 0 },
-    skeleton: 'MMM'
+    majorGridLines: { width: 0 }
   };
   //Initializing Primary Y Axis
   public primaryYAxis: Object = {

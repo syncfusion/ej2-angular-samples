@@ -43,7 +43,7 @@ export class DefaultComponent {
         axisIndex: 0,
         axisValue: 10,
         x: 10,
-        y: -70
+        y: -70, zIndex: '1',
     }];
     constructor() {
         // code

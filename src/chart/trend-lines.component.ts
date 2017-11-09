@@ -63,7 +63,7 @@ export class TrendLineChartComponent {
     }
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        majorGridLines: { width : 0}
+        majorGridLines: { width : 0}, edgeLabelPlacement: 'Shift'
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
