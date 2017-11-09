@@ -86,7 +86,7 @@ export let samplesList: any = [
         'name': 'Accordion', 'category': 'Navigation', 'order': '05', 'path': 'accordion', 'samples': accordionAppRoutes
     },
     {
-        'name': 'TextBoxes', 'category': 'Editors', 'order': '03', 'path': 'inputboxes', 'samples': textboxesAppRoutes
+        'name': 'TextBoxes', 'category': 'Editors', 'order': '03', 'path': 'textboxes', 'samples': textboxesAppRoutes
     },
     {
         'name': 'Tooltip', 'category': 'Layout', 'order': '04', 'path': 'tooltip', 'samples': tooltipAppRoutes
