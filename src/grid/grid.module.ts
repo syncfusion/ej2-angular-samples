@@ -71,7 +71,6 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/column/columnresizing', component: ColumnResizingComponent, name: 'Column Resizing', order: '03', category: 'Column' },
     { 'path': ':theme/grid/selection', component: SelectionComponent, name: 'Default Selection', order: '04', category: 'Selection' },
     { 'path': ':theme/grid/selectionapi', component: SelectionApiComponent, name: 'Selection API', order: '04', category: 'Selection' },
-    { 'path': ':theme/grid/checkboxselection', component: CheckboxSelectionComponent, name: 'Checkbox Selection', order: '04', category: 'Selection'},
     {
         'path': ':theme/grid/aggregatedefault', component: AggregateComponent, name: 'Default Aggregate', order: '06', category: 'Aggregate'
     },
