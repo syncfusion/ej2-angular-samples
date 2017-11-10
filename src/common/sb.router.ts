@@ -52,7 +52,8 @@ const appRoutes: any = [
     { path: 'multiselect', loadChildren: MultiSelectSampleModule },
     { path: 'contextmenu', loadChildren: MenuModule },
     { path: ':theme/tab/:sample', redirectTo: 'material/tab/default' },
-    { path: '', redirectTo: 'material/chart/line', pathMatch: 'full' }
+    { path: '', redirectTo: 'material/chart/line', pathMatch: 'full' },
+    { path: '**', redirectTo: 'material/chart/line' }
 ];
 
 @NgModule({

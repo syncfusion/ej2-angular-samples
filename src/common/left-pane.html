@@ -6,10 +6,11 @@
         </div>
     </div>
 </div>
-<div class="sb-home">
+<div class="sb-home" onclick="document.getElementById('sb-home').click()">
     <div class="sb-home-link sb-icons sb-icon-Home"></div>
     <div class="sb-home-text">
         <span>HOME</span>
+        <a id="sb-home" href="http://ej2.syncfusion.com/home/angular.html"></a>
     </div>
 </div>
 <div class="sb-control-navigation e-view">
@@ -19,8 +20,7 @@
             <div class="e-icons back-icon"></div>
             <div class="control-name">ALL CONTROLS</div>
         </div>
-        <ej-listview id="controlList" #controlList class="e-view" [dataSource]="listData" [fields]="listFields" (select)='onSampleSelect($event)'
-            (actionComplete)='afterListviewRendered($event)'>
+        <ej-listview id="controlList" #controlList class="e-view" [dataSource]="listData" [fields]="listFields" (select)='onSampleSelect($event)' (actionComplete)='afterListviewRendered($event)'>
             <ng-template #template let-data>
                 <div class="e-text-content e-icon-wrapper">
                     <span class="e-list-text" role="listitem">{{data.name}}

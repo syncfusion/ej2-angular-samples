@@ -1136,6 +1136,9 @@ propertye pane
     .control-section {
         min-height: 150px;
     }
+    .e-sb-header-text>.sb-header-text-left {
+        display: none;
+    }
 }
 
 @media (max-width: 764px) {

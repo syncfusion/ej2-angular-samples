@@ -72,7 +72,8 @@ export class SBController {
     public previousViewMode: string = '';
     public viewModeChanged: boolean = false;
     public resizeTimer: number = 0;
-
+    public prevSampleName: string = '';
+    public prevControlName: string = '';
     //Bread Crumb Object
     public breadCrumbObject:
     {
@@ -280,7 +281,6 @@ export class SBController {
             })
             .subscribe((event: any) => {
                 this.updateSourceCode(location.hash);
-                this.updateDescription();
                 this.setListItemSelect();
                 this.createOpenNewButton();
                 this.updateViewMode();
@@ -291,6 +291,10 @@ export class SBController {
                 this.updatePropertyPanel();
                 if (this.currentControl !== this.prevControl) {
                     this.updateListViewDS();
+                }
+                this.setScrollTop();
+                if (this.prevSampleName !== this.sampleName || this.currentControl !== this.prevControl) {
+                    this.updateDescription();
                 }
             });
 
@@ -317,6 +321,8 @@ export class SBController {
                     localStorage.removeItem('pointer');
                 }
                 this.isInitialRender = false;
+                this.prevSampleName = this.sampleName;
+                this.prevControlName = this.currentControl;
             });
     }
 
@@ -558,7 +564,7 @@ export class SBController {
 
     onChangeTheme(e: Event) {
         let target: Element = <HTMLElement>e.target;
-        target = closest(target,'.e-list');
+        target = closest(target, '.e-list');
         let themeName: string = target.id;
         this.switchTheme(themeName);
         this.themePopup.hide();
@@ -747,6 +753,15 @@ export class SBController {
         }
     }
 
+    setScrollTop() {
+        let rightPane: HTMLElement = <HTMLElement>select('.sb-right-pane');
+        if (this.isMobile) {
+            rightPane.scrollTop = 74;
+        } else {
+            rightPane.scrollTop = 0;
+        }
+    }
+
     updateSourceCode(path: string): void {
         let pathArray: string[] = path.split('/');
         pathArray = pathArray.slice(2);
@@ -777,11 +792,11 @@ export class SBController {
                     let content: string = res._body
                     if (/html/g.test(fileName)) {
                         content = this.getStringWithOutDescription(content, /(\'|\")description/g);
-                        content = this.getStringWithOutDescription(content, /(\'|\")action-description/g)
-                        content = content.replace(/&/g, '&amp;')
-                            .replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                        content = this.getStringWithOutDescription(content, /(\'|\")action-description/g)                        
                     }
                     if (!/-plnkr\.json/g.test(fileName)) {
+                        content = content.replace(/&/g, '&amp;')
+                        .replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
                         items.push({
                             header: { text: fileName },
                             data: content,
