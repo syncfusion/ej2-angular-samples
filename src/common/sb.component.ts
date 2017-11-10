@@ -293,7 +293,7 @@ export class SBController {
                     this.updateListViewDS();
                 }
                 this.setScrollTop();
-                if (this.prevSampleName !== this.sampleName || this.currentControl !== this.prevControl) {
+                if (this.prevSampleName !== this.sampleName || this.currentControl !== this.prevControlName) {
                     this.updateDescription();
                 }
             });
