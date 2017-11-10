@@ -28,7 +28,7 @@
 
 @font-face {
     font-family: 'sbicons';
-    src: url('images/sb_icons/fonts/icons.ttf?gcjn6a') format('truetype'), url('images/sb_icons/fonts/icons.woff?gcjn6a') format('woff'), url('images/sb_icons/fonts/icons.svg?gcjn6a#sbicons') format('svg');
+    src: url('images/sb-icons/fonts/icons.ttf?gcjn6a') format('truetype'), url('images/sb-icons/fonts/icons.woff?gcjn6a') format('woff'), url('images/sb-icons/fonts/icons.svg?gcjn6a#sbicons') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -1088,7 +1088,7 @@ propertye pane
 }
 
 .sb-footer-logo-icon {
-    background: url(images/sb_icons/Syncfusion-logo.svg) no-repeat right;
+    background: url(images/sb-icons/Syncfusion-logo.svg) no-repeat right;
     height: 40px;
     width: 140px;
 }
@@ -1402,7 +1402,7 @@ propertye pane
         padding-bottom: 5px;
     }
     .sb-mobile-logo {
-        background: url(images/sb_icons/Syncfusion-mobile-logo.svg) no-repeat;
+        background: url(images/sb-icons/Syncfusion-mobile-logo.svg) no-repeat;
         width: 27px;
         height: 27px;
         display: table-cell;
@@ -1538,14 +1538,4 @@ propertye pane
 
 .sb-hide {
     display: none;
-}
-
-/* Description Format */
-
-#description {
-    margin: 30px;
-    padding: 15px;
-    background: #f0f0f0;
-    border: 1px solid #dddddd;
-    display: block;
 }
