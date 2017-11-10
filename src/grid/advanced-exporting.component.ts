@@ -5,11 +5,11 @@ import { ClickEventArgs } from '@syncfusion/ej2-navigations'
 
 @Component({
     selector: 'control-content',
-    templateUrl: 'advance-exporting.html',
+    templateUrl: 'advanced-exporting.html',
     providers: [ToolbarService, ExcelExportService, PdfExportService]
 
 })
-export class AdvanceExportingComponent implements OnInit {
+export class AdvancedExportingComponent implements OnInit {
     public firstGridData: Object[];
     public secondGridData: Object[];
     public toolbar: string[];

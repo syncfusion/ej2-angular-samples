@@ -8,7 +8,7 @@ import { ClickEventArgs } from '@syncfusion/ej2-navigations'
 
 @Component({
     selector: 'control-content',
-    templateUrl: 'exporting.html',
+    templateUrl: 'default-exporting.html',
     providers: [ToolbarService, PageService, ExcelExportService, PdfExportService, GroupService]
 
 })

@@ -37,8 +37,8 @@ import { BatchEditComponent } from './batch-editing.component';
 import { SharedModule } from '../common/shared.module';
 import { ColumnChooserComponent } from './column/columnchooser.component';
 import { ColumnResizingComponent } from './column/columnresizing.component';
-import { ExportingComponent } from './exporting.component';
-import { AdvanceExportingComponent } from './advance-exporting.component';
+import { ExportingComponent } from './default-exporting.component';
+import { AdvancedExportingComponent } from './advanced-exporting.component';
 import { CheckboxSelectionComponent } from './checkboxselection.component';
 import { CommandColumnComponent } from './command-column.component';
 import { ClipboardComponent } from './clipboard.component';
@@ -111,11 +111,11 @@ export const gridRouteConfig: Object[] = [
         category: 'Editing'
     },
     {
-        'path': ':theme/grid/exporting', component: ExportingComponent, name: 'Basic', order: '09',
+        'path': ':theme/grid/default-exporting', component: ExportingComponent, name: 'Default Exporting', order: '09',
         category: 'Exporting'
     },
     {        
-        'path': ':theme/grid/advance-exporting', component: AdvanceExportingComponent, name: 'Advance Exporting', order: '09',
+        'path': ':theme/grid/advanced-exporting', component: AdvancedExportingComponent, name: 'Advanced Exporting', order: '09',
         category: 'Exporting'
     },
     { 'path': ':theme/grid/clipboard', component: ClipboardComponent, name: 'Clipboard', order: '01', category: 'Grid' },
@@ -144,7 +144,7 @@ let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     ScrollComponent, SearchComponent, SelectionApiComponent, DragAndDropComponent, AggregateComponent, AggregateGroupComponent,
     RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent, VirtualizationComponent,
     NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent, ColumnResizingComponent,
-    ExportingComponent, AdvanceExportingComponent, CheckboxSelectionComponent, ClipboardComponent, CommandColumnComponent,
+    ExportingComponent, AdvancedExportingComponent, CheckboxSelectionComponent, ClipboardComponent, CommandColumnComponent,
     FilteringMenuComponent, ColumnSpanningComponent, ContextMenuComponent, ColumnMenuComponent, FrozenRowsComponent];
 
 @NgModule({
