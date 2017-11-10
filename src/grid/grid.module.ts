@@ -51,11 +51,11 @@ export const gridRouteConfig: Object[] = [
      { 'path': ':theme/grid/default', component: DefaultComponent, 'name': 'Default Functionalities', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/gridlines', component: GridLinesComponent, 'name': 'Grid Lines', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/paging', component: PageComponent, name: 'Paging', order: '01', category: 'Grid' },
-    { 'path': ':theme/grid/filtering', component: FilterComponent, name: 'Filtering', order: '01', category: 'Grid' },
-	{ 'path': ':theme/grid/filtermenu', component: FilteringMenuComponent, name: 'Filter Menu', order: '01', category: 'Grid' },
+    { 'path': ':theme/grid/filtering', component: FilterComponent, name: 'Filtering',  order: '05', category: 'Filtering' },
+	{ 'path': ':theme/grid/filtermenu', component: FilteringMenuComponent, name: 'Filter Menu', order: '05', category: 'Filtering' },
     { 'path': ':theme/grid/grouping', component: GroupComponent, name: 'Grouping', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/sorting', component: SortComponent, name: 'Sorting', order: '01', category: 'Grid' },
-    { 'path': ':theme/grid/searching', component: SearchComponent, name: 'Searching', order: '01', category: 'Grid' },
+    { 'path': ':theme/grid/searching', component: SearchComponent, name: 'Searching', order: '05', category: 'Filtering' },
     { 'path': ':theme/grid/masterdetail', component: MasterComponent, name: 'Master/Detail', order: '01', category: 'Grid' },
     {
         'path': ':theme/grid/draganddrop', component: DragAndDropComponent, name: 'Row Drag And Drop', order: '01', category: 'Grid',
@@ -73,11 +73,11 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/selectionapi', component: SelectionApiComponent, name: 'Selection API', order: '04', category: 'Selection' },
     { 'path': ':theme/grid/checkboxselection', component: CheckboxSelectionComponent, name: 'Checkbox Selection', order: '04', category: 'Selection'},
     {
-        'path': ':theme/grid/aggregatedefault', component: AggregateComponent, name: 'Default Aggregate', order: '05', category: 'Aggregate'
+        'path': ':theme/grid/aggregatedefault', component: AggregateComponent, name: 'Default Aggregate', order: '06', category: 'Aggregate'
     },
     {
         'path': ':theme/grid/aggregategroup', component: AggregateGroupComponent,
-        name: 'Group and Caption aggregate', order: '05', category: 'Aggregate'
+        name: 'Group and Caption aggregate', order: '06', category: 'Aggregate'
     },
     {
         'path': ':theme/grid/columntemplate', component: ColumnTemplateComponent, name: 'Column Template', order: '03',
@@ -89,33 +89,33 @@ export const gridRouteConfig: Object[] = [
         category: 'Grid'
     },
     { 'path': ':theme/grid/hierarchy', component: HierarchyComponent, name: 'Hierarchy Grid', order: '01', category: 'Grid' },
-    { 'path': ':theme/grid/scrolling', component: ScrollComponent, name: 'Default Scrolling', order: '06', category: 'Scrolling' },
+    { 'path': ':theme/grid/scrolling', component: ScrollComponent, name: 'Default Scrolling', order: '07', category: 'Scrolling' },
     {
-        'path': ':theme/grid/virtualization', component: VirtualizationComponent, name: 'Virtual Scrolling', order: '06',
+        'path': ':theme/grid/virtualization', component: VirtualizationComponent, name: 'Virtual Scrolling', order: '07',
         category: 'Scrolling'
     },
     {
-        'path': ':theme/grid/normal-edit', component: NormalEditComponent, name: 'Inline Editing', order: '07',
+        'path': ':theme/grid/normal-edit', component: NormalEditComponent, name: 'Inline Editing', order: '08',
         category: 'Editing'
     },
     {
-        'path': ':theme/grid/dialog-editing', component: DialogEditComponent, name: 'Dialog Editing', order: '07',
+        'path': ':theme/grid/dialog-editing', component: DialogEditComponent, name: 'Dialog Editing', order: '08',
         category: 'Editing'
     },
     {
-        'path': ':theme/grid/batch-editing', component: BatchEditComponent, name: 'Batch Editing', order: '07',
+        'path': ':theme/grid/batch-editing', component: BatchEditComponent, name: 'Batch Editing', order: '08',
         category: 'Editing'
     },
     {
-        'path': ':theme/grid/command-column', component: CommandColumnComponent, name: 'Command Column', order: '07',
+        'path': ':theme/grid/command-column', component: CommandColumnComponent, name: 'Command Column', order: '08',
         category: 'Editing'
     },
     {
-        'path': ':theme/grid/exporting', component: ExportingComponent, name: 'Basic', order: '08',
+        'path': ':theme/grid/exporting', component: ExportingComponent, name: 'Basic', order: '09',
         category: 'Exporting'
     },
     {        
-        'path': ':theme/grid/advance-exporting', component: AdvanceExportingComponent, name: 'Advance Exporting', order: '08',
+        'path': ':theme/grid/advance-exporting', component: AdvanceExportingComponent, name: 'Advance Exporting', order: '09',
         category: 'Exporting'
     },
     { 'path': ':theme/grid/clipboard', component: ClipboardComponent, name: 'Clipboard', order: '01', category: 'Grid' },
