@@ -1134,7 +1134,7 @@ propertye pane
         display: none;
     }
     .control-section {
-        min-height: auto;
+        min-height: 150px;
     }
 }
 

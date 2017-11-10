@@ -308,9 +308,12 @@ export class SBController {
                 this.setThemeItemActive(location.hash.split('/')[1]);
                 this.setSbLink();
                 this.hideShowSBLoader(true);
-                let themeName: string = localStorage.getItem('pointer') || (window.screen.width > 1366 ? 'touch' : 'mouse');
-                if (themeName) {
-                    this.setMouseOrTouch(select('#' + themeName).innerHTML.toLowerCase(), false);
+                let mT: string = localStorage.getItem('pointer') || (window.screen.width > 1366 ? 'touch' : 'mouse');
+                if (Browser.isDevice) {
+                    mT = 'touch';
+                }
+                if (mT) {
+                    this.setMouseOrTouch(select('#' + mT).innerHTML.toLowerCase(), false);
                     localStorage.removeItem('pointer');
                 }
                 this.isInitialRender = false;
@@ -403,13 +406,13 @@ export class SBController {
         this.leftControl.ngEle.nativeElement.style.display = '';
         if (this.isMobile) {
             this.leftControl.ngEle.nativeElement.style.display = 'none';
-            this.leftControl.setMobileView();            
-        }else{
-            addClass([this.leftControl.ngEle.nativeElement.querySelector('.sb-control-navigation')],'e-view')
+            this.leftControl.setMobileView();
+        } else {
+            addClass([this.leftControl.ngEle.nativeElement.querySelector('.sb-control-navigation')], 'e-view')
         }
         this.hideAllPopups();
         this.updatePropertyPanel();
-        
+
         addClass([this.mobileOverlay], 'sb-hide');
     }
 
@@ -555,7 +558,7 @@ export class SBController {
 
     onChangeTheme(e: Event) {
         let target: Element = <HTMLElement>e.target;
-        target = target.closest('li');
+        target = closest(target,'.e-list');
         let themeName: string = target.id;
         this.switchTheme(themeName);
         this.themePopup.hide();
@@ -600,7 +603,7 @@ export class SBController {
         }
         select('#' + theme).classList.add('active');
         this.themeDropDown.value = theme;
-        document.body.classList.add(theme);        
+        document.body.classList.add(theme);
     }
 
     setMouseOrTouch(str: string, reload?: boolean): void {
