@@ -1,6 +1,6 @@
 <div class="control-section">
     <div class="col-lg-8">
-    <ej-grid #grid [dataSource]='data' height='400' frozenRows='2' frozenColumns='1' [allowSelection]='false' [enableHover]='false' [allowResizing]='true'>
+    <ej-grid #grid [dataSource]='data' height='400' frozenRows='2' frozenColumns='1' [allowSelection]='false' [enableHover]='false' [allowResizing]='true' [allowSorting]='true' [allowMultiSorting]='false'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right"></e-column>
             <e-column field='Freight' headerText='Freight' width='125' format='C2'></e-column>
@@ -36,7 +36,7 @@
                         </td>
                         <td>
                             <div>
-                                  <ej-numerictextbox #columns min="1" max="2" value="1"></ej-numerictextbox>
+                                  <ej-numerictextbox #columns min="1" [max]="columnValue" value="1"></ej-numerictextbox>
                             </div>
                         </td>
                     </tr>
