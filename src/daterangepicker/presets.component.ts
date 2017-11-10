@@ -7,8 +7,10 @@ import { PresetsArgs } from '@syncfusion/ej2-calendars';
     encapsulation: ViewEncapsulation.None
 })
 export class PresetsComponent {
+	
     public presets: PresetsArgs[] = [
-        { label: 'This Week', start: new Date(new Date().setDate(new Date().getDate() - (new Date().getDay() + 7) % 7)), end: new Date(new Date().setDate(new Date().getDate() - (new Date().getDay() + 7) % 6 + 7)) },
+        { label: 'This Week', start: new Date(new Date().setDate(new Date().getDate() - (new Date().getDay() + 7) % 7)), 
+		end: new Date(new Date().setDate(new Date(new Date().setDate((new Date().getDate() - (new Date().getDay() + 7) % 7)) + 6).getDate() + 6)) },
         { label: 'This Month', start: new Date(new Date().setDate(1)), end: new Date() },
         { label: 'Last Month', start: new Date(new Date(new Date().setMonth(new Date().getMonth() - 1)).setDate(1)), end: new Date() },
         { label: 'Last Year', start: new Date(new Date().setDate(new Date().getDate() - 365)), end: new Date() },
