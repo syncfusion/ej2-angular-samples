@@ -357,7 +357,7 @@ export class SBController {
         for (let sb of sbArray) {
             let ele: HTMLFormElement = (select('#' + sb) as HTMLFormElement);
             ele.href = ((link) ? ('http://' + link[1] + '/' + (link[3] ? (link[3] + '/') : '')) :
-                ('http://npmci.syncfusion.com/production/')) +
+                ('http://ej2.syncfusion.com/')) +
                 (sbObj[sb] ? (sb + '/') : '') + 'demos/#/' + (sample ? (sample[1] + (sb !== 'typescript' ? '' : '.html')) : '');
         }
     }
