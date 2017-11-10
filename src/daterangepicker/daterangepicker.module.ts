@@ -5,15 +5,15 @@ import { DateRangePickerModule } from '@syncfusion/ej2-ng-calendars';
 
 import { DefaultDateRangePickerComponent } from './default.component';
 import { GlobalizationComponent } from './globalization.component';
-import { MinMaxComponent } from './minMax.component';
-import { MinMaxDaysComponent } from './minMaxDays.component';
+import { DateRangeComponent } from './daterange.component';
+import { DaySpanComponent } from './dayspan.component';
 import { PresetsComponent } from './presets.component';
 
 
 export const dateRangePickerAppRoutes: Object[] = [
     { path: ':theme/daterangepicker/default', component: DefaultDateRangePickerComponent, name: 'Default Functionalities', category: 'DateRangePicker' },
-    { path: ':theme/daterangepicker/minMax', component: MinMaxComponent, name: 'Date Range', category: 'DateRangePicker' },
-    { path: ':theme/daterangepicker/minMaxDays', component: MinMaxDaysComponent, name: 'Restrict Range', category: 'DateRangePicker' },
+    { path: ':theme/daterangepicker/daterange', component: DateRangeComponent, name: 'Date Range', category: 'DateRangePicker' },
+    { path: ':theme/daterangepicker/dayspan', component: DaySpanComponent, name: 'Day Span', category: 'DateRangePicker' },
     { path: ':theme/daterangepicker/globalization', component: GlobalizationComponent, name: 'Globalization', category: 'DateRangePicker' },
     { path: ':theme/daterangepicker/presets', component: PresetsComponent, name: 'Preset Ranges', category: 'DateRangePicker' },
 ];
@@ -25,8 +25,8 @@ export const DateRangePickerRouter: ModuleWithProviders = RouterModule.forChild(
     declarations: [
         DefaultDateRangePickerComponent,
         GlobalizationComponent,
-        MinMaxComponent,
-        MinMaxDaysComponent,
+        DateRangeComponent,
+        DaySpanComponent,
         PresetsComponent
 
     ],

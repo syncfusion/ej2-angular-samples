@@ -4,11 +4,11 @@ import { loadCldr, L10n } from '@syncfusion/ej2-base';
 
 @Component({
     selector: 'control-content',
-    templateUrl: 'minMax.html',
+    templateUrl: 'daterange.html',
     styleUrls: ['daterangepicker-style.css'],
     encapsulation: ViewEncapsulation.None
 })
-export class MinMaxComponent {
+export class DateRangeComponent {
     public minDate: Date = new Date('1/15/2017');
     public maxDate: Date = new Date('12/20/2017');
     constructor( @Inject('sourceFiles') private sourceFiles: any) {

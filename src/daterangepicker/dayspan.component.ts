@@ -4,11 +4,11 @@ import { loadCldr, L10n } from '@syncfusion/ej2-base';
 
 @Component({
     selector: 'control-content',
-    templateUrl: 'minMaxDays.html',
+    templateUrl: 'dayspan.html',
     styleUrls: ['daterangepicker-style.css'],
     encapsulation: ViewEncapsulation.None
 })
-export class MinMaxDaysComponent {
+export class DaySpanComponent {
     public minDays: number = 5;
     public maxDays: number = 10;
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
