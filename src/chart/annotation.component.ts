@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
     ILoadedEventArgs, IMouseEventArgs, ChartComponent, IAccLoadedEventArgs, AccumulationTheme,
-    SelectionMode, ChartTheme, Series
+    SelectionMode, ChartTheme, Series, IAccResizeEventArgs
 } from '@syncfusion/ej2-ng-charts';
 import {
     AccumulationChart, AccumulationDataLabel
@@ -129,7 +129,10 @@ export class AnnotationChartComponent {
                 selectedTheme = selectedTheme ? selectedTheme : 'Material';
                 args.accumulation.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
             },
-            legendSettings: { visible: false }
+            legendSettings: { visible: false },
+            resized:  (args: IAccResizeEventArgs) => {
+                location.reload();
+            }
         });
         this.pie.appendTo('#chart_annotation');
     }

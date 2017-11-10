@@ -22,7 +22,7 @@ export class VerticalChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Vilocity (m/s)', majorGridLines: { width: 0 }, minimum: -15, maximum: 15, interval: 5
+        title: 'Velocity (m/s)', majorGridLines: { width: 0 }, minimum: -15, maximum: 15, interval: 5
     };
     public marker: Object = {
         visible: false
