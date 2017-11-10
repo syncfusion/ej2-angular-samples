@@ -18,10 +18,6 @@
   .content-wrapper div.row {
     padding: 15px 0px;
   }
-
-  .e-input-group.e-small {
-    padding-top: 5px;
-  }
     
   .control-label {
     padding: 24px 0px 0px 0px;
@@ -33,19 +29,15 @@
     .content-wrapper {
       width: 92%;
     }
-    .col-xs-6,
-    .col-xs-4,
-    .col-xs-12 {
+    .e-input-section .col-xs-6,
+    .e-input-section .col-xs-4,
+    .e-input-section .col-xs-12 {
       padding: 10px 5px;
       width: 100%;
     }
     .content-wrapper div.row {
       padding: 0px;
     }
-  }
-    
-  #description {
-    float: left;
   }
     
   #description td {

@@ -1,6 +1,5 @@
 import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { TabModule } from '@syncfusion/ej2-ng-navigations';
 import { DefaultTabComponent } from './default.component';
 import { OrientationTabComponent } from './orientation.component';
 import { ResponsiveTabComponent } from './responsivemodes.component';
@@ -17,7 +16,7 @@ export const tabAppRoutes: Object[] = [
 export const tabRouter: ModuleWithProviders = RouterModule.forChild(tabAppRoutes);
 
 @NgModule({
-    imports: [tabRouter, TabModule, SharedModule],
+    imports: [tabRouter, SharedModule],
     declarations: [
         DefaultTabComponent,
         OrientationTabComponent,

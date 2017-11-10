@@ -31,7 +31,7 @@
         content: "\e702";
     }
 
-    .e-toolbar .e-toolbar-item.e-template {
+    .e-tbar-section .e-toolbar .e-toolbar-item.e-template {
         cursor: default;
     }
 
@@ -207,18 +207,18 @@
     }
 
     @media only screen and (min-width: 1224px) {
-        .e-sample-resize-container {
+        .e-tbar-section .e-sample-resize-container {
             width: 75%;
         }
     }
 
     @media only screen and (min-width: 1824px) {
-        .e-sample-resize-container {
+        .e-tbar-section .e-sample-resize-container {
             width: 50%;
         }
     }
 
-    .e-sample-resize-container {
+    .e-tbar-section .e-sample-resize-container {
         margin: auto;
         height: 40px;
     }

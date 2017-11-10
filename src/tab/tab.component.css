@@ -77,11 +77,11 @@
     padding: 10px;
 }
 @media only screen and (min-width: 1824px) {
-    .e-sample-resize-container {
+    .e-tab-section .e-sample-resize-container {
         width: 60%;
     }
 
-    .e-bigger .e-sample-resize-container {
+    .e-bigger .e-tab-section .e-sample-resize-container {
         width: 70%;
     }
 }
