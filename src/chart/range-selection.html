@@ -6,7 +6,7 @@
 <div class="control-section">
     <div class="col-md-8">
             <ej-chart #chart style='display:block; width: 92%' [chartArea]='chartArea'[primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [legendSettings]='legend' [title]='title'
-                selectionMode='Cluster' (load)='load($event)'>
+                selectionMode='DragXY' (load)='load($event)'>
                 <e-series-collection>
                     <e-series [dataSource]='data' type='Scatter' xName='x' yName='y' name='Product A' width=2 [marker]='marker1'> </e-series>
                     <e-series [dataSource]='data1' type='Scatter' xName='x' yName='y' name='Product B' width=2 [marker]='marker2'> </e-series>

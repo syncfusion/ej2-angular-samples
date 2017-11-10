@@ -80,7 +80,7 @@ export class DrilldownPieComponent {
             }
             this.pie.series[0].dataLabel.position = 'Outside';
             this.pie.series[0].dataLabel.font.color = 'black';
-            this.pie.legendSettings.visible = true;
+            this.pie.legendSettings.visible = false;
             this.pie.visibleSeries[0].explodeIndex = null;
             this.pie.enableSmartLabels = true;
             this.pie.refresh();

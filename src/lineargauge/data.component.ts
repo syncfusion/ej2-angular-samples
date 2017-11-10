@@ -91,13 +91,13 @@ export class DataComponent {
         axisIndex: 0,
         axisValue: 0,
         x: 50,
-        y: -110
+        y: -110, zIndex: '1'
     },
     {
         content: '<div id="pointerText" style="width:60px;"><p style="font-size:15px;color:#30b32d;">28 MPH</p></div>',
         axisIndex: 0,
         axisValue: 28,
-        y: -70
+        y: -70, zIndex: '1'
     }];
 
     public Axes2: Object[] = [{
@@ -145,13 +145,13 @@ export class DataComponent {
         axisIndex: 0,
         axisValue: 0,
         x: 50,
-        y: -120
+        y: -120, zIndex: '1'
     },
     {
         content: '<div id="pointerText" style="width:100px;"><p style="font-size:15px;color:#30b32d;">2000 Steps</p></div>',
         axisIndex: 0,
         axisValue: 2.2,
-        y: -65
+        y: -65, zIndex: '1'
     }];
 
     public Axes3: Object[] = [{
