@@ -1,8 +1,9 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
-    AccumulationChartComponent, IMouseEventArgs, indexFinder, Index, IAccTextRenderEventArgs,
-    AccumulationChart, IAccLoadedEventArgs, AccumulationTheme, getElement
+    AccumulationChartComponent, IMouseEventArgs, Index, IAccTextRenderEventArgs,
+    AccumulationChart, IAccLoadedEventArgs, AccumulationTheme
 } from '@syncfusion/ej2-ng-charts';
+import { getElement, indexFinder } from '@syncfusion/ej2-charts';
 
 /**
  * Sample for Drilldown in Pie chart

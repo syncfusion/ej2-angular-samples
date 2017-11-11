@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, Series, ChartTheme, getElement } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, Series, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { getElement } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
