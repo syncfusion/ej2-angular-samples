@@ -32,7 +32,7 @@ const appRoutes: any = [
     { path: 'lineargauge', loadChildren: LinearGaugeSampleModule },
     { path: 'grid', loadChildren: GridSampleModule },
     { path: 'form-validator', loadChildren: FormValidatorModule },
-    { path: 'Button', loadChildren: ButtonModule },
+    { path: 'button', loadChildren: ButtonModule },
     { path: 'dropdownlist', loadChildren: DropDownListSampleModule },
     { path: 'combobox', loadChildren: ComboBoxSampleModule },
     { path: 'autocomplete', loadChildren: AutoCompleteSampleModule },
@@ -51,6 +51,8 @@ const appRoutes: any = [
     { path: 'maskedtextbox', loadChildren: MaskedTextBoxSampleModule },
     { path: 'multiselect', loadChildren: MultiSelectSampleModule },
     { path: 'contextmenu', loadChildren: MenuModule },
+    { path: ':theme/button/:sample', redirectTo: 'material/button/default'},
+    { path: ':theme/contextmenu/:sample', redirectTo: 'material/contextmenu/default' },
     { path: ':theme/tab/:sample', redirectTo: 'material/tab/default' },
     { path: '', redirectTo: 'material/chart/line', pathMatch: 'full' },
     { path: '**', redirectTo: 'material/chart/line' }
