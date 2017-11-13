@@ -133,7 +133,7 @@ export class LPController {
         if (location.hash.replace('/#', '') !== path) {
             this.navigateSample(path.replace(':theme', this.getCurrentTheme()));
         }
-        if(!this.app.isDesktop){
+        if(!this.app.isDesktop && !this.app.isInitialRender){
             this.app.onNavButtonClick(true);            
         }
         addClass([this.app.mobileOverlay], 'sb-hide');
