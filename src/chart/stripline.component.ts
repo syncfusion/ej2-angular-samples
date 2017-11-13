@@ -85,14 +85,17 @@ export class StripLineChartComponent {
             change: () => {
                 let mode: string = this.mode.value.toString();
                 if (mode === 'Vertical') {
-                    for (let i: number = 0; i <= 4; i++) {
-                        if (i === 3 || i === 4) { this.chart.primaryYAxis.stripLines[i] = {}; }
+                    for (let i: number = 0; i < 3; i++) {
                         this.chart.primaryYAxis.stripLines[i].visible = false;
+                    }
+                    for (let i: number = 0; i <= 4; i++) {
                         this.chart.primaryXAxis.stripLines[i].visible = true;
                     }
                 } else {
-                    for (let i: number = 0; i <= 4; i++) {
+                    for (let i: number = 0; i < 3; i++) {
                         this.chart.primaryYAxis.stripLines[i].visible = true;
+                    }
+                    for (let i: number = 0; i <= 4; i++) {
                         this.chart.primaryXAxis.stripLines[i].visible = false;
                     }
                 }

@@ -5,10 +5,9 @@
 </div>
 <div class="control-section">
     <div class="col-md-8">
-        <ej-chart #chart style='display:block;' id='chartcontainer' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
-            (load)='load($event)' [tooltip]='tooltip' (pointRender)='pointRender($event)'>
+        <ej-chart #chart style='display:block;' id='chartcontainer' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)' [tooltip]='tooltip' (pointRender)='pointRender($event)'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Column' xName='x' yName='y' width=2 [marker]='marker'>
+                <e-series [dataSource]='data' type='Column' xName='x' yName='y' width=2 [marker]='marker' name='Users'>
                 </e-series>
             </e-series-collection>
         </ej-chart>
@@ -57,9 +56,7 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to arrange the axis labels smartly. When the Axis labels overlap with each other based on
-        the chart dimensions and label size, you can use the <code>labelIntersectAction</code> property of the axis
-        to avoid overlapping.
+        In this example, you can see how to arrange the axis labels smartly. When the Axis labels overlap with each other based on the chart dimensions and label size, you can use the <code>labelIntersectAction</code> property of the axis to avoid overlapping.
     </p>
     <p>Chart supports the following by which can be set using <code>labelIntersectAction</code> property.
     </p>

@@ -11,7 +11,7 @@ import { IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-ng-chart
 })
 export class SmartLabelsComponent {
     public data: Object[] = [
-        { 'x': 'USA', y: 46, text: 'United States of America: 46' }, 
+        { 'x': 'USA', y: 46, text: 'United States of America: 46' },
         { 'x': 'China', y: 26, text: 'China: 26' },
         { 'x': 'Russia', y: 19, text: 'Russia: 19' },
         { 'x': 'Germany', y: 17, text: 'Germany: 17' },

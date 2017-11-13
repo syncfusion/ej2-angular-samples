@@ -193,7 +193,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/numeric-axis', component: NumericAxisChartComponent, name: 'Numeric Axis', order: '12', category: 'Chart Axes' },
     { path: ':theme/chart/datetime', component: DateTimeAxisChartComponent, name: 'DateTime Axis', order: '12', category: 'Chart Axes' },
     { path: ':theme/chart/category', component: CategoryChartComponent, name: 'Category Axis', order: '12', category: 'Chart Axes' },
-    { path: ':theme/chart/indexd-axis', component: IndexedAxisChartComponent, name: 'Indexd Category Axis', order: '12', category: 'Chart Axes' },
+    { path: ':theme/chart/indexed-axis', component: IndexedAxisChartComponent, name: 'Indexed Category Axis', order: '12', category: 'Chart Axes' },
     { path: ':theme/chart/logarithmic', component: LogarithmicAxisChartComponent, name: 'Log Axis', order: '12', category: 'Chart Axes' },
     { path: ':theme/chart/multiple-axes', component: MultipleAxesChartComponent, name: 'Multiple Axes', order: '12', category: 'Chart Axes' },
     { path: ':theme/chart/inversed', component: InversedAxisChartComponent, name: 'Inversed Axes', order: '12', category: 'Chart Axes' },

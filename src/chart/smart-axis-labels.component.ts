@@ -84,7 +84,7 @@ export class SmartAxisLabelsChartComponent {
             change: () => {
                 let type: string = this.labelIntersect.value.toString();
                 this.chart.primaryXAxis.labelIntersectAction = <LabelIntersectAction>type;
-                this.chart.refresh();
+                this.chart.dataBind();
             }
         });
         this.labelIntersect.appendTo('#intersecttype');
@@ -94,7 +94,7 @@ export class SmartAxisLabelsChartComponent {
             change: () => {
                 let type: string = this.edgePlacement.value.toString();
                 this.chart.primaryXAxis.edgeLabelPlacement = <EdgeLabelPlacement>type;
-                this.chart.refresh();
+                this.chart.dataBind();
             }
         });
         this.edgePlacement.appendTo('#labelplacement');
