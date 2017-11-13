@@ -50,7 +50,7 @@ export class PolarStackedColumnChartComponent {
         width: 1, color: 'white'
     };
     public tooltip: Object = {
-        enable: true, format: '${series.name}<br>${point.x} : ${point.y}'
+        enable: true
     };
     public title: string = 'Wind Rose Chart';
     @ViewChild('chart')

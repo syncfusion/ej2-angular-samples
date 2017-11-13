@@ -43,6 +43,9 @@ export class SmartAxisLabelsChartComponent {
             width: 0
         }
     };
+    public legendSettings: Object = {
+        visible: false
+    };
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';

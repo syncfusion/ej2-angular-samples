@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
-import { ILoadedEventArgs, ChartComponent, BoxPlotMode, IPointRenderEventArgs, ChartTheme, getSaturationColor } from '@syncfusion/ej2-ng-charts';
-
+import { ILoadedEventArgs, ChartComponent, BoxPlotMode, IPointRenderEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { getSaturationColor} from '@syncfusion/ej2-charts';
 /**
  * Sample for box and whisker series
  */

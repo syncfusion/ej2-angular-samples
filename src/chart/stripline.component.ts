@@ -69,6 +69,9 @@ export class StripLineChartComponent {
     public tooltip: Object = {
         enable: true
     };
+    public legendSettings: Object = {
+        visible: false
+    };
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';

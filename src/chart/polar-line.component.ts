@@ -64,7 +64,7 @@ export class PolarLineChartComponent {
 
     };
     public tooltip: Object = {
-        enable: true, format: '${series.name}<br>${point.x} : ${point.y}'
+        enable: true
     };
     public title: string = 'Alaska Weather Statistics - 2016';
     @ViewChild('chart')

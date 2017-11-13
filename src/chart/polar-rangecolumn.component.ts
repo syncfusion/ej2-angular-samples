@@ -47,7 +47,7 @@ export class PolarRangeColumnChartComponent {
         width: 3, color: 'white'
     };
     public tooltip: Object = {
-        enable: true, format: '${point.x}<br>High: ${point.high}<br>Low: ${point.low}'
+        enable: true
     };
     public legendSettings: Object = {
         visible: false

@@ -41,9 +41,7 @@ export class WaterfallChartComponent {
 
     public title: string = 'Company Revenue and Profit';
     public tooltip: Object = {
-        enable: true,
-        shared: false,
-        format: '${point.x} : ${point.y} m'
+        enable: true
     };
     public legendSettings: Object = {
         visible: false

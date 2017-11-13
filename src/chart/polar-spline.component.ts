@@ -35,8 +35,7 @@ export class PolarSplineChartComponent {
     };
     public title: string = 'Microphone Types Polar Patterns';
     public tooltip: Object = {
-        enable: true,
-        format: '${series.name}<br>${point.x} : ${point.y}'
+        enable: true
     };
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
