@@ -1,18 +1,18 @@
 <div class="control-section">
     <div class='e-mastertext'>Master Grid</div>
 
-    <ej-grid [dataSource]='data' [selectedRowIndex]="2" (rowSelected)="onRowSelected($event)">
+    <ejs-grid [dataSource]='data' [selectedRowIndex]="2" (rowSelected)="onRowSelected($event)">
         <e-columns>
             <e-column field='ContactName' headerText='Customer Name' width='150'></e-column>
             <e-column field='CompanyName' headerText='Company Name' width='150'></e-column>
             <e-column field='Address' headerText='Address' width='150'></e-column>
             <e-column field='Country' headerText='Country' width='130'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
 
     <div class='e-statustext' *ngIf="key">Showing orders of Customer: <b>{{key}}</b></div>
 
-    <ej-griddetail [key]="key"></ej-griddetail>
+    <ejs-griddetail [key]="key"></ejs-griddetail>
 
     <div id='description'>
         <p>Master-Detail Grid is a use case scenario, in which the details of a Master Grid record, is viewed in
@@ -31,7 +31,7 @@
         </ul>
         <p>The above demo is implemented as follows.</p>
         <ul>
-            <li>Created a Angular component named <code>DetailComponent(ej-griddetail)</code> to show details of selected row from Master Grid.</li>
+            <li>Created a Angular component named <code>DetailComponent(ejs-griddetail)</code> to show details of selected row from Master Grid.</li>
             <li>The <code>DetailComponent</code> has an <code>Input</code> property <code>key</code>, based on which 
             the data will be filtered and set to the Detail Grid. Here the <strong>CustomerID</strong> value is used as key value.</li>
             <li>Created an another Angular component named <code>MasterComponent</code> which has Master Grid component with <code><a target="_blank" class="code"

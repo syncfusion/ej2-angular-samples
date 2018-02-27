@@ -1,0 +1,38 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the data about inflation rate comparision for three countries by using spline area series in the chart. 
+        Legend in the sample shows the information about the series.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [title]='title' [primaryXAxis]='primaryXAxis'
+            [primaryYAxis]='primaryYAxis' (load)='load($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='SplineArea' xName='x' yName='y' [marker]='marker' name='US' opacity=0.5 border-color='transparent'>
+                </e-series>
+                <e-series [dataSource]='data1' type='SplineArea' xName='x' yName='y' [marker]='marker' name='France' opacity=0.5 border-color='transparent'>
+                </e-series>
+                <e-series [dataSource]='data2' type='SplineArea' xName='x' yName='y' [marker]='marker' name='Germany' opacity=0.5 border-color='transparent'>
+                </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the spline area type charts. Similar to line type series, but the spline area get closed and filled with series color.
+        You can use <code>border</code>, <code>fill</code> properties to customize the spline area. <code>marker</code> and <code>dataLabel</code> are used to represent individual data and its value.
+        Legend is enabled in this example with series type shape.
+     </p>     
+      <br>
+      <p style="font-weight: 500">Injecting Module</p>
+      <p>
+          Chart component features are segregated into individual feature-wise modules. To use spline area series feature, we need to inject
+          <code>SplineAreaService</code> into the <code>@NgModule.providers</code> section.
+      </p>
+      <p>
+          More information on the spline area series can be found in this
+          <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#areaseriesmodule-areaseries">documentation section</a>.
+      </p>
+</div>

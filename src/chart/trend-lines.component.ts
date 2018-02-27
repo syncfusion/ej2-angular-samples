@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ChartComponent, ILoadedEventArgs, TrendlineTypes } from '@syncfusion/ej2-ng-charts';
+import { ChartComponent, ILoadedEventArgs,ChartTheme, TrendlineTypes } from '@syncfusion/ej2-ng-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { NumericTextBox } from '@syncfusion/ej2-inputs';
 /**
@@ -87,10 +87,10 @@ export class TrendLineChartComponent {
     public max: number = 20;
     public value: number = 0;
     public step: number = 1;
-    public load(args: ILoadedEventArgs): void {
+     public load(args: ILoadedEventArgs): void {       
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = (selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     };
     public title: string = 'Historical Indian Rupee Rate (INR USD)';
     public trendLineType: DropDownList;

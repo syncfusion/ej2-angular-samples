@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { data } from '../data';
+import { orderDetails } from '../data';
 import { FreezeService, ResizeService, GridComponent, SortService } from '@syncfusion/ej2-ng-grids';
 import { NumericTextBoxComponent } from '@syncfusion/ej2-ng-inputs';
 import { Browser } from '@syncfusion/ej2-base';
@@ -25,6 +25,6 @@ export class FrozenRowsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.data = data.slice(0, 50);
+        this.data = orderDetails;
     }
 }

@@ -10,7 +10,7 @@ import { AlignToolbarComponent } from './alignment.component';
 import { SharedModule } from '../common/shared.module';
 export const toolbarAppRoutes: Object[] = [
     { path: ':theme/toolbar/default', component: DefaultToolbarComponent, name: 'Default Functionalities', category: 'Toolbar' },
-    { path: ':theme/toolbar/popup', component: PopupToolbarComponent, name: 'Popup', category: 'Toolbar' },
+    { path: ':theme/toolbar/popup', component: PopupToolbarComponent, name: 'Popup', category: 'Toolbar', type: 'update' },
     { path: ':theme/toolbar/alignment', component: AlignToolbarComponent, name: 'Alignment', category: 'Toolbar' },
     { path: ':theme/toolbar/rtl', component: RtlToolbarComponent, name: 'RTL', category: 'Toolbar' }
 

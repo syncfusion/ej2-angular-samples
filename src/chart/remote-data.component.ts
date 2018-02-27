@@ -16,7 +16,7 @@ import { Browser } from '@syncfusion/ej2-base';
 export class RemoteDataChartComponent {
 
     public data: DataManager = new DataManager({
-        url: 'http://mvc.syncfusion.com/Services/Northwnd.svc/Tasks/'
+        url: 'https://mvc.syncfusion.com/Services/Northwnd.svc/Tasks/'
     });
     @ViewChild('chart')
     public chart: ChartComponent;
@@ -40,12 +40,16 @@ export class RemoteDataChartComponent {
             '#c1c1c1', '#6f6fe2', '#e269ae', '#9e480e', '#997300', '#4472c4', '#70ad47', '#ffc000', '#ed7d31'];
         let bootstrapColors: string[] = ['#a16ee5', '#f7ce69', '#55a5c2', '#7ddf1e', '#ff6ea6',
             '#7953ac', '#b99b4f', '#407c92', '#5ea716', '#b91c52'];
+        let highContrastColors: string[] = ['#79ECE4', '#E98272', '#DFE6B6', '#C6E773', '#BA98FF',
+            '#FA83C3', '#00C27A', '#43ACEF', '#D681EF', '#D8BC6E'];
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         if (selectedTheme && selectedTheme.indexOf('fabric') > -1) {
             args.fill = fabricColors[args.point.index % 10];
         } else if (selectedTheme === 'material') {
             args.fill = materialColors[args.point.index % 10];
+        } else if (selectedTheme === 'highcontrast') {
+            args.fill = highContrastColors[args.point.index % 10];
         } else {
             args.fill = bootstrapColors[args.point.index % 10];
         }

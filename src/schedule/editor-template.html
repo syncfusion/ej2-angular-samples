@@ -1,0 +1,88 @@
+<div class="control-section">
+    <ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" (actionBegin)="onActionBegin($event)"
+        (popupOpen)="onPopupOpen($event)" (eventRendered)="onEventRendered($event)" [showQuickInfo]="showQuickInfo">
+        <e-views>
+            <e-view option="Day"></e-view>
+            <e-view option="Week"></e-view>
+            <e-view option="WorkWeek"></e-view>
+            <e-view option="Month"></e-view>
+        </e-views>
+        <ng-template #editorTemplate>
+            <table class="custom-event-editor" width="100%" cellpadding="5">
+                <tbody>
+                    <tr>
+                        <td class="e-textlabel">Summary</td>
+                        <td colspan="4">
+                            <input id="Subject" class="e-field e-input" type="text" value="" name="Subject" style="width: 100%" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="e-textlabel">Status</td>
+                        <td colspan="4">
+                            <input type="text" id="EventType" name="EventType" class="e-field" style="width: 100%" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="e-textlabel">From</td>
+                        <td colspan="4">
+                            <input id="StartTime" class="e-field" type="text" name="StartTime" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="e-textlabel">To</td>
+                        <td colspan="4">
+                            <input id="EndTime" class="e-field" type="text" name="EndTime" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="e-textlabel">Reason</td>
+                        <td colspan="4">
+                            <textarea id="Description" class="e-field e-input" name="Description" rows="3" cols="50" style="width: 100%; height: 60px !important; resize: vertical"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+    </ejs-schedule>
+
+</div>
+
+<div id="action-description">
+    <p>This demo illustrates the way of customizing the default editor window with custom template option and the customized
+        design is automatically replaced onto the usual event editor. Here, a doctor's daily appointment with his patients
+        is listed out and shaded with specific color based on its status.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        In this demo, the event window is customized based on the doctor's required appointment related fields which can be achieved
+        by making use of the
+        <code>editorTemplate</code> API. Here, the custom design is built with the required fields through the script template and its type should be
+        <code>ng-template</code>.
+    </p>
+    <p>
+        Each field defined through it should contain the
+        <code>e-field</code> class, so as to allow the processing of those fields in the default event object from internal source. The ID of
+        this customized script template section is assigned to the
+        <code>editorTemplate</code> option, so that this customized fields will be replaced onto the default editor window.
+    </p>
+    <p>
+        As we are using our Syncfusion sub-components within this editor in this demo, therefore the custom defined form elements
+        needs to be configured as required Syncfusion components such as DropDownList and DateTimePicker which needs to be
+        done within the
+        <code>popupOpen</code> event. This particular step can be skipped, if the user needs to simply use the normal form design with applicable
+        fields.
+    </p>
+    <p>
+        Within the
+        <code>eventRendered</code> event that triggers before every appointment getting rendered on the Schedule user interface, the colors for the
+        appointments are set based on its status which is retrieved from the appointment data.
+    </p>
+    <p>
+        The additional restriction has been added to the Schedule cells such that if a cell already contains an appointment – then
+        it should be prevented to book with multiple appointments on the same time for which the
+        <code>isSlotAvailable</code> method is used. This method returns true, if the underlying cell is available for adding new events by checking
+        whether it already has any events in it.
+    </p>
+</div>

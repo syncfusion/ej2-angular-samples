@@ -1,5 +1,6 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { data } from './data';
+import { orderDetails } from './data';
+import { ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
 import { GridComponent, FilterService, FilterType } from '@syncfusion/ej2-ng-grids';
 
 @Component({
@@ -10,19 +11,27 @@ import { GridComponent, FilterService, FilterType } from '@syncfusion/ej2-ng-gri
 })
 export class FilteringMenuComponent implements OnInit {
     public data: Object[];
+    public ddldata: Object[];
     public pageSettings: Object;
     public filterSettings: Object;
+    public filteringType: Object[] = [
+        { Id: 'Menu', type: 'Menu' },
+        { Id: 'CheckBox', type: 'Checkbox' },
+        { Id: 'Excel', type: 'Excel' }
+    ];
+    public ddlfields: Object = { text: 'type', value: 'Id' };
 
     @ViewChild('grid')
     public grid: GridComponent;
 
     ngOnInit(): void {
-        this.data = data.slice(0, 200);
-        this.pageSettings = { pageCount: 8 };
-        this.filterSettings = { type: 'menu' };
+        this.data = orderDetails;
+        this.pageSettings = { pageCount: 5 };
+        this.filterSettings = { type: 'Menu' };
+        this.ddldata = this.filteringType;
     }
-    public onChange(e: string): void {
-        this.grid.filterSettings.type = <FilterType>e;
+    public onChange(e: ChangeEventArgs): void {
+        this.grid.filterSettings.type = <FilterType>e.value;
         this.grid.clearFiltering();
     }
 }

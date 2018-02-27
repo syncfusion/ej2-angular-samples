@@ -1,0 +1,70 @@
+<div id="action-description">
+    <p>This sample demonstrates the rendering of Slider component with ticks placement. Drag the thumb over the bar for selecting
+        the values between min and max.</p>
+</div>
+
+<div class="col-lg-8 control-section">
+    <div class="content-wrapper">
+        <div class="sliderwrap">
+            <label style="padding-bottom: 50px">Default Slider</label>
+            <div id="default"></div>
+            <ejs-slider id='default' #slider [value]='value' [min]='min' [max]='max' [step]='step' [ticks]="ticks"></ejs-slider>
+        </div>
+        <div class="sliderwrap">
+            <label style="padding-bottom: 50px">Range Slider</label>
+            <div id="range"></div>
+            <ejs-slider id='range' #rangeslider [value]='rangevalue' [type]='rangetype' [min]='min' [max]='max' [step]='step' [ticks]='rangeticks'></ejs-slider>
+        </div>
+    </div>
+</div>
+    <div class="col-lg-4 property-section">
+        <table id="property" title="Properties">
+            <tbody>
+                <tr>
+                    <td style="width: 50%;padding-left: 10px;padding-top: 10px">
+                        <div>Placement</div>
+                    </td>
+                    <td style="width: 50%;padding-right: 10px;padding-top: 10px">
+                        <div>
+                            <ejs-dropdownlist #dropdownlist id='filter-type' dropdownlist [dataSource]='datasource' [fields]='fields' index=0 (change)='onChange()'
+                                placeholder='Select a Placement' popupHeight='200px'></ejs-dropdownlist>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;padding-left: 10px;padding-top: 10px;">
+                        <div class="userselect">Disabled</div>
+                    </td>
+                    <td style="width: 50%;padding-right: 10px;padding-top: 10px;">
+                        <div style="padding-left: 0;padding-top: 0">
+                            <ejs-checkbox id='disabled' [checked]="false" (change)="checkbox_onChange($event)"></ejs-checkbox>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="description">
+        <p>The ticks are the visual representation of the Slider values. The ticks are differentiated as small and large ticks
+            based on its size. The ticks position can be defined by the
+            <a target="_blank" href="http://ej2.syncfusion.com/documentation/slider/api-ticksData.html?lang=es6#smallstep-number">smallStep</a> and
+            <a target="_blank" href="http://ej2.syncfusion.com/documentation/slider/api-ticksData.html?lang=es6#smallstep-number">largeStep </a>properties.</p>
+        <p> In this demo, ticks position with default and range Slider is demonstrated.</p>
+        <ul>
+            <li>Default Slider – In this sample, the small and large ticks are rendered with the frequency of 0.05 and 0.20.</li>
+            <li>Range Slider – In this sample, the small and large ticks are rendered with the frequency of 5 and 20.</li>
+        </ul>
+        <p> The ticks placement of Slider and disable Slider component from the property pane can also be changed.</p>
+        <p>The following properties are used to restrict the value range for the slider:</p>
+        <ul>
+            <li>
+                <a target="_blank" href="http://ej2.syncfusion.com/documentation/slider/api-slider.html?lang=es6#step-string---number">step </a> - defines incremental or decremental step value for slider</li>
+            <li>
+                <a target="_blank" href="http://ej2.syncfusion.com/documentation/slider/api-slider.html?lang=es6#min-string---number">min </a> – specifies minimum value of the slider</li>
+            <li>
+                <a target="_blank" href="http://ej2.syncfusion.com/documentation/slider/api-slider.html?lang=es6#max-string---number">max </a> – to specifies maximum value of the slider</li>
+        </ul>
+        <p>For more information, refer to the
+            <a target="_blank" href="http://ej2.syncfusion.com/documentation/slider/ticks.html?lang=es6">ticks</a> section from the documentation.</p>
+    </div>

@@ -3,15 +3,15 @@
     </p>
 </div>
 <div class="control-section">
-    <ej-grid [dataSource]='data' allowPaging='true' allowTextWrap='true' height='400'>
+    <ejs-grid [dataSource]='data' allowPaging='true' allowTextWrap='true' [pageSettings]='pageSettings' height='400'>
         <e-columns>
-            <e-column field='Inventor' headerText='Inventor Name' width='180' textAlign="right"></e-column>
-            <e-column field='NumberofPatentFamilies' headerText="Number of Patent Families" width='180' textAlign="right"></e-column>
+            <e-column field='Inventor' headerText='Inventor Name' width='180' textAlign='Right'></e-column>
+            <e-column field='NumberofPatentFamilies' headerText="Number of Patent Families" width='180' textAlign='Right'></e-column>
             <e-column field='Country' headerText='Country' width='140'></e-column>
             <e-column field='Active' width='120'></e-column>
             <e-column field='Mainfieldsofinvention' headerText='Main fields of invention' width='200'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
 
     <div style="margin-top: 10px; text-align: right">Source:
         <a href="https://en.wikipedia.org/wiki/List_of_prolific_inventors" target='_blank'>Wikipedia: List of Prolific inventors</a>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SortService, ResizeService, PageService, EditService, ExcelExportService, PdfExportService, ContextMenuService } from '@syncfusion/ej2-ng-grids';
 import { ContextMenuItem, GroupSettingsModel, EditSettingsModel } from '@syncfusion/ej2-ng-grids';
-import { data } from './data';
+import { orderDetails } from './data';
 
 @Component({
     selector: 'ej2-grid-container',
@@ -13,11 +13,11 @@ export class ContextMenuComponent implements OnInit {
     public contextMenuItems: ContextMenuItem[];
     public editing: EditSettingsModel;
     ngOnInit(): void {
-        this.data = data.slice(0, 60);
-        this.contextMenuItems = ['autoFit', 'autoFitAll', 'sortAscending', 'sortDescending',
-            'copy', 'edit', 'delete', 'save', 'cancel',
-            'pdfExport', 'excelExport', 'csvExport', 'firstPage', 'prevPage',
-            'lastPage', 'nextPage'];
+        this.data = orderDetails;
+        this.contextMenuItems = ['AutoFit', 'AutoFitAll', 'SortAscending', 'SortDescending',
+            'Copy', 'Edit', 'Delete', 'Save', 'Cancel',
+            'PdfExport', 'ExcelExport', 'CsvExport', 'FirstPage', 'PrevPage',
+            'LastPage', 'NextPage'];
         this.editing = { allowDeleting: true, allowEditing: true };
     }
 }

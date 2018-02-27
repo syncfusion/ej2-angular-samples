@@ -16,9 +16,14 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/shim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reflect-metadata/0.1.10/Reflect.min.js"></script>
+    <script type="text/javascript">
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"><\/script>');
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.14/moment-timezone-with-data.min.js"><\/script>');
+        }
+    </script>
     <script src="./dist/zone.min.js"></script>
 
-<script type="text/javascript" src="https://syncfusion.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/tu9duo/b/c/7ebd7d8b8f8cafb14c7b0966803e5701/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=b1db4791"></script>
 </head>
 
 <body class="e-view">
@@ -33,7 +38,7 @@
         <div id="sample-header" class="sb-header e-view" role="banner">
             <div class="sb-header-left sb-left sb-table">
                 <div class="sb-header-item sb-table-cell">
-                    <div id="sb-toggle-left" class="sb-slide-nav sb-icons sb-icon-Hamburger" aria-label="all controls navigation"></div>
+                    <div id="sb-toggle-left" class="sb-slide-nav sb-icons toggle-active sb-icon-Hamburger" aria-label="all controls navigation"></div>
                 </div>
                 <div class="sb-header-item sb-table-cell">
                     <div id="sb-header-text" class="e-sb-header-text">
@@ -43,9 +48,6 @@
                 </div>
                 <div class="sb-header-item sb-table-cell sb-lang-toggler-wrapper">
                     <span id="sb-switcher" class="sb-lang-toggler sb-icons sb-icon-Dropdown"></span>
-                </div>
-                <div class="sb-header-item sb-table-cell sb-preview-wrapper">
-                    <div class="sb-header-preview"></div>
                 </div>
             </div>
             <div class="sb-header-right sb-right sb-table">
@@ -84,7 +86,9 @@
         <div id="sb-popup-section" class="sb-popups">
             <div id="sb-switcher-popup" class="sb-switch-popup">
                 <ul id="switch-sb">
-                    <li class="sb-current"><a>Angular</a></li>
+                    <li class="sb-current">
+                        <a>Angular</a>
+                    </li>
                     <li>
                         <a id="ts">TypeScript</a>
                     </li>
@@ -92,7 +96,13 @@
                         <a id="react">React</a>
                     </li>
                     <li>
-                        <a id="javascript">JavaScript</a>
+                        <a id="javascript">JavaScript (ES5)</a>
+                    </li>
+                    <li>
+                        <a id="asp_core">ASP.NET Core</a>
+                    </li>
+                    <li>
+                        <a id="asp_mvc">ASP.NET MVC</a>
                     </li>
                 </ul>
             </div>
@@ -109,6 +119,10 @@
                     <li class="e-list" id="bootstrap">
                         <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
                         <span class="switch-text">Bootstrap</span>
+                    </li>
+                    <li class="e-list" id="highcontrast">
+                        <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
+                        <span class="switch-text">High Contrast</span>
                     </li>
                 </ul>
             </div>
@@ -128,6 +142,7 @@
                                 <option value="material">Material</option>
                                 <option value="fabric">Fabric</option>
                                 <option value="bootstrap">Bootstrap</option>
+                                <option value="highcontrast">High Contrast</option>
                             </select>
                         </div>
                     </div>
@@ -141,10 +156,45 @@
                             <div id="mouse" class="sb-responsive-items active">Mouse</div>
                         </div>
                     </div>
+                    <div class='sb-setting-item sb-setting-culture'>
+                        <div class='setting-label'>
+                            <div class='sb-icons sb-setting-icons sb-icon-Localization'></div>
+                            <div class='sb-setting-text'>Localization</div>
+                        </div>
+                        <div class='setting-content'>
+                            <select id='sb-setting-culture' class='sb-setting-culture-select'>
+                                <option value="en">English*</option>
+                                <option value="de">German - Germany*</option>
+                                <option value="fr-CH">French - Switzerland*</option>
+                                <option value="ar">Arabic*</option>
+                                <option value="zh">Chinese - China*</option>
+                            </select>
+                        </div>
+                        <div class="sb-setting-translate">
+                            <span>* Translated by Google Translator</span>
+                        </div>
+                    </div>
+                    <div class='sb-setting-item sb-setting-currency'>
+                        <div class='setting-label'>
+                            <div class='sb-icons sb-setting-icons sb-icon-Currency'></div>
+                            <div class='sb-setting-text'>Currency</div>
+                        </div>
+                        <div class='setting-content'>
+                            <select id='sb-setting-currency' class='sb-setting-currency-content'>
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="AED">AED</option>
+                                <option value="CHF">CHF</option>
+                                <option value="CNY">CNY</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
-        <ng-app class="sb-content e-view"></ng-app>
+    </div>
+    <ng-app class="sb-content e-view"></ng-app>
     </div>
 
 </body>

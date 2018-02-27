@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ITooltipRenderEventArgs } from '@syncfusion/ej2-circulargauge';
+import { ITooltipRenderEventArgs, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-circulargauge';
 import { CircularGaugeComponent } from '@syncfusion/ej2-ng-circulargauge';
 
 /**
@@ -28,6 +28,7 @@ export class TooltipComponent {
     //Initializing Tooltip
     public tooltip: Object = {
         enable: true,
+        fill: 'transparent',
         template: '<div id="templateWrap">'
         + '<img src="src/circulargauge/images/range1.png"/>'
         + '<img src="src/circulargauge/images/range3.png" />'
@@ -56,6 +57,11 @@ export class TooltipComponent {
         this.circulargauge.axes[0].pointers[0].color = color;
         this.circulargauge.axes[0].pointers[0].cap.border.color = color;
         this.circulargauge.setPointerValue(0, 0, value);
+    }
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     }
     constructor() {
         // code

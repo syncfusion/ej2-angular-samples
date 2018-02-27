@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-ng-circulargauge';
 
 /**
  * Sample for pointer image in circular gauge
@@ -22,6 +23,11 @@ export class PointerImageComponent {
         size: '15px',
         color: '#fcde0b'
     };
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     public value4: number = 0.1;
     public font3: Object = {
         size: '15px',

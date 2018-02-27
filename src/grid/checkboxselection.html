@@ -1,14 +1,14 @@
 <div class="control-section">
-    <ej-grid [dataSource]='data' allowPaging='true' [enableHover]="false" [allowSelection]="true" [selectionSettings]="selectOptions">
+    <ejs-grid [dataSource]='data' allowPaging='true' [enableHover]="false" [allowSelection]="true" [selectionSettings]="selectOptions">
         <e-columns>
             <e-column type='checkbox' width='50'></e-column>
-            <e-column field='OrderID' isPrimaryKey='true' headerText='Order ID' width='120' textAlign="right"></e-column>
+            <e-column field='OrderID' isPrimaryKey='true' headerText='Order ID' width='120' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
-            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign="right"></e-column>
-            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right"></e-column>
-            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign="right"></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign='Right'></e-column>
+            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right'></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign='Right'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
     <div id="action-description">
         <p>This sample demonstrates the selection functionality of the Grid using checkbox selection, To select and unselect all rows use header checkbox.
          To select/unselect particular row, click the desired row.</p>

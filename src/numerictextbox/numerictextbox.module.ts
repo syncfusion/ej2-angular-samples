@@ -14,8 +14,6 @@ import { SharedModule } from '../common/shared.module';
 export const numericAppRoutes: Object[] = [
     { path: ':theme/numerictextbox/default', component: DefaultTextboxController, name: 'Default Functionalities', category: 'NumericTextBox' },
     { path: ':theme/numerictextbox/range', component: RangeTextboxController, name: 'Range Validation', category: 'NumericTextBox' },
-    { path: ':theme/numerictextbox/internationalization', component: InternationalizationController,
-    name: 'Internationalization', category: 'NumericTextBox' },
     { path: ':theme/numerictextbox/format', component: FormatTextboxController, name: 'Custom Format', category: 'NumericTextBox' },
     { path: ':theme/numerictextbox/restrict', component: RestrictTextboxController, name: 'Restrict Decimals', category: 'NumericTextBox' }
 ];

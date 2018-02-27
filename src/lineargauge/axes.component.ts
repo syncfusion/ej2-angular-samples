@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { LinearGaugeComponent } from '@syncfusion/ej2-ng-lineargauge';
+import { LinearGaugeComponent, ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-ng-lineargauge';
 import { Point, Placement, MarkerType, Pointer } from '@syncfusion/ej2-lineargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
@@ -18,10 +18,15 @@ export class AxesComponent {
     public pointerType: DropDownList;
     @ViewChild('pointerPlace')
     public markerPlacement: DropDownList;
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     //Initializing Annotation
     public Annotation: Object[] = [{
         content: '<div id="pointer" style="width:70px"><h1 style="font-size:14px;' +
-        'color:#424242">${axes[0].pointers[0].currentValue} MPH</h1></div>',
+        '">${axes[0].pointers[0].currentValue} MPH</h1></div>',
         axisIndex: 0,
         axisValue: 10,
         x: 10,
@@ -49,9 +54,6 @@ export class AxesComponent {
             interval: 2
         },
         labelStyle: {
-            font: {
-                color: '#424242'
-            },
             offset: 48
         }
     }];

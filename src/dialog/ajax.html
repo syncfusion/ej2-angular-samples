@@ -1,25 +1,20 @@
-<div class="control-section" style="padding:10px;position:relative;">
+<div class="control-section ajaxsample" style="padding:10px;position:relative;">
     <!-- Create Button to open the Dialog -->
-    <button ej-button id='ajaxBtn' #ajaxButton (click)="ajaxBtnClick()">Open</button>
+    <button ejs-button id='ajaxBtn' #ajaxButton (click)="ajaxBtnClick()">Open</button>
     <!-- Render the Dialog -->
-    <ej-dialog #dialog [header]='header' [height]='ajaxHeight' [content]='content' [animationSettings]='animationSettings' [showCloseIcon]='showCloseIcon' [target]='target' [width]='width' (open)="dialogOpen()" (close)="dialogClose()">
-    </ej-dialog>
+    <ejs-dialog #dialogInstance [header]='header' [buttons]='dlgButtons' [content]='contentData' [animationSettings]='animationSettings' [showCloseIcon]='showCloseIcon' [target]='target' [width]='width' (open)="dialogOpen()" (close)="dialogClose()">
+    </ejs-dialog>
 </div>
 <div id="action-description">
     <p>
-    This sample demonstrates that the content of Dialog can be loaded from external source using Ajax library.
-    Click on “Open” button to show the Dialog again if it is closed.
+        This sample demonstrates that the content of dialog can be loaded from external HTML file.
+        Click "more details" on dialog to load the content dynamically from external HTML file.
+        Click “open” to show the dialog again, if it is closed. 
     </p>
 </div>
 <div id="description">
     <p>
-            Using AJAX library, AJAX request will be made and the requested content will be received
-            on the Ajax success event. After that, the Dialog will be rendered using the received content.
+        The user can load dialog's content dynamically from external source like external file using AJAX library.
+        The AJAX library can make the request and load dialog's content using its success event. 
     </p>
 </div>
-<style>
-    .control-section {
-        height: 100%;
-        min-height: 350px;
-    }
-</style>

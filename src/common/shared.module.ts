@@ -4,6 +4,7 @@ import { ListViewModule } from '@syncfusion/ej2-ng-lists';
 import { DropDownListModule } from '@syncfusion/ej2-ng-dropdowns';
 import { TreeViewModule, TabModule } from '@syncfusion/ej2-ng-navigations';
 
+
 import { SBDescriptionComponent } from './dp.component';
 import { SBActionDescriptionComponent } from './adp.component';
 @NgModule({
@@ -12,10 +13,11 @@ import { SBActionDescriptionComponent } from './adp.component';
         ListViewModule,
         DropDownListModule,
         TreeViewModule,
-        TabModule
+        TabModule,
+        
 
     ],
-    declarations: [
+     declarations: [
         SBActionDescriptionComponent,
         SBDescriptionComponent
     ],

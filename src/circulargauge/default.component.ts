@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-ng-circulargauge';
 
 /**
  * Sample for default circular gauge
@@ -15,10 +16,14 @@ export class DefaultComponent {
     public lineStyle: Object = {
         width: 8, color: '#E0E0E0'
     };
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     //Initializing Label Style
     public labelStyle: Object = {
         font: {
-            color: '#424242',
             fontFamily: 'Roboto',
             size: '12px',
             fontWeight: 'Regular'
@@ -31,7 +36,8 @@ export class DefaultComponent {
         border: { width: 0 }
     };
     public tail: Object = {
-        length: '25%'
+        length: '25%',
+        color: '#757575'
     }
     constructor() {
         // code

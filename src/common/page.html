@@ -11,7 +11,7 @@
         <span class="e-icons  sb-search-icon"></span>
     </div>
 </div>
-<left-pane #leftPane class="sb-left-pane e-view">
+<left-pane #leftPane class="sb-left-pane e-view" id="left-sidebar" >
 </left-pane>
 <div class="sb-right-pane e-view" id="right-pane">
     <div class="sb-content-overlay">
@@ -21,100 +21,100 @@
             </svg>
         </div>
     </div>
-    <div class='sb-desktop-wrapper'>
-        <div id='component-name' class='sb-component-name sb-rightpane-padding'>
-            <span class='sb-sample-text'>Chart</span>
-        </div>
-        <div id='sample-bread-crumb' class='sb-bread-crumb sb-rightpane-padding'>
-            <div class='sb-bread-crumb-text'>
-                <div class='category-text bread-ctext'> </div>
-                <div class='category-seperator sb-icons sb-icon-Next seperator'> </div>
-                <div class='component  bread-ctext'></div>
-                <div class="component-seperator sb-icons  sb-icon-Next seperator"> </div>
-                <div class='crumb-sample '></div>
+        <div class='sb-desktop-wrapper'>
+            <div id='component-name' class='sb-component-name sb-rightpane-padding'>
+                <span class='sb-sample-text'>Chart</span>
             </div>
-        </div>
-        <div class='sb-action-description sb-rightpane-padding'></div>
-        <div class='sb-content-tab' id='content-tab'>
-            <div id="sb-content" class='sb-content-section'>
-                <div id='sb-content-header' class="e-tab-header sb-content-tab-header">
-                    <div>
-                        <span class="sb-icons sb-icon-Demo"></span>DEMO
-                    </div>
-                    <div>
-                        <span class="sb-icons sb-icon-Code"></span>SOURCE
-                    </div>
+            <div id='sample-bread-crumb' class='sb-bread-crumb sb-rightpane-padding'>
+                <div class='sb-bread-crumb-text'>
+                    <div class='category-text bread-ctext'> </div>
+                    <div class='category-seperator sb-icons sb-icon-Next seperator'> </div>
+                    <div class='component  bread-ctext'></div>
+                    <div class="component-seperator sb-icons  sb-icon-Next seperator"> </div>
+                    <div class='crumb-sample '></div>
                 </div>
-                <div class="e-content sb-sample-content-area">
-                    <div>
-                        <div class='sb-demo-section'>
-                            <div class="control-fluid">
-                                <div class="container-fluid">
-                                    <div id="control-content">
-                                        <router-outlet></router-outlet>
+            </div>
+            <div class='sb-action-description sb-rightpane-padding'></div>
+            <div class='sb-content-tab' id='content-tab'>
+                <div id="sb-content" class='sb-content-section'>
+                    <div id='sb-content-header' class="e-tab-header sb-content-tab-header">
+                        <div>
+                            <span class="sb-icons sb-icon-Demo"></span>DEMO
+                        </div>
+                        <div>
+                            <span class="sb-icons sb-icon-Code"></span>SOURCE
+                        </div>
+                    </div>
+                    <div class="e-content sb-sample-content-area">
+                        <div>
+                            <div class='sb-demo-section'>
+                                <div class="control-fluid">
+                                    <div class="container-fluid">
+                                        <div id="control-content">
+                                            <router-outlet></router-outlet>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class='sb-source-section'>
-                            <div id='sb-source-tab' class="">
+                        <div>
+                            <div class='sb-source-section'>
+                                <div id='sb-source-tab' class="">
 
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class='sb-api-section'>
+                        <div>
+                            <div class='sb-api-section'>
 
-                            <div id='api-grid'>
-                                <script id="template" type="text/x-template">
-                                    <a href="${link}" target="_blank">${name}</a>
-                                </script>
-                                <script id="template-description" type="text/x-template">
-                                    <div class='sb-sample-description'>
-                                        <div class='sb-api-content'>${description}</div>
-                                    </div>
-                                </script>
+                                <div id='api-grid'>
+                                    <script id="template" type="text/x-template">
+                                        <a href="${link}" target="_blank">${name}</a>
+                                    </script>
+                                    <script id="template-description" type="text/x-template">
+                                        <div class='sb-sample-description'>
+                                            <div class='sb-api-content'>${description}</div>
+                                        </div>
+                                    </script>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class='description-section'>
-        </div>
-        <div class="sb-footer">
-            <div class="sb-footer-left">
-                <div class="sb-footer-links">
-                    <a href="https://help.syncfusion.com/essential-js2/angular/documentation/" target="_blank">
-                        <div class="sb-footer-link">Documentation</div>
-                    </a>
-                    <a href="https://www.syncfusion.com/forums/essentialjs2" target="_blank">
-                        <div class="sb-footer-link">Forum</div>
-                    </a>
-                    <a href="https://www.syncfusion.com/blogs/" target="_blank">
-                        <div class="sb-footer-link">Blog</div>
-                    </a>
-                    <a href="https://www.syncfusion.com/kb" target="_blank">
-                        <div class="sb-footer-link">Knowledge Base</div>
+            <div class='description-section'>
+            </div>
+            <div class="sb-footer">
+                <div class="sb-footer-left">
+                    <div class="sb-footer-links">
+                        <a href="https://help.syncfusion.com/essential-js2/angular/documentation/" target="_blank">
+                            <div class="sb-footer-link">Documentation</div>
+                        </a>
+                        <a href="https://www.syncfusion.com/forums/essentialjs2" target="_blank">
+                            <div class="sb-footer-link">Forum</div>
+                        </a>
+                        <a href="https://www.syncfusion.com/blogs/" target="_blank">
+                            <div class="sb-footer-link">Blog</div>
+                        </a>
+                        <a href="https://www.syncfusion.com/kb" target="_blank">
+                            <div class="sb-footer-link">Knowledge Base</div>
+                        </a>
+                    </div>
+                    <div class="sb-footer-copyright">Copyright © 2001-2018 Syncfusion Inc.</div>
+                </div>
+                <div class="sb-footer-logo">
+                    <a href="//www.syncfusion.com" target="_blank">
+                        <div class="sb-footer-logo-icon"></div>
                     </a>
                 </div>
-                <div class="sb-footer-copyright">Copyright © 2001-2017 Syncfusion Inc.</div>
-            </div>
-            <div class="sb-footer-logo">
-                <a href="//www.syncfusion.com" target="_blank">
-                    <div class="sb-footer-logo-icon"></div>
-                </a>
             </div>
         </div>
-    </div>
 </div>
 <div class="sb-mobilefooter e-view sample-navigation" id="mobile-footer">
-    <button id="mobile-prev-sample" ej-button cssClass="e-flat" (click)="onPrevButtonClick()" class="sb-navigation-prev sb-left">
+    <button id="mobile-prev-sample" ejs-button cssClass="e-flat" (click)="onPrevButtonClick()" class="sb-navigation-prev sb-left">
                             PREVIOUS
                             </button>
-    <button id="mobile-next-sample" ej-button cssClass="e-flat" (click)="onNextButtonClick()" class="sb-navigation-next sb-right">
+    <button id="mobile-next-sample" ejs-button cssClass="e-flat" (click)="onNextButtonClick()" class="sb-navigation-next sb-right">
                            NEXT
                             </button>
 

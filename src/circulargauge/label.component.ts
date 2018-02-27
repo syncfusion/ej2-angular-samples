@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { CircularGaugeComponent } from '@syncfusion/ej2-ng-circulargauge';
+import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-ng-circulargauge';
 import { Position, TickModel } from '@syncfusion/ej2-circulargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
@@ -21,6 +21,11 @@ export class LabelComponent {
     public margin: Object = {
         left: 0, right: 0, top: 0, bottom: 0
     };
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     //Initializing Border
     public border: Object = { color: 'transparent', width: 4 };
     public lineStyle1: Object = {
@@ -30,7 +35,7 @@ export class LabelComponent {
     public labelStyle1: Object = {
         position: 'Outside', autoAngle: true,
         font: {
-            size: '10px', color: '#333333'
+            size: '10px'
         }
     };
     public majorTicks1: Object = {

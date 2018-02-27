@@ -3,7 +3,7 @@ import { customerData, data } from './data';
 import { SelectionService, RowSelectEventArgs } from '@syncfusion/ej2-ng-grids';
 
 @Component({
-    selector: 'ej-gridmaster',
+    selector: 'ejs-gridmaster',
     templateUrl: 'masterdetail.html',
     styleUrls: ['master-detail.style.css'],
     providers: [SelectionService]
@@ -28,7 +28,7 @@ export class MasterComponent implements OnInit {
 }
 
 @Component({
-    selector: 'ej-griddetail',
+    selector: 'ejs-griddetail',
     templateUrl: 'detail.html'
 })
 export class DetailComponent implements OnInit, OnChanges {

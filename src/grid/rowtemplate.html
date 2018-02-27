@@ -4,10 +4,10 @@
     </p>
 </div>
 <div class="control-section">
-    <ej-grid #grid [dataSource]='data' height=335 width='auto'>
+    <ejs-grid #grid [dataSource]='data' height=335 width='auto'>
         <e-columns>
-            <e-column field='Employee Image' headerText='Employee Image' width='150' textAlign='center'></e-column>
-            <e-column field='Employee Details' headerText='Employee Details' width='300' textAlign='left'></e-column>
+            <e-column field='Employee Image' headerText='Employee Image' width='150' textAlign='Center'></e-column>
+            <e-column field='Employee Details' headerText='Employee Details' width='300' textAlign='Left'></e-column>
         </e-columns>
         <ng-template #rowTemplate let-data>
             <tr>
@@ -47,7 +47,7 @@
                 </td>
             </tr>
         </ng-template>
-    </ej-grid>
+    </ejs-grid>
 
 
     <div id="description">

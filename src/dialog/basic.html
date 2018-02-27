@@ -1,23 +1,23 @@
 <div class="control-section" style="padding:10px;position:relative;">
     <!-- Buttons to open corresponding Dialogs -->
-    <button ej-button class='dlgbtn' id='alertbtn' #alertButton (click)="alertBtnClick()">Alert</button>
+    <button ejs-button class='dlgbtn' id='alertbtn' #alertButton (click)="alertBtnClick()">Alert</button>
 
-    <button ej-button class='dlgbtn' #confirmButton (click)="confirmBtnClick()">Confirm</button>
+    <button ejs-button class='dlgbtn' #confirmButton (click)="confirmBtnClick()">Confirm</button>
 
-    <button ej-button class='dlgbtn' #promptButton (click)="promptBtnClick()">Prompt</button>
+    <button ejs-button class='dlgbtn' #promptButton (click)="promptBtnClick()">Prompt</button>
 
     <!-- Render the alert Dialog -->
-    <ej-dialog #alertDialog [buttons]='alertDlgButtons' [visible]='visible' [header]='alertHeader' [animationSettings]='animationSettings' [content]='alertContent' [showCloseIcon]='showCloseIcon' (open)="dialogOpen()" (close)="dialogClose()" [target]='target'
+    <ejs-dialog #alertDialog [buttons]='alertDlgButtons' [visible]='hidden' [header]='alertHeader' [animationSettings]='animationSettings' [content]='alertContent' [showCloseIcon]='showCloseIcon' (open)="dialogOpen()" (close)="dialogClose()" [target]='target'
         [width]='alertWidth'>
-    </ej-dialog>
+    </ejs-dialog>
 
     <!-- Render the confirmation Dialog -->
-    <ej-dialog #confirmDialog [buttons]='confirmDlgButtons' [visible]='hidden' [header]='confirmHeader' [animationSettings]='animationSettings' [content]='confirmContent' [showCloseIcon]='confirmCloseIcon' (open)="dialogOpen()" (close)="dialogClose()" [target]='target'
+    <ejs-dialog #confirmDialog [buttons]='confirmDlgButtons' [visible]='hidden' [header]='confirmHeader' [animationSettings]='animationSettings' [content]='confirmContent' [showCloseIcon]='confirmCloseIcon' (open)="dialogOpen()" (close)="dialogClose()" [target]='target'
         [width]='confirmWidth'>
-    </ej-dialog>
+    </ejs-dialog>
 
     <!-- Render the prompt Dialog -->
-    <ej-dialog #promptDialog [buttons]='promptDlgButtons' [visible]='hidden' [header]='promptHeader' [animationSettings]='animationSettings' [showCloseIcon]='showCloseIcon' [target]='target' (open)="dialogOpen()" (close)="dialogClose()" [width]='promptWidth'>
+    <ejs-dialog #promptDialog [buttons]='promptDlgButtons' [visible]='hidden' [header]='promptHeader' [animationSettings]='animationSettings' [showCloseIcon]='showCloseIcon' [target]='target' (open)="dialogOpen()" (close)="dialogClose()" [width]='promptWidth'>
         <!-- Prompt Dialog content  -->
         <table style="border-collapse: separate;border-spacing: 10px;width:100%;padding: 0px 20px 20px;">
             <tr>
@@ -35,22 +35,22 @@
                 </span></td>
             </tr>
         </table>
-    </ej-dialog>
+    </ejs-dialog>
 
 </div>
 <div id="action-description">
     <p>
-        This sample demonstrates the different types of Dialog like alert, confirm, and prompt.
-        The buttons “Alert”, “Confirm”, and “Prompt” will be shown after closing the alert Dialog.
-        These buttons are used to open the corresponding Dialogs.
+        This sample demonstrates that you can create different types of custom dialogs such as alert, confirm, and prompt dialogs.
+        The buttons “alert”, “confirm”, and “prompt” are used to open the corresponding dialogs. 
     </p>
 </div>
 <div id="description">
-    The Dialog control is used to display messages such as supplementary content like images and text, 
-    and an interactive content like form components within a web page. The following are the two types of Dialogs:
+        The dialog control is used to create alert, prompt, and confirmation dialogs using content, and buttons property. 
+        The content property accepts both string and HTML element as content.
     <ul>
-        <li>Modal - The user should work with the Dialog before interacting with the parent application.</li>
-        <li>Modeless - It allows to interact with the parent application when the Dialog stay on the page.</li>
+        <li>Alert - Used to show errors, warnings, and information that needs user awareness.</li>
+        <li>Prompt - Used to get input from the user.</li>
+        <li>Confirmation - Used to get approval from user that appears before any critical action.</li>
     </ul>
     <p>
     More information on the Dialog instantiation can be found in the <a target="_blank" 
@@ -65,7 +65,7 @@
 		display: none;
 	}
 	.dlgbtn {
-	    margin-right: 10px;
+	    margin-right: 5%;
     }
     .control-section {
         height: 100%;

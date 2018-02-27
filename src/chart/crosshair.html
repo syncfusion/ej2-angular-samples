@@ -5,7 +5,7 @@
 </div>
 <div class="control-section">
     <div align='center'>
-        <ej-chart style='display:block; width: 92%' [chartArea]='chartArea' [width]='width' align='center' [primaryXAxis]='primaryXAxis'
+        <ejs-chart style='display:block; width: 92%' [chartArea]='chartArea' [width]='width' align='center' [primaryXAxis]='primaryXAxis'
             [primaryYAxis]='primaryYAxis' [axes]='axes' [title]='title' [crosshair]='crosshairLabel' (load)='load($event)' [legendSettings]='legend'>
             <e-series-collection>
                 <e-series [dataSource]='series1' type='Line' xName='xDate' yName='High' width=2 [border]='border' [marker]='marker'>
@@ -14,7 +14,7 @@
                     bearFillColor='#2ecd71' bullFillColor='#e74c3d'>
                 </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
     </div>
 </div>
 <div id="description">

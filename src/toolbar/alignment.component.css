@@ -125,3 +125,11 @@
     .e-sample-resize-container {
         margin: auto;
     }
+
+    .material .e-bigger .e-toolbar .e-tbar-btn .e-icons {
+        font-size: 18px;
+    }
+
+    .material .e-toolbar .e-tbar-btn .e-icons {
+        font-size: 16px;
+    }

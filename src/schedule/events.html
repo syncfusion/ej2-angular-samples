@@ -1,0 +1,48 @@
+<div class="control-section">
+    <div class="col-lg-9 content-wrapper">
+        <ejs-schedule width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" [(currentView)]="currentView"
+            (eventRendered)="oneventRendered($event)" (created)="onCreate()" (actionBegin)="onActionBegin()" (actionComplete)="onActionComplete()"
+            (actionFailure)="onActionFailure()" (cellClick)="onCellClick()" (cellDoubleClick)="onCellDoubleClick()" (destroyed)="onDestroyed()"
+            (navigating)="onNavigating()" (eventClick)="onEventClick()" (popupOpen)="onPopupOpen()">
+        </ejs-schedule>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <div id="property" class="property-panel-table" title="Properties">
+                    <table id="property" title="Event Trace">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="eventarea" style="height: 245px;overflow: auto">
+                                        <span class="EventLog" id="EventLog" style="word-break: normal;"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="evtbtn" style="padding-bottom: 10px">
+                                        <input id="clear" type="button" class="btn btn-default" (click)="onClear()" value="Clear">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>This demo illustrates the client-side events that triggers on respective Schedule actions and the same is being displayed
+        on the event trace panel.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this demo, the client-side events that triggers based on the action taking place in Schedule has been demonstrated. The
+        user can make use of these events, if at some point they need to perform some custom actions or any needed additional
+        customizations on the available Schedule features.
+    </p>
+</div>

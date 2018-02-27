@@ -1,0 +1,40 @@
+<div class="control-section">
+    <div class="col-lg-9">
+        <div class="control_wrapper">
+            <div class='imagepreview'>
+                <div id='dropArea' style='height: auto'>
+                    <span id='dropimage'> Drop image (JPG, PNG) files here or <a href="" id='browse'><u>Browse</u></a> </span>
+                    <ejs-uploader #previewupload id='previewfileupload' [asyncSettings]='path'
+                        [dropArea]='dropElement' [allowedExtensions]='allowExtensions' (selected)='onSelect($event)'
+                        (success)='onUploadSuccess($event)' (progress)='onFileUpload($event)' (failure)='onUploadFailed($event)'>
+                    </ejs-uploader>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content" style='padding-top:25px;'>
+                <button class="e-btn e-css" id="clearbtn" title="Clear All" style="width:130px">Clear All</button>
+            </div>
+            <div class="property-panel-content" style='padding-top:25px;'>
+                <button class="e-btn e-css" id="uploadbtn" title="Upload All" style="width:130px">Upload All</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates how to add an image preview of the upload files. 
+    Only PNG and JPG image files can be uploaded in this demo.
+    To upload or remove the specific image from the list, click upload or remove button, which will be displayed while you hover the mouse over the preview image.
+    Click `upload all` or `clear all` buttons to upload or remove all the files that are displayed in file list.</p>
+</div>
+
+<div id="description">
+    <p>The uploader component allows you to create preview images before and after uploading.
+    The preview images are created by reading the file using the file select event.
+    The sample is designed with full customization by preventing default UI (User Interface) appearance.
+    All the selected and specified files can be uploaded using `upload` method, the uploaded file can be removed from the server using `remove` method.</p>
+</div>

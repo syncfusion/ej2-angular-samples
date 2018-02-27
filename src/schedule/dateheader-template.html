@@ -1,0 +1,28 @@
+<div class="control-section">
+    <ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]="selectedDate" [(currentView)]="currentView" [eventSettings]="eventSettings"
+        [dateHeaderTemplate]="dateHeaderTemplate" cssClass='schedule-date-header-template' (renderCell)="OnRenderCell($event)"
+        (eventRendered)="oneventRendered($event)">
+        <e-views>
+            <e-view option="Day"></e-view>
+            <e-view option="Week"></e-view>
+            <e-view option="WorkWeek"></e-view>
+            <e-view option="Month"></e-view>
+        </e-views>
+    </ejs-schedule>
+</div>
+
+<div id="action-description">
+    <p>This demo depicts the way to add images and custom text to the date header bar by making use of the date header template
+        option.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        In this demo, the
+        <code>dateHeaderTemplate</code> option is used to customize the date header cells of day, week and workweek views. In month view, the date header
+        is not applicable and therefore the same customizations can be added beside the date text in the month cells by making
+        use of the
+        <code>renderCell</code> event.
+    </p>
+</div>

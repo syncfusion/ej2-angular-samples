@@ -27,7 +27,7 @@ export class PieEmptyPointChartComponent {
     };
     //Initializing Tooltip
     public tooltip: Object = {
-        enable: true, format: '${series.name}<br>${point.x} : ${point.y}'
+        enable: true, format: '${point.x} : <b>${point.y}</b>'
     };
     //Initializing DataLabel
     public dataLabel: Object = {

@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { ChangedEventArgs } from '@syncfusion/ej2-calendars';
+import { addClass } from '@syncfusion/ej2-base';
 
 /**
 
@@ -18,26 +19,40 @@ export class SpecialCalendarComponent {
     onLoad(args: any) {
 	/*Date need to be customized*/
         if (args.date.getDate() === 10) {
+           let span: HTMLElement;
+            span = document.createElement('span');
+            span.setAttribute('class', 'e-icons highlight');
+            addClass([args.element], ['special', 'e-day', 'birthday']);
+            args.element.setAttribute('title', ' Birthday !');
+             args.element.setAttribute('data-val', 'Birthday!');
+            args.element.appendChild(span);
+        }
+        if (args.date.getDate() === 15) {
             let span: HTMLElement;
             span = document.createElement('span');
             span.setAttribute('class', 'e-icons highlight');
+            addClass([args.element], ['special', 'e-day', 'farewell']);
+            args.element.setAttribute('title', 'Farewell !');
+            args.element.setAttribute('data-val', 'Farewell!');
             args.element.appendChild(span);
-            args.element.setAttribute('title',"Birthday !");
-            args.element.setAttribute('data-val',"Birthday !");
-        }
-        if (args.date.getDate() === 15) {
-            args.element.className = 'special';
-            args.element.setAttribute('title', "Farewell");
-            args.element.setAttribute('data-val',"Farewell !");
         }
         if (args.date.getDate() === 20) {
-            args.element.className = 'daycell';
+           let span: HTMLElement;
+            span = document.createElement('span');
+            span.setAttribute('class', 'e-icons highlight');
+            addClass([args.element], ['special', 'e-day', 'vacation']);
+            args.element.setAttribute('title', 'Vacation !');
+            args.element.setAttribute('data-val', 'Vacation!');
+            args.element.appendChild(span);
         }
     }    
     onValueChange(args: any) {
-	/*Displays selected date in the label*/
-        let title: string = (<HTMLElement>event.currentTarget).querySelector(".e-day").getAttribute('data-val');
-        title = title == null ? "" : " ( "+title+" )";
-        (<HTMLInputElement>document.getElementById('selected')).textContent = 'Selected Value: ' + args.value.toLocaleDateString() + title;
+		let title: string = '';
+        if(args.event){
+	        /*Displays selected date in the label*/
+            title = args.event.currentTarget.getAttribute('data-val');
+            title = title == null ? "" : " ( "+title+" )";
+        }
+		(document.getElementById('selected')).textContent = 'Selected Value: ' + args.value.toLocaleDateString() + title;
     }
 }

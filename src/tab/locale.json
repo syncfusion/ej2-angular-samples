@@ -1,0 +1,27 @@
+{
+    "de": {
+        "tab": {
+            "closeButtonTitle": "Schließen"
+        }
+    },
+    "ar": {
+        "tab": {
+            "closeButtonTitle": "أغلق"
+        }
+    },
+    "en": {
+        "tab": {
+            "closeButtonTitle": "Close"
+        }
+    },
+    "zh": {
+        "tab": {
+            "closeButtonTitle": "關"
+        }
+    },
+    "fr-CH": {
+        "tab": {
+            "closeButtonTitle": "Fermer"
+        }
+    }
+}

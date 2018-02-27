@@ -17,11 +17,9 @@ export class EmaIndicatorComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
-        intervalType: 'Months',
         majorGridLines: { width: 0 },
         zoomFactor: 0.4, zoomPosition: 0.4,
-        skeleton: 'yMd',
-        crosshairTooltip: { enable: true },
+         crosshairTooltip: { enable: true },
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
@@ -32,10 +30,10 @@ export class EmaIndicatorComponent {
         lineStyle: { width: 0 }
     };
     public zoomSettings: Object = {
-        enableMouseWheelZooming: true,
-        enablePinchZooming: true,
+      
         enableSelectionZooming: true,
-        mode: 'X'
+        mode: 'X',
+        enablePan : true
     };
     public title: string = 'AAPL 2012-2017';
     public tooltip: Object = {

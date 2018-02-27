@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { CircularGaugeComponent } from '@syncfusion/ej2-ng-circulargauge';
+import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-ng-circulargauge';
 import { IAxisLabelRenderEventArgs } from '@syncfusion/ej2-circulargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
@@ -20,13 +20,18 @@ export class DirectionComponent {
     public lineStyle: Object = {
         width: 10, color: '#E0E0E0'
     };
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     public onLabelRender(args: IAxisLabelRenderEventArgs): void {
         args.text = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', ''][args.value];
     }
     //Initializing LabelStyle
     public labelStyle: Object = {
         font: {
-            size: '12px', color: '#333333', fontFamily: 'Roboto'
+            size: '12px', fontFamily: 'Roboto'
         },
         useRangeColor: true,
         autoAngle: true,

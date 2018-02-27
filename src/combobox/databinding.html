@@ -8,15 +8,15 @@
         <div id='local' class='col-lg-6' style="margin: 0 auto;padding-top: 15px;">
             <div style="width: 250px;margin: 0 auto;">
                 <h4> Local Data</h4>
-                <ej-combobox id='games' #local [dataSource]='sportsData' [autofill]='true' [fields]='localFields' [placeholder]='localWaterMark'
-                    [popupHeight]='height'></ej-combobox>
+                <ejs-combobox id='games' #local [dataSource]='sportsData' [autofill]='true' [fields]='localFields' [placeholder]='localWaterMark'
+                    [popupHeight]='height'></ejs-combobox>
             </div>
         </div>
         <div id='remote' class='col-lg-6' style="margin: 0 auto;padding-top: 15px;">
             <div style="width: 250px; margin: 0 auto;">
                 <h4>Remote Data</h4>
-                <ej-combobox id='customers' #remote [dataSource]='data' [fields]='remoteFields' [autofill]='true' [query]='query' [popupHeight]='height'
-                    [placeholder]='remoteWaterMark' sortOrder='Ascending'></ej-combobox>
+                <ejs-combobox id='customers' #remote [dataSource]='data' [fields]='remoteFields' [autofill]='true' [query]='query' [popupHeight]='height'
+                    [placeholder]='remoteWaterMark' sortOrder='Ascending'></ejs-combobox>
             </div>
         </div>
     </div>
@@ -26,7 +26,7 @@
             <div class="property-panel-content">
                 <div id="property" class="property-panel-table" title="Properties">
                     <div style="margin-left: 50px; padding-top:25px;">
-                        <ej-checkbox #checkbox label="Autofill" [checked]="true" (change)="onChange()"></ej-checkbox>
+                        <ejs-checkbox #checkbox label="Autofill" [checked]="true" (change)="onChange()"></ejs-checkbox>
                     </div>
                 </div>
             </div>

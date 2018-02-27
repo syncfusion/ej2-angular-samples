@@ -1,0 +1,28 @@
+#control_wrapper.format {
+    width:350px;
+    max-width: 350px;
+    margin: 30px auto;
+    padding-top: 50px;
+}
+.control-section {
+    margin: 25px auto;
+}
+.property-section{
+    margin: 30px auto;
+    padding-top: 50px;
+}
+.property-panel-content {
+    padding: 0 10px 10px 0;
+}
+
+.content {
+    width: 43%;
+    margin: 0 auto;
+    min-width: 185px;
+    padding: 20px 0px;
+}
+
+#dateformats{
+    display: block;
+    width:200px;
+}

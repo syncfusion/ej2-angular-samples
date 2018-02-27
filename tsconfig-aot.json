@@ -8,7 +8,6 @@
         "experimentalDecorators": true,
         "declaration": true,
         "lib": ["es2015", "dom"],
-        "outDir": "",
         "noImplicitAny": true,
         "suppressImplicitAnyIndexErrors": true,
         "types": ["requirejs"]

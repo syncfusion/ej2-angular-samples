@@ -34,6 +34,12 @@
         height: 30px;
         padding: 0 0 0 24px;
     }
+
+    .highcontrast #multi-template_popup .multihead {
+        color: #fff;
+        background-color: #000;
+    }
+
     .e-bigger.bootstrap #multi-template_popup .multihead {
         line-height: 44px;
         height: 44px;
@@ -94,19 +100,34 @@
         height: 26px;
         width: 26px;
     }
-
+    .material .valueTemp {
+        margin-top: 15px;
+    }
     .fabric .valueTemp {
-        margin-top: -3px;
+        margin-top: 20px;
     }
     .e-bigger .valueTemp { 
-        margin-top: -6px;  
+        margin-top: 19px;  
         height: 30px;
         width: 30px;
+    }
+    .highcontrast .e-bigger .valueTemp {
+        margin-top: -1px;
+    }
+    .highcontrast .valueTemp {
+        margin-top: -1px;
+    }
+
+    .e-bigger.highcontrast .nameTemp {
+        padding: 5px 0 0 28px;
+    }
+    .highcontrast .nameTemp {
+        padding: 3px 0 0 28px;
     }
     .e-bigger.material .valueTemp {
         height: 32px;
         width: 32px;
-        margin-top: -8px;
+        margin-top: 15px;
     }
     .fabric .nameTemp {
         width: 123px;
@@ -114,7 +135,7 @@
         text-overflow: ellipsis;
         padding: 0 0 0 36px;
         position: relative;
-        bottom: 22px;
+        bottom: 24px;
         margin-right: -24px;
     }
 
@@ -139,15 +160,23 @@
         overflow: hidden;
         text-overflow: ellipsis;
         padding: 0 0 0 29px;
-        bottom: 22px;
+        bottom: 23px;
         position: relative;
         margin-right: -24px;
     }
 
     .bootstrap .valueTemp {
-        height: 30px;
+        height: 31px;
         width: 30px;
         left: -10px;
+        margin-top: 17px;
+    }
+
+    .e-bigger.bootstrap .valueTemp {
+        height: 31px;
+        width: 30px;
+        left: -10px;
+        margin-top: 0px;
     }
 
     .e-bigger.bootstrap .nameTemp {
@@ -155,13 +184,14 @@
         padding: 0 0 0 36px;
     }
 
-    .control-styles {
-        margin: 0 auto; 
-        width:400px; 
-        padding-top: 30px
+    .control-section .control-wrapper {
+        width: 80%;
+        margin: 0 auto;
+        min-width: 185px;
     }
-    .e-bigger .control-styles {
-        width:300px;
+    
+    .e-bigger .control-section .control-wrapper {
+        width: 100%;
     }
 
     #temp .e-multi-select-wrapper .e-chips {

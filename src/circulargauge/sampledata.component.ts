@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { CircularGaugeComponent } from '@syncfusion/ej2-ng-circulargauge';
+import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-ng-circulargauge';
 import { GridComponent } from '@syncfusion/ej2-ng-grids';
 
 /**
@@ -19,6 +19,11 @@ export class SampleDataComponent {
     public uk: CircularGaugeComponent;
     @ViewChild('grid1')
     public grid: GridComponent;
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     public majorTicks: Object = { width: 0 };
     public lineStyle: Object = { width: 0 };
     public minorTicks: Object = { width: 0 };
@@ -86,7 +91,8 @@ export class SampleDataComponent {
             color: '#777777'
         },
         needleTail: {
-            length: '25%'
+            length: '25%',
+            color: '#777777'
         }
     }];
     public pointers2: Object = [{
@@ -99,7 +105,8 @@ export class SampleDataComponent {
             color: '#777777'
         },
         needleTail: {
-            length: '25%'
+            length: '25%',
+            color: '#777777'
         }
     }];
     public pointers3: Object = [{
@@ -112,7 +119,8 @@ export class SampleDataComponent {
             color: '#777777'
         },
         needleTail: {
-            length: '25%'
+            length: '25%',
+            color: '#777777'
         }
     }];
 

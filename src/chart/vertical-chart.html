@@ -4,12 +4,14 @@
     </p>
 </div>
 <div class="control-section">
-    <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chart-vertical' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [isTransposed]='vertical' (load)='load($event)' (loaded)='loaded($event)'>
+    <div align='center'>
+    <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chart-vertical' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [isTransposed]='vertical' (load)='load($event)' (loaded)='loaded($event)'>
         <e-series-collection>
             <e-series [dataSource]='data1' type='Line' xName='x' yName='y' width=2 [animation]='animation1'>
             </e-series>
         </e-series-collection>
-    </ej-chart>
+    </ejs-chart>
+    </div>
 </div>
 <div id="description">
     <p>

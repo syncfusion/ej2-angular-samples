@@ -42,8 +42,10 @@ export class AreaChartComponent {
         minimum: 2,
         maximum: 5,
         interval: 1,
-        majorGridLines: { width: 0 },
-        labelFormat: '{value}M'
+        labelFormat: '{value}M',
+        lineStyle: { width: 0 },
+        majorTickLines: { width: 0 },
+        minorTickLines: { width: 0 }
     };
     public marker: Object = {
         visible: false

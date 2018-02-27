@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { CircularGaugeComponent, CircularGauge, Pointer } from '@syncfusion/ej2-ng-circulargauge';
+import { CircularGaugeComponent, CircularGauge, Pointer, GaugeTheme } from '@syncfusion/ej2-ng-circulargauge';
 import { IAnnotationRenderEventArgs, ILoadedEventArgs, IResizeEventArgs } from '@syncfusion/ej2-circulargauge';
 import { AnnotationDataSerive } from './annotation.service';
 import { Browser } from '@syncfusion/ej2-base';
@@ -84,6 +84,11 @@ export class AnnotationComponent {
     };
     public resize(args: IResizeEventArgs): void {
         window.location.reload();
+    }
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     }
     public loaded(args: ILoadedEventArgs): void {
         let intervalExecute: boolean = true;

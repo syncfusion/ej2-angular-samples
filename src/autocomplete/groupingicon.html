@@ -1,5 +1,6 @@
-<div id="action-description">    
-    <p>This sample demonstrates the grouping and icons supports of the AutoComplete. Type a character in the AutoComplete element and choose an item from the categorized list/icons list.</p>     
+<div id="action-description">
+    <p>This sample demonstrates the grouping and icons supports of the AutoComplete. Type a character in the AutoComplete element
+        and choose an item from the categorized list/icons list.</p>
 </div>
 
 <div class="control-section">
@@ -7,24 +8,27 @@
         <div id='group' class='col-lg-6'>
             <div class="content">
                 <h4>Grouping</h4>
-                <ej-autocomplete id='vegetables' [dataSource]='vegetableData' [placeholder]='groupWaterMark' [fields]='groupFields'></ej-autocomplete>
+                <ejs-autocomplete id='vegetables' [showPopupButton]='true' [dataSource]='vegetableData' [placeholder]='groupWaterMark' [fields]='groupFields'></ejs-autocomplete>
             </div>
         </div>
         <div id='icon' class='col-lg-6'>
             <div class="content">
                 <h4> Icons</h4>
-                <ej-autocomplete id='icons' [dataSource]='socialMediaData' [placeholder]='iconWaterMark' [fields]='iconFields'></ej-autocomplete>
+                <ejs-autocomplete id='icons' [showPopupButton]='true' [dataSource]='socialMediaData' [placeholder]='iconWaterMark' [fields]='iconFields'></ejs-autocomplete>
             </div>
         </div>
     </div>
 </div>
 
 <div id="description">
-    <p>The AutoComplete allows to group the relevant items under a corresponding category by mapping the <code>groupBy</code> field, and allows to load the list items with icons.</p>
+    <p>The AutoComplete allows to group the relevant items under a corresponding category by mapping the
+        <code>groupBy</code> field, and allows to load the list items with icons. And also enabled the
+        <code>showPopupButton</code> property to show the all suggestion items while clicking on popup button.</p>
 
     <p>The grouping sample illustrates how the vegetables are grouped based on its category.</p>
 
-    <p>The 2nd AutoComplete is populated with icons which is rendered by mapping the <code>iconCss</code> field.</p>
+    <p>The 2nd AutoComplete is populated with icons which is rendered by mapping the
+        <code>iconCss</code> field.</p>
     <p> More information on the grouping feature configuration can be found in the
         <a href="http://ej2.syncfusion.com/angular/documentation/auto-complete/grouping.html" target="_blank"> documentation section</a>.
     </p>

@@ -43,7 +43,7 @@ export class SmartLabelsComponent {
     public endAngle: number = 360;
     //Initializing Tooltip
     public tooltip: Object = {
-        enable: true, format: '${point.x} : ${point.y}'
+        enable: true, format: '${point.x} : <b>${point.y}%</b>'
     };
     public title: string = 'RIO Olympics Gold ';
     public onLoad(args: IAccLoadedEventArgs): void {

@@ -27,3 +27,12 @@
     min-width: 185px;
     padding: 20px 0px;
 }
+
+#cultures .e-control.e-dll{
+        width:100px;
+}
+
+#property{
+    margin: 30px auto;
+    padding-top:50px;
+}

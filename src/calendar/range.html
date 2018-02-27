@@ -1,19 +1,19 @@
 <div id="action-description">
     <p>
-        In the following sample, a specific date ranges from 7th to 27th of a month has been set to select from the Calendar. All the other dates are out of range, and <code>restricted</code> to set or select.
+        In the following sample, a specific date ranges from 5th to 27th of a month has been set to select from the Calendar. All the other dates are out of range, and <code>restricted</code> to set or select.
     </p>
 </div>
 <div class="control-section">
     <div id="control_wrapper">
         <div id="container" style="overflow:auto">
-            <ej-calendar [min]='minDate' [max]='maxDate' (change)="onValueChange($event)"></ej-calendar>
+            <ejs-calendar [min]='minDate' [max]='maxDate' (change)="onValueChange($event)"></ejs-calendar>
             <span id="selected">Selected Value: </span>
         </div>
     </div>
 </div>
 <div id="description">
     <p>
-        Date Range sample illustrates the date selection within a specific range in a calendar by using <code>min</code>        and <code>max</code> properties.
+        Date Range sample illustrates the date selection within a specific range in a calendar by using <code>min</code> and <code>max</code> properties.
     </p>
     <p>
         Here, the date selection range was resricted within 5/5/2017 - 5/27/2017.

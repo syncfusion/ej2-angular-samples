@@ -2,16 +2,16 @@
     <p>This sample demonstrates the default rendering of the Grid with minimum configuration.</p>
 </div>
 <div class="control-section">
-    <ej-grid [dataSource]='data | slice:0:30' height='350'>
+    <ejs-grid [dataSource]='data' height='350'>
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right"></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
-            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign="right"></e-column>
-            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right"></e-column>
-            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign="right"></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign='Right'></e-column>
+            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right'></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign='Right'></e-column>
             <e-column field='ShipCountry' headerText='Ship Country' width='150'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
     <div id="description">
         <p>
             The Grid component is used to display and manipulate tabular data with configuration options to control the way the data
@@ -24,7 +24,7 @@
         <p>
             The user needs to import <code>GridModule</code> into the application to use Grid component. The <code>GridModule</code> contains declarations required to instantiate the Grid component.
         </p>
-        <p><code>ej-grid</code> is the CSS selector to render Grid component.</p>
+        <p><code>ejs-grid</code> is the CSS selector to render Grid component.</p>
         <p>
             In this demo, the Grid is populated with its minimum default settings.
         </p>

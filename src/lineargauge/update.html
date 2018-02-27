@@ -1,6 +1,6 @@
 <div class="control-section">
     <div class="col-md-8">
-        <ej-lineargauge id='updateGauge' #updateGauge style='display:block;' [container]='Container' [annotations]='Annotation'>
+        <ejs-lineargauge (load)='load($event)' id='updateGauge' #updateGauge style='display:block;' [container]='Container' [annotations]='Annotation'>
             <e-axes>
                 <e-axis minimum=0 maximum=300 [majorTicks]='Major1' [minorTicks]='Minor1' [labelStyle]='Label1' [pointers]='Pointer1'>
                 </e-axis>
@@ -8,7 +8,7 @@
                     opposedPosition=true>
                 </e-axis>
             </e-axes>
-        </ej-lineargauge>
+        </ejs-lineargauge>
     </div>
     <div class="col-md-4 property-section">
         <div class="property-panel-section">

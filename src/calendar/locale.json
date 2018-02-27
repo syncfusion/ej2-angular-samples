@@ -1,0 +1,27 @@
+{
+    "de": {
+        "calendar": {
+            "today": "heute"
+        }
+    },
+    "ar": {
+        "calendar": {
+            "today": "اليوم"
+        }
+    },
+    "en": {
+        "calendar": {
+            "today": "Today"
+        }
+    },
+    "zh": {
+        "calendar": {
+            "today": "今天"
+        }
+    },
+    "fr-CH": {
+        "calendar": {
+            "today": "aujourd'hui"
+        }
+    }
+}

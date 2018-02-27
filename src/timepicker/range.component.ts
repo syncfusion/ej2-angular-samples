@@ -16,8 +16,6 @@ export class RangeTimePickerComponent {
     public startObject: TimePickerComponent;
     @ViewChild('endTime')
     public endObject: TimePickerComponent;
-    public startText: string = 'Start Time';
-    public endText: string = 'End Time';
     public isStartTimeChange: Boolean = true;
     public endInput: HTMLInputElement;
     ngAfterViewInit(): void {

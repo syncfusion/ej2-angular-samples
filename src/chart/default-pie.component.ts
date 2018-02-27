@@ -78,7 +78,7 @@ export class DefaultPieComponent {
     };
     public startAngle: number = 0;
     public endAngle: number = 360;
-    public tooltip: Object = { enable: true, format: '${point.x} <br> ${point.y} %' };
+    public tooltip: Object = { enable: true, format: '${point.x} : <b>${point.y}%</b>' };
     public title: string = 'Mobile Browser Statistics';
     constructor() {
         //code

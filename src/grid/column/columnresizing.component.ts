@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ResizeService } from '@syncfusion/ej2-ng-grids';
-import { data } from '../data';
+import { orderDetails } from '../data';
 
 @Component({
     selector: 'ej2-grid-container',
@@ -10,6 +10,6 @@ import { data } from '../data';
 export class ColumnResizingComponent implements OnInit {
     public data: Object[];
     ngOnInit(): void {
-         this.data = data.slice(0, 60);
+         this.data = orderDetails;
     }
 }

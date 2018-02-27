@@ -1,11 +1,11 @@
 <div class="control-section" style="padding:10px;position:relative;">
     <div id="modalTarget" #targetModal class="col-md-9 control-section" style="height:350px;">
         <!-- Render Button to open the modal Dialog -->
-        <button ej-button id='modalbtn' #modalButton (click)="modalBtnClick()">Open</button>
+        <button ejs-button id='modalbtn' #modalButton (click)="modalBtnClick()">Open</button>
         <!-- Render modal Dialog -->
-        <ej-dialog id="modalDialog" #modalDialog [isModal]='isModal' [header]='header' [target]='target' [width]='width' [buttons]='buttons' [animationSettings]='animationSettings' [content]='content' (open)="modalDlgOpen()" (close)="modalDlgClose()"
+        <ejs-dialog id="modalDialog" #modalDialog [isModal]='isModal' [header]='header' [target]='target' [width]='width' [buttons]='buttons' [animationSettings]='animationSettings' [content]='content' (open)="modalDlgOpen()" (close)="modalDlgClose()"
             (overlayClick)="overlayClick()">
-        </ej-dialog>
+        </ejs-dialog>
     </div>
     <div class="col-md-3 property-section">
         <div class="property-panel-section">

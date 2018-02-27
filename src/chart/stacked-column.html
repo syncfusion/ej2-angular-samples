@@ -5,7 +5,7 @@
 </div>
 <div class="control-section">
     <div align='center'>
-        <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
             [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='StackingColumn' xName='x' yName='y' name='UK' width='2'> </e-series>
@@ -13,7 +13,7 @@
                 <e-series [dataSource]='data2' type='StackingColumn' xName='x' yName='y' name='France' width='2'> </e-series>
                 <e-series [dataSource]='data3' type='StackingColumn' xName='x' yName='y' name='Italy' width='2'> </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
     </div>
     <div style="float: right;margin-right: 10px; margin-top: -5px">Source:
         <a href="https://www.cyberagent.co.jp/en/newsinfo/press/detail/id=12026" target="_blank">www.cyberagent.co.jp</a>

@@ -1,16 +1,16 @@
 <div class="control-section" style="overflow:hidden;">
     <div class="col-lg-12">
     <div class="control_wrapper">
-        <ej-treeview id="template" [fields]="field" cssClass="custom">
+        <ejs-treeview id="template" [fields]="field" cssClass="custom">
             <!-- Template to render tree node -->
             <ng-template #nodeTemplate="" let-data="">
                 <div>
-                    <img class="eimage" src="src/treeview/Employees/{{data.eimg}}.png" alt="{{data.eimg}}"/>
+                    <img class="eimage" src="src/images/employees/{{data.eimg}}.png" alt="{{data.eimg}}"/>
                     <div class="ename">{{data.name}}</div>
                     <div class="ejob">{{data.job}}</div>
                 </div>
             </ng-template>
-        </ej-treeview>
+        </ejs-treeview>
     </div>
     </div>
 </div>

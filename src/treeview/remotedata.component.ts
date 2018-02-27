@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { Query, DataManager, ODataV4Adaptor } from '@syncfusion/ej2-data';
+import { Query, DataManager, ODataAdaptor } from '@syncfusion/ej2-data';
 /**
  * TreeView Remote data sample
  */
@@ -12,8 +12,8 @@ import { Query, DataManager, ODataV4Adaptor } from '@syncfusion/ej2-data';
 export class RemoteTreeViewComponent {
     // Use data manager to get tree data from remote source
     public data: Object = new DataManager({
-            url: 'http://services.odata.org/V4/Northwind/Northwind.svc',
-            adaptor: new ODataV4Adaptor,
+            url: 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc',
+            adaptor: new ODataAdaptor,
             crossDomain: true,
     });
     // Set queries to filter and fetch remote data

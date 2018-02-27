@@ -1,0 +1,65 @@
+{
+    "de": {
+        "daterangepicker": {
+            "placeholder": "Wählen Sie einen Bereich",
+            "startLabel": "Anfangsdatum",
+            "endLabel": "Enddatum",
+            "applyText": "Sich bewerben",
+            "cancelText": "Stornieren",
+            "selectedDays": "Ausgewählte Tage",
+            "days": "Tage",
+            "customRange": "benutzerdefinierten Bereich"
+        }
+    },
+    "ar": {
+        "daterangepicker": {
+            "placeholder": "حدد نطاقا",
+            "startLabel": "تاريخ البدء",
+            "endLabel": "تاريخ الانتهاء",
+            "applyText": "تطبيق",
+            "cancelText": "إلغاء",
+            "selectedDays": "الأيام المحددة",
+            "days": "أيام",
+            "customRange": "نطاق مخصص"
+        }
+    },
+    "en": {
+        "daterangepicker": {
+            "placeholder": "Select a range",
+            "startLabel": "Start Date",
+            "endLabel": "End Date",
+            "applyText": "Apply",
+            "cancelText": "Cancel",
+            "selectedDays": "Selected Days",
+            "days": "Days",
+            "customRange": "Custom Range"
+        }
+    },
+    "zh": {
+        "daterangepicker": {
+            "placeholder": "选择一个范围",
+            "startLabel": "开始日期",
+            "endLabel": "结束日期",
+            "applyText": "应用",
+            "cancelText": "取消",
+            "selectedDays": "选定日期",
+            "days": "天",
+            "customRange": "自定义范围"
+
+            
+        }
+    },
+    "fr-CH": {
+        "daterangepicker": {
+            "placeholder": "Sélectionnez une plage",
+            "startLabel": "Date de début",
+            "endLabel": "Date de fin",
+            "applyText": "Appliquer",
+            "cancelText": "Annuler",
+            "selectedDays": "Jours sélectionnés",
+            "days": "Journées",
+            "customRange": "Gamme personnalisée"
+        }
+    }
+}
+

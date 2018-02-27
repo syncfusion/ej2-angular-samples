@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { LinearGaugeComponent } from '@syncfusion/ej2-ng-lineargauge';
-import { ContainerType, Orientation } from '@syncfusion/ej2-lineargauge';
+import { ContainerType, Orientation, ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-lineargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
@@ -18,17 +18,17 @@ export class ContainerComponent {
     public orientation: DropDownList;
     @ViewChild('containerMode')
     public container: DropDownList;
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     //Initializing Axes
     public Axes: Object[] = [{
         minimum: 0,
         maximum: 180,
         line: {
             width: 0
-        },
-        labelStyle: {
-            font: {
-                color: '#000000'
-            }
         },
         majorTicks: {
             interval: 20,
@@ -53,11 +53,6 @@ export class ContainerComponent {
         maximum: 180,
         line: {
             width: 0
-        },
-        labelStyle: {
-            font: {
-                color: '#000000'
-            }
         },
         majorTicks: {
             interval: 20

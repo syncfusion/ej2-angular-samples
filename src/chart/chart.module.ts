@@ -8,6 +8,7 @@ import { NumericTextBoxModule } from '@syncfusion/ej2-ng-inputs';
 import { ChartAllModule, AccumulationChartAllModule } from '@syncfusion/ej2-ng-charts';
 
 import { LineChartComponent } from './line.component';
+import { SplineAreaChartComponent } from './spline-area.component';
 import { AreaChartComponent } from './area.component';
 import { BarChartComponent } from './bar.component';
 import { RangeAreaComponent } from './rangearea.component';
@@ -93,22 +94,36 @@ import { ParetoSeriesChartComponent } from './pareto-series.component';
 import { DoughnutComponent } from './doughnut.component';
 import { RangeSelectionChartComponent } from './range-selection.component';
 import { ExportChartComponent } from './export.component';
+import { MultiLevelLabelsChartComponent } from './multi-level-label.component';
+import { LineSegmentChartComponent } from './line-segments.component';
+import { AxisCrossingChartComponent } from './axis-crossing.component';
+import { MultiLineChartComponent } from './line-multi-line.component';
+import { AreaSegmentChartComponent } from './area-segments.componet';
+import { DateTimeCategoryAxisChartComponent } from './datetime-category.component';
+import { SortingChartComponent } from './sorting.component';
 export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/line', component: LineChartComponent, name: 'Line', order: '01', category: 'Line Charts' },
     { path: ':theme/chart/spline', component: SplineChartComponent, name: 'Spline', order: '01', category: 'Line Charts' },
     { path: ':theme/chart/step-line', component: StepLineChartComponent, name: 'Step Line', order: '01', category: 'Line Charts' },
     { path: ':theme/chart/dashed-line', component: DashedLineChartComponent, name: 'Dashed Line', order: '01', category: 'Line Charts' },
     { path: ':theme/chart/inversed-spline', component: InversedSplineChartComponent, name: 'Inversed Spline', order: '01', category: 'Line Charts' },
+    { path: ':theme/chart/line-segments', component: LineSegmentChartComponent, name: 'Line Zone', order: '01', category: 'Line Charts', type: 'new' },
+    { path: ':theme/chart/line-multi-line', component: MultiLineChartComponent, name: 'Multi Colored Line', order: '01', category: 'Line Charts', type: 'new' },
 
     { path: ':theme/chart/area', component: AreaChartComponent, name: 'Area', order: '02', category: 'Area Charts' },
+    { path: ':theme/chart/spline-area', component: SplineAreaChartComponent, name: 'Spline Area', order: '02', category: 'Area Charts', type: 'new' },
     { path: ':theme/chart/step-area', component: StepAreaChartComponent, name: 'Step Area', order: '02', category: 'Area Charts' },
+    { path: ':theme/chart/rangearea', component: RangeAreaComponent, name: 'Range Area', order: '02', category: 'Area Charts' },
     { path: ':theme/chart/stacked-area', component: StackedAreaChartComponent, name: 'Stacked Area', order: '02', category: 'Area Charts' },
     { path: ':theme/chart/stacked-area100', component: PercentStackedAreaChartComponent, name: '100% Stacked Area', order: '02', category: 'Area Charts' },
     { path: ':theme/chart/area-empty', component: EmptyAreaChartComponent, name: 'Area - Empty Points', order: '02', category: 'Area Charts' },
+    { path: ':theme/chart/area-segments', component: AreaSegmentChartComponent, name: 'Area Zone', order: '02', category: 'Area Charts', type: 'new' },
 
     { path: ':theme/chart/column', component: ColumnChartComponent, name: 'Column', order: '03', category: 'Bar Charts' },
-    { path: ':theme/chart/rounded-column', component: RoundedColumnChartComponent, name: 'Rounded Column', order: '03', category: 'Bar Charts' },
+    { path: ':theme/chart/rounded-column', component: RoundedColumnChartComponent, name: 'Rounded Column', order: '03', category: 'Bar Charts', type: 'update' },
     { path: ':theme/chart/column-placement', component: PlacementColumnChartComponent, name: 'Back to Back Column', order: '03', category: 'Bar Charts' },
+    { path: ':theme/chart/range-column', component: RangeColumnChartComponent, name: 'Range Column', order: '03', category: 'Bar Charts' },
+    { path: ':theme/chart/range-bar', component: RangeBarChartComponent, name: 'Inversed Range Column', order: '03', category: 'Bar Charts' },
     { path: ':theme/chart/bar', component: BarChartComponent, name: 'Bar', order: '03', category: 'Bar Charts' },
     { path: ':theme/chart/stacked-column', component: StackedColumnChartComponent, name: 'Stacked Column', order: '03', category: 'Bar Charts' },
     { path: ':theme/chart/stacked-column100', component: PercentStackedColumnChartComponent, name: '100% Stacked Column', order: '03', category: 'Bar Charts' },
@@ -116,9 +131,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/stacked-bar100', component: PercentStackedBarChartComponent, name: '100% Stacked Bar', order: '03', category: 'Bar Charts' },
     { path: ':theme/chart/tornado', component: TornadoChartComponent, name: 'Negative Stack', order: '03', category: 'Bar Charts' },
 
-    { path: ':theme/chart/range-column', component: RangeColumnChartComponent, name: 'Range Column', order: '04', category: 'Financial Charts' },
-    { path: ':theme/chart/range-bar', component: RangeBarChartComponent, name: 'Inversed Range Column', order: '04', category: 'Financial Charts' },
-    { path: ':theme/chart/rangearea', component: RangeAreaComponent, name: 'Range Area', order: '04', category: 'Financial Charts' },
+
     { path: ':theme/chart/hilo', component: HiloChartComponent, name: 'Hilo', order: '04', category: 'Financial Charts' },
     { path: ':theme/chart/hiloopenclose', component: HiloOpenCloseChartComponent, name: 'Hilo Open Close', order: '04', category: 'Financial Charts' },
     { path: ':theme/chart/candle', component: CandleChartComponent, name: 'Candle', order: '04', category: 'Financial Charts' },
@@ -147,7 +160,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/ema', component: EmaIndicatorComponent, name: 'EMA', order: '07', category: 'Technical Indicators' },
     { path: ':theme/chart/macd', component: MacdIndicatorComponent, name: 'MACD', order: '07', category: 'Technical Indicators' },
     { path: ':theme/chart/momentum', component: MomentumIndicatorComponent, name: 'Momentum', order: '07', category: 'Technical Indicators' },
-    { path: ':theme/chart/rsi', component: RsiIndicatorComponent, name: 'RSI', order: '07', category: 'Technical Indicators' }, 
+    { path: ':theme/chart/rsi', component: RsiIndicatorComponent, name: 'RSI', order: '07', category: 'Technical Indicators' },
     { path: ':theme/chart/sma', component: SmaIndicatorComponent, name: 'SMA', order: '07', category: 'Technical Indicators' },
     { path: ':theme/chart/stochastic', component: StochasticIndicatorComponent, name: 'Stochastic', order: '07', category: 'Technical Indicators' },
     { path: ':theme/chart/tma', component: TmaIndicatorComponent, name: 'TMA', order: '07', category: 'Technical Indicators' },
@@ -170,10 +183,10 @@ export const chartAppRoutes: Object[] = [
     },
     {
         path: ':theme/chart/drilldown-pie', component: DrilldownPieComponent, name: 'Drilldown', order: '09', category: 'Accumulation Charts'
-    },    
+    },
     {
         path: ':theme/chart/grouping', component: GroupingPieComponent, name: 'Grouping', order: '09', category: 'Accumulation Charts'
-    },{
+    }, {
         path: ':theme/chart/pie-empty-point', component: PieEmptyPointChartComponent, name: 'Empty Points', order: '09', category: 'Accumulation Charts'
     },
 
@@ -193,13 +206,17 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/numeric-axis', component: NumericAxisChartComponent, name: 'Numeric Axis', order: '12', category: 'Chart Axes' },
     { path: ':theme/chart/datetime', component: DateTimeAxisChartComponent, name: 'DateTime Axis', order: '12', category: 'Chart Axes' },
     { path: ':theme/chart/category', component: CategoryChartComponent, name: 'Category Axis', order: '12', category: 'Chart Axes' },
+    { path: ':theme/chart/datetime-category', component: DateTimeCategoryAxisChartComponent, name: 'DateTime Category Axis', order: '12', category: 'Chart Axes', type: 'new' },
     { path: ':theme/chart/indexed-axis', component: IndexedAxisChartComponent, name: 'Indexed Category Axis', order: '12', category: 'Chart Axes' },
     { path: ':theme/chart/logarithmic', component: LogarithmicAxisChartComponent, name: 'Log Axis', order: '12', category: 'Chart Axes' },
     { path: ':theme/chart/multiple-axes', component: MultipleAxesChartComponent, name: 'Multiple Axes', order: '12', category: 'Chart Axes' },
     { path: ':theme/chart/inversed', component: InversedAxisChartComponent, name: 'Inversed Axes', order: '12', category: 'Chart Axes' },
     { path: ':theme/chart/stripline', component: StripLineChartComponent, name: 'Strip Line', order: '12', category: 'Chart Axes' },
-    { path: ':theme/chart/smart-axis-labels', component: SmartAxisLabelsChartComponent, name: 'Smart Labels', order: '12', category: 'Chart Axes' },
+    { path: ':theme/chart/smart-axis-labels', component: SmartAxisLabelsChartComponent, name: 'Smart Labels', order: '12', category: 'Chart Axes',type: 'update' },
+    { path: ':theme/chart/multi-level-label', component: MultiLevelLabelsChartComponent, name: 'Multi Level Labels', order: '12', category: 'Chart Axes', type: 'new' },
+    { path: ':theme/chart/axis-crossing', component: AxisCrossingChartComponent, name: 'Axes Crossing', order: '12', category: 'Chart Axes', type: 'new' },
 
+    { path: ':theme/chart/sorting', component: SortingChartComponent, name: 'Sorting', order: '13', category: 'Chart Customization', type: 'new' },
     { path: ':theme/chart/symbols', component: SymbolsChartComponent, name: 'Symbols', order: '13', category: 'Chart Customization' },
     { path: ':theme/chart/annotation', component: AnnotationChartComponent, name: 'Annotation', order: '13', category: 'Chart Customization' },
     { path: ':theme/chart/datalabel-template', component: DataLabelComponent, name: 'Datalabel Template', order: '13', category: 'Chart Customization' },
@@ -232,8 +249,9 @@ let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, Ba
     PolarStackedColumnChartComponent, IndexedAxisChartComponent, VerticalChartComponent, AnnotationChartComponent, DataLabelComponent,
     StripLineChartComponent, EmptyPointChartComponent, PieEmptyPointChartComponent, PrintChartComponent, BoxandWhiskerChartComponent, RangeAreaComponent,
     SmartAxisLabelsChartComponent, ErrorBarChartComponent, TrendLineChartComponent, InversedSplineChartComponent, DashedLineChartComponent, EmptyAreaChartComponent,
-    RoundedColumnChartComponent, TornadoChartComponent, PlacementColumnChartComponent, RangeBarChartComponent, ParetoSeriesChartComponent, DoughnutComponent, 
-    RangeSelectionChartComponent, ExportChartComponent];
+    RoundedColumnChartComponent, TornadoChartComponent, PlacementColumnChartComponent, RangeBarChartComponent, ParetoSeriesChartComponent, DoughnutComponent,
+    RangeSelectionChartComponent, ExportChartComponent, SplineAreaChartComponent, MultiLevelLabelsChartComponent, LineSegmentChartComponent,
+    AxisCrossingChartComponent, AreaSegmentChartComponent, MultiLineChartComponent, DateTimeCategoryAxisChartComponent, SortingChartComponent];
 @NgModule({
     imports: [chartRouter, ChartAllModule, SharedModule, ButtonModule, AccumulationChartAllModule, NumericTextBoxModule],
     exports: [],

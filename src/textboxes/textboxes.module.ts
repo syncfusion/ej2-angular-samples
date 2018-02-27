@@ -5,7 +5,7 @@ import { SharedModule } from '../common/shared.module';
 
 
 export const textboxesAppRoutes: Object[] = [
-    { path: ':theme/textboxes/default', component: DefaultTextboxController, name: 'Default Functionalities', category: 'TextBoxes' }
+    { path: ':theme/textboxes/default', component: DefaultTextboxController, name: 'Default Functionalities', category: 'TextBoxes', type: 'update' }
 ];
 
 export const textBoxesRouter: ModuleWithProviders = RouterModule.forChild(textboxesAppRoutes);

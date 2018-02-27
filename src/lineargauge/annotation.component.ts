@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-
+import { ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-lineargauge';
 /**
  * Sample for Annotation in linear gauge
  */
@@ -11,6 +11,11 @@ import { Component, ViewEncapsulation } from '@angular/core';
 export class AnnotationComponent {
     public Palette: String[] = ['#30b32d', '#ffdd00', '#f03e3e'];
 
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     //Initializing Axes
     public Axes: Object[] = [{
         maximum: 90,

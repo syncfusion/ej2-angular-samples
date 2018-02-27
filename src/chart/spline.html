@@ -6,14 +6,14 @@
 </div>
 <div class="control-section">
         <div align='center'> 
-            <ej-chart id='spline-chartcontainer' align='center' [chartArea]='chartArea' [width]='width' style='display:block;' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)'
+            <ejs-chart id='spline-chartcontainer' align='center' [chartArea]='chartArea' [width]='width' style='display:block;' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)'
                 [title]='title' [tooltip]='tooltip' [annotations]='annotations' [legendSettings]='legend'>
                 <e-series-collection>
                     <e-series [dataSource]='data' type='Spline' xName='x' yName='y' name='Max Temp' width=2 [marker]='marker'> </e-series>
                     <e-series [dataSource]='data1' type='Spline' xName='x' yName='y' name='Avg Temp' width=2 [marker]='marker'> </e-series>
                     <e-series [dataSource]='data2' type='Spline' xName='x' yName='y' name='Min Temp' width=2 [marker]='marker'> </e-series>
                 </e-series-collection>
-            </ej-chart>
+            </ejs-chart>
         </div>
         <div style="float: right; margin-right: 10px; margin-top: -5px">Source:
             <a href="https://www.worldweatheronline.com/mooresville-weather/north-carolina/us.aspx" target="_blank">www.worldweatheronline.com</a>

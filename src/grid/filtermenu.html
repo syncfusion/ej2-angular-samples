@@ -1,24 +1,21 @@
 <div class="control-section">
     <div class="select-wrap">
-        <select (change)="onChange($event.target.value)">
-        <option value='menu'>Menu</option>
-        <option value='checkbox'>Checkbox</option>
-        </select>
+        <ejs-dropdownlist id='ddlelement' [dataSource]='ddldata' value='Menu' [fields]='ddlfields' (change)="onChange($event)"></ejs-dropdownlist>
     </div>
-    <ej-grid #grid [dataSource]='data' allowPaging='true' allowFiltering='true' [pageSettings]='pageSettings' [filterSettings]='filterSettings'>
+    <ejs-grid #grid [dataSource]='data' allowPaging='true' allowFiltering='true' [pageSettings]='pageSettings' [filterSettings]='filterSettings'>
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right"></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
-            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign="right"></e-column>
-            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right"></e-column>
-            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign="right"></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign='Right'></e-column>
+            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right'></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign='Right'></e-column>
             <e-column field='ShipCountry' headerText='Ship Country' width='150'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
 
     <div id="action-description">
         <p>
-            This sample demonstrates the way of filtering Grid columns using menu and checkbox filter UI. In this sample, click the filtering
+            This sample demonstrates the way of filtering Grid columns using menu, checkbox and excel filter UI. In this sample, click the filtering
             icon from column header to show filter UI for a particular column. You can change the filter type from the toolbar.
         </p>
     </div>
@@ -30,9 +27,10 @@
         </a></code> property as true. </p>
         <p>Grid supports the following filter types. They are </p>
         <ul>
-            <li><code>filter bar</code></li>
-            <li><code>menu</code></li>
-            <li><code>check box</code></li>
+            <li><code>FilterBar</code></li>
+            <li><code>Menu</code></li>
+            <li><code>CheckBox</code></li>
+            <li><code>Excel</code></li>
         </ul>
         you can change the filter type by setting <code><a target="_blank" class="code"
         href="http://ej2.syncfusion.com/documentation/grid/api-filterSettings.html?lang=typescript#type-string">filterSettings->type</a></code>

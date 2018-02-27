@@ -8,7 +8,7 @@
     }
     
     #employees .name {
-        padding: 5px 42px;
+        padding: 7px 42px;
         opacity: .87;
         line-height: 1.063em;
     }
@@ -41,6 +41,11 @@
         border-bottom: 1px solid #ccc;
         color: #0078d7;
         font-weight: 400;
+    }
+
+    .highcontrast #employees_popup .head {
+        color: #fff;
+        background-color: #000;
     }
     
     .e-bigger #employees_popup .e-dropdownbase .e-list-item {

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { data } from './data';
+import { orderDetails } from './data';
 import { SelectionService, GridComponent } from '@syncfusion/ej2-ng-grids';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
 
@@ -16,8 +16,8 @@ export class ClipboardComponent implements OnInit {
     public grid: GridComponent;
     public toolbar: Object[];
     public ngOnInit(): void {
-        this.data = data.slice(0, 30);
-        this.selectOptions = { type: 'multiple' };
+        this.data = orderDetails;
+        this.selectOptions = { type: 'Multiple' };
         this.toolbar = [{ text: 'Copy', tooltipText: 'Copy', prefixIcon: 'e-copy', id: 'copy' },
         { text: 'Copy With Header', tooltipText: 'Copy With Header', prefixIcon: 'e-copy', id: 'copyHeader' }];
     }

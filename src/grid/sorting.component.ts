@@ -20,9 +20,9 @@ export class SortComponent implements OnInit {
     public ngOnInit(): void {
         this.data = data;
         this.initialSort = {
-            columns: [{ field: 'Freight', direction: 'ascending' },
-            { field: 'CustomerName', direction: 'descending' }]
+            columns: [{ field: 'Freight', direction: 'Ascending' },
+            { field: 'CustomerName', direction: 'Descending' }]
         };
-        this.pageSettings = { pageCount: 8 }
+        this.pageSettings = { pageCount: 5 }
     }
 }

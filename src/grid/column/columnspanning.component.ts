@@ -104,7 +104,7 @@ export class ColumnSpanningComponent implements OnInit {
     };
     ngOnInit(): void {
         this.data = columnSpanData;
-        this.gridLines = 'both';
+        this.gridLines = 'Both';
         this.height = 'auto';
         this.width = 'auto';
         this.textWrap = true

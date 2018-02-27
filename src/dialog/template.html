@@ -1,0 +1,19 @@
+<div class="control-section template">
+
+    <!-- Render Button to open the Dialog -->
+    <button ejs-button id='dlgbtn' #ButtonInstance (click)="BtnClick()">Open</button>
+
+    <ejs-dialog #template [header]='header' [footerTemplate]='footer' [height]='height' [animationSettings]='animationSettings' [content]='content' [showCloseIcon]='showCloseIcon' [target]='target' [width]='width' (open)="dialogOpen()"
+        (close)="dialogClose()">
+    </ejs-dialog>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates the template functionalities of the dialog component. The dialog's header and footer is configured with HTML template. The typed content will be replaced every time when clicking the "send" button.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The dialog component displays HTML template content on the header and footer. The user can set any HTML element as header and footer with the usage of content and footer template properties.
+    </p>
+</div>

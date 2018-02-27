@@ -3,16 +3,16 @@
         Country column. To group any other column simply drag the column header and drop on the group drop area.</p>
 </div>
 <div class="control-section">
-    <ej-grid [dataSource]='data' allowPaging='true' allowSorting="true" [allowGrouping]="true" [groupSettings]="groupOptions"
-        height="320">
+       <ejs-grid #grid [dataSource]='data' allowPaging='true' allowSorting="true" [allowGrouping]="true" [groupSettings]="groupOptions" [pageSettings]='pageSettings'
+        height="320" (dataBound)='dataBound()' (load)='load()'>
         <e-columns>
             <e-column field='Inventor' headerText='Inventor Name' width='180'></e-column>
-            <e-column field='NumberofPatentFamilies' headerText="Number of Patent Families" width='220' textAlign="right"></e-column>
+            <e-column field='NumberofPatentFamilies' headerText="Number of Patent Families" width='220' textAlign='Right'></e-column>
             <e-column field='Country' headerText='Country' width='140'></e-column>
             <e-column field='Active' width='120'></e-column>
             <e-column field='Mainfieldsofinvention' headerText='Main fields of invention' width='200'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
     <div style="margin-top: 10px; text-align: right">Source:
         <a href="https://en.wikipedia.org/wiki/List_of_prolific_inventors" target='_blank'>Wikipedia: List of Prolific inventors</a>
     </div>

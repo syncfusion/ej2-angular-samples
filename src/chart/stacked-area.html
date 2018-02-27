@@ -6,14 +6,14 @@
 </div>
 <div class="control-section">
         <div align='center'>
-            <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)'>
+            <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)'>
                 <e-series-collection>
                     <e-series [dataSource]='data' type='StackingArea' xName='x' yName='y'[marker]='marker' name='Organic'> </e-series>
                     <e-series [dataSource]='data1' type='StackingArea' xName='x' yName='y' [marker]='marker'name='Fair-trade'> </e-series>
                     <e-series [dataSource]='data2' type='StackingArea' xName='x' yName='y' [marker]='marker'name='Veg Alternatives'> </e-series>
                     <e-series [dataSource]='data3' type='StackingArea' xName='x' yName='y'[marker]='marker' name='Others'> </e-series>
                 </e-series-collection>
-            </ej-chart>
+            </ejs-chart>
         </div>
         <div style="float: right;margin-right: 10px; margin-top: -5px">Source:
             <a href="https://www.gov.uk/" target="_blank">www.gov.uk</a>

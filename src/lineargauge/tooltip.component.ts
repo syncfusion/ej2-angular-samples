@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { LinearGaugeComponent } from '@syncfusion/ej2-ng-lineargauge';
+import { LinearGaugeComponent, LinearGaugeTheme } from '@syncfusion/ej2-ng-lineargauge';
 import { ITooltipRenderEventArgs, IAxisLabelRenderEventArgs, ILoadedEventArgs, ILoadEventArgs, IResizeEventArgs } from '@syncfusion/ej2-lineargauge';
 
 /**
@@ -13,6 +13,11 @@ import { ITooltipRenderEventArgs, IAxisLabelRenderEventArgs, ILoadedEventArgs, I
 export class TooltipComponent {
     @ViewChild('gauge')
     public gauge: LinearGaugeComponent;
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     //Initializing Annotation
     public Annotation: Object[] = [
         {

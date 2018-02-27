@@ -6,7 +6,7 @@
 </div>
 <div class="control-section">
     <div class="col-md-8">
-        <ej-circulargauge #customization='' id='customization-container' style='display:block;' centerY='70%'>
+        <ejs-circulargauge #customization=''  (load)='load($event)' id='customization-container' style='display:block;' centerY='70%'>
             <e-axes>
                 <e-axis startAngle=300 endAngle=60 radius='80%' minimum=999 maximum=2000 [majorTicks]="majorTicks" [minorTicks]="minorTicks"
                     [labelStyle]="labelStyle" [pointers]="pointers" [lineStyle]="lineStyle">
@@ -19,7 +19,7 @@
                     </e-ranges>
                 </e-axis>
             </e-axes>
-        </ej-circulargauge>
+        </ejs-circulargauge>
     </div>
     <div class="col-md-4 property-section">
         <div class="property-panel-section">

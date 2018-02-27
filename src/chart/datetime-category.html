@@ -1,0 +1,47 @@
+<div id="action-description">
+    <p>
+        This sample illustrates sales of a product in business days. Data points in this sample are enhanced with tooltip.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart style='display:block;' [chartArea]='chartArea'id='chartcontainer' [width]='width' align='center' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            [title]='title' (load)='load($event)' [legendSettings]='legendSettings'[tooltip]='tooltip'>
+            <e-annotations>
+                <e-annotation content='<div style="color:#FF0000;font-family: bold; font-weight: 600">Christmas Offer<br> Dec 2017</div>'
+                    [x]=x [y]=y coordinateUnits='Point'>
+                </e-annotation>
+                <e-annotation content='<div style="color:#FF0000;font-family: bold; font-weight: 800">New Year Offer<br> Jan 2018</div>'
+                    [x]=x1 [y]=y coordinateUnits='Point'>
+                </e-annotation>
+            </e-annotations>
+            <e-series-collection>
+                <e-series [dataSource]='data1' type='Column' xName='x' yName='y' name='Product'> </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this sample, you can see how to render and configure the date time category axis. Datetime category axis is used to represent
+        only business days in datetime axis.
+    </p>
+    <p>
+        In this sample, you can see how to render and configure the date time category axis. Date time category axis is used to represent
+        only business days in datetime axis.
+    </p>
+    <p>
+        Tooltip is enabled in this example. To see the tooltip in action, hover a point or tap a point in touch enabled devices.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. For datetime category axis, you should inject
+        <code>DateTimeCategory</code> into the
+        <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information on the DateTime can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#datetimemodule-datetime">documentation section</a>.
+    </p>
+</div>

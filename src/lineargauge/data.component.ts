@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-lineargauge';
 
 /**
  * Sample for data sample
@@ -19,6 +20,11 @@ export class DataComponent {
         offset: 30
     };
 
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     //Initializing Annotation
     public Annotation1: Object[] = [
         {
@@ -39,7 +45,7 @@ export class DataComponent {
             y: -130, zIndex: '1'
         },
         {
-            content: '<div id="pointerText" style="width:60px;"><p style="font-size:15px;color:#30b32d;">10 MPH</p></div>',
+            content: '<div id="pointerText" style="width:60px;"><p style="font-size:15px;">10 MPH</p></div>',
             axisIndex: 0,
             axisValue: 10,
             y: -65, zIndex: '1'
@@ -51,9 +57,6 @@ export class DataComponent {
             offset: 30
         },
         labelStyle: {
-            font: {
-                color: '#424242',
-            },
             offset: 50
         },
         pointers: [{
@@ -62,7 +65,6 @@ export class DataComponent {
             offset: -60,
             height: 10,
             width: 10,
-            color: '#424242',
             markerType: 'Triangle'
         }],
         ranges: [
@@ -94,7 +96,7 @@ export class DataComponent {
         y: -110, zIndex: '1'
     },
     {
-        content: '<div id="pointerText" style="width:60px;"><p style="font-size:15px;color:#30b32d;">28 MPH</p></div>',
+        content: '<div id="pointerText" style="width:60px;"><p style="font-size:15px;">28 MPH</p></div>',
         axisIndex: 0,
         axisValue: 28,
         y: -70, zIndex: '1'
@@ -105,9 +107,6 @@ export class DataComponent {
             offset: 30
         },
         labelStyle: {
-            font: {
-                color: '#424242',
-            },
             offset: 50
         },
         pointers: [{
@@ -116,7 +115,6 @@ export class DataComponent {
             width: 10,
             placement: 'Near',
             offset: -60,
-            color: '#424242',
             markerType: 'Triangle'
         }],
         ranges: [
@@ -148,7 +146,7 @@ export class DataComponent {
         y: -120, zIndex: '1'
     },
     {
-        content: '<div id="pointerText" style="width:100px;"><p style="font-size:15px;color:#30b32d;">2000 Steps</p></div>',
+        content: '<div id="pointerText" style="width:100px;"><p style="font-size:15px;">2000 Steps</p></div>',
         axisIndex: 0,
         axisValue: 2.2,
         y: -65, zIndex: '1'
@@ -160,9 +158,6 @@ export class DataComponent {
             offset: 30
         },
         labelStyle: {
-            font: {
-                color: '#424242',
-            },
             format: '{value}k',
             offset: 50
         },
@@ -172,7 +167,6 @@ export class DataComponent {
             width: 10,
             placement: 'Near',
             offset: -60,
-            color: '#424242',
             markerType: 'Triangle'
         }],
         ranges: [

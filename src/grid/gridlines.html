@@ -4,7 +4,7 @@
 </div>
 <div class="control-section">
     <div class='e-mastertext'>Select Grid Line</div>
-    <ej-toolbar class='e-gridlist' (clicked)="onClicked($event.originalEvent.target)">
+    <ejs-toolbar class='e-gridlist' (clicked)="onClicked($event.originalEvent.target)">
         <e-items>
             <e-item text='Default' cssClass="e-ghidden"></e-item>
             <e-item text='None'></e-item>
@@ -12,16 +12,16 @@
             <e-item text='Horizontal'></e-item>
             <e-item text='Vertical'></e-item>
         </e-items>
-    </ej-toolbar>
+    </ejs-toolbar>
     <br/>
-    <ej-grid #grid [dataSource]='data' [gridLines]="lines">
+    <ejs-grid #grid [dataSource]='data' [gridLines]="lines" allowPaging=true>
         <e-columns>
             <e-column field='ContactName' headerText='Contact Name' width='150'></e-column>
             <e-column field='CompanyName' headerText='Company Name' width='170'></e-column>
             <e-column field='Address' headerText='Address' width='170'></e-column>
             <e-column field='Country' headerText='Country' width='120'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
 
     <div id="description">
         <p>
@@ -31,11 +31,11 @@
             The Grid allow us to display the following grid lines,
         </p>
         <ul>
-            <li><code>default</code> - Shows the Horizontal line.</li>
-            <li><code>none</code> - Shows no line.</li>
-            <li><code>both</code> - Shows both Horizontal and Vertical lines.</li>
-            <li><code>horizontal</code> - Shows the Horizontal line.</li>
-            <li><code>vertical</code> - Shows the Vertical line.</li>
+            <li><code>Default</code> - Shows the Horizontal line.</li>
+            <li><code>None</code> - Shows no line.</li>
+            <li><code>Both</code> - Shows both Horizontal and Vertical lines.</li>
+            <li><code>Horizontal</code> - Shows the Horizontal line.</li>
+            <li><code>Vertical</code> - Shows the Vertical line.</li>
         </ul>
         <p> In this demo, you can modify the display of gridlines by selecting values in the toolbar.
         </p>

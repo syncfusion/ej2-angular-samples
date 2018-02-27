@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { LinearGaugeComponent } from '@syncfusion/ej2-ng-lineargauge';
-import { Position } from '@syncfusion/ej2-lineargauge';
+import { ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-lineargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
@@ -18,14 +18,16 @@ export class RangesComponent {
     public rangeIndex: DropDownList;
     @ViewChild('useRangeColor')
     public rangeFontColor: DropDownList;
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     public rangePalette: Object[] = ['#9ef47a', '#f4f47a', '#ed5e5e'];
     //Initializing Axes
     public Axes: Object[] = [{
         labelStyle: {
             format: '{value}%',
-            font: {
-                color: '#424242'
-            },
             offset: 30
         },
         line: {
@@ -39,7 +41,6 @@ export class RangesComponent {
                 markerType: 'Triangle',
                 placement: 'Near',
                 offset: -40,
-                color: '#757575'
             }
         ],
         majorTicks: {
@@ -71,7 +72,7 @@ export class RangesComponent {
         }]
     }];
     public Annotation: Object[] = [{
-        content: '<div id="pointer" style="width:20px"><h1 style="font-size:18px;color:#424242">35</h1></div>',
+        content: '<div id="pointer" style="width:20px"><h1 style="font-size:18px;">35</h1></div>',
         axisIndex: 0,
         axisValue: 35,
         y: -50, zIndex: '1'

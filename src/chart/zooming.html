@@ -19,14 +19,14 @@
 
 <div class="control-section">
     <div align='center'>
-        <ej-chart style='display:block;width: 92%' [chartArea]='chartArea' [width]='width' align='center' [chartArea]='chartArea'
+        <ejs-chart style='display:block;width: 92%' [chartArea]='chartArea' [width]='width' align='center' [chartArea]='chartArea'
             [primaryXAxis]='primaryXAxis' [legendSettings]='legend' [zoomSettings]='zoomSettings' [title]='title' [primaryYAxis]='primaryYAxis'
             (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='series1' type='Area' xName='x' yName='y' [animation]='animation' fill='url(#gradient-chart)' [border]='border'>
                 </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
     </div>
 </div>
 <div id="description">

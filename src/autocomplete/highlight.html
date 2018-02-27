@@ -6,7 +6,7 @@
 <div class="control-section">
     <div class="col-lg-8  content-wrapper" style="height: 350px">
         <div id='content' style="margin: 0 auto; width:250px; padding-top: 30px">
-            <ej-autocomplete id='sample-list' #sample [dataSource]='countriesData' [highlight]='true' [fields]='fields' placeholder='e.g. Australia'></ej-autocomplete>
+            <ejs-autocomplete id='sample-list' #sample [dataSource]='countriesData' [highlight]='true' [fields]='fields' placeholder='e.g. Australia'></ejs-autocomplete>
         </div>
     </div>
     <div class="col-lg-4 property-section">
@@ -17,7 +17,7 @@
                     <tr>
                         <td style="width:50%">FilterType :</td>
                         <td style="padding-top: 10px">
-                            <ej-dropdownlist id='filter' [dataSource]='filterData' (change)='onChange($event)' [width]='width' text='Contains' placeholder='Find a type'></ej-dropdownlist>
+                            <ejs-dropdownlist id='filter' [dataSource]='filterData' (change)='onChange($event)' [width]='width' text='Contains' placeholder='Find a type'></ejs-dropdownlist>
                         </td>
                     </tr>
                 </table>

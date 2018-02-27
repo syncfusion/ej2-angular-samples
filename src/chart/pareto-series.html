@@ -5,13 +5,13 @@
 </div>
 <div class="control-section">
         <div align='center'>
-            <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [legendSettings]='legend'
+            <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [legendSettings]='legend'
                 [title]='title' [tooltip]='tooltip' (load)='load($event)' [axes]='axes'>
                 <e-series-collection>
                     <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Defect'> </e-series>
                     <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='Cumulative' yAxisName= 'secondary' [marker]='marker' width=2> </e-series>
                 </e-series-collection>
-            </ej-chart>
+            </ejs-chart>
         </div>
 </div>
 <div id="description">

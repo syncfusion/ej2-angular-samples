@@ -23,3 +23,11 @@
 .property-panel-content {
     padding: 0 10px 10px 0;
 }
+
+.culture .property-section{
+    padding: 4% 4%;
+}
+
+.property-section{
+    margin:0 auto;
+}

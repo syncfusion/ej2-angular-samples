@@ -5,11 +5,11 @@
 </div>
 <div class="control-section">
     <div>
-        <ej-accumulationchart style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='onLoad($event)'>
+        <ejs-accumulationchart id='container' style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='onLoad($event)'>
             <e-accumulation-series-collection>
-                <e-accumulation-series [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" [dataLabel]="dataLabel"> </e-accumulation-series>
+                <e-accumulation-series name='RIO' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" [dataLabel]="dataLabel"> </e-accumulation-series>
             </e-accumulation-series-collection>
-        </ej-accumulationchart>
+        </ejs-accumulationchart>
     </div>
 </div>
 <div id="description">

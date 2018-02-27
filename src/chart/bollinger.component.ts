@@ -17,10 +17,8 @@ export class BollingerIndicatorComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
-        intervalType: 'Months',
         majorGridLines: { width: 0 },
         zoomFactor: 0.6, zoomPosition: 0.6,
-        skeleton: 'yMd',
         crosshairTooltip: { enable: true }
     };
     //Initializing Primary Y Axis
@@ -33,10 +31,10 @@ export class BollingerIndicatorComponent {
     };
 
     public zoomSettings: Object = {
-        enableMouseWheelZooming: true,
-        enablePinchZooming: true,
+
         enableSelectionZooming: true,
-        mode: 'X'
+        mode: 'X',
+        enablePan : true
     };
     //Initializing Chart Title
     public title: string = 'AAPL 2012-2017';

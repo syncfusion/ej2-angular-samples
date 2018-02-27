@@ -2,13 +2,18 @@
  * Annotation source
  */
 
-import { CircularGauge } from '@syncfusion/ej2-circulargauge';
+import { CircularGauge, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-circulargauge';
 import { Annotations } from '@syncfusion/ej2-circulargauge';
 CircularGauge.Inject(Annotations);
 
 export class AnnotationDataSerive {
     GetSubGauge1(): any {
         let gauge1: CircularGauge = new CircularGauge({
+            load: (args: ILoadedEventArgs) => {
+                let selectedTheme: string = location.hash.split('/')[1];
+                selectedTheme = selectedTheme ? selectedTheme : 'Material';
+                args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+            },
              axes: [{
                 ranges: [{ start: 0, end: 3, startWidth: 4, endWidth: 4, color: 'rgba(29,29,29,0.4)' },
                 { start: 3, end: 12, startWidth: 4, endWidth: 4, color: 'rgba(168,145,102,0.1)' }],
@@ -28,6 +33,11 @@ export class AnnotationDataSerive {
             }]
         });
         let gauge2: CircularGauge = new CircularGauge({
+            load: (args: ILoadedEventArgs) => {
+                let selectedTheme: string = location.hash.split('/')[1];
+                selectedTheme = selectedTheme ? selectedTheme : 'Material';
+                args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+            },
             titleStyle: { color: 'black' },
             axes: [
                 {

@@ -48,7 +48,7 @@ export class RangeColumnChartComponent {
         majorTickLines: { width: 0 }
     };
     //Initializing Chart Title
-    public title: string = 'Maximum and Minimum Temperature';
+    public title: string = 'Temperature Variation';
     public tooltip: Object = {
         enable: true
     };

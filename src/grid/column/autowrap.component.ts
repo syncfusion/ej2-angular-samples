@@ -7,4 +7,5 @@ import { inventoryData } from '../data';
 })
 export class AutoWrapComponent {
     public data: Object[] = inventoryData;
+    public pageSettings: Object = { pageCount: 5 };
 }

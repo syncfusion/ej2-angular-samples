@@ -6,13 +6,13 @@
 <div class="control-section e-tab-section">
     <div class="col-lg-8 content-wrapper">
         <!-- Render the Tab Component -->
-        <ej-tab id="tab_orientation" #orientationTab [showCloseButton]='enableClose' heightAdjustMode='Auto'>
+        <ejs-tab id="tab_orientation" #orientationTab [showCloseButton]='enableClose' heightAdjustMode='Auto'>
             <e-tabitems>
                 <e-tabitem [header]='headerText[0]' [content]='content0'></e-tabitem>
                 <e-tabitem [header]='headerText[1]' [content]='content1'></e-tabitem>
                 <e-tabitem [header]='headerText[2]' [content]='content2'></e-tabitem>
             </e-tabitems>
-        </ej-tab>
+        </ejs-tab>
     </div>
     <div class="col-lg-4 property-section">
         <div class="property-panel-section">
@@ -23,16 +23,16 @@
                         <td style="width:50%">Header Placement:</td>
                         <td style="width:50%">
                             <!-- Render DropDownList for Switching Tab properties -->
-                            <ej-dropdownlist id='header-place' width='90%' #place [dataSource]='dataPlace' (change)='placeChange($event)' [value]='placeValue' [fields]='placeFields'>
-                            </ej-dropdownlist>
+                            <ejs-dropdownlist id='header-place' width='90%' #place [dataSource]='dataPlace' (change)='placeChange($event)' [value]='placeValue' [fields]='placeFields'>
+                            </ejs-dropdownlist>
                         </td>
                     </tr>
                     <tr>
                         <td style="width:50%">Header Styles:</td>
                         <td style="width:50%">
                             <!-- Render DropDownList for Switching Tab properties -->
-                            <ej-dropdownlist id='header-styles' width='90%' #styles [dataSource]='dataStyles' (change)='styleChange($event)' [value]='styleValue' [fields]='styleFields'>
-                            </ej-dropdownlist>
+                            <ejs-dropdownlist id='header-styles' width='90%' #styles [dataSource]='dataStyles' (change)='styleChange($event)' [value]='styleValue' [fields]='styleFields'>
+                            </ejs-dropdownlist>
                         </td>
                     </tr>
                 </table>

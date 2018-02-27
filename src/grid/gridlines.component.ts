@@ -21,8 +21,8 @@ export class GridLinesComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-       this.data = customerData.slice(0, 10);
-       this.lines = 'default';
+       this.data = customerData;
+       this.lines = 'Default';
     }
 
     public onClicked(e: HTMLElement): void {
@@ -35,7 +35,7 @@ export class GridLinesComponent implements OnInit {
         element = <HTMLElement>(element.tagName === 'BUTTON' ? element.firstElementChild : element);
         removeClass([].slice.apply(document.getElementsByClassName('e-ghidden')), 'e-ghidden');
         addClass([element.parentElement.parentElement], 'e-ghidden');
-        this.lines = <GridLine>element.innerHTML.toLowerCase();
+        this.lines = <GridLine>element.innerHTML;
         this.grid.renderModule.refresh();
     }
 

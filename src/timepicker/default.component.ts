@@ -11,5 +11,5 @@ import { TimePickerComponent } from '@syncfusion/ej2-ng-calendars/src';
     encapsulation: ViewEncapsulation.None
 })
 export class DefaultTimePickerComponent {
-    public watermark: string = 'Select a time';
+    
 }

@@ -7,13 +7,13 @@
     <div class="e-sample-resize-container">
         <div class="product_title"> iPhone X Product Specification </div>
         <!-- Render the Accoridon Component -->
-        <ej-accordion #accordion expandMode='Single' (expanding)="expand($event)">
+        <ejs-accordion #accordion expandMode='Single' (expanding)="expand($event)">
             <e-accordionitems>
                 <e-accordionitem header='Network & Connectivity' [content]='content' expanded='true'></e-accordionitem>
                 <e-accordionitem header='Feature' content='<div id="nested_Acc"></div>'> </e-accordionitem>
                 <e-accordionitem header='Hardware & Software' content='#Hard_Soft_features'></e-accordionitem>
             </e-accordionitems>
-        </ej-accordion>
+        </ejs-accordion>
         <div id='Sensor_features' style="display:none">
             <table>
                 <tr>

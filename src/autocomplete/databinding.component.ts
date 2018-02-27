@@ -2,7 +2,7 @@
  * AutoComplete Remote-Data & Local-Data Samples
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { Query, DataManager, ODataV4Adaptor } from '@syncfusion/ej2-data';
+import { Query, DataManager, ODataAdaptor } from '@syncfusion/ej2-data';
 import { AutoCompleteComponent } from '@syncfusion/ej2-ng-dropdowns';
 import { CheckBoxComponent } from '@syncfusion/ej2-ng-buttons';
 
@@ -46,8 +46,8 @@ export class DataBindingAutoCompleteComponent {
     public localWaterMark: string = 'e.g. Australia';
     //bind the DataManager instance to dataSource property
     public data: DataManager = new DataManager({
-        url: 'http://services.odata.org/V4/Northwind/Northwind.svc/Products',
-        adaptor: new ODataV4Adaptor,
+        url: 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Products',
+        adaptor: new ODataAdaptor,
         crossDomain: true
     });
     // set the count for displays the suggestion items.

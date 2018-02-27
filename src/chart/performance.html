@@ -5,11 +5,11 @@
 </div>
 <div class="control-section">
    <div class="col-lg-9">
-                <ej-chart #chart style="display:block;" (loaded)="onChartLoad($event)" [primaryXAxis]='primaryXAxis' (load)='load($event)' >
+                <ejs-chart #chart style="display:block;" (loaded)="onChartLoad($event)" [primaryXAxis]='primaryXAxis' (load)='load($event)' >
                     <e-series-collection>
                         <e-series type='Line' xName='x' yName='y'> </e-series>
                     </e-series-collection>
-                </ej-chart>
+                </ejs-chart>
      </div>
      <div class="col-lg-3 property-section">
         <div class="property-panel-section">
@@ -18,7 +18,7 @@
               <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
                  <tr style="height: 50px">
                       <td style="width: 80%">
-                         <div> <button ej-button cssClass="e-info" (click)="onChange($event)" style="text-transform:none !important">Load 100K Points</button></div>
+                         <div> <button ejs-button cssClass="e-info" (click)="onChange($event)" style="text-transform:none !important">Load 100K Points</button></div>
                       </td>
                  </tr>
                  <tr style="height: 50px">

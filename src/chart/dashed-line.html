@@ -5,12 +5,14 @@
     </p>
 </div>
 <div class="control-section">
-    <ej-chart style='display:block' align='center' id='dashed-chartcontainer' [chartArea]='chartArea' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)' [crosshair]='crosshair' [width]='width'>
+<div align='center'>
+    <ejs-chart style='display:block' align='center' id='dashed-chartcontainer' [chartArea]='chartArea' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)' [crosshair]='crosshair' [width]='width'>
         <e-series-collection>
             <e-series [dataSource]='data' type='Line' xName='x' yName='y' name='Banana' dashArray='5' width=2 [marker]='marker'> </e-series>
             <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='Apple' dashArray='10' width=2 [marker]='marker1'> </e-series>
         </e-series-collection>
-    </ej-chart>
+    </ejs-chart>
+</div>
 </div>
 <div id="description">
     <p>

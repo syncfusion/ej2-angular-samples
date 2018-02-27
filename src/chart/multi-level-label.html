@@ -1,0 +1,95 @@
+<div id="action-description">
+    <p>
+        Axis labels are placed based on the start and end range values and we can add any number of labels to an axis.
+    </p>
+</div>
+<div class="control-section">
+    <div>
+        <ejs-chart #chart style='display:block;' align='center' id='chartcontainer' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' 
+        [title]='title' (load)='load($event)' [tooltip]='tooltip' (pointRender)='pointRender($event)' [legendSettings]='legendSettings' [width]='width'>
+            <e-axes>
+                <e-axis>
+                    <e-multilevellabels>
+                        <e-multilevellabel>
+                            <e-categories>
+                                <e-category start=-0.5 end=1.5 text='Seedless'>
+                                </e-category>
+                                <e-category start=1.5 end=3.5 text='Seeded'>
+                                </e-category>
+                                <e-category start=3.5 end=4.5 text='Seedless'>
+                                </e-category>
+                                <e-category start=4.5 end=5.5 text='Seeded'>
+                                </e-category>
+                                <e-category start=5.5 end=6.5 text='Seedless'>
+                                </e-category>
+                                <e-category start=6.5 end=7.5 text='Seeded'>
+                                </e-category>
+                                <e-category start=-7.5 end=8.5 text='Seedless'>
+                                </e-category>
+                                <e-category start=8.5 end=9.5 text='Seeded'>
+                                </e-category>
+                            </e-categories>
+                        </e-multilevellabel>
+                        <e-multilevellabel>
+                            <e-categories>
+                                <e-category start=-0.5 end=3.5 text='In Season'>
+                                </e-category>
+                                <e-category start=3.5 end=5.5 text='Out of Season'>
+                                </e-category>
+                                <e-category start=5.5 end=7.5 text='In Season'>
+                                </e-category>
+                                <e-category start=7.5 end=9.5 text='Out of Season'>
+                                </e-category>
+                            </e-categories>
+                        </e-multilevellabel>
+                        <e-multilevellabel>
+                            <e-categories>
+                                <e-category start=-0.5 end=5.5 text='Fruits'>
+                                </e-category>
+                                <e-category start=5.5 end=9.5 text='Vegetables'>
+                                </e-category>
+                            </e-categories>
+                        </e-multilevellabel>                    
+                    </e-multilevellabels>
+                </e-axis>
+            </e-axes>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='Column' xName='x' yName='y'[marker]='marker'>
+                </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to group axis labels. 
+        You can customize text in each level by using <code>alignment</code>, <code>overflow</code>, <code>textSytle</code> and <code>border</code> properties.
+    </p>
+    <p>Axis labels in each level can be arranged smartly using <code>overflow</code> property.
+    </p>
+    <ul>
+        <li><code>Trim</code> - Trim the label when it intersect.</li>
+        <li><code>Wrap</code> - Wrap the label when it intersect.</li>
+        <li><code>None</code> - Shows all the labels.</li>
+    </ul>
+    <br>
+    <p>Border of the axis labels can be customized by using <code>type</code> property.
+    </p>
+    <ul>
+        <li><code>Rectangle</code></li>
+        <li><code>Brace</code></li>
+        <li><code>WithoutTopBorder</code></li>
+        <li><code>WithoutTopandBottomBorder</code></li>
+        <li><code>CurlyBrace</code></li>
+        <li><code>withoutBorder</code>.</li>
+    </ul>
+    <p>
+        More information on the multi level labels can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/documentation/chart/api-axis.html#valuetype-valuetype">documentation section</a>.
+    </p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

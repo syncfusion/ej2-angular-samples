@@ -26,6 +26,6 @@ export class CustomTagMultiSelectComponent {
     // set the placeholder to MultiSelect input element
     public waterMark: string = 'Favorite sports';
     // set the type of mode for how to visualized the selected items in input element.
-    public box : string = 'box';
+    public box : string = 'Box';
 
 }

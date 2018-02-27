@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { CircularGaugeComponent } from '@syncfusion/ej2-ng-circulargauge';
+import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-ng-circulargauge';
 import { GaugeDirection, isCompleteAngle } from '@syncfusion/ej2-circulargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
@@ -20,6 +20,11 @@ export class MultipleAxisComponent {
     public lineStyle1: Object = {
         width: 1.5, color: '#9E9E9E'
     };
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     //Initializing MajorTicks
     public majorTicks1: Object = {
         position: 'Inside',
@@ -46,8 +51,7 @@ export class MultipleAxisComponent {
     public labelStyle1: Object = {
         position: 'Inside',
         autoAngle: true,
-        hiddenLabel: 'None',
-        font: { color: '#333333' }
+        hiddenLabel: 'None'
     };
     public cap: Object = { color: 'white', radius: 0, border: { width: 0 } };
 

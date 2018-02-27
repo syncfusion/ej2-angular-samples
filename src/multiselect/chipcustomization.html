@@ -1,0 +1,21 @@
+<div id="action-description">
+    <p>This sample demonstrates the customization of selected chip element in the MultiSelect. Type a character in the MultiSelect element or 
+        click on the element to choose one or more items from the list.</p>
+</div>
+
+<div id="multiselect-sample" class="control-section">
+    <div class="control-styles ms-chip-customize">
+        <h4>Chip Customization</h4>
+        <ejs-multiselect id='chip-customization' [value]='colorValues' [dataSource]='colorsData' (tagging)='onTagging($event)' [mode]='box'
+            [placeholder]='waterMark' [fields]='fields'></ejs-multiselect>
+    </div>
+</div>
+
+<div id="description">
+    <p>The MultiSelect allows the user to customize the selected chip element through the <code>tagging</code> event. In that event, 
+        you can set the custom classes to chip element via the event argument of the <code>setClass</code> method.
+    </p>
+    <p>This sample illustrates  how to use the favorite colors of data and set the favorite color text as custom class 
+        through <code>tagging</code> event argument of the <code>setClass</code> method.
+   </p>
+</div>

@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { LinearGaugeComponent } from '@syncfusion/ej2-ng-lineargauge';
-import { ILoadedEventArgs } from '@syncfusion/ej2-lineargauge';
+import { ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-lineargauge';
 /**
  * Sample for update
  */
@@ -22,6 +22,11 @@ export class UpdateComponent {
         offset: -85,
         backgroundColor: '#d6d1d1'
     };
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     //Initializing Annotation
     public Annotation: Object[] = [
         {

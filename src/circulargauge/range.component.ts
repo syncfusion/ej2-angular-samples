@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { CircularGaugeComponent } from '@syncfusion/ej2-ng-circulargauge';
+import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-ng-circulargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
@@ -21,8 +21,13 @@ export class RangeComponent {
     //Initializing LabelStyle
     public labelStyle: Object = {
         position: 'Inside', useRangeColor: false,
-        font: { size: '12px', color: '#424242', fontFamily: 'Roboto', fontStyle: 'Regular' }
+        font: { size: '12px', fontFamily: 'Roboto', fontStyle: 'Regular' }
     };
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     public majorTicks: Object = {
         height: 10, offset: 5, color: '#9E9E9E'
     };
@@ -30,7 +35,7 @@ export class RangeComponent {
         height: 0
     };
     public tail: Object = {
-        length: '18%'
+        length: '18%', color: '#757575'
     };
     public pointerCap: Object = {
         radius: 7, color: '#757575'

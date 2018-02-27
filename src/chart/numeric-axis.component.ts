@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import {
-    IAxisLabelRenderEventArgs
-} from '@syncfusion/ej2-charts';
+ IAxisLabelRenderEventArgs , ChartTheme, ILoadedEventArgs,
+} from '@syncfusion/ej2-ng-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -68,6 +68,15 @@ export class NumericAxisChartComponent {
     
      public tooltip: Object = {
         enable: true, format: '${point.x}th Over : <b>${point.y} Runs</b>'
+    };
+      public load(args: ILoadedEventArgs): void {       
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        if (selectedTheme === 'highcontrast') {
+               args.chart.series[0].fill = '#57BCFF';
+               args.chart.series[1].fill = '#E58184';
+            }
     };
     public title: string = 'England vs West Indies';
     constructor() {

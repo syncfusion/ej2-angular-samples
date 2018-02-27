@@ -53,9 +53,9 @@ export class DefaultDialogComponent {
     }
 
     // Render the Buttons to open corresponding Dialogs
-    public alertDlgButtons: Object[] = [{ click: this.alertDlgBtnClick, buttonModel: { content: 'Dismiss', cssClass: 'e-flat', isPrimary: true } }];
-    public confirmDlgButtons: Object[] = [{ click: this.confirmDlgBtnClick, buttonModel: { content: 'Yes', cssClass: 'e-flat', isPrimary: true } }, { click: this.confirmDlgBtnClick, buttonModel: { cssClass: 'e-flat', content: 'No' } }];
-    public promptDlgButtons: Object[] = [{ click: this.promptDlgBtnClick, buttonModel: { content: 'Connect', cssClass: 'e-flat', isPrimary: true } }, { click: this.promptDlgBtnClick, buttonModel: { cssClass: 'e-flat', content: 'Cancel' } }];
+    public alertDlgButtons: Object[] = [{ click: this.alertDlgBtnClick, buttonModel: { content: 'Dismiss', isPrimary: true } }];
+    public confirmDlgButtons: Object[] = [{ click: this.confirmDlgBtnClick, buttonModel: { content: 'Yes', isPrimary: true } }, { click: this.confirmDlgBtnClick, buttonModel: { content: 'No' } }];
+    public promptDlgButtons: Object[] = [{ click: this.promptDlgBtnClick, buttonModel: { content: 'Connect', isPrimary: true } }, { click: this.promptDlgBtnClick, buttonModel: { content: 'Cancel' } }];
 
     // While clicking alert button, open the alert Dialog
     alertBtnClick() {

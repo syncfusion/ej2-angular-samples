@@ -5,12 +5,12 @@
 <div class="control-section">
 
     <!-- Tooltip element -->
-    <ej-tooltip #tooltip target=".toolbarContainer [title]" (beforeRender)="onBeforeRender($event)" [showTipPointer]='false'
+    <ejs-tooltip #tooltip target=".toolbarContainer [title]" (beforeRender)="onBeforeRender($event)" [showTipPointer]='false'
         [offsetX]='70' [width]='170'>
         <div class="toolbarContainer">
 
             <!-- Toolbar element -->
-            <ej-toolbar id="Toolbar">
+            <ejs-toolbar id="Toolbar">
                 <e-items>
                     <e-item prefixIcon='e-cut-icon tb-icons' tooltipText='Cut'></e-item>
                     <e-item prefixIcon='e-copy-icon tb-icons' tooltipText='Copy'></e-item>
@@ -20,9 +20,9 @@
                     <e-item prefixIcon='e-underline-icon tb-icons' tooltipText='Underline'></e-item>
                     <e-item prefixIcon='e-italic-icon tb-icons' tooltipText='Italic'></e-item>
                 </e-items>
-            </ej-toolbar>
+            </ejs-toolbar>
         </div>
-    </ej-tooltip>
+    </ejs-tooltip>
 </div>
 
 <div id="description">
