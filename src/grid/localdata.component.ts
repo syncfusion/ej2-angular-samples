@@ -10,6 +10,6 @@ export class LocalDataComponent implements OnInit {
     public pageSettings: Object;
     ngOnInit(): void {
         this.data = data;
-        this.pageSettings = { pageCount: 8 };
+        this.pageSettings = { pageCount: 5 };
     }
 }

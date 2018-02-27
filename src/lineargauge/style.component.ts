@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { LinearGaugeComponent } from '@syncfusion/ej2-ng-lineargauge';
-import { IMouseEventArgs } from '@syncfusion/ej2-lineargauge';
+import { IMouseEventArgs, ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-lineargauge';
 
 /**
  *  Sample for styles
@@ -15,6 +15,11 @@ export class StyleComponent {
     @ViewChild('linear')
     public linear: LinearGaugeComponent;
 
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     //Initializing Axes
     public Axes1: Object[] = [{
         line: {
@@ -25,7 +30,6 @@ export class StyleComponent {
             offset: 10,
             height: 13,
             width: 13,
-            color: '#424242',
         }],
         majorTicks: {
             interval: 10,
@@ -34,11 +38,6 @@ export class StyleComponent {
         minorTicks: {
             color: '#9E9E9E'
         },
-        labelStyle: {
-            font: {
-                color: '#424242'
-            }
-        }
     }];
 
     public Axes2: Object[] = [{
@@ -49,9 +48,6 @@ export class StyleComponent {
             interval: 10,
         },
         labelStyle: {
-            font: {
-                color: '#424242',
-            },
             offset: 50
         },
         pointers: [{
@@ -60,7 +56,6 @@ export class StyleComponent {
             offset: -50,
             height: 15,
             width: 15,
-            color: '#424242',
             markerType: 'Triangle'
         }],
         ranges: [
@@ -85,7 +80,6 @@ export class StyleComponent {
                 offset: 20,
                 height: 13,
                 width: 13,
-                color: '#424242',
             },
             {
                 value: 70,
@@ -101,11 +95,6 @@ export class StyleComponent {
         minorTicks: {
             color: '#9E9E9E'
         },
-        labelStyle: {
-            font: {
-                color: '#424242'
-            }
-        }
     }];
 
     public Axes4: Object = [{
@@ -120,9 +109,6 @@ export class StyleComponent {
             height: 0
         },
         labelStyle: {
-            font: {
-                color: '#424242',
-            },
             offset: 55
         },
         pointers: [
@@ -130,7 +116,6 @@ export class StyleComponent {
                 value: 60,
                 height: 15,
                 width: 15,
-                color: '#424242',
                 placement: 'Near',
                 offset: -50,
                 markerType: 'Triangle'

@@ -46,96 +46,125 @@ import { ContextMenuComponent } from './contextmenu.component';
 import { ColumnMenuComponent } from './column/columnmenu.component';
 import { ColumnSpanningComponent } from './column/columnspanning.component';
 import { FrozenRowsComponent } from './column/frozenrows.component';
+import { ForeignKeyColumnComponent } from './column/foreignkey.component';
+import { RowHeightComponent } from './rowheight.component';
+import { AsyncPipeComponent } from './asyncpipe.component';
+import { OrdersService } from './order.service';
 
 export const gridRouteConfig: Object[] = [
-     { 'path': ':theme/grid/default', component: DefaultComponent, 'name': 'Default Functionalities', order: '01', category: 'Grid' },
-    { 'path': ':theme/grid/gridlines', component: GridLinesComponent, 'name': 'Grid Lines', order: '01', category: 'Grid' },
-    { 'path': ':theme/grid/paging', component: PageComponent, name: 'Paging', order: '01', category: 'Grid' },
-    { 'path': ':theme/grid/filtering', component: FilterComponent, name: 'Filtering',  order: '05', category: 'Filtering' },
-	{ 'path': ':theme/grid/filtermenu', component: FilteringMenuComponent, name: 'Filter Menu', order: '05', category: 'Filtering' },
+    { 'path': ':theme/grid/default', component: DefaultComponent, 'name': 'Default Functionalities', order: '01', category: 'Grid' },
     { 'path': ':theme/grid/grouping', component: GroupComponent, name: 'Grouping', order: '01', category: 'Grid' },
-    { 'path': ':theme/grid/sorting', component: SortComponent, name: 'Sorting', order: '01', category: 'Grid' },
-    { 'path': ':theme/grid/searching', component: SearchComponent, name: 'Searching', order: '05', category: 'Filtering' },
-    { 'path': ':theme/grid/masterdetail', component: MasterComponent, name: 'Master/Detail', order: '01', category: 'Grid' },
+    { 'path': ':theme/grid/gridlines', component: GridLinesComponent, 'name': 'Grid Lines', order: '01', category: 'Grid' },
+    { 'path': ':theme/grid/hierarchy', component: HierarchyComponent, name: 'Hierarchy Grid', order: '01', category: 'Grid' },
+    { 'path': ':theme/grid/clipboard', component: ClipboardComponent, name: 'Clipboard', order: '01', category: 'Grid' },
     {
-        'path': ':theme/grid/draganddrop', component: DragAndDropComponent, name: 'Row Drag And Drop', order: '01', category: 'Grid',
+        'path': ':theme/grid/contextmenu', component: ContextMenuComponent, name: 'Context Menu', order: '01',
+        category: 'Grid'
+    },
+    { 'path': ':theme/grid/masterdetail', component: MasterComponent, name: 'Master/Detail', order: '01', category: 'Grid' },
+    { 'path': ':theme/grid/scrolling', component: ScrollComponent, name: 'Default Scrolling', order: '02', category: 'Scrolling' },
+    {
+        'path': ':theme/grid/virtualization', component: VirtualizationComponent, name: 'Virtual Scrolling', order: '02',
+        category: 'Scrolling'
+    },
+        { 'path': ':theme/grid/localdata', component: LocalDataComponent, 'name': 'Local Data', order: '03', category: 'Data Binding' },
+    { 'path': ':theme/grid/remotedata', component: DataBindingComponent, 'name': 'Remote Data', order: '03', category: 'Data Binding' },
+    { 'path': ':theme/grid/column/autowrap', component: AutoWrapComponent, name: 'AutoWrap Column cells', order: '04', category: 'Columns' },
+    { 'path': ':theme/grid/column/showhide', component: ShowHideComponent, 'name': 'Show or Hide Column', order: '04', category: 'Columns' },
+    {
+        'path': ':theme/grid/columntemplate', component: ColumnTemplateComponent, name: 'Column Template', order: '04',
+        category: 'Columns'
+    },
+    {
+        'path': ':theme/grid/column/stackedheader', component: StackedHeaderComponent,
+        name: 'Stacked Header', order: '04', category: 'Columns'
+    },    
+    { 'path': ':theme/grid/column/reorder', component: ReorderComponent, name: 'Reorder', order: '04', category: 'Columns' },    
+    {
+        'path': ':theme/grid/columnchooser', component: ColumnChooserComponent, name: 'Column Chooser', order: '04',
+        category: 'Columns'
+    },
+    {
+        'path': ':theme/grid/column/columnresizing', component: ColumnResizingComponent, name: 'Column Resize', order: '04',
+        category: 'Columns'
+    },
+    {
+        'path': ':theme/grid/column/columnspanning', component: ColumnSpanningComponent, name: 'Column Spanning', order: '04',
+        category: 'Columns'
+    },
+    {
+        'path': ':theme/grid/column/frozenrows', component: FrozenRowsComponent, name: 'Frozen Rows and Columns', order: '04',
+        category: 'Columns'
+    },
+    {
+        'path': ':theme/grid/column/columnmenu', component: ColumnMenuComponent, name: 'Column Menu', order: '04',
+        category: 'Columns'
+    },
+    {
+        'path': ':theme/grid/column/foreignkey', component: ForeignKeyColumnComponent, name: 'Foreign Key Column', order: '04',
+        category: 'Columns', type: 'new'
+    },
+    {
+        'path': ':theme/grid/rowtemplate', component: RowTemplateComponent,
+        name: 'Row Template', order: '05', category: 'Rows'
+    },
+    {
+        'path': ':theme/grid/detailtemplate', component: DetailTemplateComponent, name: 'Detail Template', order: '05',
+        category: 'Rows'
+    },
+    {
+        'path': ':theme/grid/rowheight', component: RowHeightComponent, name: 'Row Height', order: '05', category: 'Rows', type: 'new'
+    },
+    {
+        'path': ':theme/grid/draganddrop', component: DragAndDropComponent, name: 'Row Drag And Drop', order: '05', category: 'Rows',
         hideOnDevice: true
     },
-    { 'path': ':theme/grid/localdata', component: LocalDataComponent, 'name': 'Local Binding', order: '02', category: 'Data Binding' },
-    { 'path': ':theme/grid/remotedata', component: DataBindingComponent, 'name': 'Remote Binding', order: '02', category: 'Data Binding' },
-    { 'path': ':theme/grid/column/showhide', component: ShowHideComponent, 'name': 'Show Hide Column', order: '03', category: 'Column' },
-    { 'path': ':theme/grid/column/stackedheader', component: StackedHeaderComponent, name: 'Stacked Header', order: '03', category: 'Column' },
-    { 'path': ':theme/grid/column/autowrap', component: AutoWrapComponent, name: 'AutoWrap Column cells', order: '03', category: 'Column' },
-    { 'path': ':theme/grid/column/reorder', component: ReorderComponent, name: 'Reorder Columns', order: '03', category: 'Column' },
-    { 'path': ':theme/grid/column/columnchooser', component: ColumnChooserComponent, name: 'Column Chooser', order: '03', category: 'Column' },
-    { 'path': ':theme/grid/column/columnresizing', component: ColumnResizingComponent, name: 'Column Resizing', order: '03', category: 'Column' },
-    { 'path': ':theme/grid/selection', component: SelectionComponent, name: 'Default Selection', order: '04', category: 'Selection' },
-    { 'path': ':theme/grid/selectionapi', component: SelectionApiComponent, name: 'Selection API', order: '04', category: 'Selection' },
-    { 'path': ':theme/grid/checkboxselection', component: CheckboxSelectionComponent, name: 'Checkbox Selection', order: '04', category: 'Selection'},
+    { 'path': ':theme/grid/sorting', component: SortComponent, name: 'Sorting', order: '06', category: 'Sorting' },
+    { 'path': ':theme/grid/filtering', component: FilterComponent, name: 'Default Filtering', order: '07', category: 'Filtering' },
+	{ 'path': ':theme/grid/filtermenu', component: FilteringMenuComponent, name: 'Filter Menu', order: '07', category: 'Filtering', type: 'update' },    
+    { 'path': ':theme/grid/searching', component: SearchComponent, name: 'Search', order: '07', category: 'Filtering' },
+    { 'path': ':theme/grid/paging', component: PageComponent, name: 'Paging', order: '08', category: 'Paging' },    
+    { 'path': ':theme/grid/selection', component: SelectionComponent, name: 'Default Selection', order: '09', category: 'Selection' },
+    { 'path': ':theme/grid/selectionapi', component: SelectionApiComponent, name: 'Selection API', order: '09', category: 'Selection' },
+    { 'path': ':theme/grid/checkboxselection', component: CheckboxSelectionComponent,
+    name: 'Checkbox Selection', order: '09', category: 'Selection' },
     {
-        'path': ':theme/grid/aggregatedefault', component: AggregateComponent, name: 'Default Aggregate', order: '06', category: 'Aggregate'
+        'path': ':theme/grid/aggregatedefault', component: AggregateComponent,
+        name: 'Default Aggregate', order: '10', category: 'Aggregate'
     },
     {
         'path': ':theme/grid/aggregategroup', component: AggregateGroupComponent,
-        name: 'Group and Caption aggregate', order: '06', category: 'Aggregate'
-    },
+        name: 'Group and Caption aggregate', order: '10', category: 'Aggregate'
+    },    
     {
-        'path': ':theme/grid/columntemplate', component: ColumnTemplateComponent, name: 'Column Template', order: '03',
-        category: 'Column'
-    },
-    { 'path': ':theme/grid/rowtemplate', component: RowTemplateComponent, name: 'Row Template', order: '01', category: 'Grid' },
-    {
-        'path': ':theme/grid/detailtemplate', component: DetailTemplateComponent, name: 'Detail Template', order: '01',
-        category: 'Grid'
-    },
-    { 'path': ':theme/grid/hierarchy', component: HierarchyComponent, name: 'Hierarchy Grid', order: '01', category: 'Grid' },
-    { 'path': ':theme/grid/scrolling', component: ScrollComponent, name: 'Default Scrolling', order: '07', category: 'Scrolling' },
-    {
-        'path': ':theme/grid/virtualization', component: VirtualizationComponent, name: 'Virtual Scrolling', order: '07',
-        category: 'Scrolling'
-    },
-    {
-        'path': ':theme/grid/normal-edit', component: NormalEditComponent, name: 'Inline Editing', order: '08',
+        'path': ':theme/grid/normal-edit', component: NormalEditComponent, name: 'Inline Editing', order: '11',
         category: 'Editing'
     },
     {
-        'path': ':theme/grid/dialog-editing', component: DialogEditComponent, name: 'Dialog Editing', order: '08',
+        'path': ':theme/grid/dialog-editing', component: DialogEditComponent, name: 'Dialog Editing', order: '11',
         category: 'Editing'
     },
     {
-        'path': ':theme/grid/batch-editing', component: BatchEditComponent, name: 'Batch Editing', order: '08',
+        'path': ':theme/grid/batch-editing', component: BatchEditComponent, name: 'Batch Editing', order: '11',
         category: 'Editing'
     },
     {
-        'path': ':theme/grid/command-column', component: CommandColumnComponent, name: 'Command Column', order: '08',
+        'path': ':theme/grid/command-column', component: CommandColumnComponent, name: 'Command Column', order: '11',
         category: 'Editing'
     },
-    {
-        'path': ':theme/grid/default-exporting', component: ExportingComponent, name: 'Default Exporting', order: '09',
-        category: 'Exporting'
-    },
-    {        
-        'path': ':theme/grid/advanced-exporting', component: AdvancedExportingComponent, name: 'Advanced Exporting', order: '09',
-        category: 'Exporting'
-    },
-    { 'path': ':theme/grid/clipboard', component: ClipboardComponent, name: 'Clipboard', order: '01', category: 'Grid' },
-    {
-        'path': ':theme/grid/column/columnspanning', component: ColumnSpanningComponent, name: 'Column Spanning', order: '03',
-        category: 'Column', type: 'new'
-    },
-    {
-        'path': ':theme/grid/column/frozenrows', component: FrozenRowsComponent, name: 'Frozen Rows and Columns', order: '03',
-        category: 'Column', type: 'new'
-    },
-    {
-        'path': ':theme/grid/column/columnmenu', component: ColumnMenuComponent, name: 'Column Menu', order: '03',
-        category: 'Column', type: 'new'
-    },
-    {
-        'path': ':theme/grid/contextmenu', component: ContextMenuComponent, name: 'Context Menu', order: '01',
-        category: 'Grid', type: 'new'
-    }
 
+    {
+        'path': ':theme/grid/default-exporting', component: ExportingComponent, name: 'Default Exporting', order: '12',
+        category: 'Exporting'
+    },
+    {
+        'path': ':theme/grid/advanced-exporting', component: AdvancedExportingComponent, name: 'Advanced Exporting', order: '12',
+        category: 'Exporting'
+    },
+    {
+        'path': ':theme/grid/asyncpipe', component: AsyncPipeComponent, name: 'Async Pipe', order: '03',
+        category: 'Data Binding', type: 'new'
+    }
 ];
 
 let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
@@ -145,12 +174,14 @@ let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent, VirtualizationComponent,
     NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent, ColumnResizingComponent,
     ExportingComponent, AdvancedExportingComponent, CheckboxSelectionComponent, ClipboardComponent, CommandColumnComponent,
-    FilteringMenuComponent, ColumnSpanningComponent, ContextMenuComponent, ColumnMenuComponent, FrozenRowsComponent];
+    FilteringMenuComponent, ColumnSpanningComponent, ContextMenuComponent, ColumnMenuComponent, FrozenRowsComponent,
+    ForeignKeyColumnComponent, RowHeightComponent, AsyncPipeComponent
+];
 
 @NgModule({
     imports: [RouterModule.forChild(gridRouteConfig), CommonModule, HttpModule, ToolbarModule, GridAllModule, SharedModule, NumericTextBoxAllModule],
     declarations: declarations,
-    providers: [GridAllModule],
+    providers: [GridAllModule, OrdersService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridSampleModule { }

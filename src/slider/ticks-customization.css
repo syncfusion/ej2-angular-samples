@@ -1,0 +1,161 @@
+.slider-content-wrapper {
+    width: 40%;
+    margin: 0 auto;
+    min-width: 185px;
+}
+
+.userselect {
+    -webkit-user-select: none;
+    /* Safari 3.1+ */
+    -moz-user-select: none;
+    /* Firefox 2+ */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+}
+
+.slider_labelText {
+    text-align: -webkit-left;
+    font-weight: 500;
+    font-size: 13px;
+    padding-bottom: 40px;
+}
+
+.slider_container {
+    margin-top: 40px;
+}
+
+.e-bigger .slider-content-wrapper {
+    width: 80%;
+}
+
+#ticks_slider.e-control.e-slider .e-range {
+    z-index: unset;
+}
+
+.fabric #ticks_slider .e-slider-track {
+    border: 0;
+    height: 4px;
+    top: calc(50% - 2px);
+    margin: 0;
+}
+
+#ticks_slider .e-scale .e-tick {
+    background-image: none;
+    visibility: visible;
+    font-family: 'e-icons';
+}
+
+#ticks_slider .e-scale {
+    z-index: 0 !important;
+}
+
+#ticks_slider .e-scale .e-tick.e-custom::before {
+    content: '\e967';
+    position: absolute;
+}
+
+#ticks_slider .e-scale :nth-child(1)::before {
+    color: red;
+}
+
+#ticks_slider .e-scale :nth-child(2)::before {
+    color: blue;
+}
+
+#ticks_slider .e-scale :nth-child(3)::before {
+    color: green;
+}
+
+#ticks_slider .e-scale :nth-child(4)::before {
+    color: blueviolet;
+}
+
+#ticks_slider .e-scale :nth-child(5)::before {
+    color: orange;
+}
+
+#ticks_slider .e-scale :nth-child(6)::before {
+    color: pink;
+}
+
+.material #ticks_slider .e-scale .e-tick.e-custom::before {
+    font-size: 10px;
+}
+
+.material #ticks_slider .e-scale .e-tick.e-custom::before {
+    top: calc(50% + 1px);
+    left: calc(50% - 5px);
+}
+
+.material #slider_wrapper #ticks_slider .e-scale :nth-child(1)::before {
+    top: calc(50% + 1px);
+    left: calc(0% - 5px);
+}
+
+.material #slider_wrapper #ticks_slider .e-scale :nth-child(6)::before {
+    top: calc(50% + 1px);
+    left: calc(100% - 6px);
+}
+
+.fabric #ticks_slider .e-scale .e-tick.e-custom::before {
+    font-size: 14px;
+}
+
+.fabric #ticks_slider .e-scale .e-tick.e-custom::before {
+    top: calc(50% + 5px);
+    left: calc(50% - 7px);
+}
+
+.fabric #slider_wrapper #ticks_slider .e-scale :nth-child(1)::before {
+    top: calc(50% + 5px);
+    left: calc(0% - 7px);
+}
+
+.fabric #slider_wrapper #ticks_slider .e-scale :nth-child(6)::before {
+    top: calc(50% + 5px);
+    left: calc(100% - 7px);
+}
+
+.bootstrap #ticks_slider .e-scale .e-tick.e-custom::before {
+    font-size: 14px;
+}
+
+.bootstrap #ticks_slider .e-scale .e-tick.e-custom::before {
+    top: calc(50% + 2px);
+    left: calc(50% - 7px);
+}
+
+.bootstrap #slider_wrapper #ticks_slider .e-scale :nth-child(1)::before {
+    top: calc(50% + 2px);
+    left: calc(0% - 7px);
+}
+
+.bootstrap #slider_wrapper #ticks_slider .e-scale :nth-child(6)::before {
+    top: calc(50% + 2px);
+    left: calc(100% - 7px);
+}
+
+.highcontrast #ticks_slider .e-scale .e-tick.e-custom::before {
+    font-size: 14px;
+}
+
+.highcontrast #ticks_slider .e-scale .e-tick.e-custom::before {
+    top: calc(50% + 6px);
+    left: calc(50% - 7px);
+}
+
+.highcontrast #slider_wrapper #ticks_slider .e-scale :nth-child(1)::before {
+    top: calc(50% + 6px);
+    left: calc(0% - 7px);
+}
+
+.highcontrast #slider_wrapper #ticks_slider .e-scale :nth-child(6)::before {
+    top: calc(50% + 6px);
+    left: calc(100% - 7px);
+}
+
+#slider+.e-scale .e-tick.e-first-tick :nth-child(2) {
+    margin-left: -20px;
+}

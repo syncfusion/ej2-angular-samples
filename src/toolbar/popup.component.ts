@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-
+let today: Date = new Date();
 /**
  * Popup Toolbar Component
  */
@@ -10,6 +10,7 @@ import { Component, ViewEncapsulation, Inject } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class PopupToolbarComponent {
+    ele: string = '<div class = "e-tool-name">' + today.toLocaleString('en-us', { month: 'long' }) + ' ' + today.getFullYear() + '</div>';
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['toolbar.component.css'];
     }

@@ -5,14 +5,14 @@
 </div>
 <div class="control-section">
     <div align='center'>
-        <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [title]='title'
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [title]='title'
             [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [legendSettings]='legend' (load)='load($event)'
             (pointRender)='pointRender($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Rate' [marker]='marker'>
                 </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
     </div>
 </div>
 <div id="description">

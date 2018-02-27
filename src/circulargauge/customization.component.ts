@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { CircularGaugeComponent } from '@syncfusion/ej2-ng-circulargauge';
+import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-ng-circulargauge';
 import { CircularGauge } from '@syncfusion/ej2-circulargauge';
 import { DynamicDataSerive } from './customization.service';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
@@ -31,6 +31,11 @@ export class CustomizationComponent {
     }
     public labelStyle: Object = {
         font: { size: '0px' }
+    }
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     }
     public rangeWidth: number = 30;
     //Initializing Pointers

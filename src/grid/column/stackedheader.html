@@ -3,13 +3,13 @@
     </p>
 </div>
 <div class="control-section">
-    <ej-grid [dataSource]="data | slice:0:12">
+    <ejs-grid [dataSource]="data" allowPaging='true'>
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="center"></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="Center"></e-column>
             <e-column headerText='Order Details' [columns]='orderColumns'></e-column>
             <e-column headerText='Ship Details' [columns]='shipColumns'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
      <div id="description">
         <p>The Grid columns can be stacked/grouped in order to show multiple level of column headers. It can be done by
             setting the <code><a target="_blank" class="code"

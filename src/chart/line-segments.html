@@ -1,0 +1,42 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the annual mean rainfall data with multi colored line series in the chart. Data points are enhanced
+        with segments and tooltip.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart style='display:block' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' [width]='width' [legendSettings]='legend'>
+            <e-annotations>
+                <e-annotation [content]='content' x='90%' y='12%' region='Series'>
+                </e-annotation>
+            </e-annotations>
+            <e-series-collection>
+                <e-series [dataSource]='dataValues' type='MultiColoredLine' xName='XValue' yName='YValue' segmentAxis='Y' name='Australia'
+                    width=2 [segments]='segments'>
+                </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the points in a particular range by using
+        <code>MultiColoredLine</code> series type. Points under the range can be configured with
+        <code>color</code>,
+        <code>width</code>, and
+        <code>dashArray</code>.
+    </p>
+    <p>
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap a point in touch enabled devices.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use multi colored line series feature, we
+        need to inject
+        <code>MultiColoredLineSeriesService</code> into the
+        <code>@NgModule.providers</code> section.
+    </p>
+</div>

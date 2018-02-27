@@ -5,7 +5,7 @@
 </div>
 <div class="control-section">
     <div id="tooltip-container">
-        <ej-circulargauge style="display: block;" #tooltipContainer='' enablePointerDrag='true' [tooltip]='tooltip' [title]='title'
+        <ejs-circulargauge (load)='load($event)' style="display: block;" #tooltipContainer='' enablePointerDrag='true' [tooltip]='tooltip' [title]='title'
             [titleStyle]='titleStyle' (tooltipRender)="onTooltipRender($event)">
             <e-axes>
                 <e-axis radius='90%' minimum=0 maximum=120 startAngle=240 endAngle=120 [minorTicks]='minorTicks' [majorTicks]='majorTicks'
@@ -22,7 +22,7 @@
                     </e-ranges>
                 </e-axis>
             </e-axes>
-        </ej-circulargauge>
+        </ejs-circulargauge>
     </div>
 </div>
 <div id="description">

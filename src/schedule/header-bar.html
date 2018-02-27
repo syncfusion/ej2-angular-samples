@@ -1,0 +1,53 @@
+<div class="control-section">
+    <div class="col-lg-9">
+        <ejs-schedule #scheduleObj id="schedule" width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
+            [(currentView)]="currentView" (actionBegin)="onActionBegin($event)" (actionComplete)="onActionComplete($event)" (eventRendered)="oneventRendered($event)"
+            [showHeaderBar]="showHeaderBar">
+            <e-views>
+                <e-view option="Month"></e-view>
+            </e-views>
+        </ejs-schedule>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tr style="height: 50px">
+                        <td>
+                            <div>
+                                <ejs-checkbox #checkboxObj label="Show/Hide Header bar" [checked]="true" (change)="onChange($event)"></ejs-checkbox>
+                            </div>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This demo shows the way of adding custom items into the Schedule header bar. Here, an employee image is added to the
+        header bar, clicking on which will open the popup showing that person's short profile information.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        In this demo, a popup has been designed separately with a person’s profile info and kept in a hidden state initially. A custom
+        item has been added to the Schedule header bar within the
+        <code>actionBegin</code> event by checking for the request type as
+        <code>toolbarItemRendering</code> which triggers at the time of header bar items rendering on the Schedule.
+    </p>
+    <p>
+        Once the items are added, the click action is being bound to it in the
+        <code>actionComplete</code> event by checking for the request type as
+        <code>toolbarItemRendered</code> which triggers after the items are rendered on the Schedule. The appropriate action of showing or hiding the popup
+        on clicking the custom item has been done within it.
+    </p>
+    <p>
+        In case, if the header bar of Schedule needs to be hidden, it can be done by setting false to
+        <code>showHeaderBar</code> property.
+    </p>
+</div>

@@ -19,8 +19,8 @@ export class BatchEditComponent implements OnInit {
 
     public ngOnInit(): void {
         this.data = orderDatas;
-        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'batch' };
-        this.toolbar = ['add', 'delete', 'update', 'cancel'];
+        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Batch' };
+        this.toolbar = ['Add', 'Delete', 'Update', 'Cancel'];
         this.orderidrules = { required: true };
         this.customeridrules = { required: true };
         this.freightrules =  { required: true };

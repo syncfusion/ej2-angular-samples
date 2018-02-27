@@ -1,21 +1,21 @@
 <div class="control-section">
     <div class='e-mastertext'>Selection Type / Selection Mode</div>
-    <ej-toolbar class='e-gridlist' (clicked)="onChangeType($event.originalEvent)">
+    <ejs-toolbar class='e-gridlist' (clicked)="onChangeType($event.originalEvent)">
         <e-items>
             <e-item text='Multiple' cssClass='e-gtype'></e-item>
             <e-item text='Row' cssClass='e-gmode'></e-item>
         </e-items>
-    </ej-toolbar>
+    </ejs-toolbar>
     <br/>
-    <ej-grid [dataSource]='data' allowPaging='true' [enableHover]="false" [allowSelection]="true" [selectionSettings]="selectOptions">
+    <ejs-grid [dataSource]='data' allowPaging='true' [enableHover]="false" [allowSelection]="true" [selectionSettings]="selectOptions">
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right"></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
-            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign="right"></e-column>
-            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right"></e-column>
-            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign="right"></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign='Right'></e-column>
+            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right'></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign='Right'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
     <div id="action-description">
         <p>This sample demonstrates the selection functionality of the Grid, you can select the type and mode from the desired button</p>
     </div>
@@ -33,8 +33,8 @@
         </a></code> property.
             They are,</p>
         <ul>
-            <li><code>single</code> - Enabled by default. Allows the user to select single row/cell at a time.</li>
-            <li><code>multiple</code> - Allows the user to select more than one row/cell at a time.</li>
+            <li><code>Single</code> - Enabled by default. Allows the user to select single row/cell at a time.</li>
+            <li><code>Multiple</code> - Allows the user to select more than one row/cell at a time.</li>
         </ul>
         <p>Also, supports three modes of selection which can be set using <code><a target="_blank" class="code"
         href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#selectionsettings-selectionsettingsmodel">
@@ -43,9 +43,9 @@
             are,
         </p>
         <ul>
-            <li><code>row</code> - Enabled by default. Enables row selection in Grid.</li>
-            <li><code>cell</code> - Enables cell selection in Grid.</li>
-            <li><code>both</code> - Enables both row and cell selection in Grid. Clicking any cell will select both the row and cell
+            <li><code>Row</code> - Enabled by default. Enables row selection in Grid.</li>
+            <li><code>Cell</code> - Enables cell selection in Grid.</li>
+            <li><code>Both</code> - Enables both row and cell selection in Grid. Clicking any cell will select both the row and cell
                 simultaneously
             </li>
         </ul>

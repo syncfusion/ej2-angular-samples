@@ -5,7 +5,7 @@
 </div>
 <div class="control-section">
     <div class="col-lg-9">
-        <ej-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
+        <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
             [tooltip]='tooltip' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='series1' type='Polar' drawType='Spline' xName='x' yName='y' name='Cardioid (unidirectional)' width=2
@@ -16,7 +16,7 @@
                 <e-series [dataSource]='series3' type='Polar' drawType='Spline' xName='x' yName='y' name='Bidirectional' width=2>
                 </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
     </div>
     <div class="col-lg-3 property-section">
         <div class="property-panel-section">

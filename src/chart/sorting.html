@@ -1,0 +1,81 @@
+<div id="action-description">
+    <p>
+        This sample visualizes sales for vehicle range for different zone with default stacked column series in chart. Legend in
+        the sample shows the information about those series.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-md-8">
+        <ejs-chart #chart style='display:block;' id='chartcontainer' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            [title]='title' (load)='load($event)' [tooltip]='tooltip'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='StackingColumn' xName='x' yName='car' name='Car' width=2>
+                </e-series>
+                <e-series [dataSource]='data' type='StackingColumn' xName='x' yName='trucks' name='Trucks' width=2>
+                </e-series>
+                <e-series [dataSource]='data' type='StackingColumn' xName='x' yName='bike' name='Bike' width=2>
+                </e-series>
+                <e-series [dataSource]='data' type='StackingColumn' xName='x' yName='cycle' name='Cycle' width=2>
+                </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+    <div class="col-md-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div>Descending:</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input id='decending' (change)='isCheck($event)' type="checkbox" disabled />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div>Sort By:</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <select name="LabelMode" autocomplete="off" id="sortMode" style="width:90%">
+                                    <option value="None">None</option>
+                                    <option value="X">Sort by X</option>
+                                    <option value="Y">Sort by Y</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to sort the series data in chart. To sort the data points of the series, use the <code>sort</code> method. 
+        This method determines whether the series data points should be sorted by their arguments or values.
+    </p>
+    <p>
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap a point in touch enabled devices.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use stacking column series, we need to inject
+        <code>StackingColumnSeriesService</code> module into the
+        <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information on the stacking column series can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/documentation/chart/api-axis.html#valuetype-valuetype">documentation section</a>.
+    </p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

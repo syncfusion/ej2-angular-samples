@@ -65,7 +65,7 @@ export class FunnelComponent {
         fill: 'red', mode: 'Drop'
     };
     public explode: boolean = true;
-    public tooltip: Object = { enable: true, format: '${point.x} : ${point.y} %' };
+    public tooltip: Object = { enable: true, format: '${point.x} : <b>${point.y}%</b>' };
     public title: string = 'Website Visitors';
     constructor() {
         //code

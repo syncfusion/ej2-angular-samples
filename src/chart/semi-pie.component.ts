@@ -66,7 +66,7 @@ export class SemiPieComponent {
     }
     public startAngle: number = 270;
     public endAngle: number = 90;
-    public tooltip: Object = { enable: true, format: '${point.text}' };
+    public tooltip: Object = { enable: true, format: '${point.x} : <b>${point.y}%</b>' };
     public title: string = 'Agricultural Land percentage';
     constructor() {
         //code

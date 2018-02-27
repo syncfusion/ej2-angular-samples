@@ -5,7 +5,7 @@
 </div>
 <div class="control-section">
     <div class="col-lg-9">
-        <ej-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
+        <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
             [tooltip]='tooltip' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Polar' drawType='Scatter' xName='x' yName='y' name='2015' [marker]='marker'>
@@ -15,7 +15,7 @@
                 <e-series [dataSource]='data' type='Polar' drawType='Scatter' xName='x' yName='y2' name='2017' [marker]='marker2'>
                 </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
     </div>
     <div class="col-lg-3 property-section">
         <div class="property-panel-section">

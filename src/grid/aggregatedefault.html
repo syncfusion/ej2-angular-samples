@@ -1,28 +1,28 @@
 <div class="control-section">
-    <ej-grid [dataSource]="data" [allowPaging]="true" [pageSettings]='pageOption'>
+    <ejs-grid [dataSource]="data" [allowPaging]="true" [pageSettings]='pageOption'>
         <e-columns>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
-            <e-column field='Freight' headerText='Freight' width='150' format='C2' textAlign="right"></e-column>
-            <e-column field='OrderDate' headerText='Order Date' width='150' format="yMd" textAlign="right"></e-column>
+            <e-column field='Freight' headerText='Freight' width='150' format='C2' textAlign='Right'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='150' format="yMd" textAlign='Right'></e-column>
             <e-column field='ShipCountry' headerText='Ship Country' width='150'></e-column>
         </e-columns>
         <e-aggregates>
             <e-aggregate>
                 <e-columns>
-                    <e-column type="sum" field="Freight" format="C2">
-                        <ng-template #footerTemplate let-data>Sum: {{data.sum}}</ng-template>
+                    <e-column type="Sum" field="Freight" format="C2">
+                        <ng-template #footerTemplate let-data>Sum: {{data.Sum}}</ng-template>
                     </e-column>
                 </e-columns>
             </e-aggregate>
             <e-aggregate>
                 <e-columns>
-                    <e-column type="average" field="Freight" format="C2">
-                        <ng-template #footerTemplate let-data>Average: {{data.average}}</ng-template>
+                    <e-column type="Average" field="Freight" format="C2">
+                        <ng-template #footerTemplate let-data>Average: {{data.Average}}</ng-template>
                     </e-column>
                 </e-columns>
             </e-aggregate>
         </e-aggregates>
-    </ej-grid>
+    </ejs-grid>
     <div id="action-description">
         <p>This sample demonstrates aggregate functionality of the Grid. In this sample, the aggregate value for the column “Freight” is displayed in column footer.</p>
     </div>
@@ -34,14 +34,14 @@
         </a></code> property.</p>
         <p>The built-in aggregates are,</p>
         <ul>
-            <li><code>sum</code></li>
-            <li><code>average</code></li>
-            <li><code>min</code></li>
-            <li><code>max</code></li>
-            <li><code>count</code></li>
-            <li><code>truecount</code></li>
-            <li><code>falsecount</code></li>
-            <li><code>custom</code> - Requires the <code><a target="_blank" class="code"
+            <li><code>Sum</code></li>
+            <li><code>Average</code></li>
+            <li><code>Min</code></li>
+            <li><code>Max</code></li>
+            <li><code>Count</code></li>
+            <li><code>TrueCount</code></li>
+            <li><code>FalseCount</code></li>
+            <li><code>Custom</code> - Requires the <code><a target="_blank" class="code"
         href="http://ej2.syncfusion.com/documentation/grid/api-aggregateColumn.html#customaggregate-string">
         customAggregate
         </a></code> property to perform aggregation. The custom aggregate value can be accessed inside template using the

@@ -1,0 +1,34 @@
+{
+    "de": {
+        "datepicker": {
+            "placeholder": "Wählen Sie ein Datum",
+            "today":"heute"
+        }
+    },
+    "ar": {
+        "datepicker": {
+            "placeholder": "اختر تاريخا",
+            "today" :"اليوم"
+        }
+    },
+    "en": {
+        "datepicker": {
+            "placeholder": "Choose a date",
+            "today": "Today"
+        }
+    },
+    "zh": {
+        "datepicker": {
+            "placeholder": "選擇一個日期",
+            "today": "今天"
+            
+        }
+    },
+    "fr-CH": {
+        "datepicker": {
+            "placeholder": "choisissez une date",
+            "today": "aujourd'hui"
+        }
+    }
+}
+

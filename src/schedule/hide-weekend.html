@@ -1,0 +1,70 @@
+<div class="control-section">
+    <div class="col-lg-9">
+        <ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" [(currentView)]="currentView"
+            (eventRendered)="oneventRendered($event)">
+            <e-views>
+                <e-view option="Day"></e-view>
+                <e-view option="Week"></e-view>
+                <e-view option="Month"></e-view>
+            </e-views>
+        </ejs-schedule>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tr style="height: 50px">
+                        <td style="width: 30%">
+                            <div> Work Days
+                            </div>
+                        </td>
+                        <td style="width: 70%;">
+                            <div class="multi-prop">
+                                <div>
+                                    <ejs-multiselect id='multiselect-checkbox' #checkbox [dataSource]='workDaysData' [fields]='workDaysFields' [value]='workDaysValue'
+                                        [mode]='mode' popupWidth="180px" showDropDownIcon='true' (change)="onMultiSelectChange($event)"></ejs-multiselect>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 30%">
+                            <div> Weekend Days
+                            </div>
+                        </td>
+                        <td style="width: 70%">
+                            <div class="multi-prop">
+                                <div>
+                                    <button #toggleBtn ejs-button [isToggle]="true" (click)="btnClick()">Show</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This demo depicts the way to show or hide the weekend days of a week on Schedule. The days whichever not specified in
+        working days collections will be taken into consideration as weekend days.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        In this demo, the
+        <code>showWeekend</code> property is used either to show or hide the weekend days of a week and it is not applicable on
+        <code>workweek</code> view. By default, it is set to
+        <code>true</code>. The days which are not a part of the working days collection of a Schedule are usually considered as weekend days
+        here.
+    </p>
+    <p>
+        Here, the working days are defined as
+        <code>[1, 3, 4, 5]</code> on Schedule. Therefore, the remaining days (0, 2, 6 – Sunday, Tuesday and Saturday) are considered as weekend days
+        and will be hidden from the views as the
+        <code>showWeekend</code> property is set to false.
+    </p>
+</div>

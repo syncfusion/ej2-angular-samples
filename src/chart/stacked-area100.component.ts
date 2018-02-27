@@ -71,10 +71,11 @@ export class PercentStackedAreaChartComponent {
     public marker: Object = {
         visible: false
     };
-    public load(args: ILoadedEventArgs): void {
+    public load(args: ILoadedEventArgs): void {       
         let selectedTheme: string = location.hash.split('/')[1];
-        args.chart.theme = (selectedTheme && selectedTheme.indexOf('fabric') > -1) ? 'Fabric' : 'Material';
-    };
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        };
     public chartArea: Object = {
         border: {
             width: 0

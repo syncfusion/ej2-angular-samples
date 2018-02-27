@@ -13,12 +13,12 @@
             <p id="text" style="display:inline-block;"></p>
         </div>
         <button type="button" id="back" style="visibility: hidden;" (click)="onClick($event)">Back</button>
-        <ej-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [enableSmartLabels]='false' [title]="title" (textRender)="onTextRender($event)" (chartMouseClick)="onChartMouseClick($event)" (load)='load($event)'>>
+        <ejs-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [enableSmartLabels]='false' [title]="title" (textRender)="onTextRender($event)" (chartMouseClick)="onChartMouseClick($event)" (load)='load($event)'>>
             <e-accumulation-series-collection>
                 <e-accumulation-series [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" radius="70%" [dataLabel]="dataLabel" explode=true explodeOffset='10%' [explodeIndex]='explodeIndex'>
                 </e-accumulation-series>
             </e-accumulation-series-collection>
-        </ej-accumulationchart>
+        </ejs-accumulationchart>
     </div>
 </div>
 <div id="description">

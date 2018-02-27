@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { data } from '../data';
+import { orderDetails } from '../data';
 import { ColumnModel } from '@syncfusion/ej2-ng-grids';
 
 @Component({
@@ -12,7 +12,7 @@ export class StackedHeaderComponent implements OnInit {
     public shipColumns: ColumnModel[];
 
     public ngOnInit(): void {
-        this.data = data;
+        this.data = orderDetails;
 
         this.orderColumns = [
             {
@@ -20,14 +20,14 @@ export class StackedHeaderComponent implements OnInit {
                 headerText: 'Order Date',
                 format: 'yMd',
                 width: 130,
-                textAlign: 'right'
+                textAlign: 'Right'
             },
             {
                 field: 'Freight',
                 headerText: 'Freight ($)',
                 width: 120,
                 format: 'C1',
-                textAlign: 'right'
+                textAlign: 'Right'
             }
         ];
 
@@ -36,7 +36,7 @@ export class StackedHeaderComponent implements OnInit {
                 field: 'ShippedDate',
                 headerText: 'Shipped Date',
                 format: 'yMd',
-                textAlign: 'right',
+                textAlign: 'Right',
                 width: 150
             },
             {

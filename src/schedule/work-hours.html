@@ -1,0 +1,81 @@
+<div class="control-section">
+    <div class="col-lg-9 content-wrapper">
+        <ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" [currentView]="currentView"
+            [workHours]="workHours" (eventRendered)="oneventRendered($event)">
+            <e-views>
+                <e-view option="Day"></e-view>
+                <e-view option="Week"></e-view>
+                <e-view option="WorkWeek"></e-view>
+                <e-view option="Month"></e-view>
+            </e-views>
+        </ejs-schedule>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <div id="property" class="property-panel-table" title="Properties">
+                    <table id="property" title="Properties" style="width: 100%">
+                        <tbody>
+                            <tr style="height: 50px">
+                                <td style="width: 30%">
+                                    <div> Work Start
+                                    </div>
+                                </td>
+                                <td style="width: 70%;">
+                                    <div>
+                                        <ejs-timepicker id="startTime" [value]="startdate" format='HH:mm'></ejs-timepicker>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                <td style="width: 30%">
+                                    <div>Work End
+                                    </div>
+                                </td>
+                                <td style="width: 70%;">
+                                    <div>
+                                        <ejs-timepicker id="endTime" [value]="enddate" format='HH:mm'></ejs-timepicker>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                <td>
+                                    <div>
+                                        <button ejs-button id='submit' (click)="onSubmit()">Submit</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This demo showcases how to set the required working hours on Schedule, thus visually highlighting the cells underlying the
+        given work hour range.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        In this demo, the work hours are set by using the
+        <code>workHours</code> property and it usually applies only on the working days defined for the Schedule. It can either be highlighted
+        or not by defining the
+        <code>highlight</code> option within the
+        <code>workHours</code> property. The working hour range can be defined by making use of the
+        <code>start</code> and
+        <code>end</code> option available within the
+        <code>workHours</code> property.
+    </p>
+    <p>
+        To set discontinuous working hours on a day, then the default
+        <code>workHours</code> on Schedule needs to be disabled by setting false to
+        <code>highlight</code> option within it. Then, make use of the
+        <code>setWorkHours</code> method which accepts the days collection and the start & end hour values as parameters.
+    </p>
+</div>

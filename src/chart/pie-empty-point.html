@@ -5,12 +5,12 @@
 </div>
 <div class="control-section">
     <div class="col-lg-8">
-        <ej-accumulationchart id="container" #chart [legendSettings]='legend' style='display:block;  width: 92%' [tooltip]="tooltip" [title]="title" (load)='load($event)'>
+        <ejs-accumulationchart id="container" #chart [legendSettings]='legend' style='display:block;  width: 92%' [tooltip]="tooltip" [title]="title" (load)='load($event)'>
             <e-accumulation-series-collection>
                 <e-accumulation-series name='Profit' [dataSource]='data' xName='x' yName='y' [dataLabel]="dataLabel" [emptyPointSettings]='emptyPointSettings'>
                 </e-accumulation-series>
             </e-accumulation-series-collection>
-        </ej-accumulationchart>
+        </ejs-accumulationchart>
     </div>
     <div class="col-lg-4 property-section">
         <div class="property-panel-section">

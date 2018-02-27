@@ -4,7 +4,7 @@
 </div>
 <div class="control-section">
     <div class='e-mastertext'>Select column name to toggle visibility</div>
-    <ej-toolbar class='e-gridlist' (clicked)="onClicked($event.originalEvent)">
+    <ejs-toolbar class='e-gridlist' (clicked)="onClicked($event.originalEvent)">
         <e-items>
             <e-item text='Order ID'></e-item>
             <e-item text='Customer Name'></e-item>
@@ -13,18 +13,18 @@
             <e-item text='Shipped Date'></e-item>
             <e-item text='Ship Country'></e-item>
         </e-items>
-    </ej-toolbar>
+    </ejs-toolbar>
     <br/>
-    <ej-grid #grid [dataSource]='data | slice:0:10' (dataBound)="dataBound()">
+    <ejs-grid #grid [dataSource]='data' allowPaging='true' (dataBound)="dataBound()">
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right"></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
-            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign="right"></e-column>
-            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right"></e-column>
-            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign="right"></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign='Right'></e-column>
+            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right'></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign='Right'></e-column>
             <e-column field='ShipCountry' headerText='Ship Country' width='150'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
 
     <div id="description">
         <p>The Grid column can be showed/hidden dynamically using <code><a target="_blank" class="code"

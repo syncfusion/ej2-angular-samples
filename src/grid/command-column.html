@@ -1,14 +1,14 @@
 <div class="control-section">
-    <ej-grid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings'>
+    <ejs-grid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings'>
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right" isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
-            <e-column field='CustomerID' headerText='Customer ID' width='120' textAlign="right" [validationRules]='customeridrules'></e-column>
-            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right" editType='numericedit' [validationRules]='freightrules'></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
+            <e-column field='CustomerID' headerText='Customer ID' width='120' textAlign='Right' [validationRules]='customeridrules'></e-column>
+            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right' editType='numericedit' [validationRules]='freightrules'></e-column>
             <e-column field='ShipName' headerText='Ship Name' width='170'></e-column>
             <e-column field='ShipCountry' headerText='Ship Country' width='150' editType='dropdownedit' [edit]='editparams'></e-column>
             <e-column headerText='Manage Records' width='160' [commands]='commands'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
     <div id="action-description">
         <p>This sample demonstrates CRUD operations in Grid using command column. You can perform CRUD operations as follows,</p>
          <ul>
@@ -30,10 +30,10 @@
         </p>
         <p>The built-in command button are,</p>
         <ul>
-            <li><code>edit</code></li>
-            <li><code>delete</code></li>
-            <li><code>cancel</code></li>
-            <li><code>save</code></li>
+            <li><code>Edit</code></li>
+            <li><code>Delete</code></li>
+            <li><code>Cancel</code></li>
+            <li><code>Save</code></li>
         </ul>
         <p style="font-weight: 500">Injecting Module</p>
         <p>

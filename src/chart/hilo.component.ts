@@ -6,6 +6,13 @@ import { Browser } from '@syncfusion/ej2-base';
 /**
  * Sample for Hilo Series
  */
+let date1: Date = new Date(2017, 1, 1);
+let returnValue: any = chartData.filter(filterValue);
+function filterValue(value: { x: Date, high: number, low: number }): any {
+    if (value.x >= date1) {
+        return value.x, value.high, value.low;
+    }
+}
 @Component({
     selector: 'control-content',
     templateUrl: 'hilo.html',
@@ -14,21 +21,22 @@ import { Browser } from '@syncfusion/ej2-base';
 })
 export class HiloChartComponent {
 
-    public data1: Object[] = chartData;
+    public data1: Object[] = returnValue;
 
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
-        skeleton: 'yMd', zoomFactor: 0.2, zoomPosition: 0.6,
+        minimum: new Date(2016, 12, 31),
+        maximum: new Date(2017, 9, 31),
         crosshairTooltip: { enable: true },
         majorGridLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         title: 'Price',
-        minimum: 50,
-        maximum: 170,
-        interval: 30,
+        minimum: 100,
+        maximum: 180,
+        interval: 20,
         labelFormat: '${value}',
         lineStyle: { width: 0 },
         majorTickLines: { width: 0 }
@@ -36,13 +44,7 @@ export class HiloChartComponent {
     public marker: Object = {
         visible: false
     };
-    //Initializing Zooming
-    public zoomSettings: Object = {
-        enableMouseWheelZooming: true,
-        enablePinchZooming: true,
-        enableSelectionZooming: true,
-        mode: 'X'
-    };
+
     public chartArea: Object = {
         border: {
             width: 0
@@ -56,7 +58,7 @@ export class HiloChartComponent {
         shared: true
     };
     public legendSettings: Object = {
-      visible: false
+        visible: false
     };
     public crosshair: Object = {
         enable: true,

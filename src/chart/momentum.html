@@ -5,7 +5,7 @@
 </div>
 <div class="control-section">
     <div align='center'>
-        <ej-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title'
+        <ejs-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title'
             [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [crosshair]='crosshair' [zoomSettings]='zoomSettings'
             [axes]='axes' [rows]='rows' [legendSettings]='legendSettings' [chartArea]='chartArea' (load)='load($event)'>
             <e-series-collection>
@@ -16,7 +16,7 @@
                 <e-indicator type='Momentum' xName='x' field="Close" yAxisName='secondary' fill="blue" [period]='period' seriesName="Apple Inc"
                     [upperLine]='upperLine'> </e-indicator>
             </e-indicators>
-        </ej-chart>
+        </ejs-chart>
     </div>
 </div>
 <div id='description'>

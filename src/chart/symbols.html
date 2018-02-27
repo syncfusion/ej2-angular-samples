@@ -5,14 +5,14 @@
 </div>
 <div class="control-section">
         <div align='center'>
-            <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [legendSettings]='legend'
+            <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [legendSettings]='legend'
                 [title]='title' [tooltip]='tooltip' (load)='load($event)'>
                 <e-series-collection>
                     <e-series [dataSource]='data' type='Line' xName='x' yName='y' name='December 2007' width=2 [marker]='marker1'> </e-series>
                     <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='December 2008' width=2 [marker]='marker2'> </e-series>
                     <e-series [dataSource]='data2' type='Line' xName='x' yName='y' name='December 2009' width=2 [marker]='marker3'> </e-series>
                 </e-series-collection>
-            </ej-chart>
+            </ejs-chart>
         </div>
         <div style="float: right; margin-right: 10px; margin-top: -5px">Source:
             <a href="http://www.marketingprofs.com/charts/2012/7064/facebook-stats-five-years-of-worldwide-growth" target="_blank">www.marketingprofs.com</a>

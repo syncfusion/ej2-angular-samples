@@ -17,7 +17,7 @@
 
 #selected {
     height: 50px;
-    width: 248px;
+    width: 242px;
     display: block;
     font-weight: inherit;
     line-height: 50px;
@@ -55,17 +55,67 @@ span.e-icons.highlight {
     margin-left: 4px;
 }
 
-.e-calendar .e-content span.special,
-.e-calendar .e-content span.daycell {
+.e-customStyle span.e-icons.highlight {
+    margin-top: -13px;
+    display: block;
+    margin-left: 4px;
+}
+
+.e-customStyle span.e-icons.highlight,
+.e-customStyle span.e-icons.highlight:before {
+    color: rgb(0, 0, 255);
+}
+
+.e-customStyle .e-other-month span.e-icons.highlight:before {
+    content: "";
+}
+
+.e-customStyle span.e-icons.highlight:before {
+    content: "\e865";
+    vertical-align: middle;
+    margin-right: 3px;
+    font-size: 4px;
+    position: relative;
+    top: -1px;
+    font-weight: normal;
+}
+
+.e-customStyle .e-selected span.e-icons.highlight:before {
+    color: #fff;
+}
+
+.e-customStyle span.e-icons.highlight {
+    margin-top: -11px;
+    display: block;
+    margin-left: 4px;
+}
+
+.e-customStyle .e-calendar .e-content span.special,
+.e-customStyle .e-calendar .e-content span.daycell {
     font-weight: bold;
 }
-
-.e-calendar .e-content span.special {
-    color: red;
+.e-customStyle .e-calendar .e-content span.special {
+    border-radius: 50%;
 }
 
-.e-calendar .e-content span.daycell {
-    color: #ff9e00;
+.e-customStyle span.e-icons.highlight,
+.e-customStyle span.e-icons.highlight:before {
+    color: rgb(0, 0, 255);
+}
+
+.highcontrast .e-customStyle td.birthday span.e-icons.highlight,
+.highcontrast .e-customStyle td.birthday span.e-icons.highlight:before {
+    color: #ff6161;
+}
+
+.highcontrast .e-customStyle td.farewell span.e-icons.highlight,
+.highcontrast .e-customStyle td.farewell span.e-icons.highlight::before {
+    color: #2bc700;
+}
+
+.highcontrast .e-customStyle td.vacation span.e-icons.highlight,
+.highcontrast .e-customStyle td.vacation span.e-icons.highlight::before {
+    color: #ff7d1a;
 }
 
 #start,
@@ -116,3 +166,12 @@ span.e-icons.highlight {
     filter: alpha(opacity=50);
     font-style: oblique;
 }
+
+#cultures{
+    display:block;
+    width:100px;
+}
+
+body.highcontrast #date_label {
+        color: white;
+} 

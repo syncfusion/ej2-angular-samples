@@ -5,12 +5,12 @@
 </div>
 <div class="control-section">
     <div class="col-lg-9">
-        <ej-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)' [chartArea]='chartArea' (pointRender)='pointRender($event)'>
+        <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)' [chartArea]='chartArea' (pointRender)='pointRender($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Column' xName='x' yName='y' width=2>
                 </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
     </div>
     <div class="col-lg-3 property-section">
         <div class="property-panel-section">
@@ -26,6 +26,8 @@
                                 <select name="selectIndex" autocomplete="off" id="exporttype" style="width: 90%">
                                              <option value="JPEG">JPEG</option>
                                              <option value="PNG">PNG</option>
+                                             <option value="PNG">SVG</option>
+                                             <option value="PDF">PDF</option>
                                          </select>
                             </div>
                         </td>
@@ -43,7 +45,7 @@
                     <tr id="button-control" style="height: 50px" align='center'>
                         <td align='center' colspan="2">
                             <div>
-                                <button ej-button cssClass="e-flat" iconCss='e-icons e-play-icon' (click)='onClick($event)' style="text-transform:none !important" id="togglebtn">EXPORT</button>
+                                <button ejs-button cssClass="e-flat" iconCss='e-icons e-play-icon' (click)='onClick($event)' style="text-transform:none !important" id="togglebtn">EXPORT</button>
                             </div>
                         </td>
                     </tr>

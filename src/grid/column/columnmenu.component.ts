@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SortService, ResizeService, GroupService, ColumnMenuService, PageService, FilterService } from '@syncfusion/ej2-ng-grids';
 import { ContextMenuItem, GroupSettingsModel, FilterSettingsModel, EditSettingsModel } from '@syncfusion/ej2-ng-grids';
-import { data } from '../data';
+import { orderDetails } from '../data';
 
 @Component({
     selector: 'ej2-grid-container',
@@ -13,8 +13,8 @@ export class ColumnMenuComponent implements OnInit {
     public groupOptions: GroupSettingsModel;
     public filterSettings: FilterSettingsModel;
     ngOnInit(): void {
-        this.data = data.slice(0, 60);
+        this.data = orderDetails;
         this.groupOptions = { showGroupedColumn: true };
-        this.filterSettings = { type: 'checkbox' };
+        this.filterSettings = { type: 'CheckBox' };
     }
 }

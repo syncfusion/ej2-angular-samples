@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { ToolbarService } from '@syncfusion/ej2-ng-grids';
+import { ToolbarService, ColumnChooserService } from '@syncfusion/ej2-ng-grids';
 import { data } from '../data';
 
 @Component({
     selector: 'ej2-grid-container',
     templateUrl: 'columnchooser.html',
-    providers: [ToolbarService]
+    providers: [ToolbarService, ColumnChooserService]
 })
 export class ColumnChooserComponent implements OnInit {
     public data: Object[];
     public toolbar: string[];
+    public pageSettings: Object;
     ngOnInit(): void {
          this.data = data;
-         this.toolbar = ['columnchooser'];
+         this.toolbar = ['ColumnChooser'];
+         this.pageSettings ={ pageCount: 5 };
     }
 }

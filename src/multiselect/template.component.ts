@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
 
 @Component({
     selector: 'control-content',
@@ -7,6 +7,11 @@ import { Component, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class TemplateMultiSelectComponent {
+    constructor(private changeDetect: ChangeDetectorRef) {
+    }
+    ngAfterViewInit() {
+        this.changeDetect.detectChanges();
+    }
     // define the JSON of data
     public multidata: { [key: string]: Object }[] = [
         { Name: 'Andrew Fuller', Eimg: '7', Job: 'Team Lead', Country: 'England' },
@@ -24,5 +29,5 @@ export class TemplateMultiSelectComponent {
     //set the placeholder to MultiSelect input
     public multiwatermark: string = 'Select employees';
     // set the type of mode for how to visualized the selected items in input element.
-    public box : string = 'box';
+    public box: string = 'Box';
 }

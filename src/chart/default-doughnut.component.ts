@@ -77,10 +77,14 @@ export class DefaultDoughnutComponent {
     }
     public startAngle: number = 0;
     public endAngle: number = 360;
-    public tooltip: Object = { enable: true, format: '${point.x} <br> Composition: ${point.y}%' };
+    public tooltip: Object = {
+        enable: true, header: '<b>${point.x}</b>', format: 'Composition: <b>${point.y}%</b>'
+    };
     public title: string = 'Education Institutional Revenue';
     constructor() {
         //code
     };
 
 }
+
+

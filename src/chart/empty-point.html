@@ -5,13 +5,13 @@
 </div>
 <div class="control-section">
     <div class="col-lg-8">
-        <ej-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
+        <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
             [tooltip]='tooltip' (load)='load($event)' [legendSettings] = 'legendSettings'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Profit' width=2 [marker]='marker'>
                 </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
     </div>
     <div class="col-lg-4 property-section">
         <div class="property-panel-section">

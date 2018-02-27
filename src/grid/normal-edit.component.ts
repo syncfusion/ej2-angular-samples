@@ -20,7 +20,7 @@ export class NormalEditComponent implements OnInit {
     public ngOnInit(): void {
         this.data = orderDatas;
         this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };
-        this.toolbar = ['add', 'edit', 'delete', 'update', 'cancel'];
+        this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
         this.orderidrules = { required: true };
         this.customeridrules = { required: true };
         this.freightrules =  { required: true };

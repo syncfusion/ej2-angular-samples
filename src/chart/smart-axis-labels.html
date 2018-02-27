@@ -5,12 +5,12 @@
 </div>
 <div class="control-section">
     <div class="col-md-8">
-        <ej-chart #chart style='display:block;' id='chartcontainer' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)' [tooltip]='tooltip' (pointRender)='pointRender($event)' [legendSettings]='legendSettings'>
+        <ejs-chart #chart style='display:block;' id='chartcontainer' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)' [tooltip]='tooltip' (pointRender)='pointRender($event)' [legendSettings]='legendSettings'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Column' xName='x' yName='y' width=2 [marker]='marker' name='Users'>
                 </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
     </div>
     <div class="col-md-4 property-section">
         <div class="property-panel-section">
@@ -45,6 +45,19 @@
                                     <option value="None">None</option>
                                     <option value="Hide">Hide</option>
                                     <option value="Shift">Shift</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div>Label Position:</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <select name="LabelMode" autocomplete="off" id="labelPosition" style="width:90%">
+                                    <option value="Outside">Outside</option>
+                                    <option value="Inside">Inside</option>
                                 </select>
                             </div>
                         </td>

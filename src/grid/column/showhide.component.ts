@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
-import { data } from '../data';
+import { orderDetails } from '../data';
 import { GridComponent } from '@syncfusion/ej2-ng-grids';
 import { addClass, removeClass } from '@syncfusion/ej2-base';
 
@@ -21,7 +21,7 @@ export class ShowHideComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.data = data;
+        this.data = orderDetails;
     }
 
     public onClicked(e: MouseEvent): void {

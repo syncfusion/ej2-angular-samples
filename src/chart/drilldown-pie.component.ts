@@ -42,6 +42,7 @@ export class DrilldownPieComponent {
     public dataLabel: Object = {
         visible: true, position: 'Inside', connectorStyle: { type: 'Curve', length: '5%' }, font: { size: '14px', color: 'white' }
     };
+    public content: string = '<div id= "white" style="cursor:pointer;padding:3px;width:30px; height:30px;"><img src="./src/chart/images/white.png" id="back" /><div>';
     public startAngle: number = 0;
     public explodeIndex: number = 2;
     public endAngle: number = 360;
@@ -130,10 +131,15 @@ export class DrilldownPieComponent {
         document.getElementById('symbol').style.visibility = 'hidden';
         document.getElementById('text').style.visibility = 'hidden';
     }
+    
     public load(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        if (selectedTheme === 'highcontrast'){
+             args.accumulation.series[0].dataLabel.font.color="white";
+             args.accumulation.annotations[0].content = this.content ;
+          }
     };
     constructor() {
         //code

@@ -1,0 +1,33 @@
+<div class="control-section">
+    <div class="col-lg-9">
+        <div class="control_wrapper">
+            <ejs-uploader #preloadupload id='preloadfileupload' [minFileSize]=10000 [maxFileSize]=4000000 [asyncSettings]='path' [dropArea]='dropElement' (success)='onSuccess($event)' (failure)='onFailure($event)' (removing)='onRemove($event)'>
+                <e-files>
+                    <e-uploadedfiles name='Nature' size=11000 type='.png'></e-uploadedfiles>
+                    <e-uploadedfiles name='TypeScript Succintly' size=20000 type='.pdf'></e-uploadedfiles>
+                    <e-uploadedfiles name='ASP.NET Webhooks' size=35000 type='.docx'></e-uploadedfiles>
+                </e-files>
+            </ejs-uploader>
+        </div>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <button class="e-btn e-css" id="clearbtn" title="Clear All">Clear All</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates how to pre-load the files of the Uploader. The already uploaded files are configured in file list to view and remove them.</p>
+</div>
+
+<div id="description">
+    <p>The Uploader component allows to load initial list of files which are already uploaded in server. The preload files are useful to view and remove from server. Also, you can achieve state persistence on page refresh. </p>
+
+    <p>For more information, you can refer to the Preload Files section from the documentation.</p>
+
+    <p> To achieve state persistence, you can refer to this How-to section.</p>
+</div>

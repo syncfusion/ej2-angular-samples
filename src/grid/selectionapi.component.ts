@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
-import { data } from './data';
+import { orderDetails } from './data';
 import { SelectionService } from '@syncfusion/ej2-ng-grids';
 
 @Component({
@@ -18,8 +18,8 @@ export class SelectionApiComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.data = data.slice(0, 30);
-        this.selectOptions = { type: 'multiple' };
+        this.data = orderDetails;
+        this.selectOptions = { type: 'Multiple' };
     }
 
     public onChangeType(e: MouseEvent): void {
@@ -28,8 +28,8 @@ export class SelectionApiComponent implements OnInit {
             type?: { class: string, val: (mode: string) => string },
             mode?: { class: string, val: (mode: string) => string }
          } = {
-             type: { class: '.e-gtype', val: (mode: string) => mode === 'single' ? 'Multiple' : 'Single' },
-             mode: { class: '.e-gmode', val: (mode: string) => mode === 'row' ? 'Cell' : 'Row' },
+             type: { class: '.e-gtype', val: (mode: string) => mode === 'Single' ? 'Multiple' : 'Single' },
+             mode: { class: '.e-gmode', val: (mode: string) => mode === 'Row' ? 'Cell' : 'Row' },
          };
 
         if (!element.classList.contains('e-tbar-btn-text') && !element.classList.contains('e-tbar-btn')) {
@@ -41,10 +41,9 @@ export class SelectionApiComponent implements OnInit {
         let opt: { class: string, val: (mode: string) => string } = options[isType ? 'type' : 'mode'];
         let parent: Element = document.querySelector('.e-gridlist');
         let typeEle: Element = parent.querySelector(opt.class + ' .e-tbar-btn-text');
-        let type: string = typeEle.innerHTML.toLowerCase();
+        let type: string = typeEle.innerHTML;
         let val: string = opt.val(type);
         typeEle.innerHTML = val;
-        val = val.toLowerCase();
 
         this.selectOptions = isType ? { type: val } : { mode: val };
     }

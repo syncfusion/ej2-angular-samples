@@ -1,0 +1,29 @@
+{
+    "de": {
+        "timepicker": {
+            "placeholder": "Wählen Sie eine Uhrzeit aus"
+        }
+    },
+    "ar": {
+        "timepicker": {
+            "placeholder": "حدد الوقت"
+        }
+    },
+    "en": {
+        "timepicker": {
+            "placeholder": "Select a time"
+        }
+    },
+    "zh": {
+        "timepicker": {
+            "placeholder": "选择一个时间"
+            
+        }
+    },
+    "fr-CH": {
+        "timepicker": {
+            "placeholder": "Choisissez une heure"
+        }
+    }
+}
+

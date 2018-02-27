@@ -1,0 +1,33 @@
+<div id="action-description">
+        <p>
+                This sample visualizes the placing of pie charts on the maps. Pie chart is rendered with the age group detais of top 6 largest countries.
+           </p>
+</div>
+
+<div class="control-section">
+    <div align='center'>
+        <ejs-maps id='container' style="display:block;" [legendSettings]= 'legendSettings'
+         [titleSettings]="titleSettings"
+         [zoomSettings]='zoomSettings' [layers] = 'layers' (load)="load($event)">
+        </ejs-maps>
+    </div>
+    <div style="float: right; margin-right: 10px;">Source: <a href="https://en.wikipedia.org/wiki/List_of_countries_by_sex_ratio" target="_blank">en.wikipedia.org</a> </div>
+</div>
+<style> #container_LayerIndex_0_MarkerIndex_0_DataIndex_0, #container_LayerIndex_0_MarkerIndex_0_DataIndex_1, #container_LayerIndex_0_MarkerIndex_0_DataIndex_2,#container_LayerIndex_0_MarkerIndex_0_DataIndex_3, #container_LayerIndex_0_MarkerIndex_0_DataIndex_4, #container_LayerIndex_0_MarkerIndex_0_DataIndex_5{ position: absolute !important; margin-left:-35px; margin-top:-35px; } </style>
+<div id='description'>
+   
+        <p>
+                In this example, you can see how to render the pie chart as marker in map. Any custom HTML elements can be used as a marker. 
+          
+              </p>
+          <br/>
+              <p style="font-weight: 500">Injecting Module</p>
+              <p>
+               Maps component features are segregated into individual feature-wise modules. To use marker template, you need to inject <code>Marker</code> module using <code>Maps.Inject(Marker)</code> method.
+              </p>
+              <p>
+                  More information on the markers can be found in this 
+                  <a target="_blank" href="">documentation section</a>.
+              </p>
+
+</div>

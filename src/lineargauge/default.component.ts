@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-lineargauge';
 
 /**
  * Sample for Default linear gauge
@@ -9,17 +10,18 @@ import { Component, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class DefaultComponent {
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     //Initializing Axes
     public Axes: Object[] = [{
-        line: {
-            color: '#9E9E9E'
-        },
         pointers: [{
             value: 10,
             height: 15,
             width: 15,
             placement: 'Near',
-            color: '#757575',
             offset: -50,
             markerType: 'Triangle'
         }],
@@ -32,14 +34,11 @@ export class DefaultComponent {
             interval: 2
         },
         labelStyle: {
-            font: {
-                color: '#424242'
-            },
             offset: 48
         }
     }];
     public Annotation: Object = [{
-        content: '<div id="pointer" style="width:70px"><h1 style="font-size:14px;color:#424242">10 MPH</h1></div>',
+        content: '<div id="pointer" style="width:70px"><h1 style="font-size:14px;">10 MPH</h1></div>',
         axisIndex: 0,
         axisValue: 10,
         x: 10,

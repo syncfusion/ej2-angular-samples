@@ -81,7 +81,7 @@ export class TornadoChartComponent {
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     };
     public tooltipRender(args: ITooltipRenderEventArgs): void {
-        args.textCollections = args.textCollections.indexOf('-') > 0 ? args.textCollections.replace('-', '') : args.textCollections;
+        args.text = args.text.indexOf('-') > 0 ? args.text.replace('-', '') : args.text;
     };
     constructor() {
         //code

@@ -50,7 +50,7 @@ export class PyramidComponent {
         fill: 'red', mode: 'Drop'
     };
     public explode: boolean = true;
-    public tooltip: Object = { enable: true, format: '${point.x} : ${point.y} cal' };
+    public tooltip: Object = { enable: true, format: '${point.x} : <b>${point.y} cal</b>' };
     public title: string = 'Food Comparison Chart';
     constructor() {
         //code

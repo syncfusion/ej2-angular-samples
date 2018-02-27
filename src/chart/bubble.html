@@ -5,12 +5,12 @@
 </div>
 <div class="control-section">
         <div align='center'>
-            <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-                [title]='title' [tooltip]='tooltip' (pointRender)='pointRender($event)' [legendSettings]='legend'>
+            <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+                [title]='title' [tooltip]='tooltip' (pointRender)='pointRender($event)' [legendSettings]='legend' (load)='load($event)'>
                 <e-series-collection>
                     <e-series [dataSource]='data' [minRadius]='minRadius' [maxRadius]='maxRadius' type='Bubble' xName='x' yName='y' size='size' name='Pound' [marker]='marker'> </e-series>
                 </e-series-collection>
-            </ej-chart>
+            </ejs-chart>
         </div>
         <div style="float: right; margin-right: 10px; margin-top: -5px">            
         </div>

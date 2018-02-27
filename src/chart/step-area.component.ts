@@ -39,8 +39,10 @@ export class StepAreaChartComponent {
     public primaryYAxis: Object = {
         title: 'Production (Billion as kWh)',
         valueType: 'Double',
-        majorGridLines: { width: 0 },
-        labelFormat: '{value}B'
+        labelFormat: '{value}B',
+        lineStyle: { width: 0 },
+        majorTickLines: { width: 0 },
+        minorTickLines: { width: 0 }
     };
     public marker: Object = {
         visible: false

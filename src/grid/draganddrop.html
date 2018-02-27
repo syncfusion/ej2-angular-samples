@@ -7,23 +7,23 @@
 
     <div class='e-mastertext'>Drag and Drop Rows between two Grids</div>
     <div style="display: inline-block">
-        <ej-grid id='Grid' [dataSource]='srcData' [allowPaging]="true" [pageSettings]="pageOptions" [allowSelection]="true" [allowRowDragAndDrop]="true"
+        <ejs-grid id='Grid' [dataSource]='srcData' [allowPaging]="true" [pageSettings]="pageOptions" [allowSelection]="true" [allowRowDragAndDrop]="true"
             [selectionSettings]="selectionOptions" [rowDropSettings]="srcDropOptions" width="49%">
             <e-columns>
-                <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right"></e-column>
+                <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
                 <e-column field='CustomerName' headerText='Customer Name' width='130'></e-column>
-                <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right"></e-column>
+                <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right'></e-column>
             </e-columns>
-            </ej-grid>
+            </ejs-grid>
 
-            <ej-grid id='DestGrid' [dataSource]='destData' [allowPaging]="true" [pageSettings]="pageOptions" [allowSelection]="true"
+            <ejs-grid id='DestGrid' [dataSource]='destData' [allowPaging]="true" [pageSettings]="pageOptions" [allowSelection]="true"
                 [allowRowDragAndDrop]="true" [selectionSettings]="selectionOptions" [rowDropSettings]="destDropOptions" width="49%">
                 <e-columns>
-                    <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right"></e-column>
+                    <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
                     <e-column field='CustomerName' headerText='Customer Name' width='130'></e-column>
-                    <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right"></e-column>
+                    <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right'></e-column>
                 </e-columns>
-                </ej-grid>
+                </ejs-grid>
     </div>
 
     <div id='description'>

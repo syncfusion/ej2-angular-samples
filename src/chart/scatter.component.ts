@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ChartDataService } from './chartdata.service';
+import { scatterData } from './scatter-data';
 import { Browser } from '@syncfusion/ej2-base';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
 
@@ -18,33 +18,46 @@ export class ScatterChartComponent {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '80%';
 
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Height (cm)',
-        minimum: 145,
-        maximum: 185,
-        majorGridLines: { width: 0 },
-        edgeLabelPlacement: 'Shift',
-        labelFormat: '{value}cm'
+           minimum: 100,
+            maximum: 220,
+            majorGridLines: { width: 0 },
+            edgeLabelPlacement: 'Shift',
+            title: 'Height in Inches'
+
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Weight (kg)',
-        minimum: 60,
-        maximum: 90,
-        labelFormat: '{value}kg',
-        rangePadding: 'None'
+                minimum: 50,
+                maximum: 80,
+                majorTickLines: {
+                    width: 0
+                },
+                lineStyle: {
+                    width: 0
+                },
+                  title: 'Weight in Pounds',
+                rangePadding: 'None'
 
     };
-    public marker: Object = {
+    public marker1: Object = {
        visible: false,
-       height: 10,
-       width: 10
+       width: 12,
+       height: 12,
+       shape:  'Circle' 
+    };
+    public marker2: Object = {
+       visible: false,
+       width: 12,
+       height: 12,
+       shape: 'Diamond'
     };
     public tooltip: Object = {
-        enable: true
+        enable: true,
+        format: 'Weight: <b>${point.x} lbs</b> <br/> Height: <b>${point.y}"</b>'
     };
 
     public load(args: ILoadedEventArgs): void {
@@ -53,8 +66,8 @@ export class ScatterChartComponent {
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     };
     public title: string = 'Height vs Weight';
-    public series1: Object = ChartDataService.prototype.GetScatterData().series1;
-    public series2: Object = ChartDataService.prototype.GetScatterData().series2;
+    public series1: Object = scatterData.getMaleData;
+    public series2: Object = scatterData.getFemaleData;
     constructor() {
         //code
      };

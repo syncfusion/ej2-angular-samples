@@ -2,32 +2,33 @@ import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/
 import { RouterModule } from '@angular/router';
 
 import { DateRangePickerModule } from '@syncfusion/ej2-ng-calendars';
+import { DropDownListModule } from '@syncfusion/ej2-ng-dropdowns';
 
 import { DefaultDateRangePickerComponent } from './default.component';
-import { GlobalizationComponent } from './globalization.component';
 import { DateRangeComponent } from './daterange.component';
 import { DaySpanComponent } from './dayspan.component';
 import { PresetsComponent } from './presets.component';
+import { FormatComponent } from './format.component';
 
 
 export const dateRangePickerAppRoutes: Object[] = [
     { path: ':theme/daterangepicker/default', component: DefaultDateRangePickerComponent, name: 'Default Functionalities', category: 'DateRangePicker' },
     { path: ':theme/daterangepicker/daterange', component: DateRangeComponent, name: 'Date Range', category: 'DateRangePicker' },
     { path: ':theme/daterangepicker/dayspan', component: DaySpanComponent, name: 'Day Span', category: 'DateRangePicker' },
-    { path: ':theme/daterangepicker/globalization', component: GlobalizationComponent, name: 'Globalization', category: 'DateRangePicker' },
+	{ path: ':theme/daterangepicker/format', component: FormatComponent, name: 'Format', category: 'DateRangePicker', type:'new' },
     { path: ':theme/daterangepicker/presets', component: PresetsComponent, name: 'Preset Ranges', category: 'DateRangePicker' },
 ];
 
 export const DateRangePickerRouter: ModuleWithProviders = RouterModule.forChild(dateRangePickerAppRoutes);
 
 @NgModule({
-    imports: [DateRangePickerRouter, DateRangePickerModule],
+    imports: [DateRangePickerRouter, DateRangePickerModule,DropDownListModule],
     declarations: [
         DefaultDateRangePickerComponent,
-        GlobalizationComponent,
         DateRangeComponent,
         DaySpanComponent,
-        PresetsComponent
+        PresetsComponent,
+		FormatComponent
 
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

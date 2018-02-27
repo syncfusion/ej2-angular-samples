@@ -4,7 +4,7 @@
    </p>
 </div>
 <div class="control-section">
-    <ej-circulargauge style='display:block;'>
+    <ejs-circulargauge style='display:block;' (load)='load($event)'>
         <e-axes>
             <e-axis radius='80%' startAngle=230 endAngle=130 [majorTicks]='ticks' [minorTicks]='ticks' [lineStyle]='lineStyle' [labelStyle]="labelStyle">
                 <e-pointers>
@@ -13,7 +13,7 @@
                 </e-pointers>
             </e-axis>
         </e-axes>
-    </ej-circulargauge>
+    </ejs-circulargauge>
 </div>
 <div id="description">
     <p style="font-weight: 500">Description</p>

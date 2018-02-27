@@ -6,12 +6,12 @@
     <h4 class="listheader">National Sports</h4>
 
     <!-- Tooltip element -->
-    <ej-tooltip #tooltip id="Tooltip" style="display:block;" class="e-prevent-select" content='Loading...' target="#countrylist [title]" position='right center'
+    <ejs-tooltip #tooltip id="Tooltip" style="display:block;" class="e-prevent-select" content='Loading...' target="#countrylist [title]" position='RightCenter'
         (beforeRender)="onBeforeRender($event)">
 
         <!-- ListView element -->
-        <ej-listview id='countrylist' [dataSource]='listViewData' [fields]='fields'></ej-listview>
-    </ej-tooltip>
+        <ejs-listview id='countrylist' [dataSource]='listViewData' [fields]='fields'></ejs-listview>
+    </ejs-tooltip>
 </div>
 
 <div id="description">

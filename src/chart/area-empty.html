@@ -6,7 +6,7 @@
 </div>
 <div class="control-section">
     <div align='center'>
-        <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' [chartArea]='chartArea' [width]='width' align='center'
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' [chartArea]='chartArea' [width]='width' align='center'
             [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Area' xName='x' yName='y' [marker]='marker' name='France' opacity=0.8 width=2 border-color='transparent'>
@@ -14,7 +14,7 @@
                 <e-series [dataSource]='data1' type='Area' xName='x' yName='y' [marker]='marker' name='US' opacity=0.8 width=2 border-color='transparent'>
                 </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
     </div>
 </div>
 <div id="description">

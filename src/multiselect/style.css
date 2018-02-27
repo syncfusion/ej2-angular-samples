@@ -1,8 +1,9 @@
-.control-styles {
-    margin: 0 auto; 
-    width:400px; 
-    padding-top: 30px
+#multiselect-sample.control-section{
+    width: 80%;
+    margin: 0 auto;
+    min-width: 185px;
 }
-.e-bigger .control-styles {
-    width:300px;
+
+.e-bigger #multiselect-sample.control-section {
+    width: 100%;
 }

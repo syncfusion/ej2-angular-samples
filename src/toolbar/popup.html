@@ -6,7 +6,7 @@
 <div class="control-section e-tbar-section">
     <div class="e-sample-resize-container">
         <!-- Render the Toolbar Component -->
-        <ej-toolbar overflowMode='Popup'>
+        <ejs-toolbar overflowMode='Popup'>
             <e-items>
                 <e-item prefixIcon='e-cut-icon tb-icons' tooltipText='Cut' text='Cut' showTextOn='Overflow' overflow='Show'></e-item>
                 <e-item prefixIcon='e-copy-icon tb-icons' tooltipText='Copy' text='Copy' showTextOn='Overflow' overflow='Show'></e-item>
@@ -35,14 +35,37 @@
                 <e-item prefixIcon='e-picture-icon tb-icons' text='Picture' tooltipText='Picture' showTextOn='Overflow'></e-item>
                 <e-item prefixIcon='e-design-icon tb-icons' text='Design' tooltipText='Design' showTextOn='Overflow'></e-item>
             </e-items>
-        </ej-toolbar>
+        </ejs-toolbar>
+        <br>
+        <br>
+        <ejs-toolbar overflowMode='Popup'>
+           <e-items>
+                <e-item [template]='ele' overflow='Show'></e-item>
+                <e-item prefixIcon='e-icon-day e-icons' tooltipText='Today' text='Today' overflow='Hide' align='Right'></e-item>
+                <e-item type='Separator'></e-item>
+                <e-item prefixIcon='e-icon-week e-icons' tooltipText='Week' text='Week' overflow='Hide' align='Right'></e-item>
+                <e-item prefixIcon='e-icon-month e-icons' tooltipText='Month' text='Month' overflow='Hide' align='Right'></e-item>
+                <e-item prefixIcon='e-icon-year e-icons' tooltipText='Year' text='Year' overflow='Hide' align='Right'></e-item>
+                <e-item prefixIcon='e-print e-icons' tooltipText='Print' text='Print' overflow='Hide' align='Right' showAlwaysInPopup=true></e-item>
+                <e-item prefixIcon='e-reccurence-icon e-icons' tooltipText='Sync' text='Sync' overflow='Hide' align='Right' showAlwaysInPopup=true></e-item>
+           </e-items>
+        </ejs-toolbar>
     </div>
 </div>
 <div id="description">
     <p>
-        Popup mode display can be enabled to view primary priority items in toolbar and secondary priority items in the popup. Popup
-        will be shown when content exceeds the available viewing area.
+        Popup mode display can be enabled to view primary priority items in toolbar and secondary priority items in the popup.
     </p>
+    <ul>
+        <li>
+            In first Toolbar, the popup will be shown when the content exceeds the available viewing area.
+        </li>
+        <li>
+            The second Toolbar is set with priority for specific toolbar items using <strong><code> <a target="_blank" class="code"
+            href="http://ej2.syncfusion.com/documentation/toolbar/api-item.html#showalwaysinpopup-boolean">showAlwaysInPopup</a></code> </strong>, which is always displayed in the popup.
+        </li>
+    </ul>
+    <br>
     <br>
     <p>
         You can set priority to toolbar item using <strong><code> <a target="_blank" class="code"

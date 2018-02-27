@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { data } from './data';
+import { orderDetails } from './data';
 
 @Component({
     selector: 'ej2-grid-container',
@@ -9,6 +9,6 @@ export class DefaultComponent implements OnInit {
     public data: Object[] = [];
 
     ngOnInit(): void {
-        this.data = data;
+        this.data = orderDetails;
     }
 }

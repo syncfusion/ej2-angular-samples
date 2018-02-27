@@ -1,0 +1,86 @@
+<div class="control-section">
+    <div class="col-lg-9 content-wrapper">
+        <ejs-schedule #scheduleObj width='100%' height='550px' width='100%' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
+            [(currentView)]="currentView">
+            <e-views>
+                <e-view option="Agenda" [allowVirtualScrolling]="virtualscroll"></e-view>
+            </e-views>
+        </ejs-schedule>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <div id="property" class="property-panel-table" title="Properties">
+                    <table id="property" title="Properties" style="width: 100%">
+                        <tbody>
+                            <tr style="height: 50px">
+                                <td style="width: 50%">
+                                    <div>Allow Virtual Scrolling
+                                    </div>
+                                </td>
+                                <td style="width: 50%;">
+                                    <div>
+                                        <ejs-dropdownlist id="allow-virtual-scroll" #virtualScrollObj [dataSource]='datas' [value]='value' (change)='change($event)'
+                                            popupHeight="200px"></ejs-dropdownlist>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                <td style="width: 50%">
+                                    <div> Hide Empty Days
+                                    </div>
+                                </td>
+                                <td style="width: 50%;">
+                                    <div>
+                                        <ejs-dropdownlist id="hide-empty-days" #hideEmptyDaysObj [dataSource]='datas' [value]='values' (change)='onChange($event)'
+                                            popupHeight="200px"></ejs-dropdownlist>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                <td style="width: 50%">
+                                    <div> Days Count
+                                    </div>
+                                </td>
+                                <td style="width: 50%;">
+                                    <div>
+                                        <div>
+                                            <ejs-numerictextbox #textbox min="1" max="15" value="7" format="n0" (change)="onCountChange($event)">
+                                            </ejs-numerictextbox>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This demo showcases the agenda view and the configurations available in it.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        In this demo, Agenda view is set as active view on Schedule and made its
+        <code>allowVirtualScrolling</code> option as false. With this settings, the Agenda view loads the initial data for the next 7 days count from the date
+        value assigned to the
+        <code>selectedDate</code> property of the Schedule. The initial data loading for 7 days count is due to the default value assigned to the
+        <code>agendaDaysCount</code> property which can be customized as per the user needs.
+    </p>
+    <p>
+        When the
+        <code>allowVirtualScrolling</code> property is set to true, the user is allowed to scroll through all the events simply by scrolling up and down upto
+        the last event available in Schedule.
+    </p>
+    <p>
+        By default, the days which doesn’t have any events will be hidden on this view – but by setting
+        <code>hideEmptyAgendaDays</code> property to false will allow the
+        <code>No Events</code> text to be displayed against the dates that has no events.
+    </p>
+</div>

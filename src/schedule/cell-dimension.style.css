@@ -1,0 +1,21 @@
+    .schedule-cell-dimension.e-schedule .e-vertical-view .e-date-header-wrap table th {
+        width: 200px;
+    }
+
+    .schedule-cell-dimension.e-schedule .e-vertical-view .e-time-cells-wrap table th {
+        height: 100px;
+    }
+
+    .schedule-cell-dimension.e-schedule .e-vertical-view .e-work-cells {
+        width: 200px;
+        height: 100px;
+    }
+
+    .schedule-cell-dimension.e-schedule .e-month-view .e-work-cells,
+    .schedule-cell-dimension.e-schedule .e-month-view .e-header-cells {
+        width: 200px;
+    }
+
+    .schedule-cell-dimension.e-schedule .e-month-view .e-work-cells {
+        height: 200px;
+    }

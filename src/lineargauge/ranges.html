@@ -5,8 +5,8 @@
 </div>
 <div class="control-section">
     <div class="col-md-8">
-        <ej-lineargauge id='rangeContainer' #gauge style='display:block;' orientation='Horizontal' [axes]='Axes' [annotations]='Annotation'>
-        </ej-lineargauge>
+        <ejs-lineargauge (load)='load($event)' id='rangeContainer' #gauge style='display:block;' orientation='Horizontal' [axes]='Axes' [annotations]='Annotation'>
+        </ejs-lineargauge>
     </div>
     <div class="col-md-4 property-section">
         <div class="property-panel-section">

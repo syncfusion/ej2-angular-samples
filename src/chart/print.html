@@ -1,11 +1,11 @@
 <div class="control-section">
     <div class="col-md-9">
-        <ej-chart style='display:block;' #chart id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
-            [chartArea]='chartArea' (pointRender)='pointRender($event)'>
+        <ejs-chart style='display:block;' #chart id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
+            [chartArea]='chartArea' (pointRender)='pointRender($event)' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Column' xName='x' yName='y' width=2> </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
     </div>
     <div class="col-md-3 property-section">
         <div class="property-panel-section">
@@ -15,7 +15,7 @@
                     <tr id="button-control" style="height: 50px">
                         <td align='center'>
                             <div>
-                                <button ej-button id="togglebtn" iconCss='e-icons e-play-icon' cssClass= 'e-flat' isPrimary=true (click)='mode($event)'>Print</button>
+                                <button ejs-button id="togglebtn" iconCss='e-icons e-play-icon' cssClass= 'e-flat' isPrimary=true (click)='mode($event)'>Print</button>
                             </div>
                         </td>
                     </tr>

@@ -6,13 +6,13 @@
 </div>
 <div class="control-section">
     <div align='center'>
-        <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
             [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Bar' xName='x' yName='y' name='Imports' [marker]='marker'> </e-series>
                 <e-series [dataSource]='data1' type='Bar' xName='x' yName='y' name='Exports' [marker]='marker'> </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
     </div>
     <div style="float: right; margin-right: 10px; margin-top: -5px">Source:
         <a href="https://www.gov.uk/" target='_blank'>www.gov.uk</a>

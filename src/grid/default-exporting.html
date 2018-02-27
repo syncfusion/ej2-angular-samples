@@ -1,14 +1,14 @@
 <div class="control-section">
-    <ej-grid #grid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings' [toolbar]='toolbar' (toolbarClick)='toolbarClick($event)'
-        [allowExcelExport]='true' [allowPdfExport]='true' [allowGrouping]="true" [groupSettings]="groupOptions">
+    <ejs-grid #grid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings' [toolbar]='toolbar' (toolbarClick)='toolbarClick($event)'
+                [allowExcelExport]='true' [allowPdfExport]='true' [allowGrouping]="true" [groupSettings]="groupOptions" (dataBound)='dataBound()' (load)='load()'>
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right" isPrimaryKey='true'></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' isPrimaryKey='true'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign='Right'></e-column>
             <e-column field='CustomerID' headerText='Customer ID' width='120'></e-column>
-            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right"></e-column>
-            <e-column field='ShipName' headerText='Ship Name' width='170'></e-column>
+            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right'></e-column>            
             <e-column field='ShipCountry' headerText='Ship Country' width='150'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
     <div id="action-description">
         <p>This sample demonstrates the client-side exporting of the Grid, which allows you to export its data to the Excel, Pdf and CSV formats.
             Use the toolbar buttons to export Grid data to desired format.

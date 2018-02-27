@@ -1,0 +1,163 @@
+  /* content area styles */
+
+  .responsive {
+    width: 80%;
+}
+
+@media(max-width:550px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+#overview,
+#properties,
+#content{
+    padding:0px 0px 22px
+}
+
+#text{
+    padding:0px 0px 17px;
+}
+.center-align {
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    color: #000000;
+    font-weight: 500;
+    line-height: 24px;
+    font-size: 18px;
+    margin: 0px;
+}
+
+body {
+    font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif";
+    margin: 0px;
+    font-size: 14px;
+}
+/* End of content area styles */
+/* property content styles */
+
+#types {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 2px;
+}
+
+.inline-element.right.e-btn {
+    color: white;
+    border: none;
+    width: 75px;
+}
+
+.inline-element {
+    display: inline-block;
+}
+
+.right {
+    float: right;
+}
+
+.list-group-item {
+    border: none;
+    padding: 60px 10px 10px 45px;
+    font-size: 14px;
+}
+
+.center {
+    text-align: center;
+    display: none;
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.sb-content-tab .center {
+    display: block;
+}
+/* end of property content styles */
+/* sidebar styles */
+
+.sb-content-tab #wrapper {
+    display: none;
+}
+
+.content {
+    margin-bottom: 20px;
+    overflow-y: auto;
+}
+
+#wrapper #close:before {
+    content: "\e945";
+}
+
+.title-header {
+    text-align: center;
+    font-size: 18px;
+    padding: 15px;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.e-sidebar .title-header #close {
+    color: #fafafa;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+.e-sidebar.e-left .title-header #close {
+    float: right;
+}
+
+.e-sidebar.e-right .title-header #close {
+    float: left;
+}
+
+#default-sidebar {
+    background: #2196f3;
+    color: #ffffff;
+}
+
+#hamburger.menu {
+    font-size: 25px;
+    cursor: pointer;
+    float: left;
+    line-height: 50px;
+    position: absolute;
+    z-index: 1000;
+}
+
+#hamburger.menu:before {
+    content: '\e7f6';
+}
+
+#hamburger.menu.e-rtl{
+    position:relative;
+    float: right;
+}
+
+#wrapper #close:before {
+    content: "\e945";
+}
+
+.e-sidebar .title-header #close {
+    color: #fafafa;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+.e-sidebar.e-left .title-header #close {
+    float: right;
+}
+
+.e-sidebar.e-right .title-header #close {
+    float: left;
+}
+
+/* end of sidebar styles */

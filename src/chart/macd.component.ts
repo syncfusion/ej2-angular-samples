@@ -16,8 +16,7 @@ export class MacdIndicatorComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
-        intervalType: 'Months', majorGridLines: { width: 0 },
-        skeleton: 'yMd',
+        majorGridLines: { width: 0 },
         crosshairTooltip: { enable: true }, zoomFactor: 0.2, zoomPosition: 0.6
     };
     //Initializing Primary Y Axis
@@ -48,10 +47,10 @@ export class MacdIndicatorComponent {
 
     }];
     public zoomSettings: Object = {
-        enableMouseWheelZooming: true,
-        enablePinchZooming: true,
+
         enableSelectionZooming: true,
-        mode: 'X'
+        mode: 'X',
+        enablePan : true
     };
     public title: string = 'AAPL 2012-2017';
     public tooltip: Object = {

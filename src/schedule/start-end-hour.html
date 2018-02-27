@@ -1,0 +1,72 @@
+<div class="control-section">
+    <div class="col-lg-9 content-wrapper">
+        <ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" [currentView]="currentView"
+            [workHours]="workHours" [startHour]="startHour" [endHour]="endHour" (eventRendered)="oneventRendered($event)">
+            <e-views>
+                <e-view option="Day"></e-view>
+                <e-view option="Week"></e-view>
+                <e-view option="WorkWeek"></e-view>
+                <e-view option="Month"></e-view>
+            </e-views>
+        </ejs-schedule>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <div id="property" class="property-panel-table" title="Properties">
+                    <table id="property" title="Properties" style="width: 100%">
+                        <tbody>
+                            <tr style="height: 50px">
+                                <td style="width: 30%">
+                                    <div> Start Hour
+                                    </div>
+                                </td>
+                                <td style="width: 70%;">
+                                    <div>
+                                        <ejs-timepicker #ejStartTimePicker id="startTime" [value]="startdate" format='HH:mm'></ejs-timepicker>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                <td style="width: 30%">
+                                    <div>End Hour
+                                    </div>
+                                </td>
+                                <td style="width: 70%;">
+                                    <div>
+                                        <ejs-timepicker #ejEndTimePicker id="endTime" [value]="enddate" format='HH:mm'></ejs-timepicker>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                <td>
+                                    <div>
+                                        <button ejs-button id='submit' (click)="onSubmit()">Submit</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This demo depicts how to restrict the start and end hours of Schedule, thus limiting it to display only the given hour range.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        In this demo, the Schedule is made to display from 6 AM to 6 PM and the rest of the hours are hidden, as it is restricted
+        to start from
+        <code>06:00</code> hours and end on
+        <code>18:00</code> hours by setting to
+        <code>startHour</code> and
+        <code>endHour</code> properties respectively.
+    </p>
+</div>

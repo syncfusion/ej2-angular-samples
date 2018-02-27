@@ -1,0 +1,99 @@
+ /* sample-level styles */
+
+ .center-align {
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 20px;
+    padding: 15px;
+}
+.title.default{
+	padding: 25px 15px 15px;
+}
+
+#hamburger.default{
+	padding: 9px 15px 0px;
+}
+
+#wrapper .column {
+    display: inline-block;
+    padding: 10px;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.center {
+    text-align: center;
+    display: none;
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.sb-content-tab .center {
+    display: block;
+}
+
+.sb-content-tab #wrapper {
+    display: none;
+}
+
+#default-sidebar {
+    background-color: rgb(25, 118, 210);
+    color: #ffffff;
+}
+
+#default-sidebar .close-btn:hover {
+    color: rgba(0, 0, 0, .87);
+    background-color: #fafafa;
+}
+/* sample-level styles */
+
+#hamburger.menu {
+    font-size: 25px;
+    cursor: pointer;
+    float: left;
+    line-height: 50px;
+    position: absolute;
+    z-index: 1000;
+}
+
+#hamburger.menu:before {
+    content: '\e7f6';
+}
+
+#hamburger.menu.e-rtl{
+    position:relative;
+    float: right;
+}
+
+#wrapper #close:before {
+    content: "\e945";
+}
+
+.e-sidebar .title-header #close {
+    color: #fafafa;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+.e-sidebar.e-left .title-header #close {
+    float: right;
+}
+
+.e-sidebar.e-right .title-header #close {
+    float: left;
+}
+
+.title-header {
+    text-align: center;
+    font-size: 18px;
+    padding: 15px;
+}

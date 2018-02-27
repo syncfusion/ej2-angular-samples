@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
-import { data } from './data';
+import { orderDetails } from './data';
 import { SelectionService } from '@syncfusion/ej2-ng-grids';
 
 @Component({
@@ -13,7 +13,7 @@ export class CheckboxSelectionComponent implements OnInit {
     public selectOptions: Object;
 
     public ngOnInit(): void {
-        this.data = data.slice(0, 30);
+        this.data = orderDetails;
         this.selectOptions = { persistSelection: true };
     }
 }

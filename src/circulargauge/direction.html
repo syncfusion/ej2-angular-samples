@@ -6,13 +6,13 @@
 </div>
 <div class="control-section">
     <div class="col-md-8">
-        <ej-circulargauge #direction='' id='direction-container' style='display:block;' (axisLabelRender)="onLabelRender($event)">
+        <ejs-circulargauge #direction='' (load)='load($event)' id='direction-container' style='display:block;' (axisLabelRender)="onLabelRender($event)">
             <e-axes>
                 <e-axis [lineStyle]='lineStyle' radius='70%' [labelStyle]='labelStyle' [majorTicks]='majorTicks' [minorTicks]='minorTicks'
                     minimum=0 maximum=8 startAngle=0 endAngle=360 [ranges]='ranges' [pointers]='pointers'>
                 </e-axis>
             </e-axes>
-        </ej-circulargauge>
+        </ejs-circulargauge>
     </div>
     <div class="col-md-4 property-section">
         <div class="property-panel-section">

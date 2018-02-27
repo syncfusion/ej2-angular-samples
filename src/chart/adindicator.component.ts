@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, IAxisLabelRenderEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
-import {chartData} from './financial-data';
+import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -17,10 +17,8 @@ export class AccumulationDistributionComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
-        intervalType: 'Months',
         majorGridLines: { width: 0 },
         zoomFactor: 0.2, zoomPosition: 0.6,
-        skeleton: 'yMd',
         crosshairTooltip: { enable: true },
     };
     //Initializing Primary Y Axis
@@ -52,15 +50,15 @@ export class AccumulationDistributionComponent {
             }]
 
     }];
-     public chartArea : Object = {
-      border: { width : 0}
+    public chartArea: Object = {
+        border: { width: 0 }
     };
     //Initializing Zooming
     public zoomSettings: Object = {
-        enableMouseWheelZooming: true,
-        enablePinchZooming: true,
+
         enableSelectionZooming: true,
-        mode: 'X'
+        mode: 'X',
+        enablePan : true
     };
     //Initializing Title
     public title: string = 'AAPL 2012-2017';
@@ -71,13 +69,13 @@ export class AccumulationDistributionComponent {
         enable: true, lineType: 'Vertical'
     };
     public axisLabelRender(args: IAxisLabelRenderEventArgs): void {
-       if (args.axis.name === 'secondary') {
-                let value: number = parseInt(args.text) / 1000000000;
-                args.text = String(value) + 'bn';
-            }
+        if (args.axis.name === 'secondary') {
+            let value: number = parseInt(args.text) / 1000000000;
+            args.text = String(value) + 'bn';
+        }
     };
     public legendSettings: Object = {
-      visible: false
+        visible: false
     };
     public width: Object = Browser.isDevice ? '100%' : '80%';
     public period: number = 3;

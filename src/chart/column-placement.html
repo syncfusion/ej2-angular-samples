@@ -5,7 +5,7 @@
 </div>
 <div class="control-section">
     <div align='center'>
-        <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
             [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [enableSideBySidePlacement]='placement'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Total' width=2 [marker]='marker1' columnWidth=0.5>
@@ -17,7 +17,7 @@
                 <e-series [dataSource]='data3' type='Column' xName='x' yName='y' name='Grapes' width=2 [marker]='marker' columnWidth=0.2>
                 </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
     </div>
 </div>
 <div id="description">

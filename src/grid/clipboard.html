@@ -4,16 +4,16 @@
     </p>
 </div>
 <div class="control-section">
-    <ej-grid #grid [dataSource]='data' allowPaging='true' [enableHover]="false" [allowSelection]="true" [selectionSettings]="selectOptions"
+    <ejs-grid #grid [dataSource]='data' allowPaging='true' [enableHover]="false" [allowSelection]="true" [selectionSettings]="selectOptions"
          [toolbar]='toolbar' (toolbarClick)='clickHandler($event)'>
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right"></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
-            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign="right"></e-column>
-            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign="right"></e-column>
-            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign="right"></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign='Right'></e-column>
+            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right'></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign='Right'></e-column>
         </e-columns>
-        </ej-grid>
+        </ejs-grid>
         <div id="description">
             <p>Selected rows or cells data in the Grid can be copied into clipboard using the Keyboard shortcuts and <code><a target="_blank" class="code"
         href="http://ej2.syncfusion.com/angular/documentation/grid/api-grid.html#copy">copy

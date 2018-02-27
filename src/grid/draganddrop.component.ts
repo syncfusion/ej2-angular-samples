@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { data } from './data';
+import { orderDetails } from './data';
 import { RowDDService, SelectionService } from '@syncfusion/ej2-ng-grids';
 
 
@@ -23,9 +23,9 @@ export class DragAndDropComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.srcData = data.slice(0, 24);
+        this.srcData = orderDetails;
         this.pageOptions = { pageCount: 2 };
-        this.selectionOptions = { type: 'multiple' };
+        this.selectionOptions = { type: 'Multiple' };
         this.srcDropOptions = { targetID: 'DestGrid' };
         this.destDropOptions = { targetID: 'Grid' };
     }

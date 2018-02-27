@@ -1,0 +1,51 @@
+   .schedule-event-template.e-schedule .e-vertical-view .e-content-wrap .e-appointment {
+        border-radius: 8px;
+    }
+
+    .schedule-event-template.e-schedule .e-vertical-view .e-content-wrap .e-appointment .e-appointment-details {
+        padding: 0;
+        height: 100%;
+    }
+
+    .schedule-event-template.e-schedule .template-wrap {
+        height: 100%;
+        white-space: normal;
+    }
+
+    .schedule-event-template.e-schedule .template-wrap .image {
+        padding: 8px 0 4px;
+    }
+
+    .schedule-event-template.e-schedule .template-wrap .image img {
+        height: 100%;
+        width: 100%;
+        padding: 10px 25%;
+    }
+
+    .schedule-event-template.e-schedule .template-wrap .subject {
+        font-weight: 600;
+        font-size: 15px;
+        padding: 4px 4px 4px;
+        height: 25px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .schedule-event-template.e-schedule .template-wrap .time {
+        height: 50px;
+    }
+
+    .schedule-event-template.e-schedule .template-wrap .time,
+    .schedule-event-template.e-schedule .template-wrap .description {
+        font-size: 12px;
+        padding: 4px 6px 4px;
+        overflow: hidden;
+    }
+
+    .schedule-event-template.e-schedule .template-wrap .footer {
+        position: absolute;
+        bottom: 0;
+        height: 50px;
+        width: 100%;
+    }

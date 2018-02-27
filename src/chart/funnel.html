@@ -1,12 +1,12 @@
 <div class="control-section">
     <div class="col-md-9">
-        <ej-accumulationchart id="container" #funnel style='display:block;  width: 92%'  [tooltip]="tooltip" [title]="title" 
+        <ejs-accumulationchart id="container" #funnel style='display:block;  width: 92%'  [tooltip]="tooltip" [title]="title" 
         (load)='load($event)' (resized)='onChartResized($event)'>
             <e-accumulation-series-collection>
                 <e-accumulation-series [dataSource]='data' xName='x' yName='y' [neckWidth]="neckWidth" [neckHeight]="neckHeight" [gapRatio]="gapRatio"
                 [emptyPointSettings]="emptyPointSettings" width = "60%" height = "80%" [explode]="explode" [dataLabel]="dataLabel" type='Funnel'> </e-accumulation-series>
             </e-accumulation-series-collection>
-        </ej-accumulationchart>
+        </ejs-accumulationchart>
     </div>
     <div class="col-md-3 property-section">
         <div class="property-panel-section">

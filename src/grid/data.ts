@@ -9977,486 +9977,759 @@ export const orderData: Object[] = JSON.parse(stringData, (field, value) => {
 export const categoryData: Object[] = [
     {
         "CategoryName": "Beverages",
-        "ProductName": "Chai",
-        "QuantityPerUnit": "10 boxes x 20 bags",
-        "UnitsInStock": 39,
-        "Discontinued": true
+        'ProductID': 1,
+        'ProductName': 'Chai',
+        'SupplierID': 1,
+        'QuantityPerUnit': '10 boxes x 20 bags',
+        'UnitPrice': 18.00,
+        'UnitsInStock': 39,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Beverages",
-        "ProductName": "Chang",
-        "QuantityPerUnit": "24 - 12 oz bottles",
-        "UnitsInStock": 17,
-        "Discontinued": true
+        'ProductID': 2,
+        'ProductName': 'Chang',
+        'SupplierID': 1,
+        'QuantityPerUnit': '24 - 12 oz bottles',
+        'UnitPrice': 19.00,
+        'UnitsInStock': 17,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Beverages",
-        "ProductName": "Chartreuse verte",
-        "QuantityPerUnit": "750 cc per bottle",
-        "UnitsInStock": 69,
-        "Discontinued": true
+        'ProductID': 3,
+        'ProductName': 'Aniseed Syrup',
+        'SupplierID': 1,
+        'QuantityPerUnit': '12 - 550 ml bottles',
+        'UnitPrice': 10.00,
+        'UnitsInStock': 13,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Beverages",
-        "ProductName": "C\u00f4te de Blaye",
-        "QuantityPerUnit": "12 - 75 cl bottles",
-        "UnitsInStock": 17,
-        "Discontinued": true
+        'ProductID': 4,
+        'ProductName': 'Chef Anton\'s Cajun Seasoning',
+        'SupplierID': 2,
+        'QuantityPerUnit': '48 - 6 oz jars',
+        'UnitPrice': 22.00,
+        'UnitsInStock': 53,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Beverages",
-        "ProductName": "Ipoh Coffee",
-        "QuantityPerUnit": "16 - 500 g tins",
-        "UnitsInStock": 17,
-        "Discontinued": false
+        'ProductID': 5,
+        'ProductName': 'Chef Anton\'s Gumbo Mix',
+        'SupplierID': 2,
+        'QuantityPerUnit': '36 boxes',
+        'UnitPrice': 21.35,
+        'UnitsInStock': 0,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Beverages",
-        "ProductName": "Lakkalik\u00f6\u00f6ri",
-        "QuantityPerUnit": "500 ml",
-        "UnitsInStock": 57,
-        "Discontinued": true
+        'ProductID': 6,
+        'ProductName': 'Grandma\'s Boysenberry Spread',
+        'SupplierID': 3,
+        'QuantityPerUnit': '12 - 8 oz jars',
+        'UnitPrice': 25.00,
+        'UnitsInStock': 120,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Beverages",
-        "ProductName": "Laughing Lumberjack Lager",
-        "QuantityPerUnit": "24 - 12 oz bottles",
-        "UnitsInStock": 52,
-        "Discontinued": false
+        'ProductID': 7,
+        'ProductName': 'Uncle Bob\'s Organic Dried Pears',
+        'SupplierID': 3,
+        'QuantityPerUnit': '12 - 1 lb pkgs.',
+        'UnitPrice': 30.00,
+        'UnitsInStock': 15,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Beverages",
-        "ProductName": "Outback Lager",
-        "QuantityPerUnit": "24 - 355 ml bottles",
-        "UnitsInStock": 15,
-        "Discontinued": false
+        'ProductID': 8,
+        'ProductName': 'Northwoods Cranberry Sauce',
+        'SupplierID': 3,
+        'QuantityPerUnit': '12 - 12 oz jars',
+        'UnitPrice': 40.00,
+        'UnitsInStock': 6,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Beverages",
-        "ProductName": "Rh\u00f6nbr\u00e4u Klosterbier",
-        "QuantityPerUnit": "24 - 0.5 l bottles",
-        "UnitsInStock": 125,
-        "Discontinued": false
+        'ProductID': 9,
+        'ProductName': 'Mishi Kobe Niku',
+        'SupplierID': 4,
+        'QuantityPerUnit': '18 - 500 g pkgs.',
+        'UnitPrice': 97.00,
+        'UnitsInStock': 29,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Beverages",
-        "ProductName": "Sasquatch Ale",
-        "QuantityPerUnit": "24 - 12 oz bottles",
-        "UnitsInStock": 111,
-        "Discontinued": true
+        'ProductID': 10,
+        'ProductName': 'Ikura',
+        'SupplierID': 4,
+        'QuantityPerUnit': '12 - 200 ml jars',
+        'UnitPrice': 31.00,
+        'UnitsInStock': 31,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Beverages",
-        "ProductName": "Steeleye Stout",
-        "QuantityPerUnit": "24 - 12 oz bottles",
-        "UnitsInStock": 20,
-        "Discontinued": true
+        'ProductID': 11,
+        'ProductName': 'Queso Cabrales',
+        'SupplierID': 5,
+        'QuantityPerUnit': '1 kg pkg.',
+        'UnitPrice': 21.00,
+        'UnitsInStock': 22,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Condiments",
-        "ProductName": "Aniseed Syrup",
-        "QuantityPerUnit": "12 - 550 ml bottles",
-        "UnitsInStock": 13,
-        "Discontinued": true
+        'ProductID': 12,
+        'ProductName': 'Queso Manchego La Pastora',
+        'SupplierID': 5,
+        'QuantityPerUnit': '10 - 500 g pkgs.',
+        'UnitPrice': 38.00,
+        'UnitsInStock': 86,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Condiments",
-        "ProductName": "Chef Anton's Cajun Seasoning",
-        "QuantityPerUnit": "48 - 6 oz jars",
-        "UnitsInStock": 53,
-        "Discontinued": false
+        'ProductID': 13,
+        'ProductName': 'Konbu',
+        'SupplierID': 6,
+        'QuantityPerUnit': '2 kg box',
+        'UnitPrice': 6.00,
+        'UnitsInStock': 24,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Condiments",
-        "ProductName": "Genen Shouyu",
-        "QuantityPerUnit": "24 - 250 ml bottles",
-        "UnitsInStock": 39,
-        "Discontinued": false
+        'ProductID': 14,
+        'ProductName': 'Tofu',
+        'SupplierID': 6,
+        'QuantityPerUnit': '40 - 100 g pkgs.',
+        'UnitPrice': 23.25,
+        'UnitsInStock': 35,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Condiments",
-        "ProductName": "Grandma's Boysenberry Spread",
-        "QuantityPerUnit": "12 - 8 oz jars",
-        "UnitsInStock": 120,
-        "Discontinued": false
+        'ProductID': 15,
+        'ProductName': 'Genen Shouyu',
+        'SupplierID': 6,
+        'QuantityPerUnit': '24 - 250 ml bottles',
+        'UnitPrice': 15.50,
+        'UnitsInStock': 39,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Condiments",
-        "ProductName": "Gula Malacca",
-        "QuantityPerUnit": "20 - 2 kg bags",
-        "UnitsInStock": 27,
-        "Discontinued": true
+        'ProductID': 16,
+        'ProductName': 'Pavlova',
+        'SupplierID': 7,
+        'QuantityPerUnit': '32 - 500 g boxes',
+        'UnitPrice': 17.45,
+        'UnitsInStock': 29,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Condiments",
-        "ProductName": "Louisiana Fiery Hot Pepper Sauce",
-        "QuantityPerUnit": "32 - 8 oz bottles",
-        "UnitsInStock": 76,
-        "Discontinued": false
+        'ProductID': 17,
+        'ProductName': 'Alice Mutton',
+        'SupplierID': 7,
+        'QuantityPerUnit': '20 - 1 kg tins',
+        'UnitPrice': 39.00,
+        'UnitsInStock': 0,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Condiments",
-        "ProductName": "Louisiana Hot Spiced Okra",
-        "QuantityPerUnit": "24 - 8 oz jars",
-        "UnitsInStock": 4,
-        "Discontinued": false
+        'ProductID': 18,
+        'ProductName': 'Carnarvon Tigers',
+        'SupplierID': 7,
+        'QuantityPerUnit': '16 kg pkg.',
+        'UnitPrice': 62.50,
+        'UnitsInStock': 42,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Condiments",
-        "ProductName": "Northwoods Cranberry Sauce",
-        "QuantityPerUnit": "12 - 12 oz jars",
-        "UnitsInStock": 6,
-        "Discontinued": false
+        'ProductID': 19,
+        'ProductName': 'Teatime Chocolate Biscuits',
+        'SupplierID': 8,
+        'QuantityPerUnit': '10 boxes x 12 pieces',
+        'UnitPrice': 9.20,
+        'UnitsInStock': 25,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Condiments",
-        "ProductName": "Original Frankfurter gr\u00fcne So\u00dfe",
-        "QuantityPerUnit": "12 boxes",
-        "UnitsInStock": 32,
-        "Discontinued": false
+        'ProductID': 20,
+        'ProductName': 'Sir Rodney\'s Marmalade',
+        'SupplierID': 8,
+        'QuantityPerUnit': '30 gift boxes',
+        'UnitPrice': 81.00,
+        'UnitsInStock': 40,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Condiments",
-        "ProductName": "Sirop d'\u00e9rable",
-        "QuantityPerUnit": "24 - 500 ml bottles",
-        "UnitsInStock": 113,
-        "Discontinued": false
+        'ProductID': 21,
+        'ProductName': 'Sir Rodney\'s Scones',
+        'SupplierID': 8,
+        'QuantityPerUnit': '24 pkgs. x 4 pieces',
+        'UnitPrice': 10.00,
+        'UnitsInStock': 3,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Condiments",
-        "ProductName": "Vegie-spread",
-        "QuantityPerUnit": "15 - 625 g jars",
-        "UnitsInStock": 24,
-        "Discontinued": true
+        'ProductID': 22,
+        'ProductName': 'Gustaf\'s Knäckebröd',
+        'SupplierID': 9,
+        'QuantityPerUnit': '24 - 500 g pkgs.',
+        'UnitPrice': 21.00,
+        'UnitsInStock': 104,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Confections",
-        "ProductName": "Chocolade",
-        "QuantityPerUnit": "10 pkgs.",
-        "UnitsInStock": 15,
-        "Discontinued": true
+        'ProductID': 23,
+        'ProductName': 'Tunnbröd',
+        'SupplierID': 9,
+        'QuantityPerUnit': '12 - 250 g pkgs.',
+        'UnitPrice': 9.00,
+        'UnitsInStock': 61,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Confections",
-        "ProductName": "Gumb\u00e4r Gummib\u00e4rchen",
-        "QuantityPerUnit": "100 - 250 g bags",
-        "UnitsInStock": 15,
-        "Discontinued": true
+        'ProductID': 24,
+        'ProductName': 'Guaraná Fantástica',
+        'SupplierID': 10,
+        'QuantityPerUnit': '12 - 355 ml cans',
+        'UnitPrice': 4.50,
+        'UnitsInStock': 20,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Confections",
-        "ProductName": "Maxilaku",
-        "QuantityPerUnit": "24 - 50 g pkgs.",
-        "UnitsInStock": 10,
-        "Discontinued": true
+        'ProductID': 25,
+        'ProductName': 'NuNuCa Nuß-Nougat-Creme',
+        'SupplierID': 11,
+        'QuantityPerUnit': '20 - 450 g glasses',
+        'UnitPrice': 14.00,
+        'UnitsInStock': 76,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Confections",
-        "ProductName": "NuNuCa Nu\u00df-Nougat-Creme",
-        "QuantityPerUnit": "20 - 450 g glasses",
-        "UnitsInStock": 76,
-        "Discontinued": true
+        'ProductID': 26,
+        'ProductName': 'Gumbär Gummibärchen',
+        'SupplierID': 11,
+        'QuantityPerUnit': '100 - 250 g bags',
+        'UnitPrice': 31.23,
+        'UnitsInStock': 15,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Confections",
-        "ProductName": "Pavlova",
-        "QuantityPerUnit": "32 - 500 g boxes",
-        "UnitsInStock": 29,
-        "Discontinued": false
+        'ProductID': 27,
+        'ProductName': 'Schoggi Schokolade',
+        'SupplierID': 11,
+        'QuantityPerUnit': '100 - 100 g pieces',
+        'UnitPrice': 43.90,
+        'UnitsInStock': 49,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Confections",
-        "ProductName": "Schoggi Schokolade",
-        "QuantityPerUnit": "100 - 100 g pieces",
-        "UnitsInStock": 49,
-        "Discontinued": true
+        'ProductID': 28,
+        'ProductName': 'Rössle Sauerkraut',
+        'SupplierID': 12,
+        'QuantityPerUnit': '25 - 825 g cans',
+        'UnitPrice': 45.60,
+        'UnitsInStock': 26,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Confections",
-        "ProductName": "Scottish Longbreads",
-        "QuantityPerUnit": "10 boxes x 8 pieces",
-        "UnitsInStock": 6,
-        "Discontinued": true
+        'ProductID': 29,
+        'ProductName': 'Thüringer Rostbratwurst',
+        'SupplierID': 12,
+        'QuantityPerUnit': '50 bags x 30 sausgs.',
+        'UnitPrice': 123.79,
+        'UnitsInStock': 0,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Confections",
-        "ProductName": "Sir Rodney's Marmalade",
-        "QuantityPerUnit": "30 gift boxes",
-        "UnitsInStock": 40,
-        "Discontinued": true
+        'ProductID': 30,
+        'ProductName': 'Nord-Ost Matjeshering',
+        'SupplierID': 13,
+        'QuantityPerUnit': '10 - 200 g glasses',
+        'UnitPrice': 25.89,
+        'UnitsInStock': 10,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Confections",
-        "ProductName": "Sir Rodney's Scones",
-        "QuantityPerUnit": "24 pkgs. x 4 pieces",
-        "UnitsInStock": 3,
-        "Discontinued": false
+        'ProductID': 31,
+        'ProductName': 'Gorgonzola Telino',
+        'SupplierID': 14,
+        'QuantityPerUnit': '12 - 100 g pkgs',
+        'UnitPrice': 12.50,
+        'UnitsInStock': 0,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Confections",
-        "ProductName": "Tarte au sucre",
-        "QuantityPerUnit": "48 pies",
-        "UnitsInStock": 17,
-        "Discontinued": false
+        'ProductID': 32,
+        'ProductName': 'Mascarpone Fabioli',
+        'SupplierID': 14,
+        'QuantityPerUnit': '24 - 200 g pkgs.',
+        'UnitPrice': 32.00,
+        'UnitsInStock': 9,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Confections",
-        "ProductName": "Teatime Chocolate Biscuits",
-        "QuantityPerUnit": "10 boxes x 12 pieces",
-        "UnitsInStock": 25,
-        "Discontinued": false
+        'ProductID': 33,
+        'ProductName': 'Geitost',
+        'SupplierID': 15,
+        'QuantityPerUnit': '500 g',
+        'UnitPrice': 2.50,
+        'UnitsInStock': 112,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Confections",
-        "ProductName": "Valkoinen suklaa",
-        "QuantityPerUnit": "12 - 100 g bars",
-        "UnitsInStock": 65,
-        "Discontinued": false
+        'ProductID': 34,
+        'ProductName': 'Sasquatch Ale',
+        'SupplierID': 16,
+        'QuantityPerUnit': '24 - 12 oz bottles',
+        'UnitPrice': 14.00,
+        'UnitsInStock': 111,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Confections",
-        "ProductName": "Zaanse koeken",
-        "QuantityPerUnit": "10 - 4 oz boxes",
-        "UnitsInStock": 36,
-        "Discontinued": false
+        'ProductID': 35,
+        'ProductName': 'Steeleye Stout',
+        'SupplierID': 16,
+        'QuantityPerUnit': '24 - 12 oz bottles',
+        'UnitPrice': 18.00,
+        'UnitsInStock': 20,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Dairy Products",
-        "ProductName": "Camembert Pierrot",
-        "QuantityPerUnit": "15 - 300 g rounds",
-        "UnitsInStock": 19,
-        "Discontinued": true
+        'ProductID': 36,
+        'ProductName': 'Inlagd Sill',
+        'SupplierID': 17,
+        'QuantityPerUnit': '24 - 250 g  jars',
+        'UnitPrice': 19.00,
+        'UnitsInStock': 112,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Dairy Products",
-        "ProductName": "Flotemysost",
-        "QuantityPerUnit": "10 - 500 g pkgs.",
-        "UnitsInStock": 26,
-        "Discontinued": true
+        'ProductID': 37,
+        'ProductName': 'Gravad lax',
+        'SupplierID': 17,
+        'QuantityPerUnit': '12 - 500 g pkgs.',
+        'UnitPrice': 26.00,
+        'UnitsInStock': 11,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Dairy Products",
-        "ProductName": "Geitost",
-        "QuantityPerUnit": "500 g",
-        "UnitsInStock": 112,
-        "Discontinued": true
+        'ProductID': 38,
+        'ProductName': 'Côte de Blaye',
+        'SupplierID': 18,
+        'QuantityPerUnit': '12 - 75 cl bottles',
+        'UnitPrice': 263.50,
+        'UnitsInStock': 17,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Dairy Products",
-        "ProductName": "Gorgonzola Telino",
-        "QuantityPerUnit": "12 - 100 g pkgs",
-        "UnitsInStock": 0,
-        "Discontinued": false
+        'ProductID': 39,
+        'ProductName': 'Chartreuse verte',
+        'SupplierID': 18,
+        'QuantityPerUnit': '750 cc per bottle',
+        'UnitPrice': 18.00,
+        'UnitsInStock': 69,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Dairy Products",
-        "ProductName": "Gudbrandsdalsost",
-        "QuantityPerUnit": "10 kg pkg.",
-        "UnitsInStock": 26,
-        "Discontinued": false
+        'ProductID': 40,
+        'ProductName': 'Boston Crab Meat',
+        'SupplierID': 19,
+        'QuantityPerUnit': '24 - 4 oz tins',
+        'UnitPrice': 18.40,
+        'UnitsInStock': 123,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Dairy Products",
-        "ProductName": "Mascarpone Fabioli",
-        "QuantityPerUnit": "24 - 200 g pkgs.",
-        "UnitsInStock": 9,
-        "Discontinued": false
+        'ProductID': 41,
+        'ProductName': 'Jack\'s New England Clam Chowder',
+        'SupplierID': 19,
+        'QuantityPerUnit': '12 - 12 oz cans',
+        'UnitPrice': 9.65,
+        'UnitsInStock': 85,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Dairy Products",
-        "ProductName": "Mozzarella di Giovanni",
-        "QuantityPerUnit": "24 - 200 g pkgs.",
-        "UnitsInStock": 14,
-        "Discontinued": true
+        'ProductID': 42,
+        'ProductName': 'Singaporean Hokkien Fried Mee',
+        'SupplierID': 20,
+        'QuantityPerUnit': '32 - 1 kg pkgs.',
+        'UnitPrice': 14.00,
+        'UnitsInStock': 26,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Dairy Products",
-        "ProductName": "Queso Cabrales",
-        "QuantityPerUnit": "1 kg pkg.",
-        "UnitsInStock": 22,
-        "Discontinued": true
+        'ProductID': 43,
+        'ProductName': 'Ipoh Coffee',
+        'SupplierID': 20,
+        'QuantityPerUnit': '16 - 500 g tins',
+        'UnitPrice': 46.00,
+        'UnitsInStock': 17,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Dairy Products",
-        "ProductName": "Queso Manchego La Pastora",
-        "QuantityPerUnit": "10 - 500 g pkgs.",
-        "UnitsInStock": 86,
-        "Discontinued": true
+        'ProductID': 44,
+        'ProductName': 'Gula Malacca',
+        'SupplierID': 20,
+        'QuantityPerUnit': '20 - 2 kg bags',
+        'UnitPrice': 19.45,
+        'UnitsInStock': 27,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Dairy Products",
-        "ProductName": "Raclette Courdavault",
-        "QuantityPerUnit": "5 kg pkg.",
-        "UnitsInStock": 79,
-        "Discontinued": true
+        'ProductID': 45,
+        'ProductName': 'Rogede sild',
+        'SupplierID': 21,
+        'QuantityPerUnit': '1k pkg.',
+        'UnitPrice': 9.50,
+        'UnitsInStock': 5,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Grains/Cereals",
-        "ProductName": "Filo Mix",
-        "QuantityPerUnit": "16 - 2 kg boxes",
-        "UnitsInStock": 38,
-        "Discontinued": false
+        'ProductID': 46,
+        'ProductName': 'Spegesild',
+        'SupplierID': 21,
+        'QuantityPerUnit': '4 - 450 g glasses',
+        'UnitPrice': 12.00,
+        'UnitsInStock': 95,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Grains/Cereals",
-        "ProductName": "Gnocchi di nonna Alice",
-        "QuantityPerUnit": "24 - 250 g pkgs.",
-        "UnitsInStock": 21,
-        "Discontinued": false
+        'ProductID': 47,
+        'ProductName': 'Zaanse koeken',
+        'SupplierID': 22,
+        'QuantityPerUnit': '10 - 4 oz boxes',
+        'UnitPrice': 9.50,
+        'UnitsInStock': 36,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Grains/Cereals",
-        "ProductName": "Gustaf's Kn\u00e4ckebr\u00f6d",
-        "QuantityPerUnit": "24 - 500 g pkgs.",
-        "UnitsInStock": 104,
-        "Discontinued": false
+        'ProductID': 48,
+        'ProductName': 'Chocolade',
+        'SupplierID': 22,
+        'QuantityPerUnit': '10 pkgs.',
+        'UnitPrice': 12.75,
+        'UnitsInStock': 15,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Grains/Cereals",
-        "ProductName": "Ravioli Angelo",
-        "QuantityPerUnit": "24 - 250 g pkgs.",
-        "UnitsInStock": 36,
-        "Discontinued": false
+        'ProductID': 49,
+        'ProductName': 'Maxilaku',
+        'SupplierID': 23,
+        'QuantityPerUnit': '24 - 50 g pkgs.',
+        'UnitPrice': 20.00,
+        'UnitsInStock': 10,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Grains/Cereals",
-        "ProductName": "Tunnbr\u00f6d",
-        "QuantityPerUnit": "12 - 250 g pkgs.",
-        "UnitsInStock": 61,
-        "Discontinued": false
+        'ProductID': 50,
+        'ProductName': 'Valkoinen suklaa',
+        'SupplierID': 23,
+        'QuantityPerUnit': '12 - 100 g bars',
+        'UnitPrice': 16.25,
+        'UnitsInStock': 65,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Grains/Cereals",
-        "ProductName": "Wimmers gute Semmelkn\u00f6del",
-        "QuantityPerUnit": "20 bags x 4 pieces",
-        "UnitsInStock": 22,
-        "Discontinued": false
+        'ProductID': 51,
+        'ProductName': 'Manjimup Dried Apples',
+        'SupplierID': 24,
+        'QuantityPerUnit': '50 - 300 g pkgs.',
+        'UnitPrice': 53.00,
+        'UnitsInStock': 20,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Meat/Poultry",
-        "ProductName": "P\u00e2t\u00e9 chinois",
-        "QuantityPerUnit": "24 boxes x 2 pies",
-        "UnitsInStock": 115,
-        "Discontinued": false
+        'ProductID': 52,
+        'ProductName': 'Filo Mix',
+        'SupplierID': 24,
+        'QuantityPerUnit': '16 - 2 kg boxes',
+        'UnitPrice': 7.00,
+        'UnitsInStock': 38,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Meat/Poultry",
-        "ProductName": "Tourti\u00e8re",
-        "QuantityPerUnit": "16 pies",
-        "UnitsInStock": 21,
-        "Discontinued": true
+        'ProductID': 53,
+        'ProductName': 'Perth Pasties',
+        'SupplierID': 24,
+        'QuantityPerUnit': '48 pieces',
+        'UnitPrice': 32.80,
+        'UnitsInStock': 0,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Produce",
-        "ProductName": "Longlife Tofu",
-        "QuantityPerUnit": "5 kg pkg.",
-        "UnitsInStock": 4,
-        "Discontinued": true
+        'ProductID': 54,
+        'ProductName': 'Tourtière',
+        'SupplierID': 25,
+        'QuantityPerUnit': '16 pies',
+        'UnitPrice': 7.45,
+        'UnitsInStock': 21,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Produce",
-        "ProductName": "Manjimup Dried Apples",
-        "QuantityPerUnit": "50 - 300 g pkgs.",
-        "UnitsInStock": 20,
-        "Discontinued": true
+        'ProductID': 55,
+        'ProductName': 'Pâté chinois',
+        'SupplierID': 25,
+        'QuantityPerUnit': '24 boxes x 2 pies',
+        'UnitPrice': 24.00,
+        'UnitsInStock': 115,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Produce",
-        "ProductName": "Tofu",
-        "QuantityPerUnit": "40 - 100 g pkgs.",
-        "UnitsInStock": 35,
-        "Discontinued": false
+        'ProductName': 'Gnocchi di nonna Alice',
+        'SupplierID': 26,
+        'QuantityPerUnit': '24 - 250 g pkgs.',
+        'UnitPrice': 38.00,
+        'UnitsInStock': 21,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Produce",
-        "ProductName": "Uncle Bob's Organic Dried Pears",
-        "QuantityPerUnit": "12 - 1 lb pkgs.",
-        "UnitsInStock": 15,
-        "Discontinued": false
+        'ProductName': 'Ravioli Angelo',
+        'SupplierID': 26,
+        'QuantityPerUnit': '24 - 250 g pkgs.',
+        'UnitPrice': 19.50,
+        'UnitsInStock': 36,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Seafood",
-        "ProductName": "Boston Crab Meat",
-        "QuantityPerUnit": "24 - 4 oz tins",
-        "UnitsInStock": 123,
-        "Discontinued": false
+        'ProductID': 58,
+        'ProductName': 'Escargots de Bourgogne',
+        'SupplierID': 27,
+        'QuantityPerUnit': '24 pieces',
+        'UnitPrice': 13.25,
+        'UnitsInStock': 62,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Seafood",
-        "ProductName": "Carnarvon Tigers",
-        "QuantityPerUnit": "16 kg pkg.",
-        "UnitsInStock": 42,
-        "Discontinued": false
+        'ProductID': 59,
+        'ProductName': 'Raclette Courdavault',
+        'SupplierID': 28,
+        'QuantityPerUnit': '5 kg pkg.',
+        'UnitPrice': 55.00,
+        'UnitsInStock': 79,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Seafood",
-        "ProductName": "Escargots de Bourgogne",
-        "QuantityPerUnit": "24 pieces",
-        "UnitsInStock": 62,
-        "Discontinued": true
+        'ProductID': 60,
+        'ProductName': 'Camembert Pierrot',
+        'SupplierID': 28,
+        'QuantityPerUnit': '15 - 300 g rounds',
+        'UnitPrice': 34.00,
+        'UnitsInStock': 19,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Seafood",
-        "ProductName": "Gravad lax",
-        "QuantityPerUnit": "12 - 500 g pkgs.",
-        "UnitsInStock": 11,
-        "Discontinued": false
+        'ProductID': 61,
+        'ProductName': 'Sirop d\'érable',
+        'SupplierID': 29,
+        'QuantityPerUnit': '24 - 500 ml bottles',
+        'UnitPrice': 28.50,
+        'UnitsInStock': 113,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Seafood",
-        "ProductName": "Ikura",
-        "QuantityPerUnit": "12 - 200 ml jars",
-        "UnitsInStock": 31,
-        "Discontinued": true
+        'ProductID': 62,
+        'ProductName': 'Tarte au sucre',
+        'SupplierID': 29,
+        'QuantityPerUnit': '48 pies',
+        'UnitPrice': 49.30,
+        'UnitsInStock': 17,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Seafood",
-        "ProductName": "Inlagd Sill",
-        "QuantityPerUnit": "24 - 250 g  jars",
-        "UnitsInStock": 112,
-        "Discontinued": false
+        'ProductID': 63,
+        'ProductName': 'Vegie-spread',
+        'SupplierID': 7,
+        'QuantityPerUnit': '15 - 625 g jars',
+        'UnitPrice': 43.90,
+        'UnitsInStock': 24,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Seafood",
-        "ProductName": "Jack's New England Clam Chowder",
-        "QuantityPerUnit": "12 - 12 oz cans",
-        "UnitsInStock": 85,
-        "Discontinued": false
+        'ProductID': 64,
+        'ProductName': 'Wimmers gute Semmelknödel',
+        'SupplierID': 12,
+        'QuantityPerUnit': '20 bags x 4 pieces',
+        'UnitPrice': 33.25,
+        'UnitsInStock': 22,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Seafood",
-        "ProductName": "Konbu",
-        "QuantityPerUnit": "2 kg box",
-        "UnitsInStock": 24,
-        "Discontinued": false
+        'ProductID': 65,
+        'ProductName': 'Louisiana Fiery Hot Pepper Sauce',
+        'SupplierID': 2,
+        'QuantityPerUnit': '32 - 8 oz bottles',
+        'UnitPrice': 21.05,
+        'UnitsInStock': 76,
+        'Discontinued': true
     },
+
     {
         "CategoryName": "Seafood",
-        "ProductName": "Nord-Ost Matjeshering",
-        "QuantityPerUnit": "10 - 200 g glasses",
-        "UnitsInStock": 10,
-        "Discontinued": true
+        'ProductID': 66,
+        'ProductName': 'Louisiana Hot Spiced Okra',
+        'SupplierID': 2,
+        'QuantityPerUnit': '24 - 8 oz jars',
+        'UnitPrice': 17.00,
+        'UnitsInStock': 4,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Seafood",
-        "ProductName": "R\u00f6d Kaviar",
-        "QuantityPerUnit": "24 - 150 g jars",
-        "UnitsInStock": 101,
-        "Discontinued": false
+        'ProductID': 67,
+        'ProductName': 'Laughing Lumberjack Lager',
+        'SupplierID': 16,
+        'QuantityPerUnit': '24 - 12 oz bottles',
+        'UnitPrice': 14.00,
+        'UnitsInStock': 52,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Seafood",
-        "ProductName": "Rogede sild",
-        "QuantityPerUnit": "1k pkg.",
-        "UnitsInStock": 5,
-        "Discontinued": false
+        'ProductID': 68,
+        'ProductName': 'Scottish Longbreads',
+        'SupplierID': 8,
+        'QuantityPerUnit': '10 boxes x 8 pieces',
+        'UnitPrice': 12.50,
+        'UnitsInStock': 6,
+        'Discontinued': false
     },
+
     {
         "CategoryName": "Seafood",
-        "ProductName": "Spegesild",
-        "QuantityPerUnit": "4 - 450 g glasses",
-        "UnitsInStock": 95,
-        "Discontinued": false
+        'ProductID': 69,
+        'ProductName': 'Gudbrandsdalsost',
+        'SupplierID': 15,
+        'QuantityPerUnit': '10 kg pkg.',
+        'UnitPrice': 36.00,
+        'UnitsInStock': 26,
+        'Discontinued': false
     }
 ];
 
@@ -12779,3 +13052,793 @@ export let columnSpanData: ColumnSpanDataType[] = [
         '5:00': 'Build'
     }
 ];
+let order = JSON.stringify([
+   {
+      "OrderID":10248,
+      "CustomerID":"VINET",
+      "CustomerName": "Maria ",
+      "OrderDate":"1996-07-04T00:00:00.000Z",
+      "ShippedDate":"1996-07-16T00:00:00.000Z",
+      "Freight":32.38,
+      "ShipName":"Vins et alcools Chevalier",
+      "ShipAddress":"59 rue de l'Abbaye",
+      "ShipCity":"Reims",
+      "ShipRegion":null,
+      "ShipCountry":"France"
+   },
+   {
+      "OrderID":10249,
+      "CustomerID":"TOMSP",
+      "CustomerName": "Ana Trujillo",
+      "OrderDate":"1996-07-05T00:00:00.000Z",
+      "ShippedDate":"1996-07-10T00:00:00.000Z",
+      "Freight":11.61,
+      "ShipName":"Toms Spezialitäten",
+      "ShipAddress":"Luisenstr. 48",
+      "ShipCity":"Münster",
+      "ShipRegion":null,
+      "ShipCountry":"Germany"
+   },
+   {
+      "OrderID":10250,
+      "CustomerID":"HANAR",
+      "CustomerName": "Antonio Moreno",
+      "OrderDate":"1996-07-08T00:00:00.000Z",
+      "ShippedDate":"1996-07-12T00:00:00.000Z",
+      "Freight":65.83,
+      "ShipName":"Hanari Carnes",
+      "ShipAddress":"Rua do Paço, 67",
+      "ShipCity":"Rio de Janeiro",
+      "ShipRegion":"RJ",
+      "ShipCountry":"Brazil"
+   },
+   {
+      "OrderID":10251,
+      "CustomerID":"VICTE",
+      "CustomerName": "Thomas Hardy",
+      "OrderDate":"1996-07-08T00:00:00.000Z",
+      "ShippedDate":"1996-07-15T00:00:00.000Z",
+      "Freight":41.34,
+      "ShipName":"Victuailles en stock",
+      "ShipAddress":"2, rue du Commerce",
+      "ShipCity":"Lyon",
+      "ShipRegion":null,
+      "ShipCountry":"France"
+   },
+   {
+      "OrderID":10252,
+      "CustomerID":"SUPRD",
+      "CustomerName": "Christina Berglund",
+      "OrderDate":"1996-07-09T00:00:00.000Z",
+      "ShippedDate":"1996-07-11T00:00:00.000Z",
+      "Freight":51.3,
+      "ShipName":"Suprêmes délices",
+      "ShipAddress":"Boulevard Tirou, 255",
+      "ShipCity":"Charleroi",
+      "ShipRegion":null,
+      "ShipCountry":"Belgium"
+   },
+   {
+      "OrderID":10253,
+      "CustomerID":"HANAR",
+      "CustomerName": "Hanna Moos",
+      "OrderDate":"1996-07-10T00:00:00.000Z",
+      "ShippedDate":"1996-07-16T00:00:00.000Z",
+      "Freight":58.17,
+      "ShipName":"Hanari Carnes",
+      "ShipAddress":"Rua do Paço, 67",
+      "ShipCity":"Rio de Janeiro",
+      "ShipRegion":"RJ",
+      "ShipCountry":"Brazil"
+   },
+   {
+      "OrderID":10254,
+      "CustomerID":"CHOPS",
+      "CustomerName": "Frédérique Citeaux",
+      "OrderDate":"1996-07-11T00:00:00.000Z",
+      "ShippedDate":"1996-07-23T00:00:00.000Z",
+      "Freight":22.98,
+      "ShipName":"Chop-suey Chinese",
+      "ShipAddress":"Hauptstr. 31",
+      "ShipCity":"Bern",
+      "ShipRegion":null,
+      "ShipCountry":"Switzerland"
+   },
+   {
+      "OrderID":10255,
+      "CustomerID":"RICSU",
+      "CustomerName": "Martín Sommer",
+      "OrderDate":"1996-07-12T00:00:00.000Z",
+      "ShippedDate":"1996-07-15T00:00:00.000Z",
+      "Freight":148.33,
+      "ShipName":"Richter Supermarkt",
+      "ShipAddress":"Starenweg 5",
+      "ShipCity":"Genève",
+      "ShipRegion":null,
+      "ShipCountry":"Switzerland"
+   },
+   {
+      "OrderID":10256,
+      "CustomerID":"WELLI",
+      "CustomerName": "Laurence Lebihan",
+      "OrderDate":"1996-07-15T00:00:00.000Z",
+      "ShippedDate":"1996-07-17T00:00:00.000Z",
+      "Freight":13.97,
+      "ShipName":"Wellington Importadora",
+      "ShipAddress":"Rua do Mercado, 12",
+      "ShipCity":"Resende",
+      "ShipRegion":"SP",
+      "ShipCountry":"Brazil"
+   },
+   {
+      "OrderID":10257,
+      "CustomerID":"HILAA",
+      "CustomerName": "Elizabeth Lincoln",
+      "OrderDate":"1996-07-16T00:00:00.000Z",
+      "ShippedDate":"1996-07-22T00:00:00.000Z",
+      "Freight":81.91,
+      "ShipName":"HILARION-Abastos",
+      "ShipAddress":"Carrera 22 con Ave. Carlos Soublette #8-35",
+      "ShipCity":"San Cristóbal",
+      "ShipRegion":"Táchira",
+      "ShipCountry":"Venezuela"
+   },
+   {
+      "OrderID":10258,
+      "CustomerID":"ERNSH",
+      "CustomerName": "Victoria Ashworth",
+      "OrderDate":"1996-07-17T00:00:00.000Z",
+      "ShippedDate":"1996-07-23T00:00:00.000Z",
+      "Freight":140.51,
+      "ShipName":"Ernst Handel",
+      "ShipAddress":"Kirchgasse 6",
+      "ShipCity":"Graz",
+      "ShipRegion":null,
+      "ShipCountry":"Austria"
+   },
+   {
+      "OrderID":10259,
+      "CustomerID":"CENTC",
+      "CustomerName": "Patricio Simpson",
+      "OrderDate":"1996-07-18T00:00:00.000Z",
+      "ShippedDate":"1996-07-25T00:00:00.000Z",
+      "Freight":3.25,
+      "ShipName":"Centro comercial Moctezuma",
+      "ShipAddress":"Sierras de Granada 9993",
+      "ShipCity":"México D.F.",
+      "ShipRegion":null,
+      "ShipCountry":"Mexico"
+   },
+   {
+      "OrderID":10260,
+      "CustomerID":"OTTIK",
+      "CustomerName": "Francisco Chang",
+      "OrderDate":"1996-07-19T00:00:00.000Z",
+      "ShippedDate":"1996-07-29T00:00:00.000Z",
+      "Freight":55.09,
+      "ShipName":"Ottilies Käseladen",
+      "ShipAddress":"Mehrheimerstr. 369",
+      "ShipCity":"Köln",
+      "ShipRegion":null,
+      "ShipCountry":"Germany"
+   },
+   {
+      "OrderID":10261,
+      "CustomerID":"QUEDE",
+      "CustomerName": "Yang Wang",
+      "OrderDate":"1996-07-19T00:00:00.000Z",
+      "ShippedDate":"1996-07-30T00:00:00.000Z",
+      "Freight":3.05,
+      "ShipName":"Que Delícia",
+      "ShipAddress":"Rua da Panificadora, 12",
+      "ShipCity":"Rio de Janeiro",
+      "ShipRegion":"RJ",
+      "ShipCountry":"Brazil"
+   },
+   {
+      "OrderID":10262,
+      "CustomerID":"RATTC",
+      "CustomerName": "Pedro Afonso",
+      "OrderDate":"1996-07-22T00:00:00.000Z",
+      "ShippedDate":"1996-07-25T00:00:00.000Z",
+      "Freight":48.29,
+      "ShipName":"Rattlesnake Canyon Grocery",
+      "ShipAddress":"2817 Milton Dr.",
+      "ShipCity":"Albuquerque",
+      "ShipRegion":"NM",
+      "ShipCountry":"USA"
+   },
+   {
+      "OrderID":10263,
+      "CustomerID":"ERNSH",
+      "CustomerName": "Elizabeth Brown",
+      "OrderDate":"1996-07-23T00:00:00.000Z",
+      "ShippedDate":"1996-07-31T00:00:00.000Z",
+      "Freight":146.06,
+      "ShipName":"Ernst Handel",
+      "ShipAddress":"Kirchgasse 6",
+      "ShipCity":"Graz",
+      "ShipRegion":null,
+      "ShipCountry":"Austria"
+   },
+   {
+      "OrderID":10264,
+      "CustomerID":"FOLKO",
+      "CustomerName": "Sven Ottlieb",
+      "OrderDate":"1996-07-24T00:00:00.000Z",
+      "ShippedDate":"1996-08-23T00:00:00.000Z",
+      "Freight":3.67,
+      "ShipName":"Folk och fä HB",
+      "ShipAddress":"Åkergatan 24",
+      "ShipCity":"Bräcke",
+      "ShipRegion":null,
+      "ShipCountry":"Sweden"
+   },
+   {
+      "OrderID":10265,
+      "CustomerID":"BLONP",
+      "CustomerName": "Ann Devon",
+      "OrderDate":"1996-07-25T00:00:00.000Z",
+      "ShippedDate":"1996-08-12T00:00:00.000Z",
+      "Freight":55.28,
+      "ShipName":"Blondel père et fils",
+      "ShipAddress":"24, place Kléber",
+      "ShipCity":"Strasbourg",
+      "ShipRegion":null,
+      "ShipCountry":"France"
+   },
+   {
+      "OrderID":10266,
+      "CustomerID":"WARTH",
+      "CustomerName": "Roland Mendel",
+      "OrderDate":"1996-07-26T00:00:00.000Z",
+      "ShippedDate":"1996-07-31T00:00:00.000Z",
+      "Freight":25.73,
+      "ShipName":"Wartian Herkku",
+      "ShipAddress":"Torikatu 38",
+      "ShipCity":"Oulu",
+      "ShipRegion":null,
+      "ShipCountry":"Finland"
+   },
+   {
+      "OrderID":10267,
+      "CustomerID":"FRANK",
+      "CustomerName": "Aria Cruz",
+      "OrderDate":"1996-07-29T00:00:00.000Z",
+      "ShippedDate":"1996-08-06T00:00:00.000Z",
+      "Freight":208.58,
+      "ShipName":"Frankenversand",
+      "ShipAddress":"Berliner Platz 43",
+      "ShipCity":"München",
+      "ShipRegion":null,
+      "ShipCountry":"Germany"
+   },
+   {
+      "OrderID":10268,
+      "CustomerID":"GROSR",
+      "CustomerName": "Diego Roel",
+      "OrderDate":"1996-07-30T00:00:00.000Z",
+      "ShippedDate":"1996-08-02T00:00:00.000Z",
+      "Freight":66.29,
+      "ShipName":"GROSELLA-Restaurante",
+      "ShipAddress":"5ª Ave. Los Palos Grandes",
+      "ShipCity":"Caracas",
+      "ShipRegion":"DF",
+      "ShipCountry":"Venezuela"
+   },
+   {
+      "OrderID":10269,
+      "CustomerID":"WHITC",
+      "CustomerName": "Martine Rancé",
+      "OrderDate":"1996-07-31T00:00:00.000Z",
+      "ShippedDate":"1996-08-09T00:00:00.000Z",
+      "Freight":4.56,
+      "ShipName":"White Clover Markets",
+      "ShipAddress":"1029 - 12th Ave. S.",
+      "ShipCity":"Seattle",
+      "ShipRegion":"WA",
+      "ShipCountry":"USA"
+   },
+   {
+      "OrderID":10270,
+      "CustomerID":"WARTH",
+      "CustomerName": "Maria Larsson",
+      "OrderDate":"1996-08-01T00:00:00.000Z",
+      "ShippedDate":"1996-08-02T00:00:00.000Z",
+      "Freight":136.54,
+      "ShipName":"Wartian Herkku",
+      "ShipAddress":"Torikatu 38",
+      "ShipCity":"Oulu",
+      "ShipRegion":null,
+      "ShipCountry":"Finland"
+   },
+   {
+      "OrderID":10271,
+      "CustomerID":"SPLIR",
+      "CustomerName": "Peter Franken",
+      "OrderDate":"1996-08-01T00:00:00.000Z",
+      "ShippedDate":"1996-08-30T00:00:00.000Z",
+      "Freight":4.54,
+      "ShipName":"Split Rail Beer & Ale",
+      "ShipAddress":"P.O. Box 555",
+      "ShipCity":"Lander",
+      "ShipRegion":"WY",
+      "ShipCountry":"USA"
+   },
+   {
+      "OrderID":10272,
+      "CustomerID":"RATTC",
+      "CustomerName": "Carine Schmitt",
+      "OrderDate":"1996-08-02T00:00:00.000Z",
+      "ShippedDate":"1996-08-06T00:00:00.000Z",
+      "Freight":98.03,
+      "ShipName":"Rattlesnake Canyon Grocery",
+      "ShipAddress":"2817 Milton Dr.",
+      "ShipCity":"Albuquerque",
+      "ShipRegion":"NM",
+      "ShipCountry":"USA"
+   },
+   {
+      "OrderID":10273,
+      "CustomerID":"QUICK",
+      "CustomerName": "Paolo Accorti",
+      "OrderDate":"1996-08-05T00:00:00.000Z",
+      "ShippedDate":"1996-08-12T00:00:00.000Z",
+      "Freight":76.07,
+      "ShipName":"QUICK-Stop",
+      "ShipAddress":"Taucherstraße 10",
+      "ShipCity":"Cunewalde",
+      "ShipRegion":null,
+      "ShipCountry":"Germany"
+   },
+   {
+      "OrderID":10274,
+      "CustomerID":"VINET",
+      "CustomerName": "Lino Rodriguez",
+      "OrderDate":"1996-08-06T00:00:00.000Z",
+      "ShippedDate":"1996-08-16T00:00:00.000Z",
+      "Freight":6.01,
+      "ShipName":"Vins et alcools Chevalier",
+      "ShipAddress":"59 rue de l'Abbaye",
+      "ShipCity":"Reims",
+      "ShipRegion":null,
+      "ShipCountry":"France"
+   },
+   {
+      "OrderID":10275,
+      "CustomerID":"MAGAA",
+      "CustomerName": "Eduardo Saavedra",
+      "OrderDate":"1996-08-07T00:00:00.000Z",
+      "ShippedDate":"1996-08-09T00:00:00.000Z",
+      "Freight":26.93,
+      "ShipName":"Magazzini Alimentari Riuniti",
+      "ShipAddress":"Via Ludovico il Moro 22",
+      "ShipCity":"Bergamo",
+      "ShipRegion":null,
+      "ShipCountry":"Italy"
+   },
+   {
+      "OrderID":10276,
+      "CustomerID":"TORTU",
+      "CustomerName": "José Pedro Freyre",
+      "OrderDate":"1996-08-08T00:00:00.000Z",
+      "ShippedDate":"1996-08-14T00:00:00.000Z",
+      "Freight":13.84,
+      "ShipName":"Tortuga Restaurante",
+      "ShipAddress":"Avda. Azteca 123",
+      "ShipCity":"México D.F.",
+      "ShipRegion":null,
+      "ShipCountry":"Mexico"
+   },
+   {
+      "OrderID":10277,
+      "CustomerID":"MORGK",
+      "CustomerName": "André Fonseca",
+      "OrderDate":"1996-08-09T00:00:00.000Z",
+      "ShippedDate":"1996-08-13T00:00:00.000Z",
+      "Freight":125.77,
+      "ShipName":"Morgenstern Gesundkost",
+      "ShipAddress":"Heerstr. 22",
+      "ShipCity":"Leipzig",
+      "ShipRegion":null,
+      "ShipCountry":"Germany"
+   },
+   {
+      "OrderID":10278,
+      "CustomerID":"BERGS",
+      "CustomerName": "Howard Snyder",
+      "OrderDate":"1996-08-12T00:00:00.000Z",
+      "ShippedDate":"1996-08-16T00:00:00.000Z",
+      "Freight":92.69,
+      "ShipName":"Berglunds snabbköp",
+      "ShipAddress":"Berguvsvägen  8",
+      "ShipCity":"Luleå",
+      "ShipRegion":null,
+      "ShipCountry":"Sweden"
+   },
+   {
+      "OrderID":10279,
+      "CustomerID":"LEHMS",
+      "CustomerName": "Manuel Pereira",
+      "OrderDate":"1996-08-13T00:00:00.000Z",
+      "ShippedDate":"1996-08-16T00:00:00.000Z",
+      "Freight":25.83,
+      "ShipName":"Lehmanns Marktstand",
+      "ShipAddress":"Magazinweg 7",
+      "ShipCity":"Frankfurt a.M.",
+      "ShipRegion":null,
+      "ShipCountry":"Germany"
+   },
+   {
+      "OrderID":10280,
+      "CustomerID":"BERGS",
+      "CustomerName": "Mario Pontes",
+      "OrderDate":"1996-08-14T00:00:00.000Z",
+      "ShippedDate":"1996-09-12T00:00:00.000Z",
+      "Freight":8.98,
+      "ShipName":"Berglunds snabbköp",
+      "ShipAddress":"Berguvsvägen  8",
+      "ShipCity":"Luleå",
+      "ShipRegion":null,
+      "ShipCountry":"Sweden"
+   },
+   {
+      "OrderID":10281,
+      "CustomerID":"ROMEY",
+      "CustomerName": "Carlos Hernández",
+      "OrderDate":"1996-08-14T00:00:00.000Z",
+      "ShippedDate":"1996-08-21T00:00:00.000Z",
+      "Freight":2.94,
+      "ShipName":"Romero y tomillo",
+      "ShipAddress":"Gran Vía, 1",
+      "ShipCity":"Madrid",
+      "ShipRegion":null,
+      "ShipCountry":"Spain"
+   },
+   {
+      "OrderID":10282,
+      "CustomerID":"ROMEY",
+      "CustomerName": "Yoshi Latimer",
+      "OrderDate":"1996-08-15T00:00:00.000Z",
+      "ShippedDate":"1996-08-21T00:00:00.000Z",
+      "Freight":12.69,
+      "ShipName":"Romero y tomillo",
+      "ShipAddress":"Gran Vía, 1",
+      "ShipCity":"Madrid",
+      "ShipRegion":null,
+      "ShipCountry":"Spain"
+   },
+   {
+      "OrderID":10283,
+      "CustomerID":"LILAS",
+      "CustomerName": "Patricia McKenna",
+      "OrderDate":"1996-08-16T00:00:00.000Z",
+      "ShippedDate":"1996-08-23T00:00:00.000Z",
+      "Freight":84.81,
+      "ShipName":"LILA-Supermercado",
+      "ShipAddress":"Carrera 52 con Ave. Bolívar #65-98 Llano Largo",
+      "ShipCity":"Barquisimeto",
+      "ShipRegion":"Lara",
+      "ShipCountry":"Venezuela"
+   },
+   {
+      "OrderID":10284,
+      "CustomerID":"LEHMS",
+      "CustomerName": "Helen Bennett",
+      "OrderDate":"1996-08-19T00:00:00.000Z",
+      "ShippedDate":"1996-08-27T00:00:00.000Z",
+      "Freight":76.56,
+      "ShipName":"Lehmanns Marktstand",
+      "ShipAddress":"Magazinweg 7",
+      "ShipCity":"Frankfurt a.M.",
+      "ShipRegion":null,
+      "ShipCountry":"Germany"
+   },
+   {
+      "OrderID":10285,
+      "CustomerID":"QUICK",
+      "CustomerName": "Philip Cramer",
+      "OrderDate":"1996-08-20T00:00:00.000Z",
+      "ShippedDate":"1996-08-26T00:00:00.000Z",
+      "Freight":76.83,
+      "ShipName":"QUICK-Stop",
+      "ShipAddress":"Taucherstraße 10",
+      "ShipCity":"Cunewalde",
+      "ShipRegion":null,
+      "ShipCountry":"Germany"
+   },
+   {
+      "OrderID":10286,
+      "CustomerID":"QUICK",
+      "CustomerName": "Daniel Tonini",
+      "OrderDate":"1996-08-21T00:00:00.000Z",
+      "ShippedDate":"1996-08-30T00:00:00.000Z",
+      "Freight":229.24,
+      "ShipName":"QUICK-Stop",
+      "ShipAddress":"Taucherstraße 10",
+      "ShipCity":"Cunewalde",
+      "ShipRegion":null,
+      "ShipCountry":"Germany"
+   },
+   {
+      "OrderID":10287,
+      "CustomerID":"RICAR",
+      "CustomerName": "Annette Roulet",
+      "OrderDate":"1996-08-22T00:00:00.000Z",
+      "ShippedDate":"1996-08-28T00:00:00.000Z",
+      "Freight":12.76,
+      "ShipName":"Ricardo Adocicados",
+      "ShipAddress":"Av. Copacabana, 267",
+      "ShipCity":"Rio de Janeiro",
+      "ShipRegion":"RJ",
+      "ShipCountry":"Brazil"
+   },
+   {
+      "OrderID":10288,
+      "CustomerID":"REGGC",
+      "CustomerName": "Yoshi Tannamuri",
+      "OrderDate":"1996-08-23T00:00:00.000Z",
+      "ShippedDate":"1996-09-03T00:00:00.000Z",
+      "Freight":7.45,
+      "ShipName":"Reggiani Caseifici",
+      "ShipAddress":"Strada Provinciale 124",
+      "ShipCity":"Reggio Emilia",
+      "ShipRegion":null,
+      "ShipCountry":"Italy"
+   },
+   {
+      "OrderID":10289,
+      "CustomerID":"BSBEV",
+      "CustomerName": "John Steel",
+      "OrderDate":"1996-08-26T00:00:00.000Z",
+      "ShippedDate":"1996-08-28T00:00:00.000Z",
+      "Freight":22.77,
+      "ShipName":"B's Beverages",
+      "ShipAddress":"Fauntleroy Circus",
+      "ShipCity":"London",
+      "ShipRegion":null,
+      "ShipCountry":"UK"
+   },
+   {
+      "OrderID":10290,
+      "CustomerID":"COMMI",
+      "CustomerNames": "Renate Messner",
+      "OrderDate":"1996-08-27T00:00:00.000Z",
+      "ShippedDate":"1996-09-03T00:00:00.000Z",
+      "Freight":79.7,
+      "ShipName":"Comércio Mineiro",
+      "ShipAddress":"Av. dos Lusíadas, 23",
+      "ShipCity":"Sao Paulo",
+      "ShipRegion":"SP",
+      "ShipCountry":"Brazil"
+   },
+   {
+      "OrderID":10291,
+      "CustomerID":"QUEDE",
+      "CustomerName": "Jaime Yorres",
+      "OrderDate":"1996-08-27T00:00:00.000Z",
+      "ShippedDate":"1996-09-04T00:00:00.000Z",
+      "Freight":6.4,
+      "ShipName":"Que Delícia",
+      "ShipAddress":"Rua da Panificadora, 12",
+      "ShipCity":"Rio de Janeiro",
+      "ShipRegion":"RJ",
+      "ShipCountry":"Brazil"
+   },
+   {
+      "OrderID":10292,
+      "CustomerID":"TRADH",
+      "CustomerName": "Carlos González",
+      "OrderDate":"1996-08-28T00:00:00.000Z",
+      "ShippedDate":"1996-09-02T00:00:00.000Z",
+      "Freight":1.35,
+      "ShipName":"Tradiçao Hipermercados",
+      "ShipAddress":"Av. Inês de Castro, 414",
+      "ShipCity":"Sao Paulo",
+      "ShipRegion":"SP",
+      "ShipCountry":"Brazil"
+   },
+   {
+      "OrderID":10293,
+      "CustomerID":"TORTU",
+      "CustomerName": "Felipe Izquierdo",
+      "OrderDate":"1996-08-29T00:00:00.000Z",
+      "ShippedDate":"1996-09-11T00:00:00.000Z",
+      "Freight":21.18,
+      "ShipName":"Tortuga Restaurante",
+      "ShipAddress":"Avda. Azteca 123",
+      "ShipCity":"México D.F.",
+      "ShipRegion":null,
+      "ShipCountry":"Mexico"
+   },
+   {
+      "OrderID":10294,
+      "CustomerID":"RATTC",
+      "CustomerName": "Fran Wilson",
+      "OrderDate":"1996-08-30T00:00:00.000Z",
+      "ShippedDate":"1996-09-05T00:00:00.000Z",
+      "Freight":147.26,
+      "ShipName":"Rattlesnake Canyon Grocery",
+      "ShipAddress":"2817 Milton Dr.",
+      "ShipCity":"Albuquerque",
+      "ShipRegion":"NM",
+      "ShipCountry":"USA"
+   },
+   {
+      "OrderID":10295,
+      "CustomerID":"VINET",
+      "CustomerName": "Giovanni Rovelli",
+      "OrderDate":"1996-09-02T00:00:00.000Z",
+      "ShippedDate":"1996-09-10T00:00:00.000Z",
+      "Freight":1.15,
+      "ShipName":"Vins et alcools Chevalier",
+      "ShipAddress":"59 rue de l'Abbaye",
+      "ShipCity":"Reims",
+      "ShipRegion":null,
+      "ShipCountry":"France"
+   },
+   {
+      "OrderID":10296,
+      "CustomerID":"LILAS",
+      "CustomerName": "Catherine Dewey",
+      "OrderDate":"1996-09-03T00:00:00.000Z",
+      "ShippedDate":"1996-09-11T00:00:00.000Z",
+      "Freight":0.12,
+      "ShipName":"LILA-Supermercado",
+      "ShipAddress":"Carrera 52 con Ave. Bolívar #65-98 Llano Largo",
+      "ShipCity":"Barquisimeto",
+      "ShipRegion":"Lara",
+      "ShipCountry":"Venezuela"
+   },
+   {
+      "OrderID":10297,
+      "CustomerID":"BLONP",
+      "CustomerName": "Jean Fresnière",
+      "OrderDate":"1996-09-04T00:00:00.000Z",
+      "ShippedDate":"1996-09-10T00:00:00.000Z",
+      "Freight":5.74,
+      "ShipName":"Blondel père et fils",
+      "ShipAddress":"24, place Kléber",
+      "ShipCity":"Strasbourg",
+      "ShipRegion":null,
+      "ShipCountry":"France"
+   },
+   {
+      "OrderID":10298,
+      "CustomerID":"HUNGO",
+      "CustomerName": "Alexander Feuer",
+      "OrderDate":"1996-09-05T00:00:00.000Z",
+      "ShippedDate":"1996-09-11T00:00:00.000Z",
+      "Freight":168.22,
+      "ShipName":"Hungry Owl All-Night Grocers",
+      "ShipAddress":"8 Johnstown Road",
+      "ShipCity":"Cork",
+      "ShipRegion":"Co. Cork",
+      "ShipCountry":"Ireland"
+   },
+   {
+      "OrderID":10299,
+      "CustomerID":"RICAR",
+      "CustomerName": "Simon Crowther",
+      "OrderDate":"1996-09-06T00:00:00.000Z",
+      "ShippedDate":"1996-09-13T00:00:00.000Z",
+      "Freight":29.76,
+      "ShipName":"Ricardo Adocicados",
+      "ShipAddress":"Av. Copacabana, 267",
+      "ShipCity":"Rio de Janeiro",
+      "ShipRegion":"RJ",
+      "ShipCountry":"Brazil"
+   },
+   {
+      "OrderID":10300,
+      "CustomerID":"MAGAA",
+      "CustomerNames": "Yvonne Moncada",
+      "OrderDate":"1996-09-09T00:00:00.000Z",
+      "ShippedDate":"1996-09-18T00:00:00.000Z",
+      "Freight":17.68,
+      "ShipName":"Magazzini Alimentari Riuniti",
+      "ShipAddress":"Via Ludovico il Moro 22",
+      "ShipCity":"Bergamo",
+      "ShipRegion":null,
+      "ShipCountry":"Italy"
+   },
+   {
+      "OrderID":10301,
+      "CustomerID":"WANDK",
+      "CustomerName": "Rene Phillips",
+      "OrderDate":"1996-09-09T00:00:00.000Z",
+      "ShippedDate":"1996-09-17T00:00:00.000Z",
+      "Freight":45.08,
+      "ShipName":"Die Wandernde Kuh",
+      "ShipAddress":"Adenauerallee 900",
+      "ShipCity":"Stuttgart",
+      "ShipRegion":null,
+      "ShipCountry":"Germany"
+   },
+   {
+      "OrderID":10302,
+      "CustomerID":"SUPRD",
+      "CustomerName": "Pirkko Koskitalo",
+      "OrderDate":"1996-09-10T00:00:00.000Z",
+      "ShippedDate":"1996-10-09T00:00:00.000Z",
+      "Freight":6.27,
+      "ShipName":"Suprêmes délices",
+      "ShipAddress":"Boulevard Tirou, 255",
+      "ShipCity":"Charleroi",
+      "ShipRegion":null,
+      "ShipCountry":"Belgium"
+   },
+   {
+      "OrderID":10303,
+      "CustomerID":"GODOS",
+      "CustomerName": "Paula Parente",
+      "OrderDate":"1996-09-11T00:00:00.000Z",
+      "ShippedDate":"1996-09-18T00:00:00.000Z",
+      "Freight":107.83,
+      "ShipName":"Godos Cocina Típica",
+      "ShipAddress":"C/ Romero, 33",
+      "ShipCity":"Sevilla",
+      "ShipRegion":null,
+      "ShipCountry":"Spain"
+   },
+   {
+      "OrderID":10304,
+      "CustomerID":"TORTU",
+      "CustomerName": "Karl Jablonski",
+      "OrderDate":"1996-09-12T00:00:00.000Z",
+      "ShippedDate":"1996-09-17T00:00:00.000Z",
+      "Freight":63.79,
+      "ShipName":"Tortuga Restaurante",
+      "ShipAddress":"Avda. Azteca 123",
+      "ShipCity":"México D.F.",
+      "ShipRegion":null,
+      "ShipCountry":"Mexico"
+   },
+   {
+      "OrderID":10305,
+      "CustomerID":"OLDWO",
+      "CustomerName": "Matti Karttunen",
+      "OrderDate":"1996-09-13T00:00:00.000Z",
+      "ShippedDate":"1996-10-09T00:00:00.000Z",
+      "Freight":257.62,
+      "ShipName":"Old World Delicatessen",
+      "ShipAddress":"2743 Bering St.",
+      "ShipCity":"Anchorage",
+      "ShipRegion":"AK",
+      "ShipCountry":"USA"
+   },
+   {
+      "OrderID":10306,
+      "CustomerID":"ROMEY",
+      "CustomerName": "Zbyszek Piestrzeniewicz",
+      "OrderDate":"1996-09-16T00:00:00.000Z",
+      "ShippedDate":"1996-09-23T00:00:00.000Z",
+      "Freight":7.56,
+      "ShipName":"Romero y tomillo",
+      "ShipAddress":"Gran Vía, 1",
+      "ShipCity":"Madrid",
+      "ShipRegion":null,
+      "ShipCountry":"Spain"
+   },
+   {
+      "OrderID":10307,
+      "CustomerID":"LONEP",
+      "CustomerName": "Zbyszek Piestrzeniewicz",
+      "OrderDate":"1996-09-17T00:00:00.000Z",
+      "ShippedDate":"1996-09-25T00:00:00.000Z",
+      "Freight":0.56,
+      "ShipName":"Lonesome Pine Restaurant",
+      "ShipAddress":"89 Chiaroscuro Rd.",
+      "ShipCity":"Portland",
+      "ShipRegion":"OR",
+      "ShipCountry":"USA"
+   }]);
+   export const orderDetails: Object[] = JSON.parse(order, (field, value) => {
+    let dupValue = value;
+    if (typeof value === 'string' && /^(\d{4}\-\d\d\-\d\d([tT][\d:\.]*){1})([zZ]|([+\-])(\d\d):?(\d\d))?$/.test(value)) {
+        let arr = dupValue.split(/[^0-9]/);
+        value = new Date(parseInt(arr[0], 10), parseInt(arr[1], 10) - 1, 
+        parseInt(arr[2], 10), parseInt(arr[3], 10), parseInt(arr[4], 10), parseInt(arr[5], 10));
+    }
+    return value;
+});

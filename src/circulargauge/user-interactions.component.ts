@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IPointerDragEventArgs, CircularGaugeComponent } from '@syncfusion/ej2-ng-circulargauge';
+import { IPointerDragEventArgs, CircularGaugeComponent, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-ng-circulargauge';
 import { getRangeColor, Range } from '@syncfusion/ej2-circulargauge';
 
 /**
@@ -40,6 +40,11 @@ export class UserInteractionComponent {
         this.setPointersValue(this.circulargauge, this.pointerValue);
     };
 
+    public load(args: ILoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    }
     public markerHeight: number = 20;
     public markerWidth: number = 20;
     public rangeWidth: number = 8;

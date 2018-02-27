@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
-import {chartData} from './financial-data';
+import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -13,13 +13,11 @@ import { Browser } from '@syncfusion/ej2-base';
     encapsulation: ViewEncapsulation.None
 })
 export class AtrIndicatorComponent {
-     public data1: Object[] = chartData;
-     //Initializing Primary X Axis
+    public data1: Object[] = chartData;
+    //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
-        intervalType: 'Months',
         majorGridLines: { width: 0 },
-        skeleton: 'yMd',
         zoomFactor: 0.2, zoomPosition: 0.6,
         crosshairTooltip: { enable: true },
     };
@@ -56,10 +54,10 @@ export class AtrIndicatorComponent {
     }];
     //Initializing Zooming
     public zoomSettings: Object = {
-        enableMouseWheelZooming: true,
-        enablePinchZooming: true,
+
         enableSelectionZooming: true,
-        mode: 'X'
+        mode: 'X',
+        enablePan : true
     };
     //Initializing Chart Title
     public title: string = 'AAPL 2012-2017';
@@ -71,11 +69,11 @@ export class AtrIndicatorComponent {
     public crosshair: Object = {
         enable: true, lineType: 'Vertical'
     };
-    public chartArea : Object = {
-      border: { width : 0}
+    public chartArea: Object = {
+        border: { width: 0 }
     };
     public legendSettings: Object = {
-      visible: false
+        visible: false
     };
     public period: number = 3;
     public width: string = Browser.isDevice ? '100%' : '80%';

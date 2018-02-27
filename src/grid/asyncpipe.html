@@ -1,0 +1,48 @@
+<div class="control-section">
+    <ejs-grid [dataSource]='data | async' allowPaging= 'true' [pageSettings]='pageOptions' allowSorting= 'true' allowGrouping= 'true' (dataStateChange)= 'dataStateChange($event)'>
+        <e-columns>
+            <e-column field= "OrderID" headerText="Order ID" width="130" ></e-column>
+            <e-column field= "CustomerID" headerText="Customer Name" width="150"></e-column>
+            <e-column field= "ShipName" headerText="Ship Name" width="200"></e-column>
+            <e-column field= "ShipCity" headerText="Ship City" width="150"></e-column>
+        </e-columns>
+    </ejs-grid>
+
+    <div id="action-description">
+        <p>
+            This sample demonstrates the usage of angular grid with <code> Observables </code> using the async pipe. Paging, sorting and grouping can be performed
+            in this sample.
+        </p>
+    </div>
+
+    <div id="description">
+        <p>
+            Grid can be bound with <code> Observable </code> or <code> Promise </code> object. The Observable or Promise object 
+            should be piped into grid using the <code> async </code> pipe.
+        </p>
+        <p>
+            When performing grid actions such as paging, sorting and grouping etc. the "<code> dataStateChange </code>" event will be triggered and we need to 
+            resolve the Observable based on the new grid data state.
+            With AsyncPipe we use observables directly to the data, without having to store the result on an 
+            intermediate property or variable.
+        </p>
+        <p>
+            In this demo, simply select the paging and click the column header to sort a column, multiple sorting is also enabled.
+            To group a specify column, drag and drop the column in the group drop area.
+            To enable paging, sorting and grouping, set the <code><a target="_blank" class="code"
+            href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#allowpaging-boolean">
+            allowPaging
+            </a></code> , <code><a target="_blank" class="code"
+            href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#allowsorting-boolean">
+            allowSorting </a></code> and <code><a target="_blank" class="code"
+            href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#allowgrouping-boolean">
+            allowGrouping</a></code> as true.
+        </p>
+        <p style="font-weight: 500">Injecting Module:</p>
+        <p>
+            Grid component features are segregated into individual feature-wise modules. To use the paging ,sorting and grouping features,
+            inject the <code>PageService</code>, <code>SortService</code> and <code>GroupService</code> respectively into the 
+            <code>@NgModule.providers</code> section.
+        </p>
+    </div>
+</div>

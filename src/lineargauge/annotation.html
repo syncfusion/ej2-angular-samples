@@ -30,9 +30,9 @@
     }
 </style>
 <div class="control-section">
-    <ej-lineargauge id='annotationContainer' style='display:block;' orientation='Horizontal' [rangePalettes]='Palette' [axes]='Axes'
+    <ejs-lineargauge (load)='load($event)' id='annotationContainer' style='display:block;' orientation='Horizontal' [rangePalettes]='Palette' [axes]='Axes'
         [annotations]='Annotation'>
-    </ej-lineargauge>
+    </ejs-lineargauge>
 </div>
 <div id="description">
     <p>

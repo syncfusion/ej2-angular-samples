@@ -4,17 +4,17 @@
     </p>
 </div>
 
-<div class="control-section"> 
+<div id="multiselect-sample" class="control-section"> 
         <div id='local'>
             <div class="control-styles">
                 <h4> Local Data</h4>
-                <ej-multiselect id='localData' #local [dataSource]='countries' [fields]='localFields' [placeholder]='localWaterMark'></ej-multiselect>
+                <ejs-multiselect id='localData' #local [dataSource]='countries' [fields]='localFields' [placeholder]='localWaterMark'></ejs-multiselect>
             </div>
         </div>
         <div id='remote'>
             <div  class="control-styles">
                 <h4>Remote Data</h4>
-                <ej-multiselect id='remoteData' #remote [dataSource]='data' [fields]='remoteFields' [query]='query' [placeholder]='remoteWaterMark' sortOrder='Ascending'></ej-multiselect>
+                <ejs-multiselect id='remoteData' #remote [dataSource]='data' [fields]='remoteFields' [query]='query' [placeholder]='remoteWaterMark' sortOrder='Ascending'></ejs-multiselect>
             </div>
         </div> 
 </div>

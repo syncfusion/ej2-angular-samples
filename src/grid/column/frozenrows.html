@@ -1,19 +1,19 @@
 <div class="control-section">
     <div class="col-lg-8">
-    <ej-grid #grid [dataSource]='data' height='400' frozenRows='2' frozenColumns='1' [allowSelection]='false' [enableHover]='false' [allowResizing]='true' [allowSorting]='true' [allowMultiSorting]='false'>
+    <ejs-grid #grid [dataSource]='data' height='400' [frozenRows]='2' [frozenColumns]='1' [allowSelection]='false' [enableHover]='false' [allowResizing]='true' [allowSorting]='true' [allowMultiSorting]='false' allowPaging='true'>
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right"></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
             <e-column field='Freight' headerText='Freight' width='125' format='C2'></e-column>
             <e-column field='CustomerID' headerText='Customer ID' width='130'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='180'></e-column>
-            <e-column field='OrderDate' headerText='Order Date' width='150' format="yMd" textAlign="right"></e-column>
-            <e-column field='ShippedDate' headerText='Shipped Date' width='180' format="yMd" textAlign="right"></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='150' format="yMd" textAlign='Right'></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' width='180' format="yMd" textAlign='Right'></e-column>
             <e-column field='ShipName' headerText='Ship Name' width='300'></e-column>
             <e-column field='ShipAddress' headerText='Ship Address' width='270'></e-column>
             <e-column field='ShipCity' headerText='Ship City' width='250'></e-column>
             <e-column field='ShipCountry' headerText='Ship Country' width='250'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
     </div>
       <div class="col-lg-4 property-section">
         <div class="property-panel-section">
@@ -25,8 +25,8 @@
                             <div>Frozen Rows</div>
                         </td>
                         <td>
-                            <div>
-                                <ej-numerictextbox #rows min="0" max="5" value="2"></ej-numerictextbox>
+                            <div id='frozeninput'>
+                                <ejs-numerictextbox #rows min="0" max="5" value="2"></ejs-numerictextbox>
                             </div>
                         </td>
                     </tr>
@@ -35,8 +35,8 @@
                             <div>Frozen Columns</div>
                         </td>
                         <td>
-                            <div>
-                                  <ej-numerictextbox #columns min="1" [max]="columnValue" value="1"></ej-numerictextbox>
+                            <div id='frozeninput'>
+                                  <ejs-numerictextbox #columns min="0" [max]="columnValue" value="1"></ejs-numerictextbox>
                             </div>
                         </td>
                     </tr>
@@ -44,7 +44,7 @@
                         <td></td>
                         <td>
                             <div id='buttonSet'>
-                                 <button ej-button (click)="btnClick()">Set</button>
+                                 <button ejs-button (click)="btnClick()">Set</button>
                             </div>
                         </td>
                     </tr>
@@ -75,5 +75,8 @@
 <style>  
     #buttonSet {
         float: right;
+    }
+    #frozeninput {
+        min-width: 148px;
     }
 </style>

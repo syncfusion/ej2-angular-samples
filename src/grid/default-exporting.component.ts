@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ValueProvider } from '@angular/core';
-import { orderDatas } from './data';
+import { orderDetails } from './data';
 import {
     GridComponent, ToolbarService, PageService, ExcelExportService, PdfExportService,
     GroupService
@@ -7,7 +7,7 @@ import {
 import { ClickEventArgs } from '@syncfusion/ej2-navigations'
 
 @Component({
-    selector: 'control-content',
+    selector: 'ej2-grid-container',
     templateUrl: 'default-exporting.html',
     providers: [ToolbarService, PageService, ExcelExportService, PdfExportService, GroupService]
 
@@ -17,13 +17,23 @@ export class ExportingComponent implements OnInit {
     public toolbar: string[];
     public pageSettings: Object;
     public groupOptions: { [x: string]: Object } = { showDropArea: false, columns: ['ShipCountry'] };
+    public refresh: Boolean;
     @ViewChild('grid')
     public grid: GridComponent;
 
     public ngOnInit(): void {
-        this.data = orderDatas;
-        this.toolbar = ['excelexport', 'pdfexport', 'csvexport'];
+        this.data = orderDetails;
+        this.toolbar = ['ExcelExport', 'PdfExport', 'CsvExport'];
         this.pageSettings = { pageCount: 5 };
+    }
+    dataBound() {
+        if(this.refresh){
+            this.grid.groupColumn('ShipCountry');
+            this.refresh =false;
+        }
+    }
+    load() {
+        this.refresh = (<any>this.grid).refreshing;
     }
     toolbarClick(args: ClickEventArgs): void {
         switch (args.item.text) {

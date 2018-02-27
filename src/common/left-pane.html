@@ -10,17 +10,17 @@
     <div class="sb-home-link sb-icons sb-icon-Home"></div>
     <div class="sb-home-text">
         <span>HOME</span>
-        <a id="sb-home" href="http://ej2.syncfusion.com/home/angular.html"></a>
+        <a id="sb-home" href="https://ej2.syncfusion.com/home/angular.html"></a>
     </div>
 </div>
 <div class="sb-control-navigation e-view">
-    <ej-treeview id="controlTree" #controlTree class="e-view sb-hide" [fields]="fields" (nodeSelected)='onComponentSelect($event)'></ej-treeview>
+    <ejs-treeview id="controlTree" #controlTree class="e-view sb-hide" [nodeTemplate]="nodeTemplate" [fields]="fields" (nodeSelected)='onComponentSelect($event)'></ejs-treeview>
     <div id="controlSamples" class="e-view">
         <div id="sb-left-back" class="back" (click)="onAllControlClick($event)">
             <div class="e-icons back-icon"></div>
             <div class="control-name">ALL CONTROLS</div>
         </div>
-        <ej-listview id="controlList" #controlList class="e-view" [dataSource]="listData" [fields]="listFields" (select)='onSampleSelect($event)' (actionComplete)='afterListviewRendered($event)'>
+        <ejs-listview id="controlList" #controlList class="e-view" [dataSource]="listData" [fields]="listFields" (select)='onSampleSelect($event)' (actionComplete)='afterListviewRendered($event)'>
             <ng-template #template let-data>
                 <div class="e-text-content e-icon-wrapper">
                     <span class="e-list-text" role="listitem">{{data.name}}
@@ -34,7 +34,7 @@
                     <span class="e-list-text">{{data.items[0].category}}</span>
                 </div>
             </ng-template>
-        </ej-listview>
+        </ejs-listview>
     </div>
 </div>
 
@@ -63,6 +63,6 @@
                 <div class="sb-footer-link">Knowledge Base</div>
             </a>
         </div>
-        <div class="sb-footer-copyright">Copyright © 2001-2017 Syncfusion Inc.</div>
+        <div class="sb-footer-copyright">Copyright © 2001-2018 Syncfusion Inc.</div>
     </div>
 </div>

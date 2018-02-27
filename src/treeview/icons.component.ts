@@ -41,8 +41,8 @@ export class IconsTreeViewComponent {
                 {
                     nodeId: '04-01', nodeText: 'Camera Roll', icon: 'folder', expanded: true,
                     nodeChild: [
-                        { nodeId: '04-01-01', nodeText: 'WIN_20160726_094117.JPG', image: 'src/treeview/Employees/9.png' },
-                        { nodeId: '04-01-02', nodeText: 'WIN_20160726_094118.JPG', image: 'src/treeview/Employees/3.png' },
+                        { nodeId: '04-01-01', nodeText: 'WIN_20160726_094117.JPG', image: 'src/images/employees/9.png' },
+                        { nodeId: '04-01-02', nodeText: 'WIN_20160726_094118.JPG', image: 'src/images/employees/3.png' },
                     ]
                 },
                 { nodeId: '04-02', nodeText: 'Wind.jpg', icon: 'images' },

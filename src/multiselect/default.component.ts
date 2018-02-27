@@ -25,7 +25,7 @@ export class DefaultMultiselectComponent {
     // set the placeholder to MultiSelect input element
     public waterMark: string = 'Favorite Sports';    
     // set the type of mode for how to visualized the selected items in input element.
-    public default : string = 'default';
-    public box : string = 'box';
-    public delimiter : string = 'delimiter';
+    public default : string = 'Default';
+    public box : string = 'Box';
+    public delimiter : string = 'Delimiter';
 }

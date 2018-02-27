@@ -5,11 +5,11 @@
 </div>
 <div class="control-section">
     <div>
-        <ej-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (textRender)="onTextRender($event)" (animationComplete)="onAnimationComplete($event)" selectionMode='Point' (load)='load($event)'>
+        <ejs-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (textRender)="onTextRender($event)" (animationComplete)="onAnimationComplete($event)" selectionMode='Point' (load)='load($event)'>
             <e-accumulation-series-collection>
-                <e-accumulation-series [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%" [dataLabel]="dataLabel"> </e-accumulation-series>
+                <e-accumulation-series name='Revenue' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%" [dataLabel]="dataLabel"> </e-accumulation-series>
             </e-accumulation-series-collection>
-        </ej-accumulationchart>
+        </ejs-accumulationchart>
         <div id="center_title" style="visibility: hidden; position: absolute;">Expenses <br> Year 2013</div>
     </div>
 </div>

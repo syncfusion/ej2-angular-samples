@@ -25,13 +25,13 @@
 }
 
 @media (min-width: 480px) and (max-width:639px) {
-    .select-wrap select {
+    .select-wrap {
         width: 40%
     }
 }
 
 @media (min-width:640px) {
-    .select-wrap select {
+    .select-wrap {
         width: 25%
     }
 }

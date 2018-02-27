@@ -1,12 +1,13 @@
 import { Component, ElementRef, HostListener, Inject, Input, ViewChild } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd, ActivatedRoute } from '@angular/router';
-import { select, isVisible, createElement, Ajax, closest } from '@syncfusion/ej2-base';
+import { select, selectAll, isVisible, createElement, Ajax, L10n, loadCldr, setCulture, setCurrencyCode, closest, classList } from '@syncfusion/ej2-base';
 import { Button } from '@syncfusion/ej2-buttons';
 import { DropDownList, AutoComplete } from '@syncfusion/ej2-dropdowns';
 import { Http, Response } from '@angular/http';
 import { Browser, addClass, enableRipple, detach, Animation, AnimationOptions } from '@syncfusion/ej2-base';
 import { Popup, Tooltip } from '@syncfusion/ej2-popups';
-import { Tab, Accordion } from '@syncfusion/ej2-navigations';
+import { Tab, Accordion} from '@syncfusion/ej2-navigations';
+import { Locale } from './locale-string';
 import { samplesList } from './samplelist';
 import { LPController, MyWindow } from './lp.component';
 import { ListViewComponent, SelectEventArgs } from '@syncfusion/ej2-ng-lists';
@@ -14,11 +15,37 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
+loadCldr(
+    require('../common/cldr-data/supplemental/numberingSystems.json'),
+    require('../common/cldr-data/supplemental/currencyData.json'),
+    require('../common/cldr-data/main/de/all.json'),
+    require('../common/cldr-data/main/ar/all.json'),
+    require('../common/cldr-data/main/fr-CH/all.json'),
+    require('../common/cldr-data/main/fr-CH/all.json'),
+    require('../common/cldr-data/main/zh/all.json'),
+);
+
+interface DestroyMethod extends HTMLElement {
+    destroy: Function;
+    ej2_instances: Object[];
+    enableRtl: Boolean;
+}
+
 declare let window: MyWindow;
 let sbObj: { [index: string]: string } = { 'react': 'react', 'javascript': 'javascript' }
-let sbArray: string[] = ['react', 'ts', 'javascript'];
+let sbArray: string[] = ['react', 'ts', 'javascript','asp_core','asp_mvc'];
 let urlRegex: RegExp = /(npmci\.syncfusion\.com|ej2\.syncfusion\.com)(\/)(development|production)*/;
 let sampleRegex: RegExp = /#\/(([^\/]+\/)+[^\/\.]+)/;
+let cBlock: string[] = ['ts-src-tab', 'html-src-tab'];
+const matchedCurrency: { [key: string]: string } = {
+    'en': 'USD',
+    'de': 'EUR',
+    'ar': 'AED',
+    'zh': 'CNY',
+    'fr-CH': 'CHF'
+};
+setCulture('en');
+L10n.load(Locale);
 const typeMapper: { [key: string]: string } = {
     ts: 'typescript',
     html: 'xml',
@@ -30,7 +57,7 @@ const sourceHeader: string = '<li class="nav-item {2}" role="presentation"><a cl
 const sourcecontent: string = '<div class="tab-pane {2}" id="{0}" role="tabpanel" {4}><pre><code class="{3}">{1}</code></pre></div>';
 const plnk: string = '<li class="plnk" style="float:right"><a id="plnkr">Open in Plunker</a></li>\n' +
     '<li class="open"><a id="openNew" target="_blank"><div class="openIcon e-icons"></div></a></li>';
-const themes: string[] = ['material', 'fabric', 'bootstrap'];
+const themes: string[] = ['material', 'fabric', 'bootstrap', 'highcontrast'];
 let selectedTheme: string;
 let themeFlag: boolean = true;
 let slideFlag: boolean = false;
@@ -58,6 +85,8 @@ export class SBController {
     public settingsPopup: Popup;
     public switcherPopup: Popup;
     public themeDropDown: DropDownList;
+    public currencyDropDown: DropDownList;
+    public cultureDropDown: DropDownList;
     public isTablet: boolean;
     public isMobile: boolean;
     public isDesktop: boolean;
@@ -74,6 +103,7 @@ export class SBController {
     public resizeTimer: number = 0;
     public prevSampleName: string = '';
     public prevControlName: string = '';
+   
     //Bread Crumb Object
     public breadCrumbObject:
     {
@@ -84,6 +114,8 @@ export class SBController {
 
     @ViewChild('leftPane')
     public leftControl: LPController;
+
+   
 
     constructor(
         private ngEle: ElementRef,
@@ -109,7 +141,7 @@ export class SBController {
                 }
             }
         });
-
+       
         let proxy: any = this
         this.sourceTab = new Tab({
             items: [],
@@ -131,8 +163,40 @@ export class SBController {
             index: 0,
             change: (e: any) => { this.switchTheme(e.value); }
         });
+        this.cultureDropDown = new DropDownList({
+            index: 0,
+            zIndex: 1005,
+            change: (e: any) => {
+                let value: string = e.value;
+                this.currencyDropDown.value = matchedCurrency[value];
+
+                setCulture(e.value);
+                if(value == "ar"){
+                   this.changeRtl(true);
+                }else{
+                   this.changeRtl(false);
+                }
+                if(this.isMobile){
+                   this.removeOverlay();
+                }
+            }
+
+        });
+        this.currencyDropDown = new DropDownList({
+            zIndex: 1005,
+            index: 0,
+            change: (e: any) => { 
+                this.settingsPopup.hide();
+                setCurrencyCode(e.value);
+                if (this.isMobile) {
+                    this.removeOverlay();
+                } 
+                
+            }
+        });
         this.searchBox = new AutoComplete({
             minLength: 3,
+            zIndex:10000022,
             itemTemplate: '${name}',
             groupTemplate: '${cName}',
             placeholder: 'Search here...',
@@ -163,6 +227,18 @@ export class SBController {
             this.breadCrumbObject.categorySeparator.style.display = 'none';
         }
         this.breadCrumbObject.sample.innerHTML = sampleName;
+        let title: HTMLElement = document.querySelector('title');
+        let txt: string = title.innerHTML;
+        let num: number = txt.indexOf('-');
+        if (num !== -1) {
+            txt = txt.slice(0, num + 1);
+            txt += ' ' + controlName + ' > ' + sampleName;
+        }
+        else {
+            txt += ' - ' + controlName + ' > ' + sampleName;
+        }
+        title.innerHTML = txt;
+
     }
 
     renderTabToolBar() {
@@ -196,7 +272,7 @@ export class SBController {
         ele.addEventListener('click', this.copyCode.bind(this));
         let copiedTooltip: Tooltip = new Tooltip(
             {
-                content: 'Copied', position: 'bottom center', opensOn: 'click', closeDelay: 500
+                content: 'Copied', position: 'BottomCenter', opensOn: 'Click', closeDelay: 500
             }, '.copy-tooltip');
 
     }
@@ -214,8 +290,10 @@ export class SBController {
             offsetY: 5,
             relateTo: <any>select('.sb-setting-btn'),
             position: { X: 'right', Y: 'bottom' }
-            , collision: { X: 'flip', Y: 'flip' }
+            , collision: { X: 'flip', Y: 'flip' },
+            zIndex : 1002,
         });
+        
         this.settingsPopup.hide();
 
         this.switcherPopup = new Popup(document.getElementById('sb-switcher-popup'), {
@@ -260,7 +338,7 @@ export class SBController {
                     loadTheme(theme);
                 }
             });
-
+           
         this.router.events
             .filter((event: NavigationEnd) => event instanceof NavigationEnd)
             .map(() => this.activatedRoute)
@@ -356,9 +434,17 @@ export class SBController {
         let sample: string[] = href.match(sampleRegex);
         for (let sb of sbArray) {
             let ele: HTMLFormElement = (select('#' + sb) as HTMLFormElement);
-            ele.href = ((link) ? ('http://' + link[1] + '/' + (link[3] ? (link[3] + '/') : '')) :
-                ('http://ej2.syncfusion.com/')) +
-                (sbObj[sb] ? (sb + '/') : '') + 'demos/#/' + (sample ? (sample[1] + (sb !== 'typescript' ? '' : '.html')) : '');
+            if(sb === 'asp_mvc'){
+                ele.href ='https://aspnetmvc.syncfusion.com/'
+            }
+            else if(sb === 'asp_core'){
+                ele.href ='https://aspdotnetcore.syncfusion.com/'
+            }
+            else{
+                ele.href = ((link) ? ('http://' + link[1] + '/' + (link[3] ? (link[3] + '/') : '')) :
+                ('https://ej2.syncfusion.com/')) +
+                    (sbObj[sb] ? (sb + '/') : '') + 'demos/#/' + (sample ? (sample[1] + (sb !== 'typescript' ? '' : '.html')) : '');
+            }
         }
     }
 
@@ -372,6 +458,8 @@ export class SBController {
         this.mobileOverlay = select('.sb-mobile-overlay ');
         this.loader = select('.sb-body-overlay');
         this.themeDropDown.appendTo('#sb-setting-theme');
+        this.cultureDropDown.appendTo('#sb-setting-culture');
+        this.currencyDropDown.appendTo('#sb-setting-currency');
         this.searchBox.dataSource = this.leftControl.listData;
         this.searchBox.dataBind();
         this.searchBox.appendTo('#search-input');
@@ -381,6 +469,14 @@ export class SBController {
         this.wireEvents();
         this.setResponsive();
     }
+
+    ngAfterContentChecked(): void {  
+        // Don't perform any more operations in this method.
+        if(this.cultureDropDown.value == "ar"){
+            this.changeRtl(true);
+        }
+        this.hideShowSBLoader(true);
+   }
 
     hideShowSBLoader(hide?: boolean): void {
         if (!this.loader) {
@@ -392,6 +488,23 @@ export class SBController {
             this.loader.classList.remove('sb-hide');
         }
     }
+
+    changeRtl(hide?: boolean): void {
+      let elementlist: any = selectAll('.e-control', document.getElementById('control-content'));
+        for (let control of elementlist) {
+            let eleinstance: Object[] = (<DestroyMethod>control).ej2_instances;
+            if (eleinstance) {
+                for (let instance of eleinstance) {
+                    (<DestroyMethod>instance).enableRtl = hide;
+                }
+            }
+        }
+    }
+    removeOverlay(){
+        this.mobileOverlay.classList.add('sb-hide');
+        this.settingsPopup.hide({ name: 'SlideRightOut', duration: 400 });
+    }
+
 
     switchTheme(str: string): void {
         let hash: string[] = location.hash.split('/');
@@ -427,6 +540,7 @@ export class SBController {
         this.settingsPopup.hide();
         this.switcherPopup.hide();
     }
+    
 
     updateViewMode() {
         this.isMobile = window.matchMedia('(max-width:550px)').matches;
@@ -456,8 +570,15 @@ export class SBController {
                 if (closest(<Element>e.target, '.e-popup') === null) {
                     this.settingsPopup.hide({ name: 'SlideRightOut', duration: 400 });
                 }
-            } else {
-                this.settingsPopup.hide();
+            } else{
+                if(e.target){                  
+                    if((e.target as any).classList && (e.target as any).classList.contains('e-ddl-icon')){
+                        this.settingsPopup.show();
+                    }
+                    else{
+                        this.settingsPopup.hide();
+                    }
+                }
             }
         }
         if (closest(<Element>e.target, '.sb-lang-toggler-wrapper') === null && this.switcherPopup.element.classList.contains('e-popup-open')) {
@@ -469,6 +590,7 @@ export class SBController {
         select('#header-theme-switcher').addEventListener('click', this.onThemeButtonClick.bind(this));
         select('.setting-responsive').addEventListener('click', this.onMouseTouchButtonClick.bind(this));
         select('#sb-switcher').addEventListener('click', this.onSwitcherClick.bind(this));
+        select('.sb-header-text-right').addEventListener('click', this.onSwitcherClick.bind(this));
         select('.sb-setting-btn').addEventListener('click', this.onOpenPreferenceButtonClick.bind(this));
         select('.sb-header-settings').addEventListener('click', this.onOpenPreferenceButtonClick.bind(this));
         select('#prev-sample').addEventListener('click', this.onPrevButtonClick.bind(this));
@@ -517,6 +639,7 @@ export class SBController {
                 this.toggleLeftPaneOnDesktop(e);
             }
         }
+
 
     }
 
@@ -662,6 +785,7 @@ export class SBController {
         if (propPanel) {
             let pClose: boolean = !propPanel.classList.contains('sb-hide');
             if (close === true || pClose) {
+                debugger
                 this.aniObject.animate(propPanel, {
                     name: 'SlideRightOut',
                     duration: 400,
@@ -672,6 +796,7 @@ export class SBController {
                 });
             } else {
                 propPanel.classList.remove('sb-hide');
+                debugger
                 this.aniObject.animate(propPanel, {
                     name: 'SlideRightIn',
                     duration: 400,
@@ -682,6 +807,7 @@ export class SBController {
                 });
             }
         }
+
     }
 
     toggleLeftPane(close?: boolean) {
@@ -702,6 +828,13 @@ export class SBController {
     }
 
     toggleLeftPaneOnDesktop(close?: boolean) {
+        let reverse: boolean = select('.sb-left-pane').classList.contains('sb-hide');
+        if(reverse){
+            select('#sb-toggle-left').classList.add('toggle-active');
+        }else{
+            select('#sb-toggle-left').classList.remove('toggle-active')
+        }
+        
         let rightPane: HTMLElement = <HTMLElement>select('.sb-right-pane');
         if (this.isTablet === true || this.isDesktop === true) {
             if (close === true) {
@@ -710,7 +843,7 @@ export class SBController {
                 this.aniObject.animate(this.leftControl.ngEle.nativeElement, {
                     name: 'SlideLeftOut', end: (): void => {
                         this.leftControl.ngEle.nativeElement.style.display = 'none';
-                        rightPane.classList.remove('sb-animate-left')
+                        rightPane.classList.remove('sb-animate-left');
                         this.resizeManualTrigger = true;
                         window.dispatchEvent(new Event('resize'));
                         if (Browser.isDevice) {
@@ -736,18 +869,21 @@ export class SBController {
                 });
             }
         }
+
     }
 
     closeLeftPane(): void {
         if (this.isMobile !== true) {
             return;
         }
+       
         this.aniObject.animate(this.leftControl.ngEle.nativeElement, {
             name: 'SlideLeftOut',
             end: (e: AnimationOptions) => {
                 e.element.style.display = 'none';
             }
         });
+
         if (!this.mobileOverlay.classList.contains('sb-hide')) {
             this.mobileOverlay.classList.add('sb-hide');
         }
@@ -792,11 +928,11 @@ export class SBController {
                     let content: string = res._body
                     if (/html/g.test(fileName)) {
                         content = this.getStringWithOutDescription(content, /(\'|\")description/g);
-                        content = this.getStringWithOutDescription(content, /(\'|\")action-description/g)                        
+                        content = this.getStringWithOutDescription(content, /(\'|\")action-description/g)
                     }
                     if (!/-plnkr\.json/g.test(fileName)) {
                         content = content.replace(/&/g, '&amp;')
-                        .replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                            .replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
                         items.push({
                             header: { text: fileName },
                             data: content,
@@ -864,7 +1000,8 @@ export class SBController {
             detach(prevForm);
         }
         let form: HTMLFormElement = <HTMLFormElement>createElement('form');
-        form.setAttribute('action', 'http://plnkr.co/edit/?p=preview');
+        let res: string = ((location.href as any).includes('ej2.syncfusion.com') ? 'https:' : 'http:') + '//plnkr.co/edit/?p=preview';
+        form.setAttribute('action', res);
         form.setAttribute('method', 'post');
         form.setAttribute('target', '_blank');
         form.id = 'plnkr-form';

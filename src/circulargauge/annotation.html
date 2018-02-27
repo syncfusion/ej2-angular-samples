@@ -5,7 +5,7 @@
    </p>
 </div>
 <div class="control-section">
-    <ej-circulargauge id="clock-container" #gauge1 style='display:block;' centerX='45%' (loaded)='loaded($event)' (resized)='resize($event)'>
+    <ejs-circulargauge id="clock-container" #gauge1 style='display:block;' centerX='45%' (load)='load($event)' (loaded)='loaded($event)' (resized)='resize($event)'>
         <e-axes>
             <e-axis [radius]='annotationRadius' startAngle=0 endAngle=0 minimum=0 maximum=12 [majorTicks]='majorTicks' [minorTicks]='minorTicks' [lineStyle]='lineStyle'
                 [labelStyle]='labelStyle'>
@@ -35,7 +35,7 @@
                 </e-pointers>
             </e-axis>
         </e-axes>
-    </ej-circulargauge>
+    </ejs-circulargauge>
 </div>
 <div id="description">
     <p style="font-weight: 500">Description</p>

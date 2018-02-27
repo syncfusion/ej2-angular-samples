@@ -5,7 +5,7 @@
 </div>
 <div class="control-section">
     <div class="col-md-8">
-        <ej-circulargauge #axes='' style='display:block;' id="axis-container" #multipleAxes style='display:block;' [title]='title'
+        <ejs-circulargauge (load)='load($event)' #axes='' style='display:block;' id="axis-container" #multipleAxes style='display:block;' [title]='title'
             [titleStyle]='titleStyle'>
             <e-axes>
                 <e-axis radius='95%' [lineStyle]='lineStyle1' [labelStyle]='labelStyle1' [majorTicks]='majorTicks1' [minorTicks]='minorTicks1'
@@ -25,7 +25,7 @@
                     </e-pointers>
                 </e-axis>
             </e-axes>
-        </ej-circulargauge>
+        </ejs-circulargauge>
     </div>
     <div class="col-md-4 property-section">
         <div class="property-panel-section">

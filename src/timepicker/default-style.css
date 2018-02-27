@@ -1,0 +1,14 @@
+.control_wrapper {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    padding: 5% 0;
+}
+
+.tabs-wrap {
+    padding: 0 0px 10px;
+}
+
+.e-bigger .control-section {
+    margin-top: 60px;
+}

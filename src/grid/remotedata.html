@@ -4,15 +4,15 @@
     </p>
 </div>
 <div class="control-section">
-    <ej-grid #grid [dataSource]='data' allowPaging='true'>
+    <ejs-grid #grid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings'>
         <e-columns>
-            <e-column field='ProductID' headerText='ID' width='120' textAlign="right"></e-column>
+            <e-column field='ProductID' headerText='ID' width='120' textAlign='Right'></e-column>
             <e-column field='ProductName' headerText='Name' width='160'></e-column>
-            <e-column field='UnitPrice' headerText='Unit Price' format="C1" width='120' textAlign="right"></e-column>
-            <e-column field='UnitsInStock' headerText='Units In Stock' width='150' textAlign="right"></e-column>
+            <e-column field='UnitPrice' headerText='Unit Price' format="C1" width='120' textAlign='Right'></e-column>
+            <e-column field='UnitsInStock' headerText='Units In Stock' width='150' textAlign='Right'></e-column>
             <e-column field='Discontinued' headerText='Discontinued' width='150' displayAsCheckBox="true" ></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
 
     <div id="description">
         <p>The Grid supports data binding. The <code><a target="_blank" class="code"

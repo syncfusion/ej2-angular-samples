@@ -5,7 +5,7 @@
 import { Component, Inject } from '@angular/core';
 
 //Import DataManager related classes
-import { DataManager, Query, ODataV4Adaptor } from '@syncfusion/ej2-data';
+import { DataManager, Query } from '@syncfusion/ej2-data';
 
 @Component({
     selector: 'control-content',
@@ -17,8 +17,8 @@ export class RemoteListViewComponent {
 
     //Initialize dataSource with the DataManager instance.
     public data: DataManager = new DataManager({
-        url: 'http://services.odata.org/V4/Northwind/Northwind.svc',
-        adaptor: new ODataV4Adaptor
+        url: '//js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/',
+        crossDomain: true
     });
 
     //Initialize query with the Query instance to get specified set of data

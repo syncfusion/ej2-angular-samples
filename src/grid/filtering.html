@@ -1,18 +1,15 @@
 <div class="control-section">
     <div class="select-wrap">
-        <select (change)="onChange($event.target.value)">
-            <option disabled selected hidden>Select category to filter</option>
-            <option *ngFor="let property of category">{{property}}</option>
-        </select>
+        <ejs-dropdownlist id='ddlelement' [dataSource]='ddldata' placeholder = 'Select category to filter' (change)="onChange($event)"></ejs-dropdownlist>
     </div>
-    <ej-grid #grid [dataSource]='data' allowPaging='true' allowFiltering='true' [pageSettings]="pageOptions">
+    <ejs-grid #grid [dataSource]='data' allowPaging='true' allowFiltering='true' [pageSettings]="pageOptions">
         <e-columns>
             <e-column field='CategoryName' headerText='Category Name' width='170'></e-column>
             <e-column field='ProductName' headerText='Product Name' width='150'></e-column>
-            <e-column field='QuantityPerUnit' headerText='Quantity per unit' width='180' textAlign="right"></e-column>
-            <e-column field='UnitsInStock' headerText='Units In Stock' width='150' textAlign="right"></e-column>
+            <e-column field='QuantityPerUnit' headerText='Quantity per unit' width='180' textAlign='Right'></e-column>
+            <e-column field='UnitsInStock' headerText='Units In Stock' width='150' textAlign='Right'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
 
     <div id="action-description">
         <p>

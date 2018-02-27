@@ -5,12 +5,12 @@
 </div>
 <div class="control-section">
     <div>
-        <ej-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [legendSettings]='legendSettings' [chartArea]='chartArea'
+        <ejs-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [legendSettings]='legendSettings' [chartArea]='chartArea'
             (textRender)='textRender($event)' (load)='load($event)' (axisLabelRender)='axisLabelRender($event)'>
             <e-series-collection>
-                <e-series [dataSource]='dataSource' type='Waterfall' xName='x' yName='y' name='USA' [columnWidth]='columnWidth' [connector]='connector' [intermediateSumIndexes]='intermediate' [sumIndexes]='sum' [marker]='marker' negativeFillColor='#e56590'> </e-series>
+                <e-series [dataSource]='dataSource' type='Waterfall' xName='x' yName='y' [columnWidth]='columnWidth' [connector]='connector' [intermediateSumIndexes]='intermediate' [sumIndexes]='sum' [marker]='marker' negativeFillColor='#e56590'> </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
     </div>
 </div>
 <div id='description'>

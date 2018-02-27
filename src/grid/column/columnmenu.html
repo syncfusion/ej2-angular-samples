@@ -4,17 +4,17 @@
             menu.
         </p>
     </div>
-    <ej-grid [dataSource]='data' id="gridcomp" allowPaging='true' allowGrouping='true' allowSorting='true' showColumnMenu='true'
+    <ejs-grid [dataSource]='data' id="gridcomp" allowPaging='true' allowGrouping='true' allowSorting='true' showColumnMenu='true'
         [groupSettings]='groupOptions' allowFiltering='true' [filterSettings]='filterSettings'>
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="right"></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' showInColumnChooser='false'></e-column>
-            <e-column field='Freight' headerText='Freight' format='C2' textAlign="right"></e-column>
-            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign="right"></e-column>
+            <e-column field='Freight' headerText='Freight' format='C2' textAlign='Right'></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign='Right'></e-column>
             <e-column field='ShipCountry' headerText='Ship Country' visible='false' width='150'></e-column>
             <e-column field='ShipCity' headerText='Ship City' width='150'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
     <div id="description">
         <p>
             Grid has option to show column menu when click on multiple icon of each column. The column menu has integrated options to
@@ -27,19 +27,19 @@
         </p>
         <ul>
             <li>
-                <code>sortAscending</code> - Sort the current column in ascending order.</li>
+                <code>SortAscending</code> - Sort the current column in ascending order.</li>
             <li>
-                <code>sortDescending</code> - Sort the current column in descending order.</li>
+                <code>SortDescending</code> - Sort the current column in descending order.</li>
             <li>
-                <code>group</code> - Group the current column.</li>
+                <code>Group</code> - Group the current column.</li>
             <li>
-                <code>ungroup</code> - Ungroup the current column.</li>
+                <code>Ungroup</code> - Ungroup the current column.</li>
             <li>
-                <code>autoFit</code> - Auto fit current column.</li>
+                <code>AutoFit</code> - Auto fit current column.</li>
             <li>
-                <code>autoFitAll</code> - Auto fit all columns.</li>
+                <code>AutoFitAll</code> - Auto fit all columns.</li>
             <li>
-                <code>columnChooser</code> - Choose the column visibility.</li>
+                <code>ColumnChooser</code> - Choose the column visibility.</li>
             <li>
                 <code>Filter</code> - Show the filter option as given in
                 <code>filterSetting-> type</code>.</li>

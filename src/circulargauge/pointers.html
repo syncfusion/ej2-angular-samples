@@ -8,7 +8,7 @@
         <div class="col-sm-12">
             <div class="row">
                 <div class="col-sm-4">
-                    <ej-circulargauge id="container1" style='display: block; height:300px;'>
+                    <ejs-circulargauge (load)='load($event)' id="container1" style='display: block; height:300px;'>
                         <e-axes>
                             <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyle2' [labelStyle]='labelStyle2' [majorTicks]='majorTicks1' [minorTicks]='minorTicks1'
                                 radius='90%' minimum=0 maximum=100 [pointers]='pointers2'>
@@ -18,10 +18,10 @@
                                 </e-annotations>
                             </e-axis>
                         </e-axes>
-                    </ej-circulargauge>
+                    </ejs-circulargauge>
                 </div>
                 <div class="col-sm-4">
-                    <ej-circulargauge id="container2" style='display: block; height:300px;'>
+                    <ejs-circulargauge (load)='load($event)' id="container2" style='display: block; height:300px;'>
                         <e-axes>
                             <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyle1' [labelStyle]='labelStyle1' [majorTicks]='majorTicks1' [minorTicks]='minorTicks1'
                                 radius='90%' minimum=0 maximum=100 [pointers]='pointers1'>
@@ -31,10 +31,10 @@
                                 </e-annotations>
                             </e-axis>                            
                         </e-axes>
-                    </ej-circulargauge>
+                    </ejs-circulargauge>
                 </div>
                 <div class="col-sm-4">
-                    <ej-circulargauge id="container3" style='display: block; height:300px;'>
+                    <ejs-circulargauge (load)='load($event)' id="container3" style='display: block; height:300px;'>
                         <e-axes>
                             <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyle3' [labelStyle]='labelStyle3' [majorTicks]='majorTicks1' [minorTicks]='minorTicks1'
                                 radius='90%' minimum=0 maximum=100 [pointers]='pointers3'>
@@ -44,14 +44,14 @@
                                 </e-annotations>
                             </e-axis>
                         </e-axes>
-                    </ej-circulargauge>
+                    </ejs-circulargauge>
                 </div>
             </div>
         </div>
         <div class="col-sm-12">
             <div class="row">
                 <div class="col-sm-4">
-                    <ej-circulargauge id="container4" #fifthgauge centerY='40%' style='display: block; height:300px;'>
+                    <ejs-circulargauge (load)='load($event)' id="container4" #fifthgauge centerY='40%' style='display: block; height:300px;'>
                         <e-axes>
                             <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyle5' [labelStyle]='labelStyle5' [majorTicks]='majorTicks1' [minorTicks]='minorTicks1'
                                 radius='90%' minimum=0 maximum=100 [pointers]='pointers5'>
@@ -61,10 +61,10 @@
                                 </e-annotations>
                             </e-axis>
                         </e-axes>
-                    </ej-circulargauge>
+                    </ejs-circulargauge>
                 </div>
                 <div class="col-sm-4">
-                    <ej-circulargauge id="container5" centerY='40%' style='display: block; height:300px;'>
+                    <ejs-circulargauge (load)='load($event)' id="container5" centerY='40%' style='display: block; height:300px;'>
                         <e-axes>
                             <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyle4' [labelStyle]='labelStyle4' [majorTicks]='majorTicks1' [minorTicks]='minorTicks1'
                                 radius='90%' minimum=0 maximum=100 [pointers]='pointers4'>
@@ -74,10 +74,10 @@
                                 </e-annotations>
                             </e-axis>
                         </e-axes>
-                    </ej-circulargauge>
+                    </ejs-circulargauge>
                 </div>
                 <div class="col-sm-4">
-                    <ej-circulargauge id="container6" #sixthgauge style='display: block; height:300px;'>
+                    <ejs-circulargauge (load)='load($event)' id="container6" #sixthgauge style='display: block; height:300px;'>
                         <e-axes>
                             <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyle6' [labelStyle]='labelStyle6' [majorTicks]='majorTicks1' [minorTicks]='minorTicks1'
                                 radius='90%' minimum=0 maximum=100 [pointers]='pointers6'>
@@ -87,7 +87,7 @@
                                 </e-annotations>
                             </e-axis>
                         </e-axes>
-                    </ej-circulargauge>
+                    </ejs-circulargauge>
                 </div>
             </div>
         </div>

@@ -1,0 +1,33 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the particulate levels in rainfall with multi colored line series in the chart. 
+        Data points are enhanced with individual color and tooltip.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart style='display:block' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' [width]='width' [legendSettings]='legend'>
+            <e-series-collection>
+                <e-series [dataSource]='dataValues' type='MultiColoredLine' xName='XValue' yName='YValue' name='Rainfall' width=1.5 pointColorMapping='color'>
+                </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure each point in line type series. 
+        Multi colored line charts are used to represent time-dependent data to show the trends at equal intervals with their individual colors by using <code>pointColorMapping</code>.
+    </p>
+    <p>
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap a point in touch enabled devices.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules.
+        To use multi colored line series feature, we need to inject
+        <code>MultiColoredLineSeriesService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>

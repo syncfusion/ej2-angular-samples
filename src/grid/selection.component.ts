@@ -14,7 +14,7 @@ export class SelectionComponent implements OnInit {
 
     ngOnInit(): void {
         this.data = data;
-        this.selectOptions = { type: 'multiple' };
-        this.pageSettings = { pageCount: 8 };
+        this.selectOptions = { type: 'Multiple' };
+        this.pageSettings = { pageCount: 5 };
     }
 }

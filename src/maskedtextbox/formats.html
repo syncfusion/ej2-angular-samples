@@ -3,7 +3,7 @@
         <div class="content-wrapper">
             <div>
                 <div class="control-label">Formats</div>
-                <ej-maskedtextbox #formatMask="" [mask]="dynamicMask" [promptChar]="dynamicPrompt" (change)="maskChange($event)" floatLabelType="Never"></ej-maskedtextbox>
+                <ejs-maskedtextbox #formatMask="" [mask]="dynamicMask" [promptChar]="dynamicPrompt" (change)="maskChange($event)" floatLabelType="Never"></ejs-maskedtextbox>
             </div>
         </div>
     </div>
@@ -31,8 +31,8 @@
                             </td>
                             <td style="padding:10px 0 0 0;width:50%">
                                 <div>
-                                    <ej-dropdownlist id="sample-list" #sample [dataSource]="promptData" [(value)]="dynamicPrompt" (change)="setValues($event.target)"
-                                        [fields]="ddlFields" popupheight="220px"></ej-dropdownlist>
+                                    <ejs-dropdownlist id="sample-list" #sample [dataSource]="promptData" [(value)]="dynamicPrompt" (change)="setValues($event.target)"
+                                        [fields]="ddlFields" popupheight="220px"></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>
@@ -74,12 +74,14 @@
 <style>
     .property-panel-content {
         padding: 0 10px 10px 0;
+        overflow: auto;
     }
     
     .content-wrapper {
         width: 45%;
         margin: 0 auto;
         min-width: 185px;
+        max-width: 350px;
     }
     
     .control-label {

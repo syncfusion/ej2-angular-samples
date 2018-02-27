@@ -36,7 +36,7 @@ export class RangeAreaComponent {
     enableSelectionZooming: true,
     mode: 'X'
   };
-  public title: string = 'Maximum and Minimum Temperature';
+  public title: string = 'Temperature Variation';
   public tooltip: Object = {
     enable: false
   };

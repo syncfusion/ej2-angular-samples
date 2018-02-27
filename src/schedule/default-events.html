@@ -1,0 +1,52 @@
+<div class="control-section">
+    <ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" (eventRendered)="onEventRendered($event)">
+    </ejs-schedule>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample illustrates the usage of different types of events such as normal, spanned and all-day. Here, the Schedule acts
+        as a leave planner for an employee to plan his upcoming leaves as well as to keep track of his previously taken time-offs
+        and leaves.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        Schedule requires only the
+        <code>startTime</code> and
+        <code>endTime</code> fields as mandatory to be mapped from datasource and provided with proper datetime values to display the normal
+        events in it. The normal events can be categorized into 3 types based on its time range and all-day type.
+    </p>
+    <table style="width:100%">
+        <tr>
+            <th style="width:100px">
+                <strong>Event</strong>
+            </th>
+            <th>
+                <strong>Description</strong>
+            </th>
+        </tr>
+        <tr>
+            <td style="padding:4px 0;">Normal events</td>
+            <td>The events that has its start and end time duration on the same date. These events are depicted in green color
+                in the above sample.</td>
+        </tr>
+        <tr>
+            <td style="padding:4px 0;">Spanned events</td>
+            <td>
+                The events on which its start and end time spans over multiple days and usually displays together with all-day events. These
+                events are depicted in orange color which can be seen by navigating to the next date period and are depicted
+                in orange color.
+            </td>
+        </tr>
+        <tr>
+            <td style="padding:4px 0;">All-day events</td>
+            <td>
+                The events that are defined as all-day in its event object by setting
+                <code>isAllDay</code> to true. It usually renders at the date header section of the Schedule where no time-cells are present.
+                These events are depicted in purple color.
+            </td>
+        </tr>
+    </table>
+</div>

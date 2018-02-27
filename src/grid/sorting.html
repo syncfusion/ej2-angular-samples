@@ -1,14 +1,14 @@
 <div class="control-section">
-    <ej-grid class="sortingenabled" [dataSource]='data' allowPaging='true' allowSorting='true' [sortSettings]='initialSort' [pageSettings]='pageSettings'>
+    <ejs-grid class="sortingenabled" [dataSource]='data' allowPaging='true' allowSorting='true' [sortSettings]='initialSort' [pageSettings]='pageSettings'>
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='150' textAlign="right"></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='150' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='170'></e-column>
-            <e-column field='OrderDate' headerText='Order Date' format="yMd" width='155' textAlign="right"></e-column>
-            <e-column field='Freight' headerText='Freight' width='150' format='C2' textAlign="right"></e-column>
-            <e-column field='ShippedDate' headerText='Shipped Date' format="yMd" width='155' textAlign="right"></e-column>
+            <e-column field='OrderDate' headerText='Order Date' format="yMd" width='155' textAlign='Right'></e-column>
+            <e-column field='Freight' headerText='Freight' width='150' format='C2' textAlign='Right'></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' format="yMd" width='155' textAlign='Right'></e-column>
             <e-column field='ShipCountry' headerText='Ship Country' width='170'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
 
     <div id="action-description">
         <p>

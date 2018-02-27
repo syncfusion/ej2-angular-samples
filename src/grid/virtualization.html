@@ -5,13 +5,13 @@
 </div>
 <div class="control-section">      
     <div class='div-button'>
-        <button ej-button (click)='onClick($event)' cssClass='e-info'>Load 100K Data</button>
+        <button ejs-button (click)='onClick($event)' cssClass='e-info'>Load 100K Data</button>
         <span id="popup">
             <span id="gif" class="image"></span>
         </span>
         <span id="performanceTime">Time Taken: 0 ms</span>
     </div>
-    <ej-grid #grid [dataSource]='virtualData' [enableVirtualization]='true' [enableColumnVirtualization]='true' height='600' (dataBound)='hide()'>
+    <ejs-grid #grid [dataSource]='virtualData' [enableVirtualization]='true' [enableColumnVirtualization]='true' height='600' (dataBound)='hide()'>
         <e-columns>
             <e-column field='FIELD1' headerText='Player Name' width='120'></e-column>
             <e-column field='FIELD2' headerText='Year' width='100'></e-column>
@@ -22,29 +22,29 @@
             <e-column field='FIELD7' headerText='GS' width='120'></e-column>
             <e-column field='FIELD8' headerText='Minutes' width='120'></e-column>
             <e-column field='FIELD9' headerText='Points' width='130'></e-column>
-            <e-column field='FIELD10' headerText='oRebounds' width='130'></e-column>
-            <e-column field='FIELD11' headerText='dRebounds' width='130'></e-column>
-            <e-column field='FIELD12' headerText='Rebounds' width='130'></e-column>
+            <e-column field='FIELD10' headerText='OREB' width='130'></e-column>
+            <e-column field='FIELD11' headerText='DREB' width='130'></e-column>
+            <e-column field='FIELD12' headerText='REB' width='130'></e-column>
             <e-column field='FIELD13' headerText='Assists' width='130'></e-column>
             <e-column field='FIELD14' headerText='Steals' width='120'></e-column>
             <e-column field='FIELD15' headerText='Blocks' width='120'></e-column>
             <e-column field='FIELD16' headerText='Turnovers' width='140'></e-column>
             <e-column field='FIELD17' headerText='PF' width='100'></e-column>
-            <e-column field='FIELD18' headerText='fgAttempted' width='150'></e-column>
-            <e-column field='FIELD19' headerText='fgMade' width='120'></e-column>
-            <e-column field='FIELD20' headerText='ftAttempted' width='150'></e-column>
-            <e-column field='FIELD21' headerText='ftMade' width='120'></e-column>
-            <e-column field='FIELD22' headerText='ThreeAttempted' width='170'></e-column>
-            <e-column field='FIELD23' headerText='ThreeMade' width='140'></e-column>
-            <e-column field='FIELD24' headerText='PostGP' width='120'></e-column>
-            <e-column field='FIELD25' headerText='PostGS' width='120'></e-column>
-            <e-column field='FIELD26' headerText='PostMinutes' width='150'></e-column>
-            <e-column field='FIELD27' headerText='PostPoints' width='120'></e-column>
-            <e-column field='FIELD28' headerText='PostoRebounds' width='150'></e-column>
-            <e-column field='FIELD29' headerText='PostdRebounds' width='150'></e-column>
-            <e-column field='FIELD30' headerText='PostRebounds' width='150'></e-column>
+            <e-column field='FIELD18' headerText='FGA' width='150'></e-column>
+            <e-column field='FIELD19' headerText='FGM' width='120'></e-column>
+            <e-column field='FIELD20' headerText='FTA' width='150'></e-column>
+            <e-column field='FIELD21' headerText='FTM' width='120'></e-column>
+            <e-column field='FIELD22' headerText='Three Attempted' width='170'></e-column>
+            <e-column field='FIELD23' headerText='Three Made' width='140'></e-column>
+            <e-column field='FIELD24' headerText='Post GP' width='120'></e-column>
+            <e-column field='FIELD25' headerText='Post GS' width='120'></e-column>
+            <e-column field='FIELD26' headerText='Post Minutes' width='150'></e-column>
+            <e-column field='FIELD27' headerText='Post Points' width='120'></e-column>
+            <e-column field='FIELD28' headerText='Post OREB' width='150'></e-column>
+            <e-column field='FIELD29' headerText='Post DREB' width='150'></e-column>
+            <e-column field='FIELD30' headerText='Post REB' width='150'></e-column>
         </e-columns>
-    </ej-grid>
+    </ejs-grid>
 </div>
 
 <div id='description'>

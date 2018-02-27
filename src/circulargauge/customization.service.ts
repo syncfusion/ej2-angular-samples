@@ -3,12 +3,17 @@
  */
 
 import { CircularGauge } from '@syncfusion/ej2-circulargauge';
-import { Annotations, IAxisLabelRenderEventArgs } from '@syncfusion/ej2-circulargauge';
+import { Annotations, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-circulargauge';
 CircularGauge.Inject(Annotations);
 
 export class DynamicDataSerive {
     GetSubGauge1(): any {
         let gauge1: CircularGauge = new CircularGauge({
+            load: (args: ILoadedEventArgs) => {
+                let selectedTheme: string = location.hash.split('/')[1];
+                selectedTheme = selectedTheme ? selectedTheme : 'Material';
+                args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+            },
             axes: [{
                 annotations: [{
                     content: '<div style="color:#666666;font-size:35px;">50.5GB</div>',
@@ -45,6 +50,11 @@ export class DynamicDataSerive {
             }]
         });
         let gauge2: CircularGauge = new CircularGauge({
+            load: (args: ILoadedEventArgs) => {
+                let selectedTheme: string = location.hash.split('/')[1];
+                selectedTheme = selectedTheme ? selectedTheme : 'Material';
+                args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+            },
             centerY: '70%',
             axes: [{
                 annotations: [{

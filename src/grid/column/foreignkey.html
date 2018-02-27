@@ -1,0 +1,36 @@
+<div class="control-section">
+    <ejs-grid #grid [dataSource]='data' [allowPaging]='true' [pageSettings]="pageSettings" [allowFiltering]='true' [filterSettings]="filterSettings"
+    [editSettings]='editOptions' [toolbar]='toolbarItems' [allowSorting]='true'>
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' [validationRules]='orderidrules' isPrimaryKey='true'></e-column>
+            <e-column field='CustomerID' headerText='Customer Name' width='150'
+            foreignKeyValue='ContactName' foreignKeyField='CustomerID' [dataSource]='customerData' [validationRules]='orderidrules'></e-column>
+            <e-column field='Freight' headerText='Freight' width='100' format='C2' textAlign='Right' editType='numericedit'></e-column>
+            <e-column field='ShipName' headerText='Ship Name' width='170'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='150' editType='dropdownedit'></e-column>
+        </e-columns>
+    </ejs-grid>
+
+    <div id="action-description">
+        <p>
+            In this sample, <b>Customer Name</b> column is a foreign column. You can perform filtering, sorting or editing in the foreign key column.
+        </p>
+    </div>
+    
+    <div id="description">
+        <p>
+            Grid has option to show foreign key columns. It can be enabled by setting 
+            <code><a target="_blank" class="code" href="http://ej2.syncfusion.com/angular/documentation/grid/api-column.html#datasource-object---datamanager">column.dataSource </a></code> 
+            property with either local or remote data and column field and text can be defined by using
+            <code><a target="_blank" class="code" href="http://ej2.syncfusion.com/angular/documentation/grid/api-column.html#foreignkeyfield-string">column.foreignKeyField</a></code> and
+            <code><a target="_blank" class="code" href="http://ej2.syncfusion.com/angular/documentation/grid/api-column.html#foreignkeyvalue-string">column.foreignKeyValue</a></code> properties.
+        </p>    
+         
+         <br>
+         <p style="font-weight: 500">Injecting Module:</p>
+        <p>
+            Grid features are segregated into individual feature-wise modules. To use foreign key column feature, we need to inject
+            <code> ForeignKeyService </code> into the <code>@NgModule.providers</code> section.
+        </p>
+    </div>
+</div>

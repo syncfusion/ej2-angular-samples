@@ -5,7 +5,7 @@
 </div>
 <div class="control-section">
     <div class="col-lg-9">
-        <ej-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)'>
+        <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Polar' drawType='StackingColumn' xName='x' yName='y' name='6-9' [border]='border'>
                 </e-series>
@@ -20,7 +20,7 @@
                 <e-series [dataSource]='data' type='Polar' drawType='StackingColumn' xName='x' yName='y5' name='23 Above' [border]='border'>
                 </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
     </div>
     <div class="col-lg-3 property-section">
         <div class="property-panel-section">

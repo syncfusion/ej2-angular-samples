@@ -1,125 +1,98 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { orderDatas, employeeData } from './data';
-import { ToolbarService, GridComponent, ExcelExportService, PdfExportService } from '@syncfusion/ej2-ng-grids';
+import { categoryData } from './data';
+import { ToolbarService, GridComponent, ExcelExportService, PdfExportService, PageService } from '@syncfusion/ej2-ng-grids';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations'
 
 @Component({
     selector: 'control-content',
     templateUrl: 'advanced-exporting.html',
-    providers: [ToolbarService, ExcelExportService, PdfExportService]
-
+    providers: [ToolbarService, PageService, ExcelExportService, PdfExportService]
 })
 export class AdvancedExportingComponent implements OnInit {
-    public firstGridData: Object[];
-    public secondGridData: Object[];
+    public gridData: Object[];
     public toolbar: string[];
-    @ViewChild('firstgrid')
-    public firstGrid: GridComponent;
-
-    @ViewChild('secondgrid')
-    public secondGrid: GridComponent;
+    public pageSettings: Object;
+    @ViewChild('grid')
+    public grid: GridComponent;
 
     public ngOnInit(): void {
-        this.firstGridData = orderDatas.slice(0, 5);
-        this.secondGridData = employeeData.slice(0, 5);
-        this.toolbar = ['excelexport', 'pdfexport'];
+        this.gridData = categoryData;
+        this.toolbar = ['ExcelExport', 'PdfExport'];
+        this.pageSettings = { pageSize: 10 };
     }
     toolbarClick(args: ClickEventArgs): void {
         switch (args.item.text) {
             /* tslint:disable */
             case 'Excel Export':
-                let firstGridExcelExport: Promise<any> = this.firstGrid.excelExport(this.getExcelExportProperties(), true);
-                firstGridExcelExport.then((bookData: any) => {
-                    this.secondGrid.excelExport(this.getExcelExportProperties(), false, bookData);
-                });
+                this.grid.excelExport(this.getExcelExportProperties());
                 break;
             /* tslint:enable */
             case 'PDF Export':
-                let firstGridPdfExport: Promise<Object> = this.firstGrid.pdfExport(this.getPdfExportProperties(), true);
-                firstGridPdfExport.then((pdfData: Object) => {
-                    this.secondGrid.pdfExport(this.getPdfExportProperties(), false, pdfData);
-                });
+                this.grid.pdfExport(this.getPdfExportProperties());
                 break;
         }
     }
 
-    /* tslint:disable-next-line:no-any */
+    private getDate(): string {
+        let date: string = '';
+        date += ((new Date()).getMonth().toString()) + '/' + ((new Date()).getDate().toString());
+        return date += '/' + ((new Date()).getFullYear().toString());
+    }
     private getExcelExportProperties(): any {
         return {
             header: {
                 headerRows: 7,
                 rows: [
                     {
+                        index: 1,
                         cells: [
-                            {
-                                colSpan: 6,
-                                value: 'Northwind Traders',
-                                style: { fontColor: '#C67878', fontSize: 20, hAlign: 'center', bold: true, }
-                            }]
+                            /* tslint:disable-next-line:max-line-length */
+                            { index: 1, colSpan: 5, value: 'INVOICE', style: { fontColor: '#C25050', fontSize: 25, hAlign: 'Center', bold: true } }
+                        ]
                     },
                     {
+                        index: 3,
                         cells: [
-                            {
-                                colSpan: 6,
-                                value: '2501 Aerial Center Parkway',
-                                style: { fontColor: '#C67878', fontSize: 15, hAlign: 'center', bold: true, }
-                            }]
+                            /* tslint:disable-next-line:max-line-length */
+                            { index: 1, colSpan: 2, value: 'Adventure Traders', style: { fontColor: '#C67878', fontSize: 15, bold: true } },
+                            { index: 4, value: 'INVOICE NUMBER', style: { fontColor: '#C67878', bold: true } },
+                            { index: 5, value: 'DATE', style: { fontColor: '#C67878', bold: true }, width: 150 }
+                        ]
                     },
                     {
+                        index: 4,
                         cells: [
-                            {
-                                colSpan: 6,
-                                value: 'Suite 200 Morrisville, NC 27560 USA',
-                                style: { fontColor: '#C67878', fontSize: 15, hAlign: 'center', bold: true, }
-                            }]
+                            { index: 1, colSpan: 2, value: '2501 Aerial Center Parkway' },
+                            { index: 4, value: 2034 },
+                            { index: 5, value: this.getDate(), width: 150 }
+                        ]
                     },
                     {
+                        index: 5,
                         cells: [
-                            {
-                                colSpan: 6,
-                                value: 'Tel +1 888.936.8638 Fax +1 919.573.0306',
-                                style: { fontColor: '#C67878', fontSize: 15, hAlign: 'center', bold: true, }
-                            }]
+                            { index: 1, colSpan: 2, value: 'Tel +1 888.936.8638 Fax +1 919.573.0306' },
+                            { index: 4, value: 'CUSOTMER ID', style: { fontColor: '#C67878', bold: true } },
+                            { index: 5, value: 'TERMS', width: 150, style: { fontColor: '#C67878', bold: true } }
+                        ]
                     },
                     {
+                        index: 6,
                         cells: [
-                            {
-                                colSpan: 6,
-                                hyperlink: { target: 'https://www.northwind.com/', displayText: 'www.northwind.com' },
-                                style: { hAlign: 'center' }
-                            }]
-                    },
-                    {
-                        cells: [
-                            {
-                                colSpan: 6,
-                                hyperlink: { target: 'mailto:support@northwind.com' },
-                                style: { hAlign: 'center' }
-                            }]
-                    },
-                ]
-            },
-            footer: {
-                footerRows: 4,
-                rows: [
-                    {
-                        cells: [
-                            {
-                                colSpan: 6,
-                                value: 'Thank you for your business!',
-                                style: { hAlign: 'center', bold: true }
-                            }]
-                    },
-                    {
-                        cells: [
-                            {
-                                colSpan: 6,
-                                value: '!Visit Again!',
-                                style: { hAlign: 'center', bold: true }
-                            }]
+                            { index: 4, value: 564 },
+                            { index: 5, value: 'Net 30 days', width: 150 }
+                        ]
                     }
                 ]
             },
+
+            footer: {
+                footerRows: 5,
+                rows: [
+                    /* tslint:disable-next-line:max-line-length */
+                    { cells: [{ colSpan: 6, value: 'Thank you for your business!', style: { fontColor: '#C67878', hAlign: 'Center', bold: true } }] },
+                    { cells: [{ colSpan: 6, value: '!Visit Again!', style: { fontColor: '#C67878', hAlign: 'Center', bold: true } }] }
+                ]
+            }
         };
     }
     /* tslint:disable-next-line:no-any */
@@ -130,32 +103,74 @@ export class AdvancedExportingComponent implements OnInit {
                 height: 120,
                 contents: [
                     {
-                        type: 'line',
-                        style: { penColor: '#000000', penSize: 1, dashStyle: 'solid' },
-                        points: { x1: 25, y1: 4, x2: 800, y2: 4 }
+                        type: 'Text',
+                        value: 'INVOICE',
+                        position: { x: 280, y: 0 },
+                        style: { textBrushColor: '#C25050', fontSize: 25 },
                     },
                     {
-                        type: 'line',
-                        style: { penColor: '#000000', penSize: 1, dashStyle: 'solid' },
-                        points: { x1: 25, y1: 100, x2: 800, y2: 100 }
+                        type: 'Text',
+                        value: 'INVOICE NUMBER',
+                        position: { x: 500, y: 30 },
+                        style: { textBrushColor: '#C67878', fontSize: 10 },
                     },
                     {
-                        type: 'text',
-                        value: 'Northwind Traders',
-                        position: { x: 300, y: 20 },
-                        style: { textBrushColor: '#C67878', fontSize: 14 }
+                        type: 'Text',
+                        value: 'Date',
+                        position: { x: 600, y: 30 },
+                        style: { textBrushColor: '#C67878', fontSize: 10 },
+                    }, {
+                        type: 'Text',
+                        value: '223344',
+                        position: { x: 500, y: 50 },
+                        style: { textBrushColor: '#000000', fontSize: 10 },
                     },
                     {
-                        type: 'text',
+                        type: 'Text',
+                        value: this.getDate(),
+                        position: { x: 600, y: 50 },
+                        style: { textBrushColor: '#000000', fontSize: 10 },
+                    },
+                    {
+                        type: 'Text',
+                        value: 'CUSTOMER ID',
+                        position: { x: 500, y: 70 },
+                        style: { textBrushColor: '#C67878', fontSize: 10 },
+                    },
+                    {
+                        type: 'Text',
+                        value: 'TERMS',
+                        position: { x: 600, y: 70 },
+                        style: { textBrushColor: '#C67878', fontSize: 10 },
+                    }, {
+                        type: 'Text',
+                        value: '223',
+                        position: { x: 500, y: 90 },
+                        style: { textBrushColor: '#000000', fontSize: 10 },
+                    },
+                    {
+                        type: 'Text',
+                        value: 'Net 30 days',
+                        position: { x: 600, y: 90 },
+                        style: { textBrushColor: '#000000', fontSize: 10 },
+                    },
+                    {
+                        type: 'Text',
+                        value: 'Adventure Traders',
+                        position: { x: 20, y: 30 },
+                        style: { textBrushColor: '#C67878', fontSize: 20 }
+                    },
+                    {
+                        type: 'Text',
                         value: '2501 Aerial Center Parkway',
-                        position: { x: 280, y: 45 },
-                        style: { textBrushColor: '#C67878', fontSize: 14 }
+                        position: { x: 20, y: 65 },
+                        style: { textBrushColor: '#000000', fontSize: 11 }
                     },
                     {
-                        type: 'text',
+                        type: 'Text',
                         value: 'Tel +1 888.936.8638 Fax +1 919.573.0306',
-                        position: { x: 240, y: 70 },
-                        style: { textBrushColor: '#C67878', fontSize: 14 }
+                        position: { x: 20, y: 80 },
+                        style: { textBrushColor: '#000000', fontSize: 11 }
                     },
                 ]
             },
@@ -164,19 +179,15 @@ export class AdvancedExportingComponent implements OnInit {
                 height: 100,
                 contents: [
                     {
-                        type: 'line',
-                        style: { penColor: '#000000', penSize: 1, dashStyle: 'solid' },
-                        points: { x1: 25, y1: 4, x2: 800, y2: 4 }
+                        type: 'Text',
+                        value: 'Thank you for your business !',
+                        position: { x: 250, y: 20 },
+                        style: { textBrushColor: '#C67878', fontSize: 14 }
                     },
                     {
-                        type: 'line',
-                        style: { penColor: '#000000', penSize: 1, dashStyle: 'solid' },
-                        points: { x1: 25, y1: 60, x2: 800, y2: 60 }
-                    },
-                    {
-                        type: 'text',
-                        value: '!! Thank you !!',
-                        position: { x: 300, y: 20 },
+                        type: 'Text',
+                        value: '! Visit Again !',
+                        position: { x: 300, y: 45 },
                         style: { textBrushColor: '#C67878', fontSize: 14 }
                     }
                 ]

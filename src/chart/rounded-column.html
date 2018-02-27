@@ -1,18 +1,21 @@
-<div id="action-description">
+ <div id="action-description">
     <p>
         This sample illustrates a rounded column series. Data points values are showed by using data label.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
-        <ej-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
             [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'
             (pointRender)='pointRender($event)' (tooltipRender)='tooltipRender($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Tiger' width=2 [marker]='marker' [cornerRadius]='radius'>
                 </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
+    </div>
+    <div style="float: right; margin-right: 10px;">Source:
+         <a href="https://blogs.scientificamerican.com/extinction-countdown/tiger-populations-increasing/" target="_blank">blogs.scientificamerican.com</a>
     </div>
 </div>
 <div id="description">

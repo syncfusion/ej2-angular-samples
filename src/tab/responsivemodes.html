@@ -7,7 +7,7 @@
     <div class="col-lg-8 content-wrapper">
         <div class="e-sample-resize-container">
             <!-- Render the Tab Component -->
-            <ej-tab id="tab_adaptive" #adaptiveTab heightAdjustMode='Content'>
+            <ejs-tab id="tab_adaptive" #adaptiveTab heightAdjustMode='Content'>
                 <e-tabitems>
                     <e-tabitem [header]='headerText[0]' [content]="content0"></e-tabitem>
                     <e-tabitem [header]='headerText[1]' [content]="content1"></e-tabitem>
@@ -18,7 +18,7 @@
                     <e-tabitem [header]='headerText[6]' [content]="content6"></e-tabitem>
                     <e-tabitem [header]='headerText[7]' [content]="content7"></e-tabitem>
                 </e-tabitems>
-            </ej-tab>
+            </ejs-tab>
         </div>
     </div>
     <div class="col-lg-4 property-section">
@@ -32,8 +32,8 @@
                         </td>
                         <td style="width:50%">
                             <!-- Render DropDownList for Switching Tab properties -->
-                            <ej-dropdownlist id='overflow-modes' width='90%' #modes [dataSource]='data' (change)='onChange($event)' [value]='value' [fields]='fields'>
-                            </ej-dropdownlist>
+                            <ejs-dropdownlist id='overflow-modes' width='90%' #modes [dataSource]='data' (change)='onChange($event)' [value]='value' [fields]='fields'>
+                            </ejs-dropdownlist>
                         </td>
                     </tr>
                 </table>
