@@ -1,0 +1,37 @@
+{
+    "de": {
+        "colorpicker": {
+            "Apply": "Anwenden",
+            "Cancel": "Abbrechen",
+            "ModeSwitcher": "Modus wechseln"
+        }
+    },
+    "ar": {
+        "colorpicker": {
+            "Apply":"تطبيق",
+            "Cancel":"إلغاء",
+            "ModeSwitcher": "مفتاح كهربائي الوضع"
+        }
+    },
+    "en": {
+        "colorpicker": {
+            "Apply":"Apply",
+            "Cancel":"Cancel",
+            "ModeSwitcher": "Switch Mode"
+        }
+    },
+    "zh": {
+        "colorpicker": {
+            "Apply":"应用",
+            "Cancel":"取消",
+            "ModeSwitcher": "开关 模式"
+        }
+    },
+    "fr-CH": {
+        "colorpicker": {
+            "Apply":"s'adresser à",
+            "Cancel":"Annuler",
+            "ModeSwitcher": "Commutateur Mode"
+        }
+    }
+}

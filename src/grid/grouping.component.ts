@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { inventoryData } from './data';
-import { GroupService, SortService, GridComponent } from '@syncfusion/ej2-ng-grids';
+import { GroupService, SortService, GridComponent } from '@syncfusion/ej2-angular-grids';
 
 
 @Component({

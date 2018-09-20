@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { CheckBoxComponent } from '@syncfusion/ej2-ng-buttons';
+import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * CheckBox Controller

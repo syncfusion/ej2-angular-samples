@@ -1,8 +1,8 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, ChartComponent, IPointRenderEventArgs } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartComponent, IPointRenderEventArgs } from '@syncfusion/ej2-angular-charts';
 import { ErrorBarMode, ErrorBarDirection, ErrorBarType, ChartTheme } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
-import { NumericTextBox } from '@syncfusion/ej2-ng-inputs'
+import { NumericTextBox } from '@syncfusion/ej2-angular-inputs'
 
 /**
  * Sample for Error bar 

@@ -1,0 +1,40 @@
+.control-wrapper {
+    margin: 0 auto;
+    width: 325px;
+}
+
+.e-control.e-dropdownlist .inlinecss.e-ddl .e-input-group-icon.e-ddl-icon {
+    display: none;
+}
+
+.e-control.e-dropdownlist .inlinecss.e-ddl .e-input {
+    font-size: 17px;
+    font-weight: 500;
+    margin: -8px 0px 0px 0px;
+    padding: 0px;
+}
+
+.material .e-control.e-dropdownlist .inlinecss.e-ddl .e-input {
+   margin: 2px 0px 0px 0px;;
+}
+
+.bootstrap .e-control.e-dropdownlist .inlinecss.e-ddl .e-input {
+    margin: -4px 0px 0px 0px;
+}
+
+#contentText .e-input-group.e-control-wrapper.e-ddl::before,
+#contentText .e-input-group.e-control-wrapper.e-ddl::after {
+    content: none;
+}
+
+#contentText .e-input-group.e-control-wrapper.e-ddl,
+#contentText .e-input-group.e-control-wrapper.e-ddl:hover,
+#contentText .e-input-group.e-ddl.e-input-focus,
+#contentText .e-input-group.e-ddl.e-input-focus::before,
+#contentText .e-input-group.e-ddl.e-input-focus::after {
+    border-width: 0px;
+    border: none;
+    border-bottom: 1px dashed black;
+    box-shadow: none;
+    margin-top: 1px;
+}

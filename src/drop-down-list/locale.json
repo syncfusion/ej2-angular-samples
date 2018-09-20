@@ -1,0 +1,32 @@
+{
+    "de": {
+        "dropdowns": {
+            "noRecordsTemplate": "Keine Aufzeichnungen gefunden",
+            "actionFailureTemplate": "Die Anforderung ist fehlgeschlagen"
+        }
+    },
+    "ar": {
+        "dropdowns": {
+            "noRecordsTemplate": "لا توجد سجلات",
+            "actionFailureTemplate": "أخفق الطلب"
+        }
+    },
+    "en": {
+        "dropdowns": {
+            "noRecordsTemplate": "No Records Found",
+            "actionFailureTemplate": "The Request Failed"
+        }
+    },
+    "zh": {
+        "dropdowns": {
+            "noRecordsTemplate": "没有找到记录",
+            "actionFailureTemplate": "请求失败"
+        }
+    },
+    "fr-CH": {
+        "dropdowns": {
+            "noRecordsTemplate": "Aucun enregistrement trouvé",
+            "actionFailureTemplate": "La demande a échoué"
+        }
+    }
+}

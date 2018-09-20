@@ -1,0 +1,47 @@
+<div id="action-description">
+   <p>
+        This sample visualizes the student's results of the final examination with histogram series in chart. 
+        Number of students between each interval is shown by using the data label.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
+            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' (resized)='resized($event)' [legendSettings]='legendSettings'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='Histogram' yName='y' name='Score' width=2 [marker]='marker' [binInterval]='binInterval' showNormalDistribution='showNormalDistribution'
+                  [columnWidth]='columnWidth'> </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+    <div style="float: right; margin-right: 10px; margin-top: -5px">Source:
+        <a href="https://www.gov.uk/" target='_blank'>www.gov.uk</a>
+    </div>
+</div>
+<div id="description">
+     <p>
+        In this example, you can see how to render and configure the histogram type charts.
+        Histogram type charts can provide a visual display of large amounts of data that are difficult to understand in a tabular or spreadsheet form.
+        You can use the <code>border</code> and <code>fill</code> properties to customize the vertical rect.
+        The <code>dataLabel</code> property is used to represent individual data and its value.
+    </p>
+    <p>
+        Tooltip is enabled in this example.
+        To see the tooltip in action, hover the mouse over a point or tap a point in touch enabled devices.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+   <p>
+        Chart component features are segregated into individual feature-wise modules.
+        To use histogram series, you should inject the <code>HistogramSeries</code> module into the services.
+    </p>
+    <p>
+        More information on the histogram series can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#columnseriesmodule-columnseries">documentation section</a>.
+    </p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

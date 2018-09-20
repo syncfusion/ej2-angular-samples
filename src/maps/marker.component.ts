@@ -1,8 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { MapsTheme, Maps, Marker, MapsTooltip, ILoadEventArgs } from '@syncfusion/ej2-ng-maps';
-import { topPopulation } from './MapData/MarkerLocation'; 
+import { MapsTheme, Maps, Marker, MapsTooltip, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
+import { topPopulation } from './map-data/marker-location'; 
 import { HttpClient } from '@angular/common/http';
-import { World_Map} from './MapData/WorldMap';
+import { MapAjax } from '@syncfusion/ej2-maps';
+
 Maps.Inject(Marker, MapsTooltip);
 
 /**
@@ -10,8 +11,7 @@ Maps.Inject(Marker, MapsTooltip);
  */
 @Component({
     selector: 'control-content',
-    templateUrl: 'marker.html',
-    styleUrls: ['maps.style.css'],  
+    templateUrl: 'marker.html', 
     encapsulation: ViewEncapsulation.None
 })
 export class MapsMarkerComponent {
@@ -30,8 +30,8 @@ export class MapsMarkerComponent {
     };
 
     public layers: object[] =   [{        
-        shapeData: World_Map,
-        dataSource: topPopulation,
+        shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
+        dataSource:  new MapAjax(location.origin + location.pathname + 'src/maps/map-data/top-population.json'),
         shapeSettings: { fill: '#C3E6ED' },
         
         markerSettings: [{        

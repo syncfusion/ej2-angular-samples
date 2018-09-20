@@ -1,9 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, ChartComponent, IPointRenderEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartComponent, IPointRenderEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { LabelIntersectAction, EdgeLabelPlacement, AxisPosition } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
-
+import { NumericTextBox } from '@syncfusion/ej2-angular-inputs';
 
 /**
  * Sample for smart axis labels Positions
@@ -20,7 +20,7 @@ export class SmartAxisLabelsChartComponent {
         { x: 'South Korea', y: 39 }, { x: 'India', y: 61 },
         { x: 'Pakistan', y: 20 }, { x: 'Germany', y: 65 },
         { x: 'Australia', y: 16 }, { x: 'Italy', y: 29 },
-        { x: 'France', y: 45 }, { x: 'Saudi Arabia', y: 10 },
+        { x: 'France', y: 45 }, { x: 'United Arab Emirates', y: 10 },
         { x: 'Russia', y: 41 }, { x: 'Mexico', y: 31 },
         { x: 'Brazil', y: 76 }, { x: 'China', y: 51 }
     ];
@@ -82,6 +82,18 @@ export class SmartAxisLabelsChartComponent {
     public tooltip: Object = {
         enable: true
     };
+    public trim(e: Event): void {
+        let element: HTMLInputElement = <HTMLInputElement>e.target;
+        this.chart.primaryXAxis.enableTrim = element.checked;
+        this.chart.refresh();
+    }
+    public labelWidth(e: Event): void {
+        this.chart.primaryXAxis.maximumLabelWidth = this.labelwidth.value;
+        this.chart.series[0].animation.enable = false;
+        this.chart.refresh();
+    };
+    @ViewChild('width')
+    public labelwidth: NumericTextBox;
     public title: string = 'Internet Users in Millions';
     @ViewChild('chart')
     public chart: ChartComponent;

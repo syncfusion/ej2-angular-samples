@@ -1,6 +1,6 @@
 <div class="control-section">
     <div class="col-lg-9 content-wrapper">
-        <ejs-schedule width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" [(currentView)]="currentView"
+        <ejs-schedule width='100%' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" [(currentView)]="currentView"
             (eventRendered)="oneventRendered($event)" (created)="onCreate()" (actionBegin)="onActionBegin()" (actionComplete)="onActionComplete()"
             (actionFailure)="onActionFailure()" (cellClick)="onCellClick()" (cellDoubleClick)="onCellDoubleClick()" (destroyed)="onDestroyed()"
             (navigating)="onNavigating()" (eventClick)="onEventClick()" (popupOpen)="onPopupOpen()">
@@ -23,7 +23,7 @@
                             <tr>
                                 <td>
                                     <div class="evtbtn" style="padding-bottom: 10px">
-                                        <input id="clear" type="button" class="btn btn-default" (click)="onClear()" value="Clear">
+                                        <button ejs-button id='clear' class="btn btn-default" (click)="onClear()">Clear</button>
                                     </div>
                                 </td>
                             </tr>

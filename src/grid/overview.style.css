@@ -1,0 +1,183 @@
+_:-ms-fullscreen, :root .highcontrast .e-userimg.sf-icon-Male::before,
+_:-ms-fullscreen, :root .highcontrast .e-userimg.sf-icon-FeMale::before{
+  color: black;
+}
+:host-context(.highcontrast) /deep/ .e-userimg.sf-icon-Male::before,
+:host-context(.highcontrast) /deep/ .e-userimg.sf-icon-FeMale::before{       
+  color: black;
+}
+#Emptext{
+top: -12px;
+left: 41px;
+position: relative;
+}
+#overviewgrid.e-rtl #Emptext{
+  top: -12px;
+  left: -41px;
+  position: relative;
+}
+
+.empimg{
+height: 27px;
+width: 29px;
+border-radius: 14px;
+background-color:#e3165b;
+}
+:host-context(.bootstrap)  /deep/ .empimg{
+  background-color:#0078d6; 
+}
+:host-context(.fabric) /deep/ .empimg {
+  background-color:#0078d6; 
+}
+:host-context(.material) /deep/  .empimg{
+  background-color:#e3165b !important; 
+}
+:host-context(.highcontrast) /deep/ .empimg{
+  background-color:#ffd939; 
+}
+
+.e-userimg.sf-icon-Male::before,
+.e-userimg.sf-icon-FeMale::before{ 
+font-size: 13px;
+}
+
+.e-userimg.sf-icon-Male, .e-userimg.sf-icon-FeMale {  
+margin: 0px 8px;
+line-height: 26px;
+color: white; 
+font-size: 13px;
+}
+
+
+.e-userimg.sf-icon-Male::before{
+  content: '\e700';      
+}
+.e-userimg.sf-icon-FeMale::before{
+  content: '\e701';      
+}
+:host-context(.highcontrast) /deep/ #overviewgrid td.e-rowcell.e-selectionbackground.e-active {
+  background-color: transparent;
+  color: white;
+}
+
+.e-bigger #overviewgrid .statustxt{
+  position: relative;
+}
+
+.rating .star {
+  font-size: 132%;
+  color: lightgrey;
+}
+
+.rating .star.checked {
+  color: #ffa600;
+}
+
+.rating .star:before {
+  content: '★';
+}
+
+#overviewgrid ::ng-deep td.e-rowcell.e-selectionbackground.e-active {
+  background-color: transparent;
+}
+
+.e-image {
+  height: 13px;
+  width: 14px;
+}
+
+td.e-rowcell .statustxt.e-activecolor {
+  color: #00cc00;
+  position: relative;
+  top: 9px;
+}
+
+td.e-rowcell .statustxt.e-inactivecolor {
+  color: #e60000;
+  position: relative;
+  top: 9px;
+}
+
+.statustemp.e-inactivecolor {
+  background-color: #ffd7cc;
+  width: 64px;
+}
+
+.statustemp.e-activecolor {
+  background-color: #ccffcc;
+  width: 57px;
+}
+
+.statustxt.e-activecolor {
+  color: #00cc00; 
+  position: relative;
+  top: 9px;   
+}
+
+.statustxt.e-inactivecolor {
+    color: #e60000; 
+    position: relative;
+    top: 9px; 
+}
+.statustemp {
+  position: relative;
+  height: 19px;
+  border-radius: 5px;
+  text-align: center
+}
+
+:host-context(.highcontrast) /deep/ #msg {
+  color: #FFFFFF
+}
+
+#msg {
+  font-family: "Segoe UI", "GeezaPro", "DejaVu Serif", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.95;
+  color: #333;
+  float: right;
+  margin-top: -24px;
+}
+
+@media only screen and (max-width: 370px) {
+  #msg {           
+      float: left;
+      margin-top: 3px;
+  }
+  #overviewgrid{
+      margin-top:36px;
+  }
+}
+
+#samplecontainer {
+  padding-top: 5px;
+}
+
+#myProgress {
+  position: relative;
+  height: 18px;
+  width: 10em;
+  text-align: left;
+  background-color: white;
+}
+:host-context(.highcontrast) /deep/ #overviewgrid #myProgress{
+  background-color: black;
+}
+
+#myBar {
+  position: absolute;
+  width: 10%;
+  height: 100%;
+  background-color: #00b300;
+}
+#myBar.progressdisable {
+  background-color: #df2222;
+}
+#label {
+  position: relative;
+  left:10px;
+  line-height: 18px;
+  font-size: 10px;
+  color: white;
+}

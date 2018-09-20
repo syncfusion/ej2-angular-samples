@@ -16,7 +16,7 @@ export class DefaultFormValidatorComponent implements OnInit {
 
     ngOnInit(): void {
         this.formValidator = {
-            // Initialize custom placement
+            // Initialize the custom placement
             customPlacement: (inputElement: HTMLElement, errorElement: HTMLElement) => {
                 inputElement.parentElement.appendChild(errorElement);
             }

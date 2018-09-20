@@ -1,0 +1,37 @@
+<div class="control-section">
+    <ejs-schedule #scheduleObj width='100%' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" [currentView]="currentView"
+        (eventRendered)="onEventRendered($event)">
+        <e-views>
+            <e-view option="Day" startHour="07:00" endHour="18:00"></e-view>
+            <e-view option="Week" startHour="09:00" endHour="19:00" [timeScale]='timeScale' [showWeekend]="showWeekend"></e-view>
+            <e-view option="Month" [group]="group" [eventTemplate]="monthEventTemplate"></e-view>
+            <e-view option="Agenda" [eventTemplate]="agendaTemplate"></e-view>
+        </e-views>
+        <e-resources>
+            <e-resource field='GroupId' title='Owner' name='Owners' [dataSource]='resourceDataSource' textField='GroupText' idField='GroupId'
+                colorField='GroupColor'>
+            </e-resource>
+        </e-resources>
+    </ejs-schedule>
+</div>
+
+<div id="action-description">
+    <p>
+        This demo illustrates how to customize each view with specific configurations like applying event template on agenda view,
+        setting different start/end hour to day and week views and enabling grouping in month view. It also shows how to
+        hide the weekend days and to set different time intervals on week view.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        In this demo, the
+        <code>views</code> property is defined to accept the array of view options and therefore for each view, it is possible to set different
+        configurations. In day view, the
+        <code>startHour</code> is set to 7 and
+        <code>endHour</code> set to 18 whereas in week view, the same is set as 9 and 19 respectively. Also, the
+        <code>showWeekend</code> property is set to false only on week view along with different timescale interval. The customized template is applied
+        to the events on Agenda view and on month view, the grouping functionality is enabled by setting
+        <code>group</code> property.
+    </p>
+</div>

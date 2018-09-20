@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToolbarService, ColumnChooserService } from '@syncfusion/ej2-ng-grids';
+import { ToolbarService, ColumnChooserService } from '@syncfusion/ej2-angular-grids';
 import { data } from '../data';
 
 @Component({

@@ -1,0 +1,23 @@
+    .toast-api-section {
+        padding-top: 0;
+    }
+    .toast-api-section .input-form {
+        margin: 33px 0;
+    }
+
+    .toast-api-section .group-form {
+        margin: 25px 0;
+    }
+
+    .toast-api-section .group-form.e-group {
+        margin-top: 35px;
+    }
+    .toast-api-section .row .padding {
+        padding: 0 15px;
+    }
+    .toast-api-section .row.center {
+        text-align: center;
+    }
+    .toast-api-section .row {
+        padding: 0 15px;
+    }

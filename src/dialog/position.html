@@ -1,0 +1,50 @@
+<div class="control-section" >
+    <button  ejs-button id="dialogBtn" Class="e-control e-btn" #confirmButton (click)="dlgButtonClick()">Open Dialog</button>
+    
+    <ejs-dialog id='defaultDialog' #ejDialog [position]='position' [showCloseIcon]='dialogCloseIcon'
+     [width]='defaultWidth' (open)="dialogOpen()" (close)="dialogClose()" [target]='target' [closeOnEscape]='closeOnEscape'>
+        <ng-template #header>
+            <span>Choose a Dialog Position</span>
+        </ng-template>
+        <ng-template #content>
+            <table style="width:405px;padding:18px; padding-top:0px;">
+                <tr>
+                    <td><ejs-radiobutton label="Left Top"  name="xy" (change)="onChangeHandler($event)" value="left top" ></ejs-radiobutton></td>
+                    <td><ejs-radiobutton label="Center Top" name="xy" (change)="onChangeHandler($event)" value="center top"></ejs-radiobutton></td>
+                    <td><ejs-radiobutton label="Right Top" name="xy" (change)="onChangeHandler($event)" value="right top"></ejs-radiobutton></td> </tr>
+                <tr>
+                    <td><ejs-radiobutton label="Left Center" name="xy" (change)="onChangeHandler($event)" value="left center"></ejs-radiobutton></td>
+                    <td><ejs-radiobutton label="Center Center" name="xy" (change)="onChangeHandler($event)" value="center center" checked="true"></ejs-radiobutton></td>
+                    <td><ejs-radiobutton label="Right Center" name="xy" (change)="onChangeHandler($event)" value="right center"></ejs-radiobutton></td> </tr>
+                <tr>
+                    <td><ejs-radiobutton label="Left Bottom" name="xy" (change)="onChangeHandler($event)" value="left bottom"></ejs-radiobutton></td>
+                    <td><ejs-radiobutton label="Center Bottom" name="xy" (change)="onChangeHandler($event)" value="center bottom"></ejs-radiobutton></td>
+                    <td><ejs-radiobutton label="Right Bottom" name="xy" (change)="onChangeHandler($event)" value="right bottom"></ejs-radiobutton></td>
+                </tr>
+            </table>
+        </ng-template>
+        <ng-template #footerTemplate>
+            <span id="posvalue" style="float:left; padding-left:10px;">Position: "Center", "Center"</span>
+        </ng-template>
+    </ejs-dialog>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates how to position the dialog component. Select the appropriate radio button to position where the dialog is displayed.
+        The current position of the dialog is at the bottom.  Enable the "open dialog" button to reopen the dialog if it is closed.
+    </p>
+</div>
+<div id="description">
+    <p>
+        By default, the dialog is displayed in the center of the target container. Use the <a target="_blank" 
+        href="https://ej2.syncfusion.com/angular/documentation/dialog/api-dialogComponent.html#position">
+        position</a> property to set location where the dialog displays relative to the target.
+        The property point-out the horizontal and vertical coordinates.
+        You can set position with specific X and Y coordinates in pixel values.
+    </p>
+    <p>
+        More information on the positioning of Dialog can be found in the <a target="_blank" 
+        href="https://ej2.syncfusion.com/angular/documentation/dialog/getting-started.html#positioning">
+        documentation section</a>.
+    </p>
+</div>

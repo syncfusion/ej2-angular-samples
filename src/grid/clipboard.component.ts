@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
 import { orderDetails } from './data';
-import { SelectionService, GridComponent } from '@syncfusion/ej2-ng-grids';
+import { SelectionService, GridComponent } from '@syncfusion/ej2-angular-grids';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
 
 @Component({

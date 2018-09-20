@@ -8,7 +8,7 @@
             <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
                 [title]='title' [tooltip]='tooltip' (pointRender)='pointRender($event)' [legendSettings]='legend' (load)='load($event)'>
                 <e-series-collection>
-                    <e-series [dataSource]='data' type='Bar' name='Users' xName='x' yName='y' width=2, [marker]='marker'> </e-series>
+                    <e-series [dataSource]='data' type='Bar' name='Users' xName='x' yName='y' width=2 tooltipMappingName='country' [marker]='marker'> </e-series>
                 </e-series-collection>
             </ejs-chart>
         </div>

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs,ChartTheme, ChartComponent } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs,ChartTheme, ChartComponent } from '@syncfusion/ej2-angular-charts';
 import { sort } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 

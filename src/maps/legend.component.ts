@@ -1,7 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { MapsTheme, Maps, Legend, MapsTooltip, ILoadEventArgs, ITooltipRenderEventArgs } from '@syncfusion/ej2-ng-maps';
-import { World_Map } from './MapData/WorldMap';
-import { Population_Density } from './MapData/PopulationDensity';
+import { MapsTheme, Maps, Legend, MapsTooltip, ILoadEventArgs, ITooltipRenderEventArgs } from '@syncfusion/ej2-angular-maps';
+import { MapAjax } from '@syncfusion/ej2-maps';
 
 Maps.Inject(Legend, MapsTooltip);
 
@@ -11,7 +10,6 @@ Maps.Inject(Legend, MapsTooltip);
 @Component({
     selector: 'control-content',
     templateUrl: 'legend.html',
-    styleUrls: ['maps.style.css'],
     encapsulation: ViewEncapsulation.None
 })
 export class MapsLegendComponent {
@@ -26,7 +24,7 @@ export class MapsLegendComponent {
     };
 
     public tooltipRender = (args: ITooltipRenderEventArgs) => {
-        if (args.content.toString().indexOf('density') > -1) {
+        if (!args.options['data']) {
             args.cancel = true;
         }
     }
@@ -37,10 +35,10 @@ export class MapsLegendComponent {
 
     public layers: object[] = [
         {
-            shapeData: World_Map,
+            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
             shapeDataPath: 'name',
             shapePropertyPath: 'name',
-            dataSource: Population_Density,
+            dataSource: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/population-density.json'),
             tooltipSettings: {
                 visible: true,
                 valuePath: 'name',

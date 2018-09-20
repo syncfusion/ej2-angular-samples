@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { orderDetails } from '../data';
-import { ColumnModel } from '@syncfusion/ej2-ng-grids';
+import { ColumnModel } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ej2-grid-container',

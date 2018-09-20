@@ -1,26 +1,26 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { eventsData } from './datasource';
 import { createElement, extend } from '@syncfusion/ej2-base';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
-import { EventSettingsModel, ScheduleComponent, EventRenderedArgs } from '@syncfusion/ej2-ng-schedule';
-import { DayService, WeekService, WorkWeekService, MonthService, AgendaService, PopupOpenEventArgs } from '@syncfusion/ej2-ng-schedule';
+import {
+    EventSettingsModel, ScheduleComponent, EventRenderedArgs, DayService, WeekService,
+    WorkWeekService, MonthService, AgendaService, PopupOpenEventArgs, ResizeService
+} from '@syncfusion/ej2-angular-schedule';
 
 @Component({
+    selector: 'control-content',
     templateUrl: 'editor-custom-field.html',
     styles: [`.custom-field-row {
         margin-bottom: 20px;
     }`],
     encapsulation: ViewEncapsulation.None,
-    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService]
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService]
 })
-export class EditorCustomFieldComponent implements OnInit {
-    public selectedDate: Date;
-    public eventSettings: EventSettingsModel;
 
-    ngOnInit(): void {
-        this.eventSettings = { dataSource: <Object[]>extend([], eventsData, null, true) };
-        this.selectedDate = new Date(2018, 1, 15);
-    }
+export class EditorCustomFieldComponent {
+    public selectedDate: Date = new Date(2018, 1, 15);
+    public eventSettings: EventSettingsModel = { dataSource: <Object[]>extend([], eventsData, null, true) };
+
     @ViewChild('scheduleObj')
     public scheduleObj: ScheduleComponent;
 
@@ -56,7 +56,7 @@ export class EditorCustomFieldComponent implements OnInit {
                         { text: 'Family Event', value: 'family-event' }
                     ],
                     fields: { text: 'text', value: 'value' },
-                    value: '',
+                    value: (args.data as { [key: string]: Object }).EventType as string,
                     floatLabelType: 'Always', placeholder: 'Event Type'
                 });
                 drowDownList.appendTo(inputEle);

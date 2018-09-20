@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ResizeService } from '@syncfusion/ej2-ng-grids';
+import { ResizeService } from '@syncfusion/ej2-angular-grids';
 import { orderDetails } from '../data';
 
 @Component({

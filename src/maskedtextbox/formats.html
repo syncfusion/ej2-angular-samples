@@ -3,7 +3,7 @@
         <div class="content-wrapper">
             <div>
                 <div class="control-label">Formats</div>
-                <ejs-maskedtextbox #formatMask="" [mask]="dynamicMask" [promptChar]="dynamicPrompt" (change)="maskChange($event)" floatLabelType="Never"></ejs-maskedtextbox>
+                <ejs-maskedtextbox #formatMask="" [mask]="dynamicMask" (created)="onCreated()" [promptChar]="dynamicPrompt" (change)="maskChange($event)" floatLabelType="Never"></ejs-maskedtextbox>
             </div>
         </div>
     </div>
@@ -88,4 +88,5 @@
         padding: 24px 0px 10px 0px;
         font-size: 12px;
     }
+    
 </style>

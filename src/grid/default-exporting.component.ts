@@ -3,7 +3,7 @@ import { orderDetails } from './data';
 import {
     GridComponent, ToolbarService, PageService, ExcelExportService, PdfExportService,
     GroupService
-} from '@syncfusion/ej2-ng-grids';
+} from '@syncfusion/ej2-angular-grids';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations'
 
 @Component({

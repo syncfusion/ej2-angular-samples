@@ -1,0 +1,75 @@
+<div id="action-description">
+    <p>This sample demonstrates the call history application using listview. Click on the checklist to filter the data in contacts
+        list.
+    </p>
+</div>
+
+<div class="slider-call-history col-lg-12 control-section">
+    <div class="layoutWrapper">
+        <div class="speaker">
+            <div class="camera"></div>
+        </div>
+        <div class="layout">
+            <div id="list-container">
+                <div class="tabContainer">
+                    <!-- Tab element -->
+
+                    <div id="tab" tabindex="1">
+                        <ejs-tab id="tab_default" tabindex="1" (selected)='onSelected($event)'>
+                            <e-tabitems>
+                                <e-tabitem [header]='tabHeader[0]' content="#all">
+                                </e-tabitem>
+                                <e-tabitem [header]='tabHeader[1]' content="#received">
+                                </e-tabitem>
+                                <e-tabitem [header]='tabHeader[2]' content="#missed">
+                                </e-tabitem>
+                            </e-tabitems>
+                        </ejs-tab>
+                    </div>
+                </div>
+                <ejs-listview #listObj1 id="all" [dataSource]='callHistoryData' style="display:none" [fields]="listFields">
+                    <ng-template #template let-callHistoryData="">
+                        <div class="{{callHistoryData.icon}} wrapper">
+                            <div class="content">{{callHistoryData.text}}</div>
+                            <div class="subContent">
+                                <span class="{{callHistoryData.type}} subicons"></span>
+                                <span>{{callHistoryData.group}}, {{callHistoryData.time}}</span>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+                <ejs-listview #listObj1 id="received" [dataSource]='callHistoryData' style="display:none" [fields]="listFields">
+                    <ng-template #template let-callHistoryData="">
+                        <div class="{{callHistoryData.icon}} wrapper">
+                            <div class="content">{{callHistoryData.text}}</div>
+                            <div class="subContent">
+                                <span class="{{callHistoryData.type}} subicons"></span>
+                                <span>{{callHistoryData.group}}, {{callHistoryData.time}}</span>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+                <ejs-listview #listObj1 id="missed" [dataSource]='callHistoryData' style="display:none" [fields]="listFields">
+                    <ng-template #template let-callHistoryData="">
+                        <div class="{{callHistoryData.icon}} wrapper">
+                            <div class="content">{{callHistoryData.text}}</div>
+                            <div class="subContent">
+                                <span class="{{callHistoryData.type}} subicons"></span>
+                                <span>{{callHistoryData.group}}, {{callHistoryData.time}}</span>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+            </div>
+        </div>
+        <div class="outerButton"> </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>This sample filters out the data from listview based on the data selected from the checklist. Here, listview utilizes
+        the
+        <code>template</code>
+        <code>showIcon</code> properties to repesent the call history application. The Tab component is used in this sample for navigation purposes.
+    </p>
+</div>

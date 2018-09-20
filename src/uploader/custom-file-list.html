@@ -1,0 +1,31 @@
+<div class="control-section">
+    <div class="col-lg-9">
+        <div class="control_wrapper">
+            <div class="uploadtemplate">
+                <div id='dropArea'>
+                    <span id='drop' class="droparea"> Drop files here or <a href="" id='browse'><u>Browse</u></a> </span>
+                    <ejs-uploader #templateupload id='templatefileupload' [asyncSettings]='path' [dropArea]='dropElement' (progress)='onFileUpload($event)' (selected)='onFileSelect($event)' (failure)='onUploadFailed($event)' (success)='onUploadSuccess($event)' (removing)='onFileRemove($event)'></ejs-uploader>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <button class="e-btn e-css" id="clearbtn" title="Clear All">Clear All</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates how to customize the file list with template. Browse or select the files to view the file list template.</p>
+</div>
+
+<div id="description">
+    <p>The Uploader component allows to customize its file list using template property. The template used for each file in file list.</p>
+    <p>For more information, you can refer to the Template section from this
+    <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/uploader/template.html#custom-template">documentation section</a>.
+    </p>
+</div>

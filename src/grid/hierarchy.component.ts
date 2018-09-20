@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { employeeData, orderDatas, customerData } from './data';
-import { DetailRowService } from '@syncfusion/ej2-ng-grids';
+import { DetailRowService } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ej-gridhierarchy',

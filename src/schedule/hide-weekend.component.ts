@@ -1,38 +1,40 @@
-import { Component, ViewChild, OnInit, ViewEncapsulation } from '@angular/core';
-import { ButtonComponent } from '@syncfusion/ej2-ng-buttons';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 import { extend } from '@syncfusion/ej2-base';
-import { MultiSelectComponent, MultiSelectChangeEventArgs } from '@syncfusion/ej2-ng-dropdowns';
-import { ScheduleComponent, EventSettingsModel, View } from '@syncfusion/ej2-ng-schedule';
-import { DayService, WeekService, MonthService, EventRenderedArgs } from '@syncfusion/ej2-ng-schedule';
+import { MultiSelectChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { ScheduleComponent, EventSettingsModel, View, DayService, WeekService, MonthService, EventRenderedArgs, TimelineViewsService, TimelineMonthService, WorkHoursModel, ResizeService }
+    from '@syncfusion/ej2-angular-schedule';
 import { employeeEventData } from './datasource';
 
 /**
  * Sample for Schedule hide weekend
  */
 @Component({
+    selector: 'control-content',
     templateUrl: 'hide-weekend.html',
     styles: [` 
     .multi-prop div {
         padding-left: 0;
         padding-top: 0;
     }`],
-    providers: [DayService, WeekService, MonthService],
+    providers: [DayService, WeekService, MonthService, TimelineViewsService, TimelineMonthService, ResizeService],
     encapsulation: ViewEncapsulation.None
 
 })
-export class HideWeekEndComponent implements OnInit {
+export class HideWeekEndComponent {
     public selectedDate: Date = new Date(2018, 1, 15);
     public data: object[] = <Object[]>extend([], employeeEventData, null, true);
     public eventSettings: EventSettingsModel = { dataSource: this.data };
+    public workDays: number[] = [1, 3, 4, 5];
+    public workHours: WorkHoursModel = { start: '08:00' };
+    public showWeekend: boolean = false;
     public currentView: View = 'Week';
+
     @ViewChild('scheduleObj')
     public scheduleObj: ScheduleComponent;
     @ViewChild('toggleBtn')
     public toggleBtn: ButtonComponent;
-    @ViewChild('checkbox')
-    public checkbox: MultiSelectComponent;
 
-    public mode: string = 'CheckBox';
     public workDaysData: { [key: string]: Object; }[] = [
         { Name: 'Sunday', Value: '0' },
         { Name: 'Monday', Value: '1' },
@@ -45,24 +47,21 @@ export class HideWeekEndComponent implements OnInit {
     public workDaysFields: Object = { text: 'Name', value: 'Value' };
     public workDaysValue: string[] = ['1', '3', '4', '5'];
 
-    ngOnInit(): void {
-        this.scheduleObj.workDays = [1, 3, 4, 5];
-        this.scheduleObj.showWeekend = false;
-    }
-
     onMultiSelectChange(args: MultiSelectChangeEventArgs): void {
         let value: number[] = (args.value as number[]).slice(0).map(Number).sort();
         this.scheduleObj.workDays = value.length === 0 ? [0] : value;
         this.scheduleObj.dataBind();
     }
 
-    btnClick() {
+    btnClick(): void {
         if (this.toggleBtn.element.classList.contains('e-active')) {
-            this.toggleBtn.content = 'Hide';
             this.scheduleObj.showWeekend = true;
+            this.toggleBtn.content = 'Hide';
+            this.scheduleObj.dataBind();
         } else {
-            this.toggleBtn.content = 'Show';
             this.scheduleObj.showWeekend = false;
+            this.toggleBtn.content = 'Show';
+            this.scheduleObj.dataBind();
         }
     }
 
@@ -77,5 +76,4 @@ export class HideWeekEndComponent implements OnInit {
             args.element.style.backgroundColor = categoryColor;
         }
     }
-
 }

@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { MapsTheme, Maps, MapsTooltip, DataLabel, ILoadEventArgs, SmartLabelMode, IntersectAction } from '@syncfusion/ej2-ng-maps';
+import { MapsTheme, Maps, MapsTooltip, DataLabel, ILoadEventArgs, SmartLabelMode, IntersectAction } from '@syncfusion/ej2-angular-maps'; 
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
-import { usMap } from './MapData/USA'; 
+import { MapAjax } from '@syncfusion/ej2-maps';
 Maps.Inject(MapsTooltip, DataLabel);
 
 /**
@@ -9,8 +9,7 @@ Maps.Inject(MapsTooltip, DataLabel);
  */
 @Component({
     selector: 'control-content',
-    templateUrl: 'labels.html',
-    styleUrls: ['maps.style.css'],  
+    templateUrl: 'labels.html',  
     encapsulation: ViewEncapsulation.None
 })
 export class MapsLabelComponent {
@@ -35,7 +34,7 @@ export class MapsLabelComponent {
                 labelPath: 'name',
                 smartLabelMode: 'Trim'
             },
-            shapeData: usMap,
+            shapeData:  new MapAjax(location.origin + location.pathname + 'src/maps/map-data/usa.json'),
             shapeSettings: {
                 autofill: true
             },

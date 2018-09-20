@@ -1,0 +1,27 @@
+html,
+body,    
+#container {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    min-height: 400px;
+}
+.control-section.animation {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 350px;
+}
+.text {
+    text-transform: capitalize;
+}
+        
+#customization {
+    display: table;
+    margin: 0 auto;
+}
+
+.animate {
+    display: table-cell;
+    padding: 10px;
+}

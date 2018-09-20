@@ -2,8 +2,9 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { DateTimePicker } from '@syncfusion/ej2-calendars';
-import { PopupOpenEventArgs, EventRenderedArgs } from '@syncfusion/ej2-ng-schedule';
-import { ScheduleComponent, MonthService, DayService, WeekService, WorkWeekService, EventSettingsModel } from '@syncfusion/ej2-ng-schedule';
+import {
+    PopupOpenEventArgs, EventRenderedArgs, ScheduleComponent, MonthService, DayService, WeekService, WorkWeekService, EventSettingsModel, ResizeService
+} from '@syncfusion/ej2-angular-schedule';
 import { doctorsEventData } from './datasource';
 
 /**
@@ -11,6 +12,7 @@ import { doctorsEventData } from './datasource';
  */
 
 @Component({
+    selector: 'control-content',
     templateUrl: 'editor-template.html',
     styles: [`    
     .custom-event-editor .e-textlabel {
@@ -22,7 +24,7 @@ import { doctorsEventData } from './datasource';
         padding: 7px;
         padding-right: 16px;
     }`],
-    providers: [MonthService, DayService, WeekService, WorkWeekService],
+    providers: [MonthService, DayService, WeekService, WorkWeekService, ResizeService],
     encapsulation: ViewEncapsulation.None
 })
 export class EditTempComponent {
@@ -52,18 +54,6 @@ export class EditTempComponent {
                 new DateTimePicker({ value: new Date(endElement.value) || new Date() }, endElement);
             }
         }
-        if (args.type === 'Editor') {
-            let statusElement: HTMLInputElement = args.element.querySelector('#EventType') as HTMLInputElement;
-            if (!statusElement.classList.contains('e-dropdownlist')) {
-                let dropDownListObject: DropDownList = new DropDownList({
-                    placeholder: 'Choose status', value: statusElement.value,
-                    dataSource: ['New', 'Requested', 'Confirmed']
-                });
-                dropDownListObject.appendTo(statusElement);
-                statusElement.setAttribute('name', 'EventType');
-            }
-
-        }
     }
     public onEventRendered(args: EventRenderedArgs): void {
         switch (args.data.EventType) {
@@ -85,7 +75,5 @@ export class EditTempComponent {
                 args.cancel = true;
             }
         }
-
     }
-
 }

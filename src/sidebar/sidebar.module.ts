@@ -1,16 +1,16 @@
 import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DefaultSidebarComponent } from './default.component';
-import { DockSidebarComponent } from './dock.component';
+import { DockSidebarComponent } from './docking-sidebar.component';
 import { ApiSidebarComponent } from './api.component';
 import { SidebarListComponent } from './sidebar-list.component';
-import { RadioButtonModule } from '@syncfusion/ej2-ng-buttons';
-import { SidebarModule } from '@syncfusion/ej2-ng-navigations';
+import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SidebarModule } from '@syncfusion/ej2-angular-navigations';
 import { SharedModule } from '../common/shared.module';
 
 export const sidebarAppRoutes: Object[] = [
     { path: ':theme/sidebar/default', component: DefaultSidebarComponent, name: 'Default Functionalities', category: 'Sidebar' },
-    { path: ':theme/sidebar/dock', component: DockSidebarComponent, name: 'Dock', category: 'Sidebar' },
+    { path: ':theme/sidebar/docking-sidebar', component: DockSidebarComponent, name: 'Dock', category: 'Sidebar' },
     { path: ':theme/sidebar/api', component: ApiSidebarComponent, name: "API", category: 'Sidebar' },
     { path: ':theme/sidebar/sidebar-list', component: SidebarListComponent, name: 'Sidebar With ListView', category: 'Sidebar' }
 ];

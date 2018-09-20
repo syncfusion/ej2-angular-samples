@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { ItemModel, MenuEventArgs } from '@syncfusion/ej2-ng-splitbuttons';
+import { ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 
 /**
  * DropDownButton Controller

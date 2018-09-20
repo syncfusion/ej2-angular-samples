@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SliderComponent } from '@syncfusion/ej2-ng-inputs';
+import { SliderComponent } from '@syncfusion/ej2-angular-inputs';
 
 /**
  * Thumb Customization sample

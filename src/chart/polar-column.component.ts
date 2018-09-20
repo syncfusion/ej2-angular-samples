@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { ChartSeriesType } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { Browser } from '@syncfusion/ej2-base';
@@ -40,7 +40,7 @@ export class PolarColumnChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        maximum: 250, interval: 50, minimum: 0, labelFormat: '{value}M'
+     labelFormat: '{value}M'
     };
     public  marker: Object = { dataLabel: { name: 'text' } };
     public load(args: ILoadedEventArgs): void {

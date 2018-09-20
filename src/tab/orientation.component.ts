@@ -1,7 +1,7 @@
 import { Component, ViewChild, Inject, ViewEncapsulation } from '@angular/core';
-import { DropDownListComponent } from '@syncfusion/ej2-ng-dropdowns';
+import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { rippleEffect } from '@syncfusion/ej2-base';
-import { TabComponent } from '@syncfusion/ej2-ng-navigations';
+import { TabComponent } from '@syncfusion/ej2-angular-navigations';
 
 /**
  * Orientation Tab Component
@@ -51,36 +51,6 @@ export class OrientationTabComponent {
 
     // Mapping Tab items showCloseButton property
     public enableClose: boolean = true;
-
-    // Mapping Tab items Content property
-    public content0: string = '<div class="content-title"><div class="cnt-text">Employee Info</div></div><div id="rome">' +
-        '<div class="template-container"><div class="left"><img class="empImg" src="src/dropdownlist/Employees/1.png" ' +
-        'alt="Anne Dodsworth" /></div><div class="left info"><div class="name">Anne Dodsworth</div> <div class="role">' +
-        'Product Manager</div></div></div><div class="template-container"><div class="left"><img class="empImg" ' +
-        'src="src/dropdownlist/Employees/2.png" alt="Laura Callahan" /></div><div class="left info"><div class="name">' +
-        'Laura Callahan</div> <div class="role">Team Lead</div></div></div><div class="template-container"><div ' +
-        'class="left"><img class="empImg" src="src/dropdownlist/Employees/3.png" alt="Andrew Fuller" /></div><div ' +
-        'class="left info"><div class="name">Andrew Fuller</div> <div class="role">Developer</div></div></div></div>';
-
-    // Mapping Tab items Content property    
-    public content1: string = '<div class="content-title"><div class="cnt-text">Employee Info</div></div><div id="rome">' +
-        '<div class="template-container"><div class="left"><img class="empImg" src="src/dropdownlist/Employees/4.png" ' +
-        'alt="Robert King" /></div><div class="left info"><div class="name">Robert King</div> <div class="role">' +
-        'Team Lead</div></div></div><div class="template-container"><div class="left"><img class="empImg" ' +
-        'src="src/dropdownlist/Employees/5.png" alt="Michael Suyama" /></div><div class="left info"><div class="name">' +
-        'Michael Suyama</div> <div class="role">Developer</div></div></div><div class="template-container"><div ' +
-        'class="left"><img class="empImg" src="src/dropdownlist/Employees/6.png" alt="Margaret Peacock" /></div><div ' +
-        'class="left info"><div class="name">Margaret Peacock</div> <div class="role">Developer</div></div></div></div>';
-
-    // Mapping Tab items Content property    
-    public content2: string = '<div class="content-title"><div class="cnt-text">Employee Info</div></div><div id="rome">' +
-        '<div id="ripple" class="template-container"><div class="left"><img class="empImg" src="src/dropdownlist/Employees/7.png" ' +
-        'alt="Janet Leverling" /></div><div class="left info"><div class="name">Janet Leverling</div> <div class="role">' +
-        'CEO</div></div></div><div class="template-container"><div class="left"><img class="empImg" ' +
-        'src="src/dropdownlist/Employees/8.png" alt="Steven Buchanan" /></div><div class="left info"><div class="name">' +
-        'Steven Buchanan</div> <div class="role">HR</div></div></div><div class="template-container"><div ' +
-        'class="left"><img class="empImg" src="src/dropdownlist/Employees/9.png" alt="Nancy Davolio" /></div><div ' +
-        'class="left info"><div class="name">Nancy Davolio</div> <div class="role">Product Manager</div></div></div></div>';
 
     // Change event funtion for DropDownList component    
     public placeChange(e: Object): void {

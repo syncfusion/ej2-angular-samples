@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-ng-charts';
-import { ChartDataService } from './chartdata.service';
+import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ChartDataService } from './chart-data.service';
 import { ChartSeriesType } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { Browser } from '@syncfusion/ej2-base';
@@ -26,12 +26,6 @@ export class PolarSplineChartComponent {
         interval: 30,
         labelFormat: '{value}°',
         coefficient: Browser.isDevice ? 80 : 100
-    };
-    //Initializing Primary Y Axis
-    public primaryYAxis: Object = {
-        minimum: -20,
-        interval: 5,
-        maximum: 0
     };
     public title: string = 'Microphone Types Polar Patterns';
     public tooltip: Object = {

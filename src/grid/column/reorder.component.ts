@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { employeeData } from '../data';
-import { ReorderService } from '@syncfusion/ej2-ng-grids';
+import { ReorderService } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ej-gridreorder',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { orderDatas } from './data';
-import { EditService, ToolbarService, PageService } from '@syncfusion/ej2-ng-grids';
+import { EditService, ToolbarService, PageService } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ej-gridnormaledit',
@@ -21,7 +21,7 @@ export class NormalEditComponent implements OnInit {
         this.data = orderDatas;
         this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };
         this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
-        this.orderidrules = { required: true };
+        this.orderidrules = { required: true, number: true };
         this.customeridrules = { required: true };
         this.freightrules =  { required: true };
         this.editparams = { params: { popupHeight: '300px' }};

@@ -1,8 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { MapsTheme, MapsTooltip, DataLabel, Maps, Marker, ILoadEventArgs } from '@syncfusion/ej2-ng-maps';
-import { usMap } from './MapData/USA'; 
-import { California } from './MapData/California'; 
-import { Texas } from './MapData/Texas'; 
+import { MapsTheme, MapsTooltip, DataLabel, Maps, Marker, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
+import { MapAjax } from '@syncfusion/ej2-maps'; 
 
 Maps.Inject(Marker, MapsTooltip, DataLabel);
 
@@ -12,7 +10,6 @@ Maps.Inject(Marker, MapsTooltip, DataLabel);
 @Component({
     selector: 'control-content',
     templateUrl: 'multilayer.html',
-    styleUrls: ['maps.style.css'],
     encapsulation: ViewEncapsulation.None
 })
 export class MapsMultilayerComponent {
@@ -33,7 +30,7 @@ export class MapsMultilayerComponent {
     }
     public layers: object[] = [
         {
-            shapeData: usMap,
+            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/usa.json'),
             shapeSettings: {
                 fill: '#E5E5E5',
                 border: {
@@ -48,7 +45,7 @@ export class MapsMultilayerComponent {
             }
         },
         {
-            shapeData: Texas,
+            shapeData:  new MapAjax(location.origin + location.pathname + 'src/maps/map-data/texas.json'),
             type: 'SubLayer',
             shapeSettings: {
                 fill: 'rgba(141, 206, 255, 0.6)',
@@ -89,7 +86,7 @@ export class MapsMultilayerComponent {
             ]
         },
         {
-            shapeData: California,
+            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/california.json'),
             type: 'SubLayer',
             shapeSettings: {
                 fill: 'rgba(141, 206, 255, 0.6)',

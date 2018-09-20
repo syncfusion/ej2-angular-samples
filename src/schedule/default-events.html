@@ -1,5 +1,5 @@
 <div class="control-section">
-    <ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" (eventRendered)="onEventRendered($event)">
+    <ejs-schedule #scheduleObj width='100%' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" (eventRendered)="onEventRendered($event)">
     </ejs-schedule>
 </div>
 
@@ -15,8 +15,9 @@
     <p>
         Schedule requires only the
         <code>startTime</code> and
-        <code>endTime</code> fields as mandatory to be mapped from datasource and provided with proper datetime values to display the normal
-        events in it. The normal events can be categorized into 3 types based on its time range and all-day type.
+        <code>endTime</code> fields as mandatory to be mapped from datasource and provided with proper datetime values to
+        display the normal events in it. The normal events can be categorized into 3 types based on its time range and all-day
+        type.
     </p>
     <table style="width:100%">
         <tr>
@@ -29,8 +30,8 @@
         </tr>
         <tr>
             <td style="padding:4px 0;">Normal events</td>
-            <td>The events that has its start and end time duration on the same date. These events are depicted in green color
-                in the above sample.</td>
+            <td>The events that has its start and end time duration on the same date. These events are depicted in green
+            color in the above sample.</td>
         </tr>
         <tr>
             <td style="padding:4px 0;">Spanned events</td>
@@ -44,8 +45,8 @@
             <td style="padding:4px 0;">All-day events</td>
             <td>
                 The events that are defined as all-day in its event object by setting
-                <code>isAllDay</code> to true. It usually renders at the date header section of the Schedule where no time-cells are present.
-                These events are depicted in purple color.
+                <code>isAllDay</code> to true. It usually renders at the date header section of the Schedule where no time-cells
+                are present. These events are depicted in purple color.
             </td>
         </tr>
     </table>

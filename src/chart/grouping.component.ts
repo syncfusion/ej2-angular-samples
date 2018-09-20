@@ -1,6 +1,9 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { AccumulationChartComponent, IAccTextRenderEventArgs, AccumulationChart,
-         IAccPointRenderEventArgs, IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-ng-charts';
+import { 
+    AccumulationChartComponent, IAccTextRenderEventArgs, AccumulationChart, GroupModes,
+    IAccPointRenderEventArgs, IAccLoadedEventArgs, AccumulationTheme
+} from '@syncfusion/ej2-angular-charts';
+import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
  * Sample for groping in pie chart
@@ -27,17 +30,17 @@ export class GroupingPieComponent {
         { 'x': 'Spain', y: 7, text: 'Spain: 7' },
         { 'x': 'Kenya', y: 6, text: 'Kenya: 6' },
     ];
-
     @ViewChild('pie')
     public pie: AccumulationChartComponent | AccumulationChart;
     public onTextRender(args: IAccTextRenderEventArgs): void {
         args.text = args.point.x + ' ' + args.point.y;
     }
     public onPointRender(args: IAccPointRenderEventArgs): void {
-        if ((args.point.x as string).indexOf('Others') > -1) {
+        if (args.point.isClubbed || args.point.isSliced) {
             args.fill = '#D3D3D3';
         }
     }
+    public explode: boolean = true;
     //Initializing Legend
     public legendSettings: Object = {
         visible: false,
@@ -50,6 +53,17 @@ export class GroupingPieComponent {
         font: {
             size: '14px'
         }
+    };
+    public onChange(e: Event): void {
+        let element: HTMLInputElement = <HTMLInputElement>e.target;
+        let currentValue: number = element.value === 'Point' ? 9 : 8;
+        this.pie.series[0].groupMode = <GroupModes>element.value;
+        this.pie.series[0].groupTo = currentValue.toString();
+        this.pie.series[0].animation.enable = false;
+        document.getElementById('clubtext').innerHTML = currentValue.toString();
+        this.pie.removeSvg();
+        this.pie.refreshSeries();
+        this.pie.refreshChart();
     };
     public onClubvalue(e: Event): void {
         let clubvalue: string = (document.getElementById('clubvalue') as HTMLSelectElement).value;
@@ -65,11 +79,31 @@ export class GroupingPieComponent {
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     };
-    public clubvalue: string = '10';
+    public clubvalue: string = '9';
     public startAngle: number = 0;
     public endAngle: number = 360;
-    public tooltip: Object = { enable: true, format: '${point.x} : <b>${point.y} Medals</b>' };
+    public tooltip: Object = { enable: false };
     public title: string = 'RIO Olympics Gold ';
+    public groupMode: DropDownList;
+    ngOnInit(): void {
+        this.groupMode = new DropDownList({
+            index: 0,
+            width: 120,
+            change: () => {
+                let mode: string = this.groupMode.value.toString();
+                let currentValue: number = mode === 'Point' ? 9 : 8;
+                this.pie.series[0].groupMode = <GroupModes>mode;
+                this.pie.series[0].groupTo = currentValue.toString();
+                this.pie.series[0].animation.enable = false;
+                document.getElementById('clubtext').innerHTML = currentValue.toString();
+                (document.getElementById('clubvalue') as HTMLInputElement).value = currentValue.toString();
+                this.pie.removeSvg();
+                this.pie.refreshSeries();
+                this.pie.refreshChart();
+            }
+        });
+        this.groupMode.appendTo('#mode');
+    }
     constructor() {
         //code
     };

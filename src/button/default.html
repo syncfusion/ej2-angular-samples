@@ -14,7 +14,7 @@
                     <button ejs-button cssClass="e-outline" [isPrimary]="true">Outline</button>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
-                    <button ejs-button cssClass="e-flat">Flat</button>
+                    <button ejs-button cssClass="e-flat" [isPrimary]="true">Flat</button>
                 </div>
             </div>
         </div>
@@ -42,12 +42,12 @@
                     <button ejs-button cssClass="e-small e-round" iconCss="e-icons e-add-icon" [isPrimary]="true"></button>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
-                    <button #toggleBtn ejs-button cssClass="e-flat" [isToggle]="true" (click)="btnClick()" iconCss="e-icons e-play-icon">Play</button>
+                    <button #toggleBtn ejs-button cssClass="e-flat" [isToggle]="true" [isPrimary]="true" (click)="btnClick()" iconCss="e-icons e-play-icon">Play</button>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
                 <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
-                    <button ejs-button cssClass="e-flat" iconCss="e-icons e-open-icon" iconPosition="Right">Open</button>
+                    <button ejs-button cssClass="e-flat" iconCss="e-icons e-open-icon" [isPrimary]="true" iconPosition="Right">Open</button>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
                     <button ejs-button cssClass="e-small">Small</button>

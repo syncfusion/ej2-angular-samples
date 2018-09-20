@@ -1,0 +1,59 @@
+<div class="control-section">
+    <div class="col-lg-9 content-wrapper">
+        <ejs-schedule #schedule height='650px' [(selectedDate)]="selectedDate" [eventSettings]="eventSettings" [(currentView)]="currentView">
+            <e-views>
+                <e-view option="TimelineDay"></e-view>
+                <e-view option="TimelineWeek"></e-view>
+                <e-view option="TimelineWorkWeek"></e-view>
+                <e-view option="TimelineMonth"></e-view>
+                <e-view option="Agenda"></e-view>
+            </e-views>
+        </ejs-schedule>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <div id="property" class="property-panel-table" title="Properties">
+                    <table id="property" title="Properties" style="width: 100%">
+                        <tbody>
+                            <tr style="height: 50px">
+                                <td style="width: 30%">
+                                    <div> Current Date
+                                    </div>
+                                </td>
+                                <td style="width: 70%;">
+                                    <div>
+                                        <ejs-datepicker #datepicker [(value)]='selectedDate'></ejs-datepicker>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This demo showcases how the timeline scheduler looks like with its default set of configurations.</p>
+</div>
+
+<div id="description">
+    <p>
+        Like the vertical scheduler, timeline view has the similar view types such as
+    </p>
+    <ul>
+        <li>Timeline Day</li>
+        <li>Timeline Week</li>
+        <li>Timeline WorkWeek</li>
+        <li>Timeline Month</li>
+    </ul>
+    <p>The Agenda and MonthAgenda views shares the same layout for both the vertical and timeline views.</p>
+    <p>To use any of the timeline views such as day, week and work week in your application, the common
+        <code>TimelineViews</code> module needs to be injected into the
+        <code>@NgModule.providers</code> section. For example, to work with the month view on Schedule – it is necessary to inject the Day module like
+        <code>providers: [TimelineMonthService]</code> into the
+        <code>@NgModule.providers</code> section.</p>
+</div>

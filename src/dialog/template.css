@@ -1,39 +1,52 @@
-.material button#sendButton {
+.material button#sendButton, button#sendButton {
     top: 4px;
     position: relative;
+}
+.control-section.template {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 350px;
 }
 .bootstrap button#sendbtn {
     margin-right: 1%;
 }
-.material .e-dialog .e-dlg-header-content {
+.material .template .e-dialog .e-dlg-header-content, .template .e-dialog .e-dlg-header-content {
     background-color: #3f51b5;
 }
-.fabric .e-dialog .e-dlg-header-content {
+.fabric .template .e-dialog .e-dlg-header-content {
     background-color: #0078d7;
 }
-.bootstrap .e-dialog .e-dlg-header-content {
+.bootstrap .template .e-dialog .e-dlg-header-content {
     background-color: #428bca;
 }
-.highcontrast .e-dialog .e-dlg-header-content {
+.highcontrast .template .e-dialog .e-dlg-header-content {
     background-color: #ffd939;
 }
-.material.e-bigger .e-dialog .e-footer-content {
+.material.e-bigger .template .e-dialog .e-footer-content {
     padding-left: 23px;
 }
 
-.e-dlg-header-content .e-btn.e-dlg-closeicon-btn,  .e-bigger .e-dialog .e-btn.e-dlg-closeicon-btn {
-    top: 16px;
+.template .e-dlg-header-content .e-btn.e-dlg-closeicon-btn,  .e-bigger .template .e-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn {
+    top: 5px;
     left: -11px;
 }
-.e-dialog .e-dlg-header {
+.e-bigger .template .target-element .e-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn {
+    top: 3px;
+    left: -11px;
+}
+.template .e-dialog.e-rtl .e-dlg-header-content .e-btn.e-dlg-closeicon-btn,  .e-bigger .template .e-dialog.e-rtl .e-dlg-header-content .e-btn.e-dlg-closeicon-btn {
+    left: 11px;
+}
+.template .e-dialog .e-dlg-header {
     position: relative;
-    top: 10px;
-    left: 7px;
 }
-.e-dialog .e-footer-content, .highcontrast.e-bigger .e-dialog .e-footer-content {
-    padding: 20px;
+.template .e-dialog.e-rtl .e-dlg-header {
+    left: -7px;
 }
-.e-dialog .e-dlg-content {
+.template .e-dialog .e-footer-content, .highcontrast.e-bigger .template .e-dialog .e-footer-content {
+    padding: 15px;
+}
+.template .e-dialog .e-dlg-content {
     padding: 0;
 }
 .fabric button#sendButton, .highcontrast button#sendButton {
@@ -44,10 +57,13 @@
     top: -2px;
 }
 
- .fabric input.e-input,  .highcontrast input.e-input {
-    width: 65%;
+ .fabric .template input.e-input,  .highcontrast .template input.e-input {
     float: left;
     height: 35px;
+}
+
+.fabric.e-bigger .template input.e-input {
+    height: 40px;
 }
 
 .e-bigger.highcontrast button#sendbtn {
@@ -55,41 +71,59 @@
     margin-top: -2%;
 }
 
-.e-dialog .e-dlg-header-content {
+.template .e-dialog .e-dlg-header-content {
     padding: 6px;
 }
-.e-bigger.e-dialog .e-dlg-header-content, .e-bigger .e-dialog .e-dlg-header-content {
+.e-bigger.e-dialog .e-dlg-header-content, .e-bigger .template .e-dialog .e-dlg-header-content {
     padding: 8px;
 }
-.e-open-icon::before {
+.template .e-open-icon::before {
     content: '\e782';
 }
-.e-dialog .e-dlg-header >img.img2 {
-    height: 40px;
-    width: 40px;
+.template .e-dialog .e-dlg-header >img.img2 {
+    height: 36px;
+    width: 36px;
     border-radius: 50%;
+    vertical-align: middle;
 }
-
-input.e-input {
-    width: 65%;
+#dlg-template {
+    display: inline-block;
+    padding: 0px 10px;
+    vertical-align: middle;
+    height: 40px;
+    line-height: 40px;
+}
+.template input.e-input {
+    width: 75%;
     float: left;
 }
+.template .e-rtl input.e-input {
+    float: right;
+}
 
-.e-icon-settings.e-icons {
+.template .e-icon-settings.e-icons {
     float: left;
     position: relative;
-    left: 16%;
+    left: 14%;
     top: -33px;
 }
 
-.fabric .e-icon-settings.e-icons, .highcontrast .e-icon-settings.e-icons {
+.template .e-dialog.e-rtl .e-footer-content .e-btn {
+    margin-left: 0;
+}
+
+.template .e-dialog.e-rtl .e-icon-settings.e-icons {
+    left: 0;
+}
+
+.fabric .template .e-icon-settings.e-icons, .highcontrast .template .e-icon-settings.e-icons {
     top: -37px;
 }
 
-.e-bigger.fabric .e-icon-settings.e-icons, .e-bigger.highcontrast .e-icon-settings.e-icons {
+.e-bigger.fabric .template .e-icon-settings.e-icons, .e-bigger.highcontrast .template .e-icon-settings.e-icons {
     top: -35px;
 }
-.dialogContent .dialogText {
+.template .dialogContent .dialogText {
     font-size: 13px;
     padding: 5%;
     word-wrap: break-word;
@@ -98,51 +132,72 @@ input.e-input {
     font-style: initial;
     display: block;
 }
-.e-dlg-header .e-icon-settings, .e-icon-btn {
+.template .e-dlg-header .e-icon-settings, .e-icon-btn {
     color: #fff;
 }
 
-.dialogContent .dialogText, .dialogContent .dialogText  {
+.template .dialogContent .dialogText, .template .dialogContent .dialogText  {
     background-color: #f5f5f5;
 }
 
-.material .e-dialog .e-footer-content, .fabric .e-dialog .e-footer-content {
+.material .template .e-dialog .e-footer-content, .template .e-dialog .e-footer-content, .fabric .template .e-dialog .e-footer-content {
     border-top: 0.5px solid rgba(0, 0, 0, 0.42);
 }
-.highcontrast .e-dialog .e-footer-content, .fabric .e-dialog .e-footer-content {
+.highcontrast .template .e-dialog .e-footer-content, .fabric .template .e-dialog .e-footer-content {
     padding: 20px 25px;
 }
 
-.highcontrast .e-dialog .e-footer-content {
+.highcontrast .template .e-dialog .e-footer-content {
     border-top: 0.5px solid #fff;
 }
-.highcontrast .dialogContent .dialogText { 
+.highcontrast .template .dialogContent .dialogText { 
     background-color: #bfbfbf;
 }
-.dialogContent {
+.template .dialogContent {
     display: block;
     font-size: 15px;
     word-wrap: break-word;
     text-align: center;
-    color: #DCDCDC;
     font-style: italic;
     border-radius: 6px;
     padding: 3%;
     position: relative;
     top: 25px;
 }
-.e-bigger.e-dialog .e-dlg-content, .e-bigger .e-dialog .e-dlg-content {
+.e-bigger.e-dialog .e-dlg-content, .e-bigger .template .e-dialog .e-dlg-content {
     padding: 0;
 }
-.e-bigger .e-dialog .dialogContent {
+.e-bigger .template .e-dialog .dialogContent {
     top: 20px;
 }
-.e-bigger.bootstrap .e-dialog .dialogContent {
+.e-bigger.bootstrap .template .e-dialog .dialogContent {
     top: 30px;
 }
 .control-wrapper .e-control.e-dialog {
     width: 30%;
 }
-.e-dialog .e-dlg-header-content .e-icon-dlg-close {
+.template .e-dialog .e-dlg-header-content .e-icon-dlg-close {
   color: #fff;
+}
+.fabric .template .e-dialog .e-btn.e-dlg-closeicon-btn:hover span {
+    color: #8ECBFF;
+}
+.material .template .e-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn:hover, .template .e-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn:hover,
+.material .template .e-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn:focus, .template .e-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn:focus {
+    background-color: rgba(255,255,255, 0.10);
+}
+.material .template .e-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn:active .e-icon-dlg-close ,
+.material .template .e-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn:focus .e-icon-dlg-close,
+.material .template .e-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn:hover .e-icon-dlg-close,
+.e-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn:active .e-icon-dlg-close ,
+.e-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn:focus .e-icon-dlg-close,
+.e-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn:hover .e-icon-dlg-close {
+    color: #fff;
+}
+.template .e-dialog .e-dlg-header-content .e-dlg-header .e-avatar.template-image {
+    background-image: url(src/dialog/images/1.png);
+    vertical-align: middle;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
 }

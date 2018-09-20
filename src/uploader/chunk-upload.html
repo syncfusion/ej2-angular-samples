@@ -1,0 +1,33 @@
+<div class="control-section">
+    <div class="col-lg-8">
+        <div class="control_wrapper">
+            <ejs-uploader #chunkupload id='chunkfileupload' [maxFileSize]=104857600 [autoUpload]=false [asyncSettings]='path' [dropArea]='dropElement' (pausing)='onPausing($event)' (resuming)='onResuming($event)' (removing)='onFileRemove($event)'(chunkFailure)='onBeforefailure($event)'></ejs-uploader>
+        </div>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <ejs-dropdownlist id='chunksizes' #sample [dataSource]='chunkData' (change)='onChange($event)' [value]='value' [fields]='fields' [placeholder]='waterMark'></ejs-dropdownlist>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the chunk upload functionalities of the Uploader component. Browse the files which you want to upload to the server. 
+        The selected files are submitted to server on upload button click based on the selected chunk size.
+        Also, You can pause the uploading file and resuming it. Once the upload got failed, it will retry automatically.
+        Even it fails to upload in auto retry, retry button will be enabled to retry the upload later.</p>
+    <p>Also, provided option to change the chunk size values from the property panel</p>
+</div>
+
+<div id="description">
+    <p>When the file size is larger or slow network connection, you can upload the files using 
+            <a href="https://ej2.syncfusion.com/documentation/uploader/api-uploader.html?lang=typescript#asyncsettings"
+            target="_blank"> chunkSize </a> API. It will slice the files and upload it in sequential order.</p>
+    <p>While the uploading is in progress, you can pause the upload and resuming it later.</p>
+    <p>If the upload got failed, retry option will be enabled.</p>
+    <p>The sample is configured with maximum file size as `100 MB` to upload. </p>
+    <p>More information on the Uploader instantiation can be found in this documentation section.</p>
+</div>

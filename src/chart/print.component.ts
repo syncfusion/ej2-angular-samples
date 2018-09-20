@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IPointRenderEventArgs, ChartComponent, ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { IPointRenderEventArgs, ChartComponent, ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 /**
  * Sample for Chart Print
  */

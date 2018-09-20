@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { SliderModule, SliderComponent, TooltipPlacement, TooltipShowOn } from '@syncfusion/ej2-ng-inputs';
-import { DropDownListComponent } from '@syncfusion/ej2-ng-dropdowns';
+import { SliderModule, SliderComponent, TooltipPlacement, TooltipShowOn } from '@syncfusion/ej2-angular-inputs';
+import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 
 /**
  * Tooltip sample
@@ -17,7 +17,7 @@ export class TooltipSliderComponent {
     @ViewChild('slider')
     public defaultObj: SliderComponent;
     @ViewChild('rangeslider')
-    public rangeObj: SliderComponent;
+    public rangeObj: any;
     @ViewChild('placementdropdownlist')
     public listObj: DropDownListComponent;
     @ViewChild('showondropdownlist')
@@ -28,7 +28,7 @@ export class TooltipSliderComponent {
     public rangetype: string = 'Range';
     public tooltip: Object = {
         placement: 'Before',
-        isVisible:true,
+        isVisible: true,
         showOn: 'Focus'
     };
     public datasource: Object[] = [{ value: 'Before', text: 'Before' }, { value: 'After', text: 'After' }];
@@ -39,6 +39,9 @@ export class TooltipSliderComponent {
     public changeTooltip(): void {
         this.defaultObj.tooltip = { placement: this.listObj.value as TooltipPlacement };
         this.rangeObj.tooltip = { placement: this.listObj.value as TooltipPlacement };
+        this.rangeObj.dataBind();
+        this.rangeObj.firstTooltipObj.dataBind();
+        this.rangeObj.secondTooltipObj.dataBind();
     }
     public changeShowon(): void {
         this.defaultObj.tooltip = { showOn: this.showonlistObj.value as TooltipShowOn };

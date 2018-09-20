@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -39,9 +39,6 @@ export class AreaChartComponent {
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         title: 'Revenue in Millions',
-        minimum: 2,
-        maximum: 5,
-        interval: 1,
         labelFormat: '{value}M',
         lineStyle: { width: 0 },
         majorTickLines: { width: 0 },

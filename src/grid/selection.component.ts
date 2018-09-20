@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { data } from './data';
-import { SelectionService } from '@syncfusion/ej2-ng-grids';
+import { SelectionService } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ej-gridselection',

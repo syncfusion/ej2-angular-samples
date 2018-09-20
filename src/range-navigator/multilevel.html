@@ -1,0 +1,31 @@
+<div id="action-description">
+    <p>
+        Axis labels are placed based on the values of the start and end ranges. You can add higher level of labels to the range navigator
+        using multilevel labels.
+    </p>
+</div>
+<div class="control-section">
+    <h4 id="days" style="font-family: Segoe UI;font-weight: 500; font-style:normal; font-size:15px;" align="center">Multi Level Labels</h4>
+    <div align="center">
+        <ejs-rangenavigator style='display:block' align='center' id='containerMultiLevel' [value]='value' labelPosition='Outside'
+            valueType='DateTime' intervalType='Quarter' enableGrouping=true [width]='width' [tooltip]='tooltip' groupBy='Years'
+            [dataSource]='dataSource' xName='x' yName='y' [theme]='theme' animationDuration=500 (load)='load($event)'>
+            </ejs-rangenavigator>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        In this example, you can see how to group the axis labels. Here the interval for the second level labels can be customized
+        using <code>groupBy</code>
+    </p>
+</div>
+<style>
+    #control-containerMultiLevel {
+        padding: 0px !important;
+    }
+    
+    #control-containerMultiLevel {
+        transform: translateY(25%);
+    }
+</style>

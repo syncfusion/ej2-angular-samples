@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { MapsTheme, Maps, Zoom, Marker, ILoadEventArgs } from '@syncfusion/ej2-ng-maps';
-import { Asia } from './MapData/Asia'; 
+import { MapsTheme, Maps, Zoom, Marker, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
+import { MapAjax } from '@syncfusion/ej2-maps';
 
 Maps.Inject(Zoom, Marker);
 
@@ -10,7 +10,6 @@ Maps.Inject(Zoom, Marker);
 @Component({
     selector: 'control-content',
     templateUrl: 'earthquake.html',
-    styleUrls: ['maps.style.css'],  
     encapsulation: ViewEncapsulation.None
 })
 export class MapsEarthquakeComponent {
@@ -35,7 +34,7 @@ export class MapsEarthquakeComponent {
         {
             shapeDataPath: 'name',
             shapePropertyPath: 'name',
-            shapeData: Asia,
+            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/asia.json'),
             markerSettings: [{
                 visible: true,
                 height: 100,

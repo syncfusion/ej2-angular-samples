@@ -1,12 +1,12 @@
 import { Component, ViewChild, OnInit, ViewEncapsulation, ElementRef } from '@angular/core';
 
-import { DialogComponent } from '@syncfusion/ej2-ng-popups';
-import { TabComponent, SelectEventArgs } from '@syncfusion/ej2-ng-navigations';
-import { DatePickerComponent } from '@syncfusion/ej2-ng-calendars';
-import { NumericTextBoxComponent } from '@syncfusion/ej2-ng-inputs';
-import { GridComponent, RowSelectEventArgs } from '@syncfusion/ej2-ng-grids';
+import { DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { TabComponent, SelectEventArgs } from '@syncfusion/ej2-angular-navigations';
+import { DatePickerComponent } from '@syncfusion/ej2-angular-calendars';
+import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { GridComponent, RowSelectEventArgs } from '@syncfusion/ej2-angular-grids';
 import { isNullOrUndefined as isNOU } from '@syncfusion/ej2-base';
-import { DropDownListComponent } from '@syncfusion/ej2-ng-dropdowns';
+import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 /**
  * Create wizard using Tab
  */

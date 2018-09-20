@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { data } from './data';
-import { SortService } from '@syncfusion/ej2-ng-grids';
+import { SortService } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ej2-gridsort',

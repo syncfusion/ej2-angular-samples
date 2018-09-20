@@ -1,5 +1,5 @@
 <div class="col-lg-10 control-section azure">
-    <div class="content-wrapper">
+    <div class="cloud-content-wrapper">
         <div id="pricing-slider" class="pricing-slider">
             <div class="row">
                 <div id="cloud-left-pane" class="col-lg-8 col-md-8 col-sm-8">
@@ -49,12 +49,12 @@
                         <div class="discount">
                             <div class="cloud-slider-right">
                                 <!-- cPanel Check Box element -->
-                                <ejs-checkbox id="cPanel" (change)='sliderValueChange()' label="Not required cPanel included" [checked]="false" ></ejs-checkbox>
+                                <ejs-checkbox id="cPanel" #cPanelCheckbox (change)='sliderValueChange()' label="Not required cPanel included" [checked]="false" ></ejs-checkbox>
 
                             </div>
                             <div class="cloud-slider-right discount-pay">
                                 <!-- discount Check Box element -->
-                                <ejs-checkbox id="discount" (change)='sliderValueChange()' label='12 Months <span class = "offer" > Save 25%.</span> Pay Monthly'
+                                <ejs-checkbox id="discount" #discountCheckbox (change)='sliderValueChange()' label='12 Months <span class = "offer" > Save 25%.</span> Pay Monthly'
                                     [checked]="false"></ejs-checkbox>
                             </div>
                         </div>
@@ -63,9 +63,9 @@
                             <button ejs-button id="btn" class="dlgbtn" [isPrimary]="true">Signup Now</button>
 
                         </div>
-                        <div id="dialogWrapper" class="content-wrapper">
+                        <div id="dialogWrapper" class="cloud-content-wrapper">
                             <!-- Initialize alert Dialog -->
-                            <ejs-dialog id="alertDialog" [buttons]='alertDlgButtons' [visible]='false' [animationSettings]='animationSettings' [content]='alertContent'
+                            <ejs-dialog id="alertDialog" #dialog [buttons]='alertDlgButtons' [animationSettings]='animationSettings' [content]='alertContent'
                                 [width]='width' [visible]='false' [closeOnEscape]='false' [showCloseIcon]='false' [target]='target'>
                             </ejs-dialog>
 

@@ -1,0 +1,86 @@
+<style>
+    .diagram-symbol-palette .sb-child-row {
+        margin-top: 8px;
+    }
+
+    .diagram-symbol-palette .row {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .diagram-symbol-palette .property-panel-table div {
+        padding-left: 0px;
+    }
+
+    .diagram-symbol-palette .col-xs-6 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+</style>
+<div id="action-description">
+    <p>
+        This example illustrates predefining shapes in a palette that can be easily dragged and dropped into the drawing area. Customizable
+        options of the symbol palette are also illustrated in this example.
+    </p>
+</div>
+<div class="col-lg-8 control-section" id="palette-space" style="height:100%;">
+    <div id="palette-space" style="width:100%; height:100%;">
+        <ejs-symbolpalette #symbolpalette id="symbolpalette" [enableAnimation]='enableAnimation' [expandMode]='expandMode' [palettes]='palettes'
+            width="100%" height="700px" [symbolHeight]=60 [symbolWidth]=60 [symbolMargin]='symbolMargin' [getSymbolInfo]='getSymbolInfo'
+            [getNodeDefaults]='getSymbolDefaults'>
+        </ejs-symbolpalette>
+    </div>
+</div>
+<div class="col-lg-4 property-section diagram-symbol-palette">
+    <div class="property-panel-section">
+        <div class="property-panel-header">
+            Properties
+        </div>
+        <div class="row sb-child-row property-panel-content">
+            <div class="row sb-child-row">
+                <div class="col-xs-6">
+                    <span>Expandable:</span>
+                </div>
+                <div class="col-xs-6">
+                    <ejs-dropdownlist id="expand" #expand [dataSource]="expandOptions" [fields]=fields index=1 (change)="onExpandChange($event)"></ejs-dropdownlist>
+                </div>
+            </div>
+            <div class="row sb-child-row">
+                <div class="col-xs-6">
+                    <span>Symbol Size:</span>
+                </div>
+                <div class="col-xs-6">
+                    <ejs-numerictextbox #size id="size" value="80" step="5" format="##.##" min="40" max="100" width="120px" (change)='onsizechange($event)'></ejs-numerictextbox>
+                </div>
+            </div>
+            <div class="row sb-child-row">
+                <div class="col-xs-6">
+                    <span>Animation:</span>
+                </div>
+                <div class="col-xs-6">
+                    <ejs-checkbox #animation id="animation" [checked]="false" (change)="onAnimationChange($event)"></ejs-checkbox>
+                </div>
+            </div>
+            <div class="row sb-child-row">
+                <div class="col-xs-6">
+                    <span>Item Text:</span>
+                </div>
+                <div class="col-xs-6">
+                    <ejs-checkbox #itemtext id="itemtext" [checked]="false" (change)="onItemTextChange($event)"></ejs-checkbox>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        This example shows how to add shapes to symbol palette and how to customize it. The
+        <code>symbols</code> property can be used to add shapes to the symbol palette. The
+        <code>symbolWidth</code> and
+        <code>symbolHeight</code> properties allow you to define the size of the symbols.
+    </p>
+    <p>
+        In this example, options to enable/disable animation, show/hide symbol descriptions, and show header icons are provided.
+    </p>
+    <br>
+</div>

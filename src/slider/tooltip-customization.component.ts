@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { SliderModule, SliderComponent } from '@syncfusion/ej2-ng-inputs';
+import { SliderModule, SliderComponent } from '@syncfusion/ej2-angular-inputs';
 import { Placement, SliderTooltipEventArgs, SliderTickEventArgs } from '@syncfusion/ej2-inputs';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
 
@@ -24,7 +24,7 @@ export class TooltipCustomizationComponent {
         smallStep: 3600000, showSmallTicks: true
     };
     public tooltip: Object = {
-        placement: 'Before', isVisible: true
+        placement: 'Before', isVisible: true, cssClass: 'e-tooltip-cutomization'
     };
     public step: number = 3600000 / 6;
     public min: Object = new Date(2013, 6, 13, 11).getTime();

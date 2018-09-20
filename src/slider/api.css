@@ -33,7 +33,7 @@
     }
 
     #all-option-sample.content-wrapper {
-        height: 363px;
+        height: 463px;
         width: 50%;
         margin: 0 auto;
         min-width: 185px;
@@ -65,3 +65,4 @@
         /* IE 10+ */
         user-select: none;
         /* Standard syntax */
+    }

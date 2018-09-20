@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -49,11 +49,9 @@ export class StepLineChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        minimum: 0,
-        maximum: 20,
         lineStyle: { width: 0 },
-        majorTickLines: { width: 0 },
         interval: 5,
+        majorTickLines: { width: 0 },
         labelFormat: '{value}%'
     };
     public marker: Object = {

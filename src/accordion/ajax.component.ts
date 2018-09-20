@@ -1,7 +1,7 @@
 import { Component, AfterViewInit, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
 import { Ajax} from '@syncfusion/ej2-base';
 import { ExpandEventArgs, Accordion} from '@syncfusion/ej2-navigations';
-import { AccordionComponent } from '@syncfusion/ej2-ng-navigations';
+import { AccordionComponent } from '@syncfusion/ej2-angular-navigations';
 
 /**
  * Accordion Ajax Sample
@@ -17,7 +17,7 @@ export class AjaxAccordionComponent implements AfterViewInit  {
     public acrdn: AccordionComponent;
     public ajaxData: string;
     ngAfterViewInit(): void {
-      let ajax: Ajax = new Ajax('./src/accordion/Ajax_content.html', 'GET', true);
+      let ajax: Ajax = new Ajax('./src/accordion/ajax-content.html', 'GET', true);
       ajax.send().then();
       ajax.onSuccess = (data: string): void => {
         // Loading Accordion content on AJAX success  

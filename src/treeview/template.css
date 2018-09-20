@@ -1,27 +1,16 @@
 .control_wrapper {
-    max-width: 500px;
-    margin: auto;
-    border: 1px solid #dddddd;
-    border-radius: 3px;
+        max-width: 320px;
+        margin: auto;
+        border: 1px solid #dddddd;
+        border-radius: 3px;
 }
-.custom.e-treeview .e-fullrow {
-    height: 72px;
+.e-treeview .e-list-text {
+        width: 100%;
 }
-.custom.e-treeview .e-list-text {
-    line-height: normal;
+.treeCount.e-badge {
+        padding: 0.4em;
+        vertical-align: text-bottom;
 }
-.eimage {
-    float: left;
-    padding: 11px 16px 11px 0;
-    height: 48px;
-    width: 48px;
-    box-sizing: content-box;
-}
-.ename {
-    font-size: 16px;
-    padding: 14px 0 0;
-}
-.ejob {
-    font-size: 14px;
-    opacity: .87;
+.material .treeCount.e-badge {
+        vertical-align: middle;
 }

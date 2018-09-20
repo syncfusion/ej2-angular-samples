@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { MapsTheme, Maps, Marker, Zoom, ILoadEventArgs, MapsTooltip } from '@syncfusion/ej2-ng-maps';
-import { oklahoma } from './MapData/oklahoma';
+import { MapsTheme, Maps, Marker, Zoom, ILoadEventArgs, MapsTooltip } from '@syncfusion/ej2-angular-maps';
+import { MapAjax } from '@syncfusion/ej2-maps';
 
 Maps.Inject(Marker, Zoom, MapsTooltip);
 //tslint:disable:max-func-body-length
@@ -11,7 +11,6 @@ Maps.Inject(Marker, Zoom, MapsTooltip);
 @Component({
     selector: 'control-content',
     templateUrl: 'highlight.html',
-    styleUrls: ['maps.style.css'],
     encapsulation: ViewEncapsulation.None
 })
 export class MapsHighlightComponent {
@@ -27,7 +26,7 @@ export class MapsHighlightComponent {
 
     public layers: object[] = [
         {
-            shapeData: oklahoma,
+            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/oklahoma.json'),
             shapeSettings: {
                 fill: '#F5F5F5',
                 border: { color: '#EEDA97', width: 1 }

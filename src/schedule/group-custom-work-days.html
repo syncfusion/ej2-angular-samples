@@ -1,0 +1,54 @@
+<div class="control-section">
+    <ejs-schedule #scheduleObj cssClass='schedule-group-custom-work-days' width='100%' height='650px' [currentView]="currentView"
+        [group]="group" [selectedDate]="selectedDate" (actionBegin)="onActionBegin($event)" (popupOpen)="onPopupOpen($event)"
+        (renderCell)="onRenderCell($event)" (resizeStart)="onResizeStart($event)" [eventSettings]="eventSettings">
+        <ng-template #resourceHeaderTemplate let-data>
+            <div class='template-wrap'>
+                <div class="resource-image {{getDoctorImage(data)}}"></div>
+                <div class="resource-details">
+                    <div class="resource-name">{{getDoctorName(data)}}</div>
+                    <div class="resource-designation">{{getDoctorLevel(data)}}</div>
+                </div>
+            </div>
+        </ng-template>
+        <e-views>
+            <e-view option="WorkWeek"></e-view>
+            <e-view option="Month"></e-view>
+        </e-views>
+        <e-resources>
+            <e-resource field='DoctorId' title='Doctor Name' name='Doctors' [dataSource]='resourceDataSource' textField='text' idField='id'
+                colorField='color' workDaysField='workDays' startHourField='startHour' endHourField='endHour'>
+            </e-resource>
+        </e-resources>
+    </ejs-schedule>
+</div>
+
+<div id="action-description">
+    <p>
+        This demo showcases the different available dates of doctors and their appointments on those days.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        In this demo, different working days are assigned by passing the
+        <code>workDays</code> collection for each doctor to show their available dates. On each of their available dates, their daily available
+        time range is also depicted by mentioning the
+        <code>startHour</code> and
+        <code>endHour</code> for each doctor. These values needs to be provided along with the resource
+        <code>dataSource</code> by mapping the appropriate fields namely
+        <code>workDaysField</code>,
+        <code>startHourField</code> and
+        <code>endHourField</code>.
+    </p>
+    <p>
+        Here, we have customized the background cell color of the available times of each doctor using
+        <code>renderCell</code> event to denote that, only those timeslots are available for booking appointments. All other cells are simply read-only
+        and no appointments can be booked on it. Also, if the applicable timeslot already contains an appointment, then no
+        more appointments can be added to that cell which has been prevented by making use of the
+        <code>isSlotAvailable</code> function within the
+        <code>actionBegin</code> event checking for
+        <code>eventCreate</code> request type. The resource header is customized by making use of the
+        <code>resourceHeaderTemplate</code> option.
+    </p>
+</div>

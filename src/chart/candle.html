@@ -1,15 +1,23 @@
 <div id="action-description">
     <p>
-        This sample visualizes the AAPL historical data with default candle series in the chart. Tooltip and crosshair show the information about the data and period.
+        This sample visualizes the AAPL historical data with default candle series in the chart. Tooltip and crosshair shows the information about the data and period.
    </p>
 </div>
 <div class="control-section">
-    <div align='center'>
-        <ejs-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [crosshair] = 'crosshair' 
-        [axes] = 'axes' [rows]='rows' [legendSettings]='legendSettings' (axisLabelRender)= 'axisLabelRender($event)' (load)='load($event)' (tooltipRender)='tooltipRender($event)'>
+    <div id="title" align="center" style="font-size: 15px; font-style: normal;font-family: 'Segoe UI'; font-weight: 500;">AAPL Historical</div>
+    <div id="selector" align="center">
+         <ejs-rangenavigator #containerTop  align='center' id='containerTop' labelPosition='Outside'
+            valueType= 'DateTime' [width]='width' (changed)='changed($event)' (load)='loadPeriodic($event)' 
+            disableRangeSelector=true [periodSelectorSettings]='periodSelectorSettings' (loaded)='loaded($event)'
+            [dataSource]='data1' xName='x' yName='Close'>     
+            </ejs-rangenavigator>
+    </div>
+    <div id="container" align="center">
+         <ejs-chart #chartcontainer id='chartcontainer' style='display:block' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [crosshair] = 'crosshair' 
+        [axes] = 'axes' [rows]='rows' [legendSettings]='legendSettings' (axisLabelRender)= 'axisLabelRender($event)' (load)='load($event)' (tooltipRender)='tooltipRender($event)' (pointRender)= 'pointRender($event)'>
             <e-series-collection>
-                <e-series [dataSource]='data1' type='Column' xName='x' yName='volume'  [marker]='marker'name='Volume'> </e-series>
-                <e-series [dataSource]='data1' type='Candle' xName='x' yAxisName='secondary' [marker]='marker'high='high' low='low'
+                <e-series [dataSource]='data1' type='Column' xName='x' yName='volume' name='Volume'> </e-series>
+                 <e-series [dataSource]='data1' type='Candle' xName='x' yAxisName='secondary' high='high' low='low'
                  open='open' close='close' volume='volume' name='Apple Inc' bearFillColor= '#2ecd71' bullFillColor= '#e74c3d'> </e-series>
             </e-series-collection>
         </ejs-chart>
@@ -32,3 +40,8 @@
         <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#rangecolumnseriesmodule-rangecolumnseries">documentation section</a>.
     </p>
 </div>
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+</style>

@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject, ViewEncapsulation } from '@angular/core';
 import { employeeData } from './data';
-import { DetailRowService } from '@syncfusion/ej2-ng-grids';
+import { DetailRowService } from '@syncfusion/ej2-angular-grids';
 import { Internationalization } from '@syncfusion/ej2-base';
 
 let instance: Internationalization = new Internationalization();

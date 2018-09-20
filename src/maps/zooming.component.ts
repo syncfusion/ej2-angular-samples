@@ -1,11 +1,12 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { MapsTheme, Maps, Zoom, ILoadEventArgs } from '@syncfusion/ej2-ng-maps';
-import { World_Map } from './MapData/WorldMap';
-import { randomcountriesData } from './MapData/salesCountry';
+import { MapsTheme, Maps, Zoom, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
+import { Slider, SliderChangeEventArgs } from '@syncfusion/ej2-inputs';
+import { EmitType } from '@syncfusion/ej2-base';
+import { SliderComponent } from '@syncfusion/ej2-angular-inputs';
+import { MapAjax } from '@syncfusion/ej2-maps';
 
 Maps.Inject(Zoom);
 
-let worldMap: object = World_Map;
 
 /**
  * Maps zooming sample
@@ -13,7 +14,6 @@ let worldMap: object = World_Map;
 @Component({
     selector: 'control-content',
     templateUrl: 'zooming.html',
-    styleUrls: ['maps.style.css'],
     encapsulation: ViewEncapsulation.None
 })
 export class MapsZoomingComponent {
@@ -34,18 +34,35 @@ export class MapsZoomingComponent {
 
     public layers: object[] = [
         {
-            shapeData: worldMap,
+            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
             shapePropertyPath: 'continent',
             shapeDataPath: 'continent',
             shapeSettings: {
                 autofill: true,
                 colorValuePath: 'color'
             },
-            dataSource: randomcountriesData
+            animationDuration: 500,
+            dataSource: [
+                { country: 'RUS', 'continent': 'Europe', 'CategoryName': 'Books', 'Sales': 3746, 'color': '#EC9B79' },
+                { country: 'IND', 'continent': 'Asia', 'CategoryName': 'Books', 'Sales': 10688, 'color': '#7BC1E8' },
+                { country: 'CAN', 'continent': 'North America', 'CategoryName': 'Books', 'Sales': 10882, 'color': '#B5E485' },
+                { country: 'BRA', 'continent': 'South America', 'CategoryName': 'Books', 'Sales': 13776, 'color': '#78D0D3' },
+                { country: 'JPN', 'continent': 'Asia', 'CategoryName': 'Books', 'Sales': 19390, 'color': '#7BC1E8' },
+                { country: 'AUS', 'continent': 'Australia',  'CategoryName': 'Books', 'Sales': 30716, 'color': '#D6D572' },
+                { country: 'CAF', 'continent': 'Africa', 'CategoryName': 'Books', 'Sales': 18718.0, 'color': '#DF819C' }
+                ]
         }
     ];
-
+    public setAnimation(e: SliderChangeEventArgs): void {
+        let slider: Element = document.getElementById('range');
+        let slider1: SliderComponent = <SliderComponent>slider['ej2_instances'][0];
+        let maps: Maps = <Maps>document.getElementById('container')['ej2_instances'][0];
+        maps.layers[0].animationDuration = slider1.value as number;
+        document.getElementById('slider1').innerHTML = (slider1.value as number).toString();
+        maps.refresh();
+    };
     ngAfterViewInit() {
+       
         document.getElementById('mousewheel').onchange = () => {
             let element: HTMLInputElement = <HTMLInputElement>(document.getElementById('mousewheel'));
             this.maps.zoomSettings.mouseWheelZoom = element.checked;

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -39,6 +39,7 @@ export class EmptyAreaChartComponent {
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         title: 'Rates',
+        majorGridLines: { width: 0 },
         labelFormat: '{value}M',
         lineStyle: { width: 0 },
         majorTickLines: { width: 0 },

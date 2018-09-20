@@ -1,0 +1,25 @@
+
+.control-section {
+    margin: 30px;
+}
+
+#component_wrapper {
+    display: block;
+    margin: 0 auto;
+    float: none;
+    padding: 2% 0;
+    max-width: 300px;
+}
+
+.control-section.range {
+    margin: 30px;
+    padding: 3%;
+}
+
+.e-bigger .control-section {
+    margin-top: 60px;
+}
+
+.range .tabs-wrap {
+    padding: 12px 0px;
+}

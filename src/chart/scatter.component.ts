@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { scatterData } from './scatter-data';
 import { Browser } from '@syncfusion/ej2-base';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 
 /**
  * Sample for Scatter Series
@@ -31,11 +31,11 @@ export class ScatterChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-                minimum: 50,
-                maximum: 80,
                 majorTickLines: {
                     width: 0
                 },
+                minimum: 50,
+                maximum: 80,
                 lineStyle: {
                     width: 0
                 },

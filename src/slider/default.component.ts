@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { SliderModule } from '@syncfusion/ej2-ng-inputs';
+import { SliderModule } from '@syncfusion/ej2-angular-inputs';
 
 /**
  * Default sample

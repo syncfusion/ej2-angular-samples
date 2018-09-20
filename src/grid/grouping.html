@@ -10,7 +10,7 @@
             <e-column field='NumberofPatentFamilies' headerText="Number of Patent Families" width='220' textAlign='Right'></e-column>
             <e-column field='Country' headerText='Country' width='140'></e-column>
             <e-column field='Active' width='120'></e-column>
-            <e-column field='Mainfieldsofinvention' headerText='Main fields of invention' width='200'></e-column>
+            <e-column field='Mainfieldsofinvention' headerText='Main fields of invention' [allowGrouping]="false" width='200'></e-column>
         </e-columns>
     </ejs-grid>
     <div style="margin-top: 10px; text-align: right">Source:

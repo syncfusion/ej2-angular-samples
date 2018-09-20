@@ -1,7 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { MapsTheme, Maps, Legend, Marker, MapsTooltip, ILoadEventArgs } from '@syncfusion/ej2-ng-maps';
-import { World_Map } from './MapData/WorldMap';
-import { dafaultData } from './MapData/salesCountry';
+import { MapsTheme, Maps, Legend, Marker, MapsTooltip, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
+import { MapAjax } from '@syncfusion/ej2-maps';
 
 Maps.Inject(Legend, Marker, MapsTooltip);
 
@@ -11,7 +10,6 @@ Maps.Inject(Legend, Marker, MapsTooltip);
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
-    styleUrls: ['default.style.css'],
     encapsulation: ViewEncapsulation.None
 })
 export class MapsDefaultComponent {
@@ -27,10 +25,10 @@ export class MapsDefaultComponent {
     public legendSettings: object = { visible: true };
 
     public layers: object[] = [{
-        shapeData: World_Map,
+        shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
         shapePropertyPath: 'continent',
         shapeDataPath: 'continent', 
-        dataSource: dafaultData, 
+        dataSource: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/default-datasource.json'), 
         shapeSettings: { colorValuePath: 'color', }, 
         markerSettings: [{ 
             visible: true, 
@@ -61,31 +59,31 @@ export class MapsDefaultComponent {
         }, 
         { 
             visible: true, 
-            template: '<div id="marker2" class="markersTemplate">Australia' + '</div>', 
+            template: '<div id="marker2" class="markersTemplate" style="color:white;">Australia' + '</div>', 
             dataSource: [{ latitude: -25.88583769986199, longitude: 134.296875 }], 
             animationDuration: 0 
         }, 
         { 
             visible: true, 
-            template: '<div id="marker3" class="markersTemplate">Africa' + '</div>', 
+            template: '<div id="marker3" class="markersTemplate" style="color:white;">Africa' + '</div>', 
             dataSource: [{ latitude: 16.97274101999902, longitude: 16.390625 }], 
             animationDuration: 0 
         }, 
         { 
             visible: true, 
-            template: '<div id="marker4" class="markersTemplate">Europe' + '</div>', 
+            template: '<div id="marker4" class="markersTemplate" style="color:white;">Europe' + '</div>', 
             dataSource: [{ latitude: 49.95121990866204, longitude: 18.468749999999998 }], 
             animationDuration: 0 
         }, 
         { 
             visible: true, 
-            template: '<div id="marker5" class="markersTemplate" style="width:50px">North America' + '</div>', 
+            template: '<div id="marker5" class="markersTemplate" style="width:50px;color:white;">North America' + '</div>', 
             dataSource: [{ latitude: 59.88893689676585, longitude: -109.3359375 }], 
             animationDuration: 0 
         }, 
         { 
             visible: true, 
-            template: '<div id="marker6" class="markersTemplate" style="width:50px">South America' + '</div>', 
+            template: '<div id="marker6" class="markersTemplate" style="width:50px;color:white;">South America' + '</div>', 
             dataSource: [{ latitude: -6.64607562172573, longitude: -55.54687499999999 }], 
             animationDuration: 0 
         }]

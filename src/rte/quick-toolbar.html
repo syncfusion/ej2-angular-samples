@@ -1,0 +1,33 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates how to show quick toolbar commands in the editor. 
+        In this sample, the image and link elements are configured with quick action commands. 
+        To see the quick tools, click on the image or the link of the editor's content.
+    </p>
+</div>
+
+<div class="control-section e-tab-section">
+    <div class="content-wrapper">
+        <ejs-richtexteditor id='quickRTE' #typeRTE [quickToolbarSettings]='quickTools' (created)='onCreate($event)'>
+            <ng-template #valueTemplate>
+                <div style="display:block;padding-top:2px">
+                    <p style="margin-right:10px;margin-top:10px;">The sample is configured with quick toolbar commands for image and link elements.  
+                    Click on image or link to see its quick action commands.   
+                    </p></div><div><img id="rteImageID" style="transform: rotate(0deg);" alt="Logo" src="./src/rte/images/RTEImage-Feather.png" /></div>
+            </ng-template>
+        </ejs-richtexteditor>
+    </div>
+</div>
+
+
+<div id="description">
+    <p>
+        The rich text editor allows you to configure quick actions for text, image, and link elements using <code>quickToolbarSettings</code> property. You can add custom commands along with built-in commands. 
+        For example, "rotation" related commands are added as custom commands to the image element. 
+        Quick commands are opened as context-menu on clicking the corresponding element. 
+        The commands must be passed as string collection to image, text, and link attributes of the quickToolbarSettings property.
+    </p>
+
+</div>
+
+ 

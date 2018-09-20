@@ -7,14 +7,14 @@ import { Component, ViewEncapsulation, Inject } from '@angular/core';
  */
 @Component({
     selector: 'control-content',
-    styleUrls: ['calendar-style.css'],
+    styleUrls: ['disabled-style.css'],
     templateUrl: 'disabled.html',
     encapsulation: ViewEncapsulation.None
 })
 export class DisabledCalendarComponent {
 
     constructor(@Inject('sourceFiles') private sourceFiles:any) {
-         sourceFiles.files = ['calendar-style.css'];
+         sourceFiles.files = ['disabled-style.css'];
     }
     onLoad(args: any){
     /*Date need to be disabled*/

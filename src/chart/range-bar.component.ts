@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -34,7 +34,6 @@ export class RangeBarChartComponent {
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         labelFormat: '{value}˚F',
-        minimum: 0, maximum: 100, interval: 20,
         edgeLabelPlacement: 'Shift',
         lineStyle: { width: 0 },
         majorTickLines: { width: 0 }

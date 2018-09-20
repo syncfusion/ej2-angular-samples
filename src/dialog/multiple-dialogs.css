@@ -1,0 +1,31 @@
+#control-container {
+    padding: 0px !important;
+  }
+  .control-section.multiple {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 350px;
+  }
+  
+  .e-btn-hide {
+    display: none;
+  }
+
+  .dlgbtn {
+    margin-right: 10px;
+  }
+
+  #container {
+    height: 100%;
+    min-height: 350px;
+    position:relative;
+  }
+  
+  @media screen and (min-width: 150px) and (max-width: 480px) {
+    .control-section {
+      margin-bottom: 30px;
+    }
+    .control-wrapper {
+      margin-bottom: 0px;
+    }
+  }

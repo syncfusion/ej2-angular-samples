@@ -1,47 +1,39 @@
 import { Component, ViewChild } from '@angular/core';
-import { NumericTextBoxComponent, ChangeEventArgs } from '@syncfusion/ej2-ng-inputs';
-import { DropDownListComponent, ChangeEventArgs as DropDownChangeArgs } from '@syncfusion/ej2-ng-dropdowns';
-import { EventSettingsModel, View, ScheduleComponent, AgendaService } from '@syncfusion/ej2-ng-schedule';
+import { ChangeEventArgs } from '@syncfusion/ej2-angular-inputs';
+import { ChangeEventArgs as DropDownChangeArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { EventSettingsModel, View, ScheduleComponent, AgendaService } from '@syncfusion/ej2-angular-schedule';
 import { generateObject } from './datasource';
 
 @Component({
+    selector: 'control-content',
     templateUrl: 'agenda.html',
     providers: [AgendaService]
 })
 export class AgendaComponent {
     @ViewChild('scheduleObj')
     public scheduleObj: ScheduleComponent;
-
-    @ViewChild('textbox')
-    public rows: NumericTextBoxComponent;
-    public data: Object[] = generateObject();
     public selectedDate: Date = new Date(2018, 1, 15);
-    public eventSettings: EventSettingsModel = { dataSource: this.data };
+    public eventSettings: EventSettingsModel = { dataSource: generateObject() };
     public currentView: View = 'Agenda';
     public virtualscroll: boolean = false;
-
-    @ViewChild('virtualScrollObj')
-    public virtualScrollObj: DropDownListComponent;
-    public value: string = 'false';
-    public datas: string[] = ['true', 'false'];
-
-    @ViewChild('hideEmptyDaysObj')
-    public hideEmptyDaysObj: DropDownListComponent;
-    public values: string = 'true';
-
-    change(e: DropDownChangeArgs) {
-        let allowVS: boolean = (e.value === 'true') ? true : false;
-        this.scheduleObj.views = [{ option: 'Agenda', allowVirtualScrolling: allowVS }];
-        this.scheduleObj.dataBind();
+    public allowVirtualScroll: boolean = false;
+    public hideAgenda: boolean = true;
+    public virtualScrollOptions: { [key: string]: Object }[] = [
+        { text: 'True', value: true },
+        { text: 'False', value: false }
+    ];
+    public hideEmptyAgendaDaysOptions: { [key: string]: Object }[] = [
+        { text: 'True', value: true },
+        { text: 'False', value: false }
+    ];
+    public fields: object = { text: 'text', value: 'value' };
+    public onVirtualChange(args: DropDownChangeArgs): void {
+        this.scheduleObj.views = [{ option: 'Agenda', allowVirtualScrolling: args.value as boolean }];
     }
-
-    onChange(e: DropDownChangeArgs) {
-        this.scheduleObj.hideEmptyAgendaDays = (e.value === 'true') ? true : false;
-        this.scheduleObj.dataBind();
+    public onEmptyAgendaDaysChange(args: DropDownChangeArgs): void {
+        this.scheduleObj.hideEmptyAgendaDays = args.value as boolean;
     }
-
-    onCountChange(args: ChangeEventArgs): void {
+    public onCountChange(args: ChangeEventArgs): void {
         this.scheduleObj.agendaDaysCount = args.value !== null ? args.value : 7;
-        this.scheduleObj.dataBind();
     }
 }

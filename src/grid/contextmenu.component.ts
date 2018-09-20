@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SortService, ResizeService, PageService, EditService, ExcelExportService, PdfExportService, ContextMenuService } from '@syncfusion/ej2-ng-grids';
-import { ContextMenuItem, GroupSettingsModel, EditSettingsModel } from '@syncfusion/ej2-ng-grids';
+import { SortService, ResizeService, PageService, EditService, ExcelExportService, PdfExportService, ContextMenuService } from '@syncfusion/ej2-angular-grids';
+import { ContextMenuItem, GroupSettingsModel, EditSettingsModel } from '@syncfusion/ej2-angular-grids';
 import { orderDetails } from './data';
 
 @Component({

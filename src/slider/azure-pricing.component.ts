@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SliderComponent, SliderChangeEventArgs } from '@syncfusion/ej2-ng-inputs';
-import { CheckBoxComponent, ButtonModule } from '@syncfusion/ej2-ng-buttons';
-import { DialogComponent } from '@syncfusion/ej2-ng-popups';
+import { SliderComponent, SliderChangeEventArgs } from '@syncfusion/ej2-angular-inputs';
+import { CheckBoxComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { DialogComponent } from '@syncfusion/ej2-angular-popups';
 
 /**
  * slider property customization
@@ -9,7 +9,7 @@ import { DialogComponent } from '@syncfusion/ej2-ng-popups';
 @Component({
     selector: 'control-content',
     templateUrl: 'azure-pricing.html',
-    styleUrls: ['azurePricing.css'],
+    styleUrls: ['azure-pricing.css'],
     encapsulation: ViewEncapsulation.None
 })
 
@@ -20,6 +20,12 @@ export class AzureComponent {
     public memorySlider: any;
     @ViewChild('storageSlider')
     public storageSlider: any;
+    @ViewChild('dialog')
+    public dialogInstance: DialogComponent;
+    @ViewChild('discountCheckbox')
+    public discountCheckbox: CheckBoxComponent;
+    @ViewChild('cPanelCheckbox')
+    public cPanelCheckbox: CheckBoxComponent;
     public buttonCss: string = 'e-info';
     public processorValue: number = 4;
     public processorMin: number = 1;
@@ -40,7 +46,7 @@ export class AzureComponent {
         '<div id="StorgeDialog"><span id="storgePriceName">Storge Price</span><span id="storgePrice"></span></div>' +
         '<div id="CloudDialog"><span id="cloudPriceName">Estimated Price</span><span id="cloudPrice"></span></div></div>';
     public alertDlgButtons: any = [{
-        click: this.alertDlgBtnClick, buttonModel: { content: 'Close', isPrimary: true }
+        click: this.alertDlgBtnClick.bind(this), buttonModel: { content: 'Close', isPrimary: true }
     }];
     public proceessorElem: HTMLElement;
     public memoryElem: HTMLElement;
@@ -69,20 +75,24 @@ export class AzureComponent {
             let processorPrice: HTMLElement = document.getElementById('processorPrice');
             this.onChange(processorPrice, <number>this.processorSlider.value, 'CORE');
             let memoryPrice: HTMLElement = document.getElementById('memoryPrice');
-            this.onChange(memoryPrice, <number>this.processorSlider.value, 'GB');
+            this.onChange(memoryPrice, <number>this.memorySlider.value, 'GB');
             let storgePrice: HTMLElement = document.getElementById('storgePrice');
             this.onChange(storgePrice, <number>this.storageSlider.value, 'GB');
             let cloudPrice: HTMLElement = document.getElementById('cloudPrice');
             cloudPrice.innerText = '$' + this.finalValue;
             this.sliderValueChange();
-            (document.getElementById('alertDialog') as any).ej2_instances[0].show();
+            this.dialogInstance.refreshPosition();
+            this.dialogInstance.show();
         };
     }
 
     sliderPriceValue(processor: number, memory: number, storage: number): void {
         this.processorSlider.value = processor;
+        this.processorSlider.dataBind();
         this.memorySlider.value = memory;
+        this.memorySlider.dataBind();
         this.storageSlider.value = storage;
+        this.storageSlider.dataBind();
     }
     //Sets processor value
     onCreateProcessor(args: any): void {
@@ -125,16 +135,16 @@ export class AzureComponent {
         //formula to calculate cloud price based on slider value
         this.finalValue = Number(((((porcessorValue * memoryValue) * 1000) + ((porcessorValue * memoryValue) * storageValue)
             + ((porcessorValue * memoryValue) * 100)) / 12).toFixed(2));
-        if ((document.getElementById('cPanel') as any).ej2_instances && (document.getElementById('cPanel') as any).ej2_instances[0].checked) {
+        if (this.cPanelCheckbox && this.cPanelCheckbox.checked) {
             this.finalValue = Number((this.finalValue - 10).toFixed(2));
         }
-        if ((document.getElementById('discount') as any).ej2_instances && (document.getElementById('discount') as any).ej2_instances[0].checked) {
+        if (this.discountCheckbox && this.discountCheckbox.checked) {
             this.finalValue = Number((this.finalValue - ((this.finalValue * 25) / 100)).toFixed(2));
         }
         this.elemValue.innerText = this.finalValue.toString();
     }
 
     alertDlgBtnClick(): void {
-        (document.getElementById('alertDialog') as any).ej2_instances[0].hide();
+        this.dialogInstance.hide();
     }
 }

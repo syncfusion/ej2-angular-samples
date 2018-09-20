@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ChartComponent, ILoadedEventArgs,ChartTheme, TrendlineTypes } from '@syncfusion/ej2-ng-charts';
+import { ChartComponent, ILoadedEventArgs,ChartTheme, TrendlineTypes } from '@syncfusion/ej2-angular-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { NumericTextBox } from '@syncfusion/ej2-inputs';
 /**

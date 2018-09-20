@@ -12,9 +12,6 @@ ele = ele + '<div class="e-mail-id">user@example.com</div></div>';
     encapsulation: ViewEncapsulation.None
 })
 export class AlignToolbarComponent {
-    // Mapping Toolbar items template property
-    templateEle: string = '<div class="e-folder" id="mailTemplate"><div class="e-folder-name">Inbox(33)</div>';
-    template: string = this.templateEle + '<div class="e-mail-id">user@example.com</div></div>';
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['alignment.component.css'];
     }

@@ -1,8 +1,8 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
     AccumulationChart, AccumulationChartComponent, IAccAnimationCompleteEventArgs, AccPoints,
-    IAccTextRenderEventArgs, IAccLoadedEventArgs, AccumulationTheme
-} from '@syncfusion/ej2-ng-charts';
+    IAccTextRenderEventArgs, IAccLoadedEventArgs, AccumulationTheme, Selection
+} from '@syncfusion/ej2-angular-charts';
 
 /**
  * Sample for Doughnut chart

@@ -1,0 +1,86 @@
+<div id="action-description">
+    <p>
+        This sample illustrates the functionality of empty points in the range navigator series.
+    </p>
+</div>
+<div class="control-section" align="center">
+    <div id="Sample">
+        <div class="row" align="center">
+            <h4 id="days" style="font-family: Segoe UI; font-weight: 500; font-size: 15px; font-style: normal">AAPL 2012-17</h4>
+            <div align='center'>
+                <ejs-rangenavigator #containerEmpty style='display:block' align='center' id='containerEmpty' [value]='value'
+                valueType='DateTime' [majorTickLines]='majorTickLines' [majorGridLines]='majorGridLines' [tooltip]='tooltip'
+                    [navigatorBorder]='navigatorBorder' [width]='width' (changed)='changed($event)' [theme]='themes'  (load)='load($event)'>
+                    <e-rangenavigator-series-collection>
+                        <e-rangenavigator-series [dataSource]='data' xName='x' yName='open' type='Area' width=2 [fill]='fill' [border]='border'>
+                        </e-rangenavigator-series>
+                    </e-rangenavigator-series-collection>
+                </ejs-rangenavigator>
+            </div>
+            <div align='center'>
+                <ejs-chart #chartEmpty style='display:block;' id='chartEmpty' align='center' [chartArea]='chartArea' [width]='width' [primaryXAxis]='primaryXAxis'
+                    [primaryYAxis]='primaryYAxis' [crosshair]='crosshair' [tooltip]='chartTooltip' height='350' [theme]='themes' [legendSettings]='legendSettings'>
+                    <e-series-collection>
+                        <e-series [dataSource]='data' xName='x' yName='open' name='AAPL' type='Area' width=2 [fill]='fill' [border]='border'></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+       In this example, you can see how to render empty points in range navigator. Tooltip is enabled in this
+       example, to see the tooltip in action, while the selected range is changed.
+    </p>
+</div>
+<style>
+    #control-containerEmpty {
+        padding: 0px !important;
+    }
+
+    #material-gradient-chart stop {
+        stop-color: #00bdae;
+    }
+
+    #fabric-gradient-chart stop {
+        stop-color: #4472c4;
+    }
+
+    #bootstrap-gradient-chart stop {
+        stop-color: #a16ee5;
+    }
+
+    #highcontrast-gradient-chart stop {
+        stop-color: #79ECE4;
+    }
+
+    .chart-gradient stop[offset="0"] {
+        stop-opacity: 0.9;
+    }
+
+    .chart-gradient stop[offset="1"] {
+        stop-opacity: 0.3;
+    }
+</style>
+<svg style="height: 0">
+    <defs>
+        <linearGradient id="material-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="fabric-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="bootstrap-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="highcontrast-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+    </defs>
+</svg>

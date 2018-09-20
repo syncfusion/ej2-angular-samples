@@ -8,9 +8,51 @@
         <!-- Render the Tab Component -->
         <ejs-tab id="tab_orientation" #orientationTab [showCloseButton]='enableClose' heightAdjustMode='Auto'>
             <e-tabitems>
-                <e-tabitem [header]='headerText[0]' [content]='content0'></e-tabitem>
-                <e-tabitem [header]='headerText[1]' [content]='content1'></e-tabitem>
-                <e-tabitem [header]='headerText[2]' [content]='content2'></e-tabitem>
+                <e-tabitem [header]='headerText[0]'>
+                    <ng-template #content>
+                            <div class="content-title">
+                                <div class="cnt-text">Employee Info</div></div>
+                                <div id="rome">
+                            <div class="template-container"><div class="left"><img class="empImg" src="src/dropdownlist/Employees/1.png" alt="Anne Dodsworth" />
+                        </div>
+                        <div class="left info">
+                            <div class="name">Anne Dodsworth</div> 
+                            <div class="role">
+                            Product Manager</div>
+                        </div></div>
+                        <div class="template-container"><div class="left"><img class="empImg" ' +
+                            'src="src/dropdownlist/Employees/2.png" alt="Laura Callahan" /></div>
+                            <div class="left info"><div class="name">
+                            Laura Callahan</div> <div class="role">Team Lead</div></div>
+                        </div><div class="template-container"><div 
+                            class="left"><img class="empImg" src="src/dropdownlist/Employees/3.png" alt="Andrew Fuller" /></div><div 
+                            class="left info"><div class="name">Andrew Fuller</div> <div class="role">Developer</div></div></div></div>
+                     </ng-template>
+                </e-tabitem>
+                <e-tabitem [header]='headerText[1]'>
+                        <ng-template #content>
+                                <div class="content-title"><div class="cnt-text">Employee Info</div></div><div id="rome">
+                                        <div class="template-container"><div class="left"><img class="empImg" src="src/dropdownlist/Employees/4.png" 
+                                        alt="Robert King" /></div><div class="left info"><div class="name">Robert King</div> <div class="role">
+                                        Team Lead</div></div></div><div class="template-container"><div class="left"><img class="empImg" 
+                                        src="src/dropdownlist/Employees/5.png" alt="Michael Suyama" /></div><div class="left info"><div class="name">
+                                        Michael Suyama</div> <div class="role">Developer</div></div></div><div class="template-container"><div 
+                                        class="left"><img class="empImg" src="src/dropdownlist/Employees/6.png" alt="Margaret Peacock" /></div><div 
+                                        class="left info"><div class="name">Margaret Peacock</div> <div class="role">Developer</div></div></div></div>
+                             </ng-template>
+                </e-tabitem>
+                <e-tabitem [header]='headerText[2]'>
+                        <ng-template #content>
+                                <div class="content-title"><div class="cnt-text">Employee Info</div></div><div id="rome">
+                                    <div id="ripple" class="template-container"><div class="left"><img class="empImg" src="src/dropdownlist/Employees/7.png"
+                                    alt="Janet Leverling" /></div><div class="left info"><div class="name">Janet Leverling</div> <div class="role">
+                                        CEO</div></div></div><div class="template-container"><div class="left"><img class="empImg" 
+                                        src="src/dropdownlist/Employees/8.png" alt="Steven Buchanan" /></div><div class="left info"><div class="name">
+                                        Steven Buchanan</div> <div class="role">HR</div></div></div><div class="template-container"><div 
+                                        class="left"><img class="empImg" src="src/dropdownlist/Employees/9.png" alt="Nancy Davolio" /></div><div 
+                                        class="left info"><div class="name">Nancy Davolio</div> <div class="role">Product Manager</div></div></div></div>
+                             </ng-template>
+                </e-tabitem>
             </e-tabitems>
         </ejs-tab>
     </div>

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -65,13 +65,6 @@ export class MultipleAxesChartComponent {
         name: 'yAxis',
         labelFormat: '{value}°C'
     }];
-    public annotations: Object = [{
-        content: '<div id="chart_cloud"><img src="src/chart/images/cloud.png"  style="width: 41px; height: 41px"/></div>',
-        x: 'Sun', y: 35, coordinateUnits: 'Point', verticalAlignment: 'Top'
-    }, {
-        content: '<div id="chart_cloud"><img src="src/chart/images/sunny.png"  style="width: 41px; height: 41px"/></div>',
-        x: 'Sat', y: 34, coordinateUnits: 'Point', yAxisName: 'yAxis'
-    }]
     public majorGridLines: Object = {
         width: 0
     };

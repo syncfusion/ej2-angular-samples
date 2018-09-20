@@ -1,15 +1,17 @@
 import { Component, ViewChild } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import { DropDownListComponent } from '@syncfusion/ej2-ng-dropdowns';
-import { EventSettingsModel, View, EventRenderedArgs } from '@syncfusion/ej2-ng-schedule';
-import { Timezone } from '@syncfusion/ej2-schedule';
-import { ScheduleComponent, DayService, WeekService, WorkWeekService, MonthService, AgendaService } from '@syncfusion/ej2-ng-schedule';
+import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { Timezone, WorkHoursModel } from '@syncfusion/ej2-schedule';
+import {
+    EventSettingsModel, View, EventRenderedArgs, ScheduleComponent, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService
+} from '@syncfusion/ej2-angular-schedule';
 import { fifaEventsData } from './datasource';
 declare var moment: any;
 
 @Component({
+    selector: 'control-content',
     templateUrl: 'timezone-event.html',
-    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService]
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService]
 })
 
 export class TimezoneComponent {
@@ -18,6 +20,7 @@ export class TimezoneComponent {
     public fifaEvents: Object[] = <Object[]>extend([], fifaEventsData, null, true);
     public selectedDate: Date = new Date(2018, 5, 20);
     public eventSettings: EventSettingsModel;
+    public workHours: WorkHoursModel = { start: '11:00' };
     public currentView: View = 'Week';
 
     constructor() {

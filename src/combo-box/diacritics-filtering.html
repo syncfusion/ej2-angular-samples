@@ -1,0 +1,18 @@
+<div id="action-description">
+    <p>This sample demonstrates the diacritics filter functionality of the ComboBox. Type the characters ‘gul’ in the ComboBox
+        element and it displays the suggestion list ignoring the diacritics lists.</p>
+</div>
+
+<div class="control-section">
+    <div id='content' style="margin: 0px auto; width:300px; padding-top: 40px;">
+        <ejs-combobox id='diacritics' [dataSource]='data' [allowFiltering]='true' [ignoreAccent]='true' placeholder='e.g. gul'>
+        </ejs-combobox>
+    </div>
+</div>
+
+<div id="description">
+    <p>The ComboBox filtering will ignore the <a href="https://en.wikipedia.org/wiki/Diacritic" target="_blank"> diacritics </a> which makes it easier to filter the results in international characters
+        lists when the <code>ignoreAccent</code> is enabled.</p>
+
+    <p>This sample illustrates the international characters data.</p>
+</div>

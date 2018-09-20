@@ -1,11 +1,13 @@
 <div class="control-section">
     <div class="col-lg-9">
-        <ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" [(currentView)]="currentView"
-            (eventRendered)="oneventRendered($event)">
+        <ejs-schedule #scheduleObj width='100%' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" [(currentView)]="currentView"
+            [showWeekend]="showWeekend" [workHours]="workHours" [workDays]="workDays" (eventRendered)="oneventRendered($event)">
             <e-views>
                 <e-view option="Day"></e-view>
                 <e-view option="Week"></e-view>
                 <e-view option="Month"></e-view>
+                <e-view option="TimelineWeek"></e-view>
+                <e-view option="TimelineMonth"></e-view>
             </e-views>
         </ejs-schedule>
     </div>
@@ -23,7 +25,7 @@
                             <div class="multi-prop">
                                 <div>
                                     <ejs-multiselect id='multiselect-checkbox' #checkbox [dataSource]='workDaysData' [fields]='workDaysFields' [value]='workDaysValue'
-                                        [mode]='mode' popupWidth="180px" showDropDownIcon='true' (change)="onMultiSelectChange($event)"></ejs-multiselect>
+                                        mode='CheckBox' popupWidth="180px" showDropDownIcon='true' (change)="onMultiSelectChange($event)"></ejs-multiselect>
                                 </div>
                             </div>
                         </td>
@@ -36,7 +38,7 @@
                         <td style="width: 70%">
                             <div class="multi-prop">
                                 <div>
-                                    <button #toggleBtn ejs-button [isToggle]="true" (click)="btnClick()">Show</button>
+                                    <button #toggleBtn ejs-button class="e-active" [isToggle]="true" (click)="btnClick()">Show</button>
                                 </div>
                             </div>
                         </td>

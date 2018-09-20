@@ -2,8 +2,8 @@
  * Tooltip template sample
  */
 
-import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
-import { TooltipComponent, TooltipEventArgs } from '@syncfusion/ej2-ng-popups';
+import { Component, ViewChild, ViewChildren, ViewEncapsulation, Inject } from '@angular/core';
+import { TooltipComponent, TooltipEventArgs } from '@syncfusion/ej2-angular-popups';
 
 @Component({
     selector: 'control-content',
@@ -13,33 +13,28 @@ import { TooltipComponent, TooltipEventArgs } from '@syncfusion/ej2-ng-popups';
 })
 
 export class TemplateTooltipComponent {
-    constructor( @Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['tooltip.component.css'];
-    }
+    @ViewChild('tooltip') public control: TooltipComponent;
+    
+    public tooltipData = [
+        {header: 'Cut (Ctrl+X)', para: 'Remove the selection and put it on the Clipboard so you can paste it somewhere else.'},
+        {header: 'Copy (Ctrl+C)', para: 'Put a copy of a selection on the Clipboard so you can paste it somewhere else.'},
+        {header: 'Paste (Ctrl+V)', para: 'Add content on the Clipboard to your document.'},
+        {header: 'Bold (Ctrl+B)', para: 'Makes your text bold.'},
+        {header: 'Underline (Ctrl+U)', para: 'Add content on the Clipboard to your document.'},
+        {header: 'Italic (Ctrl+I)', para: 'Italicize your text.'}
+    ]
+    public toolbarIcons: any = [
+        { name: 'bold', id: 0 },
+        { name: 'underline', id: 1 },
+        { name: 'italic', id: 2 },
+        { name: 'cut', id:3 },
+        { name: 'copy', id: 4 },
+        { name: 'paste', id: 5 }
+    ];
 
-    @ViewChild('tooltip')
-    public control: TooltipComponent;
+    @ViewChildren('tooltip_template') public templates: any;
 
-    //Tooltip content customization.
-    onBeforeRender(args: TooltipEventArgs) {
-        let data: any = [
-            { title: 'Bold', name: 'Bold (Ctrl+B)', description: 'Makes your text bold.' },
-            { title: 'Underline', name: 'Underline (Ctrl+U)', description: 'Underline your text.' },
-            { title: 'Italic', name: 'Italic (Ctrl+I)', description: 'Italicize your text.' },
-            {
-                title: 'Cut', name: 'Cut (Ctrl+X)',
-                description: 'Remove the selection and put it on the Clipboard so you can paste it somewhere else.'
-            },
-            {
-                title: 'Copy', name: 'Copy (Ctrl+C)',
-                description: 'Put a copy of a selection on the Clipboard so you can paste it somewhere else.'
-            },
-            { title: 'Paste', name: 'Paste (Ctrl+V)', description: 'Add content on the Clipboard to your document.' }
-        ];
-        for (let i: number = 0; i < data.length; i++) {
-            if (data[i].title === args.target.getAttribute('title')) {
-                this.control.content = '<h6>' + data[i].name + '</h6><p>' + data[i].description + '</p>';
-            }
-        }
+    onBeforeRender = (args: any)=> {
+        this.control.content =  this.templates.toArray()[Number(args.target.firstElementChild.id)];
     }
 }

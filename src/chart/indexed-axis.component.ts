@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-angular-charts';
 
 /**
  * Sample for indexed category axis
@@ -33,17 +33,16 @@ export class IndexedAxisChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        minimum: 0, interval: 2, maximum: 8,
         title: 'GDP Growth Rate',
         labelFormat: '{value}%'
     };
     public marker: Object = {
-        visible: true,
+        visible: false,
         height: 10,
         width: 10,
     };
     public marker1: Object = {
-        visible: true,
+        visible: false,
         height: 10,
         width: 10,
     };
@@ -64,11 +63,15 @@ export class IndexedAxisChartComponent {
         if (this.chart.primaryXAxis.isIndexed) {
             this.chart.series[0].type = 'Column';
             this.chart.series[1].type = 'Column';
+            this.chart.series[0].marker.visible = false;
+            this.chart.series[1].marker.visible = false;
             this.chart.primaryXAxis.labelRotation = 0;
             this.chart.crosshair.line.width = 1;
         } else {
             this.chart.series[0].type = 'Line';
             this.chart.series[1].type = 'Line';
+            this.chart.series[0].marker.visible = true;
+            this.chart.series[1].marker.visible = true;
             this.chart.primaryXAxis.labelRotation = 90;
             this.chart.crosshair.line.width = 0;
         }

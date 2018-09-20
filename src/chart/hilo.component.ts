@@ -1,12 +1,12 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Sample for Hilo Series
  */
-let date1: Date = new Date(2017, 1, 1);
+let date1: Date = new Date('2017-01-01');
 let returnValue: any = chartData.filter(filterValue);
 function filterValue(value: { x: Date, high: number, low: number }): any {
     if (value.x >= date1) {
@@ -26,8 +26,8 @@ export class HiloChartComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
-        minimum: new Date(2016, 12, 31),
-        maximum: new Date(2017, 9, 31),
+        minimum: new Date('2016-12-31'),
+        maximum: new Date('2017-09-30'),
         crosshairTooltip: { enable: true },
         majorGridLines: { width: 0 }
     };

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { QueryCellInfoEventArgs } from '@syncfusion/ej2-ng-grids';
+import { QueryCellInfoEventArgs } from '@syncfusion/ej2-angular-grids';
 import { columnSpanData, ColumnSpanDataType } from '../data';
 import { EmitType } from '@syncfusion/ej2-base';
 

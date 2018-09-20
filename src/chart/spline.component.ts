@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -48,9 +48,6 @@ export class SplineChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        minimum: 0,
-        maximum: 40,
-        interval: 10,
         labelFormat: '{value}°C',
         lineStyle: { width: 0 },
         majorTickLines: { width: 0 },
@@ -61,18 +58,8 @@ export class SplineChartComponent {
         width: 10,
         height: 10
     };
-    public annotations: Object = [{
-        content: '<div id="chart_cloud"><img src="src/chart/images/cloud.png"  style="width: 41px; height: 41px"/></div>',
-        x: 'Sun', y: 2, coordinateUnits: 'Point', verticalAlignment: 'Top'
-    }, {
-        content: '<div id="chart_cloud"><img src="src/chart/images/sunny.png"  style="width: 41px; height: 41px"/></div>',
-        x: 'Tue', y: 33, coordinateUnits: 'Point', verticalAlignment: 'Top'
-    }];
     public tooltip: Object = {
         enable: true
-    };
-    public legend: Object = {
-        toggleVisibility: false
     };
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

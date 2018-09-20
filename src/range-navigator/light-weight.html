@@ -1,0 +1,64 @@
+<div id="action-description">
+    <p>
+      This sample represents the total number of business and weekend days in a selected period.
+    </p>
+</div>
+
+<div class="control-section" align="center">
+     <div id="containerLW"></div><br>  
+     <div class="row" align="center">
+            <h4 id="days" style="font-family: Segoe UI;font-weight: 500; font-style:normal; font-size:15px;">Calculate the Business and Weekend days in a period</h4>
+         <div class="row" align="center">
+            <div align="center">
+                <ejs-rangenavigator id='rangeLW' [valueType]='valueType' [intervalType]='intervalType' [labelFormat]='labelFormat'  [value]='value'
+                    [navigatorStyleSettings]='navigatorStyleSettings' [dataSource]='dataSource' [xName]='xName' [yName]='yName' [width]='width' [theme]='theme' (changed)='changed($event)'
+                    (changed)='changed($event)' animationDuration=500 (load)='load($event)'>
+                </ejs-rangenavigator>
+            </div>
+        </div><br>
+        <table style="font-family: Segoe UI;font-weight: 500; font-style:normal; font-size:15px;">
+                 <tr>
+                    <td id="working">
+                        <table>
+                            <tr>
+                                <td id="working" style="width: 150px;">Total Business Days:</td>
+                                <td id="workingcount" style="width: 25px;"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="padding-left: 20px;" id="holiday">
+                        <table>
+                            <tr>
+                                <td id="weekend" style="width: 150px;">Total Weekend Days: </td>
+                                <td id="weekendcount" style="width: 25px;"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+<div id="description">
+    <p>
+        In this example, you can see how to render a light-weight range navigator without series. You can use <code>width</code>,
+        <code>height</code>, <code>fill</code> and <code>border</code> properties to customize the <code>thumb</code> in
+        range navigator. You can also change the type of the thumb using <code>type</code> property.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        The range navigator component features are segregated into individual feature-wise modules. To use date-time axis,
+        we need to inject the 
+        <code>DateTimeService</code> module into the
+        <code>@NgModule.providers</code> section.
+    </p>
+</div>
+<style>
+    #control-containerLW {
+        padding: 0px !important;
+    }
+
+    #containerLW {
+        transform: translateY(25%);
+    }
+</style>

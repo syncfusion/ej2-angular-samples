@@ -7,6 +7,7 @@ import { SharedModule } from './common/shared.module';
 
 import { SBController } from './common/sb.component';
 import { LPController } from './common/lp.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { LPController } from './common/lp.component';
         SBRoutingModule,
         SharedModule,
         HttpModule,
-        JsonpModule
+        JsonpModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     declarations: [
         SBController,

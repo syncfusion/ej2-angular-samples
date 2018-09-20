@@ -3,8 +3,21 @@
     <!-- Render Button to open the Dialog -->
     <button ejs-button id='dlgbtn' #ButtonInstance (click)="BtnClick()">Open</button>
 
-    <ejs-dialog #template [header]='header' [footerTemplate]='footer' [height]='height' [animationSettings]='animationSettings' [content]='content' [showCloseIcon]='showCloseIcon' [target]='target' [width]='width' (open)="dialogOpen()"
+    <ejs-dialog #template [height]='height' [animationSettings]='animationSettings' [showCloseIcon]='showCloseIcon' [target]='target' [width]='width' (open)="dialogOpen()"
         (close)="dialogClose()">
+        <ng-template #footerTemplate>
+            <input id="inVal" class="e-input" type="text" placeholder="Enter your message here!"/>
+            <button id="sendButton" class="e-control e-btn e-primary sendButton" data-ripple="true">Send</button>
+        </ng-template>
+        <ng-template #content>
+            <div class="dialogContent">
+                <span class="dialogText">Greetings Nancy! When will you share me the source files of the project?</span>
+            </div>
+        </ng-template>
+        <ng-template #header>
+            <div class="e-avatar template-image e-avatar-xsmall e-avatar-circle"></div>
+            <div id="dlg-template" title="Nancy" class="e-icon-settings"> Nancy </div>
+        </ng-template>
     </ejs-dialog>
 </div>
 <div id="action-description">

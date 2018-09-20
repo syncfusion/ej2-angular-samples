@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -35,10 +35,10 @@ export class DashedLineChartComponent {
     public primaryYAxis: Object = {
         labelFormat: '{value}%',
         rangePadding: 'None',
+        lineStyle: { width: 0 },
         minimum: 0,
         maximum: 40,
         interval: 10,
-        lineStyle: { width: 0 },
         majorTickLines: { width: 0 },
         minorTickLines: { width: 0 }
     };

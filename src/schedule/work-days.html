@@ -1,10 +1,12 @@
 <div class="control-section">
     <div class="col-lg-9 content-wrapper">
-        <ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" [workDays]="workDays"
-            [currentView]="currentView" (eventRendered)="oneventRendered($event)">
+        <ejs-schedule #scheduleObj width='100%' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" [workDays]="workDays"
+        [workHours]="workHours" [currentView]="currentView" (eventRendered)="oneventRendered($event)">
             <e-views>
                 <e-view option="Week"></e-view>
                 <e-view option="Month"></e-view>
+                <e-view option="TimelineWeek"></e-view>
+                <e-view option="TimelineMonth"></e-view>
             </e-views>
         </ejs-schedule>
     </div>

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SliderModule, SliderComponent } from '@syncfusion/ej2-ng-inputs';
+import { SliderModule, SliderComponent } from '@syncfusion/ej2-angular-inputs';
 import { SliderTooltipEventArgs, SliderTickEventArgs } from '@syncfusion/ej2-inputs';
 
 /**

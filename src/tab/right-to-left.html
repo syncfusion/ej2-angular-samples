@@ -1,0 +1,26 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the RTL mode of the <code>Tab</code>. Click on the <code>header</code> element for activate the corresponding tab, and displays its <code>content</code> with right-to-left direction.
+    </p>
+</div>
+<div class="control-section e-tab-section">
+    <div class="e-sample-resize-container">
+        <!-- Render the Tab Component -->
+        <ejs-tab id="tab_rtl" enableRtl='true' heightAdjustMode='Auto'>
+            <e-tabitems>
+                <e-tabitem [header]='headerText[0]' [content]="content0"></e-tabitem>
+                <e-tabitem [header]='headerText[1]' [content]="content1"></e-tabitem>
+                <e-tabitem [header]='headerText[2]' [content]="content2"></e-tabitem>
+            </e-tabitems>
+        </ejs-tab>
+    </div>
+</div>
+<div id="description">
+    <p>
+        The RTL sample illustrates the direction of the <code>Tab</code> from right to left.
+    </p>
+    <p>
+        More information about Tab can be found in this <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/tab/getting-started.html">
+        documentation</a> section.
+    </p>
+</div>

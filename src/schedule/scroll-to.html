@@ -1,0 +1,50 @@
+<div class="control-section">
+    <div class="col-lg-9 content-wrapper">
+        <ejs-schedule #scheduleObj width='100%' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" [currentView]="currentView"
+            (eventRendered)="oneventRendered($event)">
+            <e-views>
+                <e-view option="Day"></e-view>
+                <e-view option="Week"></e-view>
+                <e-view option="TimelineDay"></e-view>
+                <e-view option="TimelineWeek"></e-view>
+            </e-views>
+        </ejs-schedule>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <div id="property" class="property-panel-table" title="Properties">
+                    <table id="property" title="Properties" style="width: 100%">
+                        <tbody>
+                            <tr style="height: 50px">
+                                <td style="width: 30%">
+                                    <div> Scroll To
+                                    </div>
+                                </td>
+                                <td style="width: 70%;">
+                                    <div>
+                                        <ejs-timepicker [value]="date" format='HH:mm' (change)="onChange($event)">
+                                        </ejs-timepicker>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This demo illustrates the way of manually scrolling to specific time on Schedule.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        In this demo, the way of manually scrolling to specific time on schedule has been demonstrated by making use of the
+        <code>scrollTo</code> method of Schedule.
+    </p>
+</div>
