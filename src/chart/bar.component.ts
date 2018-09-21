@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 /**
  * Sample for Bar Series
@@ -45,8 +45,6 @@ export class BarChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        minimum: 0,
-        maximum: 3.2,
         labelFormat: '{value}B',
         edgeLabelPlacement: 'Shift',
         majorGridLines: { width: 0 },

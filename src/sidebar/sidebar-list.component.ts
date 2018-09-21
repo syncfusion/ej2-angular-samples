@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SidebarComponent } from '@syncfusion/ej2-ng-navigations';
-import { ListViewComponent, SelectEventArgs } from '@syncfusion/ej2-ng-lists';
+import { SidebarComponent } from '@syncfusion/ej2-angular-navigations';
+import { ListViewComponent, SelectEventArgs } from '@syncfusion/ej2-angular-lists';
 import { enableRipple } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',

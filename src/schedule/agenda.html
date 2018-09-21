@@ -1,6 +1,6 @@
 <div class="control-section">
     <div class="col-lg-9 content-wrapper">
-        <ejs-schedule #scheduleObj width='100%' height='550px' width='100%' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
+        <ejs-schedule #scheduleObj width='100%' height='650px' width='100%' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
             [(currentView)]="currentView">
             <e-views>
                 <e-view option="Agenda" [allowVirtualScrolling]="virtualscroll"></e-view>
@@ -21,8 +21,9 @@
                                 </td>
                                 <td style="width: 50%;">
                                     <div>
-                                        <ejs-dropdownlist id="allow-virtual-scroll" #virtualScrollObj [dataSource]='datas' [value]='value' (change)='change($event)'
-                                            popupHeight="200px"></ejs-dropdownlist>
+                                        <ejs-dropdownlist #virtualScrollObj [dataSource]="virtualScrollOptions" [fields]="fields" [value]='allowVirtualScroll'
+                                            (change)='onVirtualChange($event)' popupHeight="200px">
+                                        </ejs-dropdownlist>
                                     </div>
                                 </td>
                             </tr>
@@ -33,8 +34,9 @@
                                 </td>
                                 <td style="width: 50%;">
                                     <div>
-                                        <ejs-dropdownlist id="hide-empty-days" #hideEmptyDaysObj [dataSource]='datas' [value]='values' (change)='onChange($event)'
-                                            popupHeight="200px"></ejs-dropdownlist>
+                                        <ejs-dropdownlist #hideEmptyDaysObj [dataSource]="hideEmptyAgendaDaysOptions" [fields]="fields" [value]='hideAgenda'
+                                            (change)='onEmptyAgendaDaysChange($event)' popupHeight="200px">
+                                        </ejs-dropdownlist>
                                     </div>
                                 </td>
                             </tr>
@@ -68,15 +70,16 @@
 <div id="description">
     <p>
         In this demo, Agenda view is set as active view on Schedule and made its
-        <code>allowVirtualScrolling</code> option as false. With this settings, the Agenda view loads the initial data for the next 7 days count from the date
+        <code>allowVirtualScrolling</code> option as false. With this settings, the Agenda view loads the initial data for
+        the next 7 days count from the date value assigned to the
+        <code>selectedDate</code> property of the Schedule. The initial data loading for 7 days count is due to the default
         value assigned to the
-        <code>selectedDate</code> property of the Schedule. The initial data loading for 7 days count is due to the default value assigned to the
         <code>agendaDaysCount</code> property which can be customized as per the user needs.
     </p>
     <p>
         When the
-        <code>allowVirtualScrolling</code> property is set to true, the user is allowed to scroll through all the events simply by scrolling up and down upto
-        the last event available in Schedule.
+        <code>allowVirtualScrolling</code> property is set to true, the user is allowed to scroll through all the events
+        simply by scrolling up and down upto the last event available in Schedule.
     </p>
     <p>
         By default, the days which doesn’t have any events will be hidden on this view – but by setting

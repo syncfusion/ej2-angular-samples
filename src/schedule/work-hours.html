@@ -7,6 +7,8 @@
                 <e-view option="Week"></e-view>
                 <e-view option="WorkWeek"></e-view>
                 <e-view option="Month"></e-view>
+                <e-view option="TimelineWeek"></e-view>
+                <e-view option="TimelineMonth"></e-view>
             </e-views>
         </ejs-schedule>
     </div>
@@ -24,7 +26,7 @@
                                 </td>
                                 <td style="width: 70%;">
                                     <div>
-                                        <ejs-timepicker id="startTime" [value]="startdate" format='HH:mm'></ejs-timepicker>
+                                        <ejs-timepicker #startTime [value]="startdate" format='HH:mm'></ejs-timepicker>
                                     </div>
                                 </td>
                             </tr>
@@ -35,7 +37,7 @@
                                 </td>
                                 <td style="width: 70%;">
                                     <div>
-                                        <ejs-timepicker id="endTime" [value]="enddate" format='HH:mm'></ejs-timepicker>
+                                        <ejs-timepicker #endTime [value]="enddate" format='HH:mm'></ejs-timepicker>
                                     </div>
                                 </td>
                             </tr>

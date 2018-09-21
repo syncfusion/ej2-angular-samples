@@ -6,14 +6,14 @@ import { Component, ViewEncapsulation, Inject } from '@angular/core';
  */
 @Component({
     selector: 'control-content',
-    styleUrls: ['calendar-style.css'],
+    styleUrls: ['default-style.css'],
     templateUrl: 'default.html',
     encapsulation: ViewEncapsulation.None
 })
 export class DefaultCalendarComponent {
 
    constructor(@Inject('sourceFiles') private sourceFiles:any) {
-         sourceFiles.files = ['calendar-style.css'];
+         sourceFiles.files = ['default-style.css'];
     }
     onValueChange(args: any):void {
         /*Displays selected date in the label*/

@@ -1,0 +1,25 @@
+<div id="action-description">
+    <p>This sample demonstrates the different types of content that are used with avatar component like SVG icons, Font icons,
+        words, letters, and images.</p>
+</div>
+
+<div class="col-lg-12 control-section">
+    <!-- Listview element -->
+    <div id="letterAvatarList">
+        <ejs-listview id='letterAvatarList' [dataSource]='dataSource' [headerTitle]='headerTitle' [showHeader]='true' [sortOrder]='sortOrder'>
+            <ng-template #template let-dataSource="">
+                <div class="listWrapper">
+                    <span class="e-avatar e-avatar-small e-avatar-circle {{dataSource.color}}" *ngIf="dataSource.avatar !== ''">{{dataSource.avatar}}</span>
+                    <span class="{{dataSource.pic}} e-avatar e-avatar-small e-avatar-circle" *ngIf="dataSource.pic !== '' "> </span>
+                    <span class="list-text">{{dataSource.text}}</span>
+                </div>
+            </ng-template>
+        </ejs-listview>
+    </div>
+
+    <div id="description">
+        <p>The avatar component is flexible to support various types of icons and images. In this sample, the content like SVG,
+            font icons, and letters will be wrapped by the avatar element.
+        </p>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 <div class="control-section">
     <div class="col-lg-9">
-        <ejs-schedule #scheduleObj id="schedule" width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
+        <ejs-schedule #scheduleObj id="schedule" width='100%' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
             [(currentView)]="currentView" (actionBegin)="onActionBegin($event)" (actionComplete)="onActionComplete($event)" (eventRendered)="oneventRendered($event)"
             [showHeaderBar]="showHeaderBar">
             <e-views>
@@ -16,10 +16,9 @@
                     <tr style="height: 50px">
                         <td>
                             <div>
-                                <ejs-checkbox #checkboxObj label="Show/Hide Header bar" [checked]="true" (change)="onChange($event)"></ejs-checkbox>
+                                <ejs-checkbox label="Show/Hide Header bar" [checked]="true" (change)="onChange($event)"></ejs-checkbox>
                             </div>
                         </td>
-
                     </tr>
                 </table>
             </div>

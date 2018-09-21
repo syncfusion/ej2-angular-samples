@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SliderComponent, SliderChangeEventArgs } from '@syncfusion/ej2-ng-inputs';
+import { SliderComponent, SliderChangeEventArgs } from '@syncfusion/ej2-angular-inputs';
 
 /**
  * Bar Customization sample
@@ -7,7 +7,7 @@ import { SliderComponent, SliderChangeEventArgs } from '@syncfusion/ej2-ng-input
 @Component({
     selector: 'control-content',
     templateUrl: 'selection-bar-customization.html',
-    styleUrls: ['selectionbar.css'],
+    styleUrls: ['selection-bar.css'],
     encapsulation: ViewEncapsulation.None
 })
 

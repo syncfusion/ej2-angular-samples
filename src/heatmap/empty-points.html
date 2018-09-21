@@ -1,0 +1,35 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the number of deffective product count per 1000 units coming out from a manufacturing unit Data points
+        are enhanced with labels and tooltip. Some data points were not marked with any values which indicates there are
+        no deffective products and these data points are termed as empty points.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-heatmap id='container' style="display:block;" [titleSettings]='titleSettings' [dataSource]='dataSource' [xAxis]='xAxis'
+            [yAxis]='yAxis' [paletteSettings]='paletteSettings' [cellSettings]='cellSettings' [legendSettings]='legendSettings'
+            (load)='load($event)' (tooltipRender)='tooltipRender($event)'>
+        </ejs-heatmap>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render empty points in the Heatmap. The empty points or the points with no data can be
+        marked using <code>null</code> in the data source. You can also customize the background color of the empty
+        points by using the <code>emptyPointColor</code> property in <code>paletteSettings</code>
+    </p>
+    <p>
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Heatmap component features are segregated into individual feature-wise modules. To use a tooltip, inject the <code>Tooltip </code>        module using the <code>Heatmap.Inject(Tooltip) </code> method, and use a legend by injecting the <code>Legend </code>        module using the <code>Heatmap.Inject(Legend) </code> method.
+    </p>
+</div>
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+</style>

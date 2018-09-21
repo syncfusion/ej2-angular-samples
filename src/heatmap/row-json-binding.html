@@ -1,0 +1,40 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the overall Olympic medals won by the countries in all the summer Olympic events from the year 2000
+        to 2016.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-heatmap id='container' style="display:block;" [titleSettings]='titleSettings' [dataSource]='dataSource' [xAxis]='xAxis'
+            [yAxis]='yAxis' [paletteSettings]='paletteSettings' [cellSettings]='cellSettings' (tooltipRender)='tooltipRender($event)'
+            (load)='load($event)'>
+        </ejs-heatmap>
+    </div>
+    <div style="float: right; margin-right: 10px;">Source:
+        <a href="https://en.wikipedia.org/wiki/2016_Summer_Olympics_medal_table" target="_blank">https://en.wikipedia.org/</a>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to bind JSON data and configure the Heatmap using the data adaptor support. You can bind
+        the JSON data with information for each row to the Heatmap using <code>isJsonData</code> and by defining
+        the <code>adaptorType</code> properties. In row JSON data, the row header is mapped using the <code>xDataMapping</code>.
+    </p>
+    <p>
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Heatmap component features are segregated into individual feature-wise modules. To use data adaptor support, we need to inject
+        <code>Adaptor</code> module using <code>Heatmap.Inject(Adaptor)</code> method, to use a tooltip, inject the
+        <code>Tooltip</code> module using the <code>Heatmap.Inject(Tooltip)</code> method, and use a legend by injecting
+        the <code>Legend</code> module using the <code>Heatmap.Inject(Legend)</code> method.
+    </p>
+</div>
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+</style>

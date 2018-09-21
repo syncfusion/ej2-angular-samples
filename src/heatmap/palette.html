@@ -1,0 +1,73 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the energy consumption in trillion British thermal units (btu) by the various public sectors in US
+        government over the years. The data label is disabled in this sample, the tooltip displays the data point values.
+        In property panel, the options are available to change palette type in Heatmap by means of radio button.
+    </p>
+</div>
+<div class="content-wrapper">
+    <div class="col-lg-9">
+        <ejs-heatmap id='container' #heatmap style="display:block;" [titleSettings]='titleSettings' [dataSource]='dataSource' [xAxis]='xAxis'
+            [yAxis]='yAxis' [cellSettings]='cellSettings' [legendSettings]='legendSettings' [paletteSettings]='paletteSettings'
+            (load)='load($event)'>
+        </ejs-heatmap>
+    </div>
+</div>
+<div class="col-md-3 property-section">
+    <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+            <table id="property" title="Properties" style="width: 100%">
+                <tbody>
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div>PaletteType:</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div class="row" style="padding-top: 10px;">
+                                <input id="fixed" type="radio">
+                            </div>
+                            <div class="row" style="padding-top: 10px;">
+                                <input id="gradient" type="radio">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div style="margin-top: 22px">Enable Smart Legend:</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <div class="row">
+                                    <input id="smartLegend" type="checkbox">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the line type charts. Line type charts are used to represent time-dependent
+        data, showing trends in data at equal intervals. You can use <code>dashArray</code>, <code>width</code>,
+        <code>fill</code> properties to customize the line. <code>marker</code> and <code>dataLabel</code> are used to represent
+        individual data and its value.
+    </p>
+    <p>
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use line series, we need to inject
+        <code>LineSeries</code> module using <code>Chart.Inject(LineSeries)</code> method.
+    </p>
+</div>
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+</style>

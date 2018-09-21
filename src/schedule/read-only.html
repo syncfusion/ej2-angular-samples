@@ -1,0 +1,39 @@
+<div class="control-section">
+    <ejs-schedule width='100%' height='550px' [eventSettings]="eventSettings" [currentView]="currentView" (eventRendered)="onEventRendered($event)"
+        (resizeStart)="onResizeStart($event)" (eventClick)="onEventClick($event)" (popupOpen)="onPopupOpen($event)">
+        <e-views>
+            <e-view option="Day"></e-view>
+            <e-view option="Week"></e-view>
+            <e-view option="WorkWeek"></e-view>
+            <e-view option="Month"></e-view>
+        </e-views>
+    </ejs-schedule>
+</div>
+
+<div id="action-description">
+    <p>
+        This demo showcases how to make specific events on the Schedule to be displayed in a read-only mode. The read-only events
+        can be simply viewed and prevented from undergoing any edit actions.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        In this demo, the events that has occurred on the past hours from the current time are made as read-only and the CRUD actions
+        has been prevented on it. Also, the way to make specific events as read-only regardless of time has been done by
+        adding an additional field
+        <code>ReadOnly</code> to the event object to hold the value for it either as true or false.
+    </p>
+    <p>
+        By checking these two conditions, the events are marked as read-only in this sample and also, visually differentiated the
+        shade of the readonly events by setting CSS style and
+        <code>aria-readonly</code> attribute to it within the
+        <code>eventRendered</code> event which gets triggered before every event rendering on the Schedule user interface.
+    </p>
+    <p>
+        The event editor is prevented to open on these read-only events by setting
+        <code>args.cancel = true</code> within the
+        <code>popupOpen</code> event which checks for the condition whether the popup type is
+        <code>editor</code> and the event is readonly.
+    </p>
+</div>

@@ -7,7 +7,7 @@
     <div class="col-md-8">
         <ejs-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (textRender)="onTextRender($event)" (pointRender)="onPointRender($event)" (load)='load($event)'>
             <e-accumulation-series-collection>
-                <e-accumulation-series name='RIO' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" radius="70%" [dataLabel]="dataLabel" [groupTo]='clubvalue'>
+                <e-accumulation-series name='RIO' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" radius="70%" [explode]="explode" [dataLabel]="dataLabel" [groupTo]='clubvalue' groupMode='Point'>
                 </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
@@ -16,16 +16,30 @@
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
-                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+            <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                <tr>
+                 <td style="width: 50%">
+                       <div>GroupModes:
+                       </div>
+                </td>
+                <td style="width: 50%;">
+                    <div>
+                        <select id="mode">				 
+                            <option value="Point">Point</option>        
+                            <option value="Value">Value</option>
+                        </select>
+                    </div>
+                  </td>
+                  </tr>
                     <tr style="height: 50px">
                         <td style="width: 60%">
                             <div>Group To:
-                                <p id="clubtext" style="font-weight: normal;">10</p>
+                                <p id="clubtext" style="font-weight: normal;">9</p>
                             </div>
                         </td>
                         <td style="width: 40%;">
                             <div data-role="rangeslider">
-                                <input type="range" name="clubvalue" value="10" min="0" max="27" (touchmove)='onClubvalue($event)' (pointermove)='onClubvalue($event)' (change)='onClubvalue($event)' autocomplete="off" id="clubvalue" style="width:90%">
+                                <input type="range" name="clubvalue" value="9" min="0" max="27" (touchmove)='onClubvalue($event)' (pointermove)='onClubvalue($event)' (change)='onClubvalue($event)' autocomplete="off" id="clubvalue" style="width:90%">
                             </div>
                         </td>
                     </tr>

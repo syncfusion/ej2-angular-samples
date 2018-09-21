@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ChartDataService } from './chartdata.service';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ChartDataService } from './chart-data.service';
+import { ILoadedEventArgs, ChartTheme, ScrollBar } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 /**
  * Sample for Zooming in chart
@@ -37,18 +37,19 @@ export class ZoomingChartComponent {
         enableMouseWheelZooming: true,
         enablePinchZooming: true,
         enableSelectionZooming: true,
+        enableScrollbar: true
     };
     public chartArea: Object = {
         border: {
             width: 0
         }
     };
-
     public width: string = Browser.isDevice ? '100%' : '80%';
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.chart.scrollBarModule = new ScrollBar(args.chart);
     };
     public border: Object = { width: 0.5, color: '#00bdae' };
     public title: string = 'Sales History of Product X';

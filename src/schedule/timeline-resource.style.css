@@ -1,0 +1,84 @@
+.timeline-resource.e-schedule .e-timeline-view .e-resource-left-td {
+    vertical-align: bottom;
+}
+
+.timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text {
+    display: flex;
+    font-weight: 500;
+    padding: 0;
+}
+
+.timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    flex: 0 0 33.3%;
+    font-weight: 500;
+    height: 36px;
+    line-height: 34px;
+    padding-left: 5px;
+}
+
+.timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div:last-child {
+    border-right: 0;
+}
+
+.timeline-resource.e-schedule .template-wrap {
+    display: flex;
+    height: 100%;
+    text-align: left;
+}
+
+.timeline-resource.e-schedule .template-wrap>div {
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+    flex: 0 0 33.3%;
+    font-weight: 500;
+    line-height: 58px;
+    overflow: hidden;
+    padding-left: 5px;
+    text-overflow: ellipsis;
+}
+
+.timeline-resource.e-schedule .template-wrap>div:last-child {
+    border-right: 0;
+}
+
+.timeline-resource.e-schedule .e-timeline-view .e-resource-cells,
+.timeline-resource.e-schedule .e-timeline-month-view .e-resource-cells {
+    padding-left: 0;
+}
+
+.timeline-resource.e-schedule .e-timeline-view .e-date-header-wrap table col,
+.timeline-resource.e-schedule .e-timeline-view .e-content-wrap table col {
+    width: 100px;
+}
+
+.timeline-resource.e-schedule .e-lunch-break {
+    background-color: rgb(0, 0, 0, 0.1) !important;
+    font-weight: 500 !important;
+    opacity: .8 !important;
+    text-align: center;
+}
+
+.timeline-resource.e-schedule .e-read-only {
+    opacity: .8;
+}
+
+@media (max-width: 550px) {
+    .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td {
+        width: 100px;
+    }
+    .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+    .timeline-resource.e-schedule .template-wrap>div {
+        flex: 0 0 100%;
+    }
+    .timeline-resource.e-schedule .template-wrap>div:first-child {
+        border-right: 0;
+    }
+    .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div:first-child {
+        border-right: 0;
+    }
+    .timeline-resource.e-schedule .type,
+    .timeline-resource.e-schedule .capacity {
+        display: none;
+    }
+}

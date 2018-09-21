@@ -1,7 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { DataManager, Query } from '@syncfusion/ej2-data';
-import { IAxisLabelRenderEventArgs, ILoadedEventArgs, IPointRenderEventArgs } from '@syncfusion/ej2-ng-charts';
-import { ChartComponent } from '@syncfusion/ej2-ng-charts';
+import { IAxisLabelRenderEventArgs, ILoadedEventArgs, IPointRenderEventArgs } from '@syncfusion/ej2-angular-charts';
+import { ChartComponent } from '@syncfusion/ej2-angular-charts';
 import { Chart } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 /**

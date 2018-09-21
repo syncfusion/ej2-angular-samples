@@ -1,0 +1,85 @@
+<div class="control-section">
+    <div class="col-lg-12">
+			<h4 class="form-title">Photo Contest</h4>
+    <div class="control_wrapper" id="control_wrapper" style="margin: 25px auto;">
+        <form id="template_driven" #userForm="ngForm" novalidate>
+            <div class="form-group" style="padding-top: 11px;">
+                    <div class="e-float-input">
+                        <input type="text" id="name" #nameval='ngModel' name="name" required ngModel>
+                        <span class="e-float-line"></span>
+                        <label class="e-float-text e-label-top" for="name">Name</label>
+                        <div *ngIf="(nameval.invalid && (nameval.dirty || nameval.touched))">
+                            <div class="e-error" *ngIf="nameval.errors.required">
+                                * Enter your name
+                            </div> 
+                        </div>
+                    </div>              
+                </div>
+                <div class="form-group" style="padding-top: 11px;">
+                        <div class="e-float-input">
+                            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" #emailval='ngModel' name="email" required ngModel>
+                            <span class="e-float-line"></span>
+                            <label class="e-float-text e-label-top" for="email">Email</label>
+                            <div *ngIf="(emailval.invalid && (emailval.dirty || emailval.touched))">
+                                <div class="e-error" *ngIf="userForm.controls.email">
+                                    * Enter valid email
+                                </div> 
+                            </div>
+                        </div>
+                </div>
+                
+                <div class="form-group" style="padding-top: 11px;">
+                        <div class="e-float-input">
+                            <input type="number" pattern="^[0-9]{10}$" id="mobileno" #mobilenum='ngModel' name="mobile" required ngModel>
+                            <span class="e-float-line"></span>
+                            <label class="e-float-text e-label-top" for="mobile">Mobile No</label>
+                            <div *ngIf="(mobilenum.invalid && (mobilenum.dirty || mobilenum.touched))">
+                                <div class="e-error" *ngIf="userForm.controls.mobile">
+                                    * Enter valid mobile number
+                                </div> 
+                            </div>
+                        </div>
+                </div>
+                    <div class="form-group" style="padding-top: 11px;">
+                            <div class="e-float-input upload-area">
+                                <input type="text" id="upload" #uploadval='ngModel' [(ngModel)]="uploadInput" readonly name="upload" required ngModel>
+                                <button id="browse" class="e-control e-btn e-info" (click)='browseClick()'>Browse...</button>                        
+                                <span class="e-float-line"></span>
+                                <label class="e-float-text e-label-top" for="upload">Choose a file</label>
+                                <div *ngIf="(uploadval.invalid && (uploadval.dirty || uploadval.touched))">
+                                    <div class="e-error" *ngIf="uploadval.errors.required">
+                                        * Select a file
+                                    </div> 
+                                </div>
+                            </div>
+                            <ejs-uploader #defaultupload id='fileupload' allowedExtensions = "image/*" [autoUpload]=false [multiple]='multiple'  (selected)='onFileSelect($event)'></ejs-uploader>                                        
+                    </div>
+                  
+                    <div class="form-group" style="padding-top: 11px;">
+                            <div class="e-float-input">
+                                <textarea class="address-field" rows="2" id="Address" ></textarea>
+                                <span class="e-float-line"></span>
+                                <label class="e-float-text e-label-top">Address</label>
+                            </div>
+                    <div class="submitBtn">
+                        <button class="submit-btn e-btn" id="submit-btn" [disabled]="userForm.invalid" type="reset" (click)= "Submit()">Submit</button>
+                        <div class="desc"><span>*This button is not a submit type and the form submit handled from externally.</span></div>                     
+                    </div> 
+                    </div>                               
+            </form> 
+            <ejs-dialog id="confirmationDialog" #Dialog [buttons]='dlgButtons' [animationSettings]='animationSettings' [header]='formHeader' [showCloseIcon]='showCloseIcon' [content]='content'  [target]='target' [width]='width' [visible]="visible" [isModal]="isModal" >
+            </ejs-dialog>
+    </div>
+  </div>
+</div>
+<div id="action-description">
+    <p> This sample demonstrates the Uploader component supported with HTML form upload. </p>
+    <p>   Fill the mandatory details in a form and click the submit button. </p>
+</div>
+
+<div id="description">
+    <p>
+        The Uploader component works in synchronous mode using HTML form. When the end-user submits the form, the selected files are submitted to server with the <code>name</code> attribute of input element.
+        More information on the form support can be found on this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/uploader/form-support.html">documentation section</a>.
+    </p>
+</div>

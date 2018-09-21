@@ -14,18 +14,32 @@
     </div>
 </div>
 <div class="sb-control-navigation e-view">
-    <ejs-treeview id="controlTree" #controlTree class="e-view sb-hide" [nodeTemplate]="nodeTemplate" [fields]="fields" (nodeSelected)='onComponentSelect($event)'></ejs-treeview>
+    <ejs-treeview id="controlTree" #controlTree class="e-view sb-hide" [nodeTemplate]="nodeTemplate" [fields]="fields" (nodeSelected)='onComponentSelect($event)'>
+        <ng-template #nodeTemplate="" let-data="">
+            <div>
+                <span class="tree-text">{{data.name}}</span>
+                <span *ngIf="data.type === 'update'; else elseBlock" class="e-badge sb-badge e-samplestatus {{data.type}} tree tree-badge">Updated</span>
+                <ng-template #elseBlock>
+                    <span *ngIf="data.type" class="e-badge sb-badge e-samplestatus {{data.type}} tree tree-badge">{{data.type}}</span>
+                </ng-template>
+            </div>
+        </ng-template>
+    </ejs-treeview>
     <div id="controlSamples" class="e-view">
         <div id="sb-left-back" class="back" (click)="onAllControlClick($event)">
             <div class="e-icons back-icon"></div>
-            <div class="control-name">ALL CONTROLS</div>
+            <div class="control-name">All Controls</div>
         </div>
-        <ejs-listview id="controlList" #controlList class="e-view" [dataSource]="listData" [fields]="listFields" (select)='onSampleSelect($event)' (actionComplete)='afterListviewRendered($event)'>
+        <ejs-listview id="controlList" #controlList class="e-view" [dataSource]="listData" [fields]="listFields" (select)='onSampleSelect($event)'
+            (actionComplete)='afterListviewRendered($event)'>
             <ng-template #template let-data>
                 <div class="e-text-content e-icon-wrapper">
                     <span class="e-list-text" role="listitem">{{data.name}}
-                        <span *ngIf="data.type" class="e-samplestatus {{data.type}}"></span>
                     </span>
+                    <span *ngIf="data.type === 'update'; else elseBlock" class="e-badge sb-badge e-samplestatus {{data.type}}">Updated</span>
+                    <ng-template #elseBlock>
+                        <span *ngIf="data.type" class="e-badge sb-badge e-samplestatus {{data.type}}">{{data.type}}</span>
+                    </ng-template>
                     <div *ngIf="data.samples" class="e-icons e-icon-collapsible"></div>
                 </div>
             </ng-template>

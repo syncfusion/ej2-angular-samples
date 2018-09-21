@@ -1,7 +1,6 @@
 <div class="control-section">
-    <ejs-schedule #scheduleObj width='100%' [cssClass]='cssClass' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
-        [(currentView)]="currentView" (actionComplete)="onActionComplete($event)" (eventRendered)="oneventRendered($event)" [showTimeIndicator]="showTimeIndicator"
-        (dataBound)="dataBinding()">
+    <ejs-schedule #scheduleObj width='100%' cssClass='schedule-cell-dimension' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
+        [(currentView)]="currentView" (eventRendered)="onEventRendered($event)" [showTimeIndicator]="showTimeIndicator">
         <e-views>
             <e-view option="Day"></e-view>
             <e-view option="Week"></e-view>
@@ -20,8 +19,6 @@
 
 <div id="description">
     <p>
-        In this demo, the height and width of the Schedule cells are set by overriding the default CSS class. By doing so, it also
-        needs to adjust the outer event wrapper element to cope with the CSS changes which can be done by calling the
-        <code>adjustEventWrapper</code> method.
+        In this demo, the height and width of the Schedule cells are set by overriding the default CSS class.
     </p>
 </div>

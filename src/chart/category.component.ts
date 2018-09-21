@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IPointRenderEventArgs, ChartTheme, ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
+import { IPointRenderEventArgs, ChartTheme, ILoadedEventArgs } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 /**
  * Sample for Category axis
@@ -12,15 +12,16 @@ import { Browser } from '@syncfusion/ej2-base';
 })
 export class CategoryChartComponent {
     public data: Object[] = [
-        { x: 'GER', y: 72 },
-        { x: 'RUS', y: 103.1 },
-        { x: 'BRZ', y: 139.1 },
-        { x: 'IND', y: 462.1 },
-        { x: 'CHN', y: 721.4 },
-        { x: 'USA', y: 286.9 },
-        { x: 'GBR', y: 115.1 },
-        { x: 'NGR', y: 97.2 }
+        { x: 'Germany', y: 72, country: 'GER: 72'},
+        { x: 'Russia', y: 103.1, country: 'RUS: 103.1'},
+        { x: 'Brazil', y: 139.1, country: 'BRZ: 139.1'},
+        { x: 'India', y: 462.1, country: 'IND: 462.1'},
+        { x: 'China', y: 721.4, country: 'CHN: 721.4'},
+        { x: 'United States Of America', y: 286.9, country: 'USA: 286.9'},
+        { x: 'Great Britain', y: 115.1, country: 'GBR: 115.1'},
+        { x: 'Nigeria', y: 97.2, country: 'NGR: 97.2'},
     ];
+    public tooltipMappingName: 'country';
     public marker: Object = {
         dataLabel: {
             visible: true,
@@ -34,7 +35,8 @@ export class CategoryChartComponent {
     public primaryXAxis: Object = {
         title: 'Country',
         valueType: 'Category',
-        majorGridLines: { width: 0 }
+        majorGridLines: { width: 0 },
+        enableTrim: true,
     };
     public pointRender(args: IPointRenderEventArgs): void {
         let materialColors: string[] = ['#00bdae', '#404041', '#357cd2', '#e56590', '#f8b883', '#70ad47', '#dd8abd', '#7f84e8', '#7bb4eb',
@@ -77,7 +79,7 @@ export class CategoryChartComponent {
     };
     //Initializing Tooltip
     public tooltip: Object = {
-        enable: true
+        enable: true, format: '${point.tooltip}'
     };
     public chartArea: Object = {
         border: {

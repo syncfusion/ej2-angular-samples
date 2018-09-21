@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { orderDatas } from './data';
-import { EditService, PageService, CommandColumnService, CommandModel } from '@syncfusion/ej2-ng-grids';
+import { EditService, PageService, CommandColumnService, CommandModel } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ej-grid-commandcolumn',

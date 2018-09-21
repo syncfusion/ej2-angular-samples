@@ -1,24 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { zooEventsData } from './datasource';
 import { extend } from '@syncfusion/ej2-base';
-import { EventSettingsModel, View, EventRenderedArgs } from '@syncfusion/ej2-ng-schedule';
-import { DayService, WeekService, WorkWeekService, MonthService, AgendaService } from '@syncfusion/ej2-ng-schedule';
+import {
+    EventSettingsModel, View, EventRenderedArgs, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService
+} from '@syncfusion/ej2-angular-schedule';
 
 @Component({
+    selector: 'control-content',
     templateUrl: 'local-data.html',
-    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService]
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService]
 })
-export class LocalDataComponent implements OnInit {
+export class LocalDataComponent {
     public data: Object[] = <Object[]>extend([], zooEventsData, null, true);
-    public selectedDate: Date;
-    public eventSettings: EventSettingsModel;
-    public currentView: View;
+    public selectedDate: Date = new Date(2018, 1, 15);
+    public eventSettings: EventSettingsModel = { dataSource: this.data };
+    public currentView: View = 'Week';
 
-    ngOnInit(): void {
-        this.eventSettings = { dataSource: this.data };
-        this.selectedDate = new Date(2018, 1, 15);
-        this.currentView = 'Week';
-    }
     oneventRendered(args: EventRenderedArgs): void {
         let categoryColor: string = args.data.CategoryColor as string;
         if (!args.element || !categoryColor) {

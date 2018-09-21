@@ -49,3 +49,21 @@
         height: 50px;
         width: 100%;
     }
+
+    .schedule-event-template.e-schedule .e-timeline-view .e-appointment .e-appointment-details {
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .schedule-event-template.e-schedule .e-timeline-view .template-wrap {
+        width: 100%;
+    }
+
+    .schedule-event-template.e-schedule .e-timeline-view .template-wrap .subject {
+        font-size: 16px;
+        height: 36px;
+        text-align: center;
+        border-style: solid;
+        border-width: 0 15px;
+    }

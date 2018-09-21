@@ -1,0 +1,30 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the concept of Artificical Intelligence using hierarchical tree layout algorithm
+    </p>
+</div>
+<div class="col-lg-8 control-section" style="width: 100%;">
+    <div class="content-wrapper">
+        <ejs-diagram #diagram id="diagram" width="100%" height="600px" [tool]=tool [layout]='layout' [snapSettings]='snapSettings'
+            [dataSourceSettings]='data' [getConnectorDefaults]='getConnectorDefaults' [getNodeDefaults]='getNodeDefaults'>
+        </ejs-diagram>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        In this example, you can see how to generate a RTL (Right to left) tree from external data source. You can use the
+        <code>orientation</code> property of the layout to generate the RTL tree.
+    </p>
+
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Diagram component features are segregated into individual feature-wise modules. To generate diagrams from external data source,
+        we need to Inject
+        <code>DataBinding</code> module into
+        <code>@NgModule.providers</code> section. To automatically arrange the objects in a hierarchical structure, we need to Inject
+        <code>HierarchicalTree</code> module into
+        <code>@NgModule.providers</code> section.
+    </p>
+    <br>
+</div>

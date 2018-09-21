@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { DataStateChangeEventArgs, Sorts, DataResult } from '@syncfusion/ej2-ng-grids'
+import { DataStateChangeEventArgs, Sorts, DataResult } from '@syncfusion/ej2-angular-grids'
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { map } from 'rxjs/operators/map';
 
 @Injectable()
 export class OrdersService extends Subject<DataStateChangeEventArgs> {
-    private BASE_URL = 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Orders';
+    private BASE_URL = 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Orders'; 
 
     constructor(private http: Http) {
         super();
@@ -27,13 +27,13 @@ export class OrdersService extends Subject<DataStateChangeEventArgs> {
             }).reverse().join(',');
         }
 
-        return this.http
-            .get(`${this.BASE_URL}?${pageQuery}${sortQuery}&$inlinecount=allpages&$format=json`)
-            .map((response: any) => response.json())
-            .map((response: any) => (<DataResult>{
+        return this.http 
+           .get(`${this.BASE_URL}?${pageQuery}${sortQuery}&$inlinecount=allpages&$format=json`) 
+           .map((response: any) => response.json())
+           .map((response: any) => (<DataResult>{
                 result: response['d']['results'],
                 count: parseInt(response['d']['__count'], 10)
-            }))
-            .pipe((data: any) => data);
+        }))
+        .pipe((data: any) => data);
     }
 }

@@ -1,0 +1,25 @@
+<div class="control-section">
+    <ejs-schedule #scheduleObj width='100%' height='650px' [selectedDate]="selectedDate" (eventRendered)="onEventRendered($event)"
+        [eventSettings]="eventSettings">
+        <e-views>
+            <e-view displayName='3 Days' option='Day' [interval]="dayInterval"></e-view>
+            <e-view displayName='2 Weeks' option='Week' [isSelected]="isSelected" [interval]="weekInterval"></e-view>
+            <e-view displayName='4 Months' option='Month' [interval]="monthInterval"></e-view>
+        </e-views>
+    </ejs-schedule>
+</div>
+
+<div id="action-description">
+    <p>
+        This demo illustrates how to display n number of days, weeks and months on a single view.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        In this demo, the
+        <code>interval</code> property has been defined with different values on each view such as 3 on day view, 2 on week view and 4 on month
+        view – so that 3 days, 2 weeks and 4 months displayed on the respective views. This property is not applicable on
+        agenda and month agenda views
+    </p>
+</div>

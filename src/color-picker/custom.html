@@ -1,0 +1,58 @@
+<div id="action-description">
+    <p>This sample demonstrates how to customize the color palettes with different types and styles.</p>
+</div>
+
+<div class="control-section">
+    <div id="custom-control">
+        <div class="row">
+            <div id="e-shirt-preview"></div>
+        </div>
+        <div id="custom-content" class="row">
+            <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6 e-circle-wrap">
+                <input ejs-colorpicker id="circle-palette" type="color" mode="Palette" [modeSwitcher]="ctrlSwitch" [columns]="biggerPalettesColn"
+                    inline="true" [showButtons]="ctrlSwitch" [presetColors]="circlePaletteColors" (beforeTileRender)="beforeCircleTileRender($event)"
+                    (change)="change($event)" />
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6 e-rounded-wrap">
+                <input ejs-colorpicker #colorpicker id="rounded-palette" type="color" mode="Palette" [modeSwitcher]="ctrlSwitch" inline="true"
+                    [showButtons]="ctrlSwitch" [columns]="roundedPalettesColn" [presetColors]="roundedPaletteColors" (beforeTileRender)="beforeRoundedTileRender($event)"
+                    (change)="roundedPaletteChange($event)" />
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6 e-square-wrap">
+                <input ejs-colorpicker id="square-palette" type="color" mode="Palette" [modeSwitcher]="ctrlSwitch" inline="true" [showButtons]="ctrlSwitch"
+                    [columns]="squarePalettesColn" [presetColors]="squarePaletteColors" (beforeTileRender)="beforeSquareTileRender($event)"
+                    (change)="change($event)" />
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6 e-scroll-wrap">
+                <input ejs-colorpicker id="scroll-palette" type="color" mode="Palette" inline="true" [modeSwitcher]="ctrlSwitch" [showButtons]="ctrlSwitch"
+                    [columns]="biggerPalettesColn" [presetColors]="scrollPaletteColors" (beforeTileRender)="beforeScrollTileRender($event)"
+                    (change)="change($event)" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        The ColorPicker component is a user interface to select and adjust color values. This supports various color specifications
+        like RGB (Red Green Blue), HSV (Hue Saturation Value), and Hex codes.
+    </p>
+    <p>
+        In this sample,</p>
+    <ul>
+        <li>
+            Select the shirt color from different customized palettes. It contains circle, square, rounded edge, and multiple scroll
+            palettes.
+        </li>
+        <li>Using the
+            <code>
+                <a target="_blank" class="code" href="http://ej2.syncfusion.com/documentation/colorpicker/api-colorpicker.html#presetColors-object">presetColors
+                </a>
+            </code> property, you can specify the custom colors to be loaded.</li>
+    </ul>
+    <p>
+        More information about ColorPicker can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/documentation/colorpicker/getting-started.html">
+            documentation section</a>.
+    </p>
+</div>

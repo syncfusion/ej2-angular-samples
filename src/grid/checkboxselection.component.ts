@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
 import { orderDetails } from './data';
-import { SelectionService } from '@syncfusion/ej2-ng-grids';
+import { EditService, ToolbarService, SelectionService } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ej-gridselect',
@@ -11,9 +11,13 @@ import { SelectionService } from '@syncfusion/ej2-ng-grids';
 export class CheckboxSelectionComponent implements OnInit {
     public data: Object[];
     public selectOptions: Object;
+    public editSettings: Object;
+    public toolbar: string[];
 
     public ngOnInit(): void {
         this.data = orderDetails;
         this.selectOptions = { persistSelection: true };
+        this.editSettings = { allowDeleting: true };
+        this.toolbar = ['Delete'];
     }
 }

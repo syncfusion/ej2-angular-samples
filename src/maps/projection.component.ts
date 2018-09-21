@@ -1,12 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { MapsTheme, Maps, Zoom, Legend, ProjectionType, MapsTooltip, ILoadEventArgs } from '@syncfusion/ej2-ng-maps';
-import { World_Map } from './MapData/WorldMap';
-import { unCountries } from './MapData/UNOCountries';
+import { MapsTheme, Maps, Zoom, Legend, ProjectionType, MapsTooltip, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
+import { MapAjax } from '@syncfusion/ej2-maps';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 
 Maps.Inject(Zoom, Legend, MapsTooltip);
-let worldMap: object = World_Map;
 
 /**
  * Changing projection sample
@@ -14,7 +12,6 @@ let worldMap: object = World_Map;
 @Component({
     selector: 'control-content',
     templateUrl: 'projection.html',
-    styleUrls: ['maps.style.css'],
     encapsulation: ViewEncapsulation.None
 })
 export class MapsProjectionComponent {
@@ -41,10 +38,26 @@ export class MapsProjectionComponent {
 
     public layers: object[] =  [
         {
-            shapeData: worldMap,
+            shapeData:new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
             shapeDataPath: 'Country',
             shapePropertyPath: 'name',
-            dataSource : unCountries,
+            dataSource : [
+                { Country: 'China', Membership: 'Permanent' },
+                { Country: 'France', Membership: 'Permanent' },
+                { Country: 'Russia', Membership: 'Permanent' },
+                { Country: 'United Kingdom', Membership: 'Permanent' },
+                { Country: 'United States', Membership: 'Permanent' },
+                { Country: 'Bolivia', Membership: 'Non-Permanent' },
+                { Country: 'Eq. Guinea', Membership: 'Non-Permanent' },
+                { Country: 'Ethiopia', Membership: 'Non-Permanent' },
+                { Country: 'Côte d Ivoire', Membership: 'Permanent' },
+                { Country: 'Kazakhstan', Membership: 'Non-Permanent' },
+                { Country: 'Kuwait', Membership: 'Non-Permanent' },
+                { Country: 'Netherlands', Membership: 'Non-Permanent' },
+                { Country: 'Peru', Membership: 'Non-Permanent' },
+                { Country: 'Poland', Membership: 'Non-Permanent' },
+                { Country: 'Sweden', Membership: 'Non-Permanent' },
+                ],
             tooltipSettings: {
                 visible: true,
                 valuePath: 'Country',

@@ -1,0 +1,92 @@
+<div class="control-section">
+    <div id="targetContainer" class="col-lg-8 control-section">
+        <ejs-pager #pager [pageSize]='pagesize' (click)='click($event)' [pageCount]='pagecount' [totalRecordsCount]='recordscount'>
+        </ejs-pager>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties">
+                    <tr>
+                        <td style="width: 50%">
+                            <div style="padding-top: 7px">
+                                Page Count
+                            </div>
+                        </td>
+                        <td style="width: 50%; padding:10px 10px 10px 0px">
+                            <div>
+                                <input type="number" id="pagecount" class="form-control" min="1" value="5" (change)='count($event)'>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%">
+                            <div style="padding-top: 7px">
+                                Current Page
+                            </div>
+                        </td>
+                        <td style="width: 50%; padding:10px 10px 10px 0px">
+                            <div>
+                                <input type="number" id="pageno" class="form-control" value="1" min="1" pattern="[^-]" (change)='cpage()'>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%">
+                            <div style="padding-top: 7px;">
+                                Page Size
+                            </div>
+                        </td>
+                        <td style="width: 50%;  padding:10px 10px 10px 0px">
+                            <div>
+                                <input type="number" id="pagesize" class="form-control" value="1" min="1" max="5" (change)='size()'>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%">
+                            <div style="padding-top: 7px">
+                                Total Records
+                            </div>
+                        </td>
+                        <td style="width: 50%; padding:10px 10px 10px 0px">
+                            <div>
+                                <input type="number" id="totalrecords" class="form-control" value="20" min="1" pattern="[^-]" (change)='totalrecords()'>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>Pager allows you to display the contents in page segments. The number of items on a page is determined by the <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/pager/api-pagerComponent.html#pagesize-number">
+        pageSize
+        </a></code> property. If no value is specified for the <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/pager/api-pagerComponent.html#pagesize-number">
+        pageSize
+        </a></code> property, the Pager will display 12 items on a page.
+        <p>In this demo,</p>
+        <ul>
+            <li>Change value of <strong>Page Count</strong> textbox to change <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/pager/api-pagerComponent.html#pagecount-number">
+       pageCount
+        </a></code>.</li>
+            <li>Change value of <strong>Current Page</strong> textbox to change
+                <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/pager/api-pagerComponent.html#currentpage-number">
+        currentPage
+        </a></code>.</li>
+            <li>Change value of <strong>Page Size</strong> textbox to change <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/pager/api-pagerComponent.html#pagesize-number">
+       pageSize
+        </a></code>.</li>
+            <li>Change value of <strong>totalrecords</strong> textbox to change <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/pager/api-pagerComponent.html#totalrecordscount-number">
+      totalRecordsCount
+        </a></code>.</li>
+        </ul>
+</div>

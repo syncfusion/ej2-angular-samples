@@ -1,0 +1,46 @@
+<div id="action-description">
+    <p>
+        This sample depicts the cricket match data between two countries with the help of numeric axis in range navigator.
+    </p>
+</div>
+<div class="control-section">
+    <div class="row" align="center">
+            <h4 id="days" style="font-family: Segoe UI;font-weight: 500; font-style:normal; font-size:15px;">Score Comparision AUS vs SL</h4>
+    <div align="center">
+        <ejs-rangenavigator style='display:block' align='center' id='containerDouble' [value]='value' labelPosition='Outside' [width]='width'
+           (changed)='changed($event)' [tooltip]='tooltip' [theme]='theme' (tooltipRender)='tooltipRender($event)'  (load)='load($event)'>
+            <e-rangenavigator-series-collection>
+                <e-rangenavigator-series [dataSource]='dataSource' xName='x' yName='y' width=2 name= 'AUS'>
+                </e-rangenavigator-series>
+                <e-rangenavigator-series [dataSource]='dataSource1' xName='x' yName='y' width=2 name='SL'>
+                </e-rangenavigator-series>
+            </e-rangenavigator-series-collection>
+        </ejs-rangenavigator>
+    </div>
+    <div align="center">
+        <ejs-chart #chartDouble style='display:block;' id='chartDouble' align='center' [chartArea]='chartArea' [width]='width' [primaryXAxis]='primaryXAxis'
+            [primaryYAxis]='primaryYAxis' height='350' [legendSettings]='legendSettings' [theme]='theme' [annotations] = 'annotations'  (loaded)='loaded($event)'
+            (axisLabelRender)='axisLabelRender($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='dataSource' name='Value' type='Spline' xName='x' yName='y' width='2' [animation]='animation'>
+                </e-series>
+                <e-series [dataSource]='dataSource1' name='Value' type='Spline' xName='x' yName='y' width='2' [animation]='animation'>
+                </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+      Numeric axis is used to plot numeric data in range navigator. To render numeric axis, set <code>valueType</code>
+      to <code>Double</code>.<br>
+      Tooltip is enabled in this example, to see the tooltip in action, while the selected range is changed. 
+
+    </p>
+</div>
+<style>
+    #control-containerDouble {
+        padding: 0px !important;
+    }
+</style>

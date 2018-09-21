@@ -1,8 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { MapsTheme, Maps, MapsTooltip, ISelectionEventArgs, Selection, Highlight, ILoadEventArgs } from '@syncfusion/ej2-ng-maps';
-import { usMap } from './MapData/USA';
-import { electionData } from './MapData/ElectionData';
+import { MapsTheme, Maps, MapsTooltip, ISelectionEventArgs, Selection, Highlight, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
+import { MapAjax } from '@syncfusion/ej2-maps';
 
 Maps.Inject(MapsTooltip, Selection, Highlight);
 
@@ -19,7 +18,6 @@ interface PopulationData {
 @Component({
     selector: 'control-content',
     templateUrl: 'selection.html',
-    styleUrls: ['maps.style.css'],
     encapsulation: ViewEncapsulation.None
 })
 export class MapsSelectionComponent {
@@ -87,10 +85,10 @@ export class MapsSelectionComponent {
 
     public layers: object[] = [
         {
-            shapeData: usMap,
+            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/usa.json'),
             shapePropertyPath: 'name',
             shapeDataPath: 'State',
-            dataSource: electionData,
+            dataSource: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/election-data.json'),
             tooltipSettings: {
                 visible: true,
                 valuePath: 'State'

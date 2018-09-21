@@ -1,0 +1,50 @@
+<div class="control-section">
+    <div class="col-lg-12 content-wrapper">
+        <ejs-schedule #scheduleObj width='100%' cssClass='timeline-resource-grouping' height='650px' [selectedDate]="selectedDate" [group]="group"
+            [eventSettings]="eventSettings">
+            <e-resources>
+                <e-resource field='ProjectId' title='Choose Project' [dataSource]='projectDataSource' [allowMultiple]='allowMultiple' name='Projects'
+                    textField='text' idField='id' colorField='color'>
+                </e-resource>
+                <e-resource field='TaskId' title='Category' [dataSource]='categoryDataSource' [allowMultiple]='allowMultiple' name='Categories'
+                    textField='text' idField='id' colorField='color'>
+                </e-resource>
+            </e-resources>
+            <e-views>
+                <e-view option="TimelineDay"></e-view>
+                <e-view option="TimelineWeek"></e-view>
+                <e-view option="TimelineWorkWeek"></e-view>
+                <e-view option="TimelineMonth"></e-view>
+                <e-view option="Agenda"></e-view>
+            </e-views>
+        </ejs-schedule>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This demo showcases how the multiple resources are grouped as well as how the events are portrayed in timeline view layouts.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        In the timeline view, each row depicts a single resource whereas in vertical views, each resource are grouped parallelly
+        as columns. Here, the resource grouping follows the tree-view like hierarchical grouping structure and can contain
+        any level of child resources. In this sample, we have used two level hierarchy, where the
+        <code>PROJECT 1</code> and
+        <code>PROJECT 2</code> are the parent level and the
+        <code>development</code> and
+        <code>testing</code> are child level resources which are defined using the
+        <code>resources</code> property. They are grouped in layout by making use of the
+        <code>group</code> property and its order of grouping depends on the order of names passed onto the
+        <code>resources</code> option within
+        <code>group</code>.
+    </p>
+    <p>
+        Also, the colors defined for the child level resources will get applied to the events of those resources by default. In case,
+        if the colors of parent level needs to be applied to those child events, then it is necessary to define the
+        <code>resourceColorField</code> option within the
+        <code>eventSettings</code> property with the parent level resource name value.
+    </p>
+</div>

@@ -1,0 +1,63 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates polar series with stacking area type for GDP of different countries in recent years. The switching between polar and radar series can be done by using <code>Series Type</code> in property panel.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-lg-9">
+        <ejs-chart #chart style='display:block;' [title]='title' [primaryXAxis]='primaryXAxis' (load)='load($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='Polar' [marker]='marker'drawType='StackingArea' xName='x' yName='y' name='2013' width=2>
+                </e-series>
+                <e-series [dataSource]='data' type='Polar' [marker]='marker'drawType='StackingArea' xName='x' yName='y1' name='2014' width=2>
+                </e-series>
+                <e-series [dataSource]='data' type='Polar' [marker]='marker'drawType='StackingArea' xName='x' yName='y2' name='2015' width=2>
+                </e-series>
+                <e-series [dataSource]='data' type='Polar' [marker]='marker'drawType='StackingArea' xName='x' yName='y3' name='2016' width=2>
+                </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tr style="height: 50px">
+                        <td style="width: 50%">
+                            <div>Series Type:</div>
+                        </td>
+                        <td style="width: 50%;">
+                            <div>
+                                <select name="selectIndex" autocomplete="off" id="selmode" style="width:90%">
+                                         <option value="Polar">Polar</option>
+                                         <option value="Radar">Radar</option>
+                                     </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the polar series with stackingarea type charts.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use polar series with stacking area draw type feature, we need to inject
+        <code>PolarSeriesService</code>  and <code>StackingAreaSeries</code> into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information on the area series can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#areaseriesmodule-areaseries">documentation section</a>.
+    </p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

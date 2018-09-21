@@ -1,0 +1,31 @@
+<div id="action-description">
+    <p>This sample demonstrates the Group Templates functionalities of ListView. Click any list
+        item from the settings option to select and highlight an option.
+    </p>
+</div>
+<div class="col-lg-12 control-section">
+    <!-- ListView element -->
+    <ejs-listview id='groupedList' [dataSource]='dataSource' [cssClass]='cssClass' [fields]='fields'
+        [headerTitle]='headerTitle' [showHeader]='true'>
+        <ng-template #template let-dataSource="">
+            <div class="settings e-list-wrapper e-list-multi-line e-list-avatar">
+                <span class="icon {{dataSource.class}} e-avatar"></span>
+                <span class="e-list-item-header">{{dataSource.Name}}</span>
+                <span class="e-list-content">{{dataSource.content}}</span>
+            </div>
+        </ng-template>
+        <ng-template #groupTemplate let-dataSource="">
+            <div class="e-list-wrapper">
+                <span class="e-list-item-content">{{dataSource.items[0].category}}</span>
+            </div>
+        </ng-template>
+    </ejs-listview>
+</div>
+<div id="description">
+    <p>ListView component has an option to custom design the group header title with the help
+        of
+        <code>groupTemplate</code> property.</p>
+    <p>In this example, both the group header and list item is customized using the
+        <code>groupTemplate</code> and
+        <code>template</code> property.</p>
+</div>

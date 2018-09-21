@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -51,13 +51,6 @@ export class LineSegmentChartComponent {
     public tooltip: Object = {
         enable: true, shared: true
     };
-    public content: string = "<div style='width:80px; padding: 5px;'><table style='width: 100%'>" +
-        "<tr> <td><div style='width: 10px; height: 10px; background:blue;border-radius: 15px;'></div>" +
-        "</td> <td style='padding-left: 5px;'>High</td></tr><tr><td>" +
-        "<div style='width: 10px; height: 10px; background:green;;border-radius: 15px;'></div>" +
-        "</td><td style='padding-left: 5px;'>Medium </td></tr><tr><td>" +
-        "<div style='width: 10px; height: 10px; background:red;;border-radius: 15px;'></div>" +
-        "</td><td style='padding-left: 5px;'>Low</td></tr></table></div>";
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
@@ -72,11 +65,11 @@ export class LineSegmentChartComponent {
         ].map((value: number, index: number) => {
             this.dataValues.push({ XValue: new Date(1900 + index, 0, 1), YValue: value });
         });
-       if(selectedTheme === 'highcontrast'){
-               args.chart.series[0].segments[0].color = '#FF4741';
-               args.chart.series[0].segments[1].color = '#00B400';
-               args.chart.series[0].segments[2].color = '#3F9BFF';
-            }
+        if (selectedTheme === 'highcontrast') {
+            args.chart.series[0].segments[0].color = '#FF4741';
+            args.chart.series[0].segments[1].color = '#00B400';
+            args.chart.series[0].segments[2].color = '#3F9BFF';
+        }
     };
     public title: string = 'Annual Mean Rainfall for Australia';
     constructor() {

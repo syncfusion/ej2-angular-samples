@@ -1,0 +1,33 @@
+<div id="action-description">
+    <p>
+        This sample visualizes a project development process using Program Evaluation Review Technique (PERT). Complex hierarchical
+        tree layout algorithm is used to automatically arrange the nodes.
+    </p>
+</div>
+<div class="col-lg-8 control-section" style="width: 100%;">
+    <div class="content-wrapper">
+        <ejs-diagram #diagram id="diagram" width="100%" height="499px" [tool]='tool' (created)="create($event)" [layout]='layout'
+            [dataSourceSettings]='data' [getConnectorDefaults]='connDefaults' [snapSettings]='snapSettings' [setNodeTemplate]='setNodeTemplate'>
+        </ejs-diagram>
+    </div>
+</div>
+<div id="description">
+    <p>
+        This example shows how to generate a PERT chart from an external data source. The
+        <code>dataSourceSettings</code> property can be used to map an external data source with the diagram control. The
+        <code>layout</code> property can be used to automatically position the nodes. In this example, the nodes are arranged from left to right
+        of the diagram. The
+        <code>orientation</code> property can be used to define the orientation of the layouts.
+    </p>
+
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        The diagram component’s features are segregated into individual feature-wise modules. To generate diagrams from an external
+        data source, inject
+        <code>DataBinding</code> module into
+        <code>@NgModule.providers</code> section. To automatically arrange the objects in a PERT Chart, inject
+        <code>ComplexHierarchicalTree</code> module into
+        <code>@NgModule.providers</code> section.
+    </p>
+    <br>
+</div>

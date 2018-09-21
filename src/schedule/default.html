@@ -1,6 +1,6 @@
 <div class="control-section">
     <div class="col-lg-9 content-wrapper">
-        <ejs-schedule #schedule height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings">
+        <ejs-schedule #schedule height='650px' [(selectedDate)]="selectedDate" [eventSettings]="eventSettings">
         </ejs-schedule>
     </div>
     <div class="col-lg-3 property-section">
@@ -17,7 +17,7 @@
                                 </td>
                                 <td style="width: 70%;">
                                     <div>
-                                        <ejs-datepicker #datepicker [value]='selectedDate' (change)='onDateChange($event)'></ejs-datepicker>
+                                        <ejs-datepicker #datepicker [(value)]='selectedDate'></ejs-datepicker>
                                     </div>
                                 </td>
                             </tr>

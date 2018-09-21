@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { AccumulationChartComponent, IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-ng-charts';
+import { AccumulationChartComponent, IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-angular-charts';
 
 /**
  * Sample for Semi Pie Chart
@@ -64,6 +64,7 @@ export class SemiPieComponent {
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
     }
+    public explode: boolean = true;
     public startAngle: number = 270;
     public endAngle: number = 90;
     public tooltip: Object = { enable: true, format: '${point.x} : <b>${point.y}%</b>' };

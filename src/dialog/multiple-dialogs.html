@@ -1,0 +1,25 @@
+<div class="control-section multiple" >
+    <button  ejs-button id="dialogBtn" Class="e-control e-btn" #confirmButton (click)="confirmBtnClick()">Open Dialog</button>
+    <ejs-dialog id="defaultDialog" #defaultDialog [content]='contentData' [buttons]='defaultDlgButtons' [visible]='visible' [header]='dialogHeader' [animationSettings]='animationSettings' [showCloseIcon]='dialogCloseIcon' (open)="dialogOpen()" (close)="dialogClose()" [target]='target'
+    [width]='dialogWidth'>
+    </ejs-dialog>
+    <ejs-dialog id="secondDialog" [isModal]='isModal' #dialogObj2 [content]='contentData1' [buttons]='secondDlgButtons' [visible]='visible2' [header]='secondDlgHeader' [animationSettings]='animationSettings1' [showCloseIcon]='secondDialogCloseIcon' (open)="dialogOpen()" (close)="dialogClose2()" [target]='target'
+    [width]='secondDialogWidth'>
+    </ejs-dialog>
+</div>
+<div id="action-description">
+    <p>
+      This sample demonstrates how to display multiple dialogs one over the other.
+      The second dialog is configured with draggable behavior to adjust its position.
+      You can invoke the second dialog from first dialog's button.
+      Enable the "open dialog" button to reopen the dialog if the first dialog is closed.
+    </p>
+  </div>
+  <div id="description">
+    <p>
+      You can configure the dialog as a parent and child, and invoke the child dialog from its parent dialog.
+      In addition, multiple dialogs can be shown at a time in a page.
+      The Z- index order will be controlled automatically in the browser and manually using the<a target="_blank" 
+      href="https://ej2.syncfusion.com/angular/documentation/dialog/api-dialogComponent.html#zindex"> zIndex </a> property.
+    </p>
+  </div>

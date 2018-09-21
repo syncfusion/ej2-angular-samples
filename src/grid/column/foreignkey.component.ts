@@ -3,7 +3,7 @@ import { orderDetails, customerData } from '../data';
 import {
     FilterService, GridComponent, EditService, SortService, ToolbarService,
     ToolbarItems, EditSettingsModel, ForeignKeyService
-} from '@syncfusion/ej2-ng-grids';
+} from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ej2-foreigngrid',

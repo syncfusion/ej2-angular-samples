@@ -1,9 +1,0 @@
-#multiselect-sample.control-section{
-    width: 80%;
-    margin: 0 auto;
-    min-width: 185px;
-}
-
-.e-bigger #multiselect-sample.control-section {
-    width: 100%;
-}

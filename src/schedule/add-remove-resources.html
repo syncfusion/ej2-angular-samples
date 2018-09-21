@@ -1,0 +1,69 @@
+<div class="control-section">
+    <div class="col-lg-9 content-wrapper">
+        <ejs-schedule #scheduleObj cssClass='schedule-add-remove-resources' width='100%' height='650px' [group]="group" [selectedDate]="selectedDate"
+            [eventSettings]="eventSettings">
+            <e-resources>
+                <e-resource field='CalendarId' title='Calendars' [dataSource]='resourceDataSource' [allowMultiple]='allowMultiple' name='Calendars'
+                    textField='CalendarText' idField='CalendarId' colorField='CalendarColor'>
+                </e-resource>
+            </e-resources>
+            <e-views>
+                <e-view option="Month"></e-view>
+                <e-view option="TimelineWeek"></e-view>
+                <e-view option="TimelineMonth"></e-view>
+            </e-views>
+        </ejs-schedule>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Show/Hide Resource</div>
+            <div class="property-panel-content">
+                <div id="property" class="property-panel-table" title="Properties">
+                    <table id="property" title="Properties" style="width: 100%">
+                        <tbody>
+                            <tr style="height: 50px">
+                                <td style="width: 100%">
+                                    <ejs-checkbox cssClass="personal" label="My Calender" value="1" [checked]="true" [disabled]="true" (change)="onChange($event)"></ejs-checkbox>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                <td style="width: 100%">
+                                    <ejs-checkbox cssClass="company" label="Company" value="2" [checked]="false" (change)="onChange($event)"></ejs-checkbox>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                <td style="width: 100%">
+                                    <ejs-checkbox cssClass="birthday" label="Birthday" value="3" [checked]="false" (change)="onChange($event)"></ejs-checkbox>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                <td style="width: 100%">
+                                    <ejs-checkbox cssClass="holiday" label="Holiday" value="4" [checked]="false" (change)="onChange($event)"></ejs-checkbox>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This demo illustrates how to dynamically add or remove resources to and from the Schedule layout.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        In this demo, Schedule is initially displayed with single resource with its related set of appointments. When the additional
+        checkboxes given are checked and unchecked, the respective resources gets added up or removed from the schedule layout.
+        To add new resources dynamically,
+        <code>addResource</code> method is used which accepts the arguments such as resource object, resource name (within
+        which level, the resource object to be added) and index (position where the resource needs to be added). To remove
+        the resources dynamically,
+        <code>removeResource</code> method is used which accepts the index (position from where the resource to be removed)
+        and resource name (within which level, the resource object presents) as parameters.
+    </p>
+</div>

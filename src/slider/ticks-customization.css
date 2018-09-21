@@ -85,17 +85,15 @@
 }
 
 .material #ticks_slider .e-scale .e-tick.e-custom::before {
-    top: calc(50% + 1px);
+    line-height: 2.6;
     left: calc(50% - 5px);
 }
 
 .material #slider_wrapper #ticks_slider .e-scale :nth-child(1)::before {
-    top: calc(50% + 1px);
     left: calc(0% - 5px);
 }
 
 .material #slider_wrapper #ticks_slider .e-scale :nth-child(6)::before {
-    top: calc(50% + 1px);
     left: calc(100% - 6px);
 }
 
@@ -104,17 +102,15 @@
 }
 
 .fabric #ticks_slider .e-scale .e-tick.e-custom::before {
-    top: calc(50% + 5px);
+    line-height: 2.4;
     left: calc(50% - 7px);
 }
 
 .fabric #slider_wrapper #ticks_slider .e-scale :nth-child(1)::before {
-    top: calc(50% + 5px);
     left: calc(0% - 7px);
 }
 
 .fabric #slider_wrapper #ticks_slider .e-scale :nth-child(6)::before {
-    top: calc(50% + 5px);
     left: calc(100% - 7px);
 }
 
@@ -123,17 +119,15 @@
 }
 
 .bootstrap #ticks_slider .e-scale .e-tick.e-custom::before {
-    top: calc(50% + 2px);
+    line-height: 1.8;
     left: calc(50% - 7px);
 }
 
 .bootstrap #slider_wrapper #ticks_slider .e-scale :nth-child(1)::before {
-    top: calc(50% + 2px);
     left: calc(0% - 7px);
 }
 
 .bootstrap #slider_wrapper #ticks_slider .e-scale :nth-child(6)::before {
-    top: calc(50% + 2px);
     left: calc(100% - 7px);
 }
 
@@ -142,17 +136,15 @@
 }
 
 .highcontrast #ticks_slider .e-scale .e-tick.e-custom::before {
-    top: calc(50% + 6px);
+    line-height: 2.5;
     left: calc(50% - 7px);
 }
 
 .highcontrast #slider_wrapper #ticks_slider .e-scale :nth-child(1)::before {
-    top: calc(50% + 6px);
     left: calc(0% - 7px);
 }
 
 .highcontrast #slider_wrapper #ticks_slider .e-scale :nth-child(6)::before {
-    top: calc(50% + 6px);
     left: calc(100% - 7px);
 }
 

@@ -1,0 +1,49 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates annotation feature in chart. Accumulation chart is placed in cartesian chart by using annotation.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart #chart style='display:block;' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)'
+            (animationComplete)='animationComplete($event)' [chartArea]='chartArea' [width]='width' align='center' [selectionMode]='selectionMode'
+            [chartArea]='chartArea' [legendSettings]='legend' [selectedDataIndexes]='selectedDataIndexes' (chartMouseUp)='chartMouseUp($event)'
+            (loaded)='loaded($event)'>
+            <e-annotations>
+              <e-annotation x='20%' y='25%' coordinateUnits='Pixel' region='Series'>
+                <ng-template #content>
+                    <div id="chart_annotation" style="width: 200px; height: 200px"></div>
+                </ng-template>
+              </e-annotation>
+            </e-annotations>
+            <e-series-collection>
+                <e-series [dataSource]='dataSource' type='StackingColumn' xName='x' yName='y0' name='UK'>
+                </e-series>
+                <e-series [dataSource]='dataSource' type='StackingColumn' xName='x' yName='y1' name='Germany'>
+                </e-series>
+                <e-series [dataSource]='dataSource' type='StackingColumn' xName='x' yName='y2' name='France'>
+                </e-series>
+                <e-series [dataSource]='dataSource' type='StackingColumn' xName='x' yName='y3' name='Italy'>
+                </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure annotation feature in chart. We have used a pie chart to depict
+        the sales for each year using annotation support, while selecting a particular year from the StackedColumn series,
+        the respective data's are showed in pie. An annotation can hold any html element as its content, here we have added
+        the Pie chart as its content.
+    </p>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use Annotation feature, we need to inject
+        <code>ChartAnnotationService</code> into the
+        <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information on the chart annotation can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartAnnotation.html">documentation section</a>.
+    </p>
+</div>

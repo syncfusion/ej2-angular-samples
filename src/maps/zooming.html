@@ -17,8 +17,8 @@
             <div class="property-panel-content">
                 <table id="property" title="Properties">
                     <tbody>
-                        <tr style="height: 50px">
-                            <td style="width: 80%">
+                            <tr style="height: 50px">
+                                    <td style="width: 50%">
                                 <div>Zooming</div>
                             </td>
                             <td>
@@ -26,7 +26,7 @@
                             </td>
                         </tr>
                         <tr style="height: 50px">
-                            <td style="width: 80%">
+                                <td style="width: 50%">
                                 <div>Mouse wheel zoom</div>
                             </td>
                             <td>
@@ -34,7 +34,7 @@
                             </td>
                         </tr>
                         <tr style="height: 50px">
-                            <td style="width: 80%">
+                                <td style="width: 50%">
                                 <div>Pinch zoom</div>
                             </td>
                             <td>
@@ -42,7 +42,7 @@
                             </td>
                         </tr>
                         <tr style="height: 50px">
-                            <td style="width: 80%">
+                                <td style="width: 50%">
                                 <div>Single click zoom</div>
                             </td>
                             <td>
@@ -50,11 +50,20 @@
                             </td>
                         </tr>
                         <tr style="height: 50px">
-                            <td style="width: 80%">
+                                <td style="width: 50%">
                                 <div>Double click zoom</div>
                             </td>
                             <td>
                                 <input id="doubletap" style="margin-top: 15px" type="checkbox">
+                            </td>
+                        </tr>
+                        <tr style="height: 50px" >
+                            <td style="width: 50%" >
+                                Animation duration <span id='slider1'>&nbsp;&nbsp;&nbsp;500</span> &nbsp; ms
+                            </td><td></td>
+                            <td>
+                                <ejs-slider #slide1 id="range"   min= 0 max= 1000 (change) ='setAnimation($event)'
+                                    value= 500 step = 250 style="width: 100px;"></ejs-slider>
                             </td>
                         </tr>
                     </tbody>
@@ -64,6 +73,9 @@
     </div>
 </div>
 <style>
+      #range > * {
+            padding: 0px !important;
+        }
     .slider-content-wrapper {
         width: 40%;
         margin: 0 auto;

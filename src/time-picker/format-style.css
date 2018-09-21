@@ -1,0 +1,22 @@
+.control-section {
+    margin: 30px;
+}
+
+.control_wrapper {
+    display: block;
+    margin: 0 auto;
+    padding: 4% 0;
+    max-width: 300px;
+}
+
+.e-bigger .control-section {
+    margin-top: 60px;
+}
+
+#description {
+    margin: 30px;
+}
+
+.tabs-wrap {
+    padding: 0px 0px 10px;
+}

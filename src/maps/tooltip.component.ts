@@ -1,7 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { MapsTheme, Maps, MapsTooltip, Legend, ITooltipRenderEventArgs, ILoadEventArgs } from '@syncfusion/ej2-ng-maps';
-import { world_cup } from './MapData/SouthAmerica_Countries';
-import { World_Map } from './MapData/WorldMap';
+import { MapsTheme, Maps, MapsTooltip, Legend, ITooltipRenderEventArgs, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
+import { MapAjax } from '@syncfusion/ej2-maps';
 
 Maps.Inject(MapsTooltip, Legend);
 
@@ -11,12 +10,11 @@ Maps.Inject(MapsTooltip, Legend);
 @Component({
     selector: 'control-content',
     templateUrl: 'tooltip.html',
-    styleUrls: ['maps.style.css'],
     encapsulation: ViewEncapsulation.None
 })
 export class MapsTooltipComponent {
     public tooltipRender = (args: ITooltipRenderEventArgs) => {
-        if (args.content.toString().indexOf('undefined') > -1) {
+        if (!args.options['data']) {
             args.cancel = true;
         }
     };
@@ -41,10 +39,10 @@ export class MapsTooltipComponent {
 
     public layers: object[] = [
         {
-            shapeData: World_Map,
+            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
             shapePropertyPath: 'name',
             shapeDataPath: 'name',
-            dataSource: world_cup,
+            dataSource: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-cup.json'),
             tooltipSettings: {
                 visible: true,
                 valuePath: 'name',

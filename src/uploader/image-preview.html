@@ -1,0 +1,36 @@
+<div class="control-section">
+    <div class="col-lg-9">
+        <div class="control_wrapper">
+            <div class='imagepreview'>
+                <div id='dropArea' style='height: auto'>
+                    <span id='dropimage'> Drop image (JPG, PNG) files here or <a href="" id='browse'><u>Browse</u></a> </span>
+                    <ejs-uploader #previewupload id='previewfileupload' [asyncSettings]='path'
+                        [dropArea]='dropElement' [allowedExtensions]='allowExtensions' (selected)='onSelect($event)'
+                        (success)='onUploadSuccess($event)' (progress)='onFileUpload($event)' (failure)='onUploadFailed($event)' (removing)='onFileRemove($event)'>
+                    </ejs-uploader>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content" style='padding-top:25px;'>
+                <button class="e-btn e-css" id="clearbtn" title="Clear All" style="width:130px">Clear All</button>
+            </div>
+            <div class="property-panel-content" style='padding-top:25px;'>
+                <button class="e-btn e-css" id="uploadbtn" title="Upload All" style="width:130px">Upload All</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates how to add an image preview of the uploaded files. Only image files (PNG, JPG) are allowed to upload in this demo.</p>    <p>This sample demonstrates the how to preview the uploaded images. Click on browse link to choose image files or drag and drop the selected image files and display it with file name, type and size.</p>
+</div>
+
+<div id="description">
+    <p>The Uploader component allows to create preview images after uploaded it. The preview images created by reading the file using success event.  Also, the user can create preview images before uploading to server using select event.</p>
+    
+    <p>For more information, you can refer to the Image Preview section from the documentation.</p>
+</div>

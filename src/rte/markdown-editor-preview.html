@@ -1,0 +1,34 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates how to preview markdown changes in rich text editor. 
+        Type or edit the display text, and apply format to view the preview of markdown. 
+        You can preview the markdown changes immediately in the preview area.
+    </p>
+</div>
+
+<div class="control-section">
+    <div class="sample-container">
+        <div class="default-section">
+            <ejs-richtexteditor id='mdPreview' #mdPreview [toolbarSettings]='tools' [editorMode]='mode' (created)='onCreate()' (actionComplete)="actionComplete($event)" (actionBegin)="handleFullScreen($event)">
+                <ng-template #valueTemplate>
+                In RichTextEditor , you click the toolbar buttons to format the words and the changes are visible immediately.
+                Markdown is not like that. When you format the word in Markdown format, you need to add Markdown syntax to the word to indicate which words 
+                and phrases should look different from each other.
+                RichTextEditor supports markdown editing when the editorMode set as **markdown** and using both *keyboard interaction* and *toolbar action*, you can apply the formatting to text.
+                We can add our own custom formation syntax for the Markdown formation, [sample link](https://ej2.syncfusion.com/home/).
+                The third-party library <b>Marked</b> is used in this sample to convert markdown into HTML content.
+                </ng-template>
+            </ejs-richtexteditor>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>The rich text editor allows you to preview markdown changes immediately using <code>preview</code>. 
+        The third-party library <code>Marked</code> is used in this sample to convert markdown into HTML content.</p>
+
+    <p><b>Injecting Module</b></p>
+    <p>RichTextEditor features are segregated into individual feature-wise modules. To use this MarkDown Preview feature we need to inject following services <code>ToolbarService, LinkService, ImageService, MarkdownEditorService</code> into the <code>@NgModule.providers section</code>.</p>
+
+    <p>The third-party library <code>Marked</code> is used in this sample to convert markdown into HTML content.</p>
+</div>

@@ -1,0 +1,74 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the employee’s age group in various departments of a country with box and whisker type series in the chart. Mode of box and whisker series can be changed by <code>Mode</code> in property panel. To display the <code>mean</code> value in a series, enable the Mean in the property panel.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-lg-9">
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [legendSettings]='legend' #chart id='chartcontainer' [primaryXAxis]='primaryXAxis' [tooltip]='tooltip' [primaryYAxis]='primaryYAxis'
+            [title]='title' (load)='load($event)' (pointRender)='pointRender($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='data1' name='Department' type='BoxAndWhisker' xName='x' yName='y' [marker]='marker'> </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tr style="height: 50px">
+                        <td style="width: 50%">
+                            <div>Mode:</div>
+                        </td>
+                        <td style="width: 50%;padding-left: 10px; padding-right: 10px">
+                            <div>
+                                <select name="selectIndex" id="selmode" style="margin-left: -10px">
+                                        <option value='Normal'>Normal</option>        
+                                        <option value='Exclusive'>Exclusive</option>
+                                        <option value='Inclusive'>Inclusive</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 50%">
+                            <div>Mean:</div>
+                        </td>
+                        <td style="width: 50%;padding-left: 10px; padding-right: 10px">
+                            <div>
+                                <input type="checkbox" (change)='check($event)' id="mean" checked="">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the box and whisker type charts. Similar to line type series, but
+        the area get closed and filled with series color. You can use <code>border</code>, <code>fill</code> properties
+        to customize the area. <code>marker</code> and <code>dataLabel</code> are used to represent individual data and its
+        value. Legend is enabled in this example with series type shape.
+    </p>
+    <p>
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use BoxandWhisker series, we need to inject
+        <code>BoxAndWhiskerSeriesService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information on the BoxAndWhisker can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#datetimemodule-datetime">documentation section</a>.
+    </p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

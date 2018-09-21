@@ -1,18 +1,13 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, IAxisLabelRenderEventArgs, ChartTheme, ITooltipRenderEventArgs } from '@syncfusion/ej2-ng-charts';
-import { chartData } from './financial-data';
+import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { ILoadedEventArgs, IAxisLabelRenderEventArgs, ChartTheme, ITooltipRenderEventArgs, IRangeLoadedEventArgs,
+ IChangedEventArgs, ChartComponent, IPointRenderEventArgs} from '@syncfusion/ej2-angular-charts';
+import { chartDataValue } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Sample for Candle Series
  */
-let date1: Date = new Date(2017, 1, 1);
-let returnValue: any = chartData.filter(filterValue);
-function filterValue(value: { x: Date, high: number, low: number }): any {
-    if (value.x >= date1) {
-        return value.x, value.high, value.low;
-    }
-}
+let pointColors: string[] = [];
 @Component({
     selector: 'control-content',
     templateUrl: 'candle.html',
@@ -20,21 +15,19 @@ function filterValue(value: { x: Date, high: number, low: number }): any {
     encapsulation: ViewEncapsulation.None
 })
 export class CandleChartComponent {
-    public data1: Object[] = returnValue;
+    @ViewChild('chartcontainer')
+    public chart: ChartComponent;
+    public data1: Object[] = chartDataValue;
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
-        minimum: new Date(2016, 12, 31),
-        maximum: new Date(2017, 9, 31),
         crosshairTooltip: { enable: true },
         majorGridLines: { width: 0 },
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Volume',
-        labelFormat: '{value}',
         valueType: 'Logarithmic',
-        minimum: 500000000, maximum: 130000000, opposedPosition: true,
+        opposedPosition: true,
         majorGridLines: { width: 1 },
         lineStyle: { width: 0 },
         stripLines: [
@@ -52,12 +45,10 @@ export class CandleChartComponent {
     ];
 
     public axes: Object = [{
-        name: 'secondary', minimum: 100, maximum: 180, interval: 20, opposedPosition: true, rowIndex: 1, majorGridLines: { width: 1 },
-        labelFormat: '${value}', title: 'Price', plotOffset: 30, lineStyle: { width: 0 }
+        name: 'secondary', opposedPosition: true, rowIndex: 1, majorGridLines: { width: 1 },
+        labelFormat: 'n0',  plotOffset: 30, lineStyle: { width: 0 }, rangePadding: 'None'
 
     }];
-
-    public title: string = 'AAPL Historical';
     public tooltip: Object = {
         enable: true,
         shared: true
@@ -75,6 +66,14 @@ export class CandleChartComponent {
         if (args.axis.name === 'primaryYAxis') {
             args.text = this.getLabelText(+args.text);
         }
+        if (args.axis.name === 'secondary') {
+                args.text = '$' + args.text;
+            }
+    };
+    public pointRender(args: IPointRenderEventArgs): void {
+         if (args.series.type === 'Candle') { pointColors.push(args.fill); } else {
+                args.fill = pointColors[args.point.index];
+            }
     };
     public width: string = Browser.isDevice ? '100%' : '80%';
     public legendSettings: Object = {
@@ -93,6 +92,42 @@ export class CandleChartComponent {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    };
+    public loadPeriodic(args: IRangeLoadedEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.rangeNavigator.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+    };
+    public loaded(args: IRangeLoadedEventArgs): void {
+        if (!Browser.isDevice) {
+            document.getElementById('containerTop_Secondary_Element').style.transform = 'translate(13%)';
+        }
+    };
+    public periodSelectorSettings: Object = {
+        position: 'Top',
+        periods: [
+                { text: '1M', interval: 1, intervalType: 'Months' },
+                { text: '3M', interval: 2, intervalType: 'Months' },
+                { text: '2Q', interval: 2, intervalType: 'Quarter' },
+                { text: '1Y', interval: 1, intervalType: 'Years' },
+                { text: '2Y', interval: 2, intervalType: 'Years', selected: true },
+                { text: 'YTD' },
+                { text: 'All' }
+            ]
+    };
+    public changed(args: IChangedEventArgs): void {
+    let data: Object[] = chartDataValue.filter((data: object) => {
+                    /* tslint:disable:no-string-literal */
+                    return (data['x'].getTime() >= (args.start as Date).getTime() &&
+                        data['x'].getTime() <= (args.end as Date).getTime());
+                });
+          this.chart.series[0].dataSource = data;
+          this.chart.series[1].dataSource = data;
+          this.chart.series[0].animation.enable = false;
+          this.chart.series[1].animation.enable = false;
+          this.chart.primaryXAxis.zoomFactor = 1;
+          this.chart.primaryXAxis.zoomPosition = 0;
+          this.chart.refresh();
     };
     constructor() {
         //code

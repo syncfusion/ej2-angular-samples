@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { orderDetails } from './data';
-import { RowDDService, SelectionService } from '@syncfusion/ej2-ng-grids';
+import { RowDDService, SelectionService } from '@syncfusion/ej2-angular-grids';
 
 
 @Component({

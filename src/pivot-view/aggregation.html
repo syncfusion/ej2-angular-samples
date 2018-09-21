@@ -1,0 +1,69 @@
+<div id="action-description">
+    <p>This sample demonstrates the aggregate types in the pivotgrid widget. In this sample, you can change the aggregate types
+        for value fields using a dropdown list separately.</p>
+</div>
+<div id="description">
+    <p>The pivotgrid widget supports different types of aggregation for value fields. The aggregate type can be set using the
+        type property of the value field. The built-in aggregates are:
+    </p>
+    <ul>
+        <li>
+            <code>Sum</code>
+        </li>
+        <li>
+            <code>Average</code>
+        </li>
+        <li>
+            <code>Min</code>
+        </li>
+        <li>
+            <code>Max</code>
+        </li>
+        <li>
+            <code>Count</code>
+        </li>
+    </ul>
+</div>
+<div class="control-section">
+    <div class="col-lg-9">
+        <ejs-pivotview #pivotview id='PivotView' [dataSource]=dataSource showFieldList='true' width='100%' height='300' [gridSettings]='gridSettings'>
+        </ejs-pivotview>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tbody>
+                        <tr style="height: 50px">
+                            <td>
+                                <div>
+                                    <select id="freightdrpdwn" name="ddl-view-mode">
+                                        <option value='Sum' selected>Sum</option>
+                                        <option value='Avg'>Average</option>
+                                        <option value='Min'>Min</option>
+                                        <option value='Max'>Max</option>
+                                        <option value='Count'>Count</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 50px">
+                            <td>
+                                <div>
+                                    <select id="pricedrpdwn" name="ddl-view-mode">
+                                        <option value='Sum' selected>Sum</option>
+                                        <option value='Avg'>Average</option>
+                                        <option value='Min'>Min</option>
+                                        <option value='Max'>Max</option>
+                                        <option value='Count'>Count</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { AccumulationChartComponent, AccumulationChart, IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-ng-charts';
+import { AccumulationChartComponent, AccumulationChart, AccumulationDataLabel, IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-angular-charts';
 
 /**
  * Sample for doughnut 
@@ -16,7 +16,8 @@ export class DoughnutComponent {
     { x: 'Insurance', y: 16, text: '16%' }];
     //Initializing Legend
     public legendSettings: Object = {
-        visible: false,
+        visible: true,
+        position: 'Top'
     };
     //Initializing DataLabel
     public dataLabel: Object = {
@@ -35,7 +36,7 @@ export class DoughnutComponent {
     };
     public startAngle: number = 0;
     public endAngle: number = 360;
-    public tooltip: Object = { enable: true, format: '${point.x} : <b>${point.y}%</b>' };
+    public tooltip: Object = { enable: false };
     public title: string = 'Project Cost Breakdown';
     constructor() {
         //code

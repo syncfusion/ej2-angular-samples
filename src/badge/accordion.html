@@ -1,0 +1,58 @@
+<div class="col-lg-12 control-section">
+    <div class="sample_container badge-accordion">
+        <ejs-accordion id="accordion" (created)="onCreated()">
+            <e-accordionitems>
+                <e-accordionitem header='Robert' iconCss='e-people e-acrdn-icons' [expanded]=true>
+                    <ng-template #content>
+                        <div style="display:none">
+                            <li class="msg">
+                                <span class="e-acrdn-icons e-content-icon people"></span>Message Thread</li>
+                            <li class="msg">
+                                <span class="e-acrdn-icons e-content-icon people"></span>Message Thread</li>
+                        </div>
+                    </ng-template>
+                </e-accordionitem>
+                <e-accordionitem header='Kevin' iconCss='e-people e-acrdn-icons'>
+                    <ng-template #content>
+                        <div style="display:none">
+                            <li class="msg">
+                                <span class="e-acrdn-icons e-content-icon people"></span>Message Thread</li>
+                            <li class="msg">
+                                <span class="e-acrdn-icons e-content-icon people"></span>Message Thread</li>
+                        </div>
+                    </ng-template>
+                </e-accordionitem>
+                <e-accordionitem header='Eric' iconCss='e-people e-acrdn-icons'>
+                    <ng-template #content>
+                        <div style="display:none">
+                            <li class="msg">
+                                <span class="e-acrdn-icons e-content-icon people"></span>Message Thread</li>
+                            <li class="msg">
+                                <span class="e-acrdn-icons e-content-icon people"></span>Message Thread</li>
+                        </div>
+                    </ng-template>
+                </e-accordionitem>
+                <e-accordionitem header='Peter' iconCss='e-people e-acrdn-icons'>
+                    <ng-template #content>
+                        <div style="display:none">
+                            <li class="msg">
+                                <span class="e-acrdn-icons e-content-icon people"></span>Message Thread</li>
+                            <li class="msg">
+                                <span class="e-acrdn-icons e-content-icon people"></span>Message Thread</li>
+                        </div>
+                    </ng-template>
+                </e-accordionitem>
+            </e-accordionitems>
+        </ejs-accordion>
+    </div>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates the integration of badges into the accordion component to display the thread notification count.</p>
+</div>
+
+<div id="description">
+    <p>The badge can be integrated into the accordion with the help of templates to display the count of new messages in the
+        message thread. Here, the success badge is used in the accordion. To add success badge, add the
+        <code>.e-badge-success</code> class.
+    </p>
+</div>

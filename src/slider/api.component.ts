@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SliderComponent, NumericTextBoxComponent, SliderChangeEventArgs } from '@syncfusion/ej2-ng-inputs';
-import { CheckBoxComponent } from '@syncfusion/ej2-ng-buttons';
+import { SliderComponent, NumericTextBoxComponent, SliderChangeEventArgs } from '@syncfusion/ej2-angular-inputs';
+import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
 
@@ -24,48 +24,66 @@ export class APIComponent {
     public max: number = 100;
     public type: string = 'MinRange';
     public format: string = 'n0';
-    public ticks: Object = { placement: 'After', largeStep: 20};
+    public ticks: Object = { placement: 'After', largeStep: 20 };
     public tooltip: Object = { isVisible: true, placement: 'Before', showOn: 'Hover' };
     change(args: any) {
-        this.slider.value = args.value;
+        if (args.value) {
+            this.slider.value = args.value;
+        }
     }
     min_change(args: any) {
-        this.slider.min = args.value;
+        if (args.value) {
+            this.slider.min = args.value;
+        }
     }
     max_change(args: any) {
-        this.slider.max = args.value;
+        if (args.value) {
+            this.slider.max = args.value;
+        }
     }
     step_change(args: any) {
-        this.slider.step = args.value;
+        if (args.value) {
+            this.slider.step = args.value;
+        }
     }
     sliderChange(args: SliderChangeEventArgs) {
-        this.numericTextBox.value = <number>args.value;
+        if (args.value) {
+            this.numericTextBox.value = <number>args.value;
+        }
     }
 
     button_onChange(args: ChangeEventArgs) {
         this.slider.showButtons = args.checked;
+        this.slider.dataBind();
     }
     orientation_onChange(args: ChangeEventArgs) {
         args.checked ? this.slider.orientation = 'Vertical' : this.slider.orientation = 'Horizontal';
+        this.slider.dataBind();
     }
     readOnly_onChange(args: ChangeEventArgs) {
-        this.slider.readOnly = args.checked;
+        this.slider.readonly = args.checked;
+        this.slider.dataBind();
     }
     disabled_onChange(args: ChangeEventArgs) {
         this.slider.enabled = !args.checked;
+        this.slider.dataBind();
     }
 
     buttonM_onChange(args: ChangeEventArgs) {
         this.slider.showButtons = args.checked;
+        this.slider.dataBind();
     }
     orientationM_onChange(args: ChangeEventArgs) {
         args.checked ? this.slider.orientation = 'Vertical' : this.slider.orientation = 'Horizontal';
+        this.slider.dataBind();
     }
     readOnlyM_onChange(args: ChangeEventArgs) {
-        this.slider.readOnly = args.checked;
+        this.slider.readonly = args.checked;
+        this.slider.dataBind();
     }
     disabledM_onChange(args: ChangeEventArgs) {
         this.slider.enabled = !args.checked;
+        this.slider.dataBind();
     }
 
     ngOnInit() {

@@ -7,3 +7,10 @@
     position: relative;
     margin: 15px 0;
 }
+.e-upload {
+    float: none;
+}
+.e-upload .e-upload-actions {
+    float: none;
+    text-align: right;
+}

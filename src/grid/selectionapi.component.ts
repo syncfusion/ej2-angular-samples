@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
 import { orderDetails } from './data';
-import { SelectionService } from '@syncfusion/ej2-ng-grids';
+import { SelectionService } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ej-gridselect',

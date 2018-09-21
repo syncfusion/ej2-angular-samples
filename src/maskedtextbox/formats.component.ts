@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MaskChangeEventArgs, Input } from '@syncfusion/ej2-inputs';
-import { MaskedTextBoxComponent } from '@syncfusion/ej2-ng-inputs';
-import { DropDownListComponent } from '@syncfusion/ej2-ng-dropdowns';
+import { MaskedTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 
 @Component({
     selector: 'control-content',
@@ -23,7 +23,7 @@ export class FormatMaskedTextboxController {
     ];
     public dynamicMask: string = "(999)-999-9999";
     public dynamicPrompt: string = "_";
-    ngAfterViewInit(): void {
+    public onCreated(): void {
         (document.getElementById('val2') as HTMLElement).innerHTML = this.formatMask.getMaskedValue();
     }
     // Masked and un-masked values will be updated in the properties panel, while Masked Textbox value changes

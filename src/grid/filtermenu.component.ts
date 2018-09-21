@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { orderDetails } from './data';
 import { ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
-import { GridComponent, FilterService, FilterType } from '@syncfusion/ej2-ng-grids';
+import { GridComponent, FilterService, FilterType } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ej-gridfiltermenu',

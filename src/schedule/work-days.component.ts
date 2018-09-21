@@ -1,23 +1,23 @@
 import { Component, ViewChild } from '@angular/core';
 import { scheduleData } from './datasource';
 import { extend } from '@syncfusion/ej2-base';
-import { ChangeEventArgs } from '@syncfusion/ej2-ng-dropdowns';
-import { ScheduleComponent, EventSettingsModel, View, EventRenderedArgs } from '@syncfusion/ej2-ng-schedule';
-import { WeekService, MonthService } from '@syncfusion/ej2-ng-schedule';
+import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { ScheduleComponent, EventSettingsModel, View, EventRenderedArgs, WeekService, MonthService, TimelineViewsService, TimelineMonthService, ResizeService, WorkHoursModel } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
+    selector: 'control-content',
     templateUrl: 'work-days.html',
-    providers: [WeekService, MonthService]
+    providers: [WeekService, MonthService, TimelineViewsService, TimelineMonthService, ResizeService]
 })
 export class WorkDaysComponent {
     @ViewChild('scheduleObj')
     public scheduleObj: ScheduleComponent;
-    public selectedDate: Date = new Date(2018, 1, 15);
+    public selectedDate: Date = new Date(2018, 1, 14);
     public currentView: View = 'Week';
     public workDays: number[] = [1, 3, 5];
+    public workHours: WorkHoursModel = { start: '08:00' };
     public data: object[] = <Object[]>extend([], scheduleData, null, true);
-    public eventSettings: EventSettingsModel = { dataSource: this.data };;
-
+    public eventSettings: EventSettingsModel = { dataSource: this.data };
     public workDaysData: Object[] = [
         { Id: '1,3,5', days: 'Mon, Wed, Fri' },
         { Id: '1,2,3,4,5', days: 'Mon, Tue, Wed, Thu, Fri' },
@@ -26,7 +26,6 @@ export class WorkDaysComponent {
     ];
     public workDaysValue: string = '1,3,5';
     public workDaysFields: Object = { text: 'days', value: 'Id' };
-
     public dayOfWeekList: Object[] = [
         { Id: '0', date: 'Sunday' },
         { Id: '1', date: 'Monday' },
@@ -39,12 +38,12 @@ export class WorkDaysComponent {
     public dayOfWeekValue: string = '0';
     public dayOfWeekField: Object = { text: 'date', value: 'Id' };
 
-    changeDayofWeek(e: ChangeEventArgs) {
+    changeDayofWeek(e: ChangeEventArgs): void {
         this.scheduleObj.firstDayOfWeek = parseInt(<string>e.value, 10);
         this.scheduleObj.dataBind();
     }
 
-    changeWorkDays(e: ChangeEventArgs) {
+    changeWorkDays(e: ChangeEventArgs): void {
         this.scheduleObj.workDays = e.value.toString().split(',').map(Number);
         this.scheduleObj.dataBind();
     }

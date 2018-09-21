@@ -1,6 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { MapsTheme, Maps, Annotations, Marker, ILoadEventArgs } from '@syncfusion/ej2-ng-maps';
-import { africa_continent } from './MapData/africa_continent';
+import { MapsTheme, Maps, Annotations, Marker, ILoadEventArgs, MapAjax } from '@syncfusion/ej2-angular-maps';
 
 Maps.Inject(Annotations, Marker);
 
@@ -9,8 +8,7 @@ Maps.Inject(Annotations, Marker);
  */
 @Component({
     selector: 'control-content',
-    templateUrl: 'annotation.html',
-    styleUrls: ['maps.style.css'],  
+    templateUrl: 'annotation.html',  
     encapsulation: ViewEncapsulation.None
 })
 export class MapsAnnotationComponent {
@@ -35,7 +33,7 @@ export class MapsAnnotationComponent {
             {
                 shapeDataPath: 'name',
                 shapePropertyPath: 'name',
-                shapeData: africa_continent,
+                shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/africa-continent.json'),
                 shapeSettings: {
                     fill: 'url(#grad1)'
                 },

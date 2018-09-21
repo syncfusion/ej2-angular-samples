@@ -2,7 +2,7 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
     AccumulationChartComponent, AccumulationChart, IAccLoadedEventArgs,
     IAccResizeEventArgs, AccumulationTheme
-} from '@syncfusion/ej2-ng-charts';
+} from '@syncfusion/ej2-angular-charts';
 
 /**
  * Sample for Funnel Chart
@@ -65,6 +65,7 @@ export class FunnelComponent {
         fill: 'red', mode: 'Drop'
     };
     public explode: boolean = true;
+    public legendSettings: Object = { toggleVisibility: false };
     public tooltip: Object = { enable: true, format: '${point.x} : <b>${point.y}%</b>' };
     public title: string = 'Website Visitors';
     constructor() {

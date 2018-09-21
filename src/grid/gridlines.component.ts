@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { removeClass, addClass } from '@syncfusion/ej2-base';
-import { GridLine, GridComponent } from '@syncfusion/ej2-ng-grids';
+import { GridLine, GridComponent } from '@syncfusion/ej2-angular-grids';
 import { customerData } from './data';
 
 @Component({

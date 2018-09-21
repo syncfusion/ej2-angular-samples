@@ -1,0 +1,132 @@
+<div id="action-description">
+    <p>This sample demonstrate the usage of API in RichTextEditor, use the properties panel to change the maximum length, read
+        only mode, disable status, to get value, enable HTML encode, select all content and get selected HTML from the RichTextEditor.</p>
+</div>
+
+<div class="col-lg-8 control-section">
+    <div class="control-wrapper">
+        <div class="sample-container">
+            <div class="default-section">
+                <ejs-richtexteditor id='apiRTE' #apiRTE [showCharCount]='true' [maxLength]='maxLength'>
+                    <ng-template #valueTemplate>
+                        <p>RichTextEditor is a WYSIWYG editing control which will reduce the effort for users while trying to express their formatting word content as HTML or Markdown format.</p>
+                    <p><b>API’s:</b></p>
+                    <ul>
+                        <li>
+                            <p>maxLength - allows to restrict the maximum length to be entered.</p>
+                        </li>
+                        <li>
+                            <p>readOnly - allows to change it as non-editable state.</p>
+                        </li>
+                        <li>
+                            <p>enabled - enable or disable the RTE component.</p>
+                        </li>
+                        <li>
+                            <p>enableHtmlEncode - Get the encoded string value through value property and source code panel</p>
+                        </li>
+                        <li>
+                            <p>getValue - get the value of RTE.</p>
+                        </li>
+                        <li>
+                            <p>getSelection - get the selected text of RTE.</p>
+                        </li>
+                        <li>
+                            <p>selectAll - select all content in RTE.</p>
+                        </li>
+                    </ul>
+                    </ng-template>
+                </ejs-richtexteditor>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 property-section">
+    <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+            <table id="property" title="Properties">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div>Maximum Length </div>
+                        </td>
+                        <td>
+                            <div>
+                                <ejs-numerictextbox #numeric id="maxlength" [value]='numericValue' [min]='numericmin' [max]='numericmax' [format]='numericformat' (change)="onValChange()"></ejs-numerictextbox>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>ReadOnly </div>
+                        </td>
+                        <td>
+                            <div>
+                                <ejs-checkbox #readonly [checked]="false" (change)="onChangeRead()"></ejs-checkbox>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Enabled </div>
+                        </td>
+                        <td>
+                            <div>
+                                <ejs-checkbox #enable [checked]="true" (change)="onChangeEnable()"></ejs-checkbox>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Enable Html Encode </div>
+                        </td>
+                        <td>
+                            <div>
+                                <ejs-checkbox #enablehtml [checked]="false" (change)="onChangeHtml()"></ejs-checkbox>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div>
+                                <button id="getVal" ejs-button (click)="getVal()">Get Value</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div>
+                                <button id="selectHtml" ejs-button (click)="getSelect()">Get Selection</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div>
+                                <button id="selectall" ejs-button (click)="selectAll()">Select All </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>In this demos, Ensuring the API'S behavious by doing</p>
+    <ul>
+        <li>Change the value of <code>maxLength</code> textbox to change maximum Length of character.</li>
+        <li>Click the <code>readOnly</code> check box to enable/disable editable and non-editable mode of the RTE.</li>
+        <li>Click the <code>enabled</code> check box to enable/disable the RTE component.</li>
+        <li>Click the <code>enableHtmlEncode</code> check box to enableHtmlEncode/disableHtmlEncode the RTE component.</li>
+        <li>Click the <code>getValue</code> button which shows the RTE values in the alert window.</li>
+        <li>Click the <code>getSelection</code> button which shows the selectedText in the alert window.</li>
+        <li>Click the <code>selectAll</code> button selecting all text content in the RTE.</li>
+    </ul>
+    <p><b>Injecting Module</b></p>
+    <p>RichTextEditor features are segregated into individual feature-wise modules. In this demo we have used following injectable services <code>ToolbarService, LinkService, ImageService, HtmlEditorService, CountService, QuickToolbarService</code> into the <code>@NgModule.providers section</code>.</p>
+</div>

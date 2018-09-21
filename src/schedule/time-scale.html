@@ -1,0 +1,90 @@
+<div class="control-section">
+    <div class="col-lg-9 content-wrapper">
+        <ejs-schedule #schedule width='100%' height='650px' [timeScale]="timeScale" [selectedDate]="selectedDate" [eventSettings]="eventSettings"
+            [(currentView)]="currentView">
+            <e-views>
+                <e-view option="Day"></e-view>
+                <e-view option="Week"></e-view>
+                <e-view option="TimelineDay"></e-view>
+                <e-view option="TimelineWeek"></e-view>
+            </e-views>
+        </ejs-schedule>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <div id="property" class="property-panel-table" title="Properties">
+                    <table id="property" title="Properties" style="width: 100%">
+                        <tbody>
+                            <tr style="height: 50px">
+                                <td style="width: 50%">
+                                    <div> Interval </div>
+                                    <span>(in Minutes)</span>
+                                </td>
+                                <td style="width: 50%;">
+                                    <div>
+                                        <ejs-dropdownlist [dataSource]='intervalData' [value]='intervalValue' (change)='changeInterval($event)' popupHeight="200px"></ejs-dropdownlist>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                <td style="width: 50%">
+                                    <div>Slot Count
+                                    </div>
+                                </td>
+                                <td style="width: 50%;">
+                                    <div>
+                                        <ejs-dropdownlist [dataSource]='slotCountData' [value]='slotCountValue' (change)='changeSlotCount($event)' popupHeight="200px"></ejs-dropdownlist>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                <td style="width: 50%">
+                                    <div>Grid lines
+                                    </div>
+                                </td>
+                                <td style="width: 50%;">
+                                    <div>
+                                        <ejs-dropdownlist [dataSource]='timescaleData' [value]='timescaleValue' (change)='changeTimescale($event)'></ejs-dropdownlist>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                <td style="width: 50%">
+                                    <div>Apply Template
+                                    </div>
+                                </td>
+                                <td style="width: 50%;">
+                                    <div>
+                                        <ejs-dropdownlist [dataSource]='templateData' [value]='templateValue' (change)='changeTemplate($event)'></ejs-dropdownlist>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This demo depicts how to customize the grid lines of schedule with different duration, count and also, how to apply template
+        customizations on it.
+
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this demo, schedule has been allowed to display different number of grid lines per hour assigned with different duration
+        to each cell, by making use of the
+        <code>interval</code> and
+        <code>slotCount</code> properties. The grid lines can also be disabled on schedule, by setting `false` to the
+        <code>enable</code> property available within
+        <code>timeScale</code>. The time header text can be customized by making use of the
+        <code>majorSlotTemplate</code> and
+        <code>minorSlotTemplate</code> properties.
+    </p>
+</div>

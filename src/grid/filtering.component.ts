@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { categoryData } from './data';
 import { ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
-import { FilterService, GridComponent } from '@syncfusion/ej2-ng-grids';
+import { FilterService, GridComponent } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ej2-gridfilter',

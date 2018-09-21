@@ -10,7 +10,7 @@ import { Tab, Accordion} from '@syncfusion/ej2-navigations';
 import { Locale } from './locale-string';
 import { samplesList } from './samplelist';
 import { LPController, MyWindow } from './lp.component';
-import { ListViewComponent, SelectEventArgs } from '@syncfusion/ej2-ng-lists';
+import { ListViewComponent, SelectEventArgs } from '@syncfusion/ej2-angular-lists';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
@@ -32,8 +32,8 @@ interface DestroyMethod extends HTMLElement {
 }
 
 declare let window: MyWindow;
-let sbObj: { [index: string]: string } = { 'react': 'react', 'javascript': 'javascript' }
-let sbArray: string[] = ['react', 'ts', 'javascript','asp_core','asp_mvc'];
+let sbObj: { [index: string]: string } = { 'react': 'react', 'javascript': 'javascript', 'vue' : 'vue' }
+let sbArray: string[] = ['react', 'ts', 'javascript','asp_core','asp_mvc', 'vue'];
 let urlRegex: RegExp = /(npmci\.syncfusion\.com|ej2\.syncfusion\.com)(\/)(development|production)*/;
 let sampleRegex: RegExp = /#\/(([^\/]+\/)+[^\/\.]+)/;
 let cBlock: string[] = ['ts-src-tab', 'html-src-tab'];
@@ -228,17 +228,7 @@ export class SBController {
         }
         this.breadCrumbObject.sample.innerHTML = sampleName;
         let title: HTMLElement = document.querySelector('title');
-        let txt: string = title.innerHTML;
-        let num: number = txt.indexOf('-');
-        if (num !== -1) {
-            txt = txt.slice(0, num + 1);
-            txt += ' ' + controlName + ' > ' + sampleName;
-        }
-        else {
-            txt += ' - ' + controlName + ' > ' + sampleName;
-        }
-        title.innerHTML = txt;
-
+        title.innerHTML = controlName + ' · ' + sampleName + ' · Essential JS 2 for Angular · Syncfusion ' ;
     }
 
     renderTabToolBar() {
@@ -286,7 +276,6 @@ export class SBController {
         this.themePopup.hide();
 
         this.settingsPopup = new Popup(document.getElementById('settings-popup'), {
-            offsetX: -245,
             offsetY: 5,
             relateTo: <any>select('.sb-setting-btn'),
             position: { X: 'right', Y: 'bottom' }
@@ -784,9 +773,7 @@ export class SBController {
         let propPanel: HTMLElement = <HTMLElement>document.querySelector('.property-section');
         if (propPanel) {
             let pClose: boolean = !propPanel.classList.contains('sb-hide');
-            if (close === true || pClose) {
-                debugger
-                this.aniObject.animate(propPanel, {
+            if (close === true || pClose) {                this.aniObject.animate(propPanel, {
                     name: 'SlideRightOut',
                     duration: 400,
                     end: () => {
@@ -796,7 +783,6 @@ export class SBController {
                 });
             } else {
                 propPanel.classList.remove('sb-hide');
-                debugger
                 this.aniObject.animate(propPanel, {
                     name: 'SlideRightIn',
                     duration: 400,

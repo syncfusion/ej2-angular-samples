@@ -9,7 +9,25 @@
         <ejs-chart style='display:block' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
             [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' [width]='width' [legendSettings]='legend'>
             <e-annotations>
-                <e-annotation [content]='content' x='90%' y='12%' region='Series'>
+                 <e-annotation x='90%' y='12%' region='Series'>
+                        <ng-template #content>
+                                <div style='width:80px; padding: 5px;'>
+                                    <table style='width: 100%'>
+                                        <tr> 
+                                            <td><div style='width: 10px; height: 10px; background:blue;border-radius: 15px;'></div></td>
+                                            <td style='padding-left: 5px;'>High</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div style='width: 10px; height: 10px; background:green;;border-radius: 15px;'></div></td>
+                                            <td style='padding-left: 5px;'>Medium </td>
+                                        </tr>
+                                        <tr>
+                                            <td><div style='width: 10px; height: 10px; background:red;;border-radius: 15px;'></div></td>
+                                            <td style='padding-left: 5px;'>Low</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                        </ng-template>
                 </e-annotation>
             </e-annotations>
             <e-series-collection>

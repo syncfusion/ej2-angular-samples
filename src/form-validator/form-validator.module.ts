@@ -9,7 +9,7 @@ export const formValidatorAppRoutes: Object[] = [
         component: DefaultFormValidatorComponent,
         name: 'Default Functionalities',
         category: 'Form Validator'
-    }
+    },
 ];
 
 export const formValidatorRouter: ModuleWithProviders = RouterModule.forChild(formValidatorAppRoutes);

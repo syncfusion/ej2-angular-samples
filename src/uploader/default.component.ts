@@ -1,8 +1,8 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { EmitType, detach } from '@syncfusion/ej2-base';
-import { UploaderComponent } from '@syncfusion/ej2-ng-inputs';
+import { UploaderComponent, RemovingEventArgs } from '@syncfusion/ej2-angular-inputs';
 import { createSpinner, showSpinner, hideSpinner } from '@syncfusion/ej2-popups';
-import { CheckBoxComponent } from '@syncfusion/ej2-ng-buttons';
+import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * Default Uploader Default Component
@@ -27,33 +27,11 @@ export class DefaultUploaderComponent {
     public dropElement: HTMLElement = document.getElementsByClassName('control-fluid')[0] as HTMLElement;
 
     public changeHandler: EmitType<Object> = () => {
-        this.uploadObj.autoUpload = this.checkboxObj.checked;
-        if (this.uploadObj.element.closest('.e-upload').querySelector('.e-spinner-pane')) {
-            detach((this.uploadObj.element.closest('.e-upload').querySelector('.e-spinner-pane')));
-        }
+        this.uploadObj.autoUpload = this.checkboxObj.checked;     
         this.uploadObj.clearAll();
     }
 
-    public onSuccess:  EmitType<Object> = (args: any) => {
-        let uploadWrapper: HTMLElement = this.uploadObj.element.closest('.e-upload') as HTMLElement;
-        let li: HTMLElement = uploadWrapper.querySelector('[data-file-name="' + args.file.name + '"]');
-        if (args.operation === 'upload') {
-            (li.querySelector('.e-file-delete-btn') as HTMLElement).onclick = () => {
-                this.generateSpinner(uploadWrapper);
-            };
-            (li.querySelector('.e-file-delete-btn') as HTMLElement).onkeydown = (e: any) => {
-                if (e.keyCode === 13) {
-                    this.generateSpinner(e.target.closest('.e-upload'));
-                }
-            };
-        } else {
-            hideSpinner(uploadWrapper);
-            detach(uploadWrapper.querySelector('.e-spinner-pane'));
-        }
-    }
-
-    public generateSpinner(targetElement: HTMLElement): void {
-        createSpinner({ target: targetElement, width: '25px' });
-        showSpinner(targetElement);
+    public onFileRemove(args: RemovingEventArgs): void {
+        args.postRawFile = false;
     }
 }

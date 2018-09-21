@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { orderData } from './data';
-import { AggregateService } from '@syncfusion/ej2-ng-grids';
+import { AggregateService } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ej2-gridaggregate',

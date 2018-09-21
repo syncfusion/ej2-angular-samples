@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { categoryData } from './data';
-import { ToolbarService } from '@syncfusion/ej2-ng-grids';
+import { ToolbarService } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ej-gridsearch',

@@ -62,6 +62,26 @@
                             </div>
                         </td>
                     </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div>Enable Trim:</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="checkbox" (change)='trim($event)' id="Trim" unchecked>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div>Maximum Label Width:</div>
+                        </td>
+                        <td style="width: 40%;padding-left: 10px; padding-right: 10px">
+                            <div class="control-label">
+                                <ejs-numerictextbox #width [value]=34 [min]=1 [step]=1 (change)='labelWidth($event)'></ejs-numerictextbox>
+                            </div>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>

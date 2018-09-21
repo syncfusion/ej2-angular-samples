@@ -1,7 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { SliderModule, SliderComponent, Placement } from '@syncfusion/ej2-ng-inputs';
-import { DropDownListComponent } from '@syncfusion/ej2-ng-dropdowns';
-import { CheckBoxComponent, ChangeEventArgs } from '@syncfusion/ej2-ng-buttons';
+import { SliderModule, SliderComponent, Placement } from '@syncfusion/ej2-angular-inputs';
+import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { CheckBoxComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
 /**
  * Ticks sample
  */
@@ -43,10 +43,14 @@ export class TicksSliderComponent {
     public fields: Object = { text: 'text', value: 'value' };
     public onChange(): void {
         this.defaultObj.ticks = { placement: this.listObj.value as Placement };
+        this.defaultObj.dataBind();
         this.rangeObj.ticks = { placement: this.listObj.value as Placement };
+        this.rangeObj.dataBind();
     }
     public checkbox_onChange(args: ChangeEventArgs): void {
         this.defaultObj.enabled = !args.checked;
+        this.defaultObj.dataBind();
         this.rangeObj.enabled = !args.checked;
+        this.rangeObj.dataBind();
     }
 }

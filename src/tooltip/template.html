@@ -1,5 +1,6 @@
 <div id="action-description">
-        <p>This sample demonstrates the Template functionalities of the Tooltip which will open by Hover or Touch-hold action on Toolbar option.</p>
+    <p>This sample demonstrates the Template functionalities of the Tooltip which will open by Hover or Touch-hold action on
+        Toolbar option.</p>
 </div>
 
 <div class="control-section">
@@ -7,21 +8,23 @@
     <!-- Tooltip element -->
     <ejs-tooltip #tooltip target=".toolbarContainer [title]" (beforeRender)="onBeforeRender($event)" [showTipPointer]='false'
         [offsetX]='70' [width]='170'>
+        <!-- Tooltip target container -->
         <div class="toolbarContainer">
-
             <!-- Toolbar element -->
             <ejs-toolbar id="Toolbar">
                 <e-items>
-                    <e-item prefixIcon='e-cut-icon tb-icons' tooltipText='Cut'></e-item>
-                    <e-item prefixIcon='e-copy-icon tb-icons' tooltipText='Copy'></e-item>
-                    <e-item prefixIcon='e-paste-icon tb-icons' tooltipText='Paste'></e-item>
-                    <e-item type='Separator'></e-item>
-                    <e-item prefixIcon='e-bold-icon tb-icons' tooltipText='Bold'></e-item>
-                    <e-item prefixIcon='e-underline-icon tb-icons' tooltipText='Underline'></e-item>
-                    <e-item prefixIcon='e-italic-icon tb-icons' tooltipText='Italic'></e-item>
+                    <e-item *ngFor="let icon of toolbarIcons" id="{{icon.id}}" prefixIcon="e-{{ icon.name }}-icon tb-icons" tooltipText={{icon.name}}></e-item>
                 </e-items>
             </ejs-toolbar>
         </div>
+
+        <!-- Tooltip templates -->
+        <ng-template #tooltip_template *ngFor="let data of tooltipData">
+            <div>
+                <h6>{{data.header}}</h6>
+                <p>{{data.para}}</p>
+            </div>
+        </ng-template>
     </ejs-tooltip>
 </div>
 

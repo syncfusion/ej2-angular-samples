@@ -1,36 +1,31 @@
-import { Component, OnInit, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
 import { eventsData } from './datasource';
 import { extend } from '@syncfusion/ej2-base';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
-import { EventSettingsModel, View, EventRenderedArgs } from '@syncfusion/ej2-ng-schedule';
-import { ScheduleComponent, DayService, WeekService, WorkWeekService, MonthService, AgendaService } from '@syncfusion/ej2-ng-schedule';
+import {
+    EventSettingsModel, View, EventRenderedArgs, ScheduleComponent, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService
+} from '@syncfusion/ej2-angular-schedule';
 
 @Component({
+    selector: 'control-content',
     templateUrl: 'tooltip.html',
     styleUrls: ['tooltip.style.css'],
-    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService],
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService],
     encapsulation: ViewEncapsulation.None
 })
-export class TooltipComponent implements OnInit {
+export class TooltipComponent {
     @ViewChild('scheduleObj')
     public scheduleObj: ScheduleComponent;
     public data: Object[] = <Object[]>extend([], eventsData, null, true);
-    public selectedDate: Date;
-    public eventSettings: EventSettingsModel;
-    public currentView: View;
+    public selectedDate: Date = new Date(2018, 1, 15);
+    public currentView: View = 'Week';
     public temp: string = '<div class="tooltip-wrap">' +
         '<div class="image ${EventType}"></div>' +
         '<div class="content-area"><div class="name">${Subject}</></div>' +
-        '<div class="city">${City}</></div>' +
+        '${if(City !== null && City !== undefined)}<div class="city">${City}</div>${/if}' +
         '<div class="time">From&nbsp;:&nbsp;${StartTime.toLocaleString()} </div>' +
         '<div class="time">To&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;${EndTime.toLocaleString()} </div></div></div>';
-
-
-    ngOnInit(): void {
-        this.eventSettings = { dataSource: this.data, enableTooltip: true, tooltipTemplate: this.temp };
-        this.selectedDate = new Date(2018, 1, 15);
-        this.currentView = 'Week';
-    }
+    public eventSettings: EventSettingsModel = { dataSource: this.data, enableTooltip: true, tooltipTemplate: this.temp };
 
     onChange(args: ChangeEventArgs): void {
         if (args.checked) {

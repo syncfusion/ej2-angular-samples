@@ -1,0 +1,98 @@
+<div class="control-section">
+    <div class="progress-button-section">
+        <div id="progress-button-control">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                    <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+                        <button ejs-progressbutton content="Spin Left" [isPrimary]="true"></button>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+                        <button ejs-progressbutton content="Spin Right" [isPrimary]="true" [spinSettings]="spinRight"></button>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                    <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+                        <button ejs-progressbutton content="Spin Top" [isPrimary]="true" [spinSettings]="spinTop"></button>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+                        <button ejs-progressbutton content="Spin Bottom" [isPrimary]="true" [spinSettings]="spinBottom"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                    <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+                        <button ejs-progressbutton [spinSettings]="spinCenter" [animationSettings]="zoomOut" cssClass="e-round e-small e-success"
+                            iconCss="e-icons e-play-icon"></button>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+                        <button #contractBtn ejs-progressbutton id="contract" content="Contract" [enableProgress]="true" cssClass="e-success e-small" (begin)="contractBegin()"
+                            (end)="contractEnd()"></button>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                    <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+                        <button ejs-progressbutton content="Slide Left" [enableProgress]="true" [spinSettings]="spinCenter" [animationSettings]="slideLeft"
+                            cssClass="e-flat e-success"></button>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+                        <button ejs-progressbutton content="Slide Right" [enableProgress]="true" [spinSettings]="spinCenter" [animationSettings]="slideRight"
+                            cssClass="e-outline e-success"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                    <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+                        <button ejs-progressbutton id="zoomin" content="Zoom In" [enableProgress]="true" [spinSettings]="spinCenter" [animationSettings]="zoomIn"
+                            cssClass="e-round-corner e-danger"></button>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+                        <button ejs-progressbutton content="Zoom Out" [enableProgress]="true" [spinSettings]="spinCenter" [animationSettings]="zoomOut"
+                            cssClass="e-small e-danger"></button>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                    <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+                        <button ejs-progressbutton content="Download" [enableProgress]="true" duration=4000 cssClass="e-hide-spinner e-progress-top"
+                            iconCss="e-icons e-download-icon"></button>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+                        <button ejs-progressbutton content="Disabled" [disabled]="true"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates the default functionalities of a progress button. Clicking that button will display a spinner
+        and a progress indicator.</p>
+</div>
+<div id="description">
+    <p>
+        The progress button visualizes the progression of an operation to indicates the user that a process is happening in the background.
+        The progress can be shown with graphics accompanied by a textual representation.
+    </p>
+    <p>
+        In this sample, the progress button contains the content, spinner, progress indicator, and a list of related features that
+        can be achieved using
+        <code>
+                    <a target="_blank" class="code" href="http://ej2.syncfusion.com/angular/documentation/progress-button/api-progressButton.html#content">content,
+                    </a>
+        </code>
+        <code>
+                    <a target="_blank" class="code" href="http://ej2.syncfusion.com/angular/documentation/progress-button/api-progressButton.html#cssClass">cssClass,
+                    </a>
+        </code>and
+        <code>
+                <a target="_blank" class="code" href="http://ej2.syncfusion.com/angular/documentation/progress-button/api-progressButton.html#enableProgress">enableProgress
+                </a>
+        </code>property.
+    </p>
+    <p>
+        More information about progress button can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/progress-button/getting-started.html">
+            documentation section</a>.
+    </p>
+</div>

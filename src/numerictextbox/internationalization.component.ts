@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { loadCldr, L10n } from '@syncfusion/ej2-base';
-import { NumericTextBoxComponent } from '@syncfusion/ej2-ng-inputs';
+import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 
 @Component({
     selector: 'control-content',

@@ -1,0 +1,189 @@
+<style>
+    .diagram-ports .sb-child-row {
+        margin-top: 8px;
+    }
+
+    .diagram-ports .property-panel-header {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .diagram-ports .property-section .e-remove-selection {
+        cursor: not-allowed;
+    }
+
+    .diagram-ports .row-header {
+        font-size: 13px;
+        font-weight: 500;
+        padding-left: 10px
+    }
+
+    .diagram-ports .e-remove-selection .property-section-content {
+        pointer-events: none;
+    }
+</style>
+
+<div id="action-description">
+    <p>
+        This sample visualizes the process flow of publishing a book using connection points. Connection points are static points
+        over the shapes that allow creating connections to the shapes. Customizing the size and appearance of the connection
+        points is illustrated in this example.
+    </p>
+</div>
+<div class="control-section diagram-ports">
+    <div class="col-lg-8">
+        <div class="content-wrapper">
+            <ejs-diagram #diagram id="diagram" width="100%" height="580px" [getNodeDefaults]=nodeDefaults [snapSettings]=snapSettings
+                [getConnectorDefaults]=connDefaults (selectionChange)="selectChange($event)" (created)="diagramCreate($event)">
+                <e-nodes>
+                    <e-node id='node1' [height]=65 [width]=100 [offsetX]=220 [offsetY]=100 [shape]='rectangleShape' [ports]="node1Port">
+                        <e-node-annotations>
+                            <e-node-annotation content='Publisher'>
+                            </e-node-annotation>
+                        </e-node-annotations>
+                    </e-node>
+                    <e-node id='node2' [height]=65 [width]=100 [offsetX]=390 [offsetY]=100 [shape]='rectangleShape' [ports]="node2Port">
+                        <e-node-annotations>
+                            <e-node-annotation content='Completed Book'>
+                            </e-node-annotation>
+                        </e-node-annotations>
+                    </e-node>
+                    <e-node id='node3' [height]=65 [width]=100 [offsetX]=390 [offsetY]=200 [shape]='diamondShape' [ports]="node3Port">
+                        <e-node-annotations>
+                            <e-node-annotation content='1st Review'>
+                            </e-node-annotation>
+                        </e-node-annotations>
+                    </e-node>
+                    <e-node id='node4' [height]=65 [width]=100 [offsetX]=390 [offsetY]=300 [shape]='rectangleShape' [ports]="node4Port">
+                        <e-node-annotations>
+                            <e-node-annotation content='Legal Terms'>
+                            </e-node-annotation>
+                        </e-node-annotations>
+                    </e-node>
+                    <e-node id='node5' [height]=65 [width]=100 [offsetX]=390 [offsetY]=400 [shape]='diamondShape' [ports]="node5Port">
+                        <e-node-annotations>
+                            <e-node-annotation content='2nd Review'>
+                            </e-node-annotation>
+                        </e-node-annotations>
+                    </e-node>
+                    <e-node id='node6' [height]=65 [width]=100 [offsetX]=560 [offsetY]=100 [shape]='rectangleShape' [ports]="node6Port">
+                        <e-node-annotations>
+                            <e-node-annotation content='Board'>
+                            </e-node-annotation>
+                        </e-node-annotations>
+                    </e-node>
+                    <e-node id='node7' [height]=65 [width]=100 [offsetX]=560 [offsetY]=200 [shape]='diamondShape' [ports]="node7Port">
+                        <e-node-annotations>
+                            <e-node-annotation content='Approval'>
+                            </e-node-annotation>
+                        </e-node-annotations>
+                    </e-node>
+                </e-nodes>
+                <e-connectors>
+                    <e-connector id='connector1' sourceID='node1' sourcePortID='port2' targetID='node2' targetPortID='port6'>
+                    </e-connector>
+                    <e-connector id='connector2' sourceID='node1' sourcePortID='port4' targetID='node4' targetPortID='port13'>
+                    </e-connector>
+                    <e-connector id='connector3' sourceID='node2' sourcePortID='port9' targetID='node3' targetPortID='port11'>
+                    </e-connector>
+                    <e-connector id='connector4' sourceID='node2' sourcePortID='port7' targetID='node6' targetPortID='port19'>
+                    </e-connector>
+                    <e-connector id='connector5' sourceID='node3' sourcePortID='port10' targetID='node1' targetPortID='port5'>
+                    </e-connector>
+                    <e-connector id='connector6' sourceID='node3' sourcePortID='port12' targetID='node4' targetPortID='port14'>
+                    </e-connector>
+                    <e-connector id='connector7' sourceID='node4' sourcePortID='port15' targetID='node5' targetPortID='port17'>
+                    </e-connector>
+                    <e-connector id='connector8' sourceID='node5' sourcePortID='port18' targetID='node2' targetPortID='port8'>
+                    </e-connector>
+                    <e-connector id='connector9' sourceID='node5' sourcePortID='port16' targetID='node1' targetPortID='port3'>
+                    </e-connector>
+                    <e-connector id='connector10' sourceID='node6' sourcePortID='port20' targetID='node7' targetPortID='port21'>
+                    </e-connector>
+                    <e-connector id='connector11' sourceID='node7' sourcePortID='port22' targetID='node1' targetPortID='port1'>
+                    </e-connector>
+                </e-connectors>
+            </ejs-diagram>
+        </div>
+    </div>
+    <div class="col-lg-4 property-section property-panel-section">
+        <div class="property-panel-header">
+            Properties
+        </div>
+        <div id="propertypanel" class="e-remove-selection">
+            <div class="property-section-content property-panel-content">
+                <div class="row row-header" style="font-size: 13px; padding-top: 10px">
+                    Port Customization
+                </div>
+                <div class="row sb-child-row">
+                    <div class="col-xs-6">
+                        <div style="padding-bottom: 8px">
+                            Visibility
+                        </div>
+                        <div style="margin-top: -5px">
+                            <ejs-multiselect #portVisibilityDrop id='portVisibilityDrop' [dataSource]='visibility' [fields]='fields' mode='CheckBox'
+                                popupHeight='290px' popupWidth='180px' [showDropDownIcon]='true' showSelectAll='true' (change)="portVisibilityDropOnChange($event)"></ejs-multiselect>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div style="padding-bottom: 8px">
+                            Shape
+                        </div>
+                        <div>
+                            <ejs-dropdownlist #portShapeDrop id="portShapeDrop" [dataSource]="shape" [fields]="fields" placeholder='Select a Shape' (change)="portShapeDropOnChange($event)"></ejs-dropdownlist>
+                        </div>
+                    </div>
+                </div>
+                <div class="row sb-child-row">
+                    <div class="col-xs-6">
+                        <div style="padding-bottom: 8px">
+                            Fill Color
+                        </div>
+                        <div style="padding-bottom: 8px">
+                            <input ejs-colorpicker #portFillDrop value='#000' type='color' (change)='onFillColorChange($event)' />
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div style="padding-bottom: 8px">
+                            Stroke Color
+                        </div>
+                        <div style="padding-bottom: 8px">
+                            <input ejs-colorpicker #portBorderDrop value='#000' type='color' (change)='onBorderChange($event)' />
+                        </div>
+                    </div>
+                </div>
+                <div class="row sb-child-row">
+                    <div class="col-xs-6">
+                        <div style="padding-bottom: 8px">
+                            Stroke Width
+                        </div>
+                        <div style="padding-bottom: 8px">
+                            <ejs-numerictextbox #portWidthNum id="portWidthNum" value="1" step="0.5" format='###.##' (change)='onBorderWidthChange($event)'></ejs-numerictextbox>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div style="padding-bottom: 8px">
+                            Size
+                        </div>
+                        <div style="padding-bottom: 8px">
+                            <ejs-numerictextbox #portSizeNum id="portSizeNum" value="6" step="1" format='###.##' (change)='onSizeChange($event)'></ejs-numerictextbox>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        This example shows how to add connection ports to shapes. The <code>ports</code> property of the node defines the static connection ports. The <code>offset</code>,
+        <code>horizontalAlignment</code>, <code>verticalAlignment</code> and <code>margin</code> properties of the ports define its position.
+    </p>
+    <p>
+        The <code>style</code> property of the port can be used to customize its appearance. The <code>visibility</code> property can also be used to define when the connection ports should be visible.
+    </p>
+
+    <p>
+        In this example, the appearance and visibility of the ports can be customized using the options added to the property panel.
+    </p>
+</div>

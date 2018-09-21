@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { categoryData } from './data';
-import { AggregateService, GroupService, GridComponent } from '@syncfusion/ej2-ng-grids';
+import { AggregateService, GroupService, GridComponent } from '@syncfusion/ej2-angular-grids';
 
 
 @Component({

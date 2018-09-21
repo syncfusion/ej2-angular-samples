@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { VirtualScrollService, GridComponent } from '@syncfusion/ej2-ng-grids';
+import { VirtualScrollService, GridComponent } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ej2-gridvirtual',

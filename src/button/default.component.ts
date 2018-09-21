@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { ButtonComponent } from '@syncfusion/ej2-ng-buttons';
+import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 /**
  * Default Button Controller
  */

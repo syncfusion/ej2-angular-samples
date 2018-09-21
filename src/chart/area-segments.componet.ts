@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-ng-charts';
+import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -51,13 +51,6 @@ export class AreaSegmentChartComponent {
     public tooltip: Object = {
         enable: true
     };
-    public content: string = "<div style='width:80px; padding: 5px;'> <table style='width: 100%'>" +
-        "<tr><td><div style='width: 10px; height: 10px;background:linear-gradient(#4ca1af, #c4e0e5);border-radius: 15px;'></div>" +
-        "</td><td style='padding-left: 5px;'>Winter</td></tr>" +
-        "<tr><td><div style='width: 10px; height: 10px; background:linear-gradient(#ffa751, #ffe259);border-radius: 15px;'></div>" +
-        "</td><td style='padding-left: 5px;'>Summer</td></tr><tr><td>" +
-        "<div style='width: 10px; height: 10px; background:linear-gradient(#1d976c, #93f9b9);border-radius: 15px;'></div>" +
-        "</td><td style='padding-left: 5px;'>Spring</td></tr></table></div>";
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';

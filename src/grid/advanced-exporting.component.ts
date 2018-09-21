@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { categoryData } from './data';
-import { ToolbarService, GridComponent, ExcelExportService, PdfExportService, PageService } from '@syncfusion/ej2-ng-grids';
+import { ToolbarService, GridComponent, ExcelExportService, PdfExportService, PageService } from '@syncfusion/ej2-angular-grids';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations'
 
 @Component({

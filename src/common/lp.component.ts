@@ -1,8 +1,8 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ListViewComponent, SelectEventArgs } from '@syncfusion/ej2-ng-lists';
-import { TreeViewComponent, NodeSelectEventArgs } from '@syncfusion/ej2-ng-navigations';
+import { ListViewComponent, SelectEventArgs } from '@syncfusion/ej2-angular-lists';
+import { TreeViewComponent, NodeSelectEventArgs } from '@syncfusion/ej2-angular-navigations';
 import { samplesList } from './samplelist';
 import { Browser, extend, Animation, addClass } from '@syncfusion/ej2-base';
 import { DataManager, Query, DataUtil } from '@syncfusion/ej2-data';
@@ -123,6 +123,7 @@ export class LPController {
         if (location.hash.replace('/#', '') !== path) {
             this.navigateSample(path.replace(':theme', this.getCurrentTheme()));
             this.listComponent.dataSource = <any>this.controlSampleData[path.split('/')[1]];
+            this.listComponent.dataBind();
             this.viewSwitch(this.ngEle.nativeElement.querySelector("#controlTree"), this.ngEle.nativeElement.querySelector("#controlSamples"))
         }
         if(!this.app.isDesktop){
@@ -151,7 +152,7 @@ export class LPController {
     }
 
     updateListViewDataSource(){
-        this.listComponent.dataSource = <any>(this.controlSampleData[location.hash.split('/')[2]] || this.controlSampleData.chart);
+        this.listComponent.dataSource = <any>(this.controlSampleData[location.hash.split('/')[2]] || this.controlSampleData.grid);
     }
 
     ngAfterViewInit(): void {

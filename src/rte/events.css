@@ -1,0 +1,18 @@
+    .e-bigger .content-wrapper {
+        width: 80%;
+    }
+
+   
+    #EventLog b {
+        color: #388e3c;
+    }
+
+    hr {
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+
+    #rte_event .property-panel-table div {
+        margin-top: -4px;
+        padding-bottom: 0px;
+    }

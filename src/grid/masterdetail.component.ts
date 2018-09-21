@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges, Input, SimpleChanges, SimpleChange, Inject } from '@angular/core';
 import { customerData, data } from './data';
-import { SelectionService, RowSelectEventArgs } from '@syncfusion/ej2-ng-grids';
+import { SelectionService, RowSelectEventArgs } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ejs-gridmaster',

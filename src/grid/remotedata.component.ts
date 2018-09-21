@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DataManager, ODataAdaptor } from '@syncfusion/ej2-data';
-import { GridComponent } from '@syncfusion/ej2-ng-grids';
+import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
+import { GridComponent } from '@syncfusion/ej2-angular-grids';
 
-const SERVICE_URI: string = 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Products';
+const SERVICE_URI: string = 'https://ej2services.syncfusion.com/development/web-services/api/Orders';
 
 @Component({
     selector: 'ej2-griddatabind',
@@ -16,7 +16,7 @@ export class DataBindingComponent implements OnInit {
     public grid: GridComponent;
 
     ngOnInit(): void {
-        this.data = new DataManager({ url: SERVICE_URI, adaptor: new ODataAdaptor });
-        this.pageSettings = { pageCount: 5 };
+        this.data = new DataManager({ url: SERVICE_URI, adaptor: new WebApiAdaptor });
+        this.pageSettings = { pageCount: 3 };
     }
 }

@@ -1,0 +1,27 @@
+{
+    "de": {
+        "dialog": {
+            "close": "schließen"
+        }
+    },
+    "ar": {
+        "dialog": {
+            "close": "أغلق"
+        }
+    },
+    "en": {
+        "dialog": {
+            "close": "Close"
+        }
+    },
+    "zh": {
+        "dialog": {
+            "close": "關"
+        }
+    },
+    "fr-CH": {
+        "dialog": {
+            "close": "Fermer"
+        }
+    }
+}

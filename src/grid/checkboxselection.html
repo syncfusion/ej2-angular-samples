@@ -1,5 +1,5 @@
 <div class="control-section">
-    <ejs-grid [dataSource]='data' allowPaging='true' [enableHover]="false" [allowSelection]="true" [selectionSettings]="selectOptions">
+    <ejs-grid [dataSource]='data' allowPaging='true' [enableHover]="false" [allowSelection]="true" [selectionSettings]="selectOptions" [editSettings]='editSettings' [toolbar]='toolbar'>
         <e-columns>
             <e-column type='checkbox' width='50'></e-column>
             <e-column field='OrderID' isPrimaryKey='true' headerText='Order ID' width='120' textAlign='Right'></e-column>
@@ -11,11 +11,11 @@
     </ejs-grid>
     <div id="action-description">
         <p>This sample demonstrates the selection functionality of the Grid using checkbox selection, To select and unselect all rows use header checkbox.
-         To select/unselect particular row, click the desired row.</p>
+         To select/unselect particular row, click the desired row. Delete one or more records using the toolbar delete button</p>
     </div>
     <div id="description">
         <p>
-            Grid mutliple selection can be achieved with help of checkbox in each row. To render checkbox in each grid row, you need
+            Grid multiple selection can be achieved with help of checkbox in each row. To render checkbox in each grid row, you need
             to define column type as <code>checkbox</code> using
             <code><a target="_blank" class="code"
         href="http://ej2.syncfusion.com/angular/documentation/grid/api-column.html#type-string">
@@ -33,7 +33,9 @@
         </a></code> property.
         </p>
 
-        <p>In this demo, Grid mutliple selection has been enabled with selection persistance.
+        <p>
+            In this demo, Grid multiple selection has been enabled with selection persistance. You can also delete multiple records,
+            by clicking the toolbar’s <code>Delete</code> button after selecting the checkboxes.
         </p>
         <p>
             More information on the checkbox selection configuration can be found in this

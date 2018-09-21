@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IAccLoadedEventArgs, AccumulationChartComponent, AccumulationTheme } from '@syncfusion/ej2-ng-charts';
+import { IAccLoadedEventArgs, AccumulationChartComponent, AccumulationTheme } from '@syncfusion/ej2-angular-charts';
 import { EmptyPointMode } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 

@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ChartComponent,ChartTheme, ILoadedEventArgs } from '@syncfusion/ej2-ng-charts';
+import { ChartComponent,ChartTheme, ILoadedEventArgs } from '@syncfusion/ej2-angular-charts';
 
 /**
  * Sample for Chart Performance

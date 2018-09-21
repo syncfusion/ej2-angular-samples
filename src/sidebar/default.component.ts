@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SidebarComponent } from '@syncfusion/ej2-ng-navigations';
-import { ButtonComponent, RadioButtonModule } from '@syncfusion/ej2-ng-buttons';
+import { SidebarComponent } from '@syncfusion/ej2-angular-navigations';
+import { ButtonComponent, RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { enableRipple } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',
@@ -38,10 +38,5 @@ export class DefaultSidebarComponent {
     }
     openClick() {
         this.sidebar.show();
-    }
-
-    //To hide the sidebar element skelton during the page load by setting the visibity style when the control is created.
-    onCreated(e: any): void {
-        this.sidebar.element.style.visibility = 'visible';
     }
 }

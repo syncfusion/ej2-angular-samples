@@ -8,7 +8,7 @@
     <div align='center'>
         <ejs-maps id='container' style="display:block;" [legendSettings]= 'legendSettings'
          [titleSettings]="titleSettings"
-         [zoomSettings]='zoomSettings' [layers] = 'layers' (load)="load($event)">
+         [zoomSettings]='zoomSettings' [layers] = 'layers' (resize)="resize($event)" (load)="load($event)" (loaded)="loaded($event)">
         </ejs-maps>
     </div>
     <div style="float: right; margin-right: 10px;">Source: <a href="https://en.wikipedia.org/wiki/List_of_countries_by_sex_ratio" target="_blank">en.wikipedia.org</a> </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { orderDetails } from '../data';
-import { FreezeService, ResizeService, GridComponent, SortService } from '@syncfusion/ej2-ng-grids';
-import { NumericTextBoxComponent } from '@syncfusion/ej2-ng-inputs';
+import { FreezeService, ResizeService, GridComponent, SortService } from '@syncfusion/ej2-angular-grids';
+import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 import { Browser } from '@syncfusion/ej2-base';
 
 @Component({
