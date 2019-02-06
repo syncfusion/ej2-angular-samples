@@ -12,10 +12,6 @@ aot/**/*.js
 *.map
 *.ngstyle.ts
 src/**/*.map
-styles/*.*
-!styles/index.css
-!styles/highlight.css
-!styles/images/*.*
 coverage/
 api/
 dist/main.bundle.js
