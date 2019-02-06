@@ -3,10 +3,15 @@ import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
 import {
     Diagram, NodeModel, DataBinding, DiagramElement, StackPanel, VerticalAlignment,
     SnapConstraints, TextStyleModel, TextElement, HorizontalAlignment, DiagramTools,
-    HierarchicalTree, ComplexHierarchicalTree, ConnectorModel, SnapSettingsModel
+    HierarchicalTree, ComplexHierarchicalTree, ConnectorModel, SnapSettingsModel, randomId
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import { pertChartData, DataInfo } from './diagram-data';
+import { pertChartData } from './diagram-data';
+
+export interface DataInfo {
+    [key: string]: string;
+}
+
 Diagram.Inject(DataBinding, HierarchicalTree, ComplexHierarchicalTree);
 
 /**
@@ -24,7 +29,7 @@ export class PertChartDiagramComponent {
 
     public data: Object = {
         id: 'id', parentId: 'Category',
-        dataManager: new DataManager(pertChartData as JSON[]),
+        dataManager: new DataManager(pertChartData),
         //binds the external data with node
         doBinding: (nodeModel: NodeModel, data: object, diagram: Diagram) => {
             nodeModel.shape = { type: 'Text' };
@@ -49,10 +54,12 @@ export class PertChartDiagramComponent {
 
     private nodeTemplate(node: NodeModel): StackPanel {
         let table: StackPanel = new StackPanel();
+        table.id = randomId();
         table.style.fill = '#0069d9';
         table.orientation = 'Vertical';
         let nameKey: string = 'id';
         let stack: StackPanel = new StackPanel();
+        stack.id = randomId();
         stack.children = [];
         stack.height = 25;
         stack.orientation = 'Horizontal';
@@ -67,6 +74,7 @@ export class PertChartDiagramComponent {
 
     private getTextElement(text: string, alignment: HorizontalAlignment, width?: number, valignment?: VerticalAlignment): DiagramElement {
         let textElement: TextElement = new TextElement();
+        textElement.id = randomId();
         textElement.content = text;
         textElement.width = width;
         textElement.height = 25;

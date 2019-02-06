@@ -1,0 +1,33 @@
+#control_wrapper {
+    margin: 0 auto;
+    max-width: 300px;    
+}
+#control_wrapper.multiselectWrapper{
+    float: none;
+}
+
+.control-section {
+    margin: 25px auto;
+}
+
+.e-bigger #wrapper,
+.e-bigger#wrapper {
+        max-width: 300px;
+}
+.contentValue {
+    padding: 10px;
+    overflow: auto;
+    max-height: 100px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+}
+.valuesWrapper{
+    margin: 0 auto;
+    float: none;
+    padding: 0;
+    max-width: 370px;
+}
+
+body.highcontrast .contentValue {
+    border: 1px solid #969696
+}

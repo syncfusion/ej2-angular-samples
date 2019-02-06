@@ -1,0 +1,39 @@
+<div id="action-description">
+    <p>This sample demonstrates the reactive form support of the DatePicker.  The date value selected in the DatePicker component
+        will get updated in the form model.
+    </p>
+</div>
+
+<div class="control-section">
+    <div class="content-wrapper">
+        <div id='content' class='box-form' style="margin: 0 auto; width:500px; padding:25px">
+            <form [formGroup]="skillForm" novalidate id="formId">
+                <div class="form-group">
+                    <ejs-datepicker formControlName="date" name="date" placeholder='Select a date' floatLabelType='Always'>
+                    </ejs-datepicker>
+                </div>
+                <div *ngIf="skillForm.controls['date'].hasError('required') && skillForm.controls['date'].touched" class="alert alert-danger">Date value is required</div>
+                <div *ngIf="skillForm.controls['date'].value" class="alert alert-success">
+                    <table>
+                        <tr>
+                            <td style="width:50%">Selected value: </td>
+                            <td class="formtext ">{{ skillForm.controls.date.value | date:"dd-MM-yyyy" }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id="description">
+    <p> The DatePicker value and validation status will be tracked through
+        <code>formControlName</code> attribute. The value will be included in the FormControl's group collection of
+        <code>formGroup</code> attribute.
+    </p>
+    <p>
+        For more information about Reactive Forms can be found in this
+        <a href="https://angular.io/guide/reactive-forms/"  target="_blank"> reference link</a>.
+    </p>
+</div>

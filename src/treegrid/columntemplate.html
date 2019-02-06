@@ -1,0 +1,53 @@
+<div class="control-section">
+    <ejs-treegrid #treegrid [dataSource]='data' height='359' width='auto' childMapping='Children' [treeColumnIndex]='1' >
+        <e-columns>
+            <e-column field='EmpID' headerText='Employee ID' width='85' ></e-column>
+            <e-column field='Name' headerText='Name' width='95'></e-column>
+            <e-column field='DOB' headerText='DOB' width='85' format="yMd" textAlign='Right'></e-column>
+            <e-column  headerText='Tax per annum' width='90' textAlign='Center'>
+                <ng-template #template let-data>
+                    <ejs-sparkline id='treegridline{{data.EmployeeID}}' [dataSource]='getSparkLine(data.EmployeeID)' height='50px' width='150px' lineWidth='2' valueType='Numeric' fill='#3C78EF' (load)="sparkload($event)"></ejs-sparkline>
+
+                </ng-template>
+            </e-column>
+            <e-column  headerText='One day index' width='90' textAlign='Center'>
+                    <ng-template #template let-data>
+                        <ejs-sparkline id='treegridcolumn{{data.EmployeeID}}' type='Column' negativePointColor='#f7a816' [dataSource]='getSparkColumn(data.EmployeeID)' height='50px' width='150px' lineWidth='2' valueType='Numeric' fill='#3C78EF' (load)="sparkload($event)"></ejs-sparkline>
+    
+                    </ng-template>
+                </e-column>
+            <e-column  headerText='Year GR' width='95' textAlign='Center'>
+                    <ng-template #template let-data>
+                        <ejs-sparkline id='treegridwinloss{{data.EmployeeID}}' type='WinLoss' tiePointColor='darkgray' negativePointColor='#f7a816' [dataSource]='getSparkWinloss(data.EmployeeID)' height='50px' width='150px' lineWidth='2' valueType='Numeric' fill='#3C78EF' (load)="sparkload($event)"></ejs-sparkline>
+    
+                    </ng-template>
+                </e-column>
+        </e-columns>
+    </ejs-treegrid>
+</div>
+<script type="text/x-template" id="columnTemplate1">
+    <div id="spkline1"></div>
+</script>
+<script type="text/x-template" id="columnTemplate2">
+    <div id="spkarea1"></div>
+</script>
+<script type="text/x-template" id="columnTemplate3">
+    <div id="spkwl1"></div>
+</script>
+<div id="action-description">
+    <p>This sample demonstrates the usage of template columns in TreeGrid. 
+        In this sample, we have shown sparkline charts.</p>
+</div>
+    <div id="description">
+        <p>
+            The TreeGrid provides a way to use a custom layout for each cell using column template feature. 
+            The <code>columns->template</code> property accepts either string or HTML element`s ID value, which will be used as the template for the cell.
+        </p>
+        <p>
+            In this demo, using column template, we have presented sparkLine charts for the "Tax per annum", "One day index" and "Year GR" columns. In <code>columns->template</code> we have assigned with the ID of a SCRIPT element whose content is used as the template.
+        </p>
+        <p>
+            More information on the Column Template can be found in the
+          documentation section.
+        </p>
+    </div>

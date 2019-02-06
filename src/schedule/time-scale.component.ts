@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Internationalization, extend } from '@syncfusion/ej2-base';
 import { ChangeEventArgs as DropDownChangeArgs } from '@syncfusion/ej2-angular-dropdowns';
 import {
-    ScheduleComponent, View, TimeScaleModel, EventSettingsModel, DayService, WeekService, TimelineViewsService, ResizeService
+    ScheduleComponent, View, TimeScaleModel, EventSettingsModel, DayService, WeekService, TimelineViewsService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 import { scheduleData } from './datasource';
 
@@ -21,7 +21,7 @@ interface TemplateFunction extends Window {
 @Component({
     selector: 'control-content',
     templateUrl: 'time-scale.html',
-    providers: [DayService, WeekService, TimelineViewsService, ResizeService]
+    providers: [DayService, WeekService, TimelineViewsService, ResizeService, DragAndDropService]
 })
 
 export class TimescaleComponent {

@@ -1,0 +1,24 @@
+    <div class="control-section">
+        <ejs-treegrid #treegrid [dataSource]='data' childMapping='subtasks' [treeColumnIndex]='1' [allowPaging]=true>
+            <e-columns>
+                <e-column headerText='Order Details' [columns]='orderColumns'></e-column>
+                <e-column headerText='Shipment Details' [columns]='shipColumns'></e-column>
+                <e-column headerText='Price Details' [columns]='priceColumns'></e-column>
+            </e-columns>
+        </ejs-treegrid>
+    </div>
+        <div id="action-description">
+            <p>This sample demonstrates the TreeGrid component with the stacked header feature. In this sample, we have shown multiple levels of column header.
+            </p>
+        </div>
+        <div id="description">
+            <p>The TreeGrid columns can be stacked/grouped in order to show multiple levels of column header. 
+                It can be done by setting the <code>columns->columns</code> property.
+            </p>
+            <p>
+                In this demo, the columns <strong>Order ID, Order Name, Order Date</strong> are grouped under Order Details, the columns <strong>Shipment Category, Shipped Date, Units</strong> are grouped under Shipment Details and <strong>Price per Unit, Total Price</strong> are grouped under Price details. 
+            </p>
+            <p>
+                More information on the stacked header configuration can be found in this documentation section.
+            </p>
+        </div>

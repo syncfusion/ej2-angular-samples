@@ -3,11 +3,11 @@
         This sample demonstrates both <code>scrollable</code> and <code>popup</code> modes of the <code>Tab</code>. Select option from down-down to change the responsive option in property panel.
     </p>
 </div>
-<div class="control-section e-tab-section">
-    <div class="col-lg-8 content-wrapper">
+<div class="e-tab-section">
+    <div class="col-lg-8 content-wrapper control-section">
         <div class="e-sample-resize-container">
             <!-- Render the Tab Component -->
-            <ejs-tab id="tab_adaptive" #adaptiveTab heightAdjustMode='Content'>
+            <ejs-tab id="tab_adaptive" #adaptiveTab heightAdjustMode='None' height='250px'>
                     <e-tabitems>
                         <e-tabitem [header]='headerText[0]'>
                             <ng-template #content>
@@ -93,6 +93,14 @@
                             </ejs-dropdownlist>
                         </td>
                     </tr>
+                    <tr>
+                        <td style="width:50%">Header Placement:</td>
+                        <td style="width:50%">
+                            <!-- Render DropDownList for Switching Tab properties -->
+                            <ejs-dropdownlist id='header-place' width='90%' #place [dataSource]='dataPlace' (change)='placeChange($event)' [value]='placeValue' [fields]='placeFields'>
+                            </ejs-dropdownlist>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -104,12 +112,15 @@
         The <code>Tab</code> is adaptable to the available space when the tab items exceed the view space.
     </p>
     <p>
+        The <code>Tab</code> allows to place the header section inside the Tab component either at <code>top / bottom / left / right</code> position by using <code>headerPlacement</code> property.
+    </p>
+    <p>
         You can assign overflowMode property value as <code>Scrollable / Popup</code>. By default scrollable mode of tab is enabled when 
         tab item exceeds the view range.
         In this sample, users can change the <code>overflowMode</code> by selecting the dropdown options.
     </p>
     <p>
-        More information about Tab can be found in this <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/tab/getting-started.html">
+        More information about Tab can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/tab/getting-started/">
         documentation</a> section.
     </p>
 </div>

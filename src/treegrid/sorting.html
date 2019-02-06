@@ -1,0 +1,98 @@
+<div class="col-lg-9 control-section">
+    <ejs-treegrid #treegrid [dataSource]='data' allowPaging='true' childMapping='subtasks' [treeColumnIndex]='0' allowSorting='true' [sortSettings]='sortSettings'  (actionComplete)="sort($event)">
+        <e-columns>
+            <e-column field='orderName' headerText='Order Name' width='200' ></e-column>
+            <e-column field='Category' headerText='Category' width='150'></e-column>
+            <e-column field='orderDate' headerText='Order Date' width='130' format="yMd" type='date' textAlign='Right'></e-column>
+            <e-column field='units' headerText='Units' width='120' textAlign='Right'></e-column>
+        </e-columns>
+    </ejs-treegrid>    
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+                    <div class="property-panel-header">Properties </div>
+            <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                <tr>
+                    <td style="width: 70%">
+                        <div>
+                            Order Name
+                        </div>
+                    </td>
+                    <td style="width: 30%;padding:10px 10px 10px 0px">
+                        <div class="col-md-6">
+                            <ejs-checkbox #orderName [checked]="true" (change)="onClick1($event)" ></ejs-checkbox>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 70%">
+                        <div>
+                            Category
+                        </div>
+                    </td>
+                    <td style="width: 30%;padding:10px 10px 10px 0px">
+                        <div class="col-md-6">
+                                <ejs-checkbox  #category [checked]="true" (change)="onClick2($event)" ></ejs-checkbox>
+                            </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 70%">
+                        <div>
+                            Order Date
+                        </div>
+                    </td>
+                    <td style="width: 30%; padding:10px 10px 10px 0px">
+                        <div class="col-md-6">
+                                <ejs-checkbox  #orderDate  (change)="onClick3($event)" ></ejs-checkbox>
+                            </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 70%">
+                        <div>
+                            Units
+                        </div>
+                    </td>
+                    <td style="width: 30%; padding:10px 10px 10px 0px">
+                        <div class="col-md-6">
+                                <ejs-checkbox  #units  (change)="onClick4($event)" ></ejs-checkbox>
+                            </div>
+                    </td>
+                </tr>
+              
+            </table>
+        </div>
+ </div>
+<div id="action-description">
+        <p>
+            This sample demonstrates the TreeGrid multi sorting feature. To sort two or more columns, hold the CTRL key and click the column header.
+        </p>
+</div>
+<div id="description">
+        <p>
+            Sorting feature enables us to order the data in a particular direction. It can be enabled by setting the <code>allowSorting</code> as true.
+        </p>
+        
+        <p>By default, multi-sorting is enabled in TreeGrid, to sort multiple column hold <strong>CTRL</strong> key and click the column
+            header. To clear sort for a column, hold <strong>SHIFT</strong> key and click the column header.</p>
+        <p>
+            While using TreeGrid in a touch device, you have an option for multi sorting in single tap on the treegrid header. By tapping on the treegrid header, it will show the toggle button in small popup with sort icon. 
+            Now tap the button to enable the multi-sorting in single tap.
+        </p>
+        <p>In this demo, </p>
+        <ul>
+            <li>Simply click the column header to sort a column.</li>
+            <li>Check the checkboxes in the properties panel to sort a column and uncheck to remove sort from a column.
+            </li>
+        </ul>
+
+        <p>Injecting Module</p>
+
+        <p> TreeGrid component features are segregated into individual feature-wise modules. To use sorting feature, we need to inject <code>SortService</code> into the <code>@NgModule.providers</code> section.</p>
+  
+        <p>
+            More information on the sorting feature configuration can be found in this documentation section.
+        </p>
+    </div>
+    

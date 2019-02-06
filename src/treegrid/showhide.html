@@ -1,0 +1,71 @@
+<div class="col-lg-9 control-section">
+    <ejs-treegrid #treegrid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings' childMapping='subtasks' [treeColumnIndex]='1' >
+        <e-columns>
+            <e-column field='taskID' headerText='Task ID' width='80' textAlign='Right'></e-column>
+            <e-column field='taskName' headerText='Task Name' width='200'></e-column>
+            <e-column field='startDate' headerText='Start Date' width='105' format="yMd" textAlign='Right'></e-column>
+            <e-column field='duration' headerText='Duration' width='80' textAlign='Right' [allowResizing]=false></e-column>
+            <e-column field='progress' headerText='Progress' width='80' textAlign='Right'></e-column>
+        </e-columns>
+    </ejs-treegrid>
+</div>
+<div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+            <div class="property-panel-header">Properties </div>
+        <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+            <tr>
+                <td style="width: 30%">
+                    <div>Column</div>
+                </td>
+                <td style="width: 70%;padding-right: 10px">
+                    <div id='columnddl'>
+                            <ejs-dropdownlist #dropdown1 id='ddlelement'  width= '100px' [dataSource]='d1data' [fields]='ddlfields' value='Parent' (change)="change($event)"></ejs-dropdownlist>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 30%;padding-top: 10px">
+                    <div>
+                            <button ejs-button #button1 cssClass="btn btn-default" content="HIDE" id="hide" (click)="onClicked()"></button>
+                        </div>
+                </td>
+                <td style="width: 70%;padding-top: 10px;padding-left: 7px">
+                    <div>
+                            <button ejs-button #button2 cssClass="btn btn-default"  content="SHOW" id="show" (click)="clicked($event)"></button>
+                        </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 30%">
+                    <div class="" style="padding-top: 10px">
+                        Hidden Columns
+                    </div>
+                </td>
+                <td style="width: 70%; padding:10px 10px 10px 0px">
+                    <div>
+                        <textarea id="hiddencolumns" style="resize: none;height:65px;width:100px;background-color: #fff; padding: 6px" 
+                        class="form-control" readonly="readonly"></textarea>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    </div>
+    
+    <div id="action-description">
+        <p>This sample demonstrates dynamic show/hide columns feature of TreeGrid.
+           Select column name from the properties panel and click hide/show to toggle visibility.
+        </p>
+    </div>
+    
+    <div id="description">
+        <p>The TreeGrid column can be showed/hidden dynamically using <code>showColumns
+            </code> and <code>hideColumns</code> method of the Grid.</p>
+        <p>In this demo, the columns can be showed and hidden by selecting the column name in the dropdown
+            and click the Show or Hide buttons to toggle visibility. And the column`s visibility is toggled based on the 
+            <code>columns->headerText</code> value.</p>
+        <br/>
+        <p>The <code>columns->visible</code> property specifies the visibility of a column. 
+        To hide a column at the initial rendering, set the <code>columns->visible</code> property to false.</p>
+        
+    </div>

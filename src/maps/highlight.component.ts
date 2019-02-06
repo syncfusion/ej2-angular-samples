@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { MapsTheme, Maps, Marker, Zoom, ILoadEventArgs, MapsTooltip } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
 
@@ -26,7 +26,7 @@ export class MapsHighlightComponent {
 
     public layers: object[] = [
         {
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/oklahoma.json'),
+            shapeData: new MapAjax('./src/maps/oklahoma.json'),
             shapeSettings: {
                 fill: '#F5F5F5',
                 border: { color: '#EEDA97', width: 1 }
@@ -244,9 +244,9 @@ export class MapsHighlightComponent {
                 }
             ]
         }
-    ]
-    constructor() {
-        //code
+    ];
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = [ 'oklahoma.json'];
     };
 
 }

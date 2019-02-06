@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { MapsTheme, Maps, ISelectionEventArgs, Selection, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
 
@@ -58,7 +58,7 @@ export class MapsSeatSelectionComponent {
     public layers: object[] = [
         {
             geometryType: 'Normal',
-            shapeData:new MapAjax(location.origin + location.pathname + 'src/maps/map-data/seat-data.json'),
+            shapeData:new MapAjax('./src/maps/seat-data.json'),
             shapeSettings: {
                 colorValuePath: 'fill'
             },
@@ -79,8 +79,9 @@ export class MapsSeatSelectionComponent {
             }
         };
     }
-    constructor() {
-        //code
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = [ 'seat-data.json'];
     };
+
 
 }

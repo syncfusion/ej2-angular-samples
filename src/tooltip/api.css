@@ -1,0 +1,33 @@
+.userselect {
+    -webkit-user-select: none;
+    /* Safari 3.1+ */
+    -moz-user-select: none;
+    /* Firefox 2+ */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+}
+
+#property {
+    padding-top: 200px;
+}
+
+#tooltip {
+    position: relative;
+    left: 50%;
+    top: 100px;
+}
+
+#value {
+    height: 34px;
+    width: 136px;
+    padding-left: 10px;
+}
+
+.highcontrast #value {
+    border: 1px solid;
+    border-width: 1px;
+    color: #fff;
+    background: #000;
+}

@@ -4,7 +4,7 @@ import { createElement, extend } from '@syncfusion/ej2-base';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import {
     EventSettingsModel, ScheduleComponent, EventRenderedArgs, DayService, WeekService,
-    WorkWeekService, MonthService, AgendaService, PopupOpenEventArgs, ResizeService
+    WorkWeekService, MonthService, AgendaService, PopupOpenEventArgs, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
@@ -14,7 +14,7 @@ import {
         margin-bottom: 20px;
     }`],
     encapsulation: ViewEncapsulation.None,
-    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService]
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
 })
 
 export class EditorCustomFieldComponent {

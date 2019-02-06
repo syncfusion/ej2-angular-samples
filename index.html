@@ -2,16 +2,30 @@
 <html>
 
 <head>
-    <title>Essential JS 2 for Angular (Preview)</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WLQL39J');</script>
+    <!-- End Google Tag Manager -->
+    <title>Demos, Examples of Syncfusion Angular UI Components</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Essential JS 2 for Angular">
+    <meta name="description" content="Explore and learn Syncfusion Angular UI components library using large collection of feature-wise examples for each components.">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="shortcut icon" href="favicon.ico" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="manifest" href="./manifest.webmanifest">
 
-    <link href="./styles/material.css" rel="stylesheet" id="themelink" />
-    <link href="./styles/index.css" rel="stylesheet" />
+    <script>
+        var themeName = location.hash.split('/')[1];
+        themeName = themeName ? themeName : 'material';
+        document.write('<link link rel="stylesheet" href="./styles/' + themeName + '.css" id="themelink" />');
+        document.write('<link href="./styles/index.css" rel="stylesheet" />');
+    </script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./styles/codemirror/codemirror.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/highlight.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/shim.min.js"></script>
@@ -27,6 +41,10 @@
 </head>
 
 <body class="e-view">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLQL39J"height="0"width="0"style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div hidden id="sync-analytics" data-queue="EJ2 - Angular - Demos"></div>
     <div class="sample-browser e-view">
         <div class="sb-mobile-overlay sb-hide"></div>
         <div class="sb-mobile-left-pane sb-hide"></div>
@@ -74,11 +92,11 @@
                 <div class="sb-header-item sb-table-cell  sb-header-settings sb-icons"></div>
                 <div class="sb-header-splitter sb-download-splitter"></div>
                 <div class="sb-header-item sb-table-cell sb-download-wrapper">
+                <a href="https://www.syncfusion.com/downloads/essential-js2" target="_blank">                    
                     <button id="download-now" class="sb-download-btn">
-                        <a href="https://www.syncfusion.com/downloads/essential-js2" target="_blankss">
                             <span class="sb-download-text">Download Now</span>
-                        </a>
                     </button>
+                </a>                    
                 </div>
             </div>
 
@@ -90,7 +108,7 @@
                         <a>Angular</a>
                     </li>
                     <li>
-                        <a id="ts">TypeScript</a>
+                        <a id="ts">JavaScript</a>
                     </li>
                     <li>
                         <a id="react">React</a>
@@ -103,6 +121,9 @@
                     </li>
                     <li>
                         <a id="asp_mvc">ASP.NET MVC</a>
+                    </li>
+                    <li>
+                        <a id="vue">Vue</a>
                     </li>
                 </ul>
             </div>
@@ -152,8 +173,8 @@
                             <div class="sb-setting-text">Mode Selection</div>
                         </div>
                         <div class="setting-content btn-group setting-responsive">
-                            <div id="touch" class="sb-responsive-items">Touch</div>
-                            <div id="mouse" class="sb-responsive-items active">Mouse</div>
+                            <div id="touch" class="sb-responsive-items set-border-radious-touch">Touch</div>
+                            <div id="mouse" class="sb-responsive-items active set-border-radious-mouse">Mouse</div>
                         </div>
                     </div>
                     <div class='sb-setting-item sb-setting-culture'>
@@ -163,7 +184,7 @@
                         </div>
                         <div class='setting-content'>
                             <select id='sb-setting-culture' class='sb-setting-culture-select'>
-                                <option value="en">English*</option>
+                                <option value="en">English</option>
                                 <option value="de">German - Germany*</option>
                                 <option value="fr-CH">French - Switzerland*</option>
                                 <option value="ar">Arabic*</option>

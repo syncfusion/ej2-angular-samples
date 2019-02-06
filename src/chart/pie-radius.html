@@ -1,0 +1,23 @@
+<div id="action-description">
+    <p>
+        This sample compares countries by population density and total area by using the various radius in pie series.
+    </p>
+</div>
+<div class="control-section">
+    <div>
+        <ejs-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" [enableSmartLabels]='enableSmartLabels' [enableAnimation]='enableAnimation' (load)='load($event)'>
+            <e-accumulation-series-collection>
+                <e-accumulation-series  [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="20%" [dataLabel]="dataLabel" [radius]='radius'> </e-accumulation-series>
+            </e-accumulation-series-collection>
+        </ejs-accumulationchart>
+    </div>
+</div>
+<div id="description">
+    <p> In this example, you can see how to render doughnut chart with different radius. You can use <code>radius</code> mapping property to achieve this feature. <code>DataLabel</code> is used to represent individual data and its value.
+    <p> <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.</p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

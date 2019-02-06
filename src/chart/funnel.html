@@ -1,10 +1,10 @@
 <div class="control-section">
     <div class="col-md-9">
-        <ejs-accumulationchart id="container" #funnel style='display:block;  width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" 
+        <ejs-accumulationchart id="container" #funnel style='display:block;  width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" [enableAnimation]= 'enableAnimation'
         (load)='load($event)' (resized)='onChartResized($event)'>
             <e-accumulation-series-collection>
                 <e-accumulation-series [dataSource]='data' xName='x' yName='y' [neckWidth]="neckWidth" [neckHeight]="neckHeight" [gapRatio]="gapRatio"
-                [emptyPointSettings]="emptyPointSettings" width = "60%" height = "80%" [explode]="explode" [dataLabel]="dataLabel" type='Funnel'> </e-accumulation-series>
+                [emptyPointSettings]="emptyPointSettings" width = "60%" height = "80%" [explode]="explode" [dataLabel]="dataLabel" type='Funnel' > </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
     </div>
@@ -15,8 +15,7 @@
                 <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
                     <tr style="height: 50px">
                         <td style="width: 30%">
-                            <div>Neck Width:
-                                <p id="neckWidth" style="font-weight: normal;">15%</p>
+                            <div>Neck Width
                             </div>
                         </td>
                         <td style="width: 70%;">
@@ -24,11 +23,13 @@
                                 <input type="range" name="range-min" value="15" min="0" max="45" (touchmove)='funnelNeckWidth($event)' (pointermove)='funnelNeckWidth($event)' (change)='funnelNeckWidth($event)' autocomplete="off" id="funnelNeckWidth" style="width:90%">
                             </div>
                         </td>
+                        <td style="width: 60%;">
+                            <p id="funnelNeckWidth" style="font-weight: normal; padding-top: 15px">15</p>
+                    </td>
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 30%">
-                            <div>Neck Height:
-                                <p id="neckHeight" style="font-weight: normal;">18%</p>
+                            <div>Neck Height
                             </div>
                         </td>
                         <td style="width: 70%;">
@@ -36,6 +37,9 @@
                                 <input type="range" name="range-min" id="funnelNeckHeight" value="18" min="0" max="50" (touchmove)='funnelNeckHeight($event)' (pointermove)='funnelNeckHeight($event)' (change)='funnelNeckHeight($event)' autocomplete="off" style="width:90%">
                             </div>
                         </td>
+                        <td style="width: 60%;">
+                            <p id="funnelNeckHeight" style="font-weight: normal; padding-top: 15px">18</p>
+                    </td>
                     </tr>
                 </table>
             </div>

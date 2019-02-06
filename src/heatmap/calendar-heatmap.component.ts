@@ -9,7 +9,7 @@ HeatMap.Inject(Tooltip, Legend);
  */
 @Component({
     selector: 'control-content',
-    templateUrl: 'empty-points.html',
+    templateUrl: 'calendar-heatmap.html',
     encapsulation: ViewEncapsulation.None
 })
 export class HeatmapCalendarComponent {
@@ -32,6 +32,7 @@ export class HeatmapCalendarComponent {
         showLabelOn: 'Months',
         labelFormat: 'MMM',
         increment: 7,
+        labelIntersectAction: 'Rotate45',
     };
     yAxis: Object = {
         labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],

@@ -1,0 +1,30 @@
+<div class="control-section">
+        <div align='center'>
+                <ejs-maps id='container' style="display:block;" [layers]='layers' (load)="load($event)" [zoomSettings]="zoomSettings" [titleSettings]="titleSettings" >
+                </ejs-maps>
+            </div>
+        <div style="float: right"> 
+            <a href="https://www.penstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>
+        </div>
+        <br/>
+        <div style="float: right; margin-right: 10px;">Source:
+            <a href="https://www.whatarethe7continents.com/biggest-largest-smallest-continents/" target="_blank">Seven Continents</a>
+        </div>    
+    </div>
+
+    <div id="action-description">
+            <p>
+                This sample visualizes the location of Africa continent in the World map.
+           </p>
+        </div>
+        <div id="description">
+            <p>
+                In this example, you can see how to render the geometric layers as sublayer on the OpenStreetMap. The outline of Africa continent is rendered using GeoJSON data on the top of the OpenStreetMap.
+           
+            <p style="font-weight: 500">Injecting Module</p>
+            <p>
+                The maps component features are segregated into individual modules by feature. To use the zooming feature, inject the Zoom module using the <code>Maps.Inject(Zoom)</code> method.
+            </p>
+           
+        </div>
+    

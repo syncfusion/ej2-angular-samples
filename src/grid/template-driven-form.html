@@ -22,13 +22,13 @@
                             <td style="text-align: right" class='e-rowcell'>
                                 <div class="e-input-group" [ngClass]= "{'e-disabled': !data.isAdd}">
                                     <input class="e-input e-field" [(ngModel)]="orderData.OrderID" required [attr.disabled]="!data.isAdd ? '' : null" name='OrderID' type="text" (focus)="focusIn($event.target)"
-                                        (blur)="focusOut($event.target)" #OrderID="ngModel" style="text-align: right"  />
+                                        (blur)="focusOut($event.target)" #OrderID style="text-align: right"  />
                                 </div>
                             </td>
                             <td class='e-rowcell'>
                                 <div class="e-input-group">
                                     <input class="e-input e-field" name='CustomerName' [(ngModel)]="orderData.CustomerName" required type="text" (focus)="focusIn($event.target)"
-                                        (blur)="focusOut($event.target)" #CustomerName="ngModel"/>
+                                        (blur)="focusOut($event.target)" #CustomerName />
                                 </div>
                             </td>
                             <td style="text-align: right" class='e-rowcell'>

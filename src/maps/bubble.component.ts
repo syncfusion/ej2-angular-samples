@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { MapsTheme, Maps, Bubble, IBubbleRenderingEventArgs, MapsTooltip, ILoadEventArgs, } from '@syncfusion/ej2-angular-maps';
-import {  internetUsers } from './map-data/population-data';
+import {  internetUsers } from './population-data';
 import { MapAjax } from '@syncfusion/ej2-maps';
 
 Maps.Inject(Bubble, MapsTooltip); 
@@ -39,7 +39,7 @@ export class MapsBubbleComponent {
         {
             shapeDataPath: 'name',
             shapePropertyPath: 'name',
-            shapeData:  new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
+            shapeData:  new MapAjax('./src/maps/world-map.json'),
             shapeSettings: {
                 fill: '#E5E5E5'
             },

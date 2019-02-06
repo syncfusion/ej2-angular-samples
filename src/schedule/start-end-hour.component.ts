@@ -3,14 +3,14 @@ import { TimePickerComponent } from '@syncfusion/ej2-angular-calendars';
 import { extend, Internationalization } from '@syncfusion/ej2-base';
 import {
     ScheduleComponent, EventSettingsModel, View, WorkHoursModel, DayService,
-    WeekService, EventRenderedArgs, TimelineViewsService, ResizeService
+    WeekService, EventRenderedArgs, TimelineViewsService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 import { employeeEventData } from './datasource';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'start-end-hour.html',
-    providers: [DayService, WeekService, TimelineViewsService, ResizeService]
+    providers: [DayService, WeekService, TimelineViewsService, ResizeService, DragAndDropService]
 })
 export class StartEndHourComponent {
     @ViewChild('scheduleObj')

@@ -5,14 +5,7 @@
    </p>
 </div>
 <div class="control-section">
-   <div id="title" align="center" style="font-size: 15px; font-style: normal;font-family: 'Segoe UI'; font-weight: 500;">AAPL Historical</div>
-    <div id="selector" align="center">
-          <ejs-rangenavigator #containerTop  align='center' id='containerTop' labelPosition='Outside'
-            valueType= 'DateTime' [width]='width' (changed)='changed($event)' (load)='loadPeriodic($event)' 
-            disableRangeSelector=true [periodSelectorSettings]='periodSelectorSettings' (loaded)='loaded($event)'
-            [dataSource]='data1' xName='x' yName='Close'>     
-            </ejs-rangenavigator>
-    </div>
+   <div id="title" align="center" style="font-size: 15px; font-style: normal;font-family: 'Segoe UI'; font-weight: 500;">AAPL Historical</div>    
     <div id="container" align="center">
         <ejs-chart #chartcontainer id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center'
          style="display:block;" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'

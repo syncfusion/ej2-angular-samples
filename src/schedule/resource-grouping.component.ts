@@ -1,6 +1,6 @@
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
 import {
-    EventSettingsModel, GroupModel, ResourceDetails, TreeViewArgs, WeekService, MonthService, AgendaService, ResizeService
+    EventSettingsModel, GroupModel, ResourceDetails, TreeViewArgs, WeekService, MonthService, AgendaService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
@@ -8,7 +8,7 @@ import {
     templateUrl: 'resource-grouping.html',
     styleUrls: ['resource-grouping.style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [WeekService, MonthService, AgendaService, ResizeService]
+    providers: [WeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
 })
 
 export class GroupComponent {
@@ -32,7 +32,7 @@ export class GroupComponent {
     };
 
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['group.style.css'];
+        sourceFiles.files = ['resource-grouping.style.css'];
     }
 
     getAirlineName(value: ResourceDetails | TreeViewArgs): string {

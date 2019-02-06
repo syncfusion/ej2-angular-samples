@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { orderDetails } from './data';
 import { EditService, ToolbarService, PageService, DialogEditEventArgs, SaveEventArgs } from '@syncfusion/ej2-angular-grids';
 import { DataUtil } from '@syncfusion/ej2-data';
@@ -19,9 +19,13 @@ export class TemplateDrivenFormComponent implements OnInit {
     public pageSettings: Object;
     public shipCityDistinctData: Object[];
     public shipCountryDistinctData: Object[];
+    public orderData: IOrderModel;
     @ViewChild('orderForm')
     public orderForm: FormGroup;
-    public orderData: IOrderModel;
+    @ViewChild('OrderID')
+    public orderID: ElementRef;
+    @ViewChild('CustomerName')
+    public customerName: ElementRef;
 
     public ngOnInit(): void {
         this.data = orderDetails;
@@ -43,7 +47,7 @@ export class TemplateDrivenFormComponent implements OnInit {
                 args.cancel = true;
             }
         }
-    }
+    } 
 
     actionComplete(args: DialogEditEventArgs): void {
         if (args.requestType === 'beginEdit' || args.requestType === 'add') {
@@ -53,6 +57,7 @@ export class TemplateDrivenFormComponent implements OnInit {
             } else if (args.requestType === 'add') {
                 (args.form.elements.namedItem('OrderID') as HTMLInputElement).focus();
             }
+
         }
     }
 

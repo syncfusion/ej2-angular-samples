@@ -12,12 +12,26 @@
                                 <ejs-dropdownlist formControlName="skillname" name="skillname"
                                  [dataSource]='autoreactiveskillset' [placeholder]='autoreactiveplaceholder' floatLabelType='Auto'>
                                  </ejs-dropdownlist>
+                                 <div *ngIf="skillForm.controls.skillname.invalid && (skillForm.controls.skillname.touched)"
+                                 class="alert alert-danger">
+                                    <div *ngIf="skillForm.controls.skillname.errors.required">
+                                        BookName is required.
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="form-group" style="padding-top:10px;">
                               <div class="e-float-input">
                                 <input type="text" autocomplete="off" (focus)="onfocus($event)" (blur)="onblur($event)" formControlName="sname" name="sname" maxlength="10"/>
                                 <span class="e-float-line"></span>
                                 <label class="e-float-text e-label-bottom">Name:</label>
+                                <div *ngIf="skillForm.controls.sname.invalid && (skillForm.controls.sname.dirty || skillForm.controls.sname.touched)"
+                                    class="alert alert-danger">
+                                    <div *ngIf="skillForm.controls.sname.errors.required">
+                                    Name is required.
+                                    </div>
+                                </div>
+
                               </div>
                             </div>
                             <div class="form-group" style="padding-top:10px;">
@@ -25,14 +39,21 @@
                                 <input type="text" autocomplete="off"  (focus)="onfocus($event)" (blur)="onblur($event)" formControlName="smail" maxlength="15" />
                                 <span class="e-float-line"></span>
                                 <label class="e-float-text e-label-bottom">Email:</label>
+                                <div *ngIf="skillForm.controls.smail.invalid && (skillForm.controls.smail.dirty || skillForm.controls.smail.touched)"
+                                    class="alert alert-danger">
+                                    <div *ngIf="skillForm.controls.smail.errors.required">
+                                    Email is required.
+                                    </div>
+                                </div>
+
                               </div>
                             </div>
                             <div class="form-group" style="padding:10px;">
                                 <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
-                              <button ej-button [disabled]="!skillForm.valid" >Submit</button>
+                              <button ejs-button [disabled]="!skillForm.valid" >Submit</button>
                               </div>
                               <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
-                                <button ej-button (click)="onreset($event)" type="reset">Reset</button>
+                                <button ejs-button (click)="onreset($event)" type="reset" [disabled]="!(skillForm.controls.sname.valid || skillForm.controls.smail.valid || skillForm.controls.skillname.valid)">Reset</button>
                             </div>
                             </div>
                           </form>

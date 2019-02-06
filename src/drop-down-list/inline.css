@@ -3,6 +3,10 @@
     width: 325px;
 }
 
+#employee {
+    display: inline-block;
+}
+
 .e-control.e-dropdownlist .inlinecss.e-ddl .e-input-group-icon.e-ddl-icon {
     display: none;
 }

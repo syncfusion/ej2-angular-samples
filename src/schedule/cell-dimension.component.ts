@@ -1,7 +1,8 @@
 import { Component, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
 import {
-    View, EventSettingsModel, EventRenderedArgs, ScheduleComponent, MonthService, DayService, WeekService, WorkWeekService, ResizeService
+    View, EventSettingsModel, EventRenderedArgs, ScheduleComponent, MonthService, DayService,
+    WeekService, WorkWeekService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 import { employeeEventData } from './datasource';
 
@@ -9,7 +10,7 @@ import { employeeEventData } from './datasource';
     selector: 'control-content',
     templateUrl: 'cell-dimension.html',
     styleUrls: ['cell-dimension.style.css'],
-    providers: [MonthService, DayService, WeekService, WorkWeekService, ResizeService],
+    providers: [MonthService, DayService, WeekService, WorkWeekService, ResizeService, DragAndDropService],
     encapsulation: ViewEncapsulation.None
 })
 export class CellDimensionComponent {

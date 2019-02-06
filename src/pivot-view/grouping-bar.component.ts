@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Pivot_Data } from './data-source';
 import { IDataOptions, GroupingBarService, PivotView, FieldListService } from '@syncfusion/ej2-angular-pivotview';
-import { CheckBox } from '@syncfusion/ej2-angular-buttons';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(false);
@@ -26,12 +25,14 @@ export class GroupingBarComponent implements OnInit {
 
     /* tslint:disable */
     onChange(args: any) {
-        if ((args.event.target as HTMLElement).id === 'filter') {
+        if (args.event.target.value === 'filter') {
             this.pivotGridObj.groupingBarSettings.showFilterIcon = args.checked;
-        } else if (args.event.target.id === 'sort') {
+        } else if (args.event.target.value === 'sort') {
             this.pivotGridObj.groupingBarSettings.showSortIcon = args.checked;
-        } else {
+        } else if (args.event.target.value === 'remove') {
             this.pivotGridObj.groupingBarSettings.showRemoveIcon = args.checked;
+        } else {
+            this.pivotGridObj.groupingBarSettings.showValueTypeIcon = args.checked;
         }
     }
 
@@ -51,24 +52,5 @@ export class GroupingBarComponent implements OnInit {
             { name: 'Amount', caption: 'Sold Amount' }],
             filters: [{ name: 'Product_Categories', caption: 'Product Categories' }]
         };
-        let filter: CheckBox = new CheckBox({
-            label: 'Show Filter Icon',
-            checked: true,
-            change: this.onChange.bind(this)
-        });
-        filter.appendTo('#filter');
-        let sort: CheckBox = new CheckBox({
-            label: 'Show Sort Icon',
-            checked: true,
-            change: this.onChange.bind(this)
-        });
-        sort.appendTo('#sort');
-        let remove: CheckBox = new CheckBox({
-            label: 'Show Remove Icon',
-            checked: true,
-            change: this.onChange.bind(this)
-        });
-        remove.appendTo('#remove');
-
     }
 }

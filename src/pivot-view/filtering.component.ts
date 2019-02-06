@@ -1,11 +1,12 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Pivot_Data } from './data-source';
-import { IDataOptions, PivotView } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView, FilterType } from '@syncfusion/ej2-angular-pivotview';
 import { DropDownList, MultiSelect, ChangeEventArgs, SelectEventArgs, RemoveEventArgs, PopupEventArgs } from '@syncfusion/ej2-dropdowns';
 import { CheckBoxSelection } from '@syncfusion/ej2-dropdowns';
 import { Button } from '@syncfusion/ej2-buttons';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { FilterModel } from '@syncfusion/ej2-pivotview/src/pivotview/model/dataSource-model';
 enableRipple(false);
 MultiSelect.Inject(CheckBoxSelection);
 /**
@@ -22,6 +23,7 @@ MultiSelect.Inject(CheckBoxSelection);
 export class FilteringComponent implements OnInit {
     public dataSource: IDataOptions;
     public fieldCollections: { [key: string]: { [key: string]: Object }[] } = {};
+    public filterCollections: { [key: string]: FilterModel } = {};
     public isInitial: boolean = true;
     public type: string[] = ['Include', 'Exclude'];
     public values: { [key: string]: Object }[] = [];
@@ -62,6 +64,17 @@ export class FilteringComponent implements OnInit {
         }
     }
 
+    /** To set the filter type of the members maintained in the object filterCollections. */
+    updateFilterType(fieldName: string): FilterType {
+        if ((this.fieldsddl as any).itemData === fieldName) {
+            return (this.typeddl as any).itemData;
+        } else if (this.filterCollections[fieldName]) {
+            return this.filterCollections[fieldName].type;
+        } else {
+            return 'Exclude';
+        }
+    }
+
     /** To set disabled/enabled state in the Apply button. */
     setApplyBtnState(): void {
         let fieldArray: string[] = ['Country', 'Products', 'Year'];
@@ -77,7 +90,7 @@ export class FilteringComponent implements OnInit {
         this.applyBtn.disabled = !isSelected;
     }
 
-    ondataBound (args: any): void {
+    ondataBound(args: any): void {
         if (this.isInitial) {
             /** To fill the members for each fields into the object fieldCollections. */
             let fieldCnt: number = this.fields.length - 1;
@@ -96,6 +109,9 @@ export class FilteringComponent implements OnInit {
             this.valuesddl.dataSource = this.values;
             this.valuesddl.dataBind();
             this.isInitial = false;
+        }
+        for (let field of this.pivotGridObj.dataSource.filterSettings) {
+            this.filterCollections[field.name] = field;
         }
     }
 
@@ -124,13 +140,13 @@ export class FilteringComponent implements OnInit {
             fields: { text: 'Member' },
             select: (args: SelectEventArgs): void => {
                 this.applyBtn.disabled = false;
-                this.applyBtn.refresh();
+                this.applyBtn.dataBind();
                 this.setMemberCheckedState((<any>this.fieldsddl).itemData, args.item.textContent, args.item.textContent + '_' + true);
             },
             removed: (args: RemoveEventArgs): void => {
                 this.setMemberCheckedState((<any>this.fieldsddl).itemData, args.item.textContent, args.item.textContent + '_' + false);
                 this.setApplyBtnState();
-                this.applyBtn.refresh();
+                this.applyBtn.dataBind();
             },
             open: (args: PopupEventArgs): void => {
                 if (args.popup.element.querySelector(".e-filter-parent")) {
@@ -147,7 +163,11 @@ export class FilteringComponent implements OnInit {
             change: (args: ChangeEventArgs) => {
                 this.valuesddl.dataSource = this.fieldCollections[args.value.toString()];
                 this.valuesddl.value = this.getSelectedMembers(args.value.toString());
+                if (this.filterCollections[args.value.toString()]) {
+                    this.typeddl.value = this.filterCollections[args.value.toString()].type;
+                }
                 this.valuesddl.dataBind();
+                this.typeddl.dataBind();
             }
         });
         this.fieldsddl.appendTo('#fields');
@@ -160,16 +180,16 @@ export class FilteringComponent implements OnInit {
         this.typeddl.appendTo('#type');
 
         this.applyBtn = new Button({
-            iconCss: 'e-icons e-play-icon', cssClass: 'e-flat', isPrimary: true, disabled: true
+            cssClass: 'e-flat', isPrimary: true, disabled: true
         });
         this.applyBtn.appendTo('#apply');
 
         document.getElementById('apply').onclick = () => {
             /** You can set your filter settings here. */
             this.pivotGridObj.dataSource.filterSettings = [
-                { name: this.fields[0], items: this.getSelectedMembers(this.fields[0]), type: (<any>this.typeddl).itemData.toLowerCase() },
-                { name: this.fields[1], items: this.getSelectedMembers(this.fields[1]), type: (<any>this.typeddl).itemData.toLowerCase() },
-                { name: this.fields[2], items: this.getSelectedMembers(this.fields[2]), type: (<any>this.typeddl).itemData.toLowerCase() },
+                { name: this.fields[0], items: this.getSelectedMembers(this.fields[0]), type: this.updateFilterType(this.fields[0]) },
+                { name: this.fields[1], items: this.getSelectedMembers(this.fields[1]), type: this.updateFilterType(this.fields[1]) },
+                { name: this.fields[2], items: this.getSelectedMembers(this.fields[2]), type: this.updateFilterType(this.fields[2]) },
             ];
         };
     }

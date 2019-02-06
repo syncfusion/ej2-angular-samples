@@ -177,7 +177,9 @@ export class SparkineLiveUpdateSample {
             this.cpuspark.dataSource.shift();
             this.cpuspark.refresh();
             let cpu: Element = document.getElementById('cpu');
+            if (cpu) {
             cpu.innerHTML = ((value / 150) * 100).toFixed(0) + '% ' + ((value * 3) / 100).toFixed(2) + 'GHz';
+            }
         }
     }
     public update1(): void {
@@ -193,7 +195,9 @@ export class SparkineLiveUpdateSample {
             this.memspark.refresh();
             let memory: Element = document.getElementById('memory');
             let gb: string = parseFloat(value.toString().replace('0', '')).toFixed(1);
+            if (memory) {
             memory.innerHTML = gb + '/15.8 GB (' + ((value / 15.8) * 100).toFixed(0) + '%)';
+            }
         }
     }
     public update2(): void {
@@ -203,7 +207,9 @@ export class SparkineLiveUpdateSample {
             this.diskspark.dataSource.shift();
             this.diskspark.refresh();
             let disk: Element = document.getElementById('disk');
+            if (disk) {
             disk.innerHTML = value.toFixed(0) + '%';
+            }
         }
     }
     public update3(): void {
@@ -213,7 +219,9 @@ export class SparkineLiveUpdateSample {
             this.netspark.dataSource.shift();
             this.netspark.refresh();
             let net: Element = document.getElementById('net');
+            if (net) {
             net.innerHTML = 'R: ' + value.toFixed(0) + 'Kbps';
+            }
         }
     }
     constructor() {

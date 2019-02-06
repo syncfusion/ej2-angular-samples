@@ -2,14 +2,14 @@ import { Component, ViewChild } from '@angular/core';
 import { scheduleData } from './datasource';
 import { extend } from '@syncfusion/ej2-base';
 import {
-    ScheduleComponent, EventSettingsModel, View, DayService, WeekService, EventRenderedArgs, TimelineViewsService, ResizeService
+    ScheduleComponent, EventSettingsModel, View, DayService, WeekService, EventRenderedArgs, TimelineViewsService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 import { ChangeEventArgs } from '@syncfusion/ej2-angular-calendars';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'scroll-to.html',
-    providers: [DayService, WeekService, TimelineViewsService, ResizeService]
+    providers: [DayService, WeekService, TimelineViewsService, ResizeService, DragAndDropService]
 })
 export class ScrollTimeComponent {
     @ViewChild('scheduleObj')

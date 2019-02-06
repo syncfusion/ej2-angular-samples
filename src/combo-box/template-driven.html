@@ -9,30 +9,45 @@
             <div id='content' class='box-form' style="margin: 0 auto; width:250px; padding:25px">
                     <form #form="ngForm">
                             <div class="form-group">
-                                <ejs-combobox name="skillname" [(ngModel)]= 'autoskillname' allowCustom=false
+                                <ejs-combobox name="skillname" #value='ngModel' required [(ngModel)]= 'autoskillname' allowCustom=false
                                  [dataSource]='autoSkillsetData' [placeholder]='autoDrivenPlaceholder' floatLabelType='Auto'>
                                  </ejs-combobox>
+                                 <div *ngIf="(value.invalid && value.touched)" class="alert alert-danger">
+                                    <div *ngIf="value.errors.required">
+                                        Value is required.
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group" style="padding-top:10px;">
                               <div class="e-float-input">
-                                <input type="text" autocomplete="off" (focus)="onfocus($event)" (blur)="onblur($event)" [(ngModel)]="autosname" name="sname" maxlength="10"/>
+                                <input type="text" autocomplete="off" (focus)="onfocus($event)" (blur)="onblur($event)" #name='ngModel' required [(ngModel)]="autosname" name="sname" maxlength="10"/>
                                 <span class="e-float-line"></span>
                                 <label class="e-float-text e-label-bottom">Name:</label>
+                                <div *ngIf="(name.invalid && (name.dirty || name.touched))" class="alert alert-danger">
+                                    <div *ngIf="name.errors.required">
+                                        Name is required.
+                                    </div>
+                                </div>
                               </div>
                             </div>
                             <div class="form-group" style="padding-top:10px;">
                               <div class="e-float-input">
-                                <input type="text" autocomplete="off" (focus)="onfocus($event)" (blur)="onblur($event)" [(ngModel)]="autosmail" name="smail" maxlength="15" />
+                                <input type="text" autocomplete="off" (focus)="onfocus($event)" (blur)="onblur($event)"  #email='ngModel' required [(ngModel)]="autosmail" name="smail" maxlength="15" />
                                 <span class="e-float-line"></span>
                                 <label class="e-float-text e-label-bottom">Email:</label>
+                                <div *ngIf="(email.invalid && (email.dirty || email.touched))" class="alert alert-danger">
+                                    <div *ngIf="email.errors.required">
+                                        Value is required.
+                                    </div>
+                                </div>
                               </div>
                             </div>
                             <div class="form-group" style="padding:10px;">
                                 <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
-                              <button ej-button>Submit</button>
+                              <button ejs-button [disabled]="!form.valid">Submit</button>
                               </div>
                               <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
-                                <button ej-button (click)="onreset($event)" type="reset">Reset</button>
+                                <button ejs-button (click)="onreset($event)" type="reset" [disabled]="!form.valid">Reset</button>
                               </div>
                             </div>
                           </form>

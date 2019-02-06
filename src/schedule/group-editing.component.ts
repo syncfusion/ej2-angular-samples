@@ -2,7 +2,8 @@ import { Component, Inject, ViewEncapsulation } from '@angular/core';
 import { resourceConferenceData } from './datasource';
 import { extend } from '@syncfusion/ej2-base';
 import {
-    EventSettingsModel, GroupModel, ResourceDetails, TreeViewArgs, View, DayService, MonthService, WorkWeekService, TimelineViewsService, ResizeService
+    EventSettingsModel, GroupModel, ResourceDetails, TreeViewArgs, View, DayService,
+    MonthService, WorkWeekService, TimelineViewsService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
@@ -10,7 +11,7 @@ import {
     templateUrl: 'group-editing.html',
     styleUrls: ['group-editing.style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [DayService, MonthService, WorkWeekService, TimelineViewsService, ResizeService]
+    providers: [DayService, MonthService, WorkWeekService, TimelineViewsService, ResizeService, DragAndDropService]
 })
 
 export class GroupEditingComponent {

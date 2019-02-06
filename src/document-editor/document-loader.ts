@@ -3,7 +3,7 @@ import { DocumentEditor } from '@syncfusion/ej2-documenteditor';
  * Document editor - Document loader
  */
 export class DocumentLoader {
-    private hostUrl: string = 'https://ej2services.syncfusion.com/development/web-services/';
+    private hostUrl: string = 'https://ej2services.syncfusion.com/production/web-services/';
     private documentEditor: DocumentEditor = undefined;
 
 

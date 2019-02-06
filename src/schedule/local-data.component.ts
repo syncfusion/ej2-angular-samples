@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { zooEventsData } from './datasource';
 import { extend } from '@syncfusion/ej2-base';
 import {
-    EventSettingsModel, View, EventRenderedArgs, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService
+    EventSettingsModel, View, EventRenderedArgs, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'local-data.html',
-    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService]
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
 })
 export class LocalDataComponent {
     public data: Object[] = <Object[]>extend([], zooEventsData, null, true);

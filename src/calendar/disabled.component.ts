@@ -12,7 +12,6 @@ import { Component, ViewEncapsulation, Inject } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class DisabledCalendarComponent {
-
     constructor(@Inject('sourceFiles') private sourceFiles:any) {
          sourceFiles.files = ['disabled-style.css'];
     }

@@ -1,0 +1,59 @@
+<div id="action-description">
+    <p>
+        Select a start time from the first TimePicker and then the second TimePicker will be enabled. Select an end time from the second TimePicker to get a <code>time range</code>. Click/Touch the Business Hours checkbox to change both the TimePickers to <code>read-only</code> state.
+    </p>
+</div>
+<div class="control-section range">
+    <div id="component_wrapper">
+        <div class="pane">
+            <div class="tabs-wrap">
+                <div class="wrap">
+                    <ejs-timepicker #startTime id='startPicker' (change)='onEnableEndTime($event)'></ejs-timepicker>
+                </div>
+            </div>
+            <div class="tabs-wrap" style="clear: both">
+                <div class="wrap">
+                    <ejs-timepicker #endTime id='endPicker' [enabled]='false'></ejs-timepicker>
+                </div>
+            </div>
+            <div class="tabs-wrap" style="clear: both">
+                <div class="wrap">
+                    <ejs-checkbox id="dayRange" label="Business Hours" (change)="changeTime($event)"></ejs-checkbox>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>Time Range sample illustrates the appointment time selection scenario with the start and end time option. Here, two TimePicker components are used to select the start and end time.</p>
+    <p>Before the start time selection, the end time TimePicker is in disable state. When the start time is selected, then you will be able to select the end time or else, need to select the entire business hours 9:00 to 18:00 from the <code>Business Hours</code>        option. Once the options are checked, both the TimePicker components goes to readonly state.</p>
+    <p>More information on the time range restriction can be found in the
+        <a href="https://ej2.syncfusion.com/angular/documentation/timepicker/time-range.html" target="_blank">
+         documentation section</a>.</p>
+</div>
+<style>
+    .control-section {
+        margin: 30px;
+    }
+    
+    #component_wrapper {
+        display: block;
+        margin: 0 auto;
+        float: none;
+        padding: 2% 0;
+        max-width: 300px;
+    }
+    
+    .control-section.range {
+        margin: 30px;
+        padding: 3%;
+    }
+    
+    .e-bigger .control-section {
+        margin-top: 60px;
+    }
+    
+    .range .tabs-wrap {
+        padding: 12px 0px;
+    }
+</style>

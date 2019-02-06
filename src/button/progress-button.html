@@ -22,8 +22,8 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
                     <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
-                        <button ejs-progressbutton [spinSettings]="spinCenter" [animationSettings]="zoomOut" cssClass="e-round e-small e-success"
-                            iconCss="e-icons e-play-icon"></button>
+                        <button ejs-progressbutton id="roundbtn" [spinSettings]="spinCenter" [animationSettings]="zoomOut" cssClass="e-round e-small e-success"
+                            iconCss="e-btn-sb-icons e-play-icon"></button>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
                         <button #contractBtn ejs-progressbutton id="contract" content="Contract" [enableProgress]="true" cssClass="e-success e-small" (begin)="contractBegin()"
@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
                     <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
-                        <button ejs-progressbutton id="zoomin" content="Zoom In" [enableProgress]="true" [spinSettings]="spinCenter" [animationSettings]="zoomIn"
+                        <button ejs-progressbutton content="Zoom In" [enableProgress]="true" [spinSettings]="spinCenter" [animationSettings]="zoomIn"
                             cssClass="e-round-corner e-danger"></button>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
@@ -55,7 +55,7 @@
                 <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
                     <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
                         <button ejs-progressbutton content="Download" [enableProgress]="true" duration=4000 cssClass="e-hide-spinner e-progress-top"
-                            iconCss="e-icons e-download-icon"></button>
+                            iconCss="e-btn-sb-icons e-download-icon"></button>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
                         <button ejs-progressbutton content="Disabled" [disabled]="true"></button>
@@ -78,21 +78,21 @@
         In this sample, the progress button contains the content, spinner, progress indicator, and a list of related features that
         can be achieved using
         <code>
-                    <a target="_blank" class="code" href="http://ej2.syncfusion.com/angular/documentation/progress-button/api-progressButton.html#content">content,
+                    <a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/progress-button/#content">content,
                     </a>
         </code>
         <code>
-                    <a target="_blank" class="code" href="http://ej2.syncfusion.com/angular/documentation/progress-button/api-progressButton.html#cssClass">cssClass,
+                    <a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/progress-button/#cssclass">cssClass,
                     </a>
         </code>and
         <code>
-                <a target="_blank" class="code" href="http://ej2.syncfusion.com/angular/documentation/progress-button/api-progressButton.html#enableProgress">enableProgress
+                <a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/progress-button/#enableprogress">enableProgress
                 </a>
         </code>property.
     </p>
     <p>
         More information about progress button can be found in this
-        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/progress-button/getting-started.html">
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/progress-button/getting-started">
             documentation section</a>.
     </p>
 </div>

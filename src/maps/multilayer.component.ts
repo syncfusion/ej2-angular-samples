@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject} from '@angular/core';
 import { MapsTheme, MapsTooltip, DataLabel, Maps, Marker, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps'; 
 
@@ -30,7 +30,7 @@ export class MapsMultilayerComponent {
     }
     public layers: object[] = [
         {
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/usa.json'),
+            shapeData: new MapAjax('./src/maps/usa.json'),
             shapeSettings: {
                 fill: '#E5E5E5',
                 border: {
@@ -45,7 +45,7 @@ export class MapsMultilayerComponent {
             }
         },
         {
-            shapeData:  new MapAjax(location.origin + location.pathname + 'src/maps/map-data/texas.json'),
+            shapeData:  new MapAjax('src/maps/texas.json'),
             type: 'SubLayer',
             shapeSettings: {
                 fill: 'rgba(141, 206, 255, 0.6)',
@@ -86,7 +86,7 @@ export class MapsMultilayerComponent {
             ]
         },
         {
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/california.json'),
+            shapeData: new MapAjax('src/maps/california.json'),
             type: 'SubLayer',
             shapeSettings: {
                 fill: 'rgba(141, 206, 255, 0.6)',
@@ -127,7 +127,7 @@ export class MapsMultilayerComponent {
             ]
         }
     ];
-    constructor() {
-        //code
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = [ 'usa.json', 'texas.json'];
     };
 }

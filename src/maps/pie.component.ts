@@ -1,7 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { MapsTheme, Maps, Marker, ILoadEventArgs, Legend, ILoadedEventArgs, IResizeEventArgs } from '@syncfusion/ej2-angular-maps';
 import { AccumulationChart, PieSeries, DataLabel, AccumulationTooltip } from '@syncfusion/ej2-charts';
-import { world_continent } from './map-data/continent';
+import { world_continent } from './continent';
 import { MapAjax } from '@syncfusion/ej2-maps';
 
 AccumulationChart.Inject(AccumulationChart, PieSeries, DataLabel, AccumulationTooltip);
@@ -42,7 +42,7 @@ export class MapsPieComponent {
 
     public layers: object[] = [
         {
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
+            shapeData: new MapAjax('./src/maps/world-map.json'),
             shapeSettings: {
                 fill: '#E5E5E5',
                 colorMapping: [
@@ -170,7 +170,7 @@ export class MapsPieComponent {
             this.chartCollection.push(chart5);
         }
 
-    constructor() {
-        //code
-    };
+        constructor(@Inject('sourceFiles') private sourceFiles: any) {
+            sourceFiles.files = [ 'world-map.json'];
+        };
 }

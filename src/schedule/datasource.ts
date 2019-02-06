@@ -1380,8 +1380,8 @@ export let timelineResourceData: Object[] = [
     }, {
         Id: 62,
         Subject: 'Bug Automation',
-        StartTime: new Date(2018, 3, 4, 13, 30),
-        EndTime: new Date(2018, 3, 4, 16, 30),
+        StartTime: new Date(2018, 3, 4, 16, 0),
+        EndTime: new Date(2018, 3, 4, 20, 0),
         IsAllDay: false,
         ProjectId: 2,
         TaskId: 1
@@ -1397,10 +1397,10 @@ export let timelineResourceData: Object[] = [
         Id: 64,
         Subject: 'Resolution-based testing',
         StartTime: new Date(2018, 3, 4, 12),
-        EndTime: new Date(2018, 3, 4, 13),
+        EndTime: new Date(2018, 3, 4, 15, 0),
         IsAllDay: false,
-        ProjectId: 1,
-        TaskId: 1
+        ProjectId: 2,
+        TaskId: 4
     }, {
         Id: 65,
         Subject: 'Test report Validation',
@@ -1415,32 +1415,32 @@ export let timelineResourceData: Object[] = [
         StartTime: new Date(2018, 3, 4, 14),
         EndTime: new Date(2018, 3, 4, 16),
         IsAllDay: false,
-        ProjectId: 1,
-        TaskId: 2
+        ProjectId: 3,
+        TaskId: 6
     }, {
         Id: 67,
         Subject: 'Bug fixing',
         StartTime: new Date(2018, 3, 4, 14, 30),
         EndTime: new Date(2018, 3, 4, 18, 30),
         IsAllDay: false,
-        ProjectId: 2,
-        TaskId: 2
+        ProjectId: 3,
+        TaskId: 5
     }, {
         Id: 68,
         Subject: 'Run test cases',
         StartTime: new Date(2018, 3, 4, 17, 30),
         EndTime: new Date(2018, 3, 4, 19, 30),
         IsAllDay: false,
-        ProjectId: 1,
-        TaskId: 2
+        ProjectId: 2,
+        TaskId: 4
     }, {
         Id: 70,
         Subject: 'Bug Automation',
-        StartTime: new Date(2018, 3, 4, 18, 30),
-        EndTime: new Date(2018, 3, 4, 20),
+        StartTime: new Date(2018, 3, 4, 16, 0),
+        EndTime: new Date(2018, 3, 4, 20, 0),
         IsAllDay: false,
         ProjectId: 2,
-        TaskId: 1
+        TaskId: 3
     }
 ];
 
@@ -2850,7 +2850,7 @@ export let doctorData: Object[] = [
         Id: 12,
         Subject: 'Coronary angiogram',
         StartTime: new Date(2018, 3, 6, 8),
-        EndTime: new Date(2018, 3, 6, 8, 30),
+        EndTime: new Date(2018, 3, 6, 9, 30),
         IsAllDay: false,
         DoctorId: 1
     }, {
@@ -3716,52 +3716,61 @@ export let readonlyEventsData: Object[] = [
         Subject: 'Project Workflow Analysis',
         StartTime: new Date(currentTime + msPerDay * -2 + msPerHour * 2),
         EndTime: new Date(currentTime + msPerDay * -2 + msPerHour * 4),
+        IsReadonly: true
     }, {
         Id: 2,
         Subject: 'Project Requirement Planning',
         StartTime: new Date(currentTime + msPerDay * -1 + msPerHour * 2),
         EndTime: new Date(currentTime + msPerDay * -1 + msPerHour * 4),
+        IsReadonly: true
     }, {
         Id: 3,
         Subject: 'Meeting with Developers',
         StartTime: new Date(currentTime + msPerDay * -1 + msPerHour * -3),
         EndTime: new Date(currentTime + msPerDay * -1 + msPerHour * -1),
+        IsReadonly: true
     }, {
         Id: 4,
         Subject: 'Team Fun Activities',
         StartTime: new Date(currentTime + msPerHour * -4),
-        EndTime: new Date(currentTime + msPerHour * -2)
+        EndTime: new Date(currentTime + msPerHour * -2),
+        IsReadonly: true
     }, {
         Id: 5,
         Subject: 'Quality Analysis',
         StartTime: new Date(currentTime + msPerHour * 1),
         EndTime: new Date(currentTime + msPerHour * 3),
-        ReadOnly: true
+        IsReadonly: true
     }, {
         Id: 6,
         Subject: 'Customer meeting – John Mackenzie',
         StartTime: new Date(currentTime + msPerHour * 5),
-        EndTime: new Date(currentTime + msPerHour * 6)
+        EndTime: new Date(currentTime + msPerHour * 6),
+        IsReadonly: false
     }, {
         Id: 7,
         Subject: 'Meeting with Core team',
         StartTime: new Date(currentTime + msPerHour * 9),
-        EndTime: new Date(currentTime + msPerHour * 10)
+        EndTime: new Date(currentTime + msPerHour * 10),
+        IsReadonly: false
     }, {
         Id: 8,
         Subject: 'Project Review',
         StartTime: new Date(currentTime + msPerDay * 1 + msPerHour * 3),
         EndTime: new Date(currentTime + msPerDay * 1 + msPerHour * 5),
+        IsReadonly: false
     }, {
         Id: 9,
         Subject: 'Project demo meeting with Andrew',
         StartTime: new Date(currentTime + msPerDay * 1 + msPerHour * -4),
         EndTime: new Date(currentTime + msPerDay * 1 + msPerHour * -3),
+        IsReadonly: false
     }, {
         Id: 10,
         Subject: 'Online Hosting of Project',
         StartTime: new Date(currentTime + msPerDay * 2 + msPerHour * 4),
         EndTime: new Date(currentTime + msPerDay * 2 + msPerHour * 6),
+        IsReadonly: false
     }
 ];
 
@@ -4227,6 +4236,96 @@ export let roomData: Object[] = [
         StartTime: new Date(2018, 7, 1, 11, 0),
         EndTime: new Date(2018, 7, 1, 12, 30),
         RoomId: 10
+    },
+    {
+        Id: 56,
+        Subject: 'Lunch Break',
+        StartTime: new Date(2017, 7, 1, 13, 0),
+        EndTime: new Date(2017, 7, 1, 14, 0),
+        RecurrenceRule: 'FREQ=DAILY;INTERVAL=1;',
+        IsBlock: true,
+        RoomId: 1
+    },
+    {
+        Id: 57,
+        Subject: 'Lunch Break',
+        StartTime: new Date(2017, 7, 1, 13, 0),
+        EndTime: new Date(2017, 7, 1, 14, 0),
+        RecurrenceRule: 'FREQ=DAILY;INTERVAL=1;',
+        IsBlock: true,
+        RoomId: 2
+    },
+    {
+        Id: 58,
+        Subject: 'Lunch Break',
+        StartTime: new Date(2017, 7, 1, 13, 0),
+        EndTime: new Date(2017, 7, 1, 14, 0),
+        RecurrenceRule: 'FREQ=DAILY;INTERVAL=1;',
+        IsBlock: true,
+        RoomId: 3
+    },
+    {
+        Id: 59,
+        Subject: 'Lunch Break',
+        StartTime: new Date(2017, 7, 1, 13, 0),
+        EndTime: new Date(2017, 7, 1, 14, 0),
+        RecurrenceRule: 'FREQ=DAILY;INTERVAL=1;',
+        IsBlock: true,
+        RoomId: 4
+    },
+    {
+        Id: 60,
+        Subject: 'Lunch Break',
+        StartTime: new Date(2017, 7, 1, 13, 0),
+        EndTime: new Date(2017, 7, 1, 14, 0),
+        RecurrenceRule: 'FREQ=DAILY;INTERVAL=1;',
+        IsBlock: true,
+        RoomId: 5
+    },
+    {
+        Id: 61,
+        Subject: 'Lunch Break',
+        StartTime: new Date(2017, 7, 1, 13, 0),
+        EndTime: new Date(2017, 7, 1, 14, 0),
+        RecurrenceRule: 'FREQ=DAILY;INTERVAL=1;',
+        IsBlock: true,
+        RoomId: 6
+    },
+    {
+        Id: 62,
+        Subject: 'Lunch Break',
+        StartTime: new Date(2017, 7, 1, 13, 0),
+        EndTime: new Date(2017, 7, 1, 14, 0),
+        RecurrenceRule: 'FREQ=DAILY;INTERVAL=1;',
+        IsBlock: true,
+        RoomId: 7
+    },
+    {
+        Id: 63,
+        Subject: 'Lunch Break',
+        StartTime: new Date(2017, 7, 1, 13, 0),
+        EndTime: new Date(2017, 7, 1, 14, 0),
+        RecurrenceRule: 'FREQ=DAILY;INTERVAL=1;',
+        IsBlock: true,
+        RoomId: 8
+    },
+    {
+        Id: 64,
+        Subject: 'Lunch Break',
+        StartTime: new Date(2017, 7, 1, 13, 0),
+        EndTime: new Date(2017, 7, 1, 14, 0),
+        RecurrenceRule: 'FREQ=DAILY;INTERVAL=1;',
+        IsBlock: true,
+        RoomId: 9
+    },
+    {
+        Id: 65,
+        Subject: 'Lunch Break',
+        StartTime: new Date(2017, 7, 1, 13, 0),
+        EndTime: new Date(2017, 7, 1, 14, 0),
+        RecurrenceRule: 'FREQ=DAILY;INTERVAL=1;',
+        IsBlock: true,
+        RoomId: 10
     }
 ];
 
@@ -4427,5 +4526,305 @@ export let headerRowData: Object[] = [
         EndTime: new Date(2018, 1, 17),
         IsAllDay: true,
         CategoryColor: '#ea7a57'
+    }
+];
+
+export let hospitalData: Object[] = [
+    {
+        Id: 10,
+        Name: 'David',
+        StartTime: new Date(2018, 7, 1, 9, 0),
+        EndTime: new Date(2018, 7, 1, 10, 0),
+        Description: 'Health Checkup',
+        DepartmentID: 1,
+        ConsultantID: 1,
+        DepartmentName: 'GENERAL'
+    }, {
+        Id: 11,
+        Name: 'John',
+        StartTime: new Date(2018, 7, 1, 10, 30),
+        EndTime: new Date(2018, 7, 1, 11, 30),
+        Description: 'Tooth Erosion',
+        DepartmentID: 2,
+        ConsultantID: 2,
+        DepartmentName: 'DENTAL'
+    }, {
+        Id: 12,
+        Name: 'Peter',
+        StartTime: new Date(2018, 7, 1, 12, 0),
+        EndTime: new Date(2018, 7, 1, 13, 0),
+        Description: 'Eye and Spectacles Checkup',
+        DepartmentID: 1,
+        ConsultantID: 3,
+        DepartmentName: 'GENERAL'
+    }, {
+        Id: 13,
+        Name: 'Starc',
+        StartTime: new Date(2018, 7, 1, 14, 0),
+        EndTime: new Date(2018, 7, 1, 15, 0),
+        Description: 'Toothaches',
+        DepartmentID: 2,
+        ConsultantID: 4,
+        DepartmentName: 'DENTAL'
+    }, {
+        Id: 14,
+        Name: 'James',
+        StartTime: new Date(2018, 7, 1, 10, 0),
+        EndTime: new Date(2018, 7, 1, 11, 0),
+        Description: 'Surgery Appointment',
+        DepartmentID: 1,
+        ConsultantID: 5,
+        DepartmentName: 'GENERAL'
+    }, {
+        Id: 15,
+        Name: 'Jercy',
+        StartTime: new Date(2018, 7, 1, 9, 30),
+        EndTime: new Date(2018, 7, 1, 10, 30),
+        Description: 'Tooth Sensitivity',
+        DepartmentID: 2,
+        ConsultantID: 6,
+        DepartmentName: 'DENTAL'
+    }, {
+        Id: 16,
+        Name: 'Albert',
+        StartTime: new Date(2018, 7, 2, 10, 0),
+        EndTime: new Date(2018, 7, 2, 11, 30),
+        Description: 'Skin care treatment',
+        DepartmentID: 1,
+        ConsultantID: 7,
+        DepartmentName: 'GENERAL'
+    }, {
+        Id: 17,
+        Name: 'Louis',
+        StartTime: new Date(2018, 7, 2, 12, 30),
+        EndTime: new Date(2018, 7, 2, 13, 45),
+        Description: 'General Checkup',
+        DepartmentID: 1,
+        ConsultantID: 9,
+        DepartmentName: 'GENERAL'
+    }, {
+        Id: 18,
+        Name: 'Williams',
+        StartTime: new Date(2018, 7, 2, 12, 0),
+        EndTime: new Date(2018, 7, 2, 14, 0),
+        Description: 'Mouth Sores',
+        DepartmentID: 2,
+        ConsultantID: 10,
+        DepartmentName: 'DENTAL'
+    },
+    {
+        Id: 19,
+        Name: 'David',
+        StartTime: new Date(2018, 7, 2, 16, 30),
+        EndTime: new Date(2018, 7, 2, 18, 15),
+        Description: 'Eye checkup and Treatment',
+        DepartmentID: 1,
+        ConsultantID: 1,
+        DepartmentName: 'GENERAL'
+    }, {
+        Id: 20,
+        Name: 'John',
+        StartTime: new Date(2018, 7, 2, 19, 30),
+        EndTime: new Date(2018, 7, 2, 21, 45),
+        Description: 'Toothaches',
+        DepartmentID: 2,
+        ConsultantID: 2,
+        DepartmentName: 'DENTAL'
+    }, {
+        Id: 21,
+        Name: 'Peter',
+        StartTime: new Date(2018, 7, 3, 17, 30),
+        EndTime: new Date(2018, 7, 3, 19, 30),
+        Description: 'Surgery Treatment',
+        DepartmentID: 1,
+        ConsultantID: 3,
+        DepartmentName: 'GENERAL'
+    }, {
+        Id: 22,
+        Name: 'Starc',
+        StartTime: new Date(2018, 7, 4, 18, 30),
+        EndTime: new Date(2018, 7, 4, 21, 30),
+        Description: 'Tooth Decay',
+        DepartmentID: 2,
+        ConsultantID: 4,
+        DepartmentName: 'DENTAL'
+    }, {
+        Id: 23,
+        Name: 'James',
+        StartTime: new Date(2018, 7, 3, 19, 0),
+        EndTime: new Date(2018, 7, 3, 21, 0),
+        Description: 'General Checkup',
+        DepartmentID: 1,
+        ConsultantID: 5,
+        DepartmentName: 'GENERAL'
+    }, {
+        Id: 24,
+        Name: 'Jercy',
+        StartTime: new Date(2018, 7, 4, 20, 0),
+        EndTime: new Date(2018, 7, 4, 22, 0),
+        Description: 'Tooth Erosion',
+        DepartmentID: 2,
+        ConsultantID: 6,
+        DepartmentName: 'DENTAL'
+    }];
+
+export let waitingList: { [key: string]: Object }[] = [
+    {
+        Id: 1,
+        Name: 'Steven',
+        StartTime: new Date(2018, 8, 3, 7, 30),
+        EndTime: new Date(2018, 8, 3, 9, 30),
+        Description: 'Consulting',
+        DepartmentName: 'GENERAL'
+    },
+    {
+        Id: 2,
+        Name: 'Milan',
+        StartTime: new Date(2018, 8, 4, 8, 30),
+        EndTime: new Date(2018, 8, 4, 10, 30),
+        Description: 'Bad Breath',
+        DepartmentName: 'DENTAL'
+    },
+    {
+        Id: 3,
+        Name: 'Laura',
+        StartTime: new Date(2018, 8, 4, 9, 30),
+        EndTime: new Date(2018, 8, 4, 10, 30),
+        Description: 'Eye Checkup',
+        DepartmentName: 'GENERAL'
+    },
+    {
+        Id: 4,
+        Name: 'Janet',
+        StartTime: new Date(2018, 8, 3, 11, 0),
+        EndTime: new Date(2018, 8, 3, 12, 30),
+        Description: 'Gum Disease',
+        DepartmentName: 'DENTAL'
+    },
+    {
+        Id: 5,
+        Name: 'Adams',
+        StartTime: new Date(2018, 8, 3, 11, 0),
+        EndTime: new Date(2018, 8, 3, 12, 30),
+        Description: 'Observation',
+        DepartmentName: 'GENERAL'
+    },
+    {
+        Id: 6,
+        Name: 'John',
+        StartTime: new Date(2018, 8, 3, 11, 0),
+        EndTime: new Date(2018, 8, 3, 12, 30),
+        Description: 'Mouth Sores',
+        DepartmentName: 'DENTAL'
+    }
+];
+
+export let blockData: Object[] = [
+    {
+        Id: 1,
+        Subject: 'Not Available',
+        StartTime: new Date(2018, 7, 1, 10, 0),
+        EndTime: new Date(2018, 7, 1, 12, 0),
+        IsAllDay: false,
+        IsBlock: true,
+        EmployeeId: 1
+    }, {
+        Id: 2,
+        Subject: 'Not Available',
+        StartTime: new Date(2018, 7, 1, 16, 0),
+        EndTime: new Date(2018, 7, 1, 20, 0),
+        IsAllDay: false,
+        IsBlock: true,
+        EmployeeId: 2
+    }, {
+        Id: 3,
+        Subject: 'Not Available',
+        StartTime: new Date(2018, 7, 1, 12, 0),
+        EndTime: new Date(2018, 7, 1, 14, 0),
+        IsAllDay: false,
+        IsBlock: true,
+        EmployeeId: 3
+    }, {
+        Id: 4,
+        Subject: 'Not Available',
+        StartTime: new Date(2018, 7, 4, 11, 0),
+        EndTime: new Date(2018, 7, 5, 10, 0),
+        IsAllDay: true,
+        IsBlock: true,
+        EmployeeId: 4
+    }, {
+        Id: 5,
+        Subject: 'Not Available',
+        StartTime: new Date(2018, 7, 10, 11, 0),
+        EndTime: new Date(2018, 7, 12, 10, 0),
+        IsAllDay: false,
+        IsBlock: true,
+        EmployeeId: 5
+    }, {
+        Id: 6,
+        Subject: 'Not Available',
+        StartTime: new Date(2018, 7, 8),
+        EndTime: new Date(2018, 7, 11),
+        IsAllDay: false,
+        IsBlock: true,
+        EmployeeId: 6
+    }, {
+        Id: 9,
+        Subject: 'Client Meeting',
+        StartTime: new Date(2018, 7, 3, 8, 0),
+        EndTime: new Date(2018, 7, 3, 10, 30),
+        IsAllDay: false,
+        EmployeeId: 3
+    }, {
+        Id: 10,
+        Subject: 'Conference',
+        StartTime: new Date(2018, 7, 2, 13, 30),
+        EndTime: new Date(2018, 7, 2, 15, 0),
+        IsAllDay: false,
+        EmployeeId: 4
+    }, {
+        Id: 11,
+        Subject: 'Employee Recruitment',
+        StartTime: new Date(2018, 7, 1, 10, 0),
+        EndTime: new Date(2018, 7, 1, 13, 0),
+        IsAllDay: false,
+        EmployeeId: 5
+    }, {
+        Id: 12,
+        Subject: 'Data Analyzing',
+        StartTime: new Date(2018, 7, 1, 15, 0),
+        EndTime: new Date(2018, 7, 1, 17, 0),
+        IsAllDay: false,
+        EmployeeId: 6
+    }, {
+        Id: 13,
+        Subject: 'Content Writting',
+        StartTime: new Date(2018, 7, 2, 14, 0),
+        EndTime: new Date(2018, 7, 2, 16, 0),
+        IsAllDay: false,
+        EmployeeId: 1
+    }, {
+        Id: 14,
+        Subject: 'Meeting',
+        StartTime: new Date(2018, 7, 1, 9, 0),
+        EndTime: new Date(2018, 7, 1, 11, 0),
+        IsAllDay: false,
+        EmployeeId: 4
+    }, {
+        Id: 15,
+        Subject: 'Not Available',
+        StartTime: new Date(2018, 7, 29, 11, 0),
+        EndTime: new Date(2018, 7, 31, 10, 0),
+        IsAllDay: false,
+        IsBlock: true,
+        EmployeeId: 4
+    }, {
+        Id: 16,
+        Subject: 'Not Available',
+        StartTime: new Date(2018, 7, 12),
+        EndTime: new Date(2018, 7, 15),
+        IsAllDay: false,
+        IsBlock: true,
+        EmployeeId: 3
     }
 ];

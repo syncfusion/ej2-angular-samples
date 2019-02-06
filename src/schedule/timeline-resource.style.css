@@ -2,6 +2,10 @@
     vertical-align: bottom;
 }
 
+.timeline-resource.e-schedule.e-device .e-timeline-view .e-resource-left-td {
+    width: 75px;
+}
+
 .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text {
     display: flex;
     font-weight: 500;
@@ -50,13 +54,6 @@
 .timeline-resource.e-schedule .e-timeline-view .e-date-header-wrap table col,
 .timeline-resource.e-schedule .e-timeline-view .e-content-wrap table col {
     width: 100px;
-}
-
-.timeline-resource.e-schedule .e-lunch-break {
-    background-color: rgb(0, 0, 0, 0.1) !important;
-    font-weight: 500 !important;
-    opacity: .8 !important;
-    text-align: center;
 }
 
 .timeline-resource.e-schedule .e-read-only {

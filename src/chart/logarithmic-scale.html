@@ -1,0 +1,34 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the rendering of logarithmic axis in the chart.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
+            [primaryYAxis]='primaryYAxis' [legendSettings]='legend' [title]='title' [tooltip]='tooltip' (load)='load($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='Line' xName='x' yName='y' name='Product X' width=2 [marker]='marker'> </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <p>
+        Logarithmic axis uses logarithmic scale and it is very useful in visualizing when the data has values with both lower order
+        of magnitude (eg: 10^-6) and higher order of magnitude (eg: 10^6). To render Logarithmic axis, set <code>valueType</code>        in axis to <code>Logarithmic</code>.
+    </p>
+    <p>
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use logarithmic axis, we need to inject
+        <code>LogarithmicService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information on the logarithmic axis can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/logarithmic-axis/">documentation section</a>.
+    </p>
+</div>

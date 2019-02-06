@@ -2,7 +2,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { scheduleData } from './datasource';
 import { extend } from '@syncfusion/ej2-base';
 import {
-    EventSettingsModel, EventRenderedArgs, View, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService
+    EventSettingsModel, EventRenderedArgs, View, DayService, WeekService, WorkWeekService,
+    MonthService, AgendaService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
@@ -16,7 +17,7 @@ import {
         margin: 1px 10px 1px 0px;
         border-top: 1px solid #eee;
     }`],
-    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService],
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService],
     encapsulation: ViewEncapsulation.None
 })
 export class EventsComponent {

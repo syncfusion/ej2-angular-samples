@@ -13,6 +13,7 @@ import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 export class DefaultButtonController {
     @ViewChild('toggleBtn')
     public toggleBtn: ButtonComponent;
+
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['button.css'];
     }
@@ -21,10 +22,10 @@ export class DefaultButtonController {
     btnClick() {
         if (this.toggleBtn.element.classList.contains('e-active')) {
             this.toggleBtn.content = 'Play';
-            this.toggleBtn.iconCss = 'e-icons e-play-icon';
+            this.toggleBtn.iconCss = 'e-btn-sb-icons e-play-icon';
         } else {
             this.toggleBtn.content = 'Pause';
-            this.toggleBtn.iconCss = 'e-icons e-pause-icon';
+            this.toggleBtn.iconCss = 'e-btn-sb-icons e-pause-icon';
         }
     }
 }

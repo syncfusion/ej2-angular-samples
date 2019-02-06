@@ -1,0 +1,15 @@
+#PivotViewFieldList {
+    float: left;
+    width: 58% !important;
+    height: 100%;
+}
+
+.e-pivotfieldlist {
+    float: right;
+    width: 42%;
+    height: 100%;
+}
+
+.e-pivotfieldlist .e-static {
+    width: 100% !important;
+}

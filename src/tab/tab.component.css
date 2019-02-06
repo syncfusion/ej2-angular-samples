@@ -9,10 +9,10 @@
     font-weight: normal;
     font-style: normal;
 }
-.e-tab-icon {
+#tab_default .e-tab-icon {
     font-family: 'Socialicons' !important;
 }
-.e-icons.e-tab-icon {
+#tab_default .e-icons.e-tab-icon {
     position: relative;
     top: 1px;
 }
@@ -83,5 +83,98 @@
 
     .e-bigger .e-tab-section .e-sample-resize-container {
         width: 70%;
+    }
+}
+#tab_orientation .e-listview:not(.e-list-template) .e-list-item {
+    height: 63px;
+}
+
+#tab_orientation .e-tab-text {
+    display: inherit;
+}
+
+.e-vertical-tab .e-content .e-item.e-active,
+.e-vertical-tab .e-content .e-item.e-active ul.e-list-parent {
+    width: 100%;
+}
+
+
+@media screen and (min-width: 768px) {
+    .vertical-layout .e-sample-resize-container {
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 481px) {
+    .control-section,
+    .container-fluid,
+    .e-tab-section .content-wrapper,
+    .sb-sample-content-area .e-active {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #adaptiveTab .e-content {
+        height: inherit !important;
+    }
+
+    #adaptiveTab .e-item.e-active {
+        overflow: scroll;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    #orientationTab .e-listview:not(.e-list-template) .e-list-item {
+        padding: 0;
+    }
+
+    .e-sample-resize-container {
+        padding: 0;
+    }
+
+    .container-fluid {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    .e-tab .e-content.sb-sample-content-area .e-item.e-active {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .template-container {
+        padding: 7px 5px 0;
+    }
+
+    #orientationTab .e-content .e-item.e-active {
+        padding: 10px 0;
+    }
+
+    .info {
+        padding: 7px 0 0 8px;
+    }
+}
+
+#tab_adaptive .e-tab-text {
+    display: inherit;
+}
+@media screen and (max-width: 481px) {
+    .control-section,
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #tab_adaptive {
+        overflow: hidden;
+    }
+
+    #tab_adaptive .e-item.e-active {
+        overflow: scroll;
     }
 }

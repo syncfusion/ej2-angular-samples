@@ -1,10 +1,10 @@
   .e-input-picture:before {
-    content: '\e7b3';
+    content: '\e335';
     font-family: e-icons;
   }
 
   .e-input-calendar:before {
-    content: "";
+    content: '\e901';
     font-family: e-icons;
     font-size: 13px;
   }

@@ -39,11 +39,13 @@ export class HeatmapLegendComponent {
     public paletteSettings: Object = {
         palette: [{ value: 0, color: '#6EB5D0' },
         { value: 10, color: '#7EDCA2' },
-        { value: 20, color: '#DCD57E' },
+        { value: 19, color: '#DCD57E' },
+        { value: 22, color: '#DCD57E' },
         ]
     };
     public legendSettings: Object = {
         position: 'Left',
+        labelFormat: '{value}\xB0 C',
     };
 	public tooltipRender(args: ITooltipEventArgs): void {
         args.content = [args.xLabel + ' | ' + args.yLabel + ' : ' + args.value + '\xB0 C'];

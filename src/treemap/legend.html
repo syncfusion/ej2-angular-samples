@@ -12,26 +12,37 @@
     <div class="col-lg-3 property-section">
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
-            <div class="property-panel-content">
-                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
-                    <tr style="height: 50px">
-                        <td style="width: 50%">
-                            <div>Legend Type:
-                            </div>
-                        </td>
-                        <td style="width: 50%;padding-left: 10px; padding-right: 10px">
-                            <div>
-                                <select name="selectIndex" autocomplete="off" id="legendMode" style="width:60%;">
-                                    <option value="Default" selected>Default</option>
-                                    <option value="Interactive">Interactive</option>
-                                </select>
-                            </div>
-                        </td>
-                    </tr>
-                    
-                </table>
-            </div>
-        </div>
+                    <div class="property-panel-content">
+        <table id="property" title="Properties" style="width: 100%">
+            <tbody>
+                <tr style="height: 50px">
+                    <td style="width: 40%">
+                        <div class="property-text" style="padding: 0px;">Type</div>
+                    </td>
+                    <td style="width: 80%; height:30%">
+                        <select name="selectIndex" autocomplete="off" id="legendMode" style="width:60%;">
+                            <option value="Default" selected>Default</option>
+                            <option value="Interactive">Interactive</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr style="height: 50px">
+                    <td style="width: 40%">
+                        <div class="property-text" style="padding: 0px;">Position</div>
+                    </td>
+                    <td style="width: 60%; height:30%">
+                        <select name="selectIndex" autocomplete="off" id="legendPosition" style="width:60%;">
+                            <option value="Top" selected>Top</option>
+                            <option value="Bottom">Bottom</option>
+                            <option value="Left">Left</option>
+                            <option value="Right">Right</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
     </div>
 </div>
 <div id="action-description">

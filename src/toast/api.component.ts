@@ -152,7 +152,7 @@ export class ApiController {
     }
      public preventDuplicate(e: ToastBeforeOpenArgs): boolean {
          let toastEle: HTMLElement = e.element;
-        let toasts: NodeList = e.toastObj.element.children;
+        let toasts: HTMLCollection = e.toastObj.element.children;
         for (let i: number = 0; i < toasts.length; i++) {
             let toastTitle: HTMLElement = (toasts[i] as HTMLElement).querySelector('.e-toast-title') as HTMLElement;
             let toastMessage: HTMLElement = (toasts[i] as HTMLElement).querySelector('.e-toast-message') as HTMLElement;

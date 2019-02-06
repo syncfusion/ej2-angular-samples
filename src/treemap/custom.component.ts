@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ViewChild,  } from '@angular/core';
 import { ILoadEventArgs, TreeMapTheme, TreeMap } from '@syncfusion/ej2-angular-treemap';
-import { Metals } from '../treemap/treemap-date/metals';
+import { Metals } from '../treemap/metals';
 import { Browser } from '@syncfusion/ej2-base';
 /**
  * Default sample

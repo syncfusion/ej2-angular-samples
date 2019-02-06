@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { MapsTheme, Maps, Marker, MapsTooltip, Legend, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
 
@@ -29,10 +29,10 @@ export class MapsHeatmapComponent {
 
     public layers: object[] = [
         {
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/india.json'),
+            shapeData: new MapAjax('./src/maps/india.json'),
             shapePropertyPath: 'NAME_1',
             shapeDataPath: 'Name',
-            dataSource: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/india-population.json'),
+            dataSource: new MapAjax('./src/maps/india-population.json'),
             tooltipSettings: {
                 visible: true,
                 valuePath: 'population',
@@ -66,8 +66,8 @@ export class MapsHeatmapComponent {
             }
         }
     ];
-    constructor() {
-        //code
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = [ 'india-population.json', 'india.json'];
     };
 
 }

@@ -4,8 +4,9 @@ import { ChangeEventArgs, ColorPickerEventArgs } from '@syncfusion/ej2-inputs';
 import {
     DiagramComponent, NodeModel, ConnectorModel, ShapeAnnotationModel, VerticalAlignment, HorizontalAlignment,
     TextStyleModel, ISelectionChangeEventArgs, ConnectorConstraints, OrthogonalSegmentModel,
-    DecoratorModel, SnapSettingsModel, SnapConstraints, Node
+    DecoratorModel, SnapSettingsModel, SnapConstraints, Node, AnnotationConstraints
 } from '@syncfusion/ej2-angular-diagrams';
+import { CheckBoxChangeEventArgs } from '@syncfusion/ej2-grids';
 
 /**
  * Sample for Annotation
@@ -39,8 +40,19 @@ export class AnnotationDiagramComponent {
         { type: 'Segoe UI', text: 'Cubic Bezier' },
         { type: '"Verdana") ', text: 'Cubic Bezaier' }
     ];
+    public templateList: { [key: string]: Object }[] = [
+        { value: 'none', text: 'None' },
+        { value: 'industry', text: 'Industry Competitors' },
+        { value: 'suppliers', text: 'Suppliers' },
+        { value: 'potential', text: 'Potential Entrants' },
+        { value: 'buyers', text: 'Buyers' },
+        { value: 'substitutes', text: 'Substitutes' }
+    ];
+
     public fields: object = { value: 'type', text: 'text' };
-    public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None }
+    public templateFields: object = { value: 'value', text: 'text' };
+
+    public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
 
     public nodeDefaults(node: NodeModel): NodeModel {
         let obj: NodeModel = {
@@ -169,6 +181,19 @@ export class AnnotationDiagramComponent {
                     textStyle.italic = !textStyle.italic;
                 } else if (propertyName === 'color') {
                     textStyle.color = propertyValue;
+                } else if (propertyName === 'template') {
+                    if (propertyValue === 'none') {
+                        node.annotations[j].template = '';
+                        node.annotations[j].width = undefined;
+                        node.annotations[j].height = undefined;
+                    } else {
+                        node.annotations[j].width = 25;
+                        node.annotations[j].height = 25;
+                        node.annotations[j].template =
+                            '<img src="src/diagram/Images/annotation/' + propertyValue + '.svg" style="width:100%;height:100%" />';
+                    }
+                } else if (propertyName === 'interaction') {
+                    node.annotations[j].constraints = node.annotations[j].constraints ^ AnnotationConstraints.Interaction;
                 }
                 this.diagram.dataBind();
             }
@@ -201,6 +226,15 @@ export class AnnotationDiagramComponent {
         if (args.element) {
             this.applyAnnotationStylenotationStyle('fontfamily', args.value.toString());
         }
+    }
+
+    public onLabelTemplateChange(args: DropDownChangeEventArgs): void {
+        this.applyAnnotationStylenotationStyle('template', args.value.toString());
+    }
+
+    // Enable the label interaction while enabling the checkbox.
+    public onLabelInteractionChange(args: CheckBoxChangeEventArgs): void {
+        this.applyAnnotationStylenotationStyle('interaction', '');
     }
 
     private enableOptions(arg: ISelectionChangeEventArgs): void {

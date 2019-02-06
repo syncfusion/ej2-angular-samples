@@ -1,0 +1,45 @@
+<div class="control-section">
+    <ejs-treegrid [dataSource]='data' childMapping='subtasks' allowPaging='true' [pageSettings]='pageSettings' allowFiltering='true' [filterSettings]='filterSettings' allowSorting='true' allowResizing='true' [treeColumnIndex]='1' showColumnMenu=true>
+        <e-columns>
+            <e-column field='taskID' headerText='Task ID' width='100' textAlign='Right'></e-column>
+            <e-column field='taskName' headerText='Task Name' width='190'></e-column>
+            <e-column field='startDate' headerText='Start Date' width='135' format="yMd" textAlign='Right'></e-column>
+            <e-column field='approved' headerText='Approved' width='140' textAlign='Center' type='boolean' displayAsCheckBox='true'></e-column>
+            <e-column field='priority' headerText='Priority' width='140'></e-column>
+        </e-columns>
+    </ejs-treegrid>
+</div>
+    <div id="action-description">
+        <p>This sample demonstrates the default functionalities of the Column Menu. Click on multiple icon of each column to open the column menu.</p>
+    </div>
+    
+    <div id="description">
+        <p>
+            TreeGrid has an option to show column menu while click on multiple icon of each column. The column menu has an integrated option to interact the features like sorting, filtering, column chooser and and autoFit.  
+            This features can be enabled by defining the <code>showColumnMenu
+            </code> as true. The default items are
+            <br>
+        </p>
+        <ul>
+                <li><code>SortAscending</code> - Sort the current column in ascending order.</li>
+                <li><code>SortDescending</code> - Sort the current column in descending order.</li>
+                <li><code>AutoFit</code> - Auto fit current column.</li>
+                <li><code>AutoFitAll</code> - Auto fit all columns.</li>
+                <li><code>ColumnChooser</code> - Choose the column visibility.</li>
+                <li><code>Filter</code> - Filter option is shown to filter the current column.
+        </ul>
+        
+        <br/>
+    
+        <p>
+            In this demo, Column Menu feature has enabled by defining <code>showColumnMenu
+            </code> as true with sorting, filtering, column chooser and autoFit options.
+        </p>
+        <p>Injecting Module:</p>
+
+        <p>TreeGrid component features are segregated into individual feature-wise modules. To use Column Menu feature, we need to inject   <code>ColumnMenuService</code> into the <code>@NgModule.providers</code> section.</p> 
+        <p>
+            More information about Column Menu can be found in this documentation section.
+        </p>
+    
+    </div>

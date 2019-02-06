@@ -1,9 +1,9 @@
 /**
  * layout sample.
  */
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
 import { TreeMap, TreeMapTooltip, LayoutMode, TreeMapTheme, ILoadEventArgs } from '@syncfusion/ej2-angular-treemap';
-import { econmics } from '../treemap/treemap-date/econmics';
+import { econmics } from './econmics';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 TreeMap.Inject(TreeMapTooltip);
 
@@ -62,7 +62,7 @@ export class TreemapLayoutComponent {
             });
             layout.appendTo('#layoutMode');
         }
-        constructor() {
-          //code
-        }
+        constructor(@Inject('sourceFiles') private sourceFiles: any) {
+            sourceFiles.files = ['econmics.ts' ];
+        };
     };

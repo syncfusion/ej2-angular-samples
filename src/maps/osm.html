@@ -1,0 +1,56 @@
+<div class="control-section">
+    <div align='center'>
+        <ejs-maps id='container' style="display:block;" [layers]='layers' (load)="load($event)" [zoomSettings]="zoomSettings" [titleSettings]="titleSettings" [centerPosition] = 'centerPosition'>
+        </ejs-maps>
+    </div>
+    <div style="float: right"> 
+        <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>
+    </div>
+    <br/>
+    <div style="float: right; margin-right: 10px;">Source:
+        <a href="https://en.wikipedia.org/wiki/Headquarters_of_the_United_Nations" target="_blank">en.wikipedia.org</a>
+    </div>    
+</div>
+<div id="action-description">
+        <p>
+            This sample visualizes the location of United Nations Headquarters in the OpenStreetMap with marker.
+       </p>
+    </div>
+    <div id="description">
+        <p>
+            In this example, you can see how to render the OpenStreetMap. The location of United Nations Headquarters is denoted using marker. The EJ2 Dialog is displayed on the top of the marker and the zooming feature is enabled to zoom and pan the map for detailed analysis.
+        </p>
+       
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            The maps component features are segregated into individual modules by feature. To use a marker, inject the Marker module using the <code>Maps.Inject(Marker)</code> method and inject the zoom module using the <code>maps.Inject(Zoom)</code> method.
+        </p>
+       
+    </div>
+    <style>
+        #popuposm_dialog-content {
+          display: none !important
+        }
+        #popuposm_title {
+          font-size: 14px !important
+        }
+        .osmpopup {
+          position:relative;
+          background-color:white;
+        }        
+        .osmpopup:after {
+            content:'';
+            position: absolute;
+            top: 170%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            margin-left: -35px;
+            border-top: solid 20px white;
+            border-left: solid 20px transparent;
+            border-right: solid 20px transparent;
+        }
+        #osmdialog .e-popup{
+            min-width: 100px !important
+        }
+    </style>

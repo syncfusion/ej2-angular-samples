@@ -2,7 +2,7 @@
  * DropDownList Remote-Data & Local-Data Samples
  */
 import { Component, ViewEncapsulation } from '@angular/core';
-import { Query, DataManager, ODataAdaptor } from '@syncfusion/ej2-data';
+import { Query, DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
 @Component({
     selector: 'control-content',
     templateUrl: 'data-binding.html',
@@ -29,16 +29,16 @@ export class DataBindingDropDownListComponent {
     public localWaterMark: string = 'Select a game';
     // bind the DataManager instance to dataSource property
     public data: DataManager = new DataManager({
-        url: 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Customers',
-        adaptor: new ODataAdaptor,
+        url: 'https://ej2services.syncfusion.com/production/web-services/api/Employees',
+        adaptor: new WebApiAdaptor,
         crossDomain: true
     });
     // bind the Query instance to query property
-    public query: Query = new Query().select(['ContactName', 'CustomerID']);
+    public query: Query = new Query().select(['FirstName', 'EmployeeID']).take(10).requiresCount();
     // maps the remote data column to fields property
-    public remoteFields: Object = { text: 'ContactName', value: 'CustomerID' };
+    public remoteFields: Object = { text:'FirstName',value: 'EmployeeID' };
     // set the height of the popup element
     public height: string = '200px';
     // set the placeholder to DropDownList input element
-    public remoteWaterMark: string = 'Select a customer';
+    public remoteWaterMark: string = 'Select a name';
 }

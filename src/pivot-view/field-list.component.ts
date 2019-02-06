@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Pivot_Data } from './data-source';
-import { IDataOptions, PivotFieldListComponent, PivotViewComponent,
-    EnginePopulatedEventArgs } from '@syncfusion/ej2-angular-pivotview';
+import {
+    IDataOptions, PivotFieldListComponent, PivotViewComponent,
+    EnginePopulatedEventArgs, CalculatedFieldService, FieldListService
+} from '@syncfusion/ej2-angular-pivotview';
 import { Browser, setStyleAttribute, prepend } from '@syncfusion/ej2-base';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
@@ -15,7 +17,8 @@ enableRipple(false);
     selector: 'ej2-pivotview-container',
     templateUrl: 'field-list.html',
     styleUrls: ['field-list.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    providers: [CalculatedFieldService, FieldListService]
 })
 export class FieldListComponent implements OnInit {
     public dataSource: IDataOptions;
@@ -33,7 +36,7 @@ export class FieldListComponent implements OnInit {
         }
     }
     afterEnginePopulate(args: EnginePopulatedEventArgs): void {
-        if (this.fieldlistObj && this.pivotGridObj) {
+        if (!Browser.isDevice && this.fieldlistObj && this.pivotGridObj) {
             this.fieldlistObj.update(this.pivotGridObj);
         }
     }
@@ -41,20 +44,23 @@ export class FieldListComponent implements OnInit {
         if (Browser.isDevice) {
             this.fieldlistObj.renderMode = 'Popup';
             this.fieldlistObj.target = '.control-section';
-            document.getElementById('PivotFieldList').removeAttribute('style');
             setStyleAttribute(document.getElementById('PivotFieldList'), {
-                'height': 0,
-                'float': 'left'
+				width: '0',
+                height: '0',
+                float: 'left',
+                'display': 'none'
             });
         }
     }
 
     ondataBound(): void {
-        this.pivotGridObj.toolTip.destroy();
-        this.pivotGridObj.refresh();
         if (Browser.isDevice) {
-            prepend([document.getElementById('PivotFieldList')], document.getElementById('PivotView'));
+            this.pivotGridObj.element.style.width = '100%';
+            this.pivotGridObj.allowCalculatedField = true;
+            this.pivotGridObj.showFieldList = true;
         }
+        this.pivotGridObj.tooltip.destroy();
+        this.pivotGridObj.refresh();
     }
 
     ngOnInit(): void {
@@ -65,6 +71,8 @@ export class FieldListComponent implements OnInit {
         this.dataSource = {
             data: Pivot_Data,
             expandAll: false,
+            allowLabelFilter: true,
+            allowValueFilter: true,
             columns: [{ name: 'Year' }, { name: 'Order_Source', caption: 'Order Source' }],
             rows: [{ name: 'Country' }, { name: 'Products' }],
             values: [{ name: 'In_Stock', caption: 'In Stock' }, { name: 'Sold', caption: 'Units Sold' },

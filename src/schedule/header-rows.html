@@ -4,12 +4,12 @@
             <e-header-rows>
                 <e-header-row option='Month'>
                     <ng-template #template let-data>
-                        <span class="month" [innerHTML]="getMonthDetails(data)"></span>
+                        <span [innerHTML]="getMonthDetails(data)"></span>
                     </ng-template>
                 </e-header-row>
                 <e-header-row option='Week'>
                     <ng-template #template let-data>
-                        <span class="week" [innerHTML]="getWeekDetails(data)"></span>
+                        <span [innerHTML]="getWeekDetails(data)"></span>
                     </ng-template>
                 </e-header-row>
                 <e-header-row option='Date'></e-header-row>

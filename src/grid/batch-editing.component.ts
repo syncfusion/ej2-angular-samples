@@ -27,4 +27,5 @@ export class BatchEditComponent implements OnInit {
         this.editparams = { params: { popupHeight: '300px' }};
         this.pageSettings = {pageCount: 5};
     }
+
 }

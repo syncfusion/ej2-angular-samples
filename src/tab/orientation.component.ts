@@ -29,7 +29,8 @@ export class OrientationTabComponent {
 
     // Mapping DropDownList dataSource property
     public dataPlace: Object[] = [
-        { id: 'top', position: 'Top' }, { id: 'bottom', position: 'Bottom' }
+        { id: 'top', position: 'Top' }, { id: 'bottom', position: 'Bottom' },
+        { id: 'left', position: 'Left' }, { id: 'right', position: 'Right' }
     ];
 
     // Mapping DropDownList dataSource property
@@ -54,13 +55,8 @@ export class OrientationTabComponent {
 
     // Change event funtion for DropDownList component    
     public placeChange(e: Object): void {
-        this.placeValue = this.placeObj.value.toString();
         //set headerPlacement property to Tab Component
-        if (this.placeObj.value === 'bottom') {
-            this.tabObj.headerPlacement = 'Bottom';
-        } else {
-            this.tabObj.headerPlacement = 'Top';
-        }
+        this.tabObj.headerPlacement = this.placeObj.text as any;
         this.tabObj.dataBind();
     }
 

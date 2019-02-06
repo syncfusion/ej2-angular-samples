@@ -1,0 +1,18 @@
+<div class="control-section drag" >
+    <button  ejs-button id="dialogBtn" Class="e-control e-btn" #confirmButton (click)="dialogBtnClick()">Open Dialog</button>
+    <ejs-dialog id="resizeDialog" #resizeDialog [enableResize]='dialogResize' [allowDragging]='dialogdragging' [content]='contentData' [visible]='visible' [header]='dialogHeader' [animationSettings]='animationSettings' [showCloseIcon]='dialogCloseIcon' (open)="dialogOpen()" (close)="dialogClose()" [target]='target'
+    [width]='dialogWidth'>
+    </ejs-dialog>
+</div>
+<div id="action-description">
+        <p>
+            This example demonstrates the resize operation of the dialog component. To resize the modal dialog, select and resize a dialog using its handle (grip) within the sample container.
+            The "open dialog" button is used to reopen the dialog if it is closed.
+        </p>
+  </div>
+  <div id="description">
+        <p>
+            Users can create resizable modal dialog by setting the enableResize property to true, which is used to change the size of a dialog dynamically and view its content with expanded mode.
+            When you configure the target property along with enableResize property, the dialog can be resized within its specified target container.
+        </p>
+  </div>

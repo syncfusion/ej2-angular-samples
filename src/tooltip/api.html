@@ -1,0 +1,83 @@
+<div id="action-description">
+    <p>This sample demonstrates how to customize the tooltip component by using its properties from
+            the property pane. Select any combination of properties from the property pane to customize
+            tooltips.</p>
+</div>
+
+<div>
+	<div class="col-lg-8 control-section">
+		<ejs-tooltip #tooltip id='tooltip' target='#default' opensOn='Click' [content]='tContent' (created)='created()'>
+			<button ejs-button #button id="default">Show Tooltip</button>
+		</ejs-tooltip>
+	</div>
+	<div class="col-lg-4 property-section">
+		<table id="property" title="Properties">
+			<tbody>
+				<tr>
+					<td style="width: 50%">
+						<div class="userselect">Content</div>
+					</td>
+					<td style="width: 50%;padding-right: 10px">
+						<div>
+							<input (keyup)="keymonitor($event)" textbox id="value" #textbox type="text" placeholder="Tooltip content">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 50%">
+						<div class="userselect">Height</div>
+					</td>
+					<td style="width: 50%;padding-right: 10px">
+						<div>
+							<ejs-numerictextbox id="height" cssClass="e-input" value="45" (change)='hChange($event)'></ejs-numerictextbox>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 50%">
+						<div class="userselect">Width</div>
+					</td>
+					<td style="width: 50%;padding-right: 10px">
+						<div>
+							<ejs-numerictextbox id="width" cssClass="e-input" value="100" (change)='wChange($event)'></ejs-numerictextbox>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 50%">
+						<div class="userselect">Open Mode</div>
+					</td>
+					<td style="width: 50%;padding-right: 10px">
+						<div>
+							<ejs-dropdownlist id='ddlelement' (change)='ddlChange($event)' [dataSource]='dataDDL' placeholder='OpensOn'></ejs-dropdownlist>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 50%">
+						<div class="userselect">Sticky Mode</div>
+					</td>
+					<td style="width: 50%;padding-right: 10px">
+						<div>
+							<ejs-checkbox (change)='cChange($event)' id="sticky"></ejs-checkbox>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="description">
+   <p>In this demo, the default tooltip is rendered with minimal configuration. This sample can be
+            customized further with the combination of tooltip properties from the property pane. For
+            example,</p>
+        <ul>
+            <li>Any change made to a textbox in the property pane will be reflected in the tooltip <a href="https://ej2.syncfusion.com/documentation/tooltip/api-tooltip.html#content">content</a></li>
+            <li><a href="https://ej2.syncfusion.com/documentation/tooltip/api-tooltip.html?lang=typescript#issticky">StickyMode</a>can
+                be enabled by checking the sticky mode option in the property pane.</li>
+            <li><a href="https://ej2.syncfusion.com/documentation/tooltip/api-tooltip.html?lang=typescript#height">Height</a>                and
+                <a href="https://ej2.syncfusion.com/documentation/tooltip/api-tooltip.html?lang=typescript#width">width</a>                can be changed from the property pane.</li>
+            <li><a href="https://ej2.syncfusion.com/documentation/tooltip/api-tooltip.html?lang=typescript#openson">OpenMode</a>                can be changed from the property pane.</li>
+        </ul>
+</div>

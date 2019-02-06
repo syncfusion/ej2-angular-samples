@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { extend, Internationalization } from '@syncfusion/ej2-base';
 import {
-    ScheduleComponent, EventSettingsModel, View, WorkHoursModel, DayService,
+    ScheduleComponent, EventSettingsModel, View, WorkHoursModel, DayService, DragAndDropService,
     WeekService, WorkWeekService, MonthService, EventRenderedArgs, TimelineViewsService, TimelineMonthService, ResizeService
 } from '@syncfusion/ej2-angular-schedule';
 import { employeeEventData } from './datasource';
@@ -10,7 +10,7 @@ import { TimePickerComponent } from '@syncfusion/ej2-angular-calendars';
 @Component({
     selector: 'control-content',
     templateUrl: 'work-hours.html',
-    providers: [DayService, WeekService, WorkWeekService, MonthService, TimelineViewsService, TimelineMonthService, ResizeService]
+    providers: [DayService, WeekService, WorkWeekService, MonthService, TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService]
 })
 export class WorkHoursComponent {
     @ViewChild('scheduleObj')

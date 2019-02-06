@@ -7,10 +7,6 @@
     width: 80% !important;
 }
 
-.e-play-icon::before {
-    content: '\e728';
-}
-
 .hdrlabel {
     font-size: 13px;
 }

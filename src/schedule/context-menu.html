@@ -1,0 +1,22 @@
+<div class="control-section">
+    <div class="content-wrapper">
+        <ejs-schedule #scheduleObj height='650px' [selectedDate]="selectedDate" [allowResizing]="allowResizing" 
+        [allowDragAndDrop]="allowDragDrop" [eventSettings]="eventSettings">
+        </ejs-schedule>
+        <ejs-contextmenu #menuObj cssClass='schedule-context-menu' target='.e-schedule' [items]='menuItems'
+            (beforeOpen)='onContextMenuBeforeOpen($event)' (select)='onMenuItemSelect($event)'></ejs-contextmenu>
+    </div>
+</div>
+<div id="action-description">
+    <p>This example illustrates how to enable the context menu on Scheduler and perform its related actions based on
+        the selected menu options.</p>
+</div>
+<div id="description">
+    <p>
+        In this example, we have integrated the ContextMenu control separately from application end and set its target
+        to Scheduler control. Also, we have used the public methods <code>openEditor</code> through which the default event editor
+        is set to open for saving or updating the appointments, <code>deleteEvent</code> to delete the selected appointment, and
+        <code>selectedDate</code> to navigate to today's date. In mobile devices, the context menu will open when you tap hold on
+        the cells or events.
+    </p>
+</div>

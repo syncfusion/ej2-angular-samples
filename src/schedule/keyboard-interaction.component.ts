@@ -2,13 +2,14 @@ import { Component, ViewChild } from '@angular/core';
 import { scheduleData } from './datasource';
 import { extend } from '@syncfusion/ej2-base';
 import {
-    ScheduleComponent, EventSettingsModel, EventRenderedArgs, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService
+    ScheduleComponent, EventSettingsModel, EventRenderedArgs, DayService, WeekService,
+    WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'keyboard-interaction.html',
-    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService]
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
 })
 export class KeyboardComponent {
     public data: object[] = <Object[]>extend([], scheduleData, null, true);

@@ -11,23 +11,21 @@ import { DragdropTreeViewComponent } from './drag-and-drop.component';
 import { TemplateTreeViewComponent } from './template.component';
 import { PlainTreeViewComponent } from './plain-data.component';
 import { RemoteTreeViewComponent } from './remote-data.component';
-import { RTLTreeViewComponent } from './right-to-left.component';
 import { CheckboxTreeViewComponent } from './check-box.component';
 
 
 import { SharedModule } from '../common/shared.module';
 
 export const treeAppRoutes: Object[] = [
-    { path: ':theme/treeview/default', component: DefaultTreeViewComponent, name: 'Default Functionalities', order: '01', category: 'TreeView', description: "This demo for Essential JS2 TreeView control shows the default functionalities of the TreeView." },
-    { path: ':theme/treeview/icons', component: IconsTreeViewComponent, name: 'Icons and Images', order: '01',category: 'TreeView', description: "This demo for Essential JS2 TreeView control shows that the node can be configured by icons/images in TreeView" },
-    { path: ':theme/treeview/check-box', component: CheckboxTreeViewComponent, name: 'Checkbox', order: '01', category: 'TreeView',  description: "This demo for Essential JS2 TreeView control shows the checkBox functionalities of the TreeView"},
-    { path: ':theme/treeview/node-editing', component: EditTreeViewComponent, name: 'Node Editing', order: '01', category: 'TreeView', description: "This demo for Essential JS2 TreeView control shows the node editing functionalities of the TreeView" },
-    { path: ':theme/treeview/multiple-selection', component: MultiselectTreeViewComponent, name: 'Multiple Selection', order: '01', category: 'TreeView', hideOnDevice: true , description: "This demo for Essential JS2 TreeView control shows the multiple node selection functionalities of the TreeView"},
-    { path: ':theme/treeview/drag-and-drop', component: DragdropTreeViewComponent, name: 'Drag and Drop', order: '01', category: 'TreeView', hideOnDevice: true, type: 'update',  description: "This demo for Essential JS2 TreeView control shows the drag and drop functionalities of TreeView" },
-    { path: ':theme/treeview/template', component: TemplateTreeViewComponent, name: 'Template', order: '01', category: 'TreeView', type: 'update',  description: "This demo for Essential JS2 TreeView control shows the template functionalities of TreeView" },
-    { path: ':theme/treeview/right-to-left', component: RTLTreeViewComponent, name: 'RTL', order: '01', category: 'TreeView', description: "This demo for Essential JS2 TreeView control shows the RTL mode of TreeView" },
-    { path: ':theme/treeview/plain-data', component: PlainTreeViewComponent, name: 'Local Data', order: '02', category: 'Data Binding', description: "This demo for Essential JS2 TreeView control shows the binding of local data to the TreeView" },
-    { path: ':theme/treeview/remote-data', component: RemoteTreeViewComponent, name: 'Remote Data', order: '02', category: 'Data Binding', description: "This demo for Essential JS2 TreeView control shows binding data to the TreeView from remote data source" },
+    { path: ':theme/treeview/default', component: DefaultTreeViewComponent, name: 'Default Functionalities', order: '01', category: 'TreeView', description: "This demo demonstrates the basic tree view component that display the data in a hierarchical structure with the configuration options." },
+    { path: ':theme/treeview/icons', component: IconsTreeViewComponent, name: 'Icons and Images', order: '01',category: 'TreeView', description: "The tree view nodes can be rendered with any custom icons. This sample demonstrated like a file system with custom icons and images." },
+    { path: ':theme/treeview/check-box', component: CheckboxTreeViewComponent, name: 'Checkbox', order: '01', category: 'TreeView',  description: "This demo demonstrates the tree view with checkbox functionality, this allows the user to check more than one tree nodes."},
+    { path: ':theme/treeview/node-editing', component: EditTreeViewComponent, name: 'Node Editing', order: '01', category: 'TreeView', description: "This demo showcases the node editing functionality of tree view, you can edit any node text by double click on it or pressing F2." },
+    { path: ':theme/treeview/multiple-selection', component: MultiselectTreeViewComponent, name: 'Multiple Selection', order: '01', category: 'TreeView', hideOnDevice: true , description: "The TreeView component allows to select multiple nodes by pressing CTRL key, also can select the range of nodes by pressing SHIFT key."},
+    { path: ':theme/treeview/drag-and-drop', component: DragdropTreeViewComponent, name: 'Drag and Drop', order: '01', category: 'TreeView', hideOnDevice: true, description: "The tree view nodes can be drag and drop from one position to another, also the drop can be done to another tree view or other external container." },
+    { path: ':theme/treeview/template', component: TemplateTreeViewComponent, name: 'Template', order: '01', category: 'TreeView', description: "The tree view node can be customized through the template option. In this demo the tree view nodes are templated like an mail system." },
+    { path: ':theme/treeview/plain-data', component: PlainTreeViewComponent, name: 'Local Data', order: '02', category: 'Data Binding', description: "This demo demonstrates the binding of local data to the tree view. The local data structure can be hierarchical data or list data." },
+    { path: ':theme/treeview/remote-data', component: RemoteTreeViewComponent, name: 'Remote Data', order: '02', category: 'Data Binding', description: "This demo demonstrates the binding of data to the tree view from remote data source." },
 ];
 
 export const TreeviewRouter: ModuleWithProviders = RouterModule.forChild(treeAppRoutes);
@@ -43,7 +41,6 @@ export const TreeviewRouter: ModuleWithProviders = RouterModule.forChild(treeApp
         TemplateTreeViewComponent,
         PlainTreeViewComponent,
         RemoteTreeViewComponent,
-        RTLTreeViewComponent,
         CheckboxTreeViewComponent
     ],
     exports:[DefaultTreeViewComponent],

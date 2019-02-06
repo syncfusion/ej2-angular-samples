@@ -15,19 +15,25 @@
 </div>
 
 <div id="action-description">
-    <p>This sample demonstrates the chunk upload functionalities of the Uploader component. Browse the files which you want to upload to the server. 
-        The selected files are submitted to server on upload button click based on the selected chunk size.
-        Also, You can pause the uploading file and resuming it. Once the upload got failed, it will retry automatically.
-        Even it fails to upload in auto retry, retry button will be enabled to retry the upload later.</p>
-    <p>Also, provided option to change the chunk size values from the property panel</p>
+    <p>This example demonstrates the chunk upload functionalities of the Uploader component.
+        Browse or drag-and-drop a large file to upload with pause, resume, and retry options. </p>
+    <p>Also, configured property panel to change the chunk size dynamically.</p>
 </div>
 
 <div id="description">
-    <p>When the file size is larger or slow network connection, you can upload the files using 
-            <a href="https://ej2.syncfusion.com/documentation/uploader/api-uploader.html?lang=typescript#asyncsettings"
-            target="_blank"> chunkSize </a> API. It will slice the files and upload it in sequential order.</p>
-    <p>While the uploading is in progress, you can pause the upload and resuming it later.</p>
-    <p>If the upload got failed, retry option will be enabled.</p>
-    <p>The sample is configured with maximum file size as `100 MB` to upload. </p>
-    <p>More information on the Uploader instantiation can be found in this documentation section.</p>
+    <p>When the file size is large or transfer the file with slow network connection, the chunk upload feature slices the files and upload the sliced chunks to server in sequential order
+    using the <a href="https://ej2.syncfusion.com/angular/documentation/api/uploader/asyncSettingsModel/#chunksize"
+        target="_blank">chunkSize</a> API.
+    </p>
+    <p>The example is configured with the following options:</p>
+    <ul>
+        <li>While uploading, you can pause the upload and resume it later.</li>
+        <li> If the upload fails, retry option will be enabled.</li>
+        <li> The example is configured with maximum file size as `100 MB` to upload.</li>
+    </ul>
+    <h4>Automatic pause and resume</h4>
+    <p>
+        If the application lost its connection (<code>offline</code>), the upload component pauses the process automatically. After the connection is up (<code>online</code>), the upload component will resume its process.
+    </p>
+    <p>More information on the Uploader instantiation can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/uploader/chunk-upload/">documentation section</a>.</p>
 </div>

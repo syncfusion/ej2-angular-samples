@@ -1,7 +1,8 @@
 <div class="control-section">
     <ejs-schedule #scheduleObj cssClass='schedule-group-custom-work-days' width='100%' height='650px' [currentView]="currentView"
         [group]="group" [selectedDate]="selectedDate" (actionBegin)="onActionBegin($event)" (popupOpen)="onPopupOpen($event)"
-        (renderCell)="onRenderCell($event)" (resizeStart)="onResizeStart($event)" [eventSettings]="eventSettings">
+        (renderCell)="onRenderCell($event)" [eventSettings]="eventSettings" [allowResizing]="allowResizing" 
+        [allowDragAndDrop]="allowDragDrop">
         <ng-template #resourceHeaderTemplate let-data>
             <div class='template-wrap'>
                 <div class="resource-image {{getDoctorImage(data)}}"></div>
@@ -48,7 +49,7 @@
         more appointments can be added to that cell which has been prevented by making use of the
         <code>isSlotAvailable</code> function within the
         <code>actionBegin</code> event checking for
-        <code>eventCreate</code> request type. The resource header is customized by making use of the
+        <code>eventCreate</code> and <code>eventChange</code> request type. The resource header is customized by making use of the
         <code>resourceHeaderTemplate</code> option.
     </p>
 </div>

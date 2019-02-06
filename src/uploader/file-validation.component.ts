@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { EmitType, detach } from '@syncfusion/ej2-base';
 import { UploaderComponent, SelectedEventArgs, FileInfo, RemovingEventArgs } from '@syncfusion/ej2-angular-inputs';
 import { createSpinner, showSpinner, hideSpinner } from '@syncfusion/ej2-popups';
@@ -43,5 +43,9 @@ export class ValidateUploaderComponent {
 
     public onFileRemove(args: RemovingEventArgs): void {
         args.postRawFile = false;
+    }
+
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['upload-save-action.cs', 'upload-remove-action.cs'];
     }
 }

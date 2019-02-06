@@ -1,0 +1,23 @@
+<div id="action-description">
+    <p>
+        The following sample demonstrates the popup list element in specific time duration. Click/Touch the TimePicker popup icon to select the desired value.
+    </p>
+</div>
+<div class="control-section sample">
+    <div class="control_wrapper">
+        <div class="tabs-wrap">
+            <div class="wrap">
+                <ejs-timepicker #duration id='timepicker' [value]='timevalue' (itemRender)='itemRenderHandler($event)' (open)='onOpen()' cssClass='e-customStyle'></ejs-timepicker>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        The Time Duration sample illustrates, how to customize or disable the time values in time list popup by using <code>itemRender</code> event. Here, all the time values has addition information on duration between them in sequence and some of the
+        values are disabled through itemRender event by adding the <code>e-disabled</code> class. By using the <code>scrollTo</code> property can set the scroll position to the given value when no value is selected or the selected value is not availble
+        in the timepicker popup list.
+    </p>
+    <p>More information about TimePicker and it's configuration can be found in the
+        <a href="https://ej2.syncfusion.com/angular/documentation/timepicker/getting-started.html#create-a-simple-timepicker" target="_blank"> documentation section</a>.</p>
+</div>

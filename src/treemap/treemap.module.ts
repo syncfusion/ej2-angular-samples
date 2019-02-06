@@ -15,6 +15,7 @@ import { TreemapLegendComponent } from './legend.component';
 import { TreemapSelectComponent } from './selection.component';
 import { TreemapPrintComponent } from './print.component';
 import { TreemapPieComponent } from './pie.component';
+import { TreemapcolorMappingComponent } from './color-mapping.component';
 
 export const treemapAppRoutes: Object[] = [
     { path: ':theme/treemap/default', component: TreemapDefaultComponent, name: 'Default Functionalities', order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control visualizes the sales of cars across various countries in 2017.' },
@@ -23,9 +24,9 @@ export const treemapAppRoutes: Object[] = [
     { path: ':theme/treemap/custom', component: TreemapCustomComponent, name: 'Customization', order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control depicts the gold medal categories of the 2016 US Summer Olympics. Each category is denoted with label template.' },
     { path: ':theme/treemap/label', component: TreemapLabelComponent, name: 'Data Label', order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control depicts the population level of various countries in 2017 along with data labels.' },
     { path: ':theme/treemap/tooltip', component: TreemapTooltipComponent, name: 'Tooltip', order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control depicts the number of international airports available in various countries in South America along with tooltip.' },
-    { path: ':theme/treemap/legend', component: TreemapLegendComponent, name: 'Legend', order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control visualizes the 2016 U.S.A. presidential election results. Default and interactive are the two types of legend.' },
-    { path: ':theme/treemap/selection', component: TreemapSelectComponent,
-     name: 'Selection & Highlight', order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control depicts the details of goods imported by Japan. Selection and highlight options have been enabled.' },
+    { path: ':theme/treemap/legend', component: TreemapLegendComponent, name: 'Legend', type: 'update', order: '01',  category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control visualizes the 2016 U.S.A. presidential election results. Default and interactive are the two types of legend.' },
+    { path: ':theme/treemap/color-mapping', component: TreemapcolorMappingComponent, name: 'Color Mapping', type: 'new',  order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control with color mapping.' },
+    { path: ':theme/treemap/selection', component: TreemapSelectComponent, name: 'Selection & Highlight', order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control depicts the details of goods imported by Japan. Selection and highlight options have been enabled.' },
     { path: ':theme/treemap/print', component: TreemapPrintComponent, name: 'Print & Export', order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control depicts the top 10 best-selling smartphone brands. Print and export options have been enabled.' },
     { path: ':theme/treemap/pie', component: TreemapPieComponent, name: 'TreeMap with Pie', order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control visualizes the population level of various continents in 2011 based on the gender and age group.' },
 ];
@@ -41,7 +42,8 @@ let declarations: Type<Object>[] = [
     TreemapLegendComponent,
     TreemapSelectComponent,
     TreemapPrintComponent,
-    TreemapPieComponent
+    TreemapPieComponent,
+    TreemapcolorMappingComponent
 ];
 @NgModule({
     imports: [treemapRouter,  SharedModule, TreeMapAllModule],

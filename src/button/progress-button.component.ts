@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { ProgressButton, SpinSettings, AnimationSettings } from '@syncfusion/ej2-angular-splitbuttons';
+import { ProgressButton, SpinSettingsModel, AnimationSettingsModel } from '@syncfusion/ej2-angular-splitbuttons';
 /**
  * Progress Button Controller
  */
@@ -17,14 +17,14 @@ export class ProgressButtonController {
         sourceFiles.files = ['progress-button.css'];
     }
 
-    public spinRight: SpinSettings = { position: 'Right' };
-    public spinTop: SpinSettings = { position: 'Top' };
-    public spinBottom: SpinSettings = { position: 'Bottom' };
-    public spinCenter: SpinSettings = { position: 'Center' };
-    public zoomOut: AnimationSettings = { effect: 'ZoomOut' };
-    public slideLeft: AnimationSettings = { effect: 'SlideLeft' };
-    public slideRight: AnimationSettings = { effect: 'SlideRight' };
-    public zoomIn: AnimationSettings = { effect: 'ZoomIn' };
+    public spinRight: SpinSettingsModel = { position: 'Right' };
+    public spinTop: SpinSettingsModel = { position: 'Top' };
+    public spinBottom: SpinSettingsModel = { position: 'Bottom' };
+    public spinCenter: SpinSettingsModel = { position: 'Center' };
+    public zoomOut: AnimationSettingsModel = { effect: 'ZoomOut' };
+    public slideLeft: AnimationSettingsModel = { effect: 'SlideLeft' };
+    public slideRight: AnimationSettingsModel = { effect: 'SlideRight' };
+    public zoomIn: AnimationSettingsModel = { effect: 'ZoomIn' };
 
     public contractBegin() {
         this.contractBtn.element.classList.add('e-round');

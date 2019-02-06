@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import { EventSettingsModel, View, TimelineViewsService, TimelineMonthService, AgendaService, ResizeService } from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, View, TimelineViewsService, TimelineMonthService, AgendaService, ResizeService, DragAndDropService } from '@syncfusion/ej2-angular-schedule';
 import { scheduleData, timelineData } from './datasource';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'timeline.html',
-    providers: [TimelineViewsService, TimelineMonthService, AgendaService, ResizeService]
+    providers: [TimelineViewsService, TimelineMonthService, AgendaService, ResizeService, DragAndDropService]
 })
 export class TimelineComponent {
     public selectedDate: Date = new Date(2018, 1, 15);

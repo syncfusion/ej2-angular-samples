@@ -1,0 +1,52 @@
+<div class="control-section">
+    <ejs-grid [dataSource]="data" [allowPaging]="true" [pageSettings]='pageOption' allowGrouping='true' [groupSettings]='groupSettings'  [editSettings]='editSettings' [toolbar]='toolbar'>
+        <e-columns>
+                <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' isPrimaryKey='true' ></e-column>
+                <e-column field='CustomerID' headerText='Customer ID' width='120'></e-column>
+                <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right' editType='numericedit'></e-column>
+                <e-column field='OrderDate' headerText='Order Date' width='130' format='yMd' editType='datepickeredit' textAlign='Right'></e-column>
+                <e-column field='ShipCountry' headerText='Ship Country' width='150' editType='dropdownedit'></e-column>
+        </e-columns>
+        <e-aggregates>
+            <e-aggregate>
+                <e-columns>
+                    <e-column type="Sum" field="Freight" format="C2">
+                        <ng-template #footerTemplate let-data>Sum: {{data.Sum}}</ng-template>
+                    </e-column>
+                </e-columns>
+            </e-aggregate>
+            <e-aggregate>
+                    <e-columns>
+                        <e-column type="Sum" field="Freight" format="C2">
+                            <ng-template #groupFooterTemplate let-data>Sum: {{data.Sum}}</ng-template>
+                        </e-column>
+                    </e-columns>
+                </e-aggregate>
+            <e-aggregate>
+                <e-columns>
+                    <e-column type="Average" field="Freight" format="C2">
+                        <ng-template #groupCaptionTemplate let-data>Average: {{data.Average}}</ng-template>
+                    </e-column>
+                </e-columns>
+            </e-aggregate>
+        </e-aggregates>
+    </ejs-grid>
+    <div id="action-description">
+        <p>This sample demonstrates reactive aggregate update on data change functionality of the Grid. In this sample, the batch editing  is enabled and the corresponding aggregate values will be refreshed when 'Freight' cell value is changed.</p>
+    </div>
+    <div id="description">
+            <p>The Grid supports aggregates which will be displayed at the footer, group footer and group caption of the Grid.
+    The aggregate configurations can be provided by the <code><a target="_blank" className="code"
+                href="http://ej2.syncfusion.com/documentation/grid/api-grid.html">
+                aggregates
+        </a></code> property.</p>
+            <p>
+              In this demo, the batch editing  is enabled and the corresponding aggregate values will be refreshed when <strong><i>Freight</i></strong> cell value is changed.
+    </p>
+            <p>
+              By default, reactive aggregate update is not supported by inline and dialog edit modes. But, we can refresh aggregates manually. Please refer to the <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/grid/aggregates.html#refresh-aggregates-in-inline-edit-mode">
+                documentation.</a>
+            </p>
+          </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, OnInit, Inject } from '@angular/core';
 import { UploaderComponent, SelectedEventArgs, FileInfo, RemovingEventArgs } from '@syncfusion/ej2-angular-inputs';
 import { createSpinner, showSpinner, hideSpinner } from '@syncfusion/ej2-popups';
 import { EmitType, detach, Browser, createElement, isNullOrUndefined, EventHandler } from '@syncfusion/ej2-base';
@@ -38,6 +38,7 @@ export class PreviewUploaderComponent implements OnInit {
             return false;
         };
         document.getElementById('clearbtn').onclick = () => {
+            if (!this.dropElement.querySelector('ul')) { return; }
             detach(this.dropElement.querySelector('ul'));
             this.filesList = [];
             this.filesDetails = [];
@@ -191,11 +192,15 @@ export class PreviewUploaderComponent implements OnInit {
     public readURL(li: HTMLElement, args: any): void {
         let preview: HTMLImageElement = li.querySelector('.upload-image');
         let file: File = args.rawFile; let reader: FileReader = new FileReader();
-        reader.addEventListener('load', () => { preview.src = reader.result; }, false);
+        reader.addEventListener('load', () => { preview.src = reader.result as string; }, false);
         if (file) { reader.readAsDataURL(file); }
     }
 
     public onFileRemove(args: RemovingEventArgs): void {
         args.postRawFile = false;
+    }
+
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['upload-save-action.cs', 'upload-remove-action.cs'];
     }
 }

@@ -1,12 +1,12 @@
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
-import { MonthService, View, ResizeService
+import { MonthService, View, ResizeService, DragAndDropService
  } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'cell-template.html',
     styleUrls: ['cells.style.css'],
-    providers: [MonthService, ResizeService],
+    providers: [MonthService, ResizeService, DragAndDropService],
     encapsulation: ViewEncapsulation.None
 })
 export class CellTemplateComponent {

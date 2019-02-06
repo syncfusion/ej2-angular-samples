@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { EmitType, detach, isNullOrUndefined, createElement, EventHandler } from '@syncfusion/ej2-base';
 import { UploaderComponent, FileInfo, SelectedEventArgs, RemovingEventArgs } from '@syncfusion/ej2-angular-inputs';
 import { createSpinner, showSpinner, hideSpinner  } from '@syncfusion/ej2-popups';
@@ -35,6 +35,7 @@ export class TemplateUploaderComponent {
             return false;
         };
         document.getElementById('clearbtn').onclick = () => {
+            if (!document.getElementsByClassName('upload-list-root')[0]) { return; }
             this.uploadObj.element.value = '';
             detach(document.getElementById('dropArea').querySelector('.upload-list-root'));
             this.filesList = [];
@@ -105,8 +106,8 @@ export class TemplateUploaderComponent {
                 }
             };
         } else {
-            this.filesList.splice(this.filesList.indexOf(li), 1);
             this.filesDetails.splice(this.filesList.indexOf(li), 1);
+            this.filesList.splice(this.filesList.indexOf(li), 1);
             if (!isNullOrUndefined(li)) { detach(li); }
             if (!isNullOrUndefined(spinnerElement)) {
                 hideSpinner(spinnerElement);
@@ -138,5 +139,9 @@ export class TemplateUploaderComponent {
     public generateSpinner(targetElement: HTMLElement): void {
         createSpinner({ target: targetElement, width: '25px' });
         showSpinner(targetElement);
+    }
+
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['upload-save-action.cs', 'upload-remove-action.cs'];
     }
 }

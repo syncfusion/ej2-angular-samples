@@ -1,6 +1,7 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { TreeMap, TreeMapTooltip, TreeMapLegend, LegendMode } from '@syncfusion/ej2-angular-treemap';
-import { electionData } from '../treemap/treemap-date/election-data';
+// tslint:disable
+import { Component, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
+import { TreeMap, TreeMapTooltip, TreeMapLegend, LegendMode, LegendPosition } from '@syncfusion/ej2-angular-treemap';
+import { electionData } from './election-data';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { ILoadEventArgs, TreeMapTheme } from '@syncfusion/ej2-angular-treemap';
 TreeMap.Inject(TreeMapTooltip, TreeMapLegend);
@@ -56,12 +57,48 @@ export class TreemapLegendComponent {
                 index: 0, placeholder: 'Select layout type', width: 120,
                 change: () => {
                     this.treemap.legendSettings.mode = <LegendMode>legend.value;
+                    if (legend.value === 'Interactive') {
+                        if (this.treemap.legendSettings.orientation === 'Horizontal' || this.treemap.legendSettings.orientation === 'None') {
+                            this.treemap.legendSettings.height = '10';
+                            this.treemap.legendSettings.width = '';
+                        } else {
+                            this.treemap.legendSettings.height = '70%';
+                            this.treemap.legendSettings.width = '10';
+                        }
+                    } else {
+                        this.treemap.legendSettings.height = '';
+                        this.treemap.legendSettings.width = '';
+                    }
                     this.treemap.refresh();
                 }
             });
             legend.appendTo('#legendMode');
+            let position: DropDownList = new DropDownList({
+                index: 0, placeholder: 'Select layout type', width: 120,
+                change: () => {
+                    this.treemap.legendSettings.position = <LegendPosition>position.value;
+                    if (position.value === 'Left' || position.value === 'Right') {
+                        this.treemap.legendSettings.orientation = 'Vertical';
+                        if (this.treemap.legendSettings.mode === 'Interactive') {
+                            this.treemap.legendSettings.height = '70%';
+                            this.treemap.legendSettings.width = '10';
+                        } else {
+                            this.treemap.legendSettings.height = '';
+                            this.treemap.legendSettings.width = '';
+                        }
+                    } else {
+                        this.treemap.legendSettings.orientation = 'Horizontal';
+                        if (this.treemap.legendSettings.mode === 'Interactive') {
+                            this.treemap.legendSettings.height = '10';
+                            this.treemap.legendSettings.width = '';
+                        }
+                    }
+                    this.treemap.refresh();
+                }
+            });
+            position.appendTo('#legendPosition');
         }
-        constructor() {
-            //code
-          }
+        constructor(@Inject('sourceFiles') private sourceFiles: any) {
+            sourceFiles.files = ['election-data.ts' ];
+        };
 };

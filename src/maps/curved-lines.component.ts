@@ -1,7 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { MapsTheme, Maps, Marker, MapsTooltip, NavigationLine, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
-import { markerLocation } from './map-data/map-location';
-import { data } from './map-data/navigation-data';
+import { markerLocation } from './map-location';
+import { data } from './navigation-data';
 import { MapAjax } from '@syncfusion/ej2-maps';
 
 Maps.Inject(Marker, MapsTooltip, NavigationLine);
@@ -237,11 +237,11 @@ export class MapsCurvedLinesComponent {
                     }
                 }
             ],
-            shapeData:  new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
+            shapeData:  new MapAjax('./src/maps/world-map.json'),
         }
     ]
-    constructor() {
-        //code
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['map-location.ts', 'navigation-data.ts', 'world-map.json'];
     };
 
 }

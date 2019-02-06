@@ -3,7 +3,7 @@ import { extend } from '@syncfusion/ej2-base';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { DateTimePicker } from '@syncfusion/ej2-calendars';
 import {
-    PopupOpenEventArgs, EventRenderedArgs, ScheduleComponent, MonthService, DayService, WeekService, WorkWeekService, EventSettingsModel, ResizeService
+    PopupOpenEventArgs, EventRenderedArgs, ScheduleComponent, MonthService, DayService, WeekService, WorkWeekService, EventSettingsModel, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 import { doctorsEventData } from './datasource';
 
@@ -24,7 +24,7 @@ import { doctorsEventData } from './datasource';
         padding: 7px;
         padding-right: 16px;
     }`],
-    providers: [MonthService, DayService, WeekService, WorkWeekService, ResizeService],
+    providers: [MonthService, DayService, WeekService, WorkWeekService, ResizeService, DragAndDropService],
     encapsulation: ViewEncapsulation.None
 })
 export class EditTempComponent {

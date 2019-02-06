@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ViewEncapsulation, Inject } from '@angular/core';
 import { EmitType, detach } from '@syncfusion/ej2-base';
 import { UploaderComponent, RemovingEventArgs } from '@syncfusion/ej2-angular-inputs';
 import { createSpinner, showSpinner, hideSpinner } from '@syncfusion/ej2-popups';
@@ -32,4 +32,8 @@ export class PreloadFileUploaderComponent {
     }
 
     public dropElement: HTMLElement = document.getElementsByClassName('control-fluid')[0] as HTMLElement;
+
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['upload-save-action.cs', 'upload-remove-action.cs'];
+    }
 }

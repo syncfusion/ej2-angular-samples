@@ -8,6 +8,10 @@
         width: 50%;
     }
 
+    body > ejs-toast {
+        z-index: 100000 !important;
+      }
+
     .e-toast-icon.e-laura.e-icons {
         border-radius: 50%;
         background-image: url('./src/toast/resource/laura.png');

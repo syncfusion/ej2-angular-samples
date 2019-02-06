@@ -1,6 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';
-import { MenuAnimationSettings, MenuEventArgs, MenuItemModel } from '@syncfusion/ej2-navigations';
+import { ContextMenuComponent, MenuEventArgs, MenuItemModel } from '@syncfusion/ej2-angular-navigations';
 /**
  * Default ContextMenu Controller
  */
@@ -13,7 +13,9 @@ import { MenuAnimationSettings, MenuEventArgs, MenuItemModel } from '@syncfusion
 
 export class DefaultContextMenuController {
     public content: string = '';
-    public animationSettings: MenuAnimationSettings = {};
+
+    @ViewChild('contextmenu')
+    public contextmenu: ContextMenuComponent;
 
     // Event triggers while rendering each menu item where “Link” menu item is disabled
     public addDisabled  (args: MenuEventArgs) {
@@ -22,7 +24,7 @@ export class DefaultContextMenuController {
         }
     }
 
-    //ContextMenu items definition 
+    // ContextMenu items definition 
     public menuItems: MenuItemModel[] = [
         {
             text: 'Cut',
@@ -58,13 +60,14 @@ export class DefaultContextMenuController {
             iconCss: 'e-cm-icons e-comment'
         }];
 
-    ngOnInit(): void {
+    // Event triggers once the context menu rendering is completed.
+    onCreated(): void {
         if (Browser.isDevice) {
             this.content = 'Touch hold to open the ContextMenu';
-            this.animationSettings.effect = 'ZoomIn';
+            this.contextmenu.animationSettings.effect = 'ZoomIn';
         } else {
             this.content = 'Right click / Touch hold to open the ContextMenu';
-            this.animationSettings.effect = 'SlideDown';
+            this.contextmenu.animationSettings.effect = 'SlideDown';
         }
     }
 }

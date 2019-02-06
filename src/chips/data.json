@@ -1,0 +1,44 @@
+{
+  "ddlData": [{
+      "id": "1",
+      "text": "Default"
+    },
+    {
+      "id": "2",
+      "text": "Primary"
+    },
+    {
+      "id": "3",
+      "text": "Success"
+    },
+    {
+      "id": "4",
+      "text": "Danger"
+    },
+    {
+      "id": "5",
+      "text": "Warning"
+    },
+    {
+      "id": "6",
+      "text": "Info"
+    }
+  ],
+  "avatarData": [{
+      "id": "1",
+      "text": "None"
+    },
+    {
+      "id": "2",
+      "text": "Icon"
+    },
+    {
+      "id": "3",
+      "text": "Image"
+    },
+    {
+      "id": "4",
+      "text": "Letter"
+    }
+  ]
+}

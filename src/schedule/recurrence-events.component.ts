@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { recurrenceData } from './datasource';
 import { extend } from '@syncfusion/ej2-base';
-import { EventSettingsModel, EventRenderedArgs, View, DayService, WeekService, MonthService, ResizeService } from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, EventRenderedArgs, View, DayService, WeekService, MonthService, ResizeService, DragAndDropService } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'recurrence-events.html',
-    providers: [DayService, WeekService, MonthService, ResizeService]
+    providers: [DayService, WeekService, MonthService, ResizeService, DragAndDropService]
 })
 export class RecurrenceComponent {
     public data: Object[] = <Object[]>extend([], recurrenceData, null, true);

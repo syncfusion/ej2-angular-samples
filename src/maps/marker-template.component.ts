@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { MapsTheme, Maps, Marker, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps'; 
 
@@ -30,7 +30,7 @@ export class MapsMarkerTemplateComponent {
 
     public layers: object[] =  [
         {
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/australia.json'),
+            shapeData: new MapAjax('./src/maps/australia.json'),
             shapeDataPath: 'STATE_NAME',
             markerSettings: [
                 {
@@ -107,8 +107,8 @@ export class MapsMarkerTemplateComponent {
             }
         }
     ];
-    constructor() {
-        //code
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = [ 'australia.json'];
     };
 
 }

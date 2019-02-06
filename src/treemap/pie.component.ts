@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { TreeMap, ILoadedEventArgs, TreeMapTooltip, IResizeEventArgs } from '@syncfusion/ej2-angular-treemap';
-import { Continent_Data } from '../treemap/treemap-date/pie-chart';
+import { Continent_Data } from '../treemap/pie-chart';
 import { AccumulationChart, PieSeries, DataLabel, AccumulationTooltip } from '@syncfusion/ej2-charts';
 import { ILoadEventArgs, TreeMapTheme, ITreeMapTooltipRenderEventArgs } from '@syncfusion/ej2-angular-treemap';
 AccumulationChart.Inject(AccumulationChart, PieSeries, DataLabel, AccumulationTooltip);

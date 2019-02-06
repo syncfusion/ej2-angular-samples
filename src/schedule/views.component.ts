@@ -2,13 +2,13 @@ import { Component, ViewChild } from '@angular/core';
 import { zooEventsData } from './datasource';
 import { extend } from '@syncfusion/ej2-base';
 import {
-    ScheduleComponent, EventSettingsModel, View, EventRenderedArgs, DayService, WeekService, WorkWeekService, MonthService, ResizeService
+    ScheduleComponent, EventSettingsModel, View, EventRenderedArgs, DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'views.html',
-    providers: [DayService, WeekService, WorkWeekService, MonthService, ResizeService]
+    providers: [DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService]
 })
 export class ViewsComponent {
     @ViewChild('scheduleObj')

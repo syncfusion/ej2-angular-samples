@@ -6,9 +6,12 @@ import {
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
 import { ChangeEventArgs as NumericChangeEventArgs } from '@syncfusion/ej2-inputs';
-import { multiParentData, DataInfo } from './diagram-data';
+import { multiParentData } from './diagram-data';
 Diagram.Inject(DataBinding, ComplexHierarchicalTree);
 
+export interface DataInfo {
+    [key: string]: string;
+}
 
 /**
  * Sample for Multiple parent sample
@@ -23,7 +26,7 @@ Diagram.Inject(DataBinding, ComplexHierarchicalTree);
 export class ComplexHierarchicalTreeDiagramComponent {
     @ViewChild('diagram')
     public diagram: DiagramComponent;
-    
+
     public nodeDefaults(obj: NodeModel): NodeModel {
         obj.width = 40; obj.height = 40;
         //Initialize shape
@@ -32,7 +35,7 @@ export class ComplexHierarchicalTreeDiagramComponent {
     };
     public data: Object = {
         id: 'Name', parentId: 'ReportingPerson',
-        dataManager: new DataManager(multiParentData as JSON[]),
+        dataManager: new DataManager(multiParentData),
         //binds the external data with node
         doBinding: (nodeModel: NodeModel, data: DataInfo, diagram: Diagram) => {
             /* tslint:disable:no-string-literal */
@@ -70,7 +73,7 @@ export class ComplexHierarchicalTreeDiagramComponent {
         }
         if (target.className === 'image-pattern-style') {
             let id: string = target.id;
-            let orientation1: string = id.substring(0, 1).toUpperCase()+id.substring(1,id.length);
+            let orientation1: string = id.substring(0, 1).toUpperCase() + id.substring(1, id.length);
             this.diagram.layout.orientation = orientation1 as LayoutOrientation;
             this.diagram.layout.orientation = orientation1 as LayoutOrientation;
             this.diagram.doLayout();

@@ -55,7 +55,7 @@ export class AnnotationChartComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
@@ -99,7 +99,7 @@ export class AnnotationChartComponent {
             this.pie.destroy();
             let selectedTheme: string = location.hash.split('/')[1];
             selectedTheme = selectedTheme ? selectedTheme : 'Material';
-            let theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+            let theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
             this.pie = new AccumulationChart({
                 background: 'transparent',
                 series: [{
@@ -127,7 +127,7 @@ export class AnnotationChartComponent {
             load: (args: IAccLoadedEventArgs) => {
                 let selectedTheme: string = location.hash.split('/')[1];
                 selectedTheme = selectedTheme ? selectedTheme : 'Material';
-                args.accumulation.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+                args.accumulation.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
             },
             legendSettings: { visible: false },
             resized:  (args: IAccResizeEventArgs) => {

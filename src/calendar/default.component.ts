@@ -11,7 +11,6 @@ import { Component, ViewEncapsulation, Inject } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class DefaultCalendarComponent {
-
    constructor(@Inject('sourceFiles') private sourceFiles:any) {
          sourceFiles.files = ['default-style.css'];
     }

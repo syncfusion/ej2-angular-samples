@@ -4,7 +4,8 @@ import { ItemModel } from '@syncfusion/ej2-angular-navigations';
 import { ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
 import { createElement, compile, extend } from '@syncfusion/ej2-base';
 import {
-    ScheduleComponent, EventSettingsModel, View, MonthService, ActionEventArgs, ToolbarActionArgs, EventRenderedArgs, ResizeService
+    ScheduleComponent, EventSettingsModel, View, MonthService, ActionEventArgs, ToolbarActionArgs,
+    EventRenderedArgs, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 import { employeeEventData } from './datasource';
 
@@ -16,7 +17,7 @@ import { employeeEventData } from './datasource';
     selector: 'control-content',
     templateUrl: 'header-bar.html',
     styleUrls: ['header-bar.style.css'],
-    providers: [MonthService, ResizeService],
+    providers: [MonthService, ResizeService, DragAndDropService],
     encapsulation: ViewEncapsulation.None
 })
 export class HeaderBarComponent {
@@ -62,11 +63,11 @@ export class HeaderBarComponent {
         scheduleElement.parentElement.appendChild(userContentEle);
 
         let userIconEle: HTMLElement = scheduleElement.querySelector('.e-schedule-user-icon') as HTMLElement;
-        let getDOMString: (data: object) => HTMLCollection = compile('<div class="profile-container"><div class="profile-image">' +
+        let getDOMString: (data: object) => NodeList = compile('<div class="profile-container"><div class="profile-image">' +
             '</div><div class="content-wrap"><div class="name">Nancy</div>' +
             '<div class="destination">Product Manager</div><div class="status">' +
             '<div class="status-icon"></div>Online</div></div></div>');
-        let output: HTMLCollection = getDOMString({});
+        let output: NodeList = getDOMString({});
         this.profilePopup = new Popup(userContentEle, {
             content: output[0] as HTMLElement,
             relateTo: userIconEle,

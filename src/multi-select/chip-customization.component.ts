@@ -25,7 +25,7 @@ export class ChipCustomizeMultiSelectComponent {
     // map the appropriate columns to fields property
     public fields: { [key: string]: string } = { text: 'Color', value: 'Code' };
     // set the value to MultiSelect
-    public colorValues: [number | string] = ['#75523C', '#4CD242', '#FF745C', '#3B8289', '#CA3832'];
+    public colorValues: string[] = ['#75523C', '#4CD242', '#FF745C', '#3B8289', '#CA3832'];
     // set the placeholder to MultiSelect input element
     public waterMark: string = 'Favorite Colors';
     // set the type of mode for how to visualized the selected items in input element.

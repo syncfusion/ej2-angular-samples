@@ -1,6 +1,5 @@
 <div class="control-section">
-    <ejs-schedule width='100%' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" cssClass='schedule-event-template'
-        [workHours]="workHours" [startHour]="startHour" [endHour]="endHour" [readonly]='readonly'>
+    <ejs-schedule width='100%' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" cssClass='schedule-event-template' [workHours]="workHours" [startHour]="startHour" [endHour]="endHour" [readonly]='readonly'>
         <e-views>
             <e-view option="Week">
                 <ng-template #eventTemplate let-data>
@@ -27,9 +26,8 @@
 </div>
 
 <div id="action-description">
-    <p>This demo showcases the way of customizing the look of events that are displayed on Schedule. Any kind of text, images
-        and links can be added to customize the look of the events. Here, the webinar sessions on specific topic that are
-        scheduled on respective week days have been displayed on schedule across its respective time duration.
+    <p>This demo showcases the way of customizing the look of events that are displayed on Schedule. Any kind of text, images and links can be added to customize the look of the events. Here, the webinar sessions on specific topic that are scheduled on respective
+        week days have been displayed on scheduler across its respective time duration.
     </p>
 </div>
 
@@ -37,7 +35,6 @@
     <p>
         With the usage of template, the user can format and change the default appearance of the events by making use of the
         <code>template</code> option which is available within the
-        <code>eventSettings</code> property. Here, the HTML template design is compiled and then the resultant output will be displayed directly on
-        the events.
+        <code>eventSettings</code> property. Here, the HTML template design is compiled and then the resultant output will be displayed directly on the events.
     </p>
 </div>

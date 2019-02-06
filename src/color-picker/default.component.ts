@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, Inject } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 /**
  * Default sample
@@ -11,8 +11,4 @@ import { Component, ViewEncapsulation, Inject } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 
 })
-export class DefaultColorPickerComponent {
-    constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['default.css'];
-   }
-}
+export class DefaultColorPickerComponent {}

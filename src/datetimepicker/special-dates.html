@@ -1,0 +1,20 @@
+<div id="action-description">
+    <p>
+        In the following sample, specific dates are <code>highlighted</code>. In desktop mode highlighted information about the date will be displayed when hovered.
+    </p>
+</div>
+<div class="control-section">
+    <div id="control_wrapper">
+        <ejs-datetimepicker [value]='date' (renderDayCell)='onLoad($event)' cssClass='e-customStyle'></ejs-datetimepicker>
+    </div>
+</div>
+<div id="description">
+    <p>
+        Special Dates sample demonstrates how to customize specific dates in the DateTimePicker by using
+        <code>renderDayCell</code> event. This event gets triggered on each day cell element creation, that allows you to customize, or disable specific dates in the DateTimePicker. Here the Federal holidays in USA for the year of 2017 are highlighted
+        with custom styles and classes.
+    </p>
+    <p>More information on the DateTimePicker customization can be found in the
+        <a href="https://ej2.syncfusion.com/angular/documentation/datetimepicker/customization.html" target="_blank"> documentation section</a>.
+    </p>
+</div>

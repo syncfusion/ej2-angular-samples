@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { MapsTheme, Maps, Legend, MapsTooltip, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
 
@@ -40,10 +40,10 @@ export class MapsPrintComponent {
 
     public layers: object[] =  [
         {
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/usa.json'),
+            shapeData: new MapAjax('./src/maps/usa.json'),
             shapeDataPath: 'name',
             shapePropertyPath: 'name',
-            dataSource: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/us-population.json'),
+            dataSource: new MapAjax('./src/maps/us-population.json'),
                shapeSettings: {
                 border: {
                     width: 0.5,
@@ -84,8 +84,8 @@ export class MapsPrintComponent {
     public mode(e: Event): void {
         this.maps.print();
     }
-    constructor() {
-         //code
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = [ 'usa.json', 'us-population.json'];
     };
 
 }

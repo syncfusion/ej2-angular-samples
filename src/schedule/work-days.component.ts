@@ -2,18 +2,18 @@ import { Component, ViewChild } from '@angular/core';
 import { scheduleData } from './datasource';
 import { extend } from '@syncfusion/ej2-base';
 import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { ScheduleComponent, EventSettingsModel, View, EventRenderedArgs, WeekService, MonthService, TimelineViewsService, TimelineMonthService, ResizeService, WorkHoursModel } from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, EventSettingsModel, View, EventRenderedArgs, WeekService, WorkWeekService, MonthService, TimelineViewsService, TimelineMonthService, ResizeService, WorkHoursModel, DragAndDropService } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'work-days.html',
-    providers: [WeekService, MonthService, TimelineViewsService, TimelineMonthService, ResizeService]
+    providers: [WeekService, WorkWeekService, MonthService, TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService]
 })
 export class WorkDaysComponent {
     @ViewChild('scheduleObj')
     public scheduleObj: ScheduleComponent;
     public selectedDate: Date = new Date(2018, 1, 14);
-    public currentView: View = 'Week';
+    public currentView: View = 'WorkWeek';
     public workDays: number[] = [1, 3, 5];
     public workHours: WorkHoursModel = { start: '08:00' };
     public data: object[] = <Object[]>extend([], scheduleData, null, true);

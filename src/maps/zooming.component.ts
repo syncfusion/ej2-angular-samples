@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
 import { MapsTheme, Maps, Zoom, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
 import { Slider, SliderChangeEventArgs } from '@syncfusion/ej2-inputs';
 import { EmitType } from '@syncfusion/ej2-base';
@@ -34,7 +34,7 @@ export class MapsZoomingComponent {
 
     public layers: object[] = [
         {
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
+            shapeData: new MapAjax('./src/maps/world-map.json'),
             shapePropertyPath: 'continent',
             shapeDataPath: 'continent',
             shapeSettings: {
@@ -105,9 +105,8 @@ export class MapsZoomingComponent {
             }
         };
     }
-
-    constructor() {
-        //code
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = [ 'world-map.json'];
     };
 
 }

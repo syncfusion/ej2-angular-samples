@@ -1,0 +1,28 @@
+<div class="control-section">
+    <div>
+        <ejs-stockchart id='stockChartDefault' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' style="display:block;"
+            [primaryYAxis]='primaryYAxis' [title]='title' [titleStyle]='titleStyle' [crosshair]='crosshair'
+            (tooltipRender)='tooltipRender($event)' [tooltip]='tooltip' (load)='load($event)'>
+            <e-stockchart-series-collection>
+                <e-stockchart-series [dataSource]='data1' type='Candle' xName='x' yName='high' high='high' low='low'>
+                </e-stockchart-series>
+            </e-stockchart-series-collection>
+        </ejs-stockchart>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample visualizes stock chart.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the Stock chart.
+        <code>CandleSeries</code> is used to represent selected data value.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module:</p>
+    <p>Stock Chart features are segregated into individual feature-wise modules. To use Candle Series, DateTime axis and Column series in stock chart, we need to inject
+        <code>CandleSeriesService</code>, <code>ColumnSeriesService</code> and <code>DateTimeService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>

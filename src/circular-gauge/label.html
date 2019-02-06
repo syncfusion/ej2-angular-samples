@@ -9,7 +9,7 @@
         <ejs-circulargauge (load)='load($event)' #label='' id='container1' [margin]='margin' style='display:block;' [margin]='margin'>
             <e-axes>
                 <e-axis [lineStyle]='lineStyle1' radius='75%' [labelStyle]='labelStyle1' [majorTicks]='majorTicks1' [minorTicks]='minorTicks1'
-                    minimum=0 maximum=180 startAngle=210 endAngle=150 [pointers]='pointers'>
+                    minimum=0 maximum=170 startAngle=210 endAngle=150 [pointers]='pointers'>
                     <e-annotations>
                         <e-annotation zIndex='1' content='<div id="content" style="color:#518C03;font-size:20px;font-family:Segoe UI;font-weight:semibold;">145</div>' angle=0 radius='0%'>
                         </e-annotation>
@@ -93,6 +93,16 @@
                             </div>
                         </td>
                     </tr>&nbsp;
+                    <tr>
+                        <td>
+                            <div id='enablePointer'>Show Last Label </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="checkbox" id="enable"  />
+                            </div>
+                        </td>
+                    </tr>
                     <br/>
                 </table>
             </div>

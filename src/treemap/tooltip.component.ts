@@ -1,6 +1,6 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, Inject,ViewEncapsulation, ViewChild } from '@angular/core';
 import { TreeMap, TreeMapTooltip, TreeMapLegend} from '@syncfusion/ej2-angular-treemap';
-import { Airport_Count } from '../treemap/treemap-date/airport-count';
+import { Airport_Count } from './airport-count';
 import { ILoadEventArgs, TreeMapTheme } from '@syncfusion/ej2-angular-treemap';
 TreeMap.Inject(TreeMapTooltip, TreeMapLegend);
 /**
@@ -84,7 +84,7 @@ export class TreemapTooltipComponent {
                 },
             ]
         };
-        constructor() {
-            //code
-          }
+        constructor(@Inject('sourceFiles') private sourceFiles: any) {
+            sourceFiles.files = ['airport-count.ts' ];
+        };
 };

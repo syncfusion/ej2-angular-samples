@@ -1,0 +1,41 @@
+<div id="action-description">
+    <p>This sample demonstrates the Grid component with the stacked header and and resize feature. In this sample, we have shown multiple level of column headers.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-grid [dataSource]="data" [allowPaging]='true' [allowResizing]="true">
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="Center" minWidth=10></e-column>
+            <e-column headerText='Order Details' [columns]='orderColumns'></e-column>
+            <e-column headerText='Ship Details' [columns]='shipColumns'></e-column>
+        </e-columns>
+    </ejs-grid>
+     <div id="description">
+        <p>The Grid columns can be stacked/grouped in order to show multiple level of column headers. It can be done by
+            setting the <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/api/grid/columnDirective#columns">
+        columns->columns
+        </a></code> property.
+        </p>         
+        <p>The Grid columns can be resized by clicking and dragging at the right edge of columns header. To enable column, resize behavior, set <code><a target="_blank" class="code"
+            href="http://ej2.syncfusion.com/angular/documentation/api/grid#allowresizing">allowResizing
+            </a></code> property as true. You can also prevent the resize of the particular column by setting
+            <code><a target="_blank" class="code"
+            href="http://ej2.syncfusion.com/angular/documentation/api/grid/column#allowresizing">columns->allowResizing
+            </a></code> as false in columns definition.
+        </p>
+        <p>
+            In this demo, the columns <strong>OrderDate, Freight</strong> are grouped under <strong>Order Details</strong>,
+            the columns <strong>ShippedDate, ShipCountry</strong> are grouped under <strong>Ship Details</strong>. 
+        </p>
+        <p style="font-weight: 500">Injecting Module:</p>
+        <p>
+            Grid features are segregated into individual feature-wise modules.         
+            To use Resize feature, we need to inject <code>ResizeService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+         <p>
+            More information on the stacked header configuration can be found in this 
+            <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/api/grid/columnDirective#columns">documentation section</a>.
+        </p>
+    </div>
+</div>

@@ -2,7 +2,10 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 import { extend } from '@syncfusion/ej2-base';
 import { MultiSelectChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { ScheduleComponent, EventSettingsModel, View, DayService, WeekService, MonthService, EventRenderedArgs, TimelineViewsService, TimelineMonthService, WorkHoursModel, ResizeService }
+import {
+    ScheduleComponent, EventSettingsModel, View, DayService, WeekService, MonthService,
+    EventRenderedArgs, TimelineViewsService, TimelineMonthService, WorkHoursModel, ResizeService, DragAndDropService
+}
     from '@syncfusion/ej2-angular-schedule';
 import { employeeEventData } from './datasource';
 
@@ -12,12 +15,8 @@ import { employeeEventData } from './datasource';
 @Component({
     selector: 'control-content',
     templateUrl: 'hide-weekend.html',
-    styles: [` 
-    .multi-prop div {
-        padding-left: 0;
-        padding-top: 0;
-    }`],
-    providers: [DayService, WeekService, MonthService, TimelineViewsService, TimelineMonthService, ResizeService],
+    styles: ['hide-weekend.css'],
+    providers: [DayService, WeekService, MonthService, TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService],
     encapsulation: ViewEncapsulation.None
 
 })

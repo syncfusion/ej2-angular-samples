@@ -3,14 +3,14 @@ import { eventsData } from './datasource';
 import { extend } from '@syncfusion/ej2-base';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
 import {
-    EventSettingsModel, View, EventRenderedArgs, ScheduleComponent, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService
+    EventSettingsModel, View, EventRenderedArgs, ScheduleComponent, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'tooltip.html',
     styleUrls: ['tooltip.style.css'],
-    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService],
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService],
     encapsulation: ViewEncapsulation.None
 })
 export class TooltipComponent {

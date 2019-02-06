@@ -4,7 +4,7 @@
 </div>
 <div class="control-section">
        <ejs-grid #grid [dataSource]='data' allowPaging='true' allowSorting="true" [allowGrouping]="true" [groupSettings]="groupOptions" [pageSettings]='pageSettings'
-        height="320" (dataBound)='dataBound()' (load)='load()'>
+        height="320" (dataBound)='dataBound()' (created)='created()' (load)='load()'>
         <e-columns>
             <e-column field='Inventor' headerText='Inventor Name' width='180'></e-column>
             <e-column field='NumberofPatentFamilies' headerText="Number of Patent Families" width='220' textAlign='Right'></e-column>
@@ -13,6 +13,8 @@
             <e-column field='Mainfieldsofinvention' headerText='Main fields of invention' [allowGrouping]="false" width='200'></e-column>
         </e-columns>
     </ejs-grid>
+    <ejs-dialog #alertDialog [buttons]='alertDlgButtons' [visible]='hidden' [header]='alertHeader' [animationSettings]='animationSettings' [content]='alertContent' [showCloseIcon]='showCloseIcon' [target]='target' [width]='alertWidth'>
+    </ejs-dialog>
     <div style="margin-top: 10px; text-align: right">Source:
         <a href="https://en.wikipedia.org/wiki/List_of_prolific_inventors" target='_blank'>Wikipedia: List of Prolific inventors</a>
     </div>

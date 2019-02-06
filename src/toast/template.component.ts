@@ -110,7 +110,7 @@ export class TemplateController {
             this.toastFlag = 0;
         }
     }
-    public cardTemplateFn(data: Object): HTMLCollection {
-        return compile(this.template.trim())(data) as HTMLCollection;
+    public cardTemplateFn(data: Object): NodeList {
+        return compile(this.template.trim())(data) as NodeList;
     }
 }

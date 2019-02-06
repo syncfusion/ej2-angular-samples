@@ -3,7 +3,7 @@ import { extend } from '@syncfusion/ej2-base';
 import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { Timezone, WorkHoursModel } from '@syncfusion/ej2-schedule';
 import {
-    EventSettingsModel, View, EventRenderedArgs, ScheduleComponent, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService
+    EventSettingsModel, View, EventRenderedArgs, ScheduleComponent, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 import { fifaEventsData } from './datasource';
 declare var moment: any;
@@ -11,7 +11,7 @@ declare var moment: any;
 @Component({
     selector: 'control-content',
     templateUrl: 'timezone-event.html',
-    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService]
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
 })
 
 export class TimezoneComponent {

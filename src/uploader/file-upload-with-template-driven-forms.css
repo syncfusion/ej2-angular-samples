@@ -24,6 +24,7 @@ background: #000000;
 }
 #template_driven .upload-area {
 width: 100%;
+background: transparent;
 }
 #template_driven .form-group .submit-btn {
 margin-top: 15px;
@@ -96,6 +97,10 @@ margin-top: -28px;
 }
 #template_driven .form-group .upload-area input {
 width: 70%;
+}
+
+.fabric #template_driven .form-group .upload-area input, .bootstrap #template_driven .form-group .upload-area input {
+background: #ffffff;
 }
 
 @media (min-width: 250px) and (max-width: 500px) {

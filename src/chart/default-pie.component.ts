@@ -20,42 +20,60 @@ export class DefaultPieComponent {
     @ViewChild('pie')
     public pie: AccumulationChartComponent | AccumulationChart;
     public pieangle(e: Event): void {
-        let angle: string = (document.getElementById('pieangle') as HTMLSelectElement).value;
+        let angle: string = (document.getElementById('pieangle') as HTMLInputElement).value;
         this.pie.series[0].startAngle = parseFloat(angle);
         this.pie.series[0].endAngle = parseFloat(angle);
         this.pie.series[0].animation.enable = false;
-        document.getElementById('anglevalue').innerHTML = angle;
+        document.getElementById('pieangleText').innerHTML = angle;
         this.pie.removeSvg();
         this.pie.refreshSeries();
         this.pie.refreshChart();
     };
     public pieradius(e: Event): void {
-        let radius: string = (document.getElementById('pieradius') as HTMLSelectElement).value;
+        let radius: string = (document.getElementById('pieradius') as HTMLInputElement).value;
         this.pie.series[0].radius = radius + '%';
-        document.getElementById('radius').innerHTML = (parseInt(radius, 10) / 100).toFixed(2);
+        document.getElementById('pieradiusText').innerHTML = (parseInt(radius, 10) / 100).toFixed(2);
         this.pie.series[0].animation.enable = false;
         this.pie.removeSvg();
         this.pie.refreshSeries();
         this.pie.refreshChart();
     };
     public pieexploderadius(e: Event): void {
-        let radius: string = (document.getElementById('pieexploderadius') as HTMLSelectElement).value;
+        let radius: string = (document.getElementById('pieexploderadius') as HTMLInputElement).value;
         this.pie.visibleSeries[0].explodeOffset = radius + '%';
-        document.getElementById('exploderadius').innerHTML = (parseInt(radius, 10) / 100).toFixed(2);
+        document.getElementById('pieexploderadiusText').innerHTML = (parseInt(radius, 10) / 100).toFixed(2);
         this.pie.series[0].animation.enable = false;
         this.pie.removeSvg();
         this.pie.refreshSeries();
         this.pie.refreshChart();
     };
     public pieexplodeindex(e: Event): void {
-        let index: number = +(document.getElementById('pieexplodeindex') as HTMLSelectElement).value;
+        let index: number = +(document.getElementById('pieexplodeindex') as HTMLInputElement).value;
         this.pie.visibleSeries[0].explodeIndex = index;
-        document.getElementById('explodeindex').innerHTML = index.toString();
+        document.getElementById('pieexplodeindexText').innerHTML = index.toString();
         this.pie.series[0].animation.enable = false;
         this.pie.removeSvg();
         this.pie.refreshSeries();
         this.pie.refreshChart();
     };
+    public piecenterx(e: Event): void {
+        let x: string = (document.getElementById('x') as HTMLInputElement).value;
+        this.pie.center.x = x + '%';
+        document.getElementById('xvalue').innerHTML = x + '%';
+        this.pie.series[0].animation.enable = false;
+        this.pie.removeSvg();
+        this.pie.refreshSeries();
+        this.pie.refreshChart();
+    }
+    public piecentery(e: Event): void {
+        let y: string = (document.getElementById('y') as HTMLInputElement).value;
+        this.pie.center.y = y + '%';
+        document.getElementById('yvalue').innerHTML = y + '%';
+        this.pie.series[0].animation.enable = false;
+        this.pie.removeSvg();
+        this.pie.refreshSeries();
+        this.pie.refreshChart();
+    }
     public animation: Object = {
         enable: false
     };
@@ -74,10 +92,13 @@ export class DefaultPieComponent {
     public load(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
+    public center: Object = {x: '50%', y: '50%'};
     public startAngle: number = 0;
     public endAngle: number = 360;
+    public explode: boolean = true;
+    public enableAnimation: boolean = false;
     public tooltip: Object = { enable: true, format: '${point.x} : <b>${point.y}%</b>' };
     public title: string = 'Mobile Browser Statistics';
     constructor() {

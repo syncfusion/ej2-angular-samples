@@ -32,10 +32,10 @@
         margin: 15px;
     }
     
-    #toast_custom .e-toast .e-toast-title,
-    #toast_custom .e-toast .e-toast-message,
-    #toast_custom  .e-toast .e-toast-message .e-toast-content,
-    #toast_custom  .e-toast .e-toast-close-icon {
+    #toastcustom .e-toast .e-toast-title,
+    #toastcustom .e-toast .e-toast-message,
+    #toastcustom  .e-toast .e-toast-message .e-toast-content,
+    #toastcustom  .e-toast .e-toast-close-icon {
         color: #fff;
     }
 
@@ -159,3 +159,7 @@
     .material #template_toast .e-ddl-icon {
         color: white !important;
     }
+
+    body > ejs-toast {
+        z-index: 100000 !important;
+      }
