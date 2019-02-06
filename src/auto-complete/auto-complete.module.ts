@@ -13,49 +13,50 @@ import { DiacriticsFilteringAutoCompleteComponent } from './diacritics-filtering
 import { TemplateDrivenAutoCompleteComponent } from './template-driven.component';
 import { ReactiveFormAutoCompleteComponent } from './reactive-form.component';
 import { SharedModule } from '../common/shared.module';
+import { BrowserModule } from '@angular/platform-browser';
 export const autoCompleteAppRoutes: Object[] = [
     {
         path: ':theme/auto-complete/default', component: DefaultAutoCompleteComponent, order: '01',
-        name: 'Default Functionalities', description: 'This demo for Essential JS2 AutoComplete control shows the default rendering of the AutoComplete control with minimum configuration.', category: 'AutoComplete'
+        name: 'Default Functionalities', description: 'This demo for Syncfusion angular autocomplete component shows the default rendering with minimum configuration.', category: 'AutoComplete'
     },
     {
         path: ':theme/auto-complete/grouping-icon', component: GroupAndIconAutoCompleteComponent, order: '01',
-        name: 'Grouping and Icons', description: 'This demo demonstrates the grouping of suggestions based on different categories with individual header and icon support in the AutoComplete control.', category: 'AutoComplete'
+        name: 'Grouping and Icons', description: 'This demo explains the grouping based on different categories with individual header and icon support in the Syncfusion angular autocomplete component.', category: 'AutoComplete'
     },
     {
         path: ':theme/auto-complete/data-binding', component: DataBindingAutoCompleteComponent, order: '01',
-        name: 'Data Binding', description: 'This demo for Essential JS2 Autocomplete control shows how to bind with  local data source and how to consume data from remote data service.', category: 'AutoComplete'
+        name: 'Data Binding', description: 'This demo for Syncfusion angular autocomplete component shows how to bind with local data source and how to fetch data from remote data service.', category: 'AutoComplete'
     },
     {
         path: ':theme/auto-complete/template', component: TemplateAutoCompleteComponent, order: '01',
-        name: 'Template', description: 'This demo demonstrates on how to customize the appearance of each item that is displayed in the pop-up list using templating.', category: 'AutoComplete'
+        name: 'Template', description: 'This demo for Syncfusion angular autocomplete component shows how to customize the appearance of each item in the pop-up list using template option.', category: 'AutoComplete'
     },
     {
         path: ':theme/auto-complete/highlight', component: HighlightAutoCompleteComponent, order: '01',
-        name: 'Highlight', description: 'The demo demonstrates the built-in support to highlight the searched characters on the suggested list items.', category: 'AutoComplete'
+        name: 'Highlight', description: 'This demo for Syncfusion angular autocomplete component explains the built-in support to highlight the searched characters in the suggested list items.', category: 'AutoComplete'
     },
     {
         path: ':theme/auto-complete/custom-filtering', component: CustomFilteringAutoCompleteComponent, order: '01',
-        name: 'Custom Filtering', description: 'This demo demonstrates the custom filtering functionalities of the AutoComplete control.', category: 'AutoComplete'
+        name: 'Custom Filtering', description: 'This demo for Syncfusion angular autocomplete component explains the custom filtering functionalities.', category: 'AutoComplete'
     },
 {
         path: ':theme/auto-complete/diacritics-filtering', component: DiacriticsFilteringAutoCompleteComponent, order: '01',
-        name: 'Diacritics Filtering', description: 'This demo demonstrates the diacritics filter functionality of the AutoComplete control.',category: 'AutoComplete'
+        name: 'Diacritics Filtering', description: 'This demo explains the diacritics filter functionality of the Syncfusion angular autocomplete component.',category: 'AutoComplete'
     },
     {
         path: ':theme/auto-complete/template-driven', component: TemplateDrivenAutoCompleteComponent, order: '02',
-        name: 'Template Driven', description: 'This demo demonstrates the template-driven forms support of the AutoComplete control.', category: 'Form Support'
+        name: 'Template Driven', description: 'This demo explains the template-driven forms support of the Syncfusion angular autocomplete component.', category: 'Form Support'
     },
     {
         path: ':theme/auto-complete/reactive-form', component: ReactiveFormAutoCompleteComponent, order: '02',
-        name: 'Reactive Form', description: 'This demo demonstrates the reactive forms support of the AutoComplete control.', category: 'Form Support'
+        name: 'Reactive Form', description: 'This demo explains the reactive forms support of the Syncfusion angular autocomplete component.', category: 'Form Support'
     }
 ];
 
 export const AutoCompleteRouter: ModuleWithProviders = RouterModule.forChild(autoCompleteAppRoutes);
 
 @NgModule({
-    imports: [AutoCompleteRouter, AutoCompleteModule, SharedModule, CheckBoxModule, FormsModule, ReactiveFormsModule],
+    imports: [AutoCompleteRouter, AutoCompleteModule, SharedModule, CheckBoxModule, FormsModule, ReactiveFormsModule, BrowserModule],
     declarations: [
         DefaultAutoCompleteComponent,
         GroupAndIconAutoCompleteComponent,

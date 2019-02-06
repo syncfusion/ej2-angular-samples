@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { MapsTheme, Maps, Legend, Marker, MapsTooltip, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
 
@@ -25,10 +25,10 @@ export class MapsDefaultComponent {
     public legendSettings: object = { visible: true };
 
     public layers: object[] = [{
-        shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
+        shapeData: new MapAjax('./src/maps/world-map.json'),
         shapePropertyPath: 'continent',
         shapeDataPath: 'continent', 
-        dataSource: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/default-datasource.json'), 
+        dataSource: new MapAjax('./src/maps/default-datasource.json'), 
         shapeSettings: { colorValuePath: 'color', }, 
         markerSettings: [{ 
             visible: true, 
@@ -93,7 +93,7 @@ export class MapsDefaultComponent {
         theme = theme ? theme : 'Material';
         args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() + theme.slice(1));
     }
-    constructor() {
-        //code
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['default-datasource.json', 'world-map.json'];
     };
 }

@@ -1,0 +1,87 @@
+<div class="control-section">
+    <div class="col-md-8 control-section">
+        <ejs-circulargauge (load)='load($event)' style='display:block;' id='semi-circle' #circulargauge =''>
+            <e-axes>
+                <e-axis minimum=0 radius='80%' maximum=100 startAngle=270 endAngle=90 [majorTicks]='majorTicks' [labelStyle]='labelStyle'
+                    [lineStyle]='lineStyle' [minorTicks]='minorTicks' >                    
+                    <e-pointers>
+                        <e-pointer value=30 radius='75%' color='#FF9200' [animation]= 'animation' pointerWidth=7 [needleTail]='tail' [cap]="pointerCap">
+                        </e-pointer>
+                    </e-pointers>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
+    </div>
+
+    <div class="col-md-4 property-section">
+            <div class="property-panel-section">
+                    <div class="property-panel-header">Properties</div>
+                            <div class="property-panel-content">
+        <table id="property" title="Properties" style="width: 100%">
+            <tr style="height: 50px">
+                <td>
+                    <div id='rangeStart'>Start Angle <span> &nbsp;&nbsp;&nbsp;270°</span> </div>
+                </td>
+                <td>
+                    <div>
+                        <input type="range" id="start" value="270" min="0" max="360" style="width:90%" />
+                    </div>
+                </td>
+            </tr>
+    
+            <tr style="height: 50px">
+                <td>
+                    <div id='rangeEnd'>End Angle<span> &nbsp;&nbsp;&nbsp;90°</span> </div>
+                </td>
+                <td>
+                    <div>
+                        <input type="range" id="end" value="90" min="0" max="360" style="width:90%" />
+                    </div>
+                </td>
+            </tr>
+            <tr style="height: 50px">
+                <td>
+                    <div id='radius1'>Radius <span> &nbsp;&nbsp;&nbsp;80%</span> </div>
+                </td>
+                <td>
+                    <div>
+                        <input type="range" id="radius" value="80" min="0" max="100" style="width:90%" />
+                    </div>
+                </td>
+            </tr>
+            <tr >
+                <td style="width: 40%">
+                    <div class="property-text"> Radius based on angle</div>
+                </td>
+                <td style="width: 40%;">
+                    <div>
+                        <input type="checkbox" id="angle" checked/>
+                    </div>
+                </td>
+        </tr>
+            <tr style="height: 50px">
+                <td>
+                    <div id='center1'>Center X <span> &nbsp;&nbsp;&nbsp;50%</span> </div>
+                </td>
+                <td>
+                    <div>
+                        <input type="range" id="centerX" value="50" min="0" max="100" style="width:90%" />
+                    </div>
+                </td>
+            </tr>
+            <tr style="height: 50px">
+                <td>
+                    <div id='center2'>Center Y <span> &nbsp;&nbsp;&nbsp;50%</span> </div>
+                </td>
+                <td>
+                    <div>
+                        <input type="range" id="centerY" value="50" min="0" max="100" style="width:90%" />
+                    </div>
+                </td>
+            </tr>
+    
+        </table>
+    </div>  
+</div>
+</div>
+</div>

@@ -1,6 +1,6 @@
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
 import { extend, Internationalization } from '@syncfusion/ej2-base';
-import { WeekService, EventSettingsModel, ResizeService, WorkHoursModel } from '@syncfusion/ej2-angular-schedule';
+import { WeekService, EventSettingsModel, ResizeService, WorkHoursModel, DragAndDropService } from '@syncfusion/ej2-angular-schedule';
 import { webinarData } from './datasource';
 
 
@@ -8,7 +8,7 @@ import { webinarData } from './datasource';
     selector: 'control-content',
     templateUrl: 'events-template.html',
     styleUrls: ['event-template.style.css'],
-    providers: [WeekService, ResizeService],
+    providers: [WeekService, ResizeService, DragAndDropService],
     encapsulation: ViewEncapsulation.None
 })
 export class EventsTemplateComponent {

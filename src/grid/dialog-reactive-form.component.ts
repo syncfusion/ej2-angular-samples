@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { orderDetails } from './data';
 import { Browser } from '@syncfusion/ej2-base';
+import { orderDetails } from './data';
 import { EditService, ToolbarService, PageService, DialogEditEventArgs, SaveEventArgs } from '@syncfusion/ej2-angular-grids';
 import { DataUtil } from '@syncfusion/ej2-data';
 import { FormGroup, AbstractControl, FormControl, Validators } from '@angular/forms';
@@ -23,6 +23,7 @@ export class DialogReactiveFormComponent implements OnInit {
     public pageSettings: Object;
     public shipCityDistinctData: Object[];
     public shipCountryDistinctData: Object[];
+    public submitClicked: boolean = false;
 
     public ngOnInit(): void {
         this.data = orderDetails;
@@ -47,16 +48,18 @@ export class DialogReactiveFormComponent implements OnInit {
 
     dateValidator() {
         return (control: FormControl): null | Object  => {
-            return control.value !== null && (1900 <= control.value.getFullYear() && control.value.getFullYear() <=  2099) ?
-            null : { OrderDate: { value : control.value}} ;
+            return control.value && control.value.getFullYear &&
+            (1900 <= control.value.getFullYear() && control.value.getFullYear() <=  2099) ? null : { OrderDate: { value : control.value}};
         }
     }
 
     actionBegin(args: SaveEventArgs): void {
         if (args.requestType === 'beginEdit' || args.requestType === 'add') {
+            this.submitClicked = false;
             this.orderForm = this.createFormGroup(args.rowData);
         }
         if (args.requestType === 'save') {
+            this.submitClicked = true;
             if (this.orderForm.valid) {
                 args.data = this.orderForm.value;
             } else {
@@ -83,6 +86,8 @@ export class DialogReactiveFormComponent implements OnInit {
     get OrderID(): AbstractControl  { return this.orderForm.get('OrderID'); }
 
     get CustomerName(): AbstractControl { return this.orderForm.get('CustomerName'); }
+
+    get OrderDate(): AbstractControl { return this.orderForm.get('OrderDate'); }
 
 }
 

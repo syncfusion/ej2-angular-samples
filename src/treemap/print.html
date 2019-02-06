@@ -43,14 +43,14 @@
                <tr id="button-control" style="height: 50px" align="center">
                    <td>
                         <div style="margin-left: 40%;">
-                           <button ejs-button id="togglebtn1" iconCss='e-icons e-play-icon' cssClass= 'e-flat' isPrimary=true (click)='onClick1($event)' style="width: 100px">Export</button>
+                           <button ejs-button id="togglebtn1"  cssClass= 'e-info' isPrimary=true (click)='onClick1($event)' style="width: 80px;" content="Export">Export</button>
                        </div>
                    </td>
                </tr>
                <tr id="button-control" style="height: 50px">
                     <td align="center">
                             <div style="margin-left: 40%;">
-                           <button ejs-button id="togglebtn2" iconCss='e-icons e-play-icon' cssClass= 'e-flat' isPrimary=true (click)='onClick2($event)' style="width: 100px">Print</button>
+                           <button ejs-button id="togglebtn2"  cssClass= 'e-info' isPrimary=true (click)='onClick2($event)' style="width: 80px;" content="Print">Print</button>
                        </div>
                    </td>
                </tr>
@@ -83,5 +83,6 @@
 #button-control {
     width: 100%;
     text-align: center;
+	text-transform:none !important;
 }
 </style>

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService } from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService } from '@syncfusion/ej2-angular-schedule';
 import { scheduleData } from './datasource';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
-    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService]
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
 })
 export class DefaultComponent {
     public selectedDate: Date = new Date(2018, 1, 15);

@@ -1,7 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { MapsTheme, Maps, Marker, Zoom, NavigationLine, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
-import { penisular_location, penisular_marker } from './map-data/map-location'; 
+import { penisular_location, penisular_marker } from './map-location'; 
 
 Maps.Inject(Marker, Zoom, NavigationLine);
 
@@ -32,7 +32,7 @@ export class MapsNavigationLineComponent {
 
     public layers: object[] = [
         {
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
+            shapeData: new MapAjax('./src/maps/world-map.json'),
             shapeSettings: {
                 fill: '#789071',
             },
@@ -114,7 +114,7 @@ export class MapsNavigationLineComponent {
             ]
         }
     ];
-    constructor() {
-        //code
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = [ 'world-map.json', 'map-location.ts'];
     };
 }

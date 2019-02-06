@@ -1,0 +1,57 @@
+    <div class="col-lg-9 control-section">
+        <ejs-treegrid #treegrid [dataSource]='data'  childMapping='subtasks' [treeColumnIndex]='1' allowPaging='true' [pageSettings]='pageSettings' allowReordering='true' (actionComplete)="actionComplete($event)">
+            <e-columns>
+                <e-column field='taskID' headerText='Task ID' width='80' textAlign='Right'></e-column>
+                <e-column field='taskName' headerText='Task Name' width='200'></e-column>
+                <e-column field='startDate' headerText='Start Date' width='105' format="yMd" textAlign='Right'></e-column>
+                <e-column field='duration' headerText='Duration' width='80' textAlign='Right'></e-column>
+                <e-column field='progress' headerText='Progress' width='80' textAlign='Right'></e-column>
+            </e-columns>
+        </ejs-treegrid>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+                    <div class="property-panel-header">Properties </div>
+            <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                <tr style="height: 50px">
+                    <td style="width: 30%">
+                        <div style="padding-top: 10px">Column</div>
+                    </td>
+                    <td style="width: 30%;padding-right: 10px">
+                        <div>
+                                <ejs-dropdownlist #dropdown1 id='ddlelement' width= '110px' [dataSource]='d1data' [fields]='ddlfields' value='taskID' (change)="onChange($event)" ></ejs-dropdownlist>
+                            </div>
+                    </td>
+                </tr>
+                <tr style="height: 50px">
+                    <td style="width: 30%">
+                        <div>Column Index</div>
+                    </td>
+                    <td style="width: 30%;padding: 10px 10px 10px 0px">
+                        <div>
+                                <ejs-dropdownlist #dropdown2 id='element' width= '110px' [dataSource]='d2data' [fields]='fields' value='0'  (change)="change($event)" ></ejs-dropdownlist>
+                            </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="action-description">
+        <p>This sample demonstrates reordering feature of the TreeGrid columns. Select column name and index from properties panel to reorder the columns. You can also 
+            reorder columns by simply drag and drop in the desired column position.</p>
+    </div>
+    <div id="description">
+        <p>Reordering can be enabled by setting <code>allowReordering</code> property as true. 
+           Reordering can be done by drag and drop the column header from one index to another index within the TreeGrid.</p>
+        <p>The location in which the column to be placed, will be indicated by two arrows symbols.</p>
+        <p>In this demo, you can either reorder columns by drag and drop or by selecting column name and column index from the dropdown to reorder the columns.
+        </p>
+        <p>Injecting Module:</p>
+
+       <p>TreeGrid component features are segregated into individual feature-wise modules. To use reordering feature, we need to inject <code>ReorderService</code> into the <code>@NgModule.providers</code> section.</p> 
+  
+       <p>
+        More information on the Column Reorder can be found in the documentation section.
+    </p>
+    </div>
+    

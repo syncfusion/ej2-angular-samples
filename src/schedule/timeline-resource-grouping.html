@@ -1,13 +1,13 @@
 <div class="control-section">
     <div class="col-lg-12 content-wrapper">
-        <ejs-schedule #scheduleObj width='100%' cssClass='timeline-resource-grouping' height='650px' [selectedDate]="selectedDate" [group]="group"
-            [eventSettings]="eventSettings">
+        <ejs-schedule #scheduleObj width='100%' cssClass='timeline-resource-grouping' height='650px' [selectedDate]="selectedDate"
+            [group]="group" [eventSettings]="eventSettings">
             <e-resources>
                 <e-resource field='ProjectId' title='Choose Project' [dataSource]='projectDataSource' [allowMultiple]='allowMultiple' name='Projects'
                     textField='text' idField='id' colorField='color'>
                 </e-resource>
                 <e-resource field='TaskId' title='Category' [dataSource]='categoryDataSource' [allowMultiple]='allowMultiple' name='Categories'
-                    textField='text' idField='id' colorField='color'>
+                    textField='text' idField='id' groupIDField='groupId' colorField='color'>
                 </e-resource>
             </e-resources>
             <e-views>

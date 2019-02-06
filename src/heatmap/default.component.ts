@@ -26,7 +26,7 @@ export class HeatmapDefaultComponent {
             'Laura', 'Anne', 'Paul', 'Karin', 'Mario'],
     };
     yAxis: Object = {
-        labels: ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'],
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     };
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

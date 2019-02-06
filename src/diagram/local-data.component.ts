@@ -4,7 +4,12 @@ import {
     DataBinding, HierarchicalTree, DiagramTools
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import { species, DataInfo } from './diagram-data';
+import { species } from './diagram-data';
+
+export interface DataInfo {
+    [key: string]: string;
+}
+
 Diagram.Inject(DataBinding, HierarchicalTree);
 
 /**
@@ -32,7 +37,7 @@ export class LocalDataDiagramComponent {
         doBinding: (nodeModel: NodeModel, data: DataInfo, diagram: Diagram) => {
             nodeModel.annotations = [{
                 /* tslint:disable:no-string-literal */
-                content: data['Name'], margin: { top: 10, left: 10, right: 10, bottom: 0 },
+                content: data['Name'],
                 style: { color: 'black' }
             }
             ];

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { MapsTheme, Maps, Marker, MapsTooltip, ILoadEventArgs, ExportType } from '@syncfusion/ej2-angular-maps';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { MapAjax } from '@syncfusion/ej2-maps';
@@ -35,7 +35,7 @@ export class MapsExportComponent {
 
     public layers: object[] =  [
         {
-                shapeData:  new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
+                shapeData:  new MapAjax('./src/maps/world-map.json'),
                 shapeSettings: { fill: 'lightgrey', border: { color: 'black', width: 0.1 } },
                 markerSettings: [
                     {
@@ -73,8 +73,8 @@ export class MapsExportComponent {
         });
         this.exportType.appendTo('#exporttype');
     }
-    constructor() {
-         //code
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = [ 'world-map.json'];
     };
 
 }

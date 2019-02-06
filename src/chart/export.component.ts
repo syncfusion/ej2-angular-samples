@@ -42,7 +42,7 @@ export class ExportChartComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
     public tooltip: Object = {
         enable: true
@@ -78,7 +78,7 @@ export class ExportChartComponent {
     public chart: ChartComponent;
     public onClick(e: Event): void {
         let fileName: string = (<HTMLInputElement>(document.getElementById('fileName'))).value;
-        this.chart.export(<ExportType>this.exportType.value, fileName);
+        this.chart.exportModule.export(<ExportType>this.exportType.value, fileName);
     }
     public exportType: DropDownList;
     ngOnInit(): void {

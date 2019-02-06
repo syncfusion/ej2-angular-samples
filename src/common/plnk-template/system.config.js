@@ -44,7 +44,8 @@ System.config({
         "@syncfusion/ej2-notifications": "syncfusion:ej2-notifications/dist/ej2-notifications.umd.min.js",
         "@syncfusion/ej2-heatmap": "syncfusion:ej2-heatmap/dist/ej2-heatmap.umd.min.js",
         "@syncfusion/ej2-pivotview": "syncfusion:ej2-pivotview/dist/ej2-pivotview.umd.min.js",
-        "@syncfusion/ej2-schedule": "syncfusion:ej2-schedule/dist/ej2-schedule.umd.min.js",				
+        "@syncfusion/ej2-schedule": "syncfusion:ej2-schedule/dist/ej2-schedule.umd.min.js",
+        "@syncfusion/ej2-layouts": "syncfusion:ej2-layouts/dist/ej2-layouts.umd.min.js",
 
         "@syncfusion/ej2-angular-base": "syncfusion:ej2-angular-base/dist/ej2-angular-base.umd.min.js",
         "@syncfusion/ej2-angular-buttons": "syncfusion:ej2-angular-buttons/dist/ej2-angular-buttons.umd.min.js",
@@ -55,7 +56,6 @@ System.config({
         "@syncfusion/ej2-angular-maps": "syncfusion:ej2-angular-maps/dist/ej2-angular-maps.umd.min.js",
         "@syncfusion/ej2-angular-treemap": "syncfusion:ej2-angular-treemap/dist/ej2-angular-treemap.umd.min.js",
         "@syncfusion/ej2-angular-circulargauge": "syncfusion:ej2-angular-circulargauge/dist/ej2-angular-circulargauge.umd.min.js",
-        "@syncfusion/ej2-angular-data": "syncfusion:ej2-angular-data/dist/ej2-angular-data.umd.min.js",
         "@syncfusion/ej2-angular-dropdowns": "syncfusion:ej2-angular-dropdowns/dist/ej2-angular-dropdowns.umd.min.js",
         "@syncfusion/ej2-angular-grids": "syncfusion:ej2-angular-grids/dist/ej2-angular-grids.umd.min.js",
         "@syncfusion/ej2-angular-inputs": "syncfusion:ej2-angular-inputs/dist/ej2-angular-inputs.umd.min.js",
@@ -69,6 +69,7 @@ System.config({
         "@syncfusion/ej2-angular-heatmap": "syncfusion:ej2-angular-heatmap/dist/ej2-angular-heatmap.umd.min.js",
         "@syncfusion/ej2-angular-pivotview": "syncfusion:ej2-angular-pivotview/dist/ej2-angular-pivotview.umd.min.js",
         "@syncfusion/ej2-angular-schedule": "syncfusion:ej2-angular-schedule/dist/ej2-angular-schedule.umd.min.js",
+        "@syncfusion/ej2-angular-layouts": "syncfusion:ej2-angular-layouts/dist/ej2-angular-layouts.umd.min.js",
 
         '@angular/core': 'angular:core@5.2.10/bundles/core.umd.js',
         '@angular/common': 'angular:common@5.2.10/bundles/common.umd.js',
@@ -79,7 +80,7 @@ System.config({
         '@angular/platform-browser': 'angular:platform-browser@5.2.10/bundles/platform-browser.umd.js',
         '@angular/platform-browser-dynamic': 'angular:platform-browser-dynamic@5.2.10/bundles/platform-browser-dynamic.umd.js',
         '@angular/material': 'angular:material@5.2.10/bundles/material.umd.js',
-        'rxjs': 'https://unpkg.com/rxjs@5.5.10/'
+        'rxjs': 'https://unpkg.com/rxjs@5.5.10'
     },
     meta: {
         '*.json': { loader: 'plugin-json' }

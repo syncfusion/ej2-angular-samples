@@ -1,0 +1,54 @@
+    <div class="col-lg-9 control-section">
+        <div class="content-wrapper">
+            <ejs-treegrid [dataSource]='data' allowPaging='true' childMapping='subtasks' [treeColumnIndex]='1' [pageSettings]='pageSettings'
+                [editSettings]='editSettings' (load)='load()' (created)='create()' (actionBegin)='actionBegin()'
+                (actionComplete)='actionComplete()' (actionBegin)='actionBegin()' (rowSelecting)='rowSelecting()'
+                (rowSelected)='rowSelected()' (columnDragStart)='columnDragStart()' (columnDrag)='columnDrag()'
+                (columnDrop)='columnDrop()' (beginEdit)='beginEdit()' (dataBound)='dataBound()'
+                allowReordering='true' allowSorting='true'>
+                <e-columns>
+                    <e-column field='taskID' headerText='Task ID' width='100' isPrimaryKey='true' textAlign='Right' editType='numericedit'
+                        [validationRules]='taskidrules'  [edit]='numericParams'></e-column>
+                    <e-column field='taskName' headerText='Task Name' width='210' editType='stringedit'
+                        [validationRules]='tasknamerules'></e-column>
+                    <e-column field='startDate' headerText='Start Date' width='120' format="yMd" editType='datepickeredit'
+                        textAlign='Right' [validationRules]='daterules'></e-column>
+                    <e-column field='duration' headerText='Duration' width='90' editType='numericedit' textAlign='Right'
+                        [validationRules]='numberrules'  [edit]='numericParams'></e-column>
+                </e-columns>
+            </ejs-treegrid>
+        </div>
+    </div>
+    <div class="col-lg-3 property-section">
+            <div class="property-panel-section">
+                    <div class="property-panel-header">Properties </div>
+        <table id="property" class="property-panel-table" title="Event Trace" style="margin-top:20px">
+            <p><b>Event Trace</b></p>
+            <tr>
+                <td>
+                    <div class="eventarea" style="height: 245px;overflow: auto">
+                        <span class="eventLog" id="EventLog" style="word-break: normal;"></span>
+                    </div>
+                </td>
+            </tr>
+        </table>      
+        <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+                <button ejs-button (click)='onClick()' cssClass='e-small'></button>
+        </div>           
+    </div>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates all the events that have been triggered on all the TreeGrid operations with the help of Event Trace
+        panel.
+    </p>
+</div>
+<div id="description">
+    <p>The TreeGrid triggers events based on its actions. The events can be used as an extension
+        point to perform custom operations.
+    </p>
+    <p>In this demo, perform TreeGrid actions like paging, sorting, reordering, filtering etc. and see
+        the <strong>Event Trace</strong> panel for the events emitted.
+    </p>
+    <p>More information on the TreeGrid events can be found in the documentation section.
+    </p>
+</div>

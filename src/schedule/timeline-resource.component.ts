@@ -1,7 +1,7 @@
 import { Component, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
 import { extend, isNullOrUndefined, Browser } from '@syncfusion/ej2-base';
 import {
-    ScheduleComponent, ActionEventArgs, PopupOpenEventArgs, EventRenderedArgs, RenderCellEventArgs,
+    ScheduleComponent, ActionEventArgs, PopupOpenEventArgs, EventRenderedArgs, RenderCellEventArgs, DragAndDropService,
     TimelineViewsService, GroupModel, EventSettingsModel, ResizeService, TimeScaleModel, WorkHoursModel, View
 } from '@syncfusion/ej2-angular-schedule';
 import { roomData } from './datasource';
@@ -12,7 +12,7 @@ import { roomData } from './datasource';
     templateUrl: 'timeline-resource.html',
     styleUrls: ['timeline-resource.style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [TimelineViewsService, ResizeService]
+    providers: [TimelineViewsService, ResizeService, DragAndDropService]
 })
 
 export class TimelineResourcesComponent {
@@ -89,19 +89,14 @@ export class TimelineResourcesComponent {
 
     onRenderCell(args: RenderCellEventArgs): void {
         if (args.element.classList.contains('e-work-cells')) {
-            if (args.date.getHours() === 13) {
-                args.element.classList.add('e-read-only-cells');
-                args.element.classList.add('e-lunch-break');
-                args.element.innerHTML = '<span>Lunch Break </span>';
-            }
             if (args.date < new Date(2018, 6, 31, 0, 0)) {
                 args.element.setAttribute('aria-readonly', 'true');
                 args.element.classList.add('e-read-only-cells');
             }
         }
-        if (!Browser.isDevice && args.elementType === 'emptyCells' && args.element.classList.contains('e-resource-left-td')) {
+        if (args.elementType === 'emptyCells' && args.element.classList.contains('e-resource-left-td')) {
             let target: HTMLElement = args.element.querySelector('.e-resource-text') as HTMLElement;
-            target.innerHTML = '<div class="name">Name</div><div class="type">Type</div><div class="capacity">Capacity</div>';
+            target.innerHTML = '<div class="name">Rooms</div><div class="type">Type</div><div class="capacity">Capacity</div>';
         }
     }
 

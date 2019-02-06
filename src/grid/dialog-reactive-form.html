@@ -16,7 +16,7 @@
                             <span class="e-float-line"></span>
                             <label class="e-float-text e-label-top" for="OrderID"> Order ID</label>
                         </div>
-                        <div id="OrderIDError" *ngIf='OrderID.invalid && (OrderID.dirty || OrderID.touched)'>
+                        <div id="OrderIDError" [style.visibility]='((OrderID.invalid && (OrderID.dirty || OrderID.touched)) || (OrderID.invalid && submitClicked))? "visible": "hidden"'>
                             <label class="e-error" for="OrderID" id="OrderID-info" style="display: block;">*Order ID is required</label>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                             <span class="e-float-line"></span>
                             <label class="e-float-text e-label-top" for="CustomerName">Customer Name</label>
                         </div>
-                        <div id="CustomerNameError" *ngIf='CustomerName.invalid && (CustomerName.dirty || CustomerName.touched)'>
+                        <div id="CustomerNameError" [style.visibility]='((CustomerName.invalid && (CustomerName.dirty || CustomerName.touched)) || (CustomerName.invalid && submitClicked))? "visible": "hidden"'>
                             <label class="e-error" for="CustomerName" id="CustomerName-info" style="display: block;">*Customer Name is required</label>
                         </div>
                     </div>
@@ -37,6 +37,9 @@
                     </div>
                     <div class="form-group col-md-6">
                         <ejs-datepicker id="OrderDate" formControlName="OrderDate" placeholder="Order Date" floatLabelType='Always'></ejs-datepicker>
+                        <div id="OrderDateError" [style.visibility]='((OrderDate.invalid && (OrderDate.dirty || OrderDate.touched)) || (OrderDate.invalid && submitClicked)) ? "visible": "hidden"'>
+                            <label class="e-error" for="OrderDate" id="OrderDate-info" style="display: block;">*Order Date is required</label>
+                        </div>
                     </div>
                 </div>
                 <div class="form-row">

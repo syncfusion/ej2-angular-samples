@@ -35,7 +35,7 @@ export class SemiPieComponent {
     public startangle(e: Event): void {
         let rangeMin: string = (<HTMLSelectElement>document.getElementById('range-min')).value;
         this.pie.series[0].startAngle = parseFloat(rangeMin);
-        document.getElementById('startangle').innerHTML = rangeMin;
+        document.getElementById('range-minText').innerHTML = rangeMin;
         this.pie.series[0].animation.enable =  false;
         this.pie.removeSvg();
         this.pie.refreshSeries();
@@ -44,7 +44,7 @@ export class SemiPieComponent {
     public endangle(e: Event): void {
         let rangeMax: string = (<HTMLSelectElement>document.getElementById('range-max')).value;
         this.pie.series[0].endAngle = parseFloat(rangeMax);
-        document.getElementById('endangle').innerHTML = rangeMax;
+        document.getElementById('range-maxText').innerHTML = rangeMax;
         this.pie.series[0].animation.enable =  false;
         this.pie.removeSvg();
         this.pie.refreshSeries();
@@ -53,7 +53,7 @@ export class SemiPieComponent {
     public onChange(e: Event): void {
         let innerRadius: string = (<HTMLSelectElement>document.getElementById('inner-radius')).value;
         this.pie.series[0].innerRadius = innerRadius + '%';
-        document.getElementById('innerradius').innerHTML = (parseInt(innerRadius, 10) / 100).toFixed(2);
+        document.getElementById('inner-radiusText').innerHTML = (parseInt(innerRadius, 10) / 100).toFixed(2);
         this.pie.series[0].animation.enable =  false;
         this.pie.removeSvg();
         this.pie.refreshSeries();
@@ -62,9 +62,10 @@ export class SemiPieComponent {
     public load(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     }
     public explode: boolean = true;
+    public enableAnimation: boolean = false;
     public startAngle: number = 270;
     public endAngle: number = 90;
     public tooltip: Object = { enable: true, format: '${point.x} : <b>${point.y}%</b>' };

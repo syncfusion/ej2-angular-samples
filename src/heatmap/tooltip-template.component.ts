@@ -38,6 +38,17 @@ export class HeatmapTooltipComponent {
     public legendSettings: Object = {
         visible: false,
     };
+    public tooltipSettings: Object = {
+        fill: '#265259',
+        textStyle: {
+            color: '#FFFFFF',
+            size: '12px'
+        },
+        border: {
+            width: 1,
+            color: '#98BABF'
+        }
+    };
     public paletteSettings: Object = {
         palette: [{ value: 0, color: '#C2E7EC' },
         { value: 0.6, color: '#AEDFE6' },

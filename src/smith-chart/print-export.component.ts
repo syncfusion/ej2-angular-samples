@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SmithchartTheme, ISmithchartLoadEventArgs, Smithchart, ExportType} from '@syncfusion/ej2-angular-charts';
+import { SmithchartTheme, ISmithchartLoadEventArgs, Smithchart, SmithchartExportType} from '@syncfusion/ej2-angular-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 /**
@@ -59,7 +59,7 @@ export class SmithchartPrintExportComponent {
 
     public onClick1(e: Event): void {
         let fileName: string = (<HTMLInputElement>(document.getElementById('fileName'))).value;
-        this.smithchart.export(<ExportType>this.exportType.value, fileName);
+        this.smithchart.export(<SmithchartExportType>this.exportType.value, fileName);
     }
     public onClick2(e: Event): void {
         this.smithchart.print();

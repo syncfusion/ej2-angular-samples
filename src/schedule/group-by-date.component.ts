@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { resourceData } from './datasource';
 import { extend } from '@syncfusion/ej2-base';
-import { EventSettingsModel, GroupModel, DayService, MonthService, WeekService, AgendaService, ResizeService } from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, GroupModel, DayService, MonthService, WeekService, AgendaService, ResizeService, DragAndDropService } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'group-by-date.html',
-    providers: [ DayService, MonthService, WeekService, AgendaService, ResizeService]
+    providers: [ DayService, MonthService, WeekService, AgendaService, ResizeService, DragAndDropService]
 })
 export class GroupByDateComponent {
     public data: Object[] = <Object[]>extend([], resourceData, null, true);

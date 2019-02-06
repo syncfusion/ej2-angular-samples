@@ -1,0 +1,81 @@
+<div class="control-section">
+    <ejs-treegrid [dataSource]='data'  childMapping='subtasks' [treeColumnIndex]='1'allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' [toolbar]='toolbar' (actionBegin)="actionBegin($event)" (actionComplete)="actionComplete($event)">
+        <e-columns>
+            <e-column field='taskID' headerText='Task ID' width='120' textAlign='Right' isPrimaryKey='true' ></e-column>
+            <e-column field='taskName' headerText='Task Name' width='225' ></e-column>
+            <e-column field='startDate' headerText='Start Date' width='150' format="yMd" ></e-column>
+            <e-column field='duration' headerText='Duration' width='90' textAlign='Right' ></e-column>
+            <e-column field='progress' headerText='Progress' width='90' textAlign='Right' ></e-column>
+        </e-columns>
+        <ng-template #editSettingsTemplate let-data>
+            <div ngForm #taskForm="ngForm">
+                <table class="e-table e-inline-edit" cellspacing="0.25">
+                    <colgroup>
+                            <col style="width: 120px;">
+                            <col style="width: 225px;">
+                            <col style="width: 150px;">
+                            <col style="width: 90px;">
+                            <col style="width: 90px;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td style="text-align: right" class='e-rowcell'>
+                                <div class="e-input-group" [ngClass]= "{'e-disabled': !data.isAdd}">
+                                    <input class="e-input e-field" [(ngModel)]="taskdata.taskID" required [attr.disabled]="!data.isAdd ? '' : null" name='taskID' type="text" (focus)="focusIn($event.target)"
+                                        (blur)="focusOut($event.target)" style="text-align: right"  />
+                                </div>
+                            </td>
+                            <td class='e-rowcell'>
+                                <div class="e-input-group">
+                                    <input class="e-input e-field" name='taskName' [(ngModel)]="taskdata.taskName" required type="text" (focus)="focusIn($event.target)"
+                                        (blur)="focusOut($event.target)" />
+                                </div>
+                            </td>
+                            <td style="text-align: right" class='e-rowcell'>
+                                <ejs-datepicker id="startDate" name="startDate" [(ngModel)]="taskdata.startDate" floatLabelType='Never'></ejs-datepicker>                            
+                            </td>
+                            <td style="text-align: right" class='e-rowcell'>
+                                <ejs-numerictextbox name="duration" id="duration" [(ngModel)]="taskdata.duration" format='##' floatLabelType='Never'></ejs-numerictextbox>
+                            </td>    
+                            <td class='e-rowcell'>
+                                <ejs-dropdownlist id="progress" name="progress" [(ngModel)]="taskdata.progress" [dataSource]='progressDistinctData' [fields]="{text: 'progress', value: 'progress' }" popupHeight='300px' floatLabelType='Never'></ejs-dropdownlist>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </ng-template>
+    </ejs-treegrid>
+</div>
+<div id="action-description">
+    <p>
+        This samples demonstrates the TreeGrid Cell Edit template feature. Using Cell Edit Template feature we have rendered the AutoComplete component for “<b>Task Name</b>” column.
+    </p>
+    <ul>
+        <li>Add - To add new record, click Add toolbar button</li>
+        <li>Edit - To edit record, double click a row or click toolbar Edit button after selected a row</li>
+        <li>Delete - To delete record, click toolbar Delete button after selected a row</li>
+        <li>Update,Cancel - You can save or discard changes by click toolbar Update and Cancel button respectively </li>
+    </ul>
+</div>
+<div id="description">
+
+    <p>
+        This sample demonstrates CRUD operations in Grid with using the Template driven Angular Forms. You can perform 
+        CRUD operations as follows
+    </p>
+    <p>
+    In this demo, Angular <code>Template-driven</code> Forms is enabled for editing using Inline template. We have created the form 
+    controls for editing the row data using NgTemplate content with <code>editSettingsTemplate</code> as template variable. The inline template 
+    editing can be enabled by defining <code>editSettings.mode</code> as <code>Normal</code> and <code>editSettingsTemplate</code> as ng-template. You can start editing by 
+    double clicking a row or clicking on toolbar's <code>Edit</code> button, then the currently selected row will be changed to edited state by using
+     given template. you can change the row values and save edited data to the datasource.
+    </p>
+      <p>Injecting Module:</p>
+
+      <p>TreeGrid component features are segregated into individual feature-wise modules. To use editing feature, we need to inject <code>EditService</code> into the <code>@NgModule.providers</code> section.</p> 
+    <p>
+    More information about  Edit template can be found in this documentation section.
+    </p>
+</div>
+   

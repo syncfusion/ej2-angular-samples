@@ -1,0 +1,30 @@
+<div id="action-description">
+    <p>This sample demonstrates the Grid component with the row drag and drop feature within same grid. You can rearrange the grid rows by using drag icon in left side of grid column.Here you can drag and drop the grid rows between the decided rows.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-grid [dataSource]='data' height='350' [allowRowDragAndDrop]='true' [selectionSettings]='selectOptions' height='400'>
+        <e-columns>
+            <e-column field='OrderID' isPrimaryKey='true' headerText='Order ID' width='80' textAlign='Right'></e-column>
+            <e-column field='CustomerName' headerText='Customer Name' width='120'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='100' format="yMd" textAlign='Right'></e-column>
+            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right'></e-column>
+            <e-column field='ShipCity' headerText='Ship City' width='130'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='130'></e-column>
+        </e-columns>
+    </ejs-grid>
+    <div id="description">
+        <p>Row drag and drop enabled by settting  
+            <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-grid.html#allowrowdraganddrop-boolean">
+        allowRowDragAndDrop
+        </a></code> property as true. 
+                
+        <p style="font-weight: 500">Injecting Module:</p>
+        <p>
+            Grid features are segregated into individual feature-wise modules. 
+            To use row, drag and drop feature we need to inject
+            <code>RowDD</code> module using the <code>Grid.Inject(RowDD)</code> section.            
+        </p>     
+    </div>
+</div>

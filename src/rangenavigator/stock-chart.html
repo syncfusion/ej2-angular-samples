@@ -1,0 +1,71 @@
+<div id="action-description">
+    <p>
+        This sample illustrates a stock chart with MACD indicator.
+        Period Selector shows the information about the stock chart range values with out range navigator.
+    </p>
+</div>
+<div class="control-section">
+       <div style="width: 90%">
+       <div id="stockRange" style="font-family: Segoe UI;font-weight: 500; font-style:normal; font-size:14px;transform: translateX(12%)">
+        <div id="title">AAPL 2012-2015</div>
+        <div id="close" style=" font-size:10px">
+            <div id="value" style="float: left;">159.67</div>
+            <div id="inc" style="float: left; color: green;">&nbsp;&nbsp;&nbsp;+11.49 (+1.06%)</div>
+        </div>
+    </div>
+       </div>
+    <br/>
+    <div align="center">
+        <ejs-rangenavigator #containerStock style='display:block' align='center' id='containerStock' labelPosition='Outside'
+        valueType= 'DateTime' [width]='width' (changed)='changed($event)' [theme]='theme' disableRangeSelector=true
+        [dataSource]='data' xName='x' yName='close' [periodSelectorSettings]='periodSelectorSettings' 
+       animationDuration=500 (loaded)='rangeloaded($event)' (load)='load($event)'>
+        </ejs-rangenavigator>
+    </div>
+    <div align="center">
+        <ejs-chart #chartStock id='chartStock' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [primaryXAxis]='primaryXAxis' 
+            [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [crosshair] = 'crosshair' (tooltipRender)='tooltipRender($event)' (pointRender)='pointRender($event)' (chartMouseMove)='chartMouseMove'
+            (chartMouseLeave)='chartMouseLeave()' [axes] = 'axes' [rows]='rows' [legendSettings]='legendSettings' [theme]='theme' [margin]='chartMargin'
+            [zoomSettings]='zoomSettings' [height] = 'height' (axisLabelRender)='axisLabelRender($event)' (loaded)='loaded($event)'>
+            <e-annotations>
+                <e-annotation content='<div id="annotation"></div>' coordinateUnits='Pixel' region='Chart' x='15%' y= '20%'>
+                </e-annotation>
+            </e-annotations>
+            <e-series-collection>
+                 <e-series [dataSource]='data' type='Candle' xName='x'  high='high' low='low'
+                 open='open' close='close' volume='volume' name='Apple Inc' bearFillColor= '#2ecd71' bullFillColor= '#e74c3d'> </e-series>
+                <e-series [dataSource]='data' type='Column' xName='x' yName='volume' name='Volume' yAxisName='secondary'> </e-series>
+            </e-series-collection>
+                <e-indicators>
+                    <e-indicator type='Tma' xName='x' fill='#6063ff' [period]='period' seriesName="Apple Inc"
+                    [fastPeriod]='fastPeriod' [slowPeriod]='slowPeriod' [macdType]='macdType' macdPositiveColor="#2ecd71"
+                     macdNegativeColor= "#e74c3d">
+                </e-indicator>
+                </e-indicators>
+            </ejs-chart>                                                                              
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the Period Selector.
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+     </p>     
+      <br>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Range Navigator component features are segregated into individual feature-wise modules. To use period selector, we need to inject
+            <code>PeriodSelectorService</code> module into the
+            <code>@NgModule.providers</code> section.
+        </p>
+</div>
+<style>
+    #control-containerStock {
+        padding: 0px !important;
+    }
+    #chartStock_tooltip {
+            opacity: 0;
+    }
+    #chartStock_HorizontalLine, #chartStock_VerticalLine {
+            stroke-dasharray: 2
+        }
+</style>

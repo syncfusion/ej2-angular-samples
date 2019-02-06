@@ -1,7 +1,7 @@
 <div class="contextmenu-section">
     <div id="contextmenu-control">
         <div id="contextmenutarget">{{content}}</div>
-        <ejs-contextmenu target='#contextmenutarget' [items]='menuItems' [animationSettings]='animationSettings' (beforeItemRender)='addDisabled($event)'></ejs-contextmenu>
+        <ejs-contextmenu #contextmenu target='#contextmenutarget' [items]='menuItems' (beforeItemRender)='addDisabled($event)' (created)='onCreated()'></ejs-contextmenu>
     </div>
 </div>
 <div id="action-description">
@@ -13,10 +13,13 @@
     </p>
     <p>
         In this demo, <code><a target="_blank" class="code"
-        href="http://ej2.syncfusion.com/angular/documentation/context-menu/api-contextMenuComponent.html#target-string">target
+        href="https://ej2.syncfusion.com/angular/documentation/api/context-menu/#target">target
         </a></code> property is set as '#contextmenutarget'. Hence, on right clicking the target element, the ContextMenu will open.
     </p>
     <p>
-        More information about ContextMenu can be found in this <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/context-menu/getting-started.html"> documentation section</a>.
+        In mobile mode, the submenu opens in a single layer with an option to switch back to the parent menu.
+    </p>
+    <p>
+        More information about ContextMenu can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/context-menu/getting-started"> documentation section</a>.
     </p>
 </div>

@@ -1,0 +1,41 @@
+<div id="action-description">
+    <p>This sample demonstrates the reactive form support of the datetimePicker. The datetime time values choosen
+        in the datetimePicker
+        component will get updatetimed to the form model.
+    </p>
+</div>
+
+<div class="control-section">
+    <div class="content-wrapper">
+        <div id='content' class='box-form' style="margin: 0 auto; width:500px; padding:25px">
+            <form [formGroup]="skillForm" novalidatetime id="formId">
+                <div class="form-group">
+                    <ejs-datetimepicker formControlName="datetime" name="datetime" placeholder='Select a date and Time'
+                        floatLabelType='Always'>
+                    </ejs-datetimepicker>
+                </div>
+                <div *ngIf="skillForm.controls['datetime'].hasError('required') && skillForm.controls['datetime'].touched"
+                    class="alert alert-danger">DateTime value is requried</div>
+                <div *ngIf="skillForm.controls['datetime'].value" class="alert alert-success">
+                    <table>
+                        <tr>
+                            <td style="width:50%">Selected value: </td>
+                            <td class="formtext ">{{ skillForm.controls.datetime.value | date:"dd-MM-yyyy hh:mm a" }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p> The datetimePicker value and validation status will be tracked through
+        <code>formControlName</code> attribute. The value will be included in the FormControl's group collection of
+        <code>formGroup</code> attribute.
+    </p>
+    <p>
+        For more information about Reactive Forms can be found in this
+        <a href="https://angular.io/guide/reactive-forms/"  target="_blank"> reference link</a>.
+    </p>
+</div>

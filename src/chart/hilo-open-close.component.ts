@@ -58,46 +58,12 @@ export class HiloOpenCloseChartComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
-    };
-    public loadPeriodic(args: IRangeLoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.rangeNavigator.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
-    };
-    public loaded(args: IRangeLoadedEventArgs): void {
-        if (!Browser.isDevice) {
-            document.getElementById('containerTop_Secondary_Element').style.transform = 'translate(13%)';
-        }
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
     public chartArea: Object = {
         border: {
             width: 0
         }
-    };
-     public periodSelectorSettings: Object = {
-        position: 'Top',
-        periods: [
-                { text: '1M', interval: 1, intervalType: 'Months' },
-                { text: '3M', interval: 2, intervalType: 'Months' },
-                { text: '2Q', interval: 2, intervalType: 'Quarter' },
-                { text: '1Y', interval: 1, intervalType: 'Years' },
-                { text: '2Y', interval: 2, intervalType: 'Years', selected: true },
-                { text: 'YTD' },
-                { text: 'All' }
-            ]
-    };
-    public changed(args: IChangedEventArgs): void {
-          let data: Object[] = chartDataValue.filter((data: object) => {
-                    /* tslint:disable:no-string-literal */
-                    return (data['x'].getTime() >= (args.start as Date).getTime() &&
-                        data['x'].getTime() <= (args.end as Date).getTime());
-                });
-          this.chart.series[0].animation.enable = false;
-          this.chart.series[0].dataSource = data;
-          this.chart.primaryXAxis.zoomFactor = 1;
-          this.chart.primaryXAxis.zoomPosition = 0;
-          this.chart.refresh();
     };
     public width: string = Browser.isDevice ? '100%' : '80%';
 

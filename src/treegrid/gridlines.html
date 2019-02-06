@@ -1,0 +1,52 @@
+<div class="col-lg-9 control-section">
+    <ejs-treegrid #treegrid [dataSource]='data' [gridLines]='lines' allowPaging='true' [pageSettings]='pageSettings' childMapping='subtasks' [treeColumnIndex]='1'>
+        <e-columns>
+            <e-column field='taskID' headerText='Task ID' width='80' textAlign='Right'></e-column>
+            <e-column field='taskName' headerText='Task Name' width='200'></e-column>
+            <e-column field='startDate' headerText='Start Date' width='100' format="yMd" textAlign='Right'></e-column>
+            <e-column field='duration' headerText='Duration' width='90' textAlign='Right'></e-column>
+            <e-column field='progress' headerText='Progress' width='90' textAlign='Right'></e-column>
+        </e-columns>
+    </ejs-treegrid>
+</div>
+<div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+                <div class="property-panel-header">Properties </div>
+        <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+            <tr>
+                <td  style="width: 50%">
+                    <div class="" style="padding-top: 8px">
+                        Grid Lines
+                    </div>
+                </td>
+                <td style="width: 50%;padding-right: 10px">
+                    <div id='linesddl'>
+                        <ejs-dropdownlist #dropdown1 id='ddlelement' width= '100px' [dataSource]='d1data' [fields]='ddlfields' value='Vertical' (change)="change($event)"></ejs-dropdownlist>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="action-description">
+        <p>This sample demonstrates visibility of the treegrid lines that separates the rows and columns.
+            In this sample, you can change the gridline from the properties panel.</p>
+    </div>
+    
+    <div id="description">
+        <p>
+            The <code>gridLines</code> property is used to control the line visibility that separates the rows and columns. 
+            TreeGrid allows us to display the following grid lines,
+        </p>
+        <ul>
+            <li><code>Default</code> - Shows the Horizontal line.</li>
+            <li><code>None</code> - Shows no line.</li>
+            <li><code>Both</code> - Shows both Horizontal and Vertical lines.</li>
+            <li><code>Horizontal</code> - Shows the Horizontal line.</li>
+            <li><code>Vertical</code> - Shows the Vertical line.</li>
+        </ul>
+        <p> In this demo, you can modify the visibility of gridlines by selecting values in the dropdown.
+        </p>
+        <p>
+            More information on the gridLines configuration can be found in this documentation section.
+        </p>
+    </div>

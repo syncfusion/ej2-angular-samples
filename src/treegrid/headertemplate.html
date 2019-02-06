@@ -1,0 +1,66 @@
+<div class="control-section">
+            <div class="content-wrapper">
+        <ejs-treegrid #treegrid [dataSource]='data' allowPaging='true' childMapping='subtasks' [treeColumnIndex]='0'>
+            <e-columns>
+                <e-column field='taskName' headerTemplate='#projectName' width='220'></e-column>
+                <e-column field='startDate' headerTemplate='#dateTemplate' format="yMd" textAlign='Right'></e-column>
+                <e-column field='resourceId' headerTemplate='#resource' textAlign='Right'></e-column>
+                <e-column field='duration' headerTemplate='#durationTemplate' textAlign='Right'></e-column>
+                <e-column field='progress' headerTemplate='#progressTemplate'  textAlign='Right'></e-column>
+            </e-columns>
+        </ejs-treegrid>
+    </div>
+</div>
+<script type="text/x-template" id="resource">
+        <div>
+            <div>
+                <img src="src/app/treegrid/images/icon-03.png" width="20" height="20" class="e-image" />Resources
+    
+            </div>
+        </div>
+    </script>
+    <script type="text/x-template" id="projectName">
+        <div>
+            <div>
+                <img src="src/app/treegrid/images/icon-01.png" width="20" height="20" class="e-image" />  Task Name
+            </div>
+        </div>
+    </script>
+    <script type="text/x-template" id="dateTemplate">
+        <div>
+            <div>
+                <img src="src/app/treegrid/images/icon-04.png" width="20" height="20" class="e-image" />  Start Date
+            </div>
+        </div>
+    </script>
+    <script type="text/x-template" id="durationTemplate">
+        <div>
+            <div>
+                <img src="src/app/treegrid/images/icon-02.png" width="20" height="20" class="e-image" />  Duration
+            </div>
+        </div>
+    </script>
+    <script type="text/x-template" id="progressTemplate">
+        <div>
+            <div>
+                <img src="src/app/treegrid/images/icon-05.png" width="20" height="20" class="e-image" />  Progress
+            </div>
+        </div>
+    </script>
+    <div id="action-description">
+        <p>This sample demonstrates the TreeGrid header template feature. In this sample, we have shown custom icons in the column headers
+        </p>
+    </div>
+        <div id="description">
+            <p>
+                The TreeGrid provides a way to define a custom element in header element. 
+                columns->headertemplate property accepts either string or HTML element`s ID value, which will be used as the template for the header cell.  
+            </p>
+            <p>
+                In this demo, we have render customized template for all column headers.
+            </p> 
+            <p>
+                More information about Header template can be found in this documentation section.
+            </p> 
+        </div>
+    

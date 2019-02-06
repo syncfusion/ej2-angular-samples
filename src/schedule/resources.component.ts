@@ -3,7 +3,7 @@ import { extend, Internationalization, createElement, closest, remove, addClass,
 import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import {
     ScheduleComponent, Schedule, ActionEventArgs, PopupOpenEventArgs,
-    ToolbarActionArgs, EventFieldsMapping, MonthService, EventSettingsModel, ResizeService
+    ToolbarActionArgs, EventFieldsMapping, MonthService, EventSettingsModel
 } from '@syncfusion/ej2-angular-schedule';
 
 (window as TemplateFunction).getAirwaysName = (value: number) => {
@@ -27,7 +27,7 @@ interface TemplateFunction extends Window {
     templateUrl: 'resources.html',
     styleUrls: ['resources.style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [MonthService, ResizeService]
+    providers: [MonthService]
 })
 
 export class ResourcesComponent {

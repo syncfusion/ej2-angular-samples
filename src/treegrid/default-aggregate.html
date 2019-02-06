@@ -1,0 +1,66 @@
+<div class="col-lg-9 control-section">
+        <div class="content-wrapper">
+        <ejs-treegrid #treegrid [dataSource]='data' height='400' childMapping='children' [treeColumnIndex]='0'  (actionFailure)="actionFailure($event)">
+                <e-columns>
+                    <e-column field='FreightID' headerText='Freight ID' width='150' textAlign='Right'></e-column>
+                    <e-column field='FreightName' headerText='Freight Name' width='200'></e-column>
+                    <e-column field='UnitWeight' headerText='Unit Weight' width='140'  textAlign='Right'></e-column>
+                    <e-column field='TotalUnits' headerText='Total Units'type='number'  width='140'  textAlign='Right'></e-column>
+                    </e-columns>
+                    <e-aggregates>
+                        <e-aggregate>
+                            <e-columns>
+                                <e-column type="Min" field="TotalUnits" columnName='TotalUnits' >
+                                    <ng-template #footerTemplate  let-data>Min:{{data.Min}} </ng-template>
+                                </e-column>
+                                <e-column type="Max" field="UnitWeight" format="C0" columnName='UnitWeight' >
+                                    <ng-template #footerTemplate let-data>Max:{{data.Max}} </ng-template>
+                                </e-column>
+                            </e-columns>
+                        </e-aggregate>
+                    </e-aggregates>
+        </ejs-treegrid>
+  </div>
+</div>
+<div class="col-lg-2 property-section">
+        <div class="property-panel-section">
+                <div class="property-panel-header">Properties </div>
+        <table id="property" class="property-panel-table" title="Properties" style="width: 200px">
+          <tr>
+              <td style="width: 70%;"> 
+                  Show Child Summary
+              </td>
+        
+              <td style="width: 30px;">
+                    <ejs-checkbox   [checked]="true"  (change)="onChange($event)"></ejs-checkbox>
+                </td>
+          </tr>    
+        </table>  
+        </div> 
+</div>
+<div id="action-description">
+    <p>This sample demonstrates aggregate functionality of the TreeGrid. In this sample, the aggregate value for the columns “Total Units” 
+        and “Unit Weight” is displayed in column footer and provide an option to show child summary.</p>
+</div>
+<div id="description">
+        <p>The TreeGrid supports aggregates which will be displayed at the footer and every hierarchy level.
+        The aggregate configurations can be provided by the <code>
+            aggregates</code> property.</p>
+        <p>The built-in aggregates are,</p>
+         <ul>
+            <li><code>Sum</code></li>     
+            <li><code>Average</code></li>     
+            <li><code>Min</code></li>     
+            <li><code>Max</code></li>     
+            <li><code>Count</code></li>     
+            <li><code>TrueCount</code></li>     
+            <li><code>FalseCount</code></li>     
+            <li><code>Custom</code> - Requires the <code>customAggregate</code> property to perform aggregation.</li>     
+        </ul>   
+        <p>Injecting Module:</p>
+
+        <p>TreeGrid component features are segregated into individual feature-wise modules. To use aggregate feature, we need to inject <code>AggregateService</code> into the <code>@NgModule.providers</code> section.</p>  
+        <p>
+            More information about aggregate can be found in this documentation section.
+        </p>
+    </div>

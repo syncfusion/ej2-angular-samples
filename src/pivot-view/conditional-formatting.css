@@ -1,0 +1,8 @@
+.e-pivotview {
+    width: 100%;
+    height:100%;
+}
+#conditional-formatting-btn, #conditional-formatting-reset-btn {
+    width: 80%;
+    margin-left: 20px;
+}

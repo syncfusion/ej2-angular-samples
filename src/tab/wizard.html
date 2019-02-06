@@ -13,7 +13,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6 search-item">
-                        <ejs-datepicker #date width='100%' placeholder='Journey Date' floatLabelType='Auto' [min]='dateMin' [max]='dateMax' (focus)='showDate()'></ejs-datepicker>
+                        <ejs-datepicker #date width='100%' placeholder='Journey Date' floatLabelType='Auto' [min]='dateMin' [max]='dateMax' [value]='date'></ejs-datepicker>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6 search-item">
                         <ejs-dropdownlist #quota [dataSource]='quotas' placeholder='Ticket type' floatLabelType='Auto' [fields]='fields'></ejs-dropdownlist>
@@ -144,7 +144,7 @@
         </ejs-tab>
         <div>
             <ejs-dialog #alertDialog header='Success' width=250 isModal=true showCloseIcon=true content='Your payment successfully processed' [target]='dlgTarget'
-                [buttons]='dlgButtons' (created)='dlgCreated()' visible=false></ejs-dialog>
+                [buttons]='dlgButtons' (created)='dlgCreated()' [visible]=false></ejs-dialog>
         </div>
     </div>
 </div>
@@ -157,14 +157,14 @@
 <div id="description">
     <p>
         Tab items can be disabled dynamically by passing the index and boolean value to the
-        <a target="_blank" href="http://ej2.syncfusion.com/documentation/tab/api-tab.html?lang=typescript#enabletab">enableTab</a> method.
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/tab/#enabletab">enableTab</a> method.
     </p>
     <p>
         You can design wizard like sample with Tab using the in-built API and customizing the content with proper validations.
     </p>
     <p>
         More information about Tab can be found in this
-        <a target="_blank" href="http://ej2.syncfusion.com/documentation/tab/getting-started.html">
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/tab/getting-started/">
             documentation</a> section.
     </p>
 </div>

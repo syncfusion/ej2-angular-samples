@@ -1,14 +1,17 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { resourceTeamData } from './datasource';
 import { extend } from '@syncfusion/ej2-base';
-import { EventSettingsModel, View, GroupModel, MonthService, DayService, WeekService, WorkWeekService, AgendaService, ResizeService, WorkHoursModel }
+import {
+    EventSettingsModel, View, GroupModel, MonthService, DayService, WeekService,
+    WorkWeekService, AgendaService, ResizeService, WorkHoursModel, DragAndDropService
+}
     from '@syncfusion/ej2-angular-schedule';
 @Component({
     selector: 'control-content',
     templateUrl: 'group-by-child.html',
     styleUrls: ['group-by-child.style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [MonthService, DayService, WeekService, WorkWeekService, AgendaService, ResizeService]
+    providers: [MonthService, DayService, WeekService, WorkWeekService, AgendaService, ResizeService, DragAndDropService]
 })
 export class GroupByChildComponent {
     public data: Object[] = <Object[]>extend([], resourceTeamData, null, true);
@@ -34,6 +37,6 @@ export class GroupByChildComponent {
     };
 
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['group-bychild.style.css'];
+        sourceFiles.files = ['group-by-child.style.css'];
     }
 }

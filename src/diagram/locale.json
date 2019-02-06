@@ -1,0 +1,92 @@
+{
+    "de": {
+        "diagram": {
+            "Cut": "Schneiden",
+            "Copy": "Kopieren",
+            "Paste": "Paste",
+            "Undo": "Rückgängig machen",
+            "Redo": "Redo",
+            "SelectAll": "Alle Auswählen",
+            "Grouping": "Gruppierung",
+            "Group": "Gruppe",
+            "UnGroup": "Gruppierung aufheben",
+            "Order": "Auftrag",
+            "BringToFront": "In den Vordergrund bewegen",
+            "MoveForward": "nach vorne bewegen",
+            "SendBackward": "nach hinten bewegen",
+            "SendToBack": "In den Hintergrund bewegen"
+        }
+    },
+    "ar": {
+        "diagram": {
+            "Cut": "قطع",
+            "Copy": "نسخ",
+            "Paste": "معجون",
+            "Undo": "فك",
+            "Redo": "فعل ثانية",
+            "SelectAll": "اختر الكل",
+            "Grouping": "تجمع",
+            "Group": "مجموعة",
+            "UnGroup": "فك التجميع",
+            "Order": "طلب",
+            "BringToFront": "اجلب للمقدمة",
+            "MoveForward": "التحرك إلى الأمام",
+            "SendBackward": "إرسال إلى الخلف",
+            "SendToBack": "إرسال إلى الخلف"
+        }
+    },
+    "en": {
+        "diagram": {
+            "Copy": "Copy",
+            "Cut": "Cut",
+            "Paste": "Paste",
+            "Undo": "Undo",
+            "Redo": "Redo",
+            "SelectAll": "Select All",
+            "Grouping": "Grouping",
+            "Group": "Group",
+            "UnGroup": "Un Group",
+            "Order": "Order",
+            "BringToFront": "Bring To Front",
+            "MoveForward": "Move Forward",
+            "SendToBack": "Send To Back",
+            "SendBackward": "Send Backward"
+        }
+    },
+    "zh": {
+        "diagram": {
+            "Cut": "切",
+            "Copy": "复制",
+            "Paste": "糊",
+            "Undo": "解开",
+            "Redo": "重做",
+            "SelectAll": "全选",
+            "Grouping": "分组",
+            "Group": "组",
+            "UnGroup": "取消组合",
+            "Order": "订购",
+            "BringToFront": "帶到前面",
+            "MoveForward": "向前移动",
+            "SendBackward": "后移",
+            "SendToBack": "发送回"
+        }
+    },
+    "fr-CH": {
+        "diagram": {
+            "Cut": "Coupe",
+            "Copy": "Copie",
+            "Paste": "Pâte",
+            "Undo": "annuler",
+            "Redo": "Refaire",
+            "SelectAll": "Sélectionner tout",
+            "Grouping": "Regroupement",
+            "Group": "Groupe",
+            "UnGroup": "Dissocier",
+            "Order": "Commande",
+            "BringToFront": "Mettre au premier plan",
+            "MoveForward": "Avance",
+            "SendBackward": "Envoyer vers l'arrière",
+            "SendToBack": "Envoyer au fond"
+        }
+    }
+}

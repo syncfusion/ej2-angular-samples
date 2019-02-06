@@ -1,6 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component,Inject, ViewEncapsulation } from '@angular/core';
 import { TreeMap, TreeMapTooltip, TreeMapLegend } from '@syncfusion/ej2-angular-treemap';
-import { CarSales } from './treemap-date/car-sale';
+import { CarSales } from './car-sale';
 import { IItemMoveEventArgs, ILoadEventArgs, TreeMapTheme, IItemClickEventArgs } from '@syncfusion/ej2-angular-treemap';
 
 TreeMap.Inject(TreeMapTooltip, TreeMapLegend);
@@ -15,6 +15,10 @@ TreeMap.Inject(TreeMapTooltip, TreeMapLegend);
     encapsulation: ViewEncapsulation.None
 })
 export class TreemapDefaultComponent {
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['car-sale.ts' ];
+    }
+
     public itemMove= (args: IItemMoveEventArgs) => {
         args.item['data'].Sales = args.item['weight'];
         args.treemap.tooltipSettings.format = args.item['groupIndex'] === 0 ? 'Country: ${Continent}<br>Sales: ${Sales}' :
@@ -55,8 +59,5 @@ export class TreemapDefaultComponent {
     border: object = {
         color: 'white',
         width: 0.5
-    };
-    constructor() {
-        //code
     };
 }

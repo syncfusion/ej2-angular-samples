@@ -1,0 +1,57 @@
+<div class="control-section">
+        <div class='e-mastertext'>Select column name to sort</div>
+    <ejs-toolbar class='e-treegridlist' (clicked)="onClicked($event.originalEvent)">
+        <e-items>
+            <e-item text='Category'></e-item>
+            <e-item text='orderName'></e-item>
+            <e-item text='orderDate'></e-item>
+            <e-item text='units'></e-item>
+            <e-item text='unitPrice'></e-item>
+            <e-item text='price'></e-item>
+        </e-items>
+    </ejs-toolbar>
+    <br/>
+    <ejs-treegrid #treegrid [dataSource]='data' height='350' childMapping='subtasks' [treeColumnIndex]='1' allowSorting='true' [sortSettings]='initialSort'  (dataBound)="dataBound()">
+        <e-columns>
+            <e-column field='orderName' headerText='Order Name' width='190' ></e-column>
+            <e-column field='Category' headerText='Category' width='130'></e-column>
+            <e-column field='orderDate' headerText='Order Date' width='130' format="yMd" type='date' textAlign='Right'></e-column>
+            <e-column field='units' headerText='Units' width='100' textAlign='Right'></e-column>
+            <e-column field='unitPrice' headerText='Unit Price' width='130' format='c0' type='number' textAlign='Right'></e-column>
+            <e-column field='price' headerText='Price' width='100' format='c0' type='number'></e-column>
+        </e-columns>
+    </ejs-treegrid>    
+    </div>
+    <div id="action-description">
+        <p>
+            This sample demonstrates the TreeGrid multi sorting feature. To sort two or more columns, hold the CTRL key and click the column header.
+        </p>
+    </div>
+    
+    <div id="description">
+        <p>
+            Sorting feature enables us to order the data in a particular direction. It can be enabled by setting the <code>allowSorting</code> as true.
+        </p>
+        
+        <p>By default, multi-sorting is enabled in TreeGrid, to sort multiple column hold <strong>CTRL</strong> key and click the column
+            header. To clear sort for a column, hold <strong>SHIFT</strong> key and click the column header.</p>
+        <p>
+            While using TreeGrid in a touch device, you have an option for multi sorting in single tap on the treegrid header. By tapping on the treegrid header, it will show the toggle button in small popup with sort icon. 
+            Now tap the button to enable the multi-sorting in single tap.
+        </p>
+        <p>In this demo, </p>
+        <ul>
+            <li>Simply click the column header to sort a column.</li>
+            <li>Check the checkboxes in the properties panel to sort a column and uncheck to remove sort from a column.
+            </li>
+        </ul>
+
+        <p>Injecting Module</p>
+
+        <p> TreeGrid component features are segregated into individual feature-wise modules. To use Context Menu feature, we need to inject <code>SortService</code> into the <code>@NgModule.providers</code> section.</p>
+  
+        <p>
+            More information on the sorting feature configuration can be found in this documentation section.
+        </p>
+    </div>
+    

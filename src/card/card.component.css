@@ -80,7 +80,6 @@
         text-align: center;
         background-size: cover;
         min-height: 300px;
-        height: 300px;
         justify-content: flex-end;
     }
 
@@ -202,7 +201,7 @@
     .card-control-section.horizontal_card_layout .e-card.e-card-horizontal.e-product .e-card-stacked> :first-child,
     .card-control-section.horizontal_card_layout #vertical_Sample .e-card.e-card-horizontal .e-card-stacked> :first-child,
     .card-control-section.horizontal_card_layout #vertical_Sample .e-card.e-card-horizontal .e-card-stacked> :first-child {
-        flex-grow: 0;
+        flex-grow: initial;
     }
 
     .card-control-section.horizontal_card_layout #vertical_Sample {
@@ -299,12 +298,8 @@
     }
 
     .card-control-section.reveal_card_layout .e-card #card_revealed .e-card-content table td .e-card-actions .e-card-btn {
-        background-color: #fff;
+        background-color: inherit;
         border: none;
-    }
-
-    .highcontrast .card-control-section.reveal_card_layout .e-card #card_revealed .e-card-content table td .e-card-actions .e-card-btn {
-        background-color: #000;
     }
 
     .card-control-section.reveal_card_layout .row.card-layout .e-card #card_reveal.e-reveal-show {
@@ -410,7 +405,7 @@
     }
 
     .card-control-section.reveal_card_layout .e-card .e-collapse:before {
-        content: "\e903";
+        content: "\e7fc";
         font-size: 12px;
     }
 

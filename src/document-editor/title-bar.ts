@@ -14,7 +14,9 @@ export class TitleBar {
     private print: Button;
     private open: Button;
     private documentEditor: DocumentEditor;
-    constructor(element: HTMLElement, docEditor: DocumentEditor, isShareNeeded: Boolean) {
+    private isRtl: boolean;
+    constructor(element: HTMLElement, docEditor: DocumentEditor, isShareNeeded: Boolean, isRtl?: boolean) {
+        this.isRtl = isRtl;
         //initializes title bar elements.
         this.tileBarDiv = element;
         this.documentEditor = docEditor;
@@ -22,24 +24,45 @@ export class TitleBar {
         this.wireEvents();
     }
     private initializeTitleBar = (isShareNeeded: Boolean): void => {
+        let downloadText: string;
+        let downloadToolTip: string;
+        let printText: string;
+        let printToolTip: string;
+        let openText: string;
+        let documentTileText: string;
+        if (!this.isRtl) {
+            downloadText = 'Download';
+            downloadToolTip = 'Download this document.';
+            printText = 'Print';
+            printToolTip = 'Print this document (Ctrl+P).';
+            openText = 'Open';
+            documentTileText = 'Document Name. Click or tap to rename this document.';
+        } else {
+            downloadText = 'تحميل';
+            downloadToolTip = 'تحميل هذا المستند';
+            printText = 'طباعه';
+            printToolTip = 'طباعه هذا المستند (Ctrl + P)';
+            openText = 'فتح';
+            documentTileText = 'اسم المستند. انقر أو اضغط لأعاده تسميه هذا المستند';
+        }
         // tslint:disable-next-line:max-line-length
         this.documentTitle = createElement('label', { id: 'documenteditor_title_name', styles: 'font-weight:400;text-overflow:ellipsis;white-space:pre;overflow:hidden;user-select:none;cursor:text' });
         // tslint:disable-next-line:max-line-length
-        this.documentTitleContentEditor = createElement('div', { id: 'documenteditor_title_contentEditor', className: 'single-line', styles: 'border: 1px solid #2B3481;' });
+        this.documentTitleContentEditor = createElement('div', { id: 'documenteditor_title_contentEditor', className: 'single-line' });
         this.documentTitleContentEditor.appendChild(this.documentTitle);
         this.tileBarDiv.appendChild(this.documentTitleContentEditor);
         this.documentTitleContentEditor.setAttribute('title', 'Document Name. Click or tap to rename this document.');
         let btnStyles: string = 'float:right;background: transparent;box-shadow:none; font-family: inherit;border-color: transparent;'
-            + 'border-radius: 2px;color:#ffffff;font-size:12px;text-transform:capitalize;margin-top:4px;height:28px;font-weight:400';
+            + 'border-radius: 2px;color:inherit;font-size:12px;text-transform:capitalize;margin-top:4px;height:28px;font-weight:400';
         // tslint:disable-next-line:max-line-length
-        this.print = this.addButton('e-de-icon-Print e-de-padding-right', 'Print', btnStyles, 'de-print', 'Print this document (Ctrl+P).', false) as Button;
-        this.open = this.addButton('e-de-icon-Open e-de-padding-right', 'open', btnStyles, 'de-open', 'Open', false) as Button;
+        this.print = this.addButton('e-de-icon-Print e-de-padding-right', printText, btnStyles, 'de-print', printToolTip, false) as Button;
+        this.open = this.addButton('e-de-icon-Open e-de-padding-right', openText, btnStyles, 'de-open', documentTileText, false) as Button;
         let items: ItemModel[] = [
             { text: 'Microsoft Word (.docx)', id: 'word' },
             { text: 'Syncfusion Document Text (.sfdt)', id: 'sfdt' },
         ];
         // tslint:disable-next-line:max-line-length
-        this.export = this.addButton('e-de-icon-Download e-de-padding-right', 'Download', btnStyles, 'documenteditor-share', 'Download this document.', true, items) as DropDownButton;
+        this.export = this.addButton('e-de-icon-Download e-de-padding-right', downloadText, btnStyles, 'documenteditor-share', downloadToolTip, true, items) as DropDownButton;
         if (!isShareNeeded) {
             this.export.element.style.display = 'none';
         } else {

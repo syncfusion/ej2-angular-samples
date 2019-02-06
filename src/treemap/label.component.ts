@@ -1,6 +1,6 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
 import { TreeMap, LabelAlignment, TreeMapTooltip, TreeMapLegend } from '@syncfusion/ej2-angular-treemap';
-import { Country_Population } from '../treemap/treemap-date/country-population';
+import { Country_Population } from './country-population';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { ILoadEventArgs, TreeMapTheme } from '@syncfusion/ej2-angular-treemap';
 TreeMap.Inject(TreeMapTooltip, TreeMapLegend);
@@ -51,6 +51,9 @@ export class TreemapLabelComponent {
                 }, { to: 100000000, from: 20000000, label: '20M - 200M', color: '#8C304D' },
                 { to: 20000000, from: 100000, label: '0.1M - 20M', color: '#C84B4B' }
             ]
+        };
+        constructor(@Inject('sourceFiles') private sourceFiles: any) {
+            sourceFiles.files = ['country-population.ts' ];
         };
         ngAfterViewInit(): void {
             let label: DropDownList = new DropDownList({

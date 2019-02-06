@@ -98,6 +98,14 @@
             </tr>
             <tr style="height: 30px">
                 <td style="width: 50%">
+                    Enable RTL
+                </td>
+                <td style="width: 50%">
+                        <input type="checkbox"  [checked]="false" (change)="onshowLastLabel($event)"    class="sparkinput"  name="enableRTL" id="enableRTL">
+                           </td>
+            </tr>
+            <tr style="height: 30px">
+                <td style="width: 50%">
                     Tooltip
                 </td>
                 <td style="width: 50%">
@@ -130,6 +138,7 @@
                     </ejs-slider></div>
                 </td>
             </tr>
+            
         </tbody>
     </table>        
 </div>

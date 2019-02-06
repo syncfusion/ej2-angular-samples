@@ -10,8 +10,12 @@ import {
 } from '@syncfusion/ej2-diagrams';
 import { SnapConstraints } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import { keyBoardData, DataInfo } from './diagram-data';
+import { keyBoardData } from './diagram-data';
 Diagram.Inject(UndoRedo, DiagramContextMenu, HierarchicalTree, DataBinding);
+
+export interface DataInfo {
+    [key: string]: string;
+}
 
 let shape: BasicShapeModel = { type: 'Basic', shape: 'Ellipse', cornerRadius: 10 };
 
@@ -35,7 +39,7 @@ export class KeyBoardDiagramComponent {
         return node;
     };
     public data: Object = {
-        id: 'id', parentId: 'ancestor', dataManager: new DataManager(keyBoardData as JSON[]),
+        id: 'id', parentId: 'ancestor', dataManager: new DataManager(keyBoardData),
         doBinding: (nodeModel: NodeModel, data: DataInfo) => {
             nodeModel.annotations = [{ content: data.id, style: { color: 'white' } }];
             nodeModel.style = { strokeColor: 'transparent', fill: data.fill };

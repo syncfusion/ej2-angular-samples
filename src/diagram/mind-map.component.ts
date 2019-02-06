@@ -8,6 +8,7 @@ import {
 } from '@syncfusion/ej2-angular-diagrams';
 
 import { DataManager } from '@syncfusion/ej2-data';
+import { mindMap } from './diagram-data';
 Diagram.Inject(DataBinding, MindMap, HierarchicalTree);
 
 /**
@@ -24,35 +25,7 @@ export class MindMapDiagramComponent {
   public tool: DiagramTools = DiagramTools.SingleSelect |
     DiagramTools.MultipleSelect;
 
-  public mindMap: object[] = [
-    { id: 1, Label: 'Creativity', fill: 'red', branch: 'Root' },
-    { id: 3, Label: 'Brainstorming', parentId: 1, branch: 'Right', fill: 'red' },
-    { id: 4, Label: 'Complementing', parentId: 1, branch: 'Left', fill: 'red' },
-    { id: 22, Label: 'Sessions', parentId: 3, branch: 'subRight', fill: 'red' },
-    { id: 23, Label: 'Generate', parentId: 3, branch: 'subRight', fill: 'red' },
-    { id: 25, Label: 'Local', parentId: 22, branch: 'subRight' },
-    { id: 26, Label: 'Remote', parentId: 22, branch: 'subRight' },
-    { id: 27, Label: 'Individual', parentId: 22, branch: 'subRight' },
-    { id: 28, Label: 'Teams', parentId: 22, branch: 'subRight' },
-    { id: 29, Label: 'Ideas', parentId: 23, branch: 'subRight' },
-    { id: 30, Label: 'Engagement', parentId: 23, branch: 'subRight' },
-    { id: 31, Label: 'Product', parentId: 29, branch: 'subRight' },
-    { id: 32, Label: 'Service', parentId: 29, branch: 'subRight' },
-    { id: 33, Label: 'Business Direction', parentId: 29, branch: 'subRight' },
-    { id: 34, Label: 'Empowering', parentId: 30, branch: 'subRight' },
-    { id: 35, Label: 'Ownership', parentId: 30, branch: 'subRight' },
-    { id: 50, Label: 'Information', parentId: 4, branch: 'subLeft' },
-    { id: 51, Label: 'Expectations', parentId: 4, branch: 'subLeft' },
-    { id: 53, Label: 'Competetors', parentId: 50, branch: 'subLeft' },
-    { id: 54, Label: 'Products', parentId: 50, branch: 'subLeft' },
-    { id: 55, Label: 'Features', parentId: 50, branch: 'subLeft' },
-    { id: 56, Label: 'Other Data', parentId: 50, branch: 'subLeft' },
-    { id: 59, Label: 'Organization', parentId: 51, branch: 'subLeft' },
-    { id: 60, Label: 'Customer', parentId: 51, branch: 'subLeft' },
-    { id: 61, Label: 'Staff', parentId: 51, branch: 'subLeft' },
-    { id: 62, Label: 'Stakeholders', parentId: 51, branch: 'subLeft' }
-  ];
-  public items: DataManager = new DataManager(this.mindMap as JSON[]);
+  public items: DataManager = new DataManager(mindMap);
   public data: Object = { id: 'id', parentId: 'parentId', dataManager: this.items, root: '1' };
   public layout: Object = {
     type: 'MindMap', horizontalSpacing: 50,

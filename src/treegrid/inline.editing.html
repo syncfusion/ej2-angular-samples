@@ -1,0 +1,60 @@
+    <div class="control-section">
+     <div>
+       <div class="edit-mode" style="display: inline-block;">
+        <ejs-dropdownlist id='ddlelement' [dataSource]='d1data' width='150' [fields]='ddlfields' value='CellEditing' placeholder = 'Edit Mode' (change)="onChange($event)"></ejs-dropdownlist>
+       </div>
+      </div>
+        <ejs-treegrid #treegrid [dataSource]='data' height='350' childMapping='subtasks' [treeColumnIndex]='1'   [editSettings]='editSettings' [toolbar]='toolbar' [validationrules]='validationRules' [edit]='edit'>
+            <e-columns>
+                    <e-column field='taskID' headerText='Task ID' width='70' isPrimaryKey='true' textAlign='Right' [edit]='numericParams'  [validationRules]='taskidrules'></e-column>
+                    <e-column field='taskName' headerText='Task Name' width='200' [validationRules]='tasknamerules' editType='stringedit'></e-column>
+                    <e-column field='startDate' headerText='Start Date' width='120' format="yMd" editType='datepickeredit' textAlign='Right' [validationRules]='startdaterules'></e-column>
+                    <e-column field='duration' headerText='Duration' width='80' editType='numericedit' [edit]='numericParams' textAlign='Right' [validationRules]='durationrules'></e-column>
+                    <e-column field='progress' headerText='Progress' width='80' editType='numericedit' [edit]='numericParams' textAlign='Right' [validationRules]='progressrules'></e-column>
+                    <e-column field='approved' headerText='Approved' width='80' editType='booleanedit' displayAsCheckBox='true' textAlign='Right'></e-column>
+            </e-columns>
+        </ejs-treegrid>
+    </div>
+    <div id="action-description">
+        <p>This sample demonstrates CRUD operations in TreeGrid. You can perform CRUD operations as follows,</p>
+        
+            <ul>
+                <li>Add - To add new record, click Add toolbar button</li>
+                <li>Edit - To edit record, double click a row or click toolbar Edit button after selected a row</li>
+                <li>Delete - To delete record, click toolbar Delete button after selected a row</li>
+                <li>Update,Cancel - You can save or discard changes by click toolbar Update and Cancel button respectively </li>
+            </ul>
+       
+        <p>
+            Also select the edit mode as Cell or Row from property panel to change the mode of editing 
+        </p>
+    </div>
+    <div id="description">
+        <p>
+            The TreeGrid supports CRUD operations. This CRUD operations can be configured in TreeGrid using <code>editSettings</code>. Also, it has different modes to manipulate the datasource.
+        </p>
+        <p>
+            The available modes are,
+        </p>
+        <ul>
+            <li><code>Row </code></li>
+            <li><code>Cell</code></li>
+            <li><code>Dialog</code></li>
+        </ul>
+        <p>
+            In this demo, Row mode is enabled for editing by default. You can start editing any row by double clicking on it or clicking on toolbar’s Edit button, then the currently selected row will be changed to edited state. You can change the row values and save edited data to the datasource.
+        </p>
+        <p>
+            We have also provided an option in property panel to select the edit mode as Cell or Row to change <code>mode</code> of editing.
+        </p>
+
+        <p>Injecting Module:</p>
+
+    <p>TreeGrid component features are segregated into individual feature-wise modules. To use exporting feature, we need to inject <code>EditService</code> into the <code>@NgModule.providers</code> section.</p> 
+  
+    <p>
+        More information on the TreeGrid instantiation can be found in this
+        documentation section.
+    </p>
+</div>
+    

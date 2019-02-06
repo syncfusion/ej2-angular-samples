@@ -47,6 +47,9 @@ export class DefaultComboBoxComponent {
     }
     ngAfterViewInit(e: any): void {
         // call the change event's function after initialized the component.
+           setTimeout(()=>
+      {
         this.onChange(e);
+     })
     }
 }

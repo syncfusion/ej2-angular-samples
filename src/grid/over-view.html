@@ -41,7 +41,7 @@
                         </ng-template>
                 </ng-template>               
             </e-column>
-            <e-column field='Trustworthiness' [filter]='filter' headerText='Trustworthiness' width='160'>
+            <e-column field='Trustworthiness' [filter]='filter' headerText='Trustworthiness' width='200'>
                 <ng-template #template let-data>
                     <div class="trust">
                         <img style="width: 31px; height: 24px" src="src/grid/images/{{data.Trustworthiness}}.png" />
@@ -62,7 +62,7 @@
             <e-column field='Software' headerText='Software' [allowSorting]='false' [allowFiltering]='false' width='180'>
                 <ng-template #template let-data>
                     <div id="myProgress" class="pbar">
-                        <div id="myBar"  *ngIf="data.Status === 'InActive';" [style.width.%]= data.Software class="bar progressdisable">
+                        <div id="myBar"  *ngIf="data.Status === 'Inactive';" [style.width.%]= data.Software class="bar progressdisable">
                           <div id="label" class="barlabel">{{data.Software}}%</div>
                         </div>    
                         <div id="myBar"  *ngIf="data.Status === 'Active';" [style.width.%]= data.Software class="bar">

@@ -16,7 +16,7 @@
             <tr id="button-control" style="height: 50px">
                 <td align='center'>
                     <div>
-                        <button ejs-button id="togglebtn" iconCss='e-icons e-play-icon' cssClass= 'e-flat' isPrimary=true (click)='mode($event)'>Print</button>
+                        <button ejs-button id="togglebtn" cssClass= 'e-info' isPrimary= true (click)='mode($event)' style="width: 80px;" content="Print">Print</button>
                     </div>
                 </td>
             </tr>
@@ -30,6 +30,7 @@
 #button-control {
 width: 100%;
 text-align: center;
+text-transform:none !important
 }
 
 #control-container {

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { MapsTheme, Maps, Zoom, Marker, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
 
@@ -34,7 +34,7 @@ export class MapsEarthquakeComponent {
         {
             shapeDataPath: 'name',
             shapePropertyPath: 'name',
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/asia.json'),
+            shapeData: new MapAjax('./src/maps/asia.json'),
             markerSettings: [{
                 visible: true,
                 height: 100,
@@ -58,9 +58,9 @@ export class MapsEarthquakeComponent {
                 smartLabelMode: 'Hide'
             }
         }
-    ]
-
-    constructor() {        
+    ];
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['asia.json', 'world-map.json'];
     };
 
 }

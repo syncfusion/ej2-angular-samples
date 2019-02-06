@@ -1,0 +1,34 @@
+<div class="control-section">
+            <div class="content-wrapper">
+        <ejs-treegrid #treegrid [dataSource]='data' height='400' childMapping='subtasks' [treeColumnIndex]='1' allowFiltering='true' [toolbar]='toolbar' [filterSettings]='filterSettings' (toolbarClick)="toolbarClick($event)">
+            <e-columns>
+                <e-column field='taskID' headerText='Task ID' width='90' textAlign='Right'></e-column>
+                <e-column field='taskName' headerText='Task Name' width='130'></e-column>
+                <e-column field='startDate' headerText='Start Date' width='90' format="yMd" textAlign='Right'></e-column>
+                <e-column field='progress' headerText='Progress' width='90' textAlign='Right'></e-column>
+                <e-column field='duration' headerText='Duration' width='90' textAlign='Right'></e-column>
+                <e-column field='priority' headerText='Priority' width='90'></e-column>
+            </e-columns>
+        </ejs-treegrid>
+         </div>
+</div>
+<div id="action-description">
+    <p>This sample explains the way of rendering custom template element <code>Quick Filter</code> in a 
+        toolbar and while click on the <code>Quick Filter</code> button the column "Task Name" is filtered with the value "Testing".</p>
+</div>
+<div id="description">
+    <p>
+        Custom toolbar items can be added by defining the toolbar as a collection of ItemModels. 
+        Actions for this customized toolbar items are defined in the toolbarClick event.
+    </p>  
+    <p>
+        In this sample, rendered the custom template element <code>Quick Filter</code> along with predefined 
+        toolbar items ExpandAll and CollapseAll. 
+        While click on the <code>Quick Filter</code> button the column "Task Name" is filtered with the value "Testing".
+    </p>
+    <p>
+        More information on the Toolbar Template can be found in
+        documentation section.
+    </p>
+</div>
+    

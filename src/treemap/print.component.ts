@@ -1,6 +1,6 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
 import { TreeMap, ExportType, TreeMapTooltip } from '@syncfusion/ej2-treemap';
-import { ProductSale } from '../treemap/treemap-date/product';
+import { ProductSale } from './product';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { ILoadEventArgs, TreeMapTheme } from '@syncfusion/ej2-angular-treemap';
 TreeMap.Inject(TreeMapTooltip);
@@ -63,7 +63,7 @@ export class TreemapPrintComponent {
             });
             this.exportType.appendTo('#mode');
         }
-        constructor() {
-            //code
-          }
+        constructor(@Inject('sourceFiles') private sourceFiles: any) {
+            sourceFiles.files = ['product.ts' ];
+        };
 };

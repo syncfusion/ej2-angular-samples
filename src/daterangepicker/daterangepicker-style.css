@@ -1,0 +1,38 @@
+#control_wrapper {
+    max-width: 246px;
+    margin: 30px auto;
+    padding-top: 50px;
+}
+
+.control-section {
+    margin: 25px auto;
+}
+
+#control_wrapper #container {
+    min-height: 300px;
+}
+
+.form-group .content-wrapper {
+    float: left;
+    padding: 0 10px;
+}
+
+.property-panel-content {
+    padding: 0 10px 10px 0;
+}
+
+.content {
+    width: 43%;
+    margin: 0 auto;
+    min-width: 185px;
+    padding: 20px 0px;
+}
+
+#cultures .e-control.e-dll{
+        width:100px;
+}
+
+#property{
+    margin: 30px auto;
+    padding-top:50px;
+}

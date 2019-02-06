@@ -1,0 +1,102 @@
+<div class="col-lg-9 control-section">
+            <div class="content-wrapper">
+                    <ejs-treegrid #treegrid [dataSource]='data'  childMapping='subtasks' [treeColumnIndex]='1' allowPaging='true' [pageSettings]='pageSettings'>
+                            <e-columns>
+                                <e-column field='taskID' headerText='Task ID' width='80' textAlign='Right'></e-column>
+                                <e-column field='taskName' headerText='Task Name' width='200'></e-column>
+                                <e-column field='startDate' headerText='Start Date' width='100' format="yMd" textAlign='Right'></e-column>
+                                <e-column field='duration' headerText='Duration' width='90' textAlign='Right'></e-column>
+                                <e-column field='progress' headerText='Progress' width='90' textAlign='Right'></e-column>
+                            </e-columns>
+                        </ejs-treegrid>  
+            </div>
+</div>
+<div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+                <div class="property-panel-header">Properties </div>
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%;padding-bottom: 10px">
+                    <tr>
+                        <td style="width: 50%">
+                            <div>Allow Paging</div>
+                        </td>
+                        <td style="width: 50%;padding-right: 10px">
+                            <div>
+                               <ejs-checkbox #enablePaging  [checked]="true" (change)="onClick($event)" ></ejs-checkbox>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class='con-prop1'>
+                        <td style="width: 50%">
+                            <div style="padding-top: 7px;">
+                                Page Size Mode
+                            </div>
+                        </td>
+                        <td style="width: 50%;  padding:10px 10px 10px 0px">
+                            <div id='dropdown'>
+                                    <ejs-dropdownlist #dropdown1 id='ddlelement' width= '100px' [dataSource]='d1data' [fields]='ddlfields' value='All' (change)="onChange($event)" ></ejs-dropdownlist>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class='con-prop2'>
+                        <td style="width: 50%">
+                            <div style="padding-top: 7px;">
+                                Page Size
+                            </div>
+                        </td>
+                        <td style="width: 50%;  padding:10px 10px 10px 0px">
+                            <div id='numericbox'>
+                                    <ejs-numerictextbox #pageSize min="1" max="200"  width= '100px' format= '##' value="12" (change)="change($event)"></ejs-numerictextbox>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class='con-prop2'>
+                        <td style="width: 50%">
+                            <div style="padding-top: 7px">
+                                Page Count
+                            </div>
+                        </td>
+                        <td style="width: 50%; padding:10px 10px 10px 0px">
+                            <div>
+                                    <ejs-numerictextbox #pageCount  min="1" max="4" width= '100px' format= '##' value="2" (change)="changeCount($event)"></ejs-numerictextbox>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class='con-prop2'>
+                        <td style="width: 50%">
+                            <div style="padding-top: 7px">
+                                Current Page
+                            </div>
+                        </td>
+                        <td style="width: 50%; padding:10px 10px 10px 0px">
+                            <div>
+                                    <ejs-numerictextbox #currentPage  min="1" max="17"  width= '100px' format= '##' value="1" (change)="changed($event)"></ejs-numerictextbox>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates the usage of paging API in TreeGrid. In this sample, use the properties panel to change the page size mode, page size, page count and current page of the TreeGrid.</p>
+</div>       
+<div id="description">
+            <p>Paging allows you to display the contents of the TreeGrid in page segments. The number of items on a page is determined by
+                the <code>pageSettings->pageSize</code> property. If no value is specified for the <code>pageSettings->pageSize</code> property, the TreeGrid will display 12 items on a page. By default, paging is disabled. To enable paging,
+                set <code>allowPaging</code> property to true.</p>
+            <p>In this demo,</p>
+            <ul>
+                <li>Click the <strong>Allow Paging</strong> check box to enable/disable paging feature.</li>
+                <li>Change the value of <strong>Page Size Mode</strong> Dropdown to change <code>pageSettings->pageSizeMode.</code></li>
+                <li>Change the value of <strong>Page Size</strong> textbox to change <code>pageSettings->pageSize.</code></li>
+                <li>Change the value of <strong>Page Count</strong> textbox to change <code>pageSettings->pageCount.</code></li>
+                <li>Change the value of <strong>Current Page</strong> textbox to change
+                <code> pageSettings->currentPage.</code></li>
+            </ul>
+            <p>Injecting Module</p>
+
+            <p> TreeGrid component features are segregated into individual feature-wise modules. To use paging feature, we need to inject <code>PageService</code> into the <code>@NgModule.providers</code> section.</p>
+            <p>
+                More information on the paging configuration can be found in the  documentation section.
+            </p>
+        </div>
+    

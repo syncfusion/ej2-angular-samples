@@ -23,7 +23,7 @@ export class FunnelComponent {
     public funnelNeckWidth(e: Event): void {
         let value: string = (document.getElementById('funnelNeckWidth') as HTMLSelectElement).value;
         this.funnel.series[0].neckWidth = value + '%';
-        document.getElementById('neckWidth').innerHTML = value + '%';
+        document.getElementById('funnelNeckWidth').innerHTML = value + '%';
         this.funnel.removeSvg();
         this.funnel.refreshSeries();
         this.funnel.refreshChart();
@@ -31,7 +31,7 @@ export class FunnelComponent {
     public funnelNeckHeight(e: Event): void {
         let value: string = (document.getElementById('funnelNeckHeight') as HTMLSelectElement).value;
         this.funnel.series[0].neckHeight = value + '%';
-        document.getElementById('neckHeight').innerHTML = value + '%';
+        document.getElementById('funnelNeckHeight').innerHTML = value + '%';
         this.funnel.removeSvg();
         this.funnel.refreshSeries();
         this.funnel.refreshChart();
@@ -45,7 +45,7 @@ export class FunnelComponent {
     public load(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
 
     public onChartResized(args: IAccResizeEventArgs): void {
@@ -65,6 +65,7 @@ export class FunnelComponent {
         fill: 'red', mode: 'Drop'
     };
     public explode: boolean = true;
+    public enableAnimation: boolean = false;
     public legendSettings: Object = { toggleVisibility: false };
     public tooltip: Object = { enable: true, format: '${point.x} : <b>${point.y}%</b>' };
     public title: string = 'Website Visitors';

@@ -13,7 +13,8 @@ export let cardBook: Object[] = [
             action_btns: [{ tag: 'a', href: 'https://www.syncfusion.com/ebooks/ASPNET_MVC_Succinctly', target: '_blank', text: 'Read More' }],
             isVertical: true
         },
-        isHorizontal: false
+        isHorizontal: false,
+        id : 1
     },
     {
         header_title: ' Node.js',
@@ -24,7 +25,8 @@ export let cardBook: Object[] = [
             action_btns: [{ tag: 'a', href: 'https://www.syncfusion.com/ebooks/nodejs', target: '_blank', text: 'Read More' }],
             isVertical: true
         },
-        isHorizontal: false
+        isHorizontal: false,
+        id : 2
     },
     {
         header_title: ' React.js',
@@ -35,7 +37,8 @@ export let cardBook: Object[] = [
             action_btns: [{ tag: 'a', href: 'https://www.syncfusion.com/ebooks/reactjs_succinctly', target: '_blank', text: 'Read More' }],
             isVertical: true
         },
-        isHorizontal: false
+        isHorizontal: false,
+        id : 3
     },
     {
         header_title: ' TypeScript',
@@ -46,7 +49,8 @@ export let cardBook: Object[] = [
             action_btns: [{ tag: 'a', href: 'https://www.syncfusion.com/ebooks/typescript', target: '_blank', text: 'Read More' }],
             isVertical: true
         },
-        isHorizontal: false
+        isHorizontal: false,
+        id : 4
     },
     {
         header_title: ' PHP',
@@ -57,7 +61,8 @@ export let cardBook: Object[] = [
             action_btns: [{ tag: 'a', href: 'https://www.syncfusion.com/ebooks/php_succinctly', target: '_blank', text: 'Read More' }],
             isVertical: true
         },
-        isHorizontal: false
+        isHorizontal: false,
+        id : 5
     },
     {
         header_title: ' CSS3',
@@ -68,7 +73,8 @@ export let cardBook: Object[] = [
             action_btns: [{ tag: 'a', href: 'https://www.syncfusion.com/ebooks/css3', target: '_blank', text: 'Read More' }],
             isVertical: true
         },
-        isHorizontal: false
+        isHorizontal: false,
+        id : 6
     },
     {
         header_title: ' ASP.NET Core',
@@ -79,7 +85,8 @@ export let cardBook: Object[] = [
             action_btns: [{ tag: 'a', href: 'https://www.syncfusion.com/ebooks/asp_net_core_succinctly', target: '_blank', text: 'Read More' }],
             isVertical: true
         },
-        isHorizontal: false
+        isHorizontal: false,
+        id : 7
     },
     {
         header_title: 'Aurelia',
@@ -90,7 +97,8 @@ export let cardBook: Object[] = [
             action_btns: [{ tag: 'a', href: 'https://www.syncfusion.com/ebooks/aurelia_succinctly', target: '_blank', text: 'Read More' }],
             isVertical: true
         },
-        isHorizontal: false
+        isHorizontal: false,
+        id : 8
     },
     {
         header_title: 'ECMAScript 6 ',
@@ -101,7 +109,8 @@ export let cardBook: Object[] = [
             action_btns: [{ tag: 'a', href: 'https://www.syncfusion.com/ebooks/ecmascript_6_succinctly', target: '_blank', text: 'Read More' }],
             isVertical: true
         },
-        isHorizontal: false
+        isHorizontal: false,
+        id : 9
     },
     {
         header_title: 'JavaScript',
@@ -112,7 +121,8 @@ export let cardBook: Object[] = [
             action_btns: [{ tag: 'a', href: 'https://www.syncfusion.com/ebooks/javascript', target: '_blank', text: 'Read More' }],
             isVertical: true
         },
-        isHorizontal: false
+        isHorizontal: false,
+        id : 10
     },
     {
         header_title: 'Knockout.js',
@@ -123,7 +133,8 @@ export let cardBook: Object[] = [
             action_btns: [{ tag: 'a', href: 'https://www.syncfusion.com/ebooks/knockoutjs', target: '_blank', text: 'Read More' }],
             isVertical: true
         },
-        isHorizontal: false
+        isHorizontal: false,
+        id : 11
     },
     {
         header_title: 'Angular 2',
@@ -134,7 +145,8 @@ export let cardBook: Object[] = [
             action_btns: [{ tag: 'a', href: 'https://www.syncfusion.com/ebooks/angular2_succinctly', target: '_blank', text: 'Read More' }],
             isVertical: true
         },
-        isHorizontal: false
+        isHorizontal: false,
+        id : 12
     },
 ];
 // tslint:enable:max-line-length

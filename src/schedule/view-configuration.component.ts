@@ -3,7 +3,7 @@ import { fifaEventsData } from './datasource';
 import { Internationalization, extend } from '@syncfusion/ej2-base';
 import {
     EventSettingsModel, EventRenderedArgs, TimeScaleModel, GroupModel, View,
-    ScheduleComponent, DayService, WeekService, MonthService, AgendaService, ResizeService
+    ScheduleComponent, DayService, WeekService, MonthService, AgendaService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 
 let instance: Internationalization = new Internationalization();
@@ -17,7 +17,7 @@ interface TemplateFunction extends Window {
 @Component({
     selector: 'control-content',
     templateUrl: 'view-configuration.html',
-    providers: [DayService, WeekService, MonthService, AgendaService, ResizeService],
+    providers: [DayService, WeekService, MonthService, AgendaService, ResizeService, DragAndDropService],
     styleUrls: ['view-configuration.style.css'],
     encapsulation: ViewEncapsulation.None
 })

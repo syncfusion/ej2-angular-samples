@@ -92,7 +92,9 @@ export class AdvancedExportingComponent implements OnInit {
                     { cells: [{ colSpan: 6, value: 'Thank you for your business!', style: { fontColor: '#C67878', hAlign: 'Center', bold: true } }] },
                     { cells: [{ colSpan: 6, value: '!Visit Again!', style: { fontColor: '#C67878', hAlign: 'Center', bold: true } }] }
                 ]
-            }
+            },
+            
+            fileName: "exceldocument.xlsx"
         };
     }
     /* tslint:disable-next-line:no-any */
@@ -191,7 +193,9 @@ export class AdvancedExportingComponent implements OnInit {
                         style: { textBrushColor: '#C67878', fontSize: 14 }
                     }
                 ]
-            }
+            },
+            
+            fileName: "pdfdocument.pdf"
         };
     }
 }

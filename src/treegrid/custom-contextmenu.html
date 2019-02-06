@@ -1,0 +1,28 @@
+<div class="control-section">
+        <ejs-treegrid #treegrid [dataSource]='data' height='400' childMapping='subtasks' [treeColumnIndex]='1' [contextMenuItems]='contextMenuItems' (contextMenuOpen)="contextMenuOpen($event)" (contextMenuClick)="contextMenuClick($event)">
+            <e-columns>
+                <e-column field='taskID' headerText='Task ID' width='80' textAlign='Right'  editType= 'numericedit'></e-column>
+                <e-column field='taskName' headerText='Task Name' width='210'></e-column>
+                <e-column field='startDate' headerText='Start Date' width='100' format="yMd" textAlign='Right' editType= 'datepickeredit'></e-column>
+                <e-column field='endDate' headerText='End Date' width='100' format="yMd" textAlign='Right' editType= 'datepickeredit'></e-column>
+                <e-column field='duration' headerText='Duration' width='80' textAlign='Right' editType= 'numericedit'></e-column>
+                <e-column field='progress' headerText='Progress' width='80' textAlign='Right' editType= 'numericedit'></e-column>
+                <e-column field='priority' headerText='Priority' width='90' editType= 'numericedit'></e-column>
+            </e-columns>
+        </ejs-treegrid>
+ </div>
+<div id="action-description">
+    <p>This sample demonstrates the usage of custom context menu in TreeGrid component. Right click anywhere on the TreeGrid to view custom context menu.
+    </p>    
+</div>
+<div id="description">
+            <p>
+                TreeGrid has an option to show the custom context menu when right click on it. To configure the custom items in context menu, you should define custom item in  <code>contextMenuItems</code>. 
+                
+                In this demo, Custom Context Menu feature has enabled by defining the custom context menu <code>Expand the Row</code> and <code>Collapse the Row</code> for the parent nodes in <code>contextMenuItems</code>  property.
+            </p>
+            <p>
+                More information on the Context Menu can be found in the documentation.
+            </p>
+        </div>
+    

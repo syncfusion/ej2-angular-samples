@@ -1,7 +1,7 @@
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
 import {
     ScheduleComponent, View, RenderCellEventArgs, EventRenderedArgs, MonthService,
-    DayService, WeekService, WorkWeekService, EventSettingsModel, TimelineMonthService, ResizeService
+    DayService, WeekService, WorkWeekService, EventSettingsModel, TimelineMonthService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 import { Internationalization, extend } from '@syncfusion/ej2-base';
 import { scheduleData } from './datasource';
@@ -14,7 +14,7 @@ import { scheduleData } from './datasource';
     selector: 'control-content',
     templateUrl: 'date-header-template.html',
     styleUrls: ['date-header.style.css'],
-    providers: [MonthService, DayService, WeekService, WorkWeekService, TimelineMonthService, ResizeService],
+    providers: [MonthService, DayService, WeekService, WorkWeekService, TimelineMonthService, ResizeService, DragAndDropService],
     encapsulation: ViewEncapsulation.None
 })
 export class DateheaderTemplateComponent {

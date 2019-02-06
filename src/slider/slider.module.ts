@@ -21,19 +21,19 @@ import { AzureComponent } from './azure-pricing.component';
 import { LimitsSliderComponent } from './limits.component';
 
 export const sliderAppRoutes: Object[] = [
-    { path: ':theme/slider/default', component: DefaultSliderComponent, name: 'Default Functionalities', order: '01', category: 'Slider' },
-    { path: ':theme/slider/ticks', component: TicksSliderComponent, name: 'Ticks', order: '01', category: 'Slider' },
-    { path: ':theme/slider/tooltip', component: TooltipSliderComponent, name: 'Tooltip', order: '01', category: 'Slider', type: 'update' },
-    { path: ':theme/slider/orientation', component: OrientationSliderComponent, name: 'Vertical Orientation', order: '01', category: 'Slider', type: 'update' },
-    { path: ':theme/slider/format', component: FormatSliderComponent, name: 'Formatting', order: '01', category: 'Slider' },
-    { path: ':theme/slider/limits', component: LimitsSliderComponent, name: 'Limits', order: '01', category: 'Slider', type: 'new' },
-    { path: ':theme/slider/api', component: APIComponent, name: 'API', order: '01', category: 'Slider' },
-    { path: ':theme/slider/events', component: EventComponent, name: 'Events', order: '01', category: 'Slider' },
-    { path: ':theme/slider/thumb-customization', component: ThumbCustomizationComponent, name: 'Thumb', order: '02', category: 'Customization' },
-    { path: ':theme/slider/selection-bar-customization', component: SelectionBarComponent, name: 'Bar', order: '02', category: 'Customization' },
-    { path: ':theme/slider/ticks-customization', component: TicksCustomizationComponent, name: 'Ticks', order: '02', category: 'Customization' },
-    { path: ':theme/slider/tooltip-customization', component: TooltipCustomizationComponent, name: 'Tooltip', order: '02', category: 'Customization' },
-    { path: ':theme/slider/azure-pricing', component: AzureComponent, name: 'Cloud Pricing', order: '03', category: 'Use Case' }
+    { path: ':theme/slider/default', component: DefaultSliderComponent, name: 'Default Functionalities', description: 'Essential JS 2 slider control demo showing the default rendering of default, minimum range, and range sliders. Drag the thumb to interact with the slider.', order: '01', category: 'Range Slider' },
+    { path: ':theme/slider/ticks', component: TicksSliderComponent, name: 'Ticks', description: 'Essential JS 2 slider control demo of the visual representation of slider values using ticks, which can be placed before, after, or on both sides of the thumbs.', order: '01', category: 'Range Slider' },
+    { path: ':theme/slider/tooltip', component: TooltipSliderComponent, name: 'Tooltip', description: 'Essential JS 2 slider control demo of the visual representation of slider values using tooltips, which can be displayed before or after slider thumbs.', order: '01', category: 'Range Slider' },
+    { path: ':theme/slider/orientation', component: OrientationSliderComponent, name: 'Vertical Orientation', description: 'Essential JS 2 slider control demo showing the vertical and horizontal orientation properties along with ticks and tooltips.', order: '01', category: 'Range Slider' },
+    { path: ':theme/slider/format', component: FormatSliderComponent, name: 'Formatting', description: 'Demo of Essential JS 2 slider control value formatting with time, currency, and distance values that are also displayed in ticks and tooltips.', order: '01', category: 'Range Slider' },
+    { path: ':theme/slider/limits', component: LimitsSliderComponent, name: 'Limits', description: 'Essential JS 2 slider control demo of limiting the minimum, maximum, start, and end values. Also supports restricting handle movements.', order: '01', category: 'Range Slider' },
+    { path: ':theme/slider/api', component: APIComponent, name: 'API', description: 'Essential JS 2 slider control demo showcasing the most frequently used API combinations, like orientation, minimum, maximum, value, step, and more.', order: '01', category: 'Range Slider' },
+    { path: ':theme/slider/events', component: EventComponent, name: 'Events', description: 'Demo of the Essential JS 2 slider control created, changing, and changed events. The events are traced in real time in a property panel.', order: '01', category: 'Range Slider' },
+    { path: ':theme/slider/thumb-customization', component: ThumbCustomizationComponent, name: 'Thumb', description: 'Demo of the Essential JS 2 slider control slider thumb customization with circle, oval, and custom image shapes.', order: '02', category: 'Customization' },
+    { path: ':theme/slider/selection-bar-customization', component: SelectionBarComponent, name: 'Bar', description: 'Demo of Essential JS 2 slider control slider bar customization with colors and height.', order: '02', category: 'Customization' },
+    { path: ':theme/slider/ticks-customization', component: TicksCustomizationComponent, name: 'Ticks', description: 'Demo of Essential JS 2 slider controls highly customizable slider values using ticks and a legend.', order: '02', category: 'Customization' },
+    { path: ':theme/slider/tooltip-customization', component: TooltipCustomizationComponent, name: 'Tooltip', description: 'Demo of Essential JS 2 slider control customization of slider tooltip text and background color with formatted text values.', order: '02', category: 'Customization' },
+    { path: ':theme/slider/azure-pricing', component: AzureComponent, name: 'Cloud Pricing', description: 'Essential JS 2 slider control demo of real-world scenario using sample Azure cloud pricing.', order: '03', category: 'Use Case' }
 ];
 
 export const SliderRouter: ModuleWithProviders = RouterModule.forChild(sliderAppRoutes);

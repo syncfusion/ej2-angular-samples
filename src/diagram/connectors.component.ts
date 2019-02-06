@@ -3,7 +3,7 @@ import {
     DiagramComponent, NodeModel, HierarchicalTree, ConnectorModel, StackPanel, TextElement, Segments,
     ConnectorConstraints, NodeConstraints, PointPortModel, PortVisibility, BasicShapeModel, LayoutModel
 } from '@syncfusion/ej2-angular-diagrams';
-import { Diagram, SnapConstraints, SnapSettingsModel } from '@syncfusion/ej2-diagrams';
+import { Diagram, SnapConstraints, SnapSettingsModel, randomId } from '@syncfusion/ej2-diagrams';
 import { ChangeEventArgs as CheckBoxChangeEventArgs } from '@syncfusion/ej2-buttons';
 Diagram.Inject(HierarchicalTree);
 
@@ -64,6 +64,7 @@ export class ConnectorDiagramComponent {
     private nodeTemplate(node: NodeModel): StackPanel {
         if (node.id === 'node6') {
             let canvas: StackPanel = new StackPanel();
+            canvas.id = randomId();
             canvas.children = [
                 this.getTextElement('Events', '#a6a1e0'),
                 this.getTextElement('Emails', '#db8ec9'),
@@ -103,6 +104,7 @@ export class ConnectorDiagramComponent {
 
     private getTextElement(text: string, color: string): TextElement {
         let textElement: TextElement = new TextElement();
+        textElement.id = randomId();
         textElement.width = 80;
         textElement.height = 35;
         textElement.content = text;

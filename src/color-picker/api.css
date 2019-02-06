@@ -11,7 +11,7 @@
 }
 
 .highcontrast #api-control h4 {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.64);
 }
 
 .e-bigger #api-control h4 {

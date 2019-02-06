@@ -2,14 +2,14 @@ import { Component, ViewChild } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
 import {
     EventSettingsModel, EventRenderedArgs, ScheduleComponent, DayService, WeekService,
-    WorkWeekService, MonthService, AgendaService, ResizeService
+    WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 import { scheduleData } from './datasource';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'editor-validation.html',
-    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService]
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
 })
 export class EditorValidationComponent {
     @ViewChild('scheduleObj')

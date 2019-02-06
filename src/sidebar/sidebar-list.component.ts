@@ -29,18 +29,18 @@ export class SidebarListComponent {
 
     // open new tab
     newTabClick(): void {
-        document.getElementById('newTab').setAttribute('href', location.href.split('#')[0] + 'samples/sidebar/sidebar-list/index.html');
+        document.getElementById('newTab').setAttribute('href', location.href.split('#')[0] + 'sidebar/sidebar-list/index.html');
     }
     // Listview select event handler
     onSelect(args: SelectEventArgs) {
         this.sidebarInstance.hide();
-        document.getElementsByClassName('content')[0].innerHTML =args.text+ " Page Content";
+        document.getElementsByClassName('textArea')[0].innerHTML =args.text+ " Page Content";
     }
 
-    openClick(): void {
+    openClick() {
         this.sidebarInstance.show();
     }
-    closeClick(): void {
+    closeClick() {
         this.sidebarInstance.hide();
     }
 };

@@ -1,0 +1,53 @@
+<div class="control-section">
+    <ejs-treegrid #treegrid [dataSource]='data' height='350' childMapping='subtasks' [treeColumnIndex]='1' (dataBound)='dataBound()'>
+        <e-columns>
+            <e-column field='ID' headerText='S.NO' width='90' textAlign='Right'></e-column>
+            <e-column field='Name' headerText='Shipment Name' width='170'></e-column>
+            <e-column field='category' headerText='Category' width='230'  textAlign='Right'></e-column>
+            <e-column field='units' headerText='Total Units' width='130' type='number'  textAlign='Right'></e-column>
+            <e-column field='unitPrice' headerText='Unit Price($)' width='130'  type='number' format='C2' textAlign='Right'></e-column>
+            <e-column field='price' headerText='Price($)' width='110' type='number' format='C'  textAlign='Right'></e-column>
+        </e-columns>
+        <e-aggregates >
+                <e-aggregate [showChildSummary]='false'>
+                    <e-columns >
+                        <e-column columnName="category" type="Custom" [customAggregate]="customAggregateFn" >
+                            <ng-template #footerTemplate  let-data>
+                              {{data.Custom}} </ng-template>
+                        </e-column>
+                    </e-columns>
+                </e-aggregate>
+            </e-aggregates>
+    </ejs-treegrid>
+</div>
+<div id="action-description">
+        <p>This sample demonstrates custom aggregate functionality of the TreeGrid. In this sample, the custom aggregate value for the columns “Category” is displayed in column footer with dropdown to 
+            display the count of selected category name.</p>
+    </div>
+    <div id="description">
+            <p>The TreeGrid supports aggregates which will be displayed at the footer and every hierarchy level.
+            The aggregate configurations can be provided by the <code>aggregates</code> property.</p>
+            <p>The built-in aggregates are,</p>
+            <ul>
+                <li><code>Sum</code></li>     
+                <li><code>Average</code></li>     
+                <li><code>Min</code></li>     
+                <li><code>Max</code></li>     
+                <li><code>Count</code></li>     
+                <li><code>TrueCount</code></li>     
+                <li><code>FalseCount</code></li>     
+                <li><code>Custom</code> - Requires the <code>customAggregate</code> property to perform aggregation.
+                </li>     
+            </ul>    
+
+            <p>
+                In this demo, the footerTemplate property shows the custom aggregate value for the columns “Category” in column footer to display the count of category name.
+            </p>
+            <p>Injecting Module:</p>
+
+            <p>TreeGrid component features are segregated into individual feature-wise modules. To use aggregate feature, we need to inject <code>AggregateService</code> into the <code>@NgModule.providers</code> section.</p>  
+            <p>
+                More information about aggregate can be found in this documentation section.
+            </p>
+</div>
+         

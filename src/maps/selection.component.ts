@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Inject, ViewEncapsulation } from '@angular/core';
 import { MapsTheme, Maps, MapsTooltip, ISelectionEventArgs, Selection, Highlight, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
 import { MapAjax } from '@syncfusion/ej2-maps';
@@ -85,10 +85,10 @@ export class MapsSelectionComponent {
 
     public layers: object[] = [
         {
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/usa.json'),
+            shapeData: new MapAjax('./src/maps/usa.json'),
             shapePropertyPath: 'name',
             shapeDataPath: 'State',
-            dataSource: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/election-data.json'),
+            dataSource: new MapAjax('./src/maps/election-data.json'),
             tooltipSettings: {
                 visible: true,
                 valuePath: 'State'
@@ -115,8 +115,7 @@ export class MapsSelectionComponent {
             }
         }
     ];
-
-    constructor() {
-        //code
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = [  'election-data.json', 'usa.json'];
     };
 }

@@ -13,17 +13,15 @@
 <div class="control-section">
     <div style="width: 100%">
         <div class="sb-mobile-palette-bar">
-            <div id="palette-icon" style="float: right;" role="button"  class="e-ddb-icons1 e-toggle-palette"></div>
+            <div id="palette-icon" style="float: right;" role="button" class="e-ddb-icons1 e-toggle-palette"></div>
         </div>
-        <div id="palette-space"  class="sb-mobile-palette" >
-            <ejs-symbolpalette id="symbolpalette" [expandMode]='expandMode' [palettes]='palettes' width="100%" height="700px" [symbolHeight]=60
-                [symbolWidth]=60 [symbolMargin]='symbolMargin' [getSymbolInfo]='getSymbolInfo' [getNodeDefaults]='getSymbolDefaults'>
+        <div id="palette-space" class="sb-mobile-palette">
+            <ejs-symbolpalette id="symbolpalette" [expandMode]='expandMode' [palettes]='palettes' width="100%" height="700px" [symbolHeight]=60 [symbolWidth]=60 [symbolMargin]='symbolMargin' [getSymbolInfo]='getSymbolInfo' [getNodeDefaults]='getSymbolDefaults'>
             </ejs-symbolpalette>
         </div>
         <div id="diagram-space" class="sb-mobile-diagram">
             <div class="content-wrapper">
-                <ejs-diagram #diagram id="diagram" width="100%" height="700px" [snapSettings]='snapSettings' [getConnectorDefaults]='connDefaults'
-                    [getNodeDefaults]='nodeDefaults' dragEnter='dragEnter' (created)="diagramCreate($event)">
+                <ejs-diagram #diagram id="diagram" width="100%" height="700px" [snapSettings]='snapSettings' [getConnectorDefaults]='connDefaults' [getNodeDefaults]='nodeDefaults' dragEnter='dragEnter' (created)="diagramCreate($event)">
                     <e-nodes>
                         <e-node id='NewIdea' [height]=60 [offsetX]=300 [offsetY]=80 [shape]='terminator'>
                             <e-node-annotations>
@@ -149,8 +147,7 @@
     </p>
 
     <p>
-        To easily build flow diagrams, few shapes are predefined and added to symbol palette. You can drag-and-drop predefined shapes
-        into the drawing area. The
+        To easily build flow diagrams, few shapes are predefined and added to symbol palette. You can drag-and-drop predefined shapes into the drawing area. The
         <code>symbols</code> property allows you to add predefined symbols to the palette.
     </p>
 

@@ -1,0 +1,86 @@
+<div class="control-section">
+        <ejs-treegrid [dataSource]='data'  childMapping='subtasks' [treeColumnIndex]='1'allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' [toolbar]='toolbar' (actionBegin)="actionBegin($event)" (actionComplete)="actionComplete($event)">
+            <e-columns>
+                <e-column field='taskID' headerText='Task ID' width='120' textAlign='Right' isPrimaryKey='true' ></e-column>
+                <e-column field='taskName' headerText='Task Name' width='225' ></e-column>
+                <e-column field='startDate' headerText='Start Date' width='150' format="yMd" ></e-column>
+                <e-column field='duration' headerText='Duration' width='90'   textAlign='Right' ></e-column>
+                <e-column field='progress' headerText='Progress' width='90' textAlign='Right' ></e-column>
+            </e-columns>
+            <ng-template #editSettingsTemplate let-data>
+                    <div [formGroup]="taskForm">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <div class="e-float-input e-control-wrapper" [ngClass]="{'e-error': taskID.invalid && (taskID.dirty || taskID.touched)}">
+                                    <input formControlName="taskID" data-msg-containerid='taskIDError' id="taskID" name="taskID" type="text" [attr.disabled]="!data.isAdd ? '' : null">
+                                    <span class="e-float-line"></span>
+                                    <label class="e-float-text e-label-top" for="taskID"> Task ID</label>
+                                </div>
+                                <div id="taskIDError" [style.visibility]='((taskID.invalid && (taskID.dirty || taskID.touched)) || (taskID.invalid && submitClicked))? "visible": "hidden"'>
+                                    <label class="e-error" for="taskID" id="taskID-info" style="display: block;">*Task ID is required</label>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="e-float-input e-control-wrapper" [ngClass]="{'e-error': taskName.invalid && (taskName.dirty || taskName.touched)}">
+                                    <input formControlName="taskName" data-msg-containerid='taskNameError' id="taskName" name="taskName" type="text">
+                                    <span class="e-float-line"></span>
+                                    <label class="e-float-text e-label-top" for="taskName">Task Name</label>
+                                </div>
+                                <div id="taskNameError" [style.visibility]='((taskName.invalid && (taskName.dirty || taskName.touched)) || (taskName.invalid && submitClicked))? "visible": "hidden"'>
+                                    <label class="e-error" for="taskName" id="taskName-info" style="display: block;">*Task Name is required</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <ejs-numerictextbox formControlName="duration" id="duration" placeholder="Duration" format="##" floatLabelType='Always'></ejs-numerictextbox>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <ejs-datepicker id="startDate" formControlName="startDate" placeholder="Start Date" floatLabelType='Always'></ejs-datepicker>
+                                <div id="startDateError" [style.visibility]='((startDate.invalid && (startDate.dirty || startDate.touched)) || (startDate.invalid && submitClicked)) ? "visible": "hidden"'>
+                                    <label class="e-error" for="startDate" id="startDate-info" style="display: block;">*Start Date is required</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <ejs-dropdownlist id="progress" formControlName="progress" [dataSource]='progressDistinctData' [fields]="{text: 'progress', value: 'progress' }" placeholder="Progress" popupHeight='300px' floatLabelType='Always'></ejs-dropdownlist>
+                            </div>
+                        </div>
+                    </div> 
+                </ng-template>
+        </ejs-treegrid>
+    </div>
+    <div id="action-description">
+        <p>
+            This samples demonstrates the TreeGrid Cell Edit template feature. Using Cell Edit Template feature we have rendered the AutoComplete component for “<b>Task Name</b>” column.
+        </p>
+        <ul>
+            <li>Add - To add new record, click Add toolbar button</li>
+            <li>Edit - To edit record, double click a row or click toolbar Edit button after selected a row</li>
+            <li>Delete - To delete record, click toolbar Delete button after selected a row</li>
+            <li>Update,Cancel - You can save or discard changes by click toolbar Update and Cancel button respectively </li>
+        </ul>
+    </div>
+    <div id="description">
+        <p>
+            This sample demonstrates CRUD operations in Grid with using the Template driven Angular Forms. You can perform 
+            CRUD operations as follows
+        </p>
+        <p>
+            In this demo, Angular <code>Reactive</code> Forms is enabled for editing using <code>Dialog</code> Template. We have created and manipulated 
+           <code>FormControl</code> objects in the component class for editing column data. We have used <code>editSettings.mode</code> as <code>Dialog</code> and the 
+            NgTemplate content with <code>editSettingsTemplate</code> as template variable to define the editors. You can start editing by double 
+            clicking a row or clicking on toolbar's <code>Edit</code> button, then the currently selected row will be shown on a dialog with custom elements 
+            and you can change the row values and save edited data to the datasource.
+        </p>
+          <p>Injecting Module:</p>
+    
+          <p>TreeGrid component features are segregated into individual feature-wise modules. To use editing feature, we need to inject <code>EditService</code> into the <code>@NgModule.providers</code> section.</p> 
+        <p>
+        More information about  Edit template can be found in this documentation section.
+        </p>
+    </div>
+       
+       
+   

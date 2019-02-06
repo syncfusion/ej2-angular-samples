@@ -1,13 +1,13 @@
 <div id="action-description">
     <p>
-        This sample visualizes the Olympic medal count in Rio with default column series in the chart. 
-        Data points values are showed by using data label.
+        This sample visualizes the World Population Report with default column series in the chart. Data points values are showed
+        by using data label.
     </p>
 </div>
 <div class="control-section">
     <div class="col-lg-8">
-        <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
-            [tooltip]='tooltip' (load)='load($event)'>
+        <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            [title]='title' [tooltip]='tooltip' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data1' type='Column' xName='x' yName='y' name='All sources'></e-series>
                 <e-series [dataSource]='data2' type='Column' xName='x' yName='y' name='Autos && Light Trucks'></e-series>
@@ -19,26 +19,26 @@
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
                 <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
-                        <tr style="height: 50px">
-                                <td style="width: 60%">
-                                    <div>X Axis:</div>
-                                </td>
-                                <td style="width: 40%;">
-                                    <div>
-                                        <input type="checkbox" (change)='xChange($event)' id="xIndex" checked>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr style="height: 50px">
-                                    <td style="width: 60%">
-                                        <div>Y Axis:</div>
-                                    </td>
-                                    <td style="width: 40%;">
-                                        <div>
-                                            <input type="checkbox" (change)='yChange($event)' id="yIndex" checked>
-                                        </div>
-                                    </td>
-                                </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div>X Axis:</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="checkbox" (change)='xChange($event)' id="xIndex" checked>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div>Y Axis:</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="checkbox" (change)='yChange($event)' id="yIndex" checked>
+                            </div>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -46,10 +46,11 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the column type charts. Column type charts are used for comparing
-        the frequency, count, total or average of data in different categories. You can use <code>border</code>,
-        <code>fill</code> properties to customize the vertical rectangle. <code>dataLabel</code> is used to represent individual
-        data and its value.
+        In this example, you can see how to render and configure the recurrence stripline in chart. Striplines are used to annotate
+        the highlighted region with some notes. You can use
+        <code>border</code>,
+        <code>fill</code>
+        <code>dash-array</code> properties to customize the striplines.
     </p>
     <p>
         Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
@@ -58,11 +59,13 @@
     <p style="font-weight: 500">Injecting Module</p>
     <p>
         Chart component features are segregated into individual feature-wise modules. To use column series, we need to inject
-        <code>ColumnSeries</code> module using <code>Chart.Inject(ColumnSeries)</code> method.
+        <code>Stripline</code> module into the <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the column series can be found in this
-        <a target="_blank" href="http://ej2.syncfusion.com/documentation/chart/api-series.html#type-chartseriestype">documentation section</a>.
+        More information on the stripline recurrence can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/strip-line/#recurrence-stripline">documentation
+            section
+        </a>.
     </p>
 </div>
 <style>

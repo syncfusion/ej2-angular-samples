@@ -1,6 +1,11 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { MapsTheme, Maps, Legend, MapsTooltip, ILoadEventArgs, ITooltipRenderEventArgs } from '@syncfusion/ej2-angular-maps';
+//tslint:disable
+import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
+import { MapsTheme, Maps, Legend, MapsTooltip, ILoadEventArgs, ITooltipRenderEventArgs,LegendPosition, LegendMode } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
+import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
+import { EmitType } from '@syncfusion/ej2-base';
+import { DropDownList } from '@syncfusion/ej2-dropdowns';
+
 
 Maps.Inject(Legend, MapsTooltip);
 
@@ -13,6 +18,8 @@ Maps.Inject(Legend, MapsTooltip);
     encapsulation: ViewEncapsulation.None
 })
 export class MapsLegendComponent {
+ @ViewChild('maps')
+ public maps: Maps;
     public load = (args: ILoadEventArgs) => {
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
@@ -35,10 +42,10 @@ export class MapsLegendComponent {
 
     public layers: object[] = [
         {
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
+            shapeData: new MapAjax('./src/maps/world-map.json'),
             shapeDataPath: 'name',
             shapePropertyPath: 'name',
-            dataSource: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/population-density.json'),
+            dataSource: new MapAjax('./src/maps/population-density.json'),
             tooltipSettings: {
                 visible: true,
                 valuePath: 'name',
@@ -62,12 +69,87 @@ export class MapsLegendComponent {
                     },
                     {
                         from: 500, to: 19000, color: 'rgb(0,51,153)', label: '>500'
+                    },
+                    {
+                        color: null, label: null
                     }
+
                 ]
             }
         }
     ];
-    constructor() {
-        //code
+    ngAfterViewInit(): void {
+        let legendPosition: DropDownList = new DropDownList({
+            index: 0,
+            placeholder: 'Legend Position',
+            width: 110,
+            change: () => {
+                this.maps.legendSettings.position = <LegendPosition>legendPosition.value;
+                if (legendPosition.value === 'Left' || legendPosition.value === 'Right') {
+                    this.maps.legendSettings.orientation = 'Vertical';
+                    if (this.maps.legendSettings.mode === 'Interactive') {
+                        this.maps.legendSettings.height = '70%';
+                        this.maps.legendSettings.width = '10';
+                    } else {
+                        this.maps.legendSettings.height = '';
+                        this.maps.legendSettings.width = '';
+                    }
+                } else {
+                    this.maps.legendSettings.orientation = 'Horizontal';
+                    if (this.maps.legendSettings.mode === 'Interactive') {
+                        this.maps.legendSettings.height = '10';
+                        this.maps.legendSettings.width = '';
+                    }
+                }
+                this.maps.refresh();
+            }
+        });
+        legendPosition.appendTo('#legendPosition');
+        let mode: DropDownList = new DropDownList({
+            index: 0,
+            placeholder: 'Select layoutMode type',
+            width: 100,
+            change: () => {
+                this.maps.legendSettings.mode = <LegendMode>mode.value;
+                if (mode.value === 'Interactive') {
+                    if (this.maps.legendSettings.orientation === 'Horizontal' || this.maps.legendSettings.orientation === 'None') {
+                        this.maps.legendSettings.height = '10';
+                        this.maps.legendSettings.width = '';
+                    } else {
+                        this.maps.legendSettings.height = '70%';
+                        this.maps.legendSettings.width = '10';
+                    }
+                } else {
+                    this.maps.legendSettings.height = '';
+                    this.maps.legendSettings.width = '';
+                }
+                this.maps.refresh();
+            }
+        });
+        mode.appendTo('#legendMode');
+        let opacity: EmitType<CheckBoxChangeEvents>;
+        let highlightCheckBox: CheckBox = new CheckBox(
+        {
+            change: opacity, checked: false
+        },
+        '#opacity');
+        highlightCheckBox.change = opacity = (e: CheckBoxChangeEvents) => {
+            if (e.checked) {
+                debugger;
+                this.maps.layers[0].shapeSettings.colorMapping[5].from = 0;
+                this.maps.layers[0].shapeSettings.colorMapping[5].to = 0;
+                this.maps.layers[0].shapeSettings.colorMapping[5].color = 'lightgrey';
+                this.maps.layers[0].shapeSettings.colorMapping[5].label = 'No Data';
+            } else {
+                this.maps.layers[0].shapeSettings.colorMapping[5].color = null;
+                this.maps.layers[0].shapeSettings.colorMapping[5].label = null;
+                this.maps.layers[0].shapeSettings.colorMapping[5].from = null;
+                this.maps.layers[0].shapeSettings.colorMapping[5].to = null;
+            }
+            this.maps.refresh();
+        };    
+    }
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = [ 'population-density.json','world-map.json'];
     };
 }

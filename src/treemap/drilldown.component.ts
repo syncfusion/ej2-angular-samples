@@ -1,6 +1,6 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
 import { TreeMap, TreeMapTooltip, IDrillStartEventArgs, ITreeMapTooltipRenderEventArgs } from '@syncfusion/ej2-angular-treemap';
-import { DrillDown } from '../treemap/treemap-date/drilldown-sample';
+import { DrillDown } from './drilldown-sample';
 import { ILoadEventArgs, TreeMapTheme } from '@syncfusion/ej2-angular-treemap';
 TreeMap.Inject(TreeMapTooltip);
 
@@ -53,5 +53,8 @@ export class TreemapDrillDownComponent {
         border: object = {
             color: 'black',
             width: 0.5
+        };
+        constructor(@Inject('sourceFiles') private sourceFiles: any) {
+            sourceFiles.files = ['drilldown-sample.ts' ];
         };
 };

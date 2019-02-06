@@ -83,14 +83,6 @@ span.e-label .offer {
     border-radius: 18px;
 }
 
-#cPanel,
-#discount {
-    height: 30px;
-    margin-top: -10px;
-    width: 20px;
-}
-
-
 #cloud-slider-text #value {
     color: #000000;
     font-family: Roboto-Bold;

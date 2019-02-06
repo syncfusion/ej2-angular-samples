@@ -31,7 +31,7 @@ export class AggregationComponent implements OnInit {
         for (let vCnt: number = 0; vCnt < this.pivotGridObj.dataSource.values.length; vCnt++) {
             if (this.pivotGridObj.dataSource.values[vCnt].name === fieldName) {
                 this.pivotGridObj.dataSource.values[vCnt].type = summaryType;
-                isAvail = (<any>this.pivotGridObj.dataSource.values[vCnt]).properties ? false : true;
+                isAvail = true;
             }
         }
         if (isAvail) {
@@ -63,9 +63,9 @@ export class AggregationComponent implements OnInit {
             columnWidth: 140
         } as GridSettings;
 
-        this.dataSource  = {
+        this.dataSource = {
             enableSorting: true,
-            formatSettings: [{ name: 'ProCost', format: 'C0' }, { name: 'PowUnits', format: 'N0' }],
+            formatSettings: [{ name: 'ProCost', format: 'C' }],
             drilledMembers: [{ name: 'EnerType', items: ['Biomass', 'Free Energy'] }],
             columns: [
                 { name: 'EnerType', caption: 'Energy Type' },

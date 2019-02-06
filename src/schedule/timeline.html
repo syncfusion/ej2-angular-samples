@@ -24,7 +24,7 @@
                                 </td>
                                 <td style="width: 70%;">
                                     <div>
-                                        <ejs-datepicker #datepicker [(value)]='selectedDate'></ejs-datepicker>
+                                        <ejs-datepicker #datepicker [(value)]='selectedDate' [showClearButton]=false></ejs-datepicker>
                                     </div>
                                 </td>
                             </tr>
@@ -53,7 +53,7 @@
     <p>The Agenda and MonthAgenda views shares the same layout for both the vertical and timeline views.</p>
     <p>To use any of the timeline views such as day, week and work week in your application, the common
         <code>TimelineViews</code> module needs to be injected into the
-        <code>@NgModule.providers</code> section. For example, to work with the month view on Schedule – it is necessary to inject the Day module like
+        <code>@NgModule.providers</code> section. For example, to work with the month view on Scheduler – it is necessary to inject the Day module like
         <code>providers: [TimelineMonthService]</code> into the
         <code>@NgModule.providers</code> section.</p>
 </div>

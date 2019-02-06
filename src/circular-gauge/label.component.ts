@@ -1,12 +1,14 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-angular-circulargauge';
 import { Position, TickModel } from '@syncfusion/ej2-circulargauge';
+import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { EmitType } from '@syncfusion/ej2-base';
 
 /**
  * Samples for labels
  */
-
+//tslint:disable
 @Component({
     selector: 'control-content',
     templateUrl: 'label.html',
@@ -45,11 +47,17 @@ export class LabelComponent {
         position: 'Inside', color: '#757575', height: 5, width: 2, interval: 10
     };
     public pointers: Object[] = [{
-        value: 145, type: 'RangeBar', roundedCornerRadius: 10,
+        value: 145, type: 'RangeBar', roundedCornerRadius: 10, animation:{enable:false},
         pointerWidth: 10, color: '#8BC34A', radius: '60%'
     }];
     public ticks: DropDownList; public tickPosition: DropDownList; public labelPosition: DropDownList;
     ngOnInit(): void {
+        let showLabel: EmitType<CheckBoxChangeEvents>;
+        let label: CheckBox = new CheckBox(
+            {
+                change: showLabel, checked: false,
+            },
+            '#enable');
         this.ticks = new DropDownList({
             index: 0, width: 120,
             change: () => {
@@ -124,6 +132,11 @@ export class LabelComponent {
                 document.getElementById('labelOffsetValue').innerHTML = 'Label Offset <span>&nbsp;&nbsp;&nbsp;' + value;
                 this.circulargauge.refresh();
             };
+            document.getElementById('enable').onchange = () => {
+                let showLastLabel: boolean = (<HTMLInputElement>document.getElementById('enable')).checked;
+                this.circulargauge.axes[0].showLastLabel = showLastLabel;
+                this.circulargauge.refresh();
+            };  
 
     }
     constructor() {

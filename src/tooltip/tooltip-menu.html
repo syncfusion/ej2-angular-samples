@@ -1,0 +1,34 @@
+<div id="action-description">
+    <p>In this demo, the Tooltip has been customized to show the list of menu items.
+    </p>
+</div>
+
+<div class="control-section">
+    <ejs-tooltip #tooltip target="#toolbar-menu button" (beforeOpen)="onBeforeRender($event)" (created)="created()" showTipPointer="show"
+        width="170" cssClass="e-tooltip-menu-settings" opensOn="Click">
+        <div class="toolbarContainer">
+            <ejs-toolbar id='toolbar-menu' width=387>
+                <e-items>
+                    <e-item prefixIcon='e-copy-icon tb-icons' overflow='Hide' text='Wireless & networks' tooltipText='Wireless & networks'></e-item>
+                    <e-item prefixIcon='e-copy-icon tb-icons' text='Device' overflow='Hide' tooltipText='Device'></e-item>
+                    <e-item prefixIcon='e-copy-icon tb-icons' text='Personal' overflow='Hide' tooltipText='Personal'></e-item>
+                </e-items>
+            </ejs-toolbar>
+        </div>
+
+        <ng-template #content>
+            <ejs-listview #listview [dataSource]='data' id="tooltipMenu-list" [fields]='fields' showIcon=true></ejs-listview>
+        </ng-template>
+    </ejs-tooltip>
+</div>
+
+<div id="description">
+    <p>
+        Tooltip has been integrated with Listview component to display the Tooltip menu. With the help of
+        <a href="https://ej2.syncfusion.com/documentation/tooltip/api-tooltip.html?lang=typescript#beforerender">
+            beforeRender</a> event, dataSource for ListView changed and its instance assigned to
+        <a href="https://ej2.syncfusion.com/documentation/tooltip/api-tooltip.html?lang=typescript#content">
+            content</a> of Tooltip to appear like menu. On clicking the Toolbar items, the corresponding Tooltip menu will
+        be opened.
+    </p>
+</div>

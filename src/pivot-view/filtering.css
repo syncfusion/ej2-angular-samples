@@ -5,6 +5,9 @@
 .e-pivottable .e-static {
     width: 80% !important;
 }
-.e-play-icon::before {
-    content: '\e728';
+.pivotgrid-property-section table tr td:first-child {
+    width: 20%;
+}
+.pivotgrid-property-section {
+    overflow: auto;
 }

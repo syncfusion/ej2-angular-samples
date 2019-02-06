@@ -64,8 +64,8 @@ export class DragdropTreeViewComponent {
     public allowDragAndDrops:boolean = true;
     public id:number=1;
     public onDragStop(args: any): void {
-        let targetEle: any = closest(args.event.target, '.e-droppable');
-        targetEle = targetEle ? targetEle : event.target;
+        let targetEle: any = closest(args.target, '.e-droppable');
+        targetEle = targetEle ? targetEle : args.target;
         // Check the target as ListView or not
         if (targetEle && targetEle.classList.contains('custom-list')) {
            args.cancel = true;

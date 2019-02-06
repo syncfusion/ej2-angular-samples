@@ -1,13 +1,13 @@
 <div id="action-description">
     <p>
-        This sample demonstrates pie chart for mobile browser usage statistics. For pie chart, you can change start angle of chart by <code>Pie Angle</code> in properties panel. Outer radius for pie chart can be changed by <code>Outer Radius</code>. Explode Index and explode radius for chart can be changed by <code>Explode Radius</code> and <code>Explode Index</code>
+        This sample demonstrates pie chart for mobile browser usage statistics. Datalabel shows the Information about the points
     </p>
 </div>
 <div class="control-section">
     <div class="col-md-8">
-        <ejs-accumulationchart id="container" #pie style='display:block;  width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='load($event)'>
+        <ejs-accumulationchart id="container" #pie style='display:block;  width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='load($event)' [enableAnimation]= 'enableAnimation' [center]='center'>
             <e-accumulation-series-collection>
-                <e-accumulation-series name='Browser' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" radius="70%" [dataLabel]="dataLabel" explode=true explodeOffset='10%' [explodeIndex]='0'>
+                <e-accumulation-series name='Browser' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" radius="70%" [dataLabel]="dataLabel" [explode]='explode' explodeOffset='10%' [explodeIndex]='0' >
                 </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
@@ -19,8 +19,7 @@
                 <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
                     <tr style="height: 50px">
                         <td style="width: 30%">
-                            <div>Pie Angle:
-                                <p id="anglevalue" style="font-weight: normal;">0</p>
+                            <div>Pie Angle
                             </div>
                         </td>
                         <td style="width: 70%;">
@@ -28,23 +27,27 @@
                                 <input type="range" name="range-min" value="0" min="0" max="360" (touchmove)='pieangle($event)' (pointermove)='pieangle($event)' (change)='pieangle($event)' autocomplete="off" id="pieangle" style="margin-left: -5px">
                             </div>
                         </td>
+                        <td style="width: 60%;">
+                                <p id="pieangleText" style="font-weight: normal; padding-top: 15px">0</p>
+                        </td>
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 30%">
-                            <div>Outer Radius:
-                                <p id="radius" style="font-weight: normal;">0.8</p>
+                            <div>Outer Radius
                             </div>
                         </td>
                         <td style="width: 70%;">
                             <div data-role="rangeslider">
-                                <input type="range" name="range-min" id="pieradius" value="80" min="0" max="80" (touchmove)='pieradius($event)' (pointermove)='pieradius($event)' (change)='pieradius($event)' autocomplete="off" style="margin-left: -5px">
+                                <input type="range" name="range-min" id="pieradius" value="70" min="0" max="70" (touchmove)='pieradius($event)' (pointermove)='pieradius($event)' (change)='pieradius($event)' autocomplete="off" style="margin-left: -5px">
                             </div>
                         </td>
+                        <td style="width: 60%;">
+                            <p id="pieradiusText" style="font-weight: normal; padding-top: 15px">0.7</p>
+                    </td>
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 30%">
-                            <div>Explode Radius:
-                                <p id="exploderadius" style="font-weight: normal;">0.1</p>
+                            <div>Explode Radius
                             </div>
                         </td>
                         <td style="width: 70%;">
@@ -52,16 +55,55 @@
                                 <input type="range" name="range-min" id="pieexploderadius" value="10" min="0" max="40" (touchmove)='pieexploderadius($event)' (pointermove)='pieexploderadius($event)' (change)='pieexploderadius($event)' autocomplete="off" style="margin-left: -5px">
                             </div>
                         </td>
+                        <td style="width: 60%;">
+                            <p id="pieexploderadiusText" style="font-weight: normal; padding-top: 15px">0.10</p>
+                    </td>
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 30%">
-                            <div>Explode Index:
-                                <p id="explodeindex" style="font-weight: normal;">0</p>
+                            <div>Explode Index
                             </div>
                         </td>
                         <td style="width: 70%;">
                             <div data-role="rangeslider">
                                 <input type="range" name="range-min" id="pieexplodeindex" value="0" min="0" max="6" (touchmove)='pieexplodeindex($event)' (pointermove)='pieexplodeindex($event)' (change)='pieexplodeindex($event)' autocomplete="off" style="margin-left: -5px">
+                            </div>
+                        </td>
+                        <td style="width: 60%;">
+                            <p id="pieexplodeindexText" style="font-weight: normal; padding-top: 15px">0</p>
+                    </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 30%">
+                            <div>
+                                Center X
+                            </div>
+                        </td>
+                        <td style="width: 70%;">
+                            <div data-role="rangeslider">
+                                <input type="range" name="range-min" id="x" value="50" min="0" max="100" style="width:90%" (touchmove)='piecenterx($event)' (pointermove)='piecenterx($event)' (change)='piecenterx($event)' autocomplete="off">
+                            </div>
+                        </td>
+                        <td style="width: 60%;">
+                            <div data-role="rangeslider">
+                                <p id="xvalue" style="font-weight: normal;padding-top:10px;">50%</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 30%">
+                            <div>
+                                Center Y
+                            </div>
+                        </td>
+                        <td style="width: 70%;">
+                            <div data-role="rangeslider">
+                                <input type="range" name="range-min" id="y" value="50" min="0" max="100" style="width:90%" (touchmove)='piecentery($event)' (pointermove)='piecentery($event)' (change)='piecentery($event)' autocomplete="off">
+                            </div>
+                        </td>
+                        <td style="width: 60%;">
+                            <div data-role="rangeslider">
+                                <p id="yvalue" style="font-weight: normal;padding-top:10px;">50%</p>
                             </div>
                         </td>
                     </tr>

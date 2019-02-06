@@ -1,18 +1,21 @@
 import { buttonAppRoutes } from '../button/button.module';
-import { listAppRoutes } from '../list-view/list-view.module';
+import {formValidatorAppRoutes} from '../form-validator/form-validator.module';
+import { listAppRoutes } from '../listview/listview.module';
 import { gridRouteConfig } from '../grid/grid.module';
+import { treegridRouteConfig } from '../treegrid/treegrid.module';
 import { toolbarAppRoutes } from '../toolbar/toolbar.module';
 import { accordionAppRoutes } from '../accordion/accordion.module';
 import { numericAppRoutes } from '../numerictextbox/numerictextbox.module';
 import { diagramAppRoutes } from '../diagram/diagram.module';
-import { datePickerAppRoutes } from '../date-picker/date-picker.module';
-import { dateTimePickerAppRoutes } from '../date-time-picker/date-time-picker.module';
-import { dateRangePickerAppRoutes } from '../date-range-picker/date-range-picker.module';
+import { datePickerAppRoutes } from '../datepicker/datepicker.module';
+import { dateTimePickerAppRoutes } from '../datetimepicker/datetimepicker.module';
+import { dateRangePickerAppRoutes } from '../daterangepicker/daterangepicker.module';
 import { calendarAppRoutes } from '../calendar/calendar.module';
+import {  splitterAppRoutes } from '../splitter/splitter.module';
 import { chartAppRoutes } from '../chart/chart.module';
 import { circulargaugeAppRoutes } from '../circular-gauge/circular-gauge.module';
 import { lineargaugeAppRoutes } from '../linear-gauge/linear-gauge.module';
-import { rangeNavigatorAppRoutes } from '../range-navigator/range-navigator.module';
+import { rangeNavigatorAppRoutes } from '../rangenavigator/rangenavigator.module';
 import { dialogAppRoutes } from '../dialog/dialog.module';
 import { dropdownlistAppRoutes } from '../drop-down-list/drop-down-list.module';
 import { comboboxAppRoutes } from '../combo-box/combo-box.module';
@@ -21,11 +24,12 @@ import { textboxesAppRoutes } from '../textboxes/textboxes.module';
 import { tooltipAppRoutes } from '../tooltip/tooltip.module';
 import { sidebarAppRoutes } from '../sidebar/sidebar.module';
 import { maskedTextBoxAppRoutes } from '../maskedtextbox/maskedtextbox.module';
-import { timePickerAppRoutes } from '../time-picker/time-picker.module';
+import { timePickerAppRoutes } from '../timepicker/timepicker.module';
 import { multiselectAppRoutes } from '../multi-select/multi-select.module';
-import { rteAppRoutes } from '../rte/rte.module';
+import { rteAppRoutes } from '../rich-text-editor/rich-text-editor.module';
 import { tabAppRoutes } from '../tab/tab.module';
 import { contextMenuAppRoutes } from '../context-menu/context-menu.module';
+import { menuAppRoutes } from '../menu/menu.module';
 import { sliderAppRoutes } from '../slider/slider.module';
 import { treeAppRoutes } from '../treeview/treeview.module';
 import { uploaderAppRoutes } from '../uploader/uploader.module';
@@ -42,112 +46,132 @@ import { smithchartAppRoutes } from '../smith-chart/smith-chart.module';
 import { colorPickerAppRoutes } from '../color-picker/color-picker.module';
 import { pivotviewRouteConfig } from '../pivot-view/pivot-view.module';
 import { documentEditorAppRoutes } from '../document-editor/document-editor.module';
+import { chipsAppRoutes } from '../chips/chips.module';
+import { stockChartAppRoutes } from '../stock-chart/stock-chart.module';
+import { pdfViewerAppRoutes } from '../pdfviewer/pdfviewer.module';
+import { inPlaceEditorAppRoutes } from '../inplace-editor/inplace-editor.module';
+import { QueryBuilderAppRoutes } from '../query-builder/query-builder.module';
 
 export let samplesList: any = [
     {
         'name': 'Data Grid', 'category': 'Grids', 'order': '01', 'path': 'grid', 'samples': gridRouteConfig, 'type': 'update','ftName': 'datagrid'
     },
+	{
+        'name': 'TreeGrid', 'category': 'Grids', 'order': '03', 'path': 'treegrid', 'samples': treegridRouteConfig, 'type': 'preview'
+    },
     {
         'name': 'Chart', 'category': 'Datavisualization', 'order': '01', 'path': 'chart', 'samples': chartAppRoutes, "type": "update"
     },
     {
-        'name': 'Diagram', 'category': 'Datavisualization', 'order': '01', 'path': 'diagram', 'samples': diagramAppRoutes, "type": "preview"
+        'name': 'Stock Chart', 'category': 'Datavisualization', 'order': '01', 'path': 'stock-chart', 'samples': stockChartAppRoutes, 'type': 'preview'
     },
     {
-        'name': 'Maps', 'category': 'Datavisualization', 'order': '01', 'path': 'maps', 'samples': mapAppRoutes
+        'name': 'Circular Gauge', 'category': 'Datavisualization', 'order': '01', 'path': 'circular-gauge', 'samples': circulargaugeAppRoutes,  "type": "update", 'ftName': 'circulargauge'
     },
     {
-        'name': 'TreeMap', 'category': 'Datavisualization', 'order': '02', 'path': 'treemap', 'samples': treemapAppRoutes
+        'name': 'Linear Gauge', 'category': 'Datavisualization', 'order': '01', 'path': 'linear-gauge', 'samples': lineargaugeAppRoutes, 'ftName': 'lineargauge'
     },
     {
-        'name': 'HeatMap', 'category': 'Datavisualization', 'order': '01', 'path': 'heatmap', 'samples': heatmapAppRoutes, 'type': 'update', 'ftName': 'heatmap'
+        'name': 'Diagram', 'category': 'Datavisualization', 'order': '01', 'path': 'diagram', 'samples': diagramAppRoutes, "type": "update"
     },
     {
-        'name': 'Circular Gauge', 'category': 'Datavisualization', 'order': '01', 'path': 'circular-gauge', 'samples': circulargaugeAppRoutes, 'type': 'update'
+        'name': 'Heatmap chart', 'category': 'Datavisualization', 'order': '01', 'path': 'heatmap', 'samples': heatmapAppRoutes, 'type': 'update', 'ftName': 'heatmap-chart'
     },
     {
-        'name': 'Linear Gauge', 'category': 'Datavisualization', 'order': '01', 'path': 'linear-gauge', 'samples': lineargaugeAppRoutes
+        'name': 'Maps', 'category': 'Datavisualization', 'order': '01', 'path': 'maps', 'type': 'update', 'samples': mapAppRoutes, 'ftName': 'maps'
     },
     {
-        'name': 'Range Navigator', 'category': 'Datavisualization', 'order': '01', 'path': 'range-navigator', 'samples': rangeNavigatorAppRoutes, "type": "preview"
+        'name': 'Range Selector', 'category': 'Datavisualization', 'order': '01', 'path': 'rangenavigator', 'samples': rangeNavigatorAppRoutes
     },
     {
-        'name': 'Sparkline', 'category': 'Datavisualization', 'order': '02', 'path': 'sparkline', 'samples': sparklineAppRoutes
+        'name': 'Smith Chart', 'category': 'Datavisualization', 'order': '01', 'path': 'smith-chart', 'samples': smithchartAppRoutes, 'ftName': 'smithchart'
     },
     {
-        'name': 'Smith Chart', 'category': 'Datavisualization', 'order': '01', 'path': 'smith-chart', 'samples': smithchartAppRoutes
+        'name': 'Sparkline Charts', 'category': 'Datavisualization', 'order': '02', 'path': 'sparkline', 'type': 'update', 'samples': sparklineAppRoutes, 'ftName': 'sparkline'
     },
     {
-        'name': 'Schedule', 'category': 'Calendar', 'order': '01', 'path': 'schedule', 'samples': scheduleRouteConfig, 'type': 'update', 'ftName': 'scheduler'
+        'name': 'TreeMap', 'category': 'Datavisualization', 'order': '02', 'path': 'treemap', 'type': 'update', 'samples': treemapAppRoutes, 'ftName': 'treemap'
     },
     {
-        'name': 'Calendar', 'category': 'Calendar', 'order': '03', 'path': 'calendar', 'samples': calendarAppRoutes
+        'name': 'Splitter', 'category': 'Layout', 'order': '01', 'path': 'splitter', 'samples': splitterAppRoutes, 'type': 'preview', 'ftName': 'splitter'
     },
     {
-        "name": "AutoComplete", "category": "Editors", "ftName": "autocomplete", 'order': '03', "path": "auto-complete", "samples": autoCompleteAppRoutes
+        'name': 'Scheduler', 'category': 'Calendars', 'order': '01', 'path': 'schedule', 'samples': scheduleRouteConfig, 'type': 'update', 'ftName': 'scheduler'
     },
     {
-        'name': 'Button', 'category': 'Editors', 'order': '03', 'path': 'button', 'samples': buttonAppRoutes, "type": "update"
+        'name': 'Calendar', 'category': 'Calendars', 'order': '03', 'path': 'calendar', 'samples': calendarAppRoutes, 'type': 'update'
     },
     {
-        "name": "ComboBox", "category": "Editors", "ftName": "combobox", 'order': '03', "path": "combo-box", "samples": comboboxAppRoutes
+        "name": "AutoComplete", "category": "Dropdowns", "ftName": "autocomplete", 'order': '03', "path": "auto-complete", "samples": autoCompleteAppRoutes
     },
     {
-        'name': 'DocumentEditor', 'category': 'Editors', 'order': '03', 'path': 'document-editor', 'samples': documentEditorAppRoutes,'ftName': 'document-editor', 'type': 'preview'
+        'name': 'Button', 'category': 'Editors', 'order': '03', 'path': 'button', 'samples': buttonAppRoutes
     },
     {
-        'name': 'DatePicker', 'category': 'Editors', 'order': '03', 'path': 'date-picker', 'samples': datePickerAppRoutes, "type": "update"
+        'name': 'Chips', 'category': 'Editors', 'order': '03', 'path': 'chips', 'samples': chipsAppRoutes, 'type': 'preview'
     },
     {
-        'name': 'DateRangePicker', 'category': 'Editors', 'order': '03', 'path': 'date-range-picker', 'samples': dateRangePickerAppRoutes, "type": "update"
+        "name": "ComboBox", "category": "Dropdowns", "ftName": "combo-box", 'order': '03', "path": "combo-box", "samples": comboboxAppRoutes
     },
     {
-        'name': 'DateTimePicker', 'category': 'Editors', 'order': '03', 'path': 'date-time-picker', 'samples': dateTimePickerAppRoutes, "type": "update"
+         'name': 'DocumentEditor', 'category': 'Editors', 'order': '03', 'path': 'document-editor', 'samples': documentEditorAppRoutes,'ftName': 'document-editor', 'type': 'update'
     },
     {
-        "name": "DropDownList", "category": "Editors", "ftName": "dropdownlist", 'order': '03', "path": "drop-down-list", "samples": dropdownlistAppRoutes
+        'name': 'DatePicker', 'category': 'Calendars', 'order': '03', 'path': 'datepicker', 'samples': datePickerAppRoutes
     },
     {
-        "name": "MultiSelect", "category": "Editors", "ftName": "multiselect", 'order': '03', "path": "multi-select", "samples": multiselectAppRoutes
+        'name': 'DateRangePicker', 'category': 'Calendars', 'order': '03', 'path': 'daterangepicker', 'samples': dateRangePickerAppRoutes
     },
     {
-        'name': 'MaskedTextBox', 'category': 'Editors', 'order': '03', 'path': 'maskedtextbox', 'samples': maskedTextBoxAppRoutes, "ftName" :"maskedtextbox"
+        'name': 'DateTimePicker', 'category': 'Calendars', 'order': '03', 'path': 'datetimepicker', 'samples': dateTimePickerAppRoutes
     },
     {
-        'name': 'Pivot Grid', 'category': 'Grids', 'order': '02', 'path': 'pivot-view', 'samples': pivotviewRouteConfig, "type": "preview"
+        "name": "Dropdown List", "category": "Dropdowns", "ftName": "dropdown-list", 'order': '03', "path": "drop-down-list", "samples": dropdownlistAppRoutes
     },
     {
-        'name': 'NumericTextBox', 'category': 'Editors', 'order': '03', 'path': 'numerictextbox', 'samples': numericAppRoutes, "ftName": "numerictextbox"
+        'name': 'Form Validation', 'category': 'Inputs', 'order': '03', 'path': 'form-validator', 'samples': formValidatorAppRoutes
     },
     {
-        "name": "Slider", "category": "Editors", 'order': '03', "path": "slider", "samples": sliderAppRoutes, "type": "update"
+        "name": "MultiSelect Dropdown", "category": "Dropdowns", "ftName": "multiselect-dropdown", 'order': '03', "path": "multi-select", "samples": multiselectAppRoutes
     },
     {
-        'name': 'TextBoxes', 'category': 'Editors', 'order': '03', 'path': 'textboxes', 'samples': textboxesAppRoutes
+        'name': 'Input Mask', 'category': 'Inputs', 'order': '03', 'path': 'maskedtextbox', 'samples': maskedTextBoxAppRoutes, "ftName" :"maskedtextbox"
     },
     {
-        "name": "TimePicker", "category": "Editors", 'order': '03', "path": "time-picker", "samples": timePickerAppRoutes, "type": "update"
+        'name': 'Pivot Table', 'category': 'Grids', 'order': '02', 'path': 'pivot-view', 'ftName': 'pivot-grid', 'samples': pivotviewRouteConfig,'type' : 'update'
     },
     {
-        "name": "Uploader", "category": "Editors", 'order': '03', "path": "uploader", "samples": uploaderAppRoutes, "type": "update"
+        'name': 'Numeric Textbox', 'category': 'Inputs', 'order': '03', 'path': 'numerictextbox', 'samples': numericAppRoutes, "ftName": "numerictextbox"
     },
     {
-        "name": "Badge", "category": "Notifications", 'order': '05', "path": "badge", "samples": badgeAppRoutes, "type": "preview"
+        "name": "Range Slider", "category": "Inputs", 'order': '03', "path": "slider", "samples": sliderAppRoutes, "ftName" :"slider"
     },
     {
-        "name": "Toast", "category": "Notifications", 'order': '05', "path": "toast", "samples": toastAppRoutes, "type": "preview", "ftName" :"toast"
+        'name': 'TextBox', 'category': 'Inputs', 'order': '03', 'path': 'textboxes', 'samples': textboxesAppRoutes, 'ftName': 'textbox'
     },
     {
-        'name': 'ListView', 'category': 'Layout', 'order': '04', 'path': 'listview', 'samples': listAppRoutes, "type": "update"
+        "name": "TimePicker", "category": "Calendars", 'order': '03', "path": "timepicker", "samples": timePickerAppRoutes
     },
     {
-        'name': 'Dialog', 'category': 'Layout', 'order': '04', 'path': 'dialog', 'samples': dialogAppRoutes, "type": "update"
+        "name": "File Upload", "category": "Inputs", 'order': '03', "path": "uploader", "samples": uploaderAppRoutes, "type": "update", 'ftName': 'file-upload'
     },
     {
-        "name": "RichTextEditor", "category": "Editors", "ftName": "rich-text-editor", 'order': '03', "path": "rte", "samples": rteAppRoutes, "type": "preview"
+        "name": "Badge", "category": "Notifications", 'order': '05', "path": "badge", "samples": badgeAppRoutes, "ftName" :"badge"
     },
     {
-        'name': 'Tooltip', 'category': 'Layout', 'order': '04', 'path': 'tooltip', 'samples': tooltipAppRoutes
+        "name": "Toast", "category": "Notifications", 'order': '05', "path": "toast", "samples": toastAppRoutes, "ftName" :"toast"
+    },
+    {
+        'name': 'ListView', 'category': 'Layout', 'order': '04', 'path': 'listview', 'samples': listAppRoutes, "ftName" :"listview"
+    },
+    {
+        'name': 'Dialog', 'category': 'Layout', 'order': '04', 'path': 'dialog', 'samples': dialogAppRoutes, 'ftName': 'modal-dialog', "type": "update"
+    },
+    {
+        "name": "Rich Text Editor", "category": "Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', "path": "rich-text-editor", "samples": rteAppRoutes, "type": "update"
+    },
+    {
+        'name': 'Tooltip', 'category': 'Layout', 'order': '04', 'path': 'tooltip', 'samples': tooltipAppRoutes, "ftName" :"tooltip"
     },
     {
         'name': 'Card', 'category': 'Layout', 'order': '05', 'path': 'card', 'samples': cardAppRoutes, "ftName" :"card"
@@ -156,24 +180,36 @@ export let samplesList: any = [
         'name': 'Sidebar', 'category': 'Navigation', 'order': '06', 'path': 'sidebar', 'samples': sidebarAppRoutes
     },
     {
-        'name': 'TreeView', 'category': 'Navigation', 'order': '06', 'path': 'treeview', 'samples': treeAppRoutes, "type": "update", "ftName" :"tree-view",
+        'name': 'TreeView', 'category': 'Navigation', 'order': '06', 'path': 'treeview', 'samples': treeAppRoutes, "ftName" :"treeview"
     },
     {
-        'name': 'Tab', 'category': 'Navigation', 'order': '06', 'path': 'tab', 'samples': tabAppRoutes, "ftName" :"tabs"
+        'name': 'Tabs', 'category': 'Navigation', 'order': '06', 'path': 'tab', 'samples': tabAppRoutes, "ftName" :"tabs", "type": "update"
     },
     {
         'name': 'Toolbar', 'category': 'Navigation', 'order': '06', 'path': 'toolbar', 'samples': toolbarAppRoutes, "ftName" :"toolbar"
     },
     {
-        'name': 'ContextMenu', 'category': 'Navigation', 'order': '06', 'path': 'context-menu', 'samples': contextMenuAppRoutes, "ftName" :"context-menu"
+        'name': 'Context Menu', 'category': 'Navigation', 'order': '06', 'path': 'context-menu', 'samples': contextMenuAppRoutes, "ftName": "context-menu"
     },
     {
-        'name': 'Avatar', 'category': 'Layout', 'order': '05', 'path': 'avatar', 'samples': avatarAppRoutes, "type": "preview"
+        'name': 'Menu Bar', 'category': 'Navigation', 'order': '06', 'path': 'menu', 'samples': menuAppRoutes, "ftName": "menu", "type": "update"
+    },
+    {
+        'name': 'Avatar', 'category': 'Layout', 'order': '05', 'path': 'avatar', 'samples': avatarAppRoutes, "ftName" :"avatar"
     },
     {
         'name': 'Accordion', 'category': 'Navigation', 'order': '06', 'path': 'accordion', 'samples': accordionAppRoutes, "ftName" :"accordion"
     },
     {
-        "name": "ColorPicker", "category": "Editors", 'order': '03', "path": "color-picker", "samples": colorPickerAppRoutes, "ftName": "color-picker"
+        "name": "Color Picker", "category": "Inputs", 'order': '03', "path": "color-picker", "samples": colorPickerAppRoutes
+    },
+    {
+        "name": "PDF Viewer", "category": "Viewer", 'order': '07', "path": "pdfviewer", "samples": pdfViewerAppRoutes, "ftName": "pdfviewer", "type": "preview"
+    },
+    {
+        'name': 'In-place Editor', 'category': 'Forms', 'order': '08', 'path': 'inplace-editor', 'samples': inPlaceEditorAppRoutes, "ftName" :"inplace-editor", "type": "preview"
+    },
+    {
+        "name": "Query Builder", "category": "Forms", 'order': '08', "path": "query-builder", "samples": QueryBuilderAppRoutes, "ftName": "query-builder", "type": "preview"
     }
 ];

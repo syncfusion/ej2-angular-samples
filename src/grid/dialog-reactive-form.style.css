@@ -5,3 +5,7 @@
 #ShipAddress{
     resize: vertical;
 }
+:-ms-fullscreen, .e-dialog.e-edit-dialog 
+{
+    max-width: 552px;
+}

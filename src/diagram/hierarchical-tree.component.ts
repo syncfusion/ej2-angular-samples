@@ -32,7 +32,7 @@ export class HierarchyDiagramComponent {
     public data: Object = {
         //sets the fields to bind
         id: 'Name', parentId: 'Category',
-        dataManager: new DataManager(hierarchicalTree as JSON[]),
+        dataManager: new DataManager(hierarchicalTree),
         //binds the data with the nodes
         doBinding: (nodeModel: NodeModel, data: object, diagram: Diagram) => {
             nodeModel.shape = { type: 'Text', content: (data as EmployeeInfo).Name };

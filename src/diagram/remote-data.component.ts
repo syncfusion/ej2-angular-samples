@@ -4,8 +4,11 @@ import {
     DataBinding, HierarchicalTree, TreeInfo, DiagramTools,SnapSettingsModel
 } from '@syncfusion/ej2-diagrams';
 import { DataManager, Query } from '@syncfusion/ej2-data';
-import { DataInfo } from './diagram-data';
 Diagram.Inject(DataBinding, HierarchicalTree);
+
+export interface DataInfo {
+    [key: string]: string;
+}
 
 /**
  * Remote Data binding sample

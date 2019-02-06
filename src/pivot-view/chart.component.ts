@@ -5,7 +5,7 @@ import { extend } from '@syncfusion/ej2-base';
 import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import { Chart, ColumnSeries, LineSeries, Legend, Tooltip, Category, SeriesModel, ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
-import { enableRipple } from '@syncfusion/ej2-base';
+import { enableRipple, Browser, addClass } from '@syncfusion/ej2-base';
 enableRipple(false);
 
 /**
@@ -34,6 +34,9 @@ export class ChartComponent implements OnInit {
 
     /* tslint:disable */
     onChartLoad(): void {
+        if (Browser.isDevice) {
+            addClass([document.getElementById('ddldiv')], 'e-device');
+        }
         if (this.onInit) {
             this.onInit = false;
             this.engineModule = extend({}, this.pivotGridObj.engineModule, null, true) as PivotEngine;

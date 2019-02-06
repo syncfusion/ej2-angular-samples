@@ -3,7 +3,6 @@ import { RouterModule } from '@angular/router';
 import { DefaultTabComponent } from './default.component';
 import { OrientationTabComponent } from './orientation.component';
 import { ResponsiveTabComponent } from './responsive-modes.component';
-import { RTLTabComponent } from './right-to-left.component';
 import { WizardTabComponent } from './wizard.component';
 import { SharedModule } from '../common/shared.module';
 
@@ -14,11 +13,10 @@ import { NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { AutoCompleteAllModule } from '@syncfusion/ej2-angular-dropdowns';
 
 export const tabAppRoutes: Object[] = [
-    { path: ':theme/tab/default', component: DefaultTabComponent, name: 'Default Functionalities', description: 'This demo for Essential JS2 Tab control shows the default functionalities of the Tab.', category: 'Tab' },
-    { path: ':theme/tab/orientation', component: OrientationTabComponent, name: 'Orientation', description: 'This demo for Essential JS2 Tab control shows header orientation of the Tab.', category: 'Tab' },
-    { path: ':theme/tab/responsive-modes', component: ResponsiveTabComponent, name: 'Responsive Modes', description: 'This demo for Essential JS2 Tab control shows responsive modes of the Tab.', category: 'Tab' },
-    { path: ':theme/tab/right-to-left', component: RTLTabComponent, name: 'RTL', description: 'This demo for Essential JS2 Tab control shows RTL mode of the Tab.', category: 'Tab' },
-     { path: ':theme/tab/wizard', component: WizardTabComponent, name: 'Wizard', description: 'This demo for Essential JS2 Tab control shows simple train reservation wizard that enable/disable Tab items based on sequential validation of each Tab content.', category: 'Tab' },
+    { path: ':theme/tab/default', component: DefaultTabComponent, name: 'Default Functionalities', description: 'The sample demonstrates about default functionalities of the Tab component (also known as Tabbed UI) which is navigation component in Angular platform.', category: 'Tabs' },
+    { path: ':theme/tab/orientation', component: OrientationTabComponent, name: 'Orientation', type: 'update', description: 'The sample demonstrates how to customize the orientation of Tab component along with feasibility to customize the Tab header styles in Angular platform.', category: 'Tabs' },
+    { path: ':theme/tab/responsive-modes', component: ResponsiveTabComponent, name: 'Responsive Modes', type: 'update', description: 'The sample illustrates that responsive mode of Tab component that aligns tab items in a  scrollable or popup mode in Angular platform.', category: 'Tabs' },
+    { path: ':theme/tab/wizard', component: WizardTabComponent, name: 'Wizard', description: 'This sample demonstrates how to design a wizard-like application with the sequential action using the Tab component in Angular platform.', category: 'Tabs' }
 ];
 
 export const tabRouter: ModuleWithProviders = RouterModule.forChild(tabAppRoutes);
@@ -29,7 +27,6 @@ export const tabRouter: ModuleWithProviders = RouterModule.forChild(tabAppRoutes
         DefaultTabComponent,
         OrientationTabComponent,
         ResponsiveTabComponent,
-        RTLTabComponent,
         WizardTabComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

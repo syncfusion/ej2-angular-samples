@@ -43,7 +43,8 @@ export class DefaultController  {
     }
     @HostListener('document:click', ['$event'])
     documentClick: EmitType<Object> = (e: MouseEvent) => {
-        if (e.target !== this.btnEleShow.nativeElement && this.toastObj.target === document.body) {
+        let showButton: HTMLElement = document.getElementById('toastBtnShow');
+        if (e.target !== showButton && this.toastObj.target === document.body) {
             this.toastObj.hide('All');
         }
     }

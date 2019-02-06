@@ -1203,6 +1203,64 @@ export class SampleDataSource {
         [48, 49, 50, 51, 52],
         [52, 54, 56, 56, 57],
     ];
+    public multiLevelLabelData: object = [
+        [52, 65, 67, 45, 37, 52,32, 76, 60, 64, 82, 91],
+        [68, 52, 63, 51, 30, 51,51, 81, 70, 60, 88, 80],
+        [60, 50, 42, 53, 66, 70,41, 69, 76, 74, 86, 97],
+        [66, 64, 46, 40, 47, 41, 45, 76, 83, 69, 92,84],
+        [65, 42, 58, 32, 36, 44,49, 79, 83, 69, 83, 93],
+        [54, 46, 61, 46, 40, 39,41, 69, 61, 84, 84, 87],
+        [48, 46, 61, 47, 49, 41,41, 67, 78, 83, 98, 87],
+        [69, 52, 41, 44, 41, 52,46, 71, 63, 84, 83, 91],
+        [50, 59, 44, 43, 27, 42,26, 64, 76, 65, 81, 86],
+        [47, 49, 66, 53, 50, 34,31, 79, 78, 79, 89, 95],
+        [61, 40, 62, 26, 34, 54,56, 74, 83, 78, 95, 98]
+       ];
+    public cellSeletionData: object = [
+        [2.9, 5.2, 3.4, 5.6, 4.4],
+        [6.6, 4.8, 8, 3.9, 6.5],
+        [5.1, 4.6, 5.4, 3.9, 4.3],
+        [5.2, 4.3, 3.9, 6.2, 6.4],
+        [7, 3, 1.9, 5.9, 3.5],
+        [7.8, 5.9, 3.9, 4.3, 4.3],
+        [6.5, 4.3, 3.9, 5.2, 3.9]];
+    public chartData: object = [
+        {
+            type: 'Column', xName: 'x', width: 2, yName: 'y',name:'Cereals', 
+            dataSource: [{ x: '2014', y: 2.9 }, { x: '2015', y: 5.2 }, { x: '2016', y: 3.4 },{ x: '2017', y: 5.6 },{ x: '2018', y: 4.4 }],
+            marker: { dataLabel: { visible: false } }
+        },
+        {
+            type: 'Column', xName: 'x', width: 2, yName: 'y',name:'Meat', 
+            dataSource: [{ x: '2014', y: 6.6 }, { x: '2015', y: 4.8 }, { x: '2016', y: 8 },{ x: '2017', y: 3.9 },{ x: '2018', y: 6.5 }],
+            marker: { dataLabel: { visible: false } }
+        },
+        {
+            type: 'Column', xName: 'x', width: 2, yName: 'y',name:'Spices', 
+            dataSource: [{ x: '2014', y: 5.1 }, { x: '2015', y: 4.6 }, { x: '2016', y: 5.4 },{ x: '2017', y: 3.9 },{ x: '2018', y: 4.3 }],
+            marker: { dataLabel: { visible: false } }
+        },
+        {
+            type: 'Column', xName: 'x', width: 2, yName: 'y',name:'Tea',
+            dataSource: [{ x: '2014', y: 5.2 }, { x: '2015', y: 4.3 }, { x: '2016', y: 3.9 },{ x: '2017', y: 6.2 },{ x: '2018', y: 6.4 }],
+            marker: { dataLabel: { visible: false } }
+        },
+        {
+            type: 'Column', xName: 'x', width: 2, yName: 'y',name:'Edible Oil',
+            dataSource: [{ x: '2014', y: 7 }, { x: '2015', y: 3 }, { x: '2016', y: 1.9 },{ x: '2017', y: 5.9 },{ x: '2018', y: 3.5 }],
+            marker: { dataLabel: { visible: false } }
+        },
+        {
+            type: 'Column', xName: 'x', width: 2, yName: 'y',name:'Dairy Products',
+            dataSource: [{ x: '2014', y: 7.8 }, { x: '2015', y: 5.9 }, { x: '2016', y: 3.9 },{ x: '2017', y: 4.3 },{ x: '2018', y: 4.5 }],
+            marker: { dataLabel: { visible: false } }
+        },
+        {
+            type: 'Column', xName: 'x', width: 2, yName: 'y',name:'Wheat',
+            dataSource: [{ x: '2014', y: 6.5 }, { x: '2015', y: 4.3 }, { x: '2016', y: 3.9 },{ x: '2017', y: 5.2 },{ x: '2018', y: 3.9 }],
+            marker: { dataLabel: { visible: false } }
+        }
+    ];
     constructor() {
         /**
          * No code to execute

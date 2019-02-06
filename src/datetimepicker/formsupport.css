@@ -1,0 +1,25 @@
+.box-form {
+    border: 1px solid #D7D7D7;
+    height:250px;
+}
+table.box-table td {
+    padding-top: 10px;
+}
+.highcontrast .box-form {
+    background: #000000;
+    border-color: #969696;
+}
+table.box-table td.formtext {
+    color:#8a2be2;
+}
+.highcontrast table.box-table td.formtext {
+    color:#f8fc08;
+}
+#formId{
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+.datetime-container{
+    margin-bottom: 15px; 
+}

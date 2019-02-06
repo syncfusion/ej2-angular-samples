@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ViewEncapsulation, OnInit, Inject } from '@angular/core';
 import { EmitType, detach } from '@syncfusion/ej2-base';
 import { UploaderComponent, RemovingEventArgs } from '@syncfusion/ej2-angular-inputs';
 
@@ -88,4 +88,7 @@ export class CustomDropAreaComponent implements OnInit {
         args.postRawFile = false;
     }
 
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['upload-save-action.cs', 'upload-remove-action.cs'];
+    }
 };

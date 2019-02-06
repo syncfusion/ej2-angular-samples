@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { MapsTheme, Maps, Zoom, Legend, ProjectionType, MapsTooltip, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
@@ -38,7 +38,7 @@ export class MapsProjectionComponent {
 
     public layers: object[] =  [
         {
-            shapeData:new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
+            shapeData:new MapAjax('./src/maps/world-map.json'),
             shapeDataPath: 'Country',
             shapePropertyPath: 'name',
             dataSource : [
@@ -88,8 +88,8 @@ export class MapsProjectionComponent {
         });
         projection.appendTo('#projectiontype');
     }
-    constructor() {
-        
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = [ 'world-map.json'];
     };
 
 }

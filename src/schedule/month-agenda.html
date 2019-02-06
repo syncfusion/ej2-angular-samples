@@ -1,6 +1,6 @@
 <div class="control-section">
     <div class="content-wrapper schedule-wrapper">
-        <ejs-schedule width='100%' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" [currentView]="currentView">
+        <ejs-schedule width='100%' height='510px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" [currentView]="currentView">
             <e-views>
                 <e-view option="MonthAgenda"></e-view>
             </e-views>
@@ -15,7 +15,7 @@
 </div>
 <div id="description">
     <p>
-        In this demo, the active view of Schedule is set to
+        In this demo, the active view of Scheduler is set to
         <code>MonthAgenda</code> and no other view options are provided to
         <code>views</code> property. This view is designed by considering the combination of both the calendar and agenda layout together,
         so that whenever a particular date is selected – the events belonging to that date will be displayed on the event
@@ -29,7 +29,7 @@
     <p>
         <strong>Module Injection</strong>
     </p>
-    <p>To work with Month Agenda view on Schedule – it is necessary to inject the MonthAgendaService like
+    <p>To work with Month Agenda view on Scheduler – it is necessary to inject the MonthAgendaService like
         <code>providers: [MonthAgendaService]</code> into the
         <code>@NgModule.providers</code> section.
     </p>

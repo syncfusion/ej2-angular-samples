@@ -1,0 +1,26 @@
+<div class="control-section">
+    <ejs-treegrid [dataSource]='data' allowPaging='true' idMapping='TaskID' parentIdMapping='parentID' [treeColumnIndex]='1'>
+        <e-columns>
+            <e-column field='TaskID' headerText='Task ID' width='90' textAlign='Right'></e-column>
+            <e-column field='TaskName' headerText='Task Name' width='170'></e-column>
+            <e-column field='StartDate' headerText='Start Date' width='130' format="yMd" textAlign='Right'></e-column>
+            <e-column field='EndDate' headerText='End Date' width='130' format="yMd" textAlign='Right'></e-column>
+            <e-column field='Progress' headerText='Progress' width='100' textAlign='Right'></e-column>
+        </e-columns>
+    </ejs-treegrid>
+</div>
+    <div id="action-description">
+        <p>This sample demonstrates the way of binding self-referential flat data to TreeGrid component.
+        </p>
+    </div>
+    <div id="description">
+        <p>TreeGrid can be bound either to local or remote data services. 
+            The <code>dataSource
+                </code> property can be assigned either with the array of JavaScript objects or instance of <code>DataManager</code>.</p>
+                <p>In this demo, the array of self-referential flat data with parent ID is assigned as the data source to the TreeGrid.</p>
+                <p>
+                    More information on the data binding can be found in the documentation section.
+                </p>
+    </div>
+    
+    

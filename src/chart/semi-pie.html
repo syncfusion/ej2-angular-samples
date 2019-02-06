@@ -5,9 +5,9 @@
 </div>
 <div class="control-section">
     <div class="col-md-8">
-        <ejs-accumulationchart id='container' #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='load($event)'>
+        <ejs-accumulationchart id='container' #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='load($event)' [enableAnimation]="enableAnimation">
             <e-accumulation-series-collection>
-                <e-accumulation-series name='Agricultural' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%" radius="90%" [explode]="explode" [dataLabel]="dataLabel">
+                <e-accumulation-series name='Agricultural' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%" radius="90%" [explode]="explode" [dataLabel]="dataLabel" >
                 </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
@@ -19,39 +19,45 @@
                 <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
                     <tr style="height: 50px">
                         <td style="width: 60%">
-                            <div>Start Angle:
-                                <p id="startangle" style="font-weight: normal;">270</p>
+                            <div>Start Angle
                             </div>
                         </td>
                         <td style="width: 40%;">
                             <div data-role="rangeslider">
-                                <input type="range" name="range-min" id="range-min" value="270" min="0" max="360" (mousemove)='startangle($event)' (touchmove)='startangle($event)' (change)='startangle($event)' autocomplete="off" style="width:90%">
+                                <input type="range" name="range-min" id="range-min" value="270" min="0" max="360" (touchmove)='startangle($event)' (pointermove)='startangle($event)' (change)='startangle($event)' autocomplete="off" style="width:90%">
                             </div>
                         </td>
+                        <td style="width: 30%;">
+                            <p id="range-minText" style="font-weight: normal; padding-top: 15px">270</p>
+                    </td>
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 60%">
-                            <div>End Angle:
-                                <p id="endangle" style="font-weight: normal;">90</p>
+                            <div>End Angle
                             </div>
                         </td>
                         <td style="width: 40%;">
                             <div data-role="rangeslider">
-                                <input type="range" name="range-min" id="range-max" value="90" min="0" max="360" (mousemove)='endangle($event)' (touchmove)='endangle($event)' (change)='endangle($event)' autocomplete="off" style="width:90%">
+                                <input type="range" name="range-min" id="range-max" value="90" min="0" max="360" (touchmove)='endangle($event)' (pointermove)='endangle($event)' (change)='endangle($event)' autocomplete="off" style="width:90%">
                             </div>
                         </td>
+                        <td style="width: 30%;">
+                            <p id="range-maxText" style="font-weight: normal; padding-top: 15px">90</p>
+                    </td>
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 60%">
-                            <div>Inner Radius:
-                                <p id="innerradius" style="font-weight: normal;">0.40</p>
+                            <div>Inner Radius
                             </div>
                         </td>
                         <td style="width: 40%;">
                             <div data-role="rangeslider">
-                                <input type="range" name="innerRadius" id="inner-radius" value="40" min="0" max="50" (mousemove)='onChange($event)' (touchmove)='onChange($event)' (change)='onChange($event)' autocomplete="off" style="width:90%">
+                                <input type="range" name="innerRadius" id="inner-radius" value="40" min="0" max="50" (touchmove)='onChange($event)' (pointermove)='onChange($event)' (change)='onChange($event)' autocomplete="off" style="width:90%">
                             </div>
                         </td>
+                        <td style="width: 30%;">
+                            <p id="inner-radiusText" style="font-weight: normal; padding-top: 15px">40</p>
+                    </td>
                     </tr>
                 </table>
             </div>

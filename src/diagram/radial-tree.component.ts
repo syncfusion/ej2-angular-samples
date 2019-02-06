@@ -5,8 +5,12 @@ import {
     NodeConstraints, DataBinding, RadialTree, SnapConstraints, ZoomOptions
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import { radialTree, DataInfo } from './diagram-data';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
+import { radialTree } from './diagram-data';
+
+export interface DataInfo {
+    [key: string]: string;
+}
 Diagram.Inject(DataBinding, RadialTree);
 
 /**
@@ -25,7 +29,7 @@ export class RadialTreeDiagramComponent {
     public data: Object = {
         //sets the fields to bind
         id: 'Id', parentId: 'ReportingPerson',
-        dataManager: new DataManager(radialTree as JSON[]),
+        dataManager: new DataManager(radialTree),
         //binds the data with the nodes
         doBinding: (nodeModel: NodeModel, data: DataInfo, diagram: Diagram) => {
             nodeModel.annotations = [{

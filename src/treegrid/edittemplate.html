@@ -1,0 +1,36 @@
+<div class="control-section">
+       <ejs-treegrid #treegrid [dataSource]='data' height='350' childMapping='subtasks' [treeColumnIndex]='1'   [editSettings]='editSettings' [toolbar]='toolbar' [validationrules]='validationRules' [edit]='edit'>
+           <e-columns>
+                   <e-column field='taskID' headerText='Task ID' width='70' isPrimaryKey='true' textAlign='Right' [edit]='numericParams'  [validationRules]='taskidrules'></e-column>
+                   <e-column field='taskName' headerText='Task Name' width='200' [validationRules]='tasknamerules' [edit]='dpParams' ></e-column>
+                   <e-column field='startDate' headerText='Start Date' width='120' format="yMd" editType='datepickeredit' textAlign='Right' [validationRules]='startdaterules'></e-column>
+                   <e-column field='duration' headerText='Duration' width='80' editType='numericedit' [edit]='numericParams' textAlign='Right' [validationRules]='durationrules'></e-column>
+                   <e-column field='progress' headerText='Progress' width='80' editType='numericedit' [edit]='numericParams' textAlign='Right' [validationRules]='progressrules'></e-column>
+                   <e-column field='approved' headerText='Approved' width='80' editType='booleanedit' displayAsCheckBox='true' textAlign='Right'></e-column>
+           </e-columns>
+       </ejs-treegrid>
+   </div>
+   <div id="action-description">
+    <p>
+        This samples demonstrates the TreeGrid Cell Edit template feature. Using Cell Edit Template feature we have rendered the AutoComplete component for “<b>Task Name</b>” column.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The  edit template is used to add a custom component for a particular column by invoking the following functions:
+    </p>
+    <ul>
+        <li><code>create</code> - It is used to create the element at the time of initialization.</li>
+        <li><code>write</code> - It is used to create the custom component or assign default value at the time of editing.</li>
+        <li><code>read</code> - It is used to read the value from the component at the time of save.</li>
+        <li><code>destroy</code> - It is used to destroy the component.</li>
+    </ul>
+    <p>
+        In this demo, we have rendered the AutoComplete component for “Task Name” column of TreeGrid using <code>edit</code> property.
+    </p>
+    <p>
+    <br/> More information about  Edit template can be found in this documentation section.
+    </p>
+</div>
+   
+   

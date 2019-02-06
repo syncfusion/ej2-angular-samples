@@ -142,7 +142,7 @@ export class CustomizationComponent {
             }
             this.usageGauge.appendTo('#customization-container');
             this.isUsage = true;
-            let element: HTMLSelectElement = <HTMLSelectElement>document.getElementById('currentValue');
+            let element: HTMLInputElement = <HTMLInputElement>document.getElementById('currentValue');
             let pointElement: HTMLSelectElement = <HTMLSelectElement>document.getElementById('pointColor');
             element.min = '0.5';
             element.max = '100';
@@ -175,7 +175,7 @@ export class CustomizationComponent {
             let existElement: HTMLSelectElement = <HTMLSelectElement>document.getElementById('usage');
             currentElement.style.border = '2px solid #E0E0E0';
             existElement.style.border = '';
-            let element: HTMLSelectElement = <HTMLSelectElement>document.getElementById('currentValue');
+            let element: HTMLInputElement = <HTMLInputElement>document.getElementById('currentValue');
             let pointElement: HTMLSelectElement = <HTMLSelectElement>document.getElementById('pointColor');
             pointElement.className = 'e-enabled';
             this.pointerColor.enabled = true;

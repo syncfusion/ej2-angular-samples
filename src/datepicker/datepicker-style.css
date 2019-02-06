@@ -1,0 +1,136 @@
+#control_wrapper {
+    max-width: 246px;
+    margin: 30px auto;
+    padding-top: 50px;
+}
+#property.property-section, #property.property-section{
+    margin: 30px auto;
+    padding-top: 50px;
+}
+.control-section {
+    margin: 25px auto;
+}
+
+#control_wrapper #container {
+    min-height: 300px;
+}
+
+.e-bigger #control_wrapper #container {
+    min-height: 380px;
+}
+
+.e-customStyle span.e-icons.highlight {
+    margin-top: -13px;
+    display: block;
+    margin-left: 4px;
+}
+
+.e-customStyle span.e-icons.highlight,
+.e-customStyle span.e-icons.highlight:before {
+    color: rgb(0, 0, 255);
+}
+
+.e-customStyle .e-other-month span.e-icons.highlight:before {
+    content: "";
+}
+
+.e-customStyle span.e-icons.highlight:before {
+    content: "\e865";
+    vertical-align: middle;
+    margin-right: 3px;
+    font-size: 4px;
+    position: relative;
+    top: -1px;
+    font-weight: normal;
+}
+
+.e-customStyle .e-selected span.e-icons.highlight:before {
+    color: #fff;
+}
+
+.e-customStyle span.e-icons.highlight {
+    margin-top: -11px;
+    display: block;
+    margin-left: 4px;
+}
+
+.e-customStyle .e-calendar .e-content span.special,
+.e-customStyle .e-calendar .e-content span.daycell {
+    font-weight: bold;
+}
+
+.e-customStyle span.e-icons.highlight,
+.e-customStyle span.e-icons.highlight:before {
+    color: rgb(0, 0, 255);
+}
+
+.highcontrast .e-customStyle td.birthday span.e-icons.highlight,
+.highcontrast .e-customStyle td.birthday span.e-icons.highlight:before {
+    color: #ff6161;
+}
+
+.highcontrast .e-customStyle td.farewell span.e-icons.highlight,
+.highcontrast .e-customStyle td.farewell span.e-icons.highlight::before {
+    color: #2bc700;
+}
+
+.highcontrast .e-customStyle td.vacation span.e-icons.highlight,
+.highcontrast .e-customStyle td.vacation span.e-icons.highlight::before {
+    color: #ff7d1a;
+}
+
+.form-group .content-wrapper {
+    float: left;
+    padding: 0 10px;
+}
+
+.property-panel-content {
+    padding: 0 10px 10px 0;
+}
+
+.content {
+    width: 43%;
+    margin: 0 auto;
+    min-width: 185px;
+    padding: 20px 0px;
+}
+
+.control-label {
+    padding: 24px 0px 0px 0px;
+    font-size: 12px;
+    opacity: 0.54;
+}
+
+.e-calendar.e-rtl{
+    max-width: 332px;
+}
+
+.e-bigger .e-calendar.e-rtl {
+    max-width: 332px;
+}
+
+.e-customStyle .e-calendar .e-content span.special {
+    border-radius: 50%;
+}
+
+.e-customStyle span.special.e-day.birthday {
+    color: orangered;
+}
+
+.e-customStyle span.special.e-day.farewell {
+    color: rgba(0, 0, 255, 1);
+}
+
+.e-customStyle span.special.e-day.vacation {
+    color: rgba(60, 118, 61, 1);
+}
+
+#dateformats{
+    display: block;
+    width:200px;
+}
+
+#cultures {
+    display: block;
+    width:100px;
+}

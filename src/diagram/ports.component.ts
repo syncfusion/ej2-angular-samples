@@ -5,13 +5,15 @@ import {
   PortShapes, ISelectionChangeEventArgs, Node
 } from '@syncfusion/ej2-angular-diagrams';
 import {
-  DropDownListComponent, MultiSelectComponent, MultiSelectChangeEventArgs, ChangeEventArgs as DropDownChangeEventArgs,
-  ChangeEventArgs
+  DropDownListComponent, MultiSelectComponent, MultiSelect, MultiSelectChangeEventArgs, ChangeEventArgs as DropDownChangeEventArgs,
+  ChangeEventArgs,
+  CheckBoxSelection
 } from '@syncfusion/ej2-angular-dropdowns';
 import {
   ColorPickerComponent, NumericTextBoxComponent,
   ChangeEventArgs as NumericChangeEventArgs, ColorPickerEventArgs
 } from '@syncfusion/ej2-angular-inputs';
+MultiSelect.Inject(CheckBoxSelection);
 
 /**
  * Sample for Ports

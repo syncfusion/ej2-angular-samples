@@ -20,6 +20,13 @@ background: #000000;
 #reactive .form-group .upload-area {
 width: 100%;
 }
+.fabric #reactive .form-group .upload-area {
+  background: transparent;
+}
+
+.bootstrap #reactive .form-group .upload-area input, .fabric #reactive .form-group .upload-area input {
+  background: #ffffff;
+}
 .e-error {
 padding-top:3px;
 }

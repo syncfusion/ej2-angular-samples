@@ -1,14 +1,14 @@
 import { Component, ViewChild, Inject, ViewEncapsulation } from '@angular/core';
 import { holidayData, birthdayData, companyData, personalData } from './datasource';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
-import { ScheduleComponent, EventSettingsModel, GroupModel, MonthService, TimelineViewsService, TimelineMonthService, ResizeService } from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, EventSettingsModel, GroupModel, MonthService, TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'add-remove-resources.html',
     styleUrls: ['add-remove-resources.style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [MonthService, TimelineViewsService, TimelineMonthService, ResizeService]
+    providers: [MonthService, TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService]
 })
 export class AddRemoveResourcesComponent {
     public calendarCollections: Object[] = [

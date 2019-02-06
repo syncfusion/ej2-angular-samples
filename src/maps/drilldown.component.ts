@@ -1,12 +1,12 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
 import { MapsTheme, Maps, shapeSelected, IShapeSelectedEventArgs, Highlight,
-         MapsTooltip, Marker, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
+         MapsTooltip, Marker, ILoadEventArgs, ILoadedEventArgs } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
 
 Maps.Inject(Highlight, MapsTooltip, Marker );
 
 export interface ShapeData { continent?: string; }
-
+let touchmove: boolean;
 /**
  * Drilldown sample
  */
@@ -18,16 +18,20 @@ export interface ShapeData { continent?: string; }
 export class MapsDrilldownComponent {
     @ViewChild('maps')
     public maps: Maps;
-
     public load = (args: ILoadEventArgs) => { 
         let theme: string = location.hash.split('/')[1]; 
         theme = theme ? theme : 'Material'; 
         args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() + theme.slice(1));
-    }
-    
+    };
+    public loaded= (args: ILoadedEventArgs) => {
+        let mapsSVG: HTMLElement = document.getElementById('mapdrilldown_svg') as HTMLElement;
+        if (mapsSVG) {
+            mapsSVG.addEventListener('touchmove', (e: MouseEvent) => { touchmove = true; }, false);
+        }
+    };
     public shapeSelected = (args: IShapeSelectedEventArgs) : void => { 
         let shape: string = (args.shapeData as ShapeData).continent; 
-        
+        if (this.maps.baseLayerIndex === 0 && !touchmove) {
         if (shape === 'Africa') { 
             this.maps.baseLayerIndex = 1; 
             this.maps.refresh(); 
@@ -58,7 +62,8 @@ export class MapsDrilldownComponent {
         (<HTMLElement>document.getElementById('text')).innerHTML = shape;
         (<HTMLElement>document.getElementById('symbol')).style.visibility = 'visible';
     };
-    
+    touchmove = false;
+}
     public zoomSettings: object = { enable: false };
     
     public layers: object[] = [
@@ -66,8 +71,8 @@ export class MapsDrilldownComponent {
             layerType: 'Geometry',
             shapePropertyPath: 'continent',
             shapeDataPath: 'continent',
-            dataSource:  new MapAjax(location.origin + location.pathname + 'src/maps/map-data/default-datasource.json'),
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
+            dataSource:  new MapAjax('./src/maps/default-datasource.json'),
+            shapeData: new MapAjax('./src/maps/world-map.json'),
             shapeSettings: {
                 colorValuePath: 'drillColor'
             },
@@ -137,7 +142,7 @@ export class MapsDrilldownComponent {
         },
         {
             layerType: 'Geometry',
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/africa.json'),
+            shapeData: new MapAjax('./src/maps/africa.json'),
             shapeSettings: {
                 fill: '#80306A'
             },
@@ -152,7 +157,7 @@ export class MapsDrilldownComponent {
         },
         {
             layerType: 'Geometry',
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/europe.json'),
+            shapeData: new MapAjax('./src/maps/europe.json'),
             shapeSettings: {
                 fill: '#622D6C'
             },
@@ -167,7 +172,7 @@ export class MapsDrilldownComponent {
         },
         {
             layerType: 'Geometry',
-            shapeData:new MapAjax(location.origin + location.pathname + 'src/maps/map-data/asia.json'),
+            shapeData:new MapAjax('./src/maps/asia.json'),
             shapeSettings: {
                 fill: '#462A6D'
             },
@@ -182,7 +187,7 @@ export class MapsDrilldownComponent {
         },
         {
             layerType: 'Geometry',
-            shapeData:new MapAjax(location.origin + location.pathname + 'src/maps/map-data/north-america.json'),
+            shapeData:new MapAjax('./src/maps/north-america.json'),
             shapeSettings: {
                 fill: '#C13664'
             },
@@ -197,7 +202,7 @@ export class MapsDrilldownComponent {
         },
         {
             layerType: 'Geometry',
-            shapeData:  new MapAjax(location.origin + location.pathname + 'src/maps/map-data/south-america.json'),
+            shapeData:  new MapAjax('./src/maps/south-america.json'),
             shapeSettings: {
                 fill: '#9C3367'
             },
@@ -212,7 +217,7 @@ export class MapsDrilldownComponent {
         },
         {
             layerType: 'Geometry',
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/oceania.json'),
+            shapeData: new MapAjax('./src/maps/oceania.json'),
             shapeSettings: {
                 fill: '#2A2870'
             },
@@ -240,8 +245,9 @@ export class MapsDrilldownComponent {
         };
     }
     
-    constructor() {
-        
-    }
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['default-datasource.json', 'world-map.json', 'africa.json', 'europe.json',
+         'asia.json', 'south-america.json', 'north-america.json', 'oceania.json'   ];
+    };
 
 }

@@ -47,7 +47,7 @@
 					<tr id="button-control" style="height: 50px" align='center'>
                         <td align='center' colspan="2">
                             <div>
-                                <button ejs-button cssClass="e-flat" iconCss='e-icons e-play-icon' (click)='onClick($event)' style="text-transform:none !important" id="togglebtn">EXPORT</button>
+                                <button ejs-button cssClass= 'e-info' isPrimary= true (click)='onClick($event)' style="width: 80px;" content="Export" id="togglebtn">EXPORT</button>
                             </div>
                         </td>
                     </tr>
@@ -66,6 +66,7 @@
     #button-control {
         width: 100%;
         text-align: center;
+        text-transform:none !important;
     }
     
     #control-container {

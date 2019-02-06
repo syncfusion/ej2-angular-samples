@@ -19,14 +19,14 @@ export class DefaultSidebarComponent {
 
     // open new tab
     newTabClick(): void {
-        document.getElementById('newTab').setAttribute('href', location.href.split('#')[0] + 'samples/sidebar/default/index.html');
+        document.getElementById('newTab').setAttribute('href', location.href.split('#')[0] + 'sidebar/default/index.html');
     }
     positionChange(args: any) {
-        this.sidebar.position = args.event.target.id == "left" ? "Left" : "Right";
-        if(args.event.target.id == "right"){
+        this.sidebar.position = args.value == "left" ? "Left" : "Right";
+        if(args.value == "right"){
             document.getElementById("hamburger").className += " e-rtl";
         }
-        if(args.event.target.id == "left"){
+        if(args.value == "left"){
             document.getElementById("hamburger").classList.remove("e-rtl");
         }
     }
@@ -38,5 +38,9 @@ export class DefaultSidebarComponent {
     }
     openClick() {
         this.sidebar.show();
+    }
+    //To hide the sidebar element skelton during the page load by setting the visibity style when the control is created.
+    onCreated(e: any): void {
+        this.sidebar.element.style.visibility = 'visible';
     }
 }

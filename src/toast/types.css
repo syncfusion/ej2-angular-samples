@@ -15,6 +15,10 @@
     text-align: center;
   }
 
+  body > ejs-toast {
+    z-index: 100000 !important;
+  }
+
   .toast-icons {
     font-family: 'Toast_icons' !important;
     speak: none;

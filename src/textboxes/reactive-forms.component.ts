@@ -36,7 +36,13 @@ export class ReactiveComponent {
     this.dialogObj.hide();
   }
   public dlgButtons: Object[] = [{ click: this.dlgBtnClick.bind(this), buttonModel: { content: 'Ok', isPrimary: true } }];
-
+  public focusoutfunction(args: any) {
+    if (args.target.value !== '') {
+      args.target.parentElement.getElementsByClassName('e-float-text')[0].classList.add('e-label-top');
+    } else {
+      args.target.parentElement.getElementsByClassName('e-float-text')[0].classList.remove('e-label-top');
+    }
+  }
   public Submit(): void {
     this.formSubmitAttempt = true;
     if (this.form.valid) {

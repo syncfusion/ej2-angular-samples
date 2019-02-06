@@ -1,0 +1,36 @@
+<div id="action-description">
+    <p>
+        In this sample, the DateRangePicker has been configured with the <code> dd/MMM/yy hh:mm a</code> date time format. To change this current date time format, go to the properties panel at the right side and select a date format from the dropdown options. For mobile mode touch the icon at the right side and select a date time format from the dropdown options.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-lg-8 content-wrapper">
+        <div class="content">
+            <div id="control_wrapper" class="format">
+                <ejs-daterangepicker #dateformat [format]="format" [startDate]="startDate" [endDate]="endDate"></ejs-daterangepicker>
+            </div>
+        </div>
+    </div>
+    <div id="property" class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-content">
+                <table id="property " class="property-panel-table" title="Properties">
+                    <tr>
+                        <td>
+                            <div>
+                                <ejs-dropdownlist id='dateformats' #listObj [dataSource]='formatData' (change)='changeFormat()' [fields]='fields' [floatLabelType]='floatLabelType' placeholder='Formats' [index]='index'></ejs-dropdownlist>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        Format sample illustrates the support of custom date time format in the DateRangePicker component by using the <code>format</code> property. You can also change the date time format by selecting it from the format options in the properties panel.
+    </p>
+    <p> More information on the date format configuration can be found in the <a href="https://ej2.syncfusion.com/angular/documentation/daterangepicker/globalization.html#date-format-customization" target="_blank"> documentation section</a>.
+    </p>
+</div>

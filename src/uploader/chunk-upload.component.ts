@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { EmitType, detach, isNullOrUndefined } from '@syncfusion/ej2-base';
 import { UploaderComponent, RemovingEventArgs } from '@syncfusion/ej2-angular-inputs';
 import { createSpinner, showSpinner, hideSpinner } from '@syncfusion/ej2-popups';
@@ -81,5 +81,9 @@ export class ChunkUploadComponent {
         function clearSetInterval(): void {
             clearInterval(clearTimeInterval);
         }
+    }
+
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['chunk-upload-save-action.cs', 'chunk-upload-remove-action.cs'];
     }
 }

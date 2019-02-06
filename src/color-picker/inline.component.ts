@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, Inject } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ColorPickerEventArgs } from '@syncfusion/ej2-angular-inputs';
 import { Browser } from '@syncfusion/ej2-base';
 
@@ -13,10 +13,6 @@ import { Browser } from '@syncfusion/ej2-base';
 
 })
 export class InlineColorPickerComponent {
-    constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['inline.css'];
-    }
-
     public ctrlSwitch: boolean = false;
 
     // function to handle the ColorPicker change event

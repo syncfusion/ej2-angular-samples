@@ -14,27 +14,27 @@ import { TooltipComponent, TooltipEventArgs } from '@syncfusion/ej2-angular-popu
 
 export class TemplateTooltipComponent {
     @ViewChild('tooltip') public control: TooltipComponent;
-    
+
     public tooltipData = [
-        {header: 'Cut (Ctrl+X)', para: 'Remove the selection and put it on the Clipboard so you can paste it somewhere else.'},
-        {header: 'Copy (Ctrl+C)', para: 'Put a copy of a selection on the Clipboard so you can paste it somewhere else.'},
-        {header: 'Paste (Ctrl+V)', para: 'Add content on the Clipboard to your document.'},
-        {header: 'Bold (Ctrl+B)', para: 'Makes your text bold.'},
-        {header: 'Underline (Ctrl+U)', para: 'Add content on the Clipboard to your document.'},
-        {header: 'Italic (Ctrl+I)', para: 'Italicize your text.'}
+        { header: 'Cut (Ctrl+X)', para: 'Remove the selection and put it on the Clipboard so you can paste it somewhere else.' },
+        { header: 'Copy (Ctrl+C)', para: 'Put a copy of a selection on the Clipboard so you can paste it somewhere else.' },
+        { header: 'Paste (Ctrl+V)', para: 'Add content on the Clipboard to your document.' },
+        { header: 'Bold (Ctrl+B)', para: 'Makes your text bold.' },
+        { header: 'Underline (Ctrl+U)', para: 'Add content on the Clipboard to your document.' },
+        { header: 'Italic (Ctrl+I)', para: 'Italicize your text.' }
     ]
     public toolbarIcons: any = [
-        { name: 'bold', id: 0 },
-        { name: 'underline', id: 1 },
-        { name: 'italic', id: 2 },
-        { name: 'cut', id:3 },
-        { name: 'copy', id: 4 },
-        { name: 'paste', id: 5 }
+        { name: 'cut', id: 0 },
+        { name: 'copy', id: 1 },
+        { name: 'paste', id: 2 },
+        { name: 'bold', id: 3 },
+        { name: 'underline', id: 4 },
+        { name: 'italic', id: 5 }
     ];
 
     @ViewChildren('tooltip_template') public templates: any;
 
-    onBeforeRender = (args: any)=> {
-        this.control.content =  this.templates.toArray()[Number(args.target.firstElementChild.id)];
+    onBeforeRender = (args: any) => {
+        this.control.content = this.templates.toArray()[Number(args.target.firstElementChild.id)];
     }
 }

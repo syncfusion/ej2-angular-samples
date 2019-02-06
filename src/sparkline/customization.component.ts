@@ -1,9 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Sparkline, VisibleType } from '@syncfusion/ej2-charts';
 import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
-import { ChangeEventArgs as CheckBoxChangeEvents} from '@syncfusion/ej2-buttons';
 import { Slider, SliderChangeEventArgs } from '@syncfusion/ej2-inputs';
 import { SliderComponent } from '@syncfusion/ej2-angular-inputs';
+import { EmitType } from '@syncfusion/ej2-base';
+import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
 /**
  * Sample for axis type in Sparkline 
  */
@@ -222,6 +223,22 @@ export class SparklineCustomizationSample {
             }
             spark.refresh();
         };
+        if ((element1.value === 'Sales Percentage' && this.percentage.enableRtl === true) ||
+            (element1.value === 'Sales Count' && this.sales.enableRtl === true)) {
+            (document.getElementById('enableRTL') as HTMLInputElement).checked = true;
+        } else {
+            (document.getElementById('enableRTL') as HTMLInputElement).checked = false;
+        }
+        document.getElementById('enableRTL').onchange = (e: Event) => {
+            let boolean: boolean = (e.target as HTMLInputElement).checked;
+            let spark: Sparkline = element1.value === 'Sales Percentage' ? this.percentage : this.sales;
+            if (boolean) {
+                spark.enableRtl = true;
+            } else {
+                spark.enableRtl = false;
+            }
+            spark.refresh();
+        };
         if ((element1.value === 'Sales Percentage' && this.percentage.tooltipSettings.trackLineSettings.visible === true) ||
             (element1.value === 'Sales Count' && this.sales.tooltipSettings.trackLineSettings.visible === true)) {
             (document.getElementById('trackline') as HTMLInputElement).checked = true;
@@ -406,5 +423,13 @@ export class SparklineCustomizationSample {
         document.getElementById('axisval').innerHTML = 'Axis value: <span> ' + slider1.value;
         spark.refresh();
     }
+    public onshowLastLabel = (e: CheckBoxChangeEvents) => {
+        let boolean: boolean = e.checked;
+        let element: HTMLSelectElement = <HTMLSelectElement>(document.getElementById('spark'));
+        let sparks: Sparkline  = (element.value === 'Sales Percentage') ? <Sparkline>document.getElementById('percentage1')['ej2_instances'][0] :
+       <Sparkline>document.getElementById('sales1')['ej2_instances'][0];
+        sparks.enableRtl = (<HTMLInputElement>document.getElementById('enableRTL')).checked;
+        sparks.refresh();
+    };
     
 }

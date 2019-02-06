@@ -10,30 +10,30 @@
         background-position: center;
         float: left;
     }
-
+    
     .diagram-connectors .row {
         margin-left: 0px;
         margin-right: 0px;
     }
-
+    
     .diagram-connectors .sb-child-row {
         padding-top: 8px;
     }
-
+    
     .diagram-connectors .row-header {
         font-size: 13px;
         font-weight: 500;
     }
-
+    
     .diagram-connectors .e-checkbox-wrapper .e-label {
         font-size: 12px;
     }
-
+    
     .diagram-connectors .col-xs-6 {
         padding-left: 0px;
         padding-right: 0px;
     }
-
+    
     .diagram-connectors .e-selected-style {
         border-color: #006CE6;
         border-width: 2px;
@@ -41,16 +41,14 @@
 </style>
 <div id="action-description">
     <p>
-        This sample visualizes the data flow in a marketing process using predefined shapes and connectors. Different types of connectors
-        and decorators are used to customize the appearance, path, and direction of the data flow.
+        This sample visualizes the data flow in a marketing process using predefined shapes and connectors. Different types of connectors and decorators are used to customize the appearance, path, and direction of the data flow.
     </p>
 </div>
 <div class="control-section diagram-connectors">
 
     <div class="col-lg-9 control-section">
         <div class="content-wrapper" style="background: white">
-            <ejs-diagram #diagram id="diagram" [getConnectorDefaults]='getConnectorDefaults' [getNodeDefaults]='getNodeDefaults' [layout]=layout
-                width="100%" height="580px" [setNodeTemplate]='setNodeTemplate' [snapSettings]=snapSettings>
+            <ejs-diagram #diagram id="diagram" [getConnectorDefaults]='getConnectorDefaults' [getNodeDefaults]='getNodeDefaults' [layout]=layout width="100%" height="580px" [setNodeTemplate]='setNodeTemplate' [snapSettings]=snapSettings>
                 <e-nodes>
                     <e-node id='node1' [shape]='shape'>
                         <e-node-annotations>
@@ -105,60 +103,56 @@
         </div>
     </div>
     <div class="col-lg-3 property-section">
-        <div class="property-panel-section">
-
-            <div class="property-panel-header">
-                Properties
+        <div class="property-panel-header">
+            Properties
+        </div>
+        <div class="row property-panel-content" id="appearance">
+            <div class="row row-header sb-child-row">
+                Appearance
             </div>
-            <div class="row property-panel-content" id="appearance">
-                <div class="row row-header sb-child-row">
-                    Appearance
+            <div class="row sb-child-row">
+                <div class="image-pattern-style" id="straightConnector" style="background-image: url(src/diagram/Images/connector/Connectors_1.png); margin-right: 3px">
                 </div>
-                <div class="row sb-child-row">
-                    <div class="image-pattern-style" id="straightConnector" style="background-image: url(./src/diagram/Images/connector/Connectors_1.png); margin-right: 3px">
-                    </div>
-                    <div class="image-pattern-style" id="orthogonalConnector" style="background-image: url(./src/diagram/Images/connector/Connectors_2.png); margin: 0px 3px">
-                    </div>
-                    <div class="image-pattern-style" id="bezierConnector" style="background-image: url(./src/diagram/Images/connector/Connectors_3.png);">
-                    </div>
+                <div class="image-pattern-style" id="orthogonalConnector" style="background-image: url(src/diagram/Images/connector/Connectors_2.png); margin: 0px 3px">
                 </div>
-                <div class="row sb-child-row">
-                    <div class="image-pattern-style" id="straightConnectorWithStroke" style="background-image: url(./src/diagram/Images/connector/Connectors_4.png); margin-right: 3px">
-                    </div>
-                    <div class="image-pattern-style" id="orthogonalConnectorWithStroke" style="background-image: url(./src/diagram/Images/connector/Connectors_5.png); margin: 0px 3px">
-                    </div>
-                    <div class="image-pattern-style" id="bezierConnectorWithStroke" style="background-image: url(./src/diagram/Images/connector/Connectors_6.png);">
-                    </div>
-                </div>
-                <div class="row sb-child-row">
-                    <div class="image-pattern-style" id="straightConnectorWithDasharray" style="background-image: url(./src/diagram/Images/connector/Connectors_7.png); margin-right: 3px">
-                    </div>
-                    <div class="image-pattern-style" id="orthogonalConnectorWithDasharray" style="background-image: url(./src/diagram/Images/connector/Connectors_8.png); margin: 0px 3px">
-                    </div>
-                    <div class="image-pattern-style" id="bezierConnectorWithDasharray" style="background-image: url(./src/diagram/Images/connector/Connectors_9.png);">
-                    </div>
-                </div>
-                <div class="row sb-child-row">
-                    <div class="image-pattern-style" id="cornerRadious" style="background-image: url(./src/diagram/Images/connector/Connectors_10.png); margin-right: 3px">
-                    </div>
-                    <div class="image-pattern-style" id="sourceDecorator" style="background-image: url(./src/diagram/Images/connector/Connectors_11.png); margin: 0px 3px">
-                    </div>
-                    <div class="image-pattern-style" id="sourceDecoratorWithDasharray`" style="background-image: url(./src/diagram/Images/connector/Connectors_12.png);">
-                    </div>
+                <div class="image-pattern-style" id="bezierConnector" style="background-image: url(src/diagram/Images/connector/Connectors_3.png);">
                 </div>
             </div>
-            <div class="row property-panel-content" style="padding-top: 10px">
-                <div class="row sb-child-row">
-                    <ejs-checkbox #diagram id="lock" label="Lock" [checked]="false" (change)="onChangeLock($event)"></ejs-checkbox>
+            <div class="row sb-child-row">
+                <div class="image-pattern-style" id="straightConnectorWithStroke" style="background-image: url(src/diagram/Images/connector/Connectors_4.png); margin-right: 3px">
                 </div>
+                <div class="image-pattern-style" id="orthogonalConnectorWithStroke" style="background-image: url(src/diagram/Images/connector/Connectors_5.png); margin: 0px 3px">
+                </div>
+                <div class="image-pattern-style" id="bezierConnectorWithStroke" style="background-image: url(src/diagram/Images/connector/Connectors_6.png);">
+                </div>
+            </div>
+            <div class="row sb-child-row">
+                <div class="image-pattern-style" id="straightConnectorWithDasharray" style="background-image: url(src/diagram/Images/connector/Connectors_7.png); margin-right: 3px">
+                </div>
+                <div class="image-pattern-style" id="orthogonalConnectorWithDasharray" style="background-image: url(src/diagram/Images/connector/Connectors_8.png); margin: 0px 3px">
+                </div>
+                <div class="image-pattern-style" id="bezierConnectorWithDasharray" style="background-image: url(src/diagram/Images/connector/Connectors_9.png);">
+                </div>
+            </div>
+            <div class="row sb-child-row">
+                <div class="image-pattern-style" id="cornerRadious" style="background-image: url(src/diagram/Images/connector/Connectors_10.png); margin-right: 3px">
+                </div>
+                <div class="image-pattern-style" id="sourceDecorator" style="background-image: url(src/diagram/Images/connector/Connectors_11.png); margin: 0px 3px">
+                </div>
+                <div class="image-pattern-style" id="sourceDecoratorWithDasharray`" style="background-image: url(src/diagram/Images/connector/Connectors_12.png);">
+                </div>
+            </div>
+        </div>
+        <div class="row property-panel-content" style="padding-top: 10px">
+            <div class="row sb-child-row">
+                <ejs-checkbox #diagram id="lock" label="Lock" [checked]="false" (change)="onChangeLock($event)"></ejs-checkbox>
             </div>
         </div>
     </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to add connectors to connect the shapes and how to customize the appearance of the connectors.
-        You can use the
+        In this example, you can see how to add connectors to connect the shapes and how to customize the appearance of the connectors. You can use the
         <code>style</code> property of the connector to customize its stroke style. You can use the
         <code>cornerRadius</code> property to add connectors with rounded corners.
     </p>
@@ -169,15 +163,13 @@
 
     <p>
         Additionally, you can see how to lock the connectors to disable editing. The
-        <code>constraints</code> property of connector enables/disables editing. In this example, the shapes are automatically arranged using hierarchical
-        tree layout.
+        <code>constraints</code> property of connector enables/disables editing. In this example, the shapes are automatically arranged using hierarchical tree layout.
     </p>
 
     <p style="font-weight: 500">Injecting Module</p>
 
     <p>
-        Diagram component's features are segregated into individual feature-wise modules. To automatically arrange the shapes, we
-        need to Inject
+        Diagram component's features are segregated into individual feature-wise modules. To automatically arrange the shapes, we need to Inject
         <code>HierarchicalTree</code> module into
         <code>@NgModule.providers</code> section.
     </p>

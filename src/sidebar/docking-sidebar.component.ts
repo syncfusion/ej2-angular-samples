@@ -21,10 +21,10 @@ export class DockSidebarComponent {
 
     // open new tab
     newTabClick(): void {
-        document.getElementById('newTab').setAttribute('href', location.href.split('#')[0] + 'samples/sidebar/docking-sidebar/index.html');
+        document.getElementById('newTab').setAttribute('href', location.href.split('#')[0] + 'sidebar/docking-sidebar/index.html');
     }
     positionChange(args: any) {
-        this.dockBar.position = args.event.target.id == "left" ? "Left" : "Right";
+        this.dockBar.position = args.value == "left" ? "Left" : "Right";
     }
     toggleClick() {
         this.dockBar.toggle();

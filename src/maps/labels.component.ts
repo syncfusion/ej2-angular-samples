@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { MapsTheme, Maps, MapsTooltip, DataLabel, ILoadEventArgs, SmartLabelMode, IntersectAction } from '@syncfusion/ej2-angular-maps'; 
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { MapAjax } from '@syncfusion/ej2-maps';
@@ -34,7 +34,7 @@ export class MapsLabelComponent {
                 labelPath: 'name',
                 smartLabelMode: 'Trim'
             },
-            shapeData:  new MapAjax(location.origin + location.pathname + 'src/maps/map-data/usa.json'),
+            shapeData:  new MapAjax('./src/maps/usa.json'),
             shapeSettings: {
                 autofill: true
             },
@@ -98,9 +98,8 @@ export class MapsLabelComponent {
             this.maps.refresh();
         }
     }
-    
-    constructor() {
-        
-    }
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = [ 'usa.json'];
+    };
 
 }

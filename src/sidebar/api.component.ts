@@ -28,7 +28,7 @@ export class ApiSidebarComponent {
     ];
     public fields: object = { id: 'Id', text: 'Type', value: 'value' };
     public showBackdrop: boolean = false;
-    public closeOnDocumentClick: boolean = true;
+    public closeOnDocumentClick: boolean = false;
     public height: string = '220px';
     public width: string = '75px';
     public waterMark: string = 'Select a Type';
@@ -40,7 +40,7 @@ export class ApiSidebarComponent {
 
     // open new tab
     newTabClick(): void {
-        document.getElementById('newTab').setAttribute('href', location.href.split('#')[0] + 'samples/sidebar/api/index.html');
+        document.getElementById('newTab').setAttribute('href', location.href.split('#')[0] + 'sidebar/api/index.html');
     }
 
     //Toggle button click event handler
@@ -56,14 +56,14 @@ export class ApiSidebarComponent {
     documentClick(): void {
 
         if (this.documentClickBtn.element.classList.contains('e-active')) {
-            this.documentClickBtn.content = 'True';
+            this.documentClickBtn.content = 'False';
             //enable the closeOnDocumentClick property
-            this.sidebarInstance.closeOnDocumentClick = false;
+            this.sidebarInstance.closeOnDocumentClick = true;
 
         } else {
-            this.documentClickBtn.content = 'False';
+            this.documentClickBtn.content = 'True';
             //disable the closeOnDocumentClick property
-            this.sidebarInstance.closeOnDocumentClick = true;
+            this.sidebarInstance.closeOnDocumentClick = false;
         }
     };
     onTypeChange(): void {

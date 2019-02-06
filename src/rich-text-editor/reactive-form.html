@@ -1,0 +1,36 @@
+<div id="action-description">
+    <p>This sample demonstrates the reactive form support of the RichTextEditor. You can edit the value in the RichTextEditor,
+        the values goes into the form models.
+    </p>
+</div>
+
+<div class="control-section">
+    <div class="content-wrapper">
+        <div id='content' class='box-form' style="margin: 0 auto; width:750px; padding:25px">
+            <form [formGroup]="rteForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <ejs-richtexteditor #fromRTE formControlName="name" (created)="rteCreated()">
+                    </ejs-richtexteditor>
+                    <div *ngIf="rteForm.invalid && rteForm.controls.name.touched" class="alert alert-danger">
+                        <div *ngIf="rteForm.controls.name.errors.required">
+                            Value is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" ejs-button [disabled]="!rteForm.valid">Submit</button>
+                    <button type="reset" ejs-button (click)="rteForm.reset()" style="margin-left: 20px">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p> The RichTextEditor value and validation status will be track through <code>formControlName</code> attribute. The value
+        will be included in the FormControl's group collection of  <code>formGroup</code> attribute.
+    </p>
+    <p>
+        For more information about Reactive Forms can be found in this
+        <a href="https://angular.io/guide/reactive-forms/"  target="_blank"> reference link</a>.
+    </p>
+    </div>

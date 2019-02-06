@@ -1,0 +1,47 @@
+<div class="control-section">
+    <ejs-treegrid [dataSource]='data' height='400' childMapping='subtasks' [treeColumnIndex]='1' [editSettings]='editSettings' [toolbar]='toolbar'>
+        <e-columns>
+            <e-column field='taskID' headerText='Task ID' width='70' textAlign='Right' isPrimaryKey='true'  [validationRules]='taskidrules'></e-column>
+            <e-column field='taskName' headerText='Task Name' width='180' editType='stringedit' [validationRules]='tasknamerules'></e-column>
+            <e-column field='startDate' headerText='Start Date' width='170' [format]='format' editType='datetimepickeredit' [edit]='dpParams' textAlign='Right' [validationRules]='startdaterules'></e-column>
+            <e-column field='approved' headerText='Approved' width='90' editType='booleanedit' type='boolean' displayAsCheckBox='true'></e-column>
+            <e-column field='progress' headerText='Progress' width='80' textAlign='Right' editType='numericedit' [edit]='numericParams' [validationRules]='progressrules'></e-column>
+            <e-column field='priority' headerText='Priority' width='100' textAlign='Right' editType='dropdownedit'  [validationRules]='priorityrules'></e-column>
+        </e-columns>
+    </ejs-treegrid>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates the supported cell edit types of TreeGrid columns. The list of cell edit types are as follows,
+    </p>
+    <ul>
+        <li><code>NumericTextBox</code> component for integers, double, and decimal data types.</li>
+        <li><code>TextBox</code> component for string data type.</li>
+        <li><code>DropDownList</code> component for list data type.</li>
+        <li><code>DatePicker</code> component for date data type.</li>
+        <li><code>DateTimePicker</code> component for dateTime data type.</li>
+        <li><code>Checkbox</code> component for boolean data type</li>
+    </ul>
+</div>
+<div id="description">
+    <p>
+        The <code>columns.editType</code>  is used to customize the edit type of the particular column. You can set the columns.editType based on data type of the column.
+    </p>
+    <p>
+        In this sample, we show the following editTypes for the TreeGrid columns
+    </p>
+    <ul>
+        <li><code>NumericTextBox</code></li>
+        <li><code>TextBox</code></li>
+        <li><code>DropDownList</code></li>
+        <li><code>DatePicker</code></li>
+        <li><code>DateTimePicker</code></li>
+        <li><code>Checkbox</code></li>
+    </ul>
+    <p>Injecting Module:</p>
+
+    <p>TreeGrid component features are segregated into individual feature-wise modules. To use editing feature, we need to inject <code>EditService</code> into the <code>@NgModule.providers</code> section.</p> 
+    <p>
+        More information on the editing feature can be found in the documentation section.
+    </p>
+</div>

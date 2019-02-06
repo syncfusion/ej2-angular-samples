@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { MapsTheme, Maps, MapsTooltip, Legend, ITooltipRenderEventArgs, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
 
@@ -39,10 +39,10 @@ export class MapsTooltipComponent {
 
     public layers: object[] = [
         {
-            shapeData: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-map.json'),
+            shapeData: new MapAjax('./src/maps/world-map.json'),
             shapePropertyPath: 'name',
             shapeDataPath: 'name',
-            dataSource: new MapAjax(location.origin + location.pathname + 'src/maps/map-data/world-cup.json'),
+            dataSource: new MapAjax('./src/maps/world-cup.json'),
             tooltipSettings: {
                 visible: true,
                 valuePath: 'name',
@@ -72,7 +72,7 @@ export class MapsTooltipComponent {
             }
         }
     ];
-    constructor() {
-        //code
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = [  'world-cup.json', 'world-map.json'];
     };
 }

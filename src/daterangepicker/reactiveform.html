@@ -1,0 +1,38 @@
+<div id="action-description">
+    <p>This sample demonstrates the reactive form support of the daterangepicker. The daterange range value selected in the
+        daterangepicker component will get updateranged in the form model.
+    </p>
+</div>
+
+<div class="control-section">
+    <div class="content-wrapper">
+        <div id='content' class='box-form' style="margin: 0 auto; width:500px; padding:25px">
+            <form [formGroup]="skillForm" id="formId">
+                <div class="form-group">
+                    <ejs-daterangepicker formControlName="daterange" name="daterange" placeholder='Select a Range' floatLabelType='Always'>
+                    </ejs-daterangepicker>
+                </div>
+                <div *ngIf="skillForm.controls['daterange'].hasError('required') && skillForm.controls['daterange'].touched" class="alert alert-danger">DateRange is required</div>
+                <div *ngIf="skillForm.controls['daterange'].value" class="alert alert-success">
+                    <table>
+                        <tr>
+                            <td style="width:50%">Selected range: </td>
+                            <td class="formtext ">{{ skillForm.controls.daterange.value[0] | date:"dd/MM/yyyy" }} - {{ skillForm.controls.daterange.value[1]
+                                | date:"dd/MM/yyyy" }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p> The daterangeTimePicker value and validation status will be tracked through
+        <code>formControlName</code> attribute. The value will be included in the FormControl's group collection of
+        <code>formGroup</code> attribute.
+    </p>
+    <p>
+        For more information about Reactive Forms can be found in this
+        <a href="https://angular.io/guide/reactive-forms/"  target="_blank"> reference link</a>.
+    </p>
+</div>

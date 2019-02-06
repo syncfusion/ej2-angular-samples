@@ -60,7 +60,7 @@ export class PolarLineChartComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
 
     };
     public tooltip: Object = {
@@ -76,7 +76,7 @@ export class PolarLineChartComponent {
         this.chart.refresh();
     }
     public isInversed(e: Event): void {
-        let element: HTMLSelectElement = <HTMLSelectElement>e.target;
+        let element: HTMLInputElement = <HTMLInputElement>e.target;
         this.chart.primaryXAxis.isInversed = element.checked;
         this.chart.primaryYAxis.isInversed = element.checked;
         this.chart.dataBind();

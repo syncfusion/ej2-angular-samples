@@ -1,6 +1,6 @@
-import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ColorPickerComponent, ColorPickerMode, ColorPickerEventArgs } from '@syncfusion/ej2-angular-inputs';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs as DdlChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
 
 /**
@@ -17,26 +17,14 @@ export class ApiColorPickerComponent {
     @ViewChild('colorpicker')
     public colorPicker: ColorPickerComponent;
 
-    @ViewChild('sample')
-    public ddlObj: DropDownListComponent;
-
-    constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['api.css'];
-    }
-
     public ddlFields: Object = { text: 'type', value: 'type' };
 
-    public type: Object[] = [
-        { type: 'Picker' },
-        { type: 'Palette' }
-    ];
-
-    public modeType: string = 'Picker';
+    public type: Object[] = [{ type: 'Picker' }, { type: 'Palette' }];
 
     public colorValue: string = '#0db1e7';
 
-    public typeChange(args: any): void {
-        this.colorPicker.mode = this.ddlObj.text as ColorPickerMode;
+    public typeChange(args: DdlChangeEventArgs): void {
+        this.colorPicker.mode = args.value as ColorPickerMode;
         this.colorPicker.dataBind();
     }
 
@@ -57,14 +45,13 @@ export class ApiColorPickerComponent {
 
     // function to handle the ColorPicker change event
     public change(args: ColorPickerEventArgs): void {
-        (document.getElementById('value') as HTMLInputElement).value = args.currentValue.hex;
+        this.colorValue = args.currentValue.hex;
     }
 
-    ngOnInit(): void {
-        let ele: HTMLInputElement = document.getElementById('value') as HTMLInputElement;
-        ele.addEventListener('change', (e: Event) => {
-            this.colorPicker.value = (e.target as HTMLInputElement).value;
-            this.colorPicker.dataBind();
-        });
+    onValueChange(e: MouseEvent): void {
+        const val: string = (e.target as HTMLInputElement).value;
+        // Sets to color picker default color value if user enters the invalid hex code
+        this.colorPicker.value = val && val.length > 2 ? (val[0] !== '#' ? `#${val}` : val) : '#008000';
+        this.colorPicker.dataBind();
     }
 }

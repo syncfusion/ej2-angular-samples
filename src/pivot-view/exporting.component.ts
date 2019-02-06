@@ -35,12 +35,13 @@ export class ExportingComponent implements OnInit {
         } as GridSettings;
 
         this.exportType = new DropDownList({
-            index: 0
+            index: 0,
+            width: 160
         });
         this.exportType.appendTo('#exporttype');
 
         this.exportBtn = new Button({
-            iconCss: 'e-icons e-play-icon', cssClass: 'e-flat', isPrimary: true
+            cssClass: 'e-flat', isPrimary: true
         });
         this.exportBtn.appendTo('#export');
 

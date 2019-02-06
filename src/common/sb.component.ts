@@ -6,8 +6,8 @@ import { DropDownList, AutoComplete } from '@syncfusion/ej2-dropdowns';
 import { Http, Response } from '@angular/http';
 import { Browser, addClass, enableRipple, detach, Animation, AnimationOptions } from '@syncfusion/ej2-base';
 import { Popup, Tooltip } from '@syncfusion/ej2-popups';
-import { Tab, Accordion} from '@syncfusion/ej2-navigations';
-import { Locale } from './locale-string';
+import { Tab, Accordion } from '@syncfusion/ej2-navigations';
+// import { Locale } from './locale-string';
 import { samplesList } from './samplelist';
 import { LPController, MyWindow } from './lp.component';
 import { ListViewComponent, SelectEventArgs } from '@syncfusion/ej2-angular-lists';
@@ -32,8 +32,8 @@ interface DestroyMethod extends HTMLElement {
 }
 
 declare let window: MyWindow;
-let sbObj: { [index: string]: string } = { 'react': 'react', 'javascript': 'javascript', 'vue' : 'vue' }
-let sbArray: string[] = ['react', 'ts', 'javascript','asp_core','asp_mvc', 'vue'];
+let sbObj: { [index: string]: string } = { 'react': 'react', 'javascript': 'javascript', 'vue': 'vue' }
+let sbArray: string[] = ['react', 'ts', 'javascript', 'asp_core', 'asp_mvc', 'vue'];
 let urlRegex: RegExp = /(npmci\.syncfusion\.com|ej2\.syncfusion\.com)(\/)(development|production)*/;
 let sampleRegex: RegExp = /#\/(([^\/]+\/)+[^\/\.]+)/;
 let cBlock: string[] = ['ts-src-tab', 'html-src-tab'];
@@ -45,7 +45,7 @@ const matchedCurrency: { [key: string]: string } = {
     'fr-CH': 'CHF'
 };
 setCulture('en');
-L10n.load(Locale);
+// L10n.load(Locale);
 const typeMapper: { [key: string]: string } = {
     ts: 'typescript',
     html: 'xml',
@@ -103,19 +103,19 @@ export class SBController {
     public resizeTimer: number = 0;
     public prevSampleName: string = '';
     public prevControlName: string = '';
-   
+
     //Bread Crumb Object
     public breadCrumbObject:
-    {
-        component?: HTMLElement, categorySeparator?: HTMLElement,
-        subCategory?: HTMLElement, sample?: HTMLElement
-    } = {};
+        {
+            component?: HTMLElement, categorySeparator?: HTMLElement,
+            subCategory?: HTMLElement, sample?: HTMLElement
+        } = {};
 
 
     @ViewChild('leftPane')
     public leftControl: LPController;
 
-   
+
 
     constructor(
         private ngEle: ElementRef,
@@ -138,15 +138,20 @@ export class SBController {
                 if (e.selectedIndex === 1) {
                     this.sourceTab.items = this.sourceTabItems;
                     this.sourceTab.refresh();
+                    this.renderCopyCode();
+                    this.dynamicTabCreation(this.sourceTab);
                 }
             }
         });
-       
+
         let proxy: any = this
         this.sourceTab = new Tab({
             items: [],
-            headerPlacement: 'Bottom', cssClass: 'sb-source-code-section', selected: function (e: any) {
+            headerPlacement: 'Bottom', cssClass: 'sb-source-code-section', created: this.dynamicTabCreation, selected: function (e: any) {
                 if (e.selectedIndex === 0) {
+                    proxy.renderCopyCode();
+                }
+                if (e.selectedIndex === 1) {
                     proxy.renderCopyCode();
                 }
                 if (e.isSwiped) {
@@ -171,13 +176,13 @@ export class SBController {
                 this.currencyDropDown.value = matchedCurrency[value];
 
                 setCulture(e.value);
-                if(value == "ar"){
-                   this.changeRtl(true);
-                }else{
-                   this.changeRtl(false);
+                if (value == "ar") {
+                    this.changeRtl(true);
+                } else {
+                    this.changeRtl(false);
                 }
-                if(this.isMobile){
-                   this.removeOverlay();
+                if (this.isMobile) {
+                    this.removeOverlay();
                 }
             }
 
@@ -185,18 +190,18 @@ export class SBController {
         this.currencyDropDown = new DropDownList({
             zIndex: 1005,
             index: 0,
-            change: (e: any) => { 
+            change: (e: any) => {
                 this.settingsPopup.hide();
                 setCurrencyCode(e.value);
                 if (this.isMobile) {
                     this.removeOverlay();
-                } 
-                
+                }
+
             }
         });
         this.searchBox = new AutoComplete({
             minLength: 3,
-            zIndex:10000022,
+            zIndex: 10000022,
             itemTemplate: '${name}',
             groupTemplate: '${cName}',
             placeholder: 'Search here...',
@@ -228,7 +233,24 @@ export class SBController {
         }
         this.breadCrumbObject.sample.innerHTML = sampleName;
         let title: HTMLElement = document.querySelector('title');
-        title.innerHTML = controlName + ' · ' + sampleName + ' · Essential JS 2 for Angular · Syncfusion ' ;
+        title.innerHTML = controlName + ' · ' + sampleName + ' · Essential JS 2 for Angular · Syncfusion ';
+    }
+
+    dynamicTabCreation(obj: any): void {
+        let tabObj: any;
+        if (obj) {
+            tabObj = obj;
+        } else { tabObj = this; }
+        let contentEle: Element = tabObj.element.querySelector('#e-content_' + tabObj.selectedItem);
+        if (!contentEle) {
+            return;
+        }
+        let blockEle: Element = tabObj.element.querySelector('#e-content_' + tabObj.selectedItem).children[0];
+        blockEle.innerHTML = tabObj.items[tabObj.selectedItem].data;
+        blockEle.classList.add('sb-src-code');
+        if (blockEle) {
+            hljs.highlightBlock(blockEle);
+        }
     }
 
     renderTabToolBar() {
@@ -244,7 +266,7 @@ export class SBController {
         <span class='sb-icons sb-icon-Next'></span>
         </button>
         </div>`;
-        let plnrTemplate: string = '<span class="sb-icons sb-icons-plnkr"></span><span class="sb-plnkr-text">EDIT IN PLUNKER</span>';
+        let plnrTemplate: string = '<span class="sb-icons sb-icons-plnkr"></span><span class="sb-plnkr-text">Edit in StackBlitz</span>';
         // tslint:disable-next-line:no-multiple-var-decl
         let contentToolbarTemplate: string = '<div class="sb-desktop-setting"><button id="open-plnkr" class="sb-custom-item sb-plnr-section">' +
             plnrTemplate + '</button>' + hsplitter + openNewTemplate + hsplitter +
@@ -264,7 +286,7 @@ export class SBController {
             {
                 content: 'Copied', position: 'BottomCenter', opensOn: 'Click', closeDelay: 500
             }, '.copy-tooltip');
-
+        copiedTooltip.appendTo(ele);
     }
 
     renderSBPopup() {
@@ -280,9 +302,9 @@ export class SBController {
             relateTo: <any>select('.sb-setting-btn'),
             position: { X: 'right', Y: 'bottom' }
             , collision: { X: 'flip', Y: 'flip' },
-            zIndex : 1002,
+            zIndex: 1002,
         });
-        
+
         this.settingsPopup.hide();
 
         this.switcherPopup = new Popup(document.getElementById('sb-switcher-popup'), {
@@ -324,10 +346,10 @@ export class SBController {
                     }
                     theme = themes.indexOf(theme) !== -1 ? theme : 'material';
                     document.getElementById(theme).classList.add('active-theme');
-                    loadTheme(theme);
+                    selectedTheme = theme
                 }
             });
-           
+
         this.router.events
             .filter((event: NavigationEnd) => event instanceof NavigationEnd)
             .map(() => this.activatedRoute)
@@ -379,7 +401,7 @@ export class SBController {
                 this.setThemeItemActive(location.hash.split('/')[1]);
                 this.setSbLink();
                 this.hideShowSBLoader(true);
-                let mT: string = localStorage.getItem('pointer') || (window.screen.width > 1366 ? 'touch' : 'mouse');
+                let mT: string = localStorage.getItem('pointer') || 'mouse';
                 if (Browser.isDevice) {
                     mT = 'touch';
                 }
@@ -423,15 +445,15 @@ export class SBController {
         let sample: string[] = href.match(sampleRegex);
         for (let sb of sbArray) {
             let ele: HTMLFormElement = (select('#' + sb) as HTMLFormElement);
-            if(sb === 'asp_mvc'){
-                ele.href ='https://aspnetmvc.syncfusion.com/'
+            if (sb === 'asp_mvc') {
+                ele.href = 'https://ej2.syncfusion.com/aspnetmvc/'
             }
-            else if(sb === 'asp_core'){
-                ele.href ='https://aspdotnetcore.syncfusion.com/'
+            else if (sb === 'asp_core') {
+                ele.href = 'https://ej2.syncfusion.com/aspnetcore/'
             }
-            else{
+            else {
                 ele.href = ((link) ? ('http://' + link[1] + '/' + (link[3] ? (link[3] + '/') : '')) :
-                ('https://ej2.syncfusion.com/')) +
+                    ('https://ej2.syncfusion.com/')) +
                     (sbObj[sb] ? (sb + '/') : '') + 'demos/#/' + (sample ? (sample[1] + (sb !== 'typescript' ? '' : '.html')) : '');
             }
         }
@@ -459,13 +481,13 @@ export class SBController {
         this.setResponsive();
     }
 
-    ngAfterContentChecked(): void {  
+    ngAfterContentChecked(): void {
         // Don't perform any more operations in this method.
-        if(this.cultureDropDown.value == "ar"){
+        if (this.cultureDropDown.value == "ar") {
             this.changeRtl(true);
         }
         this.hideShowSBLoader(true);
-   }
+    }
 
     hideShowSBLoader(hide?: boolean): void {
         if (!this.loader) {
@@ -479,7 +501,7 @@ export class SBController {
     }
 
     changeRtl(hide?: boolean): void {
-      let elementlist: any = selectAll('.e-control', document.getElementById('control-content'));
+        let elementlist: any = selectAll('.e-control', document.getElementById('control-content'));
         for (let control of elementlist) {
             let eleinstance: Object[] = (<DestroyMethod>control).ej2_instances;
             if (eleinstance) {
@@ -489,7 +511,7 @@ export class SBController {
             }
         }
     }
-    removeOverlay(){
+    removeOverlay() {
         this.mobileOverlay.classList.add('sb-hide');
         this.settingsPopup.hide({ name: 'SlideRightOut', duration: 400 });
     }
@@ -529,7 +551,7 @@ export class SBController {
         this.settingsPopup.hide();
         this.switcherPopup.hide();
     }
-    
+
 
     updateViewMode() {
         this.isMobile = window.matchMedia('(max-width:550px)').matches;
@@ -559,12 +581,12 @@ export class SBController {
                 if (closest(<Element>e.target, '.e-popup') === null) {
                     this.settingsPopup.hide({ name: 'SlideRightOut', duration: 400 });
                 }
-            } else{
-                if(e.target){                  
-                    if((e.target as any).classList && (e.target as any).classList.contains('e-ddl-icon')){
+            } else {
+                if (e.target) {
+                    if ((e.target as any).classList && (e.target as any).classList.contains('e-ddl-icon')) {
                         this.settingsPopup.show();
                     }
-                    else{
+                    else {
                         this.settingsPopup.hide();
                     }
                 }
@@ -773,7 +795,8 @@ export class SBController {
         let propPanel: HTMLElement = <HTMLElement>document.querySelector('.property-section');
         if (propPanel) {
             let pClose: boolean = !propPanel.classList.contains('sb-hide');
-            if (close === true || pClose) {                this.aniObject.animate(propPanel, {
+            if (close === true || pClose) {
+                this.aniObject.animate(propPanel, {
                     name: 'SlideRightOut',
                     duration: 400,
                     end: () => {
@@ -815,12 +838,12 @@ export class SBController {
 
     toggleLeftPaneOnDesktop(close?: boolean) {
         let reverse: boolean = select('.sb-left-pane').classList.contains('sb-hide');
-        if(reverse){
+        if (reverse) {
             select('#sb-toggle-left').classList.add('toggle-active');
-        }else{
+        } else {
             select('#sb-toggle-left').classList.remove('toggle-active')
         }
-        
+
         let rightPane: HTMLElement = <HTMLElement>select('.sb-right-pane');
         if (this.isTablet === true || this.isDesktop === true) {
             if (close === true) {
@@ -862,7 +885,7 @@ export class SBController {
         if (this.isMobile !== true) {
             return;
         }
-       
+
         this.aniObject.animate(this.leftControl.ngEle.nativeElement, {
             name: 'SlideLeftOut',
             end: (e: AnimationOptions) => {
@@ -890,7 +913,7 @@ export class SBController {
         let localPath: string = 'src/' + pathArray.join('/');
         let tsRequest: Observable<Response> = this.http.get(localPath + '.component.ts');
         let htmlRequst: Observable<Response> = this.http.get(localPath + '.html');
-        let plunk: Observable<Response> = this.http.get(localPath + '-plnkr.json');
+        let plunk: Observable<Response> = this.http.get(localPath + '-stackb.json');
         let observableCollection: Observable<Response>[] = [htmlRequst, tsRequest];
         if (this.sourceFiles.files.length) {
             let splitPath: string[] = localPath.split('/');
@@ -916,7 +939,7 @@ export class SBController {
                         content = this.getStringWithOutDescription(content, /(\'|\")description/g);
                         content = this.getStringWithOutDescription(content, /(\'|\")action-description/g)
                     }
-                    if (!/-plnkr\.json/g.test(fileName)) {
+                    if (!/-stackb\.json/g.test(fileName)) {
                         content = content.replace(/&/g, '&amp;')
                             .replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
                         items.push({
@@ -975,8 +998,11 @@ export class SBController {
     }
 
     createOpenNewButton(): void {
+        var themeRegex = /\/[^\/]+/;
+        var url = this.router.url;
+        var theme = url.match(themeRegex)[0].replace('/', '/#');
         (select('#openNew') as HTMLFormElement).href =
-            location.href.split('#')[0] + 'samples/' + this.router.url.split('/').splice(2).join('/') + '/index.html';
+            location.href.split('#')[0]  + this.router.url.split('/').splice(2).join('/') + theme;
     }
 
     plunker(results: string): void {
@@ -986,8 +1012,8 @@ export class SBController {
             detach(prevForm);
         }
         let form: HTMLFormElement = <HTMLFormElement>createElement('form');
-        let res: string = ((location.href as any).includes('ej2.syncfusion.com') ? 'https:' : 'http:') + '//plnkr.co/edit/?p=preview';
-        form.setAttribute('action', res);
+        let res: string = ((location.href as any).indexOf('ej2.syncfusion.com') !== -1 ? 'https:' : 'http:') + '//plnkr.co/edit/?p=preview';
+        form.setAttribute('action', 'https://stackblitz.com/run');
         form.setAttribute('method', 'post');
         form.setAttribute('target', '_blank');
         form.id = 'plnkr-form';
@@ -995,12 +1021,46 @@ export class SBController {
         document.body.appendChild(form);
         let plunks: string[] = Object.keys(plnkr);
         for (let x: number = 0; x < plunks.length; x++) {
-            let ip: HTMLElement = createElement('input');
-            ip.setAttribute('type', 'hidden');
-            ip.setAttribute('value', <string>plnkr[plunks[x]]);
-            ip.setAttribute('name', 'files[' + plunks[x] + ']');
-            form.appendChild(ip);
+            if (plunks[x] !== 'dependencies.json' && plunks[x] !== 'index.html' && plunks[x] !== 'main.ts') {
+                let ip: HTMLElement = createElement('input');
+                ip.setAttribute('type', 'hidden');
+                ip.setAttribute('value', <string>plnkr[plunks[x]]);
+                ip.setAttribute('name', 'project[files][' + plunks[x] + ']');
+                form.appendChild(ip);
+            }
+            else if (plunks[x] === 'index.html') {
+                let theme = <string>location.hash.split('/')[1];
+                let indexContent = <string>plnkr[plunks[x]].toString().replace('{{:theme:}}', theme);
+                let ip: HTMLElement = createElement('input');
+                ip.setAttribute('type', 'hidden');
+                ip.setAttribute('value', indexContent);
+                ip.setAttribute('name', 'project[files][' + plunks[x] + ']');
+                form.appendChild(ip);
+            }
+            else if (plunks[x] === 'main.ts') {
+                let theme = <string>location.hash.split('/')[1];
+                let mainContent = theme === 'material' ? <string>plnkr[plunks[x]].toString().replace('enableRipple((window as any).ripple);', 'enableRipple(true);') :
+                    <string>plnkr[plunks[x]].toString().replace('enableRipple((window as any).ripple);', '');
+                let ip: HTMLElement = createElement('input');
+                ip.setAttribute('type', 'hidden');
+                ip.setAttribute('value', mainContent);
+                ip.setAttribute('name', 'project[files][' + plunks[x] + ']');
+                form.appendChild(ip);
+            }
+            else {
+                let ip: HTMLElement = createElement('input');
+                ip.setAttribute('type', 'hidden');
+                ip.setAttribute('value', <string>plnkr[plunks[x]]);
+                ip.setAttribute('name', 'project[dependencies]');
+                form.appendChild(ip);
+            }
         }
+        var template: HTMLElement = document.createElement("input");
+        template.setAttribute('type', 'hidden');
+        template.setAttribute('name', 'project[template]');
+        template.setAttribute('value', 'angular-cli');
+        form.appendChild(template);
+
         document.getElementById('open-plnkr').addEventListener('click', () => { form.submit(); });
     }
 
@@ -1009,17 +1069,6 @@ export class SBController {
         hash = hash.slice(2);
         return ':theme/' + hash.join('/');
     }
-}
-
-function loadTheme(theme: string): void {
-    selectedTheme = theme;
-    let ajax: Ajax = new Ajax('./styles/' + theme + '.css', 'GET', true);
-    ajax.send().then((result: any) => {
-        let doc: HTMLFormElement = <HTMLFormElement>select('#themelink');
-        doc.href = './styles/' + theme + '.css';
-        // select('#themeswitcher-icon').setAttribute('src', 'styles/images/SB_icon/SB_Switcher_icon_' + theme + '.png');
-        themeFlag = false;
-    });
 }
 
 function hideLoader(): void {
@@ -1039,3 +1088,8 @@ function closeSbList(): void {
 window.onload = () => {
     hideLoader();
 };
+
+if ('serviceWorker' in navigator){
+    navigator.serviceWorker.register('/src/service-worker.js');
+    console.log('Registered as service worker');
+    }

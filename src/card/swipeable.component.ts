@@ -58,13 +58,7 @@ export class SwipeCardComponent implements AfterViewInit {
         if (ele.parentElement.querySelector('.card-out-left')) {
             ele.parentElement.querySelector('.card-out-left').classList.remove('card-out-left');
         }
-        if (e.swipeDirection === 'Right') {
-            ele.classList.add('card-out');
-        } else if (e.swipeDirection === 'Left') {
-            ele.classList.add('card-out-left');
-        } else {
-            return;
-        }
+        e.swipeDirection === 'Right' ? ele.classList.add('card-out') : ele.classList.add('card-out-left');
         ele.parentElement.insertBefore(ele, ele.parentElement.children[0]);
         swipeable();
         ele.style.removeProperty('left');

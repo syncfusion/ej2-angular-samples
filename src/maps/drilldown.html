@@ -13,7 +13,7 @@
     </div>
     <div align='center'>
         <ejs-maps id='maps' #maps style="display:block;" [zoomSettings]='zoomSettings' [layers]='layers' (shapeSelected)="shapeSelected($event)"
-            (load)="load($event)">
+            (load)="load($event)" (loaded)="loaded($event)">
         </ejs-maps>
         <div align="center">
             <p>

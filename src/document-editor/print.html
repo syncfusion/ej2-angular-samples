@@ -8,7 +8,7 @@
     <div id="wrapper">
         <input type="file" id="uploadfileButton" style="position:fixed; left:-100em" />
         <div id="panel">
-            <div id='documenteditor_titlebar'></div>
+            <div id='documenteditor_titlebar' class="e-de-ctn-title"></div>
             <div id="documenteditor_container_panel" style="display: flex;position:relative;">
                 <ejs-documenteditor #documenteditor_print id="container" style="width: 100%;height: 100%;" [isReadOnly]=true [enablePrint]=true
                     (documentChange)="documentChange()" (zoomFactorChange)="zoomFactorChange()" (viewChange)="viewChange($event)">

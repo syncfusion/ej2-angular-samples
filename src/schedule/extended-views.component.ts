@@ -2,13 +2,13 @@ import { Component, ViewChild } from '@angular/core';
 import { fifaEventsData } from './datasource';
 import { extend } from '@syncfusion/ej2-base';
 import {
-    EventSettingsModel, EventRenderedArgs, ScheduleComponent, MonthService, DayService, WeekService, ResizeService
+    EventSettingsModel, EventRenderedArgs, ScheduleComponent, MonthService, DayService, WeekService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'extended-views.html',
-    providers: [MonthService, DayService, WeekService, ResizeService]
+    providers: [MonthService, DayService, WeekService, ResizeService, DragAndDropService]
 })
 export class ExtendedViewsComponent {
     public data: Object[] = <Object[]>extend([], fifaEventsData, null, true);

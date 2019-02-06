@@ -14,6 +14,8 @@
             <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign='Right'></e-column>
         </e-columns>
         </ejs-grid>
+        <ejs-dialog #alertDialog [buttons]='alertDlgButtons' [visible]='hidden' [header]='alertHeader' [animationSettings]='animationSettings' [content]='alertContent' [showCloseIcon]='showCloseIcon' [target]='target' [width]='alertWidth'>
+        </ejs-dialog>
         <div id="description">
             <p>Selected rows or cells data in the Grid can be copied into clipboard using the Keyboard shortcuts and <code><a target="_blank" class="code"
         href="http://ej2.syncfusion.com/angular/documentation/grid/api-grid.html#copy">copy

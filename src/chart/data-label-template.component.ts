@@ -81,7 +81,6 @@ export class DataLabelComponent {
     public primaryYAxis: AxisModel = {
         minimum: 900, maximum: 1300,
         labelFormat: '{value}M',
-        title: Browser.isDevice ? '' : 'Population',
         labelStyle: {
             fontFamily: 'Roboto',
             fontStyle: 'medium', size: '14px'
@@ -118,8 +117,6 @@ export class DataLabelComponent {
             args.template = args.series.name === 'Male' ? this.materialMan : this.materialWomen;
         } else if (this.theme === 'Fabric') {
             args.template = args.series.name === 'Male' ? this.fabricMan : this.fabricWomen;
-        } else if (this.theme === <ChartTheme>'Highcontrast') {
-            args.template = args.series.name === 'Male' ? this.highcontrastMan : this.highcontrastWomen;
         } else {
             args.template = args.series.name === 'Male' ? this.bootstrapMan : this.bootstrapWomen;
         }
@@ -133,7 +130,7 @@ export class DataLabelComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
         this.theme = args.chart.theme;
     };
     //Initializing Chart Title

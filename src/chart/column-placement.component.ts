@@ -31,7 +31,7 @@ export class PlacementColumnChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        majorGridLines: { width: 0 },
+        minimum: 0, maximum: 12, interval: 3, majorGridLines: { width: 0 },
         majorTickLines: { width: 0 }, lineStyle: { width: 0 }, labelStyle: { color: 'transparent' }
     };
     public marker: Object = { dataLabel: { visible: true, position: 'Top', font: { fontWeight: '600', color: '#ffffff' } } };
@@ -52,7 +52,7 @@ export class PlacementColumnChartComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
     constructor() {
         //code
