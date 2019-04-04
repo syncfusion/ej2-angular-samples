@@ -1,0 +1,30 @@
+<div class="col-lg-12 control-section" style="min-height: 450px">
+    <div id="drag-drop-wrapper">
+        <div class="listbox-control">
+            <h4>Group A</h4>
+            <ejs-listbox #listbox1 [dataSource]='dataA' [allowDragAndDrop]='true' height='330px' scope='combined-list' [fields]='fields' (drop)='onDropGroupA($event)'></ejs-listbox>
+        </div>
+        <span class="e-swap-icon"></span>
+        <div class="listbox-control">
+            <h4>Group B</h4>
+            <ejs-listbox #listbox2 [dataSource]='dataB' [allowDragAndDrop]='true' height='330px' scope='combined-list' [fields]='fields' (drop)='onDropGroupB($event)'></ejs-listbox>
+            <button class="e-btn" (click)='saveChanges()'>Update</button>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates the drag and drop functionalities of a ListBox. Drag an item or a group of selected items and drop it within the same list box or into another list box.</p>
+</div>
+<div id="description">
+    <p>The ListBox component allows the user to drag and drop a desired item from one list box into another list box. The drag and drop feature can be enabled by using the following properties,</p>
+    <ul>
+        <li>To drag and drop a desired item within the ListBox, the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/list-box/#allowdraganddrop"><code>allowDragAndDrop</code></a> property should be set to <code>true.</code></li>
+        <li>To drag and drop between two listboxes, the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/list-box/#scope"><code>scope</code></a> property should be set to both the listboxes.</li>
+    </ul>
+    <p>In this sample, a list of countries is loaded in Group A and another list of countries is loaded in Group B. You can drag and drop an item or multiple items from
+        Group A to Group B, and vice versa. Save changes is enabled in the sample for Group B, so that by clicking update button, user can save the
+        changes in json using Datamanager <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/data/dataManager/#savechanges"><code>saveChanges</code></a> method.</p>
+    <p>More information about drag and drop functionalities in the ListBox can be found in the
+        <a href="https://ej2.syncfusion.com/angular/documentation/list-box/" target="_blank"> documentation</a> section.
+    </p>
+</div>

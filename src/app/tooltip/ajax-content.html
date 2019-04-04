@@ -1,0 +1,26 @@
+<div id="action-description">
+    <p>This sample demonstrates the AJAX functionalities of the Tooltip which will open by Hover or Touch-hold action on list-item.</p>
+</div>
+
+<div class="control-section" style="padding-left:15px;">
+    <h4 class="listheader">National Sports</h4>
+
+    <!-- Tooltip element -->
+    <ejs-tooltip #tooltip id="Tooltip" style="display:block;" class="e-prevent-select" content='Loading...' target="#countrylist [title]" position='RightCenter' cssClass= 'e-ajax-content'
+        (beforeRender)="onBeforeRender($event)">
+
+        <!-- ListView element -->
+        <ejs-listview id='countrylist' [dataSource]='listViewData' [fields]='fields'></ejs-listview>
+    </ejs-tooltip>
+</div>
+
+<div id="description">
+    <p>This sample illustrates the way to load the content of a tooltip dynamically using AJAX request. Here, when the user
+        hovers/tap on the country names, its respective data (national game of each country and its related game icon) will
+        be retrieved dynamically and then assigned to the tooltip’s content.</p>
+    <p>The AJAX request should be made within the <code>beforeRender</code> event of the tooltip, and on every success, the corresponding
+        retrieved data will be set to the <code>content</code> property of the tooltip.</p>
+    <p>More information on loading dynamic tooltip content can be found in the
+        <a href="http://ej2.syncfusion.com/angular/documentation/tooltip/content.html#dynamic-content-via-ajax" target="_blank"> documentation section</a>.
+    </p>
+</div>

@@ -1,0 +1,13 @@
+  .e-code-mirror::before {
+        content: '\e345';
+    }
+    .CodeMirror-linenumber,
+    .CodeMirror-gutters {
+        display: none;
+    }
+    .highcontrast .cm-s-default .cm-tag {color: #00ff00;}
+    .highcontrast .cm-s-default .cm-string {color: #ffd939;}
+    .highcontrast .cm-s-default .cm-attribute {color: #f00;}
+    .highcontrast .CodeMirror {
+        background: black;
+    }

@@ -1,0 +1,88 @@
+<div class="col-lg-8 control-section" style="border-right: 1px solid #D7D7D7">
+    <style>
+        #flowExecitionPropertySection .row {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        #flowExecitionPropertySection .col-xs-7 {
+            width: 300;
+        }
+
+        #flowExecitionPropertySection .col-xs-7 {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        #flowExecitionControlSection.content-wrapper {
+            border: 1px solid #D7D7D7;
+        }
+    </style>
+
+    <div id="flowExecitionControlSection" class="content-wrapper" style="width: 100%;">
+        <ejs-diagram #diagram id="diagram" width="100%" height="580px" [nodes]="nodes" [connectors]="connectors" (selectionChange)="selectionChange"
+            (created)="created()" [snapSettings]="snapSettings"></ejs-diagram>
+    </div>
+</div>
+<div id="flowExecitionPropertySection" class="col-lg-4 property-section">
+    <div class="property-panel-header">
+        Choose a flow
+    </div>
+    <div class="row property-panel-content" id="appearance">
+        <div class="row property-panel-content">
+            <div class="row">
+                <div class="col-xs-7">
+                    <ejs-radiobutton id="UnhighlightAll" label='None' value="UnhighlightAll" name="radio" (change)="buttonChange($event)"
+                        checked="true"></ejs-radiobutton>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 8px">
+                <div class="col-xs-7">
+                    <ejs-radiobutton id="LinksInto" label='Incoming connections' value="LinksInto" name="radio" (change)="buttonChange($event)"></ejs-radiobutton>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 8px">
+                <div class="col-xs-7">
+                    <ejs-radiobutton id="LinksOutOf" label='Outgoing connections' value="LinksOutOf" name="radio" (change)="buttonChange($event)"></ejs-radiobutton>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 8px">
+                <div class="col-xs-7">
+                    <ejs-radiobutton id="LinksConnected" label='Incoming and outgoing connections' value="LinksConnected" name="radio" (change)="buttonChange($event)"></ejs-radiobutton>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 8px">
+                <div class="col-xs-7">
+                    <ejs-radiobutton id="NodesInto" label='Incoming nodes' value="NodesInto" name="radio" (change)="buttonChange($event)" (checked)=true></ejs-radiobutton>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 8px">
+                <div class="col-xs-7">
+                    <ejs-radiobutton id="NodesOutOf" label='Outgoing nodes' value="NodesOutOf" name="radio" (change)="buttonChange($event)"></ejs-radiobutton>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 8px">
+                <div class="col-xs-7">
+                    <ejs-radiobutton id="NodesConnected" label='Incoming and outgoing nodes' value="NodesConnected" name="radio" (change)="buttonChange($event)"></ejs-radiobutton>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 8px">
+                <div class="col-xs-7">
+                    <ejs-radiobutton id="NodesReachable" label='Adjacent nodes' value="NodesReachable" name="radio" (change)="buttonChange($event)"></ejs-radiobutton>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates how we can process and get the consecutive nodes and connectors respectively.
+    </p>
+</div>
+<div id="description">
+    <p>
+        We can get the inward connections and outward connections of the node using <code>inEdges</code> and <code>outEdges</code>        properties of the node. By using this connector’s name collection, we can find the node using <code>getObject</code>.
+        And also, we can get the nodes connected on the connector using <code>sourceNode</code> and <code>targetNode</code>        properties of the connector. method can be used to print the diagrams.
+    </p>
+    <br>
+</div>

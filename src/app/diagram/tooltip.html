@@ -1,0 +1,146 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates how to add the extra information to the nodes and connectors and how to show the information through
+        the common graphical user interface element.
+    </p>
+</div>
+<div class="col-lg-8 control-section" style="border-right: 1px solid #D7D7D7">
+    <style>
+         #tooltipDiagramSection .image-pattern-style {
+            background-color: white;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 75px;
+            width: calc((100% - 12px) / 3);
+            cursor: pointer;
+            border: 1px solid #D5D5D5;
+            background-position: center;
+            float: left;
+        }
+
+        #tooltipDiagramSection .image-pattern-style:hover {
+            border-color: gray;
+            border-width: 2px;
+        }
+
+        #tooltipDiagramSection .row {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        #tooltipDiagramSection .row-header {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        #tooltipDiagramSection .e-selected-style {
+            border-color: #006CE6;
+            border-width: 2px;
+        }
+
+        #tooltipDiagramSection .e-checkbox-wrapper .e-label {
+            font-size: 12px;
+        }
+
+        #tooltipPropertySection .property-panel-header {
+            margin-left: 10px;
+        }
+
+        .content-wrapper {
+            border: 1px solid #D7D7D7;
+        }
+    </style>
+    <div id="tooltipDiagramSection" class="content-wrapper" style="width: 100%">
+        <ejs-diagram #diagram id="diagram" width="100%" height="645px" [nodes]='nodes' [connectors]='connectors' [snapSettings]='snapSettings' (created)="created()"
+            [tooltip]='tooltip' [getNodeDefaults]='getNodeDefaults' [getConnectorDefaults]='getConnectorDefaults'>
+        </ejs-diagram>
+    </div>
+</div>
+<div id="tooltipPropertySection" class="col-lg-4 property-section">
+    <div class="property-panel-header" style="margin-left:0px">
+        Properties
+    </div>
+    <div class="property-panel-content">
+    <table id="property" title="Properties">
+        <tr>
+            <td>
+                <div>
+                    Relative mode
+                </div>
+            </td>
+            <td>
+                <div style="margin-left:15px">
+                    <ejs-dropdownlist id="mode" #mode [index]="dropdownIndex" [dataSource]="modevalue" [fields]="fields" popupWidth='150' width='100%' placeholder='select a relative mode'
+                        (change)="relativeModeChange($event)">
+                    </ejs-dropdownlist>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    Position
+                </div>
+            </td>
+            <td>
+                <div style="margin-left:15px">
+                    <ejs-dropdownlist id="position" #position [index]="dropdownIndex" [dataSource]="PositionValue" [fields]="fields" popupWidth='150' width='100%' placeholder='select a position'
+                        (change)="positionChange($event)">
+                    </ejs-dropdownlist>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div id="textContentDiv" class="row" style="display: none">
+                    <div>
+                        <ejs-textbox id="textContent" placeholder="Enter text content" floatLabelType="Auto" (change)="textChange"></ejs-textbox>
+                    </div>
+                </div>
+                <div id="htmlContentDiv" class="row" style="display: none">
+                    <div>
+                        <ejs-textbox id="htmlContent" placeholder="Enter html content" floatLabelType="Auto" (change)="htmlChange"></ejs-textbox>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    Animation
+                </div>
+            </td>
+            <td>
+                <div style="margin-left:15px">
+                    <ejs-numerictextbox id="duration" value="1000" min="1000" max="6000" step="100" (change)="animationChange"></ejs-numerictextbox>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    Effect
+                </div>
+            </td>
+            <td>
+                <div style="margin-left:15px">
+                    <ejs-dropdownlist id="effect" #effect [dataSource]="EffectValue" [index]="dropdownIndex" [fields]="fields" popupWidth='150' width='100%' placeholder='select a effect type'
+                        (change)="effectChange($event)">
+                    </ejs-dropdownlist>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+</div>
+
+<div id="description">
+    <p>
+        Using diagram’s <code>tooltip</code> we can define the tooltip for the diagram nodes as well as connector. We can control the <code>animation</code>,
+        <code>position</code>, <code>effects</code> of the tooltip using <code>tooltip</code> property of the diagram. Also, we can define the custom tooltip
+        as either text or HTML element using <code>content</code> property of the tooltip. We can control the different tooltip settings
+        to each connector and node.
+    </p>
+    <br>
+</div>

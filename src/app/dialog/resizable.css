@@ -1,0 +1,38 @@
+#control-container {
+    padding: 0px !important;
+  }
+  #resizeDialog {
+      height: 105px;
+  }
+  .e-btn-hide {
+    display: none;
+  }
+  .dlgbtn {
+    margin-right: 10px;
+  }
+  .control-section.drag {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 350px;
+  }  
+  #container {
+    height: 100%;
+    min-height: 280px;
+    position:relative;
+  }
+  @media screen and (min-width: 150px) and (max-width: 480px) {
+    .control-section {
+      margin-bottom: 30px;
+    }
+    .control-wrapper {
+      margin-bottom: 0px;
+    }
+  }
+
+  .material #resizeDialog.e-dialog, .bootstrap #resizeDialog.e-dialog, 
+  .bootstrap4 #resizeDialog.e-dialog {
+      min-height: 125px;
+  }
+  .fabric #resizeDialog.e-dialog, .highcontrast #resizeDialog.e-dialog {
+      min-height: 135px;
+  }

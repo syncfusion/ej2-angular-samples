@@ -1,0 +1,31 @@
+<div id="action-description">
+    <p>This sample demonstrates the toolbar options of the pivotgrid widget.</p>
+</div>
+<div id="description">
+    <p>
+        In this sample, users can generate a report at runtime, as well as save and load them. Save and load operations
+        are performed in localStorage (session storage) using the saveReport and loadReport events. Users can change the
+        grid or chart view using the toggle option. Other toolbar options available are:
+    </p>
+    <ul>
+        <li>Create new report.</li>
+        <li>Rename report.</li>
+        <li>Remove report.</li>
+        <li>Save as option.</li>
+        <li>Hide subtotals and grand totals.</li>
+        <li>Export to PDF, Excel, and CSV.</li>
+        <li>PivotTable Field List</li>
+    </ul>
+</div>
+
+<div class="control-section" id="pivot-grid-section">
+    <div>
+        <ejs-pivotview style="display: inline-block" #pivotview id='PivotView' [dataSource]=dataSource allowExcelExport='true'
+            allowConditionalFormatting='true' allowPdfExport='true' showToolbar='true' allowCalculatedField='true'
+            showFieldList='true' width='100%' [chartSettings]='chartSettings' [displayOption]='displayOption'
+            height='300' [gridSettings]='gridSettings' [toolbar]='toolbarOptions' (saveReport)='saveReport($event)'
+            (loadReport)='loadReport($event)' (fetchReport)='fetchReport($event)' (renameReport)='renameReport($event)'
+            (removeReport)='removeReport($event)' (newReport)='newReport()' (toolbarRender)='beforeToolbarRender($event)'>
+        </ejs-pivotview>
+    </div>
+</div>

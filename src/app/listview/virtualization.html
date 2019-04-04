@@ -1,0 +1,46 @@
+<div id="action-description">
+    <p>This sample demonstrates the default functionalities of UI virtualization. Scroll list item to experience
+        UI virtualization.
+    </p>
+</div>
+<div class="col-lg-8  control-section">
+    <!-- ListView element -->
+    <ejs-listview id='ui-list' #listviewInstance [dataSource]='dataSource.data1' [cssClass]='cssClass' [enableVirtualization]=true
+        headerTitle='Contacts' [fields]='fields' height=500 [template]='template' (actionComplete)='onActionComplete()'
+        (actionBegin)='onActionBegin()' [showHeader]='true'></ejs-listview>
+</div>
+<div id="description">
+    <p>
+        UI virtualization is an optimization technique to avoid unnecessarily constructing and rendering objects
+        for list items by loading only visible list items in a view port. This helps improve list view
+        performance when loading a large number of items. The list items are updated dynamically while
+        users scroll the list. The virtualization can be enabled by using <a href="https://ej2.syncfusion.com/documentation/list-view/api-listView.html?lang=typescript#enablevirtualization">enablevirtualization</a>        API in Listview.
+    </p>
+</div>
+<div class="col-lg-4 property-section ui-list">
+    <table id="property" title="Properties">
+        <tbody>
+            <tr>
+                <td style="width: 50%">
+                    <div class="userselect">Load data</div>
+                </td>
+                <td style="width: 50%;padding-right: 10px">
+                    <div>
+                        <ejs-dropdownlist id='ddl' [dataSource]='ddlDatasource' [fields]='ddlFields' index=0 (change)='onChange($event)'
+                            placeholder='Select a range' popupHeight='200px'></ejs-dropdownlist>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%;padding-top: 30px">
+                    <div class="userselect">Time taken</div>
+                </td>
+                <td style="width: 50%;padding-right: 10px;padding-top: 30px;">
+                    <div style="padding-left: 10px;padding-top: 0">
+                        <span id="time">0 ms</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,71 @@
+<div class="control-section">
+  <div class="col-lg-9 content-wrapper">
+    <ejs-schedule #scheduleObj id='Schedule' width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
+      currentView="Week">
+      <e-views>
+        <e-view option="Day"></e-view>
+        <e-view option="Week"></e-view>
+        <e-view option="WorkWeek"></e-view>
+        <e-view option="Month"></e-view>
+        <e-view option="Agenda"></e-view>
+      </e-views>
+    </ejs-schedule>
+  </div>
+  <div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+      <div class="property-panel-header">Properties</div>
+      <div class="property-panel-content">
+        <div id="property" class="property-panel-table" title="Properties">
+          <table id="property" title="Properties" style="width: 100%">
+            <tbody>
+              <tr style="height: 50px">
+                <td style="width: 50%">
+                  <div>Export as iCalendar</div>
+                </td>
+                <td style="width: 50%;">
+                  <button ejs-button id='ics-export' (click)="onExportClick()">Export</button>
+                </td>
+              </tr>
+              <tr style="height: 50px">
+                <td style="width: 50%">
+                  <div>Import iCalendar file</div>
+                </td>
+                <td style="width: 50%;">
+                  <ejs-uploader id='ics-import' cssClass='calendar-import' [multiple]='multiple' [buttons]='buttons'
+                    [showFileList]='showFileList' allowedExtensions='.ics' (selected)='onSelected($event)'></ejs-uploader>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="action-description">
+  <p>
+    This example showcases how to export the Scheduler events to a calendar (.ics) file, as well as how to import
+    events from an .ics file (downloaded from any of the calendars like Google or Outlook) into our Scheduler.
+  </p>
+</div>
+<div id="description">
+  <p>
+    In this example, the Scheduler events can be exported to a calendar (.ics) file by making use of the
+    <code>exportToICalendar</code> public method. By default,
+    the calendar is exported with a file name <code>Calendar.ics</code>.
+    To change this file name on export, pass the custom string value as <code>fileName</code> to get the file
+    downloaded with this provided name.
+    The events from external calendars can also be imported into Scheduler by making use of the
+    <code>importICalendar</code> method. This method accepts the blob object of an .ics file to be imported as a
+    mandatory argument.
+  </p>
+  <p>
+    <strong>Module Injection</strong>
+  </p>
+  <p>
+    To start using the export and import ICS functionality in Scheduler, you need to inject the
+    <code>ICalendarExportService</code> and <code>ICalendarImportService</code> into the
+    <code>@NgModule.providers</code> section.
+  </p>
+</div>

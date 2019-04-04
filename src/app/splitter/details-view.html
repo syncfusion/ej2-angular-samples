@@ -1,0 +1,219 @@
+<div id="target" class="control-section details-view">
+    <ejs-splitter #splitterInstance height='266px' width='100%'>
+        <e-panes>
+            <e-pane size='35%' min='25%'>
+                <ng-template #content>
+                    <ejs-listview id='letterAvatarList' #letterAvatarList (actionComplete)='onActionComplete()' [dataSource]='dataSource' (select)='onSelect($event)' height=254>
+                        <ng-template #template let-dataSource="">
+                            <div class="listWrapper">
+                                <span class="e-avatar e-avatar-small e-avatar-circle {{dataSource.color}}" *ngIf="dataSource.avatar !== ''">{{dataSource.avatar}}</span>
+                                <span class="{{dataSource.pic}} e-avatar e-avatar-small e-avatar-circle" *ngIf="dataSource.pic !== '' ">
+                                </span>
+                                <span class="list-text">{{dataSource.text}}</span>
+                            </div>
+                        </ng-template>
+                    </ejs-listview>
+                </ng-template>
+            </e-pane>
+            <e-pane size='65%' min='45%'>
+            </e-pane>
+        </e-panes>
+    </ejs-splitter>
+</div>
+<div id="action-description">
+    <p>
+        This example demonstrates the Splitter control that is used to design details view page.
+        Select the employee from left pane to display the corresponding employee details on the right pane.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The Splitter is the layout user interface (UI) control, which integrates other JavaScript UI controls within
+        its pane.
+        In this example, the JavaScript ListView control is integrated within left pane to display the employee list and
+        right pane
+        to display the corresponding employee details.
+    </p>
+</div>
+<style>
+    #splitter .e-avatar.e-avatar-xlarge {
+        font-size: 22px;
+    }
+
+    .header-image {
+        text-align: center;
+        margin-top: 7px;
+    }
+
+    .e-custom-card .e-avatar {
+        font-size: 40px;
+        position: absolute;
+        top: calc(0% - 1.5em);
+        left: calc(50% - 1.5em);
+        box-shadow: 0 16px 28px -8px rgba(0, 0, 0, .36), 0 4px 15px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+    }
+
+    /* ListView template customization */
+
+    #ui-list.e-listview .showUI {
+        display: flex;
+    }
+
+    #ui-list.e-listview .hideUI {
+        display: none;
+    }
+
+    #ui-list.e-listview .e-list-item {
+        padding: 3px 0;
+    }
+
+    #ui-list.e-listview .R {
+        background: lightgrey;
+    }
+
+    #ui-list.e-listview .M {
+        background: lightblue;
+    }
+
+    .highcontrast #ui-list.e-listview .e-list-item.e-active {
+        background: #ffd939;
+        color: #000000;
+    }
+
+    .details-view table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
+
+    .details-view table th,
+    .details-view table td {
+        font-weight: normal;
+        padding: 5px;
+        text-align: left;
+        border: 1px solid #ddd
+    }
+
+    .e-bold {
+        font-weight: 550;
+    }
+
+    .profile-name {
+        font-weight: 550;
+        font-size: 14px;
+        text-align: center;
+    }
+
+
+    .control-section {
+        overflow: auto;
+    }
+
+    /* Listview Customization */
+
+    #letterAvatarList {
+        max-width: 350px;
+        margin: auto;
+        border-radius: 3px;
+    }
+
+    #letterAvatarList .listWrapper {
+        width: inherit;
+        height: inherit;
+        position: relative;
+    }
+
+    #letterAvatarList .e-list-header {
+        height: 54px;
+    }
+
+    .material #letterAvatarList .e-list-header .e-text {
+        line-height: 22px;
+    }
+
+    .fabric #letterAvatarList .e-list-header .e-text {
+        line-height: 22px;
+    }
+
+    .bootstrap #letterAvatarList .e-list-header .e-text {
+        line-height: 13px;
+    }
+
+    .highcontrast #letterAvatarList .e-list-header .e-text {
+        line-height: 20px;
+    }
+
+    #letterAvatarList .e-list-item {
+        cursor: pointer;
+        height: 50px;
+        line-height: 44px;
+        border: 0;
+    }
+
+    /* Badge Positioning */
+
+    #letterAvatarList .e-badge {
+        margin-top: 12px;
+    }
+
+    #letterAvatarList .listWrapper .list-text {
+        width: 60%;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 50px;
+    }
+
+    /* Avatar Positioning */
+
+    #letterAvatarList .listWrapper .e-avatar {
+        position: absolute;
+        top: calc(100% - 40px);
+        font-size: 10px;
+        left: 5px;
+    }
+
+    /* Avatar Background Customization */
+
+    #letterAvatarList .blue {
+        background-color: #039BE5;
+    }
+
+    #letterAvatarList .red {
+        background-color: #E91E63;
+    }
+
+    #letterAvatarList .green {
+        background-color: #009688;
+    }
+
+    /* Avatar images using 'background-image' property */
+
+    .pic01 {
+        background-image: url('./assets/splitter/images/margaret.png');
+    }
+
+    .pic02 {
+        background-image: url('./assets/splitter/images/laura.png');
+    }
+
+    .pic03 {
+        background-image: url('./assets/splitter/images/robert.png');
+    }
+
+    .pic04 {
+        background-image: url('./assets/splitter/images/albert.png');
+    }
+    .pic05 {
+        background-image: url('./assets/splitter/images/michale.png');
+    }
+</style>
+
+<!-- custom code start -->
+<style>
+    .details-view#target {
+        margin: 20px auto;
+        max-width: 710px;
+    }
+</style>
+<!-- custom code end -->

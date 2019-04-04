@@ -1,0 +1,67 @@
+<div class="control-section">
+    <div style="padding:5px;text-align: right;">
+        <button id="add" class="e-btn e-info" (click)="addPanel()">Add Panel</button>
+    </div>
+    <ejs-dashboardlayout id='default_dashboard' columns="5" #default_dashboard [cellSpacing]='cellSpacing'  [allowResizing]='true'>
+        <div id="one" class="e-panel" data-row="0" data-col="0" data-sizeX="1" data-sizeY="1">
+            <span id="close" class="e-template-icon e-close-icon" (click)="onCloseIconHandler($event)"></span>
+            <div class="e-panel-container">
+                <div class="text-align">0</div>
+            </div>
+        </div>
+        <div id="two" class="e-panel" data-row="1" data-col="0" data-sizeX="1" data-sizeY="2">
+            <span id="close" class="e-template-icon e-close-icon" (click)="onCloseIconHandler($event)"></span>
+            <div class="e-panel-container">
+                <div class="text-align">1</div>
+            </div>
+        </div>
+        <div id="three" class="e-panel" data-row="0" data-col="1" data-sizeX="2" data-sizeY="2">
+            <span id="close" class="e-template-icon e-close-icon" (click)="onCloseIconHandler($event)"></span>
+            <div class="e-panel-container">
+                <div class="text-align">2</div>
+            </div>
+        </div>
+        <div id="four" class="e-panel" data-row="2" data-col="1" data-sizeX="1" data-sizeY="1">
+            <span id="close" class="e-template-icon e-close-icon" (click)="onCloseIconHandler($event)"></span>
+            <div class="e-panel-container">
+                <div class="text-align">3</div>
+            </div>
+        </div>
+        <div id="five" class="e-panel" data-row="2" data-col="2" data-sizeX="2" data-sizeY="1">
+            <span id="close" class="e-template-icon e-close-icon" (click)="onCloseIconHandler($event)"></span>
+            <div class="e-panel-container">
+                <div class="text-align">4</div>
+            </div>
+        </div>
+        <div id="six" class="e-panel" data-row="0" data-col="3" data-sizeX="1" data-sizeY="1">
+            <span id="close" class="e-template-icon e-close-icon" (click)="onCloseIconHandler($event)"></span>
+            <div class="e-panel-container">
+                <div class="text-align">5</div>
+            </div>
+        </div>
+        <div id="seven" class="e-panel" data-row="1" data-col="3" data-sizeX="1" data-sizeY="1">
+            <span id="close" class="e-template-icon e-close-icon" (click)="onCloseIconHandler($event)"></span>
+            <div class="e-panel-container">
+                <div class="text-align">6</div>
+            </div>
+        </div>
+        <div id="eight" class="e-panel" data-row="0" data-col="4" data-sizeX="1" data-sizeY="3">
+            <span id="close" class="e-template-icon e-close-icon" (click)="onCloseIconHandler($event)"></span>
+            <div class="e-panel-container">
+                <div class="text-align">7</div>
+            </div>
+        </div>
+    </ejs-dashboardlayout>
+</div>
+<div id="action-description">
+    <p>
+        The following sample demonstrates the default functionalities of the DashboardLayout component. Click the <code>Add Panel</code> button to add panels dynamically to the dashboard layout.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        The DashboardLayout component provides the capability to arrange, resize and reorder the panels within the dashboard layout.
+    </p>
+
+</div>

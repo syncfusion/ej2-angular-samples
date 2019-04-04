@@ -1,0 +1,28 @@
+<div class="control-section">
+    <div align='center'>
+        <ejs-treemap id='container' #treemap style="display:block;" [titleSettings] = 'titleSettings' [dataSource] ='dataSource' [weightValuePath] ='weightValuePath'
+        [tooltipSettings] = 'tooltipSettings'  renderDirection= 'TopRightBottomLeft' enableRtl = true [leafItemSettings] = 'leafItemSettings' [palette] ='palette'  format ='n' useGroupingSeparator ="true"  enableDrillDown = "true" (load)='load($event)' >
+        <e-levels>
+            <e-level groupPath= 'Continent' fill= '#3498DB' [border]='border' headerAlignment='Far'> </e-level>
+            <e-level groupPath= 'Country' fill= '#7FB3D5' [border]='border' headerAlignment='Far' >  </e-level>                         
+            </e-levels>     
+    </ejs-treemap>
+    </div>
+    <div style="float: right; margin-right: 10px;">Source:
+        <a href="https://www.indexmundi.com/facts/visualizations/treemap#SL.UEM.TOTL.ZS:SL.UEM.TOTL.ZS" target="_blank">en.wikipedia.org</a>
+    </div>
+    
+</div>
+<div id="action-description">
+    <p>
+        This sample orders the countries based on the unemployment rate by rendering TreeMap in the right-to-left (RTL)
+        direction.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render a TreeMap from the right-to-left direction. The tooltip is enabled in
+        this example. To see the tooltip in action, hover the mouse over an item or tap an item in touch-enabled
+        devices.
+    </p>
+</div>

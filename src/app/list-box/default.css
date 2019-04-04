@@ -1,0 +1,9 @@
+#listbox-control {
+    width: 350px;
+    margin: auto;
+}
+@media screen and (max-width: 590px) {
+    #listbox-control {
+        width: 100%;
+    }
+}

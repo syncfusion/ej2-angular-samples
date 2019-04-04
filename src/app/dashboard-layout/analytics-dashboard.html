@@ -1,0 +1,180 @@
+<div class="control-section">
+  <div class="col-lg-12 col-sm-12 col-md-12" id="sidebar-section">
+    <div id="head">
+      <div class="header">
+        <div class="menu"><span class="e-icons expand"></span></div>
+        <div class="searchContent">
+          <div class="analysis">SEO Analysis Dashboard</div>
+        </div>
+        <div class="right-content">
+          <div class="information">
+            <span class="e-avatar e-avatar-medium e-avatar-circle image"></span>
+            <div class="text-content">John</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- sidebar element declaration -->
+    <ejs-sidebar id="dockSidebar" #sidebarInstance [type]="type" [enableDock]='enableDock' [dockSize]='dockSize'
+      [target]="target" [closeOnDocumentClick]="closeOnDocumentClick">
+      <div class="content-area">
+        <div class="dock">
+          <ul>
+            <li class="sidebar-item"><span class="e-icons home"></span></li>
+            <li class="sidebar-item filterHover">
+              <span class="e-icons filter"></span>
+            </li>
+            <li class="sidebar-item">
+              <span class="e-icons analyticsChart"></span>
+            </li>
+            <li class="sidebar-item"><span class="e-icons settings"></span></li>
+            <li class="sidebar-item">
+              <span class="e-icons analytics"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </ejs-sidebar>
+    <!-- end of sidebar element -->
+    <!-- main content declaration -->
+    <div id="target">
+      <div class="sidebar-content">
+        <div class="dashboardParent">
+          <ejs-dashboardlayout id='editLayout' [columns]="6" #editLayout [cellSpacing]='cellSpacing'
+            [cellAspectRaito]='aspectRatio'>
+            <e-panels>
+              <e-panel [sizeX]="2" [sizeY]="1" [row]="0" [col]="0">
+                <ng-template #content>
+                  <div class="card">
+                    <span class="e-icons session"></span>
+                    <div class="card-content text">
+                      Session
+                    </div>
+                    <div class="card-content number">
+                      124,444
+                    </div>
+                  </div>
+                </ng-template>
+              </e-panel>
+              <e-panel [sizeX]="2" [sizeY]="1" [row]="0" [col]="2">
+                <ng-template #content>
+                  <div class="card">
+                    <span class="e-icons profile"></span>
+                    <div class="card-content text">
+                      Users
+                    </div>
+                    <div class="card-content number">
+                      64,496
+                    </div>
+                  </div>
+                </ng-template>
+              </e-panel>
+              <e-panel [sizeX]="2" [sizeY]="1" [row]="0" [col]="4">
+                <ng-template #content>
+                  <div class="card">
+                    <span class="e-icons views"></span>
+                    <div class="card-content text">
+                      Views
+                    </div>
+                    <div class="card-content number">
+                      442,278
+                    </div>
+                  </div>
+                </ng-template>
+              </e-panel>
+              <e-panel [sizeX]="2" [sizeY]="2" [row]="1" [col]="0">
+                <ng-template #header>
+                  <div>Active Visitors</div>
+                </ng-template>
+                <ng-template #content>
+                  <ejs-accumulationchart id="pie" (load)='piechartLoad($event)' #pie width="100%" height="100%" [legendSettings]="legendSettings"
+                    [tooltip]="tooltip" (animationComplete)='animationComplete($event)'
+                    (textRender)="textRender($event)" [enableSmartLabels]="enablesmartlabel" selectionMode="Point">
+                    <e-accumulation-series-collection>
+                      <e-accumulation-series name='Revenue' [dataSource]='expenseData' xName='Device' yName='Amount'
+                        [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="35%" radius="100%"
+                        [dataLabel]="dataLabel" [palettes]="palettes">
+                      </e-accumulation-series>
+                    </e-accumulation-series-collection>
+                  </ejs-accumulationchart>
+                </ng-template>
+              </e-panel>
+              <e-panel [sizeX]="2" [sizeY]="2" [row]="1" [col]="2">
+                <ng-template #header>
+                  <div>Regional Map</div>
+                </ng-template>
+                <ng-template #content>
+                  <ejs-maps id='map' (load)=mapLoad($event) style="display:block;" width="100%" height="100%" [zoomSettings]='zoomSettings'
+                    [layers]='layers' [legendSettings]="maplegendSettings">
+                  </ejs-maps>
+                </ng-template>
+              </e-panel>
+              <e-panel [sizeX]="2" [sizeY]="2" [row]="1" [col]="4">
+                <ng-template #header>
+                  <div>Visitors by Type</div>
+                </ng-template>
+                <ng-template #content>
+                  <ejs-chart style='display:block;' id='colChart' #colchart [chartArea]='chartArea' width='100%'
+                    height='100%' [legendSettings]="collegendSettings" [margin]='margin' [primaryXAxis]='primaryXAxis'
+                    [primaryYAxis]='primaryYAxis' (load)='load($event)'>
+                    <e-series-collection>
+                      <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Desktop' width=2
+                        [marker]='marker'> </e-series>
+                      <e-series [dataSource]='data1' type='Column' xName='x' yName='y' name='Silver' width=2
+                        [marker]='marker' fill='#e36593'> </e-series>
+                      <e-series [dataSource]='data2' type='Column' xName='x' yName='y' name='Bronze' width=2
+                        [marker]='marker'> </e-series>
+                    </e-series-collection>
+                  </ejs-chart>
+                </ng-template>
+              </e-panel>
+              <e-panel [sizeX]="4" [sizeY]="2" [row]="3" [col]="2">
+                <ng-template #header>
+                  <div>Traffic History</div>
+                </ng-template>
+                <ng-template #content>
+                  <ejs-chart style="height:100%; width:100%" #lineChart id="visitorsChart" style='display:block;'
+                    [chartArea]='chartArea' [width]='widthValue' [heigth]='heightValue'
+                    [primaryXAxis]='lineprimaryXAxis' [primaryYAxis]='lineprimaryYAxis'
+                    [legendSettings]='linelegendSettings' (load)='load($event)'>
+                    <e-series-collection>
+                      <e-series [dataSource]='columnData' type='SplineArea' xName='x' yName='y' name='Jan'
+                        [border]='lineborder' fill='rgb(239, 183, 202)' opacity=0.5> </e-series>
+                      <e-series [dataSource]='columnData1' type='SplineArea' xName='x' yName='y' name='Feb'
+                        [border]='lineborder' fill='rgb(14, 64, 152, .6)' opacity=0.5> </e-series>
+                    </e-series-collection>
+                  </ejs-chart>
+                </ng-template>
+              </e-panel>
+              <e-panel [sizeX]="2" [sizeY]="2" [row]="3" [col]="0">
+                <ng-template #header>
+                  <div>Useage Statistics</div>
+                </ng-template>
+                <ng-template #content>
+                  <ejs-accumulationchart id="pieChart" (load)='piechartLoad($event)' #piechart width="100%" height="100%"
+                    [legendSettings]="maplegendSettings" [enableSmartLabels]="enablesmartlabel" [center]="center">
+                    <e-accumulation-series-collection>
+                      <e-accumulation-series name='Usage' [dataSource]='piedataSource' xName='x' yName='y'
+                        [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" radius="100%"
+                        [dataLabel]="piedataLabel" [explode]='explode' explodeOffset='10%' [explodeIndex]='2'>
+                      </e-accumulation-series>
+                    </e-accumulation-series-collection>
+                  </ejs-accumulationchart>
+                </ng-template>
+              </e-panel>
+            </e-panels>
+          </ejs-dashboardlayout>
+        </div>
+      </div>
+    </div>
+    <!--end of main content declaration -->
+  </div>
+</div>
+<div id="action-description">
+  The following sample demonstrates the usecase of DashboardLayout component in
+  realtime SEO data analysis.
+</div>
+
+<div id="description">
+  The sample demonstrates the realtime SEO data analytics dashboard layout.
+</div>

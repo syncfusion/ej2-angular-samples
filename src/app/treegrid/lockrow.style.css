@@ -1,0 +1,14 @@
+.material .disableRow .e-rowcell{
+    color: rgba(0, 0, 0, .38);
+}
+/* custom code start*/
+.fabric .disableRow .e-rowcell{
+    color: #c8c8c8;
+}
+.bootstrap .disableRow .e-rowcell{
+    color: rgba(0, 0, 0, .35);
+}
+.highcontrast .disableRow .e-rowcell{
+    color: #757575;
+}
+/* custom code end*/

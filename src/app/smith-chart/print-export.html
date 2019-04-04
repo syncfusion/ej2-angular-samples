@@ -1,0 +1,84 @@
+<div class="control-section">
+    <div class="col-lg-9">
+        <ejs-smithchart style='display:block' align='center' id='smithchartcontainer' #smithchart [legendSettings] = 'legend'  (load)='load($event)'>
+            <e-seriesCollection>
+                <e-series [points]='data' name='Transmission'[marker]='marker' [enableAnimation] = true [tooltip] = 'tooltip'> </e-series>
+            </e-seriesCollection>
+        </ejs-smithchart>
+    </div>
+<div class="col-lg-3 property-section">
+ <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+    <table id="property" title="Properties" style="width: 100%">
+        <tbody>
+            <tr style="height: 50px">
+                <td style="width: 20%">
+                    <div>Export Type</div>
+                </td>
+                <td style="width: 60%;">
+                    <div style="margin-left: -30px">
+                        <select id="mode">
+                            <option value="JPEG">JPEG</option>
+                            <option value="PNG">PNG</option>
+                            <option value="SVG">SVG</option>
+                            <option value="PDF">PDF</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr style="height: 50px">
+                <td style="width: 40%">
+                    <div>File Name</div>
+                </td>
+                <td style="width: 60%;">
+                    <div class="e-float-input" style="margin-top: 0px;">
+                        <input type="text" value="Smith chart" id="fileName" style="margin-left: -10px;width: 100px">
+                    </div>
+                </td>
+            </tr>
+            <tr id="button-control" style="height: 50px" align="center">
+                <td>
+                     <div style="margin-left: 40%;">
+                        <button ejs-button id="togglebtn1" cssClass= 'e-info' isPrimary=true (click)='onClick1($event)' style="width: 80px;" content="Export">Export</button>
+                    </div>
+                </td>
+            </tr>
+            <tr id="button-control" style="height: 50px">
+                <td align="center">
+                        <div style="margin-left: 40%;">
+                        <button ejs-button id="togglebtn2" cssClass= 'e-info' isPrimary=true (click)='onClick2($event)' style="width: 80px;" content="Print">Print</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+	</div>
+	</div>
+</div>
+</div>
+<div id="action-description">
+    <p>
+        This sample explores the exporting and printing functionality in Smith chart.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to export and print the rendered Smith chart. Smith chart can be exported to JPEG, PNG, SVG, and PDF formats.
+    </p>
+</div>
+<!-- custom code start -->
+<style>    
+    .e-play-icon::before {
+        content: '\e728';
+    }
+	.control-section {
+        min-height: 450px;
+    }
+    #button-control {
+    width: 100%;
+    text-align: center;
+    text-transform:none !important;
+}
+</style>
+<!-- custom code end -->

@@ -1,0 +1,64 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the type of containers used in linear gauge. Orientation and container type of linear gauge can be changed by using <code>Orientation</code> and <code>Container Type</code> options
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-md-8">
+        <ejs-lineargauge (load)='load($event)' id='gauge' #gauge style='display:block;' [container]='Container' [axes]='Axes'>
+        </ejs-lineargauge>
+    </div>
+    <div class="col-md-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div>Orientation</div>
+                            </td>
+                            <td>
+                                <div>
+                                    <select name="orientationMode" autocomplete="off" id="orientationMode" class="form-control" style="width:90%"> 
+                        <option value="Vertical" selected>Vertical</option>
+                        <option value="Horizontal">Horizontal</option>
+                     </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>Container Type</div>
+                            </td>
+                            <td>
+                                <div>
+                                    <select name="containerMode" autocomplete="off" id="containerMode" class="form-control" style="width:90%"> 
+                        <option value="Thermometer">Thermometer</option>
+                        <option value="Normal">Normal</option>
+                        <option value="RoundedRectangle" selected>RoundedRectangle</option>
+                     </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        This sample demonstrates the orientation and container customization in linear gauge. The gauge can be rendered either in
+        vertical or horizontal orientation. And you can use <code>type</code> property in container to change the
+        type of the container.
+    </p>
+    <br>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

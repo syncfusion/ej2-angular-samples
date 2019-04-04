@@ -1,0 +1,62 @@
+<div id="action-description">
+    <p>
+        This sample illustrates the layers along with sublayers. California and Texas map is rendered on the top of US map to depict
+        the office locations of Samsung in USA.
+    </p>
+</div>
+
+<div class="control-section">
+    <div align='center'>
+        <ejs-maps id='container' style="display:block;" [layers]='layers' (load)="load($event)" [zoomSettings]="zoomSettings" [titleSettings]="titleSettings">
+        </ejs-maps>
+    </div>
+    <div style="float: right; margin-right: 10px;">Source:
+        <a href="http://www.samsung.com/semiconductor/about-us/location/" target="_blank">www.samsung.com</a>
+    </div>
+    <div id="markercircle" style="display:none;">
+        <svg width="30" height="30">
+            <circle class="svgcircle" cx="15" cy="15" r="6" stroke="#4d4d4d" fill="#004d99"></circle>
+        </svg>
+    </div>
+</div>
+<!-- style for marker template-->
+<style>
+    .markerTemplate {
+        font-size: 12px;
+        color: black;
+        font-weight: 500
+    }
+
+    .svgcircle {
+        -webkit-animation: opac 1.5s ease-out infinite;
+        animation: opac 1.5s ease-out infinite;
+    }
+
+    @keyframes opac {
+        0% {
+            stroke-opacity: 0.6;
+            stroke-width: 0px;
+        }
+        100% {
+            stroke-opacity: 0.2;
+            stroke-width: 8px;
+        }
+    }
+</style>
+<div id='description'>
+
+    <p>
+        In this example, you can see how to render a sublayer in map. Sublayers are used to render the desired shapes over the existing
+        layers. Any number of sublayers can be added to a map. You can use the
+        <code>fill</code>,
+        <code>width</code>, and
+        <code>color</code> properties in the border to customize the appearance of the shapes.
+
+    </p>
+
+    <p>
+        More information on the maps layers can be found in this
+        <a target="_blank" href="">documentation section</a>.
+    </p>
+
+</div>

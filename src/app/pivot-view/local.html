@@ -1,0 +1,12 @@
+<div id="action-description">
+    <p>This sample demonstrates the basic rendering of the pivotgrid widget with local data.</p>
+</div>
+<div id="description">
+    <p>The pivotgrid widget supports JSON data source. The
+        <code>dataSource->data</code> property can be assigned with the JSON data to populate the widget.</p>
+    <p>In this demo, the JSON data is assigned from an external file.</p>
+</div>
+<div class="control-section" style="overflow:auto;">
+    <ejs-pivotview style="display: inline-block" #pivotview id='PivotView' (load)='onLoad()' [dataSource]=dataSource width='100%' height='300' [gridSettings]='gridSettings'>
+    </ejs-pivotview>
+</div>

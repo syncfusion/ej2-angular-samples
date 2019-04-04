@@ -1,0 +1,131 @@
+<div class="col-lg-8 control-section inplace-control-section drop-down-layout">
+    <div class="control_wrapper">
+        <table>
+            <tr>
+                <td>
+                    <label class="control-label">
+                        DropDownList </label>
+                </td>
+                <td>
+                    <ejs-inplaceeditor #dropdownEle mode="Inline" [model]="dropDownListModel" type="DropDownList" [value]='dropdownValue'></ejs-inplaceeditor>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label">
+                        AutoComplete </label>
+                </td>
+                <td>
+                    <ejs-inplaceeditor #autoCompleteEle mode="Inline" [model]="autoCompleteModel" type="AutoComplete" [value]='autoCompleteValue'></ejs-inplaceeditor>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label"> ComboBox
+                    </label>
+                </td>
+                <td>
+                    <ejs-inplaceeditor #comboBoxEle mode="Inline" [model]="comboBoxModel" type="ComboBox" [value]='comboBoxValue'></ejs-inplaceeditor>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label"> MultiSelect
+                    </label>
+                </td>
+                <td>
+                    <ejs-inplaceeditor #multiSelectEle mode="Inline" [model]="multiSelectModel" [popupSetting]="settings" type="MultiSelect" [value]='multiSelectValue'></ejs-inplaceeditor>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="dropdownProperty" class="col-lg-4 property-section">
+    <div class="property-panel-section">
+        <div class="property-panel-header"></div>
+        <div class="property-panel-content">
+            <table id="property " class="property-panel-table" title="Properties">
+                <tr>
+                    <td>
+                        <div> Mode</div>
+                    </td>
+                    <td>
+                        <div>
+                            <ejs-dropdownlist #editorMode [dataSource]='editorModeData' (change)='changeMode($event)' value='Inline'></ejs-dropdownlist>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates the usage of drop-down controls such as AutoComplete, ComboBox, DropDownList, and
+        MultiSelect. Click on the dotted input element to switch to the
+        editable state of the corresponding integrated component.
+    </p>
+</div>
+<div id="description">
+    <p>
+        This sample illustrates the way to integrate drop-down components with <code>In-place Editor</code>. The
+        applicable types of components are:
+    </p>
+    <ul>
+        <li>
+            <code>DropDownList</code>
+        </li>
+        <li>
+            <code>AutoComplete</code>
+        </li>
+        <li>
+            <code>ComboBox</code>
+        </li>
+        <li>
+            <code>MultiSelect</code>
+        </li>
+    </ul>
+    <p>
+        The above components and their features are editable in place and can be customized with the model
+        properties of the specific component.
+    </p>
+    <p>
+        More information on the <code>In-place Editor</code> instantiation can be found in the <a target="_blank" href="https://ej2.syncfusion.com/documentation/inplaceeditor/getting-started.html">
+            documentation section</a>.
+    </p>
+</div>
+
+<style>
+
+    .inplace-control-section.drop-down-layout .e-inplaceeditor .e-editable-component .e-clear-icon-hide,
+    .e-inplaceeditor-tip .e-editable-component .e-input-group .e-clear-icon.e-clear-icon-hide {
+        display: block;
+        visibility: hidden;
+    }
+</style>
+
+<!-- custom code start -->
+<style>
+    .inplace-control-section .control_wrapper label {
+        padding: 15px;
+        text-align: left;
+        font-weight: 400;
+        font-size: 14px;
+        margin-bottom: 0px;
+    }
+
+    .inplace-control-section .control_wrapper table {
+        margin: auto;
+    }
+
+    .inplace-control-section .control_wrapper table td {
+        width: 200px;
+        height: 100px;
+    }
+
+    #dropdownProperty .property-panel-section {
+        margin: 30px auto;
+        padding-top: 50px;
+    }
+</style>
+<!-- custom code end -->

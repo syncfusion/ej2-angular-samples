@@ -1,0 +1,40 @@
+<div id="action-description">
+    <p>This sample demonstrates the template functionalities of the DropDownList. Click the DropDownList element and select an item from the customized list.</p>
+</div>
+
+<div class="control-section">
+    <div id='content' style="margin: 0px auto; width:300px; padding-top: 40px;">
+        <ejs-dropdownlist id='employees' [dataSource]='data' [fields]='fields' [popupHeight]='height' [placeholder]='watermark'>
+            <ng-template #headerTemplate>
+                <div class="head"> <span class="photo">Photo</span> <span style="margin-left:17px;">Employee Info</span></div>
+            </ng-template>
+            <ng-template #itemTemplate let-data>
+                <div><img class="empImage" src="./assets/auto-complete/Employees/{{data.Eimg}}.png" alt="employee" />
+                    <div class="ename"> {{data.Name}} </div>
+                    <div class="job"> {{data.Designation}} </div>
+                </div>
+            </ng-template>
+            <ng-template #valueTemplate let-data>
+                <div><img class="valueTemp" src="./assets/auto-complete/Employees/{{data.Eimg}}.png" height="26px" width="26px" alt="employee" />
+                    <div class="name"> {{data.Name}} </div>
+                </div>
+            </ng-template>
+        </ejs-dropdownlist>
+    </div>
+</div>
+
+<div id="description">
+    <p>The DropDownList has been provided with several options to customize each list items, group title, selected value, header
+    and footer elements.
+    </p>
+
+    <p>This sample uses the following list of templates in DropDownList</p>
+    <ul>
+        <li><code>ItemTemplate</code> - To customize the list item's content.</li>
+        <li><code>ValueTemplate</code> - To customize the value element content that holds the selected item's text.</li>
+        <li><code>HeaderTemplate</code> - To customize the header element.</li>
+    </ul>
+    <p> More information on the template feature configuration can be found in the
+        <a href="http://ej2.syncfusion.com/angular/documentation/drop-down-list/templates.html" target="_blank"> documentation section</a>.
+    </p>
+</div>

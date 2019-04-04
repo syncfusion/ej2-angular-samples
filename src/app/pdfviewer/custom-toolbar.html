@@ -1,0 +1,63 @@
+<div class='control-section'>
+    <div class='content-wrapper e-tbar-section'>
+        <div class='e-sample-resize-container'>
+            <ejs-toolbar id='topToolbar' #customToolbar>
+                <e-items>
+                    <e-item prefixIcon='e-pv-open-document-icon' id='openDocument' tooltipText='Open' (click)='openDocument($event)'>
+                    </e-item>
+                    <e-item prefixIcon='e-pv-previous-page-navigation-icon' id='previousPage' tooltipText='Previous Page' (click)='previousClicked($event)'
+                        align='Center'></e-item>
+                    <e-item prefixIcon='e-pv-next-page-navigation-icon' id='nextPage' tooltipText='Next Page' (click)='nextClicked($event)' align='Center'></e-item>
+                    <e-item align='Center'>
+                        <ng-template #template>
+                            <div class=''><input type='text' class='e-input-group e-pv-current-page-number' id='currentPage' value="0"
+                                    (keypress)='onCurrentPageBoxKeypress($event)' (click)='onCurrentPageBoxClicked($event)' /></div>
+                            <div style='margin-left: 6px'><span class='e-pv-total-page-number' id='totalPage'>of 0</span></div>
+                        </ng-template>
+                    </e-item>
+                    <e-item prefixIcon='e-pv-print-document-icon' tooltipText='Print' (click)='printClicked($event)' align='Right'></e-item>
+                    <e-item prefixIcon='e-pv-download-document-icon' tooltipText='Download' (click)='downloadClicked($event)' align='Right'></e-item>
+                </e-items>
+            </ejs-toolbar>
+        </div>
+        <ejs-toolbar id='magnificationToolbar' #zoomToolbar>
+            <e-items>
+                <e-item prefixIcon='e-pv-fit-page-icon' id='fitPage' tooltipText='Fit to page' (click)='pageFitClicked($event)'></e-item>
+                <e-item prefixIcon='e-pv-zoom-in-icon' id='zoomIn' tooltipText='Zoom in' (click)='zoomInClicked($event)'></e-item>
+                <e-item prefixIcon='e-pv-zoom-out-sample' id='zoomOut' tooltipText='Zoom out' (click)='zoomOutClicked($event)'></e-item>
+            </e-items>
+        </ejs-toolbar>
+        <ejs-pdfviewer #pdfviewer id='pdfViewer' [serviceUrl]='service' [documentPath]='document' [enableToolbar]=false (pageChange)='pageChanged($event)'
+            (documentLoad)='documentLoaded($event)'  style="height:640px; display: block">
+        </ejs-pdfviewer>
+        <input type="file" id="fileUpload" accept=".pdf" style="display:block;visibility:hidden;width:0;height:0;">
+    </div>
+</div>
+<div id='action-description'>
+    <p>This sample demonstrate how to perform the PDF Viewer core functionalities using a custom toolbar.</p>
+</div>
+
+<div id='description'>
+    <p>
+        This sample demonstrate how to perform the PDF Viewer core functionalities using a custom toolbar.
+    </p>
+    <p>
+        In this example, you can see PDF Viewer control API in action to perform the functionalities.
+    </p>
+    <ul>
+        <li>Go to Previous Page - <code>viewer.navigation.goToPreviousPage()</code></li>
+        <li>Go to Next Page - <code>viewer.navigation.goToNextPage()</code></li>
+        <li>Go to Page - <code>viewer.navigation.goToPage(pageindex)</code></li>
+        <li>Print - <code>viewer.print.print()</code></li>
+        <li>Download - <code>viewer.download()</code></li>
+        <li>Fit To Page - <code>viewer.magnification.fitToPage()</code></li>
+        <li>Zoom In - <code>viewer.magnification.zoomIn()</code></li>
+        <li>Zoom Out - <code>viewer.magnification.zoomOut()</code></li>
+        <li>Load document - <code>viewer.load(fileName, password)</code></li>
+    </ul>
+    <p>
+        More information on the PDF Viewer instantiation can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/pdfviewer/getting-started">
+            documentation section</a>.
+    </p>
+</div>

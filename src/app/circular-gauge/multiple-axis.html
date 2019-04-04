@@ -1,0 +1,109 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the multiple axes in the gauge and options are available to change the direction, start, and end angle of an axis.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-md-8">
+        <ejs-circulargauge (load)='load($event)' #axes='' style='display:block;' id="axis-container" #multipleAxes style='display:block;' [title]='title'
+            [titleStyle]='titleStyle'>
+            <e-axes>
+                <e-axis radius='95%' [lineStyle]='lineStyle1' [labelStyle]='labelStyle1' [majorTicks]='majorTicks1' [minorTicks]='minorTicks1'
+                    minimum=0 maximum=160 startAngle=220 endAngle=140>
+                    <e-pointers>
+                        <e-pointer value=80 radius='100%' pointerWidth="20" color="#333333" [markerHeight]='markerHeight' [markerWidth]='markerWidth'
+                            type='Marker' markerShape='Triangle'>
+                        </e-pointer>
+                    </e-pointers>
+                </e-axis>
+                <e-axis radius='95%' [lineStyle]='lineStyle2' [labelStyle]='labelStyle2' [majorTicks]='majorTicks2' [minorTicks]='minorTicks2'
+                    minimum=0 maximum=240 startAngle=220 endAngle=140>
+                    <e-pointers>
+                        <e-pointer value=120 radius='100%' pointerWidth="20" color="#C62E0A" [markerHeight]='markerHeight' [markerWidth]='markerWidth'
+                            type='Marker' markerShape='InvertedTriangle'>
+                        </e-pointer>
+                    </e-pointers>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
+    </div>
+    <div class="col-md-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties" class="property-panel-table" style="width: 100%; margin:10px">
+                    <tr>
+                        <td>
+                            <div> Axis </div>
+                        </td>
+                        <td>
+                            <div>
+                                <select id="axisIndex" class="form-control" style="width:90%"> 
+                            <option value="0" selected = true>Axis 1</option>
+                            <option value="1">Axis 2</option>
+                        </select>
+                            </div>
+                        </td>
+                    </tr>&nbsp;
+                    <tr>
+                        <td>
+                            <div> Direction </div>
+                        </td>
+                        <td>
+                            <div>
+                                <select id="axisDirection" class="form-control" style="width:90%"> 
+                            <option value="ClockWise" selected = true>ClockWise</option>
+                            <option value="AntiClockWise">AntiClockWise</option>
+                        </select>
+                            </div>
+                        </td>
+                    </tr>&nbsp;
+                    <tr>
+                        <td>
+                            <div id='start'>Start Angle <span> &nbsp;&nbsp;&nbsp;220</span> </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="range" id="startAngle" value="220" min="0" max="360" style="width:90%" />
+                            </div>
+                        </td>
+                    </tr>&nbsp;
+                    <tr>
+                        <td>
+                            <div id='end'>End Angle <span> &nbsp;&nbsp;&nbsp;140</span> </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="range" id="endAngle" value="140" min="0" max="360" style="width:90%" />
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p style="font-weight: 500">Description</p>
+    <p>
+        In this example, you can see how to render and configure multipe axes in gauge. Use <code>axes</code> collection
+        to render multiple axis in gauge. Each axis can be customized with its own <code>pointer</code> and <code>scales</code>.
+    </p>
+    <br>
+    <p>
+        In this sample, two axes with a pointer has been used.
+    </p>
+    <p>
+        More information on the axis can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/">documentation section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

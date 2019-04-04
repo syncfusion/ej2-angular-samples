@@ -1,8 +1,0 @@
-#defaulttoast .e-meeting::before {
-  content: "\e705";
-  font-size: 17px;
-}
-
-body > ejs-toast {
-  z-index: 100000 !important;
-}

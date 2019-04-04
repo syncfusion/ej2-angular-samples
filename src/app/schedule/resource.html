@@ -1,0 +1,48 @@
+<div class="col-lg-9 control-section">
+    <div class="content-wrapper">
+        <ejs-schedule #scheduleObj cssClass='schedule-resource' width='100%' height='650px' [selectedDate]="selectedDate"
+            [eventSettings]="eventSettings">
+            <e-resources>
+                <e-resource field='OwnerId' title='Owners' [dataSource]='resourceDataSource' [allowMultiple]='allowMultiple'
+                    name='Owners' textField='OwnerText' idField='OwnerId' colorField='Color'>
+                </e-resource>
+            </e-resources>
+        </ejs-schedule>
+    </div>
+</div>
+<div class="col-lg-3 property-section checkbox-alignment">
+    <table id="checkboxes" style="width: 100%">
+        <tbody>
+            <tr style="height: 50px">
+                <td style="width: 100%">
+                    <ejs-checkbox #ownerOneObj cssClass="margaret" label="Margaret" value="1" [checked]="true" (change)="onChange()">
+                    </ejs-checkbox>
+                </td>
+            </tr>
+            <tr style="height: 50px">
+                <td style="width: 100%">
+                    <ejs-checkbox #ownerTwoObj cssClass="robert" label="Robert" value="2" [checked]="true" (change)="onChange()">
+                    </ejs-checkbox>
+                </td>
+            </tr>
+            <tr style="height: 50px">
+                <td style="width: 100%">
+                    <ejs-checkbox #ownerThreeObj cssClass="laura" label="Laura" value="3" [checked]="true" (change)="onChange()">
+                    </ejs-checkbox>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="action-description">
+    <p>This example demonstrates how to dynamically show or hide the appointments of resources on Scheduler based on
+        the resource selection.</p>
+</div>
+
+<div id="description">
+    <p>
+        In this example, the resource appointments are dynamically shown or hidden on the Scheduler, by passing the
+        filtered event data of selected resources to the <code>Query</code> option of the <code>Eventsettings</code>.
+    </p>
+</div>

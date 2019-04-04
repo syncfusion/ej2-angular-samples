@@ -1,0 +1,62 @@
+
+<div class="control-section">
+<div class="col-lg-9">
+<ejs-maps id='maps' #maps style="display:block;" [zoomSettings]='zoomSettings' [layers]='layers' [legendSettings]="legendSettings"
+    [titleSettings]="titleSettings" (load)="load($event)" format='n' useGroupingSeparator="true">
+</ejs-maps>
+ <div style="float: right; margin-right: 10px;">Source:
+        <a href="https://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_population" target="_blank">en.wikipedia.org</a>
+     </div>
+</div>
+<div class="col-md-3 property-section">
+<div class="property-panel-section">
+    <div class="property-panel-header">Properties</div>
+    <div class="property-panel-content">
+        <table id="property" title="Properties" style="width: 100%">
+            <tr id="button-control" style="height: 50px">
+                <td align='center'>
+                    <div>
+                        <button ejs-button id="togglebtn" cssClass= 'e-info' isPrimary= true (click)='mode($event)' style="width: 80px;" content="Print">Print</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+<!-- custom code start -->
+<style>
+#button-control {
+width: 100%;
+text-align: center;
+text-transform:none !important
+}
+
+#control-container {
+padding: 0px !important;
+}
+
+.e-play-icon::before {
+content: '\e813';
+}
+</style>
+<!-- custom code end -->
+ <div id="action-description">
+    <p>
+        This sample illustrates the print feature in Maps. By clicking the Print button, you can print the maps directly from the browser. 
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the print. The rendered chart can be printed directly from the browser by calling the public method <code>print</code>. Also this sample visualizes the State-wise US population in the year 2010.
+    </p>
+    <p>
+        Tooltip is enabled in this example. To see the tooltip in action, hover the mouse over a marker or tap a marker in touch enabled devices.
+        </p>
+        <br/>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+        Maps component features are segregated into individual feature-wise modules. To use a legend, inject the <code>Legend</code> module using the <code>Maps.Inject(Legend)</code> method.
+        </p>
+</div>

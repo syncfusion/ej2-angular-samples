@@ -1,0 +1,29 @@
+{
+    "lang": "en",
+    "name": "Essential JS 2 for Angular",
+    "description": "Essential JS 2 for Angular is a modern JavaScript UI toolkit that has been built from the ground up to be lightweight, responsive, modular and touch friendly. It is written in TypeScript and has no external dependencies.",
+    "short_name": "EJ2 Angular",
+    "icons": [{
+        "src": "favicon.ico",
+        "sizes": "64x64"
+    }, {
+        "src": "favicon.ico",
+        "sizes": "128x128"
+    }],
+    "scope": "/racer/",
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "​​orientation": "portrait-primary",
+    "theme_color": "#FFFFFF",
+    "background_color": "#F8F8F8",
+    "serviceworker": {
+        "src": "sw.js",
+        "scope": "/racer/",
+        "update_via_cache": "none"
+    },
+    "related_applications": [{
+        "platform": "play",
+        "url": "https://play.google.com/store/apps/details?id=com.Syncfusion.ej2",
+        "id": "com.Syncfusion.ej2"
+    }]
+}

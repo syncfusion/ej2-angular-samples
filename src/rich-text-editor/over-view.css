@@ -1,7 +1,0 @@
-  .e-code-mirror::before {
-        content: '\e345';
-    }
-    .CodeMirror-linenumber,
-    .CodeMirror-gutters {
-        display: none;
-    }

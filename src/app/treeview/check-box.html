@@ -1,0 +1,43 @@
+<div class="control-section" style="overflow:hidden;">
+    <div class="col-lg-8">
+    <div class="control_wrapper">
+        <ejs-treeview #defaultCheck id="checkbox" [fields]='field' [showCheckBox]='showCheckBox'></ejs-treeview>
+    </div>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div>
+                                    <ejs-checkbox #check label="Auto Check" [checked]="true" (change)="onChange()"></ejs-checkbox>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the CheckBox functionalities of the TreeView. Click on any parent node's CheckBox to check/uncheck the node and its child nodes. The parent node's checked state will be determined by its child nodes checked state.</p>
+</div>
+
+<div id="description">
+    <p>The <code>TreeView</code> component can be rendered with checkbox on the left side of each tree node. This allows the user to check more than one nodes, and this can be enabled by the <code>showCheckBox</code> property.</p>
+    <p>In this demo, the TreeView is populated with checkbox enabled.</p>
+    <p>For more information, you can refer to the <a href="https://ej2.syncfusion.com/angular/documentation/treeview/check-box/" target="_blank">Checkboxes</a> section from the documentation.</p>
+</div>
+<style>
+    .control_wrapper {
+        max-width: 500px;
+        margin: auto;
+        border: 1px solid #dddddd;
+        border-radius: 3px;
+    }
+</style>

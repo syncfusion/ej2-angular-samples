@@ -1,0 +1,37 @@
+<div id="action-description">
+  <p>This sample demonstrates the properties of FileManager component from the property pane. Select any properties from
+    the property pane to customize the FileManager.</p>
+</div>
+<div id="description">
+  <p>The File Manager component is used to explore a file system through a web application, similar to the windows
+    explorer for windows. It supports the basic file operations such as create, rename, delete.</p>
+</div>
+<div class="control-section dateformat">
+  <div class="col-lg-8 content-wrapper">
+    <div class="content">
+      <div id="control_wrapper">
+        <div class="file-manager-container">
+          <ejs-filemanager id='files' #fileObj [ajaxSettings]='ajaxSettings'
+            [navigationPaneSettings]='navigationPaneSettings'>
+          </ejs-filemanager>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 property-section">
+    <table id="filemanager_property " class="property-panel-table file-manager" title="Properties">
+      <tbody>
+        <tr>
+          <td style="width: 50%">
+            <div>Toolbar</div>
+          </td>
+          <td style="width: 50%;padding-right: 10px">
+            <div>
+              <ejs-checkbox id="tool" [checked]='true' (change)="toolClick($event)"></ejs-checkbox>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

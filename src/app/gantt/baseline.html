@@ -1,0 +1,57 @@
+<div id="action-description">
+    <p>This sample visualizes the complete service schedule for a car. Baselines are enabled in this sample to view the
+       deviation between the planned dates and actual dates.</p>
+</div>
+<div class="control-section">
+    <ejs-gantt id="ganttDefault" height="430px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
+        [timelineSettings]="timelineSettings" [renderBaseline]="true" [treeColumnIndex]="1" height="450px" [allowSelection]="true" durationUnit="Minute"
+        dateFormat="hh:mm a" [projectStartDate]="projectStartDate"
+        [projectEndDate]="projectEndDate" [dayWorkingTime]="dayWorkingTime" [includeWeekend]="true">
+        <ng-template #tooltipSettingsTaskbar let-data>
+            <table class="e-gantt-tooltiptable">
+                <tbody>
+                    <tr class="e-gantt-tooltip-rowcell">
+                    <tr>
+                        <td>{{TaskName}}</td>
+                    </tr>
+                    <tr>
+                        <td class="e-gantt-tooltip-label"> Start Time </td>
+                        <td>:</td>
+                        <td class="e-gantt-tooltip-value">{{format(data.StartDate)}}</td>
+                    </tr>
+                    <tr>
+                        <td class="e-gantt-tooltip-label"> End Time</td>
+                        <td>:</td>
+                        <td class="e-gantt-tooltip-value">{{format(data.EndDate)}}</td>
+                    </tr>
+                    <tr>
+                        <td class="e-gantt-tooltip-label"> Planned start time </td>
+                        <td>:</td>
+                        <td class="e-gantt-tooltip-value">{{format(data.BaselineStartDate)}}</td>
+                    </tr>
+                    <tr>
+                        <td class="e-gantt-tooltip-label"> Planned end time </td>
+                        <td>:</td>
+                        <td class="e-gantt-tooltip-value">{{format(data.BaselineEndDate)}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+    </ejs-gantt>
+    <div style="float: right; margin: 10px;">Source:
+        <a href="https://en.wikipedia.org/wiki/Service_(motor_vehicle)"
+            target='_blank'>https://en.wikipedia.org/</a>
+    </div>
+</div>
+<div id="description">
+    <p>
+        The baseline feature enables the user to view the deviation between the planned dates and the actual dates of
+        the tasks in a project. Baselines can be enabled in Gantt chart by enabling the <code>renderBaseline</code>
+        property along with mapping the data source values for <code>baselineStartDate</code> and <code>baselineEndDate</code> properties.
+        The baseline will appear for all type of tasks in the project such as child tasks, parent tasks and also for
+        milestones. You can change the color for the baselines using <code>baselineColor</code> property.
+    </p>
+    <p>
+        Gantt component features are segregated into individual feature-wise modules. To use a selection support, inject the <code>Selection</code> module.
+    </p>
+</div>

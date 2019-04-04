@@ -1,0 +1,58 @@
+   .e-schedule-event-tooltip .tooltip-wrap {
+       display: flex;
+   }
+   
+   .e-schedule-event-tooltip .tooltip-wrap .image {
+       background-image: url('~/assets/schedule/images/public-event.png');
+       background-position: center center;
+       background-repeat: no-repeat;
+       background-size: cover;
+       width: 50px;
+       height: 50px;
+   }
+   
+   .e-schedule-event-tooltip .tooltip-wrap .content-area {
+       padding-left: 6px;
+       font-size: 12px;
+   }
+   
+   .e-schedule-event-tooltip .tooltip-wrap .maintenance {
+       background-image: url('~/assets/schedule/images/maintenance.png');
+   }
+   
+   .fabric .e-schedule-event-tooltip .tooltip-wrap .maintenance,
+   .highcontrast .e-schedule-event-tooltip .tooltip-wrap .maintenance {
+       background-image: url('~/assets/schedule/images/maintenance1.png');
+   }
+   
+   .e-schedule-event-tooltip .tooltip-wrap .public-event {
+       background-image: url('~/assets/schedule/images/public-event.png');
+   }
+   
+   .fabric .e-schedule-event-tooltip .tooltip-wrap .public-event,
+   .highcontrast .e-schedule-event-tooltip .tooltip-wrap .public-event {
+       background-image: url('~/assets/schedule/images/public-event1.png');
+   }
+   
+   .e-schedule-event-tooltip .tooltip-wrap .family-event {
+       background-image: url('~/assets/schedule/images/family-event.png');
+   }
+   
+   .fabric .e-schedule-event-tooltip .tooltip-wrap .family-event,
+   .highcontrast .e-schedule-event-tooltip .tooltip-wrap .family-event {
+       background-image: url('~/assets/schedule/images/family-event1.png');
+   }
+   
+   .e-schedule-event-tooltip .tooltip-wrap .commercial-event {
+       background-image: url('~/assets/schedule/images/commercial-event.png');
+   }
+   
+   .fabric .e-schedule-event-tooltip .tooltip-wrap .commercial-event,
+   .highcontrast .e-schedule-event-tooltip .tooltip-wrap .commercial-event {
+       background-image: url('~/assets/schedule/images/commercial-event1.png');
+   }
+   
+   .e-schedule-event-tooltip .tooltip-wrap .name {
+       font-weight: 500;
+       font-size: 14px;
+   }

@@ -1,0 +1,31 @@
+<div id="action-description">
+    <p>This sample demonstrates the Remote-data functionalities of the ListView. Click any list item to select and highlight an item.</p>
+</div>
+
+<div class="control-section">
+
+    <!-- ListView element -->
+    <ejs-listview id='sample-list' [dataSource]='data' [query]='query' [fields]='fields' [headerTitle]='headerTitle' [showHeader]='true'></ejs-listview>
+</div>
+
+<div id="description">
+    <p>ListView supports <b>data binding</b> and the <code>dataSource</code> property can be assigned with the instance of <code>DataManager</code> to bind remote the data.</p>
+
+    <p>The <code>DataManager</code> that act as an interface between the service endpoint, and ListView will require the following minimal information to interact with the service endpoint properly.</p>
+
+    <p>DataManager->url - Defines the service endpoint to fetch data.</p>
+
+    <p>DataManager->adaptor - Defines the adaptor option. By default, ODataAdaptor is used for remote binding.</p>
+
+    <p>Adaptor is responsible for processing response and request from/to the service endpoint. <code>@syncfusion/ej2-data</code> package provides some predefined adaptors that are designed to interact with the particular service endpoints. They are,</p>
+
+    <ul>
+        <li>UrlAdaptor - Use this to interact any remote services. This is the base adaptor for all remote based adaptors.</li>
+        <li>ODataAdaptor - Use this to interact with OData endpoints.</li>
+        <li>ODataV4Adaptor - Use this to interact with OData V4 endpoints.</li>
+        <li>WebApiAdaptor - Use this to interact with Web API created under OData standards.</li>
+        <li>WebMethodAdaptor - Use this to interact with web methods.</li>
+    </ul>
+
+    <p>In this sample, the remote data is bound to be a collection of <b>Products</b> data as an instance of <code>DataManager</code>.</p>
+</div>

@@ -1,0 +1,75 @@
+.control-section {
+  overflow: auto;
+}
+
+@media only screen and (max-width: 400px) {
+  .sample_container.badge-default .e-btn-group {
+      left: calc(50% - 111px);
+  }
+  .sample_container.badge-default #task {
+      display: none;
+  }
+}
+
+.sample_container.badge-default {
+  max-width: 328px;
+  margin: auto;
+  margin-top: 130px;
+}
+
+.badge-default .e-btn {
+  position: relative;
+}
+
+.badge-default .e-bigger .e-btn {
+  padding: 3px 10px;
+}
+
+/* Group Button Customization */
+
+.badge-default .e-btn-group {
+  width: auto;
+  position: relative;
+  left: calc(50% - 164px);
+}
+
+.e-btn-group.e-custom-button {
+  box-shadow: none;
+}
+
+.highcontrast .e-btn-group.e-custom-button .e-btn:focus {
+  outline: 0px;
+  color: white;
+}
+
+.fabric .e-btn-group.e-custom-button .e-btn,
+.material .e-btn-group.e-custom-button .e-btn,
+.bootstrap .e-btn-group.e-custom-button .e-btn {
+  background: #f6f7f9;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  text-transform: initial;
+}
+
+#update.e-btn {
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  border-right: 1px dotted #aaa;
+  width: 100px;
+}
+
+#task.e-btn {
+  border-right: 1px dotted #aaa;
+  width: 100px;
+}
+
+#notify.e-btn {
+  padding-left: 24px;
+  padding-right: 24px;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.default .e-badge.e-badge-overlap {
+  transform: translateX(-110%);
+  z-index: 100;
+}

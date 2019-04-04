@@ -1,0 +1,36 @@
+<div id="action-description">
+    <p>This sample demonstrates usage of template columns in Grid. In this sample, we have shown custom images in the Employee
+        Image column.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-grid #grid [dataSource]='data'>
+        <e-columns>
+            <e-column headerText='Employee Image' width='150' textAlign='Center'>
+                <ng-template #template let-data>
+                    <div class="image">
+                        <img src="./assets/grid/images/{{data.EmployeeID}}.png" alt="{{data.EmployeeID}}"/>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='EmployeeID' headerText='Employee ID' width='125' textAlign='Right'></e-column>
+            <e-column field='FirstName' headerText='Name' width='120'></e-column>
+            <e-column field='Title' headerText='Title' width='170'></e-column>
+            <e-column field='HireDate' headerText='Hire Date' width='135' textAlign='Right' format='yMd'></e-column>
+            <e-column field='ReportsTo' headerText='Reports To' width='120' textAlign='Right'></e-column>
+        </e-columns>
+
+    </ejs-grid>
+
+    <div id="description">
+        <p>
+            The Grid provides a way to use a custom layout for each cell using column template feature. The
+            <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-column.html#template-string">columns->template
+        </a></code> property accepts the template for the cell.
+        </p>
+        <p>
+            In this demo, using column template, we have presented <strong>Employee Image</strong> column as template column.
+        </p>
+    </div>
+</div>

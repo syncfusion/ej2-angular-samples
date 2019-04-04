@@ -1,0 +1,25 @@
+<div id="action-description">
+    <p>This demo demonstrates how to obtain a list of raw items for a particular cell using the drill-through option.</p>
+</div>
+<div id="description">
+    <p>In this sample, you can view the raw items of any pivot table cell by double-clicking the cell. The
+        drill-through dialog holds the row headers, column headers, and values information of the clicked cell.
+        Initially drill-through information is displayed for bound fields and you can include the remaining raw items
+        details using the <code>column chooser</code> option in the dialog.
+    </p>
+    <p>This feature can be enabled by setting the <code>allowDrillThrough</code> as true.</p>
+    <p>
+        <strong>Injecting Module:</strong>
+    </p>
+    <p>
+        The pivot grid widget features are segregated into individual modules.
+        To enable drill-through, inject the
+        <code>DrillThroughService</code> module into the
+        <code>@NgModule.providers</code> section.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-pivotview style="display: inline-block" #pivotview id='PivotView' [dataSource]=dataSource showTooltip='false' width='100%' height='300'
+        allowDrillThrough='true' [gridSettings]='gridSettings'>
+    </ejs-pivotview>
+</div>

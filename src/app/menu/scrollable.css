@@ -1,0 +1,26 @@
+/* custom code start*/
+/**
+ * ej2 Menu styles
+ */
+.scrollable-menu-control {
+  margin-top: 45px;
+  text-align: center;
+}
+
+/**
+ * Restricting the parent menu wrapper size
+ */
+.scrollable-menu-control .e-menu-wrapper.e-custom-scroll {
+  width: 492px;
+}
+
+.e-bigger .scrollable-menu-control .e-menu-wrapper.e-custom-scroll {
+  width: 565px;
+}
+
+@media only screen and (max-width: 500px) {
+  .e-bigger .scrollable-menu-control .e-menu-wrapper.e-custom-scroll {
+    width: 290px;
+  }
+}
+/* custom code end*/    

@@ -1,0 +1,36 @@
+<div class="control-section">
+  <div class="drag-sample-wrapper">
+    <div class="schedule-container">
+      <ejs-schedule #scheduleObj id="schedule" cssClass='schedule-excel-export' width='100%' height='650px'
+        [(currentView)]="currentView" [selectedDate]="selectedDate" [eventSettings]="eventSettings"
+        (actionBegin)="onActionBegin($event)">
+        <e-views>
+          <e-view option="Week"></e-view>
+        </e-views>
+      </ejs-schedule>
+    </div>
+  </div>
+</div>
+
+<div id="action-description">
+  <p>This example demonstrates how to export the Scheduler events to an Excel file format at client-side.</p>
+</div>
+<div id="description">
+  <p>In this example, the Scheduler events data are exported to an Excel file by making use of the public method
+    <code>exportToExcel</code>. By default, the whole event collection bound to the Scheduler gets exported as an excel file. To
+    export only specific events of Scheduler, you need to pass the custom data collection as a parameter to the
+    <code>exportToExcel</code> method. This method accepts the export options as its arguments such as fileName, exportType,
+    fields, customData, and includeOccurrences. The fileName denotes the name to be given for the exported file and
+    the <code>exportType</code> allows you to set the format of the excel file to be exported either as .xlsx or .csv. The custom
+    or specific field collection of event dataSource to be exported can be provided through <code>fields</code> option and the
+    custom data collection can be exported by passing them through the <code>customData</code> option. There also exists option
+    to export individual instances of the recurring events to an excel file, by setting true or false to the
+    <code>includeOccurrences</code> option, denoting either to include or exclude the occurrences as separate instances on an
+    exported excel file.</p>
+    <p>
+      <strong>Module Injection</strong>
+    </p>
+    <p>To start using Excel exporting functionality in Scheduler, you need to inject the
+    <code>ExcelExportService</code> into the <code>@NgModule.providers</code> section.
+  	</p>
+</div>

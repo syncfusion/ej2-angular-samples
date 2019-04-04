@@ -1,0 +1,61 @@
+<div class="control-section">
+    <div class="col-lg-8" id="dashboard_properties">
+        <ejs-dashboardlayout id="api_dashboard" #api_dashboard columns="6" [allowResizing]="true" [panels]='panelsData'
+            [cellSpacing]='cellSpacing'>
+        </ejs-dashboardlayout>
+    </div>
+    <div class="col-lg-4">
+        <div class="property-section dashboard" id="dash_property">
+            <div class="property-panel-header">
+                Properties
+            </div>
+            <div class="row property-panel-content">
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="settings-margin-input"
+                            class="col-sm-4 col-form-label form-label">CellSpacing</label>
+                        <div class="col-sm-8">
+                            <ejs-numerictextbox value="10" min="1" max="20" placeholder="Ex: 10" (change)="onChange($event)"
+                                floatLabelType="Never" id="cellspacing" name="cellSpacing"></ejs-numerictextbox>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="settings-bubble-up-input"
+                            class="col-sm-4 col-form-label form-label">AllowFloating</label>
+                        <div class="col-sm-8">
+                            <ejs-checkbox (change)="onChange($event)" name="floating" [checked]="true" id="floating">
+                            </ejs-checkbox>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="settings-bubble-up-input"
+                            class="col-sm-4 col-form-label form-label">AllowResizing</label>
+                        <div class="col-sm-8">
+                            <ejs-checkbox (change)="onChange($event)" name="resizing" [checked]="true" id="resizing">
+                            </ejs-checkbox>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <button id='add' (click)='onAdd()' class="e-control e-btn e-lib e-primary">Add
+                                Panel</button>
+                            <button id="remove" style="margin-left:3px" (click)='onRemove()' class="e-control e-btn e-lib e-danger">Remove
+                                Panel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample demonstrates the properties of DashboardLayout component from the property pane. Select any combination of properties from the property pane to customize the DashboardLayout.
+    </p>
+
+</div>
+<div id="description">
+    This sample allows to configure the <code>cellSize</code>, <code>cellSpacing</code>, <code>allowFloating</code> and
+    <code>allowPushing</code> properties of the dashboard layout component.
+</div>

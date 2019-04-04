@@ -1,0 +1,82 @@
+<div class="control-section">
+    <ejs-treegrid #treegrid [dataSource]='data' [treeColumnIndex]=0 childMapping='states' [height]=400 [allowReordering]=true
+    [allowFiltering]=true [allowSorting]=true [filterSettings]="filterSettings" (queryCellInfo)="queryCellInfo($event)">
+        <e-columns>
+            <e-column field='name' headerText='Province' filter="filter" width=170>
+            </e-column>
+            <e-column field='population' headerText='Population (Million)' [valueAccessor]="populationValue" textAlign='Right' width=188></e-column>
+            <e-column field='gdp' headerText='GDP Rate %' width=120 [allowFiltering]='false'>
+                <ng-template #template let-data>
+                    <div class="statustemp">
+                        <span class="statustxt">{{data.gdp}} %</span>
+                    </div>       
+                </ng-template>
+            </e-column>
+            <e-column field='rating' headerText='Credit Rating'  [customAttributes]="{class: 'ratingCircle'}" width=150 >
+                <ng-template #template let-data>
+                    <div *ngIf="data.rating" class="rating">
+                        <span *ngFor="let item of [].constructor(5); let i = index" [ngClass]="{'checked' : data.rating > i, 'star': true}"></span>
+                    </div>       
+                </ng-template>
+            </e-column>
+            <e-column field='unemployment' headerText='Unemployment Rate' [allowFiltering]='false' width=170 >
+                <ng-template #template let-data>
+                    <div id="myProgress" class="pbar">
+                        <div id="myBar" class="bar">
+                            <div id="label" class="barlabel"></div>
+                        </div>
+                    </div>        
+                </ng-template>
+            </e-column>
+            <e-column field='coordinates' headerText='Coordinates' [allowSorting]='false' width=220 >
+                <ng-template #template let-data>
+                    <div class="image">
+                        <img src="source/treegrid/images/Map.png" class="e-image" alt="{{data.coordinates}}" /> &#160;
+                        <a target="_blank" href="https://www.google.com/maps/place/{{data.coordinates}}">{{data.coordinates}}</a>
+                    </div>             
+                </ng-template>
+            </e-column>
+            <e-column field='area' headerText='Area' width=140 >
+                <ng-template #template let-data>
+                    <span>
+                        {{data.area}} km<sup>2</sup>
+                    </span>       
+                </ng-template>
+            </e-column>
+            <e-column field='timezone' headerText='Time Zone' width=150 >
+                <ng-template #template let-data>
+                    
+                    <img src="source/treegrid/images/__Normal.png" [ngClass]="{'negativeTimeZone' : data.timezone.includes('-')}"/>
+            <span style="padding-left:7px;">{{data.timezone}}</span>
+                </ng-template>
+            </e-column>
+        </e-columns>
+    </ejs-treegrid>
+    <div style="padding-top: 20px; text-align: right">Referecene links:
+            <a href="https://countryeconomy.com/ratings" style="padding-right: 12px">https://countryeconomy.com</a>
+            <a href="https://en.wikipedia.org/wiki/" style="padding-right: 12px">https://en.wikipedia.org/wiki/</a>
+            <a href="http://worldpopulationreview.com">http://worldpopulationreview.com</a>
+        </div>
+
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the overview of basic treegrid features such as sorting, filtering, conditional formatting, column template and scrolling.</p>
+</div>
+
+<div id="description">
+    <p>
+        The TreeGrid is used to represent the hierarchical data in a tabular format, combining the visual representation of Grid and TreeView controls. 
+        It represents the data from datasource such as an array of JSON objects, OData web services, or DataManager binding data fields to columns or self-referential datasource.
+    </p>
+    <p>
+        In this demo, TreeGrid features such as <code>sorting, filtering, conditional formatting, column template and scrolling</code> are used.
+    </p>
+
+   <p>
+        More information on the TreeGrid instantiation can be found in this
+        <a target="_blank" 
+        href="https://ej2.syncfusion.com/angular/documentation/treegrid/getting-started">
+        documentation section</a>.
+    </p>
+</div>
