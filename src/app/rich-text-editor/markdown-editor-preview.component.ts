@@ -6,7 +6,7 @@ import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';
 import { RichTextEditorComponent, ToolbarService, LinkService } from '@syncfusion/ej2-angular-richtexteditor';
 import { ImageService, MarkdownEditorService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, KeyboardEventArgs, isNullOrUndefined } from '@syncfusion/ej2-base';
-import * as Marked from 'marked';
+// import * as Marked from 'marked';
 
 @Component({
     selector: 'control-content',
@@ -80,7 +80,7 @@ export class MarkdownPreviewComponent {
         if (this.mdSplit.classList.contains('e-active')) {
             let id: string = this.rteObj.getID() + 'html-preview';
             let htmlPreview: HTMLElement = this.rteObj.element.querySelector('#' + id) as HTMLElement;
-            htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+//             htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
         }
     }
     public fullPreview(e: { [key: string]: string | boolean }): void {
@@ -108,7 +108,7 @@ export class MarkdownPreviewComponent {
                 this.textArea.style.width = '50%';
             }
             this.htmlPreview.style.display = 'block';
-            this.htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+//             this.htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
         }
     }
     public handleFullScreen(e: any): void {
