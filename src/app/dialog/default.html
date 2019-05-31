@@ -1,0 +1,39 @@
+<div class="control-section">
+
+    <!-- Render Button to open the Dialog -->
+    <button ejs-button id='dlgbtn' #ButtonInstance (click)="BtnClick()">Open</button>
+
+    <ejs-dialog #Dialog [buttons]='dlgButtons' [header]='header' [animationSettings]='animationSettings' [showCloseIcon]='showCloseIcon' [target]='target' [width]='width' (open)="dialogOpen()"
+        (close)="dialogClose()">
+        <ng-template #content>
+            <p>In the Succinctly series, Syncfusion created a robust, free library of more than 130 technical e-books formatted for PDF, Kindle, and EPUB. <br>
+                <br> The Succinctly series was born in 2012 out of a desire to provide concise technical e-books for software developers
+                Each title in the Succinctly series is written by a carefully chosen expert and provides essential content in about 100 pages.</p>
+        </ng-template>
+    </ejs-dialog>
+</div>
+<div id="action-description">
+    <p>
+        This example demonstrates the default rendering of the dialog component with minimum configuration. Click close or press ESC  to close the dialog. Click “open” to show the dialog again, if it is closed.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The dialog component is used to display information and get input from the user.
+        The dialog component is classified as modal and non-modal dialog depend on its interaction with parent application.  
+    </p>
+    <ul>
+        <li>Modal - It creates overlay that disable interaction with the parent application, 
+            and user should respond with modal before continuing with other applications.</li>
+        <li>Non-modal - It does not prevent user interaction with parent application.</li>
+    </ul>
+</div>
+
+<!-- custom code start -->
+<style> 
+    .control-section {
+        height: 100%;
+        min-height: 350px;
+    }
+  </style>
+  <!-- custom code end -->

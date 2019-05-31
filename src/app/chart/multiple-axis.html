@@ -1,0 +1,48 @@
+<div id="action-description">
+    <p>
+        This sample illustrates multiple axis in chart to represent the temperature in Celsius in an axis and Fahrenheit in another
+        axis.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
+            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [axes]='axis' [legendSettings]='legend'>
+            <e-annotations>
+                <e-annotation x='Sun' y=35 coordinateUnits='Point' verticalAlignment='Top'>
+                    <ng-template #content>
+                            <div id="chart_cloud">
+                                <img src="./assets/chart/images/cloud.png"  style="width: 41px; height: 41px"/>
+                            </div>
+                    </ng-template>
+                </e-annotation>
+                <e-annotation x='Sat' y=34 coordinateUnits='Point' yAxisName='yAxis'>
+                    <ng-template #content>
+                            <div id="chart_cloud">
+                                <img src="./assets/chart/images/sunny.png"  style="width: 41px; height: 41px"/>
+                            </div>
+                    </ng-template>
+                </e-annotation>
+            </e-annotations>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Germany' width=2>
+                </e-series>
+                <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='Japan' width=2 yAxisName='yAxis' [marker]='marker'>
+                </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure multipe axes. Use axes collection to render secondary axis to the
+        chart and bind it to the specify series. You can also customize the axis line and its labels similar to primary axis.
+    </p>
+    <p>
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <p>
+        More information on the multiple axis can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/axis-customization/#multiple-axis">documentation section</a>.
+    </p>
+</div>

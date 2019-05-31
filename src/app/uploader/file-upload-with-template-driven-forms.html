@@ -1,0 +1,92 @@
+<div class="control-section">
+        <div class="col-lg-12">
+                <h4 class="form-title">Photo Contest</h4>
+        <div class="control_wrapper" id="control_wrapper" style="margin: 25px auto;">
+            <form id="template_driven" #userForm="ngForm" novalidate>
+                <div class="form-group" style="padding-top: 11px;">
+                        <div class="e-float-input">
+                            <input type="text" id="name" #nameval='ngModel' name="name" required ngModel>
+                            <span class="e-float-line"></span>
+                            <label class="e-float-text e-label-top" for="name">Name</label>
+                        </div>
+                        <div *ngIf="(nameval.invalid && (nameval.dirty || nameval.touched))">
+                            <div class="e-error" *ngIf="nameval.errors.required">
+                                * Please enter your name
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="form-group" style="padding-top: 11px;">
+                            <div class="e-float-input">
+                                <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" #emailval='ngModel' name="email" required ngModel>
+                                <span class="e-float-line"></span>
+                                <label class="e-float-text e-label-top" for="email">Email</label>
+                            </div>
+                            <div *ngIf="(emailval.invalid && (emailval.dirty || emailval.touched))">
+                                <div class="e-error" *ngIf="userForm.controls.email">
+                                    * Please enter valid email
+                                </div> 
+                            </div>
+                    </div>
+                    
+                    <div class="form-group" style="padding-top: 11px;">
+                            <div class="e-float-input">
+                                <input type="number" pattern="^[0-9]{10}$" id="mobileno" #mobilenum='ngModel' name="mobile" required ngModel>
+                                <span class="e-float-line"></span>
+                                <label class="e-float-text e-label-top" for="mobile">Mobile No</label>
+                            </div>
+                            <div *ngIf="(mobilenum.invalid && (mobilenum.dirty || mobilenum.touched))">
+                                <div class="e-error" *ngIf="userForm.controls.mobile">
+                                    * Please enter valid mobile number
+                                </div>
+                            </div>
+                    </div>
+                        <div class="form-group" style="padding-top: 11px;">
+                                <div class="e-float-input upload-area">
+                                    <input type="text" id="upload" #uploadval='ngModel' [(ngModel)]="uploadInput" readonly name="upload" required ngModel>
+                                    <button id="browse" class="e-control e-btn e-info" (click)='browseClick()'>Browse...</button>                        
+                                    <span class="e-float-line"></span>
+                                    <label class="e-float-text e-label-top" for="upload">Choose a file</label>
+                                </div>
+                                <ejs-uploader #defaultupload id='fileupload' allowedExtensions = "image/*" [autoUpload]=false [multiple]='multiple'  (selected)='onFileSelect($event)'></ejs-uploader>
+                                <div *ngIf="(uploadval.invalid && (uploadval.dirty || uploadval.touched))">
+                                    <div class="e-error" *ngIf="uploadval.errors.required">
+                                        * Please select an image file
+                                    </div> 
+                                </div>
+                        </div>
+                      
+                        <div class="form-group" style="padding-top: 11px;">
+                                <div class="e-float-input">
+                                    <textarea class="address-field" rows="2" id="Address" ></textarea>
+                                    <span class="e-float-line"></span>
+                                    <label class="e-float-text e-label-top">Address</label>
+                                </div>
+                        <div class="submitBtn">
+                            <button class="submit-btn e-btn" id="submit-btn" [disabled]="userForm.invalid" type="reset" (click)= "Submit()">Submit</button>
+                            <div class="desc"><span>*This button is not a submit type and the form submit handled from externally.</span></div>                     
+                        </div> 
+                        </div>                               
+                </form> 
+                <ejs-dialog id="confirmationDialog" #Dialog [buttons]='dlgButtons' [animationSettings]='animationSettings' [header]='formHeader' [showCloseIcon]='showCloseIcon' [content]='content'  [target]='target' [width]='width' [visible]="visible" [isModal]="isModal" >
+                </ejs-dialog>
+        </div>
+      </div>
+    </div>
+    <div id="action-description">
+        <p> This example demonstrates how to integrate Upload component with Angular template-driven forms. </p>
+        <p> The submit button will be enabled once the form is filled with valid values. You can fill the details and submit the template-driven form. </p>
+    </div>
+    
+    <div id="description">
+        <p> The Upload component can be integrating with Angular template-driven forms. In this sample, all the form fields are validated by using ngModel. The selected file's value is updated to Textbox using selected event of Upload component. The form will be reset to defaults after submitting the form. </p>
+     
+        <p> The following validation is enabled in this example: </p>
+            <ul>
+                <li> <code> Name </code> - required </li>
+                <li> <code> Email </code> - required and valid email address </li>
+                <li> <code> Mobile number </code> - required, number only, and minimum length as 10 </li>
+                <li> <code> Photo </code> - allow to upload images </li>
+                <li> <code> Address </code> - optional </li>
+            </ul>
+        <p> For more information about Angular template-driven forms can be found in this <a target="_blank" href="https://angular.io/guide/forms#template-driven-forms">reference link</a>. </p>
+    </div>

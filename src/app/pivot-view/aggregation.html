@@ -1,0 +1,90 @@
+<div id="action-description">
+    <p>This sample demonstrates the aggregate types in the pivot table widget.</p>
+</div>
+<div id="description">
+    <p>
+        In this sample, you can change the aggregate types for value fields using the dropdown list separately. The aggregate type can be set using the <code>type</code> property of the value field. The built-in aggregates are:
+    </p>
+    <p>
+        <code>Sum</code>, <code>Average</code>, <code>Min</code>, <code>Max</code>, <code>Count</code>, <code>Distinct Count</code>, <code>Product</code>,
+        <code>Index</code>, <code>Population StDev</code>, <code>Sample StDev</code>, <code>Population Var</code>, <code>Sample Var</code>, <code>Running Totals</code>,
+        <code>Difference From</code>, <code>% of Difference From</code>, <code>% of Grand Total</code>, <code>% of Column Total</code>, <code>% of Row Total</code>,
+        <code>% of Parent Total</code>, <code>% of Parent Column Total</code>, <code>% of Parent Row Total.</code>
+    </p>
+    <p>
+        To achieve aggregation through UI, navigate to <b>"User Interaction > Field List"</b> sample and click and open the value field settings menu to experience the same.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-lg-9">
+        <ejs-pivotview style="display: inline-block" #pivotview id='PivotView' (load)='onLoad()' [dataSource]=dataSource showFieldList='true' width='100%' height='300' [gridSettings]='gridSettings'>
+        </ejs-pivotview>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tbody>
+                        <tr style="height: 50px">
+                            <td>
+                                <div>
+                                    <select id="freightdrpdwn" name="ddl-view-mode">
+                                        <option value='Sum' selected>Sum</option>
+                                        <option value='Avg'>Average</option>
+                                        <option value='Min'>Min</option>
+                                        <option value='Max'>Max</option>
+                                        <option value='Count'>Count</option>
+                                        <option value='DistinctCount'>Distinct Count</option>
+                                        <option value='Product'>Product</option>
+                                        <option value='Index'>Index</option>
+                                        <option value='PopulationStDev'>Population StDev</option>
+                                        <option value='SampleStDev'>Sample StDev</option>
+                                        <option value='PopulationVar'>Population Var</option>
+                                        <option value='SampleVar'>Sample Var</option>
+                                        <option value='RunningTotals'>Running Totals</option>
+                                        <option value='DifferenceFrom'>Difference From</option>
+                                        <option value='PercentageOfDifferenceFrom'>% of Difference From</option>
+                                        <option value='PercentageOfGrandTotal'>% of Grand Total</option>
+                                        <option value='PercentageOfColumnTotal'>% of Column Total</option>
+                                        <option value='PercentageOfRowTotal'>% of Row Total</option>
+                                        <option value='PercentageOfParentTotal'>% of Parent Total</option>
+                                        <option value='PercentageOfParentColumnTotal'>% of Parent Column Total</option>
+                                        <option value='PercentageOfParentRowTotal'>% of Parent Row Total</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 50px">
+                            <td>
+                                <div>
+                                    <select id="pricedrpdwn" name="ddl-view-mode">
+                                        <option value='Sum' selected>Sum</option>
+                                        <option value='Avg'>Average</option>
+                                        <option value='Min'>Min</option>
+                                        <option value='Max'>Max</option>
+                                        <option value='Product'>Product</option>
+                                        <option value='Index'>Index</option>
+                                        <option value='PopulationStDev'>Population StDev</option>
+                                        <option value='SampleStDev'>Sample StDev</option>
+                                        <option value='PopulationVar'>Population Var</option>
+                                        <option value='SampleVar'>Sample Var</option>
+                                        <option value='RunningTotals'>Running Totals</option>
+                                        <option value='DifferenceFrom'>Difference From</option>
+                                        <option value='PercentageOfDifferenceFrom'>% of Difference From</option>
+                                        <option value='PercentageOfGrandTotal'>% of Grand Total</option>
+                                        <option value='PercentageOfColumnTotal'>% of Column Total</option>
+                                        <option value='PercentageOfRowTotal'>% of Row Total</option>
+                                        <option value='PercentageOfParentTotal'>% of Parent Total</option>
+                                        <option value='PercentageOfParentColumnTotal'>% of Parent Column Total</option>
+                                        <option value='PercentageOfParentRowTotal'>% of Parent Row Total</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

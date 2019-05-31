@@ -1,0 +1,52 @@
+<div class="control-section" style="padding:10px;position:relative;">
+    <div id="modalTarget" #targetModal class="col-md-8 control-section" style="height:350px;">
+        <!-- Render Button to open the modal Dialog -->
+        <button ejs-button id='modalbtn' #modalButton (click)="modalBtnClick()">Open</button>
+        <!-- Render modal Dialog -->
+        <ejs-dialog id="modalDialog" #modalDialog (overlayClick)="overlayClick()" [isModal]='isModal' [header]='header' [target]='target' [width]='width' [buttons]='buttons' [animationSettings]='animationSettings' [content]='content' (open)="modalDlgOpen()" (close)="modalDlgClose()" >
+        </ejs-dialog>
+    </div>
+    <div class="col-md-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div style="font-size: 13px;">Close on overlay click</div>
+                        </td>
+                        <td>
+                            <!-- Checkbox to enable / disable the overlay click -->
+                            <div><ejs-checkbox #overlay [checked]="false" ></ejs-checkbox></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+    This example demonstrates that the modal behavior of Dialog component.
+    Choose "Close on overlay" option from property panel to decide whether the Dialog will be closed on click on the overlay.
+    Click on “Open” button to show the Dialog again if it is closed.
+    </p>
+</div>
+<div id="description">
+    <p>
+        A modal prevents the access to the parent application, so that the user should interact with the Dialog compulsory before continuing
+        the parent application.
+    </p>
+    <p>More information on the modal behavior of Dialog can be found in the
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/dialog/getting-started/#modal-dialog">
+        documentation section</a>.</p>
+</div>
+
+<!-- custom code start -->
+<style>
+    .control-section {
+        height: 100%;
+        min-height: 350px;
+     }
+</style>
+<!-- custom code end -->

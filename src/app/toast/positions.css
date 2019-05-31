@@ -1,0 +1,28 @@
+    /* custom code start*/
+   .toast-pos-section #toast_pos_property {
+       height: 500px;
+       border: none;
+       margin: auto;
+   }
+   /* custom code end*/
+   
+   #toast_pos_property td {
+       width: 50%;
+   }
+   
+   .e-toast-icon.e-laura.e-icons {
+       border-radius: 50%;
+       background-image: url('/assets/toast/resource/laura.png');
+       background-repeat: no-repeat;
+       background-size: cover;
+       height: 50px !important;
+       width: 100px !important;
+       background-size: 50px 50px;
+       margin: 0;
+   }
+   
+   @media (min-width: 740px) {
+       #toast_pos_property {
+           width: 450px;
+       }
+   }

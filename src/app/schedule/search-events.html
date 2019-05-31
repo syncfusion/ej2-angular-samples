@@ -1,0 +1,70 @@
+<div class="col-lg-9 control-section">
+    <div class="content-wrapper">
+        <div class="col-md-12">
+            <ejs-schedule #scheduleObj id='schedule' width='100%' height='650px' [(selectedDate)]="selectedDate"
+                [eventSettings]="eventSettings">
+            </ejs-schedule>
+            <div id="grid"></div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-3 property-section property-customization">
+    <div class="property-panel-section">
+        <p class="property-panel-header header-customization" style="width: 100%">Search by all event fields</p>
+        <div class="property-panel-content">
+            <input type="text" class="e-input" id="events-search" placeholder="Enter the Search text" (keyup)="globalSearch($event)" />
+        </div>
+        <form class="event-search" id="form-search">
+            <p class="property-panel-header  header-customization" style="width: 100%">Search by specific event fields</p>
+            <table id="property-specific" style="width: 100%">
+                <tbody>
+                    <tr class="row">
+                        <td class="property-panel-content" colspan="2">
+                            <input #subject type="text" class="e-input e-subject" name="Subject" id="Subject"
+                                placeholder="Subject" />
+                        </td>
+                    </tr>
+                    <tr class="row" style="height: 45px">
+                        <td class="property-panel-content" colspan="2">
+                            <input #location type="text" class="e-input e-location" name="Location" id="Location"
+                                placeholder="Location" />
+                        </td>
+                    </tr>
+                    <tr class="row" style="height: 45px">
+                        <td class="property-panel-content" colspan="2">
+                            <ejs-datepicker #startTime id='StartTime' class="e-start-time" [showClearButton]=false name="StartTime"
+                                placeholder="Start Time"></ejs-datepicker>
+                        </td>
+                    </tr>
+                    <tr class="row" style="height: 45px">
+                        <td class="property-panel-content" colspan="2">
+                            <ejs-datepicker #endTime id='EndTime' class="e-end-time" [showClearButton]=false name="EndTime"
+                                placeholder="End Time"></ejs-datepicker>
+                        </td>
+                    </tr>
+                    <tr class="row" style="height: 45px">
+                        <td class="e-field button-customization" style="width: 50%;">
+                            <button ejs-button id="seperateSearch" type="button" content="Search" (click)="searchOnClick()"></button>
+                        </td>
+                        <td class="e-field button-customization" style="width: 50%;">
+                            <button ejs-button id="clear" content="Clear" type="button" (click)='clearOnClick()'></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This example showcases the search results of Scheduler appointments in a grid. When the user provides the
+        search string on appropriate fields, the resulting event collection based on the search criteria will be
+        displayed in a Grid.</p>
+</div>
+
+<div id="description">
+    <p>
+        In this example, the search text value is compared with the event field values of Scheduler DataSource and then
+        the filtered resultant event data collection is assigned to the DataSource of Grid.
+    </p>
+</div>

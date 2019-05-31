@@ -1,0 +1,23 @@
+<div id="action-description">
+    <p>This sample demonstrates rendering Heatmap control by providing desired data from a pivot grid on selection. Not
+        only Heatmap, but any other control (including third party) can be used for this purpose.
+    </p>
+</div>
+<div id="description">
+    <p>In this sample, the cell selection feature is enabled with the api <code>allowSelection</code> property and its
+        type and mode are configured using the
+        <code>selectionSettings</code> property. The <code>cellSelected</code> event event gets fired on every selection
+        operation performed in the pivot grid. This event returns the selected cell information, like row header name,
+        column header name, measure name, and value. Based on this information, the heatmap will be plotted.
+    </p>
+</div>
+<div class="control-section" style="overflow:auto;">
+    <div class="content-wrapper">
+        <ejs-pivotview style="display: inline-block" #pivotview id='PivotView' showTooltip='false' [dataSource]=dataSource width='100%' height='300'
+            (dataBound)='onDataBound()' (cellSelected)='onCellSelected($event)' [gridSettings]='gridSettings'>
+        </ejs-pivotview>
+    </div>
+    <br>
+    <br>
+    <div id="heatmap" style="height: 450px;"></div>
+</div>

@@ -1,0 +1,109 @@
+<div class="control-section">
+    <div class="col-lg-12">
+			<h4 class="form-title">Registration Form</h4>
+    <div class="control_wrapper" id="control_wrapper" style="margin: 25px auto;">
+        <form id="template_driven" #userForm="ngForm" novalidate>
+                <div class="form-group template">
+                    <div class="e-float-input" [ngClass]="{'e-success': name.valid}">
+                        <input type="text" id="name" name="name" [(ngModel)]="UserDetails.firstname" #name="ngModel" required>
+                        <span class="e-float-line"></span>
+                        <label class="e-float-text" [ngClass]="{'e-label-top': UserDetails.firstname !== '' , 'e-label-bottom':  UserDetails.firstname == ''}" for="name">First Name</label>                        
+                    </div>
+                    <span class="e-error" *ngIf="name.errors && name.errors.required && (name.dirty || name.touched)" >
+                        * Enter your first name
+                    </span>  
+                </div>
+                <div class="form-group template">
+                    <div class="e-float-input" [ngClass]="{'e-success': lastname.valid}">
+                        <input type="text" id="lastname" #lastname='ngModel' [(ngModel)]="UserDetails.lastname" name="lastname" required>
+                        <span class="e-float-line"></span>
+                        <label class="e-float-text" [ngClass]="{'e-label-top': UserDetails.lastname !== '' , 'e-label-bottom':  UserDetails.lastname == ''}" for="lastname">Last Name</label>                        
+                    </div>
+                    <span class="e-error" *ngIf="lastname.errors && lastname.errors.required && (lastname.dirty || lastname.touched)" danger padding-left>
+                        * Enter your last name
+                    </span>
+                </div>
+                <div class="form-group template">
+                    <div class="e-float-input" [ngClass]="{'e-success': username.valid}">
+                        <input type="text" id="username" name="username" [(ngModel)]="UserDetails.username" #username="ngModel" minlength="6" required >
+                        <span class="e-float-line"></span>
+                        <label class="e-float-text" [ngClass]="{'e-label-top': UserDetails.username !== '' , 'e-label-bottom':  UserDetails.username == ''}" for="name">Username</label>                            
+                    </div>
+                    <span class="e-error" *ngIf="username.errors && username.errors.required && (username.dirty || username.touched)" >
+                        * Enter your username
+                    </span>
+                    <span  class="e-error" *ngIf="username.errors && username.errors.minlength" >
+                        * Enter a valid username
+                    </span>
+                </div>
+                <div class="form-group template">
+                    <div class="e-float-input" [ngClass]="{'e-success': password.valid}">
+                        <input type="password" id="password" name="password" [(ngModel)]="UserDetails.password" #password="ngModel" minlength="6" required >
+                        <span class="e-float-line"></span>
+                        <label class="e-float-text" [ngClass]="{'e-label-top': UserDetails.password !== '' , 'e-label-bottom':  UserDetails.password == ''}" for="name">Password</label>                                        
+                    </div>
+                    <span class="e-error" *ngIf="password.errors && password.errors.required && (password.dirty || password.touched)" >
+                        * Enter your password
+                    </span>
+                    <span  class="e-error" *ngIf="password.errors && password.errors.minlength&& (password.dirty || password.touched)" >
+                        * Enter a valid password
+                    </span>
+                </div>
+                <div class="form-group template">
+                    <div id="mobile-no" class="e-float-input" [ngClass]="{'e-success': email.valid}">
+                        <input type="text" id="email" name="email" [(ngModel)]="UserDetails.email" #email="ngModel" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                        <span class="e-float-line"></span>
+                        <label class="e-float-text" [ngClass]="{'e-label-top': UserDetails.email !== '' , 'e-label-bottom':  UserDetails.email == ''}" for="name">Email</label>                                                
+                    </div>
+                    <span class="e-error" *ngIf="email.errors && email.errors.required && (email.dirty || email.touched)" >
+                        * Enter your email address
+                    </span>
+                    <span  class="e-error" *ngIf="email.errors && email.errors.pattern && (email.dirty || email.touched)" >
+                        * Enter a valid email address
+                    </span>
+                </div>
+                <div class="form-group template">
+                    <div id="mobile-no" class="e-float-input" [ngClass]="{'e-success': mobilenum.valid}">
+                        <input type="number" id="mobileno" name="mobile" [(ngModel)]="UserDetails.mobile" #mobilenum="ngModel" required pattern="^[0-9]{10}$">
+                        <span class="e-float-line"></span>
+                        <label class="e-float-text" [ngClass]="{'e-label-top': UserDetails.mobile !== '' , 'e-label-bottom':  UserDetails.mobile == ''}" for="name">Mobile No</label>                                                        
+                    </div>
+                    <span class="e-error" *ngIf="mobilenum.errors && mobilenum.errors.required && (mobilenum.dirty || mobilenum.touched)" >
+                        * Enter your mobile number
+                    </span>
+                    <span  class="e-error" *ngIf="mobilenum.errors && mobilenum.errors.pattern && (mobilenum.dirty || mobilenum.touched)" >
+                        * Enter a valid mobile number
+                    </span>
+                </div>              
+                    <div class="form-group template">
+                    <div class="submitBtn">
+                        <button class="submit-btn e-btn" id="submit-btn" [disabled]="userForm.invalid" type="submit" (click)= "Submit()">Submit</button>
+                        <div class="desc"><span>*This button is not a submit type and the form submit handled from externally.</span></div>                     
+                    </div> 
+                    </div>                               
+            </form> 
+            <ejs-dialog id="confirmationDialog" #Dialog [buttons]='dlgButtons' [animationSettings]='animationSettings' [header]='formHeader' [showCloseIcon]='showCloseIcon' [content]='content'  [target]='target' [width]='width' [visible]="visible" [isModal]="isModal" >
+            </ejs-dialog>
+    </div>
+  </div>
+</div>
+<div id="action-description">
+    <p> This example demonstrates how to design template-driven form using <code>Textbox</code> component. 
+    The submit button will be enabled after filling the form with valid values. You can fill the details and submit the form. </p>
+</div>
+
+<div id="description">
+    <p>
+        The <code>Textbox</code> component is integrated with template-driven forms and it allows you to bind the value to model using ngModel. The textbox appearance will be changed based on its <code>success or failure</code> state. 
+        After the form is submitted, the values will be reset to defaults.        
+        <td>The following validation is enabled in this example:
+            <ul>
+                <li><b>First name and Last name</b> - required</li>
+                <li><b>Username and password</b> - required and minimum length as 6</li>
+                <li><b>Email</b> - required and valid email address</li>
+                <li><b>Mobile number</b> - required, number only, and minimum length as 10</li>
+            </ul>
+        </td>
+        More information about template-driven forms is found in this <a target="_blank" href="https://angular.io/guide/forms#template-driven-forms"> reference link</a>.
+    </p>
+</div>

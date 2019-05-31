@@ -1,0 +1,33 @@
+/* Switch Styles */
+/* custom code start*/
+.content-wrapper {
+     margin-top: 47px;
+}
+
+.switch-control .heading {
+    text-indent: 15px;
+    padding: 15px 0;
+}
+
+.switch-control div {
+    display: flex;
+    align-items: center;
+}
+
+.switch-control {
+    margin: 0 auto;
+    width: 275px;
+}
+
+.switch-control label {
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.switch-control .e-disabled {
+    pointer-events: none;
+}
+/* custom code end*/

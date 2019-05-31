@@ -1,0 +1,56 @@
+.schedule-group-editing.e-schedule .e-month-view .e-appointment .e-appointment-details {
+    padding: 1px;
+    padding-left: 3px;
+}
+
+.schedule-group-editing.e-schedule .e-vertical-view .e-resource-cells {
+    height: 62px;
+}
+
+.schedule-group-editing.e-schedule .template-wrap {
+    display: flex;
+    text-align: left;
+}
+
+.schedule-group-editing.e-schedule .template-wrap .resource-image {
+    width: 45px;
+    height: 45px;
+    background-size: 45px;
+    background-repeat: no-repeat;
+}
+
+.schedule-group-editing.e-schedule .template-wrap .resource-details {
+    padding-left: 10px;
+}
+
+.schedule-group-editing.e-schedule .template-wrap .resource-details .resource-name {
+    font-size: 16px;
+    font-weight: 500;
+    padding-right: 10px;
+}
+
+.schedule-group-editing.e-schedule.e-device .template-wrap .resource-details .resource-name {
+    font-size: inherit;
+    font-weight: inherit;
+    padding-top: 5px;
+}
+
+.schedule-group-editing.e-schedule.e-device .e-resource-tree-popup .e-fullrow {
+    height: 50px;
+}
+
+.schedule-group-editing.e-schedule.e-device .template-wrap .resource-details .resource-designation {
+    display: none;
+}
+
+.schedule-group-editing.e-schedule .template-wrap .resource-image.margaret {
+    background-image: url('~/assets/schedule/images/margaret.png');
+}
+
+.schedule-group-editing.e-schedule .template-wrap .resource-image.robert {
+    background-image: url('~/assets/schedule/images/robert.png');
+}
+
+.schedule-group-editing.e-schedule .template-wrap .resource-image.laura {
+    background-image: url('~/assets/schedule/images/laura.png');
+}

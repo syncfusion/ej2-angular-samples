@@ -1,0 +1,7 @@
+.schedule-excel-export.e-schedule .e-schedule-toolbar .e-icon-schedule-excel-export::before {
+    content: '\e242';
+}
+
+.schedule-excel-export.e-schedule .e-schedule-toolbar .e-toolbar-item.e-today{
+    display: none;
+}

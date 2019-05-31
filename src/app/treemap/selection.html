@@ -1,0 +1,119 @@
+
+<div class="control-section">
+    <div class="col-lg-9">
+        <ejs-treemap id='container' #treemap style="display:block;" [dataSource] ='dataSource' [highlightSettings] = 'highlightSettings'
+		[weightValuePath] ='weightValuePath' [titleSettings] = 'titleSettings' [leafItemSettings] = 'leafItemSettings' [selectionSettings] = 'selectionSettings'
+      (load)='load($event)' >
+     <e-levels>
+        <e-level groupPath= 'dataType' fill= '#c5e2f7' headerAlignment= 'Center' groupGap= 5  [headerStyle] ='headerStyle'> </e-level>
+        <e-level groupPath= 'product' fill= '#a4d1f2' headerAlignment= 'Center'  groupGap= 2>  </e-level> 
+         </e-levels>      
+    </ejs-treemap>
+        <div style="float: right; margin-right: 10px;">Source:
+            <a href=" https://www.indexmundi.com/trade/imports/?country=jp" target="_blank">www.indexmundi.com</a>
+        </div>
+    </div>
+    <div class="col-lg-3 property-section">
+            <div class="property-panel-section">
+                    <div class="property-panel-header">Properties</div>
+                    <div class="property-panel-content">
+            <table id="property" title="Properties" style="width: 100%">
+                <tbody>
+                        <tr style="height: 50px">
+                                <td style="width: 60%">
+                                    <div class="property-text"><b>Highlight</b></div>
+                                </td>
+                                
+                        </tr>
+                        <tr>
+                                <td style="width: 60%">
+                                    <div class="property-text"> Enable</div>
+                                </td>
+                                <td style="width: 40%;">
+                                    <div>
+                                        <input class="check" type="checkbox" id="highlightEnable" checked="">
+                                    </div>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td style="width: 60%">
+                                        <div class="property-text"> Mode</div>
+                                </td>
+                                <td style="width: 40%;">
+                                    <div>
+                                        <select name="selectIndex" autocomplete="off" id="highlightMode" style="width:60%;">
+                                            <option value="Item" selected="">Item</option>
+                                            <option value="Child">Child</option>
+                                            <option value="Parent">Parent</option>
+                                            <option value="All">All</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                    <td style="width: 60%">
+                                        <div class="property-text"><b>Selection</b></div>
+                                    </td>
+                                    
+                            </tr>
+                            <tr>
+                                    <td style="width: 60%">
+                                        <div class="property-text">Enable</div>
+                                    </td>
+                                    <td style="width: 40%;">
+                                        <div>
+                                            <input class="check" type="checkbox" id="SelectionEnable" checked="">
+                                        </div>
+                                    </td>
+                            </tr>
+                            <tr>
+                                    <td style="width: 60%">
+                                        <div class="property-text"> Mode</div>
+                                    </td>
+                                    <td style="width: 40%;">
+                                        <div>
+                                            <select name="selectIndex" autocomplete="off" id="selectionMode" style="width:60%;">
+                                                <option value="Item" selected="">Item</option>
+                                                <option value="Child">Child</option>
+                                                <option value="Parent">Parent</option>
+                                                <option value="All">All</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                            </tr>
+                           
+            </tbody></table>
+        </div>
+        
+</div>
+
+<div id="action-description">
+        <p>
+            This sample depicts the details of Imports made by Japan. Selection and highlight has been enabled in this sample.
+        </p>
+    </div>
+    <div id="description">
+        <p>
+            In this example, you can see the modes available for performing highlight and selection in treemap. It can be either enabled or disabled.
+        </p>
+        <br/>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+           
+            Treemap component features are segregated into individual feature-wise modules. To use highlight and selection, inject the <code>Selection</code> module using the <code>Treemap.Inject(TreeMapSelection)</code>inject the <code>Highlight</code> module using the <code>Treemap.Inject(TreeMapHighlight)</code> method.
+        </p>
+    
+    </div>
+<!-- custom code start -->
+<style>
+   
+    label{
+        height: 32px !important;
+    }
+        .property-text {
+            font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif" !important;
+            font-size: 13px !important;
+            font-weight: 400 !important;
+        }    
+</style>
+<!-- custom code end -->

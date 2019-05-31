@@ -1,0 +1,6 @@
+#ganttUnscheduled .e-add-icon:before {
+    content: "\e506"
+}
+.bootstrap4 #ganttUnscheduled .e-add-icon:before {
+    content: "\e783"
+}

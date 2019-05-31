@@ -1,0 +1,129 @@
+<div class="control-section">
+    <ejs-maps id='container' style="display:block;"
+         [layers] = 'layers'  [titleSettings]="titleSettings"
+         (load)='load($event)' (loaded)='loaded($event)' >
+        </ejs-maps>
+</div>
+<div id="action-description">
+    <p>
+        This sample depicts a cyberattack map, which displays the cyberattacks and threats from various countries to the
+        USA.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to dynamically display a navigation line with linear animation. Marker
+        templates are added to denote the source and destination locations. Any custom HTML element can be used as a
+        marker.
+    </p>
+    <br />
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        The maps component features are segregated into individual modules by feature. To use marker template, inject
+        the <code>Marker</code> module using the <code>Maps.Inject(Marker)</code> method, and use the navigation lines
+        by injecting the <code>NavigationLine</code> module.
+    </p>
+</div>
+<style>
+    .name {
+        margin-top: -6px;
+        margin-left: -6px;
+        font-size: 12px;
+        color: black;
+        text-shadow: 0px 1px 1px lightgray;
+        font-weight: 500
+    }
+
+    @keyframes dash {
+        from {
+            stroke-dashoffset: 1000;
+            stroke-width: 1px;
+            stroke: #D2691E;
+        }
+
+        to {
+            stroke-dashoffset: 0;
+            stroke-width: 1px;
+        }
+
+        40% {
+            opacity: 0.7;
+        }
+
+        50%,
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .pulse-css {
+        width: 12px;
+        height: 12px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        background: #D2691E;
+        position: relative;
+        animation-delay: 5s;
+    }
+
+    .pulse-css:before,
+    .pulse-css:after {
+        content: '';
+        width: 9px;
+        height: 9px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        background-color: #D2691E;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        transform: scale(0.5);
+        animation: pulse-css1 2s linear infinite;
+    }
+
+    .parent_css {
+        width: 13px;
+        height: 13px;
+        background: #D2691E;
+        position: relative;
+        animation-delay: 5s;
+    }
+
+    .parent_css:before,
+    .parent_css:after {
+        content: '';
+        width: 9px;
+        height: 9px;
+        background-color: #D2691E;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        transform: scale(0.5);
+        animation: pulse-css1 3s linear infinite;
+    }
+
+    @keyframes pulse-css1 {
+        0% {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 0.2;
+        }
+
+        90%,
+        100% {
+            transform: scale(5);
+            opacity: 0;
+        }
+    }
+</style>

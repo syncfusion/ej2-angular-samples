@@ -1,0 +1,8 @@
+#defaulttoast .e-meeting::before {
+  content: "\e705";
+  font-size: 17px;
+}
+.bootstrap4 #defaulttoast .e-meeting::before {
+  content: "\e763";
+  font-size: 20px;
+}

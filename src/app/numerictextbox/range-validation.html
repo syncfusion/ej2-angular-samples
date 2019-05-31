@@ -1,0 +1,111 @@
+<div class="control-section">
+    <div class="col-lg-8 content-wrapper">
+        <div class="numeric-content">
+            <div class="control-label">Numeric TextBox
+            </div>
+            <ejs-numerictextbox id="range" value="15" [min]="minValue" [max]="maxValue" [step]="step"></ejs-numerictextbox>
+            </div>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties">
+                    <tr>
+                        <td>
+                            <div>Min Value </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input id="min" type="number" class="form-control" value="10" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Max Value </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input id="max" type="number" class="form-control" value="100" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Increment Step </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input id="step" type="number" max="100" min="0" class="form-control" value="1" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div>
+                                <button id="buttonApply" (click)="clickMe()" class="e-btn-small btn btn-primary">Apply</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the range validation functionalities of the Numeric TextBox. Change the min, max and step values and click on apply button to change the property values in Numeric TextBox.</p>
+</div>
+
+<div id="description">
+    <p>
+        The NumericTextBox has the options to restrict the input value between a specific range using the
+        <a href="https://ej2.syncfusion.com/angular/documentation/api/numerictextbox#min" target="_blank">min</a>,
+        <a href="https://ej2.syncfusion.com/angular/documentation/api/numerictextbox#max" target="_blank">max</a>, and
+        <a href="https://ej2.syncfusion.com/angular/documentation/api/numerictextbox#strictmode" target="_blank">strictMode</a> properties.
+    </p>
+    <ul>
+        <li>
+            When you enable the <b>strictMode</b> property, the value will automatically change within a range on passing
+            the out-of-range values.
+        </li>
+        <li>
+            When you disable the <b>strictMode</b> property, the NumericTextBox component allows the out-of-range value with the highlighted
+            textbox to indicate the given value is wrong.
+        </li>
+    </ul>
+    <p>
+        In this demo, numeric textbox is restricted between 10 to 100 through the min and max properties. So you can enter only the value between
+        this range.
+    </p>
+    <p>
+        More information on the range validation configuration can be found in the
+        <a href="https://ej2.syncfusion.com/angular/documentation/numerictextbox/getting-started/#range-validation" target="_blank"> documentation section</a>.
+    </p>
+</div>
+<style>
+    .property-panel-content {
+        padding: 0 10px 10px 0;
+    }
+
+    .control-label {
+        padding: 24px 0px 10px 0px;
+        font-size: 12px;
+    }
+    
+    .wrapper {
+        margin-top: 40px;
+    }
+    
+    #buttonApply {
+        float: right;
+    }
+    .numeric-content {
+        width: 43%;
+        margin: 0 auto;
+        min-width: 185px;
+        padding: 25px 0px;
+    }
+</style>

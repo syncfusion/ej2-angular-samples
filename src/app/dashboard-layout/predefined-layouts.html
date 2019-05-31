@@ -1,0 +1,42 @@
+<div class="control-section">
+    <div class="col-lg-8" id="dashboard_container">
+        <ejs-dashboardlayout id="predefine_dashboard" #predefine_dashboard columns="6" [panels]='panelsData' [cellSpacing]='cellSpacing'>
+        </ejs-dashboardlayout>
+    </div>
+    <div class="col-lg-4">
+        <div class="property-section dashboard" id="dash_property">
+            <div class="property-panel-header">
+                Properties
+            </div>
+            <div class="row property-panel-content" id="template" (click)="onTemplateClick($event)">
+                <div class="row row-header">
+                    Choose dashboard layout
+                </div>
+                <div class="row" style="padding-top: 3px;">
+                    <div class="image-pattern-style e-selected-style" id="template1" data-id="1"></div>
+                    <div class="image-pattern-style" id="template2" data-id="2"></div>
+                    <div class="image-pattern-style" id="template3" data-id="3"></div>
+                </div>
+                <div class="row" style="padding-top: 3px">
+                    <div class="image-pattern-style" id="template4" data-id="4"></div>
+                    <div class="image-pattern-style" id="template5" data-id="5"></div>
+                    <div class="image-pattern-style" id="template6" data-id="6"></div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12" style="padding:10px">
+                <button ejs-button id="reset" (click)="onButtonClick()">Reset</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates, the functionality of dynamically updating the panels inside the DashboardLayout by slecting it from the pre-defined values in the properties panel. Go to the properties panel section and select any of the pre-defined layout,
+        based on selection the panles are updated in the dashboard layout dynamically inside the DashboardLayout. Click the <code>reset</code> button to reset the panels settings of the layout.
+    </p>
+</div>
+<div id="description">
+    <p>
+        This sample demonstrates how to update the panels dynamically in the dashboard layout component.
+</div>

@@ -1,0 +1,20 @@
+<div id="action-description">
+    <p> In this sample, we demonstrate on how to provide templates for each pivot grid value cell based on user
+        requirement.</p>
+</div>
+<div id="description">
+    <p>
+        The Pivot Table provides a custom layout for each cell's display using the cell template feature.
+        The <code>cellTemplate</code> property accepts either an HTML string or the element's ID, which can be used to
+        append additional HTML elements in order to showcase each cell with a template.
+        Using cell templates in this sample, we are representing the revenue cost for each year with trend icons.
+        To calculate the trend, we have applied conditions for each cell using pivot values from a
+        <code>dataBound</code> event.
+        Based on the applied condition, we are showing the appropriate trend icons.
+
+    </p>
+</div>
+<div class="control-section" style="overflow:auto;">
+    <ejs-pivotview style="display: inline-block" #pivotview id='PivotView' (load)='onLoad()' [dataSource]=dataSource width='100%' height='300' [gridSettings]='gridSettings' (dataBound)='trend()' [cellTemplate]='cellTemplate'>
+    </ejs-pivotview>
+</div>

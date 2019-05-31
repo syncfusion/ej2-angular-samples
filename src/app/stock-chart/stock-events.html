@@ -1,0 +1,88 @@
+<div class="control-section">
+    <div>
+        <ejs-stockchart id='stockChartEvents' [enablePeriodSelector]='enable' [title]='title' [titleStyle]='titleStyle'
+            [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' style="display:block;" [tooltip]='tooltip'
+            [crosshair]='crosshair' [primaryYAxis]='primaryYAxis' (tooltipRender)='tooltipRender($event)' [seriesType]='seriesType'
+            [indicatorType]='indicatorType' (load)='load($event)'>
+            <e-stockchart-series-collection>
+                <e-stockchart-series [dataSource]='data1' type='Spline' xName='x' yName='high' close='high'>
+                </e-stockchart-series>
+            </e-stockchart-series-collection>
+            <e-stockchart-stockevents>
+                <e-stockchart-stockevent [date]="date1" text="Q2" description="2012 Quarter2"
+                    type="Flag"  background='#6c6d6d' [border]="border1"></e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date2" text="Open" description="Markets opened"
+                    [textStyle]="textStyle" background="#f48a21" [border]="border2"></e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date3" text="Q3" description="2013 Quarter3"
+                    type="Flag" [textStyle]="textStyle" background="#6c6d6d" [border]="border3">
+                </e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date4" text="Q4" description="2013 Quarter4"
+                    type="Flag" [textStyle]="textStyle" background="#6c6d6d" [border]="border3">
+                </e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date5" text="G" description="Google Stock"
+                    [textStyle]="textStyle" background="#f48a21" [border]="border2"></e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date6" text="Y" description="Yahoo Stock"
+                    type="Square" [textStyle]="textStyle" background="#841391" [border]="border5">
+                </e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date7" text="Y2" description="Year 2013" type="Pin"
+                    [showOnSeries]="onSeries" [textStyle]="textStyle" background="#6322e0" [border]="border6">
+                </e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date8" text="Q2" description="2013 Quarter2"
+                    type="Flag" [textStyle]="textStyle" background="#6c6d6d" [border]="border3">
+                </e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date9" text="Q2" description="Surge in Stocks"
+                    type="ArrowUp" [textStyle]="textStyle" background="#3ab0f9" [border]="border4">
+                </e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date10" text="Q3" description="2013 Quarter3"
+                    type="Flag" [textStyle]="textStyle" background="#f48a21" [border]="border2">
+                </e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date11" text="Q4" description="2013 Quarter4"
+                    type="Flag" [textStyle]="textStyle" background="#6c6d6d" [border]="border3">
+                </e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date12" text="Y3" description="Year 2014" type="Pin"
+                    [showOnSeries]="onSeries" [textStyle]="textStyle" background="#6322e0" [border]="border6">
+                </e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date13" text="Q2" description="2014 Quarter2"
+                    type="Flag" [textStyle]="textStyle" background="#6c6d6d" [border]="border3">
+                </e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date14" text="Q3" description="2014 Quarter3"
+                    [textStyle]="textStyle" background="#f48a21" [border]="border2"></e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date15" text="Q4" description="2014 Quarter4"
+                    type="Flag" [textStyle]="textStyle" background="#6c6d6d" [border]="border3">
+                </e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date16" text="Y4" description="Year 2015" type="Pin"
+                    [showOnSeries]="onSeries" [textStyle]="textStyle" background="#6322e0" [border]="border6">
+                </e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date17" text="End" description="Markets closed"
+                    type="ArrowDown" [textStyle]="textStyle" background="#3ab0f9" [border]="border4">
+                </e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date18" text="A" description="Amazon Stock"
+                    [textStyle]="textStyle" background="#f48a21" [border]="border2"></e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date19" text="Q1" description="AAPL Stock"
+                    [textStyle]="textStyle" background="#dd3c9f" [border]="border7" type="Text">
+                </e-stockchart-stockevent>
+                <e-stockchart-stockevent [date]="date20" text="Close" description="Markets closed"
+                    [textStyle]="textStyle" background="#f48a21" [border]="border2"></e-stockchart-stockevent>
+            </e-stockchart-stockevents>
+        </ejs-stockchart>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample visualizes stock data with spline series. Period and range selector help us to navigate different
+        of data.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the Stock chart.
+        <code>SplineSeries</code> is used to represent selected data value.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module:</p>
+    <p>Stock Chart features are segregated into individual feature-wise modules. To use Spline Series and DateTime axis
+        in stock chart, we need to inject
+        <code>SplineSeriesService</code> and <code>DateTimeService</code> into the <code>@NgModule.providers</code>
+        section.
+    </p>
+</div>

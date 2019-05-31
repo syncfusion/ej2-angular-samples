@@ -1,43 +1,55 @@
-'use strict';
+var fs = require('fs');
+var glob = require('glob');
+var gulp = require("gulp");
+var shelljs = global.shelljs = global.shelljs || require('shelljs');
 
-var gulp = require('gulp');
-
-/**
- * Compile styles
- */
-gulp.task('styles', function() {
-    var sass = require('gulp-sass');
-    return gulp.src(['./styles/**/*.scss'], { base: './' })
-        .pipe(sass({
-            outputStyle: 'expanded',
-            includePaths: './node_modules/@syncfusion/'
-        }))
-        .pipe(gulp.dest('.'));
+gulp.task('copy-source', function () {
+  var localeJson = glob.sync(__dirname + '/src/app/**/*', {
+    silent: true,
+    ignore: ['/src/app/common/**/*.*', '/src/app/common']
+  });
+  if (localeJson.length) {
+    for (var i = 0; i < localeJson.length; i++) {
+      if (localeJson[i].indexOf('/common') == -1) {
+        console.log(localeJson[i])
+        shelljs.cp('-R', localeJson[i], localeJson[i].replace('app', 'source'));
+      }
+    }
+  }
 });
 
-gulp.task('bundle', function(done) {
-    var webpack = require('webpack');
-    var webpackConfig = require('./webpack.config.js');
-    webpack(webpackConfig, function(err) {
-        if (err) {
-            console.log(err);
-            process.exit(1);
-        }
-        done();
-    });
+gulp.task('build', function (done) {
+  shelljs.exec('npm run build:prod', function (exitCode, error) {
+    console.log(error);
+    done(exitCode);
+  })
+  // runSequence('create-locale');
 });
 
-/**
- * Run the samples
- */
-gulp.task('serve', function(done) {
-    var browserSync = require('browser-sync');
-    var bs = browserSync.create('Essential JS 2 for Angular');
-    var options = {
-        server: {
-            baseDir: './'
-        },
-        ui: false
-    };
-    bs.init(options, done);
+gulp.task('serve', ['copy-source', 'styles-all'], function () {
+  shelljs.exec('npm run start');
+});
+
+
+gulp.task('clear-all', function () {
+  return gulp.src(['src/**/*.js.map', 'src/**/*.json', 'src/**/*.js', 'src/**/*.d.ts', 'src/**/*.ngfactory.ts', 'src/**/*.ngstyle.ts']).pipe(clean({
+    force: true
+  }))
+});
+
+gulp.task('move', function (done) {
+  shelljs.cp('-rf', './OpenNewSamples/*', './output');
+  var mainBundle = fs.readFileSync('./output/main.js', 'utf8');
+  mainBundle = mainBundle.replace(/\(\/assets/g, '(./assets');
+  fs.writeFileSync('./output/main.js', mainBundle, 'utf8');
+  done();
+});
+
+gulp.task('styles-replace', function (done) {
+  var nos = glob.sync('node_modules/@syncfusion/ej2/*.css');
+  for (var j = 0; j < nos.length; j++) {
+    var htmlfile = fs.readFileSync(nos[j], 'utf8');
+    fs.writeFileSync('./src/styles/' + nos[j].split('/')[3], htmlfile, 'utf8');
+  }
+  done();
 });

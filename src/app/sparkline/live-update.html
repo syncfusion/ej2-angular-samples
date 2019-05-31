@@ -1,0 +1,73 @@
+<div class="control-section" align="center">
+    <div id="spark-container" class="row">
+        <div class="cols-sample-area" align="center" style="margin-top: 8%;">
+            <div align="center" class="col-lg-3 col-m-3 col-sm-6">
+                <div align="center" class="spark">
+                    <ejs-sparkline #cpuspark (loaded)="cpuloaded($event)" id="cpuspark1" height="130px" width="100%"
+                        [axisSettings]="cpuaxisSettings" [containerArea]="cpucontainerArea" [border]="cpuborder" fill='#e8f2fc'
+                        type='Area' [dataSource]='cpuData' xName='x' yName='yval' valueType='Numeric'></ejs-sparkline>
+                    <div style="color: #000000; font-size: 12px; position: absolute; margin-top: -125px; margin-left: 3%;">
+                        <b>CPU</b>
+                    </div>
+                    <div id="cpu" style="color: #0877d6;position: absolute; margin-top: -105px; margin-left: 3%;">26%
+                        1.2GHz</div>
+                </div>
+            </div>
+            <div align="center" class="col-lg-3 col-m-3 col-sm-6">
+                <div align="center" class="spark">
+                    <ejs-sparkline #memspark (loaded)="memloaded($event)" id="memspark1" height="130px" width="100%"
+                        [axisSettings]="memaxisSettings" [containerArea]="memcontainerArea" [border]="memborder" fill='#f5e8fc'
+                        type='Area' [dataSource]='memData' xName='x' yName='yval' valueType='Numeric'></ejs-sparkline>
+                    <div style="color: #000000; font-size: 12px; position: absolute; margin-top: -125px; margin-left: 3%;">
+                        <b>Disk</b>
+                    </div>
+                    <div id="disk" style="color: #b247c6 ;position: absolute; margin-top: -105px; margin-left: 3%;">50%</div>
+                </div>
+            </div>
+            <div align="center" class="col-lg-3 col-m-3 col-sm-6">
+                <div align="center" class="spark">
+                    <ejs-sparkline #diskspark (loaded)="diskloaded($event)" id="diskspark1" height="130px" width="100%"
+                        [axisSettings]="diskaxisSettings" [containerArea]="diskcontainerArea" [border]="diskborder"
+                        fill='#e0f9d1' type='Area' [dataSource]='diskData' xName='x' yName='yval' valueType='Numeric'></ejs-sparkline>
+                    <div style="color: #000000; font-size: 12px; position: absolute; margin-top: -125px; margin-left: 3%;">
+                        <b>Memory</b>
+                    </div>
+                    <div id="memory" style="color: #5bcc8f;position: absolute; margin-top: -105px; margin-left: 3%;">6.5/15.8
+                        GB (41%)</div>
+                </div>
+            </div>
+            <div align="center" class="col-lg-3 col-m-3 col-sm-6">
+                <div align="center" class="spark">
+                    <ejs-sparkline #netspark (loaded)="netloaded($event)" id="netspark1" height="130px" width="100%"
+                        [axisSettings]="netaxisSettings" [containerArea]="netcontainerArea" [border]="netborder" fill='#F2D8C7'
+                        type='Area' [dataSource]='netData' xName='x' yName='yval' valueType='Numeric'></ejs-sparkline>
+                    <div style="color: #000000; font-size: 12px; position: absolute; margin-top: -125px; margin-left: 3%;">
+                        <b>Ethernet</b>
+                    </div>
+                    <div id="net" style="color: #d1a990;position: absolute;  margin-top: -105px; margin-left: 3%;">R:
+                        50Kbps</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample depicts the various customization options available in sparklines.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see various customization options available in sparklines. Tooltip is enabled in this
+        example. To
+        see the tooltip in action, hover the mouse over the data points or tap on a data point in touch enabled
+        devices.
+    </p>
+</div>
+<style>
+    .spark {
+        float: left;
+        width: 95%;
+        margin-left: 3%;
+    }
+</style>

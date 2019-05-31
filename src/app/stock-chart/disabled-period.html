@@ -1,0 +1,58 @@
+<div id="action-description">
+    <p>
+        This sample visualizes stock chart with area.
+    </p>
+</div>
+<style>
+    #gradient-chart stop {
+        stop-color: #BDEDE9;
+    }
+
+    #gradient-chart stop[offset="0"] {
+        stop-opacity: 1;
+    }
+
+    #gradient-chart stop[offset="1"] {
+        stop-opacity: 0.4;
+    }
+
+    #control-container {
+        padding: 0px !important;
+    }
+</style>
+
+<div class="control-section">
+    <div>
+        <ejs-stockchart id='stockChartPeriod' [enablePeriodSelector]='enable' [tooltip]='tooltip' [crosshair]='crosshair'
+            [chartArea]='chartArea' style="display:block;" [primaryXAxis]='primaryXAxis' (tooltipRender)='tooltipRender($event)' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
+            <e-stockchart-series-collection>
+                <e-stockchart-series [dataSource]='data1' type='Area' xName='x' yName='open' fill='url(#gradient-chart)'>
+                </e-stockchart-series>
+            </e-stockchart-series-collection>
+        </ejs-stockchart>
+    </div>
+</div>
+<svg style="height: 0">
+    <defs>
+        <linearGradient id="gradient-chart" style="opacity: 1" class='chart-material' x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" />
+            <stop offset="1" />
+        </linearGradient>
+    </defs>
+</svg>
+<div id="action-description">
+    <p>
+        This sample renders the stock chart without period selector, data's can be navigated through range selector.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the Stock chart and disable the period selector
+        <code>LineSeries</code> is used to represent selected data value.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module:</p>
+    <p>Stock Chart features are segregated into individual feature-wise modules. To use Candle Series, DateTime axis in stock chart, we need to inject
+        <code>CandleSeriesService</code> and <code>DateTimeService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>

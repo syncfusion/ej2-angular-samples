@@ -1,0 +1,61 @@
+
+<div class="col-lg-8 control-section">
+        <div class="content-wrapper">
+                <ejs-treegrid #treegrid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' [toolbar]='toolbar' enableHover='false' childMapping='subtasks' [treeColumnIndex]='1' 
+                (rowDataBound)="rowDataBound($event)" (beginEdit)="beginEdit($event)">
+                    <e-columns>
+                        <e-column field='taskID' headerText='Task ID' width='100' isPrimaryKey='true' textAlign='Right' [validationRules]='taskidrules'></e-column>
+                        <e-column field='taskName' headerText='Task Name' width='220' editType='stringedit' [validationRules]='tasknamerules'></e-column>
+                        <e-column field='startDate' headerText='Start Date' width='130' editType='datepickeredit' format="yMd" textAlign='Right' [validationRules]='startdaterules'></e-column>
+                        <e-column field='duration' headerText='Duration' width='100' editType='numericedit' textAlign='Right' [edit]='editparams' [validationRules]='durationrules'></e-column>
+                    </e-columns>
+                </ejs-treegrid>
+        </div>
+</div>
+<div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+                <div class="property-panel-header">Properties </div>
+            <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                <tr style="height: 50px">
+                    <td >
+                        <div style="width: 100px">Disable Rows</div>
+                    </td>
+                    <td style="width: 30%;padding-right: 10px">
+                        <div id='columnddl'>
+                            <ejs-multiselect #multiselect id='ddlelement' width='150px' [dataSource]='d1data'  [value]='value'
+                            mode='CheckBox' [popupHeight]='popupHeight' [showDropDownIcon]='true' showSelectAll='true' (select)="select($event)" (removed)="removed($event)" ></ejs-multiselect>
+                       </div>
+                    </td>
+                 </tr>
+            </table>
+        </div>
+</div>
+<div id="action-description">
+    <p>
+        This samples demonstrates the way of preventing editing for certain row and disable the locked rows to differentiate edit and non-editable rows in TreeGrid.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The TreeGrid supports CRUD operations. This CRUD operations can be configured in TreeGrid using <code>editSettings</code>. Also, it has different modes to manipulate the datasource.
+    </p>
+    <p>
+        The available modes are,
+    </p>
+    <ul>
+        <li><code>Row </code></li>
+        <li><code>Cell</code></li>
+        <li><code>Dialog</code></li>
+    </ul>
+    <p>
+        In this sample, we have provided an option in property panel to prevent editing for certain rows. Using <code>beginEdit</code>  
+        event of treegrid, we prevent the editing for selected Task ID row in the dropdown and disable the corresponding row using <code>rowDataBound</code> event of TreeGrid.
+    </p>
+    <p>Injecting Module:</p>
+
+    <p>TreeGrid component features are segregated into individual feature-wise modules. To use editing feature, we need to inject <code>EditService</code> into the <code>@NgModule.providers</code> section.</p> 
+    <p>
+      More information on the editing feature can be found in the documentation section.
+    </p>
+</div>
+

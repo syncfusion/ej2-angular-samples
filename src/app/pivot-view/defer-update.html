@@ -1,0 +1,26 @@
+<div id="action-description">
+    <p>This sample demonstrates the defer layout update feature of the pivot grid widget.</p>
+</div>
+<div id="description">
+    <p>
+        Deferring a layout update can be useful when you need to remove or add multiple fields in a report and you don't want to update the pivot table after each change. Now, you can update a pivot table after performing all changes at the report level in the field list resulting in better performance.
+    </p>
+    <p>
+        In this sample, the <b>Defer Layout Update</b> option can be enabled or disabled via field list UI.
+    </p>
+    <p>
+        In general, this feature can be enabled by setting  <code>allowDeferLayoutUpdate</code> as true.
+    </p>
+</div>
+<div class="control-section">
+    <div class="pivotfieldlist-control">
+        <ejs-pivotfieldlist #pivotfieldlist id='PivotFieldList' [dataSource]=dataSource renderMode="Fixed"
+            (enginePopulated)='afterPopulate($event)' [allowDeferLayoutUpdate]='true' [allowCalculatedField]='true' (load)='onLoad()' (dataBound)='ondataBound()'>
+        </ejs-pivotfieldlist>
+    </div>
+    <div class="pivotview-control">
+        <ejs-pivotview style="display: inline-block" #pivotview id='PivotViewFieldList' [allowDeferLayoutUpdate]='true' width='99%' height='620' (enginePopulated)='afterEnginePopulate($event)'
+            [gridSettings]='gridSettings'>
+        </ejs-pivotview>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="control-section">
+    <div id="sparkline" class="row">
+        <div class="cols-sample-area">
+            <ejs-grid #sparkgrid id="gridspark" [dataSource]='griddata' (created)="renderGridSparkline()" height=400
+                [allowSelection]=false [enableHover]=true>
+                <e-columns>
+                    <e-column field='EmployeeID' headerText='ID' width='70' textAlign='Right'></e-column>
+                    <e-column field='CustomerID' headerText='Name' width='110'></e-column>
+                    <e-column field='OrderDate' headerText='Order Date' width='110' textAlign='Right' format='yMd'></e-column>
+                    <e-column field='ShipCountry' headerText='Ship Country' width='120'></e-column>
+                    <e-column headerText='Tax per annum' textAlign='Center' width='150'>
+                        <ng-template #template let-griddata>
+                            <div id="spkline{{griddata.EmployeeID}}"></div>
+                        </ng-template>
+                    </e-column>
+                    <e-column headerText='One Day Index' textAlign='Center' width='150'>
+                        <ng-template #template let-griddata>
+                            <div id="spkarea{{griddata.EmployeeID}}"></div>
+                        </ng-template>
+                    </e-column>
+                    <e-column headerText='Year GR' textAlign='Center' width='150'>
+                        <ng-template #template let-griddata>
+                            <div id="spkwl{{griddata.EmployeeID}}"></div>
+                        </ng-template>
+                    </e-column>
+                </e-columns>
+            </ejs-grid>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample demonstrates rendering sparklines in data grid control.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render sparkline inside the data grid control.
+    </p>
+
+</div>
+
+<style>
+    .e-headertext {
+        font-weight: bolder;
+    }
+</style>

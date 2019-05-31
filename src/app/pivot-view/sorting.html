@@ -1,0 +1,68 @@
+<div id="action-description">
+    <p>This sample demonstrates ordering of fields either in ascending or descending order.</p>
+</div>
+<div id="description">
+    <p>In this sample, any field can be selected from the
+        <b>Fields</b> dropdown list and its order can be changed to display headers either in ascending or descending order.
+        It can be enabled using the
+        <code>enableSorting</code> property and it can be configured using the
+        <code>name</code> and
+        <code>order</code> options inside the
+        <code>sortSettings</code> property in the pivotgrid widget.
+    </p>
+</div>
+<div class="control-section" style="overflow:auto;">
+    <div class="col-lg-8">
+        <ejs-pivotview style="display: inline-block" #pivotview id='PivotView' [dataSource]=dataSource showFieldList='true' width='100%' height='300' allowExcelExport='true'
+            allowPdfExport='true' [gridSettings]='gridSettings'>
+        </ejs-pivotview>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tbody>
+                        <tr style="height: 50px">
+                            <td>
+                                <div class="row" style="margin-left: -10px">
+                                    <input id="sorting" type="checkbox">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 50px">
+                            <td>
+                                <div class="hdrlabel">Fields:
+                                </div>
+                            </td>
+                            <td>
+                                <div style="margin-left: -20px">
+                                    <input type="text" tabindex="1" id='fields' />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 50px">
+                            <td>
+                                <div class="hdrlabel">Order:
+                                </div>
+                            </td>
+                            <td>
+                                <div style="margin-left: -20px">
+                                    <input type="text" tabindex="1" id='order' />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 50px">
+                            <td></td>
+                            <td>
+                                <div style="float: right;">
+                                    <button id="apply">Apply</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

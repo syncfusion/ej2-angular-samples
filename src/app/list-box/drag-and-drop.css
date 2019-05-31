@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'swap-icon';
+  src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAAKAIAAAwAgT1MvMj1tSfIAAAEoAAAAVmNtYXDnEOdVAAABiAAAADZnbHlmXID+ZgAAAcgAAAA4aGVhZBR5I0cAAADQAAAANmhoZWEIVQQDAAAArAAAACRobXR4CAAAAAAAAYAAAAAIbG9jYQAcAAAAAAHAAAAABm1heHABDgAZAAABCAAAACBuYW1ltM6mlQAAAgAAAAI9cG9zdFSIYnYAAARAAAAALgABAAAEAAAAAFwEAAAAAAAD+AABAAAAAAAAAAAAAAAAAAAAAgABAAAAAQAARPvYwl8PPPUACwQAAAAAANixb1gAAAAA2LFvWAAAAAAD+AOaAAAACAACAAAAAAAAAAEAAAACAA0AAgAAAAAAAgAAAAoACgAAAP8AAAAAAAAAAQQAAZAABQAAAokCzAAAAI8CiQLMAAAB6wAyAQgAAAIABQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUGZFZABA5wDnAAQAAAAAXAQAAAAAAAABAAAAAAAABAAAAAQAAAAAAAACAAAAAwAAABQAAwABAAAAFAAEACIAAAAEAAQAAQAA5wD//wAA5wD//wAAAAEABAAAAAEAAAAAAAAAHAAAAAIAAAAAA/gDmgAFAAwAABMhBxcBITUxBTUhNycIA1HcLAFP/BAD8Pyv2ysBYs4uATy9AUDOLgAAAAASAN4AAQAAAAAAAAABAAAAAQAAAAAAAQAJAAEAAQAAAAAAAgAHAAoAAQAAAAAAAwAJABEAAQAAAAAABAAJABoAAQAAAAAABQALACMAAQAAAAAABgAJAC4AAQAAAAAACgAsADcAAQAAAAAACwASAGMAAwABBAkAAAACAHUAAwABBAkAAQASAHcAAwABBAkAAgAOAIkAAwABBAkAAwASAJcAAwABBAkABAASAKkAAwABBAkABQAWALsAAwABBAkABgASANEAAwABBAkACgBYAOMAAwABBAkACwAkATsgRm9udCBTd2FwUmVndWxhckZvbnQgU3dhcEZvbnQgU3dhcFZlcnNpb24gMS4wRm9udCBTd2FwRm9udCBnZW5lcmF0ZWQgdXNpbmcgU3luY2Z1c2lvbiBNZXRybyBTdHVkaW93d3cuc3luY2Z1c2lvbi5jb20AIABGAG8AbgB0ACAAUwB3AGEAcABSAGUAZwB1AGwAYQByAEYAbwBuAHQAIABTAHcAYQBwAEYAbwBuAHQAIABTAHcAYQBwAFYAZQByAHMAaQBvAG4AIAAxAC4AMABGAG8AbgB0ACAAUwB3AGEAcABGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIAB1AHMAaQBuAGcAIABTAHkAbgBjAGYAdQBzAGkAbwBuACAATQBlAHQAcgBvACAAUwB0AHUAZABpAG8AdwB3AHcALgBzAHkAbgBjAGYAdQBzAGkAbwBuAC4AYwBvAG0AAAAAAgAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAQIBAwAEU3dhcAAAAAA=) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.e-swap-icon {
+  font-family: 'swap-icon' !important;
+  speak: none;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  align-self: center;
+  margin: 0 10px;
+  transform: rotateX(180deg);
+}
+#drag-drop-wrapper .e-swap-icon:before {
+  content: '\e700';
+}
+#drag-drop-wrapper {
+  width: 85%;
+  margin: auto;
+  display: flex;
+}
+#drag-drop-wrapper .e-btn {
+  margin-top: 15px;
+  float: right;
+  margin-bottom: -43px;
+}
+.e-bigger #drag-drop-wrapper .e-btn {
+  margin-bottom: -51px;
+}
+.listbox-control {
+  width: 40%;
+  margin: auto;
+}
+@media screen and (max-width: 590px) {
+  .listbox-control,
+  #drag-drop-wrapper {
+      width: 100%;
+  }
+  .e-swap-icon {
+      font-size: 30px;
+  }
+}
+#right-pane {
+  transform: none !important;
+}

@@ -1,0 +1,71 @@
+<div id="action-description">
+  <p>This sample demonstrates showing and hiding grand totals and subtotals in rows, columns, or both.</p>
+</div>
+<div id="description">
+  <p>
+    In this sample, you can hide grand totals in row, column, or both using radio buttons available under the <b>Hide grand totals</b> category. To hide grand totals in both row and column, set the property <code>dataSource->showGrandTotals</code> as false. To hide the row and column grand totals separately, set the property <code>dataSource->showRowGrandTotals</code> and <code>dataSource->showColumnGrandTotals</code>as false.
+  </p>
+  <p>
+    Also, in this sample, you can hide subtotals for specific fields too. It can be achieved by selecting appropriate fields from the drop-down available under the <b>Hide sub-totals</b> category. To hide subtotals for a specific field, set the <code>showSubTotals</code> property as false inside the field definition.
+  </p>
+</div>
+<div class="control-section">
+  <div class="col-lg-8">
+    <ejs-pivotview style="display: inline-block" #pivotview id='PivotView' [dataSource]=dataSource width='100%' height='400'
+      [gridSettings]='gridSettings'>
+    </ejs-pivotview>
+  </div>
+  <div class="col-lg-4 property-section">
+    <div class="property-panel-section">
+      <div class="property-panel-header">Properties</div>
+      <div class="property-panel-content">
+        <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+          <tbody>
+            <tr style="height: 50px">
+              <td>
+                <div style="font-weight: 600; font-size: 13px">
+                  Hide grand totals
+                </div>
+              </td>
+            </tr>
+            <tr style="height: 50px">
+              <td>
+                  <div>
+                      <ejs-radiobutton #radio1 id="radio1" label="Row" name="total" value="Row" (change)="onChange($event)"></ejs-radiobutton>
+                  </div>
+              </td>
+          </tr>
+          <tr style="height: 50px">
+              <td>
+                  <div>
+                      <ejs-radiobutton #radio2 id="radio2" label="Column" name="total"  value="Column" (change)="onChange($event)"></ejs-radiobutton>
+                  </div>
+              </td>
+          </tr>
+          <tr style="height: 50px">
+              <td>
+                  <div>
+                      <ejs-radiobutton #radio3 id="radio3" label="Both" name="total" value="Both" checked="true" (change)="onChange($event)"></ejs-radiobutton>
+                  </div>
+              </td>
+          </tr>
+            <tr style="height: 50px">
+              <td>
+                <div style="font-weight: 600; font-size: 13px">
+                  Hide sub-totals
+                </div>
+              </td>
+            </tr>
+            <tr style="height: 50px">
+              <td>
+                <div>
+                  <input type="text" tabindex="1" id='values' />
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

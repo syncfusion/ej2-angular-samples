@@ -1,0 +1,232 @@
+<link href="../../styles/Diagram/style/diagram-common.css" rel="stylesheet">
+<script src="script/diagram-common.ts"></script>
+
+<div id="action-description">
+    <p>
+        This sample visualizes graphical representation of message flow from one activity to another in customer
+        service with built-in <code>UML activity</code> shapes.
+    </p>
+</div>
+<div class="control-section">
+<style>
+    #umlActivityDiagram .sb-mobile-palette {
+        width: 210px;
+        height: 100%;
+        float: left;
+    }
+
+    #umlActivityDiagram .sb-mobile-palette-bar {
+        display: none;
+    }
+
+    #umlActivityDiagram .sb-mobile-diagram {
+        width: calc(100% - 212px);
+        height: 100%;
+        float: left;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-left: none;
+    }
+
+    .container-fluid {
+        padding-bottom: 15px;
+    }
+
+    @media (max-width: 550px) {
+
+        #umlActivityDiagram .sb-mobile-palette {
+            z-index: 19;
+            position: absolute;
+            display: none;
+            transition: transform 300ms linear, visibility 0s linear 300ms;
+            width: 39%;
+            height: 100%;
+        }
+
+        #umlActivityDiagram .sb-mobile-palette-bar {
+            display: block;
+            width: 100%;
+            background: #fafafa;
+            padding: 10px 10px;
+            border: 0.5px solid #e0e0e0;
+            min-height: 40px;
+        }
+
+       #umlActivityDiagram .sb-mobile-diagram {
+            width: 100%;
+            height: 100%;
+            float: left;
+            left: 0px;
+        }
+
+        #palette-icon {
+            font-size: 20px;
+        }
+    }
+
+    #umlActivityDiagram .sb-mobile-palette-open {
+        position: absolute;
+        display: block;
+        right: 15px;
+    }
+
+    @font-face {
+        font-family: 'e-ddb-icons1';
+        src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAAKAIAAAwAgT1MvMj1tSfIAAAEoAAAAVmNtYXDnEOdVAAABiAAAADZnbHlmdC1P4gAAAcgAAAAwaGVhZBJhohMAAADQAAAANmhoZWEIVQQDAAAArAAAACRobXR4CAAAAAAAAYAAAAAIbG9jYQAYAAAAAAHAAAAABm1heHABDgAUAAABCAAAACBuYW1lm+wy9gAAAfgAAAK1cG9zdLnsYngAAASwAAAAMAABAAAEAAAAAFwEAAAAAAAD+AABAAAAAAAAAAAAAAAAAAAAAgABAAAAAQAAgNcenF8PPPUACwQAAAAAANelrs4AAAAA16WuzgAAAAAD+AN6AAAACAACAAAAAAAAAAEAAAACAAgAAgAAAAAAAgAAAAoACgAAAP8AAAAAAAAAAQQAAZAABQAAAokCzAAAAI8CiQLMAAAB6wAyAQgAAAIABQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUGZFZABA5wDnAAQAAAAAXAQAAAAAAAABAAAAAAAABAAAAAQAAAAAAAACAAAAAwAAABQAAwABAAAAFAAEACIAAAAEAAQAAQAA5wD//wAA5wD//wAAAAEABAAAAAEAAAAAAAAAGAAAAAIAAAAAA/gDegACAAcAACUhCQEhATUhAQQC9P6G/YoBMQFF/YqGAjf+hgH0QwAAAAAAEgDeAAEAAAAAAAAAAQAAAAEAAAAAAAEAEwABAAEAAAAAAAIABwAUAAEAAAAAAAMAEwAbAAEAAAAAAAQAEwAuAAEAAAAAAAUACwBBAAEAAAAAAAYAEwBMAAEAAAAAAAoALABfAAEAAAAAAAsAEgCLAAMAAQQJAAAAAgCdAAMAAQQJAAEAJgCfAAMAAQQJAAIADgDFAAMAAQQJAAMAJgDTAAMAAQQJAAQAJgD5AAMAAQQJAAUAFgEfAAMAAQQJAAYAJgE1AAMAAQQJAAoAWAFbAAMAAQQJAAsAJAGzIERpYWdyYW1fU2hhcGVzX0ZPTlRSZWd1bGFyRGlhZ3JhbV9TaGFwZXNfRk9OVERpYWdyYW1fU2hhcGVzX0ZPTlRWZXJzaW9uIDEuMERpYWdyYW1fU2hhcGVzX0ZPTlRGb250IGdlbmVyYXRlZCB1c2luZyBTeW5jZnVzaW9uIE1ldHJvIFN0dWRpb3d3dy5zeW5jZnVzaW9uLmNvbQAgAEQAaQBhAGcAcgBhAG0AXwBTAGgAYQBwAGUAcwBfAEYATwBOAFQAUgBlAGcAdQBsAGEAcgBEAGkAYQBnAHIAYQBtAF8AUwBoAGEAcABlAHMAXwBGAE8ATgBUAEQAaQBhAGcAcgBhAG0AXwBTAGgAYQBwAGUAcwBfAEYATwBOAFQAVgBlAHIAcwBpAG8AbgAgADEALgAwAEQAaQBhAGcAcgBhAG0AXwBTAGgAYQBwAGUAcwBfAEYATwBOAFQARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAdQBzAGkAbgBnACAAUwB5AG4AYwBmAHUAcwBpAG8AbgAgAE0AZQB0AHIAbwAgAFMAdAB1AGQAaQBvAHcAdwB3AC4AcwB5AG4AYwBmAHUAcwBpAG8AbgAuAGMAbwBtAAAAAAIAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgECAQMABlNoYXBlcwAA) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .e-ddb-icons1 {
+        font-family: 'e-ddb-icons1';
+        speak: none;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .e-toggle-palette::before {
+        content: "\e700"
+    }
+
+    .material #umlActivityDiagram #palette-space .e-accordion {
+        border: none;
+    }
+
+    .material #umlActivityDiagram #palette-space {
+        border: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .bootstrap #umlActivityDiagram .sb-mobile-diagram {
+        height: calc(100% - 17px);
+        margin-top: 5px;
+        border-radius: 4px;
+        border-left: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .fabric #umlActivityDiagram .sb-mobile-diagram {
+        border-left: 1px solid rgba(0, 0, 0, 0.12);
+    }
+</style>
+ <div id="umlActivityDiagram" style="width: 100%; height: 521px">
+    <div class="sb-mobile-palette-bar">
+        <div id="palette-icon" style="float: right;" role="button" class="e-ddb-icons1 e-toggle-palette"></div>
+    </div>
+    <div id="palette-space" class="sb-mobile-palette">
+        <ejs-symbolpalette #symbolpalette id="symbolpalette" [expandMode]="expandMode" [palettes]="palettes" width="100%"
+            height="100%" [symbolHeight]=55 [symbolWidth]=55 [symbolMargin]="symbolMargin" [getNodeDefaults]='setPaletteNodeDefaults'
+            [getSymbolInfo]='getSymbolInfo'>
+        </ejs-symbolpalette>
+    </div>
+    <div id="diagram-space" class="sb-mobile-diagram">
+        <ejs-diagram #diagram id="diagram" width="100%" height="100%" [snapSettings]=snapSettings (created)="diagramCreate($event)"
+            [getConnectorDefaults]='getConnectorDefaults' [getNodeDefaults]='getNodeDefaults'>
+            <e-nodes>
+                <e-node id='Start' [height]=40 [width]=40 [offsetX]=300 [offsetY]=20 [shape]=initialNode>
+                </e-node>
+                <e-node id='ReceiveCall' [height]=40 [width]=105 [shape]=action [offsetX]=300 [offsetY]=100>
+                    <e-node-annotations>
+                        <e-node-annotation content='Receive Customer Call'>
+                        </e-node-annotation>
+                    </e-node-annotations>
+                </e-node>
+                <e-node id='node2' [height]=10 [width]=70 [shape]=forkNode [offsetX]=300 [offsetY]=170>
+                </e-node>
+                <e-node id='Determine' [height]=40 [width]=105 [shape]=action [offsetX]=190 [offsetY]=250>
+                    <e-node-annotations>
+                        <e-node-annotation content='Determine Type of Call'>
+                        </e-node-annotation>
+                    </e-node-annotations>
+                </e-node>
+                <e-node id='Log' [height]=40 [width]=105 [shape]=action [offsetX]=410 [offsetY]=250>
+                    <e-node-annotations>
+                        <e-node-annotation content='Customer Logging a Call'>
+                        </e-node-annotation>
+                    </e-node-annotations>
+                </e-node>
+                <e-node id='node5' [height]=50 [width]=50 [shape]=decision [offsetX]=190 [offsetY]=350>
+                </e-node>
+                <e-node id='transfer_sales' [height]=40 [width]=105 [shape]=action [offsetX]=100 [offsetY]=450>
+                    <e-node-annotations>
+                        <e-node-annotation content='Transfer the Call to Sales'>
+                        </e-node-annotation>
+                    </e-node-annotations>
+                </e-node>
+                <e-node id='transfer_desk' [height]=40 [width]=105 [shape]=action [offsetX]=280 [offsetY]=450>
+                    <e-node-annotations>
+                        <e-node-annotation content='Transfer the Call to Help Desk'>
+                        </e-node-annotation>
+                    </e-node-annotations>
+                </e-node>
+                <e-node id='node8' [height]=50 [width]=50 [shape]=mergeNode [offsetX]=190 [offsetY]=540>
+                </e-node>
+                <e-node id='node9' [height]=10 [width]=70 [shape]=joinNode [offsetX]=300 [offsetY]=630>
+                </e-node>
+                <e-node id='CloseCall' [height]=40 [width]=105 [shape]=action [offsetX]=300 [offsetY]=710>
+                    <e-node-annotations>
+                        <e-node-annotation content='Close Call'>
+                        </e-node-annotation>
+                    </e-node-annotations>
+                </e-node>
+                <e-node id='node11' [height]=40 [width]=40 [shape]=finalNode [offsetX]=300 [offsetY]=800>
+                </e-node>
+            </e-nodes>
+            <e-connectors>
+                <e-connector id='connector1' sourceID='Start' targetID='ReceiveCall'>
+                </e-connector>
+                <e-connector id='connector2' sourceID='ReceiveCall' targetID='node2'>
+                </e-connector>
+                <e-connector id='connector3' sourceID='node2' targetID='Determine' sourcePortID='port1' targetPortID='portTop'
+                    [segments]='segments1'>
+                </e-connector>
+                <e-connector id='connector4' sourceID='node2' targetID='Log' sourcePortID='port2' targetPortID='portTop'
+                    [segments]='segments2'>
+                </e-connector>
+                <e-connector id='connector5' sourceID='Determine' targetID='node5'>
+                </e-connector>
+                <e-connector id='connector6' sourceID='node5' targetID='transfer_sales' sourcePortID='portLeft'
+                    targetPortID='portTop' [shape]=objectFlow>
+                    <e-connector-annotations>
+                        <e-connector-annotation content='Type = New Customer'>
+                        </e-connector-annotation>
+                    </e-connector-annotations>
+                </e-connector>
+                <e-connector id='connector7' sourceID='node5' targetID='transfer_desk' sourcePortID='portRight'
+                    targetPortID='portTop' [shape]=objectFlow>
+                    <e-connector-annotations>
+                        <e-connector-annotation content='Type = Existing Customer'>
+                        </e-connector-annotation>
+                    </e-connector-annotations>
+                </e-connector>
+                <e-connector id='connector8' sourceID='transfer_sales' targetID='node8' sourcePortID='portBottom'
+                    targetPortID='portLeft' [segments]='segments3'>
+                </e-connector>
+                <e-connector id='connector9' sourceID='transfer_desk' targetID='node8' sourcePortID='portBottom'
+                    targetPortID='portRight' [segments]='segments3'>
+                </e-connector>
+                <e-connector id='connector10' sourceID='node8' targetID='node9' sourcePortID='portBottom' targetPortID='port3'>
+                </e-connector>
+                <e-connector id='connector11' sourceID='Log' targetID='node9' sourcePortID='portBottom' targetPortID='port4'
+                    [segments]='segments4'>
+                </e-connector>
+                <e-connector id='connector12' sourceID='node9' targetID='CloseCall'>
+                </e-connector>
+                <e-connector id='connector13' sourceID='CloseCall' targetID='node11'>
+                </e-connector>
+            </e-connectors>
+        </ejs-diagram>
+    </div>
+  </div>
+</div>
+
+<div id="description">
+    <p>
+        This example shows how to create activity shapes using diagram <code>UMLActivity</code> shapes. The <code>type</code> property of the
+        <code>shape</code> can be used to create <code>UMLActivity</code> nodes. The <code>shape</code> property of the shape allows you to create UML
+        activity shapes.
+    </p>
+</div>

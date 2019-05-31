@@ -1,0 +1,100 @@
+<div class="col-lg-8 control-section" style="border-right: 1px solid #D7D7D7">
+    <style>
+        #historyPropertySection .row {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        #historyControlSection.content-wrapper {
+            border: 1px solid #D7D7D7;
+        }
+
+        #historyPropertySection .listbox {
+            width: 100%;
+            height: 50%;
+        }
+
+        #historyPropertySection .heading {
+            color: #807f7f;
+            font-size: 15px;
+            height: 50px;
+            width: 100%;
+            border-bottom: 1px solid #d9dedd;
+            padding: 10px;
+        }
+    </style>
+
+    <div id="historyControlSection" class="content-wrapper" style="width: 100%">
+        <ejs-diagram #diagram id="diagram" width="100%" height="580px" [nodes]="nodes" [connectors]="connectors" (getNodeDefaults)="getNodeDefaults"
+            [snapSettings]="snapSettings" (historyChange)="historyChange()"></ejs-diagram>
+    </div>
+</div>
+<div id="historyPropertySection" class="col-lg-4 property-section" style="padding-right: 0px">
+    <div class="property-panel-header">
+        History manager settings
+    </div>
+    <div class="row property-panel-content" id="appearance">
+        <div class="row property-panel-content">
+            <div class="row">
+                <div class="listbox" style="height:100%;border: 1px solid #e0e0e0">
+                    <div class="heading" style="height:40px">
+                        <span>
+                            Undo Stack
+                        </span>
+                        <div style="float: right; margin-top: -5px">
+                            <button ejs-button id="undo" style="width:100%" disabled=true (click)="undoButton()">
+                                Undo
+                            </button>
+                        </div>
+                    </div>
+                    <ejs-listview #undoList id="undoList" height="180px"></ejs-listview>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 10px">
+                <div class="listbox" style="height:100%;border: 1px solid #e0e0e0">
+                    <div class="heading" style="height:40px">
+                        <span>
+                            Redo Stack
+                        </span>
+                        <div style="float: right; margin-top: -5px">
+                            <button ejs-button id="redo" style="width:100%" disabled=true (click)="redoButton()">
+                                Redo
+                            </button >
+                        </div>
+                    </div>
+                    <ejs-listview #redoList id="redoList" height="180px"></ejs-listview>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 10px">
+                <div style="display: table;height: 35px; padding-left: 0px" class="col-xs-6">
+                    <div style="display: table-cell; vertical-align: middle">Stack Limit</div>
+                </div>
+                <div class="col-xs-6" style="padding-left: 0px; padding-right: 0px">
+                    <ejs-numerictextbox id="StackLimit" value="0" step="1" format="###.##" (change)="stackLimit($event)"></ejs-numerictextbox>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 10px">
+                <div class="col-xs-6" style="padding-left: 0px">
+                    <button ejs-button title="startGroupAction" id="startGroupAction" [isToggle]="true" (click)="startGroupAction()" type="Button" style="width:100%;overflow: hidden;text-overflow: ellipsis">start Group Action</button></div>
+                        <div class="col-xs-6" style="padding-left: 0px; padding-right: 0px">
+                            <button ejs-button title="ClearHistory" id="ClearHistory" type="Button" (click)="clearHistory()">Clear History</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="action-description">
+            <p>
+                This sample demonstrates viewing, deleting, limiting diagram history and groups diagram actions and stores it as
+        a single entry in the history manager.
+            </p>
+        </div>
+        <div id="description">
+            <p>
+                Diagram history are being handle all the diagram history. Using <code>stackLimit</code> property of the history manager
+                we limit the no. of entries can be stored on the diagram history. Also, we can get the list of entries in the undo
+                list and redo list using <code>undoStack</code> and <code>redoStack</code>. Also diagram history manager have the
+                option to group the action as the single entry by the help of the <code>startGroupAction</code> and <code>endGroupAction</code>        public Api. Also, we can add the custom entries to the diagram history. method can be used to print the diagrams.
+            </p>
+            <br>
+        </div>

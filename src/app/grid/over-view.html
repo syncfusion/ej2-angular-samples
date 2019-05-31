@@ -1,0 +1,99 @@
+<div class="control-section">
+    <ejs-dropdownlist id='value' #sample index='0' width='220' [dataSource]='ddlData' (change)='valueChange($event)' [fields]='fields' [popupHeight]='height'></ejs-dropdownlist>
+    <span id='msg'></span>
+    <br/>
+    <ejs-grid #overviewgrid id='overviewgrid' [dataSource]='data' rowHeight='38' [allowSelection]='true' [allowSorting]='true' height='600' (dataBound)='onDataBound($event)' [enableHover]='false' [selectionSettings]='selectionSettings' [filterSettings]='filterSettings' [allowSorting]='true' [allowFiltering]='true' [enableVirtualization]='true'>
+        <e-columns>
+            <e-column type='checkbox' [allowFiltering]='false' [allowSorting]='false' width='60'></e-column>
+            <e-column field='EmployeeID' [visible]='false' headerText='Employee ID' width='130' [isPrimaryKey]='true'></e-column>
+            <e-column field='Employees' headerText='Employee Name' [filter]='filter' clipMode='EllipsisWithTooltip' width='200'>
+                <ng-template #template let-data>
+                    <div>
+                        <div class="empimg">
+                          <span *ngIf="data.EmployeeImg === 'usermale'" class="e-userimg sf-icon-Male">
+                          </span>
+                          <span *ngIf="data.EmployeeImg === 'userfemale'" class="e-userimg sf-icon-FeMale">
+                        </span>
+                        </div> 
+                        <span id="Emptext">{{data.Employees}}</span>
+                      </div>                  
+                </ng-template>
+            </e-column>
+            <e-column field='Designation' headerText='Designation' [filter]='filter' clipMode='EllipsisWithTooltip' width='170' ></e-column>
+            <e-column field='Mail' headerText='Mail' [filter]='filterSettings' width='230'></e-column>
+            <e-column field='Location' headerText='Location' [filter]='filter' width='140'>
+                <ng-template #template let-data>
+                    <div class="loc">
+                        <img src="./assets/grid/images/Map.png" class="e-image" alt="{{data.Location}}" />
+                        <span id="locationtext">{{data.Location}}</span>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='Status' [filter]='filter' headerText='Status' width='150'>
+                <ng-template #template let-data>                       
+                    <div *ngIf="data.Status === 'Active';else login" class="statustemp e-activecolor">                                          
+                            <span class="statustxt e-activecolor">{{data.Status}}</span>           
+                    </div>
+                    <ng-template #login>
+                        <div class="statustemp e-inactivecolor">
+                            <span class="statustxt e-inactivecolor">{{data.Status}}</span>
+                        </div>
+                        </ng-template>
+                </ng-template>               
+            </e-column>
+            <e-column field='Trustworthiness' [filter]='filter' headerText='Trustworthiness' width='200'>
+                <ng-template #template let-data>
+                    <div class="trust">
+                        <img style="width: 31px; height: 24px" src="./assets/grid/images/{{data.Trustworthiness}}.png" />                        
+                                <span id="Trusttext">{{data.Trustworthiness}}</span>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='Rating' [allowFiltering]='false' headerText='Rating' width='160'>
+                <ng-template #template let-data>
+                    <div class="rate">
+                        <div class="rating">
+                            <span *ngFor="let i of item" [ngClass]="{'checked': data.Rating >= i, 'star': true }"></span>
+                        </div>
+                    </div>                            
+            </ng-template>
+            </e-column>
+            <e-column field='Software' headerText='Software' [allowSorting]='false' [allowFiltering]='false' width='180'>
+                <ng-template #template let-data>
+                    <div id="myProgress" class="pbar">
+                        <div id="myBar"  *ngIf="data.Status === 'Inactive';" [style.width.%]= data.Software class="bar progressdisable">
+                          <div id="label" class="barlabel">{{data.Software}}%</div>
+                        </div>    
+                        <div id="myBar"  *ngIf="data.Status === 'Active';" [style.width.%]= data.Software class="bar">
+                                <div id="label" class="barlabel">{{data.Software}}%</div>
+                              </div>                               
+                      </div>                              
+                </ng-template>
+            </e-column>
+            <e-column field='CurrentSalary' headerText='Current Salary' [filter]='filterSettings' format='C2' width='160'></e-column>
+            <e-column field='Address' headerText='Address' [filter]='filterSettings' clipMode='EllipsisWithTooltip' width='240'></e-column>
+        </e-columns>
+    </ejs-grid>   
+    <div id="action-description">
+        <p>This sample demonstrates the overview of basic grid features with its performance metrics of large data. To change datasource count, select rows and columns count from dropdown.</p>
+    </div>    
+    <div id="description">
+        <p>
+            The Grid is used to display and manipulate tabular data with configuration options to control 
+            the way the data is presented and manipulated. 
+            It will pull the data from a data source, such as an array of JSON objects, OData web services,
+            or <code><a target="_blank" class="code"
+            href="http://ej2.syncfusion.com/documentation/data/api-dataManager.html">
+            DataManager</a></code> binding data fields to columns. 
+            Also, displaying a column header to identify the field with support for grouped records.
+        </p>
+        <p>
+            In this demo, Grid features such as <code>Virtual Scrolling, Filtering, Sorting, Column Template </code> etc... are used along with large data source.
+        </p>
+        <p>
+            More information on the Grid instantiation can be found in this
+            <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/grid/getting-started.html">
+                documentation section</a>.
+        </p>
+    </div>
+</div>

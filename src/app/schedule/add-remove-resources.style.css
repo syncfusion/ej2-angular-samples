@@ -1,0 +1,43 @@
+/* custom code start*/
+.property-panel-content .e-checkbox-wrapper.personal .e-label {
+    color: #808080;
+}
+
+.property-panel-content .e-checkbox-wrapper.personal .e-frame {
+    background-color: #c43081;
+    border-color: transparent;
+}
+
+.property-panel-content .e-checkbox-wrapper.company .e-frame {
+    background-color: #ff7f50;
+    border-color: transparent;
+}
+
+.property-panel-content .e-checkbox-wrapper.birthday .e-frame {
+    background-color: #AF27CD;
+    border-color: transparent;
+}
+
+.property-panel-content .e-checkbox-wrapper.holiday .e-frame {
+    background-color: #808000;
+    border-color: transparent;
+}
+
+.highcontrast .property-panel-content .e-checkbox-wrapper .e-frame.e-check,
+.bootstrap .property-panel-content .e-checkbox-wrapper .e-frame.e-check {
+    color: #fff;
+}
+/* custom code end*/
+
+.schedule-add-remove-resources.e-schedule .e-month-view .e-appointment {
+    border-color: transparent;
+}
+.schedule-add-remove-resources.e-schedule .e-timeline-view .e-resource-left-td,
+.schedule-add-remove-resources.e-schedule .e-timeline-month-view .e-resource-left-td {
+    width: 110px;
+}
+
+.schedule-add-remove-resources.e-schedule .e-timeline-view .e-resource-text,
+.schedule-add-remove-resources.e-schedule .e-timeline-month-view .e-resource-text {
+    padding: 0;
+}

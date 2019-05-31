@@ -1,0 +1,324 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+
+#pricing-slider #cloud-right-pane .btn-size {
+    padding-top: 16px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid lightgrey;
+}
+
+#pricing-slider .e-slider-container.e-horizontal {
+    height: 56px;
+}
+
+#pricing-slider .row {
+    border: 1px solid #CCCCCC;
+    box-shadow: 0px 0px 4px;
+    opacity: 100;
+
+    border-radius: 4px;
+}
+
+.discount .e-label,
+.discount .e-label {
+    white-space: initial;
+}
+
+#pricing-slider .sub-heading {
+    margin-top: -8px;
+    font-size: 13px;
+    font-family: Roboto-Regular;
+    color: #808080;
+}
+
+#pricing-slider .label-text.right-text {
+    padding-top: 16px;
+    padding-bottom: 20px;
+}
+
+#pricing-slider .label-text {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+span.e-label .offer {
+    color: #4A90E2;
+}
+
+.cloud-slider {
+    display: block;
+    position: relative;
+}
+
+
+#processor {
+    background-color: #A06AFF;
+}
+
+#memory {
+    background-color: #7ED321;
+}
+
+#storage {
+    background-color: #4A90E2;
+}
+
+#memory,
+#storage,
+#processor {
+    font-family: Roboto-Medium;
+    font-size: 14px;
+    height: 24px;
+    width: 70px;
+    text-align: center;
+    line-height: 24px;
+    float: right;
+    color: #FFFFFF;
+    font-weight: 500;
+    border-radius: 18px;
+}
+
+#cloud-slider-text #value {
+    color: #000000;
+    font-family: Roboto-Bold;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#suffix {
+    color: #000000;
+    font-family: Roboto-Regular;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.text {
+    font-size: 13px;
+    padding-top: 26px;
+    width: 190px;
+}
+
+#cloud-right-pane {
+    background-color: #FFFFFF;
+    border-left: 1px solid #CCCCCC;
+    padding: 20px;
+    height: 443px;
+}
+
+.pricing-slider {
+    margin-top: 40px;
+    min-height: 20px;
+    margin-bottom: 20px;
+}
+
+.cloud-slider-right {
+    color: #000000;
+    font-size: 14px;
+}
+
+.cloud-slider-right.discount-pay {
+    padding-top: 20px;
+}
+
+#cloud-left-pane {
+    height: 443px;
+    padding: 40px;
+    background-color: #FAFAFA;
+}
+
+.discount {
+    padding-top: 20px;
+    padding-bottom: 35px;
+}
+
+@media (max-width: 1010px) {
+    #cloud-right-pane {
+        border-top: 1px solid #d5d7d8 !important;
+        border-left: none !important;
+        border-width: 1px 0 0!important;
+        padding-top: 15px !important;
+        padding-left: 0!important;
+    }
+    .cloud-right-content {
+        padding-left: 24px !important;
+    }
+    #cloud-left-pane {
+        width: 100%;
+    }
+    #cloud-right-pane {
+        width: 100%;
+    }
+}
+
+#cloud-slider-text {
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgrey;
+}
+
+#dollar {
+    color: #000000;
+    font-family: Roboto-Regular;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    top: -7px;
+}
+
+
+#btn {
+    text-transform: uppercase;
+    width: -webkit-fill-available;
+}
+
+.cloud-left-slider {
+    margin-top: 40px;
+}
+
+.azure.control-section {
+    padding-top: 0px;
+    margin-left: 75px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1199px) {
+    .azure.control-section {
+        margin-left: 0px;
+    }
+}
+
+.cloud-right-content .e-btn.e-info {
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+    line-height: inherit;
+    margin: 2px;
+}
+
+.highcontrast .pricing-slider,
+.highcontrast #pricing-slider .label-text,
+.highcontrast #pricing-slider .sub-heading {
+    color: white;
+}
+
+.fabric .cloud-right-content .e-btn.e-info,
+.highcontrast .e-btn.e-info {
+    line-height: 2px;
+}
+
+.highcontrast #dollar,
+.highcontrast #cloud-slider-text #value,
+.highcontrast #dialog-header,
+.highcontrast #StorgeDialog,
+.highcontrast #CloudDialog,
+.highcontrast #processorDialog {
+    color: white;
+}
+
+.highcontrast #pricing-slider .row {
+    border: 1px solid #969696;
+}
+
+.highcontrast #cloud-right-pane {
+    border-left: 1px solid #969696;
+}
+
+.highcontrast #cloud-slider-text,
+.highcontrast #pricing-slider #cloud-right-pane .btn-size {
+    border-bottom: 1px solid #969696;
+}
+
+.highcontrast #processor {
+    background-color: #AE80FF;
+}
+
+.highcontrast #memory {
+    background-color: #7ED321;
+}
+
+.highcontrast #storage {
+    background-color: #61A4EF;
+}
+
+.highcontrast #cloud-left-pane {
+    background-color: #1a1a1a;
+}
+
+.highcontrast #cloud-right-pane {
+    background-color: #000;
+}
+
+.highcontrast #processorPriceName,
+.highcontrast #memoryPriceName,
+.highcontrast #storgePriceName,
+.highcontrast #cloudPriceName {
+    color: white;
+    opacity: 1;
+}
+
+#dialog-header {
+    color: #000000;
+    opacity: .87;
+    font-family: Roboto-Medium;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#CloudDialog {
+    color: #000000;
+    padding-top: 14px;
+    padding-bottom: 24px;
+    border-top: 1px solid #CCCCCC;
+}
+
+#processorPrice,
+#memoryPrice,
+#storgePrice {
+    opacity: 0.9;
+    font-family: Roboto-Bold;
+    font-weight: 600;
+    font-size: 16px;
+    float: right;
+}
+
+#alertDialog .e-footer-content {
+    padding-top: 0;
+}
+
+#processorPriceName,
+#memoryPriceName,
+#storgePriceName,
+#cloudPriceName {
+    opacity: 0.9;
+    color: #000000;
+    font-family: Roboto-Regular;
+    font-size: 16px;
+}
+
+#cloudPrice {
+    opacity: 0.9;
+    font-family: Roboto-Bold;
+    font-weight: 600;
+    font-size: 26px;
+    float: right;
+}
+
+#processorDialog {
+    color: #000000;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#StorgeDialog {
+    color: #000000;
+    padding-top: 12px;
+    padding-bottom: 16px;
+}
+
+.bootstrap4 #pricing-slider .row {
+    box-shadow: none;
+}

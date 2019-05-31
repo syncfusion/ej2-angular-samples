@@ -1,0 +1,46 @@
+.schedule-block-events.e-schedule .e-timeline-view .e-appointment .template-wrap .subject {
+    padding: 10px 25px;
+}
+
+.schedule-block-events .subject {
+    text-align: center;
+}
+
+.schedule-block-events.e-schedule .template-wrap {
+    width: 100%;
+}
+
+.schedule-block-events.e-schedule .e-vertical-view .e-resource-cells {
+    height: 58px;
+}
+
+.schedule-block-events.e-block-appointment .subject,
+.schedule-block-events.e-schedule .e-vertical-view .e-appointment .template-wrap .subject {
+    padding-top: 10px;
+}
+
+.schedule-block-events.e-schedule .e-timeline-view .e-resource-left-td,
+.schedule-block-events.e-schedule .e-timeline-month-view .e-resource-left-td {
+    width: 170px;
+}
+
+.schedule-block-events.e-schedule .e-resource-cells.e-child-node .employee-category,
+.schedule-block-events.e-schedule .e-resource-cells.e-child-node .employee-name {
+    padding: 5px
+}
+
+.schedule-block-events.e-schedule .employee-image {
+    width: 45px;
+    height: 40px;
+    float: left;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.schedule-block-events.e-schedule .employee-name {
+    font-size: 13px;
+}
+
+.schedule-block-events.e-schedule .employee-designation {
+    font-size: 10px;
+}

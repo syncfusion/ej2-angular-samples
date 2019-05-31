@@ -1,0 +1,36 @@
+<div id="action-description">
+    <p>
+        This sample illustrates the default rendering of circular gauge.
+   </p>
+</div>
+<div class="control-section">
+    <ejs-circulargauge style='display:block;' (load)='load($event)'>
+        <e-axes>
+            <e-axis radius='80%' startAngle=230 endAngle=130 [majorTicks]='ticks' [minorTicks]='ticks' [lineStyle]='lineStyle' [labelStyle]="labelStyle">
+                <e-pointers>
+                    <e-pointer value=60 radius='60%' color='#757575' pointerWidth=7 [cap]="cap" [needleTail]="tail">
+                    </e-pointer>
+                </e-pointers>
+            </e-axis>
+        </e-axes>
+    </ejs-circulargauge>
+</div>
+<div id="description">
+    <p style="font-weight: 500">Description</p>
+    <p>
+        In this example, you can see how to render a default circular gauge. The CircularGauge control visualizes the numerical values
+        of scales in a circular manner. You can use <code>axes</code>, <code>ranges</code>, <code>pointers</code>        properties to customize the default appearance of the gauge. In this sample, a axis with multiple ranges and a pointer
+        has been used.
+    </p>
+    <p>
+        More information on the gauge can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/">documentation section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->
