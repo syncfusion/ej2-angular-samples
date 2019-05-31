@@ -1,152 +1,331 @@
-# Ej2AngularSamples
+# Syncfusion Angular UI Components samples
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
+This repository contains the demos of [Syncfusion Angular UI Components](https://www.syncfusion.com/angular-ui-components?utm_medium=listing&utm_source=github&utm_campaign=ej2-angular-samples). This is the best place to check our components to get more insight about the usage of APIs.
 
-## Run your Sample Browser
+This section guides you to use the Syncfusion Angular UI Components samples in your applications.
 
+* [Requirements to run the demo](#requirements-to-run-the-demo)
+* [Documentation](#documentation)
+* [License](#license)
+* [Using the samples](#using-the-samples)
+* [Components Catalog](#components-catalog)
+* [Support and Feedback](#support-and-feedback)
 
-### Development server
+## Requirements to run the demo
 
-Run `npm run ship-source` for to update latest styles and stackb sample source.
+The samples requires the below requirements to run.
 
-Then run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* [Node.js](https://nodejs.org/en/)
 
-### Production server
+## Documentation
 
-Run `npm run ship-source` for to update latest styles and stackb sample source.
+All components documentation for the Syncfusion Angular UI components can be found on [Syncfusion Help](https://ej2.syncfusion.com/angular/documentation/?utm_source=github&utm_medium=listing&utm_campaign=ej2-angular-samples). All API documentation can be found at the [API Reference](https://ej2.syncfusion.com/angular/documentation/api?utm_source=github&utm_medium=listing&utm_campaign=ej2-angular-samples).
 
-Then run `npm run start:prod` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## License
 
-### Build
+Syncfusion Angular UI (Essential JS 2) components library is available under the Syncfusion Essential Studio program,  and can be licensed either under the Syncfusion Community License Program or the Syncfusion commercial license.
 
-Run `npm run build:dev` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `npm run build:prod` flag for a production build.
+To be qualified for the Syncfusion Community License Program you must have a gross revenue of less than one (1) million U.S. dollars ($1,000,000.00 USD) per year and have less than five (5) developers in your organization, and agree to be bound by Syncfusion’s terms and conditions.
 
-# Angular Sample Configuration
+Customers who do not qualify for the community license can contact sales@syncfusion.com for commercial licensing options.
 
-## Adding your sample
-Create your new folder in 'src' location and name the folder as control name for example “listview” it is control name.
+Under no circumstances can you use this product without (1) either a Community License or a commercial license and (2) without agreeing and abiding by Syncfusion’s license containing all terms and conditions.
 
-_Note: Do not use whitespace at any cause in folder’s name. Use “-” instead of space._
+The Syncfusion license that contains the terms and conditions can be found at
+[https://www.syncfusion.com/content/downloads/syncfusion_license.pdf](https://www.syncfusion.com/content/downloads/syncfusion_license.pdf)
 
-## Add module for your sample
-Add your sample router module named controlName.module.ts
+## Using the samples
 
-_Note: Export sample routed array of links. This has used to sample list._
+### Installing
 
-## Add Routing for your sample
-Add your sample router module to sb router module
-1.	Import your **controlName.moduler.ts** in **sb.router.ts**
-2.	Add imported module to app routes
+To install all dependent packages, use the below command
 
-```
-import { ListViewModule } from '../listview/listview.module';
-
-const appRoutes: any = [
-    { path: 'listview', loadChildren: ListViewModule },
-    { path: '', redirectTo: 'listview/default', pathMatch: 'full' , hideOnDevice:true},
-];
-```
-*Note: set **hideOnDevice** as true if you want to hide a sample in devices.*
-## Adding your control dependency
-
-Add your dependency in “package.json” file inside the dependencies.
-
-Note: Here, '\*' Specifies that install the latest published package form the online. '\*' is recommended for Syncfusion packages.
-
-```
-"dependencies": {
-        "@syncfusion/ej2-angular-base": "*",
-        "@syncfusion/ej2-angular-list": "*",
-},
+```bash
+npm install
 ```
 
-Add your dependency in “system.config.js” file inside the packages.
+### Building
 
+To compile the source files, use the below command
+
+```bash
+npm run build
 ```
 
-packages: {
-        'app': { main: 'main.js', defaultExtension: 'js' },
-        'rxjs': { defaultExtension: 'js' },
+### Running
 
-        '@syncfusion/ej2-lists': { main: '/src/list-view/index.js', defaultExtension: 'js' },        
-        '@syncfusion/ej2-data': { main: '/index.js', defaultExtension: 'js' },
-        '@syncfusion/ej2-base': { main: '/index.js', defaultExtension: 'js' },
-        '@syncfusion/ej2-angular-base': { main: '//index.js', defaultExtension: 'js' },
-        '@syncfusion/ej2-angular-list': { main: 'src/list-view/index.js', defaultExtension: 'js' }
-    
-},
+To run the samples, use the below command
 
-```
-## Adding style dependency
-
-Add your dependency in “config.json” file inside the styleDependency array.
-
-```
-{                       
-    "styleDependency":["ej2-angular-lists"]
-}
-```
-## Add description in sample
-
-Add sample description  within the div tag with id as **description**.
-
-```html
-<div class="control-section">
-<div id='description'>
-//sample description.
-</div>
-</div>
-```
-## Configure Sample List
-
-Add your samples in “samplelist.ts” located in “/src/common” folder
-1.	Import your Sample Module routed array for json
-2.	Add your samples in Sample List as Like below
-
-```
-import { listAppRoutes } from '../listview/listview.module';
-
-export let samplesList: any = [
-    {
-        "name": "ListView", "category": "List", "path": "listview", "samples": listAppRoutes,
-    }
-];
+```bash
+npm run serve
 ```
 
-# Plunker Guidelines
+## Components Catalog
 
-1.  In import statements in html file for a sample the package subdirectory shouldn’t be mentioned. Please refer the link given below.
-    
-    https://gitlab.syncfusion.com/essential-studio/ej2-angular-samples/blob/development/src/grid/column/showhide.component.ts#L4
+<table>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>GRIDS<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/grid">DataGrid</a>
+        </td>
+        <td>
+            <a href="src/pivot-view">Pivot Table (Preview)</a>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>DATA VISUALIZATION<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/chart">Charts</a>
+        </td>
+        <td>
+            <a href="src/circular-gauge">Circular Gauge</a>
+        </td>
+        <td>
+            <a href="src/linear-gauge">Linear Gauge</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/diagram">Diagram (Preview)</a>
+        </td>
+        <td>
+            <a href="src/heatmap">Heatmap chart</a>
+        </td>
+        <td>
+            <a href="src/maps">Maps</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/range-navigator">Range Selector</a>
+        </td>
+        <td>
+            <a href="src/smith-chart">Smith Chart</a>
+        </td>
+        <td>
+            <a href="src/sparkline">Sparkline Charts</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/treemap">TreeMap</a>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>EDITORS<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/rte">Rich Text Editor (Preview)</a>
+        </td>
+        <td>
+            <a href="src/document-editor">Word Processor (Preview)</a>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>CALENDARS<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/schedule">Scheduler</a>
+        </td>
+        <td>
+            <a href="src/calendar">Calendar</a>
+        </td>
+        <td>
+            <a href="src/date-picker">DatePicker</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/date-range-picker">Date Range Picker</a>
+        </td>
+        <td>
+            <a href="src/date-time-picker">DateTime Picker</a>
+        </td>
+        <td>
+            <a href="src/time-picker">Time Picker</a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>BUTTONS<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/button">Button</a>
+        </td>
+        <td>
+            <a href="src/button/button-group.component.ts">Button Group</a>
+        </td>
+        <td>
+            <a href="src/button/drop-down-button.component.ts">Dropdown Menu</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/button/progress-button.component.ts">Progress Button (Preview)</a>
+        </td>
+        <td>
+            <a href="src/button/split-button.component.ts">Split Button</a>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>DROPDOWNS<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/auto-complete">AutoComplete</a>
+        </td>
+        <td>
+            <a href="src/combo-box">ComboBox</a>
+        </td>
+        <td>
+            <a href="src/drop-down-list">Dropdown List</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/multi-select">MultiSelect Dropdown</a>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>NAVIGATION<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/accordion">Accordion</a>
+        </td>
+        <td>
+            <a href="src/context-menu">Context Menu</a>
+        </td>
+        <td>
+            <a href="src/menu">Menu Bar (Preview)</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/sidebar">Sidebar</a>
+        </td>
+        <td>
+            <a href="src/tab">Tabs</a>
+        </td>
+        <td>
+            <a href="src/toolbar">Toolbar</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/treeview">TreeView</a>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>INPUTS<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/textboxes">TextBox</a>
+        </td>
+        <td>
+            <a href="src/maskedtextbox">Input Mask</a>
+        </td>
+         <td>
+            <a href="src/numerictextbox">Numeric Textbox</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/button/radio-button.component.ts">Radio Button</a>
+        </td>
+        <td>
+            <a href="src/button/check-box.component.ts">Checkbox</a>
+        </td>
+        <td>
+            <a href="src/color-picker">Color Picker</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/uploader">File Upload</a>
+        </td>
+        <td>
+            <a href="src/slider">Range Slider</a>
+        </td>
+        <td>
+            <a href="src/button/switch.component.ts">Toggle Switch Button</a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>LAYOUT<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/avatar">Avatar</a>
+        </td>
+        <td>
+            <a href="src/card">Card</a>
+        </td>
+        <td>
+            <a href="src/dialog">Dialog</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/list-view">ListView</a>
+        </td>
+        <td>
+            <a href="src/tooltip">Tooltip</a>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>NOTIFICATIONS<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/badge">Badge</a>
+        </td>
+        <td>
+            <a href="src/toast">Toast</a>
+        </td>
+        <td></td>
+    </tr>
+</table>
 
-2.	In Base component dom and util are not available in the customer end. So, please don’t use the same. Please refer the link below.
-	
-    https://gitlab.syncfusion.com/essential-studio/ej2-angular-samples/blob/development/src/grid/column/showhide.component.ts#L4
+## Support and Feedback
 
-3.	To add any icon in the samples use base64 font and don’t use any font files like ttf, woff, or svg externally. Please refer the link given below.
-    
-    https://gitlab.syncfusion.com/essential-studio/ej2-angular-samples/blob/development/src/toolbar/toolbar.component.css#L3
+* For any other queries, reach our [Syncfusion support team](https://www.syncfusion.com/support/directtrac/incidents/newincident?utm_source=github&utm_medium=listing&utm_campaign=ej2-angular-samples) or post the queries through the [community forums](https://www.syncfusion.com/forums?utm_source=github&utm_medium=listing&utm_campaign=ej2-angular-samples).
 
-    For example:
-    ```
-    <style>
-        @font-face {
-    font-family: 'temp1';
-    src:url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAAKAIAAAwAgT1MvMj0gSIMAAAEoAAAAVmNtYXDnEOdVAAABiAAAADZnbHlmazsA9wAAAcgAAAAcaGVhZA3qwqgAAADQAAAANmhoZWEHmQNrAAAArAAAACRobXR4B+gAAAAAAYAAAAAIbG9jYQAOAAAAAAHAAAAABm1heHABDQAPAAABCAAAACBuYW1lv7gVOQAAAeQAAAINcG9zdD4ZCQ8AAAP0AAAANgABAAADUv9qAFoEAAAA//4D6gABAAAAAAAAAAAAAAAAAAAAAgABAAAAAQAAThBvMl8PPPUACwPoAAAAANVxP0wAAAAA1XE/TAAAAAAD6gMrAAAACAACAAAAAAAAAAEAAAACAAMAAQAAAAAAAgAAAAoACgAAAP8AAAAAAAAAAQP0AZAABQAAAnoCvAAAAIwCegK8AAAB4AAxAQIAAAIABQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUGZFZABA5wDnAANS/2oAWgNSAJYAAAABAAAAAAAABAAAAAPoAAAAAAACAAAAAwAAABQAAwABAAAAFAAEACIAAAAEAAQAAQAA5wD//wAA5wD//wAAAAEABAAAAAEAAAAAAAAADgAAAAEAAAAAA+oDKwACAAA3IQECA+j+DMICaQAAAAAAABIA3gABAAAAAAAAAAEAAAABAAAAAAABAAUAAQABAAAAAAACAAcABgABAAAAAAADAAUADQABAAAAAAAEAAUAEgABAAAAAAAFAAsAFwABAAAAAAAGAAUAIgABAAAAAAAKACwAJwABAAAAAAALABIAUwADAAEECQAAAAIAZQADAAEECQABAAoAZwADAAEECQACAA4AcQADAAEECQADAAoAfwADAAEECQAEAAoAiQADAAEECQAFABYAkwADAAEECQAGAAoAqQADAAEECQAKAFgAswADAAEECQALACQBCyB0ZW1wMVJlZ3VsYXJ0ZW1wMXRlbXAxVmVyc2lvbiAxLjB0ZW1wMUZvbnQgZ2VuZXJhdGVkIHVzaW5nIFN5bmNmdXNpb24gTWV0cm8gU3R1ZGlvd3d3LnN5bmNmdXNpb24uY29tACAAdABlAG0AcAAxAFIAZQBnAHUAbABhAHIAdABlAG0AcAAxAHQAZQBtAHAAMQBWAGUAcgBzAGkAbwBuACAAMQAuADAAdABlAG0AcAAxAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAHUAcwBpAG4AZwAgAFMAeQBuAGMAZgB1AHMAaQBvAG4AIABNAGUAdAByAG8AIABTAHQAdQBkAGkAbwB3AHcAdwAuAHMAeQBuAGMAZgB1AHMAaQBvAG4ALgBjAG8AbQAAAAACAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBAgEDAAxhcnJvd2hlYWQtMDEAAAAA) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    }
-    #font::after {
-        content: "\e700";
-        font-size: large
-    }
-    .icon {
-        font-family: temp1;
-    }
-    </style>
-    <div id="font" class="icon"></div>
-    ```
-    
-4.	Use All Module instead of importing each and every service individually in the module. Please refer the link given below.
-    
-    https://gitlab.syncfusion.com/essential-studio/ej2-angular-samples/blob/development/src/chart/chart.module.ts#L9
+* To renew the subscription, click [here](https://www.syncfusion.com/sales/products?utm_source=github&utm_medium=listing&utm_campaign=ej2-angular-samples) or contact our sales team at <salessupport@syncfusion.com>.
