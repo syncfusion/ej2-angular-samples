@@ -1,0 +1,15 @@
+
+/* custom code start*/
+.e-mastertext {
+    font-size: 15px;
+    font-family: Roboto;
+    opacity: 0.87;
+    padding: 1em;
+}
+
+/* custom code start*/
+.e-toolbar-item.e-ghidden .e-btn {
+    background: rgba(0, 0, 0, 0.12);
+    border-color: rgba(0, 0, 0, 0.12);
+    color: #212121;
+}

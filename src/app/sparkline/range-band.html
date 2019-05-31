@@ -1,0 +1,79 @@
+<div class="col-lg-8 control-section">
+    <div id="spark-container" class="row">
+        <div class="cols-sample-area" align="center">
+            <p>
+                <font size="4px"> Sales Growth Comparison with various Products</font>
+            </p>
+            <ejs-grid #rangegrid id="rangespark" [dataSource]='griddata' (created)="renderGridSparkline()" height=400
+                [allowSelection]=false [enableHover]=true>
+                <e-columns>
+                    <e-column field='name' headerText='Name' width='130' textAlign='Left'></e-column>
+                    <e-column headerText='2010' textAlign='Center' width='220'>
+                        <ng-template #template let-griddata>
+                            <div id="sparkline2010{{griddata.id}}"></div>
+                        </ng-template>
+                    </e-column>
+                    <e-column headerText='2011' textAlign='Center' width='220'>
+                        <ng-template #template let-griddata>
+                            <div id="sparkline2011{{griddata.id}}"></div>
+                        </ng-template>
+                    </e-column>
+                </e-columns>
+            </ejs-grid>
+        </div>
+    </div>
+</div>
+<style>
+    .e-headertext {
+        font-weight: bolder;
+    }
+
+    #radius>* {
+        padding: 0px !important;
+    }
+
+    .control-section {
+        min-height: 450px;
+    }
+
+    .property-text {
+        font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif" !important;
+        font-size: 13px !important;
+        font-weight: 400 !important;
+    }
+</style>
+<div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+            <table id="property" style="width:100%" title="Properties">
+                <tbody>
+                    <tr style="height: 35px; width: 100%">
+                        <td style="width: 120%" id='slider1'>
+                            Range Band Min <span>&nbsp;&nbsp;&nbsp;1</span>
+                        </td>
+                        <td style="width: 100%">
+                            <div class='sliderwrap'>
+                                <ejs-slider #slide1 id="range-min" (change)="rangeMinChange($event)" (mousemove)="rangeMinChange($event)"
+                                    min=0 max=6 value=1 step=1 style="width: 100px;"></ejs-slider>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr style="height: 35px; width: 100%">
+                        <td style="width: 120%" id='slider2'>
+                            Range Band Max <span>&nbsp;&nbsp;&nbsp;3</span>
+                        </td>
+                        <td>
+                            <div>
+                                <ejs-slider #slide2 id="range-max" (change)="rangeMaxChange($event)" (mousemove)="rangeMaxChange($event)"
+                                    min=0 max=6 value=3 step=1 style="width: 100px;"></ejs-slider>
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

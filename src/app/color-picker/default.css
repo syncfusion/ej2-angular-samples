@@ -1,0 +1,19 @@
+/* custom code start*/
+#default-control {
+    margin: 30px auto;
+    padding-top: 50px;
+    text-align: center;
+}
+
+#default-control .row {
+    width: 100%;
+}
+
+#default-control h4 {
+    margin-bottom: 20px;
+}
+
+.e-bigger #default-control h4 {
+    font-size: 20px;
+}
+/* custom code end*/

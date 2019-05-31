@@ -1,0 +1,9 @@
+#listbox-selection {
+    width: 380px;
+    margin: auto;
+}
+@media screen and (max-width: 590px) {
+    #listbox-selection {
+        width: 100%;
+    }
+}  

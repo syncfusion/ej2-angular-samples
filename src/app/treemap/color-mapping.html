@@ -1,0 +1,69 @@
+<style>
+   #hideOne, #hideTwo, #hideThree{
+        visibility: hidden;
+    }
+</style>
+<div class="control-section">
+    <div class="col-lg-9">
+    <ejs-treemap id='container' #treemap style="display:block;" [titleSettings] = 'titleSettings' [dataSource] ='dataSource' [weightValuePath] ='weightValuePath' [leafItemSettings] ='leafItemSettings'
+    [tooltipSettings] = 'tooltipSettings' format='n' useGroupingSeparator="true" [legendSettings] = 'legendSettings' [rangeColorValuePath] = 'rangeColorValuePath' (load)='load($event)'  >
+    </ejs-treemap>
+    
+</div>
+<div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+                <div class="property-panel-header">Properties</div>
+                <div class="property-panel-content">
+    <table id="property" title="Properties" style="width: 100%">
+        <tbody>
+            <tr style="height: 50px">
+                <td style="width: 50%">
+                    <div class="property-text">Type</div>
+                </td>
+                <td style="width: 50%;">
+                    <select name="selectIndex" autocomplete="off" id="colorMapping" style="width:60%;">
+                        <option value="RangeColorMapping" selected>Range </option>
+                        <option value="EqualColorMapping">Equal </option>
+                        <option value="DesaturationColorMapping">Desaturation</option>
+                    </select>
+                </td>
+            </tr>
+            <br/>
+            <tr >
+                <td style="width: 40%">
+                    <div class="property-text" id="text1" style="display: none"> Change Opacity</div>
+                </td>
+                <td style="width: 40%;">
+                    <div id="input1" style="display: none">
+                        <input type="checkbox" id="opacity"/>
+                    </div>
+                </td>
+            </tr>
+            <tr >
+                <td style="width: 50%">
+                    <div class="property-text" id="text2" style="margin-top:12%; display: none">Min Opacity</div>
+                </td>
+                <td style="width: 50%;">
+                    <div id="input2" style="display: none">
+                    <input type="range" id="minopacity" step="0.1" value="0.5" min="0" max="1" style="width:100%;margin-top: 20%"  />
+                </div>
+                </td>
+            </tr>
+            <tr >
+                <td style="width: 50%">
+                    <div class="property-text" id="text3" style="margin-top:12%; display: none">Max Opacity</div>
+                </td>
+                <td style="width: 50%;">
+                    <div id="input3" style="display: none">
+                    <input type="range" id="maxopacity" step="0.1" value="1" min="0" max="1" style="width:100%;margin-top: 20%"  />
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+</div>
+
+    

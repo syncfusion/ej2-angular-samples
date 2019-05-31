@@ -1,0 +1,34 @@
+<div id="action-description">
+        <p>
+                This sample demonstrates the flight routes from India to China.
+            </p>
+</div>
+
+<div class="control-section">
+    <div align='center'>
+        <ejs-maps id='container' style="display:block;"
+         [layers] = 'layers' [zoomSettings]="zoomSettings" [titleSettings]="titleSettings"
+         (load)="load($event)" [mapsArea]="mapsArea" [centerPosition]="centerPosition">
+        </ejs-maps>
+    </div>
+    <!-- source link-->
+    <div style="float: right; margin-right: 10px;">Source: <a href="https://www.tibettravel.org/nepal-map/nepal-india-map.html" target="_blank">www.tibettravel.org</a> </div>
+</div>
+
+<div id='description'>   
+
+        <p>
+                In this example, you can see how to render the curved lines between two points in a map. You can use the <code>dashArray</code>, <code>width</code>, and <code>color</code> properties to customize the appearance of the navigation lines.
+         
+             </p>
+         <br/>
+             <p style="font-weight: 500">Injecting Module</p>
+             <p>
+               Maps component features are segregated into individual feature-wise modules. To use the navigation lines, inject the <code>NavigationLine</code> module using the <code>Maps.Inject(NavigationLine)</code> method.
+             </p>
+             <p>
+                 More information on the navigation lines can be found in this 
+                 <a target="_blank" href="">documentation section</a>.
+             </p>
+
+</div>

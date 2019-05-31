@@ -1,0 +1,10 @@
+#listbox-api-control {
+    width: 49%;
+    margin: auto;
+    margin-bottom: 15px;
+}
+@media screen and (max-width: 590px) {
+    #listbox-api-control {
+        width: 100%;
+    }
+}

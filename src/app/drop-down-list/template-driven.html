@@ -1,0 +1,95 @@
+<div id="action-description">
+    <p>This sample demonstrates the template driven form support of the DropDownList. 
+        You can choose an item or type a value in the DropDownList. Both values  goes into the ng models. 
+        </p>
+        </div>
+
+<div class="control-section">
+        <div class="col-lg-8  content-wrapper">
+            <div id='content' class='box-form' style="margin: 0 auto; width:250px; padding:25px">
+                    <form #form="ngForm">
+                            <div class="form-group">
+                                <ejs-dropdownlist name="skillname" required #book='ngModel' [(ngModel)]= 'autoskillname'
+                                 [dataSource]='autoSkillsetData' [placeholder]='autoDrivenPlaceholder' floatLabelType='Auto'>
+                                 </ejs-dropdownlist>
+                                 <div *ngIf="book.invalid && (book.touched)"
+                                 class="alert alert-danger">
+                                    <div *ngIf="book.errors.required">
+                                        Book Name is required.
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group" style="padding-top:10px;">
+                              <div class="e-float-input">
+                                <input type="text" required #sname='ngModel' autocomplete="off" (focus)="onfocus($event)" (blur)="onblur($event)" [(ngModel)]="autosname" name="sname" maxlength="10"/>
+                                <span class="e-float-line"></span>
+                                <label class="e-float-text e-label-bottom">Name:</label>
+                              </div>
+                              <div *ngIf="sname.invalid && (sname.dirty || sname.touched)"
+                              class="alert alert-danger">
+                                 <div *ngIf="sname.errors.required">
+                                     Name is required.
+                                 </div>
+                             </div>
+                            </div>
+                            <div class="form-group" style="padding-top:10px;">
+                              <div class="e-float-input">
+                                <input type="text" required email #smail='ngModel' autocomplete="off" (focus)="onfocus($event)" (blur)="onblur($event)" [(ngModel)]="autosmail" name="smail" maxlength="15" />
+                                <span class="e-float-line"></span>
+                                <label class="e-float-text e-label-bottom">Email:</label>
+                              </div>
+                              <div *ngIf="smail.invalid && (smail.dirty || smail.touched)"
+                              class="alert alert-danger">
+                                 <div *ngIf="smail.errors.required">
+                                     Email is required.
+                                 </div>
+                                 <div *ngIf="smail.errors.email">  
+                                        Enter a valid email address
+                                </div>
+                             </div>
+                            </div>
+                            <div class="form-group" style="padding:10px;">
+                                <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                                    <button ejs-button [disabled]="!form.valid">Submit</button>
+                              </div>
+                              <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                                <button ejs-button (click)="onreset($event)" type="reset" [disabled]="!(book.valid || sname.valid || smail.valid)">Reset</button>
+                              </div>
+                            </div>
+                          </form>
+            </div>
+        </div>
+        <div class="col-lg-4 property-section">
+            <div class="property-panel-section">
+                <div class="property-panel-header">Properties</div>
+                <div class="property-panel-content" style="padding: 10px;">
+                    <table id="property" title="Properties" class="box-table" style="width: 100%;">
+                        <tr>
+                            <td style="width:50%">Selected Book: </td>
+                            <td class="formtext">{{ autoskillname }}</td>
+                        </tr>
+                        <tr>
+                            <td style="width:50%">Buyer Name: </td>
+                            <td class="formtext">{{ autosname }}</td>
+                        </tr>
+                        <tr>
+                                <td style="width:50%">Buyer Mail ID: </td>
+                                <td class="formtext">{{ autosmail }}</td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="description">
+        <p> The DropDownList will be registered with an NgForm directive with bind [(ngModel)] and name attributes.
+        Then you can confirm that two-way data binding will works.
+        </p>
+        <p>
+        For more information about Template Driven Forms forms can be found in this
+        <a href="https://angular.io/guide/forms" target="_blank"> reference link</a>.
+        </p>
+        </div> 
+

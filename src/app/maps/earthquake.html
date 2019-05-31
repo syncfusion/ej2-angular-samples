@@ -1,0 +1,96 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the earth quake occurred in Sumatra, Indonesia in the year 2009.
+    </p>
+</div>
+
+<div class="control-section">
+    <div align='center'>
+        <ejs-maps id='maps' style="display:block;" [zoomSettings]='zoomSettings' [centerPosition]="centerPosition" [layers]='layers'
+            [mapsArea]="mapsArea" [titleSettings]="titleSettings" (load)="load($event)">
+        </ejs-maps>
+    </div>
+    <!-- source link-->
+    <div style="float: right; margin-right: 10px;">Source:
+        <a href="https://en.wikipedia.org/wiki/2009_Sumatra_earthquakes" target="_blank">en.wikipedia.org</a>
+    </div>
+</div>
+<!-- style for Marker -->
+<style>
+    .pulse-css {
+        width: 20px;
+        height: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        background: #E94430;
+        position: relative;
+    }
+
+    .pulse-css:before,
+    .pulse-css:after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        background-color: #E94430;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        transform: scale(0.5);
+        transform-origin: center center;
+        animation: pulse-me 3s linear infinite;
+    }
+
+    .pulse-css:after {
+        animation-delay: 2s;
+    }
+
+    @keyframes pulse-me {
+        0% {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.3;
+        }
+        70% {
+            opacity: 0.1;
+        }
+        100% {
+            transform: scale(5);
+            opacity: 0;
+        }
+    }
+</style>
+<div id='description'>
+
+    <p>
+        In this example, you can see how to render a custom HTML element as marker and place it on a specific location.
+    </p>
+    <br/>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Maps component features are segregated into individual feature-wise modules. To use marker template, you need to inject
+        <code>Marker</code> module using
+        <code>Maps.Inject(Marker)</code> method.
+    </p>
+    <p>
+        More information on the markers can be found in this
+        <a target="_blank" href="">documentation section</a>.
+    </p>
+
+</div>
+<!-- custom code start -->
+<style>
+    .marktemp {
+        font-weight: bolder;
+        font-size: 18px;
+    }
+</style>
+<!-- custom code end -->

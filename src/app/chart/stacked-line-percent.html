@@ -1,0 +1,48 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the family expense data with Percentage stacked line series in the chart to identify who spent more
+        money in each category.
+        Data points are enhanced with marker and tooltip.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer'
+            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='StackingLine100' xName='x' yName='y' name='John' width='2' [marker]='marker'
+                    dashArray='5,1'> </e-series>
+                <e-series [dataSource]='data1' type='StackingLine100' xName='x' yName='y' name='Peter' width='2'
+                    [marker]='marker' dashArray='5,1'> </e-series>
+                <e-series [dataSource]='data2' type='StackingLine100' xName='x' yName='y' name='Steve' width='2' [marker]='marker'
+                    dashArray='5,1'> </e-series>
+                <e-series [dataSource]='data3' type='StackingLine100' xName='x' yName='y' name='Charle' width='2' [marker]='marker'
+                    dashArray='5,1'> </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the stacked line type charts. Stacked Line type charts
+        are used to represent time-dependent data, showing trends in data at equal intervals with stacked values of
+        multiple series.
+        You can use <code>dashArray</code>, <code>width</code>, <code>fill</code> properties to customize the line.
+        <code>marker</code> used to represent individual data.
+    </p>
+    <p>
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch
+        enabled devices.
+    </p>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use stacking line series, we
+        need to inject
+        <code>StackingLineSeriesService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information on the column type series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#line-charts">documentation
+        section</a>.
+    </p>
+</div>

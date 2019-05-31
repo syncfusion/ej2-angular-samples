@@ -1,0 +1,187 @@
+/* custom code start*/
+.drag-sample-wrapper {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.schedule-container {
+    padding-right: 10px;
+    width: 100%;
+}
+
+.title-container {
+    padding-bottom: 10px;
+}
+
+.title-text {
+    font-size: 18px;
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+}
+/* custom code end*/
+
+.treeview-external-drag #waiting {
+    height: 100%;
+    padding: 0;
+}
+
+.treeview-external-drag #waitid {
+    float: left;
+    width: 13%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 13px;
+    font-family: "Segoe UI";
+    color: #f9920b;
+    overflow: hidden;
+    margin: 9px 0;
+    padding: 0 2px 0 0;
+}
+
+.treeview-external-drag #waitdetails {
+    width: 95%;
+    float: left;
+    height: 100%;
+    padding: 0;
+}
+
+.treeview-external-drag #waitlist {
+    width: 100%;
+    height: 50%;
+    font-weight: bold;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    color: #545554;
+    padding: 5px 0 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.treeview-external-drag #waitcategory {
+    height: 50%;
+    font-family: "Segoe UI";
+    font-size: 10px;
+    color: #545554;
+    opacity: 0.6;
+    padding-left: 10px;
+    padding-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.treeview-external-drag .e-list-text,
+.treeview-external-drag.e-rtl .e-list-text,
+.e-bigger .treeview-external-drag .e-list-text,
+.e-bigger .treeview-external-drag.e-rtl .e-list-text {
+    background: white;
+    border: 0.5px solid #E1E7EC;
+    height: 50px;
+    line-height: 15px;
+    padding: 0 5px;
+    width: 220px;
+}
+
+.treeview-external-drag .e-list-parent,
+.treeview-external-drag.e-rtl .e-list-parent,
+.e-bigger .treeview-external-drag .e-list-parent,
+.e-bigger .treeview-external-drag.e-rtl .e-list-parent {
+    height: 100%;
+    padding: 0 2px;
+}
+
+.treeview-external-drag .e-list-item,
+.e-bigger .treeview-external-drag .e-list-item {
+    height: 100%;
+    padding: 0 0 5px 0;
+}
+
+.treeview-external-drag .e-fullrow,
+.e-bigger .treeview-external-drag .e-fullrow {
+    height: 55px;
+}
+
+.treeview-external-drag .e-list-item.e-hover>.e-fullrow,
+.treeview-external-drag .e-list-item.e-active>.e-fullrow,
+.treeview-external-drag .e-list-item.e-active.e-hover>.e-fullrow,
+.e-bigger .treeview-external-drag .e-list-item.e-hover>.e-fullrow,
+.e-bigger .treeview-external-drag .e-list-item.e-active>.e-fullrow,
+.e-bigger .treeview-external-drag .e-list-item.e-active.e-hover>.e-fullrow {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none !important;
+}
+
+.treeview-external-drag .e-text-content,
+.e-bigger .treeview-external-drag .e-text-content,
+.treeview-external-drag.e-rtl .e-text-content,
+.e-bigger .treeview-external-drag.e-rtl .e-text-content {
+    padding: 0;
+}
+
+.e-drag-item.e-treeview.treeview-external-drag,
+.e-bigger .e-drag-item.e-treeview.treeview-external-drag {
+    padding: 0 !important;
+}
+
+.e-schedule.schedule-drag-drop .e-timeline-view .e-resource-left-td,
+.e-schedule.schedule-drag-drop .e-timeline-month-view .e-resource-left-td {
+    width: 160px;
+}
+
+.e-schedule.schedule-drag-drop .e-resource-cells.e-parent-node .specialist-category {
+    padding-left: 30px
+}
+
+.e-schedule.e-rtl.schedule-drag-drop .e-resource-cells.e-parent-node .specialist-category {
+    padding-right: 30px
+}
+
+.e-schedule.schedule-drag-drop .e-resource-cells.e-child-node .specialist-category,
+.e-schedule.schedule-drag-drop .e-resource-cells.e-child-node .specialist-name {
+    padding: 5px
+}
+
+.e-schedule.schedule-drag-drop .e-resource-cells.e-parent-node .specialist-name {
+    padding: 0 10px
+}
+
+.e-schedule.schedule-drag-drop .specialist-name {
+    font-size: 13px;
+}
+.e-schedule.schedule-drag-drop .specialist-designation {
+    font-size: 10px;
+}
+
+.e-device-hover {
+    background-color: #e0e0e0!important;
+}
+
+.e-schedule.schedule-drag-drop .specialist-image {
+    width: 40px;
+    height: 40px;
+    float: left;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+@media (max-width: 550px) {
+    /* custom code start*/
+    .drag-sample-wrapper {
+        display: block;
+    }
+
+    .schedule-container {
+        padding-bottom: 10px
+    }
+    /* custom code end*/
+
+    .treeview-external-drag.e-treeview,
+    .e-bigger .treeview-external-drag.e-treeview {
+        width: 225px;
+    }
+
+    .e-bigger .treeview-external-drag.e-treeview.e-drag-item {
+        position: relative !important;
+    }
+}

@@ -1,0 +1,44 @@
+<div id="action-description">
+    <p>This sample demonstrates the way of binding data to Gantt chart with remote service. The Gantt chart data source
+        is bound to remote data using DataManager. This sample data helps to visualize the various phases of barley
+        harvesting.</p>
+</div>
+<div class="control-section">
+    <ejs-gantt id="ganttDefault" height="430px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
+        [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [treeColumnIndex]="0" height="450px" [allowSelection]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+        [highlightWeekends]="true" [gridLines]="gridLines" [includeWeekend]="true">
+    </ejs-gantt>
+    <div style="float: right; margin: 10px;">Source:
+        <a href="https://en.wikipedia.org/wiki/Cereal_growth_staging_scales"
+            target='_blank'>https://en.wikipedia.org/</a>
+    </div>
+</div>
+<div id="description">
+    <p>
+        The <code>dataSource</code> property in Gantt chart can be assigned with the instance of
+        <code>DataManager</code> to bind remote data.
+        The DataManager, which will act as an interface between the service endpoint and the Gantt chart, will require
+        the below minimal information to interact with service endpoint properly.
+        <li><code>DataManager->url</code> - Defines the service endpoint to fetch data</li>
+        <li><code>DataManager->adaptor</code> - Defines the adaptor option. By default, ODataAdaptor is used for remote
+        binding.</li>
+        Adaptor is responsible for processing response and request from/to the service endpoint.
+        <code>@syncfusion/ej2-data</code>
+        package provides some predefined adaptors which are designed to interact with particular service endpoints. They
+        are,
+        <li><code>UrlAdaptor</code> - Use this to interact any remote services. This is the base adaptor for all remote
+        based adaptors.</li>
+        <li><code>ODataAdaptor</code> - Use this to interact with OData endpoints.</li>
+        <li><code>ODataV4Adaptor</code> - Use this to interact with OData V4 endpoints.</li>
+        <li><code>WebApiAdaptor</code> - Use this to interact with Web API created under OData standards.</li>
+        <li><code>WebMethodAdaptor</code> - Use this to interact with web methods.</li>
+        In this demo, remote data is bound by assigning service data as an instance of <code>DataManager</code> to the
+        <code>dataSource</code>
+        property.
+        More information on the data binding can be found in this documentation section.
+    </p>
+    <p>
+        Gantt component features are segregated into individual feature-wise modules. To use a selection support, inject the
+        <code>Selection</code> module.
+    </p>
+</div>

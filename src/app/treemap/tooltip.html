@@ -1,0 +1,73 @@
+<!-- custom code start -->
+<style>
+#label {
+        padding-left: 8px;
+        color: #5D5D5D;
+        font-family: Roboto-Regular;
+        font-size: 16px;
+    }
+    .property-text {
+        font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif" !important;
+        font-size: 13px !important;
+        font-weight: 400 !important;
+    }
+</style>
+<!-- custom code end -->
+<div class="control-section">
+    <div align='center'>
+        <ejs-treemap id='container' #treemap style="display:block;" [dataSource] ='dataSource' [weightValuePath] ='weightValuePath'
+       [leafItemSettings] = 'leafItemSettings' [tooltipSettings] = 'tooltipSettings' [titleSettings] = 'titleSettings'
+       [equalColorValuePath] = 'equalColorValuePath'  [legendSettings] = 'legendSettings' (load)='load($event)' >
+       
+    </ejs-treemap>
+        
+        
+    </div>
+    <div style="float: right; margin-right: 10px;">Source:
+        <a href="https://en.wikipedia.org/wiki/List_of_international_airports_by_country" target="_blank">en.wikipedia.org</a>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample depicts the count of International airports in various countries in South America. On hover, the items details will be displayed in tooltip template.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to apply equal color mapping and apply colors for treemap items based on certain value.
+    </p>
+    <p>
+        Also tooltip template is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item in touch enabled devices.
+    </p>
+    
+
+</div>
+
+<style class="cssStyles">
+    #airplaneicon {
+        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDMyIDMyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPg0KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggNDkuMyAoNTExNjcpIC0gaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoIC0tPg0KICAgIDx0aXRsZT5BZXJvcGxhbmUgQ29weTwvdGl0bGU+DQogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+DQogICAgPGRlZnM+PC9kZWZzPg0KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPg0KICAgICAgICA8ZyBpZD0iMTM2Ni1jb3B5LTgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMjIuMDAwMDAwLCAtMzgzLjAwMDAwMCkiIGZpbGw9IiM1ODVDNjAiIGZpbGwtcnVsZT0ibm9uemVybyI+DQogICAgICAgICAgICA8ZyBpZD0iQWVyb3BsYW5lLUNvcHkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEyMi4wMDAwMDAsIDM4My4wMDAwMDApIj4NCiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMzEuMTQ5OTk5NCwwIEwzMC41NTAwMDg0LDIuNzAwMDA0NiBDMzAuNTUwMDA4NCwyLjgwMDAwMzEgMzAuNTUwMDA4NCwyLjkwMDAwMTUgMzAuNDUwMDAyNCwzLjA5OTk5ODUgTDMwLjQ1MDAwMjQsMy4yMDAwMDQ2IEMzMC4zNTAwMTI0LDMuNDAwMDAxNSAzMC4xNDk5OTk0LDMuNzAwMDA0NiAyOS44NTAwMTI0LDQgTDIyLjU1MDAwNzQsMTEuODAwMDAzIEwyNi43NTAwMDU0LDI5IEwyMy45NTAwMDA0LDMyIEwxNi45NTAwMDA0LDE3LjU5OTk5OCBMMTEuNDUwMDAwNCwyMy41IEwxMS45NTAwMDA0LDI4IEw5Ljg1MDAwMTQ4LDMwLjMwMDAwMyBMNy4zNTAwMDA5OCwyNS4wOTk5OTggTDIuNTUwMDA0OTgsMjIuNDAwMDAyIEw0Ljc1MDAwMjQ4LDIwLjA5OTk5OCBMOS4wNTAwMDU5OCwyMC43MDAwMDUgTDE0LjU1MDAwNjQsMTQuODAwMDAzIEwwLjg1MDAwMDM4MSw3LjIwMDAwNDYgTDMuNTUwMDA1MDgsNC4zMDAwMDMxIEwxOS45NTAwMDA0LDguOTAwMDAxNSBMMjcuMTQ5OTk5NCwxLjIwMDAwNDYgQzI3LjQ1MDAwMjQsMC45MDAwMDE1MyAyNy43NTAwMDU0LDAuNzAwMDA0NTggMjguMDUwMDA4NCwwLjU5OTk5ODQ3IEwyOC4xNDk5OTk0LDAuNTk5OTk4NDcgTDI4LjQ1MDAwMjQsMC41OTk5OTg0NyIgaWQ9InBhdGgxIj48L3BhdGg+DQogICAgICAgICAgICA8L2c+DQogICAgICAgIDwvZz4NCiAgICA8L2c+DQo8L3N2Zz4=');
+        background-repeat: no-repeat;
+    }
+
+    #displayAirports {
+        border-radius: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 6px;
+        padding-top: 6px;
+        background: #EFEFEF;
+        height: 45px;
+        width: 140px;
+        border: 1px #919191;
+        border-color: black
+        box-shadow: 0px, 2px;
+    }
+
+    #value {
+        margin-top: 5px;
+        color: #585C60;
+        font-family: Roboto-Bold;
+        font-size: 16px;
+    }
+
+</style>

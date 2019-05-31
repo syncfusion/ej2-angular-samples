@@ -1,0 +1,104 @@
+<div id="action-description">
+    <p>
+        This sample visualizes rendering of date-time in the range navigator with exchange rate analysis of EUR to USD.
+    </p>
+</div>
+<div class="control-section" align="center">
+    <div class="row" align="center">
+        <h4 id="days" style="font-family: Segoe UI;font-weight: 500; font-style:normal; font-size:15px;">Exchange Rate USD to EUR</h4>
+        <div align="center">
+            <ejs-rangenavigator style='display:block' align='center' id='containerDT' valueType='DateTime' [value]='value' [majorTickLines]='rangeMajorTickLines'
+                [width]='width' (changed)='changed($event)' [tooltip]='tooltip' (load)='load($event)'
+                [theme]='theme'>
+                <e-rangenavigator-series-collection>
+                    <e-rangenavigator-series [dataSource]='dataSource' type='Area' xName='x' yName='y' width=2 [fill]='fill' [border]='border'>
+                    </e-rangenavigator-series>
+                </e-rangenavigator-series-collection>
+                </ejs-rangenavigator>
+        </div>
+        <div align="center">
+            <ejs-chart #chart style='display:block;' id='chart' align='center' [chartArea]='chartArea' [width]='width' [primaryXAxis]='primaryXAxis'
+                [primaryYAxis]='primaryYAxis' [crosshair]='crosshair' height='350' [theme]='theme' [tooltip]='chartTooltip'
+                [legendSettings]='legendSettings' (axisLabelRender)= 'axisLabelRender($event)'>
+                <e-series-collection>
+                    <e-series [dataSource]='dataSource' type='Spline' xName='x' yName='y' width='2' name='Rate'>
+                    </e-series>
+                </e-series-collection>
+                </ejs-chart>`
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        Date-time data is used in this sample, and range values are represented using the tooltip. Date-time axis uses date-time
+        scale and displays date-time values as axis labels. To render date-time axis, set the valueType to DateTime. Format
+        of the axis label will be calculated based on the intervalType of the range navigator. You can also directly set
+        the format using the labelFormat property.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        The range navigator component features are segregated into individual feature-wise modules.
+        To use area series and date time axis, We need to inject the
+        <code>AreaSeriesService</code> and <code>DateTimeService</code> module into the
+        <code>@NgModule.providers</code> section.
+    </p>
+</div>
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+    
+    #material-gradient-chart stop {
+        stop-color: #00bdae;
+    }
+    
+    #fabric-gradient-chart stop {
+        stop-color: #4472c4;
+    }
+    
+    #bootstrap-gradient-chart stop {
+        stop-color: #a16ee5;
+    }
+
+    #bootstrap4-gradient-chart stop {
+        stop-color: #a16ee5;
+    }
+    
+    #highcontrast-gradient-chart stop {
+        stop-color: #79ECE4;
+    }
+    
+    .chart-gradient stop[offset="0"] {
+        stop-opacity: 0.9;
+    }
+    
+    .chart-gradient stop[offset="1"] {
+        stop-opacity: 0.3;
+    }
+</style>
+<svg style="height: 0">
+    <defs>
+        <linearGradient id="material-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="fabric-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="bootstrap-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="bootstrap4-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="highcontrast-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+    </defs>
+</svg>

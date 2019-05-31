@@ -1,0 +1,96 @@
+<div id="action-description">
+    <p>This sample demonstrates customization of the ColorPicker component by using its properties from the property pane. Select
+        any combination of properties from the property pane to customize the ColorPicker component.</p>
+</div>
+
+<div class="control-section">
+    <div class="col-lg-8">
+        <div id="api-control">
+            <h4>Choose a color</h4>
+            <input ejs-colorpicker id='color-picker' #colorpicker type='color' [value]="colorValue" (change)="change($event)" />
+        </div>
+    </div>
+
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties">
+                    <tbody>
+                        <tr>
+                            <td style="padding:10px 0 5px 10px;width:50%">
+                                <div>Value</div>
+                            </td>
+                            <td style="padding:10px 0 0 0;width:50%">
+                                <div class="e-input-group">
+                                    <input id="value" class="e-input" type="text" [value]="colorValue" [spellcheck]="false" (input)="onValueChange($event)" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:10px 0 5px 10px;width:50%">
+                                <div>Mode</div>
+                            </td>
+                            <td style="padding:10px 0 0 0;width:50%">
+                                <div>
+                                    <ejs-dropdownlist id="sample-list" [dataSource]="type" value='Picker' (change)="typeChange($event)" [fields]="ddlFields"
+                                        popupheight="220px"></ejs-dropdownlist>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:10px 0 10px 10px;width:50%">
+                                <div>Disable</div>
+                            </td>
+                            <td style="padding:10px 0 10px 0;width:50%">
+                                <ejs-checkbox id='disabled' [checked]="false" (change)="disabled_onChange($event)"></ejs-checkbox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:10px 0 10px 10px;width:50%">
+                                <div>Show Buttons</div>
+                            </td>
+                            <td style="padding:10px 0 10px 0;width:50%">
+                                <ejs-checkbox id='button' [checked]="true" (change)="button_onChange($event)"></ejs-checkbox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:10px 0 10px 10px;width:50%">
+                                <div>Mode Switcher</div>
+                            </td>
+                            <td style="padding:10px 0 10px 0;width:50%">
+                                <ejs-checkbox id='mode-switch' [checked]="true" (change)="mode_onChange($event)"></ejs-checkbox>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        The ColorPicker is a user interface to select and adjust color values. This supports various color specifications like RGB
+        (Red Green Blue), HSV (Hue Saturation Value), and Hex codes.
+    </p>
+    <p>In this sample, ColorPicker is rendered with default configuration.</p>
+    <p>This sample can be customized further with the combination of ColorPicker properties from the property pane. For example,</p>
+    <ul>
+        <li>Control (apply/cancel) buttons can be enabled or disabled using
+            <i>Show Buttons</i> checkbox from the property pane.</li>
+        <li>You can select the color by entering the color value in the property pane
+            <i>Value</i> textbox.</li>
+        <li>You can switch to 'Picker' and 'Palette' modes by clicking and selecting the mode from
+            <i>Select Mode</i> dropdownlist.</li>
+        <li>you can enable or disable the ColorPicker using
+            <i>Disabled</i> checkbox from property pane.</li>
+        <li>you can enable or disable the mode switcher using
+            <i>Mode Switcher</i> checkbox from property pane.</li>
+    </ul>
+    <p>
+        More information about ColorPicker can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/color-picker/getting-started/">
+            documentation section</a>.
+    </p>
+</div>

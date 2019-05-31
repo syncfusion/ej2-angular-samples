@@ -1,0 +1,47 @@
+{
+    "de": {
+        "dropdowns": {
+            "noRecordsTemplate": "Keine Aufzeichnungen gefunden",
+            "actionFailureTemplate": "Die Anforderung ist fehlgeschlagen",
+            "overflowCountTemplate": "+ $ {count} mehr ..",
+            "selectAllText": "Selecteer alles",
+            "unSelectAllText": "Alles deselecteren"
+        }
+    },
+    "ar": {
+        "dropdowns": {
+            "noRecordsTemplate": "لا توجد سجلات",
+            "actionFailureTemplate": "أخفق الطلب",
+            "overflowCountTemplate": "..مور{كونت}$+",
+            "selectAllText": "إلغاء تحديد الكل",
+            "unSelectAllText": "اختر الكل"
+        }
+    },
+    "en": {
+        "dropdowns": {
+            "noRecordsTemplate": "No Records Found",
+            "actionFailureTemplate": "The Request Failed",
+            "overflowCountTemplate": "+${count} more..",
+            "selectAllText": "Select All",
+            "unSelectAllText": "Unselect All"
+        }
+    },
+    "zh": {
+        "dropdowns": {
+            "noRecordsTemplate": "没有找到记录",
+            "actionFailureTemplate": "请求失败",
+            "overflowCountTemplate": "+$(計數) 更多..",
+            "selectAllText": "全選",
+            "unSelectAllText": "全部取消選擇"
+        }
+    },
+    "fr-CH": {
+        "dropdowns": {
+            "noRecordsTemplate": "Aucun enregistrement trouvé",
+            "actionFailureTemplate": "La demande a échoué",
+            "overflowCountTemplate": "+ $ {count} plus ..",
+            "selectAllText": "Tout sélectionner",
+            "unSelectAllText": "tout déselectionner"
+        }
+    }
+}

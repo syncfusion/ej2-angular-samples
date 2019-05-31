@@ -1,0 +1,63 @@
+<div class="control-section button-group-container">
+    <div class="button-group-section">
+        <div id="button-group-control">
+            <div class="row">                
+                <p class="h5">Default</p>
+                <div id="icon" class="e-btn-group">
+                    <button ejs-button iconCss="bg-icons e-btngrp-watch"></button>
+                    <button ejs-button iconCss="bg-icons e-btngrp-star"></button>
+                    <button ejs-button iconCss="bg-icons e-btngrp-download"></button>
+                </div>
+            </div>
+            <div class="row">                
+                <p class="h5">Single selection</p>
+                <div id="text" class="e-btn-group">
+                    <input type="radio" id="left" name="align" value="left" />
+                    <label class="e-btn" for="left">Left</label>
+                    <input type="radio" id="center" name="align" value="center" disabled />
+                    <label class="e-btn" for="center">Center</label>
+                    <input type="radio" id="right" name="align" value="right" />
+                    <label class="e-btn" for="right">Right</label>                                    
+                </div>
+            </div>
+            <div class="row">
+                <p class="h5">Multiple selection</p>
+                <div id="iconandtext" class="e-btn-group">
+                    <input type="checkbox" id="bold" name="fontstyle" value="bold" checked />
+                    <label class="e-btn" for="bold">
+                        <span class="e-btn-icon bg-icons e-btngrp-bold e-icon-left"></span>Bold
+                    </label>
+                    <input type="checkbox" id="italic" name="fontstyle" value="italic" />
+                    <label class="e-btn" for="italic">
+                        <span class="e-btn-icon bg-icons e-btngrp-italic e-icon-left"></span>Italic
+                    </label>
+                    <input type="checkbox" id="underline" name="fontstyle" value="underline" />
+                    <label class="e-btn" for="underline">
+                        <span class="e-btn-icon bg-icons e-btngrp-underline e-icon-left"></span>Underline
+                    </label>
+                </div>
+            </div>                      
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>The following sample demonstrates the default functionalities of normal, radio, and checkbox button groups.</p>
+</div>
+<div id="description">
+    <p>
+        ButtonGroup is a graphical user interface that groups series of buttons horizontally or vertically. This supports radio and checkbox type behaviors.
+    </p>
+    <p>
+        The above sample demonstrates the behaviors of button groups with icon only, text only, and text with icon combinations.
+    </p>
+    <ul>
+        <li><b>Default:</b> Triggers action on button click.</li>
+        <li><b>Single selection:</b> Radio type behavior selects a single button and submits its value to the server on form submission. This is showcased with the second button disabled, by default.</li>
+        <li><b>Multiple selection:</b> Checkbox type behavior selects multiple buttons and submits its selected values to the server on form submission. This is showcased with the first button selected, by default.</li>        
+    </ul>
+    <p>
+        More information on ButtonGroup can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/button-group/getting-started/">
+            documentation section</a>.
+    </p>
+</div>

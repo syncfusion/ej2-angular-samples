@@ -1,0 +1,101 @@
+<div id="action-description">
+    <p>
+        This sample illustrates RTL in the range navigator.
+    </p>
+</div>
+<div class="control-section">
+    <h4 id="days" style="font-family: Segoe UI;font-weight: 500; font-style:normal; font-size:15px;" align="center">Inflation - Consumer Price</h4>
+    <div align="center">
+        <ejs-rangenavigator style='display:block' align='center' id='containerRtl' valueType='DateTime' [value]='value' intervalType='Years'
+            labelPosition='Outside' [width]='width' enableRtl=true (changed)='changed($event)' [tooltip]='tooltip'
+            [theme]='theme' (load)='load($event)'>
+            <e-rangenavigator-series-collection>
+                <e-rangenavigator-series [dataSource]='dataSource' type='Area' xName='xDate' yName='High' [fill]='fill' [border]='border'>
+                </e-rangenavigator-series>
+            </e-rangenavigator-series-collection>
+        </ejs-rangenavigator>
+    </div>
+    <div align="center">
+        <ejs-chart #chartRtl style='display:block;' id='chartRtl' align='center' [chartArea]='chartArea' [width]='width' [primaryXAxis]='primaryXAxis'
+            [primaryYAxis]='primaryYAxis' [crosshair]='crosshair' height='350' [tooltip]='chartTooltip' [theme]='theme'
+            [legendSettings]='legendSettings'>
+            <e-series-collection>
+                <e-series [dataSource]='dataSource' name='Profit' type='Area' xName='xDate' yName='High' width='2' [fill]='fill' [border]='border'>
+                </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+       In this example, you can see how to inverse the axis in range navigator. Here both the X and Y axis
+       are inversed using <code>isInversed</code> property.
+       Tooltip is enabled in this example, to see the tooltip in action, while the selected range is changed.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        The range navigator component features are segregated into individual feature-wise modules. To use area series, we need to inject the 
+        <code>AreaSeriesService</code>module into the
+        <code>@NgModule.providers</code> section.
+    </p>
+</div>
+<style>
+    #containerRtl {
+        padding: 0px !important;
+    }
+
+    #material-gradient-chart stop {
+        stop-color: #00bdae;
+    }
+
+    #fabric-gradient-chart stop {
+        stop-color: #4472c4;
+    }
+
+    #bootstrap-gradient-chart stop {
+        stop-color: #a16ee5;
+    }
+
+    #bootstrap4-gradient-chart stop {
+        stop-color: #a16ee5;
+    }
+
+    #highcontrast-gradient-chart stop {
+        stop-color: #79ECE4;
+    }
+
+    .chart-gradient stop[offset="0"] {
+        stop-opacity: 0.9;
+    }
+
+    .chart-gradient stop[offset="1"] {
+        stop-opacity: 0.3;
+    }
+</style>
+
+<svg style="height: 0">
+    <defs>
+        <linearGradient id="material-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="fabric-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="bootstrap-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="bootstrap4-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="highcontrast-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+    </defs>
+</svg>

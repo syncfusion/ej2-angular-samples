@@ -1,0 +1,78 @@
+    .e-image {
+        height: 13px;
+        width: 14px;
+        vertical-align: middle;
+    }
+
+    .statustemp {
+        position: relative;
+        height: 19px;
+        border-radius: 15px;
+        text-align: center;
+        background-color: #cff0dc;
+        color: #00752F;
+        width: 47px;
+    }
+
+    .statustemp.e-lowgdp {
+        background-color: #FFDBDB;
+        color: #BD0000;
+
+    }
+
+    td.e-rowcell .statustxt {
+        color: #00cc00;
+        position: relative;
+    }
+
+    td.e-rowcell .statustxt.e-lowgdp {
+        color: #e60000;
+        position: relative;
+    }
+
+    .rating .star {
+        font-size: 132%;
+        color: lightgrey;
+    }
+
+    .rating .star.checked {
+        color: #ffa600;
+    }
+
+    .rating .star:before {
+        content: '★';
+    }
+    .negativeTimeZone {
+        transform: rotate(180deg);
+    }
+    #myBar {
+        position: absolute;
+        width: 10%;
+        height: 100%;
+        background-color: #00b300;
+    }
+
+    #myBar.progressdisable {
+        background-color: #df2222;
+    }
+
+    #label {
+        position: relative;
+        left: 10px;
+        line-height: 18px;
+        font-size: 10px;
+        color: white;
+    }
+    .highcontrast .e-grid #myProgress {
+        background-color: black;
+    }
+    #myProgress {
+        position: relative;
+        height: 18px;
+        width: 10em;
+        text-align: left;
+        background-color: white;
+    }
+    #myBar.progressdisable {
+        background-color: #df2222;
+    }

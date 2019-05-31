@@ -1,0 +1,91 @@
+<div class="control-section">
+    <div class="content-wrapper">
+        <div id="container" style="width:92%"></div>
+    </div>
+    <div class="col-md-8">
+        <ejs-chart style='display:block;' #chart [legendSettings]='legend' id='container' [primaryXAxis]='primaryXAxis'
+            [tooltip]='tooltip' [height]='height' [width]='width' (scrollEnd)='scrollEnd($event)'
+            [primaryYAxis]='primaryYAxis' [chartArea]='chartArea' [title]='title' (load)='load($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='data' [animation]='animation' type='Line' xName='x' yName='y'>
+                </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+    <div class="col-md-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tr style="height: 50px">
+                        <td style="width: 40%">
+                            <div>Lazy Load </div>
+                        </td>
+                        <td style="width: 60%;">
+                            <div>
+                                <ejs-dropdownlist id='lazymode' #mode (change)='modeChange($event)' [fields]='fields' [dataSource]='dropDownData' [value]='dropValue'></ejs-dropdownlist>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 40%">
+                            <div>Min </div>
+                        </td>
+                        <td style="width: 60%;">
+                            <div>
+                                <ejs-datepicker #min id="datepickermin" [min]='minimumDate' (change)='minChange($event)' [value]='minValue'></ejs-datepicker>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 40%">
+                            <div>Max </div>
+                        </td>
+                        <td style="width: 60%;">
+                            <div>
+                                <ejs-datepicker #max id="datepickermax" [max]='maximumDate' (change)='maxChange($event)' [value]='maxValue'></ejs-datepicker>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 40%">
+                            <div>Point Length </div>
+                        </td>
+                        <td style="width: 60%;">
+                            <div>
+                                <ejs-numerictextbox #point [value]="value" id="pointslength" [min]='1000' [max]='10000'
+                                    [step]="step" [enabled]="enabled" [format]="format" (change)='pointChange($event)'></ejs-numerictextbox>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample illustrates lazy laoding feature in chart. Loads data for chart on demand.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to load data for chart on demand. Chart will fire the <code>scrollEnd</code> event, in that can udpate the chart with required data based on point length and axis range.
+    </p>
+    <p>
+        ScrollBar is enabled in the sample and ScrollBar module injected to the chart.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use lazy laoding need to
+        inject <code>ScrollBar</code> and <code>Zoom</code> module.
+        <code>Chart.Inject(ScrollBar, Zoom)</code> method.
+    </p>
+</div>
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+</style>

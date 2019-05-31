@@ -1,0 +1,95 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates all the API functionalities available in <code>Toast</code>.
+    </p>
+</div>
+<div class="col-lg-12 control-section toast-api-section">
+    <div class="sample_container">
+        <ejs-toast #toastApi id='toastApi' [animation]="showAnimation" [position]="position" (beforeOpen)="onBeforeOpen($event)" (close)="onClose($event)"></ejs-toast>
+        <div class="row">
+        <div class="col-lg-6 padding">
+        <div class="input-form">
+            <div class="e-float-input">
+                <input id="toast_input_title" class='e-input' required/>
+                <span class="e-float-line"></span>
+                <label class="e-float-text">Enter the title</label>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="e-float-input">
+                <textarea class='e-input' id='toast_input_content' rows="3" required></textarea>
+                <label class="e-float-text">Enter the content</label>
+            </div>
+        </div>
+        <div class="group-form e-group">
+           <ejs-checkbox id='closeButton' label='Show Close Button' (change)="closeOnChange($event)"></ejs-checkbox>
+        </div>
+        <div class="group-form e-group">
+           <ejs-checkbox id='progressBar' label='Show Progress Bar' (change)="OnProgressChange($event)"></ejs-checkbox>
+        </div>
+        <div class="group-form e-group">
+           <ejs-checkbox id='newestOnTop' label='Newest On Top' [checked]="true" (change)="closeNewestOnChange($event)"></ejs-checkbox>
+        </div>
+        <div class="group-form e-group">
+           <ejs-checkbox id='prevDuplicates' label='Prevent Duplicates' (change)="OnPrevDubChange($event)"></ejs-checkbox>
+        </div>
+         <div class="group-form e-group">
+           <ejs-checkbox id='actionButtons' label='Action Buttons' (change)="OnactionBtnChange($event)"></ejs-checkbox>
+        </div>
+          <div class="input-form">
+            <div class="e-float-input e-input-group">
+                <input class="e-input" id="timeOut" name="Digits" value="5000" required/>
+                <span class="e-float-line"></span>
+                <label class="e-float-text">TimeOut</label>
+            </div>
+        </div>
+        </div>
+        <div class="col-lg-6 padding">
+           <div class="input-form">
+            <h4> Show Animation</h4>
+            <div class="e-float-input">
+                <input class="e-input" id="showDuration" value="400" required/>
+                <span class="e-float-line"></span>
+                <label class="e-float-text">Duration</label>
+            </div>
+        </div>
+        <div class="input-form">
+            <ejs-dropdownlist #ShowEasing id="ShowEasing" [dataSource]="showData" [fields]="this.showFields" placeholder="Select an Easing" (change)="onShowEase()" [value]="easeValue"></ejs-dropdownlist>
+        </div>
+          <div class="input-form">
+              <ejs-dropdownlist #ShowAnimation id="ShowAnimation" [dataSource]="animationData" [fields]="animationFields" placeholder="Select an Animation" (change)="showChange()" [value]="animationValue"></ejs-dropdownlist>
+        </div>
+         <div class="input-form e-group">
+            <h4> Hide Animation</h4>
+            <div class="e-float-input">
+                <input class="e-input" id="hideDuration" value="400" required/>
+                <span class="e-float-line"></span>
+                <label class="e-float-text">Duration</label>
+            </div>
+        </div>
+        <div class="input-form">
+            <ejs-dropdownlist  #HideEasing id="HideEasing" [dataSource]="showData" [fields]="showFields" placeholder="Select an Easing" (change)="onHideEase()" [value]="easeValue"></ejs-dropdownlist>
+        </div>
+          <div class="input-form">
+              <ejs-dropdownlist #HideAnimation id="HideAnimation" [dataSource]="animationData1" [fields]="animationFields" placeholder="Select an Animation" (change)="hideChange()" [value]="hideAnimationValue"></ejs-dropdownlist>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="row center">
+            <button ejs-button id="toastBtnShow" class="e-btn e-primary" (click)= "showBtnClick($event)">Show Toasts</button>
+            <button ejs-button id="toastBtnHide"  class="e-btn e-primary" (click)= "hideBtnClick()" style='display: none'> Hide All</button>
+       </div>
+    </div>
+    <div id="description">
+        <p>
+            In this sample, with help of text inputs <code>toast</code> header <code>title</code> and <code>content</code> text can be provided.
+        </p>
+        <p><code>Action Buttons</code> – Provide support to add a button inside toast to interact with it.</p>
+        <p><code>Prevent Duplicates</code> – Disable the user to create same toast message multiple times.</p>
+        <p><code>TimeOut</code> – Allows to set time in millisecond to close toast</p>
+        <p><code>Progress Bar</code> – Visualizes the time out of toast as an indicator</p>
+        <p><code>Animation</code> – Enables to define the toast show and hide animation </p>
+        <p><code>Close button</code> – Show close button to hide toast irrespective of time out.</p>
+        <p>More information about Toast can be found in this <a target="_blank" href="//ej2.syncfusion.com/documentation/toast/getting-started.html">documentation</a> section.</p>
+    </div>

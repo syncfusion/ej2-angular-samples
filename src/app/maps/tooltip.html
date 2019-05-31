@@ -1,0 +1,70 @@
+<!-- custom code start -->
+<style>
+ #control-container {
+        padding: 0px !important;
+    }
+</style>
+<!-- custom code end -->
+<div id="action-description">
+    <p>
+        This sample depicts the countries that were appeared in the finals of Cricket World Cup and their counts. By hovering the
+        mouse over the shapes, county name, finalist count, and winning count will be displayed in the tooltip template.
+    </p>
+</div>
+
+<div class="control-section">
+    <div align='center'>
+        <ejs-maps id='container' style="display:block;" [layers]='layers' [zoomSettings]="zoomSettings" [legendSettings]="legendSettings"
+            [titleSettings]="titleSettings" (tooltipRender)="tooltipRender($event)" (load)="load($event)">
+        </ejs-maps>
+    </div>
+    <div style="float: right; margin-right: 10px;">Source:
+        <a href="https://en.wikipedia.org/wiki/List_of_Cricket_World_Cup_finals" target="_blank">en.wikipedia.org</a>
+    </div>
+</div>
+<!-- style for tooltip -->
+<style>
+       .toolback {
+        border-radius: 4px;
+        border: 1px #abb9c6;
+        opacity: 90%;
+        background: rgba(53, 63, 76, 0.90);
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.40);
+        padding-bottom: 5px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px
+    }
+
+    .listing1 {
+        font-size: 13px;
+        color: #cccccc
+    }
+
+    .listing2 {
+        font-size: 13px;
+        color: #ffffff;
+        font-weight: 500;
+    }
+</style>
+
+<div id='description'>
+
+    <p>
+        In this example, you can see how to render the custom HTML element as tooltip. To see the tooltip in action, hover the mouse
+        over a shape or tap a shape in touch enabled devices. Also, the interactive legend has been placed at the left of
+        the map.
+    </p>
+    <br/>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Maps component features are segregated into individual feature-wise modules. To use a tooltip, inject the
+        <code>MapsTooltip</code> module using the
+        <code>Maps.Inject(MapsTooltip)</code> method.
+    </p>
+    <p>
+        More information on the maps tooltip can be found in this
+        <a target="_blank" href="">documentation section</a>.
+    </p>
+
+</div>

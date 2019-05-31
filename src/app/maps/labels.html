@@ -1,0 +1,89 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the names of all the states in USA in data labels. Options have been provided to change the intersect
+        action and smart labels mode of the data labels.
+    </p>
+</div>
+
+<div class="control-section">
+    <div class="col-lg-9">
+        <ejs-maps id='maps' #maps style="display:block;" [zoomSettings]='zoomSettings' [layers]='layers' (load)="load($event)">
+        </ejs-maps>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties">
+                    <tbody>
+                        <tr style="height: 50px">
+                            <td style="width: 80%">
+                                <div>Show Labels</div>
+                            </td>
+                            <td>
+                                <input checked="" id="select" style="margin-top: 15px" type="checkbox">
+                            </td>
+                        </tr>
+                        <tr style="height: 50px">
+                            <td style="width: 60%">
+                                <div>Smart label mode</div>
+                            </td>
+                            <td style="width: 40%">
+                                <select id="smartlabelmode" style="margin-left: -25px">
+                                    <option value="trim">Trim</option>
+                                    <option value="none">None</option>
+                                    <option value="hide">Hide</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr style="height: 50px">
+                            <td style="width: 60%">
+                                <div>Intersect action</div>
+                            </td>
+                            <td style="width: 40%;">
+                                <select id="intersectaction" style="margin-left: -25px">
+                                    <option value="none">None</option>
+                                    <option value="trim">Trim</option>
+                                    <option value="hide">Hide</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- custom code start -->
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+</style>
+<!-- custom code  end-->
+<div id='description'>
+
+    <p>
+        In this example, you can see how to render the data labels for each shape in a map. Data labels are used to display the values
+        of the shapes. You can use the
+        <code>autoFill</code> property in the
+        <code>shapeSettings</code> to apply the default palette colors to the shapes.
+
+    </p>
+    <p>
+        Tooltip is enabled in this example. To see the tooltip in action, hover the mouse over a shape or tap a shape in touch enabled
+        devices.
+    </p>
+    <br/>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Maps component features are segregated into individual feature-wise modules. To use a data label, inject the
+        <code>DataLabel</code> module using the
+        <code>Maps.Inject(DataLabel)</code> method.
+    </p>
+    <p>
+        More information on the maps layers can be found in this
+        <a target="_blank" href="">documentation section</a>.
+    </p>
+
+</div>

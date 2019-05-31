@@ -1,0 +1,115 @@
+<div id="action-description">
+    <p>
+        This sample visualizes a seating chart, in which the seats can be selected similarly to bus seat booking. Available, booked, and selected seats will be displayed in different colors.
+    </p>
+</div>
+
+<div class="col-lg-9 control-section">
+    <div style="width:200px;margin:auto;padding-bottom:20px">
+        <img src="./assets/maps/images/bus-icon.png" style="width:25px;height:25px;float:left">
+        <div style="padding-left:30px;font-size:20px;font-weight:400;">Bus seat selection</div>
+    </div>
+
+    <div style="border: 3px solid darkgray;width:200px;display:block;margin:auto;border-radius:5px">
+        <img src="./assets/maps/images/wheel.png" style="width:30px;height:30px;margin-left:18%;margin-top:10px">
+
+        <ejs-maps id='container' style="display:block;" projectionType='Equirectangular' [zoomSettings]='zoomSettings' height='400'
+            [layers]='layers' (itemSelection)="itemSelection($event)" (load)="load($event)">
+        </ejs-maps>
+
+    </div>
+</div>
+
+<div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+            <table id="property" title="Seat Selection" style="width: 100%;font-weight:400 !important">
+                <tbody>
+                    <tr style="height: 30px">
+                        <td>
+                            <span style="float:left;height:15px;width:15px;background-color:gray;border-radius:25%"></span>
+                            <span id="available" style="margin-top:-7px;margin-left: 15px">Available </span>
+                        </td>
+                    </tr>
+                    <tr style="height: 30px">
+                        <td>
+                            <span style="float:left;height:15px;width:15px;background-color:green;border-radius:25%"></span>
+                            <span id="available" style="margin-top:-7px;margin-left: 15px">Selected </span>
+                        </td>
+                    </tr>
+                    <tr style="height: 30px">
+                        <td>
+                            <span style="float:left;height:15px;width:15px;background-color:orange;border-radius:25%"></span>
+                            <span id="available" style="margin-top:-7px;margin-left: 15px">Booked </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="seat-parent">
+    <span id="clear-btn">Clear Selection</span>
+    <br>
+    <br>
+    <div id="selectedseats"></div>
+</div>
+<!-- custom code start -->
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+
+    #seat-parent {
+        text-align: center;
+        cursor: pointer
+    }
+
+    #selectedseats {
+        padding: 10px;
+    }
+
+    #selectedseats,
+    #seat-info {
+        font-size: 14px;
+    }
+
+    #clear-btn {
+        padding: 10px;
+        border: 2px solid rgb(241, 235, 247);
+        border-radius: 8px;
+        background: rgb(246, 245, 248);
+        color: black;
+        font-size: 14px;
+    }
+
+    .seats {
+        padding-top: 15px;
+        font-weight: bold;
+    }
+</style>
+<!-- custom code end -->
+<div id='description'>
+
+    <p>
+        In this example, you can see how to render the normal geometry type shapes on the map. Selection is enabled in this sample.
+        You can use the
+        <code>fill</code>,
+        <code>width</code>, and
+        <code>color</code> properties in the
+        <code>selectionSettings</code> to customize the appearance of the shapes after selection.
+    </p>
+    <br/>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Maps component features are segregated into individual feature-wise modules. To use the selection, inject the
+        <code>Selection</code> module using the
+        <code>Maps.Inject(Selection)</code> method.
+    </p>
+    <p>
+        More information on the selection can be found in this
+        <a target="_blank" href="">documentation section</a>.
+    </p>
+
+</div>

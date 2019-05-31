@@ -1,0 +1,19 @@
+.checkbox-alignment {
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.e-checkbox-wrapper.margaret .e-frame {
+    background-color: #ea7a57;
+    border-color: transparent;
+}
+
+.e-checkbox-wrapper.robert .e-frame {
+    background-color: #df5286;
+    border-color: transparent;
+}
+
+.e-checkbox-wrapper.laura .e-frame {
+    background-color: #865fcf;
+    border-color: transparent;
+}

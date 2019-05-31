@@ -1,0 +1,92 @@
+<div id="action-description">
+    <p>This sample demonstrates the basic rendering of the Chart control using pivot data. PivotTable Field List is also
+        enabled to change the report at runtime.</p>
+</div>
+<div id="description">
+    <p>
+        In this sample, the Pivot View component plots a chart widget based on the pivot report bound to it.
+        This can be achieved by setting the property <code>displayOption.view</code> to <code>Chart</code>. The built-in
+        options are:<br><br>
+
+        <code>Table</code> -> Renders grid widget only which is default,<br>
+        <code>Chart</code> -> Renders chart widget only,<br>
+        <code>Both</code> -> Renders both grid and chart widget,<br>
+    </p>
+    <p>
+        You can change the chart types using the dropdown list separately.
+        The chart types can be set using the property <code>chartSettings.chartSeries.type</code>. The built-in chart
+        types
+        are:<br><br>
+
+        <code>Column</code><br>
+        <code>Line</code><br>
+        <code>Spline</code><br>
+        <code>Bar</code><br>
+        <code>Area</code><br>
+        <code>StepArea</code><br>
+        <code>SplineArea</code><br>
+        <code>StackingColumn</code><br>
+        <code>StackingArea</code><br>
+        <code>StackingBar</code><br>
+        <code>StepLine</code><br>
+        <code>Pareto</code><br>
+        <code>Bubble</code><br>
+        <code>Scatter</code><br>
+        <code>StackingColumn100</code><br>
+        <code>StackingBar100</code><br>
+        <code>StackingArea100</code><br>
+        <code>Polar</code><br>
+        <code>Radar</code><br><br>
+
+        In the sample the field list option is enabled where you can see the result in chart by customizing the data
+        source.<br>
+    </p>
+    <p>
+        Since, the chart widget doesn't having drll-down support. We will provide the option in feature
+    </p>
+</div>
+<div class="control-section" id="pivot-grid-section">
+    <div class="col-lg-9">
+        <ejs-pivotview style="display: inline-block" #pivotview id='PivotView' showFieldList='true' width='100%' height='400'
+            [displayOption]='displayOption' [dataSource]=dataSource [chartSettings]='chartSettings'>
+        </ejs-pivotview>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties" style="width: 100%">
+                    <tbody>
+                        <tr style="height: 50px">
+                            <td>
+                                <div>
+                                    <select id="charttypesddl" name="ddl-view-mode">
+                                        <option value='Column' selected>Column</option>
+                                        <option value='Bar'>Bar</option>
+                                        <option value='Line'>Line</option>
+                                        <option value='Spline'>Spline</option>
+                                        <option value='Area'>Area</option>
+                                        <option value='SplineArea'>SplineArea</option>
+                                        <option value='StepLine'>StepLine</option>
+                                        <option value='StepArea'>StepArea</option>
+                                        <option value='StackingColumn'>StackingColumn</option>
+                                        <option value='StackingBar'>StackingBar</option>
+                                        <option value='StackingArea'>StackingArea</option>
+                                        <option value='StackingColumn100'>StackingColumn100</option>
+                                        <option value='StackingBar100'>StackingBar100</option>
+                                        <option value='StackingArea100'>StackingArea100</option>
+                                        <option value='Scatter'>Scatter</option>
+                                        <option value='Bubble'>Bubble</option>
+                                        <option value='Polar'>Polar</option>
+                                        <option value='Radar'>Radar</option>
+                                        <option value='Pareto'>Pareto</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

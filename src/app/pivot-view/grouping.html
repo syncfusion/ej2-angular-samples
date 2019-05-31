@@ -1,0 +1,90 @@
+<div id="action-description">
+    <p>This sample demonstrates grouping of dates and number types in the row and column headers of Pivot Grid.</p>
+</div>
+<div id="description">
+    <p>In this sample, the date type can be separated and showcased individually as year, quarter, month, or day by
+        selecting the appropriate option from the <b>Group date</b> by drop-down list. Also, numbers can be grouped by
+        entering the appropriate value in the <b>Group Product ID</b> by giving a range number in the the numeric text
+        box.
+    </p>
+    <p>
+        Grouping can be applied through code-behind using the <code>groupSettings</code> object in the pivot grid widget
+        along with the following properties:
+    </p>
+    <table>
+        <tr>
+            <td style="vertical-align: top;padding: 10px 0;width: 130px;">
+                <code>name :</code>
+            </td>
+            <td>Specifies the normal field.</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;padding: 4px 0;">
+                <code>type :</code>
+            </td>
+            <td>Specifies the field type for applying the group settings. For example, date formatted fields should be
+                in Date type and number formatted fields should be in Number type.</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;padding: 4px 0;">
+                <code>groupInterval :</code>
+            </td>
+            <td>Specifies the interval for date fields in years, quarters, months, etc.</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;padding: 4px 0;">
+                <code>rangeInterval :</code>
+            </td>
+            <td>Specifies the interval value to group the number field.</td>
+        </tr>
+    </table>
+</div>
+
+<div class="control-section" id="pivot-grid-section">
+    <div class="col-lg-8">
+        <ejs-pivotview style="display: inline-block" #pivotview id='PivotView' (load)='onLoad($event)' [dataSource]=dataSource showGroupingBar='true' width='100%'
+            height='300' [gridSettings]='gridSettings' (gridSettings.columnRender)='setColumnsRender($event)'>
+        </ejs-pivotview>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tbody>
+                        <tr style="height: 50px">
+                            <td>
+                                <div>Group Date by:
+                                </div>
+                            </td>
+                            <td style="padding-bottom: 16px">
+                                <div class="datecls">
+                                    <input type="text" tabindex="1" id='dategroup' />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="input2cls" style="height: 50px;">
+                            <td>
+                                <div>Group Product ID by:
+                                </div>
+                            </td>
+                            <td style="padding-bottom: 16px">
+                                <div class="numbercls">
+                                    <input type="text" tabindex="1" id='numbergroup' />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 50px">
+                            <td></td>
+                            <td>
+                                <div style="float:right;margin-right: 4px">
+                                    <button id="group-apply">Apply</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

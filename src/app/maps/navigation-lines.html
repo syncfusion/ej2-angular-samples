@@ -1,0 +1,60 @@
+<div id="action-description">
+    <p>
+        This sample illustrates the sea routes between various cities for shipping.
+    </p>
+</div>
+
+<div class="control-section">
+    <div align='center'>
+        <ejs-maps id='navigationLine' style="display:block;" [layers]='layers' [centerPosition]="centerPosition" [mapsArea]="mapsArea"
+            [zoomSettings]="zoomSettings" [titleSettings]="titleSettings" (load)="load($event)">
+        </ejs-maps>
+    </div>
+    <div style="float: right; margin-right: 10px;">Source:
+        <a href="http://www.lineaships.com/en/linea-peninsular/" target="_blank">www.lineaships.com</a>
+    </div>
+    <!-- style for navigation line-->
+    <style>
+        #navigationLine_layerIndex_0_line_Group {
+            stroke-dasharray: 10px 10px;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+            -webkit-animation: dash 15s linear infinite;
+            animation: dash 15s linear infinite;
+        }
+
+        @-webkit-keyframes dash {
+            100% {
+                stroke-dashoffset: -20px;
+            }
+        }
+
+        @keyframes dash {
+            100% {
+                stroke-dashoffset: -20px;
+            }
+        }
+    </style>
+</div>
+
+<div id='description'>
+
+    <p>
+        In this example, you can see how to render lines between two points in map. You can use
+        <code>dashArray</code>,
+        <code>width</code> and
+        <code>color</code> properties to customize the appearance of the navigation lines.
+    </p>
+    <br/>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Maps component features are segregated into individual feature-wise modules. To use navigation lines, you need to inject
+        <code>NavigationLine</code> module using
+        <code>Maps.Inject(NavigationLine)</code> method.
+    </p>
+    <p>
+        More information on the maps layers can be found in this
+        <a target="_blank" href="">documentation section</a>.
+    </p>
+
+</div>

@@ -1,0 +1,66 @@
+<div id="action-description">
+    <p>This sample demonstrates the Grid component with the row template feature. In this sample, we have rendered each Grid
+        row using the template.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-grid #grid [dataSource]='data' height=335 width='auto'>
+        <e-columns>
+            <e-column field='Employee Image' headerText='Employee Image' width='150' textAlign='Center'></e-column>
+            <e-column field='Employee Details' headerText='Employee Details' width='300' textAlign='Left'></e-column>
+        </e-columns>
+        <ng-template #rowTemplate let-data>
+            <tr>
+                <td class="rowphoto">
+                    <img src="./assets/grid/images/{{data.EmployeeID}}.png" alt="{{data.EmployeeID}}" />
+                </td>
+                <td class="details">
+                    <table class="CardTable" cellpadding="3" cellspacing="2">
+                        <colgroup>
+                            <col width="50%">
+                            <col width="50%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="CardHeader">First Name </td>
+                                <td>{{data.FirstName}} </td>
+                            </tr>
+                            <tr>
+                                <td class="CardHeader">Last Name</td>
+                                <td>{{data.LastName}} </td>
+                            </tr>
+                            <tr>
+                                <td class="CardHeader">Title</td>
+
+                                <td>{{data.Title}}</td>
+                            </tr>
+                            <tr>
+                                <td class="CardHeader">Birth Date</td>
+                                <td>{{format(data.BirthDate)}}</td>
+                            </tr>
+                            <tr>
+                                <td class="CardHeader">Hire Date</td>
+                                <td>{{format(data.HireDate)}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </ng-template>
+    </ejs-grid>
+
+
+    <div id="description">
+        <p>
+            The Grid provides a way to use a custom layout for its rows using template feature. The
+            <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-grid.html#rowtemplate-string">rowTemplate
+        </a></code> property accepts the template for the row.
+        </p>
+        <p>
+            In this demo, we have presented Employee Information with Employee Photo in the first column and employee
+            details like Name, Address etc. in the second column.
+        </p>
+
+    </div>
+</div>

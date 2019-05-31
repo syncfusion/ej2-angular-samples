@@ -1,0 +1,165 @@
+<div id="action-description">
+    <p>This sample visualizes the various phases involved in a manufacturing process of a product which transforms from
+        a conceptual model to a sellable product.</p>
+</div>
+<div class="control-section">
+    <div class="col-lg-8 content-wrapper">
+        <ejs-gantt id="ganttDefault" #gantt height="430px" [dataSource]="data" [taskFields]="taskSettings"
+            [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [splitterSettings]="splitterSettings"
+            [treeColumnIndex]="1" height="450px" [allowSelection]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+            [highlightWeekends]="true" [eventMarkers]="eventMarkers" resourceNameMapping="resourceName" resourceIDMapping="resourceId" 
+            [resources]="resources">
+        </ejs-gantt>
+    </div>
+
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <div id="property" class="property-panel-table" title="Properties">
+                    <table id="property" title="Properties" style="width: 100%">
+                        <tbody>
+                            <tr>
+                                <td style="width: 30%">
+                                    <div>Unit width</div>
+                                </td>
+                                <td style="width: 70%;">
+                                    <div>
+                                        <ejs-numerictextbox #unitWidth id="unitWidth" value="33"
+                                            (change)="onUnitWidthChange($event)" [min]="10" format="n">
+                                        </ejs-numerictextbox>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <div><b>Top tier</b></div>
+                                </td>
+                                <td style="width: 70%;">
+                                    <div>
+                                        <ejs-checkbox [checked]="true" (change)="onTopTierChange($event)">
+                                        </ejs-checkbox>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <div>Count</div>
+                                </td>
+                                <td style="width: 70%">
+                                    <div id='numericbox'>
+                                        <ejs-numerictextbox #topCount id=" count" value="1"
+                                            (change)="onTopCountChange($event)" format="n">
+                                        </ejs-numerictextbox>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <div>
+                                        Unit
+                                    </div>
+                                </td>
+                                <td style="width: 70%">
+                                    <div>
+                                        <ejs-dropdownlist #topUnit id='unit' [dataSource]='unit'
+                                            (change)='onChangeUnit($event)' [value]='unitValue' [fields]='unitFields'>
+                                        </ejs-dropdownlist>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <div>
+                                        Format
+                                    </div>
+                                </td>
+                                <td style="width: 70%">
+                                    <div>
+                                        <ejs-dropdownlist #topFormatDropdown id='format' [dataSource]='weekformat'
+                                            (change)='onChangeFormat($event)' [value]='topFormatValue'
+                                            [fields]='formatFields'>
+                                        </ejs-dropdownlist>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <div><b>Bottom tier</b></div>
+                                </td>
+                                <td style="width: 70%">
+                                    <div>
+                                        <ejs-checkbox [checked]="true" id="bottomTierCheck"
+                                            (change)="onBottomTierChange($event)">
+                                        </ejs-checkbox>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <div>Count</div>
+                                </td>
+                                <td style="width: 70%">
+                                    <div id='numericbox'>
+                                        <ejs-numerictextbox #bottomCount id="btCount" value="1"
+                                            (change)="onBottomCountChange($event)" format="n"></ejs-numerictextbox>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <div>
+                                        Unit
+                                    </div>
+                                </td>
+                                <td style="width: 70%">
+                                    <div>
+                                        <ejs-dropdownlist #bottomUnit id='btUnit' [dataSource]='unit'
+                                            (change)='onChangebtUnit($event)' [value]='bottomUnitValue'
+                                            [fields]='unitFields'>
+                                        </ejs-dropdownlist>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <div>
+                                        Format
+                                    </div>
+                                </td>
+                                <td style="width: 70%">
+                                    <div>
+                                        <ejs-dropdownlist #bottomFormatDropdown id='btFormat' [dataSource]='dayformat'
+                                            (change)='onChangebtFormat($event)' [fields]='formatFields'>
+                                        </ejs-dropdownlist>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to change the timeline settings in Gantt chart. The top and bottom timeline
+        header texts can be customized by using the <code>timelineSettings.topTier</code> and <code>timelineSettings.bottomTier</code> properties.
+        Using these properties, you can change the format, count, and units of the timeline header texts.
+    </p>
+    <p>
+        Gantt chart has built-in support for many timeline modes such as minutes, hour, day, week, month and year.
+    </p>
+    <p> The default timeline headers can also be replaced with custom header texts by using the <code>formatter</code> method.
+    </p>
+    <p>
+        Tooltip is enabled by default for the timeline headers, to see the tooltip in action, hover a point or tap on a
+        point in touch enabled devices.
+    </p>
+        
+    <p>
+        Gantt component features are segregated into individual feature-wise modules. To use a selection support, inject the
+        <code>Selection</code> module. To use markers in Gantt, inject the <code>DayMarkers</code> module.
+    </p>
+</div>

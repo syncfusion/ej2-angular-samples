@@ -1,0 +1,37 @@
+<div class="control-section">
+    <div id="targetContainer" class="col-lg-8 control-section">
+        <ejs-pager #pager [pageSize]='1' [totalRecordsCount]='7' [pageCount]='3'>
+        </ejs-pager>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties">
+                    <tr>
+                        <td style="width: 30%">
+                            <div class="col-md-4" style="padding-top: 8px">
+                                Select Culture
+                            </div>
+                        </td>
+                        <td style="width: 70%;padding-right: 10px">
+                            <div>
+                                <select id="ddl" name="ddl" class="form-control" style="padding: 6px;" (change)='onchange()'>
+                                   <option value="en-US">en-US</option>
+                                   <option value="de-DE">de-DE</option>
+                                   <option value="es-ES">es-ES</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        The Pager control was rendered with <code>en-US</code> culture. Here the Pager contents are updated based on current
+        culture. You can also change the control culture by selecting it from the culture options in the properties panel.
+    </p>
+</div>

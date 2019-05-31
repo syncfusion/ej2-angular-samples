@@ -1,0 +1,51 @@
+<div class="control-section">
+  <div class="col-lg-9 content-wrapper">
+    <ejs-schedule #scheduleObj width='100%' cssClass='adaptive-rows' height='650px' [rowAutoHeight]='rowAutoHeight'
+      [currentView]="currentView" [selectedDate]="selectedDate" [group]="group" [eventSettings]="eventSettings">
+      <e-resources>
+        <e-resource field='RoomId' title='Room Type' [dataSource]='resourceDataSource' [allowMultiple]='allowMultiple'
+          name='MeetingRoom' textField='text' idField='id' colorField='color'>
+        </e-resource>
+      </e-resources>
+      <e-views>
+        <e-view option="TimelineDay"></e-view>
+        <e-view option="TimelineWeek"></e-view>
+      </e-views>
+    </ejs-schedule>
+  </div>
+  <div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+      <div class="property-panel-header">Properties</div>
+      <div class="property-panel-content">
+        <div id="property" class="property-panel-table" title="Properties">
+          <table id="property" title="Properties" style="width: 100%">
+            <tbody>
+              <tr style="height: 50px">
+                <td style="width: 100%">
+                  <ejs-checkbox label="Row Auto Height" [checked]="true" (change)="onChange($event)"></ejs-checkbox>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="action-description">
+  <p>
+    This example showcases how the work-cells of Scheduler auto-adjust its height based on the number of
+    appointments present in those time ranges.
+  </p>
+</div>
+
+<div id="description">
+  <p>
+    In this example, <code>rowAutoHeight</code> property is set as <code>true</code> to auto-adjust the height
+    of work cells based on the number of appointments present in the same time ranges. Also, this functionality is
+    applicable only on all the timeline views as well as on the calendar month view. When this option is disabled,
+    the height of the work cells remains static and at the time of exceeding appointments count, the
+    <code>+n more</code> text indicator will be shown at the bottom of the cells.
+  </p>
+</div>

@@ -1,0 +1,42 @@
+<div id="action-description">
+    <p>This sample demonstrates the field list feature of the pivotgrid widget. In this sample, fields are
+        automatically populated
+        from the bound data source and can be used to create a pivot view at runtime.</p>
+</div>
+<div id="description">
+    <p>The pivotgrid widget provides a built-in field list very similar to Microsoft Excel. The top section of the
+        field list
+        allows the user to add and remove fields. The bottom section of the field list allows the user to rearrange the
+        fields
+        between different axes, including column, row, value, and filter along with filter and sort options.
+        <br>
+        <br> To show the field list independently, create as separate widget namely
+        <code>PivotFieldList</code> and assign JSON data source to its
+        <code>dataSource->data</code> property. Simultaneously pivotgrid will be populated by passing its instance in
+        the updateView
+        method, inside the
+        <code>enginePopulated</code> event of field list.
+        <br />
+        <br />
+        Additionally, user interface for calculated field, label filter, and value filter features have been enabled in
+        this demo by setting the properties
+        <code>allowCalculatedField</code>,
+        <code>dataSource->allowLabelFilter</code> and <code>dataSource->allowValueFilter</code> to true.
+    </p>
+    <p>
+        <strong>NOTE:</strong> To enable calculated field, inject
+        <code> CalculatedFieldService</code>
+    </p>
+</div>
+<div class="control-section" style="overflow:auto;">
+    <div class="pivotfieldlist-control">
+        <ejs-pivotfieldlist #pivotfieldlist id='PivotFieldList' [dataSource]=dataSource renderMode="Fixed"
+            (enginePopulated)='afterPopulate($event)' allowCalculatedField='true' (load)='onLoad()' (dataBound)='ondataBound()'>
+        </ejs-pivotfieldlist>
+    </div>
+    <div class="pivotview-control">
+        <ejs-pivotview style="display: inline-block" #pivotview id='PivotViewFieldList' width='99%' height='600' (enginePopulated)='afterEnginePopulate($event)'
+            [gridSettings]='gridSettings'>
+        </ejs-pivotview>
+    </div>
+</div>

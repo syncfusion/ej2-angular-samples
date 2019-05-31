@@ -1,0 +1,55 @@
+.control_wrapper {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    padding: 5% 0;
+}
+
+.tabs-wrap {
+    padding: 0 0px 10px;
+}
+
+.e-bigger .control-section {
+    margin-top: 60px;
+}
+
+.e-custom-style.e-timepicker.e-popup li.e-diabled span {
+    color: #b7b1b1;
+}
+
+.e-custom-style.e-timepicker.e-popup li span {
+    color: #727070;
+}
+
+body.bootstrap4 .e-custom-style.e-timepicker.e-popup li span {
+    color: #6c757d;
+}
+
+body.bootstrap4 .e-custom-style.e-timepicker.e-popup li.e-disabled span {
+    color: #adb5bd;
+}
+
+.highcontrast .e-custom-style.e-timepicker.e-popup li.e-hover span:hover,
+.highcontrast .e-custom-style.e-timepicker.e-popup li.e-active.e-hover span {
+    color: #fff;
+}
+
+body.bootstrap4 .e-custom-style.e-timepicker.e-popup li.e-hover span:hover,
+body.bootstrap4 .e-custom-style.e-timepicker.e-popup li.e-active.e-hover span {
+    color: #6c757d;
+}
+
+.highcontrast .e-custom-style.e-timepicker.e-popup li.e-active span {
+    color: #000;
+}
+
+body.bootstrap4 .e-custom-style.e-timepicker.e-popup li.e-active span {
+    color: #fff;
+}
+
+.e-custom-style.e-timepicker.e-popup li.e-disabled span {
+    height: 25px;
+    width: 25px;
+    font-size: 15px;
+    color: #b7b1b1;
+}

@@ -1,0 +1,12 @@
+.calendar-import.e-upload {
+  border: 0;
+  padding-left: 0 !important;
+}
+
+.calendar-import.e-upload .e-file-select-wrap {
+  padding: 0
+}
+
+.calendar-import.e-upload .e-file-select-wrap .e-file-drop {
+  display: none;
+}

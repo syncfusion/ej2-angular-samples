@@ -1,0 +1,88 @@
+<div id="target" class="control-section accordion-view">
+        <ejs-splitter #splitterInstance id="splitter" height='288px' width='100%'>
+            <e-panes>
+                <e-pane size='39%' min='30%' [content]='accordioncontent' ></e-pane>
+                <e-pane size='65%' min='45%' ></e-pane>
+            </e-panes>
+        </ejs-splitter>
+        <ng-template #accordioncontent1>
+                <ejs-accordion (expanding)="expanded($event)">
+                    <e-accordionitems>
+                            <e-accordionitem expanded='true'>
+                                <ng-template #header>
+                                    <div>ASP.NET</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <ejs-listview id='listview' (select)="onSelect($event)"  [dataSource]='listviewdata1'></ejs-listview>
+                                </ng-template>
+                            </e-accordionitem>
+                            <e-accordionitem>
+                                <ng-template #header>
+                                    <div>ASP.NET MVC</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <ejs-listview id='listview1' (select)="onSelect($event)"  [dataSource]='listviewdata2'></ejs-listview>
+                                </ng-template>
+                            </e-accordionitem>
+                            <e-accordionitem>
+                                <ng-template #header>
+                                    <div>JavaScript</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <ejs-listview id='listview2' (select)="onSelect($event)"  [dataSource]='listviewdata3'></ejs-listview>
+                                </ng-template>
+                            </e-accordionitem>
+                    </e-accordionitems>
+                </ejs-accordion>
+        </ng-template>
+    </div>
+    <div id="action-description">
+            <p>
+                This example demonstrates the Accordion control that can be integrated within the split pane.
+                Select the product from the left pane to display the corresponding product details on the right pane.
+            </p>
+    </div>
+    <div id="description">
+            <p>
+                The Splitter is the layout user interface (UI) control and allows integrating other JavaScript UI controls within its pane.
+                In this example, the Splitter control is used to design navigation menu-like application using JavaScript Accordion control.
+                The Accordion control is integrated within left pane to display the product menu and selected product details on right pane.               
+            </p>
+    </div>
+    <style>
+        .accordion-view #content {
+            padding: 18px;
+        }
+        .accordion-view.control-section{            
+            min-height: 370px;   
+        }
+        .accordion-view .content {
+            padding: 9px;
+        }
+        .accordion-view #splitter .e-accordion .e-acrdn-item .e-acrdn-panel .e-acrdn-content {
+            padding: 0px;
+        }
+        .accordion-view #splitter .e-accordion, .accordion-view #splitter .e-accordion .e-acrdn-item.e-select, .accordion-view #splitter .e-accordion .e-acrdn-item.e-selected.e-select > .e-acrdn-header {
+            border: none;
+        }
+        .accordion-view #splitter .e-acrdn-header-content {
+            display: block;
+            text-decoration: none;
+        }
+		.bootstrap .accordion-view #splitter .e-list-parent.e-ul li:nth-child(3),
+		.bootstrap4	.accordion-view #splitter .e-list-parent.e-ul li:nth-child(3) {
+			border-bottom: none;
+		}
+		.bootstrap4 #splitter .e-listview {
+			border: none;
+		}
+    </style>
+	
+	<!-- custom code start -->
+    <style>
+        .accordion-view#target {
+            margin: 20px auto;
+            max-width: 600px;
+        }
+    </style>
+    <!-- custom code end -->

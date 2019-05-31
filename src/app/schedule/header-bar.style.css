@@ -1,0 +1,75 @@
+    .e-schedule .e-schedule-toolbar .user-icon {
+        background-image: url('~/assets/schedule/images/nancy.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+        height: 24px;
+        min-width: 24px !important;
+        width: 24px !important;
+    }
+    
+    .e-schedule .e-schedule-toolbar .e-toolbar-items .e-schedule-user-icon .e-tbar-btn:hover {
+        background-color: inherit;
+    }
+    
+    .e-schedule .e-schedule-toolbar .e-toolbar-items .e-schedule-user-icon .e-tbar-btn-text {
+        display: none;
+    }
+    
+    .e-schedule .e-schedule-toolbar .e-toolbar-pop .e-schedule-user-icon .e-tbar-btn-text {
+        padding-left: 8px !important;
+    }
+    
+    .e-profile-wrapper {
+        width: 210px;
+        height: 80px;
+        background-color: #fafafa;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+    }
+    
+    .e-profile-wrapper .profile-container {
+        display: flex;
+        padding: 10px;
+    }
+    
+    .e-profile-wrapper .profile-image {
+        background-image: url('~/assets/schedule/images/nancy.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+        box-shadow: inset 0 0 1px #e0e0e0, inset 0 0 14px rgba(0, 0, 0, 0.2);
+        width: 60px;
+        height: 60px;
+    }
+    
+    .e-profile-wrapper .content-wrap {
+        padding-left: 10px;
+    }
+    
+    .e-profile-wrapper .name {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 500;
+        margin-top: 2px;
+    }
+    
+    .e-profile-wrapper .destination {
+        font-size: 12px;
+    }
+    
+    .e-profile-wrapper .status-icon {
+        height: 6px;
+        width: 6px;
+        background: green;
+        border-radius: 100%;
+        float: left;
+        margin-right: 4px;
+        margin-top: 4px;
+    }
+    
+    .e-profile-wrapper .status {
+        font-size: 11px;
+    }

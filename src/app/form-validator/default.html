@@ -1,0 +1,241 @@
+<div class="col-lg-12 control-section">
+    <div class="content-wrapper" style="margin-bottom: 25px;">
+        <div class="formtitle">
+            <span>Add Customer Details</span>
+        </div>
+
+        <form id="formId" [formGroup]="reactForm" #formDir="ngForm" class="form-horizontal" novalidate="">
+
+            <div class="form-group">
+                <div class="e-float-input">
+                    <input id="check" type="text" formControlName="check">
+                    <span class="e-float-line"></span>
+                    <label for="check" class="e-float-text">User Name</label>
+                </div>
+                <div *ngIf="check.errors">
+                    <div *ngIf="check.errors.required && check.touched" class="e-error">
+                        This field is required.
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="e-float-input">
+                    <input id="email_check" type="text" formControlName="email_check">
+                    <span class="e-float-line"></span>
+                    <label for="email_check" class="e-float-text">Email</label>
+                </div>
+                <div *ngIf="email_check.errors ">
+                    <div *ngIf="email_check.errors.email && email_check.touched" class="e-error">
+                        Please enter a valid email address.
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="e-float-input">
+                    <input id="date_check" type="text" formControlName="date_check">
+                    <span class="e-float-line"></span>
+                    <label for="date_check" class="e-float-text">DOB</label>
+                    <div *ngIf="date_check.errors ">
+                        <div *ngIf="date_check.errors.date && date_check.touched" class="e-error">
+                            Please enter a valid date.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="e-float-input">
+                    <textarea rows="4" id="Address" name="Address" formControlName="Address"></textarea>
+                    <span class="e-float-line"></span>
+                    <label class="e-float-text" for="address">Address</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="e-float-input">
+                    <input id="city" formControlName="city">
+                    <span class="e-float-line"></span>
+                    <label for="city" class="e-float-text">City</label>
+                    <div *ngIf="city.errors ">
+                        <div *ngIf="city.errors.required && city.touched" class="e-error">
+                            This field is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="e-float-input">
+                    <input id="state" formControlName="state">
+                    <span class="e-float-line"></span>
+                    <label for="state" class="e-float-text">State</label>
+                    <div *ngIf="state.errors ">
+                        <div *ngIf="state.errors.required && state.touched" class="e-error">
+                            This field is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div style="width: 320px;margin:0px auto;height: 100px;padding-top: 25px;">
+                    <div style="display: inline-block;">
+                        <button id="validateSubmit" class="samplebtn e-control e-btn e-primary" type="submit" style="height:40px;width: 150px;" data-ripple="true">Add Customer</button>
+                    </div>
+                    <div style="float: right;">
+                        <button id="resetbtn" class="samplebtn e-control e-btn" type="reset" style="height:40px;width: 150px;" data-ripple="true">Clear</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates an Angular Reactive FormValidator. Type a values or characters in the input element. If the
+        input values are correct format then the given input will be ready to submit otherwise error message will be shown
+        until entering the input as correct format.
+    </p>
+</div>
+
+<div id="description">
+    <div class="description-header">Description</div>
+    <p>
+        Form Validator can be used to validate the form input elements with the required validation rules.
+    </p>
+    <br>
+    <p>
+        The above form is configured with the following rules and also, we have given the examples of valid values for each field.
+    </p>
+    <table style="width:100%">
+        <tr>
+            <th>Validation Functions</th>
+            <th>Rule</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>required</td>
+            <td>The field must have any value.</td>
+            <td>value</td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td>The input must have email format.</td>
+            <td>info@syncfusion.com</td>
+        </tr>
+        <tr>
+            <td>url</td>
+            <td>The input must have URL format.</td>
+            <td>https://www.syncfusion.com/</td>
+        </tr>
+        <tr>
+            <td>date</td>
+            <td>The input must have JavaScript date format.</td>
+            <td>04/13/2017</td>
+        </tr>
+        <tr>
+            <td>dateIso</td>
+            <td>The input must have date ISO format.</td>
+            <td>2017-04-13</td>
+        </tr>
+        <tr>
+            <td>number</td>
+            <td>The input must have number format. It allows float values.</td>
+            <td>1 or 1.4</td>
+        </tr>
+        <tr>
+            <td>digits</td>
+            <td>The input must have digit format.</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>maxLength</td>
+            <td>The input value must have less than 5 characters length.</td>
+            <td>world</td>
+        </tr>
+        <tr>
+            <td>minLength</td>
+            <td>The input value must have more than 5 characters length.</td>
+            <td>syncfusion</td>
+        </tr>
+        <tr>
+            <td>rangeLength</td>
+            <td>The input must have number value from 5 to 10 characters length.</td>
+            <td>syncfusion</td>
+        </tr>
+        <tr>
+            <td>max</td>
+            <td>The input must have number value less than or equal to 5.</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>min</td>
+            <td>The input must have number value greater than or equal to 5.</td>
+            <td>6</td>
+        </tr>
+    </table>
+    <br>
+    <p>
+        You can enter the above values in the corresponding input elements and click the submit button to validate the form. The
+        reset button can wipe out all the input values in the form.
+    </p>
+</div>
+
+<style>
+    .formtitle {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.70);
+    }
+
+    .e-error,
+    .e-float-text {
+        font-weight: 500;
+    }
+
+    .e-custom-label {
+        font-size: 14px;
+        font-weight: 500;
+        margin-left: 20px;
+    }
+
+    form {
+        padding-top: 20px;
+        margin-bottom: 45px;
+        border: 1px solid #ccc;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.36);
+        border-radius: 5px;
+        background: #f9f9f9;
+    }
+
+    .highcontrast form,
+    .highcontrast .header {
+        color: #fff;
+        background: #000000;
+    }
+
+    .header {
+        color: rgba(0, 0, 0, 0.7);
+    }
+
+    table,
+    td,
+    th {
+        padding: 5px;
+    }
+
+    .form-horizontal .form-group {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .row {
+        padding-bottom: 30px;
+        padding-top: 25px;
+    }
+</style>

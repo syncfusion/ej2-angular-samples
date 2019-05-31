@@ -1,0 +1,290 @@
+<div class="control-section">
+    <div id="spark-container" class="row" align="center">
+        <div class="cols-sample-area">
+            <div style="width: 400px; text-align: center; font-size: 17px">
+                Population comparision between various countries
+            </div>
+            <div style="width: 380px; text-align: center; font-size: 12.5px;">
+                (From 2005 to 2014)
+            </div>
+            
+            <br>
+            <br>
+            <table style="width:100%;">
+                <tr>
+                    <td align="center"></td>
+                    <td>
+                        <div id="population" style="width:150px; height: 50px;text-align: center"><b>Population</b></div>
+                    </td>
+                    <td>
+                        <div id="density" style="width:150px; height: 50px;text-align: center"><b>Population Density</b></div>
+                    </td>
+                    <td>
+                        <div id="growth" style="width:150px; height: 50px;text-align: center"><b>Population Growth Rate</b></div>
+                    </td>
+                    <td>
+                        <div id="birth" style="width:150px; height: 50px;text-align: center"><b>Birth Rate</b></div>
+                    </td>
+                </tr>
+                <tr style="height: 80px">
+                    <td align="center"><b>Australia</b></td>
+                    <td>
+                        <ejs-sparkline id="paus" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            negativePointColor="red" [dataSource]="pausData" [tooltipSettings]="pausTooltipSettings"
+                            xName="xval" yName="yval" format='n' useGroupingSeparator="true"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="aaus" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Area" negativePointColor="red" [border]="border" [dataSource]="aausData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="waus" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="WinLoss" negativePointColor="red" [dataSource]="wausData" [tooltipSettings]="areatooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="caus" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Column" [axisSettings]="minAus" negativePointColor="red" [dataSource]="causData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                </tr>
+                <tr style="height: 80px">
+                    <td align="center"><b>Canada</b></td>
+                    <td>
+                        <ejs-sparkline id="pcan" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            negativePointColor="red" [dataSource]="pcanData" [tooltipSettings]="pausTooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="acan" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Area" negativePointColor="red" [border]="border" [dataSource]="acanData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="wcan" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="WinLoss" negativePointColor="red" [dataSource]="wcanData" [tooltipSettings]="areatooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="ccan" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Column" [axisSettings]="minCan" negativePointColor="red" [dataSource]="ccanData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                </tr>
+                <tr style="height: 80px">
+                    <td align="center"><b>China</b></td>
+                    <td>
+                        <ejs-sparkline id="pchin" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            negativePointColor="red" [dataSource]="pchinaData" [tooltipSettings]="pausTooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="achin" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Area" negativePointColor="red" [border]="border" [dataSource]="achinaData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="wchin" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="WinLoss" negativePointColor="red" [dataSource]="achinaData" [tooltipSettings]="areatooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="cchin" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Column" [axisSettings]="minChi" negativePointColor="red" [dataSource]="cchinaData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                </tr>
+                <tr style="height: 80px">
+                    <td align="center"><b>France</b></td>
+                    <td>
+                        <ejs-sparkline id="pfra" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            negativePointColor="red" [dataSource]="pfraData" [tooltipSettings]="pausTooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="afra" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Area" negativePointColor="red" [border]="border" [dataSource]="afraData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="wfra" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="WinLoss" negativePointColor="red" [dataSource]="wfraData" [tooltipSettings]="areatooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="cfra" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Column" [axisSettings]="minFra" negativePointColor="red" [dataSource]="cfraData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                </tr>
+                <tr style="height: 80px">
+                    <td align="center"><b>Germany</b></td>
+                    <td>
+                        <ejs-sparkline id="pger" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            negativePointColor="red" [dataSource]="pgerData" [tooltipSettings]="pausTooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="ager" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Area" negativePointColor="red" [border]="border" [dataSource]="agerData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="wger" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="WinLoss" negativePointColor="red" [dataSource]="wgerData" [tooltipSettings]="areatooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="cger" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Column" [axisSettings]="minGer" negativePointColor="red" [dataSource]="cgerData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                </tr>
+                <tr style="height: 80px">
+                    <td align="center"><b>India</b></td>
+                    <td>
+                        <ejs-sparkline id="pind" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            negativePointColor="red" [dataSource]="pindData" [tooltipSettings]="pausTooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="aind" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Area" negativePointColor="red" [border]="border" [dataSource]="aindData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="wind" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="WinLoss" negativePointColor="red" [dataSource]="windData" [tooltipSettings]="areatooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="cind" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Column" [axisSettings]="minInd" negativePointColor="red" [dataSource]="cindData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                </tr>
+                <tr style="height: 80px">
+                    <td align="center"><b>Russia</b></td>
+                    <td>
+                        <ejs-sparkline id="prus" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            negativePointColor="red" [dataSource]="prusData" [tooltipSettings]="pausTooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="arus" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Area" negativePointColor="red" [border]="border" [dataSource]="arusData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="wrus" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="WinLoss" negativePointColor="red" [dataSource]="wrusData" [tooltipSettings]="areatooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="crus" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Column" [axisSettings]="minRus" negativePointColor="red" [dataSource]="crusData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                </tr>
+                <tr style="height: 80px">
+                    <td align="center"><b>Sweden</b></td>
+                    <td>
+                        <ejs-sparkline id="pswe" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            negativePointColor="red" [dataSource]="psweData" [tooltipSettings]="pausTooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="aswe" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Area" negativePointColor="red" [border]="border" [dataSource]="asweData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="wswe" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="WinLoss" negativePointColor="red" [dataSource]="wsweData" [tooltipSettings]="areatooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="cswe" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Column" [axisSettings]="minSwe" negativePointColor="red" [dataSource]="csweData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                </tr>
+                <tr style="height: 80px">
+                    <td align="center"><b>United Kingdom</b></td>
+                    <td>
+                        <ejs-sparkline id="puk" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            negativePointColor="red" [dataSource]="pukData" [tooltipSettings]="pausTooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="auk" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Area" negativePointColor="red" [border]="border" [dataSource]="aukData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="wuk" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="WinLoss" negativePointColor="red" [dataSource]="wukData" [tooltipSettings]="areatooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="cuk" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Column" [axisSettings]="minUk" negativePointColor="red" [dataSource]="cukData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                </tr>
+                <tr style="height: 80px">
+                    <td align="center"><b>United Sates</b></td>
+                    <td>
+                        <ejs-sparkline id="pus" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            negativePointColor="red" [dataSource]="pusData" [tooltipSettings]="pausTooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="aus" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Area" negativePointColor="red" [border]="border" [dataSource]="ausData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="wus" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="WinLoss" negativePointColor="red" [dataSource]="wusData" [tooltipSettings]="areatooltipSettings"
+                            xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                    <td>
+                        <ejs-sparkline id="cus" height="50px" width="150px" lineWidth=2 valueType="Category" fill="#3C78EF"
+                            type="Column" [axisSettings]="minUs" negativePointColor="red" [dataSource]="cusData"
+                            [tooltipSettings]="areatooltipSettings" xName="xval" yName="yval"></ejs-sparkline>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div style="float: right; margin-right: 10px;">Source:
+    <a href="https://www.indexmundi.com/g/g.aspx?v=21&v=21000&v=24&v=25&v=27&c=as&c=ch&c=fr&c=gm&c=in&c=rs&c=sn&c=sz&c=uk&c=us&l=en/"
+        target="_blank"> www.indexmundi.com</a>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample visualizes population, population density, population growth rate, and birth rate of various
+        countries from 2005
+        to 2014.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render a sparkline in a table. The color and type of the sparklines have
+        been customized.
+        Tooltip is enabled in this example. To see the tooltip in action, hover the mouse over the data points or tap
+        on a data point in touch enabled devices.
+    </p>
+    <br />
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Sparkline component features are segregated into individual feature-wise modules. To use a tooltip, inject the
+        <code>SparklineTooltip</code> module using the
+        <code>Sparkline.Inject(SparklineTooltip)</code> method.
+    </p>
+
+</div>

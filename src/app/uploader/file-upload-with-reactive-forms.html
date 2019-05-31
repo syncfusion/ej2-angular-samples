@@ -1,0 +1,80 @@
+<div class="control-section">
+        <div class="col-lg-12">
+                <h4 class="form-title">Photo Contest</h4>
+            <div class="control_wrapper" id="control_wrapper" style="margin: 25px auto;">
+              <form id="reactive" [formGroup]="form">
+                  <div class="form-group" style="padding-top: 11px;">
+                          <div class="e-float-input">
+                              <input type="text" id="name" name="name" class="required" formControlName="name">
+                              <span class="e-float-line"></span>
+                              <label class="e-float-text e-label-top" for="name">Name</label>
+                          </div>   
+                          <app-field-error-display [displayError]="isFieldValid('name')" errorMsg="* Please enter your name">
+                          </app-field-error-display>               
+                      </div>
+                      <div class="form-group" style="padding-top: 11px;">
+                              <div class="e-float-input">
+                                  <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" formControlName="email" class="required">
+                                  <span class="e-float-line"></span>
+                                  <label class="e-float-text e-label-top" for="email">Email</label>
+                              </div>
+                          <app-field-error-display [displayError]="isFieldValid('email')" errorMsg="* Please enter valid email">
+                          </app-field-error-display>
+                      </div>
+                      
+                      <div class="form-group" style="padding-top: 11px;">
+                              <div class="e-float-input">
+                                  <input type="number" id="mobileno" name="mobile" formControlName="mobile" class="required">
+                                  <span class="e-float-line"></span>
+                                  <label class="e-float-text e-label-top" for="mobile">Mobile No</label>
+                              </div>
+                          <app-field-error-display [displayError]="isFieldValid('mobile')" errorMsg="* Please enter your mobile number">
+                          </app-field-error-display>
+                      </div>
+                          <div class="form-group" style="padding-top: 11px;">
+                                  <div class="e-float-input upload-area">
+                                      <input type="text" id="upload" name="upload" [(ngModel)]="uploadInput" readonly formControlName="upload" class="required">
+                                      <button id="browse" class="e-control e-btn e-info" (click)='browseClick()'>Browse...</button>                        
+                                      <span class="e-float-line"></span>
+                                      <label class="e-float-text e-label-top" for="upload">Choose a file</label>
+                                  </div>
+                                  <app-field-error-display [displayError]="isFieldValid('upload')" errorMsg="* Please select an image file">
+                                  </app-field-error-display>
+                                  <ejs-uploader #defaultupload id='fileupload' allowedExtensions = "image/*" [autoUpload]=false [multiple]='multiple'  (selected)='onFileSelect($event)'></ejs-uploader>                                        
+                          </div>
+                        
+                          <div class="form-group" style="padding-top: 11px;">
+                                  <div class="e-float-input">
+                                      <textarea class="address-field" rows="2" id="Address"></textarea>
+                                      <span class="e-float-line"></span>
+                                      <label class="e-float-text e-label-top">Address</label>
+                                  </div>
+                            <div class="submitBtn">
+                              <button class="submit-btn e-btn" id="submit-btn" [disabled]="form.invalid" type="reset" (click)= "Submit()">Submit</button>
+                              <div class="desc"><span>*This button is not a submit type and the form submit handled from externally.</span></div>                     
+                            </div>
+                          </div>                                       
+                  </form> 
+                  <ejs-dialog id="confirmationDialog" #Dialog [buttons]='dlgButtons' [animationSettings]='animationSettings' [header]='formHeader' [showCloseIcon]='showCloseIcon' [content]='content'  [target]='target' [width]='width' [visible]="visible" [isModal]="isModal" >
+                </ejs-dialog>
+          </div>
+        </div> 
+    </div>
+    <div id="action-description">
+        <p>  This example demonstrates how to integrate Upload component in Angular reactive forms. </p>
+        <p>  The submit button will be enabled once the form is filled with valid values. You can fill the details and submit the form. </p>
+    </div>
+    
+    <div id="description">
+        <p> The Upload component can be integrating with Angular reactive forms. In this sample, all the form fields are validated by using FormGroup and FormControl. The form will be reset to defaults after submitting the form. </p>
+     
+        <p>The following validation is enabled in this sample: </p>
+            <ul>
+                <li> <code> Name </code> - required </li>
+                <li> <code> Email </code> - required and valid email address </li>
+                <li> <code> Mobile number </code> - required, number only, and minimum length as 10 </li>
+                <li> <code> Photo </code> - allow to upload images </li>
+                <li> <code> Address </code> - optional </li>
+            </ul>
+        <p> For more information about Angular reactive forms can be found in this <a target="_blank" href="https://angular.io/guide/reactive-forms">reference link</a>. </p>
+    </div>

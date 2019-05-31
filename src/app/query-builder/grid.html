@@ -1,0 +1,44 @@
+<div id="action-description">
+  <p>This sample demonstrates the integration of the Data Grid component to showcase data population based on the
+    created filters using the Query Builder component.</p>
+</div>
+
+<div class="col-lg-12 control-section" style="min-height: auto;">
+  <ejs-querybuilder #querybuilder class="row" [dataSource]="dataSource" width="100%" [rule]="importRules"
+    (ruleChange)="updateRule($event)">
+    <e-columns>
+      <e-column field="TaskID" label="Task ID" type="number"></e-column>
+      <e-column field="Name" label="Name" type="string"></e-column>
+      <e-column field="Category" label="Category" type="string"></e-column>
+      <e-column field="SerialNo" label="Serial No" type="string"></e-column>
+      <e-column field="InvoiceNo" label="Invoice No" type="string"></e-column>
+      <e-column field="Status" label="Status" type="string"></e-column>
+    </e-columns>
+  </ejs-querybuilder>
+</div>
+<div class="col-lg-12 control-section">
+  <div class="content-wrapper">
+    <ejs-grid id="Grid" #grid [dataSource]="gridDataSource" [allowSelection]="true" [allowPaging]="true" [pageSettings]="pageSettings" width="100%" (created)="onGridCreated()">
+      <e-columns>
+        <e-column field="TaskID" headerText="Task ID" width="120" textAlign="Right"></e-column>
+        <e-column field="Name" headerText="Name" width="140"></e-column>
+        <e-column field="Category" headerText="Category" width="140" textAlign="Right"></e-column>
+        <e-column field="InvoiceNo" headerText="Invoice No" width="130"></e-column>
+        <e-column field="Status" headerText="Status" width="120"></e-column>
+        <e-column field="SerialNo" headerText="Serial No" width="130"></e-column>
+      </e-columns>
+    </ejs-grid>
+  </div>
+</div>
+
+<div id="description">
+  <p>
+    This sample illustrates how to integrate the Data Grid component with the Query Builder. The Data Grid component
+    will be refreshed while editing the filters in Query Builder.
+  </p>
+  <p>
+    More information about Query Builder can be found in this
+    <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/query-builder">
+      documentation</a> section.
+  </p>
+</div>

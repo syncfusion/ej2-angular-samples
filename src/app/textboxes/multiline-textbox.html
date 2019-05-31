@@ -1,0 +1,49 @@
+<div class="col-lg-8 control-section multiline">
+    <div class="content-wrapper">
+        <div class="multiline-row">
+            <ejs-textbox id="textarea" #default rows="2" placeholder="Enter your address" floatLabelType="Auto" [multiline]="true" required></ejs-textbox>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4 ">
+    <div class="property-section">
+        <div class="property-panel-header">Properties</div>
+            <table id="property"  class="multiline-property">
+                <tr>
+                    <td class="left-side">Float label type</td>
+                    <td><ejs-dropdownlist id="floatLabel" #select [dataSource]='floatData' [(value)]='value' [fields]='fields' [placeholder]='waterMark' (change)='floatHandler($event)'></ejs-dropdownlist></td>
+                </tr>
+                <tr>
+                    <td class="left-side">Disabled</td>
+                    <td><ejs-checkbox id="sample" #enabled [checked]="false" (change)="enabledHandler($event)"></ejs-checkbox></td>
+                </tr>
+                <tr>
+                    <td class="left-side">Read only</td>
+                    <td><ejs-checkbox id="sample1" #readonly [checked]="false" (change)="readonlyHandler($event)"></ejs-checkbox></td>
+                </tr>
+                <tr>    
+                    <td class="left-side"> Rows</td>
+                    <td><ejs-numerictextbox id="row_value" #rows value="2" format="###" min="1" max="20" (change)="rowHandler($event)"></ejs-numerictextbox></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+<div id="action-description">
+        <p>
+                This example demonstrates the multiline functionalities of the textbox component. 
+                Enter or fill the textbox with multiple rows of text. 
+                Choose the corresponding option from the property panel to update the multiline textbox.
+        </p>
+</div>
+<div id="description">
+        <p>The Multiline Textbox is used to edit or display multiple lines of text that helps you to accept address, description, comments, feedbacks, and more in a form. 
+                In this sample, rendered multiline textbox from <b>textarea</b> tag and the following options are available to customize it:</p>
+        <ul>
+                <li>Choose float label types either 'Never', 'Always', or 'Auto' to float the placeholder text.</li>
+                <li>To make a read-only multiline textbox, check the "read-only" option.</li>
+                <li>Disable the textbox by unchecking an "enabled" option.</li>
+                <li>Change the number of rows count to restrict the length of the input.</li> 
+            </ul>
+        <p>Note: After resizing the multiline textbox manually, the selected rows option from the property panel is not updated to the multiline textbox.</p>
+</div>

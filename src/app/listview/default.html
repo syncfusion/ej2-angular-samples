@@ -1,0 +1,24 @@
+<div id="action-description">
+    <p>This sample demonstrates the default functionalities of the ListView. Click any list item to select and highlight an item.</p>
+</div>
+
+<div class="control-section">
+    <div id = 'flat-list'>
+    <h4>Flat List</h4>
+    <!-- ListView element -->
+    <ejs-listview id='sample-list-flat' [dataSource]='data'></ejs-listview>
+    </div>
+    <div id = 'group-list'>
+    <h4>Group List</h4>
+    <!-- Group ListView element -->
+    <ejs-listview id='sample-list-group' [dataSource]='groupData' [fields]='fields'></ejs-listview>
+    </div>
+</div>
+
+<div id="description">
+    <p>ListView component represent data in interactive hierarchical structure interface across different layouts or views, that also has the features of data-binding, template rendering, and grouping.</p>
+
+    <p>The group list allows to group the relevant items under a logical category by mapping the <code>groupBy</code> field.</p>
+
+    <p>In this sample, <b>Cars</b> are grouped based on their <b>category</b>.</p>
+</div>

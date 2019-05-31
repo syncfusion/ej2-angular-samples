@@ -1,0 +1,82 @@
+<div class="sb-left-pane-header">
+    <div class="sb-header-top">
+        <div class="sb-ej2">
+            <div class="sb-mobile-logo"></div>
+            <div class="sb-name">Essential JS 2</div>
+        </div>
+    </div>
+</div>
+<div class="sb-home" onclick="document.getElementById('sb-home').click()">
+    <div class="sb-home-link sb-icons sb-icon-Home"></div>
+    <div class="sb-home-text">
+        <span>HOME</span>
+        <a id="sb-home" href="https://ej2.syncfusion.com/home/angular.html"></a>
+    </div>
+</div>
+<div class="sb-control-navigation e-view">
+    <ejs-treeview id="controlTree" #controlTree class="e-view sb-hide" [nodeTemplate]="nodeTemplate" [fields]="fields" (nodeSelected)='onComponentSelect($event)'>
+        <ng-template #nodeTemplate="" let-data="">
+            <div>
+                <span class="tree-text">{{data.name}}</span>
+                <span *ngIf="data.type === 'update'; else elseBlock" class="e-badge sb-badge e-samplestatus {{data.type}} tree tree-badge">Updated</span>
+                <ng-template #elseBlock>
+                    <span *ngIf="data.type" class="e-badge sb-badge e-samplestatus {{data.type}} tree tree-badge">{{data.type}}</span>
+                </ng-template>
+            </div>
+        </ng-template>
+    </ejs-treeview>
+    <div id="controlSamples" class="e-view">
+        <div id="sb-left-back" class="back" (click)="onAllControlClick($event)">
+            <div class="sb-icons sb-icon-Back"></div>
+            <div class="control-name">All Controls</div>
+        </div>
+        <ejs-listview id="controlList" #controlList class="e-view" [dataSource]="listData" [fields]="listFields" (select)='onSampleSelect($event)'
+            (actionComplete)='afterListviewRendered($event)'>
+            <ng-template #template let-data>
+                <div class="e-text-content e-icon-wrapper">
+                    <span class="e-list-text" role="listitem">{{data.name}}
+                    </span>
+                    <span *ngIf="data.type === 'update'; else elseBlock" class="e-badge sb-badge e-samplestatus {{data.type}}">Updated</span>
+                    <ng-template #elseBlock>
+                        <span *ngIf="data.type" class="e-badge sb-badge e-samplestatus {{data.type}}">{{data.type}}</span>
+                    </ng-template>
+                    <div *ngIf="data.samples" class="e-icons e-icon-collapsible"></div>
+                </div>
+            </ng-template>
+            <ng-template #groupTemplate let-data>
+                <div class="e-text-content">
+                    <span class="e-list-text">{{data.items[0].category}}</span>
+                </div>
+            </ng-template>
+        </ejs-listview>
+    </div>
+</div>
+
+<div class="sb-left-pane-footer">
+    <div class="sb-mobile-header-buttons">
+        <a href="https://www.syncfusion.com/products/essential-js2" target="_blank">
+            <div class="sb-mobile-header-button">
+                About</div>
+        </a>
+        <a href="https://www.syncfusion.com/products/essential-js2" target="_blank">
+            <div class="sb-mobile-header-button">Pricing</div>
+        </a>
+    </div>
+    <div class="sb-footer-left">
+        <div class="sb-footer-links">
+            <a href="https://help.syncfusion.com/essential-js2/angular/documentation/" target="_blank">
+                <div class="sb-footer-link">Documentation</div>
+            </a>
+            <a href="https://www.syncfusion.com/forums/essentialjs2" target="_blank">
+                <div class="sb-footer-link">Forum</div>
+            </a>
+            <a href="https://blog.syncfusion.com/" target="_blank">
+                <div class="sb-footer-link">Blog</div>
+            </a>
+            <a href="https://www.syncfusion.com/kb" target="_blank">
+                <div class="sb-footer-link">Knowledge Base</div>
+            </a>
+        </div>
+        <div class="sb-footer-copyright">Copyright © 2001-2018 Syncfusion Inc.</div>
+    </div>
+</div>

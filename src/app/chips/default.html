@@ -1,0 +1,79 @@
+<div class="control-section">
+    <div id="chip-default-wrapper">
+        <div class="chips-headers">Chips</div>
+
+        <div class="sample-padding">
+            <ejs-chiplist id="chip-default">
+                <e-chips>
+                    <e-chip text="Apple" cssClass="e-primary"></e-chip>
+                    <e-chip text="Microsoft" cssClass="e-info"></e-chip>
+                    <e-chip text="Google" cssClass="e-success"></e-chip>
+                    <e-chip text="Tesla" cssClass="e-warning"></e-chip>
+                    <e-chip text="Intel" cssClass="e-danger"></e-chip>
+                </e-chips>
+            </ejs-chiplist>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="chips-headers">Input Chips</div>
+
+        <div class="sample-padding">
+            <ejs-chiplist id="chip-avatar" enableDelete="true">
+                <e-chips>
+                    <e-chip text="Anne" leadingIconCss="anne"></e-chip>
+                    <e-chip text="Janet" leadingIconCss="janet"></e-chip>
+                    <e-chip text="Laura" leadingIconCss="laura"></e-chip>
+                    <e-chip text="Margaret" leadingIconCss="margaret"></e-chip>
+                </e-chips>
+            </ejs-chiplist>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="chips-headers">Filter Chips</div>
+
+        <div class="sample-padding">
+            <ejs-chiplist id="chip-filter" selection="Multiple" [selectedChips]="this.filterSelected">
+                <e-chips>
+                    <e-chip text="Extra small"></e-chip>
+                    <e-chip text="Small"></e-chip>
+                    <e-chip text="Medium"></e-chip>
+                    <e-chip text="Large"></e-chip>
+                    <e-chip text="Extra large"></e-chip>
+                </e-chips>
+            </ejs-chiplist>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="chips-headers">Choice Chips</div>
+
+        <div class="sample-padding">
+            <ejs-chiplist id="chip-choice" selection="Single" cssClass="e-outline" [selectedChips]="this.choiceSelected">
+                <e-chips>
+                    <e-chip text="Send a text" avatarIconCss="text"></e-chip>
+                    <e-chip text="Set a remainder" avatarIconCss="alarm"></e-chip>
+                    <e-chip text="Read my emails" avatarIconCss="mail"></e-chip>
+                    <e-chip text="Play a game" avatarIconCss="game"></e-chip>
+                </e-chips>
+            </ejs-chiplist>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates the default functionalities of Chips with different types and predefined styles. Click
+        and interact the chip, to select single or multiple options from chips collection.</p>
+</div>
+<div id="description">
+    <p>
+        Chip is a small block of essential information that triggers an event on click action. It contains the text, an
+        image, or both, mostly used in contacts, mails or filter tags.
+    </p>
+    <p>In this sample, default, input, filter and choice chips are demonstrated with their default functionalities.</p>
+    <ol>
+        <li><b>Input chip</b>– Basic chip with delete icon, enables to remove chips from the chip list collection.</li>
+        <li><b>Choice chip</b> – Used to choose a choice from available options.</li>
+        <li><b>Filter chip</b> – Used to select multiple choices from available options.</li>
+    </ol>
+</div>

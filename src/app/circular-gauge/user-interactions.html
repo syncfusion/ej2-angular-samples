@@ -1,0 +1,87 @@
+<div id="action-description">
+    <p>
+        This sample visualizes pointer drag in circular gauge. Position of pointer value can be changed by using <code>Pointer Value</code> and we can drag the pointer by enabling drag option.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-md-8">
+        <ejs-circulargauge (load)='load($event)' style='display:block;' #circulargauge enablePointerDrag=true (dragMove)='dragMove($event)' (dragEnd)='dragEnd($event)'
+            background='transparent'>
+            <e-axes>
+                <e-axis startAngle=220 endAngle=140 [lineStyle]=lineStyle [labelStyle]=labelStyle [majorTicks]=majorTicks [minorTicks]=minorTicks
+                    radius='80%' minimum=0 maximum=120>
+                    <e-annotations>
+                        <e-annotation [content]='content1' radius='45%' angle=180 zIndex='1'>
+                        </e-annotation>
+                    </e-annotations>
+                    <e-ranges>
+                        <e-range start=0 end=40 [startWidth]="rangeWidth" [endWidth]="rangeWidth" radius='108%' color="#30B32D">
+                        </e-range>
+                        <e-range start=40 end=100 [startWidth]="rangeWidth" [endWidth]="rangeWidth" radius='108%' color="#E5C31C">
+                        </e-range>
+                        <e-range start=100 end=120 [startWidth]="rangeWidth" [endWidth]="rangeWidth" radius='108%' color="#F03E3E">
+                        </e-range>
+                    </e-ranges>
+                    <e-pointers>
+                        <e-pointer type='Marker' value=70 markerShape='InvertedTriangle' radius='110%' [markerHeight]='markerHeight' color='#E5C31C'
+                            [markerWidth]='markerWidth'>
+                        </e-pointer>
+                        <e-pointer value=70 radius='60%' color='#E5C31C' [cap]='cap' [needleTail]='tail' markerWidth=5>
+                        </e-pointer>
+                    </e-pointers>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
+    </div>
+    <div class="col-md-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties" class="property-panel-table" style="width: 100%; margin:10px">
+                    <tr style="height: 50px">
+                        <td style="width: 30%">
+                            <div id='pointerValue'>Pointer Value <span> &nbsp;&nbsp;&nbsp;70</span> </div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="range" id="value" value="70" min="0" max="180" style="width:90%" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 20%">
+                            <div id='enablePointer'>Enable Drag</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="checkbox" id="enable" checked="true" style="width:90%" />
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p style="font-weight: 500">Description</p>
+    <p>
+        In this example, you can see how to move pointers in gauge using drag and drop. Use <code>enablePointerDrag</code>        property, to achieve this behavior.
+    </p>
+    <br>
+    <p>In this sample, you can drag the pointer using mouse or touch, the pointer value will be updated in an annotation placed
+        in the gauge.
+    </p>
+    <p>
+        More information on the gauge can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/">documentation section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

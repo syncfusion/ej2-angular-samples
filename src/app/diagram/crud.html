@@ -1,0 +1,136 @@
+<div id="action-description">
+    <p>
+        This sample visualizes diagram elements created from database with diagram CRUD. Users can read, update, and
+        delete database entities as diagram elements.
+    </p>
+</div>
+<div class='control-section'>
+<style>
+    @font-face {
+        font-family: 'e-ddb-icons';
+        src: url(data:application/x-font-ttf;charset=utf-8;base64,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) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .e-ddb-icons {
+        font-family: 'e-ddb-icons';
+        speak: none;
+        font-size: 55px;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .e-add::before {
+        content: '\e705';
+    }
+
+    .e-update::before {
+        content: '\e703';
+    }
+
+    .e-delete::before {
+        content: '\e701';
+    }
+
+    .material .e-add::before {
+        content: '\e704';
+    }
+
+    .material .e-update::before {
+        content: '\e702';
+    }
+
+    .material .e-delete::before {
+        content: '\e707';
+    }
+
+    .bootstrap .e-add::before {
+        content: '\e706';
+    }
+
+    .bootstrap .e-update::before {
+        content: '\e708';
+    }
+
+    .bootstrap .e-delete::before {
+        content: '\e700';
+    }
+
+    .e-toolbar .e-toolbar-items .e-toolbar-item .e-tbar-btn.e-btn.e-tbtn-txt .e-icons.e-btn-icon {
+        padding: 3px;
+    }
+
+    .showDropdown {
+        display: none;
+    }
+    #diagram-space {
+        width:100%;
+    }
+</style>
+    <div style='width: 100%;height: 10%'>
+        <!-- Initializes ToolBar control. -->
+    <ejs-toolbar #toolbar id='toolbar' (clicked)='toolbarClick($event)' (created)='toolbarCreate($event)'>
+        <e-items>
+            <e-item id='Add' tooltipText='Add' prefixIcon='e-ddb-icons e-add' text='Add'></e-item>
+            <e-item type='Separator'></e-item>
+            <e-item id='Edit' tooltipText='Edit' prefixIcon='e-ddb-icons e-update' text='Edit'></e-item>
+            <e-item type='Separator'></e-item>
+            <e-item id='Delete' tooltipText='Delete' prefixIcon='e-ddb-icons e-delete' text='Delete'></e-item>
+            <e-item type='Separator'></e-item>
+        </e-items>
+    </ejs-toolbar>
+</div>
+<div style='width: 100%;height: 80%;border-width: 0 1px 1px 1px; border-style: solid; border-color:#D7D7D7'>
+    <div id='diagram-space' class='sb-mobile-diagram'>
+        <!-- Initializes Diagram control. -->
+    <ejs-diagram #diagram id='diagram' width='100%' height='600px' [layout]='layout' [dataSourceSettings]='data' [snapSettings]='snapSettings' [getConnectorDefaults]='getConnectorDefaults' [getNodeDefaults]='getNodeDefaults' [setNodeTemplate]='setNodeTemplate' (selectionChange)='selectionChange($event)'
+        (sourcePointChange)='connectionChange($event)' (targetPointChange)='connectionChange($event)'>
+    </ejs-diagram>
+   </div>
+  </div>
+</div>
+<!-- Initialize Dialog control -->
+<ejs-dialog #dialog id='editDialog' [buttons]='dlgButtons' width='300px' [visible]='false' isModal='true' showCloseIcon='true'>
+    <ng-template #content>
+            <div class='showLabel'>
+                <!-- Initialize Textbox control -->
+                <ejs-textbox #Description1 id='Description1' placeholder='Enter Description' floatLabelType='Always'></ejs-textbox>
+            </div>
+            <div class='showLabel' style='padding-top: 14px'>
+                <!-- Initialize Textbox control -->
+                <ejs-textbox #Color id='Color' placeholder='Enter Color' floatLabelType='Always'></ejs-textbox>
+            </div>
+            <div class='showDropdown'>
+                <!-- Initialize Dropdownlist control to display an sourceNodes in diagram. -->
+                <ejs-dropdownlist #SourceId id='SourceId' placeholder='select sourceId' [fields]='fields' (created)='sourceDropdownCreate($event)'
+                    popupHeight='220px' (change)='sourceDropdownChange($event)'>
+                </ejs-dropdownlist>
+            </div>
+            <div class='showDropdown' style='padding-top: 14px'>
+                <!-- Initialize Dropdownlist control to display an targetNodes in diagram. -->
+                <ejs-dropdownlist #TargetId id='TargetId' placeholder='select targetId' [fields]='fields' (created)='targetDropdownCreate($event)'
+                    popupHeight='220px' (change)='targetDropdownChange($event)'>
+                </ejs-dropdownlist>
+            </div>
+    </ng-template>
+</ejs-dialog>
+
+<div id="description">
+    <p>
+        This example shows how the user reads the data source and performs add, edit, delete of data in the data source
+        at runtime. The <code>crudAction</code> property of the <code>dataSourceSettings</code> and <code>crudAction</code> property of the
+        <code>connectionDataSource</code> allow you to define the server-side method name for <code>create</code>, <code>read</code>, <code>update</code>, and
+        <code>delete</code> operations.
+    </p>
+    <p>
+        The <code>insertData</code> method is used to send the newly added/inserted data from client to server side. Likewise,
+        <code>updateData</code> and <code>removeData</code> are used to send the updated and deleted diagram elements to the server.
+    </p>
+    <br>
+</div>

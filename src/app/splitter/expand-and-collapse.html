@@ -1,0 +1,59 @@
+<div id="target" class="control-section default-splitter">
+        <ejs-splitter id='outterSplitter' #splitterInstance class="splitter-expand" #horizontal height='385px' width='100%' separatorSize=3 (created)='onCreated()'>
+            <e-panes>
+                <e-pane size ='48%' [collapsible]='true'> 
+                  <ng-template #content>
+			<div class='splitter-expand-content'>
+                  <a href="https://www.syncfusion.com/ebooks/neuralnetworks" target="_blank">Neural Networks Using C# Succinctly</a>
+              <p>Neural networks are an exciting field of software development used to calculate outputs from input data. 
+              While the idea seems simple enough, the implications of such networks are staggering—think optical character recognition, 
+              speech recognition, and regression analysis. With Neural Networks Using C# Succinctly by James McCaffrey, you’ll learn 
+              how to create your own neural network to solve classification problems, or problems where the outcomes can only be one of 
+              several values. <br/><br/>Learn about encoding and normalizing data, activation functions and how to choose the right one, and ultimately 
+              how to train a neural network to find weights and bias values that provide accurate predictions.
+              An artificial neural network (sometimes abbreviated ANN, or shortened to just "neural network" when the context is clear) is 
+              a software system that loosely models biological neurons and synapses. Before explaining exactly how neural networks work, it is 
+              useful to understand what types of problems they can solve. The image represents a typical problem that might be 
+              solved using a neural network. <br/><br/>The goal of the problem is to predict a person's political inclination based on his or her 
+              gender, age, home location, and annual income. One hurdle for those new to neural networks is that the vocabulary varies 
+              greatly.
+          </p>
+      </div>
+                  </ng-template>
+                </e-pane>
+                <e-pane [collapsible]='true'>
+                    <ng-template #content>
+       
+                    </ng-template>
+                </e-pane>
+            </e-panes>
+        </ejs-splitter>
+</div>
+<style>
+    .control-section {
+        min-height: 370px;
+        margin-bottom: 15px;
+        margin-top: 10px;
+    }
+
+.default-splitter .splitter-expand-content p,
+.default-splitter .splitter-expand-content a {
+    padding: 10px;
+}
+.splitter-expand .splitter-expand-content {
+    padding: 12px;
+}
+    .splitter-expand .splitter-expand-content {
+        padding: 10px;
+    }
+	/* styles to hide scroll bars */
+	.splitter-expand .e-pane.e-pane-horizontal.e-scrollable::-webkit-scrollbar,
+	.splitter-expand .e-pane.e-pane-vertical.e-scrollable::-webkit-scrollbar {
+        display: none; 
+	}
+
+	.splitter-expand .e-pane.e-pane-horizontal.e-scrollable, .splitter-expand .e-pane.e-pane-vertical.e-scrollable {
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+</style>

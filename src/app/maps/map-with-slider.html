@@ -1,0 +1,56 @@
+
+    <div class="control-section">
+            
+                    <ejs-maps id='container' style="display:block;" (load)="load($event)" (loaded)="loaded($event)" [layers]='layers'  [zoomSettings]="zoomSettings" [titleSettings]="titleSettings" [margin] = 'margin' [annotations]= 'annotations' #maps>
+                    </ejs-maps>
+               
+        <div id="mapslider-annotation" style="display: none;">
+            <div id="mapannotation" style="width:300px"></div>
+        </div>
+        <br><br>
+        <div style="float: right; margin-right: 10px;">Source:
+            <a href="https://en.wikipedia.org/wiki/List_of_North_American_countries_by_population" target="_blank">Population growth in North America</a>
+         </div>
+    </div>
+    <div id="action-description">
+            <p>
+                This sample visualizes the average annual population growth of the countries in the North America continent.
+           </p>
+        </div>
+        <div id="description">
+            <p>
+                In this example, the range color mapping is applied to the shapes based on the population growth of the countries in percentage. The EJ2 Slider control is placed at the bottom of the maps to control the minimum and maximum color ranges.
+            </p>
+            <p>
+                The tooltip is enabled in this example. To see the tooltip in action, hover the mouse over a marker or tap a marker in touch enabled devices.
+            </p>
+        <br/>
+            <p style="font-weight: 500">Injecting Module</p>
+            <p>
+                The maps component features are segregated into individual modules by feature. To use a marker, inject the <code>Marker</code> module using the <code>Maps.Inject(Marker)</code> method, and to use a legend, inject the <code>Legend</code> module.
+            </p>
+           
+        </div>
+        <!-- style for annotation asnd slider-->
+        <style>
+            #mapannotation.e-control.e-slider .e-handle {
+                    background-color: #4B4B4B ;
+                }
+                #container_Annotation_0 .e-control-wrapper.e-slider-container.e-horizontal .e-slider-track {
+                background: -webkit-linear-gradient(left, #7E9CDC 0, #DCD57E 17%, #7EDCA2 34%, #6EB5D0 51%, #A6DC7E 68%, #DCA87E 85%, #d075c6 100%);
+                background: linear-gradient(left, #7E9CDC 0, #DCD57E 17%, #7EDCA2 34%, #6EB5D0 51%, #A6DC7E 68%, #DCA87E 85%, #d075c6 100%);
+                background: -moz-linear-gradient(left, #7E9CDC 0, #DCD57E 17%, #7EDCA2 34%, #6EB5D0 51%, #A6DC7E 68%, #DCA87E 85%, #d075c6 100%);
+            }
+            .e-limit-bar.e-limits {
+                background-color: transparent !important;
+            }
+            .e-control-wrapper.e-slider-container.e-horizontal .e-range {
+                height: 0px !important;
+            }
+            #mapannotation.e-control.e-slider .e-slider-track {
+                height: 8px;
+                top: calc(50% - 4px);
+                border-radius: 5px;
+            }
+        </style>
+    

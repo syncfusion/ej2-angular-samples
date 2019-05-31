@@ -1,0 +1,109 @@
+<div id="action-description">
+    <p>This sample visualizes the complete event schedule of the 90th Academy awards.
+        Taskbars are customized using template support and timeline header is customized for a better view of the data.
+    </p>
+</div>
+
+<div class="control-section">
+    <ejs-gantt id="ganttTaskTemplate" height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
+        [columns]="columns" [splitterSettings]="splitterSettings" [treeColumnIndex]="1" [rowHeight]="75"
+        [taskbarHeight]="65" [dayWorkingTime]="dayWorkingTime" [durationUnit]="durationUnit" [timelineSettings]="timelineSettings"
+        [labelSettings]="labelSettings" height="400px" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+        [eventMarkers]="eventMarkers" dateFormat="hh:mm a"> 
+        <ng-template #taskbarTemplate let-data>
+            <ng-container *ngIf="data.TaskName == 'Oscar moments';else OscarPerformance">
+                <div class="e-gantt-child-taskbar e-custom-moments" style="height:100%;border-radius:5px;">
+                    <ng-container *ngIf="data.ganttProperties.duration < 4;else template1">
+                        <img class="moments" height="32px" width="32px"/>
+                    </ng-container>
+                    <ng-template #template1>
+                        <img class="moments"  height="32px" width="32px"/>
+                        <span class="e-task-label" style="position:absolute;top:15px;font-size:12px;text-overflow:ellipsis;height:90%;overflow:hidden;">{{data.Performance}}</span>
+                    </ng-template>
+                </div>
+            </ng-container>
+            <ng-template #OscarPerformance>
+                <ng-container *ngIf="data.TaskName == 'Oscar performance';else movieWinner">
+                    <div class="e-gantt-child-taskbar e-custom-performance" style="height:100%;border-radius:5px;">
+                        <ng-container *ngIf="data.ganttProperties.duration <= 5;else template2">
+                            <img class="face-mask"  height="32px" width="32px" />
+                        </ng-container>
+                        <ng-template #template2>
+                            <img class="face-mask"  height="32px" width="32px" />
+                            <span class="e-task-label" style="position:absolute;top:5px;font-size:12px;text-overflow:ellipsis;height:90%;overflow:hidden;">{{data.Performance}}</span>
+                        </ng-template>
+                    </div>
+                </ng-container>
+            </ng-template>
+            <ng-template #movieWinner>
+                <div class="e-gantt-parent-taskbar e-custom-parent" style="height:100%;border-radius:5px;text-overflow:ellipsis;">
+                    <ng-container *ngIf="data.ganttProperties.duration < 4;else template3">
+                        <img class="oscar"  height="32px" width="32px"  />
+                    </ng-container>
+                    <ng-template #template3>
+                        <ng-container *ngIf="data.Winner && data.Movie;else template4">
+                            <img class="oscar"  height="32px" width="32px"  />
+                            <span class="e-task-label" style="position:absolute; top:13px;font-size:14px;">{{data.taskData.Winner}}</span>
+                            <span class="e-task-label" style="position:absolute;top:33px;font-size:10px;text-overflow:ellipsis;">{{data.taskData.Movie}}</span>
+                        </ng-container>
+                        <ng-container #template4 *ngIf="data.Movie && !data.Winner;else template5">
+                            <img class="oscar"  height="32px" width="32px"  />
+                            <span class="e-task-label" style="position:absolute; top:14px;font-size:12px;text-overflow:ellipsis;">{{data.taskData.Movie}} </span> 
+                        </ng-container>
+                        <ng-template #template5>
+                            <span class="e-task-label"></span> 
+                        </ng-template>
+                    </ng-template>
+                </div>
+            </ng-template>
+        </ng-template>
+        <ng-template #milestoneTemplate let-data>
+            <div>
+                <div class="e-gantt-milestone" style="position:absolute;">
+                    <img class="moments" height="24px" width="48px">
+                    <div
+                        class="e-milestone-top"
+                        style="border-right-width:26px; margin-top: -24px;border-left-width:26px;border-bottom-width:26px;"
+                    ></div>
+                    <div
+                        class="e-milestone-bottom"
+                        style="top:26px;border-right-width:26px; border-left-width:26px; border-top-width:26px;"
+                    ></div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #tooltipSettingsTaskbar let-data>
+            <div>
+                <ng-container *ngIf="data.Winner && data.Movie;else template6">
+                    {{data.Winner}} wins oscar award for {{data.Movie}}
+                </ng-container>
+                <ng-container #template6 *ngIf="data.Movie && !data.Winner;else template7">
+                    Oscar award for {{data.Movie}}
+                </ng-container>
+                <ng-template #template7>
+                    {{data.Performance}}
+                </ng-template>
+            </div>
+        </ng-template>
+    </ejs-gantt>
+    <div style="float: right; margin: 10px;">Source:
+        <a href="https://en.wikipedia.org/wiki/90th_Academy_Awards"
+            target='_blank'>https://en.wikipedia.org/</a>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        The Gantt chart provides support for customizing taskbar UI using taskbar template feature. The
+        <code>taskbarTemplate</code>
+        property accepts either string or HTML element`s ID value, which will be used as the template for the taskbars.
+        The summary tasks and the milestone items can also customized using the <code>parentTaskbarTemplate</code> and
+        <code>milestoneTemplate</code> properties.
+        In this demo, we have customized the taskbar UI to display the data from custom columns and the taskbarTemplate
+        is assigned with the ID of a SCRIPT element whose content is used as the template.
+    </p>
+    <p>
+        Gantt component features are segregated into individual feature-wise modules. To use markers, inject the
+        <code>DayMarkers</code> module.
+    </p>
+</div>

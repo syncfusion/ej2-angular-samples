@@ -1,0 +1,34 @@
+<div id="action-description">
+        <p>
+                This sample indicates the temperature of various cities of Australia in marker templates.
+           </p>
+</div>
+
+<div class="control-section">
+    <div align='center'>
+        <ejs-maps id='container' style="display:block;" [zoomSettings]='zoomSettings' 
+            [layers] = 'layers' [titleSettings] = "titleSettings" (load)="load($event)">
+        </ejs-maps>
+    </div>
+    <!--source link-->
+    <div style="float: right; margin-right: 10px;">
+        Source: <a href="http://www.bom.gov.au/calendar/annual/climate.shtml" target="_blank">www.bom.gov.au</a> 
+    </div>
+</div>
+<style> .markerTemplate { height:30px; width:30px; display:block; margin: auto; } </style>
+<div id='description'>
+   
+        <p>
+                In this example, you can see how to place a template as a marker in the map. Any custom HTML elements can be used as a marker. You can use the <code>palette</code> property in the <code>shapeSettings</code> to apply desired fill colors for the shapes.
+              </p>
+          <br/>
+              <p style="font-weight: 500">Injecting Module</p>
+              <p>
+                 Maps component features are segregated into individual feature-wise modules. To use a marker template, inject the <code>Marker</code> module using the <code>Maps.Inject(Marker)</code> method.
+              </p>
+              <p>
+                  More information on the markers can be found in this 
+                  <a target="_blank" href="">documentation section</a>.
+              </p>
+
+</div>

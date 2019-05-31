@@ -1,0 +1,38 @@
+
+.e-toolbar-item.e-ghidden .e-btn {
+    background: rgba(0, 0, 0, 0.12);
+    border-color: rgba(0, 0, 0, 0.12);
+    color: #212121;
+}
+
+.e-treegridlist .e-tbar-btn.e-btn,
+.e-treegridlist .e-btn  {
+    box-shadow: none;
+    text-transform: none;
+}
+
+/* custom code start*/
+.e-mastertext {
+    font-size: 15px;
+    font-family: Roboto;
+    opacity: 0.87;
+    padding: 1em;
+}
+.select-wrap {
+    padding: 0 0 10px 0;
+    font-family: Roboto;
+    padding: 1em;
+}
+
+@media (min-width: 480px) and (max-width:639px) {
+    .select-wrap {
+        width: 40%
+    }
+}
+
+@media (min-width:640px) {
+    .select-wrap {
+        width: 25%
+    }
+}
+/* custom code end*/

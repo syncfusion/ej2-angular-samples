@@ -1,0 +1,156 @@
+<style>
+    .diagram-userhandle .image-pattern-style {
+        background-color: white;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 50px;
+        width: calc((100% - 18px) / 3);
+        cursor: pointer;
+        border: 1px solid #D5D5D5;
+        background-position: center;
+        float: left;
+    }
+    
+    .diagram-userhandle .row {
+        margin: 10px 0px 0px 0px;
+    }
+    
+    .diagram-userhandle .row-header {
+        font-size: 15px;
+        font-weight: 500;
+        margin-top: 10px
+    }
+    
+    .diagram-userhandle .e-checkbox-wrapper .e-label {
+        font-size: 12px;
+    }
+    
+    .diagram-userhandle .col-xs-6 {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 5px;
+    }
+    
+    .diagram-userhandle .sb-child-row {
+        padding-top: 8px;
+    }
+</style>
+
+<div id="action-description">
+    <p>
+        This sample visualizes a simple flow diagram along with options to execute the frequently used commands using user handles.
+    </p>
+</div>
+<div class="control-section diagram-userhandle">
+    <div class="col-lg-8 control-section">
+        <div class="content-wrapper">
+            <ejs-diagram #diagram id="diagram" width="100%" height="700px" [selectedItems]='selectedItems' [getNodeDefaults]='getNodeDefaults' [snapSettings]='snapSettings' [getCustomTool]='getCustomTool' (created)='create($event)'>
+                <e-nodes>
+                    <e-node id='NewIdea' [width]=150 [height]=60 [offsetX]=300 [offsetY]=60 [shape]=terminator>
+                        <e-node-annotations>
+                            <e-node-annotation content='New idea identified'>
+                            </e-node-annotation>
+                        </e-node-annotations>
+                    </e-node>
+                    <e-node id='Meeting' [width]=150 [height]=60 [offsetX]=300 [offsetY]=155 [shape]=process>
+                        <e-node-annotations>
+                            <e-node-annotation content='Meeting with board'>
+                            </e-node-annotation>
+                        </e-node-annotations>
+                    </e-node>
+                    <e-node id='BoardDecision' [width]=150 [height]=110 [offsetX]=300 [offsetY]=280 [shape]=decision>
+                        <e-node-annotations>
+                            <e-node-annotation content='Board decides \n whether to proceed'>
+                            </e-node-annotation>
+                        </e-node-annotations>
+                    </e-node>
+                    <e-node id='Project' [width]=150 [height]=60 [offsetX]=300 [offsetY]=430 [shape]=decision>
+                        <e-node-annotations>
+                            <e-node-annotation content='Find Project manager'>
+                            </e-node-annotation>
+                        </e-node-annotations>
+                    </e-node>
+                    <e-node id='End' [width]=150 [height]=60 [offsetX]=300 [offsetY]=555 [shape]=process>
+                        <e-node-annotations>
+                            <e-node-annotation content='Implement and Deliver'>
+                            </e-node-annotation>
+                        </e-node-annotations>
+                    </e-node>
+                    <e-node id='Decision' [width]=250 [height]=60 [offsetX]=530 [offsetY]=60 [shape]=card>
+                        <e-node-annotations>
+                            <e-node-annotation content='Decision process for new software ideas'>
+                            </e-node-annotation>
+                        </e-node-annotations>
+                    </e-node>
+                    <e-node id='Reject' [width]=150 [height]=60 [offsetX]=550 [offsetY]=280 [shape]=process>
+                        <e-node-annotations>
+                            <e-node-annotation content='Reject'>
+                            </e-node-annotation>
+                        </e-node-annotations>
+                    </e-node>
+                    <e-node id='Resources' [width]=150 [height]=60 [offsetX]=550 [offsetY]=430 [shape]=process>
+                        <e-node-annotations>
+                            <e-node-annotation content='Hire new resources'>
+                            </e-node-annotation>
+                        </e-node-annotations>
+                    </e-node>
+                </e-nodes>
+                <e-connectors>
+                    <e-connector id='connector1' sourceID='NewIdea' targetID='Meeting'>
+                    </e-connector>
+                    <e-connector id='connector2' sourceID='Meeting' targetID='BoardDecision'>
+                    </e-connector>
+                    <e-connector id='connector3' sourceID='BoardDecision' targetID='Project'>
+                    </e-connector>
+                    <e-connector id='connector4' sourceID='Project' targetID='End'>
+                    </e-connector>
+                    <e-connector id='connector5' sourceID='BoardDecision' targetID='Reject'>
+                    </e-connector>
+                    <e-connector id='connector6' sourceID='Project' targetID='Resources'>
+                    </e-connector>
+                </e-connectors>
+            </ejs-diagram>
+        </div>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">
+                Properties
+            </div>
+            <div class="row property-panel-content" id="alignment">
+                <div class="row row-header1 sb-child-row">
+                    Alignment
+                </div>
+                <div class="row sb-child-row">
+                    <div class="image-pattern-style" id="left" style="background-image: url(./assets/diagram/Images/user-handle/bottoml.png); margin-right: 4px">
+                    </div>
+                    <div class="image-pattern-style" id="right" style="background-image: url(./assets/diagram/Images/user-handle/bottomr.png); margin: 0px 4px">
+                    </div>
+                    <div class="image-pattern-style" id="topr" style="background-image: url(./assets/diagram/Images/user-handle/topr.png);">
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="pattern">
+                <div class="row row-header1 sb-child-row">
+                    Appearance
+                </div>
+                <div class="row sb-child-row">
+                    <div class="image-pattern-style" id="pattern1" style="background-image: url(./assets/diagram/Images/user-handle/pattern1.png); margin-right: 4px">
+                    </div>
+                    <div class="image-pattern-style" id="pattern2" style="background-image: url(./assets/diagram/Images/user-handle/pattern2.png); margin: 0px 4px">
+                    </div>
+                    <div class="image-pattern-style" id="pattern3" style="background-image: url(./assets/diagram/Images/user-handle/pattern3.png);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        User handles are icons that are placed around the node to run the frequently used commands. This example shows how to render and configure user handles and how to interact with the diagram using user handles. The
+        <code>userHandles</code> property of the
+        <code>selectedItems</code> can be used to add user handles to the diagram. Click the templates in the property panel, to customize the size, position, and appearance of the user handles.
+    </p>
+    <br>
+</div>
