@@ -6,7 +6,7 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { RichTextEditorComponent, ToolbarService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { LinkService, ImageService, MarkdownEditorService } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, KeyboardEventArgs } from '@syncfusion/ej2-base';
-import * as Marked from 'marked';
+// import * as Marked from 'marked';
 
 @Component({
     selector: 'control-content',
@@ -52,7 +52,7 @@ export class MarkdownDefaultComponent {
         if (this.mdsource.classList.contains('e-active')) {
             let id: string = this.rteObj.getID() + 'html-view';
             let htmlPreview: Element = this.rteObj.element.querySelector('#' + id);
-            htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+//             htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
         }
     }
     public fullPreview(): void {
@@ -77,7 +77,7 @@ export class MarkdownDefaultComponent {
             }
             this.textArea.style.display = 'none';
             htmlPreview.style.display = 'block';
-            htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+//             htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
         }
     }
 }
