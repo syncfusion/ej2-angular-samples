@@ -51,6 +51,7 @@
         "@syncfusion/ej2-angular-splitbuttons": "17.1.47",
         "@syncfusion/ej2-angular-treegrid": "*",
         "@syncfusion/ej2-angular-treemap": "*",
+        "@syncfusion/ej2-splitbuttons": "17.1.47",
         "@types/codemirror": "0.0.56",
         "codemirror": "^5.37.0",
         "core-js": "^2.5.4",
