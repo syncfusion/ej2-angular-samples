@@ -48,7 +48,7 @@
         "@syncfusion/ej2-angular-querybuilder": "*",
         "@syncfusion/ej2-angular-richtexteditor": "*",
         "@syncfusion/ej2-angular-schedule": "*",
-        "@syncfusion/ej2-angular-splitbuttons": "*",
+        "@syncfusion/ej2-angular-splitbuttons": "17.1.47",
         "@syncfusion/ej2-angular-treegrid": "*",
         "@syncfusion/ej2-angular-treemap": "*",
         "@types/codemirror": "0.0.56",
@@ -57,6 +57,7 @@
         "cross-env": "^5.2.0",
         "fuse.js": "^3.2.0",
         "gulp": "3.9.1",
+        "shelljs": "^0.8.3",
         "increase-memory-limit": "^1.0.7",
         "rxjs": "~6.2.0",
         "zone.js": "~0.8.26"
