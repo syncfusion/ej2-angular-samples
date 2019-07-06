@@ -9,7 +9,6 @@ import { DefaultSparklineComponent } from './default.component';
 import { AxisTypeSparklineComponent } from './axis-type.component';
 import { SeriesTypeSparklineComponent } from './series-type.component';
 import { SparklineCustomizationSample } from './customization.component';
-import { SparkineLiveUpdateSample } from './live-update.component';
 import { SparklineGridSample } from './sparkline-grid.component';
 import { SparklineRangebandSample } from './range-band.component';
 import { SliderModule } from '@syncfusion/ej2-angular-inputs';
