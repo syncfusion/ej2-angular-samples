@@ -24,7 +24,7 @@ export const tabAppRoutes: Object[] = [
 export const tabRouter: ModuleWithProviders = RouterModule.forChild(tabAppRoutes);
 
 @NgModule({
-    imports: [tabRouter, SharedModule, NumericTextBoxAllModule, TabAllModule, GridAllModule, DialogAllModule, DatePickerAllModule, DropDownListModule, AutoCompleteAllModule],
+    imports: [tabRouter, SharedModule, NumericTextBoxAllModule, TabAllModule,GridAllModule, DialogAllModule, DatePickerAllModule, DropDownListModule, AutoCompleteAllModule],
     declarations: [
         DefaultTabComponent,
         OrientationTabComponent,

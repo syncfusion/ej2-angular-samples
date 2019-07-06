@@ -1,0 +1,22 @@
+<div class="sample-container">
+    <div id='uploadFileManager' class="fileupload">
+        <ejs-uploader #uploadObj id='defaultfileupload'></ejs-uploader>
+        <button ejs-button id='openBtn' (click)="btnClick()">File Browser</button>
+    </div>
+    <div id='target' class="control-section">
+        <ejs-dialog #dialogObj id='dialog' [visible]='visible' [header]='dialogHeader' [animationSettings]='animationSettings' [showCloseIcon]='showCloseIcon' (open)="dialogOpen()" (close)="dialogClose()" 
+            [target]='target' [width]='dialogWidth'>
+            <ejs-filemanager #filemanagerObj id='filemanager' [ajaxSettings]='ajaxSettings' [toolbarSettings]='toolbarSettings' [contextMenuSettings]='contextMenuSettings' [allowMultiSelection]='false' (fileOpen)="onFileOpen($event)">
+            </ejs-filemanager>
+        </ejs-dialog>
+    </div>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates the real-time use case of File Manager in a web application. Dialog and Uploader components are integrated with the File Manager. Click the browse button in the Uploader element to open the File Manager inside the Dialog control. </p>
+</div>
+<div id="description">
+ <p>The File Manager component is used to explore a file system through a web application, similar to the windows explorer for windows. It supports all the basic file operations such as create, rename, delete and so on.</p>
+
+ <p><b>Note: </b>File Manager’s upload functionality is restricted in the online demo. If you need to test upload functionality, please install 
+   <a target="_blank" href="https://www.syncfusion.com/downloads"> Syncfusion Essential Studio </a>on your machine and run the demo.</p>
+</div>

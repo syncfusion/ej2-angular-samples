@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MaskedTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { SharedModule } from '../common/shared.module';
 
 import { DefaultMaskedTextboxController } from './default.component';
@@ -17,7 +18,7 @@ export const maskedTextBoxAppRoutes: Object[] = [
 export const MaskedTextBoxRouter: ModuleWithProviders = RouterModule.forChild(maskedTextBoxAppRoutes);
 
 @NgModule({
-    imports: [MaskedTextBoxRouter, MaskedTextBoxModule, SharedModule, FormsModule],
+    imports: [MaskedTextBoxRouter, MaskedTextBoxModule, DropDownListModule, SharedModule, FormsModule],
     declarations: [
         DefaultMaskedTextboxController,
         CustomMaskedTextboxController,

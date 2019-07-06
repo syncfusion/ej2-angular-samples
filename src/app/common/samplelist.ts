@@ -25,6 +25,7 @@ import { autoCompleteAppRoutes } from '../auto-complete/auto-complete.module';
 import { textboxesAppRoutes } from '../textboxes/textboxes.module';
 import { tooltipAppRoutes } from '../tooltip/tooltip.module';
 import { sidebarAppRoutes } from '../sidebar/sidebar.module';
+import { barcodeAppRoutes } from '../barcode/barcode.module';
 import { maskedTextBoxAppRoutes } from '../maskedtextbox/maskedtextbox.module';
 import { timePickerAppRoutes } from '../timepicker/timepicker.module';
 import { multiselectAppRoutes } from '../multi-select/multi-select.module';
@@ -46,7 +47,7 @@ import { heatmapAppRoutes } from '../heatmap/heatmap.module';
 import { sparklineAppRoutes } from '../sparkline/sparkline.module';
 import { smithchartAppRoutes } from '../smith-chart/smith-chart.module';
 import { colorPickerAppRoutes } from '../color-picker/color-picker.module';
-import { pivotviewRouteConfig } from '../pivot-view/pivot-view.module';
+import { pivottableRouteConfig } from '../pivot-table/pivot-table.module';
 import { documentEditorAppRoutes } from '../document-editor/document-editor.module';
 import { pdfViewerAppRoutes } from '../pdfviewer/pdfviewer.module';
 import { QueryBuilderAppRoutes } from '../query-builder/query-builder.module';
@@ -61,7 +62,7 @@ export let samplesList: any = [
         'name': 'Data Grid', 'category': 'Grids', 'order': '01', 'path': 'grid', 'samples': gridRouteConfig, 'ftName': 'datagrid'
     },
     {
-        'name': 'TreeGrid', 'category': 'Grids', 'order': '01', 'path': 'treegrid', 'samples': treegridRouteConfig, 'type': 'preview'
+        'name': 'Tree Grid', 'category': 'Grids', 'order': '01', 'path': 'treegrid', 'samples': treegridRouteConfig, 'type': 'update'
     },
     {
         'name': 'Chart', 'category': 'Data visualization', 'order': '02', 'path': 'chart', 'samples': chartAppRoutes, 'type': 'update'
@@ -73,16 +74,19 @@ export let samplesList: any = [
         'name': 'Linear Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'linear-gauge', 'samples': lineargaugeAppRoutes
     },
     {
-        'name': 'Diagram', 'category': 'Data visualization', 'order': '02', 'path': 'diagram', 'samples': diagramAppRoutes, 'type': "preview"
+        'name': 'Diagram', 'category': 'Data visualization', 'order': '02', 'path': 'diagram', 'samples': diagramAppRoutes
     },
     {
-        'name': 'Stock Chart', 'category': 'Data visualization', 'order': '02', 'path': 'stock-chart', 'samples': stockChartAppRoutes, 'type': 'update'
+        'name': 'Stock Chart', 'category': 'Data visualization', 'order': '02', 'path': 'stock-chart', 'samples': stockChartAppRoutes
     },
     {
         'name': 'Maps', 'category': 'Data visualization', 'type': 'update', 'order': '02', 'path': 'maps', 'samples': mapAppRoutes
     },
     {
-        'name': 'Range Selector', 'category': 'Data visualization', 'order': '02', 'path': 'range-navigator', 'samples': rangeNavigatorAppRoutes
+        'name': 'Splitter', 'category': 'Layout', 'order': '09', 'path': 'splitter', 'samples': splitterAppRoutes, 'ftName': 'splitter'
+    },
+    {
+        'name': 'Range Navigator', 'category': 'Data visualization', 'order': '02', 'path': 'range-navigator', 'samples': rangeNavigatorAppRoutes
     },
     {
         'name': 'Sparkline Charts', 'category': 'Data visualization', 'order': '02', 'path': 'sparkline', 'samples': sparklineAppRoutes, 'type': 'update'
@@ -91,10 +95,13 @@ export let samplesList: any = [
         'name': 'Smith Chart', 'category': 'Data visualization', 'order': '02', 'path': 'smith-chart', 'samples': smithchartAppRoutes
     },
     {
+        'name': 'Barcode', 'category': 'Data visualization', 'order': '01', 'path': 'barcode', 'samples': barcodeAppRoutes, 'type': 'preview'
+    },
+    {
         'name': 'TreeMap', 'category': 'Data visualization', 'type': 'update', 'order': '02', 'path': 'treemap', 'samples': treemapAppRoutes
     },
     {
-        'name': 'Heatmap Chart', 'category': 'Data visualization', 'order': '02', 'path': 'heatmap', 'samples': heatmapAppRoutes, 'type': 'update', 'ftName': 'heatmap'
+        'name': 'HeatMap', 'category': 'Data visualization', 'order': '02', 'path': 'heatmap', 'samples': heatmapAppRoutes, 'ftName': 'heatmap'
     },
     {
         'name': 'Schedule', 'category': 'Calendars', 'order': '04', 'path': 'schedule', 'samples': scheduleRouteConfig, 'type': 'update', 'ftName': 'scheduler'
@@ -103,7 +110,7 @@ export let samplesList: any = [
         'name': 'Gantt', 'category': 'Calendars', 'order': '04', 'path': 'gantt', 'samples': GanttAppRoutes, 'type': 'preview', 'ftName': 'gantt', 'hideOnDevice': true
     },
     {
-        'name': 'Calendar', 'category': 'Calendars', 'order': '04', 'path': 'calendar', 'samples': calendarAppRoutes, 'type': 'update'
+        'name': 'Calendar', 'category': 'Calendars', 'order': '04', 'path': 'calendar', 'samples': calendarAppRoutes
     },
     {
         'name': "AutoComplete", 'category': "Dropdowns", 'ftName': "autocomplete", 'order': '05', 'path': "auto-complete", 'samples': autoCompleteAppRoutes
@@ -118,13 +125,13 @@ export let samplesList: any = [
         'name': "ComboBox", 'category': "Dropdowns", 'ftName': "combo-box", 'order': '05', 'path': "combo-box", 'samples': comboboxAppRoutes
     },
     {
-        'name': 'DocumentEditor', 'category': 'Editors', 'order': '03', 'path': 'document-editor', 'samples': documentEditorAppRoutes, 'hideOnDevice': true, 'ftName': 'document-editor', 'type': 'update'
+        'name': 'DocumentEditor', 'category': 'Editors', 'order': '03', 'path': 'document-editor', 'samples': documentEditorAppRoutes, 'ftName': 'document-editor', 'type': 'update'
     },
     {
-        'name': 'DatePicker', 'category': 'Calendars', 'order': '04', 'path': 'datepicker', 'samples': datePickerAppRoutes, 'type': 'update'
+        'name': 'DatePicker', 'category': 'Calendars', 'order': '04', 'path': 'datepicker', 'samples': datePickerAppRoutes
     },
     {
-        'name': 'DateRangePicker', 'category': 'Calendars', 'order': '04', 'path': 'daterangepicker', 'samples': dateRangePickerAppRoutes, 'type': 'update'
+        'name': 'DateRangePicker', 'category': 'Calendars', 'order': '04', 'path': 'daterangepicker', 'samples': dateRangePickerAppRoutes
     },
     {
         'name': 'DateTimePicker', 'category': 'Calendars', 'order': '04', 'path': 'datetimepicker', 'samples': dateTimePickerAppRoutes
@@ -136,22 +143,22 @@ export let samplesList: any = [
         'name': 'Form Validator', 'category': 'Editors', 'order': '03', 'path': 'form-validator', 'samples': formValidatorAppRoutes
     },
     {
-        'name': "MultiSelect Dropdown", 'category': "Dropdowns", 'ftName': "multiselect-dropdown", 'order': '05', 'path': "multi-select", 'samples': multiselectAppRoutes
+        'name': "MultiSelect Dropdown", 'category': "Dropdowns", 'ftName': "multiselect-dropdown", 'order': '05', 'path': "multi-select", 'type': 'update', 'samples': multiselectAppRoutes
     },
     {
         'name': 'Input Mask', 'category': 'Inputs', 'order': '08', 'path': 'maskedtextbox', 'samples': maskedTextBoxAppRoutes, 'ftName': "maskedtextbox"
     },
     {
-        'name': 'Pivot Table', 'category': 'Grids', 'order': '01', 'path': 'pivot-view', 'samples': pivotviewRouteConfig, 'type': 'update'
+        'name': 'Pivot Table', 'category': 'Grids', 'order': '01', 'path': 'pivot-table', 'samples': pivottableRouteConfig, 'type': 'update'
     },
     {
         'name': 'Numeric Textbox', 'category': 'Inputs', 'order': '08', 'path': 'numerictextbox', 'samples': numericAppRoutes, 'ftName': "numerictextbox"
     },
     {
-        'name': "Range Slider", 'category': "Inputs", 'order': '08', 'path': "slider", 'samples': sliderAppRoutes, 'type': 'update'
+        'name': "Range Slider", 'category': "Inputs", 'order': '08', 'path': "slider", 'samples': sliderAppRoutes
     },
     {
-        'name': 'TextBox', 'category': 'Inputs', 'order': '08', 'path': 'textboxes', 'samples': textboxesAppRoutes, 'type': 'update', 'ftName': 'textbox'
+        'name': 'TextBox', 'category': 'Inputs', 'order': '08', 'path': 'textboxes', 'samples': textboxesAppRoutes, 'ftName': 'textbox'
     },
     {
         'name': "TimePicker", 'category': 'Calendars', 'order': '04', 'path': "timepicker", 'samples': timePickerAppRoutes
@@ -166,43 +173,25 @@ export let samplesList: any = [
         'name': "Toast", 'category': 'Notifications', 'order': '07', 'path': "toast", 'samples': toastAppRoutes, 'ftName': "toast"
     },
     {
-        'name': 'Avatar', 'category': 'Layout', 'order': '09', 'path': 'avatar', 'samples': avatarAppRoutes
-    },
-    {
-        'name': 'Card', 'category': 'Layout', 'order': '09', 'path': 'card', 'samples': cardAppRoutes, 'ftName': "card"
-    },
-    {
-        'name': 'Dashboard Layout', 'category': 'Layout', 'order': '09', 'path': 'dashboard-layout', 'samples': dashboardlayoutAppRoutes, 'type': 'preview', "ftName": "dashboard-layout"
+        'name': 'ListView', 'category': 'Layout', 'order': '09', 'path': 'listview', 'samples': listAppRoutes
     },
     {
         'name': 'Dialog', 'category': 'Layout', 'order': '09', 'path': 'dialog', 'samples': dialogAppRoutes, 'ftName': 'modal-dialog'
     },
     {
-        'name': 'ListView', 'category': 'Layout', 'order': '09', 'path': 'listview', 'samples': listAppRoutes
-    },
-    {
-        'name': 'Splitter', 'category': 'Layout', 'order': '09', 'path': 'splitter', 'samples': splitterAppRoutes, 'type': 'update', 'ftName': 'splitter'
+        'name': "Rich Text Editor", 'category': "Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "rich-text-editor", 'samples': rteAppRoutes, 'type': 'update'
     },
     {
         'name': 'Tooltip', 'category': 'Layout', 'order': '09', 'path': 'tooltip', 'samples': tooltipAppRoutes
     },
     {
-        'name': "Rich Text Editor", 'category': "Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "rich-text-editor", 'samples': rteAppRoutes, 'type': 'update'
+        'name': 'Card', 'category': 'Layout', 'order': '09', 'path': 'card', 'samples': cardAppRoutes, 'ftName': "card"
     },
     {
-        'name': 'Accordion', 'category': 'Navigation', 'order': '06', 'path': 'accordion', 'samples': accordionAppRoutes, 'ftName': "accordion"
+        'name': 'Sidebar', 'category': 'Navigation', 'order': '06', 'path': 'sidebar', 'samples': sidebarAppRoutes
     },
     {
-        'name': 'Context Menu', 'category': 'Navigation', 'order': '06', 'path': 'context-menu', 'samples': contextMenuAppRoutes, 'ftName': "context-menu"
-    },
-    {
-        'name': 'File Manager', 'category': 'Navigation', 'order': '06', 'path': 'file-manager', 'samples': fileManagerAppRoutes, 'type': 'preview',
-    },
-    {
-        'name': 'Menu Bar', 'category': 'Navigation', 'order': '06', 'path': 'menu', 'samples': menuAppRoutes, 'ftName': "menu-bar", 'type': 'update'
-    },
-    {
-        'name': 'Sidebar', 'category': 'Navigation', 'order': '06', 'path': 'sidebar', 'samples': sidebarAppRoutes, 'type': 'update'
+        'name': 'TreeView', 'category': 'Navigation', 'order': '06', 'path': 'treeview', 'samples': treeAppRoutes, 'ftName': "treeview"
     },
     {
         'name': 'Tab', 'category': 'Navigation', 'order': '06', 'path': 'tab', 'samples': tabAppRoutes, 'ftName': "tabs"
@@ -211,7 +200,16 @@ export let samplesList: any = [
         'name': 'Toolbar', 'category': 'Navigation', 'order': '06', 'path': 'toolbar', 'samples': toolbarAppRoutes, 'ftName': "toolbar"
     },
     {
-        'name': 'TreeView', 'category': 'Navigation', 'order': '06', 'path': 'treeview', 'samples': treeAppRoutes, 'ftName': "treeview", 'type': 'update'
+        'name': 'Context Menu', 'category': 'Navigation', 'order': '06', 'path': 'context-menu', 'samples': contextMenuAppRoutes, 'ftName': "context-menu"
+    },
+    {
+        'name': 'Menu Bar', 'category': 'Navigation', 'order': '06', 'path': 'menu', 'samples': menuAppRoutes, 'ftName': "menu-bar"
+    },
+    {
+        'name': 'Avatar', 'category': 'Layout', 'order': '09', 'path': 'avatar', 'samples': avatarAppRoutes
+    },
+    {
+        'name': 'Accordion', 'category': 'Navigation', 'order': '06', 'path': 'accordion', 'samples': accordionAppRoutes, 'ftName': "accordion"
     },
     {
         'name': "Color Picker", 'category': "Inputs", 'order': '08', 'path': "color-picker", 'samples': colorPickerAppRoutes, 'ftName': "color-picker"
@@ -226,6 +224,12 @@ export let samplesList: any = [
         'name': "Query Builder", 'category': "Forms", 'order': '10', 'path': "query-builder", 'samples': QueryBuilderAppRoutes
     },
     {
-        "name": "List Box", "category": "Dropdowns", "ftName": "list-box", 'order': '03', "path": "list-box", "samples": listBoxAppRoutes, 'type': 'preview'
+        'name': 'File Manager', 'category': 'Navigation', 'order': '06', 'path': 'file-manager', 'samples': fileManagerAppRoutes, 'type': 'update'
+    },
+    {
+        'name': 'Dashboard Layout', 'category': 'Layout', 'order': '09', 'path': 'dashboard-layout', 'samples': dashboardlayoutAppRoutes, "ftName": "dashboard-layout"
+    },
+    {
+        "name": "List Box", "category": "Dropdowns", "ftName": "list-box", 'order': '03', "path": "list-box", "samples": listBoxAppRoutes
     }
 ];

@@ -38,7 +38,7 @@ export class MarkdownPreviewComponent {
     public onCreate(): void {
         this.textArea = this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement;
         this.textArea.addEventListener('keyup', (e: KeyboardEventArgs) => {
-            this.MarkDownConversion();
+            this.markdownConversion();
         });
         this.mdsource = document.getElementById('preview-code');
         this.mdsource.addEventListener('click', (e: MouseEvent) => {
@@ -73,14 +73,14 @@ export class MarkdownPreviewComponent {
                 this.mdSplit.classList.remove('e-active');
                 this.mdsource.classList.remove('e-active');
             }
-            this.MarkDownConversion();
+            this.markdownConversion();
         }
     }
-    public MarkDownConversion(): void {
+    public markdownConversion(): void {
         if (this.mdSplit.classList.contains('e-active')) {
             let id: string = this.rteObj.getID() + 'html-preview';
             let htmlPreview: HTMLElement = this.rteObj.element.querySelector('#' + id) as HTMLElement;
-//             htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+            // htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
         }
     }
     public fullPreview(e: { [key: string]: string | boolean }): void {
@@ -108,15 +108,23 @@ export class MarkdownPreviewComponent {
                 this.textArea.style.width = '50%';
             }
             this.htmlPreview.style.display = 'block';
-//             this.htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+            // this.htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
         }
     }
     public handleFullScreen(e: any): void {
-        let leftBar: HTMLElement = document.querySelector('#left-sidebar');
+        const sbCntEle: HTMLElement = document.querySelector('.sb-content.e-view');
+        const sbHdrEle: HTMLElement = document.querySelector('.sb-header.e-view');
+        const leftBar: HTMLElement = document.querySelector('#left-sidebar');
         if (e.targetItem === 'Maximize') {
+            if (Browser.isDevice && Browser.isIos) {
+                addClass([sbCntEle, sbHdrEle], ['hide-header']);
+            }
             addClass([leftBar], ['e-close']);
             removeClass([leftBar], ['e-open']);
         } else if (e.targetItem === 'Minimize') {
+            if (Browser.isDevice && Browser.isIos) {
+                removeClass([sbCntEle, sbHdrEle], ['hide-header']);
+            }
             removeClass([leftBar], ['e-close']);
             if (!Browser.isDevice) {
                 addClass([leftBar], ['e-open']);

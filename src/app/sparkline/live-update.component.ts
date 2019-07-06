@@ -173,8 +173,8 @@ export class SparkineLiveUpdateSample {
     public update(): void {
         if (this.cpuspark.element.className.indexOf('e-sparkline') > -1) {
             let value: number = ((Math.random() * 100) + 5) % 50;
-            this.cpuspark.dataSource.push({ x: ++this.temp1, yval: value });
-            this.cpuspark.dataSource.shift();
+            (this.cpuspark.dataSource as Object[]).push({ x: ++this.temp1, yval: value });
+            (this.cpuspark.dataSource as Object[]).shift();
             this.cpuspark.refresh();
             let cpu: Element = document.getElementById('cpu');
             if (cpu) {
@@ -190,8 +190,8 @@ export class SparkineLiveUpdateSample {
             } else {
                 value = 6 - (value / 10);
             }
-            this.memspark.dataSource.push({ x: ++this.temp2, yval: value });
-            this.memspark.dataSource.shift();
+           (this.memspark.dataSource as Object[]).push({ x: ++this.temp2, yval: value });
+           (this.memspark.dataSource as Object[]).shift();
             this.memspark.refresh();
             let memory: Element = document.getElementById('memory');
             let gb: string = parseFloat(value.toString().replace('0', '')).toFixed(1);
@@ -203,8 +203,8 @@ export class SparkineLiveUpdateSample {
     public update2(): void {
         if (this.diskspark.element.className.indexOf('e-sparkline') > -1) {
             let value: number = ((Math.random() * 100) + 5) % 80;
-            this.diskspark.dataSource.push({ x: ++this.temp3, yval: value });
-            this.diskspark.dataSource.shift();
+            (this.diskspark.dataSource as Object[]).push({ x: ++this.temp3, yval: value });
+            (this.diskspark.dataSource as Object[]).shift();
             this.diskspark.refresh();
             let disk: Element = document.getElementById('disk');
             if (disk) {
@@ -215,8 +215,8 @@ export class SparkineLiveUpdateSample {
     public update3(): void {
         if (this.netspark.element.className.indexOf('e-sparkline') > -1) {
             let value: number = ((Math.random() * 100) + 5) % 80;
-            this.netspark.dataSource.push({ x: ++this.temp4, yval: value });
-            this.netspark.dataSource.shift();
+            (this.netspark.dataSource as Object[]).push({ x: ++this.temp4, yval: value });
+            (this.netspark.dataSource as Object[]).shift();
             this.netspark.refresh();
             let net: Element = document.getElementById('net');
             if (net) {

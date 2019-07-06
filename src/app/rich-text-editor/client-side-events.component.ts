@@ -61,11 +61,19 @@ export class EventsComponent {
         document.getElementById('EventLog').innerHTML = '';
     }
     handleFullScreen(e: any): void {
-        let leftBar: HTMLElement = document.querySelector('#left-sidebar');
+        const sbCntEle: HTMLElement = document.querySelector('.sb-content.e-view');
+        const sbHdrEle: HTMLElement = document.querySelector('.sb-header.e-view');
+        const leftBar: HTMLElement = document.querySelector('#left-sidebar');
         if (e.targetItem === 'Maximize') {
+            if (Browser.isDevice && Browser.isIos) {
+                addClass([sbCntEle, sbHdrEle], ['hide-header']);
+            }
             addClass([leftBar], ['e-close']);
             removeClass([leftBar], ['e-open']);
         } else if (e.targetItem === 'Minimize') {
+            if (Browser.isDevice && Browser.isIos) {
+                removeClass([sbCntEle, sbHdrEle], ['hide-header']);
+            }
             removeClass([leftBar], ['e-close']);
             if (!Browser.isDevice) {
             addClass([leftBar], ['e-open']); }

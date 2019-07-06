@@ -38,7 +38,7 @@ export class TreeGridOverviewComponent implements OnInit {
             let imgElement: HTMLElement = document.createElement('IMG');
             let val: string = !(<ITreeData>args.data).level ? args.data[args.column.field] :
                  (<ITreeData>args.data).parentItem[args.column.field];
-            imgElement.setAttribute('src', 'source/treegrid/images/' + val + '.png');
+            imgElement.setAttribute('src', 'assets/treegrid/images/' + val + '.png');
             imgElement.classList.add('e-image');
             let div: HTMLElement = document.createElement('DIV');
             div.style.display = 'inline-block';

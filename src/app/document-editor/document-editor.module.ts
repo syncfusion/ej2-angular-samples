@@ -22,6 +22,9 @@ import { SectionFormattingComponent } from './section-formatting.component';
 import { HeadersFootersComponent } from './headers-footers.component';
 import { TableOfContentsComponent } from './table-of-contents.component';
 import { CustomContextMenuComponent } from './custom-context-menu.component';
+import { DocumentEditorChartComponent } from './chart.component';
+import { DocumentEditorProtectionComponent } from './document-protection.component';
+import { AutoSaveComponent } from './auto-save.component';
 import { SharedModule } from '../common/shared.module';
 
 export const documentEditorAppRoutes: Object[] = [
@@ -36,9 +39,12 @@ export const documentEditorAppRoutes: Object[] = [
     { path: ':theme/document-editor/section-formatting', component: SectionFormattingComponent, name: 'Section Formatting', order: '02', category: 'Editing Features', description: "The Document Editor supports section formatting such as page size, page margins, header distance, and footer distance." },
     { path: ':theme/document-editor/headers-footers', component: HeadersFootersComponent, name: 'Headers and Footers', order: '02', category: 'Editing Features', description: "The Document Editor supports headers and footers. Different headers and footers can be added to the first page, odd pages, and even pages." },
     { path: ':theme/document-editor/table-of-contents', component: TableOfContentsComponent, name: 'Table of Contents', order: '02', category: 'Editing Features', description: "The Document Editor supports table of contents with options for including hyperlink, page number, right-aligned tabs, and styles." },
-    { path: ':theme/document-editor/print', component: PrintComponent, name: 'Print', order: '03', category: 'Print', type: 'update', description: "The Document Editor component is used to view and print Word documents in web applications by injecting only the modules that are necessary." },
+    { path: ':theme/document-editor/print', component: PrintComponent, name: 'Print', order: '03', category: 'Print', description: "The Document Editor component is used to view and print Word documents in web applications by injecting only the modules that are necessary." },
     { path: ':theme/document-editor/right-to-left', component: RightToLeftComponent, name: 'Right to Left', order: '04', category: 'RTL', description: "The Document Editor component is used to create, edit, view, and print Word documents in web applications." },
-    { path: ':theme/document-editor/custom-context-menu', component: CustomContextMenuComponent, name: 'Custom Context Menu', order: '05', category: 'Customization', type: 'new', description: "The Document Editor supports custom options for users who use to add custom options in context menu." }
+    { path: ':theme/document-editor/custom-context-menu', component: CustomContextMenuComponent, name: 'Custom Context Menu', order: '05', category: 'Customization', description: "The Document Editor supports custom options for users who use to add custom options in context menu." },
+    { path: ':theme/document-editor/auto-save', component: AutoSaveComponent, name: 'Auto Save', type: 'new', order: '05', category: 'Customization', description: "The Document Editor supports auto save functionality to let the users for saving the documents automatically at customized time interval." },
+    { path: ':theme/document-editor/chart', component: DocumentEditorChartComponent, name: 'Chart Preservation', order: '06', category: 'Charts', type: 'new', description: "The Document Editor supports chart preservation for users who use to view their business reports with intuitive graphical data visualization." },
+    { path: ':theme/document-editor/document-protection', component: DocumentEditorProtectionComponent, name: 'Document Protection', order: '07', category: 'Security', type: 'new', description: "The Document Editor provides document protection supports to restrict the types of changes can be made to the document by a user/user group." }
 ];
 
 export const documentEditorRouter: ModuleWithProviders = RouterModule.forChild(documentEditorAppRoutes);
@@ -51,7 +57,7 @@ export const documentEditorRouter: ModuleWithProviders = RouterModule.forChild(d
     // tslint:disable-next-line:max-line-length
     declarations: [DocEditorComponent, CharacterFormattingComponent, ParagraphFormattingComponent, StylesComponent,
         BulletsNumberingComponent, HyperlinksBookmarksComponent, TableFormattingComponent, SectionFormattingComponent,
-        HeadersFootersComponent, TableOfContentsComponent, PrintComponent, RightToLeftComponent, CustomContextMenuComponent],
+        HeadersFootersComponent, TableOfContentsComponent, PrintComponent, RightToLeftComponent, CustomContextMenuComponent, AutoSaveComponent, DocumentEditorChartComponent, DocumentEditorProtectionComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DocumentEditorSampleModule {

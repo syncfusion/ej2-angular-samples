@@ -2,7 +2,6 @@ import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { DefaultTreeViewComponent } from './default.component';
 import { IconsTreeViewComponent } from './icons.component';
 import { EditTreeViewComponent } from './node-editing.component';
@@ -11,17 +10,16 @@ import { DragdropTreeViewComponent } from './drag-and-drop.component';
 import { TemplateTreeViewComponent } from './template.component';
 import { PlainTreeViewComponent } from './plain-data.component';
 import { RemoteTreeViewComponent } from './remote-data.component';
-import { CheckboxTreeViewComponent } from './check-box.component';
-import { TreeViewModule  } from '@syncfusion/ej2-angular-navigations'; 
+import { CheckboxTreeViewComponent } from './treeview-checkbox.component';
+import { TreeViewModule  } from '@syncfusion/ej2-angular-navigations';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
-import { ListViewModule } from '@syncfusion/ej2-angular-lists'
-
+import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { SharedModule } from '../common/shared.module';
 
 export const treeAppRoutes: Object[] = [
     { path: ':theme/treeview/default', component: DefaultTreeViewComponent, name: 'Default Functionalities', order: '01', category: 'TreeView', description: "This demo demonstrates the basic tree view component that display the data in a hierarchical structure with the configuration options." },
     { path: ':theme/treeview/icons', component: IconsTreeViewComponent, name: 'Icons and Images', order: '01',category: 'TreeView', description: "The tree view nodes can be rendered with any custom icons. This sample demonstrated like a file system with custom icons and images." },
-    { path: ':theme/treeview/check-box', component: CheckboxTreeViewComponent, name: 'Checkbox', order: '01', category: 'TreeView',  description: "This demo demonstrates the tree view with checkbox functionality, this allows the user to check more than one tree nodes.", type: 'update' },
+    { path: ':theme/treeview/check-box', component: CheckboxTreeViewComponent, name: 'Checkbox', order: '01', category: 'TreeView',  description: "This demo demonstrates the tree view with checkbox functionality, this allows the user to check more than one tree nodes." },
     { path: ':theme/treeview/node-editing', component: EditTreeViewComponent, name: 'Node Editing', order: '01', category: 'TreeView', description: "This demo showcases the node editing functionality of tree view, you can edit any node text by double click on it or pressing F2." },
     { path: ':theme/treeview/multiple-selection', component: MultiselectTreeViewComponent, name: 'Multiple Selection', order: '01', category: 'TreeView', hideOnDevice: true , description: "The TreeView component allows to select multiple nodes by pressing CTRL key, also can select the range of nodes by pressing SHIFT key."},
     { path: ':theme/treeview/drag-and-drop', component: DragdropTreeViewComponent, name: 'Drag and Drop', order: '01', category: 'TreeView', hideOnDevice: true, description: "The tree view nodes can be drag and drop from one position to another, also the drop can be done to another tree view or other external container." },
@@ -33,7 +31,7 @@ export const treeAppRoutes: Object[] = [
 export const TreeviewRouter: ModuleWithProviders = RouterModule.forChild(treeAppRoutes);
 
 @NgModule({
-    imports: [TreeviewRouter, SharedModule , CommonModule, BrowserModule, TreeViewModule, CheckBoxModule, ListViewModule],
+    imports: [TreeviewRouter, SharedModule , CommonModule, BrowserModule, CheckBoxModule, ListViewModule, TreeViewModule],
     declarations: [
         DefaultTreeViewComponent,
         IconsTreeViewComponent,

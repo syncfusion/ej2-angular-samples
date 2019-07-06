@@ -46,13 +46,14 @@ import { StockChartSampleModule } from '../stock-chart/stock-chart.module';
 import { TreemapSampleModule } from '../treemap/treemap.module';
 import { HeatmapSampleModule } from '../heatmap/heatmap.module';
 import { DiagramSampleModule } from '../diagram/diagram.module';
+import { BarcodeSampleModule } from '../barcode/barcode.module';
 import { SparklineSampleModule } from '../sparkline/sparkline.module';
 import { SmithchartSampleModule } from '../smith-chart/smith-chart.module';
 import { ColorPickerSampleModule } from '../color-picker/color-picker.module';
-import { PivotViewSampleModule } from '../pivot-view/pivot-view.module';
+import { PivotTableSampleModule } from '../pivot-table/pivot-table.module';
 import { DocumentEditorSampleModule } from '../document-editor/document-editor.module';
 import { RTESampleModule } from '../rich-text-editor/rich-text-editor.module';
-import {FormValidatorModule} from '../form-validator/form-validator.module';
+import { FormValidatorModule } from '../form-validator/form-validator.module';
 import { PdfViewerSampleModule } from '../pdfviewer/pdfviewer.module';
 import { QueryBuilderSampleModule } from '../query-builder/query-builder.module';
 import { GanttSampleModule } from '../gantt/gantt.module';
@@ -66,8 +67,8 @@ const appRoutes: any = [
     { path: '', redirectTo: 'material/grid/over-view', pathMatch: 'full' },
     { path: '**', redirectTo: 'material/grid/over-view' },
     { path: 'treegrid', loadChildren: TreeGridSampleModule },
-    { path: 'pivot-view', loadChildren: PivotViewSampleModule },
-    { path: ':theme/pivot-view/:sample', redirectTo: 'material/pivot-view/default' },
+    { path: 'pivot-table', loadChildren: PivotTableSampleModule },
+    { path: ':theme/pivot-table/:sample', redirectTo: 'material/pivot-table/default' },
     // Data visualization
     { path: 'chart', loadChildren: ChartSampleModule },
     { path: 'circulargauge', loadChildren: CircularGaugeSampleModule },
@@ -80,6 +81,7 @@ const appRoutes: any = [
     { path: ':theme/range-navigator/:sample', redirectTo: 'material/range-navigator/default' },
     { path: 'sparkline', loadChildren: SparklineSampleModule },
     { path: 'smithchart', loadChildren: SmithchartSampleModule },
+    { path: 'barcode', loadChildren: BarcodeSampleModule },
     { path: 'treemap', loadChildren: TreemapSampleModule },
     { path: 'heatmap', loadChildren: HeatmapSampleModule },
     // Editors
@@ -135,7 +137,7 @@ const appRoutes: any = [
     // layouts
     { path: ':theme/avatar/:sample', redirectTo: 'material/avatar/default' },
     { path: ':theme/card/:sample', redirectTo: 'material/card/default' },
-    { path: 'dashboard-layout', loadChildren: DashboardLayoutSampleModule},
+    { path: 'dashboard-layout', loadChildren: DashboardLayoutSampleModule },
     { path: ':theme/dashboard-layout/:sample', redirectTo: 'material/dashboard-layout/default' },
     { path: 'dialog', loadChildren: DialogSampleModule },
     { path: 'listview', loadChildren: ListViewSampleModule },
@@ -154,7 +156,7 @@ const appRoutes: any = [
         // Grids
         GridSampleModule,
         TreeGridSampleModule,
-        PivotViewSampleModule,
+        PivotTableSampleModule,
         // Data visualization
         ChartSampleModule,
         CircularGaugeSampleModule,
@@ -165,6 +167,7 @@ const appRoutes: any = [
         RangeNavigatorSampleModule,
         SparklineSampleModule,
         SmithchartSampleModule,
+        BarcodeSampleModule,
         TreemapSampleModule,
         HeatmapSampleModule,
         // Editors

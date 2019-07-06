@@ -130,16 +130,16 @@ export class HamburgerMenuController {
         switch (args.value) {
             case 'Mobile':
             case 'Tablet':
-                // this.menuObj.close();
+                this.menuObj.close();
                 container.classList.add('deviceLayout');
                 container.classList[args.value === 'Mobile' ? 'remove' : 'add']('tabletview');
                 this.menuObj.element.parentElement.classList[args.value === 'Mobile' ? 'remove' : 'add']('e-menu-icon-right');
-                // this.menuObj.hamburgerMode = true;
+                this.menuObj.hamburgerMode = true;
                 this.menuObj.showItemOnClick = true;
             break;
             case 'Desktop':
                 container.classList.remove('deviceLayout', 'tabletview');
-                // this.menuObj.hamburgerMode = false;
+                this.menuObj.hamburgerMode = false;
                 this.menuObj.showItemOnClick = false;
             break;
         }

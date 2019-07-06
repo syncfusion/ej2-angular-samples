@@ -15,7 +15,7 @@ export const pdfViewerAppRoutes: Object[] = [
     // tslint:disable-next-line:max-line-length
     { path: ':theme/pdfviewer/custom-toolbar', component: CustomToolbarComponent, name: 'Custom Toolbar', order: '06', description: 'The PDF Viewer component is used to  view and print pdf documents in web applications.' },
     // tslint:disable-next-line:max-line-length
-    { path: ':theme/pdfviewer/right-to-left', component: RightToLeftComponent, name: 'Right To Left', order: '06', type: 'new', description: 'The PdfViewer component is used to  view and print pdf documents in web applications.' }
+    { path: ':theme/pdfviewer/right-to-left', component: RightToLeftComponent, name: 'Right To Left', order: '06', description: 'The PdfViewer component is used to  view and print pdf documents in web applications.' }
 ];
 
 export const pdfViewerRouter: ModuleWithProviders = RouterModule.forChild(pdfViewerAppRoutes);

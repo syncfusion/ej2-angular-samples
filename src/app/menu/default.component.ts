@@ -19,21 +19,21 @@ export class DefaultMenuController {
     public menuItems: MenuItemModel[] = [
         {
             text: 'File',
-            iconCss: 'e-menu-icons e-file',
+            iconCss: 'em-icons e-file',
             items: [
-                { text: 'Open', iconCss: 'e-menu-icons e-open' },
-                { text: 'Save', iconCss: 'e-menu-icons e-save' },
+                { text: 'Open', iconCss: 'em-icons e-open' },
+                { text: 'Save', iconCss: 'em-icons e-save' },
                 { separator: true },
                 { text: 'Exit' }
             ]
         },
         {
             text: 'Edit',
-            iconCss: 'e-menu-icons e-edit',
+            iconCss: 'em-icons e-edit',
             items: [
-                { text: 'Cut', iconCss: 'e-menu-icons e-cut' },
-                { text: 'Copy', iconCss: 'e-menu-icons e-copy' },
-                { text: 'Paste', iconCss: 'e-menu-icons e-paste' }
+                { text: 'Cut', iconCss: 'em-icons e-cut' },
+                { text: 'Copy', iconCss: 'em-icons e-copy' },
+                { text: 'Paste', iconCss: 'em-icons e-paste' }
             ]
         },
         {

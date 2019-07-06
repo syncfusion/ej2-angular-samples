@@ -1,0 +1,27 @@
+<div class="control-section">
+    <div class="drag-sample-wrapper">
+      <div class="schedule-container">
+        <ejs-schedule #scheduleObj id="schedule" cssClass='schedule-print' width='100%' height='650px'
+          [(currentView)]="currentView" [selectedDate]="selectedDate" [eventSettings]="eventSettings"
+          (actionBegin)="onActionBegin($event)">
+          <e-views>
+            <e-view option="Month"></e-view>
+          </e-views>
+        </ejs-schedule>
+      </div>
+    </div>
+</div>
+  
+<div id="action-description">
+    <p>This example demonstrates how to print the Scheduler element at client-side.</p>
+</div>
+<div id="description">
+    <p>In this example, the Scheduler element is Printed by making use of the public method
+        <code>print</code>.</p>
+    <p>
+    <strong>Module Injection</strong>
+    </p>
+    <p>To start using Print functionality in Scheduler, you need to inject the
+      <code>PrintService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>

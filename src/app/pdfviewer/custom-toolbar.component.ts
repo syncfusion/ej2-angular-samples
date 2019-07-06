@@ -2,6 +2,8 @@ import { Component, ViewEncapsulation, OnInit, ViewChild, Inject } from '@angula
 import {
     PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService,
     ToolbarService, NavigationService, TextSelectionService, PrintService,
+    PageChangeEventArgs,
+    LoadEventArgs
 } from '@syncfusion/ej2-angular-pdfviewer';
 import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
 import { DialogComponent } from '@syncfusion/ej2-angular-popups';
@@ -73,6 +75,17 @@ export class CustomToolbarComponent implements OnInit {
     public zoomOutClicked(e: ClickEventArgs): void {
         this.pdfviewerControl.magnification.zoomOut();
         this.updateZoomButtons();
+    }
+
+    public pageChanged(e: PageChangeEventArgs): void {
+        (document.getElementById('currentPage') as HTMLInputElement).value = this.pdfviewerControl.currentPageNumber.toString();
+        this.updatePageNavigation();
+    }
+
+    public documentLoaded(e: LoadEventArgs): void {
+        document.getElementById('totalPage').textContent = 'of ' + this.pdfviewerControl.pageCount;
+        (document.getElementById('currentPage') as HTMLInputElement).value = this.pdfviewerControl.currentPageNumber.toString();
+        this.updatePageNavigation();
     }
 
     public onCurrentPageBoxClicked(e: ClickEventArgs): void {

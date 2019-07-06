@@ -24,7 +24,7 @@
 
 /* Preview area styles */
 #custom-control #e-shirt-preview {
-    background: transparent url('~/assets/color-picker/shirt.png') no-repeat;
+    background: transparent url('/src/app/color-picker/images/shirt.png') no-repeat;
     height: 320px;
     margin: 20px auto;
     display: inline-block;
@@ -36,7 +36,7 @@
     width: 320px;
 }
 .highcontrast #custom-control #e-shirt-preview {
-    background: transparent url('~/assets/color-picker/shirt_highcontrast.png') no-repeat;
+    background: transparent url('/src/app/color-picker/images/shirt_highcontrast.png') no-repeat;
     background-color: rgb(244, 67, 54);
 }
 
@@ -115,7 +115,7 @@
     width: 35px;
 }
 .e-container .e-palette .e-scroll-palette.e-selected::before {
-    content: '\e303';
+    content: '\e933';
 }
 .highcontrast .e-container .e-palette {
     border-bottom-color: transparent;
@@ -152,21 +152,4 @@
 .e-container .e-palette .e-square-palette.e-selected,
 .e-container .e-palette .e-scroll-palette.e-selected {
     outline: none;
-}
-
-@font-face {
-    font-family: 'e-select';
-    src:
-    url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAAKAIAAAwAgT1MvMjlwRfUAAAEoAAAAVmNtYXDjE+NYAAABiAAAADZnbHlmjV5i3AAAAcgAAAAoaGVhZBSSE5oAAADQAAAANmhoZWEIUQQDAAAArAAAACRobXR4CAAAAAAAAYAAAAAIbG9jYQAUAAAAAAHAAAAABm1heHABDQASAAABCAAAACBuYW1lrzQ6OQAAAfAAAAIxcG9zdCXq1t8AAAQkAAAAMwABAAAEAAAAAFwEAAAAAAAD9AABAAAAAAAAAAAAAAAAAAAAAgABAAAAAQAAW40vW18PPPUACwQAAAAAANi/55MAAAAA2L/nkwAAAAAD9AN3AAAACAACAAAAAAAAAAEAAAACAAYAAQAAAAAAAgAAAAoACgAAAP8AAAAAAAAAAQQAAZAABQAAAokCzAAAAI8CiQLMAAAB6wAyAQgAAAIABQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUGZFZABA4wPjAwQAAAAAXAQAAAAAAAABAAAAAAAABAAAAAQAAAAAAAACAAAAAwAAABQAAwABAAAAFAAEACIAAAAEAAQAAQAA4wP//wAA4wP//wAAAAEABAAAAAEAAAAAAAAAFAAAAAEAAAAAA/QDdwAFAAAJAQcJAScBcf8AZQFlAoNlAVUBAmb+mAKIZgAAABIA3gABAAAAAAAAAAEAAAABAAAAAAABAAgAAQABAAAAAAACAAcACQABAAAAAAADAAgAEAABAAAAAAAEAAgAGAABAAAAAAAFAAsAIAABAAAAAAAGAAgAKwABAAAAAAAKACwAMwABAAAAAAALABIAXwADAAEECQAAAAIAcQADAAEECQABABAAcwADAAEECQACAA4AgwADAAEECQADABAAkQADAAEECQAEABAAoQADAAEECQAFABYAsQADAAEECQAGABAAxwADAAEECQAKAFgA1wADAAEECQALACQBLyBlLXNlbGVjdFJlZ3VsYXJlLXNlbGVjdGUtc2VsZWN0VmVyc2lvbiAxLjBlLXNlbGVjdEZvbnQgZ2VuZXJhdGVkIHVzaW5nIFN5bmNmdXNpb24gTWV0cm8gU3R1ZGlvd3d3LnN5bmNmdXNpb24uY29tACAAZQAtAHMAZQBsAGUAYwB0AFIAZQBnAHUAbABhAHIAZQAtAHMAZQBsAGUAYwB0AGUALQBzAGUAbABlAGMAdABWAGUAcgBzAGkAbwBuACAAMQAuADAAZQAtAHMAZQBsAGUAYwB0AEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAHUAcwBpAG4AZwAgAFMAeQBuAGMAZgB1AHMAaQBvAG4AIABNAGUAdAByAG8AIABTAHQAdQBkAGkAbwB3AHcAdwAuAHMAeQBuAGMAZgB1AHMAaQBvAG4ALgBjAG8AbQAAAAACAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBAgEDAAlTZWxlY3Rpb24AAAA=) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-    
-.e-palette-icons {
-    font-family: 'e-select';
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
 }

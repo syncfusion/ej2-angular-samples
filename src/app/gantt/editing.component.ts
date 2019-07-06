@@ -58,7 +58,7 @@ export class GanttEditingComponent implements OnInit {
         this.gridLines = 'Both';
         this.labelSettings = {
             leftLabel: 'TaskName',
-            rightLabel: '${if(taskData.subtasks)}${taskData.Duration} ${else if(resources)}${resources}${/if}'
+            rightLabel: 'resources'
         };
         this.projectStartDate= new Date('03/25/2019');
         this.projectEndDate= new Date('07/28/2019');

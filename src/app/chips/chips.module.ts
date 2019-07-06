@@ -37,4 +37,3 @@ export const chipsRouter: ModuleWithProviders = RouterModule.forChild(chipsAppRo
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ChipsSampleModule { }
-

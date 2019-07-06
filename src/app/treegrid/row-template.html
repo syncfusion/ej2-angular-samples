@@ -1,0 +1,57 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the TreeGrid component with the row template feature. In this sample, we have rendered each TreeGrid
+        row using the template.
+    </p>
+</div>
+<div class="control-section">
+        <ejs-treegrid #treegrid [dataSource]='data' height=335 width='auto' childMapping= 'Children' >
+                <e-columns>
+                        <e-column field = 'EmpID' headerText = 'Employee ID' width = '180'></e-column>
+                        <e-column field = 'Name' headerText = 'Employee Name'></e-column>
+                        <e-column field = 'Address' headerText = 'Employee Details' width = '350'></e-column>
+                        <e-column field = 'DOB' headerText = 'DOB'></e-column>
+                </e-columns>
+        <ng-template #rowTemplate let-data>
+                <tr>
+                        <td class="border" style='padding-left:18px;'>
+                            <div>{{data.EmpID}}</div>
+                        </td>
+                        <td class="border" style='padding: 10px 0px 0px 20px;'>
+                            <div style="font-size:14px;">
+                              {{data.Name}}
+                                <p style="font-size:9px;">{{data.Designation}}</p>
+                            </div>
+                        </td>
+                        <td class="border">
+                            <div>
+                                <div style="position:relative;display:inline-block;">
+                                    <img src="assets/treegrid/images/{{data.FullName}}.png" alt="{{data.FullName}}" />
+                                </div>
+                                <div style="display:inline-block;">
+                                    <div style="padding:5px;">{{data.Address}}</div>
+                                    <div style="padding:5px;">{{data.Country}}</div>
+                                    <div style="padding:5px;font-size:12px;">{{data.Contact}}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="border" style='padding-left: 20px;'>
+                            <div>{{format(data.DOB)}}</div>
+                        </td>
+                </tr>
+        </ng-template>
+</ejs-treegrid>
+<div id="description">
+    <p>
+        The TreeGrid provides a way to use a custom layout for its rows using template feature. The 
+        <code><a target="_blank" class="code"
+    href="https://ej2.syncfusion.com/angular/documentation/treegrid/row/#row-template">rowTemplate
+    </a></code> property accepts either string or HTML element`s ID value, which will be used 
+    as the template for the row.
+    </p>
+    <p>
+        In this demo, we have presented Employee Information with Employee Photo and employee details like Name, Address etc.
+    </p>
+
+</div>
+</div>

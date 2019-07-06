@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { SliderModule } from '@syncfusion/ej2-angular-inputs';
-import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
-import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { CheckBoxModule, ButtonModule  } from '@syncfusion/ej2-angular-buttons';
+import { NumericTextBoxModule, TextBoxModule} from '@syncfusion/ej2-angular-inputs';
 import { DefaultSliderComponent } from './default.component';
 import { OrientationSliderComponent } from './orientation.component';
 import { SharedModule } from '../common/shared.module';
@@ -19,6 +19,7 @@ import { ThumbCustomizationComponent } from './thumb-customization.component';
 import { TicksCustomizationComponent } from './ticks-customization.component';
 import { AzureComponent } from './azure-pricing.component';
 import { LimitsSliderComponent } from './limits.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
 export const sliderAppRoutes: Object[] = [
     { path: ':theme/slider/default', component: DefaultSliderComponent, name: 'Default Functionalities', order: '01', category: 'Range Slider', description: 'This example demonstrates the default rendering of default, min range and range Syncfusion Angular sliders. Drag the thumb to interact with slider.' },
@@ -32,14 +33,14 @@ export const sliderAppRoutes: Object[] = [
     { path: ':theme/slider/thumb-customization', component: ThumbCustomizationComponent, name: 'Thumb', order: '02', category: 'Customization', description: 'This example demonstrates how to customize Syncfusion Angular slider control thumbs with circle, oval and desired image shapes.' },
     { path: ':theme/slider/selection-bar-customization', component: SelectionBarComponent, name: 'Bar', order: '02', category: 'Customization', description: 'This example demonstrates how to highly customize Syncfusion Angular slider bar with colors and height.' },
     { path: ':theme/slider/ticks-customization', component: TicksCustomizationComponent, name: 'Ticks', order: '02', category: 'Customization', description: 'This example demonstrates how to customize Syncfusion Angular slider values using ticks with legend.' },
-    { path: ':theme/slider/tooltip-customization', component: TooltipCustomizationComponent, name: 'Tooltip', order: '02', category: 'Customization', type: 'update', description: 'This example demonstrates how to customize Syncfusion Angular slider tooltip\'s text and background color with formatted text values.' },
+    { path: ':theme/slider/tooltip-customization', component: TooltipCustomizationComponent, name: 'Tooltip', order: '02', category: 'Customization', description: 'This example demonstrates how to customize Syncfusion Angular slider tooltip\'s text and background color with formatted text values.' },
     { path: ':theme/slider/azure-pricing', component: AzureComponent, name: 'Cloud Pricing', order: '03', category: 'Use Case', description: 'This example demonstrates the usage of Syncfusion Angular slider control in real world use case sample azure cloud pricing.' }
 ];
 
 export const SliderRouter: ModuleWithProviders = RouterModule.forChild(sliderAppRoutes);
 
 @NgModule({
-    imports: [SliderRouter, SharedModule, DialogModule, SliderModule, BrowserModule, CheckBoxModule, NumericTextBoxModule],
+    imports: [SliderRouter, SharedModule, DialogModule, SliderModule, BrowserModule, CheckBoxModule, NumericTextBoxModule, TextBoxModule, DropDownListModule, ButtonModule],
     declarations: [
         DefaultSliderComponent,
         OrientationSliderComponent,

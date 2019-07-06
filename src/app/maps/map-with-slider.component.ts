@@ -103,7 +103,6 @@ export class MapsWithSliderComponent {
             type: 'Range',
             ticks: { placement: 'After', largeStep: 0.75 },
             changed: (args: SliderChangeEventArgs) => {
-                debugger;
                 if (!isNaN(args.value[0]) && !isNaN(args.value[1])) {
                     for (let i: number = 0; i < this.maps.layers[0].shapeSettings.colorMapping.length; i++) {
                         args.value[0] = args.value[0] === -2 ? -2.1 : args.value[0];

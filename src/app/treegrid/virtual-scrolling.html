@@ -1,0 +1,34 @@
+<div id="action-description">
+    <p>This sample demonstrates the TreeGrid component with the virtual scrolling feature. Scroll the TreeGrid content vertically to load rows.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-treegrid #treegrid [dataSource]='vData' [enableVirtualization]='400' childMapping='Crew' [treeColumnIndex]='1' height='600'>
+        <e-columns>
+            <e-column field='TaskID' headerText='Player Jersey' width='120' textAlign='Right'></e-column>
+            <e-column field='FIELD1' headerText='Player Name' width='120'></e-column>
+            <e-column field='FIELD2' headerText='Year' width='100' textAlign='Right'></e-column>
+            <e-column field='FIELD3' headerText='Stint' width='120' textAlign='Right'></e-column>
+            <e-column field='FIELD4' headerText='TMID' width='120' textAlign='Right'></e-column>
+        </e-columns>
+    </ejs-treegrid>
+</div>
+
+<div id='description'>
+    <p>
+        The TreeGrid UI virtualization allows you to render only rows visible within the view-port without buffering the entire datasource.
+        To enable the virtualization, set <code><a target="_blank" class="code"
+        href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#enablevirtualization">
+        enableVirtualization </a></code> property as true.
+    </p>
+    <p>
+        Note: The <code><a target="_blank" class="code"
+        href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#height">
+        height</a></code> property must be defined when enabling <code><a target="_blank" class="code"
+        href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#enablevirtualization">
+        enableVirtualization </a></code>.
+    </p>
+    <p style='font-weight: 500'>Injecting Module:</p>
+    <p>TreeGrid component features are segregated into individual feature-wise modules. To use Virtualscrolling feature, we need
+        to inject <code>VirtualScrollService</code> into the <code>@NgModule.providers</code> section.</p>
+</div>

@@ -225,6 +225,21 @@ export class SBController {
         });
     }
 
+    // To disable first and last sample navigation button
+    toggleButtonState(id: string, state: boolean): void {
+        let ele: HTMLButtonElement = <HTMLButtonElement>document.getElementById(id);
+        let mobileEle: HTMLButtonElement = <HTMLButtonElement>document.getElementById('mobile-' + id);
+        ele.disabled = state;
+        mobileEle.disabled = state;
+        if (state) {
+            mobileEle.classList.add('e-disabled');
+            ele.classList.add('e-disabled');
+        } else {
+            mobileEle.classList.remove('e-disabled');
+            ele.classList.remove('e-disabled');
+        }
+    }
+
     breadCrumbUpdate(controlName: string, category: string, sampleName: string) {
         let ele: Element = this.ngEle.nativeElement.querySelector('#sample-bread-crumb');
         this.breadCrumbObject.component.innerHTML = controlName;
@@ -240,7 +255,7 @@ export class SBController {
         let title: HTMLElement = document.querySelector('title');
         title.innerHTML = controlName + ' · ' + sampleName + ' · Essential JS 2 for Angular · Syncfusion ';
     }
-    
+
     dynamicTabCreation(obj: any): void {
         let tabObj: any;
         if (obj) {
@@ -353,7 +368,7 @@ export class SBController {
                     }
                     theme = themes.indexOf(theme) !== -1 ? theme : 'material';
                     document.getElementById(theme).classList.add('active-theme');
-                    //loadTheme(theme);
+                    loadTheme(theme);
                 }
             });
 
@@ -453,10 +468,10 @@ export class SBController {
         for (let sb of sbArray) {
             let ele: HTMLFormElement = (select('#' + sb) as HTMLFormElement);
             if (sb === 'asp_mvc') {
-                ele.href = 'https://aspnetmvc.syncfusion.com/'
+                ele.href = 'https://ej2.syncfusion.com/aspnetmvc/'
             }
             else if (sb === 'asp_core') {
-                ele.href = 'https://aspdotnetcore.syncfusion.com/'
+                ele.href = 'https://ej2.syncfusion.com/aspnetcore/'
             }
             else {
                 ele.href = ((link) ? ('http://' + link[1] + '/' + (link[3] ? (link[3] + '/') : '')) :
@@ -486,7 +501,7 @@ export class SBController {
         this.renderTabToolBar();
         this.wireEvents();
         this.setResponsive();
-        
+
         //for tooltip
         let openNew: Tooltip = new Tooltip({
             content: 'Open in New Window'
@@ -988,6 +1003,18 @@ export class SBController {
                 this.hideWaitingPopup();
             }
         );
+        let sampleIndex = this.pathRoutes.indexOf(this.getHash());
+        let samLength: number = this.pathRoutes.length - 1;
+        if (sampleIndex === samLength) {
+            this.toggleButtonState('next-sample', true);
+        } else {
+            this.toggleButtonState('next-sample', false);
+        }
+        if (sampleIndex === 0) {
+            this.toggleButtonState('prev-sample', true);
+        } else {
+            this.toggleButtonState('prev-sample', false);
+        }
     }
 
     hideWaitingPopup(): void {
@@ -1090,16 +1117,16 @@ export class SBController {
     }
 }
 
-// function loadTheme(theme: string): void {
-//     selectedTheme = theme;
-//     const ajax: Ajax = new Ajax('./styles/' + theme + '.css', 'GET', true);
-//     ajax.send().then((result: any) => {
-//         const doc: HTMLFormElement = <HTMLFormElement>select('#themelink');
-//         doc.href = './styles/' + theme + '.css';
-//         // select('#themeswitcher-icon').setAttribute('src', 'styles/images/SB_icon/SB_Switcher_icon_' + theme + '.png');
-//         themeFlag = false;
-//     });
-// }
+function loadTheme(theme: string): void {
+    selectedTheme = theme;
+    const ajax: Ajax = new Ajax('./styles/' + theme + '.css', 'GET', true);
+    ajax.send().then((result: any) => {
+        const doc: HTMLFormElement = <HTMLFormElement>select('#themelink');
+        doc.href = './styles/' + theme + '.css';
+        // select('#themeswitcher-icon').setAttribute('src', 'styles/images/SB_icon/SB_Switcher_icon_' + theme + '.png');
+        themeFlag = false;
+    });
+}
 
 
 function hideLoader(): void {

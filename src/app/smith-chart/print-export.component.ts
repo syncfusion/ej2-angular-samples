@@ -70,7 +70,7 @@ export class SmithchartPrintExportComponent {
     ngOnInit(): void {
         this.exportType = new DropDownList({
             index: 0,
-            width: 70,
+            width: 100,
         });
         this.exportType.appendTo('#mode');
     }

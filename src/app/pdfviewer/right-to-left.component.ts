@@ -61,33 +61,8 @@ export class RightToLeftComponent implements OnInit {
                      // tslint:disable-next-line:max-line-length
                     'No matches': 'انتهى العارض من البحث في المستند. لم يتم العثور على مزيد من التطابقات',
                     'No Text Found': 'لم يتم العثور على نص',
-                    'Undo' : 'فك',
-                    'Redo' : 'فعل ثانية',
-                    'Annotation': 'إضافة أو تعديل التعليقات التوضيحية',
-                    'Highlight': 'تسليط الضوء على النص',
-                    'Underline': 'تسطير النص',
-                    'Strikethrough': 'نص يتوسطه خط',
-                    'Delete': 'حذف التعليق التوضيحي',
-                    'Opacity': 'غموض',
-                    'Color edit': 'غير اللون',
-                    'Opacity edit': 'تغيير التعتيم',
-                    'Highlight context': 'تسليط الضوء',
-                    'Underline context': 'أكد',
-                    'Strikethrough context': 'يتوسطه',
                     // tslint:disable-next-line:max-line-length
-                    'Server error': 'خدمة الانترنت لا يستمع. يعتمد قوات الدفاع الشعبي المشاهد على خدمة الويب لجميع ميزاته. يرجى بدء خدمة الويب للمتابعة.',
-                    'Open text': 'افتح',
-                    'First text': 'الصفحة الأولى',
-                    'Previous text': 'الصفحة السابقة',
-                    'Next text': 'الصفحة التالية',
-                    'Last text': 'آخر صفحة',
-                    'Zoom in text': 'تكبير',
-                    'Zoom out text': 'تصغير',
-                    'Selection text': 'اختيار',
-                    'Pan text': 'مقلاة',
-                    'Print text': 'طباعة',
-                    'Search text': 'بحث',
-                    'Annotation Edit text': 'تحرير التعليق التوضيحي'
+                    'Server error': 'خدمة الانترنت لا يستمع. يعتمد قوات الدفاع الشعبي المشاهد على خدمة الويب لجميع ميزاته. يرجى بدء خدمة الويب للمتابعة.'
                 }
             }
         });

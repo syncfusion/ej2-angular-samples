@@ -1,3 +1,11 @@
 #property.property-panel-table div {
 	padding-left: 0;
 }
+
+.sb-content.e-view.hide-header {
+    top: 0 !important;
+}
+
+.sb-header.e-view.hide-header {
+    display: none;
+}

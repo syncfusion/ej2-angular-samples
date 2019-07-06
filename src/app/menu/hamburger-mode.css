@@ -10,7 +10,6 @@
     width: 0;
 }
 
-/* custom code start*/
 /**
 * ej2 Menu styles
 */
@@ -36,6 +35,7 @@
 
 .deviceLayout.tabletview {
     width: 767px;
+    z-index: 1;
 }
 
 .deviceLayout .speaker {
@@ -82,4 +82,3 @@
     width: 100%;
     background-color: #7b8cfb;
 }
-/* custom code end*/

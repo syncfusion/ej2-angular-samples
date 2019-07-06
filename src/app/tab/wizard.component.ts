@@ -51,6 +51,8 @@ export class WizardTabComponent implements OnInit {
     public dlgTarget: HTMLElement = document.querySelector('.sb-content-section.e-tab > .e-content');
     public dateMin: Date;
     public dateMax: Date;
+    public result: Object[] = [];
+    public reserved: Object[] = [];
 
     public ngOnInit(): void {
         document.body.style.visibility = 'hidden';
@@ -116,9 +118,9 @@ export class WizardTabComponent implements OnInit {
         this.selectedTrain = args.data;
     }
 
-    public tabSelected(e: SelectEventArgs): void {
+    public tabSelecting(e: SelectEventArgs): void {
         if (e.isSwiped) {
-            // e.cancel = true;
+            e.cancel = true;
         }
     }
 
@@ -135,10 +137,9 @@ export class WizardTabComponent implements OnInit {
                     if (!isNOU(this.startPoint.value) && this.startPoint.value == this.endPoint.value) {
                         document.getElementById('err1').innerText = '* Arrival point cannot be same as Departure';
                     } else {
-                        this.tab.enableTab(0, false);
                         this.tab.enableTab(1, true);
+                        this.tab.enableTab(0, false);
                         this.filterTrains(e);
-                        this.tab.select(1);
                         document.getElementById('err1').innerText = '';
                         document.getElementById('err2').innerText = '';
                     }
@@ -152,7 +153,6 @@ export class WizardTabComponent implements OnInit {
                     document.getElementById('err2').innerText = '* Select your convenient train';
                 } else {
                     this.tab.enableTab(2, true);
-                    this.tab.select(2);
                     this.tab.enableTab(1, false);
                     document.getElementById('err2').innerText = '';
                 }
@@ -163,7 +163,6 @@ export class WizardTabComponent implements OnInit {
                     document.getElementById('err3').innerText = '* Please enter passenger details';
                 } else {
                     this.tab.enableTab(3, true);
-                    this.tab.select(3);
                     this.tab.enableTab(2, false);
                     document.getElementById('err3').innerText = '';
                     this.finalizeDetails(e);
@@ -193,9 +192,9 @@ export class WizardTabComponent implements OnInit {
                 break;
         }
     }
+
     public filterTrains(args: any): void {
         /* Generating trains based on source and destination chosen */
-        let result: Object[] = [];
         let fromCity: string = <string>this.startPoint.value;
         let toCity: string = <string>this.endPoint.value;
         let count: number = Math.floor((Math.random() * 3) + 2);
@@ -207,14 +206,17 @@ export class WizardTabComponent implements OnInit {
             details.Departure = fromCity;
             details.Arrival = toCity;
             details.Availability = Math.floor((Math.random() * 20) + 20);
-            result.push(details);
+            this.result.push(details);
         }
-        this.availTrainGrid.dataSource = result;
     }
+
+
+      public availableTrainGridcreated(): void {
+        this.availTrainGrid.dataSource = this.result;
+      }
 
     public finalizeDetails(args: any): void {
         /* Get the passenger details and update table with name and other details for confirmation */
-        let reserved: Object[] = [];
         let passCount: any = 0;
         for (let i: number = 1; i <= 3; i++) {
             if (this.input1.nativeElement.value !== '') {
@@ -228,7 +230,7 @@ export class WizardTabComponent implements OnInit {
                     this.input2.nativeElement.value : this.input3.nativeElement.value;
                 details.Gender = (gender === '') ? 'Male' : gender;
                 details.Berth = (berth === '') ? 'Any' : berth;
-                if (details.PassName !== '') { reserved.push(details); }
+                if (details.PassName !== '') { this.reserved.push(details); }
                 passCount++;
             }
             let calcFare: any = 0;
@@ -245,8 +247,11 @@ export class WizardTabComponent implements OnInit {
                 displayAmt.innerText = 'Total payable amount: $' + passCount * (150 + calcFare)
             }
         }
-        this.ticketDetailGrid.dataSource = reserved;
     }
+
+    public ticketDetailGridcreated(): void {
+        this.ticketDetailGrid.dataSource = this.reserved;
+      }
 }
 interface Details {
     TrainNo: number;

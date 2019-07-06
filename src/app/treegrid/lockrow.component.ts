@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Inject } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject, ViewEncapsulation } from '@angular/core';
 import { sampleData, lockRowDropDownData} from './jsontreegriddata';
 import { RowDataBoundEventArgs, BeginEditArgs } from '@syncfusion/ej2-grids';
 import { addClass, removeClass } from '@syncfusion/ej2-base';
@@ -10,7 +10,8 @@ import { MultiSelectComponent, MultiSelectAllModule } from '@syncfusion/ej2-angu
     selector: 'ej2-treegrid-container',
     templateUrl: 'lockrow.html',
     providers: [EditService, PageService],
-    styleUrls: ['lockrow.style.css']
+    styleUrls: ['lockrow.style.css'],
+    encapsulation : ViewEncapsulation.None
 })
 export class LockRowComponent implements OnInit {
     public data: Object[] = [];

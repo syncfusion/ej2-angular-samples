@@ -101,26 +101,26 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/swimlane', component: SwimLaneDiagramComponent,
-        name: 'Swimlane', category: 'Getting Started', order: '01', type: 'new',
+        name: 'Swimlane', category: 'Getting Started', order: '01',
         description: 'This sample visualizes the swimlane structure with diagram elements inside it.'
     },
     {
-        path: ':theme/diagram/diagram-events', component: EventsDiagramComponent, type: 'new',
+        path: ':theme/diagram/diagram-events', component: EventsDiagramComponent,
         name: 'Events', category: 'Getting Started', order: '01',
         description: 'This sample visualize the event feature of diagram'
     },
     {
-        path: ':theme/diagram/tooltip', component: TooltipDiagramComponent, type: 'new',
+        path: ':theme/diagram/tooltip', component: TooltipDiagramComponent,
         name: 'Tooltip', category: 'Getting Started', order: '01',
         description: 'This sample visualize the tooltip feature of diagram'
     },
     {
-        path: ':theme/diagram/history-manager', component: HistoryManagerDiagramComponent, type: 'new',
+        path: ':theme/diagram/history-manager', component: HistoryManagerDiagramComponent,
         name: 'History Manager', category: 'Getting Started', order: '01',
         description: 'This sample visualizes the hotel booking reservation system and its built with readymade BPMN shapes.'
     },
     {
-        path: ':theme/diagram/flow-execution', component: FlowExecutionDiagramComponent, type: 'new',
+        path: ':theme/diagram/flow-execution', component: FlowExecutionDiagramComponent,
         name: 'Flow Execution', category: 'Getting Started', order: '01',
         description: 'This sample visualizes the hotel booking reservation system and its built with readymade BPMN shapes.'
     },

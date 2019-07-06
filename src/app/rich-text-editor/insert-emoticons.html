@@ -1,0 +1,65 @@
+<div id="action-description">
+
+    <p>
+        This sample shows how to add your own commands to toolbar of the rich text editor.
+        The smiley is added to insert emoticons in the editor.
+        Click the emoticon icon to show the emoticons list, and then choose the emoticon to be inserted in the editor.
+    </p>
+</div>
+<div class="control-section e-rte-custom-tbar-section">
+    <div class="sample-container">
+        <div class="default-section" id="rteSection">
+            <ejs-richtexteditor id='customRTE' #customRTE [toolbarSettings]='tools' (created)='onCreate()'>
+                <ng-template #valueTemplate>
+                    <div style="display:block;">
+                        <p style="margin-right:10px">The custom command "insert emoticons" is configured as the last
+                            item of the toolbar.
+                            Click on the command and choose the special character you want to include from the popup.
+                        </p>
+                    </div>
+                </ng-template>
+            </ejs-richtexteditor>
+            <ejs-dialog #Dialog id="rteDialog" [buttons]='dlgButtons' (overlayClick)="dialogOverlay()" [header]='header'
+                [visible]='false' [showCloseIcon]='false' width='43%' [target]='target' (created)="dialogCreate()"
+                [isModal]='true'>
+                <ng-template #content>
+                    <div id="tab">
+                        <ejs-tab id="tab_default">
+                            <e-tabitems>
+                                <e-tabitem [header]='headerText[0]'>
+                                    <ng-template #content>
+                                        <div id='rteEmoticons-smiley'>
+                                            <div *ngFor="let smiley of smileys" class='char_block'
+                                                title={{smiley.title}} [innerHTML]="smiley.content"></div>
+                                        </div>
+                                    </ng-template>
+                                </e-tabitem>
+                                <e-tabitem [header]='headerText[1]'>
+                                    <ng-template #content>
+                                        <div id='rteEmoticons-animal'>
+                                            <div *ngFor="let animal of animals" class='char_block'
+                                                title={{animal.title}} [innerHTML]="animal.content"></div>
+                                        </div>
+                                    </ng-template>
+                                </e-tabitem>
+                            </e-tabitems>
+                        </ejs-tab>
+                    </div>
+                </ng-template>
+            </ejs-dialog>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>The rich text editor allows you to configure your own commands to its toolbar using <code>toolbarSettings</code>
+        property.
+        The command can be plain text, icon, or HTML template.
+        You can also define the order and group where the command should be included.
+        Bind the action to the command by getting its instance. </p>
+    <p><b>Injecting Module</b></p>
+    <p>RichTextEditor features are segregated into individual feature-wise modules. In this demo we have used following
+        injectable services
+        <code>ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService</code> into the
+        <code>@NgModule.providers section</code>.</p>
+</div>

@@ -1,10 +1,11 @@
 import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from "@angular/common";
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { CheckBoxModule  } from '@syncfusion/ej2-angular-buttons';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { DefaultUploaderComponent } from './default.component';
 import { PreloadFileUploaderComponent } from './preload-files.component';
 import { ValidateUploaderComponent } from './file-validation.component';
@@ -32,7 +33,8 @@ export const uploaderAppRoutes: Object[] = [
 export const UploaderRouter: ModuleWithProviders = RouterModule.forChild(uploaderAppRoutes);
 
 @NgModule({
-    imports: [UploaderRouter, SharedModule, CheckBoxModule, UploaderModule, DialogModule, FormsModule, CommonModule, ReactiveFormsModule],
+    imports: [UploaderRouter, SharedModule, CheckBoxModule, UploaderModule,
+        DialogModule, DropDownListModule, FormsModule, CommonModule, ReactiveFormsModule],
     declarations: [
         DefaultUploaderComponent,
         ChunkUploadComponent,

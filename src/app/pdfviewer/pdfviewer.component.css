@@ -93,13 +93,11 @@
     font-size: 12px;
 }
 
-#topToolbar .e-pv-download-document-icon::before {
-	padding-left: 4px;
+.e-pv-download-document-icon::before {
     content: '\e914';
 }
 
-#topToolbar .e-pv-print-document-icon::before {
-	padding-left: 1px;
+.e-pv-print-document-icon::before {
     content: '\e917';
 }
 

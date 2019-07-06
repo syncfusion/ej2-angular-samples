@@ -14,6 +14,9 @@ import { GanttRemoteDataComponent } from './remote-data.component';
 import { GanttTimelineComponent } from './timeline.component';
 import { GanttTaskbarTemplateComponent } from './taskbar-template.component';
 import { GanttUnscheduledComponent } from './unscheduled-task.component';
+import { GanttZoomingComponent } from './zooming.component';
+import { GanttContextMenuComponent } from './context-menu.component';
+
 
 export const GanttAppRoutes: Object[] = [
     {
@@ -55,7 +58,18 @@ export const GanttAppRoutes: Object[] = [
         path: ':theme/gantt/unscheduled-task', component: GanttUnscheduledComponent,
         description: 'This example demonstrates the unscheduled tasks in Gantt with custom toolbar item and dynamic add support.',
         name: 'Unscheduled Tasks', order: '01', category: 'Gantt'
+    },
+    {
+        path: ':theme/gantt/zooming', component: GanttZoomingComponent,
+        description: 'This example demonstrates the zooming support of the Gantt chart timeline and ZoomToFit support of the Gantt chart.',
+        name: 'Zooming', order: '01', category: 'Gantt'
+    },
+    {
+        path: ':theme/gantt/context-menu', component: GanttContextMenuComponent,
+        description: 'This demo explains the usage of context menu and the default context menu items in Syncfusion Gantt control.',
+        name: 'Context Menu', order: '01', category: 'Gantt'
     }
+
 ];
 
 export const GanttRouter: ModuleWithProviders = RouterModule.forChild(GanttAppRoutes);
@@ -67,7 +81,9 @@ let declarations: Type<Object>[] = [
     GanttRemoteDataComponent,
     GanttTimelineComponent,
     GanttTaskbarTemplateComponent,
-    GanttUnscheduledComponent
+    GanttUnscheduledComponent,
+    GanttZoomingComponent,
+    GanttContextMenuComponent
 ];
 @NgModule({
     imports: [CommonModule, GanttRouter, SharedModule, GanttAllModule, DropDownListAllModule, CheckBoxAllModule, TextBoxAllModule, NumericTextBoxAllModule],

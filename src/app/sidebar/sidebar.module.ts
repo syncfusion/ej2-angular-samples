@@ -16,8 +16,8 @@ export const sidebarAppRoutes: Object[] = [
     { path: ':theme/sidebar/default', component: DefaultSidebarComponent, name: 'Default Functionalities', category: 'Sidebar' },
     { path: ':theme/sidebar/docking-sidebar', component: DockSidebarComponent, name: 'Dock', category: 'Sidebar' },
     { path: ':theme/sidebar/api', component: ApiSidebarComponent, name: "API", category: 'Sidebar' },
-    { path: ':theme/sidebar/sidebar-menu', component: SidebarMenuComponent, name: 'Sidebar Menu', category: 'Sidebar','type':'new'},
-    { path: ':theme/sidebar/responsive-panel', component: ResponsivePanelComponent, name: 'Responsive Panel', category: 'Sidebar','type':'new' },
+    { path: ':theme/sidebar/sidebar-menu', component: SidebarMenuComponent, name: 'Sidebar Menu', category: 'Sidebar'},
+    { path: ':theme/sidebar/responsive-panel', component: ResponsivePanelComponent, name: 'Responsive Panel', category: 'Sidebar' },
     { path: ':theme/sidebar/sidebar-list', component: SidebarListComponent, name: 'Sidebar With ListView', category: 'Sidebar' },
     
 ];
