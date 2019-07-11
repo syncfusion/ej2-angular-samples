@@ -1,0 +1,21 @@
+.e-pivotview {
+    width: 100%;
+    height:100%;
+}
+#ddldiv {
+    margin-top: -446px;
+}
+
+.e-bigger #ddldiv {
+    margin-top: -452px;
+}
+
+#ddldiv.e-device {
+    margin-top: -485px;
+}
+
+@media only screen and (max-width: 400px) {
+    ddldiv {
+        margin-top: -485px;
+    }
+}

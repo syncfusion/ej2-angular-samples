@@ -33,28 +33,15 @@ export class EditTempComponent {
     public eventSettings: EventSettingsModel = { dataSource: <Object[]>extend([], doctorsEventData, null, true) };
     public selectedDate: Date = new Date(2018, 1, 15);
     public showQuickInfo: boolean = false;
-
-    public onPopupOpen(args: PopupOpenEventArgs): void {
-        if (args.type === 'Editor') {
-            let statusElement: HTMLInputElement = args.element.querySelector('#EventType') as HTMLInputElement;
-            if (!statusElement.classList.contains('e-dropdownlist')) {
-                let dropDownListObject: DropDownList = new DropDownList({
-                    placeholder: 'Choose status', value: statusElement.value,
-                    dataSource: ['New', 'Requested', 'Confirmed']
-                });
-                dropDownListObject.appendTo(statusElement);
-                statusElement.setAttribute('name', 'EventType');
-            }
-            let startElement: HTMLInputElement = args.element.querySelector('#StartTime') as HTMLInputElement;
-            if (!startElement.classList.contains('e-datetimepicker')) {
-                new DateTimePicker({ value: new Date(startElement.value) || new Date() }, startElement);
-            }
-            let endElement: HTMLInputElement = args.element.querySelector('#EndTime') as HTMLInputElement;
-            if (!endElement.classList.contains('e-datetimepicker')) {
-                new DateTimePicker({ value: new Date(endElement.value) || new Date() }, endElement);
-            }
-        }
-    }
+    public statusFields: Object = { text: 'StatusText', value: 'StatusText' };
+    public StatusData: Object[] = [
+      { StatusText: 'New', Id: 1 },
+      { StatusText: 'Requested', Id: 2 },
+      { StatusText: 'Confirmed', Id: 3 }
+    ];
+    public dateParser(data: string) {
+        return new Date(data);
+      }
     public onEventRendered(args: EventRenderedArgs): void {
         switch (args.data.EventType) {
             case 'Requested':
@@ -69,8 +56,13 @@ export class EditTempComponent {
         }
     }
     public onActionBegin(args: { [key: string]: Object }): void {
-        if (args.requestType === 'eventCreate') {
-            let data: { [key: string]: Object } = args.data as { [key: string]: Object };
+        if (args.requestType === 'eventCreate' || args.requestType === 'eventChange') {
+            let data: any;
+            if (args.requestType === 'eventCreate') {
+                data = <any>args.data[0];
+            } else if (args.requestType === 'eventChange') {
+                data = <any>args.data;
+            }
             if (!this.scheduleObj.isSlotAvailable(data.StartTime as Date, data.EndTime as Date)) {
                 args.cancel = true;
             }

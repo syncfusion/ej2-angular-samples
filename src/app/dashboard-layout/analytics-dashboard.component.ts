@@ -31,6 +31,7 @@ export class AnalyticsDashboardComponent {
     @ViewChild('piechart') public piechart: ChartComponent;
     @ViewChild('lineChart') public lineChart: ChartComponent;
     @ViewChild('colchart') public colchart: ChartComponent;
+
     // Sidebar data
     public enableDock: boolean = true;
     public type: string = 'Over';
@@ -249,8 +250,9 @@ export class AnalyticsDashboardComponent {
     public cellSpacing: number[] =  [5, 5];
     public aspectRatio : any = 100 / 85;
     public centerTitle: any;
-    constructor(){
+    constructor(@Inject('sourceFiles') private sourceFiles: any){
         this.centerTitle = (document.createElement('div') as HTMLElement);
+        sourceFiles.files = ['analytics-dashboard.css'];
     }
     ngAfterViewInit() {
     this.centerTitle.innerHTML = 'Active <br> users  &nbsp';

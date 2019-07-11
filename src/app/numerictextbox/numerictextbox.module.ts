@@ -20,7 +20,7 @@ export const numericAppRoutes: Object[] = [
 export const NumericRouter: ModuleWithProviders = RouterModule.forChild(numericAppRoutes);
 
 @NgModule({
-    imports: [NumericTextBoxModule, NumericRouter, SharedModule],
+    imports: [NumericRouter, SharedModule, NumericTextBoxModule],
     declarations: [
         DefaultTextboxController,
         FormatTextboxController,

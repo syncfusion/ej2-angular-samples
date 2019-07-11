@@ -9,6 +9,10 @@
 }
 #inline-control h4 {
     margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.64);
+}
+.highcontrast #inline-control h4 {
+    color: rgba(255, 255, 255, 0.64);
 }
 .e-bigger #inline-control h4 {
     font-size: 20px;
@@ -16,7 +20,7 @@
 
 /* Preview area styles */
 #inline-control #preview {
-    background: transparent url('~/assets/color-picker/pen.png') no-repeat;
+    background: transparent url('/src/app/color-picker/images/pen.png') no-repeat;
     display: inline-block;
     height: 80px;
     margin: 10px 0;
@@ -24,17 +28,17 @@
     background-color: #008000;
 }
 #inline-control.e-mobile-control #preview {
-    background: transparent url('~/assets/color-picker/pen_mobile.png') no-repeat;
+    background: transparent url('/src/app/color-picker/images/pen_mobile.png') no-repeat;
     background-color: #008000;
     height: 35px;
     width: 300px;
 }
 .highcontrast #inline-control #preview {
-    background: transparent url('~/assets/color-picker/pen_highcontrast.png') no-repeat;
+    background: transparent url('/src/app/color-picker/images/pen_highcontrast.png') no-repeat;
     background-color: #008000;
 }
 .highcontrast #inline-control.e-mobile-control #preview {
-    background: transparent url('~/assets/color-picker/pen_mobile_highcontrast.png') no-repeat;
+    background: transparent url('/src/app/color-picker/images/pen_mobile_highcontrast.png') no-repeat;
     background-color: #008000;
 }
 

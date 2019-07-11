@@ -1,0 +1,12 @@
+.e-pivotview {
+    width: 100%;
+    height:100%;
+}
+
+.pivot-table-property-section {
+    overflow: auto;
+}
+
+.pivot-table-property-section .e-multiselect {
+    padding: 0;
+}

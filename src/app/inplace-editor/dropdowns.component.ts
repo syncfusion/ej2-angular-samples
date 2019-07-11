@@ -40,15 +40,15 @@ export class DropdownsInplaceEditorComponent implements OnInit {
 
     ngOnInit(): void {
         this.autoCompleteModel = {
-            placeholder: 'Choose the countries',
+            placeholder: 'Choose the country',
             dataSource: this.autocompleteData
         };
         this.dropDownListModel = {
-            placeholder: 'Find a countries',
+            placeholder: 'Find a country',
             dataSource: this.autocompleteData
         };
         this.comboBoxModel = {
-            placeholder: 'Find a countries',
+            placeholder: 'Find a country',
             dataSource: this.autocompleteData
         };
         this.multiSelectModel = {

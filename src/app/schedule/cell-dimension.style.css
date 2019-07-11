@@ -16,3 +16,13 @@
 .schedule-cell-dimension.e-schedule .e-month-view .e-work-cells {
     height: 200px;
 }
+
+.schedule-cell-dimension.e-schedule .e-timeline-month-view .e-content-wrap table col,
+.schedule-cell-dimension.e-schedule .e-timeline-view .e-content-wrap table col {
+    width: 100px;
+}
+
+.schedule-cell-dimension.e-schedule .e-timeline-view .e-work-cells,
+.schedule-cell-dimension.e-schedule .e-timeline-month-view .e-work-cells {
+    height: 600px;
+}

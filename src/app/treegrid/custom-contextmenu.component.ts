@@ -17,28 +17,48 @@ export class CustomContextMenuComponent implements OnInit {
         this.data = sampleData;
         this.contextMenuItems= [
             {text: 'Collapse the Row', target: '.e-content', id: 'collapserow'},
-            {text: 'Expand the Row', target: '.e-content', id: 'expandrow'} ]
+            {text: 'Expand the Row', target: '.e-content', id: 'expandrow'},
+            { text: 'Collapse All', target: '.e-headercontent', id: 'collapseall' },
+            { text: 'Expand All', target: '.e-headercontent', id: 'expandall' }
+         ]
     }
     contextMenuOpen (arg?: BeforeOpenCloseEventArgs): void {
         let elem: Element = arg.event.target as Element;
         let row: Element = elem.closest('.e-row');
         let uid: string = row && row.getAttribute('data-uid');
-        if ( isNullOrUndefined(uid) || isNullOrUndefined(getValue('hasChildRecords', this.treegrid.grid.getRowObjectFromUID(uid).data))) {
+        let items: Array<HTMLElement> = [].slice.call(document.querySelectorAll('.e-menu-item'));
+        for (let i: number = 0; i < items.length; i++) {
+          items[i].setAttribute('style','display: none;');
+        }
+        if (elem.closest('.e-row')) {
+          if ( isNullOrUndefined(uid) || 
+            isNullOrUndefined(getValue('hasChildRecords', this.treegrid.grid.getRowObjectFromUID(uid).data))) {
             arg.cancel = true;
-        } else {
+          } else {
             let flag: boolean = getValue('expanded', this.treegrid.grid.getRowObjectFromUID(uid).data);
             let val: string = flag ? 'none' : 'block';
-            document.querySelectorAll('li#expandrow')[0].setAttribute('style','display: ' + val + ';');
+            document.querySelectorAll('li#expandrow')[0].setAttribute('style', 'display: ' + val + ';');
             val = !flag ? 'none' : 'block';
-            document.querySelectorAll('li#collapserow')[0].setAttribute('style','display: ' + val + ';');
+            document.querySelectorAll('li#collapserow')[0].setAttribute('style', 'display: ' + val + ';');
+          }
+        } else {
+          let len = this.treegrid.element.querySelectorAll('.e-treegridexpand').length;
+          if (len !== 0) {
+             document.querySelectorAll('li#collapseall')[0].setAttribute('style', 'display: block;');
+          } else {
+            document.querySelectorAll('li#expandall')[0].setAttribute('style', 'display: block;');
+          }
         }
     }
     contextMenuClick (args?: MenuEventArgs): void {
-        this.treegrid.getColumnByField('taskID');
         if (args.item.id === 'collapserow') {
-            this.treegrid.collapseRow(<HTMLTableRowElement>(this.treegrid.getSelectedRows()[0]), this.treegrid.getSelectedRecords()[0]);
-        } else {
-            this.treegrid.expandRow(<HTMLTableRowElement>(this.treegrid.getSelectedRows()[0]), this.treegrid.getSelectedRecords()[0]);
-            }
+          this.treegrid.collapseRow(this.treegrid.getSelectedRows()[0] as HTMLTableRowElement, this.treegrid.getSelectedRecords()[0]);
+        } else if (args.item.id === 'expandrow') {
+          this.treegrid.expandRow(this.treegrid.getSelectedRows()[0] as HTMLTableRowElement, this.treegrid.getSelectedRecords()[0]);
+        } else if (args.item.id === 'collapseall') {
+          this.treegrid.collapseAll();
+        } else if (args.item.id === 'expandall') {
+          this.treegrid.expandAll();
+        }
     }
 }

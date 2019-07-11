@@ -1,0 +1,15 @@
+.border {
+    border-color: #e0e0e0;
+    border: 1px solid #e0e0e0;
+    border-width: 1px 0px 0px 0px;
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    vertical-align: baseline;
+    border-radius: 50px;
+    margin-left: 20px;
+    background-repeat: no-repeat;
+
+}

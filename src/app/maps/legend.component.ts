@@ -139,7 +139,6 @@ export class MapsLegendComponent {
         '#opacity');
         highlightCheckBox.change = opacity = (e: CheckBoxChangeEvents) => {
             if (e.checked) {
-                debugger;
                 this.maps.layers[0].shapeSettings.colorMapping[5].from = 0;
                 this.maps.layers[0].shapeSettings.colorMapping[5].to = 0;
                 this.maps.layers[0].shapeSettings.colorMapping[5].color = 'lightgrey';

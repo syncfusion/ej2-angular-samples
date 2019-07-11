@@ -45,7 +45,8 @@ export class PropertiesComponent {
             this.dashboardObject.allowResizing = args.checked;
         }
     }
-	onChangeEvent (args: any): void {
+	
+	onChangeEvent(args: any): void  {
 		 this.dashboardObject.cellSpacing =  [parseInt(args.value, 10), parseInt(args.value, 10)];
 	}
 

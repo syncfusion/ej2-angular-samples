@@ -1,0 +1,220 @@
+<style>
+    .top {
+        margin-top: 10px;
+    }
+
+    .centercontrol {
+        margin: auto;
+        width: 50%;
+        height: 50%;
+    }
+
+  
+    .center {
+            margin-left: 14px;
+            margin-right: 17px;
+            margin-top: 14px;
+            min-width: 280px;
+            width: auto;
+            border: 2px solid lightgray;
+            min-height: 40%;
+            padding-top: 35px;
+        }
+    
+
+    .allowedText {
+        margin-left: 14px;
+        margin-right: 17px;
+        margin-top: 14px;
+        width: auto;
+        height: auto;
+    }
+
+    .row {
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-top: 8px;
+    }
+</style>
+
+<div id="action-description">
+    <p>
+        This sample visualizes a barcode image that presents alphanumeric combinations. Code 128 barcode consists of a
+        start character, data digits, a modulo 103 check digit, and a stop character.
+    </p>
+</div>
+
+<div class="col-lg-8 control-section" style="width: 64%">
+        <div class="content-wrapper">
+            <div class='center'>
+                    <div class='centercontrol' style="width:200px;height:200px">
+                    <ejs-barcodegenerator style="display: block;" #barcode id="barcode" width="200px" height="150px" (invalid)="invalidInput($event)"
+                        mode="SVG" type="Code128" value="SYNCFUSION">
+                    </ejs-barcodegenerator>
+                </div>
+            </div>
+            <div class='allowedText'>
+                <span style="font-weight: 600;"> Allowed Input characters :</span> support 0-9 A-Z a-z and special
+                character
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 property-section" style="padding-right: 0px;
+padding-left: 18px;">
+        <div class="property-panel-header">
+            Appearance
+        </div>
+        <div id="propertypanel" class="e-remove-selection">
+
+            <div class="property-section-content">
+
+                <div class="row sb-child-row">
+                    <div class="col-xs-2 top" style="padding-left: 0px;">
+                        Value
+                    </div>
+                    <div class="col-xs-10" style="padding-left: 0px">
+                        <form id="form-element" class="form-horizontal">
+                                <div id='barcodevaluediv' name="password">
+                                <ejs-textbox #barcodevalue id="barcodevalue" value='SYNCFUSION'
+                                    (change)="barcodevalueOnChange($event)"></ejs-textbox>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row sb-child-row">
+                    <div>
+                        <div class="col-xs-2 top" style="padding-left: 0px;padding-right: 20px;">
+                            Width
+                        </div>
+                        <div class="col-xs-3" style="width: 33%;padding-left: 0px">
+                            <ejs-numerictextbox id="width" format="###.##" value="200" min="150" max="250" step="2"
+                                (change)='onWidthChange($event)'></ejs-numerictextbox>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-xs-2 top">
+                            Height
+                        </div>
+                        <div class="col-xs-3" style="width: 33%;padding-left: 0px;">
+                            <ejs-numerictextbox id="height" format="###.##" value="150" min="100" max="200" step="2"
+                                (change)='onheightChange($event)'></ejs-numerictextbox>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row sb-child-row" style="margin-top: 20px;">
+                    <div class="col-xs-6" style="padding-left: 0px;">
+                        <div class="col-xs-1" style="padding-left: 0px;">
+                            <ejs-checkbox #barcode id=" textVisibility " [checked]="true"
+                                (change)="textVisibilityChange($event) "></ejs-checkbox>
+                        </div>
+                        <div class="col-xs-10">Text Visibility</div>
+                    </div>
+                    <div class="col-xs-4" style="padding-left: 0;margin-left: 13px;">
+                        <div class="col-xs-1" style="padding-left: 0px;">
+                            <ejs-checkbox #barcode id=" svgMode " [checked]="true" (change)="svgModeChange($event) ">
+                            </ejs-checkbox>
+
+                        </div>
+                        <div class="col-xs-10" style="width: 100px;">SVG Mode</div>
+
+
+                    </div>
+                </div>
+                <div class="row sb-child-row">
+                    <div style="margin-top: 15px">
+                        <div class="col-xs-2" style="margin-top: 5px;padding-left: 0px;">BG Color</div>
+                        <div class="col-xs-4" style="padding-left: 0px;">
+                            <input ejs-colorpicker id='bgColor' type='color' value='#ffffff'
+                                (change)="bgColorChange($event) ">
+                        </div>
+                        <div class="col-xs-2" style="width: 18%;
+                            padding-left: 12px;
+                            margin-top: 5px;">Fore Color</div>
+                        <div class="col-xs-3" style="padding-left: 2px;">
+                            <input ejs-colorpicker id='foreColor' type='color' value='#000000'
+                                (change)="foreColorChange($event) ">
+                        </div>
+                    </div>
+                </div>
+                <div class="property-panel-header">
+                    Margin
+                </div>
+                <div class="row sb-child-row">
+                    <div class="col-xs-2 top" style="padding-left: 0px;"> Left</div>
+                    <div class="col-xs-3" style="width: 33%;padding-left: 0px;">
+                        <ejs-numerictextbox id="marginLeft" format="###.##" value="10" min="-10" max="30" step="1"
+                            (change)='marginLeftChange($event)'></ejs-numerictextbox>
+                    </div>
+                    <div class="col-xs-2 top">Right</div>
+                    <div class="col-xs-3" style="width: 33%;padding-left: 0px;">
+                        <ejs-numerictextbox id="MarginRight" format="###.##" value="10" min="-10" max="30" step="1"
+                            (change)='MarginRighthChange($event)'></ejs-numerictextbox>
+                    </div>
+                </div>
+                <div class="row sb-child-row">
+                    <div class="col-xs-2 top" style="padding-left: 0px;">Top</div>
+                    <div class="col-xs-3" style="width: 33%;padding-left: 0px;">
+                        <div style="padding-bottom: 8px">
+                            <ejs-numerictextbox id="marginTop" format="###.##" value="10" min="-10" max="30" step="1"
+                                (change)='marginTopChange($event)'></ejs-numerictextbox>
+                        </div>
+                    </div>
+                    <div class="col-xs-2 top">Bottom</div>
+                    <div class="col-xs-3" style="width: 33%;padding-left: 0px;">
+                        <ejs-numerictextbox id="MarginBottom" format="###.##" value="10" min="-10" max="30" step="1"
+                            (change)='MarginBottomtChange($event)'></ejs-numerictextbox>
+                    </div>
+                </div>
+                <div class="property-panel-header">
+                    Text Properties
+                </div>
+                <div class="row sb-child-row">
+                    <div class="col-xs-2 top" style="padding-left: 0px;">Top</div>
+                    <div class="col-xs-3" style="width: 33%;padding-left: 0px;">
+                        <ejs-numerictextbox id="TextmarginTop" format="###.##" value="0" min="-10" max="20" step="1"
+                            (change)='TextmarginTophChange($event)'></ejs-numerictextbox>
+                    </div>
+                    <div class="col-xs-2 top">Bottom</div>
+                    <div class="col-xs-3" style="width: 33%;padding-left: 0px;">
+                        <ejs-numerictextbox id="TextMarginBottom" format="###.##" value="0" min="-10" max="20" step="1"
+                            (change)='TextMarginBottomhChange($event)'></ejs-numerictextbox>
+                    </div>
+                </div>
+                <div class="row sb-child-row">
+                    <div class="col-xs-2 top" style="padding-left: 0px;">
+                        Position
+                    </div>
+                    <div class="col-xs-10" style="padding-left:0px">
+                        <ejs-dropdownlist #textPosition id="textPosition" [dataSource]="textPositionValue"
+                             value="Bottom" (change)="textPositionOnChange($event)"></ejs-dropdownlist>
+
+                    </div>
+                </div>
+                <div class="row sb-child-row">
+                    <div class="col-xs-2 top" style="padding-left: 0px;">
+                        Alignment
+                    </div>
+                    <div class="col-xs-10" style="padding-left:0px">
+                        <ejs-dropdownlist #textAlignment id="textAlignment" [dataSource]="textAlignmentValues"
+                             value="Center" (change)="textAlignmentOnChange($event)">
+                        </ejs-dropdownlist>
+                    </div>
+                </div>
+                <div class="row sb-child-row">
+                    <div class="col-xs-3 top" style="width: 17%;padding-left: 0px;">
+                        Display Text
+                    </div>
+                    <div class="col-xs-10" style="width: 81%;padding-left:0px;padding-right: 0;">
+                        <ejs-textbox #displayText id="displayText" value='SYNCFUSION'
+                            (change)="displayTextOnChange($event)"></ejs-textbox>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="description">
+            <p>
+                This sample shows how to create the Code 128 barcode type with alphanumeric characters. The `type`
+                property can be used to set the barcode type as `Code128`.
+            </p>
+        </div>

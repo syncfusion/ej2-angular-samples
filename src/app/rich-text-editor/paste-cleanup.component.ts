@@ -40,10 +40,7 @@ export class PasteCleanupComponent {
     public pasteCleanupSettings: any = {
         prompt: true,
         plainText: false,
-        keepFormat: false,
-        deniedTags: [],
-        deniedAttrs: [],
-        allowedStyleProps: []
+        keepFormat: false
     };
 
     public formatData: Object[] = [

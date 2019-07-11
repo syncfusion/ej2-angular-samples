@@ -17,7 +17,7 @@ export const calendarAppRoutes: Object[] = [
     { path: ':theme/calendar/disabled', component: DisabledCalendarComponent, name: 'Disable Dates', description: 'Customizable Calendar widget for Angular with disabled dates to restrict the user from selecting a defined set of dates by disabling its UI interaction', category: 'Calendar' },
     { path: ':theme/calendar/date-range', component: RangesCalendarComponent, name: 'Date Range', description: 'Calendar directive for Angular with min and max date that restrics the user from selecting date within a defined range like weekends, range of dates etc', category: 'Calendar' },
     { path: ':theme/calendar/multi-select', component: MultiSelectionComponent, name: 'Multiple Selection', description: 'A Simple Calendar directive for Angular with multiple date selection feature that allows user to select more than one date as random or range  of dates', category: 'Calendar' },
-    { path: ':theme/calendar/month-picker', component: MonthPickerComponent, name: 'Month Picker', type :'new', description:'The Angular Calendar component can act as a month and year picker. It helps you to select a month or year quickly with all month related properties', category: 'Calendar' },
+    { path: ':theme/calendar/month-picker', component: MonthPickerComponent, name: 'Month Picker', description:'The Angular Calendar component can act as a month and year picker. It helps you to select a month or year quickly with all month related properties', category: 'Calendar' },
     { path: ':theme/calendar/islamic-calendar', component: IslamicCalendarComponent, name: 'Islamic Calendar' , category: 'Calendar' }
 ];
 

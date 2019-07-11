@@ -138,10 +138,8 @@
   div#predefine_control {
     border: 1px solid lightgray;
   }
-  /* styles for highcontrast theme */
+    /* styles for highcontrast theme */
 
-    body.highcontrast #predefine_dashboard .panel-content {
-        color: rgba(255, 255, 255, 0.54);
-    }
-
-  
+	body.highcontrast #predefine_dashboard .panel-content {
+		color: rgba(255, 255, 255, 0.54);
+	}

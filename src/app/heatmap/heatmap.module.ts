@@ -90,7 +90,7 @@ export const heatmapAppRoutes: Object[] = [
     {
         path: ':theme/heatmap/cell-selection', component: HeatmapCellSelectionComponent,
         description: 'This demo for Essential JS2 Heatmap control shows how to select the cell.',
-        name: 'Selection', order: '04', category: 'Features',type: 'update'
+        name: 'Selection', order: '04', category: 'Features'
     },
     {
         path: ':theme/heatmap/legend', component: HeatmapLegendComponent,

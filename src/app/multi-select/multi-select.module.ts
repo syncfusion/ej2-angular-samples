@@ -13,6 +13,7 @@ import { ChipCustomizeMultiSelectComponent } from './chip-customization.componen
 import { DiacriticsFilteringMultiSelectComponent } from './diacritics-filtering.component';
 import { CheckboxMultiSelectComponent } from './checkbox.component';
 import { SelectLimitComponent } from './selection-limit.component';
+import {CheckboxGroupingMultiSelectComponent} from './grouping-with-checkbox.component';
 import { SharedModule } from '../common/shared.module';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { TemplateDrivenMultiSelectComponent } from './template-driven.component';
@@ -46,6 +47,10 @@ export const multiselectAppRoutes: Object[] = [
         name: 'CheckBox', category: 'MultiSelect Dropdown'
     },
     {
+      path: ':theme/multi-select/grouping-with-checkbox', component: CheckboxGroupingMultiSelectComponent, description: 'This example demonstrates how to select all the grouped list item values through checkbox in the Angular MultiSelect component.', order: '01',
+      name: 'Grouping with CheckBox', category: 'MultiSelect Dropdown', type: 'new'
+    },
+    {
         path: ':theme/multi-select/selection-limit', component: SelectLimitComponent, description: 'This example demonstrates how to achieve the diacritics filter functionalities in the Angular multiselect component.', order: '01',
         name: 'Selection Limit', category: 'MultiSelect Dropdown'
     },
@@ -73,6 +78,7 @@ export const MultiSelectRouter: ModuleWithProviders = RouterModule.forChild(mult
         CustomTagMultiSelectComponent,
         ChipCustomizeMultiSelectComponent,
         CheckboxMultiSelectComponent,
+        CheckboxGroupingMultiSelectComponent,
         SelectLimitComponent,
         DiacriticsFilteringMultiSelectComponent,
         TemplateDrivenMultiSelectComponent,

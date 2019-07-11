@@ -6,7 +6,7 @@
 
 <div class="control-section">
     <div class="content-wrapper">
-        <div id='content' class='box-form' style="margin: 0 auto; width:750px; padding:25px">
+        <div id='content' class='box-form' style="margin: 0 auto; max-width:750px; padding:25px">
             <form (ngSubmit)="onSubmit()" #rteForm="ngForm">
                 <div class="form-group"> 
                     <ejs-richtexteditor #fromRTE #name='ngModel' [(value)]='value' required name="name" [(ngModel)]="value" (created)="rteCreated()"></ejs-richtexteditor>

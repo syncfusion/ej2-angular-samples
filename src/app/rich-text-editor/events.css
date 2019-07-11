@@ -16,3 +16,11 @@
         margin-top: -4px;
         padding-bottom: 0px;
     }
+
+    .sb-content.e-view.hide-header {
+        top: 0 !important;
+    }
+    
+    .sb-header.e-view.hide-header {
+        display: none;
+    }

@@ -1,0 +1,26 @@
+.upload-dialog {
+    height: 550px !important;
+}
+.sample-container {
+    margin: 10px 10px 10px 10px;
+}
+
+.fileupload {
+    max-width: 500px;
+    margin: auto;
+}
+
+#openBtn {
+    position: absolute;
+    top: 24px;
+    left: 43%;
+}
+
+#dialog {
+    top: 20px !important;
+    max-height: 500px !important;
+}
+
+#uploadFileManager .e-file-drop, #uploadFileManager .e-css.e-btn {
+    display: none;
+}

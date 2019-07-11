@@ -7,7 +7,7 @@
 <div class="control-section">
     <div class="sample-container">
         <div class="default-section">
-            <ejs-richtexteditor id='mdDefault' #mdDefault height='250px' [toolbarSettings]='tools' [editorMode]='mode' (created)='onCreate()'>
+            <ejs-richtexteditor id='mdDefault' #mdDefault height='250px' [formatter]='formatter' [toolbarSettings]='tools' [editorMode]='mode' (created)='onCreate()'>
                 <ng-template #valueTemplate>
 The sample is added to showcase **markdown editing**.
 Type or edit the content and apply formatting to view markdown formatted content.

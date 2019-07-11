@@ -44,6 +44,7 @@ export class ShowHideComponent implements OnInit {
         } else {
             this.grid.hideColumns(element.innerHTML);
         }
+        this.flag = true;
     }
 
     public dataBound(): void {

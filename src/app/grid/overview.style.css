@@ -26,6 +26,9 @@ background-color:#e3165b;
 :host-context(.bootstrap)  /deep/ .empimg{
   background-color:#0078d6; 
 }
+:host-context(.bootstrap4)  /deep/ .empimg{
+  background-color:#0078d6; 
+}
 :host-context(.fabric) /deep/ .empimg {
   background-color:#0078d6; 
 }

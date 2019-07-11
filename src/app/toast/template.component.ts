@@ -89,13 +89,12 @@ export class TemplateController {
     private toastObjEmail: ToastComponent;
     private template: string = '<div class="e-toast-template">${if(image)}<img class="e-toast-icon e-toast-image" src="${image.url}" />${/if} ${if(from || subject)}<div class="e-toast-message">${if(from)}<div class="e-toast-title">${from}</div>${/if} ${if(subject)}<div class="e-toast-content">${subject}</div>${/if}</div>${/if}</div>';
     private toastData: Object[] = [
-        { from: ' Anjolie Stokes', subject: 'Networking Referral', image: { url: './assets/toast/resource/laura.png' }, },
-        { from: ' Ila Russo', subject: 'Business dinner invitation', image: { url: './assets/toast/resource/janat.png' }, },
-        { from: ' Camden Mcmillan', subject: 'Reference Request - Cameran Hester', image: { url: './assets/toast/resource/camden.png' }, },
-        { from: ' Chase Solomon', subject: 'New business relationship confirmation', image: { url: './assets/toast/resource/chase.png' }, },
-        {
-            from: ' Inga Scott', subject: 'Application for Sales Associate', image: { url: './assets/toast/resource/michael.png' },
-        }];
+        { from: ' Anjolie Stokes', subject: 'Networking Referral', image: { url: 'https://ej2.syncfusion.com/demos/src/toast/resource/laura.png' }, },
+        { from: ' Ila Russo', subject: 'Business dinner invitation', image: { url: '//ej2.syncfusion.com/demos/src/toast/resource/janat.png' }, },
+        { from: ' Camden Mcmillan', subject: 'Reference Request - Cameran Hester', image: { url: 'https://ej2.syncfusion.com/demos/src/toast/resource/camden.png' }, },
+        { from: ' Chase Solomon', subject: 'New business relationship confirmation', image: { url: 'https://ej2.syncfusion.com/demos/src/toast/resource/chase.png' }, },
+        { from: ' Inga Scott', subject: 'Application for Sales Associate', image: { url: 'https://ej2.syncfusion.com/demos/src/toast/resource/michael.png' },
+        }];   
     public toastObjEmailCreate(): void {
         setTimeout(function(){
             this.toastObjEmail.show({ template: this.cardTemplateFn(this.toastData[this.toastFlag])[0].outerHTML });

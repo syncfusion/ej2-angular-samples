@@ -1,0 +1,128 @@
+<div id="action-description">
+    <p>
+        This sample shows how custom markers and lines can be dynamically added to our maps with UI interaction. Marker
+        or line can be chosen from the properties panel.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-lg-9">
+        <ejs-maps #maps id='container' style="display:block;"
+            [zoomSettings]='zoomSettings' [layers]='layers' (load)="load($event)"  
+            (click)="mapClicked($event)">
+        </ejs-maps>
+        <i>
+            <div align="center">
+                <p id="content" style="font-size: 16px;color:grey">Click on the maps to add marker/navigation line</p>
+            </div>
+        </i>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties" style="width: 100% ;">
+                    <tbody>
+                        <tr style="height: 35px">
+                            <td style="width: 70%">
+                                <div class="property-text" style="padding: 0px;display:inline-block">Marker</div>
+                            </td>
+                            <td style="width: 50%;">
+                                <div>
+                                    <ejs-checkbox [checked]="markerCheckedState" (change)="markerChangeHandler($event)">
+                                    </ejs-checkbox>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 35px">
+                            <td style="width: 70%">
+                                <div class="property-text" style="padding: 0px;">Line</div>
+                            </td>
+                            <td style="width: 50%">
+                                <div>
+                                    <ejs-checkbox [checked]="lineCheckedState" (change)="lineChangeHandler($event)">
+                                    </ejs-checkbox>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 35px">
+                            <td style="width: 70%">
+                                <div class="property-text" style="padding: 0px; ">Connecting line</div>
+                            </td>
+                            <td style="width: 50%">
+                                <div>
+                                    <ejs-checkbox [checked]="connectLineCheckedState"
+                                        [disabled]="disableConnectLineCheckbox"
+                                        (change)="connectionLineChangeHandler($event)"></ejs-checkbox>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 35px">
+                            <td style="width: 70%" class="property-text" style="padding: 0px;">
+                                Marker type
+                            </td>
+                            <td style="width: 10%; margin-left:20px;">
+                                <div style="margin-right: 10%">
+                                    <ejs-dropdownlist id='ddlelement' [dataSource]='markerShapeData'
+                                        [(value)]='markerShape' [readonly]="disableShapeBox"></ejs-dropdownlist>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 10px"></tr>
+                        <tr style="height: 35px">
+                            <td style="width: 70%">
+                                <div class="property-text" style="padding: 0px;">Width</div>
+                            </td>
+                            <td style="width: 10% ">
+                                <div style="margin-right: 10%">
+                                    <ejs-textbox [(ngModel)]="lineWidth" id="width" style="width:80px"
+                                        [disabled]="disableLineWidthTextBox"></ejs-textbox>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 30px"></tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <button ejs-button
+                                        style="text-transform:none !important;width: 80px;margin-left:50px;"
+                                        [disabled]="disableButton" (click)="clearItems()">Clear</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div><div></div>
+<div id='description'>
+    <br />
+    <p>
+        Using UI interaction, the markers or line can be added as follows: You can get the currently clicked geo
+        location by passing "PointerEvent" or "MouseEvent"
+        argument and layer index to the "getGeoLocation" method. Then, use that geo position to place the marker or line
+        in the appropriate position.
+    </p>
+    <br />
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        The features of maps component are segregated into individual feature-wise modules. To use navigation lines and
+        marker, you need to inject
+        the <code>NavigationLine </code> and <code>Marker </code> module using the
+        <code>Maps.Inject(NavigationLine, Marker)</code> method.
+    </p>
+</div>
+
+<!-- custom code start-->
+<style>
+    .property-text {
+        font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif";
+        font-size: 13px;
+        font-weight: 400;
+    }
+	#width.e-input[disabled] {
+        border-bottom-color: inherit;
+        background-image: none;
+    }
+
+</style>

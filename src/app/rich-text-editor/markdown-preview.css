@@ -33,4 +33,12 @@
     .highcontrast #mdPreview.e-richtexteditor textarea.e-content {
         border-right: 1px solid #fff;
     }
+
+    .sb-content.e-view.hide-header {
+        top: 0 !important;
+    }
+    
+    .sb-header.e-view.hide-header {
+        display: none;
+    }
 /* csslint ignore:end */

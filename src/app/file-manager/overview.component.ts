@@ -1,19 +1,20 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { FileManagerComponent } from '@syncfusion/ej2-angular-filemanager';
+import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsViewService } from '@syncfusion/ej2-angular-filemanager';
 /**
- * Data binding Menu Controller
+ * File Manager full functionalities sample
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'overview.html',
     styleUrls: ['overview.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+	providers: [ NavigationPaneService, ToolbarService, DetailsViewService]
 })
 
 export class OverViewController {
     public ajaxSettings: object;
     public view: string;
-    public hostUrl: string = 'https://ng2jq.syncfusion.com/ej2services/';
+    public hostUrl: string = 'https://ej2services.syncfusion.com/production/web-services/';
     public ngOnInit(): void {
         this.ajaxSettings = {
             url: this.hostUrl + 'api/FileManager/FileOperations',

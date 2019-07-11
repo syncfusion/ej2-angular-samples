@@ -1,6 +1,7 @@
 import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ListViewModule  } from '@syncfusion/ej2-angular-lists';
+
 import { DefaultAvatarComponent } from './default.component';
 import { TypesAvatarComponent } from './types.component';
 import { BadgeAvatarComponent } from './badge.component';

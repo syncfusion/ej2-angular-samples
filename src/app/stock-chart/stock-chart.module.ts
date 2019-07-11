@@ -71,7 +71,7 @@ export const stockChartAppRoutes: Object[] = [
     },
     {
         path: ':theme/stock-chart/stock-events', component: StockEventsComponent,
-        name: 'Stock Events', order: '01', category: 'Stock Chart', type: 'new'
+        name: 'Stock Events', order: '01', category: 'Stock Chart'
     },
 ];
 

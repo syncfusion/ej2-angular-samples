@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../common/shared.module';
 import { ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { DefaultColorPickerComponent } from './default.component';
 import { InlineColorPickerComponent } from './inline.component';
 import { CustomColorPickerComponent } from './custom.component';
@@ -19,7 +20,7 @@ export const colorPickerAppRoutes: Object[] = [
 export const colorPickerRouter: ModuleWithProviders = RouterModule.forChild(colorPickerAppRoutes);
 
 @NgModule({
-    imports: [colorPickerRouter, SharedModule, ColorPickerModule, BrowserModule, CheckBoxModule],
+    imports: [colorPickerRouter, SharedModule, ColorPickerModule, BrowserModule, CheckBoxModule, DropDownListModule],
     declarations: [
         DefaultColorPickerComponent,
         InlineColorPickerComponent,

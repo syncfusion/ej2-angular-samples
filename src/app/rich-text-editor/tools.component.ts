@@ -4,7 +4,7 @@
 import { Component, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, MouseEventArgs, addClass, removeClass, Browser } from '@syncfusion/ej2-base';
-import *as CodeMirror from 'codemirror';
+import * as CodeMirror from 'codemirror';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/css/css.js';
 import 'codemirror/mode/htmlmixed/htmlmixed.js';
@@ -68,11 +68,19 @@ public renderCodeMirror(mirrorView: HTMLElement, content: string): void {
     });
 }
 public handleFullScreen(e: any): void {
-    let leftBar: HTMLElement = document.querySelector('#left-sidebar');
+    const sbCntEle: HTMLElement = document.querySelector('.sb-content.e-view');
+    const sbHdrEle: HTMLElement = document.querySelector('.sb-header.e-view');
+    const leftBar: HTMLElement = document.querySelector('#left-sidebar');
     if (e.targetItem === 'Maximize') {
+        if (Browser.isDevice && Browser.isIos) {
+            addClass([sbCntEle, sbHdrEle], ['hide-header']);
+        }
         addClass([leftBar], ['e-close']);
         removeClass([leftBar], ['e-open']);
     } else if (e.targetItem === 'Minimize') {
+        if (Browser.isDevice && Browser.isIos) {
+            removeClass([sbCntEle, sbHdrEle], ['hide-header']);
+        }
         removeClass([leftBar], ['e-close']);
         if (!Browser.isDevice) {
         addClass([leftBar], ['e-open']); }

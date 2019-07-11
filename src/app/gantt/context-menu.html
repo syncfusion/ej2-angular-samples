@@ -1,0 +1,58 @@
+<div id="action-description">
+    <p>This sample demonstrates the various phases involved in constructing a residential house, from testing
+		the soil to handing over the fully constructed property to the owner. This also demonstrates the usage of
+		default and custom context menu in Gantt component.
+	</p>
+</div>
+<div class="control-section">
+    <!-- <ejs-gantt id="contextMenu" #gantt height="430px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns" [enableContextMenu]="true"
+        [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [treeColumnIndex]="1" 
+        [contextMenuItems]='contextMenuItems' (contextMenuOpen)="contextMenuOpen($event)" (contextMenuClick)="contextMenuClick($event)"
+        height="450px" [allowSelection]="true" dateFormat="MMM dd, y" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
+        [gridLines]="gridLines" [eventMarkers]="eventMarkers" [editSettings]="editSettings" [allowResizing]="true" [allowSorting]="true"
+        [toolbar]="toolbar" resourceNameMapping="resourceName" resourceIDMapping="resourceId" 
+        [resources]="resources">
+    </ejs-gantt> -->
+    <div style="float: right; margin: 10px;">Source:
+        <a href="https://en.wikipedia.org/wiki/Construction" target='_blank'>https://en.wikipedia.org/</a>
+    </div>
+</div>
+<div id="description">
+    <p>
+		Gantt has an option to show the context menu while performing right click on it. You can configure the default
+		and custom menu items in the context menu using the <code>contextMenuItems</code> property.
+		Each menu item will be displayed contextually based on its target. In this demo we have rendered following
+		default and custom menu items
+	</p>
+	<p style="font-weight: 500">Default items:</p>
+	<ul>
+		<li><code>AutoFitAll</code> - Auto fit all columns.</li>
+		<li><code>AutoFit</code> - Auto fit the current column.</li>
+		<li><code>TaskInformation</code> - Edit the current record.</li>
+		<li><code>DeleteTask</code> - Delete the current record.</li>
+		<li><code>Save</code> - Save the edited record.</li>
+		<li><code>Cancel</code> - Cancel the edited state.</li>
+		<li><code>SortAscending </code> - Sort the current column in ascending order.</li>
+		<li><code>SortDescending </code> - Sort the current column in descending order.</li>
+		<li><code>DeleteDependency </code> - Delete the dependency of the current record.</li>
+		<li><code>Convert </code> - Convert the normal task in to milestone task and vice versa.</li>
+		<li><code>Add</code>
+			<ul>
+				<li><code>Above</code> - Add a new row above the selected row </li>
+				<li><code>Below</code> - Add a new row below the selected row</li>
+				<li><code>Child</code> - Add a new row as child to the selected row</li>
+				<li><code>Milestone</code> - Add a milestone task below to selected row</li>
+			</ul>
+		</li>
+	</ul>
+
+	<p style="font-weight: 500">Custom items:</p>
+	<p>
+		In this demo, custom menu items have been enabled in the context menu to perform expanding and collapsing the
+		parent rows,
+		<li><code>Expand the Row</code> - Used to expand the parent row and it will render where the row is in a
+			collapsed state.</li>
+		<li><code>Collapse the Row</code> - Used to collapse the parent row and it will render where the row is in a
+			expanded state.</li>
+	</p>
+</div>

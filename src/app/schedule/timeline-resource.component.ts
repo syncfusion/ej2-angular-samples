@@ -67,7 +67,7 @@ export class TimelineResourcesComponent {
                 args.type === 'DeleteAlert') ? (args.data as any).element[0] : args.target;
             if (!isNullOrUndefined(target) && target.classList.contains('e-work-cells')) {
                 if ((target.classList.contains('e-read-only-cells')) ||
-                    (!this.scheduleObj.isSlotAvailable(data.startTime as Date, data.endTime as Date, data.groupIndex as number))) {
+                    (!this.scheduleObj.isSlotAvailable(data))) {
                     args.cancel = true;
                 }
             } else if (!isNullOrUndefined(target) && target.classList.contains('e-appointment') &&
@@ -79,9 +79,13 @@ export class TimelineResourcesComponent {
 
     onActionBegin(args: ActionEventArgs): void {
         if (args.requestType === 'eventCreate' || args.requestType === 'eventChange') {
-            let data: { [key: string]: Object } = args.data as { [key: string]: Object };
-            let groupIndex: number = this.scheduleObj.eventBase.getGroupIndexFromEvent(data);
-            if (!this.scheduleObj.isSlotAvailable(data.StartTime as Date, data.EndTime as Date, groupIndex as number)) {
+            let data: { [key: string]: Object };
+            if (args.requestType === 'eventCreate') {
+                data = <{ [key: string]: Object }>args.data[0];
+            } else if (args.requestType === 'eventChange') {
+                data = <{ [key: string]: Object }>args.data;
+            }
+            if (!this.scheduleObj.isSlotAvailable(data)) {
                 args.cancel = true;
             }
         }

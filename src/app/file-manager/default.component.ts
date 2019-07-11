@@ -1,22 +1,26 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { FileManagerComponent, LargeIconsView, NavigationPane, DetailsView, Toolbar, ContextMenu, BreadCrumbBar, NavigationPaneSettingsModel  } from '@syncfusion/ej2-angular-filemanager';
+import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsViewService } from '@syncfusion/ej2-angular-filemanager';
 
 /**
- * Default FileManager Controller
+ * File Manager API sample
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
     styleUrls: ['default.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+	providers: [ NavigationPaneService, ToolbarService, DetailsViewService]
 })
 
 export class DefaultFileController {
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['default.css'];
+    }
     @ViewChild('fileObj')
     public fileObj: FileManagerComponent;
     public ajaxSettings: object;
     public navigationPaneSettings: object;
-    public hostUrl: string = 'https://ng2jq.syncfusion.com/ej2services/';
+    public hostUrl: string = 'https://ej2services.syncfusion.com/production/web-services/';
     public ngOnInit(): void {
         this.ajaxSettings = {
             url: this.hostUrl + 'api/FileManager/FileOperations',
@@ -31,6 +35,6 @@ export class DefaultFileController {
     }
 
     toolClick(args: any) {
-          this.fileObj.toolbarSettings.visible = args.checked; 
+        this.fileObj.toolbarSettings.visible = args.checked;
     }
 }

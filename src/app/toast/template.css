@@ -54,11 +54,6 @@
         background-size: 50px 50px;
     }
 
-    #toastcustom .camden .e-toast-icon.e-toast-image,
-    #toastcustom .chase .e-toast-icon.e-toast-image {
-        width: 65px !important;
-    }
-
     @media (max-width: 1052px) {
         .toast-template-section .row .col-xs-6.col-sm-6.col-lg-6.col-md-6 {
             width: 100%;

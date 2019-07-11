@@ -80,7 +80,7 @@ export class CustomColorPickerComponent {
     }
 
     public beforeScrollTileRender(args: PaletteTileEventArgs): void {
-        addClass([args.element], ['e-palette-icons', 'e-scroll-palette']);
+        addClass([args.element], ['e-icons', 'e-scroll-palette']);
     }
 
     public roundedPaletteChange(args: ColorPickerEventArgs): void {

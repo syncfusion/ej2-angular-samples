@@ -5,6 +5,7 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { RichTextEditorComponent, ToolbarService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { LinkService, ImageService, MarkdownEditorService } from '@syncfusion/ej2-angular-richtexteditor';
+import { MarkdownFormatter } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, KeyboardEventArgs } from '@syncfusion/ej2-base';
 // import * as Marked from 'marked';
 
@@ -30,11 +31,12 @@ export class MarkdownDefaultComponent {
             '<span class="e-btn-icon e-md-preview e-icons"></span></button>'
         }, '|', 'Undo', 'Redo']
     };
+    public formatter: object = new MarkdownFormatter({ listTags: { 'OL': '1., 2., 3.'} });
     public mode: string = 'Markdown';
     public onCreate(): void {
         this.textArea = this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement;
         this.textArea.addEventListener('keyup', (e: KeyboardEventArgs) => {
-            this.MarkDownConversion();
+            this.markdownConversion();
         });
         this.mdsource = document.getElementById('preview-code');
         this.mdsource.addEventListener('click', (e: MouseEvent) => {
@@ -48,11 +50,11 @@ export class MarkdownDefaultComponent {
             }
         });
     }
-    public MarkDownConversion(): void {
+    public markdownConversion(): void {
         if (this.mdsource.classList.contains('e-active')) {
             let id: string = this.rteObj.getID() + 'html-view';
             let htmlPreview: Element = this.rteObj.element.querySelector('#' + id);
-//             htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+            // htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
         }
     }
     public fullPreview(): void {
@@ -77,7 +79,7 @@ export class MarkdownDefaultComponent {
             }
             this.textArea.style.display = 'none';
             htmlPreview.style.display = 'block';
-//             htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+            // htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
         }
     }
 }

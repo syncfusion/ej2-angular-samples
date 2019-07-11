@@ -1,0 +1,44 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the TreeGrid component with the detail template feature.
+    </p>
+</div>
+<div class="control-section">
+        <ejs-treegrid #treegrid [dataSource]='data' height=335 width='auto' childMapping= 'Children' >
+            <e-columns>
+                <e-column field='Name' headerText='First Name' width='160'></e-column>
+                <e-column field='DOB' headerText = 'DOB' width='85' type='date' format='yMd' textAlign='Right' ></e-column>
+                <e-column field='Designation' headerText = 'Designation' width='147'></e-column>
+                <e-column field='EmpID' headerText='Employee ID' width='125'></e-column>
+                <e-column field='Country' headerText = 'Country' width='148'></e-column>
+            </e-columns>
+        <ng-template #detailTemplate let-data>
+            <div>
+                <div style="position: relative; display: inline-block; float: left; font-weight: bold; width: 10%;padding:5px 4px 2px 27px;;">
+                   <img src="assets/treegrid/images/{{data.FullName}}.png" alt="{{data.FullName}}"/>
+               </div>
+               <div style="padding-left: 10px; display: inline-block; width: 66%; text-wrap: normal;font-size:13px;font-family:'Segoe UI';">
+                   <div class="e-description" style="word-wrap: break-word;">
+                       <b>{{data.Name}}</b> was born on {{format(data.DOB)}}. Now lives at {{data.Address}}, {{data.Country}}. {{data.Name}} holds a position of <b>{{data.Designation}}</b> in our WA department, (Seattle USA).
+                   </div>
+                   <div class="e-description" style="word-wrap: break-word;margin-top:5px;">
+                       <b style="margin-right:10px;">Contact:</b>{{data.Contact}}
+                   </div>
+               </div>
+           </div>
+        </ng-template>
+</ejs-treegrid>
+<div id="description">
+    <p>
+        The TreeGrid provides a way to use a custom layout for its rows using template feature. The 
+        <code><a target="_blank" class="code"
+    href="https://ej2.syncfusion.com/angular/documentation/treegrid/row/#row-template">rowTemplate
+    </a></code> property accepts either string or HTML element`s ID value, which will be used 
+    as the template for the row.
+    </p>
+    <p>
+        In this demo, we have presented Employee Information with Employee Photo and employee details like Name, Address etc.
+    </p>
+
+</div>
+</div>
