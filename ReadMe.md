@@ -137,7 +137,6 @@ Run `npm run build:dev` to build the project. The build artifacts will be stored
         <td>
             <a href="src/app/document-editor">Document Editor (Updated)</a>
         </td>
-        
     </tr>
     <tr>
         <td>
