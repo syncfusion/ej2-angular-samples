@@ -1,6 +1,38 @@
-# Ej2AngularSamples
+# Syncfusion Angular UI Components samples
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
+This repository contains the demos of [Syncfusion Angular UI Components](https://www.syncfusion.com/angular-ui-components?utm_medium=listing&utm_source=github&utm_campaign=ej2-angular-samples). This is the best place to check our components to get more insight about the usage of APIs.
+
+This section guides you to use the Syncfusion Angular UI Components samples in your applications.
+
+* [Requirements to run the demo](#requirements-to-run-the-demo)
+* [Documentation](#documentation)
+* [License](#license)
+* [Run your Sample Browser](#run-your-sample-browser)
+* [Components Catalog](#components-catalog)
+* [Support and Feedback](#support-and-feedback)
+
+## Requirements to run the demo
+
+The samples requires the below requirements to run.
+
+* [Node.js](https://nodejs.org/en/)
+
+## Documentation
+
+All components documentation for the Syncfusion Angular UI components can be found on [Syncfusion Help](https://ej2.syncfusion.com/angular/documentation/?utm_source=github&utm_medium=listing&utm_campaign=ej2-angular-samples). All API documentation can be found at the [API Reference](https://ej2.syncfusion.com/angular/documentation/api?utm_source=github&utm_medium=listing&utm_campaign=ej2-angular-samples).
+
+## License
+
+Syncfusion Angular UI (Essential JS 2) components library is available under the Syncfusion Essential Studio program,  and can be licensed either under the Syncfusion Community License Program or the Syncfusion commercial license.
+
+To be qualified for the Syncfusion Community License Program you must have a gross revenue of less than one (1) million U.S. dollars ($1,000,000.00 USD) per year and have less than five (5) developers in your organization, and agree to be bound by Syncfusion’s terms and conditions.
+
+Customers who do not qualify for the community license can contact sales@syncfusion.com for commercial licensing options.
+
+Under no circumstances can you use this product without (1) either a Community License or a commercial license and (2) without agreeing and abiding by Syncfusion’s license containing all terms and conditions.
+
+The Syncfusion license that contains the terms and conditions can be found at
+[https://www.syncfusion.com/content/downloads/syncfusion_license.pdf](https://www.syncfusion.com/content/downloads/syncfusion_license.pdf)
 
 ## Run your Sample Browser
 
@@ -21,132 +53,302 @@ Then run `npm run start:prod` for a dev server. Navigate to `http://localhost:42
 
 Run `npm run build:dev` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `npm run build:prod` flag for a production build.
 
-# Angular Sample Configuration
 
-## Adding your sample
-Create your new folder in 'src' location and name the folder as control name for example “listview” it is control name.
+## Components Catalog
 
-_Note: Do not use whitespace at any cause in folder’s name. Use “-” instead of space._
-
-## Add module for your sample
-Add your sample router module named controlName.module.ts
-
-_Note: Export sample routed array of links. This has used to sample list._
-
-## Add Routing for your sample
-Add your sample router module to sb router module
-1.	Import your **controlName.moduler.ts** in **sb.router.ts**
-2.	Add imported module to app routes
-
-```
-import { ListViewModule } from '../listview/listview.module';
-
-const appRoutes: any = [
-    { path: 'listview', loadChildren: ListViewModule },
-    { path: '', redirectTo: 'listview/default', pathMatch: 'full' , hideOnDevice:true},
-];
-```
-*Note: set **hideOnDevice** as true if you want to hide a sample in devices.*
-## Adding your control dependency
-
-Add your dependency in “package.json” file inside the dependencies.
-
-Note: Here, '\*' Specifies that install the latest published package form the online. '\*' is recommended for Syncfusion packages.
-
-```
-"dependencies": {
-        "@syncfusion/ej2-angular-base": "*",
-        "@syncfusion/ej2-angular-list": "*",
-},
-```
-
-Add your dependency in “system.config.js” file inside the packages.
-
-```
-
-packages: {
-        'app': { main: 'main.js', defaultExtension: 'js' },
-        'rxjs': { defaultExtension: 'js' },
-
-        '@syncfusion/ej2-lists': { main: '/src/list-view/index.js', defaultExtension: 'js' },        
-        '@syncfusion/ej2-data': { main: '/index.js', defaultExtension: 'js' },
-        '@syncfusion/ej2-base': { main: '/index.js', defaultExtension: 'js' },
-        '@syncfusion/ej2-angular-base': { main: '//index.js', defaultExtension: 'js' },
-        '@syncfusion/ej2-angular-list': { main: 'src/list-view/index.js', defaultExtension: 'js' }
+<table>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>GRIDS<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/grid">DataGrid</a>
+        </td>
+        <td>
+            <a href="src/app/treegrid">Tree Grid</a>
+        </td>
+        <td>
+            <a href="src/app/pivot-table">Pivot Table (Updated)</a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>DATA VISUALIZATION<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/chart">Charts (Updated)</a>
+        </td>
+        <td>
+            <a href="src/app/circular-gauge">Circular Gauge</a>
+        </td>
+        <td>
+            <a href="src/app/linear-gauge">Linear Gauge</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/diagram">Diagram (Preview)</a>
+        </td>
+        <td>
+            <a href="src/app/">Stock Chart</a>
+        </td>
+        <td>
+            <a href="src/app/maps">Maps (Updated)</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/range-navigator">Range Navigator</a>
+        </td>
+        <td>
+            <a href="src/app/sparkline">Sparkline Charts</a>
+        </td>
+        <td>
+            <a href="src/app/smith-chart">Smith Chart</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/barcode">Barcode (Preview)</a>
+        </td>
+        <td>
+            <a href="src/app/treemap">TreeMap</a>
+        </td>
+        <td>
+            <a href="src/app/heatmap">Heatmap</a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>EDITORS<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/button">Button</a>
+        </td>
+        <td>
+            <a href="src/app/chips">Chips</a>
+        </td>
+        <td>
+            <a href="src/app/document-editor">Document Editor (Updated)</a>
+        </td>
+        
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/form-validator">Form Validator</a>
+        </td>
+        <td>
+            <a href="src/app/rich-text-editor">Rich Text Editor (Updated)</a>
+        </td>
+        <td>
+            <a href="src/app/inplace-editor">In-place Editor</a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>DROPDOWNS<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/auto-complete">AutoComplete</a>
+        </td>
+        <td>
+            <a href="src/app/combo-box">ComboBox</a>
+        </td>
+        <td>
+            <a href="src/app/drop-down-list">Dropdown List</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/multi-select">MultiSelect Dropdown (Updated)</a>
+        </td>
+        <td>
+            <a href="src/app/list-box">List Box</a>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>CALENDARS<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/schedule">Scheduler (Updated)</a>
+        </td>
+        <td>
+            <a href="src/app/gantt">Gantt (Preview)</a>
+        </td>
+        <td>
+            <a href="src/app/calendar">Calendar</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/datepicker">DatePicker</a>
+        </td>
+        <td>
+            <a href="src/app/daterangepicker">Date Range Picker</a>
+        </td>
+        <td>
+            <a href="src/app/datetimepicker">DateTime Picker</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/timepicker">Time Picker</a>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>NAVIGATION<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/sidebar">Sidebar</a>
+        </td>
+        <td>
+            <a href="src/app/treeview">TreeView</a>
+        </td>
+        <td>
+            <a href="src/app/tab">Tabs</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/toolbar">Toolbar</a>
+        </td>
+        <td>
+            <a href="src/app/context-menu">Context Menu</a>
+        </td>
+        <td>
+            <a href="src/app/menu">Menu Bar</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/accordion">Accordion</a>
+        </td>
+        <td>
+            <a href="src/app/file-manager">File Manager (Updated)</a>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>NOTIFICATIONS<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/badge">Badge</a>
+        </td>
+        <td>
+            <a href="src/app/toast">Toast</a>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>INPUTS<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/maskedtextbox">Input Mask</a>
+        </td>
+        <td>
+            <a href="src/app/numerictextbox">Numeric Textbox</a>
+        </td>
+        <td>
+            <a href="src/app/slider">Range Slider</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/textboxes">TextBox (Updated)</a>
+        </td>
+        <td>
+            <a href="src/app/uploader">File Upload</a>
+        </td>
+        <td>
+            <a href="src/app/color-picker">Color Picker</a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>LAYOUT<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/splitter">Splitter</a>
+        </td>
+        <td>
+            <a href="src/app/list-view">ListView</a>
+        </td>
+        <td>
+            <a href="src/app/dialog">Dialog</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/tooltip">Tooltip</a>
+        </td>
+        <td>
+            <a href="src/app/card">Card</a>
+        </td>
+        <td>
+            <a href="src/app/avatar">Avatar</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/dashboard-layout">Dashboard Layout</a>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>FORMS<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/query-builder">Query Builder</a>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>VIEWER<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/pdfviewer">PDF Viewer (Updated)</a>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
     
-},
+</table>
 
-```
-## Adding style dependency
+## Support and Feedback
 
-Add your dependency in “config.json” file inside the styleDependency array.
+* For any other queries, reach our [Syncfusion support team](https://www.syncfusion.com/support/directtrac/incidents/newincident?utm_source=github&utm_medium=listing&utm_campaign=ej2-angular-samples) or post the queries through the [community forums](https://www.syncfusion.com/forums?utm_source=github&utm_medium=listing&utm_campaign=ej2-angular-samples).
 
-```
-{                       
-    "styleDependency":["ej2-angular-lists"]
-}
-```
-## Add description in sample
-
-Add sample description  within the div tag with id as **description**.
-
-```html
-<div class="control-section">
-<div id='description'>
-//sample description.
-</div>
-</div>
-```
-## Configure Sample List
-
-Add your samples in “samplelist.ts” located in “/src/common” folder
-1.	Import your Sample Module routed array for json
-2.	Add your samples in Sample List as Like below
-
-```
-import { listAppRoutes } from '../listview/listview.module';
-
-export let samplesList: any = [
-    {
-        "name": "ListView", "category": "List", "path": "listview", "samples": listAppRoutes,
-    }
-];
-```
-
-# Plunker Guidelines
-
-1.  In import statements in html file for a sample the package subdirectory shouldn’t be mentioned. Please refer the link given below.
-    
-    https://gitlab.syncfusion.com/essential-studio/ej2-angular-samples/blob/development/src/grid/column/showhide.component.ts#L4
-
-2.	In Base component dom and util are not available in the customer end. So, please don’t use the same. Please refer the link below.
-	
-    https://gitlab.syncfusion.com/essential-studio/ej2-angular-samples/blob/development/src/grid/column/showhide.component.ts#L4
-
-3.	To add any icon in the samples use base64 font and don’t use any font files like ttf, woff, or svg externally. Please refer the link given below.
-    
-    https://gitlab.syncfusion.com/essential-studio/ej2-angular-samples/blob/development/src/toolbar/toolbar.component.css#L3
-
-    For example:
-    ```
-    <style>
-        @font-face {
-    font-family: 'temp1';
-    src:url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAAKAIAAAwAgT1MvMj0gSIMAAAEoAAAAVmNtYXDnEOdVAAABiAAAADZnbHlmazsA9wAAAcgAAAAcaGVhZA3qwqgAAADQAAAANmhoZWEHmQNrAAAArAAAACRobXR4B+gAAAAAAYAAAAAIbG9jYQAOAAAAAAHAAAAABm1heHABDQAPAAABCAAAACBuYW1lv7gVOQAAAeQAAAINcG9zdD4ZCQ8AAAP0AAAANgABAAADUv9qAFoEAAAA//4D6gABAAAAAAAAAAAAAAAAAAAAAgABAAAAAQAAThBvMl8PPPUACwPoAAAAANVxP0wAAAAA1XE/TAAAAAAD6gMrAAAACAACAAAAAAAAAAEAAAACAAMAAQAAAAAAAgAAAAoACgAAAP8AAAAAAAAAAQP0AZAABQAAAnoCvAAAAIwCegK8AAAB4AAxAQIAAAIABQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUGZFZABA5wDnAANS/2oAWgNSAJYAAAABAAAAAAAABAAAAAPoAAAAAAACAAAAAwAAABQAAwABAAAAFAAEACIAAAAEAAQAAQAA5wD//wAA5wD//wAAAAEABAAAAAEAAAAAAAAADgAAAAEAAAAAA+oDKwACAAA3IQECA+j+DMICaQAAAAAAABIA3gABAAAAAAAAAAEAAAABAAAAAAABAAUAAQABAAAAAAACAAcABgABAAAAAAADAAUADQABAAAAAAAEAAUAEgABAAAAAAAFAAsAFwABAAAAAAAGAAUAIgABAAAAAAAKACwAJwABAAAAAAALABIAUwADAAEECQAAAAIAZQADAAEECQABAAoAZwADAAEECQACAA4AcQADAAEECQADAAoAfwADAAEECQAEAAoAiQADAAEECQAFABYAkwADAAEECQAGAAoAqQADAAEECQAKAFgAswADAAEECQALACQBCyB0ZW1wMVJlZ3VsYXJ0ZW1wMXRlbXAxVmVyc2lvbiAxLjB0ZW1wMUZvbnQgZ2VuZXJhdGVkIHVzaW5nIFN5bmNmdXNpb24gTWV0cm8gU3R1ZGlvd3d3LnN5bmNmdXNpb24uY29tACAAdABlAG0AcAAxAFIAZQBnAHUAbABhAHIAdABlAG0AcAAxAHQAZQBtAHAAMQBWAGUAcgBzAGkAbwBuACAAMQAuADAAdABlAG0AcAAxAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAHUAcwBpAG4AZwAgAFMAeQBuAGMAZgB1AHMAaQBvAG4AIABNAGUAdAByAG8AIABTAHQAdQBkAGkAbwB3AHcAdwAuAHMAeQBuAGMAZgB1AHMAaQBvAG4ALgBjAG8AbQAAAAACAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBAgEDAAxhcnJvd2hlYWQtMDEAAAAA) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    }
-    #font::after {
-        content: "\e700";
-        font-size: large
-    }
-    .icon {
-        font-family: temp1;
-    }
-    </style>
-    <div id="font" class="icon"></div>
-    ```
-    
-4.	Use All Module instead of importing each and every service individually in the module. Please refer the link given below.
-    
-    https://gitlab.syncfusion.com/essential-studio/ej2-angular-samples/blob/development/src/chart/chart.module.ts#L9
+* To renew the subscription, click [here](https://www.syncfusion.com/sales/products?utm_source=github&utm_medium=listing&utm_campaign=ej2-angular-samples) or contact our sales team at <salessupport@syncfusion.com>.
