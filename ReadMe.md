@@ -13,7 +13,7 @@ This section guides you to use the Syncfusion Angular UI Components samples in y
 
 ## Requirements to run the demo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1. The samples requires the below requirements to run.
+The samples requires the below requirements to run.
 
 * [Node.js](https://nodejs.org/en/)
 
