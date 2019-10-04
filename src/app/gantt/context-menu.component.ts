@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { editingData, editingResources } from './data';
-import { GanttComponent, IGanttData } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, ContextMenuOpenEventArgs, ContextMenuClickEventArgs, IGanttData } from '@syncfusion/ej2-angular-gantt';
 
 @Component({
     templateUrl: 'context-menu.html'
@@ -80,28 +80,28 @@ export class GanttContextMenuComponent implements OnInit {
         ];
         this.resources = editingResources;
     }
-    // contextMenuClick (args?: ContextMenuClickEventArgs): void {
-    //     let record: IGanttData = args.rowData;
-    //             if (args.item.id === 'collapserow') {
-    //                 this.ganttObj.collapseByID(record.ganttProperties.taskId);
-    //             }
-    //             if (args.item.id === 'expandrow') {
-    //                 this.ganttObj.expandByID(record.ganttProperties.taskId);
-    //             }
-    // }
-    // contextMenuOpen (args?: ContextMenuOpenEventArgs): void {
-    //     let record: IGanttData = args.rowData;
-    //     if (args.type !== 'Header') {
-    //         if (!record.hasChildRecords) {
-    //             document.querySelectorAll('li#expandrow')[0].setAttribute('style', 'display: none;');
-    //             document.querySelectorAll('li#collapserow')[0].setAttribute('style', 'display: none;');
-    //         } else {
-    //             let flag: boolean = record.expanded;
-    //             let val: string = flag ? 'none' : 'block';
-    //             document.querySelectorAll('li#expandrow')[0].setAttribute('style', 'display: ' + val + ';');
-    //             val = !flag ? 'none' : 'block';
-    //             document.querySelectorAll('li#collapserow')[0].setAttribute('style', 'display: ' + val + ';');
-    //         }
-    //     }
-    // }
+    contextMenuClick (args?: ContextMenuClickEventArgs): void {
+        let record: IGanttData = args.rowData;
+                if (args.item.id === 'collapserow') {
+                    this.ganttObj.collapseByID(Number(record.ganttProperties.taskId));
+                }
+                if (args.item.id === 'expandrow') {
+                    this.ganttObj.expandByID(Number(record.ganttProperties.taskId));
+                }
+    }
+    contextMenuOpen (args?: ContextMenuOpenEventArgs): void {
+        let record: IGanttData = args.rowData;
+        if (args.type !== 'Header') {
+            if (!record.hasChildRecords) {
+                args.hideItems.push('Collapse the Row');
+                args.hideItems.push('Expand the Row');
+            } else {
+                if(record.expanded) {
+                    args.hideItems.push('Expand the Row');
+                  } else {
+                      args.hideItems.push('Collapse the Row');
+                  }
+            }
+        }
+    }
 }

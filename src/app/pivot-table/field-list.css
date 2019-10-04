@@ -2,6 +2,7 @@
     float: left;
     width: 58% !important;
     height: 100%;
+    display: block;
 }
 
 .e-pivotfieldlist {

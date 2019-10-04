@@ -3,7 +3,7 @@ import { IDataOptions, PivotView, Operators, IDataSet } from '@syncfusion/ej2-an
 import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
 import { Button } from '@syncfusion/ej2-buttons';
 import { MaskedTextBox, MaskChangeEventArgs } from '@syncfusion/ej2-inputs';
-// import { FilterModel } from '@syncfusion/ej2-pivotview/src/pivotview/model/datasourcesettings-model';
+import { FilterModel } from '@syncfusion/ej2-pivotview/src/pivotview/model/datasourcesettings-model';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(false);
@@ -21,7 +21,7 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
 })
 
 export class LabelFilterComponent implements OnInit {
-    // public fieldCollections: { [key: string]: FilterModel } = {};
+    public fieldCollections: { [key: string]: FilterModel } = {};
     public operators: string[] = ['Equals', 'DoesNotEquals', 'BeginWith', 'DoesNotBeginWith', 'EndsWith',
         'DoesNotEndsWith', 'Contains', 'DoesNotContains', 'GreaterThan',
         'GreaterThanOrEqualTo', 'LessThan', 'LessThanOrEqualTo', 'Between', 'NotBetween'];
@@ -39,32 +39,32 @@ export class LabelFilterComponent implements OnInit {
     public pivotObj: PivotView;
 
     setFilters(fieldName: string, condition: Operators, operand1: string, operand2: string): void {
-        // this.fieldCollections[fieldName] = {
-        //     name: fieldName,
-        //     type: 'Label',
-        //     condition: condition,
-        //     value1: operand1,
-        //     value2: operand2
-        // };
+        this.fieldCollections[fieldName] = {
+            name: fieldName,
+            type: 'Label',
+            condition: condition,
+            value1: operand1,
+            value2: operand2
+        };
     }
 
     updateButtonState(): void {
         this.applyBtn.disabled = true;
         for (let field of this.fields) {
-            // if (this.fieldCollections[field] &&
-            //     (this.fieldCollections[field].value1 !== '' || this.fieldCollections[field].value2 !== '')) {
-            //     this.applyBtn.disabled = false;
-            //     break;
-            // }
+            if (this.fieldCollections[field] &&
+                (this.fieldCollections[field].value1 !== '' || this.fieldCollections[field].value2 !== '')) {
+                this.applyBtn.disabled = false;
+                break;
+            }
         }
         this.applyBtn.dataBind();
     }
 
     ondataBound(args: any): void {
-        // this.fieldCollections = {};
-        // for (let field of this.pivotObj.dataSourceSettings.filterSettings) {
-        //     this.fieldCollections[field.name] = field;
-        // }
+        this.fieldCollections = {};
+        for (let field of this.pivotObj.dataSourceSettings.filterSettings) {
+            this.fieldCollections[field.name] = field;
+        }
     }
 
     ngOnInit(): void {
@@ -80,7 +80,7 @@ export class LabelFilterComponent implements OnInit {
             rows: [{ name: 'Country' }, { name: 'Products' }],
             formatSettings: [{ name: 'Amount', format: 'C0' }],
             columns: [{ name: 'Year' }],
-            // dataSource: Pivot_Data,
+            dataSource: Pivot_Data,
             expandAll: false
         };
 
@@ -89,16 +89,16 @@ export class LabelFilterComponent implements OnInit {
             index: 0,
             width: '100%',
             change: (args: ChangeEventArgs) => {
-                // if (this.fieldCollections[args.value as string]) {
-                //     this.operatorddl.value = this.fieldCollections[args.value as string].condition;
-                //     this.valueInput1.value = this.fieldCollections[args.value as string].value1 as string;
-                //     this.valueInput2.value = this.fieldCollections[args.value as string].value2 as string;
-                // } else {
-                //     this.setFilters(args.value as string, 'DoesNotEquals', '', '');
-                //     this.operatorddl.value = 'DoesNotEquals';
-                //     this.valueInput1.value = '';
-                //     this.valueInput2.value = '';
-                // }
+                if (this.fieldCollections[args.value as string]) {
+                    this.operatorddl.value = this.fieldCollections[args.value as string].condition;
+                    this.valueInput1.value = this.fieldCollections[args.value as string].value1 as string;
+                    this.valueInput2.value = this.fieldCollections[args.value as string].value2 as string;
+                } else {
+                    this.setFilters(args.value as string, 'DoesNotEquals', '', '');
+                    this.operatorddl.value = 'DoesNotEquals';
+                    this.valueInput1.value = '';
+                    this.valueInput2.value = '';
+                }
                 this.operatorddl.dataBind();
                 this.valueInput1.dataBind();
                 this.valueInput2.dataBind();
@@ -149,30 +149,30 @@ export class LabelFilterComponent implements OnInit {
         this.clearBtn.appendTo('#clear');
 
         document.getElementById('apply').onclick = () => {
-            // let filterOptions: FilterModel[] = [];
+            let filterOptions: FilterModel[] = [];
             for (let field of this.fields) {
-                // if (this.fieldCollections[field] && this.fieldCollections[field].value1 !== '') {
-                //     filterOptions.push(this.fieldCollections[field]);
-                // }
+                if (this.fieldCollections[field] && this.fieldCollections[field].value1 !== '') {
+                    filterOptions.push(this.fieldCollections[field]);
+                }
             }
-            // if (filterOptions.length === 0) {
-            //     filterOptions = [{
-            //         name: this.fieldsddl.value as string,
-            //         type: 'Label',
-            //         condition: this.operatorddl.value as Operators,
-            //         value1: this.valueInput1.value.toString(),
-            //         value2: this.valueInput2.value.toString()
-            //     }];
-            // }
-            // this.pivotObj.dataSourceSettings.filterSettings = filterOptions;
+            if (filterOptions.length === 0) {
+                filterOptions = [{
+                    name: this.fieldsddl.value as string,
+                    type: 'Label',
+                    condition: this.operatorddl.value as Operators,
+                    value1: this.valueInput1.value.toString(),
+                    value2: this.valueInput2.value.toString()
+                }];
+            }
+            this.pivotObj.dataSourceSettings.filterSettings = filterOptions;
         };
         document.getElementById('clear').onclick = () => {
-            // this.pivotObj.dataSourceSettings.filterSettings = [];
+            this.pivotObj.dataSourceSettings.filterSettings = [];
             this.valueInput1.value = '';
             this.valueInput2.value = '';
             this.valueInput1.dataBind();
             this.valueInput2.dataBind();
-            // this.fieldCollections = {};
+            this.fieldCollections = {};
             this.updateButtonState();
         };
     }

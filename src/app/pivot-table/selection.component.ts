@@ -64,7 +64,7 @@ export class SelectionComponent implements OnInit {
             formatSettings: [{ name: 'Amount', format: 'C0' }],
             rows: [{ name: 'Country' }, { name: 'Products' }],
             valueSortSettings: { headerDelimiter: ' - ' },
-            // dataSource: data,
+            dataSource: data,
             expandAll: false,
             values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
             filters: []

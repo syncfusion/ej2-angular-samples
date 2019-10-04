@@ -53,7 +53,7 @@ export class ChartComponent implements OnInit {
             rows: [{ name: 'Year' }, { name: 'Order_Source', caption: 'Order Source' }],
             columns: [{ name: 'Country' }, { name: 'Products' }],
             valueSortSettings: { headerDelimiter: ' - ' },
-            // dataSource: data,
+            dataSource: data,
             expandAll: false,
             drilledMembers: [{ name: 'Year', items: ['FY 2015'] }],
             formatSettings: [{ name: "Amount", format: "C" }],

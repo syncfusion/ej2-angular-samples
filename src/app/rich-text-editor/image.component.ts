@@ -4,7 +4,9 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ToolbarService, LinkService, ImageService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
 import { HtmlEditorService, NodeSelection, RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
+import { DropDownListComponent, FieldSettingsModel } from '@syncfusion/ej2-angular-dropdowns';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
 @Component({
     selector: 'control-content',
     templateUrl: 'image.html',
@@ -13,8 +15,16 @@ import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
     providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService]
 })
 export class ImageComponent {
-    @ViewChild('imageRTE') rteObj: RichTextEditorComponent;
-     toolbarSettings: ToolbarModule = {
+
+    @ViewChild('imageRTE')
+    private rteObj: RichTextEditorComponent;
+    @ViewChild('readonly')
+    public readonlyObj: CheckBoxComponent;
+    @ViewChild('formatOption')
+    public formatObj: DropDownListComponent;
+
+
+    toolbarSettings: ToolbarModule = {
         image: [
             'Replace', 'Align', 'Caption', 'Remove', 'InsertLink', 'OpenImageLink', '-',
             'EditImageLink', 'RemoveImageLink', 'Display', 'AltText', 'Dimension',
@@ -28,18 +38,37 @@ export class ImageComponent {
             }
         ]
     };
+  
+    public formatData: { [key: string]: Object }[] = [
+      { Id: 'Blob', Format: 'Blob' },
+      { Id: 'Base64', Format: 'Base64' },
+    ];
+    public fields: FieldSettingsModel = { text: 'Id', value: 'Format' };
+    public height: string = '200px';
+    public value: string = 'Blob';
+    
     public onToolbarClick(e: any): void {
-        let nodeObj: NodeSelection = new NodeSelection();
-        let range: Range = nodeObj.getRange(this.rteObj.contentModule.getDocument());
-        let imgEle: HTMLElement = nodeObj.getNodeCollection(range)[0] as HTMLElement;
-        if (e.item.tooltipText === 'Rotate Right') {
-            let transform: number = (imgEle.style.transform === '') ? 0 :
-                parseInt(imgEle.style.transform.split('(')[1].split(')')[0], 10);
-            imgEle.style.transform = 'rotate(' + (transform + 90) + 'deg)';
-        } else if (e.item.tooltipText === 'Rotate Left') {
-            let transform: number = (imgEle.style.transform === '') ? 0 :
-                Math.abs(parseInt(imgEle.style.transform.split('(')[1].split(')')[0], 10));
-            imgEle.style.transform = 'rotate(-' + (transform + 90) + 'deg)';
-        }
+        const nodeObj: NodeSelection = new NodeSelection();
+        const range: Range = nodeObj.getRange(this.rteObj.contentModule.getDocument());
+        const imgEle: HTMLElement = nodeObj.getNodeCollection(range)[0] as HTMLElement;
+      if (e.item.tooltipText === 'Rotate Right') {
+            const transform: number = (imgEle.style.transform === '') ? 0 :
+          parseInt(imgEle.style.transform.split('(')[1].split(')')[0], 10);
+        imgEle.style.transform = 'rotate(' + (transform + 90) + 'deg)';
+      } else if (e.item.tooltipText === 'Rotate Left') {
+            const transform: number = (imgEle.style.transform === '') ? 0 :
+          Math.abs(parseInt(imgEle.style.transform.split('(')[1].split(')')[0], 10));
+        imgEle.style.transform = 'rotate(-' + (transform + 90) + 'deg)';
+      }
+    }
+    public onChangeRead(): void {
+      this.rteObj.enableAutoUrl = this.readonlyObj.checked;
+    }
+    public formatChange(): void {
+      if (this.formatObj.value === 'Base64') {
+        this.rteObj.insertImageSettings.saveFormat = 'Base64';
+      } else {
+        this.rteObj.insertImageSettings.saveFormat = 'Blob';
+      }
     }
 }

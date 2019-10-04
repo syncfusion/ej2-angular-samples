@@ -43,7 +43,7 @@ export class CellTemplateComponent implements OnInit {
                 delete (data[ln].Date);
             }
         }
-        // this.pivotObj.dataSourceSettings.dataSource = data;
+        this.pivotObj.dataSourceSettings.dataSource = data;
     }
     /* tslint:disable */
     /* jshint ignore:start */
@@ -61,88 +61,88 @@ export class CellTemplateComponent implements OnInit {
             }
         }
         let rowHeaders: HTMLElement[] = [].slice.call(cTable[2].children[1].querySelectorAll('td'));
-        // let rows: IFieldOptions[] = this.pivotObj.dataSourceSettings.rows as IFieldOptions[];
+        let rows: IFieldOptions[] = this.pivotObj.dataSourceSettings.rows as IFieldOptions[];
         if (rowHeaders.length > 1) {
-            // for (let i: number = 0, Cnt = rows; i < Cnt.length; i++) {
-            //     let fields: any = {};
-            //     let fieldHeaders: any = [];
-            //     for (let j: number = 0, Lnt = rowHeaders; j < Lnt.length; j++) {
-            //         let header: any = rowHeaders[j];
-            //         if (header.className.indexOf('e-gtot') === -1 && header.className.indexOf('e-rowsheader') > -1 && header.getAttribute('fieldname') === rows[i].name) {
-            //             var headerName = rowHeaders[j].getAttribute('fieldname') + '_' + rowHeaders[j].textContent;
-            //             fields[rowHeaders[j].textContent] = j;
-            //             fieldHeaders.push(rowHeaders[j].textContent);
-            //         }
-            //     }
-            //     if (i === 0) {
-            //         for (let rnt: number = 0, Lnt = fieldHeaders; rnt < Lnt.length; rnt++) {
-            //             if (rnt !== 0) {
-            //                 let row: number = fields[fieldHeaders[rnt]];
-            //                 let prevRow: number = fields[fieldHeaders[rnt - 1]];
-            //                 for (let j: number = 0, ci = 1; j < cLen && ci < colLen; j++ , ci++) {
-            //                     if (!cTable[3].children[1].children[row]) {
-            //                         break;
-            //                     }
-            //                     let node: HTMLElement = cTable[3].children[1].children[row].childNodes[j] as HTMLElement;
-            //                     let prevNode: HTMLElement = cTable[3].children[1].children[prevRow].childNodes[j] as HTMLElement;
-            //                     let ri: any = undefined;
-            //                     let prevRi: any = undefined;
-            //                     if (node) {
-            //                         ri = node.getAttribute("index");
-            //                     }
-            //                     if (prevNode) {
-            //                         prevRi = prevNode.getAttribute("index");
-            //                     }
-            //                     if (ri && ri < [].slice.call(this.pivotObj.pivotValues).length) {
-            //                         if ((this.pivotObj.pivotValues[prevRi][ci] as IAxisSet).value > (this.pivotObj.pivotValues[ri][ci]  as IAxisSet).value &&
-            //                          node.querySelector('.tempwrap')) {
-            //                             let trendElement: HTMLElement = node.querySelector('.tempwrap');
-            //                             trendElement.className = trendElement.className.replace('sb-icon-neutral', 'sb-icon-loss');
-            //                         } else if ((this.pivotObj.pivotValues[prevRi][ci]  as IAxisSet).value < (this.pivotObj.pivotValues[ri][ci]  as IAxisSet).value &&
-            //                          node.querySelector('.tempwrap')) {
-            //                             let trendElement: HTMLElement = node.querySelector('.tempwrap');
-            //                             trendElement.className = trendElement.className.replace('sb-icon-neutral', 'sb-icon-profit');
-            //                         }
-            //                     }
-            //                 }
-            //             }
-            //         }
-            //     } else {
-            //         for (let rnt: number = 0, Lnt = fieldHeaders; rnt < Lnt.length; rnt++) {
-            //             var cRow = fields[fieldHeaders[rnt]];
-            //             for (let j: number = 0, ci = 1; j < cLen && ci < colLen; j++ , ci++) {
-            //                 if (!cTable[3].children[1].children[cRow]) {
-            //                     break;
-            //                 }
-            //                 let node: HTMLElement = cTable[3].children[1].children[cRow].childNodes[j] as HTMLElement;
-            //                 let prevNode: HTMLElement = cTable[3].children[1].children[cRow - 1].childNodes[j] as HTMLElement;
-            //                 let ri: any = undefined;
-            //                 let prevRi: any = undefined;
-            //                 if (node) {
-            //                     ri = node.getAttribute("index");
-            //                 }
-            //                 if (prevNode) {
-            //                     prevRi = prevNode.getAttribute("index");
-            //                 }
-            //                 if (ri && ri < [].slice.call(this.pivotObj.pivotValues).length) {
-            //                     let cRowFieldName: string = (cTable[2].children[1].children[cRow].childNodes[0] as HTMLElement).getAttribute('fieldname');
-            //                     let prevRowFieldName: string = (cTable[2].children[1].children[cRow - 1].childNodes[0] as HTMLElement).getAttribute('fieldname');
-            //                     if ((this.pivotObj.pivotValues[prevRi][ci] as IAxisSet).value > (this.pivotObj.pivotValues[ri][ci] as IAxisSet).value &&
-            //                      node.querySelector('.tempwrap') &&
-            //                         cRowFieldName === prevRowFieldName) {
-            //                         let trendElement: HTMLElement = node.querySelector('.tempwrap');
-            //                         trendElement.className = trendElement.className.replace('sb-icon-neutral', 'sb-icon-loss');
-            //                     } else if ((this.pivotObj.pivotValues[prevRi][ci] as IAxisSet).value < (this.pivotObj.pivotValues[ri][ci] as IAxisSet).value &&
-            //                      node.querySelector('.tempwrap') &&
-            //                         cRowFieldName === prevRowFieldName) {
-            //                         let trendElement: HTMLElement = node.querySelector('.tempwrap');
-            //                         trendElement.className = trendElement.className.replace('sb-icon-neutral', 'sb-icon-profit');
-            //                     }
-            //                 }
-            //             }
-            //         }
-            //     }
-            // }
+            for (let i: number = 0, Cnt = rows; i < Cnt.length; i++) {
+                let fields: any = {};
+                let fieldHeaders: any = [];
+                for (let j: number = 0, Lnt = rowHeaders; j < Lnt.length; j++) {
+                    let header: any = rowHeaders[j];
+                    if (header.className.indexOf('e-gtot') === -1 && header.className.indexOf('e-rowsheader') > -1 && header.getAttribute('fieldname') === rows[i].name) {
+                        var headerName = rowHeaders[j].getAttribute('fieldname') + '_' + rowHeaders[j].textContent;
+                        fields[rowHeaders[j].textContent] = j;
+                        fieldHeaders.push(rowHeaders[j].textContent);
+                    }
+                }
+                if (i === 0) {
+                    for (let rnt: number = 0, Lnt = fieldHeaders; rnt < Lnt.length; rnt++) {
+                        if (rnt !== 0) {
+                            let row: number = fields[fieldHeaders[rnt]];
+                            let prevRow: number = fields[fieldHeaders[rnt - 1]];
+                            for (let j: number = 0, ci = 1; j < cLen && ci < colLen; j++ , ci++) {
+                                if (!cTable[3].children[1].children[row]) {
+                                    break;
+                                }
+                                let node: HTMLElement = cTable[3].children[1].children[row].childNodes[j] as HTMLElement;
+                                let prevNode: HTMLElement = cTable[3].children[1].children[prevRow].childNodes[j] as HTMLElement;
+                                let ri: any = undefined;
+                                let prevRi: any = undefined;
+                                if (node) {
+                                    ri = node.getAttribute("index");
+                                }
+                                if (prevNode) {
+                                    prevRi = prevNode.getAttribute("index");
+                                }
+                                if (ri && ri < [].slice.call(this.pivotObj.pivotValues).length) {
+                                    if ((this.pivotObj.pivotValues[prevRi][ci] as IAxisSet).value > (this.pivotObj.pivotValues[ri][ci]  as IAxisSet).value &&
+                                     node.querySelector('.tempwrap')) {
+                                        let trendElement: HTMLElement = node.querySelector('.tempwrap');
+                                        trendElement.className = trendElement.className.replace('sb-icon-neutral', 'sb-icon-loss');
+                                    } else if ((this.pivotObj.pivotValues[prevRi][ci]  as IAxisSet).value < (this.pivotObj.pivotValues[ri][ci]  as IAxisSet).value &&
+                                     node.querySelector('.tempwrap')) {
+                                        let trendElement: HTMLElement = node.querySelector('.tempwrap');
+                                        trendElement.className = trendElement.className.replace('sb-icon-neutral', 'sb-icon-profit');
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    for (let rnt: number = 0, Lnt = fieldHeaders; rnt < Lnt.length; rnt++) {
+                        var cRow = fields[fieldHeaders[rnt]];
+                        for (let j: number = 0, ci = 1; j < cLen && ci < colLen; j++ , ci++) {
+                            if (!cTable[3].children[1].children[cRow]) {
+                                break;
+                            }
+                            let node: HTMLElement = cTable[3].children[1].children[cRow].childNodes[j] as HTMLElement;
+                            let prevNode: HTMLElement = cTable[3].children[1].children[cRow - 1].childNodes[j] as HTMLElement;
+                            let ri: any = undefined;
+                            let prevRi: any = undefined;
+                            if (node) {
+                                ri = node.getAttribute("index");
+                            }
+                            if (prevNode) {
+                                prevRi = prevNode.getAttribute("index");
+                            }
+                            if (ri && ri < [].slice.call(this.pivotObj.pivotValues).length) {
+                                let cRowFieldName: string = (cTable[2].children[1].children[cRow].childNodes[0] as HTMLElement).getAttribute('fieldname');
+                                let prevRowFieldName: string = (cTable[2].children[1].children[cRow - 1].childNodes[0] as HTMLElement).getAttribute('fieldname');
+                                if ((this.pivotObj.pivotValues[prevRi][ci] as IAxisSet).value > (this.pivotObj.pivotValues[ri][ci] as IAxisSet).value &&
+                                 node.querySelector('.tempwrap') &&
+                                    cRowFieldName === prevRowFieldName) {
+                                    let trendElement: HTMLElement = node.querySelector('.tempwrap');
+                                    trendElement.className = trendElement.className.replace('sb-icon-neutral', 'sb-icon-loss');
+                                } else if ((this.pivotObj.pivotValues[prevRi][ci] as IAxisSet).value < (this.pivotObj.pivotValues[ri][ci] as IAxisSet).value &&
+                                 node.querySelector('.tempwrap') &&
+                                    cRowFieldName === prevRowFieldName) {
+                                    let trendElement: HTMLElement = node.querySelector('.tempwrap');
+                                    trendElement.className = trendElement.className.replace('sb-icon-neutral', 'sb-icon-profit');
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     /* jshint ignore:end */
@@ -172,7 +172,7 @@ export class CellTemplateComponent implements OnInit {
             ],
             filters: [],
             alwaysShowValueHeader: true,
-            // dataSource: data
+            dataSource: data
         };
     }
 }

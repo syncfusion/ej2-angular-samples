@@ -1,0 +1,112 @@
+<div id="action-description">
+    <p>
+        This sample visualizes moving air types in the legend based on their speed. The visibility, shape, alignment and position of the legend can be changed using the properties panel options.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-md-8">
+        <ejs-circulargauge (load)='load($event)' #Legend='' id='container1'  style='display:block;' [title]='title'  [legendSettings]='legendSettings'>
+            <e-axes>
+                <e-axis [lineStyle]='lineStyle1' radius='80%' [labelStyle]='labelStyle1' [majorTicks]='majorTicks1' [minorTicks]='minorTicks1'
+                    minimum=0 maximum=120 startAngle=210 endAngle=150 [pointers]='pointers'>
+                    <e-ranges>
+                            <e-range start=0 end=5 color='#ccffff' radius='110%' legendText='Light air'></e-range>
+                            <e-range start=5 end=11 color='#99ffff' radius='110%' legendText='Light breeze'></e-range>
+                            <e-range start=11 end=19 color='#99ff99' radius='110%' legendText='Gentle breeze'></e-range>
+                            <e-range start=19 end=28 color='#79ff4d' radius='110%' legendText='Moderate breeze'></e-range>
+                            <e-range start=28 end=49 color='#c6ff1a' radius='110%' legendText='Strong breeze'></e-range>
+                            <e-range start=49 end=74 color='#e6ac00' radius='110%' legendText='Gale'></e-range>
+                            <e-range start=74 end=102 color='#ff6600' radius='110%' legendText='Storm'></e-range>
+                            <e-range start=102 end=120 color='#ff0000' radius='110%' legendText='Hurricane force'></e-range>
+                    </e-ranges>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
+    </div>
+    <div class="col-md-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                    <table id="property" title="Properties" style="width: 100%">
+                            <tbody>
+                                <tr style="height: 50px">
+                                    <td style="width: 60%">
+                                        <div id="enablelegend">Show legend </div>
+                                    </td>
+                                    <td style="width: 30%;">
+                                        <div>
+                                            <input type="checkbox" id="enable">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="height: 50px">
+                                    <td style="width: 60%">
+                                        <div id="togglelegend">Show range when the legend item is toggled</div>
+                                    </td>
+                                    <td style="width: 30%;">
+                                        <div>
+                                            <input type="checkbox" id="toggle">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="height: 50px">
+                                    <td>
+                                        <div> Position </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <select id="position" class="form-control">
+                                                <option value="Bottom" selected='true'>Bottom</option>
+                                                <option value="Auto">Auto</option>
+                                                <option value="Top">Top</option>
+                                                <option value="Left">Left</option>
+                                                <option value="Right">Right</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div> Alignment </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <select id="alignment" class="form-control">
+                                                <option value="Center" selected="true">Center</option>
+                                                <option value="Far">Far</option>
+                                                <option value="Near">Near</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="height: 50px">
+                                    <td>
+                                        <div> Shape </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <select id="shape" class="form-control">
+                                                <option value="Circle" selected="true">Circle</option>
+                                                <option value="Rectangle">Rectangle</option>
+                                                <option value="Triangle">Triangle</option>
+                                                <option value="Diamond">Diamond</option>
+                                                <option value="InvertedTriangle">Inverted triangle</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+            </div>
+    </div>
+	<div id="description">
+    <p style="font-weight: 500">Description</p>
+    <p>
+       In this example, you can see how to render a legend in circular gauge. A legend item denotes the axis ranges. Any number of legend items can be added to a legend. You can bind the desired colors  and legend text to the corresponding ranges. 
+    </p>
+    <br>
+    <p>
+        More information on the annotation can be found in this
+        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/">documentation section</a>.
+    </p>
+</div>

@@ -3,6 +3,7 @@ import { ToolbarService, DocumentEditorContainerComponent } from '@syncfusion/ej
 import { MenuItemModel } from '@syncfusion/ej2-navigations';
 import { TitleBar } from './title-bar';
 import { defaultDocument, WEB_API_ACTION } from './data';
+import { isNullOrUndefined } from '@syncfusion/ej2-base';
 
 /**
  * Document Editor Component
@@ -27,10 +28,6 @@ export class CustomContextMenuComponent {
         this.container.documentEditor.open(JSON.stringify(defaultDocument));
         this.container.documentEditor.documentName = 'Custom Context Menu';
         this.titleBar.updateDocumentTitle();
-        this.container.documentEditor.documentChange = (): void => {
-            this.titleBar.updateDocumentTitle();
-            this.container.documentEditor.focusIn();
-        };
         // creating Custom Options
         let menuItems: MenuItemModel[] = [
             {
@@ -43,15 +40,15 @@ export class CustomContextMenuComponent {
         // custom Options Select Event
         this.container.documentEditor.customContextMenuSelect = (args: any): void => {
             // custom Options Functionality
-                let id: string = this.container.documentEditor.element.id;
-                switch (args.id) {
-                    case id + 'search_in_google':
-                        let searchContent: string = this.container.documentEditor.selection.text;
-                        if (!this.container.documentEditor.selection.isEmpty && /\S/.test(searchContent)) {
-                            window.open('http://google.com/search?q=' + searchContent);
-                        }
-                        break;
-                }
+            let id: string = this.container.documentEditor.element.id;
+            switch (args.id) {
+                case id + 'search_in_google':
+                    let searchContent: string = this.container.documentEditor.selection.text;
+                    if (!this.container.documentEditor.selection.isEmpty && /\S/.test(searchContent)) {
+                        window.open('http://google.com/search?q=' + searchContent);
+                    }
+                    break;
+            }
         };
         //  custom options hide/show functionality
         this.container.documentEditor.customContextMenuBeforeOpen = (args: any): void => {
@@ -62,5 +59,12 @@ export class CustomContextMenuComponent {
                 search.style.display = 'block';
             }
         };
+    }
+
+    onDocumentChange(): void {
+        if (!isNullOrUndefined(this.titleBar)) {
+            this.titleBar.updateDocumentTitle();
+        }
+        this.container.documentEditor.focusIn();
     }
 }

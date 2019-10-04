@@ -33,7 +33,7 @@ export class SemiCircleComponent {
     }
     // custom code end
     public majorTicks: Object = {
-        position: 'Inside', width: 2, height: 12, interval: 20
+        position: 'Inside', width: 2, height: 12, interval: 4
     };
     public minorTicks: Object = {
         position: 'Inside', height: 5, width: 1, interval: 2
@@ -48,6 +48,7 @@ export class SemiCircleComponent {
         enable: false
     }  
     ngAfterViewInit(): void {
+		let removeIntersectLable: EmitType<CheckBoxChangeEvents>;
         let opacity: EmitType<CheckBoxChangeEvents>;
         let highlightCheckBox: CheckBox = new CheckBox(
             {
@@ -112,7 +113,16 @@ export class SemiCircleComponent {
                     this.circulargauge.centerY = '' + max + '%';
                     this.circulargauge.refresh();
                 }
-            };        
+            };  
+            let labelRemoveCheckbox: CheckBox = new CheckBox(
+            {
+                change: removeIntersectLable, checked: true
+            },
+            '#hidelabel');
+            labelRemoveCheckbox.change = removeIntersectLable = (e: CheckBoxChangeEvents) => {
+                this.circulargauge.axes[0].hideIntersectingLabel = e.checked;
+                this.circulargauge.refresh();
+            }
     }
     constructor() {
         //

@@ -38,7 +38,7 @@ export class DonutComponent {
      // custom code end
     public startAngle: number = 0;
     public endAngle: number = 360;
-    public tooltip: Object = { enable: false };
+    public tooltip: Object = { enable: true };
     public title: string = 'Project Cost Breakdown';
     constructor() {
         //code

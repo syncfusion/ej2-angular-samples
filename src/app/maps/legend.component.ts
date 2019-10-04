@@ -13,8 +13,8 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 Maps.Inject(Legend, MapsTooltip);
 declare var require: any;
-let worldMap: object[] = require('./world-map.json');
-let population: object[] = require('./population-density.json');
+import worldMap from './world-map.json';
+import population from './population-density.json';
 @Component({
     selector: 'control-content',
     templateUrl: 'legend.html',
@@ -31,7 +31,7 @@ export class MapsLegendComponent {
     }
     // custom code end
     public titleSettings: object = {
-        text: 'Population density (per square kilometers) - 2015',
+        text: 'Population density (per square kilometer) - 2015',
         titleStyle: { size: '16px' }
     };
 
@@ -53,7 +53,7 @@ export class MapsLegendComponent {
             tooltipSettings: {
                 visible: true,
                 valuePath: 'name',
-                format: '${name} : ${density} per square kms'
+                format: '${name} : ${density}'
             },
             shapeSettings: {
                 colorValuePath: 'density',
@@ -150,7 +150,17 @@ export class MapsLegendComponent {
                 this.maps.layers[0].shapeSettings.colorMapping[5].to = null;
             }
             this.maps.refresh();
-        };    
+        };
+        let toggleLegend: EmitType<CheckBoxChangeEvents>;
+        let toggleLegendCheckBox: CheckBox = new CheckBox(
+        {
+            change: toggleLegend, checked: false
+        },
+        '#toggleLegend');
+        toggleLegendCheckBox.change = toggleLegend = (e: CheckBoxChangeEvents) => {
+            this.maps.legendSettings.toggleLegendSettings.enable = e.checked;
+        }
+        this.maps.refresh();
     }
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = [ 'population-density.json','world-map.json'];

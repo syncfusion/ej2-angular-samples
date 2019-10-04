@@ -69,20 +69,20 @@ export class VirtualScrollingComponent implements OnInit {
     applyData(e: Event): void {
         this.show();
         this.isInit = true;
-        // this.pivotObj.dataSourceSettings.dataSource = this.data(100000) as IDataSet[];
+        this.pivotObj.dataSourceSettings.dataSource = this.data(100000) as IDataSet[];
         this.date1 = new Date().getTime();
     }
 
     ondataBound(args: any): void {
-	//  if((this.pivotObj.dataSourceSettings.dataSource as IDataSet[]).length > 0) {
-    //     if (this.date1 && this.isInit) {
-    //         this.date2 = new Date().getTime();
-    //         document.getElementById('performanceTime').innerHTML = 'Time Taken: ' + (this.date2 - this.date1) / 1000 + ' sec';
-    //     }
-    //     this.isInit = false;
-    //     this.applyBtn.disabled = true;
-    //     document.getElementById('popup').style.display = 'none';
-	//   }
+	 if((this.pivotObj.dataSourceSettings.dataSource as IDataSet[]).length > 0) {
+        if (this.date1 && this.isInit) {
+            this.date2 = new Date().getTime();
+            document.getElementById('performanceTime').innerHTML = 'Time Taken: ' + (this.date2 - this.date1) / 1000 + ' sec';
+        }
+        this.isInit = false;
+        this.applyBtn.disabled = true;
+        document.getElementById('popup').style.display = 'none';
+	  }
     }
 
     ngOnInit(): void {
@@ -91,7 +91,7 @@ export class VirtualScrollingComponent implements OnInit {
         } as GridSettings;
 
         this.dataSourceSettings = {
-            // dataSource: [],
+            dataSource: [],
             enableSorting: false,
             expandAll: true,
             formatSettings: [{ name: 'Price', format: 'C0' }],

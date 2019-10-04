@@ -1,0 +1,45 @@
+.code-editor #code-text {
+    margin-left: 5px;
+}
+
+.code-editor .code-preview {
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.code-editor.control-section {
+    min-height: 370px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.code-editor .h3 {
+    font-size: 14px;
+    margin: 4px;
+}
+
+.code-editor .content:nth-child(even) {
+    padding: 12px;
+}
+
+.code-editor .splitter-image {
+    margin: 0 auto;
+    display: flex;
+    height: 115px;
+    margin-top: 10px;
+}
+
+
+/* <!-- custom code start --> */
+
+.code-editor#target {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+#innerSplitter {
+    border: none;
+}
+
+
+/* <!-- custom code end --> */

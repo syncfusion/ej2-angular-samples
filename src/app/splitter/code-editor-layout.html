@@ -1,13 +1,73 @@
 <div id="target" class="control-section code-editor">
-        <ejs-splitter #splitterInstance  id="outerSplitter" (created)='onCreated()' orientation='Vertical' height='400px' width='100%'>
+    <ejs-splitter #splitterInstance id="outerSplitter" orientation='Vertical' height='400px'
+        width='100%'>
+        <e-panes>
+            <e-pane size='53%' min='30%'>
+                <ng-template #content>
+                    <ng-container *ngTemplateOutlet="template1"></ng-container>
+                </ng-template>
+            </e-pane>
+            <e-pane>
+                <ng-template #content>
+                    <div class="content" style="padding:12px;">
+                        <h3 class="h3">Preview of sample</h3>
+                        <div class="splitter-image">
+                            <img class="img1" src="https://ej2.syncfusion.com/demos/src/listview/images/albert.png"
+                                style="width: 20%;margin: 0 auto;">
+                        </div>
+                    </div>
+                </ng-template>
+            </e-pane>
+        </e-panes>
+    </ejs-splitter>
+</div>
+
+<ng-template #template1>
+    <div class="content" style="height:100%;">
+        <ejs-splitter #innersplitter id="innerSplitter" height="100%" width="100%">
             <e-panes>
-                <e-pane size='53%' min='30%'></e-pane>
-                <e-pane>
+                <e-pane size='29%' min='23%'>
                     <ng-template #content>
-                        <div class="content">
-                            <h3 class="h3">Preview of sample</h3>
-                            <div class="splitter-image">
-                                <img class="img1" src="https://ej2.syncfusion.com/demos/src/listview/images/albert.png" style="width: 20%;margin: 0 auto;">
+                        <div>
+                            <div class="content" style="padding:12px;">
+                                <h3 class="h3">HTML</h3>
+                                <div class="code-preview">&lt;<span>!DOCTYPE html></span>
+                                    <div>&lt;<span>html></span></div>
+                                    <div>&lt;<span>body></span></div>&lt;<span>div</span> id="custom-image"><div
+                                        style="margin-left: 5px">&lt;<span>img</span> src="src/albert.png"></div>
+                                    <div>&lt;<span>div</span>&gt;</div>
+                                    <div>&lt;<span>/body></span></div>
+                                    <div>&lt;<span>/html></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </e-pane>
+                <e-pane size='20%' min='15%'>
+                    <ng-template #content>
+                        <div>
+                            <div class="content" style="padding:12px;">
+                                <h3 class="h3">CSS</h3>
+                                <div class="code-preview"><span>img {{ '{' }}</span>
+                                    <div id="code-text">margin:<span>0 auto;</span></div>
+                                    <div id="code-text">display:<span>flex;</span></div>
+                                    <div id="code-text">height:<span>70px;</span></div><span>{{ '}' }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </e-pane>
+                <e-pane size='35%' min='35%'>
+                    <ng-template #content>
+                        <div>
+                            <div class="content" style="padding:12px;">
+                                <h3 class="h3">JavaScript</h3>
+                                <div class="code-preview"><span>var </span>image =
+                                    document.getElementById("custom-image");<div>image.addEventListener("click",
+                                        function() {{ '{' }}</div>
+                                    <div style="padding-left: 20px;">// Code block for click action</div><span>
+                                        {{ '}' }}</span>
+                                </div>
                             </div>
                         </div>
                     </ng-template>
@@ -15,54 +75,20 @@
             </e-panes>
         </ejs-splitter>
     </div>
-    <div id="action-description">
-        <p>
-            This example demonstrates the splitter control that is used to design code editor-like application using multiple panes.
-            You can resize its panes vertically as well as horizontally. 
-        </p>
-    </div>
-    <div id="description">
-        <p>
-            The Splitter is used to design code editor-like application using multiple panes.
-            In this code editor layout, display HTML, CSS, and JavaScript (JS) code as horizontal panes at the top and output of 
-            sample at the bottom pane.
-        </p>
-    </div>
-    <style>
-        .code-editor #code-text {
-            margin-left: 5px;
-        }
-        .code-editor .code-preview {
-            margin-top: 15px;
-            font-size: 12px;
-        }
-        .code-editor.control-section{            
-            min-height: 370px;
-            margin-bottom: 15px;
-            margin-top: 10px;    
-        }
-    
-        .code-editor .h3 {
-            font-size: 14px;
-            margin: 4px;
-        }
+</ng-template>
 
-        .code-editor .content {
-            padding: 12px;
-        }
-        .code-editor .splitter-image {
-            margin: 0 auto;
-            display: flex;
-            height: 115px;
-            margin-top: 10px;
-        }
-    </style>
-
-    <!-- custom code start -->
-    <style>
-        .code-editor#target {
-            margin: 20px auto;
-            max-width: 600px;
-        }
-    </style>
-    <!-- custom code end -->
+<div id="action-description">
+    <p>
+        This example demonstrates the splitter control that is used to design code editor-like application using
+        multiple panes.
+        You can resize its panes vertically as well as horizontally.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The Splitter is used to design code editor-like application using multiple panes.
+        In this code editor layout, display HTML, CSS, and JavaScript (JS) code as horizontal panes at the top and
+        output of
+        sample at the bottom pane.
+    </p>
+</div>

@@ -109,6 +109,7 @@ import { DateTimeCategoryAxisChartComponent } from './date-time-category.compone
 import { SortingChartComponent } from './sorting.component';
 import { StackedLineChartComponent } from './stacked-line.component';
 import { PercentStackedLineChartComponent } from './stacked-line-percent.component';
+import { DataEditingComponent } from './data-editing.component';
 export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/line', component: LineChartComponent, name: 'Line', description: "This demo for Essential JS2 Chart control shows how to render the line series.",
  order: '01', category: 'Line Charts' },
@@ -118,8 +119,8 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/spline-inversed', component: InversedSplineChartComponent, name: 'Inversed Spline', description: "This demo for Essential JS2 Chart control shows how to render the inversed line series.", order: '01', category: 'Line Charts' },
     { path: ':theme/chart/line-segments', component: LineSegmentChartComponent, name: 'Line Zone', description: "This demo for Essential JS2 Chart control shows how to render and configure the points in a particular range using MultiColoredLine series.", order: '01', category: 'Line Charts' },
     { path: ':theme/chart/line-multi-color', component: MultiLineChartComponent, name: 'Multi Colored Line', description: "This demo for Essential JS2 Chart control shows how to render the multi colored line series.", order: '01', category: 'Line Charts' },
-    { path: ':theme/chart/stacked-line', component: StackedLineChartComponent, name: 'Stacked Line', description: "This demo for Essential JS2 Chart control shows how to render the stacking line series.", order: '01', category: 'Line Charts', type: 'new' },
-    { path: ':theme/chart/stacked-line-percent', component: PercentStackedLineChartComponent, name: '100% Stacked Line', description: "This demo for Essential JS2 Chart control shows how to render the 100 percent stacking line series.", order: '01', category: 'Line Charts', type: 'new' },
+    { path: ':theme/chart/stacked-line', component: StackedLineChartComponent, name: 'Stacked Line', description: "This demo for Essential JS2 Chart control shows how to render the stacking line series.", order: '01', category: 'Line Charts' },
+    { path: ':theme/chart/stacked-line-percent', component: PercentStackedLineChartComponent, name: '100% Stacked Line', description: "This demo for Essential JS2 Chart control shows how to render the 100 percent stacking line series.", order: '01', category: 'Line Charts' },
 
     { path: ':theme/chart/area', component: AreaChartComponent, name: 'Area', description: "This demo for Essential JS2 Chart control shows how to render the area series.", order: '02', category: 'Area Charts' },
     { path: ':theme/chart/spline-area', component: SplineAreaChartComponent, name: 'Spline Area', description: "This demo for Essential JS2 Chart control shows how to render the spline area series.", order: '02', category: 'Area Charts' },
@@ -131,7 +132,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/area-segments', component: AreaSegmentChartComponent, name: 'Area Zone', description: "This demo for Essential JS2 Chart control shows how to render and configure the points in a particular range using MultiColoredArea series.", order: '02', category: 'Area Charts' },
 
     { path: ':theme/chart/column', component: ColumnChartComponent, name: 'Column', description: "This demo for Essential JS2 Chart control shows how to render the column series.", order: '03', category: 'Bar Charts' },
-    { path: ':theme/chart/rounded-column', component: RoundedColumnChartComponent, name: 'Rounded Column',description: "This demo for Essential JS2 Chart control shows how to render the rounded column series.", order: '03', category: 'Bar Charts', type: 'update' },
+    { path: ':theme/chart/rounded-column', component: RoundedColumnChartComponent, name: 'Rounded Column',description: "This demo for Essential JS2 Chart control shows how to render the rounded column series.", order: '03', category: 'Bar Charts' },
     { path: ':theme/chart/column-placement', component: PlacementColumnChartComponent, name: 'Back to Back Column', description: "This demo for Essential JS2 Chart control shows how to render and configure the column charts.", order: '03', category: 'Bar Charts' },
     { path: ':theme/chart/range-column', component: RangeColumnChartComponent, name: 'Range Column', description: "This demo for Essential JS2 Chart control shows how to render the range column series.", order: '03', category: 'Bar Charts' },
     { path: ':theme/chart/range-bar', component: RangeBarChartComponent, name: 'Inversed Range Column', description: "This demo for Essential JS2 Chart control shows how to render the inversed range column series.", order: '03', category: 'Bar Charts' },
@@ -180,13 +181,13 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/chart-performance', component: PerformanceChartComponent, name: 'Chart Performance', description: "This demo for Essential JS2 Chart control shows the performance when plotting large volumes of data and handling high frequency real-time data.", order: '08', category: 'Benchmark' },
 
 
-    { path: ':theme/chart/default-pie', component: DefaultPieComponent, name: 'Pie', description: "This demo for Essential JS2 Chart control shows how to render and configure the pie charts.", order: '09', category: 'Accumulation Charts' },
+    { path: ':theme/chart/default-pie', component: DefaultPieComponent, name: 'Pie', description: "This demo for Essential JS2 Chart control shows how to render and configure the pie charts.", order: '09', category: 'Accumulation Charts', type: 'update' },
     { path: ':theme/chart/pie-radius', component: PieRadiusComponent, name: 'Pie with Various Radius', description: "This demo for Essential JS2 Chart control shows how to render and configure the pie chart with different radius.", order: '09', category: 'Accumulation Charts' },
-    { path: ':theme/chart/donut', component: DonutComponent, name: 'Donut', description: "This demo for Essential JS2 Chart control shows how to render and configure the doughnut charts.", order: '09', category: 'Accumulation Charts' },
+    { path: ':theme/chart/donut', component: DonutComponent, name: 'Donut', description: "This demo for Essential JS2 Chart control shows how to render and configure the doughnut charts.", order: '09', category: 'Accumulation Charts', type: 'update' },
     { path: ':theme/chart/pyramid', component: PyramidComponent, name: 'Pyramid', description: "This demo for Essential JS2 Chart control shows how to render and configure the pyramid charts.", order: '09', category: 'Accumulation Charts' },
     { path: ':theme/chart/funnel', component: FunnelComponent, name: 'Funnel', description: "This demo for Essential JS2 Chart control shows how to render and configure the funnel charts.", order: '09', category: 'Accumulation Charts' },
     {
-        path: ':theme/chart/default-donut', component: DefaultDonutComponent, name: 'Pie With Legend', description: "This demo for Essential JS2 Chart control shows how to render and configure the legends in pie charts.", order: '09', category: 'Accumulation Charts', type: 'update'
+        path: ':theme/chart/default-donut', component: DefaultDonutComponent, name: 'Pie With Legend', description: "This demo for Essential JS2 Chart control shows how to render and configure the legends in pie charts.", order: '09', category: 'Accumulation Charts'
     },
     {
         path: ':theme/chart/semi-pie', component: SemiPieComponent, name: 'Semi Pie', description: "This demo for Essential JS2 Chart control shows how to render semi-pie and doughnut charts.", order: '09', category: 'Accumulation Charts'
@@ -219,7 +220,7 @@ export const chartAppRoutes: Object[] = [
 
     { path: ':theme/chart/numeric', component: NumericAxisChartComponent, name: 'Numeric Axis', description: "This demo for Essential JS2 Chart control shows how to plot numeric data with the help of numeric axis in charts.", order: '12', category: 'Chart Axes' },
     { path: ':theme/chart/date-time', component: DateTimeAxisChartComponent, name: 'DateTime Axis', description: "This demo for Essential JS2 Chart control shows how to render the date-time axis in charts.", order: '12', category: 'Chart Axes' },
-    { path: ':theme/chart/category', component: CategoryChartComponent, name: 'Category Axis', description: "This demo for Essential JS2 Chart control shows how to render the category axis in charts.", order: '12', category: 'Chart Axes',type: 'update' },
+    { path: ':theme/chart/category', component: CategoryChartComponent, name: 'Category Axis', description: "This demo for Essential JS2 Chart control shows how to render the category axis in charts.", order: '12', category: 'Chart Axes' },
     { path: ':theme/chart/date-time-category', component: DateTimeCategoryAxisChartComponent, name: 'DateTime Category Axis', description: "This demo for Essential JS2 Chart control shows how to render the date-time category axis in charts.", order: '12', category: 'Chart Axes' },
     { path: ':theme/chart/indexed-axis', component: IndexedAxisChartComponent, name: 'Indexed Category Axis', description: "This demo for Essential JS2 Chart control shows how to render the indexed category axis in charts.", order: '12', category: 'Chart Axes' },
     { path: ':theme/chart/logarithmic-scale', component: LogarithmicScaleChartComponent, name: 'Logarithmic Scale', description: "This demo for Essential JS2 Chart control shows how to render the logarithmic axis in charts.", order: '12', category: 'Chart Axes' },
@@ -242,10 +243,11 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/export', component: ExportChartComponent, name: 'Export', description: "This demo for Essential JS2 Chart control shows how to export the charts to Excel, PDF, and image formats such as SVG, JPEG, and PNG at client-side.", order: '14', category: 'Print and Export' },
 
     { path: ':theme/chart/selection', component: SelectionChartComponent, name: 'Selection', description: "This demo for Essential JS2 Chart control demonstrates the selection behavior in chart.", order: '15', category: 'User Interaction' },
-    { path: ':theme/chart/range-selection', component: RangeSelectionChartComponent, name: 'Range Selection', description: "This demo for Essential JS2 Chart control demonstrates the range selection in chart.", order: '15', category: 'User Interaction' },
+    { path: ':theme/chart/range-selection', component: RangeSelectionChartComponent, name: 'Range Selection', description: "This demo for Essential JS2 Chart control demonstrates the range selection in chart.", order: '15', category: 'User Interaction', type: 'update' },
     { path: ':theme/chart/cross-hair', component: CrosshairChartComponent, name: 'Crosshair', description: "This demo for Essential JS2 Chart control demonstrates the crosshair behavior in chart.", order: '15', category: 'User Interaction' },
     { path: ':theme/chart/trackball', component: TrackBallChartComponent, name: 'TrackBall', description: "This demo for Essential JS2 Chart control demonstrates the trackball behavior in chart.", order: '15', category: 'User Interaction' },
-    { path: ':theme/chart/zooming', component: ZoomingChartComponent, name: 'Zooming and Panning', description: "This demo for Essential JS2 Chart control demonstrates the zooming and panning behavior in chart.", order: '15', category: 'User Interaction' }
+    { path: ':theme/chart/zooming', component: ZoomingChartComponent, name: 'Zooming and Panning', description: "This demo for Essential JS2 Chart control demonstrates the zooming and panning behavior in chart.", order: '15', category: 'User Interaction' },
+    { path: ':theme/chart/data-editing', component: DataEditingComponent, name: 'Data Editing', description: "This demo for Essential JS2 Chart control demonstrates the data editing behavior in chart.", order: '15', category: 'User Interaction' }
 ];
 
 export const chartRouter: ModuleWithProviders = RouterModule.forChild(chartAppRoutes);
@@ -276,7 +278,7 @@ let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, Ba
     MultiLevelLabelsChartComponent, LineSegmentChartComponent,
     AxisCrossingChartComponent, AreaSegmentChartComponent, MultiLineChartComponent,
     DateTimeCategoryAxisChartComponent, SortingChartComponent, PieRadiusComponent,
-    StackedLineChartComponent, PercentStackedLineChartComponent ];
+    StackedLineChartComponent, PercentStackedLineChartComponent, DataEditingComponent ];
 @NgModule({
     // tslint:disable-next-line:max-line-length
     imports: [chartRouter, ChartAllModule, RangeNavigatorAllModule, SharedModule, ButtonModule, AccumulationChartAllModule, NumericTextBoxModule, DatePickerModule, DropDownListAllModule],

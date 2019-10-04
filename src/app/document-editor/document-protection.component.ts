@@ -4,6 +4,7 @@ import { TitleBar } from './title-bar';
 import { dataProtection, WEB_API_ACTION } from './data';
 import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import { ColorPickerComponent, ColorPickerEventArgs } from '@syncfusion/ej2-angular-inputs';
+import { isNullOrUndefined } from '@syncfusion/ej2-base';
 /**
  * Document Editor Component
  */
@@ -32,20 +33,23 @@ export class DocumentEditorProtectionComponent {
         this.container.serviceUrl = this.hostUrl + WEB_API_ACTION;
         this.container.documentEditor.open(JSON.stringify(dataProtection));
         this.container.documentEditor.documentName = 'Document Protection';
-        // this.container.documentEditor.currentUser = 'engineer@mycompany.com';
+        this.container.documentEditor.currentUser = 'engineer@mycompany.com';
+        this.colorpicker.value = this.container.documentEditor.userColor;
         this.titleBar.updateDocumentTitle();
-        this.container.documentEditor.documentChange = (): void => {
+    }
+
+    onDocumentChange(): void {
+        if (!isNullOrUndefined(this.titleBar)) {
             this.titleBar.updateDocumentTitle();
-            this.container.documentEditor.focusIn();
-            // this.colorpicker.value = this.container.documentEditor.userColor;
-        };
+        }
+        this.container.documentEditor.focusIn();
     }
 
     onChange(event: ChangeEventArgs): void {
-        // this.container.documentEditor.currentUser = event.value as string;
+        this.container.documentEditor.currentUser = event.value as string;
     }
 
     onColorChange(args: ColorPickerEventArgs): void {
-        // this.container.documentEditor.userColor = args.currentValue.hex;
+        this.container.documentEditor.userColor = args.currentValue.hex;
     }
 }

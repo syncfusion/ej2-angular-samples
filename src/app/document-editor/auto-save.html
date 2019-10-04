@@ -2,13 +2,15 @@
     <div>
         <div id="default_title_bar" class="e-de-ctn-title"></div>
         <div>
-            <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true (created)="onCreate()" style="display:block;height:600px"></ejs-documenteditorcontainer>
+            <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true (created)="onCreate()"
+                (documentChange)="onDocumentChange()" (contentChange)="onContentChange()"
+                style="display:block;height:600px"></ejs-documenteditorcontainer>
         </div>
     </div>
 </div>
 <div class="col-lg-3 property-section">
     <div class="property-panel-header">
-            Auto save log
+        Auto save log
     </div>
     <table id="property" title="Auto save log">
         <tr>

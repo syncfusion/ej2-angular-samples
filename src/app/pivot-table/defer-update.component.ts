@@ -76,7 +76,7 @@ export class DeferUpdateComponent implements OnInit {
         } as GridSettings;
 
         this.dataSourceSettings = {
-            // dataSource: Pivot_Data,
+            dataSource: Pivot_Data,
             expandAll: false,
             allowLabelFilter: true,
             allowValueFilter: true,

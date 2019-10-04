@@ -6,10 +6,10 @@
 // custom code end
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
 import { MapsTheme, Maps, Annotations, Marker, ILoadEventArgs, MapAjax } from '@syncfusion/ej2-angular-maps';
-
+import africa from './africa-continent.json';
 Maps.Inject(Annotations, Marker);
 declare var require: any;
-let africa: object[] = require('./africa-continent.json');
+//let africa: object[] = require('./africa-continent.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'annotation.html',  

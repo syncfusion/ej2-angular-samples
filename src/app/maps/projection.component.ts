@@ -4,7 +4,7 @@ import { MapAjax } from '@syncfusion/ej2-maps';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 Maps.Inject(Zoom, Legend, MapsTooltip);
 declare var require: any;
-let worldMap: object[] = require('./world-map.json');
+import worldMap from './world-map.json';
 @Component({
     selector: 'control-content',
     templateUrl: 'projection.html',

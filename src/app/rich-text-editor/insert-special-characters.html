@@ -1,21 +1,27 @@
 <div id="action-description">
     <p>
-        This sample shows how to add your own commands to toolbar of the rich text editor. 
-        The <code>“Ω” </code>  command is added to insert special characters in the editor. 
-        Click the “Ω” command to show the special characters list, and then choose the character to be inserted in the editor.
+        This sample shows how to add your own commands to toolbar of the rich text editor.
+        The <code>“Ω” </code> command is added to insert special characters in the editor.
+        Click the “Ω” command to show the special characters list, and then choose the character to be inserted in the
+        editor.
     </p>
 </div>
 <div class="control-section e-rte-custom-tbar-section">
     <div class="sample-container">
         <div class="default-section" id="rteSection">
-            <ejs-richtexteditor id='customRTE' #customRTE [toolbarSettings]='tools' (created)='onCreate()'>
+            <ejs-richtexteditor id='customRTE' #customRTE [toolbarSettings]='tools' (created)='onCreate()' (actionComplete)='actionCompleteHandler($event)'>
                 <ng-template #valueTemplate>
-                    <div style="display:block;"><p style="margin-right:10px">The custom command "insert special character" is configured as the last item of the toolbar. 
-                        Click on the command and choose the special character you want to include from the popup.</p></div>
+                    <div style="display:block;">
+                        <p style="margin-right:10px">The custom command "insert special character" is configured as the
+                            last item of the toolbar.
+                            Click on the command and choose the special character you want to include from the popup.
+                        </p>
+                    </div>
                 </ng-template>
             </ejs-richtexteditor>
-            <ejs-dialog #Dialog id="rteDialog" [buttons]='dlgButtons' (overlayClick)="dialogOverlay()" [header]='header' [visible]='false'
-                [showCloseIcon]='false' width='43%' [target]='target' (created)="dialogCreate()" [isModal]='true'>
+            <ejs-dialog #Dialog id="rteDialog" [buttons]='dlgButtons' (overlayClick)="dialogOverlay()" [header]='header'
+                [visible]='false' [showCloseIcon]='false' width='43%' [target]='target' (created)="dialogCreate()"
+                [isModal]='true'>
                 <ng-template #content>
                     <div id="rteSpecial_char">
                         <div class="char_block" title="^">^</div>
@@ -70,10 +76,14 @@
 </div>
 
 <div id="description">
-    <p>The rich text editor allows you to configure your own commands to its toolbar using <code>toolbarSettings</code> property. 
-        The command can be plain text, icon, or HTML template. 
-        You can also define the order and group where the command should be included. 
+    <p>The rich text editor allows you to configure your own commands to its toolbar using <code>toolbarSettings</code>
+        property.
+        The command can be plain text, icon, or HTML template.
+        You can also define the order and group where the command should be included.
         Bind the action to the command by getting its instance. </p>
     <p><b>Injecting Module</b></p>
-    <p>RichTextEditor features are segregated into individual feature-wise modules. In this demo we have used following injectable services <code>ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService</code> into the <code>@NgModule.providers section</code>.</p>
+    <p>RichTextEditor features are segregated into individual feature-wise modules. In this demo we have used following
+        injectable services
+        <code>ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService</code> into the
+        <code>@NgModule.providers section</code>.</p>
 </div>

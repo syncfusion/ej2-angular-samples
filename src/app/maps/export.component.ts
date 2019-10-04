@@ -6,7 +6,7 @@ import { MapsTheme, Maps, Marker, MapsTooltip, ILoadEventArgs, ExportType } from
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { MapAjax } from '@syncfusion/ej2-maps';
 declare var require: any;
-let worldMap: object[] = require('./world-map.json');
+import worldMap from './world-map.json';
 Maps.Inject(Marker, MapsTooltip);
 @Component({
     selector: 'control-content',

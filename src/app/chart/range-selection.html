@@ -28,7 +28,18 @@
                                <option value='DragXY'>DragXY</option>
                                 <option value="DragX">DragX</option>
                                 <option value="DragY">DragY</option>
+                                <option value="Lasso">Lasso</option>
                             </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr style="height: 50px">
+                    <td style="width: 80%">
+                        <div>Enable MultipleSelection:</div>
+                    </td>
+                    <td style="width: 40%;">
+                        <div>
+                            <input type="checkbox" (change)='setMultiSelect($event)' id="select">
                         </div>
                     </td>
                 </tr>
@@ -47,7 +58,7 @@
     <p>
          Tap to select a point or series, double tap and drag to enable rectangular selection in touch enabled devices.
     </p>
-    <p>Chart supports five mode of selection which can be set using <code><a target="_blank" class="code"
+    <p>Chart supports seven mode of selection which can be set using <code><a target="_blank" class="code"
         href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#selectionmode-selectionmode">SelectionMode</a></code> property.     
     </p>
     <ul>
@@ -57,6 +68,7 @@
          <li><code>DragXY</code> - Rectangular selection with respect to both axis.</li>
          <li><code>DragX</code> - Rectangular selection with respect to horizontal axis.</li>
          <li><code>DragY</code> - Rectangular selection with respect to vertical axis.</li>
+         <li><code>Lasso</code> - Select free form of selection area points.</li>
     </ul> 
     <br>
     <p style="font-weight: 500">Injecting Module</p>

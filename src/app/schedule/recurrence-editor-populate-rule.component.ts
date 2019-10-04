@@ -29,6 +29,6 @@ export class RecPopulateComponent {
         this.recObject.setRecurrenceRule(e.value as string);
     }
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['rec-editor.style.css'];
+        sourceFiles.files = ['recurrence-editor.style.css'];
     }
 }

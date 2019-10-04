@@ -1,0 +1,42 @@
+.inplace-control-section .control_wrapper .e-inplaceeditor:not(#colorPickerEle) {
+    width: inherit;
+}
+
+.inplace-control-section .control_wrapper .e-inplaceeditor {
+    min-width: 150px;
+}
+
+.inplace-control-section .control_wrapper table td {
+    width: 200px;
+    height: 100px;
+}
+
+.inplace-control-section.input-layout .control_wrapper table td .control-label {
+    margin-bottom: 0px;
+}
+
+.e-inplace-editor-tip .e-editable-component {
+    width: 150px;
+}
+
+@media (max-width: 768px) {
+    .inplace-control-section .control_wrapper table tr td:nth-child(1) {
+        width: 130px;
+    }
+
+    .inplace-control-section .control_wrapper table tr td:nth-child(2) {
+        width: 200px;
+    }
+}
+
+#inputsProperty .property-panel-section {
+    margin: 30px auto;
+    padding-top: 50px;
+}
+
+/* <!-- custom code start --> */
+    .inplace-control-section .control_wrapper {
+        margin: auto;
+        max-width: 400px;
+    }
+/* <!-- custom code end --> */

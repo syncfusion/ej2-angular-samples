@@ -3,25 +3,32 @@
  */
 import { Component, ViewChild } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent, IFrameSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 @Component({
     selector: 'control-content',
     templateUrl: 'iframe.html',
     providers: [ToolbarService, LinkService, ImageService, HtmlEditorService]
 })
 export class IFrameComponent {
-    @ViewChild('iframeRTE') iframeRTE: RichTextEditorComponent;
-    public tools: object = {
+
+    @ViewChild('iframeRTE')
+    private iframeRTE: RichTextEditorComponent;
+
+    public tools: ToolbarModule = {
         items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
         'FontName', 'FontSize', 'FontColor', 'BackgroundColor',
-        'LowerCase', 'UpperCase', '|',
+        'LowerCase', 'UpperCase','SuperScript', 'SubScript', '|',
         'Formats', 'Alignments', 'OrderedList', 'UnorderedList',
         'Outdent', 'Indent', '|',
-        'CreateLink', 'Image', '|', 'ClearFormat', 'Print',
-        'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
+        'CreateTable', 'CreateLink', 'Image', '|', 'ClearFormat', 'Print',
+        'SourceCode', 'FullScreen', '|', 'Undo', 'Redo'
+    ]
     };
-    public iframe: object = { enable: true };
+
+    public iframe: IFrameSettingsModel = { enable: true };
     public height: number = 500;
+
     public handleFullScreen(e: any) {
         const sbCntEle: HTMLElement = document.querySelector('.sb-content.e-view');
         const sbHdrEle: HTMLElement = document.querySelector('.sb-header.e-view');
@@ -38,9 +45,10 @@ export class IFrameComponent {
             }
             removeClass([leftBar], ['e-close']);
             if (!Browser.isDevice) {
-            addClass([leftBar], ['e-open']); }
+                addClass([leftBar], ['e-open']);
+            }
         }
-    };
+    }
 
     public actionCompleteHandler(e: any) {
         setTimeout(() => { this.iframeRTE.toolbarModule.refreshToolbarOverflow(); }, 400);

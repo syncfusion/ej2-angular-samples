@@ -1,11 +1,12 @@
 /**
  * RTE Custom-Toolbar Sample
  */
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { Browser, addClass } from '@syncfusion/ej2-base';
+import { Component, ViewChild, ViewEncapsulation, ElementRef } from '@angular/core';
+import { Browser } from '@syncfusion/ej2-base';
 import { ToolbarService, NodeSelection, LinkService, ImageService } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, HtmlEditorService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
-import { Dialog } from '@syncfusion/ej2-popups';
+import { Dialog, ButtonPropsModel } from '@syncfusion/ej2-popups';
+import { Tab } from '@syncfusion/ej2-navigations';
 
 @Component({
     selector: 'control-content',
@@ -16,16 +17,26 @@ import { Dialog } from '@syncfusion/ej2-popups';
 })
 
 export class InsertEmoticonsComponent {
+
     @ViewChild('customRTE')
-    public rteObj: RichTextEditorComponent;
+    private rteObj: RichTextEditorComponent;
+
     @ViewChild('Dialog')
-    public dialogObj: Dialog;
+    private dialogObj: Dialog;
+
+    @ViewChild('tabdefault')
+    private tabobj: Tab;
+
+    @ViewChild('rteSection')
+    private rteSection: ElementRef;
+
     public selection: NodeSelection = new NodeSelection();
     public range: Range;
-    public customBtn: any;
-    public dialogCtn: any;
+    public customBtn: HTMLElement;
+    public dialogCtn: HTMLElement;
     public saveSelection: NodeSelection;
-    public smileys = [
+
+    public smileys: { [key: string]: Object }[] = [
         { content: '&#128512;', title: 'Grinning face' },
         { content: '&#128513;', title: 'Grinning face with smiling eyes' },
         { content: '&#128514;', title: 'Face with tears of joy' },
@@ -81,7 +92,7 @@ export class InsertEmoticonsComponent {
         { content: '&#128565;', title: 'char_block' },
 
     ];
-    public animals = [
+    public animals: { [key: string]: Object }[] = [
         { title: 'Monkey Face', content: '&#128053;' },
         { title: 'Monkey', content: '&#128018;' },
         { title: 'Gorilla', content: '&#129421;' },
@@ -137,7 +148,7 @@ export class InsertEmoticonsComponent {
         { title: 'Sauropod', content: '&#129429;' },
         { title: 'T-Rex', content: '&#129430;' },
     ];
-    public headerText: Object = [{ text: "&#128578;" }, { text: "&#128053;" }];
+    public headerText: { [key: string]: Object }[]  = [{ text: '&#128578;' }, { text: '&#128053;' }];
     public tools: object = {
         items: ['Bold', 'Italic', 'Underline', '|', 'Formats', 'Alignments', 'OrderedList',
             'UnorderedList', '|', 'CreateLink', 'Image', '|', 'SourceCode',
@@ -148,11 +159,11 @@ export class InsertEmoticonsComponent {
             }, '|', 'Undo', 'Redo'
         ]
     };
-    public dlgButtons: any = [{ buttonModel: { content: "Insert", isPrimary: true }, click: this.onInsert.bind(this) },
+    public dlgButtons: ButtonPropsModel[] = [{ buttonModel: { content: 'Insert', isPrimary: true }, click: this.onInsert.bind(this) },
     { buttonModel: { content: 'Cancel' }, click: this.dialogOverlay.bind(this) }];
-    public header: string = 'Insert Emoticons';
+    public header = 'Insert Emoticons';
     public target: HTMLElement = document.getElementById('rteSection');
-    public height: any = 'auto';
+    public height: string | number = 'auto';
     public onCreate(): void {
         this.customBtn = document.getElementById('custom_tbar') as HTMLElement;
         this.dialogCtn = document.getElementById('rteSpecial_char') as HTMLElement;
@@ -166,7 +177,7 @@ export class InsertEmoticonsComponent {
         };
     }
     public dialogCreate(): void {
-        this.dialogCtn = document.getElementById('tab_default');
+        this.dialogCtn = this.tabobj.element;
         this.dialogCtn.onclick = (e: Event) => {
             const target: HTMLElement = e.target as HTMLElement;
             const activeEle: Element = this.dialogObj.element.querySelector('.char_block.e-active');
@@ -185,21 +196,27 @@ export class InsertEmoticonsComponent {
             if (this.rteObj.formatter.getUndoRedoStack().length === 0) {
                 this.rteObj.formatter.saveData();
             }
-            if (Browser.isDevice && Browser.isIos) {
-                this.saveSelection.restore();
-            }
+            this.saveSelection.restore();
             this.rteObj.executeCommand('insertText', activeEle.textContent);
             this.rteObj.formatter.saveData();
-            (this.rteObj as any).formatter.enableUndo(this.rteObj);
+            this.rteObj.formatter.enableUndo(this.rteObj);
         }
         this.dialogOverlay();
     }
 
     public dialogOverlay(): void {
-        let activeEle: Element = this.dialogObj.element.querySelector('.char_block.e-active');
+        const activeEle: Element = this.dialogObj.element.querySelector('.char_block.e-active');
         if (activeEle) {
             activeEle.classList.remove('e-active');
         }
         this.dialogObj.hide();
+    }
+    
+    public actionCompleteHandler(e: any): void {
+        if (e.requestType === 'SourceCode') {
+        this.rteObj.getToolbar().querySelector('#custom_tbar').parentElement.classList.add('e-overlay');
+        } else if (e.requestType === 'Preview') {
+        this.rteObj.getToolbar().querySelector('#custom_tbar').parentElement.classList.remove('e-overlay');
+        }
     }
 }

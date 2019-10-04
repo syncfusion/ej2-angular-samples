@@ -42,7 +42,7 @@
 
 <div class="control-section" id="pivot-table-section">
     <div class="col-lg-8">
-        <ejs-pivotview #pivotview id='PivotView' (load)='onLoad($event)' [dataSourceSettings]=dataSourceSettings showGroupingBar='true' width='100%'
+        <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings showGroupingBar='true' width='100%'
             height='450' [gridSettings]='gridSettings' (gridSettings.columnRender)='setColumnsRender($event)'>
         </ejs-pivotview>
     </div>

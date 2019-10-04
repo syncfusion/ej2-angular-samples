@@ -4,10 +4,9 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { MapsTheme, Maps, Zoom, Marker, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
-
+import asia from './asia.json';
 Maps.Inject(Zoom, Marker);
 declare var require: any;
-let asia: object[] = require('./asia.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'earthquake.html',

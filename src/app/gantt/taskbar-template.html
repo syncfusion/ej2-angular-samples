@@ -13,7 +13,7 @@
         <ng-template #taskbarTemplate let-data>
             <ng-container *ngIf="data.TaskName == 'Oscar moments';else OscarPerformance">
                 <div class="e-gantt-child-taskbar e-custom-moments" style="height:100%;border-radius:5px;">
-                    <ng-container *ngIf="data.taskDuration < 4;else template1">
+                    <ng-container *ngIf="data.ganttProperties.duration < 4;else template1">
                         <img class="moments" height="32px" width="32px"/>
                     </ng-container>
                     <ng-template #template1>
@@ -25,7 +25,7 @@
             <ng-template #OscarPerformance>
                 <ng-container *ngIf="data.TaskName == 'Oscar performance';else movieWinner">
                     <div class="e-gantt-child-taskbar e-custom-performance" style="height:100%;border-radius:5px;">
-                        <ng-container *ngIf="data.taskDuration <= 5;else template2">
+                        <ng-container *ngIf="data.ganttProperties.duration <= 5;else template2">
                             <img class="face-mask"  height="32px" width="32px" />
                         </ng-container>
                         <ng-template #template2>
@@ -37,18 +37,18 @@
             </ng-template>
             <ng-template #movieWinner>
                 <div class="e-gantt-parent-taskbar e-custom-parent" style="height:100%;border-radius:5px;text-overflow:ellipsis;">
-                    <ng-container *ngIf="data.taskDuration < 4;else template3">
+                    <ng-container *ngIf="data.ganttProperties.duration < 4;else template3">
                         <img class="oscar"  height="32px" width="32px"  />
                     </ng-container>
                     <ng-template #template3>
                         <ng-container *ngIf="data.Winner && data.Movie;else template4">
                             <img class="oscar"  height="32px" width="32px"  />
-                            <span class="e-task-label" style="position:absolute; top:13px;font-size:14px;">{{data.Winner}}</span>
-                            <span class="e-task-label" style="position:absolute;top:33px;font-size:10px;text-overflow:ellipsis;">{{data.Movie}}</span>
+                            <span class="e-task-label" style="position:absolute; top:13px;font-size:14px;">{{data.taskData.Winner}}</span>
+                            <span class="e-task-label" style="position:absolute;top:33px;font-size:10px;text-overflow:ellipsis;">{{data.taskData.Movie}}</span>
                         </ng-container>
                         <ng-container #template4 *ngIf="data.Movie && !data.Winner;else template5">
                             <img class="oscar"  height="32px" width="32px"  />
-                            <span class="e-task-label" style="position:absolute; top:14px;font-size:12px;text-overflow:ellipsis;">{{data.Movie}} </span> 
+                            <span class="e-task-label" style="position:absolute; top:14px;font-size:12px;text-overflow:ellipsis;">{{data.taskData.Movie}} </span> 
                         </ng-container>
                         <ng-template #template5>
                             <span class="e-task-label"></span> 

@@ -41,11 +41,11 @@ export class TreeGridOverviewComponent implements OnInit {
             imgElement.setAttribute('src', 'assets/treegrid/images/' + val + '.png');
             imgElement.classList.add('e-image');
             let div: HTMLElement = document.createElement('DIV');
-            div.style.display = 'inline-block';
+            div.style.display = 'inline';
             div.appendChild(imgElement);
             let cellValue: HTMLElement = document.createElement('DIV');
             cellValue.innerHTML = args.cell.querySelector('.e-treecell').innerHTML;
-            cellValue.setAttribute('style', 'display:inline-block;padding-left:6px');
+            cellValue.setAttribute('style', 'display:inline;padding-left:6px');
             args.cell.querySelector('.e-treecell').innerHTML = '';
             args.cell.querySelector('.e-treecell').appendChild(div);
             args.cell.querySelector('.e-treecell').appendChild(cellValue);

@@ -56,7 +56,19 @@
       padding: 0px;
     }
   }
-    
+
+  ejs-textbox .e-outline.e-float-input,
+  ejs-textbox .e-outline.e-float-input.e-control-wrapper {
+      margin-top: 0;
+  }
+
+  .fabric .row.material2,
+  .bootstrap .row.material2,
+  .bootstrap4 .row.material2,
+  .highcontrast .row.material2 {
+      display: none;
+  }
+  
   #description td {
     vertical-align: top;
   }

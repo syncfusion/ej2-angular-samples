@@ -1,13 +1,17 @@
 <div id="action-description">
-    <p>This sample demonstrates the toolbar show on inline mode. Toolbar show while selection on the below editable content and it hide on focus out from edit area.</p>
+    <p>This sample demonstrates the toolbar show on inline mode. Toolbar show while selection on the below editable
+        content and it hide on focus out from edit area.</p>
 </div>
 
 <div class="col-lg-8 control-section">
     <div class="sample-container">
         <div class="default-section">
-            <ejs-richtexteditor id='inlineRTE' #inlineRTE [inlineMode]='inlineMode' [toolbarSettings]='toolbarSettings' [format]='format' [fontFamily]='fontFamily'>
+            <ejs-richtexteditor id='inlineRTE' #inlineRTE [inlineMode]='inlineMode' [toolbarSettings]='toolbarSettings'
+                [format]='format' [fontFamily]='fontFamily'>
                 <ng-template #valueTemplate>
-                    <p>The sample is configured with inline mode of editor. Initially, the editor is rendered without a <a href="https://ej2.syncfusion.com/home/" target="_blank">toolbar</a>. The toolbar becomes visible only when the content is selected.</p>
+                    <p>The sample is configured with inline mode of editor. Initially, the editor is rendered without a
+                        <a href="https://ej2.syncfusion.com/home/" target="_blank">toolbar</a>. The toolbar becomes
+                        visible only when the content is selected.</p>
                 </ng-template>
             </ejs-richtexteditor>
         </div>
@@ -22,7 +26,8 @@
                     <tr>
                         <td>
                             <div>
-                                <ejs-checkbox #select label="Show on Selection" [checked]="true" (change)="onChangeSelect()"></ejs-checkbox>
+                                <ejs-checkbox #select label="Show on Selection" [checked]="true"
+                                    (change)="onChangeSelect()"></ejs-checkbox>
                             </div>
                         </td>
                     </tr>
@@ -33,8 +38,12 @@
 </div>
 
 <div id="description">
-    <p>The rich text editor provides an option to display toolbar on demand using mode property. Set mode as inline to enable
+    <p>The rich text editor provides an option to display toolbar on demand using mode property. Set mode as inline to
+        enable
         inline editor. The toolbar becomes visible only when the content is selected</p>
     <p><b>Injecting Module</b></p>
-    <p>RichTextEditor features are segregated into individual feature-wise modules. In this demo we have used following injectable services <code>ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService</code> into the <code>@NgModule.providers section</code>.</p>
+    <p>RichTextEditor features are segregated into individual feature-wise modules. In this demo we have used following
+        injectable services
+        <code>ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService</code> into the
+        <code>@NgModule.providers section</code>.</p>
 </div>

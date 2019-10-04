@@ -29,6 +29,6 @@ export class RecurrenceComponent {
         }
     }
     onChange(args: ChangeEventArgs): void {
-        // this.scheduleObj.eventSettings.editFollowingEvents = args.checked;
+        this.scheduleObj.eventSettings.editFollowingEvents = args.checked;
     }
 }

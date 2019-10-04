@@ -6,10 +6,9 @@ import { MapsTheme, Maps, Bubble, IBubbleRenderingEventArgs, MapsTooltip, ILoadE
 import {  internetUsers } from './population-data';
 import { MapAjax } from '@syncfusion/ej2-maps';
 Maps.Inject(Bubble, MapsTooltip); 
-
+import worldMap from './world-map.json';
 export interface Data { value?: number; }
 declare var require: any;
-let worldMap: object[] = require('./world-map.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'bubble.html', 

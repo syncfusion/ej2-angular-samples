@@ -69,7 +69,7 @@ export class ToolbarComponent implements OnInit {
             }
         });
         if (args.report) {
-            // this.pivotObj.dataSourceSettings = JSON.parse(args.report).dataSourceSettings;
+            this.pivotObj.dataSourceSettings = JSON.parse(args.report).dataSourceSettings;
         }
     }
     removeReport(args: any) {
@@ -133,7 +133,7 @@ export class ToolbarComponent implements OnInit {
             columns: [{ name: 'Year' }, { name: 'Order_Source', caption: 'Order Source' }],
             rows: [{ name: 'Country' }, { name: 'Products' }],
             formatSettings: [{ name: 'Amount', format: 'C0' }],
-            // dataSource: data,
+            dataSource: data,
             expandAll: false,
             values: [{ name: 'In_Stock', caption: 'In Stock' }, { name: 'Sold', caption: 'Units Sold' },
             { name: 'Amount', caption: 'Sold Amount' }],

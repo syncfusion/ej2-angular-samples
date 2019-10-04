@@ -1,11 +1,12 @@
-import { Component, ViewEncapsulation, Inject, ViewChild, HostListener, ElementRef } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, HostListener } from '@angular/core';
 import { createElement, Effect, EmitType } from '@syncfusion/ej2-base';
-import { ToastComponent, ToastBeforeOpenArgs, ToastCloseArgs } from '@syncfusion/ej2-angular-notifications';
-import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-
+import { ToastComponent, ToastBeforeOpenArgs, ToastCloseArgs, ToastPositionModel, ToastAnimationSettingsModel } from '@syncfusion/ej2-angular-notifications';
+import { DropDownListComponent, FieldSettingsModel } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
+import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 /**
  * Sample for Animation and Advanced APIs in toast
- */ 
+ */
 @Component({
     selector: 'control-content',
     templateUrl: 'api.html',
@@ -13,22 +14,30 @@ import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-
     encapsulation: ViewEncapsulation.None
 })
 export class ApiController {
+
     @ViewChild('toastApi')
     private toastObj: ToastComponent;
+
     @ViewChild('ShowEasing')
     private dropDownListShowEase: DropDownListComponent;
+
     @ViewChild('HideEasing')
     private dropDownListHideEase: DropDownListComponent;
+
     @ViewChild('ShowAnimation')
     private dropDownListShow: DropDownListComponent;
+
     @ViewChild('HideAnimation')
     private dropDownListHide: DropDownListComponent;
-    public position: Object = { X: 'Right', Y: 'Bottom' };  
-    private prevDuplicates: boolean = false;
+
+    @ViewChild('toastBtnShow')
+    private btnEleShow: ButtonComponent;
+
     public showData: { [key: string]: Object }[] = [
         { Id: 'ease', Text: 'Ease' },
         { Id: 'linear', Text: 'Linear' }
     ];
+
     public animationData1: { [key: string]: Object }[] = [
         { Id: 'SlideBottomOut', Effect: 'Slide Bottom Out' },
         { Id: 'FadeIn', Effect: 'Fade In' },
@@ -52,6 +61,7 @@ export class ApiController {
         { Id: 'ZoomIn', Effect: 'Zoom In' },
         { Id: 'ZoomOut', Effect: 'Zoom Out' }
     ];
+
     public animationData: { [key: string]: Object }[] = [
         { Id: 'SlideBottomIn', Effect: 'Slide Bottom In' },
         { Id: 'FadeIn', Effect: 'Fade In' },
@@ -75,42 +85,54 @@ export class ApiController {
         { Id: 'ZoomIn', Effect: 'Zoom In' },
         { Id: 'ZoomOut', Effect: 'Zoom Out' }
     ];
-    public showFields: Object = { text: 'Text', value: 'Id' };
-    public animationFields: Object = { text: 'Effect', value: 'Id' };
+
+    public position: ToastPositionModel = { X: 'Right', Y: 'Bottom' };
+    public showFields: FieldSettingsModel = { text: 'Text', value: 'Id' };
+    public animationFields: FieldSettingsModel = { text: 'Effect', value: 'Id' };
     public easeValue: string = "ease";
     public animationValue: string = "SlideBottomIn";
     public hideAnimationValue: string = "SlideBottomOut";
-
-    public showAnimation: Object = {
-        show :
-        {
-            effect: 'SlideBottomIn' },
-        hide : {
-            effect: 'SlideBottomOut',
-        }};
     public true: boolean = true;
-    public closeOnChange(e: any): void {
+    private prevDuplicates: boolean = false;
+
+    public showAnimation: ToastAnimationSettingsModel = {
+        show:
+        {
+            effect: 'SlideBottomIn'
+        },
+        hide: {
+            effect: 'SlideBottomOut',
+        }
+    };
+
+    public closeOnChange(e: ChangeEventArgs): void {
         e.checked ? this.toastObj.showCloseButton = true : this.toastObj.showCloseButton = false;
     }
-    public OnProgressChange (e: any): void {
-         e.checked ? this.toastObj.showProgressBar = true : this.toastObj.showProgressBar = false;
+
+    public OnProgressChange(e: ChangeEventArgs): void {
+        e.checked ? this.toastObj.showProgressBar = true : this.toastObj.showProgressBar = false;
     }
-    public closeNewestOnChange  (e: any): void {
+
+    public closeNewestOnChange(e: ChangeEventArgs): void {
         e.checked ? this.toastObj.newestOnTop = true : this.toastObj.newestOnTop = false;
     }
-    public OnPrevDubChange(e: any): void {
+
+    public OnPrevDubChange(e: ChangeEventArgs): void {
         this.prevDuplicates = e.checked;
     }
-    public OnactionBtnChange(e: any): void {
-          if (e.checked) {
+
+    public OnactionBtnChange(e: ChangeEventArgs): void {
+        if (e.checked) {
             this.toastObj.buttons = [{ model: { content: '<div class="e-toast-btn"> Click Here </div>' }, click: this.onActionBtnClick }];
         } else { this.toastObj.buttons = []; }
     }
-    public onActionBtnClick(e: Event): void {
+
+    public onActionBtnClick(): void {
         alert('Action button is clicked');
     }
+
     public showToast(): void {
-       let title: string = (document.getElementById('toast_input_title') as HTMLInputElement).value;
+        const title: string = (document.getElementById('toast_input_title') as HTMLInputElement).value;
         let content: string = (document.getElementById('toast_input_content') as HTMLInputElement).value;
         if (title === '' && content === '') {
             content = 'You have created a Toast message';
@@ -127,43 +149,52 @@ export class ApiController {
                 }
             });
     }
-     public onShowEase(): void {
+
+    public onShowEase(): void {
         this.toastObj.animation.show.easing = this.dropDownListShowEase.value.toString();
     }
+
     public showChange(): void {
         this.toastObj.animation.show.effect = this.dropDownListShow.value as Effect;
     }
+
     public hideChange(): void {
-         this.toastObj.animation.hide.effect = this.dropDownListHide.value as Effect;
+        this.toastObj.animation.hide.effect = this.dropDownListHide.value as Effect;
     }
+
     public onHideEase(): void {
-         this.toastObj.animation.hide.easing = this.dropDownListHideEase.value.toString();
+        this.toastObj.animation.hide.easing = this.dropDownListHideEase.value.toString();
     }
+
     public showBtnClick(e: Object): void {
         this.showToast();
     }
+
     public hideBtnClick(): void {
-         this.toastObj.hide('All');
+        this.toastObj.hide('All');
     }
+
     public onBeforeOpen(e: ToastBeforeOpenArgs): void {
-          let hideBtn: HTMLElement = document.getElementById('toastBtnHide');
-          hideBtn.style.display = 'inline-block';
-          if (this.prevDuplicates) {
+        const hideBtn: HTMLElement = document.getElementById('toastBtnHide');
+        hideBtn.style.display = 'inline-block';
+        if (this.prevDuplicates) {
             e.cancel = this.preventDuplicate(e);
         }
     }
+
     public onClose(e: ToastCloseArgs): void {
-        if (e.toastContainer.childElementCount === 0 ) {
-           let hideBtn: HTMLElement = document.getElementById('toastBtnHide');
-           hideBtn.style.display = 'none';
-      }
+        if (e.toastContainer.childElementCount === 0) {
+            const hideBtn: HTMLElement = document.getElementById('toastBtnHide');
+            hideBtn.style.display = 'none';
+        }
     }
-     public preventDuplicate(e: ToastBeforeOpenArgs): boolean {
-         let toastEle: HTMLElement = e.element;
-        let toasts: HTMLCollection = e.toastObj.element.children;
+
+    public preventDuplicate(e: ToastBeforeOpenArgs): boolean {
+        const toastEle: HTMLElement = e.element;
+        const toasts: HTMLCollection = e.toastObj.element.children;
         for (let i: number = 0; i < toasts.length; i++) {
-            let toastTitle: HTMLElement = (toasts[i] as HTMLElement).querySelector('.e-toast-title') as HTMLElement;
-            let toastMessage: HTMLElement = (toasts[i] as HTMLElement).querySelector('.e-toast-message') as HTMLElement;
+            const toastTitle: HTMLElement = (toasts[i] as HTMLElement).querySelector('.e-toast-title') as HTMLElement;
+            const toastMessage: HTMLElement = (toasts[i] as HTMLElement).querySelector('.e-toast-message') as HTMLElement;
             if (toastTitle && toastTitle.isEqualNode(toastEle.querySelector('.e-toast-title'))) {
                 return true;
             }
@@ -173,10 +204,10 @@ export class ApiController {
         }
         return false;
     }
+
     @HostListener('document:click', ['$event'])
     documentClick: EmitType<Object> = (e: MouseEvent) => {
-        let showButton: HTMLElement = document.getElementById('toastBtnShow');
-        if (e.target !== showButton && this.toastObj.target === document.body) {
+        if (e.target !== this.btnEleShow.element && this.toastObj.target === document.body) {
             this.toastObj.hide('All');
         }
     }

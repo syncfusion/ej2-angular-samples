@@ -13,7 +13,7 @@ export class RecGeneraterComponent {
     public selectedType: number = 1;
 
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['rec-editor.style.css'];
+        sourceFiles.files = ['recurrence-editor.style.css'];
     }
 
     onChange(args: RecurrenceEditorChangeEventArgs): void {

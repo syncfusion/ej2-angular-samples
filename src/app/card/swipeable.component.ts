@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject, AfterViewInit } from '@angular/core';
-import { closest, SwipeEventArgs, Touch} from '@syncfusion/ej2-base';
+import { closest, SwipeEventArgs, Touch, isNullOrUndefined} from '@syncfusion/ej2-base';
 
 /**
  *  Sample for CSS Swipeable Cards.
@@ -49,7 +49,7 @@ export class SwipeCardComponent implements AfterViewInit {
     }
     public touchSwipeHandler(e: SwipeEventArgs): void {
         let ele: HTMLElement = <HTMLElement>closest(<Element>e.originalEvent.target, '.e-card');
-        if (!ele.classList.contains('e-card')) {
+        if (isNullOrUndefined(ele)) {
             return;
         }
         if (ele.parentElement.querySelector('.card-out')) {

@@ -3,7 +3,7 @@ import { IDataOptions, PivotView, Operators, IDataSet } from '@syncfusion/ej2-an
 import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
 import { Button } from '@syncfusion/ej2-buttons';
 import { NumericTextBox, ChangeEventArgs as NumericEventArgs } from '@syncfusion/ej2-inputs';
-// import { FilterModel } from '@syncfusion/ej2-pivotview/src/pivotview/model/datasourcesettings-model';
+import { FilterModel } from '@syncfusion/ej2-pivotview/src/pivotview/model/datasourcesettings-model';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(false);
@@ -21,7 +21,7 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
 })
 
 export class ValueFilterComponent implements OnInit {
-    // public fieldCollections: { [key: string]: FilterModel } = {};
+    public fieldCollections: { [key: string]: FilterModel } = {};
     public operators: string[] = ['Equals', 'DoesNotEquals', 'GreaterThan', 'GreaterThanOrEqualTo',
         'LessThan', 'LessThanOrEqualTo', 'Between', 'NotBetween'];
     public fields: string[] = ['Country', 'Products', 'Year'];
@@ -43,21 +43,21 @@ export class ValueFilterComponent implements OnInit {
     public pivotObj: PivotView;
 
     setFilters(fieldName: string, measureName: string, condition: Operators, operand1: string, operand2: string): void {
-        // this.fieldCollections[fieldName] = {
-        //     name: fieldName,
-        //     measure: measureName,
-        //     type: 'Value',
-        //     condition: condition,
-        //     value1: operand1,
-        //     value2: operand2
-        // };
+        this.fieldCollections[fieldName] = {
+            name: fieldName,
+            measure: measureName,
+            type: 'Value',
+            condition: condition,
+            value1: operand1,
+            value2: operand2
+        };
     }
 
     ondataBound(): void {
-        // this.fieldCollections = {};
-        // for (let field of this.pivotObj.dataSourceSettings.filterSettings) {
-        //     this.fieldCollections[field.name] = field;
-        // }
+        this.fieldCollections = {};
+        for (let field of this.pivotObj.dataSourceSettings.filterSettings) {
+            this.fieldCollections[field.name] = field;
+        }
     }
 
     ngOnInit(): void {
@@ -73,7 +73,7 @@ export class ValueFilterComponent implements OnInit {
             rows: [{ name: 'Country' }, { name: 'Products' }],
             formatSettings: [{ name: 'Amount', format: 'C0' }],
             columns: [{ name: 'Year' }],
-            // dataSource: Pivot_Data,
+            dataSource: Pivot_Data,
             expandAll: false
         };
 
@@ -81,16 +81,16 @@ export class ValueFilterComponent implements OnInit {
             dataSource: this.fields,
             index: 0,
             width: '100%',
-            // change: (args: ChangeEventArgs) => {
-            //     if (this.fieldCollections[args.value as string]) {
-            //         this.measuresddl.value = this.fieldCollections[args.value as string].measure;
-            //         this.operatorddl.value = this.fieldCollections[args.value as string].condition;
-            //     } else {
-            //         this.setFilters(args.value as string, 'In_Stock', 'DoesNotEquals', '', '');
-            //         this.operatorddl.value = 'DoesNotEquals';
-            //         this.measuresddl.value = 'In_Stock';
-            //     }
-            // }
+            change: (args: ChangeEventArgs) => {
+                if (this.fieldCollections[args.value as string]) {
+                    this.measuresddl.value = this.fieldCollections[args.value as string].measure;
+                    this.operatorddl.value = this.fieldCollections[args.value as string].condition;
+                } else {
+                    this.setFilters(args.value as string, 'In_Stock', 'DoesNotEquals', '', '');
+                    this.operatorddl.value = 'DoesNotEquals';
+                    this.measuresddl.value = 'In_Stock';
+                }
+            }
         });
         this.fieldsddl.appendTo('#fields');
         this.measuresddl = new DropDownList({
@@ -147,19 +147,19 @@ export class ValueFilterComponent implements OnInit {
         this.clearBtn.appendTo('#clear');
 
         document.getElementById('apply').onclick = () => {
-            // let filterOptions: FilterModel[] = [];
-            // filterOptions = [{
-            //     name: this.fieldsddl.value as string,
-            //     type: 'Value',
-            //     measure: this.measuresddl.value as string,
-            //     condition: this.operatorddl.value as Operators,
-            //     value1: this.valueInput1.value === null ? '1' : this.valueInput1.value.toString(),
-            //     value2: this.valueInput2.value === null ? '1' : this.valueInput2.value.toString()
-            // }];
-            // this.pivotObj.dataSourceSettings.filterSettings = filterOptions;
+            let filterOptions: FilterModel[] = [];
+            filterOptions = [{
+                name: this.fieldsddl.value as string,
+                type: 'Value',
+                measure: this.measuresddl.value as string,
+                condition: this.operatorddl.value as Operators,
+                value1: this.valueInput1.value === null ? '1' : this.valueInput1.value.toString(),
+                value2: this.valueInput2.value === null ? '1' : this.valueInput2.value.toString()
+            }];
+            this.pivotObj.dataSourceSettings.filterSettings = filterOptions;
         };
         document.getElementById('clear').onclick = () => {
-            // this.pivotObj.dataSourceSettings.filterSettings = [];
+            this.pivotObj.dataSourceSettings.filterSettings = [];
             this.valueInput1.value = 0;
             this.valueInput2.value = 0;
             this.valueInput1.dataBind();

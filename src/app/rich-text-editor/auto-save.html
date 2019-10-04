@@ -1,0 +1,42 @@
+<div class="col-lg-8 control-section">
+    <div class="control-wrapper">
+        <div class="sample-container">
+            <div class="default-section">
+                <ejs-richtexteditor id='autosaveRTE' #autosaveRTE [toolbarSettings]='tools' [saveInterval]="5000" placeholder='Start to type a content to save' [enablePersistence]="true" (change)='updateStatus()'>
+                    <ng-template #valueTemplate>
+                    </ng-template>
+                </ejs-richtexteditor>
+                <div id='statusEle' class='current-status'>
+                    <div id='saving' style="display: none">
+                        <div class="e-icons e-icon-refresh"> </div>
+                        <p class='status-text'> Saving changes</p>
+                    </div>
+                    <div id='saved' style="display: none">
+                        <span class="e-icons e-icon-tick"> </span>
+                        <p class='status-text'>Changes saved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 property-section">
+    <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+            <label for="checked" style="padding: 10px 70px 10px 0">Auto Save </label>
+            <ejs-switch id="checked" #checked (change)='onChange($event)' [checked]="true"></ejs-switch>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates how to auto save the content of the rich text editor.</p>
+</div>
+<div id="description">
+    <p>The auto-save sample saves the content of the RichTextEditor every 10 seconds. so when you log back into editor you have the option to continue working with the latest changes. </p>
+    <p><b>Injecting Module</b></p>
+    <p>The above features built as modules have to be included in your application. For example, to use image and link, inject the specific module using
+        <code>RichTextEditor.Inject (Toolbar, Link, Image, HtmlEditor, QuickToolbar)</code>.</p>
+</div>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

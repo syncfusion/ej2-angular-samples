@@ -36,8 +36,8 @@ interface DestroyMethod extends HTMLElement {
 }
 
 declare let window: MyWindow;
-const sbObj: { [index: string]: string } = { 'react': 'react', 'javascript': 'javascript', 'vue': 'vue' }
-const sbArray: string[] = ['react', 'ts', 'javascript', 'asp_core', 'asp_mvc', 'vue'];
+const sbObj: { [index: string]: string } = { 'react': 'react', 'javascript': 'javascript', 'vue': 'vue', 'blazor': 'blazor' }
+const sbArray: string[] = ['react', 'ts', 'javascript', 'asp_core', 'asp_mvc', 'vue', 'blazor'];
 const urlRegex: RegExp = /(npmci\.syncfusion\.com|ej2\.syncfusion\.com)(\/)(development|production)*/;
 const sampleRegex: RegExp = /#\/(([^\/]+\/)+[^\/\.]+)/;
 const cBlock: string[] = ['ts-src-tab', 'html-src-tab'];
@@ -65,7 +65,6 @@ const themes: string[] = ['material', 'fabric', 'bootstrap', 'highcontrast', 'bo
 let selectedTheme: string;
 let themeFlag: boolean = true;
 let slideFlag: boolean = false;
-
 
 
 declare let hljs: any;
@@ -621,7 +620,7 @@ export class SBController {
                 }
             } else {
                 if (e.target) {
-                    if ((e.target as any).classList && (e.target as any).classList.contains('e-ddl-icon')) {
+                    if ((e.target as any).classList && (e.target as any).classList.contains('e-ddl')) {
                         this.settingsPopup.show();
                     }
                     else {

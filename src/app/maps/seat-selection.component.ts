@@ -10,7 +10,7 @@ interface SeatInfo {
     fill?: string;
 }
 declare var require: any;
-let seat_selection: object[] = require('./seat-data.json');
+import seat_selection from './seat-data.json';
 @Component({
     selector: 'control-content',
     templateUrl: 'seat-selection.html',

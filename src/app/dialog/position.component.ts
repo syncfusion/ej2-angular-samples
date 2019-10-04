@@ -1,7 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
-import { EmitType } from '@syncfusion/ej2-base';
-import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { Component, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import { DialogComponent, PositionDataModel } from '@syncfusion/ej2-angular-popups';
+import { ChangeArgs } from '@syncfusion/ej2-buttons';
 
 /**
  * Position Dialog Component
@@ -9,35 +8,41 @@ import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
 @Component({
     selector: 'control-content',
     styleUrls: ['position.css'],
-    templateUrl: 'position.html'
+    templateUrl: 'position.html',
+    encapsulation: ViewEncapsulation.None
 })
 
 export class PositioningDialogComponent {
+
     @ViewChild('ejDialog')
     public defaultDialog: DialogComponent;
-    public position: object={ X: 'center', Y: 'center' };
-    public closeOnEscape: boolean =false;
-    public dialogCloseIcon: boolean =true;
-    public defaultWidth: string ='452px';
-    public target: string = '.control-section';
 
-    public dlgButtonClick: EmitType<Object> = () => {
+    @ViewChild('confirmButton')
+    public dialogBtn: ElementRef;
+
+    public position: PositionDataModel = { X: 'center', Y: 'center' };
+    public closeOnEscape = false;
+    public dialogCloseIcon = true;
+    public defaultWidth = '452px';
+    public target = '.control-section';
+
+    public dlgButtonClick = () => {
         this.defaultDialog.show();
     }
 
-    public onChangeHandler = function (args: any): void {
-        this.defaultDialog.position.X = args.value.split(" ")[0];
-        this.defaultDialog.position.Y = args.value.split(" ")[1];
+    public onChangeHandler = function (args: ChangeArgs): void {
+        this.defaultDialog.position.X = args.value.split(' ')[0];
+        this.defaultDialog.position.Y = args.value.split(' ')[1];
         this.defaultDialog.dataBind();
-        let txt: string[] = args.event.target.parentElement.querySelector('.e-label').innerText.split(" ");
-        document.getElementById("posvalue").innerHTML = 'Position: { X: "' + txt[0] + '", Y: "' + txt[1] + '" }';
-    } 
-
-    public dialogOpen: EmitType<Object> = () => {
-        document.getElementById('dialogBtn').style.display = 'none';
+        const txt: string[] = ((args.event.target as HTMLElement).parentElement.querySelector('.e-label') as HTMLElement).innerText.split(' ');
+        document.getElementById('posvalue').innerHTML = 'Position: { X: "' + txt[0] + '", Y: "' + txt[1] + '" }';
     }
 
-    public dialogClose: EmitType<Object> = () => {
-        document.getElementById('dialogBtn').style.display = 'block';
+    public dialogOpen = (): void => {
+        this.dialogBtn.nativeElement.style.display = 'none';
+    }
+
+    public dialogClose = (): void => {
+        this.dialogBtn.nativeElement.style.display = 'block';
     }
 }

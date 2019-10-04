@@ -56,6 +56,7 @@ import { GanttAppRoutes } from '../gantt/gantt.module';
 import { fileManagerAppRoutes } from '../file-manager/file-manager.module';
 import { dashboardlayoutAppRoutes } from '../dashboard-layout/dashboard-layout.module';
 import { listBoxAppRoutes } from '../list-box/list-box.module';
+import { spreadsheetAppRoutes } from '../spreadsheet/spreadsheet.module';
 
 export let samplesList: any = [
     {
@@ -74,7 +75,7 @@ export let samplesList: any = [
         'name': 'Linear Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'linear-gauge', 'samples': lineargaugeAppRoutes
     },
     {
-        'name': 'Diagram', 'category': 'Data visualization', 'order': '02', 'path': 'diagram', 'samples': diagramAppRoutes
+        'name': 'Diagram', 'category': 'Data visualization', 'order': '02', 'path': 'diagram', 'samples': diagramAppRoutes, 'type': "update"
     },
     {
         'name': 'Stock Chart', 'category': 'Data visualization', 'order': '02', 'path': 'stock-chart', 'samples': stockChartAppRoutes
@@ -89,16 +90,16 @@ export let samplesList: any = [
         'name': 'Range Navigator', 'category': 'Data visualization', 'order': '02', 'path': 'range-navigator', 'samples': rangeNavigatorAppRoutes
     },
     {
-        'name': 'Sparkline Charts', 'category': 'Data visualization', 'order': '02', 'path': 'sparkline', 'samples': sparklineAppRoutes, 'type': 'update'
+        'name': 'Sparkline Charts', 'category': 'Data visualization', 'order': '02', 'path': 'sparkline', 'samples': sparklineAppRoutes
     },
     {
         'name': 'Smith Chart', 'category': 'Data visualization', 'order': '02', 'path': 'smith-chart', 'samples': smithchartAppRoutes
     },
     {
-        'name': 'Barcode', 'category': 'Data visualization', 'order': '01', 'path': 'barcode', 'samples': barcodeAppRoutes, 'type': 'preview'
+        'name': 'Barcode', 'category': 'Data visualization', 'order': '02', 'path': 'barcode', 'samples': barcodeAppRoutes , 'type': 'new'
     },
     {
-        'name': 'TreeMap', 'category': 'Data visualization', 'type': 'update', 'order': '02', 'path': 'treemap', 'samples': treemapAppRoutes
+        'name': 'TreeMap', 'category': 'Data visualization', 'order': '02', 'path': 'treemap', 'samples': treemapAppRoutes
     },
     {
         'name': 'HeatMap', 'category': 'Data visualization', 'order': '02', 'path': 'heatmap', 'samples': heatmapAppRoutes, 'ftName': 'heatmap'
@@ -107,7 +108,7 @@ export let samplesList: any = [
         'name': 'Schedule', 'category': 'Calendars', 'order': '04', 'path': 'schedule', 'samples': scheduleRouteConfig, 'type': 'update', 'ftName': 'scheduler'
     },
     {
-        'name': 'Gantt', 'category': 'Calendars', 'order': '04', 'path': 'gantt', 'samples': GanttAppRoutes, 'type': 'preview', 'ftName': 'gantt', 'hideOnDevice': true
+        'name': 'Gantt', 'category': 'Calendars', 'order': '04', 'path': 'gantt', 'samples': GanttAppRoutes, 'type': 'new', 'ftName': 'gantt'
     },
     {
         'name': 'Calendar', 'category': 'Calendars', 'order': '04', 'path': 'calendar', 'samples': calendarAppRoutes
@@ -125,7 +126,7 @@ export let samplesList: any = [
         'name': "ComboBox", 'category': "Dropdowns", 'ftName': "combo-box", 'order': '05', 'path': "combo-box", 'samples': comboboxAppRoutes
     },
     {
-        'name': 'DocumentEditor', 'category': 'Editors', 'order': '03', 'path': 'document-editor', 'samples': documentEditorAppRoutes, 'ftName': 'document-editor', 'type': 'update'
+        'name': 'DocumentEditor', 'category': 'Editors', 'order': '03', 'path': 'document-editor', 'samples': documentEditorAppRoutes, 'ftName': 'document-editor'
     },
     {
         'name': 'DatePicker', 'category': 'Calendars', 'order': '04', 'path': 'datepicker', 'samples': datePickerAppRoutes
@@ -143,13 +144,16 @@ export let samplesList: any = [
         'name': 'Form Validator', 'category': 'Editors', 'order': '03', 'path': 'form-validator', 'samples': formValidatorAppRoutes
     },
     {
-        'name': "MultiSelect Dropdown", 'category': "Dropdowns", 'ftName': "multiselect-dropdown", 'order': '05', 'path': "multi-select", 'type': 'update', 'samples': multiselectAppRoutes
+        'name': "MultiSelect Dropdown", 'category': "Dropdowns", 'ftName': "multiselect-dropdown", 'order': '05', 'path': "multi-select", 'samples': multiselectAppRoutes
     },
     {
         'name': 'Input Mask', 'category': 'Inputs', 'order': '08', 'path': 'maskedtextbox', 'samples': maskedTextBoxAppRoutes, 'ftName': "maskedtextbox"
     },
     {
         'name': 'Pivot Table', 'category': 'Grids', 'order': '01', 'path': 'pivot-table', 'samples': pivottableRouteConfig, 'type': 'update'
+    },
+    {
+        'name': 'Spreadsheet', 'category': 'Grids', 'order': '04', 'path': 'spreadsheet', 'samples': spreadsheetAppRoutes, 'type': 'preview', 'ftName': 'spreadsheet'
     },
     {
         'name': 'Numeric Textbox', 'category': 'Inputs', 'order': '08', 'path': 'numerictextbox', 'samples': numericAppRoutes, 'ftName': "numerictextbox"

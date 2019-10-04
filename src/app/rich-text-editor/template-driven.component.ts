@@ -10,14 +10,16 @@ import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextE
     providers: [ToolbarService, LinkService, ImageService, HtmlEditorService]
 })
 export class TemplateDrivenComponent {
-    public value: any = null;
-    @ViewChild('fromRTE') rteEle: RichTextEditorComponent;
+    public value: string = null;
+
+    @ViewChild('fromRTE')
+    private rteEle: RichTextEditorComponent;
 
     rteCreated(): void {
         this.rteEle.element.focus();
     }
 
     onSubmit(): void {
-      alert('Form submitted successfully');
+        alert('Form submitted successfully');
     }
 }

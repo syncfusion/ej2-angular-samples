@@ -9,7 +9,7 @@ import { SliderComponent } from '@syncfusion/ej2-angular-inputs';
 import { MapAjax } from '@syncfusion/ej2-maps';
 Maps.Inject(Zoom);
 declare var require: any;
-let worldMap: object[] = require('./world-map.json');
+import worldMap from './world-map.json';
 @Component({
     selector: 'control-content',
     templateUrl: 'zooming.html',
@@ -66,44 +66,51 @@ export class MapsZoomingComponent {
        
         document.getElementById('mousewheel').onchange = () => {
             let element: HTMLInputElement = <HTMLInputElement>(document.getElementById('mousewheel'));
-            this.maps.zoomSettings.mouseWheelZoom = element.checked;
-            this.maps.refresh();
+            let maps: Maps = <Maps>document.getElementById('container')['ej2_instances'][0];
+            maps.zoomSettings.mouseWheelZoom = element.checked;
+            maps.refresh();
         };
 
         document.getElementById('pinch').onchange = () => {
             let element: HTMLInputElement = <HTMLInputElement>(document.getElementById('pinch'));
-            this.maps.zoomSettings.pinchZooming = element.checked;
-            this.maps.refresh();
+            let maps: Maps = <Maps>document.getElementById('container')['ej2_instances'][0];
+            maps.zoomSettings.pinchZooming = element.checked;
+            maps.refresh();
         };
 
         document.getElementById('zoom').onchange = () => {
             let element: HTMLInputElement = <HTMLInputElement>(document.getElementById('zoom'));
-            this.maps.zoomSettings.enable = element.checked;
-            this.maps.refresh();
+            let maps: Maps = <Maps>document.getElementById('container')['ej2_instances'][0];
+            maps.zoomSettings.enable = element.checked;
+            maps.refresh();
         };
 
         document.getElementById('doubletap').onchange = () => {
             let element: HTMLInputElement = <HTMLInputElement>(document.getElementById('doubletap'));
-            this.maps.zoomSettings.doubleClickZoom = element.checked;
-            this.maps.zoomSettings.zoomOnClick = (!element.checked);
+            let maps: Maps = <Maps>document.getElementById('container')['ej2_instances'][0];
+            maps.zoomSettings.doubleClickZoom = element.checked;
+            maps.zoomSettings.zoomOnClick = (!element.checked);
             let ele1: HTMLInputElement = <HTMLInputElement>document.getElementById('singletap');
             if (element.checked) {
                 ele1.disabled = true;
             } else {
                 ele1.disabled = false;
             }
+            maps.refresh();
         };
 
         document.getElementById('singletap').onchange = () => {
             let element: HTMLInputElement = <HTMLInputElement>(document.getElementById('singletap'));
             let ele1: HTMLInputElement = <HTMLInputElement>document.getElementById('doubletap');
-            this.maps.zoomSettings.zoomOnClick = element.checked;
-            this.maps.zoomSettings.doubleClickZoom = (!element.checked);
+            let maps: Maps = <Maps>document.getElementById('container')['ej2_instances'][0];
+            maps.zoomSettings.zoomOnClick = element.checked;
+            maps.zoomSettings.doubleClickZoom = (!element.checked);
             if (element.checked) {
                 ele1.disabled = true;
             } else {
                 ele1.disabled = false;
             }
+            maps.refresh();
         };
     }
     constructor(@Inject('sourceFiles') private sourceFiles: any) {

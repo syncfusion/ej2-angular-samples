@@ -13,3 +13,12 @@
 .bootstrap4 .e-rte-quick-popup .e-rte-quick-toolbar .e-rotate-right::before {
     content: "\e778";
 }
+
+.property-panel-content td {
+    width: 50%;
+}
+
+.property-panel-content td div {
+    padding-left: 10px;
+    padding-top: 10px;
+}

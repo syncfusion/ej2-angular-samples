@@ -2,7 +2,7 @@
     <div>
         <div id="default_title_bar" class="e-de-ctn-title"></div>
         <div>
-            <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true (created)="onCreate()" style="display:block;height:600px"></ejs-documenteditorcontainer>
+            <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true (created)="onCreate()" (documentChange)="onDocumentChange()" style="display:block;height:600px"></ejs-documenteditorcontainer>
         </div>
     </div>
 </div>
@@ -25,7 +25,8 @@
         <li>Supported elements: Document elements like text, images, hyperlinks, tables, bookmarks, page numbers,
             tables of contents,
             headers, and footers.</li>
-        <li>Formatting: Text levels, paragraph levels, bullets and numbering, table levels, page settings, and styles.</li>
+        <li>Formatting: Text levels, paragraph levels, bullets and numbering, table levels, page settings, and styles.
+        </li>
         <li>Editing operations: Undo, redo, cut, copy, and paste.</li>
         <li>Find and replace text within the document.</li>
         <li>Interactions through touch, mouse, and keyboard.</li>

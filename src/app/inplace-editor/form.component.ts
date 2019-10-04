@@ -1,7 +1,10 @@
-import { Component, ViewEncapsulation, ViewChild, OnInit } from '@angular/core';
-import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { Component, ViewEncapsulation, ViewChild, OnInit, ElementRef } from '@angular/core';
+import { DropDownListComponent, ChangeEventArgs, MultiSelectModel } from '@syncfusion/ej2-angular-dropdowns';
 import { InPlaceEditorComponent, RteService, MultiSelectService, RenderMode } from '@syncfusion/ej2-angular-inplace-editor';
 import { ActionEventArgs } from '@syncfusion/ej2-angular-inplace-editor';
+import { RichTextEditorModel } from '@syncfusion/ej2-richtexteditor';
+import { TextBoxModel } from '@syncfusion/ej2-inputs';
+import { PopupSettingsModel } from '@syncfusion/ej2-inplace-editor/src/inplace-editor/base/models-model';
 
 /**
  * In-place Editor form sample
@@ -9,72 +12,72 @@ import { ActionEventArgs } from '@syncfusion/ej2-angular-inplace-editor';
 @Component({
     selector: 'control-content',
     templateUrl: 'form.html',
+    styleUrls: ['form.css'],
     encapsulation: ViewEncapsulation.None,
     providers: [RteService, MultiSelectService]
 })
 export class FormInplaceEditorComponent implements OnInit {
-    public date: Object = new Date();
+
     @ViewChild('inplaceTitleEditor')
     public titleEditorObj: InPlaceEditorComponent;
+
     @ViewChild('inplaceCommentEditor')
     public commentEditorObj: InPlaceEditorComponent;
+
     @ViewChild('inplaceTagEditor')
     public tagEditorObj: InPlaceEditorComponent;
+
     @ViewChild('editorMode')
     public editorModeObj: DropDownListComponent;
 
-    public titleEditorModel: object;
-    public commentEditorModel: object;
-    public tagEditorModel: object;
-    public tagPopSettings: object;
-    public commentsPopSettings: object;
-    public titleRule: object;
-    public commentRule: object;
-    public tagRule: object;
+    @ViewChild('formlayout')
+    public formlayout: ElementRef;
 
+    public date: Date = new Date();
     public titleEditorValue: String = 'Succinctly E-Book about TypeScript';
-    public commentEditorValue: String =
-        'The extensive adoption of JavaScript for application development, and the ability to use HTML and JavaScript to create Windows Store apps, has made JavaScript a vital part of the Windows development ecosystem. Microsoft has done extensive work to make JavaScript easier to use';
+    public commentEditorValue: String = 'The extensive adoption of JavaScript for application development, and the ability to use HTML and JavaScript to create Windows Store apps, has made JavaScript a vital part of the Windows development ecosystem. Microsoft has done extensive work to make JavaScript easier to use';
     public tagEditorValue: string[] = ['TypeScript', 'JavaScript'];
     public editorModeData: string[] = ['Inline', 'Popup'];
     public multiData: string[] = ['Android', 'JavaScript', 'Jquery', 'TypeScript', 'Angular', 'React', 'Vue', 'Ionic'];
-    public scrollParent: HTMLElement = <HTMLElement>document.querySelector('.sb-right-pane');
+    public scrollParent: HTMLElement;
+    public titleEditorModel: TextBoxModel = {
+        placeholder: 'Enter your question title'
+    };
+    public commentEditorModel: RichTextEditorModel = {
+        toolbarSettings: {
+            enableFloating: false,
+            items: ['Bold', 'Italic', 'Underline', 'FontColor', 'BackgroundColor',
+                'LowerCase', 'UpperCase', '|', 'OrderedList', 'UnorderedList']
+        }
+    };
+    public tagEditorModel: MultiSelectModel = {
+        mode: 'Box',
+        dataSource: this.multiData,
+        placeholder: 'Enter your tags'
+    };
+    public tagPopSettings: PopupSettingsModel = { model: { width: 'auto' } };
+    public commentsPopSettings: PopupSettingsModel;
+    public titleRule: { [name: string]: { [rule: string]: Object } } = {
+        Title: { required: [true, 'Enter valid title'] }
+    };
+    public commentRule: { [name: string]: { [rule: string]: Object } } = {
+        rte: { required: [true, 'Enter valid comments'] }
+    };
+    public tagRule: { [name: string]: { [rule: string]: Object } } = {
+        Tag: { required: [true, 'Enter valid tags'] }
+    };
 
     ngOnInit(): void {
-        this.titleEditorModel = {
-            placeholder: 'Enter your question title'
-        };
-        this.commentEditorModel = {
-            toolbarSettings: {
-                enableFloating: false,
-                items: ['Bold', 'Italic', 'Underline', 'FontColor', 'BackgroundColor',
-                    'LowerCase', 'UpperCase', '|', 'OrderedList', 'UnorderedList']
-            }
-        };
-        this.tagEditorModel = {
-            mode: 'Box',
-            dataSource: this.multiData,
-            placeholder: 'Enter your tags'
-        };
-        this.tagPopSettings = { model: { width: 'auto' } };
         this.commentsPopSettings = {
             model: {
-                width: (<HTMLElement>document.querySelector('.inplace-editor-control-section.form-layout')).offsetWidth
+                width: this.formlayout.nativeElement.offsetWidth
             }
         };
-        this.titleRule = {
-            Title: { required: [true, 'Enter valid title'] }
-        };
-        this.commentRule = {
-            rte: { required: [true, 'Enter valid comments'] }
-        };
-        this.tagRule = {
-            Tag: { required: [true, 'Enter valid tags'] }
-        };
+        this.scrollParent = <HTMLElement>document.querySelector('.sb-right-pane');
         this.scrollParent.addEventListener('scroll', this.hidePopup.bind(this));
     }
 
-    changeMode(e: ChangeEventArgs) {
+    changeMode(e: ChangeEventArgs): void {
         /* Apply selected mode to the component */
         this.titleEditorObj.mode = e.value as RenderMode;
         this.tagEditorObj.mode = e.value as RenderMode;
@@ -94,7 +97,7 @@ export class FormInplaceEditorComponent implements OnInit {
         return value;
     }
 
-    tagCreation() {
+    tagCreation(): void {
         this.chipOnCreate();
     }
 

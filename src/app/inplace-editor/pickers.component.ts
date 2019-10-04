@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild, OnInit } from '@angular/core';
 import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import { InPlaceEditorComponent, TimePickerService, DateRangePickerService, RenderMode } from '@syncfusion/ej2-angular-inplace-editor';
+import { DatePickerModel, TimePickerModel, DateTimePickerModel, DateRangePickerModel } from '@syncfusion/ej2-calendars';
 
 /**
  * In-place Editor pickers sample
@@ -8,51 +9,52 @@ import { InPlaceEditorComponent, TimePickerService, DateRangePickerService, Rend
 @Component({
     selector: 'control-content',
     templateUrl: 'pickers.html',
-    encapsulation: ViewEncapsulation.None,
-    providers: [TimePickerService,DateRangePickerService]
+    styleUrls: ['pickers.css'],
+	encapsulation: ViewEncapsulation.None,
+    providers: [TimePickerService, DateRangePickerService]
 })
 export class PickersInplaceEditorComponent implements OnInit {
-    public date: Object = new Date();
+
     @ViewChild('datePickerEle')
     public datePickerObj: InPlaceEditorComponent;
+
     @ViewChild('timePickerEle')
     public timePickerObj: InPlaceEditorComponent;
+
     @ViewChild('dateTimePickerEle')
     public dateTimePickerObj: InPlaceEditorComponent;
+
     @ViewChild('dateRangePickerEle')
     public dateRangePickeObj: InPlaceEditorComponent;
+
     @ViewChild('editorMode')
     public editorModeObj: DropDownListComponent;
 
-    public datePickerModel: object;
-    public timePickerModel: object;
-    public dateTimePickerModel: object;
-    public dateRangePickerModel: object;
-
+    public date: Date = new Date();
+    public datePickerModel: DatePickerModel = {
+        placeholder: 'Select a date'
+    };
+    public timePickerModel: TimePickerModel = {
+        placeholder: 'Select a time'
+    };
+    public dateTimePickerModel: DateTimePickerModel = {
+        placeholder: 'Select a date and time'
+    };
+    public dateRangePickerModel: DateRangePickerModel = {
+        placeholder: 'Select a date range'
+    };
     public dateValue: Date = new Date();
     public timeValue: Date = new Date();
     public dateTimeValue: Date = new Date();
     public rangeValue: Date[] = [new Date('11/20/2018'), new Date('11/21/2018')];
     public editorModeData: string[] = ['Inline', 'Popup'];
-    public scrollParent: HTMLElement = <HTMLElement>document.querySelector('.sb-right-pane');
+    public scrollParent: HTMLElement = document.querySelector('.sb-right-pane') as HTMLElement;
 
     ngOnInit(): void {
-        this.datePickerModel = {
-            placeholder: 'Select a date'
-        };
-        this.timePickerModel = {
-            placeholder: 'Select a time'
-        };
-        this.dateTimePickerModel = {
-            placeholder: 'Select a date and time'
-        };
-        this.dateRangePickerModel = {
-            placeholder: 'Select a date range'
-        };
         this.scrollParent.addEventListener('scroll', this.hidePopup.bind(this));
     }
 
-    changeMode(e: ChangeEventArgs) {
+    changeMode(e: ChangeEventArgs): void {
         /*Apply selected mode to the component*/
         this.datePickerObj.mode = e.value as RenderMode;
         this.dateRangePickeObj.mode = e.value as RenderMode;

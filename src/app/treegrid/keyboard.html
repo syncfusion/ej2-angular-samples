@@ -2,11 +2,11 @@
         <div class="content-wrapper">
                 <ejs-treegrid [dataSource]='data' childMapping='subtasks' [treeColumnIndex]='1' [editSettings]='editSettings' height = '900'>
                         <e-columns>
-                            <e-column field='taskID' headerText='Task ID' width='90' textAlign='Right' editType='numericedit' [validationRules]='taskidrules'></e-column>
-                            <e-column field='taskName' headerText='Task Name' width='210' editType='stringedit' [validationRules]='tasknamerules'></e-column>
-                            <e-column field='startDate' headerText='Start Date' width='120' format="yMd" editType='datepickeredit' textAlign='Right' [validationRules]='daterules'></e-column>
+                            <e-column field='taskID' headerText='Task ID' width='90' isPrimaryKey='true' textAlign='Right' editType='numericedit' [validationRules]='taskidrules'></e-column>
+                            <e-column field='taskName' headerText='Task Name' width='240' editType='stringedit' [validationRules]='tasknamerules'></e-column>
+                            <e-column field='startDate' headerText='Start Date' width='105' format="yMd" editType='datepickeredit' textAlign='Right' [validationRules]='daterules'></e-column>
                             <e-column field='duration' headerText='Duration' width='90' editType='numericedit' textAlign='Right' [validationRules]='numberrules'></e-column>
-                            <e-column field='progress' headerText='Progress' width='90' editType='numericedit' textAlign='Right'
+                            <e-column field='progress' headerText='Progress' width='95' editType='numericedit' textAlign='Right'
                               [validationRules]='numberrules'></e-column>
                         </e-columns>
                     </ejs-treegrid>

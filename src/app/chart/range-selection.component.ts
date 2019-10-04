@@ -85,11 +85,19 @@ export class RangeSelectionChartComponent {
             change: () => {
                 let type: string = this.selectionMode.value.toString();
                 this.chart.selectionMode = <SelectionMode>type;
-                this.chart.dataBind();
+                this.chart.series[0].animation.enable = false;
+                this.chart.series[1].animation.enable = false;
+                this.chart.refresh();
             }
         });
         this.selectionMode.appendTo('#selmode');
     }
+    public setMultiSelect(e: Event): void {
+        this.chart.allowMultiSelection = (<HTMLInputElement>e.target).checked === true;
+        this.chart.series[0].animation.enable = false;
+        this.chart.series[1].animation.enable = false;
+        this.chart.refresh();
+    };
     constructor() {
         //code
     };

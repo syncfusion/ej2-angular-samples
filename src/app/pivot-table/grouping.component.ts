@@ -6,7 +6,7 @@ import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/grid
 import { enableRipple, extend } from '@syncfusion/ej2-base';
 import { MultiSelect, SelectEventArgs, RemoveEventArgs, CheckBoxSelection } from '@syncfusion/ej2-dropdowns';
 import { Button } from '@syncfusion/ej2-buttons';
-// import { GroupSettingsModel } from '@syncfusion/ej2-pivotview/src/pivotview/model/datasourcesettings-model';
+import { GroupSettingsModel } from '@syncfusion/ej2-pivotview/src/pivotview/model/datasourcesettings-model';
 enableRipple(false);
 MultiSelect.Inject(CheckBoxSelection);
 
@@ -33,19 +33,6 @@ export class GroupingComponent implements OnInit {
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
-    onLoad(args: LoadEventArgs): void {
-        let date: Date;
-        let products: string[] = ['', 'Bottles and Cages', 'Cleaners', 'Fenders', 'Mountain Bikes', 'Road Bikes', 'Touring Bikes', 'Gloves', 'Jerseys', 'Shorts', 'Vests'];
-        let amount: number[] = [0, 2, 3, 8, 60, 75, 65, 3, 5, 4, 2]
-        for (let ln: number = 0, lt: number = data.length; ln < lt; ln++) {
-            date = new Date(data[ln].Date.toString());
-            data[ln].Date = date.toString();
-            data[ln].Products = products[(data[ln].Product_ID ) - 1000];
-            data[ln].Sold = (data[ln].Sold) * (date.getFullYear() === 2015 ? 3 : date.getFullYear() === 2016 ? 4 : date.getFullYear() === 2017 ? 2 : 5);
-            data[ln].Amount = ((date.getFullYear() === 2018 ? 2 : 0)   + (data[ln].Sold)) * amount[(data[ln].Product_ID as any) - 1000];
-        }
-        // args.dataSourceSettings.dataSource = extend([], data, null, true) as IDataSet[];
-    }
     /* tslint:disable */
     applyGroupSettings(args: any): void {
         if (args.name === 'select') {
@@ -61,9 +48,9 @@ export class GroupingComponent implements OnInit {
     }
 
     setColumnsRender(args: ColumnRenderEventArgs): void {
-        // if (args.dataSourceSettings.rows.length > 3 && args.columns[0].width <= 250) {
-        //     args.columns[0].width = 285;
-        // }
+        if (args.dataSourceSettings.rows.length > 3 && args.columns[0].width <= 250) {
+            args.columns[0].width = 285;
+        }
     }
 
     ngOnInit(): void {
@@ -84,7 +71,7 @@ export class GroupingComponent implements OnInit {
             filters: [],
             groupSettings: [{ name: 'Date', type: 'Date', groupInterval: ['Years', 'Months', 'Days'] },
             { name: 'Product_ID', type: 'Number', rangeInterval: 4 }],
-            // dataSource: data
+            dataSource: extend([], data, null, true) as IDataSet[]
         };
 
         this.dateGroup = new MultiSelect({
@@ -122,14 +109,14 @@ export class GroupingComponent implements OnInit {
         this.applyBtn.appendTo('#group-apply');
 
         document.getElementById('group-apply').onclick = () => {
-            // let groupSettings: GroupSettingsModel[] = [];
-            // if (this.selectedGroups.length > 0) {
-            //     groupSettings.push({ name: 'Date', type: 'Date', groupInterval: this.selectedGroups as DateGroup[] });
-            // }
-            // if (this.numberGroup.value > 1) {
-            //     groupSettings.push({ name: 'Product_ID', type: 'Number', rangeInterval: this.numberGroup.value });
-            // }
-            // this.pivotObj.dataSourceSettings.groupSettings = groupSettings;
+            let groupSettings: GroupSettingsModel[] = [];
+            if (this.selectedGroups.length > 0) {
+                groupSettings.push({ name: 'Date', type: 'Date', groupInterval: this.selectedGroups as DateGroup[] });
+            }
+            if (this.numberGroup.value > 1) {
+                groupSettings.push({ name: 'Product_ID', type: 'Number', rangeInterval: this.numberGroup.value });
+            }
+            this.pivotObj.dataSourceSettings.groupSettings = groupSettings;
         };
     }
 }

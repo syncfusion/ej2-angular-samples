@@ -31,7 +31,7 @@ export class RemoteComponent implements OnInit {
             crossDomain: true
         });
             this.dataSourceSettings = {
-                // dataSource: remoteData,
+                dataSource: remoteData,
                 expandAll: true,
                 filters: [],
                 columns: [{ name: 'ProductName', caption: 'Product Name' }],

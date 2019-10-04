@@ -7,7 +7,7 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { MapAjax } from '@syncfusion/ej2-maps';
 Maps.Inject(MapsTooltip, DataLabel);
 declare var require: any;
-let usMap: object[] = require('./usa.json');
+import usMap from './usa.json';
 @Component({
     selector: 'control-content',
     templateUrl: 'labels.html',  

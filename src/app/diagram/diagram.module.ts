@@ -59,6 +59,7 @@ import { FlowExecutionDiagramComponent } from 'src/app/diagram/flow-execution.co
 import { HistoryManagerDiagramComponent } from 'src/app/diagram/history-manager.component';
 import { EventsDiagramComponent } from './diagram-events.component';
 import { TooltipDiagramComponent } from './tooltip.component';
+import { LineRoutingComponent } from './line-routing';
 
 
 export const diagramAppRoutes: Object[] = [
@@ -77,27 +78,27 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/nodes', component: NodeDiagramComponent,
         name: 'Nodes', category: 'Getting Started', order: '01',
         description: 'This sample visualizes the different stages of a software development life cycle using a circular flow diagram. ' +
-        'Customizing the appearance of the nodes is illustrated in this example.'
+            'Customizing the appearance of the nodes is illustrated in this example.'
     },
     {
         path: ':theme/diagram/connectors', component: ConnectorDiagramComponent,
         name: 'Connectors', category: 'Getting Started', order: '01',
         description: 'This sample visualizes the data flow in a marketing process using predefined shapes and connectors. ' +
-        'Different types of connectors and decorators are used to customize the appearance, path, and direction of the data flow.'
+            'Different types of connectors and decorators are used to customize the appearance, path, and direction of the data flow.'
     },
     {
         path: ':theme/diagram/annotations', component: AnnotationDiagramComponent,
         name: 'Annotations', category: 'Getting Started', order: '01',
         description: 'This sample illustrates the competitive environment of a business through five forces chart. ' +
-        'The elements of the five force chart is described using nodes and annotations. Customizing the position and appearance ' +
-        'of the annotation is illustrated in this example.'
+            'The elements of the five force chart is described using nodes and annotations. Customizing the position and appearance ' +
+            'of the annotation is illustrated in this example.'
     },
     {
         path: ':theme/diagram/ports', component: PortDiagramComponent,
         name: 'Ports', category: 'Getting Started', order: '01',
         description: 'This sample visualizes the process flow of publishing a book using connection points. ' +
-        'Connection points are static points over the shapes that allow creating connections to the shapes. ' +
-        'Customizing the size and appearance of the connection points is illustrated in this example.'
+            'Connection points are static points over the shapes that allow creating connections to the shapes. ' +
+            'Customizing the size and appearance of the connection points is illustrated in this example.'
     },
     {
         path: ':theme/diagram/swimlane', component: SwimLaneDiagramComponent,
@@ -129,7 +130,15 @@ export const diagramAppRoutes: Object[] = [
         name: 'Complex Shapes',
         category: 'Getting Started', order: '01',
         description: 'This sample demonstrates how to host a HTML element inside a node. In this example, ' +
-        'a Gauge control is hosted inside a HTML Node.'
+            'a Gauge control is hosted inside a HTML Node.'
+    },
+    {
+        path: ':theme/diagram/line-routing', component: LineRoutingComponent,
+        name: 'Line Routing',
+        type: 'new',
+        category: 'Getting Started', order: '01',
+        description: 'This sample visualizes the connectors that are automatically re-routing or moving away if any shape ' +
+            'found on the connectors path'
     },
     {
         path: ':theme/diagram/bpmn-editor', component: BPMNShapesDiagramComponent,
@@ -141,13 +150,13 @@ export const diagramAppRoutes: Object[] = [
         name: 'Logic Circuit Diagram',
         category: 'Use Case Diagram', order: '02',
         description: 'This sample visually represents a simple fishbone diagram (Ishikawa).'
-        + ' Diagram nodes and annotations are used to define fishbone diagrams. Read-only mode is enabled here.',
+            + ' Diagram nodes and annotations are used to define fishbone diagrams. Read-only mode is enabled here.',
     },
     {
         path: ':theme/diagram/uml-activity', component: UmlActivityComponent,
         name: 'UML Activity Diagram', category: 'Use Case Diagram', order: '02',
         description: 'This sample visually represents the hotel booking reservation system.'
-        + 'It is built with readymade BPMN shapes.',
+            + 'It is built with readymade BPMN shapes.',
     },
     {
         path: ':theme/diagram/network-diagram', component: NetworkShapesDiagramComponent,
@@ -164,30 +173,30 @@ export const diagramAppRoutes: Object[] = [
         name: 'Hierarchical Tree',
         category: 'Automatic Layouts', order: '03',
         description: 'This sample illustrates a simple hierarchical tree that is built from an external data source. ' +
-        'Hierarchical tree layout algorithm is used to build hierarchical trees. Customizing the spacing between objects ' +
-        'and orientation of the trees is illustrated in this example.'
+            'Hierarchical tree layout algorithm is used to build hierarchical trees. Customizing the spacing between objects ' +
+            'and orientation of the trees is illustrated in this example.'
     },
     {
         path: ':theme/diagram/organization-chart', component: OrganizationalChartDiagramComponent,
         name: 'Organizational Chart',
         category: 'Automatic Layouts', order: '03',
         description: 'This sample illustrates a simple business management structure that is built ' +
-        'from an external data source. Hierarchical tree layout algorithm is used to build organizational charts. ' +
-        'Customizing the orientation and structure of the organizational chart is illustrated in this example.'
+            'from an external data source. Hierarchical tree layout algorithm is used to build organizational charts. ' +
+            'Customizing the orientation and structure of the organizational chart is illustrated in this example.'
     },
     {
         path: ':theme/diagram/radial-tree', component: RadialTreeDiagramComponent,
         name: 'Radial Tree',
         category: 'Automatic Layouts', order: '03',
         description: 'This sample demonstrates a huge organizational structure using a compact ' +
-        'layout model. Radial tree layout algorithm is used to build such a layout.'
+            'layout model. Radial tree layout algorithm is used to build such a layout.'
     },
     {
         path: ':theme/diagram/mind-map', component: MindMapDiagramComponent,
         name: 'Mind Map',
         category: 'Automatic Layouts', order: '03',
         description: 'This sample demonstrates the concept of creativity using mind map layout ' +
-        'algorithm. User handles are used to extend the mind map interactively.'
+            'algorithm. User handles are used to extend the mind map interactively.'
     },
     {
         path: ':theme/diagram/symmetric-layout', component: SymmetricLayoutDiagramComponent,
@@ -200,7 +209,7 @@ export const diagramAppRoutes: Object[] = [
         name: 'Complex Hierarchical Tree',
         category: 'Automatic Layouts', order: '03',
         description: 'This sample demonstrates a complex hierarchical template that is built from an external data ' +
-        'source using complex hierarchical tree algorithm.'
+            'source using complex hierarchical tree algorithm.'
     },
     {
         path: ':theme/diagram/right-to-left-tree', component: RTLTreeDiagramComponent,
@@ -213,50 +222,50 @@ export const diagramAppRoutes: Object[] = [
         name: 'PERT chart',
         category: 'Automatic Layouts', order: '03',
         description: 'This sample visualizes a project development process using Program Evaluation Review Technique (PERT). ' +
-        'Complex hierarchical tree layout algorithm is used to automatically arrange the nodes.'
+            'Complex hierarchical tree layout algorithm is used to automatically arrange the nodes.'
     },
     {
         path: ':theme/diagram/drawing-tool', component: DrawingToolDiagramComponent,
         name: 'Drawing Tools',
         category: 'User Interaction', order: '04',
         description: 'This sample visualizes how to build a diagram interactively using drawing tools. ' +
-        'Continuous draw option, snapping, and undo/redo support are enabled to easily draw diagrams. Rulers, ' +
-        'gridlines, and snapping options are enabled to easily align objects.'
+            'Continuous draw option, snapping, and undo/redo support are enabled to easily draw diagrams. Rulers, ' +
+            'gridlines, and snapping options are enabled to easily align objects.'
     },
     {
         path: ':theme/diagram/key-board-functions', component: KeyBoardDiagramComponent,
         name: 'Keyboard Interaction',
         category: 'User Interaction', order: '04',
         description: 'This sample illustrates interaction with diagram control using shortcut keys. ' +
-        'Command Manager support is used to manage keyboard interactions.'
+            'Command Manager support is used to manage keyboard interactions.'
     },
     {
         path: ':theme/diagram/quick-commands', component: UserHandlediagramComponent,
         name: 'User Handles',
         category: 'User Interaction', order: '04',
         description: 'This sample visualizes a simple flow diagram along with options to ' +
-        'execute the frequently used commands using user handles.'
+            'execute the frequently used commands using user handles.'
     },
     {
         path: ':theme/diagram/symbol-palette', component: SymbolPaletteDiagramComponent,
         name: 'Symbol Palette',
         category: 'User Interaction', order: '04',
         description: 'This example illustrates predefining shapes in a palette that can be easily ' +
-        'dragged and dropped into the drawing area. Customizable options of the symbol palette are also illustrated in this example.'
+            'dragged and dropped into the drawing area. Customizable options of the symbol palette are also illustrated in this example.'
     },
     {
         path: ':theme/diagram/overview', component: OverviewDiagramComponent,
         name: 'Overview Panel',
         category: 'User Interaction', order: '04',
         description: 'This sample visualizes an organizational structure along with an overview for ' +
-        'easily navigating the large organizational structure using Overview Panel.'
+            'easily navigating the large organizational structure using Overview Panel.'
     },
     {
         path: ':theme/diagram/serialization', component: SerializationDiagramComponent,
         name: 'Serialization',
         category: 'Print and Export', order: '05',
         description: 'This sample visualizes building diagrams interactively and editing the saved diagrams. ' +
-        'Symbol Palette is used to easily build diagrams.'
+            'Symbol Palette is used to easily build diagrams.'
     },
     {
         path: ':theme/diagram/print-export', component: PrintExportDiagramComponent,
@@ -269,7 +278,7 @@ export const diagramAppRoutes: Object[] = [
         name: 'Local Data',
         category: 'Data Binding', order: '06',
         description: 'This sample visualizes the classifications of species using hierarchical tree layout algorithm. ' +
-        'Data Manager support is used to bind data with the diagram.'
+            'Data Manager support is used to bind data with the diagram.'
     },
     {
         path: ':theme/diagram/remote-data', component: RemoteDataDiagramComponent,
@@ -293,7 +302,7 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/fishbone-diagram', component: FishboneDiagramComponent,
         name: 'Fishbone Diagram',
         description: 'This sample visually represents a simple fishbone diagram (Ishikawa). Diagram nodes and ' +
-        'annotations are used to define fishbone diagrams. Read-only mode is enabled here.',
+            'annotations are used to define fishbone diagrams. Read-only mode is enabled here.',
         category: 'Static Diagram', order: '07'
     }
 ];
@@ -309,7 +318,7 @@ let declarations: Type<Object>[] = [FlowDiagramComponent, ShapesDiagramComponent
     LocalDataDiagramComponent, RemoteDataDiagramComponent, VennDiagramComponent, RTLTreeDiagramComponent,
     PertChartDiagramComponent, BPMNShapesDiagramComponent, FishboneDiagramComponent, LogicCircuitComponent,
     UmlActivityComponent, NetworkShapesDiagramComponent, CRUDDiagramComponent, UmlClassDiagramComponent, SwimLaneDiagramComponent,
-    TooltipDiagramComponent, EventsDiagramComponent
+    TooltipDiagramComponent, EventsDiagramComponent, LineRoutingComponent
 
 ];
 @NgModule({

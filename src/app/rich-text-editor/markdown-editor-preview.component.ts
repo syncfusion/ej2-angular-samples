@@ -3,10 +3,11 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';
-import { RichTextEditorComponent, ToolbarService, LinkService } from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorComponent, ToolbarService, LinkService, EditorMode } from '@syncfusion/ej2-angular-richtexteditor';
 import { ImageService, MarkdownEditorService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, KeyboardEventArgs, isNullOrUndefined } from '@syncfusion/ej2-base';
-// import * as Marked from 'marked';
+import * as Marked from 'marked';
+import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 
 @Component({
     selector: 'control-content',
@@ -16,25 +17,29 @@ import { createElement, KeyboardEventArgs, isNullOrUndefined } from '@syncfusion
     providers: [ToolbarService, LinkService, ImageService, MarkdownEditorService, TableService]
 })
 export class MarkdownPreviewComponent {
+
     @ViewChild('mdPreview')
     public rteObj: RichTextEditorComponent;
+
     public textArea: HTMLTextAreaElement;
     public mdsource: HTMLElement;
     public mdSplit: HTMLElement;
     public htmlPreview: HTMLElement;
-    public tools: object = {
+
+    public tools: ToolbarModule = {
         items: ['Bold', 'Italic', 'StrikeThrough', '|', 'Formats', 'OrderedList', 'UnorderedList', '|', 'CreateTable', 'CreateLink', 'Image', '|',
             {
                 tooltipText: 'Preview',
                 template: '<button id="preview-code" class="e-tbar-btn e-control e-btn e-icon-btn">' +
-                '<span class="e-btn-icon e-md-preview e-icons"></span></button>'
+                    '<span class="e-btn-icon e-md-preview e-icons"></span></button>'
             }, {
                 tooltipText: 'Split Editor',
                 template: '<button id="MD_Preview" class="e-tbar-btn e-control e-btn e-icon-btn">' +
-                '<span class="e-btn-icon e-view-side e-icons"></span></button>'
+                    '<span class="e-btn-icon e-view-side e-icons"></span></button>'
             }, 'FullScreen', '|', 'Undo', 'Redo']
     };
-    public mode: string = 'Markdown';
+    public mode: EditorMode = 'Markdown';
+
     public onCreate(): void {
         this.textArea = this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement;
         this.textArea.addEventListener('keyup', (e: KeyboardEventArgs) => {
@@ -78,13 +83,13 @@ export class MarkdownPreviewComponent {
     }
     public markdownConversion(): void {
         if (this.mdSplit.classList.contains('e-active')) {
-            let id: string = this.rteObj.getID() + 'html-preview';
-            let htmlPreview: HTMLElement = this.rteObj.element.querySelector('#' + id) as HTMLElement;
-            // htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+            const id: string = this.rteObj.getID() + 'html-preview';
+            const htmlPreview: HTMLElement = this.rteObj.element.querySelector('#' + id) as HTMLElement;
+            htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
         }
     }
     public fullPreview(e: { [key: string]: string | boolean }): void {
-        let id: string = this.rteObj.getID() + 'html-preview';
+        const id: string = this.rteObj.getID() + 'html-preview';
         this.htmlPreview = this.rteObj.element.querySelector('#' + id) as HTMLElement;
         if ((this.mdsource.classList.contains('e-active') || this.mdSplit.classList.contains('e-active')) && e.mode) {
             this.mdsource.classList.remove('e-active');
@@ -108,7 +113,7 @@ export class MarkdownPreviewComponent {
                 this.textArea.style.width = '50%';
             }
             this.htmlPreview.style.display = 'block';
-            // this.htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+            this.htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
         }
     }
     public handleFullScreen(e: any): void {

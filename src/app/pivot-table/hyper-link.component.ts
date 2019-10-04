@@ -187,7 +187,7 @@ export class HyperLinkComponent implements OnInit {
             columns: [{ name: 'Year' }],
             values: [{ name: 'In_Stock', caption: 'In Stock' }, { name: 'Sold', caption: 'Units Sold' },
             { name: 'Amount', caption: 'Sold Amount' }],
-            // dataSource: Pivot_Data,
+            dataSource: Pivot_Data,
             expandAll: true
         };
 

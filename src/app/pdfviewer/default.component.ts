@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import {
     PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
-    ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService
+    ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService
 } from '@syncfusion/ej2-angular-pdfviewer';
 
 /**
@@ -12,7 +12,7 @@ import {
     templateUrl: 'default.html',
     encapsulation: ViewEncapsulation.None,
     // tslint:disable-next-line:max-line-length
-    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService]
+    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService]
 })
 
 export class DefaultPdfViewerComponent implements OnInit {

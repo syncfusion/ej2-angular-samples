@@ -4,10 +4,9 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { MapsTheme, Maps, Legend, Marker, MapsTooltip, ILoadEventArgs, ILoadedEventArgs, NavigationLineSettingsModel, NavigationLine } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
-
+import worldMap from './world-map.json';
 Maps.Inject(Marker, NavigationLine, MapsTooltip);
 declare var require: any;
-let worldMap: object[] = require('./world-map.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'cyber-attack-map.html',

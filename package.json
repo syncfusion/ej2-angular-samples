@@ -1,6 +1,6 @@
 {
     "name": "ej2-angular-samples",
-    "version": "17.1.49",
+    "version": "17.3.14",
     "scripts": {
         "start": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng serve",
         "start:prod": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng serve --prod",
@@ -53,6 +53,7 @@
         "@syncfusion/ej2-angular-treegrid": "*",
         "@syncfusion/ej2-angular-treemap": "*",
         "@syncfusion/ej2-splitbuttons": "*",
+        "@syncfusion/ej2-angular-spreadsheet": "*",
         "@types/codemirror": "0.0.56",
         "codemirror": "^5.37.0",
         "core-js": "^2.5.4",

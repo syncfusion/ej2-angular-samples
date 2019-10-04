@@ -33,11 +33,11 @@ export class SummaryCustomizationComponent implements OnInit {
         this.pivotObj.setProperties({ dataSourceSettings: { showRowGrandTotals: true } }, true);
         this.pivotObj.setProperties({ dataSourceSettings: { showColumnGrandTotals: true } }, true);
         if (args.value === 'Column') {
-            // this.pivotObj.dataSourceSettings.showColumnGrandTotals = false;
+            this.pivotObj.dataSourceSettings.showColumnGrandTotals = false;
         } else if (args.value === 'Row') {
-            // this.pivotObj.dataSourceSettings.showRowGrandTotals = false;
+            this.pivotObj.dataSourceSettings.showRowGrandTotals = false;
         } else if (args.value === 'Both') {
-            // this.pivotObj.dataSourceSettings.showGrandTotals = false;
+            this.pivotObj.dataSourceSettings.showGrandTotals = false;
         }
     }
 
@@ -53,7 +53,7 @@ export class SummaryCustomizationComponent implements OnInit {
             columns: [{ name: 'Year' }, { name: 'Order_Source', caption: 'Order Source' }],
             rows: [{ name: 'Country' }, { name: 'Products' }],
             formatSettings: [{ name: 'Amount', format: 'C0' }],
-            // dataSource: Pivot_Data,
+            dataSource: Pivot_Data,
             expandAll: false,
             values: [{ name: 'In_Stock', caption: 'In Stock' }, { name: 'Sold', caption: 'Units Sold' },
             { name: 'Amount', caption: 'Sold Amount' }],
@@ -75,28 +75,28 @@ export class SummaryCustomizationComponent implements OnInit {
             fields: { text: 'Name' },
             placeholder: 'Select fields to hide its sub-totals',
             select: (args: SelectEventArgs): void => {
-                // for (let i: number = 0; i < this.pivotObj.dataSourceSettings.columns.length; i++) {
-                //     if ((this.pivotObj.dataSourceSettings.columns[i].name || this.pivotObj.dataSourceSettings.columns[i].caption) === (args.itemData as any).Name) {
-                //         this.pivotObj.dataSourceSettings.columns[i].showSubTotals = false;
-                //     }
-                // }
-                // for (let i: number = 0; i < this.pivotObj.dataSourceSettings.rows.length; i++) {
-                //     if ((this.pivotObj.dataSourceSettings.rows[i].name || this.pivotObj.dataSourceSettings.rows[i].caption) === (args.itemData as any).Name) {
-                //         this.pivotObj.dataSourceSettings.rows[i].showSubTotals = false;
-                //     }
-                // }
+                for (let i: number = 0; i < this.pivotObj.dataSourceSettings.columns.length; i++) {
+                    if ((this.pivotObj.dataSourceSettings.columns[i].name || this.pivotObj.dataSourceSettings.columns[i].caption) === (args.itemData as any).Name) {
+                        this.pivotObj.dataSourceSettings.columns[i].showSubTotals = false;
+                    }
+                }
+                for (let i: number = 0; i < this.pivotObj.dataSourceSettings.rows.length; i++) {
+                    if ((this.pivotObj.dataSourceSettings.rows[i].name || this.pivotObj.dataSourceSettings.rows[i].caption) === (args.itemData as any).Name) {
+                        this.pivotObj.dataSourceSettings.rows[i].showSubTotals = false;
+                    }
+                }
             },
             removed: (args: RemoveEventArgs): void => {
-                // for (let i: number = 0; i < this.pivotObj.dataSourceSettings.columns.length; i++) {
-                //     if ((this.pivotObj.dataSourceSettings.columns[i].name || this.pivotObj.dataSourceSettings.columns[i].caption) === (args.itemData as any).Name) {
-                //         this.pivotObj.dataSourceSettings.columns[i].showSubTotals = true;
-                //     }
-                // }
-                // for (let i: number = 0; i < this.pivotObj.dataSourceSettings.rows.length; i++) {
-                //     if ((this.pivotObj.dataSourceSettings.rows[i].name || this.pivotObj.dataSourceSettings.rows[i].caption) === (args.itemData as any).Name) {
-                //         this.pivotObj.dataSourceSettings.rows[i].showSubTotals = true;
-                //     }
-                // }
+                for (let i: number = 0; i < this.pivotObj.dataSourceSettings.columns.length; i++) {
+                    if ((this.pivotObj.dataSourceSettings.columns[i].name || this.pivotObj.dataSourceSettings.columns[i].caption) === (args.itemData as any).Name) {
+                        this.pivotObj.dataSourceSettings.columns[i].showSubTotals = true;
+                    }
+                }
+                for (let i: number = 0; i < this.pivotObj.dataSourceSettings.rows.length; i++) {
+                    if ((this.pivotObj.dataSourceSettings.rows[i].name || this.pivotObj.dataSourceSettings.rows[i].caption) === (args.itemData as any).Name) {
+                        this.pivotObj.dataSourceSettings.rows[i].showSubTotals = true;
+                    }
+                }
             },
             open: (args: PopupEventArgs): void => {
                 (args.popup.element.querySelector(".e-filter-parent") as HTMLElement).style.display = 'none';

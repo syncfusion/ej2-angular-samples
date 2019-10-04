@@ -1,5 +1,6 @@
 <div id="action-description">
-    <p>This sample demonstrates the template driven form support of the RichTextEditor. You can edit the value in the RichTextEditor,
+    <p>This sample demonstrates the template driven form support of the RichTextEditor. You can edit the value in the
+        RichTextEditor,
         the values goes into the form models.
     </p>
 </div>
@@ -8,14 +9,15 @@
     <div class="content-wrapper">
         <div id='content' class='box-form' style="margin: 0 auto; max-width:750px; padding:25px">
             <form (ngSubmit)="onSubmit()" #rteForm="ngForm">
-                <div class="form-group"> 
-                    <ejs-richtexteditor #fromRTE #name='ngModel' [(value)]='value' required name="name" [(ngModel)]="value" (created)="rteCreated()"></ejs-richtexteditor>
+                <div class="form-group">
+                    <ejs-richtexteditor #fromRTE #name='ngModel' [(value)]='value' required name="name"
+                        [(ngModel)]="value" (created)="rteCreated()"></ejs-richtexteditor>
                     <div *ngIf="(name.invalid && name.touched)" class="alert alert-danger">
                         <div *ngIf="name.errors.required">
                             Value is required.
-                        </div> 
+                        </div>
                     </div>
-                </div> 
+                </div>
                 <div>
                     <button type="submit" ejs-button [disabled]="!rteForm.valid">Submit</button>
                     <button type="reset" ejs-button style="margin-left: 20px">Reset</button>
@@ -25,7 +27,8 @@
     </div>
 </div>
 <div id="description">
-    <p> The RichTextEditor will be registered with an NgForm directive with bind [(ngModel)] and name attributes. Then you can
+    <p> The RichTextEditor will be registered with an NgForm directive with bind [(ngModel)] and name attributes. Then
+        you can
         confirm that two-way data binding will works.
     </p>
     <p>

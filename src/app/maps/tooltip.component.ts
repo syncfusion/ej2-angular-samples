@@ -7,8 +7,8 @@ import { MapAjax } from '@syncfusion/ej2-maps';
 
 Maps.Inject(MapsTooltip, Legend);
 declare var require: any;
-let worldMap: object[] = require('./world-map.json');
-let worldcup: object[] = require('./world-cup.json');
+import worldMap from './world-map.json';
+import worldcup from './world-cup.json';
 @Component({
     selector: 'control-content',
     templateUrl: 'tooltip.html',

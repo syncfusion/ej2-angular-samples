@@ -31,7 +31,7 @@ export class ValueSortingComponent implements OnInit {
             { name: 'Amount', caption: 'Sold Amount' }],
             formatSettings: [{ name: 'Amount', format: 'C' }],
             columns: [{ name: 'Year' }, { name: 'Order_Source', caption: 'Order Source' }],
-            // dataSource: Pivot_Data,
+            dataSource: Pivot_Data,
             expandAll: false,
             enableSorting: true,
             rows: [{ name: 'Country' }, { name: 'Products' }],

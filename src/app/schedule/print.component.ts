@@ -1,7 +1,7 @@
 import { extend } from '@syncfusion/ej2-base';
 import { ItemModel } from '@syncfusion/ej2-angular-navigations';
 import {
-  ScheduleComponent, EventSettingsModel, ActionEventArgs, ToolbarActionArgs, View,
+  ScheduleComponent, EventSettingsModel, ActionEventArgs, ToolbarActionArgs, View, PrintService,
   MonthService, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
@@ -15,7 +15,7 @@ import { scheduleData } from './data';
   selector: 'control-content',
   templateUrl: 'print.html',
   styleUrls: ['print.style.css'],
-  providers: [MonthService, ResizeService, DragAndDropService],
+  providers: [MonthService, ResizeService, DragAndDropService, PrintService],
   encapsulation: ViewEncapsulation.None
 })
 export class PrintComponent {
@@ -36,6 +36,6 @@ export class PrintComponent {
   }
 
   public onPrintIconClick(): void {
-    // this.scheduleObj.print();
+    this.scheduleObj.print();
   }
 }

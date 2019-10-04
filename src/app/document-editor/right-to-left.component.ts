@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, ViewChild, OnInit } from '@angular/core';
 import { ToolbarService, DocumentEditorContainerComponent } from '@syncfusion/ej2-angular-documenteditor';
 import { TitleBar } from './title-bar';
 import { rtlDocument, WEB_API_ACTION } from './data';
-import { L10n } from '@syncfusion/ej2-base';
+import { L10n, isNullOrUndefined } from '@syncfusion/ej2-base';
 /**
  * Document Editor Component
  */
@@ -248,6 +248,7 @@ export class RightToLeftComponent implements OnInit {
                     'Style based on': 'نمط استنادا إلى',
                     'Style for following paragraph': 'نمط للفقرة التالية',
                     'Formatting': 'التنسيق',
+                    'Formatting restrictions': 'قيود التنسيق',
                     'Numbering and Bullets': 'الترقيم والتعداد النقطي',
                     'Numbering': 'ترقيم',
                     'Update Field': 'تحديث الحقل',
@@ -298,7 +299,52 @@ export class RightToLeftComponent implements OnInit {
                     'Fit one page': 'احتواء صفحه واحد',
                     'Fit page width': 'احتواء عرض الصفحة',
                     // tslint:disable-next-line:max-line-length
-                    'The current page number in the document. Click or tap to navigate specific page.': 'رقم الصفحة الحالية في المستند. انقر أأو اضغط للتنقل في صفحه معينه'
+                    'The current page number in the document. Click or tap to navigate specific page.': 'رقم الصفحة الحالية في المستند. انقر أأو اضغط للتنقل في صفحه معينه',
+                    'Format restrictions': 'قيود التنسيق',
+                    'Allow formatting': 'السماح بالتنسيق',
+                    'Editing restrictions': 'قيود التحرير',
+                    'Read only': 'للقراءة فقط',
+                    'User permissions': 'أذونات المستخدم',
+                    'Everyone': 'الجميع',
+                    'Add Users': 'أضافه مستخدمين',
+                    'Enforcing Protection': 'فرض الحماية',
+                    'Enter User': 'ادخل المستخدم',
+                    'Users': 'المستخدمين',
+                    'Enter new password': 'ادخل كلمه مرور جديد',
+                    'Reenter new password': 'أعاده إدخال كلمه مرور جديده',
+                    'Your permissions': 'الأذونات الخاصة بك',
+                    // tslint:disable-next-line:max-line-length
+                    'This document is protected from unintenional editing.You may edit in this region,but all changes will be tracked.': 'هذا المستند محمي من التحرير غير الموجه. يمكنك التحرير في هذه المنطقة ، ولكن سيتم تعقب كافة التغييرات',
+                    'You may format text only with certain styles.': 'يمكنك تنسيق النص فقط مع أنماط معينه',
+                    'Stop Protection': 'إيقاف الحماية',
+                    'Unprotect Document': 'إلغاء حماية المستند',
+                    'Password': 'كلمه المرور',
+                    /* tslint:disable */
+                    'Select parts of the document and choose users who are allowed to freely edit them.': 'حدد أجزاء من المستند واختر المستخدمين الذين يسمح لهم بالقيام بعملية تحرير هاهم بحرية',
+                    "Don't add space between the paragraphs of the same styles": 'عدم إضافة مسافة بين فقرات نفس الأنماط',
+                    "The password don't match": "كلمة المرور لا تتطابق",
+                    /* tslint:enable */
+                    'More users': 'المزيد من المستخدمين',
+                    'Yes, Start Enforcing Protection': 'نعم، ابدأ فرض الحماية',
+                    'Start Enforcing Protection': 'بدء تشغيل الحماية القسرية',
+                    'Reenter new password to confirm': 'إعادة إدخال كلمة مرور جديدة للتأكيد',
+                    // tslint:disable-next-line:max-line-length
+                    'This document is protected from unintentional editing.You may edit in this region.': 'هذا المستند محمي من التحرير غير المقصود. يمكنك تحرير في هذه المنطقة.',
+                    'Spelling Editor': 'محرر التدقيق الإملائي',
+                    'Spelling': 'الاملائي',
+                    'Spell Check': 'التدقيق الإملائي',
+                    'Underline errors': 'أخطاء التسطير',
+                    'Ignore': 'تجاهل',
+                    'Ignore all': 'تجاهل الكل',
+                    'Add to Dictionary': 'إضافة إلى القاموس',
+                    'Change': 'تغيير',
+                    'Change All': 'تغيير الكل',
+                    'Suggestions': 'اقتراحات',
+                    'The password is incorrect': 'كلمة المرور غير صحيحة',
+                    'Error in establishing connection with web server': 'خطأ في تأسيس اتصال مع ملقم ويب',
+                    'Highlight the regions I can edit': 'تسليط الضوء على المناطق التي يمكنني تحريرها',
+                    'Show All Regions I Can Edit': 'إظهار كافة المناطق التي يمكنني تحريرها',
+                    'Find Next Region I Can Edit': 'البحث عن المنطقة التالية التي يمكنني تحريرها'
                 },
                 'documenteditorcontainer': {
                     'New': 'الجديد',
@@ -437,7 +483,27 @@ export class RightToLeftComponent implements OnInit {
                         'تم رفض الوصول إلى حافظه النظام من خلال البرنامج النصي بسبب نهج أمان المستعرضات. بدلا ' + '</br>' +
                         '1. يمكنك تمكين الحافظة الداخلية لقطع ونسخ ولصق داخل المكون' + '</br>' +
                         '2. يمكنك استخدام اختصارات لوحه المفاتيح (ctrl + X ، ctrl + C و ctrl + V) لقص ونسخ ولصق مع الحافظة النظام',
-                    'Restrict editing.': 'تقييد التحرير'
+                    'Restrict editing.': 'تقييد التحرير',
+                    'Format restrictions': 'قيود التنسيق',
+                    'Allow formatting': 'السماح بالتنسيق',
+                    'Editing restrictions': 'قيود التحرير',
+                    'Read only': 'للقراءة فقط',
+                    'User permissions': 'أذونات المستخدم',
+                    'Everyone': 'الجميع',
+                    'Add Users': 'أضافه مستخدمين',
+                    'Enforcing Protection': 'فرض الحماية',
+                    'Enter User': 'ادخل المستخدم',
+                    'Users': 'المستخدمين',
+                    'Enter new password': 'ادخل كلمه مرور جديد',
+                    'Reenter new password': 'أعاده إدخال كلمه مرور جديده',
+                    'Your permissions': 'الأذونات الخاصة بك',
+                    // tslint:disable-next-line:max-line-length
+                    'This document is protected from unintenional editing.You may edit in this region,but all changes will be tracked.': 'هذا المستند محمي من التحرير غير الموجه. يمكنك التحرير في هذه المنطقة ، ولكن سيتم تعقب كافة التغييرات',
+                    'You may format text only with certain styles.': 'يمكنك تنسيق النص فقط مع أنماط معينه',
+                    'Stop Protection': 'إيقاف الحماية',
+                    'Unprotect Document': 'إلغاء حماية المستند',
+                    'Password': 'كلمه المرور',
+                    'Protections': 'الحمايه'
                 },
                 'colorpicker': {
                     'Apply': 'تطبيق',
@@ -456,9 +522,12 @@ export class RightToLeftComponent implements OnInit {
         this.container.documentEditor.open(JSON.stringify(rtlDocument));
         this.container.documentEditor.documentName = 'الشروع';
         this.titleBar.updateDocumentTitle();
-        this.container.documentEditor.documentChange = (): void => {
+    }
+
+    onDocumentChange(): void {
+        if (!isNullOrUndefined(this.titleBar)) {
             this.titleBar.updateDocumentTitle();
-            this.container.documentEditor.focusIn();
-        };
+        }
+        this.container.documentEditor.focusIn();
     }
 }
