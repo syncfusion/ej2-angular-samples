@@ -6,7 +6,7 @@ import { MapsTheme, Maps, Marker, ILoadEventArgs } from '@syncfusion/ej2-angular
 import { MapAjax } from '@syncfusion/ej2-maps';
 Maps.Inject(Marker);
 declare var require: any;
-let australia: object[] = require('./australia.json');
+import australia from './australia.json';
 @Component({
     selector: 'control-content',
     templateUrl: 'marker-template.html',

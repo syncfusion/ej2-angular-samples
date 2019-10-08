@@ -25,7 +25,7 @@ export class DateheaderTemplateComponent {
     public instance: Internationalization = new Internationalization();
 
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['dateheader.style.css'];
+        sourceFiles.files = ['date-header.style.css'];
     }
 
     getWeatherImage(value: Date): string {

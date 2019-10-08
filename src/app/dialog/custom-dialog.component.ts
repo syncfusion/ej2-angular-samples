@@ -1,6 +1,7 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { Component, ViewEncapsulation, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { DialogComponent, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
+import { ButtonModel } from '@syncfusion/ej2-buttons';
 
 /**
  * Default Dialog Component
@@ -8,15 +9,27 @@ import { EmitType } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',
     templateUrl: 'custom-dialog.html',
+    styleUrls: ['custom-dialog.css'],
+    encapsulation: ViewEncapsulation.None
 })
-export class DefaultDialogComponent {
+export class DefaultDialogComponent implements AfterViewInit {
+
     // Define Dialog properties
     @ViewChild('alertDialog')
     public alertDialog: DialogComponent;
+
     @ViewChild('confirmDialog')
     public confirmDialog: DialogComponent;
+
     @ViewChild('promptDialog')
     public promptDialog: DialogComponent;
+
+    @ViewChild('password')
+    public password: ElementRef;
+
+    @ViewChild('alertButton')
+    public alertbtn: ElementRef;
+
     public alertHeader: string = 'Low Battery';
     public confirmHeader: string = 'Delete Multiple Items';
     public promptHeader: string = 'Join Wi-Fi network';
@@ -31,61 +44,59 @@ export class DefaultDialogComponent {
     public promptWidth: string = '330px';
     public animationSettings: Object = { effect: 'None' };
     public hide: any;
+
     ngAfterViewInit(): void {
-        document.getElementById('alertbtn').focus();
+        this.alertbtn.nativeElement.focus();
     }
-    public alertDlgBtnClick: EmitType<object> = () => {
+    public alertDlgBtnClick = (): void => {
         this.alertDialog.hide();
     }
-    public confirmDlgBtnClick: EmitType<object> = () => {
+    public confirmDlgBtnClick = (): void => {
         this.confirmDialog.hide();
     }
-    public promptDlgBtnClick: EmitType<object> = () => {
+    public promptDlgBtnClick = (): void => {
         this.promptDialog.hide();
     }
-    public onFocus: any = () => {
-        document.getElementById('password').parentElement.classList.add('e-input-focus');
+    public onFocus = (): void => {
+        this.password.nativeElement.parentElement.classList.add('e-input-focus');
     }
-    public onBlur: any = () => {
-        document.getElementById('password').parentElement.classList.remove('e-input-focus');
+    public onBlur = (): void => {
+        this.password.nativeElement.parentElement.classList.remove('e-input-focus');
     }
 
     // Render the Buttons to open corresponding Dialogs
-    public alertDlgButtons: Object[] = [{ click: this.alertDlgBtnClick.bind(this), buttonModel: { content: 'Dismiss', isPrimary: true } }];
-    public confirmDlgButtons: Object[] = [{ click: this.confirmDlgBtnClick.bind(this), buttonModel: { content: 'Yes', isPrimary: true } }, { click: this.confirmDlgBtnClick.bind(this), buttonModel: { content: 'No' } }];
-    public promptDlgButtons: Object[] = [{ click: this.promptDlgBtnClick.bind(this), buttonModel: { content: 'Connect', isPrimary: true } }, { click: this.promptDlgBtnClick.bind(this), buttonModel: { content: 'Cancel' } }];
+    public alertDlgButtons: ButtonPropsModel[] = [{ click: this.alertDlgBtnClick.bind(this), buttonModel: { content: 'Dismiss', isPrimary: true } }];
+    public confirmDlgButtons: ButtonPropsModel[] = [{ click: this.confirmDlgBtnClick.bind(this), buttonModel: { content: 'Yes', isPrimary: true } }, { click: this.confirmDlgBtnClick.bind(this), buttonModel: { content: 'No' } }];
+    public promptDlgButtons: ButtonPropsModel[] = [{ click: this.promptDlgBtnClick.bind(this), buttonModel: { content: 'Connect', isPrimary: true } }, { click: this.promptDlgBtnClick.bind(this), buttonModel: { content: 'Cancel' } }];
 
     // While clicking alert button, open the alert Dialog
-    public alertBtnClick: EmitType<object> = () => {
+    public alertBtnClick = (): void => {
         this.alertDialog.show();
         this.dialogOpen();
     }
 
     // While clicking confirm button, open the confirm Dialog
-    public confirmBtnClick: EmitType<object> = () => {
+    public confirmBtnClick = (): void => {
         this.confirmDialog.show();
         this.dialogOpen();
     }
 
     // While clicking prompt button, open the prompt Dialog
-    public promptBtnClick: EmitType<object> = () => {
+    public promptBtnClick = (): void => {
         this.promptDialog.show();
         this.dialogOpen();
     }
 
     // On Dialog close, show the buttons
-    public dialogClose: EmitType<object> = () => {
+    public dialogClose = (): void => {
         (document.querySelectorAll('.dlgbtn')[0] as HTMLElement).classList.remove('e-btn-hide');
         (document.querySelectorAll('.dlgbtn')[1] as HTMLElement).classList.remove('e-btn-hide');
         (document.querySelectorAll('.dlgbtn')[2] as HTMLElement).classList.remove('e-btn-hide');
     }
     // On Dialog open, hide the buttons
-    public dialogOpen: EmitType<object> = () => {
+    public dialogOpen = (): void => {
         (document.querySelectorAll('.dlgbtn')[0] as HTMLElement).classList.add('e-btn-hide');
         (document.querySelectorAll('.dlgbtn')[1] as HTMLElement).classList.add('e-btn-hide');
         (document.querySelectorAll('.dlgbtn')[2] as HTMLElement).classList.add('e-btn-hide');
     }
-
-    constructor() { }
-
 }

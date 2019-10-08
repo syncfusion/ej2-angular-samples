@@ -8,6 +8,7 @@ import { SharedModule } from '../common/shared.module';
 import { DefaultPdfViewerComponent } from './default.component';
 import { CustomToolbarComponent } from './custom-toolbar.component';
 import { RightToLeftComponent } from './right-to-left.component';
+import { FormFillingComponent } from './form-filling.component';
 
 export const pdfViewerAppRoutes: Object[] = [
     // tslint:disable-next-line:max-line-length
@@ -15,14 +16,16 @@ export const pdfViewerAppRoutes: Object[] = [
     // tslint:disable-next-line:max-line-length
     { path: ':theme/pdfviewer/custom-toolbar', component: CustomToolbarComponent, name: 'Custom Toolbar', order: '06', description: 'The PDF Viewer component is used to  view and print pdf documents in web applications.' },
     // tslint:disable-next-line:max-line-length
-    { path: ':theme/pdfviewer/right-to-left', component: RightToLeftComponent, name: 'Right To Left', order: '06', description: 'The PdfViewer component is used to  view and print pdf documents in web applications.' }
+    { path: ':theme/pdfviewer/right-to-left', component: RightToLeftComponent, name: 'Right To Left', order: '06', description: 'The PdfViewer component is used to  view and print pdf documents in web applications.' },
+	// tslint:disable-next-line:max-line-length
+    { path: ':theme/pdfviewer/form-filling', component: FormFillingComponent, name: 'Form Filling', order: '06', type: 'new', description: 'The PdfViewer component is used to  view and print pdf documents in web applications.' }
 ];
 
 export const pdfViewerRouter: ModuleWithProviders = RouterModule.forChild(pdfViewerAppRoutes);
 
 @NgModule({
     imports: [SharedModule,pdfViewerRouter, PdfViewerModule, ToolbarModule, DialogModule],
-    declarations: [DefaultPdfViewerComponent,CustomToolbarComponent,RightToLeftComponent],
+    declarations: [DefaultPdfViewerComponent,CustomToolbarComponent,RightToLeftComponent,FormFillingComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 

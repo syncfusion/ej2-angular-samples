@@ -1,0 +1,48 @@
+
+.outlook-style #discard {
+    margin-left: 7px;
+}
+
+.outlook-style table {
+    width: 100%;
+}
+
+.outlook-style td {
+    padding: 2px;
+}
+
+.control-section {
+    min-height: 370px;
+}
+
+.e-treeview .e-list-text {
+    width: 100%;
+}
+
+#groupedList.e-listview .e-list-group-item {
+    height: 0;
+}
+
+#splitter1 .settings.e-list-wrapper.e-list-multi-line.e-list-avatar {
+    padding: 15px;
+}
+
+#buttonSection {
+    padding: 7px;
+}
+
+.outlook-style #createpostholder {
+    padding-left: 3px;
+    padding-right: 4px;
+}
+
+#splitter1 #tree ul.e-list-parent.e-ul {
+    padding: 0 0 0 16px;
+}
+
+/* <!-- custom code start --> */
+.outlook-style#target {
+    margin: 20px auto;
+    max-width: 820px;
+}
+/* <!-- custom code end --> */

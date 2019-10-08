@@ -100,8 +100,8 @@ export class HeatmapCellJsonComponent {
     yAxis: Object = {
         labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016'],
     };
-    dataSource: Object = {
-        data: this.jsonCellData,
+    dataSource: Object = this.jsonCellData;
+    dataSourceSettings: Object = {
         isJsonData: true,
         adaptorType: 'Cell',
         xDataMapping: 'rowid',

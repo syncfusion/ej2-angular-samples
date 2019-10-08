@@ -25,10 +25,6 @@
         cursor: pointer;
     }
 
-
-    #rteSection {
-        height: 500px;
-    }
   .e-rte-quick-popup .e-rte-quick-toolbar .e-roatate-left::before {
         content: "\e76e";
     }
@@ -121,4 +117,8 @@
     .highcontrast .e-rte-custom-tbar-section .char_block.e-active {
         outline: 1px solid #ffd939;
         border-color: #ffd939;
+    }
+	
+	#rteSection {
+        height: 500px;
     }

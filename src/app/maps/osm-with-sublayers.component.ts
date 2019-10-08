@@ -9,7 +9,7 @@ import { MapsTheme, MapsTooltip, DataLabel, Maps, Marker, Annotations,ILoadEvent
 import { MapAjax } from '@syncfusion/ej2-maps';
 Maps.Inject(Marker, MapsTooltip, DataLabel, NavigationLine, Annotations);
 declare var require: any;
-let africa: object[] = require('./africa.json');
+import africa from './africa.json';
 @Component({
     selector: 'control-content',
     templateUrl: 'osm-with-sublayers.html',

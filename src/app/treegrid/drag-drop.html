@@ -1,0 +1,31 @@
+<div id="action-description">
+    <p>This sample demonstrates the TreeGrid component with the row drag and drop feature within same tree grid. It provides the way to drop the row, above, below or child
+        to the target row with the respective to the target row position.</p>
+</div>
+<div class="control-section">
+    <ejs-treegrid [dataSource]='data' height='350' childMapping='subtasks' [treeColumnIndex]='1' [allowRowDragAndDrop]='true' [selectionSettings]='selectOptions'>
+        <e-columns>
+            <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='70' textAlign='Right'></e-column>
+            <e-column field='taskName' headerText='Task Name' width='200'></e-column>
+            <e-column field='startDate' headerText='Start Date' width='90' format="yMd" textAlign='Right'></e-column>
+            <e-column field='endDate' headerText='End Date' width='90' format="yMd" textAlign='Right'></e-column>
+            <e-column field='duration' headerText='Duration' width='80' textAlign='Right'></e-column>
+            <e-column field='progress' headerText='Progress' width='80' textAlign='Right'></e-column>
+            <e-column field='priority' headerText='Priority' width='90'></e-column>
+        </e-columns>
+    </ejs-treegrid>
+</div>
+    <div id="description">
+        <p>This sample demonstrates the TreeGrid component with the row drag and drop feature within same tree grid. It provides the way to drop the row, above, below or child
+            to the target row with the respective to the target row position.
+        </p>
+        <p>Row drag and drop enabled by setting <code>allowRowDragAndDrop</code> property as true.</p>
+        <p>
+            TreeGrid component features are segregated into individual feature-wise modules. To use row drag and drop feature, we need to inject
+            <code>RowDD</code> into the <code>@NgModule.providers</code> section.
+        </p>
+        <p>
+            More information on the TreeGrid instantiation can be found in the
+          documentation section.
+        </p>
+</div>

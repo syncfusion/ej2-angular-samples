@@ -29,8 +29,7 @@ export class HeatmapRowJsonComponent {
         title: { text: 'Olympic Year' },
         labels: ['2000', '2004', '2008', '2012', '2016'],
     };
-    dataSource: Object = {
-        data: [
+    dataSource: Object = [
             { 'Region': 'USA', '2000': 93, '2004': 101, '2008': 112, '2012': 103, '2016': 121 },
             { 'Region': 'GBR', '2000': 28, '2004': 30, '2008': 49, '2012': 65, '2016': 67 },
             { 'Region': 'China', '2000': 58, '2004': 63, '2008': 100, '2012': 91, '2016': 70 },
@@ -39,7 +38,8 @@ export class HeatmapRowJsonComponent {
             { 'Region': 'Japan', '2000': 18, '2004': 37, '2008': 25, '2012': 38, '2016': 41 },
             { 'Region': 'France', '2000': 38, '2004': 33, '2008': 43, '2012': 35, '2016': 42 },
             { 'Region': 'KOR', '2000': 28, '2004': 30, '2008': 32, '2012': 30, '2016': 21 },
-            { 'Region': 'Italy', '2000': 34, '2004': 32, '2008': 27, '2012': 28, '2016': 28 }],
+            { 'Region': 'Italy', '2000': 34, '2004': 32, '2008': 27, '2012': 28, '2016': 28 }];
+    dataSourceSettings: Object = {
         isJsonData: true,
         adaptorType: 'Table',
         xDataMapping: 'Region',

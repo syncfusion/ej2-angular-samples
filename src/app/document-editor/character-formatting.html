@@ -2,7 +2,8 @@
     <div>
         <div id="default_title_bar" class="e-de-ctn-title"></div>
         <div>
-            <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true (created)="onCreate()" style="display:block;height:600px"></ejs-documenteditorcontainer>
+            <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true (created)="onCreate()"
+                (documentChange)="onDocumentChange()" style="display:block;height:600px"></ejs-documenteditorcontainer>
         </div>
     </div>
 </div>

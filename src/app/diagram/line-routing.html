@@ -1,0 +1,24 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the connectors that are automatically re-routing or moving away if any shape found on the
+        connectors path.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-lg-8 control-section" style="width: 100%;">
+        <div class="content-wrapper">
+            <ejs-diagram #diagram id="diagram" width="100%" height="600" [nodes]="nodes" [connectors]="connectors"
+                [constraints]="constraints" [snapSettings]='snapSettings' [getConnectorDefaults]='getConnectorDefaults'
+                (created)='create($event)' [getNodeDefaults]='getNodeDefaults'>
+            </ejs-diagram>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        This example shows how the connectors are automatically re-routing or moving away on
+        dragging a shape near it.
+        This can be achieved by the <code>constraints</code> property of the diagram and connector.
+    </p>
+    <br>
+</div>

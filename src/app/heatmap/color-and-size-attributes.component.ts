@@ -75,8 +75,8 @@ export class HeatmapColorAndSizeAttributesComponent {
         tileType: 'Bubble',
         bubbleType: 'SizeAndColor'
     };
-    dataSource: Object = {
-        data: this.jsonCellData,
+    dataSource: Object = this.jsonCellData;
+    dataSourceSettings: Object = {
         isJsonData: true,
         adaptorType: 'Cell',
         xDataMapping: 'Year',

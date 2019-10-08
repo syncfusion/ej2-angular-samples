@@ -8,8 +8,8 @@ import { HttpClient } from '@angular/common/http';
 import { MapAjax } from '@syncfusion/ej2-maps';
 Maps.Inject(Marker, MapsTooltip);
 declare var require: any;
-let worlMap: object[] = require('./world-map.json');
-let population: object[] = require('./top-population.json');
+import worlMap from './world-map.json';
+import population from './top-population.json';
 @Component({
     selector: 'control-content',
     templateUrl: 'marker.html', 

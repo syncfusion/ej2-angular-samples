@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ToolbarService, DocumentEditorContainerComponent } from '@syncfusion/ej2-angular-documenteditor';
 import { TitleBar } from './title-bar';
 import { defaultDocument, WEB_API_ACTION } from './data';
+import { isNullOrUndefined } from '@syncfusion/ej2-base';
 
 /**
  * Document Editor Component
@@ -28,10 +29,6 @@ export class AutoSaveComponent {
         this.container.documentEditor.open(JSON.stringify(defaultDocument));
         this.container.documentEditor.documentName = 'Getting Started';
         this.titleBar.updateDocumentTitle();
-        this.container.documentEditor.documentChange = (): void => {
-            this.titleBar.updateDocumentTitle();
-            this.container.documentEditor.focusIn();
-        };
 
         setInterval(() => {
             if (this.contentChanged) {
@@ -50,10 +47,17 @@ export class AutoSaveComponent {
                 this.contentChanged = false;
             }
         }, 15000);
+    }
 
-        this.container.contentChange = (): void => {
-            this.contentChanged = true;
-        };
+    onContentChange(): void {
+        this.contentChanged = true;
+    }
+
+    onDocumentChange(): void {
+        if (!isNullOrUndefined(this.titleBar)) {
+            this.titleBar.updateDocumentTitle();
+        }
+        this.container.documentEditor.focusIn();
     }
 
     public clearLog(): void {

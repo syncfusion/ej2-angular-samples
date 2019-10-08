@@ -1,0 +1,52 @@
+.current-status {
+    float: right;
+    padding: 11px;
+    margin-right: 22px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.e-icons.e-icon-refresh::before {
+    content: "\e606";
+}
+
+.btn-text {
+    display: inline;
+    padding: 2px 35px 2px 64px;
+}
+
+.e-icons.e-icon-tick::before {
+    content: "\e614";
+}
+
+.status-text {
+    padding: 4px;
+}
+
+.e-icon-refresh {
+    width: 10px;
+    display: inline-block;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.bootstrap4 .e-icons.e-icon-refresh::before {
+    content: "\e710";
+}
+
+.bootstrap4 .e-icons.e-icon-tick::before {
+    content: "\e718";
+}
+
+.status-text {
+    font-size: 14px;
+    display: inline-block;
+}

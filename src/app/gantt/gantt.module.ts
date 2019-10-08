@@ -16,6 +16,7 @@ import { GanttTaskbarTemplateComponent } from './taskbar-template.component';
 import { GanttUnscheduledComponent } from './unscheduled-task.component';
 import { GanttZoomingComponent } from './zooming.component';
 import { GanttContextMenuComponent } from './context-menu.component';
+import { GanttExportingComponent } from './exporting.component';
 
 
 export const GanttAppRoutes: Object[] = [
@@ -68,6 +69,11 @@ export const GanttAppRoutes: Object[] = [
         path: ':theme/gantt/context-menu', component: GanttContextMenuComponent,
         description: 'This demo explains the usage of context menu and the default context menu items in Syncfusion Gantt control.',
         name: 'Context Menu', order: '01', category: 'Gantt'
+    },
+    {
+        path: ':theme/gantt/exporting', component: GanttExportingComponent,
+        description: 'This demo explains how to export Gantt content to Excel and CSV documents using the Syncfusion TypeScript Gantt control.',
+        name: 'Exporting', order: '01', category: 'Gantt'
     }
 
 ];
@@ -83,7 +89,8 @@ let declarations: Type<Object>[] = [
     GanttTaskbarTemplateComponent,
     GanttUnscheduledComponent,
     GanttZoomingComponent,
-    GanttContextMenuComponent
+    GanttContextMenuComponent,
+    GanttExportingComponent
 ];
 @NgModule({
     imports: [CommonModule, GanttRouter, SharedModule, GanttAllModule, DropDownListAllModule, CheckBoxAllModule, TextBoxAllModule, NumericTextBoxAllModule],

@@ -25,10 +25,6 @@
         cursor: pointer;
     }
 
-
-    #rteSection {
-        height: 500px;
-    }
   .e-rte-quick-popup .e-rte-quick-toolbar .e-roatate-left::before {
         content: "\e76e";
     }
@@ -88,12 +84,15 @@
     .e-bigger #custom_tbar .e-tbar-btn-text {
         font-size: 18px;
     }
-
     @media (min-width: 320px) and (max-width: 480px) {
         .fabric.e-bigger #rteDialog {
             min-width: 281px;
         }
-
+		
+		#rteSpecial_char {
+        padding: 15px 0 15px 10px;
+		}
+		
         .fabric #rteDialog {
             min-width: 241px;
         }
@@ -119,4 +118,8 @@
     .highcontrast .e-rte-custom-tbar-section .char_block.e-active {
         outline: 1px solid #ffd939;
         border-color: #ffd939;
+    }
+	
+	#rteSection {
+        height: 500px;
     }

@@ -1,7 +1,8 @@
 import { Component, ViewEncapsulation, ViewChild, OnInit } from '@angular/core';
-import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent, ChangeEventArgs, AutoCompleteModel, DropDownListModel, ComboBoxModel, MultiSelectModel } from '@syncfusion/ej2-angular-dropdowns';
 import { InPlaceEditorComponent, MultiSelectService, RenderMode } from '@syncfusion/ej2-angular-inplace-editor';
 import { ComboBoxService, AutoCompleteService } from '@syncfusion/ej2-angular-inplace-editor';
+import { PopupSettingsModel } from '@syncfusion/ej2-inplace-editor/src/inplace-editor/base/models-model';
 
 /**
  * In-place Editor dropdowns sample
@@ -9,61 +10,62 @@ import { ComboBoxService, AutoCompleteService } from '@syncfusion/ej2-angular-in
 @Component({
     selector: 'control-content',
     templateUrl: 'dropdowns.html',
+    styleUrls: ['dropdowns.css'],
     encapsulation: ViewEncapsulation.None,
     providers: [AutoCompleteService, MultiSelectService, ComboBoxService]
 })
 export class DropdownsInplaceEditorComponent implements OnInit {
-    public date: Object = new Date();
+
     @ViewChild('dropdownEle')
     public dropdownsObj: InPlaceEditorComponent;
+
     @ViewChild('autoCompleteEle')
     public autoCompleteEleObj: InPlaceEditorComponent;
+
     @ViewChild('comboBoxEle')
     public comboBoxEleObj: InPlaceEditorComponent;
+
     @ViewChild('multiSelectEle')
     public multiSelectObj: InPlaceEditorComponent;
+
     @ViewChild('editorMode')
     public editorModeObj: DropDownListComponent;
 
-    public autoCompleteModel: object;
-    public dropDownListModel: object;
-    public comboBoxModel: object;
-    public multiSelectModel: object;
-    public settings: object;
+    public date: Date = new Date();
     public dropdownValue: string = 'Canada';
     public autoCompleteValue: string = 'Australia';
     public comboBoxValue: string = 'Finland';
     public multiSelectValue: string[] = ['Canada', 'Bermuda'];
     public editorModeData: string[] = ['Inline', 'Popup'];
     public autocompleteData: string[] = ['Australia', 'Bermuda', 'Canada', 'Cameroon', 'Denmark', 'Finland', 'Greenland', 'Poland'];;
-    public scrollParent: HTMLElement = <HTMLElement>document.querySelector('.sb-right-pane');
+    public autoCompleteModel: AutoCompleteModel = {
+        placeholder: 'Choose the country',
+        dataSource: this.autocompleteData
+    };
+    public dropDownListModel: DropDownListModel = {
+        placeholder: 'Find a country',
+        dataSource: this.autocompleteData
+    };
+    public comboBoxModel: ComboBoxModel = {
+        placeholder: 'Find a country',
+        dataSource: this.autocompleteData
+    };
+    public multiSelectModel: MultiSelectModel= {
+        width: 150,
+        dataSource: this.autocompleteData,
+        placeholder: 'Choose the countries',
+        mode: 'Box'
+    };
+    public settings: PopupSettingsModel = {
+        model: { width: 200 }
+    };    
+    public scrollParent: HTMLElement = document.querySelector('.sb-right-pane') as HTMLElement;
 
     ngOnInit(): void {
-        this.autoCompleteModel = {
-            placeholder: 'Choose the country',
-            dataSource: this.autocompleteData
-        };
-        this.dropDownListModel = {
-            placeholder: 'Find a country',
-            dataSource: this.autocompleteData
-        };
-        this.comboBoxModel = {
-            placeholder: 'Find a country',
-            dataSource: this.autocompleteData
-        };
-        this.multiSelectModel = {
-            width: 150,
-            dataSource: this.autocompleteData,
-            placeholder: 'Choose the countries',
-            mode: 'Box'
-        };
-        this.settings = {
-            model: { width: 200 }
-        };
         this.scrollParent.addEventListener('scroll', this.hidePopup.bind(this));
     }
 
-    changeMode(e: ChangeEventArgs) {
+    changeMode(e: ChangeEventArgs): void {
         /*Apply selected mode to the component*/
         this.dropdownsObj.mode = e.value as RenderMode;
         this.autoCompleteEleObj.mode = e.value as RenderMode;

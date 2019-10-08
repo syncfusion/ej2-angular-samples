@@ -5,19 +5,19 @@ import { Component, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
 import { MapsTheme, Maps, shapeSelected, IShapeSelectedEventArgs, Highlight,
          MapsTooltip, Marker, ILoadEventArgs, ILoadedEventArgs } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
+import worldMap from './world-map.json';
+import datasource from './default-datasource.json';
+import africa from './africa.json';
+import europe from './europe.json';
+import asia from './asia.json';
+import north_america from './north-america.json';
+import south_america from './south-america.json';
+import oceania from './oceania.json';
 Maps.Inject(Highlight, MapsTooltip, Marker );
 
 export interface ShapeData { continent?: string; }
 let touchmove: boolean;
 declare var require: any;
-let worldMap: object[] = require('./world-map.json');
-let datasource: object[] = require('./default-datasource.json');
-let africa: object[] = require('./africa.json');
-let europe: object[] = require('./europe.json');
-let asia: object[] = require('./asia.json');
-let north_america: object[] = require('./north-america.json');
-let south_america: object[] = require('./south-america.json');
-let oceania: object[] = require('./oceania.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'drilldown.html', 

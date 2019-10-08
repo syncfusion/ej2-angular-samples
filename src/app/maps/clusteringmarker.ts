@@ -6,8 +6,8 @@ import { MapsTheme, Maps, Marker, Zoom, MapsTooltip, ILoadEventArgs } from '@syn
 import { cluster } from './marker-location';
 Maps.Inject(Marker, MapsTooltip, Zoom);
 declare var require: any;
-let worlMap: object[] = require('./world-map.json');
-let cities: object[] = require('./marker-cluster.json');
+import worlMap from './world-map.json';
+import cities from './marker-cluster.json';
 @Component({
     selector: 'control-content',
     templateUrl: 'clusteringmarker.html',

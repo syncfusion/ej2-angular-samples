@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ToolbarService, DocumentEditorContainerComponent } from '@syncfusion/ej2-angular-documenteditor';
 import { TitleBar } from './title-bar';
 import { toc, WEB_API_ACTION } from './data';
+import { isNullOrUndefined } from '@syncfusion/ej2-base';
 /**
  * Document Editor Component
  */
@@ -25,9 +26,12 @@ export class TableOfContentsComponent {
         this.container.documentEditor.open(JSON.stringify(toc));
         this.container.documentEditor.documentName = 'Table of Contents';
         this.titleBar.updateDocumentTitle();
-        this.container.documentEditor.documentChange = (): void => {
+    }
+
+    onDocumentChange(): void {
+        if (!isNullOrUndefined(this.titleBar)) {
             this.titleBar.updateDocumentTitle();
-            this.container.documentEditor.focusIn();
-        };
+        }
+        this.container.documentEditor.focusIn();
     }
 }

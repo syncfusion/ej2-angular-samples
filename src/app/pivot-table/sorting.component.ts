@@ -84,23 +84,23 @@ export class SortingComponent implements OnInit {
                 this.fieldsddl.enabled = ischecked;
                 this.orderddl.enabled = ischecked;
                 this.applyBtn.disabled = !ischecked;
-                // this.pivotObj.dataSourceSettings.enableSorting = ischecked;
+                this.pivotObj.dataSourceSettings.enableSorting = ischecked;
             }
         });
         checkBoxObj.appendTo('#sorting');
 
         document.getElementById('apply').onclick = () => {
             if (checkBoxObj.checked) {
-                // this.pivotObj.dataSourceSettings.enableSorting = true;
-                // this.pivotObj.dataSourceSettings.sortSettings = [
-                //     { name: 'Country', order: (this.fieldsddl.dataSource as any)[0].Order === 'Country_asc' ? 'Ascending' : 'Descending' },
-                //     { name: 'Products', order: (this.fieldsddl.dataSource as any)[1].Order === 'Products_asc' ? 'Ascending' : 'Descending' },
-                //     { name: 'Year', order: (this.fieldsddl.dataSource as any)[2].Order === 'Year_asc' ? 'Ascending' : 'Descending' },
-                //     { name: 'Order_Source', order: (this.fieldsddl.dataSource as any)[3].Order === 'Order Source_asc' ? 'Ascending' : 'Descending' }
-                // ];
+                this.pivotObj.dataSourceSettings.enableSorting = true;
+                this.pivotObj.dataSourceSettings.sortSettings = [
+                    { name: 'Country', order: (this.fieldsddl.dataSource as any)[0].Order === 'Country_asc' ? 'Ascending' : 'Descending' },
+                    { name: 'Products', order: (this.fieldsddl.dataSource as any)[1].Order === 'Products_asc' ? 'Ascending' : 'Descending' },
+                    { name: 'Year', order: (this.fieldsddl.dataSource as any)[2].Order === 'Year_asc' ? 'Ascending' : 'Descending' },
+                    { name: 'Order_Source', order: (this.fieldsddl.dataSource as any)[3].Order === 'Order Source_asc' ? 'Ascending' : 'Descending' }
+                ];
             } else {
-                // this.pivotObj.dataSourceSettings.enableSorting = false;
-                // this.pivotObj.dataSourceSettings.sortSettings = [];
+                this.pivotObj.dataSourceSettings.enableSorting = false;
+                this.pivotObj.dataSourceSettings.sortSettings = [];
             }
         };
 
@@ -108,7 +108,7 @@ export class SortingComponent implements OnInit {
             rows: [{ name: 'Country' }, { name: 'Products' }],
             formatSettings: [{ name: 'Amount', format: 'C0' }],
             columns: [{ name: 'Year' }, { name: 'Order_Source', caption: 'Order Source' }],
-            // dataSource: Pivot_Data,
+            dataSource: Pivot_Data,
             expandAll: false,
             values: [{ name: 'In_Stock', caption: 'In Stock' }, { name: 'Sold', caption: 'Units Sold' },
             { name: 'Amount', caption: 'Sold Amount' }],

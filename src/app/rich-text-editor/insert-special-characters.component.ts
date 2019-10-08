@@ -2,10 +2,13 @@
  * RTE Custom-Toolbar Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { Browser, addClass } from '@syncfusion/ej2-base';
+import { Browser } from '@syncfusion/ej2-base';
 import { ToolbarService, NodeSelection, LinkService, ImageService } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, HtmlEditorService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
 import { Dialog } from '@syncfusion/ej2-popups';
+import { ToolbarSettingsModel } from '@syncfusion/ej2-dropdowns';
+import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { ButtonComponent, ButtonModel } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'control-content',
@@ -16,30 +19,36 @@ import { Dialog } from '@syncfusion/ej2-popups';
 })
 
 export class InsertSpecialCharactersComponent {
+
     @ViewChild('customRTE')
     public rteObj: RichTextEditorComponent;
+
     @ViewChild('Dialog')
     public dialogObj: Dialog;
+
     public selection: NodeSelection = new NodeSelection();
     public range: Range;
-    public customBtn: any;
-    public dialogCtn: any;
+    public customBtn: HTMLElement;
+    public dialogCtn: HTMLElement;
     public saveSelection: NodeSelection;
-    public tools: object = {
+
+    public tools: ToolbarModule = {
         items: ['Bold', 'Italic', 'Underline', '|', 'Formats', 'Alignments', 'OrderedList',
-        'UnorderedList', '|', 'CreateLink', 'Image', '|', 'SourceCode',
-        {
-            tooltipText: 'Insert Symbol',
-            template: '<button class="e-tbar-btn e-btn" tabindex="-1" id="custom_tbar"  style="width:100%">'
-                      + '<div class="e-tbar-btn-text" style="font-weight: 500;"> Ω</div></button>'
-        }, '|', 'Undo', 'Redo'
+            'UnorderedList', '|', 'CreateLink', 'Image', '|', 'SourceCode',
+            {
+                tooltipText: 'Insert Symbol',
+                template: '<button class="e-tbar-btn e-btn" tabindex="-1" id="custom_tbar"  style="width:100%">'
+                    + '<div class="e-tbar-btn-text" style="font-weight: 500;"> Ω</div></button>'
+            }, '|', 'Undo', 'Redo'
         ]
     };
-    public dlgButtons: any = [{ buttonModel: { content: "Insert", isPrimary: true }, click: this.onInsert.bind(this) },
-    { buttonModel: { content: 'Cancel' }, click: this.dialogOverlay.bind(this) }];
-    public header: string = 'Special Characters';
+    public dlgButtons: { [key: string]: ButtonModel }[] = [
+        { buttonModel: { content: 'Insert', isPrimary: true }, click: this.onInsert.bind(this) },
+        { buttonModel: { content: 'Cancel' }, click: this.dialogOverlay.bind(this) }
+    ];
+    public header = 'Special Characters';
     public target: HTMLElement = document.getElementById('rteSection');
-    public height: any = '350px';
+    public height: string | number = '350px';
     public onCreate(): void {
         this.customBtn = document.getElementById('custom_tbar') as HTMLElement;
         this.dialogCtn = document.getElementById('rteSpecial_char') as HTMLElement;
@@ -82,10 +91,18 @@ export class InsertSpecialCharactersComponent {
     }
 
     public dialogOverlay(): void {
-        let activeEle: Element = this.dialogObj.element.querySelector('.char_block.e-active');
+        const activeEle: Element = this.dialogObj.element.querySelector('.char_block.e-active');
         if (activeEle) {
             activeEle.classList.remove('e-active');
         }
         this.dialogObj.hide();
+    }
+
+    public actionCompleteHandler(e: any): void {
+        if (e.requestType === 'SourceCode') {
+        this.rteObj.getToolbar().querySelector('#custom_tbar').parentElement.classList.add('e-overlay');
+        } else if (e.requestType === 'Preview') {
+        this.rteObj.getToolbar().querySelector('#custom_tbar').parentElement.classList.remove('e-overlay');
+        }
     }
 }

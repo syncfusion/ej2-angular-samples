@@ -16,7 +16,7 @@ import { Browser } from '@syncfusion/ej2-base';
 export class RemoteDataChartComponent {
 
     public data: DataManager = new DataManager({
-        url: 'https://mvc.syncfusion.com/Services/Northwnd.svc/Tasks/'
+        url: 'https://ej2services.syncfusion.com/production/web-services/api/Orders'
     });
     @ViewChild('chart')
     public chart: ChartComponent;

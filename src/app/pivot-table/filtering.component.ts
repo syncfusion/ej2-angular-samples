@@ -5,7 +5,7 @@ import { CheckBoxSelection } from '@syncfusion/ej2-dropdowns';
 import { Button } from '@syncfusion/ej2-buttons';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
-// import { FilterModel } from '@syncfusion/ej2-pivotview/src/pivotview/model/datasourcesettings-model';
+import { FilterModel } from '@syncfusion/ej2-pivotview/src/pivotview/model/datasourcesettings-model';
 enableRipple(false);
 MultiSelect.Inject(CheckBoxSelection);
 /**
@@ -24,7 +24,7 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
 export class FilteringComponent implements OnInit {
     public dataSourceSettings: IDataOptions;
     public fieldCollections: { [key: string]: { [key: string]: Object }[] } = {};
-    // public filterCollections: { [key: string]: FilterModel } = {};
+    public filterCollections: { [key: string]: FilterModel } = {};
     public isInitial: boolean = true;
     public type: string[] = ['Include', 'Exclude'];
     public values: { [key: string]: Object }[] = [];
@@ -66,15 +66,15 @@ export class FilteringComponent implements OnInit {
     }
 
     /** To set the filter type of the members maintained in the object filterCollections. */
-    // updateFilterType(fieldName: string): FilterType {
-        // if ((this.fieldsddl as any).itemData === fieldName) {
-        //     return (this.typeddl as any).itemData;
-        // } else if (this.filterCollections[fieldName]) {
-        //     return this.filterCollections[fieldName].type;
-        // } else {
-        //     return 'Exclude';
-        // }
-    // }
+    updateFilterType(fieldName: string): FilterType {
+        if ((this.fieldsddl as any).itemData === fieldName) {
+            return (this.typeddl as any).itemData;
+        } else if (this.filterCollections[fieldName]) {
+            return this.filterCollections[fieldName].type;
+        } else {
+            return 'Exclude';
+        }
+    }
 
     /** To set disabled/enabled state in the Apply button. */
     setApplyBtnState(): void {
@@ -87,11 +87,11 @@ export class FilteringComponent implements OnInit {
                 isSelected = true;
                 break;
             }
-            // if (this.pivotObj.dataSourceSettings.filterSettings &&
-            //     this.pivotObj.dataSourceSettings.filterSettings[loopCount] &&
-            //     this.pivotObj.dataSourceSettings.filterSettings[loopCount].items.length > 0) {
-            //     isFiltersAvail = true;
-            // }
+            if (this.pivotObj.dataSourceSettings.filterSettings &&
+                this.pivotObj.dataSourceSettings.filterSettings[loopCount] &&
+                this.pivotObj.dataSourceSettings.filterSettings[loopCount].items.length > 0) {
+                isFiltersAvail = true;
+            }
             loopCount--;
         }
         this.applyBtn.disabled = (!isSelected && isFiltersAvail) ? isSelected : !isSelected;
@@ -117,9 +117,9 @@ export class FilteringComponent implements OnInit {
             this.valuesddl.dataBind();
             this.isInitial = false;
         }
-        // for (let field of this.pivotObj.dataSourceSettings.filterSettings) {
-        //     this.filterCollections[field.name] = field;
-        // }
+        for (let field of this.pivotObj.dataSourceSettings.filterSettings) {
+            this.filterCollections[field.name] = field;
+        }
     }
 
     ngOnInit(): void {
@@ -134,7 +134,7 @@ export class FilteringComponent implements OnInit {
             rows: [{ name: 'Country' }, { name: 'Products' }],
             formatSettings: [{ name: 'Amount', format: 'C0' }],
             columns: [{ name: 'Year' }],
-            // dataSource: Pivot_Data,
+            dataSource: Pivot_Data,
             expandAll: false
         };
 
@@ -170,9 +170,9 @@ export class FilteringComponent implements OnInit {
             change: (args: ChangeEventArgs) => {
                 this.valuesddl.dataSource = this.fieldCollections[args.value.toString()];
                 this.valuesddl.value = this.getSelectedMembers(args.value.toString());
-                // if (this.filterCollections[args.value.toString()]) {
-                //     this.typeddl.value = this.filterCollections[args.value.toString()].type;
-                // }
+                if (this.filterCollections[args.value.toString()]) {
+                    this.typeddl.value = this.filterCollections[args.value.toString()].type;
+                }
                 this.valuesddl.dataBind();
                 this.typeddl.dataBind();
             }
@@ -196,11 +196,11 @@ export class FilteringComponent implements OnInit {
             let filterItems0: string[] = this.getSelectedMembers(this.fields[0]);
             let filterItems1: string[] = this.getSelectedMembers(this.fields[1]);
             let filterItems2: string[] = this.getSelectedMembers(this.fields[2]);
-            // this.pivotObj.dataSourceSettings.filterSettings = [
-            //     { name: this.fields[0], items: this.getSelectedMembers(this.fields[0]), type: this.updateFilterType(this.fields[0]) },
-            //     { name: this.fields[1], items: this.getSelectedMembers(this.fields[1]), type: this.updateFilterType(this.fields[1]) },
-            //     { name: this.fields[2], items: this.getSelectedMembers(this.fields[2]), type: this.updateFilterType(this.fields[2]) },
-            // ];
+            this.pivotObj.dataSourceSettings.filterSettings = [
+                { name: this.fields[0], items: this.getSelectedMembers(this.fields[0]), type: this.updateFilterType(this.fields[0]) },
+                { name: this.fields[1], items: this.getSelectedMembers(this.fields[1]), type: this.updateFilterType(this.fields[1]) },
+                { name: this.fields[2], items: this.getSelectedMembers(this.fields[2]), type: this.updateFilterType(this.fields[2]) },
+            ];
             if (filterItems0.length === 0 && filterItems1.length === 0 && filterItems2.length === 0) {
                 this.applyBtn.disabled = true;
             }

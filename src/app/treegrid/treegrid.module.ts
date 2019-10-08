@@ -18,6 +18,7 @@ import { ColumnTemplateComponent } from './columntemplate.component';
 import { ColumnReorderComponent } from './reorder.component';
 import { ResizingComponent } from './resizing.component';
 import { ColumnMenuComponent } from './columnmenu.component';
+import { FreezeComponent } from './frozen-column.component';
 import { CellAlignmentComponent } from './cellalignment.component';
 import { AutoWrap } from './autowrap.component';
 import { ShowHideComponent } from './showhide.component';
@@ -26,6 +27,7 @@ import { GridLinesComponent } from './gridlines.component';
 import { RowHover } from './row-hover.component';
 import { RowHeightComponent } from './rowheight.component';
 import { RowTemplateComponent } from './row-template.component';
+import { DragDropComponent } from './drag-drop.component';
 import { InlineEditing } from './inlineediting.component';
 import { DialogEditingComponent} from './dialogediting.component';
 import { LockRowComponent} from './lockrow.component';
@@ -60,7 +62,6 @@ import { ReactiveFormsModule ,  FormsModule} from '@angular/forms';
 import { SparklineAllModule } from '@syncfusion/ej2-angular-charts';
 import { DefaultScrollingComponent } from './default-scrolling.component';
 import { VirtualScrollingComponent } from './virtual-scrolling.component';
-import { DetailTemplateComponent } from './detail-template.component';
 
 export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/treegrid-overview', component: TreeGridOverviewComponent, 'name': 'Overview',
@@ -111,18 +112,21 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/checkbox-column', component: CheckboxColumnComponent, 'name': 'Checkbox Column',
     description: 'This demo explains how the hierarchy selection between the records using column checkboxes in Essential TypeScript TreeGrid control.', 
     order: '03', category: 'Columns' },
+    { 'path': ':theme/treegrid/frozen-column', component: FreezeComponent, 'name': 'Frozen Column',
+    description: 'This demo for Essential JS 2 treegrid control shows frozen columns feature of treegrid. Scroll the movable content to view the frozen columns.', 
+    order: '03', category: 'Columns', 'type': 'new' },
     { 'path': ':theme/treegrid/row-hover', component: RowHover, 'name': 'Row Hover', 
     description: 'This demo explains how the treegrid row color is changed while move the mouse over a row in Syncfusion Essential JS2 TreeGrid content.', 
     order: '04', category: 'Rows' },
     { 'path': ':theme/treegrid/rowheight', component: RowHeightComponent, 'name': 'Row Height',
     description: 'This demo explains the way of customizing the row height of Syncfusion Essential JS2 TreeGrid control.', 
     order: '04', category: 'Rows' },
+    { 'path': ':theme/treegrid/drag-drop', component: DragDropComponent, 'name': 'Drag and Drop',
+    description: 'This demo for Essential JS 2 treegrid component shows how the rows can be dragged within the treegrid using the row drag-and-drop feature.',
+    order: '04', category: 'Rows', type: 'new' },
     { 'path': ':theme/treegrid/row-template', component: RowTemplateComponent, 'name': 'Row Template',
-    description: 'This demo for Essential JS 2 treegrid component shows the usage of the row template feature.',
-    order: '04', category: 'Rows', 'type': 'new' },
-    { 'path': ':theme/treegrid/detail-template', component: DetailTemplateComponent, 'name': 'Detail Template',
-    description: 'This demo shows TreeGrid with detail template feature and also each row contains detailed information about a row."',
-    order: '04', category: 'Rows', 'type': 'new' },
+    description: 'This demo for Essential JS 2 treegrid component shows the usage of the row template feature.', 
+    order: '04', category: 'Rows' },
     { 'path': ':theme/treegrid/inlineediting', component: InlineEditing, 'name': 'Inline Editing', 
     description: 'This example shows how to add and edit row or cell inline on the Syncfusion Essential JS2 TreeGrid control.', 
     order: '05', category: 'Editing' },
@@ -170,10 +174,10 @@ export const treegridRouteConfig: Object[] = [
     order: '08', category: 'Paging' },
     { 'path': ':theme/treegrid/default-scrolling', component: DefaultScrollingComponent, 'name': 'Default Scrolling',
     description: 'This demo for Essential JS 2 TreeGrid control shows the usage of the horizontal and vertical scrollbars to view TreeGrid content that exceeds the TreeGrid area.', 
-    order: '09', category: 'Scrolling',type: 'new' },
+    order: '09', category: 'Scrolling'},
     { 'path': ':theme/treegrid/virtual-scrolling', component: VirtualScrollingComponent, 'name': 'Virtual Scrolling',
     description: 'This demo demonstrates how to use Essential JS 2 TreeGrid to show a large data view without performance degradation by rendering only the required rows.', 
-    order: '09', category: 'Scrolling',type: 'new' },
+    order: '09', category: 'Scrolling' },
     { 'path': ':theme/treegrid/selection', component: SelectionComponent, 'name': 'Default Selection',
     description: 'This demo explains the customization of selection mode and toggle selection of Syncfusion Essential JS2 TreeGrid control.', 
     order: '10', category: 'Selection' },
@@ -220,8 +224,8 @@ export const treegridRouteConfig: Object[] = [
 
 let declarations: Type<Object>[] = [TreeGridOverviewComponent, DefaultComponent, LocalDataComponent, RemoteData, SelfReferenceComponent, SortComponent, SortingAPIComponent, DefaultPagingComponent, PagingAPIComponent, ContextMenuComponent, CustomContextMenuComponent, AggregateComponent, CustomAggregateComponent, ColumnReorderComponent, ColumnFormattingComponent, ColumnTemplateComponent, ResizingComponent,
     ColumnMenuComponent, CellAlignmentComponent, AutoWrap, ShowHideComponent, HeaderTemplateComponent, FilterComponent, InlineEditing, DialogEditingComponent, LockRowComponent, CellEditTypeComponent, CommandColumnComponent, EditTemplateComponent, ReactiveFormsComponent, TemplateFormsComponent, SearchComponent,
-    StackedHeaderComponent, KeyBoardComponent, DefaultExportComponent, PrintComponent, EventComponent, ConditionalFormattingComponent, ToolbarTemplateComponent,DetailTemplateComponent,
-    GridLinesComponent, RowHover, RowHeightComponent, RowTemplateComponent, FilteringMenuComponent, DefaultScrollingComponent, VirtualScrollingComponent, SelectionComponent, SelectionAPIComponent, CheckboxSelectionComponent, CheckboxColumnComponent];
+    StackedHeaderComponent, KeyBoardComponent, DefaultExportComponent, PrintComponent, EventComponent, ConditionalFormattingComponent, ToolbarTemplateComponent,
+    GridLinesComponent, RowHover, RowHeightComponent, RowTemplateComponent, DragDropComponent, FilteringMenuComponent, FreezeComponent, DefaultScrollingComponent, VirtualScrollingComponent, SelectionComponent, SelectionAPIComponent, CheckboxSelectionComponent, CheckboxColumnComponent];
 
 @NgModule({
     imports: [RouterModule.forChild(treegridRouteConfig), CommonModule, HttpModule, TreeGridAllModule,

@@ -6,11 +6,11 @@ import { ScheduleAllModule, RecurrenceEditorAllModule } from '@syncfusion/ej2-an
 import { NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { DatePickerAllModule, TimePickerAllModule, DateTimePickerAllModule } from '@syncfusion/ej2-angular-calendars';
 import { CheckBoxAllModule } from '@syncfusion/ej2-angular-buttons';
-import { ButtonAllModule  } from '@syncfusion/ej2-angular-buttons';
+import { ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
 import { ToolbarAllModule, ContextMenuAllModule } from '@syncfusion/ej2-angular-navigations';
 import { MaskedTextBoxModule, UploaderAllModule } from '@syncfusion/ej2-angular-inputs';
 import { DropDownListAllModule, MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
-import { TreeViewModule } from '@syncfusion/ej2-angular-navigations';
+import { TreeViewModule } from '@syncfusion/ej2-angular-navigations';
 
 import { DefaultComponent } from './default.component';
 import { TimelineComponent } from './timeline.component';
@@ -64,6 +64,7 @@ import { AdaptiveRowsComponent } from './adaptive-rows.component';
 import { ExcelExportComponent } from './excel-export.component';
 import { CalendarExportImportComponent } from './calendar-export-import.component';
 import { PrintComponent } from './print.component';
+import { YearComponent } from './year.component';
 import { SharedModule } from '../common/shared.module';
 
 export const scheduleRouteConfig: Object[] = [
@@ -71,7 +72,7 @@ export const scheduleRouteConfig: Object[] = [
   { 'path': ':theme/schedule/local-data', component: LocalDataComponent, name: 'Local Data', order: '02', category: 'Data Binding', description: 'This demo for Essential JS2 Scheduler control shows the way of binding an array of JavaScript objects (local JSON datasource).' },
   { 'path': ':theme/schedule/remote-data', component: RemoteDataComponent, name: 'Remote Data', order: '02', category: 'Data Binding', description: 'This demo for Essential JS2 Scheduler control shows the way of binding remote services by using the DataManager.' },
   { 'path': ':theme/schedule/calendar-integration', component: CalendarIntegrationComponent, name: 'Sync Google Calendar', order: '02', category: 'Appointments', description: 'This example shows how to integrate Google Calendar events into Angular Scheduler.' },
-  { 'path': ':theme/schedule/recurrence-events', component: RecurrenceComponent, name: 'Recurring Events', order: '03', type: 'update', category: 'Appointments', description: 'This demo for Essential JS2 Scheduler control shows the scheduler with recurring meetings handled on a regular pattern.' },
+  { 'path': ':theme/schedule/recurrence-events', component: RecurrenceComponent, name: 'Recurring Events', order: '03', category: 'Appointments', description: 'This demo for Essential JS2 Scheduler control shows the scheduler with recurring meetings handled on a regular pattern.' },
   { 'path': ':theme/schedule/block-events', component: BlockEventsComponent, name: 'Blocking Dates and Time', order: '03', category: 'Appointments', description: 'This example shows how to block specific days or time intervals on Angular Scheduler.' },
   { 'path': ':theme/schedule/search-events', component: SearchEventsComponent, name: 'Search Events', order: '03', category: 'Appointments', description: 'This example shows how to search the scheduler events based on specific field criteria.' },
   { 'path': ':theme/schedule/timezone-event', component: TimezoneComponent, name: 'Timezone', order: '03', category: 'Appointments', description: 'This demo for Essential JS2 Scheduler control shows how the events are displayed in different timings as per the selected timezone.' },
@@ -81,6 +82,7 @@ export const scheduleRouteConfig: Object[] = [
   { 'path': ':theme/schedule/timeline', component: TimelineComponent, name: 'Timeline Views ', order: '05', category: 'Views', description: 'This demo for Essential JS2 Scheduler control shows how the timeline scheduler looks like with its default set of configurations.' },
   { 'path': ':theme/schedule/agenda', component: AgendaComponent, name: 'Agenda View', order: '05', category: 'Views', description: 'This demo for Essential JS2 Scheduler control shows the agenda view and the configurations available in it.' },
   { 'path': ':theme/schedule/month-agenda', component: MonthAgendaComponent, name: 'Month Agenda View', order: '05', category: 'Views', description: 'This demo for Essential JS2 Scheduler control shows the layout of Month Agenda view and how it works.' },
+  { 'path': ':theme/schedule/year', component: YearComponent, name: 'Year View', order: '05', category: 'Views', type: 'new', description: 'This example for Essential JS2 Scheduler control shows the layout of Horizontal and Vertical Year views and how it works.' },
   { 'path': ':theme/schedule/view-configuration', component: ViewConfigComponent, name: 'Individual View Settings', order: '05', category: 'Views', description: 'This demo for Essential JS2 Scheduler control shows how to customize each of the view with specific configurations.' },
   { 'path': ':theme/schedule/extended-views', component: ExtendedViewsComponent, name: 'View Intervals', order: '05', category: 'Views', description: '– This demo for Essential JS2 Scheduler control shows how to display n number of days, weeks and months on a single view.' },
   { 'path': ':theme/schedule/timeline-resource', component: TimelineResourcesComponent, name: 'Room Scheduler', order: '06', category: 'Multiple Resources', description: 'This demo for Essential JS2 Scheduler control shows how to design the room scheduling calendar and manage the events booked on a particular time interval.' },
@@ -110,11 +112,11 @@ export const scheduleRouteConfig: Object[] = [
   { 'path': ':theme/schedule/hide-weekend', component: HideWeekEndComponent, name: 'Hide Non-Working Days', order: '10', category: 'Customization', description: 'This demo for Essential JS2 Scheduler control depicts the way to show or hide the weekend days of a week.' },
   { 'path': ':theme/schedule/work-hours', component: WorkHoursComponent, name: 'Work Hours', order: '10', category: 'Customization', description: 'This demo for Essential JS2 Scheduler control showcases how to set the work hour range on scheduler.' },
   { 'path': ':theme/schedule/start-end-hour', component: StartEndHourComponent, name: 'Day Hour Limit', order: '10', category: 'Customization', description: 'This demo for Essential JS2 Scheduler control depicts how to restrict the start and end hours on scheduler.' },
-  { 'path': ':theme/schedule/cell-dimension', component: CellDimensionComponent, name: 'Cell Dimension', order: '10', type: 'update', category: 'Customization', description: 'This demo for Essential JS2 Scheduler control shows how to set the width and height of the cells by overriding the default CSS classes.' },
+  { 'path': ':theme/schedule/cell-dimension', component: CellDimensionComponent, name: 'Cell Dimension', order: '10', category: 'Customization', description: 'This demo for Essential JS2 Scheduler control shows how to set the width and height of the cells by overriding the default CSS classes.' },
   { 'path': ':theme/schedule/read-only', component: ReadOnlyComponent, name: 'Read-only Events', order: '10', category: 'Customization', description: 'This demo for Essential JS2 Scheduler control shows how to make specific events on the scheduler to be displayed in a read-only mode.' },
   { 'path': ':theme/schedule/excel-export', component: ExcelExportComponent, name: 'Excel Exporting', order: '13', category: 'Exporting', description: 'This example demonstrates how to export the Essential JS2 Scheduler events to the excel file format at client-side.' },
   { 'path': ':theme/schedule/calendar-export-import', component: CalendarExportImportComponent, name: 'Export and Import ICS', order: '13', category: 'Exporting', description: 'This example shows how to export the Scheduler events to a calendar file, and also how to import events from an .ics file into our Essential JS2 Scheduler.' },
-  { 'path': ':theme/schedule/print', component: PrintComponent, name: 'Print', order: '13', type: 'new', category: 'Exporting', description: 'This example demonstrates how to print the Essential JS2 Scheduler element at client-side with themes enabled.' },
+  { 'path': ':theme/schedule/print', component: PrintComponent, name: 'Print', order: '13', category: 'Exporting', description: 'This example demonstrates how to print the Essential JS2 Scheduler element at client-side with themes enabled.' },
   { 'path': ':theme/schedule/recurrence-editor-generate-rule', component: RecGeneraterComponent, name: 'Rule Generator', order: '11', category: 'Recurrence Editor', description: 'This demo for Essential JS2 Scheduler control showcases the recurrence rule generation based on the options selected from the recurrence editor.' },
   { 'path': ':theme/schedule/recurrence-editor-populate-rule', component: RecPopulateComponent, name: 'Populate Rule', order: '11', category: 'Recurrence Editor', description: 'This demo for Essential JS2 Scheduler control shows how to fill the recurrence editor fields with values based on the provided recurrence rule string.' },
   { 'path': ':theme/schedule/keyboard-interaction', component: KeyboardComponent, name: 'Keyboard Interaction', hideOnDevice: true, order: '12', category: 'Miscellaneous', description: 'This demo for Essential JS2 Scheduler control showcases the keyboard shortcuts available on scheduler.' },
@@ -131,7 +133,7 @@ const declarations: Type<Object>[] = [
   GroupCustomWorkDaysComponent, GroupByDateComponent, GroupByChildComponent, ExtendedViewsComponent, ResourcesComponent, ResourceComponent,
   GroupComponent, AddRemoveResourcesComponent, TimelineComponent, TimelineResourceGroupingComponent, TimelineResourcesComponent,
   HeaderRowsComponent, ExternalDragDropComponent, ScheduleContextMenuComponent, VirtualScrollingComponent, CalendarIntegrationComponent,
-  CalendarExportImportComponent, ExcelExportComponent, PrintComponent
+  CalendarExportImportComponent, ExcelExportComponent, PrintComponent, YearComponent
 ];
 
 @NgModule({

@@ -189,7 +189,7 @@ export class DefaultComponent implements OnInit {
             enableSorting: true,
             columns: [{ name: 'Year' }, { name: 'Quarter' }],
             values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
-            // dataSource: this.getPivotData(),
+            dataSource: this.getPivotData(),
             rows: [{ name: 'Country' }, { name: 'Products' }],
             formatSettings: [{ name: 'Amount', format: 'C0' }],
             expandAll: false,

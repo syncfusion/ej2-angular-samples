@@ -6,7 +6,7 @@
     </div>
     
     <div class="control-section">
-            <div class="col-lg-9">
+            <div class="col-lg-8">
         <div align='center'>
             <ejs-maps id='container' #maps style="display:block;" [zoomSettings]='zoomSettings' [layers]='layers' [legendSettings]="legendSettings"
                 [titleSettings]="titleSettings" (load)="load($event)" (tooltipRender)="tooltipRender($event)">
@@ -16,7 +16,7 @@
             <a href="https://simple.wikipedia.org/wiki/List_of_countries_by_population_density" target="_blank">simple.wikipedia.org</a>
         </div>
     </div>
-    <div class="col-lg-3 property-section">
+    <div class="col-lg-4 property-section">
             <div class="property-panel-section">
                     <div class="property-panel-header">Properties</div>
                     <div class="property-panel-content">
@@ -24,7 +24,7 @@
                 <tbody>
                     <tr style="height: 50px">
                         <td style="width: 10%">
-                            <div class="property-text" style="padding: 0px;">Type</div>
+                            <div class="property-text" style="padding: 0px;">Legend mode </div>
                         </td>
                         <td style="width: 30%;">
                             <select name="selectIndex" autocomplete="off" id="legendMode" style="width:60%;">
@@ -35,7 +35,7 @@
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 10%">
-                            <div class="property-text" style="padding: 0px;">Position</div>
+                            <div class="property-text" style="padding: 0px;">Legend position </div>
                         </td>
                         <td style="width: 30%">
                             <select name="legendPos" autocomplete="off" id="legendPosition" style="width:60%;">
@@ -47,12 +47,22 @@
                         </td>
                     </tr>
                     <tr style="height: 50px">
-                        <td style="width: 10%">
-                            <div class="property-text" style="padding: 0px;">Remaining items in data source</div>
+                        <td style="width: 70%">
+                            <div class="property-text" style="padding: 0px;">Show legend for remaining data source items</div>
                         </td>
-                        <td style="width: 30%">
-                            <div>
+                        <td style="width: 20%">
+                            <div style="padding-top:0px; padding-left: 20px;">
                                 <input type="checkbox" id="opacity"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 70%">
+                            <div class="property-text" style="padding: 0px;">Show population density when the legend item is toggled</div>
+                        </td>
+                        <td style="width: 20%">
+                            <div style="padding-top:0px; padding-left: 20px;">
+                                <input type="checkbox" id="toggleLegend"/>
                             </div>
                         </td>
                     </tr>

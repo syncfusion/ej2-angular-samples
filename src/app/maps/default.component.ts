@@ -4,10 +4,10 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { MapsTheme, Maps, Legend, Marker, MapsTooltip, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
+import worldMap from './world-map.json';
+import datasource from './default-datasource.json';
 Maps.Inject(Legend, Marker, MapsTooltip);
 declare var require: any;
-let worldMap: object[] = require('./world-map.json');
-let datasource: object[] = require('./default-datasource.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',

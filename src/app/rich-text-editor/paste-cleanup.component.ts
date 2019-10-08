@@ -3,12 +3,12 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { RadioButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { RichTextEditorComponent, ToolbarService, LinkService, ImageService } from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorComponent, ToolbarService,PasteCleanupSettingsModel, LinkService, ImageService } from '@syncfusion/ej2-angular-richtexteditor';
 import { PasteCleanupService } from '@syncfusion/ej2-angular-richtexteditor';
 import { HtmlEditorService, CountService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
 import { Link, Count, HtmlEditor, QuickToolbar } from '@syncfusion/ej2-angular-richtexteditor';
 import { TextBox } from '@syncfusion/ej2-inputs'
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent, FieldSettingsModel } from '@syncfusion/ej2-angular-dropdowns';
 
 @Component({
     selector: 'control-content',
@@ -18,38 +18,47 @@ import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
     providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, CountService, QuickToolbarService, PasteCleanupService]
 })
 export class PasteCleanupComponent {
+
     @ViewChild('pasteCleanupRTE')
     public rteObj: RichTextEditorComponent;
+
     @ViewChild('formatOption')
     public formatObj: DropDownListComponent;
+
     @ViewChild('prompt')
     public promptObj: RadioButtonComponent;
+
     @ViewChild('plainText')
     public plainTextObj: RadioButtonComponent;
+
     @ViewChild('keepFormat')
     public keepFormatObj: RadioButtonComponent;
+
     @ViewChild('cleanFormat')
     public cleanFormatObj: RadioButtonComponent;
+
     @ViewChild('deniedTags')
     public deniedTags: TextBox;
+
     @ViewChild('deniedAttributes')
     public deniedAttributes: TextBox;
+
     @ViewChild('allowedStyleProperties')
     public allowedStyleProperties: TextBox;
 
-    public pasteCleanupSettings: any = {
+    public pasteCleanupSettings: PasteCleanupSettingsModel = {
         prompt: true,
         plainText: false,
         keepFormat: false
     };
 
-    public formatData: Object[] = [
+    public formatData: { [key: string]: Object }[] = [
         { Id: 'prompt', Format: 'Prompt' },
         { Id: 'plainTextFormatting', Format: 'Plain Text' },
         { Id: 'keepFormating', Format: 'Keep Format' },
         { Id: 'Clean Formatting', Format: 'Clean Format' }
     ];
-    public fields: Object = { Format: 'Id', value: 'Format' };
+    public fields: FieldSettingsModel = { text: 'Format', value: 'Format' };
     public height: string = '200px';
     public value: string = 'Prompt';
 
@@ -72,14 +81,11 @@ export class PasteCleanupComponent {
 
     public deniedTagChange(): void {
         this.rteObj.pasteCleanupSettings.deniedTags = (eval)('[' + this.deniedTags.value + ']');
-        this.rteObj.dataBind();
     }
     public deniedAttrsChange(): void {
         this.rteObj.pasteCleanupSettings.deniedAttrs = (eval)('[' + this.deniedAttributes.value + ']');
-        this.rteObj.dataBind();
     }
     public allowStyleChange(): void {
         this.rteObj.pasteCleanupSettings.allowedStyleProps = (eval)('[' + this.allowedStyleProperties.value + ']');
-        this.rteObj.dataBind();
     }
 }

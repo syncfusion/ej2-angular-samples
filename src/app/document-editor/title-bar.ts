@@ -47,23 +47,31 @@ export class TitleBar {
         }
         // tslint:disable-next-line:max-line-length
         this.documentTitle = createElement('label', { id: 'documenteditor_title_name', styles: 'font-weight:400;text-overflow:ellipsis;white-space:pre;overflow:hidden;user-select:none;cursor:text' });
+        let iconCss: string = 'e-de-padding-right';
+        let btnFloatStyle: string = 'float:right;';
+        let titleCss: string = '';
+        if (this.isRtl) {
+            iconCss = 'e-de-padding-right-rtl';
+            btnFloatStyle = 'float:left;';
+            titleCss = 'float:right;';
+        }
         // tslint:disable-next-line:max-line-length
-        this.documentTitleContentEditor = createElement('div', { id: 'documenteditor_title_contentEditor', className: 'single-line' });
+        this.documentTitleContentEditor = createElement('div', { id: 'documenteditor_title_contentEditor', className: 'single-line', styles: titleCss });
         this.documentTitleContentEditor.appendChild(this.documentTitle);
         this.tileBarDiv.appendChild(this.documentTitleContentEditor);
         this.documentTitleContentEditor.setAttribute('title', 'Document Name. Click or tap to rename this document.');
-        let btnStyles: string = 'float:right;background: transparent;box-shadow:none; font-family: inherit;border-color: transparent;'
+        let btnStyles: string = btnFloatStyle + 'background: transparent;box-shadow:none; font-family: inherit;border-color: transparent;'
             + 'border-radius: 2px;color:inherit;font-size:12px;text-transform:capitalize;margin-top:4px;height:28px;font-weight:400;'
             + 'margin-top: 2px;';
         // tslint:disable-next-line:max-line-length
-        this.print = this.addButton('e-de-icon-Print e-de-padding-right', printText, btnStyles, 'de-print', printToolTip, false) as Button;
-        this.open = this.addButton('e-de-icon-Open e-de-padding-right', openText, btnStyles, 'de-open', documentTileText, false) as Button;
+        this.print = this.addButton('e-de-icon-Print ' + iconCss, printText, btnStyles, 'de-print', printToolTip, false) as Button;
+        this.open = this.addButton('e-de-icon-Open ' + iconCss, openText, btnStyles, 'de-open', documentTileText, false) as Button;
         let items: ItemModel[] = [
             { text: 'Microsoft Word (.docx)', id: 'word' },
             { text: 'Syncfusion Document Text (.sfdt)', id: 'sfdt' },
         ];
         // tslint:disable-next-line:max-line-length
-        this.export = this.addButton('e-de-icon-Download e-de-padding-right', downloadText, btnStyles, 'documenteditor-share', downloadToolTip, true, items) as DropDownButton;
+        this.export = this.addButton('e-de-icon-Download ' + iconCss, downloadText, btnStyles, 'documenteditor-share', downloadToolTip, true, items) as DropDownButton;
         if (!isShareNeeded) {
             this.export.element.style.display = 'none';
         } else {

@@ -9,8 +9,8 @@ import { MapsTheme, Maps, Marker, MapsTooltip, NavigationLine, ILoadEventArgs } 
 import { markerLocation } from './map-location';
 import { data } from './navigation-data';
 import { MapAjax } from '@syncfusion/ej2-maps';
+import worldMap from './world-map.json';
 declare var require: any;
-let worldMap: object[] = require('./world-map.json');
 Maps.Inject(Marker, MapsTooltip, NavigationLine);
 
 @Component({

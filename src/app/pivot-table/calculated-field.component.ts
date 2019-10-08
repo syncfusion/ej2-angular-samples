@@ -34,7 +34,7 @@ export class CalculatedFieldComponent implements OnInit {
         } as GridSettings;
 
         this.dataSourceSettings = {
-            // dataSource: Pivot_Data,
+            dataSource: Pivot_Data,
             expandAll: false,
             enableSorting: true,
             formatSettings: [{ name: 'Amount', format: 'C0' }],

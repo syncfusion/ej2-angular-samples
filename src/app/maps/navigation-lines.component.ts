@@ -11,7 +11,7 @@ import { penisular_location, penisular_marker } from './map-location';
 
 Maps.Inject(Marker, Zoom, NavigationLine);
 declare var require: any;
-let worldMap: object[] = require('./world-map.json');
+import worldMap from './world-map.json';
 @Component({
     selector: 'control-content',
     templateUrl: 'navigation-lines.html',

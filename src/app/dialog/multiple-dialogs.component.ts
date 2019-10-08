@@ -1,6 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
-import { EmitType } from '@syncfusion/ej2-base';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { DialogComponent, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
+import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * Multiple Dialogs Component
@@ -12,53 +12,59 @@ import { EmitType } from '@syncfusion/ej2-base';
 })
 
 export class MultipleDialogsDialogComponent {
+
+    constructor() { }
+
     @ViewChild('defaultDialog')
     public defaultDialog: DialogComponent;
+
     @ViewChild('dialogObj2')
     public dialogObj: DialogComponent;
-    public dialogHeader: string = 'First Dialog';
+
+    @ViewChild('confirmButton')
+    public dialogBtn: ButtonComponent;
+
+    public dialogHeader = 'First Dialog';
     public dialogCloseIcon: Boolean = true;
-    public dialogWidth: string = '330px';
-    public contentData: string = "This is the first dialog and acts as a parent dialog, you can open the second (child) dialog by clicking 'Next'.";
+    public dialogWidth = '330px';
+    public contentData = 'This is the first dialog and acts as a parent dialog, you can open the second (child) dialog by clicking \'Next\'.';
     public animationSettings: Object = { effect: 'None' };
-    public secondDlgHeader: string = 'Second Dialog';
+    public secondDlgHeader = 'Second Dialog';
     public secondDialogCloseIcon: Boolean = true;
-    public secondDialogWidth: string = '285px';
-    public contentData1: string = "This is the second dialog and act as a child dialog.";
+    public secondDialogWidth = '285px';
+    public contentData1 = 'This is the second dialog and act as a child dialog.';
     public animationSettings1: Object = { effect: 'None' };
     public isModal: Boolean = true;
-    public hide: any;
-    public target: string = '.control-section';
+    public target = '.control-section';
     public showCloseIcon: Boolean = false;
     public visible: Boolean = true;
     public visible2: Boolean = false;
 
-    public dlgButtonClick: EmitType<Object> = () => {
+    public dlgButtonClick = (): void => {
         this.dialogObj.show();
     }
 
-    public dlgButtonClick1: EmitType<Object> = () => {
+    public dlgButtonClick1 = (): void => {
         this.dialogObj.hide();
     }
 
-    public confirmBtnClick: EmitType<Object> = () => {
+    public confirmBtnClick = (): void => {
         this.defaultDialog.show();
     }
 
-    public defaultDlgButtons: Object[] = [{ click: this.dlgButtonClick.bind(this), buttonModel: { content: 'Next', isPrimary: true } }];
-    public secondDlgButtons: Object[] = [{ click: this.dlgButtonClick1.bind(this), buttonModel: { content: 'Close', isPrimary: true } }];
-
-    public dialogClose: EmitType<Object> = () => {
-        document.getElementById('dialogBtn').style.display = 'block';
+    public dialogClose = (): void => {
+        this.dialogBtn.element.style.display = 'block';
     }
 
-    public dialogClose2: EmitType<Object> = () => {
-        document.getElementById('dialogBtn').style.display = 'none';
+    public dialogClose2 = (): void => {
+        this.dialogBtn.element.style.display = 'none';
     }
 
-    public dialogOpen: EmitType<Object> = () => {
-        document.getElementById('dialogBtn').style.display = 'none';
+    public dialogOpen = (): void => {
+        this.dialogBtn.element.style.display = 'none';
     }
 
-    constructor() { }
+    public defaultDlgButtons:  ButtonPropsModel[] = [{ click: this.dlgButtonClick.bind(this), buttonModel: { content: 'Next', isPrimary: true } }];
+    public secondDlgButtons:  ButtonPropsModel[] = [{ click: this.dlgButtonClick1.bind(this), buttonModel: { content: 'Close', isPrimary: true } }];
+
 }

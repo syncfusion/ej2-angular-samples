@@ -1,0 +1,53 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the <code>Spreadsheet</code> component and its features such as editing, formulas,
+        formatting, importing, and exporting.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-spreadsheet #default [openUrl]="openUrl" [saveUrl]="saveUrl" (dataBound)="dataBound()">
+        <e-sheets>
+            <e-sheet name="Car Sales Report">
+                <e-rangesettings>
+                    <e-rangesetting [dataSource]="data"></e-rangesetting>
+                </e-rangesettings>
+                <e-rows>
+                    <e-row [index]="30">
+                        <e-cells>
+                            <e-cell [index]="4" value="Total Amount:"></e-cell>
+                            <e-cell formula="=SUM(F2:F30)"></e-cell>
+                        </e-cells>
+                    </e-row>
+                </e-rows>
+                <e-columns>
+                    <e-column [width]=180></e-column>
+                    <e-column [width]=130></e-column>
+                    <e-column [width]=130></e-column>
+                    <e-column [width]=180></e-column>
+                    <e-column [width]=130></e-column>
+                    <e-column [width]=120></e-column>
+                </e-columns>
+            </e-sheet>
+        </e-sheets>
+    </ejs-spreadsheet>
+</div>
+
+<div id="description">
+    <p>
+        The <code>Spreadsheet</code> component is used to organize and analyze data in a tabular format.
+        It has a built-in calculation library that supports most commonly used formulas. Excel workbook files can be
+        imported and exported by providing <code>openUrl</code> &
+        <code>saveUrl</code> property.
+    </p>
+    <p>
+        Data binding can be achieved by setting an array of JavaScript objects or an instance of Data Manager to the
+        <code>dataSource</code> property under the rangeSettings of sheet. The <code>cellFormat</code> and
+        <code>numberFormat</code>
+        methods are used to apply format to a range of cells in the <code>dataBound</code> event.
+    </p>
+    <p>
+        More information about the Spreadsheet component can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/spreadsheet/getting-started">
+            documentation</a> section.
+    </p>
+</div>

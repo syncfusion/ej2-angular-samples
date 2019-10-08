@@ -21,3 +21,6 @@
     .toast-api-section .row {
         padding: 0 15px;
     }
+    #toastBtnHide{
+        margin-left: 3px;
+    }

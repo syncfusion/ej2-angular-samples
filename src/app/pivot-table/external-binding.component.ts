@@ -39,16 +39,16 @@ export class IntegrationComponent implements OnInit {
         this.jsonDataSource = [];
         for (let cell of this.selectedCells) {
             if (cell.measure !== '') {
-                // let columnSeries: string = (this.pivotObj.dataSourceSettings.values.length > 1 && this.measureList[cell.measure]) ?
-                    // (cell.columnHeaders.toString() + ' ~ ' + this.measureList[cell.measure]) : cell.columnHeaders.toString();
-                // columnSeries = columnSeries == '' && cell.measure != '' ? 'Grand Total' : columnSeries;
+                let columnSeries: string = (this.pivotObj.dataSourceSettings.values.length > 1 && this.measureList[cell.measure]) ?
+                    (cell.columnHeaders.toString() + ' ~ ' + this.measureList[cell.measure]) : cell.columnHeaders.toString();
+                columnSeries = columnSeries == '' && cell.measure != '' ? 'Grand Total' : columnSeries;
                 let rHeaders: string = cell.rowHeaders == '' && cell.currentCell.axis != 'column' ? 'Grand Total' : cell.rowHeaders.toString();
-                // if (columnGroupObject[columnSeries]) {
-                //     columnGroupObject[columnSeries].push({ x: rHeaders.toString(), y: Number(cell.value) });
-                // } else {
-                //     columnGroupObject[columnSeries] = [{ x: rHeaders.toString(), y: Number(cell.value) }];
-                //     this.yLabels.push(columnSeries);
-                // }
+                if (columnGroupObject[columnSeries]) {
+                    columnGroupObject[columnSeries].push({ x: rHeaders.toString(), y: Number(cell.value) });
+                } else {
+                    columnGroupObject[columnSeries] = [{ x: rHeaders.toString(), y: Number(cell.value) }];
+                    this.yLabels.push(columnSeries);
+                }
                 if (this.xLabels.indexOf(rHeaders.toString()) == -1) {
                     this.xLabels.push(rHeaders.toString());
                 }
@@ -78,16 +78,16 @@ export class IntegrationComponent implements OnInit {
                     position: 'Top'
                 },
                 xAxis: {
-                    // title: { text: this.pivotObj.dataSourceSettings.rows.map(function (args) { return args.caption || args.name; }).join(' ~ ') },
+                    title: { text: this.pivotObj.dataSourceSettings.rows.map(function (args) { return args.caption || args.name; }).join(' ~ ') },
                     labels: this.xLabels,
                     labelRotation: 315
                 },
                 yAxis: {
-                    // title: { text: this.pivotObj.dataSourceSettings.values.map(function (args) { return args.caption || args.name; }).join(' ~ ') },
+                    title: { text: this.pivotObj.dataSourceSettings.values.map(function (args) { return args.caption || args.name; }).join(' ~ ') },
                     labels: this.yLabels,
                 },
-                dataSource: {
-                    data: this.jsonDataSource,
+                dataSource: this.jsonDataSource,
+                dataSourceSettings: {
                     isJsonData: true,
                     adaptorType: 'Table',
                     xDataMapping: 'xMember',
@@ -99,14 +99,14 @@ export class IntegrationComponent implements OnInit {
                 },
             }, '#heatmap');
         } else {
-            (this.heatmap.dataSource as any).data = this.jsonDataSource;
+            this.heatmap.dataSource = this.jsonDataSource;
             this.heatmap.xAxis = {
-            //    / title: { text: this.pivotObj.dataSourceSettings.rows.map(function (args) { return args.caption || args.name; }).join(' ~ ') },
+                title: { text: this.pivotObj.dataSourceSettings.rows.map(function (args) { return args.caption || args.name; }).join(' ~ ') },
                 labels: this.xLabels,
                 labelRotation: 315
             };
             this.heatmap.yAxis = {
-                // title: { text: this.pivotObj.dataSourceSettings.values.map(function (args) { return args.caption || args.name; }).join(' ~ ') },
+                title: { text: this.pivotObj.dataSourceSettings.values.map(function (args) { return args.caption || args.name; }).join(' ~ ') },
                 labels: this.yLabels
             };
             this.heatmap.refresh();
@@ -139,7 +139,7 @@ export class IntegrationComponent implements OnInit {
             columns: [{ name: 'Year' }, { name: 'Order_Source', caption: 'Order Source' }],
             rows: [{ name: 'Country' }, { name: 'Products' }],
             valueSortSettings: { headerDelimiter: ' - ' },
-            // dataSource: data,
+            dataSource: data,
             expandAll: true,
             values: [{ name: 'Sold', caption: 'Units Sold' }],
             filters: []

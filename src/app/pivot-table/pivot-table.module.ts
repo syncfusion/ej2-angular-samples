@@ -20,6 +20,7 @@ import { ValueSortingComponent } from './value-sorting.component';
 import { RTLComponent } from './right-to-left.component';
 import { LocalComponent } from './local.component';
 import { RemoteComponent } from './remote.component';
+import { OlapComponent } from './olap.component';
 import { SortingComponent } from './sorting.component';
 import { FilteringComponent } from './filtering.component';
 import { LabelFilterComponent } from './label-filtering.component';
@@ -36,11 +37,13 @@ import { IntegrationComponent } from './external-binding.component';
 import { SharedModule } from '../common/shared.module';
 import { CheckBoxAllModule, RadioButtonAllModule, ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
 
+
 export const pivottableRouteConfig: Object[] = [
     { 'path': ':theme/pivot-table/default', 'description': 'This demo for Essential JS2 Pivot Table control shows the basic rendering of the pivot table with minimum configuration', component: DefaultComponent, 'name': 'Default Functionalities', order: '01', category: 'Pivot Table' },
     { 'path': ':theme/pivot-table/local', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the basic rendering of the pivot table with local JSON data', component: LocalComponent, 'name': 'Local Data', order: '02', category: 'Data Binding' },
     { 'path': ':theme/pivot-table/remote', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the basic rendering of the pivot table with remote data or service data', component: RemoteComponent, 'name': 'Remote Data', order: '02', category: 'Data Binding' },
-    { 'path': ':theme/pivot-table/pivot-chart', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate integration of pivot table data into a simple chart component', component: ChartComponent, 'name': 'Pivot Chart', order: '03', category: 'Integration', type: 'update' },
+    { 'path': ':theme/pivot-table/olap', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the basic rendering of the pivot table with olap data', component: OlapComponent, 'name': 'OLAP', order: '02', category: 'Data Binding', type: 'new' },
+    { 'path': ':theme/pivot-table/pivot-chart', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate integration of pivot table data into a simple chart component', component: ChartComponent, 'name': 'Pivot Chart', order: '03', category: 'Integration' },
     { 'path': ':theme/pivot-table/external-binding', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the rendering of chart component with cell selection option', component: IntegrationComponent, 'name': 'External Binding', order: '03', category: 'Integration'},
     { 'path': ':theme/pivot-table/field-list', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the field list feature of the pivot table', component: FieldListComponent, 'name': 'Field List', order: '04', category: 'User Interaction' },
     { 'path': ':theme/pivot-table/grouping-bar', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the grouping bar feature of the pivot table', component: GroupingBarComponent, 'name': 'Grouping Bar', order: '04', category: 'User Interaction' },
@@ -65,7 +68,7 @@ export const pivottableRouteConfig: Object[] = [
     { 'path': ':theme/pivot-table/exporting', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate client-side exporting of the pivot table to Excel, CSV and PDF formats', component: ExportingComponent, 'name': 'Export', order: '10', category: 'Miscellaneous' }
 ];
 
-let declarations: Type<Object>[] = [DefaultComponent, LocalComponent, RemoteComponent, GroupingBarComponent, FieldListComponent, CalculatedFieldComponent,
+let declarations: Type<Object>[] = [DefaultComponent, LocalComponent, RemoteComponent, OlapComponent, GroupingBarComponent, FieldListComponent, CalculatedFieldComponent,
     AggregationComponent, ExportingComponent, DrillThroughComponent, EditingComponent, ValueSortingComponent, RTLComponent, ChartComponent, SortingComponent,
     FilteringComponent, LabelFilterComponent, ValueFilterComponent, ConditionalFormattingComponent, VirtualScrollingComponent, HyperLinkComponent, DeferUpdateComponent, SummaryCustomizationComponent, ToolbarComponent,
     SelectionComponent, IntegrationComponent, CellTemplateComponent, GroupingComponent];

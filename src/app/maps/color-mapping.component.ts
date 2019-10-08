@@ -10,9 +10,9 @@ import { MapAjax } from '@syncfusion/ej2-maps';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
 import { EmitType } from '@syncfusion/ej2-base';
+import usMap from './usa.json';
 Maps.Inject(Legend, Marker, MapsTooltip);
 declare var require: any;
-let usMap: object[] = require('./usa.json');
 let colorMapping: object[] = require('./color-mapping.json');
 @Component({
     selector: 'control-content',

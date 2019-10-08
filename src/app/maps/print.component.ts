@@ -6,8 +6,8 @@ import { MapsTheme, Maps, Legend, MapsTooltip, ILoadEventArgs } from '@syncfusio
 import { MapAjax } from '@syncfusion/ej2-maps';
 Maps.Inject( MapsTooltip, Legend);
 declare var require: any;
-let usMap: object[] = require('./usa.json');
-let population: object[] = require('./us-population.json');
+import usMap from './usa.json';
+import population from './us-population.json';
 @Component({
     selector: 'control-content',
     templateUrl: 'print.html',

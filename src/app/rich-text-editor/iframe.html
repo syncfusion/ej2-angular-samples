@@ -5,9 +5,12 @@
 <div class="control-section">
     <div class="sample-container">
         <div class="default-section">
-            <ejs-richtexteditor #iframeRTE id='iframeRTE' [toolbarSettings]='tools' [iframeSettings]='iframe' [height]='height' (actionBegin)='handleFullScreen($event)' (actionComplete)='actionCompleteHandler($event)'>
+            <ejs-richtexteditor #iframeRTE id='iframeRTE' [toolbarSettings]='tools' [iframeSettings]='iframe'
+                [height]='height' (actionBegin)='handleFullScreen($event)'
+                (actionComplete)='actionCompleteHandler($event)'>
                 <ng-template #valueTemplate>
-                    <p>The rich text editor component is WYSIWYG ("what you see is what you get") editor that provides the best user experience to create and update the content. 
+                    <p>The rich text editor component is WYSIWYG ("what you see is what you get") editor that provides
+                        the best user experience to create and update the content.
                         Users can format their content using standard toolbar commands.</p>
                     <p><b>Key features:</b></p>
                     <ul>
@@ -49,10 +52,15 @@
 </div>
 
 <div id="description">
-    <p>The rich text editor is WYSIWYG ("what you see is what you get") editor that is used to create and edit content, and return valid HTML markup. The editor provides a standard toolbar to format content using its commands. The toolbar contains commands to align the text, insert link, insert image, 
+    <p>The rich text editor is WYSIWYG ("what you see is what you get") editor that is used to create and edit content,
+        and return valid HTML markup. The editor provides a standard toolbar to format content using its commands. The
+        toolbar contains commands to align the text, insert link, insert image,
         insert list, undo/redo the operation, HTML view, and more.</p>
-     <p><b>Injecting Module</b></p>
-     <p>RichTextEditor features are segregated into individual feature-wise modules. In this demo we have used following injectable services <code>ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService</code> into the <code>@NgModule.providers section</code>.</p>
+    <p><b>Injecting Module</b></p>
+    <p>RichTextEditor features are segregated into individual feature-wise modules. In this demo we have used following
+        injectable services
+        <code>ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService</code> into the
+        <code>@NgModule.providers section</code>.</p>
 </div>
 
 <style>

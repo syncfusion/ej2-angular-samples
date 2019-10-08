@@ -64,7 +64,7 @@ export class ExportingComponent implements OnInit {
             rows: [{ name: 'Country' }, { name: 'Products' }],
             formatSettings: [{ name: 'Amount', format: 'C0' }],
             columns: [{ name: 'Year' }, { name: 'Order_Source', caption: 'Order Source' }],
-            // dataSource: Pivot_Data,
+            dataSource: Pivot_Data,
             expandAll: false
         };
     }

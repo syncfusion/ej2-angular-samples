@@ -1,59 +1,91 @@
 <div id="action-description">
-    <p>This sample demonstrates the different behavior of toolbar support in the rich text editor. Change the toolbar type as multiRow or expand from the property panel to see its appearance . Check or uncheck the floating toolbar in property panel to look on its behavior.</p>
+    <p>This sample demonstrates the different behavior of toolbar support in the rich text editor. Change the toolbar
+        type as multiRow or expand from the property panel to see its appearance . Check or uncheck the floating toolbar
+        in property panel to look on its behavior.</p>
 </div>
 
 <div class="col-lg-8 control-section">
     <div class="control-wrapper">
         <div class="sample-container">
             <div class="default-section">
-        <ejs-richtexteditor id='typeRTE' #typeRTE [toolbarSettings]='tools' (actionBegin)='handleFullScreen($event)' (actionComplete)='actionCompleteHandler($event)'>
-            <ng-template #valueTemplate>
-                <p>The rich text editor is WYSIWYG ("what you see is what you get") editor useful to create and edit content, and return the valid HTML markup or markdown of the content</p>
-        
-                <p><b>Toolbar</b></p>
-                
-                <ol>
-                <li> <p>Toolbar contains commands to align the text, insert link, insert image, insert list, undo/redo operations, HTML view, etc </p></li>
-                <li> <p>Toolbar is fully customizable </p></li>
-                </ol>
-                
-                <p><b>Links</b></p>
-                <ol>
-                <li><p>You can insert a hyperlink with its corresponding dialog </p> </li>
-                <li> <p>Attach a hyperlink to the displayed text. </p></li>
-                <li><p>Customize the quick toolbar based on the hyperlink </p> </li>
-                </ol>
-                
-                <p><b>Validation</b></p>
-                <ul><li><p>The editor’s content can be validated on form submission by applying validation rules and validation message</p></li></ul>
-                
-                <p><b>Locale.</b></p>
-                <ul><li><p>The editor provides an option to localize its static strings to adapt the editor to a local language.</p></li></ul>
-                
-                <p><b>Image.</b></p>
-                <ol>
-                <li><p>Allows you to insert images from an online source as well as the local computer </p> </li>
-                <li><p>You can upload an image </p></li>
-                <li> <p>Provides an option to customize quick toolbar for an image </p> </li>
-                </ol>
-            </ng-template>
-        </ejs-richtexteditor>
+                <ejs-richtexteditor id='typeRTE' #typeRTE [toolbarSettings]='tools'
+                    (actionBegin)='handleFullScreen($event)' (actionComplete)='actionCompleteHandler()'>
+                    <ng-template #valueTemplate>
+                        <p>The rich text editor is WYSIWYG ("what you see is what you get") editor useful to create and
+                            edit content, and return the valid HTML markup or markdown of the content</p>
+
+                        <p><b>Toolbar</b></p>
+
+                        <ol>
+                            <li>
+                                <p>Toolbar contains commands to align the text, insert link, insert image, insert list,
+                                    undo/redo operations, HTML view, etc </p>
+                            </li>
+                            <li>
+                                <p>Toolbar is fully customizable </p>
+                            </li>
+                        </ol>
+
+                        <p><b>Links</b></p>
+                        <ol>
+                            <li>
+                                <p>You can insert a hyperlink with its corresponding dialog </p>
+                            </li>
+                            <li>
+                                <p>Attach a hyperlink to the displayed text. </p>
+                            </li>
+                            <li>
+                                <p>Customize the quick toolbar based on the hyperlink </p>
+                            </li>
+                        </ol>
+
+                        <p><b>Validation</b></p>
+                        <ul>
+                            <li>
+                                <p>The editor’s content can be validated on form submission by applying validation rules
+                                    and validation message</p>
+                            </li>
+                        </ul>
+
+                        <p><b>Locale.</b></p>
+                        <ul>
+                            <li>
+                                <p>The editor provides an option to localize its static strings to adapt the editor to a
+                                    local language.</p>
+                            </li>
+                        </ul>
+
+                        <p><b>Image.</b></p>
+                        <ol>
+                            <li>
+                                <p>Allows you to insert images from an online source as well as the local computer </p>
+                            </li>
+                            <li>
+                                <p>You can upload an image </p>
+                            </li>
+                            <li>
+                                <p>Provides an option to customize quick toolbar for an image </p>
+                            </li>
+                        </ol>
+                    </ng-template>
+                </ejs-richtexteditor>
+            </div>
+        </div>
     </div>
 </div>
-</div>
-</div>
 
-    <div class="col-lg-4 property-section">
-        <div class="property-panel-section" style="margin-left: 70px">
-            <div class="property-panel-header">Properties</div>
-            <div class="property-panel-content">
+<div class="col-lg-4 property-section">
+    <div class="property-panel-section" style="margin-left: 70px">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
             <div id="property" title="Properties" class="property-panel-table">
                 <table id="property" title="Properties">
                     <tr>
                         <td style="padding-bottom: 10px;padding-top: 10px;">
                             <div style="width: 160px">
-                                <ejs-dropdownlist id='types' height='720px' width='90%' #type [dataSource]='dataSource' (change)='typeChange($event)' [(value)]='typeValue'
-                                    [fields]='typeFields' [floatLabelType]='fltType' [placeholder]='placeholder'>
+                                <ejs-dropdownlist id='types' height='720px' width='90%' #type [dataSource]='dataSource'
+                                    (change)='typeChange()' [(value)]='typeValue' [fields]='typeFields'
+                                    [floatLabelType]='fltType' [placeholder]='placeholder'>
                                 </ejs-dropdownlist>
                             </div>
                         </td>
@@ -61,24 +93,31 @@
                     <tr>
                         <td style="padding-bottom: 10px;padding-top: 10px;">
                             <div>
-                                <ejs-checkbox #float label="Enable Floating" [checked]="true" (change)="onChangeFloat()"></ejs-checkbox>
+                                <ejs-checkbox #float label="Enable Floating" [checked]="true"
+                                    (change)="onChangeFloat()"></ejs-checkbox>
                             </div>
                         </td>
                     </tr>
                 </table>
             </div>
-            </div>
         </div>
     </div>
+</div>
 
 <div id="description">
-    <li><code>Floating</code>: set boolean value to toolbarSettings.enableFloating property to enable or disable the floating toolbar. </li>
-    <p> The rich text editor allows you to configure different types of toolbar using <code>toolbarSettings.type</code> property. The types of
+    <li><code>Floating</code>: set boolean value to toolbarSettings.enableFloating property to enable or disable the
+        floating toolbar. </li>
+    <p> The rich text editor allows you to configure different types of toolbar using <code>toolbarSettings.type</code>
+        property. The types of
         toolbar are: </p>
     <ul>
-        <li><code>Expand</code>: The toolbar hides the overflowing items in the next row. Click the expand arrow to view overflowing toolbar items</li>
+        <li><code>Expand</code>: The toolbar hides the overflowing items in the next row. Click the expand arrow to view
+            overflowing toolbar items</li>
         <li><code>Multi Row</code>: The toolbar hides the overflowing items in the next row.</li>
     </ul>
     <p><b>Injecting Module</b></p>
-    <p>RichTextEditor features are segregated into individual feature-wise modules. In this demo we have used following injectable services <code>ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService</code> into the <code>@NgModule.providers section</code>.</p>
+    <p>RichTextEditor features are segregated into individual feature-wise modules. In this demo we have used following
+        injectable services
+        <code>ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService</code> into the
+        <code>@NgModule.providers section</code>.</p>
 </div>

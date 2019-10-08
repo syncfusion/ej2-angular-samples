@@ -1,0 +1,42 @@
+.accordion-view #content {
+    padding: 18px;
+}
+
+.accordion-view.control-section {
+    min-height: 370px;
+}
+
+.accordion-view .content {
+    padding: 9px;
+}
+
+.accordion-view #splitter .e-accordion .e-acrdn-item .e-acrdn-panel .e-acrdn-content {
+    padding: 0px;
+}
+
+.accordion-view #splitter .e-accordion,
+.accordion-view #splitter .e-accordion .e-acrdn-item.e-select,
+.accordion-view #splitter .e-accordion .e-acrdn-item.e-selected.e-select>.e-acrdn-header {
+    border: none;
+}
+
+.accordion-view #splitter .e-acrdn-header-content {
+    display: block;
+    text-decoration: none;
+}
+
+.bootstrap .accordion-view #splitter .e-list-parent.e-ul li:nth-child(3),
+.bootstrap4 .accordion-view #splitter .e-list-parent.e-ul li:nth-child(3) {
+    border-bottom: none;
+}
+
+.bootstrap4 #splitter .e-listview {
+    border: none;
+}
+
+/* <!-- custom code start --> */
+.accordion-view#target {
+    margin: 20px auto;
+    max-width: 600px;
+}
+/* <!-- custom code end --> */

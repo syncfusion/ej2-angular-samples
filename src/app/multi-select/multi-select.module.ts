@@ -48,7 +48,7 @@ export const multiselectAppRoutes: Object[] = [
     },
     {
       path: ':theme/multi-select/grouping-with-checkbox', component: CheckboxGroupingMultiSelectComponent, description: 'This example demonstrates how to select all the grouped list item values through checkbox in the Angular MultiSelect component.', order: '01',
-      name: 'Grouping with CheckBox', category: 'MultiSelect Dropdown', type: 'new'
+      name: 'Grouping with CheckBox', category: 'MultiSelect Dropdown'
     },
     {
         path: ':theme/multi-select/selection-limit', component: SelectLimitComponent, description: 'This example demonstrates how to achieve the diacritics filter functionalities in the Angular multiselect component.', order: '01',

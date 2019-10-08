@@ -8,37 +8,31 @@
 </div>
 <div class="control-section e-rte-custom-tbar-section">
     <div class="sample-container">
-        <div class="default-section" id="rteSection">
-            <ejs-richtexteditor id='customRTE' #customRTE [toolbarSettings]='tools' (created)='onCreate()'>
+        <div class="default-section" #rteSection id="rteSection">
+            <ejs-richtexteditor id='customRTE' #customRTE [toolbarSettings]='tools' (created)='onCreate()' (actionComplete)='actionCompleteHandler($event)'>
                 <ng-template #valueTemplate>
                     <div style="display:block;">
-                        <p style="margin-right:10px">The custom command "insert emoticons" is configured as the last
-                            item of the toolbar.
-                            Click on the command and choose the special character you want to include from the popup.
+                        <p style="margin-right:10px">The custom command "insert emoticons" is configured as the last item of the toolbar. Click on the command and choose the special character you want to include from the popup.
                         </p>
                     </div>
                 </ng-template>
             </ejs-richtexteditor>
-            <ejs-dialog #Dialog id="rteDialog" [buttons]='dlgButtons' (overlayClick)="dialogOverlay()" [header]='header'
-                [visible]='false' [showCloseIcon]='false' width='43%' [target]='target' (created)="dialogCreate()"
-                [isModal]='true'>
+            <ejs-dialog #Dialog id="rteDialog" [buttons]='dlgButtons' (overlayClick)="dialogOverlay()" [header]='header' [visible]='false' [showCloseIcon]='false' width='43%' [target]='target' [isModal]='true'>
                 <ng-template #content>
                     <div id="tab">
-                        <ejs-tab id="tab_default">
+                        <ejs-tab #tabdefault id="tab_default" (created)="dialogCreate()">
                             <e-tabitems>
                                 <e-tabitem [header]='headerText[0]'>
                                     <ng-template #content>
                                         <div id='rteEmoticons-smiley'>
-                                            <div *ngFor="let smiley of smileys" class='char_block'
-                                                title={{smiley.title}} [innerHTML]="smiley.content"></div>
+                                            <div *ngFor="let smiley of smileys" class='char_block' title={{smiley.title}} [innerHTML]="smiley.content"></div>
                                         </div>
                                     </ng-template>
                                 </e-tabitem>
                                 <e-tabitem [header]='headerText[1]'>
                                     <ng-template #content>
                                         <div id='rteEmoticons-animal'>
-                                            <div *ngFor="let animal of animals" class='char_block'
-                                                title={{animal.title}} [innerHTML]="animal.content"></div>
+                                            <div *ngFor="let animal of animals" class='char_block' title={{animal.title}} [innerHTML]="animal.content"></div>
                                         </div>
                                     </ng-template>
                                 </e-tabitem>

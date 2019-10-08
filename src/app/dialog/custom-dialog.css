@@ -1,0 +1,13 @@
+.e-btn-hide {
+    display: none;
+}
+
+/* <!-- custom code start --> */
+.dlgbtn {
+    margin-right: 5%;
+}
+.control-section {
+    height: 100%;
+    min-height: 350px;
+    }
+/* <!-- custom code end --> */

@@ -13,7 +13,7 @@ import { MultipleDialogsDialogComponent } from './multiple-dialogs.component';
 import { TemplateDialogComponent } from './template.component';
 import { SharedModule } from '../common/shared.module';
 import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
-import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { CheckBoxModule , ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 export const dialogAppRoutes: Object[] = [
     { path: ':theme/dialog/default', component: BasicDialogComponent, name: 'Default Functionalities', category: 'Dialog', description: 'The example demonstrates the default rendering of the Angular dialog, which supports modal and non-modal (modeless), built-in buttons, and more.' },
@@ -31,7 +31,7 @@ export const dialogAppRoutes: Object[] = [
 export const DialogRouter: ModuleWithProviders = RouterModule.forChild(dialogAppRoutes);
 
 @NgModule({
-    imports: [DialogRouter, RadioButtonModule, CheckBoxModule, SharedModule, DialogModule],
+    imports: [DialogRouter, RadioButtonModule, CheckBoxModule, SharedModule, ButtonModule, DialogModule],
     declarations: [
         BasicDialogComponent,
         DefaultDialogComponent,

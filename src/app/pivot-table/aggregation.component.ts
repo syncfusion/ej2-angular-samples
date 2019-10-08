@@ -41,17 +41,17 @@ export class AggregationComponent implements OnInit {
                 delete (data[ln].Date);
             }
         }
-        // this.pivotObj.dataSourceSettings.dataSource = data;
+        this.pivotObj.dataSourceSettings.dataSource = data;
     }
 
     setSummaryType(fieldName: string, summaryType: SummaryTypes): void {
         let isAvail: boolean = false;
-        // for (let vCnt: number = 0; vCnt < this.pivotObj.dataSourceSettings.values.length; vCnt++) {
-        //     if (this.pivotObj.dataSourceSettings.values[vCnt].name === fieldName) {
-        //         this.pivotObj.dataSourceSettings.values[vCnt].type = summaryType;
-        //         isAvail = true;
-        //     }
-        // }
+        for (let vCnt: number = 0; vCnt < this.pivotObj.dataSourceSettings.values.length; vCnt++) {
+            if (this.pivotObj.dataSourceSettings.values[vCnt].name === fieldName) {
+                this.pivotObj.dataSourceSettings.values[vCnt].type = summaryType;
+                isAvail = true;
+            }
+        }
         if (isAvail) {
             this.pivotObj.updateDataSource();
         }

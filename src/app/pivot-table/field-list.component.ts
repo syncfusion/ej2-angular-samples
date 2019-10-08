@@ -59,7 +59,7 @@ export class FieldListComponent implements OnInit {
             this.pivotObj.element.style.width = '100%';
             this.pivotObj.allowCalculatedField = true;
             this.pivotObj.showFieldList = true;
-        }        
+        }
         this.pivotObj.refresh();
     }
 
@@ -69,7 +69,7 @@ export class FieldListComponent implements OnInit {
         } as GridSettings;
 
         this.dataSourceSettings = {
-            // dataSource: Pivot_Data,
+            dataSource: Pivot_Data,
             expandAll: false,
             allowLabelFilter: true,
             allowValueFilter: true,

@@ -1,59 +1,92 @@
 <div id="target" class="control-section default-splitter">
-        <ejs-splitter id='outterSplitter' #splitterInstance class="splitter-expand" #horizontal height='385px' width='100%' separatorSize=3 (created)='onCreated()'>
+    <ejs-splitter id='outterSplitter' #splitterInstance class="splitter-expand" #horizontal height='385px' width='100%'
+        separatorSize=3>
+        <e-panes>
+            <e-pane size='48%' [collapsible]='true'>
+                <ng-template #content>
+                    <div class='splitter-expand-content'>
+                        <a href="https://www.syncfusion.com/ebooks/neuralnetworks" target="_blank">Neural Networks Using
+                            C# Succinctly</a>
+                        <p>Neural networks are an exciting field of software development used to calculate outputs from
+                            input data.
+                            While the idea seems simple enough, the implications of such networks are staggering—think
+                            optical character recognition,
+                            speech recognition, and regression analysis. With Neural Networks Using C# Succinctly by
+                            James McCaffrey, you’ll learn
+                            how to create your own neural network to solve classification problems, or problems where
+                            the outcomes can only be one of
+                            several values. <br /><br />Learn about encoding and normalizing data, activation functions
+                            and how to choose the right one, and ultimately
+                            how to train a neural network to find weights and bias values that provide accurate
+                            predictions.
+                            An artificial neural network (sometimes abbreviated ANN, or shortened to just "neural
+                            network" when the context is clear) is
+                            a software system that loosely models biological neurons and synapses. Before explaining
+                            exactly how neural networks work, it is
+                            useful to understand what types of problems they can solve. The image represents a typical
+                            problem that might be
+                            solved using a neural network. <br /><br />The goal of the problem is to predict a person's
+                            political inclination based on his or her
+                            gender, age, home location, and annual income. One hurdle for those new to neural networks
+                            is that the vocabulary varies
+                            greatly.
+                        </p>
+                    </div>
+                </ng-template>
+            </e-pane>
+            <e-pane [collapsible]='true'>
+                <ng-template #content>
+                    <ng-container *ngTemplateOutlet="template1"></ng-container>
+                </ng-template>
+            </e-pane>
+        </e-panes>
+    </ejs-splitter>
+</div>
+
+<ng-template #template1>
+    <div class="content" style="height:100%">
+        <ejs-splitter #innersplitter id="innerSplitter" separatorSize=3 orientation="Vertical" height="100%" width="100%">
             <e-panes>
-                <e-pane size ='48%' [collapsible]='true'> 
-                  <ng-template #content>
-			<div class='splitter-expand-content'>
-                  <a href="https://www.syncfusion.com/ebooks/neuralnetworks" target="_blank">Neural Networks Using C# Succinctly</a>
-              <p>Neural networks are an exciting field of software development used to calculate outputs from input data. 
-              While the idea seems simple enough, the implications of such networks are staggering—think optical character recognition, 
-              speech recognition, and regression analysis. With Neural Networks Using C# Succinctly by James McCaffrey, you’ll learn 
-              how to create your own neural network to solve classification problems, or problems where the outcomes can only be one of 
-              several values. <br/><br/>Learn about encoding and normalizing data, activation functions and how to choose the right one, and ultimately 
-              how to train a neural network to find weights and bias values that provide accurate predictions.
-              An artificial neural network (sometimes abbreviated ANN, or shortened to just "neural network" when the context is clear) is 
-              a software system that loosely models biological neurons and synapses. Before explaining exactly how neural networks work, it is 
-              useful to understand what types of problems they can solve. The image represents a typical problem that might be 
-              solved using a neural network. <br/><br/>The goal of the problem is to predict a person's political inclination based on his or her 
-              gender, age, home location, and annual income. One hurdle for those new to neural networks is that the vocabulary varies 
-              greatly.
-          </p>
-      </div>
-                  </ng-template>
-                </e-pane>
-                <e-pane [collapsible]='true'>
+                <e-pane [collapsible]='true' >
                     <ng-template #content>
-       
+                        <div class="splitter-expand-content">
+                            <a href="https://www.syncfusion.com/ebooks/data_capture_and_extraction_with_c_sharp_succinctly" target="_blank">Data Capture and Extraction with C# Succinctly</a>
+                            <p>Capturing and extracting information is one of the most important tasks a developer can perform, and making this task more
+                                engaging without relying entirely on specialized tools is an efficient way to improve productivity. 
+                                In Data Capture and Extraction with C# Succinctly, author Ed Freitas guides readers toward getting more out of C# in minimal time.
+                                Email has become a pillar of our modern and connected society, and it now serves as a primary means of communication. Because each email 
+                                is filled with valuable information, data extraction has emerged as a worthwhile skill set for developers in today’s business world. 
+                                If you can parse an email and extract data from it, companies that automate processes, e.g., helpdesk systems.
+                                <br/><br/>An email can be divided into several parts: subject, body, attachments, sender and receiver(s). 
+                                We should also note that the headers section 
+                                reveals important information about the mail servers involved in the process of sending and receiving an email. <br/><br/>Before addressing how we can 
+                                extract information from each part of an email, we should understand that a mailbox can be viewed as a semistructured database that does 
+                                not use a native querying language (e.g., SQL) to extract information.
+                            </p>
+                        </div>
+                    </ng-template>
+                </e-pane>
+                <e-pane size='50%' [collapsible]='true' >
+                    <ng-template #content>
+                        <div class="splitter-expand-content">
+                            <a href="https://www.syncfusion.com/ebooks/spark" target="_blank">Spark Succinctly</a>
+                            <p>Mastering big data requires an aptitude at every step of information processing. 
+                                Post-processing, one of the most important steps, is where you find Apache Spark frequently employed. 
+                                Spark Succinctly, by Marko Svaljek, addresses Spark’s use in the ultimate step in handling big data. This e-book, the 
+                                third installment in Svaljek’s IoT series, teaches the basics of using Spark and explores how to work with RDDs, Scala and
+                                Python tasks, JSON files, and Cassandra.Many of the leading companies in the world today face the problem of big data. 
+                                There are various definitions by various authors on what big data actually is. <br/><br/> If you are a newcomer to the field, perhaps the easiest way to explain 
+                                the concept is that it’s the data that can’t be handled with traditional computing technologies, which mostly used single 
+                                machines to process data. I won’t go into corner cases like, "what if you had a really powerful computer" and so on. 
+                                The easiest way to think about big data is that it’s data that can’t be processed or stored by a single machine.
+                                Note that on the figure Spark takes input data and produces output data using the same storage. 
+                                In practice this can vary, as data can come in from multiple data sources. Most of the examples provided in this
+                                book will be relatively simple when it comes to data output and the number of data.
+                            </p>
+                        </div>
                     </ng-template>
                 </e-pane>
             </e-panes>
         </ejs-splitter>
-</div>
-<style>
-    .control-section {
-        min-height: 370px;
-        margin-bottom: 15px;
-        margin-top: 10px;
-    }
-
-.default-splitter .splitter-expand-content p,
-.default-splitter .splitter-expand-content a {
-    padding: 10px;
-}
-.splitter-expand .splitter-expand-content {
-    padding: 12px;
-}
-    .splitter-expand .splitter-expand-content {
-        padding: 10px;
-    }
-	/* styles to hide scroll bars */
-	.splitter-expand .e-pane.e-pane-horizontal.e-scrollable::-webkit-scrollbar,
-	.splitter-expand .e-pane.e-pane-vertical.e-scrollable::-webkit-scrollbar {
-        display: none; 
-	}
-
-	.splitter-expand .e-pane.e-pane-horizontal.e-scrollable, .splitter-expand .e-pane.e-pane-vertical.e-scrollable {
-		scrollbar-width: none;
-		-ms-overflow-style: none;
-	}
-</style>
+    </div>
+</ng-template>

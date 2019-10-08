@@ -26,7 +26,7 @@ export class DrillThroughComponent implements OnInit {
             { name: 'Amount', caption: 'Sold Amount' }],
             formatSettings: [{ name: 'Amount', format: 'C' }],
             columns: [{ name: 'Year' }, { name: 'Order_Source', caption: 'Order Source' }],
-            // dataSource: Pivot_Data,
+            dataSource: Pivot_Data,
             rows: [{ name: 'Country' }, { name: 'Products' }],
             filters: [{ name: 'Product_Categories', caption: 'Product Categories' }],
             expandAll: false,

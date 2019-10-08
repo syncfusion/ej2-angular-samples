@@ -7,9 +7,9 @@ import { MapAjax } from '@syncfusion/ej2-maps';
 
 Maps.Inject(Marker, MapsTooltip, DataLabel);
 declare var require: any;
-let usMap: object[] = require('./usa.json');
-let texas: object[] = require('./texas.json');
-let california: object[] = require('./california.json');
+import usMap from './usa.json';
+import texas from './texas.json';
+import california from './california.json';
 @Component({
     selector: 'control-content',
     templateUrl: 'multilayer.html',

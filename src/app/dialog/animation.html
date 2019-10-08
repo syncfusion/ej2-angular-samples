@@ -1,43 +1,52 @@
-<div class="control-section animation" >
+<div class="control-section animation">
     <div id="customization">
         <div class="animate">
-                <button  ejs-button id="Zoom" Class="e-control e-outline e-btn e-primary" #defaultButton (click)="dialogBtnClick($event)">Zoom</button>
+            <button ejs-button id="Zoom" Class="e-control e-outline e-btn e-primary" #defaultButton
+                (click)="dialogBtnClick($event)">Zoom</button>
         </div>
         <div class="animate">
-                <button  ejs-button id="FlipXDown" Class="e-control e-outline e-btn e-primary" #defaultButton (click)="dialogBtnClick($event)">FlipX Down</button>
+            <button ejs-button id="FlipXDown" Class="e-control e-outline e-btn e-primary" #defaultButton
+                (click)="dialogBtnClick($event)">FlipX Down</button>
         </div>
         <div class="animate">
-                <button  ejs-button id="FlipXUp"  Class="e-control e-outline e-btn e-primary" #defaultButton (click)="dialogBtnClick($event)">FlipX Up</button>
+            <button ejs-button id="FlipXUp" Class="e-control e-outline e-btn e-primary" #defaultButton
+                (click)="dialogBtnClick($event)">FlipX Up</button>
         </div>
         <div class="animate">
-                <button  ejs-button id="FlipYLeft"  Class="e-control e-outline e-btn e-primary" #defaultButton (click)="dialogBtnClick($event)">FlipY Left</button>
+            <button ejs-button id="FlipYLeft" Class="e-control e-outline e-btn e-primary" #defaultButton
+                (click)="dialogBtnClick($event)">FlipY Left</button>
         </div>
         <div class="animate">
-                <button  ejs-button id="FlipYRight"  Class="e-control e-outline e-btn e-primary" #defaultButton (click)="dialogBtnClick($event)">FlipY Right</button>
+            <button ejs-button id="FlipYRight" Class="e-control e-outline e-btn e-primary" #defaultButton
+                (click)="dialogBtnClick($event)">FlipY Right</button>
         </div>
     </div>
-    <ejs-dialog id="defaultDialog" [header]='dialogHeader' [isModal]='isModal' [buttons]='defaultDlgButtons' #defaultDialog [visible]='visible' [animationSettings]='animationSettings' [showCloseIcon]='dialogCloseIcon' [target]='target'
-    [width]='dialogWidth'>
+    <ejs-dialog id="defaultDialog" [header]='dialogHeader' [isModal]='isModal' [buttons]='defaultDlgButtons'
+        #defaultDialog [visible]='visible' [animationSettings]='animationSettings' [showCloseIcon]='dialogCloseIcon'
+        [target]='target' [width]='dialogWidth'>
         <ng-template #content>
-            <span>The dialog is configured with animation effect. It is opened or closed with 'Zoom In or Out' animation.</span>
+            <span>The dialog is configured with animation effect. It is opened or closed with 'Zoom In or Out'
+                animation.</span>
         </ng-template>
     </ejs-dialog>
 </div>
 <div id="action-description">
-        <p>
-            This example demonstrates how to open or close the dialog with animation effects by clicking the appropriate button.
-        </p>
-      </div>
-      <div id="description">
-        <p>
-            The dialog can be opened or closed with animation effect using the <a target="_blank" 
-          href="https://ej2.syncfusion.com/angular/documentation/api/dialog/#animationsettings">animationSettings</a> property.
-          You can also customize the duration of animation and delay to begin animation.
-          Disables the dialog's animation by setting the animation effect as none.    
-        </p>
-        <p>
-            More information on the animation effect of Dialog can be found in the <a target="_blank" 
+    <p>
+        This example demonstrates how to open or close the dialog with animation effects by clicking the appropriate
+        button.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The dialog can be opened or closed with animation effect using the <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/dialog/#animationsettings">animationSettings</a>
+        property.
+        You can also customize the duration of animation and delay to begin animation.
+        Disables the dialog's animation by setting the animation effect as none.
+    </p>
+    <p>
+        More information on the animation effect of Dialog can be found in the <a target="_blank"
             href="https://ej2.syncfusion.com/angular/documentation/dialog/animation/">
             documentation section</a>.
-        </p>
-      </div>
+    </p>
+</div>

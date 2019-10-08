@@ -13,11 +13,10 @@ export class AjaxLoadComponent {
     @ViewChild('ajaxLoad')
     public rteObj: RichTextEditorComponent;
     public onCreate(): void {
-        let ajax: Ajax = new Ajax('./assets/rich-text-editor/ajax-content.html', 'GET', false);
-        let rte: RichTextEditorComponent = this.rteObj;
+        const ajax: Ajax = new Ajax('./assets/rich-text-editor/ajax-content.html', 'GET', false);
+        const rte: RichTextEditorComponent = this.rteObj;
         ajax.send().then((data: any): void => {
             rte.value = data;
-            rte.dataBind();
         });
     }
 }

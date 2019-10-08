@@ -39,7 +39,7 @@ export class ViewConfigComponent {
         { GroupText: 'Group B', GroupId: 2, GroupColor: '#357cd2' }
     ];
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['view-config.style.css'];
+        sourceFiles.files = ['view-configuration.style.css'];
     }
 
     onEventRendered(args: EventRenderedArgs): void {

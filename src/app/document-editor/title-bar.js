@@ -32,23 +32,31 @@ var TitleBar = /** @class */ (function () {
             }
             // tslint:disable-next-line:max-line-length
             _this.documentTitle = createElement('label', { id: 'documenteditor_title_name', styles: 'font-weight:400;text-overflow:ellipsis;white-space:pre;overflow:hidden;user-select:none;cursor:text' });
+            var iconCss = 'e-de-padding-right';
+            var btnFloatStyle = 'float:right;';
+            var titleCss = '';
+            if (_this.isRtl) {
+                iconCss = 'e-de-padding-right-rtl';
+                btnFloatStyle = 'float:left;';
+                titleCss = 'float:right;';
+            }
             // tslint:disable-next-line:max-line-length
-            _this.documentTitleContentEditor = createElement('div', { id: 'documenteditor_title_contentEditor', className: 'single-line' });
+            _this.documentTitleContentEditor = createElement('div', { id: 'documenteditor_title_contentEditor', className: 'single-line', styles: titleCss });
             _this.documentTitleContentEditor.appendChild(_this.documentTitle);
             _this.tileBarDiv.appendChild(_this.documentTitleContentEditor);
             _this.documentTitleContentEditor.setAttribute('title', 'Document Name. Click or tap to rename this document.');
-            var btnStyles = 'float:right;background: transparent;box-shadow:none; font-family: inherit;border-color: transparent;'
+            var btnStyles = btnFloatStyle + 'background: transparent;box-shadow:none; font-family: inherit;border-color: transparent;'
                 + 'border-radius: 2px;color:inherit;font-size:12px;text-transform:capitalize;margin-top:4px;height:28px;font-weight:400;'
                 + 'margin-top: 2px;';
             // tslint:disable-next-line:max-line-length
-            _this.print = _this.addButton('e-de-icon-Print e-de-padding-right', printText, btnStyles, 'de-print', printToolTip, false);
-            _this.open = _this.addButton('e-de-icon-Open e-de-padding-right', openText, btnStyles, 'de-open', documentTileText, false);
+            _this.print = _this.addButton('e-de-icon-Print ' + iconCss, printText, btnStyles, 'de-print', printToolTip, false);
+            _this.open = _this.addButton('e-de-icon-Open ' + iconCss, openText, btnStyles, 'de-open', documentTileText, false);
             var items = [
                 { text: 'Microsoft Word (.docx)', id: 'word' },
                 { text: 'Syncfusion Document Text (.sfdt)', id: 'sfdt' },
             ];
             // tslint:disable-next-line:max-line-length
-            _this.export = _this.addButton('e-de-icon-Download e-de-padding-right', downloadText, btnStyles, 'documenteditor-share', downloadToolTip, true, items);
+            _this.export = _this.addButton('e-de-icon-Download ' + iconCss, downloadText, btnStyles, 'documenteditor-share', downloadToolTip, true, items);
             if (!isShareNeeded) {
                 _this.export.element.style.display = 'none';
             }

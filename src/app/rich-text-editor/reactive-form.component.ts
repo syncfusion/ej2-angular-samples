@@ -11,20 +11,26 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
     providers: [ToolbarService, LinkService, ImageService, HtmlEditorService]
 })
 export class FormComponent implements OnInit {
+
     rteForm: FormGroup;
-    @ViewChild('fromRTE') rteEle: RichTextEditorComponent;
+
+    @ViewChild('fromRTE')
+    private rteEle: RichTextEditorComponent;
 
     constructor(private fb: FormBuilder) {
         // <--- inject FormBuilder
     }
+
     ngOnInit(): void {
         this.rteForm = new FormGroup({
             'name': new FormControl(null, Validators.required)
         });
     }
+
     rteCreated(): void {
         this.rteEle.element.focus();
     }
+
     onSubmit(): void {
         alert('Form submitted successfully');
     }

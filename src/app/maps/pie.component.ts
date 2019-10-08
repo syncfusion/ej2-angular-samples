@@ -8,7 +8,7 @@ import { MapAjax } from '@syncfusion/ej2-maps';
 
 AccumulationChart.Inject(AccumulationChart, PieSeries, DataLabel, AccumulationTooltip);
 declare var require: any;
-let worldMap: object[] = require('./world-map.json');
+import worldMap from './world-map.json';
 Maps.Inject(Marker, Legend);
 @Component({
     selector: 'control-content',

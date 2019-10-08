@@ -2,8 +2,9 @@
     <div>
         <div id="default_title_bar" class="e-de-ctn-title"></div>
         <div>
-            <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true [enableRtl]=true [locale]="culture"
-                (created)="onCreate()" style="display:block;height:600px"></ejs-documenteditorcontainer>
+            <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true [enableRtl]=true
+                [locale]="culture" (created)="onCreate()" (documentChange)="onDocumentChange()"
+                style="display:block;height:600px"></ejs-documenteditorcontainer>
         </div>
     </div>
 </div>
@@ -66,6 +67,12 @@
 
     .e-de-icon-Download:before {
         content: "\e728";
+    }
+
+    .e-de-padding-right-rtl {
+        float: right;
+        padding-top: 2px;
+        padding-left: 12px;
     }
 
     /** sample level font icons ends*/

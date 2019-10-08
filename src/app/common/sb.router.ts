@@ -46,7 +46,6 @@ import { StockChartSampleModule } from '../stock-chart/stock-chart.module';
 import { TreemapSampleModule } from '../treemap/treemap.module';
 import { HeatmapSampleModule } from '../heatmap/heatmap.module';
 import { DiagramSampleModule } from '../diagram/diagram.module';
-import { BarcodeSampleModule } from '../barcode/barcode.module';
 import { SparklineSampleModule } from '../sparkline/sparkline.module';
 import { SmithchartSampleModule } from '../smith-chart/smith-chart.module';
 import { ColorPickerSampleModule } from '../color-picker/color-picker.module';
@@ -60,6 +59,7 @@ import { GanttSampleModule } from '../gantt/gantt.module';
 import { FileSampleModule } from '../file-manager/file-manager.module';
 import { DashboardLayoutSampleModule } from '../dashboard-layout/dashboard-layout.module';
 import { ListBoxSampleModule } from '../list-box/list-box.module';
+import { SpreadsheetSampleModule } from '../spreadsheet/spreadsheet.module';
 
 const appRoutes: any = [
     // Grids
@@ -69,6 +69,8 @@ const appRoutes: any = [
     { path: 'treegrid', loadChildren: TreeGridSampleModule },
     { path: 'pivot-table', loadChildren: PivotTableSampleModule },
     { path: ':theme/pivot-table/:sample', redirectTo: 'material/pivot-table/default' },
+    { path: 'spreadsheet', loadChildren: SpreadsheetSampleModule },
+    { path: ':theme/spreadsheet/:sample', redirectTo: 'material/spreadsheet/default' },
     // Data visualization
     { path: 'chart', loadChildren: ChartSampleModule },
     { path: 'circulargauge', loadChildren: CircularGaugeSampleModule },
@@ -81,7 +83,6 @@ const appRoutes: any = [
     { path: ':theme/range-navigator/:sample', redirectTo: 'material/range-navigator/default' },
     { path: 'sparkline', loadChildren: SparklineSampleModule },
     { path: 'smithchart', loadChildren: SmithchartSampleModule },
-    { path: 'barcode', loadChildren: BarcodeSampleModule },
     { path: 'treemap', loadChildren: TreemapSampleModule },
     { path: 'heatmap', loadChildren: HeatmapSampleModule },
     // Editors
@@ -157,6 +158,7 @@ const appRoutes: any = [
         GridSampleModule,
         TreeGridSampleModule,
         PivotTableSampleModule,
+        SpreadsheetSampleModule,
         // Data visualization
         ChartSampleModule,
         CircularGaugeSampleModule,
@@ -167,7 +169,6 @@ const appRoutes: any = [
         RangeNavigatorSampleModule,
         SparklineSampleModule,
         SmithchartSampleModule,
-        BarcodeSampleModule,
         TreemapSampleModule,
         HeatmapSampleModule,
         // Editors

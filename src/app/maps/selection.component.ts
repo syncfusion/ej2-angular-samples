@@ -6,6 +6,8 @@ import { MapsTheme, Maps, MapsTooltip, ISelectionEventArgs, Selection, Highlight
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
 import { MapAjax } from '@syncfusion/ej2-maps';
 Maps.Inject(MapsTooltip, Selection, Highlight);
+import usMap from './usa.json';
+import election from './election-data.json';
 
 interface PopulationData {
     State?: string;
@@ -14,8 +16,6 @@ interface PopulationData {
     Clinton?: string;
 }
 declare var require: any;
-let usMap: object[] = require('./usa.json');
-let election: object[] = require('./election-data.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'selection.html',

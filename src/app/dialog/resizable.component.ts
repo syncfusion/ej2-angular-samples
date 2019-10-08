@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import { DialogComponent } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
 
@@ -8,20 +8,26 @@ import { EmitType } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',
     styleUrls: ['resizable.css'],
-    templateUrl: 'resizable.html'
+    templateUrl: 'resizable.html',
+    encapsulation: ViewEncapsulation.None
 })
 
 export class ResizableDialogComponent {
+
     @ViewChild('resizeDialog')
     public resizeDialog: DialogComponent;
-    public dialogHeader: string = 'Resize Me!!!';
+
+    @ViewChild('confirmButton')
+    public dialogBtn: ElementRef;
+
+    public dialogHeader = 'Resize Me!!!';
     public dialogCloseIcon: Boolean = true;
-    public dialogWidth: string = '300px';
-    public contentData: string = "This is a dialog with resizable support.";
+    public dialogWidth = '300px';
+    public contentData = 'This is a dialog with resizable support.';
     public animationSettings: Object = { effect: 'None' };
     public hide: any;
     public dialogdragging: Boolean = true;
-    public target: string = '.control-section';
+    public target = '.control-section';
     public showCloseIcon: Boolean = false;
     public visible: Boolean = true;
     public dialogResize: Boolean = true;
@@ -32,12 +38,10 @@ export class ResizableDialogComponent {
     }
 
     public dialogClose: EmitType<Object> = () => {
-        document.getElementById('dialogBtn').style.display = 'block';
+        this.dialogBtn.nativeElement.style.display = 'block';
     }
 
     public dialogOpen: EmitType<Object> = () => {
-        document.getElementById('dialogBtn').style.display = 'none';
+        this.dialogBtn.nativeElement.style.display = 'none';
     }
-
-    constructor() { }
 }

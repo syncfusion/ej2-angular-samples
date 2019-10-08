@@ -1,16 +1,20 @@
 <div id="action-description">
-    <p>This sample demonstrates the events that trigger on every action of the rich text editor. The event details are showcased in the event trace panel.
-</p></div>
+    <p>This sample demonstrates the events that trigger on every action of the rich text editor. The event details are
+        showcased in the event trace panel.
+    </p>
+</div>
 <div class="col-lg-8 control-section">
     <div class="content-wrapper">
-        <ejs-richtexteditor #RTEevents id='defaultRTE' [toolbarSettings]='tools' (created)='onCreate()' (toolbarClick)='toolbarClick()' (actionBegin)='begin($event)' (actionComplete)='complete($event)'
+        <ejs-richtexteditor #RTEevents id='defaultRTE' [toolbarSettings]='tools' (created)='onCreate()'
+            (toolbarClick)='toolbarClick()' (actionBegin)='begin($event)' (actionComplete)='complete($event)'
             (focus)='focus()' (change)='onChange()' (blur)='blur()'>
             <ng-template #valueTemplate>
-                <p>The rich text editor component is WYSIWYG ("what you see is what you get") editor that provides the best user experience to create and update the content. 
+                <p>The rich text editor component is WYSIWYG ("what you see is what you get") editor that provides the
+                    best user experience to create and update the content.
                     Users can format their content using standard toolbar commands.</p>
-                
+
                 <p><b>Key features:</b></p>
-                
+
                 <ul>
                     <li>
                         <p>Provides &lt;IFRAME&gt; and &lt;DIV&gt; modes</p>
@@ -56,7 +60,7 @@
                     <td>
                         <div class="eventarea" style="height: 245px;overflow: auto">
                             <!-- Event log element -->
-                            <span class="EventLog" id="EventLog" style="word-break: normal;"></span>
+                            <span class="EventLog" #EventLog id="EventLog" style="word-break: normal;"></span>
                         </div>
                     </td>
                 </tr>
@@ -73,7 +77,7 @@
     </div>
 </div>
 <div id="description">
-    <p>The rich text editor triggers the events based on its actions. 
+    <p>The rich text editor triggers the events based on its actions.
         The events can be used as an extension point to perform custom operations.</p>
     <ul>
         <li><code>change</code> - Triggers when the editor gets blurred and changes are made to the content.</li>
@@ -82,8 +86,25 @@
         <li><code>actionBegin</code> - Triggers before the execution of command.</li>
         <li><code>actionComplete</code> - Triggers after the execution of command.</li>
         <li><code>created</code> - Triggers when the component is created.</li>
+        <li><code>beforeDialogOpen</code> – Event triggers when the dialog is being opened..</li>
+        <li><code>dialogOpen</code> – Event triggers when a dialog is opened.</li>
+        <li><code>dialogClose</code> – Event triggers after the dialog has been closed.</li>
+        <li><code>beforeQuickToolbarOpen</code> – Event triggers when the quick toolbar is being opened.</li>
+        <li><code>quickToolbarOpen</code> – Event triggers when a quick toolbar is opened.</li>
+        <li><code>quickToolbarClose</code> – Event triggers after the quick toolbar has been closed.</li>
+        <li><code>imageSelected</code> – Event triggers when the image is selected or dragged into the insert image dialog</li>
+        <li><code>imageUploading</code> – Event triggers when the selected image begins to upload in the insert image dialog</li>
+        <li><code>imageUploadSuccess</code> – Event triggers when the image is successfully uploaded to the server side</li>
+        <li><code>imageUploadFailed</code> – Event triggers when there is an error in the image upload</li>
+        <li><code>imageRemoving</code> – Event triggers when the selected image is cleared from the insert image dialog</li>
         <li><code>destroyed</code> – Triggers when the component is destroyed.</li>
+        <li><code>beforeSanitizeHtml</code> – Event triggers before sanitize the value. It's only applicable to editorMode as `HTML`</li>
+        <li><code>resizing</code> – Triggers only when resizing the image</li>
+        <li><code>resizeStart</code> –Triggers only when start resize the image</li>
+        <li><code>resizeStop</code> – Triggers only when stop resize the image</li>
     </ul>
     <p><b>Injecting Module</b></p>
-    <p>RichTextEditor features are segregated into individual feature-wise modules. In this demo we have used following injectable services <code>ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService</code> into the <code>@NgModule.providers section</code>.</p>
+    <p>RichTextEditor features are segregated into individual feature-wise modules. In this demo we have used following injectable services
+        <code>ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService</code> into the
+        <code>@NgModule.providers section</code>.</p>
 </div>

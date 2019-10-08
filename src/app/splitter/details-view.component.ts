@@ -1,13 +1,13 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ListView } from '@syncfusion/ej2-lists';
-import { SplitterComponent} from '@syncfusion/ej2-angular-layouts';
-import { ListViewComponent} from '@syncfusion/ej2-angular-lists';
-
-
-
+import { SplitterComponent } from '@syncfusion/ej2-angular-layouts';
+import { ListViewComponent } from '@syncfusion/ej2-angular-lists';
+/**
+ * Splitter details view sample
+ */
 @Component({
     selector: 'control-content',
     templateUrl: 'details-view.html',
+    styleUrls: ['details-view.css'],
     encapsulation: ViewEncapsulation.None
 })
 export class DetailsViewComponent {
@@ -16,10 +16,10 @@ export class DetailsViewComponent {
     @ViewChild('splitterInstance') splitterObj: SplitterComponent;
     constructor() {
         this.dataSource = [
-            { id: '1', text: 'Margaret', avatar: 'R', pic: 'pic01',  color: '' },
+            { id: '1', text: 'Margaret', avatar: 'R', pic: 'pic01', color: '' },
             { id: '2', text: 'Laura', avatar: 'N', pic: 'pic02', color: 'green' },
             { id: '3', text: 'Robert', icon: 'R', pic: 'pic03', },
-            { id: '4', text: 'Albert', avatar: 'A', pic: 'pic04',  color: 'blue' },
+            { id: '4', text: 'Albert', avatar: 'A', pic: 'pic04', color: 'blue' },
             { id: '5', text: 'Michale', icon: 'M', pic: 'pic05', }
         ];
     }
@@ -29,7 +29,7 @@ export class DetailsViewComponent {
     }
 
     onSelect(e: any): void {
-        let listid: string = e.item.dataset.uid;
+        const listid: string = e.item.dataset.uid;
         // tslint:disable:max-line-length
         switch (listid) {
             case '1':

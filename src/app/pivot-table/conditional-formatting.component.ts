@@ -29,10 +29,10 @@ export class ConditionalFormattingComponent implements OnInit {
     }
 
     resetFormat(e: Event): void {
-        // if (this.pivotObj.dataSourceSettings.conditionalFormatSettings.length > 0) {
-        //     this.pivotObj.setProperties({ dataSourceSettings: { conditionalFormatSettings: [] } }, true);
-        //     this.pivotObj.renderPivotGrid();
-        // }
+        if (this.pivotObj.dataSourceSettings.conditionalFormatSettings.length > 0) {
+            this.pivotObj.setProperties({ dataSourceSettings: { conditionalFormatSettings: [] } }, true);
+            this.pivotObj.renderPivotGrid();
+        }
         this.pivotObj.conditionalFormattingModule.destroy();
         document.getElementById('conditional-formatting-reset-btn').blur();
     }
@@ -43,7 +43,7 @@ export class ConditionalFormattingComponent implements OnInit {
         } as GridSettings;
 
         this.dataSourceSettings = {
-            // dataSource: Pivot_Data,
+            dataSource: Pivot_Data,
             expandAll: false,
             enableSorting: true,
             drilledMembers: [{ name: 'Country', items: ['France', 'Germany'] }],

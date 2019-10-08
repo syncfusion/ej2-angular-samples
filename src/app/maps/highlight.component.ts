@@ -10,7 +10,7 @@ Maps.Inject(Marker, Zoom, MapsTooltip);
 //tslint:disable:max-func-body-length
 // custom code end
 declare var require: any;
-let oklahoma: object[] = require('./oklahoma.json');
+import oklahoma from './oklahoma.json';
 @Component({
     selector: 'control-content',
     templateUrl: 'highlight.html',

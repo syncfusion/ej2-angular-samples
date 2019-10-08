@@ -7,8 +7,8 @@ import { MapAjax } from '@syncfusion/ej2-maps';
 
 Maps.Inject(Marker, MapsTooltip, Legend);
 declare var require: any;
-let india: object[] = require('./india.json');
-let population: object[] = require('./india-population.json');
+import india from './india.json';
+import population from './india-population.json';
 @Component({
     selector: 'control-content',
     templateUrl: 'heatmap.html',
