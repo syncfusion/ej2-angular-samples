@@ -63,7 +63,9 @@
         "shelljs": "^0.8.3",
         "increase-memory-limit": "^1.0.7",
         "rxjs": "~6.2.0",
-        "zone.js": "~0.8.26"
+        "zone.js": "~0.8.26",
+        "marked": "0.3.19",
+        "tributejs": "^3.7.3"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "^0.10.3",
