@@ -1,0 +1,29 @@
+<div id="action-description">
+    <p>This sample explains the way of rendering built-in and custom toolbar items at the same time.</p>
+</div>
+
+<div class="control-section">
+    <ejs-gantt id="ToolbarTemplate" #ganttToolbar height="430px" [dataSource]="data" [taskFields]="taskSettings"
+        [allowSelection]="true" [allowFiltering]="true" [labelSettings]="labelSettings" [treeColumnIndex]="1"
+        [columns]="columns" [splitterSettings]="splitterSettings" [projectStartDate]="projectStartDate"
+        [projectEndDate]="projectEndDate" [toolbar]="toolbar" [highlightWeekends]="true"
+        (toolbarClick)="toolbarClick($event)">
+    </ejs-gantt>
+</div>
+
+<div id="description">
+    <p>Custom toolbar items can be added by defining the toolbar as a collection of ItemModels.
+        Actions for this customized toolbar items are defined in the <code>toolbarClick</code> event.
+    </p>
+    <p>In this sample, the custom toolbar element <code>Quick Filter</code> and <code>Clear Filter</code> is rendered
+        along with predefined toolbar items ExpandAll and CollapseAll.
+        While clicking the <code>Quick Filter</code> toolbar item, the filtering occurs for
+        <code>Task Name</code>column.Filtered column can be cleared using <code>Clear Filter</code> toolbar item.
+    </p>
+
+    <p>
+        Gantt control features are segregated into individual feature-wise modules.To use a selection, inject the
+        <code>Selection</code> module.To use a filter, inject the <code>Filter</code> module.To use a toolbar, inject the
+        <code>Toolbar</code> module.To use markers, inject the <code>DayMarkers</code> module.
+    </p>
+</div>

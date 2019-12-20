@@ -1,0 +1,67 @@
+<div id="action-description">
+    <p>This sample demonstrates dynamic show/hide columns feature of Gantt. Select column name from the properties panel, 
+        and then click hide/show to toggle visibility.
+     </p>
+</div>
+
+<div class="col-lg-9 control-section">
+    <ejs-gantt id="showHide" #ganttObj height="430px" [dataSource]="data" [columns]="columns" [taskFields]="taskSettings" [allowSelection]="true"
+    [treeColumnIndex]='1' [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" height="400px" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+    [highlightWeekends]="true">
+    </ejs-gantt>
+</div>
+
+<div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+            <div class="property-panel-header">Properties </div>
+        <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+            <tr>
+                <td style="width: 30%">
+                    <div>Column</div>
+                </td>
+                <td style="width: 70%;padding-right: 10px">
+                    <div id='columnddl'>
+                        <ejs-dropdownlist #dropdownObj id='dropDown' width= '100px' [dataSource]='dropDownData' [fields]='dropDownFields' value='TaskID' (change)="change($event)"></ejs-dropdownlist>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 30%;padding-top: 10px">
+                    <div>
+                        <button ejs-button #hideButtonObj cssClass="btn btn-default" content="HIDE" id="hide" (click)="hideButtonClick()" (created)="created()"></button>
+                    </div>
+                </td>
+                <td style="width: 70%;padding-top: 10px;padding-left: 7px">
+                    <div>
+                        <button ejs-button #showButtonObj cssClass="btn btn-default" content="SHOW" id="show" (click)="showButtonClick($event)"></button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 30%">
+                    <div class="" style="padding-top: 10px">
+                        Hidden Columns
+                    </div>
+                </td>
+                <td style="width: 70%; padding:10px 10px 10px 0px">
+                    <div>
+                        <textarea id="hiddencolumns" style="resize: none;height:65px;width:100px;background-color: #fff; padding: 6px" 
+                        class="form-control" readonly="readonly"></textarea>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    </div>
+
+<div id="description">
+    <p>The Gantt column can be shown or hidden dynamically using the <code>showColumn</code> and <code>hideColumn</code> methods of the Gantt.</p>
+    <p>In this demo, the columns can be shown and hidden by selecting the column name in dropdown. Click the Show or Hide button to toggle the visibility. 
+       The visibility of column is toggled based on the 
+       <code>columns -> headerText</code> value.
+    </p>
+<br/>
+<p>The <code>columns -> visible</code> property specifies the visibility of a column. 
+    To hide a column at the initial rendering, set the <code>columns -> visible</code> property to false.
+</p>
+</div>

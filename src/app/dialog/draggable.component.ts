@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import { DialogComponent, AnimationSettingsModel } from '@syncfusion/ej2-angular-popups';
-
+import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 /**
  * Draggable Dialog Component
  */
@@ -17,7 +17,7 @@ export class DraggableDialogComponent {
     public defaultDialog: DialogComponent;
 
     @ViewChild('dialogBtn')
-    public dialogBtn: ElementRef;
+    public dialogBtn: ButtonComponent;
 
     public dialogHeader: string = 'Drag Me!!!';
     public dialogCloseIcon: Boolean = true;
@@ -36,11 +36,11 @@ export class DraggableDialogComponent {
     }
 
     public dialogClose = (): void => {
-        this.dialogBtn.nativeElement.style.display = 'block';
+        this.dialogBtn.element.style.display = 'block';
     }
 
     public dialogOpen = (): void => {
-        this.dialogBtn.nativeElement.style.display = 'none';
+        this.dialogBtn.element.style.display = 'none';
     }
 
     constructor() { }

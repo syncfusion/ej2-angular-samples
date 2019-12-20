@@ -45,7 +45,7 @@ export class SwimLaneDiagramComponent {
             shape: {
                 type: 'SwimLane',
                 header: {
-                    annotation: { content: 'SALES PROCESS FLOW CHART', style: { fill: '#111111' } },
+                    annotation: { content: 'SALES PROCESS FLOW CHART', style: { fill: 'transparent' } },
                     height: 50, style: { fontSize: 11 },
                     orientation: 'Horizontal',
                 },

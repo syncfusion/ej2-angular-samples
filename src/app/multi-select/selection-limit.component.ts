@@ -1,7 +1,6 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
 import { MultiSelectComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
-
 @Component({
     selector: 'control-content',
     templateUrl: 'selection-limit.html',
@@ -43,6 +42,7 @@ export class SelectLimitComponent implements OnInit {
     public checkWaterMark: string = 'Select countries';
     // set the MultiSelect popup height
     public popHeight: string = '350px';
+    public numericValue: number = 3;
     // set the maximum selection length in Multiselect.
     public maxSelection: number = 3;
     ngOnInit(): void {
@@ -51,6 +51,6 @@ export class SelectLimitComponent implements OnInit {
     }
     clickMe(): void {
         this.mulObj.value = null;
-        this.mulObj.maximumSelectionLength = parseFloat((document.getElementById('maxSel') as HTMLInputElement).value);
+        this.mulObj.maximumSelectionLength = this.numericValue;
     }
 }

@@ -38,7 +38,7 @@ export class MapsMarkerTemplateComponent {
                     height: 30,
                     width: 30,
                     visible: true,
-                    template: '<div id="marker1" style="font-size: 14px;height:30px; width:30px;"><img class="markerTemplate" src="./assets/maps/images/weather-clear.png"/>' +
+                    template: '<div id="marker1"><img class="markerTemplate" src="./assets/maps/images/weather-clear.png"/>' +
                      '<p>{{:Name}}:{{:Temperature}}°C</p></div>',
                     dataSource: [
                         { Name: 'Perth', latitude: -31.950527, longitude: 115.860457 , Temperature: 31.6}
@@ -48,7 +48,7 @@ export class MapsMarkerTemplateComponent {
                     height: 30,
                     width: 30,
                     visible: true,
-                    template: '<div id="marker1" style="font-size: 14px;height:30px; width:30px;"><img class="markerTemplate" src="./assets/maps/images/weather-clouds.png"/>' +
+                    template: '<div id="marker1"><img class="markerTemplate" src="./assets/maps/images/weather-clouds.png"/>' +
                     '<p>{{:Name}}:{{:Temperature}}°C</p></div>',
                     dataSource: [
                         { Name: 'Adelaide', latitude: -34.928499, longitude: 138.600746, Temperature: 28.5 }
@@ -58,7 +58,7 @@ export class MapsMarkerTemplateComponent {
                     height: 30,
                     width: 30,
                     visible: true,
-                    template: '<div id="marker1" style="font-size: 14px;height:30px; width:30px;"><img class="markerTemplate" src="./assets/maps/images/weather-clear.png"/>' +
+                    template: '<div id="marker1"><img class="markerTemplate" src="./assets/maps/images/weather-clear.png"/>' +
                     '<p>{{:Name}}:{{:Temperature}}°C</p></div>',
                     dataSource: [
                         { Name: 'Townsville', latitude: -19.2589635, longitude: 146.8169483, Temperature: 31.3 }
@@ -68,7 +68,7 @@ export class MapsMarkerTemplateComponent {
                     height: 30,
                     width: 30,
                     visible: true,
-                    template: '<div id="marker1" style="font-size: 14px;height:30px; width:30px;"><img class="markerTemplate" src="./assets/maps/images/weather-rain.png"/>' +
+                    template: '<div id="marker1"><img class="markerTemplate" src="./assets/maps/images/weather-rain.png"/>' +
                     '<p>{{:Name}}:{{:Temperature}}°C</p></div>',
                     dataSource: [
                         { Name: 'Sydney', latitude: -33.868820, longitude: 151.209296, Temperature: 26.4 }
@@ -78,7 +78,7 @@ export class MapsMarkerTemplateComponent {
                     height: 30,
                     width: 30,
                     visible: true,
-                    template: '<div id="marker1" style="font-size: 14px;height:30px; width:30px;"><img class="markerTemplate" src="./assets/maps/images/weather-clear.png"/>' +
+                    template: '<div id="marker1"><img class="markerTemplate" src="./assets/maps/images/weather-clear.png"/>' +
                     '<p>{{:Name}}:{{:Temperature}}°C</p></div>',
                     dataSource: [
                         { Name: 'Alice Springs', latitude: -23.698042, longitude: 133.880747, Temperature: 36.4 },
@@ -88,7 +88,7 @@ export class MapsMarkerTemplateComponent {
                     height: 30,
                     width: 30,
                     visible: true,
-                    template: '<div id="marker1" style="font-size: 14px;height:30px; width:30px;"><img class="markerTemplate" src="./assets/maps/images/weather-clouds.png"/>'
+                    template: '<div id="marker1"><img class="markerTemplate" src="./assets/maps/images/weather-clouds.png"/>'
                      + '<p>{{:Name}}:{{:Temperature}}°C</p></div>',
                     dataSource: [
                         { Name: 'Brisbane', latitude: -27.469771, longitude: 153.025124, Temperature: 29.1 }

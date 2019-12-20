@@ -3,8 +3,6 @@
         <div class="sample-container">
             <div class="default-section">
                 <ejs-richtexteditor id='autosaveRTE' #autosaveRTE [toolbarSettings]='tools' [saveInterval]="5000" placeholder='Start to type a content to save' [enablePersistence]="true" (change)='updateStatus()'>
-                    <ng-template #valueTemplate>
-                    </ng-template>
                 </ejs-richtexteditor>
                 <div id='statusEle' class='current-status'>
                     <div id='saving' style="display: none">

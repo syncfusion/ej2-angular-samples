@@ -1,0 +1,39 @@
+<div id="action-description">
+    <p>This sample explains the way of rendering label template for left, right, and task labels by mapping template
+        elements to the leftLabel, rightLabel and taskLabel properties in
+        labelSettings.</p>
+</div>
+
+<div class="control-section">
+    <ejs-gantt id="TasklabelTemplate" height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
+        [labelSettings]="labelSettings" [treeColumnIndex]="1" [columns]="columns" [rowHeight]="43"
+        [splitterSettings]="splitterSettings" [projectStartDate]="projectStartDate"
+        [projectEndDate]="projectEndDate" [highlightWeekends]="true" resourceNameMapping="resourceName" resourceIDMapping="resourceId"
+        [resources]="resources">
+
+        <ng-template #labelSettingsLeftLabel let-data>
+                <span>{{data.TaskName}} [ {{data.Progress}}% ]</span>
+        </ng-template>
+
+        <ng-template #labelSettingsRightLabel let-data>
+            <ng-container *ngIf="data.ganttProperties.resourceNames">
+                <div *ngFor="let resource of data.ganttProperties.resourceInfo">
+                    <img src="assets/gantt/images/{{resource.resourceName}}.png" height="40px" />
+                    <span style="margin-left:5px;margin-right:5px">{{resource.resourceName}}</span>
+                </div>
+            </ng-container>
+        </ng-template>
+    </ejs-gantt>
+</div>
+
+<div id="description">
+    <p>
+        In this demo, the label template is rendered using the <code>leftLabel</code>, <code>rightLabel</code> and
+        <code>taskLabel</code> properties in
+        <code>labelSettings</code>.
+    </p>
+
+    <p>Gantt control features are segregated into individual feature-wise modules.To use a selection, inject the
+        <code>Selection</code> module.To use markers, inject the <code>DayMarkers</code> module.
+    </p>
+</div>

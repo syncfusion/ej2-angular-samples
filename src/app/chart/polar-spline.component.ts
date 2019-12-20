@@ -31,6 +31,7 @@ export class PolarSplineChartComponent {
     public tooltip: Object = {
         enable: true
     };
+    public closed: boolean = false;
       // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

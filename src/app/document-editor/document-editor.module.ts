@@ -24,6 +24,7 @@ import { TableOfContentsComponent } from './table-of-contents.component';
 import { CustomContextMenuComponent } from './custom-context-menu.component';
 import { DocumentEditorChartComponent } from './chart.component';
 import { DocumentEditorProtectionComponent } from './document-protection.component';
+import { CommentsComponent } from './comments.components';
 import { AutoSaveComponent } from './auto-save.component';
 import { SharedModule } from '../common/shared.module';
 
@@ -44,7 +45,8 @@ export const documentEditorAppRoutes: Object[] = [
     { path: ':theme/document-editor/custom-context-menu', component: CustomContextMenuComponent, name: 'Custom Context Menu', order: '05', category: 'Customization', description: "The Document Editor supports custom options for users who use to add custom options in context menu." },
     { path: ':theme/document-editor/auto-save', component: AutoSaveComponent, name: 'Auto Save', order: '05', category: 'Customization', description: "The Document Editor supports auto save functionality to let the users for saving the documents automatically at customized time interval." },
     { path: ':theme/document-editor/chart', component: DocumentEditorChartComponent, name: 'Chart Preservation', order: '06', category: 'Charts', description: "The Document Editor supports chart preservation for users who use to view their business reports with intuitive graphical data visualization." },
-    { path: ':theme/document-editor/document-protection', component: DocumentEditorProtectionComponent, name: 'Document Protection', order: '07', category: 'Security', description: "The Document Editor provides document protection supports to restrict the types of changes can be made to the document by a user/user group." }
+    { path: ':theme/document-editor/document-protection', component: DocumentEditorProtectionComponent, name: 'Document Protection', order: '07', category: 'Security', description: "The Document Editor provides document protection supports to restrict the types of changes can be made to the document by a user/user group." },
+    { path: ':theme/document-editor/comments', component: CommentsComponent, name: 'Comments', order: '08', category: 'Review', type: 'new', description: "The Document Editor component supports add and edit comments in a Word document for comment discussion." }
 ];
 
 export const documentEditorRouter: ModuleWithProviders = RouterModule.forChild(documentEditorAppRoutes);
@@ -57,7 +59,7 @@ export const documentEditorRouter: ModuleWithProviders = RouterModule.forChild(d
     // tslint:disable-next-line:max-line-length
     declarations: [DocEditorComponent, CharacterFormattingComponent, ParagraphFormattingComponent, StylesComponent,
         BulletsNumberingComponent, HyperlinksBookmarksComponent, TableFormattingComponent, SectionFormattingComponent,
-        HeadersFootersComponent, TableOfContentsComponent, PrintComponent, RightToLeftComponent, CustomContextMenuComponent, AutoSaveComponent, DocumentEditorChartComponent, DocumentEditorProtectionComponent],
+        HeadersFootersComponent, TableOfContentsComponent, PrintComponent, RightToLeftComponent, CustomContextMenuComponent, AutoSaveComponent, DocumentEditorChartComponent, DocumentEditorProtectionComponent,CommentsComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DocumentEditorSampleModule {

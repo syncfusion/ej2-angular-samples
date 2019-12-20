@@ -1,12 +1,11 @@
 <div id="action-description">
-    <p>This sample visualizes the various phases involved in a manufacturing process of a product which transforms from
-         conceptual model to a sellable product.</p>
+    <p>This sample visualizes the various phases involved in a manufacturing process of a product which transforms from conceptual model to a sellable product.</p>
 </div>
 
 <div class="control-section">
     <ejs-gantt id="ganttDefault" height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
         [labelSettings]="labelSettings" height="400px" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
-        [highlightWeekends]="true" [eventMarkers]="eventMarkers">
+        [highlightWeekends]="true">
     </ejs-gantt>
 </div>
 
@@ -21,7 +20,7 @@
         taskbars, timeline units and dependency lines in touch enabled devices.
     </p>
     <p>
-        Gantt component features are segregated into individual feature-wise modules. To use a selection support and event markers we need to inject the
-        <code>Selection</code>, <code>DayMarkers</code> modules.
+        Gantt component features are segregated into individual feature-wise modules. To use a selection support we need to inject the
+        <code>Selection</code> module.
     </p>
 </div>

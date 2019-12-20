@@ -1,0 +1,34 @@
+<div id="action-description">
+	<p>This sample demonstrates the usage of template columns in Gantt. 
+        In this sample, we have shown custom images in the Resources column.</p>
+</div>
+<div class="control-section">
+    <ejs-gantt id="columnTemplate" height="430px" [dataSource]="data" [taskFields]="taskSettings" 
+        [labelSettings]="labelSettings" [splitterSettings]="splitterSettings" [rowHeight]=60 [treeColumnIndex]=1
+        height="450px" [allowSelection]="true" resourceNameMapping="resourceName" resourceIDMapping="resourceId" 
+        [resources]="resources" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true">
+        <e-columns>
+            <e-column field='TaskID' headerText='Task ID' textAlign='Left'></e-column>
+            <e-column field='TaskName' headerText='Task Name' width='250'></e-column>
+            <e-column field='resources' headerText='Resources' width='250'>
+                <ng-template #template let-data>
+                   <div class="image" *ngIf = data.ganttProperties.resourceNames>
+                        <img src="./assets/gantt/images/{{data.ganttProperties.resourceNames}}.png" style="height:40px;width:40px" /><div style="display:inline-block;width:100%;position:relative;left:30px">{{data.ganttProperties.resourceNames}}</div>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='StartDate' headerText='Start Date' width='150'></e-column>
+            <e-column field='Duration' headerText='Duration' width='150'></e-column>
+            <e-column field='Progress' headerText='Progress' width='150'></e-column>
+        </e-columns>
+
+    </ejs-gantt>
+    <div style="float: right; margin: 10px;">Source:
+        <a href="https://en.wikipedia.org/wiki/Construction" target='_blank'>https://en.wikipedia.org/</a>
+    </div>
+</div>
+
+<div id="description">
+    <p>The Gantt provides a way to use a custom layout for each cell using the column template feature. The <code>columns -> template</code> property accepts the template for the cell.</p>
+    <p>In this demo, using column template, resource column has been presented with employee photo</p>
+</div>

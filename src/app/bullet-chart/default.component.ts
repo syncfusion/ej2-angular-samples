@@ -1,0 +1,78 @@
+import { Component, ViewEncapsulation } from '@angular/core';
+import { Browser } from '@syncfusion/ej2-base';
+import { BulletTooltipSettingsModel, AnimationModel } from '@syncfusion/ej2-angular-charts';
+import { TextPosition, IBulletLoadedEventArgs, ChartTheme, MarginModel } from '@syncfusion/ej2-charts';
+/**
+ * Local data Source sample
+ */
+@Component({
+    selector: 'control-content',
+    templateUrl: 'default.html',
+    encapsulation: ViewEncapsulation.None
+})
+
+export class BulletChartDefaultComponent {
+    public width: string = Browser.isDevice ? '100%' : '80%';
+    public tooltip: BulletTooltipSettingsModel = { enable: true };
+    public animation: AnimationModel = { enable: false };
+
+    public titleRevenue: string = 'Revenue';
+    public titleProfit: string = 'Profit';
+    public titleAvg: string = 'Avg Order Size';
+    public titleCustomers: string = 'New Customers';
+    public titleRating: string = 'Cust Satisfaction';
+
+    public minimum1: number = 0;
+    public maximum1: number = 300;
+    public interval1: number = 50;
+    public data1: Object[] =  [{ value: 270, target: 250 }];
+
+    public minimum2: number = 0;
+    public maximum2: number = 30;
+    public interval2: number = 5;
+    public data2: Object[] =  [{ value: 23, target: 27 }];
+
+    public minimum3: number = 0;
+    public maximum3: number = 600;
+    public interval3: number = 100;
+    public data3: Object[] =  [{ value: 350, target: 550 }];
+
+    public minimum4: number = 0;
+    public maximum4: number = 2500;
+    public interval4: number = 500;
+    public data4: Object[] =  [{ value: 1600, target: 2100 }];
+
+    public minimum5: number = 0;
+    public maximum5: number = 5;
+    public interval5: number = 1;
+    public data5: Object[] =  [{ value: 4.9, target: 4 }];
+
+    public load =  (args: IBulletLoadedEventArgs) => {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.bulletChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/dark/i, 'Dark').replace(/light/i, 'Light').replace(/contrast/i, 'Contrast');
+    }
+
+    public positionTitle: TextPosition = Browser.isDevice ? 'Top' : 'Left';
+
+    public margin1: MarginModel = {
+        left: Browser.isDevice ? 10 : 10
+    };
+
+    public margin2: MarginModel = {
+        left: Browser.isDevice ? 10 : 80
+    };
+
+    public margin3: MarginModel = {
+        left: Browser.isDevice ? 10 : 22
+    };
+
+    public margin4: MarginModel = {
+        left: Browser.isDevice ? 10 : 19
+    };
+
+    public margin5: MarginModel = {
+        left: Browser.isDevice ? 10 : 13
+    };
+}

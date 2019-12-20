@@ -66,13 +66,48 @@ export class MapsPieComponent {
             markerSettings: [
                 {
                     visible: true,
-                    template: '<div id="template" style="display:none;">Name</div>',
+                    template: '<div id="pieChart1" style="height:70px;width:70px;"></div>',
                     dataSource: [
-                        { 'latitude': 61.938950426660604, 'longitude': 97.03125 },
-                        { 'latitude': 57.70414723434193, 'longitude': -114.08203125 },
-                        { 'latitude': 39.90973623453719, 'longitude': -103.0078125 },
-                        { 'latitude': 35.746512259918504, 'longitude': 102.216796875 },
-                        { 'latitude': -8.667918002363107, 'longitude': -52.55859375 },
+                        { 'latitude': 61.938950426660604, 'longitude': 97.03125 }
+                    ],
+                    animationDuration: 0
+                },
+                {
+                    visible: true,
+                    template: '  <div id="pieChart2" style="height:70px;width:70px;">',
+                    dataSource: [
+                        { 'latitude': 57.70414723434193, 'longitude': -114.08203125 }
+                    ],
+                    animationDuration: 0
+                },
+                {
+                    visible: true,
+                    template: '<div id="pieChart3" style="top:10px;left:10px;height:70px;width:70px;"></div>',
+                    dataSource: [
+                        { 'latitude': 39.90973623453719, 'longitude': -103.0078125 }
+                    ],
+                    animationDuration: 0
+                },
+                {
+                    visible: true,
+                    template: '<div id="pieChart4" style="height:70px;width:70px;"></div>',
+                    dataSource: [
+                        { 'latitude': 35.746512259918504, 'longitude': 102.216796875 }
+                    ],
+                    animationDuration: 0
+                },
+                {
+                    visible: true,
+                    template: '<div id="pieChart5" style="height:70px;width:70px;"></div>',
+                    dataSource: [
+                        { 'latitude': -8.667918002363107, 'longitude': -52.55859375 }
+                    ],
+                    animationDuration: 0
+                },
+                {
+                    visible: true,
+                    template: '<div id="pieChart6" style="height:70px;width:70px;"></div>',
+                    dataSource: [
                         { 'latitude': -23.725011735951796, 'longitude': 132.978515625 }
                     ],
                     animationDuration: 0
@@ -92,9 +127,10 @@ export class MapsPieComponent {
                         { 'x': '25-54 years', y: 45.9 }, { 'x': '55-64 years', y: 13.5 },
                     ],
                      type: 'Pie', xName: 'x', yName: 'y'
-                }]
+                }],
+                legendSettings: {visible: false}
             });
-            chart.appendTo('#container_LayerIndex_0_MarkerIndex_0_DataIndex_0');
+            chart.appendTo('#pieChart1');
             this.chartCollection.push(chart);
             let chart1: AccumulationChart = new AccumulationChart({
                 background: 'transparent', width: '70', height: '70',
@@ -107,9 +143,10 @@ export class MapsPieComponent {
                         { 'x': '25-54 years', y: 41.4 }, { 'x': '55-64 years', y: 13.3 },
                     ],
                      type: 'Pie', xName: 'x', yName: 'y'
-                }]
+                }],
+                legendSettings: {visible: false},
             });
-            chart1.appendTo('#container_LayerIndex_0_MarkerIndex_0_DataIndex_1');
+            chart1.appendTo('#pieChart2');
             this.chartCollection.push(chart1);
             let chart2: AccumulationChart = new AccumulationChart({
                 background: 'transparent', width: '70', height: '70',
@@ -122,9 +159,10 @@ export class MapsPieComponent {
                         { 'x': '25-54 years', y: 40.2 }, { 'x': '55-64 years', y: 12.3 },
                     ],
                      type: 'Pie', xName: 'x', yName: 'y'
-                }]
+                }],
+                legendSettings: {visible: false},
             });
-            chart2.appendTo('#container_LayerIndex_0_MarkerIndex_0_DataIndex_2');
+            chart2.appendTo('#pieChart3');
             this.chartCollection.push(chart2);
             let chart3: AccumulationChart = new AccumulationChart({
                 background: 'transparent', width: '70', height: '70',
@@ -137,9 +175,10 @@ export class MapsPieComponent {
                         { 'x': '25-54 years', y: 46.9 }, { 'x': '55-64 years', y: 11.3 },
                     ],
                      type: 'Pie', xName: 'x', yName: 'y'
-                }]
+                }],
+                legendSettings: {visible: false},
             });
-            chart3.appendTo('#container_LayerIndex_0_MarkerIndex_0_DataIndex_3');
+            chart3.appendTo('#pieChart4');
             this.chartCollection.push(chart3);
             let chart4: AccumulationChart = new AccumulationChart({
                 background: 'transparent', width: '70', height: '70',
@@ -152,9 +191,10 @@ export class MapsPieComponent {
                         { 'x': '25-54 years', y: 43.6 }, { 'x': '55-64 years', y: 8.2 },
                     ],
                      type: 'Pie', xName: 'x', yName: 'y'
-                }]
+                }],
+                legendSettings: {visible: false},
             });
-            chart4.appendTo('#container_LayerIndex_0_MarkerIndex_0_DataIndex_4');
+            chart4.appendTo('#pieChart5');
             this.chartCollection.push(chart4);
             let chart5: AccumulationChart = new AccumulationChart({
                 background: 'transparent', width: '70', height: '70',
@@ -167,9 +207,10 @@ export class MapsPieComponent {
                         { 'x': '25-54 years', y: 42 }, { 'x': '55-64 years', y: 11.8 },
                     ],
                      type: 'Pie', xName: 'x', yName: 'y'
-                }]
+                }],
+                legendSettings: {visible: false},
             });
-            chart5.appendTo('#container_LayerIndex_0_MarkerIndex_0_DataIndex_5');
+            chart5.appendTo('#pieChart6');
             this.chartCollection.push(chart5);
         }
 

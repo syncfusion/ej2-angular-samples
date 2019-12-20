@@ -1,0 +1,26 @@
+<div id="action-description">
+	<p>This sample demonstrates the Gantt column resizing feature. Click and drag at the right corner of each column header to resize the column.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-gantt id="columnResize" height="430px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
+        [labelSettings]="labelSettings" [splitterSettings]="splitterSettings" [treeColumnIndex]="1" [allowResizing]="true"
+        height="450px" [allowSelection]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true">
+    </ejs-gantt>
+    <div style="float: right; margin: 10px;">Source:
+        <a href="https://en.wikipedia.org/wiki/Construction" target='_blank'>https://en.wikipedia.org/</a>
+    </div>
+</div>
+<div id="description">
+    <p>The Gantt columns can be resized by clicking and dragging at the right corner of columns header. Set the <code>allowResizing</code> property to true to enable column resizing behavior in Gantt. 
+        You can also prevent the resize of a particular column 
+        by setting <code>columns -> allowResizing</code> to false in columns definition
+    </p>
+    <br/>
+    <p> In this demo, the allowResizing feature has been enabled by setting the <code>allowResizing</code> property to true. 
+       Task Name column can be resized between a range of <code>minWidth (120 pixels)</code> and <code>maxWidth (300 pixels)</code>. 
+       The column resizing has been disabled in the <b>Duration</b> column 
+    </p>
+    <p>Injecting Module:</p>
+    <p>Gantt component features are segregated into individual feature-wise modules. To use Resize feature, we need to inject <code>ResizeService</code> into the <code>@NgModule.providers</code> section.</p>
+</div>

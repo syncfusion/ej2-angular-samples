@@ -17,6 +17,7 @@ import { FileManagerAllModule } from '@syncfusion/ej2-angular-filemanager';
 import { ContextMenuModule ,ToolbarModule  } from '@syncfusion/ej2-angular-navigations';
 import { ButtonModule, CheckBoxModule   } from '@syncfusion/ej2-angular-buttons';
 import { FirebaseController } from './firebase.component';
+import { FTPController } from './ftp-file-provider.component';
 
 export const fileManagerAppRoutes: Object[] = [
     { path: ':theme/file-manager/overview', component: OverViewController, name: 'Overview', order: '01', category: 'File Manager', description: 'Angular FileManager component with full view of the File Manager like a windows explorer User Interface.' },
@@ -25,10 +26,11 @@ export const fileManagerAppRoutes: Object[] = [
     { path: ':theme/file-manager/drag-drop', component: DragAndDropController, name: 'Drag and Drop', order: '01', category: 'File Manager', description: 'Angular FileManager component with drag and drop feature to drag and drop the file.' },
     { path: ':theme/file-manager/file-upload', component: FileUploadController, name: 'File Upload', order: '02', category: 'Use Case', description: 'Angular FileManager component with how to render the File Manager component inside the Dialog component.' },
     { path: ':theme/file-manager/azure-service', component: AzureController, name: 'Azure Blob Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the azure service.' },
-    { path: ':theme/file-manager/sql-server-provider', component: SQLController, name: 'SQL Database Provider', order: '03', category: 'Cloud Service Providers', type: 'new', description: 'Angular FileManager component with how to configure and use the sql server database service.' },
-    { path: ':theme/file-manager/nodejs-file-provider', component: NodeJSController, name: 'NodeJS File Provider', order: '03', category: 'Cloud Service Providers', type: 'new', description: 'Angular FileManager component with how to configure and use the nodejs server database service.' },
-    { path: ':theme/file-manager/amazon-s3-file-provider', component: AmazonS3Controller, name: 'Amazon S3 File Provider', order: '03', category: 'Cloud Service Providers', type: 'new', description: 'Angular FileManager component with how to configure and use the Amazon S3 file provider service.' },
-    { path: ':theme/file-manager/firebase', component: FirebaseController, name: 'Firebase Realtime File Provider', order: '03', category: 'Cloud Service Providers', type: 'new', description: 'Angular FileManager component with how to configure and use the firebase realtime cloud storage database file provider service.' }
+    { path: ':theme/file-manager/sql-server-provider', component: SQLController, name: 'SQL Database Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the sql server database service.' },
+    { path: ':theme/file-manager/nodejs-file-provider', component: NodeJSController, name: 'NodeJS File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the nodejs server database service.' },
+    { path: ':theme/file-manager/amazon-s3-file-provider', component: AmazonS3Controller, name: 'Amazon S3 File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the Amazon S3 file provider service.' },
+    { path: ':theme/file-manager/firebase', component: FirebaseController, name: 'Firebase Realtime File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the firebase realtime cloud storage database file provider service.' },
+    { path: ':theme/file-manager/ftp-file-provider', component: FTPController, name: 'FTP File Provider', order: '03', category: 'Cloud Service Providers', type: 'new', description: 'Angular FileManager component with how to configure and use the File Transfer protocol service.' }
 ];
 
 export const fileRouter: ModuleWithProviders = RouterModule.forChild(fileManagerAppRoutes);
@@ -45,7 +47,8 @@ export const fileRouter: ModuleWithProviders = RouterModule.forChild(fileManager
         SQLController,
         NodeJSController,
         AmazonS3Controller,
-        FirebaseController
+        FirebaseController,
+        FTPController
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

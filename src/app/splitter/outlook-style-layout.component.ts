@@ -43,6 +43,6 @@ export class OutlookSplitterComponent {
     ];
 
     public onSplitterResize(): void {
-        this.rteObj.refresh();
+        this.rteObj.refreshUI();
     }
 }

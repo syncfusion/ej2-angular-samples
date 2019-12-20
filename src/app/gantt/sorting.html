@@ -1,0 +1,33 @@
+<div id="action-description">
+    <p>This sample demonstrates the Gantt multi-sorting feature. To sort two or more columns, hold the CTRL key, and
+        click the column header.
+    </p>
+</div>
+
+<div class="control-section">
+    <ejs-gantt id="Sorting" height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
+        [allowSorting]="true" [labelSettings]="labelSettings" [treeColumnIndex]="1" [columns]="columns"
+        [splitterSettings]="splitterSettings" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+        [sortSettings]="sortSettings" [highlightWeekends]="true" [selectedRowIndex]="0">
+    </ejs-gantt>
+</div>
+
+<div id="description">
+    <p>
+        The sorting feature enables you to order data in a particular direction. It can be enabled by setting <code>allowSorting</code> to true.
+    </p>
+    <p>To sort a Gantt column, click the column header. The icons (ascending) and (descending) specifies the sort direction of a column.
+    </p>
+
+    <p>By default, the multi-sorting feature is enabled in Gantt. To sort multiple columns, hold the
+        <strong>CTRL</strong> key, and then click the column header. To clear sort for a column, hold the
+        <strong>SHIFT</strong> key, and then click the column header.</p>
+    <p>In this demo, multiple sorting enabled on load time by assigning multiple columns into <code>sortSettings</code> property.</p>
+
+    <p>
+        Gantt component features are segregated into individual feature-wise modules.To use a selection, inject the
+        <code>Selection</code> module using the <code>Gantt.Inject(Selection)</code> method. To use sort, inject the
+        <code>Sort</code> module using the <code>Gantt.Inject(Sort)</code> method.To use markers, inject the
+        <code>DayMarkers</code> module using the <code>Gantt.Inject(DayMarkers)</code> method.
+    </p>
+</div>

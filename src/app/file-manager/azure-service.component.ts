@@ -13,10 +13,10 @@ import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsVie
 
 export class AzureController {
     public ajaxSettings: object;
-    public hostUrl: string = 'https://ej2services.syncfusion.com/production/web-services/';
+    public hostUrl: string = 'https://ej2-azure-aspcore-service.azurewebsites.net/';
     public ngOnInit(): void {
         this.ajaxSettings = {
-            url: this.hostUrl + 'api/AzureFileManager/AzureFileoperations',
+            url: this.hostUrl + 'api/AzureFileManager/AzureFileOperations',
             getImageUrl: this.hostUrl + 'api/AzureFileManager/AzureGetImage',
             uploadUrl: this.hostUrl + 'api/AzureFileManager/AzureUpload',
             downloadUrl: this.hostUrl + 'api/AzureFileManager/AzureDownload'

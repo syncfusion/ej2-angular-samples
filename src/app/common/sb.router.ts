@@ -46,6 +46,7 @@ import { StockChartSampleModule } from '../stock-chart/stock-chart.module';
 import { TreemapSampleModule } from '../treemap/treemap.module';
 import { HeatmapSampleModule } from '../heatmap/heatmap.module';
 import { DiagramSampleModule } from '../diagram/diagram.module';
+import { BarcodeSampleModule } from '../barcode/barcode.module';
 import { SparklineSampleModule } from '../sparkline/sparkline.module';
 import { SmithchartSampleModule } from '../smith-chart/smith-chart.module';
 import { ColorPickerSampleModule } from '../color-picker/color-picker.module';
@@ -60,6 +61,7 @@ import { FileSampleModule } from '../file-manager/file-manager.module';
 import { DashboardLayoutSampleModule } from '../dashboard-layout/dashboard-layout.module';
 import { ListBoxSampleModule } from '../list-box/list-box.module';
 import { SpreadsheetSampleModule } from '../spreadsheet/spreadsheet.module';
+import { BulletChartSampleModule } from '../bullet-chart/bullet-chart.module'
 
 const appRoutes: any = [
     // Grids
@@ -83,8 +85,10 @@ const appRoutes: any = [
     { path: ':theme/range-navigator/:sample', redirectTo: 'material/range-navigator/default' },
     { path: 'sparkline', loadChildren: SparklineSampleModule },
     { path: 'smithchart', loadChildren: SmithchartSampleModule },
+    { path: 'barcode', loadChildren: BarcodeSampleModule },
     { path: 'treemap', loadChildren: TreemapSampleModule },
     { path: 'heatmap', loadChildren: HeatmapSampleModule },
+    { path: 'bulletchart', loadChildren: BulletChartSampleModule },
     // Editors
     { path: 'button', loadChildren: ButtonSampleModule },
     { path: ':theme/button/:sample', redirectTo: 'material/button/default' },
@@ -169,8 +173,10 @@ const appRoutes: any = [
         RangeNavigatorSampleModule,
         SparklineSampleModule,
         SmithchartSampleModule,
+        BarcodeSampleModule,
         TreemapSampleModule,
         HeatmapSampleModule,
+        BulletChartSampleModule,
         // Editors
         ButtonSampleModule,
         ChipsSampleModule,

@@ -33,7 +33,7 @@ export class FileUploadController {
     public ajaxSettings: object;
     public contextMenuSettings: object;
     public toolbarSettings: object;
-    public hostUrl = 'https://ej2services.syncfusion.com/production/web-services/';
+    public hostUrl = 'https://ej2-aspcore-service.azurewebsites.net/';
     public contextmenuItems: string[] = ['Open', '|', 'Cut', 'Copy', 'Delete', 'Rename', '|', 'Details'];
 
     public btnClick: EmitType<object> = () => {

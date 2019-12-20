@@ -1,0 +1,13 @@
+#ToolbarTemplate .e-quickfilter::before {
+        content: '\e7ee';
+}
+.fabric #ToolbarTemplate .e-quickfilter::before,
+.highcontrast #ToolbarTemplate .e-quickfilter::before {
+        content: '\e21c';
+}
+.bootstrap #ToolbarTemplate .e-quickfilter::before {
+        content: '\e946';
+}
+.bootstrap4 #ToolbarTemplate .e-quickfilter::before {
+        content: '\e714';
+}

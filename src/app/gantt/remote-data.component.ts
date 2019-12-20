@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
 @Component({
+    selector: 'ej2-ganttremotedata',
     templateUrl: 'remote-data.html'
 })
 export class GanttRemoteDataComponent implements OnInit {

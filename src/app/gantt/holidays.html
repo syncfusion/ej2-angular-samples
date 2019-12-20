@@ -1,0 +1,23 @@
+<div id="action-description">
+    <p>This sample visualizes how to define the holidays in between the project timeline. </p>
+</div>
+
+<div class="control-section">
+    <ejs-gantt id="holidays" height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
+        [labelSettings]="labelSettings" height="400px" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+        [highlightWeekends]="true" [holidays]="holidays">
+    </ejs-gantt>
+</div>
+
+<div id="description">
+    <p>
+        In this example,<code> holidays </code> are displayed with vertical bar with the desired text using the <code>label</code> property. You can also mention the continuous holidays by specifying the <code>from</code> and <code>to</code> range. For single holiday, you can define from value alone. Holidays are defined as an array of object collection, so that we can display more than one holiday in the project.
+    </p>
+    <p>
+        You can even assign the <code>cssClass</code> to each holiday to change the default color of label and background.
+    </p>
+    <p>
+        Gantt component features are segregated into individual feature-wise modules. To use a selection, inject the
+        <code>Selection</code> module.To use markers, inject the <code>DayMarkers</code> module.
+    </p>
+</div>

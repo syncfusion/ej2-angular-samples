@@ -1,17 +1,15 @@
 <div id="action-description">
-    <p>This sample demonstrates the events that trigger on every action of the rich text editor. The event details are
-        showcased in the event trace panel.
+    <p>This sample demonstrates the events that trigger on every action of the rich text editor. The event details are showcased in the event trace panel.
     </p>
 </div>
 <div class="col-lg-8 control-section">
     <div class="content-wrapper">
-        <ejs-richtexteditor #RTEevents id='defaultRTE' [toolbarSettings]='tools' (created)='onCreate()'
-            (toolbarClick)='toolbarClick()' (actionBegin)='begin($event)' (actionComplete)='complete($event)'
-            (focus)='focus()' (change)='onChange()' (blur)='blur()'>
+        <ejs-richtexteditor #RTEevents id='defaultRTE' [toolbarSettings]='tools' (created)='onCreate()' (toolbarClick)='toolbarClick()' (actionBegin)='begin($event)' (actionComplete)='complete($event)' (focus)='focus()' (change)='onChange()' (blur)='blur()' (beforeDialogOpen)='beforeDialogOpen()'
+            (dialogOpen)='dialogOpen()' (dialogClose)='dialogClose()' (beforeQuickToolbarOpen)='beforeQuickToolbarOpen()' (quickToolbarOpen)='quickToolbarOpen()' (quickToolbarClose)='quickToolbarClose()' (imageSelected)='imageSelected()' (imageUploading)='imageUploading()'
+            (imageUploadSuccess)='imageUploadSuccess()' (imageUploadFailed)='imageUploadFailed()' (imageRemoving)='imageRemoving()' (destroyed)='destroyed()' (beforeSanitizeHtml)='beforeSanitizeHtml()' (resizing)='resizing()' (resizeStart)='resizeStart()'
+            (resizeStop)='resizeStop()'>
             <ng-template #valueTemplate>
-                <p>The rich text editor component is WYSIWYG ("what you see is what you get") editor that provides the
-                    best user experience to create and update the content.
-                    Users can format their content using standard toolbar commands.</p>
+                <p>The rich text editor component is WYSIWYG ("what you see is what you get") editor that provides the best user experience to create and update the content. Users can format their content using standard toolbar commands.</p>
 
                 <p><b>Key features:</b></p>
 

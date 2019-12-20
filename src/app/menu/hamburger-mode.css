@@ -67,12 +67,12 @@
     border: 1px solid black;
 }
 
-.deviceLayout .layout {
+.deviceLayout .layout-menu {
     border: 1px solid black;
     margin: 20px 13px 0px 13px;
 }
 
-.layout #container {
+.layout-menu #container {
     height: 405px;
     background-color: white;
     overflow: hidden;

@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { editingData, editingResources } from './data';
 @Component({
+    selector: 'ej2-ganttediting',
     templateUrl: 'editing.html'
 })
 export class GanttEditingComponent implements OnInit {
@@ -16,12 +17,14 @@ export class GanttEditingComponent implements OnInit {
     public editSettings: object;
     public eventMarkers: object[];
     public toolbar: string[];
+    public splitterSettings: object;
     public ngOnInit(): void {
         this.data = editingData;
         this.taskSettings = {
             id: 'TaskID',
             name: 'TaskName',
             startDate: 'StartDate',
+            endDate: 'EndDate',
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
@@ -69,5 +72,8 @@ export class GanttEditingComponent implements OnInit {
             { day: '7/16/2019', label: 'Property handover and sign-off' },
         ];
         this.resources = editingResources;
+        this.splitterSettings = {
+            columnIndex: 2
+        };
     }
 }

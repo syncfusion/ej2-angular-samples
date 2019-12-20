@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, ViewChild, ElementRef, AfterViewInit } fr
 import { DialogComponent, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
 import { ButtonModel } from '@syncfusion/ej2-buttons';
-
+import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 /**
  * Default Dialog Component
  */
@@ -28,7 +28,7 @@ export class DefaultDialogComponent implements AfterViewInit {
     public password: ElementRef;
 
     @ViewChild('alertButton')
-    public alertbtn: ElementRef;
+    public alertbtn: ButtonComponent;
 
     public alertHeader: string = 'Low Battery';
     public confirmHeader: string = 'Delete Multiple Items';
@@ -46,7 +46,7 @@ export class DefaultDialogComponent implements AfterViewInit {
     public hide: any;
 
     ngAfterViewInit(): void {
-        this.alertbtn.nativeElement.focus();
+        this.alertbtn.element.focus();
     }
     public alertDlgBtnClick = (): void => {
         this.alertDialog.hide();

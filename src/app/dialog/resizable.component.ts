@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import { DialogComponent } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
-
+import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 /**
  * Resizable Dialog Component
  */
@@ -18,7 +18,7 @@ export class ResizableDialogComponent {
     public resizeDialog: DialogComponent;
 
     @ViewChild('confirmButton')
-    public dialogBtn: ElementRef;
+    public dialogBtn: ButtonComponent;
 
     public dialogHeader = 'Resize Me!!!';
     public dialogCloseIcon: Boolean = true;
@@ -38,10 +38,10 @@ export class ResizableDialogComponent {
     }
 
     public dialogClose: EmitType<Object> = () => {
-        this.dialogBtn.nativeElement.style.display = 'block';
+        this.dialogBtn.element.style.display = 'block';
     }
 
     public dialogOpen: EmitType<Object> = () => {
-        this.dialogBtn.nativeElement.style.display = 'none';
+        this.dialogBtn.element.style.display = 'none';
     }
 }

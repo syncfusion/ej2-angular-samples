@@ -1,0 +1,23 @@
+<div id="action-description">
+    <p>This sample visualizes how to notify the important dates in the project timeline.</p>
+</div>
+
+<div class="control-section">
+    <ejs-gantt id="eventMarkers" height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
+        [labelSettings]="labelSettings" height="400px" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+        [highlightWeekends]="true" [eventMarkers]="eventMarkers">
+    </ejs-gantt>
+</div>
+
+<div id="description">
+    <p>
+        In this example, the <code>eventMarkers</code> are used like a bookmark to show the different stages of the project life cycle. You can show the desired text on the date. The Event Markers model has the below properties to customize the marker:
+       <li><code>cssClass</code>: Used to assign external CSS styles to that particular marker.</li>
+       <li><code>day</code>: Used to set date of the event marker.</li>
+       <li><code>label</code>: The desired text can be shown on the vertical line using this property.</li>
+    </p>
+    <p>
+        Gantt component features are segregated into individual feature-wise modules. To use a selection, inject the
+        <code>Selection</code> module.To use markers, inject the <code>DayMarkers</code> module.
+    </p>
+</div>

@@ -1,0 +1,67 @@
+{
+    "de": {
+        "listbox": {
+            "noRecordsTemplate": "Keine Aufzeichnungen gefunden",
+            "selectAllText": "Wählen Sie Alle",
+            "unSelectAllText": "alles wiederufen",
+            "moveUp": "Aufstieg",
+            "moveDown": "sich abwärts bewegen",
+            "moveTo": "ziehen nach",
+            "moveFrom": "bewegen sich von",
+            "moveAllTo": "verschiebe alles nach",
+            "moveAllFrom": "bewegen sich alle von"
+        }
+    },
+    "ar": {
+        "listbox": {
+            "noRecordsTemplate": "لا توجد سجلات",
+            "selectAllText": "اختر الكل",
+            "unSelectAllText": "إلغاء تحديد الكل",
+            "moveUp": "تحرك",
+            "moveDown": "تحرك لأسفل",
+            "moveTo": "حول إلى",
+            "moveFrom": "انتقل من",
+            "moveAllTo": "نقل جميع ل",
+            "moveAllFrom": "نقل كل من"
+        }
+    },
+    "en": {
+        "listbox": {
+            "noRecordsTemplate": "No Records Found",
+            "selectAllText": "Select All",
+            "unSelectAllText": "UnSelect All",
+            "moveUp": "Move Up",
+            "moveDown": "Move Down",
+            "moveTo": "Move To",
+            "moveFrom": "Move From",
+            "moveAllTo": "Move All To",
+            "moveAllFrom": "Move All From"
+        }
+    },
+    "zh": {
+        "listbox": {
+            "noRecordsTemplate": "没有找到记录",
+            "selectAllText": "全选",
+            "unSelectAllText": "全部取消选择",
+            "moveUp": "提升",
+            "moveDown": "下移",
+            "moveTo": "搬去",
+            "moveFrom": "从",
+            "moveAllTo": "全部移到",
+            "moveAllFrom": "从所有移动"
+        }
+    },
+    "fr-CH": {
+        "listbox": {
+            "noRecordsTemplate": "Aucun enregistrement trouvé",
+            "selectAllText": "tout sélectionner",
+            "unSelectAllText": "tout déselectionner",
+            "moveUp": "déplacer vers le haut",
+            "moveDown": "descendre",
+            "moveTo": "déménager à",
+            "moveFrom": "passer de",
+            "moveAllTo": "déplacer tout à",
+            "moveAllFrom": "déplacer tout de"
+        }
+    }
+}

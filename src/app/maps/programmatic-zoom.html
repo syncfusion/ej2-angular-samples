@@ -1,0 +1,63 @@
+<div id="action-description">
+  <p>
+  This sample visualizes the capitals of all the countries in the South America continent by displaying the markers in their locations.
+  </p>
+</div>
+
+<div class="control-section">
+  <div class="col-lg-9">
+    <div align='center'>
+      <ejs-maps id='container' #maps style="display:block;" [titleSettings]="titleSettings" [zoomSettings]='zoomSettings' [layers]='layers'
+        (load)="load($event)" useGroupingSeparator="true" format='n'>
+      </ejs-maps>
+    </div>
+    <!-- source link-->
+    <div style="float: right; margin-right: 10px;">
+      Source: <a href="https://en.wikipedia.org/wiki/List_of_sovereign_states_and_dependent_territories_in_South_America#Sovereign_states"
+        target="_blank">www.wikipedia.com</a>
+    </div>
+  </div>
+
+  <div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+      <div class="property-panel-header">Properties</div>
+      <div class="property-panel-content">
+        <table id="property" title="Properties" style="width: 100%">
+          <tbody>
+            <tr style="height: 50px">
+              <td style="width: 70%">
+                <div class="property-text" style="padding: 0px;">Zoom to fit all the makers in maps</div>
+              </td>
+              <td style="width: 20%">
+                <div style="padding-top:0px; padding-left: 20px;">
+                  <input type="checkbox" id="zoom" />
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div id='description'>
+  <p>
+    In this example, you can see how to zoom the maps dynamically based on the location of the markers in the map.
+    The map is scaled and the center position is changed based on the markers location. This is achieved by setting true to the <code>shouldZoomInitially</code> property in <code>zoomSettings</code>.
+  </p>
+  <p>
+    Tooltip is enabled in this example. To see the tooltip in action, hover the mouse over a marker or tap a marker in
+    touch enabled devices.
+  </p>
+  <br />
+  <p style="font-weight: 500">Injecting Module</p>
+  <p>
+    Maps component features are segregated into individual feature-wise modules. To use a marker, inject the
+    <code>Marker</code> module using the <code>Maps.Inject(Marker)</code> method.
+  </p>
+  <p>
+    More information on the maps layers can be found in this
+    <a target="_blank" href="">documentation section</a>.
+  </p>
+
+</div>

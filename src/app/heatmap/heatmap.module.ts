@@ -94,6 +94,7 @@ export const heatmapAppRoutes: Object[] = [
     },
     {
         path: ':theme/heatmap/legend', component: HeatmapLegendComponent,
+        type: 'update',
         description: 'This demo for Essential JS2 Heatmap control shows how to place the heatmap legend in different positions.',
         name: 'Legend Placement', order: '04', category: 'Features'
     },

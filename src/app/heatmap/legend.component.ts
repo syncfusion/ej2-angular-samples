@@ -17,7 +17,7 @@ export class HeatmapLegendComponent {
     @ViewChild('heatmap')
     public heatmap: HeatMap;
     titleSettings: Object = {
-        text: 'Hourly Weather Forecast (in Celsius)',
+        text: 'Hourly Weather Forecast',
         textStyle: {
             size: '15px',
             fontWeight: '500',
@@ -44,8 +44,11 @@ export class HeatmapLegendComponent {
         ]
     };
     public legendSettings: Object = {
-        position: 'Left',
+        position: 'Bottom',
         labelFormat: '{value}\xB0 C',
+        title: {
+            text :'Celsius'
+        }
     };
 	public tooltipRender(args: ITooltipEventArgs): void {
         args.content = [args.xLabel + ' | ' + args.yLabel + ' : ' + args.value + '\xB0 C'];
@@ -58,7 +61,7 @@ export class HeatmapLegendComponent {
     ngAfterViewInit() {
 
         let legentListObj: DropDownList = new DropDownList({
-            index: 0,
+            index: 3,
             popupHeight: '200px',
             change: () => {
                 this.heatmap.legendSettings.position = legentListObj.value.toString() === 'Right' ?

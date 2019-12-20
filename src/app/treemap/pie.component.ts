@@ -71,6 +71,7 @@ tooltipRendering = (args: ITreeMapTooltipRenderEventArgs) => {
                     yName: 'y'
                 }
             ],
+            legendSettings: {visible: false},
             background: 'transparent',
             tooltip: {
                 enable: true,
@@ -186,4 +187,3 @@ tooltipRendering = (args: ITreeMapTooltipRenderEventArgs) => {
         }
     ];
 };
-

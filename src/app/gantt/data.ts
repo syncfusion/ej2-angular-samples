@@ -22,6 +22,189 @@ export let projectNewData: Object[] = [
         Indicators: [
             {
                 'date': '04/10/2019',
+                'name': 'Design Phase',
+                'tooltip': 'Design phase completed',
+                'iconClass': 'okIcon e-icons'
+            }
+        ]
+    },
+    {
+        TaskID: 6,
+        TaskName: 'Market research',
+        StartDate: new Date('04/02/2019'),
+        EndDate: new Date('04/21/2019'),
+        subtasks: [
+            {
+                TaskID: 7,
+                TaskName: 'Demand analysis',
+                StartDate: new Date('04/04/2019'),
+                EndDate: new Date('04/21/2019'),
+                subtasks: [
+                    {
+                        TaskID: 8, TaskName: 'Customer strength', StartDate: new Date('04/04/2019'), Duration: 4,
+                        Predecessor: '5', Progress: 30
+                    },
+                    { TaskID: 9, TaskName: 'Market opportunity analysis', StartDate: new Date('04/04/2019'), Duration: 4, Predecessor: '5' }
+                ]
+            },
+            {
+                TaskID: 10, TaskName: 'Competitor analysis', StartDate: new Date('04/04/2019'), Duration: 4,
+                Predecessor: '7, 8', Progress: 30
+            },
+            { TaskID: 11, TaskName: 'Product strength analsysis', StartDate: new Date('04/04/2019'), Duration: 4, Predecessor: '9' },
+            {
+                TaskID: 12, TaskName: 'Research complete', StartDate: new Date('04/04/2019'), Duration: 0, Predecessor: '10',
+                Indicators: [
+                    {
+                        'date': '04/20/2019',
+                        'name': 'Research completed',
+                        'tooltip': 'Research completed',
+                        'iconClass': 'description e-icons'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        TaskID: 13,
+        TaskName: 'Product design and development',
+        StartDate: new Date('04/04/2019'),
+        EndDate: new Date('04/21/2019'),
+        subtasks: [
+            {
+                TaskID: 14, TaskName: 'Functionality design', StartDate: new Date('04/04/2019'),
+                Duration: 3, Progress: 30, Predecessor: '12'
+            },
+            { TaskID: 15, TaskName: 'Quality design', StartDate: new Date('04/04/2019'), Duration: 3, Predecessor: '12' },
+            { TaskID: 16, TaskName: 'Define reliability', StartDate: new Date('04/04/2019'), Duration: 2, Progress: 30, Predecessor: '15' },
+            { TaskID: 17, TaskName: 'Identifying raw materials', StartDate: new Date('04/04/2019'), Duration: 2, Predecessor: '15' },
+            {
+                TaskID: 18,
+                TaskName: 'Define cost plan',
+                StartDate: new Date('04/04/2019'),
+                EndDate: new Date('04/21/2019'),
+                subtasks: [
+                    {
+                        TaskID: 19, TaskName: 'Manufacturing cost', StartDate: new Date('04/04/2019'),
+                        Duration: 2, Progress: 30, Predecessor: '17'
+                    },
+                    { TaskID: 20, TaskName: 'Selling cost', StartDate: new Date('04/04/2019'), Duration: 2, Predecessor: '17' }
+                ]
+            },
+            {
+                TaskID: 21,
+                TaskName: 'Development of the final design',
+                StartDate: new Date('04/04/2019'),
+                EndDate: new Date('04/21/2019'),
+                subtasks: [
+                    {
+                        TaskID: 22, TaskName: 'Defining dimensions and package volume', StartDate: new Date('04/04/2019'),
+                        Duration: 2, Progress: 30, Predecessor: '19,20'
+                    },
+                    {
+                        TaskID: 23, TaskName: 'Develop design to meet industry standards', StartDate: new Date('04/04/2019'),
+                        Duration: 2, Predecessor: '22'
+                    },
+                    { TaskID: 24, TaskName: 'Include all the details', StartDate: new Date('04/04/2019'), Duration: 3, Predecessor: '23' }
+                ]
+            },
+            {
+                TaskID: 25, TaskName: 'CAD computer-aided design', StartDate: new Date('04/04/2019'),
+                Duration: 3, Progress: 30, Predecessor: '24'
+            },
+            { TaskID: 26, TaskName: 'CAM computer-aided manufacturing', StartDate: new Date('04/04/2019'), Duration: 3, Predecessor: '25' },
+            {
+                TaskID: 27, TaskName: 'Design complete', StartDate: new Date('04/04/2019'), Duration: 0, Predecessor: '26'               
+            }
+
+        ]
+    },
+    { TaskID: 28, TaskName: 'Prototype testing', StartDate: new Date('04/04/2019'), Duration: 4, Progress: 30, Predecessor: '27' },
+    { TaskID: 29, TaskName: 'Include feedback', StartDate: new Date('04/04/2019'), Duration: 4, Predecessor: '28ss',  Indicators: [
+        {
+            'date': '05/24/2019',
+            'name': 'Production phase',
+            'tooltip': 'Production phase completed',
+            'iconClass': 'okIcon e-icons'
+        }
+    ], },
+    { TaskID: 30, TaskName: 'Manufacturing', StartDate: new Date('04/04/2019'), Duration: 5, Progress: 30, Predecessor: '28,29' },
+    { TaskID: 31, TaskName: 'Assembling materials to finsihed goods', StartDate: new Date('04/04/2019'), Duration: 5, Predecessor: '30' },
+    {
+        TaskID: 32,
+        TaskName: 'Feedback and testing',
+        StartDate: new Date('04/04/2019'),
+        EndDate: new Date('04/21/2019'),
+        subtasks: [
+            {
+                TaskID: 33, TaskName: 'Internal testing and feedback', StartDate: new Date('04/04/2019'),
+                Duration: 3, Progress: 45, Predecessor: '31'
+            },
+            {
+                TaskID: 34, TaskName: 'Customer testing and feedback', StartDate: new Date('04/04/2019'),
+                Duration: 3, Progress: 50, Predecessor: '33'
+            }
+        ]
+    },
+    {
+        TaskID: 35,
+        TaskName: 'Final product development',
+        StartDate: new Date('04/04/2019'),
+        EndDate: new Date('04/21/2019'),
+        subtasks: [
+            {
+                TaskID: 36, TaskName: 'Important improvements', StartDate: new Date('04/04/2019'),
+                Duration: 4, Progress: 30, Predecessor: '34'
+            },
+            {
+                TaskID: 37, TaskName: 'Address any unforeseen issues', StartDate: new Date('04/04/2019'),
+                Duration: 4, Progress: 30, Predecessor: '36ss',
+                Indicators: [
+                    {
+                        'date': '06/21/2019',
+                        'name': 'Sales and marketing',
+                        'tooltip': 'Sales and marketing',
+                        'iconClass': 'description e-icons'
+                    }
+                ],
+            }
+        ]
+    },
+    {
+        TaskID: 38,
+        TaskName: 'Final product',
+        StartDate: new Date('04/04/2019'),
+        EndDate: new Date('04/21/2019'),
+        subtasks: [
+            { TaskID: 39, TaskName: 'Branding product', StartDate: new Date('04/04/2019'), Duration: 4, Predecessor: '37' },
+            {
+                TaskID: 40, TaskName: 'Marketing and presales', StartDate: new Date('04/04/2019'),
+                Duration: 4, Progress: 30, Predecessor: '39'
+            }
+        ]
+    }
+];
+
+export let WorkingTimeRangeData: Object[] = [
+    {
+        TaskID: 1,
+        TaskName: 'Product concept',
+        StartDate: new Date('04/02/2019'),
+        EndDate: new Date('04/21/2019'),
+        subtasks: [
+            { TaskID: 2, TaskName: 'Defining the product and its usage', StartDate: new Date('04/02/2019'), Duration: 3, Progress: 30 },
+            { TaskID: 3, TaskName: 'Defining target audience', StartDate: new Date('04/02/2019'), Duration: 3 },
+            {
+                TaskID: 4, TaskName: 'Prepare product sketch and notes', StartDate: new Date('04/02/2019'), Duration: 2,
+                Predecessor: '2', Progress: 30
+            },
+        ]
+    },
+    {
+        TaskID: 5, TaskName: 'Concept approval', StartDate: new Date('04/02/2019'), Duration: 0, Predecessor: '3,4',
+        Indicators: [
+            {
+                'date': '04/10/2019',
                 'name': '#briefing',
                 'title': 'Product concept breifing',
             }
@@ -112,20 +295,20 @@ export let projectNewData: Object[] = [
             },
             { TaskID: 26, TaskName: 'CAM computer-aided manufacturing', StartDate: new Date('04/04/2019'), Duration: 3, Predecessor: '25' },
             {
-                TaskID: 27, TaskName: 'Design complete', StartDate: new Date('04/04/2019'), Duration: 0, Predecessor: '26',
-                Indicators: [
-                    {
-                        'date': '05/18/2019',
-                        'name': '#meeting',
-                        'title': '2nd board of directors meeting',
-                    }
-                ]
+                TaskID: 27, TaskName: 'Design complete', StartDate: new Date('04/04/2019'), Duration: 0, Predecessor: '26'                
             }
 
         ]
     },
     { TaskID: 28, TaskName: 'Prototype testing', StartDate: new Date('04/04/2019'), Duration: 4, Progress: 30, Predecessor: '27' },
-    { TaskID: 29, TaskName: 'Include feedback', StartDate: new Date('04/04/2019'), Duration: 4, Predecessor: '28ss' },
+    { TaskID: 29, TaskName: 'Include feedback', StartDate: new Date('04/04/2019'), Duration: 4, Predecessor: '28ss',  Indicators: [
+        {
+            'date': '05/24/2019',
+            'name': 'Production phase',
+            'tooltip': 'Production phase completed',
+            'iconClass': 'okIcon e-icons'
+        }
+    ], },
     { TaskID: 30, TaskName: 'Manufacturing', StartDate: new Date('04/04/2019'), Duration: 5, Progress: 30, Predecessor: '28,29' },
     { TaskID: 31, TaskName: 'Assembling materials to finsihed goods', StartDate: new Date('04/04/2019'), Duration: 5, Predecessor: '30' },
     {
@@ -174,6 +357,43 @@ export let projectNewData: Object[] = [
         ]
     }
 ];
+
+export let templateData: Object[] = [
+    {
+        TaskID: 1,
+        TaskName: 'Product concept',
+        StartDate: new Date('04/02/2019'),
+        EndDate: new Date('04/21/2019'),
+        subtasks: [
+            { TaskID: 2, TaskName: 'Defining the product and its usage', StartDate: new Date('04/02/2019'), Duration: 3, Progress: 30, resources: [2] },
+            { TaskID: 3, TaskName: 'Defining target audience', StartDate: new Date('04/02/2019'), Duration: 3, resources: [3]},
+            { TaskID: 4, TaskName: 'Prepare product sketch and notes', StartDate: new Date('04/02/2019'), Duration: 2, Predecessor: '2', Progress: 30, resources: [4] }]
+        },
+        {
+        TaskID: 5, TaskName: 'Concept approval', StartDate: new Date('04/02/2019'), Duration: 0, Predecessor: '3,4', resources: [1]
+    },
+    {
+        TaskID: 6,
+        TaskName: 'Market research',
+        StartDate: new Date('04/02/2019'),
+        EndDate: new Date('04/21/2019'),
+        subtasks: [
+            {
+                TaskID: 7,
+                TaskName: 'Demand analysis',
+                StartDate: new Date('04/04/2019'),
+                EndDate: new Date('04/21/2019'),
+                subtasks: [
+                    { TaskID: 8, TaskName: 'Customer strength', StartDate: new Date('04/04/2019'), Duration: 4, Predecessor: '5', Progress: 30, resources: [5] },
+                    { TaskID: 9, TaskName: 'Market opportunity analysis', StartDate: new Date('04/04/2019'), Duration: 4, Predecessor: '5', resources: [6] }
+                ]
+            },
+            { TaskID: 10, TaskName: 'Competitor analysis', StartDate: new Date('04/04/2019'), Duration: 4, Predecessor: '7, 8', Progress: 30, resources: [4] },
+            { TaskID: 11, TaskName: 'Product strength analsysis', StartDate: new Date('04/04/2019'), Duration: 4, Predecessor: '9', resources: [8] },
+        ]
+    }
+       
+]
 
 export let zoomingData: Object[] = [
     {
@@ -1200,5 +1420,189 @@ export let unscheduledData: Object[] = [
     },
     {
         TaskId: 4, TaskName: 'Task 4', EndDate: new Date('01/08/2019'), TaskType: "Task with end date only"
+    },
+];
+
+export let tooltipData: object[] = [
+    {
+        TaskID: 1,
+        TaskName: 'Project initiation',
+        StartDate: new Date('04/02/2019'),
+        EndDate: new Date('04/21/2019'),
+        subtasks: [
+            {
+                TaskID: 2, TaskName: 'Identify site location', StartDate: new Date('04/02/2019'), Duration: 0,
+                Progress: 30, resources: [1], info: 'Measure the total property area alloted for construction',
+                BaselineStartDate: new Date('04/02/2019'), BaselineEndDate: new Date('04/02/2019')
+            },
+            {
+                TaskID: 3, TaskName: 'Perform soil test', StartDate: new Date('04/02/2019'), Duration: 4, Predecessor: '2',
+                resources: [2], info: 'Obtain an engineered soil test of lot where construction is planned.' +
+                    'From an engineer or company specializing in soil testing', BaselineStartDate: new Date('04/01/2019'),
+                BaselineEndDate: new Date('04/04/2019')
+            },
+            {
+                TaskID: 4, TaskName: 'Soil test approval', StartDate: new Date('04/02/2019'), Duration: 0, Predecessor: '3', Progress: 30,
+                BaselineStartDate: new Date('04/06/2019'), BaselineEndDate: new Date('04/06/2019')
+            },
+
+        ]
+    },
+    {
+        TaskID: 5,
+        TaskName: 'Project estimation',
+        StartDate: new Date('04/02/2019'),
+        EndDate: new Date('04/21/2019'),
+        subtasks: [
+            {
+                TaskID: 6, TaskName: 'Develop floor plan for estimation', StartDate: new Date('04/04/2019'),
+                Duration: 3, Predecessor: '4', Progress: 30, resources: 4,
+                info: 'Develop floor plans and obtain a materials list for estimations',
+                BaselineStartDate: new Date('04/05/2019'), BaselineEndDate: new Date('04/07/2019')
+            },
+            {
+                TaskID: 7, TaskName: 'List materials', StartDate: new Date('04/04/2019'),
+                Duration: 3, Predecessor: '6', resources: [4], info: '',
+                BaselineStartDate: new Date('04/09/2019'), BaselineEndDate: new Date('04/12/2019')
+            },
+            {
+                TaskID: 8, TaskName: 'Estimation approval', StartDate: new Date('04/04/2019'),
+                Duration: 0, Predecessor: '7', resources: [12], info: '',
+                BaselineStartDate: new Date('04/16/2019'), BaselineEndDate: new Date('04/16/2019')
+            }
+        ]
+    },
+    {
+        TaskID: 9, TaskName: 'Sign contract', StartDate: new Date('04/04/2019'), Duration: 1,
+        Predecessor: '8', Progress: 30, resources: [12],
+        info: 'If required obtain approval from HOA (homeowners association) or ARC (architectural review committee)',
+        BaselineStartDate: new Date('04/16/2019'), BaselineEndDate: new Date('04/17/2019')
+    },
+    {
+        TaskID: 10,
+        TaskName: 'Project approval and kick off',
+        StartDate: new Date('04/04/2019'),
+        EndDate: new Date('04/21/2019'),
+        Duration: 0,
+        Predecessor: '9',
+        BaselineStartDate: new Date('04/17/2019'), BaselineEndDate: new Date('04/17/2019')
+    },
+    {
+        TaskID: 11,
+        TaskName: 'Site work',
+        StartDate: new Date('04/04/2019'),
+        EndDate: new Date('04/21/2019'),
+        subtasks: [
+            {
+                TaskID: 12, TaskName: 'Clear the building site', StartDate: new Date('04/04/2019'),
+                Duration: 2, Progress: 30, Predecessor: '9',
+                info: 'Clear the building site (demolition of existing home if necessary)',
+                BaselineStartDate: new Date('04/16/2019'), BaselineEndDate: new Date('04/18/2019')
+            },
+            {
+                TaskID: 13, TaskName: 'Install temporary power service', StartDate: new Date('04/04/2019'),
+                Duration: 2, Predecessor: '12', info: '',
+                BaselineStartDate: new Date('04/17/2019'), BaselineEndDate: new Date('04/19/2019')
+            },
+        ]
+    }
+];
+
+export let selfData: object[] = [
+    { taskID: 1, taskName: "Project Schedule", startDate: new Date("02/04/2019"), endDate: new Date("03/10/2019") },
+    { taskID: 2, taskName: "Planning", startDate: new Date("02/04/2019"), endDate: new Date("02/10/2019"), parentID: 1 },
+    { taskID: 3, taskName: "Plan timeline", startDate: new Date("02/04/2019"), endDate: new Date("02/10/2019"), duration: 6, progress: "60", parentID: 2 },
+    { taskID: 4, taskName: "Plan budget", startDate: new Date("02/04/2019"), endDate: new Date("02/10/2019"), duration: 6, progress: "90", parentID: 2 },
+    { taskID: 5, taskName: "Allocate resources", startDate: new Date("02/04/2019"), endDate: new Date("02/10/2019"), duration: 6, progress: "75", parentID: 2 },
+    { taskID: 6, taskName: "Planning complete", startDate: new Date("02/06/2019"), endDate: new Date("02/10/2019"), duration: 0, predecessor: "3FS,4FS,5FS", parentID: 2 },
+    { taskID: 7, taskName: "Design", startDate: new Date("02/13/2019"), endDate: new Date("02/17/2019"), parentID: 1, },
+    { taskID: 8, taskName: "Software Specification", startDate: new Date("02/13/2019"), endDate: new Date("02/15/2019"), duration: 3, progress: "60", predecessor: "6FS", parentID: 7, },
+    { taskID: 9, taskName: "Develop prototype", startDate: new Date("02/13/2019"), endDate: new Date("02/15/2019"), duration: 3, progress: "100", predecessor: "6FS", parentID: 7, },
+    { taskID: 10, taskName: "Get approval from customer", startDate: new Date("02/16/2019"), endDate: new Date("02/17/2019"), duration: 2, progress: "100", predecessor: "9FS", parentID: 7, },
+    { taskID: 11, taskName: "Design complete", startDate: new Date("02/17/2019"), endDate: new Date("02/17/2019"), duration: 0, predecessor: "10FS", parentID: 7, }
+];
+
+export let labelData: object[] = [
+    {
+        TaskID: 1,
+        TaskName: 'Project initiation',
+        StartDate: new Date('04/02/2019'),
+        EndDate: new Date('04/21/2019'),
+        subtasks: [
+            {
+                TaskID: 2, TaskName: 'Identify site location', StartDate: new Date('04/02/2019'), Duration: 0,
+                Progress: 30, resources: [1], info: 'Measure the total property area alloted for construction',
+                BaselineStartDate: new Date('04/02/2019'), BaselineEndDate: new Date('04/02/2019')
+            },
+            {
+                TaskID: 3, TaskName: 'Perform soil test', StartDate: new Date('04/02/2019'), Duration: 4, Predecessor: '2',
+                resources: [2, 3, 5], info: 'Obtain an engineered soil test of lot where construction is planned.' +
+                    'From an engineer or company specializing in soil testing', BaselineStartDate: new Date('04/01/2019'),
+                BaselineEndDate: new Date('04/04/2019')
+            },
+            {
+                TaskID: 4, TaskName: 'Soil test approval', StartDate: new Date('04/02/2019'), Duration: 0, Predecessor: '3', Progress: 30,
+                BaselineStartDate: new Date('04/06/2019'), BaselineEndDate: new Date('04/06/2019')
+            },
+
+        ]
+    },
+    {
+        TaskID: 5,
+        TaskName: 'Project estimation',
+        StartDate: new Date('04/02/2019'),
+        EndDate: new Date('04/21/2019'),
+        subtasks: [
+            {
+                TaskID: 6, TaskName: 'Develop floor plan for estimation', StartDate: new Date('04/04/2019'),
+                Duration: 3, Predecessor: '4', Progress: 30, resources: 4,
+                info: 'Develop floor plans and obtain a materials list for estimations',
+                BaselineStartDate: new Date('04/05/2019'), BaselineEndDate: new Date('04/07/2019')
+            },
+            {
+                TaskID: 7, TaskName: 'List materials', StartDate: new Date('04/04/2019'),
+                Duration: 3, Predecessor: '6', resources: [4, 8], info: '',
+                BaselineStartDate: new Date('04/09/2019'), BaselineEndDate: new Date('04/12/2019')
+            },
+            {
+                TaskID: 8, TaskName: 'Estimation approval', StartDate: new Date('04/04/2019'),
+                Duration: 0, Predecessor: '7', resources: [12, 5], info: '',
+                BaselineStartDate: new Date('04/16/2019'), BaselineEndDate: new Date('04/16/2019')
+            }
+        ]
+    },
+    {
+        TaskID: 9, TaskName: 'Sign contract', StartDate: new Date('04/04/2019'), Duration: 1,
+        Predecessor: '8', Progress: 30, resources: [12],
+        info: 'If required obtain approval from HOA (homeowners association) or ARC (architectural review committee)',
+        BaselineStartDate: new Date('04/16/2019'), BaselineEndDate: new Date('04/17/2019')
+    },
+    {
+        TaskID: 10,
+        TaskName: 'Project approval and kick off',
+        StartDate: new Date('04/04/2019'),
+        EndDate: new Date('04/21/2019'),
+        Duration: 0,
+        Predecessor: '9',
+        BaselineStartDate: new Date('04/17/2019'), BaselineEndDate: new Date('04/17/2019')
+    },
+    {
+        TaskID: 11,
+        TaskName: 'Site work',
+        StartDate: new Date('04/04/2019'),
+        EndDate: new Date('04/21/2019'),
+        subtasks: [
+            {
+                TaskID: 12, TaskName: 'Clear the building site', StartDate: new Date('04/04/2019'),
+                Duration: 2, Progress: 30, Predecessor: '9',
+                info: 'Clear the building site (demolition of existing home if necessary)',
+                BaselineStartDate: new Date('04/16/2019'), BaselineEndDate: new Date('04/18/2019')
+            },
+            {
+                TaskID: 13, TaskName: 'Install temporary power service', StartDate: new Date('04/04/2019'),
+                Duration: 2, Predecessor: '12', info: '',
+                BaselineStartDate: new Date('04/17/2019'), BaselineEndDate: new Date('04/19/2019')
+            },
+        ]
     },
 ];

@@ -3,6 +3,7 @@ import { baselineData } from './data';
 import { Internationalization } from '@syncfusion/ej2-base';
 let instance: Internationalization = new Internationalization();
 @Component({
+    selector: 'ej2-ganttbaseline',
     templateUrl: 'baseline.html'
 })
 export class GanttBaselineComponent implements OnInit {

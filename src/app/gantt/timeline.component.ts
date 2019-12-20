@@ -5,6 +5,7 @@ import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { projectData,projectResources } from './data';
 import { GanttComponent, TimelineViewMode } from '@syncfusion/ej2-angular-gantt';
 @Component({
+    selector: 'ej2-gantttimeline',
     templateUrl: 'timeline.html'
 })
 export class GanttTimelineComponent implements OnInit {
@@ -71,7 +72,6 @@ export class GanttTimelineComponent implements OnInit {
     public tooltipSettings: object;
     public projectStartDate: Date;
     public projectEndDate: Date;
-    public eventMarkers: object[];
     public ngOnInit(): void {
         this.data = projectData;
         this.taskSettings = {
@@ -102,12 +102,6 @@ export class GanttTimelineComponent implements OnInit {
         };
         this.projectStartDate = new Date('02/03/2019'),
         this.projectEndDate = new Date('03/23/2019'),
-        this.eventMarkers = [
-            {
-                day: '02/08/2019',
-                label: 'Project kick-off'
-            }
-        ];
         this.resources = projectResources;
     }
     public onUnitWidthChange(args: ChangedEventArgs): void {

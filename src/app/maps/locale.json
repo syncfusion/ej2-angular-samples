@@ -1,0 +1,52 @@
+{
+    "de": {
+        "maps": {
+            "ZoomIn": "Hineinzoomen",
+            "ZoomOut": "Rauszoomen",
+            "Zoom": "Zoomen",
+            "Pan": "Pfanne",
+            "Reset": "Zurücksetzen",
+            "ResetZoom": "Zoom Zurücksetzen"
+        }
+    },
+    "ar": {
+        "maps": {
+            "ZoomIn": "زومٍي",
+            "ZoomOut": "ذوموت",
+            "Zoom": "زوم",
+            "Pan": "بان",
+            "Reset": "رست",
+            "ResetZoom": "رست زوم"
+        }
+    },
+    "en": {
+        "maps": {
+            "ZoomIn": "Zoom In",
+            "ZoomOut": "Zoom Out",
+            "Zoom": "Zoom",
+            "Pan": "Pan",
+            "Reset": "Reset",
+            "ResetZoom": "Reset Zoom"
+        }
+    },
+    "zh": {
+        "maps": {
+            "ZoomIn": "放大",
+            "ZoomOut": "缩小",
+            "Zoom": "放大",
+            "Pan": "泛",
+            "Reset": "重启",
+            "ResetZoom": "重置缩放"
+        }
+    },
+    "fr-CH": {
+        "maps": {
+            "ZoomIn": "Agrandir",
+            "ZoomOut": "Dézoomer",
+            "Zoom": "Zoom",
+            "Pan": "La poêle",
+            "Reset": "Réinitialiser",
+            "ResetZoom": "Réinitialiser Zoom"
+        }
+    }
+}

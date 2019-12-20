@@ -4,6 +4,7 @@ import { ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
 import { GanttComponent } from '@syncfusion/ej2-angular-gantt';
 
 @Component({
+    selector: 'ej2-ganttexporting',
     templateUrl: 'exporting.html'
 })
 export class GanttExportingComponent implements OnInit {
@@ -18,6 +19,8 @@ export class GanttExportingComponent implements OnInit {
     public projectStartDate: Date;
     public projectEndDate: Date;
     public toolbar: string[];
+    public splitterSettings: object;
+    public columns: object[];
     public ngOnInit(): void {
         this.data = editingData;
         this.taskSettings = {
@@ -49,6 +52,19 @@ export class GanttExportingComponent implements OnInit {
         this.projectStartDate = new Date('03/25/2019');
         this.projectEndDate = new Date('07/28/2019');
         this.resources = editingResources;
+        this.splitterSettings = {
+            columnIndex: 2
+        };
+        this.columns = [
+            { field: 'TaskID', width: 60 },
+            { field: 'TaskName', width: 250 },
+            { field: 'StartDate' },
+            { field: 'EndDate' },
+            { field: 'Duration' },
+            { field: 'Predecessor' },
+            { field: 'Progress' },
+            { field: 'resources' },
+        ];
     }
     toolbarClick(args?: ClickEventArgs): void {
         if (args.item.id === 'GanttExport_excelexport') {

@@ -1,6 +1,6 @@
 <div id="action-description">
     <p>
-        This sample demonstrates polar series with spline type for the microphone type data. The switching between polar and radar series can be done by using <code>Series Type</code> in property panel. 
+        This sample demonstrates polar series with spline type for the microphone type data. The switching between polar and radar series can be done by using <code>Series Type</code> in property panel.
     </p>
 </div>
 <div class="control-section">
@@ -9,11 +9,13 @@
             [tooltip]='tooltip' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='series1' type='Polar' drawType='Spline' xName='x' yName='y' name='Cardioid (unidirectional)' width=2
-                    dashArray='5 5 2'>
+                    dashArray='5 5 2' [isClosed] = 'closed'>
                 </e-series>
-                <e-series [dataSource]='series2' type='Polar' drawType='Spline' xName='x' yName='y' name='Omnidirectional' width=2 dashArray='2'>
+                <e-series [dataSource]='series2' type='Polar' drawType='Spline' xName='x' yName='y' name='Omnidirectional' width=2
+                    dashArray='2' [isClosed] = 'closed'>
                 </e-series>
-                <e-series [dataSource]='series3' type='Polar' drawType='Spline' xName='x' yName='y' name='Bidirectional' width=2>
+                <e-series [dataSource]='series3' type='Polar' drawType='Spline' xName='x' yName='y' name='Bidirectional' width=2
+                    [isClosed] = 'closed'>
                 </e-series>
             </e-series-collection>
         </ejs-chart>

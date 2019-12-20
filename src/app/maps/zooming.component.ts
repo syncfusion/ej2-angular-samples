@@ -89,7 +89,6 @@ export class MapsZoomingComponent {
             let element: HTMLInputElement = <HTMLInputElement>(document.getElementById('doubletap'));
             let maps: Maps = <Maps>document.getElementById('container')['ej2_instances'][0];
             maps.zoomSettings.doubleClickZoom = element.checked;
-            maps.zoomSettings.zoomOnClick = (!element.checked);
             let ele1: HTMLInputElement = <HTMLInputElement>document.getElementById('singletap');
             if (element.checked) {
                 ele1.disabled = true;
@@ -104,7 +103,6 @@ export class MapsZoomingComponent {
             let ele1: HTMLInputElement = <HTMLInputElement>document.getElementById('doubletap');
             let maps: Maps = <Maps>document.getElementById('container')['ej2_instances'][0];
             maps.zoomSettings.zoomOnClick = element.checked;
-            maps.zoomSettings.doubleClickZoom = (!element.checked);
             if (element.checked) {
                 ele1.disabled = true;
             } else {

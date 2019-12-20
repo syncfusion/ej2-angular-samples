@@ -33,180 +33,810 @@ export var sydneyPlaces = [
 ];
 export var topPopulation = [
     {
-        'name': 'Tokyo',
-        'latitude': 35.6894875,
-        'longitude': 139.6917064,
-        'population': 33200000,
-        'Country': 'Japan'
+        "name": "Tokyo",
+        "latitude": 35.6894875,
+        "longitude": 139.6917064,
+        "population": 33200000,
+        "Country": "Japan",
+        "Continent": "Asia",
+        "color": "red",
+        "shape": "Pentagon"
     },
     {
-        'name': 'New York',
-        'latitude': 40.7127753,
-        'longitude': -74.0059728,
-        'population': 17800000,
-        'Country': 'United States'
+        "name": "New York",
+        "latitude": 40.7127753,
+        "longitude": -74.0059728,
+        "population": 17800000,
+        "Country": "United States",
+        "Continent": "North America",
+        "color": "green",
+        "shape": "Diamond"
     },
     {
-        'name': 'Sao Paulo',
-        'latitude': -23.5505199,
-        'longitude': -46.6333094,
-        'population': 17700000,
-        'Country': 'Brazil'
+        "name": "Sao Paulo",
+        "latitude": -23.5505199,
+        "longitude": -46.6333094,
+        "population": 17700000,
+        "Country": "Brazil",
+        "Continent": "South America",
+        "color": "orange",
+        "shape": "InvertedTriangle"
     },
     {
-        'name': 'Seoul/Incheon',
-        'latitude': 37.566535,
-        'longitude': 126.9779692,
-        'population': 17500000,
-        'Country': 'South Korea',
+        "name": "Seoul/Incheon",
+        "latitude": 37.566535,
+        "longitude": 126.9779692,
+        "population": 17500000,
+        "Country": "South Korea",
+        "Continent": "Asia",
+        "color": "red",
+        "shape": "Pentagon"
     },
     {
-        'name': 'Mexico City',
-        'latitude': 19.2464696,
-        'longitude': -99.1013498,
-        'population': 17400000,
-        'Country': 'Mexico'
+        "name": "Mexico City",
+        "latitude": 19.2464696,
+        "longitude": -99.1013498,
+        "population": 17400000,
+        "Country": "Mexico",
+        "Continent": "North America",
+        "color": "green",
+        "shape": "Diamond"
     },
     {
-        'name': 'Osaka/Kobe/Kyoto',
-        'latitude': 35.0212466,
-        'longitude': 135.7555968,
-        'population': 16425000,
-        'Country': 'Japan'
+        "name": "Osaka/Kobe/Kyoto",
+        "latitude": 35.0212466,
+        "longitude": 135.7555968,
+        "population": 16425000,
+        "Country": "Japan",
+        "Continent": "Asia",
+        "color": "red",
+        "shape": "Pentagon"
     },
     {
-        'name': 'Manila',
-        'latitude': 14.5995124,
-        'longitude': 120.9842195,
-        'population': 14750000,
-        'Country': 'Philippines'
+        "name": "Manila",
+        "latitude": 14.5995124,
+        "longitude": 120.9842195,
+        "population": 14750000,
+        "Country": "Philippines",
+        "Continent": "Asia",
+        "color": "red",
+        "shape": "Pentagon"
     },
     {
-        'name': 'Mumbai',
-        'latitude': 19.0759837,
-        'longitude': 72.8776559,
-        'population': 14350000,
-        'Country': 'India'
+        "name": "Mumbai",
+        "latitude": 19.0759837,
+        "longitude": 72.8776559,
+        "population": 14350000,
+        "Country": "India",
+        "Continent": "Asia",
+        "color": "red",
+        "shape": "Pentagon"
     },
     {
-        'name': 'Delhi',
-        'latitude': 28.6139391,
-        'longitude': 77.2090212,
-        'population': 14300000,
-        'Country': 'India'
+        "name": "Delhi",
+        "latitude": 28.6139391,
+        "longitude": 77.2090212,
+        "population": 14300000,
+        "Country": "India",
+        "Continent": "Asia",
+        "color": "red",
+        "shape": "Pentagon"
     },
     {
-        'name': 'Jakarta',
-        'latitude': -6.17511,
-        'longitude': 106.8650395,
-        'population': 14250000,
-        'Country': 'Indonesia'
+        "name": "Jakarta",
+        "latitude": -6.17511,
+        "longitude": 106.8650395,
+        "population": 14250000,
+        "Country": "Indonesia",
+        "color": "red",
+        "Continent": "Asia",
+        "shape": "Pentagon"
     },
     {
-        'name': 'Lagos',
-        'latitude': 6.5243793,
-        'longitude': 3.3792057,
-        'population': 13400000,
-        'Country': 'Nigeria'
+        "name": "Lagos",
+        "latitude": 6.5243793,
+        "longitude": 3.3792057,
+        "population": 13400000,
+        "Continent": "Africa",
+        "Country": "Nigeria",
+        "color": "blue",
+        "shape": "Rectangle"
     },
     {
-        'name': 'Kolkata',
-        'latitude': 22.572646,
-        'longitude': 88.363895,
-        'population': 12700000,
-        'Country': 'India'
+        "name": "Kolkata",
+        "latitude": 22.572646,
+        "longitude": 88.363895,
+        "population": 12700000,
+        "Country": "India",
+        "Continent": "Asia",
+        "color": "red",
+        "shape": "Pentagon"
     },
     {
-        'name': 'Cairo',
-        'latitude': 30.0444196,
-        'longitude': 31.2357116,
-        'population': 12200000,
-        'Country': 'Egypt'
+        "name": "Cairo",
+        "latitude": 30.0444196,
+        "longitude": 31.2357116,
+        "population": 12200000,
+        "Country": "Egypt",
+        "Continent": "Africa",
+        "color": "blue",
+        "shape": "Rectangle"
     },
     {
-        'name': 'Los Angeles',
-        'latitude': 34.0522265,
-        'longitude': -118.2436596,
-        'population': 11789000,
-        'Country': 'United States'
+        "name": "Los Angeles",
+        "latitude": 34.0522265,
+        "longitude": -118.2436596,
+        "population": 11789000,
+        "Continent": "North America",
+        "Country": "United States",
+        "color": "green",
+        "shape": "Diamond"
     },
     {
-        'name': 'Buenos Aires',
-        'latitude': -34.6036844,
-        'longitude': -58.3815591,
-        'population': 11200000,
-        'Country': 'Argentina'
+        "name": "Buenos Aires",
+        "latitude": -34.6036844,
+        "longitude": -58.3815591,
+        "population": 11200000,
+        "Country": "Argentina",
+        "color": "orange",
+        "Continent": "South America",
+        "shape": "InvertedTriangle"
     },
     {
-        'name': 'Rio de Janeiro',
-        'latitude': -22.9068467,
-        'longitude': -43.1728965,
-        'population': 10800000,
-        'Country': 'Brazil'
+        "name": "Rio de Janeiro",
+        "latitude": -22.9068467,
+        "longitude": -43.1728965,
+        "population": 10800000,
+        "Country": "Brazil",
+        "color": "orange",
+        "Continent": "South America",
+        "shape": "InvertedTriangle"
     },
     {
-        'name': 'Moscow',
-        'latitude': 55.755826,
-        'longitude': 37.6173,
-        'population': 10500000,
-        'Country': 'Russia'
+        "name": "Moscow",
+        "latitude": 55.755826,
+        "longitude": 37.6173,
+        "population": 10500000,
+        "Country": "Russia",
+        "color": "yellow",
+        "Continent": "Europe",
+        "shape": "Triangle"
     },
     {
-        'name': 'Shanghai',
-        'latitude': 31.2303904,
-        'longitude': 121.4737021,
-        'population': 10000000,
-        'Country': 'China'
+        "name": "Shanghai",
+        "latitude": 31.2303904,
+        "longitude": 121.4737021,
+        "population": 10000000,
+        "Country": "China",
+        "color": "red",
+        "Continent": "Asia",
+        "shape": "Pentagon"
     },
     {
-        'name': 'Karachi',
-        'latitude': 25.0700428,
-        'longitude': 67.2847875,
-        'population': 9800000,
-        'Country': 'Pakistan'
+        "name": "Karachi",
+        "latitude": 25.0700428,
+        "longitude": 67.2847875,
+        "population": 9800000,
+        "Country": "Pakistan",
+        "color": "red",
+        "Continent": "Asia",
+        "shape": "Pentagon"
     },
     {
-        'name': 'Paris',
-        'latitude': 48.856614,
-        'longitude': 2.3522219,
-        'population': 9645000,
-        'Country': 'France'
+        "name": "Paris",
+        "latitude": 48.856614,
+        "longitude": 2.3522219,
+        "population": 9645000,
+        "Country": "France",
+        "color": "yellow",
+        "Continent": "Europe",
+        "shape": "Triangle"
     },
     {
-        'name': 'Istanbul',
-        'latitude': 41.0082376,
-        'longitude': 28.9783589,
-        'population': 9000000,
-        'Country': 'Istanbul'
+        "name": "Istanbul",
+        "latitude": 41.0082376,
+        "longitude": 28.9783589,
+        "population": 9000000,
+        "Country": "Istanbul",
+        "color": "yellow",
+        "Continent": "Europe",
+        "shape": "Triangle"
     },
     {
-        'name': 'Nagoya',
-        'latitude': 35.1814464,
-        'longitude': 136.906398,
-        'population': 9000000,
-        'Country': 'Japan'
+        "name": "Nagoya",
+        "latitude": 35.1814464,
+        "longitude": 136.906398,
+        "population": 9000000,
+        "Country": "Japan",
+        "color": "red",
+        "Continent": "Asia",
+        "shape": "Pentagon"
     },
     {
-        'name': 'Beijing',
-        'latitude': 39.9041999,
-        'longitude': 116.4073963,
-        'population': 8614000,
-        'Country': 'China'
+        "name": "Beijing",
+        "latitude": 39.9041999,
+        "longitude": 116.4073963,
+        "population": 8614000,
+        "Country": "China",
+        "color": "red",
+        "Continent": "Asia",
+        "shape": "Pentagon"
     },
     {
-        'name': 'Chicago',
-        'latitude': 41.8781136,
-        'longitude': -87.6297982,
-        'population': 8308000,
-        'Country': 'United States'
+        "name": "Chicago",
+        "latitude": 41.8781136,
+        "longitude": -87.6297982,
+        "population": 8308000,
+        "Country": "United States",
+        "color": "green",
+        "Continent": "North America",
+        "shape": "Diamond"
     },
     {
-        'name': 'London',
-        'latitude': 51.5073509,
-        'longitude': -0.1277583,
-        'population': 8278000,
-        'Country': 'United Kingdom'
+        "name": "London",
+        "latitude": 51.5073509,
+        "longitude": -0.1277583,
+        "population": 8278000,
+        "Country": "United Kingdom",
+        "color": "yellow",
+        "Continent": "Europe",
+        "shape": "Triangle"
+    }
+];
+export var southAmericaCountryCapitals = [
+    {
+        "name": "Buenos Aires",
+        "latitude": -34.603722,
+        "longitude": -58.381592,
+        "Country": "Argentina",
+        "Continent": "South America"
     },
+    {
+        "name": "Sucre",
+        "latitude": -19.019585,
+        "longitude": -65.261963,
+        "Country": "Bolivia",
+        "Continent": "South America"
+    },
+    {
+        "name": "Brasília",
+        "latitude": -15.793889,
+        "longitude": -47.882778,
+        "Country": "Brazil",
+        "Continent": "South America"
+    },
+    {
+        "name": "Santiago",
+        "latitude": -33.447487,
+        "longitude": -70.673676,
+        "Country": "Chile",
+        "Continent": "South America"
+    },
+    {
+        "name": "Bogota",
+        "latitude": 4.624335,
+        "longitude": -74.063644,
+        "Country": "Colombia",
+        "Continent": "South America"
+    },
+    {
+        "name": "Quito",
+        "latitude": -0.180653,
+        "longitude": -78.467834,
+        "Country": "Ecuador",
+        "Continent": "South America"
+    },
+    {
+        "name": "Georgetown",
+        "latitude": 6.8045,
+        "longitude": -58.1553,
+        "Country": "Guyana",
+        "Continent": "South America"
+    },
+    {
+        "name": "Asuncion",
+        "latitude": -25.3006592,
+        "longitude": -57.63591,
+        "Country": "Paraguay",
+        "Continent": "South America"
+    },
+    {
+        "name": "Lima",
+        "latitude": -12.046374,
+        "longitude": -77.042793,
+        "Country": "Peru",
+        "Continent": "South America"
+    },
+    {
+        "name": "Paramaribo",
+        "latitude": 5.8663802,
+        "longitude": -55.1668205,
+        "Country": "Suriname",
+        "Continent": "South America"
+    },
+    {
+        "name": "Montevideo",
+        "latitude": -34.901112,
+        "longitude": -56.164532,
+        "Country": "Uruguay",
+        "Continent": "South America"
+    },
+    {
+        "name": "Caracas",
+        "latitude": 10.500000,
+        "longitude": -66.916664,
+        "Country": "Vanezuela",
+        "Continent": "South America"
+    },
+    {
+        "name": "Cayenne",
+        "latitude": 4.937200,
+        "longitude": -52.326000,
+        "Country": "French Guiana",
+        "Continent": "South America"
+    }
+];
+export var salesMap = [
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Noah",
+        "product": "Product B",
+        "worth": "$150"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "William",
+        "product": "Product C",
+        "worth": "$180"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "James",
+        "product": "Product D",
+        "worth": "$250"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Oliver",
+        "product": "Product E",
+        "worth": "$350"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Benjamin",
+        "product": "Product A",
+        "worth": "$150"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Elijah",
+        "product": "Product B",
+        "worth": "$180"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Lucas",
+        "product": "Product C",
+        "worth": "$250"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Mason",
+        "product": "Product D",
+        "worth": "$350"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Logan",
+        "product": "Product A",
+        "worth": "$180"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Alexander",
+        "product": "Product B",
+        "worth": "$230"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Ethan",
+        "product": "Product C",
+        "worth": "$450"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Jacob",
+        "product": "Product D",
+        "worth": "$330"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Michael",
+        "product": "Product A",
+        "worth": "$120"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Daniel",
+        "product": "Product B",
+        "worth": "$180"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Henry",
+        "product": "Product C",
+        "worth": "$210"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Jackson",
+        "product": "Product D",
+        "worth": "$260"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Sebastian",
+        "product": "Product A",
+        "worth": "$410"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Aiden",
+        "product": "Product B",
+        "worth": "$220"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Matthew",
+        "product": "Product C",
+        "worth": "$320"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Samuel",
+        "product": "Product D",
+        "worth": "$540"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "David",
+        "product": "Product A",
+        "worth": "$350"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Joseph",
+        "product": "Product B",
+        "worth": "$170"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Carter",
+        "product": "Product C",
+        "worth": "$140"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Owen",
+        "product": "Product D",
+        "worth": "$320"
+    },
+    {
+        "latitude": 44.2108,
+        "longitude": 20.9224,
+        "city": "Serbia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Wyatt",
+        "product": "Product A",
+        "worth": "$280"
+    },
+    {
+        "latitude": 22.309425,
+        "longitude": 72.136230,
+        "city": "Gujarat",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Penelope",
+        "product": "Product C",
+        "worth": "$180"
+    },
+    {
+        "latitude": 22.309425,
+        "longitude": 72.136230,
+        "city": "Gujarat",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Layla",
+        "product": "Product D",
+        "worth": "$350"
+    },
+    {
+        "latitude": 22.309425,
+        "longitude": 72.136230,
+        "city": "Gujarat",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Madison",
+        "product": "Product A",
+        "worth": "$320"
+    },
+    {
+        "latitude": 22.309425,
+        "longitude": 72.136230,
+        "city": "Gujarat",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Aria",
+        "product": "Product B",
+        "worth": "$110"
+    },
+    {
+        "latitude": 35.738045,
+        "longitude": 61.084488,
+        "city": "Pakistan",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Grayson",
+        "product": "Product C",
+        "worth": "$320"
+    },
+    {
+        "latitude": 41.161079,
+        "longitude": -104.805450,
+        "city": "Wyoming",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Gabriel",
+        "product": "Product D",
+        "worth": "$180"
+    },
+    {
+        "latitude": 41.161079,
+        "longitude": -104.805450,
+        "city": "Wyoming",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Julian",
+        "product": "Product A",
+        "worth": "$150"
+    },
+    {
+        "latitude": 41.161079,
+        "longitude": -104.805450,
+        "city": "Wyoming",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Mateo",
+        "product": "Product B",
+        "worth": "$250"
+    },
+    {
+        "latitude": 41.161079,
+        "longitude": -104.805450,
+        "city": "Wyoming",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Anthony",
+        "product": "Product C",
+        "worth": "$350"
+    },
+    {
+        "latitude": 41.161079,
+        "longitude": -104.805450,
+        "city": "Wyoming",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Jaxon",
+        "product": "Product D",
+        "worth": "$250"
+    },
+    {
+        "latitude": 41.161079,
+        "longitude": -104.805450,
+        "city": "Wyoming",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Wyatt",
+        "product": "Product A",
+        "worth": "$120"
+    },
+    {
+        "latitude": 41.161079,
+        "longitude": -104.805450,
+        "city": "Wyoming",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Joshua",
+        "product": "Product B",
+        "worth": "$180"
+    },
+    {
+        "latitude": 31.661129,
+        "longitude": -88.530167,
+        "city": "Iowa",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Christopher",
+        "product": "Product C",
+        "worth": "$190"
+    },
+    {
+        "latitude": 43.038902,
+        "longitude": -87.906471,
+        "city": "Milwaukee",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Violet",
+        "product": "Product D",
+        "worth": "$230"
+    },
+    {
+        "latitude": 25.989819,
+        "longitude": -111.732582,
+        "city": "California",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Savannah",
+        "product": "Product A",
+        "worth": "$170"
+    },
+    {
+        "latitude": 45.3573,
+        "longitude": -122.6068,
+        "city": "Oregon",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Brooklyn",
+        "product": "Product B",
+        "worth": "$180"
+    },
+    {
+        "latitude": 60.835365,
+        "longitude": -147.776749,
+        "city": "Fairbanks",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Nathan",
+        "product": "Product C",
+        "worth": "$190"
+    },
+    {
+        "latitude": 64.0601273,
+        "longitude": -129.4332733,
+        "city": "Dawson",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Claire",
+        "product": "Product D",
+        "worth": "$160"
+    },
+    {
+        "latitude": 58.5975,
+        "longitude": 38.9873,
+        "city": "Estonia",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Isaiah",
+        "product": "Product A",
+        "worth": "$210"
+    },
+    {
+        "latitude": 39.9075,
+        "longitude": 96.39723,
+        "city": "China",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Paisley",
+        "product": "Product B",
+        "worth": "$120"
+    },
+    {
+        "latitude": 41.20438,
+        "longitude": 74.766098,
+        "city": "kyrgyzstan",
+        "area": 1623,
+        "Rank": 37,
+        "name": "Caroline",
+        "product": "Product C",
+        "worth": "$190"
+    }
 ];
 export var markerLocation = [{
         'title': 'Vienna',

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { filteredData } from './data';
 @Component({
+    selector: 'ej2-ganttfiltering',
     templateUrl: 'filtering.html'
 })
 export class GanttFilteringComponent implements OnInit {

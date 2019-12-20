@@ -1,0 +1,95 @@
+<div class="control-section">
+    <div class="col-lg-9 control-section">
+        <ejs-gantt #selection id="Selection" height="430px" [dataSource]="data" [taskFields]="taskSettings"
+                [allowSelection]="true" [labelSettings]="labelSettings" [treeColumnIndex]="1" [splitterSettings]="splitterSettings" 
+                [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true" [selectionSettings]="selectionSettings">
+        </ejs-gantt>
+    </div>
+    
+    <div class="col-lg-3 property-section">
+            <div class="property-panel-section">
+                <div class="property-panel-header">Properties</div>
+                <div class="property-panel-content">
+                    <table id="property" title="Properties">
+                        <tr>
+                            <td style="width: 30%">
+                                <div>
+                                    Selection Mode
+                                </div>
+                            </td>
+                            <td style="width: 70%;padding-right: 5px">
+                                <div>
+                                    <ejs-dropdownlist #SelectionModeList [dataSource]='dropDownModeListData'
+                                            [fields]='dropDownModeListFields' value='Row'>
+                                    </ejs-dropdownlist>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 30%">
+                                <div>
+                                    Selection Type
+                                </div>
+                            </td>
+                            <td style="width: 70%;padding-right: 5px">
+                                <div>
+                                    <ejs-dropdownlist #SelectionTypeList [dataSource]='dropDownTypeListData'
+                                            [fields]='dropDownTypeListFields' value='Single'>
+                                    </ejs-dropdownlist>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 30%">
+                                <div>
+                                    Toggle Selection
+                                </div>
+                            </td>
+                            <td style="width: 70%;padding-right: 5px">
+                                <div>
+                                    <ejs-dropdownlist #SelectionToggleList [dataSource]='dropDownToggleListData'
+                                            [fields]='dropDownToggleListFields' [value]='toggleValue'>
+                                    </ejs-dropdownlist>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 30%">
+                                <div>
+                                    <button ejs-button id="perform" content="Perform" (click)="perform()">Update</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div id="action-description">
+    <p> The selection feature enables you to highlight row or cell. It can be enabled by setting
+        <code>allowSelection</code> to <code>true</code>.</p>
+</div>
+
+<div id="description">
+    <p>
+        The Gantt control supports two types of selection that can be set by using the <code>selectionSettings.type</code> property.
+        They are:
+    </p>
+    <ul>
+            <li><code>Single</code> - Sets a single value by default and allows only selection of a single row or a cell.</li>
+            <li><code>Multiple</code> - Allows you to select multiple rows or cells. To perform the multi-selection, press and hold the CTRL key and click the desired rows or cells.</li>
+    </ul>
+    <p>
+        The Gantt control supports three types of selection modes that can be set by using the <code>selectionSettings.mode</code> property.
+        They are:
+    </p>
+    <ul>
+            <li><code>Row</code> - Allows you to select only rows, and the row value is set by default.</li>
+            <li><code>Cell</code> - Allows you to select only cells.</li>
+            <li><code>Both</code> - Allows you to select rows and cells at the same time..</li>
+    </ul>
+    <p>
+        The Gantt control supports toggle selection that can be set by using the <code>selectionSettings.enableToggle</code> property.
+    </p>
+</div>
