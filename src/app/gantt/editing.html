@@ -18,7 +18,7 @@
         height="450px" [allowSelection]="true" dateFormat="MMM dd, y" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
         [gridLines]="gridLines" [eventMarkers]="eventMarkers" [editSettings]="editSettings"
         [toolbar]="toolbar" resourceNameMapping="resourceName" resourceIDMapping="resourceId" 
-        [resources]="resources">
+        [resources]="resources" [splitterSettings]="splitterSettings">
     </ejs-gantt>
     <div style="float: right; margin: 10px;">Source:
         <a href="https://en.wikipedia.org/wiki/Construction" target='_blank'>https://en.wikipedia.org/</a>
@@ -27,8 +27,7 @@
 <div id="description">
     <p>
         This CRUD operations can be configured in Gantt chart using <code>editSettings</code> and
-        <code>allowTaskbarEditing</code>. Gantt chart
-        has two modes to manipulate the datasource
+        <code>allowTaskbarEditing</code>. Gantt chart has two modes to manipulate the datasource
         <li><code>Auto</code></li>
         <li><code>Dialog</code></li>
         In this demo, <code>Auto</code> mode is enabled for editing. On the TreeGrid side, you can start editing any row

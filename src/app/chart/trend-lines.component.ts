@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ChartComponent, ILoadedEventArgs,ChartTheme, TrendlineTypes } from '@syncfusion/ej2-angular-charts';
+import { ChartComponent, ILoadedEventArgs,ChartTheme, TrendlineTypes, LegendSettingsModel } from '@syncfusion/ej2-angular-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { NumericTextBox } from '@syncfusion/ej2-inputs';
 /**
@@ -82,7 +82,7 @@ export class TrendLineChartComponent {
     public marker1: Object = {
         visible :true
     }
-    public legendSettings: Object = { visible: false };
+    public legendSettings: LegendSettingsModel = { visible: true };
     public min: number = 1;
     public max: number = 20;
     public value: number = 0;

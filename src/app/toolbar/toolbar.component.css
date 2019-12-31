@@ -92,7 +92,7 @@
     float: left;
     height: 60px;
 }
-/* custom code start*/
+
 .e-cut-icon:before {
     content: "\e719"
 }
@@ -193,7 +193,7 @@
     content: '\e701'
 }
 
-.e-redo-icon:before {
+.e-tbar-redo-icon:before {
     content: "\e713"
 }
 
@@ -213,7 +213,7 @@
     content: "\e714"
 }
 
-.e-undo-icon:before {
+.e-tbar-undo-icon:before {
     content: "\e708"
 }
 
@@ -265,7 +265,7 @@
     height: 40px;
     max-width: 700px;
 }
-/* custom code end*/
+
 
 .material .e-bigger .e-toolbar .e-tbar-btn .e-icons {
     font-size: 18px;

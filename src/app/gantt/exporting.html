@@ -9,7 +9,7 @@
         [allowExcelExport]="true" height="450px" [allowSelection]="true" dateFormat="MMM dd, y"
         [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
         [gridLines]="gridLines" [toolbar]="toolbar" resourceNameMapping="resourceName" resourceIDMapping="resourceId"
-        [resources]="resources" (toolbarClick)="toolbarClick($event)">
+        [resources]="resources" (toolbarClick)="toolbarClick($event)" [splitterSettings]="splitterSettings" [columns]="columns">
     </ejs-gantt>
 </div>
 <div id="description">
@@ -18,6 +18,5 @@
         <code>excelExport</code> and <code>csvExport</code> methods.</p>
 
     <p style="font-weight: 500">Injecting Module:</p>
-    <p>To use Excel and CSV export features, inject the <code>ExcelExport</code> module using the
-        <code>Gantt.Inject(ExcelExport)</code> method. </p>
+    <p>To use Excel and CSV export features, inject the <code>ExcelExport</code> module.</p>
 </div>

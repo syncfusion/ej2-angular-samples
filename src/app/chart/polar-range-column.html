@@ -6,9 +6,9 @@
 <div class="control-section">
     <div class="col-lg-9">
         <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
-            [tooltip]='tooltip' [legendSettings]='legendSettings'(load)='load($event)'>
+            [tooltip]='tooltip' [legendSettings]='legendSettings'(load)='load($event)' (textRender)='text($event)'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Polar' drawType='RangeColumn' xName='x' high='high' low='low' name='Germany' [border]='border'>
+                <e-series [dataSource]='data' type='Polar' drawType='RangeColumn' xName='x' high='high' low='low' name='Germany' [border]='border' [marker]='marker'>
                 </e-series>
             </e-series-collection>
         </ejs-chart>

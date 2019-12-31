@@ -135,7 +135,6 @@ export const diagramAppRoutes: Object[] = [
     {
         path: ':theme/diagram/line-routing', component: LineRoutingComponent,
         name: 'Line Routing',
-        type: 'new',
         category: 'Getting Started', order: '01',
         description: 'This sample visualizes the connectors that are automatically re-routing or moving away if any shape ' +
             'found on the connectors path'

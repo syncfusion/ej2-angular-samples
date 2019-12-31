@@ -96,18 +96,9 @@ export class SeriesTypeSparklineComponent {
         format: '${x} : ${y}',
     };
     public pieData1: object[] = [{x: 'Gold', y : 46}, {x: 'Silver', y : 37}, {x: 'Bronze', y : 38}];
-    public pieData2: object[] =  [{x: 'Gold', y : 27}, {x: 'Silver', y : 23}, {x: 'Bronze', y : 17}];
+    public pieData2: object[] = [{x: 'Gold', y : 27}, {x: 'Silver', y : 23}, {x: 'Bronze', y : 17}];
     public pieData3: object[] = [{x: 'Gold', y : 26}, {x: 'Silver', y : 18}, {x: 'Bronze', y : 26}];
-    public pieData4: object[] = [{x: 'Gold', y : 19}, {x: 'Silver', y : 17}, {x: 'Bronze', y : 19}];
     public pietooltipSettings: object = {
-        visible: true,
-        format: '${x} : ${y}',
-    };
-    public pietooltipSettings1: object = {
-        visible: true,
-        format: '${x} : ${y}',
-    };
-    public pietooltipSettings2: object = {
         visible: true,
         format: '${x} : ${y}',
     };

@@ -1,0 +1,23 @@
+<div id="action-description">
+    <p>
+            This sample illustrates a bullet chart with multiple data to compare different values.
+    </p>
+</div>
+
+<div class="control-section">
+    <ejs-bulletchart id='localData' style="display: block; text-align: center;" valueField='completedStories' targetField='requiredStories'
+        categoryField='name' height='400px' [minimum]='minimum' [maximum]='maximum' [interval]='interval' [width]='width' valueFill='#304560' targetColor='#304560'
+        [title]='chartTitle' titlePosition='Top' [dataSource]='data' [animation]='animation' (load)='load($event)' subtitle='Estimated in story points'>
+        <e-bullet-range-collection>
+            <e-bullet-range end='25' color='#DBE7F3'></e-bullet-range>
+            <e-bullet-range end='37' color='#BBCEE7'></e-bullet-range>
+            <e-bullet-range end='45' color='#96B2D7'></e-bullet-range>
+        </e-bullet-range-collection>
+    </ejs-bulletchart>
+</div>
+
+<div id="description">
+    <p>
+            Tooltip is enabled in this example, to see the tooltip in action, hover a feature bar or comparative bar on the bullet chart.
+    </p>
+</div>

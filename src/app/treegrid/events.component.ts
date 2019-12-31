@@ -37,37 +37,37 @@ export class EventComponent implements OnInit {
     }
 
     beginEdit(): void {
-        this.appendElement('TreeGrid <b style="color:#388e3c">beginEdit</b> event called<hr>');
+        this.appendElement('Tree Grid <b style="color:#388e3c">beginEdit</b> event called<hr>');
     }
     columnDragStart(): void {
-        this.appendElement('TreeGrid <b style="color:#388e3c">columnDragStart</b> event called<hr>');
+        this.appendElement('Tree Grid <b style="color:#388e3c">columnDragStart</b> event called<hr>');
     }
     columnDrop(): void {
-        this.appendElement('TreeGrid <b style="color:#388e3c">columnDrop</b> event called<hr>');
+        this.appendElement('Tree Grid <b style="color:#388e3c">columnDrop</b> event called<hr>');
     }
     columnDrag(): void {
-        this.appendElement('TreeGrid <b style="color:#388e3c">columnDrag</b> event called<hr>');
+        this.appendElement('Tree Grid <b style="color:#388e3c">columnDrag</b> event called<hr>');
     }
     load(): void {
-        this.appendElement('TreeGrid <b style="color:#388e3c">load</b> event called<hr>');
+        this.appendElement('Tree Grid <b style="color:#388e3c">load</b> event called<hr>');
     }
     create(): void {
-        this.appendElement('TreeGrid <b style="color:#388e3c">create</b> event called<hr>');
+        this.appendElement('Tree Grid <b style="color:#388e3c">create</b> event called<hr>');
     }
     actionBegin(): void {
-        this.appendElement('TreeGrid <b style="color:#388e3c">actionBegin</b> event called<hr>');
+        this.appendElement('Tree Grid <b style="color:#388e3c">actionBegin</b> event called<hr>');
     }
     actionComplete(): void {
-        this.appendElement('TreeGrid <b style="color:#388e3c">actionComplete</b> event called<hr>');
+        this.appendElement('Tree Grid <b style="color:#388e3c">actionComplete</b> event called<hr>');
     }
     dataBound(): void {
-        this.appendElement('TreeGrid <b style="color:#388e3c">dataBound</b> event called<hr>');
+        this.appendElement('Tree Grid <b style="color:#388e3c">dataBound</b> event called<hr>');
     }
     rowSelecting(): void {
-        this.appendElement('TreeGrid <b style="color:#388e3c">rowSelecting</b> event called<hr>');
+        this.appendElement('Tree Grid <b style="color:#388e3c">rowSelecting</b> event called<hr>');
     }
     rowSelected(): void {
-        this.appendElement('TreeGrid <b style="color:#388e3c">rowSelected</b> event called<hr>');
+        this.appendElement('Tree Grid <b style="color:#388e3c">rowSelected</b> event called<hr>');
     }
     appendElement(html: string): void {
         let span: HTMLElement = document.createElement('span');

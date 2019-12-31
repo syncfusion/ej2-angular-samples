@@ -38,24 +38,25 @@
             </div>
             <div align="center" class="col-lg-2 col-md-5 col-sm-10 sparent">
                 <div class="spark" style="height: 87px;">
-                    <div class="sparkpie" style="height:40px;width: 29%; margin-left:-25%  ">
-                        <ejs-sparkline id="pie2" height="40px" width="0%" type="Pie" valueType="Category" [dataSource]="pieData2"
-                            [tooltipSettings]="pietooltipSettings1" xName="x" yName="y"></ejs-sparkline>
-                        <div align="center" class="pietext" style="position: absolute; margin-top: 5px; margin-left: 20%; width: 25%;">USA</div>
-                    </div>
-                    <div class="sparkpie" style="height:40px;width: 29%; margin-left:0%  ">
-                        <ejs-sparkline id="pie3" height="40px" width="0%" type="Pie" valueType="Category" [dataSource]="pieData3"
-                            [tooltipSettings]="pietooltipSettings2" xName="x" yName="y"></ejs-sparkline>
-                        <div align="center" class="pietext" style="position: absolute; margin-top: 5px; margin-left: 20%;width: 25%;">GBR</div>
-                    </div>
-                    <div class="sparkpie" style="height:40px;width: 29%; margin-left:5% ">
-                        <ejs-sparkline id="pie4" height="40px" width="0%" type="Pie" valueType="Category" [dataSource]="pieData4"
+                    <div class="sparkpie" style="height:40px;width:29%;">
+                        <ejs-sparkline id="pie1"  height="40px" width="100%" type="Pie" valueType="Category" [dataSource]="pieData1"
                             [tooltipSettings]="pietooltipSettings" xName="x" yName="y"></ejs-sparkline>
-                        <div align="center" class="pietext" style="position: absolute; margin-top: 5px; margin-left: 20%; width: 25%;">CHN</div>
+                        <div align="center" class="pietext" style="position: absolute; width: 25%;">USA</div>
                     </div>
-                    <div class="sparktext" align="center" style="position: absolute; margin-top: 90px; margin-left: 10px; width: 80%;">Olympics
+                    <div class="sparkpie" style="height:40px;width:29%;">
+                        <ejs-sparkline id="pie2"  height="40px" width="100%" type="Pie" valueType="Category" [dataSource]="pieData2"
+                            [tooltipSettings]="pietooltipSettings" xName="x" yName="y"></ejs-sparkline>
+                        <div align="center" class="pietext" style="position: absolute; width: 25%;">GBR</div>
+                    </div>
+                    <div class="sparkpie" style="height:40px;width:29%;">
+                        <ejs-sparkline id="pie3" type="Pie" height="40px" width="100%" valueType="Category" [dataSource]="pieData3"
+                            [tooltipSettings]="pietooltipSettings" xName="x" yName="y"></ejs-sparkline>
+                        <div align="center" class="pietext" style="position: absolute; width: 25%;">CHN</div>
+                    </div>
+                    <div class="sparktext" align="center" style="position: absolute; margin-top: 90px; margin-left: 5px; width: 70%;">Olympics
                         medal details</div>
                 </div>
+                  
             </div>
         </div>
     </div>
@@ -104,7 +105,7 @@
 
     .pietext {
         float: left;
-        margin-left: 25%;
+      
     }
 
     .sparktext {

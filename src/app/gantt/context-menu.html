@@ -11,7 +11,7 @@
         height="450px" [allowSelection]="true" dateFormat="MMM dd, y" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
         [gridLines]="gridLines" [eventMarkers]="eventMarkers" [editSettings]="editSettings" [allowResizing]="true" [allowSorting]="true"
         [toolbar]="toolbar" resourceNameMapping="resourceName" resourceIDMapping="resourceId" 
-        [resources]="resources">
+        [resources]="resources" [splitterSettings]="splitterSettings">
     </ejs-gantt>
     <div style="float: right; margin: 10px;">Source:
         <a href="https://en.wikipedia.org/wiki/Construction" target='_blank'>https://en.wikipedia.org/</a>
@@ -35,7 +35,7 @@
 		<li><code>SortAscending </code> - Sort the current column in ascending order.</li>
 		<li><code>SortDescending </code> - Sort the current column in descending order.</li>
 		<li><code>DeleteDependency </code> - Delete the dependency of the current record.</li>
-		<li><code>Convert </code> - Convert the normal task in to milestone task and vice versa.</li>
+		<li><code>Convert </code> - Convert the normal task into milestone task and vice versa.</li>
 		<li><code>Add</code>
 			<ul>
 				<li><code>Above</code> - Add a new row above the selected row </li>

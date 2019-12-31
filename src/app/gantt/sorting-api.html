@@ -1,0 +1,86 @@
+<div id="action-description">
+    <p> The sorting feature enables you to order data in a particular direction. It can be enabled by setting
+        <code>allowSorting</code> to <code>true</code>.</p>
+</div>
+
+<div class="control-section">
+    <div class="col-lg-9 control-section">
+        <ejs-gantt id="SortingAPI" #sortingApi height="430px" [dataSource]="data" [taskFields]="taskSettings"
+            [allowSelection]="true" [allowSorting]="true" [labelSettings]="labelSettings" [treeColumnIndex]="1"
+            [columns]="columns" [splitterSettings]="splitterSettings" [projectStartDate]="projectStartDate"
+            [projectEndDate]="projectEndDate" [highlightWeekends]="true">
+        </ejs-gantt>
+    </div>
+
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <div id="property" class="property-panel-table" title="Properties">
+                    <table id="property" title="Properties">
+                        <tr>
+                            <td style="width: 30%">
+                                <div>
+                                    Column
+                                </div>
+                            </td>
+                            <td style="width: 70%">
+                                <div>
+                                    <ejs-dropdownlist #dropDownColumnList [dataSource]='dropDownColumnListData'
+                                        [fields]='dropDownColumnListFields' [value]='columnValue'>
+                                    </ejs-dropdownlist>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 30%">
+                                <div>
+                                    Direction
+                                </div>
+                            </td>
+                            <td style="width: 70%">
+                                <div>
+                                    <ejs-dropdownlist #dropDownDirectionList [dataSource]='dropDownDirectionListData'
+                                        [fields]='dropDownDirectionListFields' [value]='directionValue'>
+                                    </ejs-dropdownlist>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 30%;">
+                                <div>
+                                    <button ejs-button id="sort" content="Sort" (click)="sortColumn()"></button>
+                                </div>
+                            </td>
+                            <td style="width: 70%;padding:10px 10px 10px 0px;">
+                                <div>
+                                    <button ejs-button id="clear" content="Clear" (click)="clearSort()"></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        The sorting feature enables you to order data in a particular direction. It can be enabled by setting the
+        <code>allowSorting</code> to true.
+    </p>
+    <p>To sort a Gantt column, click the column header. The icons (ascending) and (descending) specify the sort direction of a column.</p>
+    <p>By default, the multi-sorting feature is enabled in Gantt. To sort multiple columns, hold the
+        <strong>CTRL</strong> key, and then click the column header. To clear sort for a column, hold the
+        <strong>SHIFT</strong> key, and then click the column header.</p>
+    <p>In this demo, select the column and direction from the properties panel, and then click the Sort button. Use the
+        Clear button to remove sort for the sorted column.
+    </p>
+
+    <p>
+        Gantt component features are segregated into individual feature-wise modules. To use a selection, inject the
+        <code>Selection</code> module.To use sort, inject the <code>Sort</code> module.To use markers, inject the
+        <code>DayMarkers</code> module.
+    </p>
+</div>

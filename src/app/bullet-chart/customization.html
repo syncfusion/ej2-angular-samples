@@ -1,0 +1,77 @@
+<div id="action-description">
+    <p>
+            This sample illustrates a bullet chart with with different customization for ranges and labels in bullet chart.
+    </p>
+
+</div>
+
+<div class="control-section col-md-8">
+    <ejs-bulletchart #bullet id='revenue' style="display: block;" valueField='value' targetField='target'
+        [minimum]='minimum1' [maximum]='maximum1' [interval]='interval1' [title]='chartTitle' subtitle='in Lakhs'
+        [dataSource]='data1' [animation]='animation' [titleStyle]='titleStyle' (load)='load($event)'>
+        <e-bullet-range-collection>
+            <e-bullet-range end='1.5' color='#599C20'></e-bullet-range>
+            <e-bullet-range end='2.5' color='#EFC820'></e-bullet-range>
+            <e-bullet-range end='3' color='#CA4218'></e-bullet-range>
+        </e-bullet-range-collection>
+    </ejs-bulletchart>
+</div>
+<div class="property-section col-md-4">
+    <div class="property-panel-header">Properties</div>
+    <table style="width: 100%">
+        <tr>
+            <td style="width:50%">
+                Start Color
+            </td>
+            <td style="width:50%; text-align: center;">
+                <input align='center' ejs-colorpicker type="color" id="startColor" mode='Palette' value='#599C20' (change)='startColor($event)' />
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%; ">
+                Middle Color
+            </td>
+            <td style="width:50%; text-align: center;">
+                <input align='center' ejs-colorpicker type="color" id="middleColor" mode='Palette' value='#EFC820' (change)='middleColor($event)' />
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%">
+                End Color
+            </td>
+            <td style="width:50%; text-align: center;">
+                <input  align='center' ejs-colorpicker type="color" id="endColor" mode='Palette' value='#CA4218' (change)='endColor($event)' />
+            </td>
+        </tr>        
+        <tr>
+            <td style="width:50%">
+                Use Range Color
+            </td>
+            <td style="width:50%; text-align: center;">
+                <ejs-checkbox align='center' (change)='useRangeColor($event)'></ejs-checkbox>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width:50%">
+                Opposed Position
+            <td style="width:50%; text-align: center;">
+                <ejs-checkbox align='center' (change)='opposedPosition($event)'></ejs-checkbox>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="description">
+    <p>
+            Tooltip is enabled in this example, to see the tooltip in action, hover a feature bar or comparative bar on the bullet chart.
+    </p>
+
+</div>
+
+<style>
+     tr {
+        height: 50px !important;
+    }
+
+</style>

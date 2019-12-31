@@ -1,0 +1,55 @@
+<div id="action-description">
+	<p>This sample demonstrates the Gantt header template feature. In this sample, custom icons have been shown in the column headers.</p>
+</div>
+<div class="control-section">
+    <ejs-gantt id="headerTemplate" height="430px" [dataSource]="data" [taskFields]="taskSettings" 
+        [labelSettings]="labelSettings" [splitterSettings]="splitterSettings"
+        height="450px" [allowSelection]="true" resourceNameMapping="resourceName" resourceIDMapping="resourceId" 
+        [resources]="resources" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true">
+        <e-columns>
+            <e-column field='TaskName' width='250'>
+                <ng-template #headerTemplate>
+                    <img src="./assets/gantt/images/Task name.png" width="20" height="20" class="e-image" />  Task Name
+                </ng-template>
+            </e-column>
+            <e-column field='StartDate'>
+                <ng-template #headerTemplate>
+                    <img src="./assets/gantt/images/Start date.png" width="20" height="20" class="e-image" />  Start Date
+                </ng-template>
+            </e-column>
+            <e-column field='resources' width='150'>
+                <ng-template #headerTemplate>
+                    <img src="./assets/gantt/images/Resources.png" width="20" height="20" class="e-image" />  Resources
+                </ng-template>
+            </e-column>
+            <e-column field='Duration'>
+                <ng-template #headerTemplate>
+                    <img src="./assets/gantt/images/Duration.png" width="20" height="20" class="e-image" />  Duration
+                </ng-template>
+            </e-column>
+            <e-column field='Progress'>
+                <ng-template #headerTemplate>
+                    <img src="./assets/gantt/images/Progress.png" width="20" height="20" class="e-image" />  Progress
+                </ng-template>
+            </e-column>
+        </e-columns>
+
+    </ejs-gantt>
+    <div style="float: right; margin: 10px;">Source:
+        <a href="https://en.wikipedia.org/wiki/Construction" target='_blank'>https://en.wikipedia.org/</a>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        The Gantt provides a way to define a custom element in header element. The <code>columns -> headerTemplate</code> property accepts either string or HTML element`s ID value,
+        which will be used as the template for the header cell.
+    </p>
+    <p>In this demo, we have rendered the customized template for all column headers.</p> 
+    <p>More information about the header template can be found in documentation section.</p>
+</div>
+<style>
+    .e-image {
+        margin-right: 8px;
+    }
+</style>

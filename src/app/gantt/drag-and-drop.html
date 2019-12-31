@@ -1,0 +1,19 @@
+<div id="action-description">
+    <p>This sample demonstrates the Gantt component with the row drag and drop feature. You can rearrange the gantt rows by using drag icon in left side of gantt column. Here you can perform drag and drop the gantt rows in to required position.</p>
+</div>
+
+<div class="control-section">
+    <ejs-gantt id="DragAndDrop" height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowRowDragAndDrop]="true" [columns]="columns"
+        [labelSettings]="labelSettings" [treeColumnIndex]="1" [splitterSettings]="splitterSettings" [selectionSettings]="selectionSettings" 
+        [highlightWeekends]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate">
+    </ejs-gantt>
+</div>
+
+<div id="description">
+    <p>
+        Row drag and drop feature can be enabled by settting <code>allowRowDragAndDrop</code> property as true.
+    </p>
+    <p>
+	 Gantt component features are segregated into individual feature-wise modules. To use row, drag and drop feature we need to inject <code>RowDD</code> and <code>Edit</code> modules.
+    </p>
+</div>

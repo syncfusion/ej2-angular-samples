@@ -1,0 +1,20 @@
+<div id="action-description">
+    <p>This sample demonstrates the options to allocate one or more resources to tasks based on the task requirement.</p>
+</div>
+<div class="control-section">
+    <ejs-gantt id="resources" height="430px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
+        [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" [treeColumnIndex]="1"
+        height="450px" [allowSelection]="true" dateFormat="MMM dd, y" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
+       resourceNameMapping="resourceName" resourceIDMapping="resourceId" 
+        [resources]="resources">
+    </ejs-gantt>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to allocate single or multiple resources for the task. Based on the task complexity and the resource availability, you can plan and allocate the resources to task in the project. In this demo, there is a set of predefined resources and those IDs are assigned to the task. Resource information can be shown in Gantt chart by using the <code>labelSettings</code> property.
+    </p>
+    <p>
+        Gantt component features are segregated into individual feature-wise modules. To use a selection, inject the
+        <code>Selection</code> module.To use markers, inject the <code>DayMarkers</code> module.
+    </p>    
+</div>

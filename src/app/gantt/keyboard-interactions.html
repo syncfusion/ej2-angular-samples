@@ -1,0 +1,239 @@
+<div id="action-description">
+    <p>This demo showcases the keyboard shortcuts applicable on Gantt and also lists out in below descriptions, and this
+        demo also explains how those applicable shortcuts interacts with Gantt actions.
+    </p>
+</div>
+
+<div class="control-section">
+    <div class="col-lg-9 control-section">
+        <ejs-gantt id="KeyboardNavigation" height="430px" [dataSource]="data"
+            [taskFields]="taskSettings" [allowSelection]="true" [labelSettings]="labelSettings"
+            [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
+            [treeColumnIndex]="1" [columns]="columns" [editSettings]="editSettings"
+            [splitterSettings]="splitterSettings" [toolbar]="toolbar">
+        </ejs-gantt>
+    </div>
+
+    <div class="col-lg-3 property-section" style="height: 450px;overflow: auto">
+        <table id="property" title="Properties">
+            <tr style="height: 50px">
+                <td style="width: 30%">
+                    <b>Keys</b>
+                </td>
+                <td style="width: 70%;padding-right: 10px">
+                    <b>Description</b>
+                </td>
+            </tr>
+            <tr style="height:50px;">
+                <td style="width: 50%">
+                    <b>Home</b>
+                </td>
+                <td style="width: 50%">
+                    First Row Selection
+                </td>
+            </tr>
+            <tr style="height:50px;">
+                <td style="width: 50%">
+                    <b>End</b>
+                </td>
+                <td style="width: 50%">
+                    Last Row Selection
+                </td>
+            </tr>
+            <tr style="height:50px;">
+                <td style="width: 50%">
+                    <b>DownArrow</b>
+                </td>
+                <td style="width: 50%">
+                    Move Row Selection Down
+                </td>
+            </tr>
+            <tr style="height:50px;">
+                <td style="width: 50%">
+                    <b>UpArrow</b>
+                </td>
+                <td style="width: 50%">
+                    Move Row Selection Up
+                </td>
+            </tr>
+            <tr style="height:50px;">
+                <td style="width: 50%">
+                    <b>Ctrl + UpArrow</b>
+                </td>
+                <td style="width: 50%">
+                    Collapse All
+                </td>
+            </tr>
+            <tr style="height:50px;">
+                <td style="width: 50%">
+                    <b>Ctrl + DownArrow</b>
+                </td>
+                <td style="width: 50%">
+                    Expand All
+                </td>
+            </tr>
+            <tr style="height:50px;">
+                <td style="width: 50%">
+                    <b>Ctrl + Shift + UpArrow</b>
+                </td>
+                <td style="width: 50%">
+                    Collapse Row
+                </td>
+            </tr>
+            <tr style="height:50px;">
+                <td style="width: 50%">
+                    <b>Ctrl + Shift + DownArrow</b>
+                </td>
+                <td style="width: 50%">
+                    Expand Row
+                </td>
+            </tr>
+            <tr style="height:50px;">
+                <td style="width: 50%">
+                    <b>Enter</b>
+                </td>
+                <td style="width: 50%">
+                    Save Request
+                </td>
+            </tr>
+            <tr style="height:50px;">
+                <td style="width: 50%">
+                    <b>Esc</b>
+                </td>
+                <td style="width: 50%">
+                    Cancel Request
+                </td>
+            </tr>
+            <tr style="height:50px;">
+                <td style="width: 50%">
+                    <b>Insert</b>
+                </td>
+                <td style="width: 50%">
+                    Add Record
+                </td>
+            </tr>
+            <tr style="height:50px;">
+                <td style="width: 50%">
+                    <b>Ctrl + Insert</b>
+                </td>
+                <td style="width: 50%">
+                    Add Record By Dialog
+                </td>
+            </tr>
+            <tr style="height:50px;">
+                <td style="width: 50%">
+                    <b>Ctrl + F2</b>
+                </td>
+                <td style="width: 50%">
+                    Edit Record By Dialog
+                </td>
+            </tr>
+            <tr style="height:50px;">
+                <td style="width: 50%">
+                    <b>Delete</b>
+                </td>
+                <td style="width: 50%">
+                    Delete Row
+                </td>
+            </tr>
+            <tr style="height:50px;">
+                <td style="width: 50%">
+                    <b>Ctrl + Shift + F</b>
+                </td>
+                <td style="width: 50%">
+                    Focus Search TextBox
+                </td>
+            </tr>
+            <tr style="height:50px;">
+                <td style="width: 50%">
+                    <b>Shift + F5</b>
+                </td>
+                <td style="width: 50%">
+                    Focus Task
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        All the Gantt actions can be controlled via keyboard keys and are availed using the <code>allowKeyboard</code>
+        property, which is set to true by default. The applicable key combinations and their relative functionalities are listed below.
+    </p>
+    <p>
+        Gantt component features are segregated into individual feature-wise modules. To use a selection, inject the
+        <code>Selection</code> module.To use a toolbar, inject the <code>Toolbar</code> module.To use a edit, inject the
+        <code>Edit</code> module.To use markers, inject the <code>DayMarkers</code> module.
+    </p>
+    <table>
+        <tr>
+            <td><b>Keys</b></td>
+            <td><b>Description</b></td>
+        </tr>
+        <tr>
+            <td><code>Home</code></td>
+            <td>First Row Selection</td>
+        </tr>
+        <tr>
+            <td><code>End</code></td>
+            <td>Last Row Selection</td>
+        </tr>
+        <tr>
+            <td><code>DownArrow</code></td>
+            <td>Move Row Selection Down</td>
+        </tr>
+        <tr>
+            <td><code>UpArrow</code></td>
+            <td>Move Row Selection Up</td>
+        </tr>
+        <tr>
+            <td><code>Ctrl + UpArrow</code></td>
+            <td>Collapse All</td>
+        </tr>
+        <tr>
+            <td><code>Ctrl + DownArrow</code></td>
+            <td>Expand All</td>
+        </tr>
+        <tr>
+            <td><code>Ctrl + Shift + UpArrow</code></td>
+            <td>Collapse Row</td>
+        </tr>
+        <tr>
+            <td><code>Ctrl + Shift + DownArrow</code></td>
+            <td>Expand Row</td>
+        </tr>
+        <tr>
+            <td><code>Enter</code></td>
+            <td>Save Request</td>
+        </tr>
+        <tr>
+            <td><code>Esc</code></td>
+            <td>Cancel Request</td>
+        </tr>
+        <tr>
+            <td><code>Insert</code></td>
+            <td>Add Record</td>
+        </tr>
+        <tr>
+            <td><code>Ctrl + Insert</code></td>
+            <td>Add Record By Dialog</td>
+        </tr>
+        <tr>
+            <td><code>Ctrl + F2</code></td>
+            <td>Edit Record By Dialog</td>
+        </tr>
+        <tr>
+            <td><code>Delete</code></td>
+            <td>Delete Row</td>
+        </tr>
+        <tr>
+            <td><code>Ctrl + Shift + F</code></td>
+            <td>Focus Search Textbox</td>
+        </tr>
+        <tr>
+            <td><code>Shift + F5</code></td>
+            <td>Focus Task</td>
+        </tr>
+    </table>
+</div>

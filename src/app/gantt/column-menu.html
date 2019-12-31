@@ -1,0 +1,37 @@
+<div id="action-description">
+    <p>This sample demonstrates the default functionalities of the  column menu. Click on multiple icon of each column to open the column menu.</p>
+</div>
+
+<div class="control-section">
+    <ejs-gantt id="columnMenu" height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
+    [allowFiltering]="true" [allowSorting]="true" [allowResizing]="true" [treeColumnIndex]='1' showColumnMenu=true
+    [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" height="400px" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+    [highlightWeekends]="true">
+    </ejs-gantt>
+</div>
+
+<div id="description">
+    <p>
+        Gantt has an option to show column menu while clicking multiple icon of each column. The column menu has an integrated option to interact with the features such as sorting, filtering, column chooser, and autoFit.  
+        This feature can be enabled by setting <code>showColumnMenu</code> to true.
+        The default items are,
+        <br>
+    </p>
+    <ul>
+            <li><code>SortAscending</code> - Sorts the current column in ascending order.</li>
+            <li><code>SortDescending</code> - Sorts the current column in descending order.</li>
+            <li><code>AutoFit</code> - Auto-fit current column.</li>
+            <li><code>AutoFitAll</code> - Auto-fit all columns.</li>
+            <li><code>ColumnChooser</code> - Chooses the column visibility.</li>
+            <li><code>Filter</code> - Filters the current column.
+    </ul>
+    <br/>
+    <p>
+        In this demo, the column menu feature is enabled by setting <code>showColumnMenu</code> to true with sorting, filtering, column chooser, and autoFit options.
+    </p>
+    <p>Injecting Module:</p>
+        <p>Gantt component features are segregated into individual feature-wise modules. To use Column Menu feature, we need to inject <code>ColumnMenuService</code> into the <code>@NgModule.providers</code> section.</p> 
+    <p>
+        More information about column menu can be found in this documentation section.
+    </p>
+</div>

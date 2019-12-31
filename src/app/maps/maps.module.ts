@@ -32,6 +32,8 @@ import { MapsExportComponent } from './export.component';
 import { MapsPrintComponent} from './print.component';
 import { ColorMappingComponent} from './color-mapping.component';
 import { MapsOsmComponent} from './osm.component';
+import { MapsProgrammaticZoomComponent } from './programmatic-zoom.component';
+import { MapsSalesMapComponent } from './sales-map.component';
 import { MapsOsmWithNavigationComponent} from './osm-with-navigation-lines.component';
 import { MapsOsmWithSublayerComponent} from './osm-with-sublayers.component';
 import { MapsWithSliderComponent } from './map-with-slider.component';
@@ -45,13 +47,13 @@ export const mapAppRoutes: Object[] = [
     { path: ':theme/maps/default', component: MapsDefaultComponent, name: "Default", order: "01", category: "Maps", description: 'This demo for Essential JS2 Maps control visualizes the continents in the world by rendering those in a map layer.' },
     { path: ':theme/maps/projection', component: MapsProjectionComponent, name: "Changing Projection", order: "02", category: "Features", description: 'This demo for Essential JS2 Maps control shows the details of permanent and non-permanent countries in the UN Security Council, in 2017.' },
     { path: ':theme/maps/multilayer', component: MapsMultilayerComponent, name: "Multi-layers", order: "02", category: "Features", description: 'This demo for Essential JS2 Maps control depicts the layer along with sublayers for California and Texas.' },
-    { path: ':theme/maps/marker', component: MapsMarkerComponent, name: "Marker", order: "02", category: "Features", description: 'This demo for Essential JS2 Maps control shows the top 25 populated cities in the world by displaying the markers in their locations.' },
+    { path: ':theme/maps/marker', component: MapsMarkerComponent, type: "update", name: "Marker", order: "02", category: "Features", description: 'This demo for Essential JS2 Maps control shows the top 25 populated cities in the world by displaying the markers in their locations.' },
     { path: ':theme/maps/marker-template', component: MapsMarkerTemplateComponent, name: "Marker template", order: "02", category: "Features", description: 'This demo for Essential JS2 Maps control indicates the temperature of various cities of Australia in marker templates.' },
-    { path: ':theme/maps/marker-cluster', component: MapsClusteringComponent, name: "Marker Clustering", order: "02", category: "Features", description: 'This demo for Essential JS2 Maps control indicates the create the marker cluster in more than one marker intersect' },    
+    { path: ':theme/maps/marker-cluster', component: MapsClusteringComponent, name: "Marker Clustering", order: "02", category: "Features", description: 'This demo for Essential JS2 Maps control indicates the create the marker cluster in more than one marker intersect' },
     { path: ':theme/maps/labels', component: MapsLabelComponent, name: "Labels", order: "02", category: "Features", description: 'This demo for Essential JS2 Maps control shows the names of all the states in USA in data label. Intersect action and smart labels mode can be changed.' },
     { path: ':theme/maps/bubble', component: MapsBubbleComponent, name: 'Map with Bubble', order: '02', category: 'Features', description: 'This demo for Essential JS2 Maps control illustrates the top 30 countries which has highest Internet users in bubbles of the year 2016.' },
     { path: ':theme/maps/navigation-lines', component: MapsNavigationLineComponent, name: "Navigation Lines", order: "02", category: "Features", description: 'This demo for Essential JS2 Maps control illustrates the sea routes between various cities for shipping.' },
-    { path: ':theme/maps/legend', component: MapsLegendComponent, type: "update", name: "Legend", order: "02", category: "Features",  description: 'This demo for Essential JS2 Maps control visualizes grouping of countries in the legend based on its population density.' },
+    { path: ':theme/maps/legend', component: MapsLegendComponent, name: "Legend", order: "02", category: "Features",  description: 'This demo for Essential JS2 Maps control visualizes grouping of countries in the legend based on its population density.' },
     { path: ':theme/maps/color-mapping', component: ColorMappingComponent, name: "Color Mapping", order: "02", category: "Features", description: 'This demo for Essential JS2 Maps with color mapping.' },
     { path: ':theme/maps/annotation', component: MapsAnnotationComponent, name: 'Annotations', order: '02', category: 'Features', description: 'This demo for Essential JS2 Maps control depicts the facts about Africa continent and a direction compass in an annotation.' },
     { path: ':theme/maps/osm', component: MapsOsmComponent, name: 'OpenStreetMap', order: '03', category: 'Map Providers',  description: 'This demo for Essential JS2 Maps control depicts the osm sample.' },
@@ -60,6 +62,7 @@ export const mapAppRoutes: Object[] = [
     { path: ':theme/maps/tooltip', component: MapsTooltipComponent, name: "Tooltip", order: "04", category: "User Interaction", description: 'This demo for Essential JS2 Maps control depicts the countries that were appeared in the finals of Cricket World Cup and their counts.' },
     { path: ':theme/maps/selection', component: MapsSelectionComponent, name: "Selection & Highlight", order: "04", category: "User Interaction", description: 'This demo for Essential JS2 Maps control visualizes USA president election results in the year 2016. Default and interactive are the two types of legend.' },
     { path: ':theme/maps/zooming', component: MapsZoomingComponent, name: "Zooming & Panning", order: "04", category: "User Interaction", description: 'This demo for Essential JS2 Maps control depicts the properties required to zoom and pan the rendered map.' },
+    { path: ':theme/maps/programmatic-zoom.component', component: MapsProgrammaticZoomComponent, name: "Zoom to fit all the makers in maps", order: "04", category: "User Interaction",  type: "new", description: 'This demo for Essential JS2 Maps control demonstrates the rendering of normal geometry type shapes on the map.'  },
     { path: ':theme/maps/drilldown', component: MapsDrilldownComponent, name: "Drill Down", order: "04", category: "User Interaction", description: 'This demo for Essential JS2 Maps control demonstrates drill down with all the continents in the initial view and countries on drill.' },
     { path: ':theme/maps/print', component: MapsPrintComponent, name: "Print", order: "05", category: "Print and Export", description: 'This demo for Essential JS2 Maps control illustrates the printing functionality in the maps control.' },
     { path: ':theme/maps/export', component: MapsExportComponent, name: "Export", order: "05", category: "Print and Export", description: 'This demo for Essential JS2 Maps control illustrates the exporting functionality in the maps control.' },
@@ -69,8 +72,9 @@ export const mapAppRoutes: Object[] = [
     { path: ':theme/maps/earthquake', component: MapsEarthquakeComponent, name: "Earthquake indication", order: "06", category: "Use Cases", description: 'This demo for Essential JS2 Maps control demonstrates the earth quack occurred in Sumatra, Indonesia in the year 2009.'  },
     { path: ':theme/maps/highlight', component: MapsHighlightComponent, name: "Highlighted Region", order: "06", category: "Use Cases", description: 'This demo for Essential JS2 Maps control depicts the ATM populated areas in Oklahoma by highlighting the regions.'  },
     { path: ':theme/maps/cyber-attack-map', component: MapsCyberAttackComponent, name: "Cyber Attack Map", order: "06", category: "Use Cases", description: 'This demo for Essential JS2 Maps control visualizes the cyber attack.'  },
-    { path: ':theme/maps/pie', component: MapsPieComponent, name: "Map with Pie chart", order: "06", category: "Use Cases", description: 'This demo for Essential JS2 Maps control visualizes the placing of pie charts on the maps using marker templates.'  },    
+    { path: ':theme/maps/pie', component: MapsPieComponent, name: "Map with Pie chart", order: "06", category: "Use Cases", description: 'This demo for Essential JS2 Maps control visualizes the placing of pie charts on the maps using marker templates.'  },
     { path: ':theme/maps/map-with-slider', component: MapsWithSliderComponent, name: "Map with Slider", order: "06",  category: "Use Cases", description: 'This demo for Essential JS2 Maps control visualizes the maps using slider.'  },
+    { path: ':theme/maps/sales-map', component: MapsSalesMapComponent, name: "Sales map", order: "06", category: "Use Cases",  type: "new", description: 'This demo for Essential JS2 Maps control demonstrates the rendering of normal geometry type shapes on the map.'  },
     { path: ':theme/maps/seat-selection', component: MapsSeatSelectionComponent, name: "Bus seat booking", order: "06", category: "Use Cases", description: 'This demo for Essential JS2 Maps control demonstrates the rendering of normal geometry type shapes on the map.'  }
 ];
 
@@ -84,6 +88,8 @@ let declarations: Type<Object>[] = [
     MapsBubbleComponent,
     MapsEarthquakeComponent, MapsLegendComponent,
     MapsCurvedLinesComponent,
+    MapsProgrammaticZoomComponent,
+    MapsSalesMapComponent,
     MapsPieComponent,
     MapsPrintComponent,
     MapsExportComponent, ColorMappingComponent, MapsWithSliderComponent,

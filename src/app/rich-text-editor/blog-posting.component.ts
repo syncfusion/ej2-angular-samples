@@ -4,6 +4,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { RichTextEditorComponent, ToolbarService, LinkService, ImageService } from '@syncfusion/ej2-angular-richtexteditor';
 import { HtmlEditorService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
+import { isNullOrUndefined as isNOU } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',
     templateUrl: 'blog-posting.html',
@@ -32,7 +33,8 @@ export class BlogPostComponent {
         const comment: string = answerElement.innerHTML;
         const empList: string[] = ['emp1', 'emp2', 'emp3'];
         const nameListList: string[] = ['Anne Dodsworth', 'Janet Leverling', 'Laura Callahan'];
-        if (comment !== null && comment.trim() !== '' && answerElement.innerText.trim() !== '') {
+        if (comment !== null && comment.trim() !== '' && (answerElement.innerText.trim() !== '' ||
+        !isNOU(answerElement.querySelector('img')) || !isNOU(answerElement.querySelector('table')))) {
             const answer: HTMLElement = document.querySelector('.answer') as HTMLElement;
             const cloneAnswer: HTMLElement = answer.cloneNode(true) as HTMLElement;
             const authorName: HTMLElement = cloneAnswer.querySelector('.authorname') as HTMLElement;

@@ -51,9 +51,9 @@
                   
                   <div class="form-group template" >
                           <div id="mobile-no" class="e-float-input" [ngClass]="{'e-success': form.controls.mobile.valid}">
-                              <input type="number" id="mobileno" name="mobile" formControlName="mobile" class="required" required>
+                              <input type="number" id="mobileno" name="mobile" formControlName="mobile" class="required" required [(ngModel)]="textboxValue">
                               <span class="e-float-line"></span>
-                              <label class="e-float-text" for="mobile">Mobile No</label>
+                              <label class="e-float-text"  [ngClass]="{'e-label-top': textboxValue !== '' , 'e-label-bottom':  textboxValue == ''}"for="mobile">Mobile No</label>
                           </div>
                       <app-field-error-display [displayError]="isFieldValid('mobile')" errorMsg="* Enter a valid mobile number">
                       </app-field-error-display>

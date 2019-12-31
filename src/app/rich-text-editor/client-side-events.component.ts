@@ -43,37 +43,96 @@ export class EventsComponent {
     onCreate(): void {
         this.appendElement('RichTextEditor <b>create</b> event called<hr>');
     }
-
-    // Handler for changed event trace
+    //Handler for changed event trace
     onChange(): void {
-        this.appendElement('RidhTextEditor <b>change</b> event called<hr>');
+        this.appendElement('RichTextEditor <b>change</b> event called<hr>');
     }
-
     begin(args: ActionBeginEventArgs): void {
         this.appendElement('<b>' + args.requestType + '</b> action is called<hr>');
         this.handleFullScreen(args);
     }
-
     complete(args: ActionCompleteEventArgs): void {
         this.appendElement('<b>' + args.requestType + '</b> action is completed<hr>');
         this.actionCompleteHandler();
     }
-
     focus(): void {
         this.appendElement('RichTextEditor <b>focus</b> event called<hr>');
     }
-
     blur(): void {
         this.appendElement('RichTextEditor <b>blur</b> event called<hr>');
     }
-
     toolbarClick(): void {
-        this.appendElement('RidhTextEditor <b>toolbar click</b> event called<hr>');
+        this.appendElement('RichTextEditor <b>toolbar click</b> event called<hr>');
+    }
+
+    beforeDialogOpen(): void {
+         this.appendElement('RichTextEditor <b>beforeDialogOpen</b> event called<hr>');
+    }
+
+    dialogOpen(): void {
+         this.appendElement('RichTextEditor <b>dialogOpen</b> event called<hr>');
+    }
+
+    dialogClose(): void {
+         this.appendElement('RichTextEditor <b>dialogClose</b> event called<hr>');
+    }
+
+    beforeQuickToolbarOpen(): void {
+         this.appendElement('RichTextEditor <b>beforeQuickToolbarOpen</b> event called<hr>');
+    }
+
+    quickToolbarOpen(): void {
+         this.appendElement('RichTextEditor <b>quickToolbarOpen</b> event called<hr>');
+    }
+
+    quickToolbarClose(): void {
+         this.appendElement('RichTextEditor <b>quickToolbarClose</b> event called<hr>');
+    }
+
+    imageSelected(): void {
+         this.appendElement('RichTextEditor <b>imageSelected</b> event called<hr>');
+    }
+
+    imageUploading(): void {
+         this.appendElement('RichTextEditor <b>imageUploading</b> event called<hr>');
+    }
+
+    imageUploadSuccess(): void {
+         this.appendElement('RichTextEditor <b>imageUploadSuccess</b> event called<hr>');
+    }
+
+    imageUploadFailed(): void {
+         this.appendElement('RichTextEditor <b>imageUploadFailed</b> event called<hr>');
+    }
+
+    imageRemoving(): void {
+         this.appendElement('RichTextEditor <b>imageRemoving</b> event called<hr>');
+    }
+
+    destroyed(): void {
+         this.appendElement('RichTextEditor <b>destroyed</b> event called<hr>');
+    }
+
+    beforeSanitizeHtml(): void {
+         this.appendElement('RichTextEditor <b>beforeSanitizeHtml</b> event called<hr>');
+    }
+
+    resizing(): void {
+         this.appendElement('RichTextEditor <b>resizing</b> event called<hr>');
+    }
+
+    resizeStart(): void {
+         this.appendElement('RichTextEditor <b>resizeStart</b> event called<hr>');
+    }
+
+    resizeStop(): void {
+         this.appendElement('RichTextEditor <b>resizeStop</b> event called<hr>');
     }
 
     onClear(): void {
         this.log.nativeElement.innerHTML = '';
     }
+
 
     handleFullScreen(e: any): void {
         const sbCntEle: HTMLElement = document.querySelector('.sb-content.e-view');

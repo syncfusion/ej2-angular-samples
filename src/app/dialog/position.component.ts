@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import { DialogComponent, PositionDataModel } from '@syncfusion/ej2-angular-popups';
 import { ChangeArgs } from '@syncfusion/ej2-buttons';
-
+import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 /**
  * Position Dialog Component
  */
@@ -18,7 +18,7 @@ export class PositioningDialogComponent {
     public defaultDialog: DialogComponent;
 
     @ViewChild('confirmButton')
-    public dialogBtn: ElementRef;
+    public dialogBtn: ButtonComponent;
 
     public position: PositionDataModel = { X: 'center', Y: 'center' };
     public closeOnEscape = false;
@@ -39,10 +39,10 @@ export class PositioningDialogComponent {
     }
 
     public dialogOpen = (): void => {
-        this.dialogBtn.nativeElement.style.display = 'none';
+        this.dialogBtn.element.style.display = 'none';
     }
 
     public dialogClose = (): void => {
-        this.dialogBtn.nativeElement.style.display = 'block';
+        this.dialogBtn.element.style.display = 'block';
     }
 }

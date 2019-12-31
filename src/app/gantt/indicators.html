@@ -1,0 +1,25 @@
+<div id="action-description">
+    <p>This sample visualizes how to mention special moment in any mentioned day for a particular task with different icon and label.</p>
+</div>
+
+
+<div class="control-section">
+    <ejs-gantt id="Indicators" height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
+        [labelSettings]="labelSettings" height="400px" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+        [highlightWeekends]="true">
+    </ejs-gantt>
+</div>
+
+<div id="description">
+    <p>
+        In this example, <code>indicators</code> are displayed with some custom text in specified day of task, which are defined in dataSource. You can define the indicators with the following properties for tasks:
+       <li><code>date</code>: Defines the date value to where we want to display the indicators.</li>
+       <li><code>iconClass </code>: Defines the icon to highlight the indicator.</li>
+       <li><code>name</code>: Defines text to be displayed in the mentioned date.</li>
+       <li><code>tooltip</code>: The text to be displayed when hover the mouse over the indicator.</li>
+    </p>
+    <p>
+        Gantt component features are segregated into individual feature-wise modules. To use a selection, inject the
+        <code>Selection</code> module.To use markers, inject the <code>DayMarkers</code> module.
+    </p>
+</div>

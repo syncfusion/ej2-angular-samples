@@ -15,7 +15,7 @@ import { AccordionComponent } from '@syncfusion/ej2-angular-navigations';
 export class AjaxAccordionComponent implements AfterViewInit  {
     @ViewChild('accordion')
     public acrdn: AccordionComponent;
-    public ajaxData: string;
+    public ajaxData: string = '';
     ngAfterViewInit(): void {
       let ajax: Ajax = new Ajax('source/accordion/ajax-content.html', 'GET', true);
       ajax.send().then();

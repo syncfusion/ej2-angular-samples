@@ -60,7 +60,6 @@ export class FieldListComponent implements OnInit {
             this.pivotObj.allowCalculatedField = true;
             this.pivotObj.showFieldList = true;
         }
-        this.pivotObj.refresh();
     }
 
     ngOnInit(): void {

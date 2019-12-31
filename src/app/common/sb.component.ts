@@ -161,7 +161,7 @@ export class SBController {
                 if (e.isSwiped) {
                     e.cancel = true;
                 }
-                let blockEle: Element = this.element.querySelector('#e-content_' + e.selectedIndex).children[0];
+                let blockEle: Element = this.element.querySelector('#e-content' + this.tabId + '_' + e.selectedIndex).children[0];
                 blockEle.innerHTML = this.items[e.selectedIndex].data;
                 blockEle.classList.add('sb-src-code');
                 hljs.highlightBlock(blockEle);
@@ -260,11 +260,11 @@ export class SBController {
         if (obj) {
             tabObj = obj;
         } else { tabObj = this; }
-        let contentEle: Element = tabObj.element.querySelector('#e-content_' + tabObj.selectedItem);
+        let contentEle: Element = tabObj.element.querySelector('#e-content' + tabObj.tabId + '_' + tabObj.selectedItem);
         if (!contentEle) {
             return;
         }
-        let blockEle: Element = tabObj.element.querySelector('#e-content_' + tabObj.selectedItem).children[0];
+        let blockEle: Element = tabObj.element.querySelector('#e-content' + tabObj.tabId + '_' + tabObj.selectedItem).children[0];
         blockEle.innerHTML = tabObj.items[tabObj.selectedItem].data;
         blockEle.classList.add('sb-src-code');
         if (blockEle) {
@@ -466,11 +466,11 @@ export class SBController {
         let sample: string[] = href.match(sampleRegex);
         for (let sb of sbArray) {
             let ele: HTMLFormElement = (select('#' + sb) as HTMLFormElement);
-            if (sb === 'asp_mvc') {
-                ele.href = 'https://ej2.syncfusion.com/aspnetmvc/'
+            if (sb === 'aspnetcore' || sb === 'aspnetmvc') {
+                ele.href = sb === 'aspnetcore' ? 'https://ej2.syncfusion.com/aspnetcore/' : 'https://ej2.syncfusion.com/aspnetmvc/';
             }
-            else if (sb === 'asp_core') {
-                ele.href = 'https://ej2.syncfusion.com/aspnetcore/'
+            else if (sb === 'blazor') {
+                ele.href = 'https://blazor.syncfusion.com/demos/';
             }
             else {
                 ele.href = ((link) ? ('http://' + link[1] + '/' + (link[3] ? (link[3] + '/') : '')) :

@@ -1,0 +1,71 @@
+<div id="action-description">
+    <p>This sample demonstrates all the events that occur on all the Gantt operations with the help of Event Trace panel.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-lg-9 control-section">
+        <ejs-gantt id="Events" height="430px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
+            [allowSelection]="true" [allowReordering]="true" [allowSorting]="true" [allowResizing]="true"
+            [splitterSettings]="splitterSettings" [enableContextMenu]="true" [showColumnMenu]="true"
+            [labelSettings]="labelSettings" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+            [highlightWeekends]="true" [treeColumnIndex]="1" [toolbar]="toolbar" [editSettings]="editSettings"
+            (created)="created()" (load)="load()" (dataBound)="dataBound()" (toolbarClick)="toolbarClick()"
+            (beforeTooltipRender)="beforeTooltipRender()" (actionBegin)="actionBegin()"
+            (actionComplete)="actionComplete()" (cellEdit)="cellEdit()" (endEdit)="endEdit()"
+            (taskbarEditing)="taskbarEditing()" (taskbarEdited)="taskbarEdited()" (rowSelecting)="rowSelecting()"
+            (rowSelected)="rowSelected()" (rowDeselecting)="rowDeselecting()" (rowDeselected)="rowDeselected()"
+            (columnDragStart)="columnDragStart()" (columnDrag)="columnDrag()" (columnDrop)="columnDrop()"
+            (expanding)="expanding()" (expanded)="expanded" (collapsing)="collapsing()" (collapsed)="collapsed()"
+            (columnMenuClick)="columnMenuClick()" (columnMenuOpen)="columnMenuOpen()"
+            (contextMenuClick)="contextMenuClick()" (contextMenuOpen)="contextMenuOpen()" (resizeStart)="resizeStart()"
+            (resizing)="resizing()" (resizeStop)="resizeStop()" (splitterResizeStart)="splitterResizeStart()"
+            (splitterResizing)="splitterResizing()" (splitterResized)="splitterResized()" (recordDoubleClick)="recordDoubleClick()" (onTaskbarClick)="onTaskbarClick()">
+        </ejs-gantt>
+    </div>
+
+
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Event Trace</div>
+            <div class="property-panel-content">
+                <div id="property" class="property-panel-table" title="Event Trace">
+                    <table id="property" title="Event Trace">
+                        <tr>
+                            <td>
+                                <div class="eventarea" style="height: 346px;overflow: auto">
+                                    <span class="EventLog" id="EventLog" style="word-break: normal;"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 50%;padding: 20px 10px 10px 75px;">
+                                <div>
+                                    <button ejs-button id="clear" content="Clear" (click)='clearEvents()'></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>The Gantt triggers events based on its actions. The events can be used as an extension point to perform custom operations.
+    </p>
+    <p>In this demo, perform Gantt actions such as load, created, dataBound, toolbarClick, beforeTooltipRender, actionBegin, actionComplete, cellEdit,
+        endEdit, taskbarEditing, taskbarEdited, rowSelecting, rowSelected, rowDeselecting, rowDeselected, columnDragStart, columnDrag,
+        columnDrop, expanding, expanded, collapsing, collapsed, columnMenuClick, columnMenuOpen, contextMenuClick, contextMenuOpen, resizeStart,
+        resizing, resizeStop, splitterResizeStart, splitterResizing, splitterResized, recordDoubleClick, onTaskbarClick and
+        see the <strong>Event Trace</strong> panel for the events emitted.
+    </p>
+    <p>
+        Gantt component features are segregated into individual feature-wise modules. To use a selection, inject the
+        <code>Selection</code> module.To use a sorting, inject the <code>Sort</code> module.To reorder column, inject the
+        <code>Reorder</code>.To resize column width, inject the <code>Resize</code> module .To use a contextmenu, inject the
+        <code>Contextmenu</code> module.To use a columnmenu,inject the <code>ColumnMenu</code> module.To use a toolbar, inject
+        the <code>Toolbar</code> module.To use a edit, inject the <code>Edit</code> module .To use markers, inject the
+        <code>DayMarkers</code> module.
+    </p>
+</div>

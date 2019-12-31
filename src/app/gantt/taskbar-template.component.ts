@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { customizedData } from './data';
 
 @Component({
+    selector: 'ej2-gantttaskbartemplate',
     templateUrl: 'taskbar-template.html',
     styleUrls: ['taskbar-template.component.css']
 })

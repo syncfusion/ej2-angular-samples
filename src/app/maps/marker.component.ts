@@ -1,59 +1,88 @@
 /**
  * Marker Sample
  */
-import { Component, ViewEncapsulation, Inject } from '@angular/core';
+import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
 import { MapsTheme, Maps, Marker, MapsTooltip, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
-import { topPopulation } from './marker-location'; 
-import { HttpClient } from '@angular/common/http';
-import { MapAjax } from '@syncfusion/ej2-maps';
+import { topPopulation } from './marker-location';
+import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
+import { EmitType } from '@syncfusion/ej2-base';
 Maps.Inject(Marker, MapsTooltip);
 declare var require: any;
-import worlMap from './world-map.json';
-import population from './top-population.json';
+let worlMap: object[] = require('./world-map.json');
+let population: object[] = require('./top-population.json');
 @Component({
-    selector: 'control-content',
-    templateUrl: 'marker.html', 
-    encapsulation: ViewEncapsulation.None
+  selector: 'control-content',
+  templateUrl: 'marker.html',
+  encapsulation: ViewEncapsulation.None
 })
 export class MapsMarkerComponent {
-    // custom code start
-    public load = (args: ILoadEventArgs) => { 
-        let theme: string = location.hash.split('/')[1]; 
-        theme = theme ? theme : 'Material'; 
-        args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() + theme.slice(1));
-    }
-    // custom code end
-    public zoomSettings: object= {
-        enable: false
-    };
-    
-    public titleSettings: object = { 
-        text: 'Top 25 populated cities in the world', 
-        titleStyle: { size: '16px' } 
-    };
+  @ViewChild('maps')
+  public maps: Maps;
+  // custom code start
+  public load = (args: ILoadEventArgs) => {
+    let theme: string = location.hash.split('/')[1];
+    theme = theme ? theme : 'Material';
+    args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() + theme.slice(1));
+  }
+  // custom code end
+  public zoomSettings: object = {
+    enable: true
+  };
+  public titleSettings: object = {
+    text: 'Top 25 populated cities in the world',
+    titleStyle: { size: '16px' }
+  };
+  public layers: object[] = [{
+    shapeData: worlMap,
+    dataSource: population,
+    shapeSettings: { fill: '#C3E6ED' },
 
-    public layers: object[] =   [{        
-        shapeData: worlMap,
-        dataSource:  population,
-        shapeSettings: { fill: '#C3E6ED' },
-        
-        markerSettings: [{        
-            dataSource: topPopulation,
-            visible: true,
-            animationDuration: 0,
-            shape: 'Circle',
-            fill: 'white',
-            width: 3,
-            border: { width: 2, color: '#285255' },
-            tooltipSettings: {
-                template: '<div><div class="toolback"><div class="listing2"><center> ${name} </center></div><hr style="margin-top: 2px;margin-bottom:5px;border:0.5px solid #DDDDDD"><div><span class="listing1">Country : </span><span class="listing2">${Country}</span></div><div><span class="listing1">Population : </span><span class="listing2">${population}</span></div></div></div>',
-                visible: true,
-                valuePath: 'population',
-            }
-        }]
-    }];
-    constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = [ 'top-population.json', 'world-map.json'];
+    markerSettings: [{
+      dataSource: topPopulation,
+      visible: true,
+      animationDuration: 0,
+      shape: 'Circle',
+      fill: 'white',
+      width: 10,
+      border: { width: 2, color: '#285255' },
+      tooltipSettings: {
+        template: '<div><div class="toolback"><div class="listing2"><center> ${name} </center></div><hr style="margin-top: 2px;margin-bottom:5px;border:0.5px solid #DDDDDD"><div><span class="listing1">Country : </span><span class="listing2">${Country}</span></div><div><span class="listing1">Continent : </span><span class="listing2">${Continent}</span></div><div><span class="listing1">Population : </span><span class="listing2">${population}</span></div></div></div>',
+        visible: true,
+        valuePath: 'population',
+      }
+    }]
+  }];
+  ngAfterViewInit(): void {
+    let shape: EmitType<CheckBoxChangeEvents>;
+    let shapeCheckBox: CheckBox = new CheckBox(
+      {
+        change: shape, checked: false
+      },
+      '#shape');
+    shapeCheckBox.change = shape = (e: CheckBoxChangeEvents) => {
+      if (e.checked) {
+        this.maps.layers[0].markerSettings[0].shapeValuePath = 'shape';
+      } else {
+        this.maps.layers[0].markerSettings[0].shapeValuePath = null;
+      }
+      this.maps.refresh();
     };
-
+    let color: EmitType<CheckBoxChangeEvents>;
+    let colorCheckBox: CheckBox = new CheckBox(
+      {
+        change: color, checked: false
+      },
+      '#color');
+    colorCheckBox.change = color = (e: CheckBoxChangeEvents) => {
+      if (e.checked) {
+        this.maps.layers[0].markerSettings[0].colorValuePath = 'color';
+      } else {
+        this.maps.layers[0].markerSettings[0].colorValuePath = null;
+      }
+      this.maps.refresh();
+    };
+  }
+  constructor(@Inject('sourceFiles') private sourceFiles: any) {
+    sourceFiles.files = ['top-population.json', 'world-map.json'];
+  };
 }

@@ -19,3 +19,12 @@
 .sb-header.e-view.hide-header {
     display: none;
 }
+
+.e-richtexteditor .e-rte-content .e-content pre {
+    padding: 10px;
+    background: #F4F5F7;
+}
+.highcontrast .e-richtexteditor .e-rte-content .e-content pre {
+    padding: 10px;
+    background: #303030;
+}

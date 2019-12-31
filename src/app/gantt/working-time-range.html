@@ -1,0 +1,54 @@
+<div id="action-description">
+    <p>This sample visualizes the support for changing the working hours in a day. The selected start and end hours from the property panel will be applied to each task available in the project.</p>
+</div>
+
+<div class="col-lg-9 control-section">
+    <ejs-gantt id="WorkTimeRange" #ganttObj height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
+    [treeColumnIndex]='1' [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" height="400px" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+    [highlightWeekends]="true" [timelineSettings]="timelineSettings" [durationUnit] = "durationUnit">
+    </ejs-gantt>
+</div>
+
+<div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+            <div class="property-panel-header">Properties </div>
+        <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+            <tr>
+                <td style="width: 55%">
+                    <div>Work Start Time</div>
+                </td>
+                <td style="width: 45%;padding-right: 10px">
+                    <div id='columnddl'>
+                        <ejs-numerictextbox  #StartTimeObj id='WorkStartTime' width= '100px' value='8' min='0' max='24' step='0.5' (change)="updateTime($event)" [showSpinButton]='true'></ejs-numerictextbox>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 55%;padding-top: 10px">
+                    <div>Work End Time</div>
+                </td>
+                <td style="width: 45%;padding-top: 10px;padding-left: 7px">
+                    <div>
+                        <ejs-numerictextbox  #EndTimeObj id='WorkEndTime' width= '100px' value='17' min='0' max='24' step='0.5' (change)="updateTime($event)" [showSpinButton]='true'></ejs-numerictextbox>
+                    </div>
+                </td>
+            </tr>           
+        </table>
+        </div>
+    </div>
+
+    <div id="description">
+        <p>
+            In this example, you can see how to render a Gantt chart with the provided data source and customizable working hours in a day. You can split the working hours in a day to one or more range. So, You can also provide the <code>dayWorkingTime</code> property value as array of object collection. Gantt chart also supports different <code>durationUnit</code> values as follows:
+            <li><code>day</code></li>
+            <li><code>hour</code></li>       
+            <li><code>minute</code></li>
+        </p>
+        <p>
+            Given duration in dataSource will be considered with this unit. In this demo, the <code>hour</code> unit is used to render taskbars in day hour timeline mode. Gantt chart supports only 24hours format as of now. The working hours will differ between organizations. This feature will be helpful to keep track of each task and resource task status based on the working time of company.
+        </p>
+        <p>
+            Gantt component features are segregated into individual feature-wise modules. To use a selection, inject the
+            <code>Selection</code> module.To use markers, inject the <code>DayMarkers</code> module.
+        </p>
+    </div>

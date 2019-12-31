@@ -6,10 +6,6 @@
   float: left;
 }
 
-.sb-custom-item.sb-open-new-wrapper.e-control.e-tooltip.e-lib {
-  display: none;
-}
-
 .footer-logo {
   background: url(https://ej2.syncfusion.com/home/images/footer-logo.svg) no-repeat right;
   height: 40px;
@@ -38,16 +34,14 @@
 }
 
 .sb-source-section .e-tab .e-tab-header .e-toolbar-item.e-active .e-tab-text {
-  color: #3C78EF;
+    color: #3C78EF;
 }
-
-.e-indicator.e-ignore {
+.e-tab.sb-source-code-section .e-indicator.e-ignore {
   background: none !important;
 }
 
-#next-sample,
-#prev-sample {
-  font-size: 25px;
+#next-sample, #prev-sample {
+    font-size: 25px;
 }
 
 .e-view {
@@ -2106,12 +2100,12 @@ body.highcontrast,
 }
 
 .sb-icon-Back:before {
-  content: '\e962';
-  font-size: 17px;
+    content: '\e962';
+    font-size: 17px;
 }
 
 .sb-icons.sb-icon-Back {
-  vertical-align: middle;
-  display: table-cell;
-  width: 17px;
+    vertical-align: middle;
+    display: table-cell;
+    width: 17px;
 }

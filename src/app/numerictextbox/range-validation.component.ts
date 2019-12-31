@@ -14,6 +14,7 @@ export class RangeTextboxController {
         this.minValue = parseFloat((document.getElementById('min') as HTMLInputElement).value);
         this.maxValue = parseFloat((document.getElementById('max') as HTMLInputElement).value);
         this.step = parseFloat((document.getElementById('step') as HTMLInputElement).value);
+        this.step= isNaN(this.step) ? 1 :this.step;
     }
     constructor() { }
 }

@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-angular-charts';
-import { ChartSeriesType } from '@syncfusion/ej2-charts';
+import { ChartSeriesType, MarkerSettingsModel, ITextRenderEventArgs } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { Browser } from '@syncfusion/ej2-base';
 
@@ -16,12 +16,9 @@ import { Browser } from '@syncfusion/ej2-base';
 export class PolarRangeColumnChartComponent {
 
     public data: Object[] = [
-        { x: 'Jan', low: 2.7, high: 7.1 }, { x: 'Feb', low: 3.9, high: 7.7 },
-        { x: 'Mar', low: 3.2, high: 7.5 }, { x: 'Apr', low: 4.5, high: 9.8 },
-        { x: 'May', low: 6.7, high: 11.4 }, { x: 'June', low: 8.4, high: 14.4 },
-        { x: 'July', low: 11.6, high: 17.2 }, { x: 'Aug', low: 12.7, high: 17.9 },
-        { x: 'Sep', low: 9.5, high: 15.1 }, { x: 'Oct', low: 5.0, high: 10.5 },
-        { x: 'Nov', low: 3.2, high: 7.9 }, { x: 'Dec', low: 6.1, high: 9.1 }
+        { x: 'Jan', low: 2, high: 7 }, { x: 'Feb', low: 3, high: 7 },
+        { x: 'Mar', low: 3, high: 7 }, { x: 'Apr', low: 4, high: 9 },
+        { x: 'May', low: 6, high: 11 }, { x: 'June', low: 8, high: 14 }
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
@@ -35,7 +32,7 @@ export class PolarRangeColumnChartComponent {
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         labelFormat: '{value}˚C',
-        minimum: 0, maximum: 20, interval: 5
+        minimum: 0, maximum: 15, interval: 5
     };
       // custom code start
     public load(args: ILoadedEventArgs): void {
@@ -43,6 +40,19 @@ export class PolarRangeColumnChartComponent {
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
 
+    };
+
+    public text(args: ITextRenderEventArgs): void {
+        args.text = args.text.replace('˚C', '');
+    }
+
+    public marker: MarkerSettingsModel =  {
+        dataLabel: {
+            visible: true,
+            position: 'Top',
+            font: { color: '#ffffff', fontWeight: '600'},
+            enableRotation: true
+        }
     };
       // custom code end
     public border: Object = {

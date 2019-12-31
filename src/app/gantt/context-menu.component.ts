@@ -3,6 +3,7 @@ import { editingData, editingResources } from './data';
 import { GanttComponent, ContextMenuOpenEventArgs, ContextMenuClickEventArgs, IGanttData } from '@syncfusion/ej2-angular-gantt';
 
 @Component({
+    selector: 'ej2-ganttcontextmenu',
     templateUrl: 'context-menu.html'
 })
 export class GanttContextMenuComponent implements OnInit {
@@ -21,12 +22,14 @@ export class GanttContextMenuComponent implements OnInit {
     public eventMarkers: object[];
     public toolbar: string[];
     public contextMenuItems: string[] | Object[];
+    public splitterSettings: object;
     public ngOnInit(): void {
         this.data = editingData;
         this.taskSettings = {
             id: 'TaskID',
             name: 'TaskName',
             startDate: 'StartDate',
+            endDate: 'EndDate',
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
@@ -79,6 +82,9 @@ export class GanttContextMenuComponent implements OnInit {
             { day: '7/16/2019', label: 'Property handover and sign-off' },
         ];
         this.resources = editingResources;
+        this.splitterSettings = {
+            columnIndex: 2
+        };
     }
     contextMenuClick (args?: ContextMenuClickEventArgs): void {
         let record: IGanttData = args.rowData;

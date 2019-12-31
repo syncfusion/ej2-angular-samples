@@ -65,7 +65,7 @@ export class CustomFilteringAutoCompleteComponent {
             findAllMatches: true
         };
         // create object from Fuse constructor
-        let fuse: Fuse<any> = new Fuse(this.booksData, options);
+        let fuse: Fuse<any, any> = new Fuse(this.booksData, options);
         // store the search result data based on typed characters
         let result: any = fuse.search(e.text);
         let data: { [key: string]: Object; }[] = [];

@@ -56,7 +56,6 @@ export class MapsOsmWithNavigationComponent {
                     },
                     {
                         visible: true,
-                        offset: { x: 2, y: -7 },
                         template: '<div><img src="./assets/maps/images/ballon.png" style="height:30px;width:20px;"></img></div>',
                         dataSource: [{
                                 name: 'Mexico City',
@@ -70,7 +69,6 @@ export class MapsOsmWithNavigationComponent {
                     },
                     {
                         visible: true,
-                        offset: { x: 2, y: -7 },
                         template: '<div style= "font-weight:500; font-size: 13px; text-align: left">Mexico</div>',
                         dataSource: [{
                                 name: 'Mexico City',

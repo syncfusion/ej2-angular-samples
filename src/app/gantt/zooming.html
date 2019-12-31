@@ -5,7 +5,8 @@
 
 <div class="control-section">
     <ejs-gantt id="ganttZooming" height="430px" [dataSource]="data" [taskFields]="taskSettings"
-    [toolbar]="toolbar" [labelSettings]="labelSettings" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate">
+		[toolbar]="toolbar" [labelSettings]="labelSettings" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+		[splitterSettings]="splitterSettings" [columns]="columns" [treeColumnIndex]="1">
     </ejs-gantt>
 </div>
 
@@ -32,4 +33,7 @@
 			clicks on the <code>ZoomToFit</code> icon,
 			then all the tasks are rendered within the current viewable chart container width.</li>
 	</p>
+	<p>
+		Gantt component features are segregated into individual feature-wise modules.To use a zoom support related icons, inject the <code>Toolbar</code> module.
+</p>
 </div>

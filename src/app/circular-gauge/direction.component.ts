@@ -90,7 +90,7 @@ export class DirectionComponent {
             width: 100,
             change: () => {
                 let rangeColor: string = this.labelColor.value.toString();
-                this.circulargauge.axes[0].ranges[0].color = rangeColor;
+                this.circulargauge.axes[0].labelStyle.font.color = rangeColor;
                 this.circulargauge.refresh();
             }
         });

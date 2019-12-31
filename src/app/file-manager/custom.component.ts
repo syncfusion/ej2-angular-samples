@@ -17,7 +17,7 @@ export class CustomThumnailController {
     }
     public ajaxSettings: object;
     public view: string;
-    public hostUrl: string = 'https://ej2services.syncfusion.com/production/web-services/';
+    public hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
     public ngOnInit(): void {
         this.ajaxSettings = {
             url: this.hostUrl + 'api/FileManager/FileOperations',
