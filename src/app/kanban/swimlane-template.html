@@ -1,0 +1,37 @@
+<div class="control-section">
+    <div class="content-wrapper">
+        <ejs-kanban #kanbanObj cssClass='kanban-swimlane' keyField="Status" [dataSource]='kanbanData'
+            [cardSettings]='cardSettings' [swimlaneSettings]='swimlaneSettings'>
+            <e-columns>
+                <e-column headerText='To Do' keyField='Open'></e-column>
+                <e-column headerText='In Progress' keyField='InProgress'></e-column>
+                <e-column headerText='Testing' keyField='Testing'></e-column>
+                <e-column headerText='Done' keyField='Close'></e-column>
+            </e-columns>
+            <ng-template #swimlaneSettingsTemplate let-data>
+                <div id="swimlaneTemplate">
+                    <div class="swimlane-template e-swimlane-template-table">
+                        <div class="e-swimlane-row-text">
+                            <img src="./assets/kanban/images/{{data.keyField}}.png"
+                                alt="{{data.keyField}}" /><span>{{data.textField}}</span>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </ejs-kanban>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates how to customize the swimlane header of Kanban. In this sample, the swimlane header is
+        customized with icons and corresponding to the mapped key field’s text.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The Kanban provides an option to customize its swimlane header using the <code>swimlaneSettings</code> ->
+        <code>template</code> property, which
+        accepts the string or HTML element`s ID value, which is used as the template for the swimlane header.
+        In this demo, all the swimlane headers are customized with templating as text and icons.
+    </p>
+</div>

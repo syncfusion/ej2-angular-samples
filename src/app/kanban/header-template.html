@@ -1,0 +1,30 @@
+<div class="control-section">
+  <div class="content-wrapper">
+    <ejs-kanban #kanbanObj cssClass='kanban-header-template' keyField="Status" [dataSource]='kanbanData'
+      [cardSettings]='cardSettings'>
+      <e-columns>
+        <e-column *ngFor="let column of columns;" headerText={{column.headerText}} keyField='{{column.keyField}}'>
+          <ng-template #template let-data>
+            <div class="header-template-wrap">
+              <div class="header-icon e-icons {{data.keyField}}"></div>
+              <div class="header-text">{{data.headerText}}</div>
+            </div>
+          </ng-template>
+        </e-column>
+      </e-columns>
+    </ejs-kanban>
+  </div>
+</div>
+<div id="action-description">
+  <p>
+    This sample demonstrates the header template feature of Kanban. The column headers of Kanban are customized with
+    text + icons in this demo.
+  </p>
+</div>
+<div id="description">
+  <p>
+    The Kanban provides an option to customize its column header using the <code>columns</code> ->
+    <code>template</code> property, which accepts the
+    string or HTML element`s ID value, which is used as the template for the header.
+  </p>
+</div>

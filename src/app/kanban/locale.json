@@ -1,0 +1,42 @@
+{
+    "de": {
+        "kanban": {
+            "day": "Tag",
+            "week": "Woche",
+            "workWeek": "Arbeitswoche",
+            "month": "Monat"
+        }
+    },
+    "ar": {
+        "kanban": {
+            "day": "يوم",
+            "week": "أسبوع",
+            "workWeek": "أسبوع العمل",
+            "month": "شهر"
+        }
+    },
+    "en": {
+        "kanban": {
+            "day": "Day",
+            "week": "Week",
+            "workWeek": "Work Week",
+            "month": "Month"
+        }
+    },
+    "zh": {
+        "kanban": {
+            "day": "天",
+            "week": "周",
+            "workWeek": "工作周",
+            "month": "月"
+        }
+    },
+    "fr-CH": {
+        "kanban": {
+            "day": "journée",
+            "week": "La semaine",
+            "workWeek": "Semaine de travail",
+            "month": "Mois"
+        }
+    }
+}

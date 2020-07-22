@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
     ILoadedEventArgs, IMouseEventArgs, ChartComponent, IAccLoadedEventArgs, AccumulationTheme,
-    SelectionMode, ChartTheme, Series, IAccResizeEventArgs
+    SelectionMode, ChartTheme, Series, IAccResizeEventArgs, ChartAnnotationSettingsModel
 } from '@syncfusion/ej2-angular-charts';
 import {
     AccumulationChart, AccumulationDataLabel
@@ -19,6 +19,14 @@ import { Browser } from '@syncfusion/ej2-base';
     encapsulation: ViewEncapsulation.None
 })
 export class AnnotationChartComponent {
+    public annotations: ChartAnnotationSettingsModel[] = [
+        {
+            x: '20%',
+            y: '25%',
+            coordinateUnits: 'Pixel', region: 'Series',
+            content: '<div id="chart_annotation" style="width: 200px; height: 200px"></div>'
+        }
+    ];
     public pie: AccumulationChart;
     public render: boolean = false;
     @ViewChild('chart')

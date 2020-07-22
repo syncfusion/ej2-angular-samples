@@ -44,7 +44,9 @@ export let checkboxdata: any = [
     { "text": "Aston Martin One- 77", "id": "list-07" },
     { "text": "Jaguar XJ220", "id": "list-08" },
     { "text": "McLaren P1", "id": "list-09" },
-    { "text": "Ferrari LaFerrari", "id": "list-10" }
+    { "text": "Ferrari LaFerrari", "id": "list-10" },
+    { "text": "Zenvo ST1", "id": "list-11" },
+    { "text": "Lamborghini Veneno", "id": "list-12" }
 ];
 export let groupData: any = [
     {

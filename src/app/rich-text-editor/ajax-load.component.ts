@@ -1,5 +1,5 @@
 /**
- * RTE Ajax Content Sample
+ * Rich Text Editor Ajax Content Sample
  */
 import { Component, ViewChild } from '@angular/core';
 import { Ajax } from '@syncfusion/ej2-base';

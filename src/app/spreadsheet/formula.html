@@ -1,22 +1,21 @@
 <div class="control-section">
-    <ejs-spreadsheet #formula id="spreadsheet" (dataBound)="dataBound()" [showRibbon]="false">
+    <ejs-spreadsheet #formula (created)="created()" [showRibbon]="false" [definedNames]="definedNames">
         <e-sheets>
             <e-sheet name="Stock Details" selectedRange="F15">
-                <e-rangesettings>
-                    <e-rangesetting [dataSource]="data"></e-rangesetting>
-                </e-rangesettings>
+                <e-ranges>
+                    <e-range [dataSource]="data"></e-range>
+                </e-ranges>
                 <e-rows>
-                    <e-row [height]=40></e-row>
                     <e-row [index]=11 [height]=25>
                         <e-cells>
                             <e-cell [index]=3 value="Average profit:"></e-cell>
-                            <e-cell [index]=5 formula="=AVERAGE(F2:F11)" format="0.00"></e-cell>
+                            <e-cell [index]=5 formula="=AVERAGE(Profit)" format="0.00"></e-cell>
                         </e-cells>
                     </e-row>
                     <e-row [height]=25>
                         <e-cells>
                             <e-cell [index]=3 value="Maximum stock value:"></e-cell>
-                            <e-cell [index]=5 formula="=MAX(D2:D11)" format="0.00"></e-cell>
+                            <e-cell [index]=5 formula="=MAX(High)" format="0.00"></e-cell>
                         </e-cells>
                     </e-row>
                     <e-row [height]=25>
@@ -28,7 +27,7 @@
                     <e-row [height]=25>
                         <e-cells>
                             <e-cell [index]=3 value="Non-profitable days:"></e-cell>
-                            <e-cell [index]=5 formula="=COUNTIF(F2:F11,'<=0')"></e-cell>
+                            <e-cell [index]=5 formula='=COUNTIF(F2:F11,"<=0")'></e-cell>
                         </e-cells>
                     </e-row>
                 </e-rows>
@@ -46,18 +45,19 @@
 </div>
 <div id="action-description">
     <p>
-        This sample demonstrates the analysis of a company's stock value for a certain period with formula feature.
+        This sample demonstrates the analysis of a company's stock value for a certain period with formula and named range feature.
     </p>
 </div>
 <div id="description">
     <p>
         The <code>Spreadsheet</code> component provides a built-in calculation library that supports most commonly used
         formulas.
-        In this demo, a formula is specified to a cell using the <code>formula</code> property.
+        In this demo, a formula is specified to a cell using the <code>formula</code> property. The ranges are specified
+        using its name and its defined using <code>definedNames</code> property.
     </p>
     <p>
-        More information about formula support can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/spreadsheet/getting-started">
+        More information about formula and named range support can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/spreadsheet/formulas/">
             documentation</a> section.
     </p>
 

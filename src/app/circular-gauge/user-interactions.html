@@ -5,7 +5,7 @@
 </div>
 <div class="control-section">
     <div class="col-md-8">
-        <ejs-circulargauge (load)='load($event)' style='display:block;' #circulargauge enablePointerDrag=true (dragMove)='dragMove($event)' (dragEnd)='dragEnd($event)'
+        <ejs-circulargauge (load)='load($event)' id='gauge' style='display:block;' #circulargauge enablePointerDrag=true (dragMove)='dragMove($event)' (dragEnd)='dragEnd($event)'
             background='transparent'>
             <e-axes>
                 <e-axis startAngle=220 endAngle=140 [lineStyle]=lineStyle [labelStyle]=labelStyle [majorTicks]=majorTicks [minorTicks]=minorTicks
@@ -50,7 +50,7 @@
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 20%">
-                            <div id='enablePointer'>Enable Drag</div>
+                            <div id='enablePointer'>Allow Pointer Drag</div>
                         </td>
                         <td style="width: 40%;">
                             <div>
@@ -58,13 +58,23 @@
                             </div>
                         </td>
                     </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 20%">
+                            <div id='enableRange'>Allow Ranges Drag</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="checkbox" id="rangedrag" style="width:90%"/>
+                            </div>
+                        </td>
+                    </tr>
+        
                 </table>
             </div>
         </div>
     </div>
 </div>
 <div id="description">
-    <p style="font-weight: 500">Description</p>
     <p>
         In this example, you can see how to move pointers in gauge using drag and drop. Use <code>enablePointerDrag</code>        property, to achieve this behavior.
     </p>

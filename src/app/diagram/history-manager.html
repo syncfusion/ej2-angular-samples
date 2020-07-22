@@ -26,7 +26,7 @@
 
     <div id="historyControlSection" class="content-wrapper" style="width: 100%">
         <ejs-diagram #diagram id="diagram" width="100%" height="580px" [nodes]="nodes" [connectors]="connectors" (getNodeDefaults)="getNodeDefaults"
-            [snapSettings]="snapSettings" (historyChange)="historyChange()"></ejs-diagram>
+            [snapSettings]="snapSettings" (historyChange)="historyChange()"  (created)="created()"></ejs-diagram>
     </div>
 </div>
 <div id="historyPropertySection" class="col-lg-4 property-section" style="padding-right: 0px">
@@ -70,12 +70,12 @@
                     <div style="display: table-cell; vertical-align: middle">Stack Limit</div>
                 </div>
                 <div class="col-xs-6" style="padding-left: 0px; padding-right: 0px">
-                    <ejs-numerictextbox id="StackLimit" value="0" step="1" format="###.##" (change)="stackLimit($event)"></ejs-numerictextbox>
+                    <ejs-numerictextbox id="StackLimit" value="0" step="1" format="###.##" (change)="stackLimit($event)" [min]="0"></ejs-numerictextbox>
                 </div>
             </div>
             <div class="row" style="padding-top: 10px">
                 <div class="col-xs-6" style="padding-left: 0px">
-                    <button ejs-button title="startGroupAction" id="startGroupAction" [isToggle]="true" (click)="startGroupAction()" type="Button" style="width:100%;overflow: hidden;text-overflow: ellipsis">start Group Action</button></div>
+                    <button ejs-button title="startGroupAction" id="startGroupAction" [isToggle]="true" (click)="startGroupAction()" type="Button" style="width:100%;overflow: hidden;text-overflow: ellipsis">Start Group Action</button></div>
                         <div class="col-xs-6" style="padding-left: 0px; padding-right: 0px">
                             <button ejs-button title="ClearHistory" id="ClearHistory" type="Button" (click)="clearHistory()">Clear History</button>
                         </div>

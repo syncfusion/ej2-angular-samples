@@ -70,16 +70,23 @@ export class OlapComponent implements OnInit {
     }
     beforeToolbarRender(args: any) {
         args.customToolbar.splice(6, 0, {
-            type: 'Separator' 
+            type: 'Separator'
         });
         args.customToolbar.splice(9, 0, {
-            type: 'Separator' 
+            type: 'Separator'
         });
     }
     renameReport(args: any) {
-        let reportsCollection: string[] = [];
+        let reportsCollection: any[] = [];
         if (localStorage.pivotviewReports && localStorage.pivotviewReports !== "") {
             reportsCollection = JSON.parse(localStorage.pivotviewReports);
+        }
+        if (args.isReportExists) {
+            for (let i: number = 0; i < reportsCollection.length; i++) {
+                if (reportsCollection[i].reportName === args.rename) {
+                    reportsCollection.splice(i, 1);
+                }
+            }
         }
         reportsCollection.map(function (item: any): any { if (args.reportName === item.reportName) { item.reportName = args.rename; } });
         if (localStorage.pivotviewReports && localStorage.pivotviewReports !== "") {
@@ -120,7 +127,7 @@ export class OlapComponent implements OnInit {
         } as GridSettings;
 
         this.toolbarOptions = ['New', 'Save', 'SaveAs', 'Rename', 'Remove', 'Load',
-        'Grid', 'Chart', 'MDX', 'Export', 'SubTotal', 'GrandTotal', 'ConditionalFormatting', 'FieldList'] as ToolbarItems[];
+            'Grid', 'Chart', 'MDX', 'Export', 'SubTotal', 'GrandTotal', 'ConditionalFormatting', 'FieldList'] as ToolbarItems[];
 
         this.dataSourceSettings = {
             catalog: 'Adventure Works DW 2008 SE',

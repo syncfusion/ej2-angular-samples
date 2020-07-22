@@ -1,0 +1,88 @@
+<div class="control-section">
+    <div class="col-lg-9 content-wrapper">
+        <ejs-kanban #kanbanObj cssClass='kanban-api' keyField='Status' [dataSource]='kanbanData'
+            [cardSettings]='cardSettings'>
+            <e-columns>
+                <e-column headerText='To Do' keyField='Open'></e-column>
+                <e-column headerText='In Progress' keyField='InProgress'></e-column>
+                <e-column headerText='Done' keyField='Close'></e-column>
+            </e-columns>
+        </ejs-kanban>
+        <ejs-dialog #Dialog [buttons]='dlgButtons' header='Validation' [showCloseIcon]='showCloseIcon' [isModal]='isModal' [visible]='visible' [width]='width'>
+        </ejs-dialog>
+    </div>
+    <div class="col-lg-3 property-section property-customization">
+        <div class="property-panel-section">
+            <p class="property-panel-header">Add Column</p>
+            <div class="property-panel-content">
+                <form id="addForm" [formGroup]="reactForm">
+                    <table>
+                        <tr>
+                            <td>
+                                <ejs-textbox #header formControlName="check" id="text" class="e-input" type="text"
+                                    placeholder="Text Field"></ejs-textbox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ejs-dropdownlist id='key' #dropdown formControlName="key" [dataSource]='statusData'
+                                    placeholder='Key Field'>
+                                </ejs-dropdownlist>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ejs-numerictextbox #colIndex formControlName="index" id="index" format='###.##' min="0" value="0"
+                                    placeholder="Index">
+                                </ejs-numerictextbox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class='e-check'>
+                                <button ejs-button id='add' class="e-btn" (click)="onAdd()" type="submit">Add</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <p class="property-panel-header">Delete Column</p>
+            <div class="property-panel-content">
+                <form id="deleteForm" [formGroup]="orderForm">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <ejs-numerictextbox #columnIndex formControlName="deteteIndex" id="deteteIndex"
+                                        format='###.##' min="0" value="0" placeholder="Index">
+                                    </ejs-numerictextbox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class='e-check'>
+                                    <button ejs-button id='delete' class="e-btn" (click)="onDelete()">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates the important APIs required to manipulate the Kanban component. Provides necessary
+        details in the
+        property panel to add and remove the columns dynamically.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The demo explains how to add or remove columns programmatically.
+    </p>
+    <ul>
+        <li><code>addColumn:</code> The public method used to add a column to the Kanban board dynamically.</li>
+        <li><code>deleteColumn:</code> The public method used to remove the existing column from the Kanban board based
+            on an index.</li>
+    </ul>
+</div>

@@ -1,0 +1,32 @@
+<div id="action-description">
+    <p>
+        This sample illustrates a bullet chart with legend. Legend is used to know what the colors and shapes represent in bullet chart.
+    </p>
+
+</div>
+
+<div class="control-section" align="center">
+    <ejs-bulletchart #bullet id='revenue' style="display: block;" valueField='value' targetField='target' labelFormat='{value}K'
+        [minimum]='minimum1' [maximum]='maximum1' [interval]='interval1' [title]='chartTitle' subtitle='in Thousands'
+        [dataSource]='data1' [animation]='animation' [legendSettings]='legendSettings' (load)='load($event)'  (legendRender)='legendRender($event)' height='160' width='70%'>
+        <e-bullet-range-collection>
+            <e-bullet-range end='8' color='#CA4218' name="Poor"></e-bullet-range>
+            <e-bullet-range end='18' color='#EFC820' name="Avg"></e-bullet-range>
+            <e-bullet-range end='30' color='#599C20' name="Good"></e-bullet-range>
+        </e-bullet-range-collection>
+    </ejs-bulletchart>
+</div>
+
+<div id="description">
+    <p>
+            Tooltip is enabled in this example, to see the tooltip in action, hover a feature bar or comparative bar on the bullet chart.
+    </p>
+
+</div>
+
+<style>
+     tr {
+        height: 50px !important;
+    }
+
+</style>

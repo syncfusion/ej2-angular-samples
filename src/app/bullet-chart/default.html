@@ -6,9 +6,9 @@
 
 <div class="control-section">
     <ejs-bulletchart align='center' id='revenue' style="display: block; text-align: center;" valueField='value' targetField='target'
-        [minimum]='minimum1' [maximum]='maximum1' [interval]='interval1' [width]='width' [margin]='margin1'
-        [title]='titleRevenue' titlePosition='Left' [dataSource]='data1' [animation]='animation' subtitle='(US $ in thousands)'
-        labelFormat='${value}' (load)='load($event)'>
+        [minimum]='minimum1' [maximum]='maximum1' [interval]='interval1' [width]='width1' [margin]='margin1'
+        [title]='titleRevenue' titlePosition='Left' [dataSource]='data1' [animation]='animation'
+        labelFormat='${value}K' (load)='load($event)' subtitle='US $'>
         <e-bullet-range-collection>
             <e-bullet-range end='150' ></e-bullet-range>
             <e-bullet-range end='250'></e-bullet-range>
@@ -19,7 +19,7 @@
     <ejs-bulletchart id='Profit' style="display: block; text-align: center;" valueField='value' targetField='target'
         [minimum]='minimum2' [maximum]='maximum2' [interval]='interval2' [width]='width' align='center'
         [title]='titleProfit' titlePosition='Left' [dataSource]='data2' 
-        subtitle='%' labelFormat='{value}%' [animation]='animation' (load)='load($event)' [margin]='margin2'>
+        labelFormat='{value}%' [animation]='animation' (load)='load($event)' [margin]='margin2'>
         <e-bullet-range-collection>
             <e-bullet-range end='20' ></e-bullet-range>
             <e-bullet-range end='25'></e-bullet-range>

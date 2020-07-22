@@ -67,11 +67,18 @@ Run `npm run build:dev` to build the project. The build artifacts will be stored
             <a href="src/app/grid">DataGrid</a>
         </td>
         <td>
-            <a href="src/app/treegrid">Tree Grid</a>
+            <a href="src/app/pivot-view">Pivot Table</a>
         </td>
         <td>
-            <a href="src/app/pivot-table">Pivot Table (Updated)</a>
+            <a href="src/app/tree-grid">Tree Grid</a>
         </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/spreadsheet">Spredsheet</a>
+        </td>
+        <td></td>
+        <td></td>
     </tr>
     <tr>
         <td colspan="3" rowspan="1">
@@ -80,32 +87,32 @@ Run `npm run build:dev` to build the project. The build artifacts will be stored
     </tr>
     <tr>
         <td>
-            <a href="src/app/chart">Charts (Updated)</a>
+            <a href="src/app/chart">Charts</a>
+        </td>
+        <td>
+            <a href="src/app/stock-chart">Stock Chart</a>
         </td>
         <td>
             <a href="src/app/circular-gauge">Circular Gauge</a>
         </td>
+    </tr>
+    <tr>
         <td>
+            <a href="src/app/diagram">Diagram</a>
+        </td>
+        <td>
+            <a href="src/app/heatmap-chart">HeatMap Chart</a>
+        </td>
+         <td>
             <a href="src/app/linear-gauge">Linear Gauge</a>
         </td>
     </tr>
     <tr>
         <td>
-            <a href="src/app/diagram">Diagram (Preview)</a>
+            <a href="src/app/maps">Maps</a>
         </td>
-        <td>
-            <a href="src/app/">Stock Chart</a>
-        </td>
-        <td>
-            <a href="src/app/maps">Maps (Updated)</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="src/app/range-navigator">Range Navigator</a>
-        </td>
-        <td>
-            <a href="src/app/sparkline">Sparkline Charts</a>
+       <td>
+            <a href="src/app/range-navigator">Range Selector</a>
         </td>
         <td>
             <a href="src/app/smith-chart">Smith Chart</a>
@@ -113,14 +120,23 @@ Run `npm run build:dev` to build the project. The build artifacts will be stored
     </tr>
     <tr>
         <td>
-            <a href="src/app/barcode">Barcode (Preview)</a>
+            <a href="src/app/barcode">Barcode Generator</a>
+        </td>
+        <td>
+            <a href="src/app/sparkline">Sparkline Charts</a>
         </td>
         <td>
             <a href="src/app/treemap">TreeMap</a>
         </td>
+    </tr>
+    <tr>
         <td>
-            <a href="src/app/heatmap">Heatmap</a>
+            <a href="src/app/bullet-chart">Bullet Chart</a>
         </td>
+        <td>
+            <a href="src/app/kanban">Kanban (preview)</a>
+        </td>
+        <td></td>
     </tr>
     <tr>
         <td colspan="3" rowspan="1">
@@ -129,24 +145,74 @@ Run `npm run build:dev` to build the project. The build artifacts will be stored
     </tr>
     <tr>
         <td>
-            <a href="src/app/button">Button</a>
+            <a href="src/app/rte">Rich Text Editor</a>
         </td>
         <td>
-            <a href="src/app/chips">Chips</a>
+            <a href="src/app/document-editor">Word Processor</a>
         </td>
         <td>
-            <a href="src/app/document-editor">Document Editor (Updated)</a>
+            <a href="src/app/inplace-editor">In-place Editor</a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>CALENDARS<b>
         </td>
     </tr>
     <tr>
         <td>
-            <a href="src/app/form-validator">Form Validator</a>
+            <a href="src/app/schedule">Scheduler</a>
         </td>
         <td>
-            <a href="src/app/rich-text-editor">Rich Text Editor (Updated)</a>
+            <a href="src/app/calendar">Calendar</a>
         </td>
         <td>
-            <a href="src/app/inplace-editor">In-place Editor</a>
+            <a href="src/app/datepicker">DatePicker</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/daterangepicker">Date Range Picker</a>
+        </td>
+        <td>
+            <a href="src/app/datetimepicker">DateTime Picker</a>
+        </td>
+        <td>
+            <a href="src/app/timepicker">Time Picker</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/gantt">Gantt Chart</a>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>BUTTONS<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/button">Button</a>
+        </td>
+        <td>
+            <a href="src/app/button/button-group.component.ts">Button Group</a>
+        </td>
+        <td>
+            <a href="src/app/button/dropdown-button.component.ts">Dropdown Menu</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/button/progress-button.component.ts">Progress Button</a>
+        </td>
+        <td>
+            <a href="src/app/button/split-button.component.ts">Split Button</a>
+        </td>
+        <td>
+             <a href="src/app/button/chips">Chips</a>
         </td>
     </tr>
     <tr>
@@ -167,46 +233,14 @@ Run `npm run build:dev` to build the project. The build artifacts will be stored
     </tr>
     <tr>
         <td>
-            <a href="src/app/multi-select">MultiSelect Dropdown (Updated)</a>
+            <a href="src/app/drop-down-tree">Dropdown Tree</a>
+        </td>
+        <td>
+            <a href="src/app/multi-select">MultiSelect Dropdown</a>
         </td>
         <td>
             <a href="src/app/list-box">List Box</a>
         </td>
-        <td></td>
-    </tr>
-    <tr>
-        <td colspan="3" rowspan="1">
-            <b>CALENDARS<b>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="src/app/schedule">Scheduler (Updated)</a>
-        </td>
-        <td>
-            <a href="src/app/gantt">Gantt (Preview)</a>
-        </td>
-        <td>
-            <a href="src/app/calendar">Calendar</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="src/app/datepicker">DatePicker</a>
-        </td>
-        <td>
-            <a href="src/app/daterangepicker">Date Range Picker</a>
-        </td>
-        <td>
-            <a href="src/app/datetimepicker">DateTime Picker</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="src/app/timepicker">Time Picker</a>
-        </td>
-        <td></td>
-        <td></td>
     </tr>
     <tr>
         <td colspan="3" rowspan="1">
@@ -215,18 +249,7 @@ Run `npm run build:dev` to build the project. The build artifacts will be stored
     </tr>
     <tr>
         <td>
-            <a href="src/app/sidebar">Sidebar</a>
-        </td>
-        <td>
-            <a href="src/app/treeview">TreeView</a>
-        </td>
-        <td>
-            <a href="src/app/tab">Tabs</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="src/app/toolbar">Toolbar</a>
+            <a href="src/app/accordion">Accordion</a>
         </td>
         <td>
             <a href="src/app/context-menu">Context Menu</a>
@@ -237,11 +260,94 @@ Run `npm run build:dev` to build the project. The build artifacts will be stored
     </tr>
     <tr>
         <td>
-            <a href="src/app/accordion">Accordion</a>
+            <a href="src/app/sidebar">Sidebar</a>
         </td>
         <td>
-            <a href="src/app/file-manager">File Manager (Updated)</a>
+            <a href="src/app/tab">Tabs</a>
         </td>
+        <td>
+            <a href="src/app/toolbar">Toolbar</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/treeview">TreeView</a>
+        </td>
+        <td>
+            <a href="src/app/file-manager">File Manager</a>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>INPUTS<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/textboxes">TextBox</a>
+        </td>
+        <td>
+            <a href="src/app/maskedtextbox">Input Mask</a>
+        </td>
+         <td>
+            <a href="src/app/numerictextbox">Numeric Textbox</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/button/radio-button.component.ts">Radio Button</a>
+        </td>
+        <td>
+            <a href="src/app/button/check-box.component.ts">Checkbox</a>
+        </td>
+        <td>
+            <a href="src/app/color-picker">Color Picker</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/uploader">File Upload</a>
+        </td>
+        <td>
+            <a href="src/app/slider">Range Slider</a>
+        </td>
+        <td>
+            <a href="src/app/button/switch.component.ts">Toggle Switch Button</a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <b>LAYOUT<b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/avatar">Avatar</a>
+        </td>
+        <td>
+            <a href="src/app/card">Card</a>
+        </td>
+        <td>
+            <a href="src/app/dialog">Dialog</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/listview">ListView</a>
+        </td>
+        <td>
+            <a href="src/app/tooltip">Tooltip</a>
+        </td>
+        <td>
+            <a href="src/app/splitter">Splitter</a>           
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="src/app/dashboard-layout">Dashboard Layout</a>
+        </td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
@@ -256,65 +362,18 @@ Run `npm run build:dev` to build the project. The build artifacts will be stored
         <td>
             <a href="src/app/toast">Toast</a>
         </td>
-        <td></td>
-    </tr>
-    <tr>
-        <td colspan="3" rowspan="1">
-            <b>INPUTS<b>
-        </td>
-    </tr>
-    <tr>
         <td>
-            <a href="src/app/maskedtextbox">Input Mask</a>
-        </td>
-        <td>
-            <a href="src/app/numerictextbox">Numeric Textbox</a>
-        </td>
-        <td>
-            <a href="src/app/slider">Range Slider</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="src/app/textboxes">TextBox (Updated)</a>
-        </td>
-        <td>
-            <a href="src/app/uploader">File Upload</a>
-        </td>
-        <td>
-            <a href="src/app/color-picker">Color Picker</a>
+            <a href="src/app/progress-bar">Progress Bar</a>
         </td>
     </tr>
     <tr>
         <td colspan="3" rowspan="1">
-            <b>LAYOUT<b>
+            <b>VIEWER<b>
         </td>
     </tr>
     <tr>
         <td>
-            <a href="src/app/splitter">Splitter</a>
-        </td>
-        <td>
-            <a href="src/app/list-view">ListView</a>
-        </td>
-        <td>
-            <a href="src/app/dialog">Dialog</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="src/app/tooltip">Tooltip</a>
-        </td>
-        <td>
-            <a href="src/app/card">Card</a>
-        </td>
-        <td>
-            <a href="src/app/avatar">Avatar</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="src/app/dashboard-layout">Dashboard Layout</a>
+            <a href="src/app/pdfviewer">PDF Viewer</a>
         </td>
         <td></td>
         <td></td>
@@ -326,24 +385,13 @@ Run `npm run build:dev` to build the project. The build artifacts will be stored
     </tr>
     <tr>
         <td>
+            <a href="src/app/form-validator">Form Validation</a>
+        </td>
+        <td>
             <a href="src/app/query-builder">Query Builder</a>
         </td>
         <td></td>
-        <td></td>
     </tr>
-    <tr>
-        <td colspan="3" rowspan="1">
-            <b>VIEWER<b>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="src/app/pdfviewer">PDF Viewer (Updated)</a>
-        </td>
-        <td></td>
-        <td></td>
-    </tr>
-    
 </table>
 
 ## Support and Feedback

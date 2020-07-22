@@ -1,0 +1,39 @@
+<div class="col-lg-9 control-section dropdowntree-check sb-property-border">
+    <div class="content-wrapper" style="height: 350px">
+        <div style="margin: 0px auto; width:250px; padding-top: 40px;">
+            <ejs-dropdowntree #defaultCheck id="checkbox" [fields]='field' [showCheckBox]='showCheckBox' [mode]='mode'
+                popupHeight='220px' placeholder='Select items'></ejs-dropdowntree>
+        </div>
+    </div>
+</div>
+<div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+            <table id="property" title="Properties">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div>
+                                <ejs-checkbox #check label="Auto Check" (change)="onChange()"></ejs-checkbox>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample explains you about the CheckBox functionalities of the Dropdown Tree. Click on any parent item's
+        CheckBox to check or uncheck the item and its child items. The parent item's checked state will be determined by
+        its child item’s checked state.</p>
+</div>
+
+<div id="description">
+    <p>The <code>Dropdown Tree</code> component can be rendered with the checkbox on the left side of each tree item.
+        This allows the user to check more than one item, and this can be enabled by the <code>showCheckBox</code>
+        property.</p>
+    <p>In this demo, the Dropdown Tree is populated with the checkbox enabled feature.</p>
+</div>

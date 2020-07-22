@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, TechnicalIndicatorModel } from '@syncfusion/ej2-angular-charts';
 import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
@@ -14,6 +14,23 @@ import { Browser } from '@syncfusion/ej2-base';
 })
 export class MomentumIndicatorComponent {
     public data1: Object[] = chartData;
+    public period: number = 3;
+    public upperLine: string = 'red';
+    // indicators
+    public indicators: TechnicalIndicatorModel[] = [
+        {
+            type: 'Momentum',
+            xName: 'x',
+            field: 'Close',
+            fill: 'blue',
+            yAxisName: 'secondary',
+            period: this.period,
+            upperLine: {
+               color: this.upperLine,
+            },
+            seriesName: 'Apple Inc'
+        }
+    ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
@@ -64,8 +81,6 @@ export class MomentumIndicatorComponent {
     public legendSettings: Object = {
         visible: false
     };
-    public period: number = 3;
-    public upperLine: string = 'red';
     public chartArea: Object = {
         border: {
             width: 0

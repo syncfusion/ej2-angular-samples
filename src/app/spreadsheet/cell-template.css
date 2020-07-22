@@ -1,0 +1,18 @@
+/* custom code start*/
+.control-section {
+    height: 550px;
+}
+
+.control-section .e-spreadsheet .e-cell .e-radio-wrapper {
+    margin: 5px;
+}
+
+.control-section .e-spreadsheet .e-cell .e-radio-wrapper:first-child {
+    margin-left: 0;
+}
+
+.control-section .e-spreadsheet .e-cell .e-radio + label .e-label {
+    color: rgba(0, 0, 0, 0.87);
+}
+
+/* custom code end*/

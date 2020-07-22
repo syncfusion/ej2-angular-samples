@@ -12,6 +12,7 @@ export class ColumnTemplateComponent implements OnInit {
     public columns: object[];
     public labelSettings: object;
     public resources: object[];
+    public resourceFields: object ;
     public projectStartDate: Date;
     public splitterSettings: object;
     public projectEndDate: Date;
@@ -27,6 +28,10 @@ export class ColumnTemplateComponent implements OnInit {
             dependency: 'Predecessor',
             child: 'subtasks',
             resourceInfo: 'resources'
+        };
+        this.resourceFields = {
+            id: 'resourceId',
+            name: 'resourceName'
         };
         this.splitterSettings = {
             columnIndex: 3

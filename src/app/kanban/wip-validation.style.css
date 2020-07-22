@@ -1,0 +1,20 @@
+.kanban-validation .property-panel-content .e-constraint-table {
+  width: 100%
+}
+
+.kanban-validation .property-panel-content .e-constraint-label {
+  width: 40%
+}
+
+.kanban-validation .property-panel-content .e-validate {
+  padding-top: 13px;
+  text-align: center;
+}
+
+.kanban-validation .property-panel-content td {
+  padding-top: 10px;
+}
+
+.kanban-validation .property-panel-header {
+  padding-bottom: 0px;
+}

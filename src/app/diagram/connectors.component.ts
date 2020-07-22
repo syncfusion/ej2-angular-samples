@@ -61,6 +61,10 @@ export class ConnectorDiagramComponent {
         obj.targetDecorator = { style: { strokeColor: '#6f409f', fill: '#6f409f' } };
     };
 
+    public created(): void {
+        this.diagram.fitToPage();
+    }
+
     private nodeTemplate(node: NodeModel): StackPanel {
         if (node.id === 'node6') {
             let canvas: StackPanel = new StackPanel();

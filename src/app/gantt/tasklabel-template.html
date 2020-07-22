@@ -8,7 +8,7 @@
     <ejs-gantt id="TasklabelTemplate" height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
         [labelSettings]="labelSettings" [treeColumnIndex]="1" [columns]="columns" [rowHeight]="43"
         [splitterSettings]="splitterSettings" [projectStartDate]="projectStartDate"
-        [projectEndDate]="projectEndDate" [highlightWeekends]="true" resourceNameMapping="resourceName" resourceIDMapping="resourceId"
+        [projectEndDate]="projectEndDate" [highlightWeekends]="true" [resourceFields] = "resourceFields"
         [resources]="resources">
 
         <ng-template #labelSettingsLeftLabel let-data>

@@ -62,19 +62,20 @@ export class PointersComponent {
     }];
 
     public pointers3: Object[] = [{
-        type: 'Marker',
-        markerShape: 'Triangle',
-        radius: '100%',
-        animation: { enable: true, duration: 1000 },
+        animation: { enable: true , duration: 1000},
         value: 70,
-        markerWidth: 15,
-        markerHeight: 15,
-        color: '#1E7145',
-        border: {
-            width: 0,
-            color: '#1E7145'
+        radius: '80%',
+        color: 'green',
+        pointerWidth: 2,
+        needleStartWidth: 4,
+        needleEndWidth: 4,
+        cap: {
+            radius: 8,
+            color: 'green'
+        },
+        needleTail: {
+            length: '0%'
         }
-
     }];
     public pointers5: Object[] = [{
         radius: '100%',

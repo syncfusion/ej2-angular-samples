@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {
     ScheduleComponent, EventSettingsModel, View, TimelineMonthService,
-    ResizeService, EventRenderedArgs, DragAndDropService, CellTemplateArgs, getWeekNumber
+    ResizeService, EventRenderedArgs, DragAndDropService, CellTemplateArgs, getWeekNumber, getWeekLastDate
 } from '@syncfusion/ej2-angular-schedule';
 import { headerRowData } from './data';
 import { extend, Internationalization } from '@syncfusion/ej2-base';
@@ -27,7 +27,7 @@ export class HeaderRowsComponent {
     }
 
     getWeekDetails(value: CellTemplateArgs): string {
-        return 'Week ' + getWeekNumber((value as CellTemplateArgs).date);
+        return 'Week ' + getWeekNumber(getWeekLastDate((value as CellTemplateArgs).date, 0));
     }
 
     onEventRendered(args: EventRenderedArgs): void {

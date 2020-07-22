@@ -1,7 +1,6 @@
-
 <div class="control-section">
 <div class="col-lg-9">
-<ejs-maps id='maps' #maps style="display:block;" [zoomSettings]='zoomSettings' [layers]='layers' [legendSettings]="legendSettings"
+<ejs-maps id='maps' #maps style="display:block;"  [allowPrint]='allowPrint' [zoomSettings]='zoomSettings' [layers]='layers' [legendSettings]="legendSettings"
     [titleSettings]="titleSettings" (load)="load($event)" format='n' useGroupingSeparator="true">
 </ejs-maps>
  <div style="float: right; margin-right: 10px;">Source:
@@ -16,7 +15,7 @@
             <tr id="button-control" style="height: 50px">
                 <td align='center'>
                     <div>
-                        <button ejs-button id="togglebtn" cssClass= 'e-info' isPrimary= true (click)='mode($event)' style="width: 80px;" content="Print">Print</button>
+                        <button ejs-button id="togglebtn"  iconCss='e-icons e-play-icon' cssClass= 'e-flat' isPrimary= true (click)='mode($event)' style="width: 80px;" content="Print">Print</button>
                     </div>
                 </td>
             </tr>
@@ -38,7 +37,7 @@ padding: 0px !important;
 }
 
 .e-play-icon::before {
-content: '\e813';
+    content: '\e813';
 }
 </style>
 <!-- custom code end -->
@@ -49,14 +48,15 @@ content: '\e813';
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the print. The rendered chart can be printed directly from the browser by calling the public method <code>print</code>. Also this sample visualizes the State-wise US population in the year 2010.
+        In this example, you can see how to render and configure the print functionality. The rendered maps can be printed directly from the browser by calling the <code>print</code> method when <code>allowPrint</code> is set as true. Also this sample visualizes the State-wise US population in the year 2010.
     </p>
-    <p>
-        Tooltip is enabled in this example. To see the tooltip in action, hover the mouse over a marker or tap a marker in touch enabled devices.
+        <br>
+        <b>Injecting Module</b>
+        <br><br><p>
+            Maps component features are segregated into individual feature-wise modules. To use a legend, inject the <code>LegendService</code> into the <code> @NgModule.providers</code> section. To make use of the print support, we need to inject <code> PrintService </code> into the <code> @NgModule.providers</code> section.
         </p>
-        <br/>
-        <p style="font-weight: 500">Injecting Module</p>
         <p>
-        Maps component features are segregated into individual feature-wise modules. To use a legend, inject the <code>Legend</code> module using the <code>Maps.Inject(Legend)</code> method.
-        </p>
+        More information on print can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/maps/print/#print">documentation section</a>.
+    </p>
 </div>

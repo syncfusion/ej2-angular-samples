@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { categoryData } from './data';
 import { ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
 import { FilterService, GridComponent } from '@syncfusion/ej2-angular-grids';
+import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'ej2-gridfilter',
@@ -17,6 +18,8 @@ export class FilterComponent implements OnInit {
 
     @ViewChild('grid')
     public grid: GridComponent;
+    @ViewChild('checkbox')
+    public checkbox: CheckBoxComponent;
     
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['filter.style.css'];
@@ -35,6 +38,14 @@ export class FilterComponent implements OnInit {
             this.grid.clearFiltering();
         } else {
             this.grid.filterByColumn('CategoryName', 'equal', e.value);
+        }
+    }
+
+    public checkboxChange(e: any): void {
+        if (e.checked) {
+            this.grid.filterSettings.showFilterBarOperator = true;
+        } else {
+            this.grid.filterSettings.showFilterBarOperator = false;
         }
     }
 }

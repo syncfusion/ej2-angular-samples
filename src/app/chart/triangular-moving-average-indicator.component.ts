@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, TechnicalIndicatorModel } from '@syncfusion/ej2-angular-charts';
 import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 /**
@@ -12,6 +12,17 @@ import { Browser } from '@syncfusion/ej2-base';
     encapsulation: ViewEncapsulation.None
 })
 export class TmaIndicatorComponent {
+    public period: number = 14;
+    // indicators
+    public indicators: TechnicalIndicatorModel[] = [
+        {
+            type: 'Tma',
+            field: 'Close',
+            fill: 'blue',
+            period: this.period,
+            seriesName: 'Apple Inc',
+        }
+    ];
 
     public data1: Object[] = chartData;
     //Initializing Primary X Axis
@@ -49,7 +60,6 @@ export class TmaIndicatorComponent {
     public legendSettings: Object = {
         visible: false
     };
-    public period: number = 14;
     public chartArea: Object = {
         border: {
             width: 0

@@ -108,14 +108,14 @@
             </div>
             <div class='showDropdown'>
                 <!-- Initialize Dropdownlist control to display an sourceNodes in diagram. -->
-                <ejs-dropdownlist #SourceId id='SourceId' placeholder='select sourceId' [fields]='fields' (created)='sourceDropdownCreate($event)'
-                    popupHeight='220px' (change)='sourceDropdownChange($event)'>
+                <ejs-dropdownlist #SourceId id='SourceId' placeholder='select sourceId' [fields]='fields' 
+                    popupHeight='220px' (change)='sourceDropdownChange($event)'(created)='sourceDropdownCreate($event)'>
                 </ejs-dropdownlist>
             </div>
             <div class='showDropdown' style='padding-top: 14px'>
                 <!-- Initialize Dropdownlist control to display an targetNodes in diagram. -->
-                <ejs-dropdownlist #TargetId id='TargetId' placeholder='select targetId' [fields]='fields' (created)='targetDropdownCreate($event)'
-                    popupHeight='220px' (change)='targetDropdownChange($event)'>
+                <ejs-dropdownlist #TargetId id='TargetId' placeholder='select targetId' [fields]='fields' 
+                    popupHeight='220px' (change)='targetDropdownChange($event)' (created)='targetDropdownCreate($event)'>
                 </ejs-dropdownlist>
             </div>
     </ng-template>

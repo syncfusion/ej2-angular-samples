@@ -3,3 +3,7 @@
     height: 100%;
     display: block;
 }
+
+.control-section {
+    padding-top: 5px;
+}

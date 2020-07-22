@@ -20,6 +20,7 @@ export class DocumentEditorProtectionComponent {
     public container: DocumentEditorContainerComponent;
     @ViewChild('colorpicker')
     public colorpicker: ColorPickerComponent;
+    public culture: string = 'en-US';
     titleBar: TitleBar;
 
     userList: string[] = ['engineer@mycompany.com', 'manager@mycompany.com'];
@@ -29,7 +30,6 @@ export class DocumentEditorProtectionComponent {
     onCreate(): void {
         let titleBarElement: HTMLElement = document.getElementById('default_title_bar');
         this.titleBar = new TitleBar(titleBarElement, this.container.documentEditor, true);
-        this.container.locale = 'en-US';
         this.container.serviceUrl = this.hostUrl + WEB_API_ACTION;
         this.container.documentEditor.open(JSON.stringify(dataProtection));
         this.container.documentEditor.documentName = 'Document Protection';

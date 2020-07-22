@@ -1,0 +1,21 @@
+.property-section .eventarea {
+  height: 245px;
+  overflow: auto
+}
+
+.property-section .EventLog {
+  word-break: normal;
+}
+
+.property-section .evtbtn {
+  padding-bottom: 10px
+}
+
+.property-section #EventLog b {
+  color: #388e3c;
+}
+
+.property-section hr {
+  margin: 1px 10px 1px 0px;
+  border-top: 1px solid #eee;
+}

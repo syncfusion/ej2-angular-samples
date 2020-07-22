@@ -1,0 +1,58 @@
+<div id="action-description">
+    <p>This sample explains you about the template functionalities of the Dropdown Tree. Click the Dropdown Tree
+        element, and then select an item from the customized list.</p>
+</div>
+
+<div class="control-section">
+    <div id='content' style="margin: 0px auto; width:350px; padding-top: 40px;">
+        <ejs-dropdowntree id='ddttemplate' [fields]='fields' [popupHeight]='height' [placeholder]='watermark' cssClass="ddt-template" >
+            <ng-template #headerTemplate>
+                <div class="head"> Employee List </div>
+            </ng-template>
+            <ng-template #itemTemplate let-data>
+                <div>
+                    <img class="eimage" src="./assets/drop-down-tree/Employees/{{data.eimg}}.png" alt="{{data.eimg}}" />
+                    <div>
+                        <div class="ename">{{data.name}}</div>
+                        <div class="ejob">{{data.job}}</div>
+                        <span class="e-badge icons">
+                            <span class={{data.status}}></span>
+                        </span>  
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #footerTemplate>
+                <div class="footer">
+                    <div class="footer-content">
+                        <span class="e-badge">
+                            <span class="display available">
+                                <span class="status online"></span>
+                                Available
+                            </span>
+                            <span class="display meeting">
+                                <span class="status busy"></span>
+                                Busy
+                            </span>
+                            <span class="display unavailable">
+                                <span class="status away"></span>
+                                Away
+                            </span>
+                        </span>
+                    </div>        
+                </div>
+            </ng-template>
+        </ejs-dropdowntree>
+    </div>
+</div>
+
+<div id="description">
+    <p>The Dropdown Tree has been provided with several options to customize each list items, header, and footer
+        elements.
+    </p>
+    <p>This sample uses the following list of templates in the Dropdown Tree</p>
+    <ul>
+        <li><code>ItemTemplate</code> - To customize the list item's content.</li>
+        <li><code>HeaderTemplate</code> - To customize the header element.</li>
+        <li><code>FooterTemplate</code> - To customize the footer element.</li>
+    </ul>
+</div>

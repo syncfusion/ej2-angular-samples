@@ -5,8 +5,7 @@
             "ZoomOut": "Rauszoomen",
             "Zoom": "Zoomen",
             "Pan": "Pfanne",
-            "Reset": "Zurücksetzen",
-            "ResetZoom": "Zoom Zurücksetzen"
+            "Reset": "Zurücksetzen"
         }
     },
     "ar": {
@@ -15,18 +14,16 @@
             "ZoomOut": "ذوموت",
             "Zoom": "زوم",
             "Pan": "بان",
-            "Reset": "رست",
-            "ResetZoom": "رست زوم"
+            "Reset": "رست"
         }
     },
     "en": {
         "maps": {
-            "ZoomIn": "Zoom In",
-            "ZoomOut": "Zoom Out",
+            "ZoomIn": "Zoom in",
+            "ZoomOut": "Zoom out",
             "Zoom": "Zoom",
             "Pan": "Pan",
-            "Reset": "Reset",
-            "ResetZoom": "Reset Zoom"
+            "Reset": "Reset"
         }
     },
     "zh": {
@@ -35,8 +32,7 @@
             "ZoomOut": "缩小",
             "Zoom": "放大",
             "Pan": "泛",
-            "Reset": "重启",
-            "ResetZoom": "重置缩放"
+            "Reset": "重启"
         }
     },
     "fr-CH": {
@@ -45,8 +41,7 @@
             "ZoomOut": "Dézoomer",
             "Zoom": "Zoom",
             "Pan": "La poêle",
-            "Reset": "Réinitialiser",
-            "ResetZoom": "Réinitialiser Zoom"
+            "Reset": "Réinitialiser"
         }
     }
 }

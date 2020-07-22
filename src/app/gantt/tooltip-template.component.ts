@@ -9,6 +9,7 @@ let instance: Internationalization = new Internationalization();
 export class GanttTooltipTemplateComponent implements OnInit {
     public data: object[];
     public resources: object[];
+    public resourceFields: object ;
     public taskSettings: object;
     public labelSettings: object;
     public projectStartDate: Date;
@@ -31,6 +32,10 @@ export class GanttTooltipTemplateComponent implements OnInit {
                 baselineStartDate: 'BaselineStartDate',
                 baselineEndDate: 'BaselineEndDate',
                 child: 'subtasks'
+        };
+        this.resourceFields = {
+            id: 'resourceId',
+            name: 'resourceName'
         };
         this.columns = [
             { field: 'TaskID', width: 70 },

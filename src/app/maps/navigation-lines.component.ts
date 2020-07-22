@@ -88,7 +88,7 @@ export class MapsNavigationLineComponent {
                     animationDuration: 0,
                     offset: {
                         x: 0,
-                        y: -5
+                        y: -15
                     }
                 },
                 {

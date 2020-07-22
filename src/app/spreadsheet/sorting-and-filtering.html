@@ -1,0 +1,44 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates sorting and filtering feature using employee details.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-spreadsheet #spreadsheet (created)="created()">
+        <e-sheets>
+            <e-sheet name="Employee details">
+                <e-ranges>
+                    <e-range [dataSource]="data"></e-range>
+                </e-ranges>
+                <e-columns>
+                    <e-column [width]=110></e-column>
+                    <e-column [width]=142></e-column>
+                    <e-column [width]=80></e-column>
+                    <e-column [width]=137></e-column>
+                    <e-column [width]=122></e-column>
+                    <e-column [width]=92></e-column>
+                    <e-column [width]=124></e-column>
+                </e-columns>
+            </e-sheet>
+        </e-sheets>
+    </ejs-spreadsheet>
+</div>
+
+<div id="description">
+    <p>
+        In this demo, sorting is applied to B(Employee Name) column in ascending order using <code>sort</code> method.
+        The sort order can be specified in <code>order</code> property with following values `Ascending` or `Descending` and its
+        default value is `Ascending`.
+
+        The sorted data is filtered with value 'Services' in `D` column using <code>
+            <a target="_blank" href="https://ej2.syncfusion.com/documentation/api/spreadsheet/#applyfilter">applyFilter</a>
+            </code> method in call back function of <code>
+                <a target="_blank" href="https://ej2.syncfusion.com/documentation/api/spreadsheet/#sort">sort</a>
+                </code> method.
+    </p>
+    <p>
+        More information about sorting and filtering feature can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/spreadsheet/sort/">
+            documentation</a> section.
+    </p>
+</div>

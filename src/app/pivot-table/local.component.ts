@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, IDataSet } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
-import { enableRipple } from '@syncfusion/ej2-base';
+import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
+import { enableRipple, isNullOrUndefined } from '@syncfusion/ej2-base';
+import { csvdata } from './csvData';
 enableRipple(false);
 
 /**
@@ -17,12 +19,14 @@ let data: IDataSet[] = require('./rData.json');
 })
 
 export class LocalComponent implements OnInit {
-    public dataSourceSettings: IDataOptions;
+    public jsonReport: IDataOptions;
+    public csvReport: IDataOptions;
+    public contentDropDown: DropDownList;
     public gridSettings: GridSettings;
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
-    onLoad(): void {
+    groupDate(data: IDataSet[]): IDataSet[] {
         if (data[0].Year === undefined) {
             let date: Date;
             for (let ln: number = 0, lt: number = data.length; ln < lt; ln++) {
@@ -37,7 +41,27 @@ export class LocalComponent implements OnInit {
                 delete (data[ln].Date);
             }
         }
-        this.pivotObj.dataSourceSettings.dataSource = data;
+        return data;
+    }
+
+    getCSVData(): string[][] {
+        let dataSource: string[][] = [];
+        let jsonObject: string[] = csvdata.split(/\r?\n|\r/);
+        for (let i: number = 0; i < jsonObject.length; i++) {
+            if (!isNullOrUndefined(jsonObject[i]) && jsonObject[i] !== '') {
+                dataSource.push(jsonObject[i].split(','));
+            }
+        }
+        return dataSource;
+    }
+
+    onChange(args: ChangeEventArgs): void {
+        if (args.value === 'JSON') {
+            this.pivotObj.dataSourceSettings = this.jsonReport;
+        } else if (args.value === 'CSV') {
+            this.csvReport.dataSource = this.getCSVData();
+            this.pivotObj.dataSourceSettings = this.csvReport;
+        }
     }
 
     ngOnInit(): void {
@@ -45,7 +69,9 @@ export class LocalComponent implements OnInit {
             columnWidth: 120
         } as GridSettings;
 
-        this.dataSourceSettings = {
+        this.jsonReport = {
+            dataSource: this.groupDate(data),
+            type: 'JSON',
             expandAll: false,
             enableSorting: true,
             formatSettings: [{ name: 'ProCost', format: 'C0' }, { name: 'PowUnits', format: 'N0' }],
@@ -65,5 +91,33 @@ export class LocalComponent implements OnInit {
             ],
             filters: []
         };
+
+        this.csvReport = {
+            type: 'CSV',
+            expandAll: false,
+            enableSorting: true,
+            formatSettings: [{ name: 'Total Cost', format: 'C0' }, { name: 'Total Revenue', format: 'C0' }, { name: 'Total Profit', format: 'C0' }],
+            drilledMembers: [{ name: 'Item Type', items: ['Baby Food'] }],
+            rows: [
+                { name: 'Region' },
+                { name: 'Country' }
+            ],
+            columns: [
+                { name: 'Item Type' },
+                { name: 'Sales Channel' }
+            ],
+            values: [
+                { name: 'Total Cost' },
+                { name: 'Total Revenue' },
+                { name: 'Total Profit' }
+            ],
+            filters: []
+        };
+
+        this.contentDropDown = new DropDownList({
+            placeholder: 'Content Type',
+            change: this.onChange.bind(this)
+        });
+        this.contentDropDown.appendTo('#contenttype');
     }
 }

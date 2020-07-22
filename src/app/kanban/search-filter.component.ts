@@ -1,0 +1,86 @@
+import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
+import { extend } from '@syncfusion/ej2-base';
+import { Query } from '@syncfusion/ej2-data';
+import { DropDownListComponent, ChangeEventArgs as DropDownChangeArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { TextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { KanbanComponent, CardSettingsModel, SwimlaneSettingsModel } from '@syncfusion/ej2-angular-kanban';
+import { kanbanData } from './data';
+
+@Component({
+    selector: 'control-content',
+    templateUrl: 'search-filter.html',
+    styleUrls: ['search-filter.style.css'],
+    encapsulation: ViewEncapsulation.None
+})
+export class SearchFilterComponent {
+    @ViewChild('kanbanObj') kanbanObj: KanbanComponent;
+    @ViewChild('priority_filter') dropdownPriorityObj: DropDownListComponent;
+    @ViewChild('status_filter') dropdownStatusObj: DropDownListComponent;
+    @ViewChild('search_text') textBoxObj: TextBoxComponent;
+    public kanbanData: Object[] = extend([], kanbanData, null, true) as Object[];
+    public cardSettings: CardSettingsModel = {
+        contentField: 'Summary',
+        headerField: 'Id'
+    };
+    public swimlaneSettings: SwimlaneSettingsModel = { keyField: 'Assignee' };
+    public priorityData: string[] = ['None', 'High', 'Normal', 'Low'];
+    public statusData: { [key: string]: Object; }[] = [
+        { id: 'None', status: 'None' },
+        { id: 'To Do', status: 'Open' },
+        { id: 'In Progress', status: 'InProgress' },
+        { id: 'Testing', status: 'Testing' },
+        { id: 'Done', status: 'Close' }
+    ];
+    public fields: Object = { text: 'id', value: 'status' };
+    public value: String = 'None';
+    public emptyValue: Boolean = true;
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['search-filter.style.css'];
+    }
+
+    change(args: DropDownChangeArgs): void {
+        let filterQuery: Query = new Query();
+        if (args.value !== 'None') {
+            if (args.element.id === 'priority_filter') {
+                filterQuery = new Query().where('Priority', 'equal', args.value);
+            } else {
+                filterQuery = new Query().where('Status', 'equal', args.value);
+            }
+        }
+        if (args.element.id === 'priority_filter') {
+            this.dropdownStatusObj.setProperties({ value: 'None' }, false);
+        } else {
+            this.dropdownPriorityObj.setProperties({ value: 'None' }, false);
+        }
+        this.kanbanObj.query = filterQuery;
+    }
+    searchClick(e: KeyboardEvent): void {
+        if (e.code === 'Tab' || e.code === 'Escape' || e.code === 'ShiftLeft' || (e.code === 'Backspace' && this.emptyValue)) {
+            return;
+        }
+        const searchValue: string = (<HTMLInputElement>e.target).value;
+        searchValue.length === 0 ? this.emptyValue = true : this.emptyValue = false;
+        let searchQuery: Query = new Query();
+        if (searchValue !== '') {
+            searchQuery = new Query().search(searchValue, ['Id', 'Summary'], 'contains', true);
+        }
+        this.kanbanObj.query = searchQuery;
+    }
+
+    resetClick(): void {
+        this.textBoxObj.value = '';
+        this.reset();
+    }
+
+    public onFocus = (): void => {
+        if (this.textBoxObj.value === '') {
+            this.reset();
+        }
+    }
+
+    reset(): void {
+        this.dropdownPriorityObj.setProperties({ value: 'None' }, false);
+        this.dropdownStatusObj.setProperties({ value: 'None' }, false);
+        this.kanbanObj.query = new Query();
+    }
+}

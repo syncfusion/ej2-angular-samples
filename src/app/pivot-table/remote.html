@@ -1,12 +1,12 @@
 <div id="action-description">
-    <p>This sample demonstrates basic rendering of the pivot table bound to JSON data pulled from a remote server.</p>
+    <p>This sample demonstrates basic rendering of the pivot table bound to JSON or CSV data pulled from a remote server.</p>
 </div>
 <div id="description">
-    <p>The pivot table supports JSON data source. The
+    <p>The pivot table supports JSON and CSV data source. The
         <code>dataSourceSettings->dataSource</code> property can be assigned with the result of DataManager to bind remote data.</p>
     The
-    <code>DataManager</code>, which will act as an interface between the service endpoint and the pivot table, will require
-    the below minimal information to interact with service endpoint properly.
+    <code>DataManager</code>, which will act as an interface between the service endpoint and the pivot table, will require the below minimal
+    information to interact with service endpoint properly.
     <ul>
         <li>
             <code>DataManager->url</code> - Defines the service endpoint to fetch data.</li>
@@ -14,11 +14,33 @@
             <code>DataManager->adaptor</code> - Defines the adaptor option. Here,
             <code>WebApiAdaptor</code> is used for remote binding.</li>
     </ul>
-    In this demo, remote data is bound by assigning service data as an instance of
+    In this demo, with respect to JSON remote data, is bound by assigning service data as an instance of
     <code>DataManager</code> to the
-    <code>dataSourceSettings->dataSource</code> property.
+    <code>dataSourceSettings->dataSource</code> property. But for CSV, the service URL is directly set to <code>url</code> for remote data consumption.
 </div>
 <div class="control-section" style="overflow:auto;">
-    <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings width='100%' height='300' [gridSettings]='gridSettings'>
-    </ejs-pivotview>
+    <div id="dropdown-control" style="margin-bottom:5px;">
+        <table style="width: 350px;">
+            <tbody>
+                <tr style="height: 50px">
+                    <td>
+                        <div><b>Content Type:</b>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <select id="contenttype" name="ddl-view-mode">
+                                <option value='JSON' selected>JSON</option>
+                                <option value='CSV'>CSV</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="content-wrapper">
+        <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=jsonReport width='100%' height='300' [gridSettings]='gridSettings'>
+        </ejs-pivotview>
+    </div>
 </div>

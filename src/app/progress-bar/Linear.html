@@ -1,0 +1,158 @@
+<div class="control-section">
+    <div class="row linear-parent">
+        <div class="col-lg-12 col-md-12" style="margin-top:1%">
+            <div class="col-lg-12 col-md-12 progressbar-label">Determinate</div>
+            <div class="linear-progress">
+                <div id="lineardeterminate">
+                    <ejs-progressbar #linear id='linear' [type]='type' [maximum]='max' [minimum]='min' [value]='value'
+                        [width]='width'
+                        [height]='height'
+                        [animation]='animation'
+                        (load)='load($event)'>
+                    </ejs-progressbar>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12" style="margin-top:1%">
+            <div class="col-lg-12 col-md-12 progressbar-label">Indeterminate</div>
+            <div class="linear-progress">
+                <div id="linearindeterminate">
+                    <ejs-progressbar #linear1 id='linear1' [type]='type1' [maximum]='max1' [minimum]='min1'
+                        [value]='value1' [width]='width' [height]='height1'
+                        [animation]='animation'
+                        [isIndeterminate]='isIndeterminate1' (load)='load($event)'>
+                    </ejs-progressbar>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12" style="margin-top:2.5%">
+            <div class="col-lg-12 col-md-12 progressbar-label">Segment</div>
+            <div class="linear-progress">
+                <div id="linearsegment">
+                    <ejs-progressbar #linear3 id='linear3' [type]='type3' [maximum]='max3' [minimum]='min3'
+                        [value]='value3' [width]='width' [height]='height3'
+                        [animation]='animation'
+                        [segmentCount]='segmentCount3' (load)='load($event)'>
+                    </ejs-progressbar>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12" style="margin-top:2.5%">
+            <div class="col-lg-12 col-md-12 progressbar-label">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8">Buffer</div>
+                </div>
+            </div>
+            <div class="linear-progress">
+                <div id="linearbuffer">
+                    <ejs-progressbar #linear2 id='linear2' [type]='type2' [maximum]='max2' [minimum]='min2'
+                        [value]='value2' [width]='width' [height]='height2'
+                        [animation]='animation'
+                        [secondaryProgress]='secondaryProgress2' (load)='load($event)'>
+                    </ejs-progressbar>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12" style="margin-top:2.5%">
+            <div class="col-lg-12 col-md-12 progressbar-label">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8">Active</div>
+                </div>
+            </div>
+            <div class="linear-progress">
+                <div id="linearbuffer">
+                    <ejs-progressbar #linear4 id='linear4' [type]='type3'
+                        [value]='value3' [width]='width' [animation]='animation'
+                        [height]='height2' [isActive]='isActive'
+                        (load)='load($event)'>
+                    </ejs-progressbar>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="replay-progressbar" style="margin-top:2%;margin-left:45.5%"><button (click)="onClick()" id="reLoad"
+            class="e-control e-btn e-lib e-outline e-primary">Reload</button></div>
+</div>
+<div id="action-description">
+    <p>
+        This sample illustrates a linear progress bar with determinate and indeterminate states, segments and buffer value.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the linear progress bar. Progress bar is used to
+        visualize the progression of an extended operation. The sample shows the determinate and indeterminate states,
+        buffer and segments of linear progress bar.
+    </p>
+</div>
+<style>
+    .e-progressbar,
+    #lineardeterminate,
+    #linearindeterminate,
+    #linearbuffer,
+    #linearsegment {
+        display: block;
+    }
+
+    #control-container {
+        padding: 0px !important;
+    }
+
+    .replay-progressbar {
+        right: 100px;
+    }
+
+    .linear-parent {
+        text-align: center;
+    }
+
+    .progressbar-label {
+        text-align: left;
+        font-family: Roboto-Regular;
+        font-size: 14px;
+        color: #3D3E3C;
+        letter-spacing: 0;
+        margin-top: -2%;
+        top: 20px;
+        margin-left: 10%;
+    }
+
+    .linear-progress {
+        width: 80%;
+        margin: auto;
+    }
+
+    .lineartxt {
+        color: black;
+        top: 20px;
+        left: 10%;
+    }
+
+    #successtext {
+        color: black;
+        top: 20px;
+        right: 245px;
+    }
+
+    #warningtext {
+        color: black;
+        top: 20px;
+        right: 268px;
+    }
+
+    #errortext {
+        color: black;
+        top: 20px;
+        right: 260px;
+    }
+
+
+    .reload-btn {
+        text-align: center;
+    }
+
+    #reLoad {
+        border-radius: 4px;
+        text-transform: capitalize;
+    }
+</style> 

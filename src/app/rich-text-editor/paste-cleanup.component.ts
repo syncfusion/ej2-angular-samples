@@ -1,5 +1,5 @@
 /**
- * RTE Paste Cleanup functionality Sample
+ * Rich Text Editor Paste Cleanup functionality Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { RadioButtonComponent } from '@syncfusion/ej2-angular-buttons';

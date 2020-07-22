@@ -116,13 +116,13 @@ export class DrawingToolDiagramComponent {
             }
             if (drawingObject) {
                 this.diagram.drawingObject = drawingObject;
-                this.diagram.tool = this.continuousDraw ? DiagramTools.ContinuousDraw : DiagramTools.DrawOnce;
-                this.diagram.dataBind();
                 // custom code start
                 target.classList.add('e-selected-style');
                 // custom code end
             }
         }
+        this.diagram.tool = this.continuousDraw ? DiagramTools.ContinuousDraw : DiagramTools.DrawOnce;
+        this.diagram.dataBind();
     };
 
     public diagramCreate(args: Object): void {

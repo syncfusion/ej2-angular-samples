@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
     DiagramComponent, OrthogonalSegmentModel, PaletteModel, PortVisibility,
     SnapConstraints, SnapSettingsModel, UmlActivityShapeModel, UmlActivityFlows,
-    Diagram, NodeModel, UndoRedo, ConnectorModel, DiagramContextMenu,
+    Diagram, NodeModel, UndoRedo, ConnectorModel, DiagramContextMenu, Rect,
     StrokeStyleModel, DecoratorModel, PointModel, SymbolInfo, PointPortModel
 } from '@syncfusion/ej2-angular-diagrams';
 import { ExpandMode } from '@syncfusion/ej2-navigations';
@@ -50,6 +50,9 @@ export class UmlActivityComponent {
     public expandMode: ExpandMode = 'Multiple';
     public diagramCreate(args: Object): void {
         this.addEvents();
+        let rect: Rect = document.getElementById('diagram-space').getBoundingClientRect() as Rect;
+        let panX: number = (rect.width - rect.x)/ 2;
+        this.diagram.pan(panX, 0);
     };
     public symbolMargin: MarginModel = { left: 15, right: 15, top: 15, bottom: 15 };
 

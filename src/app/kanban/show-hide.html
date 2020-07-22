@@ -1,0 +1,67 @@
+<div class="control-section">
+    <div class="col-lg-9 content-wrapper">
+        <ejs-kanban #kanbanObj keyField='Status' [dataSource]='kanbanData' [cardSettings]='cardSettings'>
+            <e-columns>
+                <e-column headerText='To Do' keyField='Open'></e-column>
+                <e-column headerText='In Progress' keyField='InProgress'></e-column>
+                <e-column headerText='In Review' keyField='Review'></e-column>
+                <e-column headerText='Done' keyField='Close'></e-column>
+            </e-columns>
+        </ejs-kanban>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Show/Hide Columns</div>
+            <div class="property-panel-content">
+                <div id="property" class="property-panel-table" title="Properties">
+                    <table id="property" title="Properties" style="width: 100%">
+                        <tbody>
+                            <tr style="height: 50px">
+                                <td style="width: 100%">
+                                    <ejs-checkbox #checkbox data-id="Open" label='To Do' [checked]="true"
+                                        (change)="onChange($event)"></ejs-checkbox>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                <td style="width: 100%">
+                                    <ejs-checkbox #checkboxProgress data-id="InProgress" label='In Progress'
+                                        [checked]="true" (change)="onChangeProgress($event)"></ejs-checkbox>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                <td style="width: 100%">
+                                    <ejs-checkbox #checkboxReview data-id="Review" label='In Review' [checked]="true"
+                                        (change)="onChangeReview($event)">
+                                    </ejs-checkbox>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                <td style="width: 100%">
+                                    <ejs-checkbox #checkboxClose data-id="Close" label='Done' [checked]="true"
+                                        (change)="onChangeClose($event)">
+                                    </ejs-checkbox>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates how to control the visibility of Kanban columns dynamically. Check or uncheck the
+        checkboxes
+        from the property panel to show or hide the corresponding column.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The Kanban provides an option to show or hide its columns dynamically using the following public methods.
+    </p>
+    <ul>
+        <li><code>showColumn:</code> Makes the corresponding column visible based on the specified ID.</li>
+        <li><code>hideColumn:</code> Hides the corresponding column based on the specified column ID.</li>
+    </ul>
+</div>

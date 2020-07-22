@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, ChartAnnotationSettingsModel } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -12,6 +12,21 @@ import { Browser } from '@syncfusion/ej2-base';
     encapsulation: ViewEncapsulation.None
 })
 export class SplineChartComponent {
+    public annotations: ChartAnnotationSettingsModel[] = [
+        {
+            x: 'Sun',
+            y: 2,
+            coordinateUnits: 'Point',
+            verticalAlignment: 'Top',
+            content: '<div id="chart_cloud"><img src="./assets/chart/images/cloud.png" style="width: 41px; height: 41px"/></div>'
+        },{
+            x: 'Tue',
+            y: 33,
+            coordinateUnits: 'Point',
+            verticalAlignment: 'Top',
+            content: '<div id="chart_cloud"><img src="./assets/chart/images/sunny.png" style="width: 41px; height: 41px"/></div>'
+        }
+    ];
 
     public data: Object[] = [
         { x: 'Sun', y: 15 }, { x: 'Mon', y: 22 },

@@ -35,10 +35,18 @@
         <code>StackingBar100</code><br>
         <code>StackingArea100</code><br>
         <code>Polar</code><br>
-        <code>Radar</code><br><br>
+        <code>Radar</code><br>
+        <code>Pie</code><br>
+        <code>Doughnut</code><br>
+        <code>Funnel</code><br>
+        <code>Pyramid</code><br><br>
 
         In the sample, the field list option is enabled, through which you can see the result in the chart by altering
         the report dynamically.<br>
+    </p>
+    <p>
+        The drill down/up operation in the accumulation charts, such as pie, doughnut, funnel and pyramid, can be performed using the context menu on the click over the appropriate series.
+        <br>
     </p>
     <p>
         <strong>Injecting Module:</strong>
@@ -50,8 +58,8 @@
         <code>@NgModule.providers</code> section.
     </p>
 </div>
-<div class="control-section" id="pivot-table-section">
-    <div class="col-lg-9">
+<div id="pivot-table-section">
+    <div class="col-lg-9 control-section sb-property-border">
         <ejs-pivotview #pivotview id='PivotView' showFieldList='true' width='100%' height='450'
             [displayOption]='displayOption' [dataSourceSettings]=dataSourceSettings [chartSettings]='chartSettings'>
         </ejs-pivotview>
@@ -85,6 +93,10 @@
                                         <option value='Polar'>Polar</option>
                                         <option value='Radar'>Radar</option>
                                         <option value='Pareto'>Pareto</option>
+                                        <option value='Pie'>Pie</option>
+                                        <option value='Doughnut'>Doughnut</option>
+                                        <option value='Funnel'>Funnel</option>
+                                        <option value='Pyramid'>Pyramid</option>
                                     </select>
                                 </div>
                             </td>

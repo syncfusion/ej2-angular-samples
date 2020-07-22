@@ -1,5 +1,5 @@
 /**
- * RTE Iframe Sample
+ * Rich Text Editor Iframe Sample
  */
 import { Component, ViewChild } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';

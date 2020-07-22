@@ -1,5 +1,5 @@
 /**
- * RTE Resizable Sample
+ * Rich Text Editor Resizable Sample
  */
 import { Component } from '@angular/core';
 import { ToolbarService, LinkService, ImageService, ResizeService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';

@@ -19,16 +19,15 @@ export class RemoteDataBindingController {
     }
     @ViewChild('remoteDataBinding')
     public spreadsheetObj: SpreadsheetComponent;
-    public openUrl: string = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/open';
-    public saveUrl: string = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save';
+    public openUrl = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/open';
+    public saveUrl = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save';
     public query: Query = new Query().select(['OrderID', 'CustomerID', 'ShipName', 'ShipCity', 'ShipCountry', 'Freight']).take(200);
     public data: DataManager = new DataManager({
         url: 'https://js.syncfusion.com/demos/ejServices//wcf/Northwind.svc/Orders',
         crossDomain: true
     });
-    dataBound() {
-        if (!this.spreadsheetObj.isOpen && this.spreadsheetObj.sheets[this.spreadsheetObj.activeSheetTab - 1].name === 'Shipment Details') {
-            this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center' }, 'A1:G1');
-        }
+    created() {
+        // Apply style to a range
+        this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center' }, 'A1:G1');
     }
 }

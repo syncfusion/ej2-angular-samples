@@ -1,0 +1,72 @@
+<div class="control-section">
+    <div class="row linear-parent">
+        <div id="danger" class="linear-progress">
+            <ejs-progressbar #linear1 id='linear1' [type]='type' [maximum]='max' [minimum]='min' [value]='value1'
+                [width]='width' [trackThickness]='trackThickness' [role]='role1' [progressThickness]='progressThickness' [height]='height'
+                [isStriped]='isStriped' [animation]='animation' (load)='load($event)'>
+            </ejs-progressbar>
+        </div>
+        <div id="warning" class="linear-progress">
+            <ejs-progressbar #linear2 id='linear2' [type]='type' [maximum]='max' [minimum]='min' [value]='value2'
+                [width]='width' [trackThickness]='trackThickness' [role]='role2' [progressThickness]='progressThickness' [height]='height'
+                [isStriped]='isStriped' [animation]='animation' (load)='load($event)'>
+            </ejs-progressbar>
+        </div>
+        <div id="info" class="linear-progress">
+            <ejs-progressbar #linear3 id='linear3' [type]='type' [maximum]='max' [minimum]='min' [value]='value3'
+                [width]='width' [trackThickness]='trackThickness' [role]='role3' [progressThickness]='progressThickness' [height]='height'
+                [isStriped]='isStriped' [animation]='animation' (load)='load($event)'>
+            </ejs-progressbar>
+        </div>
+        <div id="success" class="linear-progress">
+            <ejs-progressbar #linear4 id='linear4' [type]='type' [maximum]='max' [minimum]='min' [value]='value4'
+                [width]='width' [trackThickness]='trackThickness' [role]='role4' [progressThickness]='progressThickness' [height]='height'
+                [isStriped]='isStriped' [animation]='animation' (load)='load($event)'>
+            </ejs-progressbar>
+        </div>
+    </div>
+    <div class="row linear-button">
+        <button id="animation" (click)="onClick()" class="e-control e-btn e-lib e-outline e-primary">Stop
+            Animation</button>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample illustrates a striped linear progress bar with animation.
+    </p>
+</div>
+<div id="description">
+    <p>
+        This demo for Essential JS2 Progress Bar control shows the linear striped progress bar with help of
+        <code>isStriped</code>property.
+    </p>
+</div>
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+
+    #linear1_Lineartrack, #linear2_Lineartrack, #linear3_Lineartrack, #linear4_Lineartrack {
+        opacity: 1 !important;
+    }
+
+    .linear-parent {
+        text-align: center;
+        margin-top: 2%;
+    }
+
+    .linear-button {
+        text-align: center;
+    }
+
+    .linear-progress {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 3%;
+    }
+
+    #animation {
+        border-radius: 4px;
+        text-transform: capitalize;
+    }
+</style>

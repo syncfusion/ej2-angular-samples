@@ -1,0 +1,141 @@
+.formtitle {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.70);
+}
+
+.e-error,
+.e-float-text {
+    font-weight: 500;
+}
+
+.e-custom-label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+form {
+    padding-top: 20px;
+    margin-bottom: 45px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.36);
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.highcontrast form,
+.highcontrast .header {
+    color: #fff;
+    background: #000000;
+}
+
+.header {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+table,
+td,
+th {
+    padding: 5px;
+}
+
+.form-horizontal .form-group {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.row {
+    padding-bottom: 30px;
+    padding-top: 25px;
+}
+/* <!-- custom code end --> */
+
+.control-section #component-dialog {
+top:0%! important;
+}
+.dlgbtn {
+    margin-right: 10px;
+}
+.control-section  {
+    height: 100%;
+    min-height: 500px;
+}
+@media screen and (min-width: 150px) and (max-width: 480px) {
+    .control-section {
+        margin-bottom: 30px;
+    }
+    .control-wrapper {
+        margin-bottom: 0px;
+    }
+}
+.e-btn-hide {
+    display: none;
+}
+
+.e-richtexteditor .e-rte-hidden {
+    border: 0;
+    display: block;
+    height: 0;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    resize: none;
+    visibility: hidden;
+    width: 0;
+}
+
+.form-title {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.70);
+}
+
+.e-error,
+.e-float-text {
+    font-weight: 500;
+}
+
+.e-custom-label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+#formId {
+    padding-top: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.36);
+    border-radius: 5px;
+    background: #f9f9f9;
+    height: 250px;
+    overflow-y: scroll;
+}
+
+.highcontrast form,
+.highcontrast .header {
+    color: #fff;
+    background: #000000;
+}
+
+.header {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+table,
+td,
+th {
+    padding: 3px;
+}
+
+.form-horizontal .form-group {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+}

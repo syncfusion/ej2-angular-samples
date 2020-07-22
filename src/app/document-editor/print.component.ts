@@ -86,8 +86,10 @@ export class PrintComponent {
         let titleBarDiv: HTMLElement = document.getElementById('documenteditor_titlebar');
         let statusBarDiv: HTMLElement = document.getElementById('documenteditor_statusbar');
         if (this.containerPanel && titleBarDiv && statusBarDiv) {
-            this.containerPanel.style.height = window.innerHeight - (titleBarDiv.offsetHeight
+			var height = window.innerHeight - (titleBarDiv.offsetHeight
                 + statusBarDiv.offsetHeight) + 'px';
+            this.containerPanel.style.height = height;
+			this.documentEditor.height = height;
         }
     }
     private applyPageCountAndDocumentTitle(): void {

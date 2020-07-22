@@ -1,0 +1,53 @@
+<div class="control-section">
+  <div class="content-wrapper">
+    <ejs-kanban #kanbanObj cssClass='kanban-overview' keyField="Status" [dataSource]='kanbanData'
+      [cardSettings]='cardSettings' enableTooltip='true' [swimlaneSettings]='swimlaneSettings' [dialogSettings]='dialogSettings' (cardRendered)='cardRendered($event)'>
+      <e-columns>
+        <e-column *ngFor="let column of columns;" headerText={{column.headerText}} keyField='{{column.keyField}}'
+          allowToggle='{{column.allowToggle}}'>
+          <ng-template #template let-data>
+            <div class="header-template-wrap">
+              <div class="header-icon e-icons {{data.keyField}}"></div>
+              <div class="header-text">{{data.headerText}}</div>
+            </div>
+          </ng-template>
+        </e-column>
+      </e-columns>
+      <ng-template #cardSettingsTemplate let-data>
+        <div class='card-template'>
+          <div class='e-card-header'>
+            <div class='e-card-header-caption'>
+              <div class='e-card-header-title e-tooltip-text'>{{data.Title}}</div>
+            </div>
+          </div>
+          <div class='e-card-content e-tooltip-text'>
+            <div class='e-text'>{{data.Summary}}</div>
+          </div>
+          <div class='e-card-custom-footer'>
+            <div class="e-card-tag-field e-tooltip-text" *ngFor="let tag of data.Tags.split(',');">{{tag}}</div>
+            <div class='e-card-avatar'>{{getString(data.Assignee)}}</div>
+          </div>
+        </div>
+      </ng-template>
+    </ejs-kanban>
+  </div>
+</div>
+
+<div id="action-description">
+  <p>
+    This example demonstrates the overview functionalities of Kanban component. Enabled most features such as
+    templating, toggle columns, drag-and-drop, swimlane, tooltip, and more in the Kanban board.
+  </p>
+</div>
+<div id="description">
+  <p>
+    The sample is designed by enabling the major features in Kanban. The features enabled in the samples are:
+  </p>
+  <ul>
+    <li>Card template</li>
+    <li>Header template</li>
+    <li>Swimlane</li>
+    <li>Tooltip</li>
+    <li>Toggle columns</li>
+  </ul>
+</div>

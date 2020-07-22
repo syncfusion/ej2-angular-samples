@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, TechnicalIndicatorModel } from '@syncfusion/ej2-angular-charts';
 import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
@@ -13,6 +13,29 @@ import { Browser } from '@syncfusion/ej2-base';
     encapsulation: ViewEncapsulation.None
 })
 export class RsiIndicatorComponent {
+    public period: number = 3;
+    public showZones: boolean = true;
+    public overBought: number = 70;
+    public overSold: number = 30;
+    public upperLine: string = 'red';
+    public lowerLine: string = 'green';
+    // indicators
+    public indicators: TechnicalIndicatorModel[] = [
+        {
+            type: 'Rsi',
+            xName: 'x',
+            field: 'Close',
+            yAxisName: 'secondary',
+            fill: 'blue',
+            period: this.period,
+            seriesName: 'Apple Inc',
+            showZones: this.showZones,
+            overBought: this.overBought,
+            overSold: this.overSold,
+            upperLine: { color: this.upperLine },
+            lowerLine: {color: this.lowerLine}
+        }
+    ];
 
     public data1: Object[] = chartData;
     //Initializing Primary X Axis
@@ -68,12 +91,6 @@ export class RsiIndicatorComponent {
     public legendSettings: Object = {
         visible: false
     };
-    public period: number = 3;
-    public showZones: boolean = true;
-    public overBought: number = 70;
-    public overSold: number = 30;
-    public upperLine: string = 'red';
-    public lowerLine: string = 'green';
     public width: string = Browser.isDevice ? '100%' : '80%';
      // custom code start
     public load(args: ILoadedEventArgs): void {

@@ -1,0 +1,86 @@
+<div class="control-section progress-bar-parent">
+    <div class="row" style="margin-top: 8%">
+        <div class="col-lg-3 col-md-3 col-3" align="center">
+            <div id="angle-container">
+                <ejs-progressbar #semicircle id='semicircle' [type]='type' [maximum]='max' [minimum]='min'
+                    [value]='value' [width]='width' [height]='height' [startAngle]='startAngle' [endAngle]='endAngle'
+                    [animation]='animation' (load)='load($event)'>
+                    <e-progressbar-annotations>
+                        <e-progressbar-annotation
+                            content='<div id="semicircle" style="font-size:35px;font-weight:bold;color:#0078D6;fill:#0078D6"><span>70%</span></div>'>
+                        </e-progressbar-annotation>
+                    </e-progressbar-annotations>
+                </ejs-progressbar>
+            </div>
+
+        </div>
+        <div class="col-lg-3 col-md-3 col-3" align="center">
+            <div id="vertical-container">
+                <ejs-progressbar #semicircle1 id='semicircle1' [type]='type1' [maximum]='max1' [minimum]='min1'
+                    [value]='value1' [width]='width' [height]='height' [startAngle]='startAngle1' [endAngle]='endAngle1'
+                    [animation]='animation1' (load)='load($event)'>
+                    <e-progressbar-annotations>
+                        <e-progressbar-annotation
+                            content='<div id="invertedcircle" style="font-size:35px;font-weight:bold;color:#0078D6;fill:#0078D6"><span>100%</span></div>'>
+                        </e-progressbar-annotation>
+                    </e-progressbar-annotations>
+                </ejs-progressbar>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-3" align="center">
+
+            <div id="vsemi-container">
+                <ejs-progressbar #semicircle2 id='semicircle2' [type]='type2' [maximum]='max2' [minimum]='min2'
+                    [value]='value2' [width]='width' [height]='height' [startAngle]='startAngle2' [endAngle]='endAngle2'
+                    [animation]='animation2' (load)='load($event)'>
+                    <e-progressbar-annotations>
+                        <e-progressbar-annotation
+                            content='<div id="invertedcircle1" style="font-size:35px;font-weight:bold;color:#0078D6;fill:#0078D6"><span>100%</span></div>'>
+                        </e-progressbar-annotation>
+                    </e-progressbar-annotations>
+                </ejs-progressbar>
+            </div>
+
+        </div>
+        <div class="col-lg-3 col-md-3 col-3" align="center">
+            <div id="semi-container">
+                <ejs-progressbar #semicircle3 id='semicircle3' [type]='type3' [maximum]='max3' [minimum]='min3'
+                    [value]='value3' [width]='width' [height]='height' [startAngle]='startAngle3' [endAngle]='endAngle3'
+                    [animation]='animation3' (load)='load($event)'>
+                    <e-progressbar-annotations>
+                        <e-progressbar-annotation
+                            content='<div id="invertedcircle2" style="font-size:35px;font-weight:bold;color:#0078D6;fill:#0078D6"><span>100%</span></div>'>
+                        </e-progressbar-annotation>
+                    </e-progressbar-annotations>
+                </ejs-progressbar>
+            </div>
+        </div>
+    </div>
+    <div class="row" align="center">
+        <button id="reLoad" (click)="onClick()" class="e-control e-btn e-lib e-outline e-primary">Reload</button>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample illustrates a circular progress bar with start and end angle customized.
+    </p>
+</div>
+<div id="description">
+    <p>
+        This demo for Essential JS2 Progress Bar control shows the customizing options for angle in circular progress
+        bar. Annotation is enabled in the sample to represent the progress value with animation.
+
+    </p>
+</div>
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+
+    #reLoad {
+        border-radius: 4px;
+        text-transform: capitalize;
+        margin-top: 3%;
+    }
+</style>
+

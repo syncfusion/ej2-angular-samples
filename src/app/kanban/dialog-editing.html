@@ -1,0 +1,103 @@
+<div class="control-section">
+    <div class="col-lg-9 content-wrapper">
+        <div id='container'>
+            <ejs-kanban #kanbanObj keyField='Status' [dataSource]='kanbanData' [cardSettings]='cardSettings'>
+                <e-columns>
+                    <e-column headerText='To Do' keyField='Open'></e-column>
+                    <e-column headerText='In Progress' keyField='InProgress'></e-column>
+                    <e-column headerText='Testing' keyField='Testing'></e-column>
+                    <e-column headerText='Done' keyField='Close'></e-column>
+                </e-columns>
+                <ng-template #dialogSettingsTemplate let-data>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="e-label">ID</td>
+                                <td>
+                                  <div class="e-float-input e-control-wrapper">
+                                    <input id="Id" name="Id" type="text" class="e-field" value='{{data.Id}}' disabled />
+                                  </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="e-label">Status</td>
+                                <td>
+                                    <ejs-dropdownlist id='Status' #dropdownStatus name="Status"
+                                        class="e-field" [dataSource]='statusData' value='{{data.Status}}'
+                                        placeholder='Status'>
+                                    </ejs-dropdownlist>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="e-label">Assignee</td>
+                                <td>
+                                    <ejs-dropdownlist id='Assignee' #dropdownAssignee name="Assignee"
+                                        class="e-field" [dataSource]='assigneeData'
+                                        value='{{data.Assignee}}' placeholder='Assignee'></ejs-dropdownlist>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="e-label">Priority</td>
+                                <td>
+                                    <ejs-dropdownlist type="text" name="Priority" id="Priority"
+                                        class="e-field" placeholder='Priority' [dataSource]='priorityData'
+                                        value='{{data.Priority}}'></ejs-dropdownlist>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="e-label">Summary</td>
+                                <td>
+                                   <div class="e-float-input e-control-wrapper">
+                                        <textarea type="text" name="Summary" id="Summary" class="e-field"
+                                        value='{{data.Summary}}'></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </ng-template>
+            </ejs-kanban>
+        </div>
+    </div>
+    <div class="col-lg-3 property-section property-customization">
+        <div class="property-panel-section">
+            <p class="property-panel-header">Properties</p>
+            <div class="property-panel-content">
+                <table id="property" title="Properties">
+                    <tr>
+                        <td>
+                            <button ejs-button id='addNew' class="e-dialog-add" (click)="addClick()">Add New
+                                Card</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample showcases the CRUD (Create, Read, Update, and Delete) operations of the Kanban component. You can
+        add
+        a new
+        card using the button from the property panel and read, update, or delete a card by opening the card details in
+        dialog
+        by double-clicking it.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The sample is designed to showcase the CRUD operations of the Kanban board. The Kanban provides the essential
+        methods to
+        handle the CRUD operation from the application-end.
+    </p>
+    <ol>
+        <li>updateCard</li>
+        <li>addCard</li>
+        <li>deleteCard</li>
+    </ol>
+    <p>
+        The double click event of the card is used to open the card details in a dialog and read, edit, or delete a
+        card.
+    </p>
+</div>

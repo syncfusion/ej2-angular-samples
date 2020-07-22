@@ -1,58 +1,38 @@
 <div class="control-section">
-  <div class="col-lg-9 content-wrapper">
-    <ejs-schedule #scheduleObj width='100%' height='650px' [eventSettings]="eventSettings" [currentView]="currentView"
-      (eventRendered)="oneventRendered($event)">
+  <div class="col-lg-12 content-wrapper">
+    <ejs-schedule #scheduleObj width='100%' height='650px' [eventSettings]="eventSettings"
+      (eventRendered)="onEventRendered($event)">
+      <e-resources>
+        <e-resource field='TaskId' title='Category' [dataSource]='resourceDataSource' [allowMultiple]='allowMultiple'
+          name='Categories' textField='text' idField='id' colorField='color'>
+        </e-resource>
+      </e-resources>
       <e-views>
-        <e-view option="TimelineYear"></e-view>
+        <e-view option="Year"></e-view>
+        <e-view option="TimelineYear" displayName="Horizontal TimelineYear" [isSelected]="isSelected"></e-view>
+        <e-view option="TimelineYear" displayName="Vertical TimelineYear" orientation="Vertical" [group]="groupSettings"></e-view>
       </e-views>
     </ejs-schedule>
-  </div>
-  <div class="col-lg-3 property-section">
-    <div class="property-panel-section">
-      <div class="property-panel-header">Properties</div>
-      <div class="property-panel-content">
-        <div id="property" class="property-panel-table" title="Properties">
-          <table id="property" title="Properties" style="width: 100%">
-            <tbody>
-              <tr style="height: 50px">
-                <td style="width: 30%">
-                  <div> Orientation
-                  </div>
-                </td>
-                <td style="width: 70%;">
-                  <div>
-                    <ejs-dropdownlist id="orientation" [dataSource]='orientationData' [value]='orientationValues'
-                      [fields]='orientationFields' (change)='orientationChange($event)' popupWidth='180px'>
-                    </ejs-dropdownlist>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
 <div id="action-description">
-  <p>This demo showcases how the scheduler looks like in Year view with its default set of configurations.
-  </p>
+  <p>This demo shows the experience of showing the annual year events in a single view with different orientations.</p>
 </div>
 
 <div id="description">
   <p>
-    This demo showcases how the scheduler looks like in Year view with its default set of configurations. In this demo,
-    the
-    active view of Scheduler is set to
-    <code>Vertical Year</code> and <code>Horizontal Year</code> view options are provided to
-    <code>views</code> property.
+    In this demo, we have showcased the <code>Year</code> and <code>TimelineYear</code> views that help to view the
+    appointment in an annual calendar view. The view options are enabled by using the views property. In the
+    <code>TimelineYear</code>, <code>Horizontal</code> and <code>Vertical</code> orientations are available to view the
+    events with a different layout.
   </p>
   <p>
     <strong>Module Injection</strong>
   </p>
-  <p>To work with TimelineYear view on Scheduler – it is necessary to inject the TimelineYearService like
-    <code>providers: [TimelineYearService]</code> into the
+  <p>To work with Year and TimelineYear views on Scheduler – it is necessary to inject the YearService and
+    TimelineYearService like
+    <code>providers: [YearService, TimelineYearService]</code> into the
     <code>@NgModule.providers</code> section.
   </p>
 </div>

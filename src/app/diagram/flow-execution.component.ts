@@ -42,7 +42,9 @@ export class FlowExecutionDiagramComponent {
         connector.style = { strokeWidth: 2 };
         let annotation: PathAnnotationModel = {};
         annotation.content = content;
-        annotation.style = { fill: 'white' };
+        if (content) {
+            annotation.style = { fill: 'white' };
+        }
         connector.annotations = [annotation];
         connector.style.strokeColor = '#8D8D8D';
         connector.targetDecorator = {};
@@ -112,10 +114,10 @@ export class FlowExecutionDiagramComponent {
     public highLightedObjects: string[] = [];
     public currentButton: string = 'UnhighlightAll';
     public buttonChange(args: ChangeEventArgs): void {
-        this.currentButton = args.event.srcElement.id;
+        this.currentButton = (args.event.srcElement as any).defaultValue;
         this.applyChanges((args.event.srcElement as any).defaultValue);
     }
- public applyChanges(id: string): void {
+    public applyChanges(id: string): void {
         this.Unhighlight();
         switch (id) {
             case 'LinksInto':

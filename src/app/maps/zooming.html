@@ -1,14 +1,15 @@
 <div id="action-description">
     <p>
-        This sample depicts the zooming and panning options in the maps. You can customize these options by changing the zooming
-        option to Zooming, Mouse wheel zoom, Pinch zoom, Single-click zoom, and Double-click zoom in the Properties panel.
-        Slider control has been placed to zoom the map at the bottom.
+        This sample depicts the zooming and panning options in the maps. You can customize these options by changing the
+        Zooming, Panning, Mouse wheel zoom, Pinch zoom, Single-click zoom, and Double-click zoom in the Properties
+        panel.
     </p>
 </div>
 
 <div class="control-section">
     <div class="col-lg-9">
-        <ejs-maps id='container' style="display:block;" [zoomSettings]='zoomSettings' [layers]='layers' (load)="load($event)">
+        <ejs-maps id='container' style="display:block;" [zoomSettings]='zoomSettings' [layers]='layers'
+            (load)="load($event)">
         </ejs-maps>
     </div>
     <div class="col-lg-3 property-section">
@@ -17,8 +18,8 @@
             <div class="property-panel-content">
                 <table id="property" title="Properties">
                     <tbody>
-                            <tr style="height: 50px">
-                                    <td style="width: 50%">
+                        <tr style="height: 50px">
+                            <td style="width: 50%">
                                 <div>Zooming</div>
                             </td>
                             <td>
@@ -26,7 +27,15 @@
                             </td>
                         </tr>
                         <tr style="height: 50px">
-                                <td style="width: 50%">
+                            <td style="width: 50%">
+                                <div>Panning</div>
+                            </td>
+                            <td>
+                                <input checked="" id="pan" style="margin-top: 15px" type="checkbox">
+                            </td>
+                        </tr>
+                        <tr style="height: 50px">
+                            <td style="width: 50%">
                                 <div>Mouse wheel zoom</div>
                             </td>
                             <td>
@@ -34,7 +43,7 @@
                             </td>
                         </tr>
                         <tr style="height: 50px">
-                                <td style="width: 50%">
+                            <td style="width: 50%">
                                 <div>Pinch zoom</div>
                             </td>
                             <td>
@@ -42,7 +51,7 @@
                             </td>
                         </tr>
                         <tr style="height: 50px">
-                                <td style="width: 50%">
+                            <td style="width: 50%">
                                 <div>Single click zoom</div>
                             </td>
                             <td>
@@ -50,20 +59,20 @@
                             </td>
                         </tr>
                         <tr style="height: 50px">
-                                <td style="width: 50%">
+                            <td style="width: 50%">
                                 <div>Double click zoom</div>
                             </td>
                             <td>
                                 <input id="doubletap" style="margin-top: 15px" type="checkbox">
                             </td>
                         </tr>
-                        <tr style="height: 50px" >
-                            <td style="width: 50%" >
-                                Animation duration <span id='slider1'>&nbsp;&nbsp;&nbsp;500</span> &nbsp; ms
-                            </td><td></td>
+                        <tr style="height: 50px">
+                            <td style="width: 60%">
+                                Animation duration <span id='slider1'>&nbsp;500</span> &nbsp; ms
+                            </td>
                             <td>
-                                <ejs-slider #slide1 id="range"   min= 0 max= 1000 (change) ='setAnimation($event)'
-                                    value= 500 step = 250 style="width: 100px;"></ejs-slider>
+                                <ejs-slider #slide1 id="range" min=0 max=1000 (change)='setAnimation($event)' value=500
+                                    step=250 style="width: 100px;"></ejs-slider>
                             </td>
                         </tr>
                     </tbody>
@@ -74,9 +83,10 @@
 </div>
 <!-- style for slider and zoom  -->
 <style>
-      #range > * {
-            padding: 0px !important;
-        }
+    #range>* {
+        padding: 0px !important;
+    }
+
     .slider-content-wrapper {
         width: 40%;
         margin: 0 auto;
@@ -153,13 +163,17 @@
 <div id='description'>
 
     <p>
-        In this example, you can see how to zoom and pan the map. The support has been provided for zooming with toolbar, rectangle
+        In this example, you can see how to zoom and pan the map. The support has been provided for zooming with
+        toolbar, rectangle
         zoom, pinch zoom, mouse wheel zoom, single-click and double-click zoom.
+        Panning can be enabled or disabled using
+        the Panning option. When it is disabled, the map will switch to zooming mode.
     </p>
-    <br/>
+    <br />
     <p style="font-weight: 500">Injecting Module</p>
     <p>
-        Maps component features are segregated into individual feature-wise modules. To use the zooming feature, inject the
+        Maps component features are segregated into individual feature-wise modules. To use the zooming feature, inject
+        the
         <code>Zooming</code> module using the
         <code>Maps.Inject(Zooming)</code> method.
     </p>

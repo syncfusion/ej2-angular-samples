@@ -66,8 +66,7 @@ export class DeferUpdateComponent implements OnInit {
             this.pivotObj.element.style.width = '100%';
             this.pivotObj.allowCalculatedField = true;
             this.pivotObj.showFieldList = true;
-        }        
-        this.pivotObj.refresh();
+        }
     }
 
     ngOnInit(): void {

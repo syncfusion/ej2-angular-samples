@@ -1,0 +1,72 @@
+<div id="action-description">
+    <p>
+        This sample shows how linear gradient color and radial gradient color are applied to the linear gauge elements.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-md-8">
+        <div style="width:92%;margin-bottom: 60px;margin-left:0px;">
+        <ejs-lineargauge (load)='load($event)' id='gauge' #gauge='' [container]='container' orientation='horizontal' [axes]='axes'>
+        </ejs-lineargauge>
+        </div>
+    </div>
+    <div class="col-md-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div style="margin-left: -15px;">Gradient Type</div>
+                            </td>
+                            <td>
+                                <div>
+                                    <select name="gradientType" autocomplete="off" id="gradientType"
+                                        class="form-control" style="width:90%;margin-left: -15px;">
+                                        <option value="0" selected>Linear Gradient</option>
+                                        <option value="1">Radial Gradient</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="margin-left:-15px;margin-top: 30px;">Elements</div>
+                            </td>
+                            <td>
+                                <div style="margin-left: 0px;margin-top: 30px;">
+                                    <select name="element" autocomplete="off" id="elements" class="form-control"
+                                        style="width:90%">
+                                        <option value="0">Range</option>
+                                        <option value="1">Pointer</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        The linear gauge supports gradient coloring in a linear or radial manner. The gradient type can be changed using
+        the <b>Gradient Type</b> dropdown list in the properties panel. In the same way, the element for which the
+        gradient color should be applied is decided by the <b>Elements</b> dropdown list.
+        <br>
+        <p>
+            <b><br>Injecting Module</b><br><br>
+            To apply gradient coloring in the linear gauge, we need to inject the <code>GradientService</code> module
+            into the
+            <code>@NgModule.providers </code> section.
+        </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

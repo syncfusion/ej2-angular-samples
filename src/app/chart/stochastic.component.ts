@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, TechnicalIndicatorModel } from '@syncfusion/ej2-angular-charts';
 import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
@@ -13,6 +13,36 @@ import { Browser } from '@syncfusion/ej2-base';
     encapsulation: ViewEncapsulation.None
 })
 export class StochasticIndicatorComponent {
+    public showZones: boolean = true;
+    public period: number = 3;
+    public kPeriod: number = 2;
+    public dPeriod: number = 3;
+    public periodLine: string = 'yellow';
+    public upperLine: string = 'red';
+    public lowerLine: string = 'green';
+    // indicators
+    public indicators: TechnicalIndicatorModel[] = [
+        {
+            type: 'Stochastic',
+            field: 'Close',
+            yAxisName: 'secondary',
+            fill: 'blue',
+            period: this.period,
+            seriesName: 'Apple Inc',
+            upperLine: {
+                color: this.upperLine
+            },
+            showZones: this.showZones,
+            kPeriod: this.kPeriod,
+            dPeriod: this.dPeriod,
+            periodLine: {
+                color: this.periodLine
+            },
+            lowerLine:  {
+                color: this.lowerLine
+            }
+        }
+    ];
     public data1: Object[] = chartData;
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
@@ -37,12 +67,6 @@ export class StochasticIndicatorComponent {
             height: '60%'
         }
     ];
-    public showZones: boolean = true;
-    public kPeriod: number = 2;
-    public dPeriod: number = 3;
-    public periodLine: string = 'yellow';
-    public upperLine: string = 'red';
-    public lowerLine: string = 'green';
     public axes: Object = [{
         name: 'secondary',
         opposedPosition: true, rowIndex: 0,
@@ -71,7 +95,6 @@ export class StochasticIndicatorComponent {
     public legendSettings: Object = {
         visible: false
     };
-    public period: number = 3;
     public chartArea: Object = {
         border: {
             width: 0

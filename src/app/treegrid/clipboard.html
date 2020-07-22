@@ -1,0 +1,73 @@
+<div class="col-lg-9 control-section">
+    <div>
+        <ejs-treegrid #treegrid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings'
+            childMapping='subtasks' [treeColumnIndex]='1' [toolbar]='toolbar' [allowSelection]='true'
+            [selectionSettings]='selectionSettings' (toolbarClick)='toolbarClick($event)'>
+            <e-columns>
+                <e-column field='taskID' headerText='Task ID' width='70' textAlign='Right'></e-column>
+                <e-column field='taskName' headerText='Task Name' width='200' textAlign='Left'></e-column>
+                <e-column field='duration' headerText='Duration' width='100' textAlign='Right'></e-column>
+                <e-column field='startDate' headerText='Start Date' width='90' format="yMd" textAlign='Right'>
+                </e-column>
+                <e-column field='progress' headerText='Progress' width='90' textAlign='Right'></e-column>
+            </e-columns>
+        </ejs-treegrid>
+    </div>
+    <ejs-dialog #alertDialog [buttons]='alertDlgButtons' [visible]='hidden' [header]='alertHeader'
+        [animationSettings]='animationSettings' [content]='alertContent' [showCloseIcon]='showCloseIcon'
+        [target]='target' [width]='alertWidth'>
+    </ejs-dialog>
+</div>
+<div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+        <div class="property-panel-header">Properties </div>
+        <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+            <tr style="height: 50px">
+                <td style="width: 50%">
+                    <div style="width: 100px">Hierarchy Mode</div>
+                </td>
+                <td style="width: 50%">
+                    <div>
+                        <ejs-dropdownlist #dropdown1 id='mode' width='100px' [dataSource]='d1data' [fields]='fields1'
+                            value='Parent' (change)="change($event)"></ejs-dropdownlist>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates copy to clipboard functionality of the Tree Grid component. Select rows and click Copy
+        button from
+        toolbar to copy content. To copy with header click Copy with header button from toolbar.
+    </p>
+</div>
+<div id="description">
+    <p>Selected rows or cells data in the Tree Grid can be copied into clipboard using the Keyboard shortcuts and <code><a target="_blank" class="code"
+        href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#copy">copy
+        </a></code> method.
+    </p>
+    <p>In this demo, selected rows data can be copied into clipboard using the below Keyboard shortcuts or toolbar
+        interactions.</p>
+    <ul>
+        <li><code>Ctrl + C</code> - Selected rows or cells data without header.</li>
+        <li><code>Ctrl + Shift + H</code> - Selected rows or cells data with header.</li>
+    </ul>
+    <p>Tree Grid provides support for a set of copy modes with <code>copyHierarchyMode</code> property. The below are the type of copy mode available in Tree Grid. </p>
+    <ul>
+        <li><code>Parent</code> - This is the default copy hierarchy mode in Tree Grid. 
+        Clipboard value have the selected records with its parent records, if the selected records not have any parent record then the selected record will be in clipboard.</li>
+        <li><code>Child</code> - Clipboard value have the selected records with its child record, if the selected records do not have any child record then the selected records will be in clipboard.</li>
+        <li><code>Both</code> - Clipboard value have the selected records with its both parent and child record.
+        If the selected records do not have any parent and child record then the selected records will be in clipboard.</li>
+        <li><code>None</code> - Only the Selected records will be in clipboard.</li>
+    </ul>
+    <p>While using the Tree Grid in a touch device environment, there is an option for multi-selection 
+        through single tap on the row and it will show a popup with the multi-selection symbol. 
+        Tap the icon to enable multi-selection in a single tap and click for the toolbar to copy the selected records into clipboard.
+    </p>
+    <p>More information on the Clipboard feature can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/treegrid/clipboard/">
+            documentation section</a>.
+    </p>
+</div>

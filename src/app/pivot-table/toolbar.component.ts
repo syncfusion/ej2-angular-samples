@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
     IDataOptions, PivotView, FieldListService, CalculatedFieldService,
-    ToolbarService, ConditionalFormattingService, ToolbarItems, DisplayOption, IDataSet
+    ToolbarService, ConditionalFormattingService, ToolbarItems, DisplayOption, IDataSet,
+    NumberFormattingService
 } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
@@ -19,7 +20,7 @@ let data: IDataSet[] = require('./Pivot_Data.json');
     templateUrl: 'toolbar.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['toolbar.css'],
-    providers: [CalculatedFieldService, ToolbarService, ConditionalFormattingService, FieldListService]
+    providers: [CalculatedFieldService, ToolbarService, ConditionalFormattingService, FieldListService, NumberFormattingService]
 })
 export class ToolbarComponent implements OnInit {
     public dataSourceSettings: IDataOptions;
@@ -87,24 +88,31 @@ export class ToolbarComponent implements OnInit {
         }
     }
     renameReport(args: any) {
-        let reportCollection: string[] = [];
+        let reportsCollection: any[] = [];
         if (localStorage.pivotviewReports && localStorage.pivotviewReports !== "") {
-            reportCollection = JSON.parse(localStorage.pivotviewReports);
+            reportsCollection = JSON.parse(localStorage.pivotviewReports);
         }
-        reportCollection.map(function (item: any): any { if (args.reportName === item.reportName) { item.reportName = args.rename; } });
+        if (args.isReportExists) {
+            for (let i: number = 0; i < reportsCollection.length; i++) {
+                if (reportsCollection[i].reportName === args.rename) {
+                    reportsCollection.splice(i, 1);
+                }
+            }
+        }
+        reportsCollection.map(function (item: any): any { if (args.reportName === item.reportName) { item.reportName = args.rename; } });
         if (localStorage.pivotviewReports && localStorage.pivotviewReports !== "") {
-            localStorage.pivotviewReports = JSON.stringify(reportCollection);
+            localStorage.pivotviewReports = JSON.stringify(reportsCollection);
         }
     }
     newReport() {
         this.pivotObj.setProperties({ dataSourceSettings: { columns: [], rows: [], values: [], filters: [] } }, false);
     }
-	beforeToolbarRender(args: any) {
+    beforeToolbarRender(args: any) {
         args.customToolbar.splice(6, 0, {
-            type: 'Separator' 
+            type: 'Separator'
         });
         args.customToolbar.splice(9, 0, {
-            type: 'Separator' 
+            type: 'Separator'
         });
     }
 
@@ -126,7 +134,7 @@ export class ToolbarComponent implements OnInit {
         } as GridSettings;
 
         this.toolbarOptions = ['New', 'Save', 'SaveAs', 'Rename', 'Remove', 'Load',
-            'Grid', 'Chart', 'Export', 'SubTotal', 'GrandTotal', 'ConditionalFormatting', 'FieldList'] as ToolbarItems[];
+            'Grid', 'Chart', 'Export', 'SubTotal', 'GrandTotal', 'Formatting', 'FieldList'] as ToolbarItems[];
 
         this.dataSourceSettings = {
             enableSorting: true,
@@ -135,7 +143,7 @@ export class ToolbarComponent implements OnInit {
             formatSettings: [{ name: 'Amount', format: 'C0' }],
             dataSource: data,
             expandAll: false,
-            values: [{ name: 'In_Stock', caption: 'In Stock' }, { name: 'Sold', caption: 'Units Sold' },
+            values: [{ name: 'Sold', caption: 'Units Sold' },
             { name: 'Amount', caption: 'Sold Amount' }],
             filters: [{ name: 'Product_Categories', caption: 'Product Categories' }]
         };

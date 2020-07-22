@@ -1,0 +1,201 @@
+<div class="control-section">
+	<div style="height:100%; width:100%;">
+		<div style="position:relative; top:10px; left:10px;">
+			<!-- Render Button to open the Dialog -->
+			<button ejs-button id='dlgbtn' #ButtonInstance (click)="BtnClick()">Open</button>
+
+			<ejs-dialog id="component-dialog" #Dialog [header]='header' [animationSettings]='animationSettings'
+				[showCloseIcon]='showCloseIcon' [target]='target' [width]='Dialogwidth' (open)="dialogOpen()"
+				(close)="dialogClose()" [buttons]='dlgButtons'>
+				<ng-template #content>
+					<ejs-tab id="tab_default" (selected)="tabSelected($event)">
+						<e-tabitems>
+							<e-tabitem [header]='headerText[0]'>
+								<ng-template #content>
+									<ejs-grid [dataSource]='data' allowPaging='true' [pageSettings]='initialPage'>
+										<e-columns>
+											<e-column field='OrderID' headerText='Order ID' width='120'
+												textAlign='Right'>
+											</e-column>
+											<e-column field='CustomerName' headerText='Customer Name' width='150'>
+											</e-column>
+											<e-column field='OrderDate' headerText='Order Date' width='130' format="yMd"
+												textAlign='Right'></e-column>
+											<e-column field='Freight' headerText='Freight' width='120' format='C2'
+												textAlign='Right'></e-column>
+											<e-column field='ShippedDate' headerText='Shipped Date' width='130'
+												format="yMd" textAlign='Right'></e-column>
+											<e-column field='ShipCountry' headerText='Ship Country' width='150'>
+											</e-column>
+										</e-columns>
+									</ejs-grid>
+								</ng-template>
+							</e-tabitem>
+							<e-tabitem [header]='headerText[1]'>
+								<ng-template #content>
+									<ejs-schedule #schedule height='650px' [(selectedDate)]="selectedDate"
+										[eventSettings]="eventSettings">
+									</ejs-schedule>
+								</ng-template>
+							</e-tabitem>
+							<e-tabitem [header]='headerText[2]'>
+								<ng-template #content>
+									<ejs-chart style='display:block; text-align:center;' id='chartcontainer'
+										[title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+										[tooltip]='tooltip' [chartArea]='chartArea' [width]='chartWidth'
+										[height]='height'>
+										<e-series-collection>
+											<e-series [dataSource]='chartData' type='Line' xName='x' yName='y'
+												name='Germany' width=2 [marker]='marker'> </e-series>
+											<e-series [dataSource]='data1' type='Line' xName='x' yName='y'
+												name='England' width=2 [marker]='marker'> </e-series>
+										</e-series-collection>
+									</ejs-chart>
+								</ng-template>
+							</e-tabitem>
+							<e-tabitem [header]='headerText[3]'>
+								<ng-template #content>
+									<ejs-richtexteditor id='defaultRTE'>
+										<ng-template #valueTemplate>
+											<p>The rich text editor component is WYSIWYG ("what you see is what you
+												get") editor
+												that provides the best
+												user experience to create and update the content.
+												Users can format their content using standard toolbar commands.</p>
+
+											<p><b>Key features:</b></p>
+											<ul>
+												<li>
+													<p>Provides &lt;IFRAME&gt; and &lt;DIV&gt; modes</p>
+												</li>
+												<li>
+													<p>Capable of handling markdown editing.</p>
+												</li>
+												<li>
+													<p>Contains a modular library to load the necessary functionality on
+														demand.
+													</p>
+												</li>
+												<li>
+													<p>Provides a fully customizable toolbar.</p>
+												</li>
+												<li>
+													<p>Provides HTML view to edit the source directly for developers.
+													</p>
+												</li>
+											</ul>
+										</ng-template>
+									</ejs-richtexteditor>
+								</ng-template>
+							</e-tabitem>
+							<e-tabitem [header]='headerText[4]'>
+								<ng-template #content>
+									<div class="content-wrapper" style="margin-bottom: 25px;">
+										<div class="formtitle">
+											<span>Add Customer Details</span>
+										</div>
+										<form id="formId" [formGroup]="reactForm" #formDir="ngForm"
+											class="form-horizontal" novalidate="">
+											<div class="form-group">
+												<div class="e-float-input">
+													<input id="check" type="text" formControlName="check">
+													<span class="e-float-line"></span>
+													<label for="check" class="e-float-text">User Name</label>
+												</div>
+												<div *ngIf="check.errors">
+													<div *ngIf="check.errors.required && check.touched" class="e-error">
+														This field is required.
+													</div>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<div class="e-float-input">
+													<ejs-datepicker id="date_check" formControlName="date_check"
+														name="date_check" placeholder="Date of Birth"
+														floatLabelType='Always'>
+													</ejs-datepicker>
+													<span class="e-float-line"></span>
+													<div *ngIf="date_check.errors ">
+														<div *ngIf="date_check.errors.date && date_check.touched"
+															class="e-error">
+															Please enter a valid date.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<div class="e-float-input">
+													<textarea rows="2" id="Address" name="Address"
+														formControlName="Address"></textarea>
+													<span class="e-float-line"></span>
+													<label class="e-float-text" for="address">Address</label>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<div class="e-float-input">
+													<input id="city" formControlName="city">
+													<span class="e-float-line"></span>
+													<label for="city" class="e-float-text">City</label>
+													<div *ngIf="city.errors ">
+														<div *ngIf="city.errors.required && city.touched"
+															class="e-error">
+															This field is required.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<div class="e-float-input">
+													<input id="state" formControlName="state">
+													<span class="e-float-line"></span>
+													<label for="state" class="e-float-text">State</label>
+													<div *ngIf="state.errors ">
+														<div *ngIf="state.errors.required && state.touched"
+															class="e-error">
+															This field is required.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div
+													style="width: 320px;margin:0px auto;height: 100px;padding-top: 25px;">
+													<div style="display: inline-block;">
+														<button id="validateSubmit"
+															class="samplebtn e-control e-btn e-primary" type="submit"
+															style="height:40px;width: 150px;" data-ripple="true">Add
+															Customer</button>
+													</div>
+													<div style="float: right;">
+														<button id="resetbtn" class="samplebtn e-control e-btn"
+															type="reset" style="height:40px;width: 150px;"
+															data-ripple="true">Clear</button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</ng-template>
+							</e-tabitem>
+						</e-tabitems>
+					</ejs-tab>
+				</ng-template>
+			</ejs-dialog>
+		</div>
+	</div>
+</div>
+<div id="action-description">
+	<p>
+		This example demonstrates how to integrate other Angular UI components within the dialog control. In the below example, The dialog component renders with the Grid, Schedule, Chart, Rich Text Editor, Tabs and Form components.
+	</p>
+</div>
+<div id="description">
+	<p>
+		Since the dialog is container component, you can integrate other Angular UI components within the dialog. The dialog can be renders with simple plain-text, HTML string, or Angular UI components. In the above sample, used major components such as Grid, Schedule, Chart, and Rich Text Editor inside dialog.
+	</p>	
+</div>

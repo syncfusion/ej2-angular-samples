@@ -69,6 +69,12 @@
         <td>Allows user to customize cells base on certain conditions.</td>
         </tr>
         <tr>
+            <td style="vertical-align: top;padding: 4px 0;">
+                <code>Number formatting:</code>
+            </td>
+            <td>Allows user to dynamically apply number formatting to value fields.</td>
+        </tr>
+        <tr>
         <td style="vertical-align: top;padding: 4px 0;">
         <code>Field List:</code>
         </td>
@@ -80,9 +86,9 @@
 <div class="control-section" id="pivot-table-section">
     <div>
         <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings allowExcelExport='true'
-            allowConditionalFormatting='true' allowPdfExport='true' showToolbar='true' allowCalculatedField='true'
+            allowConditionalFormatting='true' allowNumberFormatting='true' allowPdfExport='true' showToolbar='true' allowCalculatedField='true'
             showFieldList='true' width='100%' [chartSettings]='chartSettings' [displayOption]='displayOption'
-            height='300' [gridSettings]='gridSettings' [toolbar]='toolbarOptions' (saveReport)='saveReport($event)'
+            height='450' [gridSettings]='gridSettings' [toolbar]='toolbarOptions' (saveReport)='saveReport($event)'
             (loadReport)='loadReport($event)' (fetchReport)='fetchReport($event)' (renameReport)='renameReport($event)'
             (removeReport)='removeReport($event)' (newReport)='newReport()' (toolbarRender)='beforeToolbarRender($event)'>
         </ejs-pivotview>

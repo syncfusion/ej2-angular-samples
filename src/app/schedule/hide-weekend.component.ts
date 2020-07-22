@@ -5,8 +5,7 @@ import { MultiSelectChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import {
     ScheduleComponent, EventSettingsModel, View, DayService, WeekService, MonthService,
     EventRenderedArgs, TimelineViewsService, TimelineMonthService, WorkHoursModel, ResizeService, DragAndDropService
-}
-    from '@syncfusion/ej2-angular-schedule';
+} from '@syncfusion/ej2-angular-schedule';
 import { employeeEventData } from './data';
 
 /**

@@ -1,5 +1,5 @@
 /**
- * RTE Reactive Form Sample
+ * Rich Text Editor Reactive Form Sample
  */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';

@@ -93,9 +93,6 @@ export class MapsDrilldownComponent {
             markerSettings: [
                 {
                     visible: true,
-                    tooltipSettings: {
-                        visible: true
-                    },
                     template: '<div id="marker1" class="markersTemplate" style="color:white;">Asia' +
                         '</div>',
                     dataSource: [

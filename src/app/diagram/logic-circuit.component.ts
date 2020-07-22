@@ -210,6 +210,7 @@ export class LogicCircuitComponent {
 
     public diagramCreate(args: Object): void {
         paletteIconClick();
+        this.diagram.fitToPage();
     }
 
 

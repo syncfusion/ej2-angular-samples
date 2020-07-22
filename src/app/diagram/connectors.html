@@ -48,7 +48,7 @@
 
     <div class="col-lg-9 control-section">
         <div class="content-wrapper" style="background: white">
-            <ejs-diagram #diagram id="diagram" [getConnectorDefaults]='getConnectorDefaults' [getNodeDefaults]='getNodeDefaults' [layout]=layout width="100%" height="580px" [setNodeTemplate]='setNodeTemplate' [snapSettings]=snapSettings>
+            <ejs-diagram #diagram id="diagram" [getConnectorDefaults]='getConnectorDefaults' [getNodeDefaults]='getNodeDefaults' [layout]=layout width="100%" height="580px" [setNodeTemplate]='setNodeTemplate' [snapSettings]=snapSettings (created)="created()">
                 <e-nodes>
                     <e-node id='node1' [shape]='shape'>
                         <e-node-annotations>

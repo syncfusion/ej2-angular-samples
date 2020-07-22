@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
 import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
-import { SheetModel, ColumnModel, RowModel, CellRenderEventArgs, } from '@syncfusion/ej2-angular-spreadsheet';
+import { SheetModel, ColumnModel, RowModel, CellRenderEventArgs } from '@syncfusion/ej2-angular-spreadsheet';
 import { orderDetails } from './data';
 /**
  * Cell Formatting Spreadsheet Controller
@@ -34,25 +34,27 @@ export class CellFormatController {
 
     public sheets: SheetModel[] = [{
         name: 'Order Details',
-        rangeSettings: [{ dataSource: this.data }],
+        ranges: [{ dataSource: this.data }],
         columns: this.columns,
         rows: this.rows,
         showGridLines: false
     }];
-    beforeDataBound() {
-        if (!this.spreadsheetObj.isOpen && this.spreadsheetObj.sheets[this.spreadsheetObj.activeSheetTab - 1].name === 'Order Details') {
-            // Applying cell formatting dynamically using cellFormat method
-            this.spreadsheetObj.cellFormat({ fontWeight: 'bold', backgroundColor: '#4b5366', color: '#ffffff', fontSize: '12pt' }, 'A1:I1');
-            this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textIndent: '2pt' }, 'B2:B16');
-            this.spreadsheetObj.cellFormat({ fontStyle: 'italic', textIndent: '2pt' }, 'D2:D16');
-            this.spreadsheetObj.cellFormat({ textIndent: '2pt' }, 'E1:E16');
-            this.spreadsheetObj.cellFormat({ textIndent: '2pt' }, 'G1:G16');
-            this.spreadsheetObj.cellFormat({ textAlign: 'center', fontWeight: 'bold' }, 'H2:H16');
-            this.spreadsheetObj.cellFormat({ fontFamily: 'Helvetica New', verticalAlign: 'middle' }, 'A1:I16');
-        }
+    created() {
+        // Applying cell formatting dynamically using cellFormat method
+        this.spreadsheetObj.cellFormat({ fontWeight: 'bold', backgroundColor: '#4b5366', color: '#ffffff', fontSize: '12pt' }, 'A1:I1');
+        this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textIndent: '2pt' }, 'B2:B16');
+        this.spreadsheetObj.cellFormat({ fontStyle: 'italic', textIndent: '2pt' }, 'D2:D16');
+        this.spreadsheetObj.cellFormat({ textIndent: '2pt' }, 'E1:E16');
+        this.spreadsheetObj.cellFormat({ textIndent: '2pt' }, 'G1:G16');
+        this.spreadsheetObj.cellFormat({ textAlign: 'center', fontWeight: 'bold' }, 'H2:H16');
+        this.spreadsheetObj.cellFormat({ fontFamily: 'Helvetica New', verticalAlign: 'middle' }, 'A1:I16');
+        // Applying border to a range
+        this.spreadsheetObj.setBorder({ border: '1px solid #e0e0e0' }, 'A1:I16', 'Outer');
+        this.spreadsheetObj.setBorder({ border: '1px solid #e0e0e0' }, 'A2:I15', 'Horizontal');
+
     }
     beforeCellRender(args: CellRenderEventArgs) {
-        if (!this.spreadsheetObj.isOpen && this.spreadsheetObj.sheets[this.spreadsheetObj.activeSheetTab - 1].name === 'Order Details') {
+        if (!this.spreadsheetObj.isOpen && this.spreadsheetObj.sheets[this.spreadsheetObj.activeSheetIndex].name === 'Order Details') {
             if (args.cell && args.cell.value) {
                 // Applying cell formatting before rendering the particular cell
                 switch (args.cell.value) {

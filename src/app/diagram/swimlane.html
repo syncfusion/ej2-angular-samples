@@ -137,7 +137,7 @@
         <div id="diagram-space" class="sb-mobile-diagram">
             <ejs-diagram #diagram id="diagram" width="100%" height="100%" [snapSettings]='snapSettings' [contextMenuSettings]  ='contextMenuSettings'
                 [nodes]="nodes" [connectors]="connectors" [getConnectorDefaults]='getConnectorDefaults' (dragEnter)="dragEnter($event)"
-                (contextMenuOpen)="contextMenuOpen($event)" (contextMenuClick)="contextMenuClick($event)" [getNodeDefaults]='getNodeDefaults'>
+                (contextMenuOpen)="contextMenuOpen($event)" (contextMenuClick)="contextMenuClick($event)" [getNodeDefaults]='getNodeDefaults' (created)="created()">
             </ejs-diagram>
         </div>
     </div>

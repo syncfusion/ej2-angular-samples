@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild} from '@angular/core';
 import { ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
 import { ChangedEventArgs, NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { projectData,projectResources } from './data';
+import { projectData } from './data';
 import { GanttComponent, TimelineViewMode } from '@syncfusion/ej2-angular-gantt';
 @Component({
     selector: 'ej2-gantttimeline',
@@ -48,6 +48,7 @@ export class GanttTimelineComponent implements OnInit {
     public unitFields: Object = { text: 'unit', value: 'id' };
     public unitValue: string = 'Week';
     public topFormatValue: string = 'MMM dd, yyyy';
+    public bottomFormatValue: string = 'EEE, dd';
     public bottomUnitValue: string = 'Day';
     @ViewChild('topFormatDropdown')
     public topTierFormatObj: DropDownListComponent;
@@ -64,7 +65,6 @@ export class GanttTimelineComponent implements OnInit {
     @ViewChild('unitWidth')
     public unitWidthNumericObject: NumericTextBoxComponent;
     public data: object[];
-    public resources: object[];
     public taskSettings: object;
     public timelineSettings: object;
     public labelSettings: object;
@@ -101,8 +101,7 @@ export class GanttTimelineComponent implements OnInit {
             columnIndex: 0
         };
         this.projectStartDate = new Date('02/03/2019'),
-        this.projectEndDate = new Date('03/23/2019'),
-        this.resources = projectResources;
+        this.projectEndDate = new Date('03/23/2019')
     }
     public onUnitWidthChange(args: ChangedEventArgs): void {
         this.ganttObj.timelineSettings.timelineUnitSize = +args.value;

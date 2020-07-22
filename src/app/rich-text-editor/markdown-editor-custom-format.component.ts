@@ -1,5 +1,5 @@
 /**
- * RichTextEditor Markdown Custom Format Sample
+ * Rich Text Editor Markdown Custom Format Sample
  */
 
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';

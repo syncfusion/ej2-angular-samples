@@ -14,6 +14,7 @@ import { BulletChartRtlComponent } from './right-to-left.component';
 import { BulletChartCustomizationComponent } from './customization.component';
 import { BulletChartBarCustomizationComponent} from './bar-customization.component';
 import { BulletChartTooltipComponent } from './tooltip.component';
+import { BulletChartLegendComponent } from './bullet-legend';
 
 export const bulletChartAppRoutes: Object[] = [
     {
@@ -57,13 +58,20 @@ export const bulletChartAppRoutes: Object[] = [
         name: 'Tooltip Template',
         order: '01',
         category: 'Bullet Chart'
+    },
+    {
+        path: ':theme/bullet-chart/bullet-legend',
+        component: BulletChartLegendComponent,
+        name: 'Legend',
+        order: '01',
+        category: 'Bullet Chart'
     }
 ];
 
 export const bulletChartRouter: ModuleWithProviders = RouterModule.forChild(bulletChartAppRoutes);
 
 // tslint:disable-next-line:max-line-length
-let declarations: Type<Object>[ ] = [BulletChartDefaultComponent, BulletChartMultipleDataComponent, BulletChartRtlComponent, BulletChartCustomizationComponent, BulletChartBarCustomizationComponent, BulletChartTooltipComponent];
+const declarations: Type<Object>[ ] = [BulletChartDefaultComponent, BulletChartMultipleDataComponent, BulletChartRtlComponent, BulletChartCustomizationComponent, BulletChartBarCustomizationComponent, BulletChartTooltipComponent, BulletChartLegendComponent];
 @NgModule({
     imports: [bulletChartRouter, BulletChartAllModule, ColorPickerModule, DropDownListModule, SliderModule, CheckBoxModule],
     exports: [],

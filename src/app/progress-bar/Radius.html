@@ -1,0 +1,82 @@
+<div class="control-section">
+    <div class="row" style="margin-top: 8%;">
+        <div class="col-lg-3 col-md-3 col-3" align="center">
+            <div id="circular-container">
+                <ejs-progressbar #radius1 id='circular' [type]='type' [maximum]='max' [minimum]='min' [value]='value'
+                    [width]='width' [height]='height' [animation]='animation' [trackThickness]='trackThickness'
+                    [progressThickness]='progressThickness' [cornerRadius]='cornerRadius'
+                    [progressColor]='progressColor' [radius]='radius' [innerRadius]='innerRadius'
+                    [animation]='animation' (load)='load1($event)' [theme]='theme'>
+                    <e-progressbar-annotations>
+                        <e-progressbar-annotation
+                            content='<div id="point1" style="font-size:20px;font-weight:bold;color:#ffffff;fill:#ffffff"><span>60%</span></div>'>
+                        </e-progressbar-annotation>
+                    </e-progressbar-annotations>
+                </ejs-progressbar>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-3" align="center">
+            <div id="rtl-container">
+                <ejs-progressbar #radius2 id='circular2' [type]='type' [maximum]='max2' [minimum]='min2'
+                    [value]='value2' [width]='width' [height]='height' [progressThickness]='progressThickness2'
+                    [cornerRadius]='cornerRadius2' [innerRadius]='innerRadius2' [animation]='animation'
+                    (load)='load($event)'>
+                </ejs-progressbar>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-3" align="center">
+            <div id="track-container">
+                <ejs-progressbar #radius3 id='circular3' [type]='type' [maximum]='max3' [minimum]='min3'
+                    [value]='value3' [width]='width' [height]='height' [progressThickness]='progressThickness3'
+                    [animation]='animation' (load)='load($event)'>
+                </ejs-progressbar>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-3" align="center">
+            <div id="rounded-container">
+                <ejs-progressbar #radius4 id='circular4' [type]='type' [maximum]='max4' [minimum]='min4'
+                    [value]='value4' [width]='width' [height]='height' [enablePieProgress]='enablePieProgress4'
+                    [animation]='animation' (load)='load($event)'>
+                </ejs-progressbar>
+            </div>
+        </div>
+    </div>
+    <div class="row" align="center">
+        <button id="reLoad" (click)="onClick()" class="e-control e-btn e-lib e-outline e-primary">Reload</button>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample illustrates a circular progress bar with customization option like radius, inner-radius, track and
+        progress thickness.
+    </p>
+</div>
+<div id="description">
+    <p>
+        This demo for Essential JS2 Progress Bar control shows the customizing options for radius, inner-radius, track
+        and progress thickness.
+    </p>
+</div>
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+
+    #circular_Circulartrack {
+        opacity: 1 !important;
+    }
+
+    .progress-text-align {
+        font-family: Roboto-Regular;
+        font-size: 14px;
+        color: #3D3E3C;
+    }
+
+    #reLoad {
+        border-radius: 4px;
+        text-transform: capitalize;
+        margin-top: 3%;
+    }
+</style>

@@ -7,6 +7,7 @@ import { editingData, editingResources } from './data';
 export class GanttEditingComponent implements OnInit {
     public data: object[];
     public resources: object[];
+    public resourceFields: object ;
     public taskSettings: object;
     public columns: object[];
     public timelineSettings: object;
@@ -32,6 +33,10 @@ export class GanttEditingComponent implements OnInit {
             notes: 'info',
             resourceInfo: 'resources'
         };
+        this.resourceFields = {
+            id: 'resourceId',
+            name: 'resourceName'
+        };
         this.editSettings = {
             allowAdding: true,
             allowEditing: true,
@@ -39,7 +44,7 @@ export class GanttEditingComponent implements OnInit {
             allowTaskbarEditing: true,
             showDeleteConfirmDialog: true
         };
-        this.toolbar = ['Add', 'Edit', 'Update', 'Delete', 'Cancel', 'ExpandAll', 'CollapseAll'];
+        this.toolbar = ['Add', 'Edit', 'Update', 'Delete', 'Cancel', 'ExpandAll', 'CollapseAll', 'Indent', 'Outdent'];
         this.columns =  [
             { field: 'TaskID', width:60 },
             { field: 'TaskName', headerText: 'Job Name', width: '250', clipMode: 'EllipsisWithTooltip' },

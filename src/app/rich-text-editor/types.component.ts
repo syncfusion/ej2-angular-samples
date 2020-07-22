@@ -1,5 +1,5 @@
 /**
- * RTE Toolbar Types Sample
+ * Rich Text Editor Toolbar Types Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';

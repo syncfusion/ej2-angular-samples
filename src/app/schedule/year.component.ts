@@ -1,32 +1,29 @@
 import { Component, ViewChild } from '@angular/core';
-import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import {
-    ScheduleComponent, EventSettingsModel, View, EventRenderedArgs, TimelineYearService, Orientation
+    ScheduleComponent, EventSettingsModel, EventRenderedArgs, YearService, TimelineYearService, GroupModel
 } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'year.html',
-    providers: [TimelineYearService]
+    providers: [YearService, TimelineYearService]
 })
 export class YearComponent {
     @ViewChild('scheduleObj')
     public scheduleObj: ScheduleComponent;
-    public currentView: View = 'TimelineYear';
     public eventSettings: EventSettingsModel = { dataSource: this.generateEvents() };
-    public orientationData: Object[] = [
-        { text: 'Horizontal', value: 'Horizontal' },
-        { text: 'Vertical', value: 'Vertical' }
+    public isSelected: Boolean = true;
+    public allowMultiple: Boolean = true;
+    public groupSettings: GroupModel = { resources: ['Categories'] };
+    public resourceDataSource: Object[] = [
+        { text: 'Nancy', id: 1, color: '#df5286' },
+        { text: 'Steven', id: 2, color: '#7fa900' },
+        { text: 'Robert', id: 3, color: '#ea7a57' },
+        { text: 'Smith', id: 4, color: '#5978ee' },
+        { text: 'Micheal', id: 5, color: '#df5286' }
     ];
-    public orientationValues = 'Horizontal';
-    public orientationFields: Object = { text: 'text', value: 'value' };
 
-    orientationChange(args: ChangeEventArgs): void {
-        this.scheduleObj.views = [{ option: 'TimelineYear', orientation: args.value as Orientation }];
-        this.scheduleObj.dataBind();
-    }
-
-    oneventRendered(args: EventRenderedArgs): void {
+    public onEventRendered(args: EventRenderedArgs): void {
         const eventColor: string = args.data.EventColor as string;
         if (!args.element || !eventColor) {
             return;
@@ -34,7 +31,8 @@ export class YearComponent {
             args.element.style.backgroundColor = eventColor;
         }
     }
-    generateEvents(count: number = 250, date: Date = new Date()): Object[] {
+
+    public generateEvents(count: number = 250, date: Date = new Date()): Object[] {
         const names: string[] = [
             'Bering Sea Gold', 'Technology', 'Maintenance', 'Meeting', 'Travelling', 'Annual Conference', 'Birthday Celebration',
             'Farewell Celebration', 'Wedding Aniversary', 'Alaska: The Last Frontier', 'Deadest Catch', 'Sports Day',
@@ -60,7 +58,8 @@ export class YearComponent {
                 StartTime: new Date(start.getTime()),
                 EndTime: new Date(end.getTime()),
                 IsAllDay: (id % 10) ? true : false,
-                EventColor: colors[n]
+                EventColor: colors[n],
+                TaskId: (id % 5) + 1
             });
             id++;
         }

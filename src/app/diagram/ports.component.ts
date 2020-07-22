@@ -301,6 +301,7 @@ export class PortDiagramComponent {
 
   public diagramCreate(args: Object): void {
     this.diagram.select([this.diagram.nodes[0]]);
+    this.diagram.fitToPage();
   }
 
   public portDropOnChange(args: ChangeEventArgs): void {

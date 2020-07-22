@@ -10,7 +10,7 @@
         [contextMenuItems]='contextMenuItems' (contextMenuOpen)="contextMenuOpen($event)" (contextMenuClick)="contextMenuClick($event)"
         height="450px" [allowSelection]="true" dateFormat="MMM dd, y" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
         [gridLines]="gridLines" [eventMarkers]="eventMarkers" [editSettings]="editSettings" [allowResizing]="true" [allowSorting]="true"
-        [toolbar]="toolbar" resourceNameMapping="resourceName" resourceIDMapping="resourceId" 
+        [toolbar]="toolbar" [resourceFields] = "resourceFields" 
         [resources]="resources" [splitterSettings]="splitterSettings">
     </ejs-gantt>
     <div style="float: right; margin: 10px;">Source:
@@ -29,6 +29,8 @@
 		<li><code>AutoFitAll</code> - Auto fit all columns.</li>
 		<li><code>AutoFit</code> - Auto fit the current column.</li>
 		<li><code>TaskInformation</code> - Edit the current record.</li>
+		<li><code>Indent</code> - Indent the selected record to one level</li>
+		<li><code>Outdent</code> - Outdent the selected record to one level</li>
 		<li><code>DeleteTask</code> - Delete the current record.</li>
 		<li><code>Save</code> - Save the edited record.</li>
 		<li><code>Cancel</code> - Cancel the edited state.</li>
