@@ -2,8 +2,8 @@
     <div>
         <div id="default_title_bar" class="e-de-ctn-title"></div>
         <div>
-            <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true (created)="onCreate()" [showPropertiesPane]=false
-                (documentChange)="onDocumentChange()" style="display:block;height:600px"></ejs-documenteditorcontainer>
+            <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true [locale]="culture" (created)="onCreate()" [showPropertiesPane]=false
+                (documentChange)="onDocumentChange()" (commentDelete)="commentDelete($event)" height="600px" style="display:block;" currentUser = "Nancy Davolio" userColor="#b70f34"></ejs-documenteditorcontainer>
         </div>
     </div>
 </div>
@@ -48,6 +48,7 @@
             padding-left: 15px;
             padding-right: 10px;
             font-family: inherit;
+			box-sizing: border-box;
         }
 
         /** Document editor sample level font icons*/

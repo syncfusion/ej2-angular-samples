@@ -22,6 +22,7 @@ export class BulletChartDefaultComponent {
     public titleCustomers: string = 'New Customers';
     public titleRating: string = 'Cust Satisfaction';
 
+    public width1: string = '80%';
     public minimum1: number = 0;
     public maximum1: number = 300;
     public interval1: number = 50;
@@ -57,22 +58,27 @@ export class BulletChartDefaultComponent {
     public positionTitle: TextPosition = Browser.isDevice ? 'Top' : 'Left';
 
     public margin1: MarginModel = {
-        left: Browser.isDevice ? 10 : 10
+        left: Browser.isDevice ? 10 : 53,
+        right: Browser.isDevice ? 10: 19
     };
 
     public margin2: MarginModel = {
-        left: Browser.isDevice ? 10 : 80
+        left: Browser.isDevice ? 10 : 71,
+        right: Browser.isDevice ? 10: 19
     };
 
     public margin3: MarginModel = {
-        left: Browser.isDevice ? 10 : 22
+        left: Browser.isDevice ? 10 : 12,
+        right: Browser.isDevice ? 10: 19
     };
 
     public margin4: MarginModel = {
-        left: Browser.isDevice ? 10 : 19
+        left: Browser.isDevice ? 10 : 9,
+        right: Browser.isDevice ? 10: 19
     };
 
     public margin5: MarginModel = {
-        left: Browser.isDevice ? 10 : 13
+        left: Browser.isDevice ? 10 : 3,
+        right: Browser.isDevice ? 10: 19
     };
 }

@@ -1,0 +1,35 @@
+<div class="control-section">
+  <div class="col-lg-12 content-wrapper">
+    <ejs-schedule #scheduleObj width='100%' height='650px' [allowInline]="allowInline" [eventSettings]="eventSettings"
+      [selectedDate]="selectedDate" [group]="groupSettings">
+      <e-views>
+        <e-view option="TimelineWeek"></e-view>
+        <e-view option="TimelineMonth"></e-view>
+      </e-views>
+      <e-resources>
+        <e-resource field='TaskId' title='Category' name='Categories' [allowMultiple]='allowMultiple'
+          [dataSource]='categoriesData' textField='text' idField='id' groupIDField='groupId' colorField='color'>
+        </e-resource>
+      </e-resources>
+    </ejs-schedule>
+  </div>
+</div>
+
+<div id="action-description">
+  <p>This demo shows the experience of adding a new appointment or editing the existing appointment through inline mode.
+    Click on the cells to add an appointment with the subject alone and click on the appointment to edit the subject of
+    the appointment.</p>
+</div>
+
+<div id="description">
+  <p>The features enable user to add or edit the appointment through inline mode. Click on the cells or the existing
+    appointments to enable inline mode. You can press the ENTER key on the selected cell or appointment.</p>
+  <p>
+    The feature activates when you enable the <code>allowInline</code> property.
+  </p>
+  <ul>
+    <li>For adding an appointment, the appointment will be created based on the selected time and subject once you
+      focused-out or press ENTER key.</li>
+    <li>For editing an appointment, the appointment will be saved based on the modified subject.</li>
+  </ul>
+</div>

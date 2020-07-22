@@ -1,0 +1,60 @@
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { extend } from '@syncfusion/ej2-base';
+import { KanbanComponent, CardSettingsModel, SortDirection, SortOrderBy } from '@syncfusion/ej2-angular-kanban';
+import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { kanbanData } from './data';
+
+@Component({
+    selector: 'control-content',
+    templateUrl: 'sorting.html',
+    encapsulation: ViewEncapsulation.None
+})
+export class SortingComponent {
+    @ViewChild('kanbanObj') kanbanObj: KanbanComponent;
+    @ViewChild('sortBy') sortByObj: DropDownListComponent;
+    @ViewChild('field') fieldObj: DropDownListComponent;
+    @ViewChild('direction') directionObj: DropDownListComponent;
+    public kanbanData: Object[] = extend([], kanbanData, null, true) as Object[];
+    public cardSettings: CardSettingsModel = {
+        headerField: 'Id',
+        contentField: 'Summary'
+    };
+    public sortByData: Object[] = [
+        { Id: 'DataSourceOrder', Sort: 'Data Source Order' },
+        { Id: 'Index', Sort: 'Index' },
+        { Id: 'Custom', Sort: 'Custom' }
+    ];
+    public fields: Object = { text: 'Sort', value: 'Id' };
+    public fieldData: string[] = ['None'];
+    public directionData: string[] = ['Ascending', 'Descending'];
+    change(args: ChangeEventArgs): void {
+        if (args.value === 'DataSourceOrder' || args.value === 'Index') {
+            const data: string = args.value === 'Index' ? 'RankId' : 'None';
+            this.setFieldValue(data);
+        }
+        if (args.value === 'Custom') {
+            this.fieldObj.setProperties({ dataSource: ['Priority', 'RankId', 'Summary'] });
+            this.fieldObj.value = 'Priority';
+            this.fieldObj.setProperties({ enabled: true });
+        }
+    }
+    setFieldValue(data: string): void {
+        this.fieldObj.setProperties({ dataSource: [data] });
+        this.fieldObj.value = data;
+        this.fieldObj.setProperties({ enabled: false });
+    }
+    sortClick(): void {
+        this.setKanbanProperties();
+    }
+    clearClick(): void {
+        this.sortByObj.value = 'DataSourceOrder';
+        this.directionObj.value = 'Ascending';
+        this.setFieldValue('None');
+        this.setKanbanProperties();
+    }
+    setKanbanProperties() {
+        this.kanbanObj.sortSettings.sortBy = this.sortByObj.value as SortOrderBy;
+        this.kanbanObj.sortSettings.field = this.fieldObj.value as string;
+        this.kanbanObj.sortSettings.direction = this.directionObj.value as SortDirection;
+    }
+}

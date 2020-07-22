@@ -36,7 +36,7 @@ export class SelectionAPIComponent implements OnInit {
         let startRow: number = this.numerictext1.value;
         let toRow: number = this.numerictext2.value;
         let rows: number[] = [];
-        for ( let i: number = startRow ; i <= toRow ; i++ ) {
+        for ( let i: number = startRow > toRow ? toRow : startRow ; i <= (startRow > toRow ? startRow : toRow) ; i++ ) {
             rows.push(i);
         }
         this.treegrid.selectRows(rows);

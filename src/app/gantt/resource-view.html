@@ -1,0 +1,32 @@
+<div id="action-description">
+    <p>This sample explains the Resource break down view in the Gantt chart that is 
+        how to visualize the list of tasks assigned to each resource in hierarchy manner and switch the resources as per users need by task
+        editing mode.If the no resources are mapped in a task, then it will come under “unassigned Tasks” category. 
+        This feature can be enabled by setting the <code>viewType</code> property to “ResourceView”.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-gantt id="ResourceView" #resourceview height="450px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns" [treeColumnIndex]="1"
+        [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" [editSettings]="editSettings" 
+        [allowSelection]="true" [allowResizing]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
+        [toolbar]="toolbar" [resourceFields] = "resourceFields"
+        [resources]="resources" viewType="ResourceView" [showOverAllocation]= "true" (toolbarClick)="toolbarClick($event)">
+    </ejs-gantt>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see the resource break down from a bulk of tasks done by mapping the predefined resource ID-s to each task and resource information can be shown by using the <code>labelSetting</code> property. 
+        Using the toolbar action, you can perform CRUD operation for resource allocation based on their availability and task complexity.</p>
+        <p>The resources and tasks assigned to those resources can be grouped into categories. Resources can be mapped using the <code>resourceFields:-</code>.</p>
+        <p><code>ID</code>: To map resource ID.</p>
+        <p><code>Name</code>: To map resource name.</p>
+        <p><code>Unit</code>: To map resource unit.</p>
+        <p><code>Group</code>: To map resource group.</p>
+    <p>
+        The Gantt control features are segregated into individual feature-wise modules. To use a selection, inject the
+        <code>Selection</code> module using the <code>Gantt.Inject(Selection)</code> method. To use markers, inject the
+        <code>DayMarkers</code> module using the <code>Gantt.Inject(DayMarkers)</code> method.
+        To edit,  inject the <code>Toolbar</code> module using the <code>Gantt.Inject(Toolbar)</code> method and <code>Edit</code> module
+        using the <code>Gantt.Inject(Edit)</code> method.
+    </p>     
+</div>

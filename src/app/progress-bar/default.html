@@ -1,0 +1,75 @@
+<div class="control-section">
+    <div class="row" style="margin-top: 8%;">
+        <div class="col-lg-3 col-md-3 col-3" align="center">
+            <div id="circular-container">
+                <ejs-progressbar #circular id='circular1' [type]='type' [maximum]='max' [minimum]='min'
+                [value]='value' [width]='width' [height]='height'
+                [animation]='animation' (load)='load($event)'>
+            </ejs-progressbar>
+            </div>
+            <div class="progress-text-align">Determinate</div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-3" align="center">
+            <div id="rtl-container">
+                <ejs-progressbar #circular1 id='circular2' [type]='type1' [maximum]='max1' [minimum]='min1'
+                [value]='value1' [width]='width' [height]='height'
+                [animation]='animation' (load)='load($event)'
+                [secondaryProgress]='secondaryProgress1'>
+            </ejs-progressbar>
+            </div>
+            <div class="progress-text-align">Buffer </div>
+
+        </div>
+        <div class="col-lg-3 col-md-3 col-3" align="center">
+            <div id="track-container">
+                <ejs-progressbar #circular2 id='circular3' [type]='type2' [maximum]='max2' [minimum]='min2'
+                        [value]='value2' [width]='width' [height]='height'
+                        [animation]='animation' (load)='load($event)' [segmentCount]='segmentcount2'
+                        >
+                    </ejs-progressbar>
+            </div>
+            <div class="progress-text-align">Segment</div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-3" align="center">
+            <div id="rounded-container">
+                <ejs-progressbar #circular3 id='circular4' [type]='type3' [maximum]='max3' [minimum]='min3'
+                [value]='value3' [width]='width' [height]='height' [isIndeterminate]='isIndeterminate3'
+                [animation]='animation' (load)='load($event)'>
+            </ejs-progressbar>
+            </div>
+            <div class="progress-text-align">Indeterminate</div>
+        </div>
+    </div>
+    <div class="row" align="center">
+        <button id="reLoad" (click)="onClick()" class="e-control e-btn e-lib e-outline e-primary">Reload</button>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample illustrates a circular progress bar with determinate and indeterminate states, segments and buffer value.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the circular progress bar. Progress bar is used to
+        visualize the progression of an extended operation. The sample shows the determinate and indeterminate states,
+        buffer and segments of circular progress bar.
+    </p>
+</div>
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+    .progress-text-align {
+        font-family: Roboto-Regular;
+        font-size: 14px;
+        color: #3D3E3C;        
+    }
+    #reLoad {
+        border-radius: 4px;
+        text-transform: capitalize;
+        margin-top: 3%;
+    }
+</style>

@@ -2,7 +2,8 @@
  * Export sample
  */
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { MapsTheme, Maps, Marker, MapsTooltip, ILoadEventArgs, ExportType } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, Maps, Marker, MapsTooltip, ILoadEventArgs, ExportType, ShapeLayerType } from '@syncfusion/ej2-angular-maps';
+import { PdfExportService, ImageExportService } from '@syncfusion/ej2-angular-maps';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { MapAjax } from '@syncfusion/ej2-maps';
 declare var require: any;
@@ -11,11 +12,14 @@ Maps.Inject(Marker, MapsTooltip);
 @Component({
     selector: 'control-content',
     templateUrl: 'export.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    providers: [PdfExportService, ImageExportService]
 })
 export class MapsExportComponent {
     @ViewChild('maps')
     public maps: Maps;
+    public allowPdfExport: boolean = true;
+    public allowImageExport: boolean = true;
     // custom code start
     public load = (args: ILoadEventArgs) => {
         let theme: string = location.hash.split('/')[1];
@@ -66,12 +70,33 @@ export class MapsExportComponent {
         this.maps.export(<ExportType>this.exportType.value, fileName);
     }
     public exportType: DropDownList;
+    public layerType: DropDownList;
+    public modeData : string[] = ['JPEG', 'PNG', 'PDF', 'SVG'];
     ngOnInit(): void {
         this.exportType = new DropDownList({
             index: 0,
+            dataSource: this.modeData,
             width: 90,
         });
         this.exportType.appendTo('#exporttype');
+        this.layerType = new DropDownList({
+            index: 0,
+            width: 90,
+            change: () => {
+                if (this.layerType.value === 'OSM') {
+                    if (this.exportType.value === 'SVG') {
+                        this.exportType.value = this.modeData[0];
+                    }
+                    this.exportType.dataSource = this.modeData.slice(0, 3);
+                    
+                } else {
+                    this.exportType.dataSource = this.modeData;
+                }
+                this.maps.layers[this.maps.layersCollection.length - 1].layerType = <ShapeLayerType>this.layerType.value;
+                this.maps.refresh();
+            }
+        });
+        this.layerType.appendTo('#layertype');
     }
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = [ 'world-map.json'];

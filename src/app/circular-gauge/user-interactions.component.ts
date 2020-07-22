@@ -30,14 +30,19 @@ export class UserInteractionComponent {
     public minorTicks: Object = {
         useRangeColor: true
     };public dragMove(args: IPointerDragEventArgs): void {
-        this.pointerValue = Math.round(args.currentValue);
-        document.getElementById('pointerValue').innerHTML = 'Pointer Value <span> &nbsp;&nbsp;&nbsp;' + this.pointerValue;
-        (<HTMLInputElement>document.getElementById('value')).value = this.pointerValue.toString();
-        this.circulargauge.setAnnotationValue(0, 0, this.content + this.pointerValue + ' MPH</span></div>');
+        if (isNaN(args.rangeIndex)) {
+            this.pointerValue = Math.round(args.currentValue);
+            document.getElementById('pointerValue').innerHTML = 'Pointer Value <span> &nbsp;&nbsp;&nbsp;' + this.pointerValue;
+            (<HTMLInputElement>document.getElementById('value')).value = this.pointerValue.toString();
+            this.circulargauge.setAnnotationValue(0, 0, this.content + this.pointerValue + ' MPH</span></div>');
+        }
+
     };
     public dragEnd(args: IPointerDragEventArgs): void {
         this.pointerValue = Math.round(args.currentValue);
-        this.setPointersValue(this.circulargauge, this.pointerValue);
+        if (isNaN(args.rangeIndex)) {
+            this.setPointersValue(this.circulargauge, this.pointerValue);
+                                    }
     };
     // custom code start
     public load(args: ILoadedEventArgs): void {
@@ -56,8 +61,8 @@ export class UserInteractionComponent {
         let color: string = getRangeColor(pointerValue, <Range[]>(circulargauge.axes[0].ranges), circulargauge.axes[0].pointers[0].color);
         circulargauge.axes[0].pointers[0].color = color;
         circulargauge.axes[0].pointers[1].color = color;
-        circulargauge.axes[0].pointers[0].animation.enable = true;
-        circulargauge.axes[0].pointers[1].animation.enable = true;
+        circulargauge.axes[0].pointers[0].animation.enable = false;
+        circulargauge.axes[0].pointers[1].animation.enable = false;
         circulargauge.axes[0].pointers[0].needleTail.color = color;
         circulargauge.axes[0].pointers[1].needleTail.color = color;
         circulargauge.axes[0].pointers[0].cap.border.color = color;
@@ -78,6 +83,10 @@ export class UserInteractionComponent {
         document.getElementById('enable').onchange = () => {
             let value: boolean = (<HTMLInputElement>document.getElementById('enable')).checked;
             this.circulargauge.enablePointerDrag = value;
+        };
+        document.getElementById('rangedrag').onchange = () => {
+            let value: boolean = (<HTMLInputElement>document.getElementById('rangedrag')).checked;
+            this.circulargauge.enableRangeDrag = value;
         };
     }
     constructor() {

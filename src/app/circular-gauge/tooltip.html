@@ -6,7 +6,7 @@
 </div>
 <div class="control-section">
     <div id="tooltip-container">
-        <ejs-circulargauge (load)='load($event)' (tooltipRender)='tooltipRender($event)' (dragEnd)='dragEnd($event)' style="display: block;" #tooltipContainer='' enablePointerDrag='true'
+        <ejs-circulargauge (load)='load($event)' id='gauge' (tooltipRender)='tooltipRender($event)' (dragEnd)='dragEnd($event)' style="display: block;" #tooltipContainer='' enablePointerDrag='true'
             [tooltip]='tooltip' [title]='title' [titleStyle]='titleStyle'>
             <e-axes>
                 <e-axis radius='90%' minimum=0 maximum=120 startAngle=240 endAngle=120 [minorTicks]='minorTicks'
@@ -27,7 +27,6 @@
     </div>
 </div>
 <div id="description">
-    <p style="font-weight: 500">Description</p>
     <p>
 	In this example, you can see how to show the tooltip for pointer and ranges in gauge, to see the tooltip in action, hover pointer or range bar or tap on pointer or range bar in touch enabled devices.
     </p>

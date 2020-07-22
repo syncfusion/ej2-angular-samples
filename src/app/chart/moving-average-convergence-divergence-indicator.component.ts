@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, TechnicalIndicatorModel, MacdType } from '@syncfusion/ej2-angular-charts';
 import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 /**
@@ -12,6 +12,25 @@ import { Browser } from '@syncfusion/ej2-base';
     encapsulation: ViewEncapsulation.None
 })
 export class MacdIndicatorComponent {
+    public period: number = 3;
+    public fastPeriod: number = 8;
+    public slowPeriod: number = 5;
+    public macdType: string = 'Both';
+    // indicators
+    public indicators: TechnicalIndicatorModel[] = [
+        {
+            type: 'Macd',
+            xName: 'x',
+            field: 'Close',
+            fill: 'blue',
+            yAxisName: 'secondary',
+            period: this.period,
+            fastPeriod: this.fastPeriod,
+            slowPeriod: this.slowPeriod,
+            macdType: this.macdType as MacdType,
+            seriesName: 'Apple Inc'
+        }
+    ];
     public data1: Object[] = chartData;
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
@@ -60,14 +79,10 @@ export class MacdIndicatorComponent {
     public crosshair: Object = {
         enable: true, lineType: 'Vertical'
     };
-    public fastPeriod: number = 8;
-    public slowPeriod: number = 5;
-    public macdType: string = 'Both';
 
     public legendSettings: Object = {
         visible: false
     };
-    public period: number = 3;
     public chartArea: Object = {
         border: {
             width: 0

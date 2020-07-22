@@ -52,8 +52,7 @@ export class MapsDefaultComponent {
             animationDuration: 0 
         }, 
         { 
-            visible: true, 
-            tooltipSettings: { visible: true },
+            visible: true,
             template: '<div id="marker1" class="markersTemplate" style="color:white;">Asia' + '</div>', 
             dataSource: [{ latitude: 50.32087157990324, longitude: 90.015625 }], 
             animationDuration: 0 

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent, getFormatFromType } from '@syncfusion/ej2-angular-spreadsheet';
 /**
  * Cell Data Binding Spreadsheet Controller
  */
@@ -19,9 +19,5 @@ export class CellDataBindingController {
     public styles = { fontWeight: 'bold', textAlign: 'center' };
     public styles2 = { fontWeight: 'bold', textAlign: 'right' };
     public styles3 = { fontWeight: 'bold' };
-    dataBound() {
-        if (!this.spreadsheetObj.isOpen && this.spreadsheetObj.sheets[this.spreadsheetObj.activeSheetTab - 1].name === "Monthly Budget") {
-            this.spreadsheetObj.numberFormat('$#,##0.00', 'D2:D13');
-        }
-    }
+    currencyFormat: string = getFormatFromType('Currency');
 }

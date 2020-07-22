@@ -1,5 +1,5 @@
 /**
- * RTE tribute Sample
+ * Rich Text Editor tribute Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ToolbarService, LinkService, ImageService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';

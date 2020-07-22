@@ -13,6 +13,7 @@ export class GanttTasklabelTemplateComponent implements OnInit {
     public columns: object[];
     public splitterSettings: object;
     public resources: object[];
+    public resourceFields: object ;
     public ngOnInit(): void {
         this.data = labelData;
         this.resources = editingResources;
@@ -26,6 +27,10 @@ export class GanttTasklabelTemplateComponent implements OnInit {
             dependency: 'Predecessor',
             resourceInfo: 'resources',
             child: 'subtasks'
+        };
+        this.resourceFields = {
+            id: 'resourceId',
+            name: 'resourceName'
         };
         this.columns = [
             { field: 'TaskID', width: 60 },

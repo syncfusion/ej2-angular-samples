@@ -8,14 +8,7 @@
         <ejs-chart #chart style='display:block;' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)'
             (animationComplete)='animationComplete($event)' [chartArea]='chartArea' [width]='width' align='center' [selectionMode]='selectionMode'
             [chartArea]='chartArea' [legendSettings]='legend' [selectedDataIndexes]='selectedDataIndexes' (chartMouseUp)='chartMouseUp($event)'
-            (loaded)='loaded($event)'>
-            <e-annotations>
-              <e-annotation x='20%' y='25%' coordinateUnits='Pixel' region='Series'>
-                <ng-template #content>
-                    <div id="chart_annotation" style="width: 200px; height: 200px"></div>
-                </ng-template>
-              </e-annotation>
-            </e-annotations>
+            (loaded)='loaded($event)' [annotations]='annotations'>
             <e-series-collection>
                 <e-series [dataSource]='dataSource' type='StackingColumn' xName='x' yName='y0' name='UK'>
                 </e-series>

@@ -1,0 +1,45 @@
+<div id="action-description">
+    <p>This sample demonstrates the Grid component with the infinite scrolling feature.
+    </p>
+</div>
+<div class="control-section">
+        <div class='div-button'>
+                <button ejs-button (click)='onClick($event)' cssClass='e-info'>Load 100K Data</button>
+                <span id="popup">
+                    <span id="gif" class="image"></span>
+                </span>
+            </div>
+    <ejs-grid #grid [dataSource]='vData' [enableInfiniteScrolling]='true' height='400' [pageSettings]='pageSettings'>
+        <e-columns>
+            <e-column field='FIELD1' headerText='Player Name' width='120'></e-column>
+            <e-column field='FIELD2' headerText='Year' width='100'></e-column>
+            <e-column field='FIELD3' headerText='Stint' width='120'></e-column>
+            <e-column field='FIELD4' headerText='TMID' width='120'></e-column>
+            <e-column field='FIELD5' headerText='LGID' width='120'></e-column>
+            <e-column field='FIELD6' headerText='GP' width='120'></e-column>
+            <e-column field='FIELD7' headerText='GS' width='120'></e-column>
+        </e-columns>
+    </ejs-grid>
+</div>
+
+<div id='description'>
+    <p>
+        The Grid Infinite scrolling, allows you to load data in lazy loading concept, which means the buffer data is loaded only when the scrollbar reaches the end of the scroller.
+        To enable Infinite scrolling, set <code><a target="_blank" class="code"
+            href="http://ej2.syncfusion.com/documentation/grid/api-grid.html#enableinfinitescrolling">
+            enableInfiniteScrolling </a></code> property as true.
+    </p>
+    <p>
+        Note: The <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-grid.html#height">
+        height</a></code> property must be defined when enabling <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/documentation/grid/api-grid.html#enableinfinitescrolling">
+        enableInfiniteScrolling </a></code>.
+    </p>
+    <p>
+        In this demo, Grid enabled infinite scrolling.
+    </p>
+    <p style='font-weight: 500'>Injecting Module:</p>
+    <p>Grid component features are segregated into individual feature-wise modules. To use Infinitescrolling feature, we need
+        to inject <code>InfiniteScrollService</code> into the <code>@NgModule.providers</code> section.</p>
+</div>

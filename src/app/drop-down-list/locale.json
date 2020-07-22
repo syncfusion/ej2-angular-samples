@@ -2,31 +2,31 @@
     "de": {
         "dropdowns": {
             "noRecordsTemplate": "Keine Aufzeichnungen gefunden",
-            "actionFailureTemplate": "Die Anforderung ist fehlgeschlagen"
+            "actionFailureTemplate": "Anfrage fehlgeschlagen"
         }
     },
     "ar": {
         "dropdowns": {
-            "noRecordsTemplate": "لا توجد سجلات",
-            "actionFailureTemplate": "أخفق الطلب"
+            "noRecordsTemplate": "لا توجد سجلاتلات",
+            "actionFailureTemplate": "الطلب فشل"
         }
     },
     "en": {
         "dropdowns": {
-            "noRecordsTemplate": "No Records Found",
-            "actionFailureTemplate": "The Request Failed"
+            "noRecordsTemplate": "No records found",
+            "actionFailureTemplate": "Request failed"
         }
     },
     "zh": {
         "dropdowns": {
-            "noRecordsTemplate": "没有找到记录",
-            "actionFailureTemplate": "请求失败"
+            "noRecordsTemplate": "沒有找到記錄",
+            "actionFailureTemplate": "請求失敗"
         }
     },
     "fr-CH": {
         "dropdowns": {
             "noRecordsTemplate": "Aucun enregistrement trouvé",
-            "actionFailureTemplate": "La demande a échoué"
+            "actionFailureTemplate": "Demande échoué"
         }
     }
 }

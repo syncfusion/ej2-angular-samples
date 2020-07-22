@@ -1,5 +1,5 @@
 /**
- * RichTextEditor Blog-post sample
+ * Rich Text Editor Blog-post sample
  */
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { RichTextEditorComponent, ToolbarService, LinkService, ImageService } from '@syncfusion/ej2-angular-richtexteditor';

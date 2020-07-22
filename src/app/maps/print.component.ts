@@ -2,7 +2,7 @@
  * Print sample
  */
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { MapsTheme, Maps, Legend, MapsTooltip, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, Maps, Legend, MapsTooltip, ILoadEventArgs, PrintService } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
 Maps.Inject( MapsTooltip, Legend);
 declare var require: any;
@@ -11,11 +11,13 @@ import population from './us-population.json';
 @Component({
     selector: 'control-content',
     templateUrl: 'print.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    providers: [PrintService]
 })
 export class MapsPrintComponent {
     @ViewChild('maps')
     public maps: Maps;
+    public allowPrint: boolean = true;
     // custom code start
     public load = (args: ILoadEventArgs) => {
         let theme: string = location.hash.split('/')[1];

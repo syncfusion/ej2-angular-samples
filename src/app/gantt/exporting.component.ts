@@ -12,6 +12,7 @@ export class GanttExportingComponent implements OnInit {
     public ganttObj: GanttComponent;
     public data: object[];
     public resources: object[];
+    public resourceFields: object ;
     public taskSettings: object;
     public timelineSettings: object;
     public gridLines: string;
@@ -33,7 +34,11 @@ export class GanttExportingComponent implements OnInit {
             child: 'subtasks',
             resourceInfo: 'resources'
         };
-        this.toolbar = ['ExcelExport', 'CsvExport'];
+        this.resourceFields = {
+            id: 'resourceId',
+            name: 'resourceName'
+        };
+        this.toolbar = ['ExcelExport', 'CsvExport', 'PdfExport'];
         this.timelineSettings = {
             topTier: {
                 unit: 'Week',
@@ -62,16 +67,20 @@ export class GanttExportingComponent implements OnInit {
             { field: 'EndDate' },
             { field: 'Duration' },
             { field: 'Predecessor' },
-            { field: 'Progress' },
             { field: 'resources' },
+            { field: 'Progress' }
         ];
     }
     toolbarClick(args?: ClickEventArgs): void {
+        debugger;
         if (args.item.id === 'GanttExport_excelexport') {
             this.ganttObj.excelExport();
         }
         else if (args.item.id === "GanttExport_csvexport") {
             this.ganttObj.csvExport();
+        }
+        else if (args.item.id === "GanttExport_pdfexport") {
+            this.ganttObj.pdfExport();
         }
     }
 }

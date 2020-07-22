@@ -1,5 +1,5 @@
 /**
- * RTE Inline Sample
+ * Rich Text Editor Inline Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ToolbarService, LinkService, ImageService, FormatModel, FontFamilyModel } from '@syncfusion/ej2-angular-richtexteditor';

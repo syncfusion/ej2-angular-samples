@@ -165,7 +165,9 @@ export class UmlClassDiagramComponent {
     obj.style = { fill: '#26A0DA', strokeColor: 'white' };
     return obj;
   }
-
+  public created(): void {
+    this.diagram.fitToPage();
+  }
   // Set the default values of connectors.
   public getConnectorDefaults(connector: ConnectorModel): ConnectorModel {
     connector.shape = {

@@ -1,0 +1,99 @@
+<div class="control-section kanban-validation ">
+    <div class="col-lg-9 content-wrapper">
+        <ejs-kanban #kanbanObj cssClass='kanban-validation' keyField="Status" [dataSource]='kanbanData'
+            [cardSettings]='cardSettings' [swimlaneSettings]='swimlaneSettings'>
+            <e-columns>
+                <e-column headerText='To Do' keyField='Open' allowToggle='true' showItemCount='true' minCount='6'maxCount='8'>
+                </e-column>
+                <e-column headerText='In Progress' keyField='InProgress' allowToggle='true' showItemCount='true'
+                  allowToggle='true' minCount='2'></e-column>
+                <e-column headerText='Done' keyField='Close' allowToggle='true' showItemCount='true' allowToggle='true'
+                  maxCount='4'></e-column>
+            </e-columns>
+        </ejs-kanban>
+        <ejs-dialog #Dialog [buttons]='dlgButtons' [header]='header' [showCloseIcon]='showCloseIcon' [isModal]='isModal' [visible]='visible' [width]='width'>
+        </ejs-dialog>
+    </div>
+    <div class="col-lg-3 property-section property-customization">
+        <div class="property-panel-section">
+            <p class="property-panel-header">Constraint</p>
+            <div class="property-panel-content">
+                <table class="e-constraint-table">
+                    <tr>
+                        <td class="e-constraint-label">
+                            <div>Type</div>
+                        </td>
+                        <td>
+                            <div>
+                                <ejs-dropdownlist id='type' #dropdown [dataSource]='columnType'
+                                    (change)='changeContraintType($event)' value='Column'>
+                                </ejs-dropdownlist>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p class="property-panel-header">Validate Constraints</p>
+            <div class="property-panel-content">
+                <form id="column" [formGroup]="reactForm" novalidate="">
+                    <table class="e-constraint-table">
+                        <tr>
+                            <td class="e-constraint-label">
+                                <div>Columns</div>
+                            </td>
+                            <td>
+                                <ejs-dropdownlist formControlName="check" id='key' #dropdownHeader
+                                    [dataSource]='statusData' (change)='changeColumns($event)' [fields]='fields'
+                                    placeholder='Header Text '>
+                                </ejs-dropdownlist>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="e-constraint-label">
+                                <div>MinCount</div>
+                            </td>
+                            <td>
+                                <ejs-numerictextbox #min formControlName="minIndex" id="minIndex" format='###.##'
+                                    min='0' placeholder="Minimum Count"></ejs-numerictextbox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="e-constraint-label">
+                                <div>MaxCount</div>
+                            </td>
+                            <td>
+                                <ejs-numerictextbox #max formControlName="maxIndex" id="maxIndex" format='###.##'
+                                    min='0' placeholder="Maximum Count"></ejs-numerictextbox>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="e-validate" style="padding-top: 13px;text-align: center;">
+                        <button ejs-button id='validate' class="e-btn" (click)="onclick()">Validate</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+  <p>This sample demonstrates how to limit the minimum and maximum number of cards to each column of the Kanban component.
+    Configured the options in the property panel to change the constraint type and related attributes.</p>
+</div>
+<div id="description">
+  <p>This sample validates the number of cards in the particular column or swimlane using the
+    <code>constraintType</code> property.
+    This property contains two types:</p>
+  <ul>
+    <li>Column: Validates the number of cards based on the particular column.
+      By default, column validation is applied to Kanban board.</li>
+    <li>Swimlane: Validation applies based on number of cards in a particular column cell and swimlane.</li>
+  </ul>
+  <p>This sample contains the following properties: </p>
+  <ul>
+    <li>Columns: You can choose a column and set maximum and minimum limit to the selected column.</li>
+    <li>minCount: Minimum limit of cards required for each column.
+      If the cards count do not reach the minimum limit, it will indicate the validation failed state.</li>
+    <li>maxCount: Maximum limit of cards per column. If the cards count exceeds the maximum limit, it will indicate the
+      validation failed state.</li>
+  </ul>
+</div>

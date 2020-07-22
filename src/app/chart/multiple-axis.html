@@ -7,23 +7,7 @@
 <div class="control-section">
     <div align='center'>
         <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [axes]='axis' [legendSettings]='legend'>
-            <e-annotations>
-                <e-annotation x='Sun' y=35 coordinateUnits='Point' verticalAlignment='Top'>
-                    <ng-template #content>
-                            <div id="chart_cloud">
-                                <img src="./assets/chart/images/cloud.png"  style="width: 41px; height: 41px"/>
-                            </div>
-                    </ng-template>
-                </e-annotation>
-                <e-annotation x='Sat' y=34 coordinateUnits='Point' yAxisName='yAxis'>
-                    <ng-template #content>
-                            <div id="chart_cloud">
-                                <img src="./assets/chart/images/sunny.png"  style="width: 41px; height: 41px"/>
-                            </div>
-                    </ng-template>
-                </e-annotation>
-            </e-annotations>
+            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [axes]='axis' [legendSettings]='legend' [annotations]='annotations'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Germany' width=2>
                 </e-series>

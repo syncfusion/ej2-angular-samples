@@ -1,5 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { HtmlModel, DiagramComponent, SnapSettingsModel, SnapConstraints } from '@syncfusion/ej2-angular-diagrams';
+import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { HtmlModel, DiagramComponent, SnapSettingsModel, DiagramTools, NodeModel, SnapConstraints, ConnectorModel, AnnotationModel } from '@syncfusion/ej2-angular-diagrams';
 import { CircularGauge, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-circulargauge';
 
 
@@ -7,39 +7,6 @@ import { CircularGauge, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-cir
  * Sample for ComplexShapes
  */
 
-function getHtmlContent(): HTMLElement {
-    let div: HTMLElement = document.getElementById('gauge');
-    let circularGauge: CircularGauge = new CircularGauge({
-        load: (args: ILoadedEventArgs) => {
-            let selectedTheme: string = location.hash.split('/')[1];
-            selectedTheme = selectedTheme ? selectedTheme : 'Material';
-            args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
-        },
-        axes: [{
-            lineStyle: { width: 10, color: 'transparent' },
-            labelStyle: {
-                position: 'Inside', useRangeColor: false,
-                font: { size: '12px', fontFamily: 'Roboto', fontStyle: 'Regular' }
-            }, majorTicks: { height: 10, offset: 5, color: '#9E9E9E' }, minorTicks: { height: 0 },
-            annotations: [{
-                content: '<div><span style="font-size:14px; color:#9E9E9E; font-family:Regular">Speedometer</span></div>',
-                radius: '30%', angle: 0, zIndex: '1'
-            }, {
-                content: '<div><span style="font-size:20px; color:#424242; font-family:Regular">65 MPH</span></div>',
-                radius: '40%', angle: 180, zIndex: '1'
-            }],
-            startAngle: 210, endAngle: 150, minimum: 0, maximum: 120, radius: '80%',
-            ranges: [{ start: 0, end: 40, color: '#30B32D' }, { start: 40, end: 80, color: '#FFDD00' },
-            { start: 80, end: 120, color: '#F03E3E' }],
-            pointers: [{
-                value: 65, radius: '60%', color: '#757575', pointerWidth: 8,
-                cap: { radius: 7, color: '#757575' }, needleTail: { length: '18%', color: '#757575' }
-            }]
-        }]
-    });
-    circularGauge.appendTo('#gauge');
-    return div;
-}
 @Component({
     selector: 'control-content',
     templateUrl: 'custom-shapes.html',
@@ -49,12 +16,51 @@ function getHtmlContent(): HTMLElement {
 })
 
 export class ComplexShapesDiagramComponent {
-
+    @ViewChild('diagram')
     public diagram: DiagramComponent;
-    public htmlcontent: string = '<div id="gauge" style="height:100%; width:100%; overflow:hidden;"> </div>';
-    public shape: HtmlModel = { type: 'HTML', content: this.htmlcontent };
-    public create(arg: Object): void {
-        getHtmlContent();
+    serverCreated = false;
+    
+    public pointerCap: Object = { radius: 7, color: '#757575' };
+    public needleTail: Object = { length: '18%', color: '#757575' };
+    public majorTicks: Object = { height: 10, offset: 5, color: '#9E9E9E' };        
+    public minorTicks: Object = { height: 0 };
+
+    public lineStyle: Object = {
+        width: 10, color: 'transparent'
+    };
+    public annotations: Object = [{
+        content: '<div><span style="font-size:14px; color:#9E9E9E; font-family:Regular">Speedometer</span></div>',
+        radius: '30%', angle: 0, zIndex:'1'
+    }, {
+        content: '<div><span style="font-size:24px; color:#424242; font-family:Regular">65 MPH</span></div>',
+        radius: '40%', angle: 180, zIndex:'1'
+    }];
+    //Initializing Label Style
+    public labelStyle: Object = {
+        position: 'Inside', useRangeColor: false,
+        font: { size: '12px', fontFamily: 'Roboto', fontStyle: 'Regular' }
+    };
+    public cap: Object = {
+        radius: 8,
+        border: { width: 0 }
+    };
+    public tail: Object = {
+        length: '25%',
     }
-    public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
+    public tool = DiagramTools.ZoomPan;
+    public snapSettings = { constraints: SnapConstraints.None };
+
+
+    public nodes: NodeModel[] = [
+        {
+            id: 'node1_template', offsetX: 300, offsetY: 250, width: 300, height: 300,
+            shape: { type: "HTML" }
+        }];
+
+    public targetElement: HTMLElement;
+
+    public node: NodeModel | ConnectorModel;
+        public created(): void {
+        this.diagram.bringToCenter(this.diagram.nameTable['node1_template'].wrapper.outerBounds);
+    }
 }

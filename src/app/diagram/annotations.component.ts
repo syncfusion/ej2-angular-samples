@@ -57,18 +57,22 @@ export class AnnotationDiagramComponent {
     public nodeDefaults(node: NodeModel): NodeModel {
         let obj: NodeModel = {
             width: 150, height: 50, style: { fill: '#D5EDED', strokeColor: '#7DCFC9', strokeWidth: 1 },
-            shape: { cornerRadius: 5 }
+            shape: { cornerRadius: 5 },
         };
         return obj;
     };
 
     public connDefaults(obj: ConnectorModel): void {
         obj.type = 'Orthogonal';
-        obj.constraints = ConnectorConstraints.None;
+        obj.constraints = ConnectorConstraints.Default &~ ConnectorConstraints.Select ;
     };
 
     ngOnInit(): void {
         document.getElementById('appearance').onclick = this.documentClick.bind(this);
+    }
+
+    public created(): void {
+        this.diagram.fitToPage();
     }
 
     public selectionChange(arg: ISelectionChangeEventArgs): void {

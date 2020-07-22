@@ -18,6 +18,7 @@ import { ContextMenuModule ,ToolbarModule  } from '@syncfusion/ej2-angular-navig
 import { ButtonModule, CheckBoxModule   } from '@syncfusion/ej2-angular-buttons';
 import { FirebaseController } from './firebase.component';
 import { FTPController } from './ftp-file-provider.component';
+import { IBMCOSController } from './ibm-cos-node-file-provider.component';
 
 export const fileManagerAppRoutes: Object[] = [
     { path: ':theme/file-manager/overview', component: OverViewController, name: 'Overview', order: '01', category: 'File Manager', description: 'Angular FileManager component with full view of the File Manager like a windows explorer User Interface.' },
@@ -30,7 +31,8 @@ export const fileManagerAppRoutes: Object[] = [
     { path: ':theme/file-manager/nodejs-file-provider', component: NodeJSController, name: 'NodeJS File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the nodejs server database service.' },
     { path: ':theme/file-manager/amazon-s3-file-provider', component: AmazonS3Controller, name: 'Amazon S3 File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the Amazon S3 file provider service.' },
     { path: ':theme/file-manager/firebase', component: FirebaseController, name: 'Firebase Realtime File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the firebase realtime cloud storage database file provider service.' },
-    { path: ':theme/file-manager/ftp-file-provider', component: FTPController, name: 'FTP File Provider', order: '03', category: 'Cloud Service Providers', type: 'new', description: 'Angular FileManager component with how to configure and use the File Transfer protocol service.' }
+    { path: ':theme/file-manager/ftp-file-provider', component: FTPController, name: 'FTP File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the File Transfer protocol service.' },
+    { path: ':theme/file-manager/ibm-cos-node-file-provider', component: IBMCOSController, name: 'IBM Cloud File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the IBM Cloud Object Storage file provider service.' }
 ];
 
 export const fileRouter: ModuleWithProviders = RouterModule.forChild(fileManagerAppRoutes);
@@ -48,7 +50,8 @@ export const fileRouter: ModuleWithProviders = RouterModule.forChild(fileManager
         NodeJSController,
         AmazonS3Controller,
         FirebaseController,
-        FTPController
+        FTPController,
+        IBMCOSController
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,0 +1,44 @@
+<div id="action-description">
+    <p>This sample explains you about the default functionalities of the Dropdown Tree component.
+        Click the Dropdown Tree element, and then select an item from the hierarchical structure <code>options</code>
+        list.
+        The selected item's <code>value</code> and <code>text</code> property values will be shown in the property
+        panel.</p>
+</div>
+
+<div class="col-lg-8 control-section dropdowntree-default sb-property-border">
+    <div class="content-wrapper" style="height: 350px">
+        <div style="margin: 0px auto; width:280px; padding-top: 40px;">
+            <ejs-dropdowntree #sample id='default' [changeOnBlur]='false' (change)='onChange($event)' [fields]='fields'
+                popupHeight='220px' placeholder='Select a folder or file'></ejs-dropdowntree>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 property-section">
+    <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+            <table id="property" title="Properties" style="width: 100%; margin:10px">
+                <tr>
+                    <td style="padding:5px; width:25%">Value</td>
+                    <td>:<span id='value' style='padding-left:10px'></span></td>
+                </tr>
+                <tr>
+                    <td style="padding:5px; width:25%">Text</td>
+                    <td>:<span id='text' style='padding-left:10px'></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>The <code>Dropdown Tree</code> component contains a hierarchical structure list of pre-defined values from that
+        the user can
+        choose a single value. </p>
+    <p>The default sample explains you about the use of Dropdown Tree that allows the end-users to select an item from
+        the hierarchical structure <code>options</code> list. The selected item's <code>value</code> and
+        <code>text</code> property values will be displayed in
+        the property panel.
+    </p>
+</div>

@@ -78,7 +78,7 @@ export class MapsHighlightComponent {
                             latitude: 34.7827916, longitude: -98.3001709
                         },
                         {
-                            latitude: 34.0793936, longkitude: -98.5583496
+                            latitude: 34.0793936, longitude: -98.5583496
                         },
                         {
                             latitude: 36.1434199, longitude: -97.0690155

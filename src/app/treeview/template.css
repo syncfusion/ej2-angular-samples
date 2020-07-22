@@ -14,3 +14,17 @@
 .material .treeCount.e-badge {
         vertical-align: middle;
 }
+.nodetext {
+        float: left;
+}
+.e-rtl .nodetext {
+        float: right;
+}
+.nodebadge {
+        float: right;
+        margin-right: 5px
+}
+.e-rtl .nodebadge {
+        float: left;
+        margin-left: 5px
+}

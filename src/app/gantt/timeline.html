@@ -7,8 +7,7 @@
         <ejs-gantt id="ganttDefault" #gantt height="430px" [dataSource]="data" [taskFields]="taskSettings"
             [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [splitterSettings]="splitterSettings"
             [treeColumnIndex]="1" height="450px" [allowSelection]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
-            [highlightWeekends]="true" resourceNameMapping="resourceName" resourceIDMapping="resourceId" 
-            [resources]="resources">
+            [highlightWeekends]="true">
         </ejs-gantt>
     </div>
 
@@ -130,7 +129,7 @@
                                 <td style="width: 70%">
                                     <div>
                                         <ejs-dropdownlist #bottomFormatDropdown id='btFormat' [dataSource]='dayformat'
-                                            (change)='onChangebtFormat($event)' [fields]='formatFields'>
+                                            (change)='onChangebtFormat($event)' [fields]='formatFields' [value]='bottomFormatValue'>
                                         </ejs-dropdownlist>
                                     </div>
                                 </td>

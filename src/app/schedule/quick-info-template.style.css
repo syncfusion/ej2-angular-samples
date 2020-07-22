@@ -1,0 +1,83 @@
+.quick-info-header {
+  background-color: white;
+  padding: 8px 18px;
+}
+
+.quick-info-header-content {
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px 5px;
+}
+
+.quick-info-title {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.48px;
+  height: 22px;
+}
+
+.duration-text {
+  font-size: 11px;
+  letter-spacing: 0.33px;
+  height: 14px;
+}
+
+.content-area {
+  padding: 10px;
+  width: auto;
+}
+
+.event-content {
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+.meeting-type-wrap,
+.meeting-subject-wrap,
+.notes-wrap {
+  font-size: 11px;
+  color: #666;
+  letter-spacing: 0.33px;
+  height: 24px;
+  padding: 5px;
+}
+
+.event-content div label {
+  display: inline-block;
+  min-width: 45px;
+  color: #666;
+}
+
+.event-content div span {
+  font-size: 11px;
+  color: #151515;
+  letter-spacing: 0.33px;
+  line-height: 14px;
+  padding-left: 8px;
+}
+
+.cell-footer.e-btn {
+  background-color: #ffffff;
+  border-color: #878787;
+  color: #878787;
+}
+
+.cell-footer {
+  padding-top: 10px;
+}
+
+.e-quick-popup-wrapper .e-cell-popup .e-popup-content {
+  padding: 0 14px;
+}
+
+.e-quick-popup-wrapper .e-event-popup .e-popup-footer {
+  display: block;
+}
+
+.e-quick-popup-wrapper .e-popup-footer button:first-child {
+  margin-right: 5px;
+}

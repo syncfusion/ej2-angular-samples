@@ -1,0 +1,20 @@
+.property-panel-content .e-filter-table {
+  width: 100%;
+}
+
+.property-panel-content .e-filter-label {
+  width: 30%
+}
+
+.property-panel-content .e-reset {
+  padding-top: 13px;
+  text-align: center;
+}
+
+.property-panel-content td {
+  padding-top: 10px;
+}
+
+.property-panel-header {
+  padding-bottom: 0px;
+}

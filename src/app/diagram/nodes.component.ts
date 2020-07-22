@@ -59,6 +59,10 @@ export class NodeDiagramComponent {
     }
   }
 
+  public created(): void {
+    this.diagram.fitToPage();
+  }
+
   public onChangeLock(args: CheckBoxChangeEventArgs): void {
     for (let i: number = 0; i < this.diagram.nodes.length; i++) {
       let node: NodeModel = this.diagram.nodes[i];
@@ -117,7 +121,7 @@ export class NodeDiagramComponent {
     node.style.strokeWidth = width;
     node.style.strokeColor = '#024249';
     node.style.strokeDashArray = dashArray;
-    node.constraints &= con;
+  
     if (type === undefined) {
       node.style.gradient.type = 'None';
     } else {
@@ -135,6 +139,8 @@ export class NodeDiagramComponent {
     if (con & NodeConstraints.Shadow) {
       node.shadow = { angle: 45, distance: 15, opacity: 0.3, color: 'grey' };
       node.constraints |= con;
+    } else{
+        node.constraints &= con;
     }
     this.diagram.dataBind();
 

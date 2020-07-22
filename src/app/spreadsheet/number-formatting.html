@@ -1,10 +1,10 @@
 <div class="control-section">
-    <ejs-spreadsheet #numberFormat [showRibbon]="false" [showFormulaBar]="false" (dataBound)="dataBound()">
+    <ejs-spreadsheet #numberFormat [showRibbon]="false" [showFormulaBar]="false" (created)="created()">
         <e-sheets>
             <e-sheet name="Restaurant Invoice" selectedRange="E17">
-                <e-rangesettings>
-                    <e-rangesetting [dataSource]="data" startCell="A3"></e-rangesetting>
-                </e-rangesettings>
+                <e-ranges>
+                    <e-range [dataSource]="data" startCell="A3"></e-range>
+                </e-ranges>
                 <e-rows>
                     <e-row [height]=30>
                         <e-cells>
@@ -64,7 +64,7 @@
     </p>
     <p>
         More information about number formatting can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/spreadsheet/getting-started">
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/spreadsheet/formatting/#number-formatting">
             documentation</a> section.
     </p>
 </div>

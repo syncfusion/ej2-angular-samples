@@ -233,15 +233,17 @@ export class EventsDiagramComponent {
 
     public getEventDetails(args: any): void {
         let listView: any = document.getElementById('listview-def');
-        let listViewComponent: ListView = listView.ej2_instances[0];
-        let selectedItems: any = listViewComponent.getSelectedItems();
-        if (selectedItems.data.length > 0) {
-            let elementName: boolean = this.getName(selectedItems, args);
-            if (elementName) {
+        if (listView && listView.ej2_instances) {
+            let listViewComponent: ListView = listView.ej2_instances[0];
+            let selectedItems: any = listViewComponent.getSelectedItems();
+            if (selectedItems.data.length > 0) {
+                let elementName: boolean = this.getName(selectedItems, args);
+                if (elementName) {
+                    this.eventInformation(args);
+                }
+            } else {
                 this.eventInformation(args);
             }
-        } else {
-            this.eventInformation(args);
         }
     }
 

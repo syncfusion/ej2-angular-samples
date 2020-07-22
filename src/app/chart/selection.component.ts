@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ChartComponent, ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
-import { SelectionMode } from '@syncfusion/ej2-charts';
+import { SelectionMode, SelectionPattern, HighlightMode } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 /**
  * Sample for Selection in chart
@@ -36,9 +36,27 @@ export class SelectionChartComponent {
     ];
     @ViewChild('chart')
     public chart: ChartComponent;
+    public selectpattern: DropDownList;
+    public highpattern: DropDownList;
     public setMultiSelect(e: Event): void {
         this.chart.isMultiSelect = (<HTMLInputElement>e.target).checked === true;
         this.chart.dataBind();
+    }
+    public high(e: Event): void {
+        let pattern: HTMLSelectElement = document.getElementById('selhigh') as HTMLSelectElement;
+        if ((<HTMLInputElement>e.target).checked === true) {
+            pattern.style.display = 'block';
+            pattern.onchange = () => {
+                this.chart.highlightMode = <HighlightMode>this.selectionMode.value;
+                this.chart.highlightPattern = <SelectionPattern>pattern.value;
+                this.chart.dataBind();
+            };
+        } else {
+            this.chart.highlightMode = 'None';
+            this.chart.highlightPattern = 'None';
+            pattern.style.display = 'none';
+            this.chart.dataBind();
+        }
     }
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
@@ -58,29 +76,62 @@ export class SelectionChartComponent {
         visible: true,
         toggleVisibility: false
     };
- // custom code start
+    // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
-     // custom code end
+    // custom code end
     public title: string = 'Age Distribution by Country';
     public selectionMode: DropDownList;
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.selectionMode = new DropDownList({
             index: 0,
-            width: 80,
             change: () => {
                 let type: string = this.selectionMode.value.toString();
                 this.chart.selectionMode = <SelectionMode>type;
+                this.chart.highlightMode = <HighlightMode>type;
                 this.chart.dataBind();
             }
         });
         this.selectionMode.appendTo('#selmode');
+        this.selectpattern = new DropDownList({
+            index: 0,
+            change: () => {
+                this.chart.selectionPattern = <SelectionPattern>this.selectpattern.value;
+                this.chart.dataBind();
+            }
+        });
+        this.selectpattern.appendTo('#selpattern');
+        let highlight: DropDownList = new DropDownList({
+            index: 0,
+            placeholder: 'Select pattern values',
+            width: 120,
+            change: () => {
+                if (highlight) {
+                    this.chart.highlightPattern = <SelectionPattern>highlight.value;
+                } else {
+                    this.chart.highlightPattern  = 'None';
+                }
+                this.chart.dataBind();
+            }
+        });
+        highlight.appendTo('#selhigh');
+        document.getElementById('highlight').onchange = () => {
+            const element: HTMLInputElement = <HTMLInputElement>(document.getElementById('highlight'));
+            if (element.checked) {
+                this.chart.highlightMode = <HighlightMode>this.selectionMode.value;
+                this.chart.highlightPattern = <SelectionPattern>highlight.value;
+            } else {
+                this.chart.highlightMode = 'None';
+                this.chart.highlightPattern  = 'None';
+            }
+            this.chart.dataBind();
+        };
     }
     constructor() {
         //code
-    };
+    }
 
 }

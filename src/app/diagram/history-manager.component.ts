@@ -28,7 +28,9 @@ export class HistoryManagerDiagramComponent {
     public diagram: DiagramComponent;
     public tool = DiagramTools.ZoomPan;
     public snapSettings = { constraints: SnapConstraints.None };
-
+    public created(): void {
+        this.diagram.fitToPage();
+    }
     public nodes: NodeModel[] = [
         {
             id: 'node1', offsetX: 400, offsetY: 30, style: { fill: '#FFB2B2', strokeColor: '#FFB2B2' }, width: 70, height: 40,
@@ -151,7 +153,7 @@ export class HistoryManagerDiagramComponent {
 
     public startGroupAction(): void {
         let startGroupAction = (document.getElementById('startGroupAction') as any).ej2_instances[0];
-        if (startGroupAction.element.classList.contains('e-active')) {
+        if (startGroupAction.element.textContent === 'Start Group Action') {
             startGroupAction.content = 'End Group Action';
             this.diagram.startGroupAction();
         } else {
@@ -166,7 +168,4 @@ export class HistoryManagerDiagramComponent {
     public historyChange(): void {
         this.getValue();
     };
-    public created(): void {
-        this.diagram.fitToPage({ mode: 'Height' });
-    }
 }

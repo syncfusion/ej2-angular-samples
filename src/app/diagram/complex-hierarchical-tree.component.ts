@@ -42,7 +42,9 @@ export class ComplexHierarchicalTreeDiagramComponent {
             nodeModel.style = { fill: data['fillColor'], strokeWidth: 1, strokeColor: data['border'] };
         }
     };
-
+    public created(): void {
+        this.diagram.fitToPage();
+    };
     public connDefaults(connector: ConnectorModel): void {
         connector.type = 'Orthogonal';
         connector.cornerRadius = 7;

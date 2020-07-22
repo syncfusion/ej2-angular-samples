@@ -1,12 +1,34 @@
 <div id="action-description">
-    <p>This sample demonstrates basic rendering of the pivot table bound to JSON data extracted from a local file.</p>
+    <p>This sample demonstrates basic rendering of the pivot table bound to JSON or CSV data extracted from a local file.</p>
 </div>
 <div id="description">
-    <p>The pivot table supports JSON data source. The
-        <code>dataSourceSettings->dataSource</code> property can be assigned with the JSON data to populate the component.</p>
-    <p>In this demo, the JSON data is assigned from an external file.</p>
+    <p>The pivot table supports JSON and CSV data source. The
+        <code>dataSourceSettings->dataSource</code> property can be assigned with the source data to populate the pivot table.</p>
+    <p>In this demo, the JSON and CSV data is assigned from an external file.</p>
 </div>
 <div class="control-section" style="overflow:auto;">
-    <ejs-pivotview #pivotview id='PivotView' (load)='onLoad()' [dataSourceSettings]=dataSourceSettings width='100%' height='300' [gridSettings]='gridSettings'>
-    </ejs-pivotview>
+    <div id="dropdown-control" style="margin-bottom:5px;">
+        <table style="width: 350px;">
+            <tbody>
+                <tr style="height: 50px">
+                    <td>
+                        <div><b>Content Type:</b>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <select id="contenttype" name="ddl-view-mode">
+                                <option value='JSON' selected>JSON</option>
+                                <option value='CSV'>CSV</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="content-wrapper">
+        <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=jsonReport width='100%' height='290' [gridSettings]='gridSettings'>
+        </ejs-pivotview>
+    </div>
 </div>

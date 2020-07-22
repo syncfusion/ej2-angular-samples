@@ -1,5 +1,5 @@
 /**
- * RTE Print Sample
+ * Rich Text Editor Print Sample
  */
 import { Component } from '@angular/core';
 import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';

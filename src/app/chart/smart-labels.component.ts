@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-angular-charts';
+import { AccumulationDataLabelSettingsModel, LegendSettingsModel, TooltipSettingsModel } from '@syncfusion/ej2-angular-charts';
 
 /**
  * Sample for Smart Labels in Pie chart
@@ -32,20 +33,19 @@ export class SmartLabelsComponent {
         { 'x': 'North Korea', y: 2, text: 'North Korea: 2' }
     ];
     //Initializing Legend
-    public legendSettings: Object = {
+    public legendSettings: LegendSettingsModel = {
         visible: false
     };
-    public dataLabel: Object = {
+    public dataLabel: AccumulationDataLabelSettingsModel = {
         visible: true, position: 'Outside',
-        connectorStyle: { length: '10%' }, name: 'text',
+        connectorStyle: { length: '20px', type: 'Curve' }, name: 'text',
     };
-    public startAngle: number = 0;
-    public endAngle: number = 360;
+    public startAngle: number = 60;
     //Initializing Tooltip
-    public tooltip: Object = {
+    public tooltip: TooltipSettingsModel = {
         enable: true, format: '${point.x} : <b>${point.y}%</b>'
     };
-    public title: string = 'RIO Olympics Gold ';
+    public title: string = 'Rio Olympics Gold ';
      // custom code start
     public onLoad(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

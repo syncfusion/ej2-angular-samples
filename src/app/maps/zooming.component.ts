@@ -85,6 +85,13 @@ export class MapsZoomingComponent {
             maps.refresh();
         };
 
+        document.getElementById('pan').onchange = () => {
+            let element: HTMLInputElement = <HTMLInputElement>(document.getElementById('pan'));
+            let maps: Maps = <Maps>document.getElementById('container')['ej2_instances'][0];
+            maps.zoomSettings.enablePanning = element.checked;
+            maps.refresh();
+        };
+
         document.getElementById('doubletap').onchange = () => {
             let element: HTMLInputElement = <HTMLInputElement>(document.getElementById('doubletap'));
             let maps: Maps = <Maps>document.getElementById('container')['ej2_instances'][0];

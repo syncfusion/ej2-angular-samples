@@ -5,7 +5,7 @@
 <div class="control-section">
     <ejs-gantt id="columnTemplate" height="430px" [dataSource]="data" [taskFields]="taskSettings" 
         [labelSettings]="labelSettings" [splitterSettings]="splitterSettings" [rowHeight]=60 [treeColumnIndex]=1
-        height="450px" [allowSelection]="true" resourceNameMapping="resourceName" resourceIDMapping="resourceId" 
+        height="450px" [allowSelection]="true" [resourceFields] = "resourceFields"
         [resources]="resources" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true">
         <e-columns>
             <e-column field='TaskID' headerText='Task ID' textAlign='Left'></e-column>

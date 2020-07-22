@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, IAxisLabelRenderEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, IAxisLabelRenderEventArgs, ChartTheme, TechnicalIndicatorModel } from '@syncfusion/ej2-angular-charts';
 import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
@@ -14,6 +14,18 @@ import { Browser } from '@syncfusion/ej2-base';
 })
 export class AccumulationDistributionComponent {
     public data1: Object[] = chartData;
+    // indicators
+    public indicators: TechnicalIndicatorModel[] = [
+        {
+            type: 'AccumulationDistribution',
+            xName: 'x',
+            field: 'Close',
+            yAxisName: 'secondary',
+            fill: 'blue',
+            period: 3,
+            seriesName: 'Apple Inc'
+        }
+    ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
@@ -78,7 +90,6 @@ export class AccumulationDistributionComponent {
         visible: false
     };
     public width: Object = Browser.isDevice ? '100%' : '80%';
-    public period: number = 3;
     // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
@@ -89,5 +100,4 @@ export class AccumulationDistributionComponent {
     constructor() {
         //code
     };
-    
 }

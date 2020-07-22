@@ -81,19 +81,6 @@
   font-style: normal;
 }
 
-.layout #list-container #all.e-listview.e-list-template .e-list-wrapper.e-list-multi-line,
-.layout #list-container #received.e-listview.e-list-template .e-list-wrapper.e-list-multi-line,
-.layout #list-container #missed.e-listview.e-list-template .e-list-wrapper.e-list-multi-line {
-  padding: 5px;
-}
-
-.layout #list-container #all.e-listview.e-list-template .e-list-wrapper.e-list-avatar,
-.layout #list-container #received.e-listview.e-list-template .e-list-wrapper.e-list-avatar,
-.layout #list-container #missed.e-listview.e-list-template .e-list-wrapper.e-list-avatar {
-  padding-left: 50px;
-  padding-right: 5px;
-}
-
 .layout #list-container #all.e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
 .layout
   #list-container
@@ -107,6 +94,14 @@
   .e-avatar {
   top: 5px;
   left: 5px;
+}
+
+.e-listview.e-rtl.e-list-template .e-list-wrapper.e-list-avatar:not(.e-list-badge) {
+  padding: 5px 60px 5px 5px;
+}
+
+.e-listview.e-list-template .e-list-wrapper.e-list-avatar:not(.e-list-badge) {
+  padding: 5px 5px 5px 50px;
 }
 
 .layout #list-container #all,

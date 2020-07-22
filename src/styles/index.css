@@ -672,7 +672,10 @@
   content: '\e70a';
   font-size: 25px;
 }
-
+.bootstrap4 .copycode::before{
+    content:'\e77b';
+    font-size:25px;
+}
 .copy-tooltip {
   line-height: 32px;
   width: 32px;

@@ -1,5 +1,5 @@
 /**
- * RTE Template Driven Sample
+ * Rich Text Editor Template Driven Sample
  */
 import { Component, ViewChild } from '@angular/core';
 import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';

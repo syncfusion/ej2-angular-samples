@@ -3731,9 +3731,9 @@ export let fifaEventsData: Object[] = [
     }
 ];
 
-let msPerDay: number = 86400000;
-let msPerHour: number = 3600000;
-let currentTime: number = new Date().setMinutes(0, 0, 0);
+const msPerDay = 86400000;
+const msPerHour = 3600000;
+const currentTime: number = new Date().setMinutes(0, 0, 0);
 export let readonlyEventsData: Object[] = [
     {
         Id: 1,
@@ -3799,22 +3799,22 @@ export let readonlyEventsData: Object[] = [
 ];
 
 export function generateObject(start: number = new Date(2017, 6, 1).getTime(), end: number = new Date(2018, 6, 31).getTime()): Object[] {
-    let data: Object[] = [];
-    let names: string[] = [
+    const data: Object[] = [];
+    const names: string[] = [
         'Story Time for Kids', 'Camping with Turtles', 'Wildlife Warriors', 'Parrot Talk', 'Birds of Prey', 'Croco World',
         'Venomous Snake Hunt', 'Face Painting & Drawing events', 'Pony Rides', 'Feed the Giants', 'Jungle Treasure Hunt',
         'Endangered Species Program', 'Black Cockatoos Playtime', 'Walk with Jungle King', 'Trained Climbers', 'Playtime with Chimpanzees',
         'Meet a small Mammal', 'Amazon Fish Feeding', 'Elephant Ride'
     ];
-    let dayCount: number = 1000 * 60 * 60;
-    for (let a: number = start, id: number = 1; a < end; a += (dayCount * 24) * 2) {
-        let count: number = Math.floor((Math.random() * 9) + 1);
-        for (let b: number = 0; b < count; b++) {
-            let hour: number = Math.floor(Math.random() * 100) % 24;
-            let minutes: number = Math.round((Math.floor(Math.random() * 100) % 60) / 5) * 5;
-            let nCount: number = Math.floor(Math.random() * names.length);
-            let startDate: Date = new Date(new Date(a).setHours(hour, minutes));
-            let endDate: Date = new Date(startDate.getTime() + (dayCount * 2.5));
+    const dayCount: number = 1000 * 60 * 60;
+    for (let a: number = start, id = 1; a < end; a += (dayCount * 24) * 2) {
+        const count: number = Math.floor((Math.random() * 9) + 1);
+        for (let b = 0; b < count; b++) {
+            const hour: number = Math.floor(Math.random() * 100) % 24;
+            const minutes: number = Math.round((Math.floor(Math.random() * 100) % 60) / 5) * 5;
+            const nCount: number = Math.floor(Math.random() * names.length);
+            const startDate: Date = new Date(new Date(a).setHours(hour, minutes));
+            const endDate: Date = new Date(startDate.getTime() + (dayCount * 2.5));
             data.push({
                 Id: id,
                 Subject: names[nCount],
@@ -4932,5 +4932,88 @@ export let resourceSampleData: Object[] = [
         StartTime: new Date(2018, 5, 15, 18, 0),
         EndTime: new Date(2018, 5, 15, 20, 0),
         OwnerId: 1
+    }
+];
+
+export let quickInfoTemplateData: Object[] = [
+    {
+        RoomId: 10,
+        Id: 1,
+        Subject: 'Board Meeting',
+        Description: 'Meeting to discuss business goal of 2020.',
+        StartTime: '2020-01-05T04:00:00.000Z',
+        EndTime: '2020-01-05T05:30:00.000Z'
+    },
+    {
+        RoomId: 8,
+        Id: 2,
+        Subject: 'Training session on JSP',
+        Description: 'Knowledge sharing on JSP topics.',
+        StartTime: '2020-01-07T04:00:00.000Z',
+        EndTime: '2020-01-07T05:30:00.000Z'
+    },
+    {
+        RoomId: 3,
+        Id: 3,
+        Subject: 'Sprint Planning with Team members',
+        Description: 'Planning tasks for sprint.',
+        StartTime: '2020-01-09T04:00:00.000Z',
+        EndTime: '2020-01-09T05:30:00.000Z'
+    },
+    {
+        RoomId: 2,
+        Id: 4,
+        Subject: 'Meeting with Client',
+        Description: 'Customer meeting to discuss features.',
+        StartTime: '2020-01-11T03:30:00.000Z',
+        EndTime: '2020-01-11T05:00:00.000Z'
+    },
+    {
+        RoomId: 5,
+        Id: 5,
+        Subject: 'Support Meeting with Managers',
+        Description: 'Meeting to discuss support plan.',
+        StartTime: '2020-01-06T06:30:00.000Z',
+        EndTime: '2020-01-06T08:00:00.000Z'
+    },
+    {
+        RoomId: 1,
+        Id: 6,
+        Subject: 'Client Meeting',
+        Description: 'Meeting to discuss client requirements.',
+        StartTime: '2020-01-08T06:00:00.000Z',
+        EndTime: '2020-01-08T07:30:00.000Z'
+    },
+    {
+        RoomId: 7,
+        Id: 7,
+        Subject: 'Appraisal Meeting',
+        Description: 'Meeting to discuss employee appraisals.',
+        StartTime: '2020-01-10T05:30:00.000Z',
+        EndTime: '2020-01-10T07:00:00.000Z'
+    },
+    {
+        RoomId: 6,
+        Id: 8,
+        Subject: 'HR Meeting',
+        Description: 'Meeting to discuss HR plans.',
+        StartTime: '2020-01-05T07:30:00.000Z',
+        EndTime: '2020-01-05T09:00:00.000Z'
+    },
+    {
+        RoomId: 4,
+        Id: 9,
+        Subject: 'Customer Meeting',
+        Description: 'Meeting to discuss customer reported issues.',
+        StartTime: '2020-01 - 09T07: 00: 00.000Z',
+        EndTime: '2020-01 - 09T08: 30: 00.000Z'
+    },
+    {
+        RoomId: 9,
+        Id: 10,
+        Subject: 'Board Meeting',
+        Description: 'Meeting to discuss business plans.',
+        StartTime: '2020-01 - 11T07: 30: 00.000Z',
+        EndTime: '2020-01 - 11T09: 00: 00.000Z'
     }
 ];

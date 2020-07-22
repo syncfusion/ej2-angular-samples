@@ -1,5 +1,5 @@
 /**
- * RTE Auto save Sample
+ * Rich Text Editor Auto save Sample
  */
 import { Component, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import { ToolbarService, RichTextEditorComponent, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';

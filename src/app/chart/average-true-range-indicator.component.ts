@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, TechnicalIndicatorModel } from '@syncfusion/ej2-angular-charts';
 import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
@@ -13,6 +13,18 @@ import { Browser } from '@syncfusion/ej2-base';
     encapsulation: ViewEncapsulation.None
 })
 export class AtrIndicatorComponent {
+    // indicators
+    public indicators: TechnicalIndicatorModel[] = [
+        {
+            type: 'Atr',
+            xName: 'x',
+            field: 'Close',
+            yAxisName: 'secondary',
+            fill: 'blue',
+            period: 3,
+            seriesName: 'Apple Inc'
+        }
+    ];
     public data1: Object[] = chartData;
     //Initializing Primary X Axis
     public primaryXAxis: Object = {

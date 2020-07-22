@@ -14,7 +14,7 @@
                                 [majorTicks]='majorTicks1' [minorTicks]='minorTicks1' radius='90%' minimum=0 maximum=100
                                 [pointers]='pointers2'>
                                 <e-annotations>
-                                    <e-annotation content='<div style="color:#757575; font-family:Roboto; font-size:14px;">Inverted Triangle</div>'
+                                    <e-annotation content='<div style="color:#757575; font-family:Roboto; font-size:14px;">Marker</div>'
                                         angle=180 radius='20%' zIndex='1'></e-annotation>
                                 </e-annotations>
                             </e-axis>
@@ -36,13 +36,13 @@
                     </ejs-circulargauge>
                 </div>
                 <div class="col-sm-4">
-                    <ejs-circulargauge (load)='load($event)' id="container3" style='display: block; height:300px;'>
+                    <ejs-circulargauge (load)='load($event)' id="container4" #fifthgauge style='display: block; height:300px;'>
                         <e-axes>
-                            <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyle3' [labelStyle]='labelStyle3'
+                            <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyle5' [labelStyle]='labelStyle5'
                                 [majorTicks]='majorTicks1' [minorTicks]='minorTicks1' radius='90%' minimum=0 maximum=100
-                                [pointers]='pointers3'>
+                                [pointers]='pointers5'>
                                 <e-annotations>
-                                    <e-annotation content='<div style="color:#757575; font-family:Roboto; font-size:14px;">Triangle</div>'
+                                    <e-annotation content='<div style="color:#757575; font-family:Roboto; font-size:14px;">Needle</div>'
                                         angle=180 radius='20%' zIndex='1'></e-annotation>
                                 </e-annotations>
                             </e-axis>
@@ -54,13 +54,13 @@
         <div class="col-sm-12">
             <div class="row">
                 <div class="col-sm-4">
-                    <ejs-circulargauge (load)='load($event)' id="container4" #fifthgauge centerY='40%' style='display: block; height:300px;'>
+                    <ejs-circulargauge (load)='load($event)' id="container3" centerY='40%' style='display: block; height:300px;'>
                         <e-axes>
-                            <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyle5' [labelStyle]='labelStyle5'
+                            <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyle3' [labelStyle]='labelStyle3'
                                 [majorTicks]='majorTicks1' [minorTicks]='minorTicks1' radius='90%' minimum=0 maximum=100
-                                [pointers]='pointers5'>
+                                [pointers]='pointers3'>
                                 <e-annotations>
-                                    <e-annotation content='<div style="color:#757575; font-family:Roboto; font-size:14px;">Needle</div>'
+                                    <e-annotation content='<div style="color:#757575; font-family:Roboto; font-size:14px; padding-top: 26px">Customized Needle</div>'
                                         angle=180 radius='20%' zIndex='1'></e-annotation>
                                 </e-annotations>
                             </e-axis>
@@ -74,7 +74,7 @@
                                 [majorTicks]='majorTicks1' [minorTicks]='minorTicks1' radius='90%' minimum=0 maximum=100
                                 [pointers]='pointers4'>
                                 <e-annotations>
-                                    <e-annotation content='<div style="color:#757575; font-family:Roboto; font-size:14px;">Multiple Needle</div>'
+                                    <e-annotation content='<div style="color:#757575; font-family:Roboto; font-size:14px;">Multiple Needles</div>'
                                         angle=180 radius='25%' zIndex='1'></e-annotation>
                                 </e-annotations>
                             </e-axis>
@@ -82,7 +82,7 @@
                     </ejs-circulargauge>
                 </div>
                 <div class="col-sm-4">
-                    <ejs-circulargauge (load)='load($event)' id="container6" #sixthgauge style='display: block; height:300px;'>
+                    <ejs-circulargauge (load)='load($event)' id="container6" centerY='40%' #sixthgauge style='display: block; height:300px;'>
                         <e-axes>
                             <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyle6' [labelStyle]='labelStyle6'
                                 [majorTicks]='majorTicks1' [minorTicks]='minorTicks1' radius='90%' minimum=0 maximum=100
@@ -100,7 +100,6 @@
     </div>
 </div>
 <div id="description">
-    <p style="font-weight: 500">Description</p>
     <p>
         In this example, you can see how to customize the pointer for an axis in the circular gauge. Gauge supports
         different types

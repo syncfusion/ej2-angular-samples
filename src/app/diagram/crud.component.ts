@@ -170,14 +170,18 @@ export class CRUDDiagramComponent {
 
     // Displays nodes name in dropdown.
     public sourceDropdownCreate(args: Event): void {
-        this.sourceDropDown.dataSource = this.getDataSource();
-        this.sourceDropDown.dataBind();
+        if (this.sourceDropDown) {
+            this.sourceDropDown.dataSource = this.getDataSource();
+            this.sourceDropDown.dataBind();
+        }
     }
 
     // Displays nodes name in dropdown.
     public targetDropdownCreate(args: Event): void {
-        this.targetDropDown.dataSource = this.getDataSource();
-        this.targetDropDown.dataBind();
+        if (this.targetDropDown) {
+            this.targetDropDown.dataSource = this.getDataSource();
+            this.targetDropDown.dataBind();
+        }
     }
     // custom code end
 
@@ -276,7 +280,7 @@ export class CRUDDiagramComponent {
         } else {
             this.hideClassElement('.showDropdown', 'block');
             this.hideClassElement('.showLabel', 'none');
-             this.sourceDropDown.value = description;
+            this.sourceDropDown.value = description;
             this.targetDropDown.value = color;
         }
         this.dialog.show();

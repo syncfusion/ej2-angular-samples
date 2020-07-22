@@ -106,7 +106,8 @@ export class SBController {
     public resizeTimer: number = 0;
     public prevSampleName: string = '';
     public prevControlName: string = '';
-
+    public copyRight: number = new Date().getFullYear();
+    
     //Bread Crumb Object
     public breadCrumbObject:
         {
@@ -1003,7 +1004,7 @@ export class SBController {
             }
         );
         let sampleIndex = this.pathRoutes.indexOf(this.getHash());
-        let samLength: number = this.pathRoutes.length - 1;
+        let samLength: number = this.leftControl.listData.length - 1;
         if (sampleIndex === samLength) {
             this.toggleButtonState('next-sample', true);
         } else {

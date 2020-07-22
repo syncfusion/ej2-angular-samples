@@ -1,22 +1,23 @@
 <div id="action-description">
-    <p>This sample demonstrates client-side exporting of the Gantt, which allows you to export Gantt data to Excel and
+    <p>This sample demonstrates client-side exporting of the Gantt, which allows you to export Gantt data to Excel, PDF and
         CSV formats. Using the Gantt toolbar buttons, you can export Gantt data to the desired format. </p>
 </div>
 
 <div class="control-section">
     <ejs-gantt id="GanttExport" #ganttExcel height="430px" [dataSource]="data" [taskFields]="taskSettings"
         [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [treeColumnIndex]="1"
-        [allowExcelExport]="true" height="450px" [allowSelection]="true" dateFormat="MMM dd, y"
+        [allowExcelExport]="true" [allowPdfExport]="true" height="450px" [allowSelection]="true" dateFormat="MMM dd, y"
         [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
-        [gridLines]="gridLines" [toolbar]="toolbar" resourceNameMapping="resourceName" resourceIDMapping="resourceId"
+        [gridLines]="gridLines" [toolbar]="toolbar" [resourceFields] = "resourceFields"
         [resources]="resources" (toolbarClick)="toolbarClick($event)" [splitterSettings]="splitterSettings" [columns]="columns">
     </ejs-gantt>
 </div>
 <div id="description">
-    <p>Gantt supports client-side exporting, which allows you to export its data to the Excel and CSV formats. </p>
+    <p>Gantt supports client-side exporting, which allows you to export its data to the Excel, PDF and CSV formats. </p>
     <p>In this demo, we have defined actions in the <code>toolbarClick</code> event to export the Gantt data using the
-        <code>excelExport</code> and <code>csvExport</code> methods.</p>
+        <code>excelExport</code>, <code>pdfExport</code> and <code>csvExport</code> methods.</p>
 
     <p style="font-weight: 500">Injecting Module:</p>
     <p>To use Excel and CSV export features, inject the <code>ExcelExport</code> module.</p>
-</div>
+    <p>To use PDF export feature, inject the <code>PdfExport</code> module.</p>
+</div>pdf

@@ -11,7 +11,14 @@
 
 /* ListView header alignment */
 
-#groupedList.e-listview .e-headertext:after {
+.e-listview.e-rtl .e-text .e-headertext:after {
+    font-family: 'e-group-list-icons';
+    position: absolute;
+    content: "\e712";
+    right: 315px;
+}
+
+.e-listview .e-text .e-headertext:after {
     font-family: 'e-group-list-icons';
     position: absolute;
     content: "\e712";

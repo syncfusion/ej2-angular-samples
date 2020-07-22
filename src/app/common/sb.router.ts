@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 
 // Syncfusion
 import { DropDownListSampleModule } from '../drop-down-list/drop-down-list.module';
+import { DropDownTreeSampleModule } from '../drop-down-tree/drop-down-tree.module';
 import { ComboBoxSampleModule } from '../combo-box/combo-box.module';
 import { AutoCompleteSampleModule } from '../auto-complete/auto-complete.module';
 import { CalendarSampleModule } from '../calendar/calendar.module';
@@ -44,7 +45,7 @@ import { ToastSampleModule } from '../toast/toast.module';
 import { RangeNavigatorSampleModule } from '../range-navigator/range-navigator.module';
 import { StockChartSampleModule } from '../stock-chart/stock-chart.module';
 import { TreemapSampleModule } from '../treemap/treemap.module';
-import { HeatmapSampleModule } from '../heatmap/heatmap.module';
+import { HeatmapSampleModule } from '../heatmap-chart/heatmap-chart.module';
 import { DiagramSampleModule } from '../diagram/diagram.module';
 import { BarcodeSampleModule } from '../barcode/barcode.module';
 import { SparklineSampleModule } from '../sparkline/sparkline.module';
@@ -61,13 +62,15 @@ import { FileSampleModule } from '../file-manager/file-manager.module';
 import { DashboardLayoutSampleModule } from '../dashboard-layout/dashboard-layout.module';
 import { ListBoxSampleModule } from '../list-box/list-box.module';
 import { SpreadsheetSampleModule } from '../spreadsheet/spreadsheet.module';
-import { BulletChartSampleModule } from '../bullet-chart/bullet-chart.module'
+import { BulletChartSampleModule } from '../bullet-chart/bullet-chart.module';
+import { KanbanSampleModule } from '../kanban/kanban.module';
+import { ProgressBarSampleModule } from '../progress-bar/progress-bar.module';
 
 const appRoutes: any = [
     // Grids
     { path: 'grid', loadChildren: GridSampleModule },
-    { path: '', redirectTo: 'material/grid/over-view', pathMatch: 'full' },
-    { path: '**', redirectTo: 'material/grid/over-view' },
+    { path: '', redirectTo: 'material/grid/overview', pathMatch: 'full' },
+    { path: '**', redirectTo: 'material/grid/overview' },
     { path: 'treegrid', loadChildren: TreeGridSampleModule },
     { path: 'pivot-table', loadChildren: PivotTableSampleModule },
     { path: ':theme/pivot-table/:sample', redirectTo: 'material/pivot-table/default' },
@@ -87,8 +90,10 @@ const appRoutes: any = [
     { path: 'smithchart', loadChildren: SmithchartSampleModule },
     { path: 'barcode', loadChildren: BarcodeSampleModule },
     { path: 'treemap', loadChildren: TreemapSampleModule },
-    { path: 'heatmap', loadChildren: HeatmapSampleModule },
+    { path: 'heatmap-chart', loadChildren: HeatmapSampleModule },
     { path: 'bulletchart', loadChildren: BulletChartSampleModule },
+    { path: 'kanban', loadChildren: KanbanSampleModule },
+    { path: ':theme/kanban/:sample', redirectTo: 'material/kanban/overview' },
     // Editors
     { path: 'button', loadChildren: ButtonSampleModule },
     { path: ':theme/button/:sample', redirectTo: 'material/button/default' },
@@ -103,6 +108,7 @@ const appRoutes: any = [
     { path: 'auto-complete', loadChildren: AutoCompleteSampleModule },
     { path: 'combo-box', loadChildren: ComboBoxSampleModule },
     { path: 'drop-down-list', loadChildren: DropDownListSampleModule },
+    { path: 'drop-down-tree', loadChildren: DropDownTreeSampleModule },
     { path: 'multi-select', loadChildren: MultiSelectSampleModule },
     { path: 'list-box', loadChildren: ListBoxSampleModule },
     { path: ':theme/list-box/:sample', redirectTo: 'material/list-box/default' },
@@ -131,6 +137,7 @@ const appRoutes: any = [
     { path: ':theme/badge/:sample', redirectTo: 'material/badge/default' },
     { path: 'toast', loadChildren: ToastSampleModule },
     { path: ':theme/toast/:sample', redirectTo: 'material/toast/default' },
+    { path: 'progressbar', loadChildren: ProgressBarSampleModule },
     // Inputs
     { path: 'maskedtextbox', loadChildren: MaskedTextBoxSampleModule },
     { path: 'numerictextbox', loadChildren: NumericModule },
@@ -177,6 +184,7 @@ const appRoutes: any = [
         TreemapSampleModule,
         HeatmapSampleModule,
         BulletChartSampleModule,
+        KanbanSampleModule,
         // Editors
         ButtonSampleModule,
         ChipsSampleModule,
@@ -188,6 +196,7 @@ const appRoutes: any = [
         AutoCompleteSampleModule,
         ComboBoxSampleModule,
         DropDownListSampleModule,
+        DropDownTreeSampleModule,
         MultiSelectSampleModule,
         ListBoxSampleModule,
         // calendars
@@ -210,6 +219,7 @@ const appRoutes: any = [
         // Notifications
         BadgeModule,
         ToastSampleModule,
+        ProgressBarSampleModule,
         // Inputs
         MaskedTextBoxSampleModule,
         NumericModule,

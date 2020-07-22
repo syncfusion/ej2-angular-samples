@@ -135,7 +135,7 @@
 </div>
 <div class="control-section diagram-annotations">
     <div class="col-lg-8">
-        <ejs-diagram #diagram id="diagram" width="100%" height="645px" [getConnectorDefaults]='connDefaults' [getNodeDefaults]='nodeDefaults' (selectionChange)="selectionChange($event)" (created)="diagramCreate($event)" [snapSettings]='snapSettings'>
+        <ejs-diagram #diagram id="diagram" width="100%" height="645px" [getConnectorDefaults]='connDefaults' [getNodeDefaults]='nodeDefaults' (selectionChange)="selectionChange($event)" (created)="diagramCreate($event)" [snapSettings]='snapSettings'(created)="created()">
             <e-nodes>
                 <e-node id='industry' [height]=60 [width]=150 [offsetX]=400 [offsetY]=250>
                     <e-node-annotations>

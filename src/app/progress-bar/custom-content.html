@@ -1,0 +1,103 @@
+<div class="control-section progress-bar-parent">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-4 progress-container">
+            <div class="progress-container-align">
+                <div id="annotation">
+                    <ejs-progressbar #annotation1 id='label-container' [type]='type1' [maximum]='max1' [minimum]='min1'
+                        [value]='value1' [width]='width' [height]='height'
+                        [animation]='animation' (load)='load($event)' [startAngle]='startAngle1' [endAngle]='endAngle1'>
+                        <e-progressbar-annotations>
+                            <e-progressbar-annotation
+                                content='<div id="point1" style="font-size:20px;font-weight:bold;color:#b52123;fill:#b52123"><span>80%</span></div>'>
+                            </e-progressbar-annotation>
+                        </e-progressbar-annotations>
+                    </ejs-progressbar>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-4 progress-container">
+            <div class="progress-container-align">
+                <div id="pause">
+                    <ejs-progressbar #annotation2 id='pause-container' [type]='type2' [maximum]='max2' [minimum]='min2'
+                        [value]='value2' [width]='width' [height]='height' [animation]='animation' (progressCompleted)='progressComplete($event)' (load)='load($event)'>
+                        <e-progressbar-annotations>
+                            <e-progressbar-annotation content=' '>
+                            </e-progressbar-annotation>
+                        </e-progressbar-annotations>
+                    </ejs-progressbar>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-4 progress-container">
+            <div class="progress-container-align">
+                <div id="download">
+                    <ejs-progressbar #annotation3 id='download-container' [type]='type3' [maximum]='max3' [minimum]='min3' [value]='value3' [width]='width' [height]='height' [animation]='animation'
+                        (progressCompleted)='progressComplete1($event)' (load)='load($event)'>
+                        <e-progressbar-annotations>
+                            <e-progressbar-annotation content=' '>
+                            </e-progressbar-annotation>
+                        </e-progressbar-annotations>
+                    </ejs-progressbar>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="row" align="center">
+        <button id="reLoad" (click)="onClick()" class="e-control e-btn e-lib e-outline e-primary">Reload</button>
+    </div>  
+</div>
+<div id="action-description">
+    <p>
+        This sample illustrates a circular progress bar to show <code>progressCompleted</code> event with <code>annotation</code>.
+   </p>
+</div>
+<div id="description">
+    <p>
+        This demo for Essential JS2 Progress Bar control shows the progress bar with custom content with the help of annotation.
+    </p>
+</div>
+
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+
+    .annotaion-pro {
+        font-family: Roboto-Regular;
+        font-size: 20px;
+        color: #1B1C1A;
+        letter-spacing: 0.01px;
+    }
+
+    .progress-bar-parent {
+        margin-top: 8%;
+        margin-left: 5%;
+        width: 90%;
+    }
+
+    .progress-text {
+        display: inline-flex;
+        margin: auto;
+    }
+
+    .progress-text-align {
+        font-family: Roboto-Regular;
+        font-size: 12px;
+        color: #3D3E3C;
+        letter-spacing: 0;
+        margin: auto;
+    }
+
+    #control-container {
+        padding: 0px !important;
+    }
+
+    .progress-container-align {
+        text-align: center;
+    }
+    #reLoad {
+        border-radius: 4px;
+        text-transform: capitalize;
+        margin-top: 6%;
+    }
+</style>

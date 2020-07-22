@@ -1,5 +1,5 @@
 <div id="action-description">
-    <p>This sample demonstrates the different behavior of toolbar support in the rich text editor. Change the toolbar
+    <p>This sample demonstrates the different behavior of toolbar support in the Rich Text Editor. Change the toolbar
         type as multiRow or expand from the property panel to see its appearance . Check or uncheck the floating toolbar
         in property panel to look on its behavior.</p>
 </div>
@@ -11,7 +11,7 @@
                 <ejs-richtexteditor id='typeRTE' #typeRTE [toolbarSettings]='tools'
                     (actionBegin)='handleFullScreen($event)' (actionComplete)='actionCompleteHandler()'>
                     <ng-template #valueTemplate>
-                        <p>The rich text editor is WYSIWYG ("what you see is what you get") editor useful to create and
+                        <p>The Rich Text Editor is WYSIWYG ("what you see is what you get") editor useful to create and
                             edit content, and return the valid HTML markup or markdown of the content</p>
 
                         <p><b>Toolbar</b></p>
@@ -107,7 +107,7 @@
 <div id="description">
     <li><code>Floating</code>: set boolean value to toolbarSettings.enableFloating property to enable or disable the
         floating toolbar. </li>
-    <p> The rich text editor allows you to configure different types of toolbar using <code>toolbarSettings.type</code>
+    <p> The Rich Text Editor allows you to configure different types of toolbar using <code>toolbarSettings.type</code>
         property. The types of
         toolbar are: </p>
     <ul>
@@ -116,7 +116,7 @@
         <li><code>Multi Row</code>: The toolbar hides the overflowing items in the next row.</li>
     </ul>
     <p><b>Injecting Module</b></p>
-    <p>RichTextEditor features are segregated into individual feature-wise modules. In this demo we have used following
+    <p>Rich Text Editor features are segregated into individual feature-wise modules. In this demo we have used following
         injectable services
         <code>ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService</code> into the
         <code>@NgModule.providers section</code>.</p>

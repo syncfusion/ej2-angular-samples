@@ -1,0 +1,21 @@
+<div id="action-description">
+    <p>The Gantt provides support for automatic and manual task scheduling modes. Scheduling mode of a task is used to indicate whether the start and end dates of a task will be automatically validated or not. Using the property <code>taskMode</code> we can able to change the scheduling mode of a task. The following are the enumeration values that can be set to the property <code>taskMode</code>.</p>
+    <ul>
+        <li>Auto</li>
+        <li>Manual</li>
+        <li>Custom</li>
+    </ul>
+</div>
+<div class="control-section">
+    <ejs-gantt id="TaskMode" height="450px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns" [treeColumnIndex]="1"
+        [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" [editSettings]="editSettings"
+        height="450px" [allowSelection]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
+        [toolbar]="toolbar" taskMode="Custom" >
+    </ejs-gantt> 
+</div>
+<div id="description">
+    <p>When the <code>taskMode</code> property is set as <code>Auto</code> scheduling mode, all the tasks in the project will be rendered as automatically scheduled tasks. Thus the start and end dates of the tasks in the project will be automatically validated.</p> 
+    <p>When the <code>taskMode</code> property is set as <code>Manual</code> scheduling mode, all the tasks in the project will be rendered as manually scheduled tasks. Thus the dates of the tasks will not get validated automatically by the system.</p>
+    <p>When the <code>taskMode</code> property is set as <code>Custom</code>, the scheduling mode for each tasks will be mapped form the data source field. The property <code>manual</code> is used to map the scheduling mode field from the data source.</p>
+    <p>Gantt component features are segregated into individual feature-wise modules. To use editing feature, inject the <code>Edit</code> module using the <code>Gantt.Inject(Edit)</code> method. To use a selection, inject the <code>Selection</code> module using the <code>Gantt.Inject(Selection)</code> method, and to use toolbar by injecting the <code>Toolbar</code> module using the <code>Gantt.Inject(Toolbar)</code> method. </p>  
+</div>

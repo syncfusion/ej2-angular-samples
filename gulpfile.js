@@ -3,7 +3,7 @@ var glob = require('glob');
 var gulp = require("gulp");
 var shelljs = global.shelljs = global.shelljs || require('shelljs');
 
-gulp.task('copy-source', function () {
+gulp.task('copy-source', function (done) {
   var localeJson = glob.sync(__dirname + '/src/app/**/*', {
     silent: true,
     ignore: ['/src/app/common/**/*.*', '/src/app/common']
@@ -16,6 +16,7 @@ gulp.task('copy-source', function () {
       }
     }
   }
+  done();
 });
 
 gulp.task('build', function (done) {

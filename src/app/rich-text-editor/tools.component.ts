@@ -1,5 +1,5 @@
 /**
- * RTE Overview Sample
+ * Rich Text Editor Overview Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent, TableService } from '@syncfusion/ej2-angular-richtexteditor';

@@ -1,0 +1,75 @@
+<div class="control-section">
+    <div class="col-lg-9 content-wrapper">
+        <ejs-kanban #kanbanObj cssClass='kanban-events' keyField='Status' [dataSource]='kanbanData'
+            [cardSettings]='cardSettings' [swimlaneSettings]='swimlaneSettings' (created)='OnCreate()'
+            (actionBegin)='OnActionBegin()' (actionComplete)='OnActionComplete()'
+            (actionFailure)='OnActionFailure()' (dataBinding)='OnDataBinding()'
+            (dataBound)='OnDataBound()' (cardRendered)='OnCardRendered($event)'
+            (queryCellInfo)='OnQueryCellInfo()' (cardClick)='OnCardClick($event)'
+            (cardDoubleClick)='OnCardDoubleClick($event)' (dragStart)='OnDragStart()' (drag)='OnDrag()'
+            (dragStop)='OnDragStop()'>
+            <e-columns>
+                <e-column headerText='To Do' keyField='Open' allowToggle='true'></e-column>
+                <e-column headerText='In Progress' keyField='InProgress' allowToggle='true'></e-column>
+                <e-column headerText='Done' keyField='Close' allowToggle='true'></e-column>
+            </e-columns>
+        </ejs-kanban>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <div id="property" class="property-panel-table" title="Properties">
+                    <table id="property" title="Event Trace">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="eventarea">
+                                        <span class="EventLog" id="EventLog"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="evtbtn">
+                                        <button ejs-button id='clear' class="e-btn" (click)="onClear()">Clear</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        The sample showcases the client-side events of JavaScript Kanban. For every action in a Kanban board,
+        corresponding
+        events will be displayed in the event tracer panel.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The demo is showcased to list-out the client-side events of Kanban. The events are useful to customize the
+        Kanban board
+        from the application end.
+    </p>
+    <p>The following events are bounded in this demo.</p>
+    <ol>
+        <li>Created</li>
+        <li>Action begin</li>
+        <li>Action complete</li>
+        <li>Action failure</li>
+        <li>Data binding</li>
+        <li>Data bound</li>
+        <li>Card rendered</li>
+        <li>Query cell info</li>
+        <li>Card click</li>
+        <li>Card double click</li>
+        <li>Drag start</li>
+        <li>Drag</li>
+        <li>Drag stop</li>
+    </ol>
+</div>

@@ -9,6 +9,7 @@ import { ButtonAllModule , CheckBoxAllModule} from '@syncfusion/ej2-angular-butt
 import { ToolbarModule, ToolbarAllModule } from '@syncfusion/ej2-angular-navigations';
 import { DropDownListAllModule, MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { TreeGridOverviewComponent } from './treegrid-overview.component';
+import { TreeGridClipboardComponent } from './clipboard.component';
 import { DefaultComponent } from './default.component';
 import { LocalDataComponent } from './localdata.component';
 import { RemoteData } from './remotedata.component';
@@ -28,8 +29,10 @@ import { RowHover } from './row-hover.component';
 import { RowHeightComponent } from './rowheight.component';
 import { RowTemplateComponent } from './row-template.component';
 import { DragDropComponent } from './drag-drop.component';
+import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { InlineEditing } from './inlineediting.component';
 import { DialogEditingComponent} from './dialogediting.component';
+import { BatchEditingComponent} from './batchediting.component';
 import { LockRowComponent} from './lockrow.component';
 import { CellEditTypeComponent } from './celledit-type.component';
 import { EditTemplateComponent } from './edittemplate.component';
@@ -62,6 +65,7 @@ import { ReactiveFormsModule ,  FormsModule} from '@angular/forms';
 import { SparklineAllModule } from '@syncfusion/ej2-angular-charts';
 import { DefaultScrollingComponent } from './default-scrolling.component';
 import { VirtualScrollingComponent } from './virtual-scrolling.component';
+import { ColumnChooserComponent } from './columnchooser.component';
 
 export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/treegrid-overview', component: TreeGridOverviewComponent, 'name': 'Overview',
@@ -69,6 +73,9 @@ export const treegridRouteConfig: Object[] = [
     order: '01', category: 'TreeGrid' },
     { 'path': ':theme/treegrid/default', component: DefaultComponent, 'name': 'Default Functionalities',
     description: 'This demo for Essential JS2 Tree Grid component shows the default rendering of the Tree Grid  component with minimum configuration.', 
+    order: '01', category: 'TreeGrid' },
+    { 'path': ':theme/treegrid/clipboard', component: TreeGridClipboardComponent, 'name': 'Clipboard',
+    description: 'This sample demonstrates copy to clipboard functionality of the Tree Grid component. Select rows and click Copy button from toolbar to copy content. To copy with header click Copy with header button from toolbar.', 
     order: '01', category: 'TreeGrid' },
     { 'path': ':theme/treegrid/localdata', component: LocalDataComponent, 'name': 'Local Data',
     description: 'This example shows the binding of an array of list objects in the Syncfusion Essential JS2 Tree Grid control.', 
@@ -96,6 +103,9 @@ export const treegridRouteConfig: Object[] = [
     order: '03', category: 'Columns' },
     { 'path': ':theme/treegrid/cellalignment', component: CellAlignmentComponent, 'name': 'Cell Alignment',
     description: 'This demo explains how to align the content inside the cells of Tree Grid columns and headers in Syncfusion Essential JS2 Tree Grid control.', 
+    order: '03', category: 'Columns' },
+    { 'path': ':theme/treegrid/columnchooser', component: ColumnChooserComponent, 'name': 'Column Chooser', 'type': 'new',
+    description: 'This demo explains how to dynamically show/hide columns in Tree Grid using Syncfusion Essential JS2 Tree Grid control.', 
     order: '03', category: 'Columns' },
     { 'path': ':theme/treegrid/autowrap', component: AutoWrap, 'name': 'Auto Wrap Column Cells', 
     description: 'This demo explains how to wrap the content of columns within the specified width of Tree Grid columns in Syncfusion Essential JS2 Tree Grid control.', 
@@ -132,6 +142,9 @@ export const treegridRouteConfig: Object[] = [
     order: '05', category: 'Editing' },
     { 'path': ':theme/treegrid/dialogediting', component: DialogEditingComponent, 'name': 'Dialog Editing', 
     description: 'This demo explains how to edit a Tree Grid record in the Dialog mode using Syncfusion Essential JS2 Tree Grid control.', 
+    order: '05', category: 'Editing' },
+    { 'path': ':theme/treegrid/batchediting', component: BatchEditingComponent, 'name': 'Batch Editing',
+    description: 'This example shows how to add and edit row or cell in the Batch mode using Syncfusion TypeScript Tree Grid control.', 
     order: '05', category: 'Editing' },
     { 'path': ':theme/treegrid/lockrow', component: LockRowComponent, 'name': 'Lock Row', 
     description: 'This demo explains how to disable editing for specific rows dynamically in Syncfusion Essential JS2 Tree Grid control.', 
@@ -173,7 +186,7 @@ export const treegridRouteConfig: Object[] = [
     description: 'This demo explains how to customize a pager using the APIs that are relevant to paging of Syncfusion Essential JS2 Tree Grid control.', 
     order: '08', category: 'Paging' },
     { 'path': ':theme/treegrid/default-scrolling', component: DefaultScrollingComponent, 'name': 'Default Scrolling',
-    description: 'This demo for Essential JS 2 Tree Grid control shows the usage of the horizontal and vertical scrollbars to view Tree Grid content that exceeds the Tree Grid area.', 
+    description: 'This demo for Essential JS 2 Tree Grid control shows the usage of horizontal and vertical scrollbars to view Tree Grid content that exceeds the Tree Grid area.', 
     order: '09', category: 'Scrolling'},
     { 'path': ':theme/treegrid/virtual-scrolling', component: VirtualScrollingComponent, 'name': 'Virtual Scrolling',
     description: 'This demo demonstrates how to use Essential JS 2 Tree Grid to show a large data view without performance degradation by rendering only the required rows.', 
@@ -222,14 +235,14 @@ export const treegridRouteConfig: Object[] = [
     order: '13', category: 'Miscellaneous' }
 ];
 
-let declarations: Type<Object>[] = [TreeGridOverviewComponent, DefaultComponent, LocalDataComponent, RemoteData, SelfReferenceComponent, SortComponent, SortingAPIComponent, DefaultPagingComponent, PagingAPIComponent, ContextMenuComponent, CustomContextMenuComponent, AggregateComponent, CustomAggregateComponent, ColumnReorderComponent, ColumnFormattingComponent, ColumnTemplateComponent, ResizingComponent,
-    ColumnMenuComponent, CellAlignmentComponent, AutoWrap, ShowHideComponent, HeaderTemplateComponent, FilterComponent, InlineEditing, DialogEditingComponent, LockRowComponent, CellEditTypeComponent, CommandColumnComponent, EditTemplateComponent, ReactiveFormsComponent, TemplateFormsComponent, SearchComponent,
+let declarations: Type<Object>[] = [TreeGridOverviewComponent, DefaultComponent, TreeGridClipboardComponent, LocalDataComponent, RemoteData, SelfReferenceComponent, SortComponent, SortingAPIComponent, DefaultPagingComponent, PagingAPIComponent, ContextMenuComponent, CustomContextMenuComponent, AggregateComponent, CustomAggregateComponent, ColumnReorderComponent, ColumnFormattingComponent, ColumnTemplateComponent, ResizingComponent,
+    ColumnMenuComponent, ColumnChooserComponent, CellAlignmentComponent, AutoWrap, ShowHideComponent, HeaderTemplateComponent, FilterComponent, InlineEditing, DialogEditingComponent, BatchEditingComponent, LockRowComponent, CellEditTypeComponent, CommandColumnComponent, EditTemplateComponent, ReactiveFormsComponent, TemplateFormsComponent, SearchComponent,
     StackedHeaderComponent, KeyBoardComponent, DefaultExportComponent, PrintComponent, EventComponent, ConditionalFormattingComponent, ToolbarTemplateComponent,
     GridLinesComponent, RowHover, RowHeightComponent, RowTemplateComponent, DragDropComponent, FilteringMenuComponent, FreezeComponent, DefaultScrollingComponent, VirtualScrollingComponent, SelectionComponent, SelectionAPIComponent, CheckboxSelectionComponent, CheckboxColumnComponent];
 
 @NgModule({
     imports: [RouterModule.forChild(treegridRouteConfig), CommonModule, HttpModule, TreeGridAllModule,
-        NumericTextBoxAllModule, ToolbarModule, DropDownListAllModule, ButtonAllModule, MultiSelectAllModule, CheckBoxAllModule, ReactiveFormsModule, FormsModule, DatePickerModule, SparklineAllModule],
+        NumericTextBoxAllModule, ToolbarModule, DropDownListAllModule, ButtonAllModule, DialogModule, MultiSelectAllModule, CheckBoxAllModule, ReactiveFormsModule, FormsModule, DatePickerModule, SparklineAllModule],
     declarations: declarations,
     providers: [TreeGridAllModule, SparklineAllModule],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

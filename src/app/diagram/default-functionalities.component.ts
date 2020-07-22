@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
 import {
   Diagram, NodeModel, UndoRedo, ConnectorModel, PointPortModel, Connector, FlowShapeModel,
@@ -20,6 +20,7 @@ Diagram.Inject(UndoRedo);
   encapsulation: ViewEncapsulation.None
 })
 export class FlowDiagramComponent {
+  @ViewChild('diagram')
   //Diagram Properties
   public diagram: DiagramComponent;
   public terminator: FlowShapeModel = { type: 'Flow', shape: 'Terminator' };
@@ -56,6 +57,9 @@ export class FlowDiagramComponent {
       obj.type = 'Orthogonal';
       obj.targetDecorator = { shape: 'Arrow', width: 10, height: 10 };
     }
+  }
+  public created(): void {
+    this.diagram.fitToPage();
   }
   public interval: number[] = [
     1, 9, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25,

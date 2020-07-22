@@ -1,6 +1,6 @@
 <div class="control-section">
     <div class="col-lg-9">
-    <ejs-treemap id='container' #treemap style="display:block;" [dataSource] ='dataSource' [weightValuePath] ='weightValuePath'
+    <ejs-treemap id='container' #treemap [allowPrint]='allowPrint' [allowPdfExport]='allowPdfExport' [allowImageExport]='allowImageExport' style="display:block;" [dataSource] ='dataSource' [weightValuePath] ='weightValuePath'
    [titleSettings] = 'titleSettings' [layoutType] = 'layoutType'  [leafItemSettings] = 'leafItemSettings' [tooltipSettings] = 'tooltipSettings' 
    [rangeColorValuePath] = 'rangeColorValuePath' (load)='load($event)' >
     </ejs-treemap>
@@ -67,9 +67,17 @@
 </div>
 <div id="description">
 <p>
-    In this example, you can see how to export and print the rendered treemap. Treemap can be exported to JPEG, PNG, SVG and PDF formats.
-</p>
+    In this example, you can see how to export and print the rendered treemap. The TreeMap can be exported to JPEG, PNG, SVG, and PDF formats. Print functionality is done by <code>print</code> method when <code>allowPrint</code> is set as true. Export functionality is done by <code>export</code> method when <code>allowImageExport</code> and <code>allowPdfExport</code> is set as true.
+    <br><br>
+    <b>Injecting Module:</b>
+    <br><br>
+    To make use of the print and export support, we need to inject <code> PrintService</code>, <code> PdfExportService</code> and <code> ImageExportService</code> into the <code>@NgModule.providers</code> section.
 
+</p>
+<p>
+        More information on print and export can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/documentation/treemap/print-and-export/">documentation section</a>.
+    </p>
 
 </div>
 

@@ -1,0 +1,62 @@
+<div class="control-section">
+    <div class="col-lg-9 content-wrapper">
+        <ejs-kanban #kanbanObj cssClass='kanban-tooltip' keyField="Status" [dataSource]='kanbanData'
+            [cardSettings]='cardSettings' enableTooltip='true' [tooltipTemplate]='temp'>
+            <e-columns>
+                <e-column headerText='To Do' keyField='Open'></e-column>
+                <e-column headerText='In Progress' keyField='InProgress'></e-column>
+                <e-column headerText='Testing' keyField='Testing'></e-column>
+                <e-column headerText='Done' keyField='Close'></e-column>
+            </e-columns>
+        </ejs-kanban>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <div id="property" class="property-panel-table" title="Properties">
+                    <table id="property" title="Properties" style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <ejs-checkbox data-id="enableTooltip" label='Enable Tooltip' [checked]="true"
+                                            (change)="onChange($event)"></ejs-checkbox>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <ejs-checkbox data-id="enableTooltipTemplate" label='Enable Tooltip Template'
+                                            [checked]="true" (change)="onTemplateChange($event)"></ejs-checkbox>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates how to customize the tooltip messages in Kanban cards. You can enable or disable the
+        tooltip
+        and its template.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The Kanban provides an option to show default tooltip and templated tooltip using the <code>enableTooltip</code>
+        and <code>tooltipTemplate</code> properties.
+    </p>
+    <ul>
+        <li><code>enableTooltip:</code> If you set this property to true, the cards show a tooltip with default format.
+        </li>
+        <li><code>tooltipTemplate:</code> If you set <code>enableTooltip</code> property to true and configured the
+            tooltipTemplate, the cards show a
+            tooltip with templated content.</li>
+    </ul>
+</div>

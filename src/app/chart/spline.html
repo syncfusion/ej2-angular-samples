@@ -7,23 +7,7 @@
 <div class="control-section">
     <div align='center'>
         <ejs-chart id='spline-chartcontainer' align='center' [chartArea]='chartArea' [width]='width' style='display:block;' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' (load)='load($event)' [title]='title' [tooltip]='tooltip' >
-            <e-annotations>
-                 <e-annotation x='Sun' y=2 coordinateUnits='Point' verticalAlignment='Top'>
-                    <ng-template #content>
-                            <div id="chart_cloud">
-                                <img src="./assets/chart/images/cloud.png" style="width: 41px; height: 41px"/>
-                            </div>
-                    </ng-template>
-                 </e-annotation>
-                 <e-annotation x='Tue' y=33 coordinateUnits='Point' verticalAlignment='Top'>
-                    <ng-template #content>
-                            <div id="chart_cloud">
-                                <img src="./assets/chart/images/sunny.png"  style="width: 41px; height: 41px"/>
-                            </div>
-                    </ng-template>
-                </e-annotation>
-            </e-annotations>
+            [primaryYAxis]='primaryYAxis' (load)='load($event)' [title]='title' [tooltip]='tooltip' [annotations]='annotations'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Spline' xName='x' yName='y' name='Max Temp' width=2 [marker]='marker'> </e-series>
                 <e-series [dataSource]='data1' type='Spline' xName='x' yName='y' name='Avg Temp' width=2 [marker]='marker'> </e-series>

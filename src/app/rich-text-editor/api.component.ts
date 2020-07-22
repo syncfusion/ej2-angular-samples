@@ -1,5 +1,5 @@
 /**
- * RTE API functionality Sample
+ * Rich Text Editor API functionality Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';

@@ -1,5 +1,5 @@
 /**
- * RichTextEditor Markdown Preview Sample
+ * Rich Text Editor Markdown Preview Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';

@@ -1,0 +1,78 @@
+<div class="col-lg-9 control-section">
+    <div class="control_wrapper">
+        <ejs-kanban #kanbanObj cssClass='kanban-swimlane' keyField='Status' [dataSource]='kanbanData'
+            [cardSettings]='cardSettings' [swimlaneSettings]='swimlaneSettings'>
+            <e-columns>
+                <e-column headerText='To Do' keyField='Open'></e-column>
+                <e-column headerText='In Progress' keyField='InProgress'></e-column>
+                <e-column headerText='Testing' keyField='Testing'></e-column>
+                <e-column headerText='Done' keyField='Close'></e-column>
+            </e-columns>
+        </ejs-kanban>
+    </div>
+</div>
+<div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+        <p class="property-panel-header">Filtering</p>
+        <div class="property-panel-content">
+            <table class="e-filter-table">
+                <tr>
+                    <td class="e-filter-label">
+                        <div>Priority</div>
+                    </td>
+                    <td>
+                        <div>
+                            <ejs-dropdownlist id='priority_filter' #priority_filter [dataSource]='priorityData'
+                                (change)='change($event)' index=0 placeholder='Select a priority'></ejs-dropdownlist>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="e-filter-label">
+                        <div>Status</div>
+                    </td>
+                    <td>
+                        <div>
+                            <ejs-dropdownlist id='status_filter' #status_filter [dataSource]='statusData'
+                                (change)='change($event)' [fields]='fields' [value]='value'
+                                placeholder='Select a status'></ejs-dropdownlist>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <p class="property-panel-header">Searching</p>
+        <div class="property-panel-content">
+            <table class="e-filter-table">
+                <tr>
+                    <td>
+                        <div>
+                            <ejs-textbox id="search_text" #search_text placeholder="Enter search text" [showClearButton]="true" (focus)="onFocus()" (keyup)="searchClick($event)"></ejs-textbox>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class='e-reset'>
+                <button ejs-button id="reset_filter" class="e-btn" (click)="resetClick()">Reset</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample demonstrates the filtering and searching actions of Kanban. In this sample, select the key value
+        from drop down list to display the filtered data in Kanban board. Type in search box to be searched in
+        header/content and display the search result
+        in a board.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The Kanban provides an option to filter or search the cards and displayed on Kanban board using <code>query</code> property.
+    </p>
+    <ul>
+        <li>In query, <code>where</code> used for filtering the Kanban cards.</li>
+        <li>In query, <code>search</code> is used for searching the cards.</li>
+    </ul>
+</div>

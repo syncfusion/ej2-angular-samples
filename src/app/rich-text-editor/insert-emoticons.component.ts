@@ -1,5 +1,5 @@
 /**
- * RTE Custom-Toolbar Sample
+ * Rich Text Editor Custom-Toolbar Sample
  */
 import { Component, ViewChild, ViewEncapsulation, ElementRef } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';

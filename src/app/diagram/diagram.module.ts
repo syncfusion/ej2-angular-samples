@@ -12,6 +12,7 @@ import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
 
 import { DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { CircularGaugeModule } from '@syncfusion/ej2-angular-circulargauge';
 
 import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
 
@@ -322,7 +323,7 @@ let declarations: Type<Object>[] = [FlowDiagramComponent, ShapesDiagramComponent
 ];
 @NgModule({
     imports: [diagramRouter, DiagramAllModule, SymbolPaletteAllModule, OverviewAllModule, ButtonModule,
-        ColorPickerModule, CheckBoxModule, ToolbarModule, DropDownButtonModule, UploaderModule, DropDownListAllModule, ListViewAllModule,
+        ColorPickerModule, CheckBoxModule, ToolbarModule, DropDownButtonModule, UploaderModule, CircularGaugeModule, DropDownListAllModule, ListViewAllModule,
         DialogAllModule, TextBoxModule, RadioButtonModule,
         MultiSelectModule, NumericTextBoxModule, SharedModule],
     exports: [],

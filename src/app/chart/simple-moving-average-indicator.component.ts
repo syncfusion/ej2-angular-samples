@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, TechnicalIndicatorModel } from '@syncfusion/ej2-angular-charts';
 import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
@@ -13,6 +13,18 @@ import { Browser } from '@syncfusion/ej2-base';
     encapsulation: ViewEncapsulation.None
 })
 export class SmaIndicatorComponent {
+    public period: number = 14;
+    // indicators
+    public indicators: TechnicalIndicatorModel[] = [
+        {
+            type: 'Sma',
+            xName: 'x',
+            field: 'Close',
+            fill: 'blue',
+            period: this.period,
+            seriesName: 'Apple Inc'
+        }
+    ];
 
     public data1: Object[] = chartData;
     //Initializing Primary X Axis
@@ -52,7 +64,6 @@ export class SmaIndicatorComponent {
     public legendSettings: Object = {
         visible: false
     };
-    public period: number = 14;
     public chartArea: Object = {
         border: {
             width: 0

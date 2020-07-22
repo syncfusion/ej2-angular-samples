@@ -356,9 +356,7 @@ export class SwimLaneDiagramComponent {
         constraints: SnapConstraints.All & ~SnapConstraints.ShowLines
     }
     public created(): void {
-        if (Browser.isDevice) {
-            this.diagram.fitToPage();
-        }
+        this.diagram.fitToPage();
     }
     public contextMenuSettings: ContextMenuSettingsModel = {
         show: true, items: [

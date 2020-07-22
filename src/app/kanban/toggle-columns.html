@@ -1,0 +1,32 @@
+<div class="control-section">
+    <div class="content-wrapper">
+        <ejs-kanban #kanbanObj keyField="Status" [dataSource]='kanbanData' [cardSettings]='cardSettings'>
+            <e-columns>
+                <e-column headerText='To Do' keyField='Open' allowToggle='true'></e-column>
+                <e-column headerText='In Progress' keyField='InProgress' allowToggle='true'></e-column>
+                <e-column headerText='Testing' keyField='Testing' allowToggle='true' [isExpanded]='isExpanded'>
+                </e-column>
+                <e-column headerText='Done' keyField='Close' allowToggle='true'></e-column>
+            </e-columns>
+        </ejs-kanban>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates the toggle column feature of Kanban. Each column of Kanban can be collapsible, and the
+        testing
+        column is collapsed on page load itself.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The Kanban component allows you to expand or collapse its columns to save space. The remaining columns extend its
+        width to occupy the hided column space.
+        This feature can be achieved by the following properties:
+    </p>
+    <ul>
+        <li><code>allowToggle:</code> Enables the expand/collapse behavior in Kanban.</li>
+        <li><code>isExpanded:</code> The property determines whether the column can be collapsed on the page load
+            itself.</li>
+    </ul>
+</div>

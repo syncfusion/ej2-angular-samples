@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, TechnicalIndicatorModel } from '@syncfusion/ej2-angular-charts';
 import { chartData } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
@@ -13,6 +13,25 @@ import { Browser } from '@syncfusion/ej2-base';
     encapsulation: ViewEncapsulation.None
 })
 export class BollingerIndicatorComponent {
+    public upperLine: Object = {
+        color: 'orange'
+    };
+    public lowerLine: Object = {
+        color: 'yellow'
+    };
+    // indicators
+    public indicators: TechnicalIndicatorModel[] = [
+        {
+            type: 'BollingerBands',
+            xName: 'x',
+            field: 'Close',
+            fill: 'blue',
+            period: 3,
+            seriesName: 'Apple Inc',
+            upperLine: this.upperLine,
+            lowerLine: this.lowerLine
+        }
+    ];
     public data1: Object[] = chartData;
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
@@ -49,18 +68,12 @@ export class BollingerIndicatorComponent {
     public legendSettings: Object = {
         visible: false
     };
-    public upperLine: Object = {
-        color: 'orange'
-    };
     public chartArea: Object = {
         border: {
             width: 0
         }
     };
 
-    public lowerLine: Object = {
-        color: 'yellow'
-    };
     public animation: Object = {
         enable: false
     };

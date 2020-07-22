@@ -29,14 +29,25 @@ export const tooltipAppRoutes: Object[] = [{
     component: TemplateTooltipComponent,
     name: 'Template',
     category: 'Tooltip',
-    description: 'Demo of the Essential JS 2 Tooltip control template functionality, which allows HTML content to be rendered in tooltips.'
+    description: 'Demo of the Essential JS 2 Tooltip control template functionality, which allows HTML content to be rendered in tooltips.',
+    sourceFiles: [
+        {displayName: 'template.component.ts', path: './src/tooltip/template.component.ts'},
+        {displayName: 'template.html', path: './src/tooltip/template.html'},
+        {displayName: 'tooltip.component.css', path: './src/tooltip/tooltip.component.css'}
+    ]
 },
 {
     path: ':theme/tooltip/ajax-content',
     component: AjaxContentTooltipComponent,
     name: 'Ajax Content',
     category: 'Tooltip',
-    description: 'Demo of the Essential JS 2 Tooltip control loading dynamic content in tooltips through Ajax from JSON files.'
+    description: 'Demo of the Essential JS 2 Tooltip control loading dynamic content in tooltips through Ajax from JSON files.',
+    sourceFiles: [
+        {displayName: 'ajax-content.component.ts', path: './src/tooltip/ajax-content.component.ts'},
+        {displayName: 'ajax-content.html', path: './src/tooltip/ajax-content.html'},
+        {displayName: 'tooltipdata.json', path: './src/tooltip/tooltipdata.json'},
+        {displayName: 'tooltip.component.css', path: './src/tooltip/tooltip.component.css'}
+    ]
 },
 {
     path: ':theme/tooltip/smart-position',
@@ -50,21 +61,36 @@ export const tooltipAppRoutes: Object[] = [{
     component: TooltipMenuComponent,
     name: 'Tooltip Menu',
     category: 'Tooltip',
-    description: 'Demo of Essential JS 2 Tooltip control customization to look like a menu.'
+    description: 'Demo of Essential JS 2 Tooltip control customization to look like a menu.',
+    sourceFiles: [
+        {displayName: 'tooltip-menu.component.ts', path: './src/tooltip/tooltip-menu.component.ts'},
+        {displayName: 'tooltip-menu.html', path: './src/tooltip/tooltip-menu.html'},
+        {displayName: 'tooltip-menu.css', path: './src/tooltip/tooltip-menu.css'}
+    ]
 },
 {
     path: ':theme/tooltip/html-content',
     component: HtmlContentComponent,
     name: 'HTML Content',
     category: 'Tooltip',
-    description: 'Demo of Essential JS 2 Tooltip control customization as an HTML page using HTML tags and CSS.'    
+    description: 'Demo of Essential JS 2 Tooltip control customization as an HTML page using HTML tags and CSS.' ,
+    sourceFiles: [
+        {displayName: 'html-content.component.ts', path: './src/tooltip/html-content.component.ts'},
+        {displayName: 'html-content.html', path: './src/tooltip/html-content.html'},
+        {displayName: 'html-content.css', path: './src/tooltip/html-content.css'}
+    ]  
 },
 {
     path: ':theme/tooltip/api',
     component: ApiTooltipComponent,
     name: 'API',
     category: 'Tooltip',
-    description: 'Essential JS 2 Tooltip control demo showcasing the most frequently used API combinations, like content, height, width, open, sticky mode, and more.'    
+    description: 'Essential JS 2 Tooltip control demo showcasing the most frequently used API combinations, like content, height, width, open, sticky mode, and more.',
+    sourceFiles: [
+        {displayName: 'api.component.ts', path: './src/tooltip/api.component.ts'},
+        {displayName: 'api.html', path: './src/tooltip/api.html'},
+        {displayName: 'api.css', path: './src/tooltip/api.css'}
+    ]   
 }];
 
 export const tooltipRouter: ModuleWithProviders = RouterModule.forChild(tooltipAppRoutes);

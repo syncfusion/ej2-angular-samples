@@ -11,6 +11,7 @@ export class GanttContextMenuComponent implements OnInit {
     public ganttObj: GanttComponent;
     public data: object[];
     public resources: object[];
+    public resourceFields: object ;
     public taskSettings: object;
     public columns: object[];
     public timelineSettings: object;
@@ -37,6 +38,10 @@ export class GanttContextMenuComponent implements OnInit {
             notes: 'info',
             resourceInfo: 'resources'
         };
+        this.resourceFields = {
+            id: 'resourceId',
+            name: 'resourceName'
+        };
         this.editSettings = {
             allowAdding: true,
             allowEditing: true,
@@ -45,7 +50,7 @@ export class GanttContextMenuComponent implements OnInit {
             showDeleteConfirmDialog: true
         };
         this.contextMenuItems = ['AutoFitAll', 'AutoFit', 'TaskInformation', 'DeleteTask', 'Save', 'Cancel',
-        'SortAscending', 'SortDescending', 'Add', 'DeleteDependency', 'Convert',
+        'SortAscending', 'SortDescending', 'Add', 'DeleteDependency', 'Convert', 'Indent', 'Outdent',
         { text: 'Collapse the Row', target: '.e-content', id: 'collapserow' },
         { text: 'Expand the Row', target: '.e-content', id: 'expandrow' },
         ],

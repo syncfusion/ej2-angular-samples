@@ -4,6 +4,13 @@
     display: block;
 }
 
+.sb-sample-content-area {
+    min-height: 255px !important;
+}
+.control-section {
+    min-height: 255px !important;
+}
+
 .e-pivotview .e-columnsheader .tempwrap {
     display: none;
 }

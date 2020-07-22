@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, ChartAnnotationSettingsModel } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -12,6 +12,21 @@ import { Browser } from '@syncfusion/ej2-base';
     encapsulation: ViewEncapsulation.None
 })
 export class MultipleAxisChartComponent {
+    public annotations: ChartAnnotationSettingsModel[] = [
+    {
+        x: 'Sun',
+        y: 35,
+        coordinateUnits: 'Point',
+        verticalAlignment: 'Top',
+        content: '<div id="chart_cloud"><img src="./assets/chart/images/cloud.png" style="width: 41px; height: 41px"/></div>'
+    }, {
+        x: 'Sat',
+        y: 34,
+        coordinateUnits: 'Point',
+        yAxisName: 'yAxis',
+        content: '<div id="chart_cloud"><img src="./assets/chart/images/sunny.png" style="width: 41px; height: 41px"/></div>'
+    }
+];
     public data: Object[] = [
         { x: 'Sun', y: 35 }, { x: 'Mon', y: 40 },
         { x: 'Tue', y: 80 }, { x: 'Wed', y: 70 }, { x: 'Thu', y: 65 }, { x: 'Fri', y: 55 },
