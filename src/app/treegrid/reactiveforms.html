@@ -1,5 +1,5 @@
 <div class="control-section">
-        <ejs-treegrid [dataSource]='data'  childMapping='subtasks' [treeColumnIndex]='1'allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' [toolbar]='toolbar' (actionBegin)="actionBegin($event)" (actionComplete)="actionComplete($event)">
+        <ejs-treegrid [dataSource]='data'  childMapping='subtasks' height='350' [treeColumnIndex]='1'allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' [toolbar]='toolbar' (actionBegin)="actionBegin($event)" (actionComplete)="actionComplete($event)">
             <e-columns>
                 <e-column field='taskID' headerText='Task ID' width='120' textAlign='Right' isPrimaryKey='true' ></e-column>
                 <e-column field='taskName' headerText='Task Name' width='225' ></e-column>

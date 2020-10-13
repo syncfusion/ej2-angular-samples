@@ -1,0 +1,42 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the data about electricity production using stacked stepped area chart.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer'
+            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='StackingStepArea' xName='x' yName='y' name='Renewable'
+                    [opacity]="opacity" fill="#56CCF2">
+                </e-series>
+                <e-series [dataSource]='data1' type='StackingStepArea' xName='x' yName='y' name='Non-Renewable'
+                    [opacity]="opacity" fill="#2F80ED"> </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the stacked stepped area chart. This series forms the
+        step
+        area progress, by connecting points through vertical and horizontal lines with area filled. You can use
+        <code>fill</code>
+        properties to customize the area. <code>marker</code> and <code>dataLabel</code> are used to represent
+        individual data and its value.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use stacked stepped area
+        series, we need
+        to inject <code>StackingStepAreaSeriesService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information on the area types series can be found in this
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#area-charts">documentation
+            section</a>.
+    </p>
+</div>

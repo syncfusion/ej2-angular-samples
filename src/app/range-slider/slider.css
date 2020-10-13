@@ -1,0 +1,39 @@
+.control-section {
+    height: 100%;
+}
+
+.material #property tr#slider-showon {
+    display: none;
+}
+.content-wrapper {
+    width: 52%;
+    margin: 0 auto;
+    min-width: 185px;
+}
+
+.sliderwrap {
+    margin-top: 40px;
+}
+
+.e-bigger .content-wrapper {
+    width: 80%;
+}
+
+.property-custom td {
+    padding: 5px;
+}
+
+.sliderwrap label {
+    padding-bottom: 15px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.e-bigger .slidertooltip.sliderwrap {
+    margin-right: 20%;
+}
+
+.property-section {
+    margin: 25px auto;
+}

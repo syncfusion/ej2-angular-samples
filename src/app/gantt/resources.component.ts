@@ -28,7 +28,7 @@ export class GanttResourcesComponent implements OnInit {
             progress: 'Progress',
             child: 'subtasks',
             work:'work',
-            
+            type: 'taskType',
             resourceInfo: 'resources'
         };
         this.resourceFields = {

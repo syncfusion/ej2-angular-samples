@@ -53,7 +53,7 @@ export class EventsComponent {
     }
 
     OnCardRendered(args: CardRenderedEventArgs): void {
-        this.appendElement('Kanban - ' + args.data.Id + ' - <b>Card Rendered</b> event called<hr>');
+        this.appendElement('Kanban - ' + (args.data as { [key: string]: Object }).Id + ' - <b>Card Rendered</b> event called<hr>');
     }
 
     OnQueryCellInfo(): void {
@@ -61,11 +61,11 @@ export class EventsComponent {
     }
 
     OnCardClick(args: CardClickEventArgs): void {
-        this.appendElement('Kanban - ' + args.data.Id + ' - <b>Card Click</b> event called<hr>');
+        this.appendElement('Kanban - ' + (args.data as { [key: string]: Object }).Id + ' - <b>Card Click</b> event called<hr>');
     }
 
     OnCardDoubleClick(args: CardClickEventArgs): void {
-        this.appendElement('Kanban - ' + args.data.Id + ' - <b>Card Double Click</b> event called<hr>');
+        this.appendElement('Kanban - ' + (args.data as { [key: string]: Object }).Id + ' - <b>Card Double Click</b> event called<hr>');
     }
 
     OnDragStart(): void {

@@ -104,7 +104,7 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/cellalignment', component: CellAlignmentComponent, 'name': 'Cell Alignment',
     description: 'This demo explains how to align the content inside the cells of Tree Grid columns and headers in Syncfusion Essential JS2 Tree Grid control.', 
     order: '03', category: 'Columns' },
-    { 'path': ':theme/treegrid/columnchooser', component: ColumnChooserComponent, 'name': 'Column Chooser', 'type': 'new',
+    { 'path': ':theme/treegrid/columnchooser', component: ColumnChooserComponent, 'name': 'Column Chooser',
     description: 'This demo explains how to dynamically show/hide columns in Tree Grid using Syncfusion Essential JS2 Tree Grid control.', 
     order: '03', category: 'Columns' },
     { 'path': ':theme/treegrid/autowrap', component: AutoWrap, 'name': 'Auto Wrap Column Cells', 

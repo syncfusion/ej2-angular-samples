@@ -29,7 +29,7 @@ export const treemapAppRoutes: Object[] = [
     { path: ':theme/treemap/color-mapping', component: TreemapcolorMappingComponent, name: 'Color Mapping',  order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control with color mapping.' },
     { path: ':theme/treemap/selection', component: TreemapSelectComponent,
      name: 'Selection & Highlight', order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control depicts the details of goods imported by Japan. Selection and highlight options have been enabled.' },
-    { path: ':theme/treemap/print', component: TreemapPrintComponent, name: 'Print & Export', type: 'update',order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control depicts the top 10 best-selling smartphone brands. Print and export options have been enabled.' },
+    { path: ':theme/treemap/print', component: TreemapPrintComponent, name: 'Print & Export',order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control depicts the top 10 best-selling smartphone brands. Print and export options have been enabled.' },
     { path: ':theme/treemap/pie', component: TreemapPieComponent, name: 'TreeMap with Pie', order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control visualizes the population level of various continents in 2011 based on the gender and age group.' },
     { path: ':theme/treemap/rtl', component: TreemapRTLComponent,  name: 'RTL', order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control visualizes the population level of various continents in 2011 based on the gender and age group.' },
 ];

@@ -1,6 +1,6 @@
 <div class="control-section">
             <div class="content-wrapper">
-        <ejs-treegrid #treegrid [dataSource]='data' allowPaging='true' childMapping='subtasks' [treeColumnIndex]='0'>
+        <ejs-treegrid #treegrid [dataSource]='data' allowPaging='true' childMapping='subtasks' height='350' [treeColumnIndex]='0'>
             <e-columns>
                 <e-column field='taskName' headerTemplate='#projectName' width='220'></e-column>
                 <e-column field='startDate' headerTemplate='#dateTemplate' format="yMd" textAlign='Right'></e-column>

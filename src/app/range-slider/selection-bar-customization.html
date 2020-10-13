@@ -1,0 +1,33 @@
+<div class="col-lg-12 control-section">
+    <div class="slider-content-wrapper">
+        <div class="slider_container">
+            <div class="slider-labeltext slider_userselect">Height</div>
+            <!-- Square slider element -->
+            <ejs-slider id='height_slider' [value]='value' [min]='min' [max]='max' ></ejs-slider>
+        </div>
+        <div class="slider_container">
+            <div class="slider-labeltext slider_userselect">Gradient color</div>
+            <ejs-slider id='gradient_slider' [value]='gradient_value' [min]='min' [max]='max' [type]='range' ></ejs-slider>
+        </div>
+        <div class="slider_container">
+            <div class="slider-labeltext slider_userselect">Dynamic thumb and selection bar color</div>
+            <ejs-slider id='dynamic_color_slider' [value]='dynamic_value' [min]='min' [max]='max' [type]='range' (created)='created()' (change)='change($event)'></ejs-slider>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the customization of Slider's selection bar. Drag the thumb over the bar for selecting the values
+        between min and max.</p>
+</div>
+
+<div id="description">
+    <p>In this demo, customization of track using CSS is demonstrated.</p>
+    <ul>
+        <li>Height - In this sample, track has been customized to custom height. Here, thumb has to be adjusted based on the
+            track height.</li>
+        <li>Gradient color - In this sample, track has been customized with gradient color. </li>
+        <li>Dynamic thumb and selection bar color - In this sample, track and thumb has been customized to different colors for
+            different intervals by using created and change event. </li>
+    </ul>
+</div>

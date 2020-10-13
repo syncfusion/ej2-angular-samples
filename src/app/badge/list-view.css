@@ -29,6 +29,21 @@
   margin-right: 16px;
 }
 
+.e-rtl .list_svg {
+  margin-left: 16px;
+  margin-right: 0;
+}
+
+.listWrapper .e-badge {
+  float: right;
+  margin-top: 16px;
+  font-size: 12px;
+}
+
+.e-rtl .listWrapper .e-badge {
+  float: left;
+}
+
 .list_text {
   width: 60%;
   display: inline-block;

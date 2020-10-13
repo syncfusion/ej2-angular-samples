@@ -24,10 +24,10 @@ export const lineargaugeAppRoutes: Object[] = [
     { path: ':theme/linear-gauge/data', component: DataComponent, name: 'Data Sample', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control illustrates exercise tracking of an athlete by using ranges, pointers, and annotation features.' },
     { path: ':theme/linear-gauge/axes', component: AxesComponent, name: 'Axes and Pointers', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control shows various properties available to customize the axes and pointers.' },
     { path: ':theme/linear-gauge/annotation', component: AnnotationComponent, name: 'Annotation', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control illustrates the CPU Utilization of a resource by using annotation feature.' },
-    { path: ':theme/linear-gauge/gradient-color', component: GradientColorComponent, name: 'Gradient Color', type: "new", order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control illustrates gradient support for pointers and ranges.' },
+    { path: ':theme/linear-gauge/gradient-color', component: GradientColorComponent, name: 'Gradient Color', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control illustrates gradient support for pointers and ranges.' },
     { path: ':theme/linear-gauge/style', component: StyleComponent, name: 'Styles', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control visualizes the available options for customization.' },
     { path: ':theme/linear-gauge/tooltip', component: TooltipComponent, name: 'Tooltip', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control visualizes the tooltip functionality for bar pointer.' },
-    { path: ':theme/linear-gauge/export', component: ExportComponent, name: 'Print & Export', type: "update", order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control will print and export gauge in required format.' }
+    { path: ':theme/linear-gauge/export', component: ExportComponent, name: 'Print & Export', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control will print and export gauge in required format.' }
 ];
 
 export const linearRouter: ModuleWithProviders = RouterModule.forChild(lineargaugeAppRoutes);

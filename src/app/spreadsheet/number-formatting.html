@@ -10,6 +10,7 @@
                         <e-cells>
                             <e-cell value="Customer Name"></e-cell>
                             <e-cell value="Cristi Espinos"></e-cell>
+                            <e-cell></e-cell>
                             <e-cell [index]=3 value="Waiter Name"></e-cell>
                             <e-cell value="Raye Whines"></e-cell>
                         </e-cells>
@@ -18,26 +19,9 @@
                         <e-cells>
                             <e-cell value="Table No."></e-cell>
                             <e-cell value="8"></e-cell>
+                            <e-cell></e-cell>
                             <e-cell [index]=3 value="Date"></e-cell>
                             <e-cell value="5/7/2019"></e-cell>
-                        </e-cells>
-                    </e-row>
-                    <e-row [index]=14>
-                        <e-cells>
-                            <e-cell [index]=1 value="Subtotal:"></e-cell>
-                            <e-cell [index]=4 formula="=SUBTOTAL(9,E4:E14)" format="$#,##0.00"></e-cell>
-                        </e-cells>
-                    </e-row>
-                    <e-row>
-                        <e-cells>
-                            <e-cell [index]=1 value="Discount (8%):"></e-cell>
-                            <e-cell [index]=4 formula="=PRODUCT(8,E15)/100" format="$#,##0.00"></e-cell>
-                        </e-cells>
-                    </e-row>
-                    <e-row>
-                        <e-cells>
-                            <e-cell [index]=1 value="Total Amount:" [style]="style"></e-cell>
-                            <e-cell [index]=4 formula="=SUM(E15-E16)" [format]="accounting" [style]="style"></e-cell>
                         </e-cells>
                     </e-row>
                 </e-rows>

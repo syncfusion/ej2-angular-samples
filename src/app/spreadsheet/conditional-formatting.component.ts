@@ -21,11 +21,14 @@ export class ConditionalFormattingController {
     public openUrl = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/open';
     public saveUrl = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save';
     created() {
-        this.spreadsheetObj.merge('A1:G1');
-        this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center' }, 'A2:G2');
-        this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center', verticalAlign: "middle", fontSize: '13pt' }, 'A1:G1');
+        this.spreadsheetObj.merge('A1:H1');
+        this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center' }, 'A2:H2');
+        this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center', verticalAlign: "middle", fontSize: '13pt' }, 'A1:H1');
+        this.spreadsheetObj.numberFormat('$#,##0.00', 'F3:F18');
         this.spreadsheetObj.conditionalFormat({ type: 'BlueDataBar', range: 'D3:D18' });
-        this.spreadsheetObj.conditionalFormat({ type: 'OrangeDataBar', range: 'E3:E18' });
-        this.spreadsheetObj.conditionalFormat({ type: "ThreeStars", range: 'G3:G18' });
+        this.spreadsheetObj.conditionalFormat({ type: 'GreenDataBar', range: 'E3:E18' });
+        this.spreadsheetObj.conditionalFormat({ type: 'ThreeStars', range: 'H3:H18' });
+        this.spreadsheetObj.conditionalFormat({ type: 'Top10Items', value:'1', format:{ style:{ color: '#ffffff', backgroundColor: '#009999', fontWeight: 'bold'}}, range: 'F3:F18' });
+        this.spreadsheetObj.conditionalFormat({ type: 'Bottom10Items', value:'1', format:{ style:{ color: '#ffffff', backgroundColor: '#c68d53', fontWeight: 'bold'}}, range: 'F3:F18' });
     }
 }

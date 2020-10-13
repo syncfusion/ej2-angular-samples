@@ -58,22 +58,22 @@ export class BulletChartDefaultComponent {
     public positionTitle: TextPosition = Browser.isDevice ? 'Top' : 'Left';
 
     public margin1: MarginModel = {
-        left: Browser.isDevice ? 10 : 53,
+        left: Browser.isDevice ? 10 : 62,
         right: Browser.isDevice ? 10: 19
     };
 
     public margin2: MarginModel = {
-        left: Browser.isDevice ? 10 : 71,
+        left: Browser.isDevice ? 10 : 85,
         right: Browser.isDevice ? 10: 19
     };
 
     public margin3: MarginModel = {
-        left: Browser.isDevice ? 10 : 12,
+        left: Browser.isDevice ? 10 : 16,
         right: Browser.isDevice ? 10: 19
     };
 
     public margin4: MarginModel = {
-        left: Browser.isDevice ? 10 : 9,
+        left: Browser.isDevice ? 10 : 10,
         right: Browser.isDevice ? 10: 19
     };
 

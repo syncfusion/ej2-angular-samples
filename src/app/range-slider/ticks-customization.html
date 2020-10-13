@@ -1,0 +1,28 @@
+<div class="col-lg-12 control-section">
+    <div class="slider-content-wrapper">
+        <div class="slider_container" id="slider_wrapper">
+            <div class="slider_labelText userselect">Dynamic ticks color</div>
+            <!-- Ticks slider element -->
+            <ejs-slider id='ticks_slider' [value]='value' [min]='min' [max]='max' [type]='type' [step]='step' [ticks]='ticks' (renderingTicks)='renderingTicks($event)' ></ejs-slider>
+        </div>
+        <div class="slider_container">
+            <div class="slider_labelText userselect">Ticks with legends</div>
+            <!-- Ticks slider element -->
+            <ejs-slider id='slider' [value]='value' [min]='min' [max]='max' [type]='type' [ticks]='slider_ticks' (renderedTicks)='renderedTicks($event)'></ejs-slider>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the customization of Slider's tick. Drag the thumb over the bar for selecting the values between
+        min and max.</p>
+</div>
+
+<div id="description">
+    <p>In this demo, customization of ticks using CSS is demonstrated.</p>
+    <ul>
+        <li>Dynamic ticks color - In this sample, ticks has been customized to different colors by adding icon at each ticks.</li>
+        <li>Ticks with legends - In this sample, track has been formatted to display custom text using renderingTicks and renderedTicks
+            events. </li>
+    </ul>
+</div>

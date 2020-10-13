@@ -5,12 +5,12 @@ import { HttpModule } from '@angular/http';
 import { ScheduleAllModule, RecurrenceEditorAllModule } from '@syncfusion/ej2-angular-schedule';
 import { NumericTextBoxAllModule, TextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { DatePickerAllModule, TimePickerAllModule, DateTimePickerAllModule } from '@syncfusion/ej2-angular-calendars';
-import { CheckBoxAllModule } from '@syncfusion/ej2-angular-buttons';
-import { ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
+import { ButtonAllModule, CheckBoxAllModule, SwitchAllModule } from '@syncfusion/ej2-angular-buttons';
 import { ToolbarAllModule, ContextMenuAllModule } from '@syncfusion/ej2-angular-navigations';
 import { MaskedTextBoxModule, UploaderAllModule } from '@syncfusion/ej2-angular-inputs';
 import { DropDownListAllModule, MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { TreeViewModule } from '@syncfusion/ej2-angular-navigations';
+import { DropDownButtonAllModule } from '@syncfusion/ej2-angular-splitbuttons';
 
 import { DefaultComponent } from './default.component';
 import { TimelineComponent } from './timeline.component';
@@ -67,6 +67,7 @@ import { PrintComponent } from './print.component';
 import { YearComponent } from './year.component';
 import { InlineEditingComponent } from './inline-editing.component';
 import { QuickInfoTemplateComponent } from './quick-info-template.component';
+import { OverviewComponent } from './overview.component';
 import { SharedModule } from '../common/shared.module';
 
 export const scheduleRouteConfig: Object[] = [
@@ -79,13 +80,13 @@ export const scheduleRouteConfig: Object[] = [
   { 'path': ':theme/schedule/search-events', component: SearchEventsComponent, name: 'Search Events', order: '03', category: 'Appointments', description: 'This example shows how to filter the appointments or events of the Angular Scheduler based on a search string in a particular field or all fields.' },
   { 'path': ':theme/schedule/timezone-event', component: TimezoneComponent, name: 'Timezone', order: '03', category: 'Appointments', description: 'This demo shows how the Angular Scheduler works with different time zones. The events in the Scheduler automatically adapt to the selected time zone.' },
   { 'path': ':theme/schedule/external-drag-drop', component: ExternalDragDropComponent, name: 'External Drag and Drop', order: '03', category: 'Appointments', description: 'This demo shows the ability to drag and drop appointments from an external source (such as the DataGrid, ListView, etc.)  into the Angular Scheduler.' },
-  { 'path': ':theme/schedule/inline-editing', component: InlineEditingComponent, name: 'Inline Editing', order: '03', category: 'Appointments', type: 'new', description: 'The example showcases the inline mode of the Angular Scheduler that is used to create an appointment or edit an existing appointments subject easily and quickly.' },
+  { 'path': ':theme/schedule/inline-editing', component: InlineEditingComponent, name: 'Inline Editing', order: '03', category: 'Appointments', description: 'The example showcases the inline mode of the Angular Scheduler that is used to create an appointment or edit an existing appointments subject easily and quickly.' },
   { 'path': ':theme/schedule/virtual-scrolling', component: VirtualScrollingComponent, name: 'Virtual Scrolling', order: '04', category: 'Scrolling', hideOnDevice: true, description: 'This example illustrates how to achieve high performance in the Angular Scheduler using virtual scrolling to load resources and events on demand.' },
   { 'path': ':theme/schedule/views', component: ViewsComponent, name: 'Basic Views ', order: '05', category: 'Views', description: 'This example demonstrates the basic views (day, week, workweek, and month) of the Angular Scheduler control with their default configurations.' },
   { 'path': ':theme/schedule/timeline', component: TimelineComponent, name: 'Timeline Views ', order: '05', category: 'Views', description: 'This example presents timeline views (day, week, workweek, and month) of the Angular Scheduler with their default configurations.' },
   { 'path': ':theme/schedule/agenda', component: AgendaComponent, name: 'Agenda View', order: '05', category: 'Views', description: 'This demo shows the agenda view of the Angular Schedule that displays events as a list with virtual scrolling, with a number of initially loaded days.' },
   { 'path': ':theme/schedule/month-agenda', component: MonthAgendaComponent, name: 'Month Agenda View', order: '05', category: 'Views', description: 'This demo presents the Angular Scheduler month-agenda view, which follows the month-view layout while displaying events for a selected date.' },
-  { 'path': ':theme/schedule/year', component: YearComponent, name: 'Year View', order: '05', category: 'Views', type: 'update', description: 'This example presents a year view of the Angular Scheduler that displays appointments or events for an entire year with a horizontal or vertical layout.' },
+  { 'path': ':theme/schedule/year', component: YearComponent, name: 'Year View', order: '05', category: 'Views', description: 'This example presents a year view of the Angular Scheduler that displays appointments or events for an entire year with a horizontal or vertical layout.' },
   { 'path': ':theme/schedule/view-configuration', component: ViewConfigComponent, name: 'Individual View Settings', order: '05', category: 'Views', description: 'This demo shows how to configure different settings for each view in the Angular Scheduler, like applying event templates to the month view alone.' },
   { 'path': ':theme/schedule/extended-views', component: ExtendedViewsComponent, name: 'View Intervals', order: '05', category: 'Views', description: 'This demo shows how to design own custom views like 3 days, 2 weeks, 4 months apart from the default day, work week, month in Angular Event Scheduler.' },
   { 'path': ':theme/schedule/timeline-resource', component: TimelineResourcesComponent, name: 'Room Scheduler', order: '06', category: 'Multiple Resources', description: 'This demo shows how to design a meeting room calendar, conference room calendar, and cabin room manager using our Angular event calendar control.' },
@@ -103,7 +104,7 @@ export const scheduleRouteConfig: Object[] = [
   { 'path': ':theme/schedule/date-header-template', component: DateheaderTemplateComponent, name: 'Date Header', order: '08', category: 'Template', description: 'This demo shows how to customize the default appearance of date header cells with images and links using the template option in the Angular Scheduler.' },
   { 'path': ':theme/schedule/events-template', component: EventsTemplateComponent, name: 'Events', order: '08', category: 'Template', description: 'This demo shows how to customize the look and feel of appointments (events) in the Angular Shceduler with images and links by using an event template.' },
   { 'path': ':theme/schedule/tooltip', component: TooltipComponent, name: 'Tooltip', order: '08', category: 'Template', description: 'This demo shows how to enable tooltips (popovers) in Angular Scheduler appointments (events) and customize them using a tooltip template.' },
-  { 'path': ':theme/schedule/quick-info-template', component: QuickInfoTemplateComponent, name: 'Quick Info Template', order: '08', category: 'Template', type: 'new', description: 'The example showcases the customized quick info popups for cells and events using the templates that help to override the built-in style in the Angular Scheduler.' },
+  { 'path': ':theme/schedule/quick-info-template', component: QuickInfoTemplateComponent, name: 'Quick Info Template', order: '08', category: 'Template', description: 'The example showcases the customized quick info popups for cells and events using the templates that help to override the built-in style in the Angular Scheduler.' },
   { 'path': ':theme/schedule/editor-validation', component: EditorValidationComponent, name: 'Field Validation', order: '09', category: 'Editor Window', description: 'This demo covers the Appointment field validation that adds default and custom validation rules to the editor fields of the Angular Scheduler.' },
   { 'path': ':theme/schedule/editor-custom-field', component: EditorCustomFieldComponent, name: 'Additional Fields', order: '09', category: 'Editor Window', description: 'This demo shows how to customize appointment editor (event window) with additional fields using pop-up open events in the Angular event calendar.' },
   { 'path': ':theme/schedule/editor-template', component: EditTempComponent, name: 'Editor Template', order: '09', category: 'Editor Window', description: 'This demo shows how to design custom appointment (event) editor windows by adding or removing fields from the Angular Scheduler appointment window.' },
@@ -137,13 +138,15 @@ const declarations: Type<Object>[] = [
   GroupCustomWorkDaysComponent, GroupByDateComponent, GroupByChildComponent, ExtendedViewsComponent, ResourcesComponent, ResourceComponent,
   GroupComponent, AddRemoveResourcesComponent, TimelineComponent, TimelineResourceGroupingComponent, TimelineResourcesComponent,
   HeaderRowsComponent, ExternalDragDropComponent, ScheduleContextMenuComponent, VirtualScrollingComponent, CalendarIntegrationComponent,
-  CalendarExportImportComponent, ExcelExportComponent, PrintComponent, YearComponent, InlineEditingComponent, QuickInfoTemplateComponent
+  CalendarExportImportComponent, ExcelExportComponent, PrintComponent, YearComponent, InlineEditingComponent, QuickInfoTemplateComponent,
+  OverviewComponent
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(scheduleRouteConfig), CommonModule, HttpModule, ScheduleAllModule, RecurrenceEditorAllModule,
-    NumericTextBoxAllModule, TextBoxAllModule, DatePickerAllModule, TimePickerAllModule, DateTimePickerAllModule, CheckBoxAllModule, ToolbarAllModule,
-    DropDownListAllModule, ContextMenuAllModule, MaskedTextBoxModule, UploaderAllModule, MultiSelectAllModule, TreeViewModule, ButtonAllModule, SharedModule],
+    NumericTextBoxAllModule, TextBoxAllModule, DatePickerAllModule, TimePickerAllModule, DateTimePickerAllModule, CheckBoxAllModule,
+    ToolbarAllModule, DropDownListAllModule, ContextMenuAllModule, MaskedTextBoxModule, UploaderAllModule, MultiSelectAllModule,
+    TreeViewModule, ButtonAllModule, DropDownButtonAllModule, SwitchAllModule, SharedModule],
   declarations: declarations,
   providers: [ScheduleAllModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

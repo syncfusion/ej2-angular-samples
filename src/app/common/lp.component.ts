@@ -30,9 +30,8 @@ export class LPController {
         '${if(type)}<span class="e-samplestatus ${type}"></span>${/if}</span> </div>';
     public listFields: Object = { id: 'uid', text: 'name', groupBy: 'order', htmlAttributes: 'data' };
     public app: any;
-    public navElement: Element;
-    public copyRight: number = new Date().getFullYear();
-    
+    public navElement: Element
+
     @ViewChild('controlList')
     public listComponent: ListViewComponent;
 

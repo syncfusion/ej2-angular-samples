@@ -23,7 +23,6 @@ export const progressBarAppRoutes: Object[] = [
         name: 'Linear',
         order: '01',
         category: 'Progress Bar',
-        type: 'update'
     },
     {
         path: ':theme/progress-bar/default',
@@ -52,7 +51,6 @@ export const progressBarAppRoutes: Object[] = [
         name: 'Labels',
         order: '01',
         category: 'Progress Bar',
-        type: 'update'
     },
     {
         path: ':theme/progress-bar/Radius',
@@ -67,7 +65,6 @@ export const progressBarAppRoutes: Object[] = [
         name: 'Stripes',
         order: '01',
         category: 'Progress Bar',
-        type: 'new'
     },
     {
         path: ':theme/progress-bar/progress-segment',
@@ -75,7 +72,6 @@ export const progressBarAppRoutes: Object[] = [
         name: 'Progress Segment',
         order: '01',
         category: 'Progress Bar',
-        type: 'new'
     }
 ];
 

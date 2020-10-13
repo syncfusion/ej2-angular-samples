@@ -1,5 +1,5 @@
 <div class="control-section">
-    <ejs-treegrid [dataSource]='data'  childMapping='subtasks' [treeColumnIndex]='1' id="treegridcomp" allowPaging='true' [pageSettings]='pageSettings' allowExcelExport='true' allowPdfExport='true' allowSorting='true'
+    <ejs-treegrid [dataSource]='data'  childMapping='subtasks' height='350' [treeColumnIndex]='1' id="treegridcomp" allowPaging='true' [pageSettings]='pageSettings' allowExcelExport='true' allowPdfExport='true' allowSorting='true'
     [contextMenuItems]="contextMenuItems" [editSettings]='editing' [toolbar]="toolbar">
         <e-columns>
             <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='80' [edit]='editparams' textAlign='Right' editType='numericedit'></e-column>

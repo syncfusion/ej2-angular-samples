@@ -1,0 +1,27 @@
+<div id="action-description">
+    <p>This sample demonstrates the lazy load grouping feature of the Grid component.</p>
+</div>
+<div class="control-section">
+    <ejs-grid #grid [dataSource]='lazyLoadData' [allowPaging]='true' [allowGrouping]='true' [groupSettings]='groupSettings'>
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' textAlign='Right' width='120'></e-column>
+            <e-column field='ProductName' headerText='Product Name' width='100'></e-column>
+            <e-column field='ProductID' headerText='Product ID' textAlign='Right' width='120'></e-column>
+            <e-column field='CustomerID' headerText='Customer ID' width='120'></e-column>
+            <e-column field='CustomerName' headerText='Customer Name' width='120'></e-column>
+        </e-columns>
+    </ejs-grid>
+</div>
+
+<div id='description'>
+    <p>
+        The Lazy load grouping, allows the Grid to render only the initial level caption rows in the collapsed state while grouping.
+        The child rows of each caption will render only when we expand the captions.
+        To enable lazy load grouping, set <code><a target="_blank" class="code"
+            href="http://ej2.syncfusion.com/documentation/grid/api-groupSettings.html#enablelazyloading-boolean">
+            groupSettings->enableLazyLoading </a></code> property as true.
+    </p>
+    <p style='font-weight: 500'>Injecting Module:</p>
+    <p>Grid component features are segregated into individual feature-wise modules. To use lazy lad grouping feature, we need
+        to inject <code>LazyLoadGroupService</code> into the <code>@NgModule.providers</code> section.</p>
+</div>

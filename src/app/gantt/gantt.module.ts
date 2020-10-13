@@ -56,7 +56,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/editing', component: GanttEditingComponent,
         description: 'This example demonstrates the cell editing, dialog editing, taskbar editing and dependency editing support in Gantt',
-        name: 'Editing', order: '01', category: 'Gantt', type: 'update'
+        name: 'Editing', order: '01', category: 'Gantt'
     },
     {
         path: ':theme/gantt/selection', component: GanttSelectionComponent,
@@ -66,7 +66,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/context-menu', component: GanttContextMenuComponent,
         description: 'This demo explains the usage of context menu and the default context menu items in Syncfusion Gantt component.',
-        name: 'Context Menu', order: '01', category: 'Gantt', type: 'update'
+        name: 'Context Menu', order: '01', category: 'Gantt'
     },
     {
         path: ':theme/gantt/exporting', component: GanttExportingComponent,
@@ -116,12 +116,12 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/resource-view', component: GanttResourceViewComponent,
         description: 'This sample explains the Resource break down view in the Gantt chart that is how to visualize the list of tasks assigned to each resource in hierarchy manner.',
-        name: 'Resource View', order: '03', category: 'Resources', type: 'update'
+        name: 'Resource View', order: '03', category: 'Resources'
     },
     {
         path: ':theme/gantt/resource-multi-taskbar', component: GanttResourceMultiTaskbarComponent,
         description: 'This sample explains how to visualize the list of tasks assigned to each resource on a single parent row while collapsing the parent record.',
-        name: 'Resource Multi Taskbar', order: '03', category: 'Resources', type: 'new'
+        name: 'Resource Multi Taskbar', order: '03', category: 'Resources'
     },
     {
         path: ':theme/gantt/work-week', component: GanttWorkWeekComponent,
