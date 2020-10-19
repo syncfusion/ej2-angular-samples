@@ -25,6 +25,7 @@ import { NumericAxisChartComponent } from './numeric.component';
 import { RemoteDataChartComponent } from './remote-data.component';
 import { SplineChartComponent } from './spline.component';
 import { StackedAreaChartComponent } from './stacked-area.component';
+import { StackedStepAreaChartComponent } from './stacked-step-area.component';
 import { CategoryChartComponent } from './category.component';
 import { StackedBarChartComponent } from './stacked-bar.component';
 import { StackedColumnChartComponent } from './stacked-column.component';
@@ -129,6 +130,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/step-area', component: StepAreaChartComponent, name: 'Step Area', description: "This demo for Essential JS2 Chart control shows how to render the step area series.", order: '02', category: 'Area Charts' },
     { path: ':theme/chart/range-area', component: RangeAreaComponent, name: 'Range Area', description: "This demo for Essential JS2 Chart control shows how to render the range area series.", order: '02', category: 'Area Charts' },
     { path: ':theme/chart/stacked-area', component: StackedAreaChartComponent, name: 'Stacked Area', description: "This demo for Essential JS2 Chart control shows how to render the stacking area series.", order: '02', category: 'Area Charts' },
+    { path: ':theme/chart/stacked-step-area', component: StackedStepAreaChartComponent, name: 'Stacked Step Area', description: "This demo for Essential JS2 Chart control shows how to render the stacking step area series.", order: '02', category: 'Area Charts', type: 'new' },
     { path: ':theme/chart/stacked-area-percent', component: PercentStackedAreaChartComponent, name: '100% Stacked Area', description: "This demo for Essential JS2 Chart control shows how to render the 100 percent stacking area series.", order: '02', category: 'Area Charts' },
     { path: ':theme/chart/area-empty', component: EmptyAreaChartComponent, name: 'Area - Empty Points', description: "This demo for Essential JS2 Chart control shows how to render the area series with empty points.", order: '02', category: 'Area Charts' },
     { path: ':theme/chart/area-segments', component: AreaSegmentChartComponent, name: 'Area Zone', description: "This demo for Essential JS2 Chart control shows how to render and configure the points in a particular range using MultiColoredArea series.", order: '02', category: 'Area Charts' },
@@ -195,7 +197,7 @@ export const chartAppRoutes: Object[] = [
         path: ':theme/chart/semi-pie', component: SemiPieComponent, name: 'Semi Pie', description: "This demo for Essential JS2 Chart control shows how to render semi-pie and doughnut charts.", order: '09', category: 'Accumulation Charts'
     },
     {
-        path: ':theme/chart/smart-labels', component: SmartLabelsComponent, name: 'Smart Labels', description: "This demo for Essential JS2 Chart control shows how to arrange the labels smartly without overlapping with each other.", order: '09', category: 'Accumulation Charts', type: 'update'
+        path: ':theme/chart/smart-labels', component: SmartLabelsComponent, name: 'Smart Labels', description: "This demo for Essential JS2 Chart control shows how to arrange the labels smartly without overlapping with each other.", order: '09', category: 'Accumulation Charts'
     },
     {
         path: ':theme/chart/drill-down-pie', component: DrilldownPieComponent, name: 'Drilldown', description: "This demo for Essential JS2 Chart control shows how to achieve the drill-down concept using pie charts.", order: '09', category: 'Accumulation Charts'
@@ -280,7 +282,7 @@ let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, Ba
     RangeSelectionChartComponent, ExportChartComponent, SplineAreaChartComponent,
     MultiLevelLabelsChartComponent, LineSegmentChartComponent,
     AxisCrossingChartComponent, AreaSegmentChartComponent, MultiLineChartComponent,
-    DateTimeCategoryAxisChartComponent, SortingChartComponent, PieRadiusComponent,
+    DateTimeCategoryAxisChartComponent, SortingChartComponent, PieRadiusComponent, StackedStepAreaChartComponent,
     StackedLineChartComponent, PercentStackedLineChartComponent, DataEditingComponent, TooltipTemplateComponent ];
 @NgModule({
     // tslint:disable-next-line:max-line-length

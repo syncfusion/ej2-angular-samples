@@ -1,0 +1,32 @@
+{
+    "de": {
+        "slider": {
+            "incrementTitle":"ansteigen",
+            "decrementTitle":"verringern"
+        }
+    },
+    "ar": {
+        "slider": {
+            "incrementTitle":"زيادة",
+            "decrementTitle":"تخفيض"
+        }
+    },
+    "en": {
+        "slider": {
+            "incrementTitle":"increase",
+            "decrementTitle":"decrease"
+        }
+    },
+    "zh": {
+        "slider": {
+            "incrementTitle":"减少",
+            "decrementTitle":"增加"
+        }
+    },
+    "fr-CH": {
+        "slider": {
+            "incrementTitle":"augmenter",
+            "decrementTitle":"diminution"
+        }
+    }
+}

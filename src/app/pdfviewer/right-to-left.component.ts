@@ -165,11 +165,7 @@ export class RightToLeftComponent implements OnInit {
                     'Free Text': 'نص حر',
                     'Import Failed': 'نوع ملف سلمان أو اسم الملف غير صالح ؛ يرجى تحديد ملف سلمانصالح',
                     'File not found': 'لم يتم العثور على ملف سلمان المستورد في الموقع المطلوب',
-                    'Export Failed': 'شل إجراء تصدير التعليقات التوضيحية ؛ يرجى التأكد من إضافة التعليقات التوضيحية بشكل صحيح',
-                    'Highlight context': 'تسليط الضوء',
-                    'Underline context': 'تسطير',
-                    'Strikethrough context': 'الإضراب من خلال',
-                    'Draw Ink': 'رسم الحبر'
+                    'Export Failed': 'شل إجراء تصدير التعليقات التوضيحية ؛ يرجى التأكد من إضافة التعليقات التوضيحية بشكل صحيح'
                 }
             }
         });

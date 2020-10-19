@@ -1,0 +1,134 @@
+<div class="col-lg-8 control-section">
+    <div class="content-wrapper" id="all-option-sample">
+        <div class='api sliderwrap'>
+            <ejs-slider id='slider' #slider [value]='value' [min]='min' [max]='max' (change)='sliderChange($event)' [type]='type' [tooltip]='tooltip' [ticks]='ticks'></ejs-slider>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4 property-section" id="all-option-table">
+    <table id="property" title="Properties">
+        <tbody>
+            <tr>
+                <td style="width: 50%">
+                    <div class="userselect">Value</div>
+                </td>
+                <td style="width: 50%;padding-right: 10px">
+                    <div>
+                        <ejs-numerictextbox id='value' #numeric1 format="n0" value="30" (change)='change($event)'></ejs-numerictextbox>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%">
+                    <div class="userselect">Min</div>
+                </td>
+                <td style="width: 50%;padding-right: 10px">
+                    <div>
+                        <ejs-numerictextbox id='min' #numeric2 format="n0" value="0" (change)='min_change($event)'></ejs-numerictextbox>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%">
+                    <div class="userselect">Max</div>
+                </td>
+                <td style="width: 50%;padding-right: 10px">
+                    <div>
+                        <ejs-numerictextbox id='max' #numeric3 format="n0" value="100" (change)='max_change($event)'></ejs-numerictextbox>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%">
+                    <div class="userselect">Step</div>
+                </td>
+                <td style="width: 50%;padding-right: 10px">
+                    <div>
+                        <ejs-numerictextbox id='step' #numeric4 value="1" format="n0" (change)='step_change($event)'></ejs-numerictextbox>
+                    </div>
+                </td>
+            </tr>
+            <tr id="desktop-checkbox-row-1">
+                <td style="width: 50%">
+                    <div class="userselect" style="padding-left: 0">
+                        <ejs-checkbox id='button' [checked]="false" label="Show Buttons" (change)="button_onChange($event)"></ejs-checkbox>
+                    </div>
+                </td>
+                <td style="width: 50%;padding-right: 10px">
+                    <div style="padding-left: 0;padding-top: 0">
+                        <ejs-checkbox id='disabled' [checked]="false" label="Disabled" (change)="disabled_onChange($event)"></ejs-checkbox>
+                    </div>
+                </td>
+            </tr>
+            <tr id="desktop-checkbox-row-2">
+                <td style="width: 50%;padding-right: 10px">
+                    <div style="padding-left: 0;padding-top: 0">
+                        <ejs-checkbox id='readOnly' [checked]="false" label="Readonly" (change)="readOnly_onChange($event)"></ejs-checkbox>
+                    </div>
+                </td>
+                <td style="width: 50%">
+                    <div class="userselect" style="padding-left: 0">
+                        <ejs-checkbox id='orientation' [checked]="false" label="Vertical Orientation" (change)="orientation_onChange($event)"></ejs-checkbox>
+                    </div>
+                </td>
+            </tr>
+            <tr id="mobie-checkbox-row-1">
+                <td style="width: 50%">
+                    <div class="userselect">Show Buttons</div>
+                </td>
+                <td style="width: 50%;padding-right: 10px">
+                    <div>
+                        <ejs-checkbox id='mb-button' [checked]="false" (change)="buttonM_onChange($event)"></ejs-checkbox>
+                    </div>
+                </td>
+            </tr>
+            <tr id="mobile-checkbox-row-2">
+                <td style="width: 50%">
+                    <div class="userselect">Disabled</div>
+                </td>
+                <td style="width: 50%;padding-right: 10px">
+                    <div>
+                        <ejs-checkbox id='mb-disabled' [checked]="false" (change)="disabledM_onChange($event)"></ejs-checkbox>
+                    </div>
+                </td>
+            </tr>
+            <tr id="mobile-checkbox-row-3">
+                <td style="width: 50%">
+                    <div class="userselect">Vertical Orientation</div>
+                </td>
+                <td style="width: 50%;padding-right: 10px">
+                    <div>
+                        <ejs-checkbox id='mb-orientation' [checked]="false" (change)="orientationM_onChange($event)"></ejs-checkbox>
+                    </div>
+                </td>
+            </tr>
+            <tr id="mobile-checkbox-row-4">
+                <td style="width: 50%">
+                    <div class="userselect">Readonly</div>
+                </td>
+                <td style="width: 50%;padding-right: 10px">
+                    <div>
+                        <ejs-checkbox id='mb-readOnly' [checked]="false" (change)="disabledM_onChange($event)"></ejs-checkbox>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the customization of Slider component by using its properties from property pane. Select any
+        combination of properties from property pane to customize Slider component.</p>
+</div>
+
+<div id="description">
+    <p>In this demo, default slider is rendered with minimal configuration.</p>
+    <p>This sample can be customized further with the combination of Slider properties from the property pane. For example,</p>
+    <ul>
+        <li>Min, max, value and Steps can be changed from the property pane.</li>
+        <li>Ticks can be enabled by selecting the ticks placement from the property pane.</li>
+        <li>Tooltip can be enabled by checking Show tooltip checkbox from property pane.</li>
+        <li>Vertical orientation can be enabled by checking vertical orientation from property pane and so on.</li>
+    </ul>
+</div>

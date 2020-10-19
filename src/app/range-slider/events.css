@@ -1,0 +1,44 @@
+    .content-wrapper {
+        padding-top: 50px;
+        width: 55%;
+        margin: 0 auto;
+        min-width: 185px;
+    }
+
+    .sliderwrap {
+        margin-top: 40px;
+    }
+
+    .e-bigger .content-wrapper {
+        width: 80%;
+    }
+
+    .userselect {
+        -webkit-user-select: none;
+        /* Safari 3.1+ */
+        -moz-user-select: none;
+        /* Firefox 2+ */
+        -ms-user-select: none;
+        /* IE 10+ */
+        user-select: none;
+        /* Standard syntax */
+    }
+
+    #EventLog b {
+        color: #388e3c;
+    }
+
+    hr {
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+
+    #slider_event .property-panel-table div {
+        margin-top: -4px;
+        padding-bottom: 0px;
+    }
+
+    #slider_event.property-section {
+        margin-bottom: -19px;
+
+    }

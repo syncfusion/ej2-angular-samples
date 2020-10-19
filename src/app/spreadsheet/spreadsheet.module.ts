@@ -16,6 +16,7 @@ import { SortinAndFilteringComponent } from './sorting-and-filtering.component';
 import { CellTemplateComponent } from './cell-template.component';
 import { SharedModule } from '../common/shared.module';
 import { ConditionalFormattingController } from './conditional-formatting.component';
+import { ImageController } from './image.component';
 
 export const spreadsheetAppRoutes: Object[] = [
     {
@@ -55,7 +56,7 @@ export const spreadsheetAppRoutes: Object[] = [
     },
     {
         path: ':theme/spreadsheet/conditional-formatting', component: ConditionalFormattingController,
-        name: 'Conditional Formatting', category: 'Formatting', order: '03', type: 'new',
+        name: 'Conditional Formatting', category: 'Formatting', order: '03', type: 'update',
         description: 'This demo for Essential JS 2 Spreadsheet control shows conditional formatting feature.'
     },
     {
@@ -64,8 +65,13 @@ export const spreadsheetAppRoutes: Object[] = [
         description: 'This demo for Syncfusion Angular Spreadsheet control shows sorting and filtering feature.'
     },
     {
+        path: ':theme/spreadsheet/image', component: ImageController,
+        name: 'Image', category: 'Illustrations', order: '05', type: 'new',
+        description: "This demo for Essential JS 2 Spreadsheet control shows image feature."
+    },
+    {
         path: ':theme/spreadsheet/cell-template', component: CellTemplateComponent,
-        name: 'Cell Template', category: 'Templates', order: '05',
+        name: 'Cell Template', category: 'Templates', order: '06',
         description: 'This demo for Syncfusion Angular Spreadsheet control shows cell template feature.'
     }
 ];
@@ -84,7 +90,8 @@ export const spreadsheetRouter: ModuleWithProviders = RouterModule.forChild(spre
         ProtectSheetComponent,
         SortinAndFilteringComponent,
         CellTemplateComponent,
-        ConditionalFormattingController
+        ConditionalFormattingController,
+        ImageController
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

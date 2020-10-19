@@ -64,7 +64,8 @@ export const bulletChartAppRoutes: Object[] = [
         component: BulletChartLegendComponent,
         name: 'Legend',
         order: '01',
-        category: 'Bullet Chart'
+        category: 'Bullet Chart',
+		
     }
 ];
 

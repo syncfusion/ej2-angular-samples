@@ -1,7 +1,7 @@
 
 <div class="col-lg-8 control-section">
         <div class="content-wrapper">
-                <ejs-treegrid #treegrid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' [toolbar]='toolbar' enableHover='false' childMapping='subtasks' [treeColumnIndex]='1' 
+                <ejs-treegrid #treegrid [dataSource]='data' height='350' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' [toolbar]='toolbar' enableHover='false' childMapping='subtasks' [treeColumnIndex]='1' 
                 (rowDataBound)="rowDataBound($event)" (beginEdit)="beginEdit($event)">
                     <e-columns>
                         <e-column field='taskID' headerText='Task ID' width='100' isPrimaryKey='true' textAlign='Right' [validationRules]='taskidrules'></e-column>

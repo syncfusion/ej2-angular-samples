@@ -69,8 +69,8 @@ import { ProgressBarSampleModule } from '../progress-bar/progress-bar.module';
 const appRoutes: any = [
     // Grids
     { path: 'grid', loadChildren: GridSampleModule },
-    { path: '', redirectTo: 'material/grid/overview', pathMatch: 'full' },
-    { path: '**', redirectTo: 'material/grid/overview' },
+    { path: '', redirectTo: 'material/grid/over-view', pathMatch: 'full' },
+    { path: '**', redirectTo: 'material/grid/over-view' },
     { path: 'treegrid', loadChildren: TreeGridSampleModule },
     { path: 'pivot-table', loadChildren: PivotTableSampleModule },
     { path: ':theme/pivot-table/:sample', redirectTo: 'material/pivot-table/default' },

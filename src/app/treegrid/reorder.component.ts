@@ -26,7 +26,7 @@ export class ColumnReorderComponent implements OnInit {
     public dropdown2: DropDownListComponent;
     ngOnInit(): void {
         this.data = sampleData;
-        this.pageSettings = { pageSize: 8 };
+        this.pageSettings = { pageSize: 10 };
         this.ddlfields = { text: 'name' , value: 'id'};
         this.d1data= [       { id: 'taskID', name: 'Task ID' },
                              { id: 'taskName', name: 'Task Name' },

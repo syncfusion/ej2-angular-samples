@@ -18,14 +18,14 @@ export class ClipboardComponent implements OnInit {
     public grid: GridComponent;
     @ViewChild('alertDialog')
     public alertDialog: DialogComponent;
+    public alertHeader: string = 'Copy with Header';
     public hidden: Boolean = false;
     public target: string = '.control-section';
     public alertWidth: string = '300px';
+    public alertContent: string = 'Atleast one row should be selected to copy with header';
     public showCloseIcon: Boolean = false;
     public animationSettings: Object = { effect: 'None' };
     public toolbar: Object[];
-    public alertHeader: string;
-    public alertContent: string;
     public alertDlgBtnClick = () => {
         this.alertDialog.hide();
     }
@@ -45,8 +45,6 @@ export class ClipboardComponent implements OnInit {
             }
             this.grid.copy(withHeader);
         } else {
-            this.alertDialog.header = args.item.id === 'copyHeader' ? 'Copy with Header' : 'Copy';
-            this.alertDialog.content = args.item.id === 'copyHeader' ? 'Atleast one row should be selected to copy with header' : 'Atleast one row should be selected to copy';
             this.alertDialog.show();
         }
     }

@@ -5,32 +5,6 @@
                 <e-ranges>
                     <e-range [dataSource]="data"></e-range>
                 </e-ranges>
-                <e-rows>
-                    <e-row [index]=11 [height]=25>
-                        <e-cells>
-                            <e-cell [index]=3 value="Average profit:"></e-cell>
-                            <e-cell [index]=5 formula="=AVERAGE(Profit)" format="0.00"></e-cell>
-                        </e-cells>
-                    </e-row>
-                    <e-row [height]=25>
-                        <e-cells>
-                            <e-cell [index]=3 value="Maximum stock value:"></e-cell>
-                            <e-cell [index]=5 formula="=MAX(High)" format="0.00"></e-cell>
-                        </e-cells>
-                    </e-row>
-                    <e-row [height]=25>
-                        <e-cells>
-                            <e-cell [index]=3 value="Minimum stock value:"></e-cell>
-                            <e-cell [index]=5 formula="=MIN(E2:E11)"></e-cell>
-                        </e-cells>
-                    </e-row>
-                    <e-row [height]=25>
-                        <e-cells>
-                            <e-cell [index]=3 value="Non-profitable days:"></e-cell>
-                            <e-cell [index]=5 formula='=COUNTIF(F2:F11,"<=0")'></e-cell>
-                        </e-cells>
-                    </e-row>
-                </e-rows>
                 <e-columns>
                     <e-column [width]=100></e-column>
                     <e-column [width]=130></e-column>

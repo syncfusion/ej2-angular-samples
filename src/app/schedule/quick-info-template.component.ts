@@ -4,7 +4,7 @@ import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { TextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 import {
     ScheduleComponent, MonthService, DayService, WeekService, WorkWeekService, AgendaService,
-    MonthAgendaService, ResourcesModel, CellClickEventArgs, CurrentAction, EventSettingsModel
+    MonthAgendaService, ResourcesModel, CellClickEventArgs, CurrentAction, EventSettingsModel, EJ2Instance
 } from '@syncfusion/ej2-angular-schedule';
 import { quickInfoTemplateData } from './data';
 
@@ -85,11 +85,11 @@ export class QuickInfoTemplateComponent {
             const cellDetails: CellClickEventArgs = this.scheduleObj.getCellDetails(this.scheduleObj.getSelectedElements());
             const addObj: { [key: string]: Object } = {};
             addObj.Id = this.scheduleObj.getEventMaxID();
-            addObj.Subject = this.titleObj.value;
+            addObj.Subject = ((quickPopup.querySelector('#title') as EJ2Instance).ej2_instances[0] as TextBoxComponent).value;
             addObj.StartTime = new Date(+cellDetails.startTime);
             addObj.EndTime = new Date(+cellDetails.endTime);
-            addObj.Description = this.notesObj.value;
-            addObj.RoomId = this.eventTypeObj.value;
+            addObj.Description = ((quickPopup.querySelector('#notes') as EJ2Instance).ej2_instances[0] as TextBoxComponent).value;
+            addObj.RoomId = ((quickPopup.querySelector('#eventType') as EJ2Instance).ej2_instances[0] as DropDownListComponent).value;
             return addObj;
         };
         if ((e.target as HTMLElement).id === 'add') {

@@ -17,8 +17,8 @@ export class ValidateUploaderComponent {
     public uploadObj: UploaderComponent;
 
     public path: Object = {
-        saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
-        removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove'
+        saveUrl: 'https://ej2.syncfusion.com/services/api/uploadbox/Save',
+        removeUrl: 'https://ej2.syncfusion.com/services/api/uploadbox/Remove'
     };
 
     public dropElement: HTMLElement = document.getElementsByClassName('control-fluid')[0] as HTMLElement;

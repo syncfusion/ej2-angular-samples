@@ -1,5 +1,5 @@
 <div class="col-lg-9 control-section">
-    <ejs-treegrid #treegrid [dataSource]='data' allowPaging='true' childMapping='subtasks' [treeColumnIndex]='0' allowSorting='true' [sortSettings]='sortSettings'  (actionComplete)="sort($event)">
+    <ejs-treegrid #treegrid [dataSource]='data' allowPaging='true' childMapping='subtasks' height='350' [treeColumnIndex]='0' allowSorting='true' [sortSettings]='sortSettings'  (actionComplete)="sort($event)">
         <e-columns>
             <e-column field='orderName' headerText='Order Name' width='200' ></e-column>
             <e-column field='Category' headerText='Category' width='150'></e-column>

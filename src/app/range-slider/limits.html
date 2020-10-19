@@ -1,0 +1,139 @@
+<div id="action-description">
+    <p>This sample demonstrates the rendering of Slider component with limits. Drag the thumb over the bar for selecting the
+        values between assigned limit values. Change the values in the property pane to set different limit values.</p>
+</div>
+<div class="col-lg-8 control-section">
+    <div class='content-wrapper'>
+        <div class='sliderwrap'>
+            <label class="labeltext">MinRange Slider With Limits</label>
+            <ejs-slider id='minrange' #minrange [value]='minValue' [min]='min' [max]='max' [tooltip]='tooltip' [ticks]='ticks' [type]='minType'
+                [limits]='minRangeLimits'></ejs-slider>
+        </div>
+        <div class='sliderwrap'>
+            <label class="labeltext">Range Slider With Limits</label>
+            <ejs-slider id='range' #range [value]='rangeValue' [min]='min' [max]='max' [tooltip]='tooltip' [ticks]='ticks' [type]='rangetype'
+                [limits]='rangeLimits'></ejs-slider>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 property-section property-custom">
+    <table id="property" title="Properties">
+        <tbody>
+            <tr>
+                <td style="width: 50%">
+                    <div class="labeltext">MinStart</div>
+                </td>
+                <td style="width: 50%">
+                    <ejs-numerictextbox id='minStart' #minStart [value]="10" [min]="0" [max]="100" (change)='minStartChange($event)'></ejs-numerictextbox>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%">
+                    <div class="labeltext">MinEnd</div>
+                </td>
+                <td style="width: 50%">
+                    <ejs-numerictextbox id='minEnd' #minEnd [value]="40" [min]="0" [max]="100" (change)='minEndChange($event)'></ejs-numerictextbox>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%">
+                    <div class="labeltext">MaxStart</div>
+                </td>
+                <td style="width: 50%">
+                    <ejs-numerictextbox id='maxStart' #maxStart [value]="60" [min]="0" [max]="100" (change)='maxStartChange($event)'></ejs-numerictextbox>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%">
+                    <div class="labeltext">MaxEnd</div>
+                </td>
+                <td style="width: 50%">
+                    <ejs-numerictextbox id='maxEnd' #maxEnd [value]="90" [min]="0" [max]="100" (change)='maxEndChange($event)'></ejs-numerictextbox>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%">
+                    <div class="labeltext">Lock First Handle</div>
+                </td>
+                <td style="width: 50%">
+                    <ejs-checkbox #fixedOne (change)="fixOne($event)"></ejs-checkbox>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%">
+                    <div class="labeltext">Lock Second Handle</div>
+                </td>
+                <td style="width: 50%">
+                    <ejs-checkbox #fixedSecond (change)="fixSecond($event)"></ejs-checkbox>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div id="description">
+    <p>
+        The limits are used to limit between certain range. When the limits are assigned, draggable limited area will be in the dark
+        shadow color of the current theme. The limits API are explained below.
+    </p>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <a target="_blank" href="http://ej2.syncfusion.com/documentation/slider/api-limitData.html?lang=es6#minstart">minStart</a>
+                </td>
+                <td>
+                    - &nbsp;&nbsp;Used to set minimum limit value for first handle.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a target="_blank" href="http://ej2.syncfusion.com/documentation/slider/api-limitData.html?lang=es6#minend">minEnd</a>
+                </td>
+                <td>
+                    - &nbsp;&nbsp;Used to set maximum limit value for first handle.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a target="_blank" href="http://ej2.syncfusion.com/documentation/slider/api-limitData.html?lang=es6#maxstart">maxStart</a>
+                </td>
+                <td>
+                    - &nbsp;&nbsp;Used to set minimum limit value for second handle.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a target="_blank" href="http://ej2.syncfusion.com/documentation/slider/api-limitData.html?lang=es6#maxend">maxEnd</a>
+                </td>
+                <td>
+                    - &nbsp;&nbsp;Used to set maximum limit value for first handle.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a target="_blank" href="http://ej2.syncfusion.com/documentation/slider/api-limitData.html?lang=es6#starthandlefixed">startHandleFixed</a>
+                </td>
+                <td>
+                    - &nbsp;&nbsp;Used to lock the first handle in the current position.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a target="_blank" href="http://ej2.syncfusion.com/documentation/slider/api-limitData.html?lang=es6#endhandlefixed">endHandleFixed</a>
+                </td>
+                <td>
+                    - &nbsp;&nbsp;Used to lock the second handle in the current position.
+                </td>
+            </tr>
+        </table>
+    </div>
+    <p> In this demo, Limits with MinRange and range Slider is demonstrated.</p>
+    <ul>
+        <li>MinRange Slider – In this sample, the minimum and maximum limit of the slider is set to 10 and 40 respectively.</li>
+        <li>Range Slider – In this sample, the minimum and maximum limit of the first handle is set to 10 and 40 respectively
+            and the minimum and maximum limit of the second handle is set to 60 and 90 respectively.
+        </li>
+    </ul>
+    <p>For more information, refer to the 
+        <a target="_blank" href="http://ej2.syncfusion.com/documentation/slider/limits.html?lang=es6">limits</a> section from the documentation.</p>
+</div>

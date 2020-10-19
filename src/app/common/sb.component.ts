@@ -106,8 +106,7 @@ export class SBController {
     public resizeTimer: number = 0;
     public prevSampleName: string = '';
     public prevControlName: string = '';
-    public copyRight: number = new Date().getFullYear();
-    
+
     //Bread Crumb Object
     public breadCrumbObject:
         {

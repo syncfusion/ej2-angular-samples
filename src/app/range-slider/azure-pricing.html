@@ -1,0 +1,99 @@
+<div class="col-lg-10 control-section azure">
+    <div class="cloud-content-wrapper">
+        <div id="pricing-slider" class="pricing-slider">
+            <div class="row">
+                <div id="cloud-left-pane" class="col-lg-8 col-md-8 col-sm-8">
+                    <div class="cloud-slider">
+                        <div id="processor"></div>
+                        <span class="label-text"> Processor </span>
+                        <!-- processor Slider element -->
+                        <ejs-slider id='processor-slider' #processorSlider [value]='processorValue' [min]="processorMin" [max]="processorMax" (change)='onChangeProcessor($event)'
+                            (created)='onCreateProcessor($event)'></ejs-slider>
+                        <div class="sub-heading"> Each core included minimum 2.26 GHz power </div>
+                    </div>
+                    <div class="cloud-slider cloud-left-slider">
+                        <div id="memory"></div>
+                        <span class="label-text"> Memory </span>
+                        <!-- memory Slider element -->
+                        <ejs-slider id='memory-slider' #memorySlider [value]='memoryValue' [min]="memoryMin" [max]="memoryMax" (change)='onChangeMemory($event)'
+                            (created)='onCreateMemory($event)'></ejs-slider>
+                        <div class="sub-heading"> Equal to burstable memory included </div>
+                    </div>
+                    <div class="cloud-slider cloud-left-slider">
+                        <div id="storage"></div>
+                        <span class="label-text"> Storage </span>
+                        <!-- storage Slider element -->
+                        <ejs-slider id='storage-slider' #storageSlider [value]='storageValue' [min]='storageMin' [max]='storageMax' (change)='onChangeStorage($event)'
+                            (created)='onCreateStorage($event)'></ejs-slider>
+                        <div class="sub-heading"> 1000 GB bandwidth per month, at 100 Mbit/s uplink port </div>
+                    </div>
+                </div>
+                <div id="cloud-right-pane" class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="cloud-right-content">
+                        <div class="label-text"> Size Range </div>
+                        <div class="btn-size">
+                            <!-- Button element -->
+                            <button id="xSmallBtn" ejs-button [cssClass] = 'buttonCss' [isPrimary]="true">XS</button>
+                            <button ejs-button id="smallBtn" [cssClass] = 'buttonCss' [isPrimary]="true">S</button>
+                            <button ejs-button id="mediumBtn" [cssClass] = 'buttonCss' [isPrimary]="true">M</button>
+
+                            <button ejs-button id="largeBtn" [cssClass] = 'buttonCss' [isPrimary]="true">L</button>
+                            <button ejs-button id="xLargeBtn" [cssClass] = 'buttonCss' [isPrimary]="true">XL</button>
+                        </div>
+                        <div class="label-text right-text"> Estimated Price </div>
+                        <div id="cloud-slider-text">
+                            <span id=dollar>$ </span>
+                            <span id="value"></span>
+                            <span class="suffix">/month</span>
+                        </div>
+                        <div class="discount">
+                            <div class="cloud-slider-right">
+                                <!-- cPanel Check Box element -->
+                                <ejs-checkbox id="cPanel" #cPanelCheckbox (change)='sliderValueChange()' label="Not required cPanel included" [checked]="false" ></ejs-checkbox>
+
+                            </div>
+                            <div class="cloud-slider-right discount-pay">
+                                <!-- discount Check Box element -->
+                                <ejs-checkbox id="discount" #discountCheckbox (change)='sliderValueChange()' label='12 Months <span class = "offer" > Save 25%.</span> Pay Monthly'
+                                    [checked]="false"></ejs-checkbox>
+                            </div>
+                        </div>
+                        <!-- Button element -->
+                        <div class="slider-button">
+                            <button ejs-button id="btn" class="dlgbtn" [isPrimary]="true">Signup Now</button>
+
+                        </div>
+                        <div id="dialogWrapper" class="cloud-content-wrapper">
+                            <!-- Initialize alert Dialog -->
+                            <ejs-dialog id="alertDialog" #dialog [buttons]='alertDlgButtons' [animationSettings]='animationSettings' [content]='alertContent'
+                                [width]='width' [visible]='false' [closeOnEscape]='false' [showCloseIcon]='false' [target]='target'>
+                            </ejs-dialog>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the cloud pricing slider used to calculate the cloud costs by considering web hosting, VPS hosting,
+        cloud server providers. Drag the thumb over the bar for selecting processor, memory, and storage.
+    </p>
+</div>
+
+<div id="description">
+    <p>This sample calculates the cloud cost based on number of workloads, complexity of workloads, system, and monitoring requirements
+        which is used under cloud operation.
+    </p>
+    <p>In this demo, default rendering of slider is used for selecting processor, memory, and storage. The estimated price for
+        the selection will appear on the left pane.</p>
+    <p>25% offer can be availed for an annual pack. This can be applied by checking the checkbox from the left pane.</p>
+    <p>By default, cPanel will be included in the monthly pack. If you don't want, check the checkbox from the left pane which
+        will reduce $10 from the estimated price.</p>
+    <p>Different range of packs are also selected from the left pane toolbar which will have default configuration based on
+        the range size.</p>
+    <p>After choosing your pack, confirm it by clicking sign up which will show your selected package details in a dialog box.
+    </p>
+</div>

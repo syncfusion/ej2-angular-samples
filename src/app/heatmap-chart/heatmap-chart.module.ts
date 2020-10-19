@@ -31,7 +31,7 @@ export const heatmapAppRoutes: Object[] = [
     {
         path: ':theme/heatmap-chart/default', component: HeatmapDefaultComponent,
         description: 'This demo for Essential JS2 Heatmap control shows the heat map control displayed with minimum configuration.',
-        name: 'Default Functionalities', order: '01', category: 'HeatMap Chart',
+        name: 'Default Functionalities', order: '01', category: 'Heatmap Chart',
         sourceFiles: [
             {displayName: 'default.component.ts', path: './src/heatmap-chart/default.component.ts'},
             {displayName: 'default-data.ts', path: './src/heatmap-chart/default-data.ts'}
@@ -40,7 +40,7 @@ export const heatmapAppRoutes: Object[] = [
     {
         path: ':theme/heatmap-chart/calendar-heatmap', component: HeatmapCalendarComponent,
         description: 'This demo for Essential JS2 Heatmap control for displays the time series data and displays the axis labels at specific time interval.',
-        name: 'Calendar Heatmap', order: '01', category: 'HeatMap Chart',
+        name: 'Calendar Heatmap', order: '01', category: 'Heatmap Chart',
         sourceFiles: [
             {displayName: 'calendar-heatmap.component.ts', path: './src/heatmap-chart/calendar-heatmap.component.ts'},
             {displayName: 'calendar-data-source.ts', path: './src/heatmap-chart/calendar-data-source.ts'}
@@ -154,7 +154,6 @@ export const heatmapAppRoutes: Object[] = [
     },
     {
         path: ':theme/heatmap-chart/color-range', component: HeatmapColorRangeComponent,
-        type: 'new',
         description: 'This demo for Essential JS2 Heatmap control demonstrates applying color range for the heatmap cells.',
         name: 'Color Range', order: '04', category: 'Features',
         sourceFiles: [

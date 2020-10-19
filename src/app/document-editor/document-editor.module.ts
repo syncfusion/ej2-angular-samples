@@ -30,6 +30,7 @@ import { ToolbarCustomizationComponent } from './toolbar-customization-component
 import { WebLayoutComponent } from './web-layout-component';
 import { TrackChangesComponent } from './track-changes-component';
 import { FormFieldsComponent } from './form-fields-component';
+import { MailMergeComponent } from './mail-merge';
 import { SharedModule } from '../common/shared.module';
 
 export const documentEditorAppRoutes: Object[] = [
@@ -44,7 +45,7 @@ export const documentEditorAppRoutes: Object[] = [
     { path: ':theme/document-editor/section-formatting', component: SectionFormattingComponent, name: 'Section Formatting', order: '02', category: 'Editing Features', description: "The Document Editor supports section formatting such as page size, page margins, header distance, and footer distance." },
     { path: ':theme/document-editor/headers-footers', component: HeadersFootersComponent, name: 'Headers and Footers', order: '02', category: 'Editing Features', description: "The Document Editor supports headers and footers. Different headers and footers can be added to the first page, odd pages, and even pages." },
     { path: ':theme/document-editor/table-of-contents', component: TableOfContentsComponent, name: 'Table of Contents', order: '02', category: 'Editing Features', description: "The Document Editor supports table of contents with options for including hyperlink, page number, right-aligned tabs, and styles." },
-    { path: ':theme/document-editor/form-fields', component: FormFieldsComponent, name: 'Form Fields', order: '02', type: 'new', category: 'Editing Features', description: "The Document Editor component in JavaScript platform allows users to design and fill legacy form fields (text, check box, and drop down) in a Word document." },
+    { path: ':theme/document-editor/form-fields', component: FormFieldsComponent, name: 'Form Fields', order: '02', category: 'Editing Features', description: "The Document Editor component in JavaScript platform allows users to design and fill legacy form fields (text, check box, and drop down) in a Word document." },
     { path: ':theme/document-editor/print', component: PrintComponent, name: 'Print', order: '03', category: 'Print', description: "The Document Editor component is used to view and print Word documents in web applications by injecting only the modules that are necessary." },
     { path: ':theme/document-editor/right-to-left', component: RightToLeftComponent, name: 'Right to Left', order: '04', category: 'RTL', description: "The Document Editor component is used to create, edit, view, and print Word documents in web applications." },
     { path: ':theme/document-editor/custom-context-menu', component: CustomContextMenuComponent, name: 'Custom Context Menu', order: '05', category: 'Customization', description: "The Document Editor supports custom options for users who use to add custom options in context menu." },
@@ -53,8 +54,9 @@ export const documentEditorAppRoutes: Object[] = [
     { path: ':theme/document-editor/chart', component: DocumentEditorChartComponent, name: 'Chart Preservation', order: '06', category: 'Charts', description: "The Document Editor supports chart preservation for users who use to view their business reports with intuitive graphical data visualization." },
     { path: ':theme/document-editor/document-protection', component: DocumentEditorProtectionComponent, name: 'Document Protection', order: '07', category: 'Security', description: "The Document Editor provides document protection supports to restrict the types of changes can be made to the document by a user/user group." },
     { path: ':theme/document-editor/web-layout', component: WebLayoutComponent, name: 'Web Layout', order: '08', category: 'View', description: "The Document Editor component supports continuous layout type to display a word document in a single page." },
-    { path: ':theme/document-editor/comments', component: CommentsComponent, name: 'Comments', order: '09', category: 'Review', type: 'update',  description: "The Document Editor component supports add and edit comments in a Word document for comment discussion." },
-    { path: ':theme/document-editor/track-changes', component: TrackChangesComponent, name: 'Track Changes', order: '09', type: 'new', category: 'Review', description: "The Document Editor component in JavaScript platform allows users to view, make changes and accept or reject them in a Word document." },
+    { path: ':theme/document-editor/comments', component: CommentsComponent, name: 'Comments', order: '09', category: 'Review',  description: "The Document Editor component supports add and edit comments in a Word document for comment discussion." },
+    { path: ':theme/document-editor/track-changes', component: TrackChangesComponent, name: 'Track Changes', order: '09', category: 'Review', description: "The Document Editor component in JavaScript platform allows users to view, make changes and accept or reject them in a Word document." },
+    { path: ':theme/document-editor/mail-merge', component: MailMergeComponent, name: 'Mail Merge', order: '10', type: 'new', category: 'Mail Merge', description: "The Document Editor component provides support to mail merge document with the help of Syncfusion DocIO." },
 ];
 
 export const documentEditorRouter: ModuleWithProviders = RouterModule.forChild(documentEditorAppRoutes);
@@ -69,7 +71,7 @@ export const documentEditorRouter: ModuleWithProviders = RouterModule.forChild(d
         BulletsNumberingComponent, HyperlinksBookmarksComponent, TableFormattingComponent, SectionFormattingComponent,
         HeadersFootersComponent, TableOfContentsComponent, PrintComponent, RightToLeftComponent, CustomContextMenuComponent,
         AutoSaveComponent, ToolbarCustomizationComponent, DocumentEditorChartComponent,
-        DocumentEditorProtectionComponent, CommentsComponent, WebLayoutComponent, TrackChangesComponent, FormFieldsComponent],
+        DocumentEditorProtectionComponent, CommentsComponent, WebLayoutComponent, TrackChangesComponent, FormFieldsComponent, MailMergeComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DocumentEditorSampleModule {
