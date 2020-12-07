@@ -8,7 +8,7 @@ var webpack = require("webpack");
 var shelljs = global.shelljs = global.shelljs || require('shelljs');
 var isReleaseBranch = /^((release\/|hotfix\/))/g.test(process.env.BRANCH_NAME);
 
-gulp.task('create-locale', function () {
+gulp.task('create-locale', gulp.series(function () {
   var localeJson = glob.sync(__dirname + '/src/app/**/locale.json', {
     silent: true
   });
@@ -23,9 +23,9 @@ gulp.task('create-locale', function () {
   } else {
     fs.writeFileSync(__dirname + '/src/app/common/locale-string.ts', 'export let Locale: Object={};');
   }
-});
+}));
 
-gulp.task('copy-source', function () {
+gulp.task('copy-source', gulp.series(function (done) {
   var localeJson = glob.sync(__dirname + '/src/app/**/*', {
     silent: true,
     ignore: ['/src/app/common/**/*.*', '/src/app/common']
@@ -41,45 +41,41 @@ gulp.task('copy-source', function () {
       }
     }
   }
-});
+  done();
+}));
 
-gulp.task('build', function (done) {
+gulp.task('build', gulp.series(function (done) {
   shelljs.exec('npm run build:prod', function (exitCode, error) {
     console.log(error);
     done(exitCode);
   });
   // runSequence('create-locale');
-});
+}));
 
-gulp.task('serve', ['copy-source', 'styles-all'], function () {
-  shelljs.exec('npm run start');
-});
-
-
-gulp.task('clear-all', function () {
+gulp.task('clear-all', gulp.series(function () {
   return gulp.src(['src/**/*.js.map', 'src/**/*.json', 'src/**/*.js', 'src/**/*.d.ts', 'src/**/*.ngfactory.ts', 'src/**/*.ngstyle.ts']).pipe(clean({
     force: true
   }));
-});
+}));
 
-gulp.task('move', function (done) {
+gulp.task('move', gulp.series(function (done) {
   shelljs.cp('-rf', './OpenNewSamples/*', './output');
   var mainBundle = fs.readFileSync('./output/main.js', 'utf8');
   mainBundle = mainBundle.replace(/\(\/assets/g, '(./assets');
   fs.writeFileSync('./output/main.js', mainBundle, 'utf8');
   done();
-});
+}));
 
-gulp.task('styles-replace', function (done) {
+gulp.task('styles-replace', gulp.series(function (done) {
   var nos = glob.sync('node_modules/@syncfusion/ej2/*.css');
   for (var j = 0; j < nos.length; j++) {
     var htmlfile = fs.readFileSync(nos[j], 'utf8');
     fs.writeFileSync('./src/styles/' + nos[j].split('/')[3], htmlfile, 'utf8');
   }
   done();
-});
+}));
 
-gulp.task('SEO-changes', function () {
+gulp.task('SEO-changes', gulp.series(function () {
   var newWindowSamples = glob.sync('./OpenNewSamples/**/**/index.html');
   var samplsListJson = JSON.parse(fs.readFileSync('./sampleOrder.json'));
   var localCss = `<link href="../../styles/OpenNew.css" rel="stylesheet">`;
@@ -116,7 +112,7 @@ gulp.task('SEO-changes', function () {
     fs.writeFileSync(newWindowSamples[i], indexFile.replace('Essential JS 2', 'Essential Studio'), 'utf8');
   }
 }
-);
+));
 
 function camelCase(str) {
   return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
@@ -125,7 +121,7 @@ function camelCase(str) {
 }
 
 
-gulp.task('create-sampleList', function () {
+gulp.task('create-sampleList', gulp.series(function () {
 
   var newWindowSamples = glob.sync('./src/app/**/**.module.ts', {
     silent: true,
@@ -148,4 +144,4 @@ gulp.task('create-sampleList', function () {
     fs.writeFileSync(newWindowSamples[i].replace(`.module.ts`, 'sampleList'), sampleJson, 'utf8');
   }
 }
-);
+));
