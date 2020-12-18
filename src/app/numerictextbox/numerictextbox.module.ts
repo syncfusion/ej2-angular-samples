@@ -17,7 +17,7 @@ export const numericAppRoutes: Object[] = [
     { path: ':theme/numerictextbox/restrict-decimals', component: RestrictTextboxController, name: 'Restrict Decimals', category: 'Numeric Textbox', description: "The NumericTextBox provides an option to restrict the number of decimal values, by using the decimals property. So, it can only accept the integer value alone." }
 ];
 
-export const NumericRouter: ModuleWithProviders = RouterModule.forChild(numericAppRoutes);
+export const NumericRouter: ModuleWithProviders<any> = RouterModule.forChild(numericAppRoutes);
 
 @NgModule({
     imports: [NumericRouter, SharedModule, NumericTextBoxModule],

@@ -21,7 +21,7 @@ export const calendarAppRoutes: Object[] = [
     { path: ':theme/calendar/islamic-calendar', component: IslamicCalendarComponent, name: 'Islamic Calendar' , category: 'Calendar' }
 ];
 
-export const CalendarRouter: ModuleWithProviders = RouterModule.forChild(calendarAppRoutes);
+export const CalendarRouter: ModuleWithProviders<any> = RouterModule.forChild(calendarAppRoutes);
 
 @NgModule({
     imports: [CalendarRouter, CalendarModule, SharedModule],

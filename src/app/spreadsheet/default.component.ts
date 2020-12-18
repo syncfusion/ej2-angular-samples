@@ -25,7 +25,5 @@ export class DefaultController {
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold' }, 'E31:F31');
         this.spreadsheetObj.cellFormat({ textAlign: 'right' }, 'E31');
         this.spreadsheetObj.numberFormat('$#,##0.00', 'F2:F31');
-        this.spreadsheetObj.updateCell({ value: 'Total Amount:' }, 'E31');
-        this.spreadsheetObj.updateCell({ formula: '=SUM(F2:F30)' }, 'F31');
     }
 }

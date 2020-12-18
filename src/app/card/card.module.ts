@@ -20,7 +20,7 @@ export const cardAppRoutes: Object[] = [
     { path: ':theme/card/tile', component: TileViewCardComponent, name: 'Tile View',description: 'The sample demonstrates how to design tile-view with filtering and searching using a template engine, data manager, and card component in Angular platform.', category: 'Card' },
 ];
 
-export const cardRouter: ModuleWithProviders = RouterModule.forChild(cardAppRoutes);
+export const cardRouter: ModuleWithProviders<any> = RouterModule.forChild(cardAppRoutes);
 
 @NgModule({
     imports: [cardRouter, SharedModule, CommonModule],

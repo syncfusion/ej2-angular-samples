@@ -873,7 +873,7 @@ export let Locale: Object = {
         },
         "dropdowns": {
             "noRecordsTemplate": "Keine Aufzeichnungen gefunden",
-            "actionFailureTemplate": "Die Anforderung ist fehlgeschlagen",
+            "actionFailureTemplate": "Anfrage fehlgeschlagen",
             "overflowCountTemplate": "+ $ {count} mehr ..",
             "selectAllText": "Selecteer alles",
             "unSelectAllText": "Alles deselecteren"
@@ -2083,8 +2083,8 @@ export let Locale: Object = {
             "timelineCell": "خلية الجدول الزمني"
         },
         "dropdowns": {
-            "noRecordsTemplate": "لا توجد سجلات",
-            "actionFailureTemplate": "أخفق الطلب",
+            "noRecordsTemplate": "لا توجد سجلاتلات",
+            "actionFailureTemplate": "الطلب فشل",
             "overflowCountTemplate": "..مور{كونت}$+",
             "selectAllText": "إلغاء تحديد الكل",
             "unSelectAllText": "اختر الكل"
@@ -3276,8 +3276,8 @@ export let Locale: Object = {
             "timelineCell": "Timeline cell"
         },
         "dropdowns": {
-            "noRecordsTemplate": "No Records Found",
-            "actionFailureTemplate": "The Request Failed",
+            "noRecordsTemplate": "No records found",
+            "actionFailureTemplate": "Request failed",
             "overflowCountTemplate": "+${count} more..",
             "selectAllText": "Select All",
             "unSelectAllText": "Unselect All"
@@ -4487,8 +4487,8 @@ export let Locale: Object = {
             "timelineCell": "时间线单元格"
         },
         "dropdowns": {
-            "noRecordsTemplate": "没有找到记录",
-            "actionFailureTemplate": "请求失败",
+            "noRecordsTemplate": "沒有找到記錄",
+            "actionFailureTemplate": "請求失敗",
             "overflowCountTemplate": "+$(計數) 更多..",
             "selectAllText": "全選",
             "unSelectAllText": "全部取消選擇"
@@ -5698,7 +5698,7 @@ export let Locale: Object = {
         },
         "dropdowns": {
             "noRecordsTemplate": "Aucun enregistrement trouvé",
-            "actionFailureTemplate": "La demande a échoué",
+            "actionFailureTemplate": "Demande échoué",
             "overflowCountTemplate": "+ $ {count} plus ..",
             "selectAllText": "Tout sélectionner",
             "unSelectAllText": "tout déselectionner"

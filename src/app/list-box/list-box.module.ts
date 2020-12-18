@@ -16,7 +16,7 @@ export const listBoxAppRoutes: Object[] = [
     { path: ':theme/list-box/api', component: ApiListBoxComponent, name: 'API', category: 'List Box', order: '01', description: 'This example how to customize the Syncfusion Typescript ListBox component using the available set of APIs.' }
 ];
 
-export const listBoxRouter: ModuleWithProviders = RouterModule.forChild(listBoxAppRoutes);
+export const listBoxRouter: ModuleWithProviders<any> = RouterModule.forChild(listBoxAppRoutes);
 
 @NgModule({
     imports: [listBoxRouter, ListBoxAllModule, DropDownListModule, SharedModule],

@@ -96,15 +96,11 @@
   left: 5px;
 }
 
-.layout #list-container #all.e-listview.e-rtl.e-list-template .e-list-wrapper.e-list-avatar:not(.e-list-badge),
-.layout #list-container #received.e-listview.e-rtl.e-list-template .e-list-wrapper.e-list-avatar:not(.e-list-badge),
-.layout #list-container #missed.e-listview.e-rtl.e-list-template .e-list-wrapper.e-list-avatar:not(.e-list-badge) {
+.e-listview.e-rtl.e-list-template .e-list-wrapper.e-list-avatar:not(.e-list-badge) {
   padding: 5px 60px 5px 5px;
 }
 
-.layout #list-container #all.e-listview.e-list-template .e-list-wrapper.e-list-avatar:not(.e-list-badge),
-.layout #list-container #received.e-listview.e-list-template .e-list-wrapper.e-list-avatar:not(.e-list-badge),
-.layout #list-container #missed.e-listview.e-list-template .e-list-wrapper.e-list-avatar:not(.e-list-badge) {
+.e-listview.e-list-template .e-list-wrapper.e-list-avatar:not(.e-list-badge) {
   padding: 5px 5px 5px 50px;
 }
 
@@ -157,10 +153,6 @@
 }
 
 /* ListView theme customization */
-
-.highcontrast .layout #list-container .e-icon {
-  color: white;
-}
 
 .highcontrast .layoutWrapper .layout,
 .highcontrast .layoutWrapper .camera,

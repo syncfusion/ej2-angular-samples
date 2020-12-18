@@ -62,15 +62,15 @@
 }
 
 .schedule-group.e-schedule .template-wrap .airline-image.airways-1 {
-    background-image: url('~/assets/schedule/images/airways-1.svg');
+    background-image: url('/assets/schedule/images/airways-1.svg');
 }
 
 .schedule-group.e-schedule .template-wrap .airline-image.airways-2 {
-    background-image: url('~/assets/schedule/images/airways-2.svg');
+    background-image: url('/assets/schedule/images/airways-2.svg');
 }
 
 .schedule-group.e-schedule .template-wrap .airline-image.airways-3 {
-    background-image: url('~/assets/schedule/images/airways-3.svg');
+    background-image: url('/assets/schedule/images/airways-3.svg');
 }
 
 .schedule-group.e-schedule .e-agenda-view .template-wrap .airline-model,

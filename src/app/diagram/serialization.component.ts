@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild,Inject } from '@angular/core';
 import {
     DiagramComponent, Diagram, NodeModel, UndoRedo, ConnectorModel, PointPortModel, Node, FlowShapeModel, MarginModel, PaletteModel,
     SymbolInfo, DiagramContextMenu, GridlinesModel, SnapSettingsModel, ShapeStyleModel, TextStyleModel
@@ -16,7 +16,7 @@ Diagram.Inject(UndoRedo, DiagramContextMenu);
 @Component({
     selector: 'control-content',
     templateUrl: 'serialization.html',
-    styleUrls: ['diagram-style.css'],
+    styleUrls: ['diagram-common.style.css'],
     encapsulation: ViewEncapsulation.None
 })
 export class SerializationDiagramComponent {
@@ -38,7 +38,9 @@ export class SerializationDiagramComponent {
 
     @ViewChild('diagram')
     public diagram: DiagramComponent;
-
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {​​​​​​​
+        sourceFiles.files = ['diagram-common.style.css'];
+    }​​​​​​​
     public create(args: Object): void {
         this.diagram.fitToPage();
         this.diagram.dataBind();
@@ -122,23 +124,23 @@ export class SerializationDiagramComponent {
     private connectorSymbols: ConnectorModel[] = [
         {
             id: 'Link1', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-            targetDecorator: { shape: 'Arrow' }, style: { strokeWidth: 2 }
+            targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} }, style: { strokeWidth: 2, strokeColor: '#757575' }
         },
         {
             id: 'link3', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-            style: { strokeWidth: 2 }, targetDecorator: { shape: 'None' }
+            style: { strokeWidth: 2, strokeColor: '#757575' }, targetDecorator: { shape: 'None' }
         },
         {
             id: 'Link21', type: 'Straight', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-            targetDecorator: { shape: 'Arrow' }, style: { strokeWidth: 2 }
+            targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} }, style: { strokeWidth: 2, strokeColor: '#757575' }
         },
         {
             id: 'link23', type: 'Straight', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-            style: { strokeWidth: 2 }, targetDecorator: { shape: 'None' }
+            style: { strokeWidth: 2, strokeColor: '#757575' }, targetDecorator: { shape: 'None' }
         },
         {
             id: 'link33', type: 'Bezier', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-            style: { strokeWidth: 2 }, targetDecorator: { shape: 'None' }
+            style: { strokeWidth: 2, strokeColor: '#757575' }, targetDecorator: { shape: 'None' }
         }
     ];
 
@@ -163,6 +165,7 @@ export class SerializationDiagramComponent {
             symbol.width = 50;
             symbol.height = 50;
         }
+        symbol.style.strokeColor = '#757575';
     }
 
     public onUploadSuccess(args: { [key: string]: Object }): void {

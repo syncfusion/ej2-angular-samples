@@ -26,7 +26,7 @@ export const menuAppRoutes: Object[] = [
     { path: ':theme/menu/toolbar-integration', component: ToolbarMenuController, name: 'Toolbar Integration', order: '02', category: 'Use Case', description: 'This example demonstrates the real use case of the Syncfusion Angular Menu in web application. It is integrated with toolbar component.' },
 ];
 
-export const menuRouter: ModuleWithProviders = RouterModule.forChild(menuAppRoutes);
+export const menuRouter: ModuleWithProviders<any> = RouterModule.forChild(menuAppRoutes);
 
 @NgModule({
     imports: [menuRouter, MenuModule, SharedModule, CommonModule, CheckBoxModule, ToolbarModule, DropDownButtonModule, MultiSelectAllModule, DropDownListModule],

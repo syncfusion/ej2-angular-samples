@@ -1,7 +1,7 @@
 .image {
         position: absolute;
         background-repeat: no-repeat;
-        background-image: url('~/assets/grid/images/spinner.gif');
+        background-image: url('/assets/grid/images/spinner.gif');
         background-position: center;
         width: 16px;
         height: 28px;

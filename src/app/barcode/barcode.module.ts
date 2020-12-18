@@ -118,7 +118,7 @@ export const barcodeAppRoutes: Object[] = [
     },
 ];
 
-export const barcodeRouter: ModuleWithProviders = RouterModule.forChild(barcodeAppRoutes);
+export const barcodeRouter: ModuleWithProviders<any> = RouterModule.forChild(barcodeAppRoutes);
 let declarations: Type<Object>[] = [defaultFunctionalities, Code32Component,Code39Component,Code39ExtdComponent,Code93Component,Code128Component,Code128AComponent,Code128BComponent,Code128CComponent,
     DataMatrixComponent,CodabarComponenet,Ean13Component,UpcAComponent,UpcEComponent,QrCodeComponent
 ];

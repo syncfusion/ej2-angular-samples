@@ -28,7 +28,7 @@ export const treeAppRoutes: Object[] = [
     { path: ':theme/treeview/remote-data', component: RemoteTreeViewComponent, name: 'Remote Data', order: '02', category: 'Data Binding', description: "This demo demonstrates the binding of data to the tree view from remote data source." },
 ];
 
-export const TreeviewRouter: ModuleWithProviders = RouterModule.forChild(treeAppRoutes);
+export const TreeviewRouter: ModuleWithProviders<any> = RouterModule.forChild(treeAppRoutes);
 
 @NgModule({
     imports: [TreeviewRouter, SharedModule , CommonModule, BrowserModule, CheckBoxModule, ListViewModule, TreeViewModule],

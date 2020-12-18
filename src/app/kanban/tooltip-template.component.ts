@@ -35,7 +35,7 @@ export class TooltipTemplateComponent {
     }
 
     onTemplateChange(args: ChangeEventArgs): void {
-        this.kanbanObj.tooltipTemplate = args.checked ? this.temp : null;
+        this.kanbanObj.tooltipTemplate = args.checked ? this.temp : '';
         this.kanbanObj.dataBind();
     }
 

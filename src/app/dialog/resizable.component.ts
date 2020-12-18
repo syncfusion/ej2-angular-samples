@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
 import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 /**
@@ -25,6 +25,7 @@ export class ResizableDialogComponent {
     public dialogWidth = '300px';
     public contentData = 'This is a dialog with resizable support.';
     public animationSettings: Object = { effect: 'None' };
+    public resizeHandleDirection: ResizeDirections[] = ['All'];
     public hide: any;
     public dialogdragging: Boolean = true;
     public target = '.control-section';

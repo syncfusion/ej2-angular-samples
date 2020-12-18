@@ -1,44 +1,189 @@
 <div id="action-description">
     <p>
-        This sample demonstrates how to host a HTML element inside a node. In this example, a Gauge control is hosted inside a HTML
-        Node.
+        This sample shows how to host an element of HTML within a node. The expense tracker application can be created using chart and grid components.
     </p>
 </div>
-<div class="control-section">
+<div id="custom-diagram" class="control-section">
     <div class="col-lg-8 control-section" style="width: 100%;">
         <div class="content-wrapper">
-            <ejs-diagram #diagram id="diagram" width="100%" height="580px"
-            [nodes]="nodes"  [snapSettings]='snapSettings'  (created)="created()">
+            <ejs-diagram #diagram id="diagram" width="100%" height="900px" [nodes]="nodes" [backgroundColor]= 'back'
+                (created)="created()">
+                <ng-template #nodeTemplate let-data >
+                    <ng-container *ngIf="data.id == 'node1_template'">
+                        <div class="diagram_border_cus diagram_border_cal">
+                        <ejs-daterangepicker #dateRangePicker format='MM/dd/yyyy' [startDate]='startDate'
+                            [endDate]='endDate' [presets]='datePresets' [showClearButton]='false' [allowEdit]='false'
+                            [min]='minDate' [max]='maxDate' (change)='onDateRangeChange($event)'></ejs-daterangepicker>
+                        </div>
+                        </ng-container>
+                    <ng-container *ngIf="data.id == 'node5_template'">
+                        <div id="diagram_control" class="diagram_border_cus">
+                            <div class="pane col-xs-12 col-sm-12 col-md-12 pie-container">
+                                <div class="pieChartHeader">
+                                    <p class="chart-title">Total Expenses</p>
+                                    <p id="rangeDate" class="chart-value">Jun 1 - Dec 1</p>
+                                </div>
+                            <div id="pieChart" style="height:100%; width:49%; overflow:hidden;float:left;" margin="20px"> 
+                                <ejs-accumulationchart style='display: block;' #pie id="total-expense" #pie width='100%' height='350px'
+                                enableSmartLabels=true [legendSettings]='acclegendSettings'
+                                (textRender)='onTextRender($event)' (animationComplete)='onAnimateCompleted($event)'
+                                (loaded)='acconChartLoaded($event)'>
+                                <e-accumulation-series-collection>
+                                    <e-accumulation-series xName='text' yName='y' startAngle='0' endAngle='360'
+                                        innerRadius='50%' radius='83%' [groupTo]='groupValue'
+                                        [palettes]='colorPalettes' [dataLabel]='dataLabel'
+                                        [dataSource]='pieRenderingData' [animation]='accanimation'>
+                                    </e-accumulation-series>
+                                </e-accumulation-series-collection>
+                            </ejs-accumulationchart>
 
-            <ng-template #nodeTemplate let-data>                 
-                <ng-container>
-                    <ejs-circulargauge width="300px" height="300px" style='display:block;'>
-                        <e-axes>
-                            <e-axis minimum=0 radius='80%' maximum=120 startAngle=210 endAngle=150 [majorTicks]='majorTicks' [labelStyle]='labelStyle'
-                                [lineStyle]='lineStyle' [minorTicks]='minorTicks' [annotations]='annotations'>
-                                <e-ranges>
-                                    <e-range start=0 end=40 color='#30B32D'></e-range>
-                                    <e-range start=40 end=80 color='#FFDD00'></e-range>
-                                    <e-range start=80 end=120 color='#F03E3E'></e-range>
-                                </e-ranges>                              
-                                <e-pointers>
-                                    <e-pointer value=65 radius='60%' color='#757575' pointerWidth=8 [needleTail]='tail' [cap]="pointerCap">
-                                    </e-pointer>
-                                </e-pointers>
-                            </e-axis>
-                        </e-axes>
-                    </ejs-circulargauge>
-                </ng-container>
-            </ng-template>
-        </ejs-diagram>
+                            </div>
+                                <div id="grid" style="height:100%; width:49%; overflow:hidden;float:left;" > 
+                                    <ejs-grid #legendGrid id="legend-grid" class="legendGrid pane"
+                                    style="box-shadow: none; " width='100%' [dataSource]='pieRenderData'
+                                    (load)='onGridLoad($event)' (dataBound)='onGridDataBound($event)'>
+                                    <e-columns>
+                                        <e-column  width='10%' textAlign='Center'>
+                                        </e-column>
+                                        <e-column  width='50%'></e-column>
+                                        <e-column width='20%'></e-column>
+                                        <e-column width='20%'></e-column>
+                                    </e-columns>
+                                    <ng-template #rowTemplate let-data>
+                                        <tr style="height: 30px;">
+                                            <td>
+                                                <div style="width: 16px; height: 16px; margin-left: 1px; border-radius: 16px;"
+                                                    style.background-color="{{data.color}}"></div>
+                                            </td>
+                                            <td> {{data.text}} </td>
+                                            <td> {{data.y | currency:'USD'}} </td>
+                                            <td style="text-align:right;"> {{data.x}} </td>
+                                        </tr>
+                                    </ng-template>
+                                </ejs-grid>
+                                </div>
+                            </div>
+                        </div>
+                                
+                               
+                    </ng-container>
+                    <ng-container *ngIf="data.id == 'node3_template'">
+                        <div class="diagram_border_cus diagram_chart">
+                        <ejs-chart style='display:block' #columnChart class="column-chart" id="account-balance"
+                            width='100%' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [margin]='margin'
+                            [legendSettings]='legendSettings' [titleStyle]='titleStyle' useGroupingSeparator='true'
+                            [tooltip]='tooltip' (loaded)='onChartLoaded($event)'>
+                            <e-annotations>
+                                <e-annotation x='75px' y='9%' coordinateUnits='Pixel' region='Chart'
+                                    content='<p style="font-family:Roboto;font-size: 16px;font-weight: 400;font-weight: 400;letter-spacing: 0.02em;line-height: 16px;color: #797979 !important;">Income - Expense</p>'>
+                                </e-annotation>
+                            </e-annotations>
+                            <e-series-collection>
+                                <e-series type='Column' name='Income' width=2 xName='DateTime' yName='Amount'
+                                    legendShape='Circle' fill='#A16EE5' [dataSource]='colChartIncomeData'
+                                    [marker]='marker' [border]='cBorder' [animation]='animation'></e-series>
+                                <e-series type='Column' name='Expense' width=2 xName='DateTime' yName='Amount'
+                                    legendShape='Circle' fill='#4472C4' [dataSource]='colChartExpenseData'
+                                    [marker]='marker' [animation]='animation'></e-series>
+                            </e-series-collection>
+                        </ejs-chart>
+                    </div>
+                    </ng-container>
+                    <ng-container *ngIf="data.id == 'node4_template'">
+                        <div class="diagram_border_cus diagram_chart">
+                        <ejs-chart style='display:block' #lineChart id='balance' class='line-chart'
+                            style="width:100%; max-width: 494px;" [primaryXAxis]='lprimaryXAxis'
+                            [primaryYAxis]='lprimaryYAxis' [chartArea]='lchartArea' [margin]='lmargin'
+                            useGroupingSeparator='true' [tooltip]='ltooltip'>
+                            <e-annotations>
+                                <e-annotation x='75px' y='9%' coordinateUnits='Pixel' region='Chart'
+                                    content='<p style="font-family:Roboto;font-size: 16px;font-weight: 400;font-weight: 400;letter-spacing: 0.02em;line-height: 16px;color: #797979 !important;">Account - Balance</p>'>
+                                </e-annotation>
+                            </e-annotations>
+                            <e-series-collection>
+                                <e-series type='Area' fill='rgba(4, 112, 216, 0.3)' xName='DateTime' yName='Amount'
+                                    width=2 name='Amount' [dataSource]='lineChartData' [marker]='lmarker'
+                                    [border]='lBorder' [animation]='lanimation'> </e-series>
+                            </e-series-collection>
+                        </ejs-chart>
+                    </div>
+                    </ng-container>
+
+                </ng-template>
+            </ejs-diagram>
         </div>
     </div>
 </div>
+<!-- custom code start -->
+<style>
+    #diagram_control .chart-title {
+        font-size: 16px;
+    }
+
+    #diagram_control .chart-title,
+    #diagram_control .chart-subtitle {
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 400;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 16px;
+        color: #797979 !important;
+    }
+
+    .chart-value {
+        color: #9d9d9d;
+    }
+
+    #diagram_control {
+        background-color: white;
+        height: 100%;
+        width: auto;
+    }
+
+    #diagram_control .e-grid,
+    #diagram_control .e-grid .e-gridheader {
+        border: none;
+    }
+
+    .pieChartHeader {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .diagram_border_cus {
+        border: 1px solid transparent;
+        background: #FFFFFF;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+    }
+
+    .diagram_chart {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+#element_calander .e-input-group:not(.e-success):not(.e-warning):not(.e-error):not(.e-float-icon-left),
+#element_calander .e-input-group.e-float-icon-left:not(.e-success):not(.e-warning):not(.e-error) .e-input-in-wrap,
+#element_calander .e-input-group.e-control-wrapper:not(.e-success):not(.e-warning):not(.e-error):not(.e-float-icon-left) {
+
+
+    .diagram_border_cal {
+        height: 30px;
+        padding-left: 12px;
+    }
+
+    #custom-diagram .e-diagram-resize-handle.e-disabled {
+        fill: #ced4da;
+        opacity: 1;
+        stroke: #fff;
+        visibility: hidden;
+    }
+</style>
+<!-- custom code end-->
 <div id="description">
     <p>
-        This example shows how to host a control inside a node. The
-        <code>shape</code> property of the node can be used to host HTML content inside a node. The
-        <code>content</code> property of the shape allows you to define the content to be hosted.
+        This example illustrates how an HTML control is hosted inside a node. By setting <code>HTML</code> to the type property of the shape, the template node can be enabled. You can define the content to be hosted by using <code>NodeTemplate</code>.
     </p>
     <br>
 </div>

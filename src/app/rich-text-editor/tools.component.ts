@@ -2,7 +2,9 @@
  * Rich Text Editor Overview Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent, TableService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorComponent, TableService, FileManagerService } from '@syncfusion/ej2-angular-richtexteditor';
+import { FileManagerSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, addClass, removeClass, Browser } from '@syncfusion/ej2-base';
 import * as CodeMirror from 'codemirror';
 import 'codemirror/mode/javascript/javascript';
@@ -15,12 +17,14 @@ import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
     templateUrl: 'tools.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['over-view.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService]
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, FileManagerService]
 })
 export class FullFeatureComponent {
 
     @ViewChild('toolsRTE')
     public rteObj: RichTextEditorComponent;
+
+    private hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
 
     public tools: ToolbarModule = {
         items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
@@ -28,8 +32,19 @@ export class FullFeatureComponent {
             'LowerCase', 'UpperCase','SuperScript', 'SubScript', '|',
             'Formats', 'Alignments', 'OrderedList', 'UnorderedList',
             'Outdent', 'Indent', '|',
-            'CreateTable', 'CreateLink', 'Image', '|', 'ClearFormat', 'Print',
+            'CreateTable', 'CreateLink', 'Image', 'FileManager', '|', 'ClearFormat', 'Print',
             'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
+    };
+
+    public fileManagerSettings: FileManagerSettingsModel = {
+        enable: true,
+        path: '/Pictures/Food',
+        ajaxSettings: {
+            url: this.hostUrl + 'api/FileManager/FileOperations',
+            getImageUrl: this.hostUrl + 'api/FileManager/GetImage',
+            uploadUrl: this.hostUrl + 'api/FileManager/Upload',
+            downloadUrl: this.hostUrl + 'api/FileManager/Download'
+        }
     };
 
     public maxLength = 1000;

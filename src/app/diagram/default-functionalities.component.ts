@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild,Inject } from '@angular/core';
 import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
 import {
   Diagram, NodeModel, UndoRedo, ConnectorModel, PointPortModel, Connector, FlowShapeModel,
@@ -16,13 +16,16 @@ Diagram.Inject(UndoRedo);
 @Component({
   selector: 'control-content',
   templateUrl: 'default-functionalities.html',
-  styleUrls: ['diagram-style.css'],
+  styleUrls: ['diagram-common.style.css'],
   encapsulation: ViewEncapsulation.None
 })
 export class FlowDiagramComponent {
   @ViewChild('diagram')
   //Diagram Properties
   public diagram: DiagramComponent;
+  constructor(@Inject('sourceFiles') private sourceFiles: any) {​​​​​​​
+    sourceFiles.files = ['diagram-common.style.css'];
+}​​​​​​​
   public terminator: FlowShapeModel = { type: 'Flow', shape: 'Terminator' };
   public process: FlowShapeModel = { type: 'Flow', shape: 'Process' };
   public decision: FlowShapeModel = { type: 'Flow', shape: 'Decision' };
@@ -73,7 +76,7 @@ export class FlowDiagramComponent {
 
   public dragEnter(args: IDragEnterEventArgs): void {
     let obj: NodeModel = args.element as NodeModel;
-    if (obj instanceof Node) {
+    if (obj && obj.width && obj.height) {
       let oWidth: number = obj.width;
       let oHeight: number = obj.height;
       let ratio: number = 100 / obj.width;
@@ -135,15 +138,15 @@ export class FlowDiagramComponent {
       type: 'Orthogonal',
       sourcePoint: { x: 0, y: 0 },
       targetPoint: { x: 60, y: 60 },
-      targetDecorator: { shape: 'Arrow' },
-      style: { strokeWidth: 1 }
+      targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} },
+      style: { strokeWidth: 1, strokeColor: '#757575' }
     },
     {
       id: 'link3',
       type: 'Orthogonal',
       sourcePoint: { x: 0, y: 0 },
       targetPoint: { x: 60, y: 60 },
-      style: { strokeWidth: 1 },
+      style: { strokeWidth: 1, strokeColor: '#757575' },
       targetDecorator: { shape: 'None' }
     },
     {
@@ -151,15 +154,15 @@ export class FlowDiagramComponent {
       type: 'Straight',
       sourcePoint: { x: 0, y: 0 },
       targetPoint: { x: 60, y: 60 },
-      targetDecorator: { shape: 'Arrow' },
-      style: { strokeWidth: 1 }
+      targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} },
+      style: { strokeWidth: 1, strokeColor: '#757575' }
     },
     {
       id: 'link23',
       type: 'Straight',
       sourcePoint: { x: 0, y: 0 },
       targetPoint: { x: 60, y: 60 },
-      style: { strokeWidth: 1 },
+      style: { strokeWidth: 1, strokeColor: '#757575' },
       targetDecorator: { shape: 'None' }
     },
     {
@@ -167,7 +170,7 @@ export class FlowDiagramComponent {
       type: 'Bezier',
       sourcePoint: { x: 0, y: 0 },
       targetPoint: { x: 60, y: 60 },
-      style: { strokeWidth: 1 },
+      style: { strokeWidth: 1, strokeColor: '#757575' },
       targetDecorator: { shape: 'None' }
     }
   ];
@@ -194,6 +197,7 @@ export class FlowDiagramComponent {
   }
 
   public getSymbolDefaults(symbol: NodeModel): void {
+    symbol.style.strokeColor = '#757575';
     if (symbol.id === 'Terminator' || symbol.id === 'Process') {
       symbol.width = 80;
       symbol.height = 40;

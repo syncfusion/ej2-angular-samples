@@ -1,28 +1,7 @@
-import { Component, OnInit, OnChanges, Input, SimpleChanges, SimpleChange, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { customerData, data } from './data';
-import { SelectionService, RowSelectEventArgs } from '@syncfusion/ej2-angular-grids';
-
-
-@Component({
-    selector: 'ejs-griddetail',
-    templateUrl: 'detail.html'
-})
-export class DetailComponent implements OnInit, OnChanges {
-    @Input()
-    public key: string;
-    public data: Object[];
-
-    ngOnInit(): void {
-        this.data = [];
-    }
-
-    ngOnChanges(changes: SimpleChanges): void {
-        let key: string = 'key';
-        let change: SimpleChange = <SimpleChange>changes[key];
-
-        this.data = data.filter((record: carType) => record.CustomerName === change.currentValue).slice(0, 5);
-    }
-}
+import { DataManager, Query } from '@syncfusion/ej2-data';
+import { SelectionService, RowSelectEventArgs, GridComponent } from '@syncfusion/ej2-angular-grids';
 
 type carType = { CustomerID: string, CustomerName: string, ContactName: string };
 
@@ -32,13 +11,17 @@ type carType = { CustomerID: string, CustomerName: string, ContactName: string }
     styleUrls: ['master-detail.style.css'],
     providers: [SelectionService]
 })
-export class MasterComponent implements OnInit {
+export class MasterdetailComponent implements OnInit {
     public data: Object[];
     public key: string = null;
     public names: string[] = ['AROUT', 'BERGS', 'BLONP', 'CHOPS', 'ERNSH'];
 
+    @ViewChild('mastergrid') public mastergrid: GridComponent;
+
+    @ViewChild('detailgrid') public detailgrid: GridComponent;
+
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['detail.html', 'master-detail.style.css'];
+        sourceFiles.files = ['master-detail.style.css'];
     }
 
     public ngOnInit(): void {
@@ -46,7 +29,9 @@ export class MasterComponent implements OnInit {
     }
 
     public onRowSelected(args: RowSelectEventArgs): void {
-        let record: carType = <carType>args.data;
-        this.key = record.ContactName;
+        const queryData: any =  args.data;
+        this.key = queryData.ContactName;
+        const dataSource: object[] = new DataManager(data).executeLocal(new Query().where('CustomerName', 'equal', queryData.ContactName));
+        this.detailgrid.dataSource = dataSource.slice(0, 5);
     }
 }

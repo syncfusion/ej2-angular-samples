@@ -78,7 +78,7 @@ export const mapAppRoutes: Object[] = [
     { path: ':theme/maps/seat-selection', component: MapsSeatSelectionComponent, name: "Bus seat booking", order: "06", category: "Use Cases", description: 'This demo for Essential JS2 Maps control demonstrates the rendering of normal geometry type shapes on the map.'  }
 ];
 
-export const mapRouter: ModuleWithProviders = RouterModule.forChild(mapAppRoutes);
+export const mapRouter: ModuleWithProviders<any> = RouterModule.forChild(mapAppRoutes);
 let declarations: Type<Object>[] = [
     MapsAnnotationComponent,
     MapsDefaultComponent, MapsClusteringComponent,

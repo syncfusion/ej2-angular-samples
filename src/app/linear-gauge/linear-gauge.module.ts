@@ -30,7 +30,7 @@ export const lineargaugeAppRoutes: Object[] = [
     { path: ':theme/linear-gauge/export', component: ExportComponent, name: 'Print & Export', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control will print and export gauge in required format.' }
 ];
 
-export const linearRouter: ModuleWithProviders = RouterModule.forChild(lineargaugeAppRoutes);
+export const linearRouter: ModuleWithProviders<any> = RouterModule.forChild(lineargaugeAppRoutes);
 
 let declarations: Type<Object>[] = [DefaultComponent, ContainerComponent, GradientColorComponent,RangesComponent, DataComponent, AxesComponent, AnnotationComponent, TooltipComponent, StyleComponent, ExportComponent];
 

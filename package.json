@@ -1,6 +1,6 @@
 {
     "name": "ej2-angular-samples",
-    "version": "18.3.35",
+    "version": "18.4.30",
     "scripts": {
         "start": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng serve",
         "start:prod": "node --max-old-space-size=8192 ./node_modules/@angular/cli/bin/ng serve --prod",

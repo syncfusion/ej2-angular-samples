@@ -5,8 +5,8 @@ import { kanbanPizzaData } from './data';
 
 @Component({
   selector: 'app-card-template',
-  templateUrl: 'card-template.component.html',
-  styleUrls: ['card-template.component.css'],
+  templateUrl: 'card-template.html',
+  styleUrls: ['card-template.style.css'],
   encapsulation: ViewEncapsulation.None
 })
 export class CardTemplateComponent {
@@ -26,7 +26,7 @@ export class CardTemplateComponent {
   }
 
   constructor(@Inject('sourceFiles') private sourceFiles: any) {
-    sourceFiles.files = ['card-template.component.css'];
+    sourceFiles.files = ['card-template.style.css'];
   }
 
 }

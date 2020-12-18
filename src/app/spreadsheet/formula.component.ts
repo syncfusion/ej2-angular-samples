@@ -31,14 +31,6 @@ export class FormulasController {
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold', backgroundColor: '#279377', color: '#fff', textAlign: 'center', verticalAlign: 'middle', fontSize: '14px' }, 'A1:F1');
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold', backgroundColor: '#EEEEEE' }, 'A12:F15');
         this.spreadsheetObj.numberFormat('0.00', 'F2:F11');
-        this.spreadsheetObj.updateCell({ value: 'Average profit:' }, 'D12');
-        this.spreadsheetObj.updateCell({ value: 'Maximum stock value:' }, 'D13');
-        this.spreadsheetObj.updateCell({ value: 'Minimum stock value:' }, 'D14');
-        this.spreadsheetObj.updateCell({ value: 'Nonprofitable days:' }, 'D15');
-        this.spreadsheetObj.updateCell({ formula: '=AVERAGE(Profit)', format: '0.00' }, 'F12');
-        this.spreadsheetObj.updateCell({ formula: '=MAX(High)', format: '0.00' }, 'F13');
-        this.spreadsheetObj.updateCell({ formula: '=MIN(E2:E11)', format: '0.00' }, 'F14');
-        this.spreadsheetObj.updateCell({ formula: '=COUNTIF(F2:F11,"<=0")', format: '0.00' }, 'F15');
-
+        this.spreadsheetObj.setRowHeight(40, 0);
     }
 }

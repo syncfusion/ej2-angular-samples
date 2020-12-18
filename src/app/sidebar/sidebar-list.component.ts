@@ -24,7 +24,7 @@ export class SidebarListComponent {
     ];
     public fields: Object = { tooltip: 'text' };
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['sidebar-menu.css'];
+        sourceFiles.files = ['sidebar-list.css'];
     }
 
     // open new tab

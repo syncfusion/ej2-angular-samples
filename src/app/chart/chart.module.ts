@@ -130,7 +130,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/step-area', component: StepAreaChartComponent, name: 'Step Area', description: "This demo for Essential JS2 Chart control shows how to render the step area series.", order: '02', category: 'Area Charts' },
     { path: ':theme/chart/range-area', component: RangeAreaComponent, name: 'Range Area', description: "This demo for Essential JS2 Chart control shows how to render the range area series.", order: '02', category: 'Area Charts' },
     { path: ':theme/chart/stacked-area', component: StackedAreaChartComponent, name: 'Stacked Area', description: "This demo for Essential JS2 Chart control shows how to render the stacking area series.", order: '02', category: 'Area Charts' },
-    { path: ':theme/chart/stacked-step-area', component: StackedStepAreaChartComponent, name: 'Stacked Step Area', description: "This demo for Essential JS2 Chart control shows how to render the stacking step area series.", order: '02', category: 'Area Charts', type: 'new' },
+    { path: ':theme/chart/stacked-step-area', component: StackedStepAreaChartComponent, name: 'Stacked Step Area', description: "This demo for Essential JS2 Chart control shows how to render the stacking step area series.", order: '02', category: 'Area Charts'},
     { path: ':theme/chart/stacked-area-percent', component: PercentStackedAreaChartComponent, name: '100% Stacked Area', description: "This demo for Essential JS2 Chart control shows how to render the 100 percent stacking area series.", order: '02', category: 'Area Charts' },
     { path: ':theme/chart/area-empty', component: EmptyAreaChartComponent, name: 'Area - Empty Points', description: "This demo for Essential JS2 Chart control shows how to render the area series with empty points.", order: '02', category: 'Area Charts' },
     { path: ':theme/chart/area-segments', component: AreaSegmentChartComponent, name: 'Area Zone', description: "This demo for Essential JS2 Chart control shows how to render and configure the points in a particular range using MultiColoredArea series.", order: '02', category: 'Area Charts' },
@@ -255,7 +255,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/data-editing', component: DataEditingComponent, name: 'Data Editing', description: "This demo for Essential JS2 Chart control demonstrates the data editing behavior in chart.", order: '15', category: 'User Interaction' }
 ];
 
-export const chartRouter: ModuleWithProviders = RouterModule.forChild(chartAppRoutes);
+export const chartRouter: ModuleWithProviders<any> = RouterModule.forChild(chartAppRoutes);
 let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, BarChartComponent, AreaChartComponent,
     SplineChartComponent, StackedColumnChartComponent, StackedBarChartComponent,
     StackedAreaChartComponent, StepLineChartComponent, StepAreaChartComponent,

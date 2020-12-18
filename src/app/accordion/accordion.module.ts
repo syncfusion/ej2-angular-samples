@@ -15,7 +15,7 @@ export const accordionAppRoutes: Object[] = [
     { path: ':theme/accordion/icon', component: IconAccordionComponent, name: 'Icons', description: 'The sample demonstrates how to represent pane headers with an icon in Accordion component which populates from items collection in Angular platform.', category: 'Accordion' },
 ];
 
-export const accordionRouter: ModuleWithProviders = RouterModule.forChild(accordionAppRoutes);
+export const accordionRouter: ModuleWithProviders<any> = RouterModule.forChild(accordionAppRoutes);
 
 @NgModule({
     imports: [accordionRouter, AccordionModule, SharedModule],

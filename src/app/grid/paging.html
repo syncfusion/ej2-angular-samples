@@ -1,5 +1,5 @@
 <div class="control-section">
-    <ejs-grid [dataSource]='data' allowPaging='true' height=365 [pageSettings]='initialPage'>
+    <ejs-grid [dataSource]='data' locale='en-US' allowPaging='true' height=365 [pageSettings]='initialPage'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
@@ -39,6 +39,7 @@
         pageSettings->pageCount
         </a></code>set to 4.
         </p>
+        <p>Changed default pager details information using the <code>totalItemsInfo</code> locale property.</p>
         <br>
         <p style="font-weight: 500">Injecting Module:</p>
         <p>

@@ -5,7 +5,7 @@
 import { Component, ViewChild, ViewChildren, ViewEncapsulation, Inject } from '@angular/core';
 import { TooltipComponent, TooltipEventArgs } from '@syncfusion/ej2-angular-popups';
 import { ListViewComponent } from '@syncfusion/ej2-angular-lists';
-
+import { closest } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',
     templateUrl: 'tooltip-menu.html',
@@ -78,7 +78,11 @@ export class TooltipMenuComponent {
         }
     }
     public onClick(args: any) {
-        if (args && !args.target.parentNode.parentNode.classList.contains('e-toolbar-item')) {
+        let targetEle: any;
+        if (args) {
+            targetEle = closest(args.target, '.e-toolbar-item');
+        }
+        if (!targetEle) {
             if (this.tooltip && document.getElementsByClassName('e-tooltip-wrap').length > 0) {
                 this.tooltip.close();
             }

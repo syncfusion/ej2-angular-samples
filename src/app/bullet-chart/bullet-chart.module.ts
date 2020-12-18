@@ -69,7 +69,7 @@ export const bulletChartAppRoutes: Object[] = [
     }
 ];
 
-export const bulletChartRouter: ModuleWithProviders = RouterModule.forChild(bulletChartAppRoutes);
+export const bulletChartRouter: ModuleWithProviders<any> = RouterModule.forChild(bulletChartAppRoutes);
 
 // tslint:disable-next-line:max-line-length
 const declarations: Type<Object>[ ] = [BulletChartDefaultComponent, BulletChartMultipleDataComponent, BulletChartRtlComponent, BulletChartCustomizationComponent, BulletChartBarCustomizationComponent, BulletChartTooltipComponent, BulletChartLegendComponent];

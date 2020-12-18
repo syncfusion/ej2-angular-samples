@@ -50,7 +50,7 @@ export const circulargaugeAppRoutes: Object[] = [
     { path: ':theme/circular-gauge/speedometer', component: SpeedometerComponent , name: 'Speedometer',  order: '06', category: 'Live', description: 'This demo for Essential JS2 Circular Gauge control demonstrates live data, along with the data grid control.'}
 ];
 
-export const circularRouter: ModuleWithProviders = RouterModule.forChild(circulargaugeAppRoutes);
+export const circularRouter: ModuleWithProviders<any> = RouterModule.forChild(circulargaugeAppRoutes);
 
 let declarations: Type<Object>[] = [DefaultComponent, RangeComponent, MultipleAxisComponent, LabelComponent, LegendComponent, UserInteractionComponent,
 TooltipComponent, PointersComponent, PointerImageComponent, SampleDataComponent, AnnotationComponent, CustomizationComponent, DirectionComponent,

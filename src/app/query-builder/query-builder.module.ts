@@ -34,7 +34,7 @@ export const QueryBuilderAppRoutes: Object[] = [
     }
 ];
 
-export const QueryBuilderRouter: ModuleWithProviders = RouterModule.forChild(QueryBuilderAppRoutes);
+export const QueryBuilderRouter: ModuleWithProviders<any> = RouterModule.forChild(QueryBuilderAppRoutes);
 
 @NgModule({
     imports: [QueryBuilderRouter, SharedModule, CommonModule, QueryBuilderModule,

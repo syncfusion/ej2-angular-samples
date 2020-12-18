@@ -102,17 +102,17 @@
 
 .e-schedule-event-tooltip .event-tooltip .airline-logo.airways-1,
 .schedule-resources.e-schedule .template-wrapper .airline-logo.airways-1 {
-    background-image: url('~/assets/schedule/images/airways-1.svg');
+    background-image: url('/assets/schedule/images/airways-1.svg');
 }
 
 .e-schedule-event-tooltip .event-tooltip .airline-logo.airways-2,
 .schedule-resources.e-schedule .template-wrapper .airline-logo.airways-2 {
-    background-image: url('~/assets/schedule/images/airways-2.svg');
+    background-image: url('/assets/schedule/images/airways-2.svg');
 }
 
 .e-schedule-event-tooltip .event-tooltip .airline-logo.airways-3,
 .schedule-resources.e-schedule .template-wrapper .airline-logo.airways-3 {
-    background-image: url('~/assets/schedule/images/airways-3.svg');
+    background-image: url('/assets/schedule/images/airways-3.svg');
 }
 
 .schedule-resources.e-schedule .fare-detail {

@@ -16,14 +16,12 @@ export const smithchartAppRoutes: Object[] = [
      category: "Smith Chart", description: 'This demo for Essential JS2 Smith Chart control explores the exporting and printing functionality of smith chart.'},
 ];
 
-export const smithchartRouter: ModuleWithProviders = RouterModule.forChild(smithchartAppRoutes);
-
-let declarations: Type<Object>[] = [SmithchartDefaultComponent, SmithchartPrintExportComponent, SmithchartCustomComponent];
+export const smithchartRouter: ModuleWithProviders<any> = RouterModule.forChild(smithchartAppRoutes);
 
 @NgModule({
     imports: [smithchartRouter, SmithchartAllModule, SharedModule, SliderModule, DropDownListAllModule, CheckBoxModule],
     exports: [],
-    declarations: declarations,
+    declarations: [SmithchartDefaultComponent, SmithchartPrintExportComponent, SmithchartCustomComponent],
     providers: [SmithchartAllModule]
 })
 export class SmithchartSampleModule {

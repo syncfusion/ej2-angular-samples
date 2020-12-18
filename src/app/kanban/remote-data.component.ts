@@ -11,7 +11,7 @@ import { KanbanComponent, CardSettingsModel, DialogEventArgs } from '@syncfusion
 export class RemoteDataComponent {
     @ViewChild('kanbanObj') kanbanObj: KanbanComponent;
     public dataManger: DataManager = new DataManager({
-        url: 'https://js.syncfusion.com/ejServices/wcf/Northwind.svc/Tasks',
+        url: 'https://ej2services.syncfusion.com/production/web-services/api/Kanban',
         crossDomain: true
     });
     public allowDragAndDrop: boolean = false;

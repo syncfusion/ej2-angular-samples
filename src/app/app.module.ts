@@ -2,6 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ReflectiveInjector } from '@angular/c
 import { BrowserModule } from '@angular/platform-browser';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpModule, JsonpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { SBRoutingModule } from './common/sb.router';
 import { SharedModule } from './common/shared.module';
 
@@ -17,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         SharedModule,
         HttpModule,
         JsonpModule,
+        HttpClientModule,
         FormsModule,
         ReactiveFormsModule
     ],

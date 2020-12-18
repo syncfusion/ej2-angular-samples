@@ -206,7 +206,7 @@
     color: #fff;
 }
 .template .e-dialog .e-dlg-header-content .e-dlg-header .e-avatar.template-image {
-    background-image: url(~/assets/dialog/images/1.png);
+    background-image: url('/assets/dialog/images/1.png');
     vertical-align: middle;
     display: inline-block;
     width: 36px;

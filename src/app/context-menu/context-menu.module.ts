@@ -8,7 +8,7 @@ export const contextMenuAppRoutes: Object[] = [
     { path: ':theme/context-menu/default', component: DefaultContextMenuController, name: 'Default Functionalities', category: 'Context Menu', description: 'This example demonstrates the Syncfusion Angular ContextMenu items with icons, text and separator.' }
 ];
 
-export const contextMenuRouter: ModuleWithProviders = RouterModule.forChild(contextMenuAppRoutes);
+export const contextMenuRouter: ModuleWithProviders<any> = RouterModule.forChild(contextMenuAppRoutes);
 
 @NgModule({
     imports: [contextMenuRouter, ContextMenuModule, SharedModule],

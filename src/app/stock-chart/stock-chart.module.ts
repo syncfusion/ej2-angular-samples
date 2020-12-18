@@ -75,7 +75,7 @@ export const stockChartAppRoutes: Object[] = [
     },
 ];
 
-export const stockChartRouter: ModuleWithProviders = RouterModule.forChild(stockChartAppRoutes);
+export const stockChartRouter: ModuleWithProviders<any> = RouterModule.forChild(stockChartAppRoutes);
 
 let declarations: Type<Object>[] = [AreaComponent, DefaultComponent, PlotLineComponent, InversedAreaComponent, HiloOpenCloseComponent,
      MultipleSeriesComponent, SplineAreaComponent, SplineComponent, StripLineComponent, PeriodCustomizationComponent,

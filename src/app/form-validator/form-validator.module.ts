@@ -10,7 +10,7 @@ export const formValidatorAppRoutes: Object[] = [
     { path: ':theme/form-validator/default', component: DefaultFormValidatorComponent, name: 'Reactive FormValidator', order: '01', category: 'Form Validator' }
 ];
 
-export const formValidatorRouter: ModuleWithProviders = RouterModule.forChild(formValidatorAppRoutes);
+export const formValidatorRouter: ModuleWithProviders<any> = RouterModule.forChild(formValidatorAppRoutes);
 
 @NgModule({
     imports: [formValidatorRouter, SharedModule, FormsModule, ReactiveFormsModule, CommonModule],

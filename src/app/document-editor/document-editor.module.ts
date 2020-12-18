@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ToolbarModule, TabModule } from '@syncfusion/ej2-angular-navigations';
 import { DocumentEditorAllModule, DocumentEditorContainerAllModule } from '@syncfusion/ej2-angular-documenteditor';
 import { DropDownListModule, ComboBoxModule, DropDownListAllModule, MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
 import { SliderModule, NumericTextBoxModule, ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
 import { CheckBoxModule, ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownButtonModule, SplitButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
@@ -26,11 +27,12 @@ import { DocumentEditorChartComponent } from './chart.component';
 import { DocumentEditorProtectionComponent } from './document-protection.component';
 import { CommentsComponent } from './comments.components';
 import { AutoSaveComponent } from './auto-save.component';
-import { ToolbarCustomizationComponent } from './toolbar-customization-component';
-import { WebLayoutComponent } from './web-layout-component';
-import { TrackChangesComponent } from './track-changes-component';
-import { FormFieldsComponent } from './form-fields-component';
-import { MailMergeComponent } from './mail-merge';
+import { ToolbarCustomizationComponent } from './toolbar-customization.component';
+import { WebLayoutComponent } from './web-layout.component';
+import { TrackChangesComponent } from './track-changes.component';
+import { FormFieldsComponent } from './form-fields.component';
+import { MailMergeComponent } from './mail-merge.component';
+import { NotesComponent } from './notes.component';
 import { SharedModule } from '../common/shared.module';
 
 export const documentEditorAppRoutes: Object[] = [
@@ -44,34 +46,36 @@ export const documentEditorAppRoutes: Object[] = [
     { path: ':theme/document-editor/table-formatting', component: TableFormattingComponent, name: 'Table Formatting', order: '02', category: 'Editing Features', description: "The Document Editor supports table formatting such as cell margins, cell spacing, horizontal merge, vertical merge, border styles, background color, and more." },
     { path: ':theme/document-editor/section-formatting', component: SectionFormattingComponent, name: 'Section Formatting', order: '02', category: 'Editing Features', description: "The Document Editor supports section formatting such as page size, page margins, header distance, and footer distance." },
     { path: ':theme/document-editor/headers-footers', component: HeadersFootersComponent, name: 'Headers and Footers', order: '02', category: 'Editing Features', description: "The Document Editor supports headers and footers. Different headers and footers can be added to the first page, odd pages, and even pages." },
-    { path: ':theme/document-editor/table-of-contents', component: TableOfContentsComponent, name: 'Table of Contents', order: '02', category: 'Editing Features', description: "The Document Editor supports table of contents with options for including hyperlink, page number, right-aligned tabs, and styles." },
+    { path: ':theme/document-editor/table-of-contents', component: TableOfContentsComponent, name: 'Table of Contents', order: '03', category: 'References', description: "The Document Editor supports table of contents with options for including hyperlink, page number, right-aligned tabs, and styles." },
     { path: ':theme/document-editor/form-fields', component: FormFieldsComponent, name: 'Form Fields', order: '02', category: 'Editing Features', description: "The Document Editor component in JavaScript platform allows users to design and fill legacy form fields (text, check box, and drop down) in a Word document." },
-    { path: ':theme/document-editor/print', component: PrintComponent, name: 'Print', order: '03', category: 'Print', description: "The Document Editor component is used to view and print Word documents in web applications by injecting only the modules that are necessary." },
-    { path: ':theme/document-editor/right-to-left', component: RightToLeftComponent, name: 'Right to Left', order: '04', category: 'RTL', description: "The Document Editor component is used to create, edit, view, and print Word documents in web applications." },
-    { path: ':theme/document-editor/custom-context-menu', component: CustomContextMenuComponent, name: 'Custom Context Menu', order: '05', category: 'Customization', description: "The Document Editor supports custom options for users who use to add custom options in context menu." },
-    { path: ':theme/document-editor/auto-save', component: AutoSaveComponent, name: 'Auto Save', order: '05', category: 'Customization', description: "The Document Editor supports auto save functionality to let the users for saving the documents automatically at customized time interval." },
-    { path: ':theme/document-editor/toolbar-customization', component: ToolbarCustomizationComponent, name: 'Toolbar Customization', order: '05', category: 'Customization', description: "The Document Editor component supports to hide or show existing items in toolbar.Also,to add new items in toolbar." },
-    { path: ':theme/document-editor/chart', component: DocumentEditorChartComponent, name: 'Chart Preservation', order: '06', category: 'Charts', description: "The Document Editor supports chart preservation for users who use to view their business reports with intuitive graphical data visualization." },
-    { path: ':theme/document-editor/document-protection', component: DocumentEditorProtectionComponent, name: 'Document Protection', order: '07', category: 'Security', description: "The Document Editor provides document protection supports to restrict the types of changes can be made to the document by a user/user group." },
-    { path: ':theme/document-editor/web-layout', component: WebLayoutComponent, name: 'Web Layout', order: '08', category: 'View', description: "The Document Editor component supports continuous layout type to display a word document in a single page." },
-    { path: ':theme/document-editor/comments', component: CommentsComponent, name: 'Comments', order: '09', category: 'Review',  description: "The Document Editor component supports add and edit comments in a Word document for comment discussion." },
-    { path: ':theme/document-editor/track-changes', component: TrackChangesComponent, name: 'Track Changes', order: '09', category: 'Review', description: "The Document Editor component in JavaScript platform allows users to view, make changes and accept or reject them in a Word document." },
-    { path: ':theme/document-editor/mail-merge', component: MailMergeComponent, name: 'Mail Merge', order: '10', type: 'new', category: 'Mail Merge', description: "The Document Editor component provides support to mail merge document with the help of Syncfusion DocIO." },
+    { path: ':theme/document-editor/print', component: PrintComponent, name: 'Print', order: '04', category: 'Print', description: "The Document Editor component is used to view and print Word documents in web applications by injecting only the modules that are necessary." },
+    { path: ':theme/document-editor/right-to-left', component: RightToLeftComponent, name: 'Right to Left', order: '05', category: 'RTL', description: "The Document Editor component is used to create, edit, view, and print Word documents in web applications." },
+    { path: ':theme/document-editor/custom-context-menu', component: CustomContextMenuComponent, name: 'Custom Context Menu', order: '06', category: 'Customization', description: "The Document Editor supports custom options for users who use to add custom options in context menu." },
+    { path: ':theme/document-editor/auto-save', component: AutoSaveComponent, name: 'Auto Save', order: '06', category: 'Customization', description: "The Document Editor supports auto save functionality to let the users for saving the documents automatically at customized time interval." },
+    { path: ':theme/document-editor/toolbar-customization', component: ToolbarCustomizationComponent, name: 'Toolbar Customization', order: '06', category: 'Customization', description: "The Document Editor component supports to hide or show existing items in toolbar.Also,to add new items in toolbar." },
+    { path: ':theme/document-editor/chart', component: DocumentEditorChartComponent, name: 'Chart Preservation', order: '07', category: 'Charts', description: "The Document Editor supports chart preservation for users who use to view their business reports with intuitive graphical data visualization." },
+    { path: ':theme/document-editor/document-protection', component: DocumentEditorProtectionComponent, name: 'Document Protection', order: '08', category: 'Security', description: "The Document Editor provides document protection supports to restrict the types of changes can be made to the document by a user/user group." },
+    { path: ':theme/document-editor/web-layout', component: WebLayoutComponent, name: 'Web Layout', order: '09', category: 'View', description: "The Document Editor component supports continuous layout type to display a word document in a single page." },
+    { path: ':theme/document-editor/comments', component: CommentsComponent, name: 'Comments', order: '10', category: 'Review',  description: "The Document Editor component supports add and edit comments in a Word document for comment discussion." },
+    { path: ':theme/document-editor/track-changes', component: TrackChangesComponent, name: 'Track Changes', order: '10', category: 'Review', description: "The Document Editor component in JavaScript platform allows users to view, make changes and accept or reject them in a Word document." },
+    { path: ':theme/document-editor/mail-merge', component: MailMergeComponent, name: 'Mail Merge', order: '11', category: 'Mail Merge', description: "The Document Editor component provides support to mail merge document with the help of Syncfusion DocIO." },
+    { path: ':theme/document-editor/notes', component: NotesComponent, name: 'Footnotes and Endnotes', order: '03', type: 'new', category: 'References', description: "The DocumentEditor provides support to insert footnotes and endnotes to provide more information about something in the document." },
 ];
 
-export const documentEditorRouter: ModuleWithProviders = RouterModule.forChild(documentEditorAppRoutes);
+export const documentEditorRouter: ModuleWithProviders<any> = RouterModule.forChild(documentEditorAppRoutes);
 
 @NgModule({
     // tslint:disable-next-line:max-line-length
     imports: [SharedModule, documentEditorRouter, FormsModule, ToolbarModule, DropDownListAllModule, ColorPickerModule, SplitButtonModule,
         ComboBoxModule, TabModule, DocumentEditorAllModule, DocumentEditorContainerAllModule, DropDownListModule, SliderModule, NumericTextBoxModule,
-        CheckBoxModule, ButtonModule, DropDownButtonModule, DialogModule, BrowserModule, MultiSelectAllModule],
+        CheckBoxModule, ButtonModule, DropDownButtonModule, DialogModule, BrowserModule, MultiSelectAllModule, ListViewAllModule],
     // tslint:disable-next-line:max-line-length
     declarations: [DocEditorComponent, CharacterFormattingComponent, ParagraphFormattingComponent, StylesComponent,
         BulletsNumberingComponent, HyperlinksBookmarksComponent, TableFormattingComponent, SectionFormattingComponent,
         HeadersFootersComponent, TableOfContentsComponent, PrintComponent, RightToLeftComponent, CustomContextMenuComponent,
         AutoSaveComponent, ToolbarCustomizationComponent, DocumentEditorChartComponent,
-        DocumentEditorProtectionComponent, CommentsComponent, WebLayoutComponent, TrackChangesComponent, FormFieldsComponent, MailMergeComponent],
+        DocumentEditorProtectionComponent, CommentsComponent, WebLayoutComponent, TrackChangesComponent, FormFieldsComponent, MailMergeComponent,
+        NotesComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DocumentEditorSampleModule {

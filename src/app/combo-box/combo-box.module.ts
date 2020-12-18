@@ -41,7 +41,7 @@ export const comboboxAppRoutes: Object[] = [
 
 ];
 
-export const ComboBoxRouter: ModuleWithProviders = RouterModule.forChild(comboboxAppRoutes);
+export const ComboBoxRouter: ModuleWithProviders<any> = RouterModule.forChild(comboboxAppRoutes);
 
 @NgModule({
     imports: [ComboBoxRouter, ComboBoxModule, SharedModule, CheckBoxModule, FormsModule, ReactiveFormsModule, BrowserModule],

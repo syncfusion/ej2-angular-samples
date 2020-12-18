@@ -1,20 +1,20 @@
 .schedule-context-menu .e-menu-item .new::before {
   content: '\e7f9';
 }
-  
+
 .schedule-context-menu .e-menu-item .edit::before {
   content: '\ea9a';
 }
-  
+
 .schedule-context-menu .e-menu-item .recurrence::before {
   content: '\e308';
   font-weight: bold;
 }
-  
+
 .schedule-context-menu .e-menu-item .today::before {
   content: '\e322';
 }
-  
+
 .schedule-context-menu .e-menu-item .delete::before {
   content: '\e94a';
 }
@@ -45,6 +45,26 @@
 .highcontrast .schedule-context-menu .e-menu-item .new::before,
 .fabric .schedule-context-menu .e-menu-item .new::before {
     content: '\e823';
+}
+
+.bootstrap4 .schedule-context-menu .e-menu-item .today::before {
+  content: '\e7be';
+}
+
+.bootstrap4 .schedule-context-menu .e-menu-item .edit::before {
+  content: '\e78f';
+}
+
+.bootstrap4 .schedule-context-menu .e-menu-item .delete::before {
+  content: '\e773';
+}
+
+.bootstrap4 .schedule-context-menu .e-menu-item .new::before {
+  content: '\e759';
+}
+
+.bootstrap4 .schedule-context-menu .e-menu-item .recurrence::before {
+  content: '\e7c8';
 }
 
 .highcontrast .schedule-context-menu .e-menu-item .recurrence::before,

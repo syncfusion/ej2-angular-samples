@@ -19,11 +19,11 @@ export class CustomDropAreaComponent implements OnInit {
         removeUrl: 'https://ej2.syncfusion.com/services/api/uploadbox/Remove'
     };
     public allowExtensions: string = '.pdf, .png, .txt';
+    
+    ngOnInit() {}
 
-    ngOnInit() {
+    ngAfterViewInit() {
         this.uploadObj.dropArea = document.getElementById('dropTarget');
-    }
-    ngAfterViewInit() {        
         document.getElementById('dropArea').onclick = (e: any) => {
             let target: HTMLElement = <HTMLElement>e.target;
             if (target.classList.contains('e-file-delete-btn')) {

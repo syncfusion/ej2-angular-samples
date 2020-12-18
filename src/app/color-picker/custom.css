@@ -24,7 +24,7 @@
 
 /* Preview area styles */
 #custom-control #e-shirt-preview {
-    background: transparent url('~/assets/color-picker/shirt.png') no-repeat;
+    background: transparent url('/assets/color-picker/shirt.png') no-repeat;
     height: 320px;
     margin: 20px auto;
     display: inline-block;
@@ -36,7 +36,7 @@
     width: 320px;
 }
 .highcontrast #custom-control #e-shirt-preview {
-    background: transparent url('~/assets/color-picker/shirt_highcontrast.png') no-repeat;
+    background: transparent url('/assets/color-picker/shirt_highcontrast.png') no-repeat;
     background-color: rgb(244, 67, 54);
 }
 

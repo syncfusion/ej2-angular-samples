@@ -23,7 +23,7 @@ export const timePickerAppRoutes: Object[] = [
 
 ];
 
-export const TimePickerRouter: ModuleWithProviders = RouterModule.forChild(timePickerAppRoutes);
+export const TimePickerRouter: ModuleWithProviders<any> = RouterModule.forChild(timePickerAppRoutes);
 
 @NgModule({
     imports: [TimePickerRouter, TimePickerModule, DropDownListModule, BrowserModule, FormsModule, ReactiveFormsModule, CheckBoxModule],

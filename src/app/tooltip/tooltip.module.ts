@@ -93,7 +93,7 @@ export const tooltipAppRoutes: Object[] = [{
     ]   
 }];
 
-export const tooltipRouter: ModuleWithProviders = RouterModule.forChild(tooltipAppRoutes);
+export const tooltipRouter: ModuleWithProviders<any> = RouterModule.forChild(tooltipAppRoutes);
 
 @NgModule({
     imports: [tooltipRouter, TooltipModule, ToolbarModule, ListViewModule, DropDownListModule, CheckBoxModule,

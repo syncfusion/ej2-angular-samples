@@ -10,13 +10,13 @@
 
 /* ListView header alignment */
 
-#listview_template.e-listview .e-list-header #list-logo {
+.e-listview .e-list-header #list-logo {
   margin-top: 2.5px;
   position: absolute;
   right: 20px;
 }
 
-#listview_template.e-listview.e-rtl .e-list-header #list-logo {
+.e-listview.e-rtl .e-list-header #list-logo {
   margin-top: 2.5px;
   position: absolute;
   right: 280px;
@@ -38,14 +38,14 @@
   font-style: normal;
 }
 
-#listview_template.e-listview.e-rtl.e-list-template .e-list-wrapper.e-list-avatar:not(.e-list-badge) {
+.e-listview.e-rtl.e-list-template .e-list-wrapper.e-list-avatar:not(.e-list-badge) {
   padding-left: 1.0666em;
   padding-right: 122px;
 }
 
-#listview_template.e-listview.e-list-template .e-list-wrapper.e-list-avatar:not(.e-list-badge) {
-  padding-left: 122px;
-  padding-right: 1.0666em;
+.e-listview.e-list-template .e-list-wrapper.e-list-avatar:not(.e-list-badge) {
+ padding-left: 122px;
+ padding-right: 1.0666em;
 }
 
 #listview_template.e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar {
@@ -65,11 +65,11 @@
   float: right;
 }
 
-#listview_template.e-listview.e-rtl.e-list-template .clearfix.desc.e-list-wrapper {
+.e-listview.e-rtl.e-list-template .clearfix.desc.e-list-wrapper {
   padding-right: 16px;
 }
 
-#listview_template.e-listview.e-list-template .clearfix.desc.e-list-wrapper {
+.e-listview.e-list-template .clearfix.desc.e-list-wrapper {
   padding-left: 16px;
 }
 
@@ -172,13 +172,13 @@
   color: #fff;
 }
 
-.highcontrast #listview_template.e-listview.e-list-template .e-list-item.e-active .e-list-item-header,
-.highcontrast #listview_template.e-listview.e-list-template .e-list-item.e-active .e-list-content {
+.highcontrast .e-listview.e-list-template .e-list-item.e-active .e-list-item-header,
+.highcontrast .e-listview.e-list-template .e-list-item.e-active .e-list-content {
   color: #fff;
 }
 
-.bootstrap4 #listview_template.e-listview.e-list-template .e-list-item.e-active .e-list-item-header,
-.bootstrap4 #listview_template.e-listview.e-list-template .e-list-item.e-active .e-list-content {
+.bootstrap4 .e-listview.e-list-template .e-list-item.e-active .e-list-item-header,
+.bootstrap4 .e-listview.e-list-template .e-list-item.e-active .e-list-content {
   color: #333333;
 }
 

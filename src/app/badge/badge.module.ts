@@ -45,7 +45,7 @@ export const badgeAppRoutes: Object[] = [
     ] }
 ];
 
-export const badgeRouter: ModuleWithProviders = RouterModule.forChild(badgeAppRoutes);
+export const badgeRouter: ModuleWithProviders<any> = RouterModule.forChild(badgeAppRoutes);
 
 @NgModule({
     imports: [badgeRouter, SharedModule, ToolbarModule, AccordionModule, ListViewModule],

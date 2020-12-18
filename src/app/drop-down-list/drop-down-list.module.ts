@@ -39,7 +39,7 @@ export const dropdownlistAppRoutes: Object[] = [
 
 ];
 
-export const DropDownListRouter: ModuleWithProviders = RouterModule.forChild(dropdownlistAppRoutes);
+export const DropDownListRouter: ModuleWithProviders<any> = RouterModule.forChild(dropdownlistAppRoutes);
 
 @NgModule({
     imports: [DropDownListRouter, SharedModule, DropDownListModule, FormsModule, ReactiveFormsModule,BrowserModule],

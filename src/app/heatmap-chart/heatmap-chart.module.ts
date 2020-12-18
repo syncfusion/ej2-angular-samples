@@ -181,7 +181,7 @@ export const heatmapAppRoutes: Object[] = [
     },
 ];
 
-export const heatmapRouter: ModuleWithProviders = RouterModule.forChild(heatmapAppRoutes);
+export const heatmapRouter: ModuleWithProviders<any> = RouterModule.forChild(heatmapAppRoutes);
 let declarations: Type<Object>[] = [
     HeatmapDefaultComponent,
     HeatmapCalendarComponent,

@@ -52,7 +52,7 @@ export const rangeNavigatorAppRoutes: Object[] = [
     { path: ':theme/range-navigator/rtl', component: RTLComponent, name: 'RTL', order: '06', category: 'RTL' }
 ];
 
-export const rangeNavigatorRouter: ModuleWithProviders = RouterModule.forChild(rangeNavigatorAppRoutes);
+export const rangeNavigatorRouter: ModuleWithProviders<any> = RouterModule.forChild(rangeNavigatorAppRoutes);
 
 let declarations: Type<Object>[] = [DefaultComponent, LightWeightComponent, DateTimeComponent, DoubleComponent, LogarthmicComponent,
     MultilevelComponent, FilterComponent, RTLComponent, RangeNavigatorExportComponent,

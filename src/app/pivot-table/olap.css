@@ -9,3 +9,7 @@
         overflow: auto;
     }
 }
+
+#PivotViewcontainerwrapper {
+    height: auto !important;
+}

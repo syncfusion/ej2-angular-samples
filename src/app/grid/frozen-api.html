@@ -1,0 +1,78 @@
+<div class="control-section">
+    <div class="grid-freezeprop">
+        <div class="grid-freezecol">
+            <div class="grid-freezecol">
+                <span>
+                    Column
+                </span>
+            </div>
+            <div class="grid-freezecol">
+                <ejs-dropdownlist id='column' #columndropdown index='7' [dataSource]='columnData'
+                    (change)='columnChange($event)' [fields]='fields'></ejs-dropdownlist>
+            </div>
+        </div>
+        <div class="grid-freezecol">
+            <div class="grid-freezecol">
+                <span>
+                    Freeze Direction
+                </span>
+            </div>
+            <div class="grid-freezecol">
+                <ejs-dropdownlist id='direction' #directiondropdown index='0' [dataSource]='directionData'
+                    (change)='directionChange($event)' [fields]='fields'></ejs-dropdownlist>
+            </div>
+        </div>
+    </div>
+
+    <ejs-grid #grid [dataSource]='data' height='400' [frozenRows]='2' [enableHover]='false'>
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
+            <e-column field='Freight' headerText='Freight' width='125' format='C2' textAlign='Right'></e-column>
+            <e-column field='CustomerID' headerText='Customer ID' width='130' freeze='Right'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='150' format="yMd" textAlign='Right'></e-column>
+            <e-column field='ShipName' headerText='Ship Name' width='300'></e-column>
+            <e-column field='ShipAddress' headerText='Ship Address' width='270'></e-column>
+            <e-column field='ShipCity' headerText='Ship City' width='250'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='250' freeze='Left'></e-column>
+        </e-columns>
+    </ejs-grid>
+    <ejs-dialog #alertDialog [buttons]='dlgButtons' [header]='header' [animationSettings]='animationSettings'
+        [content]='content' [showCloseIcon]='showCloseIcon' [target]='target' [width]='width' [visible]='visible'>
+    </ejs-dialog>
+
+    <!-- custom code start -->
+    <style>
+        .grid-freezeprop {
+            padding-bottom: 5px;
+        }
+
+        .grid-freezecol {
+            display: inline-block;
+            padding-right: 10px;
+        }
+    </style>
+    <!-- custom code end -->
+
+    <div id="action-description">
+        <p>This sample demonstrates the frozen rows and columns at both sides of the Grid. Scroll the movable content
+            vertically/horizontally to view the frozen rows/columns with the content.</p>
+    </div>
+    <div id="description">
+        <p>
+            The freezing feature enables the user to freeze certain rows/columns at both sides to scroll remaining
+            movable content. This can be achieved by setting <code>freeze</code> property in column settings.
+        </p>
+        <p>
+            In this demo sample, the <b>ShipCountry</b> column freezed at left side and <b>CustomerID</b> column freezed
+            at right side using <code><a target="_blank" class="code"
+                href="http://ej2.syncfusion.com/angular/documentation/grid/api-columnDirective.html#freeze-any">
+                column->freeze </a></code> property.
+        </p>
+        <p style="font-weight: 500">Injecting Module:</p>
+        <p>
+            Grid component features are segregated into individual feature-wise modules. To use frozen rows and columns
+            feature, we need to inject
+            <code>FreezeService</code> into the <code>@NgModule.providers</code> section.
+        </p>
+    </div>
+</div>

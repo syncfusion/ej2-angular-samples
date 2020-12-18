@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { orderDetails } from './data';
-import { SelectionService } from '@syncfusion/ej2-angular-grids';
+import { SelectionService, GridComponent } from '@syncfusion/ej2-angular-grids';
+import { CheckBox } from "@syncfusion/ej2-buttons";
+import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
 
 @Component({
     selector: 'ej-gridselect',
@@ -10,8 +12,17 @@ import { SelectionService } from '@syncfusion/ej2-angular-grids';
     encapsulation: ViewEncapsulation.None
 })
 export class SelectionApiComponent implements OnInit {
+    @ViewChild('grid')
+    public grid: GridComponent;
+    @ViewChild("toolbar")
+     public toolbar: ToolbarComponent;
     public data: Object[];
-    public selectOptions: { type?: string, mode?: string };
+    public selectOptions: { type?: string, mode?: string, allowColumnSelection?: boolean };
+    public columnSelectionCheckbox: any = new CheckBox({
+        label: "Enable Column Selection",
+        checked: false,
+        change: this.change.bind(this)
+      });
 
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['selection-api.style.css'];
@@ -46,5 +57,32 @@ export class SelectionApiComponent implements OnInit {
         typeEle.innerHTML = val;
 
         this.selectOptions = isType ? { type: val } : { mode: val };
+        if (!isType && val === "Column") {
+            this.grid.clearSelection();
+            this.grid.selectionSettings.allowColumnSelection = true;
+        } else {
+            this.selectOptions = isType ? { type: val } : { mode: val, allowColumnSelection: false };
+        }
+    }
+
+    public selectingEvent(e: any): void {
+        if (this.grid.selectionSettings.allowColumnSelection) {
+            e.cancel = true;
+        }
+    }
+
+    public onCreate(e: any) {
+        this.columnSelectionCheckbox.appendTo("#columnSelection");
+    }
+
+    public change(e: any) {
+        this.grid.clearSelection();
+        if (e.checked) {
+            this.toolbar.enableItems(1, false);
+            this.grid.selectionSettings.allowColumnSelection = true;
+        } else {
+            this.toolbar.enableItems(1, true);
+            this.grid.selectionSettings.allowColumnSelection = false;
+        }
     }
 }
