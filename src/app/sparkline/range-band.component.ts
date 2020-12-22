@@ -15,7 +15,7 @@ import { SliderComponent } from '@syncfusion/ej2-angular-inputs';
 })
 export class SparklineRangebandSample implements OnInit {
     @ViewChild('sparkline')
-    @ViewChild('slide')
+    //@ViewChild('slide')
     public lineData: object[] = [
         [0, 6, 4, 1, 3, 2, 5],
         [5, 4, 6, 3, 1, 2, 0],

@@ -18,7 +18,7 @@ export const inplaceeditorAppRoutes: Object[] = [
     { path: ':theme/inplace-editor/form', component: FormInplaceEditorComponent, name: 'Edit Post', order: '02', category: 'Use Case' }
 ];
 
-export const inplaceeditorRouter: ModuleWithProviders = RouterModule.forChild(inplaceeditorAppRoutes);
+export const inplaceeditorRouter: ModuleWithProviders<any> = RouterModule.forChild(inplaceeditorAppRoutes);
 
 @NgModule({
     imports: [inplaceeditorRouter, InPlaceEditorModule, DropDownListModule, SharedModule, CheckBoxModule],

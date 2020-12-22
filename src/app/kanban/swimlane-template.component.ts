@@ -21,7 +21,7 @@ export class SwimlaneTemplateComponent {
     public swimlaneSettings: SwimlaneSettingsModel = { keyField: 'Assignee' };
 
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['swimlane-template.styles.css'];
+        sourceFiles.files = ['swimlane-template.style.css'];
     }
 
 }

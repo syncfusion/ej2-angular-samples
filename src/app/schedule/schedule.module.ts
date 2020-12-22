@@ -71,6 +71,7 @@ import { OverviewComponent } from './overview.component';
 import { SharedModule } from '../common/shared.module';
 
 export const scheduleRouteConfig: Object[] = [
+  { 'path': ':theme/schedule/overview', component: OverviewComponent, name: 'Overview', order: '01', category: 'Scheduler', type: 'new', description: 'This demo shows how the Scheduler control functionalities work with the default set of minimal configurations in a Angular application.' },
   { 'path': ':theme/schedule/default', component: DefaultComponent, name: 'Default Functionalities', order: '01', category: 'Scheduler', description: 'This demo shows how the Scheduler control functionalities work with the default set of minimal configurations in a Angular application.' },
   { 'path': ':theme/schedule/local-data', component: LocalDataComponent, name: 'Local Data', order: '02', category: 'Data Binding', description: 'This demo shows how to populate appointments in the Angular Scheduler through local data sources like JSON data types with the proper date format.' },
   { 'path': ':theme/schedule/remote-data', component: RemoteDataComponent, name: 'Remote Data', order: '02', category: 'Data Binding', description: 'This demo shows how to populate appointments or events in the Angular Scheduler through remote data sources such as web services, web API, URL, and OData.' },

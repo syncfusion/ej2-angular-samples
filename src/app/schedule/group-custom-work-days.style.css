@@ -53,13 +53,13 @@
 }
 
 .schedule-group-custom-work-days.e-schedule .template-wrap .resource-image.will-smith {
-    background-image: url('~/assets/schedule/images/will-smith.png');
+    background-image: url('/assets/schedule/images/will-smith.png');
 }
 
 .schedule-group-custom-work-days.e-schedule .template-wrap .resource-image.alice {
-    background-image: url('~/assets/schedule/images/alice.png');
+    background-image: url('/assets/schedule/images/alice.png');
 }
 
 .schedule-group-custom-work-days.e-schedule .template-wrap .resource-image.robson {
-    background-image: url('~/assets/schedule/images/robson.png');
+    background-image: url('/assets/schedule/images/robson.png');
 }

@@ -1,4 +1,3 @@
-<link href="../../styles/Diagram/style/diagram-common.css" rel="stylesheet">
 <script src="script/diagram-common.ts"></script>
 <style>
     .e-symbolpalette {
@@ -21,7 +20,7 @@
         </div>
         <div id="diagram-space" class="sb-mobile-diagram">
             <div class="content-wrapper">
-                <ejs-diagram #diagram id="diagram" width="100%" height="700px" [snapSettings]='snapSettings' (created)="created()" [getConnectorDefaults]='connDefaults' [getNodeDefaults]='nodeDefaults' dragEnter='dragEnter' (created)="diagramCreate($event)">
+                <ejs-diagram #diagram id="diagram" width="100%" height="700px" [snapSettings]='snapSettings' (created)="created()" [getConnectorDefaults]='connDefaults' [getNodeDefaults]='nodeDefaults' (dragEnter)="dragEnter($event)" (created)="diagramCreate($event)">
                     <e-nodes>
                         <e-node id='NewIdea' [height]=60 [offsetX]=300 [offsetY]=80 [shape]='terminator'>
                             <e-node-annotations>

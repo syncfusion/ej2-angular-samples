@@ -85,7 +85,7 @@ export const sliderAppRoutes: Object[] = [
     ] }
 ];
 
-export const SliderRouter: ModuleWithProviders = RouterModule.forChild(sliderAppRoutes);
+export const SliderRouter: ModuleWithProviders<any> = RouterModule.forChild(sliderAppRoutes);
 
 @NgModule({
     imports: [SliderRouter, SharedModule, DialogModule, SliderModule, BrowserModule, CheckBoxModule, NumericTextBoxModule, TextBoxModule, DropDownListModule, ButtonModule],

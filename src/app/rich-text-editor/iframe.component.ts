@@ -3,17 +3,21 @@
  */
 import { Component, ViewChild } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent, IFrameSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorComponent, IFrameSettingsModel, FileManagerService } from '@syncfusion/ej2-angular-richtexteditor';
+import { FileManagerSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 @Component({
     selector: 'control-content',
     templateUrl: 'iframe.html',
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService]
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, FileManagerService]
 })
 export class IFrameComponent {
 
     @ViewChild('iframeRTE')
     private iframeRTE: RichTextEditorComponent;
+
+    private hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
 
     public tools: ToolbarModule = {
         items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
@@ -21,9 +25,20 @@ export class IFrameComponent {
         'LowerCase', 'UpperCase','SuperScript', 'SubScript', '|',
         'Formats', 'Alignments', 'OrderedList', 'UnorderedList',
         'Outdent', 'Indent', '|',
-        'CreateTable', 'CreateLink', 'Image', '|', 'ClearFormat', 'Print',
+        'CreateTable', 'CreateLink', 'Image', 'FileManager', '|', 'ClearFormat', 'Print',
         'SourceCode', 'FullScreen', '|', 'Undo', 'Redo'
     ]
+    };
+
+    public fileManagerSettings: FileManagerSettingsModel = {
+        enable: true,
+        path: '/Pictures/Food',
+        ajaxSettings: {
+            url: this.hostUrl + 'api/FileManager/FileOperations',
+            getImageUrl: this.hostUrl + 'api/FileManager/GetImage',
+            uploadUrl: this.hostUrl + 'api/FileManager/Upload',
+            downloadUrl: this.hostUrl + 'api/FileManager/Download'
+        }
     };
 
     public iframe: IFrameSettingsModel = { enable: true };

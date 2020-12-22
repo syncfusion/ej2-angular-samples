@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild ,Inject} from '@angular/core';
 import {
     DiagramComponent, MarginModel, Diagram, NodeModel, BpmnDiagrams, SnapSettingsModel, BpmnLoops, SnapConstraints, SymbolPalette,
     BpmnShape, BpmnDataObjects, BpmnGateways, BpmnTasks, BpmnTriggers,
@@ -14,7 +14,7 @@ Diagram.Inject(BpmnDiagrams);
 @Component({
     selector: 'control-content',
     templateUrl: 'bpmn-editor.html',
-    styleUrls: ['diagram-style.css'],
+    styleUrls: ['diagram-common.style.css'],
     encapsulation: ViewEncapsulation.None
 })
 
@@ -23,6 +23,9 @@ export class BPMNShapesDiagramComponent {
     @ViewChild('diagram')
     public diagram: DiagramComponent;
     public expandMode: ExpandMode = 'Multiple';
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {​​​​​​​
+        sourceFiles.files = ['diagram-common.style.css'];
+    }​​​​​​​
     public nodes: NodeModel[] = [
         {
             id: 'start', width: 40, height: 40, offsetX: 35, offsetY: 180, shape: {
@@ -164,7 +167,7 @@ export class BPMNShapesDiagramComponent {
             id: 'connector8', sourceID: 'compensation', targetID: 'user', type: 'Orthogonal',
             shape: {
                 type: 'Bpmn',
-                flow: 'association',
+                flow: 'Association',
                 association: 'Directional'
             }, style: {
                 strokeDashArray: '2,2'
@@ -185,8 +188,8 @@ export class BPMNShapesDiagramComponent {
         {
             id: 'Start', width: 35, height: 35, shape: {
                 type: 'Bpmn', shape: 'Event',
-                event: { event: 'Start' }
-            }
+                event: { event: 'Start' },
+            },
         },
         {
             id: 'NonInterruptingIntermediate', width: 35, height: 35, shape: {
@@ -231,7 +234,7 @@ export class BPMNShapesDiagramComponent {
         },
         {
             id: 'Gateway', width: 35, height: 35, offsetX: 100, offsetY: 100,
-            shape: { type: 'Bpmn', shape: 'Gateway', gateway: { type: 'Exclusive' } as BpmnGatewayModel },
+            shape: { type: 'Bpmn', shape: 'Gateway', gateway: { type: 'Exclusive' } as BpmnGatewayModel }
         },
         {
             id: 'DataObject', width: 35, height: 35, offsetX: 500, offsetY: 100,
@@ -250,7 +253,7 @@ export class BPMNShapesDiagramComponent {
                         }
                     }
                 }
-            }
+            },
         },
     ];
     public contextMenu: ContextMenuSettingsModel = {
@@ -438,24 +441,25 @@ export class BPMNShapesDiagramComponent {
         let connectorSymbols: ConnectorModel[] = [
             {
                 id: 'Link1', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-                targetDecorator: { shape: 'Arrow' }, style: { strokeWidth: 2 }
+                targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} }, style: { strokeWidth: 2, strokeColor: '#757575' }
             },
             {
                 id: 'Link2', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-                targetDecorator: { shape: 'Arrow' }, style: { strokeWidth: 2, strokeDashArray: '4 4' }
+                targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} }, style: { strokeWidth: 2, strokeDashArray: '4 4', strokeColor: '#757575' }
             },
             {
                 id: 'Link3', type: 'Straight', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-                targetDecorator: { shape: 'Arrow' }, style: { strokeWidth: 2 }
+                targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} }, style: { strokeWidth: 2, strokeColor: '#757575' }
             },
             {
                 id: 'link4', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 }, type: 'Orthogonal',
+                targetDecorator: { style: {strokeColor: '#757575', fill: '#757575'} },
                 shape: {
                     type: 'Bpmn',
                     flow: 'Association',
                     association: 'Directional'
                 }, style: {
-                    strokeDashArray: '2,2'
+                    strokeDashArray: '2,2', strokeColor: '#757575'
                 },
             },
         ];
@@ -589,6 +593,10 @@ export class BPMNShapesDiagramComponent {
             }
         }
     }
+    public getSymbolDefaults(symbol: NodeModel): void {
+        symbol.style.strokeColor = '#757575';
+      }
+
     public palette: PaletteModel[] = [
         { id: 'Bpmn', expanded: true, symbols: this.bpmnShapes, iconCss: 'shapes', title: 'BPMN Shapes' },
         { id: 'Connector', expanded: true, symbols: this.getConnectors(), iconCss: 'shapes', title: 'Connectors' },

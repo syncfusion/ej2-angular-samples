@@ -251,7 +251,6 @@ export class RightToLeftComponent implements OnInit {
                     'Formatting restrictions': 'قيود التنسيق',
                     'Numbering and Bullets': 'الترقيم والتعداد النقطي',
                     'Numbering': 'ترقيم',
-                    'Form Fields': 'حقول النموذج',
                     'Update Field': 'تحديث الحقل',
                     'Edit Field': 'تحرير الحقل',
                     'Bookmark': 'الإشارة المرجعية',
@@ -547,11 +546,16 @@ export class RightToLeftComponent implements OnInit {
 					"Web layout": "تخطيط ويب",
 					"Text Form": "شكل نصي",
 					"Check Box": "خانة اختيار",
-					"DropDown": "اسقاط",
+                    "DropDown": "اسقاط",
+                    'Form Fields': 'حقول النموذج',
 					"Update Fields": "تحديث الحقول",
 					"Update cross reference fields": "تحديث حقول الإسناد الترافقي",
 					"Track Changes": "تتبع التغييرات التي تم إجراؤها في المستند",
-					"TrackChanges": "تعقب التغيرات"
+					'TrackChanges': 'تعقب التغيرات',
+                    'Insert Footnote': 'أدخل حاشية سفلية',
+                    'Insert Endnote': 'أدخل تعليق ختامي',
+                    'Footnote Tooltip': 'أدخل حاشية سفلية (Alt + Ctrl + F).',
+                    'Endnote Tooltip': 'أدخل تعليقًا ختاميًا (Alt + Ctrl + F).'
 
                 },
                 'colorpicker': {

@@ -416,8 +416,8 @@ export class NetworkShapesDiagramComponent {
 
     private sourcePoint: PointModel = { x: 0, y: 0 };
     private targetPoint: PointModel = { x: 40, y: 40 };
-    private targetDecorator: DecoratorModel = { shape: 'Arrow' };
-    private style: StrokeStyleModel = { strokeWidth: 2 };
+    private targetDecorator: DecoratorModel = { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} };
+    private style: StrokeStyleModel = { strokeWidth: 2, strokeColor: '#757575' };
 
     private connectorSymbols: ConnectorModel[] = [
         {
@@ -443,7 +443,7 @@ export class NetworkShapesDiagramComponent {
         if (symbol.id === 'arrow1') {
             symbol.width = 75; symbol.height = 60;
             symbol.offsetX = 160; symbol.offsetY = 135;
-            symbol.style.strokeColor = '#5C90DF';
+            symbol.style.strokeColor = '#757575';
             symbol.style.fill = 'white';
         } else {
             if (symbol.id === 'remoteController') {

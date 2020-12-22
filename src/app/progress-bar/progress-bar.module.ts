@@ -75,7 +75,7 @@ export const progressBarAppRoutes: Object[] = [
     }
 ];
 
-export const progressBarRouter: ModuleWithProviders = RouterModule.forChild(progressBarAppRoutes);
+export const progressBarRouter: ModuleWithProviders<any> = RouterModule.forChild(progressBarAppRoutes);
 
 // tslint:disable-next-line:max-line-length
 const declarations: Type<Object>[] = [ProgressBarLinearComponent, ProgressBarCircularComponent, ProgressBarSemiComponent, ProgressBarCustomComponent, ProgressBarLabelComponent, ProgressBarRadiusComponent, ProgressBarStripesComponent, ProgressBarProgressSegmentComponent];

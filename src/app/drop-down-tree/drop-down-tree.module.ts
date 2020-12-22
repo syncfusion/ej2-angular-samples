@@ -24,7 +24,7 @@ export const dropdowntreeAppRoutes: Object[] = [
     { path: ':theme/drop-down-tree/remote-data', component: RemoteDropDownTreeComponent, name: 'Remote Data',category: 'Data Binding', description: 'This demo demonstrates the binding of data to the Angular drop-down tree component from remote data source.', order: '02'},
 ];
 
-export const DropDownTreeRouter: ModuleWithProviders = RouterModule.forChild(dropdowntreeAppRoutes);
+export const DropDownTreeRouter: ModuleWithProviders<any> = RouterModule.forChild(dropdowntreeAppRoutes);
 
 @NgModule({
     imports: [DropDownTreeRouter, SharedModule, DropDownTreeModule, FormsModule, CheckBoxModule, ReactiveFormsModule,BrowserModule],

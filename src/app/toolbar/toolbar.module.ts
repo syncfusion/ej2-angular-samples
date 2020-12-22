@@ -14,7 +14,7 @@ export const toolbarAppRoutes: Object[] = [
 
 ];
 
-export const toolbarRouter: ModuleWithProviders = RouterModule.forChild(toolbarAppRoutes);
+export const toolbarRouter: ModuleWithProviders<any> = RouterModule.forChild(toolbarAppRoutes);
 
 @NgModule({
     imports: [toolbarRouter, ToolbarModule, SharedModule],

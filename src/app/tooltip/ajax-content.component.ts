@@ -4,8 +4,7 @@
 
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { TooltipComponent, TooltipEventArgs } from '@syncfusion/ej2-angular-popups';
-import { Http } from '@angular/http';
-import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'control-content',
@@ -33,7 +32,7 @@ export class AjaxContentTooltipComponent {
     @ViewChild('tooltip')
     public tooltipControl: TooltipComponent;
 
-    constructor( @Inject('sourceFiles') private sourceFiles: any, @Inject(Http) public http: Http) {
+    constructor( @Inject('sourceFiles') private sourceFiles: any, @Inject(HttpClient) public http: HttpClient) {
         sourceFiles.files = ['tooltip.component.css'];
     }
 
@@ -44,9 +43,7 @@ export class AjaxContentTooltipComponent {
     onBeforeRender(args: TooltipEventArgs) {
         this.tooltipControl.content = 'Loading...';
         this.tooltipControl.dataBind();
-        this.http.get('assets/tooltip/tooltipdata.json').pipe(map((res: Response) => res.json()))
-            .subscribe(
-            (result: any) => {
+        this.http.get('assets/tooltip/tooltipdata.json').subscribe((result: any) => {
                 for (let i: number = 0; i < result.length; i++) {
                     if (result[i].Id === args.target.getAttribute('data-content')) {
                         /* tslint:disable */

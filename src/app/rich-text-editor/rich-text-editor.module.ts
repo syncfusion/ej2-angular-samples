@@ -17,6 +17,7 @@ import { MarkdownCustomComponent } from './markdown-editor-custom-format.compone
 import { PrintComponent } from './print.component';
 import { BlogPostComponent } from './blog-posting.component';
 import { AjaxLoadComponent } from './ajax-load.component';
+import { FileBrowserComponent } from './file-browser.component';
 import { FormComponent } from './reactive-form.component';
 import { TemplateDrivenComponent } from './template-driven.component';
 import { SharedModule } from '../common/shared.module';
@@ -50,6 +51,7 @@ export const rteAppRoutes: Object[] = [
     { path: ':theme/rich-text-editor/client-side-events', component: EventsComponent, name: 'Events', description: 'This demo explains client-side events of angular HTML Text Editor that is triggered on editing and formatting operations with an event tracer.', order: '01', category: 'Rich Text Editor' },
     { path: ':theme/rich-text-editor/blog-posting', component: BlogPostComponent, name: 'Use Case', description: 'The Rich Text Editor is used in most real-time applications. The angular rich text editor example shows how to design a forum application in angular application.', order: '01', category: 'Rich Text Editor' },
     { path: ':theme/rich-text-editor/auto-save', component: AutoSaveComponent, name: 'Auto Save', description: 'This demo shows how to autosave the content of the editor with customized time intervals and retrieve the saved content in angular Rich Text Editor.', order: '01', category: 'Rich Text Editor' },
+    { path: ':theme/rich-text-editor/file-browser', component: FileBrowserComponent, name: 'File Browser', description: 'This demo shows how to insert the image into the Rich Text Editor content using FileManager.', order: '01', category: 'Rich Text Editor', type: 'new' },
     { path: ':theme/rich-text-editor/types', component: ToolbarTypeComponent, name: 'Type', description: 'This demo demonstrates different types and behaviors of a toolbar used in the angular HTML Editor such as expand/collapse, multirow, and floating.', order: '02', category: 'Toolbar' },
     { path: ':theme/rich-text-editor/insert-emoticons', component: InsertEmoticonsComponent, name: 'Insert Emoticons', description: 'This demo demonstrates how to insert emoticons into the rich content in angular WYSIWYG HTML Editor using a custom tool in the editor toolbar.', order: '03', category: 'Custom Tool' },
     { path: ':theme/rich-text-editor/insert-special-characters', component: InsertSpecialCharactersComponent, name: 'Insert Special Characters', description: 'This demo for Syncfusion angular rich text editor component shows the users to add their commands to the toolbar along with the built-in commands.', order: '03', category: 'Custom Tool' },
@@ -61,7 +63,7 @@ export const rteAppRoutes: Object[] = [
     { path: ':theme/rich-text-editor/tribute', component: TributeComponent, name: 'Tribute JS', description: 'This demo shows how to integrate Mention library like Tribute JS within the JavaScript HTML text editor to get the autocomplete popup with a suggestion list.', order: '08', category: 'Third-parties Integration' }
 ];
 
-export const RTERouter: ModuleWithProviders = RouterModule.forChild(rteAppRoutes);
+export const RTERouter: ModuleWithProviders<any> = RouterModule.forChild(rteAppRoutes);
 
 @NgModule({
     imports: [BrowserModule, RTERouter, SharedModule, FormsModule, ReactiveFormsModule,TabModule,
@@ -85,6 +87,7 @@ export const RTERouter: ModuleWithProviders = RouterModule.forChild(rteAppRoutes
         MarkdownCustomComponent,
         PrintComponent,
         BlogPostComponent,
+        FileBrowserComponent,
         AjaxLoadComponent,
         FormComponent,
         TemplateDrivenComponent,

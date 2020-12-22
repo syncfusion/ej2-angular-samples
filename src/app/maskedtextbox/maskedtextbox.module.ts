@@ -15,7 +15,7 @@ export const maskedTextBoxAppRoutes: Object[] = [
     { path: ':theme/maskedtextbox/formats', component: FormatMaskedTextboxController, name: 'Formats', category: 'Input Mask', description: "This sample demonstrates the usage of different mask formats through the properties panel. You can also get the value and raw value of the masked textbox." }
 ];
 
-export const MaskedTextBoxRouter: ModuleWithProviders = RouterModule.forChild(maskedTextBoxAppRoutes);
+export const MaskedTextBoxRouter: ModuleWithProviders<any> = RouterModule.forChild(maskedTextBoxAppRoutes);
 
 @NgModule({
     imports: [MaskedTextBoxRouter, MaskedTextBoxModule, DropDownListModule, SharedModule, FormsModule],

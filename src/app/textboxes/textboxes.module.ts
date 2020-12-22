@@ -21,7 +21,7 @@ export const textboxesAppRoutes: Object[] = [
     { path: ':theme/textboxes/multiline-textbox', component: DefaultTextAreaController, name: 'Multiline TextBox', category: 'TextBox', description: 'The example exposes a Angular Multiline TextBox (textarea). It helps to render address, feedback, and more in a form with customizable rows and columns.'}
 ];
 
-export const textBoxesRouter: ModuleWithProviders = RouterModule.forChild(textboxesAppRoutes);
+export const textBoxesRouter: ModuleWithProviders<any> = RouterModule.forChild(textboxesAppRoutes);
 
 @NgModule({
     imports: [textBoxesRouter, SharedModule, FormsModule, CommonModule, DialogModule, TextBoxModule,

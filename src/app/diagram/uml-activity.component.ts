@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild,Inject } from '@angular/core';
 import {
     DiagramComponent, OrthogonalSegmentModel, PaletteModel, PortVisibility,
     SnapConstraints, SnapSettingsModel, UmlActivityShapeModel, UmlActivityFlows,
@@ -16,12 +16,15 @@ Diagram.Inject(UndoRedo, DiagramContextMenu);
 @Component({
     selector: 'control-content',
     templateUrl: 'uml-activity.html',
-    styleUrls: ['diagram-style.css'],
+    styleUrls: ['diagram-common.style.css'],
     encapsulation: ViewEncapsulation.None
 })
 export class UmlActivityComponent {
     @ViewChild('diagram')
     public diagram: DiagramComponent;
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {​​​​​​​
+        sourceFiles.files = ['diagram-common.style.css'];
+    }​​​​​​​
     public initialNode: UmlActivityShapeModel = { type: 'UmlActivity', shape: 'InitialNode' };
     public action: UmlActivityShapeModel = { type: 'UmlActivity', shape: 'Action' };
     public forkNode: UmlActivityShapeModel = { type: 'UmlActivity', shape: 'ForkNode' };
@@ -50,7 +53,7 @@ export class UmlActivityComponent {
     public expandMode: ExpandMode = 'Multiple';
     public diagramCreate(args: Object): void {
         this.addEvents();
-        let rect: Rect = document.getElementById('diagram-space').getBoundingClientRect() as Rect;
+        let rect: Rect = document.getElementById('diagram-space').getBoundingClientRect() as any;
         let panX: number = (rect.width - rect.x)/ 2;
         this.diagram.pan(panX, 0);
     };
@@ -83,9 +86,9 @@ export class UmlActivityComponent {
     public getConnectorStyle(dashArrayed?: boolean) {
         let style: StrokeStyleModel = {};
         if (dashArrayed) {
-            style = { strokeWidth: 2, strokeColor: '#444', strokeDashArray: '4 4', };
+            style = { strokeWidth: 2, strokeColor: '#757575', strokeDashArray: '4 4', };
         } else {
-            style = { strokeWidth: 2, strokeColor: '#444' };
+            style = { strokeWidth: 2, strokeColor: '#757575' };
         }
         return style;
     }
@@ -102,9 +105,9 @@ export class UmlActivityComponent {
             symbol.width = 50; symbol.height = 50;
         }
         if (symbol.id === 'InitialNode' || symbol.id === 'FinalNode' || symbol.id === 'JoinNode' || symbol.id === 'ForkNode') {
-            symbol.style.fill = '#444';
+            symbol.style.fill = '#757575';
         }
-        symbol.style.strokeColor = '#444';
+        symbol.style.strokeColor = '#757575';
         return symbol;
     }
 
@@ -112,7 +115,7 @@ export class UmlActivityComponent {
     private getConnectors(): ConnectorModel[] {
         let sourcePoint: PointModel = { x: 0, y: 0 };
         let targetPoint: PointModel = { x: 40, y: 40 };
-        let targetDecorator: DecoratorModel = { shape: 'Arrow', style: { fill: '#444', strokeColor: '#444' } }
+        let targetDecorator: DecoratorModel = { shape: 'Arrow', style: { fill: '#757575', strokeColor: '#757575' } }
         let connectorSymbols: ConnectorModel[] = [
             {
                 id: 'Link2', sourcePoint: sourcePoint, targetPoint: targetPoint,

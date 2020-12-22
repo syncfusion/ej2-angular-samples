@@ -1,7 +1,7 @@
     /* Weather Card Layout Customization */
 
     .card-control-section.basic_card_layout #weather_card.e-card {
-        background-image: url('~/assets/card/images/weather.png');
+        background-image: url('/assets/card/images/weather.png');
     }
 
     .card-control-section.basic_card_layout #weather_card.e-card .e-card-header-caption .e-card-header-title,
@@ -18,7 +18,7 @@
     }
 
     .card-control-section.basic_card_layout #weather_card.e-card .e-card-header.weather_report .e-card-header-image {
-        background-image: url('~/assets/card/images/rainy.svg');
+        background-image: url('/assets/card/images/rainy.svg');
     }
 
     .card-control-section.basic_card_layout .col-xs-6.col-sm-6.col-lg-6.col-md-6 {
@@ -69,7 +69,7 @@
 
     .card-control-section.flip_card_layout #card_flip.e-card .e-card-header-image,
     .card-control-section.flip_card_layout #card_flip_profile.e-card .e-card-header-image {
-        background-image: url('~/assets/card/images/creative_flip.png');
+        background-image: url('/assets/card/images/creative_flip.png');
         background-size: cover;
         height: 75px;
         width: 75px;
@@ -85,7 +85,7 @@
 
     .card-control-section.flip_card_layout #card_flip.e-card,
     .card-control-section.flip_card_layout #card_profile.e-card {
-        background-image: url('~/assets/card/images/vertical_img.png');
+        background-image: url('/assets/card/images/vertical_img.png');
     }
 
     .card-control-section.flip_card_layout #card_flip.e-card.e-flipped,
@@ -810,11 +810,11 @@
     }
 
     .card-control-section.vertical_card_layout #vertical_business.e-card {
-        background-image: url('~/assets/card/images/vertical_img.png');
+        background-image: url('/assets/card/images/vertical_img.png');
     }
 
     .card-control-section.vertical_card_layout #vertical_business_profile.e-card {
-        background-image: url('~/assets/card/images/vertical_img01.png');
+        background-image: url('/assets/card/images/vertical_img01.png');
     }
 
     .card-control-section.vertical_card_layout #vertical_business.e-card .e-card-actions,
@@ -838,7 +838,7 @@
     }
 
     .card-control-section.vertical_card_layout .e-card.profile .e-card-header-image {
-        background-image: url('~/assets/card/images/8.png');
+        background-image: url('/assets/card/images/8.png');
         width: 132px;
         height: 120px;
         background-size: cover;

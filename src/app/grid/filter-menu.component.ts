@@ -1,13 +1,13 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { orderDataSource } from './data';
 import { ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
-import { GridComponent, FilterService, FilterType } from '@syncfusion/ej2-angular-grids';
+import { GridComponent, FilterService, FilterType, SortService  } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'ej-gridfiltermenu',
     templateUrl: 'filter-menu.html',
     styleUrls: ['filter.style.css'],
-    providers: [FilterService]
+    providers: [FilterService, SortService]
 })
 export class FilteringMenuComponent implements OnInit {
     public data: Object[];

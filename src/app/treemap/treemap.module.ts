@@ -34,7 +34,7 @@ export const treemapAppRoutes: Object[] = [
     { path: ':theme/treemap/rtl', component: TreemapRTLComponent,  name: 'RTL', order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control visualizes the population level of various continents in 2011 based on the gender and age group.' },
 ];
 
-export const treemapRouter: ModuleWithProviders = RouterModule.forChild(treemapAppRoutes);
+export const treemapRouter: ModuleWithProviders<any> = RouterModule.forChild(treemapAppRoutes);
 let declarations: Type<Object>[] = [
     TreemapDefaultComponent,
     TreemapLayoutComponent,

@@ -36,6 +36,7 @@ export class EventsDiagramComponent {
         symbol.width = 50;
         symbol.height = 50;
         symbol.constraints = NodeConstraints.Default | NodeConstraints.AllowDrop;
+        symbol.style.strokeColor = '#757575';
     }
 
     public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
@@ -202,23 +203,23 @@ export class EventsDiagramComponent {
     public connectorSymbols: ConnectorModel[] = [
         {
             id: 'Link1', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 60, y: 60 },
-            targetDecorator: { shape: 'Arrow' }, style: { strokeWidth: 1 }
+            targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} }, style: { strokeWidth: 1, strokeColor: '#757575' }
         },
         {
             id: 'link3', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 60, y: 60 },
-            style: { strokeWidth: 1 }, targetDecorator: { shape: 'None' }
+            style: { strokeWidth: 1, strokeColor: '#757575' }, targetDecorator: { shape: 'None' }
         },
         {
             id: 'Link21', type: 'Straight', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 60, y: 60 },
-            targetDecorator: { shape: 'Arrow' }, style: { strokeWidth: 1 }
+            targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} }, style: { strokeWidth: 1, strokeColor: '#757575' }
         },
         {
             id: 'link23', type: 'Straight', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 60, y: 60 },
-            style: { strokeWidth: 1 }, targetDecorator: { shape: 'None' }
+            style: { strokeWidth: 1, strokeColor: '#757575' }, targetDecorator: { shape: 'None' }
         },
         {
             id: 'link33', type: 'Bezier', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 60, y: 60 },
-            style: { strokeWidth: 1 }, targetDecorator: { shape: 'None' }
+            style: { strokeWidth: 1, strokeColor: '#757575' }, targetDecorator: { shape: 'None' }
         },
     ];
 

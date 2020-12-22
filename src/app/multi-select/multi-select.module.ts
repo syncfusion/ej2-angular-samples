@@ -64,7 +64,7 @@ export const multiselectAppRoutes: Object[] = [
     },
 ];
 
-export const MultiSelectRouter: ModuleWithProviders = RouterModule.forChild(multiselectAppRoutes);
+export const MultiSelectRouter: ModuleWithProviders<any> = RouterModule.forChild(multiselectAppRoutes);
 
 @NgModule({
     imports: [MultiSelectRouter, MultiSelectAllModule, SharedModule, ButtonModule, CheckBoxModule, NumericTextBoxModule, FormsModule,

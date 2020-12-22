@@ -18,7 +18,7 @@ export const toastAppRoutes: Object[] = [
     { path: ':theme/toast/api', component: ApiController, order: '01', name: 'API', description: 'This demo for Essential JS2 Toast control shows all the API functionalities available in Toast.', category: 'Toast' }
 ];
 
-export const toastRouter: ModuleWithProviders = RouterModule.forChild(toastAppRoutes);
+export const toastRouter: ModuleWithProviders<any> = RouterModule.forChild(toastAppRoutes);
 
 @NgModule({
     imports: [toastRouter, DropDownListModule, SharedModule, ToastModule, RadioButtonModule, CheckBoxModule, ButtonModule],

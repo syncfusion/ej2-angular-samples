@@ -1,0 +1,16 @@
+<div id="action-description">
+    <p>This sample demonstrates the Virtual Scroll support in the Gantt Chart. This feature allows users to load a large amount of data effectively.
+        It also reduces the DOM element's weight by virtually updating DOM during the vertical scroll.</p>
+</div>
+<div class="control-section">
+    <ejs-gantt id="SplitTasks" #splittasks height="450px" [dataSource]="data" [taskFields]="taskSettings" [treeColumnIndex]="1"
+        [splitterSettings]="splitterSettings" [columns]="columns" [labelSettings]="labelSettings"
+        [allowSelection]="true" [enableVirtualization]="true" [highlightWeekends]="true">
+    </ejs-gantt>
+</div>
+<div id="description">
+    <p>Virtualization support is used to render large number tasks in Gantt with effective performance. In this mode all the tasks are
+        fetched from data source initially, then some of the records are rendered in DOM which are compact to the current viewport area.
+        While scrolling tasks are updated in DOM as per current viewport position. This mode can be enabled by setting
+        <code>enableVirtualization</code> property as true. </p>
+	</div>

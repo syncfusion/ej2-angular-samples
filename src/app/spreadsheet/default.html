@@ -11,6 +11,14 @@
                 <e-ranges>
                     <e-range [dataSource]="data"></e-range>
                 </e-ranges>
+                <e-rows>
+                    <e-row [index]="30">
+                        <e-cells>
+                            <e-cell [index]="4" value="Total Amount:"></e-cell>
+                            <e-cell formula="=SUM(F2:F30)"></e-cell>
+                        </e-cells>
+                    </e-row>
+                </e-rows>
                 <e-columns>
                     <e-column [width]=180></e-column>
                     <e-column [width]=130></e-column>

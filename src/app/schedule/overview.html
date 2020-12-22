@@ -178,7 +178,8 @@
                                         <div class="content-area">
                                             <ejs-dropdownlist id='eventType' #eventTypeObj
                                                 [dataSource]='resourceDataSource' [fields]='calendarFields'
-                                                placeholder='Choose Type' [value]='calendarsValue[0]' popupHeight="150pc">
+                                                placeholder='Choose Type' [value]='calendarsValue[0]'
+                                                popupHeight="150pc">
                                             </ejs-dropdownlist>
                                         </div>
                                         <div class="content-area">
@@ -228,8 +229,9 @@
                                 </div>
                             </ng-template>
                         </ejs-schedule>
-                        <ejs-contextmenu #menuObj cssClass='schedule-context-menu' target='.e-schedule' [items]='menuItems'
-                            (beforeOpen)='onContextMenuBeforeOpen($event)' (select)='onMenuItemSelect($event)'></ejs-contextmenu>
+                        <ejs-contextmenu #menuObj cssClass='schedule-context-menu' target='.e-schedule'
+                            [items]='menuItems' (beforeOpen)='onContextMenuBeforeOpen($event)'
+                            (select)='onMenuItemSelect($event)'></ejs-contextmenu>
                     </div>
                 </div>
                 <div class="right-panel hide">
@@ -249,8 +251,8 @@
                                 <label style="line-height: 34px; margin: 0;">Work week</label>
                             </div>
                             <div class="col-right">
-                                <ejs-multiselect id='workWeekDays' width='170px' [dataSource]='weekDays'
-                                    [mode]='checkboxMode' [fields]='fields' popupHeight='150px' [value]='workDays'
+                                <ejs-multiselect id='workWeekDays' width='170px' [dataSource]='weekDays' [showClearButton]='false'
+                                    [showDropDownIcon]='true' [mode]='checkboxMode' [fields]='fields' popupHeight='150px' [value]='workDays'
                                     (change)='onWorkWeekDayChange($event)'></ejs-multiselect>
                             </div>
                         </div>
@@ -260,8 +262,8 @@
                             </div>
                             <div class="col-right">
                                 <ejs-multiselect id='resources' width='170px' [dataSource]='resourceDataSource'
-                                    [mode]='checkboxMode' [fields]='calendarFields' popupHeight='150px'
-                                    [value]='calendarsValue' (change)='onResourceChange($event)'></ejs-multiselect>
+                                    [mode]='checkboxMode' [fields]='calendarFields' popupHeight='150px' [showClearButton]='false'
+                                    [showDropDownIcon]='true' [value]='calendarsValue' (change)='onResourceChange($event)'></ejs-multiselect>
                             </div>
                         </div>
                         <div class="col-row">
@@ -319,8 +321,8 @@
                             </div>
                             <div class="col-right">
                                 <ejs-dropdownlist id='slotDuration' width='170px' [dataSource]='timeSlotDuration'
-                                    (change)='onTimescaleDurationChange($event)' [value]='timeSlotDurationValue'
-                                    popupHeight='150px'></ejs-dropdownlist>
+                                    [fields]='timeSlotFields' (change)='onTimescaleDurationChange($event)'
+                                    [value]='timeSlotDurationValue' popupHeight='150px'></ejs-dropdownlist>
                             </div>
                         </div>
                         <div class="col-row">
@@ -346,10 +348,9 @@
 </div>
 
 <div id="description">
-    <p>
-        The Angular Scheduler is a fully-features calendar component that is used to manage appointments with multiple
-        resources. The data can be pulled from the <code>DataManager</code> component or Array of objects or Restful web
-        services and bind the data fields using <code>EventSettings.Field</code>.
+    <p>The Angular Scheduler is a fully-features calendar component that is used to manage appointments with multiple
+        resources. The data can be pulled from the <code>dataManager</code> component or valid local JSON data or
+        Restful web services and bind the data fields using <code>eventSettings.fields</code>.
     </p>
     <p>
         In this demo, Angular Scheduler features such as Multiple views, Templates (Date Header, Quick Info), Resources,

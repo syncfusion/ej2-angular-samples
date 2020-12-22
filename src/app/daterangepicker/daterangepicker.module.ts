@@ -26,7 +26,7 @@ export const dateRangePickerAppRoutes: Object[] = [
 
 ];
 
-export const DateRangePickerRouter: ModuleWithProviders = RouterModule.forChild(dateRangePickerAppRoutes);
+export const DateRangePickerRouter: ModuleWithProviders<any> = RouterModule.forChild(dateRangePickerAppRoutes);
 
 @NgModule({
     imports: [DateRangePickerRouter, DateRangePickerModule, DropDownListModule, BrowserModule, FormsModule, ReactiveFormsModule],

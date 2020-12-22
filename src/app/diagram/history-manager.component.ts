@@ -87,7 +87,7 @@ export class HistoryManagerDiagramComponent {
         {
             id: 'connector7', sourceID: 'node7', targetID: 'node3', sourcePortID: 'portcoding',
             targetPortID: 'codingPort', type: 'Orthogonal',
-            segments: [{ type: 'Orthogonal', length: 10, direction: 'left' }],
+            segments: [{ type: 'Orthogonal', length: 10, direction: 'Left' }],
             annotations: [{ content: 'No', style: { fill: 'white' } }]
         },
         {

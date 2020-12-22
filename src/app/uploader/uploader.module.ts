@@ -30,7 +30,7 @@ export const uploaderAppRoutes: Object[] = [
     { path: ':theme/uploader/file-upload-with-reactive-forms', component: ReactiveComponent, name: 'Reactive Forms', category: 'Forms', order: '04', description: 'This example shows how to integrate the file upload component in an Angular (ng) reactive form that works based on form-group, form-builder, and form-control.' }
 ];
 
-export const UploaderRouter: ModuleWithProviders = RouterModule.forChild(uploaderAppRoutes);
+export const UploaderRouter: ModuleWithProviders<any> = RouterModule.forChild(uploaderAppRoutes);
 
 @NgModule({
     imports: [UploaderRouter, SharedModule, CheckBoxModule, UploaderModule,

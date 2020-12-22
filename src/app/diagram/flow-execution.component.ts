@@ -9,7 +9,8 @@ import {
     ShapeAnnotationModel,
     SnapConstraints,
     ISelectionChangeEventArgs,
-    Node
+    Node,
+    FlowShapeModel
 } from '@syncfusion/ej2-angular-diagrams';
 import {
     NodeModel, DecoratorModel, DiagramTools, ConnectorModel, SnapSettingsModel
@@ -77,7 +78,7 @@ export class FlowExecutionDiagramComponent {
         let annotations: ShapeAnnotationModel = {};
         annotations.content = content;
         node.annotations = [annotations];
-        node.shape = { type: 'Flow', shape: shape };
+        node.shape = { type: 'Flow', shape: shape } as FlowShapeModel;
         node.style = { fill: '#FBF6E1', strokeColor: '#E8DFB6', strokeWidth: 2 };
         if (ports) {
             node.ports = ports;

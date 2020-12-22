@@ -21,7 +21,7 @@ export const tabAppRoutes: Object[] = [
     { path: ':theme/tab/wizard', component: WizardTabComponent, name: 'Wizard', description: 'This sample demonstrates how to design a wizard-like application with the sequential action using the Tab component in Angular platform.', category: 'Tab' }
 ];
 
-export const tabRouter: ModuleWithProviders = RouterModule.forChild(tabAppRoutes);
+export const tabRouter: ModuleWithProviders<any> = RouterModule.forChild(tabAppRoutes);
 
 @NgModule({
     imports: [tabRouter, SharedModule, NumericTextBoxAllModule, TabAllModule,GridAllModule, DialogAllModule, DatePickerAllModule, DropDownListModule, AutoCompleteAllModule],

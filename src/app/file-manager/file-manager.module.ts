@@ -35,7 +35,7 @@ export const fileManagerAppRoutes: Object[] = [
     { path: ':theme/file-manager/ibm-cos-node-file-provider', component: IBMCOSController, name: 'IBM Cloud File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the IBM Cloud Object Storage file provider service.' }
 ];
 
-export const fileRouter: ModuleWithProviders = RouterModule.forChild(fileManagerAppRoutes);
+export const fileRouter: ModuleWithProviders<any> = RouterModule.forChild(fileManagerAppRoutes);
 
 @NgModule({
     imports: [fileRouter, FileManagerAllModule, UploaderModule , DialogModule, CheckBoxModule, ButtonModule, CommonModule, ContextMenuModule, ToolbarModule],

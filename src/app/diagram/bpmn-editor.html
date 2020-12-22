@@ -1,4 +1,3 @@
-<link href="../../styles/Diagram/style/diagram-common.css" rel="stylesheet">
 <script src="script/diagram-common.ts"></script>
 <style>
     @font-face {
@@ -389,7 +388,7 @@
         <div id="palette-icon" style="float: right;" role="button" class="e-ddb-icons1 e-toggle-palette"></div>
     </div>
     <div id="palette-space" class="sb-mobile-palette">
-        <ejs-symbolpalette #symbolpalette id="symbolpalette" [expandMode]="expandMode" [palettes]="palette" width="400" height="471px" [symbolHeight]=60 [symbolWidth]=60 [symbolMargin]="symbolMargin">
+        <ejs-symbolpalette #symbolpalette id="symbolpalette" [expandMode]="expandMode" [palettes]="palette" width="400" height="471px" [symbolHeight]=60 [symbolWidth]=60 [symbolMargin]="symbolMargin" [getNodeDefaults]='getSymbolDefaults'>
         </ejs-symbolpalette>
     </div>
     <div id="diagram-space" class="sb-mobile-diagram sb-bpmn-editor">

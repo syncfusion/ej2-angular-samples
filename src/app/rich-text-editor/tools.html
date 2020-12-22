@@ -4,8 +4,8 @@
 </div>
 <div class="control-section">
     <ejs-richtexteditor #toolsRTE id='alltoolRTE' [toolbarSettings]='tools' [showCharCount]='true'
-        (actionBegin)='handleFullScreen($event)' (actionComplete)='actionCompleteHandler($event)'
-        [maxLength]='maxLength'>
+        [maxLength]='maxLength' [fileManagerSettings]='fileManagerSettings'
+        (actionBegin)='handleFullScreen($event)' (actionComplete)='actionCompleteHandler($event)'>
         <ng-template #valueTemplate>
             <p>The Rich Text Editor is WYSIWYG ("what you see is what you get") editor useful to create and edit
                 content, and return the valid <a href="https://ej2.syncfusion.com/home/" target="_blank">HTML markup</a>

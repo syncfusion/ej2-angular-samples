@@ -16,7 +16,7 @@ import { SliderComponent } from '@syncfusion/ej2-angular-inputs';
 })
 export class SmithchartCustomComponent {
     @ViewChild('smithchart')
-    @ViewChild('slide')
+    //@ViewChild('slide')
     //public slide : Slider;
     public smithchart: Smithchart;
     public horizontalAxis: Object = {

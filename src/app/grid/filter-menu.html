@@ -2,7 +2,7 @@
     <div class="select-wrap">
         <ejs-dropdownlist id='ddlelement' [dataSource]='ddldata' value='Menu' [fields]='ddlfields' (change)="onChange($event)"></ejs-dropdownlist>
     </div>
-    <ejs-grid #grid [dataSource]='data' allowPaging='true' allowFiltering='true' [pageSettings]='pageSettings' [filterSettings]='filterSettings'>
+    <ejs-grid #grid [dataSource]='data' allowSorting='true' allowPaging='true' allowFiltering='true' [pageSettings]='pageSettings' [filterSettings]='filterSettings'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
@@ -16,7 +16,8 @@
     <div id="action-description">
         <p>
             This sample demonstrates the way of filtering Grid columns using menu, checkbox and excel filter UI. In this sample, click the filtering
-            icon from column header to show filter UI for a particular column. You can change the filter type from the toolbar.
+            icon from column header to show filter UI for a particular column. You can change the filter type from the toolbar and while Excel filter
+            type is selected, you can sort the column using the sorting option available in the excel filter dialog.
         </p>
     </div>
 

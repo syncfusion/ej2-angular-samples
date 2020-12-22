@@ -21,7 +21,7 @@ export const sidebarAppRoutes: Object[] = [
     { path: ':theme/sidebar/sidebar-list', component: SidebarListComponent, name: 'Sidebar With ListView', category: 'Sidebar' },
     
 ];
-export const SidebarRouter: ModuleWithProviders = RouterModule.forChild(sidebarAppRoutes);
+export const SidebarRouter: ModuleWithProviders<any> = RouterModule.forChild(sidebarAppRoutes);
 @NgModule({
     imports: [SidebarRouter, SidebarModule, SharedModule, RadioButtonModule, MenuAllModule, DropDownListModule, ButtonModule, TreeViewAllModule, ListViewAllModule],
     declarations: [

@@ -1,0 +1,91 @@
+<div class="control-section">
+  <div class="content-wrapper">
+    <ejs-kanban #kanbanObj cssClass='kanban-card-template' keyField='Category' [dataSource]='kanbanData'
+      [cardSettings]='cardSettings' [dialogSettings]='dialogSettings'>
+      <e-columns>
+        <e-column headerText='Menu' keyField='Menu'></e-column>
+        <e-column headerText='Order' keyField='Order'></e-column>
+        <e-column headerText='Ready to Serve' keyField='Ready to Serve'></e-column>
+        <e-column headerText='Delivered' keyField='Delivered,Served'></e-column>
+      </e-columns>
+      <ng-template #cardSettingsTemplate let-data>
+        <div class='card-template'>
+          <div class='card-template-wrap'>
+            <table class='card-template-wrap'>
+              <colgroup>
+                <col style="width:55px">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td class='e-image'>
+                    <img src="./assets/kanban/images/{{data.ImageURL}}" alt="{{data.ImageURL}}" />
+                  </td>
+                  <td class='e-title'>
+                    <div class="e-card-stacked">
+                      <div class='e-card-header'>
+                        <div class='e-card-header-caption'>
+                          <div class='e-card-header-title e-tooltip-text'>{{data.Title}}</div>
+                        </div>
+                      </div>
+                      <div class="e-card-content" style="line-height:2.75em">
+                        <table class='card-template-wrap' style="table-layout: auto;">
+                          <tbody>
+                            <tr>
+                              <td colspan="2" *ngIf='data.Category =="Menu" || data.Category=="Order" || data.Category=="Ready to Serve"'>
+                                <div class='e-description e-tooltip-text' *ngIf='data.Category == "Menu"'>{{data.Description}}</div>
+                                <div class='e-description e-tooltip-text' *ngIf='data.Category != "Menu"'>{{data.OrderID}}</div>
+                              </td>
+                              <td class='card-content' *ngIf='data.Category == "Delivered" || data.Category == "Served"'>
+                                <div class='e-description e-tooltip-text'>{{data.OrderID}}</div>
+                                <div class='e-icons e-done'></div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class='card-content' *ngIf='data.Category == "Menu"'>
+                                <div class='e-size e-tooltip-text'>{{data.Size}}</div>
+                                <div class='e-price e-tooltip-text'>{{data.Price}}</div>
+                              </td>
+                              <td class='card-content' *ngIf='data.Category != "Menu"'>
+                                <div class='e-preparingText e-tooltip-text' *ngIf='data.Category == "Order"'>Preparing</div>
+                                <div class='e-readyText e-tooltip-text' *ngIf='data.Category == "Ready to Serve"'>Ready to Serve</div>
+                                <div class='e-deliveredText e-tooltip-text' *ngIf='data.Category == "Delivered" || data.Category == "Served"'>Delivered</div>
+                                <div class='e-time e-tooltip-text' *ngIf='data.Category == "Order"'>
+                                  <div class='e-icons e-clock'></div>
+                                  <div class='e-mins'>15 mins</div>
+                                </div>
+                                <div class='e-time e-tooltip-text' *ngIf='data.Category == "Ready to Serve"'>
+                                  <div class='e-icons e-clock'></div>
+                                  <div class='e-mins'>5 mins</div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </ng-template>
+    </ejs-kanban>
+  </div>
+</div>
+<div id="action-description">
+  <p>
+    This sample demonstrates how to customize the Kanban cards using templates. In this demo, the cards are
+    customized with
+    icons, images, and tags.
+  </p>
+</div>
+<div id="description">
+  <p>
+    You can customize the default design of the Kanban cards using templates. This can be achieved using the
+    <code>cardSettings</code> -> <code>template</code> property, which accepts the string or HTML element`s ID
+    value.
+  </p>
+  <p>In this demo, all the cards are customized with templating as text, images, and tags.</p>
+</div>

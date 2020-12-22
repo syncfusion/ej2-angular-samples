@@ -1,5 +1,5 @@
     .e-schedule .e-schedule-toolbar .user-icon {
-        background-image: url('~/assets/schedule/images/nancy.png');
+        background-image: url('/assets/schedule/images/nancy.png');
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -35,7 +35,7 @@
     }
     
     .e-profile-wrapper .profile-image {
-        background-image: url('~/assets/schedule/images/nancy.png');
+        background-image: url('/assets/schedule/images/nancy.png');
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;

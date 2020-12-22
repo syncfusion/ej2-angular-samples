@@ -39,7 +39,7 @@ export const dashboardlayoutAppRoutes: Object[] = [
     ] }
 ];
 
-export const DashboardLayoutRouter: ModuleWithProviders = RouterModule.forChild(dashboardlayoutAppRoutes);
+export const DashboardLayoutRouter: ModuleWithProviders<any> = RouterModule.forChild(dashboardlayoutAppRoutes);
 
 @NgModule({
     imports: [DashboardLayoutRouter,NumericTextBoxModule, MapsAllModule,AutoCompleteModule, DashboardLayoutModule, CheckBoxModule,SidebarModule, ButtonAllModule, TextBoxModule, ChartAllModule, AccumulationChartAllModule, RangeNavigatorAllModule],

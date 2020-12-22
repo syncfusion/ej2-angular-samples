@@ -17,7 +17,7 @@ export const colorPickerAppRoutes: Object[] = [
     { path: ':theme/color-picker/api', component: ApiColorPickerComponent, name: 'API', order: '01', category: 'Color Picker', description: 'This example demonstrates the supported APIs and its functionalities of the Syncfusion Angular ColorPicker.' }
 ];
 
-export const colorPickerRouter: ModuleWithProviders = RouterModule.forChild(colorPickerAppRoutes);
+export const colorPickerRouter: ModuleWithProviders<any> = RouterModule.forChild(colorPickerAppRoutes);
 
 @NgModule({
     imports: [colorPickerRouter, SharedModule, ColorPickerModule, BrowserModule, CheckBoxModule, DropDownListModule],

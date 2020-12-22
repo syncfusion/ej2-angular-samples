@@ -1,0 +1,34 @@
+.kanban-transition .e-card-kanban-image {
+  height: 45px;
+  width: 45px;
+  margin-left: auto;
+}
+.kanban-transition .e-card-kanban-image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.kanban-transition .e-card .e-card-tag-field {
+  background: #ececec;
+  color: #6b6b6b;
+  margin-right: 5px;
+  line-height: 1.1;
+  font-size: 13px;
+  border-radius: 3px;
+  padding: 4px;
+}
+.kanban-transition .e-card-custom-footer {
+  display: flex;
+  padding: 0px 12px 12px;
+  line-height: 1;
+  height: 35px;
+}
+.kanban-transition .e-card td {
+  background-color: #fff;
+}
+.kanban-transition .e-card .e-card-content {
+  display: flex;
+}
+.kanban-transition .e-card .e-text {
+  width: fit-content;
+}

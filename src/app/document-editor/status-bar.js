@@ -159,7 +159,7 @@ var StatusBar = /** @class */ (function () {
         get: function () {
             return this.documentEditor.pageCount;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     return StatusBar;

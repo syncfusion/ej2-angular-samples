@@ -24,7 +24,7 @@ export const splitterAppRoutes: Object[] = [
     { path: ':theme/splitter/code-editor-layout', component: CodeEditorLayoutComponent, name: 'Code Editor Layout', order: '02', category: 'Use Case', description: 'The example shows how to construct code editor layout (UI) using Angular Splitter with multiple, nested, different oriented, and resizable panes.' }
 ];
 
-export const splitterRouter: ModuleWithProviders = RouterModule.forChild(splitterAppRoutes);
+export const splitterRouter: ModuleWithProviders<any> = RouterModule.forChild(splitterAppRoutes);
 
 @NgModule({
     imports: [splitterRouter, ButtonModule, RichTextEditorModule, TreeViewModule, SplitterModule, SharedModule,CommonModule, TextBoxModule, ListViewAllModule, AccordionAllModule],

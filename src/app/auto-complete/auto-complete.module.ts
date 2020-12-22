@@ -54,7 +54,7 @@ export const autoCompleteAppRoutes: Object[] = [
     }
 ];
 
-export const AutoCompleteRouter: ModuleWithProviders = RouterModule.forChild(autoCompleteAppRoutes);
+export const AutoCompleteRouter: ModuleWithProviders<any> = RouterModule.forChild(autoCompleteAppRoutes);
 
 @NgModule({
     imports: [AutoCompleteRouter, AutoCompleteModule, SharedModule, CheckBoxModule, DropDownListModule, FormsModule, ReactiveFormsModule, BrowserModule],

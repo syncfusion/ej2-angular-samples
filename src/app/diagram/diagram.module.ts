@@ -4,20 +4,19 @@
 import { NgModule, ModuleWithProviders, Type } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../common/shared.module';
+import { BrowserModule } from '@angular/platform-browser';
 import { ButtonModule, CheckBoxModule, RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 import { NumericTextBoxModule, ColorPickerModule, UploaderModule, TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
-
 import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
-
 import { DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { CircularGaugeModule } from '@syncfusion/ej2-angular-circulargauge';
-
+import { DateRangePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
-
+import { GridAllModule } from '@syncfusion/ej2-angular-grids';
 import { DiagramAllModule, SymbolPaletteAllModule, OverviewAllModule } from '@syncfusion/ej2-angular-diagrams';
-
+import { AccumulationAnnotationService, AccumulationDataLabelService, AccumulationLegendService, AccumulationTooltipService, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { FlowDiagramComponent } from './default-functionalities.component';
 import { NodeDiagramComponent } from './nodes.component';
 import { ConnectorDiagramComponent } from './connectors.component';
@@ -43,7 +42,7 @@ import { RadialTreeDiagramComponent } from './radial-tree.component';
 import { MindMapDiagramComponent } from './mind-map.component';
 import { SymmetricLayoutDiagramComponent } from './symmetric-layout.component';
 import { ComplexHierarchicalTreeDiagramComponent } from './complex-hierarchical-tree.component';
-
+import { AccumulationChartModule } from '@syncfusion/ej2-angular-charts';
 import { LocalDataDiagramComponent } from './local-data.component';
 import { RemoteDataDiagramComponent } from './remote-data.component';
 
@@ -61,7 +60,7 @@ import { HistoryManagerDiagramComponent } from 'src/app/diagram/history-manager.
 import { EventsDiagramComponent } from './diagram-events.component';
 import { TooltipDiagramComponent } from './tooltip.component';
 import { LineRoutingComponent } from './line-routing';
-
+import { VirtualizationComponent } from './virtualization';
 
 export const diagramAppRoutes: Object[] = [
     {
@@ -128,7 +127,7 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/custom-shapes', component: ComplexShapesDiagramComponent,
-        name: 'Complex Shapes',
+        name: 'HTML Shapes', type: "update",
         category: 'Getting Started', order: '01',
         description: 'This sample demonstrates how to host a HTML element inside a node. In this example, ' +
             'a Gauge control is hosted inside a HTML Node.'
@@ -177,6 +176,12 @@ export const diagramAppRoutes: Object[] = [
             'and orientation of the trees is illustrated in this example.'
     },
     {
+        path: ':theme/diagram/Virtualization', component: VirtualizationComponent,
+        name: 'Virtualization',type: "new",
+        category: 'Getting Started', order: '01',
+        description: 'This sample demonstrates the default UI virtualization functionality. Scroll the diagram for UI virtualization.'
+    },
+    {
         path: ':theme/diagram/organization-chart', component: OrganizationalChartDiagramComponent,
         name: 'Organizational Chart',
         category: 'Automatic Layouts', order: '03',
@@ -206,7 +211,7 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/complex-hierarchical-tree', component: ComplexHierarchicalTreeDiagramComponent,
-        name: 'Complex Hierarchical Tree',
+        name: 'Complex Hierarchical Tree', type: "update",
         category: 'Automatic Layouts', order: '03',
         description: 'This sample demonstrates a complex hierarchical template that is built from an external data ' +
             'source using complex hierarchical tree algorithm.'
@@ -307,13 +312,13 @@ export const diagramAppRoutes: Object[] = [
     }
 ];
 
-export const diagramRouter: ModuleWithProviders = RouterModule.forChild(diagramAppRoutes);
+export const diagramRouter: ModuleWithProviders<any> = RouterModule.forChild(diagramAppRoutes);
 let declarations: Type<Object>[] = [FlowDiagramComponent, ShapesDiagramComponent, NodeDiagramComponent,
     ConnectorDiagramComponent, AnnotationDiagramComponent, PortDiagramComponent, HistoryManagerDiagramComponent,
     ComplexShapesDiagramComponent, DrawingToolDiagramComponent, KeyBoardDiagramComponent,
     UserHandlediagramComponent, SymbolPaletteDiagramComponent, OverviewDiagramComponent,
     SerializationDiagramComponent, PrintExportDiagramComponent, FlowExecutionDiagramComponent,
-    HierarchyDiagramComponent, OrganizationalChartDiagramComponent, RadialTreeDiagramComponent,
+    HierarchyDiagramComponent,VirtualizationComponent, OrganizationalChartDiagramComponent, RadialTreeDiagramComponent,
     MindMapDiagramComponent, SymmetricLayoutDiagramComponent, ComplexHierarchicalTreeDiagramComponent,
     LocalDataDiagramComponent, RemoteDataDiagramComponent, VennDiagramComponent, RTLTreeDiagramComponent,
     PertChartDiagramComponent, BPMNShapesDiagramComponent, FishboneDiagramComponent, LogicCircuitComponent,
@@ -322,13 +327,14 @@ let declarations: Type<Object>[] = [FlowDiagramComponent, ShapesDiagramComponent
 
 ];
 @NgModule({
-    imports: [diagramRouter, DiagramAllModule, SymbolPaletteAllModule, OverviewAllModule, ButtonModule,
-        ColorPickerModule, CheckBoxModule, ToolbarModule, DropDownButtonModule, UploaderModule, CircularGaugeModule, DropDownListAllModule, ListViewAllModule,
+    imports: [diagramRouter, DiagramAllModule, ChartAllModule, GridAllModule, SymbolPaletteAllModule, OverviewAllModule, ButtonModule,
+        ColorPickerModule,  DateRangePickerModule, CheckBoxModule, AccumulationChartModule, BrowserModule,ToolbarModule, DropDownButtonModule, UploaderModule, CircularGaugeModule, DropDownListAllModule, ListViewAllModule,
         DialogAllModule, TextBoxModule, RadioButtonModule,
         MultiSelectModule, NumericTextBoxModule, SharedModule],
     exports: [],
     declarations: declarations,
-    providers: [DiagramAllModule]
+    providers: [DiagramAllModule, AccumulationLegendService, AccumulationTooltipService, AccumulationAnnotationService,
+        AccumulationDataLabelService]
 })
 export class DiagramSampleModule {
 

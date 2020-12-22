@@ -38,7 +38,7 @@ export const avatarAppRoutes: Object[] = [
     ] }
 ]
 
-export const AvatarRouter: ModuleWithProviders = RouterModule.forChild(avatarAppRoutes);
+export const AvatarRouter: ModuleWithProviders<any> = RouterModule.forChild(avatarAppRoutes);
 
 @NgModule({
     imports: [AvatarRouter, SharedModule, CommonModule, ListViewModule],

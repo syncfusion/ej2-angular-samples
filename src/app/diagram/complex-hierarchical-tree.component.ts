@@ -1,13 +1,14 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, LineDistribution } from '@syncfusion/ej2-angular-diagrams';
 import {
     NodeModel, ConnectorModel, DiagramTools, Diagram, DataBinding, ComplexHierarchicalTree,
-    SnapConstraints, SnapSettingsModel, LayoutModel, LayoutOrientation
+    SnapConstraints, SnapSettingsModel, LayoutModel, LayoutOrientation,ConnectionPointOrigin
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
 import { ChangeEventArgs as NumericChangeEventArgs } from '@syncfusion/ej2-inputs';
 import * as Data from './diagram-data.json';
-Diagram.Inject(DataBinding, ComplexHierarchicalTree);
+import { ChangeEventArgs as CheckBoxChangeEventArgs } from '@syncfusion/ej2-buttons';
+Diagram.Inject(DataBinding, ComplexHierarchicalTree,LineDistribution);
 
 export interface DataInfo {
     [key: string]: string;
@@ -59,6 +60,7 @@ export class ComplexHierarchicalTreeDiagramComponent {
 
     public layout: LayoutModel = {
         type: 'ComplexHierarchicalTree',
+        connectionPointOrigin:ConnectionPointOrigin.DifferentPoint,
         horizontalSpacing: 40, verticalSpacing: 40, orientation: 'TopToBottom',
         margin: { left: 10, right: 0, top: 50, bottom: 0 }
     };
@@ -66,7 +68,15 @@ export class ComplexHierarchicalTreeDiagramComponent {
     ngOnInit(): void {
         document.getElementById('appearance').onclick = this.documentClick.bind(this);
     }
-
+    public onChange(args: CheckBoxChangeEventArgs): void {
+        if (args.checked) {
+            this.diagram.layout.connectionPointOrigin = ConnectionPointOrigin.DifferentPoint;
+             }
+             else {
+                this.diagram.layout.connectionPointOrigin = ConnectionPointOrigin.SamePoint;
+             }
+         
+    }
     public documentClick(args: MouseEvent): void {
         let target: HTMLElement = args.target as HTMLElement;
         // custom code start

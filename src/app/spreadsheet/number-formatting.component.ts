@@ -31,11 +31,5 @@ export class NumberFormattingController {
         this.spreadsheetObj.cellFormat({ backgroundColor: '#B3E5FC' }, 'A15:E17');
         this.spreadsheetObj.numberFormat('$#,##0.00', 'D4:E14');
         this.spreadsheetObj.numberFormat('$#,##0.00', 'E15:E17');
-        this.spreadsheetObj.updateCell({ value: 'Subtotal:' }, 'B15');
-        this.spreadsheetObj.updateCell({ formula: '=SUBTOTAL(9,E4:E14)', format: '$#,##0.00' }, 'E15');
-        this.spreadsheetObj.updateCell({ value: 'Discount (8%):' }, 'B16');
-        this.spreadsheetObj.updateCell({ formula: '=PRODUCT(8,E15)/100', format: '$#,##0.00' }, 'E16');
-        this.spreadsheetObj.updateCell({ value: 'Total Amount:' }, 'B17');
-        this.spreadsheetObj.updateCell({ formula: '=SUM(E15-E16)',  format: '$#,##0.00' }, 'E17');
     }
 }

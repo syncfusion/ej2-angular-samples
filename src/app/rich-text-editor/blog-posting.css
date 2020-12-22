@@ -129,7 +129,7 @@ span.questionSide {
 
 .questionar {
     width: 32px;
-    background: url(~/assets/rich-text-editor/images/emp1.png);
+    background: url('/assets/rich-text-editor/images/emp1.png');
     height: 32px;
     float: left;
     -ms-flex-line-pack: center;
@@ -167,7 +167,7 @@ span.questionSide {
 }
 
 .logos {
-    background: url(~/assets/rich-text-editor/images/emp2.png);
+    background: url('/assets/rich-text-editor/images/emp2.png');
     height: 32px;
     -ms-flex-line-pack: center;
     align-content: center;
@@ -183,25 +183,25 @@ span.questionSide {
 }
 
 .logo {
-    background: url(~/assets/rich-text-editor/images/author.png) no-repeat scroll 0 0 transparent;
+    background: url('/assets/rich-text-editor/images/author.png') no-repeat scroll 0 0 transparent;
     height: 32px;
     width: 32px;
 }
 
 .emp1 {
-    background: url(~/assets/rich-text-editor/images/1.png) no-repeat scroll 0 0 transparent;
+    background: url('/assets/rich-text-editor/images/1.png') no-repeat scroll 0 0 transparent;
     height: 32px;
     width: 32px;
 }
 
 .emp2 {
-    background: url(~/assets/rich-text-editor/images/2.png) no-repeat scroll 0 0 transparent;
+    background: url('/assets/rich-text-editor/images/2.png') no-repeat scroll 0 0 transparent;
     height: 32px;
     width: 32px;
 }
 
 .emp3 {
-    background: url(~/assets/rich-text-editor/images/3.png) no-repeat scroll 0 0 transparent;
+    background: url('/assets/rich-text-editor/images/3.png') no-repeat scroll 0 0 transparent;
     height: 32px;
     width: 32px;
 }

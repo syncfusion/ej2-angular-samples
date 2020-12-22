@@ -45,7 +45,8 @@ import { GanttSelectionComponent } from './selection.component';
 import { GanttDragAndDropComponent } from './drag-and-drop.component';
 import { GanttResourceViewComponent } from './resource-view.component';
 import { GanttResourceMultiTaskbarComponent } from './resource-multi-taskbar.component';
-
+import { GanttSplitTasksComponent } from './split-tasks.component';
+import { GanttVirtualScrollComponent } from './virtual-scroll.component';
 
 export const GanttAppRoutes: Object[] = [
     {
@@ -92,6 +93,16 @@ export const GanttAppRoutes: Object[] = [
         path: ':theme/gantt/drag-and-drop', component: GanttDragAndDropComponent,
         description: 'This demo for Essential JS 2 Gantt control how the rows can be dragged within the gantt using the row drag-and-drop feature.',
         name: 'Row Drag And Drop', order: '01', category: 'Gantt'
+    },
+    {
+        path: ':theme/gantt/split-tasks', component: GanttSplitTasksComponent,
+        description: 'This demo explains how to interrupt the already scheduled tasks using the Syncfusion TypeScript Gantt control.',
+        name: 'Split Tasks', order: '01', category: 'Gantt', type: 'new'
+    },
+    {
+        path: ':theme/gantt/virtual-scroll', component: GanttVirtualScrollComponent,
+        description: 'This example illustrates binding large data and smooth scrolling with large data using the Virtual Scroll feature in the Syncfusion Gantt chart.',
+        name: 'Virtual Scroll', order: '01', category: 'Gantt', type: 'new'
     },
     {
         path: ':theme/gantt/local-data', component: GanttLocalDataComponent,
@@ -240,7 +251,7 @@ export const GanttAppRoutes: Object[] = [
     }
 ];
 
-export const GanttRouter: ModuleWithProviders = RouterModule.forChild(GanttAppRoutes);
+export const GanttRouter: ModuleWithProviders<any> = RouterModule.forChild(GanttAppRoutes);
 let declarations: Type<Object>[] = [
     GanttDefaultComponent,
     GanttWorkWeekComponent,
@@ -280,7 +291,9 @@ let declarations: Type<Object>[] = [
     GanttSelectionComponent,
     GanttDragAndDropComponent,
     GanttResourceViewComponent,
-    GanttResourceMultiTaskbarComponent
+    GanttResourceMultiTaskbarComponent,
+    GanttSplitTasksComponent,
+    GanttVirtualScrollComponent
 ];
 @NgModule({
     imports: [CommonModule, GanttRouter, SharedModule, GanttAllModule, DropDownListAllModule, CheckBoxAllModule, TextBoxAllModule, NumericTextBoxAllModule, MultiSelectAllModule],

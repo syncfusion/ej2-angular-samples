@@ -109,6 +109,11 @@
                     <ejs-numerictextbox id='vspace' [value]="40" format='n0' step="1" (change)='onvSpacingChange($event)'></ejs-numerictextbox>
                 </div>
             </div>
+            <div class="row property-panel-content" style="padding-top: 10px">
+                <div class="row sb-child-row">
+                    <ejs-checkbox #diagram id="lock" label="Prevent Connector Overlapping" [checked]="true" (change)="onChange($event)"></ejs-checkbox>
+                </div>
+            </div>
         </div>
     </div>
 </div>

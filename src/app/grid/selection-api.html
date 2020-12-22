@@ -1,13 +1,14 @@
 <div class="control-section">
     <div class='e-mastertext'>Selection Type / Selection Mode</div>
-    <ejs-toolbar class='e-gridlist' (clicked)="onChangeType($event.originalEvent)">
+    <ejs-toolbar #toolbar class='e-gridlist' (clicked)="onChangeType($event.originalEvent)" (created)="onCreate($event)">
         <e-items>
             <e-item text='Multiple' cssClass='e-gtype'></e-item>
             <e-item text='Row' cssClass='e-gmode'></e-item>
+            <e-item template='<input id="columnSelection" type="checkbox"/>' type='Input'></e-item>
         </e-items>
     </ejs-toolbar>
     <br/>
-    <ejs-grid [dataSource]='data' allowPaging='true' [enableHover]="false" [allowSelection]="true" [selectionSettings]="selectOptions">
+    <ejs-grid #grid [dataSource]='data' allowPaging='true' [enableHover]="false" [allowSelection]="true" [selectionSettings]="selectOptions" (rowSelecting)="selectingEvent($event)" (cellSelecting)="selectingEvent($event)">
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
@@ -21,7 +22,7 @@
     </div>
    <div id="description">
         <p>
-            Selection provides an interactive support to highlight the row or cell that you select. Selection can be done through simple
+            Selection provides an interactive support to highlight the row or cell or column that you select. Selection can be done through simple
             Mouse down or Keyboard interaction. To enable selection, set <code><a target="_blank" class="code"
         href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#allowselection-boolean">
         allowSelection
@@ -34,7 +35,7 @@
             They are,</p>
         <ul>
             <li><code>Single</code> - Enabled by default. Allows the user to select single row/cell at a time.</li>
-            <li><code>Multiple</code> - Allows the user to select more than one row/cell at a time.</li>
+            <li><code>Multiple</code> - Allows the user to select more than one row/cell/column at a time.</li>
         </ul>
         <p>Also, supports three modes of selection which can be set using <code><a target="_blank" class="code"
         href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#selectionsettings-selectionsettingsmodel">
@@ -49,8 +50,12 @@
                 simultaneously
             </li>
         </ul>
-        <p>To perform the multi-selection, hold <strong>CTRL</strong> key and click the desired rows/cells. To select range of rows/cells,
-            hold <strong>SHIFT</strong> key and click the rows/cells.</p>
+        <p>To perform the column selection, enable the <code><a target="_blank" class="code"
+            href="https://ej2.syncfusion.com/angular/documentation/api/grid/selectionSettings/#allowcolumnselection">
+            selectionSettings->allowColumnSelection
+        </a></code> property.</p>
+        <p>To perform the multi-selection, hold <strong>CTRL</strong> key and click the desired rows/cells/columns. To select range of rows/cells/columns,
+            hold <strong>SHIFT</strong> key and click the rows/cells/columns.</p>
         <p>While using the Grid in a touch device environment, there is an option for multi-selection through a single tap on the
             row and it will show a popup with the multi-selection symbol. Tap the icon to enable multi-selection in a single
             tap.

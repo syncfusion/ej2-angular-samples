@@ -20,7 +20,7 @@
 
 /* Preview area styles */
 #inline-control #preview {
-    background: transparent url('~/assets/color-picker/pen.png') no-repeat;
+    background: transparent url('/assets/color-picker/pen.png') no-repeat;
     display: inline-block;
     height: 80px;
     margin: 10px 0;
@@ -28,21 +28,21 @@
     background-color: #008000;
 }
 #inline-control.e-mobile-control #preview {
-    background: transparent url('~/assets/color-picker/pen_mobile.png') no-repeat;
+    background: transparent url('/assets/color-picker/pen_mobile.png') no-repeat;
     background-color: #008000;
     height: 35px;
     width: 300px;
 }
 .highcontrast #inline-control #preview {
-    background: transparent url('~/assets/color-picker/pen_highcontrast.png') no-repeat;
+    background: transparent url('/assets/color-picker/pen_highcontrast.png') no-repeat;
     background-color: #008000;
 }
 .highcontrast #inline-control.e-mobile-control #preview {
-    background: transparent url('~/assets/color-picker/pen_mobile_highcontrast.png') no-repeat;
+    background: transparent url('/assets/color-picker/pen_mobile_highcontrast.png') no-repeat;
     background-color: #008000;
 }
 
-/* Common sample level styles for mobile */
+/* sample level styles for mobile */
 #inline-control.e-mobile-control h4 {
     margin-bottom: 15px;
 }

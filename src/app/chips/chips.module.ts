@@ -37,7 +37,7 @@ export const chipsAppRoutes: Object[] = [
     }
 ];
 
-export const chipsRouter: ModuleWithProviders = RouterModule.forChild(chipsAppRoutes);
+export const chipsRouter: ModuleWithProviders<any> = RouterModule.forChild(chipsAppRoutes);
 
 @NgModule({
     imports: [chipsRouter, ChipListModule, SharedModule, DropDownListModule, CheckBoxModule],

@@ -44,13 +44,13 @@
 }
 
 .schedule-group-editing.e-schedule .template-wrap .resource-image.margaret {
-    background-image: url('~/assets/schedule/images/margaret.png');
+    background-image: url('/assets/schedule/images/margaret.png');
 }
 
 .schedule-group-editing.e-schedule .template-wrap .resource-image.robert {
-    background-image: url('~/assets/schedule/images/robert.png');
+    background-image: url('/assets/schedule/images/robert.png');
 }
 
 .schedule-group-editing.e-schedule .template-wrap .resource-image.laura {
-    background-image: url('~/assets/schedule/images/laura.png');
+    background-image: url('/assets/schedule/images/laura.png');
 }
