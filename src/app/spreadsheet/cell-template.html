@@ -5,8 +5,7 @@
 </div>
 <div class="control-section">
     <ejs-spreadsheet #spreadsheet [showRibbon]="false" [allowResizing]="false" [showFormulaBar]="false" [allowOpen]="false" [allowSave]="false"
-        [scrollSettings]="{ isFinite: true }" (created)="created()"
-        (beforeCellRender)="beforeCellRender($event)" (beforeSelect)="beforeSelect($event)">
+        [scrollSettings]="{ isFinite: true }" (created)="created()" [allowEditing]="false" [selectionSettings]="{ mode: 'None' }">
         <e-sheets>
             <e-sheet name="Registration Form" [rowCount]=40 [colCount]=30 [showGridLines]="false">
                 <e-rows>
@@ -62,11 +61,54 @@
                     <e-column [width]=350></e-column>
                 </e-columns>
                 <e-ranges>
-                    <e-range template="<input />" address="C2:C3"></e-range>
-                    <e-range template="<div><input type='radio' name='gender' value='male' /><input type='radio' name='gender' value='female'/></div>" address="C4"></e-range>
-                    <e-range template="<input />" address="C5:C8"></e-range>
-                    <e-range template="<textarea rows='3'/>" address="C9"></e-range>
-                    <e-range template="<button class='e-btn e-flat' style='float:right'>Add</button>" address="C11"></e-range>
+                    <e-range address="C2">
+                        <ng-template #template>
+                            <ejs-textbox placeholder="Name"></ejs-textbox>
+                        </ng-template>
+                    </e-range>
+                    <e-range address="C3">
+                        <ng-template #template>
+                            <ejs-textbox placeholder="DOB"></ejs-textbox>
+                        </ng-template>
+                    </e-range>
+                    <e-range address="C4">
+                        <ng-template #template>
+                            <div>
+                                <ejs-radiobutton name="gender" value="male" label="Male"></ejs-radiobutton>
+                                <ejs-radiobutton name="gender" value="female" label="Female"></ejs-radiobutton>
+                            </div>
+                        </ng-template>
+                    </e-range>
+                    <e-range address="C5">
+                        <ng-template #template>
+                            <ejs-dropdownlist placeholder="Experience" [dataSource]="experience"></ejs-dropdownlist>
+                        </ng-template>
+                    </e-range>
+                    <e-range address="C6">
+                        <ng-template #template>
+                            <ejs-multiselect [showClearButton]="false" placeholder="Areas of Interest" [dataSource]="languages"></ejs-multiselect>
+                        </ng-template>
+                    </e-range>
+                    <e-range address="C7">
+                        <ng-template #template>
+                            <ejs-textbox placeholder="Mobile Number"></ejs-textbox>
+                        </ng-template>
+                    </e-range>
+                    <e-range address="C8">
+                        <ng-template #template>
+                            <ejs-textbox placeholder="Email"></ejs-textbox>
+                        </ng-template>
+                    </e-range>
+                    <e-range address="C9">
+                        <ng-template #template>
+                            <ejs-textbox rows="2" [multiline]="true"></ejs-textbox>
+                        </ng-template>
+                    </e-range>
+                    <e-range address="C11">
+                        <ng-template #template>
+                            <button ejs-button cssClass='e-flat' style='float:right'>Add</button>
+                        </ng-template>
+                    </e-range>
                 </e-ranges>
             </e-sheet>
         </e-sheets>

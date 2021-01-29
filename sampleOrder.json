@@ -739,6 +739,19 @@
             "exporting": "Export"
         }
     },
+    "progress-bar" : {
+        "ControlName" : "Progress Bar",
+        "Samples" : {
+            "Linear": "Linear",
+            "default": "Circular",
+            "semi-Circle'": "Angle",
+            "custom-content": "Custom content",
+            "labels": "Labels",
+            "Radius": "Radius",
+            "stripes": "Stripes",
+            "progress-segment": "Progress Segment"
+     }
+    },
     "query-builder": {
         "ControlName": "Query Builder",
         "Samples": {
@@ -762,24 +775,6 @@
             "filter": "Filter",
             "export": "Print and Export",
             "rtl": "RTL"
-        }
-    },
-    "range-slider": {
-        "ControlName": "Range Slider",
-        "Samples": {
-            "api": "API",
-            "azure-pricing": "Cloud Pricing",
-            "default": "Default Functionalities",
-            "events": "Events",
-            "format": "Formatting",
-            "limits": "Limits",
-            "orientation": "Orientation",
-            "selection-bar-customization": "Bar",
-            "thumb-customization": "Thumb",
-            "ticks": "Ticks",
-            "ticks-customization": "Ticks",
-            "tooltip": "Tooltip",
-            "tooltip-customization": "Tooltip"
         }
     },
     "rich-text-editor": {
@@ -878,7 +873,7 @@
             "sidebar-list": "Sidebar With ListView"
         }
     },
-    "slider": {
+    "range-slider": {
         "ControlName": "Range Slider",
         "Samples": {
             "default": "Default Functionalities",

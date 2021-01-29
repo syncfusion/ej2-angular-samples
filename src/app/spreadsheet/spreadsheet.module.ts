@@ -5,6 +5,9 @@ import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SpreadsheetAllModule } from '@syncfusion/ej2-angular-spreadsheet';
+import { TextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
+import { RadioButtonAllModule, ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
+import { DropDownListAllModule, MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { DefaultController } from './default.component';
 import { CellDataBindingController } from './cell-data-binding.component';
 import { RemoteDataBindingController } from './remote-data-binding.component';
@@ -85,7 +88,7 @@ export const spreadsheetAppRoutes: Object[] = [
 export const spreadsheetRouter: ModuleWithProviders<any> = RouterModule.forChild(spreadsheetAppRoutes);
 
 @NgModule({
-    imports: [spreadsheetRouter, CommonModule, SpreadsheetAllModule, SharedModule],
+    imports: [spreadsheetRouter, CommonModule, SpreadsheetAllModule, SharedModule, TextBoxAllModule, RadioButtonAllModule, DropDownListAllModule, MultiSelectAllModule, ButtonAllModule],
     declarations: [
         DefaultController,
         FormulasController,
