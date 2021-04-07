@@ -1,0 +1,79 @@
+<ng-template #GridtemplateRef>
+    <ejs-grid [dataSource]='gridData'>
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=120 type='number'></e-column>
+            <e-column field='CustomerID' headerText='Customer ID' type='string' width=140>
+            </e-column>
+            <e-column field='Freight' headerText='Freight' textAlign='Right' width=120 format='C'>
+            </e-column>
+            <e-column field='OrderDate' headerText='Order Date' width=140 format='yMd'></e-column>
+        </e-columns>
+    </ejs-grid>
+</ng-template>
+
+<ng-template #CharttemplateRef>
+    <ejs-chart id="chart-container" [primaryXAxis]='primaryXAxis'>
+        <e-series-collection>
+            <e-series [dataSource]='chartData' type='Line' xName='month' yName='sales' name='Sales'></e-series>
+        </e-series-collection>
+    </ejs-chart>
+</ng-template>
+<ng-template #ScheduletemplateRef>
+    <ejs-schedule height='350px' [selectedDate]='selectedDate' [eventSettings]='eventSettings' [readonly]="readonly">
+    </ejs-schedule>
+</ng-template>
+
+<ng-template #DropDowntemplateRef>
+    <ejs-dropdownlist [dataSource]='sportsData' width='200px' [value]='value' [fields]='fields'></ejs-dropdownlist>
+</ng-template>
+<ng-template #DatePickertemplateRef>
+    <ejs-datepicker width='200px'></ejs-datepicker>
+</ng-template>
+
+<ng-template #UploadtemplateRef>
+    <ejs-uploader></ejs-uploader>
+</ng-template>
+
+<ng-template #CalendartemplateRef>
+    <ejs-calendar></ejs-calendar>
+</ng-template>
+
+<div id="TabContainer">
+    <div class="col-lg-4" style="margin-top: 10px;">
+        <div class='property-panel-header'>List of Components</div>
+        <ejs-treeview id='ListView' #treeObj dragArea='#TabContainer' [fields]='field' cssClass='treeview-external-drag-tab'
+            [allowDragAndDrop]='allowDragAndDrop' (nodeDragStop)='onNodeDragStop($event)'
+            (nodeDragging)='onNodeDrag($event)'>
+        </ejs-treeview>
+    </div>
+    <div class="col-lg-8 content-wrapper control-section">
+        <ejs-tab id='draggableTab' #tabObj [allowDragAndDrop]='allowDragAndDrop' dragArea='#TabContainer'
+            (created)='onTabCreate()' (onDragStart)='onTabDragStart($event)' (dragged)='onDraggedTab($event)'>
+            <e-tabitems>
+                <e-tabitem [header]='headerText[0]' [content]="Gridtemplate">
+                </e-tabitem>
+                <e-tabitem [header]='headerText[1]' [content]="Charttemplate">
+                </e-tabitem>
+                <e-tabitem [header]='headerText[2]' [content]="Scheduletemplate">
+                </e-tabitem>
+            </e-tabitems>
+        </ejs-tab>
+    </div>
+
+    <div id="action-description">
+        <p>
+            This example illustrates how to reorder tabs and add tabs from an external source(list of components) by drag and drop. Here, you can drag and drop the items from TreeView into Tab.
+        </p>
+    </div>
+    <div id="description">
+        <p>
+            In this example, the <code>allowDragAndDrop</code> property is used to enable drag and drop and the <code>dragArea</code> property is used to define the draggable area.
+        </p>
+        <p>
+            In this example, the list of components is rendered using the <code>treeview</code> component. We can drag the item from the treeview component to the tab component by using the <code>nodeDragStop</code> event of the treeview component and add the same item with the help of the <code>addTab</code> public method of Tab and remove this item from the treeview by using the <code>removeNodes</code> method. 
+        </p>
+        <p>
+            In the same way, we can drag the tab item within the tab component and also add the tab item to the treeview component. Here, we can drop the tab item in the treeview component by using the <code>dragged</code> event of the tab component. In this case, we can remove the dropped item from tab with the help of the <code>removeTab</code> public method and add the item to the treeview in its <code>addNodes</code> public method.
+        </p>
+    </div>
+</div>

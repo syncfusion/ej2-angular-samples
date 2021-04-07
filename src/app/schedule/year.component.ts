@@ -1,12 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
 import {
-    ScheduleComponent, EventSettingsModel, EventRenderedArgs, YearService, TimelineYearService, GroupModel
+    ScheduleComponent, EventSettingsModel, EventRenderedArgs, YearService, TimelineYearService, GroupModel, ResizeService, DragAndDropService
 } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'year.html',
-    providers: [YearService, TimelineYearService]
+    providers: [YearService, TimelineYearService, ResizeService, DragAndDropService]
 })
 export class YearComponent {
     @ViewChild('scheduleObj')

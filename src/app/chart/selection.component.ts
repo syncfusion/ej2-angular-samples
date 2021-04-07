@@ -89,13 +89,23 @@ export class SelectionChartComponent {
         this.selectionMode = new DropDownList({
             index: 0,
             change: () => {
+                const element: HTMLInputElement = <HTMLInputElement>(document.getElementById('highlight'));
                 let type: string = this.selectionMode.value.toString();
                 this.chart.selectionMode = <SelectionMode>type;
-                this.chart.highlightMode = <HighlightMode>type;
+                if (element.checked) {
+                    this.chart.highlightMode = <HighlightMode>type;
+                } else {
+                    this.chart.highlightMode = 'None';
+                }
                 this.chart.dataBind();
             }
         });
         this.selectionMode.appendTo('#selmode');
+        document.getElementById('select').onchange = () => {
+            const element: HTMLInputElement = <HTMLInputElement>(document.getElementById('select'));
+            this.chart.isMultiSelect = element.checked;
+            this.chart.dataBind();
+        }
         this.selectpattern = new DropDownList({
             index: 0,
             change: () => {
@@ -109,10 +119,11 @@ export class SelectionChartComponent {
             placeholder: 'Select pattern values',
             width: 120,
             change: () => {
-                if (highlight) {
+                const element: HTMLInputElement = <HTMLInputElement>(document.getElementById('highlight'));
+                if (element.checked) {
                     this.chart.highlightPattern = <SelectionPattern>highlight.value;
                 } else {
-                    this.chart.highlightPattern  = 'None';
+                    this.chart.highlightPattern = 'None';
                 }
                 this.chart.dataBind();
             }
@@ -125,7 +136,7 @@ export class SelectionChartComponent {
                 this.chart.highlightPattern = <SelectionPattern>highlight.value;
             } else {
                 this.chart.highlightMode = 'None';
-                this.chart.highlightPattern  = 'None';
+                this.chart.highlightPattern = 'None';
             }
             this.chart.dataBind();
         };

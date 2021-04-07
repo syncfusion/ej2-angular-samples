@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ViewChild, HostListener } from '@angular/core';
 import { createElement, Effect, EmitType } from '@syncfusion/ej2-base';
-import { ToastComponent, ToastBeforeOpenArgs, ToastCloseArgs, ToastPositionModel, ToastAnimationSettingsModel } from '@syncfusion/ej2-angular-notifications';
+import { ToastComponent, ToastBeforeOpenArgs, ToastCloseArgs, ToastPositionModel, ToastAnimationSettingsModel, ProgressDirectionType } from '@syncfusion/ej2-angular-notifications';
 import { DropDownListComponent, FieldSettingsModel } from '@syncfusion/ej2-angular-dropdowns';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
 import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
@@ -21,6 +21,9 @@ export class ApiController {
     @ViewChild('ShowEasing')
     private dropDownListShowEase: DropDownListComponent;
 
+    @ViewChild('ProgressDirection')
+    private dropDownListProgressDirection: DropDownListComponent;
+
     @ViewChild('HideEasing')
     private dropDownListHideEase: DropDownListComponent;
 
@@ -36,6 +39,11 @@ export class ApiController {
     public showData: { [key: string]: Object }[] = [
         { Id: 'ease', Text: 'Ease' },
         { Id: 'linear', Text: 'Linear' }
+    ];
+
+    public directionData: { [key: string]: Object }[] = [
+        { Id: 'Rtl', Text: 'Right to Left' },
+        { Id: 'Ltr', Text: 'Left to Right' }
     ];
 
     public animationData1: { [key: string]: Object }[] = [
@@ -88,8 +96,10 @@ export class ApiController {
 
     public position: ToastPositionModel = { X: 'Right', Y: 'Bottom' };
     public showFields: FieldSettingsModel = { text: 'Text', value: 'Id' };
+    public directionFields: FieldSettingsModel = { text: 'Text', value: 'Id' };
     public animationFields: FieldSettingsModel = { text: 'Effect', value: 'Id' };
     public easeValue: string = "ease";
+    public progressDirectionValue: string = "Rtl";
     public animationValue: string = "SlideBottomIn";
     public hideAnimationValue: string = "SlideBottomOut";
     public true: boolean = true;
@@ -152,6 +162,10 @@ export class ApiController {
 
     public onShowEase(): void {
         this.toastObj.animation.show.easing = this.dropDownListShowEase.value.toString();
+    }
+
+    public onProgressDirectionChange(): void {
+        this.toastObj.progressDirection = this.dropDownListProgressDirection.value.toString() as ProgressDirectionType;
     }
 
     public showChange(): void {

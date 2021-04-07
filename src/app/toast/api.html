@@ -43,6 +43,11 @@
                     </ejs-checkbox>
                 </div>
                 <div class="input-form">
+                    <ejs-dropdownlist #ProgressDirection [dataSource]="directionData" [fields]="this.directionFields"
+                        placeholder="ProgressDirection" floatLabelType="Auto" (change)="onProgressDirectionChange()" [value]="progressDirectionValue">
+                    </ejs-dropdownlist>
+                </div>
+                <div class="input-form">
                     <div class="e-float-input e-input-group">
                         <input class="e-input" id="timeOut" name="Digits" value="5000" required />
                         <span class="e-float-line"></span>

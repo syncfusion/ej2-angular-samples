@@ -13,11 +13,11 @@ export class PresetsComponent {
         - (new Date().getDay() + 7) % 7))).getDate() + 6)).toDateString())
         ;
     public monthStart: Date = new Date(new Date(new Date().setDate(1)).toDateString());
-    public monthEnd: Date = this.today;
+    public monthEnd: Date = new Date(new Date(new Date(new Date().setMonth(new Date().getMonth() + 1)).setDate(0)).toDateString());
     public lastStart: Date = new Date(new Date(new Date(new Date().setMonth(new Date().getMonth() - 1)).setDate(1)).toDateString());
-    public lastEnd: Date = this.today;
-    public yearStart: Date = new Date(new Date(new Date().setDate(new Date().getDate() - 365)).toDateString());
-    public yearEnd: Date = this.today;
+    public lastEnd: Date = new Date(new Date(new Date().setDate(0)).toDateString());
+    public yearStart: Date = new Date(new Date(new Date().getFullYear() - 1, 0, 1).toDateString());
+    public yearEnd: Date = new Date(new Date(new Date().getFullYear() - 1, 11, 31).toDateString());
 
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['presets-style.css'];

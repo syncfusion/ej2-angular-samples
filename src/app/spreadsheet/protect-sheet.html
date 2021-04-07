@@ -1,10 +1,10 @@
 <div id="action-description">
     <p>
-        This sample demonstrates protect sheet and lock cell feature with EMI calculation scenario as example.
+        This sample demonstrates protect sheet and protect workbook with EMI calculation scenario as an example. To unprotect the sheet, click the unprotect sheet button in the Data tab. Meanwhile, to unprotect the workbook, click the unprotect workbook button in the data tab and provide the password as <code>spreadsheet</code> in the dialog box.
     </p>
 </div>
 <div class="control-section">
-    <ejs-spreadsheet #spreadsheet (created)="created()" (beforeCellRender)="beforeCellRender($event)">
+    <ejs-spreadsheet #spreadsheet password="spreadsheet" [openUrl]="openUrl" [saveUrl]="saveUrl" (created)="created()" (beforeCellRender)="beforeCellRender($event)">
         <e-sheets>
             <e-sheet name="EMI Calculator" [isProtected]="true">
                 <e-rows>
@@ -85,7 +85,7 @@
 
 <div id="description">
     <p>
-        In this demo, `EMI Schedule` sheet is locked using <code>isProtected</code> property.
+        Protect sheet helps you to prevent the users from modifying the data in the spreadsheet. Protect workbook helps you to protect the workbook with a password. In this demo, the `EMI Schedule` sheet is locked using <code>isProtected</code> property inside the `Sheet` property and protect the workbook with a password using <code>password</code> property.
     </p>
     <p>
         More information about protect sheet and lock cell feature can be found in this

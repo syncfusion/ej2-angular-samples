@@ -15,6 +15,7 @@ import { FormulasController } from './formula.component';
 import { CellFormatController } from './cell-formatting.component';
 import { NumberFormattingController } from './number-formatting.component';
 import { ProtectSheetComponent } from './protect-sheet.component';
+import { FreezePaneComponent } from './freeze-pane.component';
 import { SortinAndFilteringComponent } from './sorting-and-filtering.component';
 import { CellTemplateComponent } from './cell-template.component';
 import { SharedModule } from '../common/shared.module';
@@ -35,8 +36,13 @@ export const spreadsheetAppRoutes: Object[] = [
     },
     {
         path: ':theme/spreadsheet/protect-sheet', component: ProtectSheetComponent,
-        name: 'Protect Sheet', category: 'Spreadsheet', order: '01',
+        name: 'Protection', type: 'update', category: 'Spreadsheet', order: '01',
         description: 'This demo for Syncfusion Angular Spreadsheet control includes lock cell and protect sheet feature with its configurations.'
+    },
+    {
+        path: ':theme/spreadsheet/freeze-pane', component: FreezePaneComponent,
+        name: 'Freeze Panes', type: 'new', category: 'Spreadsheet', order: '01',
+        description: 'This demo for Syncfusion Angular Spreadsheet control includes freeze rows and columns feature.'
     },
     {
         path: ':theme/spreadsheet/cell-data-binding', component: CellDataBindingController,
@@ -70,7 +76,7 @@ export const spreadsheetAppRoutes: Object[] = [
     },
     {
         path: ':theme/spreadsheet/chart', component: ChartController,
-        name: 'Chart', category: 'Data Visualization', order: '05', type: 'new',
+        name: 'Chart', category: 'Data Visualization', order: '05',
         description: "This demo for Essential JS 2 Spreadsheet control shows the chart feature."
     },
     {
@@ -101,7 +107,8 @@ export const spreadsheetRouter: ModuleWithProviders<any> = RouterModule.forChild
         CellTemplateComponent,
         ConditionalFormattingController,
         ImageController,
-        ChartController
+        ChartController,
+        FreezePaneComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -14,9 +14,7 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 export class AxesComponent {
     @ViewChild('gauge')
     public gauge: LinearGaugeComponent;
-    @ViewChild('pointerType')
     public pointerType: DropDownList;
-    @ViewChild('pointerPlace')
     public markerPlacement: DropDownList;
     // custom code start
     public load(args: ILoadedEventArgs): void {

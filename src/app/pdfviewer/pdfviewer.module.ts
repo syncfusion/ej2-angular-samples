@@ -21,7 +21,7 @@ export const pdfViewerAppRoutes: Object[] = [
 	// tslint:disable-next-line:max-line-length
     { path: ':theme/pdfviewer/form-filling', component: FormFillingComponent, name: 'Form Filling', order: '06', description: 'The PdfViewer component is used to  view and print pdf documents in web applications.' },
     // tslint:disable-next-line:max-line-length
-    { path: ':theme/pdfviewer/hand-written', component: HandwrittenComponent , name: 'Handwritten Signature', order: '06', type: 'new', description: 'The sample demonstrates the Handwritten Signature support of  PDF Viewer. The Handwritten signature reduces the paperwork of reviewing the contents and its verified its digitally.'}
+    { path: ':theme/pdfviewer/hand-written', component: HandwrittenComponent , name: 'Handwritten Signature', order: '06', description: 'The sample demonstrates the Handwritten Signature support of  PDF Viewer. The Handwritten signature reduces the paperwork of reviewing the contents and its verified its digitally.'}
 ];
 
 export const pdfViewerRouter: ModuleWithProviders<any> = RouterModule.forChild(pdfViewerAppRoutes);

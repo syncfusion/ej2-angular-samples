@@ -15,7 +15,9 @@ export class VirtualScrollingComponent implements OnInit {
     public treegrid: TreeGridComponent;
 
     public ngOnInit(): void {
-        dataSource();
+        if (virtualData.length === 0) {
+            dataSource();
+        }
         this.vData = virtualData;
     }
 }

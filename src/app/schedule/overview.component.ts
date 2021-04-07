@@ -130,10 +130,23 @@ export class OverviewComponent {
     public timeSlotCount: Number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     public timeSlotDurationValue: Number = 60;
     public timeSlotCountValue: Number = 2;
+    public timeFormatData: Object[] = [
+        { Name: '12 hours', Value: "hh:mm a" },
+        { Name: '24 hours', Value: "HH:mm" }
+    ];
+    public timeFormatValue: string = "hh:mm a";
+    public weekNumberData: Object[] = [
+        { Name: 'Off', Value: 'Off' },
+        { Name: 'First Day of Year', Value: 'FirstDay' },
+        { Name: 'First Full Week', Value: 'FirstFullWeek' },
+        { Name: 'First Four-Day Week', Value: 'FirstFourDayWeek' }
+    ];
+    public weekNumberValue: string = "Off";
     public eventSettings: EventSettingsModel = { dataSource: this.generateEvents() };
     @ViewChild('menuObj')
     public menuObj: ContextMenuComponent;
     public selectedTarget: Element;
+    public targetElement: HTMLElement;
     public menuItems: MenuItemModel[] = [
         { text: 'New Event', iconCss: 'e-icons new', id: 'Add' },
         { text: 'New Recurring Event', iconCss: 'e-icons recurrence', id: 'AddRecurrence' },
@@ -302,8 +315,8 @@ export class OverviewComponent {
         }
     }
 
-    public onWeekNumberChange(args: SwitchEventArgs): void {
-        this.scheduleObj.showWeekNumber = args.checked;
+    public onAllowMultiDrag(args: SwitchEventArgs): void {
+        this.scheduleObj.allowMultiDrag = args.checked;
     }
 
     public onGroupingChange(args: SwitchEventArgs): void {
@@ -413,6 +426,19 @@ export class OverviewComponent {
         this.scheduleObj.timeScale.slotCount = args.value as number;
     }
 
+    public onTimeFormatChange(args: ChangeEventArgs): void {
+        this.scheduleObj.timeFormat = args.value as string;
+    }
+
+    public onweekNumberChange(args: ChangeEventArgs): void {
+        if (args.value == "Off") {
+            this.scheduleObj.showWeekNumber = false;
+        } else {
+            this.scheduleObj.showWeekNumber = true;
+            this.scheduleObj.weekRule = args.value as any;
+        }
+    }
+
     public getResourceData(data: { [key: string]: Object }): { [key: string]: Object } {
         // tslint:disable-next-line: deprecation
         const resources: ResourcesModel = this.scheduleObj.getResourceCollections()[0];
@@ -489,11 +515,11 @@ export class OverviewComponent {
             remove(newEventElement);
             removeClass([document.querySelector('.e-selected-cell')], 'e-selected-cell');
         }
-        const targetElement: HTMLElement = <HTMLElement>args.event.target;
-        if (closest(targetElement, '.e-contextmenu')) {
+        this.targetElement = <HTMLElement>args.event.target;
+        if (closest(this.targetElement, '.e-contextmenu')) {
             return;
         }
-        this.selectedTarget = closest(targetElement, '.e-appointment,.e-work-cells,' +
+        this.selectedTarget = closest(this.targetElement, '.e-appointment,.e-work-cells,' +
             '.e-vertical-view .e-date-header-wrap .e-all-day-cells,.e-vertical-view .e-date-header-wrap .e-header-cells');
         if (isNullOrUndefined(this.selectedTarget)) {
             args.cancel = true;
@@ -527,7 +553,7 @@ export class OverviewComponent {
             case 'Add':
             case 'AddRecurrence':
                 const selectedCells: Element[] = this.scheduleObj.getSelectedElements();
-                const activeCellsData: CellClickEventArgs =
+                const activeCellsData: CellClickEventArgs = this.scheduleObj.getCellDetails(this.targetElement) ||
                     this.scheduleObj.getCellDetails(selectedCells.length > 0 ? selectedCells : this.selectedTarget);
                 if (selectedMenuItem === 'Add') {
                     this.scheduleObj.openEditor(activeCellsData, 'Add');

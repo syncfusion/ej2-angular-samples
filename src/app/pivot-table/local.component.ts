@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView, IDataSet, LoadEventArgs } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
 import { enableRipple, isNullOrUndefined } from '@syncfusion/ej2-base';
@@ -61,6 +61,12 @@ export class LocalComponent implements OnInit {
         } else if (args.value === 'CSV') {
             this.csvReport.dataSource = this.getCSVData();
             this.pivotObj.dataSourceSettings = this.csvReport;
+        }
+    }
+
+    onLoad(args: LoadEventArgs): void {
+        if (args.dataSourceSettings.type === 'CSV') {
+            args.dataSourceSettings.dataSource = this.getCSVData();
         }
     }
 

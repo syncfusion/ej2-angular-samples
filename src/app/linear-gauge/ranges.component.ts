@@ -14,9 +14,7 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 export class RangesComponent {
     @ViewChild('gauge')
     public gauge: LinearGaugeComponent;
-    @ViewChild('rangeIndex')
     public rangeIndex: DropDownList;
-    @ViewChild('useRangeColor')
     public rangeFontColor: DropDownList;
     // custom code start
     public load(args: ILoadedEventArgs): void {

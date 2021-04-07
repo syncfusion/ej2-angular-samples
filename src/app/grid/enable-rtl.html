@@ -1,0 +1,33 @@
+<div class="control-section">
+    <ejs-grid [dataSource]='data' allowPaging='true' allowGrouping ='true' allowSorting='true' enableRtl= 'true' allowReordering='true'  allowFiltering= 'true' [filterSettings]= 'filterSettings' [editSettings]='editSettings' [pageSettings]='initialPage'>
+        <e-columns>
+            <e-column field='OrderID'  isPrimaryKey='true' headerText='Order ID' width='120' textAlign='Left'></e-column>
+            <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='130' type='date' format='yMd' editType='datepickeredit' textAlign='Right'></e-column>
+            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right'></e-column>
+            <e-column field='ShipCountry' textAlign='Left' headerText='Ship Country' editType='dropdownedit' width='170'></e-column>
+        </e-columns>
+    </ejs-grid>
+
+    <div id="action-description">
+        <p>
+            This sample demonstrates the Right-To-Left(RTL) alignment in grid component.
+        </p>
+    </div>
+    
+    <div id="description">
+        <p>
+            Right-To-Left(RTL) is used to render the component from right to left direction and it can be
+            enabled by setting <code><a target="_blank" class="code"
+                href="https://ej2.syncfusion.com/angular/documentation/api/grid/#enablertl">enableRtl
+                </a></code> property as true.
+            In this demo, you can able to see Group drop area, header, content, pager, filter dialog, etc ... are aligned right to left direction.
+        </p>
+        <p>
+            More information on the RTL can be found in this 
+            <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/grid/#enablertl">documentation section</a>.
+        </p>
+    
+    </div>
+    
+</div>

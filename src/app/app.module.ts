@@ -2,10 +2,9 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ReflectiveInjector } from '@angular/c
 import { BrowserModule } from '@angular/platform-browser';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpModule, JsonpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
 import { SBRoutingModule } from './common/sb.router';
 import { SharedModule } from './common/shared.module';
-
+import { HttpClientModule } from '@angular/common/http';
 import { SBController } from './common/sb.component';
 import { LPController } from './common/lp.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,10 +14,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     imports: [
         BrowserModule,
         SBRoutingModule,
+        HttpClientModule,
         SharedModule,
         HttpModule,
         JsonpModule,
-        HttpClientModule,
         FormsModule,
         ReactiveFormsModule
     ],

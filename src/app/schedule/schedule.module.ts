@@ -69,9 +69,10 @@ import { InlineEditingComponent } from './inline-editing.component';
 import { QuickInfoTemplateComponent } from './quick-info-template.component';
 import { OverviewComponent } from './overview.component';
 import { SharedModule } from '../common/shared.module';
+import { MultiDragComponent } from './multi-drag.component';
 
 export const scheduleRouteConfig: Object[] = [
-  { 'path': ':theme/schedule/overview', component: OverviewComponent, name: 'Overview', order: '01', category: 'Scheduler', type: 'new', description: 'This demo shows how the Scheduler control functionalities work with the default set of minimal configurations in a Angular application.' },
+  { 'path': ':theme/schedule/overview', component: OverviewComponent, name: 'Overview', type:'update', order: '01', category: 'Scheduler', description: 'This demo shows how the Scheduler control functionalities work with the default set of minimal configurations in a Angular application.' },
   { 'path': ':theme/schedule/default', component: DefaultComponent, name: 'Default Functionalities', order: '01', category: 'Scheduler', description: 'This demo shows how the Scheduler control functionalities work with the default set of minimal configurations in a Angular application.' },
   { 'path': ':theme/schedule/local-data', component: LocalDataComponent, name: 'Local Data', order: '02', category: 'Data Binding', description: 'This demo shows how to populate appointments in the Angular Scheduler through local data sources like JSON data types with the proper date format.' },
   { 'path': ':theme/schedule/remote-data', component: RemoteDataComponent, name: 'Remote Data', order: '02', category: 'Data Binding', description: 'This demo shows how to populate appointments or events in the Angular Scheduler through remote data sources such as web services, web API, URL, and OData.' },
@@ -81,6 +82,7 @@ export const scheduleRouteConfig: Object[] = [
   { 'path': ':theme/schedule/search-events', component: SearchEventsComponent, name: 'Search Events', order: '03', category: 'Appointments', description: 'This example shows how to filter the appointments or events of the Angular Scheduler based on a search string in a particular field or all fields.' },
   { 'path': ':theme/schedule/timezone-event', component: TimezoneComponent, name: 'Timezone', order: '03', category: 'Appointments', description: 'This demo shows how the Angular Scheduler works with different time zones. The events in the Scheduler automatically adapt to the selected time zone.' },
   { 'path': ':theme/schedule/external-drag-drop', component: ExternalDragDropComponent, name: 'External Drag and Drop', order: '03', category: 'Appointments', description: 'This demo shows the ability to drag and drop appointments from an external source (such as the DataGrid, ListView, etc.)  into the Angular Scheduler.' },
+  { 'path': ':theme/schedule/multi-drag', component: MultiDragComponent, name: 'Multiple Drag', order: '03', category: 'Appointments', type: 'new', description: 'This demo explains you about the ability to select multiple appointments and drag them simultaneously.' },
   { 'path': ':theme/schedule/inline-editing', component: InlineEditingComponent, name: 'Inline Editing', order: '03', category: 'Appointments', description: 'The example showcases the inline mode of the Angular Scheduler that is used to create an appointment or edit an existing appointments subject easily and quickly.' },
   { 'path': ':theme/schedule/virtual-scrolling', component: VirtualScrollingComponent, name: 'Virtual Scrolling', order: '04', category: 'Scrolling', hideOnDevice: true, description: 'This example illustrates how to achieve high performance in the Angular Scheduler using virtual scrolling to load resources and events on demand.' },
   { 'path': ':theme/schedule/views', component: ViewsComponent, name: 'Basic Views ', order: '05', category: 'Views', description: 'This example demonstrates the basic views (day, week, workweek, and month) of the Angular Scheduler control with their default configurations.' },
@@ -140,7 +142,7 @@ const declarations: Type<Object>[] = [
   GroupComponent, AddRemoveResourcesComponent, TimelineComponent, TimelineResourceGroupingComponent, TimelineResourcesComponent,
   HeaderRowsComponent, ExternalDragDropComponent, ScheduleContextMenuComponent, VirtualScrollingComponent, CalendarIntegrationComponent,
   CalendarExportImportComponent, ExcelExportComponent, PrintComponent, YearComponent, InlineEditingComponent, QuickInfoTemplateComponent,
-  OverviewComponent
+  OverviewComponent, MultiDragComponent
 ];
 
 @NgModule({

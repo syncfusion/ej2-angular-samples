@@ -77,6 +77,8 @@
             "File-Upload": "Drag files here to upload",
             "Search-Empty": "No results found",
             "Search-Key": "Try with different keywords",
+            "Filter-Empty": "No results found",
+            "Filter-Key": "Try with different filter",
             "Sub-Folder-Error": "The destination folder is the subfolder of the source folder.",
             "Access-Denied": "Access Denied",
             "Access-Details": "You don't have permission to access this folder.",
@@ -85,7 +87,11 @@
             "Button-Keep-Both": "Keep both",
             "Button-Replace": "Replace",
             "Button-Skip": "Skip",
-            "ApplyAll-Label": "Do this for all current items"
+            "ApplyAll-Label": "Do this for all current items",
+            "KB": "KB",
+            "Access-Message": "{0} is not accessible. You need permission to perform the {1} action.",
+            "Network-Error": "NetworkError: Failed to send on XMLHTTPRequest: Failed to load",
+            "Server-Error": "ServerError: Invalid response from"
         }
     },
     "de": {
@@ -166,6 +172,8 @@
             "File-Upload": "Dateien zum Hochladen hierher ziehen",
             "Search-Empty": "Keine Ergebnisse gefunden",
             "Search-Key": "Versuchen Sie es mit anderen Stichwörtern",
+            "Filter-Empty": "keine Ergebnisse gefunden",
+            "Filter-Key": "Versuchen Sie es mit einem anderen Filter",
             "Sub-Folder-Error": "Der Zielordner ist der Unterordner des Quellordners.",
             "Access-Denied": "Zugriff verweigert",
             "Access-Details": "Sie haben keine Berechtigung, auf diesen Ordner zuzugreifen.",
@@ -174,7 +182,11 @@
             "Button-Keep-Both": "Behalte beides",
             "Button-Replace": "Ersetzen",
             "Button-Skip": "Überspringen",
-            "ApplyAll-Label": "Mache das für alle aktuellen Artikel"
+            "ApplyAll-Label": "Mache das für alle aktuellen Artikel",
+            "KB": "KB",
+            "Access-Message": "{0} ist nicht zugänglich. Sie benötigen die Berechtigung, um die Aktion {1} auszuführen.",
+            "Network-Error": "NetworkError: Fehler beim Senden auf XMLHTTPRequest: Fehler beim Laden",
+            "Server-Error": "ServerError: Ungültige Antwort von"
         }
     },
     "fr-CH": {
@@ -255,6 +267,8 @@
             "File-Upload": "Faites glisser les fichiers ici pour les télécharger",
             "Search-Empty": "Aucun résultat trouvé",
             "Search-Key": "Essayez avec des mots clés différents",
+            "Filter-Empty": "Aucun résultat trouvé",
+            "Filter-Key": "Essayez avec un filtre différent",
             "Sub-Folder-Error": "Le dossier de destination est le sous-dossier du dossier source.",
             "Access-Denied": "Accès refusé",
             "Access-Details": "Vous n'avez pas la permission d'accéder à ce dossier.",
@@ -263,7 +277,11 @@
             "Button-Keep-Both": "Garde les deux",
             "Button-Replace": "Remplacer",
             "Button-Skip": "Sauter",
-            "ApplyAll-Label": "Faites ceci pour tous les articles en cours"
+            "ApplyAll-Label": "Faites ceci pour tous les articles en cours",
+            "KB": "Ko",
+            "Access-Message": "{0} n'est pas accessible. Vous devez être autorisé à effectuer l'action {1}.",
+            "Network-Error": "NetworkError: échec d'envoi sur XMLHTTPRequest: échec de chargement",
+            "Server-Error": "ServerError: réponse non valide de"
         }
     },
     "ar": {
@@ -344,6 +362,8 @@
             "File-Upload": "اسحب الملفات هنا للتحميل",
             "Search-Empty": "لا توجد نتائج",
             "Search-Key": "جرب بكلمات رئيسية مختلفة",
+            "Filter-Empty": "لم يتم العثور على نتائج",
+            "Filter-Key": "حاول مع مرشح مختلف",
             "Sub-Folder-Error": "المجلد الوجهة هو المجلد الفرعي للمجلد المصدر.",
             "Access-Denied": "تم الرفض",
             "Access-Details": "ليس لديك إذن للوصول إلى هذا المجلد.",
@@ -352,7 +372,11 @@
             "Button-Keep-Both": "احتفظ بكليهما",
             "Button-Replace": "يحل محل",
             "Button-Skip": "تخطى",
-            "ApplyAll-Label": "القيام بذلك لجميع العناصر الحالية"
+            "ApplyAll-Label": "القيام بذلك لجميع العناصر الحالية",
+            "KB": "كيلوبايت",
+            "Access-Message": "{0} لا يمكن الوصول إليه. تحتاج إلى إذن لتنفيذ الإجراء {1}.",
+            "Network-Error": "NetworkError: فشل الإرسال على XMLHTTPRequest: فشل التحميل",
+            "Server-Error": "ServerError: استجابة غير صالحة من"
         }
     },
     "zh": {
@@ -433,6 +457,8 @@
             "File-Upload": "将文件拖到此处上传",
             "Search-Empty": "未找到结果",
             "Search-Key": "尝试使用不同的关键字",
+            "Filter-Empty": "未找到結果",
+            "Filter-Key": "嘗試使用其他過濾器",
             "Sub-Folder-Error": "目标文件夹是源文件夹的子文件夹。",
             "Access-Denied": "拒绝访问",
             "Access-Details": "您无权访问此文件夹。",
@@ -441,7 +467,11 @@
             "Button-Keep-Both": "保留两个",
             "Button-Replace": "更换",
             "Button-Skip": "跳跃",
-            "ApplyAll-Label": "为所有当前项目执行此操作"
+            "ApplyAll-Label": "为所有当前项目执行此操作",
+            "KB": "KB",
+            "Access-Message": "{0}無法訪問。您需要權限才能執行{1}操作。",
+            "Network-Error": "NetworkError：无法在XMLHTTP上发送请求：无法加载",
+            "Server-Error": "ServerError：来自的无效响应"
         }
     }
 }

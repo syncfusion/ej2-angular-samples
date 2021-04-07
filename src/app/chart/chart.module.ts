@@ -112,6 +112,7 @@ import { StackedLineChartComponent } from './stacked-line.component';
 import { PercentStackedLineChartComponent } from './stacked-line-percent.component';
 import { DataEditingComponent } from './data-editing.component';
 import { TooltipTemplateComponent } from './tooltip-template.component';
+import { RangeColorMappingComponent } from './range-color-mapping.component';
 
 export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/line', component: LineChartComponent, name: 'Line', description: "This demo for Essential JS2 Chart control shows how to render the line series.",
@@ -243,6 +244,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/tooltip-template', component: TooltipTemplateComponent, name: 'Tooltip Template', description: "This demo for Essential JS2 Chart control shows how to render and configure the tooltip template.", order: '13', category: 'Chart Customization' },
     { path: ':theme/chart/vertical', component: VerticalChartComponent, name: 'Vertical Chart', description: "This demo for Essential JS2 Chart control shows how to render and configure the vertical type charts.", order: '13', category: 'Chart Customization' },
     { path: ':theme/chart/empty-point', component: EmptyPointChartComponent, name: 'Empty Points', description: "This demo for Essential JS2 Chart control shows how to render and configure the empty points.", order: '13', category: 'Chart Customization'},
+    { path: ':theme/chart/range-color-mapping', component: RangeColorMappingComponent, name: 'Range Color Mapping', description: "This demo for Essential JS2 Chart control shows how to render and configure the range color mapping.", order: '13', category: 'Chart Customization', type: 'new'},
 
     { path: ':theme/chart/print', component: PrintChartComponent, name: 'Print', description: "This demo for Essential JS2 Chart control shows how to print the charts.", order: '14', category: 'Print and Export' },
     { path: ':theme/chart/export', component: ExportChartComponent, name: 'Export', description: "This demo for Essential JS2 Chart control shows how to export the charts to Excel, PDF, and image formats such as SVG, JPEG, and PNG at client-side.", order: '14', category: 'Print and Export' },
@@ -280,7 +282,7 @@ let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, Ba
     RoundedColumnChartComponent, TornadoChartComponent, PlacementColumnChartComponent,
     RangeBarChartComponent, ParetoSeriesChartComponent, DonutComponent,
     RangeSelectionChartComponent, ExportChartComponent, SplineAreaChartComponent,
-    MultiLevelLabelsChartComponent, LineSegmentChartComponent,
+    MultiLevelLabelsChartComponent, LineSegmentChartComponent, RangeColorMappingComponent,
     AxisCrossingChartComponent, AreaSegmentChartComponent, MultiLineChartComponent,
     DateTimeCategoryAxisChartComponent, SortingChartComponent, PieRadiusComponent, StackedStepAreaChartComponent,
     StackedLineChartComponent, PercentStackedLineChartComponent, DataEditingComponent, TooltipTemplateComponent ];

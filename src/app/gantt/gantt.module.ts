@@ -97,12 +97,12 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/split-tasks', component: GanttSplitTasksComponent,
         description: 'This demo explains how to interrupt the already scheduled tasks using the Syncfusion TypeScript Gantt control.',
-        name: 'Split Tasks', order: '01', category: 'Gantt', type: 'new'
+        name: 'Split Tasks', order: '01', category: 'Gantt'
     },
     {
         path: ':theme/gantt/virtual-scroll', component: GanttVirtualScrollComponent,
         description: 'This example illustrates binding large data and smooth scrolling with large data using the Virtual Scroll feature in the Syncfusion Gantt chart.',
-        name: 'Virtual Scroll', order: '01', category: 'Gantt', type: 'new'
+        name: 'Virtual Scroll', order: '01', category: 'Gantt'
     },
     {
         path: ':theme/gantt/local-data', component: GanttLocalDataComponent,

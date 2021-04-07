@@ -28,7 +28,7 @@
         </table>
     </div>
     <div class="content-wrapper">
-        <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=jsonReport width='100%' height='290' [gridSettings]='gridSettings'>
+        <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=jsonReport width='100%' height='290' [gridSettings]='gridSettings' (load)='onLoad($event)'>
         </ejs-pivotview>
     </div>
 </div>

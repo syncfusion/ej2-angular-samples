@@ -14,9 +14,7 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 export class ContainerComponent {
     @ViewChild('gauge')
     public gauge: LinearGaugeComponent;
-    @ViewChild('orientationMode')
     public orientation: DropDownList;
-    @ViewChild('containerMode')
     public container: DropDownList;
     // custom code start
     public load(args: ILoadedEventArgs): void {

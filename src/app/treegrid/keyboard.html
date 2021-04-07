@@ -1,6 +1,6 @@
 <div class="col-lg-9 control-section">
         <div class="content-wrapper">
-                <ejs-treegrid [dataSource]='data' childMapping='subtasks' [treeColumnIndex]='1' [editSettings]='editSettings' height = '900'>
+                <ejs-treegrid [dataSource]='data' childMapping='subtasks' [selectionSettings]='selectionSettings' [treeColumnIndex]='1' [editSettings]='editSettings' height = '900'>
                         <e-columns>
                             <e-column field='taskID' headerText='Task ID' width='90' isPrimaryKey='true' textAlign='Right' editType='numericedit' [validationRules]='taskidrules'></e-column>
                             <e-column field='taskName' headerText='Task Name' width='240' editType='stringedit' [validationRules]='tasknamerules'></e-column>

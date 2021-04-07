@@ -59,7 +59,7 @@ import { FlowExecutionDiagramComponent } from 'src/app/diagram/flow-execution.co
 import { HistoryManagerDiagramComponent } from 'src/app/diagram/history-manager.component';
 import { EventsDiagramComponent } from './diagram-events.component';
 import { TooltipDiagramComponent } from './tooltip.component';
-import { LineRoutingComponent } from './line-routing';
+import { LineRoutingComponent } from './line-routing.component';
 import { VirtualizationComponent } from './virtualization';
 
 export const diagramAppRoutes: Object[] = [
@@ -127,7 +127,7 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/custom-shapes', component: ComplexShapesDiagramComponent,
-        name: 'HTML Shapes', type: "update",
+        name: 'HTML Shapes',
         category: 'Getting Started', order: '01',
         description: 'This sample demonstrates how to host a HTML element inside a node. In this example, ' +
             'a Gauge control is hosted inside a HTML Node.'
@@ -177,7 +177,7 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/Virtualization', component: VirtualizationComponent,
-        name: 'Virtualization',type: "new",
+        name: 'Virtualization',
         category: 'Getting Started', order: '01',
         description: 'This sample demonstrates the default UI virtualization functionality. Scroll the diagram for UI virtualization.'
     },
@@ -211,7 +211,7 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/complex-hierarchical-tree', component: ComplexHierarchicalTreeDiagramComponent,
-        name: 'Complex Hierarchical Tree', type: "update",
+        name: 'Complex Hierarchical Tree',
         category: 'Automatic Layouts', order: '03',
         description: 'This sample demonstrates a complex hierarchical template that is built from an external data ' +
             'source using complex hierarchical tree algorithm.'

@@ -67,7 +67,8 @@ export class MapsSeatSelectionComponent {
             selectionSettings: {
                 enable: true,
                 opacity: 1,
-                enableMultiSelect: true
+                enableMultiSelect: true,
+                fill : 'green'
             }
         }
     ];

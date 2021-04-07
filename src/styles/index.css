@@ -2213,6 +2213,7 @@ body.highcontrast,
   padding-left: 6px;
   padding-right: 10px;
   padding-top: 9px;
+  font-size: 14px !important;
   display: table-cell;
 }
 
@@ -2589,7 +2590,6 @@ body.highcontrast,
 }
 
 .sb-npm-btn {
-  display: none;
   background: #fff;
   border: 1px solid #3c78ef;
   border-radius: 3px;

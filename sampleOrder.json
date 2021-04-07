@@ -1051,6 +1051,7 @@
             "paging-api": "Paging API",
             "default-scrolling": "Default Scrolling",
             "virtual-scrolling": "Virtual Scrolling",
+            "infinite-scrolling": "Infinite Scrolling",
             "selection": "Default Selection",
             "selection-api": "Selection API",
             "checkbox-selection": "Checkbox Selection",

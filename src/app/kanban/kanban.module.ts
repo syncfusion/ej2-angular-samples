@@ -31,15 +31,13 @@ import { WIPValidationComponent } from './wip-validation.component';
 import { EventsComponent } from './events.component';
 import { APIComponent } from './api.component';
 
-
-
 import { SharedModule } from '../common/shared.module';
 
 export const kanbanRouteConfig: Object[] = [
   { 'path': ':theme/kanban/overview', component: OverviewComponent, name: 'Overview', order: '01', category: 'Kanban', description: 'The example is designed to enable most essential features such as templating, swimlane, toggling columns, tooltip, and more in JS Kanban board.' },
   { 'path': ':theme/kanban/default', component: DefaultComponent, name: 'Default Functionalities', order: '01', category: 'Kanban', description: 'This demo for Essential JS2 Kanban component shows how the flat Kanban looks like with its default set of minimal configurations.' },
   { 'path': ':theme/kanban/swimlane', component: SwimlaneComponent, name: 'Swimlane', order: '01', category: 'Kanban', description: 'The example explains how to configure swimlane and its related settings (sorting order, drag-and-drop, and more) in JavaScript Kanban board.' },
-  { 'path': ':theme/kanban/workflow', component: WorkflowComponent, type: 'new', name: 'Workflow', order: '01', category: 'Kanban', description: 'The example demonstrates a workflow feature that controls the flow of cards while drag-and-drop the cards between the columns.' },
+  { 'path': ':theme/kanban/workflow', component: WorkflowComponent, name: 'Workflow', order: '01', category: 'Kanban', description: 'The example demonstrates a workflow feature that controls the flow of cards while drag-and-drop the cards between the columns.' },
   { 'path': ':theme/kanban/stacked-header', component: StackedHeaderComponent, name: 'Stacked Header', order: '01', category: 'Kanban', description: 'The example explains how to add a stacked header to group logically related columns above a column header in JS Kanban.' },
   { 'path': ':theme/kanban/dialog-editing', component: DialogEditingComponent, name: 'Dialog Editing', order: '01', category: 'Kanban', description: 'The example explains how to handle the CRUD (Create, Read, Update, and Delete) actions on the JS Kanban cards from the application end.' },
   { 'path': ':theme/kanban/search-filter', component: SearchFilterComponent, name: 'Search and Filter Cards', order: '01', category: 'Kanban', description: 'The example demo shows how to filter the cards and make searching when more number of cards on a JavaScript Kanban board that helps you to focus.' },

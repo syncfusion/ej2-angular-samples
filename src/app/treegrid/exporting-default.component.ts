@@ -1,8 +1,9 @@
 import { Component, OnInit , ViewChild} from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { TreeGridComponent , ToolbarService, PageService, ExcelExportService, PdfExportService} from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent , TreeGridExcelExportProperties, TreeGridPdfExportProperties, ToolbarService, PageService, ExcelExportService, PdfExportService} from '@syncfusion/ej2-angular-treegrid';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
 import { DialogUtility } from '@syncfusion/ej2-popups';
+import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'exporting-default.html',
@@ -11,8 +12,11 @@ import { DialogUtility } from '@syncfusion/ej2-popups';
 export class DefaultExportComponent implements OnInit {
     public data: Object[] = [];
     public toolbar: string[];
+    public collapseStatePersist: boolean = true;
     @ViewChild('treegrid')
     public treegrid: TreeGridComponent;
+    @ViewChild('checkbox')
+    public checkbox: CheckBoxComponent;
     ngOnInit(): void {
         this.data = sampleData;
         this.toolbar = ['ExcelExport', 'PdfExport', 'CsvExport'];
@@ -28,17 +32,32 @@ export class DefaultExportComponent implements OnInit {
                     DialogUtility.alert({content: innercontent});
               }
               else {
-                this.treegrid.pdfExport();
+                let pdfExportProperties: TreeGridPdfExportProperties = {
+                    isCollapsedStatePersist: this.collapseStatePersist
+                };
+                this.treegrid.pdfExport(pdfExportProperties);
               }
         
                 break;
             case this.treegrid.grid.element.id + '_excelexport':
-                this.treegrid.excelExport();
+                let excelExportProperties: TreeGridExcelExportProperties = {
+                    isCollapsedStatePersist: this.collapseStatePersist
+                };
+                this.treegrid.excelExport(excelExportProperties);
                 break;
             case this.treegrid.grid.element.id + '_csvexport':
                 this.treegrid.csvExport();
                 break;
              
         }
+    }
+
+    public onClick(e: MouseEvent): void {
+        if (this.checkbox.checked) {
+            this.collapseStatePersist = true;
+        } else {
+            this.collapseStatePersist = false;
+        }
+
     }
 }

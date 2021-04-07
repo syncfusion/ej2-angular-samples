@@ -12,6 +12,7 @@ export class KeyBoardComponent implements OnInit {
     public tasknamerules: Object;
     public numberrules: Object;
     public daterules: Object;
+    public selectionSettings: Object;
 
     ngOnInit(): void {
         this.data = sampleData;
@@ -24,6 +25,7 @@ export class KeyBoardComponent implements OnInit {
         this.numberrules = { number: true, min: 0 };
         this.taskidrules = { required: true, number: true };
         this.tasknamerules = { required: true };
+        this.selectionSettings = { type: 'Multiple' };
         this.daterules = { date: true};
     }
 }

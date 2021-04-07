@@ -4,7 +4,7 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, TableService, FileManagerService } from '@syncfusion/ej2-angular-richtexteditor';
-import { FileManagerSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
+import { FileManagerSettingsModel, QuickToolbarSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, addClass, removeClass, Browser } from '@syncfusion/ej2-base';
 import * as CodeMirror from 'codemirror';
 import 'codemirror/mode/javascript/javascript';
@@ -45,6 +45,10 @@ export class FullFeatureComponent {
             uploadUrl: this.hostUrl + 'api/FileManager/Upload',
             downloadUrl: this.hostUrl + 'api/FileManager/Download'
         }
+    };
+
+    public quickToolbarSettings: QuickToolbarSettingsModel = {
+        table: ['TableHeader', 'TableRows', 'TableColumns', 'TableCell', '-', 'BackgroundColor', 'TableRemove', 'TableCellVerticalAlign', 'Styles']
     };
 
     public maxLength = 1000;

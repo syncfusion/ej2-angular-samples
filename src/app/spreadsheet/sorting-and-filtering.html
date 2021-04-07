@@ -4,7 +4,7 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-spreadsheet #spreadsheet (created)="created()">
+    <ejs-spreadsheet #spreadsheet [openUrl]="openUrl" [saveUrl]="saveUrl" (created)="created()">
         <e-sheets>
             <e-sheet name="Employee details">
                 <e-ranges>

@@ -62,17 +62,6 @@
                                 </ng-template>
                             </e-item>
                             <e-item type='Separator'></e-item>
-                            <e-item tooltipText='Week Number'>
-                                <ng-template #template>
-                                    <div style="height: 46px; line-height: 23px;">
-                                        <div class="icon-child" style="text-align: center;">
-                                            <ejs-switch id="week_number" [checked]="false"
-                                                (change)="onWeekNumberChange($event)"></ejs-switch>
-                                        </div>
-                                        <div class="text-child" style="font-size: 14px;">Week Number</div>
-                                    </div>
-                                </ng-template>
-                            </e-item>
                             <e-item tooltipText='Resource Grouping'>
                                 <ng-template #template>
                                     <div style="height: 46px; line-height: 23px;">
@@ -114,6 +103,17 @@
                                                 (change)="onTooltipChange($event)"></ejs-switch>
                                         </div>
                                         <div class="text-child" style="font-size: 14px;">Tooltip</div>
+                                    </div>
+                                </ng-template>
+                            </e-item>
+                            <e-item tooltipText='Allow Multi Drag'>
+                                <ng-template #template>
+                                    <div style="height: 46px; line-height: 23px;">
+                                        <div class="icon-child" style="text-align: center;">
+                                            <ejs-switch id="multi_drag" [checked]="false"
+                                                (change)="onAllowMultiDrag($event)"></ejs-switch>
+                                        </div>
+                                        <div class="text-child" style="font-size: 14px;">Allow Multi Drag</div>
                                     </div>
                                 </ng-template>
                             </e-item>
@@ -251,8 +251,9 @@
                                 <label style="line-height: 34px; margin: 0;">Work week</label>
                             </div>
                             <div class="col-right">
-                                <ejs-multiselect id='workWeekDays' width='170px' [dataSource]='weekDays' [showClearButton]='false'
-                                    [showDropDownIcon]='true' [mode]='checkboxMode' [fields]='fields' popupHeight='150px' [value]='workDays'
+                                <ejs-multiselect id='workWeekDays' width='170px' [dataSource]='weekDays'
+                                    [showClearButton]='false' [showDropDownIcon]='true' [mode]='checkboxMode'
+                                    [fields]='fields' popupHeight='150px' [value]='workDays'
                                     (change)='onWorkWeekDayChange($event)'></ejs-multiselect>
                             </div>
                         </div>
@@ -262,8 +263,9 @@
                             </div>
                             <div class="col-right">
                                 <ejs-multiselect id='resources' width='170px' [dataSource]='resourceDataSource'
-                                    [mode]='checkboxMode' [fields]='calendarFields' popupHeight='150px' [showClearButton]='false'
-                                    [showDropDownIcon]='true' [value]='calendarsValue' (change)='onResourceChange($event)'></ejs-multiselect>
+                                    [mode]='checkboxMode' [fields]='calendarFields' popupHeight='150px'
+                                    [showClearButton]='false' [showDropDownIcon]='true' [value]='calendarsValue'
+                                    (change)='onResourceChange($event)'></ejs-multiselect>
                             </div>
                         </div>
                         <div class="col-row">
@@ -333,6 +335,26 @@
                                 <ejs-dropdownlist id='slotInterval' width='170px' [dataSource]='timeSlotCount'
                                     (change)='onTimescaleIntervalChange($event)' [value]='timeSlotCountValue'
                                     popupHeight='150px'></ejs-dropdownlist>
+                            </div>
+                        </div>
+                        <div class="col-row">
+                            <div class="col-left">
+                                <label style="line-height: 34px; margin: 0;">Time Format</label>
+                            </div>
+                            <div class="col-right">
+                                <ejs-dropdownlist id='timeFormat' width='170px' [dataSource]='timeFormatData'
+                                    (change)='onTimeFormatChange($event)' [fields]='timeSlotFields'
+                                    [value]='timeFormatValue' popupHeight='150px'></ejs-dropdownlist>
+                            </div>
+                        </div>
+                        <div class="col-row">
+                            <div class="col-left">
+                                <label style="line-height: 34px; margin: 0;">Week Numbers</label>
+                            </div>
+                            <div class="col-right">
+                                <ejs-dropdownlist id='weekNumber' width='170px' [dataSource]='weekNumberData'
+                                    (change)='onweekNumberChange($event)' [fields]='timeSlotFields'
+                                    [value]='weekNumberValue' popupHeight='150px'></ejs-dropdownlist>
                             </div>
                         </div>
                     </div>

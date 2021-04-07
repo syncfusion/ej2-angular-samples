@@ -14,7 +14,7 @@
                         Comments</label>
                     <ejs-inplaceeditor #inplaceCommentEditor mode="Inline" emptyText='Enter your comment'
                         submitOnEnter='false' type='RTE' name='rte' data-underline="false" [popupSettings]="commentsPopSettings"
-                        [model]="commentEditorModel" [validationRules]='commentRule' [value]='commentEditorValue'></ejs-inplaceeditor>
+                        [model]="commentEditorModel" [validationRules]='commentRule' [value]='commentEditorValue' (created)='commentCreated()'></ejs-inplaceeditor>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-6 control-label" style="text-align: left;font-size: 14px;">

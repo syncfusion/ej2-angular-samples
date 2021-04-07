@@ -65,7 +65,7 @@ const themes: string[] = ['material', 'fabric', 'bootstrap', 'highcontrast', 'bo
 let selectedTheme: string;
 let themeFlag: boolean = true;
 let slideFlag: boolean = false;
-let resetSearch: Element = select('.sb-reset-icon');
+
 
 declare let hljs: any;
 /**
@@ -106,6 +106,7 @@ export class SBController {
     public resizeTimer: number = 0;
     public prevSampleName: string = '';
     public prevControlName: string = '';
+    public copyRight: number = new Date().getFullYear();
 
     //Bread Crumb Object
     public breadCrumbObject:
@@ -634,11 +635,6 @@ export class SBController {
         }
     }
 
-    resetInput(): void {
-        (<HTMLInputElement>document.getElementById('search-input')).value = '';
-        document.getElementById('search-input-wrapper').setAttribute('data-value', '');
-    }
-
     wireEvents() {
         select('#header-theme-switcher').addEventListener('click', this.onThemeButtonClick.bind(this));
         select('.setting-responsive').addEventListener('click', this.onMouseTouchButtonClick.bind(this));
@@ -656,7 +652,11 @@ export class SBController {
         window.addEventListener('resize', this.onSBResize.bind(this));
         document.addEventListener('click', this.onDocClick.bind(this));
         document.getElementById('themelist').addEventListener('click', this.onChangeTheme.bind(this));
-        document.addEventListener('click', this.resetInput);
+        document.addEventListener('keydown',(e:KeyboardEvent)=> {
+            if(e.keyCode==27){
+               document.querySelector('.e-search-overlay').classList.add('sb-hide');
+            }
+        });
     }
 
     onPrevButtonClick(): void {
