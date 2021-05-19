@@ -51,6 +51,7 @@ export class ProgressBarProgressSegmentComponent {
         selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
         switch (selectedTheme) {
             case 'material':
+                args.progressBar.trackColor = '#f6a4c0';
                 args.progressBar.annotations[0].content = '<div id="point1" style="font-size:24px;font-weight:bold;color:#e91e63"><span></span></div>';
                 break;
             case 'fabric':

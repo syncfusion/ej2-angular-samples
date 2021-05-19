@@ -100,7 +100,9 @@ export class DragAndDropComponent {
         let dropElement = args.target.closest("#draggableTab .e-toolbar-item");
         if (dropElement != null) {
             let tabElement = document.querySelector("#draggableTab");
-            let dropItemIndex = [].slice.call(tabElement.querySelectorAll(".e-toolbar-item")).indexOf(dropElement);
+            let itemPosition = (((args.event.type.indexOf('touch') > -1) ? args.event.changedTouches[0].clientX
+                : args.event.clientX) < dropElement.getBoundingClientRect().left + (dropElement as HTMLElement).offsetWidth / 2) ? 0 : 1;
+            let dropItemIndex = [].slice.call(tabElement.querySelectorAll(".e-toolbar-item")).indexOf(dropElement) + itemPosition;
             let tabContent;
             switch (args.draggedNodeData.text) {
                 case "DropDown List":
@@ -128,20 +130,13 @@ export class DragAndDropComponent {
                     break;
             }
             let newTabItem = [{ header: { text: args.draggedNodeData.text.toString() }, content: tabContent }];
-
             this.tabObj.addTab(newTabItem, dropItemIndex);
             this.treeObj.removeNodes([args.draggedNode]);
-            args.cancel = true;
-        } else {
-            let dropNode = args.target.closest("#ListView .e-list-item ");
-            if (!isNullOrUndefined(dropNode) && args.dropIndicator === "e-drop-in") {
-                args.cancel = true;
-            }
         }
-
+        args.cancel = true;
     }
     onTabCreate(): void {
-        let tabElement = document.getElementById("#draggableTab");
+        let tabElement: HTMLElement = document.getElementById('draggableTab');
         if (!isNullOrUndefined(tabElement)) {
             tabElement.querySelector(".e-tab-header").classList.add("e-droppable");
             tabElement.querySelector(".e-content").classList.add("tab-content");

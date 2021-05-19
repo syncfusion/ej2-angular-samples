@@ -2,24 +2,112 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
 
-## Run your Sample Browser
+## **Using the samples**
 
+## Installing
 
-### Development server
+Before installation check `@syncfusion:registry=http://nexus.syncfusion.com/repository/ej2-production/` is available in npmrc file. Then use the below command to install all dependent packages.
 
-Run `npm run ship-source` for to update latest styles and stackb sample source.
+```
+npm install
+```
 
-Then run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Build
 
-### Production server
+Use `npm run build` command to compile the source files. It calls the following tasks synchronously,
 
-Run `npm run ship-source` for to update latest styles and stackb sample source.
+1. SEO changes
+2. Styles ship
+3. Site-map generate.
+4. Copy source
+5. Build production
+6. Move
 
-Then run `npm run start:prod` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### SEO changes
 
-### Build
+It will set meta data and description for the h1 tag to show our components first in search engine. Use the below command to run it individual. 
 
-Run `npm run build:dev` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `npm run build:prod` flag for a production build.
+```
+gulp SEO-changes
+```
+
+### Styles Shipping
+
+It copies css files for themes from node_modules. Use the below command to run it individual.
+
+```
+gulp styles-shipping
+```
+
+### Site-map generation
+The below command combines sample of all components and store it in sitemap-demos.xml file to index our components, samples, documents in search engine.
+
+```
+gulp sitemap-generate
+```
+
+### Copy source
+
+It select all the files in `src/app/` and check the indexof value of the files is `/common`. If the condition satisfies it copy the files to `src/source`. Use the below command to run this task.
+
+```
+gulp copy-source
+```
+
+### Build Production
+
+Use the below command to flag for a production build.
+
+```
+npm run build:prod
+```
+
+### Move
+
+It copy files from OpennewSamples folder to output folder and replace `(/assets)` to `(./assets` if the `./output/main-es5.js` is exist. To run this task use the below command.
+
+```
+gulp move
+```
+
+## Test
+
+It runs unit tests in a project. Use the below command to run this task,
+
+```
+ng test
+```
+
+## Lint
+
+It runs linting tools on Angular app code. Use the below command to run lint task,
+
+```
+ng lint
+```
+
+## Run the Sample Browser
+
+To run your sample browser you can use any of the following command. This will help at development time. If any changes detect means it will automatically compile and browser will reloaded.
+
+```
+npm run start
+```
+
+**Access URLs:**
+
+Local URL is works only in your machine.
+
+```
+http://localhost:4200
+```
+External URL is works in all locally connected LAN. (You can use to see sample browser in mobile).
+
+```
+http://your-ip-address:4200
+```
+
+**Note:** Here, The mentioned IP is your local machine IP Address.
 
 # Angular Sample Configuration
 

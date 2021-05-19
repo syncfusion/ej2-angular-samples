@@ -1,7 +1,7 @@
 import { NgModule, Type, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HttpModule } from '@angular/http';
+//import { HttpModule } from '@angular/http';
 import { ScheduleAllModule, RecurrenceEditorAllModule } from '@syncfusion/ej2-angular-schedule';
 import { NumericTextBoxAllModule, TextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { DatePickerAllModule, TimePickerAllModule, DateTimePickerAllModule } from '@syncfusion/ej2-angular-calendars';
@@ -146,7 +146,7 @@ const declarations: Type<Object>[] = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(scheduleRouteConfig), CommonModule, HttpModule, ScheduleAllModule, RecurrenceEditorAllModule,
+  imports: [RouterModule.forChild(scheduleRouteConfig), CommonModule, ScheduleAllModule, RecurrenceEditorAllModule,
     NumericTextBoxAllModule, TextBoxAllModule, DatePickerAllModule, TimePickerAllModule, DateTimePickerAllModule, CheckBoxAllModule,
     ToolbarAllModule, DropDownListAllModule, ContextMenuAllModule, MaskedTextBoxModule, UploaderAllModule, MultiSelectAllModule,
     TreeViewModule, ButtonAllModule, DropDownButtonAllModule, SwitchAllModule, SharedModule],

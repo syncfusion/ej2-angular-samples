@@ -18,6 +18,7 @@ import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor'
 import { ScheduleAllModule } from '@syncfusion/ej2-angular-schedule';
 import { CalendarAllModule, DateRangePickerAllModule } from '@syncfusion/ej2-angular-calendars';
 import { ChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { TreeViewModule  } from '@syncfusion/ej2-angular-navigations';
 
 export const tabAppRoutes: Object[] = [
     { path: ':theme/tab/default', component: DefaultTabComponent, name: 'Default Functionalities', description: 'The sample demonstrates about default functionalities of the Tab component (also known as Tabbed UI) which is navigation component in Angular platform.', category: 'Tab' },
@@ -30,7 +31,7 @@ export const tabAppRoutes: Object[] = [
 export const tabRouter: ModuleWithProviders<any> = RouterModule.forChild(tabAppRoutes);
 
 @NgModule({
-    imports: [tabRouter, SharedModule, NumericTextBoxAllModule, TabAllModule, GridAllModule, DialogAllModule, DatePickerAllModule, DropDownListModule, AutoCompleteAllModule, ScheduleAllModule, RichTextEditorAllModule, UploaderAllModule, CalendarAllModule, DateRangePickerAllModule, ChartAllModule],
+    imports: [tabRouter, SharedModule, NumericTextBoxAllModule, TabAllModule, GridAllModule, DialogAllModule, DatePickerAllModule, DropDownListModule, AutoCompleteAllModule, ScheduleAllModule, RichTextEditorAllModule, UploaderAllModule, CalendarAllModule, DateRangePickerAllModule, ChartAllModule, TreeViewModule],
     declarations: [
         DefaultTabComponent,
         OrientationTabComponent,
