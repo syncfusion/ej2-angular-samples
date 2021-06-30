@@ -75,9 +75,12 @@ export class CustomFilteringAutoCompleteComponent {
         // pass the filter data source to updateData method.
         e.updateData(data, null);
         let popupElement: HTMLElement = document.getElementById('books_popup');
-        let lists: Element[] = <NodeListOf<Element> & Element[]>popupElement.querySelectorAll('.e-list-item');
-        // For highlight the typed characters, pass the result data and list items to highlightSearch method.
-        this.highlightSearch(lists, result);
+        if (popupElement)
+        {
+            let lists: Element[] = <NodeListOf<Element> & Element[]>popupElement.querySelectorAll('.e-list-item');
+            // For highlight the typed characters, pass the result data and list items to highlightSearch method.
+            this.highlightSearch(lists, result);
+        }
     }
 
     public highlightSearch(listItems: Element[], result: any): void {

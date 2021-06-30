@@ -16,3 +16,9 @@
     .highcontrast #Indicators .description::before {
     content: '\e310';
     }
+	.tailwind #Indicators .okIcon::before {
+		content: '\e7b0';
+	}
+	.tailwind #Indicators .description::before {
+		content: '\e7b6';
+	}

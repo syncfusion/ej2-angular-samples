@@ -73,6 +73,9 @@
   #dockSidebar {
     text-align: center;
   }
+  #dockSidebar .content-area {
+    margin: 0px;
+  }
 
   #dockSidebar li.sidebar-item .e-icons {
     font-size: 20px;

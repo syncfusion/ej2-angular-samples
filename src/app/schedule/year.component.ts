@@ -6,6 +6,15 @@ import {
 @Component({
     selector: 'control-content',
     templateUrl: 'year.html',
+    styles: [`    
+    .year-view.e-schedule .e-timeline-year-view .e-resource-column-table,
+    .year-view.e-schedule .e-timeline-year-view .e-resource-left-td {
+      width: 120px;
+    }
+
+    .col-lg-2.property-section .property-panel-table td {
+        padding-bottom: 1rem;
+    }`],
     providers: [YearService, TimelineYearService, ResizeService, DragAndDropService]
 })
 export class YearComponent {
@@ -20,8 +29,23 @@ export class YearComponent {
         { text: 'Steven', id: 2, color: '#7fa900' },
         { text: 'Robert', id: 3, color: '#ea7a57' },
         { text: 'Smith', id: 4, color: '#5978ee' },
-        { text: 'Micheal', id: 5, color: '#df5286' }
+        { text: 'Michael', id: 5, color: '#df5286' }
     ];
+    public months: { [key: string]: Object }[] = [
+        { text: 'January', value: 0 },
+        { text: 'February', value: 1 },
+        { text: 'March', value: 2 },
+        { text: 'April', value: 3 },
+        { text: 'May', value: 4 },
+        { text: 'June', value: 5 },
+        { text: 'July', value: 6 },
+        { text: 'August', value: 7 },
+        { text: 'September', value: 8 },
+        { text: 'October', value: 9 },
+        { text: 'November', value: 10 },
+        { text: 'December', value: 11 }
+    ];
+    public fields = { text: 'text', value: 'value' };
 
     public onEventRendered(args: EventRenderedArgs): void {
         const eventColor: string = args.data.EventColor as string;
@@ -30,6 +54,14 @@ export class YearComponent {
         } else {
             args.element.style.backgroundColor = eventColor;
         }
+    }
+
+    public firstMonthOfYear(args: { [key: string]: Object }): void {
+        this.scheduleObj.firstMonthOfYear = args.value as number;
+    }
+
+    public numberOfMonths(args: { [key: string]: Object }): void {
+        this.scheduleObj.monthsCount = args.value as number;
     }
 
     public generateEvents(count: number = 250, date: Date = new Date()): Object[] {

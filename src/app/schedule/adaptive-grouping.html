@@ -1,0 +1,34 @@
+<div class="control-section">
+  <div class="content-wrapper schedule-wrapper">
+    <ejs-schedule #scheduleObj id="schedule" width='100%' height='650px' [group]="group" [(currentView)]="currentView"
+      [selectedDate]="selectedDate" [enableAdaptiveUI]="true" [eventSettings]="eventSettings">
+      <e-views>
+        <e-view option="Day"></e-view>
+        <e-view option="Week"></e-view>
+        <e-view option="Month"></e-view>
+      </e-views>
+      <e-resources>
+        <e-resource field='ProjectId' title='Choose Project' [dataSource]='projectDataSource'
+          [allowMultiple]='allowMultiple' name='Projects' textField='text' idField='id' colorField='color'>
+        </e-resource>
+        <e-resource field='TaskId' title='Category' [dataSource]='categoryDataSource' [allowMultiple]='allowMultiple'
+          name='Categories' textField='text' idField='id' groupIDField='groupId' colorField='color'>
+        </e-resource>
+      </e-resources>
+    </ejs-schedule>
+  </div>
+</div>
+
+<div id="action-description">
+  <p>This demo showcases how multiple resources are grouped in compact view and how events are portrayed in the
+    scheduler view layouts.</p>
+</div>
+
+<div id="description">
+  <p>
+    In this demo, we have showcased the Schedule views and resource grouping in the compact view mode with the help of
+    the <code>enableAdaptiveUI</code> property. In Scheduler view, only one resource has been shown to enhance the view
+    experience of resource events details
+    clearly.
+  </p>
+</div>

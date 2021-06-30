@@ -19,6 +19,11 @@
   border: 0;
 }
 
+.tailwind .sample_container.badge-list #lists .e-list-item {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 /* SVG Icons and Customization */
 
 .list_svg {

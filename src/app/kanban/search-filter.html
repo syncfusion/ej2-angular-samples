@@ -23,7 +23,7 @@
                     <td>
                         <div>
                             <ejs-dropdownlist id='priority_filter' #priority_filter [dataSource]='priorityData'
-                                (change)='change($event)' index=0 placeholder='Select a priority'></ejs-dropdownlist>
+                                (select)='prioritySelect($event)' index=0 placeholder='Select a priority'></ejs-dropdownlist>
                         </div>
                     </td>
                 </tr>
@@ -34,7 +34,7 @@
                     <td>
                         <div>
                             <ejs-dropdownlist id='status_filter' #status_filter [dataSource]='statusData'
-                                (change)='change($event)' [fields]='fields' [value]='value'
+                                (select)='statusSelect($event)' [fields]='fields' [value]='value'
                                 placeholder='Select a status'></ejs-dropdownlist>
                         </div>
                     </td>

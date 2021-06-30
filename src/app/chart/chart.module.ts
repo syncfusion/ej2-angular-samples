@@ -14,6 +14,7 @@ import { SplineAreaChartComponent } from './spline-area.component';
 import { AreaChartComponent } from './area.component';
 import { BarChartComponent } from './bar.component';
 import { RangeAreaComponent } from './range-area.component';
+import { SplineRangeAreaComponent } from './spline-range-area.component';
 import { RangeColumnChartComponent } from './range-column.component';
 import { ColumnChartComponent } from './column.component';
 import { HistogramChartComponent } from './histogram.component';
@@ -130,6 +131,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/spline-area', component: SplineAreaChartComponent, name: 'Spline Area', description: "This demo for Essential JS2 Chart control shows how to render the spline area series.", order: '02', category: 'Area Charts' },
     { path: ':theme/chart/step-area', component: StepAreaChartComponent, name: 'Step Area', description: "This demo for Essential JS2 Chart control shows how to render the step area series.", order: '02', category: 'Area Charts' },
     { path: ':theme/chart/range-area', component: RangeAreaComponent, name: 'Range Area', description: "This demo for Essential JS2 Chart control shows how to render the range area series.", order: '02', category: 'Area Charts' },
+    { path: ':theme/chart/spline-range-area', component: SplineRangeAreaComponent, name: 'Spline Range Area', description: "This demo for Essential JS2 Chart control shows how to render the spline range area series.", order: '02', category: 'Area Charts', type: 'new' },
     { path: ':theme/chart/stacked-area', component: StackedAreaChartComponent, name: 'Stacked Area', description: "This demo for Essential JS2 Chart control shows how to render the stacking area series.", order: '02', category: 'Area Charts' },
     { path: ':theme/chart/stacked-step-area', component: StackedStepAreaChartComponent, name: 'Stacked Step Area', description: "This demo for Essential JS2 Chart control shows how to render the stacking step area series.", order: '02', category: 'Area Charts'},
     { path: ':theme/chart/stacked-area-percent', component: PercentStackedAreaChartComponent, name: '100% Stacked Area', description: "This demo for Essential JS2 Chart control shows how to render the 100 percent stacking area series.", order: '02', category: 'Area Charts' },
@@ -244,7 +246,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/tooltip-template', component: TooltipTemplateComponent, name: 'Tooltip Template', description: "This demo for Essential JS2 Chart control shows how to render and configure the tooltip template.", order: '13', category: 'Chart Customization' },
     { path: ':theme/chart/vertical', component: VerticalChartComponent, name: 'Vertical Chart', description: "This demo for Essential JS2 Chart control shows how to render and configure the vertical type charts.", order: '13', category: 'Chart Customization' },
     { path: ':theme/chart/empty-point', component: EmptyPointChartComponent, name: 'Empty Points', description: "This demo for Essential JS2 Chart control shows how to render and configure the empty points.", order: '13', category: 'Chart Customization'},
-    { path: ':theme/chart/range-color-mapping', component: RangeColorMappingComponent, name: 'Range Color Mapping', description: "This demo for Essential JS2 Chart control shows how to render and configure the range color mapping.", order: '13', category: 'Chart Customization', type: 'new'},
+    { path: ':theme/chart/range-color-mapping', component: RangeColorMappingComponent, name: 'Range Color Mapping', description: "This demo for Essential JS2 Chart control shows how to render and configure the range color mapping.", order: '13', category: 'Chart Customization'},
 
     { path: ':theme/chart/print', component: PrintChartComponent, name: 'Print', description: "This demo for Essential JS2 Chart control shows how to print the charts.", order: '14', category: 'Print and Export' },
     { path: ':theme/chart/export', component: ExportChartComponent, name: 'Export', description: "This demo for Essential JS2 Chart control shows how to export the charts to Excel, PDF, and image formats such as SVG, JPEG, and PNG at client-side.", order: '14', category: 'Print and Export' },
@@ -276,7 +278,7 @@ let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, Ba
     PolarStackedAreaChartComponent,
     PolarStackedColumnChartComponent, IndexedAxisChartComponent, VerticalChartComponent, AnnotationChartComponent, DataLabelComponent,
     StripLineRecurrenceChartComponent, StripLineChartComponent, EmptyPointChartComponent,
-    PieEmptyPointChartComponent, PrintChartComponent, BoxandWhiskerChartComponent, RangeAreaComponent,
+    PieEmptyPointChartComponent, PrintChartComponent, BoxandWhiskerChartComponent, RangeAreaComponent, SplineRangeAreaComponent,
     SmartAxisLabelsChartComponent, ErrorBarChartComponent, TrendLineChartComponent,
     InversedSplineChartComponent, DashedLineChartComponent, EmptyAreaChartComponent,
     RoundedColumnChartComponent, TornadoChartComponent, PlacementColumnChartComponent,

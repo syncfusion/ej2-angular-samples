@@ -48,6 +48,7 @@ export class DrilldownPieComponent {
     public explodeIndex: number = 2;
     public endAngle: number = 360;
     public title: string = 'Automobile Sales by Category';
+    public isparent: boolean = true;
     public onTextRender(args: IAccTextRenderEventArgs): void {
         args.text = args.point.x + ' ' + args.point.y + ' %';
     }
@@ -57,7 +58,8 @@ export class DrilldownPieComponent {
         '<img src="./assets/chart/images/back.png" id="back" />';
         let darkThemeContent = '<div id= "white" style="cursor:pointer;padding:3px;width:30px; height:30px;">'+
         '<img src="./assets/chart/images/white.png" id="back" /><div>';
-        if (document.getElementById('container_Series_' + index.series + '_Point_' + index.point)) {
+        if (this.isparent && document.getElementById('container_Series_' + index.series + '_Point_' + index.point)) {
+            this.isparent = false;
             this.pie.annotations = [{
                 content: this.pie.theme === 'HighContrast' ? darkThemeContent : lightThemeContent, region: 'Series', x: '50%', y: '50%'
             }];
@@ -98,6 +100,7 @@ export class DrilldownPieComponent {
             this.pie.annotations[0].content = null;
             this.pie.series[0].dataSource = this.data;
             this.pie.series[0].dataLabel = this.dataLabel;
+            this.isparent = true;
             this.pie.title = this.title;
             this.pie.legendSettings.visible = false;
             this.pie.visibleSeries[0].explodeIndex = this.explodeIndex;
@@ -109,11 +112,11 @@ export class DrilldownPieComponent {
             document.getElementById('text').style.visibility = 'hidden';
             
         }
-        this.pie.refresh();
     }
     public onClick(e: MouseEvent): void {
         this.pie.series[0].dataSource = this.data;
         this.pie.series[0].dataLabel = this.dataLabel;
+        this.isparent = true;
         this.pie.title = this.title;
         this.pie.legendSettings.visible = false;
         this.pie.visibleSeries[0].explodeIndex = this.explodeIndex;
@@ -128,9 +131,6 @@ export class DrilldownPieComponent {
         this.pie.series[0].innerRadius = '0%';
         this.pie.refresh();
         (getElement('category') as HTMLElement).style.visibility = 'hidden';
-        document.getElementById('symbol').style.visibility = 'hidden';
-        document.getElementById('text').style.visibility = 'hidden';
-        this.pie.refresh();
         (e.target as HTMLButtonElement).style.visibility = 'hidden';
         document.getElementById('symbol').style.visibility = 'hidden';
         document.getElementById('text').style.visibility = 'hidden';

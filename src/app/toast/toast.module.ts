@@ -15,7 +15,7 @@ export const toastAppRoutes: Object[] = [
     { path: ':theme/toast/types', component: TypesController, order: '01', name: 'Types', description: 'This demo for Essential JS2 Toast control shows 4-predefined toast colors for various scenarios which can be using CSS class.', category: 'Toast' },
     { path: ':theme/toast/template', component: TemplateController, order: '01', name: 'Template', description: 'This demo for Essential JS2 Toast control shows the Template rendering of the Toast.', category: 'Toast' },
     { path: ':theme/toast/positions', component: PositionsController, order: '01', name: 'Positions', description: 'This demo for Essential JS2 Toast control shows the different positioning of the Toast based on the target given.', category: 'Toast' },
-    { path: ':theme/toast/api', component: ApiController, order: '01', name: 'API', description: 'This demo for Essential JS2 Toast control shows all the API functionalities available in Toast.', category: 'Toast', type: 'update' }
+    { path: ':theme/toast/api', component: ApiController, order: '01', name: 'API', description: 'This demo for Essential JS2 Toast control shows all the API functionalities available in Toast.', category: 'Toast' }
 ];
 
 export const toastRouter: ModuleWithProviders<any> = RouterModule.forChild(toastAppRoutes);

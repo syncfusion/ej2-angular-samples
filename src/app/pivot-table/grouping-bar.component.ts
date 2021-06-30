@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, GroupingBarService, PivotView, FieldListService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, GroupingBarService, PivotView, IDataSet, GroupingBarSettings } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(false);
@@ -15,11 +15,12 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     templateUrl: 'grouping-bar.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['grouping-bar.css'],
-    providers: [GroupingBarService, FieldListService]
+    providers: [GroupingBarService]
 })
 export class GroupingBarComponent implements OnInit {
     public dataSourceSettings: IDataOptions;
     public gridSettings: GridSettings;
+    public groupingBarSettings: GroupingBarSettings;
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
@@ -41,6 +42,9 @@ export class GroupingBarComponent implements OnInit {
         this.gridSettings = {
             columnWidth: 140
         } as GridSettings;
+        this.groupingBarSettings = {
+            showFieldsPanel: true
+        } as GroupingBarSettings;
 
         this.dataSourceSettings = {
             enableSorting: true,
@@ -49,9 +53,9 @@ export class GroupingBarComponent implements OnInit {
             formatSettings: [{ name: 'Amount', format: 'C0' }],
             dataSource: Pivot_Data,
             expandAll: false,
-            values: [{ name: 'In_Stock', caption: 'In Stock' }, { name: 'Sold', caption: 'Units Sold' },
+            values: [{ name: 'Sold', caption: 'Units Sold' },
             { name: 'Amount', caption: 'Sold Amount' }],
-            filters: [{ name: 'Product_Categories', caption: 'Product Categories' }]
+            filters: []
         };
     }
 }

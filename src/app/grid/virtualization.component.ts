@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { VirtualScrollService, GridComponent } from '@syncfusion/ej2-angular-grids';
+import { VirtualScrollService, GridComponent, EditService, ToolbarService } from '@syncfusion/ej2-angular-grids';
 import { datasource, virtualData } from './data';
 
 @Component({
@@ -7,7 +7,7 @@ import { datasource, virtualData } from './data';
     templateUrl: 'virtualization.html',
     styleUrls: ['virtualization.style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [VirtualScrollService]
+    providers: [VirtualScrollService, EditService, ToolbarService]
 })
 export class VirtualizationComponent implements OnInit {
     public vData: Object[] = virtualData;
@@ -17,12 +17,16 @@ export class VirtualizationComponent implements OnInit {
     public date2: number;
     public flag: boolean = true;
     public ngOnInit(): void { }
+    public validationRules: Object = { required: true };
+    public toolbar: string[] = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
+    public editSettings: Object = { allowEditing: true, allowDeleting: true , newRowPosition: 'Top' };;
 
     onClick = (args: any) => {
         this.show();
         if (!this.vData.length) {
              datasource();
             this.grid.dataSource = this.vData;
+            this.grid.editSettings.allowAdding= true;
         }
         this.flag = true;
         this.date1 = new Date().getTime();

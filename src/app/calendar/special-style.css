@@ -28,6 +28,14 @@
     color: #fff;
 }
 
+body.highcontrast #selected {
+    color: white;
+}
+
+body.tailwind #selected {
+    width: 265px;
+}
+
 .e-customStyle span.e-icons.highlight,
 .e-customStyle span.e-icons.highlight:before {
     color: rgb(0, 0, 255);

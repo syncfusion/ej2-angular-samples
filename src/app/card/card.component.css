@@ -409,6 +409,11 @@
         font-size: 12px;
     }
 
+    .tailwind .card-control-section.reveal_card_layout .e-card .e-collapse:before {
+        content: "\e771";
+        font-size: 12px;
+    }
+
     .card-control-section.reveal_card_layout .e-card .e-reveal-icon {
         -webkit-transform: rotate(-90deg);
         transform: rotate(-90deg);
@@ -418,6 +423,10 @@
 
     .card-control-section.reveal_card_layout .e-card .e-reveal-icon:before {
         content: "\e984";
+    }
+
+    .tailwind .card-control-section.reveal_card_layout .e-card .e-reveal-icon:before {
+        content: "\e76f";
     }
 
     .card-control-section.reveal_card_layout .col-xs-6.col-sm-6.col-lg-6.col-md-6 {

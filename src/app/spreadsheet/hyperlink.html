@@ -1,0 +1,172 @@
+<!-- custom code start -->
+<div id="action-description">
+    <p>
+        This sample demonstrates the Hyperlink feature with the shopping cart scenario as an example. To add hyperlink, click the link button in the insert tab or click hyperlink option using the cell context menu.
+    </p>
+</div>
+<!-- custom code end -->
+<div class="control-section">
+    <ejs-spreadsheet #spreadsheet (created)="created()">
+        <e-sheets>
+            <e-sheet name="Cart">
+                <e-ranges>
+                    <e-range [dataSource]="hyperlinkCart" startCell="B3"></e-range>
+                </e-ranges>
+                <e-rows>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="Shopping Cart" [style]="{fontSize: '20pt', fontWeight: 'bold',textAlign: 'center', backgroundColor: '#279377', verticalAlign: 'middle', color: '#ffffff'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row index = "2">
+                        <e-cells>
+                            <e-cell value="Product ID" [style]="{fontWeight: 'bold', textAlign: 'center', backgroundColor: '#279377', color: '#ffffff'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="AG940Z" hyperlink="Stock!A2:D2"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="BJ120K" hyperlink="Stock!A3:D3"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="BC120M" hyperlink="Stock!A4:D4"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="BS121L" hyperlink="Stock!A5:D5"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="BU121K" hyperlink="Stock!A6:D6"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="BD121M" hyperlink="Stock!A7:D7"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="AT992X" hyperlink="Stock!A8:D8"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="AP992Z" hyperlink="Stock!A9:D9"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="AW920X" hyperlink="Stock!A10:D10"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="4" value="Total Amount" [style]="{border: '1px solid #A6A6A6', fontWeight: 'bold', textAlign: 'center', verticalAlign: 'middle'}"></e-cell>
+                            <e-cell formula="=Sum(F4:F12)" [format]="currencyFormat" [style]="{border: '1px solid #A6A6A6', textAlign: 'center', verticalAlign: 'middle', fontWeight: 'bold'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                </e-rows>
+                <e-columns>
+                    <e-column [width]=88></e-column>
+                    <e-column [width]=120></e-column>
+                    <e-column [width]=100></e-column>
+                    <e-column [width]=100></e-column>
+                    <e-column [width]=110></e-column>
+                    <e-column [width]=110></e-column>
+                </e-columns>
+            </e-sheet>
+            <e-sheet name="Stock">
+                <e-ranges>
+                    <e-range [dataSource]="hyperlinkStock"></e-range>
+                </e-ranges>
+                <e-rows>
+                    <e-row >
+                        <e-cells>
+                            <e-cell index= "4" value="Place Order" [style]="{fontWeight: 'bold', textAlign: 'center', backgroundColor: '#279377', color: '#ffffff'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index= "4" value= "Amazon" hyperlink="https://www.amazon.com/"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index= "4" value= "Amazon" hyperlink="https://www.amazon.com/"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index= "4" value= "EBay" hyperlink="https://www.ebay.com/"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index= "4" value= "Amazon" hyperlink="https://www.amazon.com/"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index= "4" value= "EBay" hyperlink="https://www.ebay.com/"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index= "4" value= "EBay" hyperlink="https://www.ebay.com/"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index= "4" value= "Amazon" hyperlink="https://www.amazon.com/"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index= "4" value= "EBay" hyperlink="https://www.ebay.com/"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index= "4" value= "Amazon" hyperlink="https://www.amazon.com/"></e-cell>
+                        </e-cells>
+                    </e-row>
+                </e-rows>
+                <e-columns>
+                    <e-column [width]=88></e-column>
+                    <e-column [width]=88></e-column>
+                    <e-column [width]=88></e-column>
+                    <e-column [width]=88></e-column>
+                    <e-column [width]=88></e-column>
+                </e-columns>
+            </e-sheet>
+        </e-sheets>
+    </ejs-spreadsheet>
+</div>
+<!-- custom code start -->
+<div id="description">
+    <ul>
+        <li>
+            This feature allows you to add reference as cell address or any web url to a cell and also navigate to a reference by clicking or tapping. You can enable or disable hyperlink by using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/spreadsheet#allowhyperlink">
+                allowHyperlink</a> property. 
+        </li>
+        <li>  
+            In this sample, we have applied hyperlink to the cells using the <code>hyperlink</code> property in cell. We can also add hyperlink using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/spreadsheet#addhyperlink">
+                addHyperlink</a> method. In shopping cart scenario, we have added cell reference as hyperlink in the product id column. In the stock sheet, we have added web url as hyperlink in the place order column.
+        </li>
+    </ul>
+    <p>
+        More information about the Hyperlink can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/spreadsheet/link">
+            documentation</a> section.
+    </p>
+</div>
+<!-- custom code end -->

@@ -82,14 +82,14 @@ export const gridRouteConfig: Object[] = [
         category: 'Data Grid'
     },
     { 'path': ':theme/grid/master-detail', component: MasterdetailComponent, name: 'Master/Detail', description: 'This demo for  Essential JS 2 grid component shows usage of master/detail in which the details of a Master Grid record, is viewed in a separate Grid(Detail Grid) by clicking the particular row.', order: '01', category: 'Data Grid' },
-    { 'path': ':theme/grid/adaptive', component: AdaptiveComponent, name: 'Adaptive',  type: 'new', description: 'This demo for Essential JS 2 grid component shows the Grid row in vertical direction.', order: '01', category: 'Data Grid' },
-    { 'path': ':theme/grid/enable-rtl', component: RtlComponent, name: 'RTL',  type: 'new', description: 'This demo for Essential JS 2 grid component shows the Right to left(RTl) alignment.', order: '01', category: 'Data Grid' },
+    { 'path': ':theme/grid/adaptive', component: AdaptiveComponent, name: 'Adaptive',  description: 'This demo for Essential JS 2 grid component shows the Grid row in vertical direction.', order: '01', category: 'Data Grid' },
+    { 'path': ':theme/grid/enable-rtl', component: RtlComponent, name: 'RTL',  description: 'This demo for Essential JS 2 grid component shows the Right to left(RTl) alignment.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/grouping', component: GroupComponent, name: 'Default Grouping', description: 'This demo for Essential JS 2 grid component demonstrates the grouping feature of the grid component. The grid component has options to group records based on columns.', order: '02', category: 'Grouping' },
     { 'path': ':theme/grid/lazy-load-grouping', component: LazyLoadGroupingComponent, name: 'Lazy Load Grouping', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature.', order: '02', category: 'Grouping' },
     { 'path': ':theme/grid/scrolling', component: ScrollComponent, name: 'Default Scrolling', description: 'This demo for Essential JS 2 grid component shows the usage of the horizontal and vertical scrollbars to view grid content that exceeds the grid area.', order: '03', category: 'Scrolling' },
     {
         'path': ':theme/grid/virtualization', component: VirtualizationComponent, name: 'Virtual Scrolling', description: 'This demo demonstrates how to use Essential JS 2 grid to show a large data view without performance degradation by rendering only the required rows and columns.', order: '03',
-        category: 'Scrolling'
+        category: 'Scrolling', "type": "update"
     },
 	{
         'path': ':theme/grid/infinite-scrolling', component: InfiniteScrollingComponent, name: 'Infinite Scrolling', description: 'This sample demonstrates the Grid component with the infinite scrolling feature.', order: '03',
@@ -210,7 +210,7 @@ export const gridRouteConfig: Object[] = [
     },
 
     {
-        'path': ':theme/grid/default-exporting', component: ExportingComponent, name: 'Default Exporting', type: 'update', description: 'This demo for Essential JS 2 grid component shows the client-side exporting of grid content to Excel, PDF, and CSV formats.', order: '12',
+        'path': ':theme/grid/default-exporting', component: ExportingComponent, name: 'Default Exporting', description: 'This demo for Essential JS 2 grid component shows the client-side exporting of grid content to Excel, PDF, and CSV formats.', order: '12',
         category: 'Exporting'
     },
     {

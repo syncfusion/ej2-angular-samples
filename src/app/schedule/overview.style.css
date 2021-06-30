@@ -15,6 +15,10 @@
    content: "\e7c7";
  }
 
+.tailwind .e-schedule-clock::before {
+  content: "\e730";
+}
+
  .material .e-schedule-timezone::before,
  .bootstrap .e-schedule-timezone::before {
    content: "\e30e";
@@ -28,6 +32,10 @@
  .bootstrap4 .e-schedule-timezone::before {
    content: "\e7c9";
  }
+
+.tailwind .e-schedule-timezone::before {
+  content: "\e736";
+}
 
  .material .e-schedule-print::before {
    content: "\e813";
@@ -43,9 +51,17 @@
    content: "\e743";
  }
 
+.tailwind .e-schedule-print::before {
+  content: "\e76c";
+}
+
  .bootstrap4 .e-schedule-import::before {
    content: "\e77a";
  }
+
+.tailwind .e-schedule-import::before {
+  content: "\e76d";
+}
 
  .material .e-schedule-ical-export::before,
  .fabric .e-schedule-ical-export::before {
@@ -64,6 +80,10 @@
    content: "\e712";
  }
 
+.tailwind .e-schedule-ical-export::before {
+  content: "\e7bf";
+}
+
  .material .e-schedule-excel-export::before {
    content: "\e700";
  }
@@ -81,6 +101,10 @@
    content: "\e74e";
  }
 
+.tailwind .e-schedule-excel-export::before {
+  content: "\e780";
+}
+
  .material .e-schedule-add-event::before,
  .fabric .e-schedule-add-event::before,
  .bootstrap .e-schedule-add-event::before,
@@ -91,6 +115,10 @@
  .bootstrap4 .e-schedule-add-event::before {
    content: "\e759";
  }
+
+.tailwind .e-schedule-add-event::before {
+  content: "\e78a";
+}
 
  .material .e-schedule-add-recurrence-event::before,
  .bootstrap .e-schedule-add-recurrence-event::before {
@@ -105,6 +133,10 @@
  .bootstrap4 .e-schedule-add-recurrence-event::before {
    content: "\e7c8";
  }
+
+.tailwind .e-schedule-add-recurrence-event::before {
+  content: "\e71d";
+}
 
  .material .e-schedule-day-view::before {
    content: "\e31b";
@@ -123,6 +155,10 @@
    content: "\e7b8";
  }
 
+.tailwind .e-schedule-day-view::before {
+  content: "\e767";
+}
+
  .material .e-schedule-week-view::before {
    content: "\e315";
  }
@@ -140,6 +176,10 @@
    content: "\e7c0";
  }
 
+.tailwind .e-schedule-week-view::before {
+  content: "\e795";
+}
+
  .material .e-schedule-workweek-view::before {
    content: "\e314";
  }
@@ -156,6 +196,10 @@
  .bootstrap4 .e-schedule-workweek-view::before {
    content: "\e7c0";
  }
+
+.tailwind .e-schedule-workweek-view::before {
+  content: "\e795";
+}
 
  .material .e-schedule-month-view::before,
  .material .e-schedule-year-view::before {
@@ -179,6 +223,11 @@
    content: "\e7c4";
  }
 
+.tailwind .e-schedule-month-view::before,
+.tailwind .e-schedule-year-view::before {
+  content: "\e719";
+}
+
  .material .e-schedule-agenda-view::before {
    content: "\e31d";
  }
@@ -196,10 +245,19 @@
    content: "\e7bd";
  }
 
+.tailwind .e-schedule-agenda-view::before {
+  content: "\e718";
+}
+
  .e-schedule-toolbar-settings::before {
    content: "\e679";
    font-size: 14px;
  }
+
+.tailwind .e-schedule-toolbar-settings::before {
+  content: "\e846";
+  font-size: 14px;
+}
 
  .material .schedule-overview .overview-toolbar .e-toolbar {
    border-style: solid;
@@ -547,22 +605,43 @@
    content: '\e7f9';
  }
 
+.tailwind .schedule-context-menu .e-menu-item .new::before {
+  content: '\e78a';
+}
+
  .schedule-context-menu .e-menu-item .edit::before {
    content: '\ea9a';
  }
+
+.tailwind .schedule-context-menu .e-menu-item .edit::before {
+  content: '\e7d2';
+}
 
  .schedule-context-menu .e-menu-item .recurrence::before {
    content: '\e308';
    font-weight: bold;
  }
 
+.tailwind .schedule-context-menu .e-menu-item .recurrence::before {
+  content: '\e71d';
+  font-weight: bold;
+}
+
  .schedule-context-menu .e-menu-item .today::before {
    content: '\e322';
  }
 
+.tailwind .schedule-context-menu .e-menu-item .today::before {
+  content: '\e742';
+}
+
  .schedule-context-menu .e-menu-item .delete::before {
    content: '\e94a';
  }
+
+.tailwind .schedule-context-menu .e-menu-item .delete::before {
+  content: '\e78d';
+}
 
  .e-bigger .schedule-context-menu ul .e-menu-item .e-menu-icon {
    font-size: 14px;
@@ -649,3 +728,11 @@
    width: 20px;
    height: 20px;
  }
+
+.tailwind .schedule-overview.e-schedule .e-left-indent .e-header-cells {
+  height: 66px;
+}
+
+.tailwind .overview-toolbar .e-toolbar {
+  border: 1px solid rgb(229, 231, 235);
+}

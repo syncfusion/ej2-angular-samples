@@ -1,0 +1,43 @@
+<div id="action-description">
+    <p>
+        The following sample demonstrates the time masking functionality in the TimePicker. It allows you to enter a valid value for each mask pattern of the time masking.
+    </p>
+</div>
+<div class="control-section sample">
+    <div class="control_wrapper">
+        <div class="tabs-wrap">
+            <div class="wrap">
+                <ejs-timepicker [format]="format" [enableMask]="enableMaskSupport"></ejs-timepicker>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        TimePicker has an <code>enableMask</code> property that allows you to enable the built-in time masking support. The mask pattern is defined based on the provided time format to the component. If the format is not specified, the mask pattern is formed based on the default format of the current culture.
+    </p>
+</div>
+<style>
+    .control-section {
+        margin: 30px;
+    }
+    
+    .control_wrapper {
+        display: block;
+        margin: 0 auto;
+        padding: 4% 0;
+        max-width: 300px;
+    }
+    
+    #description {
+        margin: 30px;
+    }
+    
+    .e-bigger .control-section {
+        margin-top: 60px;
+    }
+    
+    .tabs-wrap {
+        padding: 0px 0px 10px;
+    }
+</style>

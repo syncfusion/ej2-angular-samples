@@ -1,9 +1,10 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, ViewEncapsulation } from '@angular/core';
 
 @Component({
     selector: 'control-content',
     styleUrls: ['textboxes-style.css'],
-    templateUrl: 'default.html'
+    templateUrl: 'default.html',
+    encapsulation: ViewEncapsulation.None
 })
 export class DefaultTextboxController {
     constructor(@Inject('sourceFiles') private sourceFiles:any) {

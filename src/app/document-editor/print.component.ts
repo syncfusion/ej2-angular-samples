@@ -20,19 +20,20 @@ export class PrintComponent {
     public titleBar: TitleBar;
     public statusBar: StatusBar;
     private isComponentCreated: boolean = false;
+
     private ngOnInit(): void {
         this.containerPanel = document.getElementById('documenteditor_container_panel');
-        this.documentEditor.pageOutline = '#E0E0E0';
     }
     public initHelperModules(): void {
         this.documentLoader = new DocumentLoader(this.documentEditor);
-        window.addEventListener('resize', (): void => { this.updateContainerSize(); });
         this.titleBar = new TitleBar(document.getElementById('documenteditor_titlebar'), this.documentEditor, false);
         this.statusBar = new StatusBar(document.getElementById('documenteditor_statusbar'), this.documentEditor);
         document.getElementById('uploadfileButton').addEventListener('change', this.onFileChange);
         document.getElementById('uploadfileButton').setAttribute('accept', '.doc,.docx,.rtf,.txt,.htm,.html');
-        this.updateContainerSize();
         this.documentEditor.resize();
+        this.documentEditor.documentEditorSettings.printDevicePixelRatio = 2;
+        this.documentEditor.pageOutline = '#E0E0E0';
+        this.documentEditor.height = "590px";
         this.onLoadDefault();
         this.applyPageCountAndDocumentTitle();
     }
@@ -99,6 +100,11 @@ export class PrintComponent {
             this.statusBar.updatePageCount();
         }
     }
+
+    public onPixelRatioChange = (args: any): void  => {
+        this.documentEditor.documentEditorSettings.printDevicePixelRatio = args.value;
+    }
+
     private onViewChange(args: ViewChangeEventArgs): void {
         this.statusBar.updatePageNumberOnViewChange(args);
     }

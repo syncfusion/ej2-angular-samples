@@ -25,7 +25,7 @@ export const tabAppRoutes: Object[] = [
     { path: ':theme/tab/orientation', component: OrientationTabComponent, name: 'Orientation', description: 'The sample demonstrates how to customize the orientation of Tab component along with feasibility to customize the Tab header styles in Angular platform.', category: 'Tab' },
     { path: ':theme/tab/responsive-modes', component: ResponsiveTabComponent, name: 'Responsive Modes', description: 'The sample illustrates that responsive mode of Tab component that aligns tab items in a  scrollable or popup mode in Angular platform.', category: 'Tab' },
     { path: ':theme/tab/wizard', component: WizardTabComponent, name: 'Wizard', description: 'This sample demonstrates how to design a wizard-like application with the sequential action using the Tab component in Angular platform.', category: 'Tab' },
-    { path: ':theme/tab/drag-and-drop', component: DragAndDropComponent, name: 'Drag And Drop', type: 'new', description: 'This example demonstrates how to reorder the loaded tabs and how to add a new tab from the external source.', category: 'Tab' }
+    { path: ':theme/tab/drag-and-drop', component: DragAndDropComponent, name: 'Drag And Drop', description: 'This example demonstrates how to reorder the loaded tabs and how to add a new tab from the external source.', category: 'Tab' }
 ];
 
 export const tabRouter: ModuleWithProviders<any> = RouterModule.forChild(tabAppRoutes);

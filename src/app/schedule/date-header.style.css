@@ -30,3 +30,7 @@
         width: 20px;
         height: 20px;
     }
+
+    .schedule-date-header-template.e-schedule .e-left-indent .e-header-cells {
+        height: 66px;
+    }

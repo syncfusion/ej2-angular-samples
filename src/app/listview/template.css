@@ -10,7 +10,7 @@
 
 /* ListView header alignment */
 
-#listview_template.e-listview .e-list-header #list-logo {
+#listview_templat.e-listview .e-list-header #list-logo {
   margin-top: 2.5px;
   position: absolute;
   right: 20px;
@@ -44,8 +44,8 @@
 }
 
 #listview_template.e-listview.e-list-template .e-list-wrapper.e-list-avatar:not(.e-list-badge) {
-  padding-left: 122px;
-  padding-right: 1.0666em;
+ padding-left: 122px;
+ padding-right: 1.0666em;
 }
 
 #listview_template.e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar {

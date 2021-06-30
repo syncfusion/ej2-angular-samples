@@ -47,8 +47,8 @@ export class LegendComponent{
     };
     public pointers: Object[] = [{
         value: 70, animation:{enable:true},
-        pointerWidth: 8, color: '#757575', radius: '60%',
-        cap: { radius: 7, color: '#757575' }, needleTail: { length: '18%' }
+        pointerWidth: 8, radius: '60%',
+        cap: { radius: 7 }, needleTail: { length: '18%' }
     }];
     public alignment: DropDownList; public shape: DropDownList; public position: DropDownList;
     ngOnInit(): void {

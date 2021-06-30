@@ -125,6 +125,7 @@
     top: 7px;
     content: '\e745';
 }
+
 .bootstrap4 .file-lists {
     background: #fff;
 }
@@ -135,6 +136,22 @@
 
 .bootstrap4 .close-icon-container.delete-icon::before {
     content: '\e773';
+}
+
+.tailwind .close-icon-container.e-icons::before {
+    content: '\e771';
+}
+
+.tailwind .close-icon-container.e-icons {
+    top: 10px;
+}
+
+.tailwind .close-icon-container.delete-icon::before {
+    content: '\e78d';
+}
+
+.tailwind .close-icon-container.delete-icon {
+    top: 10px;
 }
 
 .uploadtemplate .close-icon-container:hover {

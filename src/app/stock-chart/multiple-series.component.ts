@@ -27,6 +27,9 @@ export class MultipleSeriesComponent {
     public crosshair: Object = {
         enable: true
     };
+    public legend: Object = {
+        visible: true
+    };
     public chartArea: Object = {
         border: {
             width: 0

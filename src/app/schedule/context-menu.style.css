@@ -15,8 +15,16 @@
   content: '\e322';
 }
 
+.tailwind .schedule-context-menu .e-menu-item .today::before {
+  content: '\e742';
+}
+
 .schedule-context-menu .e-menu-item .delete::before {
   content: '\e94a';
+}
+
+.tailwind .schedule-context-menu .e-menu-item .delete::before {
+  content: '\e78d';
 }
 
 .e-bigger .schedule-context-menu ul .e-menu-item .e-menu-icon {
@@ -47,12 +55,20 @@
     content: '\e823';
 }
 
+.tailwind .schedule-context-menu .e-menu-item .new::before {
+  content: '\e78a';
+}
+
 .bootstrap4 .schedule-context-menu .e-menu-item .today::before {
   content: '\e7be';
 }
 
 .bootstrap4 .schedule-context-menu .e-menu-item .edit::before {
   content: '\e78f';
+}
+
+.tailwind .schedule-context-menu .e-menu-item .edit::before {
+  content: '\e7d2';
 }
 
 .bootstrap4 .schedule-context-menu .e-menu-item .delete::before {
@@ -71,5 +87,9 @@
 .fabric .schedule-context-menu .e-menu-item .recurrence::before {
     content: '\e309';
     font-weight: bold;
+}
+
+.tailwind .schedule-context-menu .e-menu-item .recurrence::before {
+  content: '\e71d';
 }
 /* custom code end*/

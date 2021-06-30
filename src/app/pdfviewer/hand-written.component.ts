@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, OnInit ,ViewChild} from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
 import {
     PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
     ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, LoadEventArgs
@@ -18,8 +18,9 @@ import {
 export class HandwrittenComponent implements OnInit {
     @ViewChild('pdfviewer')
     public pdfviewerControl: PdfViewerComponent;
+
     public service: string = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
-    public document: string = 'PDF_Succinctly.pdf';
+    public document: string = 'HandwrittenSignature.pdf';
     ngOnInit(): void {
         // ngOnInit function
     }

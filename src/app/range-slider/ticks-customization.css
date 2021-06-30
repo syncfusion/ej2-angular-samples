@@ -165,6 +165,22 @@
     left: calc(100% - 7px);
 }
 
+.tailwind #ticks_slider .e-scale .e-tick.e-custom::before {
+    line-height: 2.3;
+    left: calc(50% - 6px);
+}
+
+.tailwind.e-bigger #ticks_slider .e-scale .e-tick.e-custom::before {
+    top: 2px;
+}
+
+.tailwind #slider_wrapper #ticks_slider .e-scale :nth-child(1)::before {
+    left: calc(0% - 6px);
+}
+
+.tailwind #slider_wrapper #ticks_slider .e-scale :nth-child(6)::before {
+    left: calc(100% - 6px);
+}
 /* Ticks Customized Icons */
 @font-face {
     font-family: 'e-customized-icons';

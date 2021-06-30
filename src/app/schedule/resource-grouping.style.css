@@ -78,6 +78,10 @@
     display: none;
 }
 
+.tailwind .schedule-group.e-schedule .e-left-indent .e-header-cells {
+    height: 67px;
+}
+
 /* custom code start*/
 .schedule-group.schedule-demo-heading {
     font-size: 16px;

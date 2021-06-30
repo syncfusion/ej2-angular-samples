@@ -4,7 +4,7 @@ import { SelectedEventArgs, TextBoxComponent } from '@syncfusion/ej2-angular-inp
 import {
     ScheduleComponent, GroupModel, DayService, WeekService, WorkWeekService, MonthService, YearService, AgendaService,
     TimelineViewsService, TimelineMonthService, TimelineYearService, View, EventSettingsModel, Timezone, CurrentAction,
-    CellClickEventArgs, ResourcesModel, EJ2Instance
+    CellClickEventArgs, ResourcesModel, EJ2Instance, PrintService, ExcelExportService, ICalendarExportService
 } from '@syncfusion/ej2-angular-schedule';
 import { addClass, extend, removeClass, closest, remove, isNullOrUndefined, Internationalization } from '@syncfusion/ej2-base';
 import { ChangeEventArgs as SwitchEventArgs } from '@syncfusion/ej2-angular-buttons';
@@ -24,7 +24,7 @@ declare var moment: any;
     templateUrl: 'overview.html',
     styleUrls: ['overview.style.css'],
     providers: [DayService, WeekService, WorkWeekService, MonthService, YearService, AgendaService,
-        TimelineViewsService, TimelineMonthService, TimelineYearService],
+        TimelineViewsService, TimelineMonthService, TimelineYearService, PrintService, ExcelExportService, ICalendarExportService],
     encapsulation: ViewEncapsulation.None
 })
 export class OverviewComponent {
@@ -146,7 +146,6 @@ export class OverviewComponent {
     @ViewChild('menuObj')
     public menuObj: ContextMenuComponent;
     public selectedTarget: Element;
-    public targetElement: HTMLElement;
     public menuItems: MenuItemModel[] = [
         { text: 'New Event', iconCss: 'e-icons new', id: 'Add' },
         { text: 'New Recurring Event', iconCss: 'e-icons recurrence', id: 'AddRecurrence' },
@@ -453,7 +452,11 @@ export class OverviewComponent {
             return { 'align-items': 'center', 'color': '#919191' };
         } else {
             const resourceData: { [key: string]: Object } = this.getResourceData(data);
-            return { 'background': resourceData.CalendarColor, 'color': '#FFFFFF' };
+            let calendarColor: string = '#3f51b5';
+            if (resourceData) {
+                calendarColor = (resourceData.CalendarColor).toString();
+            }
+            return { background: calendarColor, color: '#FFFFFF' };
         }
     }
 
@@ -470,19 +473,29 @@ export class OverviewComponent {
 
     public getEventType(data: { [key: string]: string }): string {
         const resourceData: { [key: string]: Object } = this.getResourceData(data);
-        return resourceData.CalendarText as string;
+        let calendarText: string = '';
+        if (resourceData) {
+            calendarText = resourceData.CalendarText.toString();
+        }
+        return calendarText;
     }
 
     public buttonClickActions(e: Event) {
         const quickPopup: HTMLElement = this.scheduleObj.element.querySelector('.e-quick-popup-wrapper') as HTMLElement;
         const getSlotData: Function = (): { [key: string]: Object } => {
-            const cellDetails: CellClickEventArgs = this.scheduleObj.getCellDetails(this.scheduleObj.getSelectedElements());
+            let cellDetails: CellClickEventArgs = this.scheduleObj.getCellDetails(this.scheduleObj.getSelectedElements());
+            if (isNullOrUndefined(cellDetails)) {
+                cellDetails = this.scheduleObj.getCellDetails(this.scheduleObj.activeCellsData.element);
+            }
+            let subject = ((quickPopup.querySelector('#title') as EJ2Instance).ej2_instances[0] as TextBoxComponent).value;
+            let notes = ((quickPopup.querySelector('#notes') as EJ2Instance).ej2_instances[0] as TextBoxComponent).value;
             const addObj: { [key: string]: Object } = {};
             addObj.Id = this.scheduleObj.getEventMaxID();
-            addObj.Subject = ((quickPopup.querySelector('#title') as EJ2Instance).ej2_instances[0] as TextBoxComponent).value;
+            addObj.Subject = isNullOrUndefined(subject) ? 'Add title' : subject;
             addObj.StartTime = new Date(+cellDetails.startTime);
             addObj.EndTime = new Date(+cellDetails.endTime);
-            addObj.Description = ((quickPopup.querySelector('#notes') as EJ2Instance).ej2_instances[0] as TextBoxComponent).value;
+            addObj.IsAllDay = cellDetails.isAllDay;
+            addObj.Description = isNullOrUndefined(notes) ? 'Add notes' : notes;
             addObj.CalendarId = ((quickPopup.querySelector('#eventType') as EJ2Instance).ej2_instances[0] as DropDownListComponent).value;
             return addObj;
         };
@@ -515,11 +528,11 @@ export class OverviewComponent {
             remove(newEventElement);
             removeClass([document.querySelector('.e-selected-cell')], 'e-selected-cell');
         }
-        this.targetElement = <HTMLElement>args.event.target;
-        if (closest(this.targetElement, '.e-contextmenu')) {
+        const targetElement: HTMLElement = <HTMLElement>args.event.target;
+        if (closest(targetElement, '.e-contextmenu')) {
             return;
         }
-        this.selectedTarget = closest(this.targetElement, '.e-appointment,.e-work-cells,' +
+        this.selectedTarget = closest(targetElement, '.e-appointment,.e-work-cells,' +
             '.e-vertical-view .e-date-header-wrap .e-all-day-cells,.e-vertical-view .e-date-header-wrap .e-header-cells');
         if (isNullOrUndefined(this.selectedTarget)) {
             args.cancel = true;
@@ -553,7 +566,7 @@ export class OverviewComponent {
             case 'Add':
             case 'AddRecurrence':
                 const selectedCells: Element[] = this.scheduleObj.getSelectedElements();
-                const activeCellsData: CellClickEventArgs = this.scheduleObj.getCellDetails(this.targetElement) ||
+                const activeCellsData: CellClickEventArgs =
                     this.scheduleObj.getCellDetails(selectedCells.length > 0 ? selectedCells : this.selectedTarget);
                 if (selectedMenuItem === 'Add') {
                     this.scheduleObj.openEditor(activeCellsData, 'Add');
@@ -577,6 +590,28 @@ export class OverviewComponent {
             case 'DeleteSeries':
                 this.scheduleObj.deleteEvent(eventObj, selectedMenuItem);
                 break;
+        }
+    }
+
+    public onPrintClick(): void {
+        this.scheduleObj.print();
+    }
+
+    public onExportClick(args): void {
+        if (args.item.text === 'Excel') {
+            let exportDatas: { [key: string]: Object }[] = [];
+            let eventCollection: Object[] = this.scheduleObj.getEvents();
+            let resourceCollection: ResourcesModel[] = this.scheduleObj.getResourceCollections();
+            let resourceData: { [key: string]: Object }[] = resourceCollection[0].dataSource as { [key: string]: Object }[];
+            for (let resource of resourceData) {
+                let data: Object[] = eventCollection.filter((e: { [key: string]: Object }) => e.CalendarId === resource.CalendarId);
+                exportDatas = exportDatas.concat(data as { [key: string]: Object }[]);
+            }
+            this.scheduleObj.exportToExcel({
+                exportType: 'xlsx', customData: exportDatas, fields: ['Id', 'Subject', 'StartTime', 'EndTime', 'CalendarId']
+            });
+        } else {
+            this.scheduleObj.exportToICalendar();
         }
     }
 

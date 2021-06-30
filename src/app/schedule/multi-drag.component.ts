@@ -26,7 +26,7 @@ export class MultiDragComponent {
         { text: 'Steven', id: 2, color: '#7fa900' },
         { text: 'Robert', id: 3, color: '#ea7a57' },
         { text: 'Smith', id: 4, color: '#5978ee' },
-        { text: 'Micheal', id: 5, color: '#df5286' }
+        { text: 'Michael', id: 5, color: '#df5286' }
     ];
     public eventSettings: EventSettingsModel = {
         dataSource: <Object[]>extend([], resourceData.concat(timelineResourceData), null, true)

@@ -123,6 +123,10 @@
   background-color: blueviolet;
 }
 
+.tailwind .e-avatar.custom {
+  color: white;
+}
+
 .bootstrap4 .e-avatar.custom {
         background-color: #cfd5ff;
 }

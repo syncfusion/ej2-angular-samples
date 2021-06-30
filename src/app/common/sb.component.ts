@@ -61,7 +61,7 @@ const sourceHeader: String = '<li class="nav-item {2}" role="presentation"><a cl
 const sourcecontent: String = '<div class="tab-pane {2}" id="{0}" role="tabpanel" {4}><pre><code class="{3}">{1}</code></pre></div>';
 const plnk: string = '<li class="plnk" style="float:right"><a id="plnkr">Open in Plunker</a></li>\n' +
     '<li class="open"><a id="openNew" target="_blank"><div class="openIcon e-icons"></div></a></li>';
-const themes: string[] = ['material', 'fabric', 'bootstrap', 'highcontrast', 'bootstrap4'];
+const themes: string[] = ['material', 'fabric', 'bootstrap', 'bootstrap4', 'tailwind', 'highcontrast'];
 let selectedTheme: string;
 let themeFlag: boolean = true;
 let slideFlag: boolean = false;

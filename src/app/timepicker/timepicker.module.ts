@@ -10,12 +10,14 @@ import { RangeTimePickerComponent } from './time-range.component';
 import { FormatTimePickerComponent } from './time-format.component';
 import { ListFormattingTimePickerComponent } from './list-formatting.component';
 import { ReactiveFormTimePickerComponent } from './reactiveform.component';
+import { MaskSupportTimePickerComponent} from './input-mask.component';
 
 export const timePickerAppRoutes: Object[] = [
     { path: ':theme/timepicker/default', component: DefaultTimePickerComponent, name: 'Default Functionalities', description: 'A simple Timepicker directive for Angular with two way binding support to input time entries with customizable options to fit into large scale applications', category: 'TimePicker' },
     { path: ':theme/timepicker/time-range', component: RangeTimePickerComponent, name: 'Time Range', description: 'Timepicker directive for Angular with min and max time options to restrict time selection within defined duration like next 30 minutes, next 4 hours etc', category: 'TimePicker' },
     { path: ':theme/timepicker/time-format', component: FormatTimePickerComponent, name: 'Format', description: 'Highly customizable Timepicker directive for Angular with options to change the time display format based on preferred culture for more readability in UI', category: 'TimePicker' },
     { path: ':theme/timepicker/list-formatting', component: ListFormattingTimePickerComponent, name: 'Time Duration', description: 'A simple Timepicker directive for Angular to highlight a set of time intervals in pop-up by adding custom styles and/or description based on you needs', category: 'TimePicker' },
+    { path: ':theme/timepicker/input-mask', component: MaskSupportTimePickerComponent, name: 'Mask Support', description: 'This example demonstrates how to render the date time format in the input field using enableMask in a angular TimePicker', category: 'TimePicker', type: 'new' },
     {
         path: ':theme/timepicker/reactiveform', component: ReactiveFormTimePickerComponent, name: 'Reactive', order: '02', description: 'Compatible Timepicker directive that confirms with the built in Angular validation to display error messages based on the validation state of the component',
         category: 'Forms Support'
@@ -32,6 +34,7 @@ export const TimePickerRouter: ModuleWithProviders<any> = RouterModule.forChild(
         RangeTimePickerComponent,
         FormatTimePickerComponent,
         ListFormattingTimePickerComponent,
+        MaskSupportTimePickerComponent,
         ReactiveFormTimePickerComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

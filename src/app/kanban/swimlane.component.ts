@@ -38,6 +38,10 @@ export class SwimlaneComponent {
         this.kanbanObj.swimlaneSettings.showItemCount = args.checked;
     }
 
+    changeFrozen(args: ChangeEventArgs): void {
+        this.kanbanObj.swimlaneSettings.enableFrozenRows = args.checked;
+    }
+
     changeSortOrder(args: DropDownChangeArgs): void {
         this.kanbanObj.swimlaneSettings.sortDirection = args.itemData.value as SortDirection;
     }

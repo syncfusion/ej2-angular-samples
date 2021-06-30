@@ -16,7 +16,7 @@
                     <div class="right-panel">
                         <div class="control-panel">
                             <button ejs-button id="printBtn" cssClass="title-bar-btn"
-                                iconCss="e-icons e-schedule-print">Print</button>
+                                iconCss="e-icons e-schedule-print" (click)="onPrintClick()">Print</button>
                         </div>
                         <div class="control-panel" style="display: inline-flex;padding-left:15px;">
                             <div class="e-icons e-schedule-import e-btn-icon e-icon-left" style="line-height: 40px;">
@@ -26,7 +26,7 @@
                                 (selected)='onSelected($event)'></ejs-uploader>
                         </div>
                         <div class="control-panel">
-                            <button ejs-dropdownbutton id="exporting" [items]='exportItems'>Export</button>
+                            <button ejs-dropdownbutton id="exporting" (select)="onExportClick($event)" [items]='exportItems'>Export</button>
                         </div>
                     </div>
                 </div>

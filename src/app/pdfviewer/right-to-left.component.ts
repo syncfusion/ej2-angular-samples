@@ -165,24 +165,7 @@ export class RightToLeftComponent implements OnInit {
                     'Free Text': 'نص حر',
                     'Import Failed': 'نوع ملف سلمان أو اسم الملف غير صالح ؛ يرجى تحديد ملف سلمانصالح',
                     'File not found': 'لم يتم العثور على ملف سلمان المستورد في الموقع المطلوب',
-                    'Export Failed': 'شل إجراء تصدير التعليقات التوضيحية ؛ يرجى التأكد من إضافة التعليقات التوضيحية بشكل صحيح',
-                    'Draw Ink': 'ارسم الحبر',
-                    'Export XFDF': 'تصدير التعليق التوضيحي إلى ملف XFDF',
-                    'Import XFDF': 'استيراد التعليقات التوضيحية من ملف XFDF',
-                    'Highlight context': 'تسليط الضوء',
-                    'Underline context': 'تسطير',
-                    'Strikethrough context': 'إضرب من خلال',
-                    'of': 'من ',
-                    'Dynamic': 'متحرك',
-                    'Standard Business': 'الأعمال القياسية',
-                    'Sign Here': 'وقع هنا',
-                    'Custom Stamp': 'ختم مخصص',
-                    'Enter Signature as Name': 'أدخل أسمك',
-                    'Draw-hand Signature': 'رسم',
-                    'Type Signature': 'اكتب',
-                    'Upload Signature': 'تحميل',
-                    'Browse Signature Image': 'تصفح',
-                    'Save Signature': 'احفظ التوقيع'
+                    'Export Failed': 'شل إجراء تصدير التعليقات التوضيحية ؛ يرجى التأكد من إضافة التعليقات التوضيحية بشكل صحيح'
                 }
             }
         });

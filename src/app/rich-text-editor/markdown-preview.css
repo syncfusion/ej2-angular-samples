@@ -26,6 +26,14 @@
         content: '\e787';
     }
 
+    .tailwind .e-icon-btn .e-md-preview::before {
+        content: '\e7d0';
+    }
+
+    .tailwind .e-icon-btn.e-active .e-md-preview::before {
+        content: '\e748';
+    }
+
     #mdPreview .e-rte-content .e-content.e-pre-source {
         width: 100%;
     }

@@ -11,6 +11,7 @@ import { DisabledDateTimePickerComponent } from './disabled.component';
 import { RangeDateTimePickerComponent } from './date-time-range.component';
 import { FormatDateTimePickerComponent } from './date-time-format.component';
 import { ReactiveFormDateTimePickerComponent } from './reactiveform.component';
+import { MaskSupportDateTimePickerComponent} from './input-mask.component';
 
 export const dateTimePickerAppRoutes: Object[] = [
     { path: ':theme/datetimepicker/default', component: DefaultDateTimePickerComponent, name: 'Default Functionalities', description: 'A simple light weight and easily customizable DateTimepicker component for Angular  to select date and time values precisely based on your application needs', category: 'DateTimePicker' },
@@ -18,6 +19,7 @@ export const dateTimePickerAppRoutes: Object[] = [
     { path: ':theme/datetimepicker/date-time-format', component: FormatDateTimePickerComponent, name: 'Format', description: 'Customizable DateTimePicker directive for Angular with options to change date and time format based on preferred culture for improved readability in UI', category: 'DateTimePicker' },
     { path: ':theme/datetimepicker/special-dates', component: SpecialDateTimePickerComponent, name: 'Special Dates', description: 'DateTimepicker to highlight multiple dates like weekends, holidays, special events and time duration with options to add custom styles and/or description', category: 'DateTimePicker' },
     { path: ':theme/datetimepicker/disabled', component: DisabledDateTimePickerComponent, name: 'Disable Dates', description: 'Datetimepicker directive for Angular with disabled date and time that restricts the selection for specific date and time duration by disabling user interaction', category: 'DateTimePicker' },
+    { path: ':theme/datetimepicker/input-mask', component: MaskSupportDateTimePickerComponent, name: 'Mask Support', description: 'This example demonstrates how to render the date time format in the input field using enableMask in a angular DateTimePicker', category: 'DateTimePicker', type: 'new' },
     {
         path: ':theme/datetimepicker/reactiveform', component: ReactiveFormDateTimePickerComponent, name: 'Reactive', order: '02', description: 'Compatible DateTimepicker directive that confirms with the built in Angular validation to display error messages based on the validation state of the component',
         category: 'Forms Support'
@@ -35,6 +37,7 @@ export const DateTimePickerRouter: ModuleWithProviders<any> = RouterModule.forCh
         DisabledDateTimePickerComponent,
         RangeDateTimePickerComponent,
         FormatDateTimePickerComponent,
+        MaskSupportDateTimePickerComponent,
         ReactiveFormDateTimePickerComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

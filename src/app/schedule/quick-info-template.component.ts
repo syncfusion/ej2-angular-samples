@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
-import { extend, Internationalization } from '@syncfusion/ej2-base';
+import { extend, Internationalization, isNullOrUndefined } from '@syncfusion/ej2-base';
 import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { TextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 import {
@@ -82,13 +82,19 @@ export class QuickInfoTemplateComponent {
     public buttonClickActions(e: Event) {
         const quickPopup: HTMLElement = this.scheduleObj.element.querySelector('.e-quick-popup-wrapper') as HTMLElement;
         const getSlotData: Function = (): { [key: string]: Object } => {
-            const cellDetails: CellClickEventArgs = this.scheduleObj.getCellDetails(this.scheduleObj.getSelectedElements());
+            let cellDetails: CellClickEventArgs = this.scheduleObj.getCellDetails(this.scheduleObj.getSelectedElements());
+            if (isNullOrUndefined(cellDetails)) {
+                cellDetails = this.scheduleObj.getCellDetails(this.scheduleObj.activeCellsData.element);
+            }
+            let subject = ((quickPopup.querySelector('#title') as EJ2Instance).ej2_instances[0] as TextBoxComponent).value;
+            let notes = ((quickPopup.querySelector('#notes') as EJ2Instance).ej2_instances[0] as TextBoxComponent).value;
             const addObj: { [key: string]: Object } = {};
             addObj.Id = this.scheduleObj.getEventMaxID();
-            addObj.Subject = ((quickPopup.querySelector('#title') as EJ2Instance).ej2_instances[0] as TextBoxComponent).value;
+            addObj.Subject = isNullOrUndefined(subject) ? 'Add title' : subject;
             addObj.StartTime = new Date(+cellDetails.startTime);
             addObj.EndTime = new Date(+cellDetails.endTime);
-            addObj.Description = ((quickPopup.querySelector('#notes') as EJ2Instance).ej2_instances[0] as TextBoxComponent).value;
+            addObj.IsAllDay = cellDetails.isAllDay;
+            addObj.Description = isNullOrUndefined(notes) ? 'Add notes' : notes;
             addObj.RoomId = ((quickPopup.querySelector('#eventType') as EJ2Instance).ej2_instances[0] as DropDownListComponent).value;
             return addObj;
         };

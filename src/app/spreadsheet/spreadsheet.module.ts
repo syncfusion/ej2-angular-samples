@@ -22,6 +22,8 @@ import { SharedModule } from '../common/shared.module';
 import { ConditionalFormattingController } from './conditional-formatting.component';
 import { ImageController } from './image.component';
 import { ChartController } from './chart.component';
+import { DataValidationComponent } from './data-validation.component';
+import { HyperlinkComponent } from './hyperlink.component';
 
 export const spreadsheetAppRoutes: Object[] = [
     {
@@ -36,13 +38,23 @@ export const spreadsheetAppRoutes: Object[] = [
     },
     {
         path: ':theme/spreadsheet/protect-sheet', component: ProtectSheetComponent,
-        name: 'Protection', type: 'update', category: 'Spreadsheet', order: '01',
+        name: 'Protection', category: 'Spreadsheet', order: '01',
         description: 'This demo for Syncfusion Angular Spreadsheet control includes lock cell and protect sheet feature with its configurations.'
     },
     {
         path: ':theme/spreadsheet/freeze-pane', component: FreezePaneComponent,
-        name: 'Freeze Panes', type: 'new', category: 'Spreadsheet', order: '01',
+        name: 'Freeze Panes', category: 'Spreadsheet', order: '01',
         description: 'This demo for Syncfusion Angular Spreadsheet control includes freeze rows and columns feature.'
+    },
+    {
+        path: ':theme/spreadsheet/data-validation', component: DataValidationComponent,
+        name: 'Data Validation', type: 'new', category: 'Spreadsheet', order: '01',
+        description: 'This demo for Syncfusion Angular Spreadsheet control includes data validation.'
+    },
+    {
+        path: ':theme/spreadsheet/hyperlink', component: HyperlinkComponent,
+        name: 'Hyperlink', type: 'new', category: 'Spreadsheet', order: '01',
+        description: 'This demo for Syncfusion Angular Spreadsheet control includes hyperlink.'
     },
     {
         path: ':theme/spreadsheet/cell-data-binding', component: CellDataBindingController,
@@ -108,7 +120,9 @@ export const spreadsheetRouter: ModuleWithProviders<any> = RouterModule.forChild
         ConditionalFormattingController,
         ImageController,
         ChartController,
-        FreezePaneComponent
+        FreezePaneComponent,
+        DataValidationComponent,
+        HyperlinkComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

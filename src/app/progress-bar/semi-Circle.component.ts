@@ -71,7 +71,7 @@ export class ProgressBarSemiComponent {
         }
         return ('<div id="point1" style="font-size:20px;font-weight:bold;color:' + color + '"><span>' + content + '</span></div>');
     }
-    public annotationColors: string[] = ['#e91e63', '#0078D6', '#317ab9', '#007bff', '#FFD939'];
+    public annotationColors: string[] = ['#e91e63', '#0078D6', '#317ab9', '#007bff', '#4F46E5', '#FFD939'];
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
@@ -94,9 +94,13 @@ export class ProgressBarSemiComponent {
                 args.progressBar.annotations[0].content =
                     this.annotationElementContent(this.annotationColors[3], args.progressBar.element.id);
                 break;
-            default:
+            case 'tailwind':
                 args.progressBar.annotations[0].content =
                     this.annotationElementContent(this.annotationColors[4], args.progressBar.element.id);
+                break;
+            default:
+                args.progressBar.annotations[0].content =
+                    this.annotationElementContent(this.annotationColors[5], args.progressBar.element.id);
                 break;
         }
     }

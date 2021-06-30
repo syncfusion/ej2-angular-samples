@@ -84,6 +84,7 @@ export let Locale: Object = {
             "Filter-Empty": "keine Ergebnisse gefunden",
             "Filter-Key": "Versuchen Sie es mit einem anderen Filter",
             "Sub-Folder-Error": "Der Zielordner ist der Unterordner des Quellordners.",
+            "Same-Folder-Error": "Der Zielordner ist derselbe wie der Quellordner.",
             "Access-Denied": "Zugriff verweigert",
             "Access-Details": "Sie haben keine Berechtigung, auf diesen Ordner zuzugreifen.",
             "Header-Retry": "Die Datei existiert bereits",
@@ -695,7 +696,7 @@ export let Locale: Object = {
             "pareto": "Pareto",
             "radar": "Radar",
             "chartTypeSettings": "Diagramm type instellungen",
-            "multipleAxes": "Mehrere Achsen",
+            "multipleAxes": "Mehrfachachse",
             "sortAscending": "Aufsteigende Reihenfolge sortieren",
             "sortDescending": "Absteigende Reihenfolge sortieren",
             "sortNone": "Datenreihenfolge sortieren",
@@ -732,7 +733,11 @@ export let Locale: Object = {
             "conditionalFormatingMenu": "Bedingte Formatierung...",
             "removeCalculatedField": "Möchten Sie dieses berechnete Feld wirklich löschen?",
             "replaceConfirmBefore": "Ein Bericht mit dem Namen ",
-            "replaceConfirmAfter": " ist bereits vorhanden. Möchten Sie es ersetzen?"
+            "replaceConfirmAfter": " ist bereits vorhanden. Möchten Sie es ersetzen?",
+            "Median": "Median",
+            "stacked": "Gestapelt",
+            "single": "Single",
+            "multipleAxisMode": "Mehrachsenmodus"
         },
         "pivotfieldlist": {
             "all": "alles",
@@ -877,7 +882,7 @@ export let Locale: Object = {
             "deferLayoutUpdate": "Verschieben Sie das Layout-Update",
             "caption": "Feldbeschriftung",
             "copy": "Kopieren",
-            "multipleAxes": "Mehrere Achsen",
+            "multipleAxes": "Mehrfachachse",
             "sortAscending": "Aufsteigende Reihenfolge sortieren",
             "sortDescending": "Absteigende Reihenfolge sortieren",
             "sortNone": "Datenreihenfolge sortieren",
@@ -896,7 +901,10 @@ export let Locale: Object = {
             "unGroup": "Gruppierung aufheben",
             "group": "Gruppe",
             "of": "von",
-            "numberFormatString": "Beispiel: C, P, 0000 %, ###0.##0#, etc."
+            "numberFormatString": "Beispiel: C, P, 0000 %, ###0.##0#, etc.",
+            "removeCalculatedField": "Möchten Sie dieses berechnete Feld wirklich löschen?",
+            "yes": "Ja",
+            "no": "Nein"
         },
         "gantt": {
             "emptyRecord": "Keine Datensätze zum Anzeigen",
@@ -1400,6 +1408,7 @@ export let Locale: Object = {
             "Filter-Empty": "لم يتم العثور على نتائج",
             "Filter-Key": "حاول مع مرشح مختلف",
             "Sub-Folder-Error": "المجلد الوجهة هو المجلد الفرعي للمجلد المصدر.",
+            "Same-Folder-Error": "المجلد الوجهة هو نفس المجلد المصدر.",
             "Access-Denied": "تم الرفض",
             "Access-Details": "ليس لديك إذن للوصول إلى هذا المجلد.",
             "Header-Retry": "الملف موجود بالفعل",
@@ -2048,7 +2057,11 @@ export let Locale: Object = {
             "conditionalFormatingMenu": "تنسيق مشروط...",
             "removeCalculatedField": "هل أنت متأكد أنك تريد حذف هذا الحقل المحسوب؟",
             "replaceConfirmBefore": "تقرير مسمى ",
-            "replaceConfirmAfter": "موجود مسبقا. هل تريد استبدالها؟ "
+            "replaceConfirmAfter": "موجود مسبقا. هل تريد استبدالها؟ ",
+            "Median": "الوسيط",
+            "stacked": "مرصوصة",
+            "single": "أعزب",
+            "multipleAxisMode": "وضع المحاور المتعددة"
         },
         "pivotfieldlist": {
             "all": "الكل",
@@ -2211,7 +2224,10 @@ export let Locale: Object = {
             "unGroup": "فك تجميع",
             "group": "مجموعة",
             "of": "من",
-            "numberFormatString": "مثال: C, P, 0000 %, ###0.##0#, إلخ"
+            "numberFormatString": "مثال: C, P, 0000 %, ###0.##0#, إلخ",
+            "removeCalculatedField": "هل أنت متأكد أنك تريد حذف هذا الحقل المحسوب؟",
+            "yes": "نعم",
+            "no": "لا"
         },
         "gantt": {
             "emptyRecord": "لا سجلات لعرضها",
@@ -2711,6 +2727,7 @@ export let Locale: Object = {
             "Filter-Empty": "No results found",
             "Filter-Key": "Try with different filter",
             "Sub-Folder-Error": "The destination folder is the subfolder of the source folder.",
+            "Same-Folder-Error": "The destination folder is the same as the source folder.",
             "Access-Denied": "Access Denied",
             "Access-Details": "You don't have permission to access this folder.",
             "Header-Retry": "File Already Exists",
@@ -3302,7 +3319,7 @@ export let Locale: Object = {
             "pareto": "Pareto",
             "radar": "Radar",
             "chartTypeSettings": "Chart type settings",
-            "multipleAxes": "Multiple axes",
+            "multipleAxes": "Multiple Axis",
             "sortAscending": "Sort ascending order",
             "sortDescending": "Sort descending order",
             "sortNone": "Sort data order",
@@ -3339,7 +3356,11 @@ export let Locale: Object = {
             "conditionalFormatingMenu": "Conditional Formatting...",
             "removeCalculatedField": "Are you sure you want to delete this calculated field?",
             "replaceConfirmBefore": "A report named ",
-            "replaceConfirmAfter": " already exists. Do you want to replace it?"
+            "replaceConfirmAfter": " already exists. Do you want to replace it?",
+            "Median": "Median",
+            "stacked": "Stacked",
+            "single": "Single",
+            "multipleAxisMode": "Multiple Axis Mode"
         },
         "pivotfieldlist": {
             "all": "All",
@@ -3502,7 +3523,10 @@ export let Locale: Object = {
             "unGroup": "Ungroup",
             "group": "Group",
             "of": "of",
-            "numberFormatString": "Example: C, P, 0000 %, ###0.##0#, etc."
+            "numberFormatString": "Example: C, P, 0000 %, ###0.##0#, etc.",
+            "removeCalculatedField": "Are you sure you want to delete this calculated field?",
+            "yes": "Yes",
+            "no": "No"
         },
         "gantt": {
             "emptyRecord": "No records to display",
@@ -4006,6 +4030,7 @@ export let Locale: Object = {
             "Filter-Empty": "未找到結果",
             "Filter-Key": "嘗試使用其他過濾器",
             "Sub-Folder-Error": "目标文件夹是源文件夹的子文件夹。",
+            "Same-Folder-Error": "目标文件夹与源文件夹相同。",
             "Access-Denied": "拒绝访问",
             "Access-Details": "您无权访问此文件夹。",
             "Header-Retry": "文件已存在",
@@ -4617,7 +4642,7 @@ export let Locale: Object = {
             "pareto": "帕累托",
             "radar": "雷達",
             "chartTypeSettings": "圖表類型設置",
-            "multipleAxes": "多軸",
+            "multipleAxes": "多轴",
             "sortAscending": "升序排序",
             "sortDescending": "降序排列",
             "sortNone": "排序數據順序",
@@ -4654,7 +4679,11 @@ export let Locale: Object = {
             "conditionalFormatingMenu": "條件格式...",
             "removeCalculatedField": "您确定要删除此计算字段吗？",
             "replaceConfirmBefore": "一份名为 ",
-            "replaceConfirmAfter": " 已经存在。您要更换吗？"
+            "replaceConfirmAfter": " 已经存在。您要更换吗？",
+            "Median": "中位数",
+            "stacked": "堆叠式",
+            "single": "单身的",
+            "multipleAxisMode": "多轴模式"
         },
         "pivotfieldlist": {
             "all": "所有",
@@ -4817,7 +4846,10 @@ export let Locale: Object = {
             "unGroup": "取消分組",
             "group": "組",
             "of": "的",
-            "numberFormatString": "例: C, P, 0000 %, ###0.##0#, 等等"
+            "numberFormatString": "例: C, P, 0000 %, ###0.##0#, 等等",
+            "removeCalculatedField": "您确定要删除此计算字段吗？",
+            "yes": "是的",
+            "no": "不"
         },
         "gantt": {
             "emptyRecord": "无记录可显示",
@@ -5321,6 +5353,7 @@ export let Locale: Object = {
             "Filter-Empty": "Aucun résultat trouvé",
             "Filter-Key": "Essayez avec un filtre différent",
             "Sub-Folder-Error": "Le dossier de destination est le sous-dossier du dossier source.",
+            "Same-Folder-Error": "Le dossier de destination est le même que le dossier source.",
             "Access-Denied": "Accès refusé",
             "Access-Details": "Vous n'avez pas la permission d'accéder à ce dossier.",
             "Header-Retry": "Le fichier existe déjà",
@@ -5931,7 +5964,7 @@ export let Locale: Object = {
             "pareto": "Pareto",
             "radar": "Radar",
             "chartTypeSettings": "Paramètres de type de graphique",
-            "multipleAxes": "Plusieurs axes",
+            "multipleAxes": "Axes multiples",
             "sortAscending": "Trier l'ordre croissant",
             "sortDescending": "Trier l'ordre décroissant",
             "sortNone": "Trier l'ordre des données",
@@ -5968,7 +6001,11 @@ export let Locale: Object = {
             "conditionalFormatingMenu": "Mise en forme conditionnelle...",
             "removeCalculatedField": "Voulez-vous vraiment supprimer ce champ calculé?",
             "replaceConfirmBefore": "Un rapport nommé ",
-            "replaceConfirmAfter": " existe déjà. Voulez-vous le remplacer?"
+            "replaceConfirmAfter": " existe déjà. Voulez-vous le remplacer?",
+            "Median": "Médian",
+            "stacked": "Empilé",
+            "single": "Seul",
+            "multipleAxisMode": "Mode à axes multiples"
         },
         "pivotfieldlist": {
             "all": "tout",
@@ -6131,7 +6168,10 @@ export let Locale: Object = {
             "unGroup": "Dissocier",
             "group": "Groupe",
             "of": "de",
-            "numberFormatString": "Exemple: C, P, 0000 %, ###0.##0#, etc."
+            "numberFormatString": "Exemple: C, P, 0000 %, ###0.##0#, etc.",
+            "removeCalculatedField": "Voulez-vous vraiment supprimer ce champ calculé?",
+            "yes": "Oui",
+            "no": "Non"
         },
         "gantt": {
             "emptyRecord": "Aucun enregistrement à afficher",

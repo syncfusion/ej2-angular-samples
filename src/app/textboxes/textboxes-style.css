@@ -7,6 +7,14 @@
     content: '\e776';
   }
 
+  .tailwind .e-input-picture:before {
+    content: '\e7da';
+  }
+
+  .tailwind .e-input-calendar:before {
+    content:'\e7b2';
+  }
+
   .e-input-calendar:before {
     content: '\e901';
     font-family: e-icons;
@@ -65,7 +73,8 @@
   .fabric .row.material2,
   .bootstrap .row.material2,
   .bootstrap4 .row.material2,
-  .highcontrast .row.material2 {
+  .highcontrast .row.material2,
+  .tailwind .row.material2 {
       display: none;
   }
   

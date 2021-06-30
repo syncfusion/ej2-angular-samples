@@ -704,7 +704,9 @@
             "default": "Default functionalities",
             "custom-toolbar": "Custom Toolbar",
             "right-to-left": "Right To Left",
-            "form-filling": "Form Filling"
+            "form-filling": "Form Filling",
+            "hand-written": "Handwritten Signature",
+            "form-designer": "Form Designer"
         }
     },
     "pivot-table": {
@@ -1051,6 +1053,7 @@
             "paging-api": "Paging API",
             "default-scrolling": "Default Scrolling",
             "virtual-scrolling": "Virtual Scrolling",
+            "infinite-scrolling": "Infinite Scrolling",
             "selection": "Default Selection",
             "selection-api": "Selection API",
             "checkbox-selection": "Checkbox Selection",

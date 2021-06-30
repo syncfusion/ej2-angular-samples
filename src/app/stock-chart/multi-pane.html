@@ -15,7 +15,7 @@
                 <e-stockchart-series [dataSource]='data1' type='Candle' xName='x' yName='high' yAxisName='yAxis1' high='high'
                     low='low'> </e-stockchart-series>
                 <e-stockchart-series [dataSource]='data1' type='Column' xName='x' yName='volume' high='high' low='low'
-                    name='Apple Inc'> </e-stockchart-series>
+                    name='Apple Inc' [enableTooltip]='columnTooltip'> </e-stockchart-series>
             </e-stockchart-series-collection>
         </ejs-stockchart>
     </div>

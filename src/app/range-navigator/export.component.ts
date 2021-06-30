@@ -12,10 +12,10 @@ import { dataCollection } from './data-service';
 let selectedTheme: string = location.hash.split('/')[1];
 selectedTheme = selectedTheme ? selectedTheme : 'Material';
 let theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
-let themes: string[] = ['Material', 'Fabric', 'Bootstrap', 'Highcontrast'];
-let borderColor: string[] = ['#FF4081', '#007897', '#428BCA', '#FFD939'];
+let themes: string[] = ['Material', 'Fabric', 'Bootstrap', 'Highcontrast', 'Tailwind'];
+let borderColor: string[] = ['#FF4081', '#007897', '#428BCA', '#FFD939', '#4F46E5'];
 let regionColor: string[] = ['rgba(255, 64, 129, 0.3)', ' rgba(0, 120, 151, 0.3)',
-    'rgba(66, 139, 202, 0.3)', 'rgba(255, 217, 57, 0.3)'];
+'rgba(66, 139, 202, 0.3)', 'rgba(255, 217, 57, 0.3)', 'rgba(79, 70, 229, 0.3)'];
 
     @Component({
         selector: 'control-content',

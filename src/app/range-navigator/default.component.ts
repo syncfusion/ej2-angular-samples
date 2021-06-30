@@ -10,10 +10,10 @@ import { bitCoinData } from './default_data';
 let selectedTheme: string = location.hash.split('/')[1];
 selectedTheme = selectedTheme ? selectedTheme : 'Material';
 let theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
-let themes: string[] = ['Material', 'Fabric', 'Bootstrap', 'Highcontrast']
-let borderColor: string[] = ['#00bdae', '#4472c4', '#a16ee5', '#79ECE4'];
+let themes: string[] = ['Material', 'Fabric', 'Bootstrap', 'Highcontrast', 'Tailwind'];
+let borderColor: string[] = ['#00bdae', '#4472c4', '#a16ee5', '#79ECE4', '#4F46E5'];
 let regionColor: string[] = ['rgba(0, 189, 174, 0.3)', 'rgba(68, 114, 196, 0.3)',
-    'rgba(161, 110, 229, 0.3)', 'rgba(121, 236, 228, 0.3)'];
+    'rgba(161, 110, 229, 0.3)', 'rgba(121, 236, 228, 0.3)', 'rgba(79, 70, 229, 0.3)'];
 
 @Component({
     selector: 'control-content',

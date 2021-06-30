@@ -112,7 +112,7 @@ export class MapsDynamicMarkerComponent {
     public addMarker: any = (args: any) => {
         if (args['latitude'] !== null && args['longitude'] !== null) {
             let layerIndex: number = 0;
-            let geo = this.maps.getTileGeoLocation(args);
+            let geo = this.maps.getTileGeoLocation(args.layerX, args.layerY);
             args['latitude'] = geo['latitude'];
             args['longitude'] = geo['longitude'];
             let marker: MarkerSettingsModel[];
@@ -132,7 +132,7 @@ export class MapsDynamicMarkerComponent {
         }
     };
     public addLine: any = (lineArgs: any, lineWidth: number, connectiveLine?: boolean) => {
-        let geo = this.maps.getTileGeoLocation(lineArgs);
+        let geo = this.maps.getTileGeoLocation(lineArgs.layerX, lineArgs.layerY);
         lineArgs['latitude'] = geo['latitude'];
         lineArgs['longitude'] = geo['longitude'];
         if (lineArgs.latitude != null && lineArgs.longitude != null) {

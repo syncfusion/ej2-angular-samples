@@ -47,6 +47,7 @@ import { GanttResourceViewComponent } from './resource-view.component';
 import { GanttResourceMultiTaskbarComponent } from './resource-multi-taskbar.component';
 import { GanttSplitTasksComponent } from './split-tasks.component';
 import { GanttVirtualScrollComponent } from './virtual-scroll.component';
+import { GanttTimezoneComponent } from './timezone.component';
 
 export const GanttAppRoutes: Object[] = [
     {
@@ -175,6 +176,11 @@ export const GanttAppRoutes: Object[] = [
         name: 'Unscheduled Tasks', order: '04', category: 'Scheduling Concepts'
     },
     {
+        path: ':theme/gantt/timezone', component: GanttTimezoneComponent, type: "new", 
+        description: 'This demo explains how the Gantt Chart schedules projects in different timezones.',
+        name: 'Timezone', order: '04', category: 'Scheduling Concepts'
+    },
+    {
         path: ':theme/gantt/timeline', component: GanttTimelineComponent,
         description: 'This example demonstrates the various timeline mode options and properties available to customize the timeline in Gantt',
         name: 'Timeline API', order: '05', category: 'Timeline'
@@ -293,7 +299,8 @@ let declarations: Type<Object>[] = [
     GanttResourceViewComponent,
     GanttResourceMultiTaskbarComponent,
     GanttSplitTasksComponent,
-    GanttVirtualScrollComponent
+    GanttVirtualScrollComponent,
+    GanttTimezoneComponent
 ];
 @NgModule({
     imports: [CommonModule, GanttRouter, SharedModule, GanttAllModule, DropDownListAllModule, CheckBoxAllModule, TextBoxAllModule, NumericTextBoxAllModule, MultiSelectAllModule],

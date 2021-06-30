@@ -3,9 +3,8 @@
   height: 0;
 }
 
-.e-query-builder {
-    margin: 0 auto;
-    display: block;
+.e-querybuilder {
+  margin: 3% auto;
 }
 
 #ruleContent {

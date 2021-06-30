@@ -1,7 +1,7 @@
 import { NgModule, Type, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-//import { HttpModule } from '@angular/http';
+// import { HttpModule } from '@angular/http';
 import { ScheduleAllModule, RecurrenceEditorAllModule } from '@syncfusion/ej2-angular-schedule';
 import { NumericTextBoxAllModule, TextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { DatePickerAllModule, TimePickerAllModule, DateTimePickerAllModule } from '@syncfusion/ej2-angular-calendars';
@@ -70,9 +70,10 @@ import { QuickInfoTemplateComponent } from './quick-info-template.component';
 import { OverviewComponent } from './overview.component';
 import { SharedModule } from '../common/shared.module';
 import { MultiDragComponent } from './multi-drag.component';
+import { AdaptiveGroupingComponent } from './adaptive-grouping.component';
 
 export const scheduleRouteConfig: Object[] = [
-  { 'path': ':theme/schedule/overview', component: OverviewComponent, name: 'Overview', type:'update', order: '01', category: 'Scheduler', description: 'This demo shows how the Scheduler control functionalities work with the default set of minimal configurations in a Angular application.' },
+  { 'path': ':theme/schedule/overview', component: OverviewComponent, name: 'Overview', order: '01', category: 'Scheduler', description: 'This demo shows how the Scheduler control functionalities work with the default set of minimal configurations in a Angular application.' },
   { 'path': ':theme/schedule/default', component: DefaultComponent, name: 'Default Functionalities', order: '01', category: 'Scheduler', description: 'This demo shows how the Scheduler control functionalities work with the default set of minimal configurations in a Angular application.' },
   { 'path': ':theme/schedule/local-data', component: LocalDataComponent, name: 'Local Data', order: '02', category: 'Data Binding', description: 'This demo shows how to populate appointments in the Angular Scheduler through local data sources like JSON data types with the proper date format.' },
   { 'path': ':theme/schedule/remote-data', component: RemoteDataComponent, name: 'Remote Data', order: '02', category: 'Data Binding', description: 'This demo shows how to populate appointments or events in the Angular Scheduler through remote data sources such as web services, web API, URL, and OData.' },
@@ -82,14 +83,14 @@ export const scheduleRouteConfig: Object[] = [
   { 'path': ':theme/schedule/search-events', component: SearchEventsComponent, name: 'Search Events', order: '03', category: 'Appointments', description: 'This example shows how to filter the appointments or events of the Angular Scheduler based on a search string in a particular field or all fields.' },
   { 'path': ':theme/schedule/timezone-event', component: TimezoneComponent, name: 'Timezone', order: '03', category: 'Appointments', description: 'This demo shows how the Angular Scheduler works with different time zones. The events in the Scheduler automatically adapt to the selected time zone.' },
   { 'path': ':theme/schedule/external-drag-drop', component: ExternalDragDropComponent, name: 'External Drag and Drop', order: '03', category: 'Appointments', description: 'This demo shows the ability to drag and drop appointments from an external source (such as the DataGrid, ListView, etc.)  into the Angular Scheduler.' },
-  { 'path': ':theme/schedule/multi-drag', component: MultiDragComponent, name: 'Multiple Drag', order: '03', category: 'Appointments', type: 'new', description: 'This demo explains you about the ability to select multiple appointments and drag them simultaneously.' },
+  { 'path': ':theme/schedule/multi-drag', component: MultiDragComponent, name: 'Multiple Drag', order: '03', category: 'Appointments', description: 'This demo explains you about the ability to select multiple appointments and drag them simultaneously.' },
   { 'path': ':theme/schedule/inline-editing', component: InlineEditingComponent, name: 'Inline Editing', order: '03', category: 'Appointments', description: 'The example showcases the inline mode of the Angular Scheduler that is used to create an appointment or edit an existing appointments subject easily and quickly.' },
   { 'path': ':theme/schedule/virtual-scrolling', component: VirtualScrollingComponent, name: 'Virtual Scrolling', order: '04', category: 'Scrolling', hideOnDevice: true, description: 'This example illustrates how to achieve high performance in the Angular Scheduler using virtual scrolling to load resources and events on demand.' },
   { 'path': ':theme/schedule/views', component: ViewsComponent, name: 'Basic Views ', order: '05', category: 'Views', description: 'This example demonstrates the basic views (day, week, workweek, and month) of the Angular Scheduler control with their default configurations.' },
   { 'path': ':theme/schedule/timeline', component: TimelineComponent, name: 'Timeline Views ', order: '05', category: 'Views', description: 'This example presents timeline views (day, week, workweek, and month) of the Angular Scheduler with their default configurations.' },
   { 'path': ':theme/schedule/agenda', component: AgendaComponent, name: 'Agenda View', order: '05', category: 'Views', description: 'This demo shows the agenda view of the Angular Schedule that displays events as a list with virtual scrolling, with a number of initially loaded days.' },
   { 'path': ':theme/schedule/month-agenda', component: MonthAgendaComponent, name: 'Month Agenda View', order: '05', category: 'Views', description: 'This demo presents the Angular Scheduler month-agenda view, which follows the month-view layout while displaying events for a selected date.' },
-  { 'path': ':theme/schedule/year', component: YearComponent, name: 'Year View', order: '05', category: 'Views', description: 'This example presents a year view of the Angular Scheduler that displays appointments or events for an entire year with a horizontal or vertical layout.' },
+  { 'path': ':theme/schedule/year', component: YearComponent, name: 'Year View', order: '05', category: 'Views', type: 'update', description: 'This example presents a year view of the Angular Scheduler that displays appointments or events for an entire year with a horizontal or vertical layout.' },
   { 'path': ':theme/schedule/view-configuration', component: ViewConfigComponent, name: 'Individual View Settings', order: '05', category: 'Views', description: 'This demo shows how to configure different settings for each view in the Angular Scheduler, like applying event templates to the month view alone.' },
   { 'path': ':theme/schedule/extended-views', component: ExtendedViewsComponent, name: 'View Intervals', order: '05', category: 'Views', description: 'This demo shows how to design own custom views like 3 days, 2 weeks, 4 months apart from the default day, work week, month in Angular Event Scheduler.' },
   { 'path': ':theme/schedule/timeline-resource', component: TimelineResourcesComponent, name: 'Room Scheduler', order: '06', category: 'Multiple Resources', description: 'This demo shows how to design a meeting room calendar, conference room calendar, and cabin room manager using our Angular event calendar control.' },
@@ -103,6 +104,7 @@ export const scheduleRouteConfig: Object[] = [
   { 'path': ':theme/schedule/timeline-resource-grouping', component: TimelineResourceGroupingComponent, name: 'Timeline Grouping ', order: '07', category: 'Resource Grouping', description: 'This demo shows how to group multiple resources with timeline views in the Angular Schedule and how to display resources with expanded and collapsed headers.' },
   { 'path': ':theme/schedule/group-by-date', component: GroupByDateComponent, name: 'Date-wise Grouping  ', order: '07', category: 'Resource Grouping', description: 'This demo shows how to group multiple resources by date in the Angular Scheduler. The resource row is rendered under each date in the header.' },
   { 'path': ':theme/schedule/group-by-child', component: GroupByChildComponent, name: 'Hierarchical Grouping ', order: '07', category: 'Resource Grouping', description: 'This demo shows how to group resources in a hierarchical structure for parent-child resources in the Angular Scheduler control.' },
+  { 'path': ':theme/schedule/adaptive-grouping', component: AdaptiveGroupingComponent, name: 'Adaptive Grouping', order: '07', category: 'Resource Grouping', type: 'new', description: 'This demo shows how to change the mode of the Schedule to Adaptive mode in the Angular Scheduler control.' },
   { 'path': ':theme/schedule/cell-template', component: CellTemplateComponent, name: 'Cell', order: '08', category: 'Template', description: 'This demo shows how to customize the default appearance of work cells with images, links, and coloring styles using cell templates in the Angular Scheduler.' },
   { 'path': ':theme/schedule/date-header-template', component: DateheaderTemplateComponent, name: 'Date Header', order: '08', category: 'Template', description: 'This demo shows how to customize the default appearance of date header cells with images and links using the template option in the Angular Scheduler.' },
   { 'path': ':theme/schedule/events-template', component: EventsTemplateComponent, name: 'Events', order: '08', category: 'Template', description: 'This demo shows how to customize the look and feel of appointments (events) in the Angular Shceduler with images and links by using an event template.' },
@@ -124,7 +126,7 @@ export const scheduleRouteConfig: Object[] = [
   { 'path': ':theme/schedule/read-only', component: ReadOnlyComponent, name: 'Read-only Events', order: '10', category: 'Customization', description: 'This demo shows how to make specific events in the Angular Scheduler read-only, making them viewable but not editable by end users.' },
   { 'path': ':theme/schedule/excel-export', component: ExcelExportComponent, name: 'Excel Exporting', order: '13', category: 'Exporting', description: 'This example demonstrates how to export Angular Scheduler events (appointments) to the Microsoft Excel file format on the client side.' },
   { 'path': ':theme/schedule/calendar-export-import', component: CalendarExportImportComponent, name: 'Export and Import ICS', order: '13', category: 'Exporting', description: 'This demo shows how to handle exporting to ICS and importing from ICS in the Angular Scheduler. The ICS file must come from Google Calendar or MS Outlook.' },
-  { 'path': ':theme/schedule/print', component: PrintComponent, name: 'Print', order: '13', category: 'Exporting', description: 'This sample demonstrates how to print all the appointments (events) in the Angular Scheduler on the client side using the Print Library.' },
+  { 'path': ':theme/schedule/print', component: PrintComponent, name: 'Print', order: '13', category: 'Exporting', type: 'update', description: 'This sample demonstrates how to print all the appointments (events) in the Angular Scheduler on the client side using the Print Library.' },
   { 'path': ':theme/schedule/recurrence-editor-generate-rule', component: RecGeneraterComponent, name: 'Rule Generator', order: '11', category: 'Recurrence Editor', description: 'This demo showcases how to generate various recurrence pattern rules, such as daily, weekly, monthly, and yearly, using the Recurrence Editor.' },
   { 'path': ':theme/schedule/recurrence-editor-populate-rule', component: RecPopulateComponent, name: 'Populate Rule', order: '11', category: 'Recurrence Editor', description: 'This demo shows how to populate a predefined set of recurrence rules in the Recurrence Editor fields to help users create recurring events.' },
   { 'path': ':theme/schedule/keyboard-interaction', component: KeyboardComponent, name: 'Keyboard Interaction', hideOnDevice: true, order: '12', category: 'Miscellaneous', description: 'This demo showcases all the available keyboard shortcuts that help users perform actions using only the keyboard in the Angular Scheduler control.' },
@@ -142,7 +144,7 @@ const declarations: Type<Object>[] = [
   GroupComponent, AddRemoveResourcesComponent, TimelineComponent, TimelineResourceGroupingComponent, TimelineResourcesComponent,
   HeaderRowsComponent, ExternalDragDropComponent, ScheduleContextMenuComponent, VirtualScrollingComponent, CalendarIntegrationComponent,
   CalendarExportImportComponent, ExcelExportComponent, PrintComponent, YearComponent, InlineEditingComponent, QuickInfoTemplateComponent,
-  OverviewComponent, MultiDragComponent
+  OverviewComponent, MultiDragComponent, AdaptiveGroupingComponent
 ];
 
 @NgModule({

@@ -1,8 +1,10 @@
+<!-- custom code start -->
 <div id="action-description">
     <p>
         This sample demonstrates cell template feature with interview registration form scenario using input components.
     </p>
 </div>
+<!-- custom code end -->
 <div class="control-section">
     <ejs-spreadsheet #spreadsheet [showRibbon]="false" [allowResizing]="false" [showFormulaBar]="false" [allowOpen]="false" [allowSave]="false"
         [scrollSettings]="{ isFinite: true }" (created)="created()" [allowEditing]="false" [selectionSettings]="{ mode: 'None' }">
@@ -17,7 +19,7 @@
                     </e-row>
                     <e-row [height]=55>
                         <e-cells>
-                            <e-cell [index]=1 value="Name:"></e-cell>
+                            <e-cell [index]=1 value="Name"></e-cell>
                         </e-cells>
                     </e-row>
                     <e-row [height]=45>
@@ -114,7 +116,7 @@
         </e-sheets>
     </ejs-spreadsheet>
 </div>
-
+<!-- custom code start -->
 <div id="description">
     <p>
         In this demo, cell template is applied to `C2:C9` and instantiated with input components like TextBox, DropDownList,
@@ -122,7 +124,8 @@
     </p>
     <p>
         More information about cell template feature can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/spreadsheet/getting-started">
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/spreadsheet/template">
             documentation</a> section.
     </p>
 </div>
+<!-- custom code end -->

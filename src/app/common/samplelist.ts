@@ -67,7 +67,7 @@ export let samplesList: any = [
         'name': 'Data Grid', 'category': 'Grids', 'order': '01', 'path': 'grid', 'samples': gridRouteConfig, 'ftName': 'datagrid', 'type': 'update'
     },
     {
-        'name': 'Tree Grid', 'category': 'Grids', 'order': '01', 'path': 'treegrid', 'samples': treegridRouteConfig, 'type': 'update'
+        'name': 'Tree Grid', 'category': 'Grids', 'order': '01', 'path': 'treegrid', 'samples': treegridRouteConfig
     },
     {
         'name': 'Chart', 'category': 'Data visualization', 'order': '02', 'path': 'chart', 'samples': chartAppRoutes, 'type': 'update'
@@ -82,7 +82,7 @@ export let samplesList: any = [
         'name': 'Diagram', 'category': 'Data visualization', 'order': '02', 'path': 'diagram', 'samples': diagramAppRoutes
     },
     {
-        'name': 'Stock Chart', 'category': 'Data visualization', 'order': '02', 'path': 'stock-chart', 'samples': stockChartAppRoutes
+        'name': 'Stock Chart', 'category': 'Data visualization', 'order': '02', 'path': 'stock-chart', 'samples': stockChartAppRoutes, 'type': 'update'
     },
     {
         'name': 'Maps', 'category': 'Data visualization', 'order': '02', 'path': 'maps', 'samples': mapAppRoutes
@@ -118,7 +118,7 @@ export let samplesList: any = [
         'name': 'Scheduler', 'category': 'Calendars', 'order': '04', 'path': 'schedule', 'samples': scheduleRouteConfig, 'ftName': 'scheduler', 'type': 'update'
     },
     {
-        'name': 'Gantt', 'category': 'Calendars', 'order': '04', 'path': 'gantt', 'samples': GanttAppRoutes, 'ftName': 'gantt'
+        'name': 'Gantt', 'category': 'Calendars', 'order': '04', 'path': 'gantt', 'samples': GanttAppRoutes, 'ftName': 'gantt', 'type': 'update'
     },
     {
         'name': 'Calendar', 'category': 'Calendars', 'order': '04', 'path': 'calendar', 'samples': calendarAppRoutes
@@ -139,13 +139,13 @@ export let samplesList: any = [
         'name': 'DocumentEditor', 'category': 'Editors', 'order': '03', 'path': 'document-editor', 'samples': documentEditorAppRoutes, 'ftName': 'document-editor', 'type': 'update'
     },
     {
-        'name': 'DatePicker', 'category': 'Calendars', 'order': '04', 'path': 'datepicker', 'samples': datePickerAppRoutes
+        'name': 'DatePicker', 'category': 'Calendars', 'order': '04', 'path': 'datepicker', 'samples': datePickerAppRoutes, 'type': 'update'
     },
     {
         'name': 'DateRangePicker', 'category': 'Calendars', 'order': '04', 'path': 'daterangepicker', 'samples': dateRangePickerAppRoutes
     },
     {
-        'name': 'DateTimePicker', 'category': 'Calendars', 'order': '04', 'path': 'datetimepicker', 'samples': dateTimePickerAppRoutes
+        'name': 'DateTimePicker', 'category': 'Calendars', 'order': '04', 'path': 'datetimepicker', 'samples': dateTimePickerAppRoutes, 'type': 'update'
     },
     {
         'name': "Dropdown List", 'category': "Dropdowns", 'ftName': "dropdown-list", 'order': '05', 'path': "drop-down-list", 'samples': dropdownlistAppRoutes
@@ -166,7 +166,7 @@ export let samplesList: any = [
         'name': 'Pivot Table', 'category': 'Grids', 'order': '01', 'path': 'pivot-table', 'samples': pivottableRouteConfig, 'type': 'update'
     },
     {
-        'name': 'Spreadsheet', 'category': 'Grids', 'order': '04', 'path': 'spreadsheet', 'samples': spreadsheetAppRoutes, 'ftName': 'spreadsheet', 'type': 'update'
+        'name': 'Spreadsheet', 'category': 'Grids', 'order': '04', 'path': 'spreadsheet', 'samples': spreadsheetAppRoutes, 'type': 'update', 'ftName': 'spreadsheet'
     },
     {
         'name': 'Numeric Textbox', 'category': 'Inputs', 'order': '08', 'path': 'numerictextbox', 'samples': numericAppRoutes, 'ftName': "numerictextbox"
@@ -178,7 +178,7 @@ export let samplesList: any = [
         'name': 'TextBox', 'category': 'Inputs', 'order': '08', 'path': 'textboxes', 'samples': textboxesAppRoutes, 'ftName': 'textbox'
     },
     {
-        'name': "TimePicker", 'category': 'Calendars', 'order': '04', 'path': "timepicker", 'samples': timePickerAppRoutes
+        'name': "TimePicker", 'category': 'Calendars', 'order': '04', 'path': "timepicker", 'samples': timePickerAppRoutes, 'type': 'update'
     },
     {
         'name': "File Upload", 'category': "Inputs", 'order': '08', 'path': "uploader", 'samples': uploaderAppRoutes, 'ftName': 'file-upload'
@@ -196,7 +196,7 @@ export let samplesList: any = [
         'name': 'ListView', 'category': 'Layout', 'order': '09', 'path': 'listview', 'samples': listAppRoutes
     },
     {
-        'name': 'Dialog', 'category': 'Layout', 'order': '09', 'path': 'dialog', 'samples': dialogAppRoutes, 'ftName': 'modal-dialog'
+        'name': 'Dialog', 'category': 'Layout', 'order': '09', 'path': 'dialog', 'samples': dialogAppRoutes, 'ftName': 'modal-dialog', "type": "update"
     },
     {
         'name': "Rich Text Editor", 'category': "Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "rich-text-editor", 'samples': rteAppRoutes, "type": "update"
@@ -214,7 +214,7 @@ export let samplesList: any = [
         'name': 'TreeView', 'category': 'Navigation', 'order': '06', 'path': 'treeview', 'samples': treeAppRoutes, 'ftName': "treeview"
     },
     {
-        'name': 'Tabs', 'category': 'Navigation', 'order': '06', 'path': 'tab', 'samples': tabAppRoutes, 'ftName': "tabs", 'type': 'update'
+        'name': 'Tab', 'category': 'Navigation', 'order': '06', 'path': 'tab', 'samples': tabAppRoutes, 'ftName': "tabs"
     },
     {
         'name': 'Toolbar', 'category': 'Navigation', 'order': '06', 'path': 'toolbar', 'samples': toolbarAppRoutes, 'ftName': "toolbar"
@@ -235,7 +235,7 @@ export let samplesList: any = [
         'name': "Color Picker", 'category': "Inputs", 'order': '08', 'path': "color-picker", 'samples': colorPickerAppRoutes, 'ftName': "color-picker"
     },
     {
-        'name': "PdfViewer", 'category': "Viewer", 'order': '11', 'path': "pdfviewer", 'samples': pdfViewerAppRoutes, 'ftName': "pdfviewer"
+        'name': "PdfViewer", 'category': "Viewer", 'order': '11', 'path': "pdfviewer", 'samples': pdfViewerAppRoutes, 'ftName': "pdfviewer", "type": "update"
     },
     {
         'name': 'In-place Editor', 'category': 'Editors', 'order': '03', 'path': 'inplace-editor', 'samples': inplaceeditorAppRoutes, 'ftName': 'inplaceeditor'

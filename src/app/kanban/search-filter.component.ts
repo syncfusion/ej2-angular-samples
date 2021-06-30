@@ -1,7 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
 import { Query } from '@syncfusion/ej2-data';
-import { DropDownListComponent, ChangeEventArgs as DropDownChangeArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent, SelectEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import { TextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 import { KanbanComponent, CardSettingsModel, SwimlaneSettingsModel } from '@syncfusion/ej2-angular-kanban';
 import { kanbanData } from './data';
@@ -25,33 +25,32 @@ export class SearchFilterComponent {
     public swimlaneSettings: SwimlaneSettingsModel = { keyField: 'Assignee' };
     public priorityData: string[] = ['None', 'High', 'Normal', 'Low'];
     public statusData: { [key: string]: Object; }[] = [
-        { id: 'None', status: 'None' },
-        { id: 'To Do', status: 'Open' },
-        { id: 'In Progress', status: 'InProgress' },
-        { id: 'Testing', status: 'Testing' },
-        { id: 'Done', status: 'Close' }
+        { id: 'None', value: 'None' },
+        { id: 'To Do', value: 'Open' },
+        { id: 'In Progress', value: 'InProgress' },
+        { id: 'Testing', value: 'Testing' },
+        { id: 'Done', value: 'Close' }
     ];
-    public fields: Object = { text: 'id', value: 'status' };
+    public fields: Object = { text: 'id', value: 'value' };
     public value: String = 'None';
     public emptyValue: Boolean = true;
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['search-filter.style.css'];
     }
-
-    change(args: DropDownChangeArgs): void {
+    prioritySelect(args: SelectEventArgs): void {
         let filterQuery: Query = new Query();
-        if (args.value !== 'None') {
-            if (args.element.id === 'priority_filter') {
-                filterQuery = new Query().where('Priority', 'equal', args.value);
-            } else {
-                filterQuery = new Query().where('Status', 'equal', args.value);
-            }
+        if (args.itemData.value !== 'None') {
+          filterQuery = new Query().where('Priority', 'equal', args.itemData.value);
         }
-        if (args.element.id === 'priority_filter') {
-            this.dropdownStatusObj.setProperties({ value: 'None' }, false);
-        } else {
-            this.dropdownPriorityObj.setProperties({ value: 'None' }, false);
+        this.dropdownStatusObj.value = 'None';
+        this.kanbanObj.query = filterQuery;
+    }
+    statusSelect(args: SelectEventArgs): void {
+        let filterQuery: Query = new Query();
+        if (args.itemData.value !== 'None') {
+          filterQuery = new Query().where('Status', 'equal', args.itemData.value);
         }
+        this.dropdownPriorityObj.value = 'None';
         this.kanbanObj.query = filterQuery;
     }
     searchClick(e: KeyboardEvent): void {
@@ -73,14 +72,14 @@ export class SearchFilterComponent {
     }
 
     public onFocus = (): void => {
-        if (this.textBoxObj.value === '') {
+        if (this.textBoxObj.value === null || this.textBoxObj.value === '') {
             this.reset();
         }
     }
 
     reset(): void {
-        this.dropdownPriorityObj.setProperties({ value: 'None' }, false);
-        this.dropdownStatusObj.setProperties({ value: 'None' }, false);
+        this.dropdownPriorityObj.value = 'None';
+        this.dropdownStatusObj.value = 'None';
         this.kanbanObj.query = new Query();
     }
 }

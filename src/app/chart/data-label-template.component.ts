@@ -15,7 +15,7 @@ export class DataLabelComponent {
     public materialMan: string = '<div style="background-color:#00bdae;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
         '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
-        + 'padding: 2px;line-height: 20px;text-align: center; padding-right: 6px;"><span>' +
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y}M </span></div></div>';
     public materialWomen: string = '<div style="background-color:#404041;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
@@ -25,12 +25,12 @@ export class DataLabelComponent {
     public fabricMan: string = '<div style="background-color:#4472c4;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
         '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
-        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px"><span>' +
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y}M </span></div></div>';
     public fabricWomen: string = '<div style="background-color:#ed7d31;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
         '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
-        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px"><span>' +
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y}M </span></div></div>';
     public bootstrapMan: string = '<div style="background-color:#a16ee5;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
@@ -40,7 +40,7 @@ export class DataLabelComponent {
     public bootstrapWomen: string = '<div style="background-color:#f7ce69;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
         '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
-        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px"><span>' +
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y}M </span></div></div>';
     public highcontrastMan: string = '<div style="background-color:#79ECE4;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
@@ -50,7 +50,17 @@ export class DataLabelComponent {
     public highcontrastWomen: string = '<div style="background-color:#E98272;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
         '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
-        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px"><span>' +
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
+    public tailwindMan: string = '<div style="background-color:#5A61F6;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
+    public tailwindWomen: string = '<div style="background-color:#65A30D;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y}M </span></div></div>';
     public data: Object[] = [
         { x: 2010, y: 1014 }, { x: 2011, y: 1040 },
@@ -119,6 +129,8 @@ export class DataLabelComponent {
             args.template = args.series.name === 'Male' ? this.fabricMan : this.fabricWomen;
         }  else if (this.theme === <ChartTheme>'Highcontrast') {
             args.template = args.series.name === 'Male' ? this.highcontrastMan : this.highcontrastWomen;
+        }  else if (this.theme === <ChartTheme>'Tailwind') {
+            args.template = args.series.name === 'Male' ? this.tailwindMan : this.tailwindWomen;
         } else {
             args.template = args.series.name === 'Male' ? this.bootstrapMan : this.bootstrapWomen;
         }

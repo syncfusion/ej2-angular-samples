@@ -11,12 +11,13 @@
         </span>
         <span id="performanceTime">Time Taken: 0 ms</span>
     </div>
-    <ejs-grid #grid [dataSource]='vData' [enableVirtualization]='true' [enableColumnVirtualization]='true' height='600' (dataBound)='hide()'>
+    <ejs-grid #grid [dataSource]='vData' [enableVirtualization]='true' [enableColumnVirtualization]='true' [editSettings]='editSettings' [toolbar]='toolbar' height='400' (dataBound)='hide()'>
         <e-columns>
-            <e-column field='FIELD1' headerText='Player Name' width='120'></e-column>
+            <e-column field='SNo' headerText='S.No' width='140' isPrimaryKey='true' [validationRules]='validationRules'></e-column>
+            <e-column field='FIELD1' headerText='Player Name' width='140' [validationRules]='validationRules'></e-column>
             <e-column field='FIELD2' headerText='Year' width='100'></e-column>
-            <e-column field='FIELD3' headerText='Stint' width='120'></e-column>
-            <e-column field='FIELD4' headerText='TMID' width='120'></e-column>
+            <e-column field='FIELD3' headerText='Sports' width='160' editType='dropdownedit' [validationRules]='validationRules'></e-column>
+            <e-column field='FIELD4' headerText='Country' width='160' editType='dropdownedit'></e-column>
             <e-column field='FIELD5' headerText='LGID' width='120'></e-column>
             <e-column field='FIELD6' headerText='GP' width='120'></e-column>
             <e-column field='FIELD7' headerText='GS' width='120'></e-column>
@@ -42,7 +43,7 @@
             <e-column field='FIELD27' headerText='Post Points' width='120'></e-column>
             <e-column field='FIELD28' headerText='Post OREB' width='150'></e-column>
             <e-column field='FIELD29' headerText='Post DREB' width='150'></e-column>
-            <e-column field='FIELD30' headerText='Post REB' width='150'></e-column>
+            <e-column field='FIELD30' headerText='Post REB' width='150' editType='numericedit' [validationRules]='validationRules'></e-column>
         </e-columns>
     </ejs-grid>
 </div>
@@ -64,7 +65,7 @@
         enableVirtualization </a></code>.
     </p>
     <p>
-        In this demo, Grid enabled row and column virtualization. Click the Load 100K Data button to bind 100000 rows and 30 columns.
+        In this demo, Grid enabled row and column virtualization. Click the Load 100K Data button to bind 100000 rows and 30 columns. You can also perform the Edit action in this sample.
     </p>
     <p style='font-weight: 500'>Injecting Module:</p>
     <p>Grid component features are segregated into individual feature-wise modules. To use Virtualscrolling feature, we need

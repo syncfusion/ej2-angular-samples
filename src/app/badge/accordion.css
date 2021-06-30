@@ -8,6 +8,14 @@
   margin-top: 20px;
 }
 
+.tailwind .sample_container.badge-accordion  #accordion .e-toggle-icon {
+  top: 7px;
+}
+
+.e-bigger.tailwind .sample_container.badge-accordion  #accordion .e-toggle-icon {
+  top: 11px;
+}
+
 /* Font Icons */
 
 @font-face {

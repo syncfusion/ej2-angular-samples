@@ -1,12 +1,12 @@
 <div class="control-section">
     <div>
         <ejs-stockchart id='stockChartMultiSeries' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' [indicatorType]='indicatorType'
-            [trendlineType]='trendlineType' [title]='title' [crosshair]='crosshair' [titleStyle]='titleStyle' style="display:block;"
+            [trendlineType]='trendlineType' [title]='title' [crosshair]='crosshair' [legendSettings]='legend' [titleStyle]='titleStyle' style="display:block;"
             [primaryYAxis]='primaryYAxis' (load)='load($event)'>
             <e-stockchart-series-collection>
-                <e-stockchart-series [dataSource]='data1' type='Line' xName='x' yName='close'>
+                <e-stockchart-series [dataSource]='data1' type='Spline' xName='x' yName='close' name='GOOG'>
                 </e-stockchart-series>
-                <e-stockchart-series [dataSource]='data2' type='Line' xName='x' yName='close'>
+                <e-stockchart-series [dataSource]='data2' type='Spline' xName='x' yName='close' name='GOOGL'>
                 </e-stockchart-series>
             </e-stockchart-series-collection>
         </ejs-stockchart>
@@ -14,17 +14,20 @@
 </div>
 <div id="action-description">
     <p>
-        This sample visualizes stock chart with multiple series.
+        This sample visualizes stock chart with multiple series and legend.
     </p>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the Stock chart.
-        <code>LineSeries</code> is used to represent selected data value.
+        In this example, you can see how to render and configure the Stock Chart.
+        The <code>SplineSeries</code> is used to display data based on the selection made in the Range Selector. 
+        Since there are multiple series, the interactive legend has been enabled, which provides a quick overview of each series.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module:</p>
-    <p>Stock Chart features are segregated into individual feature-wise modules. To use Line Series and DateTime axis in stock chart, we need to inject
-        <code>LineSeriesService</code> and <code>DateTimeService</code> into the <code>@NgModule.providers</code> section.
+    <p>Stock Chart features are segregated into individual feature-wise modules.
+        To use SplineSeries, inject <code>SplineSeriesService</code> into the <code>@NgModule.providers</code> section. 
+        To use DateTime axis, inject <code>DateTimeService</code> into the <code>@NgModule.providers</code> section. 
+        To use Legend in stock chart, inject <code>StockLegendService</code> into the <code>@NgModule.providers</code> section.        
     </p>
 </div>

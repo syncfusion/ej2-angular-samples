@@ -33,21 +33,21 @@ export class SortingComponent {
             this.setFieldValue(data);
         }
         if (args.value === 'Custom') {
-            this.fieldObj.setProperties({ dataSource: ['Priority', 'RankId', 'Summary'] });
+            this.fieldObj.dataSource = ['Priority', 'RankId', 'Summary'];
             this.fieldObj.value = 'Priority';
-            this.fieldObj.setProperties({ enabled: true });
+            this.fieldObj.enabled = true;
         }
     }
     setFieldValue(data: string): void {
-        this.fieldObj.setProperties({ dataSource: [data] });
+        this.fieldObj.dataSource = [data];
         this.fieldObj.value = data;
-        this.fieldObj.setProperties({ enabled: false });
+        this.fieldObj.enabled = false;
     }
     sortClick(): void {
         this.setKanbanProperties();
     }
     clearClick(): void {
-        this.sortByObj.value = 'DataSourceOrder';
+        this.sortByObj.value = 'Index';
         this.directionObj.value = 'Ascending';
         this.setFieldValue('None');
         this.setKanbanProperties();

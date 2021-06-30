@@ -67,6 +67,14 @@
         content: '\e787';
     }
 
+    .tailwind .e-icon-btn .e-md-preview::before {
+        content: '\e7d0';
+    }
+
+    .tailwind .e-icon-btn.e-active .e-md-preview::before {
+        content: '\e748';
+    }
+
     .e-icon-btn.e-active .e-md-preview::before,
     #mdCustom .e-icon-btn.e-active .e-md-preview.e-icons::before {
 		content: '\e350';

@@ -403,6 +403,244 @@ export function orderDetails(): Object[] {
     }];
 }
 
+export function grossPay(): Object[] {
+  return [
+      {
+          "EMPLOYEE ID": "1001",
+          "EMPLOYEE NAME": "Vin Disel",
+          "DATE": "4/5/2021",
+          "WEEKDAY": "Mon",
+          "TIME IN": "8:00 AM",
+          "TIME OUT": "10:00 PM",
+          "HOURS WORKED": "14",
+          "BASIC SALARY (30/hour)": "=G4*30",
+          "GROSS PAY with OVERTIME(15/hour)": "=Sum(H4 + ((G4-8)*15))"
+      },{
+          "EMPLOYEE ID": "1002",
+          "EMPLOYEE NAME": "Steve",
+          "DATE": "4/6/2021",
+          "WEEKDAY": "Tue",
+          "TIME IN": "8:00 AM",
+          "TIME OUT": "6:00 PM",
+          "HOURS WORKED": "10",
+          "BASIC SALARY (30/hour)": "=G5*30",
+          "GROSS PAY with OVERTIME(15/hour)": "=Sum(H5 + ((G5-8)*15))"
+      },
+      {
+          "EMPLOYEE ID": "1003",
+          "EMPLOYEE NAME": "Paul Waulker",
+          "DATE": "4/6/2021",
+          "WEEKDAY": "Tue",
+          "TIME IN": "11:00 AM",
+          "TIME OUT": "4:00 PM",
+          "HOURS WORKED": "9",
+          "BASIC SALARY (30/hour)": "=G6*30",
+          "GROSS PAY with OVERTIME(15/hour)": "=Sum(H6 + ((G6-8)*15))"
+      },
+      {
+          "EMPLOYEE ID": "1004",
+          "EMPLOYEE NAME": "John",
+          "DATE": "4/8/2021",
+          "WEEKDAY": "Thu",
+          "TIME IN": "8:00 AM",
+          "TIME OUT": "4:00 PM",
+          "HOURS WORKED": "8",
+          "BASIC SALARY (30/hour)": "=G7*30",
+          "GROSS PAY with OVERTIME(15/hour)": "=Sum(H7 + ((G7-8)*15))"
+      },
+      {
+          "EMPLOYEE ID": "1005",
+          "EMPLOYEE NAME": "Sam",
+          "DATE": "4/9/2021",
+          "WEEKDAY": "Fri",
+          "TIME IN": "7:00 AM",
+          "TIME OUT": "6:00 PM",
+          "HOURS WORKED": "11",
+          "BASIC SALARY (30/hour)": "=G8*30",
+          "GROSS PAY with OVERTIME(15/hour)": "=Sum(H8 + ((G8-8)*15))"
+      },
+      {
+          "EMPLOYEE ID": "1006",
+          "EMPLOYEE NAME": "Chistoper",
+          "DATE": "4/12/2021",
+          "WEEKDAY": "Mon",
+          "TIME IN": "10:00 AM",
+          "TIME OUT": "6:00 PM",
+          "HOURS WORKED": "8",
+          "BASIC SALARY (30/hour)": "=G9*30",
+          "GROSS PAY with OVERTIME(15/hour)": "=Sum(H9 + ((G9-8)*15))"
+      },
+      {
+          "EMPLOYEE ID": "1007",
+          "EMPLOYEE NAME": "Adrew",
+          "DATE": "4/13/2021",
+          "WEEKDAY": "Tue",
+          "TIME IN": "10:00 AM",
+          "TIME OUT": "5:00 PM",
+          "HOURS WORKED": "7",
+          "BASIC SALARY (30/hour)": "=G10*30",
+          "GROSS PAY with OVERTIME(15/hour)": "=Sum(H10 + (0*15))"
+      },
+      {
+          "EMPLOYEE ID": "1004",
+          "EMPLOYEE NAME": "John",
+          "DATE": "4/14/2021",
+          "WEEKDAY": "Wed",
+          "TIME IN": "8:00 AM",
+          "TIME OUT": "4:00 PM",
+          "HOURS WORKED": "8",
+          "BASIC SALARY (30/hour)": "=G11*30",
+          "GROSS PAY with OVERTIME(15/hour)": "=Sum(H11 + ((G11-8)*15))"
+      },
+      {
+          "EMPLOYEE ID": "1009",
+          "EMPLOYEE NAME": "Bravo",
+          "DATE": "4/14/2021",
+          "WEEKDAY": "Wed",
+          "TIME IN": "11:00 AM",
+          "TIME OUT": "8:00 PM",
+          "HOURS WORKED": "9",
+          "BASIC SALARY (30/hour)": "=G12*30",
+          "GROSS PAY with OVERTIME(15/hour)": "=Sum(H12 + ((G12-8)*15))"
+      },
+      {
+          "EMPLOYEE ID": "1002",
+          "EMPLOYEE NAME": "Steve",
+          "DATE": "4/15/2021",
+          "WEEKDAY": "Thu",
+          "TIME IN": "9:00 AM",
+          "TIME OUT": "8:00 PM",
+          "HOURS WORKED": "11",
+          "BASIC SALARY (30/hour)": "=G13*30",
+          "GROSS PAY with OVERTIME(15/hour)": "=Sum(H13 + ((G13-8)*15))"
+      }
+  ];
+}
+export function hyperlinkCart(): Object[] {
+  return [
+      {
+        "Product Name": "Coffee Maker",
+        "Category": "Kitchen",
+        "Quantity": "43",
+        "Price": "399",
+        "Total": "=E4*D4"
+    },
+    {
+        "Product Name": "Apple Pencil",
+        "Category": "Electronics",
+        "Quantity": "7",
+        "Price": "200",
+        "Total": "=E5*D5"
+    },
+    {
+        "Product Name": "Juicer",
+        "Category": "Kitchen",
+        "Quantity": "12",
+        "Price": "100",
+        "Total": "=E6*D6"
+    },
+    {
+        "Product Name": "Toaster",
+        "Category": "Kitchen",
+        "Quantity": "69",
+        "Price": "183",
+        "Total": "=E7*D7"
+    },
+    {
+        "Product Name": "Tea Kettle",
+        "Category": "Kitchen",
+        "Quantity": "83",
+        "Price": "169",
+        "Total": "=E8*D8"
+    },
+    {
+        "Product Name": "Logitech Mouse",
+        "Category": "Electronics",
+        "Quantity": "16",
+        "Price": "250",
+        "Total": "=E9*D9"
+    },
+    {
+        "Product Name": "Skillet",
+        "Category": "Kitchen",
+        "Quantity": "20",
+        "Price": "149",
+        "Total": "=E10*D10"
+    },
+    {
+        "Product Name": "Hamilton Blender",
+        "Category": "Appliances",
+        "Quantity": "68",
+        "Price": "109",
+        "Total": "=E11*D11"
+    },
+    {
+        "Product Name": "Plate set",
+        "Category": "Kitchen",
+        "Quantity": "59",
+        "Price": "168",
+        "Total": "=E12*D12"
+    }
+  ];
+}
+export function hyperlinkStock(): Object[] {
+  return [
+      {
+        "Product ID": "AG940Z",
+        "Products Received": "100",
+        "Products Sold": "=100-Cart!D4",
+        "Available Quantity": "=B2-C2"
+    },
+    {
+        "Product ID": "BJ120K",
+        "Products Received": "100",
+        "Products Sold": "=100-Cart!D5",
+        "Available Quantity": "=B3-C3"
+    },
+    {
+        "Product ID": "BC120M",
+        "Products Received": "100",
+        "Products Sold": "=100-Cart!D6",
+        "Available Quantity": "=B4-C4"
+    },
+    {
+        "Product ID": "BS121L",
+        "Products Received": "100",
+        "Products Sold": "=100-Cart!D7",
+        "Available Quantity": "=B5-C5"
+    },
+    {
+        "Product ID": "BU121K",
+        "Products Received": "100",
+        "Products Sold": "=100-Cart!D8",
+        "Available Quantity": "=B6-C6"
+    },
+    {
+        "Product ID": "BD121M",
+        "Products Received": "100",
+        "Products Sold": "=100-Cart!D9",
+        "Available Quantity": "=B7-C7"
+    },
+    {
+        "Product ID": "AT992X",
+        "Products Received": "100",
+        "Products Sold": "=100-Cart!D10",
+        "Available Quantity": "=B8-C8"
+    },
+    {
+        "Product ID": "AP992Z",
+        "Products Received": "100",
+        "Products Sold": "=100-Cart!D11",
+        "Available Quantity": "=B9-C9"
+    },
+    {
+        "Product ID": "AW920X",
+        "Products Received": "100",
+        "Products Sold": "=100-Cart!D12",
+        "Available Quantity": "=B10-C10"
+    }
+  ];
+}
 export function formulaData(): Object[] {
   return [
     {

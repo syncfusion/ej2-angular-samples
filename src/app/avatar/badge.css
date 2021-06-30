@@ -10,6 +10,10 @@
   margin: 7px;
 }
 
+.tailwind .sample_container.avatar-badge .avatar-sub-block {
+  margin: 9px;
+}
+
 .sample_container.avatar-badge .avatar-block {
   display: inline-block;
   vertical-align: top;

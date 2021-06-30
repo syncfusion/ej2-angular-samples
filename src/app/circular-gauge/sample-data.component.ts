@@ -86,43 +86,37 @@ export class SampleDataComponent {
     public pointers1: Object = [{
         value: 75, radius: '60%',
         animation: { enable: false },
-        color: '#777777', pointerWidth: 5,
+        pointerWidth: 5,
         cap: {
             radius: 6,
-            border: { width: 0 },
-            color: '#777777'
+            border: { width: 0 }
         },
         needleTail: {
-            length: '25%',
-            color: '#777777'
+            length: '25%'
         }
     }];
     public pointers2: Object = [{
         value: 60, radius: '60%',
         animation: { enable: false },
-        color: '#777777', pointerWidth: 5,
+        pointerWidth: 5,
         cap: {
             radius: 6,
-            border: { width: 0 },
-            color: '#777777'
+            border: { width: 0 }
         },
         needleTail: {
-            length: '25%',
-            color: '#777777'
+            length: '25%'
         }
     }];
     public pointers3: Object = [{
         value: 25, radius: '60%',
         animation: { enable: false },
-        color: '#777777', pointerWidth: 5,
+        pointerWidth: 5,
         cap: {
             radius: 6,
-            border: { width: 0 },
-            color: '#777777'
+            border: { width: 0 }
         },
         needleTail: {
-            length: '25%',
-            color: '#777777'
+            length: '25%'
         }
     }];
 

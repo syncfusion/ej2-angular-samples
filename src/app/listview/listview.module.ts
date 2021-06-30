@@ -74,7 +74,7 @@ export const listAppRoutes: Object[] = [
     }
 ]
 
-export const ListviewRouter: ModuleWithProviders <any> = RouterModule.forChild(listAppRoutes);
+export const ListviewRouter: ModuleWithProviders<any> = RouterModule.forChild(listAppRoutes);
 
 @NgModule({
     imports: [ListviewRouter, SharedModule, CommonModule, ListViewAllModule, TabAllModule, DropDownListAllModule],

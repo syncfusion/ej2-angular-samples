@@ -6,16 +6,21 @@
     font-weight: normal;
     font-style: normal;
 }
+
+.property-panel-table td {
+    padding-bottom: 1rem;
+}
 /* custom code end*/
 
-.schedule-print.e-schedule .e-schedule-toolbar .e-icons {
+.e-print-btn .e-icons {
     font-family: 'Schedule_print', 'e-icons';
 }
 
-.schedule-print.e-schedule .e-schedule-toolbar .e-icon-schedule-print::before {
+.e-print-btn .e-icon-schedule-print::before {
     content: '\e204';
 }
 
-.schedule-print.e-schedule .e-schedule-toolbar .e-toolbar-item.e-today {
+.schedule-print.e-schedule .e-schedule-toolbar .e-toolbar-item.e-today,
+.e-hide-row {
     display: none;
 }
