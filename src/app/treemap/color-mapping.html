@@ -15,12 +15,15 @@
                 <div class="property-panel-header">Properties</div>
                 <div class="property-panel-content">
     <table id="property" title="Properties" style="width: 100%">
-        <tbody>
+        <colgroup>
+            <col span="1" style="width: 50%;">
+            <col span="1" style="width: 50%;">
+        </colgroup>
             <tr style="height: 50px">
-                <td style="width: 50%">
+                <td>
                     <div class="property-text">Type</div>
                 </td>
-                <td style="width: 50%;">
+                <td>
                     <select name="selectIndex" autocomplete="off" id="colorMapping" style="width:60%;">
                         <option value="RangeColorMapping" selected>Range </option>
                         <option value="EqualColorMapping">Equal </option>
@@ -28,38 +31,54 @@
                     </select>
                 </td>
             </tr>
-            <br/>
-            <tr >
-                <td style="width: 40%">
-                    <div class="property-text" id="text1" style="display: none"> Change Opacity</div>
+            </table>
+            <table id="property" title="Properties" style="width: 100%">
+                <colgroup>
+                    <col span="1" style="width: 50%;">
+                    <col span="1" style="width: 50%;">
+                </colgroup>
+                <tr style="height: 50px">
+                <td>
+                    <div class="property-text" id="text1" style="display: none; width: 60%"> Change Opacity</div>
                 </td>
-                <td style="width: 40%;">
+                <td>
                     <div id="input1" style="display: none">
                         <input type="checkbox" id="opacity"/>
                     </div>
                 </td>
             </tr>
-            <tr >
-                <td style="width: 50%">
-                    <div class="property-text" id="text2" style="margin-top:12%; display: none">Min Opacity</div>
+            </table>
+            <table id="property" title="Properties" style="width: 100%">
+                <colgroup>
+                    <col span="1" style="width: 50%;">
+                    <col span="1" style="width: 50%;">
+                </colgroup>
+                <tr style="height: 50px;">
+                <td>
+                    <div class="property-text" id="text2" style=" display: none">Min Opacity</div>
                 </td>
-                <td style="width: 50%;">
+                <td>
                     <div id="input2" style="display: none">
-                    <input type="range" id="minopacity" step="0.1" value="0.5" min="0" max="1" style="width:100%;margin-top: 20%"  />
+                    <input type="range" id="minopacity" step="0.1" value="0.5" min="0" max="1" style="width:110%;"  />
                 </div>
                 </td>
             </tr>
-            <tr >
-                <td style="width: 50%">
-                    <div class="property-text" id="text3" style="margin-top:12%; display: none">Max Opacity</div>
+            </table>
+            <table id="property" title="Properties" style="width: 100%">
+                <colgroup>
+                    <col span="1" style="width: 50%;">
+                    <col span="1" style="width: 50%;">
+                </colgroup>
+                <tr style="height: 50px;">
+                <td>
+                    <div class="property-text" id="text3" style=" display: none">Max Opacity</div>
                 </td>
-                <td style="width: 50%;">
+                <td>
                     <div id="input3" style="display: none">
-                    <input type="range" id="maxopacity" step="0.1" value="1" min="0" max="1" style="width:100%;margin-top: 20%"  />
+                    <input type="range" id="maxopacity" step="0.1" value="1" min="0" max="1" style="width:110%;"  />
                     </div>
                 </td>
             </tr>
-        </tbody>
     </table>
 </div>
 </div>

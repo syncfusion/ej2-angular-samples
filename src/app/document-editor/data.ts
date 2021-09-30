@@ -1853,13 +1853,1731 @@ export let headerFooter: Object = { "sections": [{ "blocks": [{ "paragraphFormat
 
 export let links: Object = { "sections": [{ "blocks": [{ "characterFormat": { "fontColor": "#4472C4FF" }, "paragraphFormat": { "afterSpacing": 36.0, "styleName": "Normal" }, "inlines": [{ "name": "top", "bookmarkType": 0 }, { "text": "Hyperlinks and bookmarks", "characterFormat": { "fontSize": 18.0, "fontFamily": "Monotype Corsiva", "fontColor": "#4472C4FF" } }, { "name": "top", "bookmarkType": 1 }] }, { "paragraphFormat": { "styleName": "Heading 1" }, "inlines": [{ "text": "Heading 1" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit " }, { "text": "amet" }, { "text": ", " }, { "text": "consectetur" }, { "text": " " }, { "text": "adipiscing" }, { "text": " " }, { "text": "elit" }, { "text": ", " }, { "text": "sed" }, { "text": " do " }, { "text": "eiusmod" }, { "text": " " }, { "text": "tempor" }, { "text": " " }, { "text": "incididunt" }, { "text": " " }, { "text": "ut" }, { "text": " " }, { "text": "labore" }, { "text": " et dolore magna " }, { "text": "aliqua" }, { "text": ". Ut " }, { "text": "enim" }, { "text": " ad minim " }, { "text": "veniam" }, { "text": ", " }, { "text": "quis" }, { "text": " " }, { "text": "nostrud" }, { "text": " exercitation " }, { "text": "ullamco" }, { "text": " " }, { "text": "laboris" }, { "text": " nisi " }, { "text": "ut" }, { "text": " " }, { "text": "aliquip" }, { "text": " ex " }, { "text": "ea" }, { "text": " " }, { "text": "commodo" }, { "text": " " }, { "text": "consequat" }, { "text": "." }] }, { "paragraphFormat": { "beforeSpacing": 18.0, "afterSpacing": 18.0, "styleName": "Normal" }, "inlines": [{ "text": "For more information, kindly visit" }, { "text": " " }, { "hasFieldEnd": true, "fieldType": 0 }, { "text": "HYPERLINK \"https://www.syncfusion.com/\" " }, { "fieldType": 2 }, { "text": "our website", "characterFormat": { "styleName": "Hyperlink" } }, { "fieldType": 1 }, { "text": " [Link to external URL]." }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [] }, { "paragraphFormat": { "styleName": "Heading 2" }, "inlines": [{ "text": "Heading 2" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit " }, { "text": "amet" }, { "text": ", " }, { "text": "consectetur" }, { "text": " " }, { "text": "adipiscing" }, { "text": " " }, { "text": "elit" }, { "text": ", " }, { "text": "sed" }, { "text": " do " }, { "text": "eiusmod" }, { "text": " " }, { "text": "tempor" }, { "text": " " }, { "text": "incididunt" }, { "text": " " }, { "text": "ut" }, { "text": " " }, { "text": "labore" }, { "text": " et dolore magna " }, { "text": "aliqua" }, { "text": ". Ut " }, { "text": "enim" }, { "text": " ad minim " }, { "text": "veniam" }, { "text": ", " }, { "text": "quis" }, { "text": " " }, { "text": "nostrud" }, { "text": " exercitation " }, { "text": "ullamco" }, { "text": " " }, { "text": "laboris" }, { "text": " nisi " }, { "text": "ut" }, { "text": " " }, { "text": "aliquip" }, { "text": " ex " }, { "text": "ea" }, { "text": " " }, { "text": "commodo" }, { "text": " " }, { "text": "consequat" }, { "text": "." }] }, { "paragraphFormat": { "beforeSpacing": 18.0, "afterSpacing": 18.0, "styleName": "Normal" }, "inlines": [{ "text": "You can reach us through " }, { "hasFieldEnd": true, "fieldType": 0 }, { "text": "HYPERLINK \"mailto:info@syncfusion.com\" " }, { "fieldType": 2 }, { "text": "our mail", "characterFormat": { "styleName": "Hyperlink" } }, { "fieldType": 1 }, { "text": " [Link to mail]." }] }, { "paragraphFormat": { "beforeSpacing": 18.0, "afterSpacing": 18.0, "styleName": "Normal" }, "inlines": [{ "name": "_GoBack", "bookmarkType": 0 }, { "name": "_GoBack", "bookmarkType": 1 }] }, { "paragraphFormat": { "beforeSpacing": 18.0, "afterSpacing": 18.0, "styleName": "Normal" }, "inlines": [] }, { "paragraphFormat": { "beforeSpacing": 18.0, "afterSpacing": 18.0, "styleName": "Normal" }, "inlines": [] }, { "paragraphFormat": { "beforeSpacing": 18.0, "afterSpacing": 18.0, "styleName": "Normal" }, "inlines": [{ "text": "To the top, click " }, { "hasFieldEnd": true, "fieldType": 0 }, { "text": "HYPERLINK \\l \"top\"" }, { "fieldType": 2 }, { "text": "here", "characterFormat": { "styleName": "Hyperlink" } }, { "fieldType": 1 }, { "text": " [Link to bookmark]." }] }], "headersFooters": {}, "sectionFormat": { "headerDistance": 36.0, "footerDistance": 36.0, "pageWidth": 612.0, "pageHeight": 792.0, "leftMargin": 72.0, "rightMargin": 72.0, "topMargin": 72.0, "bottomMargin": 72.0, "differentFirstPage": false, "differentOddAndEvenPages": false } }], "characterFormat": { "fontSize": 11.0, "fontFamily": "Calibri" }, "paragraphFormat": { "afterSpacing": 8.0, "lineSpacing": 1.0791666507720947, "lineSpacingType": "Multiple" }, "background": { "color": "#FFFFFFFF" }, "styles": [{ "type": "Paragraph", "name": "Normal", "next": "Normal", "paragraphFormat": { "afterSpacing": 0.0, "lineSpacing": 1.0, "lineSpacingType": "Multiple" } }, { "type": "Paragraph", "name": "Heading 1", "basedOn": "Normal", "next": "Normal", "link": "Heading 1 Char", "characterFormat": { "fontSize": 16.0, "fontFamily": "Calibri Light", "fontColor": "#2F5496FF" }, "paragraphFormat": { "beforeSpacing": 12.0, "outlineLevel": "Level1" } }, { "type": "Paragraph", "name": "Heading 2", "basedOn": "Normal", "next": "Normal", "link": "Heading 2 Char", "characterFormat": { "fontSize": 13.0, "fontFamily": "Calibri Light", "fontColor": "#2F5496FF" }, "paragraphFormat": { "beforeSpacing": 2.0, "outlineLevel": "Level2" } }, { "type": "Character", "name": "Default Paragraph Font" }, { "type": "Paragraph", "name": "Notes", "basedOn": "Normal", "next": "Normal", "characterFormat": { "bold": true }, "paragraphFormat": { "afterSpacing": 6.0 } }, { "type": "Character", "name": "Hyperlink", "basedOn": "Default Paragraph Font", "characterFormat": { "underline": "Single", "fontColor": "#0563C1FF" } }, { "type": "Character", "name": "Unresolved Mention", "basedOn": "Default Paragraph Font", "characterFormat": { "fontColor": "#808080FF" } }, { "type": "Character", "name": "Heading 1 Char", "basedOn": "Default Paragraph Font", "characterFormat": { "fontSize": 16.0, "fontFamily": "Calibri Light", "fontColor": "#2F5496FF" } }, { "type": "Character", "name": "Heading 2 Char", "basedOn": "Default Paragraph Font", "characterFormat": { "fontSize": 13.0, "fontFamily": "Calibri Light", "fontColor": "#2F5496FF" } }, { "type": "Character", "name": "FollowedHyperlink", "basedOn": "Default Paragraph Font", "characterFormat": { "underline": "Single", "fontColor": "#954F72FF" } }] };
 
-export let paragraphFormat: Object = { "sections": [{ "blocks": [{ "characterFormat": { "fontColor": "#4472C4FF" }, "paragraphFormat": { "afterSpacing": 36.0, "styleName": "Normal" }, "inlines": [{ "text": "List of text alignment options", "characterFormat": { "fontSize": 18.0, "fontFamily": "Monotype Corsiva", "fontColor": "#4472C4FF" } }] }, { "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" }, "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Left-aligned", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontFamily": "Calibri" }, "paragraphFormat": { "afterSpacing": 18.0, "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo ", "characterFormat": { "fontFamily": "Calibri" } }, { "text": "consequat.", "characterFormat": { "fontFamily": "Calibri" } }] }, { "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" }, "paragraphFormat": { "beforeSpacing": 18.0, "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Centered", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontFamily": "Calibri" }, "paragraphFormat": { "afterSpacing": 18.0, "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "characterFormat": { "fontFamily": "Calibri" } }] }, { "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" }, "paragraphFormat": { "beforeSpacing": 18.0, "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "Right-", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }, { "text": "aligned", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontFamily": "Calibri" }, "paragraphFormat": { "afterSpacing": 18.0, "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut a", "characterFormat": { "fontFamily": "Calibri" } }, { "text": "liquip ex ea commodo consequat.", "characterFormat": { "fontFamily": "Calibri" } }] }, { "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" }, "paragraphFormat": { "beforeSpacing": 18.0, "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": "Justified", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontFamily": "Calibri" }, "paragraphFormat": { "afterSpacing": 18.0, "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat", "characterFormat": { "fontFamily": "Calibri" } }, { "text": ".", "characterFormat": { "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontFamily": "Calibri" }, "paragraphFormat": { "afterSpacing": 8.0, "lineSpacing": 1.0791666507720947, "lineSpacingType": "Multiple", "styleName": "Normal" }, "inlines": [{ "text": " ", "characterFormat": { "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontColor": "#4472C4FF" }, "paragraphFormat": { "afterSpacing": 36.0, "styleName": "Normal" }, "inlines": [{ "text": "List of indentation options", "characterFormat": { "fontSize": 18.0, "fontFamily": "Monotype Corsiva", "fontColor": "#4472C4FF" } }] }, { "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" }, "paragraphFormat": { "leftIndent": 36.0, "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": "Left indent is 48 pixels", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontFamily": "Calibri" }, "paragraphFormat": { "leftIndent": 36.0, "afterSpacing": 18.0, "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo", "characterFormat": { "fontFamily": "Calibri" } }, { "text": " consequat.", "characterFormat": { "fontFamily": "Calibri" } }] }, { "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" }, "paragraphFormat": { "rightIndent": 36.0, "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": "Right", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }, { "text": " indent is 48 pixels", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontFamily": "Calibri" }, "paragraphFormat": { "rightIndent": 36.0, "afterSpacing": 18.0, "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "characterFormat": { "fontFamily": "Calibri" } }] }, { "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" }, "paragraphFormat": { "firstLineIndent": 36.0, "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": "First line ", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }, { "text": "indent is 48 pixels", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontFamily": "Calibri" }, "paragraphFormat": { "firstLineIndent": 36.0, "afterSpacing": 18.0, "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "characterFormat": { "fontFamily": "Calibri" } }] }, { "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" }, "paragraphFormat": { "leftIndent": 36.0, "firstLineIndent": -36.0, "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": "Hanging", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }, { "text": " indent is 48 pixels", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontFamily": "Calibri" }, "paragraphFormat": { "leftIndent": 36.0, "firstLineIndent": -36.0, "afterSpacing": 18.0, "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "characterFormat": { "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontFamily": "Calibri" }, "paragraphFormat": { "afterSpacing": 8.0, "lineSpacing": 1.0791666507720947, "lineSpacingType": "Multiple", "styleName": "Normal" }, "inlines": [{ "text": " ", "characterFormat": { "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontColor": "#4472C4FF" }, "paragraphFormat": { "afterSpacing": 36.0, "styleName": "Normal" }, "inlines": [{ "text": "List of line spacing options", "characterFormat": { "fontSize": 18.0, "fontFamily": "Monotype Corsiva", "fontColor": "#4472C4FF" } }] }, { "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" }, "paragraphFormat": { "lineSpacing": 2.0, "lineSpacingType": "Multiple", "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": "Double line spacing", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontFamily": "Calibri" }, "paragraphFormat": { "afterSpacing": 18.0, "lineSpacing": 2.0, "lineSpacingType": "Multiple", "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ali", "characterFormat": { "fontFamily": "Calibri" } }, { "name": "_GoBack", "bookmarkType": 0 }, { "name": "_GoBack", "bookmarkType": 1 }, { "text": "quip ex ea commodo consequat.", "characterFormat": { "fontFamily": "Calibri" } }] }, { "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" }, "paragraphFormat": { "lineSpacing": 18.0, "lineSpacingType": "AtLeast", "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": "Line spacing", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }, { "text": " is", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }, { "text": " at least", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }, { "text": " ", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }, { "text": "24", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }, { "text": " pixels", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontFamily": "Calibri" }, "paragraphFormat": { "afterSpacing": 18.0, "lineSpacing": 18.0, "lineSpacingType": "AtLeast", "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "characterFormat": { "fontFamily": "Calibri" } }] }, { "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" }, "paragraphFormat": { "lineSpacing": 15.0, "lineSpacingType": "Exactly", "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": "Line spacing", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }, { "text": " is ", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }, { "text": "exactly 20", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }, { "text": " pixels", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontFamily": "Calibri" }, "paragraphFormat": { "afterSpacing": 18.0, "lineSpacing": 15.0, "lineSpacingType": "Exactly", "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "characterFormat": { "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontFamily": "Calibri" }, "paragraphFormat": { "leftIndent": 36.0, "afterSpacing": 18.0, "lineSpacing": 15.0, "lineSpacingType": "Exactly", "textAlignment": "Justify", "styleName": "Normal" }, "inlines": [{ "text": " " }] }, { "characterFormat": { "fontColor": "#4472C4FF" }, "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "List of paragraph", "characterFormat": { "fontSize": 18.0, "fontFamily": "Monotype Corsiva", "fontColor": "#4472C4FF" } }, { "text": " ", "characterFormat": { "fontSize": 18.0, "fontFamily": "Monotype Corsiva", "fontColor": "#4472C4FF" } }, { "text": "spacing options", "characterFormat": { "fontSize": 18.0, "fontFamily": "Monotype Corsiva", "fontColor": "#4472C4FF" } }] }, { "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" }, "paragraphFormat": { "beforeSpacing": 18.0, "afterSpacing": 12.0, "styleName": "Normal" }, "inlines": [{ "text": "Spacing before the paragraph is 24 pixels and after the paragraph is 16 pixels", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontFamily": "Calibri" }, "paragraphFormat": { "beforeSpacing": 18.0, "afterSpacing": 12.0, "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "characterFormat": { "fontFamily": "Calibri" } }] }, { "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" }, "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "No spacing before and after the paragraph", "characterFormat": { "bold": true, "fontSize": 14.0, "fontFamily": "Calibri" } }] }, { "characterFormat": { "fontFamily": "Calibri" }, "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "characterFormat": { "fontFamily": "Calibri" } }] }], "headersFooters": {}, "sectionFormat": { "headerDistance": 36.0, "footerDistance": 36.0, "pageWidth": 612.0, "pageHeight": 792.0, "leftMargin": 72.0, "rightMargin": 72.0, "topMargin": 72.0, "bottomMargin": 72.0, "differentFirstPage": false, "differentOddAndEvenPages": false } }], "characterFormat": { "fontSize": 11.0, "fontFamily": "Calibri" }, "paragraphFormat": { "afterSpacing": 8.0, "lineSpacing": 1.0791666507720947, "lineSpacingType": "Multiple" }, "background": { "color": "#FFFFFFFF" }, "styles": [{ "type": "Paragraph", "name": "Normal", "next": "Normal", "characterFormat": { "fontSize": 12.0, "fontFamily": "Times New Roman" }, "paragraphFormat": { "afterSpacing": 0.0, "lineSpacing": 1.0, "lineSpacingType": "Multiple" } }, { "type": "Character", "name": "Default Paragraph Font" }, { "type": "Paragraph", "name": "Notes", "basedOn": "Normal", "next": "Normal", "characterFormat": { "bold": true }, "paragraphFormat": { "afterSpacing": 6.0 } }] };
+export let paragraphFormat: Object = {
+	"sections": [
+			{
+					"blocks": [
+							{
+									"characterFormat": {
+											"fontColor": "#4472C4FF"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 36,
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "List of text alignment options",
+													"characterFormat": {
+															"fontSize": 18,
+															"fontFamily": "Monotype Corsiva",
+															"fontColor": "#4472C4FF",
+															"fontSizeBidi": 18,
+															"fontFamilyBidi": "Monotype Corsiva"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"bold": true,
+											"fontSize": 14,
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"boldBidi": true,
+											"fontSizeBidi": 14,
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Left-aligned",
+													"characterFormat": {
+															"bold": true,
+															"fontSize": 14,
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"boldBidi": true,
+															"fontSizeBidi": 14,
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 18,
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "The giant panda, which only lives in China outside of captivity, has captured the hearts of people of all ages across the globe. From their furry black and white bodies to their shy and docile nature, they are considered one of the world's most loved animals.",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"bold": true,
+											"fontSize": 14,
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"boldBidi": true,
+											"fontSizeBidi": 14,
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"beforeSpacing": 18,
+											"textAlignment": "Center",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Centered",
+													"characterFormat": {
+															"bold": true,
+															"fontSize": 14,
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"boldBidi": true,
+															"fontSizeBidi": 14,
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 18,
+											"textAlignment": "Center",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "A characteristic of the giant panda that has mystified scientists is their movable, elongated wrist bone that acts like an opposable thumb. This human-like quality that helps give them even more of a cuddly-bear appearance enables the giant panda to pick up objects and even eat sitting up.",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"bold": true,
+											"fontSize": 14,
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"boldBidi": true,
+											"fontSizeBidi": 14,
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"beforeSpacing": 18,
+											"textAlignment": "Right",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Right-aligned",
+													"characterFormat": {
+															"bold": true,
+															"fontSize": 14,
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"boldBidi": true,
+															"fontSizeBidi": 14,
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 18,
+											"textAlignment": "Right",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Giant pandas are generally referred to as bears and are typically called panda bears rather than giant pandas. Though we may think they look like bears, there has been a great deal of discussion for decades about where giant pandas fit in the animal kingdom. Much of the debate has been whether they are more closely related to the red panda, once thought to be a member of the raccoon family, than the bear family.",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"bold": true,
+											"fontSize": 14,
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"boldBidi": true,
+											"fontSizeBidi": 14,
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"beforeSpacing": 18,
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Justified",
+													"characterFormat": {
+															"bold": true,
+															"fontSize": 14,
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"boldBidi": true,
+															"fontSizeBidi": 14,
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 18,
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Gi",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											},
+											{
+													"text": "a",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											},
+											{
+													"text": "nt pandas can digest bamboo is attributed to tiny microbes that live within their digestive system. As they can only digest about 20% of what they eat, the average giant panda consumes around 14 kilograms (30 pounds) of bamboo a day. In comparison, humans eat about 2 kilograms (5 pounds) of food a day",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontColor": "#4472C4FF"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 36,
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "List of indentation options",
+													"characterFormat": {
+															"fontSize": 18,
+															"fontFamily": "Monotype Corsiva",
+															"fontColor": "#4472C4FF",
+															"fontSizeBidi": 18,
+															"fontFamilyBidi": "Monotype Corsiva"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"bold": true,
+											"fontSize": 14,
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"boldBidi": true,
+											"fontSizeBidi": 14,
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"leftIndent": 36,
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Left indent is 48 pixels",
+													"characterFormat": {
+															"bold": true,
+															"fontSize": 14,
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"boldBidi": true,
+															"fontSizeBidi": 14,
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"leftIndent": 36,
+											"afterSpacing": 6,
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "G",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											},
+											{
+													"text": "iant panda has a body that resembles a small bear and climbs trees like a bear, it also has several characteristics in common with the red panda. For example, both giant pandas and red pandas eat bamboo and have the same pseudo thumb.",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"leftIndent": 36,
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": []
+							},
+							{
+									"characterFormat": {
+											"bold": true,
+											"fontSize": 14,
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"boldBidi": true,
+											"fontSizeBidi": 14,
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"rightIndent": 36,
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Right indent is 48 pixels",
+													"characterFormat": {
+															"bold": true,
+															"fontSize": 14,
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"boldBidi": true,
+															"fontSizeBidi": 14,
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"rightIndent": 36,
+											"afterSpacing": 18,
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Giant pandas are generally referred to as bears and are typically called panda bears rather than giant pandas. Though we may think they look like bears, there has been a great deal of discussion for decades about where giant pandas fit in the animal kingdom. Much of ",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											},
+											{
+													"text": "the debate has been whether they are more closely related to the red panda, once thought to be a member of the raccoon family, than the bear family.",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontColor": "empty"
+									},
+									"paragraphFormat": {
+											"styleName": "Normal"
+									},
+									"inlines": []
+							},
+							{
+									"characterFormat": {
+											"bold": true,
+											"fontSize": 14,
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"boldBidi": true,
+											"fontSizeBidi": 14,
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"firstLineIndent": 36,
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "First line indent is 48 pixels",
+													"characterFormat": {
+															"bold": true,
+															"fontSize": 14,
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"boldBidi": true,
+															"fontSizeBidi": 14,
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"firstLineIndent": 36,
+											"afterSpacing": 18,
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "A characteristic of the giant panda that has mystified scientists is their movable, elongated wrist bone that acts like an opposable thumb. This human-like quality that helps give them even more of a cuddly-bear appearance enables the giant panda to pick up objects and even eat sitting up.",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"bold": true,
+											"fontSize": 14,
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"boldBidi": true,
+											"fontSizeBidi": 14,
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"leftIndent": 36,
+											"firstLineIndent": -36,
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Hanging indent is 48 pixels",
+													"characterFormat": {
+															"bold": true,
+															"fontSize": 14,
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"boldBidi": true,
+															"fontSizeBidi": 14,
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"leftIndent": 36,
+											"firstLineIndent": -36,
+											"afterSpacing": 18,
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Gaint",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											},
+											{
+													"text": " pandas can digest bamboo is attributed to tiny microbes that live within their digestive system. As they can only digest about 20% of what they eat, the average giant panda consumes around 14 kilograms (30 pounds) of bamboo a day. In comparison, humans eat about 2 kilograms (5 pounds) of food a day. This enormous diet means the giant panda spends more than 12 hours a day eating to stay nourished.",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 8,
+											"lineSpacing": 1.0791666507720947,
+											"lineSpacingType": "Multiple",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": " ",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontColor": "#4472C4FF"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 36,
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "List of line spacing options",
+													"characterFormat": {
+															"fontSize": 18,
+															"fontFamily": "Monotype Corsiva",
+															"fontColor": "#4472C4FF",
+															"fontSizeBidi": 18,
+															"fontFamilyBidi": "Monotype Corsiva"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"bold": true,
+											"fontSize": 14,
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"boldBidi": true,
+											"fontSizeBidi": 14,
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"lineSpacing": 2,
+											"lineSpacingType": "Multiple",
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Double line spacing",
+													"characterFormat": {
+															"bold": true,
+															"fontSize": 14,
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"boldBidi": true,
+															"fontSizeBidi": 14,
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 18,
+											"lineSpacing": 2,
+											"lineSpacingType": "Multiple",
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Giant pandas are generally referred to as bears and are typically called panda bears rather than giant pandas. Though we may think they look like bears, there has been a great deal of discussion for decades about where giant pandas fit in the animal kingdom. Much of the debate has been whether they are more closely related to the red panda, once thought to be a member of the raccoon family, than the bear family.",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontColor": "empty"
+									},
+									"paragraphFormat": {
+											"styleName": "Normal"
+									},
+									"inlines": []
+							},
+							{
+									"characterFormat": {
+											"bold": true,
+											"fontSize": 14,
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"boldBidi": true,
+											"fontSizeBidi": 14,
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"lineSpacing": 18,
+											"lineSpacingType": "AtLeast",
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Line spacing is at least 24 pixels",
+													"characterFormat": {
+															"bold": true,
+															"fontSize": 14,
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"boldBidi": true,
+															"fontSizeBidi": 14,
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 18,
+											"lineSpacing": 18,
+											"lineSpacingType": "AtLeast",
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"name": "_Hlk80958955",
+													"bookmarkType": 0
+											},
+											{
+													"text": "Giant panda has a body that resembles a small bear and climbs trees like a bear, it also has several characteristics in common with the red panda. For example, both giant pandas and red pandas eat bamboo and have the same pseudo thumb.",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											},
+											{
+													"name": "_Hlk80958955",
+													"bookmarkType": 1
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"bold": true,
+											"fontSize": 14,
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"boldBidi": true,
+											"fontSizeBidi": 14,
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"lineSpacing": 15,
+											"lineSpacingType": "Exactly",
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Line spacing is exactly 20 pixels",
+													"characterFormat": {
+															"bold": true,
+															"fontSize": 14,
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"boldBidi": true,
+															"fontSizeBidi": 14,
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 18,
+											"lineSpacing": 15,
+											"lineSpacingType": "Exactly",
+											"textAlignment": "Justify",
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "An infant giant panda cub is about the size of a croissant, weighs less than a teacup and is about 900 times smaller than its mother. An average adult mother weighs around 91 kilograms (200 pounds) while newborn weighs only 83 to 190 grams (3 to 4 ounces).",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontColor": "empty"
+									},
+									"paragraphFormat": {
+											"styleName": "Normal"
+									},
+									"inlines": []
+							},
+							{
+									"characterFormat": {
+											"fontColor": "#4472C4FF"
+									},
+									"paragraphFormat": {
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "List of ",
+													"characterFormat": {
+															"fontSize": 18,
+															"fontFamily": "Monotype Corsiva",
+															"fontColor": "#4472C4FF",
+															"fontSizeBidi": 18,
+															"fontFamilyBidi": "Monotype Corsiva"
+													}
+											},
+											{
+													"text": "paragraph",
+													"characterFormat": {
+															"fontSize": 18,
+															"fontFamily": "Monotype Corsiva",
+															"fontColor": "#4472C4FF",
+															"fontSizeBidi": 18,
+															"fontFamilyBidi": "Monotype Corsiva"
+													}
+											},
+											{
+													"text": " spacing options",
+													"characterFormat": {
+															"fontSize": 18,
+															"fontFamily": "Monotype Corsiva",
+															"fontColor": "#4472C4FF",
+															"fontSizeBidi": 18,
+															"fontFamilyBidi": "Monotype Corsiva"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"bold": true,
+											"fontSize": 14,
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"boldBidi": true,
+											"fontSizeBidi": 14,
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"beforeSpacing": 18,
+											"afterSpacing": 12,
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Spacing before the paragraph is 24 pixels and after the paragraph is 16 pixels",
+													"characterFormat": {
+															"bold": true,
+															"fontSize": 14,
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"boldBidi": true,
+															"fontSizeBidi": 14,
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"beforeSpacing": 18,
+											"afterSpacing": 12,
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "Giant pandas are generally referred to as bears and are typically called panda bears rather than giant pandas. Though we may think they look like bears, there has been a great deal of discussion for decades about where giant pandas fit in the animal kingdom. Much of the debate has been whether they are more closely related to the red panda, once thought to be a member of the raccoon family, than the bear family.",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"bold": true,
+											"fontSize": 14,
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"boldBidi": true,
+											"fontSizeBidi": 14,
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "No spacing before and after the paragraph",
+													"characterFormat": {
+															"bold": true,
+															"fontSize": 14,
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"boldBidi": true,
+															"fontSizeBidi": 14,
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"styleName": "Normal"
+									},
+									"inlines": [
+											{
+													"text": "A characteristic of the giant panda that has mystified scientists is their movable, elongated wrist bone that acts like an opposable thumb. This human-like quality that helps give them even more of a cuddly-bear appearance enables the giant panda to pick up objects and even eat sitting up.",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"styleName": "Normal"
+									},
+									"inlines": []
+							},
+							{
+									"characterFormat": {
+											"bold": true,
+											"fontSize": 14,
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"boldBidi": true,
+											"fontSizeBidi": 14,
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"styleName": "Normal",
+											"keepWithNext": true,
+											"keepLinesTogether": true
+									},
+									"inlines": [
+											{
+													"text": "Keep with next and Keep lines together",
+													"characterFormat": {
+															"bold": true,
+															"fontSize": 14,
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"boldBidi": true,
+															"fontSizeBidi": 14,
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 12,
+											"styleName": "Normal",
+											"keepWithNext": true,
+											"keepLinesTogether": true
+									},
+									"inlines": [
+											{
+													"text": "The giant ",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											},
+											{
+													"text": "panda,",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											},
+											{
+													"text": " which only lives in China outside of captivity, has captured the hearts of people of all ages across the globe. From their furry black and white bodies to their shy and docile nature, they are considered one of the world's most loved animals.",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 12,
+											"styleName": "Normal",
+											"keepWithNext": true,
+											"keepLinesTogether": true
+									},
+									"inlines": [
+											{
+													"text": "A characteristic of the giant panda that has mystified scientists is their movable, elongated wrist bone that acts like an opposable thumb. This human-like quality that helps give them even more of a cuddly-bear appearance enables the giant panda to pick up objects and even eat sitting up",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 12,
+											"styleName": "Normal",
+											"keepWithNext": true,
+											"keepLinesTogether": true
+									},
+									"inlines": [
+											{
+													"text": "Giant pandas are generally referred to as bears and are typically called panda bears rather than giant pandas. Though we may think they look like bears, there has been a great deal of discussion for decades about where giant pandas fit in the animal kingdom. Much of the debate has been whether they are more closely related to the red panda, once thought to be a member of the raccoon family, than the bear family.",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 12,
+											"styleName": "Normal",
+											"keepWithNext": true,
+											"keepLinesTogether": true
+									},
+									"inlines": [
+											{
+													"text": "While a giant panda has a body that resembles a small bear and climbs trees like a bear, it also has several characteristics in common with the red panda. For example, both giant pandas and red pandas eat bamboo and have the same pseudo thumb. The table below lists the main characteristics the giant panda shares with bears and red pandas.",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 12,
+											"styleName": "Normal",
+											"keepWithNext": true,
+											"keepLinesTogether": true
+									},
+									"inlines": [
+											{
+													"text": "Giant panda has a body that resembles a small bear and climbs trees like a bear, it also has several characteristics in common with the red panda. For example, both giant pandas and red pandas eat bamboo and have the same pseudo thumb.",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 12,
+											"styleName": "Normal",
+											"keepWithNext": true,
+											"keepLinesTogether": true
+									},
+									"inlines": [
+											{
+													"name": "_Hlk80971878",
+													"bookmarkType": 0
+											},
+											{
+													"text": "While most adore their fluffy fur and round heads, which help give them their cuddly bear quality, others are fascinated by the many mysteries of the giant panda. Did you know that the giant panda may be a raccoon, they have an opposable pseudo thumb, and that they’re technically a carnivore even though their diet is primarily vegetarian? These things and more have baffled scientists and naturalists for hundreds of years",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											},
+											{
+													"name": "_Hlk80971878",
+													"bookmarkType": 1
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 12,
+											"styleName": "Normal",
+											"keepWithNext": true,
+											"keepLinesTogether": true
+									},
+									"inlines": [
+											{
+													"text": "An infant giant panda cub is about the size of a croissant, weighs less than a teacup and is about 900 times smaller than its mother. An average adult mother weighs around 91 kilograms (200 pounds) while newborn weighs only 83 to 190 grams (3 to 4 ounces).",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 12,
+											"styleName": "Normal",
+											"keepWithNext": true,
+											"keepLinesTogether": true
+									},
+									"inlines": [
+											{
+													"text": "Giant panda has a body that resembles a small bear and climbs trees like a bear, it also has several characteristics in common with the red panda. For example, both giant pandas and red pandas eat bamboo and have the same pseudo thumb.",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 12,
+											"styleName": "Normal",
+											"keepWithNext": true,
+											"keepLinesTogether": true
+									},
+									"inlines": [
+											{
+													"text": "An infant giant panda cub is about the size of a croissant, weighs less than a teacup and is about 900 times smaller than its mother. An average adult mother weighs around 91 kilograms (200 pounds) while newborn weighs only 83 to 190 grams (3 to 4 ounces).",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 12,
+											"styleName": "Normal",
+											"keepWithNext": true,
+											"keepLinesTogether": true
+									},
+									"inlines": [
+											{
+													"text": "An infant giant panda cub is about the size of a croissant, weighs less than a teacup and is about 900 times smaller than its mother. An average adult mother weighs around 91 kilograms (200 pounds) while newborn weighs only 83 to 190 grams (3 to 4 ounces).",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"afterSpacing": 12,
+											"styleName": "Normal",
+											"keepWithNext": true,
+											"keepLinesTogether": true
+									},
+									"inlines": [
+											{
+													"text": "While most adore their fluffy fur and round heads, which help give them their cuddly bear quality, others are fascinated by the many mysteries of the giant panda. Did you know that the giant panda may be a raccoon, they have an opposable pseudo thumb, and that they’re technically a carnivore even though their diet is primarily vegetarian? These things and more have baffled scientists and naturalists for hundreds of years",
+													"characterFormat": {
+															"fontFamily": "Calibri",
+															"fontColor": "empty",
+															"fontFamilyBidi": "Calibri"
+													}
+											}
+									]
+							},
+							{
+									"characterFormat": {
+											"fontFamily": "Calibri",
+											"fontColor": "empty",
+											"fontFamilyBidi": "Calibri"
+									},
+									"paragraphFormat": {
+											"styleName": "Normal"
+									},
+									"inlines": []
+							},
+							{
+									"characterFormat": {
+											"fontColor": "empty"
+									},
+									"paragraphFormat": {
+											"styleName": "Normal"
+									},
+									"inlines": []
+							}
+					],
+					"headersFooters": {
+							"header": {
+									"blocks": [
+											{
+													"inlines": []
+											}
+									]
+							},
+							"footer": {
+									"blocks": [
+											{
+													"inlines": []
+											}
+									]
+							},
+							"evenHeader": {
+									"blocks": [
+											{
+													"inlines": []
+											}
+									]
+							},
+							"evenFooter": {
+									"blocks": [
+											{
+													"inlines": []
+											}
+									]
+							},
+							"firstPageHeader": {
+									"blocks": [
+											{
+													"inlines": []
+											}
+									]
+							},
+							"firstPageFooter": {
+									"blocks": [
+											{
+													"inlines": []
+											}
+									]
+							}
+					},
+					"sectionFormat": {
+							"headerDistance": 36,
+							"footerDistance": 36,
+							"pageWidth": 612,
+							"pageHeight": 792,
+							"leftMargin": 72,
+							"rightMargin": 72,
+							"topMargin": 72,
+							"bottomMargin": 72,
+							"differentFirstPage": false,
+							"differentOddAndEvenPages": false,
+							"bidi": false,
+							"restartPageNumbering": false,
+							"pageStartingNumber": 0,
+							"endnoteNumberFormat": "LowerCaseRoman",
+							"footNoteNumberFormat": "Arabic",
+							"restartIndexForFootnotes": "DoNotRestart",
+							"restartIndexForEndnotes": "DoNotRestart"
+					}
+			}
+	],
+	"characterFormat": {
+			"fontSize": 11,
+			"fontFamily": "Calibri",
+			"fontColor": "empty",
+			"fontSizeBidi": 11,
+			"fontFamilyBidi": "Calibri"
+	},
+	"paragraphFormat": {
+			"afterSpacing": 8,
+			"lineSpacing": 1.0791666507720947,
+			"lineSpacingType": "Multiple"
+	},
+	"background": {
+			"color": "#FFFFFFFF"
+	},
+	"styles": [
+			{
+					"type": "Paragraph",
+					"name": "Normal",
+					"next": "Normal",
+					"characterFormat": {
+							"fontSize": 12,
+							"fontFamily": "Times New Roman",
+							"fontColor": "empty",
+							"fontSizeBidi": 12,
+							"fontFamilyBidi": "Times New Roman"
+					},
+					"paragraphFormat": {
+							"afterSpacing": 0,
+							"lineSpacing": 1,
+							"lineSpacingType": "Multiple"
+					}
+			},
+			{
+					"type": "Paragraph",
+					"name": "Heading 1",
+					"basedOn": "Normal",
+					"next": "Normal",
+					"link": "Heading 1 Char",
+					"characterFormat": {
+							"fontSize": 16,
+							"fontFamily": "Calibri Light",
+							"fontColor": "#2F5496FF",
+							"fontSizeBidi": 16,
+							"fontFamilyBidi": "Calibri Light"
+					},
+					"paragraphFormat": {
+							"beforeSpacing": 12,
+							"lineSpacing": 1.0791666507720947,
+							"lineSpacingType": "Multiple",
+							"outlineLevel": "Level1"
+					}
+			},
+			{
+					"type": "Paragraph",
+					"name": "Heading 2",
+					"basedOn": "Normal",
+					"next": "Normal",
+					"link": "Heading 2 Char",
+					"characterFormat": {
+							"fontSize": 13,
+							"fontFamily": "Calibri Light",
+							"fontColor": "#2F5496FF",
+							"fontSizeBidi": 13,
+							"fontFamilyBidi": "Calibri Light"
+					},
+					"paragraphFormat": {
+							"beforeSpacing": 2,
+							"lineSpacing": 1.0791666507720947,
+							"lineSpacingType": "Multiple",
+							"outlineLevel": "Level2"
+					}
+			},
+			{
+					"type": "Paragraph",
+					"name": "Heading 3",
+					"basedOn": "Normal",
+					"next": "Normal",
+					"link": "Heading 3 Char",
+					"characterFormat": {
+							"fontFamily": "Calibri Light",
+							"fontColor": "#1F3763FF",
+							"fontFamilyBidi": "Calibri Light"
+					},
+					"paragraphFormat": {
+							"beforeSpacing": 2,
+							"lineSpacing": 1.0791666507720947,
+							"lineSpacingType": "Multiple",
+							"outlineLevel": "Level3"
+					}
+			},
+			{
+					"type": "Paragraph",
+					"name": "Heading 4",
+					"basedOn": "Normal",
+					"next": "Normal",
+					"link": "Heading 4 Char",
+					"characterFormat": {
+							"italic": true,
+							"fontFamily": "Calibri Light",
+							"fontColor": "#2F5496FF",
+							"italicBidi": true,
+							"fontFamilyBidi": "Calibri Light"
+					},
+					"paragraphFormat": {
+							"beforeSpacing": 2,
+							"lineSpacing": 1.0791666507720947,
+							"lineSpacingType": "Multiple",
+							"outlineLevel": "Level4"
+					}
+			},
+			{
+					"type": "Paragraph",
+					"name": "Heading 5",
+					"basedOn": "Normal",
+					"next": "Normal",
+					"link": "Heading 5 Char",
+					"characterFormat": {
+							"fontFamily": "Calibri Light",
+							"fontColor": "#2F5496FF",
+							"fontFamilyBidi": "Calibri Light"
+					},
+					"paragraphFormat": {
+							"beforeSpacing": 2,
+							"lineSpacing": 1.0791666507720947,
+							"lineSpacingType": "Multiple",
+							"outlineLevel": "Level5"
+					}
+			},
+			{
+					"type": "Paragraph",
+					"name": "Heading 6",
+					"basedOn": "Normal",
+					"next": "Normal",
+					"link": "Heading 6 Char",
+					"characterFormat": {
+							"fontFamily": "Calibri Light",
+							"fontColor": "#1F3763FF",
+							"fontFamilyBidi": "Calibri Light"
+					},
+					"paragraphFormat": {
+							"beforeSpacing": 2,
+							"lineSpacing": 1.0791666507720947,
+							"lineSpacingType": "Multiple",
+							"outlineLevel": "Level6"
+					}
+			},
+			{
+					"type": "Character",
+					"name": "Default Paragraph Font",
+					"characterFormat": {
+							"fontColor": "empty"
+					}
+			},
+			{
+					"type": "Character",
+					"name": "Heading 1 Char",
+					"basedOn": "Default Paragraph Font",
+					"characterFormat": {
+							"fontSize": 16,
+							"fontFamily": "Calibri Light",
+							"fontColor": "#2F5496FF",
+							"fontSizeBidi": 16,
+							"fontFamilyBidi": "Calibri Light"
+					}
+			},
+			{
+					"type": "Character",
+					"name": "Heading 2 Char",
+					"basedOn": "Default Paragraph Font",
+					"characterFormat": {
+							"fontSize": 13,
+							"fontFamily": "Calibri Light",
+							"fontColor": "#2F5496FF",
+							"fontSizeBidi": 13,
+							"fontFamilyBidi": "Calibri Light"
+					}
+			},
+			{
+					"type": "Character",
+					"name": "Heading 3 Char",
+					"basedOn": "Default Paragraph Font",
+					"characterFormat": {
+							"fontSize": 12,
+							"fontFamily": "Calibri Light",
+							"fontColor": "#1F3763FF",
+							"fontSizeBidi": 12,
+							"fontFamilyBidi": "Calibri Light"
+					}
+			},
+			{
+					"type": "Character",
+					"name": "Heading 4 Char",
+					"basedOn": "Default Paragraph Font",
+					"characterFormat": {
+							"italic": true,
+							"fontFamily": "Calibri Light",
+							"fontColor": "#2F5496FF",
+							"italicBidi": true,
+							"fontFamilyBidi": "Calibri Light"
+					}
+			},
+			{
+					"type": "Character",
+					"name": "Heading 5 Char",
+					"basedOn": "Default Paragraph Font",
+					"characterFormat": {
+							"fontFamily": "Calibri Light",
+							"fontColor": "#2F5496FF",
+							"fontFamilyBidi": "Calibri Light"
+					}
+			},
+			{
+					"type": "Character",
+					"name": "Heading 6 Char",
+					"basedOn": "Default Paragraph Font",
+					"characterFormat": {
+							"fontFamily": "Calibri Light",
+							"fontColor": "#1F3763FF",
+							"fontFamilyBidi": "Calibri Light"
+					}
+			},
+			{
+					"type": "Paragraph",
+					"name": "Notes",
+					"basedOn": "Normal",
+					"next": "Normal",
+					"characterFormat": {
+							"bold": true,
+							"fontColor": "empty",
+							"boldBidi": true
+					},
+					"paragraphFormat": {
+							"afterSpacing": 6
+					}
+			},
+			{
+					"type": "Paragraph",
+					"name": "Header",
+					"basedOn": "Normal",
+					"next": "Header",
+					"link": "Header Char",
+					"characterFormat": {
+							"fontColor": "empty",
+							"fontSizeBidi": 15,
+							"fontFamilyBidi": "Angsana New"
+					},
+					"paragraphFormat": {
+							"tabs": [
+									{
+											"tabJustification": "Center",
+											"position": 234,
+											"tabLeader": "None",
+											"deletePosition": 0
+									},
+									{
+											"tabJustification": "Right",
+											"position": 468,
+											"tabLeader": "None",
+											"deletePosition": 0
+									}
+							]
+					}
+			},
+			{
+					"type": "Character",
+					"name": "Header Char",
+					"basedOn": "Default Paragraph Font",
+					"characterFormat": {
+							"fontSize": 12,
+							"fontFamily": "Times New Roman",
+							"fontColor": "empty",
+							"fontSizeBidi": 15,
+							"fontFamilyBidi": "Angsana New"
+					}
+			},
+			{
+					"type": "Paragraph",
+					"name": "Footer",
+					"basedOn": "Normal",
+					"next": "Footer",
+					"link": "Footer Char",
+					"characterFormat": {
+							"fontColor": "empty",
+							"fontSizeBidi": 15,
+							"fontFamilyBidi": "Angsana New"
+					},
+					"paragraphFormat": {
+							"tabs": [
+									{
+											"tabJustification": "Center",
+											"position": 234,
+											"tabLeader": "None",
+											"deletePosition": 0
+									},
+									{
+											"tabJustification": "Right",
+											"position": 468,
+											"tabLeader": "None",
+											"deletePosition": 0
+									}
+							]
+					}
+			},
+			{
+					"type": "Character",
+					"name": "Footer Char",
+					"basedOn": "Default Paragraph Font",
+					"characterFormat": {
+							"fontSize": 12,
+							"fontFamily": "Times New Roman",
+							"fontColor": "empty",
+							"fontSizeBidi": 15,
+							"fontFamilyBidi": "Angsana New"
+					}
+			}
+	],
+	"defaultTabWidth": 36,
+	"formatting": false,
+	"trackChanges": false,
+	"protectionType": "NoProtection",
+	"enforcement": false,
+	"dontUseHTMLParagraphAutoSpacing": false,
+	"alignTablesRowByRow": false,
+	"formFieldShading": true,
+	"footnotes": {
+			"separator": [
+					{
+							"characterFormat": {
+									"fontColor": "empty"
+							},
+							"paragraphFormat": {
+									"styleName": "Normal"
+							},
+							"inlines": [
+									{
+											"text": "\u0003",
+											"characterFormat": {
+													"fontColor": "empty"
+											}
+									}
+							]
+					}
+			],
+			"continuationSeparator": [
+					{
+							"characterFormat": {
+									"fontColor": "empty"
+							},
+							"paragraphFormat": {
+									"styleName": "Normal"
+							},
+							"inlines": [
+									{
+											"text": "\u0004",
+											"characterFormat": {
+													"fontColor": "empty"
+											}
+									}
+							]
+					}
+			],
+			"continuationNotice": [
+					{
+							"inlines": []
+					}
+			]
+	},
+	"endnotes": {
+			"separator": [
+					{
+							"characterFormat": {
+									"fontColor": "empty"
+							},
+							"paragraphFormat": {
+									"styleName": "Normal"
+							},
+							"inlines": [
+									{
+											"text": "\u0003",
+											"characterFormat": {
+													"fontColor": "empty"
+											}
+									}
+							]
+					}
+			],
+			"continuationSeparator": [
+					{
+							"characterFormat": {
+									"fontColor": "empty"
+							},
+							"paragraphFormat": {
+									"styleName": "Normal"
+							},
+							"inlines": [
+									{
+											"text": "\u0004",
+											"characterFormat": {
+													"fontColor": "empty"
+											}
+									}
+							]
+					}
+			],
+			"continuationNotice": [
+					{
+							"inlines": []
+					}
+			]
+	},
+	"compatibilityMode": 3
+};
 
 export let sectionFormat: Object = { "sections": [{ "blocks": [{ "paragraphFormat": { "styleName": "Title" }, "inlines": [{ "text": "First Section" }] }, { "paragraphFormat": { "styleName": "Subtitle" }, "inlines": [{ "text": "Size " }, { "text": "816x1056" }, { "text": "px" }, { "text": " (Portrait)" }] }, { "paragraphFormat": { "styleName": "Subtitle" }, "inlines": [{ "text": "Margin 96px (" }, { "text": "top and bottom) " }, { "text": "72px (left and right)" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit " }, { "text": "amet" }, { "text": ", " }, { "text": "consectetur" }, { "text": " " }, { "text": "adipiscing" }, { "text": " " }, { "text": "elit" }, { "text": ", " }, { "text": "sed" }, { "text": " do " }, { "text": "eiusmod" }, { "text": " " }, { "text": "tempor" }, { "text": " " }, { "text": "incididunt" }, { "text": " " }, { "text": "ut" }, { "text": " " }, { "text": "labore" }, { "text": " et dolore magna " }, { "text": "aliqua" }, { "text": ". Ut " }, { "text": "enim" }, { "text": " ad minim " }, { "text": "veniam" }, { "text": ", " }, { "text": "quis" }, { "text": " " }, { "text": "nostrud" }, { "text": " exercitation " }, { "text": "ullamco" }, { "text": " " }, { "text": "laboris" }, { "text": " nisi " }, { "text": "ut" }, { "text": " " }, { "text": "aliquip" }, { "text": " ex " }, { "text": "ea" }, { "text": " " }, { "text": "commodo" }, { "text": " " }, { "text": "consequat" }, { "text": ". Duis " }, { "text": "aute" }, { "text": " " }, { "text": "irure" }, { "text": " dolor in " }, { "text": "reprehenderit" }, { "text": " in " }, { "text": "voluptate" }, { "text": " " }, { "text": "velit" }, { "text": " " }, { "text": "esse" }, { "text": " " }, { "text": "cillum" }, { "text": " dolore " }, { "text": "eu" }, { "text": " " }, { "text": "fugiat" }, { "text": " " }, { "text": "nulla" }, { "text": " " }, { "text": "pariatur" }, { "text": ". " }, { "text": "Excepteur" }, { "text": " " }, { "text": "sint" }, { "text": " " }, { "text": "occaecat" }, { "text": " " }, { "text": "cupidatat" }, { "text": " non " }, { "text": "proident" }, { "text": ", " }, { "text": "sunt" }, { "text": " in culpa qui " }, { "text": "officia" }, { "text": " " }, { "text": "deserunt" }, { "text": " " }, { "text": "mollit" }, { "text": " " }, { "text": "anim" }, { "text": " id " }, { "text": "est" }, { "text": " " }, { "text": "laborum" }, { "text": "." }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Sed" }, { "text": " " }, { "text": "ut" }, { "text": " " }, { "text": "perspiciatis" }, { "text": " " }, { "text": "unde" }, { "text": " " }, { "text": "omnis" }, { "text": " " }, { "text": "iste" }, { "text": " " }, { "text": "natus" }, { "text": " error sit " }, { "text": "voluptatem" }, { "text": " " }, { "text": "accusantium" }, { "text": " " }, { "text": "doloremque" }, { "text": " " }, { "text": "laudantium" }, { "text": ", " }, { "text": "totam" }, { "text": " rem " }, { "text": "aperiam" }, { "text": ", " }, { "text": "eaque" }, { "text": " " }, { "text": "ipsa" }, { "text": " " }, { "text": "quae" }, { "text": " ab " }, { "text": "illo" }, { "text": " " }, { "text": "inventore" }, { "text": " " }, { "text": "veritatis" }, { "text": " et quasi " }, { "text": "architecto" }, { "text": " " }, { "text": "beatae" }, { "text": " vitae dicta " }, { "text": "sunt" }, { "text": " " }, { "text": "explicabo" }, { "text": ". Nemo " }, { "text": "enim" }, { "text": " " }, { "text": "ipsam" }, { "text": " " }, { "text": "voluptatem" }, { "text": " " }, { "text": "quia" }, { "text": " " }, { "text": "voluptas" }, { "text": " sit " }, { "text": "aspernatur" }, { "text": " " }, { "text": "aut" }, { "text": " " }, { "text": "odit" }, { "text": " " }, { "text": "aut" }, { "text": " fugit, " }, { "text": "sed" }, { "text": " " }, { "text": "quia" }, { "text": " " }, { "text": "consequuntur" }, { "text": " " }, { "text": "magni" }, { "text": " " }, { "text": "dolores" }, { "text": " " }, { "text": "eos" }, { "text": " qui " }, { "text": "ratione" }, { "text": " " }, { "text": "voluptatem" }, { "text": " " }, { "text": "sequi" }, { "text": " " }, { "text": "nesciunt" }, { "text": ". " }, { "text": "Neque" }, { "text": " " }, { "text": "porro" }, { "text": " " }, { "text": "quisquam" }, { "text": " " }, { "text": "est" }, { "text": ", qui " }, { "text": "dolorem" }, { "text": " ipsum " }, { "text": "quia" }, { "text": " dolor sit " }, { "text": "amet" }, { "text": ", " }, { "text": "consectetur" }, { "text": ", " }, { "text": "adipisci" }, { "text": " " }, { "text": "velit" }, { "text": ", " }, { "text": "sed" }, { "text": " " }, { "text": "quia" }, { "text": " non " }, { "text": "numquam" }, { "text": " " }, { "text": "eius" }, { "text": " " }, { "text": "modi" }, { "text": " " }, { "text": "tempora" }, { "text": " " }, { "text": "incidunt" }, { "text": " " }, { "text": "ut" }, { "text": " " }, { "text": "labore" }, { "text": " et dolore " }, { "text": "magnam" }, { "text": " " }, { "text": "aliquam" }, { "text": " " }, { "text": "quaerat" }, { "text": " " }, { "text": "voluptatem" }, { "text": ". Ut " }, { "text": "enim" }, { "text": " ad minima " }, { "text": "veniam" }, { "text": ", " }, { "text": "quis" }, { "text": " nostrum " }, { "text": "exercitationem" }, { "text": " " }, { "text": "ullam" }, { "text": " corporis " }, { "text": "suscipit" }, { "text": " " }, { "text": "laboriosam" }, { "text": ", nisi " }, { "text": "ut" }, { "text": " " }, { "text": "aliquid" }, { "text": " ex " }, { "text": "ea" }, { "text": " " }, { "text": "commodi" }, { "text": " " }, { "text": "consequatur" }, { "text": "? " }, { "text": "Quis" }, { "text": " " }, { "text": "autem" }, { "text": " " }, { "text": "vel" }, { "text": " " }, { "text": "eum" }, { "text": " " }, { "text": "iure" }, { "text": " " }, { "text": "reprehenderit" }, { "text": " qui in " }, { "text": "ea" }, { "text": " " }, { "text": "voluptate" }, { "text": " " }, { "text": "velit" }, { "text": " " }, { "text": "esse" }, { "text": " " }, { "text": "quam" }, { "text": " nihil " }, { "text": "molestiae" }, { "text": " " }, { "text": "consequatur" }, { "text": ", " }, { "text": "vel" }, { "text": " " }, { "text": "illum" }, { "text": " qui " }, { "text": "dolorem" }, { "text": " " }, { "text": "eum" }, { "text": " " }, { "text": "fugiat" }, { "text": " quo " }, { "text": "voluptas" }, { "text": " " }, { "text": "nulla" }, { "text": " " }, { "text": "pariatur" }, { "text": "?" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "At " }, { "text": "vero" }, { "text": " " }, { "text": "eos" }, { "text": " et " }, { "text": "accusamus" }, { "text": " et " }, { "text": "iusto" }, { "text": " " }, { "text": "odio" }, { "text": " " }, { "text": "dignissimos" }, { "text": " " }, { "text": "ducimus" }, { "text": " qui " }, { "text": "blanditiis" }, { "text": " " }, { "text": "praesentium" }, { "text": " " }, { "text": "voluptatum" }, { "text": " " }, { "text": "deleniti" }, { "text": " " }, { "text": "atque" }, { "text": " " }, { "text": "corrupti" }, { "text": " quos " }, { "text": "dolores" }, { "text": " et " }, { "text": "quas" }, { "text": " " }, { "text": "molestias" }, { "text": " " }, { "text": "excepturi" }, { "text": " " }, { "text": "sint" }, { "text": " " }, { "text": "occaecati" }, { "text": " " }, { "text": "cupiditate" }, { "text": " " }, { "text": "non provident" }, { "text": ", " }, { "text": "similique" }, { "text": " " }, { "text": "sunt" }, { "text": " in culpa qui " }, { "text": "officia" }, { "text": " " }, { "text": "deserunt" }, { "text": " " }, { "text": "mollitia" }, { "text": " animi, id " }, { "text": "est" }, { "text": " " }, { "text": "laborum" }, { "text": " et " }, { "text": "dolorum" }, { "text": " " }, { "text": "fuga" }, { "text": ". Et " }, { "text": "harum" }, { "text": " " }, { "text": "quidem" }, { "text": " rerum facilis " }, { "text": "est" }, { "text": " et " }, { "text": "expedita" }, { "text": " " }, { "text": "distinctio" }, { "text": ". Nam libero tempore, cum " }, { "text": "soluta" }, { "text": " nobis " }, { "text": "est" }, { "text": " " }, { "text": "eligendi" }, { "text": " " }, { "text": "optio" }, { "text": " " }, { "text": "cumque" }, { "text": " nihil " }, { "text": "impedit" }, { "text": " quo minus id quod " }, { "text": "maxime" }, { "text": " " }, { "text": "placeat" }, { "text": " " }, { "text": "facere" }, { "text": " " }, { "text": "possimus" }, { "text": ", " }, { "text": "omnis" }, { "text": " " }, { "text": "voluptas" }, { "text": " " }, { "text": "assumenda" }, { "text": " " }, { "text": "est" }, { "text": ", " }, { "text": "omnis" }, { "text": " dolor " }, { "text": "repellendus" }, { "text": ". " }, { "text": "Temporibus" }, { "text": " " }, { "text": "autem" }, { "text": " " }, { "text": "quibusdam" }, { "text": " et " }, { "text": "aut" }, { "text": " " }, { "text": "officiis" }, { "text": " " }, { "text": "debitis" }, { "text": " " }, { "text": "aut" }, { "text": " rerum " }, { "text": "necessitatibus" }, { "text": " " }, { "text": "saepe" }, { "text": " " }, { "text": "eveniet" }, { "text": " " }, { "text": "ut" }, { "text": " et " }, { "text": "voluptates" }, { "text": " " }, { "text": "repudiandae" }, { "text": " " }, { "text": "sint" }, { "text": " et " }, { "text": "molestiae" }, { "text": " non " }, { "text": "recusandae" }, { "text": ". " }, { "text": "Itaque" }, { "text": " " }, { "text": "earum" }, { "text": " rerum hic " }, { "text": "tenetur" }, { "text": " a " }, { "text": "sapiente" }, { "text": " " }, { "text": "delectus" }, { "text": ", " }, { "text": "ut" }, { "text": " " }, { "text": "aut" }, { "text": " " }, { "text": "reiciendis" }, { "text": " " }, { "text": "voluptatibus" }, { "text": " " }, { "text": "maiores" }, { "text": " alias " }, { "text": "consequatur" }, { "text": " " }, { "text": "aut" }, { "text": " " }, { "text": "perferendis" }, { "text": " " }, { "text": "doloribus" }, { "text": " " }, { "text": "asperiores" }, { "text": " " }, { "text": "repellat" }, { "text": "." }] }], "headersFooters": { "header": { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Header" }, "inlines": [{ "text": "Header distance from top is 72px" }] }] }, "footer": { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Footer", "tabs": [{ "tabJustification": "Left", "position": 0.0, "tabLeader": "None", "deletePosition": 234.0 }] }, "inlines": [{ "text": "Footer distance from bottom is 48px" }] }] } }, "sectionFormat": { "headerDistance": 54.0, "footerDistance": 36.0, "pageWidth": 595.29998779296875, "pageHeight": 841.9000244140625, "leftMargin": 54.0, "rightMargin": 54.0, "topMargin": 72.0, "bottomMargin": 72.0, "differentFirstPage": false, "differentOddAndEvenPages": false } }, { "blocks": [{ "paragraphFormat": { "styleName": "Title" }, "inlines": [{ "text": "Second Section" }] }, { "paragraphFormat": { "styleName": "Subtitle" }, "inlines": [{ "text": "Size 1056x816px (Landscape)" }, { "name": "_GoBack", "bookmarkType": 0 }, { "name": "_GoBack", "bookmarkType": 1 }] }, { "paragraphFormat": { "styleName": "Subtitle" }, "inlines": [{ "text": "Margin 48px (on all sides)" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Lorem ipsum dolor sit " }, { "text": "amet" }, { "text": ", " }, { "text": "consectetur" }, { "text": " " }, { "text": "adipiscing" }, { "text": " " }, { "text": "elit" }, { "text": ", " }, { "text": "sed" }, { "text": " do " }, { "text": "eiusmod" }, { "text": " " }, { "text": "tempor" }, { "text": " " }, { "text": "incididunt" }, { "text": " " }, { "text": "ut" }, { "text": " " }, { "text": "labore" }, { "text": " et dolore magna " }, { "text": "aliqua" }, { "text": ". Ut " }, { "text": "enim" }, { "text": " ad minim " }, { "text": "veniam" }, { "text": ", " }, { "text": "quis" }, { "text": " " }, { "text": "nostrud" }, { "text": " exercitation " }, { "text": "ullamco" }, { "text": " " }, { "text": "laboris" }, { "text": " nisi " }, { "text": "ut" }, { "text": " " }, { "text": "aliquip" }, { "text": " ex " }, { "text": "ea" }, { "text": " " }, { "text": "commodo" }, { "text": " " }, { "text": "consequat" }, { "text": ". Duis " }, { "text": "aute" }, { "text": " " }, { "text": "irure" }, { "text": " dolor in " }, { "text": "reprehenderit" }, { "text": " in " }, { "text": "voluptate" }, { "text": " " }, { "text": "velit" }, { "text": " " }, { "text": "esse" }, { "text": " " }, { "text": "cillum" }, { "text": " dolore " }, { "text": "eu" }, { "text": " " }, { "text": "fugiat" }, { "text": " " }, { "text": "nulla" }, { "text": " " }, { "text": "pariatur" }, { "text": ". " }, { "text": "Excepteur" }, { "text": " " }, { "text": "sint" }, { "text": " " }, { "text": "occaecat" }, { "text": " " }, { "text": "cupidatat" }, { "text": " non " }, { "text": "proident" }, { "text": ", " }, { "text": "sunt" }, { "text": " in culpa qui " }, { "text": "officia" }, { "text": " " }, { "text": "deserunt" }, { "text": " " }, { "text": "mollit" }, { "text": " " }, { "text": "anim" }, { "text": " id " }, { "text": "est" }, { "text": " " }, { "text": "laborum" }, { "text": "." }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Sed" }, { "text": " " }, { "text": "ut" }, { "text": " " }, { "text": "perspiciatis" }, { "text": " " }, { "text": "unde" }, { "text": " " }, { "text": "omnis" }, { "text": " " }, { "text": "iste" }, { "text": " " }, { "text": "natus" }, { "text": " error sit " }, { "text": "voluptatem" }, { "text": " " }, { "text": "accusantium" }, { "text": " " }, { "text": "doloremque" }, { "text": " " }, { "text": "laudantium" }, { "text": ", " }, { "text": "totam" }, { "text": " rem " }, { "text": "aperiam" }, { "text": ", " }, { "text": "eaque" }, { "text": " " }, { "text": "ipsa" }, { "text": " " }, { "text": "quae" }, { "text": " ab " }, { "text": "illo" }, { "text": " " }, { "text": "inventore" }, { "text": " " }, { "text": "veritatis" }, { "text": " et quasi " }, { "text": "architecto" }, { "text": " " }, { "text": "beatae" }, { "text": " vitae dicta " }, { "text": "sunt" }, { "text": " " }, { "text": "explicabo" }, { "text": ". Nemo " }, { "text": "enim" }, { "text": " " }, { "text": "ipsam" }, { "text": " " }, { "text": "voluptatem" }, { "text": " " }, { "text": "quia" }, { "text": " " }, { "text": "voluptas" }, { "text": " sit " }, { "text": "aspernatur" }, { "text": " " }, { "text": "aut" }, { "text": " " }, { "text": "odit" }, { "text": " " }, { "text": "aut" }, { "text": " fugit, " }, { "text": "sed" }, { "text": " " }, { "text": "quia" }, { "text": " " }, { "text": "consequuntur" }, { "text": " " }, { "text": "magni" }, { "text": " " }, { "text": "dolores" }, { "text": " " }, { "text": "eos" }, { "text": " qui " }, { "text": "ratione" }, { "text": " " }, { "text": "voluptatem" }, { "text": " " }, { "text": "sequi" }, { "text": " " }, { "text": "nesciunt" }, { "text": ". " }, { "text": "Neque" }, { "text": " " }, { "text": "porro" }, { "text": " " }, { "text": "quisquam" }, { "text": " " }, { "text": "est" }, { "text": ", qui " }, { "text": "dolorem" }, { "text": " ipsum " }, { "text": "quia" }, { "text": " dolor sit " }, { "text": "amet" }, { "text": ", " }, { "text": "consectetur" }, { "text": ", " }, { "text": "adipisci" }, { "text": " " }, { "text": "velit" }, { "text": ", " }, { "text": "sed" }, { "text": " " }, { "text": "quia" }, { "text": " non " }, { "text": "numquam" }, { "text": " " }, { "text": "eius" }, { "text": " " }, { "text": "modi" }, { "text": " " }, { "text": "tempora" }, { "text": " " }, { "text": "incidunt" }, { "text": " " }, { "text": "ut" }, { "text": " " }, { "text": "labore" }, { "text": " et dolore " }, { "text": "magnam" }, { "text": " " }, { "text": "aliquam" }, { "text": " " }, { "text": "quaerat" }, { "text": " " }, { "text": "voluptatem" }, { "text": ". Ut " }, { "text": "enim" }, { "text": " ad minima " }, { "text": "veniam" }, { "text": ", " }, { "text": "quis" }, { "text": " nostrum " }, { "text": "exercitationem" }, { "text": " " }, { "text": "ullam" }, { "text": " corporis " }, { "text": "suscipit" }, { "text": " " }, { "text": "laboriosam" }, { "text": ", nisi " }, { "text": "ut" }, { "text": " " }, { "text": "aliquid" }, { "text": " ex " }, { "text": "ea" }, { "text": " " }, { "text": "commodi" }, { "text": " " }, { "text": "consequatur" }, { "text": "? " }, { "text": "Quis" }, { "text": " " }, { "text": "autem" }, { "text": " " }, { "text": "vel" }, { "text": " " }, { "text": "eum" }, { "text": " " }, { "text": "iure" }, { "text": " " }, { "text": "reprehenderit" }, { "text": " qui in " }, { "text": "ea" }, { "text": " " }, { "text": "voluptate" }, { "text": " " }, { "text": "velit" }, { "text": " " }, { "text": "esse" }, { "text": " " }, { "text": "quam" }, { "text": " nihil " }, { "text": "molestiae" }, { "text": " " }, { "text": "consequatur" }, { "text": ", " }, { "text": "vel" }, { "text": " " }, { "text": "illum" }, { "text": " qui " }, { "text": "dolorem" }, { "text": " " }, { "text": "eum" }, { "text": " " }, { "text": "fugiat" }, { "text": " quo " }, { "text": "voluptas" }, { "text": " " }, { "text": "nulla" }, { "text": " " }, { "text": "pariatur" }, { "text": "?" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "At " }, { "text": "vero" }, { "text": " " }, { "text": "eos" }, { "text": " et " }, { "text": "accusamus" }, { "text": " et " }, { "text": "iusto" }, { "text": " " }, { "text": "odio" }, { "text": " " }, { "text": "dignissimos" }, { "text": " " }, { "text": "ducimus" }, { "text": " qui " }, { "text": "blanditiis" }, { "text": " " }, { "text": "praesentium" }, { "text": " " }, { "text": "voluptatum" }, { "text": " " }, { "text": "deleniti" }, { "text": " " }, { "text": "atque" }, { "text": " " }, { "text": "corrupti" }, { "text": " quos " }, { "text": "dolores" }, { "text": " et " }, { "text": "quas" }, { "text": " " }, { "text": "molestias" }, { "text": " " }, { "text": "excepturi" }, { "text": " " }, { "text": "sint" }, { "text": " " }, { "text": "occaecati" }, { "text": " " }, { "text": "cupiditate" }, { "text": " " }, { "text": "non provident" }, { "text": ", " }, { "text": "similique" }, { "text": " " }, { "text": "sunt" }, { "text": " in culpa qui " }, { "text": "officia" }, { "text": " " }, { "text": "deserunt" }, { "text": " " }, { "text": "mollitia" }, { "text": " animi, id " }, { "text": "est" }, { "text": " " }, { "text": "laborum" }, { "text": " et " }, { "text": "dolorum" }, { "text": " " }, { "text": "fuga" }, { "text": ". Et " }, { "text": "harum" }, { "text": " " }, { "text": "quidem" }, { "text": " rerum facilis " }, { "text": "est" }, { "text": " et " }, { "text": "expedita" }, { "text": " " }, { "text": "distinctio" }, { "text": ". Nam libero tempore, cum " }, { "text": "soluta" }, { "text": " nobis " }, { "text": "est" }, { "text": " " }, { "text": "eligendi" }, { "text": " " }, { "text": "optio" }, { "text": " " }, { "text": "cumque" }, { "text": " nihil " }, { "text": "impedit" }, { "text": " quo minus id quod " }, { "text": "maxime" }, { "text": " " }, { "text": "placeat" }, { "text": " " }, { "text": "facere" }, { "text": " " }, { "text": "possimus" }, { "text": ", " }, { "text": "omnis" }, { "text": " " }, { "text": "voluptas" }, { "text": " " }, { "text": "assumenda" }, { "text": " " }, { "text": "est" }, { "text": ", " }, { "text": "omnis" }, { "text": " dolor " }, { "text": "repellendus" }, { "text": ". " }, { "text": "Temporibus" }, { "text": " " }, { "text": "autem" }, { "text": " " }, { "text": "quibusdam" }, { "text": " et " }, { "text": "aut" }, { "text": " " }, { "text": "officiis" }, { "text": " " }, { "text": "debitis" }, { "text": " " }, { "text": "aut" }, { "text": " rerum " }, { "text": "necessitatibus" }, { "text": " " }, { "text": "saepe" }, { "text": " " }, { "text": "eveniet" }, { "text": " " }, { "text": "ut" }, { "text": " et " }, { "text": "voluptates" }, { "text": " " }, { "text": "repudiandae" }, { "text": " " }, { "text": "sint" }, { "text": " et " }, { "text": "molestiae" }, { "text": " non " }, { "text": "recusandae" }, { "text": ". " }, { "text": "Itaque" }, { "text": " " }, { "text": "earum" }, { "text": " rerum hic " }, { "text": "tenetur" }, { "text": " a " }, { "text": "sapiente" }, { "text": " " }, { "text": "delectus" }, { "text": ", " }, { "text": "ut" }, { "text": " " }, { "text": "aut" }, { "text": " " }, { "text": "reiciendis" }, { "text": " " }, { "text": "voluptatibus" }, { "text": " " }, { "text": "maiores" }, { "text": " alias " }, { "text": "consequatur" }, { "text": " " }, { "text": "aut" }, { "text": " " }, { "text": "perferendis" }, { "text": " " }, { "text": "doloribus" }, { "text": " " }, { "text": "asperiores" }, { "text": " " }, { "text": "repellat" }, { "text": "." }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [] }], "headersFooters": { "header": { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Header" }, "inlines": [{ "text": "Header distance from top is 24px" }] }] }, "footer": { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Footer", "tabs": [{ "tabJustification": "Left", "position": 0.0, "tabLeader": "None", "deletePosition": 234.0 }] }, "inlines": [{ "text": "Footer distance from bottom is 24px" }] }] } }, "sectionFormat": { "headerDistance": 18.0, "footerDistance": 18.0, "pageWidth": 792.0, "pageHeight": 612.0, "leftMargin": 36.0, "rightMargin": 36.0, "topMargin": 36.0, "bottomMargin": 36.0, "differentFirstPage": false, "differentOddAndEvenPages": false } }], "characterFormat": { "fontSize": 11.0, "fontFamily": "Calibri" }, "paragraphFormat": { "afterSpacing": 8.0, "lineSpacing": 1.0791666507720947, "lineSpacingType": "Multiple" }, "background": { "color": "#FFFFFFFF" }, "styles": [{ "type": "Paragraph", "name": "Normal", "next": "Normal" }, { "type": "Character", "name": "Default Paragraph Font" }, { "type": "Paragraph", "name": "Notes", "basedOn": "Normal", "next": "Normal", "characterFormat": { "bold": true }, "paragraphFormat": { "afterSpacing": 6.0, "lineSpacing": 1.0, "lineSpacingType": "Multiple" } }, { "type": "Paragraph", "name": "Title", "basedOn": "Normal", "next": "Normal", "link": "Title Char", "characterFormat": { "fontSize": 28.0, "fontFamily": "Calibri Light" }, "paragraphFormat": { "afterSpacing": 0.0, "lineSpacing": 1.0, "lineSpacingType": "Multiple" } }, { "type": "Character", "name": "Title Char", "basedOn": "Default Paragraph Font", "characterFormat": { "fontSize": 28.0, "fontFamily": "Calibri Light" } }, { "type": "Paragraph", "name": "Subtitle", "basedOn": "Normal", "next": "Normal", "link": "Subtitle Char", "characterFormat": { "fontColor": "#5A5A5AFF" }, "paragraphFormat": { "listFormat": { "listLevelNumber": 1 } } }, { "type": "Character", "name": "Subtitle Char", "basedOn": "Default Paragraph Font", "characterFormat": { "fontColor": "#5A5A5AFF" } }, { "type": "Paragraph", "name": "Header", "basedOn": "Normal", "next": "Normal", "link": "Header Char", "paragraphFormat": { "afterSpacing": 0.0, "lineSpacing": 1.0, "lineSpacingType": "Multiple", "tabs": [{ "tabJustification": "Center", "position": 234.0, "tabLeader": "None", "deletePosition": 0.0 }, { "tabJustification": "Right", "position": 468.0, "tabLeader": "None", "deletePosition": 0.0 }] } }, { "type": "Character", "name": "Header Char", "basedOn": "Default Paragraph Font" }, { "type": "Paragraph", "name": "Footer", "basedOn": "Normal", "next": "Normal", "link": "Footer Char", "paragraphFormat": { "afterSpacing": 0.0, "lineSpacing": 1.0, "lineSpacingType": "Multiple", "tabs": [{ "tabJustification": "Center", "position": 234.0, "tabLeader": "None", "deletePosition": 0.0 }, { "tabJustification": "Right", "position": 468.0, "tabLeader": "None", "deletePosition": 0.0 }] } }, { "type": "Character", "name": "Footer Char", "basedOn": "Default Paragraph Font" }] };
 
 export let styles: Object = { "sections": [{ "blocks": [{ "paragraphFormat": { "styleName": "Title" }, "inlines": [{ "text": "Styles" }] }, { "paragraphFormat": { "styleName": "Subtitle" }, "inlines": [{ "text": "A" }, { "text": " style is a collection of formatting instructions" }, { "text": " " }, { "text": "to provide a consistent look of the document" }, { "text": "." }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [] }, { "paragraphFormat": { "styleName": "Quote" }, "inlines": [{ "text": "The quick brown fox jumps over the lazy dog" }, { "text": " [Quote]" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "name": "_GoBack", "bookmarkType": 0 }, { "name": "_GoBack", "bookmarkType": 1 }] }, { "paragraphFormat": { "styleName": "Heading 1" }, "inlines": [{ "text": "The quick brown fox jumps over the lazy dog " }, { "text": "[" }, { "text": "Heading 1" }, { "text": "]" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [] }, { "paragraphFormat": { "styleName": "Heading 2" }, "inlines": [{ "text": "The quick brown fox jumps over the lazy dog " }, { "text": "[" }, { "text": "Heading 2" }, { "text": "]" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [] }, { "paragraphFormat": { "styleName": "Heading 3" }, "inlines": [{ "text": "The quick brown fox jumps over the lazy dog" }, { "text": " " }, { "text": "[" }, { "text": "Heading 3" }, { "text": "]" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [] }, { "paragraphFormat": { "styleName": "Heading 4" }, "inlines": [{ "text": "The quick brown fox jumps over the lazy dog " }, { "text": "[Heading 4" }, { "text": "]" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [] }, { "paragraphFormat": { "styleName": "Heading 5" }, "inlines": [{ "text": "The quick brown fox jumps over the lazy dog " }, { "text": "[" }, { "text": "Heading 5" }, { "text": "]" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [] }], "headersFooters": {}, "sectionFormat": { "headerDistance": 36.0, "footerDistance": 36.0, "pageWidth": 612.0, "pageHeight": 792.0, "leftMargin": 72.0, "rightMargin": 72.0, "topMargin": 72.0, "bottomMargin": 72.0, "differentFirstPage": false, "differentOddAndEvenPages": false } }], "characterFormat": { "fontSize": 11.0, "fontFamily": "Calibri" }, "paragraphFormat": { "afterSpacing": 8.0, "lineSpacing": 1.0791666507720947, "lineSpacingType": "Multiple" }, "background": { "color": "#FFFFFFFF" }, "styles": [{ "type": "Paragraph", "name": "Normal", "next": "Normal" }, { "type": "Paragraph", "name": "Heading 1", "basedOn": "Normal", "next": "Normal", "link": "Heading 1 Char", "characterFormat": { "fontSize": 16.0, "fontFamily": "Calibri Light", "fontColor": "#2F5496FF" }, "paragraphFormat": { "beforeSpacing": 12.0, "afterSpacing": 0.0, "outlineLevel": "Level1" } }, { "type": "Paragraph", "name": "Heading 2", "basedOn": "Normal", "next": "Normal", "link": "Heading 2 Char", "characterFormat": { "fontSize": 13.0, "fontFamily": "Calibri Light", "fontColor": "#2F5496FF" }, "paragraphFormat": { "beforeSpacing": 2.0, "afterSpacing": 0.0, "outlineLevel": "Level2" } }, { "type": "Paragraph", "name": "Heading 3", "basedOn": "Normal", "next": "Normal", "link": "Heading 3 Char", "characterFormat": { "fontSize": 12.0, "fontFamily": "Calibri Light", "fontColor": "#1F3763FF" }, "paragraphFormat": { "beforeSpacing": 2.0, "afterSpacing": 0.0, "outlineLevel": "Level3" } }, { "type": "Paragraph", "name": "Heading 4", "basedOn": "Normal", "next": "Normal", "link": "Heading 4 Char", "characterFormat": { "italic": true, "fontFamily": "Calibri Light", "fontColor": "#2F5496FF" }, "paragraphFormat": { "beforeSpacing": 2.0, "afterSpacing": 0.0, "outlineLevel": "Level4" } }, { "type": "Paragraph", "name": "Heading 5", "basedOn": "Normal", "next": "Normal", "link": "Heading 5 Char", "characterFormat": { "fontFamily": "Calibri Light", "fontColor": "#2F5496FF" }, "paragraphFormat": { "beforeSpacing": 2.0, "afterSpacing": 0.0, "outlineLevel": "Level5" } }, { "type": "Character", "name": "Default Paragraph Font" }, { "type": "Paragraph", "name": "Notes", "basedOn": "Normal", "next": "Normal", "characterFormat": { "bold": true }, "paragraphFormat": { "afterSpacing": 6.0, "lineSpacing": 1.0, "lineSpacingType": "Multiple" } }, { "type": "Paragraph", "name": "Quote", "basedOn": "Normal", "next": "Normal", "link": "Quote Char", "characterFormat": { "italic": true, "fontColor": "#404040FF" }, "paragraphFormat": { "leftIndent": 43.200000762939453, "rightIndent": 43.200000762939453, "beforeSpacing": 10.0, "textAlignment": "Center" } }, { "type": "Character", "name": "Quote Char", "basedOn": "Default Paragraph Font", "characterFormat": { "italic": true, "fontColor": "#404040FF" } }, { "type": "Paragraph", "name": "Title", "basedOn": "Normal", "next": "Normal", "link": "Title Char", "characterFormat": { "fontSize": 28.0, "fontFamily": "Calibri Light" }, "paragraphFormat": { "afterSpacing": 0.0, "lineSpacing": 1.0, "lineSpacingType": "Multiple" } }, { "type": "Character", "name": "Title Char", "basedOn": "Default Paragraph Font", "characterFormat": { "fontSize": 28.0, "fontFamily": "Calibri Light" } }, { "type": "Character", "name": "Heading 1 Char", "basedOn": "Default Paragraph Font", "characterFormat": { "fontSize": 16.0, "fontFamily": "Calibri Light", "fontColor": "#2F5496FF" } }, { "type": "Character", "name": "Heading 2 Char", "basedOn": "Default Paragraph Font", "characterFormat": { "fontSize": 13.0, "fontFamily": "Calibri Light", "fontColor": "#2F5496FF" } }, { "type": "Character", "name": "Heading 3 Char", "basedOn": "Default Paragraph Font", "characterFormat": { "fontSize": 12.0, "fontFamily": "Calibri Light", "fontColor": "#1F3763FF" } }, { "type": "Character", "name": "Heading 4 Char", "basedOn": "Default Paragraph Font", "characterFormat": { "italic": true, "fontFamily": "Calibri Light", "fontColor": "#2F5496FF" } }, { "type": "Character", "name": "Heading 5 Char", "basedOn": "Default Paragraph Font", "characterFormat": { "fontFamily": "Calibri Light", "fontColor": "#2F5496FF" } }, { "type": "Paragraph", "name": "Intense Quote", "basedOn": "Normal", "next": "Normal", "link": "Intense Quote Char", "characterFormat": { "italic": true, "fontColor": "#4472C4FF" }, "paragraphFormat": { "leftIndent": 43.200000762939453, "rightIndent": 43.200000762939453, "beforeSpacing": 18.0, "afterSpacing": 18.0, "textAlignment": "Center" } }, { "type": "Character", "name": "Intense Quote Char", "basedOn": "Default Paragraph Font", "characterFormat": { "italic": true, "fontColor": "#4472C4FF" } }, { "type": "Paragraph", "name": "Subtitle", "basedOn": "Normal", "next": "Normal", "link": "Subtitle Char", "characterFormat": { "fontColor": "#5A5A5AFF" }, "paragraphFormat": { "listFormat": { "listLevelNumber": 1 } } }, { "type": "Character", "name": "Subtitle Char", "basedOn": "Default Paragraph Font", "characterFormat": { "fontColor": "#5A5A5AFF" } }] };
 
-export let tableFormat: any = { "sections": [{ "blocks": [{ "rows": [{ "rowFormat": { "allowBreakAcrossPages": true, "isHeader": false, "height": 8.6000003814697266, "heightType": "AtLeast", "borders": { "left": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "right": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "top": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } }, "cells": [{ "blocks": [{ "characterFormat": { "bold": true }, "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Bill To:", "characterFormat": { "bold": true } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 4, "preferredWidth": 78.0, "preferredWidthType": "Point", "verticalAlignment": "Center", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#FFFFFFFF" } } }, { "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Hanari" }, { "text": " Carnes" }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 78.0, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#FFFFFFFF" } } }, { "blocks": [{ "characterFormat": { "bold": true }, "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Ship To:", "characterFormat": { "bold": true } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 4, "preferredWidth": 78.0, "preferredWidthType": "Point", "verticalAlignment": "Center", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#FFFFFFFF" } } }, { "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Hanari" }, { "text": " Carnes" }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 95.75, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#FFFFFFFF" } } }, { "blocks": [{ "paragraphFormat": { "rightIndent": 32.099998474121094, "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Invoice No:", "characterFormat": { "bold": true } }, { "text": "10250" }] }, { "paragraphFormat": { "rightIndent": 32.099998474121094, "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Date:", "characterFormat": { "bold": true } }, { "text": "7/12/1996" }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 4, "preferredWidth": 138.25, "preferredWidthType": "Point", "verticalAlignment": "Center", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#FFFFFFFF" } } }] }, { "rowFormat": { "allowBreakAcrossPages": true, "isHeader": false, "height": 0.0, "heightType": "AtLeast", "borders": { "left": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "right": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "top": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } }, "cells": [{ "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Rua" }, { "text": " do " }, { "text": "Paço" }, { "text": ", 67" }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 78.0, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#FFFFFFFF" } } }, { "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Rua" }, { "text": " do " }, { "text": "Paço" }, { "text": ", 67" }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 95.75, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#FFFFFFFF" } } }] }, { "rowFormat": { "allowBreakAcrossPages": true, "isHeader": false, "height": 0.0, "heightType": "AtLeast", "borders": { "left": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "right": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "top": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } }, "cells": [{ "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Rio de Janeiro" }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 78.0, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#FFFFFFFF" } } }, { "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Rio de Janeiro" }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 95.75, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#FFFFFFFF" } } }] }, { "rowFormat": { "allowBreakAcrossPages": true, "isHeader": false, "height": 0.0, "heightType": "AtLeast", "borders": { "left": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "right": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "top": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } }, "cells": [{ "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Brazil" }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 78.0, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#FFFFFFFF" } } }, { "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Brazil" }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 95.75, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#FFFFFFFF" } } }] }], "title": null, "description": null, "tableFormat": { "allowAutoFit": true, "leftMargin": 0.5, "rightMargin": 0.5, "leftIndent": 0.0, "tableAlignment": "Left", "preferredWidth": 468.0, "preferredWidthType": "Point", "borders": { "left": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "right": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "top": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#000000FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#FFFFFFFF" } } }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [] }, { "rows": [{ "rowFormat": { "allowBreakAcrossPages": true, "isHeader": false, "height": 19.5, "heightType": "Exactly", "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } }, "cells": [{ "blocks": [{ "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Ship Name", "characterFormat": { "bold": true, "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#FFFFFFFF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 109.69999694824219, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#4B88BAFF" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Ship Address", "characterFormat": { "bold": true, "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#FFFFFFFF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 86.6500015258789, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#4B88BAFF" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Freight", "characterFormat": { "bold": true, "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#FFFFFFFF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 50.349998474121094, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#4B88BAFF" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Shipped Date", "characterFormat": { "bold": true, "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#FFFFFFFF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 76.8499984741211, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#4B88BAFF" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Ship City", "characterFormat": { "bold": true, "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#FFFFFFFF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 56.549999237060547, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#4B88BAFF" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Ship Country", "characterFormat": { "bold": true, "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#FFFFFFFF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 86.5999984741211, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#4B88BAFF" } } }] }, { "rowFormat": { "allowBreakAcrossPages": true, "isHeader": false, "height": 32.25, "heightType": "Exactly", "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } }, "cells": [{ "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Hanari", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }, { "text": " Carnes", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 109.69999694824219, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Rua", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }, { "text": " do ", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }, { "text": "Paço", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }, { "text": ", 67", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 86.6500015258789, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "$65.83", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 50.349998474121094, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "7/12/1996", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 76.8499984741211, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Rio de Janeiro", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 56.549999237060547, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Brazil", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 86.5999984741211, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }] }], "title": null, "description": null, "tableFormat": { "allowAutoFit": false, "leftMargin": 5.0, "rightMargin": 5.0, "leftIndent": 0.0, "tableAlignment": "Left", "preferredWidthType": "Auto", "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } } }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [] }, { "rows": [{ "rowFormat": { "allowBreakAcrossPages": true, "isHeader": false, "height": 19.5, "heightType": "Exactly", "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } }, "cells": [{ "blocks": [{ "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "ID", "characterFormat": { "bold": true, "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#FFFFFFFF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 8.880000114440918, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#4B88BAFF" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Product Name", "characterFormat": { "bold": true, "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#FFFFFFFF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 38.540000915527344, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#4B88BAFF" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Quantity", "characterFormat": { "bold": true, "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#FFFFFFFF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 12.859999656677246, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#4B88BAFF" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Unit Price", "characterFormat": { "bold": true, "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#FFFFFFFF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 12.859999656677246, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#4B88BAFF" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Discount", "characterFormat": { "bold": true, "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#FFFFFFFF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 12.859999656677246, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#4B88BAFF" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Price", "characterFormat": { "bold": true, "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#FFFFFFFF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 14.0, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone", "backgroundColor": "#4B88BAFF" } } }] }, { "rowFormat": { "allowBreakAcrossPages": true, "isHeader": false, "height": 19.5, "heightType": "Exactly", "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } }, "cells": [{ "blocks": [{ "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "41", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 8.880000114440918, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Jack's New England Clam Chowder", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 38.540000915527344, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "10", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 12.859999656677246, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "$7.70", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 12.859999656677246, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "0.00%", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 12.859999656677246, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "$77.00", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 14.0, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }] }, { "rowFormat": { "allowBreakAcrossPages": true, "isHeader": false, "height": 19.5, "heightType": "Exactly", "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } }, "cells": [{ "blocks": [{ "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "51", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 8.880000114440918, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Manjimup", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }, { "text": " Dried Apples", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 38.540000915527344, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "35", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 12.859999656677246, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "$42.40", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 12.859999656677246, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "15.00%", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 12.859999656677246, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "name": "_GoBack", "bookmarkType": 0 }, { "name": "_GoBack", "bookmarkType": 1 }, { "text": "$1,484.00", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 14.0, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }] }, { "rowFormat": { "allowBreakAcrossPages": true, "isHeader": false, "height": 19.5, "heightType": "Exactly", "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } }, "cells": [{ "blocks": [{ "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "65", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 8.880000114440918, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Louisiana Fiery Hot Pepper Sauce", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 38.540000915527344, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "15", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 12.859999656677246, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "$16.80", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 12.859999656677246, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "15.00%", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 12.859999656677246, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "$252.00", "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 14.0, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }] }, { "rowFormat": { "allowBreakAcrossPages": true, "isHeader": false, "height": 19.5, "heightType": "Exactly", "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } }, "cells": [{ "blocks": [{ "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" }, "paragraphFormat": { "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "Total", "characterFormat": { "bold": true, "fontSize": 10.0, "fontFamily": "Arial", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 5, "rowSpan": 1, "preferredWidth": 86.0, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }, { "blocks": [{ "characterFormat": { "fontSize": 10.0, "fontFamily": "Segoe UI", "fontColor": "#000000FF" }, "paragraphFormat": { "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "$1,813.00", "characterFormat": { "fontSize": 10.0, "fontFamily": "Arial", "fontColor": "#000000FF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 14.0, "preferredWidthType": "Percent", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "right": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "top": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "bottom": { "lineStyle": "Single", "lineWidth": 1.25, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#D3D3D3FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } }, "shading": { "texture": "TextureNone" } } }] }], "title": null, "description": null, "tableFormat": { "allowAutoFit": true, "leftMargin": 5.0, "rightMargin": 5.0, "leftIndent": 0.0, "tableAlignment": "Left", "preferredWidth": 100.0, "preferredWidthType": "Percent", "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } } }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [] }], "headersFooters": { "header": { "blocks": [{ "rows": [{ "rowFormat": { "allowBreakAcrossPages": true, "isHeader": false, "height": 0.0, "heightType": "AtLeast", "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } }, "cells": [{ "blocks": [{ "paragraphFormat": { "styleName": "Header" }, "inlines": [{ "text": "Northwind Traders", "characterFormat": { "bold": true, "fontSize": 18.0, "fontFamily": "Segoe UI", "fontColor": "#4B88BAFF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 233.75, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "bottom": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#A5A5A5FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } } }, { "blocks": [{ "paragraphFormat": { "textAlignment": "Right", "styleName": "Header" }, "inlines": [{ "text": "Invoice", "characterFormat": { "bold": true, "fontSize": 18.0, "fontFamily": "Segoe UI", "fontColor": "#4B88BAFF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 233.75, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "bottom": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#A5A5A5FF" }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } } }] }, { "rowFormat": { "allowBreakAcrossPages": true, "isHeader": false, "height": 0.0, "heightType": "AtLeast", "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } }, "cells": [{ "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 233.75, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#A5A5A5FF" }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } } }, { "blocks": [{ "characterFormat": { "bold": true }, "paragraphFormat": { "beforeSpacing": 6.0, "textAlignment": "Right", "styleName": "Normal" }, "inlines": [{ "text": "July 1996", "characterFormat": { "fontFamily": "Segoe UI", "fontColor": "#4B88BAFF" } }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 233.75, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false, "color": "#A5A5A5FF" }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } } }] }], "title": null, "description": null, "tableFormat": { "allowAutoFit": true, "leftIndent": 0.0, "tableAlignment": "Left", "preferredWidthType": "Auto", "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": true }, "horizontal": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } } }, { "paragraphFormat": { "styleName": "Header" }, "inlines": [] }] } }, "sectionFormat": { "headerDistance": 36.0, "footerDistance": 36.0, "pageWidth": 612.0, "pageHeight": 792.0, "leftMargin": 72.0, "rightMargin": 72.0, "topMargin": 72.0, "bottomMargin": 72.0, "differentFirstPage": false, "differentOddAndEvenPages": false } }], "characterFormat": { "fontSize": 11.0, "fontFamily": "Calibri" }, "paragraphFormat": { "afterSpacing": 8.0, "lineSpacing": 1.0791666507720947, "lineSpacingType": "Multiple" }, "background": { "color": "#FFFFFFFF" }, "styles": [{ "type": "Paragraph", "name": "Normal", "next": "Normal" }, { "type": "Character", "name": "Default Paragraph Font" }, { "type": "Paragraph", "name": "Notes", "basedOn": "Normal", "next": "Normal", "characterFormat": { "bold": true }, "paragraphFormat": { "afterSpacing": 6.0, "lineSpacing": 1.0, "lineSpacingType": "Multiple" } }, { "type": "Paragraph", "name": "Header", "basedOn": "Normal", "next": "Normal", "link": "Header Char", "paragraphFormat": { "afterSpacing": 0.0, "lineSpacing": 1.0, "lineSpacingType": "Multiple", "tabs": [{ "tabJustification": "Center", "position": 234.0, "tabLeader": "None", "deletePosition": 0.0 }, { "tabJustification": "Right", "position": 468.0, "tabLeader": "None", "deletePosition": 0.0 }] } }, { "type": "Character", "name": "Header Char", "basedOn": "Default Paragraph Font" }, { "type": "Paragraph", "name": "Footer", "basedOn": "Normal", "link": "Footer Char", "paragraphFormat": { "afterSpacing": 0.0, "lineSpacing": 1.0, "lineSpacingType": "Multiple", "tabs": [{ "tabJustification": "Center", "position": 234.0, "tabLeader": "None", "deletePosition": 0.0 }, { "tabJustification": "Right", "position": 468.0, "tabLeader": "None", "deletePosition": 0.0 }] } }, { "type": "Character", "name": "Footer Char", "basedOn": "Default Paragraph Font" }] };
+export let tableFormat: any = {"sections":[{"blocks":[{"rows":[{"rowFormat":{"allowBreakAcrossPages":true,"isHeader":false,"height":8.600000381469727,"heightType":"AtLeast","borders":{"left":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"right":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"top":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"bottom":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"leftMargin":0.5,"rightMargin":0.5},"cells":[{"blocks":[{"characterFormat":{"bold":true,"boldBidi":true},"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"Bill To:","characterFormat":{"bold":true,"boldBidi":true}}]}],"cellFormat":{"columnSpan":1,"rowSpan":4,"preferredWidth":78,"preferredWidthType":"Point","verticalAlignment":"Center","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#FFFFFFFF"},"cellWidth":78}},{"blocks":[{"paragraphFormat":{"styleName":"Normal"},"inlines":[{"text":"Hanari"},{"text":" Carnes"}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":78,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#FFFFFFFF"},"cellWidth":78}},{"blocks":[{"characterFormat":{"bold":true,"boldBidi":true},"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"Ship To:","characterFormat":{"bold":true,"boldBidi":true}}]}],"cellFormat":{"columnSpan":1,"rowSpan":4,"preferredWidth":78,"preferredWidthType":"Point","verticalAlignment":"Center","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#FFFFFFFF"},"cellWidth":78}},{"blocks":[{"paragraphFormat":{"styleName":"Normal"},"inlines":[{"text":"Hanari"},{"text":" Carnes"}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":95.75,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#FFFFFFFF"},"cellWidth":95.75}},{"blocks":[{"paragraphFormat":{"rightIndent":32.099998474121094,"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"Invoice No:","characterFormat":{"bold":true,"boldBidi":true}},{"text":"10250"}]},{"paragraphFormat":{"rightIndent":32.099998474121094,"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"Date:","characterFormat":{"bold":true,"boldBidi":true}},{"text":"7/12/1996"}]}],"cellFormat":{"columnSpan":1,"rowSpan":4,"preferredWidth":138.25,"preferredWidthType":"Point","verticalAlignment":"Center","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#FFFFFFFF"},"cellWidth":138.25}}]},{"rowFormat":{"allowBreakAcrossPages":true,"isHeader":false,"height":1,"heightType":"AtLeast","borders":{"left":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"right":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"top":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"bottom":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"leftMargin":0.5,"rightMargin":0.5},"cells":[{"blocks":[{"paragraphFormat":{"styleName":"Normal"},"inlines":[{"text":"Rua"},{"text":" do "},{"text":"Paço"},{"text":", 67"}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":78,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#FFFFFFFF"},"cellWidth":78}},{"blocks":[{"paragraphFormat":{"styleName":"Normal"},"inlines":[{"text":"Rua"},{"text":" do "},{"text":"Paço"},{"text":", 67"}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":95.75,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#FFFFFFFF"},"cellWidth":95.75}}]},{"rowFormat":{"allowBreakAcrossPages":true,"isHeader":false,"height":1,"heightType":"AtLeast","borders":{"left":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"right":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"top":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"bottom":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"leftMargin":0.5,"rightMargin":0.5},"cells":[{"blocks":[{"paragraphFormat":{"styleName":"Normal"},"inlines":[{"text":"Rio de Janeiro"}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":78,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#FFFFFFFF"},"cellWidth":78}},{"blocks":[{"paragraphFormat":{"styleName":"Normal"},"inlines":[{"text":"Rio de Janeiro"}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":95.75,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#FFFFFFFF"},"cellWidth":95.75}}]},{"rowFormat":{"allowBreakAcrossPages":true,"isHeader":false,"height":1,"heightType":"AtLeast","borders":{"left":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"right":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"top":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"bottom":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"leftMargin":0.5,"rightMargin":0.5},"cells":[{"blocks":[{"paragraphFormat":{"styleName":"Normal"},"inlines":[{"text":"Brazil"}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":78,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#FFFFFFFF"},"cellWidth":78}},{"blocks":[{"paragraphFormat":{"styleName":"Normal"},"inlines":[{"text":"Brazil"}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":95.75,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#FFFFFFFF"},"cellWidth":95.75}}]}],"title":null,"description":null,"tableFormat":{"allowAutoFit":true,"leftMargin":0.5,"rightMargin":0.5,"leftIndent":0,"tableAlignment":"Left","preferredWidth":468,"preferredWidthType":"Point","borders":{"left":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"right":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"top":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"bottom":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#000000FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#FFFFFFFF"},"bidi":false,"horizontalPositionAbs":"Left","horizontalPosition":0}},{"paragraphFormat":{"styleName":"Normal"},"inlines":[]},{"paragraphFormat":{"styleName":"Normal"},"inlines":[]},{"paragraphFormat":{"styleName":"Normal"},"inlines":[]},{"rows":[{"rowFormat":{"allowBreakAcrossPages":true,"isHeader":false,"height":19.5,"heightType":"Exactly","borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"leftMargin":5,"rightMargin":5},"cells":[{"blocks":[{"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"ID","characterFormat":{"bold":true,"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#FFFFFFFF","boldBidi":true,"fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":8.899999618530273,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#4B88BAFF"},"cellWidth":42.607242584228516}},{"blocks":[{"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"Product Name","characterFormat":{"bold":true,"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#FFFFFFFF","boldBidi":true,"fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":38.540000915527344,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#4B88BAFF"},"cellWidth":184.2046356201172}},{"blocks":[{"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"Quantity","characterFormat":{"bold":true,"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#FFFFFFFF","boldBidi":true,"fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":12.859999656677246,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#4B88BAFF"},"cellWidth":61.452754974365234}},{"blocks":[{"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"Unit Price","characterFormat":{"bold":true,"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#FFFFFFFF","boldBidi":true,"fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":12.859999656677246,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#4B88BAFF"},"cellWidth":61.452754974365234}},{"blocks":[{"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"Discount","characterFormat":{"bold":true,"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#FFFFFFFF","boldBidi":true,"fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":12.859999656677246,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#4B88BAFF"},"cellWidth":61.452754974365234}},{"blocks":[{"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"Price","characterFormat":{"bold":true,"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#FFFFFFFF","boldBidi":true,"fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":14,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#4B88BAFF"},"cellWidth":66.82987213134766}}]},{"rowFormat":{"allowBreakAcrossPages":true,"isHeader":false,"height":19.5,"heightType":"Exactly","borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"leftMargin":5,"rightMargin":5},"cells":[{"blocks":[{"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"41","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":8.899999618530273,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":42.607242584228516}},{"blocks":[{"paragraphFormat":{"styleName":"Normal"},"inlines":[{"text":"Jack's New England Clam Chowder","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":38.540000915527344,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":184.2046356201172}},{"blocks":[{"paragraphFormat":{"textAlignment":"Right","styleName":"Normal"},"inlines":[{"text":"10","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":12.859999656677246,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":61.452754974365234}},{"blocks":[{"paragraphFormat":{"textAlignment":"Right","styleName":"Normal"},"inlines":[{"text":"$7.70","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":12.859999656677246,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":61.452754974365234}},{"blocks":[{"paragraphFormat":{"textAlignment":"Right","styleName":"Normal"},"inlines":[{"text":"0.00%","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":12.859999656677246,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":61.452754974365234}},{"blocks":[{"paragraphFormat":{"textAlignment":"Right","styleName":"Normal"},"inlines":[{"text":"$77.00","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":14,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":66.82987213134766}}]},{"rowFormat":{"allowBreakAcrossPages":true,"isHeader":false,"height":19.5,"heightType":"Exactly","borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"leftMargin":5,"rightMargin":5},"cells":[{"blocks":[{"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"51","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":8.899999618530273,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":42.607242584228516}},{"blocks":[{"paragraphFormat":{"styleName":"Normal"},"inlines":[{"text":"Manjimup","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}},{"text":" Dried Apples","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":38.540000915527344,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":184.2046356201172}},{"blocks":[{"paragraphFormat":{"textAlignment":"Right","styleName":"Normal"},"inlines":[{"text":"35","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":12.859999656677246,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":61.452754974365234}},{"blocks":[{"paragraphFormat":{"textAlignment":"Right","styleName":"Normal"},"inlines":[{"text":"$42.40","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":12.859999656677246,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":61.452754974365234}},{"blocks":[{"paragraphFormat":{"textAlignment":"Right","styleName":"Normal"},"inlines":[{"text":"15.00%","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":12.859999656677246,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":61.452754974365234}},{"blocks":[{"paragraphFormat":{"textAlignment":"Right","styleName":"Normal"},"inlines":[{"text":"$1,484.00","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":14,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":66.82987213134766}}]},{"rowFormat":{"allowBreakAcrossPages":true,"isHeader":false,"height":19.5,"heightType":"Exactly","borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"leftMargin":5,"rightMargin":5},"cells":[{"blocks":[{"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"65","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":8.899999618530273,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":42.607242584228516}},{"blocks":[{"paragraphFormat":{"styleName":"Normal"},"inlines":[{"text":"Louisiana Fiery Hot Pepper Sauce","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":38.540000915527344,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":184.2046356201172}},{"blocks":[{"paragraphFormat":{"textAlignment":"Right","styleName":"Normal"},"inlines":[{"text":"15","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":12.859999656677246,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":61.452754974365234}},{"blocks":[{"paragraphFormat":{"textAlignment":"Right","styleName":"Normal"},"inlines":[{"text":"$16.80","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":12.859999656677246,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":61.452754974365234}},{"blocks":[{"paragraphFormat":{"textAlignment":"Right","styleName":"Normal"},"inlines":[{"text":"15.00%","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":12.859999656677246,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":61.452754974365234}},{"blocks":[{"paragraphFormat":{"textAlignment":"Right","styleName":"Normal"},"inlines":[{"text":"$252.00","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":14,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":66.82987213134766}}]},{"rowFormat":{"allowBreakAcrossPages":true,"isHeader":false,"height":19.5,"heightType":"Exactly","borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"leftMargin":5,"rightMargin":5},"cells":[{"blocks":[{"characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"},"paragraphFormat":{"textAlignment":"Right","styleName":"Normal"},"inlines":[{"text":"Total","characterFormat":{"bold":true,"fontSize":10,"fontFamily":"Arial","fontColor":"#000000FF","boldBidi":true,"fontSizeBidi":10,"fontFamilyBidi":"Arial"}}]}],"cellFormat":{"columnSpan":5,"rowSpan":1,"preferredWidth":86,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":411.170166015625}},{"blocks":[{"characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"},"paragraphFormat":{"textAlignment":"Right","styleName":"Normal"},"inlines":[{"text":"$1,813.00","characterFormat":{"fontSize":10,"fontFamily":"Arial","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Arial"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":14,"preferredWidthType":"Percent","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":66.82987213134766}}]}],"title":null,"description":null,"tableFormat":{"allowAutoFit":true,"leftMargin":5,"rightMargin":5,"leftIndent":0,"tableAlignment":"Left","preferredWidth":100,"preferredWidthType":"Percent","borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"bidi":false,"horizontalPositionAbs":"Left","horizontalPosition":0}},{"paragraphFormat":{"styleName":"Normal"},"inlines":[]},{"rows":[{"rowFormat":{"allowBreakAcrossPages":true,"isHeader":false,"height":19.5,"heightType":"Exactly","borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"leftMargin":5,"rightMargin":5},"cells":[{"blocks":[{"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"Ship Name","characterFormat":{"bold":true,"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#FFFFFFFF","boldBidi":true,"fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":109.69999694824219,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#4B88BAFF"},"cellWidth":109.69999694824219}},{"blocks":[{"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"Ship Address","characterFormat":{"bold":true,"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#FFFFFFFF","boldBidi":true,"fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":86.6500015258789,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#4B88BAFF"},"cellWidth":86.6500015258789}},{"blocks":[{"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"Freight","characterFormat":{"bold":true,"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#FFFFFFFF","boldBidi":true,"fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":50.349998474121094,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#4B88BAFF"},"cellWidth":50.349998474121094}},{"blocks":[{"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"Shipped Date","characterFormat":{"bold":true,"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#FFFFFFFF","boldBidi":true,"fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":76.8499984741211,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#4B88BAFF"},"cellWidth":76.8499984741211}},{"blocks":[{"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"Ship City","characterFormat":{"bold":true,"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#FFFFFFFF","boldBidi":true,"fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":56.54999923706055,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#4B88BAFF"},"cellWidth":56.54999923706055}},{"blocks":[{"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"Ship Country","characterFormat":{"bold":true,"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#FFFFFFFF","boldBidi":true,"fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":86.5999984741211,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone","backgroundColor":"#4B88BAFF"},"cellWidth":86.5999984741211}}]},{"rowFormat":{"allowBreakAcrossPages":true,"isHeader":false,"height":32.25,"heightType":"Exactly","borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"leftMargin":5,"rightMargin":5},"cells":[{"blocks":[{"paragraphFormat":{"styleName":"Normal"},"inlines":[{"text":"Hanari","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}},{"text":" Carnes","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":109.69999694824219,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":109.69999694824219}},{"blocks":[{"paragraphFormat":{"styleName":"Normal"},"inlines":[{"text":"Rua","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}},{"text":" do ","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}},{"text":"Paço","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}},{"text":", 67","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":86.6500015258789,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":86.6500015258789}},{"blocks":[{"paragraphFormat":{"textAlignment":"Right","styleName":"Normal"},"inlines":[{"text":"$65.83","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":50.349998474121094,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":50.349998474121094}},{"blocks":[{"paragraphFormat":{"textAlignment":"Center","styleName":"Normal"},"inlines":[{"text":"7/12/1996","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":76.8499984741211,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":76.8499984741211}},{"blocks":[{"paragraphFormat":{"styleName":"Normal"},"inlines":[{"text":"Rio de Janeiro","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":56.54999923706055,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":56.54999923706055}},{"blocks":[{"paragraphFormat":{"styleName":"Normal"},"inlines":[{"text":"Brazil","characterFormat":{"fontSize":10,"fontFamily":"Segoe UI","fontColor":"#000000FF","fontSizeBidi":10,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":86.5999984741211,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"right":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"top":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"bottom":{"lineStyle":"Single","lineWidth":1.25,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#D3D3D3FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":86.5999984741211}}]}],"title":null,"description":null,"wrapTextAround":true,"positioning":{"allowOverlap":false,"distanceTop":0,"distanceRight":9,"distanceLeft":9,"distanceBottom":0,"verticalOrigin":"Page","verticalPosition":240.05,"horizontalOrigin":"Column","horizontalAlignment":"Left","horizontalPosition":0},"tableFormat":{"allowAutoFit":false,"leftMargin":5,"rightMargin":5,"leftIndent":0,"tableAlignment":"Left","preferredWidthType":"Auto","borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"bidi":false,"horizontalPositionAbs":"Left","horizontalPosition":0}},{"paragraphFormat":{"styleName":"Normal"},"inlines":[]}],"headersFooters":{"header":{"blocks":[{"rows":[{"rowFormat":{"allowBreakAcrossPages":true,"isHeader":false,"height":1,"heightType":"AtLeast","borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"horizontal":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}}},"cells":[{"blocks":[{"paragraphFormat":{"styleName":"Header"},"inlines":[{"text":"Northwind Traders","characterFormat":{"bold":true,"fontSize":18,"fontFamily":"Segoe UI","fontColor":"#4B88BAFF","boldBidi":true,"fontSizeBidi":18,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":233.75,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"bottom":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#A5A5A5FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":233.75}},{"blocks":[{"paragraphFormat":{"textAlignment":"Right","styleName":"Header"},"inlines":[{"text":"Invoice","characterFormat":{"bold":true,"fontSize":18,"fontFamily":"Segoe UI","fontColor":"#4B88BAFF","boldBidi":true,"fontSizeBidi":18,"fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":233.75,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"bottom":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#A5A5A5FF"},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":233.75}}]},{"rowFormat":{"allowBreakAcrossPages":true,"isHeader":false,"height":1,"heightType":"AtLeast","borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":true},"horizontal":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}}},"cells":[{"blocks":[{"paragraphFormat":{"styleName":"Normal"},"inlines":[]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":233.75,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"top":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#A5A5A5FF"},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":233.75}},{"blocks":[{"characterFormat":{"bold":true,"boldBidi":true},"paragraphFormat":{"beforeSpacing":6,"textAlignment":"Right","styleName":"Normal"},"inlines":[{"text":"July 1996","characterFormat":{"fontFamily":"Segoe UI","fontColor":"#4B88BAFF","fontFamilyBidi":"Segoe UI"}}]}],"cellFormat":{"columnSpan":1,"rowSpan":1,"preferredWidth":233.75,"preferredWidthType":"Point","verticalAlignment":"Top","isSamePaddingAsTable":true,"borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"top":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false,"color":"#A5A5A5FF"},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"shading":{"texture":"TextureNone"},"cellWidth":233.75}}]}],"title":null,"description":null,"tableFormat":{"allowAutoFit":true,"leftIndent":0,"tableAlignment":"Left","preferredWidthType":"Auto","borders":{"left":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"right":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"top":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"bottom":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"vertical":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"horizontal":{"lineStyle":"Single","lineWidth":0.5,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalDown":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false},"diagonalUp":{"lineStyle":"None","lineWidth":0,"shadow":false,"space":0,"hasNoneStyle":false}},"bidi":false,"horizontalPositionAbs":"Left","horizontalPosition":0}},{"paragraphFormat":{"styleName":"Header"},"inlines":[]}]},"footer":{"blocks":[{"inlines":[]}]},"evenHeader":{"blocks":[{"inlines":[]}]},"evenFooter":{"blocks":[{"inlines":[]}]},"firstPageHeader":{"blocks":[{"inlines":[]}]},"firstPageFooter":{"blocks":[{"inlines":[]}]}},"sectionFormat":{"headerDistance":36,"footerDistance":36,"pageWidth":612,"pageHeight":792,"leftMargin":72,"rightMargin":72,"topMargin":72,"bottomMargin":72,"differentFirstPage":false,"differentOddAndEvenPages":false,"bidi":false,"restartPageNumbering":false,"pageStartingNumber":0,"endnoteNumberFormat":"LowerCaseRoman","footNoteNumberFormat":"Arabic","restartIndexForFootnotes":"DoNotRestart","restartIndexForEndnotes":"DoNotRestart"}}],"characterFormat":{"fontSize":11,"fontFamily":"Calibri","fontSizeBidi":11,"fontFamilyBidi":"Calibri"},"paragraphFormat":{"afterSpacing":8,"lineSpacing":1.0791666507720947,"lineSpacingType":"Multiple"},"background":{"color":"#FFFFFFFF"},"styles":[{"type":"Paragraph","name":"Normal","next":"Normal"},{"type":"Paragraph","name":"Heading 1","basedOn":"Normal","next":"Normal","link":"Heading 1 Char","characterFormat":{"fontSize":16,"fontFamily":"Calibri Light","fontColor":"#2F5496FF","fontSizeBidi":16,"fontFamilyBidi":"Calibri Light"},"paragraphFormat":{"beforeSpacing":12,"afterSpacing":0,"outlineLevel":"Level1"}},{"type":"Paragraph","name":"Heading 2","basedOn":"Normal","next":"Normal","link":"Heading 2 Char","characterFormat":{"fontSize":13,"fontFamily":"Calibri Light","fontColor":"#2F5496FF","fontSizeBidi":13,"fontFamilyBidi":"Calibri Light"},"paragraphFormat":{"beforeSpacing":2,"afterSpacing":0,"outlineLevel":"Level2"}},{"type":"Paragraph","name":"Heading 3","basedOn":"Normal","next":"Normal","link":"Heading 3 Char","characterFormat":{"fontSize":12,"fontFamily":"Calibri Light","fontColor":"#1F3763FF","fontSizeBidi":12,"fontFamilyBidi":"Calibri Light"},"paragraphFormat":{"beforeSpacing":2,"afterSpacing":0,"outlineLevel":"Level3"}},{"type":"Paragraph","name":"Heading 4","basedOn":"Normal","next":"Normal","link":"Heading 4 Char","characterFormat":{"italic":true,"fontFamily":"Calibri Light","fontColor":"#2F5496FF","italicBidi":true,"fontFamilyBidi":"Calibri Light"},"paragraphFormat":{"beforeSpacing":2,"afterSpacing":0,"outlineLevel":"Level4"}},{"type":"Paragraph","name":"Heading 5","basedOn":"Normal","next":"Normal","link":"Heading 5 Char","characterFormat":{"fontFamily":"Calibri Light","fontColor":"#2F5496FF","fontFamilyBidi":"Calibri Light"},"paragraphFormat":{"beforeSpacing":2,"afterSpacing":0,"outlineLevel":"Level5"}},{"type":"Paragraph","name":"Heading 6","basedOn":"Normal","next":"Normal","link":"Heading 6 Char","characterFormat":{"fontFamily":"Calibri Light","fontColor":"#1F3763FF","fontFamilyBidi":"Calibri Light"},"paragraphFormat":{"beforeSpacing":2,"afterSpacing":0,"outlineLevel":"Level6"}},{"type":"Character","name":"Default Paragraph Font"},{"type":"Paragraph","name":"Notes","basedOn":"Normal","next":"Normal","characterFormat":{"bold":true,"boldBidi":true},"paragraphFormat":{"afterSpacing":6,"lineSpacing":1,"lineSpacingType":"Multiple"}},{"type":"Paragraph","name":"Header","basedOn":"Normal","next":"Normal","link":"Header Char","paragraphFormat":{"afterSpacing":0,"lineSpacing":1,"lineSpacingType":"Multiple","tabs":[{"tabJustification":"Center","position":234,"tabLeader":"None","deletePosition":0},{"tabJustification":"Right","position":468,"tabLeader":"None","deletePosition":0}]}},{"type":"Character","name":"Header Char","basedOn":"Default Paragraph Font"},{"type":"Paragraph","name":"Footer","basedOn":"Normal","next":"Footer","link":"Footer Char","paragraphFormat":{"afterSpacing":0,"lineSpacing":1,"lineSpacingType":"Multiple","tabs":[{"tabJustification":"Center","position":234,"tabLeader":"None","deletePosition":0},{"tabJustification":"Right","position":468,"tabLeader":"None","deletePosition":0}]}},{"type":"Character","name":"Footer Char","basedOn":"Default Paragraph Font"},{"type":"Character","name":"Heading 1 Char","basedOn":"Default Paragraph Font","characterFormat":{"fontSize":16,"fontFamily":"Calibri Light","fontColor":"#2F5496FF","fontSizeBidi":16,"fontFamilyBidi":"Calibri Light"}},{"type":"Character","name":"Heading 2 Char","basedOn":"Default Paragraph Font","characterFormat":{"fontSize":13,"fontFamily":"Calibri Light","fontColor":"#2F5496FF","fontSizeBidi":13,"fontFamilyBidi":"Calibri Light"}},{"type":"Character","name":"Heading 3 Char","basedOn":"Default Paragraph Font","characterFormat":{"fontSize":12,"fontFamily":"Calibri Light","fontColor":"#1F3763FF","fontSizeBidi":12,"fontFamilyBidi":"Calibri Light"}},{"type":"Character","name":"Heading 4 Char","basedOn":"Default Paragraph Font","characterFormat":{"italic":true,"fontFamily":"Calibri Light","fontColor":"#2F5496FF","italicBidi":true,"fontFamilyBidi":"Calibri Light"}},{"type":"Character","name":"Heading 5 Char","basedOn":"Default Paragraph Font","characterFormat":{"fontFamily":"Calibri Light","fontColor":"#2F5496FF","fontFamilyBidi":"Calibri Light"}},{"type":"Character","name":"Heading 6 Char","basedOn":"Default Paragraph Font","characterFormat":{"fontFamily":"Calibri Light","fontColor":"#1F3763FF","fontFamilyBidi":"Calibri Light"}}],"defaultTabWidth":36,"formatting":false,"trackChanges":false,"protectionType":"NoProtection","enforcement":false,"dontUseHTMLParagraphAutoSpacing":false,"alignTablesRowByRow":false,"formFieldShading":true,"footnotes":{"separator":[{"paragraphFormat":{"afterSpacing":0,"lineSpacing":1,"lineSpacingType":"Multiple","styleName":"Normal"},"inlines":[{"text":"\u0003"}]}],"continuationSeparator":[{"paragraphFormat":{"afterSpacing":0,"lineSpacing":1,"lineSpacingType":"Multiple","styleName":"Normal"},"inlines":[{"text":"\u0004"}]}],"continuationNotice":[{"inlines":[]}]},"endnotes":{"separator":[{"paragraphFormat":{"afterSpacing":0,"lineSpacing":1,"lineSpacingType":"Multiple","styleName":"Normal"},"inlines":[{"text":"\u0003"}]}],"continuationSeparator":[{"paragraphFormat":{"afterSpacing":0,"lineSpacing":1,"lineSpacingType":"Multiple","styleName":"Normal"},"inlines":[{"text":"\u0004"}]}],"continuationNotice":[{"inlines":[]}]},"compatibilityMode":"Word2013"};
 
 export let toc: Object = { "sections": [{ "blocks": [{ "paragraphFormat": { "styleName": "Title" }, "inlines": [{ "text": "ASP.NET Core Succinctly" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [] }, { "characterFormat": { "fontSize": 16.0, "fontColor": "#4472C4FF" }, "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Table of Contents", "characterFormat": { "fontSize": 16.0, "fontColor": "#4472C4FF" } }] }, { "paragraphFormat": { "styleName": "TOC 1", "tabs": [{ "tabJustification": "Right", "position": 467.5, "tabLeader": "Dot", "deletePosition": 0.0 }] }, "inlines": [{ "hasFieldEnd": true, "fieldType": 0 }, { "text": " TOC \\o \"1-3\" \\h \\z " }, { "fieldType": 2 }, { "hasFieldEnd": true, "fieldType": 0 }, { "text": "HYPERLINK \\l \"_Toc523388455\"" }, { "fieldType": 2 }, { "text": "Chapter 1 Introduction to ASP.NET Core", "characterFormat": {} }, { "text": "\t" }, { "hasFieldEnd": true, "fieldType": 0 }, { "text": " PAGEREF _Toc523388455 \\h " }, { "fieldType": 2 }, { "text": "1" }, { "fieldType": 1 }, { "fieldType": 1 }] }, { "paragraphFormat": { "styleName": "TOC 1", "tabs": [{ "tabJustification": "Right", "position": 467.5, "tabLeader": "Dot", "deletePosition": 0.0 }] }, "inlines": [{ "hasFieldEnd": true, "fieldType": 0 }, { "text": "HYPERLINK \\l \"_Toc523388456\"" }, { "fieldType": 2 }, { "text": "Chapter 2 What are .NET Core and ASP.NET Core?", "characterFormat": {} }, { "text": "\t" }, { "hasFieldEnd": true, "fieldType": 0 }, { "text": " PAGEREF _Toc523388456 \\h " }, { "fieldType": 2 }, { "text": "1" }, { "fieldType": 1 }, { "fieldType": 1 }] }, { "paragraphFormat": { "styleName": "TOC 2", "tabs": [{ "tabJustification": "Right", "position": 467.5, "tabLeader": "Dot", "deletePosition": 0.0 }] }, "inlines": [{ "hasFieldEnd": true, "fieldType": 0 }, { "text": "HYPERLINK \\l \"_Toc523388457\"" }, { "fieldType": 2 }, { "text": ".NET Core", "characterFormat": {} }, { "text": "\t" }, { "hasFieldEnd": true, "fieldType": 0 }, { "text": " PAGEREF _Toc523388457 \\h " }, { "fieldType": 2 }, { "text": "1" }, { "fieldType": 1 }, { "fieldType": 1 }] }, { "paragraphFormat": { "styleName": "TOC 2", "tabs": [{ "tabJustification": "Right", "position": 467.5, "tabLeader": "Dot", "deletePosition": 0.0 }] }, "inlines": [{ "hasFieldEnd": true, "fieldType": 0 }, { "text": "HYPERLINK \\l \"_Toc523388458\"" }, { "fieldType": 2 }, { "text": "ASP.NET Core", "characterFormat": {} }, { "text": "\t" }, { "hasFieldEnd": true, "fieldType": 0 }, { "text": " PAGEREF _Toc523388458 \\h " }, { "fieldType": 2 }, { "text": "1" }, { "fieldType": 1 }, { "fieldType": 1 }] }, { "paragraphFormat": { "styleName": "TOC 1", "tabs": [{ "tabJustification": "Right", "position": 467.5, "tabLeader": "Dot", "deletePosition": 0.0 }] }, "inlines": [{ "hasFieldEnd": true, "fieldType": 0 }, { "text": "HYPERLINK \\l \"_Toc523388459\"" }, { "fieldType": 2 }, { "text": "Chapter 3 Getting Started with .NET Core", "characterFormat": {} }, { "text": "\t" }, { "hasFieldEnd": true, "fieldType": 0 }, { "text": " PAGEREF _Toc523388459 \\h " }, { "fieldType": 2 }, { "text": "2" }, { "fieldType": 1 }, { "fieldType": 1 }] }, { "paragraphFormat": { "styleName": "TOC 2", "tabs": [{ "tabJustification": "Right", "position": 467.5, "tabLeader": "Dot", "deletePosition": 0.0 }] }, "inlines": [{ "hasFieldEnd": true, "fieldType": 0 }, { "text": "HYPERLINK \\l \"_Toc523388460\"" }, { "fieldType": 2 }, { "text": "Installing .NET Core on Windows", "characterFormat": {} }, { "text": "\t" }, { "hasFieldEnd": true, "fieldType": 0 }, { "text": " PAGEREF _Toc523388460 \\h " }, { "fieldType": 2 }, { "text": "2" }, { "fieldType": 1 }, { "fieldType": 1 }] }, { "paragraphFormat": { "styleName": "TOC 2", "tabs": [{ "tabJustification": "Right", "position": 467.5, "tabLeader": "Dot", "deletePosition": 0.0 }] }, "inlines": [{ "hasFieldEnd": true, "fieldType": 0 }, { "text": "HYPERLINK \\l \"_Toc523388461\"" }, { "fieldType": 2 }, { "text": "Installing .NET Core on a Mac (or Linux)", "characterFormat": {} }, { "text": "\t" }, { "hasFieldEnd": true, "fieldType": 0 }, { "text": " PAGEREF _Toc523388461 \\h " }, { "fieldType": 2 }, { "text": "2" }, { "fieldType": 1 }, { "fieldType": 1 }] }, { "paragraphFormat": { "styleName": "TOC 1", "tabs": [{ "tabJustification": "Right", "position": 467.5, "tabLeader": "Dot", "deletePosition": 0.0 }] }, "inlines": [{ "hasFieldEnd": true, "fieldType": 0 }, { "text": "HYPERLINK \\l \"_Toc523388462\"" }, { "fieldType": 2 }, { "text": "A Look at the Future", "characterFormat": {} }, { "text": "\t" }, { "hasFieldEnd": true, "fieldType": 0 }, { "text": " PAGEREF _Toc523388462 \\h " }, { "fieldType": 2 }, { "text": "2" }, { "fieldType": 1 }, { "fieldType": 1 }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "fieldType": 1 }, { "name": "_GoBack", "bookmarkType": 0 }, { "name": "_GoBack", "bookmarkType": 1 }] }, { "paragraphFormat": { "styleName": "Heading 1" }, "inlines": [{ "name": "_Toc523387945", "bookmarkType": 0 }, { "name": "_Toc523388455", "bookmarkType": 0 }, { "text": "Chapter 1 Introduction to ASP.NET Core" }, { "name": "_Toc523387945", "bookmarkType": 1 }, { "name": "_Toc523388455", "bookmarkType": 1 }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "ASP.NET Core is the web development framework that comes together with the new .NET Core and, besides all the new features, also adopts a significantly new approach to web development. The first chapter starts by going through the history of Microsoft's web stack to show the motivations that led to this framework. Later, it moves to more practical matters, like showing you how to get started with .NET Core and describing the foundations of the framework." }] }, { "paragraphFormat": { "styleName": "Heading 1" }, "inlines": [{ "name": "_Toc523387946", "bookmarkType": 0 }, { "name": "_Toc523388456", "bookmarkType": 0 }, { "text": "Chapter 2 What are .NET Core and ASP.NET Core?" }, { "name": "_Toc523387946", "bookmarkType": 1 }, { "name": "_Toc523388456", "bookmarkType": 1 }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Before trying to understand the reason for its existence, let's first try to define what .NET Core and ASP.NET Core are." }] }, { "paragraphFormat": { "styleName": "Heading 2" }, "inlines": [{ "name": "_Toc523387947", "bookmarkType": 0 }, { "name": "_Toc523388457", "bookmarkType": 0 }, { "text": ".NET Core" }, { "name": "_Toc523387947", "bookmarkType": 1 }, { "name": "_Toc523388457", "bookmarkType": 1 }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "The framework .NET Core 1.1 a is modular, cross-platform, cloud-optimized version of the .NET Framework, consisting of the CoreCLR and the implementation of the .NET Standard Library 1.6. One of the main features of this library is the ability to install only the features that are needed for the application you are building, reducing its footprint and the possibility of installing the library itself within the application. This makes it possible for applications built with different versions to co-exist on the same machine without the compatibility problems typical of the full .NET Framework." }] }, { "paragraphFormat": { "styleName": "Heading 2" }, "inlines": [{ "name": "_Toc523387948", "bookmarkType": 0 }, { "name": "_Toc523388458", "bookmarkType": 0 }, { "text": "ASP.NET Core" }, { "name": "_Toc523387948", "bookmarkType": 1 }, { "name": "_Toc523388458", "bookmarkType": 1 }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "ASP.NET Core is a complete rewrite of ASP.NET, built with the goal of being cross-platform, completely open-source, and without the limitations of backward compatibility. Like .NET Core, ASP.NET Core is also built with a modular approach. This means the application you build can include only the needed features without taking on additional burdens. This is made possible by the new startup and execution environment, based on the Open Web Interface for .NET (OWIN) standard. In addition, ASP.NET Core comes with many interesting features that we are going to see throughout the book, like an integrated " }, { "text": "dependency injection system and a new application framework that unifies the programming models of ASP.NET MVC and Web API." }] }, { "paragraphFormat": { "styleName": "Heading 1" }, "inlines": [{ "name": "_Toc523387949", "bookmarkType": 0 }, { "name": "_Toc523388459", "bookmarkType": 0 }, { "text": "Chapter 3 " }, { "text": "Getting Started with .NET Core" }, { "name": "_Toc523387949", "bookmarkType": 1 }, { "name": "_Toc523388459", "bookmarkType": 1 }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Now that it is clear what ASP.NET Core and .NET Core are, and why they were created, it's time to look at how to install them and how to build a simple application with them." }] }, { "paragraphFormat": { "styleName": "Heading 2" }, "inlines": [{ "name": "_Toc523387950", "bookmarkType": 0 }, { "name": "_Toc523388460", "bookmarkType": 0 }, { "text": "Installing .NET Core on Windows" }, { "name": "_Toc523387950", "bookmarkType": 1 }, { "name": "_Toc523388460", "bookmarkType": 1 }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Installing on Windows is pretty easy. With Visual Studio 2017, chances are you already installed it. If not, go back to the Visual Studio Installer and make sure you have the .NET Core workload selected." }] }, { "paragraphFormat": { "styleName": "Heading 2" }, "inlines": [{ "name": "_Toc523387951", "bookmarkType": 0 }, { "name": "_Toc523388461", "bookmarkType": 0 }, { "text": "Installing .NET Core on a Mac (or Linux)" }, { "name": "_Toc523387951", "bookmarkType": 1 }, { "name": "_Toc523388461", "bookmarkType": 1 }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "The beauty of .NET Core is that it can also be installed on a Mac (or Linux, for that matter) without relying on third-party frameworks, as was needed before with Mono." }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Each distribution of Linux has its own individual way of installing, but in the end, the process boils down to the same principles:" }] }, { "paragraphFormat": { "styleName": "List Paragraph", "listFormat": { "listLevelNumber": 0, "listId": 0 } }, "inlines": [{ "text": "Install prerequisites and configure the package manager of your distribution." }] }, { "paragraphFormat": { "styleName": "List Paragraph", "listFormat": { "listLevelNumber": 0, "listId": 0 } }, "inlines": [{ "text": "Invoke the package manager to download and install .NET Core and its tools." }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "You can read instructions specific to your distribution on the official .NET Core website. As an example, we’ll show you how to install on a Mac." }] }, { "characterFormat": { "italic": true }, "paragraphFormat": { "textAlignment": "Center", "styleName": "Normal" }, "inlines": [{ "text": "Code Listing 3-1", "characterFormat": { "italic": true } }] }, { "rows": [{ "rowFormat": { "allowBreakAcrossPages": true, "isHeader": false, "height": 0.0, "heightType": "AtLeast", "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } }, "cells": [{ "blocks": [{ "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": ">brew update" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": ">brew install openssl" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": ">ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": ">ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/" }] }], "cellFormat": { "columnSpan": 1, "rowSpan": 1, "preferredWidth": 467.5, "preferredWidthType": "Point", "verticalAlignment": "Top", "isSamePaddingAsTable": true, "borders": { "left": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "bottom": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "vertical": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } } }] }], "title": null, "description": null, "tableFormat": { "allowAutoFit": true, "leftIndent": 0.0, "tableAlignment": "Left", "preferredWidthType": "Auto", "borders": { "left": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "right": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "top": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "bottom": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "vertical": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "horizontal": { "lineStyle": "Single", "lineWidth": 0.5, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalDown": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false }, "diagonalUp": { "lineStyle": "None", "lineWidth": 0.0, "shadow": false, "space": 0.0, "hasNoneStyle": false } } } }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "Once all these prerequisites have been installed, you can download and install the official SDK for macOS by downloading it from the " }, { "hasFieldEnd": true, "fieldType": 0 }, { "text": "HYPERLINK \"https://www.microsoft.com/net/core\" " }, { "fieldType": 2 }, { "text": "official .NET Core website", "characterFormat": { "styleName": "Hyperlink" } }, { "fieldType": 1 }, { "text": "." }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "On Linux and Mac, you do not have Visual Studio to develop apps, but you can use the .NET Core SDK or Visual Studio Code, which is a lightweight, extensible, cross-platform text editor built by Microsoft and the community. The last chapter of this book covers in detail each of the tools with which you can build .NET Core apps." }] }, { "paragraphFormat": { "styleName": "Heading 1" }, "inlines": [{ "name": "_Toc523387952", "bookmarkType": 0 }, { "name": "_Toc523388462", "bookmarkType": 0 }, { "text": "A Look at the Future" }, { "name": "_Toc523387952", "bookmarkType": 1 }, { "name": "_Toc523388462", "bookmarkType": 1 }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "The release of .NET Core has been a very difficult one, with many delays and changes in direction. While the framework is stable, with .NET Core 1.1 released in November 2016, the tooling is still in development." }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "When we wrote this book, we relied on previews that were made available at the Connect(); event of November 2016, so some of the screenshots or procedures in the examples might be different from what is currently available." }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "What can we expect for the future of .NET Core?" }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "First, unlike previous frameworks, we have to expect a continuous release of enhanced tools, both for the CLI and for the tooling inside Visual Studio. Second, on the framework side, there will be the second big release of .NET Core 2.0, implementing .NET Standard 2.0." }] }, { "paragraphFormat": { "styleName": "Normal" }, "inlines": [{ "text": "But rest assured that Microsoft sees .NET Core as the future of .NET for the next 10 years, so this is the right time to jump in and start learning this new technology." }] }], "headersFooters": {}, "sectionFormat": { "headerDistance": 36.0, "footerDistance": 36.0, "pageWidth": 612.0, "pageHeight": 792.0, "leftMargin": 72.0, "rightMargin": 72.0, "topMargin": 72.0, "bottomMargin": 72.0, "differentFirstPage": false, "differentOddAndEvenPages": false } }], "characterFormat": { "fontSize": 11.0, "fontFamily": "Calibri" }, "paragraphFormat": { "afterSpacing": 8.0, "lineSpacing": 1.0791666507720947, "lineSpacingType": "Multiple" }, "lists": [{ "listId": 0, "abstractListId": 0 }], "abstractLists": [{ "abstractListId": 0, "levels": [{ "listLevelPattern": "Bullet", "followCharacter": "Tab", "numberFormat": "", "characterFormat": { "fontFamily": "Symbol" }, "paragraphFormat": { "leftIndent": 36.0, "firstLineIndent": -18.0 } }, { "listLevelPattern": "Bullet", "followCharacter": "Tab", "numberFormat": "o", "characterFormat": { "fontFamily": "Courier New" }, "paragraphFormat": { "leftIndent": 72.0, "firstLineIndent": -18.0 } }, { "listLevelPattern": "Bullet", "followCharacter": "Tab", "numberFormat": "", "characterFormat": { "fontFamily": "Wingdings" }, "paragraphFormat": { "leftIndent": 108.0, "firstLineIndent": -18.0 } }, { "listLevelPattern": "Bullet", "followCharacter": "Tab", "numberFormat": "", "characterFormat": { "fontFamily": "Symbol" }, "paragraphFormat": { "leftIndent": 144.0, "firstLineIndent": -18.0 } }, { "listLevelPattern": "Bullet", "followCharacter": "Tab", "numberFormat": "o", "characterFormat": { "fontFamily": "Courier New" }, "paragraphFormat": { "leftIndent": 180.0, "firstLineIndent": -18.0 } }, { "listLevelPattern": "Bullet", "followCharacter": "Tab", "numberFormat": "", "characterFormat": { "fontFamily": "Wingdings" }, "paragraphFormat": { "leftIndent": 216.0, "firstLineIndent": -18.0 } }, { "listLevelPattern": "Bullet", "followCharacter": "Tab", "numberFormat": "", "characterFormat": { "fontFamily": "Symbol" }, "paragraphFormat": { "leftIndent": 252.0, "firstLineIndent": -18.0 } }, { "listLevelPattern": "Bullet", "followCharacter": "Tab", "numberFormat": "o", "characterFormat": { "fontFamily": "Courier New" }, "paragraphFormat": { "leftIndent": 288.0, "firstLineIndent": -18.0 } }, { "listLevelPattern": "Bullet", "followCharacter": "Tab", "numberFormat": "", "characterFormat": { "fontFamily": "Wingdings" }, "paragraphFormat": { "leftIndent": 324.0, "firstLineIndent": -18.0 } }] }], "background": { "color": "#FFFFFFFF" }, "styles": [{ "type": "Paragraph", "name": "Normal", "next": "Normal" }, { "type": "Paragraph", "name": "Heading 1", "basedOn": "Normal", "next": "Normal", "link": "Heading 1 Char", "characterFormat": { "fontSize": 16.0, "fontFamily": "Calibri Light", "fontColor": "#2F5496FF" }, "paragraphFormat": { "beforeSpacing": 12.0, "afterSpacing": 0.0, "outlineLevel": "Level1" } }, { "type": "Paragraph", "name": "Heading 2", "basedOn": "Normal", "next": "Normal", "link": "Heading 2 Char", "characterFormat": { "fontSize": 13.0, "fontFamily": "Calibri Light", "fontColor": "#2F5496FF" }, "paragraphFormat": { "beforeSpacing": 2.0, "afterSpacing": 0.0, "outlineLevel": "Level2" } }, { "type": "Character", "name": "Default Paragraph Font" }, { "type": "Paragraph", "name": "Notes", "basedOn": "Normal", "next": "Normal", "characterFormat": { "bold": true }, "paragraphFormat": { "afterSpacing": 6.0, "lineSpacing": 1.0, "lineSpacingType": "Multiple" } }, { "type": "Character", "name": "Heading 1 Char", "basedOn": "Default Paragraph Font", "characterFormat": { "fontSize": 16.0, "fontFamily": "Calibri Light", "fontColor": "#2F5496FF" } }, { "type": "Character", "name": "Heading 2 Char", "basedOn": "Default Paragraph Font", "characterFormat": { "fontSize": 13.0, "fontFamily": "Calibri Light", "fontColor": "#2F5496FF" } }, { "type": "Paragraph", "name": "List Paragraph", "basedOn": "Normal", "next": "List Paragraph", "paragraphFormat": { "leftIndent": 36.0 } }, { "type": "Character", "name": "Hyperlink", "basedOn": "Default Paragraph Font", "characterFormat": { "underline": "Single", "fontColor": "#0563C1FF" } }, { "type": "Character", "name": "Unresolved Mention", "basedOn": "Default Paragraph Font", "characterFormat": { "fontColor": "#808080FF" } }, { "type": "Paragraph", "name": "Title", "basedOn": "Normal", "next": "Normal", "link": "Title Char", "characterFormat": { "fontSize": 28.0, "fontFamily": "Calibri Light" }, "paragraphFormat": { "afterSpacing": 0.0, "lineSpacing": 1.0, "lineSpacingType": "Multiple" } }, { "type": "Character", "name": "Title Char", "basedOn": "Default Paragraph Font", "characterFormat": { "fontSize": 28.0, "fontFamily": "Calibri Light" } }, { "type": "Paragraph", "name": "TOC Heading", "basedOn": "Heading 1", "next": "Normal", "paragraphFormat": { "outlineLevel": "BodyText" } }, { "type": "Paragraph", "name": "TOC 1", "basedOn": "Normal", "next": "Normal", "paragraphFormat": { "afterSpacing": 5.0 } }, { "type": "Paragraph", "name": "TOC 2", "basedOn": "Normal", "next": "Normal", "paragraphFormat": { "leftIndent": 11.0, "afterSpacing": 5.0 } }] };
 

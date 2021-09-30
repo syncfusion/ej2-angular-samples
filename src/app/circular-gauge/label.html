@@ -22,8 +22,12 @@
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
-                <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin:10px">
-                    <tr>
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -11px;">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
+                    <tr style="height: 50px">
                         <td>
                             <div> Ticks </div>
                         </td>
@@ -35,8 +39,14 @@
                         </select>
                             </div>
                         </td>
-                    </tr>&nbsp;
-                    <tr>
+                    </tr>
+                    </table>
+                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -11px;">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
+                    <tr style="height: 50px">
                         <td>
                             <div> Tick Position </div>
                         </td>
@@ -49,8 +59,14 @@
                         </select>
                             </div>
                         </td>
-                    </tr>&nbsp;
-                    <tr>
+                    </tr>
+                    </table>
+                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -11px;">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
+                    <tr style="height: 50px">
                         <td>
                             <div> Label Position </div>
                         </td>
@@ -64,48 +80,79 @@
                         </select>
                             </div>
                         </td>
-                    </tr>&nbsp;
-                    <tr>
+                    </tr>
+                    </table>
+                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -11px;">
+                        <colgroup>
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 35%;">
+                            <col span="1" style="width: 20%;">
+                        </colgroup>
+                    <tr style="height: 50px">
                         <td>
-                            <div id='offset'>Tick Offset <span>&nbsp;&nbsp;&nbsp;0</span> </div>
+                            <div>Tick Offset</div>
                         </td>
-                        <td>
+                        <td style="width: 40%;">
                             <div>
-                                <input type="range" id="tickOffset" value="0" min="0" max="50" style="width:90%" />
+                                <input type="range" id="tickOffset" value="0" min="0" max="50" />
                             </div>
                         </td>
-                    </tr>&nbsp;
-                    <tr>
-                        <td>
-                            <div id='height'>Tick Height <span>&nbsp;&nbsp;&nbsp;10</span> </div>
+                        <td style="text-align: center; padding-top: 10px; padding-left: -4%">
+                            <span id='offset'>0</span>  
                         </td>
+                    </tr>
+                </table>
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -11px;">
+                    <colgroup>
+                        <col span="1" style="width: 45%;">
+                        <col span="1" style="width: 35%;">
+                        <col span="1" style="width: 20%;">
+                    </colgroup>
+                    <tr style="height: 50px">
                         <td>
+                            <div>Tick Height</div>
+                        </td>
+                        <td style="width: 40%;">
                             <div>
-                                <input type="range" id="tickHeight" value="10" min="1" max="50" style="width:90%" />
+                                <input type="range" id="tickHeight" value="10" min="1" max="50"/>
                             </div>
                         </td>
-                    </tr>&nbsp;
-                    <tr>
-                        <td>
-                            <div id='labelOffsetValue'>Label Offset <span>&nbsp;&nbsp;&nbsp;0</span> </div>
+                        <td style="text-align: center; padding-top: 10px; padding-left: -4%">
+                            <span  id='height'>10</span>
                         </td>
+                    </tr>
+                    </table>
+                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -11px;">
+                        <colgroup>
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 35%;">
+                            <col span="1" style="width: 20%;">
+                        </colgroup>
+                    <tr style="height: 50px">
                         <td>
+                            <div>Label Offset</div>
+                        </td>
+                        <td style="width: 40%;">
                             <div>
-                                <input type="range" id="labelOffset" value="0" min="0" max="50" style="width:90%" />
+                                <input type="range" id="labelOffset" value="0" min="0" max="50"/>
                             </div>
                         </td>
-                    </tr>&nbsp;
-                    <tr>
+                        <td style="text-align: center; padding-top: 10px; padding-left: -4%">
+                            <span id='labelOffsetValue'>0</span>
+                        </td>
+                    </tr>
+                    </table>
+                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -11px;">
+                    <tr style="height: 50px">
                         <td>
-                            <div id='enablePointer'>Show Last Label </div>
+                            <div id='enablePointer' style="margin-top: 10px">Show Last Label </div>
                         </td>
                         <td>
-                            <div>
+                            <div style="margin-left: -4%">
                                 <input type="checkbox" id="enable"  />
                             </div>
                         </td>
                     </tr>
-                    <br/>
                 </table>
             </div>
         </div>

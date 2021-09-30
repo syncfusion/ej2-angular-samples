@@ -84,25 +84,25 @@
   line-height: 1;
   height: 35px;
 }
-
+.kanban-overview.e-kanban .e-kanban-content .e-content-row .e-content-cells .e-card-wrapper .e-card.Low.e-selection:hover,
 .kanban-overview.e-kanban .e-kanban-content .e-content-row .e-content-cells .e-card-wrapper .e-card.Low,
 .kanban-overview.e-kanban.e-rtl .e-kanban .e-kanban-content .e-content-row .e-content-cells .e-card-wrapper .e-card.Low {
-  border-left: 3px solid #1F88E5;
+    border-left: 3px solid #1F88E5;
 }
-
+.kanban-overview.e-kanban .e-kanban-content .e-content-row .e-content-cells .e-card-wrapper .e-card.High.e-selection:hover,
 .kanban-overview.e-kanban .e-kanban-content .e-content-row .e-content-cells .e-card-wrapper .e-card.High,
 .kanban-overview.e-kanban.e-rtl .e-kanban .e-kanban-content .e-content-row .e-content-cells .e-card-wrapper .e-card.High {
-  border-left: 3px solid #673AB8;
+    border-left: 3px solid #673AB8;
 }
-
+.kanban-overview.e-kanban .e-kanban-content .e-content-row .e-content-cells .e-card-wrapper .e-card.Normal.e-selection:hover,
 .kanban-overview.e-kanban .e-kanban-content .e-content-row .e-content-cells .e-card-wrapper .e-card.Normal,
 .kanban-overview.e-kanban.e-rtl .e-kanban .e-kanban-content .e-content-row .e-content-cells .e-card-wrapper .e-card.Normal {
-  border-left: 3px solid #02897B;
+    border-left: 3px solid #02897B;
 }
-
+.kanban-overview.e-kanban .e-kanban-content .e-content-row .e-content-cells .e-card-wrapper .e-card.Critical.e-selection:hover,
 .kanban-overview.e-kanban .e-kanban-content .e-content-row .e-content-cells .e-card-wrapper .e-card.Critical,
 .kanban-overview.e-kanban.e-rtl .e-kanban .e-kanban-content .e-content-row .e-content-cells .e-card-wrapper .e-card.Critical {
-  border-left: 3px solid #E64A19;
+    border-left: 3px solid #E64A19;
 }
 
 .kanban-overview.e-kanban.e-rtl .e-kanban .e-kanban-content .e-content-row .e-content-cells .e-card-wrapper .e-card {

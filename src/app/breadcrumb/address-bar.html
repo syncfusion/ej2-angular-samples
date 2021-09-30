@@ -1,0 +1,45 @@
+<div class="control-section">
+    <div class="content-wrapper">
+        <div class="row material2">
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <h5>File Manager like Breadcrumb</h5>
+            </div>
+        </div>
+        <div class="row material2">
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <ejs-breadcrumb #breadcrumb cssClass="e-custom-breadcrumb" (beforeItemRender)="beforeItemRenderHanlder($event)">
+                    <e-breadcrumb-items>
+                        <e-breadcrumb-item iconCss="e-bicons e-picture"></e-breadcrumb-item>
+                        <e-breadcrumb-item text="This PC"></e-breadcrumb-item>
+                        <e-breadcrumb-item text="Local Disk (C:)"></e-breadcrumb-item>
+                        <e-breadcrumb-item text="Users"></e-breadcrumb-item>
+                        <e-breadcrumb-item text="Admin"></e-breadcrumb-item>
+                        <e-breadcrumb-item text="Pictures"></e-breadcrumb-item>
+                    </e-breadcrumb-items>
+                    <ng-template #itemTemplate let-dataSource="">
+                    <div style="display: flex;">
+                        <ejs-menu (select)="menuSelect($event)">
+                            <e-menu-items>
+                                <e-menu-item text={{dataSource.text}} iconCss={{dataSource.iconCss}}></e-menu-item>
+                            </e-menu-items>
+                        </ejs-menu>
+                        <ul></ul>
+                    </div>
+                    </ng-template>
+                </ejs-breadcrumb>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p> This sample demonstrates the Address Bar functionalities using the <b>Breadcrumb</b> component. Click the
+        right arrow icon to view and navigate to the next level items.</p>
+</div>
+<div id="description">
+    <p>In the <code>Breadcrumb</code> component, <code>itemTemplate</code> property is used to render <code>Menu</code>
+        as <code>Breadcrumb</code> items.</p>
+    <p>In this demo, we have rendered Address of <b>Pictures</b> folder in <code>Breadcrumb</code>. And click the
+        right arrow icon to view and navigate to the next level items.</p>
+    <p>More information about <code>Breadcrumb</code> component can be found in this <a target='_blank'
+            href="https://ej2.syncfusion.com/angular/documentation/breadcrumb/getting-started/">documentation section</a>.</p>
+</div>

@@ -20,7 +20,8 @@ export class RangesComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     public rangePalette: Object[] = ['#9ef47a', '#f4f47a', '#ed5e5e'];
@@ -83,7 +84,7 @@ export class RangesComponent {
 
     ngOnInit(): void {
         this.rangeIndex = new DropDownList({
-            index: 0, width: 100,
+            index: 0, width: '110%',
             change: () => {
                 let start: HTMLInputElement = <HTMLInputElement>document.getElementById('start');
                 let end: HTMLInputElement = <HTMLInputElement>document.getElementById('end');
@@ -95,17 +96,17 @@ export class RangesComponent {
                 startWidth.value = this.gauge.axes[0].ranges[parseInt(this.rangeIndex.value.toString(), 10)].startWidth.toString();
                 endWidth.value = this.gauge.axes[0].ranges[parseInt(this.rangeIndex.value.toString(), 10)].endWidth.toString();
                 rangeColor.value = this.gauge.axes[0].ranges[parseInt(this.rangeIndex.value.toString(), 10)].color.toString();
-                document.getElementById('startWidthValue').innerHTML = 'Range Start Width<span>&nbsp;&nbsp;&nbsp;' + startWidth.value;
-                document.getElementById('endWidthValue').innerHTML = 'Range End Width<span>&nbsp;&nbsp;&nbsp;' + endWidth.value;
-                document.getElementById('startRangeValue').innerHTML = 'Range Start <span>&nbsp;&nbsp;&nbsp;' + start.value;
-                document.getElementById('endRangeValue').innerHTML = 'Range End <span>&nbsp;&nbsp;&nbsp;' + end.value;
+                document.getElementById('startWidthValue').innerHTML = ''+ startWidth.value;
+                document.getElementById('endWidthValue').innerHTML = ''+ endWidth.value;
+                document.getElementById('startRangeValue').innerHTML = ''+ start.value;
+                document.getElementById('endRangeValue').innerHTML = ''+ end.value;
                 this.gauge.refresh();
             }
         });
         this.rangeIndex.appendTo('#rangeIndex');
 
         this.rangeFontColor = new DropDownList({
-            index: 0, width: 100,
+            index: 0, width: '110%',
             change: () => {
                 this.gauge.axes[0].labelStyle.useRangeColor = (this.rangeFontColor.value === 'range') ? true : false;
                 this.gauge.refresh();
@@ -127,7 +128,7 @@ export class RangesComponent {
             document.getElementById('startWidth').onchange = (): void => {
                 let ele: HTMLInputElement = <HTMLInputElement>document.getElementById('startWidth');
                 this.gauge.axes[0].ranges[parseInt(this.rangeIndex.value.toString(), 10)].startWidth = parseInt(ele.value, 10);
-                document.getElementById('startWidthValue').innerHTML = 'Range Start Width<span>&nbsp;&nbsp;&nbsp;' + ele.value;
+                document.getElementById('startWidthValue').innerHTML = ele.value.toString();
                 this.gauge.refresh();
             };
 
@@ -135,7 +136,7 @@ export class RangesComponent {
             document.getElementById('endWidth').onchange = (): void => {
                 let ele: HTMLInputElement = <HTMLInputElement>document.getElementById('endWidth');
                 this.gauge.axes[0].ranges[parseInt(this.rangeIndex.value.toString(), 10)].endWidth = parseInt(ele.value, 10);
-                document.getElementById('endWidthValue').innerHTML = 'Range End Width<span>&nbsp;&nbsp;&nbsp;' + ele.value;
+                document.getElementById('endWidthValue').innerHTML = ele.value.toString();
                 this.gauge.refresh();
             };
 
@@ -145,7 +146,7 @@ export class RangesComponent {
                 let end: HTMLInputElement = <HTMLInputElement>document.getElementById('end');
                 this.gauge.axes[0].ranges[parseInt(this.rangeIndex.value.toString(), 10)].start = parseInt(start.value, 10);
                 this.gauge.axes[0].ranges[parseInt(this.rangeIndex.value.toString(), 10)].end = parseInt(end.value, 10);
-                document.getElementById('startRangeValue').innerHTML = 'Range Start <span>&nbsp;&nbsp;&nbsp;' + start.value;
+                document.getElementById('startRangeValue').innerHTML = start.value.toString();
                 this.gauge.refresh();
             };
 
@@ -155,7 +156,7 @@ export class RangesComponent {
                 let end: HTMLInputElement = <HTMLInputElement>document.getElementById('end');
                 this.gauge.axes[0].ranges[parseInt(this.rangeIndex.value.toString(), 10)].start = parseInt(start.value, 10);
                 this.gauge.axes[0].ranges[parseInt(this.rangeIndex.value.toString(), 10)].end = parseInt(end.value, 10);
-                document.getElementById('endRangeValue').innerHTML = 'Range End <span>&nbsp;&nbsp;&nbsp;' + end.value;
+                document.getElementById('endRangeValue').innerHTML = end.value.toString();
                 this.gauge.refresh();
             };
     }

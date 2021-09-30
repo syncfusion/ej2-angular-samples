@@ -79,7 +79,7 @@ export class RoundedColumnChartComponent {
         if (this.execute) {
             return;
         }
-        let columninterval: number = setInterval(
+        let columninterval: number = window.setInterval(
             () => {
                 if (document.getElementById('column-container')) {
                     if (this.count === 0) {

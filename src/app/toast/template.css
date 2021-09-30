@@ -161,3 +161,17 @@
     .material #template_toast .e-ddl-icon {
         color: white !important;
     }
+
+    .bootstrap5 .e-toast-container .e-toast .e-toast-close-icon {
+        color: #000;
+    }
+
+    .bootstrap5 #toastcustom.e-toast-container .e-toast .e-toast-message,
+    .bootstrap5-dark #toastcustom.e-toast-container .e-toast .e-toast-message {
+        margin-left: 95px;
+    }
+
+    .bootstrap5 #template_toast,
+    .bootstrap5-dark #template_toast {
+        padding: 10px;
+    }

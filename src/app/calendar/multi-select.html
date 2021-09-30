@@ -3,17 +3,18 @@
         The following sample demonstrates the multiple date selection functionalities of the Calendar. Click /Touch the desired date from the Calendar and the selected date will be added to the values property of the calendar.
     </p>
 </div>
-<div class="control-section">
-    <div id="control_wrapper" class="col-lg-6 col-sm-8 col-md-8 multiselectWrapper">
-        <div id="container" style="overflow:auto">
-            <ejs-calendar #calendar [isMultiSelection]="multiSelection" [values]="dates" (change)="onValueChange()" (created)="onValueChange()"></ejs-calendar>
+<div class="col-lg-12 control-section">
+    <div class="col-lg-7">
+        <div id="control_wrapper" class="col-lg-6 col-sm-8 col-md-8 multiselectWrapper">
+            <div id="container" style="overflow:auto">
+                <ejs-calendar #calendar [isMultiSelection]="multiSelection" [values]="dates" (change)="onValueChange()" (created)="onValueChange()"></ejs-calendar>
+            </div>
         </div>
     </div>
-    <div class="valuesWrapper col-lg-6 col-sm-8 col-md-8">
-        <h5>Selected values</h5>
-        <div class="contentValue">
-            <div id="multiSelect">
-            </div>
+    <div class="col-lg-5">
+        <label>Selected values</label>
+        <div class="content-value">    
+            <div id="multiselect"></div>
         </div>
     </div>
 </div>

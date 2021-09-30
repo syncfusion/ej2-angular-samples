@@ -1,89 +1,88 @@
 <div class="control-section">
-    <ejs-schedule #scheduleObj width='100%' height='600px' [selectedDate]="selectedDate"
-        [eventSettings]="eventSettings">
-        <e-resources>
-            <e-resource field='RoomId' title='Room Type' name='MeetingRoom' textField='Name' idField='Id'
-                colorField='Color' [dataSource]='roomData'>
-            </e-resource>
-        </e-resources>
-        <!-- Header template -->
-        <ng-template #quickInfoTemplatesHeader let-data>
-            <div class="quick-info-header">
-                <div class="quick-info-header-content" [ngStyle]="getHeaderStyles(data)">
-                    <div class="quick-info-title">{{getHeaderTitle(data)}}</div>
-                    <div class="duration-text">{{getHeaderDetails(data)}}</div>
-                </div>
-            </div>
-        </ng-template>
-        <!-- Content Template -->
-        <ng-template #quickInfoTemplatesContent let-data>
-            <ng-container [ngTemplateOutlet]="data.elementType == 'cell' ? cellContent : eventContent"
-                [ngTemplateOutletContext]="{data:data}"></ng-container>
-        </ng-template>
-        <ng-template #cellContent let-data="data">
-            <div class="quick-info-content">
-                <div class="e-cell-content">
-                    <div class="content-area">
-                        <ejs-textbox #titleObj id="title" placeholder="Title"></ejs-textbox>
-                    </div>
-                    <div class="content-area">
-                        <ejs-dropdownlist id='eventType' #eventTypeObj [dataSource]='roomData' [fields]='roomFields'
-                            placeholder='Choose Type' index="{{0}}" popupHeight="200px"></ejs-dropdownlist>
-                    </div>
-                    <div class="content-area">
-                        <ejs-textbox #notesObj id="notes" placeholder="Notes"></ejs-textbox>
-                    </div>
-                </div>
-            </div>
-        </ng-template>
-        <ng-template #eventContent let-data="data">
-            <div class="quick-info-content">
-                <div class="event-content">
-                    <div class="meeting-type-wrap">
-                        <label>Subject</label>:
-                        <span>{{data.Subject}}</span>
-                    </div>
-                    <div class="meeting-subject-wrap">
-                        <label>Type</label>:
-                        <span>{{getEventType(data)}}</span>
-                    </div>
-                    <div class="notes-wrap">
-                        <label>Notes</label>:
-                        <span>{{data.Description}}</span>
-                    </div>
-                </div>
-            </div>
-        </ng-template>
-        <!-- Footer Template -->
-        <ng-template #quickInfoTemplatesFooter let-data>
-            <ng-container [ngTemplateOutlet]="data.elementType == 'cell' ? cellFooter : eventFooter"
-                [ngTemplateOutletContext]="{data:data}"></ng-container>
-        </ng-template>
-        <ng-template #cellFooter let-data="data">
-            <div class="e-cell-footer">
-                <button ejs-button id="more-details" cssClass="e-flat" (click)="buttonClickActions($event)">More
-                    Details</button>
-                <button ejs-button id="add" cssClass="e-flat" [isPrimary]="true"
-                    (click)="buttonClickActions($event)">Add</button>
-            </div>
-        </ng-template>
-        <ng-template #eventFooter let-data="data">
-            <div class="e-event-footer">
-                <button ejs-button id="delete" cssClass="e-flat" (click)="buttonClickActions($event)">Delete</button>
-                <button ejs-button id="more-details" cssClass="e-flat" [isPrimary]="true"
-                    (click)="buttonClickActions($event)">More Details</button>
-            </div>
-        </ng-template>
-    </ejs-schedule>
+  <ejs-schedule #scheduleObj width='100%' height='600px' [selectedDate]="selectedDate" [eventSettings]="eventSettings">
+    <e-resources>
+      <e-resource field='RoomId' title='Room Type' name='MeetingRoom' textField='Name' idField='Id' colorField='Color'
+        [dataSource]='roomData'>
+      </e-resource>
+    </e-resources>
+    <!-- Header template -->
+    <ng-template #quickInfoTemplatesHeader let-data>
+      <div class="quick-info-header">
+        <div class="quick-info-header-content" [ngStyle]="getHeaderStyles(data)">
+          <div class="quick-info-title">{{getHeaderTitle(data)}}</div>
+          <div class="duration-text">{{getHeaderDetails(data)}}</div>
+        </div>
+      </div>
+    </ng-template>
+    <!-- Content Template -->
+    <ng-template #quickInfoTemplatesContent let-data>
+      <ng-container [ngTemplateOutlet]="data.elementType == 'cell' ? cellContent : eventContent"
+        [ngTemplateOutletContext]="{data:data}"></ng-container>
+    </ng-template>
+    <ng-template #cellContent let-data="data">
+      <div class="quick-info-content">
+        <div class="e-cell-content">
+          <div class="content-area">
+            <ejs-textbox #titleObj id="title" placeholder="Title"></ejs-textbox>
+          </div>
+          <div class="content-area">
+            <ejs-dropdownlist id='eventType' #eventTypeObj [dataSource]='roomData' [fields]='roomFields'
+              placeholder='Choose Type' index="{{0}}" popupHeight="200px"></ejs-dropdownlist>
+          </div>
+          <div class="content-area">
+            <ejs-textbox #notesObj id="notes" placeholder="Notes"></ejs-textbox>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #eventContent let-data="data">
+      <div class="quick-info-content">
+        <div class="event-content">
+          <div class="meeting-type-wrap">
+            <label>Subject</label>:
+            <span>{{data.Subject}}</span>
+          </div>
+          <div class="meeting-subject-wrap">
+            <label>Type</label>:
+            <span>{{getEventType(data)}}</span>
+          </div>
+          <div class="notes-wrap">
+            <label>Notes</label>:
+            <span>{{data.Description}}</span>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <!-- Footer Template -->
+    <ng-template #quickInfoTemplatesFooter let-data>
+      <ng-container [ngTemplateOutlet]="data.elementType == 'cell' ? cellFooter : eventFooter"
+        [ngTemplateOutletContext]="{data:data}"></ng-container>
+    </ng-template>
+    <ng-template #cellFooter let-data="data">
+      <div class="e-cell-footer">
+        <button ejs-button id="more-details" cssClass="e-flat" (click)="buttonClickActions($event)">More
+          Details</button>
+        <button ejs-button id="add" cssClass="e-flat" [isPrimary]="true"
+          (click)="buttonClickActions($event)">Add</button>
+      </div>
+    </ng-template>
+    <ng-template #eventFooter let-data="data">
+      <div class="e-event-footer">
+        <button ejs-button id="delete" cssClass="e-flat" (click)="buttonClickActions($event)">Delete</button>
+        <button ejs-button id="more-details" cssClass="e-flat" [isPrimary]="true"
+          (click)="buttonClickActions($event)">More Details</button>
+      </div>
+    </ng-template>
+  </ejs-schedule>
 </div>
 
 <div id="action-description">
-    <p>This demo showcases the quick popups for cells and appointments with the customized templates.</p>
+  <p>This demo showcases the quick popups for cells and appointments with the customized templates.</p>
 </div>
 <div id="description">
-    <p>In this demo, the quick popup is customized based on the office required appointment-related fields which can be
-        achieved by making use of the <code>quickInfoTemplate</code> option.</p>
-    <p>The <code>quickInfoTemplate</code> has three UI elements such as <code>header</code>, <code>content</code>, and
-        <code>footer</code>. You can customize these UI elements of the quick popup. You can also customize whether the
-        quick popup is applicable to the cells or events or for both using the <code>elementType</code> property.</p>
+  <p>In this demo, the quick popup is customized based on the office required appointment-related fields which can be
+    achieved by making use of the <code>quickInfoTemplate</code> option.</p>
+  <p>The <code>quickInfoTemplate</code> has three UI elements such as <code>header</code>, <code>content</code>, and
+    <code>footer</code>. You can customize these UI elements of the quick popup. You can also customize whether the
+    quick popup is applicable to the cells or events or for both using the <code>elementType</code> property.</p>
 </div>

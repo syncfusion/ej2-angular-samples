@@ -1,7 +1,7 @@
 ﻿import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import {
     PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
-    ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService
+    ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService,  FormFieldsService, FormDesignerService
 } from '@syncfusion/ej2-angular-pdfviewer';
 import { L10n } from '@syncfusion/ej2-base';
 
@@ -13,7 +13,7 @@ import { L10n } from '@syncfusion/ej2-base';
     templateUrl: 'right-to-left.html',
     encapsulation: ViewEncapsulation.None,
     // tslint:disable-next-line:max-line-length
-    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService]
+    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService ]
 })
 
 export class RightToLeftComponent implements OnInit {
@@ -21,6 +21,7 @@ export class RightToLeftComponent implements OnInit {
     public service: string = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
     public document: string = 'RTLText.pdf';
     public culture: string = 'ar-AE';
+    public annotationSettings ={author: 'مقبول'};
     ngOnInit(): void {
         L10n.load({
             'ar-AE': {
@@ -165,7 +166,91 @@ export class RightToLeftComponent implements OnInit {
                     'Free Text': 'نص حر',
                     'Import Failed': 'نوع ملف سلمان أو اسم الملف غير صالح ؛ يرجى تحديد ملف سلمانصالح',
                     'File not found': 'لم يتم العثور على ملف سلمان المستورد في الموقع المطلوب',
-                    'Export Failed': 'شل إجراء تصدير التعليقات التوضيحية ؛ يرجى التأكد من إضافة التعليقات التوضيحية بشكل صحيح'
+                    'Export Failed': 'شل إجراء تصدير التعليقات التوضيحية ؛ يرجى التأكد من إضافة التعليقات التوضيحية بشكل صحيح',
+                    'Dynamic': 'متحرك',
+                    'Standard Business': 'الأعمال القياسية',
+                    'Sign Here': 'وقع هنا',
+                    'Custom Stamp': 'ختم مخصص',
+                    'InitialFieldDialogHeaderText': 'إضافة الأولية',
+                    'HandwrittenInitialDialogHeaderText': 'إضافة الأولية',
+                    'SignatureFieldDialogHeaderText': 'أضف التوقيع',
+                    'HandwrittenSignatureDialogHeaderText': 'أضف التوقيع',
+                    'Draw-hand Signature': 'يرسم',
+                    'Type Signature': 'نوع',
+                    'Upload Signature': 'تحميل',
+                    'Browse Signature Image': 'تصفح',
+                    'Save Signature': 'احفظ التوقيع',
+                    'Save Initial': 'حفظ الأولي',
+                    'Highlight context': 'تسليط الضوء',
+                    'Underline context': 'تسطير',
+                    'Strikethrough context': 'يتوسطه خط',
+                    'FormDesigner': 'إضافة وتحرير حقل النموذج',
+                    'SubmitForm': 'تقديم النموذج',
+                    'Search text': 'بحث',
+                    'Draw Ink': 'ارسم الحبر',
+                    'Revised': 'مراجعة',
+                    'Reviewed': 'تمت المراجعة',
+                    'Received': 'تم الاستلام',
+                    'Confidential': 'مؤتمن',
+                    'Approved': 'وافق',
+                    'Not Approved': 'غير مقبول',
+                    'Witness': 'الشاهد',
+                    'Initial Here': 'المبدئي هنا',
+                    'Draft': 'مشروع',
+                    'Final': 'أخير',
+                    'For Public Release': 'للنشر العام',
+                    'Not For Public Release': 'ليس للنشر العام',
+                    'For Comment': 'للتعليق',
+                    'Void': 'فارغ',
+                    'Preliminary Results': 'نتائج اولية',
+                    'Information Only': 'المعلومات فقط',
+                    'Enter Signature as Name': 'أدخل أسمك',
+                    'Textbox': 'مربع الكتابة',
+                    'Password': 'كلمه السر',
+                    'Check Box': 'خانة اختيار',
+                    'Radio Button': 'زر الراديو',
+                    'Dropdown': 'اسقاط',
+                    'List Box': 'مربع القائمة',
+                    'Signature': 'إمضاء',
+                    'Delete FormField': 'حذف حقل النموذج',
+                    'FormDesigner Edit text': 'إضافة وتحرير حقل النموذج',
+                    'in': 'في',
+                    'm': 'م',
+                    'ft_in': 'قدم',
+                    'ft': 'قدم',
+                    'p': 'ص',
+                    'cm': 'سم',
+                    'mm': 'مم',
+                    'pt': 'نقطة',
+                    'cu': 'مكعب',
+                    'sq': 'قدم مربع',
+                    'General': 'جنرال لواء',
+                    'Appearance': 'مظهر خارجي',
+                    'Options': 'والخيارات',
+                    'Textbox Properties': 'خصائص مربع النص',
+                    'Name': 'اسم',
+                    'Tooltip': 'تلميح',
+                    'Value': 'القيمة',
+                    'Form Field Visibility': 'رؤية حقل النموذج',
+                    'Read Only': 'يقرأ فقط',
+                    'Required': 'مطلوب',
+                    'Checked': 'التحقق',
+                    'Show Printing': 'عرض الطباعة',
+                    'Formatting': 'صيغة',
+                    'Fill': 'يملأ',
+                    'Border': 'الحدود',
+                    'Border Color': 'لون الحدود',
+                    'Thickness': 'السماكة',
+                    'Max Length': 'الحد الاقصى للطول',
+                    'List Item': 'اسم العنصر',
+                    'Export Value': 'قيمة البند',
+                    'Dropdown Item List': 'قائمة العناصر المنسدلة',
+                    'List Box Item List': 'قائمة عناصر مربع القائمة',
+                    'Delete Item': 'حذف',
+                    'Up': 'فوق',
+                    'Down': 'تحت',
+                    'Multiline': 'متعدد الأسطر',
+                    'Initial': 'أولي'
                 }
             }
         });

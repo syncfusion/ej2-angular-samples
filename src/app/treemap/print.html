@@ -14,14 +14,17 @@
                <div class="property-panel-header">Properties</div>
                <div class="property-panel-content">
        <table id="property" title="Properties" style="width: 100%">
-           <tbody>
+        <colgroup>
+            <col span="1" style="width: 50%;">
+            <col span="1" style="width: 50%;">
+        </colgroup>
                <tr style="height: 50px">
-                   <td style="width: 40%">
+                   <td>
                        <div>Export Type</div>
                    </td>
-                   <td style="width: 60%;">
-                       <div style="margin-left: -10px">
-                           <select id="mode">
+                   <td>
+                       <div>
+                           <select id="mode" style="width: 100%">
                                <option value="JPEG">JPEG</option>
                                <option value="PNG">PNG</option>
                                <option value="SVG">SVG</option>
@@ -30,31 +33,40 @@
                        </div>
                    </td>
                </tr>
-               <tr style="height: 50px">
-                   <td style="width: 40%">
+               </table>
+               <table id="property" title="Properties" style="width: 100%">
+                <colgroup>
+                    <col span="1" style="width: 50%;">
+                    <col span="1" style="width: 50%;">
+                </colgroup>
+                <tr style="height: 50px">
+                   <td>
                        <div>File Name</div>
                    </td>
-                   <td style="width: 60%;">
+                   <td>
                        <div class="e-float-input" style="margin-top: 0px;">
-                           <input type="text" value="TreeMap" id="fileName" style="margin-left: -10px">
+                           <input type="text" value="TreeMap" id="fileName" style="width: 100%;">
                        </div>
                    </td>
                </tr>
-               <tr id="button-control" style="height: 50px" align="center">
+               </table>
+               <table id="property" title="Properties" style="width: 100%">
+                <colgroup>
+                    <col span="1" style="width: 50%;">
+                    <col span="1" style="width: 50%;">
+                </colgroup>
+               <tr id="button-control" style="height: 70px" align="center">
                    <td>
-                        <div style="margin-left: 40%;">
+                        <div style="text-align: center">
                            <button ejs-button id="togglebtn1"  cssClass= 'e-info' isPrimary=true (click)='onClick1($event)' style="width: 80px;" content="Export">Export</button>
                        </div>
                    </td>
-               </tr>
-               <tr id="button-control" style="height: 50px">
                     <td align="center">
-                            <div style="margin-left: 40%;">
+                            <div style="text-align: center">
                            <button ejs-button id="togglebtn2"  cssClass= 'e-info' isPrimary=true (click)='onClick2($event)' style="width: 80px;" content="Print">Print</button>
                        </div>
                    </td>
                </tr>
-           </tbody>
        </table>
        </div>
        </div>

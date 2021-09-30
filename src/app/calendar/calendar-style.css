@@ -14,20 +14,19 @@
 .e-bigger#wrapper {
         max-width: 300px;
 }
-.contentValue {
+.content-value {
     padding: 10px;
     overflow: auto;
-    max-height: 100px;
-    margin-bottom: 10px;
+    max-height: 150px;
     border: 1px solid rgba(0, 0, 0, 0.12);
+    margin-top: 15px;
+    font-size: 12px;
 }
-.valuesWrapper{
-    margin: 0 auto;
-    float: none;
-    padding: 0;
-    max-width: 370px;
-}
-
-body.highcontrast .contentValue {
-    border: 1px solid #969696
+.highcontrast .content-value,
+.material-dark .content-value,
+.fabric-dark .content-value,
+.bootstrap-dark .content-value,
+.bootstrap5-dark .content-value,
+.tailwind-dark .content-value {
+    border: 1px solid rgb(150, 150, 150);
 }

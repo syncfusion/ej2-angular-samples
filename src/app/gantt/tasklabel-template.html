@@ -5,26 +5,33 @@
 </div>
 
 <div class="control-section">
-    <ejs-gantt id="TasklabelTemplate" height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
-        [labelSettings]="labelSettings" [treeColumnIndex]="1" [columns]="columns" [rowHeight]="43"
-        [splitterSettings]="splitterSettings" [projectStartDate]="projectStartDate"
-        [projectEndDate]="projectEndDate" [highlightWeekends]="true" [resourceFields] = "resourceFields"
-        [resources]="resources">
+   <ejs-gantt
+    id="TasklabelTemplate"
+    height="430px"
+    [dataSource]="data"
+    [taskFields]="taskSettings"
+    [allowSelection]="true"
+    [labelSettings]="labelSettings"
+    [treeColumnIndex]="1"
+    [columns]="columns"
+    [rowHeight]="43"
+    [splitterSettings]="splitterSettings"
+    [projectStartDate]="projectStartDate"
+    [projectEndDate]="projectEndDate"
+    [highlightWeekends]="true"
+    [resourceFields]="resourceFields"
+    [resources]="resources">
+    <ng-template #labelSettingsLeftLabel let-data>
+        <span>{{ data.TaskName }} [ {{ data.Progress }}% ]</span>
+    </ng-template>
 
-        <ng-template #labelSettingsLeftLabel let-data>
-                <span>{{data.TaskName}} [ {{data.Progress}}% ]</span>
-        </ng-template>
-
-        <ng-template #labelSettingsRightLabel let-data>
-            <ng-container *ngIf="data.ganttProperties.resourceNames">
-                <div *ngFor="let resource of data.ganttProperties.resourceInfo">
-                    <img src="https://ej2.syncfusion.com/angular/demos/assets/gantt/images/{{resource.resourceName}}.png" height="40px" />
-                    <span style="margin-left:5px;margin-right:5px">{{resource.resourceName}}</span>
-                </div>
-            </ng-container>
-        </ng-template>
+    <ng-template #labelSettingsRightLabel let-data>
+    <div
+        style="display:inline-flex"
+        innerHtml="{{ customFunction(data) }}"></div>
+    </ng-template>
     </ejs-gantt>
-</div>
+    </div>
 
 <div id="description">
     <p>

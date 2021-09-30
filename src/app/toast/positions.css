@@ -16,7 +16,7 @@
        background-repeat: no-repeat;
        background-size: cover;
        height: 50px !important;
-       width: 100px !important;
+       width: 68px !important;
        background-size: 50px 50px;
        margin: 0;
    }
@@ -25,4 +25,25 @@
        #toast_pos_property {
            width: 450px;
        }
+   }
+
+   .bootstrap5 .e-toast-icon.e-laura.e-icons,
+   .bootstrap5-dark .e-toast-icon.e-laura.e-icons {
+       margin-top: 13px;
+       margin-right: 14px;
+   }
+
+   .bootstrap5 #toastpos.e-toast-container .e-toast .e-toast-icon,
+   .bootstrap5-dark #toastpos.e-toast-container .e-toast .e-toast-icon {
+       position: relative;
+   }
+
+   .bootstrap5 #toastpos.e-toast-container .e-toast .e-toast-message,
+   .bootstrap5-dark #toastpos.e-toast-container .e-toast .e-toast-message {
+       padding-left: 10px;
+   }
+
+   .bootstrap5 #toastpos.e-toast-container .e-toast.e-toast-header-icon .e-toast-message .e-toast-title:first-child,
+   .bootstrap5-dark #toastpos.e-toast-container .e-toast.e-toast-header-icon .e-toast-message .e-toast-title:first-child {
+       padding-left: 12px;
    }

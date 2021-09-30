@@ -8,6 +8,7 @@ import {
 import { scheduleData } from './data';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'control-content',
   templateUrl: 'calendar-export-import.html',
   /* custom code start*/
@@ -21,21 +22,21 @@ import { scheduleData } from './data';
 })
 
 export class CalendarExportImportComponent {
-  @ViewChild('scheduleObj')
-  public scheduleObj: ScheduleComponent;
-  public selectedDate: Date = new Date(2019, 0, 10);
-  public data: Object[] = <Object[]>extend([], scheduleData, null, true);
+  @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;
+  public selectedDate: Date = new Date(2021, 0, 10);
+  public data: Record<string, any>[] = extend([], scheduleData, null, true) as Record<string, any>[];
   public eventSettings: EventSettingsModel = { dataSource: this.data };
   public currentView: View = 'Week';
-  public showFileList: Boolean = false;
-  public multiple: Boolean = false;
-  public buttons: Object = { browse: 'Choose file' };
+  public showFileList = false;
+  public multiple = false;
+  public buttons: Record<string, any> = { browse: 'Choose file' };
 
   public onSelected(args: SelectedEventArgs): void {
-    this.scheduleObj.importICalendar((<HTMLInputElement>args.event.target).files[0]);
+    this.scheduleObj.importICalendar((args.event.target as HTMLInputElement).files[0]);
   }
 
   public onExportClick(): void {
     this.scheduleObj.exportToICalendar();
   }
+
 }

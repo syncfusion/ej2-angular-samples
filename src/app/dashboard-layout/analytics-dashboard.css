@@ -14,11 +14,27 @@
     position: relative;
   }
 
+  body.material-dark .sidebar-section {
+    color: #ffffff;
+}
+
   #editLayout.e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
-    padding: 10px;
     border-bottom: 2px solid #e6e9ed !important;
     height: 35px;
-    margin: 0 15px 0 15px;
+    padding: 0 15px 0 15px;
+    line-height: 35px;
+  }
+
+  .bootstrap5-dark .card-content.text,
+  .tailwind-dark .card-content.text,
+  .material-dark .card-content.text,
+  .bootstrap-dark .card-content.text,
+  .highcontrast .card-content.text {
+    color: #ffffff;
+  }
+
+  .fabric-dark .card-content.text{
+    color: #dadada
   }
 
   #editLayout{
@@ -45,7 +61,7 @@
     #pieChart, #colChart, #visitorsChart, #pie, #map{
         width: 100% !important;
         height: 100% !important;
-    } 
+    }
   }
 
   @font-face {
@@ -75,6 +91,11 @@
   }
   #dockSidebar .content-area {
     margin: 0px;
+  }
+  
+  .bootstrap5 #dockSidebar ,
+  .tailwind #dockSidebar {
+    background: #FFFFFF;
   }
 
   #dockSidebar li.sidebar-item .e-icons {
@@ -244,7 +265,7 @@
     background-position: center;
   }
 
-  #target {
+  #sidebar-section #target {
     background: linear-gradient(-141deg, #eef5f7 14%, #eef2fb 100%);
   }
 
@@ -338,4 +359,12 @@
 
   body.highcontrast #dockSidebar li.sidebar-item.filterHover, body.highcontrast #dockSidebar {
     background: #000;
+  }
+
+  .bootstrap-dark li.sidebar-item.filterHover,
+  .material-dark li.sidebar-item.filterHover,
+  .fabric-dark li.sidebar-item.filterHover,
+  .tailwind-dark li.sidebar-item.filterHover,
+  .bootstrap5-dark li.sidebar-item.filterHover {
+      background: inherit;
   }

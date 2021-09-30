@@ -32,7 +32,9 @@ export class DataValidationComponent {
         this.spreadsheetObj.addDataValidation({ type: 'Time', operator: 'GreaterThan', value1: '8:00:00 AM', ignoreBlank: false  }, 'E4:E13');
         this.spreadsheetObj.addDataValidation({ type: 'Time', operator: 'LessThan', value1: '6:00:00 PM', ignoreBlank: false  }, 'F4:F13');
         this.spreadsheetObj.addDataValidation({ type: 'List', value1: 'Mon, Tue, Wed, Thu, Fri', ignoreBlank: false  }, 'D4:D13');
+        this.spreadsheetObj.addDataValidation({ type: 'WholeNumber', operator: 'LessThan', value1: '=H5', ignoreBlank: false }, 'I4:I13');
         //Highlight Invalid Data.
         this.spreadsheetObj.addInvalidHighlight('G4:G13');
+        this.spreadsheetObj.addInvalidHighlight('I4:I13');
     }
 }

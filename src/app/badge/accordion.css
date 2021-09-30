@@ -8,11 +8,17 @@
   margin-top: 20px;
 }
 
-.tailwind .sample_container.badge-accordion  #accordion .e-toggle-icon {
+.tailwind .sample_container.badge-accordion  #accordion .e-toggle-icon,
+.tailwind-dark .sample_container.badge-accordion  #accordion .e-toggle-icon,
+.bootstrap5 .sample_container.badge-accordion  #accordion .e-toggle-icon,
+.bootstrap5-dark .sample_container.badge-accordion  #accordion .e-toggle-icon {
   top: 7px;
 }
 
-.e-bigger.tailwind .sample_container.badge-accordion  #accordion .e-toggle-icon {
+.e-bigger.tailwind .sample_container.badge-accordion  #accordion .e-toggle-icon,
+.e-bigger.tailwind-dark .sample_container.badge-accordion  #accordion .e-toggle-icon,
+.e-bigger.bootstrap5 .sample_container.badge-accordion  #accordion .e-toggle-icon,
+.e-bigger.bootstrap5-dark .sample_container.badge-accordion  #accordion .e-toggle-icon {
   top: 11px;
 }
 
@@ -25,16 +31,16 @@
   font-style: normal;
 }
 
-.people,
-.e-people {
+.badge-accordion .people,
+.badge-accordion .e-people {
   font-family: 'Contacts';
 }
 
-.e-people:before {
+.badge-accordion .e-icons.e-people:before {
   content: '\e700';
 }
 
-.people:before {
+.badge-accordion .people:before {
   content: '\e701';
 }
 

@@ -20,7 +20,8 @@ export class TreemapLabelComponent {
     public load = (args: ILoadEventArgs) => {
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
-        args.treemap.theme = <TreeMapTheme>(theme.charAt(0).toUpperCase() + theme.slice(1));
+        args.treemap.theme = <TreeMapTheme>(theme.charAt(0).toUpperCase() +
+        theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
         titleSettings: object = {
@@ -60,7 +61,7 @@ export class TreemapLabelComponent {
         };
         ngAfterViewInit(): void {
             let label: DropDownList = new DropDownList({
-                index: 0, placeholder: 'Select Label type', width: 100,
+                index: 0, placeholder: 'Select Label type', width: '100%',
                 change: () => {
                     this.treemap.leafItemSettings.interSectAction = <LabelAlignment>label.value;
                     this.treemap.refresh();

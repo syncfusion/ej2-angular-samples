@@ -1,6 +1,7 @@
 <div class="col-lg-12 control-section e-tab-section">
     <div class="e-sample-resize-container">
-        <ejs-tab #tab id="tab_wizard" heightAdjustMode="None" height=390 showCloseButton=false (selecting)="tabSelecting($event)">
+        <ejs-tab #tab id="tab_wizard" heightAdjustMode="None" height=440 showCloseButton=false
+            (selecting)="tabSelecting($event)">
             <e-tabitems>
                 <e-tabitem [header]='headerText[0]'>
                     <ng-template #content>
@@ -21,8 +22,9 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6 search-item">
-                                        <ejs-datepicker #date width='100%' placeholder='Journey Date' floatLabelType='Auto'
-                                            [min]='dateMin' [max]='dateMax' [value]='date'></ejs-datepicker>
+                                        <ejs-datepicker #date width='100%' placeholder='Journey Date'
+                                            floatLabelType='Auto' [min]='dateMin' [max]='dateMax' [value]='today'>
+                                        </ejs-datepicker>
                                     </div>
                                     <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6 search-item">
                                         <ejs-dropdownlist #quota [dataSource]='quotas' placeholder='Ticket type'
@@ -30,24 +32,27 @@
                                     </div>
                                 </div>
                                 <div class="btn-container">
-                                    <button id='searchNext' class='e-btn' (click)='btnClicked($event)'>Search Train</button>
+                                    <button id='searchNext' class='e-btn' (click)='btnClicked($event)'>Search
+                                        Train</button>
                                 </div>
                                 <span id="err1"></span>
                             </div>
                         </div>
                     </ng-template>
                 </e-tabitem>
-                <e-tabitem [header]='headerText[1]' disabled=true>      
+                <e-tabitem [header]='headerText[1]' disabled=true>
                     <ng-template #content>
                         <div id='selectTrain'>
                             <div class="wizard-title">Select the train from the list </div>
-                            <ejs-grid #availableTrain width="100%" (rowSelected)='trainSelected($event)' (created)="availableTrainGridcreated($event)">
+                            <ejs-grid #availableTrain width="100%" [dataSource]='trainDataSource'
+                                (rowSelected)='trainSelected($event)'>
                                 <e-columns>
                                     <e-column field='TrainNo' headerText='Train No' width=120 type='number'></e-column>
                                     <e-column field='Name' headerText='Name' width=140></e-column>
                                     <e-column field='Departure' headerText='Departure' width=120></e-column>
                                     <e-column field='Arrival' headerText='Arrival' width=140></e-column>
-                                    <e-column field='Availability' headerText='Availability' width=140 type='number'></e-column>
+                                    <e-column field='Availability' headerText='Availability' width=140 type='number'>
+                                    </e-column>
                                 </e-columns>
                             </ejs-grid>
                             <br />
@@ -84,27 +89,30 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <input #pass_name1 class="e-input" type="text" placeholder="Passenger Name">
+                                                <input #pass_name1 class="e-input" type="text"
+                                                    placeholder="Passenger Name">
                                             </td>
                                             <td>
-                                                <ejs-numerictextbox #pass_age1 showSpinButton=false min=1 max=100 value=18
-                                                    format=n0></ejs-numerictextbox>
+                                                <ejs-numerictextbox #pass_age1 showSpinButton=false min=1 max=100
+                                                    value=18 format=n0></ejs-numerictextbox>
                                             </td>
                                             <td>
                                                 <ejs-dropdownlist #pass_gender1 [dataSource]='gender' text="Male"
                                                     [fields]='fields'></ejs-dropdownlist>
                                             </td>
                                             <td>
-                                                <ejs-dropdownlist #pass_berth1 [dataSource]='berths' placeholder="Optional"
-                                                    [fields]='fields'></ejs-dropdownlist>
+                                                <ejs-dropdownlist #pass_berth1 [dataSource]='berths'
+                                                    placeholder="Optional" [fields]='fields'></ejs-dropdownlist>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <input #pass_name2 class="e-input" type="text" placeholder="Passenger Name">
+                                                <input #pass_name2 class="e-input" type="text"
+                                                    placeholder="Passenger Name">
                                             </td>
                                             <td>
-                                                <ejs-numerictextbox showSpinButton=false min=1 max=100 value=18 format=n0>
+                                                <ejs-numerictextbox #pass_age2 showSpinButton=false min=1 max=100
+                                                    value=18 format=n0>
                                                 </ejs-numerictextbox>
                                             </td>
                                             <td>
@@ -112,16 +120,18 @@
                                                     [fields]='fields'></ejs-dropdownlist>
                                             </td>
                                             <td>
-                                                <ejs-dropdownlist #pass_berth2 [dataSource]='berths' placeholder="Optional"
-                                                    [fields]='fields'></ejs-dropdownlist>
+                                                <ejs-dropdownlist #pass_berth2 [dataSource]='berths'
+                                                    placeholder="Optional" [fields]='fields'></ejs-dropdownlist>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <input #pass_name3 class="e-input" type="text" placeholder="Passenger Name">
+                                                <input #pass_name3 class="e-input" type="text"
+                                                    placeholder="Passenger Name">
                                             </td>
                                             <td>
-                                                <ejs-numerictextbox showSpinButton=false min=1 max=100 value=18 format=n0>
+                                                <ejs-numerictextbox #pass_age3 showSpinButton=false min=1 max=100
+                                                    value=18 format=n0>
                                                 </ejs-numerictextbox>
                                             </td>
                                             <td>
@@ -129,8 +139,8 @@
                                                     [fields]='fields'></ejs-dropdownlist>
                                             </td>
                                             <td>
-                                                <ejs-dropdownlist #pass_berth3 [dataSource]='berths' placeholder="Optional"
-                                                    [fields]='fields'></ejs-dropdownlist>
+                                                <ejs-dropdownlist #pass_berth3 [dataSource]='berths'
+                                                    placeholder="Optional" [fields]='fields'></ejs-dropdownlist>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -149,7 +159,7 @@
                     <ng-template #content>
                         <div id='confirm'>
                             <div class="tab-title1 wizard-title">Confirm the details and proceed</div>
-                            <ejs-grid #ticketDetailGrid width="100%" (created)="ticketDetailGridcreated($event)">
+                            <ejs-grid #ticketDetailGrid width="100%" [dataSource]='ticketDataSource'>
                                 <e-columns>
                                     <e-column field='TrainNo' headerText='Train No' width=120 type='number'></e-column>
                                     <e-column field='PassName' headerText='Name' width=140></e-column>
@@ -178,17 +188,19 @@
 </div>
 <div id="action-description">
     <p>
-        This sample demonstrates simple train reservation wizard that enable/disable Tab items based on sequential validation of
-        each Tab content.
+        This sample demonstrates simple train reservation wizard that enable/disable Tab items based on sequential
+        validation of each Tab content.
     </p>
 </div>
 <div id="description">
     <p>
         Tab items can be disabled dynamically by passing the index and boolean value to the
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/tab/#enabletab">enableTab</a> method.
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/tab/#enabletab">enableTab</a>
+        method.
     </p>
     <p>
-        You can design wizard like sample with Tab using the in-built API and customizing the content with proper validations.
+        You can design wizard like sample with Tab using the in-built API and customizing the content with proper
+        validations.
     </p>
     <p>
         More information about Tab can be found in this
@@ -258,10 +270,12 @@
         .e-sample-resize-container {
             height: 450px;
         }
+
         .responsive-align {
             width: 75%;
             margin: 0 auto;
         }
+
         .search-item {
             padding: 0 0 20px 0;
             width: 100%;
@@ -288,5 +302,11 @@
     #passenger-table {
         min-width: 500px;
         width: 100%;
+    }
+
+    #bookTickets,
+    #confirmTickets,
+    #makePayment {
+        margin-left: 4px;
     }
 </style>

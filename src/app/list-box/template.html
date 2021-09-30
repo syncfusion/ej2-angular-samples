@@ -1,0 +1,26 @@
+<div class="col-lg-12 control-section">
+    <div id="listbox-control">
+        <ejs-listbox [dataSource]='data'>
+            <ng-template #itemTemplate let-data>
+                <div class = "list-wrapper">
+                    <span class="e-avatar e-avatar-xlarge e-avatar-circle"><img src="./assets/template/pic/{{data.pic}}.svg" alt="pic" /></span>
+                    <span class="text"> {{data.text}} </span>
+                    <span class="description"> {{data.description}} </span>
+                </div>
+            </ng-template>
+        </ejs-listbox>
+    </div>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates the itemTemplate functionalities of a ListBox.</p>
+</div>
+<div id="description">
+    <p>The <code>ListBox</code> is a graphical user interface component used to display a list of items. This sample illustrates how to integrate the item template to customize the
+        list item's content and this can be specified by using <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/list-box/#itemtemplate"><code>itemTemplate
+        </code></a> property.</p>
+    <p>In this sample, data is bound to the ListBox using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/list-box/#datasource"><code>dataSource
+    </code></a> property.</p>
+    <p> More information about the ListBox can be found in the
+        <a href="https://ej2.syncfusion.com/angular/documentation/list-box/getting-started" target="_blank"> documentation</a> section.
+    </p>
+</div>

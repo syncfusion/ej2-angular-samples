@@ -23,7 +23,8 @@ export class SampleDataComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     public majorTicks: Object = { width: 0 };
@@ -146,7 +147,7 @@ export class SampleDataComponent {
     }
 
     ngAfterViewInit(): void {
-        this.tooltipInterval1 = setInterval(
+        this.tooltipInterval1 = window.setInterval(
             (): void => {
                 if (document.getElementById('sample-data')) {
                     let value1: number = Math.round(Math.random() * (90 - 55) + 55);

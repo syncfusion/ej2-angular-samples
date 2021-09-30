@@ -2,7 +2,7 @@
     <div>
         <ejs-stockchart id='stockChartIntraday' [chartArea]='chartArea' [periods]='periods' [exportType]='exportType' [seriesType]='seriesType'
             [indicatorType]='indicatorType' [trendlineType]='trendlineType' [primaryXAxis]='primaryXAxis' style="display:block;"
-            [primaryYAxis]='primaryYAxis' [crosshair]='crosshair' [title]='title' [titleStyle]='titleStyle' (load)='load($event)'>
+            [primaryYAxis]='primaryYAxis' [crosshair]='crosshair' [title]='title' (load)='load($event)'>
             <e-stockchart-series-collection>
                 <e-stockchart-series [dataSource]='series1' type='Line' xName='x' yName='y' name='google'>
                 </e-stockchart-series>

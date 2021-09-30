@@ -30,7 +30,6 @@ export class AreaComponent {
     public seriesType: string[] = [];
     public indicatorType: string[] = [];
     public title: string = 'AAPL Stock Price';
-    public titleStyle: object = { color: 'black' };
     public enable: boolean = true;
     public load(args: IStockChartEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

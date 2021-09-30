@@ -20,7 +20,8 @@ export class AxesComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     //Initializing Annotation
@@ -60,7 +61,7 @@ export class AxesComponent {
     }];
     ngOnInit(): void {
         this.pointerType = new DropDownList({
-            index: 0, width: 100,
+            index: 0, width: '100%',
             change: () => {
                 this.gauge.axes[0].pointers[0].type = <Point>this.pointerType.value;
                 this.markerPlacement.enabled = (<Point>this.pointerType.value === 'Marker') ? true : false;
@@ -71,7 +72,7 @@ export class AxesComponent {
         this.pointerType.appendTo('#pointerType');
 
         this.markerPlacement = new DropDownList({
-            index: 0, width: 100,
+            index: 0, width: '100%',
             change: () => {
                 this.gauge.axes[0].pointers[0].placement = <Placement>this.markerPlacement.value;
                 this.gauge.refresh();
@@ -121,7 +122,7 @@ export class AxesComponent {
                 let max: HTMLInputElement = <HTMLInputElement>document.getElementById('max');
                 this.gauge.axes[0].minimum = parseInt(min.value, 10);
                 this.gauge.axes[0].maximum = parseInt(max.value, 10);
-                document.getElementById('minValue').innerHTML = 'Axis Minimum <span>&nbsp;&nbsp;&nbsp;' + min.value;
+                document.getElementById('minValue').innerHTML = min.value.toString();
                 this.gauge.refresh();
                 this.gauge.annotations[0].axisValue = (<Pointer>this.gauge.axes[0].pointers[0]).currentValue;
                 this.gauge.refresh();
@@ -133,7 +134,7 @@ export class AxesComponent {
                 let max: HTMLInputElement = <HTMLInputElement>document.getElementById('max');
                 this.gauge.axes[0].maximum = parseInt(max.value, 10);
                 this.gauge.axes[0].minimum = parseInt(min.value, 10);
-                document.getElementById('maxValue').innerHTML = 'Axis Maximum <span>&nbsp;&nbsp;&nbsp;' + max.value;
+                document.getElementById('maxValue').innerHTML = max.value.toString();
                 this.gauge.refresh();
                 this.gauge.annotations[0].axisValue = (<Pointer>this.gauge.axes[0].pointers[0]).currentValue;
                 this.gauge.refresh();

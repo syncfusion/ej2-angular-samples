@@ -83,7 +83,7 @@ export class DefaultDonutComponent {
         if (this.execute) {
             return;
         }
-        let pieinterval = setInterval(
+        let pieinterval = window.setInterval(
             () => {
                 if (document.getElementById('donut-container')) {
                     if (this.count === 0) {

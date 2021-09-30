@@ -20,7 +20,8 @@ export class ContainerComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     //Initializing Axes
@@ -75,7 +76,7 @@ export class ContainerComponent {
     };
     ngOnInit(): void {
         this.orientation = new DropDownList({
-            index: 0, width: 100,
+            index: 0, width: '110%',
             change: () => {
                 let value: string = this.orientation.value.toString();
                 this.gauge.orientation = <Orientation>value;
@@ -84,7 +85,7 @@ export class ContainerComponent {
         });
         this.orientation.appendTo('#orientationMode');
         this.container = new DropDownList({
-            index: 0, width: 100,
+            index: 0, width: '110%',
             change: () => {
                 let value: string = this.container.value.toString();
                 this.gauge.container.type = <ContainerType>value;

@@ -15,6 +15,22 @@
     color: rgba(255, 255, 255, 0.64);
 }
 
+.material-dark #api-control h4 {
+    color: rgba(255, 255, 255, 0.64);
+}
+
+.fabric-dark #api-control h4 {
+    color: rgba(255, 255, 255, 0.64);
+}
+
+.bootstrap-dark #api-control h4 {
+    color: rgba(255, 255, 255, 0.64);
+}
+
+.tailwind-dark #api-control h4 {
+    color: rgba(255, 255, 255, 0.64);
+}
+
 .e-bigger #api-control h4 {
     font-size: 20px;
 }

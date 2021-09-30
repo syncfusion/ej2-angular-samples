@@ -24,13 +24,13 @@ import { CategoryService, LineSeriesService } from '@syncfusion/ej2-angular-char
 export class DragAndDropComponent {
     @ViewChild('treeObj') public treeObj: TreeViewComponent;
     @ViewChild('tabObj') public tabObj: TabComponent;
-    @ViewChild('GridtemplateRef', { static: true }) public Gridtemplate: TemplateRef<any>;
-    @ViewChild('CharttemplateRef', { static: true }) public Charttemplate: TemplateRef<any>;
-    @ViewChild('ScheduletemplateRef', { static: true }) public Scheduletemplate: TemplateRef<any>;
-    @ViewChild('DropDowntemplateRef', { static: true }) public DropDowntemplate: TemplateRef<any>;
-    @ViewChild('DatePickertemplateRef', { static: true }) public DatePickertemplate: TemplateRef<any>;
-    @ViewChild('UploadtemplateRef', { static: true }) public Uploadtemplate: TemplateRef<any>;
-    @ViewChild('CalendartemplateRef', { static: true }) public Calendartemplate: TemplateRef<any>;
+    @ViewChild('GridtemplateRef') public Gridtemplate: TemplateRef<any>;
+    @ViewChild('CharttemplateRef') public Charttemplate: TemplateRef<any>;
+    @ViewChild('ScheduletemplateRef') public Scheduletemplate: TemplateRef<any>;
+    @ViewChild('DropDowntemplateRef') public DropDowntemplate: TemplateRef<any>;
+    @ViewChild('DatePickertemplateRef') public DatePickertemplate: TemplateRef<any>;
+    @ViewChild('UploadtemplateRef') public Uploadtemplate: TemplateRef<any>;
+    @ViewChild('CalendartemplateRef') public Calendartemplate: TemplateRef<any>;
 
     public draggedItemHeader: string = '';
     public i: number;

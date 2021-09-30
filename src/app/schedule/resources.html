@@ -1,83 +1,84 @@
 <div class="control-section">
-    <div class="col-lg-9 content-wrapper">
-        <div class="schedule-demo-heading">
-            Cheapest one way fares from Barcelona to Los Angeles
-        </div>
-        <ejs-schedule #scheduleObj width='100%' cssClass='schedule-resources' height='650px' [readonly]='readonly' [selectedDate]="selectedDate"
-            [eventSettings]="eventSettings" (dataBinding)="onDataBinding()" (actionBegin)="onActionBegin($event)" (dataBound)="onDataBound()"
-            (popupOpen)="onPopupOpen($event)">
-            <e-resources>
-                <e-resource field='AirlineId' title='Airline' [dataSource]='resourceDataSource' [allowMultiple]='allowMultiple' name='Airlines'
-                    textField='text' idField='id'>
-                </e-resource>
-            </e-resources>
-            <e-views>
-                <e-view option="Month"></e-view>
-            </e-views>
-        </ejs-schedule>
+  <div class="col-lg-9 content-wrapper">
+    <div class="schedule-demo-heading">
+      Cheapest one way fares from Barcelona to Los Angeles
     </div>
-    <div class="col-lg-3 property-section">
-        <div class="property-panel-section">
-            <div class="property-panel-header">Properties</div>
-            <div class="property-panel-content">
-                <div id="property" class="property-panel-table" title="Properties">
-                    <table id="property" title="Properties" style="width: 100%">
-                        <tbody>
-                            <tr style="height: 50px">
-                                <td>
-                                    <div>
-                                        <ejs-checkbox label="Airways 1" cssClass="e-resource e-airways-1" [checked]="true" (change)="onChange($event)"></ejs-checkbox>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr style="height: 50px">
-                                <td>
-                                    <div>
-                                        <ejs-checkbox label="Airways 2" cssClass="e-resource e-airways-2" [checked]="true" (change)="onChange($event)"></ejs-checkbox>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr style="height: 50px">
-                                <td>
-                                    <div>
-                                        <ejs-checkbox label="Airways 3" cssClass="e-resource e-airways-3" [checked]="true" (change)="onChange($event)"></ejs-checkbox>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+    <ejs-schedule #scheduleObj width='100%' cssClass='schedule-resources' height='650px' [readonly]='readonly'
+      [selectedDate]="selectedDate" [eventSettings]="eventSettings" (dataBinding)="onDataBinding()"
+      (actionBegin)="onActionBegin($event)" (dataBound)="onDataBound()" (popupOpen)="onPopupOpen($event)">
+      <e-resources>
+        <e-resource field='AirlineId' title='Airline' [dataSource]='resourceDataSource' [allowMultiple]='allowMultiple'
+          name='Airlines' textField='text' idField='id'>
+        </e-resource>
+      </e-resources>
+      <e-views>
+        <e-view option="Month"></e-view>
+      </e-views>
+    </ejs-schedule>
+  </div>
+  <div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+      <div class="property-panel-header">Properties</div>
+      <div class="property-panel-content">
+        <div id="property" class="property-panel-table" title="Properties">
+          <table id="property" title="Properties" style="width: 100%">
+            <tbody>
+              <tr style="height: 50px">
+                <td>
+                  <div>
+                    <ejs-checkbox label="Airways 1" cssClass="e-resource e-airways-1" [checked]="true"
+                      (change)="onChange($event)"></ejs-checkbox>
+                  </div>
+                </td>
+              </tr>
+              <tr style="height: 50px">
+                <td>
+                  <div>
+                    <ejs-checkbox label="Airways 2" cssClass="e-resource e-airways-2" [checked]="true"
+                      (change)="onChange($event)"></ejs-checkbox>
+                  </div>
+                </td>
+              </tr>
+              <tr style="height: 50px">
+                <td>
+                  <div>
+                    <ejs-checkbox label="Airways 3" cssClass="e-resource e-airways-3" [checked]="true"
+                      (change)="onChange($event)"></ejs-checkbox>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <div id="action-description">
-    <p>
-        This demo illustrates how to customize the scheduler to showcase it as an
-        <strong>Airfare calendar</strong> depicting the lowest available price on each day of a month for a specific route, say between
-        Barcelona and Los Angeles.
-    </p>
+  <p>
+    This demo illustrates how to customize the scheduler to showcase it as an <strong>Airfare calendar</strong>
+    depicting the lowest available price on each day of a month for a specific route, say between Barcelona and Los
+    Angeles.
+  </p>
 </div>
 
 <div id="description">
-    <p>
-        In this demo, Scheduler initially displays the fare of the airline service which offers lowest price on each day by comparing
-        between the 3 available airlines. Here, the 3 airline services acts as the Scheduler resources. Appointment collection
-        has been dynamically generated for a month (for all the 3 resources) within the
-        <code>generateEvents</code> method and then filtered externally based on the ascending Fare value within the
-        <code>filterByFare</code> method. Since each day of the Scheduler needs to display only a single appointment showing the fare value, therefore
-        it’s been queried to take only the first 30 values from the sorted list and assigned it to the Schedule
-        <code>dataSource</code>. Here, the filtering process needs to be carried out during the
-        <code>databinding</code> event and therefore, the dataSource of Scheduler is assigned within this event.
-    </p>
-    <p>
-        Scheduler has been rendered in a readonly mode and therefore no editing actions are allowed here. To customize the look of
-        the appointments that displays the fare value,
-        <code>template</code> option within the
-        <code>eventSettings</code> is being used. To highlight the day that holds the overall lowest price of a month, the background color of that
-        day’s cell is customized within the
-        <code>dataBound</code> event. Also, the tooltip has been enabled with
-        <code>template</code> option to display the flight details in a customized style.
-    </p>
+  <p>
+    In this demo, Scheduler initially displays the fare of the airline service which offers lowest price on each day by
+    comparing between the 3 available airlines. Here, the 3 airline services acts as the Scheduler resources.
+    Appointment collection has been dynamically generated for a month (for all the 3 resources) within the
+    <code>generateEvents</code> method and then filtered externally based on the ascending Fare value within the
+    <code>filterByFare</code> method. Since each day of the Scheduler needs to display only a single appointment showing
+    the fare value, therefore it’s been queried to take only the first 30 values from the sorted list and assigned it to
+    the Schedule <code>dataSource</code>. Here, the filtering process needs to be carried out during the
+    <code>databinding</code> event and therefore, the dataSource of Scheduler is assigned within this event.
+  </p>
+  <p>
+    Scheduler has been rendered in a readonly mode and therefore no editing actions are allowed here. To customize the
+    look of the appointments that displays the fare value, <code>template</code> option within the
+    <code>eventSettings</code> is being used. To highlight the day that holds the overall lowest price of a month, the
+    background color of that day’s cell is customized within the <code>dataBound</code> event. Also, the tooltip has
+    been enabled with <code>template</code> option to display the flight details in a customized style.
+  </p>
 </div>

@@ -4,19 +4,20 @@ import { EventSettingsModel, View, MonthAgendaService } from '@syncfusion/ej2-an
 import { fifaEventsData } from './data';
 
 @Component({
-    selector: 'control-content',
-    templateUrl: 'month-agenda.html',
-    styles: [`
+  // tslint:disable-next-line:component-selector
+  selector: 'control-content',
+  templateUrl: 'month-agenda.html',
+  styles: [`
     @media (min-width: 481px) {
         .schedule-wrapper {
             margin: 0 25%;
         }
     }`],
-    providers: [MonthAgendaService],
-    encapsulation: ViewEncapsulation.None
+  providers: [MonthAgendaService],
+  encapsulation: ViewEncapsulation.None
 })
 export class MonthAgendaComponent {
-    public selectedDate: Date = new Date(2018, 5, 20);
-    public eventSettings: EventSettingsModel = { dataSource: <Object[]>extend([], fifaEventsData, null, true) };
-    public currentView: View = 'MonthAgenda';
+  public selectedDate: Date = new Date(2021, 5, 20);
+  public eventSettings: EventSettingsModel = { dataSource: extend([], fifaEventsData, null, true) as Record<string, any>[] };
+  public currentView: View = 'MonthAgenda';
 }

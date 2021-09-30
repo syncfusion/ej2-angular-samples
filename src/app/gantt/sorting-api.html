@@ -19,13 +19,15 @@
                 <div id="property" class="property-panel-table" title="Properties">
                     <table id="property" title="Properties">
                         <tr>
-                            <td style="width: 30%">
-                                <div>
+                            <td style="width: 100%">
+                                <div style="font-size: 15px;">
                                     Column
                                 </div>
                             </td>
-                            <td style="width: 70%">
-                                <div>
+                        </tr>
+                        <tr>
+                            <td style="width: 100%">
+                                <div style="width: 150px">
                                     <ejs-dropdownlist #dropDownColumnList [dataSource]='dropDownColumnListData'
                                         [fields]='dropDownColumnListFields' [value]='columnValue'>
                                     </ejs-dropdownlist>
@@ -33,13 +35,15 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 30%">
-                                <div>
+                            <td style="width: 100%">
+                                <div style="font-size: 15px;">
                                     Direction
                                 </div>
                             </td>
-                            <td style="width: 70%">
-                                <div>
+                        </tr>
+                        <tr>
+                            <td style="width: 100%">
+                                <div style="width: 150px">
                                     <ejs-dropdownlist #dropDownDirectionList [dataSource]='dropDownDirectionListData'
                                         [fields]='dropDownDirectionListFields' [value]='directionValue'>
                                     </ejs-dropdownlist>
@@ -47,13 +51,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 30%;">
+                            <td style="width: 100%;">
                                 <div>
-                                    <button ejs-button id="sort" content="Sort" (click)="sortColumn()"></button>
-                                </div>
-                            </td>
-                            <td style="width: 70%;padding:10px 10px 10px 0px;">
-                                <div>
+                                    <button ejs-button id="sort" content="Sort" style="margin-right: 10px;" (click)="sortColumn()"></button>
                                     <button ejs-button id="clear" content="Clear" (click)="clearSort()"></button>
                                 </div>
                             </td>

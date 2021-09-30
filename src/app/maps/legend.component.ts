@@ -27,7 +27,8 @@ export class MapsLegendComponent {
     public load = (args: ILoadEventArgs) => {
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
-        args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() + theme.slice(1));
+        args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() +
+        theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     public titleSettings: object = {
@@ -86,7 +87,7 @@ export class MapsLegendComponent {
         let legendPosition: DropDownList = new DropDownList({
             index: 0,
             placeholder: 'Legend Position',
-            width: 110,
+            width: '100%',
             change: () => {
                 this.maps.legendSettings.position = <LegendPosition>legendPosition.value;
                 if (legendPosition.value === 'Left' || legendPosition.value === 'Right') {
@@ -112,7 +113,7 @@ export class MapsLegendComponent {
         let mode: DropDownList = new DropDownList({
             index: 0,
             placeholder: 'Select layoutMode type',
-            width: 100,
+            width: '100%',
             change: () => {
                 this.maps.legendSettings.mode = <LegendMode>mode.value;
                 if (mode.value === 'Interactive') {

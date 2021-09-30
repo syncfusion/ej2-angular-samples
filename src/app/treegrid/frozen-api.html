@@ -1,0 +1,87 @@
+<div class="control-section">
+    <div class="control-section">
+        <div class="grid-freezeprop">
+            <div class="grid-freezecol">
+                <div class="grid-freezecol">
+                    <span>
+                        Column
+                    </span>
+                </div>
+                <div class="grid-freezecol">
+                    <ejs-dropdownlist id='column' #columndropdown index='7' [dataSource]='columnData'
+                        (change)='columnChange($event)' [fields]='fields'></ejs-dropdownlist>
+                </div>
+            </div>
+            <div class="grid-freezecol">
+                <div class="grid-freezecol">
+                    <span>
+                        Freeze Direction
+                    </span>
+                </div>
+                <div class="grid-freezecol">
+                    <ejs-dropdownlist id='direction' #directiondropdown index='0' [dataSource]='directionData'
+                        (change)='directionChange($event)' [fields]='fields'></ejs-dropdownlist>
+                </div>
+            </div>
+        </div>
+    
+        <ejs-treegrid #treegrid [dataSource]='data' height='410' [treeColumnIndex]='1' childMapping='subtasks' allowSorting='true' allowSelection='false'>
+            <e-columns>
+                <e-column field='taskID' headerText='Task ID' width='100' textAlign='Right' freeze='Left'></e-column>
+                <e-column field='taskName' headerText='Task Name' width='250'></e-column>
+                <e-column field='startDate' headerText='Start Date' width='130' format="yMd" textAlign='Right'>
+                </e-column>
+                <e-column field='endDate' headerText='End Date' width='150' format="yMd" textAlign='Right'>
+                </e-column>
+                <e-column field='duration' headerText='Duration' width='130' textAlign='Right'></e-column>
+                <e-column field='progress' headerText='Progress' width='130' textAlign='Right'></e-column>
+                <e-column field='priority' headerText='Priority' width='160' textAlign='Left'></e-column>
+                <e-column field='designation' headerText='Designation' width='190' textAlign='Left'></e-column>
+                <e-column field='employeeID' headerText='EmployeeID' width='120' textAlign='Left'></e-column>
+                <e-column field='approved' headerText='Approved' width='140' displayAsCheckBox='true' textAlign='Left' freeze='Right'></e-column>
+            </e-columns>
+        </ejs-treegrid>
+        <ejs-dialog #alertDialog [buttons]='dlgButtons' [header]='header' [animationSettings]='animationSettings'
+            [content]='content' [showCloseIcon]='showCloseIcon' [target]='target' [width]='width' [visible]='visible'>
+        </ejs-dialog>
+    
+        <!-- custom code start -->
+        <style>
+            .grid-freezeprop {
+                padding-bottom: 5px;
+            }
+    
+            .grid-freezecol {
+                display: inline-block;
+                padding-right: 10px;
+            }
+        </style>
+        <!-- custom code end -->
+    
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the frozen rows and columns feature of the Tree Grid. Scroll the movable content
+        horizontally to view the frozen columns with the content.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        The freezing feature enables the user to freeze certain rows/columns at both sides to scroll remaining movable content. This can be achieved by setting <b>freeze</b> property.
+    </p>
+    <p>
+        In this demo sample, the <b>Task ID</b> column freezed at left side and <b>Approved</b> column is freezed at right side by using the 
+        <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/treegrid/scrolling/#frozen-rows-and-columns">freeze
+        </a></code>  properties.
+    </p>
+    <p style="font-weight: 500">Injecting Module:</p>
+    <p>
+        Tree Grid features are segregated into individual feature-wise modules. To use frozen columns feature, we need to inject
+        <code><a target="_blank" class="code"
+        href="https://ej2.syncfusion.com/angular/documentation/treegrid/scrolling/#frozen-rows-and-columns">
+        FreezeService
+        </a></code> the <code>@NgModule.providers</code> section.
+    </p>
+</div>

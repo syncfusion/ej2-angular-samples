@@ -15,14 +15,19 @@ import Tribute  from 'tributejs';
 export class TributeComponent {
     @ViewChild('tributeRTE') rteObj: RichTextEditorComponent;
     public onCreate(): void {
-        let tribute : Tribute<{key: string; value: string;}> = new Tribute({
-            values: [
-              { key: 'Phil Heartman', value: 'pheartman' },
-              { key: 'Gordon Ramsey', value: 'gramsey' },
-              { key: 'Jordan Humphreys', value: 'jhumphreys' },
-              { key: 'Howard Johnson', value: 'hjohnson' }
-            ]
-          })  
-          tribute.attach(this.rteObj.inputElement);
-        }
+      let tribute : Tribute<{key: string; value: string;}> = new Tribute({
+        values: [
+          { key: 'Phil Heartman', value: 'pheartman' },
+          { key: 'Gordon Ramsey', value: 'gramsey' },
+          { key: 'Jordan Humphreys', value: 'jhumphreys' },
+          { key: 'Howard Johnson', value: 'hjohnson' }
+        ]
+      })  
+      tribute.attach(this.rteObj.inputElement);
+    }
+    public actionBeginEvent(args: any): void {
+      if (args.requestType === 'EnterAction') {
+        args.cancel = true;
+      }
+    }
 }

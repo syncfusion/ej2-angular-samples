@@ -89,20 +89,24 @@ export class CustomizationComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     public load1(args: ILoadedEventArgs): void {
         let selectedTheme1: string = location.hash.split('/')[1];
         selectedTheme1 = selectedTheme1 ? selectedTheme1 : 'Material';
-        args.gauge.theme = <GaugeTheme>(selectedTheme1.charAt(0).toUpperCase() + selectedTheme1.slice(1));
+        args.gauge.theme = <GaugeTheme>(selectedTheme1.charAt(0).toUpperCase() +
+        selectedTheme1.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     
     public barColor: DropDownList; public rangeColor: DropDownList; public pointerColor: DropDownList;
     ngOnInit(): void {
+        let element: HTMLInputElement = <HTMLInputElement>document.getElementById('currentValue');
+        element.value = '1800';
         this.barColor = new DropDownList({
             index: 0,
-            width: 100,
+            width: '100%',
             change: () => {
                 let barColor: string = this.barColor.value.toString();
                 if (this.isUsage) {
@@ -117,7 +121,7 @@ export class CustomizationComponent {
         this.barColor.appendTo('#barColor');
         this.rangeColor = new DropDownList({
             index: 0,
-            width: 100,
+            width: '100%',
             change: () => {
                 let barColor: string = this.rangeColor.value.toString();
                 if (this.isUsage) {
@@ -132,7 +136,7 @@ export class CustomizationComponent {
         this.rangeColor.appendTo('#rangeColor');
         this.pointerColor = new DropDownList({
             index: 0,
-            width: 100,
+            width: '100%',
             change: () => {
                 let barColor: string = this.pointerColor.value.toString();
                 if (!this.isUsage) {
@@ -167,8 +171,7 @@ export class CustomizationComponent {
             element.min = '0.5';
             element.max = '100';
             element.value = this.usageGauge.axes[0].pointers[0].value.toString();
-            document.getElementById('currentPointerValue').innerHTML = ' Current Value <span> &nbsp;&nbsp;&nbsp;'
-                + this.usageGauge.axes[0].pointers[0].value + '</span>';
+            document.getElementById('currentPointerValue').innerHTML = ''+ this.usageGauge.axes[0].pointers[0].value;
             this.barColor.value = this.usageGauge.axes[0].pointers[0].color;
             this.rangeColor.value = this.usageGauge.axes[0].ranges[0].color;
             this.pointerColor.enabled = false;
@@ -198,8 +201,7 @@ export class CustomizationComponent {
             element.min = '1000';
             element.max = '2000';
             element.value = this.randomGauge.axes[0].pointers[0].value.toString();
-            document.getElementById('currentPointerValue').innerHTML = 'Current Value <span> &nbsp;&nbsp;&nbsp;' +
-                this.randomGauge.axes[0].pointers[0].value + '</span>';
+            document.getElementById('currentPointerValue').innerHTML = ''+this.randomGauge.axes[0].pointers[0].value;
             this.barColor.value = this.randomGauge.axes[0].pointers[0].color;
             this.rangeColor.value = this.randomGauge.axes[0].ranges[0].color;
             this.pointerColor.value = this.randomGauge.axes[0].pointers[1].color;
@@ -220,7 +222,7 @@ export class CustomizationComponent {
                     this.randomGauge.axes[0].pointers[1].value = value;
                     this.randomGauge.setAnnotationValue(0, 0, '<div style="color:#666666;font-size:35px;">' + value + '' + '</div>');
                 }
-                document.getElementById('currentPointerValue').innerHTML = 'Current Value <span> &nbsp;&nbsp;&nbsp;' + value + '</span>';
+                document.getElementById('currentPointerValue').innerHTML = ''+value;
             };
     }
     constructor() {

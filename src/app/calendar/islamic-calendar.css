@@ -49,6 +49,24 @@
   left: -2px;
 }
 
+.highcontrast .sf-icon-cup:before,
+.material-dark .sf-icon-cup:before,
+.fabric-dark .sf-icon-cup:before,
+.bootstrap-dark .sf-icon-cup:before,
+.bootstrap5-dark .sf-icon-cup:before,
+.tailwind-dark .sf-icon-cup:before {
+    color: #ff7500;
+}
+
+.highcontrast .sf-icon-start:before,
+.material-dark .sf-icon-start:before,
+.fabric-dark .sf-icon-start:before,
+.bootstrap-dark .sf-icon-start:before,
+.bootstrap5-dark .sf-icon-start:before,
+.tailwind-dark .sf-icon-start:before {
+    color: #ff7500;
+}
+
 .e-customStyle .e-selected span.e-icons.highlight:before {
     color: #fff;
 }

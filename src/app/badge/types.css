@@ -11,6 +11,14 @@
     position: relative;
 }
 
+body.material-dark .e-badge-showcase.e-card,
+body.tailwind-dark .e-badge-showcase.e-card,
+body.bootstrap-dark .e-badge-showcase.e-card,
+body.fabric-dark .e-badge-showcase.e-card,
+body.bootstrap5-dark .e-badge-showcase.e-card {
+    background-color: inherit;
+}
+
 /* Media queries for Multiple devices */
 
 @media only screen and (max-width: 890px) {

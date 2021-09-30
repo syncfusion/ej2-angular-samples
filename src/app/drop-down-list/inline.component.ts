@@ -26,7 +26,7 @@ export class InlineDropDownListComponent {
     public fields: Object = { text: 'Name'};
     // set the height of the popup element
     public height: string = '200px';
-    public width: string = '63px';
+    public width: string = '65px';
     public popupWidth: string = '140px';
     // set the placeholder to DropDownList input element
     public value: string = 'Michael';

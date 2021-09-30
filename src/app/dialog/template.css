@@ -147,6 +147,15 @@
     background-color: #f5f5f5;
 }
 
+.material-dark .template .dialogContent .dialogText,
+.fabric-dark .template .dialogContent .dialogText,
+.bootstrap-dark .template .dialogContent .dialogText,
+.bootstrap5-dark .template .dialogContent .dialogText,
+.tailwind-dark .template .dialogContent .dialogText {
+    color: #424242;
+}
+
+
 .material .template .e-dialog .e-footer-content, .template .e-dialog .e-footer-content, .fabric .template .e-dialog .e-footer-content {
     border-top: 0.5px solid rgba(0, 0, 0, 0.42);
 }

@@ -1,36 +1,37 @@
-    .schedule-date-header-template.e-schedule .e-vertical-view .e-header-cells,
-    .schedule-date-header-template.e-schedule .e-timeline-month-view .e-header-cells {
-        padding: 0;
-        text-align: center !important;
-    }
+.schedule-date-header-template.e-schedule .e-vertical-view .e-header-cells,
+.schedule-date-header-template.e-schedule .e-timeline-month-view .e-header-cells {
+  padding: 0;
+  text-align: center !important;
+}
 
-    .schedule-date-header-template.e-schedule .date-text {
-        font-size: 14px;
-    }
+.schedule-date-header-template.e-schedule .date-text {
+  font-size: 14px;
+}
 
-    .schedule-date-header-template.e-schedule.e-device .date-text {
-        font-size: 12px;
-    }
+.schedule-date-header-template.e-schedule.e-device .date-text {
+  font-size: 12px;
+}
 
-    .schedule-date-header-template.e-schedule .weather-image {
-        width: 20px;
-        height: 20px;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+.schedule-date-header-template.e-schedule .weather-image {
+  width: 20px;
+  height: 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-    .schedule-date-header-template.e-schedule .weather-text {
-        font-size: 11px;
-    }
+.schedule-date-header-template.e-schedule .weather-text {
+  font-size: 11px;
+}
 
-    .schedule-date-header-template.e-schedule .e-month-view .weather-image {
-        float: right;
-        margin: -20px 2px 0 0;
-        width: 20px;
-        height: 20px;
-    }
+.schedule-date-header-template.e-schedule .e-month-view .weather-image {
+  float: right;
+  margin: -20px 2px 0 0;
+  width: 20px;
+  height: 20px;
+}
 
-    .schedule-date-header-template.e-schedule .e-left-indent .e-header-cells {
-        height: 66px;
-    }
+.tailwind .schedule-date-header-template.e-schedule .e-left-indent .e-header-cells,
+.tailwind-dark .schedule-date-header-template.e-schedule .e-left-indent .e-header-cells {
+  height: 66px;
+}

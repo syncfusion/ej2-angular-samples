@@ -15,44 +15,66 @@
     </div>
     
     <div class="col-lg-3 property-section">
+        <div class="property-panel-header">Properties</div>
         <table id="property" title="Properties" style="width: 100%">
-            <tbody> 
+            <colgroup>
+                <col span="1" style="width: 50%;">
+                <col span="1" style="width: 50%;">
+            </colgroup>
                 <tr style="height: 50px">
-                    <td style="width: 70%">
+                    <td>
                         <div class="property-text">Drill Down View</div>
                     </td>
                     <td style="width: 70%;">
-                        <div>
+                        <div style="margin-left: 20px">
                             <input type="checkbox" id="drillView"/>
                         </div>
                     </td>
-                </tr>                                                                   
+                </tr>
+                </table>
+                <table id="property" title="Properties" style="width: 100%">   
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>                                                   
                 <tr style="height: 50px">
-                    <td style="width: 70%">
+                    <td>
                         <div class="property-text">Enable Bread Crumb</div>
                     </td>
-                    <td style="width: 70%;">
-                        <div>
+                    <td>
+                        <div style="margin-left: 20px">
                             <input type="checkbox" id="breadCrumb" />
                         </div>
                     </td>
                 </tr>
+                </table>
+                <table id="property" title="Properties" style="width: 100%">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
                 <tr style="height: 50px">
-                    <td style="width: 70%">
+                    <td>
                         <div class="property-text">Bread Crumb Connector</div>
                     </td>
                     <td style="width: 70%;">
-                        <div>
-                            <input type="text" id="connectorText" value=' - ' disabled= true style="width:70px"/>
+                        <div style="margin-left: 20px">
+                            <input type="text" id="connectorText" value=' - ' disabled= true style="width: 100%;"/>
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td style="width:40%;">
+                </table>
+                <table id="property" title="Properties" style="width: 100%">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
+                <tr style="height: 50px">
+                    <td>
                         <div class="property-text">Header Alignment</div>
                     </td>
                     <td style="width: 60%;">
-                        <div style="margin-left:10px">
+                        <div style="margin-left: 20px">
                             <select name="selectIndex" id="header">
                                 <option value="Near" selected>Near</option>
                                 <option value="Far">Far</option>
@@ -61,12 +83,18 @@
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td style="width:40%;">
+                </table>
+                <table id="property" title="Properties" style="width: 100%">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
+                <tr style="height: 50px">
+                    <td>
                         <div class="property-text">Label Alignment</div>
                     </td>
                     <td style="width: 60%;">
-                        <div style="margin-left:10px">
+                        <div style="margin-left: 20px">
                             <select name="selectIndex" id="label">
                                 <option value="Near" selected>Near</option>
                                 <option value="Far">Far</option>
@@ -75,7 +103,6 @@
                         </div>
                     </td>
                 </tr>
-            </tbody>
         </table>
     </div>
 </div>

@@ -59,7 +59,7 @@ import { FlowExecutionDiagramComponent } from 'src/app/diagram/flow-execution.co
 import { HistoryManagerDiagramComponent } from 'src/app/diagram/history-manager.component';
 import { EventsDiagramComponent } from './diagram-events.component';
 import { TooltipDiagramComponent } from './tooltip.component';
-import { LineRoutingComponent } from './line-routing.component';
+import { LineRoutingComponent } from './line-routing';
 import { VirtualizationComponent } from './virtualization';
 
 export const diagramAppRoutes: Object[] = [

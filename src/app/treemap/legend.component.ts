@@ -23,7 +23,8 @@ export class TreemapLegendComponent {
     public load = (args: ILoadEventArgs) => {
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
-        args.treemap.theme = <TreeMapTheme>(theme.charAt(0).toUpperCase() + theme.slice(1));
+        args.treemap.theme = <TreeMapTheme>(theme.charAt(0).toUpperCase() +
+        theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     public resize = (args: IResizeEventArgs) => {
         if (args.currentSize.width > args.currentSize.height && args.treemap.legendSettings.position === 'Auto') {
@@ -79,7 +80,7 @@ export class TreemapLegendComponent {
         };
         ngAfterViewInit(): void {
             let legend: DropDownList = new DropDownList({
-                index: 0, placeholder: 'Select layout type', width: 120,
+                index: 0, placeholder: 'Select layout type', width: '100%',
                 change: () => {
                     this.treemap.legendSettings.mode = <LegendMode>legend.value;
                     if (legend.value === 'Interactive') {
@@ -99,7 +100,7 @@ export class TreemapLegendComponent {
             });
             legend.appendTo('#legendMode');
             let position: DropDownList = new DropDownList({
-                index: 0, placeholder: 'Select layout type', width: 120,
+                index: 0, placeholder: 'Select layout type', width: '100%',
                 change: () => {
                     this.treemap.legendSettings.position = <LegendPosition>position.value;
                     if (position.value === 'Left' || position.value === 'Right') {

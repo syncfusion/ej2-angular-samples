@@ -1,50 +1,48 @@
 <div class="control-section">
-    <div class="col-lg-12 content-wrapper">
-        <ejs-schedule #scheduleObj width='100%' cssClass='timeline-resource' height='650px' [timeScale]="timeScale" [currentView]="currentView"
-            [workHours]="workHours" [selectedDate]="selectedDate" [group]="group" [eventSettings]="eventSettings" (eventRendered)="onEventRendered($event)"
-            (actionBegin)="onActionBegin($event)" (renderCell)="onRenderCell($event)" (popupOpen)="onPopupOpen($event)">
-            <e-resources>
-                <e-resource field='RoomId' title='Room Type' [dataSource]='resourceDataSource' [allowMultiple]='allowMultiple' name='MeetingRoom'
-                    textField='text' idField='id' colorField='color'>
-                </e-resource>
-            </e-resources>
-            <e-views>
-                <e-view option="TimelineDay"></e-view>
-                <e-view option="TimelineWeek"></e-view>
-            </e-views>
-            <ng-template #resourceHeaderTemplate let-data>
-                <div class='template-wrap'>
-                    <div class="name">{{data.resourceData.text}}</div>
-                    <div class="type">{{data.resourceData.type}}</div>
-                    <div class="capacity">{{data.resourceData.capacity}}</div>
-                </div>
-            </ng-template>
-        </ejs-schedule>
-    </div>
+  <div class="col-lg-12 content-wrapper">
+    <ejs-schedule #scheduleObj width='100%' cssClass='timeline-resource' height='650px' [timeScale]="timeScale"
+      [currentView]="currentView" [workHours]="workHours" [selectedDate]="selectedDate" [group]="group"
+      [eventSettings]="eventSettings" (eventRendered)="onEventRendered($event)" (actionBegin)="onActionBegin($event)"
+      (renderCell)="onRenderCell($event)" (popupOpen)="onPopupOpen($event)">
+      <e-resources>
+        <e-resource field='RoomId' title='Room Type' [dataSource]='resourceDataSource' [allowMultiple]='allowMultiple'
+          name='MeetingRoom' textField='text' idField='id' colorField='color'></e-resource>
+      </e-resources>
+      <e-views>
+        <e-view option="TimelineDay"></e-view>
+        <e-view option="TimelineWeek"></e-view>
+      </e-views>
+      <ng-template #resourceHeaderTemplate let-data>
+        <div class='template-wrap'>
+          <div class="name">{{data.resourceData.text}}</div>
+          <div class="type">{{data.resourceData.type}}</div>
+          <div class="capacity">{{data.resourceData.capacity}}</div>
+        </div>
+      </ng-template>
+    </ejs-schedule>
+  </div>
 </div>
 
 <div id="action-description">
-    <p>
-        This demo showcases the scheduler that lists out the meeting rooms of an office and its availability. The slots which are
-        already booked and the lunch time can’t be allowed for any new bookings. Also, the existing bookings which were made
-        on past dates were not allowed to edit as well as the new bookings on those past dates will also be not allowed.
-    </p>
+  <p>
+    This demo showcases the scheduler that lists out the meeting rooms of an office and its availability. The slots
+    which are already booked and the lunch time can’t be allowed for any new bookings. Also, the existing bookings which
+    were made on past dates were not allowed to edit as well as the new bookings on those past dates will also be not
+    allowed.
+  </p>
 </div>
 
 <div id="description">
-    <p>
-        Here, the timeline view is grouped with single level of resources by making use of the
-        <code>group</code> property. Also, the lunch time blocking is done by block event. The event editor and popup is 
-        prevented to open on those blocked time slots as well as on the past bookings by making use of the
-        <code>popupOpen</code> event. The
-        <code>eventRendered</code> event is utilized in order to make the bookings done on past dates as read-only. To block more than one bookings
-        per slot, the
-        <code>isSlotAvailable</code> method is used. Also, the resource header displayed at the left panel is customized to render as columns with the
-        help of
-        <code>resourceHeaderTemplate</code>.
-    </p>
-    <p>
-        <b>Note:</b> The dates which lies beyond the current date set to scheduler through
-        <code>selectedDate</code> property is considered as the past dates here in this sample.
-    </p>
+  <p>
+    Here, the timeline view is grouped with single level of resources by making use of the <code>group</code> property.
+    Also, the lunch time blocking is done by block event. The event editor and popup is prevented to open on those
+    blocked time slots as well as on the past bookings by making use of the <code>popupOpen</code> event. The
+    <code>eventRendered</code> event is utilized in order to make the bookings done on past dates as read-only. To block
+    more than one bookings per slot, the <code>isSlotAvailable</code> method is used. Also, the resource header
+    displayed at the left panel is customized to render as columns with the help of <code>resourceHeaderTemplate</code>.
+  </p>
+  <p>
+    <b>Note:</b> The dates which lies beyond the current date set to scheduler through
+    <code>selectedDate</code> property is considered as the past dates here in this sample.
+  </p>
 </div>

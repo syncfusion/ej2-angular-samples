@@ -7,10 +7,10 @@
 <div class="control-section">
     <div>
         <ejs-stockchart id='stockChartArea' [chartArea]='chartArea' [title]='title'
-            [titleStyle]='titleStyle' style="display:block;" [seriesType]='seriesType' [indicatorType]='indicatorType' [primaryXAxis]='primaryXAxis'
+            style="display:block;" [seriesType]='seriesType' [indicatorType]='indicatorType' [primaryXAxis]='primaryXAxis'
             [primaryYAxis]='primaryYAxis' [crosshair]='crosshair' (load)='load($event)'>
             <e-stockchart-series-collection>
-                <e-stockchart-series [dataSource]='data1' type='Area' xName='x' yName='high' name='google' fill='#BDEDE9'>
+                <e-stockchart-series [dataSource]='data1' type='Area' xName='x' yName='high' name='google' opacity='0.5'>
                 </e-stockchart-series>
             </e-stockchart-series-collection>
         </ejs-stockchart>

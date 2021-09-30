@@ -9,7 +9,7 @@ import { rippleEffect } from '@syncfusion/ej2-base';
     styleUrls: ['button-group.css'],
     encapsulation: ViewEncapsulation.None
 })
-  // To enable ripple in checkbox/radio type ButtonGroup.
+ // To enable ripple in checkbox/radio type ButtonGroup.
 export class ButtonGroupController implements OnInit {
     ngOnInit(): void {
         // To enable ripple in checkbox/radio type ButtonGroup.

@@ -13,6 +13,14 @@
     text-align: center;
 }
 
+body.material-dark .e-panel {
+  color: #ffffff;
+}
+
+body.tailwind-dark .e-dashboardlayout.e-control .e-panel {
+  border: 1px solid #d7d7d7;
+}
+
 #default_dashboard.e-dashboardlayout.e-control .e-panel .e-template-icon {
     padding: 10px;
     float: right;

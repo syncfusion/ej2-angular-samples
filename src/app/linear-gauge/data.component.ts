@@ -22,7 +22,8 @@ export class DataComponent {
     public load1(args1: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args1.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args1.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
             if (args1.gauge.theme.toLowerCase().indexOf('dark') > 1 || args1.gauge.theme.toLowerCase() === 'highcontrast') {
                 args1.gauge.annotations[1].content = '<div id="walk" style="width:100px;"><img style="height:25px;width:25px;' +
                     'float:left" src="./assets/linear-gauge/images/Running1.svg" /></span><p style="float:left;' +
@@ -32,7 +33,8 @@ export class DataComponent {
     public load2(args2: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args2.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args2.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
             if (args2.gauge.theme.toLowerCase().indexOf('dark') > 1 || args2.gauge.theme.toLowerCase() === 'highcontrast') {
                 args2.gauge.annotations[0].content = '<div id="walk" style="width:100px;"><img style="height:25px;width:25px;' +
                     'float:left" src="./assets/linear-gauge/images/Cycling1.svg" /></span><p style="float:left;' +
@@ -42,7 +44,8 @@ export class DataComponent {
     public load3(args3: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args3.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args3.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
             if (args3.gauge.theme.toLowerCase().indexOf('dark') > 1 || args3.gauge.theme.toLowerCase() === 'highcontrast') {
                 args3.gauge.annotations[0].content = '<div id="walk" style="width:100px;"><img style="height:25px;width:25px;' +
                     'float:left" src="./assets/linear-gauge/images/Walking1.svg" /></span><p style="float:left;' +

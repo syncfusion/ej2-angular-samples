@@ -1,7 +1,7 @@
 <div class="control-section">
     <div>
         <ejs-stockchart id='stockChartMultiSeries' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' [indicatorType]='indicatorType'
-            [trendlineType]='trendlineType' [title]='title' [crosshair]='crosshair' [legendSettings]='legend' [titleStyle]='titleStyle' style="display:block;"
+            [trendlineType]='trendlineType' [title]='title' [crosshair]='crosshair' [legendSettings]='legend' style="display:block;"
             [primaryYAxis]='primaryYAxis' (load)='load($event)'>
             <e-stockchart-series-collection>
                 <e-stockchart-series [dataSource]='data1' type='Spline' xName='x' yName='close' name='GOOG'>

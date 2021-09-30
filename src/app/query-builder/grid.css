@@ -1,7 +1,12 @@
 /* custom code start*/
-.e-querybuilder {
-    margin: 4% auto;
+.e-query-builder {
+    margin: 0 auto;
+    display: block;
 }
+
+ejs-querybuilder {
+    display: block;
+  }
 
 #Grid {
     margin: 0 auto;

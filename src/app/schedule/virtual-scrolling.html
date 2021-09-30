@@ -3,12 +3,12 @@
     <ejs-schedule #scheduleObj width='100%' cssClass='virtual-scrolling' height='650px' [currentView]="currentView"
       [selectedDate]="selectedDate" [group]="group" [eventSettings]="eventSettings">
       <e-resources>
-        <e-resource field='ResourceId' title='Resource' [dataSource]='resourceDataSource' [allowMultiple]='allowMultiple'
-          name='Resources' textField='Text' idField='Id' colorField='Color'>
+        <e-resource field='ResourceId' title='Resource' [dataSource]='resourceDataSource' name='Resources'
+          [allowMultiple]='allowMultiple' textField='Text' idField='Id' colorField='Color'>
         </e-resource>
       </e-resources>
       <e-views>
-        <e-view option="TimelineMonth" [allowVirtualScrolling]="virtualscroll">
+        <e-view option="TimelineMonth" [allowVirtualScrolling]="virtualScroll">
           <ng-template #eventTemplate let-data>
             <div class='template-wrap' [style.background]="data.PrimaryColor">
               <div class="subject" [style.background]="data.SecondaryColor">{{data.Subject}}</div>

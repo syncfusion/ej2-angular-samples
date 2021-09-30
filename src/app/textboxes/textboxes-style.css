@@ -1,37 +1,7 @@
-  .e-input-picture:before {
+  .e-upload-picture::before {
     content: '\e335';
     font-family: e-icons;
-  }
-
-  .bootstrap4 .e-input-picture:before {
-    content: '\e776';
-  }
-
-  .tailwind .e-input-picture:before {
-    content: '\e7da';
-  }
-
-  .tailwind .e-input-calendar:before {
-    content:'\e7b2';
-  }
-
-  .e-input-calendar:before {
-    content: '\e901';
-    font-family: e-icons;
-    font-size: 13px;
-  }
-
-  .fabric .e-input-calendar:before,
-  .highcontrast .e-input-calendar:before {
-    content:'\e93a';
-  }
-
-  .bootstrap .e-input-calendar:before {
-    content:'\e960';
-  }
-
-  .bootstrap4 .e-input-calendar:before {
-    content:'\e7be';
+    font-size: 14px;
   }
 
   .content-wrapper {
@@ -70,14 +40,63 @@
       margin-top: 0;
   }
 
-  .fabric .row.material2,
-  .bootstrap .row.material2,
-  .bootstrap4 .row.material2,
-  .highcontrast .row.material2,
-  .tailwind .row.material2 {
+  .fabric .row.material,
+  .bootstrap .row.material,
+  .bootstrap4 .row.material,
+  .highcontrast .row.material,
+  .tailwind .row.material,
+  .bootstrap5 .row.material,
+  .bootstrap5-dark .row.material,
+  .tailwind-dark .row.material,
+  .fabric-dark .row.material,
+  .bootstrap-dark .row.material {
       display: none;
   }
   
   #description td {
     vertical-align: top;
   }
+
+  .tailwind .e-upload-picture:before,
+  .tailwind-dark .e-upload-picture:before {
+      content: '\e7da';
+      font-size: 17px;
+  }
+
+  .e-bigger .e-upload-picture::before { 
+      font-size: 17px;
+  }
+
+  .tailwind.e-bigger .e-upload-picture:before,
+  .tailwind-dark.e-bigger .e-upload-picture:before {
+      font-size: 20px;
+  }
+
+  .bootstrap4 .e-upload-picture::before {
+      content: '\e769';
+      font-family: e-icons;
+  }
+
+  .bootstrap5 .e-upload-picture::before,
+  .bootstrap5-dark .e-upload-picture::before {
+      content: '\e712';
+      font-family: e-icons;
+  }
+
+  .small-textbox {
+    padding-top: 5px;
+}
+
+.tailwind .small-textbox,
+.tailwind-dark .small-textbox {
+    padding-top: 3px;
+}
+
+.e-bigger .small-textbox {
+    padding-top: 10px;
+}
+
+.tailwind.e-bigger .small-textbox,
+.tailwind-dark.e-bigger .small-textbox {
+    padding-top: 1px;
+}

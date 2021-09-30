@@ -14,6 +14,7 @@ import { scheduleData } from './data';
  */
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'control-content',
   templateUrl: 'print.html',
   styleUrls: ['print.style.css'],
@@ -21,26 +22,20 @@ import { scheduleData } from './data';
   encapsulation: ViewEncapsulation.None
 })
 export class PrintComponent {
-  @ViewChild('scheduleObj')
-  public scheduleObj: ScheduleComponent;
-  @ViewChild('printWithOptionsObj')
-  public printWithOptionsObj: CheckBoxComponent;
-  @ViewChild('heightObj')
-  public heightObj: DropDownListComponent;
-  @ViewChild('widthObj')
-  public widthObj: DropDownListComponent;
-  @ViewChild('selectedDateObj')
-  public selectedDateObj: DatePickerComponent;
+  @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;
+  @ViewChild('printWithOptionsObj') public printWithOptionsObj: CheckBoxComponent;
+  @ViewChild('heightObj') public heightObj: DropDownListComponent;
+  @ViewChild('widthObj') public widthObj: DropDownListComponent;
+  @ViewChild('selectedDateObj') public selectedDateObj: DatePickerComponent;
 
-  public selectedDate: Date = new Date(2019, 0, 10);
-  public eventSettings: EventSettingsModel = { dataSource: <Object[]>extend([], scheduleData, null, true) };
-
+  public selectedDate: Date = new Date(2021, 0, 10);
+  public eventSettings: EventSettingsModel = { dataSource: extend([], scheduleData, null, true) as Record<string, any>[] };
   public printHeightAndWidthData: string[] = ['auto', '100%', '500px'];
 
-  public onChange(args: { [key: string]: Object }): void {
-    let classList: string[] = ['.e-height-row', '.e-width-row', '.e-selected-date-row'];
-    for (let i: number = 0; i < classList.length; i++) {
-      let element: HTMLElement = document.querySelector(classList[i]);
+  public onChange(args: Record<string, any>): void {
+    const classLists: string[] = ['.e-height-row', '.e-width-row', '.e-selected-date-row'];
+    for (const classList of classLists) {
+      const element: HTMLElement = document.querySelector(classList);
       if (args.checked) {
         element.classList.remove('e-hide-row');
       } else {
@@ -51,7 +46,7 @@ export class PrintComponent {
 
   public onPrintClick(): void {
     if (this.printWithOptionsObj.checked) {
-      let printOptions: ScheduleModel = {
+      const printOptions: ScheduleModel = {
         height: this.heightObj.value as string,
         width: this.widthObj.value as string,
         selectedDate: this.selectedDateObj.value as Date
@@ -61,4 +56,5 @@ export class PrintComponent {
       this.scheduleObj.print();
     }
   }
+
 }

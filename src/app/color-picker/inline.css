@@ -14,6 +14,18 @@
 .highcontrast #inline-control h4 {
     color: rgba(255, 255, 255, 0.64);
 }
+.material-dark #inline-control h4 {
+    color: rgba(255, 255, 255, 0.64);
+}
+.fabric-dark #inline-control h4 {
+    color: rgba(255, 255, 255, 0.64);
+}
+.bootstrap-dark #inline-control h4 {
+    color: rgba(255, 255, 255, 0.64);
+}
+.tailwind-dark #inline-control h4 {
+    color: rgba(255, 255, 255, 0.64);
+}
 .e-bigger #inline-control h4 {
     font-size: 20px;
 }

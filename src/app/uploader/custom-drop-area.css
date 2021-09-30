@@ -45,8 +45,13 @@
     color: blue;
 }
 
-.highcontrast .dropControl_wrapper .sample_wrapper #dropArea #drop a {
-    color: #ffd939;
+.highcontrast .dropControl_wrapper .sample_wrapper #dropArea #drop a,
+.material-dark .dropControl_wrapper .sample_wrapper #dropArea #drop a,
+.fabric-dark .dropControl_wrapper .sample_wrapper #dropArea #drop a,
+.bootstrap-dark .dropControl_wrapper .sample_wrapper #dropArea #drop a,
+.bootstrap5-dark .dropControl_wrapper .sample_wrapper #dropArea #drop a,
+.tailwind-dark .dropControl_wrapper .sample_wrapper #dropArea #drop a {
+    color: #fff;
 }
 
 .dropControl_wrapper .sample_wrapper #dropArea {
@@ -81,7 +86,27 @@ span.dropText {
 }
 
 .highcontrast .dropArea_wrap {
-    background-color: #000;
+    background-color: #393939;
+}
+
+.material-dark .dropArea_wrap {
+    background-color: #616161;
+}
+
+.fabric-dark .dropArea_wrap {
+    background-color: #414040;
+}
+
+.bootstrap-dark .dropArea_wrap {
+    background-color: #393939;
+}
+
+.bootstrap5-dark .dropArea_wrap {
+    background-color: #6c757d;
+}
+
+.tailwind-dark .dropArea_wrap {
+    background-color: #6c757d;
 }
 
 .bootstrap4 .dropArea_wrap {
@@ -124,7 +149,7 @@ span.dropText {
 }
 
 .upload-success {
-    color: #107c10;
+    color: #5cb85c;
 }
 
 span.upload-status {

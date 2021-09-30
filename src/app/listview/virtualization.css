@@ -72,7 +72,7 @@
 
 /* ListView theme customization */
 
-.highcontrast #ui-list.e-listview .e-list-item,
+.highcontrast #ui-list.e-listview .e-list-item:not(.e-hover),
 .highcontrast #ui-list.e-listview .e-list-header {
   background: rgb(0, 0, 0);
 }

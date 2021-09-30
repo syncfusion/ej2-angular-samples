@@ -21,23 +21,32 @@
                     <div class="property-panel-header">Properties</div>
                     <div class="property-panel-content">
             <table id="property" title="Properties" style="width: 100%">
-                <tbody>
+                <colgroup>
+                    <col span="1" style="width: 50%;">
+                    <col span="1" style="width: 50%;">
+                </colgroup>
                     <tr style="height: 50px">
-                        <td style="width: 10%">
+                        <td>
                             <div class="property-text" style="padding: 0px;">Legend mode </div>
                         </td>
-                        <td style="width: 30%;">
+                        <td style="padding-left: 10px">
                             <select name="selectIndex" autocomplete="off" id="legendMode" style="width:60%;">
                                 <option value="Default" selected>Default</option>
                                 <option value="Interactive">Interactive</option>
                             </select>
                         </td>
                     </tr>
+                    </table>
+                    <table id="property" title="Properties" style="width: 100%">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
                     <tr style="height: 50px">
-                        <td style="width: 10%">
+                        <td>
                             <div class="property-text" style="padding: 0px;">Legend position </div>
                         </td>
-                        <td style="width: 30%">
+                        <td style="padding-left: 10px">
                             <select name="legendPos" autocomplete="off" id="legendPosition" style="width:60%;">
                                 <option value="Top" selected>Top</option>
                                 <option value="Bottom">Bottom</option>
@@ -46,27 +55,38 @@
                             </select>
                         </td>
                     </tr>
-                    <tr style="height: 50px">
-                        <td style="width: 70%">
+                    </table>
+                    <table id="property" title="Properties" style="width: 100%">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
+                    <tr style="height: 80px;">
+                        <td>
                             <div class="property-text" style="padding: 0px;">Show legend for remaining data source items</div>
                         </td>
-                        <td style="width: 20%">
-                            <div style="padding-top:0px; padding-left: 20px;">
+                        <td>
+                            <div style="padding-left: 10px">
                                 <input type="checkbox" id="opacity"/>
                             </div>
                         </td>
                     </tr>
+                    </table>
+                    <table id="property" title="Properties" style="width: 100%">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
                     <tr style="height: 50px">
-                        <td style="width: 70%">
-                            <div class="property-text" style="padding: 0px;">Show population density when the legend item is toggled</div>
+                        <td>
+                            <div class="property-text" style="padding: 0px; margin-top: 15px">Show population density when the legend item is toggled</div>
                         </td>
-                        <td style="width: 20%">
-                            <div style="padding-top:0px; padding-left: 20px;">
+                        <td>
+                            <div style="padding-left: 10px">
                                 <input type="checkbox" id="toggleLegend"/>
                             </div>
                         </td>
                     </tr>
-                </tbody>
             </table>
         </div>
         </div>

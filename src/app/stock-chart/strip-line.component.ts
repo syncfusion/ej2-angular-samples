@@ -29,7 +29,6 @@ export class StripLineComponent {
         }
     };
     public title: string = 'AAPL Historical';
-    public titleStyle: object = { color: 'black' };
     public enable: boolean = true;
     public seriesType: string[] = [];
     public indicatorType: string[] = [];

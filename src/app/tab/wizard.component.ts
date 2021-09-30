@@ -29,6 +29,8 @@ export class WizardTabComponent implements OnInit {
     @ViewChild('startPoint') startPoint: DropDownListComponent;
     @ViewChild('availableTrain') availTrainGrid: GridComponent;
     @ViewChild('pass_age1') passage1: NumericTextBoxComponent;
+    @ViewChild('pass_age2') passage2: NumericTextBoxComponent;
+    @ViewChild('pass_age3') passage3: NumericTextBoxComponent;
     @ViewChild('ticketDetailGrid') ticketDetailGrid: GridComponent;
     @ViewChild('pass_gender1') passgender1: DropDownListComponent;
     @ViewChild('pass_gender2') passgender2: DropDownListComponent;
@@ -53,6 +55,8 @@ export class WizardTabComponent implements OnInit {
     public dateMax: Date;
     public result: Object[] = [];
     public reserved: Object[] = [];
+    public trainDataSource: Object[] = [];
+    public ticketDataSource: Object[] = [];
 
     public ngOnInit(): void {
         document.body.style.visibility = 'hidden';
@@ -97,6 +101,10 @@ export class WizardTabComponent implements OnInit {
             buttonModel: { content: 'Ok', isPrimary: true },
             click: (() => {
                 this.alertDlg.hide();
+                this.input1.nativeElement.value = this.input2.nativeElement.value = this.input3.nativeElement.value = '';
+                this.passage1.value = this.passage2.value = this.passage3.value = 18;
+                this.passgender1.value = this.passgender2.value = this.passgender3.value = 'Male';
+                this.passBerth1.value = this.passBerth2.value = this.passBerth3.value = null;
                 this.tab.enableTab(0, true);
                 this.tab.enableTab(1, false);
                 this.tab.enableTab(2, false);
@@ -137,9 +145,11 @@ export class WizardTabComponent implements OnInit {
                     if (!isNOU(this.startPoint.value) && this.startPoint.value == this.endPoint.value) {
                         document.getElementById('err1').innerText = '* Arrival point cannot be same as Departure';
                     } else {
+                        this.result = [];
+                        this.filterTrains(e);
+                        this.trainDataSource = this.result;
                         this.tab.enableTab(1, true);
                         this.tab.enableTab(0, false);
-                        this.filterTrains(e);
                         document.getElementById('err1').innerText = '';
                         document.getElementById('err2').innerText = '';
                     }
@@ -162,10 +172,12 @@ export class WizardTabComponent implements OnInit {
                 if (this.input1.nativeElement.value === '' || isNOU(this.passgender1.value) || isNOU(this.passage1.value)) {
                     document.getElementById('err3').innerText = '* Please enter passenger details';
                 } else {
+                    this.reserved = []
                     this.tab.enableTab(3, true);
                     this.tab.enableTab(2, false);
                     document.getElementById('err3').innerText = '';
                     this.finalizeDetails(e);
+                    this.ticketDataSource = this.reserved;
                 }
                 break;
             case 'makePayment':
@@ -210,11 +222,6 @@ export class WizardTabComponent implements OnInit {
         }
     }
 
-
-      public availableTrainGridcreated(): void {
-        this.availTrainGrid.dataSource = this.result;
-      }
-
     public finalizeDetails(args: any): void {
         /* Get the passenger details and update table with name and other details for confirmation */
         let passCount: any = 0;
@@ -229,7 +236,7 @@ export class WizardTabComponent implements OnInit {
                 details.PassName = (i === 1) ? this.input1.nativeElement.value : (i === 2) ?
                     this.input2.nativeElement.value : this.input3.nativeElement.value;
                 details.Gender = (gender === '') ? 'Male' : gender;
-                details.Berth = (berth === '') ? 'Any' : berth;
+                details.Berth = (berth === null) ? 'Any' : berth;
                 if (details.PassName !== '') { this.reserved.push(details); }
                 passCount++;
             }
@@ -248,10 +255,6 @@ export class WizardTabComponent implements OnInit {
             }
         }
     }
-
-    public ticketDetailGridcreated(): void {
-        this.ticketDetailGrid.dataSource = this.reserved;
-      }
 }
 interface Details {
     TrainNo: number;

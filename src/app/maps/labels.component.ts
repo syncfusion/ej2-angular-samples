@@ -20,7 +20,8 @@ export class MapsLabelComponent {
     public load = (args: ILoadEventArgs) => { 
         let theme: string = location.hash.split('/')[1]; 
         theme = theme ? theme : 'Material'; 
-        args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() + theme.slice(1));
+        args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() +
+        theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     public zoomSettings: object = {
@@ -49,7 +50,7 @@ export class MapsLabelComponent {
         let smartlabelmode: DropDownList = new DropDownList({
         index: 0,
         placeholder: 'Select smartlabel mode',
-        width: 120,
+        width: '100%',
             change: () => {
                 let mode: string = <string>smartlabelmode.value.toString();                
                 switch(mode){
@@ -73,7 +74,7 @@ export class MapsLabelComponent {
         let intersectaction: DropDownList = new DropDownList({
             index: 0,
             placeholder: 'Select intersect action',
-            width: 120,
+            width: '100%',
             change: () => {
                 let mode: string = <string>intersectaction.value.toString();
                 switch(mode){

@@ -6,6 +6,7 @@ import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
 import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 import { RichTextEditorComponent, ToolbarService, LinkService, ImageService } from '@syncfusion/ej2-angular-richtexteditor';
 import { HtmlEditorService, CountService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
+import { DropDownListComponent, FieldSettingsModel } from '@syncfusion/ej2-angular-dropdowns';
 @Component({
     selector: 'control-content',
     templateUrl: 'api.html',

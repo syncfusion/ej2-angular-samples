@@ -4,7 +4,7 @@
     </p>
 </div>
 <div class="control-section">
-    <div class="col-lg-9">
+    <div class="col-lg-8">
         <ejs-circulargauge id='gauge' style='display:block;' #gauge='' [allowPrint]='allowPrint' [allowPdfExport]='allowPdfExport' [allowImageExport]='allowImageExport'  (load)='load($event)'>
             <e-axes>
                 <e-axis radius='80%' startAngle=0 endAngle=0 [majorTicks]='majorTicks' [minorTicks]='minorTicks'
@@ -13,12 +13,15 @@
             </e-axes>
         </ejs-circulargauge>
     </div>
-    <div class="col-lg-3 property-section">
+    <div class="col-lg-4 property-section">
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
-                <table id="property" title="Properties">
-                    <tbody>
+                <table id="property" title="Properties" style="width: 100%">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
                         <tr style="height: 50px;">
                             <td>
                                 <div>Export Type</div>
@@ -40,25 +43,30 @@
                             </td>
                             <td>
                                 <div class="e-float-input" style='margin-top: 0px;'>
-                                    <input type="text" value="Gauge" id="fileName">
+                                    <input type="text" value="Gauge" id="fileName" style="width: 90%">
                                 </div>
                             </td>
                         </tr>
-                        <tr id="button-control" style="height: 50px">
+                        </table>
+                        <table id="property" title="Properties" style="width: 100%">
+                            <colgroup>
+                                <col span="1" style="width: 50%;">
+                                <col span="1" style="width: 50%;">
+                            </colgroup>
+                        <tr id="button-control" style="height: 70px;">
                             <td>
-                                <div style="padding-left: -25px;">
+                                <div style="text-align: center;">
                                     <button ejs-button iconCss='e-icons e-play-icon' cssClass='e-flat' isPrimary=true
-                                        (click)='onClickExport($event)' content="Export" id="export">EXPORT</button>
+                                        (click)='onClickExport($event)' content="Export" id="export" style="width:90px">EXPORT</button>
                                 </div>
                             </td>
                             <td>
-                                <div style="padding-left: -25px;">
+                                <div style="text-align: center;">
                                     <button ejs-button iconCss='e-icons e-play-icon1' cssClass='e-flat' isPrimary=true
-                                        (click)='onClickPrint($event)' content="Print" id="print">PRINT</button>
+                                        (click)='onClickPrint($event)' content="Print" id="print" style="width: 90px">PRINT</button>
                                 </div>
                             </td>
                         </tr>
-                    </tbody>
                 </table>
             </div>
         </div>
@@ -82,6 +90,50 @@
 
     .e-play-icon1::before {
         content: '\e813';
+    }
+
+    .e-view.fabric .e-play-icon1::before, .e-view.fabric-dark .e-play-icon1::before  {
+        content: '\e7df';
+    }
+
+    .e-view.fabric .e-play-icon::before, .e-view.fabric-dark .e-play-icon::before {
+        content: '\e710';
+    }
+
+    .e-view.bootstrap .e-play-icon1::before, .e-view.bootstrap-dark .e-play-icon1::before {
+        content: '\e34b';
+    }
+
+    .e-view.bootstrap4 .e-play-icon::before {
+        content: '\e780';
+    }
+
+    .e-view.bootstrap4 .e-play-icon1::before {
+        content: '\e743';
+    }
+
+    .e-view.tailwind .e-play-icon1::before, .e-view.tailwind-dark .e-play-icon1::before {
+        content: '\e76c';
+    }
+
+    .e-view.tailwind .e-play-icon::before, .e-view.tailwind-dark .e-play-icon::before {
+        content: '\e7bf';
+    }
+
+    .e-view.highcontrast .e-play-icon1::before {
+        content: '\ebf9';
+    }
+
+    .e-view.highcontrast .e-play-icon::before {
+        content: '\e710';
+    }
+
+    .e-view.bootstrap5 .e-play-icon1::before, .e-view.bootstrap5-dark .e-play-icon1::before {
+        content: '\e75d';
+    }
+
+    .e-view.bootstrap5 .e-play-icon::before, .e-view.bootstrap5-dark .e-play-icon::before {
+        content: '\e72e';
     }
 </style>
 <!-- custom code end -->

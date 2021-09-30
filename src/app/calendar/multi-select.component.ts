@@ -21,7 +21,7 @@ export class MultiSelectionComponent {
         sourceFiles.files = ['calendar-style.css'];
     }
     onValueChange(): void {
-        let element: HTMLElement = document.getElementById('multiSelect');
+        let element: HTMLElement = document.getElementById('multiselect');
         let tag: HTMLElement = document.createElement('br');
         element.innerHTML = '';
         element.appendChild(tag);

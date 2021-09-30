@@ -11,7 +11,7 @@
                 <e-axis radius='95%' [lineStyle]='lineStyle1' [labelStyle]='labelStyle1' [majorTicks]='majorTicks1' [minorTicks]='minorTicks1'
                     minimum=0 maximum=160 startAngle=220 endAngle=140>
                     <e-pointers>
-                        <e-pointer value=80 radius='100%' pointerWidth="20" color="#333333" [markerHeight]='markerHeight' [markerWidth]='markerWidth'
+                        <e-pointer value=80 radius='100%' pointerWidth="20"  [markerHeight]='markerHeight' [markerWidth]='markerWidth'
                             type='Marker' markerShape='Triangle'>
                         </e-pointer>
                     </e-pointers>
@@ -31,8 +31,12 @@
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
-                <table id="property" title="Properties" class="property-panel-table" style="width: 100%; margin:10px">
-                    <tr>
+                <table id="property" title="Properties" class="property-panel-table" style="width: 100%; margin-left: -10px;">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
+                    <tr style="height: 50px">
                         <td>
                             <div> Axis </div>
                         </td>
@@ -44,8 +48,14 @@
                         </select>
                             </div>
                         </td>
-                    </tr>&nbsp;
-                    <tr>
+                    </tr>
+                    </table>
+                    <table id="property" title="Properties" class="property-panel-table" style="width: 100%; margin-left: -10px;">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
+                    <tr style="height: 50px">
                         <td>
                             <div> Direction </div>
                         </td>
@@ -57,25 +67,45 @@
                         </select>
                             </div>
                         </td>
-                    </tr>&nbsp;
-                    <tr>
+                    </tr>
+                    </table>
+                    <table id="property" title="Properties" class="property-panel-table" style="width: 100%; margin-left: -10px;">
+                        <colgroup>
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 35%;">
+                            <col span="1" style="width: 20%;">
+                        </colgroup>
+                    <tr style="height: 50px">
                         <td>
-                            <div id='start'>Start Angle <span> &nbsp;&nbsp;&nbsp;220</span> </div>
+                            <div>Start Angle</div>
                         </td>
-                        <td>
+                        <td style="width: 40%">
                             <div>
-                                <input type="range" id="startAngle" value="220" min="0" max="360" style="width:90%" />
+                                <input type="range" id="startAngle" value="220" min="0" max="360"/>
                             </div>
                         </td>
-                    </tr>&nbsp;
-                    <tr>
-                        <td>
-                            <div id='end'>End Angle <span> &nbsp;&nbsp;&nbsp;140</span> </div>
+                        <td style="text-align: center; padding-top: 10px; padding-left: 3%">
+                            <span id='start'>220</span>
                         </td>
+                    </tr>
+                    </table>
+                    <table id="property" title="Properties" class="property-panel-table" style="width: 100%; margin-left: -10px;">
+                        <colgroup>
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 35%;">
+                            <col span="1" style="width: 20%;">
+                        </colgroup>
+                    <tr style="height: 50px">
                         <td>
+                            <div>End Angle</div>
+                        </td>
+                        <td style="width: 40%">
                             <div>
-                                <input type="range" id="endAngle" value="140" min="0" max="360" style="width:90%" />
+                                <input type="range" id="endAngle" value="140" min="0" max="360" />
                             </div>
+                        </td>
+                        <td style="text-align: center; padding-top: 10px; padding-left: 3%">
+                            <span id='end'>140</span>
                         </td>
                     </tr>
                 </table>

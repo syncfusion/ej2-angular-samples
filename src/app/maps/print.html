@@ -26,19 +26,43 @@
 </div>
 <!-- custom code start -->
 <style>
-#button-control {
-width: 100%;
-text-align: center;
-text-transform:none !important
-}
+    #button-control {
+        width: 100%;
+        text-align: center;
+       text-transform:none !important
+    }
 
-#control-container {
-padding: 0px !important;
-}
+    #control-container {
+        padding: 0px !important;
+    }
 
-.e-play-icon::before {
-    content: '\e813';
-}
+   .e-play-icon::before {
+        content: '\e813';
+    }
+
+   .e-view.fabric .e-play-icon::before, .e-view.fabric-dark .e-play-icon::before  {
+        content: '\e7df';
+    }
+
+    .e-view.bootstrap .e-play-icon::before, .e-view.bootstrap-dark .e-play-icon::before {
+        content: '\e34b';
+    }
+
+    .e-view.bootstrap4 .e-play-icon::before {
+        content: '\e743';
+    }
+
+    .e-view.highcontrast .e-play-icon::before {
+        content: '\ebf9';
+    }
+
+    .e-view.tailwind .e-play-icon::before, .e-view.tailwind-dark .e-play-icon::before {
+        content: '\e76c';
+    }
+
+    .e-view.bootstrap5 .e-play-icon::before, .e-view.bootstrap5-dark .e-play-icon::before {
+        content: '\e75d';
+    }
 </style>
 <!-- custom code end -->
  <div id="action-description">

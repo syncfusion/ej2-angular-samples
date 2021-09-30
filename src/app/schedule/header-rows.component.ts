@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {
-    ScheduleComponent, EventSettingsModel, View, TimelineMonthService,
-    ResizeService, EventRenderedArgs, DragAndDropService, CellTemplateArgs, getWeekNumber, getWeekLastDate
+  ScheduleComponent, EventSettingsModel, View, TimelineMonthService, ResizeService,
+  EventRenderedArgs, DragAndDropService, CellTemplateArgs, getWeekNumber, getWeekLastDate
 } from '@syncfusion/ej2-angular-schedule';
 import { headerRowData } from './data';
 import { extend, Internationalization } from '@syncfusion/ej2-base';
@@ -11,35 +11,37 @@ import { extend, Internationalization } from '@syncfusion/ej2-base';
  */
 
 @Component({
-    selector: 'control-content',
-    templateUrl: 'header-rows.html',
-    providers: [TimelineMonthService, ResizeService, DragAndDropService]
+  // tslint:disable-next-line:component-selector
+  selector: 'control-content',
+  templateUrl: 'header-rows.html',
+  providers: [TimelineMonthService, ResizeService, DragAndDropService]
 })
 export class HeaderRowsComponent {
-    public scheduleObj: ScheduleComponent;
-    public selectedDate: Date = new Date(2018, 0, 1);
-    public eventSettings: EventSettingsModel = { dataSource: <Object[]>extend([], headerRowData, null, true) };
-    public monthInterval: Number = 12;
-    public currentView: View = 'TimelineMonth';
-    public instance: Internationalization = new Internationalization();
-    getMonthDetails(value: CellTemplateArgs): string {
-        return this.instance.formatDate((value as CellTemplateArgs).date, { skeleton: 'yMMMM' });
-    }
+  public scheduleObj: ScheduleComponent;
+  public selectedDate: Date = new Date(2021, 0, 1);
+  public eventSettings: EventSettingsModel = { dataSource: extend([], headerRowData, null, true) as Record<string, any>[] };
+  public monthInterval = 12;
+  public currentView: View = 'TimelineMonth';
+  public instance: Internationalization = new Internationalization();
 
-    getWeekDetails(value: CellTemplateArgs): string {
-        return 'Week ' + getWeekNumber(getWeekLastDate((value as CellTemplateArgs).date, 0));
-    }
+  public getMonthDetails(value: CellTemplateArgs): string {
+    return this.instance.formatDate((value as CellTemplateArgs).date, { skeleton: 'yMMMM' });
+  }
 
-    onEventRendered(args: EventRenderedArgs): void {
-        const categoryColor: string = args.data.CategoryColor as string;
-        if (!args.element || !categoryColor) {
-            return;
-        }
-        if (this.currentView === 'Agenda') {
-            (args.element.firstChild as HTMLElement).style.borderLeftColor = categoryColor;
-        } else {
-            args.element.style.backgroundColor = categoryColor;
-        }
+  public getWeekDetails(value: CellTemplateArgs): string {
+    return 'Week ' + getWeekNumber(getWeekLastDate((value as CellTemplateArgs).date, 0));
+  }
+
+  public onEventRendered(args: EventRenderedArgs): void {
+    const categoryColor: string = args.data.CategoryColor as string;
+    if (!args.element || !categoryColor) {
+      return;
     }
+    if (this.currentView === 'Agenda') {
+      (args.element.firstChild as HTMLElement).style.borderLeftColor = categoryColor;
+    } else {
+      args.element.style.backgroundColor = categoryColor;
+    }
+  }
+
 }
-

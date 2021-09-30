@@ -31,5 +31,6 @@ export class NumberFormattingController {
         this.spreadsheetObj.cellFormat({ backgroundColor: '#B3E5FC' }, 'A15:E17');
         this.spreadsheetObj.numberFormat('$#,##0.00', 'D4:E14');
         this.spreadsheetObj.numberFormat('$#,##0.00', 'E15:E17');
+        this.spreadsheetObj.numberFormat('[Red][<=350]$#,##0.00;[Blue][>350]$#,##0.00', 'E4:E14');
     }
 }

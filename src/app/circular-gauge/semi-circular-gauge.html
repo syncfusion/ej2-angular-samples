@@ -23,73 +23,132 @@
                     <div class="property-panel-header">Properties</div>
                             <div class="property-panel-content">
         <table id="property" title="Properties" style="width: 100%">
+            <colgroup>
+                <col span="1" style="width: 45%;">
+                <col span="1" style="width: 35%;">
+                <col span="1" style="width: 20%;">
+            </colgroup>
             <tr style="height: 50px">
                 <td>
-                    <div id='rangeStart'>Start Angle <span> &nbsp;&nbsp;&nbsp;270°</span> </div>
+                    <div>Start Angle </div>
                 </td>
                 <td>
                     <div>
-                        <input type="range" id="start" value="270" min="0" max="360" style="width:90%" />
+                        <input type="range" id="start" value="270" min="0" max="360"/>
                     </div>
                 </td>
+                <td style="text-align: center; padding-left: 5px">
+                    <span id='rangeStart'>270°&nbsp;</span>
+                </td>
             </tr>
-    
+    </table>
+    <table id="property" title="Properties" style="width: 100%">
+        <colgroup>
+            <col span="1" style="width: 45%;">
+            <col span="1" style="width: 35%;">
+            <col span="1" style="width: 20%;">
+        </colgroup>
             <tr style="height: 50px">
                 <td>
-                    <div id='rangeEnd'>End Angle<span> &nbsp;&nbsp;&nbsp;90°</span> </div>
+                    <div>End Angle</div>
                 </td>
                 <td>
                     <div>
-                        <input type="range" id="end" value="90" min="0" max="360" style="width:90%" />
+                        <input type="range" id="end" value="90" min="0" max="360" />
                     </div>
                 </td>
+                <td style="text-align: center; padding-left: 5px">
+                    <span id='rangeEnd'>90°&nbsp;</span>
+                </td>
             </tr>
+        </table>
+        <table id="property" title="Properties" style="width: 100%">
+            <colgroup>
+                <col span="1" style="width: 45%;">
+                <col span="1" style="width: 35%;">
+                <col span="1" style="width: 20%;">
+            </colgroup>
             <tr style="height: 50px">
                 <td>
-                    <div id='radius1'>Radius <span> &nbsp;&nbsp;&nbsp;80%</span> </div>
+                    <div>Radius</div>
                 </td>
                 <td>
                     <div>
-                        <input type="range" id="radius" value="80" min="0" max="100" style="width:90%" />
+                        <input type="range" id="radius" value="80" min="0" max="100" />
                     </div>
                 </td>
+                <td style="text-align: center; padding-left: 5px">
+                    <span id='radius1'>80%&nbsp;</span>
+                </td>
             </tr>
-            <tr >
-                <td style="width: 40%">
-                    <div class="property-text"> Radius based on angle</div>
+        </table>
+        <table id="property" title="Properties" style="width: 100%">
+            <colgroup>
+                <col span="1" style="width: 50%;">
+                <col span="1" style="width: 50%;">
+            </colgroup>
+            <tr style="height: 50px;">
+                <td>
+                    <div class="property-text" style="width: 80%;"> Radius based on angle</div>
                 </td>
                 <td style="width: 40%;">
-                    <div style="padding-left: 10%;">
+                    <div style="margin-left: -11%;">
                         <input type="checkbox" id="angle" checked/>
                     </div>
                 </td>
         </tr>
+        </table>
+        <table id="property" title="Properties" style="width: 100%">
+            <colgroup>
+                <col span="1" style="width: 45%;">
+                <col span="1" style="width: 35%;">
+                <col span="1" style="width: 20%;">
+            </colgroup>
             <tr style="height: 50px">
                 <td>
-                    <div id='center1'>Center X <span> &nbsp;&nbsp;&nbsp;50%</span> </div>
+                    <div>Center X</div>
                 </td>
                 <td>
                     <div>
-                        <input type="range" id="centerX" value="50" min="0" max="100" style="width:90%" />
+                        <input type="range" id="centerX" value="50" min="0" max="100" />
                     </div>
                 </td>
+                <td style="text-align: center; padding-left: 5px">
+                    <span  id='center1'>50%&nbsp;</span> 
+                </td>
             </tr>
+            </table>
+            <table id="property" title="Properties" style="width: 100%">
+                <colgroup>
+                    <col span="1" style="width: 45%;">
+                    <col span="1" style="width: 35%;">
+                    <col span="1" style="width: 20%;">
+                </colgroup>
             <tr style="height: 50px">
                 <td>
-                    <div id='center2'>Center Y <span> &nbsp;&nbsp;&nbsp;50%</span> </div>
+                    <div>Center Y </div>
                 </td>
                 <td>
                     <div>
-                        <input type="range" id="centerY" value="50" min="0" max="100" style="width:90%" />
+                        <input type="range" id="centerY" value="50" min="0" max="100"/>
                     </div>
                 </td>
+                <td style="text-align: center; padding-left: 5px">
+                    <span id='center2'>50%&nbsp;</span>
+                </td>
             </tr>
-            <tr >
-                <td style="width: 40%">
-                    <div class="property-text">Hide intersecting labels</div>
+            </table>
+            <table id="property" title="Properties" style="width: 100%">
+                <colgroup>
+                    <col span="1" style="width: 50%;">
+                    <col span="1" style="width: 50%;">
+                </colgroup>
+            <tr style="height: 50px;">
+                <td>
+                    <div class="property-text" style="width: 80%;">Hide intersecting labels</div>
                 </td>
                 <td style="width: 40%;">
-                    <div style="padding-left: 10%;">
+                    <div style="margin-left: -11%;">
                         <input type="checkbox" id="hidelabel" checked/>
                     </div>
                 </td>

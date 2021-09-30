@@ -28,7 +28,8 @@ export class LabelComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     //Initializing Border
@@ -62,7 +63,7 @@ export class LabelComponent {
             },
             '#enable');
         this.ticks = new DropDownList({
-            index: 0, width: 120,
+            index: 0, width: '100%',
             change: () => {
                 let value: string = this.ticks.value.toString();
                 let tick: TickModel; this.isMajorTicks = value === 'major';
@@ -74,14 +75,14 @@ export class LabelComponent {
                 this.tickPosition.value = tick.position;
                 (<HTMLInputElement>document.getElementById('tickOffset')).value = tick.offset.toString();
                 (<HTMLInputElement>document.getElementById('tickHeight')).value = tick.height.toString();
-                document.getElementById('offset').innerHTML = 'Tick Offset <span>&nbsp;&nbsp;&nbsp;' + tick.offset;
-                document.getElementById('height').innerHTML = 'Tick Height <span>&nbsp;&nbsp;&nbsp;' + tick.height;
+                document.getElementById('offset').innerHTML = tick.offset.toString();
+                document.getElementById('height').innerHTML = tick.height.toString();
             }
         });
         this.ticks.appendTo('#Ticks');
     
         this.tickPosition = new DropDownList({
-            index: 0, width: 120,
+            index: 0, width: '100%',
             change: () => {
                 let value: string = this.tickPosition.value.toString();
                 if (this.isMajorTicks) {
@@ -95,7 +96,7 @@ export class LabelComponent {
         this.tickPosition.appendTo('#tickposition');
     
         this.labelPosition = new DropDownList({
-            index: 0, width: 100,
+            index: 0, width: '100%',
             change: () => {
                 this.circulargauge.axes[0].labelStyle.position = <Position>this.labelPosition.value.toString();
                 this.circulargauge.refresh();
@@ -112,7 +113,7 @@ export class LabelComponent {
                 } else {
                     this.circulargauge.axes[0].minorTicks.offset = value;
                 }
-                document.getElementById('offset').innerHTML = 'Tick Offset <span>&nbsp;&nbsp;&nbsp;' + value;
+                document.getElementById('offset').innerHTML = value.toString();
                 this.circulargauge.refresh();
             };
 
@@ -124,7 +125,7 @@ export class LabelComponent {
                 } else {
                     this.circulargauge.axes[0].minorTicks.height = value;
                 }
-                document.getElementById('height').innerHTML = 'Tick Height <span>&nbsp;&nbsp;&nbsp;' + value;
+                document.getElementById('height').innerHTML = value.toString();
                 this.circulargauge.refresh();
             };
 
@@ -132,7 +133,7 @@ export class LabelComponent {
             document.getElementById('labelOffset').onchange = () => {
                 let value: number = parseInt((<HTMLInputElement>document.getElementById('labelOffset')).value, 10);
                 this.circulargauge.axes[0].labelStyle.offset = value;
-                document.getElementById('labelOffsetValue').innerHTML = 'Label Offset <span>&nbsp;&nbsp;&nbsp;' + value;
+                document.getElementById('labelOffsetValue').innerHTML = value.toString();
                 this.circulargauge.refresh();
             };
             document.getElementById('enable').onchange = () => {

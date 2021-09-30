@@ -17,58 +17,63 @@
     </div>
 </div>
 <div class="col-lg-4 property-section property-custom">
-    <table id="property" title="Properties">
-        <tbody>
-            <tr>
-                <td style="width: 50%">
-                    <div class="labeltext">MinStart</div>
-                </td>
-                <td style="width: 50%">
-                    <ejs-numerictextbox id='minStart' #minStart [value]="10" [min]="0" [max]="100" (change)='minStartChange($event)'></ejs-numerictextbox>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 50%">
-                    <div class="labeltext">MinEnd</div>
-                </td>
-                <td style="width: 50%">
-                    <ejs-numerictextbox id='minEnd' #minEnd [value]="40" [min]="0" [max]="100" (change)='minEndChange($event)'></ejs-numerictextbox>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 50%">
-                    <div class="labeltext">MaxStart</div>
-                </td>
-                <td style="width: 50%">
-                    <ejs-numerictextbox id='maxStart' #maxStart [value]="60" [min]="0" [max]="100" (change)='maxStartChange($event)'></ejs-numerictextbox>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 50%">
-                    <div class="labeltext">MaxEnd</div>
-                </td>
-                <td style="width: 50%">
-                    <ejs-numerictextbox id='maxEnd' #maxEnd [value]="90" [min]="0" [max]="100" (change)='maxEndChange($event)'></ejs-numerictextbox>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 50%">
-                    <div class="labeltext">Lock First Handle</div>
-                </td>
-                <td style="width: 50%">
-                    <ejs-checkbox #fixedOne (change)="fixOne($event)"></ejs-checkbox>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 50%">
-                    <div class="labeltext">Lock Second Handle</div>
-                </td>
-                <td style="width: 50%">
-                    <ejs-checkbox #fixedSecond (change)="fixSecond($event)"></ejs-checkbox>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+            <table id="property" title="Properties">
+                <tbody>
+                    <tr>
+                        <td style="width: 50%">
+                            <div class="labeltext">MinStart</div>
+                        </td>
+                        <td style="width: 50%">
+                            <ejs-numerictextbox id='minStart' #minStart [value]="10" [min]="0" [max]="100" (change)='minStartChange($event)'></ejs-numerictextbox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%">
+                            <div class="labeltext">MinEnd</div>
+                        </td>
+                        <td style="width: 50%">
+                            <ejs-numerictextbox id='minEnd' #minEnd [value]="40" [min]="0" [max]="100" (change)='minEndChange($event)'></ejs-numerictextbox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%">
+                            <div class="labeltext">MaxStart</div>
+                        </td>
+                        <td style="width: 50%">
+                            <ejs-numerictextbox id='maxStart' #maxStart [value]="60" [min]="0" [max]="100" (change)='maxStartChange($event)'></ejs-numerictextbox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%">
+                            <div class="labeltext">MaxEnd</div>
+                        </td>
+                        <td style="width: 50%">
+                            <ejs-numerictextbox id='maxEnd' #maxEnd [value]="90" [min]="0" [max]="100" (change)='maxEndChange($event)'></ejs-numerictextbox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%">
+                            <div class="labeltext">Lock First Handle</div>
+                        </td>
+                        <td style="width: 50%">
+                            <ejs-checkbox #fixedOne (change)="fixOne($event)"></ejs-checkbox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%">
+                            <div class="labeltext">Lock Second Handle</div>
+                        </td>
+                        <td style="width: 50%">
+                            <ejs-checkbox #fixedSecond (change)="fixSecond($event)"></ejs-checkbox>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 <div id="description">
     <p>

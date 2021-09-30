@@ -1,7 +1,7 @@
 <div class="control-section">
     <div>
         <ejs-stockchart id='stockChartDefault' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' style="display:block;"
-            [primaryYAxis]='primaryYAxis' [title]='title' [titleStyle]='titleStyle' [crosshair]='crosshair'
+            [primaryYAxis]='primaryYAxis' [title]='title' [crosshair]='crosshair'
             (tooltipRender)='tooltipRender($event)' [tooltip]='tooltip' (load)='load($event)'>
             <e-stockchart-series-collection>
                 <e-stockchart-series [dataSource]='data1' type='Candle' xName='x' yName='high' high='high' low='low'>

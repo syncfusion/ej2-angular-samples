@@ -1,6 +1,6 @@
-.e-tab .e-content .e-item {
+#adaptiveTab .e-content .e-item {
     font-size: 12px;
-    padding: 10px;
+    padding: 10px !important;
     text-align: justify;
 }
 @font-face {
@@ -15,12 +15,6 @@
 #tab_default .e-icons.e-tab-icon {
     position: relative;
     top: 1px;
-}
-#tab_default .e-tab-header .e-toolbar-items .e-indicator,
-#tab_orientation .e-tab-header .e-toolbar-items .e-indicator,
-#tab_adaptive .e-tab-header .e-toolbar-items .e-indicator,
-#tab_wizard .e-tab-header .e-toolbar-items .e-indicator {
-    background: #e3165b !important;
 }
 .e-twitter:before {
     content: '\a701';
@@ -95,4 +89,5 @@
 /* custom code end*/
 #tab_orientation .e-listview:not(.e-list-template) .e-list-item {
     height: 63px;
+    padding: 0 16px !important;
 }

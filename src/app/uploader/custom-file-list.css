@@ -138,15 +138,44 @@
     content: '\e773';
 }
 
-.tailwind .close-icon-container.e-icons::before {
+.bootstrap5 .close-icon-container.delete-icon::before,
+.bootstrap5-dark .close-icon-container.delete-icon::before {
+    content: '\e820';
+}
+
+.fabric .close-icon-container.delete-icon::before,
+.fabric-dark .close-icon-container.delete-icon::before {
+    content: '\e965';
+}
+
+.highcontrast .close-icon-container.delete-icon::before {
+    content: '\e84e';
+}
+
+.tailwind .close-icon-container.e-icons::before,
+.tailwind-dark .close-icon-container.e-icons::before {
     content: '\e771';
+}
+
+.fabric .close-icon-container.e-icons::before,
+.fabric-dark .close-icon-container.e-icons::before,
+.bootstrap .close-icon-container.e-icons::before,
+.bootstrap-dark .close-icon-container.e-icons::before,
+.highcontrast .close-icon-container.e-icons::before {
+    content: '\e7fc';
+}
+
+.bootstrap5 .close-icon-container.e-icons::before,
+.bootstrap5-dark .close-icon-container.e-icons::before {
+    content: '\e7e7';
 }
 
 .tailwind .close-icon-container.e-icons {
     top: 10px;
 }
 
-.tailwind .close-icon-container.delete-icon::before {
+.tailwind .close-icon-container.delete-icon::before,
+.tailwind-dark .close-icon-container.delete-icon::before {
     content: '\e78d';
 }
 
@@ -256,4 +285,19 @@
 }
 .highcontrast .uploadtemplate span a {
     color: #ffd939;
+}
+.material-dark .uploadtemplate span a {
+    color:#56a4fd;
+}
+.fabric-dark .uploadtemplate span a {
+    color:#0074cc;
+}
+.bootstrap-dark .uploadtemplate span a {
+    color:#0070f0;
+}
+.bootstrap5-dark .uploadtemplate span a {
+    color:#0d6efd;
+}
+.tailwind-dark .uploadtemplate span a {
+    color:#22d3ee;
 }

@@ -30,6 +30,7 @@ export class DisabledPeriodComponent {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.stockChart.series[0].fill = 'url(#' + selectedTheme.toLowerCase() + '-gradient-chart)';
     };
     public tooltipRender(args: ITooltipRenderEventArgs): void {
         if (args.text.split('<br/>')[4]) {

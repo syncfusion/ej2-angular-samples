@@ -127,3 +127,13 @@ text-align: center;
   -webkit-appearance: none; 
   margin: 0; 
 }
+.highcontrast #control_wrapper.control_wrapper,
+.material-dark #control_wrapper.control_wrapper,
+.fabric-dark #control_wrapper.control_wrapper,
+.bootstrap-dark #control_wrapper.control_wrapper,
+.bootstrap5-dark #control_wrapper.control_wrapper {
+    background: #393939;
+}
+.tailwind-dark #control_wrapper.control_wrapper { 
+    background: #6c757d;
+}

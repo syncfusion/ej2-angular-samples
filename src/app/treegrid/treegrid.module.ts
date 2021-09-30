@@ -67,10 +67,11 @@ import { DefaultScrollingComponent } from './default-scrolling.component';
 import { VirtualScrollingComponent } from './virtual-scrolling.component';
 import { ColumnChooserComponent } from './columnchooser.component';
 import { InfiniteScrollingComponent } from './infinite-scrolling.component';
+import { FrozenAPI } from './frozen-api.component';
 
 export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/treegrid-overview', component: TreeGridOverviewComponent, 'name': 'Overview',
-    description: 'This demo for Essential JS2 Tree Grid component shows basic Tree Grid features such as sorting, filtering, conditional formatting, column template and scrolling.', 
+    description: 'This Angular Tree Grid example demonstrates the overview in Angular Tree Grid Component. Explore here for more details.', 
     order: '01', category: 'TreeGrid' },
     { 'path': ':theme/treegrid/default', component: DefaultComponent, 'name': 'Default Functionalities',
     description: 'This demo for Essential JS2 Tree Grid component shows the default rendering of the Tree Grid  component with minimum configuration.', 
@@ -123,9 +124,6 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/checkbox-column', component: CheckboxColumnComponent, 'name': 'Checkbox Column',
     description: 'This demo explains how the hierarchy selection between the records using column checkboxes in Essential TypeScript Tree Grid control.', 
     order: '03', category: 'Columns' },
-    { 'path': ':theme/treegrid/frozen-column', component: FreezeComponent, 'name': 'Frozen Column',
-    description: 'This demo for Essential JS 2 Tree Grid control shows frozen columns feature of Tree Grid. Scroll the movable content to view the frozen columns.', 
-    order: '03', category: 'Columns'},
     { 'path': ':theme/treegrid/row-hover', component: RowHover, 'name': 'Row Hover', 
     description: 'This demo explains how the Tree Grid row color is changed while move the mouse over a row in Syncfusion Essential JS2 Tree Grid content.', 
     order: '04', category: 'Rows' },
@@ -210,39 +208,45 @@ export const treegridRouteConfig: Object[] = [
     // { 'path': ':theme/treegrid/custom-aggregate', component: CustomAggregateComponent, 'name': 'Custom Aggregate', 
     // description: 'This demo explains how to display the custom aggregate for the columns in Syncfusion Essential JS2 Tree Grid control.', 
     // order: '10', category: 'Aggregates' },
+    { 'path': ':theme/treegrid/frozen-column', component: FreezeComponent, 'name': 'Frozen Column',
+    description: 'This demo for Essential JS 2 Tree Grid control shows frozen columns feature of Tree Grid. Scroll the movable content to view the frozen columns.', 
+    order: '11', category: 'Frozen'},
+    { 'path': ':theme/treegrid/frozen-api', component: FrozenAPI, 'name': 'Freeze Direction', 'type':'new',
+    description: 'This demo for Essential JS 2 Tree Grid control shows frozen columns feature of Tree Grid with Freeze direction Left/Right.', 
+    order: '11', category: 'Frozen'},
     { 'path': ':theme/treegrid/contextmenu-default', component: ContextMenuComponent, 'name': 'Default ContextMenu', 
     description: 'This demo explains the usage of context menu and the default context menu items in Syncfusion Essential JS2 Tree Grid control.', 
-    order: '11', category: 'Context Menu' },
+    order: '12', category: 'Context Menu' },
     { 'path': ':theme/treegrid/custom-contextmenu', component: CustomContextMenuComponent, 'name': 'Custom ContextMenu', 
     description: 'This demo explains the usage of custom context menu items in Syncfusion Essential JS2 Tree Grid control.', 
-    order: '11', category: 'Context Menu' },
+    order: '12', category: 'Context Menu' },
     { 'path': ':theme/treegrid/exporting-default', component: DefaultExportComponent, 'name': 'Default Export',
     description: 'This demo explains how to export the Tree Grid content to Excel, PDF, and CSV documents using the Syncfusion Essential JS2 Tree Grid control.', 
-    order: '12', category: 'Exporting' },
+    order: '13', category: 'Exporting' },
     { 'path': ':theme/treegrid/print', component: PrintComponent, 'name': 'Print', 
     description: 'This demo explains how to print the records of the Tree Grid using the Print feature of Syncfusion Essential JS2 Tree Grid control.', 
-    order: '12', category: 'Exporting' },
+    order: '13', category: 'Exporting' },
     { 'path': ':theme/treegrid/conditionalformatting', component: ConditionalFormattingComponent, 'name': 'Conditional Formatting',
     description: 'This demo explains how to apply styles to specific cells based on certain conditions in Syncfusion Essential JS2 Tree Grid control.', 
-    order: '13', category: 'Miscellaneous' },
+    order: '14', category: 'Miscellaneous' },
     { 'path': ':theme/treegrid/toolbartemplate', component: ToolbarTemplateComponent, 'name': 'Toolbar Template',
     description: 'This demo explains how to render custom template elements in a toolbar by which any custom operation can be performed in Syncfusion Essential JS2 Tree Grid.', 
-    order: '13', category: 'Miscellaneous' },
+    order: '14', category: 'Miscellaneous' },
     { 'path': ':theme/treegrid/events', component: EventComponent, 'name': 'Events',
     description: 'This demo explains the basic functionalities of the events that are available in the Syncfusion Essential JS2 Tree Grid control.', 
-    order: '13', category: 'Miscellaneous' },
+    order: '14', category: 'Miscellaneous' },
     { 'path': ':theme/treegrid/keyboard', component: KeyBoardComponent, 'name': 'Keyboard Interaction',
     description: 'This demo explains the key combinations used to perform corresponding Tree Grid actions in Syncfusion Essential JS2 Tree Grid control.', 
-    order: '13', category: 'Miscellaneous' },
+    order: '14', category: 'Miscellaneous' },
     { 'path': ':theme/treegrid/gridlines', component: GridLinesComponent, 'name': 'Grid Lines',
     description: 'This demo explains how to customize the grid lines in Tree Grid using Syncfusion Essential JS2 Tree Grid control.', 
-    order: '13', category: 'Miscellaneous' }
+    order: '14', category: 'Miscellaneous' }
 ];
 
 let declarations: Type<Object>[] = [TreeGridOverviewComponent, DefaultComponent, TreeGridClipboardComponent, LocalDataComponent, RemoteData, SelfReferenceComponent, SortComponent, SortingAPIComponent, DefaultPagingComponent, PagingAPIComponent, ContextMenuComponent, CustomContextMenuComponent, AggregateComponent, CustomAggregateComponent, ColumnReorderComponent, ColumnFormattingComponent, ColumnTemplateComponent, ResizingComponent,
     ColumnMenuComponent, ColumnChooserComponent, CellAlignmentComponent, AutoWrap, ShowHideComponent, HeaderTemplateComponent, FilterComponent, InlineEditing, DialogEditingComponent, BatchEditingComponent, LockRowComponent, CellEditTypeComponent, CommandColumnComponent, EditTemplateComponent, ReactiveFormsComponent, TemplateFormsComponent, SearchComponent,
     StackedHeaderComponent, KeyBoardComponent, DefaultExportComponent, PrintComponent, EventComponent, ConditionalFormattingComponent, ToolbarTemplateComponent,InfiniteScrollingComponent,
-    GridLinesComponent, RowHover, RowHeightComponent, RowTemplateComponent, DragDropComponent, FilteringMenuComponent, FreezeComponent, DefaultScrollingComponent, VirtualScrollingComponent, SelectionComponent, SelectionAPIComponent, CheckboxSelectionComponent, CheckboxColumnComponent];
+    GridLinesComponent, RowHover, RowHeightComponent, RowTemplateComponent, DragDropComponent, FilteringMenuComponent, FreezeComponent, DefaultScrollingComponent, VirtualScrollingComponent, SelectionComponent, SelectionAPIComponent, CheckboxSelectionComponent, CheckboxColumnComponent, FrozenAPI];
 
 @NgModule({
     imports: [RouterModule.forChild(treegridRouteConfig), CommonModule, HttpModule, TreeGridAllModule,

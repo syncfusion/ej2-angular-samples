@@ -3,16 +3,28 @@
         the values between min and max.</p>
 </div>
 
-<div class="col-lg-8 slider-orientation control-section">
-    <div class='content-wrapper'>
-        <div class='orientation'>
-            <ejs-slider id='default' #default [value]='value' [orientation]='orientation'></ejs-slider>
-        </div>
-        <div class='orientation'>
-            <ejs-slider id='minrange' #minrange [value]='value' [type]='mintype' [orientation]='orientation'></ejs-slider>
-        </div>
-        <div class='orientation'>
-            <ejs-slider id='range' #range [value]='rangevalue' [type]='rangetype' [orientation]='orientation'></ejs-slider>
+<div class="col-lg-8 control-section">
+    <div class="control-wrapper">
+        <div id="sliderOrientation" class='content-wrapper'>
+            <table class="slider_table">
+                <tr>
+                    <td>
+                        <div class="sliderwrap">
+                            <ejs-slider id='default' #default [value]='value' [orientation]='orientation'></ejs-slider>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sliderwrap">
+                            <ejs-slider id='minrange' #minrange [value]='value' [type]='mintype' [orientation]='orientation'></ejs-slider>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sliderwrap">
+                            <ejs-slider id='range' #range [value]='rangevalue' [type]='rangetype' [orientation]='orientation'></ejs-slider>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>

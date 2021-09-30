@@ -31,7 +31,6 @@ body {
 #pricing-slider .sub-heading {
     margin-top: -8px;
     font-size: 13px;
-    font-family: Roboto-Regular;
     color: #808080;
 }
 
@@ -71,7 +70,6 @@ span.e-label .offer {
 #memory,
 #storage,
 #processor {
-    font-family: Roboto-Medium;
     font-size: 14px;
     height: 24px;
     width: 70px;
@@ -85,14 +83,12 @@ span.e-label .offer {
 
 #cloud-slider-text #value {
     color: #000000;
-    font-family: Roboto-Bold;
     font-size: 28px;
     font-weight: bold;
 }
 
 #suffix {
     color: #000000;
-    font-family: Roboto-Regular;
     font-size: 16px;
     font-weight: 500;
 }
@@ -162,7 +158,6 @@ span.e-label .offer {
 
 #dollar {
     color: #000000;
-    font-family: Roboto-Regular;
     font-size: 14px;
     font-weight: 500;
     position: relative;
@@ -201,7 +196,22 @@ span.e-label .offer {
 
 .highcontrast .pricing-slider,
 .highcontrast #pricing-slider .label-text,
-.highcontrast #pricing-slider .sub-heading {
+.highcontrast #pricing-slider .sub-heading,
+.material-dark .pricing-slider,
+.material-dark #pricing-slider .label-text,
+.material-dark #pricing-slider .sub-heading,
+.fabric-dark .pricing-slider,
+.fabric-dark #pricing-slider .label-text,
+.fabric-dark #pricing-slider .sub-heading,
+.tailwind-dark .pricing-slider,
+.tailwind-dark #pricing-slider .label-text,
+.tailwind-dark #pricing-slider .sub-heading,
+.bootstrap5-dark .pricing-slider,
+.bootstrap5-dark #pricing-slider .label-text,
+.bootstrap5-dark #pricing-slider .sub-heading,
+.bootstrap-dark .pricing-slider,
+.bootstrap-dark #pricing-slider .label-text,
+.bootstrap-dark #pricing-slider .sub-heading {
     color: white;
 }
 
@@ -215,47 +225,143 @@ span.e-label .offer {
 .highcontrast #dialog-header,
 .highcontrast #StorgeDialog,
 .highcontrast #CloudDialog,
-.highcontrast #processorDialog {
+.highcontrast #processorDialog,
+.material-dark #dollar,
+.material-dark #cloud-slider-text #value,
+.material-dark #dialog-header,
+.material-dark #StorgeDialog,
+.material-dark #CloudDialog,
+.material-dark #processorDialog,
+.fabric-dark #dollar,
+.fabric-dark #cloud-slider-text #value,
+.fabric-dark #dialog-header,
+.fabric-dark #StorgeDialog,
+.fabric-dark #CloudDialog,
+.fabric-dark #processorDialog,
+.bootstrap-dark #dollar,
+.bootstrap-dark #cloud-slider-text #value,
+.bootstrap-dark #dialog-header,
+.bootstrap-dark #StorgeDialog,
+.bootstrap-dark #CloudDialog,
+.bootstrap-dark #processorDialog,
+.bootstrap5-dark #dollar,
+.bootstrap5-dark #cloud-slider-text #value,
+.bootstrap5-dark #dialog-header,
+.bootstrap5-dark #StorgeDialog,
+.bootstrap5-dark #CloudDialog,
+.bootstrap5-dark #processorDialog,
+.tailwind-dark #dollar,
+.tailwind-dark #cloud-slider-text #value,
+.tailwind-dark #dialog-header,
+.tailwind-dark #StorgeDialog,
+.tailwind-dark #CloudDialog,
+.tailwind-dark #processorDialog {
     color: white;
 }
 
-.highcontrast #pricing-slider .row {
+.highcontrast #pricing-slider .row,
+.tailwind-dark #pricing-slider .row,
+.bootstrap-dark #pricing-slider .row,
+.bootstrap5-dark #pricing-slider .row,
+.fabric-dark #pricing-slider .row,
+.material-dark #pricing-slider .row {
     border: 1px solid #969696;
 }
 
-.highcontrast #cloud-right-pane {
+.highcontrast #cloud-right-pane,
+.tailwind-dark #cloud-right-pane,
+.bootstrap-dark #cloud-right-pane,
+.bootstrap5-dark #cloud-right-pane,
+.fabric-dark #cloud-right-pane,
+.material-dark #cloud-right-pane
+{
     border-left: 1px solid #969696;
 }
 
 .highcontrast #cloud-slider-text,
-.highcontrast #pricing-slider #cloud-right-pane .btn-size {
+.highcontrast #pricing-slider #cloud-right-pane .btn-size,
+.material-dark #cloud-slider-text,
+.material-dark #pricing-slider #cloud-right-pane .btn-size,
+.fabric-dark #cloud-slider-text,
+.fabric-dark #pricing-slider #cloud-right-pane .btn-size,
+.bootstrap-dark #cloud-slider-text,
+.bootstrap-dark #pricing-slider #cloud-right-pane .btn-size,
+.bootstrap5-dark #cloud-slider-text,
+.bootstrap5-dark #pricing-slider #cloud-right-pane .btn-size,
+.tailwind-dark #cloud-slider-text,
+.tailwind-dark #pricing-slider #cloud-right-pane .btn-size {
     border-bottom: 1px solid #969696;
 }
 
-.highcontrast #processor {
+.highcontrast #processor,
+.tailwind-dark #processor,
+.bootstrap-dark #processor,
+.bootstrap5-dark #processor,
+.fabric-dark #processor,
+.material-dark #processor {
     background-color: #AE80FF;
 }
 
-.highcontrast #memory {
+.highcontrast #memory,
+.tailwind-dark #memory,
+.bootstrap-dark #memory,
+.bootstrap5-dark #memory,
+.fabric-dark #memory,
+.material-dark #memory {
     background-color: #7ED321;
 }
 
-.highcontrast #storage {
+.highcontrast #storage,
+.tailwind-dark #storage,
+.bootstrap-dark #storage,
+.bootstrap5-dark #storage,
+.fabric-dark #storage,
+.material-dark #storage {
     background-color: #61A4EF;
 }
 
-.highcontrast #cloud-left-pane {
+.highcontrast #cloud-left-pane,
+.tailwind-dark #cloud-left-pane,
+.bootstrap-dark #cloud-left-pane,
+.bootstrap5-dark #cloud-left-pane,
+.fabric-dark #cloud-left-pane,
+.material-dark #cloud-left-pane {
     background-color: #1a1a1a;
 }
 
-.highcontrast #cloud-right-pane {
+.highcontrast #cloud-right-pane,
+.tailwind-dark #cloud-right-pane,
+.bootstrap-dark #cloud-right-pane,
+.bootstrap5-dark #cloud-right-pane,
+.fabric-dark #cloud-right-pane,
+.material-dark #cloud-right-pane {
     background-color: #000;
 }
 
 .highcontrast #processorPriceName,
 .highcontrast #memoryPriceName,
 .highcontrast #storgePriceName,
-.highcontrast #cloudPriceName {
+.highcontrast #cloudPriceName,
+.tailwind-dark #processorPriceName,
+.tailwind-dark #memoryPriceName,
+.tailwind-dark #storgePriceName,
+.tailwind-dark #cloudPriceName,
+.bootstrap-dark #processorPriceName,
+.bootstrap-dark #memoryPriceName,
+.bootstrap-dark #storgePriceName,
+.bootstrap-dark #cloudPriceName,
+.bootstrap5-dark #processorPriceName,
+.bootstrap5-dark #memoryPriceName,
+.bootstrap5-dark #storgePriceName,
+.bootstrap5-dark #cloudPriceName,
+.fabric-dark #processorPriceName,
+.fabric-dark #memoryPriceName,
+.fabric-dark #storgePriceName,
+.fabric-dark #cloudPriceName,
+.material-dark #processorPriceName,
+.material-dark #memoryPriceName,
+.material-dark #storgePriceName,
+.material-dark #cloudPriceName {
     color: white;
     opacity: 1;
 }
@@ -263,7 +369,6 @@ span.e-label .offer {
 #dialog-header {
     color: #000000;
     opacity: .87;
-    font-family: Roboto-Medium;
     font-weight: 600;
     font-size: 20px;
 }
@@ -279,7 +384,6 @@ span.e-label .offer {
 #memoryPrice,
 #storgePrice {
     opacity: 0.9;
-    font-family: Roboto-Bold;
     font-weight: 600;
     font-size: 16px;
     float: right;
@@ -295,13 +399,11 @@ span.e-label .offer {
 #cloudPriceName {
     opacity: 0.9;
     color: #000000;
-    font-family: Roboto-Regular;
     font-size: 16px;
 }
 
 #cloudPrice {
     opacity: 0.9;
-    font-family: Roboto-Bold;
     font-weight: 600;
     font-size: 26px;
     float: right;

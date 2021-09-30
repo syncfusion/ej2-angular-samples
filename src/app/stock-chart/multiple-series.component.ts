@@ -36,7 +36,6 @@ export class MultipleSeriesComponent {
         }
     };
     public title: string = 'Multiple Series';
-    public titleStyle: object = { color: 'black' };
 
     public indicatorType: string[] = [];
     public trendlineType: string[] = [];

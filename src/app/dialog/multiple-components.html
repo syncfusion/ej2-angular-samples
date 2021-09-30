@@ -55,7 +55,7 @@
 							</e-tabitem>
 							<e-tabitem [header]='headerText[3]'>
 								<ng-template #content>
-									<ejs-richtexteditor id='defaultRTE'>
+									<ejs-richtexteditor #RTE id='defaultRTE' (created)='rteCreated()'>
 										<ng-template #valueTemplate>
 											<p>The rich text editor component is WYSIWYG ("what you see is what you
 												get") editor

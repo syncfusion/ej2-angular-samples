@@ -7,6 +7,7 @@ import {
 import { roomData } from './data';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'control-content',
   templateUrl: 'adaptive-rows.html',
   styleUrls: ['adaptive-rows.style.css'],
@@ -15,17 +16,16 @@ import { roomData } from './data';
 })
 
 export class AdaptiveRowsComponent {
-  @ViewChild('scheduleObj')
-  public scheduleObj: ScheduleComponent;
-  public selectedDate: Date = new Date(2018, 7, 1);
-  public rowAutoHeight: Boolean = true;
+  @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;
+  public selectedDate: Date = new Date(2021, 7, 2);
+  public rowAutoHeight = true;
   public currentView: View = 'TimelineWeek';
   public group: GroupModel = {
     enableCompactView: false,
     resources: ['MeetingRoom']
   };
-  public allowMultiple: Boolean = true;
-  public resourceDataSource: Object[] = [
+  public allowMultiple = true;
+  public resourceDataSource: Record<string, any>[] = [
     { text: 'Room A', id: 1, color: '#98AFC7' },
     { text: 'Room B', id: 2, color: '#99c68e' },
     { text: 'Room C', id: 3, color: '#C2B280' },
@@ -37,9 +37,9 @@ export class AdaptiveRowsComponent {
     { text: 'Room I', id: 9, color: '#98AFC7' },
     { text: 'Room J', id: 10, color: '#778899' }
   ];
-  
+
   public eventSettings: EventSettingsModel = {
-    dataSource: <Object[]>extend([], roomData, null, true),
+    dataSource: extend([], roomData, null, true) as Record<string, any>[],
     fields: {
       id: 'Id',
       subject: { name: 'Subject', title: 'Summary' },

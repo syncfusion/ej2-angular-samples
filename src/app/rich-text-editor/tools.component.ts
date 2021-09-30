@@ -117,7 +117,7 @@ export class FullFeatureComponent {
             (this.rteObj.sourceCodeModule.getPanel() as HTMLTextAreaElement).style.display = 'none';
             this.mirrorConversion(e);
         } else {
-            setTimeout(() => { this.rteObj.toolbarModule.refreshToolbarOverflow(); }, 400);
+            setTimeout(() => { this.rteObj.toolbarModule.refreshToolbarOverflow(); }, 1000);
         }
     }
 }

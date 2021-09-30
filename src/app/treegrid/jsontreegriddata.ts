@@ -200,6 +200,213 @@ export let sampleData = [
     }
 ];
 
+export let frozenSampleData =  [
+    {
+        taskID: 1,
+        taskName: 'Planning',
+        startDate: new Date('02/03/2017'),
+        endDate: new Date('02/07/2017'),
+        progress: 100,
+        duration: 5,
+        priority: 'Normal',
+        approved: false,
+        designation: 'Vice President',
+        employeeID: 1,
+        subtasks: [
+            { taskID: 2, taskName: 'Plan timeline', startDate: new Date('02/03/2017'),
+                endDate: new Date('02/07/2017'), duration: 5, progress: 100, priority: 'Normal', approved: false, designation: 'Chief Executive Officer',
+                employeeID: 2 },
+            { taskID: 3, taskName: 'Plan budget', startDate: new Date('02/03/2017'),
+                endDate: new Date('02/07/2017'), duration: 5, progress: 100, priority: 'Low', approved: true,designation: 'Chief Executive Officer',
+                employeeID: 3  },
+            { taskID: 4, taskName: 'Allocate resources', startDate: new Date('02/03/2017'),
+                endDate: new Date('02/07/2017'), duration: 5, progress: 100, priority: 'Critical', approved: false ,designation: 'Chief Executive Officer',
+                employeeID: 4 },
+            { taskID: 5, taskName: 'Planning complete', startDate: new Date('02/07/2017'),
+                endDate: new Date('02/07/2017'), duration: 0, progress: 0, priority: 'Low', approved: true ,designation: 'Chief Executive Officer',
+                employeeID: 5 }
+        ]
+    },
+    {
+        taskID: 6,
+        taskName: 'Design',
+        startDate: new Date('02/10/2017'),
+        endDate: new Date('02/14/2017'),
+        duration: 3,
+        progress: 86,
+        priority: 'High',
+        approved: false,
+		designation: 'Vice President',
+        employeeID: 6, 
+        subtasks: [
+            { taskID: 7, taskName: 'Software Specification', startDate: new Date('02/10/2017'),
+                endDate: new Date('02/12/2017'), duration: 3, progress: 60, priority: 'Normal', approved: false, designation: 'Sales Representative',
+                employeeID: 7 },
+            { taskID: 8, taskName: 'Develop prototype', startDate: new Date('02/10/2017'),
+                endDate: new Date('02/12/2017'), duration: 3, progress: 100, priority: 'Critical', approved: false,designation: 'Sales Representative',
+                employeeID: 8  },
+            { taskID: 9, taskName: 'Get approval from customer', startDate: new Date('02/13/2017'),
+                endDate: new Date('02/14/2017'), duration: 2, progress: 100, priority: 'Low', approved: true ,designation: 'Sales Representative',
+                employeeID: 9 },
+            { taskID: 10, taskName: 'Design Documentation', startDate: new Date('02/13/2017'),
+                endDate: new Date('02/14/2017'), duration: 2, progress: 100, priority: 'High', approved: true,designation: 'Sales Representative',
+                employeeID: 10  },
+            { taskID: 11, taskName: 'Design complete', startDate: new Date('02/14/2017'),
+                endDate: new Date('02/14/2017'), duration: 0, progress: 0, priority: 'Normal', approved: true ,designation: 'Sales Representative',
+                employeeID: 11 }
+        ]
+    },
+    {
+        taskID: 12,
+        taskName: 'Implementation Phase',
+        startDate: new Date('02/17/2017'),
+        endDate: new Date('02/27/2017'),
+        priority: 'Normal',
+        approved: false,
+        duration: 11,
+        progress: 66,
+		designation: 'Vice President',
+        employeeID: 12 ,
+        subtasks: [
+            {
+                taskID: 13,
+                taskName: 'Phase 1',
+                startDate: new Date('02/17/2017'),
+                endDate: new Date('02/27/2017'),
+                priority: 'High',
+                approved: false,
+                progress: 50,
+                duration: 11,
+				designation: 'Sales Representative',
+                employeeID: 13,
+                subtasks: [{
+                    taskID: 14,
+                    taskName: 'Implementation Module 1',
+                    startDate: new Date('02/17/2017'),
+                    endDate: new Date('02/27/2017'),
+                    priority: 'Normal',
+                    duration: 11,
+                    progress: 10,
+                    approved: false,
+					designation: 'Sales Representative',
+					employeeID: 14 ,
+                    subtasks: [
+                        { taskID: 15, taskName: 'Development Task 1', startDate: new Date('02/17/2017'),
+                            endDate: new Date('02/19/2017'), duration: 3, progress: '50', priority: 'High', approved: false, designation: 'Sales Representative',
+                employeeID: 15  },
+                        { taskID: 16, taskName: 'Development Task 2', startDate: new Date('02/17/2017'),
+                            endDate: new Date('02/19/2017'), duration: 3, progress: '50', priority: 'Low', approved: true, designation: 'Sales Representative',
+                employeeID: 16  },
+                        { taskID: 17, taskName: 'Testing', startDate: new Date('02/20/2017'),
+                            endDate: new Date('02/21/2017'), duration: 2, progress: '0', priority: 'Normal', approved: true, designation: 'Sales Representative',
+                employeeID: 17  },
+                        { taskID: 18, taskName: 'Bug fix', startDate: new Date('02/24/2017'),
+                            endDate: new Date('02/25/2017'), duration: 2, progress: '0', priority: 'Critical', approved: false, designation: 'Sales Representative',
+                employeeID: 18  },
+                        { taskID: 19, taskName: 'Customer review meeting', startDate: new Date('02/26/2017'),
+                            endDate: new Date('02/27/2017'), duration: 2, progress: '0', priority: 'High', approved: false, designation: 'Sales Representative',
+                employeeID: 19  },
+                        { taskID: 20, taskName: 'Phase 1 complete', startDate: new Date('02/27/2017'),
+                            endDate: new Date('02/27/2017'), duration: 0, progress: '50', priority: 'Low', approved: true, designation: 'Sales Representative',
+                employeeID: 20  }
+
+                    ]
+                }]
+            },
+            {
+                taskID: 21,
+                taskName: 'Phase 2',
+                startDate: new Date('02/17/2017'),
+                endDate: new Date('02/28/2017'),
+                priority: 'High',
+                approved: false,
+                duration: 12,
+                progress: 60,
+				designation: 'Sales Representative',
+                employeeID: 21 ,
+                subtasks: [{
+                    taskID: 22,
+                    taskName: 'Implementation Module 2',
+                    startDate: new Date('02/17/2017'),
+                    endDate: new Date('02/28/2017'),
+                    priority: 'Critical',
+                    approved: false,
+                    duration: 12,
+                    progress: 90,
+					designation: 'Sales Representative',
+					employeeID: 22 ,
+                    subtasks: [
+                        { taskID: 23, taskName: 'Development Task 1', startDate: new Date('02/17/2017'),
+                            endDate: new Date('02/20/2017'), duration: 4, progress: '50', priority: 'Normal', approved: true, designation: 'Sales Representative',
+                employeeID: 23  },
+                        { taskID: 24, taskName: 'Development Task 2', startDate: new Date('02/17/2017'),
+                            endDate: new Date('02/20/2017'), duration: 4, progress: '50', priority: 'Critical', approved: true, designation: 'Sales Representative',
+                employeeID: 24  },
+                        { taskID: 25, taskName: 'Testing', startDate: new Date('02/21/2017'),
+                            endDate: new Date('02/24/2017'), duration: 2, progress: '0', priority: 'High', approved: false, designation: 'Sales Representative',
+                employeeID: 25  },
+                        { taskID: 26, taskName: 'Bug fix', startDate: new Date('02/25/2017'),
+                            endDate: new Date('02/26/2017'), duration: 2, progress: '0', priority: 'Low', approved: false, designation: 'Sales Representative',
+                employeeID: 26  },
+                        { taskID: 27, taskName: 'Customer review meeting', startDate: new Date('02/27/2017'),
+                            endDate: new Date('02/28/2017'), duration: 2, progress: '0', priority: 'Critical', approved: true, designation: 'Sales Representative',
+                employeeID: 27  },
+                        { taskID: 28, taskName: 'Phase 2 complete', startDate: new Date('02/28/2017'),
+                            endDate: new Date('02/28/2017'), duration: 0, progress: '50', priority: 'Normal', approved: false, designation: 'Sales Representative',
+                employeeID: 28  }
+
+                    ]
+                }]
+            },
+
+            {
+                taskID: 29,
+                taskName: 'Phase 3',
+                startDate: new Date('02/17/2017'),
+                endDate: new Date('02/27/2017'),
+                priority: 'Normal',
+                approved: false,
+                duration: 11,
+                progress: 30,
+				designation: 'Sales Representative',
+                employeeID: 29 ,
+                subtasks: [{
+                    taskID: 30,
+                    taskName: 'Implementation Module 3',
+                    startDate: new Date('02/17/2017'),
+                    endDate: new Date('02/27/2017'),
+                    priority: 'High',
+                    approved: false,
+                    duration: 11,
+                    progress: 60,
+					designation: 'Sales Representative',
+					employeeID: 30, 
+                    subtasks: [
+                        { taskID: 31, taskName: 'Development Task 1', startDate: new Date('02/17/2017'),
+                            endDate: new Date('02/19/2017'), duration: 3, progress: '50', priority: 'Low', approved: true, designation: 'Sales Representative',
+                employeeID: 31  },
+                        { taskID: 32, taskName: 'Development Task 2', startDate: new Date('02/17/2017'),
+                            endDate: new Date('02/19/2017'), duration: 3, progress: '50', priority: 'Normal', approved: false, designation: 'Sales Representative',
+                employeeID: 32  },
+                        { taskID: 33, taskName: 'Testing', startDate: new Date('02/20/2017'),
+                            endDate: new Date('02/21/2017'), duration: 2, progress: '0', priority: 'Critical', approved: true, designation: 'Sales Representative',
+                employeeID: 33  },
+                        { taskID: 34, taskName: 'Bug fix', startDate: new Date('02/24/2017'),
+                            endDate: new Date('02/25/2017'), duration: 2, progress: '0', priority: 'High', approved: false, designation: 'Sales Representative',
+                employeeID: 34  },
+                        { taskID: 35, taskName: 'Customer review meeting', startDate: new Date('02/26/2017'),
+                            endDate: new Date('02/27/2017'), duration: 2, progress: '0', priority: 'Normal', approved: true, designation: 'Sales Representative',
+                employeeID: 35  },
+                        { taskID: 36, taskName: 'Phase 3 complete', startDate: new Date('02/27/2017'),
+                            endDate: new Date('02/27/2017'), duration: 0, progress: '50', priority: 'Critical', approved: false, designation: 'Sales Representative',
+                employeeID: 36  },
+                    ]
+                }]
+            }
+        ]
+    }
+];
+
 export let dragData = [
     {
         taskID: 1,

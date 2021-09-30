@@ -31,7 +31,7 @@ export const stockChartAppRoutes: Object[] = [
     },
     {
         path: ':theme/stock-chart/multiple-series', component: MultipleSeriesComponent,
-        name: 'Multiple Series', order: '01', category: 'Stock Chart', type: 'update'
+        name: 'Multiple Series', order: '01', category: 'Stock Chart'
     },
     {
         path: ':theme/stock-chart/spline', component: SplineComponent,

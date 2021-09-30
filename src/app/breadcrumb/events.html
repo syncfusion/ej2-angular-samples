@@ -1,0 +1,56 @@
+<div>
+  <div class="col-lg-8 control-section" style="border-right: 1px solid #D7D7D7;">
+    <div class="content-wrapper">
+      <div class="row material2">
+        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+            <h5>Breadcrumb with Events</h5>
+        </div>
+    </div>
+    <div class="row material2">
+        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+          <ejs-breadcrumb [enableNavigation]="false" (created)="createdHandler()" (itemClick)="clickHandler($event)" (beforeItemRender)="beforeItemRenderHandler($event)">
+            <e-breadcrumb-items>
+                <e-breadcrumb-item text="Program Files" iconCss="e-bicons e-folder"></e-breadcrumb-item>
+                <e-breadcrumb-item text="Commom Files" iconCss="e-bicons e-folder"></e-breadcrumb-item>
+                <e-breadcrumb-item text="Services" iconCss="e-bicons e-folder"></e-breadcrumb-item>
+                <e-breadcrumb-item text="Config.json" iconCss="e-bicons e-file"></e-breadcrumb-item>
+            </e-breadcrumb-items>
+        </ejs-breadcrumb>
+        </div>
+    </div>
+    </div>
+  </div>
+  <div class="col-lg-4 property-section">
+    <div class="property-panel-section">
+      <div class="property-panel-header">Event Trace</div>
+    <table id="property" title="Event Trace">
+      <tr>
+        <td>
+          <div class="eventarea" style="height: 245px;overflow: auto">
+            <span class="EventLog" id="EventLog" style="word-break: normal;"></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="evtbtn" style="padding-bottom: 10px">
+            <button ejs-button id="clear" (click)="clearLog()">Clear Log</button>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+<div id="action-description">
+  <p>This sample demonstrates the events that have been triggered on <code>Breadcrumb</code> actions. The event details are showcased in the event trace panel.</p>
+  </div>
+  <div id="description">
+    <p>In this demo, <code>Breadcrumb</code> performs following actions which can be traced by event trace panel:</p>
+      <ul>
+          <li>created - Triggers when the Breadcrumb is created.</li>
+          <li>itemClick - Triggers when a Breadcrumb item is clicked.</li>
+          <li>beforeItemRender - Triggers while rendering each Breadcrumb item.</li>
+      </ul>
+      <p>More information about <code>Breadcrumb</code> component can be found in this <a target='_blank' href="https://ej2.syncfusion.com/angular/documentation/breadcrumb/getting-started/">documentation section</a>.</p>
+  </div>

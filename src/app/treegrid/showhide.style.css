@@ -14,4 +14,7 @@
     opacity: 0.87;
     padding: 1em;
 }
-
+#hide:disabled:hover,
+#show:disabled:hover {
+    color: #000000;
+}

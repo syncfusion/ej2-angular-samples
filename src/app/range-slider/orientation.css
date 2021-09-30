@@ -1,31 +1,15 @@
-.slider-orientation .control-section {
-    height: 100%;
-}
-
-.slider-orientation .content-wrapper {
-    width: 60%;
+#sliderOrientation.content-wrapper {
+    width: 80%;
     margin: 0 auto;
     min-width: 185px;
 }
-
-.slider-orientation .orientation {
-    float: left;
-    height: 400px;
+#sliderOrientation .sliderwrap {
+    height: 375px;
     margin-top: 10px;
-    padding-right: 100px;
-    width: 30px;
+    width: 60%;
+    margin: auto;
 }
-.e-bigger .slider-orientation .content-wrapper {
-    width: 80%;
-}
-.e-bigger .slider-orientation .orientation {
-    padding-right: 50px;
-    width: 33%;
-}
-.slider-orientation .orientation label {
-    font-size: 11px;
-    font-weight: 500;
-    margin-top: 15px;
-    margin-left: -15px;
-    padding-bottom: 15px;
+#sliderOrientation .slider_table {
+    border: 0;
+    width: 100%
 }

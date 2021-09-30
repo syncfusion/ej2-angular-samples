@@ -19,13 +19,17 @@
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
-                <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin:10px">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: 4px;">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
                     <tr style="height: 50px">
                         <td>
                             <div id='' style="margin-left: -15px;">Gradient Type</div>
                         </td>
                         <td>
-                            <div>
+                            <div style="margin-left: -20%">
                                 <select id="gradientType" class="form-control" style="width:90%;margin-left: -15px;">
                                     <option value="0">Linear Gradient</option>
                                     <option value="1">Radial Gradient</option>
@@ -33,20 +37,25 @@
                             </div>
                         </td>
                     </tr>
+                    </table>
+                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: 4px;">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
                     <tr style="height: 50px">
                         <td>
-                            <div id='' style="margin-left: -15px;margin-top: 30px;">Element</div>
+                            <div id='' style="margin-left: -15px;">Element</div>
                         </td>
                         <td>
-                            <div style="width:90%;margin-left: -2px;margin-top: 30px;">
+                            <div style="margin-left: -20%;">
                                 <select id="element" class="form-control">
                                     <option value="0">Range</option>
                                     <option value="1">Pointer</option>
                                 </select>
                             </div>
                         </td>
-                    </tr>
-                    <br />
+                    </tr>   
                 </table>
             </div>
         </div>

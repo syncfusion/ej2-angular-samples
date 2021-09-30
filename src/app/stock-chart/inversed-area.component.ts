@@ -26,7 +26,6 @@ export class InversedAreaComponent {
         enable: true
     };
     public title: string = 'AAPL Stock Price';
-    public titleStyle: object = { color: 'black' };
     public seriesType: string[] = [];
     public indicatorType: string[] = [];
      // custom code start

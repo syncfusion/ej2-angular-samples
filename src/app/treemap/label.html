@@ -14,13 +14,17 @@
             <div class="property-panel-section">
                 <div class="property-panel-header">Properties</div>
                 <div class="property-panel-content">
-                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -10px">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
                         <tr style="height: 50px">
-                            <td style="width: 50%">
-                                <div>Label Intersect Action:
+                            <td>
+                                <div style="margin-top: 10px">Label Intersect Action
                                 </div>
                             </td>
-                            <td style="width: 50%;padding-left: 10px; padding-right: 10px">
+                            <td>
                                 <div>
                                     <select name="selectIndex" autocomplete="off" id="labelMode" style="width:60%;">
                                         <option value="Trim" selected>Trim</option>

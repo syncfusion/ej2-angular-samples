@@ -20,11 +20,11 @@
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
-                <table id="property" title="Properties">
+                <table id="property" title="Properties" style="width: 100%">
                     <tbody>
                         <tr style="height: 50px">
                             <td style="width: 40%">
-                                <div>Map Type
+                                <div style="width: 50%">Map Type
                                 </div>
                             </td>
                             <td style="width: 60%;">
@@ -38,7 +38,7 @@
                         </tr>
                         <tr style="height: 50px">
                             <td style="width: 40%">
-                                <div>Export Type</div>
+                                <div style="width: 50%">Export Type</div>
                             </td>
                             <td style="width: 60%;">
                                 <div>
@@ -48,25 +48,21 @@
                         </tr>
                         <tr style="height: 50px">
                             <td style="width: 40%">
-                                <div>File Name</div>
+                                <div style="width: 50%">File Name</div>
                             </td>
                             <td style="width: 40%;">
                                 <div class="e-float-input" style='margin-top: 0px;'>
-                                    <input type="text" value="Maps" id="fileName">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr id="button-control" style="height: 50px" align='center'>
-                            <td align='center' colspan="2">
-                                <div>
-                                    <button ejs-button iconCss='e-icons e-play-icon' cssClass='e-flat' isPrimary=true
-                                        (click)='onClick($event)' style="width: 100px;" content="Export"
-                                        id="togglebtn">EXPORT</button>
+                                    <input type="text" value="Maps" id="fileName" style="width: 100%;">
                                 </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                <div style="text-align:center; margin-top: 20px; width: 100%;">
+                    <button ejs-button iconCss='e-icons e-play-icon' cssClass='e-flat' isPrimary=true
+                        (click)='onClick($event)' style="width: 100px; text-align: center;" content="Export"
+                        id="togglebtn">EXPORT</button>
+                </div>
             </div>
         </div>
     </div>
@@ -89,6 +85,26 @@
 
     .e-play-icon::before {
         content: '\e728';
+    }
+
+    .e-view.fabric .e-play-icon::before, .e-view.fabric-dark .e-play-icon::before {
+        content: '\e710';
+    }
+
+    .e-view.bootstrap4 .e-play-icon::before {
+        content: '\e780';
+    }
+
+    .e-view.tailwind-dark .e-play-icon::before, .e-view.tailwind .e-play-icon::before {
+        content: '\e7bf';
+    }
+
+    .e-view.highcontrast .e-play-icon::before {
+        content: '\e710';
+    }
+
+    .e-view.bootstrap5 .e-play-icon::before, .e-view.bootstrap5-dark .e-play-icon::before  {
+        content: '\e72e';
     }
 </style>
 <!-- custom code end -->

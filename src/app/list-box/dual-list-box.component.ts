@@ -34,5 +34,6 @@ export class DualListBoxComponent {
         { Name: 'United States', Code: 'US' }
     ];
     public fields: FieldSettingsModel = { text: 'Name'};
-    public toolbarSettings: ToolbarSettingsModel = { items: ['moveUp', 'moveDown', 'moveTo', 'moveFrom', 'moveAllTo', 'moveAllFrom']}
+    public toolbarSettings: ToolbarSettingsModel = { items: ['moveUp', 'moveDown', 'moveTo', 'moveFrom', 'moveAllTo', 'moveAllFrom']};
+    public noRecordsTemplate = '<div class= "e-list-nrt"><span>NO DATA AVAILABLE</span></div>'
 }

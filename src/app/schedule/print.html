@@ -1,10 +1,10 @@
 <div class="control-section">
-  <div class="col-lg-10 content-wrapper">
+  <div class="col-lg-9 content-wrapper">
     <ejs-schedule #scheduleObj id="schedule" cssClass='schedule-print' width='100%' height='650px'
       [selectedDate]="selectedDate" [eventSettings]="eventSettings">
     </ejs-schedule>
   </div>
-  <div class="col-lg-2 property-section">
+  <div class="col-lg-3 property-section">
     <div class="property-panel-section">
       <div class="property-panel-header">Properties</div>
       <div class="property-panel-content">
@@ -19,25 +19,25 @@
               </tr>
               <tr class="e-height-row e-hide-row">
                 <td>
-                  <ejs-dropdownlist width="auto" placeholder="Height" floatLabelType="Always" #heightObj
+                  <ejs-dropdownlist placeholder="Height" floatLabelType="Always" #heightObj
                     id="heightElement" [dataSource]='printHeightAndWidthData' value='auto'></ejs-dropdownlist>
                 </td>
               </tr>
               <tr class="e-width-row e-hide-row">
                 <td>
-                  <ejs-dropdownlist width="auto" placeholder="Width" floatLabelType="Always" #widthObj id="widthElement"
+                  <ejs-dropdownlist placeholder="Width" floatLabelType="Always" #widthObj id="widthElement"
                     [dataSource]='printHeightAndWidthData' value='auto'></ejs-dropdownlist>
                 </td>
               </tr>
               <tr class="e-selected-date-row e-hide-row">
                 <td>
-                  <ejs-datepicker width="auto" placeholder="Selected date" floatLabelType="Always" #selectedDateObj
+                  <ejs-datepicker placeholder="Selected date" floatLabelType="Always" #selectedDateObj
                     id='selectedDateElement' [value]='selectedDate'></ejs-datepicker>
                 </td>
               </tr>
               <tr>
                 <td style="padding: 15px; text-align: center;">
-                  <button ejs-button iconCss="e-icons e-icon-schedule-print" cssClass="e-print-btn" content="Print"
+                  <button ejs-button iconCss="e-icons e-print" cssClass="e-print-btn" content="Print"
                     type="button" (click)='onPrintClick()'></button>
                 </td>
               </tr>
@@ -53,9 +53,7 @@
   <p>This example demonstrates how to print the Scheduler element at client-side.</p>
 </div>
 <div id="description">
-  <p>In this example, the Scheduler element is Printed by making use of the public method
-    <code>print</code>.
-  </p>
+  <p>In this example, the Scheduler element is Printed by making use of the public method <code>print</code>.</p>
   <p>
     Also, we can print the schedule based on the custom rendering by passing the <code>ScheduleModel</code> in the
     <code>print</code> method. In the above demo, we have demonstrated the <code>print</code> method with the below
@@ -69,7 +67,7 @@
   <p>
     <strong>Module Injection</strong>
   </p>
-  <p>To start using Print functionality in Scheduler, you need to inject the
-    <code>PrintService</code> into the <code>@NgModule.providers</code> section.
+  <p>To start using Print functionality in Scheduler, you need to inject the <code>PrintService</code> into the
+    <code>@NgModule.providers</code> section.
   </p>
 </div>

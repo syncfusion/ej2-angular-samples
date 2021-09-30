@@ -5,7 +5,7 @@ import { DialogComponent, ButtonPropsModel } from '@syncfusion/ej2-angular-popup
 import { AnimationSettingsModel } from '@syncfusion/ej2-splitbuttons';
 import { EventSettingsModel } from '@syncfusion/ej2-angular-schedule';
 import { SelectEventArgs } from '@syncfusion/ej2-angular-navigations';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
 import { scheduleData } from './scheduleDatasource';
 import { orderDetails } from './data';
 import { Browser } from '@syncfusion/ej2-base';
@@ -25,6 +25,10 @@ import { FormValidators } from '@syncfusion/ej2-angular-inputs';
 export class DialogMultipleComponent implements AfterViewInit {
   @ViewChild('Dialog')
   public Dialog: DialogComponent;
+
+  @ViewChild('RTE')
+  public Rte: RichTextEditorComponent;
+
   reactForm: FormGroup;
   public initialPage: Object;
   public selectedDate: Date = new Date(2019, 0, 10);
@@ -101,6 +105,9 @@ export class DialogMultipleComponent implements AfterViewInit {
   ngOnInit(): void {
     this.data = new DataManager(orderDetails as JSON[]).executeLocal(new Query().take(15));
     this.initialPage = { pageSizes: true, pageSize: 5 };
+  }
+  public rteCreated(): void {
+    this.Rte.refreshUI();
   }
   public tabSelected(e: SelectEventArgs): void {
     if (e.selectedIndex === 4 && this.isRender) {

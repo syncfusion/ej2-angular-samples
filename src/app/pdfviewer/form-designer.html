@@ -3,7 +3,7 @@
 </div>
 <div class="control-section">
     <div class="content-wrapper">
-        <ejs-pdfviewer #pdfviewer id="pdfViewer" [serviceUrl]='service' [documentPath]='document' (documentLoad)='documentLoaded($event)' style="height:640px;display:block"></ejs-pdfviewer>
+        <ejs-pdfviewer #pdfviewer id="pdfViewer" [serviceUrl]='service' [documentPath]='document' (documentLoad)='documentLoaded($event)'  (validateFormFields)='validateFormFields($event)' [enableFormFieldsValidation]=true [showNotificationDialog]=false style="height:640px;display:block"></ejs-pdfviewer>
     </div>
 </div>
 <div id="description">   

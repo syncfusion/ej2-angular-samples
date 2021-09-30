@@ -24,6 +24,10 @@
     margin: 20px 13px 10px 10px;
 }
 
+body.material-dark .e-toolbar-items {
+  color: #ffffff;
+}
+
 .icons {
     width: 28px;
     height: 28px;

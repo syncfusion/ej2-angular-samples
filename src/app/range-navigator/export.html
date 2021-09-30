@@ -22,7 +22,7 @@
                     [primaryYAxis]='primaryYAxis' [crosshair]='crosshair' [tooltip]='chartTooltip' height='350' [theme]='theme' 
                     [legendSettings]='legendSettings'>
                     <e-series-collection>
-                        <e-series [dataSource]='data' name='Close' xName='xDate' yName='Close' width='2' type='SplineArea' [border]='border' [fill]='fill'></e-series>
+                        <e-series [dataSource]='data' name='Close' xName='xDate' yName='Close' width='2' type='SplineArea' [border]='border' [fill]='fill' ></e-series>
                     </e-series-collection>
                 </ejs-chart>
             </div>
@@ -107,7 +107,52 @@
         content: '\e728';
     }
 
-     .e-print-icon::before {
-        content: '\e813';
+    .e-view.fabric .e-export-icon::before, .e-view.fabric-dark .e-export-icon::before {
+        content: '\e710';
     }
+
+    .e-view.bootstrap4 .e-export-icon::before {
+        content: '\e780';
+    }
+
+    .e-view.tailwind-dark .e-export-icon::before, .e-view.tailwind .e-export-icon::before {
+        content: '\e7bf';
+    }
+
+    .e-view.highcontrast .e-export-icon::before {
+        content: '\e710';
+    }
+
+    .e-view.bootstrap5 .e-export-icon::before, .e-view.bootstrap5-dark .e-export-icon::before {
+        content: '\e72e';
+    }
+
+    .e-print-icon::before {
+        content: '\e34b';
+    }
+
+    .e-view.fabric .e-print-icon::before, .e-view.fabric-dark .e-print-icon::before {
+        content: '\e7df';
+    }
+
+    .e-view.bootstrap .e-print-icon::before {
+        content: '\ebd2';
+    }
+
+    .e-view.bootstrap4 .e-print-icon::before {
+        content: '\e743';
+    }
+
+    .e-view.tailwind .e-print-icon::before, .e-view.tailwind-dark .e-print-icon::before {
+        content: '\e76c';
+    }
+
+    .e-view.highcontrast .e-print-icon::before {
+        content: '\ebf9';
+    }
+
+    .e-view.bootstrap5 .e-print-icon::before, .e-view.bootstrap5-dark .e-print-icon::before {
+        content: '\e75d';
+    }
+
 </style>

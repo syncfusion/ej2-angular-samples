@@ -1,7 +1,7 @@
 <div class="control-section">
     <div class="sample-container">
         <div class="default-section">
-            <ejs-richtexteditor #tributeRTE id='tributeRTE' (created)='onCreate()' placeholder='Type @ to get the employee list with their email IDs.'>
+            <ejs-richtexteditor #tributeRTE id='tributeRTE' (created)='onCreate()' (actionBegin)='actionBeginEvent($event)' placeholder='Type @ to get the employee list with their email IDs.'>
             </ejs-richtexteditor>
         </div>
     </div>

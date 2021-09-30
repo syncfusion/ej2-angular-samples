@@ -105,7 +105,7 @@ export class DrawingToolDiagramComponent {
                     };
                     break;
                 case 'image':
-                    drawingObject = { shape: { type: 'Image', source: './assets/diagram/employees/Clayton.png' } };
+                    drawingObject = { shape: { type: 'Image', source: '/source/diagram/employees/Clayton.png' } };
                     break;
                 case 'svg':
                     drawingObject = { shape: { type: 'Native', content: this.getNativeContent() } };

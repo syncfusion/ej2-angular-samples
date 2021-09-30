@@ -76,7 +76,6 @@ export class StockEventsComponent {
     public border6: object = { color: '#6322e0' };
     public border7: object = { color: '#dd3c9f' };
     public title: string = 'AAPL Stock Price';
-    public titleStyle: object = { color: 'black ' };
     public enable: boolean = true;
     constructor() {
         //code

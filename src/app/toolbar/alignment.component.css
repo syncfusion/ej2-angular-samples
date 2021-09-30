@@ -133,3 +133,7 @@
     .material .e-toolbar .e-tbar-btn .e-icons {
         font-size: 16px;
     }
+
+    .e-tbar-section .e-sample-resize-container.alignment-toolbar {
+        height: auto !important;
+    }

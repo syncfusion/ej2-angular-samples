@@ -17,7 +17,8 @@ export class GradientColorComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     
     public rangeLinearGradient: object = {
@@ -50,7 +51,7 @@ export class GradientColorComponent {
         { color: '#f54ea2', offset: '100%', opacity: 0.8 }
         ]};
     public container: object = {
-            width: 30, offset: 30
+        width: 30, offset: 30
         };
 
     public axes: Object[] = [{
@@ -67,9 +68,7 @@ export class GradientColorComponent {
             height: 0
         },
         labelStyle: {
-            font: {
-                color: '#424242',
-            }, offset: 55
+            offset: 55
         },
         pointers: [
             {
@@ -89,7 +88,7 @@ export class GradientColorComponent {
     public gradientType: DropDownList; public element: DropDownList;
     ngOnInit(): void {
         this.gradientType = new DropDownList({
-            index: 0, width: 145,
+            index: 0, width: '100%',
             change: () => {
                 if (this.gradientType.value === '1' && this.element.value === '0') {
                     this.gauge.axes[0].ranges[0].linearGradient = null;
@@ -115,7 +114,7 @@ export class GradientColorComponent {
         });
         this.gradientType.appendTo('#gradientType');
         this.element = new DropDownList({
-            index: 0, width: 145,
+            index: 0, width: '100%',
             change: () => {
                 if (this.gradientType.value === '1' && this.element.value === '0') {
                     this.gauge.axes[0].ranges[0].linearGradient = null;

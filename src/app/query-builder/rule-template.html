@@ -1,0 +1,47 @@
+<div id="action-description">
+  <p>This sample demonstrates the Rule Template functionality in QueryBuilder component using RadioButton components.  In the Country column, user can change the Operator as equal/not equal using RadioButton component and select the Value from DropDownList component.</p>
+</div>
+
+<div class="control-section">
+  <div class="col-lg-12 control-section">
+    <ejs-querybuilder id="querybuilder" #querybuilder width="100%"
+      [rule]="importRules" >
+      <e-columns>
+        <e-column field="EmployeeID" label="Employee ID" type="number"></e-column>
+        <e-column field="FirstName" label="First Name" type="string"></e-column>
+        <e-column field="LastName" label="Last Name" type="string"></e-column>
+        <e-column field="HireDate" label="Hire Date" type="date" format="dd/MM/yyyy"></e-column>
+        <e-column field="Country" label="Country" type="string">
+          <ng-template #ruleTemplate let-data>
+            <div class="e-rule e-rule-template">
+              <div class="e-rule-filter">
+                <ejs-dropdownlist (change)="fieldChange($event)" [fields]="data.fields" [dataSource]="data.columns" [value]="data.rule.field">
+                </ejs-dropdownlist>
+              </div>
+              <div class="e-rule-operator e-operator">
+                <ejs-radiobutton id="{{data.ruleID}}_operator1" label='Is Equal' name='{{data.ruleID}}_operator' value='equal' (change)="operatorChange($event)" [checked]="(data.rule.operator == 'equal')"></ejs-radiobutton>
+                <ejs-radiobutton id="{{data.ruleID}}_operator2" label='Is Not Equal' name='{{data.ruleID}}_operator' value='notequal' (change)="operatorChange($event)" [checked]="(data.rule.operator == 'notequal')"></ejs-radiobutton>
+              </div>
+              <div class="e-rule-value e-value e-custom-value">
+                <ejs-dropdownlist (change)="valueChange($event)" [fields]="fields"  [dataSource]="items" [value]="data.rule.value">
+                </ejs-dropdownlist>
+              </div>
+              <div class="e-rule-value-delete">
+                <button class="e-removerule e-custom-delete e-rule-delete e-css e-btn e-small e-round">
+                  <span class="e-btn-icon e-icons e-delete-icon"></span>
+                </button>
+              </div>
+            </div>
+          </ng-template>
+        </e-column>
+      </e-columns>
+    </ejs-querybuilder>
+  </div>
+</div>
+
+<div id="description">
+  <p>This sample illustrates how to integrate ruleTemplate to the columns in the QueryBuilder. This is used for creating custom user interface for the columns with custom components and update the rule collection by using the component events.</p>
+  <p>More information about Query Builder can be found in this
+    <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/query-builder"> documentation</a> section.
+  </p>
+</div>

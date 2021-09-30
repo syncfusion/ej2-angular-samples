@@ -13,7 +13,8 @@ export class WorkflowComponent {
   @ViewChild('kanbanObj') kanbanObj: KanbanComponent;
   public kanbanData: Object[] = extend([], kanbanPizzaData, null, true) as Object[];
   public cardSettings: CardSettingsModel = {
-    headerField: 'Id'
+    headerField: 'Id',
+    contentField: 'Description',
   };
   public orderColumns: string[] = ['Ready to Serve', 'Ready to Deliver'];
   public serveColumns: string[] = ['Served'];

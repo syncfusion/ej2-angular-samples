@@ -62,6 +62,16 @@
             "datamatrix": "Data Matrix"
         }
     },
+     "breadcrumb" : {
+        "ControlName" : "Breadcrumb",
+        "Samples" : {
+           "default": "Default Functionalities",
+           "template":"Template",
+           "navigation":"Navigation",
+           "keyboard-navigation":"Keyboard Navigation",
+           "address-bar":"Address Bar"
+        }
+    },
     "bullet-chart" : {
         "ControlName" : "Bullet Chart",
         "Samples" : {

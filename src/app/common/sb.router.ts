@@ -23,7 +23,7 @@ import { AccordionSampleModule } from '../accordion/accordion.module';
 import { NumericModule } from '../numerictextbox/numerictextbox.module';
 import { ChartSampleModule } from '../chart/chart.module';
 import { DialogSampleModule } from '../dialog/dialog.module';
-import { SliderSampleModule } from '../slider/slider.module';
+import { SliderSampleModule } from '../range-slider/range-slider.module';
 import { SidebarSampleModule } from '../sidebar/sidebar.module';
 import { TextboxesModule } from '../textboxes/textboxes.module';
 import { InplaceEditorSampleModule } from '../inplace-editor/inplace-editor.module';
@@ -65,6 +65,7 @@ import { SpreadsheetSampleModule } from '../spreadsheet/spreadsheet.module';
 import { BulletChartSampleModule } from '../bullet-chart/bullet-chart.module';
 import { KanbanSampleModule } from '../kanban/kanban.module';
 import { ProgressBarSampleModule } from '../progress-bar/progress-bar.module';
+import { BreadcrumbSampleModule } from '../breadcrumb/breadcrumb.module';
 
 const appRoutes: any = [
     // Grids
@@ -124,6 +125,8 @@ const appRoutes: any = [
     { path: 'time-picker', loadChildren: TimePickerSampleModule },
     // Navigation
     { path: ':theme/accordion/:sample', redirectTo: 'material/accordion/default' },
+    { path: 'breadcrumb', loadChildren: BreadcrumbSampleModule },
+    { path: ':theme/breadcrumb/:sample', redirectTo: 'material/breadcrumb/default' },
     { path: 'context-menu', loadChildren: MenuModule },
     { path: ':theme/context-menu/:sample', redirectTo: 'material/context-menu/default' },
     { path: 'file-manager', loadChildren: FileSampleModule },
@@ -141,7 +144,7 @@ const appRoutes: any = [
     // Inputs
     { path: 'maskedtextbox', loadChildren: MaskedTextBoxSampleModule },
     { path: 'numerictextbox', loadChildren: NumericModule },
-    { path: 'slider', loadChildren: SliderSampleModule },
+    { path: 'range-slider', loadChildren: SliderSampleModule },
     { path: ':theme/textboxes/:sample', redirectTo: 'material/textboxes/default' },
     { path: 'uploader', loadChildren: UploaderSampleModule },
     { path: ':theme/uploader/:sample', redirectTo: 'material/uploader/default' },
@@ -209,6 +212,7 @@ const appRoutes: any = [
         TimePickerSampleModule,
         // Navigation
         AccordionSampleModule,
+        BreadcrumbSampleModule,
         MenuModule,
         FileSampleModule,
         MenuSampleModule,

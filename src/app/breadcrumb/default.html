@@ -1,0 +1,78 @@
+<div class="control-section">
+    <div class="content-wrapper">
+        <div class="row material2">
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <h5>Simple Breadcrumb</h5>
+            </div>
+        </div>
+        <div class="row material2">
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <ejs-breadcrumb [enableNavigation]="false">
+                    <e-breadcrumb-items>
+                        <e-breadcrumb-item iconCss="e-icons e-home" url="https://ej2.syncfusion.com/home/angular.html"></e-breadcrumb-item>
+                        <e-breadcrumb-item text="Components" url="https://ej2.syncfusion.com/angular/demos/#/material/grid/over-view"></e-breadcrumb-item>
+                        <e-breadcrumb-item text="Navigations" url="https://ej2.syncfusion.com/angular/demos/#/material/menu/default"></e-breadcrumb-item>
+                        <e-breadcrumb-item text="Breadcrumb" url="./breadcrumb/default"></e-breadcrumb-item>
+                    </e-breadcrumb-items>
+                </ejs-breadcrumb>
+            </div>
+        </div>
+        <div class="row material2">
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <h5>Breadcrumb with Overflow</h5>
+            </div>
+        </div>
+        <div class="row material2">
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <ejs-breadcrumb [maxItems]='3' [enableNavigation]='false'>
+                    <e-breadcrumb-items>
+                        <e-breadcrumb-item text="Home" url="../"></e-breadcrumb-item>
+                        <e-breadcrumb-item text="Breadcrumb" url="./breadcrumb"></e-breadcrumb-item>
+                        <e-breadcrumb-item text="Default" url="./breadcrumb/default"></e-breadcrumb-item>
+                        <e-breadcrumb-item text="Icons" url="./breadcrumb/icons"></e-breadcrumb-item>
+                        <e-breadcrumb-item text="Navigation" url="./breadcrumb/navigation"></e-breadcrumb-item>
+                        <e-breadcrumb-item text="Overflow" url="./breadcrumb/overflow"></e-breadcrumb-item>
+                    </e-breadcrumb-items>
+                    <ng-template #separatorTemplate>
+                        <span class='e-bicons e-arrow'></span>
+                    </ng-template>
+                </ejs-breadcrumb>
+            </div>
+        </div>
+        <div class="row material2">
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <h5>Active Last Breadcrumb</h5>
+            </div>
+        </div>
+        <div class="row material2">
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <ejs-breadcrumb [enableNavigation]="false" [enableActiveItemNavigation]="false">
+                    <e-breadcrumb-items>
+                        <e-breadcrumb-item iconCss="e-icons e-home" url="https://ej2.syncfusion.com/home/angular.html"></e-breadcrumb-item>
+                        <e-breadcrumb-item text="All Components" url="https://ej2.syncfusion.com/angular/demos/#/material/grid/over-view"></e-breadcrumb-item>
+                        <e-breadcrumb-item text="Breadcrumb" url="./breadcrumb/default"></e-breadcrumb-item>
+                    </e-breadcrumb-items>
+                </ejs-breadcrumb>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+	<p>This sample demonstrates the basic rendering, overflow feature and navigable active item of the <b>Breadcrumb</b> component with icon support.</p>
+</div>
+<div id="description">
+    <p>The <code>Breadcrumb</code> component is used as a navigational aid to identify the current page location within the navigational hierarchy structure of websites. It has list of items that can be populated using the <code>items</code> property.</p>
+    <p><b>Simple Breadcrumb</b></p>
+    <p>In this sample, the <code>Breadcrumb</code> is populated with Text, Icon, and Url.</p>
+    <p><b>Breadcrumb with Overflow</b></p>
+    <p>In the <code>Breadcrumb</code> component, <code>maxItems</code> and <code>overflowMode</code> properties were used to limit the number of breadcrumb items to be displayed.</p>
+    <p>The following overflow mode's were available in the <code>Breadcrumb</code> component.</p>
+    <ul>
+        <li><code>Default</code> - Specified maxItems count will be visible and the remaining items will be hidden. While clicking on the previous item, the hidden item will become visible.</li>
+        <li><code>Collapsed</code> - Only the first and last items will be visible, and the remaining items will be hidden in the collapsed icon. When the collapsed icon is clicked, all items become visible.</li>
+    </ul>   
+    <p>In this sample, the maxItems is set as 3 with overflowMode as Default. To prevent breadcrumb item navigation we have set <code>false</code> in <code>enableNavigation</code> property of <code>Breadcrumb</code> component.</p>
+    <p><b>Active Last Breadcrumb</b></p>
+    <p>In this sample, navigation for the last item is enabled by using <code>enableActiveItemNavigation</code> property.</p>
+    <p>More information about <code>Breadcrumb</code> component can be found in this <a target='_blank' href="https://ej2.syncfusion.com/angular/documentation/breadcrumb/getting-started/">documentation section</a>.</p>
+</div>

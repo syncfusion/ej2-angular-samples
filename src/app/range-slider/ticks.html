@@ -18,31 +18,36 @@
     </div>
 </div>
     <div class="col-lg-4 property-section">
-        <table id="property" title="Properties">
-            <tbody>
-                <tr>
-                    <td style="width: 50%;padding-left: 10px;padding-top: 10px">
-                        <div>Placement</div>
-                    </td>
-                    <td style="width: 50%;padding-right: 10px;padding-top: 10px">
-                        <div>
-                            <ejs-dropdownlist #dropdownlist id='filter-type' dropdownlist [dataSource]='datasource' [fields]='fields' index=0 (change)='onChange()'
-                                placeholder='Select a Placement' popupHeight='200px'></ejs-dropdownlist>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 50%;padding-left: 10px;padding-top: 10px;">
-                        <div class="userselect">Disabled</div>
-                    </td>
-                    <td style="width: 50%;padding-right: 10px;padding-top: 10px;">
-                        <div style="padding-left: 0;padding-top: 0">
-                            <ejs-checkbox id='disabled' [checked]="false" (change)="checkbox_onChange($event)"></ejs-checkbox>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties">
+                    <tbody>
+                        <tr>
+                            <td style="width: 50%;padding-left: 10px;padding-top: 10px">
+                                <div>Placement</div>
+                            </td>
+                            <td style="width: 50%;padding-right: 10px;padding-top: 10px">
+                                <div>
+                                    <ejs-dropdownlist #dropdownlist id='filter-type' dropdownlist [dataSource]='datasource' [fields]='fields' index=0 (change)='onChange()'
+                                        placeholder='Select a Placement' popupHeight='200px'></ejs-dropdownlist>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 50%;padding-left: 10px;padding-top: 10px;">
+                                <div class="userselect">Disabled</div>
+                            </td>
+                            <td style="width: 50%;padding-right: 10px;padding-top: 10px;">
+                                <div style="padding-left: 0;padding-top: 0">
+                                    <ejs-checkbox id='disabled' [checked]="false" (change)="checkbox_onChange($event)"></ejs-checkbox>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <div id="description">

@@ -82,7 +82,8 @@ export class AnnotationComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     public loaded(args: ILoadedEventArgs): void {
@@ -94,7 +95,7 @@ export class AnnotationComponent {
 
         if (intervalExecute) {
             updateTime(false, this.circularGauge);
-            this.clockInterval = setInterval(
+            this.clockInterval = window.setInterval(
                 (): void => {
                     updateTime(true, this.circularGauge, this.clockInterval);
                 },

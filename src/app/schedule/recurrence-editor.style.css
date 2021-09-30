@@ -1,22 +1,22 @@
-    .recurrence-editor-wrap {
-        margin: 0 25%;
-    }
+.recurrence-editor-wrap {
+  margin: 0 25%;
+}
 
-    .rule-output-container {
-        height: auto;
-        border: 1px solid #969696;
-    }
+.rule-output-container {
+  height: auto;
+  border: 1px solid #969696;
+}
 
-    #rule-output {
-        padding: 8px 4px;
-        text-align: center;
-        min-height: 20px;
-        overflow: hidden;
-        overflow-wrap: break-word;
-    }
+#rule-output {
+  padding: 8px 4px;
+  text-align: center;
+  min-height: 20px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+}
 
-    @media (max-width: 580px) {
-        .recurrence-editor-wrap {
-            margin: 0 5%;
-        }
-    }
+@media (max-width: 580px) {
+  .recurrence-editor-wrap {
+    margin: 0 5%;
+  }
+}

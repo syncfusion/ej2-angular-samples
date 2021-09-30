@@ -48,7 +48,8 @@ export class UserInteractionComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     public markerHeight: number = 20;
@@ -76,7 +77,7 @@ export class UserInteractionComponent {
         document.getElementById('value').onpointermove = document.getElementById('value').ontouchmove =
             document.getElementById('value').onchange = () => {
                 let value: number = parseInt((<HTMLInputElement>document.getElementById('value')).value, 10);
-                document.getElementById('pointerValue').innerHTML = 'Pointer Value <span> &nbsp;&nbsp;&nbsp;' + value;
+                document.getElementById('pointerValue').innerHTML = value.toString();
                 this.setPointersValue(this.circulargauge, value);
             };
 

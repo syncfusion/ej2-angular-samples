@@ -4,11 +4,12 @@ import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthServ
 import { scheduleData } from './data';
 
 @Component({
-    selector: 'control-content',
-    templateUrl: 'default.html',
-    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
+  // tslint:disable-next-line:component-selector
+  selector: 'control-content',
+  templateUrl: 'default.html',
+  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
 })
 export class DefaultComponent {
-    public selectedDate: Date = new Date(2019, 0, 10);
-    public eventSettings: EventSettingsModel = { dataSource: <Object[]>extend([], scheduleData, null, true) };
+  public selectedDate: Date = new Date(2021, 0, 10);
+  public eventSettings: EventSettingsModel = { dataSource: extend([], scheduleData, null, true) as Record<string, any>[] };
 }

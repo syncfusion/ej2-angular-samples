@@ -10,6 +10,7 @@ import { Query, Predicate, DataManager, ReturnOption } from '@syncfusion/ej2-dat
 import { Grid } from '@syncfusion/ej2-angular-grids';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'control-content',
   templateUrl: 'search-events.html',
   /* custom code start*/
@@ -18,8 +19,8 @@ import { Grid } from '@syncfusion/ej2-angular-grids';
   providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
 })
 export class SearchEventsComponent {
-  public selectedDate: Date = new Date(2019, 0, 10);
-  public eventSettings: EventSettingsModel = { dataSource: <Object[]>extend([], scheduleData, null, true) };
+  public selectedDate: Date = new Date(2021, 0, 10);
+  public eventSettings: EventSettingsModel = { dataSource: extend([], scheduleData, null, true) as Record<string, any>[] };
   @ViewChild('scheduleObj') scheduleObj: ScheduleComponent;
   @ViewChild('subject') subjectObj: ElementRef;
   @ViewChild('location') locationObj: ElementRef;
@@ -30,8 +31,8 @@ export class SearchEventsComponent {
     sourceFiles.files = ['search-events.style.css'];
   }
 
-  globalSearch(args: KeyboardEvent): void {
-    let searchString: string = (args.target as HTMLInputElement).value;
+  public globalSearch(args: KeyboardEvent): void {
+    const searchString: string = (args.target as HTMLInputElement).value;
     if (searchString !== '') {
       new DataManager(this.scheduleObj.getEvents(null, null, true)).executeQuery(new Query().
         search(searchString, ['Subject', 'Location', 'Description'], null, true, true)).then((e: ReturnOption) => {
@@ -46,64 +47,56 @@ export class SearchEventsComponent {
     }
   }
 
-  searchOnClick(): void {
-    let searchObj: { [key: string]: any }[] = [];
+  public searchOnClick(): void {
+    const searchObj: Record<string, any>[] = [];
     let endDate: Date;
-    let formElements: HTMLInputElement[] = [
+    const formElements: HTMLInputElement[] = [
       this.subjectObj.nativeElement,
       this.locationObj.nativeElement
     ];
     formElements.forEach((node: HTMLInputElement) => {
       if (node.value && node.value !== '') {
-        searchObj.push({
-          field: node.name, operator: 'contains', value: node.value, predicate: 'or',
-          matchcase: 'true'
-        });
+        searchObj.push({ field: node.name, operator: 'contains', value: node.value, predicate: 'or', matchcase: 'true' });
       }
     });
     if (this.startTimeObj.value) {
       searchObj.push({
-        field: 'StartTime', operator: 'greaterthanorequal', value: this.startTimeObj.value, predicate: 'and',
-        matchcase: false
+        field: 'StartTime', operator: 'greaterthanorequal', value: this.startTimeObj.value, predicate: 'and', matchcase: false
       });
     }
     if (this.endTimeObj.value) {
-      let date: Date = new Date(+this.endTimeObj.value);
+      const date: Date = new Date(+this.endTimeObj.value);
       endDate = new Date(date.setDate(date.getDate() + 1));
-      searchObj.push({
-        field: 'EndTime', operator: 'lessthanorequal', value: endDate, predicate: 'and',
-        matchcase: false
-      });
+      searchObj.push({ field: 'EndTime', operator: 'lessthanorequal', value: endDate, predicate: 'and', matchcase: false });
     }
     if (searchObj.length > 0) {
-      let filterCondition: { [key: string]: any } = searchObj[0];
-      let predicate: Predicate = new Predicate(
-        filterCondition.field, filterCondition.operator, filterCondition.value, filterCondition.matchcase);
-      for (let i: number = 1; i < searchObj.length; i++) {
+      const filter: Record<string, any> = searchObj[0];
+      let predicate: Predicate = new Predicate(filter.field, filter.operator, filter.value, filter.matchcase);
+      for (let i = 1; i < searchObj.length; i++) {
         predicate = predicate.and(searchObj[i].field, searchObj[i].operator, searchObj[i].value, searchObj[i].matchcase);
       }
-      let result: Object[] = new DataManager(this.scheduleObj.getEvents(this.startTimeObj.value, endDate, true))
-        .executeLocal(new Query().where(predicate));
+      const eventDatas: Record<string, any>[] = this.scheduleObj.getEvents(this.startTimeObj.value, endDate, true);
+      const result: Record<string, any>[] = new DataManager(eventDatas).executeLocal(new Query().where(predicate));
       this.showSearchEvents('show', result);
     } else {
       this.showSearchEvents('hide');
     }
   }
 
-  clearOnClick(): void {
+  public clearOnClick(): void {
     document.getElementById('schedule').style.display = 'block';
     (document.getElementById('form-search') as HTMLFormElement).reset();
     this.showSearchEvents('hide');
   }
 
-  private showSearchEvents(type: string, data?: Object): void {
+  private showSearchEvents(type: string, data?: Record<string, any>): void {
     if (type === 'show') {
       if (document.getElementById('grid').classList.contains('e-grid')) {
-        let gridObj: Grid = (document.querySelector('#grid') as EJ2Instance).ej2_instances[0] as Grid;
+        const gridObj: Grid = (document.querySelector('#grid') as EJ2Instance).ej2_instances[0] as Grid;
         gridObj.dataSource = data;
         gridObj.dataBind();
       } else {
-        let gridObj: Grid = new Grid({
+        const gridObj: Grid = new Grid({
           dataSource: data,
           height: 505,
           width: 'auto',
@@ -118,7 +111,7 @@ export class SearchEventsComponent {
         this.scheduleObj.element.style.display = 'none';
       }
     } else {
-      let gridObj: Object[] = (document.querySelector('#grid') as EJ2Instance).ej2_instances;
+      const gridObj: Record<string, any>[] = (document.querySelector('#grid') as EJ2Instance).ej2_instances;
       if (gridObj && gridObj.length > 0 && !(gridObj[0] as Grid).isDestroyed) {
         (gridObj[0] as Grid).destroy();
       }

@@ -1,72 +1,59 @@
 <div class="control-section">
-    <div class="col-lg-9">
-        <ejs-schedule #scheduleObj width='100%' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" [(currentView)]="currentView"
-            [showWeekend]="showWeekend" [workHours]="workHours" [workDays]="workDays" (eventRendered)="oneventRendered($event)">
-            <e-views>
-                <e-view option="Day"></e-view>
-                <e-view option="Week"></e-view>
-                <e-view option="Month"></e-view>
-                <e-view option="TimelineWeek"></e-view>
-                <e-view option="TimelineMonth"></e-view>
-            </e-views>
-        </ejs-schedule>
+  <div class="col-lg-9">
+    <ejs-schedule #scheduleObj width='100%' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
+      [(currentView)]="currentView" [showWeekend]="showWeekend" [workHours]="workHours" [workDays]="workDays"
+      (eventRendered)="onEventRendered($event)">
+      <e-views>
+        <e-view option="Day"></e-view>
+        <e-view option="Week"></e-view>
+        <e-view option="Month"></e-view>
+        <e-view option="TimelineWeek"></e-view>
+        <e-view option="TimelineMonth"></e-view>
+      </e-views>
+    </ejs-schedule>
+  </div>
+  <div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+      <div class="property-panel-header">Properties</div>
+      <div class="property-panel-content">
+        <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+          <tr style="height: 50px">
+            <td style="width: 100%;">
+              <div class="multi-prop">
+                <ejs-multiselect id='multiselect-checkbox' #checkbox [dataSource]='workDaysData'
+                  [fields]='workDaysFields' [value]='workDaysValue' placeholder='Working days' floatLabelType='Always'
+                  mode='CheckBox' showDropDownIcon='true' (change)="onMultiSelectChange($event)"></ejs-multiselect>
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 50px">
+            <td style="width: 100%">
+              <div style="font-weight:500">Non-Working days</div>
+              <div class="multi-prop" style="text-align: center;">
+                <button #toggleBtn ejs-button class="e-active" [isToggle]="true" (click)="btnClick()">Show</button>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
-    <div class="col-lg-3 property-section">
-        <div class="property-panel-section">
-            <div class="property-panel-header">Properties</div>
-            <div class="property-panel-content">
-                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
-                    <tr style="height: 50px">
-                        <td style="width: 30%">
-                            <div> Working Days
-                            </div>
-                        </td>
-                        <td style="width: 70%;">
-                            <div class="multi-prop">
-                                <div>
-                                    <ejs-multiselect id='multiselect-checkbox' #checkbox [dataSource]='workDaysData' [fields]='workDaysFields' [value]='workDaysValue'
-                                        mode='CheckBox' popupWidth="180px" showDropDownIcon='true' (change)="onMultiSelectChange($event)"></ejs-multiselect>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr style="height: 50px">
-                        <td style="width: 30%">
-                            <div> Non-Working Days
-                            </div>
-                        </td>
-                        <td style="width: 70%">
-                            <div class="multi-prop">
-                                <div>
-                                    <button #toggleBtn ejs-button class="e-active" [isToggle]="true" (click)="btnClick()">Show</button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
 
 <div id="action-description">
-    <p>This demo depicts the way to show or hide the weekend days of a week on Schedule. The days whichever not specified in
-        working days collections will be taken into consideration as weekend days.
-    </p>
+  <p>This demo depicts the way to show or hide the weekend days of a week on Schedule. The days whichever not specified
+    in working days collections will be taken into consideration as weekend days.</p>
 </div>
 
 <div id="description">
-    <p>
-        In this demo, the
-        <code>showWeekend</code> property is used either to show or hide the weekend days of a week and it is not applicable on
-        <code>workweek</code> view. By default, it is set to
-        <code>true</code>. The days which are not a part of the working days collection of a Scheduler are usually considered as weekend days
-        here.
-    </p>
-    <p>
-        Here, the working days are defined as
-        <code>[1, 3, 4, 5]</code> on Schedule. Therefore, the remaining days (0, 2, 6 – Sunday, Tuesday and Saturday) are considered as weekend days
-        and will be hidden from the views as the
-        <code>showWeekend</code> property is set to false.
-    </p>
+  <p>
+    In this demo, the <code>showWeekend</code> property is used either to show or hide the weekend days of a week and it
+    is not applicable on <code>workweek</code> view. By default, it is set to <code>true</code>. The days which are not
+    a part of the working days collection of a Scheduler are usually considered as weekend days here.
+  </p>
+  <p>
+    Here, the working days are defined as <code>[1, 3, 4, 5]</code> on Schedule. Therefore, the remaining days (0, 2, 6
+    – Sunday, Tuesday and Saturday) are considered as weekend days and will be hidden from the views as the
+    <code>showWeekend</code> property is set to false.
+  </p>
 </div>

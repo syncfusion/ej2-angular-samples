@@ -37,38 +37,57 @@
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
-                <table id="property" title="Properties" class="property-panel-table" style="width: 100%; margin:10px">
+                <table id="property" title="Properties" class="property-panel-table" style="width: 100%; margin-left: -10px;">
+                    <colgroup>
+                        <col span="1" style="width: 45%;">
+                        <col span="1" style="width: 35%;">
+                        <col span="1" style="width: 20%;">
+                    </colgroup>
                     <tr style="height: 50px">
-                        <td style="width: 30%">
-                            <div id='pointerValue'>Pointer Value <span> &nbsp;&nbsp;&nbsp;70</span> </div>
+                        <td>
+                            <div>Pointer Value</div>
                         </td>
                         <td style="width: 40%;">
                             <div>
-                                <input type="range" id="value" value="70" min="0" max="180" style="width:90%" />
+                                <input type="range" id="value" value="70" min="0" max="180"/>
                             </div>
                         </td>
+                        <td style="text-align: center; padding-top: 10px; padding-left: 2%">
+                            <span id='pointerValue'>70</span>
+                        </td>
                     </tr>
+                    </table>
+                    <table id="property" title="Properties" class="property-panel-table" style="width: 100%; margin-left: -10px;">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
                     <tr style="height: 50px">
                         <td style="width: 20%">
                             <div id='enablePointer'>Allow Pointer Drag</div>
                         </td>
                         <td style="width: 40%;">
                             <div>
-                                <input type="checkbox" id="enable" checked="true" style="width:90%" />
+                                <input type="checkbox" id="enable" checked="true" class="drag"/>
                             </div>
                         </td>
                     </tr>
+                    </table>
+                    <table id="property" title="Properties" class="property-panel-table" style="width: 100%; margin-left: -10px;">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
                     <tr style="height: 50px">
-                        <td style="width: 20%">
+                        <td>
                             <div id='enableRange'>Allow Ranges Drag</div>
                         </td>
                         <td style="width: 40%;">
                             <div>
-                                <input type="checkbox" id="rangedrag" style="width:90%"/>
+                                <input type="checkbox" id="rangedrag" class="drag"/>
                             </div>
                         </td>
                     </tr>
-        
                 </table>
             </div>
         </div>
@@ -91,6 +110,9 @@
 <style>
     .control-section {
         min-height: 450px;
+    }
+    .e-view.fabric .drag, .e-view.tailwind .drag{
+        margin-top: 10px;
     }
 </style>
 <!-- custom code end -->

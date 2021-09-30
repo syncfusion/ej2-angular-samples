@@ -21,7 +21,8 @@ export class TreemapSelectComponent {
    public load = (args: ILoadEventArgs) => {
     let theme: string = location.hash.split('/')[1];
     theme = theme ? theme : 'Material';
-    args.treemap.theme = <TreeMapTheme>(theme.charAt(0).toUpperCase() + theme.slice(1));
+    args.treemap.theme = <TreeMapTheme>(theme.charAt(0).toUpperCase() +
+    theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
 }
 // custom code end
 titleSettings: object = {
@@ -91,7 +92,7 @@ highlightSettings: object = {
         let highlightMode: DropDownList = new DropDownList({
         index: 0,
         placeholder: 'Select highlight type',
-        width: 80,
+        width: '105%',
         change: () => {
             this.treemap.highlightSettings.mode = <HighLightMode>highlightMode.value;
             this.treemap.refresh();
@@ -101,7 +102,7 @@ highlightSettings: object = {
         let selectionMode: DropDownList = new DropDownList({
         index: 0,
         placeholder: 'Selection selection type',
-        width: 100,
+        width: '105%',
         change: () => {
             this.treemap.selectionSettings.mode = <SelectionMode>selectionMode.value;
             this.treemap.refresh();

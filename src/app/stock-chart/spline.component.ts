@@ -39,7 +39,6 @@ export class SplineComponent {
     };
      // custom code end
     public title: string = 'AAPL Stock Price';
-    public titleStyle: object = { color: 'black ' };
     public tooltipRender(args: ITooltipRenderEventArgs): void {
         if (args.text.split('<br/>')[4]) {
         let target: number = parseInt(args.text.split('<br/>')[4].split('<b>')[1].split('</b>')[0], 10);

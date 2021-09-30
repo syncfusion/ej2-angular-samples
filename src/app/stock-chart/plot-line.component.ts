@@ -28,7 +28,6 @@ export class PlotLineComponent {
         }
     };
     public title: string = 'Plot line on Y axis';
-    public titleStyle: object = { color: 'black ' }
     public enable: boolean = true;
     public seriesType: string[] = [];
     public indicatorType: string[] = [];

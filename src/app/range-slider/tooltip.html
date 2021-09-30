@@ -17,34 +17,38 @@
         </div>
     </div>
     </div>
-    <div class="col-lg-4 property-section ">
-        <table id="property"  title="Properties ">
-            <tbody>
-                <tr>
-                    <td style="width: 50%;padding-left: 10px">
-                        <div>Placement</div>
-                    </td>
-                    <td style="width: 50%;padding-right: 10px">
-                        <div>
-                            <ejs-dropdownlist #placementdropdownlist id='filter-type' dropdownlist [dataSource]='datasource' [fields]='fields' index=0
-                                (change)='changeTooltip()' placeholder='Select a Placement' popupHeight='200px'></ejs-dropdownlist>
-                        </div>
-                    </td>
-                </tr>
-                <tr id="slider-showon">
-
-                    <td style="width: 50%;padding-left: 10px">
-                        <div>ShowOn</div>
-                    </td>
-                    <td style="width: 50%;padding-right: 10px">
-                        <div>
-                            <ejs-dropdownlist #showondropdownlist id='filter-type1' dropdownlist [dataSource]='datasource1' [fields]='fields1' index=0
-                                (change)='changeShowon()' placeholder='Select a ShowOn' popupHeight='200px'></ejs-dropdownlist>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property"  title="Properties ">
+                    <tbody>
+                        <tr>
+                            <td style="width: 50%;padding-left: 10px">
+                                <div>Placement</div>
+                            </td>
+                            <td style="width: 50%;padding-right: 10px">
+                                <div>
+                                    <ejs-dropdownlist #placementdropdownlist id='filter-type' dropdownlist [dataSource]='datasource' [fields]='fields' index=0
+                                        (change)='changeTooltip()' placeholder='Select a Placement' popupHeight='200px'></ejs-dropdownlist>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="slider-showon">
+                            <td style="width: 50%;padding-left: 10px">
+                                <div>ShowOn</div>
+                            </td>
+                            <td style="width: 50%;padding-right: 10px">
+                                <div>
+                                    <ejs-dropdownlist #showondropdownlist id='filter-type1' dropdownlist [dataSource]='datasource1' [fields]='fields1' index=0
+                                        (change)='changeShowon()' placeholder='Select a ShowOn' popupHeight='200px'></ejs-dropdownlist>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
     <div id="description">
         <p>Slider component displays the tooltip to indicate the current value to the user.</p>

@@ -29,7 +29,8 @@ export class SemiCircleComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     public majorTicks: Object = {
@@ -76,7 +77,7 @@ export class SemiCircleComponent {
             document.getElementById('start').onpointermove = document.getElementById('start').ontouchmove =
             document.getElementById('start').onchange = () => {
                 let min: number = parseInt((<HTMLInputElement>document.getElementById('start')).value, 10);
-                document.getElementById('rangeStart').innerHTML = 'Start Angle <span> &nbsp;&nbsp;&nbsp;' + min + '°';
+                document.getElementById('rangeStart').innerHTML = min + '°';
                 debugger;
                 this.circulargauge.axes[0].startAngle = min;
                 
@@ -85,14 +86,14 @@ export class SemiCircleComponent {
             document.getElementById('end').onpointermove = document.getElementById('end').ontouchmove =
             document.getElementById('end').onchange = () => {
                 let max: number = parseInt((<HTMLInputElement>document.getElementById('end')).value, 10);
-                document.getElementById('rangeEnd').innerHTML = 'End Angle <span> &nbsp;&nbsp;&nbsp;' + max + '°';
+                document.getElementById('rangeEnd').innerHTML = max + '°';
                 this.circulargauge.axes[0].endAngle = max;
                 this.circulargauge.refresh();
             };
             document.getElementById('radius').onpointermove = document.getElementById('radius').ontouchmove =
             document.getElementById('radius').onchange = () => {
                 let max: number = parseInt((<HTMLInputElement>document.getElementById('radius')).value, 10);
-                document.getElementById('radius1').innerHTML = 'Radius <span> &nbsp;&nbsp;&nbsp;' + max + '%';
+                document.getElementById('radius1').innerHTML = max + '%';
                 this.circulargauge.axes[0].radius = '' + max + '%';
                 this.circulargauge.refresh();
             };
@@ -100,7 +101,7 @@ export class SemiCircleComponent {
             document.getElementById('centerX').onchange = () => {
                 if (!highlightCheckBox.checked) {
                     let max: number = parseInt((<HTMLInputElement>document.getElementById('centerX')).value, 10);
-                    document.getElementById('center1').innerHTML = 'Center X <span> &nbsp;&nbsp;&nbsp;' + max + '%';
+                    document.getElementById('center1').innerHTML = max + '%';
                     this.circulargauge.centerX = '' + max + '%';
                     this.circulargauge.refresh();
                 }
@@ -109,7 +110,7 @@ export class SemiCircleComponent {
             document.getElementById('centerY').onchange = () => {
                 if (!highlightCheckBox.checked) {
                     let max: number = parseInt((<HTMLInputElement>document.getElementById('centerY')).value, 10);
-                    document.getElementById('center2').innerHTML = 'Center Y <span> &nbsp;&nbsp;&nbsp;' + max + '%';
+                    document.getElementById('center2').innerHTML = max + '%';
                     this.circulargauge.centerY = '' + max + '%';
                     this.circulargauge.refresh();
                 }

@@ -12,13 +12,15 @@
                 <div class="property-panel-content">
                     <table id="property" title="Properties">
                         <tr>
-                            <td style="width: 30%">
-                                <div>
+                            <td style="width: 100%">
+                                <div style="fontSize: 15px">
                                     Selection Mode
                                 </div>
                             </td>
-                            <td style="width: 70%;padding-right: 5px">
-                                <div>
+                        </tr>
+                        <tr>
+                            <td style="width: 100%;padding-right: 5px">
+                                <div style="width: 150px">
                                     <ejs-dropdownlist #SelectionModeList [dataSource]='dropDownModeListData'
                                             [fields]='dropDownModeListFields' value='Row'>
                                     </ejs-dropdownlist>
@@ -26,13 +28,15 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 30%">
-                                <div>
+                            <td style="width: 100%">
+                                <div style="fontSize: 15px">
                                     Selection Type
                                 </div>
                             </td>
-                            <td style="width: 70%;padding-right: 5px">
-                                <div>
+                        </tr>
+                        <tr>
+                            <td style="width: 100%;padding-right: 5px">
+                                <div style="width: 150px">
                                     <ejs-dropdownlist #SelectionTypeList [dataSource]='dropDownTypeListData'
                                             [fields]='dropDownTypeListFields' value='Single'>
                                     </ejs-dropdownlist>
@@ -41,12 +45,14 @@
                         </tr>
                         <tr>
                             <td style="width: 30%">
-                                <div>
+                                <div style="fontSize: 15px">
                                     Toggle Selection
                                 </div>
                             </td>
-                            <td style="width: 70%;padding-right: 5px">
-                                <div>
+                        </tr>
+                        <tr>
+                            <td style="width: 100%;padding-right: 5px">
+                                <div style="width: 150px">
                                     <ejs-dropdownlist #SelectionToggleList [dataSource]='dropDownToggleListData'
                                             [fields]='dropDownToggleListFields' [value]='toggleValue'>
                                     </ejs-dropdownlist>
@@ -54,7 +60,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 30%">
+                            <td style="width: 50%">
                                 <div>
                                     <button ejs-button id="perform" content="Perform" (click)="perform()">Perform</button>
                                 </div>

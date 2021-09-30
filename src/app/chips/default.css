@@ -11,6 +11,15 @@
   padding-top: 10px;
 }
 
+body.material-dark .chips-headers {
+  color: #ffffff;
+}
+
+#chip-choice.e-chip-list .e-chip .e-chip-avatar {
+  background: inherit;
+  color: inherit;
+}
+
 #chip-choice .e-chip .e-chip-avatar {
   font-family: 'e-chips-icons';
 }

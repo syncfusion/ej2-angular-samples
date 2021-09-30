@@ -101,9 +101,9 @@ export class AnalyticsDashboardComponent {
     public zoomSettings: Object = { enable: false };
     public maplegendSettings: Object = { visible: false };
     public mapLoad = (args: ILoadEventArgs) => {
-        let theme: string = location.hash.split('/')[1];
-        theme = theme ? theme : 'Material';
-        args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() + theme.slice(1));
+      let theme: string = location.hash.split('/')[1];
+      theme = theme ? theme : 'Material';
+      args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() + theme.slice(1)).replace(/-dark/i, 'Dark');
     }
     public  layers: object[] = [
         {

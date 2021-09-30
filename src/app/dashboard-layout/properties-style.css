@@ -25,6 +25,7 @@
 #dashboard_properties {
     padding-left: 0;
     padding-right: 0;
+    padding-bottom: 20px;
 }
 
 #api_dashboard .panel-content {
@@ -85,5 +86,10 @@
 div#control_dash {
     border: 1px solid lightgray;
 }
+
+#property-section .e-input-group, .e-input-group.e-control-wrapper {
+    width:122px;
+}
+
 
 

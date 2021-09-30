@@ -1,24 +1,23 @@
 <div class="control-section">
-    <ejs-schedule #scheduleObj width='100%' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" (popupOpen)="onPopupOpen($event)"
-        (eventRendered)="oneventRendered($event)">
-    </ejs-schedule>
+  <ejs-schedule #scheduleObj width='100%' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
+    (popupOpen)="onPopupOpen($event)" (eventRendered)="onEventRendered($event)"></ejs-schedule>
 </div>
 
 <div id="action-description">
-    <p>
-        This demo shows how to add additional fields to the default editor window. Here, an additional field
-        <code>Event Type</code> has been added to the default event editor and its value is processed accordingly.
-    </p>
+  <p>
+    This demo shows how to add additional fields to the default editor window. Here, an additional field
+    <code>Event Type</code> has been added to the default event editor and its value is processed accordingly.
+  </p>
 </div>
 
 <div id="description">
-    <p>
-        In this demo, the additional field is added to the default event editor by making use of the
-        <code>popupOpen</code> event which gets triggered before the event editor getting opened on Schedule.
-        <code>popupOpen</code> is a client-side event that triggers before any of the popups getting opened on Schedule.
-    </p>
-    <p>
-        Here, the additional field (any of the form elements) is needed to be provided with the common class
-        <code>e-field</code>, so as to handle and process those additional data into the default event object.
-    </p>
+  <p>
+    In this demo, the additional field is added to the default event editor by making use of the
+    <code>popupOpen</code> event which gets triggered before the event editor getting opened on Schedule.
+    <code>popupOpen</code> is a client-side event that triggers before any of the popups getting opened on Schedule.
+  </p>
+  <p>
+    Here, the additional field (any of the form elements) is needed to be provided with the common class
+    <code>e-field</code>, so as to handle and process those additional data into the default event object.
+  </p>
 </div>

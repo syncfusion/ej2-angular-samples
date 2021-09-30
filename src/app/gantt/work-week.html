@@ -19,7 +19,7 @@
                 </td>
                 <td style="width: 70%;padding-right: 10px">
                     <div id="WorkingDays">
-                        <ejs-multiselect id="checklist" #WorkingDaysObj [dataSource]="dropDownData" 
+                        <ejs-multiselect id="checklist" #WorkingDaysObj style="padding: 2px" [dataSource]="dropDownData" 
                         (select)="select($event)" (removed)="remove($event)" [value]="workWeek" 
                         [fields]="dropDownFields" [mode]="mode" [showDropDownIcon]="true"
                         popupHeight="350px"></ejs-multiselect>

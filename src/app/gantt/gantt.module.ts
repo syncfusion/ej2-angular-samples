@@ -93,7 +93,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/drag-and-drop', component: GanttDragAndDropComponent,
         description: 'This demo for Essential JS 2 Gantt control how the rows can be dragged within the gantt using the row drag-and-drop feature.',
-        name: 'Row Drag And Drop', order: '01', category: 'Gantt'
+        name: 'Row Drag and Drop', order: '01', category: 'Gantt'
     },
     {
         path: ':theme/gantt/split-tasks', component: GanttSplitTasksComponent,
@@ -176,8 +176,8 @@ export const GanttAppRoutes: Object[] = [
         name: 'Unscheduled Tasks', order: '04', category: 'Scheduling Concepts'
     },
     {
-        path: ':theme/gantt/timezone', component: GanttTimezoneComponent, type: "new", 
-        description: 'This demo explains how the Gantt Chart schedules projects in different timezones.',
+        path: ':theme/gantt/timezone', component: GanttTimezoneComponent,
+		description: 'This demo explains how the Gantt Chart schedules projects in different timezones.',
         name: 'Timezone', order: '04', category: 'Scheduling Concepts'
     },
     {

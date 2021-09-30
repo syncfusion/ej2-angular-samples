@@ -1,6 +1,6 @@
 <div class="control-section">
     <div>
-        <ejs-stockchart id='stockChartPlotline' [enablePeriodSelector]='enable' [title]='title' [titleStyle]='titleStyle' (load)='load($event)'
+        <ejs-stockchart id='stockChartPlotline' [enablePeriodSelector]='enable' [title]='title' (load)='load($event)'
             [chartArea]='chartArea' [seriesType]='seriesType' [indicatorType]='indicatorType' [primaryXAxis]='primaryXAxis' style="display:block;" [primaryYAxis]='primaryYAxis'>
             <e-stockchart-series-collection>
                 <e-stockchart-series [dataSource]='data1' type='Line' xName='x' yName='close' name='google'>

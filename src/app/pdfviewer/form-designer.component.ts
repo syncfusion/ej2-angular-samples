@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
 import {
     PdfViewerComponent, TextFieldSettings, RadioButtonFieldSettings, InitialFieldSettings, CheckBoxFieldSettings, SignatureFieldSettings, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
-    ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService, LoadEventArgs
+    ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService, LoadEventArgs, ValidateFormFieldsArgs
 } from '@syncfusion/ej2-angular-pdfviewer';
 
 /**
@@ -18,7 +18,6 @@ import {
 export class FormDesignerComponent implements OnInit {
     @ViewChild('pdfviewer')
     public pdfviewerControl: PdfViewerComponent;
-    
     public service: string = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
     public document: string = 'FormDesigner.pdf';
     ngOnInit(): void {
@@ -30,8 +29,8 @@ export class FormDesignerComponent implements OnInit {
             this.pdfviewerControl.formDesignerModule.addFormField("Textbox", { name: "First Name", bounds: { X: 146, Y: 229, Width: 150, Height: 24 } } as TextFieldSettings);
             this.pdfviewerControl.formDesignerModule.addFormField("Textbox", { name: "Middle Name", bounds: { X: 338, Y: 229, Width: 150, Height: 24 } } as TextFieldSettings);
             this.pdfviewerControl.formDesignerModule.addFormField("Textbox", { name: "Last Name", bounds: { X: 530, Y: 229, Width: 150, Height: 24 } } as TextFieldSettings);
-            this.pdfviewerControl.formDesignerModule.addFormField("RadioButton", { bounds: { X: 148, Y: 289, Width: 18, Height: 18 }, name: "Radio", isSelected: false } as RadioButtonFieldSettings);
-            this.pdfviewerControl.formDesignerModule.addFormField("RadioButton", { bounds: { X: 292, Y: 289, Width: 18, Height: 18 }, name: "Radio", isSelected: false } as RadioButtonFieldSettings);
+            this.pdfviewerControl.formDesignerModule.addFormField("RadioButton", {bounds: { X: 148, Y: 289, Width: 18, Height: 18 }, name: "Gender", isSelected: false } as RadioButtonFieldSettings);
+            this.pdfviewerControl.formDesignerModule.addFormField("RadioButton", {bounds: { X: 292, Y: 289, Width: 18, Height: 18 }, name: "Gender", isSelected: false } as RadioButtonFieldSettings);
             this.pdfviewerControl.formDesignerModule.addFormField("Textbox", { name: "DOB Month", bounds: { X: 146, Y: 320, Width: 35, Height: 24 } } as TextFieldSettings);
             this.pdfviewerControl.formDesignerModule.addFormField("Textbox", { name: "DOB Date", bounds: { X: 193, Y: 320, Width: 35, Height: 24 } } as TextFieldSettings);
             this.pdfviewerControl.formDesignerModule.addFormField("Textbox", { name: "DOB Year", bounds: { X: 242, Y: 320, Width: 35, Height: 24 } } as TextFieldSettings);
@@ -50,4 +49,48 @@ export class FormDesignerComponent implements OnInit {
             this.pdfviewerControl.formDesignerModule.addFormField("Textbox", { name: "DOS Year", bounds: { X: 482, Y: 923, Width: 35, Height: 24 } } as TextFieldSettings);
         }
 }
+
+public validateFormFields(e: ValidateFormFieldsArgs): void {
+    let errorMessage : string = "Required Field(s): ";
+    let forms: any = this.pdfviewerControl.formFieldCollections;
+    let flag: boolean = false;
+    let radioGroupName: string = "";
+    for (var i = 0; i < forms.length; i++) {
+        let text: string = "";
+        if (forms[i].isRequired == true)
+        {
+            if (forms[i].type.toString() == "Checkbox" && forms[i].isChecked == false) {
+                text = forms[i].name;
+            }
+            else if (forms[i].type == "RadioButton" && flag == false) {
+                radioGroupName = forms[i].name;
+                if(forms[i].isSelected == true)
+                    flag = true;
+            }
+            else if (forms[i].type.toString() != "Checkbox" && forms[i].type != "RadioButton" &&  forms[i].value == ""){
+                text = forms[i].name;
+            }
+            if(text != "")
+            {                    
+                if (errorMessage == "Required Field(s): ") {
+                    errorMessage += text;
+                }
+                else {
+                    errorMessage += ", " + text;
+                }
+            }
+        }
+    }
+    if(!flag && radioGroupName != "")
+    {
+        if(errorMessage == "Required Field(s): ")
+            errorMessage += radioGroupName;
+        else
+            errorMessage += ", " + radioGroupName;
+    }
+    if (errorMessage != "Required Field(s): ") {
+        this.pdfviewerControl.showNotificationPopup(errorMessage);
+    }
+}
+
 }

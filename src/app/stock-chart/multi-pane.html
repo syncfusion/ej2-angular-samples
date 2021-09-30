@@ -1,7 +1,7 @@
 <div class="control-section">
     <div>
         <ejs-stockchart id='StockChartCandle' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' style="display:block;"
-            [primaryYAxis]='primaryYAxis' [crosshair]='crosshair' [title]='title' [titleStyle]='titleStyle' [tooltip]='tooltip'
+            [primaryYAxis]='primaryYAxis' [crosshair]='crosshair' [title]='title' [tooltip]='tooltip'
             (tooltipRender)='tooltipRender($event)' (axisLabelRender)='axisLabelRender($event)' (load)='load($event)'>
             <e-stockchart-axes>
                 <e-stockchart-axis rowIndex=1 name='yAxis1' opposedPosition=true labelPosition='Inside' tickPosition='Inside'>

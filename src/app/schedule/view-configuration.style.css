@@ -1,21 +1,21 @@
 .e-schedule .e-agenda-view .e-appointment .subject {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .e-schedule .e-agenda-view .e-appointment .group {
-    font-size: 12px;
-    font-weight: 500;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .e-schedule .e-month-view .e-appointment .e-appointment-details {
-    padding: 1px;
-    padding-left: 3px;
+  padding: 1px;
+  padding-left: 3px;
 }
 
 .e-schedule .e-agenda-view .e-appointment .location {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .e-schedule .e-date-header-wrap .e-resource-cells {
-    font-weight: 500;
+  font-weight: 500;
 }

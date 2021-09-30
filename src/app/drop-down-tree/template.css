@@ -38,6 +38,41 @@
     background-color: #000;
 }
 
+.material-dark .ddt-template .head,
+.material-dark .ddt-template .footer,
+.material-dark .ddt-template .footer-content .e-badge {
+    color: #fff;
+    background-color: #333;
+}
+
+.fabric-dark .ddt-template .head,
+.fabric-dark .ddt-template .footer,
+.fabric-dark .ddt-template .footer-content .e-badge {
+    color: #fff;
+    background-color: #3333;
+}
+
+.bootstrap-dark .ddt-template .head,
+.bootstrap-dark .ddt-template .footer,
+.bootstrap-dark .ddt-template .footer-content .e-badge {
+    color: #fff;
+    background-color: #1A1A1A;
+}
+
+.tailwind-dark .ddt-template .head,
+.tailwind-dark .ddt-template .footer,
+.tailwind-dark .ddt-template .footer-content .e-badge {
+    color: #fff;
+    background-color: #1f2937;
+}
+
+.bootstrap5-dark .ddt-template .head,
+.bootstrap5-dark .ddt-template .footer,
+.bootstrap5-dark .ddt-template .footer-content .e-badge {
+    color: #fff;
+    background-color: #212529;
+}
+
 .e-bigger .e-ddt.ddt-template .e-treeview .e-fullrow,
 .e-ddt.ddt-template .e-treeview .e-fullrow {
     height: 72px;

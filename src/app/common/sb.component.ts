@@ -61,7 +61,7 @@ const sourceHeader: String = '<li class="nav-item {2}" role="presentation"><a cl
 const sourcecontent: String = '<div class="tab-pane {2}" id="{0}" role="tabpanel" {4}><pre><code class="{3}">{1}</code></pre></div>';
 const plnk: string = '<li class="plnk" style="float:right"><a id="plnkr">Open in Plunker</a></li>\n' +
     '<li class="open"><a id="openNew" target="_blank"><div class="openIcon e-icons"></div></a></li>';
-const themes: string[] = ['material', 'fabric', 'bootstrap', 'bootstrap4', 'tailwind', 'highcontrast'];
+const themes: string[] = ['bootstrap5', 'bootstrap5-dark', 'tailwind', 'tailwind-dark', 'material', 'material-dark', 'fabric', 'fabric-dark', 'bootstrap4', 'bootstrap', 'bootstrap-dark', 'highcontrast'];
 let selectedTheme: string;
 let themeFlag: boolean = true;
 let slideFlag: boolean = false;
@@ -366,7 +366,7 @@ export class SBController {
                         theme = location.hash.split('/')[1];
                         theme = themes.indexOf(theme) !== -1 ? theme : selectedTheme;
                     }
-                    theme = themes.indexOf(theme) !== -1 ? theme : 'material';
+                    theme = themes.indexOf(theme) !== -1 ? theme : 'bootstrap5';
                     document.getElementById(theme).classList.add('active-theme');
                     loadTheme(theme);
                 }
@@ -414,7 +414,7 @@ export class SBController {
             .subscribe((event: any) => {
                 let hash: string[] = location.hash.split('/');
                 if (!document.querySelector('.active-theme')) {
-                    document.getElementById(hash[1] || 'material').classList.add('active-theme');
+                    document.getElementById(hash[1] || 'bootstrap5').classList.add('active-theme');
                 }
                 hash[1] = document.querySelector('.active-theme').id;
                 enableRipple(hash[1] === 'material');
@@ -507,7 +507,6 @@ export class SBController {
             content: 'Open in New Window'
         });
         openNew.appendTo('.sb-open-new-wrapper');
-        debugger
         let previous: Tooltip = new Tooltip({
             content: 'Previous Sample'
         });
@@ -669,18 +668,24 @@ export class SBController {
             window.isInteractedList = false;
             this.router.navigateByUrl(prevList);
         }
+        setTimeout(function(){
+            select('li.e-list-item.e-level-1.e-active').scrollIntoView({block:"nearest"});
+            },100);
+
     }
 
     onNextButtonClick(): void {
         this.prevControl = this.currentControl;
         let currentIndex: number = this.pathRoutes.indexOf(this.getHash());
         let nextList: string = this.pathRoutes[currentIndex + 1];
-        if ((this.pathRoutes.length < currentIndex + 2)) {
-        }
         if (currentIndex !== (this.pathRoutes.length - 1) && currentIndex !== -1) {
             window.isInteractedList = false;
             this.router.navigateByUrl(nextList);
         }
+        setTimeout(function(){
+            select('li.e-list-item.e-level-1.e-active').scrollIntoView({block:"nearest"});
+            },100);
+
     }
 
     onNavButtonClick(e: any) {

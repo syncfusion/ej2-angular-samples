@@ -15,32 +15,47 @@
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
-                <table id="property" title="Properties" style="width: 100%">
-                    <tr style="height: 50px">
+                <table id="property" title="Properties" style="width: 100%; margin-left: -10px">
+                    <tr style="height: 50px;">
                         <td>
                             <img id='random' src="./assets/circular-gauge/images/gauge-one.png" style="margin-left:25px;margin-top:10px;" />
                             <div id="random_line" style="display:block;left: 0px;background: #ff4081;padding-top: 0px;height: 2px !important;width: 85px;margin: 2px 2px 2px 17px;"></div>
                         </td>
-                        <td>
+                        <td style="text-align: center">
                             <img id='usage' src="./assets/circular-gauge/images/gauge-two.png" style="margin-left:25px;margin-top:10px;" />
-                            <div id="usage_line" style="display:none;left: 0px;background: #ff4081;padding-top: 0px;height: 2px !important;width: 85px;margin: 2px 2px 2px 17px;"></div>
+                            <div id="usage_line" style="display:none;left: 0px;background: #ff4081;padding-top: 0px;height: 2px !important;width: 85px;margin: 2px 2px 2px 45px;"></div>
                         </td>
                     </tr>
-                    <tr style="height: 50px">
-                        <td>
-                            <div id='currentPointerValue'>&nbsp;Current Value
-                                <span> &nbsp;&nbsp;&nbsp;1800</span>
+                    </table>
+                    <table id="property" title="Properties" style="width: 100%; margin-left: -10px">
+                        <colgroup>
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 35%;">
+                            <col span="1" style="width: 20%;">
+                        </colgroup>
+                    <tr style="height: 70px">
+                        <td style="padding-top: 20px">
+                            <div>Current Value
                             </div>
                         </td>
-                        <td>
+                        <td style="padding-top: 20px">
                             <div>
-                                <input type="range" id="currentValue" value="1800" min="1000" max="2000" style="width:90%" />
+                                <input type="range" id="currentValue" value="1800" min="1000" max="2000" style="width: 90%; margin-left: 15%;"/>
                             </div>
                         </td>
+                        <td style="text-align: center; padding-left: 4%; padding-top: 20px ">
+                            <span id='currentPointerValue'>1800</span>
+                        </td>
                     </tr>
+                </table>
+                <table id="property" title="Properties" style="width: 100%; margin-left: -10px">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
                     <tr style="height: 50px">
                         <td>
-                            <div id='rangebarColor'>&nbsp;RangeBar Color</div>
+                            <div id='rangebarColor'>RangeBar Color</div>
                         </td>
                         <td>
                             <div>
@@ -52,9 +67,15 @@
                             </div>
                         </td>
                     </tr>
+                </table>
+                <table id="property" title="Properties" style="width: 100%; margin-left: -10px">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
                     <tr style="height: 50px">
                         <td>
-                            <div id='range'>&nbsp;Range Color</div>
+                            <div id='range'>Range Color</div>
                         </td>
                         <td>
                             <div>
@@ -66,9 +87,15 @@
                             </div>
                         </td>
                     </tr>
+                    </table>
+                    <table id="property" title="Properties" style="width: 100%; margin-left: -10px">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
                     <tr style="height: 50px">
                         <td>
-                            <div id='pointColor'>&nbsp;Pointer Color</div>
+                            <div id='pointColor'>Pointer Color</div>
                         </td>
                         <td>
                             <div>

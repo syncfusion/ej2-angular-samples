@@ -15,7 +15,8 @@ export class AnnotationComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     //Initializing Axes
@@ -34,7 +35,6 @@ export class AnnotationComponent {
                 value: 35,
                 height: 15,
                 width: 15,
-                color: '#757575',
                 placement: 'Near',
                 markerType: 'Triangle',
                 offset: -50

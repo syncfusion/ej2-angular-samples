@@ -15,6 +15,16 @@
   margin: 10px 13px 10px 10px;
 }
 
+body.material-dark .sample_container.badge-notification .layout,
+body.tailwind-dark .sample_container.badge-notification .layout,
+body.bootstrap-dark .sample_container.badge-notification .layout,
+body.fabric-dark .sample_container.badge-notification .layout,
+.bootstrap5-dark .sample_container.badge-notification .layout {
+    background: inherit;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
 .sample_container.badge-notification .layout {
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
   padding: 25px 10px 10px 10px;

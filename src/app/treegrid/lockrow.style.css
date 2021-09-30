@@ -1,17 +1,17 @@
 .material .disableRow .e-rowcell{
-    color: rgba(0, 0, 0, .38);
+    color: rgba(0, 0, 0, .38) !important;
 }
 /* custom code start*/
-.fabric .disableRow .e-rowcell{
-    color: #c8c8c8;
+.material-dark .disableRow .e-rowcell, .fabric-dark .disableRow .e-rowcell,
+.bootstrap-dark .disableRow .e-rowcell, .bootstrap5-dark .disableRow .highcontrast .disableRow .e-rowcell, 
+.tailwind .disableRow .e-rowcell, .tailwind-dark .disableRow .e-rowcell {
+    color: #757575 !important;
 }
-.bootstrap .disableRow .e-rowcell{
-    color: rgba(0, 0, 0, .35);
+.fabric .disableRow .e-rowcell {
+    color: #c8c8c8 !important;
 }
-.bootstrap4 .disableRow .e-rowcell{
-    color: rgba(0, 0, 0, .35);
-}
-.highcontrast .disableRow .e-rowcell{
-    color: #757575;
+.bootstrap .disableRow .e-rowcell, .bootstrap4 .disableRow .e-rowcell, 
+.bootstrap5 .disableRow .e-rowcell {
+    color: rgba(0, 0, 0, .35) !important;
 }
 /* custom code end*/

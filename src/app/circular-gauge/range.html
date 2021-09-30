@@ -27,8 +27,8 @@
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
-                <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin:10px">
-                    <tr style="height: 50px">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -10px">
+                    <tr style="height: 40px">
                         <td>
                             <div> Select Range </div>
                         </td>
@@ -42,28 +42,49 @@
                             </div>
                         </td>
                     </tr>
-                    <tr style="height: 50px">
+                    </table>
+                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -10px">
+                        <colgroup>
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 35%;">
+                            <col span="1" style="width: 20%;">
+                        </colgroup>
+                    <tr style="height: 40px">
                         <td>
-                            <div id='rangeStart'>Range Start <span> &nbsp;&nbsp;&nbsp;0</span> </div>
+                            <div>Range Start</div>
                         </td>
-                        <td>
+                        <td style="width: 40%;">
                             <div>
-                                <input type="range" id="start" value="0" min="0" max="120" style="width:90%" />
+                                <input type="range" id="start" value="0" min="0" max="120" style="width: 90%;"/>
                             </div>
                         </td>
-                    </tr>
-
-                    <tr style="height: 50px">
-                        <td>
-                            <div id='rangeEnd'>Range End <span> &nbsp;&nbsp;&nbsp;40</span> </div>
+                        <td style="text-align: center; padding-top: 10px; padding-left: -4%">
+                            <span id='rangeStart'>0</span>
                         </td>
+                    </tr>
+                    </table>
+                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -10px">
+                        <colgroup>
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 35%;">
+                            <col span="1" style="width: 20%;">
+                        </colgroup>
+                    <tr style="height: 40px">
                         <td>
+                            <div>Range End</div>
+                        </td>
+                        <td style="width: 40%;">
                             <div>
-                                <input type="range" id="end" value="40" min="0" max="120" style="width:90%" />
+                                <input type="range" id="end" value="40" min="0" max="120" style="width: 90%;"/>
                             </div>
                         </td>
+                        <td style="text-align: center; padding-top: 10px; padding-left: -4%">
+                            <span  id='rangeEnd'>40</span>
+                        </td>
                     </tr>
-                    <tr style="height: 50px">
+                    </table>
+                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -10px">
+                    <tr style="height: 40px">
                         <td>
                             <div id=''>Range Color</div>
                         </td>
@@ -77,44 +98,76 @@
                             </div>
                         </td>
                     </tr>
-                    <tr style="height: 50px">
-                        <td style="width: 20%">
+                    </table>
+                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -10px">
+                    <tr style="height: 40px">
+                        <td style="width: 30%">
                             <div id='enablePointer'>Range Font Color</div>
                         </td>
                         <td style="width: 40%;">
                             <div>
-                                <input type="checkbox" id="enable" />
+                                <input type="checkbox" id="enable"  style="margin-left: 15%;"/>
                             </div>
                         </td>
                     </tr>
-                    <tr style="height: 50px">
+                    </table>
+                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -10px">
+                        <colgroup>
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 35%;">
+                            <col span="1" style="width: 20%;">
+                        </colgroup>
+                    <tr style="height: 40px">
                         <td>
-                            <div id='rangeStartWidth'>Start Width <span> &nbsp;&nbsp;&nbsp;10</span> </div>
+                            <div>Start Width</div>
                         </td>
-                        <td>
+                        <td style="width: 40%;">
                             <div>
-                                <input type="range" id="startWidth" value="10" min="0" max="30" style="width:90%" />
+                                <input type="range" id="startWidth" value="10" min="0" max="30" style="width: 90%;"/>
                             </div>
+                        </td>
+                        <td style="text-align: center; padding-top: 10px; padding-left: -4%">
+                            <span  id='rangeStartWidth'>10 </span>
                         </td>
                     </tr>
-                    <tr style="height: 50px">
+                    </table>
+                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -10px">
+                        <colgroup>
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 35%;">
+                            <col span="1" style="width: 20%;">
+                        </colgroup>
+                    <tr style="height: 40px">
                         <td>
-                            <div id='rangeEndWidth'>End Width <span> &nbsp;&nbsp;&nbsp;10</span> </div>
+                            <div>End Width</div>
                         </td>
-                        <td>
+                        <td style="width: 40%;">
                             <div>
-                                <input type="range" id="endWidth" value="10" min="0" max="30" style="width:90%" />
+                                <input type="range" id="endWidth" value="10" min="0" max="30" style="width: 90%;"/>
                             </div>
+                        </td>
+                        <td style="text-align: center; padding-top: 10px; padding-left: -4%">
+                            <span id='rangeEndWidth'>10 </span>
                         </td>
                     </tr>
-                    <tr style="height: 50px">
+                    </table>
+                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -10px">
+                        <colgroup>
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 35%;">
+                            <col span="1" style="width: 20%;">
+                        </colgroup>
+                    <tr style="height: 40px">
                         <td>
-                            <div id='roundedRadius'>Corner Radius <span> &nbsp;&nbsp;&nbsp;0</span> </div>
+                            <div>Corner Radius</div>
                         </td>
-                        <td>
+                        <td style="width: 40%;">
                             <div>
-                                <input type="range" id="radius" value="0" min="0" max="30" step="5" style="width:90%" />
+                                <input type="range" id="radius" value="0" min="0" max="30" step="5" style="width: 90%;"/>
                             </div>
+                        </td>
+                        <td style="text-align: center; padding-top: 10px; padding-left: -4%">
+                            <span id='roundedRadius'>0 </span>
                         </td>
                     </tr>
                 </table>

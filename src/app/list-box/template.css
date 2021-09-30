@@ -1,0 +1,48 @@
+#listbox-control {
+    width: 350px;
+    margin: auto;
+}
+@media screen and (max-width: 590px) {
+    #listbox-control {
+        width: 100%;
+    }
+}
+
+.list-wrapper {
+    height: inherit;
+    position: relative;
+    padding: 14px 12px 14px 78px;
+}
+
+.list-wrapper .text,
+.list-wrapper .description {
+    display: block;
+    margin: 0;
+    padding-bottom: 3px;
+    white-space: normal;
+}
+
+.list-wrapper .description {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#listbox-control .e-listbox-wrapper .list-wrapper .text {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.list-wrapper .e-avatar {
+    position: absolute;
+    left: 5px;
+    background-color: transparent;
+    font-size: 22px;
+    top: calc(50% - 26px);
+}
+
+.list-wrapper .e-avatar {
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+}

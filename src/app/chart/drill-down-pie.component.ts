@@ -61,7 +61,7 @@ export class DrilldownPieComponent {
         if (this.isparent && document.getElementById('container_Series_' + index.series + '_Point_' + index.point)) {
             this.isparent = false;
             this.pie.annotations = [{
-                content: this.pie.theme === 'HighContrast' ? darkThemeContent : lightThemeContent, region: 'Series', x: '50%', y: '50%'
+                content: (this.pie.theme === 'HighContrast')|| (this.pie.theme.indexOf('Dark') > -1) ? darkThemeContent : lightThemeContent, region: 'Series', x: '50%', y: '50%'
             }];
             this.pie.series[0].innerRadius = '30%';
             switch (index.point) {
@@ -140,6 +140,12 @@ export class DrilldownPieComponent {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        if (selectedTheme === 'highcontrast') {
+            args.accumulation.series[0].dataLabel.font.color = "white";
+        }
+        if (args.accumulation.theme.indexOf('Dark') > -1){
+            args.accumulation.series[0].dataLabel.font.color = "white";
+        }
     };
      // custom code end
     constructor() {

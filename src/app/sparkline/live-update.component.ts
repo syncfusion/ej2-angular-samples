@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { Sparkline, ISparklineLoadEventArgs } from '@syncfusion/ej2-charts';
+import { Sparkline, ISparklineLoadEventArgs, SparklineTheme } from '@syncfusion/ej2-charts';
 /**
  * Sample for axis type in Sparkline 
  */
@@ -22,7 +22,7 @@ export class SparkineLiveUpdateSample {
         minY: 0, maxY: 150
     };
     public cpucontainerArea: object = {
-        background: 'white',
+        //background: 'white',
         border: {
             color: '#dcdfe0',
             width: 2
@@ -58,7 +58,7 @@ export class SparkineLiveUpdateSample {
         minY: 4, maxY: 8
     };
     public memcontainerArea: object = {
-        background: 'white',
+       // background: 'white',
         border: {
             color: '#dcdfe0',
             width: 2
@@ -94,7 +94,7 @@ export class SparkineLiveUpdateSample {
         minY: 0, maxY: 100
     };
     public diskcontainerArea: object = {
-        background: 'white',
+       // background: 'white',
         border: {
             color: '#dcdfe0',
             width: 2
@@ -130,7 +130,7 @@ export class SparkineLiveUpdateSample {
         minY: 0, maxY: 100
     };
     public netcontainerArea: object = {
-        background: 'white',
+       // background: 'white',
         border: {
             color: '#dcdfe0',
             width: 2
@@ -229,18 +229,23 @@ export class SparkineLiveUpdateSample {
     }
     public cpuloaded(args: ISparklineLoadEventArgs): void {
         clearInterval(this.time1);
-        this.time1 = setInterval(this.update.bind(this), 1000);
+        this.time1 = window.setInterval(this.update.bind(this), 1000);
+    }
+    public cpuload(args: ISparklineLoadEventArgs): void {
+        var theme = location.hash.split('/')[1];
+        theme = theme ? theme : 'Material';
+        args.sparkline.theme = <SparklineTheme>(theme.charAt(0).toUpperCase() + theme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     }
     public memloaded(args: ISparklineLoadEventArgs): void {
         clearInterval(this.time2);
-        this.time2 = setInterval(this.update1.bind(this), 1000);
+        this.time2 = window.setInterval(this.update1.bind(this), 1000);
     }
     public diskloaded(args: ISparklineLoadEventArgs): void {
         clearInterval(this.time3);
-        this.time3 = setInterval(this.update2.bind(this), 1000);
+        this.time3 = window.setInterval(this.update2.bind(this), 1000);
     }
     public netloaded(args: ISparklineLoadEventArgs): void {
         clearInterval(this.time4);
-        this.time4 = setInterval(this.update3.bind(this), 1000);
+        this.time4 = window.setInterval(this.update3.bind(this), 1000);
     }
 }

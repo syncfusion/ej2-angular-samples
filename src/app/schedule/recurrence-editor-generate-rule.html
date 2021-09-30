@@ -1,29 +1,29 @@
 <div class="control-section">
-    <div class="content-wrapper recurrence-editor-wrap">
-        <div style="padding-bottom:15px;">
-            <label>Rule Output</label>
-            <div class="rule-output-container">
-                <div id="rule-output">FREQ=DAILY;INTERVAL=1;</div>
-            </div>
-        </div>
-        <ejs-recurrenceeditor #recurrenceObj id='RecurrenceEditor' [selectedType]='selectedType' (change)="onChange($event)"></ejs-recurrenceeditor>
+  <div class="content-wrapper recurrence-editor-wrap">
+    <div style="padding-bottom:15px;">
+      <label>Rule Output</label>
+      <div class="rule-output-container">
+        <div id="rule-output">FREQ=DAILY;INTERVAL=1;</div>
+      </div>
     </div>
+    <ejs-recurrenceeditor #recurrenceObj id='RecurrenceEditor' [selectedType]='selectedType'
+      (change)="onChange($event)"></ejs-recurrenceeditor>
+  </div>
 </div>
 
 <div id="action-description">
-    <p>This demo showcases the recurrence rule generation based on the options selected from the Recurrence editor and it usually
-        follows the
-        <a href="https://tools.ietf.org/html/rfc5545#section-3.3.10" target="_blank">iCalendar</a> specifications. This generated recurrence rule string is a valid one to be used with the Schedule event’s
-        recurrence rule field.
-    </p>
+  <p>This demo showcases the recurrence rule generation based on the options selected from the Recurrence editor and it
+    usually follows the <a href="https://tools.ietf.org/html/rfc5545#section-3.3.10" target="_blank">iCalendar</a>
+    specifications. This generated recurrence rule string is a valid one to be used with the Schedule event’s
+    recurrence rule field.
+  </p>
 </div>
 
 <div id="description">
-    <p>
-        In this demo, a specific rule has been set to the recurrence editor manually by making use of the
-        <code>setRecurrenceRule</code> method which will be displayed on the label placed at the top of it. Also, when the user dynamically change the
-        options in recurrence editor, the modified rule value as per the selection will be displayed on it which is retrieved
-        within the
-        <code>change</code> event.
-    </p>
+  <p>
+    In this demo, a specific rule has been set to the recurrence editor manually by making use of the
+    <code>setRecurrenceRule</code> method which will be displayed on the label placed at the top of it. Also, when the
+    user dynamically change the options in recurrence editor, the modified rule value as per the selection will be
+    displayed on it which is retrieved within the <code>change</code> event.
+  </p>
 </div>

@@ -1,7 +1,7 @@
 .schedule-bychild.e-schedule:not(.e-device) .e-agenda-view .e-content-wrap table td:first-child {
-    width: 90px;
+  width: 90px;
 }
 
 .schedule-bychild.e-schedule .e-agenda-view .e-resource-column {
-    width: 100px;
+  width: 100px;
 }

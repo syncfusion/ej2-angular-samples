@@ -1,0 +1,79 @@
+<div id="action-description">
+    <p>This sample demonstrates the API usage to customize the enter key and shift + enter key actions in the Rich Text Editor content. Code view represents the current rich text editor value when pressing typing any content or pressing enter key or shift + enter keys.</p>
+</div>
+<div class="control-section">
+    <table class='api'>
+        <tbody>
+            <tr>
+                <td>
+                    <div>
+                        <ejs-dropdownlist id='enterOption' #enterOption
+                        [dataSource]='enterOptionData' (change)='enterChange()'
+                        [value]='enterValue' [fields]='fields' [popupHeight]='height'
+                        [placeholder]='enterPlaceHolder' [floatLabelType]='floatLabel'></ejs-dropdownlist>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <ejs-dropdownlist id='shiftEnterOption' #shiftEnterOption
+                        [dataSource]='shiftEnterData' (change)='shiftEnterChange()'
+                        [value]='shiftEnterValue' [fields]='fields' [popupHeight]='height'
+                        [placeholder]='shiftEnterPlaceHolder' [floatLabelType]='floatLabel'></ejs-dropdownlist>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <ejs-richtexteditor id='defaultRTE' #defaultRTE (created)='onCreated()' (change)='onChange()' [saveInterval]='saveInterval' [height]='rteHeight'>
+        <ng-template #valueTemplate>
+            <p>In Rich text Editor, the enter key and shift + enter key actions can be customized using the enterKey and shiftEnterKey APIs. And the possible values are as follows:</p><ul><li>P - When 'P' is configured, pressing enter or shift + enter will create a 'p' tag</li><li>DIV - When 'DIV' is configured, pressing enter or shift + enter will create a 'div' tag</li><li>BR - When 'BR' is configured, pressing enter or shift + enter will create a 'br' tag</li></ul>
+        </ng-template>
+    </ejs-richtexteditor>
+    <br>
+    <label>Code View </label>
+    <div id="codeView" class="codeView"></div>
+</div>
+<div id="description">
+    <p>In this demo, ensure the API's behaviors by</p>
+    <ul>
+        <li>Changing the value of <code>enterKey</code> dropdown to customize the enter key action when it is pressed.</li>
+        <li>Changing the value of <code>shiftEnterKey</code> dropdown to customize the shift + enter key action when it is pressed.</li>
+    </ul>
+</div>
+<style>
+    .api {
+        width: 75%;
+    }
+    .api td {
+        padding-right: 100px;
+        margin-top: 3px;
+    }
+    @media only screen and (max-width: 600px) {
+        .api {
+            width: 100%;
+        }
+        .api td {
+            display: block;
+        }
+    }
+    @media only screen and (min-width: 600px) and (max-width: 1000px) {
+        .api {
+            width: 100%;
+        }
+    }
+    .control-section {
+        padding: 20px;
+    }
+    .codeView {
+        border: 1px solid rgba(0,0,0,0.12);
+        height: 200px;
+        width: 100%;
+    }
+    .CodeMirror {
+        height: 190px;
+    }
+    .codeViewContent {
+        padding-left: 16px;
+    }
+</style>

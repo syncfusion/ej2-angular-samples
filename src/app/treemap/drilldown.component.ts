@@ -21,7 +21,8 @@ export class TreemapDrillDownComponent {
     public load = (args: ILoadEventArgs) => {
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
-        args.treemap.theme = <TreeMapTheme>(theme.charAt(0).toUpperCase() + theme.slice(1));
+        args.treemap.theme = <TreeMapTheme>(theme.charAt(0).toUpperCase() +
+        theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     public drillStart = (args: IDrillStartEventArgs) => {
         if (args.item[Object.keys(args.item)[0]].length === 1) {
@@ -93,7 +94,7 @@ export class TreemapDrillDownComponent {
              this.treemap.refresh();
              };
             let header: DropDownList = new DropDownList({
-                index: 0, placeholder: 'Select layout type', width: 80,
+                index: 0, placeholder: 'Select layout type', width: '100%',
                 change: () => {                    
                     for(let i=0;i<this.treemap.levels.length-1;i++){
                         this.treemap.levels[i].headerAlignment = <Alignment>header.value;
@@ -103,7 +104,7 @@ export class TreemapDrillDownComponent {
             });
             header.appendTo('#header');
             let label: DropDownList = new DropDownList({
-                index: 0, placeholder: 'Select render direction', width: 80,
+                index: 0, placeholder: 'Select render direction', width: '100%',
                 change: () => {
                     this.treemap.levels[2].headerAlignment = <Alignment>label.value;
                     this.treemap.refresh();

@@ -15,8 +15,18 @@
   #dashboard_container {
     padding-left: 0;
     padding-right: 0;
+    padding-bottom:20px;
 }
-  
+ 
+body.material-dark .e-panel .panel-content,
+body.fabric-dark .e-panel .panel-content,
+body.bootstrap-dark .e-panel .panel-content,
+body.tailwind-dark .e-panel .panel-content,
+body.bootstrap5-dark .e-panel .panel-content,
+body.highcontrast .e-panel .panel-content {
+    color: #ffffff;
+}
+ 
   #predefine_dashboard {
     display: block;
   }
@@ -37,7 +47,7 @@
     font-weight: 500;
     color: rgba(0, 0, 0, 0.61);
     text-align: center;
-    padding: 10px;  
+    padding: 10px; 
   }
   
   #dash_property .image-pattern-style {
@@ -139,7 +149,3 @@
     border: 1px solid lightgray;
   }
     /* styles for highcontrast theme */
-
-	body.highcontrast #predefine_dashboard .panel-content {
-		color: rgba(255, 255, 255, 0.54);
-	}

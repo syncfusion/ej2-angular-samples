@@ -42,6 +42,16 @@ export class DataLabelComponent {
         '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y}M </span></div></div>';
+    public bootstrap5Man: string = '<div style="background-color:#262E0B;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
+    public bootstrap5Women: string = '<div style="background-color:#668E1F;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
     public highcontrastMan: string = '<div style="background-color:#79ECE4;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
         '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
@@ -58,6 +68,56 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y}M </span></div></div>';
     public tailwindWomen: string = '<div style="background-color:#65A30D;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
+    public materialdarkMan: string = '<div style="background-color:#00bdae;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
+    public materialdarkWomen: string = '<div style="background-color:#404041;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
+    public fabricdarkMan: string = '<div style="background-color:#4472c4;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
+    public fabricdarkWomen: string = '<div style="background-color:#ed7d31;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
+    public bootstrapdarkMan: string = '<div style="background-color:#a16ee5;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
+    public bootstrapdarkWomen: string = '<div style="background-color:#f7ce69;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
+    public tailwinddarkMan: string = '<div style="background-color:#5A61F6;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
+    public tailwinddarkWomen: string = '<div style="background-color:#65A30D;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
+    public bootstrap5darkMan: string = '<div style="background-color:#5ECB9B;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
+    public bootstrap5darkWomen: string = '<div style="background-color:#A860F1;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
         '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
@@ -131,8 +191,20 @@ export class DataLabelComponent {
             args.template = args.series.name === 'Male' ? this.highcontrastMan : this.highcontrastWomen;
         }  else if (this.theme === <ChartTheme>'Tailwind') {
             args.template = args.series.name === 'Male' ? this.tailwindMan : this.tailwindWomen;
-        } else {
+        } else if (this.theme === <ChartTheme>'Bootstrap') {
             args.template = args.series.name === 'Male' ? this.bootstrapMan : this.bootstrapWomen;
+        } else if (this.theme === <ChartTheme>'Bootstrap5') {
+            args.template = args.series.name === 'Male' ? this.bootstrap5Man : this.bootstrap5Women;
+        } else if (this.theme === <ChartTheme>'TailwindDark') {
+            args.template = args.series.name === 'Male' ? this.tailwinddarkMan : this.tailwinddarkWomen;
+        } else if (this.theme === 'MaterialDark') {
+            args.template = args.series.name === 'Male' ? this.materialdarkMan : this.materialdarkWomen;
+        } else if (this.theme === 'FabricDark') {
+            args.template = args.series.name === 'Male' ? this.fabricdarkMan : this.fabricdarkWomen;
+        } else if (this.theme === 'Bootstrap5Dark') {
+            args.template = args.series.name === 'Male' ? this.bootstrap5darkMan : this.bootstrap5darkWomen;
+        } else {
+            args.template = args.series.name === 'Male' ? this.bootstrapdarkMan : this.bootstrapdarkWomen;
         }
     };
     public chartArea: Object = {

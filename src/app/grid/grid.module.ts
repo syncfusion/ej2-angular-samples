@@ -27,6 +27,7 @@ import { MasterdetailComponent } from './master-detail.component';
 import { RtlComponent} from './enable-rtl.component';
 import { SearchComponent } from './searching.component';
 import { ScrollComponent } from './scrolling.component';
+import { StickyHeaderComponent } from './sticky-header.component';
 import { GridLinesComponent } from './grid-lines.component';
 import { DragAndDropComponent } from './drag-and-drop.component';
 import { AggregateComponent } from './aggregate-default.component';
@@ -87,13 +88,14 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/grouping', component: GroupComponent, name: 'Default Grouping', description: 'This demo for Essential JS 2 grid component demonstrates the grouping feature of the grid component. The grid component has options to group records based on columns.', order: '02', category: 'Grouping' },
     { 'path': ':theme/grid/lazy-load-grouping', component: LazyLoadGroupingComponent, name: 'Lazy Load Grouping', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature.', order: '02', category: 'Grouping' },
     { 'path': ':theme/grid/scrolling', component: ScrollComponent, name: 'Default Scrolling', description: 'This demo for Essential JS 2 grid component shows the usage of the horizontal and vertical scrollbars to view grid content that exceeds the grid area.', order: '03', category: 'Scrolling' },
+    { 'path': ':theme/grid/sticky-header', component: StickyHeaderComponent, name: 'Sticky Header', description: 'This sample demonstrates the Grid component with the stciky header feature.', order: '03', category: 'Scrolling', "type": "new" },
     {
         'path': ':theme/grid/virtualization', component: VirtualizationComponent, name: 'Virtual Scrolling', description: 'This demo demonstrates how to use Essential JS 2 grid to show a large data view without performance degradation by rendering only the required rows and columns.', order: '03',
-        category: 'Scrolling', "type": "update"
+        category: 'Scrolling'
     },
 	{
         'path': ':theme/grid/infinite-scrolling', component: InfiniteScrollingComponent, name: 'Infinite Scrolling', description: 'This sample demonstrates the Grid component with the infinite scrolling feature.', order: '03',
-        category: 'Scrolling'
+        category: 'Scrolling', "type": "update"
     },
     { 'path': ':theme/grid/local-data', component: LocalDataComponent, 'name': 'Local Data', description: 'This demo for Essential JS 2 grid component shows how to bind with a local data source.', order: '04', category: 'Data Binding' },
     { 'path': ':theme/grid/remote-data', component: DataBindingComponent, 'name': 'Remote Data', description: 'This demo for Essential JS 2 grid component shows how to consume data from a remote data service.', order: '04', category: 'Data Binding' },
@@ -234,7 +236,7 @@ export const gridRouteConfig: Object[] = [
 let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     LocalDataComponent, DataBindingComponent, ShowHideComponent, MasterdetailComponent, ReorderComponent,
     GroupComponent, LazyLoadGroupingComponent, StackedHeaderComponent, AutoWrapComponent, OverViewComponent, SortComponent, PageComponent, FilterComponent,
-    SelectionComponent, ScrollComponent, SearchComponent, SelectionApiComponent, DragAndDropComponent, AggregateComponent, RtlComponent,
+    SelectionComponent, ScrollComponent, StickyHeaderComponent, SearchComponent, SelectionApiComponent, DragAndDropComponent, AggregateComponent, RtlComponent,
     AggregateGroupComponent, RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent,
     VirtualizationComponent, InfiniteScrollingComponent, NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent, ColumnResizingComponent,
     ExportingComponent, AdvancedExportingComponent, PrintComponent, CheckboxSelectionComponent, ClipboardComponent, CommandColumnComponent,

@@ -1,10 +1,6 @@
 .e-responsive-dialog {
     box-shadow: none;
-    border: 1px solid #dddddd;
-}
-
-#adaptivebrowser:not(.e-grid.e-row-responsive) > .e-gridcontent {
-    height: calc(100% - 224px) !important;
+    border-radius: 1px;
 }
 
 .e-adaptive-demo {

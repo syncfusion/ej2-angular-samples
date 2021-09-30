@@ -48,7 +48,7 @@ export class VerticalChartComponent {
     public count: number = 0;
     public loaded(args: ILoadedEventArgs): void {
         this.clrInterval =
-            setInterval(() => {
+            window.setInterval(() => {
                 args.chart.series[0].dataSource = this.liveData(args.chart.series[0].dataSource as any[], <Series>args.chart.series[0]);
                 args.chart.refresh();
             },

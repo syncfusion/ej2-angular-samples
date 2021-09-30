@@ -8,9 +8,9 @@
     <div>
         <ejs-stockchart id='stockChartIArea' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' style="display:block;"
             [primaryYAxis]='primaryYAxis' [seriesType]='seriesType' [indicatorType]='indicatorType' [crosshair]='crosshair' [title]='title'
-            [titleStyle]='titleStyle' (load)='load($event)'>
+            (load)='load($event)'>
             <e-stockchart-series-collection>
-                <e-stockchart-series [dataSource]='data1' type='Area' xName='x' yName='high' name='google' fill='#BDEDE9'>
+                <e-stockchart-series [dataSource]='data1' type='Area' xName='x' yName='high' name='google' opacity='0.5'>
                 </e-stockchart-series>
             </e-stockchart-series-collection>
         </ejs-stockchart>

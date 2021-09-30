@@ -43,7 +43,6 @@ export class PeriodCustomizationComponent {
         }
     };
     public title: string = 'AAPL stock price by minutes';
-    public titleStyle: object = { color: 'black' };
     public crosshair: Object = {
         enable: true
     };

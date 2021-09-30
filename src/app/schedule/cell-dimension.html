@@ -1,26 +1,25 @@
 <div class="control-section">
-    <ejs-schedule #scheduleObj width='100%' cssClass='schedule-cell-dimension' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
-        [(currentView)]="currentView" (eventRendered)="onEventRendered($event)" [showTimeIndicator]="showTimeIndicator">
-        <e-views>
-            <e-view option="Day"></e-view>
-            <e-view option="Week"></e-view>
-            <e-view option="WorkWeek"></e-view>
-            <e-view option="Month"></e-view>
-            <e-view option="TimelineWeek"></e-view>
-            <e-view option="TimelineMonth"></e-view>
-        </e-views>
-    </ejs-schedule>
+  <ejs-schedule #scheduleObj width='100%' cssClass='schedule-cell-dimension' height='650px'
+    [selectedDate]="selectedDate" [eventSettings]="eventSettings" [(currentView)]="currentView"
+    (eventRendered)="onEventRendered($event)" [showTimeIndicator]="showTimeIndicator">
+    <e-views>
+      <e-view option="Day"></e-view>
+      <e-view option="Week"></e-view>
+      <e-view option="WorkWeek"></e-view>
+      <e-view option="Month"></e-view>
+      <e-view option="TimelineWeek"></e-view>
+      <e-view option="TimelineMonth"></e-view>
+    </e-views>
+  </ejs-schedule>
 </div>
 
 <div id="action-description">
-    <p>
-        This demo shows how to set the width and height of the cells by overriding the default CSS classes, so that the Schedule
-        events are viewable in a zoomed in style.
-    </p>
+  <p>
+    This demo shows how to set the width and height of the cells by overriding the default CSS classes, so that the
+    Schedule events are viewable in a zoomed in style.
+  </p>
 </div>
 
 <div id="description">
-    <p>
-        In this demo, the height and width of the Scheduler cells are set by overriding the default CSS class.
-    </p>
+  <p>In this demo, the height and width of the Scheduler cells are set by overriding the default CSS class.</p>
 </div>

@@ -18,11 +18,12 @@ for (let i: number = 0; i < 100; i++) {
 let selectedTheme: string = location.hash.split('/')[1];
 selectedTheme = selectedTheme ? selectedTheme : 'Material';
 let theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
-let themes: string[] = ['Material', 'Fabric', 'Bootstrap', 'Highcontrast', 'Tailwind'];
-let borderColor: string[] = ['#00bdae', '#4472c4', '#a16ee5', '#79ECE4', '#4F46E5'];
-let regionColor: string[] = ['rgba(0, 189, 174, 0.3)', 'rgba(68, 114, 196, 0.3)',
-    'rgba(161, 110, 229, 0.3)', 'rgba(121, 236, 228, 0.3)', 'rgba(79, 70, 229, 0.3)'];
-
+let logthemes: string[] = ['bootstrap5', 'bootstrap5dark', 'tailwind', 'tailwinddark', 'material', 'materialdark', 'bootstrap4', 'bootstrap', 'bootstrapdark', 'fabric', 'fabricdark', 'highcontrast'];
+let borderColor: string[] = ['#262E0B', '#5ECB9B', '#5A61F6', '#8B5CF6', '#00bdae', '#9ECB08', '#a16ee5', '#a16ee5', '#a16ee5', '#4472c4', '#4472c4', '#79ECE4'];
+let regionColor: string[] = ['rgba(38, 46, 11, 0.3)', 'rgba(94, 203, 155, 0.3)', 'rgba(90, 97, 246, 0.3)', 'rgba(139, 92, 246, 0.3)', 'rgba(0, 189, 174, 0.3)',
+'rgba(158, 203, 8, 0.3)', 'rgba(161, 110, 229, 0.3)', 'rgba(161, 110, 229, 0.3)', 'rgba(161, 110, 229, 0.3)', 'rgba(68, 114, 196, 0.3)',
+'rgba(68, 114, 196, 0.3)', 'rgba(121, 236, 228, 0.3)'];
+    
 @Component({
     selector: 'control-content',
     templateUrl: 'logarithmic.html',
@@ -50,7 +51,7 @@ export class LogarthmicComponent {
 
     public fill: string = 'url(#' + theme.toLowerCase() + '-gradient-chart)';
 
-    public border: Object = { width: 2, color: borderColor[themes.indexOf(theme)] };
+    public border: Object = { width: 2, color: borderColor[logthemes.indexOf(theme.toLowerCase())] };
 
     public marker: Object = { visible: true };
 

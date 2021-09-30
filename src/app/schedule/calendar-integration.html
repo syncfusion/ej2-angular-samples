@@ -1,25 +1,26 @@
 <div class="control-section">
-        <ejs-schedule #scheduleObj width='100%' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
-        (dataBinding)="onDataBinding($event)" [readonly]="readonly">
-        <e-views>
-            <e-view option="Day"></e-view>
-            <e-view option="Week"></e-view>
-            <e-view option="WorkWeek"></e-view>
-            <e-view option="Month"></e-view>
-            <e-view option="Angenda"></e-view>
-        </e-views>
-    </ejs-schedule>
+  <ejs-schedule #scheduleObj width='100%' height='650px' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
+    (dataBinding)="onDataBinding($event)" [readonly]="readonly">
+    <e-views>
+      <e-view option="Day"></e-view>
+      <e-view option="Week"></e-view>
+      <e-view option="WorkWeek"></e-view>
+      <e-view option="Month"></e-view>
+      <e-view option="Angenda"></e-view>
+    </e-views>
+  </ejs-schedule>
 </div>
 <div id="action-description">
-    <p>This example illustrates how to load and integrate events data from the Google Calendar into our Scheduler.
-    </p>
+  <p>This example illustrates how to load and integrate events data from the Google Calendar into our Scheduler.
+  </p>
 </div>
 <div id="description">
-    <p> In this example, we have assigned our custom created Google Calendar url to the DataManager and assigned the
-        same to the Scheduler <code>dataSource</code> within the <code>eventSettings</code> API. Since the events data retrieved from the
-        Google Calendar will be in its own object format, therefore it needs to be resolved manually within the
-        Scheduler’s <code>dataBinding</code> event. Within this <code>dataBinding</code> event, the event fields needs to be mapped properly
-        and then assigned to the result.
-    </p>
+  <p> In this example, we have assigned our custom created Google Calendar url to the DataManager and assigned the
+    same to the Scheduler <code>dataSource</code> within the <code>eventSettings</code> API. Since the events data
+    retrieved from the
+    Google Calendar will be in its own object format, therefore it needs to be resolved manually within the
+    Scheduler’s <code>dataBinding</code> event. Within this <code>dataBinding</code> event, the event fields needs to be
+    mapped properly
+    and then assigned to the result.
+  </p>
 </div>
-

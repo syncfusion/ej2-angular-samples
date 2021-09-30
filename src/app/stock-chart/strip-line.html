@@ -1,7 +1,7 @@
 <div class="control-section">
     <div>
         <ejs-stockchart id='stockChartPlotBand' [enablePeriodSelector]='enable' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis'
-            style="display:block;" [primaryYAxis]='primaryYAxis' [seriesType]='seriesType' [indicatorType]='indicatorType' (load)='load($event)'>
+            style="display:block;" [title]="title" [primaryYAxis]='primaryYAxis' [seriesType]='seriesType' [indicatorType]='indicatorType' (load)='load($event)'>
             <e-stockchart-series-collection>
                 <e-stockchart-series [dataSource]='data1' type='Line' xName='x' yName='close' name='google'>
                 </e-stockchart-series>

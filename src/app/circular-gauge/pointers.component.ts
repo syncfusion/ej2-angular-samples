@@ -28,7 +28,8 @@ export class PointersComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     public majorTicks1: Object = {
@@ -170,7 +171,7 @@ export class PointersComponent {
     };
 
     ngAfterViewInit(): void {
-        this.tooltipInterval1 = setInterval(
+        this.tooltipInterval1 = window.setInterval(
             (): void => {
                 let newVal: number = Math.random() * (90 - 20) + 20;
                 if (document.getElementById('container5')) {
@@ -182,7 +183,7 @@ export class PointersComponent {
             1000
         );
 
-        this.tooltipInterval2 = setInterval(
+        this.tooltipInterval2 = window.setInterval(
             (): void => {
                 let newVal: number = Math.random() * (80 - 30) + 30;
                 if (document.getElementById('container6')) {

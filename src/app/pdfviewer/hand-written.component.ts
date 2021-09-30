@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
 import {
     PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
-    ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, LoadEventArgs
+    ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, LoadEventArgs, FormFieldsService, FormDesignerService
 } from '@syncfusion/ej2-angular-pdfviewer';
 
 /**
@@ -12,7 +12,7 @@ import {
     templateUrl: 'hand-written.html',
     encapsulation: ViewEncapsulation.None,
     // tslint:disable-next-line:max-line-length
-    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService]
+    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService] 
 })
 
 export class HandwrittenComponent implements OnInit {

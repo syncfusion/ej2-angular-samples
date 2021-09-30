@@ -14,22 +14,26 @@
             <div class="property-panel-header">Properties </div>
         <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
             <tr>
-                <td style="width: 55%">
-                    <div>Work Start Time</div>
+                <td style="width: 100%">
+                    <div style="font-size: 15px;">Work Start Time</div>
                 </td>
-                <td style="width: 45%;padding-right: 10px">
+            </tr>
+            <tr>
+                <td style="width: 100%;padding-right: 10px">
                     <div id='columnddl'>
-                        <ejs-numerictextbox  #StartTimeObj id='WorkStartTime' width= '100px' value='8' min='0' max='24' step='0.5' (change)="updateTime($event)" [showSpinButton]='true'></ejs-numerictextbox>
+                        <ejs-numerictextbox  #StartTimeObj id='WorkStartTime' width= '150px' value='8' min='0' max='24' step='0.5' (change)="updateTime($event)" [showSpinButton]='true'></ejs-numerictextbox>
                     </div>
                 </td>
             </tr>
             <tr>
-                <td style="width: 55%;padding-top: 10px">
-                    <div>Work End Time</div>
+                <td style="width: 100%;padding-top: 10px">
+                    <div style="font-size: 15px;">Work End Time</div>
                 </td>
-                <td style="width: 45%;padding-top: 10px;padding-left: 7px">
+            </tr>
+            <tr>
+                <td style="width: 100%;padding-top: 10px;padding-left: 7px">
                     <div>
-                        <ejs-numerictextbox  #EndTimeObj id='WorkEndTime' width= '100px' value='17' min='0' max='24' step='0.5' (change)="updateTime($event)" [showSpinButton]='true'></ejs-numerictextbox>
+                        <ejs-numerictextbox  #EndTimeObj id='WorkEndTime' width= '150px' value='17' min='0' max='24' step='0.5' (change)="updateTime($event)" [showSpinButton]='true'></ejs-numerictextbox>
                     </div>
                 </td>
             </tr>           

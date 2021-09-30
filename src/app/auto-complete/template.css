@@ -4,7 +4,7 @@
     }
     
     .e-bigger #employees_popup.e-popup .empImage {
-        margin: 10px 16px;
+        margin: 6px 16px;
     }
     
     #employees_popup .head {
@@ -51,13 +51,21 @@
         margin-top: -10px;
         margin-bottom: 11px;
     }
+
+    .bootstrap #employees_popup .job {
+        margin-top: 0px;
+    }
+
+    .bootstrap.e-bigger #employees_popup .job {
+        margin-top: -16px;
+    }
     
     .e-bigger #employees_popup .job {
         margin-top: -16px;
     }
     
     #employees_popup .empImage {
-        margin: 6px 16px;
+        margin: 0px 16px;
         float: left;
         width: 50px;
         height: 50px;
@@ -70,6 +78,10 @@
 
     .bootstrap4 #employees_popup.e-popup .empImage {
         margin: 0px 16px;
+    }
+
+    .bootstrap4.e-bigger #employees_popup.e-popup .empImage {
+        margin: 6px 16px;
     }
 
     .bootstrap4 #employees_popup.e-popup .job {

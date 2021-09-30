@@ -1,15 +1,3 @@
-.schedule-excel-export.e-schedule .e-schedule-toolbar .e-icon-schedule-excel-export::before {
-    content: '\e242';
-}
-
-.bootstrap4 .schedule-excel-export.e-schedule .e-schedule-toolbar .e-icon-schedule-excel-export::before {
-        content: '\e74e';
-}
-
-.schedule-excel-export.e-schedule .e-schedule-toolbar .e-toolbar-item.e-today{
-    display: none;
-}
-
-.tailwind .schedule-excel-export.e-schedule .e-schedule-toolbar .e-icon-schedule-excel-export::before {
-    content: '\e780';
+.schedule-excel-export.e-schedule .e-schedule-toolbar .e-toolbar-item.e-today {
+  display: none;
 }

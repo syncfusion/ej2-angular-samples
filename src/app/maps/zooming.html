@@ -7,75 +7,117 @@
 </div>
 
 <div class="control-section">
-    <div class="col-lg-9">
+    <div class="col-lg-8">
         <ejs-maps id='container' style="display:block;" [zoomSettings]='zoomSettings' [layers]='layers'
             (load)="load($event)">
         </ejs-maps>
     </div>
-    <div class="col-lg-3 property-section">
+    <div class="col-lg-4 property-section">
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
-                <table id="property" title="Properties">
-                    <tbody>
+                <table id="property" title="Properties" style="width: 100%">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
                         <tr style="height: 50px">
-                            <td style="width: 50%">
+                            <td>
                                 <div>Zooming</div>
                             </td>
                             <td>
-                                <input checked="" id="zoom" style="margin-top: 15px" type="checkbox">
+                                <input checked="" id="zoom" style="margin-top: 15px;  margin-left: 10px" type="checkbox">
                             </td>
                         </tr>
+                        </table>
+                        <table id="property" title="Properties" style="width: 100%">
+                            <colgroup>
+                                <col span="1" style="width: 50%;">
+                                <col span="1" style="width: 50%;">
+                            </colgroup>
                         <tr style="height: 50px">
-                            <td style="width: 50%">
+                            <td>
                                 <div>Panning</div>
                             </td>
                             <td>
-                                <input checked="" id="pan" style="margin-top: 15px" type="checkbox">
+                                <input checked="" id="pan" style="margin-top: 15px;  margin-left: 10px" type="checkbox">
                             </td>
                         </tr>
+                        </table>
+                        <table id="property" title="Properties" style="width: 100%">
+                            <colgroup>
+                                <col span="1" style="width: 50%;">
+                                <col span="1" style="width: 50%;">
+                            </colgroup>
                         <tr style="height: 50px">
-                            <td style="width: 50%">
+                            <td>
                                 <div>Mouse wheel zoom</div>
                             </td>
                             <td>
-                                <input checked="" id="mousewheel" style="margin-top: 15px" type="checkbox">
+                                <input checked="" id="mousewheel" style="margin-top: 15px;  margin-left: 10px" type="checkbox">
                             </td>
                         </tr>
+                        </table>
+                        <table id="property" title="Properties" style="width: 100%">
+                            <colgroup>
+                                <col span="1" style="width: 50%;">
+                                <col span="1" style="width: 50%;">
+                            </colgroup>
                         <tr style="height: 50px">
-                            <td style="width: 50%">
+                            <td>
                                 <div>Pinch zoom</div>
                             </td>
                             <td>
-                                <input checked="" id="pinch" style="margin-top: 15px" type="checkbox">
+                                <input checked="" id="pinch" style="margin-top: 15px;  margin-left: 10px" type="checkbox">
                             </td>
                         </tr>
+                        </table>
+                        <table id="property" title="Properties" style="width: 100%">
+                            <colgroup>
+                                <col span="1" style="width: 50%;">
+                                <col span="1" style="width: 50%;">
+                            </colgroup>
                         <tr style="height: 50px">
-                            <td style="width: 50%">
+                            <td>
                                 <div>Single click zoom</div>
                             </td>
                             <td>
-                                <input id="singletap" style="margin-top: 15px" type="checkbox">
+                                <input id="singletap" style="margin-top: 15px;  margin-left: 10px" type="checkbox">
                             </td>
                         </tr>
+                        </table>
+                        <table id="property" title="Properties" style="width: 100%">
+                            <colgroup>
+                                <col span="1" style="width: 50%;">
+                                <col span="1" style="width: 50%;">
+                            </colgroup>
                         <tr style="height: 50px">
-                            <td style="width: 50%">
+                            <td>
                                 <div>Double click zoom</div>
                             </td>
                             <td>
-                                <input id="doubletap" style="margin-top: 15px" type="checkbox">
+                                <input id="doubletap" style="margin-top: 15px;  margin-left: 10px" type="checkbox">
                             </td>
                         </tr>
+                    </table>
+                    <table id="property" title="Properties" style="width: 100%">
+                        <colgroup>
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 10%;">
+                        </colgroup>
                         <tr style="height: 50px">
-                            <td style="width: 60%">
-                                Animation duration <span id='slider1'>&nbsp;500</span> &nbsp; ms
-                            </td>
                             <td>
+                                Animation duration
+                            </td>
+                            <td style="padding-top: 10px; padding-left: 30px">
                                 <ejs-slider #slide1 id="range" min=0 max=1000 (change)='setAnimation($event)' value=500
-                                    step=250 style="width: 100px;"></ejs-slider>
+                                    step=250 style="width: 90%;"></ejs-slider>
+                            </td>
+                            <td style="text-align: center; padding-left: 4%; padding-top: -10%;">
+                                <span id='slider1'>500ms</span>
                             </td>
                         </tr>
-                    </tbody>
                 </table>
             </div>
         </div>

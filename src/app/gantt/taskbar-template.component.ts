@@ -1,10 +1,11 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit,ViewEncapsulation} from '@angular/core';
 import { customizedData } from './data';
 
 @Component({
     selector: 'ej2-gantttaskbartemplate',
     templateUrl: 'taskbar-template.html',
-    styleUrls: ['taskbar-template.component.css']
+    styleUrls: ['taskbar-template.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 export class GanttTaskbarTemplateComponent implements OnInit {
     public data: object[];
@@ -22,6 +23,78 @@ export class GanttTaskbarTemplateComponent implements OnInit {
     public projectStartDate: Date;
     public projectEndDate: Date;
     public eventMarkers: object[];
+    public customFunction(data: any): string {
+        var container = document.createElement('div');
+        var subContainer = document.createElement('div');
+        var img = document.createElement('img');
+        if (data.TaskName == 'Oscar moments') {
+          subContainer.className = 'e-gantt-child-taskbar e-custom-moments';
+          if (data.ganttProperties.duration < 4) {
+            img.className = 'moments';
+            img.height = 32;
+            img.width = 32;
+            subContainer.append(img);
+          } else {
+            img.className = 'moments';
+            img.height = 32;
+            img.width = 32;
+            var span1 = document.createElement('span');
+            span1.innerHTML = data.Performance;
+            span1.className = 'e-span';
+            subContainer.append(img);
+            subContainer.append(span1);
+          }
+        } else if (data.TaskName == 'Oscar performance') {
+          subContainer.className = 'e-gantt-child-taskbar e-custom-performance';
+          if (data.ganttProperties.duration <= 5) {
+            img.className = 'face-mask';
+            img.height = 32;
+            subContainer.append(img);
+          } else {
+            img.className = 'face-mask';
+            img.height = 32;
+            var span2 = document.createElement('span');
+            span2.innerHTML = data.Performance;
+            span2.className = 'e-span';
+            subContainer.append(img);
+            subContainer.append(span2);
+          }
+        } else {
+          subContainer.className = 'e-gantt-child-taskbar e-custom-performance';
+          if (data.ganttProperties.duration < 4) {
+            img.className = 'oscar';
+            img.height = 32;
+            img.width = 32;
+            subContainer.append(img);
+          } else {
+            if (data.Movie && data.Winner) {
+              img.className = 'oscar';
+              img.height = 32;
+              img.width = 32;
+              var span3 = document.createElement('span');
+              span3.innerHTML = data.taskData.Movie;
+              span3.className = 'e-span';
+              subContainer.append(img);
+              subContainer.append(span3);
+            } else if (data.Movie && !data.Winner) {
+              img.className = 'oscar';
+              img.height = 32;
+              img.width = 32;
+              var span4 = document.createElement('span');
+              span4.innerHTML = data.taskData.Movie;
+              span4.className = 'e-span';
+              subContainer.append(img);
+              subContainer.append(span4);
+            } else {
+              var span5 = document.createElement('span');
+              span5.className = 'e-span';
+              subContainer.append(span5);
+            }
+          }
+        }
+        container.append(subContainer);
+        return container.innerHTML;
+      }
     public ngOnInit(): void {
         this.data = customizedData;
         this.taskSettings = {

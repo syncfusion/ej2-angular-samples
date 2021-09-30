@@ -1,12 +1,11 @@
 
 <div class="control-section">
     <div>
-        <ejs-stockchart id='stockChartSplineArea' [enablePeriodSelector]='enable' [title]='title' [titleStyle]='titleStyle'
+        <ejs-stockchart id='stockChartSplineArea' [enablePeriodSelector]='enable' [title]='title' 
             [chartArea]='chartArea' [seriesType]='seriesType' [indicatorType]='indicatorType' [primaryXAxis]='primaryXAxis' style="display:block;"
             [primaryYAxis]='primaryYAxis' [crosshair]='crosshair' (load)='load($event)'>
             <e-stockchart-series-collection>
-                <e-stockchart-series [dataSource]='data1' type='SplineArea' xName='x' yName='high'
-                    fill='#BDEDE9'>
+                <e-stockchart-series [dataSource]='data1' type='SplineArea' xName='x' yName='high' opacity='0.5'>
                 </e-stockchart-series>
             </e-stockchart-series-collection>
         </ejs-stockchart>

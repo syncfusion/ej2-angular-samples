@@ -1,0 +1,48 @@
+/* custom code start*/
+.content-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    min-width: 85px;
+}
+
+.e-breadcrumb {
+    display: block;
+}
+
+.content-wrapper div.row {
+    padding: 15px 0px;
+}
+
+@media only screen and (max-width: 480px) {
+    .content-wrapper {
+        width: 92%;
+    }
+
+    .col-xs-12,
+    .col-xs-4,
+    .col-xs-12 {
+        padding: 10px 5px;
+        width: 100%;
+    }
+
+    .content-wrapper div.row {
+        padding: 0px;
+    }
+}
+
+    .tailwind .e-breadcrumb,
+    .tailwind-dark .e-breadcrumb {
+        margin-left: -12px;
+    }
+
+    .material .e-breadcrumb,
+    .material-dark .e-breadcrumb {
+        margin-left: -8px;
+    }
+
+    .fabric .e-breadcrumb,
+    .fabric-dark .e-breadcrumb,
+    .highcontrast .e-breadcrumb {
+        margin-left: -4px;
+    }
+/* custom code end*/

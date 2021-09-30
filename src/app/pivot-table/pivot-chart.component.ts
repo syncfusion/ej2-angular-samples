@@ -4,6 +4,7 @@ import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 import { ChartSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/chartsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { Observable } from 'rxjs';
 enableRipple(false);
 
 /**
@@ -24,7 +25,7 @@ export class ChartComponent implements OnInit {
     public chartddl: DropDownList;
     public chartSettings: ChartSettings;
     public displayOption: DisplayOption;
-
+    public observable = new Observable();
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
@@ -38,12 +39,12 @@ export class ChartComponent implements OnInit {
         this.chartSettings = {
             title: 'Sales Analysis',
             chartSeries: { type: 'Column' },
-            // load: (args: ILoadedEventArgs) => {
-            //     let selectedTheme: string = location.hash.split('/')[1];
-            //     selectedTheme = selectedTheme ? selectedTheme : 'Material';
-            //     args.chart.theme = (selectedTheme.charAt(0).toUpperCase() +
-            //         selectedTheme.slice(1)) as ChartTheme;
-            // }
+            load: this.observable.subscribe(args => {
+                let selectedTheme: string = location.hash.split('/')[1];
+                selectedTheme = selectedTheme ? selectedTheme : 'Material';
+                (args as ILoadedEventArgs).chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() +
+                  selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
+            }) as any
         } as ChartSettings;
 
         this.displayOption = { view: 'Chart' } as DisplayOption;

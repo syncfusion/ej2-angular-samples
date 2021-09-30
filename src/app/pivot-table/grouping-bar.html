@@ -12,11 +12,16 @@
         allows the user to remove the field from the report.
     </p>
     <p>
+        During runtime, the <b>Values</b> button in the grouping bar can be moved to a different position (i.e., different index) 
+        among other fields in the column or row axis. To enable values button, 
+        set the <code>showValuesButton</code> property to <b>true</b>.
+    </p>
+    <p>
         The fields panel, which is located above the grouping bar, displays the fields that are available in the data
         source but are not bound in the report. The fields can be dragged and dropped into the appropriate axis. In
         addition, any field removed from any axes will be automatically added to the fields panel. The fields panel can
         be displayed by setting the <code>showFieldsPanel</code> property in the <code>groupingBarSettings</code> to
-        **true**.
+        <b>true</b>.
     </p>
     <p>
         <strong>Injecting Module:</strong>
@@ -30,7 +35,7 @@
 </div>
 <div id="pivot-table-section">
     <div class="col-lg-9 control-section sb-property-border">
-        <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings showGroupingBar='true' [groupingBarSettings]= 'groupingBarSettings' width='100%'
+        <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings showGroupingBar='true' showValuesButton='true' [groupingBarSettings]= 'groupingBarSettings' width='100%'
             height='450' [gridSettings]='gridSettings'>
         </ejs-pivotview>
     </div>

@@ -12,10 +12,11 @@ import { dataCollection } from './data-service';
 let selectedTheme: string = location.hash.split('/')[1];
 selectedTheme = selectedTheme ? selectedTheme : 'Material';
 let theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
-let themes: string[] = ['Material', 'Fabric', 'Bootstrap', 'Highcontrast', 'Tailwind'];
-let borderColor: string[] = ['#FF4081', '#007897', '#428BCA', '#FFD939', '#4F46E5'];
-let regionColor: string[] = ['rgba(255, 64, 129, 0.3)', ' rgba(0, 120, 151, 0.3)',
-'rgba(66, 139, 202, 0.3)', 'rgba(255, 217, 57, 0.3)', 'rgba(79, 70, 229, 0.3)'];
+let exportthemes: string[] =  ['material', 'fabric', 'bootstrap', 'highcontrast', 'bootstrap5', 'tailwind', 'materialdark', 'fabricdark', 'bootstrapdark', 'tailwinddark', 'bootstrap5dark', 'bootstrap4'];
+let borderColor: string[] = ['#FF4081', '#007897', '#428BCA', '#FFD939', '#4F46E5', '#4F46E5', '#FF4081', '#007897', '#428BCA', '#22D3EE', '#ADB5BD', '#FFD939'];
+let regionColor: string[] = ['rgba(255, 64, 129, 0.3)', ' rgba(0, 120, 151, 0.3)', 'rgba(66, 139, 202, 0.3)', 'rgba(255, 217, 57, 0.3)', 'rgba(79, 70, 229, 0.3)',
+'rgba(79, 70, 229, 0.3)', 'rgba(255, 64, 129, 0.3)', 'rgba(0, 120, 151, 0.3)', 'rgba(66, 139, 202, 0.3)', 'rgba(34, 211, 238, 0.3)',
+'rgba(173,181,189,0.3)', 'rgba(255, 217, 57, 0.3)'];
 
     @Component({
         selector: 'control-content',
@@ -43,8 +44,8 @@ let regionColor: string[] = ['rgba(255, 64, 129, 0.3)', ' rgba(0, 120, 151, 0.3)
         public crosshair: Object = { enable: false, lineType: 'None'};
         public chartTooltip: Object = { enable: true, shared: true };
         public width: string = '100%';
-        public border: Object = { width: 2, color: borderColor[themes.indexOf(theme)] };
-        public fill: string = regionColor[themes.indexOf(theme)];
+        public border: Object = { width: 2, color: borderColor[exportthemes.indexOf(theme.toLowerCase())] };
+        public fill: string = regionColor[exportthemes.indexOf(theme.toLowerCase())];
         public value: Object = [new Date('2013-05-01'), new Date('2013-08-01')];
         public data: Object = dataCollection;
         public legendSettings: Object = { visible: false };

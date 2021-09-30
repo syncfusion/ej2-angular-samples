@@ -19,7 +19,8 @@ export class TreemapLayoutComponent {
     public load = (args: ILoadEventArgs) => {
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
-        args.treemap.theme = <TreeMapTheme>(theme.charAt(0).toUpperCase() + theme.slice(1));
+        args.treemap.theme = <TreeMapTheme>(theme.charAt(0).toUpperCase() +
+        theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
         public titleSettings: object = {
@@ -56,7 +57,7 @@ export class TreemapLayoutComponent {
         };
         ngAfterViewInit(): void {
             let layout: DropDownList = new DropDownList({
-                index: 0, placeholder: 'Select layout type', width: 120,
+                index: 0, placeholder: 'Select layout type', width: '110%',
                 change: () => {
                     this.treemap.layoutType = <LayoutMode>layout.value;
                     this.treemap.refresh();
@@ -64,7 +65,7 @@ export class TreemapLayoutComponent {
             });
             layout.appendTo('#layoutMode');
             let direction: DropDownList = new DropDownList({
-                index: 0, placeholder: 'Select render direction', width: 115,
+                index: 0, placeholder: 'Select render direction', width: '110%',
                 change: () => {
                     this.treemap.renderDirection  = <RenderingMode>direction.value;
                     this.treemap.refresh();

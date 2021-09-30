@@ -6,7 +6,7 @@
 <div class="control-section">
     <div class="col-md-8">
         <div style="width:92%;margin-bottom: 60px;margin-left:0px;">
-        <ejs-lineargauge (load)='load($event)' id='gauge' #gauge='' [container]='container' orientation='horizontal' [axes]='axes'>
+        <ejs-lineargauge (load)='load($event)' id='gauge' #gauge='' [container]='container' orientation='Horizontal' [axes]='axes'>
         </ejs-lineargauge>
         </div>
     </div>
@@ -15,13 +15,16 @@
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
                 <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
-                    <tbody>
-                        <tr>
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
+                    <tr style="height: 50px;">
                             <td>
                                 <div style="margin-left: -15px;">Gradient Type</div>
                             </td>
                             <td>
-                                <div>
+                                <div style="margin-left: -20%">
                                     <select name="gradientType" autocomplete="off" id="gradientType"
                                         class="form-control" style="width:90%;margin-left: -15px;">
                                         <option value="0" selected>Linear Gradient</option>
@@ -30,12 +33,18 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr>
+                        </table>
+                        <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                            <colgroup>
+                                <col span="1" style="width: 50%;">
+                                <col span="1" style="width: 50%;">
+                            </colgroup>
+                        <tr style="height: 50px;">
                             <td>
-                                <div style="margin-left:-15px;margin-top: 30px;">Elements</div>
+                                <div style="margin-left:-15px;">Elements</div>
                             </td>
                             <td>
-                                <div style="margin-left: 0px;margin-top: 30px;">
+                                <div style="margin-left: -20%">
                                     <select name="element" autocomplete="off" id="elements" class="form-control"
                                         style="width:90%">
                                         <option value="0">Range</option>
@@ -44,7 +53,6 @@
                                 </div>
                             </td>
                         </tr>
-                    </tbody>
                 </table>
             </div>
         </div>

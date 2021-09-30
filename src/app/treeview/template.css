@@ -11,6 +11,24 @@
         padding: 0.4em;
         vertical-align: text-bottom;
 }
+.bootstrap5.e-bigger .treeCount.e-badge,
+.bootstrap5-dark.e-bigger .treeCount.e-badge,
+.tailwind.e-bigger .treeCount.e-badge,
+.tailwind-dark.e-bigger .treeCount.e-badge {
+        line-height: 10px;
+}
+.bootstrap4 .treeviewdiv .treeCount.e-badge,
+.bootstrap5 .treeviewdiv .treeCount.e-badge,
+.bootstrap5-dark .treeviewdiv .treeCount.e-badge,
+.bootstrap .treeviewdiv .treeCount.e-badge,
+.bootstrap-dark .treeviewdiv .treeCount.e-badge,
+.highcontrast .treeviewdiv .treeCount.e-badge {
+        background-color: #008800;
+}
+
+.highcontrast .treeviewdiv .treeCount.e-badge {
+        color: white;
+}
 .material .treeCount.e-badge {
         vertical-align: middle;
 }

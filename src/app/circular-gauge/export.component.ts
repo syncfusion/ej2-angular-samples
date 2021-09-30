@@ -39,7 +39,8 @@ export class ExportComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     //Initializing Label Style
@@ -52,7 +53,8 @@ export class ExportComponent {
         },
         offset: 2,
         position: 'Outside',
-        useRangeColor: true
+        useRangeColor: true,
+        hiddenLabel: 'Last'
     };
     public pointers: Object[] = [{
         value: 0, type: 'RangeBar', roundedCornerRadius: 0,
@@ -88,7 +90,7 @@ export class ExportComponent {
     ngOnInit(): void {
         this.exportType = new DropDownList({
             index: 0,
-            width: 90,
+            width: '90%',
         });
         this.exportType.appendTo('#exporttype');
     }

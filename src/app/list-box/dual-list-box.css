@@ -31,3 +31,9 @@
         width: 41%;
     }
 }
+.bootstrap5 .e-listboxtool-wrapper.e-lib.e-right,
+.bootstrap5 .e-listbox-wrapper.e-wrapper.e-lib,
+.bootstrap5-dark .e-listboxtool-wrapper.e-lib.e-right,
+.bootstrap5-dark .e-listbox-wrapper.e-wrapper.e-lib {
+    height: 323px !important;
+}

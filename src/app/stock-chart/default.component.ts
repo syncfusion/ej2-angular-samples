@@ -38,7 +38,6 @@ export class DefaultComponent {
     };
      // custom code end
     public title: string = 'AAPL Stock Price';
-    public titleStyle: object = { color: 'black' };
 
     public tooltip: object = { enable: true };
     public chartArea: Object = {

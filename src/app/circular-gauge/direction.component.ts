@@ -23,7 +23,8 @@ export class DirectionComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1));
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     public onLabelRender(args: IAxisLabelRenderEventArgs): void {
@@ -46,11 +47,6 @@ export class DirectionComponent {
         height: 10,
         interval: 0.5
     };
-
-    public ranges: Object[] = [{
-        start: 7,
-        end: 7
-    }];
     public pointers: Object[] = [{
         value: 7,
         radius: '50%',
@@ -75,7 +71,7 @@ export class DirectionComponent {
         this.pointerColor = new DropDownList({
             index: 0,
             placeholder: 'Select Range Bar Color',
-            width: 100,
+            width: '100%',
             change: () => {
                 let rangeColor: string = this.pointerColor.value.toString();
                 this.circulargauge.axes[0].pointers[0].color = rangeColor;
@@ -87,7 +83,7 @@ export class DirectionComponent {
         this.labelColor = new DropDownList({
             index: 0,
             placeholder: 'Select Range Bar Color',
-            width: 100,
+            width: '100%',
             change: () => {
                 let rangeColor: string = this.labelColor.value.toString();
                 this.circulargauge.axes[0].labelStyle.font.color = rangeColor;

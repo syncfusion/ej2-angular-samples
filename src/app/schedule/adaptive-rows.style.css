@@ -5,3 +5,9 @@
 .adaptive-rows.e-schedule .e-timeline-view .e-resource-text {
   padding-left: 20px;
 }
+
+.adaptive-rows.e-schedule .e-timeline-view .e-block-appointment {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}

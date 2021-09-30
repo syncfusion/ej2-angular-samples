@@ -24,7 +24,8 @@ export class MapsExportComponent {
     public load = (args: ILoadEventArgs) => {
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
-        args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() + theme.slice(1));
+        args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() +
+        theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     public zoomSettings: object= {
@@ -76,12 +77,12 @@ export class MapsExportComponent {
         this.exportType = new DropDownList({
             index: 0,
             dataSource: this.modeData,
-            width: 90,
+            width: '100%',
         });
         this.exportType.appendTo('#exporttype');
         this.layerType = new DropDownList({
             index: 0,
-            width: 90,
+            width: '100%',
             change: () => {
                 if (this.layerType.value === 'OSM') {
                     if (this.exportType.value === 'SVG') {

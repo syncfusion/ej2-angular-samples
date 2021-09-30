@@ -24,7 +24,8 @@ export class TreemapcolorMappingComponent {
     public load = (args: ILoadEventArgs) => {
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
-        args.treemap.theme = <TreeMapTheme>(theme.charAt(0).toUpperCase() + theme.slice(1));
+        args.treemap.theme = <TreeMapTheme>(theme.charAt(0).toUpperCase() +
+        theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
         // let dropdownValue: HTMLInputElement = document.getElementById('colorMapping') as HTMLInputElement;
         // let opacityCheck: HTMLInputElement = document.getElementById('opacity') as HTMLInputElement;
         // if(dropdownValue.value === 'DesaturationColorMapping'){

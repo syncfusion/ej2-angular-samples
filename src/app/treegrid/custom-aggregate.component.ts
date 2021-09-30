@@ -47,7 +47,7 @@ export class CustomAggregateComponent implements OnInit {
             dataSource: proxy.foods,
             fields: { value: 'food' },
             placeholder: 'Select a Category',
-            width: '130px',
+            width: '150px',
             value: this.value,
             change: () => {
                 setTimeout(

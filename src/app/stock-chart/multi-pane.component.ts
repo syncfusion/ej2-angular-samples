@@ -53,7 +53,6 @@ export class MultiPaneComponent {
         args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
     public title: string = 'AAPL Historical';
-    public titleStyle: object = { color: 'black' };
     constructor() {
         //code
     }

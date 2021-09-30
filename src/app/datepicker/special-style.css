@@ -13,6 +13,21 @@
     color: rgb(0, 0, 255);
 }
 
+.highcontrast .e-customStyle span.e-icons.highlight,
+.highcontrast .e-customStyle span.e-icons.highlight:before,
+.material-dark .e-customStyle span.e-icons.highlight,
+.material-dark .e-customStyle span.e-icons.highlight:before,
+.fabric-dark .e-customStyle span.e-icons.highlight,
+.fabric-dark .e-customStyle span.e-icons.highlight:before,
+.bootstrap-dark .e-customStyle span.e-icons.highlight,
+.bootstrap-dark .e-customStyle span.e-icons.highlight:before,
+.bootstrap5-dark .e-customStyle span.e-icons.highlight,
+.bootstrap5-dark .e-customStyle span.e-icons.highlight:before,
+.tailwind-dark .e-customStyle span.e-icons.highlight,
+.tailwind-dark .e-customStyle span.e-icons.highlight:before {
+    color: #ff7500;
+}
+
 .e-customStyle .e-other-month span.e-icons.highlight:before {
     content: "";
 }

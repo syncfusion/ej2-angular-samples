@@ -9,19 +9,25 @@
     border-color: rgba(0, 0, 0, 0.12);
 }
 
+body.bootstrap5-dark #groupedList.e-listview,
+body.bootstrap-dark #groupedList.e-listview,
+body.tailwind-dark #groupedList.e-listview,
+body.fabric-dark #groupedList.e-listview,
+body.highcontrast #groupedList.e-listview {
+    border: 1px solid #444c54;
+}
+
 /* ListView header alignment */
 
 #groupedList.e-listview.e-rtl .e-text .e-headertext:after {
     font-family: 'e-group-list-icons';
     position: absolute;
-    content: "\e712";
     right: 315px;
 }
 
 #groupedList.e-listview .e-text .e-headertext:after {
     font-family: 'e-group-list-icons';
     position: absolute;
-    content: "\e712";
     right: 16px;
 }
 
@@ -40,6 +46,16 @@
     font-size: 18px;
     line-height: 26px;
 }
+
+body.material-dark .e-list-item .e-list-avatar.e-list-multi-line .e-list-item-header {
+  color: #ffffff;
+}
+
+body.material-dark .e-list-item .e-list-avatar.e-list-multi-line .e-list-content,
+body.bootstrap-dark .e-list-item .e-list-avatar.e-list-multi-line .e-list-content {
+  color: rgba(255,255,255,0.7);
+}
+
 
 /* ListView template customization */
 

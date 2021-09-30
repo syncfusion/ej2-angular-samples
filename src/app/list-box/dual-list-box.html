@@ -2,11 +2,11 @@
     <div class="dual-list-wrapper">
         <div class="dual-list-groupa">
             <h4>Group A</h4>
-            <ejs-listbox [dataSource]='dataA' [toolbarSettings]='toolbarSettings' height='330px' scope='#connected-list' [fields]='fields'></ejs-listbox>
+            <ejs-listbox [dataSource]='dataA' [toolbarSettings]='toolbarSettings' height='330px' scope='#connected-list' [fields]='fields' [noRecordsTemplate]='noRecordsTemplate'></ejs-listbox>
         </div>
         <div class="dual-list-groupb">
             <h4>Group B</h4>
-            <ejs-listbox id='connected-list' [dataSource]='dataB' height='330px' [fields]='fields'></ejs-listbox>
+            <ejs-listbox id='connected-list' [dataSource]='dataB' height='330px' [fields]='fields' [noRecordsTemplate]='noRecordsTemplate'></ejs-listbox>
         </div>
     </div>
 </div>

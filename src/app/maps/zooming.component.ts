@@ -24,7 +24,8 @@ export class MapsZoomingComponent {
     public load = (args: ILoadEventArgs) => {
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
-        args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() + theme.slice(1));
+        args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() +
+        theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
     }
     // custom code end
     public zoomSettings: object = {
@@ -59,7 +60,7 @@ export class MapsZoomingComponent {
         let slider1: SliderComponent = <SliderComponent>slider['ej2_instances'][0];
         let maps: Maps = <Maps>document.getElementById('container')['ej2_instances'][0];
         maps.layers[0].animationDuration = slider1.value as number;
-        document.getElementById('slider1').innerHTML = (slider1.value as number).toString();
+        document.getElementById('slider1').innerHTML = (slider1.value as number).toString() + 'ms';
         maps.refresh();
     };
     ngAfterViewInit() {

@@ -56,6 +56,16 @@
         width: 100%;
     }
 
+    #desktop-checkbox-row-1 .apiSlider {
+        padding-left: 0;
+        padding-top: 0;
+    }
+
+    .tailwind.e-bigger #desktop-checkbox-row-1 .apiSlider,
+    .tailwind-dark.e-bigger #desktop-checkbox-row-1 .apiSlider {
+        padding-left: 10px;
+    }
+
     .userselect {
         -webkit-user-select: none;
         /* Safari 3.1+ */

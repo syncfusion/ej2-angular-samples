@@ -14,41 +14,59 @@
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
-                <table id="property" title="Properties">
-                    <tbody>
+                <table id="property" title="Properties" width="100%">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
                         <tr style="height: 50px">
-                            <td style="width: 80%">
+                            <td>
                                 <div>Show Labels</div>
                             </td>
                             <td>
-                                <input checked="" id="select" style="margin-top: 15px" type="checkbox">
+                                <input checked="" id="select" style="margin-left: 5px" type="checkbox" class="labels">
                             </td>
                         </tr>
+                        </table>
+                        <table id="property" title="Properties"  width="100%">
+                            <colgroup>
+                                <col span="1" style="width: 50%;">
+                                <col span="1" style="width: 50%;">
+                            </colgroup>
                         <tr style="height: 50px">
-                            <td style="width: 60%">
+                            <td>
                                 <div>Smart label mode</div>
                             </td>
-                            <td style="width: 40%">
+                            <td>
+                                <div>
                                 <select id="smartlabelmode" style="margin-left: -25px">
                                     <option value="trim">Trim</option>
                                     <option value="none">None</option>
                                     <option value="hide">Hide</option>
                                 </select>
+                                </div>
                             </td>
                         </tr>
+                        </table>
+                        <table id="property" title="Properties"  width="100%">
+                            <colgroup>
+                                <col span="1" style="width: 50%;">
+                                <col span="1" style="width: 50%;">
+                            </colgroup>
                         <tr style="height: 50px">
-                            <td style="width: 60%">
-                                <div>Intersect action</div>
+                            <td>
+                                <div style="width: 50%">Intersect action</div>
                             </td>
-                            <td style="width: 40%;">
+                            <td>
+                                <div>
                                 <select id="intersectaction" style="margin-left: -25px">
                                     <option value="none">None</option>
                                     <option value="trim">Trim</option>
                                     <option value="hide">Hide</option>
                                 </select>
+                                </div>
                             </td>
                         </tr>
-                    </tbody>
                 </table>
             </div>
         </div>
@@ -58,6 +76,9 @@
 <style>
     #control-container {
         padding: 0px !important;
+    }
+    .e-view.fabric .labels, .e-view.tailwind .labels {
+        margin-top: 10px;
     }
 </style>
 <!-- custom code  end-->

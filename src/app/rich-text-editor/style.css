@@ -74,13 +74,13 @@
     .tailwind .e-icon-btn.e-active .e-md-preview::before {
         content: '\e748';
     }
+    
+    .bootstrap5 .e-icon-btn.e-active .e-md-preview::before {
+        content: '\e80e';
+    }
 
-    .e-icon-btn.e-active .e-md-preview::before,
-    #mdCustom .e-icon-btn.e-active .e-md-preview.e-icons::before {
-		content: '\e350';
-	}
-	#mdCustom .e-icon-btn .e-md-preview.e-icons::before {
-		content: '\e345';
+    .bootstrap5 #mdCustom .e-icon-btn .e-md-preview::before {
+        content: '\e7de';
     }
 
     #rteDialog.e-dialog .e-dlg-content {
@@ -123,9 +123,53 @@
             min-width: 236px;
         }
     }
+
+    .material .e-rte-custom-tbar-section .char_block.e-active {
+        outline: 1px solid #e3165b;
+        border-color: #e3165b;
+    }
+
+    .material-dark .e-rte-custom-tbar-section .char_block.e-active {
+        outline: 1px solid #56a4fd;
+        border-color: #56a4fd;
+    }
+
+    .fabric .e-rte-custom-tbar-section .char_block.e-active,
+    .fabric-dark .e-rte-custom-tbar-section .char_block.e-active {
+        outline: 1px solid #0078d6;
+        border-color: #0078d6;
+    }
+
+    .bootstrap4 .e-rte-custom-tbar-section .char_block.e-active {
+        outline: 1px solid #007bff;
+        border-color: #007bff;
+    }
+
+    .bootstrap .e-rte-custom-tbar-section .char_block.e-active,
+    .bootstrap-dark .e-rte-custom-tbar-section .char_block.e-active {
+        outline: 1px solid #317ab9;
+        border-color: #317ab9;
+    }
+
     .highcontrast .e-rte-custom-tbar-section .char_block.e-active {
         outline: 1px solid #ffd939;
         border-color: #ffd939;
+    }
+
+    .tailwind .e-rte-custom-tbar-section .char_block.e-active {
+        outline: 1px solid #3730a3;
+        border-color: #3730a3;
+    }
+
+    .tailwind-dark .e-rte-custom-tbar-section .char_block.e-active {
+        outline: 1px solid #22d3ee;
+        border-color: #22d3ee;
+    }
+
+    .bootstrap5 .e-rte-custom-tbar-section .char_block.e-active,
+    .bootstrap5-dark .e-rte-custom-tbar-section .char_block.e-active {
+        outline: 1px solid #0D6EFD;
+        border-color: #0D6EFD;
     }
 	
 	#rteSection {
