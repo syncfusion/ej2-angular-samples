@@ -3153,13 +3153,7 @@ color:white;
 .fabric-dark .sb-header-text-left,.fabric-dark .sb-header-text-right{
   color:#ffffff;
 }
-.bootstrap4 .sb-plnr-section {
-    height:30px;
-    line-height:30px;
-}
-.bootstrap4 .sample-navigation, .bootstrap4 .sb-open-new-wrapper{
-    line-height: 33px;
-}
+
 /* bootstrap-dark */
 .bootstrap-dark .sb-content,
 .bootstrap-dark textarea#ruleContent,
@@ -3881,7 +3875,7 @@ color:#ffffff;
 }
  .sb-theme-studio {
     font-size: 14px;
-    /*text-align: center;*/
+    text-align: center;
     padding: 10px 0px 10px 27px;
     border-top: 1px solid #ccc;
  }    
