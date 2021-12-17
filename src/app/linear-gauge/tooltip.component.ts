@@ -50,11 +50,6 @@ export class TooltipComponent {
             minorTicks: {
                 interval: 0.2
             },
-            labelStyle: {
-                font: {
-                    color: '#000000'
-                }
-            },
             pointers: [{
                 type: 'Bar',
                 value: 5.4,
@@ -68,11 +63,6 @@ export class TooltipComponent {
             maximum: 25,
             line: {
                 offset: -140,
-            },
-            labelStyle: {
-                font: {
-                    color: '#000000'
-                }
             },
             majorTicks: {
                 interval: 1

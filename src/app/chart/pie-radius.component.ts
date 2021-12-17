@@ -26,6 +26,7 @@ export class PieRadiusComponent {
     //Initializing Legend
     public legendSettings: Object = {
         visible: true,
+        reverse: true
     };
     //Initializing Datalabel
     public dataLabel: Object = {

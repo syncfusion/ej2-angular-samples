@@ -13,6 +13,12 @@
     padding: 15px 0px;
 }
 
+
+.reset-btn {
+    float: right;
+    margin: 5px 2px 5px 0;
+}
+
 @media only screen and (max-width: 480px) {
     .content-wrapper {
         width: 92%;
@@ -60,11 +66,6 @@
         font-size: 14px;
     }
 
-    .e-breadcrumb .e-breadcrumb-separator + .e-breadcrumb-separator {
-        padding-left: 0;
-        margin-left: -8px;
-    }
-   
     .e-bicons.e-arrow {
         margin-top: -2px;
     }

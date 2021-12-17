@@ -29,15 +29,34 @@ export class SummaryCustomizationComponent implements OnInit {
 
     /* tslint:disable */
     onChange(args: any) {
-        this.pivotObj.setProperties({ dataSourceSettings: { showGrandTotals: true } }, true);
-        this.pivotObj.setProperties({ dataSourceSettings: { showRowGrandTotals: true } }, true);
-        this.pivotObj.setProperties({ dataSourceSettings: { showColumnGrandTotals: true } }, true);
-        if (args.value === 'Column') {
-            this.pivotObj.dataSourceSettings.showColumnGrandTotals = false;
-        } else if (args.value === 'Row') {
-            this.pivotObj.dataSourceSettings.showRowGrandTotals = false;
-        } else if (args.value === 'Both') {
-            this.pivotObj.dataSourceSettings.showGrandTotals = false;
+        if (args.value === 'None') {
+            this.pivotObj.setProperties({ dataSourceSettings: { showGrandTotals: false } }, true);
+            this.pivotObj.setProperties({ dataSourceSettings: { showRowGrandTotals: true } }, true);
+            this.pivotObj.setProperties({ dataSourceSettings: { showColumnGrandTotals: true } }, true);
+            this.pivotObj.dataSourceSettings.showGrandTotals = true;
+        }
+        else {
+            this.pivotObj.setProperties({ dataSourceSettings: { showGrandTotals: true } }, true);
+            this.pivotObj.setProperties({ dataSourceSettings: { showRowGrandTotals: true } }, true);
+            this.pivotObj.setProperties({ dataSourceSettings: { showColumnGrandTotals: true } }, true);
+            if (args.value === 'Column') {
+                this.pivotObj.dataSourceSettings.showColumnGrandTotals = false;
+            } else if (args.value === 'Row') {
+                this.pivotObj.dataSourceSettings.showRowGrandTotals = false;
+            } else if (args.value === 'Both') {
+                this.pivotObj.dataSourceSettings.showGrandTotals = false;
+            }
+        }       
+    }
+
+    onChange1(args: any) {
+        if (args.value === 'Top') {
+            this.pivotObj.setProperties({ dataSourceSettings: { grandTotalsPosition: 'Bottom' } }, true);
+            this.pivotObj.dataSourceSettings.grandTotalsPosition = 'Top';
+        }
+        else if(args.value === 'Bottom') {
+            this.pivotObj.setProperties({ dataSourceSettings: { grandTotalsPosition: 'Top' } }, true);
+            this.pivotObj.dataSourceSettings.grandTotalsPosition = 'Bottom';
         }
     }
 
@@ -48,7 +67,7 @@ export class SummaryCustomizationComponent implements OnInit {
 
         this.dataSourceSettings = {
             enableSorting: true,
-            drilledMembers: [{ name: 'Country', items: ['France'] }],
+            drilledMembers: [{ name: 'Country', items: ['France', 'Germany'] }],
             filterSettings: [{ name: 'Products', items: ['Gloves', 'Helmets', 'Shorts', 'Vests'], type: 'Include' }],
             columns: [{ name: 'Year' }, { name: 'Order_Source', caption: 'Order Source' }],
             rows: [{ name: 'Country' }, { name: 'Products' }],
@@ -58,7 +77,8 @@ export class SummaryCustomizationComponent implements OnInit {
             values: [{ name: 'In_Stock', caption: 'In Stock' }, { name: 'Sold', caption: 'Units Sold' },
             { name: 'Amount', caption: 'Sold Amount' }],
             filters: [{ name: 'Product_Categories', caption: 'Product Categories' }],
-            showGrandTotals: false
+            showGrandTotals: true,
+            grandTotalsPosition: 'Bottom',
         };
 
         let fields: { [key: string]: Object; }[] = [

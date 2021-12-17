@@ -2,7 +2,7 @@ import { extend } from '@syncfusion/ej2-base';
 import { ItemModel } from '@syncfusion/ej2-angular-navigations';
 import {
   ScheduleComponent, EventSettingsModel, ActionEventArgs, View,
-  WeekService, ResizeService, DragAndDropService, ExcelExportService, ExportOptions
+  WeekService, ResizeService, DragAndDropService, ExcelExportService, ExportOptions, ExportFieldInfo
 } from '@syncfusion/ej2-angular-schedule';
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { scheduleData } from './data';
@@ -36,7 +36,14 @@ export class ExcelExportComponent {
   }
 
   public onExportClick(): void {
-    const exportValues: ExportOptions = { fields: ['Id', 'Subject', 'StartTime', 'EndTime', 'Location'] };
+    const exportFields: ExportFieldInfo[] = [
+      { name: 'Id', text: 'Id' },
+      { name: 'Subject', text: 'Summary' },
+      { name: 'StartTime', text: 'Start Date' },
+      { name: 'EndTime', text: 'End Date' },
+      { name: 'Location', text: 'Place' }
+    ];
+    const exportValues: ExportOptions = { fieldsInfo: exportFields };
     this.scheduleObj.exportToExcel(exportValues);
   }
 

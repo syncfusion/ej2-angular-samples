@@ -44,7 +44,7 @@ export class ResponsiveTabComponent {
     public value: string = 'scrollable';
 
     // Mapping Tab items Header property   
-    public headerText: Object = [{ text: 'HTML' }, { text: 'C Sharp(C#)' }, { text: 'Java' }, { text: 'VB.Net' },
+    public headerText: Object = [{ text: 'HTML' }, { text: 'C-Sharp(C#)' }, { text: 'Java' }, { text: 'VB.NET' },
         { text: 'Xamarin' }, { text: 'ASP.NET' }, { text: 'ASP.NET MVC' }, { text: 'JavaScript' }];
 
     // Change event funtion for DropDownList component    

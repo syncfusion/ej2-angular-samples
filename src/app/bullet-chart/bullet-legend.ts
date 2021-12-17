@@ -18,7 +18,7 @@ export class BulletChartLegendComponent {
     public chartTitle: string = 'Package Downloads';
 
     public width: string = Browser.isDevice ? '100%' : '80%';
-    public tooltip: BulletTooltipSettingsModel = { enable: false };
+    public tooltip: BulletTooltipSettingsModel = { enable: true };
     public animation: AnimationModel = { enable: false };
 
     public minimum1: number = 0;

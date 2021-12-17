@@ -903,6 +903,13 @@
             "azure-pricing": "Cloud Pricing"
         }
     },
+    "signature": {
+        "ControlName": "Signature",
+        "Samples": {
+            "default": "Default Functionalities",
+            "toolbar": "Toolbar"
+        }
+    },
     "smith-chart": {
         "ControlName": "Smith Chart",
         "Samples": {

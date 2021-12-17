@@ -22,7 +22,8 @@
     .bootstrap5 #Indicators .description::before {
     content: '\e7c0';
     }
-    .fabric #Indicators .description::before {
+    .fabric #Indicators .description::before, 
+    .fabric-dark #Indicators .description::before {
     content: '\e310';
     }
     .highcontrast #Indicators .description::before {

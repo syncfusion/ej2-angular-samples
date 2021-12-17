@@ -7,7 +7,7 @@
 
 <div class="control-section" align="center">
     <ejs-bulletchart #bullet id='revenue' style="display: block;" valueField='value' targetField='target' labelFormat='{value}K'
-        [minimum]='minimum1' [maximum]='maximum1' [interval]='interval1' [title]='chartTitle' subtitle='in Thousands'
+        [minimum]='minimum1' [maximum]='maximum1' [interval]='interval1' [title]='chartTitle' subtitle='in Thousands' [tooltip]='tooltip'
         [dataSource]='data1' [animation]='animation' [legendSettings]='legendSettings' (load)='load($event)'  (legendRender)='legendRender($event)' height='160' width='70%'>
         <e-bullet-range-collection>
             <e-bullet-range end='8' color='#CA4218' name="Poor"></e-bullet-range>

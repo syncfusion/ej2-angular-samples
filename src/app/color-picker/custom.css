@@ -117,6 +117,25 @@
 .e-container .e-palette .e-scroll-palette.e-selected::before {
     content: '\e933';
 }
+.tailwind .e-container .e-palette .e-scroll-palette.e-selected::before,
+.tailwind-dark .e-container .e-palette .e-scroll-palette.e-selected::before {
+    content: '\e856';
+}
+.bootstrap5 .e-container .e-palette .e-scroll-palette.e-selected::before,
+.bootstrap5-dark .e-container .e-palette .e-scroll-palette.e-selected::before {
+    content: '\e727';
+}
+.bootstrap4 .e-container .e-palette .e-scroll-palette.e-selected::before,
+.bootstrap4-dark .e-container .e-palette .e-scroll-palette.e-selected::before {
+    content: '\e718';
+}
+.bootstrap .e-container .e-palette .e-scroll-palette.e-selected::before,
+.bootstrap-dark .e-container .e-palette .e-scroll-palette.e-selected::before,
+.fabric .e-container .e-palette .e-scroll-palette.e-selected::before,
+.fabric-dark .e-container .e-palette .e-scroll-palette.e-selected::before,
+.highcontrast .e-container .e-palette .e-scroll-palette.e-selected::before {
+    content: '\e7ff';
+}
 .highcontrast .e-container .e-palette {
     border-bottom-color: transparent;
 }

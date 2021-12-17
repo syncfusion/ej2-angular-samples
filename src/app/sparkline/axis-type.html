@@ -10,7 +10,7 @@
                     <td style="padding: 10px;">
                         <ejs-sparkline id="datetime" height="100px" width="170px" valueType="DateTime" fill="#3C78EF"
                             type="Column" [dataSource]="datetimeData" [tooltipSettings]="dateTooltipSettings" xName="xDate"
-                            yName="yval"></ejs-sparkline>
+                            yName="yval" (load)='load($event)'></ejs-sparkline>
                     </td>
                 </tr>
                 <tr>
@@ -21,7 +21,7 @@
                     <td style="padding: 10px;">
                         <ejs-sparkline id="category" height="100px" width="170px" valueType="Category" fill="#3C78EF"
                             type="Column" [dataSource]="categoryData" [tooltipSettings]="tooltipSettings" xName="xval"
-                            yName="yval"></ejs-sparkline>
+                            yName="yval" (load)='load($event)'></ejs-sparkline>
                     </td>
                 </tr>
                 <tr>
@@ -32,7 +32,7 @@
                     <td style="padding: 10px;">
                         <ejs-sparkline id="numeric" height="100px" width="170px" valueType="Numeric" fill="#3C78EF"
                             type="Column" [dataSource]="numericData" [tooltipSettings]="dollartooltipSettings" xName="x"
-                            yName="yval"></ejs-sparkline>
+                            yName="yval" (load)='load($event)'></ejs-sparkline>
                     </td>
                 </tr>
             </table>

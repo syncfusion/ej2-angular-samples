@@ -85,6 +85,7 @@
   top: 3px;
   border-radius: 15px;
   background-color: #f9920b;
+  border: 1px solid #f9920b;
 }
 
 .material #image_slider.e-control.e-slider .e-handle {

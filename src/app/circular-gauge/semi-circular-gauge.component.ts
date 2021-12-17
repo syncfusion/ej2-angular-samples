@@ -74,7 +74,6 @@ export class SemiCircleComponent {
                 }
                 this.circulargauge.refresh();
             };
-            document.getElementById('start').onpointermove = document.getElementById('start').ontouchmove =
             document.getElementById('start').onchange = () => {
                 let min: number = parseInt((<HTMLInputElement>document.getElementById('start')).value, 10);
                 document.getElementById('rangeStart').innerHTML = min + '°';

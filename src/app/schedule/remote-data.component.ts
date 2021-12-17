@@ -11,11 +11,11 @@ import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
 export class RemoteDataComponent {
   public currentView: View = 'Week';
   public readonly = true;
-  private dataManger: DataManager = new DataManager({
+  private dataManager: DataManager = new DataManager({
     url: 'https://ej2services.syncfusion.com/production/web-services/api/Schedule',
     adaptor: new WebApiAdaptor(),
     crossDomain: true
   });
-  public eventSettings: EventSettingsModel = { dataSource: this.dataManger };
+  public eventSettings: EventSettingsModel = { dataSource: this.dataManager };
 
 }

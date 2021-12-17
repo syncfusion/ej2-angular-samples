@@ -1,127 +1,143 @@
 <div class="control-section">
     <div class="col-lg-9">
-        <ejs-smithchart style='display:block' align='center' id='smithchartcontainer' #smithchart [horizontalAxis] = 'horizontalAxis' [radialAxis] = 'radialAxis' [title] = 'title' [radius] = 'radius'[legendSettings] = 'legend' (load)='load($event)' 
-		>
+        <ejs-smithchart style='display:block' align='center' id='smithchartcontainer' #smithchart
+            [horizontalAxis]='horizontalAxis' [radialAxis]='radialAxis' [title]='title' [radius]='radius'
+            [legendSettings]='legend' (load)='load($event)'>
             <e-seriesCollection>
-                <e-series [points]='data' name='Transmission1'[marker]='marker' fill='#0F94C4'[tooltip] = 'tooltip'> </e-series>
-                <e-series [points]='data1' name='Transmission2'[marker]='marker' fill='#EE0C88' [tooltip] = 'tooltip'> </e-series>
+                <e-series [points]='data' name='Transmission1' [marker]='marker' fill='#0F94C4' [tooltip]='tooltip'>
+                </e-series>
+                <e-series [points]='data1' name='Transmission2' [marker]='marker' fill='#EE0C88' [tooltip]='tooltip'>
+                </e-series>
             </e-seriesCollection>
         </ejs-smithchart>
-       
-    </div>   
-<div class="col-lg-3 property-section">
-<div class="property-panel-section">
+
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
-    <table id="property" style="width:100%" title="Properties">
-        <tbody>
-            <tr style="height: 35px">
-                <td style="width: 70%" id="radius1">
-                    Radius<span>&nbsp;&nbsp;&nbsp;1</span>
-                </td>
-                <td style="width: 70%">
-                    <div class='sliderwrap'>
-                            <ejs-slider #slide id='radius' [value]='value' [min]='min' [max]='max'step =0.1 (change)='setRadius($event)'(touchmove)='setRadius($event)'(pointermove)='setRadius($event)' ></ejs-slider>
-                        </div>
-                </td>
-            </tr>
-            <tr style="height: 35px">
-                <td style="width: 70%">
-                    Marker
-                </td>
-                <td style="width: 50%">
-                        <ejs-checkbox  [checked]="true"  class="smithinput" (change)='setMarker($event)' name="marker" id="marker" checked>
-                            </ejs-checkbox>
-                        </td>
-            </tr>
-            <tr style="height: 35px">
-                <td style="width: 70%">
-                    Data Label
-                </td>
-                <td style="width: 50%">
-                        <ejs-checkbox class="smithinput" (change)='setDataLabel($event)'  name="datalabel" id="datalabel">
-                            </ejs-checkbox>
-                        </td>
-            </tr>
-            <tr style="height: 35px">
-                <td style="width: 70%">
-                    Animation
-                </td>
-                <td style="width: 50%">
-                        <ejs-checkbox class="smithinput" (change)='setAnimation($event)' name="high" id="animate">
-                            </ejs-checkbox>
-                        </td>
-            </tr>
-            <tr style="height: 35px">
-                <td style="width: 70%">
-                    Tooltip
-                </td>
-                <td style="width: 50%">
-                        <ejs-checkbox  [checked]="true" class="smithinput" (change)='setTooltip($event)' name="high" id="tooltip" checked>
-                            </ejs-checkbox>
-                        </td>
-            </tr>
-            <tr style="height: 35px">
-                <td style="width: 70%">
-                    Legend
-                </td>
-                <td style="width: 50%">
-                        <ejs-checkbox  [checked]="true" class="smithinput" (change)='setLegend($event)' name="high" id="legend" checked>
-                            </ejs-checkbox>
-                            
-                        </td>
-            </tr>
-            <tr style="height: 35px">
-                <td style="width: 70%" >
-                    Legend Position
-                </td>
-                <td style="width: 50%">
-                    <select id="legend1" style="width: 50px; height: 20px">
-                        <option value="top">Top</option>
-                        <option value="bottom">Bottom</option>
-                        <option value="right">Right</option>
-                        <option value="left">Left</option>
-                    </select>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-	</div>
-	</div>
-</div>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+                <table id="property" style="width:100%" title="Properties">
+                    <tbody>
+                        <tr style="height: 35px">
+                            <td style="width: 70%" id="radius1">
+                                Radius<span>&nbsp;&nbsp;&nbsp;1</span>
+                            </td>
+                            <td style="width: 70%">
+                                <div class='sliderwrap'>
+                                    <ejs-slider #slide id='radius' [value]='value' [min]='min' [max]='max' step=0.1
+                                        (change)='setRadius($event)' (touchmove)='setRadius($event)'
+                                        (pointermove)='setRadius($event)'></ejs-slider>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 35px">
+                            <td style="width: 70%">
+                                Marker
+                            </td>
+                            <td style="width: 50%">
+                                <ejs-checkbox [checked]="true" class="smithinput" (change)='setMarker($event)'
+                                    name="marker" id="marker" checked>
+                                </ejs-checkbox>
+                            </td>
+                        </tr>
+                        <tr style="height: 35px">
+                            <td style="width: 70%">
+                                Data Label
+                            </td>
+                            <td style="width: 50%">
+                                <ejs-checkbox class="smithinput" (change)='setDataLabel($event)' name="datalabel"
+                                    id="datalabel">
+                                </ejs-checkbox>
+                            </td>
+                        </tr>
+                        <tr style="height: 35px">
+                            <td style="width: 70%">
+                                Animation
+                            </td>
+                            <td style="width: 50%">
+                                <ejs-checkbox class="smithinput" (change)='setAnimation($event)' name="high"
+                                    id="animate">
+                                </ejs-checkbox>
+                            </td>
+                        </tr>
+                        <tr style="height: 35px">
+                            <td style="width: 70%">
+                                Tooltip
+                            </td>
+                            <td style="width: 50%">
+                                <ejs-checkbox [checked]="true" class="smithinput" (change)='setTooltip($event)'
+                                    name="high" id="tooltip" checked>
+                                </ejs-checkbox>
+                            </td>
+                        </tr>
+                        <tr style="height: 35px">
+                            <td style="width: 70%">
+                                Legend
+                            </td>
+                            <td style="width: 50%">
+                                <ejs-checkbox [checked]="true" class="smithinput" (change)='setLegend($event)'
+                                    name="high" id="legend" checked>
+                                </ejs-checkbox>
+
+                            </td>
+                        </tr>
+                        <tr style="height: 35px">
+                            <td style="width: 70%">
+                                Legend Position
+                            </td>
+                            <td style="width: 50%">
+                                <select id="legend1" style="width: 50px; height: 20px">
+                                    <option value="top">Top</option>
+                                    <option value="bottom">Bottom</option>
+                                    <option value="right">Right</option>
+                                    <option value="left">Left</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 <div id="action-description">
     <p>
-        This sample visualizes two transmissions in a Smith chart. Rendering Smith chart can be changed by using the <code>Render Type</code> in properties panel.
+        This sample visualizes two transmissions in a Smith chart. Rendering Smith chart can be changed by using the
+        <code>Render Type</code> in properties panel.
     </p>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render a Smith chart with multiple series. Legend has been enabled to denote the series in Smith chart.
+        In this example, you can see how to render a Smith chart with multiple series. Legend has been enabled to denote
+        the series in Smith chart.
     </p>
-    <br/>
+    <br />
     <p style="font-weight: 500">Injecting Module</p>
     <p>
-       
-        Smith chart component features are segregated into individual feature-wise modules. To use a tooltip, inject the <code>Tooltip</code> module using the <code>SmithChart.Inject(TooltipRender)</code> method, and use a legend by injecting the <code>Legend</code> module using the <code>SmithChart.Inject(Legend)</code> method
+
+        Smith chart component features are segregated into individual feature-wise modules. To use a tooltip, inject the
+        <code>TooltipRenderService</code> and <code>SmithchartLegendService</code> into the
+        <code>@NgModule.providers</code> section.
     </p>
 
 </div>
 <style>
-   
-	.control-section {
+    .control-section {
         min-height: 450px;
     }
+
     .property-text {
         font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif" !important;
         font-size: 13px !important;
         font-weight: 400 !important;
     }
-    #radius > * {
+
+    #radius>* {
         padding: 0px !important;
     }
-    label{
+
+    label {
         height: 32px !important;
-    }    
+    }
 </style>

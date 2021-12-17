@@ -135,7 +135,12 @@ export class DrilldownPieComponent {
         document.getElementById('symbol').style.visibility = 'hidden';
         document.getElementById('text').style.visibility = 'hidden';
     }
- // custom code start
+    public onChartMouseMove(args: IMouseEventArgs): void {
+        if (this.isparent && args.target.indexOf('container_Series_0_Point_') > -1) {
+          document.getElementById(args.target).style.cursor = 'pointer';
+        }
+    }
+    // custom code start
     public load(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';

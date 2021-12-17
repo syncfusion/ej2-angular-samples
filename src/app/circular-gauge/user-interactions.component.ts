@@ -32,7 +32,7 @@ export class UserInteractionComponent {
     };public dragMove(args: IPointerDragEventArgs): void {
         if (isNaN(args.rangeIndex)) {
             this.pointerValue = Math.round(args.currentValue);
-            document.getElementById('pointerValue').innerHTML = 'Pointer Value <span> &nbsp;&nbsp;&nbsp;' + this.pointerValue;
+            document.getElementById('pointerValue').innerHTML = this.pointerValue.toString();
             (<HTMLInputElement>document.getElementById('value')).value = this.pointerValue.toString();
             this.circulargauge.setAnnotationValue(0, 0, this.content + this.pointerValue + ' MPH</span></div>');
         }

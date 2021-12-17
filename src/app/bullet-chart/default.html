@@ -8,7 +8,7 @@
     <ejs-bulletchart align='center' id='revenue' style="display: block; text-align: center;" valueField='value' targetField='target'
         [minimum]='minimum1' [maximum]='maximum1' [interval]='interval1' [width]='width1' [margin]='margin1'
         [title]='titleRevenue' titlePosition='Left' [dataSource]='data1' [animation]='animation'
-        labelFormat='${value}K' (load)='load($event)' subtitle='US $'>
+        labelFormat='${value}K' (load)='load($event)' subtitle='US $' [tooltip]='tooltip'>
         <e-bullet-range-collection>
             <e-bullet-range end='150' ></e-bullet-range>
             <e-bullet-range end='250'></e-bullet-range>
@@ -18,7 +18,7 @@
 
     <ejs-bulletchart id='Profit' style="display: block; text-align: center;" valueField='value' targetField='target'
         [minimum]='minimum2' [maximum]='maximum2' [interval]='interval2' [width]='width' align='center'
-        [title]='titleProfit' titlePosition='Left' [dataSource]='data2' 
+        [title]='titleProfit' titlePosition='Left' [dataSource]='data2' [tooltip]='tooltip'
         labelFormat='{value}%' [animation]='animation' (load)='load($event)' [margin]='margin2'>
         <e-bullet-range-collection>
             <e-bullet-range end='20' ></e-bullet-range>
@@ -41,7 +41,7 @@
     <ejs-bulletchart id='customer' style="display: block; text-align: center;" valueField='value' targetField='target'
         [minimum]='minimum4' [maximum]='maximum4' [interval]='interval4' align='center' [width]='width'
         [title]='titleCustomers' titlePosition='Left' [dataSource]='data4' [animation]='animation' [margin]='margin4'
-        subtitle='count' enableGroupSeparator='true' (load)='load($event)'>
+        subtitle='count' enableGroupSeparator='true' (load)='load($event)' [tooltip]='tooltip'>
         <e-bullet-range-collection>
             <e-bullet-range end='1700' ></e-bullet-range>
             <e-bullet-range end='2000'></e-bullet-range>
@@ -52,7 +52,7 @@
     <ejs-bulletchart id='rating' style="display: block; text-align: center;" valueField='value' targetField='target'
         [minimum]='minimum5' [maximum]='maximum5' [interval]='interval5' align='center' [width]='width'
         [title]='titleRating' titlePosition='Left' [dataSource]='data5' [animation]='animation' [margin]='margin5'
-        subtitle='Top Rating of 5' (load)='load($event)'>
+        subtitle='Top Rating of 5' (load)='load($event)' [tooltip]='tooltip'>
         <e-bullet-range-collection>
             <e-bullet-range end='3.7' ></e-bullet-range>
             <e-bullet-range end='4.2'></e-bullet-range>

@@ -1,0 +1,133 @@
+<div class="control-section">
+    <div class="col-lg-9 e-bigger e-adaptive-demo">
+        <div *ngIf="isDeskTop" class="e-mobile-layout">
+            <div class="e-mobile-content">
+                <ejs-treegrid #adaptive id="adaptivebrowser" [dataSource]='data' childMapping='subtasks' [treeColumnIndex]='1' enableAdaptiveUI='true'
+                    height='100%' allowPaging='true' allowFiltering='true'
+                    allowSorting='true' [editSettings]='editSettings'
+                    [filterSettings]='filterSettings' [toolbar]='toolbar' (load)='onLoad($event)'>
+                    <e-columns>
+                        <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='135' textAlign='Right'></e-column>
+                        <e-column field='taskName' headerText='Task Name' width='280'></e-column>
+                        <e-column field='duration' headerText='Duration' width='140' textAlign='Right'></e-column>
+                        <e-column field='progress' headerText='Progress' width='145' textAlign='Right'></e-column>
+                    </e-columns>
+                </ejs-treegrid>
+            </div>
+        </div>
+        <div *ngIf="!isDeskTop" class="e-default">
+            <ejs-treegrid #adaptive id="adaptivedevice" [dataSource]='data' childMapping='subtasks' [treeColumnIndex]='1' enableAdaptiveUI='true'
+            height='100%' allowPaging='true' allowFiltering='true'
+            allowSorting='true' [editSettings]='editSettings'
+            [filterSettings]='filterSettings' [toolbar]='toolbar' (load)='onLoad($event)'>
+            <e-columns>
+                <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='135' textAlign='Right'></e-column>
+                <e-column field='taskName' headerText='Task Name' width='280'></e-column>
+                <e-column field='duration' headerText='Duration' width='140' textAlign='Right'></e-column>
+                <e-column field='progress' headerText='Progress' width='145' textAlign='Right'></e-column>
+            </e-columns>
+        </ejs-treegrid>
+        </div>
+    </div>
+
+    <div id="action-description">
+        <p>This sample demonstrates the rendering order of the grid row elements and adaptive dialogs.</p>
+    </div>
+    <div id="description">
+        <p>
+            The  <code><a target="_blank" class="code"
+                href="https://ej2.syncfusion.com/angular/documentation/api/treegrid#enableAdaptiveUI">
+                enableAdaptiveUI</a></code> property is set to true. The filtering, CRUD actions, paging and other various user interactions in tree grid will be adaptive to the smaller screens. For example, Filtering opens the UI for user in a pop-up occupying the entire screen. 
+        </p>
+        <p>
+            For more information, refer this
+            <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/treegrid/adaptive/">
+                documentation section</a>.
+        </p>
+    </div>
+</div>
+<style>
+    #typeddl {
+        min-width: 100px;
+    }
+
+    /* The device with borders */
+    .e-mobile-layout {
+        position: relative;
+        width: 360px;
+        height: 640px;
+        margin: auto;
+        border: 16px #f4f4f4 solid;
+        border-top-width: 60px;
+        border-bottom-width: 60px;
+        border-radius: 36px;
+        box-shadow: 0 0px 2px rgb(144 144 144), 0 0px 10px rgb(0 0 0 / 16%);
+    }
+
+    .tailwind-dark .e-mobile-layout,
+    .material-dark .e-mobile-layout,
+    .fabric-dark .e-mobile-layout,
+    .bootstrap-dark .e-mobile-layout,
+    .bootstrap5-dark .e-mobile-layout {
+      border: 16px rgb(255 255 255 / 10%) solid;
+      border-top-width: 60px;
+      border-bottom-width: 60px;
+    }
+
+    /* The horizontal line on the top of the device */
+    .e-mobile-layout:before {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 5px;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #ebebeb;
+        border-radius: 10px;
+    }
+
+    .tailwind-dark .e-mobile-layout::before,
+    .tailwind-dark .e-mobile-layout::after,
+    .material-dark .e-mobile-layout::before,
+    .material-dark .e-mobile-layout::after,
+    .fabric-dark .e-mobile-layout::before,
+    .fabric-dark .e-mobile-layout::after,
+    .bootstrap-dark .e-mobile-layout::before,
+    .bootstrap-dark .e-mobile-layout::after,
+    .bootstrap5-dark .e-mobile-layout::before,
+    .bootstrap5-dark .e-mobile-layout::after {
+      background: rgb(255 255 255  / 20%);
+    }
+
+    /* The circle on the bottom of the device */
+    .e-mobile-layout:after {
+        content: '';
+        display: block;
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        left: 50%;
+        bottom: -65px;
+        transform: translate(-50%, -50%);
+        background: #e8e8e8;
+        border-radius: 50%;
+    }
+
+    /* The screen (or content) of the device */
+    .e-mobile-layout .e-mobile-content {
+        overflow: hidden;
+        width: 328px;
+        height: 100%;
+        background: transparent;
+        border: 0px solid #dddddd;
+    }
+
+    .highcontrast .e-mobile-layout {
+        border: 16px #000000 solid;
+        border-top-width: 60px;
+        border-bottom-width: 60px;
+        box-shadow: -1px 2px white, -2px -2px white, 2px -2px white, 2px 1px white;
+    }
+</style>

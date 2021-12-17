@@ -47,13 +47,13 @@ export class DefaultTreeViewComponent {
                     subChild: [
                         { id: '02-01-01', name: 'My photo.png' },
                         { id: '02-01-02', name: 'Rental document.docx' },
-                        { id: '02-01-03', name: 'Pay slip.pdf' },
+                        { id: '02-01-03', name: 'Payslip.pdf' },
                     ]
                 },
                 {
                     id: '02-02', name: 'Projects',
                     subChild: [
-                        { id: '02-02-01', name: 'ASP Application' },
+                        { id: '02-02-01', name: 'Blazor Application' },
                         { id: '02-02-02', name: 'TypeScript Application' },
                         { id: '02-02-03', name: 'React Application' },
                     ]
@@ -63,7 +63,7 @@ export class DefaultTreeViewComponent {
                     subChild: [
                         { id: '02-03-01', name: 'Work details.docx' },
                         { id: '02-03-02', name: 'Weekly report.docx' },
-                        { id: '02-03-03', name: 'Wish list.csv' },
+                        { id: '02-03-03', name: 'Wishlist.csv' },
                     ]
                 },
             ]

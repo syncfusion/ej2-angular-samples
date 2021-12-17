@@ -11,15 +11,21 @@
   margin: auto;
 }
 
+body.material #lists,
+body.material-dark #lists,
+body.fabric #lists,
+body.fabric-dark #lists,
+body.bootstrap #lists,
+body.bootstrap-dark #lists,
+body.highcontrast #lists {
+    border: 1px solid #dddddd;
+}
+
 #lists .e-list-item {
   cursor: pointer;
   height: 50px;
   line-height: 48px;
   border: 0;
-}
-
-.e-listview {
-  border: 1px solid !important;
 }
 
 .tailwind .sample_container.badge-list #lists .e-list-item {

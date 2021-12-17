@@ -1,0 +1,50 @@
+<div id="action-description">
+    <p>This sample demonstrates the <b>Signature</b> component with toolbar items to illustrate the undo, redo, save with background, background color, stroke color, clear and disabled support of the <b>Signature</b> component.</p>
+</div>
+
+<div class="col-lg-12 control-section">
+    <div id="signature-toolbar-control">
+        <ejs-toolbar id="toolbar" (created)="onCreate($event)" (clicked)="clicked($event)" width="100%">
+            <e-items>
+                <e-item text='Undo' prefixIcon='e-icons e-undo' tooltipText='Undo (Ctrl + Z)'></e-item>
+                <e-item text='Redo' prefixIcon='e-icons e-redo' tooltipText='Redo (Ctrl + Y)'></e-item>
+                <e-item type='Separator'></e-item>
+                <e-item tooltipText= 'Save (Ctrl + S)' type='Button' template= '<button id="save-option"></button>'>
+                </e-item>
+                <e-item type='Separator'></e-item>
+                <e-item tooltipText= 'Stroke Color' template= '<input id="stroke-color" type="color"/>'>
+                </e-item>
+                <e-item type='Separator'></e-item>
+                <e-item tooltipText= 'Background Color' type= 'Input' template= '<input id="bg-color" type="color"/>'></e-item>
+                <e-item type='Separator'></e-item>
+                <e-item tooltipText= 'Stroke Width' type= 'Input' template= '<input id="stroke-width" type="text"/>'></e-item>
+                <e-item type='Separator'></e-item>
+                <e-item text= 'Clear' prefixIcon= 'e-sign-icons e-clear' tooltipText= 'Clear'></e-item>
+                <e-item tooltipText= 'Disabled' type='Input' template='<input id="chkelement1" type="checkbox"/>' align='Right'></e-item>
+            </e-items>
+        </ejs-toolbar>
+        <div id="signature-control">
+            <canvas ejs-signature #signature id="signature" [maxStrokeWidth]="strokeWidth" style="height: 100%; width: 100%;" (change)="change()"></canvas>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>The <code>Signature</code> component supports undo, redo, background color, stroke color, save, save with background, clear, and disabled functionalities.</p>
+    <p>In this sample, each toolbar item illustrates the <code>Signature</code> component functionalities, which are listed below.</p>
+    <ul>
+        <li><p>Use <b>Undo</b> button or <b>Ctrl + Z</b> key to revert your signature.</p></li>
+        <li><p>Use the <b>Redo</b> button or <b>Ctrl + Y</b> key to remake your reverted signature.</p></li>
+        <li><p>Use the <b>Save</b> button or <b>Ctrl + S</b> key to store your signature as an image file.</p></li>
+        <li><p><b>Stroke</b> color picker is used to apply the stroke color to the Signature component.</p></li>
+        <li><p><b>Background</b> color picker is used to apply the background color to the Signature component.</p></li>
+        <li><p>Use <b>Stroke Width</b> drop-down list values to change the signature stroke width.</p></li>
+        <li><p>Use the <b>Clear</b> button to clear the signature.</p></li>
+        <li><p>Check the <b>Disabled</b> checkbox to disable the Signature component.</p></li>
+    </ul>
+    <p>
+        More information about Signature can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/signature/getting-started">
+            documentation section</a>.
+    </p>
+</div>

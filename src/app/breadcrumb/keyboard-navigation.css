@@ -13,6 +13,11 @@
     padding: 15px 0px;
 }
 
+.reset-btn {
+    float: right;
+    margin: 5px 2px 5px 0;
+}
+
 @media only screen and (max-width: 480px) {
     .content-wrapper {
         width: 92%;

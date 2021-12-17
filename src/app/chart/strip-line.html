@@ -5,10 +5,12 @@
 </div>
 <div class="control-section">
     <div class="col-lg-8">
-        <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
-            [tooltip]='tooltip' [legendSettings]='legendSettings' (load)='load($event)'>
+        <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis'
+            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' [legendSettings]='legendSettings'
+            (load)='load($event)'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Line' xName='x' yName='y' name='' [marker]='marker' width=4 fill='white' name='Weather'>
+                <e-series [dataSource]='data' type='Line' xName='x' yName='y' name='' [marker]='marker' width=4
+                    fill='white' name='Weather'>
                 </e-series>
             </e-series-collection>
         </ejs-chart>
@@ -39,24 +41,26 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the stripline charts. You can use stripline by enable the
+        In this example, you can see how to render and configure the stripline charts. You can use stripline by enable
+        the
         <code>visible</code> property. Striplines are rendered in the specified
         <code>start</code> and
         <code>end</code> range and you can add more than one stripline for an axis.
     </p>
     <p>
-        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch
+        enabled devices.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
     <p>
-        Chart component features are segregated into individual feature-wise modules. To use strip line feature, we need to inject
-        <code>StripLine</code> module using
-        <code>Chart.Inject(StripLine)</code> method.
+        Chart component features are segregated into individual feature-wise modules. To use strip line feature, we need
+        to inject <code>StriplineService</code> into the <code>@NgModule.providers</code> section.
     </p>
     <p>
         More information on the strip line can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/strip-line/">documentation section</a>.
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/strip-line/">documentation
+            section</a>.
     </p>
 </div>
 <style>

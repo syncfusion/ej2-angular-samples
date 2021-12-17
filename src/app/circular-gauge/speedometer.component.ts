@@ -97,7 +97,7 @@ export class SpeedometerComponent {
     }];
     public annotaions: Object = [{
         content: "<div id='templateWrap'>"
-        + "<div style='width:90px;text-align:center;float: right;color: #424242;font-size: 20px;font-family:Roboto'>${pointers[0].value} km/h</div></div></div>",
+        + "<div style='width:90px;text-align:center;float: right;font-size: 20px;font-family:Roboto'>${pointers[0].value} km/h</div></div></div>",
         angle: 0, zIndex: '1',
         radius: '30%'
     }

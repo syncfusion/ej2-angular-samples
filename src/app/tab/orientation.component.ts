@@ -71,6 +71,7 @@ export class OrientationTabComponent {
             this.tabObj.element.classList.add('e-background');
             this.tabObj.element.classList.add('e-accent');
         }
+        (this.tabObj as any).refreshActiveBorder();
     }
 
     public removeStyleClass(): void {

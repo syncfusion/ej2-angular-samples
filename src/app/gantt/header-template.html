@@ -1,3 +1,48 @@
+<style>
+    /deep/ .material img.resource, /deep/ .fabric img.resource, /deep/ .bootstrap img.resource,
+    /deep/ .tailwind img.resource, /deep/ .bootstrap5 img.resource, /deep/ .bootstrap4 img.resource{
+       content: url("./assets/gantt/images/Resources.png");
+   }
+   /deep/ .material-dark img.resource, /deep/ .fabric-dark img.resource, /deep/ .bootstrap-dark img.resource,
+   /deep/ .tailwind-dark img.resource, /deep/ .bootstrap5-dark img.resource, /deep/ .highcontrast img.resource{
+       content: url("./assets/gantt/images/__Resources.png");
+   }
+   /deep/ .material img.taskName, /deep/ .fabric img.taskName, /deep/ .bootstrap img.taskName,
+   /deep/ .tailwind img.taskName, /deep/ .bootstrap5 img.taskName, /deep/ .bootstrap4 img.taskName{
+       content: url("./assets/gantt/images/Task name.png");
+   }
+   /deep/ .material-dark img.taskName, /deep/ .fabric-dark img.taskName, /deep/ .bootstrap-dark img.taskName,
+   /deep/ .tailwind-dark img.taskName, /deep/ .bootstrap5-dark img.taskName, /deep/ .highcontrast img.taskName{
+       content: url("./assets/gantt/images/__Task name.png");
+   }
+   /deep/ .material img.startDate, /deep/ .fabric img.startDate, /deep/ .bootstrap img.startDate,
+   /deep/ .tailwind img.startDate, /deep/ .bootstrap5 img.startDate, /deep/ .bootstrap4 img.startDate{
+       content: url("./assets/gantt/images/Start date.png");
+   }
+   /deep/ .material-dark img.startDate, /deep/ .fabric-dark img.startDate, /deep/ .bootstrap-dark img.startDate,
+   /deep/ .tailwind-dark img.startDate, /deep/ .bootstrap5-dark img.startDate, /deep/ .highcontrast img.startDate{
+       content: url("./assets/gantt/images/__Start date.png");
+   }
+   /deep/ .material img.duration, /deep/ .fabric img.duration, /deep/ .bootstrap img.duration,
+   /deep/ .tailwind img.duration, /deep/ .bootstrap5 img.duration, /deep/ .bootstrap4 img.duration{
+       content: url("./assets/gantt/images/Duration.png");
+   }
+   /deep/ .material-dark img.duration, /deep/ .fabric-dark img.duration, /deep/ .bootstrap-dark img.duration,
+   /deep/ .tailwind-dark img.duration, /deep/ .bootstrap5-dark img.duration, /deep/ .highcontrast img.duration{
+       content: url("./assets/gantt/images/__Duration.png");
+   }
+   /deep/ .material img.progressTemplate, /deep/ .fabric img.progressTemplate, /deep/ .bootstrap img.progressTemplate,
+   /deep/ .tailwind img.progressTemplate, /deep/ .bootstrap5 img.progressTemplate, /deep/ .bootstrap4 img.progressTemplate{
+       content: url("./assets/gantt/images/Progress.png");
+   }
+   /deep/ .material-dark img.progressTemplate, /deep/ .fabric-dark img.progressTemplate, /deep/ .bootstrap-dark img.progressTemplate,
+   /deep/ .tailwind-dark img.progressTemplate, /deep/ .bootstrap5-dark img.progressTemplate, /deep/ .highcontrast img.progressTemplate{
+       content: url("./assets/gantt/images/__Progress.png");
+   }
+   img.resource, img.taskName, img.startDate, img.duration, img.progressTemplate{
+       margin-right: 8px;
+   }
+   </style>
 <div id="action-description">
 	<p>This sample demonstrates the Gantt header template feature. In this sample, custom icons have been shown in the column headers.</p>
 </div>
@@ -9,27 +54,27 @@
         <e-columns>
             <e-column field='TaskName' width='250'>
                 <ng-template #headerTemplate>
-                    <img src="./assets/gantt/images/Task name.png" width="20" height="20" class="e-image" />  Task Name
+                    <img class="taskName" width="20" height="20"/>  Task Name
                 </ng-template>
             </e-column>
             <e-column field='StartDate'>
                 <ng-template #headerTemplate>
-                    <img src="./assets/gantt/images/Start date.png" width="20" height="20" class="e-image" />  Start Date
+                    <img class="startDate"  width="20" height="20"/>  Start Date
                 </ng-template>
             </e-column>
             <e-column field='resources' width='150'>
                 <ng-template #headerTemplate>
-                    <img src="./assets/gantt/images/Resources.png" width="20" height="20" class="e-image" />  Resources
+                    <img class="resource" width="20" height="20"/>  Resources
                 </ng-template>
             </e-column>
             <e-column field='Duration'>
                 <ng-template #headerTemplate>
-                    <img src="./assets/gantt/images/Duration.png" width="20" height="20" class="e-image" />  Duration
+                    <img class="duration" width="20" height="20"/>  Duration
                 </ng-template>
             </e-column>
             <e-column field='Progress'>
                 <ng-template #headerTemplate>
-                    <img src="./assets/gantt/images/Progress.png" width="20" height="20" class="e-image" />  Progress
+                    <img class="progressTemplate" width="20" height="20"/>  Progress
                 </ng-template>
             </e-column>
         </e-columns>
@@ -48,8 +93,3 @@
     <p>In this demo, we have rendered the customized template for all column headers.</p> 
     <p>More information about the header template can be found in documentation section.</p>
 </div>
-<style>
-    .e-image {
-        margin-right: 8px;
-    }
-</style>

@@ -48,6 +48,11 @@ export class AggregationComponent implements OnInit {
         let isAvail: boolean = false;
         for (let vCnt: number = 0; vCnt < this.pivotObj.dataSourceSettings.values.length; vCnt++) {
             if (this.pivotObj.dataSourceSettings.values[vCnt].name === fieldName) {
+                if (this.pivotObj.dataSourceSettings.values[vCnt].name === 'PowUnits' && summaryType === 'Avg') {
+                    this.pivotObj.setProperties({ dataSourceSettings: { formatSettings: [{ name: 'PowUnits', format: 'N2' }, { name: 'ProCost', format: 'C' }] } }, true);
+                } else {
+                    this.pivotObj.setProperties({ dataSourceSettings: { formatSettings: [{ name: 'PowUnits', format: 'N' }, { name: 'ProCost', format: 'C' }] } }, true);
+                }
                 this.pivotObj.dataSourceSettings.values[vCnt].type = summaryType;
                 isAvail = true;
             }
@@ -83,7 +88,7 @@ export class AggregationComponent implements OnInit {
 
         this.dataSourceSettings = {
             enableSorting: true,
-            formatSettings: [{ name: 'ProCost', format: 'C' }],
+            formatSettings: [{ name: 'PowUnits', format: 'N' }, { name: 'ProCost', format: 'C' }],
             drilledMembers: [{ name: 'EnerType', items: ['Biomass', 'Free Energy'] }],
             columns: [
                 { name: 'EnerType', caption: 'Energy Type' },

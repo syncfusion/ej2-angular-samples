@@ -2,19 +2,20 @@
     <div class="content-wrapper">
         <div class="row material2">
             <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
-                <h5>Simple Breadcrumb</h5>
+                <h5 style="display: inline-block">Simple Breadcrumb</h5>
+                <button ejs-button id="reset" class="reset-btn e-small" (click)=btnClick()>Reset State</button>
             </div>
         </div>
         <div class="row material2">
             <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
-                <ejs-breadcrumb [enableNavigation]="false"></ejs-breadcrumb>
+                <ejs-breadcrumb id="keyboard-navigation" [enableNavigation]="false"></ejs-breadcrumb>
             </div>
         </div>
     </div>
 </div>
 
 <div id="action-description">
-    <p> This sample demonstrates the Keyboard Navigation functionalities of the <b>Breadcrumb</b> component.</p>
+    <p> This sample demonstrates the keyboard navigation functionalities of the <b>Breadcrumb</b> component.</p>
 </div>
 <div id="description">
     <p>The <code>Breadcrumb</code> component can be interacted with keyboard navigation. Below key combinations can be used in Breadcrumb to initiate various actions.</p>
@@ -23,5 +24,5 @@
         <li><b>Shift + Tab</b> to navigate to the previous item.</li>
         <li><b>Enter</b> to click the item.</li>
    </ul>
-   <p>More information about <code>Breadcrumb</code> component Keyboard navigations can be found in this <a target='_blank' href="https://ej2.syncfusion.com/angular/documentation/breadcrumb/getting-started/">documentation section</a>.</p>
+   <p>More information about Breadcrumb component Keyboard navigations can be found in this <a target='_blank' href="https://ej2.syncfusion.com/angular/documentation/breadcrumb/getting-started/">documentation section</a>.</p>
 </div>

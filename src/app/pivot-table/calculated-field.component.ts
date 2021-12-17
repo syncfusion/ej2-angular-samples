@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { IDataOptions, PivotView, FieldListService, CalculatedFieldService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
-import { enableRipple } from '@syncfusion/ej2-base';
+import { enableRipple, Browser } from '@syncfusion/ej2-base';
 enableRipple(false);
 
 /**
@@ -25,7 +25,11 @@ export class CalculatedFieldComponent implements OnInit {
     public pivotObj: PivotView;
 
     onClick(e: Event): void {
-        this.pivotObj.calculatedFieldModule.createCalculatedFieldDialog();
+        if (Browser.isDevice) {
+            (this.pivotObj.pivotFieldListModule.dialogRenderer as any).onShowFieldList();
+        } else {
+            this.pivotObj.calculatedFieldModule.createCalculatedFieldDialog();
+        }
     }
 
     ngOnInit(): void {

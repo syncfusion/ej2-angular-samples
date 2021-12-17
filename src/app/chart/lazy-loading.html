@@ -23,7 +23,8 @@
                         </td>
                         <td style="width: 60%;">
                             <div>
-                                <ejs-dropdownlist id='lazymode' #mode (change)='modeChange($event)' [fields]='fields' [dataSource]='dropDownData' [value]='dropValue'></ejs-dropdownlist>
+                                <ejs-dropdownlist id='lazymode' #mode (change)='modeChange($event)' [fields]='fields'
+                                    [dataSource]='dropDownData' [value]='dropValue'></ejs-dropdownlist>
 
                             </div>
                         </td>
@@ -34,7 +35,8 @@
                         </td>
                         <td style="width: 60%;">
                             <div>
-                                <ejs-datepicker #min id="datepickermin" [min]='minimumDate' (change)='minChange($event)' [value]='minValue'></ejs-datepicker>
+                                <ejs-datepicker #min id="datepickermin" [min]='minimumDate' (change)='minChange($event)'
+                                    [value]='minValue'></ejs-datepicker>
                             </div>
                         </td>
                     </tr>
@@ -44,7 +46,8 @@
                         </td>
                         <td style="width: 60%;">
                             <div>
-                                <ejs-datepicker #max id="datepickermax" [max]='maximumDate' (change)='maxChange($event)' [value]='maxValue'></ejs-datepicker>
+                                <ejs-datepicker #max id="datepickermax" [max]='maximumDate' (change)='maxChange($event)'
+                                    [value]='maxValue'></ejs-datepicker>
                             </div>
                         </td>
                     </tr>
@@ -55,7 +58,8 @@
                         <td style="width: 60%;">
                             <div>
                                 <ejs-numerictextbox #point [value]="value" id="pointslength" [min]='1000' [max]='10000'
-                                    [step]="step" [enabled]="enabled" [format]="format" (change)='pointChange($event)'></ejs-numerictextbox>
+                                    [step]="step" [enabled]="enabled" [format]="format" (change)='pointChange($event)'>
+                                </ejs-numerictextbox>
                             </div>
                         </td>
                     </tr>
@@ -71,7 +75,8 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to load data for chart on demand. Chart will fire the <code>scrollEnd</code> event, in that can udpate the chart with required data based on point length and axis range.
+        In this example, you can see how to load data for chart on demand. Chart will fire the <code>scrollEnd</code>
+        event, in that can udpate the chart with required data based on point length and axis range.
     </p>
     <p>
         ScrollBar is enabled in the sample and ScrollBar module injected to the chart.
@@ -80,8 +85,8 @@
     <p style="font-weight: 500">Injecting Module</p>
     <p>
         Chart component features are segregated into individual feature-wise modules. To use lazy laoding need to
-        inject <code>ScrollBar</code> and <code>Zoom</code> module.
-        <code>Chart.Inject(ScrollBar, Zoom)</code> method.
+        inject <code>ScrollBarService</code> and <code>ZoomService</code> into the <code>@NgModule.providers</code>
+        section.
     </p>
 </div>
 <style>

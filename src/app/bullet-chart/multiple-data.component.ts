@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { AnimationModel } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
-import { IBulletLoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
+import { IBulletLoadedEventArgs, ChartTheme, BulletTooltipSettingsModel } from '@syncfusion/ej2-charts';
 /**
  * Local data Source sample
  */
@@ -16,6 +16,7 @@ export class BulletChartMultipleDataComponent {
     public maximum: number = 45;
     public interval: number = 5;
     public width: string = Browser.isDevice ? '100%' : '80%';
+    public tooltip: BulletTooltipSettingsModel = { enable: true };
     public animation: AnimationModel = { enable: false };
     public data: Object[] = [
         {

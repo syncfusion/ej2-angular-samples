@@ -88,14 +88,14 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/grouping', component: GroupComponent, name: 'Default Grouping', description: 'This demo for Essential JS 2 grid component demonstrates the grouping feature of the grid component. The grid component has options to group records based on columns.', order: '02', category: 'Grouping' },
     { 'path': ':theme/grid/lazy-load-grouping', component: LazyLoadGroupingComponent, name: 'Lazy Load Grouping', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature.', order: '02', category: 'Grouping' },
     { 'path': ':theme/grid/scrolling', component: ScrollComponent, name: 'Default Scrolling', description: 'This demo for Essential JS 2 grid component shows the usage of the horizontal and vertical scrollbars to view grid content that exceeds the grid area.', order: '03', category: 'Scrolling' },
-    { 'path': ':theme/grid/sticky-header', component: StickyHeaderComponent, name: 'Sticky Header', description: 'This sample demonstrates the Grid component with the stciky header feature.', order: '03', category: 'Scrolling', "type": "new" },
+    { 'path': ':theme/grid/sticky-header', component: StickyHeaderComponent, name: 'Sticky Header', description: 'This sample demonstrates the Grid component with the stciky header feature.', order: '03', category: 'Scrolling' },
     {
         'path': ':theme/grid/virtualization', component: VirtualizationComponent, name: 'Virtual Scrolling', description: 'This demo demonstrates how to use Essential JS 2 grid to show a large data view without performance degradation by rendering only the required rows and columns.', order: '03',
         category: 'Scrolling'
     },
 	{
         'path': ':theme/grid/infinite-scrolling', component: InfiniteScrollingComponent, name: 'Infinite Scrolling', description: 'This sample demonstrates the Grid component with the infinite scrolling feature.', order: '03',
-        category: 'Scrolling', "type": "update"
+        category: 'Scrolling'
     },
     { 'path': ':theme/grid/local-data', component: LocalDataComponent, 'name': 'Local Data', description: 'This demo for Essential JS 2 grid component shows how to bind with a local data source.', order: '04', category: 'Data Binding' },
     { 'path': ':theme/grid/remote-data', component: DataBindingComponent, 'name': 'Remote Data', description: 'This demo for Essential JS 2 grid component shows how to consume data from a remote data service.', order: '04', category: 'Data Binding' },
@@ -142,11 +142,11 @@ export const gridRouteConfig: Object[] = [
         'path': ':theme/grid/row-height', component: RowHeightComponent, name: 'Row Height', description: 'This demo for Essential JS 2 grid component shows the row height feature.', order: '06', category: 'Rows'
     },
     {
-        'path': ':theme/grid/drag-and-drop', component: DragAndDropComponent, name: 'Row Drag And Drop', description: 'This demo for Essential JS 2 grid component demonstrates how the rows can be dragged between grids using the row drag-and-drop feature.', order: '06', category: 'Rows',
+        'path': ':theme/grid/drag-and-drop', component: DragAndDropComponent, name: 'Row Drag and Drop', description: 'This demo for Essential JS 2 grid component demonstrates how the rows can be dragged between grids using the row drag-and-drop feature.', order: '06', category: 'Rows',
         hideOnDevice: true
     },
     {
-        'path': ':theme/grid/drag-drop-within-grid', component: DragWithinSingle, name: 'Row Drag And Drop Within Grid', description: 'This demo for Essential JS 2 grid control demonstrates how the rows can be dragged within the grids using the row drag-and-drop feature.', order: '06', category: 'Rows',
+        'path': ':theme/grid/drag-drop-within-grid', component: DragWithinSingle, name: 'Row Drag and Drop within Grid', description: 'This demo for Essential JS 2 grid control demonstrates how the rows can be dragged within the grids using the row drag-and-drop feature.', order: '06', category: 'Rows',
         hideOnDevice: true
     },
     {
@@ -180,7 +180,7 @@ export const gridRouteConfig: Object[] = [
     },
     {
         'path': ':theme/grid/aggregate-group', component: AggregateGroupComponent,
-        name: 'Group and Caption aggregate', description: 'This demo for Essential JS 2 grid component shows how the row values can be aggregated for each group of items and shown in a group caption and footer.', order: '10', category: 'Aggregate'
+        name: 'Group and Caption Aggregate', description: 'This demo for Essential JS 2 grid component shows how the row values can be aggregated for each group of items and shown in a group caption and footer.', order: '10', category: 'Aggregate'
     },
     {
         'path': ':theme/grid/reactive-aggregate', component: ReactiveAggregateComponent,

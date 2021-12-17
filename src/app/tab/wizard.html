@@ -1,6 +1,6 @@
 <div class="col-lg-12 control-section e-tab-section">
     <div class="e-sample-resize-container">
-        <ejs-tab #tab id="tab_wizard" heightAdjustMode="None" height=440 showCloseButton=false
+        <ejs-tab #tab id="tab_wizard" heightAdjustMode="None" height="auto" showCloseButton=false
             (selecting)="tabSelecting($event)">
             <e-tabitems>
                 <e-tabitem [header]='headerText[0]'>
@@ -181,7 +181,7 @@
         </ejs-tab>
         <div>
             <ejs-dialog #alertDialog header='Success' width=250 isModal=true showCloseIcon=true
-                content='Your payment successfully processed' [target]='dlgTarget' [buttons]='dlgButtons'
+                content='Your payment was successfully processed' [target]='dlgTarget' [buttons]='dlgButtons'
                 (created)='dlgCreated()' [visible]=false></ejs-dialog>
         </div>
     </div>

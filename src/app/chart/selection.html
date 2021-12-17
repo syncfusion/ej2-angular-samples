@@ -1,128 +1,150 @@
 <div id="action-description">
     <p>
-        This sample illustrates the selection feature in chart. To select a specific point, click  the point. The selection mode can be changed by changing Selection Mode in panel. <code>Multiple selection</code> also can be enabled by <code>Enable Multiple Selection.</code>
+        This sample demonstrates the selection behavior and its mode along with the highlight and highlight patterns in
+        the chart.
     </p>
 </div>
 <div class="control-section">
     <div class="col-md-8">
-            <ejs-chart #chart style='display:block; width: 92%' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [legendSettings]='legend' [title]='title'
-                selectionMode='Point' highlightMode='' (load)='load($event)'>
-                <e-series-collection>
-                    <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Age 0-14' width=2> </e-series>
-                    <e-series [dataSource]='data1' type='Column' xName='x' yName='y' name='Age 15-64' width=2> </e-series>
-                    <e-series [dataSource]='data2' type='Column' xName='x' yName='y' name='Age 65 & Above' width=2> </e-series>
-                </e-series-collection>
-             </ejs-chart>
+        <ejs-chart #chart style='display:block; width: 92%' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            [legendSettings]='legend' [title]='title' selectionMode='Point' highlightMode='' (load)='load($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Age 0-14' width=2
+                    [animation]='animation'> </e-series>
+                <e-series [dataSource]='data1' type='Column' xName='x' yName='y' name='Age 15-64' width=2
+                    [animation]='animation'> </e-series>
+                <e-series [dataSource]='data2' type='Column' xName='x' yName='y' name='Age 65 & Above' width=2
+                    [animation]='animation'> </e-series>
+            </e-series-collection>
+        </ejs-chart>
     </div>
     <div class="col-md-4 property-section">
-       <div class="property-panel-section">
-          <div class="property-panel-header">Properties</div>
-          <div class="property-panel-content">
-            <table id="property" class="property-panel-table" title="Properties" style="width: 105%;">
-                <tr id='' style="height: 50px">
-                    <td style="width: 60%;">
-                        <div>Selection Mode:</div>
-                    </td>
-                    <td style="width: 40%;">
-                        <select name="selectIndex" autocomplete="off" id="selmode" style="left: -25px">
-                            <option value="Point">Point</option>
-                            <option value="Series">Series</option>
-                            <option value="Cluster">Cluster</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr style="height: 50px">
-                    <td style="width: 80%">
-                        <div>Enable Multi-selection:</div>
-                    </td>
-                    <td style="width: 40%;">
-                        <div>
-                            <input type="checkbox" (change)='setMultiSelect($event)' id="select" style="margin-left: -10px">
-                        </div>
-                    </td>
-                </tr>
-                <tr id='' style="height: 50px">
-                    <td style="width: 60%">
-                        <div>Selection Patterns:</div>
-                    </td>
-                    <td style="width: 40%;">
-                        <select name="selectIndex" autocomplete="off" id="selpattern" style="margin-left: -25px; display: none;">
-                            <option value="None" selected>None</option>
-                            <option value="DiagonalForward">DiagonalForward</option>
-                            <option value="Chessboard">Chessboard</option>
-                            <option value="Triangle">Triangle</option>
-                            <option value="Box">Box</option>
-                            <option value="HorizontalDash">HorizontalDash</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr style="height: 50px">
-                    <td style="width: 50%">
-                        <div> Enable Highlight:</div>
-                    </td>
-                    <td>
-                        <input type="checkbox" id="highlight" style="margin-top: 15px" >
-                    </td>
-                </tr>
-                <tr style="height: 50px">
-                    <td style="width: 60%">
-                        <div>Highlight Patterns:</div>
-                    </td>
-                    <td style="width: 40%;">
-                        <select name="selectIndexpat" autocomplete="off" id="selhigh" style="margin-left: -25px; display: none;">
-                            <option value="None" selected>None</option>
-                            <option value="Dots">Dots</option>
-                            <option value="Chessboard">Chessboard</option>
-                            <option value="Triangle">Triangle</option>
-                            <option value="Bubble">Bubble</option>
-                            <option value="Tile">Tile</option>
-                            <option value="Grid">Grid</option>
-                        </select>
-                    </td>
-                </tr>
-            </table>
-          </div>
-       </div>
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 105%;">
+                    <tr style="height: 50px">
+                        <td style="width: 80%">
+                            <div>Enable Multi-selection:</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="checkbox" (change)='setMultiSelect($event)' id="select"
+                                    style="margin-left: -10px">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id='' style="height: 50px">
+                        <td style="width: 60%;">
+                            <div>Selection Mode:</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <select name="selectIndex" autocomplete="off" id="selmode" style="left: -25px">
+                                <option value="Point">Point</option>
+                                <option value="Series">Series</option>
+                                <option value="Cluster">Cluster</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id='' style="height: 50px">
+                        <td style="width: 60%">
+                            <div>Selection Patterns:</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <select name="selectIndex" autocomplete="off" id="selpattern"
+                                style="margin-left: -25px; display: none;">
+                                <option value="None" selected>None</option>
+                                <option value="DiagonalForward">DiagonalForward</option>
+                                <option value="Chessboard">Chessboard</option>
+                                <option value="Triangle">Triangle</option>
+                                <option value="Box">Box</option>
+                                <option value="HorizontalDash">HorizontalDash</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 50%">
+                            <div> Enable Highlight:</div>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="highlight" style="margin-top: 15px">
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div>Highlight Color:</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <input id="color-picker" type="color">
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 60%">
+                            <div>Highlight Patterns:</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <select name="selectIndexpat" autocomplete="off" id="selhigh"
+                                style="margin-left: -25px; display: none;">
+                                <option value="None" selected>None</option>
+                                <option value="Dots">Dots</option>
+                                <option value="Chessboard">Chessboard</option>
+                                <option value="Triangle">Triangle</option>
+                                <option value="Bubble">Bubble</option>
+                                <option value="Tile">Tile</option>
+                                <option value="Grid">Grid</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 <div id="description">
     <p>
-        This sample demonstrates the selection behavior in a chart. Any point or a series can be selected in a chart by clicking or touching the point. 
-        We can also select the point while loading chart through <code><a target="_blank" class="code"
-        href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#selecteddataindexes-indexesmodel">selectedDataIndexes</a></code> properties. Click to select a point or series, click and drag to enable rectangular selection. 
-        Rectangular selection will return the collection point that are selected under the region.  
+        In this sample, any point or series can be selected in the chart by clicking on or touching the point. You can
+        also change the selection mode by changing the <code>Selection Mode</code> option in the properties panel.
+        You can enable multiple selections with the <code>Enable Multi Selection</code> option. You can also select a
+        point while loading a chart using the <code>SelectedDataIndexes</code> option.
+        While hovering the point, the point is highlighted using the <code>Enable Highlight</code> option, as well as
+        you can set different highlight patterns and colors using the <code>Highlight Patterns</code> and
+        <code>Highlight Color</code> option.
     </p>
     <p>
-         Tap to select a point or series, double tap and drag to enable rectangular selection in touch enabled devices.
+        Tap to select a point or series, double tap and drag to enable rectangular selection in touch enabled devices.
     </p>
-    <p>Chart supports seven mode of selection which can be set using <code><a target="_blank" class="code"
-        href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#selectionmode-selectionmode">SelectionMode</a></code> property.     
+    <p>Chart supports seven mode of selection which can be set using
+        <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#selectionmode-selectionmode">SelectionMode</a></code> property.
     </p>
     <ul>
-         <li><code>Series</code> - Select the series in chart.</li>
-         <li><code>Point</code> - Select a point in the series .</li>
-         <li><code>Cluster</code> - Select a group of points in the chart.</li>
-         <li><code>DragXY</code> - Rectangular selection with respect to both axis.</li>
-         <li><code>DragX</code> - Rectangular selection with respect to horizontal axis.</li>
-         <li><code>DragY</code> - Rectangular selection with respect to vertical axis.</li>
-         <li><code>Lasso</code> - Select free form of selection area points.</li>
-    </ul> 
+        <li><code>Series</code> - Select the series in chart.</li>
+        <li><code>Point</code> - Select a point in the series .</li>
+        <li><code>Cluster</code> - Select a group of points in the chart.</li>
+        <li><code>DragXY</code> - Rectangular selection with respect to both axis.</li>
+        <li><code>DragX</code> - Rectangular selection with respect to horizontal axis.</li>
+        <li><code>DragY</code> - Rectangular selection with respect to vertical axis.</li>
+        <li><code>Lasso</code> - Select free form of selection area points.</li>
+    </ul>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
     <p>
-         Chart component features are segregated into individual feature-wise modules. To use selection feature, we need to inject
-         <code>SelectionService</code> into the <code>@NgModule.providers</code> section.
+        Chart component features are segregated into individual feature-wise modules. To use selection feature, we need
+        to inject
+        <code>SelectionService</code> into the <code>@NgModule.providers</code> section.
     </p>
     <p>
-         More information on the selection feature can be found in this
-         <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/selection">documentation section</a>.
-    </p> 
+        More information on the selection feature can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/selection">documentation
+            section</a>.
+    </p>
 </div>
 <style>
-.control-section {
+    .control-section {
         min-height: 450px;
     }
-/* #selmode {
+
+    /* #selmode {
         display: inline;
         left: -25px;
 } */

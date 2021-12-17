@@ -1,6 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ChartComponent, ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { SelectionMode, SelectionPattern, HighlightMode } from '@syncfusion/ej2-charts';
+import { ColorPicker, ColorPickerEventArgs } from '@syncfusion/ej2-inputs';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 /**
  * Sample for Selection in chart
@@ -76,6 +77,9 @@ export class SelectionChartComponent {
         visible: true,
         toggleVisibility: false
     };
+    public animation: Object = {
+        enable: false
+    };
     // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
@@ -140,6 +144,16 @@ export class SelectionChartComponent {
             }
             this.chart.dataBind();
         };
+        let colorPicker: ColorPicker = new ColorPicker(
+            {
+                value: 'null',
+                mode: 'Palette',
+                change: (args: ColorPickerEventArgs) => {
+                    this.chart.highlightColor = args.currentValue.hex;
+                    this.chart.dataBind();
+                }
+            });
+        colorPicker.appendTo('#color-picker');
     }
     constructor() {
         //code

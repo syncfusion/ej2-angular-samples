@@ -66,6 +66,7 @@ import { BulletChartSampleModule } from '../bullet-chart/bullet-chart.module';
 import { KanbanSampleModule } from '../kanban/kanban.module';
 import { ProgressBarSampleModule } from '../progress-bar/progress-bar.module';
 import { BreadcrumbSampleModule } from '../breadcrumb/breadcrumb.module';
+import { SignatureSampleModule } from '../signature/signature.module';
 
 const appRoutes: any = [
     // Grids
@@ -105,6 +106,7 @@ const appRoutes: any = [
     { path: 'rich-text-editor', loadChildren: RTESampleModule },
     { path: ':theme/rich-text-editor/:sample', redirectTo: 'material/rich-text-editor/default' },
     { path: 'inplace-editor', loadChildren: InplaceEditorSampleModule },
+    { path: 'signature', loadChildren: SignatureSampleModule },
     // Dropdowns
     { path: 'auto-complete', loadChildren: AutoCompleteSampleModule },
     { path: 'combo-box', loadChildren: ComboBoxSampleModule },
@@ -195,6 +197,7 @@ const appRoutes: any = [
         FormValidatorModule,
         RTESampleModule,
         InplaceEditorSampleModule,
+        SignatureSampleModule,
         // Dropdowns
         AutoCompleteSampleModule,
         ComboBoxSampleModule,

@@ -1,0 +1,30 @@
+/* custom code start*/
+#signature-control h4 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#signdescription {
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+.e-sign-clear {
+    margin-left: 5px;
+}
+
+.e-btn-options {
+    float: right;
+    margin-bottom: 10px;
+}
+
+#signature-control {
+    height: 300px;
+    width: 100%;
+    margin: 0;
+}
+
+.e-bigger #signature-control h4 {
+    font-size: 20px;
+}
+/* custom code end*/

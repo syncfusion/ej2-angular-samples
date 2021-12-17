@@ -8,7 +8,7 @@
     <ejs-bulletchart id='revenue' style="display: block; text-align: center;" valueField='value' targetField='target'
         [minimum]='minimum1' [maximum]='maximum1' [interval]='interval1' (load)='load($event)' enableRtl='true'
         [title]='title' [titleStyle]='titleStyle' [dataSource]='data1' [animation]='animation'
-        subtitle='$ in Thousands' [width]='width' align='center' labelFormat='{value}K'>
+        subtitle='$ in Thousands' [width]='width' align='center' labelFormat='{value}K' [tooltip]='tooltip'>
         <e-bullet-range-collection>
             <e-bullet-range end='150'></e-bullet-range>
             <e-bullet-range end='250'></e-bullet-range>

@@ -6,6 +6,7 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { QueryBuilderComponent, ColumnsModel } from '@syncfusion/ej2-angular-querybuilder';
 import { closest } from '@syncfusion/ej2-base';
 import { RuleModel } from '@syncfusion/ej2-querybuilder';
+import { expenseData } from './data-source';
 
 @Component({
     selector: 'control-content',
@@ -16,6 +17,7 @@ import { RuleModel } from '@syncfusion/ej2-querybuilder';
 
 export class HeaderTemplateQueryBuilderComponent {
     @ViewChild('querybuilder') qryBldrObj: QueryBuilderComponent;
+    dataSource: Object[] = expenseData;
     public items: { [key: string]: Object}[] = [{'key': 'AND', 'value': 'and'},{'key': 'OR', 'value': 'or'}];
     filter: ColumnsModel[] = [
         { field: 'EmployeeID', label: 'Employee ID', type: 'number' },

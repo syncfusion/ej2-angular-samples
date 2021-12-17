@@ -13,6 +13,11 @@
     padding: 15px 0px;
 }
 
+.reset-btn {
+    float: right;
+    margin: 5px 2px 5px 0;
+}
+
 .bootstrap .e-breadcrumb-chips,
 .bootstrap .e-custom-breadcrumb,
 .bootstrap4 .e-breadcrumb-chips,
@@ -215,8 +220,13 @@
 
 .e-searchfor-text {
     display: flex;
+    align-items: center;
     font-size: 14px;
     font-weight: normal;
+}
+
+.e-searchfor-text .e-breadcrumb-text {
+    padding-left: 0;
 }
 
 .e-bigger .e-searchfor-text {

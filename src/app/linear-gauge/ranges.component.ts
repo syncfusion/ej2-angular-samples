@@ -118,9 +118,8 @@ export class RangesComponent {
     ngAfterViewInit(): void {
 
         document.getElementById('color').onchange = () => {
-            let rangeIndex: HTMLSelectElement = <HTMLSelectElement>document.getElementById('rangeIndex');
             let ele: HTMLInputElement = <HTMLInputElement>document.getElementById('color');
-            this.gauge.axes[0].ranges[parseInt(rangeIndex.value, 10)].color = ele.value;
+            this.gauge.axes[0].ranges[parseInt(this.rangeIndex.value.toString(), 10)].color = ele.value;
             this.gauge.refresh();
         };
 

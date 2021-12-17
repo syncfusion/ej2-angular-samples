@@ -2,7 +2,8 @@
     <div class="content-wrapper">
         <div class="row material2">
             <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
-                <h5>File Manager like Breadcrumb</h5>
+                <h5 style="display: inline-block">File Manager like Breadcrumb</h5>
+                <button ejs-button id="reset" class="reset-btn e-small" (click)=btnClick()>Reset State</button>
             </div>
         </div>
         <div class="row material2">
@@ -17,28 +18,32 @@
                         <e-breadcrumb-item text="Pictures"></e-breadcrumb-item>
                     </e-breadcrumb-items>
                     <ng-template #itemTemplate let-dataSource="">
-                    <div style="display: flex;">
+                    <div *ngIf='dataSource.text != "LastItem"' style="display: flex;">
                         <ejs-menu (select)="menuSelect($event)">
                             <e-menu-items>
                                 <e-menu-item text={{dataSource.text}} iconCss={{dataSource.iconCss}}></e-menu-item>
                             </e-menu-items>
                         </ejs-menu>
-                        <ul></ul>
                     </div>
                     </ng-template>
+                    <ng-template #separatorTemplate let-dataSource="">
+                        <div style="display: flex;">
+                            <ul></ul>
+                        </div>
+                        </ng-template>
                 </ejs-breadcrumb>
             </div>
         </div>
     </div>
 </div>
 <div id="action-description">
-    <p> This sample demonstrates the Address Bar functionalities using the <b>Breadcrumb</b> component. Click the
+    <p> This sample demonstrates the address bar functionalities using the <b>Breadcrumb</b> component. Click the
         right arrow icon to view and navigate to the next level items.</p>
 </div>
 <div id="description">
     <p>In the <code>Breadcrumb</code> component, <code>itemTemplate</code> property is used to render <code>Menu</code>
-        as <code>Breadcrumb</code> items.</p>
-    <p>In this demo, we have rendered Address of <b>Pictures</b> folder in <code>Breadcrumb</code>. And click the
+        as Breadcrumb items.</p>
+    <p>In this demo, we have rendered address of pictures folder in Breadcrumb. And click the
         right arrow icon to view and navigate to the next level items.</p>
     <p>More information about <code>Breadcrumb</code> component can be found in this <a target='_blank'
             href="https://ej2.syncfusion.com/angular/documentation/breadcrumb/getting-started/">documentation section</a>.</p>

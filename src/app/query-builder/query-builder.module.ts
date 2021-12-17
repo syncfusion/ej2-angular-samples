@@ -26,7 +26,6 @@ export const QueryBuilderAppRoutes: Object[] = [
         path: ':theme/query-builder/complex-databinding',
         component: ComplexQueryBuilderComponent,
         order: '01',
-        type: "new",
         name: 'Complex Databinding',
         category: 'Query Builder'
     },
@@ -48,7 +47,6 @@ export const QueryBuilderAppRoutes: Object[] = [
         path: ':theme/query-builder/rule-template',
         component: RuleTemplateQueryBuilderComponent,
         order: '02',
-        type: "new",
         name: 'Rule Template',
         category: 'Template'
     },
@@ -56,7 +54,6 @@ export const QueryBuilderAppRoutes: Object[] = [
         path: ':theme/query-builder/header-template',
         component: HeaderTemplateQueryBuilderComponent,
         order: '02',
-        type: "new",
         name: 'Header Template',
         category: 'Template'
     }

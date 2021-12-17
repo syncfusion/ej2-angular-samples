@@ -34,43 +34,43 @@ export class EventsComponent {
   }
 
   public onCreate(): void {
-    this.appendElement('Schedule <b>Load</b> event called<hr>');
+    this.appendElement('Schedule <b>Load</b> event is triggered<hr>');
   }
 
   public onActionBegin(): void {
-    this.appendElement('Schedule <b>Action Begin</b> event called<hr>');
+    this.appendElement('Schedule <b>Action Begin</b> event is triggered<hr>');
   }
 
   public onActionComplete(): void {
-    this.appendElement('Schedule <b>Action Complete</b> event called<hr>');
+    this.appendElement('Schedule <b>Action Complete</b> event is triggered<hr>');
   }
 
   public onActionFailure(): void {
-    this.appendElement('Schedule <b>Action Failure</b> event called<hr>');
+    this.appendElement('Schedule <b>Action Failure</b> event is triggered<hr>');
   }
 
   public onCellDoubleClick(): void {
-    this.appendElement('SChedule <b>Cell Double Click</b> event called<hr>');
+    this.appendElement('SChedule <b>Cell Double Click</b> event is triggered<hr>');
   }
 
   public onCellClick(): void {
-    this.appendElement('Schedule <b>Cell Click</b> event called<hr>');
+    this.appendElement('Schedule <b>Cell Click</b> event is triggered<hr>');
   }
 
   public onNavigating(): void {
-    this.appendElement('Schedule <b>Navigating</b> event called<hr>');
+    this.appendElement('Schedule <b>Navigating</b> event is triggered<hr>');
   }
 
   public onDestroyed(): void {
-    this.appendElement('Schedule <b>Destroyed</b> event called<hr>');
+    this.appendElement('Schedule <b>Destroyed</b> event is triggered<hr>');
   }
 
   public onEventClick(): void {
-    this.appendElement('Schedule <b>Event Click</b> event called<hr>');
+    this.appendElement('Schedule <b>Event Click</b> event is triggered<hr>');
   }
 
   public onPopupOpen(): void {
-    this.appendElement('Schedule <b>Popup Open</b> event called<hr>');
+    this.appendElement('Schedule <b>Popup Open</b> event is triggered<hr>');
   }
 
   public appendElement(html: string): void {

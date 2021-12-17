@@ -2,12 +2,24 @@
         content: '\e7ee';
 }
 .fabric #ToolbarTemplate .e-quickfilter::before,
+.fabric-dark #ToolbarTemplate .e-quickfilter::before,
 .highcontrast #ToolbarTemplate .e-quickfilter::before {
         content: '\e21c';
 }
-.bootstrap #ToolbarTemplate .e-quickfilter::before {
+.bootstrap #ToolbarTemplate .e-quickfilter::before,
+.bootstrap-dark #ToolbarTemplate .e-quickfilter::before {
         content: '\e946';
 }
 .bootstrap4 #ToolbarTemplate .e-quickfilter::before {
         content: '\e714';
+}
+.tailwind #ToolbarTemplate .e-quickfilter::before,
+.tailwind-dark #ToolbarTemplate .e-quickfilter::before {
+    content: '\e71b';
+    font-family: 'e-icons';
+}
+.bootstrap5 #ToolbarTemplate .e-quickfilter::before,
+.bootstrap5-dark #ToolbarTemplate .e-quickfilter::before {
+    content: '\e7f7';
+    font-family: 'e-icons';
 }

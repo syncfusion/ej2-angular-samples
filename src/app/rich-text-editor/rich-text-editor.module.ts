@@ -24,6 +24,7 @@ import { TemplateDrivenComponent } from './template-driven.component';
 import { SharedModule } from '../common/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
+import { SplitterModule } from '@syncfusion/ej2-angular-layouts';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons'
 import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
@@ -37,6 +38,7 @@ import { TabModule } from '@syncfusion/ej2-angular-navigations';
 import { AutoSaveComponent } from './auto-save.component';
 import { SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { TributeComponent } from './tribute.component';
+import { OnlineHtmlEditorComponent } from './online-html-editor.component';
 
 export const rteAppRoutes: Object[] = [
     { path: ':theme/rich-text-editor/tools', component: FullFeatureComponent, name: 'Overview', description: 'This demo describes basic and advanced features of the angular rich text editor control (WYSIWYG HTML Editor) with all its tools and functionalities.', order: '01', category: 'Rich Text Editor' },
@@ -49,7 +51,7 @@ export const rteAppRoutes: Object[] = [
     { path: ':theme/rich-text-editor/ajax-load', component: AjaxLoadComponent, name: 'Ajax Content', description: 'This demo shows how to load the content to the editor from external sources like external pages andfiles using the AJAX library in angular WYSIWYG Editor.', order: '01', category: 'Rich Text Editor' },
     { path: ':theme/rich-text-editor/resize-editor', component: ResizeComponent, name: 'Resizable Editor', description: 'This demo explains how to render a resizable angular Editor that allows resizing an editor and viewing its content with an enlarging or shrunk scale.', order: '01', category: 'Rich Text Editor' },
     { path: ':theme/rich-text-editor/api', component: APIComponent, name: 'API', description: 'This demo covers important APIs of the angular rich text editor such as content length, HTML encoding, read-only, retrieve the selected content, and more.', order: '01', category: 'Rich Text Editor' },
-    { path: ':theme/rich-text-editor/enter-key-configuration', component: EnterKeyComponent, name: 'Enter Key Configuration', description: 'This demo explains the API usage to customize the enter and shift + enter key actions in the Rich Text Editor content.', order: '01', category: 'Rich Text Editor', type: 'new' },
+    { path: ':theme/rich-text-editor/enter-key-configuration', component: EnterKeyComponent, name: 'Enter Key Configuration', description: 'This demo explains the API usage to customize the enter and shift + enter key actions in the Rich Text Editor content.', order: '01', category: 'Rich Text Editor' },
     { path: ':theme/rich-text-editor/client-side-events', component: EventsComponent, name: 'Events', description: 'This demo explains client-side events of angular HTML Text Editor that is triggered on editing and formatting operations with an event tracer.', order: '01', category: 'Rich Text Editor' },
     { path: ':theme/rich-text-editor/blog-posting', component: BlogPostComponent, name: 'Use Case', description: 'The Rich Text Editor is used in most real-time applications. The angular rich text editor example shows how to design a forum application in angular application.', order: '01', category: 'Rich Text Editor' },
     { path: ':theme/rich-text-editor/auto-save', component: AutoSaveComponent, name: 'Auto Save', description: 'This demo shows how to autosave the content of the editor with customized time intervals and retrieve the saved content in angular Rich Text Editor.', order: '01', category: 'Rich Text Editor' },
@@ -69,8 +71,8 @@ export const RTERouter: ModuleWithProviders<any> = RouterModule.forChild(rteAppR
 
 @NgModule({
     imports: [BrowserModule, RTERouter, SharedModule, FormsModule, ReactiveFormsModule,TabModule,
-        RichTextEditorAllModule, CheckBoxModule, DialogModule, NumericTextBoxModule,ButtonModule,SwitchModule, RadioButtonModule, TextBoxModule, DropDownListModule],
-    exports: [RichTextEditorAllModule, CheckBoxModule, SwitchModule, DialogModule,TabModule, NumericTextBoxModule,ButtonModule, RadioButtonModule, TextBoxModule, DropDownListModule],
+        RichTextEditorAllModule, SplitterModule, CheckBoxModule, DialogModule, NumericTextBoxModule,ButtonModule,SwitchModule, RadioButtonModule, TextBoxModule, DropDownListModule],
+    exports: [RichTextEditorAllModule, SplitterModule, CheckBoxModule, SwitchModule, DialogModule,TabModule, NumericTextBoxModule,ButtonModule, RadioButtonModule, TextBoxModule, DropDownListModule],
     declarations: [
         DefaultRTEComponent,
         FullFeatureComponent,
@@ -96,8 +98,8 @@ export const RTERouter: ModuleWithProviders<any> = RouterModule.forChild(rteAppR
         TemplateDrivenComponent,
         InsertEmoticonsComponent,
         AutoSaveComponent,
-        TributeComponent
-
+        TributeComponent,
+        OnlineHtmlEditorComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

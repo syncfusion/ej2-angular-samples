@@ -8,8 +8,20 @@
     overflow: auto;
 }
 
+.pivot-table-property-section .property-panel-header {
+    padding-bottom: 10px;
+}
+
 .pivot-table-property-section .e-multiselect {
     padding: 0;
+}
+
+.pivot-table-property-section  .property-panel-table td {
+    width: auto;
+}
+
+.pivot-table-property-section  .property-panel-table div {
+    padding-left: unset;
 }
 
 .sb-sample-content-area {

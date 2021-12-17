@@ -81,6 +81,8 @@ import { PolarStackedColumnChartComponent } from './polar-stacking-column.compon
 import { IndexedAxisChartComponent } from './indexed-axis.component';
 import { VerticalChartComponent } from './vertical.component';
 import { AnnotationChartComponent } from './pie-annotation.component';
+import { RTLChartComponent } from './rtl.component';
+import { GroupedColumnChartComponent } from './grouped-column.component';
 import { DataLabelComponent } from './data-label-template.component';
 import { BoxandWhiskerChartComponent } from './box-and-whisker.component';
 import { StripLineRecurrenceChartComponent } from './strip-line-recurrence.component';
@@ -139,6 +141,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/area-segments', component: AreaSegmentChartComponent, name: 'Area Zone', description: "This demo for Essential JS2 Chart control shows how to render and configure the points in a particular range using MultiColoredArea series.", order: '02', category: 'Area Charts' },
 
     { path: ':theme/chart/column', component: ColumnChartComponent, name: 'Column', description: "This demo for Essential JS2 Chart control shows how to render the column series.", order: '03', category: 'Bar Charts' },
+    { path: ':theme/chart/grouped-column', component: GroupedColumnChartComponent, name: 'Grouped Column', description: "This demo sample for Essential JavaScript2 Chart control demonstrates how to render and configure the grouping in column series.", order: '03', category: 'Bar Charts', type: 'new' },
     { path: ':theme/chart/rounded-column', component: RoundedColumnChartComponent, name: 'Rounded Column',description: "This demo for Essential JS2 Chart control shows how to render the rounded column series.", order: '03', category: 'Bar Charts' },
     { path: ':theme/chart/column-placement', component: PlacementColumnChartComponent, name: 'Back to Back Column', description: "This demo for Essential JS2 Chart control shows how to render and configure the column charts.", order: '03', category: 'Bar Charts' },
     { path: ':theme/chart/range-column', component: RangeColumnChartComponent, name: 'Range Column', description: "This demo for Essential JS2 Chart control shows how to render the range column series.", order: '03', category: 'Bar Charts' },
@@ -189,7 +192,7 @@ export const chartAppRoutes: Object[] = [
 
 
     { path: ':theme/chart/default-pie', component: DefaultPieComponent, name: 'Pie', description: "This demo for Essential JS2 Chart control shows how to render and configure the pie charts.", order: '09', category: 'Accumulation Charts' },
-    { path: ':theme/chart/pie-radius', component: PieRadiusComponent, name: 'Pie with Various Radius', description: "This demo for Essential JS2 Chart control shows how to render and configure the pie chart with different radius.", order: '09', category: 'Accumulation Charts' },
+    { path: ':theme/chart/pie-radius', component: PieRadiusComponent, name: 'Pie with Various Radius', description: "This demo for Essential JS2 Chart control shows how to render and configure the pie chart with different radius.", order: '09', category: 'Accumulation Charts', type: 'update' },
     { path: ':theme/chart/donut', component: DonutComponent, name: 'Donut', description: "This demo for Essential JS2 Chart control shows how to render and configure the doughnut charts.", order: '09', category: 'Accumulation Charts' },
     { path: ':theme/chart/pyramid', component: PyramidComponent, name: 'Pyramid', description: "This demo for Essential JS2 Chart control shows how to render and configure the pyramid charts.", order: '09', category: 'Accumulation Charts' },
     { path: ':theme/chart/funnel', component: FunnelComponent, name: 'Funnel', description: "This demo for Essential JS2 Chart control shows how to render and configure the funnel charts.", order: '09', category: 'Accumulation Charts' },
@@ -242,6 +245,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/sorting', component: SortingChartComponent, name: 'Sorting', description: "This demo for Essential JS2 Chart control shows how to sort the series data in chart.", order: '13', category: 'Chart Customization' },
     { path: ':theme/chart/marker-chart', component: MarkerChartComponent, name: 'Marker Chart', description: "This demo for Essential JS2 Chart control shows how to render the marker symbols for data points.", order: '13', category: 'Chart Customization' },
     { path: ':theme/chart/pie-annotation', component: AnnotationChartComponent, name: 'Annotation', description: "This demo for Essential JS2 Chart control shows how to add more information to the chart using annotation.", order: '13', category: 'Chart Customization' },
+    { path: ':theme/chart/rtl', component: RTLChartComponent, name: 'RTL', description: "This demo sample for Essential JavaScript2 Chart control demonstrates how to render and configure the RTL feature in chart.", order: '13', category: 'Chart Customization', type: 'new' },
     { path: ':theme/chart/data-label-template', component: DataLabelComponent, name: 'Datalabel Template', description: "This demo for Essential JS2 Chart control shows how to render and configure the data label template.", order: '13', category: 'Chart Customization' },
     { path: ':theme/chart/tooltip-template', component: TooltipTemplateComponent, name: 'Tooltip Template', description: "This demo for Essential JS2 Chart control shows how to render and configure the tooltip template.", order: '13', category: 'Chart Customization' },
     { path: ':theme/chart/vertical', component: VerticalChartComponent, name: 'Vertical Chart', description: "This demo for Essential JS2 Chart control shows how to render and configure the vertical type charts.", order: '13', category: 'Chart Customization' },
@@ -251,7 +255,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/print', component: PrintChartComponent, name: 'Print', description: "This demo for Essential JS2 Chart control shows how to print the charts.", order: '14', category: 'Print and Export' },
     { path: ':theme/chart/export', component: ExportChartComponent, name: 'Export', description: "This demo for Essential JS2 Chart control shows how to export the charts to Excel, PDF, and image formats such as SVG, JPEG, and PNG at client-side.", order: '14', category: 'Print and Export' },
 
-    { path: ':theme/chart/selection', component: SelectionChartComponent, name: 'Selection', description: "This demo for Essential JS2 Chart control demonstrates the selection behavior in chart.", order: '15', category: 'User Interaction' },
+    { path: ':theme/chart/selection', component: SelectionChartComponent, name: 'Selection', description: "This demo for Essential JS2 Chart control demonstrates the selection behavior in chart.", order: '15', category: 'User Interaction', type: 'update' },
     { path: ':theme/chart/range-selection', component: RangeSelectionChartComponent, name: 'Range Selection', description: "This demo for Essential JS2 Chart control demonstrates the range selection in chart.", order: '15', category: 'User Interaction' },
     { path: ':theme/chart/cross-hair', component: CrosshairChartComponent, name: 'Crosshair', description: "This demo for Essential JS2 Chart control demonstrates the crosshair behavior in chart.", order: '15', category: 'User Interaction' },
     { path: ':theme/chart/trackball', component: TrackBallChartComponent, name: 'TrackBall', description: "This demo for Essential JS2 Chart control demonstrates the trackball behavior in chart.", order: '15', category: 'User Interaction' },
@@ -275,7 +279,7 @@ let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, Ba
     TmaIndicatorComponent, SmaIndicatorComponent, EmaIndicatorComponent, BollingerIndicatorComponent, PolarAreaChartComponent,
     PolarColumnChartComponent, PolarLineChartComponent,
     PolarRangeColumnChartComponent, PolarScatterChartComponent, PolarSplineChartComponent,
-    PolarStackedAreaChartComponent,
+    PolarStackedAreaChartComponent, RTLChartComponent, GroupedColumnChartComponent,
     PolarStackedColumnChartComponent, IndexedAxisChartComponent, VerticalChartComponent, AnnotationChartComponent, DataLabelComponent,
     StripLineRecurrenceChartComponent, StripLineChartComponent, EmptyPointChartComponent,
     PieEmptyPointChartComponent, PrintChartComponent, BoxandWhiskerChartComponent, RangeAreaComponent, SplineRangeAreaComponent,

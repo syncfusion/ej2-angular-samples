@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { BreadcrumbComponent } from '@syncfusion/ej2-angular-navigations';
-import { MenuItemModel, BreadcrumbItemModel, MenuEventArgs, BreadcrumbBeforeItemRenderEventArgs, Menu } from '@syncfusion/ej2-navigations';
+import { MenuItemModel, BreadcrumbItemModel, MenuEventArgs, BreadcrumbBeforeItemRenderEventArgs, Menu, Breadcrumb } from '@syncfusion/ej2-navigations';
+import { getComponent } from '@syncfusion/ej2-base';
+import { Button } from '@syncfusion/ej2-buttons';
 
 @Component({
     selector: 'control-content',
@@ -33,6 +35,8 @@ export class AddressBarController {
             text: 'Pictures'
         }
     ];
+
+    public initialBreadcrumbItems: BreadcrumbItemModel[] = [].slice.call(this.breadcrumbItems);
 
     public items: any = [
         {
@@ -123,13 +127,16 @@ export class AddressBarController {
                 break;
             }
         }
+        this.breadcrumbObj.items.push({ text: 'LastItem' });
+        this.breadcrumbObj.activeItem = 'LastItem';
     }
 
     public beforeItemRenderHanlder(args: BreadcrumbBeforeItemRenderEventArgs) {
-        if (!args.element.classList.contains('e-breadcrumb-separator')) {
-                if (this.getItems(args.item.text)[0].items) {
+        if (args.element.classList.contains('e-breadcrumb-separator')) {
+            const previousItemText: string = (args.item as { previousItem: BreadcrumbItemModel }).previousItem.text;
+                if (previousItemText !== 'LastItem' && this.getItems(previousItemText)[0].items) {
                     new Menu({
-                        items: this.getItems(args.item.text),
+                        items: this.getItems(previousItemText),
                         showItemOnClick: true,
                         select: this.subMenuSelect.bind(this),
                         beforeOpen: function () {
@@ -159,7 +166,11 @@ export class AddressBarController {
                 this.breadcrumbItems = this.breadcrumbItems.slice(0, idx);
             }
             this.breadcrumbItems[0].iconCss = 'e-bicons e-' + (args.item as { type: string }).type;
+            if (this.breadcrumbItems[this.breadcrumbItems.length - 1].text === 'LastItem') {
+                this.breadcrumbItems.pop();
+            }
             this.breadcrumbItems.push({ text: args.item.text });
+            this.breadcrumbItems.push({ text: 'LastItem' });
             this.breadcrumbObj.items = this.breadcrumbItems;
         }
     }
@@ -213,5 +224,10 @@ export class AddressBarController {
             }
         }
         return subItems;
+    }
+
+    // To refresh Breadcrumb control state when reset button clicked
+    public btnClick() {
+        this.breadcrumbObj.items = this.initialBreadcrumbItems;
     }
 }

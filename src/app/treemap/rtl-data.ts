@@ -104,19 +104,7 @@ export let RTLData: Object[] = [
  
 			 ]
 		 }]
-	 },
-  
-  
-	 { Continent:[
-		 {
-		 Name: "North America", Size:15.30, Country:[			
-		 {Name:"Canada", Size:6.60 },
-			 { Name:"Unites States", Size: 4.90 },
-			 { Name:"Mexico", Size: 3.80 }	   		
-	   ]
-		 }]
-	 },
-  
+	 },  
   
 	 {
 		 Continent:[

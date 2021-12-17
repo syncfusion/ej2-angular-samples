@@ -119,31 +119,29 @@ export class MultipleAxisComponent {
             this.circulargauge.axes[1].pointers[0].animation.enable = false;
             this.circulargauge.refresh();
         };
-        document.getElementById('startAngle').onpointermove = document.getElementById('startAngle').ontouchmove =
-            document.getElementById('startAngle').onchange = () => {
-                let value: number = parseInt((<HTMLInputElement>document.getElementById('startAngle')).value, 10);
-                this.circulargauge.axes[0].pointers[0].animation.enable = false;
-                this.circulargauge.axes[1].pointers[0].animation.enable = false;
-                this.circulargauge.axes[this.axisIndex].startAngle = value;
-                this.circulargauge.axes[this.axisIndex].labelStyle.hiddenLabel =
-                    isCompleteAngle(this.circulargauge.axes[this.axisIndex].startAngle, this.circulargauge.axes[this.axisIndex].endAngle) ?
-                        'First' : 'None';
-                document.getElementById('start').innerHTML = ''+value;
-                this.circulargauge.refresh();
-            };
+        document.getElementById('startAngle').onchange = () => {
+            let value: number = parseInt((<HTMLInputElement>document.getElementById('startAngle')).value, 10);
+            this.circulargauge.axes[0].pointers[0].animation.enable = false;
+            this.circulargauge.axes[1].pointers[0].animation.enable = false;
+            this.circulargauge.axes[this.axisIndex].startAngle = value;
+            this.circulargauge.axes[this.axisIndex].labelStyle.hiddenLabel =
+                isCompleteAngle(this.circulargauge.axes[this.axisIndex].startAngle, this.circulargauge.axes[this.axisIndex].endAngle) ?
+                    'First' : 'None';
+            document.getElementById('start').innerHTML = '' + value;
+            this.circulargauge.refresh();
+        };
 
-        document.getElementById('endAngle').onpointermove = document.getElementById('endAngle').ontouchmove =
-            document.getElementById('endAngle').onchange = () => {
-                let value: number = parseInt((<HTMLInputElement>document.getElementById('endAngle')).value, 10);
-                this.circulargauge.axes[0].pointers[0].animation.enable = false;
-                this.circulargauge.axes[1].pointers[0].animation.enable = false;
-                this.circulargauge.axes[this.axisIndex].endAngle = value;
-                this.circulargauge.axes[this.axisIndex].labelStyle.hiddenLabel =
-                    isCompleteAngle(this.circulargauge.axes[this.axisIndex].startAngle, this.circulargauge.axes[this.axisIndex].endAngle) ?
-                        'First' : 'None';
-                document.getElementById('end').innerHTML = ''+value;
-                this.circulargauge.refresh();
-            };
+        document.getElementById('endAngle').onchange = () => {
+            let value: number = parseInt((<HTMLInputElement>document.getElementById('endAngle')).value, 10);
+            this.circulargauge.axes[0].pointers[0].animation.enable = false;
+            this.circulargauge.axes[1].pointers[0].animation.enable = false;
+            this.circulargauge.axes[this.axisIndex].endAngle = value;
+            this.circulargauge.axes[this.axisIndex].labelStyle.hiddenLabel =
+                isCompleteAngle(this.circulargauge.axes[this.axisIndex].startAngle, this.circulargauge.axes[this.axisIndex].endAngle) ?
+                    'First' : 'None';
+            document.getElementById('end').innerHTML = '' + value;
+            this.circulargauge.refresh();
+        };
     }
 
     constructor() {

@@ -2,7 +2,7 @@ import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { fifaEventsData } from './data';
 import { Internationalization, extend } from '@syncfusion/ej2-base';
 import {
-  EventSettingsModel, EventRenderedArgs, TimeScaleModel, GroupModel, View, DragAndDropService, CallbackFunction,
+  EventSettingsModel, TimeScaleModel, GroupModel, View, DragAndDropService, CallbackFunction,
   ScheduleComponent, DayService, WeekService, MonthService, AgendaService, ResizeService
 } from '@syncfusion/ej2-angular-schedule';
 
@@ -42,18 +42,6 @@ export class ViewConfigComponent {
 
   constructor(@Inject('sourceFiles') private sourceFiles: any) {
     sourceFiles.files = ['view-configuration.style.css'];
-  }
-
-  public onEventRendered(args: EventRenderedArgs): void {
-    const categoryColor: string = args.data.CategoryColor as string;
-    if (!args.element || !categoryColor) {
-      return;
-    }
-    if (this.scheduleObj.currentView === 'Agenda') {
-      (args.element.firstChild as HTMLElement).style.borderLeftColor = categoryColor;
-    } else {
-      args.element.style.backgroundColor = categoryColor;
-    }
   }
 
 }

@@ -1,0 +1,38 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the company performance with default column chart in right-to-left (RTL) direction.
+        The values of the data points are displayed in a tooltip, and the legend in the sample displays information
+        about the series.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [title]='title'
+            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)'
+            (axisLabelRender)='labelRender($event)' enableRtl=true [tooltip]='tooltip'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Sales' width=2>
+                </e-series>
+                <e-series [dataSource]='data1' type='Column' xName='x' yName='y' name='Expense' width=2>
+                </e-series>
+                <e-series [dataSource]='data2' type='Column' xName='x' yName='y' name='Profit' width=2>
+                </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <p>
+        Right-to-left(RTL) is used to render the component from right to left direction and it can be enabled by setting
+        <code>enableRtl</code> property as <b>true</b>.
+    </p>
+    <p>
+        <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point
+        in touch enabled devices.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use column series, we need to
+        inject <code>ColumnSeriesService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>

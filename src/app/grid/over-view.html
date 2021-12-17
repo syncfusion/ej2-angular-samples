@@ -2,7 +2,7 @@
     <ejs-dropdownlist id='value' #sample index='0' width='220' [dataSource]='ddlData' (change)='valueChange($event)' [fields]='fields' [popupHeight]='height'></ejs-dropdownlist>
     <span id='msg'></span>
     <br/>
-    <ejs-grid #overviewgrid id='overviewgrid' [dataSource]='data' rowHeight='38' [allowSelection]='true' [allowSorting]='true' height='600' (dataBound)='onDataBound($event)' [enableHeaderFocus]='true' [enableHover]='false' [selectionSettings]='selectionSettings' [filterSettings]='filterSettings' [allowSorting]='true' [allowFiltering]='true' [enableVirtualization]='true'>
+    <ejs-grid #overviewgrid id='overviewgrid' [dataSource]='data' rowHeight='38' [allowSelection]='true' [allowSorting]='true' height='600' (dataBound)='onDataBound($event)' [enableHover]='false' [enableHeaderFocus]='true' [selectionSettings]='selectionSettings' [filterSettings]='filterSettings' [allowSorting]='true' [allowFiltering]='true' [enableVirtualization]='true'>
         <e-columns>
             <e-column type='checkbox' [allowFiltering]='false' [allowSorting]='false' width='60'></e-column>
             <e-column field='EmployeeID' [visible]='false' headerText='Employee ID' width='130' [isPrimaryKey]='true'></e-column>

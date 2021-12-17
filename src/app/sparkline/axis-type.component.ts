@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ISparklineLoadEventArgs, SparklineTheme } from '@syncfusion/ej2-angular-charts';
 /**
  * Sample for axis type in Sparkline 
  */
@@ -8,6 +9,13 @@ import { Component, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class AxisTypeSparklineComponent {
+    // custom code start
+    public load(args: ISparklineLoadEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.sparkline.theme = <SparklineTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+    };
+    // custom code end
     public datetimeData: object[] = [
         { xDate: new Date(2018, 0, 1), x: 0, yval: 4 },
         { xDate: new Date(2018, 0, 2), x: 1, yval: 4.5 },

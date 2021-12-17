@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ISparklineLoadEventArgs, SparklineTheme } from '@syncfusion/ej2-angular-charts';
 /**
  * Sample for default in Sparkline 
  */
@@ -8,6 +9,13 @@ import { Component, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class DefaultSparklineComponent {
+    // custom code start
+    public load(args: ISparklineLoadEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.sparkline.theme = <SparklineTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+    };
+    // custom code end
     public pausData: object[] = [
         { x: 0, xval: '2005', yval: 20090440 },
         { x: 1, xval: '2006', yval: 20264080 },

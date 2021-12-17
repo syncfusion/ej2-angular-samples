@@ -1,32 +1,34 @@
 <div class="col-lg-12 control-section">
     <div class="content-wrapper">
         <div class="row material2">
-            <div class="col-xs-12 col-sm-12 col-lg-10 col-md-12">
-                <h5>Bind to Location</h5>
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <h5 style="display: inline-block">Bind to Location</h5>
+                <button ejs-button id="reset" class="reset-btn e-small" (click)=btnClick()>Reset State</button>
             </div>
         </div>
         <div class="row material2">
             <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
-                <ejs-breadcrumb [enableNavigation]="false"></ejs-breadcrumb>
+                <ejs-breadcrumb id="bind-to-location" [enableNavigation]="false"></ejs-breadcrumb>
             </div>
         </div>
         <div class="row material2">
             <div class="col-xs-12 col-sm-12 col-lg-10 col-md-12">
-                <h5>URL Binding</h5>
+                <h5>URL Binding and Navigation</h5>
             </div>
         </div>
         <div class="row material2">
             <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
-                <ejs-breadcrumb [enableNavigation]="false" url="https://ej2.syncfusion.com/angular/demos/breadcrumb/bind-to-location"></ejs-breadcrumb>
+                <ejs-breadcrumb (beforeItemRender)="beforeItemRenderHanlder($event)" url="https://ej2.syncfusion.com/angular/demos/breadcrumb/bind-to-location"></ejs-breadcrumb>
             </div>
         </div>
     </div>
 </div>    
     
 <div id="action-description">
-    <p> This sample demonstrates the Navigation functionality of the <b>Breadcrumb</b> component.</p>
+    <p> This sample demonstrates the navigation functionality of the <b>Breadcrumb</b> component.</p>
 </div>
 <div id="description">
-    <p>The <code>Breadcrumb</code> component can be rendered by using the href(url) of the current page or by using <code>url</code> property when the user is not specified the breadcrumb items using <code>items</code> property.</p>
-    <p>More information about <code>Breadcrumb</code> component navigations feature can be found in this <a target='_blank' href="https://ej2.syncfusion.com/angular/documentation/breadcrumb/getting-started/">documentation section</a>.</p>
+    <p>The <code>Breadcrumb</code> component can be rendered by using the href(URL) of the current page or by using <code>url</code> property when the user is not specified the breadcrumb items using <code>items</code> property.
+        In this demonstration, URL navigation is enabled <b>URL Binding and Navigation</b> and <code>beforeItemRender</code> event is used to customize rendering Breadcrumb item.</p>
+        <p>More information about Breadcrumb component navigations feature can be found in this <a target='_blank' href="https://ej2.syncfusion.com/documentation/breadcrumb/data-binding/#items-based-on-current-url">documentation section</a>.</p>
 </div>

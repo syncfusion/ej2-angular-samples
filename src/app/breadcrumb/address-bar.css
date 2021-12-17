@@ -13,6 +13,7 @@
 .bootstrap5 .e-custom-breadcrumb .e-menu-wrapper ul .e-menu-item.e-menu-caret-icon,
 .bootstrap5-dark .e-custom-breadcrumb .e-menu-wrapper ul .e-menu-item.e-menu-caret-icon {
     padding-right: 23px !important;
+    margin-top: -2px;
 }
 
 .e-custom-breadcrumb .e-menu-wrapper ul .e-menu-item .e-caret {
@@ -46,10 +47,6 @@
     background-color: transparent !important;
 }
 
-.e-custom-breadcrumb .e-breadcrumb-separator {
-    display: none;
-}
-
 .e-custom-breadcrumb .e-menu-wrapper ul .e-menu-item .e-menu-icon {
     margin-right: 0;
 }
@@ -71,6 +68,11 @@
 
 .e-custom-breadcrumb .e-open .e-caret {
     transform: none;
+}
+
+.reset-btn {
+    float: right;
+    margin: 5px 2px 5px 0;
 }
 
 @font-face {

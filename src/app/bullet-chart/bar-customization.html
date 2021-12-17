@@ -6,7 +6,7 @@
 
 <div class="control-section col-md-8">
     <ejs-bulletchart #bullet id='revenue' style="display: block; text-align: center;" valueField='value' targetField='target'
-        [minimum]='minimum1' [maximum]='maximum1' [interval]='interval1' (load)='load($event)'
+        [minimum]='minimum1' [maximum]='maximum1' [interval]='interval1' (load)='load($event)' [tooltip]='tooltip'
         [title]='bulletTitle' subtitle='in Thousands' [titlePosition]='positionTitle' [dataSource]='data1' [animation]='animation'
        >
         <e-bullet-range-collection>

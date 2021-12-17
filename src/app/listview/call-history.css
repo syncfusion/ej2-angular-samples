@@ -230,32 +230,7 @@ body.tailwind .e-tab .e-tab-header .e-toolbar-item .e-tab-wrap {
 .highcontrast .layoutWrapper .camera,
 .highcontrast .layoutWrapper .outerButton,
 .highcontrast .layoutWrapper .speaker,
-.highcontrast .layoutWrapper,
-.bootstrap5-dark .layoutWrapper .layout,
-.bootstrap5-dark .layoutWrapper .camera,
-.bootstrap5-dark .layoutWrapper .outerButton,
-.bootstrap5-dark .layoutWrapper .speaker,
-.bootstrap5-dark .layoutWrapper,
-.tailwind-dark .layoutWrapper .layout,
-.tailwind-dark .layoutWrapper .camera,
-.tailwind-dark .layoutWrapper .outerButton,
-.tailwind-dark .layoutWrapper .speaker,
-.tailwind-dark .layoutWrapper,
-.fabric-dark .layoutWrapper .layout,
-.fabric-dark .layoutWrapper .camera,
-.fabric-dark .layoutWrapper .outerButton,
-.fabric-dark .layoutWrapper .speaker,
-.fabric-dark .layoutWrapper,
-.bootstrap-dark .layoutWrapper .layout,
-.bootstrap-dark .layoutWrapper .camera,
-.bootstrap-dark .layoutWrapper .outerButton,
-.bootstrap-dark .layoutWrapper .speaker,
-.bootstrap-dark .layoutWrapper,
-.material-dark .layoutWrapper .layout,
-.material-dark .layoutWrapper .camera,
-.material-dark .layoutWrapper .outerButton,
-.material-dark .layoutWrapper .speaker,
-.material-dark .layoutWrapper {
+.highcontrast .layoutWrapper {
   border-color: white;
 }
 

@@ -14,7 +14,7 @@ HeatMap.Inject(Tooltip, Legend);
 export class HeatmapEmptyPointComponent {
 
     titleSettings: Object = {
-        text: 'Deffective Count per 1000 Products from a Manufacturing Unit',
+        text: 'Defective Count per 1000 Products from a Manufacturing Unit',
         textStyle: {
             size: '15px',
             fontWeight: '500',

@@ -48,7 +48,7 @@ export const spreadsheetAppRoutes: Object[] = [
     },
     {
         path: ':theme/spreadsheet/data-validation', component: DataValidationComponent,
-        name: 'Data Validation', type: 'update', category: 'Spreadsheet', order: '01',
+        name: 'Data Validation', category: 'Spreadsheet', order: '01',
         description: 'This demo for Syncfusion Angular Spreadsheet control includes data validation.'
     },
     {
@@ -73,7 +73,7 @@ export const spreadsheetAppRoutes: Object[] = [
     },
     {
         path: ':theme/spreadsheet/number-formatting', component: NumberFormattingController,
-        name: 'Number Formatting', type: 'update', category: 'Formatting', order: '03',
+        name: 'Number Formatting', category: 'Formatting', order: '03',
         description: 'This demo for Syncfusion Angular Spreadsheet control shows the way of number formatting with minimum configuration.'
     },
     {

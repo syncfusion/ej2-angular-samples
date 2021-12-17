@@ -10,7 +10,7 @@
                     <td>
                         <ejs-sparkline #percentage id="percentage1" height="200px" width="200px" [markerSettings]="permarkerSettings"
                             [axisSettings]="peraxisSettings" [tooltipSettings]="pertooltipSettings" type='Column'
-                            [dataSource]='percentageData' xName='xval' yName='yval' valueType='Category'></ejs-sparkline>
+                            [dataSource]='percentageData' xName='xval' yName='yval' valueType='Category' (load)='load($event)'></ejs-sparkline>
                     </td>
                 </tr>
                 <tr>
@@ -18,7 +18,7 @@
                     <td>
                         <ejs-sparkline #sales id="sales1" height="200px" width="200px" [markerSettings]="salmarkerSettings"
                             [axisSettings]="salaxisSettings" [tooltipSettings]="saltooltipSettings" type='Column'
-                            [dataSource]='salData' xName='xval' yName='yval' valueType='Category' (onchange)="onchange($event)"></ejs-sparkline>
+                            [dataSource]='salData' xName='xval' yName='yval' valueType='Category' (onchange)="onchange($event)" (load)='load($event)'></ejs-sparkline>
                     </td>
                 </tr>
             </table>

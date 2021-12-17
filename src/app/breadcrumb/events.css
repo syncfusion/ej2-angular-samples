@@ -9,6 +9,11 @@
   display: block;
 }
 
+.reset-btn {
+  float: right;
+  margin: 5px 2px 5px 0;
+}
+
 .content-wrapper div.row {
   padding: 15px 0px;
 }

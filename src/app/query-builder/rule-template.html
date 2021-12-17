@@ -4,7 +4,7 @@
 
 <div class="control-section">
   <div class="col-lg-12 control-section">
-    <ejs-querybuilder id="querybuilder" #querybuilder width="100%"
+    <ejs-querybuilder id="querybuilder" #querybuilder [dataSource]="dataSource" width="100%"
       [rule]="importRules" >
       <e-columns>
         <e-column field="EmployeeID" label="Employee ID" type="number"></e-column>
@@ -26,11 +26,9 @@
                 <ejs-dropdownlist (change)="valueChange($event)" [fields]="fields"  [dataSource]="items" [value]="data.rule.value">
                 </ejs-dropdownlist>
               </div>
-              <div class="e-rule-value-delete">
-                <button class="e-removerule e-custom-delete e-rule-delete e-css e-btn e-small e-round">
-                  <span class="e-btn-icon e-icons e-delete-icon"></span>
-                </button>
-              </div>
+              <button class="e-removerule e-rule-delete e-css e-btn e-small e-round">
+                <span class="e-btn-icon e-icons e-delete-icon"></span>
+              </button>
             </div>
           </ng-template>
         </e-column>

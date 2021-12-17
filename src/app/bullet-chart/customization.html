@@ -8,7 +8,7 @@
 <div class="control-section col-md-8">
     <ejs-bulletchart #bullet id='revenue' style="display: block;" valueField='value' targetField='target'
         [minimum]='minimum1' [maximum]='maximum1' [interval]='interval1' [title]='chartTitle' subtitle='in Lakhs'
-        [dataSource]='data1' [animation]='animation' [titleStyle]='titleStyle' (load)='load($event)'>
+        [dataSource]='data1' [animation]='animation' [titleStyle]='titleStyle' (load)='load($event)' [tooltip]='tooltip'>
         <e-bullet-range-collection>
             <e-bullet-range end='1.5' color='#599C20'></e-bullet-range>
             <e-bullet-range end='2.5' color='#EFC820'></e-bullet-range>

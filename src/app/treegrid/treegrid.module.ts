@@ -10,6 +10,7 @@ import { ToolbarModule, ToolbarAllModule } from '@syncfusion/ej2-angular-navigat
 import { DropDownListAllModule, MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { TreeGridOverviewComponent } from './treegrid-overview.component';
 import { TreeGridClipboardComponent } from './clipboard.component';
+import { TreeGridAdaptiveComponent} from './adaptive.component';
 import { DefaultComponent } from './default.component';
 import { LocalDataComponent } from './localdata.component';
 import { RemoteData } from './remotedata.component';
@@ -79,6 +80,9 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/clipboard', component: TreeGridClipboardComponent, 'name': 'Clipboard',
     description: 'This sample demonstrates copy to clipboard functionality of the Tree Grid component. Select rows and click Copy button from toolbar to copy content. To copy with header click Copy with header button from toolbar.', 
     order: '01', category: 'TreeGrid' },
+    { 'path': ':theme/treegrid/adaptive', component: TreeGridAdaptiveComponent, 'name': 'Adaptive',
+    description: 'This example demonstrates the adaptive rendering behavior of Tree Grid features.', 
+    order: '01', category: 'TreeGrid' , type: 'new'},
     { 'path': ':theme/treegrid/localdata', component: LocalDataComponent, 'name': 'Local Data',
     description: 'This example shows the binding of an array of list objects in the Syncfusion Essential JS2 Tree Grid control.', 
     order: '02', category: 'Data Binding' },
@@ -211,7 +215,7 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/frozen-column', component: FreezeComponent, 'name': 'Frozen Column',
     description: 'This demo for Essential JS 2 Tree Grid control shows frozen columns feature of Tree Grid. Scroll the movable content to view the frozen columns.', 
     order: '11', category: 'Frozen'},
-    { 'path': ':theme/treegrid/frozen-api', component: FrozenAPI, 'name': 'Freeze Direction', 'type':'new',
+    { 'path': ':theme/treegrid/frozen-api', component: FrozenAPI, 'name': 'Freeze Direction',
     description: 'This demo for Essential JS 2 Tree Grid control shows frozen columns feature of Tree Grid with Freeze direction Left/Right.', 
     order: '11', category: 'Frozen'},
     { 'path': ':theme/treegrid/contextmenu-default', component: ContextMenuComponent, 'name': 'Default ContextMenu', 
@@ -243,7 +247,7 @@ export const treegridRouteConfig: Object[] = [
     order: '14', category: 'Miscellaneous' }
 ];
 
-let declarations: Type<Object>[] = [TreeGridOverviewComponent, DefaultComponent, TreeGridClipboardComponent, LocalDataComponent, RemoteData, SelfReferenceComponent, SortComponent, SortingAPIComponent, DefaultPagingComponent, PagingAPIComponent, ContextMenuComponent, CustomContextMenuComponent, AggregateComponent, CustomAggregateComponent, ColumnReorderComponent, ColumnFormattingComponent, ColumnTemplateComponent, ResizingComponent,
+let declarations: Type<Object>[] = [TreeGridOverviewComponent, DefaultComponent, TreeGridClipboardComponent, TreeGridAdaptiveComponent, LocalDataComponent, RemoteData, SelfReferenceComponent, SortComponent, SortingAPIComponent, DefaultPagingComponent, PagingAPIComponent, ContextMenuComponent, CustomContextMenuComponent, AggregateComponent, CustomAggregateComponent, ColumnReorderComponent, ColumnFormattingComponent, ColumnTemplateComponent, ResizingComponent,
     ColumnMenuComponent, ColumnChooserComponent, CellAlignmentComponent, AutoWrap, ShowHideComponent, HeaderTemplateComponent, FilterComponent, InlineEditing, DialogEditingComponent, BatchEditingComponent, LockRowComponent, CellEditTypeComponent, CommandColumnComponent, EditTemplateComponent, ReactiveFormsComponent, TemplateFormsComponent, SearchComponent,
     StackedHeaderComponent, KeyBoardComponent, DefaultExportComponent, PrintComponent, EventComponent, ConditionalFormattingComponent, ToolbarTemplateComponent,InfiniteScrollingComponent,
     GridLinesComponent, RowHover, RowHeightComponent, RowTemplateComponent, DragDropComponent, FilteringMenuComponent, FreezeComponent, DefaultScrollingComponent, VirtualScrollingComponent, SelectionComponent, SelectionAPIComponent, CheckboxSelectionComponent, CheckboxColumnComponent, FrozenAPI];
