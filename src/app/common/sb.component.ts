@@ -2,7 +2,7 @@ import { Component, ElementRef, HostListener, Inject, Input, ViewChild } from '@
 import { Router, NavigationStart, NavigationEnd, ActivatedRoute } from '@angular/router';
 import {
     select, selectAll, isVisible, createElement, Ajax,
-    L10n, loadCldr, setCulture, setCurrencyCode, closest, classList
+    L10n, loadCldr, setCulture, setCurrencyCode, closest, classList, registerLicense
 } from '@syncfusion/ej2-base';
 import { Button } from '@syncfusion/ej2-buttons';
 import { DropDownList, AutoComplete } from '@syncfusion/ej2-dropdowns';
@@ -28,6 +28,8 @@ loadCldr(
     currencyData,
     de, ar, frch, zh
 );
+
+registerLicense('{SyncfusionJSLicensekey}');
 
 interface DestroyMethod extends HTMLElement {
     destroy: Function;
@@ -61,7 +63,7 @@ const sourceHeader: String = '<li class="nav-item {2}" role="presentation"><a cl
 const sourcecontent: String = '<div class="tab-pane {2}" id="{0}" role="tabpanel" {4}><pre><code class="{3}">{1}</code></pre></div>';
 const plnk: string = '<li class="plnk" style="float:right"><a id="plnkr">Open in Plunker</a></li>\n' +
     '<li class="open"><a id="openNew" target="_blank"><div class="openIcon e-icons"></div></a></li>';
-const themes: string[] = ['bootstrap5', 'bootstrap5-dark', 'tailwind', 'tailwind-dark', 'material', 'material-dark', 'fabric', 'fabric-dark', 'bootstrap4', 'bootstrap', 'bootstrap-dark', 'highcontrast'];
+const themes: string[] = ['fluent', 'fluent-dark', 'bootstrap5', 'bootstrap5-dark', 'tailwind', 'tailwind-dark', 'material', 'material-dark', 'fabric', 'fabric-dark', 'bootstrap4', 'bootstrap', 'bootstrap-dark', 'highcontrast'];
 let selectedTheme: string;
 let themeFlag: boolean = true;
 let slideFlag: boolean = false;

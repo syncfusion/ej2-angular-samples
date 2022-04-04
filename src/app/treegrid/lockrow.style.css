@@ -4,14 +4,14 @@
 /* custom code start*/
 .material-dark .disableRow .e-rowcell, .fabric-dark .disableRow .e-rowcell,
 .bootstrap-dark .disableRow .e-rowcell, .bootstrap5-dark .disableRow .highcontrast .disableRow .e-rowcell, 
-.tailwind .disableRow .e-rowcell, .tailwind-dark .disableRow .e-rowcell {
+.tailwind .disableRow .e-rowcell, .tailwind-dark .disableRow .e-rowcell, .fluent-dark .disableRow .e-rowcell {
     color: #757575 !important;
 }
 .fabric .disableRow .e-rowcell {
     color: #c8c8c8 !important;
 }
 .bootstrap .disableRow .e-rowcell, .bootstrap4 .disableRow .e-rowcell, 
-.bootstrap5 .disableRow .e-rowcell {
+.bootstrap5 .disableRow .e-rowcell, .fluent .disableRow .e-rowcell {
     color: rgba(0, 0, 0, .35) !important;
 }
 /* custom code end*/

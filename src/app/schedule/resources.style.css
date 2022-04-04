@@ -33,6 +33,7 @@
   width: 100%;
 }
 
+.fluent-dark .schedule-resources.e-schedule .e-appointment .template-wrapper,
 .bootstrap5-dark .schedule-resources.e-schedule .e-appointment .template-wrapper,
 .tailwind-dark .schedule-resources.e-schedule .e-appointment .template-wrapper,
 .bootstrap-dark .schedule-resources.e-schedule .e-appointment .template-wrapper,
@@ -55,6 +56,7 @@
   font-size: 12px;
 }
 
+.fluent-dark .schedule-resources.e-schedule .best-price:not(.e-work-cells),
 .bootstrap5-dark .schedule-resources.e-schedule .best-price:not(.e-work-cells),
 .tailwind-dark .schedule-resources.e-schedule .best-price:not(.e-work-cells),
 .bootstrap-dark .schedule-resources.e-schedule .best-price:not(.e-work-cells),
@@ -64,6 +66,7 @@
   color: #33DB33;
 }
 
+.fluent-dark .schedule-resources.e-schedule .e-work-cells.best-price,
 .bootstrap5-dark .schedule-resources.e-schedule .e-work-cells.best-price,
 .tailwind-dark .schedule-resources.e-schedule .e-work-cells.best-price,
 .bootstrap-dark .schedule-resources.e-schedule .e-work-cells.best-price,

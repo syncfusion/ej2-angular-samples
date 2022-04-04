@@ -59,7 +59,7 @@
                     </tbody>
                 </table>
                 <div style="text-align:center; margin-top: 20px; width: 100%;">
-                    <button ejs-button iconCss='e-icons e-play-icon' cssClass='e-flat' isPrimary=true
+                    <button ejs-button isPrimary=true
                         (click)='onClick($event)' style="width: 100px; text-align: center;" content="Export"
                         id="togglebtn">EXPORT</button>
                 </div>
@@ -85,6 +85,10 @@
 
     .e-play-icon::before {
         content: '\e728';
+    }
+
+    .e-view.fluent .e-play-icon::before, .e-view.fluent-dark .e-play-icon::before  {
+        content: '\e72e';
     }
 
     .e-view.fabric .e-play-icon::before, .e-view.fabric-dark .e-play-icon::before {

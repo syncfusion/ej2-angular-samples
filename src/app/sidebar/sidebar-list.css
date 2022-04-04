@@ -1,175 +1,256 @@
- /* main content area styles */
- 
- .content {
-     text-align: center;
-     font-size: 20px;
-     padding: 15px;
- }
- 
- .textArea {
-     height: 300px;
-     line-height: 300px;
- }
- /* custom code start */
- @media(max-width:550px) {
-     #head .text {
-         display: none;
-     }
- }
- 
- .center {
-     text-align: center;
-     display: none;
-     font-size: 13px;
-     font-weight: 400;
-     margin-top: 20px;
- }
- 
- .sb-content-tab .center {
-     display: block;
- }
- 
- .col-lg-12.col-sm-12.col-md-12,
- .control-section {
-     padding: 0px;
- }
- /* custom code end */
- /* end of main content area styles */
- /* Header area styles */
- 
- #wrapper #head {
-     border: none;
-     background: #292961;
-     width: 100%;
-     height: 50px;
-     color: #fff;
-     padding: 0 15px;
-     position: relative;
- }
- /* custom code start */
- body {
-     margin: 0px;
- }
- /* custom code end */
- #hamburger.menu {
-     font-size: 25px;
-     cursor: pointer;
-     float: left;
-     line-height: 55px;
-     position: absolute;
- }
- 
- #hamburger.menu:before {
-     content: "\e10d";
- }
- 
- #head .text {
-     text-align: right;
-     position: absolute;
-     height: 50px;
-     line-height: 50px;
-     font-size: 18px;
-     padding-left: 40px;
- }
- 
- #head .header {
-     text-align: center;
-     height: 50px;
-     line-height: 50px;
-     font-size: 18px;
-     width: 100%
- }
- /* end of header area styles */
- /* sidebar styles */
- 
- .sb-content-tab #wrapper {
-     display: none;
- }
- 
- #sidebar-menu {
-     background: #f5f5f5;
-     padding: 20px;
- }
- 
- #wrapper #close:before {
-     content: "\e109";
- }
- 
- #wrapper #close {
-     float: right;
-     color: rgba(0, 0, 0, 0.61);
-     cursor: pointer;
-     font-size: 20px;
-     line-height: 14px;
- }
- /* listview style */
- 
- #menulist.e-listview .e-list-item,
- #menulist.e-listview .e-list-item:last-child {
-     height: 51px;
-     line-height: 51px;
-     text-align: center;
-     background: #f5f5f5;
-     color: rgba(0, 0, 0, 0.87);
-     border-bottom: none;
- }
- 
- #menulist.e-listview .e-list-item:hover {
-     transform: scale(1.2);
-     -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
- }
- 
- #menulist {
-     width: 200px;
-     margin: 0 auto;
-     position: relative;
-     top: 15vh;
- }
- /* end of list view styles */
- 
- #sidebar-menu.e-sidebar {
-     padding: 22px
- }
- 
- .ej2-new #sample-header,
- .ej2-new .sb-bread-crumb,
- .ej2-new #action-description,
- .ej2-new #description-section,
- .ej2-new #description,
- .center,
- .ej2-new .action,
- .sb-content-tab #wrapper {
-     display: none
- }
- 
- .ej2-new .control-section{
-	padding-left: 0px;
-  }
+/* Specifies sample level styles for Sidebar */
+#sidelistwrapper .listmaincontent {
+    font-size: 14px;
+    padding: 15px;
+}
 
-.ej2-new app-root > div:first-child{
-	padding-left: 0px !important;
-  }
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
 
- .ej2-new .container-fluid,
- .ej2-new .control-section,
- #sidebar-section {
-     padding: 0px;
- }
- 
- .ej2-new .sample-browser>.content.e-view {
-     top: 0px;
-     padding: 0px;
-     text-align: initial
- }
- /* end of sidebar styles */
- /* custom generated icons styles */
- 
- @font-face {
-     font-family: 'e-icons';
-     src: url(data:application/x-font-ttf;charset=utf-8;base64,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) format('truetype');
-     font-weight: normal;
-     font-style: normal;
- }
+.col-lg-12.col-sm-12.col-md-12,
+.control-section {
+    padding: 0;
+}
 
- /* end of custom generated icons styles */
+#sidelistwrapper .listmaincontent {
+    height: 380px;
+}
+
+#sidelistwrapper #left {
+    float: left;
+    width: 30px;
+    height: 47px;
+}
+
+#sidelistwrapper .sidebar-list {
+    z-index: 20 !important;
+}
+
+/*Specifies sample level style for Toolbar*/
+#sidelistwrapper .e-toolbar .e-icons {
+    font-size: 20px;
+}
+
+#sidelistwrapper .e-tbar-menu-icon:before {
+    content: "\e914";
+    font-family: 'sbicons';
+}
+
+/* Specifies the border bottom styles for toolbar in light theme*/
+.material #sidelistwrapper .e-toolbar,
+.tailwind #sidelistwrapper .e-toolbar,
+.bootstrap5 #sidelistwrapper .e-toolbar {
+    border-bottom: 1px solid #eaeaeae0;
+}
+
+/* Specifies the border bottom styles for toolbar in dark theme*/
+.bootstrap5-dark #sidelistwrapper .e-toolbar,
+.tailwind-dark #sidelistwrapper .e-toolbar,
+.material-dark #sidelistwrapper .e-toolbar {
+    border-bottom: 1px solid #eaeaea63;
+}
+
+.material #sidelistwrapper .e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child,
+.material-dark #sidelistwrapper .e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child,
+.bootstrap4.e-bigger #sidelistwrapper .e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child,
+.tailwind.e-bigger #sidelistwrapper .e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child,
+.tailwind-dark.e-bigger #sidelistwrapper .e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child {
+    margin-left: 12px;
+}
+
+.e-bigger.material #sidelistwrapper .e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child {
+    margin-left: 16px;
+}
+
+.bootstrap4 #sidelistwrapper .e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child,
+.bootstrap #sidelistwrapper .e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child,
+.bootstrap-dark #sidelistwrapper .e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child,
+.bootstrap5.e-bigger #sidelistwrapper .e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child,
+.bootstrap5-dark.e-bigger #sidelistwrapper .e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child {
+    margin-left: 8px;
+}
+
+.bootstrap5 #sidelistwrapper .e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child,
+.bootstrap5-dark #sidelistwrapper .e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child {
+    margin-left: 5px;
+}
+
+.bootstrap.e-bigger #sidelistwrapper .e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child,
+.bootstrap-dark.e-bigger #sidelistwrapper .e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child {
+    margin-left: 10px;
+}
+
+.e-folder {
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px
+}
+
+.e-bigger .e-folder {
+    font-size: 18px;
+}
+
+.bootstrap5 .e-folder-name,
+.bootstrap5-dark .e-folder-name {
+    margin-top: -2px;
+}
+
+.tailwind .e-folder-name,
+.tailwind-dark .e-folder-name,
+.bootstrap4 .e-folder-name,
+.bootstrap .e-folder-name,
+.bootstrap-dark .e-folder-name {
+    margin-top: 3px;
+    margin-left: 7px;
+}
+
+.material .e-folder-name,
+.material-dark .e-folder-name {
+    margin-top: 1px;
+    margin-left: 9px;
+}
+
+/*Specifies sample level style for ListView*/
+.bootstrap5 .e-template-list,
+.bootstrap5-dark .e-template-list,
+.tailwind .e-template-list,
+.tailwind-dark .e-template-list,
+.bootstrap4 .e-template-list {
+    border: 0;
+    border-radius: 0;
+}
+
+.e-template-list .e-list-item {
+    line-height: 1.5;
+    padding: 0 16px;
+}
+
+.list-wrapper {
+    display: inline-flex;
+    width: 100%;
+}
+
+.e-bigger .list-wrapper {
+    padding-left: 8px;
+}
+
+.list-wrapper .text {
+    padding-left: 14px;
+}
+
+.e-bigger .list-wrapper .text {
+    padding-left: 20px;
+}
+
+.e-listbox-wrapper .list-wrapper .text {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.list-wrapper .e-avatar {
+    background-color: transparent;
+    float: left;
+}
+
+/* Specifies the background color of listview in dark theme*/
+ .material-dark #sidelistwrapper .e-list-item,
+.bootstrap-dark #sidelistwrapper .e-list-item {
+    background-color: transparent;
+}
+
+.material .list-wrapper .e-avatar,
+.material-dark .list-wrapper .e-avatar,
+.highcontrast .list-wrapper .e-avatar {
+    margin-top: 3px;
+}
+
+.fabric .list-wrapper .e-avatar,
+.fabric-dark .list-wrapper .e-avatar {
+    margin-top: 6px;
+}
+
+.material.e-bigger .list-wrapper .e-avatar,
+.material-dark.e-bigger .list-wrapper .e-avatar,
+.highcontrast.e-bigger .list-wrapper .e-avatar {
+    margin-top: 7px;
+}
+
+.fabric-dark.e-bigger .list-wrapper .e-avatar,
+.fabric.e-bigger .list-wrapper .e-avatar,
+.bootstrap-dark.e-bigger .list-wrapper .e-avatar,
+.bootstrap.e-bigger .list-wrapper .e-avatar {
+    margin-top: 10px;
+}
+
+.bootstrap .list-wrapper .e-avatar,
+.bootstrap-dark .list-wrapper .e-avatar {
+    margin-top: 5px;
+}
+
+.bootstrap5 .list-wrapper .e-avatar,
+.bootstrap5-dark .list-wrapper .e-avatar {
+    margin-top: -3px;
+}
+
+.tailwind .list-wrapper .e-avatar,
+.tailwind-dark .list-wrapper .e-avatar {
+    margin-top: -1px;
+}
+
+.bootstrap5.e-bigger .list-wrapper .e-avatar,
+.bootstrap5-dark.e-bigger .list-wrapper .e-avatar {
+    margin-top: 0px;
+}
+
+.e-bigger.bootstrap5 .sidebar-list .e-listview:not(.e-list-template) .e-list-item,
+.e-bigger.bootstrap5-dark .sidebar-list .e-listview:not(.e-list-template) .e-list-item {
+    height: 43px;
+}
+
+.bootstrap4.e-bigger .sidebar-list .e-listview:not(.e-list-template) .e-list-item {
+    padding: 12px 14px;
+}
+
+/*Specifies the icon styles for the ListView*/
+.javascript {
+    background-image: url('/assets/sidebar/images/javascript.svg');
+}
+
+.typescript {
+    background-image: url('/assets/sidebar/images/typescript.svg')
+}
+
+.angular {
+    background-image: url('/assets/sidebar/images/angular.svg');
+}
+
+.vue {
+    background-image: url('/assets/sidebar/images/vue.svg');
+}
+
+.react {
+    background-image: url('/assets/sidebar/images/react.svg');
+}
+
+.material-dark #sidelistwrapper .content {
+    color: white;
+}
+
+/* Specifies the border right color for the sidebar in light theme*/
+.material .sidebar-list,
+.fabric .sidebar-list,
+.tailwind .sidebar-list,
+.highcontrast .sidebar-list,
+.bootstrap5 .sidebar-list {
+    border-right: 1px solid #eaeaeae0;
+}
+
+/* Specifies the border right color for the sidebar in dark theme*/
+.material-dark .sidebar-list,
+.fabric-dark .sidebar-list,
+.tailwind-dark .sidebar-list,
+.bootstrap5-dark .sidebar-list {
+    border-right: 1px solid #eaeaea63;
+}

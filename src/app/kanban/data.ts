@@ -721,7 +721,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Stromboli sandwich with chili sauce.",
       "Tags": "Onions, Pepper, Cheese",
       "ImageURL": "Mexican_Green_Wave.jpg",
-      "Price": "$4.79"
+      "Price": "$4.79",
+      "Date":"02/11/2022"
   },
   {
       "Id": 2,
@@ -733,7 +734,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Veggie with Onions and Capsicum.",
       "Tags": "Onions, Capsicum",
       "ImageURL": "Fresh_Veggie.jpg",
-      "Price": "$11.99"
+      "Price": "$11.99",
+      "Date":"02/11/2022"
   },
   {
       "Id": 3,
@@ -745,7 +747,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "It's made using toppings of tomato, mozzarella cheese and fresh basil.",
       "Tags": "Onions, Pepper, Cheese",
       "ImageURL": "Peppy_Paneer.jpg",
-      "Price": "$14.99"
+      "Price": "$14.99",
+      "Date":"02/11/2022"
   },
   {
       "Id": 4,
@@ -757,7 +760,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Lebanese Pizza topped with tomato sauce.",
       "Tags": "Onions, Pepper, Cheese",
       "ImageURL": "Margherit.jpg",
-      "Price": "$4.79"
+      "Price": "$4.79",
+      "Date":"02/11/2022"
   },
   {
       "Id": 5,
@@ -769,7 +773,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Tandoori Paneer with capsicum, red paprika and mint.",
       "Tags": "Paneer, Capsicum",
       "ImageURL": "IndianTandooriPaneer.jpg",
-      "Price": "$11.99"
+      "Price": "$11.99",
+      "Date":"02/11/2022"
   },
   {
       "Id": 6,
@@ -781,7 +786,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Pepper Barbecue Chicken with cheese.",
       "Tags": "Pepper, Chicken, Cheese",
       "ImageURL": "Pepper_Barbeque.jpg",
-      "Price": "$11.99"
+      "Price": "$11.99",
+      "Date":"02/11/2022"
   },
   {
       "Id": 7,
@@ -793,7 +799,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Chicken Sausage with cheese.",
       "Tags": "Cheese, Chicken",
       "ImageURL": "Chicken_Sausage.jpg",
-      "Price": "$14.99"
+      "Price": "$14.99",
+      "Date":"02/11/2022"
   },
   {
       "Id": 8,
@@ -805,7 +812,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Barbeque chicken with a topping of golden corn loaded with extra cheese.",
       "Tags": "Onions, BBQ, Prawn",
       "ImageURL": "Chicken_Golden_Delight.jpg",
-      "Price": "$14.99"
+      "Price": "$14.99",
+      "Date":"02/11/2022"
   },
   {
       "Id": 9,
@@ -817,7 +825,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Pepper Barbecue chicken with Onion.",
       "Tags": "Pepper, Chicken",
       "ImageURL": "Pepper_Barbeque_Onion.jpg",
-      "Price": "$11.99"
+      "Price": "$11.99",
+      "Date":"02/11/2022"
   },
   {
       "Id": 10,
@@ -829,7 +838,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Grilled Chicken Rashers with Peri-Peri chicken, Onion and Capsicum.",
       "Tags": "Chicken, Capsicum",
       "ImageURL": "chunky-chicken.png",
-      "Price": "$4.79"
+      "Price": "$4.79",
+      "Date":"02/11/2022"
   },
   {
       "Id": 11,
@@ -841,7 +851,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Margherita with chili sauce and double Cheese.",
       "Tags": "Onions, Pepper",
       "ImageURL": "Double_Cheese_Margherita.jpg",
-      "Price": "$11.99"
+      "Price": "$11.99",
+      "Date":"02/11/2022"
   },
   {
       "Id": 12,
@@ -853,7 +864,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Veggie Delight with Goldern Corn, Black Olives, Capsicum and red Paprika.",
       "Tags": "Corn, Capsicum",
       "ImageURL": "Veggie_Paradise.jpg",
-      "Price": "$14.99"
+      "Price": "$14.99",
+      "Date":"02/11/2022"
   },
   {
       "Id": 13,
@@ -865,7 +877,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Cheese with golden corn.",
       "Tags": "Cheese, Corn",
       "ImageURL": "Corn_Cheese.jpg",
-      "Price": "$14.99"
+      "Price": "$14.99",
+      "Date":"02/11/2022"
   },
   {
       "Id": 14,
@@ -877,7 +890,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Tandoori masala with Chicken Tikka, Onion, red paprika and mint.",
       "Tags": "Chicken, Tikka, Paprika",
       "ImageURL": "IndianChickenTikka.jpg",
-      "Price": "$11.99"
+      "Price": "$11.99",
+      "Date":"02/11/2022"
   },
   {
       "Id": 15,
@@ -889,7 +903,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Double Pepper Barbecue Chicken with Peri-Peri Chicken, Chicken Tikka, Grilled and Rashers.",
       "Tags": "Pepper, Chicken",
       "ImageURL": "Dominator.jpg",
-      "Price": "$4.79"
+      "Price": "$4.79",
+      "Date":"02/11/2022"
   },
   {
       "Id": 16,
@@ -901,7 +916,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Onions and Capsicum those delectable mushrooms with paneer and golden corn to top it all.",
       "Tags": "Mushrooms, Corn",
       "ImageURL": "Deluxe_Veggie.jpg",
-      "Price": "$11.99"
+      "Price": "$11.99",
+      "Date":"02/11/2022"
   },
   {
       "Id": 17,
@@ -913,7 +929,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Crunchy, crisp capsicum, succulent mushrooms and fresh tomatoes.",
       "Tags": "Capsicum, Mushrooms",
       "ImageURL": "Farmhouse.jpg",
-      "Price": "$14.99"
+      "Price": "$14.99",
+      "Date":"02/11/2022"
   },
   {
       "Id": 18,
@@ -925,7 +942,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Pizza with corn, olives, onions, capsicum, tomatoes and jalapeno with cheese to go all around.",
       "Tags": "Corn, Mushrooms",
       "ImageURL": "Veg_Extravaganz.jpg",
-      "Price": "$14.99"
+      "Price": "$14.99",
+      "Date":"02/11/2022"
   },
   {
       "Id": 19,
@@ -937,7 +955,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Lebanese Pizza topped with tomato sauce.",
       "Tags": "Onions, Pepper, Cheese",
       "ImageURL": "Margherit.jpg",
-      "Price": "$4.79"
+      "Price": "$4.79",
+      "Date":"02/11/2022"
   },
   {
       "Id": 20,
@@ -949,7 +968,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Pepper Barbecue chicken with Onion.",
       "Tags": "Onions, Pepper, Chicken",
       "ImageURL": "Pepper_Barbeque_Onion.jpg",
-      "Price": "$11.99"
+      "Price": "$11.99",
+      "Date":"02/11/2022"
   },
   {
       "Id": 21,
@@ -961,7 +981,8 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Veggie Delight with Goldern Corn, Black Olives, Capsicum and red Paprika.",
       "Tags": "Corn, Capsicum, Pepper",
       "ImageURL": "Veggie_Paradise.jpg",
-      "Price": "$14.99"
+      "Price": "$14.99",
+      "Date":"02/11/2022"
   },
   {
       "Id": 22,
@@ -973,6 +994,7 @@ export let kanbanPizzaData: Object[] = [
       "Description": "Double Pepper Barbecue Chicken with Peri-Peri Chicken, Chicken Tikka, Grilled and Rashers.",
       "Tags": "Pepper, Chicken",
       "ImageURL": "Dominator.jpg",
-      "Price": "$4.79"
+      "Price": "$4.79",
+      "Date":"02/11/2022"
   }
 ];

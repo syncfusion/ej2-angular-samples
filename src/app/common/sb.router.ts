@@ -66,6 +66,7 @@ import { BulletChartSampleModule } from '../bullet-chart/bullet-chart.module';
 import { KanbanSampleModule } from '../kanban/kanban.module';
 import { ProgressBarSampleModule } from '../progress-bar/progress-bar.module';
 import { BreadcrumbSampleModule } from '../breadcrumb/breadcrumb.module';
+import { CarouselSampleModule } from '../carousel/carousel.module';
 import { SignatureSampleModule } from '../signature/signature.module';
 
 const appRoutes: any = [
@@ -129,6 +130,8 @@ const appRoutes: any = [
     { path: ':theme/accordion/:sample', redirectTo: 'material/accordion/default' },
     { path: 'breadcrumb', loadChildren: BreadcrumbSampleModule },
     { path: ':theme/breadcrumb/:sample', redirectTo: 'material/breadcrumb/default' },
+    { path: 'carousel', loadChildren: CarouselSampleModule },
+    { path: ':theme/carousel/:sample', redirectTo: 'material/carousel/default' },
     { path: 'context-menu', loadChildren: MenuModule },
     { path: ':theme/context-menu/:sample', redirectTo: 'material/context-menu/default' },
     { path: 'file-manager', loadChildren: FileSampleModule },
@@ -216,6 +219,7 @@ const appRoutes: any = [
         // Navigation
         AccordionSampleModule,
         BreadcrumbSampleModule,
+        CarouselSampleModule,
         MenuModule,
         FileSampleModule,
         MenuSampleModule,

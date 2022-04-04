@@ -12,8 +12,8 @@ import { dataCollection } from './data-service';
 let selectedTheme: string = location.hash.split('/')[1];
 selectedTheme = selectedTheme ? selectedTheme : 'Material';
 let theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
-let exportthemes: string[] =  ['material', 'fabric', 'bootstrap', 'highcontrast', 'bootstrap5', 'tailwind', 'materialdark', 'fabricdark', 'bootstrapdark', 'tailwinddark', 'bootstrap5dark', 'bootstrap4'];
-let borderColor: string[] = ['#FF4081', '#007897', '#428BCA', '#FFD939', '#4F46E5', '#4F46E5', '#FF4081', '#007897', '#428BCA', '#22D3EE', '#ADB5BD', '#FFD939'];
+let exportthemes: string[] =  ['material', 'fabric', 'bootstrap', 'highcontrast', 'bootstrap5', 'tailwind', 'materialdark', 'fabricdark', 'bootstrapdark', 'tailwinddark', 'bootstrap5dark', 'bootstrap4', 'fluent', 'fluentDark'];
+let borderColor: string[] = ['#FF4081', '#007897', '#428BCA', '#FFD939', '#4F46E5', '#4F46E5', '#FF4081', '#007897', '#428BCA', '#22D3EE', '#ADB5BD', '#FFD939', '#614570', '#8AB113'];
 let regionColor: string[] = ['rgba(255, 64, 129, 0.3)', ' rgba(0, 120, 151, 0.3)', 'rgba(66, 139, 202, 0.3)', 'rgba(255, 217, 57, 0.3)', 'rgba(79, 70, 229, 0.3)',
 'rgba(79, 70, 229, 0.3)', 'rgba(255, 64, 129, 0.3)', 'rgba(0, 120, 151, 0.3)', 'rgba(66, 139, 202, 0.3)', 'rgba(34, 211, 238, 0.3)',
 'rgba(173,181,189,0.3)', 'rgba(255, 217, 57, 0.3)'];

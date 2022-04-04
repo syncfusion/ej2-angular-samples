@@ -19,7 +19,8 @@ body.material-dark .sample_container.badge-notification .layout,
 body.tailwind-dark .sample_container.badge-notification .layout,
 body.bootstrap-dark .sample_container.badge-notification .layout,
 body.fabric-dark .sample_container.badge-notification .layout,
-.bootstrap5-dark .sample_container.badge-notification .layout {
+.bootstrap5-dark .sample_container.badge-notification .layout,
+.fluent-dark .sample_container.badge-notification .layout {
     background: inherit;
     border: 1px solid #FFFFFF;
     color: #FFFFFF;

@@ -82,7 +82,7 @@ export const treegridRouteConfig: Object[] = [
     order: '01', category: 'TreeGrid' },
     { 'path': ':theme/treegrid/adaptive', component: TreeGridAdaptiveComponent, 'name': 'Adaptive',
     description: 'This example demonstrates the adaptive rendering behavior of Tree Grid features.', 
-    order: '01', category: 'TreeGrid' , type: 'new'},
+    order: '01', category: 'TreeGrid' },
     { 'path': ':theme/treegrid/localdata', component: LocalDataComponent, 'name': 'Local Data',
     description: 'This example shows the binding of an array of list objects in the Syncfusion Essential JS2 Tree Grid control.', 
     order: '02', category: 'Data Binding' },

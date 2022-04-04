@@ -25,6 +25,10 @@ ejs-querybuilder {
   padding-left: 10px;
   height: 32px;
 }
+.e-bigger .e-query-builder .e-custom-group-btn {
+  padding-left: 10px; 
+  height: 36px;
+}
 
 .e-query-builder .query-template-control .e-header {
   display: inline-block;

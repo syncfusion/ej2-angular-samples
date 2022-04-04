@@ -7,6 +7,7 @@ import { projectNewData } from './data';
 export class GanttDefaultComponent implements OnInit {
     public data: object[];
     public taskSettings: object;
+    public columns: object[];
     public labelSettings: object;
     public projectStartDate: Date;
     public projectEndDate: Date;
@@ -22,6 +23,14 @@ export class GanttDefaultComponent implements OnInit {
             dependency: 'Predecessor',
             child: 'subtasks'
         };
+        this.columns =  [
+            { field: 'TaskID', width:80 },
+            { field: 'TaskName', headerText: 'Job Name', width: '250', clipMode: 'EllipsisWithTooltip' },
+            { field: 'StartDate' },
+            { field: 'Duration' },
+            { field: 'Progress' },
+            { field: 'Predecessor' }
+        ];
         this.projectStartDate = new Date('03/24/2019');
         this.projectEndDate = new Date('07/06/2019');
         this.labelSettings = {

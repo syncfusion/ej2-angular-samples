@@ -101,6 +101,10 @@
   background-color: #1a1a1a;
 }
 
+.fluent-dark .e-profile-wrapper {
+  background-color: #201f1e;
+}
+
 .fabric-dark .e-profile-wrapper {
   background-color: #333232;
 }

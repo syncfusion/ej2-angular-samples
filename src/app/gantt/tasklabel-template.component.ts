@@ -56,7 +56,7 @@ export class GanttTasklabelTemplateComponent implements OnInit {
         name: 'resourceName',
       };
       this.columns = [
-        { field: 'TaskID', width: 60 },
+        { field: 'TaskID', width: 80 },
         { field: 'TaskName', width: 250 },
         { field: 'StartDate' },
         { field: 'EndDate' },

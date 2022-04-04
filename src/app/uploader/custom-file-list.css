@@ -179,6 +179,11 @@
     content: '\e78d';
 }
 
+.fluent .close-icon-container.delete-icon::before,
+.fluent-dark .close-icon-container.delete-icon::before {
+    content: '\e7e7';
+}
+
 .tailwind .close-icon-container.delete-icon {
     top: 10px;
 }

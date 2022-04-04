@@ -15,7 +15,7 @@
             <tr id="button-control" style="height: 50px">
                 <td align='center'>
                     <div>
-                        <button ejs-button id="togglebtn"  iconCss='e-icons e-play-icon' cssClass= 'e-flat' isPrimary= true (click)='mode($event)' style="width: 80px;" content="Print">Print</button>
+                        <button ejs-button id="togglebtn" isPrimary= true (click)='mode($event)' style="width: 80px;" content="Print">Print</button>
                     </div>
                 </td>
             </tr>
@@ -38,6 +38,10 @@
 
    .e-play-icon::before {
         content: '\e813';
+    }
+
+    .e-view.fluent .e-play-icon::before, .e-view.fluent-dark .e-play-icon::before  {
+        content: '\e75d';
     }
 
    .e-view.fabric .e-play-icon::before, .e-view.fabric-dark .e-play-icon::before  {

@@ -4,7 +4,7 @@ import { SelectedEventArgs, TextBoxComponent } from '@syncfusion/ej2-angular-inp
 import {
   ScheduleComponent, GroupModel, DayService, WeekService, WorkWeekService, MonthService, YearService, AgendaService,
   TimelineViewsService, TimelineMonthService, TimelineYearService, View, EventSettingsModel, Timezone, CurrentAction,
-  CellClickEventArgs, ResourcesModel, EJ2Instance, PrintService, ExcelExportService, ICalendarExportService, CallbackFunction
+  CellClickEventArgs, ResourcesModel, EJ2Instance, PrintService, ExcelExportService, ICalendarExportService, CallbackFunction, PopupOpenEventArgs
 } from '@syncfusion/ej2-angular-schedule';
 import { addClass, extend, removeClass, closest, remove, isNullOrUndefined, Internationalization, compile } from '@syncfusion/ej2-base';
 import { ChangeEventArgs as SwitchEventArgs, SwitchComponent } from '@syncfusion/ej2-angular-buttons';
@@ -65,6 +65,7 @@ export class OverviewComponent implements AfterViewChecked {
   public firstDayOfWeek = 0;
   public workDays: number[] = [1, 2, 3, 4, 5];
   public calendarsValue: number[] = [1];
+  public selectedResource: number = 1;
   public fields: Record<string, any> = { text: 'text', value: 'value' };
   public calendarFields: Record<string, any> = { text: 'CalendarText', value: 'CalendarId' };
   public dayStartHourValue: Date = new Date(new Date().setHours(0, 0, 0));
@@ -633,6 +634,12 @@ export class OverviewComponent implements AfterViewChecked {
       });
     } else {
       this.scheduleObj.exportToICalendar();
+    }
+  }
+
+  public onPopupOpen(args: PopupOpenEventArgs): void {
+    if (args.type === 'QuickInfo') {
+      this.selectedResource = args.data.CalendarId;
     }
   }
 

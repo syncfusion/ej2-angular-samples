@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, IAxisLabelRenderEventArgs, ChartTheme, ITooltipRenderEventArgs, IRangeLoadedEventArgs,
+import { ILoadedEventArgs, IAxisLabelRenderEventArgs, ChartTheme,  ISharedTooltipRenderEventArgs, IRangeLoadedEventArgs,
  IChangedEventArgs, ChartComponent, IPointRenderEventArgs} from '@syncfusion/ej2-angular-charts';
 import { chartDataValue } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
@@ -79,10 +79,10 @@ export class CandleStickChartComponent {
     public legendSettings: Object = {
         visible: false
     };
-    public tooltipRender(args: ITooltipRenderEventArgs): void {
-        if (!args.series.index) {
-            args.text = 'Volume : <b>' +
-                this.getLabelText(args.text.split('<b>')[1].split('</b>')[0]) + '</b>';
+    public sharedTooltipRender(args: ISharedTooltipRenderEventArgs): void {
+        if (!args.series[0].index) {
+            args.text[0] = 'Volume : <b>' +
+                this.getLabelText(args.text[0].split('<b>')[1].split('</b>')[0]) + '</b>';
         }
     }
     public getLabelText: Function = (value: number): string => {

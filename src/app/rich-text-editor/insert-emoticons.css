@@ -141,6 +141,12 @@
         border-color: #317ab9;
     }
 
+    .fluent .e-rte-emoticon-tbar-section .char_block.e-active,
+    .fluent-dark .e-rte-emoticon-tbar-section .char_block.e-active {
+        outline: 1px solid #0078DE;
+        border-color: #0078DE;
+    }
+    
     .highcontrast .e-rte-custom-tbar-section .char_block.e-active {
         outline: 1px solid #ffd939;
         border-color: #ffd939;
@@ -165,3 +171,4 @@
 	#rteSection {
         height: 500px;
     }
+    

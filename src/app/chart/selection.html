@@ -23,17 +23,6 @@
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
                 <table id="property" class="property-panel-table" title="Properties" style="width: 105%;">
-                    <tr style="height: 50px">
-                        <td style="width: 80%">
-                            <div>Enable Multi-selection:</div>
-                        </td>
-                        <td style="width: 40%;">
-                            <div>
-                                <input type="checkbox" (change)='setMultiSelect($event)' id="select"
-                                    style="margin-left: -10px">
-                            </div>
-                        </td>
-                    </tr>
                     <tr id='' style="height: 50px">
                         <td style="width: 60%;">
                             <div>Selection Mode:</div>
@@ -44,6 +33,17 @@
                                 <option value="Series">Series</option>
                                 <option value="Cluster">Cluster</option>
                             </select>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 80%">
+                            <div>Enable Multi-selection:</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="checkbox" (change)='setMultiSelect($event)' id="select"
+                                    style="margin-left: -10px">
+                            </div>
                         </td>
                     </tr>
                     <tr id='' style="height: 50px">
@@ -63,19 +63,19 @@
                         </td>
                     </tr>
                     <tr style="height: 50px">
-                        <td style="width: 50%">
-                            <div> Enable Highlight:</div>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="highlight" style="margin-top: 15px">
-                        </td>
-                    </tr>
-                    <tr style="height: 50px">
                         <td style="width: 60%">
                             <div>Highlight Color:</div>
                         </td>
                         <td style="width: 40%;">
                             <input id="color-picker" type="color">
+                        </td>
+                    </tr>
+                    <tr style="height: 50px">
+                        <td style="width: 50%">
+                            <div> Enable Highlight:</div>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="highlight" style="margin-top: 15px">
                         </td>
                     </tr>
                     <tr style="height: 50px">

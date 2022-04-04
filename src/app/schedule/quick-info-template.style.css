@@ -70,7 +70,7 @@
 }
 
 .e-quick-popup-wrapper .e-cell-popup .e-popup-content {
-  padding: 0 14px;
+  padding: 0 14px !important;
 }
 
 .e-quick-popup-wrapper .e-event-popup .e-popup-footer {
@@ -89,6 +89,7 @@
 .highcontrast .quick-info-header,
 .tailwind-dark .quick-info-header,
 .bootstrap-dark .quick-info-header,
+.fluent-dark .quick-info-header,
 .bootstrap5-dark .quick-info-header,
 .fabric-dark .quick-info-header {
   background-color: transparent;
@@ -98,7 +99,7 @@
   color: #fff !important;
 }
 
-.tailwind-dark .event-content div label, .tailwind-dark .event-content div span, .bootstrap-dark .event-content div label, .bootstrap-dark .event-content div span, .bootstrap5-dark .event-content div label, .bootstrap5-dark .event-content div span, .fabric-dark .event-content div label, .fabric-dark .event-content div span, .material-dark .event-content div label, .material-dark .event-content div span, .highcontrast .event-content div label, .highcontrast .event-content div span {
+.tailwind-dark .event-content div label, .tailwind-dark .event-content div span, .bootstrap-dark .event-content div label, .bootstrap-dark .event-content div span, .bootstrap5-dark .event-content div label, .bootstrap5-dark .event-content div span, .fluent-dark .event-content div label, .fluent-dark .event-content div span, .fabric-dark .event-content div label, .fabric-dark .event-content div span, .material-dark .event-content div label, .material-dark .event-content div span, .highcontrast .event-content div label, .highcontrast .event-content div span {
   color: #fff;
 }
 

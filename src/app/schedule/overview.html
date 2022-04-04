@@ -126,7 +126,7 @@
         <div class="left-panel">
           <div class="overview-scheduler">
             <ejs-schedule #scheduleObj cssClass='schedule-overview' height='100%' [group]='group'
-              [(currentView)]="currentView" timezone='UTC' [eventSettings]="eventSettings">
+              [(currentView)]="currentView" timezone='UTC' [eventSettings]="eventSettings" (popupOpen)="onPopupOpen($event)">
               <ng-template #dateHeaderTemplate let-data>
                 <div class="date-text">{{getDateHeaderText(data.date)}}</div>
                 <div [innerHTML]="getWeatherImage(data.date)"></div>
@@ -172,7 +172,7 @@
                     </div>
                     <div class="content-area">
                       <ejs-dropdownlist id='eventType' #eventTypeObj [dataSource]='resourceDataSource'
-                        [fields]='calendarFields' placeholder='Choose Type' [value]='calendarsValue[0]'
+                        [fields]='calendarFields' placeholder='Choose Type' [value]='selectedResource'
                         popupHeight="150pc">
                       </ejs-dropdownlist>
                     </div>

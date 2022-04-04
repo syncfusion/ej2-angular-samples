@@ -1,98 +1,151 @@
 .online-editor #defaultRTE {
-    overflow: hidden;
-    border: none;
+  overflow: hidden;
+  border: none;
 }
-
 .online-editor .e-splitter .CodeMirror {
-    height: 447px;
+  height: 415px;
+}
+.online-editor .CodeMirror-gutters, .CodeMirror-linenumber {
+  display: block;
+  width: 29px;
+}
+.online-editor.heading {
+  float: left;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding: 5px;
+  padding-left:0px;
+  padding-right:0px;
 }
 
-.center {
-    text-align: center;
-    font-size: 13px;
-    font-weight: 400;
-    margin-top: 20px;
-}
-
-.online-editor .heading {
-    margin-top: 10px;
-    float: left;
-    width: 50%;
-    border: 1px solid #e8e8e8;
-    border-bottom: none;
-    position: relative;
-    box-sizing: border-box;
-    padding: 5px;
-}
-
-.title {
-    color: #a0aabf;
-    letter-spacing: 1px;
-    padding-left: 10px;
-}
-
-.online-editor .title-head {
-    text-align: center
+.online-editor .title {
+  color: #333333;
+  letter-spacing: 1px;
+  padding-left: 10px;
+  text-align: center;
 }
 
 .online-editor .e-control.e-splitter .e-split-bar.e-split-bar-horizontal.e-last-bar {
-    margin: 0;
+  margin: 0;
+}
+.online-editor .sb-content-section {
+ border-bottom: none;
+ border-right: none;  
 }
 
-.online-editor .button-content {
-    display: none;
+.online-editor .sample-head {
+  height: 48px;
+  background: #ffffff;
+  box-shadow: 0 8px 11px -6px rgba(0, 0, 0, 0.12);
+  z-index: 1001;
+  opacity: 100;
+  display: none;
 }
 
-.sb-content-section .online-editor .button-content {
-    display: block;
-}
-
-.sb-content-section .online-editor .sample-view {
-    display: none;
-}
-
-.online-editor .sample-view {
-    display: block;
-    padding: 15px;
-}
-
-body {
-    margin: 0;
+.online-editor .head-content {
+  padding: 15px 0 0 35px;
+  font-weight: 499;
+  line-height: 18px;
+  font-size: 15px;
+  color: #000000;
+  font-family: sans-serif;
 }
 
 .online-editor table {
-    width: 100%
+  width: 100%;
 }
 
 .online-editor table,
 .online-editor th,
 .online-editor td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-
-.ej2-new .sb-bread-crumb,
-.ej2-new .sb-bread-crumb-text,
-.ej2-new app-root > div > p,
-.ej2-new #action-description,
-.ej2-new #description-section,
-.ej2-new .sb-header,
-.ej2-new #description {
-    display: none !important;
+  border: 1px solid black;
+  border-collapse: collapse;
 }
 
 .ej2-new .container-fluid {
-    padding: 0 !important;
+  padding-right: 0px; 
+  padding-left: 0px;
 }
-
-.ej2-new .content {
-    top : 0px;
+.ej2-new  .control-section {
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
-
-.ej2-new .e-splitter .content {
-    height: 100%;
+.online-editor .e-tab .e-tab-header:not(.e-vertical)::before {
+  border-bottom: none;
+  border-right: 1px solid #dee2e6;
 }
-
-.ej2-new .control-section {
-    padding-left: 0px;
+.online-editor .e-richtexteditor.e-rte-tb-expand .e-rte-content, .e-richtexteditor.e-rte-tb-expand .e-source-content
+.sb-content-section .e-lib .e-tab .e-control .e-template .e-keyboard .e-nested .sb-content-header  {
+  border-bottom: none;
 }
+.online-editor .e-toolbar.e-control[class*='e-toolbar']
+{
+  border-bottom: none;
+}
+.online-editor .CodeMirror-scroll
+{
+  border-top: 1px solid #e8e8e8 !important;
+}
+.online-editor .heading .right .e-pane .e-pane-horizontal .e-scrollable
+{
+  padding:0px;
+}
+.online-editor .e-splitter.e-splitter-horizontal .e-pane.e-pane-horizontal {
+  min-width: 400px !important;
+}
+.sb-content-section .sb-content-tab-header {
+  border-right: 1px solid #D7D7D7;
+}
+.online-editor .CodeMirror-sizer {
+    margin-left: 30px;
+    margin-bottom: -17px;
+    border-right-width: 13px;
+    min-height: 208px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+.online-editor .CodeMirror-gutter-wrapper{
+    left: -45px !important;
+    width: 30px
+}
+    .fabric-dark .cm-s-default .cm-tag,
+    .bootstrap5-dark .cm-s-default .cm-tag,
+    .bootstrap-dark .cm-s-default .cm-tag,
+    .fluent-dark .cm-s-default .cm-tag,
+    .material-dark .cm-s-default .cm-tag,
+    .tailwind-dark .cm-s-default .cm-tag,
+    .highcontrast .cm-s-default .cm-tag {
+        color: #00ff00;
+    }
+    .fabric-dark .title,
+    .bootstrap5-dark .title,
+    .bootstrap-dark .title,
+    .fluent-dark .title,
+    .material-dark .title,
+    .tailwind-dark .title,
+    .highcontrast .title{
+        color: #fff;
+    }
+    .fabric-dark .CodeMirror,
+    .bootstrap5-dark .CodeMirror,
+    .fluent-dark .CodeMirror,
+    .bootstrap-dark .CodeMirror,
+    .material-dark .CodeMirror,
+    .tailwind-dark .CodeMirror {
+        background-color: #303030;
+        color: #fff;
+    }
+    .highcontrast .CodeMirror {
+        background: black;
+        color:#fff;
+    }
+    .fabric-dark .CodeMirror-gutters,
+    .bootstrap5-dark .CodeMirror-gutters,
+    .fluent-dark .CodeMirror-gutters,
+    .bootstrap-dark .CodeMirror-gutters,
+    .material-dark .CodeMirror-gutters,
+    .tailwind-dark .CodeMirror-gutters,
+    .highcontrast .CodeMirror-gutters {
+        background-color: #303030;
+    }

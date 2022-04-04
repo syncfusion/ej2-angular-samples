@@ -45,7 +45,7 @@
                     <tr id="button-control" style="height: 50px" align='center'>
                         <td align='center' colspan="2">
                             <div>
-                                <button ejs-button iconCss="e-icons e-export-icon" cssClass="e-info" (click)='onClick($event)' style="text-transform:none !important" id="togglebtn">EXPORT</button>
+                                <button ejs-button iconCss="e-icons e-export-icon" cssClass="e-flat" isPrimary=true (click)='onClick($event)' style="text-transform:none !important" id="togglebtn">EXPORT</button>
                             </div>
                         </td>
                     </tr>
@@ -77,10 +77,6 @@
         padding: 0px !important;
     }
     
-    .e-export-icon::before {
-        content: '\e728';
-    }
-
     .e-view.fabric .e-export-icon::before, .e-view.fabric-dark .e-export-icon::before {
         content: '\e710';
     }
@@ -99,5 +95,9 @@
 
     .e-view.bootstrap5 .e-export-icon::before, .e-view.bootstrap5-dark .e-export-icon::before {
         content: '\e72e';
+    }
+
+    .e-view.fluent .e-export-icon::before, .e-view.fluent-dark .e-export-icon::before {
+        content: '\e728';
     }
 </style>

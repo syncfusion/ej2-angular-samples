@@ -120,6 +120,17 @@
             "tile": "Tile View"
         }
     },
+    "carousel": {
+        "ControlName": "Carousel",
+        "Samples": {
+            "overview": "Overview",
+            "default": "Default Functionalities",
+            "templates": "Templates",
+            "data-binding": "Data Binding",
+            "keyboard-navigation": "Keyboard Navigation",
+            "api": "API"
+        }
+    },
     "chart": {
         "ControlName": "Chart",
         "Samples": {

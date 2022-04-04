@@ -26,12 +26,22 @@
         content: '\e787';
     }
 
-    .tailwind .e-icon-btn .e-md-preview::before {
-        content: '\e7d0';
+    .tailwind .e-icon-btn .e-md-preview::before,
+    .tailwind-dark .e-icon-btn .e-md-preview::before
+    .bootstrap5 .e-icon-btn .e-md-preview::before,
+    .bootstrap5-dark .e-icon-btn .e-md-preview::before,
+    .fluent .e-icon-btn .e-md-preview::before,
+    .fluent-dark .e-icon-btn .e-md-preview::before {
+        content: '\e7de';
     }
-
-    .tailwind .e-icon-btn.e-active .e-md-preview::before {
-        content: '\e748';
+    
+    .fluent .e-icon-btn.e-active .e-md-preview::before,
+    .fluent-dark .e-icon-btn.e-active .e-md-preview::before,
+    .bootstrap5 .e-icon-btn.e-active .e-md-preview::before,
+    .bootstrap5-dark .e-icon-btn.e-active .e-md-preview::before,
+    .tailwind .e-icon-btn.e-active .e-md-preview::before,
+    .tailwind-dark .e-icon-btn.e-active .e-md-preview::before {
+        content: '\e80e';
     }
 
     #mdPreview .e-rte-content .e-content.e-pre-source {

@@ -40,14 +40,14 @@
             <tr id="button-control" style="height: 50px" align="center">
                 <td>
                      <div style="margin-left: 40%;">
-                        <button ejs-button id="togglebtn1" cssClass= 'e-info' isPrimary=true (click)='onClick1($event)' style="width: 80px;" content="Export">Export</button>
+                        <button ejs-button id="togglebtn1" iconCss='e-icons e-export-icon' cssClass= 'e-flat' isPrimary=true (click)='onClick1($event)' style="width: 80px;" content="Export">Export</button>
                     </div>
                 </td>
             </tr>
             <tr id="button-control" style="height: 50px">
                 <td align="center">
                         <div style="margin-left: 40%;">
-                        <button ejs-button id="togglebtn2" cssClass= 'e-info' isPrimary=true (click)='onClick2($event)' style="width: 80px;" content="Print">Print</button>
+                        <button ejs-button id="togglebtn2" iconCss='e-icons e-export-icon' cssClass= 'e-flat' isPrimary=true (click)='onClick2($event)' style="width: 80px;" content="Print">Print</button>
                     </div>
                 </td>
             </tr>
@@ -80,5 +80,69 @@
     text-align: center;
     text-transform:none !important;
 }
+
+.e-export-icon::before {
+        content: '\e728';
+    }
+
+    .e-view.fluent .e-export-icon::before, .e-view.fluent-dark .e-export-icon::before {
+        content: '\e728';
+    }
+
+    .e-view.fabric .e-export-icon::before, .e-view.fabric-dark .e-export-icon::before {
+        content: '\e710';
+    }
+
+    .e-view.fluent .e-export-icon::before, .e-view.fluent-dark .e-export-icon::before {
+        content: '\e728';
+    }
+
+    .e-view.bootstrap4 .e-export-icon::before {
+        content: '\e780';
+    }
+
+    .e-view.tailwind-dark .e-export-icon::before, .e-view.tailwind .e-export-icon::before {
+        content: '\e7bf';
+    }
+
+    .e-view.highcontrast .e-export-icon::before {
+        content: '\e710';
+    }
+
+    .e-view.bootstrap5 .e-export-icon::before, .e-view.bootstrap5-dark .e-export-icon::before {
+        content: '\e72e';
+    }
+
+    .e-print-icon::before {
+        content: '\e34b';
+    }
+
+    .e-view.fabric .e-print-icon::before, .e-view.fabric-dark .e-print-icon::before {
+        content: '\e7df';
+    }
+
+    .e-view.bootstrap .e-print-icon::before {
+        content: '\ebd2';
+    }
+
+    .e-view.bootstrap4 .e-print-icon::before {
+        content: '\e743';
+    }
+
+    .e-view.tailwind .e-print-icon::before, .e-view.tailwind-dark .e-print-icon::before {
+        content: '\e76c';
+    }
+
+    .e-view.highcontrast .e-print-icon::before {
+        content: '\ebf9';
+    }
+
+    .e-view.bootstrap5 .e-print-icon::before, .e-view.bootstrap5-dark .e-print-icon::before {
+        content: '\e75d';
+    }
+
+    .e-view.fluent .e-print-icon::before, .e-view.fluent-dark .e-print-icon::before {
+        content: '\e75d';
+    }
 </style>
 <!-- custom code end -->

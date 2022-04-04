@@ -1,19 +1,26 @@
 <div id="action-description">
-    <p>This sample demonstrates the grouping feature of the pivot table. The pivot fields are automatically populated from the bound data source, and they can be dragged and dropped to alter the report at runtime. The pivot fields can be sorted, filtered, and removed dynamically as well.</p>
+    <p>This sample demonstrates the grouping feature of the pivot table. The pivot fields are automatically populated
+        from the bound data source, and they can be dragged and dropped to alter the report at runtime. The pivot fields
+        can be sorted, filtered, and removed dynamically as well.</p>
 </div>
 <div id="description">
-    <p>The pivot table grouping bar option automatically populates fields from the bound data source and allows end users
-        to drag fields between different axes such as columns, rows, values, and filters, and create pivot table at runtime.
+    <p>The pivot table grouping bar option automatically populates fields from the bound data source and allows end
+        users
+        to drag fields between different axes such as columns, rows, values, and filters, and create pivot table at
+        runtime.
         To enable grouping bar, set the
-        <code>showGroupingBar</code> property as true.</p>
+        <code>showGroupingBar</code> property as true.
+    </p>
     <p>
-        Filter and sort icons allow displaying selective records and ordering them in ascending or descending order. The value type icon
+        Filter and sort icons allow displaying selective records and ordering them in ascending or descending order. The
+        value type icon
         allows to display values based on selected aggregate type. The remove icon
         allows the user to remove the field from the report.
     </p>
     <p>
-        During runtime, the <b>Values</b> button in the grouping bar can be moved to a different position (i.e., different index) 
-        among other fields in the column or row axis. To enable values button, 
+        During runtime, the <b>Values</b> button in the grouping bar can be moved to a different position (i.e.,
+        different index)
+        among other fields in the column or row axis. To enable values button,
         set the <code>showValuesButton</code> property to <b>true</b>.
     </p>
     <p>
@@ -27,7 +34,8 @@
         <strong>Injecting Module:</strong>
     </p>
     <p>
-        The pivot table features are segregated into individual modules. To take advantage of grouping bar support, we need
+        The pivot table features are segregated into individual modules. To take advantage of grouping bar support, we
+        need
         to inject the
         <code>GroupingBarService</code> module into the
         <code>@NgModule.providers</code> section.
@@ -35,8 +43,9 @@
 </div>
 <div id="pivot-table-section">
     <div class="col-lg-9 control-section sb-property-border">
-        <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings showGroupingBar='true' showValuesButton='true' [groupingBarSettings]= 'groupingBarSettings' width='100%'
-            height='450' [gridSettings]='gridSettings'>
+        <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings showGroupingBar='true'
+            showValuesButton='true' [groupingBarSettings]='groupingBarSettings' width='100%' height='450'
+            [gridSettings]='gridSettings'>
         </ejs-pivotview>
     </div>
     <div class="col-lg-3 property-section">
@@ -48,28 +57,32 @@
                         <tr style="height: 50px">
                             <td>
                                 <div>
-                                    <ejs-checkbox #filter id="filter" label="Show Filter Icon" value="filter" [checked]="true" (change)="onChange($event)"></ejs-checkbox>
+                                    <ejs-checkbox #filter id="filter" label="Show Filter Icon" value="filter"
+                                        [checked]="true" (change)="onFilter($event)"></ejs-checkbox>
                                 </div>
                             </td>
                         </tr>
                         <tr style="height: 50px">
                             <td>
                                 <div>
-                                    <ejs-checkbox #sort id="sort" label="Show Sort Icon" value="sort" [checked]="true" (change)="onChange($event)"></ejs-checkbox>
+                                    <ejs-checkbox #sort id="sort" label="Show Sort Icon" value="sort" [checked]="true"
+                                        (change)="onSort($event)"></ejs-checkbox>
                                 </div>
                             </td>
                         </tr>
                         <tr style="height: 50px">
                             <td>
                                 <div>
-                                    <ejs-checkbox #summary id="summary" label="Show Value Type Icon" value="summary" [checked]="true" (change)="onChange($event)"></ejs-checkbox>
+                                    <ejs-checkbox #summary id="summary" label="Show Value Type Icon" value="summary"
+                                        [checked]="true" (change)="onValueType($event)"></ejs-checkbox>
                                 </div>
                             </td>
                         </tr>
                         <tr style="height: 50px">
                             <td>
                                 <div>
-                                    <ejs-checkbox #remove id="remove" label="Show Remove Icon" value="remove" [checked]="true" (change)="onChange($event)"></ejs-checkbox>
+                                    <ejs-checkbox #remove id="remove" label="Show Remove Icon" value="remove"
+                                        [checked]="true" (change)="onRemove($event)"></ejs-checkbox>
                                 </div>
                             </td>
                         </tr>

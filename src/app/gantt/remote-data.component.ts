@@ -61,7 +61,7 @@ export class GanttRemoteDataComponent implements OnInit {
         this.labelSettings = {
             leftLabel: 'TaskName',
         };
-        this.projectStartDate = new Date('02/24/2019');
-        this.projectEndDate = new Date('06/10/2019')
+        this.projectStartDate = new Date('02/24/2021');
+        this.projectEndDate = new Date('06/10/2021')
     }
 }

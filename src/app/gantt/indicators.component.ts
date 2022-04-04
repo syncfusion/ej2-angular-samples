@@ -9,6 +9,7 @@ import { projectNewData } from './data';
 export class GanttIndicatorsComponent implements OnInit {
     public data: object[];
     public taskSettings: object;
+    public columns: object[];
     public labelSettings: object;
     public projectStartDate: Date;
     public projectEndDate: Date;
@@ -25,6 +26,15 @@ export class GanttIndicatorsComponent implements OnInit {
             child: 'subtasks',
             indicators: 'Indicators'
         };
+        this.columns = [
+            { field: 'TaskID', width: 80 },
+            { field: 'TaskName', width: 250 },
+            { field: 'StartDate' },
+            { field: 'EndDate' },
+            { field: 'Duration' },
+            { field: 'Predecessor' },
+            { field: 'Progress' },
+        ];
         this.projectStartDate = new Date('03/24/2019');
         this.projectEndDate = new Date('07/06/2019');
         this.labelSettings = {

@@ -19,3 +19,7 @@
 .control-section {
     min-height: 255px !important;
 }
+
+.pivottable-property-section .e-multiselect {
+    padding: 0;
+}

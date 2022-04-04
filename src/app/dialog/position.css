@@ -8,7 +8,23 @@
     margin-bottom: 15px;
     margin-top: 10px;    
 }
+.control-section .e-dialog {
+  width: 452px !important;
+}
 
+.fluent.e-bigger .control-section .e-dialog,
+.fluent-dark.e-bigger .control-section .e-dialog {
+  width: 502px !important;
+}
+
+#poschange {
+  width: 405px;
+}
+
+.fluent.e-bigger #poschange,
+.fluent-dark.e-bigger #poschange {
+  width: 455px;
+}
 #defaultDialog table,
 #defaultDialog th,
 #defaultDialog td {

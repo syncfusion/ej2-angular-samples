@@ -58,6 +58,11 @@
   border-color: #414040;
 }
 
+.fluent-dark .e-schedule .e-resource-cells .template-wrap>div,
+.fluent-dark .e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
+    border-color: #292827;
+}
+
 .bootstrap-dark .timeline-resource.e-schedule .e-resource-cells .template-wrap>div,
 .bootstrap-dark .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
   border-color: #505050;

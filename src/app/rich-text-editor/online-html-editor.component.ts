@@ -18,7 +18,7 @@ import 'codemirror/mode/htmlmixed/htmlmixed.js';
     styleUrls: ['online-html-editor.css'],
     providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService]
 })
-export class OnlineHtmlEditorComponent implements OnInit {
+export class OnlineHtmlEditorComponent {
     @ViewChild('defaultRTE', { static: false })
     public rteObj: RichTextEditorComponent;
 
@@ -27,12 +27,12 @@ export class OnlineHtmlEditorComponent implements OnInit {
     public textArea: HTMLElement;
 
     public tools: ToolbarModule = {
-        type: ToolbarType.MultiRow,
+        type: ToolbarType.Expand,
+        enableFloating :false,
         items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
             'FontName', 'FontSize', 'FontColor', 'BackgroundColor',
-            'LowerCase', 'UpperCase','SuperScript', 'SubScript', '|',
             'Formats', 'Alignments', 'NumberFormatList', 'BulletFormatList',
-            'Outdent', 'Indent', '|',
+            'Outdent', 'Indent',
             'CreateTable', 'CreateLink', 'Image', 'FileManager', '|', 'ClearFormat', 'Print',
             'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
     };
@@ -41,40 +41,17 @@ export class OnlineHtmlEditorComponent implements OnInit {
         sourceFiles.files = ['online-html-editor.css'];
     }
 
-    ngOnInit() {
-        // Add the styles and script referrence for code-mirror.
-        let link = document.createElement('link');
-        link.setAttribute('rel', 'stylesheet');
-        link.setAttribute('type', 'text/css');
-        link.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css');
-        document.head.appendChild(link);
-
-        let elem1 = document.createElement('script');
-        elem1.src = 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.js';
-        elem1.type = 'text/javascript';
-        document.head.appendChild(elem1);
-
-        let elem2 = document.createElement('script');
-        elem2.src = 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.js';
-        elem2.type = 'text/javascript';
-        document.head.appendChild(elem2);
-        let URL = location.href.replace(location.search,'');
-        document.getElementById('newTab').setAttribute('href', URL.split('#')[0] + 'rich-text-editor/online-html-editor');
-    }
-
     public updateHtmlValue(): void {
-        this.textArea.innerHTML = this.myCodeMirror.getValue();
+        this.rteObj.value = this.myCodeMirror.getValue();
     }
 
     public renderCodeMirror(mirrorView: HTMLElement, content: string): void {
-        if (content) {
-            this.myCodeMirror = CodeMirror(mirrorView, {
-                value: content,
-                lineNumbers: true,
-                mode: 'text/html',
-                lineWrapping: true,
-            });
-        }
+        this.myCodeMirror = CodeMirror(mirrorView, {
+            value: content,
+            lineNumbers: true,
+            mode: 'text/html',
+            lineWrapping: true,
+        });
     }
 
     public onCreate(): void {
@@ -84,13 +61,16 @@ export class OnlineHtmlEditorComponent implements OnInit {
             this.textArea = this.rteObj.contentModule.getEditPanel() as HTMLElement;
             this.srcArea = document.querySelector('.source-code');
             if (this.srcArea) {
-                this.srcArea.addEventListener('keyup', this.updateHtmlValue.bind(this));
+                this.srcArea.addEventListener('keyup', this.updateHtmlValue);
             }
         }, 400);
     }
 
     public onChange(): void {
         this.updateValue();
+    }
+    public onResizing():void{
+        this.rteObj.refreshUI();
     }
 
     public updateValue(): void {
@@ -112,6 +92,8 @@ export class OnlineHtmlEditorComponent implements OnInit {
         if (codemirrorEle) {
           codemirrorEle.remove();
         }
+        if(this.rteObj.value){
         this.renderCodeMirror(srcViewEle, this.rteObj.value);
+        }
     }
 }

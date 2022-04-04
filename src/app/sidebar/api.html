@@ -1,80 +1,78 @@
-<div class="control-section">
-    <!-- sample level element  -->
-    <div class="col-lg-12 col-sm-12 col-md-12 center">
-        Click/Touch the button to view the sample
-    </div>
-    <div class="col-lg-12 col-sm-12 col-md-12 center">
-        <a class="e-btn" id="newTab" (click)="newTabClick()" target="_blank">Open in new tab</a>
-    </div>
-    <!-- sample level element  -->
-    <div id="wrapper">
-        <!-- sample level element declaration -->
-        <div class="col-lg-12 col-sm-12 col-md-12" id="sidebar-section">
-            <!-- sidebar element declaration -->
-            <span id="hamburger" class="e-icons menu" (click)="openClick()"></span>
-            <ejs-sidebar id="default-sidebar" #sidebarInstance [showBackdrop]='showBackdrop' [closeOnDocumentClick]='closeOnDocumentClick'>
-                <div class="title-header">
-                    <div style="display:inline-block"> Sidebar </div>
-                    <span id="close" class="e-icons" (click)="closeClick()"></span></div>
-                <div class="sub-title">
-                    Place your primary content here.
-                </div>
-            </ejs-sidebar>
-            <!-- end of sidebar element -->
+<div class="control-section" id="apiwrapper">
+    <div class="apimaincontent">
+        <div>
             <div class="list-group">
                 <div class="list-group-item">
-                    <div class="title">
-                        <p id="overview">Overview
-                            <p>
-                    </div>
-                    <p id="content">The sidebar component is a collapsible side content that will be displayed along with the primary content area.
-                    </p>
-                    <h3 class="title">
-                        <p id="properties">Options
-                            <p>
-                    </h3>
+                    <span id="apihamburger" class="e-icons menu" (click)='toggleBtnClick()'></span>
+                    <div class="title">Overview</div>
+                    <br />
+                    <p> The Sidebar component is a collapsible side content placed along with the main content either in left or right side of the page. </p>
+                    <p> <br /> </p>
+                    <div class="title">Options</div>
+                    <br />
                     <div class="inline-element responsive">
-                        <div id="text">
-                            <p class=" inline-element" style="width:70%"> <b>Toggle</b> - Toggles the sidebar to be open or closed state.
-                            </p>
-                            <!-- Button element declaration -->
-                            <button ejs-button id="toggleSidebar" cssClass="e-info" (click)="toggleSidebar()" class="inline-element right">Toggle</button>
+                        <!-- Open or close the sidebar -->
+                        <p class=" inline-element" style="width:70%">
+                            <b>Toggle</b> - Toggles the Sidebar to be open or closed state.
+                        </p>
+                        <button ejs-button id="apitogglesidebar" cssClass="e-primary inline-element right" [isToggle]='true' (click)="toggleBtnClick()">Toggle</button>
+                        <br />
+                        <br />
+                         <!-- Sidebar position -->
+                        <p class=" inline-element" style="width:70%">
+                            <b>Position</b> - Allows to place the sidebar in right or left side of the page.
+                        </p>
+                        <button ejs-button #positionObj id="positionBtn" cssClass="e-primary inline-element right" [isToggle]='true' content="Left" (click)="positionBtnClick()"></button>
+                        <br />
+                        <br />
+                        <!-- Sidebar types -->
+                        <p class="inline-element" style="width:70%"><b>Types </b> - Specifies the act of expanding or collapsing the sidebar with main content.</p>
+                        <div class="inline-element right" style="width:80px">
+                            <ejs-dropdownlist #dropDownObj [popupHeight]="height" cssClass="e-textbox right" [index]="index" [dataSource]="dataTypes" [fields]="fields" (change)="onChange()">
+                            </ejs-dropdownlist>
                         </div>
-                        <div id="text">
-                            <p class=" inline-element" style="width:70%"> <b>Position</b> - Allows to place the sidebar in right or left side of the page.
-                            </p>
-                            <!-- Button element declaration -->
-                            <button ejs-button #sidebarTypesBtn id="togglePosition" cssClass="e-info" isToggle="true" class="inline-element right" (click)="onTypeChange()">Right</button>
-                        </div>
-                        <div id="text">
-                            <p class="inline-element" style="width:70%"><b>Types </b> - Specifies the act of expanding or collapsing the sidebar with main content.</p>
-                            <div class="inline-element right">
-                                <ejs-dropdownlist id="types" #listObj [dataSource]='dataTypes' [fields]='fields' class="e-textbox  right" [placeholder]='waterMark' [index]='index' [popupHeight]='height' cssClass='right' (change)='onChange()' [width]='width'></ejs-dropdownlist>
-                            </div>
-                        </div>
-                        <div id="text">
-                            <p class=" inline-element" style="width:70%"><b>Closing on document click</b> - Allows to collapse / close the sidebar on document click.</p>
-                            <!-- Button element declaration -->
-                            <button ejs-button #documentClickBtn id="documentclick" cssClass="e-info" isToggle="true" (click)="documentClick()" class="inline-element right">True</button>
-                        </div>
-                        <p class=" inline-element" style="width:70%"><b>Backdrop</b> - Sets the backdrop over the main content area on open / expanded state.</p>
-                        <!-- Button element declaration -->
-                        <button ejs-button #backdropBtn id="backdrop" cssClass="e-info" isToggle="true" (click)="backdrop()" class="inline-element right">True</button>
+                        <br />
+                        <br />
+                        <!-- on document click -->
+                        <p class=" inline-element" style="width:70%"><b>Closing on document click</b> - Allows to collapse / close the sidebar on document click.</p>
+                        <button ejs-button #documentObj id="documentElement" cssClass="e-primary inline-element right" content="False" [isToggle]='true' (click)="docBtnClick()">
+                        </button>
+                        <br />
+                        <br />
+                         <!-- showbackdrop option -->
+                        <p class=" inline-element" style="width:70%"><b>Backdrop</b> - Sets the backdrop over the main content area on open / expanded state. </p>
+                        <button ejs-button #backDropObj id="backDropElement" cssClass="e-primary inline-element right" [isToggle]=true content="False" (click)="backBtnClick()"></button>
+                        <br />
+                        <br />
                     </div>
                 </div>
             </div>
         </div>
-        <!--end of sample level element declaration -->
     </div>
+    <!-- sidebar element declaration -->
+    <ejs-sidebar #sidebarInstance [closeOnDocumentClick]="closeOnDocumentClick" [showBackdrop]="showBackdrop" width="220px" target=".apimaincontent" id="apiSidebar" class="default-sidebar">
+        <div class="title-header">
+            <div style="display:inline-block"> Sidebar </div>
+            <span id="close" class="e-icons" (click)="sidebarClose()"></span>
+        </div>
+        <div class="sub-title">
+            The Angular Sidebar is an expandable and collapsible component that typically acts as a side container to place primary or secondary content alongside the main content. It provides flexible options that can be shown and hidden based on user interactions.
+        </div>
+    </ejs-sidebar>
     <div id="action-description">
-        <p class="action">
-            This sample demonstrates the Sidebar component with its features. Click/Touch the button to view the Sidebar sample in a new tab.
+        <p>
+            The Sidebar API sample demonstrates how to customize the Sidebar component by using its properties from the property pane. Select any combination of properties from the property pane to customize the Sidebar. Click on the hamburger menu icon to expand/collapse the sidebar.
         </p>
     </div>
     <div id="description">
         <p>
-            In this sample allows to configure the <code>type</code>, <code>position</code>, <code>closeOnDocumentClick</code>and
-            <code>showBackdrop</code> property.
-        </p>
+            In this demo, the default Sidebar is rendered with minimal configuration. This sample can be customized further with the combination of Sidebar properties. For example,
+            <ul>
+                <li>The Sidebar can be opened or closed by clicking on the toggle button.</li>
+                <li>The Sidebar position can be changed by clicking on the position button.</li>
+                <li>The Sidebar types can be changed from the Dropdown List.</li>
+                <li>The Sidebar can be collapsed or closed on document click from the provided options.</li>
+                <li>The Sidebar overlay can be enabled or disabled by clicking on the Backdrop button.</li>
+            </ul>
     </div>
 </div>

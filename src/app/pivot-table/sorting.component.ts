@@ -73,7 +73,7 @@ export class SortingComponent implements OnInit {
         this.orderddl.appendTo('#order');
 
         this.applyBtn = new Button({
-            cssClass: 'e-flat', isPrimary: true,
+            isPrimary: true
         });
         this.applyBtn.appendTo('#apply');
 

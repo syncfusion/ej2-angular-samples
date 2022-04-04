@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { KanbanAllModule } from '@syncfusion/ej2-angular-kanban';
 import { CheckBoxAllModule } from '@syncfusion/ej2-angular-buttons';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -46,7 +47,7 @@ export const kanbanRouteConfig: Object[] = [
   { 'path': ':theme/kanban/remote-data', component: RemoteDataComponent, name: 'Remote Data', order: '02', category: 'Data Binding', description: 'The example demonstrates how to load data source from remote seervice to the JavaScript Kanban board using data manager.' },
   { 'path': ':theme/kanban/header-template', component: HeaderTemplateComponent, name: 'Header Template', order: '03', category: 'Templates', description: 'The example demonstrates how to customize the column headers of the JS Kanban board with text, images, badges, and count using HTML templates.' },
   { 'path': ':theme/kanban/swimlane-template', component: SwimlaneTemplateComponent, name: 'Swimlane Template', order: '03', category: 'Templates', description: 'The example demonstrates how to customize the swimlane headers of the JS Kanban board using HTML templates, which is applicable to all swimlane headers.' },
-  { 'path': ':theme/kanban/card-template', component: CardTemplateComponent, name: 'Card Template', order: '03', category: 'Templates', description: 'This sample demonstrates how to customize the Kanban cards using templates. In this demo, the cards are customized with icons, images, and tags.' },
+  { 'path': ':theme/kanban/card-template', component: CardTemplateComponent,type:'update', name: 'Card Template', order: '03', category: 'Templates', description: 'This sample demonstrates how to customize the Kanban cards using templates. In this demo, the cards are customized with icons, images, and tags.' },
   { 'path': ':theme/kanban/tooltip-template', component: TooltipTemplateComponent, name: 'Tooltip Template', order: '03', category: 'Templates', description: 'The example demonstrates how to enable and disable the tooltip messages on JavaScript Kanban cards, and customize using templates.' },
   { 'path': ':theme/kanban/toggle-columns', component: ToggleColumnsComponent, name: 'Toggle Columns', order: '04', category: 'Columns', description: 'This sample demonstrates the toggle column of JS Kanban, which is helpful to expand and collapse the columns and can be collapsed on page load also.' },
   { 'path': ':theme/kanban/show-hide', component: ShowHideComponent, name: 'Show/Hide Columns', order: '04', category: 'Columns', description: 'The example demonstrates how to show or hide the columns of JavaScript Kanban board dynamically, which is achieved from code using the public methods.' },
@@ -79,7 +80,7 @@ const declarations: Type<Object>[] = [
 
 @NgModule({
   imports: [RouterModule.forChild(kanbanRouteConfig), CommonModule, HttpModule, KanbanAllModule, DialogModule,
-    CheckBoxAllModule, DropDownListAllModule, NumericTextBoxAllModule, TextBoxAllModule, ReactiveFormsModule, FormsModule, SharedModule],
+    CheckBoxAllModule,DatePickerModule,DropDownListAllModule, NumericTextBoxAllModule, TextBoxAllModule, ReactiveFormsModule, FormsModule, SharedModule],
   declarations: declarations,
   providers: [KanbanAllModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

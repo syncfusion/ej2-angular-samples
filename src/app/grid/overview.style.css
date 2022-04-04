@@ -44,6 +44,9 @@ background-color:#e3165b;
 :host-context(.tailwind)  /deep/ .empimg{
   background-color:#4f46e5; 
 }
+:host-context(.fluent)  /deep/ .empimg{
+  background-color:#106EBE; 
+}
 
 .e-userimg.sf-icon-Male::before,
 .e-userimg.sf-icon-FeMale::before{ 

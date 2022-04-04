@@ -1,7 +1,7 @@
 <div class="control-section">
   <div class="col-lg-12 content-wrapper">
-    <ejs-schedule #scheduleObj width='100%' cssClass='virtual-scrolling' height='650px' [currentView]="currentView"
-      [selectedDate]="selectedDate" [group]="group" [eventSettings]="eventSettings">
+    <ejs-schedule #scheduleObj width='100%' cssClass='virtual-scrolling' height='650px' [selectedDate]="selectedDate"
+      [group]="group" [eventSettings]="eventSettings">
       <e-resources>
         <e-resource field='ResourceId' title='Resource' [dataSource]='resourceDataSource' name='Resources'
           [allowMultiple]='allowMultiple' textField='Text' idField='Id' colorField='Color'>

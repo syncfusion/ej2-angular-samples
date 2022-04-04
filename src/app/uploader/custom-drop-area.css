@@ -50,7 +50,8 @@
 .fabric-dark .dropControl_wrapper .sample_wrapper #dropArea #drop a,
 .bootstrap-dark .dropControl_wrapper .sample_wrapper #dropArea #drop a,
 .bootstrap5-dark .dropControl_wrapper .sample_wrapper #dropArea #drop a,
-.tailwind-dark .dropControl_wrapper .sample_wrapper #dropArea #drop a {
+.tailwind-dark .dropControl_wrapper .sample_wrapper #dropArea #drop a,
+.fluent-dark .dropControl_wrapper .sample_wrapper #dropArea #drop a  {
     color: #fff;
 }
 
@@ -107,6 +108,10 @@ span.dropText {
 
 .tailwind-dark .dropArea_wrap {
     background-color: #6c757d;
+}
+
+.fluent-dark .dropArea_wrap {
+    background-color: #212529;
 }
 
 .bootstrap4 .dropArea_wrap {
@@ -272,4 +277,9 @@ span.list-wrapper {
 .bootstrap .file-size,
 .bootstrap .file-name {
     font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+}
+
+.fluent-dark .e-upload .e-upload-files .e-upload-file-list,
+.fluent .e-upload .e-upload-files .e-upload-file-list {
+    border-bottom: 1px solid rgb(68, 76, 84);
 }

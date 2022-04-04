@@ -2,14 +2,14 @@
     <button ejs-button id="dialogBtn" Class="e-control e-btn" #confirmButton (click)="dlgButtonClick()">Open
         Dialog</button>
 
-    <ejs-dialog id='defaultDialog' #ejDialog [position]='position' [showCloseIcon]='dialogCloseIcon'
-        [width]='defaultWidth' (open)="dialogOpen()" (close)="dialogClose()" [target]='target'
+    <ejs-dialog id='defaultDialog' #ejDialog [position]='position' [width]='defaultWidth' [showCloseIcon]='dialogCloseIcon'
+        (open)="dialogOpen()" (close)="dialogClose()" [target]='target'
         [closeOnEscape]='closeOnEscape'>
         <ng-template #header>
             <span>Choose a Dialog Position</span>
         </ng-template>
         <ng-template #content>
-            <table style="width:405px;padding:18px; padding-top:0px;">
+            <table id="poschange" style="padding:18px; padding-top:0px;">
                 <tr>
                     <td>
                         <ejs-radiobutton label="Left Top" name="xy" (change)="onChangeHandler($event)" value="left top">

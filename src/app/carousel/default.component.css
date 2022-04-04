@@ -1,0 +1,20 @@
+.default-carousel-section .carousel-sample {
+  margin: 0 auto 2em;
+  max-width: 500px;
+  height: 300px;
+}
+
+.default-carousel .e-carousel-items .e-carousel-item .img-container {
+  height: 100%;
+}
+
+.default-carousel .e-carousel-items .e-carousel-item .img-caption {
+  bottom: 4em;
+  color: #fff;
+  font-size: 12pt;
+  height: 2em;
+  position: relative;
+  padding: 0.3em 1em;
+  text-align: center;
+  width: 100%;
+}

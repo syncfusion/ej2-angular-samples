@@ -1,4 +1,4 @@
-#adaptiveTab .e-content .e-item {
+#tab_adaptive .e-content .e-item {
     font-size: 12px;
     padding: 10px !important;
     text-align: justify;
@@ -90,4 +90,9 @@
 #tab_orientation .e-listview:not(.e-list-template) .e-list-item {
     height: 63px;
     padding: 0 16px !important;
+}
+
+.key-class {
+    display: inline-block;
+    width: 130px;
 }

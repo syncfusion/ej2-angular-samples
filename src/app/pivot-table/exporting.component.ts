@@ -42,7 +42,7 @@ export class ExportingComponent implements OnInit {
         this.exportType.appendTo('#exporttype');
 
         this.exportBtn = new Button({
-            cssClass: 'e-flat', isPrimary: true
+            isPrimary: true
         });
         this.exportBtn.appendTo('#export');
 

@@ -6,6 +6,7 @@ import { AccordionModule } from '@syncfusion/ej2-angular-navigations';
 import { DefaultAccordionComponent } from './default.component';
 import { AjaxAccordionComponent } from './ajax.component';
 import { IconAccordionComponent } from './icon.component';
+import { KeyboardAccordionComponent } from './keyboard-interaction.component';
 
 
 import { SharedModule } from '../common/shared.module';
@@ -13,6 +14,7 @@ export const accordionAppRoutes: Object[] = [
     { path: ':theme/accordion/default', component: DefaultAccordionComponent, name: 'Default Functionalities', description: 'The sample demonstrates that default functionalities of the Accordion component which works by expand and collapse action in Angular platform.', category: 'Accordion' },
     { path: ':theme/accordion/ajax', component: AjaxAccordionComponent, name: 'Ajax Content', description: 'The sample demonstrates how to load the content to the Accordion component from external sources using Ajax library in Angular platform.', category: 'Accordion' },
     { path: ':theme/accordion/icon', component: IconAccordionComponent, name: 'Icons', description: 'The sample demonstrates how to represent pane headers with an icon in Accordion component which populates from items collection in Angular platform.', category: 'Accordion' },
+    { path: ':theme/accordion/keyboard-interaction', component: KeyboardAccordionComponent, name: 'Keyboard Interaction', description: 'The sample showcases the keyboard shortcuts applicable on Accordion component in Angular platform.', category: 'Accordion' }
 ];
 
 export const accordionRouter: ModuleWithProviders<any> = RouterModule.forChild(accordionAppRoutes);
@@ -23,6 +25,7 @@ export const accordionRouter: ModuleWithProviders<any> = RouterModule.forChild(a
         DefaultAccordionComponent,
         AjaxAccordionComponent,
         IconAccordionComponent,
+        KeyboardAccordionComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

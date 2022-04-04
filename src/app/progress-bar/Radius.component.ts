@@ -84,6 +84,16 @@ export class ProgressBarRadiusComponent {
             case 'bootstrap5-dark':
                 args.progressBar.progressColor = '#0D6EFD';
                 break;
+            case 'fluent':
+                if (args.progressBar.element.id === "full-background") {
+                    args.progressBar.trackColor = '#0D6EFD';
+                } else {
+                    args.progressBar.progressColor = '#0D6EFD';
+                }
+                break;
+            case 'fluent-dark':
+                args.progressBar.progressColor = '#0D6EFD';
+                break;
             default :
                 args.progressBar.trackColor = '#007bff';
                 break;

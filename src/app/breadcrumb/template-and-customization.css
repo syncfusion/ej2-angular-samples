@@ -286,13 +286,14 @@
 .bootstrap4 .e-arrow:before {
     content: "\e7ce";
 }
+
 .bootstrap5 .e-arrow:before,
-.bootstrap5-dark .e-arrow:before {
-    content: "\e7f9";
-}
+.bootstrap5-dark .e-arrow:before,
+.fluent .e-arrow:before,
+.fluent-dark .e-arrow:before,
 .tailwind .e-arrow:before,
 .tailwind-dark .e-arrow:before {
-    content: "\e7a8";
+    content: "\e7f9";
 }
 
 .e-folder:before {

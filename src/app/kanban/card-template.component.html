@@ -1,13 +1,99 @@
 <div class="control-section">
   <div class="content-wrapper">
     <ejs-kanban #kanbanObj cssClass='kanban-card-template' keyField='Category' [dataSource]='kanbanData'
-      [cardSettings]='cardSettings' [dialogSettings]='dialogSettings'>
+      [cardSettings]='cardSettings' (dialogClose)="onDialogClose($event)">
       <e-columns>
         <e-column headerText='Menu' keyField='Menu'></e-column>
         <e-column headerText='Order' keyField='Order'></e-column>
         <e-column headerText='Ready to Serve' keyField='Ready to Serve'></e-column>
         <e-column headerText='Delivered' keyField='Delivered,Served'></e-column>
       </e-columns>
+      <ng-template #dialogSettingsTemplate let-data>
+        <table>
+          <tbody>
+            <tr>
+              <td class="e-label">ID</td>
+              <td>
+                <div class="e-float-input e-control-wrapper">
+                  <input
+                    id="Id"
+                    name="Id"
+                    type="text"
+                    class="e-field"
+                    value="{{ data.Id }}"
+                    disabled
+                  />
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="e-label">Category</td>
+              <td>
+                <ejs-dropdownlist
+                  id="Category"
+                  #dropdownStatus
+                  name="Category"
+                  class="e-field"
+                  [dataSource]="categoryData"
+                  value="{{ data.Category }}"
+                  placeholder="Category"
+                >
+                </ejs-dropdownlist>
+              </td>
+            </tr>
+            <tr>
+              <td class="e-label">Title</td>
+              <td>
+                <ejs-textbox
+                  id="Title"
+                  #dropdownAssignee
+                  name="Title"
+                  value="{{ data.Title }}"
+                  placeholder="Title"
+                ></ejs-textbox>
+              </td>
+            </tr>
+            <tr>
+              <td class="e-label">Size</td>
+              <td>
+                <ejs-textbox
+                  id="Size"
+                  #dropdownAssignee
+                  name="Size"
+                  value="{{ data.Size }}"
+                  placeholder="Size"
+                ></ejs-textbox>
+              </td>
+            </tr>
+            <tr>
+              <td class="e-label">Description</td>
+              <td>
+                <div class="e-float-input e-control-wrapper">
+                  <textarea
+                    type="text"
+                    name="Description"
+                    id="Description"
+                    class="e-field"
+                    value="{{ data.Description }}"
+                  ></textarea>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="e-label">Deliver</td>
+              <td>
+                <div class="e-float-input e-control-wrapper">
+                  <ejs-datepicker
+                    id="Date"
+                    [value]="data.Date"
+                    format="MM/dd/yyyy"
+                  ></ejs-datepicker>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-template>
       <ng-template #cardSettingsTemplate let-data>
         <div class='card-template'>
           <div class='card-template-wrap'>
@@ -37,8 +123,18 @@
                                 <div class='e-description e-tooltip-text' *ngIf='data.Category != "Menu"'>{{data.OrderID}}</div>
                               </td>
                               <td class='card-content' *ngIf='data.Category == "Delivered" || data.Category == "Served"'>
-                                <div class='e-description e-tooltip-text'>{{data.OrderID}}</div>
-                                <div class='e-icons e-done'></div>
+                                <table>
+                                  <tr>
+                                    <td class="e-description e-tooltip-text">{{ data.OrderID }}</td>
+                                    <td class="e-icons e-done"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <label class="e-date">Deliver:</label>
+                                      <span class="e-kanban-date">{{ data.Date }}</span>
+                                    </td>
+                                  </tr>
+                                </table>
                               </td>
                             </tr>
                             <tr>

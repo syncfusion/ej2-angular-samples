@@ -12,87 +12,70 @@ import { enableRipple } from '@syncfusion/ej2-base';
 export class ApiSidebarComponent {
     @ViewChild('sidebarInstance')
     public sidebarInstance: SidebarComponent;
-    @ViewChild('sidebarTypesBtn')
-    public sidebarTypesBtn: ButtonComponent;
-    @ViewChild('backdropBtn')
+    @ViewChild('positionObj')
+    public positionBtn: ButtonComponent;
+    @ViewChild('documentObj')
+    public documentBtn: ButtonComponent;
+    @ViewChild('backDropObj')
     public backdropBtn: ButtonComponent;
-    @ViewChild('documentClickBtn')
-    public documentClickBtn: ButtonComponent
-    @ViewChild('listObj')
-    public listObj: DropDownListComponent;
-    public dataTypes: Object[] = [
-        { Id: '1', Type: 'Over', value: 'Over' },
-        { Id: '2', Type: 'Push', value: 'Push' },
-        { Id: '3', Type: 'Slide', value: 'Slide' },
-        { Id: '4', Type: 'Auto', value: 'Auto' }
+    @ViewChild('dropDownObj')
+    public dropDownObj: DropDownListComponent;
+    public dataTypes: { [key: string]: Object }[] = [
+        {  Type: 'Over', value: 'Over' },
+        {  Type: 'Push', value: 'Push' },
+        {  Type: 'Slide', value: 'Slide' },
+        {  Type: 'Auto', value: 'Auto' }
     ];
-    public fields: object = { id: 'Id', text: 'Type', value: 'value' };
+    public fields: object = { text: 'Type', value: 'value' };
     public showBackdrop: boolean = false;
     public closeOnDocumentClick: boolean = false;
     public height: string = '220px';
-    public width: string = '75px';
-    public waterMark: string = 'Select a Type';
     public index: number = 3;
     // only for sample browser use 
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['api-style.css'];
     }
 
-    // open new tab
-    newTabClick(): void {
-        let URL = location.href.replace(location.search,'');
-        document.getElementById('newTab').setAttribute('href', URL.split('#')[0] + 'sidebar/api');
+    onChange() {
+        let types: any = this.dropDownObj.value;
+        this.sidebarInstance.type = types;
+        this.sidebarInstance.dataBind();
     }
-
-    //Toggle button click event handler
-    toggleSidebar(): void {
+    toggleBtnClick() {
         this.sidebarInstance.toggle();
-    };
-    closeClick(): void {
-        this.sidebarInstance.hide();
-    };
-    openClick(): void {
-        this.sidebarInstance.show();
-    };
-    documentClick(): void {
-
-        if (this.documentClickBtn.element.classList.contains('e-active')) {
-            this.documentClickBtn.content = 'False';
-            //enable the closeOnDocumentClick property
-            this.sidebarInstance.closeOnDocumentClick = true;
-
+    }
+    positionBtnClick() {
+        if (this.positionBtn.content == "Right") {
+            this.positionBtn.content = "Left";
+            this.sidebarInstance.position = "Left";
         } else {
-            this.documentClickBtn.content = 'True';
-            //disable the closeOnDocumentClick property
+            this.positionBtn.content = "Right";
+            this.sidebarInstance.position = "Right";
+        }
+        this.positionBtn.dataBind();
+        this.sidebarInstance.dataBind();
+    }
+    docBtnClick() {
+        if (this.documentBtn.content == "False") {
+            this.documentBtn.content = "True";
+            this.sidebarInstance.closeOnDocumentClick = true;
+        } else {
+            this.documentBtn.content = "False";
             this.sidebarInstance.closeOnDocumentClick = false;
         }
-    };
-    onTypeChange(): void {
-        if (this.sidebarTypesBtn.element.classList.contains('e-active')) {
-            this.sidebarTypesBtn.content = 'Left';
-            this.sidebarInstance.position = 'Right';
-            document.getElementById("hamburger").className += " e-rtl";
-        } else {
-            this.sidebarTypesBtn.content = 'Right';
-            this.sidebarInstance.position = 'Left';
-             document.getElementById("hamburger").classList.remove("e-rtl");
-        }
-    };
-    backdrop(): void {
-        if (this.backdropBtn.element.classList.contains('e-active')) {
-            this.backdropBtn.content = 'True';
-            //enable the backdrop property
+        this.sidebarInstance.dataBind();
+        this.documentBtn.dataBind();
+    }
+    backBtnClick() {
+        if (this.backdropBtn.content == "True") {
+            this.backdropBtn.content = "False";
             this.sidebarInstance.showBackdrop = false;
-
         } else {
-            this.backdropBtn.content = 'False';
-            //disable the backdrop property
+            this.backdropBtn.content = "True";
             this.sidebarInstance.showBackdrop = true;
         }
-    };
-    onChange(): void {
-        let types: any = this.listObj.value;
-        this.sidebarInstance.type = types;
     }
-
+    sidebarClose() {
+        this.sidebarInstance.hide();
+    }
 }

@@ -39,7 +39,7 @@ export class AddRemoveResourcesComponent {
   // custom code end
 
   public onChange(args: ChangeEventArgs): void {
-    const value: number = parseInt((args.event.target as Element).getAttribute('value'), 10);
+    const value: number = parseInt((args.event.currentTarget as Element).querySelector('input').getAttribute('value'), 10);
     const resourceData: Record<string, any>[] =
       this.calendarCollections.filter((calendar: Record<string, any>) => calendar.CalendarId === value);
     if (args.checked) {

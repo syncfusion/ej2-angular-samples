@@ -136,12 +136,15 @@ top:0%! important;
 .tailwind-dark #formId {
     background: #1f2937;
 }
-
+.fluent-dark #formId {
+    background: #111111;
+}
 .material-dark .form-title,
 .bootstrap-dark .form-title,
 .fabric-dark .form-title,
 .tailwind-dark .form-title,
-.bootstrap5-dark .form-title {
+.bootstrap5-dark .form-title,
+.fluent-dark .form-title {
     color: rgb(249 249 249);
 }
 

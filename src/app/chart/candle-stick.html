@@ -7,7 +7,7 @@
     <div id="title" align="center" style="font-size: 15px; font-style: normal;font-family: 'Segoe UI'; font-weight: 500;">AAPL Historical</div>
     <div id="container" align="center">
          <ejs-chart #chartcontainer id='chartcontainer' style='display:block' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [crosshair] = 'crosshair' 
-        [axes] = 'axes' [rows]='rows' [legendSettings]='legendSettings' (axisLabelRender)= 'axisLabelRender($event)' (load)='load($event)' (tooltipRender)='tooltipRender($event)' (pointRender)= 'pointRender($event)'>
+        [axes] = 'axes' [rows]='rows' [legendSettings]='legendSettings' (axisLabelRender)= 'axisLabelRender($event)' (load)='load($event)' (sharedTooltipRender)='sharedTooltipRender($event)' (pointRender)= 'pointRender($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data1' type='Column' xName='x' yName='volume' name='Volume'> </e-series>
                  <e-series [dataSource]='data1' type='Candle' xName='x' yAxisName='secondary' high='high' low='low'

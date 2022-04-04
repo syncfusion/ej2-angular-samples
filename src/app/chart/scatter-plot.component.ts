@@ -26,7 +26,7 @@ export class ScatterPlotChartComponent {
             maximum: 220,
             majorGridLines: { width: 0 },
             edgeLabelPlacement: 'Shift',
-            title: 'Height in Inches'
+            title: 'Height (cm)'
 
     };
     //Initializing Primary Y Axis
@@ -39,7 +39,7 @@ export class ScatterPlotChartComponent {
                 lineStyle: {
                     width: 0
                 },
-                  title: 'Weight in Pounds',
+                  title: 'Weight (kg)',
                 rangePadding: 'None'
 
     };
@@ -57,7 +57,7 @@ export class ScatterPlotChartComponent {
     };
     public tooltip: Object = {
         enable: true,
-        format: 'Weight: <b>${point.x} lbs</b> <br/> Height: <b>${point.y}"</b>'
+        format: 'Weight: <b>${point.x} kg</b> <br/> Height: <b>${point.y} cm</b>'
     };
    // custom code start
     public load(args: ILoadedEventArgs): void {

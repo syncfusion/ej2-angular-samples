@@ -104,7 +104,7 @@ export let RTLData: Object[] = [
  
 			 ]
 		 }]
-	 },  
+	 },
   
 	 {
 		 Continent:[

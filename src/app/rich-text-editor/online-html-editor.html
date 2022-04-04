@@ -1,106 +1,29 @@
 <div id="action-description">
-    <p>This sample demonstrates an HTML content LIVE editing scenario using Angular Rich Text Editor. Click the <code>Open in new tab</code> button and you can edit the content in Rich Text Editor and also in the source code view.</p>
-</div>
-<div id="description">
-    <p>This sample Rich Text Editor enabled most of the features to edit the content quickly such as insert image, table, etc... The source code view is formatted using the <code>Code-mirror</code> plugin.</p>
+    <p>The online HTML editor sample demonstrates how to create LIVE editing scenario with real-world applications
+        using JavaScript Rich Text Editor. Most of the control features are enabled in this sample to edit the
+        content quickly.</p>
+    <p>You can edit the source code and content also parallelly. The source code is formatted using the code mirror
+        library.</p>
 </div>
 
 <div class="control-section">
     <div class="sample-container online-editor">
         <div class="default-section">
-            <div class='button-content'>
-                <div class="col-lg-12 col-sm-12 col-md-12 center">
-                    Click/Touch the button to view the sample
-                </div>
-                <div class="col-lg-12 col-sm-12 col-md-12 center">
-                    <a class="e-btn" id="newTab" target="_blank">Open in new tab</a>
-                </div>
-            </div>
             <div class="sample-view">
-                <h3 class="title-head">Rich Text Editor Online Html Editor</h3>
-                <div class="heading">
-                    <h6 class="title"><b>PREVIEW</b> </h6>
-                </div>
-                <div class="heading right">
-                    <h6 class="title"><b>HTML SOURCE CODE </b></h6>
-                </div>
-                <ejs-splitter height='450px' width='100%'>
+                
+                <ejs-splitter height='450px' width='100%' (resizing)="onResizing()">
                     <e-panes>
-                        <e-pane size='50%' [resizable]='false' cssClass='pane1'>
+                        <e-pane size='50%' [resizable]='true' cssClass='pane1' min='20%' >
                             <ng-template #content>
                                 <div class="content">
                                     <ejs-richtexteditor id="defaultRTE" #defaultRTE height='447px' [toolbarSettings]='tools' saveInterval='1' [showCharCount]='true' maxLength='5000'
                                         (created)='onCreate()' (change)='onChange()' (actionComplete)='updateValue()'>
                                         <ng-template #valueTemplate>
-                                            <p>The Rich Text Editor is a WYSIWYG (what you see is what you get) editor used to create and edit
-                                                the content and return the valid HTML markup or markdown of the content.
-                                                This provides a lot of commands to edit and format the content. </p>
-                                            <p><b>Toolbar</b></p>
-                                            <p>The editor’s toolbar provides various commands to align the text, format, insert a link, image,
-                                                list, undo/redo operations, HTML view, and more. The toolbar comes with different modes such as
-                                                floating, multi-row, and expanded. </p>
-                                            <p><b>Links</b></p>
-                                            <p>Create a hyperlink using the 'insert link' dialog and you can edit the hyperlink text, display text,
-                                                and tooltip using the 'edit link' dialog and quick toolbar. If the text has valid hyperlink text,
-                                                the editor converts it to hyperlink automatically. For example, link to Rich Text Editor.</p>
-                                            <p><b>Table</b></p>
-                                            <p>This editor allows you to insert a table with options to add, edit, and remove and perform other
-                                                table-related actions. </p>
-                                            <p>For example</p>
-                                            <table>
-                                                <tbody>
-                                                    <tr>
-                                                        <th>Employee name</th>
-                                                        <th>Role</th>
-                                                        <th>Mail</th>
-                                                        <th>Country</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Janet Fleet</td>
-                                                        <td>Manager</td>
-                                                        <td>janet95@arpy.com</td>
-                                                        <td>France</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Nancy Buchanan</td>
-                                                        <td>Project Lead</td>
-                                                        <td>nancy55@rpy.com</td>
-                                                        <td>Sweden</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Rose Rose</td>
-                                                        <td>Project Lead</td>
-                                                        <td>rose44@sample.com</td>
-                                                        <td>France</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <p><b>Image</b></p>
-                                            <p>Allows you to insert images with caption, alt text, link, resize, and drag-and-drop from an
-                                                online source and local computer. You can upload an image to the server and insert it into the editor.
-                                                It provides an option to customize a quick toolbar for an image.</p>
-                                            <p>For example</p>
-                                            <img id='rteImageID' style="height:300px;transform: rotate(0deg);" alt="Logo"
-                                                src="./assets/rich-text-editor/images/RTEImage-Feather.png" />
-                                            <p><b>Lists</b></p>
-                                            <p>You can include content with ordered and unordered lists.</p>
-                                            <p>Examples for an ordered list:</p>
-                                            <ul>
-                                                <li>TypeScript</li>
-                                                <li>Javascript</li>
-                                                <li>Angular</li>
-                                                <li>React</li>
-                                                <li>Vue</li>
-                                            </ul>
-                                            <p>Examples for an unordered list:</p>
-                                            <ol>
-                                                <li>Rich Text Editor</li>
-                                                <li>Toolbar</li>
-                                                <li>Button</li>
-                                                <li>Dialog</li>
-                                                <li>Data Grid</li>
-                                            </ol>
-                                            <p>The editor has a lot of features to edit HTML content and Markdown content in web applications.</p>
+                                            <h3>Welcome to the HTML real-time live editor!</h3>
+                                            <p>Create and edit the valid HTML code simply! You don't worry about the HTML syntax to format your text content. 
+                                            The WYSIWYG editor (left side view) provided the toolbar to make format text and insert images, tables, and more options.</p>
+                                            <h4>Don't worry about syntax</h4>
+                                            <p>The content editing works bi-directional, you can write the HTML code on the right-side view (code view), and changes will reflect in the WYSIWYG editor.</p>
                                         </ng-template>
                                     </ejs-richtexteditor>
                                 </div>
@@ -108,7 +31,8 @@
                         </e-pane>
                         <e-pane cssClass='pane2'>
                             <ng-template #content>
-                                <div class="content">
+                                <div class="heading right">
+                                    <h6 class="title"><b>HTML SOURCE</b></h6>
                                     <div class="splitter-default-content source-code pane2" contenteditable="true"></div>
                                 </div>
                             </ng-template>

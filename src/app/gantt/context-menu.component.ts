@@ -56,7 +56,7 @@ export class GanttContextMenuComponent implements OnInit {
         ],
         this.toolbar = ['Add', 'Edit', 'Update', 'Delete', 'Cancel', 'ExpandAll', 'CollapseAll'];
         this.columns =  [
-            { field: 'TaskID', width:50 },
+            { field: 'TaskID', width:80 },
             { field: 'TaskName', headerText: 'Job Name', width: '250', clipMode: 'EllipsisWithTooltip' },
             { field: 'StartDate' },
             { field: 'Duration' },

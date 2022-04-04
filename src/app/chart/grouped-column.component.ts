@@ -56,7 +56,7 @@ export class GroupedColumnChartComponent {
     };
     // custom code end
     //Initializing Chart Title
-    public title: string = 'Olympics Medal Tally';
+    public title: string = 'Olympics Tally';
     constructor() {
         // code
     };

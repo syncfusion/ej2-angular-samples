@@ -1,13 +1,13 @@
 <div id="action-description">
     <p>
-        This sample compares countries by population density and total area by using various radius in pie series.
+        This sample compares countries by population density and total area by using the various radius in pie series.
     </p>
 </div>
 <div class="control-section">
     <div>
         <ejs-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings"
             [tooltip]="tooltip" [title]="title" [enableSmartLabels]='enableSmartLabels'
-            [enableAnimation]='enableAnimation' (load)='load($event)' useGroupingSeparator='true'>
+            [enableAnimation]='enableAnimation' (load)='load($event)'>
             <e-accumulation-series-collection>
                 <e-accumulation-series [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle"
                     [endAngle]="endAngle" innerRadius="20%" [dataLabel]="dataLabel" [radius]='radius'>

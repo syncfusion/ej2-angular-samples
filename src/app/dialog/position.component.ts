@@ -19,11 +19,10 @@ export class PositioningDialogComponent {
 
     @ViewChild('confirmButton')
     public dialogBtn: ButtonComponent;
-
+    public defaultWidth = '452px';
     public position: PositionDataModel = { X: 'center', Y: 'center' };
     public closeOnEscape = false;
     public dialogCloseIcon = true;
-    public defaultWidth = '452px';
     public target = '.control-section';
 
     public dlgButtonClick = () => {

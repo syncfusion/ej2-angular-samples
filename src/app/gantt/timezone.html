@@ -3,7 +3,7 @@
 </div>
 <div class="control-section">
         <ejs-gantt id="ganttDefault" #gantt [dataSource]="data" [taskFields]="taskSettings" [dayWorkingTime]="dayWorkingTime"
-            [timelineSettings]="timelineSettings" timezone="UTC" durationUnit="Hour" dateFormat="hh:mm a"
+            [timelineSettings]="timelineSettings" [columns]="columns" [treeColumnIndex]="1" timezone="UTC" durationUnit="Hour" dateFormat="hh:mm a"
             height="450px" [includeWeekend]="true">
         </ejs-gantt>
 </div>

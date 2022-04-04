@@ -1,0 +1,78 @@
+<div id="action-description">
+  <p>
+    This sample demonstrates the customization of the <strong>Angular Carousel</strong> component using various
+    templates.
+  </p>
+</div>
+<div class="control-section template-carousel-section">
+  <div class="col-lg-12 content-wrapper">
+    <div class="carousel-sample">
+      <ejs-carousel #carousel cssClass="templateCarousel" [animation]="carouselAnimation">
+        <ng-template #previousButtonTemplate let-data>
+          <button ejs-button cssClass="e-flat e-outline nav-btn" [title]="data.type">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+              <path d="m13.5 7.01 13 13m-13 13 13-13"></path>
+            </svg>
+          </button>
+        </ng-template>
+        <ng-template #nextButtonTemplate let-data>
+          <button ejs-button cssClass="e-flat e-outline nav-btn" [title]="data.type">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+              <path d="m13.5 7.01 13 13m-13 13 13-13"></path>
+            </svg>
+          </button>
+        </ng-template>
+        <ng-template #indicatorsTemplate let-data>
+          <div class="indicator">
+            <img [src]="getThumpImage(data.index)" alt="image" style="height:100%;width:100%;" />
+          </div>
+        </ng-template>
+        <e-carousel-items>
+          <e-carousel-item>
+            <ng-template #template>
+              <figure class="img-container">
+                <img src="./assets/carousel/images/cardinal.png" alt="cardinal" style="height:100%;width:100%;" />
+              </figure>
+            </ng-template>
+          </e-carousel-item>
+          <e-carousel-item>
+            <ng-template #template>
+              <figure class="img-container">
+                <img src="./assets/carousel/images/hunei.png" alt="hunei" style="height:100%;width:100%;" />
+              </figure>
+            </ng-template>
+          </e-carousel-item>
+          <e-carousel-item>
+            <ng-template #template>
+              <figure class="img-container">
+                <img src="./assets/carousel/images/costa-rica.png" alt="costa-rica" style="height:100%;width:100%;" />
+              </figure>
+            </ng-template>
+          </e-carousel-item>
+          <e-carousel-item>
+            <ng-template #template>
+              <figure class="img-container">
+                <img src="./assets/carousel/images/kaohsiung.png" alt="kaohsiung" style="height:100%;width:100%;" />
+              </figure>
+            </ng-template>
+          </e-carousel-item>
+          <e-carousel-item>
+            <ng-template #template>
+              <figure class="img-container">
+                <img src="./assets/carousel/images/bee-eater.png" alt="bee-eater" style="height:100%;width:100%;" />
+              </figure>
+            </ng-template>
+          </e-carousel-item>
+        </e-carousel-items>
+      </ejs-carousel>
+    </div>
+  </div>
+</div>
+<div id="description">
+  <p>In this demo, the <code>Angular Carousel</code> component is customized by using the templates. The navigators are
+    customized using <code>previousButtonTemplate</code> and <code>nextButtonTemplate</code>. The indicators are
+    customized using <code>indicatorsTemplate</code>. The carousel item is customized using <code>template</code>
+    option.</p>
+  <p>More information about customizing Angular Carousel component can be found in this <a target='_blank'
+      href="https://ej2.syncfusion.com/angular/documentation/carousel/getting-started">documentation section</a>.</p>
+</div>

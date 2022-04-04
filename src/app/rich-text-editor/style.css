@@ -66,20 +66,22 @@
     .bootstrap4 .e-icon-btn .e-md-preview::before {
         content: '\e787';
     }
-
-    .tailwind .e-icon-btn .e-md-preview::before {
-        content: '\e7d0';
-    }
-
-    .tailwind .e-icon-btn.e-active .e-md-preview::before {
-        content: '\e748';
-    }
     
-    .bootstrap5 .e-icon-btn.e-active .e-md-preview::before {
+    .fluent .e-icon-btn.e-active .e-md-preview::before
+    .fluent-dark .e-icon-btn.e-active .e-md-preview::before
+    .tailwind .e-icon-btn.e-active .e-md-preview::before
+    .tailwind-dark .e-icon-btn.e-active .e-md-preview::before
+    .bootstrap5 .e-icon-btn.e-active .e-md-preview::before
+    .bootstrap5-dark .e-icon-btn.e-active .e-md-preview::before {
         content: '\e80e';
     }
 
-    .bootstrap5 #mdCustom .e-icon-btn .e-md-preview::before {
+    .tailwind .e-icon-btn .e-md-preview::before,
+    .tailwind-dark .e-icon-btn .e-md-preview::before,
+    .bootstrap5 .e-icon-btn .e-md-preview::before,
+    .bootstrap5-dark .e-icon-btn .e-md-preview::before,
+    .fluent .e-icon-btn .e-md-preview::before,
+    .fluent-dark .e-icon-btn .e-md-preview::before   {
         content: '\e7de';
     }
 
@@ -149,6 +151,12 @@
     .bootstrap-dark .e-rte-custom-tbar-section .char_block.e-active {
         outline: 1px solid #317ab9;
         border-color: #317ab9;
+    }
+
+    .fluent .e-rte-custom-tbar-section .char_block.e-active,
+    .fluent-dark .e-rte-custom-tbar-section .char_block.e-active {
+        outline: 1px solid #0078DE;
+        border-color: #0078DE;
     }
 
     .highcontrast .e-rte-custom-tbar-section .char_block.e-active {

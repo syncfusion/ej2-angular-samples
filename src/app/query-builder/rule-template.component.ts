@@ -4,7 +4,7 @@
 
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { QueryBuilder, RuleModel } from '@syncfusion/ej2-querybuilder';
-import { expenseData } from './data-source';
+import { employeeData } from './data-source';
 
 @Component({
     selector: 'control-content',
@@ -15,7 +15,7 @@ import { expenseData } from './data-source';
 
 export class RuleTemplateQueryBuilderComponent {
     @ViewChild('querybuilder') qryBldrObj: QueryBuilder;
-    dataSource: Object[] = expenseData;
+    dataSource: any = employeeData;
     public items:  { [key: string]: Object}[] = [{field:'USA', label:'USA'},{field:'England', label:'England'},{field:'India',label:'India'},{field:'Spain',label:'Spain'}];
     public fields: Object = { text: 'field', value: 'label' };
     importRules: RuleModel = {

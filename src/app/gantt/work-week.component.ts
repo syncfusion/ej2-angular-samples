@@ -54,7 +54,7 @@ export class GanttWorkWeekComponent implements OnInit {
             child: 'subtasks'
         };
         this.columns =  [
-            { field: 'TaskID', headerText: 'ID', width: 100 },
+            { field: 'TaskID', headerText: 'ID', width: 80 },
             { field: 'TaskName', headerText: 'Name', width: 150 },
             { field: 'StartDate' },
             { field: 'EndDate' },

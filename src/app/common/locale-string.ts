@@ -1095,7 +1095,10 @@ export let Locale: Object = {
             "Median": "Median",
             "stacked": "Gestapelt",
             "single": "Single",
-            "multipleAxisMode": "Mehrachsenmodus"
+            "multipleAxisMode": "Mehrachsenmodus",
+            "grandTotalPosition": "Gesamtposition",
+            "top": "oben",
+            "bottom": "Unterseite"
         },
         "pivotfieldlist": {
             "all": "alles",
@@ -2419,7 +2422,10 @@ export let Locale: Object = {
             "Median": "الوسيط",
             "stacked": "مرصوصة",
             "single": "أعزب",
-            "multipleAxisMode": "وضع المحاور المتعددة"
+            "multipleAxisMode": "وضع المحاور المتعددة",
+            "grandTotalPosition": "الموضع الإجمالي الكبير",
+            "top": "أعلى",
+            "bottom": "الأسفل"
         },
         "pivotfieldlist": {
             "all": "الكل",
@@ -2615,7 +2621,11 @@ export let Locale: Object = {
             "NOT": "ليس",
             "NotContains": "لا يحتوي",
             "NotStartsWith": "لا يبدأ مع",
-            "NotEndsWith": "لا ينتهي مع"
+            "NotEndsWith": "لا ينتهي مع",
+            "IsEmpty": "فارغ",
+            "IsNotEmpty": "ليس فارغا",
+            "IsNull": "باطل",
+            "IsNotNull": "هو ليس لاشيء"
         },
         "uploader": {
             "invalidMinFileSize": "حجم الملف صغير جدا!",
@@ -3718,7 +3728,10 @@ export let Locale: Object = {
             "Median": "Median",
             "stacked": "Stacked",
             "single": "Single",
-            "multipleAxisMode": "Multiple Axis Mode"
+            "multipleAxisMode": "Multiple Axis Mode",
+            "grandTotalPosition": "Grand totals position",
+            "top": "Top",
+            "bottom": "Bottom"
         },
         "pivotfieldlist": {
             "all": "All",
@@ -5040,7 +5053,10 @@ export let Locale: Object = {
             "Median": "中位数",
             "stacked": "堆叠式",
             "single": "单身的",
-            "multipleAxisMode": "多轴模式"
+            "multipleAxisMode": "多轴模式",
+            "grandTotalPosition": "总头寸",
+            "top": "最佳",
+            "bottom": "底部"
         },
         "pivotfieldlist": {
             "all": "所有",
@@ -6363,7 +6379,10 @@ export let Locale: Object = {
             "Median": "Médian",
             "stacked": "Empilé",
             "single": "Seul",
-            "multipleAxisMode": "Mode à axes multiples"
+            "multipleAxisMode": "Mode à axes multiples",
+            "grandTotalPosition": "position du total général",
+            "top": "Haut",
+            "bottom": "bas"
         },
         "pivotfieldlist": {
             "all": "tout",

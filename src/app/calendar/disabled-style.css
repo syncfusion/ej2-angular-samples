@@ -14,3 +14,12 @@
     line-height: 50px;
     color: rgba(0, 0, 0, 0.58);
 }
+body.fluent-dark #selected,
+body.bootstrap5-dark #selected,
+body.tailwind-dark #selected,
+body.material-dark #selected,
+body.fabric-dark #selected,
+body.bootstrap-dark #selected,
+body.highcontrast #selected {
+    color: white;
+} 

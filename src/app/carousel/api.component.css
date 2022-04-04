@@ -1,0 +1,25 @@
+.api-carousel-section .carousel-sample {
+  margin: 0 auto 2em;
+  max-width: 500px;
+  height: 300px;
+}
+
+.api-carousel-section .property-panel-table td {
+  margin: 0;
+  padding-bottom: 1em;
+}
+
+.api-carousel .e-carousel-items .e-carousel-item .img-container {
+  height: 100%;
+}
+
+.api-carousel .e-carousel-items .e-carousel-item .img-container .img-caption {
+  color: rgba(255, 255, 255);
+  font-style: oblique;
+  font-size: 1.5rem;
+  margin: 0;
+  left: 1.5rem;
+  position: absolute;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  top: 1.5rem;
+}

@@ -4,3 +4,11 @@
     min-height: 170px;
     max-height: 400px;
 }
+.control-section.resize-rte .e-popup.e-popup-open.e-dialog {
+    height: 387px !important;
+}
+.control-section.resize-rte .e-dialog .e-dlg-content {
+    overflow: inherit;
+    overflow-x: inherit;
+}
+  

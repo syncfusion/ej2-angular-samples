@@ -64,7 +64,11 @@
             "NOT": "ليس",
             "NotContains": "لا يحتوي",
             "NotStartsWith": "لا يبدأ مع",
-            "NotEndsWith": "لا ينتهي مع"
+            "NotEndsWith": "لا ينتهي مع",
+			"IsEmpty": "فارغ",
+            "IsNotEmpty": "ليس فارغا",
+            "IsNull": "باطل",
+            "IsNotNull": "هو ليس لاشيء"
         }
     },
     "en": {

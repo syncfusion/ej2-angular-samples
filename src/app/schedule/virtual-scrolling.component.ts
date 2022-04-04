@@ -16,7 +16,6 @@ export class VirtualScrollingComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;
 
   public selectedDate: Date = new Date(2021, 4, 1);
-  public currentView: View = 'TimelineMonth';
   public group: GroupModel = {
     enableCompactView: false,
     resources: ['Resources']

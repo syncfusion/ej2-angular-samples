@@ -5,6 +5,7 @@ import { OrientationTabComponent } from './orientation.component';
 import { ResponsiveTabComponent } from './responsive-modes.component';
 import { WizardTabComponent } from './wizard.component';
 import { DragAndDropComponent } from './drag-and-drop.component';
+import { KeyboardTabComponent } from './keyboard-interaction.component';
 import { SharedModule } from '../common/shared.module';
 
 import { TabAllModule } from '@syncfusion/ej2-angular-navigations';
@@ -25,7 +26,8 @@ export const tabAppRoutes: Object[] = [
     { path: ':theme/tab/orientation', component: OrientationTabComponent, name: 'Orientation', description: 'The sample demonstrates how to customize the orientation of Tab component along with feasibility to customize the Tab header styles in Angular platform.', category: 'Tab' },
     { path: ':theme/tab/responsive-modes', component: ResponsiveTabComponent, name: 'Responsive Modes', description: 'The sample illustrates that responsive mode of Tab component that aligns tab items in a  scrollable or popup mode in Angular platform.', category: 'Tab' },
     { path: ':theme/tab/wizard', component: WizardTabComponent, name: 'Wizard', description: 'This sample demonstrates how to design a wizard-like application with the sequential action using the Tab component in Angular platform.', category: 'Tab' },
-    { path: ':theme/tab/drag-and-drop', component: DragAndDropComponent, name: 'Drag And Drop', description: 'This example demonstrates how to reorder the loaded tabs and how to add a new tab from the external source.', category: 'Tab' }
+    { path: ':theme/tab/drag-and-drop', component: DragAndDropComponent, name: 'Drag And Drop', description: 'This example demonstrates how to reorder the loaded tabs and how to add a new tab from the external source.', category: 'Tab' },
+    { path: ':theme/tab/keyboard-interaction', component: KeyboardTabComponent, name: 'Keyboard Interaction', description: 'This example showcases the keyboard shortcuts applicable on Tab component in Angular platform', category: 'Tab' }
 ];
 
 export const tabRouter: ModuleWithProviders<any> = RouterModule.forChild(tabAppRoutes);
@@ -37,7 +39,8 @@ export const tabRouter: ModuleWithProviders<any> = RouterModule.forChild(tabAppR
         OrientationTabComponent,
         ResponsiveTabComponent,
         WizardTabComponent,
-        DragAndDropComponent
+        DragAndDropComponent,
+        KeyboardTabComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

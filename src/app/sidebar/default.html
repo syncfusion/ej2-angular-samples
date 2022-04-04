@@ -1,57 +1,71 @@
-﻿<div class="control-section">
-    <!-- sample level element  -->
-    <div class="col-lg-12 col-sm-12 col-md-12 center">
-        Click/Touch the button to view the sample
+﻿<div class="control-section" id="sidebar-wrapper">
+    <!-- main content declaration -->
+    <div>
+        <ejs-toolbar cssClass="defaultToolbar" id="defaultToolbar" (clicked)="toolbarCliked($event)">
+            <e-items>
+                <e-item prefixIcon="e-tbar-menu-icon tb-icons" tooltipText="Menu"></e-item>
+                <e-item>
+                    <ng-template #template>
+                        <div class="e-folder">
+                            <div class="e-folder-name">Webmail</div>
+                        </div>
+                    </ng-template>
+                </e-item>
+                <e-item align="Right">
+                    <ng-template #template>
+                        <div>
+                            <div class="e-user-name">John</div>
+                        </div>
+                    </ng-template>
+                </e-item>
+                <e-item cssClass="e-custom" align="Right">
+                    <ng-template #template>
+                        <div class="image-container">
+                            <img height="20px" src="./assets/sidebar/images/user.svg" alt="John" />
+                        </div>
+                    </ng-template>
+                </e-item>
+            </e-items>
+        </ejs-toolbar>
     </div>
-    <div class="col-lg-12 col-sm-12 col-md-12 center">
-        <a class="e-btn" id="newTab" target="_blank" (click)="newTabClick()">Open in new tab</a>
+    <div class="maincontent">
+        <ejs-listview id="listView" #listview cssClass="e-list-template" [dataSource]='inboxData' [fields]='fields'
+            (select)="onListSelect($event)">
+            <ng-template #template let-data="">
+                <div class="e-list-wrapper e-list-avatar e-list-multi-line">
+                    <span class="e-avatar e-avatar-circle e-icon sf-icon-profile"></span>
+                    <span class="e-list-item-header">{{data.text}}</span>
+                    <span class="e-list-content">{{data.subject}}</span>
+                    <span class="e-list-text">{{data.message}}</span>
+                </div>
+            </ng-template>
+        </ejs-listview>
     </div>
-    <!-- sample level element  -->
-    <div id="wrapper">
-        <div class="col-lg-12 col-sm-12 col-md-12" id="sidebar-section">
-            <span id="hamburger" class="e-icons menu default" (click)="openClick()"></span>
-            <!-- sidebar element declaration -->
-            <ejs-sidebar id="default-sidebar" #sidebar>
-                <div class="title-header">
-                    <div style="display:inline-block"> Sidebar</div>
-                    <span id="close" class="e-icons" (click)="closeClick()"></span>
-                </div>
-                <div class="sub-title">
-                    Place your primary content here.
-                </div>
-            </ejs-sidebar>
-            <!-- end of sidebar element -->
-            <!-- main content declaration -->
-            <div>
-                <div class="title default">Main content</div>
-                <div class="sub-title"> Click the button to open/close the sidebar.
-                    <div style="padding:20px" class="center-align">
-                        <button ejs-button id="toggle" class="e-btn e-info" (click)="toggleClick()">Toggle
-                            sidebar</button>
-                    </div>
-                    <p>Click the radio button to switch the sidebar position.</p>
-                    <div class="column">
-                        <ejs-radiobutton id="left" value="left" label='Left' name='state' checked='true'
-                            (change)="positionChange($event)"></ejs-radiobutton>
-                    </div>
-                    <div class="column">
-                        <ejs-radiobutton id="right" value="right" label='Right' name='state'
-                            (change)="positionChange($event)"></ejs-radiobutton>
-                    </div>
-                </div>
-            </div>
-            <!--end of main content declaration -->
-        </div>
-    </div>
+    <!-- end of main content declaration -->
+    <!-- sidebar element declaration  -->
+    <ejs-sidebar id="defaultSidebar" #sidebar class="default-sidebar" width="260px" target=".maincontent"
+        position="Left">
+        <ejs-treeview id="defaultTree" [fields]="treeFields" (nodeSelecting)="beforeSelect($event)"
+            (nodeSelected)="onSelect($event)">
+        </ejs-treeview>
+    </ejs-sidebar>
 </div>
 <div id="action-description">
-    <p class="action">
-        Click/Touch the button to view the Sidebar sample in new tab.
+    <p>
+        The <code>Sidebar</code> sample demonstrates the default functionalities of the <code>Sidebar</code>. Click on
+        the hamburger menu icon to expand/collapse the sidebar. Click the TreeView node to see the corresponding
+        folder’s mail details.
     </p>
 </div>
 <div id="description">
     <p>
-        This sample demonstrates the basic <code>Sidebar</code> component. Click the toggle button to expand or collapse
-        the sidebar.
+        The <code>Sidebar</code> is an expandable and collapsible component that typically acts as a side container to
+        place primary or secondary content alongside the main content.
+        It provides flexible options that can be shown and hidden based on user interactions. Any type of HTML content
+        or component can be placed in the <code>Sidebar</code> for quick access and easy navigation, like quick
+        references, menus, lists, and tree views.
+    </p>
+    <p>
+        In this demo, the <code>Sidebar</code> is populated as like webmail with folder structure.
     </p>
 </div>

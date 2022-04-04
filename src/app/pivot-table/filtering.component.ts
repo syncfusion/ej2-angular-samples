@@ -141,6 +141,7 @@ export class FilteringComponent implements OnInit {
         this.valuesddl = new MultiSelect({
             dataSource: this.values,
             mode: 'CheckBox',
+            width: '98%',
             showDropDownIcon: true,
             showClearButton: false,
             enableSelectionOrder: false,
@@ -187,7 +188,7 @@ export class FilteringComponent implements OnInit {
         this.typeddl.appendTo('#type');
 
         this.applyBtn = new Button({
-            cssClass: 'e-flat', isPrimary: true, disabled: true
+            isPrimary: true, disabled: true
         });
         this.applyBtn.appendTo('#apply');
 

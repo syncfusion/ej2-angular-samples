@@ -20,6 +20,16 @@
     right: 5px;
 }
 
+.fluent .e-custom-breadcrumb .e-menu-wrapper ul .e-menu-item .e-caret,
+.fluent-dark .e-custom-breadcrumb .e-menu-wrapper ul .e-menu-item .e-caret {
+    right: 2px;
+}
+
+.e-bigger .fluent .e-custom-breadcrumb .e-menu-wrapper ul .e-menu-item .e-caret,
+.e-bigger .fluent-dark .e-custom-breadcrumb .e-menu-wrapper ul .e-menu-item .e-caret {
+    right: 1px;
+}
+
 .e-custom-breadcrumb .e-breadcrumb-item,
 .e-custom-breadcrumb .e-breadcrumb-separator {
     padding: 0px !important;

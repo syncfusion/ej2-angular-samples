@@ -9,7 +9,7 @@ import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
   providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService]
 })
 export class RemoteDataComponent {
-  public currentView: View = 'Week';
+  public currentView: View = 'Month';
   public readonly = true;
   private dataManager: DataManager = new DataManager({
     url: 'https://ej2services.syncfusion.com/production/web-services/api/Schedule',

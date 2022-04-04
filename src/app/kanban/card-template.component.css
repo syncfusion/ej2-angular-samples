@@ -5,7 +5,12 @@
 .kanban-card-template .e-card .e-time {
   display: inline-flex;
 }
-
+.kanban-card-template .e-card .e-kanban-date {
+  padding-right: 3px;
+}
+.kanban-card-template .e-card .e-date {
+  display: contents;
+}
 .kanban-card-template .e-card .e-size {
   color: #b8860b
 }
@@ -110,7 +115,9 @@
 .kanban-card-template .e-card .e-deliveredText {
   color: #ff0000;
 }
-
+.e-kanban-dialog .e-kanban-form-wrapper table .e-label, .e-kanban-dialog .e-kanban-form-container table .e-label {
+  width: 80px;
+}
 @keyframes blinker {
   50% {
     opacity: 0.5;

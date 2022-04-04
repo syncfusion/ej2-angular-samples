@@ -56,13 +56,13 @@
                         <tr id="button-control" style="height: 70px;">
                             <td>
                                 <div style="text-align: center;">
-                                    <button ejs-button iconCss='e-icons e-play-icon' cssClass='e-flat' isPrimary=true
+                                    <button ejs-button isPrimary=true
                                         (click)='onClickExport($event)' content="Export" id="export" style="width:90px">EXPORT</button>
                                 </div>
                             </td>
                             <td>
                                 <div style="text-align: center;">
-                                    <button ejs-button iconCss='e-icons e-play-icon1' cssClass='e-flat' isPrimary=true
+                                    <button ejs-button isPrimary=true
                                         (click)='onClickPrint($event)' content="Print" id="print" style="width: 90px">PRINT</button>
                                 </div>
                             </td>
@@ -90,6 +90,14 @@
 
     .e-play-icon1::before {
         content: '\e813';
+    }
+
+    .e-view.fluent .e-play-icon::before, .e-view.fluent-dark .e-play-icon::before  {
+        content: '\e72e';
+    }
+
+    .e-view.fluent .e-play-icon1::before, .e-view.fluent-dark .e-play-icon1::before  {
+        content: '\e75d';
     }
 
     .e-view.fabric .e-play-icon1::before, .e-view.fabric-dark .e-play-icon1::before  {

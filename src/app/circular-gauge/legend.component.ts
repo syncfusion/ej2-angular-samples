@@ -50,54 +50,44 @@ export class LegendComponent{
     }];
     public alignment: DropDownList; public shape: DropDownList; public position: DropDownList;
     ngOnInit(): void {
-        let enableLegend: EmitType<CheckBoxChangeEvents>;
-        let legend: CheckBox = new CheckBox(
-            {
-                change: enableLegend, checked: true,
-            },
-            '#enable');
-            let enableToggleLegend: EmitType<CheckBoxChangeEvents>;
-            let toggleLegend: CheckBox = new CheckBox(
-                {
-                    change: enableToggleLegend, checked: true,
-                },
-            '#toggle');
-            document.getElementById('enable').onchange = () => {
-                let showLegend: boolean = (<HTMLInputElement>document.getElementById('enable')).checked;
-                this.circulargauge.legendSettings.visible = showLegend;
-                this.circulargauge.refresh();
-            };
-            document.getElementById('toggle').onchange = () => {
-                let toggleLegend: boolean = (<HTMLInputElement>document.getElementById('toggle')).checked;
-                this.circulargauge.legendSettings.toggleVisibility = toggleLegend;
-            };
-            this.alignment = new DropDownList({
-                index: 0, width: '100%',
-                change: () => {
-                    let alignment: string = this.alignment.value.toString();
-                    this.circulargauge.legendSettings.alignment = alignment as Alignment;
-                }
-            });
-            this.alignment.appendTo('#alignment');
-            this.shape = new DropDownList({
-                index: 0, width: '100%',
-                change: () => {
-                    let shape: string = this.shape.value.toString();
-                    this.circulargauge.legendSettings.shape = shape as GaugeShape;
-                }
-            });
-            this.shape.appendTo('#shape');
-            this.position = new DropDownList({
-                index: 0, width: '100%',
-                change: () => {
-                    let position: string = this.position.value.toString();
-                    this.circulargauge.legendSettings.position = position as LegendPosition;
-                }
-            });
-            this.position.appendTo('#position');
+        this.alignment = new DropDownList({
+            index: 0, width: '100%',
+            change: () => {
+                let alignment: string = this.alignment.value.toString();
+                this.circulargauge.legendSettings.alignment = alignment as Alignment;
+            }
+        });
+        this.alignment.appendTo('#alignment');
+        this.shape = new DropDownList({
+            index: 0, width: '100%',
+            change: () => {
+                let shape: string = this.shape.value.toString();
+                this.circulargauge.legendSettings.shape = shape as GaugeShape;
+            }
+        });
+        this.shape.appendTo('#shape');
+        this.position = new DropDownList({
+            index: 0, width: '100%',
+            change: () => {
+                let position: string = this.position.value.toString();
+                this.circulargauge.legendSettings.position = position as LegendPosition;
+            }
+        });
+        this.position.appendTo('#position');
     }
     ngAfterViewInit(): void {
-
+        let legend: CheckBox = new CheckBox({
+            checked: true,
+            change: () => {
+                this.circulargauge.legendSettings.visible = legend.checked;
+            }
+        }, '#enable');
+        let toggle: CheckBox = new CheckBox({
+            checked: true,
+            change: () => {
+                this.circulargauge.legendSettings.toggleVisibility = toggle.checked;
+            }
+        }, '#toggle');
     }
 
 }

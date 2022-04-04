@@ -116,3 +116,7 @@ text-align: center;
   -webkit-appearance: none; 
   margin: 0; 
 }
+
+.fluent-dark #control_wrapper { 
+  background: #212529;
+}

@@ -39,7 +39,7 @@ export class GanttSortingAPIComponent implements OnInit {
             child: 'subtasks'
         };
         this.columns = [
-            { field: 'TaskID', headerText: 'ID', width: 70 },
+            { field: 'TaskID', headerText: 'ID', width: 80 },
             { field: 'TaskName', headerText: 'TaskName', width: 250 },
             { field: 'StartDate', headerText: 'StartDate' },
             { field: 'EndDate', headerText: 'EndDate' },

@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, IDataSet, VirtualScrollService } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
-import { enableRipple } from '@syncfusion/ej2-base';
+import { Browser, enableRipple } from '@syncfusion/ej2-base';
 import { Button } from '@syncfusion/ej2-buttons';
 enableRipple(false);
 
@@ -83,6 +83,9 @@ export class VirtualScrollingComponent implements OnInit {
         this.applyBtn.disabled = true;
         document.getElementById('popup').style.display = 'none';
 	  }
+      if (Browser.isDevice && this.pivotObj && this.pivotObj.enableRtl) {
+        document.querySelector('.control-section').classList.add('e-rtl');
+       }
     }
 
     ngOnInit(): void {

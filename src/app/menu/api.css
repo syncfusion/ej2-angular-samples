@@ -11,4 +11,11 @@
     padding: 0 10px 10px 0;
     overflow: auto;
 }
+
+.tailwind #apiMenu .property-panel-content,
+.tailwind-dark #apiMenu .property-panel-content,
+.fabric #apiMenu .property-panel-content,
+.fabric-dark #apiMenu .property-panel-content {
+    overflow: hidden;
+}
 /* custom code end*/

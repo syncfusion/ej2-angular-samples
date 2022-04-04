@@ -1,0 +1,119 @@
+<div id="action-description">
+  <p>This sample demonstrates the properties available in the <b>Angular Carousel</b> component.</p>
+</div>
+<div class="control-section api-carousel-section">
+  <div class="col-lg-9 content-wrapper">
+    <div class="carousel-sample">
+      <ejs-carousel #carousel cssClass="api-carousel" [interval]="3000">
+        <e-carousel-items>
+          <e-carousel-item>
+            <ng-template #template>
+              <figure class="img-container">
+                <img src="./assets/carousel/images/bridge.jpg" alt="bridge" style="height:100%;width:100%;" />
+                <figcaption class="img-caption">Showing 1 of 5</figcaption>
+              </figure>
+            </ng-template>
+          </e-carousel-item>
+          <e-carousel-item>
+            <ng-template #template>
+              <figure class="img-container">
+                <img src="./assets/carousel/images/trees.jpg" alt="spring_trees" style="height:100%;width:100%;" />
+                <figcaption class="img-caption">Showing 2 of 5</figcaption>
+              </figure>
+            </ng-template>
+          </e-carousel-item>
+          <e-carousel-item>
+            <ng-template #template>
+              <figure class="img-container">
+                <img src="./assets/carousel/images/waterfall.jpg" alt="waterfall" style="height:100%;width:100%;" />
+                <figcaption class="img-caption">Showing 3 of 5</figcaption>
+              </figure>
+            </ng-template>
+          </e-carousel-item>
+          <e-carousel-item>
+            <ng-template #template>
+              <figure class="img-container">
+                <img src="./assets/carousel/images/sea.jpg" alt="sea" style="height:100%;width:100%;" />
+                <figcaption class="img-caption">Showing 4 of 5</figcaption>
+              </figure>
+            </ng-template>
+          </e-carousel-item>
+          <e-carousel-item>
+            <ng-template #template>
+              <figure class="img-container">
+                <img src="./assets/carousel/images/rocks.jpeg" alt="rocks" style="height:100%;width:100%;" />
+                <figcaption class="img-caption">Showing 5 of 5</figcaption>
+              </figure>
+            </ng-template>
+          </e-carousel-item>
+        </e-carousel-items>
+      </ejs-carousel>
+    </div>
+  </div>
+  <div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+      <div class="property-panel-header">Carousel Properties</div>
+      <div class="property-panel-content">
+        <div id="property" class="property-panel-table" title="Properties">
+          <table id="property" title="Properties" style="width: 100%">
+            <tbody>
+              <tr>
+                <td>Enable Autoplay</td>
+                <td>
+                  <ejs-switch id="enableAutoplay" [checked]="true" (change)="enableAutoplayStateChange($event)">
+                  </ejs-switch>
+                </td>
+              </tr>
+              <tr>
+                <td>Infinite Looping</td>
+                <td>
+                  <ejs-switch id="infiniteLooping" [checked]="true" (change)="infiniteLoopingStateChange($event)">
+                  </ejs-switch>
+                </td>
+              </tr>
+              <tr>
+                <td>Show Indicators</td>
+                <td>
+                  <ejs-switch id="showIndicators" [checked]="true" (change)="showIndicatorsStateChange($event)">
+                  </ejs-switch>
+                </td>
+              </tr>
+              <tr>
+                <td>Show Play Button</td>
+                <td>
+                  <ejs-switch id="showPlayButton" [checked]="false" (change)="showPlayButtonStateChange($event)">
+                  </ejs-switch>
+                </td>
+              </tr>
+              <tr>
+                <td>Show Arrows</td>
+                <td>
+                  <ejs-dropdownlist id="buttonsVisibility" [dataSource]="buttonsVisibilityData"
+                    [fields]="buttonsVisibilityField" [value]="buttonsVisibilityValue"
+                    (change)="buttonsVisibilityStateChange($event)">
+                  </ejs-dropdownlist>
+                </td>
+              </tr>
+              <tr>
+                <td>Slide Interval</td>
+                <td>
+                  <ejs-dropdownlist id="slideInterval" [dataSource]="slideIntervalData" [fields]="slideIntervalField"
+                    [value]="slideIntervalValue" (change)="slideIntervalStateChange($event)">
+                  </ejs-dropdownlist>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="description">
+  <p>In this demo, you can manually change the properties of the <code>Angular Carousel</code> component like
+    <code>autoPlay</code>, <code>buttonsVisibility</code>, <code>showIndicators</code>,
+    <code>interval</code>, <code>showPlayButton</code>, <code>loop</code> using the property panel.</p>
+  <p>More information about the properties available in the Carousel component can be found in this <a target="_blank"
+      href="https://ej2.syncfusion.com/angular/documentation/api/carousel/">documentation section</a>.</p>
+</div>

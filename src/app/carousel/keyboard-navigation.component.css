@@ -1,0 +1,170 @@
+.keyboard-carousel-section .carousel-sample {
+  background-color: #f5f9fd;
+  border-radius: 1.5em;
+  margin: 0 auto 2em;
+  max-width: 80%;
+  height: 500px;
+}
+
+.kb-carousel .e-carousel-items .e-carousel-item .product-container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding: 1em;
+}
+
+.kb-carousel .e-carousel-items .e-carousel-item .product-container .heading {
+  font-size: 1.5em;
+  color: #1a1a1a;
+  letter-spacing: 0;
+  font-weight: 500;
+  margin: 1rem 0 1.6rem;
+}
+
+.kb-carousel .e-carousel-items .e-carousel-item .product-container .description {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  letter-spacing: 0.2px;
+  line-height: 2.7rem;
+  padding: 0 0 5rem;
+  text-align: justify;
+}
+
+.kb-carousel .e-carousel-items .e-carousel-item .product-container .description a {
+  text-decoration: underline;
+}
+
+.kb-carousel .e-carousel-navigators .e-previous .e-btn:not(:disabled) .e-btn-icon,
+.kb-carousel .e-carousel-navigators .e-next .e-btn:not(:disabled) .e-btn-icon,
+.kb-carousel .e-carousel-navigators .e-play-pause .e-btn:not(:disabled) .e-btn-icon {
+  color: #4d8fe4;
+  font-size: 1.5rem;
+  line-height: normal;
+}
+
+.kb-carousel .e-carousel-navigators .e-play-pause .e-btn {
+  height: 5rem;
+  width: 5rem;
+}
+
+.kb-carousel .e-carousel-navigators .e-play-pause .e-btn:not(:disabled) .e-btn-icon {
+  font-size: 2.4rem;
+}
+
+.kb-carousel .e-carousel-navigators .e-previous .e-btn:not(:disabled):hover,
+.kb-carousel .e-carousel-navigators .e-next .e-btn:not(:disabled):hover,
+.kb-carousel .e-carousel-navigators .e-play-pause .e-btn:not(:disabled):hover,
+.kb-carousel .e-carousel-navigators .e-previous .e-btn:not(:disabled):focus,
+.kb-carousel .e-carousel-navigators .e-next .e-btn:not(:disabled):focus,
+.kb-carousel .e-carousel-navigators .e-play-pause .e-btn:not(:disabled):focus,
+.kb-carousel .e-carousel-navigators .e-previous .e-btn:not(:disabled):active,
+.kb-carousel .e-carousel-navigators .e-next .e-btn:not(:disabled):active,
+.kb-carousel .e-carousel-navigators .e-play-pause .e-btn:not(:disabled):active {
+  background-color: #d2e3f8;
+}
+
+.kb-carousel .e-carousel-indicators .e-indicator-bar .e-indicator div {
+  background-color: #e5e5e5;
+  border: 0px !important;
+}
+
+.kb-carousel .e-carousel-indicators .e-indicator-bar.e-active .e-indicator div {
+  background-color: #4d8fe4 !important;
+}
+
+@media screen and (max-width: 480px) {
+  .keyboard-carousel-section .carousel-sample {
+    max-height: 400px;
+    max-width: 100%;
+  }
+
+  .kb-carousel .e-carousel-items .e-carousel-item .product-container .description {
+    font-size: 1.25rem;
+  }
+
+  .kb-carousel .e-carousel-items .e-carousel-item .product-container .image-container {
+    display: none;
+  }
+}
+
+#source_link {
+  float: right;
+  margin-right: 10px;
+}
+
+.bootstrap5-dark .keyboard-carousel-section .carousel-sample,
+.fluent-dark .keyboard-carousel-section .carousel-sample,
+.tailwind-dark .keyboard-carousel-section .carousel-sample,
+.material-dark .keyboard-carousel-section .carousel-sample,
+.fabric-dark .keyboard-carousel-section .carousel-sample,
+.bootstrap-dark .keyboard-carousel-section .carousel-sample,
+.highcontrast .keyboard-carousel-section .carousel-sample {
+  background-color: #26292E;
+}
+
+.bootstrap5-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .heading,
+.fluent-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .heading,
+.tailwind-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .heading,
+.material-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .heading,
+.fabric-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .heading,
+.bootstrap-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .heading,
+.highcontrast .kb-carousel .e-carousel-items .e-carousel-item .product-container .heading {
+  color: #bbbbbb;
+}
+
+.bootstrap5-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .description,
+.fluent-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .description,
+.tailwind-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .description,
+.material-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .description,
+.fabric-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .description,
+.bootstrap-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .description,
+.highcontrast .kb-carousel .e-carousel-items .e-carousel-item .product-container .description {
+  color: #9f9f9f
+}
+
+.bootstrap5-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):hover,
+.bootstrap5-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):focus,
+.fluent-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):hover,
+.fluent-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):focus,
+.tailwind-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):hover,
+.tailwind-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):focus,
+.material-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):hover,
+.material-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):focus,
+.fabric-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):hover,
+.fabric-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):focus,
+.bootstrap-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):hover,
+.bootstrap-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):focus,
+.highcontrast .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):hover,
+.highcontrast .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):focus {
+  background-color: #4e4e4e;
+}
+
+.bootstrap5-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled) .e-btn-icon,
+.fluent-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled) .e-btn-icon,
+.tailwind-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled) .e-btn-icon,
+.material-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled) .e-btn-icon,
+.fabric-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled) .e-btn-icon,
+.bootstrap-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled) .e-btn-icon,
+.highcontrast .kb-carousel .e-carousel-navigators .e-btn:not(:disabled) .e-btn-icon {
+  color: #dfdfdf;
+}
+
+.bootstrap5-dark .kb-carousel .e-carousel-indicators .e-indicator-bar .e-indicator div,
+.fluent-dark .kb-carousel .e-carousel-indicators .e-indicator-bar .e-indicator div,
+.tailwind-dark .kb-carousel .e-carousel-indicators .e-indicator-bar .e-indicator div,
+.material-dark .kb-carousel .e-carousel-indicators .e-indicator-bar .e-indicator div,
+.fabric-dark .kb-carousel .e-carousel-indicators .e-indicator-bar .e-indicator div,
+.bootstrap-dark .kb-carousel .e-carousel-indicators .e-indicator-bar .e-indicator div,
+.highcontrast .kb-carousel .e-carousel-indicators .e-indicator-bar .e-indicator div {
+  background-color: #626262;
+}
+
+.kb-carousel .e-carousel-indicators {
+  margin: 16px;
+}
+
+.kb-carousel .e-carousel-navigators .e-play-pause span.e-play-icon {
+  margin-left: 4px;
+  margin-top: 2px;
+}

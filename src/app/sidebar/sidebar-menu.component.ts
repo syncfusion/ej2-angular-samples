@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SidebarComponent } from '@syncfusion/ej2-angular-navigations';
+import { SidebarComponent, ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
 import { Menu, MenuItemModel } from '@syncfusion/ej2-navigations';
 import { enableRipple } from '@syncfusion/ej2-base';
 
@@ -13,18 +13,10 @@ import { enableRipple } from '@syncfusion/ej2-base';
 export class SidebarMenuComponent {
     @ViewChild('sidebarMenuInstance')
     public sidebarMenuInstance: SidebarComponent;
-    public width: string = '220px';
-    public mediaQuery: string = ('(min-width: 600px)');
-    public target: string = '.main-content';
-    public dockSize: string = '50px';
-     public enableDock: boolean = true;
-    constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['sidebar-menu.css'];
-    }
     public menuItems: MenuItemModel[] = [
         {
             text: 'Overview',
-            iconCss: 'icon-globe icon',
+            iconCss: 'icon-user icon',
             items: [
                 { text: 'All Data' },
                 { text: 'Category2' },
@@ -34,6 +26,15 @@ export class SidebarMenuComponent {
         {
             text: 'Notification',
             iconCss: 'icon-bell-alt icon',
+            items: [
+                { text: 'Change Profile' },
+                { text: 'Add Name' },
+                { text: 'Add Details' }
+            ]
+        },
+        {
+            text: 'Info',
+            iconCss: 'icon-tag icon',
             items: [
                 { text: 'Message' },
                 { text: 'Facebook' },
@@ -63,54 +64,31 @@ export class SidebarMenuComponent {
             iconCss: 'icon-picture icon',
             items: [
                 { text: 'Add Name' },
-                { text: 'Add Mobile Number' },
-                { text: 'Add Imaage' },
+                { text: 'Add Mobile Number' }
             ]
         },
         {
             text: 'Users ',
             iconCss: 'icon-user icon',
             items: [
-                { text: 'Mobile1' },
-                { text: 'Mobile2' },
-                { text: 'Telephone' }
-            ]
-        },
-        {
-            text: 'Settings',
-            iconCss: 'icon-eye icon',
-            items: [
-                { text: 'Change Profile' },
-                { text: 'Add Name' },
-                { text: 'Add Details' }
-            ]
-        },
-        {
-            text: 'Info',
-            iconCss: 'icon-tag icon',
-            items: [
-                { text: 'Facebook' },
-                { text: 'Mobile' },
+                { text: 'Mobile User' },
+                { text: 'Laptop User' },
+                { text: 'Desktop User' }
             ]
         }
     ];
-     public AccountMenuItem: MenuItemModel[] = [
-        {
-            text: 'Account',
-            items: [
-                { text: 'Profile' },
-                { text: 'Sign out' },
-            ]
-        }
-    ];
-    // open new tab
-    newTabClick(): void {
-        let URL = location.href.replace(location.search,'');
-        document.getElementById('newTab').setAttribute('href', URL.split('#')[0] + 'sidebar/sidebar-menu');
+    public enableDock: boolean = true;
+    public dockSize: string = '50px';
+    public width: string = '220px';
+    public target: string = '.main-menu-content';
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['sidebar-menu.css'];
     }
 
-    openClick() {
-        this.sidebarMenuInstance.toggle();
+    toolbarCliked(args:ClickEventArgs) {
+        if(args.item.tooltipText == "Menu") {
+            this.sidebarMenuInstance.toggle();
+        }
     }
-};
+}
 // open new tab

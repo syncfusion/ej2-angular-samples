@@ -7,8 +7,9 @@ import { SidebarListComponent } from './sidebar-list.component';
 import { SidebarMenuComponent } from './sidebar-menu.component';
 import { ResponsivePanelComponent } from './responsive-panel.component';
 import { RadioButtonModule, ButtonModule } from '@syncfusion/ej2-angular-buttons';
-import { SidebarModule, MenuAllModule, TreeViewAllModule} from '@syncfusion/ej2-angular-navigations';
+import { SidebarModule, MenuAllModule, TreeViewAllModule, ToolbarAllModule} from '@syncfusion/ej2-angular-navigations';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { TextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
 import { SharedModule } from '../common/shared.module';
 
@@ -23,7 +24,7 @@ export const sidebarAppRoutes: Object[] = [
 ];
 export const SidebarRouter: ModuleWithProviders<any> = RouterModule.forChild(sidebarAppRoutes);
 @NgModule({
-    imports: [SidebarRouter, SidebarModule, SharedModule, RadioButtonModule, MenuAllModule, DropDownListModule, ButtonModule, TreeViewAllModule, ListViewAllModule],
+    imports: [SidebarRouter, SidebarModule, SharedModule, ToolbarAllModule, TextBoxAllModule, RadioButtonModule, MenuAllModule, DropDownListModule, ButtonModule, TreeViewAllModule, ListViewAllModule],
     declarations: [
         DefaultSidebarComponent,
         DockSidebarComponent,

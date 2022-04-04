@@ -119,3 +119,7 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+
+.fluent-dark #control_wrapper { 
+  background: #212529;
+}

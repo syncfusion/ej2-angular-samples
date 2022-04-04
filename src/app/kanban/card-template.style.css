@@ -9,7 +9,12 @@
 .kanban-card-template .e-card .e-size {
   color: #b8860b
 }
-
+.kanban-card-template .e-card .e-kanban-date {
+  padding-right: 3px;
+}
+.kanban-card-template .e-card .e-date {
+  display: contents;
+}
 .kanban-card-template .e-card .e-mins {
   padding-left: 3px;
 }

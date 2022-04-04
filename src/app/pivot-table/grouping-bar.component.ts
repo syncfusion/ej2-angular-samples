@@ -26,16 +26,20 @@ export class GroupingBarComponent implements OnInit {
     public pivotObj: PivotView;
 
     /* tslint:disable */
-    onChange(args: any) {
-        if (args.event.target.value === 'filter') {
-            this.pivotObj.groupingBarSettings.showFilterIcon = args.checked;
-        } else if (args.event.target.value === 'sort') {
-            this.pivotObj.groupingBarSettings.showSortIcon = args.checked;
-        } else if (args.event.target.value === 'remove') {
-            this.pivotObj.groupingBarSettings.showRemoveIcon = args.checked;
-        } else {
-            this.pivotObj.groupingBarSettings.showValueTypeIcon = args.checked;
-        }
+    onFilter(args: any) {
+        this.pivotObj.groupingBarSettings.showFilterIcon = args.checked;
+    }
+
+    onSort(args: any) {
+        this.pivotObj.groupingBarSettings.showSortIcon = args.checked;
+    }
+
+    onRemove(args: any) {
+        this.pivotObj.groupingBarSettings.showRemoveIcon = args.checked;
+    }
+
+    onValueType(args: any) {
+        this.pivotObj.groupingBarSettings.showValueTypeIcon = args.checked;
     }
 
     ngOnInit(): void {

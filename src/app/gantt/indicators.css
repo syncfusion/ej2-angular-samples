@@ -16,28 +16,20 @@
     .bootstrap5-dark #Indicators .description::before {
     content: '\e7c0';
     }
-    .bootstrap5 #Indicators .okIcon::before {
+    .bootstrap5 #Indicators .okIcon::before,
+    .tailwind #Indicators .okIcon::before, .tailwind-dark #Indicators .okIcon::before,
+    .fluent #Indicators .okIcon::before, .fluent-dark #Indicators .okIcon::before {
     content: '\e72b';
     }
-    .bootstrap5 #Indicators .description::before {
+    .bootstrap5 #Indicators .description::before,
+    .tailwind #Indicators .description::before, .tailwind-dark #Indicators .description::before,
+    .fluent #Indicators .description::before, .fluent-dark #Indicators .description::before {
     content: '\e7c0';
     }
-    .fabric #Indicators .description::before, 
+    .fabric #Indicators .description::before,
     .fabric-dark #Indicators .description::before {
     content: '\e310';
     }
     .highcontrast #Indicators .description::before {
     content: '\e310';
-    }
-	.tailwind #Indicators .okIcon::before, .tailwind-dark #Indicators .okIcon::before {
-		content: '\e7b0';
-	}
-	.tailwind #Indicators .description::before, .tailwind-dark #Indicators .description::before {
-		content: '\e7b6';
-	}
-	.tailwind-dark #Indicators .okIcon::before, .tailwind-dark #Indicators .okIcon::before {
-    content: '\e7b0';
-    }
-    .tailwind-dark #Indicators .description::before, .tailwind-dark #Indicators .description::before {
-    content: '\e7b6';
     }

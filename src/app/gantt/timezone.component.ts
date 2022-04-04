@@ -9,6 +9,7 @@ export class GanttTimezoneComponent implements OnInit {
     public ganttObj: GanttComponent;
     public data: object[];
     public taskSettings: object;
+    public columns: object[];
     public timelineSettings: object;
     public timezoneValue: string = 'UTC';
     public dayWorkingTime: object[];
@@ -35,6 +36,15 @@ export class GanttTimezoneComponent implements OnInit {
             dependency: 'predecessor',
             parentID: 'parentID'
         };
+        this.columns = [
+            { field: 'taskID', width: 120 },
+            { field: 'taskName', width: 250 },
+            { field: 'startDate' },
+            { field: 'endDate' },
+            { field: 'duration' },
+            { field: 'predecessor' },
+            { field: 'progress' },
+        ];
         this.timelineSettings = {
             timelineUnitSize: 65,
             topTier: {

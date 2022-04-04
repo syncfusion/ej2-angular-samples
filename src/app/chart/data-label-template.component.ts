@@ -122,6 +122,26 @@ export class DataLabelComponent {
         '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y}M </span></div></div>';
+    public fluentMan: string = '<div style="background-color:#614570;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
+    public fluentWomen: string = '<div style="background-color:#4C6FB1;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
+    public fluentdarkMan: string = '<div style="background-color: #8AB113;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';
+    public fluentdarkWomen: string = '<div style="background-color:#2A72D5;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; fontp-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y}M </span></div></div>';    
     public data: Object[] = [
         { x: 2010, y: 1014 }, { x: 2011, y: 1040 },
         { x: 2012, y: 1065 }, { x: 2013, y: 1110 },
@@ -197,7 +217,11 @@ export class DataLabelComponent {
             args.template = args.series.name === 'Male' ? this.bootstrap5Man : this.bootstrap5Women;
         } else if (this.theme === <ChartTheme>'TailwindDark') {
             args.template = args.series.name === 'Male' ? this.tailwinddarkMan : this.tailwinddarkWomen;
-        } else if (this.theme === 'MaterialDark') {
+        } else if (this.theme === <ChartTheme>'Fluent') {
+            args.template = args.series.name === 'Male' ? this.fluentMan : this.fluentWomen;
+        } else if (this.theme === <ChartTheme>'FluentDark') {
+            args.template = args.series.name === 'Male' ? this.fluentdarkMan : this.fluentdarkWomen;
+        }else if (this.theme === 'MaterialDark') {
             args.template = args.series.name === 'Male' ? this.materialdarkMan : this.materialdarkWomen;
         } else if (this.theme === 'FabricDark') {
             args.template = args.series.name === 'Male' ? this.fabricdarkMan : this.fabricdarkWomen;

@@ -11,14 +11,7 @@ import { SidebarComponent } from '@syncfusion/ej2-angular-navigations';
 export class ResponsivePanelComponent {
     @ViewChild('sidebarTreeviewInstance')
     public sidebarTreeviewInstance: SidebarComponent;
-    public width: string = '290px';
-    mediaQuery: string = ('(min-width: 600px)');
-    target: string = '.main-content';
-       constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['responsive-panel.css'];
-    }
-    
-    public data: Object[] = [
+    public data: { [key: string]: Object }[] = [
         {
             nodeId: '01', nodeText: 'Installation', iconCss: 'icon-microchip icon',
         },
@@ -66,16 +59,17 @@ export class ResponsivePanelComponent {
             nodeId: '10', nodeText: 'License', iconCss: 'icon-doc-text icon'
         }
     ];
-    public field:Object ={ dataSource: this.data, id: 'nodeId', text: 'nodeText', child: 'nodeChild', iconCss: 'iconCss' };
 
-    // open new tab
-    newTabClick(): void {
-        let URL = location.href.replace(location.search,'');
-        document.getElementById('newTab').setAttribute('href', URL.split('#')[0] + 'sidebar/responsive-panel');
+    public width: string = '290px';
+    public target: string = '.main-sidebar-content';
+	public mediaQuery: string = '(min-width: 600px)';
+    public fields: object = { dataSource: this.data, id: 'nodeId', text: 'nodeText', child: 'nodeChild', iconCss: "iconCss" };
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['responsive-panel.css'];
     }
-
-    openClick() {
+    toolbarCliked(): void {
         this.sidebarTreeviewInstance.toggle();
     }
+    
 };
 // open new tab

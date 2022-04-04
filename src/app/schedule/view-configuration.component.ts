@@ -28,9 +28,9 @@ export class ViewConfigComponent {
   public selectedDate: Date = new Date(2021, 5, 20);
   public currentView: View = 'Month';
   public eventSettings: EventSettingsModel = { dataSource: extend([], fifaEventsData, null, true) as Record<string, any>[] };
-  public agendaTemplate: string = '<div class="subject">${Subject}</div>' +
+  public agendaTemplate: string = '<div><div class="subject">${Subject}</div>' +
     '${if(Description !== null && Description !== undefined)}<div class="group">${Description}</div>${/if}' +
-    '<div class="location">${getTimeString(data.StartTime)}${if(City !== null && City !== undefined)}, ${City}${/if}</div>';
+    '<div class="location">${getTimeString(data.StartTime)}${if(City !== null && City !== undefined)}, ${City}${/if}</div></div>';
   public showWeekend = false;
   public timeScale: TimeScaleModel = { interval: 60, slotCount: 4 };
   public group: GroupModel = { resources: ['Owners'] };

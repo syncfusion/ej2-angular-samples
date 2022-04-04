@@ -30,3 +30,13 @@
 .tailwind-dark .content-value {
     border: 1px solid rgb(150, 150, 150);
 }
+
+body.fluent-dark #selected,
+body.bootstrap5-dark #selected,
+body.tailwind-dark #selected,
+body.material-dark #selected,
+body.fabric-dark #selected,
+body.bootstrap-dark #selected,
+body.highcontrast #selected {
+    color: white;
+} 

@@ -32,7 +32,7 @@ export class GanttToolbarTemplateComponent implements OnInit {
             child: 'subtasks'
         };
         this.columns = [
-            { field: 'TaskID', width: 70 },
+            { field: 'TaskID', width: 80 },
             { field: 'TaskName', width: 250 },
             { field: 'StartDate' },
             { field: 'EndDate' },
