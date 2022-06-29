@@ -48,7 +48,7 @@ gulp sitemap-generate
 
 ### Copy source
 
-It select all the files in `src/app/` and check the indexof value of the files is `/common`. If the condition satisfies it copy the files to `src/source`. Use the below command to run this task.
+It select all the files in `src/app/` and check the indexof value of the files in `/common`. If the condition satisfies it copy the files to `src/source`. Use the below command to run this task.
 
 ```
 gulp copy-source
@@ -64,7 +64,7 @@ npm run build:prod
 
 ### Move
 
-It copy files from OpennewSamples folder to output folder and replace `(/assets)` to `(./assets` if the `./output/main-es5.js` is exist. To run this task use the below command.
+It copy files from OpennewSamples folder to output folder and replace `(/assets)` to `(./assets)` if the `./output/main-es5.js` is exist. To run this task use the below command.
 
 ```
 gulp move
@@ -207,7 +207,7 @@ export let samplesList: any = [
 
  No, In your sample level html files, you don't read css files.
 
- For example: [Refer Here](https://gitlab.syncfusion.com/essential-studio/ej2-diagram-angular-samples/blob/master/src/app/diagram/bpmn-editor.html#L1).
+ For example: [Refer Here](https://github.com/syncfusion/ej2-angular-samples/blob/master/src/app/diagram/bpmn-editor.html#L1).
 
 ### 2) How to solve below Error while compilation?
 
@@ -224,4 +224,4 @@ export let samplesList: any = [
 
 If you have used some control in your samples, you have to map component module in your control module.
 
-For Example: If You use `ejs-dropdownlist` control in your [sample](https://gitlab.syncfusion.com/essential-studio/ej2-diagram-angular-samples/blob/release/17.1.0.1/src/app/diagram/ports.html#L133), you need to import that control module in your sample level [modulefile](https://gitlab.syncfusion.com/essential-studio/ej2-diagram-angular-samples/blob/release/17.1.0.1/src/app/diagram/diagram.module.ts#L14)
+For Example: If You use `ejs-dropdownlist` control in your [sample](https://github.com/syncfusion/ej2-angular-samples/blob/master/src/app/diagram/ports.html#L133), you need to import that control module in your sample level [modulefile](https://github.com/syncfusion/ej2-angular-samples/blob/master/src/app/diagram/diagram.module.ts#L14)
