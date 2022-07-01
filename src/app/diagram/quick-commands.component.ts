@@ -65,7 +65,7 @@ export class UserHandlediagramComponent {
 
   private documentClick(args: MouseEvent): void {
     let target: HTMLElement = args.target as HTMLElement;
-    if (target.className === 'image-pattern-style') {
+    if (target.className === 'image-pattern-style' || target.className === 'image-pattern-style e-selected-style') {
       switch (target.id) {
         case 'left':
           this.diagram.selectedItems.userHandles[0].offset = 0;
@@ -88,7 +88,7 @@ export class UserHandlediagramComponent {
   }
   private documentPatternClick(args: MouseEvent): void {
     let target: HTMLElement = args.target as HTMLElement;
-    if (target.className === 'image-pattern-style') {
+    if (target.className === 'image-pattern-style' || target.className === 'image-pattern-style e-selected-style') {
       switch (target.id) {
         case 'pattern1':
           this.diagram.selectedItems.userHandles[0].backgroundColor = '#1E90FF';

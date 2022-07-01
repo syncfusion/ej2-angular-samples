@@ -1664,13 +1664,13 @@ propertye pane
 
   #settings-popup {
     right: 0px;
-    top: 0px;
+    top: 0px !important;
     border: none;
     box-shadow: none;
     width: 280px;
     height: 100%;
     position: fixed;
-    left: unset;
+    left: unset !important;
   }
 
   .property-panel-section,
@@ -2003,10 +2003,6 @@ body.highcontrast,
 
 .highcontrast .sb-body-overlay {
   background-color: #000000
-}
-
-.highcontrast #controlList li.e-list-item {
-  line-height: 45px;
 }
 
 .highcontrast a,
@@ -2687,7 +2683,7 @@ body.highcontrast,
   right: 3px;
 }
 
-.tailwind .e-samplestatus.new.tree, .tailwind .e-samplestatus.update.tree, .tailwind .e-samplestatus.preview.tree {
+.tailwind #controlTree .e-samplestatus {
     margin: 12px 0;
     height: 22px;
     margin-top: 8px;
@@ -3285,9 +3281,6 @@ body.bootstrap-dark,
 }
 .bootstrap5-dark .sb-content-tab > .e-tab.e-nested > .e-tab-header > .e-items.e-toolbar-items > .e-toolbar-item > .e-tab-wrap > .e-text-wrap > .e-tab-text{
   color:#FFFFFF;
-}
-.bootstrap .e-samplestatus.new,.bootstrap .e-samplestatus.update,.bootstrap .e-samplestatus.preview{
-  margin:11px 0;
 }
 
 .bootstrap5-dark #search-input_popup .e-list-item{
@@ -4084,4 +4077,65 @@ body.fluent-dark,
 .fluent-dark.e-bigger .sb-content-tab > .e-tab > .e-tab-header > .e-items.e-toolbar-items > .e-indicator
  {
     display: none !important;
+}
+
+.bootstrap5 #controlList .e-samplestatus, .bootstrap5-dark #controlList .e-samplestatus {
+  margin-top: 0.5px;
+}
+
+.bootstrap5 #controlTree .e-samplestatus, .bootstrap5-dark #controlTree .e-samplestatus {
+  margin-top: 6px;
+}
+
+.bootstrap5.e-bigger #controlList .e-samplestatus, .bootstrap5-dark.e-bigger #controlList .e-samplestatus {
+  margin-top: 2px;
+}
+
+.bootstrap5.e-bigger #controlTree .e-samplestatus, .bootstrap5-dark.e-bigger #controlTree .e-samplestatus,
+.highcontrast.e-bigger #controlTree .e-samplestatus, .bootstrap4.e-bigger #controlTree .e-samplestatus,
+.bootstrap.e-bigger #controlTree .e-samplestatus,.bootstrap5-dark.e-bigger #controlTree .e-samplestatus,
+.bootstrap-dark.e-bigger #controlTree .e-samplestatus, .bootstrap #controlList .e-samplestatus {
+  margin-top: 9px;
+}
+
+.fluent #controlList .e-samplestatus, .fluent-dark #controlList .e-samplestatus,
+.bootstrap4 #controlList .e-samplestatus, .bootstrap4.e-bigger #controlList .e-samplestatus {
+  margin-top: 1px;
+}
+
+.fluent.e-bigger #controlList .e-samplestatus, .fluent-dark.e-bigger #controlList .e-samplestatus {
+  margin-top: 5px;
+}
+
+.material #controlList .e-samplestatus, .material-dark #controlList .e-samplestatus,
+.fabric #controlList .e-samplestatus, .fabric-dark #controlList .e-samplestatus {
+  margin-top: 7px;
+}
+
+.material.e-bigger #controlList .e-samplestatus, .material-dark.e-bigger #controlList .e-samplestatus,
+.fabric.e-bigger #controlList .e-samplestatus, .fabric-dark.e-bigger #controlList .e-samplestatus,
+.bootstrap.e-bigger #controlList .e-samplestatus, .bootstrap-dark #controlList .e-samplestatus,
+.tailwind.e-bigger #controlTree .e-samplestatus, .tailwind-dark.e-bigger #controlTree .e-samplestatus {
+  margin-top: 13px;
+}
+
+.e-bigger .sb-control-navigation #controlSamples .e-listview .e-icon-wrapper .e-list-text {
+  width: calc(100% - 65px);
+}
+
+.bootstrap4 #controlTree .e-samplestatus, .material #controlTree .e-samplestatus,
+.material-dark #controlTree .e-samplestatus, .fabric #controlTree .e-samplestatus,
+.fabric-dark #controlTree .e-samplestatus {
+  margin-top: 4px;
+}
+
+.fluent #controlTree .e-samplestatus, .fluent-dark #controlTree .e-samplestatus,
+.material.e-bigger #controlTree .e-samplestatus, .material-dark.e-bigger #controlTree .e-samplestatus,
+.fabric.e-bigger #controlTree .e-samplestatus, .fabric-dark.e-bigger #controlTree .e-samplestatus {
+  margin-top: 8px;
+}
+
+.fluent.e-bigger #controlTree .e-samplestatus, .fluent-dark.e-bigger #controlTree .e-samplestatus,
+.highcontrast.e-bigger #controlList .e-samplestatus {
+  margin-top: 11px;
 }

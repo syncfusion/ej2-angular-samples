@@ -116,7 +116,8 @@ export class ResourcesComponent {
     const selectedResource: number[] = [];
     const resourceCollection: HTMLElement[] = [].slice.call(document.querySelectorAll('.e-resource'));
     resourceCollection.forEach((element: HTMLElement, index: number) => {
-      if (element.getAttribute('aria-checked') === 'true') {
+      let resEle: Element = element.querySelector('.e-icons');
+      if (resEle && resEle.classList.contains('e-check')) {
         selectedResource.push(index);
       }
     });

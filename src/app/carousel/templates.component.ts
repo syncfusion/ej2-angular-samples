@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { CarouselAnimationSettingsModel, CarouselComponent } from '@syncfusion/ej2-angular-navigations';
+import { CarouselAnimationEffect, CarouselComponent } from '@syncfusion/ej2-angular-navigations';
 
 @Component({
   selector: 'control-content',
@@ -11,7 +11,7 @@ export class CarouselTemplateComponent {
 
   @ViewChild('carousel') carouselObj: CarouselComponent;
 
-  public carouselAnimation: CarouselAnimationSettingsModel = { effect: 'Fade' };
+  public carouselAnimation: CarouselAnimationEffect = 'Fade';
 
   public getThumpImage(index: number): string {
     const images = ['cardinal', 'hunei', 'costa-rica', 'kaohsiung', 'bee-eater'];

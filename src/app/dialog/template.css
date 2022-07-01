@@ -155,9 +155,10 @@
 .fabric-dark .template .dialogContent .dialogText,
 .bootstrap-dark .template .dialogContent .dialogText,
 .bootstrap5-dark .template .dialogContent .dialogText,
-.tailwind-dark .template .dialogContent .dialogText
+.tailwind-dark .template .dialogContent .dialogText,
 .fluent-dark .template .dialogContent .dialogText {
-    color: #424242;
+    background-color: rgba(255,255,255,0.20);
+    color: #ffff;
 }
 
 

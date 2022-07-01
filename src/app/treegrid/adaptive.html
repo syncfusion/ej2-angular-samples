@@ -7,8 +7,8 @@
                     allowSorting='true' [editSettings]='editSettings'
                     [filterSettings]='filterSettings' [toolbar]='toolbar' (load)='onLoad($event)'>
                     <e-columns>
-                        <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='135' textAlign='Right'></e-column>
-                        <e-column field='taskName' headerText='Task Name' width='280'></e-column>
+                        <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='135' textAlign='Right' [validationRules]='taskidrules'></e-column>
+                        <e-column field='taskName' headerText='Task Name' width='280' [validationRules]='tasknamerules'></e-column>
                         <e-column field='duration' headerText='Duration' width='140' textAlign='Right'></e-column>
                         <e-column field='progress' headerText='Progress' width='145' textAlign='Right'></e-column>
                     </e-columns>
@@ -21,8 +21,8 @@
             allowSorting='true' [editSettings]='editSettings'
             [filterSettings]='filterSettings' [toolbar]='toolbar' (load)='onLoad($event)'>
             <e-columns>
-                <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='135' textAlign='Right'></e-column>
-                <e-column field='taskName' headerText='Task Name' width='280'></e-column>
+                <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='135' textAlign='Right' [validationRules]='taskidrules'></e-column>
+                <e-column field='taskName' headerText='Task Name' width='280' [validationRules]='tasknamerules'></e-column>
                 <e-column field='duration' headerText='Duration' width='140' textAlign='Right'></e-column>
                 <e-column field='progress' headerText='Progress' width='145' textAlign='Right'></e-column>
             </e-columns>

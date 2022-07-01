@@ -1,0 +1,26 @@
+<div id="action-description">
+    <p>This sample visualizes the critical path rendering in Gantt.</p>
+</div>
+
+<div class="control-section">
+    <ejs-gantt id="ganttCritical" height="430px" [dataSource]="data" [taskFields]="taskSettings" [enableCriticalPath]="true"
+        [labelSettings]="labelSettings" [columns]="columns" [treeColumnIndex]="1" height="400px" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+        [toolbar]="toolbar" [editSettings]="editSettings">
+    </ejs-gantt>
+</div>
+
+<div id="description">
+    <p>
+        In this example, you can see how to render a Gantt chart with critical path. The default timeline
+        view week-day mode is applied to Gantt chart. The dependency lines are enabled in this example to represent the
+        execution order or the hierarchy between the phases.
+    </p>
+    <p>
+        The critical path is a series of tasks (or sometimes only a single task) that controls the calculated finish date of the project. 
+        If a task in a critical path is delayed, then the entire project will be delayed.
+    </p>
+    <p>More information on the Critical Path feature can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/critical-path/">
+            documentation section</a>.
+    </p>
+</div>

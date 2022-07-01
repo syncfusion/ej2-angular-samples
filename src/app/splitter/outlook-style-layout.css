@@ -46,3 +46,20 @@
     max-width: 820px;
 }
 /* <!-- custom code end --> */
+
+.material-dark .e-listview.e-list-template .e-list-wrapper.e-list-multi-line .e-list-item-header {
+    color : #fff;
+}
+
+.material-dark .e-listview.e-list-template .e-list-wrapper.e-list-multi-line .e-list-content {
+    color : #9ca3af;
+}
+
+.material-dark .e-listview.e-list-template .e-list-item.e-hover .e-list-content {
+    color : #fff;
+}
+
+.tailwind .e-list-parent.e-ul,
+.tailwind-dark .e-list-parent.e-ul {
+    overflow : hidden;
+}

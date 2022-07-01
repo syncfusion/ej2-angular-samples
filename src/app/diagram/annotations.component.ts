@@ -124,34 +124,36 @@ export class AnnotationDiagramComponent {
     };
     private updatePosition(id: string): void {
         let target: HTMLElement = document.getElementById(id);
-        for (let i: number = 0; i < this.diagram.selectedItems.nodes.length; i++) {
-            node = this.diagram.selectedItems.nodes[i];
-            //we can refactor this code using a method
-            for (let j: number = 0; j < node.annotations.length; j++) {
-                let annotation: ShapeAnnotationModel = node.annotations[j];
-                switch (target.id) {
-                    case 'topLeft':
-                        this.setAnnotationPosition(annotation, 0, 0, 'Top', 'Left');
-                        break;
-                    case 'topRight':
-                        this.setAnnotationPosition(annotation, 1, 0, 'Top', 'Right');
-                        break;
-                    case 'bottomLeft':
-                        this.setAnnotationPosition(annotation, 0, 1, 'Bottom', 'Left');
-                        break;
-                    case 'bottomRight':
-                        this.setAnnotationPosition(annotation, 1, 1, 'Bottom', 'Right');
-                        break;
-                    case 'center':
-                        this.setAnnotationPosition(annotation, 0.5, .5, 'Center', 'Center');
-                        break;
-                    case 'bottomCenter':
-                        this.setAnnotationPosition(annotation, 0.5, 1, 'Top', 'Center');
-                        break;
+        if (target) {
+            for (let i: number = 0; i < this.diagram.selectedItems.nodes.length; i++) {
+                node = this.diagram.selectedItems.nodes[i];
+                //we can refactor this code using a method
+                for (let j: number = 0; j < node.annotations.length; j++) {
+                    let annotation: ShapeAnnotationModel = node.annotations[j];
+                    switch (target.id) {
+                        case 'topLeft':
+                            this.setAnnotationPosition(annotation, 0, 0, 'Top', 'Left');
+                            break;
+                        case 'topRight':
+                            this.setAnnotationPosition(annotation, 1, 0, 'Top', 'Right');
+                            break;
+                        case 'bottomLeft':
+                            this.setAnnotationPosition(annotation, 0, 1, 'Bottom', 'Left');
+                            break;
+                        case 'bottomRight':
+                            this.setAnnotationPosition(annotation, 1, 1, 'Bottom', 'Right');
+                            break;
+                        case 'center':
+                            this.setAnnotationPosition(annotation, 0.5, .5, 'Center', 'Center');
+                            break;
+                        case 'bottomCenter':
+                            this.setAnnotationPosition(annotation, 0.5, 1, 'Top', 'Center');
+                            break;
+                    }
+                    // custom code start
+                    target.classList.add('e-selected-style');
+                    // custom code end
                 }
-                // custom code start
-                target.classList.add('e-selected-style');
-                // custom code end
             }
         }
     }

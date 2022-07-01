@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, Highlight } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+//import { truncate } from 'fs';
 
 /**
  * Inversed Range Column Series
@@ -31,7 +32,7 @@ export class RangeColorMappingComponent {
 
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        valueType: 'Category', majorGridLines: { width: 0 }, title: 'Months'
+        valueType: 'Category', majorGridLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
@@ -39,21 +40,30 @@ export class RangeColorMappingComponent {
             majorTickLines: { width: 0 },
             minorTickLines: { width: 0 },
             labelFormat: '{value}°C',
-            title: 'Temperature'
     };
     public title: string = 'USA CLIMATE - WEATHER BY MONTH';
 
     public tooltip: Object = {
-        enable: true
+        enable: false
     };
+    public marker: Object = {
+        dataLabel: {
+            visible: true,
+            position: 'Outer',
+        }
+    }
 
-    public colors1: string[] = ['#FFFF99'];
-    public colors2: string[] = ['#FFA500'];
-    public colors3: string[] = ['#FF4040'];
+    public colors1: string[] = ['#F9D422'];
+    public colors2: string[] = ['#F28F3F'];
+    public colors3: string[] = ['#E94F53'];
 
     public legendSettings: Object = {
-        mode: 'Range'
+        mode: 'Range',
+        visible: true,
+        toggleVisibility: false,
     };
+    public highlightMode: string = 'Point';
+    public highlightPattern: string =  'DiagonalForward';
 
     public animation: Object = {
         enable: false
@@ -74,7 +84,7 @@ export class RangeColorMappingComponent {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '80%';
 
     constructor() {
         //code

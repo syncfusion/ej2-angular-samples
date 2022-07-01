@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
 import { ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
-import { TreeGridComponent , EditService , ToolbarService , PageService } from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent , EditService , ToolbarService , PageService, RowDDService } from '@syncfusion/ej2-angular-treegrid';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'inlineediting.html',
-    providers: [EditService , ToolbarService , PageService]
+    providers: [EditService , ToolbarService , PageService, RowDDService]
 })
 export class InlineEditing implements OnInit {
     public data: Object[] = [];
@@ -25,7 +25,7 @@ export class InlineEditing implements OnInit {
     ngOnInit(): void {
         this.data = sampleData;
         this.editSettings ={ allowEditing: true, allowAdding: true, allowDeleting: true, mode:"Cell"}; 
-        this.toolbar = ['Add', 'Delete', 'Update', 'Cancel'];
+        this.toolbar = ['Add', 'Delete', 'Update', 'Cancel','Indent', 'Outdent'];
         this.taskidrules = { required: true , number: true};
         this.tasknamerules = { required: true};
         this.startdaterules = { date: true};
@@ -37,10 +37,10 @@ export class InlineEditing implements OnInit {
     public onChange(e: ChangeEventArgs): void {
         if (e.value === 'CellEditing') {
             this.treegrid.editSettings.mode = 'Cell';
-            this.treegrid.toolbar = ['Add', 'Delete', 'Update', 'Cancel'];
+            this.treegrid.toolbar = ['Add', 'Delete', 'Update', 'Cancel','Indent', 'Outdent'];
         } else {
             this.treegrid.editSettings.mode = 'Row';
-            this.treegrid.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
+            this.treegrid.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel','Indent', 'Outdent'];
         }
     }
 

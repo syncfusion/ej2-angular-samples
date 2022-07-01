@@ -2,13 +2,9 @@
   overflow: hidden;
   border: none;
 }
-.online-editor .e-splitter .CodeMirror {
-  height: 415px;
-}
-.online-editor .CodeMirror-gutters, .CodeMirror-linenumber {
-  display: block;
-  width: 29px;
-}
+.online-editor .CodeMirror .cm-s-default .CodeMirror-wrap {
+    height: 415px;
+  }
 .online-editor.heading {
   float: left;
   width: 100%;
@@ -23,7 +19,9 @@
   color: #333333;
   letter-spacing: 1px;
   padding-left: 10px;
-  text-align: center;
+}
+.online-editor .title-head {
+  text-align: center
 }
 
 .online-editor .e-control.e-splitter .e-split-bar.e-split-bar-horizontal.e-last-bar {
@@ -67,6 +65,9 @@
   padding-right: 0px; 
   padding-left: 0px;
 }
+.e-splitter.e-splitter-horizontal, .e-splitter.e-splitter-vertical {
+border-left: none;
+}
 .ej2-new  .control-section {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -91,61 +92,40 @@
 {
   padding:0px;
 }
-.online-editor .e-splitter.e-splitter-horizontal .e-pane.e-pane-horizontal {
+.online-editor .e-splitter.e-splitter-horizontal .e-pane.e-pane-horizontal, .e-splitter.e-splitter-vertical .e-pane.e-pane-horizontal {
   min-width: 400px !important;
 }
 .sb-content-section .sb-content-tab-header {
   border-right: 1px solid #D7D7D7;
 }
-.online-editor .CodeMirror-sizer {
-    margin-left: 30px;
-    margin-bottom: -17px;
-    border-right-width: 13px;
-    min-height: 208px;
-    padding-right: 0px;
-    padding-bottom: 0px;
+.online-editor .e-richtexteditor.e-rte-tb-expand {
+   border: none;
 }
-.online-editor .CodeMirror-gutter-wrapper{
-    left: -45px !important;
-    width: 30px
+.fabric-dark .CodeMirror-gutters,
+.bootstrap5-dark .CodeMirror-gutters,
+.fluent-dark .CodeMirror-gutters,
+.bootstrap-dark .CodeMirror-gutters,
+.material-dark .CodeMirror-gutters,
+.tailwind-dark .CodeMirror-gutters,
+.highcontrast .CodeMirror-gutters {
+  background-color: #303030;
 }
-    .fabric-dark .cm-s-default .cm-tag,
-    .bootstrap5-dark .cm-s-default .cm-tag,
-    .bootstrap-dark .cm-s-default .cm-tag,
-    .fluent-dark .cm-s-default .cm-tag,
-    .material-dark .cm-s-default .cm-tag,
-    .tailwind-dark .cm-s-default .cm-tag,
-    .highcontrast .cm-s-default .cm-tag {
-        color: #00ff00;
-    }
-    .fabric-dark .title,
-    .bootstrap5-dark .title,
-    .bootstrap-dark .title,
-    .fluent-dark .title,
-    .material-dark .title,
-    .tailwind-dark .title,
-    .highcontrast .title{
-        color: #fff;
-    }
-    .fabric-dark .CodeMirror,
-    .bootstrap5-dark .CodeMirror,
-    .fluent-dark .CodeMirror,
-    .bootstrap-dark .CodeMirror,
-    .material-dark .CodeMirror,
-    .tailwind-dark .CodeMirror {
-        background-color: #303030;
-        color: #fff;
-    }
-    .highcontrast .CodeMirror {
-        background: black;
-        color:#fff;
-    }
-    .fabric-dark .CodeMirror-gutters,
-    .bootstrap5-dark .CodeMirror-gutters,
-    .fluent-dark .CodeMirror-gutters,
-    .bootstrap-dark .CodeMirror-gutters,
-    .material-dark .CodeMirror-gutters,
-    .tailwind-dark .CodeMirror-gutters,
-    .highcontrast .CodeMirror-gutters {
-        background-color: #303030;
-    }
+.fabric-dark .CodeMirror,
+.bootstrap5-dark .CodeMirror,
+.fluent-dark .CodeMirror, 
+.bootstrap-dark .CodeMirror, 
+.material-dark .CodeMirror, 
+.tailwind-dark .CodeMirror,
+.highcontrast .CodeMirror {
+  background-color: #303030;
+  color: #fff;
+}
+.fabric-dark .title,
+.bootstrap5-dark .title, 
+.bootstrap-dark .title, 
+.fluent-dark .title, 
+.material-dark .title, 
+.tailwind-dark .title, 
+.highcontrast .title {
+  color: #fff;
+}

@@ -17,3 +17,8 @@
 .pivot-table-property-section .e-multiselect {
     padding: 0;
 }
+
+.e-bigger .e-multi-select-wrapper .e-delim-values {
+    padding-left: 8px !important;
+    padding-right: 0px !important;
+}

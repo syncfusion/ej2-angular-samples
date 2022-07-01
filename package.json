@@ -1,6 +1,6 @@
 {
   "name": "ej2-angular-samples",
-  "version": "20.1.47",
+  "version": "20.2.36",
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.0.0",
@@ -96,7 +96,6 @@
     "markdown-it": "^8.4.0",
     "marked": "^0.3.19",
     "moment-timezone": "^0.5.14",
-    "primeng": "^10.0.0",
     "require-dir": "^0.3.2",
     "requirejs": "^2.2.0",
     "rimraf": "^2.6.1",

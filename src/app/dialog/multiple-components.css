@@ -98,7 +98,13 @@ top:0%! important;
     padding: 10px;
     font-size: 16px;
     font-weight: 500;
-    color: rgba(0, 0, 0, 0.70);
+}
+
+.bootstrap5-dark rect#chartcontainer_ChartBorder,
+.tailwind-dark rect#chartcontainer_ChartBorder,
+.bootstrap-dark rect#chartcontainer_ChartBorder,
+.fabric-dark rect#chartcontainer_ChartBorder {
+    fill: #000000;
 }
 
 .e-error,

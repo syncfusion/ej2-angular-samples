@@ -4,7 +4,7 @@
 </div>
 <div class="control-section">
     <ejs-richtexteditor #toolsRTE id='alltoolRTE' [toolbarSettings]='tools' [showCharCount]='true'
-        [maxLength]='maxLength' [fileManagerSettings]='fileManagerSettings' [quickToolbarSettings]='quickToolbarSettings'
+        [fileManagerSettings]='fileManagerSettings' [quickToolbarSettings]='quickToolbarSettings'
         (actionBegin)='handleFullScreen($event)' (actionComplete)='actionCompleteHandler($event)'>
         <ng-template #valueTemplate>
             <p>The Rich Text Editor is WYSIWYG ("what you see is what you get") editor useful to create and edit
@@ -14,7 +14,8 @@
             <p><b>Toolbar</b></p>
             <ol>
                 <li>
-                    <p>The Toolbar contains commands to align the text, insert a link, insert an image, insert list, undo/redo operations, HTML view, etc </p>
+                    <p>The Toolbar contains commands to align the text, insert a link, insert an image, insert list,
+                        undo/redo operations, HTML view, etc </p>
                 </li>
                 <li>
                     <p>The Toolbar is fully customizable </p>
@@ -71,10 +72,12 @@
             snippet</li>
         <li><code>Styles</code> – Allows you to apply inline styles to the selected content like bold, italic, and more.
         </li>
-        <li><code>Insert Code</code> - Allows you to apply code format to the selected parent nodes. In the above sample, the style for the code format ('pre' tag) is applied by adding the background color.</li>
+        <li><code>Insert Code</code> - Allows you to apply code format to the selected parent nodes. In the above
+            sample, the style for the code format ('pre' tag) is applied by adding the background color.</li>
     </ul>
     <p><b>Injecting Module</b></p>
-    <p>Rich Text Editor features are segregated into individual feature-wise modules. In this demo we have used following
+    <p>Rich Text Editor features are segregated into individual feature-wise modules. In this demo we have used
+        following
         injectable services <code>ToolbarService, LinkService, ImageService, HtmlEditorService, TableService</code> into
         the <code>@NgModule.providers section</code>.</p>
 </div>

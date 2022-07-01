@@ -4,8 +4,8 @@
   margin-left: auto;
 }
 .kanban-transition .e-card-kanban-image img {
-  height: 100%;
-  width: 100%;
+  height: inherit;
+  width: inherit;
   border-radius: 50%;
 }
 .kanban-transition .e-card .e-card-tag-field {

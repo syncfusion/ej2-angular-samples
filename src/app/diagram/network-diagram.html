@@ -133,7 +133,7 @@
             <div id="palette-icon" style="float: right;" role="button"  class="e-ddb-icons1 e-toggle-palette"></div>
         </div>
         <div id="palette-space"  class="sb-mobile-palette">
-            <ejs-symbolpalette id="symbolpalette"  [expandMode]='expandMode' [palettes]='palettes' width="100%" height="calc(100% - 50px)" [symbolHeight]=48 [symbolWidth]=48 [getSymbolInfo]='getSymbolInfo' [getNodeDefaults]='getSymbolDefaults'>
+            <ejs-symbolpalette #symbolpalette id="symbolpalette"  [expandMode]='expandMode' [palettes]='palettes' width="100%" height="calc(100% - 50px)" [symbolHeight]=48 [symbolWidth]=48 [getSymbolInfo]='getSymbolInfo' [getNodeDefaults]='getSymbolDefaults'>
             </ejs-symbolpalette>
             <div id='dropArea'>
                 <button ejs-button id="browse" [isPrimary]="true">IMPORT SVG FILES</button>

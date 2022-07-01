@@ -36,6 +36,7 @@ import { MapsProgrammaticZoomComponent } from './programmatic-zoom.component';
 import { MapsSalesMapComponent } from './sales-map.component';
 import { MapsOsmWithNavigationComponent} from './osm-with-navigation-lines.component';
 import { MapsOsmWithSublayerComponent} from './osm-with-sublayers.component';
+import { MapsOsmWithLegendComponent} from './osm-with-legend.component';
 import { MapsWithSliderComponent } from './map-with-slider.component';
 import { MapsCyberAttackComponent} from './cyber-attack-map.component';
 import { SliderModule, TextBoxModule } from '@syncfusion/ej2-angular-inputs';
@@ -59,6 +60,7 @@ export const mapAppRoutes: Object[] = [
     { path: ':theme/maps/osm', component: MapsOsmComponent, name: 'OpenStreetMap', order: '03', category: 'Map Providers',  description: 'This demo for Essential JS2 Maps control depicts the osm sample.' },
     { path: ':theme/maps/osm-with-navigation-lines', component: MapsOsmWithNavigationComponent, name: 'OSM with Navigation Lines',  order: '03', category: 'Map Providers', description: 'This demo for Essential JS2 Maps control depicts the flight route from Los Angeles to Mexico City using navigation lines in the OpenStreetMap..' },
     { path: ':theme/maps/osm-with-sublayers', component: MapsOsmWithSublayerComponent, name: 'OSM with Sublayer', order: '03', category: 'Map Providers', description: 'This demo for Essential JS2 Maps control depicts the flight route from Los Angeles to Mexico City using navigation lines in the OpenStreetMap.' },
+    { path: ':theme/maps/osm-with-legend', component: MapsOsmWithLegendComponent, type: 'new', name: 'OSM with Legend', order: '03', category: 'Map Providers', description: 'This demo for Essential JS2 Maps control depicts the markers and legend in the OpenStreetMap.' },
     { path: ':theme/maps/tooltip', component: MapsTooltipComponent, name: "Tooltip", order: "04", category: "User Interaction", description: 'This demo for Essential JS2 Maps control depicts the countries that were appeared in the finals of Cricket World Cup and their counts.' },
     { path: ':theme/maps/selection', component: MapsSelectionComponent, name: "Selection & Highlight", order: "04", category: "User Interaction", description: 'This demo for Essential JS2 Maps control visualizes USA president election results in the year 2016. Default and interactive are the two types of legend.' },
     { path: ':theme/maps/zooming', component: MapsZoomingComponent, name: "Zooming & Panning", order: "04", category: "User Interaction", description: 'This demo for Essential JS2 Maps control depicts the properties required to zoom and pan the rendered map.' },
@@ -93,7 +95,7 @@ let declarations: Type<Object>[] = [
     MapsPieComponent,
     MapsPrintComponent,
     MapsExportComponent, ColorMappingComponent, MapsWithSliderComponent,
-    MapsOsmComponent, MapsOsmWithNavigationComponent,MapsOsmWithSublayerComponent,
+    MapsOsmComponent, MapsOsmWithNavigationComponent,MapsOsmWithSublayerComponent, MapsOsmWithLegendComponent,
     MapsTooltipComponent, MapsSeatSelectionComponent, MapsZoomingComponent,MapsDynamicMarkerComponent,
     MapsSelectionComponent, MapsHighlightComponent, MapsCyberAttackComponent, MapsNavigationLineComponent
 

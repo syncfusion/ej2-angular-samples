@@ -42,7 +42,7 @@ export class OnlineHtmlEditorComponent {
     }
 
     public updateHtmlValue(): void {
-        this.rteObj.value = this.myCodeMirror.getValue();
+        this.textArea.innerHTML = this.myCodeMirror.getValue();
     }
 
     public renderCodeMirror(mirrorView: HTMLElement, content: string): void {
@@ -68,9 +68,6 @@ export class OnlineHtmlEditorComponent {
 
     public onChange(): void {
         this.updateValue();
-    }
-    public onResizing():void{
-        this.rteObj.refreshUI();
     }
 
     public updateValue(): void {

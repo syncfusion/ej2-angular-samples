@@ -107,7 +107,9 @@ export class DialogMultipleComponent implements AfterViewInit {
     this.initialPage = { pageSizes: true, pageSize: 5 };
   }
   public rteCreated(): void {
-    this.Rte.refreshUI();
+    setTimeout(() => {
+      this.Rte.refreshUI();
+    }, 0);
   }
   public tabSelected(e: SelectEventArgs): void {
     if (e.selectedIndex === 4 && this.isRender) {

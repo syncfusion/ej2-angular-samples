@@ -106,7 +106,7 @@ export let Locale: Object = {
         "spreadsheet": {
             "Cut": "Schneiden",
             "Copy": "Kopieren",
-            "Paste": "Paste",
+            "Paste": "Einfugen",
             "PasteSpecial": "paste spezial",
             "All": "Alles",
             "Values": "Werte",
@@ -4353,7 +4353,7 @@ export let Locale: Object = {
             "Bar": "酒吧",
             "Area": "区域",
             "Pie": "馅饼",
-            "Doughnut": "Doughnut",
+            "Doughnut": "甜甜圈",
             "PieAndDoughnut": "派/甜甜圈",
             "Line": "线",
             "Radar": "雷达",

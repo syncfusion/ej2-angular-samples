@@ -51,7 +51,6 @@ export class FullFeatureComponent {
         table: ['TableHeader', 'TableRows', 'TableColumns', 'TableCell', '-', 'BackgroundColor', 'TableRemove', 'TableCellVerticalAlign', 'Styles']
     };
 
-    public maxLength = 1000;
     public textArea: HTMLElement;
     public myCodeMirror: any;
 

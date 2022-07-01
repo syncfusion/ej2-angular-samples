@@ -331,6 +331,9 @@ export class PortDiagramComponent {
         }
       } else if (propertyName === 'shape') {
         port.shape = propertyValue as PortShapes;
+        if(port.shape === 'Custom') {
+          port.pathData = 'M6.805,0L13.61,10.703L0,10.703z';
+        }
       }
       this.diagram.dataBind();
     }

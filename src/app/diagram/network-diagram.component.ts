@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
-    DiagramComponent, NodeModel, ConnectorModel, PointPortModel,  PaletteModel,
+    DiagramComponent, NodeModel, ConnectorModel, PointPortModel, PaletteModel,
     SymbolInfo, SnapSettingsModel, SnapConstraints, PortVisibility, Native, SymbolPaletteComponent, PointModel, DecoratorModel, StrokeStyleModel
 } from '@syncfusion/ej2-angular-diagrams';
 import { AsyncSettingsModel, RemovingEventArgs } from '@syncfusion/ej2-inputs';
@@ -292,7 +292,9 @@ export class NetworkShapesDiagramComponent {
 
     @ViewChild('diagram')
     public diagram: DiagramComponent;
+    @ViewChild('symbolpalette')
     public palete: SymbolPaletteComponent;
+    @ViewChild('templateupload')
     public uploadObj: UploaderComponent;
     public button: ButtonComponent;
     public create(args: Object): void {
@@ -327,47 +329,47 @@ export class NetworkShapesDiagramComponent {
         if (node.shape.type === 'Native') {
             if (node.id === 'Server1') {
                 node.width = 50;
-                node.height = 65; 
+                node.height = 65;
             } else if (
                 node.id === 'WorkStation1' || node.id === 'WorkStation2' ||
                 node.id === 'WorkStation3' || node.id === 'WorkStation4'
             ) {
                 node.width = 60;
-                node.height = 40; 
+                node.height = 40;
             } else if (
                 node.id === 'RemoteController1' || node.id === 'RemoteController2' ||
                 node.id === 'RemoteController3'
             ) {
                 node.width = 25;
-                node.height = 50; 
+                node.height = 50;
             } else if (
-                node.id === 'modem1' || node.id === 'modem2'|| node.id === 'modem3' ||
-                node.id === 'modem4'|| node.id === 'modem5' || node.id === 'sensor'
+                node.id === 'modem1' || node.id === 'modem2' || node.id === 'modem3' ||
+                node.id === 'modem4' || node.id === 'modem5' || node.id === 'sensor'
             ) {
                 node.width = 40;
-                node.height = 30; 
+                node.height = 30;
             } else if (
                 node.id === 'DeviceDriver1' || node.id === 'DeviceDriver2' ||
                 node.id === 'DeviceDriver3'
             ) {
                 node.width = 30;
-                node.height = 33; 
+                node.height = 33;
             } else if (node.id === 'AnalogIO' || node.id === 'HMI') {
                 node.width = 40;
-                node.height = 50; 
+                node.height = 50;
             }
             (node.shape as Native).scale = 'Stretch';
         }
         if (node.shape.type === 'Text') {
             node.width = 127;
             node.height = 40;
-            node.style = { bold: true, fontSize: 16};
+            node.style = { bold: true, fontSize: 16 };
         }
         if (
             node.id === 'connector1' || node.id === 'connector2' || node.id === 'connector3' ||
             node.id === 'connector4' || node.id === 'connector5' || node.id === 'connector6'
         ) {
-            if ( node.id !== 'connector2' && node.id !== 'connector6') {
+            if (node.id !== 'connector2' && node.id !== 'connector6') {
                 node.rotateAngle = 270;
             }
             node.width = 50;
@@ -377,7 +379,7 @@ export class NetworkShapesDiagramComponent {
         }
         return node;
     }
-    
+
     public getConnectorDefaults(connector: ConnectorModel): ConnectorModel {
         connector.targetDecorator = { shape: 'Arrow', width: 8, height: 8, style: { fill: '#5C90DF', strokeColor: '#5C90DF' } };
         connector.style.strokeColor = '#5C90DF';
@@ -390,7 +392,7 @@ export class NetworkShapesDiagramComponent {
 
     //SymbolPalette Properties
     public expandMode: ExpandMode = 'Multiple';
-    
+
 
     private symbols: NodeModel[] = [
         //add the flow shapes to the symbol palette
@@ -416,7 +418,7 @@ export class NetworkShapesDiagramComponent {
 
     private sourcePoint: PointModel = { x: 0, y: 0 };
     private targetPoint: PointModel = { x: 40, y: 40 };
-    private targetDecorator: DecoratorModel = { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} };
+    private targetDecorator: DecoratorModel = { shape: 'Arrow', style: { strokeColor: '#757575', fill: '#757575' } };
     private style: StrokeStyleModel = { strokeWidth: 2, strokeColor: '#757575' };
 
     private connectorSymbols: ConnectorModel[] = [
@@ -467,8 +469,8 @@ export class NetworkShapesDiagramComponent {
     public id: number = 0;
 
     public onUploadSuccess(arg: any): void {
-        let file1: any  = arg.file;
-        let file: any  = file1.rawFile;
+        let file1: any = arg.file;
+        let file: any = file1.rawFile;
         let reader: FileReader = new FileReader();
         reader.addEventListener('load', (event: any): void => {
             let shape: NodeModel;

@@ -83,7 +83,9 @@ export class TemplateQueryBuilderComponent {
                 // Initialize tooltip with placement and showOn
                 tooltip: { isVisible: true, placement: 'Before', showOn: 'Hover' },
                 change: (e: any) => {
-                    this.qryBldrObj.notifyChange(e.value, args.elements);
+                    if (e.isInteracted) {
+                        this.qryBldrObj.notifyChange(e.value, args.elements);
+                    }
                 }
             });
             ticksSlider.appendTo('#' + args.elements.id);

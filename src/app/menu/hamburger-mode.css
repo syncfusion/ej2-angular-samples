@@ -33,6 +33,14 @@
     background-image: linear-gradient(to top, #ffffff, #f5f5f5);
 }
 
+.fluent-dark .e-menu-wrapper.e-hamburger.e-lib.e-keyboard {
+    background-color: black;
+}
+
+.fluent-dark .e-menu-wrapper.e-lib.e-keyboard {
+    background-color: black;
+}
+
 .deviceLayout.tabletview {
     width: 767px;
     z-index: 1;

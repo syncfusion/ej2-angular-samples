@@ -13,7 +13,7 @@
     <div class="col-xs-12 control-section" style="float:left;">
         <div class="content-wrapper">
             <ejs-diagram #diagram id="diagram" width="100%" height="700px" [nodes]="nodes" [connectors]="connectors" [snapSettings]="snapSettings"
-                [tool]="tool" (created)="diagramCreate($event)" (getConnectorDefaults)="getConnectorDefaults($event)">
+                [tool]="tool" (created)="diagramCreate($event)" [getConnectorDefaults]="getConnectorDefaults">
             </ejs-diagram>
         </div>
     </div>

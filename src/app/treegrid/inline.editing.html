@@ -4,7 +4,7 @@
         <ejs-dropdownlist id='ddlelement' [dataSource]='d1data' width='150' [fields]='ddlfields' value='CellEditing' placeholder = 'Edit Mode' (change)="onChange($event)"></ejs-dropdownlist>
        </div>
       </div>
-        <ejs-treegrid #treegrid [dataSource]='data' height='350' childMapping='subtasks' [treeColumnIndex]='1'   [editSettings]='editSettings' [toolbar]='toolbar'>
+        <ejs-treegrid #treegrid [dataSource]='data' height='350' [selectedRowIndex]=2 childMapping='subtasks' [treeColumnIndex]='1'   [editSettings]='editSettings' [toolbar]='toolbar'>
             <e-columns>
                     <e-column field='taskID' headerText='Task ID' width='70' isPrimaryKey='true' textAlign='Right' [edit]='numericParams'  [validationRules]='taskidrules'></e-column>
                     <e-column field='taskName' headerText='Task Name' width='200' [validationRules]='tasknamerules' editType='stringedit'></e-column>
@@ -23,6 +23,8 @@
                 <li>Edit - To edit record, double click a row or click toolbar Edit button after selected a row</li>
                 <li>Delete - To delete record, click toolbar Delete button after selected a row</li>
                 <li>Update,Cancel - You can save or discard changes by click toolbar Update and Cancel button respectively </li>
+                <li>Indent - Indents the record to one level of hierarchy.</li>
+                <li>Outdent - Outdent the record to one level of hierarchy.</li>
             </ul>
        
         <p>
@@ -51,7 +53,8 @@
         <p>Injecting Module:</p>
 
     <p>Tree Grid component features are segregated into individual feature-wise modules. To use exporting feature, we need to inject <code>EditService</code> into the <code>@NgModule.providers</code> section.</p> 
-  
+    <p> To use indent and outdent feature, we need to inject row re-ordering module
+      <code>RowDD</code> into the <code>@NgModule.providers</code> section.</p>
     <p>
         More information on the Tree Grid instantiation can be found in this
         documentation section.

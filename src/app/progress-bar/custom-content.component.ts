@@ -41,9 +41,9 @@ export class ProgressBarCustomComponent {
             // tslint:disable-next-line:max-line-length
             args.progressBar.annotations[0].content = '<div id="point1" class="plabeltxt" style="color: ' + this.annotationColors[selectedTheme.replace(/-/i, '')] + ';font-size:25px "><span>80%</span></div>';
         } else if (args.progressBar.element.id === 'download-container') {
-            args.progressBar.annotations[0].content = '<img src="./assets/progressbar/' + selectedTheme.replace(/-/i, '') + '-Download.svg"></img>';
+            args.progressBar.annotations[0].content = '<img src="./assets/progress-bar/images/' + selectedTheme.replace(/-/i, '') + '-Download.svg"></img>';
         } else {
-            args.progressBar.annotations[0].content = '<img src="./assets/progressbar/' + selectedTheme.replace(/-/i, '') + '-pause.svg"></img>';
+            args.progressBar.annotations[0].content = '<img src="./assets/progress-bar/images/' + selectedTheme.replace(/-/i, '') + '-pause.svg"></img>';
         }
     }
     public type1: string = 'Circular';
@@ -79,7 +79,7 @@ export class ProgressBarCustomComponent {
         this.clearTimeout1 = window.setTimeout(
             () => {
                 //tslint:disable-next-line
-                this.pausePlay.annotations[0].content = '<img src="./assets/progressbar/' + (this.pausePlay.theme).toLowerCase() + '-Play.svg"></img>';
+                this.pausePlay.annotations[0].content = '<img src="./assets/progress-bar/images/' + (this.pausePlay.theme).toLowerCase() + '-Play.svg"></img>';
                 this.pausePlay.dataBind();
             },
             2000
@@ -90,7 +90,7 @@ export class ProgressBarCustomComponent {
         this.clearTimeout2 = window.setTimeout(
             () => {
                 //tslint:disable-next-line
-                this.downloadProgress.annotations[0].content = '<img src="./assets/progressbar/' + (this.downloadProgress.theme).toLowerCase() + '-Tick.svg"></img>';
+                this.downloadProgress.annotations[0].content = '<img src="./assets/progress-bar/images/' + (this.downloadProgress.theme).toLowerCase() + '-Tick.svg"></img>';
                 this.downloadProgress.dataBind();
             },
             2000

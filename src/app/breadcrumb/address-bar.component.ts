@@ -229,5 +229,6 @@ export class AddressBarController {
     // To refresh Breadcrumb control state when reset button clicked
     public btnClick() {
         this.breadcrumbObj.items = this.initialBreadcrumbItems;
+        this.breadcrumbItems = this.initialBreadcrumbItems;
     }
 }

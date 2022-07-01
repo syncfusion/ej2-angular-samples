@@ -32,11 +32,27 @@
 .codeViewContent {
     padding-left: 16px;
 }
-.control-section.enter-key .e-popup.e-popup-open.e-dialog {
-    height: 387px !important;
+.bootstrap-dark .CodeMirror-scroll, .bootstrap5-dark .CodeMirror-scroll, .fluent-dark .CodeMirror-scroll, .fabric-dark .CodeMirror-scroll, .material-dark .CodeMirror-scroll, .tailwind-dark .CodeMirror-scroll, .highcontrast .CodeMirror-scroll{
+    color: #fff;
 }
-.control-section.enter-key .e-dialog .e-dlg-content {
-    overflow: inherit;
-    overflow-x: inherit;
+.bootstrap-dark .CodeMirror-scroll{
+   background-color: #1b1b1b;
 }
-  
+.bootstrap5-dark .CodeMirror-scroll{
+   background-color: #212529;
+}
+.fluent-dark .CodeMirror-scroll{
+   background-color: #1b1a19;
+}
+.fabric-dark .CodeMirror-scroll{
+   background-color: #242424;
+}
+.material-dark .CodeMirror-scroll{
+   background-color: #383838;
+}
+.tailwind-dark .CodeMirror-scroll{
+   background-color:#1f2937;
+}
+.highcontrast .CodeMirror-scroll{
+   background-color:#000000;
+}

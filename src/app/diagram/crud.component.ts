@@ -9,6 +9,7 @@ import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
 import { DialogComponent } from '@syncfusion/ej2-angular-popups';
 import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
 import { TextBox } from '@syncfusion/ej2-inputs';
+import { Ajax } from '@syncfusion/ej2-base';
 
 Diagram.Inject(DataBinding, HierarchicalTree);
 /**
@@ -267,6 +268,13 @@ export class CRUDDiagramComponent {
                     this.targetDropDown.dataSource = this.getDataSource();
                     this.targetDropDown.dataBind();
             }
+        }
+        switch (args.item.tooltipText) {
+            case 'Reset':
+                let callback = new Ajax("https://js.syncfusion.com/demos/ejServices/api/Diagram/ResetData", 'POST');
+                callback.send().then();
+                this.diagram.refreshDiagram();
+                this.diagram.refresh();
         }
     }
 

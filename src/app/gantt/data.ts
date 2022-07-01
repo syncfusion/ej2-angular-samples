@@ -21,7 +21,7 @@ export let projectNewData: Object[] = [
         TaskID: 5, TaskName: 'Concept approval', StartDate: new Date('04/02/2019'), Duration: 0, Predecessor: '3,4',
         Indicators: [
             {
-                'date': '04/10/2019',
+                'date': new Date('04/10/2019'),
                 'name': 'Design Phase',
                 'tooltip': 'Design phase completed',
                 'iconClass': 'okIcon e-icons'
@@ -56,7 +56,7 @@ export let projectNewData: Object[] = [
                 TaskID: 12, TaskName: 'Research complete', StartDate: new Date('04/04/2019'), Duration: 0, Predecessor: '10',
                 Indicators: [
                     {
-                        'date': '04/20/2019',
+                        'date': new Date('04/20/2019'),
                         'name': 'Research completed',
                         'tooltip': 'Research completed',
                         'iconClass': 'description e-icons'
@@ -122,7 +122,7 @@ export let projectNewData: Object[] = [
     { TaskID: 28, TaskName: 'Prototype testing', StartDate: new Date('04/04/2019'), Duration: 4, Progress: 30, Predecessor: '27' },
     { TaskID: 29, TaskName: 'Include feedback', StartDate: new Date('04/04/2019'), Duration: 4, Predecessor: '28ss',  Indicators: [
         {
-            'date': '05/24/2019',
+            'date': new Date('05/24/2019'),
             'name': 'Production phase',
             'tooltip': 'Production phase completed',
             'iconClass': 'okIcon e-icons'
@@ -161,7 +161,7 @@ export let projectNewData: Object[] = [
                 Duration: 4, Progress: 30, Predecessor: '36ss',
                 Indicators: [
                     {
-                        'date': '06/21/2019',
+                        'date': new Date('06/21/2019'),
                         'name': 'Sales and marketing',
                         'tooltip': 'Sales and marketing',
                         'iconClass': 'description e-icons'
@@ -204,7 +204,7 @@ export let WorkingTimeRangeData: Object[] = [
         TaskID: 5, TaskName: 'Concept approval', StartDate: new Date('04/02/2019'), Duration: 0, Predecessor: '3,4',
         Indicators: [
             {
-                'date': '04/10/2019',
+                'date': new Date('04/10/2019'),
                 'name': '#briefing',
                 'title': 'Product concept breifing',
             }
@@ -238,7 +238,7 @@ export let WorkingTimeRangeData: Object[] = [
                 TaskID: 12, TaskName: 'Research complete', StartDate: new Date('04/04/2019'), Duration: 0, Predecessor: '10',
                 Indicators: [
                     {
-                        'date': '04/20/2019',
+                        'date': new Date('04/20/2019'),
                         'name': '#meeting',
                         'title': '1st board of directors meeting',
                     }
@@ -303,7 +303,7 @@ export let WorkingTimeRangeData: Object[] = [
     { TaskID: 28, TaskName: 'Prototype testing', StartDate: new Date('04/04/2019'), Duration: 4, Progress: 30, Predecessor: '27' },
     { TaskID: 29, TaskName: 'Include feedback', StartDate: new Date('04/04/2019'), Duration: 4, Predecessor: '28ss',  Indicators: [
         {
-            'date': '05/24/2019',
+            'date': new Date('05/24/2019'),
             'name': 'Production phase',
             'tooltip': 'Production phase completed',
             'iconClass': 'okIcon e-icons'
@@ -414,7 +414,7 @@ export let zoomingData: Object[] = [
         TaskID: 5, TaskName: 'Concept approval', StartDate: new Date('04/02/2019'), Duration: 0, Predecessor: '3,4',
         Indicators: [
             {
-                'date': '04/10/2019',
+                'date': new Date('04/10/2019'),
                 'name': '#briefing',
                 'title': 'Product concept breifing',
             }
@@ -448,7 +448,7 @@ export let zoomingData: Object[] = [
                 TaskID: 12, TaskName: 'Research complete', StartDate: new Date('04/04/2019'), Duration: 1, Predecessor: '10',
                 Indicators: [
                     {
-                        'date': '04/20/2019',
+                        'date': new Date('04/20/2019'),
                         'name': '#meeting',
                         'title': '1st board of directors meeting',
                     }

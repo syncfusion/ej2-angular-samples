@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { CarouselAnimationSettingsModel, CarouselButtonVisibility } from '@syncfusion/ej2-angular-navigations';
+import { CarouselAnimationEffect, CarouselButtonVisibility } from '@syncfusion/ej2-angular-navigations';
 
 @Component({
   selector: 'control-content',
@@ -9,7 +9,7 @@ import { CarouselAnimationSettingsModel, CarouselButtonVisibility } from '@syncf
 })
 export class CarouselDataBindingComponent {
 
-  public carouselAnimation: CarouselAnimationSettingsModel = { effect: 'Fade' };
+  public carouselAnimation: CarouselAnimationEffect = 'Fade';
 
   public productDetails: Record<string, string | number>[] = [
     {

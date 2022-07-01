@@ -108,6 +108,26 @@
 .kanban-overview.e-kanban.e-rtl .e-kanban .e-kanban-content .e-content-row .e-content-cells .e-card-wrapper .e-card {
   border-left: none;
 }
+.fluent-dark .kanban-overview.e-kanban .e-card .e-card-tag-field ,
+.bootstrap5-dark .kanban-overview.e-kanban .e-card .e-card-tag-field ,
+.tailwind-dark .kanban-overview.e-kanban .e-card .e-card-tag-field ,
+.material-dark .kanban-overview.e-kanban .e-card .e-card-tag-field ,
+.fabric-dark .kanban-overview.e-kanban .e-card .e-card-tag-field ,
+.bootstrap-dark .kanban-overview.e-kanban .e-card .e-card-tag-field ,
+.highcontrast .kanban-overview.e-kanban .e-card .e-card-tag-field  {
+    background: #4b5563;
+    color: #fff;
+}
+.fluent-dark .kanban-overview.e-kanban .e-card-avatar,
+.bootstrap5-dark .kanban-overview.e-kanban .e-card-avatar,
+.tailwind-dark .kanban-overview.e-kanban .e-card-avatar,
+.material-dark .kanban-overview.e-kanban .e-card-avatar,
+.fabric-dark .kanban-overview.e-kanban .e-card-avatar,
+.bootstrap-dark .kanban-overview.e-kanban .e-card-avatar,
+.highcontrast .kanban-overview.e-kanban .e-card-avatar {
+    background: #4b5563;
+    color: #fff;
+}
 
 @font-face {
   font-family: 'Kanban priority icons';

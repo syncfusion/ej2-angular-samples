@@ -20,3 +20,7 @@
 #PivotViewcontainerwrapper {
     height: auto !important;
 }
+.e-bigger button.e-dlg-closeicon-btn.e-control.e-btn.e-lib.e-flat.e-icon-btn {
+    padding: 0!important;
+    left: -9px !important;
+}

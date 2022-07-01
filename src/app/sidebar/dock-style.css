@@ -44,16 +44,8 @@
 }
 
 .bootstrap5 .dockSidebar .e-listview .e-list-icon.sb-icons,
-.bootstrap5-dark .dockSidebar .e-listview .e-list-icon.sb-icons,
-.fluent .dockSidebar .e-listview .e-list-icon.sb-icons,
-.fluent-dark .dockSidebar .e-listview .e-list-icon.sb-icons {
+.bootstrap5-dark .dockSidebar .e-listview .e-list-icon.sb-icons {
     margin-bottom: -12px;
-}
-
-.fluent .dockSidebar .e-listview .e-list-icon,
-.fluent-dark .dockSidebar .e-listview .e-list-icon {
-    height: 30px;
-    width: 30px;
 }
 
 .fabric .dockSidebar .e-listview .e-list-icon.sb-icons,
@@ -118,8 +110,6 @@
 .bootstrap5 .dockSidebar .e-listview:not(.e-list-template) .e-list-item,
 .bootstrap4 .dockSidebar .e-listview:not(.e-list-template) .e-list-item,
 .bootstrap5-dark .dockSidebar .e-listview:not(.e-list-template) .e-list-item,
-.fluent .dockSidebar .e-listview:not(.e-list-template) .e-list-item,
-.fluent-dark .dockSidebar .e-listview:not(.e-list-template) .e-list-item,
 .highcontrast .dockSidebar .e-listview:not(.e-list-template) .e-list-item {
     padding-left: 14px;
 }

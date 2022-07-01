@@ -76,7 +76,7 @@ export class FrozenAPI implements OnInit {
           } else {
             this.treegrid.grid.getColumnByField(columnName).freeze =
               e.value === 'Center' ? undefined : (e.value as freezeDirection);
-            this.treegrid.refreshColumns();
+            this.treegrid.grid.refreshColumns();
           }
         }
         this.refresh = true;

@@ -5,7 +5,7 @@ import { kanbanPizzaData } from './data';
 
 @Component({
   selector: 'app-card-template',
-  templateUrl: 'card-template.component.html',
+  templateUrl: 'card-template.html',
   styleUrls: ['card-template.style.css'],
   encapsulation: ViewEncapsulation.None
 })
@@ -13,7 +13,8 @@ export class CardTemplateComponent {
   @ViewChild('kanbanObj') kanbanObj: KanbanComponent;
   public kanbanData: Object[] = extend([], kanbanPizzaData, null, true) as Object[];
   public cardSettings: CardSettingsModel = {
-    headerField: 'Id'
+    headerField: 'Id',
+    contentField: 'Description'
   };
   public categoryData: string[] = [
     'Menu',
@@ -24,7 +25,7 @@ export class CardTemplateComponent {
   ];
   
   onDialogClose(args: DialogEventArgs) {
-    if(args.element.querySelector('#Date') as any){
+    if(args.element.querySelector('Date') as any){
     args.data.Date = (args.element.querySelector('#Date') as any).ej2_instances[0].value.toLocaleString('es-PR').split(' ')[0];
     }
   }

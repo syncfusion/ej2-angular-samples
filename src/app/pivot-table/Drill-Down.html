@@ -1,0 +1,112 @@
+<div id="action-description">
+    <p>This sample demonstrates how to drill down on all headers, column headers only, row headers only, specific field(s), and specific member(s) within the specific field(s).</p>
+</div>
+<div id="description">
+    <p>In this sample, drill down can be performed based on the option selected from the <b>Drill Down</b> dropdown list. The available options are described in detail below.</p>
+    <table>
+        <tr>
+            <td style="vertical-align: top;padding: 10px 0;width: 150px">
+                <code>All headers :</code>
+            </td>
+            
+            <td style="padding-top: 10px;">Allows to expand all headers of row and column axes in the pivot table. 
+                It can be achieved by setting the <code>expandAll</code> property to <b>true</b> in the <code>dataSourceSettings</code>.</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;padding: 4px 0;">
+                <code>Row headers :</code>
+            </td>
+            <td style="padding-top: 2px;">Allows to expand all row headers in the pivot table. 
+                It can be achieved by setting the <code>expandAll</code> property to <b>true</b> for row fields only.</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;padding: 4px 0;">
+                <code>Column headers :</code>
+            </td>
+            <td style="padding-top: 2px;">Allows to expand all column headers in the pivot table. 
+                It can be achieved by setting the <code>expandAll</code> property to <b>true</b> for column fields only.</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;padding: 4px 0;">
+                <code>Specific fields :</code>
+            </td>
+            <td style="padding-top: 3px;">Allows to expand specific field(s) in the pivot table's row or column axes. 
+                It can be achieved by setting the <code>expandAll</code> property for the relevant field(s) in the row and column axes to <b>true</b>.</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;padding: 4px 0;">
+                <code>Specific headers :</code>
+            </td>
+            <td style="padding-top: 3px;">Allows to expand specific header(s) within the respective field available in the pivot table's row or column axes.
+                 It can be achieved by specifying the respective field name and its member(s), aka header name(s), inside the <code>drilledMembers</code> property in the <code>dataSourceSettings</code>.</td>
+        </tr>
+    </table>
+</div>
+
+<div class="col-lg-8 control-section" style="overflow:auto;">
+    <div class="content-wrapper">
+        <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings width='100%' height='300'
+        [gridSettings]='gridSettings' (dataBound)='dataBound($event)'>
+        </ejs-pivotview>
+    </div>
+</div>
+<div class="col-lg-4 property-section pivot-property-section">
+    <div class="property-panel-header">Properties</div>
+    <div class="property-panel-content"></div>
+    <table id="property" title="Properties" style="width: 100%;height:100%;">
+        <tbody>
+            <tr style="height: 50px">
+                <td>
+                    <div class="hdrlabel">Drill Down:
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <input type="text" tabindex="1" id="expandall">
+                    </div>
+                </td>
+            </tr>
+            <tr  class="field_cls" style="height: 50px; display: none">
+                <td>
+                    <div class="hdrlabel">Fields:
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <input type="text" placeholder="Select fields" tabindex="1" id='expand-fields' />
+                    </div>
+                </td>
+            </tr>
+            <tr  class="field_cls_1" style="height: 50px; display: none">
+                <td>
+                    <div class="hdrlabel">Fields:
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <input type="text" placeholder="Select field" tabindex="1" id='expand-fields-1' />
+                    </div>
+                </td>
+            </tr>
+            <tr  class="members_cls" style="height: 50px; display: none">
+                <td>
+                    <div class="hdrlabel">Headers:
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <input type="text" placeholder="Select headers" tabindex="1" id='expand-members' />
+                    </div>
+                </td>
+            </tr>
+            <tr  class="apply_cls" style="height: 50px; display: none">
+                <td></td>
+                <td>
+                    <div style="float: right;">
+                        <button id="expand-apply">Apply</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

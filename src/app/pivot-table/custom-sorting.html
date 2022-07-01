@@ -1,0 +1,82 @@
+<div id="action-description">
+    <p>This sample demonstrates ordering used-defined member(s), aka header name(s), of specific field in row and column
+        axes in ascending or descending order.</p>
+</div>
+<div id="description">
+    <p>In this sample, any field from the <b>Field</b> dropdown list and its member(s), aka header name(s), from the
+        <b>Headers</b> dropdown list can be ordered ascending or descending.
+        It is possible to achieve this by setting the <code>enableSorting</code> property to <b>true</b>,
+        as well as the field name, sort order, and member(s) (which can be in any order) inside the pivot table's
+        <code>sortSettings</code> property.
+        The <code>dataSourceSettings</code> includes <code>enableSorting</code> and <code>sortSettings</code>
+        properties.</p>
+</div>
+
+<div class="col-lg-8 control-section" style="overflow:auto;">
+    <div class="content-wrapper">
+        <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings showGroupingBar='true' width='100%' height='300'
+        [gridSettings]='gridSettings' [groupingBarSettings]='groupingBarSettings'  (dataBound)='dataBound($event)' (actionComplete)='actionComplete($event)'>
+        </ejs-pivotview>
+    </div>
+</div>
+<div>
+    <div class="col-lg-4 property-section pivot-property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties" style="width: 100%;height:100%;">
+                    <tbody>
+                        <tr style="height: 50px">
+                            <td colspan="2">
+                                <div class="row">
+                                    <input id="sorting" type="checkbox">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 50px">
+                            <td>
+                                <div class="hdrlabel">Field:
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" tabindex="1" id='sorting-fields' />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 50px;">
+                            <td>
+                                <div class="hdrlabel">Headers:
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" placeholder="Select headers" tabindex="1" id='sorting-members' />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 50px">
+                            <td>
+                                <div class="hdrlabel">Order:
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" tabindex="1" id='sorting-order' />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 50px">
+                            <td></td>
+                            <td>
+                                <div style="float: right;">
+                                    <button id="sorting-apply">Apply</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

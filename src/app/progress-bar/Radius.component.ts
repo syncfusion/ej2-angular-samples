@@ -85,7 +85,7 @@ export class ProgressBarRadiusComponent {
                 args.progressBar.progressColor = '#0D6EFD';
                 break;
             case 'fluent':
-                if (args.progressBar.element.id === "full-background") {
+                if (args.progressBar.element.id === "circular") {
                     args.progressBar.trackColor = '#0D6EFD';
                 } else {
                     args.progressBar.progressColor = '#0D6EFD';

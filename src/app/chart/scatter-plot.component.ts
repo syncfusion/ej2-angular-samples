@@ -57,7 +57,7 @@ export class ScatterPlotChartComponent {
     };
     public tooltip: Object = {
         enable: true,
-        format: 'Weight: <b>${point.x} kg</b> <br/> Height: <b>${point.y} cm</b>'
+        format: 'Weight: <b>${point.y} kg</b> <br/> Height: <b>${point.x} cm</b>'
     };
    // custom code start
     public load(args: ILoadedEventArgs): void {

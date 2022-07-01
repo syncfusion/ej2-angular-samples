@@ -69,6 +69,7 @@ import { HierarchyExportComponent } from './master-details-export.component';
 import { RowSpanningComponent} from './row-spanning.component';
 import { DragWithinSingle} from './drag-drop-within-grid.component';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { GridKeyboardNavigationComponent} from './keyboard-navigation.component';
 
 export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/over-view', component: OverViewComponent, 'name': 'Overview', description: 'This demo for Essential JS 2 grid component is an overview of how to display and manipulate large data with configuration options.', order: '01', category: 'Data Grid' },
@@ -83,6 +84,8 @@ export const gridRouteConfig: Object[] = [
         category: 'Data Grid'
     },
     { 'path': ':theme/grid/master-detail', component: MasterdetailComponent, name: 'Master/Detail', description: 'This demo for  Essential JS 2 grid component shows usage of master/detail in which the details of a Master Grid record, is viewed in a separate Grid(Detail Grid) by clicking the particular row.', order: '01', category: 'Data Grid' },
+    { 'path': ':theme/grid/keyboard-navigation', 'type': 'new', component:GridKeyboardNavigationComponent, name: 'Keyboard Navigation',  description: 'This demo for Essential JS 2 grid component shows the keyboard navigation in grid.', order: '01', category: 'Data Grid' },
+
     { 'path': ':theme/grid/adaptive', component: AdaptiveComponent, name: 'Adaptive',  description: 'This demo for Essential JS 2 grid component shows the Grid row in vertical direction.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/enable-rtl', component: RtlComponent, name: 'RTL',  description: 'This demo for Essential JS 2 grid component shows the Right to left(RTl) alignment.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/grouping', component: GroupComponent, name: 'Default Grouping', description: 'This demo for Essential JS 2 grid component demonstrates the grouping feature of the grid component. The grid component has options to group records based on columns.', order: '02', category: 'Grouping' },
@@ -166,7 +169,7 @@ export const gridRouteConfig: Object[] = [
         'path': ':theme/grid/filter-menu', component: FilteringMenuComponent,  name: 'Filter Menu',
         description: 'This demo for Essential JS 2 grid component demonstrates a way of filtering rows using a menu, check box, and Excel filter UI.', order: '08', category: 'Filtering'
     },
-    { 'path': ':theme/grid/searching', component: SearchComponent, name: 'Search', description: 'This demo for Essential JS 2 grid component shows the content searching feature.', order: '08', category: 'Filtering' },
+    { 'path': ':theme/grid/searching','type':'update', component: SearchComponent, name: 'Search', description: 'This demo for Essential JS 2 grid component shows the content searching feature.', order: '08', category: 'Filtering' },
 
     { 'path': ':theme/grid/selection', component: SelectionComponent, name: 'Default Selection', description: 'This demo for Essential JS 2 grid component shows how to select rows or cells through simple mouse down or keyboard interaction using the selection feature.', order: '09', category: 'Selection' },
     { 'path': ':theme/grid/selection-api', component: SelectionApiComponent,  name: 'Selection API', description: 'This demo for Essential JS 2 grid component shows how to perform selection programmatically.', order: '09', category: 'Selection' },
@@ -237,7 +240,7 @@ let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     LocalDataComponent, DataBindingComponent, ShowHideComponent, MasterdetailComponent, ReorderComponent,
     GroupComponent, LazyLoadGroupingComponent, StackedHeaderComponent, AutoWrapComponent, OverViewComponent, SortComponent, PageComponent, FilterComponent,
     SelectionComponent, ScrollComponent, StickyHeaderComponent, SearchComponent, SelectionApiComponent, DragAndDropComponent, AggregateComponent, RtlComponent,
-    AggregateGroupComponent, RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent,
+    AggregateGroupComponent, RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent,GridKeyboardNavigationComponent,
     VirtualizationComponent, InfiniteScrollingComponent, NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent, ColumnResizingComponent,
     ExportingComponent, AdvancedExportingComponent, PrintComponent, CheckboxSelectionComponent, ClipboardComponent, CommandColumnComponent,
     FilteringMenuComponent, ColumnSpanningComponent, ContextMenuComponent, ColumnMenuComponent, FrozenRowsComponent, FrozenApiComponent,

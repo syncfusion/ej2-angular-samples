@@ -8,6 +8,7 @@ import { NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { DefaultComponent } from './default.component';
 import { GroupingBarComponent } from './grouping-bar.component';
+import { DrillDownComponent } from './Drill-Down.component';
 import { ConditionalFormattingComponent } from './conditional-formatting.component';
 import { FieldListComponent } from './field-list.component';
 import { CalculatedFieldComponent } from './calculated-field.component';
@@ -22,6 +23,7 @@ import { LocalComponent } from './local.component';
 import { RemoteComponent } from './remote.component';
 import { OlapComponent } from './olap.component';
 import { SortingComponent } from './sorting.component';
+import { CustomSortingComponent } from './custom-sorting.component';
 import { FilteringComponent } from './filtering.component';
 import { LabelFilterComponent } from './label-filtering.component';
 import { ValueFilterComponent } from './value-filtering.component';
@@ -45,17 +47,19 @@ export const pivottableRouteConfig: Object[] = [
     { 'path': ':theme/pivot-table/olap', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the basic rendering of the pivot table with olap data', component: OlapComponent, 'name': 'OLAP', order: '02', category: 'Data Binding', type: 'update' },
     { 'path': ':theme/pivot-table/pivot-chart', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate integration of pivot table data into a simple chart component', component: ChartComponent, 'name': 'Pivot Chart', order: '03', category: 'Integration' },
     { 'path': ':theme/pivot-table/external-binding', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the rendering of chart component with cell selection option', component: IntegrationComponent, 'name': 'External Binding', order: '03', category: 'Integration' },
-    { 'path': ':theme/pivot-table/field-list', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the field list feature of the pivot table', component: FieldListComponent, 'name': 'Field List', order: '04', category: 'User Interaction' },
+    { 'path': ':theme/pivot-table/field-list', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the field list feature of the pivot table', component: FieldListComponent, 'name': 'Field List', order: '04', category: 'User Interaction', type: 'update' },
     { 'path': ':theme/pivot-table/grouping-bar', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the grouping bar feature of the pivot table', component: GroupingBarComponent, 'name': 'Grouping Bar', order: '04', category: 'User Interaction' },
     { 'path': ':theme/pivot-table/conditional-formatting', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate formatting the appearance of the pivot table cells with values based on the applied conditions', component: ConditionalFormattingComponent, 'name': 'Conditional Formatting', order: '04', category: 'User Interaction' },
     { 'path': ':theme/pivot-table/selection', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the cell selection feature', component: SelectionComponent, 'name': 'Selection', order: '04', category: 'User Interaction' },
+    { 'path': ':theme/pivot-table/Drill-Down', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the drill down feature of the pivot table', component: DrillDownComponent, 'name': 'Drill Down', order: '04', category: 'User Interaction', type: 'new' },
     { 'path': ':theme/pivot-table/summary-customization', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the summary customization feature of the pivot table', component: SummaryCustomizationComponent, 'name': 'Show/Hide Totals', order: '04', category: 'User Interaction' },
     { 'path': ':theme/pivot-table/grouping', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the grouping feature for date and number fields', component: GroupingComponent, 'name': 'Grouping', order: '04', category: 'User Interaction' },
-    { 'path': ':theme/pivot-table/toolbar', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the toolbar feature of the pivot table', component: ToolbarComponent, 'name': 'Toolbar', order: '04', category: 'User Interaction', type: 'update' },
+    { 'path': ':theme/pivot-table/toolbar', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the toolbar feature of the pivot table', component: ToolbarComponent, 'name': 'Toolbar', order: '04', category: 'User Interaction' },
     { 'path': ':theme/pivot-table/keyboard-navigation', 'description': 'This sample demonstrates how to use keyboard shortcuts to interact with Pivot Table features such as the pivot table, grouping bar, field list, toolbar, calculated field, drill through, and filter dialog', component: KeyboardNavigationComponent, 'name': 'Keyboard Navigation', order: '05', category: 'Keyboard Navigation' },
     { 'path': ':theme/pivot-table/calculated-field', 'description': 'This demo for Essential JS2 Pivot Table control shows calculated field, and it allows users to add calculated items', component: CalculatedFieldComponent, 'name': 'Calculated Field', order: '06', category: 'Formula' },
     { 'path': ':theme/pivot-table/aggregation', 'description': 'This demo for Essential JS2 Pivot Table control shows different types of aggregation for value fields', component: AggregationComponent, 'name': 'Aggregation', order: '06', category: 'Formula' },
     { 'path': ':theme/pivot-table/sorting', 'description': 'This demo for Essential JS2 Pivot Table control shows ordering(sorting) of fields either in ascending or descending order', component: SortingComponent, 'name': 'Default Sorting', order: '07', category: 'Sorting' },
+    { 'path': ':theme/pivot-table/custom-sorting', 'description': 'This demo for Essential JS2 Pivot Table control shows ordering(custom sorting) of fields either in ascending or descending order', component: CustomSortingComponent, 'name': 'Custom Sorting', order: '07', category: 'Sorting', type: 'new' },
     { 'path': ':theme/pivot-table/value-sorting', 'description': 'This demo for Essential JS2 Pivot Table control shows sorting values on column or row wise in ascending or descending order', component: ValueSortingComponent, 'name': 'Value Sorting', order: '07', category: 'Sorting' },
     { 'path': ':theme/pivot-table/filtering', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate member filtering of field headers either by including or excluding them', component: FilteringComponent, 'name': 'Default Filtering', order: '08', category: 'Filtering' },
     { 'path': ':theme/pivot-table/label-filtering', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate label filtering of field headers either by including or excluding them', component: LabelFilterComponent, 'name': 'Label Filtering', order: '08', category: 'Filtering' },
@@ -70,9 +74,9 @@ export const pivottableRouteConfig: Object[] = [
 ];
 
 let declarations: Type<Object>[] = [DefaultComponent, LocalComponent, RemoteComponent, OlapComponent, GroupingBarComponent, FieldListComponent, KeyboardNavigationComponent, CalculatedFieldComponent,
-    AggregationComponent, ExportingComponent, DrillThroughComponent, EditingComponent, ValueSortingComponent, RTLComponent, ChartComponent, SortingComponent,
+    AggregationComponent, ExportingComponent, DrillThroughComponent, EditingComponent, ValueSortingComponent, RTLComponent, ChartComponent, SortingComponent, CustomSortingComponent,
     FilteringComponent, LabelFilterComponent, ValueFilterComponent, ConditionalFormattingComponent, VirtualScrollingComponent, HyperLinkComponent, DeferUpdateComponent, SummaryCustomizationComponent, ToolbarComponent,
-    SelectionComponent, IntegrationComponent, CellTemplateComponent, GroupingComponent];
+    SelectionComponent,DrillDownComponent, IntegrationComponent, CellTemplateComponent, GroupingComponent];
 
 @NgModule({
     imports: [RouterModule.forChild(pivottableRouteConfig), CommonModule, HttpModule, ToolbarModule, PivotViewAllModule, PivotFieldListAllModule, SharedModule, NumericTextBoxAllModule, ButtonAllModule, CheckBoxAllModule, RadioButtonAllModule],

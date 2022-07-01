@@ -48,6 +48,7 @@ import { GanttResourceMultiTaskbarComponent } from './resource-multi-taskbar.com
 import { GanttSplitTasksComponent } from './split-tasks.component';
 import { GanttVirtualScrollComponent } from './virtual-scroll.component';
 import { GanttTimezoneComponent } from './timezone.component';
+import { GanttCriticalPathComponent } from './critical-path.component'
 
 export const GanttAppRoutes: Object[] = [
     {
@@ -181,6 +182,11 @@ export const GanttAppRoutes: Object[] = [
         name: 'Timezone', order: '04', category: 'Scheduling Concepts'
     },
     {
+        path: ':theme/gantt/critical-path', component: GanttCriticalPathComponent,
+        description: 'This example demonstrates the critical path rendering in Gantt',
+        name: 'Critical Path', order: '04', category: 'Scheduling Concepts', type: "new"
+    },
+    {
         path: ':theme/gantt/timeline', component: GanttTimelineComponent,
         description: 'This example demonstrates the various timeline mode options and properties available to customize the timeline in Gantt',
         name: 'Timeline API', order: '05', category: 'Timeline'
@@ -300,7 +306,8 @@ let declarations: Type<Object>[] = [
     GanttResourceMultiTaskbarComponent,
     GanttSplitTasksComponent,
     GanttVirtualScrollComponent,
-    GanttTimezoneComponent
+    GanttTimezoneComponent,
+    GanttCriticalPathComponent
 ];
 @NgModule({
     imports: [CommonModule, GanttRouter, SharedModule, GanttAllModule, DropDownListAllModule, CheckBoxAllModule, TextBoxAllModule, NumericTextBoxAllModule, MultiSelectAllModule],

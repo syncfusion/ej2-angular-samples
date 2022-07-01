@@ -116,6 +116,7 @@ import { PercentStackedLineChartComponent } from './stacked-line-percent.compone
 import { DataEditingComponent } from './data-editing.component';
 import { TooltipTemplateComponent } from './tooltip-template.component';
 import { RangeColorMappingComponent } from './range-color-mapping.component';
+import { KeyboardComponent } from './keyboard.component';
 
 export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/line', component: LineChartComponent, name: 'Line', description: "This demo for Essential JS2 Chart control shows how to render the line series.",
@@ -197,7 +198,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/pyramid', component: PyramidComponent, name: 'Pyramid', description: "This demo for Essential JS2 Chart control shows how to render and configure the pyramid charts.", order: '09', category: 'Accumulation Charts' },
     { path: ':theme/chart/funnel', component: FunnelComponent, name: 'Funnel', description: "This demo for Essential JS2 Chart control shows how to render and configure the funnel charts.", order: '09', category: 'Accumulation Charts' },
     {
-        path: ':theme/chart/pie-legend', component: DefaultDonutComponent, name: 'Pie with Legend', description: "This demo for Essential JS2 Chart control shows how to render and configure the legends in pie charts.", order: '09', category: 'Accumulation Charts', type: 'update'
+        path: ':theme/chart/pie-legend', component: DefaultDonutComponent, name: 'Pie with Legend', description: "This demo for Essential JS2 Chart control shows how to render and configure the legends in pie charts.", order: '09', category: 'Accumulation Charts'
     },
     {
         path: ':theme/chart/semi-pie', component: SemiPieComponent, name: 'Semi Pie', description: "This demo for Essential JS2 Chart control shows how to render semi-pie and doughnut charts.", order: '09', category: 'Accumulation Charts'
@@ -250,13 +251,14 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/tooltip-template', component: TooltipTemplateComponent, name: 'Tooltip Template', description: "This demo for Essential JS2 Chart control shows how to render and configure the tooltip template.", order: '13', category: 'Chart Customization' },
     { path: ':theme/chart/vertical', component: VerticalChartComponent, name: 'Vertical Chart', description: "This demo for Essential JS2 Chart control shows how to render and configure the vertical type charts.", order: '13', category: 'Chart Customization' },
     { path: ':theme/chart/empty-point', component: EmptyPointChartComponent, name: 'Empty Points', description: "This demo for Essential JS2 Chart control shows how to render and configure the empty points.", order: '13', category: 'Chart Customization'},
-    { path: ':theme/chart/range-color-mapping', component: RangeColorMappingComponent, name: 'Range Color Mapping', description: "This demo for Essential JS2 Chart control shows how to render and configure the range color mapping.", order: '13', category: 'Chart Customization'},
+    { path: ':theme/chart/range-color-mapping', component: RangeColorMappingComponent, name: 'Range Color Mapping', description: "This demo for Essential JS2 Chart control shows how to render and configure the range color mapping.", order: '13', category: 'Chart Customization', type: 'update'},
 
     { path: ':theme/chart/print', component: PrintChartComponent, name: 'Print', description: "This demo for Essential JS2 Chart control shows how to print the charts.", order: '14', category: 'Print and Export' },
     { path: ':theme/chart/export', component: ExportChartComponent, name: 'Export', description: "This demo for Essential JS2 Chart control shows how to export the charts to Excel, PDF, and image formats such as SVG, JPEG, and PNG at client-side.", order: '14', category: 'Print and Export' },
 
     { path: ':theme/chart/selection', component: SelectionChartComponent, name: 'Selection', description: "This demo for Essential JS2 Chart control demonstrates the selection behavior in chart.", order: '15', category: 'User Interaction' },
     { path: ':theme/chart/range-selection', component: RangeSelectionChartComponent, name: 'Range Selection', description: "This demo for Essential JS2 Chart control demonstrates the range selection in chart.", order: '15', category: 'User Interaction' },
+    { path: ':theme/chart/keyboard', component: KeyboardComponent, name: 'Keyboard Navigation', description: "This demo for Essential JS2 Chart control demonstrates the Keyboard Navigation in chart.", order: '15', category: 'User Interaction', type: 'new' },
     { path: ':theme/chart/cross-hair', component: CrosshairChartComponent, name: 'Crosshair', description: "This demo for Essential JS2 Chart control demonstrates the crosshair behavior in chart.", order: '15', category: 'User Interaction' },
     { path: ':theme/chart/trackball', component: TrackBallChartComponent, name: 'TrackBall', description: "This demo for Essential JS2 Chart control demonstrates the trackball behavior in chart.", order: '15', category: 'User Interaction' },
     { path: ':theme/chart/zooming', component: ZoomingChartComponent, name: 'Zooming and Panning', description: "This demo for Essential JS2 Chart control demonstrates the zooming and panning behavior in chart.", order: '15', category: 'User Interaction' },
@@ -284,7 +286,7 @@ let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, Ba
     StripLineRecurrenceChartComponent, StripLineChartComponent, EmptyPointChartComponent,
     PieEmptyPointChartComponent, PrintChartComponent, BoxandWhiskerChartComponent, RangeAreaComponent, SplineRangeAreaComponent,
     SmartAxisLabelsChartComponent, ErrorBarChartComponent, TrendLineChartComponent,
-    InversedSplineChartComponent, DashedLineChartComponent, EmptyAreaChartComponent,
+    InversedSplineChartComponent, DashedLineChartComponent, EmptyAreaChartComponent,KeyboardComponent,
     RoundedColumnChartComponent, TornadoChartComponent, PlacementColumnChartComponent,
     RangeBarChartComponent, ParetoSeriesChartComponent, DonutComponent,
     RangeSelectionChartComponent, ExportChartComponent, SplineAreaChartComponent,

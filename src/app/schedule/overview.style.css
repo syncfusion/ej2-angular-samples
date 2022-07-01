@@ -1,9 +1,3 @@
-.tailwind .e-settings::before,
-.tailwind-dark .e-settings::before {
-  content: "\e846";
-  font-size: 14px;
-}
-
 .tailwind.e-bigger .e-settings,
 .tailwind-dark.e-bigger .e-settings {
   font-size: 16px !important;
@@ -676,4 +670,15 @@
 
 .bootstrap-dark .schedule-overview .overview-header .overview-titlebar .title-bar-btn, .material-dark .schedule-overview .overview-header .overview-titlebar .title-bar-btn, .material .schedule-overview .overview-header .overview-titlebar .title-bar-btn {
   box-shadow: none;
+}
+
+@media (max-width: 481px) {
+  .schedule-overview .overview-content .right-panel {
+    position: absolute;
+    width: 90%;
+  }
+  
+  .schedule-overview .overview-header .overview-titlebar {
+    overflow: auto;
+  }
 }

@@ -29,7 +29,7 @@
 <div class="control-section" style="overflow:auto;">
     <div class="pivotfieldlist-control">
         <ejs-pivotfieldlist #pivotfieldlist id='PivotFieldList' [dataSourceSettings]=dataSourceSettings renderMode="Fixed"
-            (enginePopulated)='afterPopulate($event)' allowCalculatedField='true' (load)='onLoad()' (dataBound)='ondataBound()'>
+            (enginePopulated)='afterPopulate($event)' allowCalculatedField='true' enableFieldSearching='true' (load)='onLoad()' (dataBound)='ondataBound()'>
         </ejs-pivotfieldlist>
     </div>
     <div class="pivotview-control">

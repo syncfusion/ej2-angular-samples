@@ -1,0 +1,130 @@
+<div id="action-description">
+    <p>
+        Keyboard shortcuts can be used to interact with chart functionality. In the example below, various key combinations can be used to interact with the chart.
+    </p>
+</div>
+<div class="control-section">
+    <div id="container"  align="center">
+        <ejs-chart #chart id='keyboardcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+          [tooltip]='tooltip' (load)='load($event)' [zoomSettings]='zoomSettings' [enableAnimation]='enableAnimation' 
+          [enableSideBySidePlacement]="enableSideBySidePlacement"
+          [legendSettings]='legendSettings'
+          [selectionMode]="selectionMode"
+          [selectionPattern]="selectionPattern"
+          (legendClick)="legendClick($event)">
+            <e-series-collection>
+                <e-series [dataSource]='data1' type='Column' xName='Month' yName='Sales' name='Quarter 1'  width=2 > </e-series>
+                <e-series [dataSource]='data2' type='Column' xName='Month' yName='Sales' name='Quarter 2'  width=2 > </e-series>
+                <e-series [dataSource]='data3' type='Column' xName='Month' yName='Sales' name='Quarter 3'  width=2 > </e-series>
+                <e-series [dataSource]='data4' type='Column' xName='Month' yName='Sales' name='Quarter 4'  width=2 > </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <i>The key combinations listed below can be used in the chart to initiate various actions.</i>
+    <ul>
+         <li>
+            <b>FOCUS ELEMENTS</b>
+            <ul>
+                <li>
+                    <span class="key-class"><kbd>Alt</kbd> + <kbd>J</kbd></span>
+                    <span> - Moves the focus to the chart element.</span>
+                </li>
+                <li>
+                    <span class="key-class"><kbd>Tab</kbd></span>
+                    <span> - Moves the focus to the next element in the chart.</span>
+                </li>
+                <li>
+                    <span class="key-class"><kbd>Shift</kbd> + <kbd>Tab</kbd></span>
+                    <span> - Moves the focus to the previous element in the chart.</span>
+                </li>
+            </ul>
+        </li>
+        <li>
+           <b>SERIES</b>
+            <ul>
+                <li>
+                    <span class="key-class"><kbd>Down arrow</kbd></span>
+                    <span> - Moves the focus to the data point left side from the selected point.</span>
+                </li>
+                <li>
+                    <span class="key-class"><kbd>Up arrow</kbd></span>
+                    <span> - Moves the focus to the data point right side from the selected point.</span>
+                </li>
+                <li>
+                    <span class="key-class"><kbd>Left arrow</kbd></span>
+                    <span> - Moves the focus to the next series in our chart.</span>
+                </li>
+                <li>
+                    <span class="key-class"><kbd>Right arrow</kbd></span>
+                    <span> - Moves the focus to the previous series in our chart.</span>
+                </li>
+                <li>
+                    <span class="key-class"><kbd>ESC</kbd></span>
+                    <span> - Cancel the tooltip for the data point.</span>
+                </li>
+                <li>
+                    <span class="key-class"><kbd>Enter</kbd>/<kbd>Space</kbd></span>
+                    <span> - Selects the data point in the series.</span>
+                </li>
+            </ul>
+        </li>
+        <li>
+           <b>Legend </b>
+            <ul>
+                <li>
+                    <span class="key-class"><kbd>Down</kbd>/<kbd>Left arrow</kbd></span>
+                    <span> - Moves the focus to the legend left side from the selected legend.</span>
+                </li>
+                <li>
+                    <span class="key-class"><kbd>Up</kbd>/<kbd>Right arrow</kbd></span>
+                    <span> - Moves the focus to the legend right side from the selected legend.</span>
+                </li>
+                <li>
+                    <span class="key-class"><kbd>Enter</kbd>/<kbd>Space</kbd></span>
+                    <span> - Toggles the visibility of the corresponding series.</span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>ZOOMING AND PANNING</b>
+            <ul>
+                <li>
+                    <span class="key-class"><kbd>Ctrl</kbd> + <kbd>+</kbd></span>
+                    <span> - Zoom in the chart.</span>
+                </li>
+                <li>
+                    <span class="key-class"><kbd>Ctrl</kbd> + <kbd>-</kbd></span>
+                    <span> - Zoom out the chart.</span>
+                </li>
+                <li>
+                    <span class="key-class"><kbd>Down</kbd>/<kbd>Up arrow</kbd></span>
+                    <span> - Pans the chart vertically.</span>
+                </li>
+                <li>
+                    <span class="key-class"><kbd>Left</kbd>/<kbd>Right arrow</kbd></span>
+                    <span> - Pans the chart horizontally.</span>
+                </li>
+                <li>
+                    <span class="key-class"><kbd>R</kbd></span>
+                    <span> - Reset the zoomed chart.</span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>PRINT</b>
+            <ul>
+                <li>
+                    <span class="key-class"><kbd>Ctrl</kbd> + <kbd>P</kbd></span>
+                    <span> - Prints the chart.</span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+</style>

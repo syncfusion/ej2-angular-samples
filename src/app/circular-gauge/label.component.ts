@@ -56,10 +56,14 @@ export class LabelComponent {
     }];
     public ticks: DropDownList; public tickPosition: DropDownList; public labelPosition: DropDownList;
     ngOnInit(): void {
-        let showLabel: EmitType<CheckBoxChangeEvents>;
         let label: CheckBox = new CheckBox(
             {
-                change: showLabel, checked: false,
+                checked: false,
+                change: (args: CheckBoxChangeEvents) => {
+                    let showLastLabel: boolean = args.checked;
+                    this.circulargauge.axes[0].showLastLabel = showLastLabel;
+                    this.circulargauge.refresh();
+                }
             },
             '#enable');
         this.ticks = new DropDownList({
@@ -136,11 +140,6 @@ export class LabelComponent {
                 document.getElementById('labelOffsetValue').innerHTML = value.toString();
                 this.circulargauge.refresh();
             };
-            document.getElementById('enable').onchange = () => {
-                let showLastLabel: boolean = (<HTMLInputElement>document.getElementById('enable')).checked;
-                this.circulargauge.axes[0].showLastLabel = showLastLabel;
-                this.circulargauge.refresh();
-            }; 
     }
     constructor() {
         // code
