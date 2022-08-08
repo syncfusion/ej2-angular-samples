@@ -1,8 +1,8 @@
 <div id="action-description">
     <p>This sample visualizes the support for changing different set of working days in a week. The selected working days in drop down list will be applied to Gantt chart.</p>
 </div>
-<div class="control-section">
-<div class="col-lg-8 content-wrapper">
+
+<div class="col-lg-8 control-section">
     <ejs-gantt id="workWeek" #ganttObj height="430px" [dataSource]="data" [columns]="columns" [taskFields]="taskSettings" [allowSelection]="true"
     [treeColumnIndex]='1' [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" height="400px" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
     [highlightWeekends]="true" [workWeek]="workWeek">
@@ -30,7 +30,7 @@
         </div>
     </div>
 
-</div>
+
 <style>
     .property-panel-table div {
         padding-top: 0px;
