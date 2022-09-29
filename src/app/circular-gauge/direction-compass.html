@@ -1,0 +1,35 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates how to create a direction compass by modifying the circular gauge's functionalities to
+        meet the needs of the user.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-circulargauge #direction='' (load)='load($event)' id='direction-container' style='display:block;'
+        background='transparent' (axisLabelRender)="onLabelRender($event)">
+        <e-axes>
+            <e-axis [lineStyle]='lineStyle' radius='80%' [labelStyle]='labelStyle' [majorTicks]='majorTicks'
+                [minorTicks]='minorTicks' minimum=0 maximum=8 startAngle=0 endAngle=360 [pointers]='pointers'>
+            </e-axis>
+        </e-axes>
+    </ejs-circulargauge>
+</div>
+
+<div id="description">
+    <p>
+        In this example, a direction compass has been depicted by adding a couple of needle pointers in the circular
+        gauge and customizing labels to show the direction.
+    </p>
+    <p>
+        More information on the circular gauge can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/getting-started/">documentation
+            section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

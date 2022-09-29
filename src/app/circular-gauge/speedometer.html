@@ -1,13 +1,14 @@
 <div id="action-description">
     <p>
-        This sample depicts the appearance of speedometer rendered using the circular gauge. The pointer is changed with random values dynamically.
+        This sample depicts the appearance of a speedometer rendered using the circular gauge. The pointer value is
+        dynamically updated with random values in this case.
     </p>
 </div>
 <div class="col-md-8 control-section">
-    <ejs-circulargauge (load)='load($event)' (axisLabelRender)='axisLabelRender($event)' style='display:block;' id='container'
-        centerY='75%' #circulargauge=''>
+    <ejs-circulargauge (load)='load($event)' background='transparent' (loaded)='loaded($event)' style='display:block;'
+        id='container' centerY='75%' title='Speedometer' [titleStyle]='titleStyle' #circulargauge=''>
         <e-axes>
-            <e-axis minimum=0 radius='120%' maximum=120 startAngle=270 endAngle=90 [majorTicks]='majorTicks'
+            <e-axis minimum=0 radius='120%' maximum=120 startAngle=270 endAngle=90 rangeGap=0 [majorTicks]='majorTicks'
                 [labelStyle]='labelStyle' [lineStyle]='lineStyle' [minorTicks]='minorTicks' [annotations]='annotaions'
                 [ranges]='ranges' [pointers]='pointers'>
             </e-axis>
@@ -17,36 +18,25 @@
 <div class="col-md-4 property-section">
     <div class="property-panel-section">
         <div class="property-panel-header">Properties</div>
-        <table id="property" title="Properties" style="width: 100%">
+        <table id="property" title="Properties" style="width: 100%;margin-top: 10px;">
             <tbody>
-                <tr>
-                    <td style="width: 50%">
-                        <div class="property-text"> Show text labels</div>
+                <tr style="height: 27px">
+                    <td style="width: 60%; font-size: 14px;">
+                        <div> Combine Ranges</div>
                     </td>
-                    <td style="width: 50%;">
-                        <div style="margin-left: 30px">
-                            <input type="checkbox" id="showText" checked />
-                        </div>
-                    </td>
-                </tr>
-                <br />
-                <tr>
-                    <td style="width: 50%">
-                        <div class="property-text"> Combine ranges</div>
-                    </td>
-                    <td style="width: 50%;">
-                        <div style="margin-left: 30px">
+                    <td>
+                        <div>
                             <input type="checkbox" id="combineRange" checked />
                         </div>
                     </td>
                 </tr>
                 <br />
-                <tr>
-                    <td style="width: 50%">
-                        <div class="property-text"> Gap between ranges</div>
+                <tr style="height:21px">
+                    <td style="width: 60%; font-size: 14px;">
+                        <div> Gap Between Ranges</div>
                     </td>
-                    <td style="width: 50%;">
-                        <div style="margin-left: 30px">
+                    <td>
+                        <div>
                             <input type="checkbox" id="range" checked />
                         </div>
                     </td>
@@ -73,6 +63,12 @@
 </svg>
 <div id="description">
     <p>
-        In this example, you can see how to make the look of circular gauge like a speedometer. The labels can be changed to text values, gap can be added between the ranges, or the ranges can be combined to form single range using the options in the properties panel.
+        In this example, you can see how to make a circular gauge look like a speedometer. Using the options in the
+        properties panel, a gap can be added between ranges or ranges can be combined to form a single range.
+    </p>
+    <p>
+        More information on the circular gauge can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/getting-started/"> documentation
+            section</a>.
     </p>
 </div>

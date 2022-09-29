@@ -1,0 +1,44 @@
+<div class="control-section">
+    <div id="speed-dial-wrapper">
+        <div id="target" class="speeddial-radial-target custom-index">
+            <button ejs-speeddial title="Top Left" openIconCss='speeddial-icons speeddial-icon-edit' [items]=items target='#target' cssClass="e-success"
+                position='TopLeft' mode='Radial'></button>
+            <button ejs-speeddial title="Top Middle" openIconCss='speeddial-icons speeddial-icon-edit' [items]=items target='#target' cssClass="e-warning"
+                position='TopCenter' mode='Radial' [radialSettings]=radialSetting></button>
+            <button ejs-speeddial title="Top Right" openIconCss='speeddial-icons speeddial-icon-edit' [items]=items target='#target' cssClass="e-success"
+                position='TopRight' mode='Radial'></button>
+            <button ejs-speeddial title="Middle Left" openIconCss='speeddial-icons speeddial-icon-edit' [items]=items target='#target' cssClass="e-warning"
+                position='MiddleLeft' mode='Radial' [radialSettings]=radialSetting></button>
+            <button ejs-speeddial title="Middle Center" openIconCss='speeddial-icons speeddial-icon-edit' [items]=items target='#target'
+                position='MiddleCenter' mode='Radial' [radialSettings]=radialSetting></button>
+            <button ejs-speeddial title="Middle Right" openIconCss='speeddial-icons speeddial-icon-edit' [items]=items target='#target' cssClass="e-warning"
+                position='MiddleRight' mode='Radial' [radialSettings]=radialSetting></button>
+            <button ejs-speeddial title="Bottom Left" openIconCss='speeddial-icons speeddial-icon-edit' [items]=items target='#target' cssClass="e-success"
+                position='BottomLeft' mode='Radial'></button>
+            <button ejs-speeddial title="Bottom Middle" openIconCss='speeddial-icons speeddial-icon-edit' [items]=items target='#target' cssClass="e-warning"
+                position='BottomCenter' mode='Radial' [radialSettings]=radialSetting></button>
+            <button ejs-speeddial title="Bottom Right" openIconCss='speeddial-icons speeddial-icon-edit' [items]=items target='#target' cssClass="e-success"
+                position='BottomRight' mode='Radial'></button>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample demonstrates the radial menu display mode of action items in the Speed Dial component. Click the
+        speed dial button to open action items like the radial menu.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The default display mode is linear. The display mode of the Speed Dial component can be changed using the
+        <code>mode</code> property to <code>Radial</code>. Radial display of action items can be customized using the
+        below properties of <code>radialSettings</code>.
+    </p>
+    <ul>
+        <li><code>offSet</code>: Specify the position of the action items along the offset-path.</li>
+        <li><code>direction</code>: Denote whether to arrange action items in a clock or anti-clockwise direction.</li>
+        <li><code>startAngle</code> and <code>endAngle</code>: Specify the start and end angles in radial direction. By
+            default, angle is calculated based on the <code>position</code>property.</li>
+    </ul>
+</div>

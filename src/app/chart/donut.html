@@ -1,25 +1,25 @@
 <div id="action-description">
     <p>
-        This sample visualizes the project cost breakdown statistics by using doughnut series. Datalabel shows the Information about the points.
-        While hovering on the slice, border will be highlighted.
+        This Angular Donut Chart example visualizes the mobile browsers statistics by using doughnut series. Datalabels show information about the points.
     </p>
 </div>
 <div class="control-section">
     <ejs-accumulationchart id="container" #pie style='display:block;  width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip"
-        [title]="title" (load)='load($event)'>
+        [title]="title" (load)='load($event)' [enableBorderOnMouseMove]='false'>
         <e-accumulation-series-collection>
-            <e-accumulation-series name='Project' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%"
-                radius="70%" [dataLabel]="dataLabel" explode=true explodeOffset='10%' [explodeIndex]='3'>
+            <e-accumulation-series name='Project' [dataSource]='data' xName='Browser' yName='Users' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%"
+                radius="70%" [dataLabel]="dataLabel" explode=true explodeOffset='10%' [explodeIndex]='0'>
             </e-accumulation-series>
         </e-accumulation-series-collection>
     </ejs-accumulationchart>
     <div id="description">
-        <p> In this example, you can see how to render and configure the pie chart. You can use
-            <code>border</code>,
-            <code>fill</code> properties to customize the pie point.
-            <code>dataLabel</code> is used to represent individual data and its value.</p>
+        <p> In this example, you can see how to render and configure a doughnut chart. To create a doughnut in pie series, customize the <code>InnerRadius</code> property. DataLabels are used to represent individual data and its values.</p>
         <p>
-            <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.</p>
+            <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch-enabled devices.</p>
+        <p>
+            More information about the doughnut in pie series can be found in this
+            <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/pie-dough-nut/#doughnut-chart">documentation section</a>.
+        </p>
     </div>
     <style>
         .control-section {

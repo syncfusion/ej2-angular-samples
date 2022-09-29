@@ -13,14 +13,14 @@ declare var require: any;
     encapsulation: ViewEncapsulation.None
 })
 export class MapsEarthquakeComponent {
-    // custom code start
-    public load = (args: ILoadEventArgs) => { 
+    public load = (args: ILoadEventArgs) => {
+        // custom code start
         let theme: string = location.hash.split('/')[1]; 
         theme = theme ? theme : 'Material'; 
         args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() +
         theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
+        // custom code end
     }
-    // custom code end
     public centerPosition : object = { latitude: 1.5053645409602877, longitude: 105.14038085937499 };
     public zoomSettings : object = { enable: false, zoomFactor: 7 };
     public mapsArea : object = { background: '#AEE2FA' };
@@ -60,8 +60,10 @@ export class MapsEarthquakeComponent {
             }
         }
     ];
+    // custom code start
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['asia.json', 'world-map.json'];
     };
+    // custom code end
 
 }

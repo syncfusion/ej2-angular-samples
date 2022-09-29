@@ -21,7 +21,7 @@ export class BulletChartTooltipComponent {
         'border-spacing: 0px; border-collapse:separate; border: 1px solid grey; border-radius:10px; padding-top: 5px; padding-bottom:5px">' +
         '<tr><td style="font-weight:bold; color:black; padding-left: 5px;padding-top: 2px;padding-bottom: 2px;">Sales</td></tr>'
         + '<tr><td style="padding-left: 5px; color:black; padding-right: 5px; padding-bottom: 2px;">Target   : ${target}K </td></tr>' +
-        '<tr><td style="padding-left: 5px; color:black; padding-right: 5px">Current : ${value}K </td></tr></table></div>' };
+        '<tr><td style="padding-left: 5px; color:black; padding-right: 5px">Current : ${value} </td></tr></table></div>' };
     public animation: AnimationModel = { enable: false };
     public titleStyle: FontModel = { textAlignment: 'Center' };
     public min: number = 0;

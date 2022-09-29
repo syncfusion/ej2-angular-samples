@@ -1,54 +1,75 @@
 /**
- * Samples for labels
+ * Samples for legend in the Circular Gauge
  */
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme, GaugeShape } from '@syncfusion/ej2-angular-circulargauge';
-import { Position, TickModel, LegendPosition, Legend, Alignment } from '@syncfusion/ej2-circulargauge';
+import { LegendPosition, Alignment } from '@syncfusion/ej2-circulargauge';
 import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
-import { EmitType } from '@syncfusion/ej2-base';
+
 // custom code start
-//tslint:disable
+// tslint:disable
 // custom code end
+
 @Component({
     selector: 'control-content',
     templateUrl: 'legend.html',
     encapsulation: ViewEncapsulation.None
 })
-export class LegendComponent{
+
+export class LegendComponent {
+
     @ViewChild('Legend')
     public circulargauge: CircularGaugeComponent;
-     // custom code start
-     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
-        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
-    }
-    // custom code end
-    public title: string = 'Measure of wind speed in Km/h';
-    public legendSettings: object = {
+
+    public alignment: DropDownList;
+    public shape: DropDownList;
+    public position: DropDownList;
+    public title: string = 'Measure of wind speed in km/h';
+
+    public titleStyle: Object = {
+        fontFamily: 'inherit'
+    };
+
+    public legendSettings: Object = {
         visible: true,
-        position: 'Bottom'
-    }
+        position: 'Bottom',
+        textStyle: {
+            fontFamily: 'inherit',
+            size: '12px'
+        }
+    };
+
     public lineStyle1: Object = {
-        width: 2, color: '#9E9E9E'
+        width: 2
     };
+
     public labelStyle1: Object = {
-        position: 'Inside'
+        position: 'Inside', useRangeColor: false, font: { fontFamily: 'inherit' }
     };
+
     public majorTicks1: Object = {
-        color: '#757575', height: 16, interval: 20
+        color: '#9E9E9E', height: 16, interval: 20
     };
     public minorTicks1: Object = {
         height: 8, interval: 10
     };
+
     public pointers: Object[] = [{
-        value: 70, animation:{enable:true},
+        value: 70, animation: { enable: true },
         pointerWidth: 8, radius: '60%',
         cap: { radius: 7 }, needleTail: { length: '18%' }
     }];
-    public alignment: DropDownList; public shape: DropDownList; public position: DropDownList;
+
+    public load(args: ILoadedEventArgs): void {
+        // custom code start
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
+        // custom code end
+    }
+
     ngOnInit(): void {
         this.alignment = new DropDownList({
             index: 0, width: '100%',
@@ -58,6 +79,7 @@ export class LegendComponent{
             }
         });
         this.alignment.appendTo('#alignment');
+
         this.shape = new DropDownList({
             index: 0, width: '100%',
             change: () => {
@@ -66,6 +88,7 @@ export class LegendComponent{
             }
         });
         this.shape.appendTo('#shape');
+
         this.position = new DropDownList({
             index: 0, width: '100%',
             change: () => {
@@ -75,6 +98,7 @@ export class LegendComponent{
         });
         this.position.appendTo('#position');
     }
+
     ngAfterViewInit(): void {
         let legend: CheckBox = new CheckBox({
             checked: true,
@@ -82,6 +106,7 @@ export class LegendComponent{
                 this.circulargauge.legendSettings.visible = legend.checked;
             }
         }, '#enable');
+
         let toggle: CheckBox = new CheckBox({
             checked: true,
             change: () => {

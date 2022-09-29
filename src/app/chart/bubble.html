@@ -1,28 +1,24 @@
 <div id="action-description">
     <p>
-        This sample visualizes the  Literacy Rate and GDP Growth Rate of world countries by using bubble series in the chart. Tooltip shows the information about the  countries.
+        This Angular bubble chart example visualizes the literacy rates and GDP growth rates of countries. A tooltip shows more information about the countries.
     </p>
 </div>
 <div class="control-section">
         <div align='center'>
-            <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-                [title]='title' [tooltip]='tooltip' (pointRender)='pointRender($event)' [legendSettings]='legend' (load)='load($event)'>
+            <ejs-chart style='display:block;' [width]='width' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+                [title]='title' [tooltip]='tooltip' [legendSettings]='legend' (load)='load($event)' (pointRender)='pointRender($event)'>
                 <e-series-collection>
-                    <e-series [dataSource]='data' [minRadius]='minRadius' [maxRadius]='maxRadius' type='Bubble' xName='x' yName='y' size='size' name='Pound' [marker]='marker'> </e-series>
+                    <e-series [dataSource]='data' [minRadius]='minRadius' [maxRadius]='maxRadius' type='Bubble' xName='Literacy' yName='GDPGrowth' size='BubbleSize' name='Pound' [marker]='marker' tooltipMappingName='Text' [border]='border'> </e-series>
                 </e-series-collection>
             </ejs-chart>
-        </div>
-        <div style="float: right; margin-right: 10px; margin-top: -5px">            
         </div>
 </div>
 <div id="description">
     <p>
-    In this example, you can see how to render and configure the bubble type charts.A bubble chart is a type of chart that displays three dimensions of data by position and size of the bubble.
-    Each points is drawn as a bubble, where bubble's size depends on <code>size</code>
-    You can use <code>fill</code> properties to customize the data appearance. 
+        In this example, you can see how to render and configure the bubble chart. The bubble chart is a type of chart that shows three dimensions of the data. Each point is drawn as a bubble, where the bubble's size depends on the <code>Size</code> property. You can also use the <code>Fill</code> property to customize the data appearance. 
     </p>
     <p>
-    Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch-enabled devices.
     </p>
    <br>
         <p style="font-weight: 500">Injecting Module</p>
@@ -31,7 +27,12 @@
             <code>BubbleService</code> into the <code>@NgModule.providers</code> section.
         </p>
         <p>
-            More information on the bubble series can be found in this
+            More information about the bubble series can be found in this
             <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#bubble-chart">documentation section</a>.
         </p>   
 </div>
+<style>
+    ellipse[id*=_Trackball_0] {
+        stroke-width: 1 !important;
+    }  
+</style>

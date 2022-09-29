@@ -1,7 +1,6 @@
 <div id="action-description">
     <p>
-        This sample visualizes the organic revenue data with multi colored area series in the chart. Data points are enhanced with
-        segments and tooltip.
+        This sample visualizes the data on US season retail sales growth using a multi-colored area series in the chart. Data points are enhanced with segments and tooltips.
     </p>
 </div>
 <div class="control-section">
@@ -9,28 +8,40 @@
         <ejs-chart style='display:block' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
             [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' [width]='width' [legendSettings]='legend'>
             <e-annotations>
-                 <e-annotation x='90%' y='12%' region='Series'>
-                        <ng-template #content>
-                                <div style='width:80px; padding: 5px;'>
-                                    <table style='width: 100%'>
-                                        <tr>
-                                            <td><div style='width: 10px; height: 10px;background:linear-gradient(#4ca1af, #c4e0e5);border-radius: 15px;'></div></td>
-                                            <td style='padding-left: 5px;'>Winter</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div style='width: 10px; height: 10px; background:linear-gradient(#ffa751, #ffe259);border-radius: 15px;'></div></td>
-                                            <td style='padding-left: 5px;'>Summer</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div style='width: 10px; height: 10px; background:linear-gradient(#1d976c, #93f9b9);border-radius: 15px;'></div></td>
-                                            <td style='padding-left: 5px;'>Spring</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                        </ng-template>
-                </e-annotation>
-            </e-annotations>
-
+                <e-annotation [x]=winterX [y]=winterY region='Series' coordinateUnits='Point'>
+                       <ng-template #content>
+                               <div style='width:80px; padding: 5px;'>
+                                   <table style='width: 100%'>
+                                       <tr> 
+                                           <td style='width: 10px; height: 10px; color: #4ca1af; font-weight: bold; padding-left: 12px; font-size: 14px;' >Winter</td>
+                                       </tr>
+                                   </table>
+                               </div>
+                       </ng-template>
+               </e-annotation>
+               <e-annotation [x]=summerX [y]=summerY region='Series' coordinateUnits='Point'>
+                   <ng-template #content>
+                           <div style='width:80px; padding: 5px;'>
+                               <table style='width: 100%'>
+                                   <tr>
+                                       <td style='width: 10px; height: 10px; color: #ffa751; font-weight: bold; padding-left: 12px; font-size: 14px;'>Summer</td>
+                                   </tr>
+                               </table>
+                           </div>
+                   </ng-template>
+           </e-annotation>
+           <e-annotation [x]=springX [y]=springY region='Series' coordinateUnits='Point'>
+               <ng-template #content>
+                       <div style='width:80px; padding: 5px;'>
+                           <table style='width: 100%'>
+                               <tr>    
+                                   <td style='width: 10px; height: 10px; color: #93f9b9; font-weight: bold; padding-left: 12px; font-size: 14px;'>Spring</td>
+                               </tr>
+                           </table>
+                       </div>
+               </ng-template>
+       </e-annotation>
+           </e-annotations>
             <e-series-collection>
                 <e-series [dataSource]='dataValues' type='MultiColoredArea' xName='XValue' segmentAxis='X' yName='YValue' name='US' width=2
                     [segments]='segments'>
@@ -41,14 +52,10 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the points in a particular range by using
-        <code>MultiColoredArea</code> series type. Points under the range can be configured with
-        <code>color</code>,
-        <code>width</code>, and
-        <code>dashArray</code>.
+        In this example, you can see how to render and configure points in a particular range by using <code>MultiColoredArea</code> series. Points within the range can be configured with the <code>Color</code> property in ChartSegment.
     </p>
     <p>
-        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap a point in touch enabled devices.
+        <code>Tooltips</code> are enabled in this example, to see the tooltip in action, hover a point or tap a point in touch enabled devices.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
@@ -56,6 +63,9 @@
         Chart component features are segregated into individual feature-wise modules. To use area series, we need to inject
         <code>MultiColoredAreaSeriesService</code> into the
         <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information about the area type chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#area-charts">documentation section</a>.
     </p>
 </div>
 <style>

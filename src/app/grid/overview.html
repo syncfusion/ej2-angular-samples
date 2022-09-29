@@ -2,11 +2,11 @@
     <ejs-dropdownlist id='value' #sample index='0' width='220' [dataSource]='ddlData' (change)='valueChange($event)' [fields]='fields' [popupHeight]='height'></ejs-dropdownlist>
     <span id='msg'></span>
     <br/>
-    <ejs-grid #overviewgrid id='overviewgrid' [dataSource]='data' rowHeight='38' [allowSelection]='true' [allowSorting]='true' height='600' (dataBound)='onDataBound($event)' [enableHover]='false' [enableHeaderFocus]='true' [selectionSettings]='selectionSettings' [filterSettings]='filterSettings' [allowSorting]='true' [allowFiltering]='true' [enableVirtualization]='true'>
+    <ejs-grid #overviewgrid id='overviewgrid' [dataSource]='data' [query]='query' rowHeight='38' [allowSelection]='true' [allowSorting]='true' [loadingIndicator]='loadingIndicator' height='600' (dataBound)='onDataBound($event)' [enableHover]='false' [enableHeaderFocus]='true' [selectionSettings]='selectionSettings' [filterSettings]='filterSettings' [allowSorting]='true' [allowFiltering]='true' [enableVirtualization]='true'>
         <e-columns>
             <e-column type='checkbox' [allowFiltering]='false' [allowSorting]='false' width='60'></e-column>
             <e-column field='EmployeeID' [visible]='false' headerText='Employee ID' width='130' [isPrimaryKey]='true'></e-column>
-            <e-column field='Employees' headerText='Employee Name' [filter]='filter' clipMode='EllipsisWithTooltip' width='200'>
+            <e-column field='Employees' headerText='Employee Name' clipMode='EllipsisWithTooltip' width='200'>
                 <ng-template #template let-data>
                     <div>
                         <div class="empimg">
@@ -19,9 +19,9 @@
                       </div>                  
                 </ng-template>
             </e-column>
-            <e-column field='Designation' headerText='Designation' [filter]='filter' clipMode='EllipsisWithTooltip' width='170' ></e-column>
+            <e-column field='Designation' headerText='Designation' clipMode='EllipsisWithTooltip' width='170' ></e-column>
             <e-column field='Mail' headerText='Mail' [filter]='filterSettings' width='230'></e-column>
-            <e-column field='Location' headerText='Location' [filter]='filter' width='140'>
+            <e-column field='Location' headerText='Location' width='140'>
                 <ng-template #template let-data>
                     <div class="loc">
                         <img src="./assets/grid/images/Map.png" class="e-image" alt="{{data.Location}}" />
@@ -29,7 +29,7 @@
                     </div>
                 </ng-template>
             </e-column>
-            <e-column field='Status' [filter]='filter' headerText='Status' width='150'>
+            <e-column field='Status' headerText='Status' width='150'>
                 <ng-template #template let-data>                       
                     <div *ngIf="data.Status === 'Active';else login" class="statustemp e-activecolor">                                          
                             <span class="statustxt e-activecolor">{{data.Status}}</span>           
@@ -41,7 +41,7 @@
                         </ng-template>
                 </ng-template>               
             </e-column>
-            <e-column field='Trustworthiness' [filter]='filter' headerText='Trustworthiness' width='200'>
+            <e-column field='Trustworthiness' headerText='Trustworthiness' width='200'>
                 <ng-template #template let-data>
                     <div class="trust">
                         <img style="width: 31px; height: 24px" src="./assets/grid/images/{{data.Trustworthiness}}.png" />                        
@@ -62,10 +62,10 @@
                 <ng-template #template let-data>
                     <div id="myProgress" class="pbar">
                         <div id="myBar"  *ngIf="data.Status === 'Inactive';" [style.width.%]= data.Software class="bar progressdisable">
-                          <div id="label" class="barlabel">{{data.Software}}%</div>
+                          <div id="pbarlabel" class="barlabel">{{data.Software}}%</div>
                         </div>    
                         <div id="myBar"  *ngIf="data.Status === 'Active';" [style.width.%]= data.Software class="bar">
-                                <div id="label" class="barlabel">{{data.Software}}%</div>
+                                <div id="pbarlabel" class="barlabel">{{data.Software}}%</div>
                               </div>                               
                       </div>                              
                 </ng-template>

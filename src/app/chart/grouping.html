@@ -1,11 +1,11 @@
 <div id="action-description">
     <p>
-        This sample illustrates the grouping functionality in pie series.  The grouping value can be changed by using <code>Group To</code> property.
+        This sample shows the gold medal count scored by each country at the Rio Olympic Games, along with the pie series grouping functionality.
     </p>
 </div>
 <div class="control-section">
     <div class="col-md-8">
-        <ejs-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (textRender)="onTextRender($event)" (pointRender)="onPointRender($event)" (load)='load($event)'>
+        <ejs-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (textRender)="onTextRender($event)" (pointRender)="onPointRender($event)" (load)='load($event)' [enableBorderOnMouseMove]='false'>
             <e-accumulation-series-collection>
                 <e-accumulation-series name='RIO' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" radius="70%" [explode]="explode" [dataLabel]="dataLabel" [groupTo]='clubvalue' groupMode='Point'>
                 </e-accumulation-series>
@@ -51,9 +51,18 @@
     </div>
 </div>
 <div id="description">
-    <p> In this example, you can see how to <code>group</code> points in pie chart</p>
-    <p> Points having value below  the <code>'groupTo'</code> value are grouped and showed as separate point. You can customise the apearance of the point using <code>'poinRender'</code> event.</p>
-    <p> DataLabel is used to represent individual data and its value.</p>
+    <p> In this example, you can see how to group points based on count and values. 
+        The slice can be grouped based on the number of points by specifying the <code>GroupMode</code> to <code>Point</code>. 
+        For example, if the <code>GroupTo</code> property is set to 10, the chart will display the first 10 points and the remaining entries from the collection will be grouped as a single point. 
+        The slice can also be grouped based on values by specifying the <code>GroupMode</code> to <code>Value</code>. 
+        For example, if the GroupTo is set to 10, the first 10 points with a lower value will be grouped together and shown as a single point while the others as a slice.</p>
+        <p>
+            <code>Tooltips</code> are enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch-enabled devices.
+        </p>
+    <p>
+        More information about the grouping in accumulation chart can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/grouping/">documentation section</a>.
+    </p>
 </div>
 <style>
     .control-section {

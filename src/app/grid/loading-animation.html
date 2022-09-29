@@ -1,0 +1,60 @@
+<div id="action-description">
+    <p>This sample shows the loading indicator while grid loading and refreshing when using remote data. In this sample, you can change the loading indicators from the properties panel.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-lg-9">
+        <ejs-grid #grid [dataSource]='data' allowPaging='true' allowSorting='true' allowFiltering='true' [pageSettings]='pageSettings' [loadingIndicator]='loadingIndicator'>
+            <e-columns>
+                <e-column field='EmployeeID' headerText='Employee ID' width='130' textAlign='Right'></e-column>
+                <e-column field='Employees' headerText='Employee Name' width='145'></e-column>
+                <e-column field='Designation' headerText='Designation' width='130'></e-column>
+                <e-column field='CurrentSalary' headerText='Current Salary' width='140' format="C2" textAlign='Right'></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties" style="width: 100%">
+                    <tbody>
+                        <tr style="height: 50px">
+                            <td>
+                                <div style="width: 120%;">Indicator Type</div>
+                            </td>
+                            <td style="width: 40%;">
+                                <div style="margin-left: -20px">
+                                    <ejs-dropdownlist id='dropdown' #dropdown index='0' [dataSource]='indicatortypes'
+                                    (change)='indicatorChange($event)' [fields]='fields'></ejs-dropdownlist>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+     <!-- custom code start -->
+     <style>
+        #control-container {
+            padding: 0px !important;
+        }
+    </style>
+    <!-- custom code end -->
+
+    <div id="description">
+        <p>
+            The grid has an option to show a loading indicator in-between the time of fetching the data and binding it to the grid during initial rendering or refreshing or after performing any grid action like sorting, filtering, grouping, and more.
+         </p>
+         <p>The Grid supports the following loading indicator types. They are: </p>
+             <ul>
+                 <li><code>Spinner</code></li>
+                 <li><code>Shimmer</code></li>
+             </ul>
+         <p>Use the loading indicator by setting the <code>loadingIndicator.indicatorType</code> property as <code>Spinner</code> or <code>Shimmer</code>. The default value of the indicatorType is <code>Spinner</code>.</p>
+         <p> In this demo, the <code>Shimmer</code> type is initially enabled. If you want to use the default value of the loading indicator, use the dropdown to change it.
+         </p>
+    </div>

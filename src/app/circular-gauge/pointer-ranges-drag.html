@@ -1,0 +1,132 @@
+<div id="action-description">
+    <p>
+        This sample illustrates dragging a pointer and a range in a circular gauge. End-user can drag the pointer and
+        the range by enabling the pointer drag and range drag options.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-md-8">
+        <ejs-circulargauge (load)='load($event)' id='gauge' style='display:block;' background='transparent'
+            #circulargauge enablePointerDrag=true (dragMove)='dragMove($event)' (dragEnd)='dragEnd($event)'
+            background='transparent'>
+            <e-axes>
+                <e-axis startAngle=220 endAngle=140 [lineStyle]=lineStyle [labelStyle]=labelStyle
+                    [majorTicks]=majorTicks [minorTicks]=minorTicks radius='80%' minimum=0 maximum=120>
+                    <e-annotations>
+                        <e-annotation [content]='contentOne' radius='45%' angle=180 zIndex='1'>
+                        </e-annotation>
+                    </e-annotations>
+                    <e-ranges>
+                        <e-range start=0 end=40 [startWidth]="rangeWidth" [endWidth]="rangeWidth" radius='108%'
+                            color="#30B32D">
+                        </e-range>
+                        <e-range start=40 end=100 [startWidth]="rangeWidth" [endWidth]="rangeWidth" radius='108%'
+                            color="#E5C31C">
+                        </e-range>
+                        <e-range start=100 end=120 [startWidth]="rangeWidth" [endWidth]="rangeWidth" radius='108%'
+                            color="#F03E3E">
+                        </e-range>
+                    </e-ranges>
+                    <e-pointers>
+                        <e-pointer value=70 radius='60%' color='#E5C31C' [cap]='cap' [needleTail]='tail' markerWidth=5>
+                        </e-pointer>
+                        <e-pointer type='Marker' value=70 markerShape='InvertedTriangle' radius='110%'
+                            [markerHeight]='markerHeight' color='#E5C31C' [markerWidth]='markerWidth'>
+                        </e-pointer>
+                    </e-pointers>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
+    </div>
+    <div class="col-md-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties" class="property-panel-table"
+                    style="width: 100%; margin-left: -10px;">
+                    <colgroup>
+                        <col span="1" style="width: 45%;">
+                        <col span="1" style="width: 35%;">
+                        <col span="1" style="width: 20%;">
+                    </colgroup>
+                    <tr style="height: 50px">
+                        <td>
+                            <div style="font-size: 14px;">Pointer Value</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="range" id="value" value="70" min="0" max="180" />
+                            </div>
+                        </td>
+                        <td style="text-align: center; padding-top: 10px; padding-left: 2%">
+                            <span id='pointerValue' style="font-size: 14px;">70</span>
+                        </td>
+                    </tr>
+                </table>
+                <table id="property" title="Properties" class="property-panel-table"
+                    style="width: 100%; margin-left: -10px;">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
+                    <tr style="height: 50px">
+                        <td style="width: 20%">
+                            <div id='enablePointer' style="font-size: 14px;width: 90%;">Allow Pointer Drag</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div style="padding-top: 0px;padding-left: 0px">
+                                <input type="checkbox" id="enable" checked="true" class="drag" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <table id="property" title="Properties" class="property-panel-table"
+                    style="width: 100%; margin-left: -10px;">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
+                    <tr style="height: 50px">
+                        <td>
+                            <div id='enableRange' style="font-size: 14px;width: 90%;">Allow Ranges Drag</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div style="padding-top: 0px;padding-left: 0px">
+                                <input type="checkbox" id="rangedrag" class="drag" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to move the pointer and range in the circular gauge via drag action. The <a
+            target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge#enablepointerdrag">enablePointerDrag</a>
+        property can be used to enable or disable the pointer drag functionality. Similarly, the <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge#enablerangedrag">enableRangeDrag</a>
+        property can be used to enable or disable the range drag functionality.
+    </p>
+    <p>
+        More information on the pointer drag can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/gauge-user-interaction/#pointer-drag">documentation
+            section</a>. Likewise, the range drag information can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/gauge-ranges/#dragging-range">documentation
+            section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+
+    .e-view.fabric .drag,
+    .e-view.tailwind .drag {
+        margin-top: 10px;
+    }
+</style>
+<!-- custom code end -->

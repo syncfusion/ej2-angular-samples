@@ -1,0 +1,23 @@
+.sb-sample-content-area {
+    min-height: 255px !important;
+}
+
+.control-section {
+    min-height: 255px !important;
+}
+
+#PivotViewcontainerwrapper {
+    height: auto !important;
+}
+
+.e-bigger .e-float-input.e-control-wrapper {
+    width: 100% !important;
+}
+
+.pivot-property-panel-table div {
+    padding: 0;
+}
+
+.pivot-property-panel-table {
+    margin-left: 10px;
+}

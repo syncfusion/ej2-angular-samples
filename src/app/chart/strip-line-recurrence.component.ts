@@ -61,11 +61,15 @@ export class StripLineRecurrenceChartComponent {
     public xChange(e: Event): void {
         let element: HTMLInputElement = <HTMLInputElement>e.target;
         this.chart.primaryXAxis.stripLines[0].visible = element.checked;
+        this.chart.series[0].animation.enable = false;
+        this.chart.series[1].animation.enable = false;
         this.chart.refresh();
     }
     public yChange(e: Event): void {
         let element: HTMLInputElement = <HTMLInputElement>e.target;
         this.chart.primaryYAxis.stripLines[0].visible = element.checked;
+        this.chart.series[0].animation.enable = false;
+        this.chart.series[1].animation.enable = false;
         this.chart.refresh();
     }
     constructor() {

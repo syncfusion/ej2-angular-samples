@@ -9,8 +9,8 @@
                     <e-columns>
                         <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='135' textAlign='Right' [validationRules]='taskidrules'></e-column>
                         <e-column field='taskName' headerText='Task Name' width='280' [validationRules]='tasknamerules'></e-column>
-                        <e-column field='duration' headerText='Duration' width='140' textAlign='Right'></e-column>
-                        <e-column field='progress' headerText='Progress' width='145' textAlign='Right'></e-column>
+                        <e-column field='duration' headerText='Duration' width='140' textAlign='Right' [validationRules]='durationrules'></e-column>
+                        <e-column field='progress' headerText='Progress' width='145' textAlign='Right' ></e-column>
                     </e-columns>
                 </ejs-treegrid>
             </div>
@@ -23,8 +23,8 @@
             <e-columns>
                 <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='135' textAlign='Right' [validationRules]='taskidrules'></e-column>
                 <e-column field='taskName' headerText='Task Name' width='280' [validationRules]='tasknamerules'></e-column>
-                <e-column field='duration' headerText='Duration' width='140' textAlign='Right'></e-column>
-                <e-column field='progress' headerText='Progress' width='145' textAlign='Right'></e-column>
+                <e-column field='duration' headerText='Duration' width='140' textAlign='Right' [validationRules]='durationrules'></e-column>
+                <e-column field='progress' headerText='Progress' width='145' textAlign='Right' ></e-column>
             </e-columns>
         </ejs-treegrid>
         </div>
@@ -37,7 +37,7 @@
         <p>
             The  <code><a target="_blank" class="code"
                 href="https://ej2.syncfusion.com/angular/documentation/api/treegrid#enableAdaptiveUI">
-                enableAdaptiveUI</a></code> property is set to true. The filtering, CRUD actions, paging and other various user interactions in tree grid will be adaptive to the smaller screens. For example, Filtering opens the UI for user in a pop-up occupying the entire screen. 
+                enableAdaptiveUI</a></code> property is set to true. The filtering, CRUD actions, paging and other various user interactions in tree grid will be adaptive to the smaller screens. For example, Filtering opens the UI for user in a pop-up occupying the entire screen.
         </p>
         <p>
             For more information, refer this

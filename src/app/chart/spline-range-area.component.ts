@@ -31,7 +31,8 @@ export class SplineRangeAreaComponent {
     visible: false
   }
   public legend: Object = {
-    visible: true
+    visible: true,
+    enableHighlight : true
   }
 
   public title: string = 'Monthly Temperature Range';
@@ -43,9 +44,9 @@ export class SplineRangeAreaComponent {
       width: 0
     }
   };
-  public width: string = Browser.isDevice ? '100%' : '80%';
+  public width: string = Browser.isDevice ? '100%' : '75%';
 
-  public opacity: number = 0.4;
+  public opacity: number = 0.7;
   public border: Object = { width: 2 };
   // custom code start
   public load(args: ILoadedEventArgs): void {

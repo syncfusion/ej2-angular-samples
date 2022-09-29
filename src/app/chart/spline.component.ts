@@ -54,7 +54,7 @@ export class SplineChartComponent {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'Category',
@@ -70,12 +70,17 @@ export class SplineChartComponent {
     };
     public marker: Object = {
         visible: true,
-        width: 10,
-        height: 10
+        width: 7,
+        height: 7
     };
     public tooltip: Object = {
         enable: true
     };
+    public legend: Object = {
+        visible: true,
+        enableHighlight : true
+    }
+
      // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

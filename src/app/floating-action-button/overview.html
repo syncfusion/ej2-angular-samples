@@ -1,0 +1,20 @@
+<div class="control-section">
+    <div className="fab-grid-container">
+        <ejs-grid #Grid id="Grid" cssClass="custom-index" [dataSource]="orders" [editSettings]="editSettings">
+        </ejs-grid>
+    </div>
+
+    <!-- Default Fab component -->
+    <button ejs-fab #fab id="fab" title="Add Record" (click)="fabClick() " iconCss='fab-icons fab-icon-add'
+        target='#Grid'></button>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates the usage of the Floating Action Button (FAB) component to add a new record to a
+        DataGrid.</p>
+</div>
+<div id="description">
+    <p>
+        The FAB is a button that appears in front of all screen contents and performs the primary action. In this
+        example, FAB is positioned at the bottom left of its target DataGrid to perform the add new record action.
+    </p>
+</div>

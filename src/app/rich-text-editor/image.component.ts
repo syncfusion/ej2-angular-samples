@@ -7,6 +7,7 @@ import { HtmlEditorService, NodeSelection, RichTextEditorComponent } from '@sync
 import { DropDownListComponent, FieldSettingsModel } from '@syncfusion/ej2-angular-dropdowns';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { isNullOrUndefined } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',
     templateUrl: 'image.html',
@@ -51,19 +52,21 @@ export class ImageComponent {
         const nodeObj: NodeSelection = new NodeSelection();
         const range: Range = nodeObj.getRange(this.rteObj.contentModule.getDocument());
         const imgEle: HTMLElement = nodeObj.getNodeCollection(range)[0] as HTMLElement;
-      if (e.item.tooltipText === 'Rotate Right') {
-            const transform: number = (imgEle.style.transform === '') ? 0 :
-          parseInt(imgEle.style.transform.split('(')[1].split(')')[0], 10);
-        imgEle.style.transform = 'rotate(' + (transform + 90) + 'deg)';
-        this.rteObj.formatter.saveData();
-        this.rteObj.formatter.enableUndo(this.rteObj);
-      } else if (e.item.tooltipText === 'Rotate Left') {
-            const transform: number = (imgEle.style.transform === '') ? 0 :
-          Math.abs(parseInt(imgEle.style.transform.split('(')[1].split(')')[0], 10));
-        imgEle.style.transform = 'rotate(-' + (transform + 90) + 'deg)';
-        this.rteObj.formatter.saveData();
-        this.rteObj.formatter.enableUndo(this.rteObj);
-      }
+        if (!isNullOrUndefined(e.item)) {
+          if (e.item.tooltipText === 'Rotate Right') {
+                const transform: number = (imgEle.style.transform === '') ? 0 :
+              parseInt(imgEle.style.transform.split('(')[1].split(')')[0], 10);
+            imgEle.style.transform = 'rotate(' + (transform + 90) + 'deg)';
+            this.rteObj.formatter.saveData();
+            this.rteObj.formatter.enableUndo(this.rteObj);
+          } else if (e.item.tooltipText === 'Rotate Left') {
+                const transform: number = (imgEle.style.transform === '') ? 0 :
+              Math.abs(parseInt(imgEle.style.transform.split('(')[1].split(')')[0], 10));
+            imgEle.style.transform = 'rotate(-' + (transform + 90) + 'deg)';
+            this.rteObj.formatter.saveData();
+            this.rteObj.formatter.enableUndo(this.rteObj);
+          }
+        }
     }
     public onChangeRead(): void {
       this.rteObj.enableAutoUrl = this.readonlyObj.checked;

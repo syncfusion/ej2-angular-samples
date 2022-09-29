@@ -31,21 +31,24 @@ import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { BrowserModule } from '@angular/platform-browser';
-import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListModule, MentionModule  } from '@syncfusion/ej2-angular-dropdowns';
 import { InsertEmoticonsComponent } from './insert-emoticons.component';
 import { ButtonModule} from '@syncfusion/ej2-angular-buttons';
 import { TabModule } from '@syncfusion/ej2-angular-navigations';
 import { AutoSaveComponent } from './auto-save.component';
 import { SwitchModule } from '@syncfusion/ej2-angular-buttons';
-import { TributeComponent } from './tribute.component';
 import { OnlineHtmlEditorComponent } from './online-html-editor.component';
+import {InsertMediaComponent} from './insert-media.component';
+import {MentionIntegrationComponent} from './mention-integration.component';
 
 export const rteAppRoutes: Object[] = [
     { path: ':theme/rich-text-editor/tools', component: FullFeatureComponent, name: 'Overview', description: 'This demo describes basic and advanced features of the angular rich text editor control (WYSIWYG HTML Editor) with all its tools and functionalities.', order: '01', category: 'Rich Text Editor' },
     { path: ':theme/rich-text-editor/rich-text-editor', component: DefaultRTEComponent, name: 'Default Functionalities', description: 'This demo shows how to render angular rich text editor (WYSIWYG HTML editor) control with a minimum configuration setting.', order: '01', category: 'Rich Text Editor' },
     { path: ':theme/rich-text-editor/image', component: ImageComponent, name: 'Image', description: 'This demo explains how to insert images with a blob or base64 format, link to the images, image upload, rotate left/right, and more in angular WYSIWYG HTML Editor.', order: '01', category: 'Rich Text Editor' },
+    { path: ':theme/rich-text-editor/insert-media', component: InsertMediaComponent, name: 'Insert Media', description: 'This demo shows how to insert audio and video, Embed video, upload audio and video, and more in Insert Media.', order: '01', category: 'Rich Text Editor' , type: 'New' },
     { path: ':theme/rich-text-editor/inline', component: InlineComponent, name: 'Inline', description: 'This demo shows inline WYSIWYG HTML editor that is displayed when selecting the content or simply focusing on the content inside the angular Rich Text Editor.', order: '01', category: 'Rich Text Editor' },
     { path:':theme/rich-text-editor/paste-cleanup', component:PasteCleanupComponent, name:'Paste from MS Word', description:'This demo explains how to clean up HTML when pasting a content from Microsoft Word, Visual Studio Code, Visual Studio, or a web page in angular HTML Editor.', order:'01', category:'Rich Text Editor' },
+    { path: ':theme/rich-text-editor/mention-integration', component: MentionIntegrationComponent, name: 'Mention Integration', description: 'This example shows how to integrate @mention component within Rich Text Editor component. Type `@` character and select a user from the suggestion list.', order: '01', category: 'Rich Text Editor' , type: 'New' },
     { path: ':theme/rich-text-editor/iframe', component: IFrameComponent, name: 'IFrame', description: 'This demo shows how to render a classic angular rich text editor (iframe editor) that was designed by using the iframe element covering all tool functionalities.', order: '01', category: 'Rich Text Editor' },
     { path: ':theme/rich-text-editor/print', component: PrintComponent, name: 'Print', description: 'This demo sample shows how to print the content of the angular rich text editor (HTML editor) with styles and formatting using the print module.', order: '01', category: 'Rich Text Editor' },
     { path: ':theme/rich-text-editor/ajax-load', component: AjaxLoadComponent, name: 'Ajax Content', description: 'This demo shows how to load the content to the editor from external sources like external pages andfiles using the AJAX library in angular WYSIWYG Editor.', order: '01', category: 'Rich Text Editor' },
@@ -64,16 +67,15 @@ export const rteAppRoutes: Object[] = [
     { path: ':theme/rich-text-editor/markdown-editor-preview', component: MarkdownPreviewComponent, name: 'Preview', description: 'This demo shows how to render a angular Markdown editor with LIVE preview for markdown content editing using a third-party library, "marked js".', order: '04', category: 'Markdown Editor' },
     { path: ':theme/rich-text-editor/markdown-editor-custom-format', component: MarkdownCustomComponent, name: 'Custom Format', description: 'This demo explains how to convert markdown content (with the custom format) to valid HTML markup using Markdown-to-HTML of the markdown parser in angular', order: '04', category: 'Markdown Editor' },
     { path: ':theme/rich-text-editor/reactive-form', component: FormComponent, name: 'Reactive Form', description: 'This demo explains how to validate the content and track status using a reactive form of Angular with form group attribute in the Angular WYSIWYG editor.', order: '07', category: 'Forms' },
-    { path: ':theme/rich-text-editor/template-driven', component: TemplateDrivenComponent, name: 'Template Driven', description: 'This demo shows template-driven support of an Angular that helps two-way binding using ng-form and ng-model, and name attributes in Angular HTML Editor.', order: '07', category: 'Forms' },
-    { path: ':theme/rich-text-editor/tribute', component: TributeComponent, name: 'Tribute JS', description: 'This demo shows how to integrate Mention library like Tribute JS within the JavaScript HTML text editor to get the autocomplete popup with a suggestion list.', order: '08', category: 'Third-parties Integration' }
+    { path: ':theme/rich-text-editor/template-driven', component: TemplateDrivenComponent, name: 'Template Driven', description: 'This demo shows template-driven support of an Angular that helps two-way binding using ng-form and ng-model, and name attributes in Angular HTML Editor.', order: '07', category: 'Forms' }
 ];
 
 export const RTERouter: ModuleWithProviders<any> = RouterModule.forChild(rteAppRoutes);
 
 @NgModule({
     imports: [BrowserModule, RTERouter, SharedModule, FormsModule, ReactiveFormsModule,TabModule,
-        RichTextEditorAllModule, SplitterModule, CheckBoxModule, DialogModule, NumericTextBoxModule,ButtonModule,SwitchModule, RadioButtonModule, TextBoxModule, DropDownListModule],
-    exports: [RichTextEditorAllModule, SplitterModule, CheckBoxModule, SwitchModule, DialogModule,TabModule, NumericTextBoxModule,ButtonModule, RadioButtonModule, TextBoxModule, DropDownListModule],
+        RichTextEditorAllModule, SplitterModule, CheckBoxModule, DialogModule, NumericTextBoxModule,ButtonModule,SwitchModule, RadioButtonModule, TextBoxModule, DropDownListModule, MentionModule],
+    exports: [RichTextEditorAllModule, SplitterModule, CheckBoxModule, SwitchModule, DialogModule,TabModule, NumericTextBoxModule,ButtonModule, RadioButtonModule, TextBoxModule, DropDownListModule, MentionModule],
     declarations: [
         DefaultRTEComponent,
         FullFeatureComponent,
@@ -88,6 +90,7 @@ export const RTERouter: ModuleWithProviders<any> = RouterModule.forChild(rteAppR
         InsertSpecialCharactersComponent,
         InsertEmoticonsComponent,
         ImageComponent,
+        InsertMediaComponent,
         MarkdownDefaultComponent,
         MarkdownPreviewComponent,
         MarkdownCustomComponent,
@@ -99,8 +102,8 @@ export const RTERouter: ModuleWithProviders<any> = RouterModule.forChild(rteAppR
         TemplateDrivenComponent,
         InsertEmoticonsComponent,
         AutoSaveComponent,
-        TributeComponent,
-        OnlineHtmlEditorComponent
+        OnlineHtmlEditorComponent,
+        MentionIntegrationComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

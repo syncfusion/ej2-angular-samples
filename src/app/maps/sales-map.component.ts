@@ -64,7 +64,9 @@ export class MapsSalesMapComponent {
       }
     }]
   }];
+  // custom code start
   constructor(@Inject('sourceFiles') private sourceFiles: any) {
     sourceFiles.files = ['sales-map.json', 'world-map.json'];
   };
+  // custom code end
 }

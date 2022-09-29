@@ -85,16 +85,16 @@ export class ColorMappingComponent {
             },
         }
     ];
-    // custom code start
     public load = (args: ILoadEventArgs) => {
+        // custom code start
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
         args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() +
         theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
         let dropdownValue: HTMLInputElement = document.getElementById('colorMapping') as HTMLInputElement;
         let opacityCheck: HTMLInputElement = document.getElementById('opacity') as HTMLInputElement;
+        // custom code end
     }
-    // custom code end
     ngAfterViewInit(): void {
         document.getElementById('minopacity').onpointermove = document.getElementById('minopacity').ontouchmove =
     document.getElementById('minopacity').onchange = () => {
@@ -283,7 +283,9 @@ export class ColorMappingComponent {
     });
     sampleValue.appendTo('#colorMapping');
 };
+// custom code start
 constructor(@Inject('sourceFiles') private sourceFiles: any) {
     sourceFiles.files = ['color-mapping.json', 'usa.json'];
 };
+// custom code end
 }

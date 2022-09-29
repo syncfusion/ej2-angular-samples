@@ -1,0 +1,197 @@
+<div id="action-description">
+  <p>This sample shows how to use the paging option to break and load a large data source into chunks and display them
+    page by page. You can also use the built-in navigation buttons to move between pages.
+  </p>
+</div>
+<div id="description">
+  <p>The pivot table provides an optimized way to render rows and columns page by page without displaying the entire
+    pivot data. To enable paging, set the <code>enablePaging</code> property to <b>true</b>. You can also configure
+    page information for
+    row and column, such as page size, current page, and so on, using the <code>pageSettings</code>. The
+    <code>pageSettings</code>
+    properties are explained in-detail below:
+  </p>
+  <table>
+    <tr>
+      <td style="vertical-align: top;padding: 4px 0;">
+        <code>currentRowPage :</code>
+      </td>
+      <td>Holds the current page number, row-wise. You can also change the page number at runtime.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;padding: 10px 0;width: 180px;">
+        <code>currentColumnPage :</code>
+      </td>
+      <td>Holds the current page number, column-wise. You can also change the page number at runtime.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;padding: 4px 0;">
+        <code>rowPageSize :</code>
+      </td>
+      <td>Indicates the number of records to be displayed in each page, row-wise. You can also change the page
+        size at runtime.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;padding: 4px 0;">
+        <code>columnPageSize :</code>
+      </td>
+      <td>Indicates the number of records to be displayed in each page, column-wise. You can also change the page
+        size at runtime.</td>
+    </tr>
+  </table>
+  <br />
+  <p>Also, you can customize the paging UI by changing the position, visibility, page size, and other settings for
+    row and column using the <code>pagerSettings</code>. The <code>pagerSettings</code> properties are explained
+    in-detail below:
+  </p>
+  <table>
+    <tr>
+      <td style="vertical-align: top;padding: 10px 0;width: 180px;">
+        <code>position :</code>
+      </td>
+      <td>Display the pager UI either at top or bottom of the Pivot Table.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;padding: 4px 0;">
+        <code>isInversed :</code>
+      </td>
+      <td>Toggle and display the row and column pagers.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;padding: 4px 0;">
+        <code>showRowPager :</code>
+      </td>
+      <td>Show or hide the row pager in the pager UI.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;padding: 4px 0;">
+        <code>showColumnPager :</code>
+      </td>
+      <td>Show or hide the column pager in the pager UI.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;padding: 4px 0;">
+        <code>showRowPageSize :</code>
+      </td>
+      <td>Show or hide the pre-defined page sizes in the row pager UI.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;padding: 4px 0;">
+        <code>showColumnPageSize :</code>
+      </td>
+      <td>Show or hide the pre-defined page sizes in the column pager UI.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;padding: 4px 0;">
+        <code>rowPageSizes :</code>
+      </td>
+      <td>Allows you to assign a set of pre-defined page sizes in the pager UI's "Rows per page" dropdown, which
+        can be used to change the number of records displayed in row at runtime.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;padding: 4px 0;">
+        <code>columnPageSizes :</code>
+      </td>
+      <td>Allows you to assign a set of pre-defined page sizes in the pager UI's "Columns per page" dropdown,
+        which can be used to change the number of records displayed in column at runtime.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;padding: 4px 0;">
+        <code>enableCompactView :</code>
+      </td>
+      <td>Allows the paging UI to be displayed with minimal design by hiding all paging information except
+        navigation options.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;padding: 4px 0;">
+        <code>template :</code>
+      </td>
+      <td>Allows you to change the appearance of the pager UI by displaying user-defined HTML elements instead of
+        built-in HTML elements.</td>
+    </tr>
+  </table>
+  <br />
+  <p>
+    <strong>Injecting Module:</strong>
+  </p>
+  <p>
+    The pivot table features are segregated into individual modules. To use the paging option,
+    inject
+    <code>PagerService</code> module using the
+    <code>@NgModule.providers</code> section.
+  </p>
+</div>
+<div class="col-lg-9 control-section sb-property-border" style="overflow:auto;">
+  <div class="content-wrapper">
+    <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings width='100%' height='600'
+      [gridSettings]='gridSettings' enablePaging="true" [pageSettings]="pageSettings" [pagerSettings]="pagerSettings">
+    </ejs-pivotview>
+  </div>
+</div>
+
+<div class="col-lg-3 property-section pivot-property-section">
+  <div class="property-panel-section property-panel-table">
+    <div class="property-panel-header">Properties</div>
+    <div class="property-panel-content">
+      <table id="property" title="Properties" style="width: 100%;height:100%;" class="pivot-property-panel-table">
+        <tbody>
+          <tr style="height: 50px">
+            <td>
+              <div class="hdrlabel">Pager Position
+              </div>
+            </td>
+            <td>
+              <div>
+                <input type="text" tabindex="1" id='Pager_Position' />
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 50px">
+            <td>
+              <div class="hdrlabel">Show Pager
+              </div>
+            </td>
+            <td>
+              <div>
+                <input type="text" tabindex="1" id='Pager_View' />
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 50px">
+            <td>
+              <div class="hdrlabel">Show Page Size
+              </div>
+            </td>
+            <td>
+              <div>
+                <input type="text" tabindex="1" id='Page_Size' />
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 50px">
+            <td>
+              <div class="hdrlabel">Compact View
+              </div>
+            </td>
+            <td>
+              <div>
+                <input id="Compact_View" type="checkbox">
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 50px">
+            <td>
+              <div class="hdrlabel">Inverse Pager
+              </div>
+            </td>
+            <td>
+              <div>
+                <input id="Inverse" type="checkbox">
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

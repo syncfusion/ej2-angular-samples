@@ -13,56 +13,62 @@ import { Browser } from '@syncfusion/ej2-base';
 })
 export class InversedSplineChartComponent {
     public data: Object[] = [
-        { x: 'Jan', y: -1 }, { x: 'Mar', y: 12 },
-        { x: 'Apr', y: 25 },
-        { x: 'Jun', y: 31 },
-        { x: 'Aug', y: 26 }, { x: 'Oct', y: 14 },
-        { x: 'Dec', y: 8 },
+        { Month : 2000, LDN_Temperature : -1, FR_Temperature : 10 },
+        { Month : 2002, LDN_Temperature : -1, FR_Temperature : 7 },
+        { Month : 2004, LDN_Temperature : 25, FR_Temperature : 13 },
+        { Month : 2005, LDN_Temperature : 31, FR_Temperature : 16 },
+        { Month : 2007, LDN_Temperature : 14, FR_Temperature : 11 },
+        { Month : 2010, LDN_Temperature : 8, FR_Temperature : 10 },
+        { Month : 2011, LDN_Temperature : 8, FR_Temperature : 15 },
+        { Month : 2013, LDN_Temperature : 8, FR_Temperature : 20 },
+        { Month : 2014, LDN_Temperature : 8, FR_Temperature : 17 },
+        { Month : 2015, LDN_Temperature : 8, FR_Temperature : 5 }
     ];
-    public data1: Object[] = [
-        { x: 'Jan', y: 7 }, { x: 'Mar', y: 2 },
-        { x: 'Apr', y: 13 },
-        { x: 'Jun', y: 21 },
-        { x: 'Aug', y: 26 }, { x: 'Oct', y: 10 },
-        { x: 'Dec', y: 0 },
-    ];
+
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        valueType: 'Category',
-        interval: 1,
-        labelIntersectAction: 'Rotate90',
-        lineStyle: { width: 0 },
-        majorTickLines: { width: 0 },
+        title: 'Years',
+        valueType: 'Double',
+        maximum: 2016,
+        minimum: 2000,
+        interval: 4,
         minorTickLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        labelFormat: '{value}°C',
-        majorGridLines: { width: 0 }
+        title: 'Sales (In Millions)',
+        maximum: 25,
+        minimum: 0,
+        interval: 5,
+        labelFormat: '{value}M',
     };
     public chartArea: Object = {
         border: {
-            width: 0
+            width: 1
         }
     };
     public marker: Object = {
         visible: true,
-        height: 10,
-        width: 10
+        height: 7,
+        width: 7,
+        isFilled: true
     };
     //Initializing Tooltip
     public tooltip: Object = {
-        enable: true
+        enable: true,
+        header: "<b>Album Sale</b>",
+        shared: true,
+        format: '${point.x}: <b>${point.y}</b>',
     };
      // custom code start
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
      // custom code end
-    public title: string = 'Climate Graph - 2012';
+    public title: string = 'Music Album Sales';
     constructor() {
        //code
     };

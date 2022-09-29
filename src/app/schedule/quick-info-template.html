@@ -22,14 +22,14 @@
     <ng-template #cellContent let-data="data">
       <div class="quick-info-content">
         <div class="e-cell-content">
-          <div class="content-area">
+          <div class="quick-content-area">
             <ejs-textbox #titleObj id="title" placeholder="Title"></ejs-textbox>
           </div>
-          <div class="content-area">
+          <div class="quick-content-area">
             <ejs-dropdownlist id='eventType' #eventTypeObj [dataSource]='roomData' [fields]='roomFields'
               placeholder='Choose Type' index="{{0}}" popupHeight="200px"></ejs-dropdownlist>
           </div>
-          <div class="content-area">
+          <div class="quick-content-area">
             <ejs-textbox #notesObj id="notes" placeholder="Notes"></ejs-textbox>
           </div>
         </div>

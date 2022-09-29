@@ -37,7 +37,15 @@ export class AreaSegmentChartComponent {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
+    
+    public winterX: Date = new Date(2016, 2, 1);
+    public winterY: Number = 115;
+    public summerX: Date = new Date(2016, 5, 1);
+    public summerY: Number = 115;
+    public springX: Date = new Date(2016, 10, 1);
+    public springY: Number = 165;
+
     public legend: Object = { visible: false };
     public segments: Object[] = [{
         value: new Date(2016, 4, 1),
@@ -49,7 +57,10 @@ export class AreaSegmentChartComponent {
         color: 'url(#spring)'
     }];
     public tooltip: Object = {
-        enable: true
+        enable: true,
+        header: '<b>Revenue</b>',
+        format: '${point.x} : <b>${point.y}</b>',
+        shared: true
     };
        // custom code start
     public load(args: ILoadedEventArgs): void {
@@ -61,7 +72,7 @@ export class AreaSegmentChartComponent {
         });
     };
        // custom code end
-    public title: string = 'Organic Revenue in US - 2016';
+    public title: string = 'US Season Retail Sales Growth';
     constructor() {
         //code
     };

@@ -75,6 +75,8 @@ export class PolarLineChartComponent {
         let element: HTMLInputElement = <HTMLInputElement>e.target;
         this.chart.series[0].isClosed = element.checked;
         this.chart.series[1].isClosed = element.checked;
+        this.chart.series[0].animation.enable = false;
+        this.chart.series[1].animation.enable = false;
         this.chart.refresh();
     }
     public isInversed(e: Event): void {
@@ -88,6 +90,8 @@ export class PolarLineChartComponent {
         this.chart.primaryXAxis.startAngle = value;
         document.getElementById('st-lbl').innerHTML = 'Start Angle: ' + value;
         this.chart.animateSeries =  false;
+        this.chart.series[0].animation.enable = false;
+        this.chart.series[1].animation.enable = false;
         this.chart.refresh();
         this.chart.animateSeries =  true;
     }
@@ -100,6 +104,8 @@ export class PolarLineChartComponent {
                 let type: string = this.seriesType.value.toString();
                 this.chart.series[0].type = <ChartSeriesType>type;
                 this.chart.series[1].type = <ChartSeriesType>type;
+                this.chart.series[0].animation.enable = true;
+                this.chart.series[1].animation.enable = true;
                 this.chart.refresh();
             }
         });

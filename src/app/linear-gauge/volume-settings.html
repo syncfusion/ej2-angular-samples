@@ -1,0 +1,89 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates volume adjustments made for music/video and alarm clock applications.
+    </p>
+</div>
+<div class="control-section">
+    <div style="display: flex; justify-content: center;padding-top: 12px;">
+        <div style="padding:6px">
+            <ejs-lineargauge (load)='musicIconLoad($event)' id='containerOne' width='60px' height='350px' background='transparent'
+                style='display:block;' orientation='Vertical' [container]='container' [annotations]='annotationMusicIcon'
+                [axes]='axesMusicIcon'>
+            </ejs-lineargauge>
+        </div>
+        <div style="padding:6px">
+            <ejs-lineargauge (load)='bellIconLoad($event)' id='containerTwo' width='60px' height='350px' background='transparent'
+                style='display:block;' orientation='Vertical' [container]='container' [annotations]='annotationBellIcon'
+                [axes]='axesBellIcon'>
+            </ejs-lineargauge>
+        </div>
+        <div style="padding:6px">
+            <ejs-lineargauge (load)='clockIconLoad($event)' id='containerThree' width='60px' height='350px' background='transparent'
+                style='display:block;' orientation='Vertical' [container]='container' [annotations]='annotationClockIcon'
+                [axes]='axesClockIcon'>
+            </ejs-lineargauge>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure a linear gauge to look like a sound tracker. This can
+        be accomplished by combining axis, pointer and annotation.
+    </p>
+    <p>
+        More information on the linear gauge can be found in this 
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/linear-gauge/getting-started/">documentation
+            section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .divclass {
+        padding: 6px;
+        color: white;
+    }
+
+    @font-face {
+        font-family: 'font-v1';
+        src:
+            url(data:application/x-font-ttf;charset=utf-8;base64,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) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    [class^="sf-icon-"],
+    [class*=" sf-icon-"] {
+        font-family: 'font-v1' !important;
+        color: white;
+        speak: none;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        margin-left: 40%;
+        margin-top: 70%;
+    }
+
+    .sf-icon-music:before {
+        content: "\e701";
+
+    }
+
+    .sf-icon-clock:before {
+        content: "\e702";
+    }
+
+    .sf-icon-tick:before {
+        content: "\e704";
+    }
+
+    .sf-icon-bell:before {
+        content: "\e706";
+    }
+</style>
+<!-- custom code end -->

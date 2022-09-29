@@ -1,0 +1,43 @@
+<div id="action-description">
+    <p>This example shows how to integrate @mention component within Rich Text Editor component. Type <code>@</code> character and select a user from the suggestion list.</p>
+</div>
+<div class="control-section">
+    <ejs-richtexteditor id="mention_integration"  placeholder="Type @ and tag the name" (actionBegin)="onActionBegin($event)">
+        <ng-template #valueTemplate>
+            <p>Hello <span contenteditable="false" class="e-mention-chip"><a title="maria@gmail.com">@Maria</a></span></p>
+            <p>Welcome to the mention integration with rich text editor demo. Type <code>@</code> character and tag user from the suggestion list. </p>
+        </ng-template>
+    </ejs-richtexteditor>
+</div>
+
+<ejs-mention [dataSource]='data' target='#mention_integration_rte-edit-view' [fields]='fieldsData' [suggestionCount]="8" [showMentionChar]="false" [allowSpaces]="true"  
+popupWidth='250px' popupHeight='200px'>
+    <ng-template #itemTemplate let-data>
+        <table>
+            <tr>
+              <td>
+                <div id="mention-TemplateList"> 
+                  <img class="mentionEmpImage" src="./assets/rich-text-editor/images/{{data.Eimg}}.png" alt="employee" />
+                  <span class="e-badge e-badge-success e-badge-overlap e-badge-dot e-badge-bottom {{data.Status}}"></span>
+                </div>
+                </td>
+                <td class="mentionNameList">
+                  <span class="person">{{data.Name}}</span>
+                  <span class="email">{{data.EmailId}}</span>
+                </td>
+              </tr>
+            </table>
+    </ng-template>
+    <ng-template #displayTemplate let-data>
+        <a title="{{data.EmailId}}">@{{data.Name}}</a>
+    </ng-template>
+</ejs-mention>
+
+<div id="description">
+    <p> The @Mention is a component used to display a list of items that users can select or tag from the suggested list. In this demo, configured the following properties with popup dimensions.</p>
+    <ul>
+        <li><code>allowSpaces</code> - Allows to search a word with space.</li>
+        <li><code>suggestionCount</code> - Control the items in suggestion list.</li>
+        <li><code>itemTemplate</code> - Used to display the customized appearance in suggestion list.</li>
+    </ul>
+</div>

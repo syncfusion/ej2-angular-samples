@@ -1,72 +1,23 @@
 <div id="action-description">
     <p>
-        This sample illustrates the agriculture land percentages of various countries by using a pie series. It has options to change the angle and radius of the series.
+        This example demonstrates a semi-pie chart for mobile browsers usage statistics. Datalabels show information about the points.
     </p>
 </div>
 <div class="control-section">
-    <div class="col-md-8">
-        <ejs-accumulationchart id='container' #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='load($event)' [enableAnimation]="enableAnimation">
+        <ejs-accumulationchart id='container' [legendSettings]="legendSettings" [tooltip]="tooltip" (load)='load($event)' [enableAnimation]="enableAnimation" [enableBorderOnMouseMove]='false'>
+            <e-accumulation-annotations>
+                <e-accumulation-annotation id='annotation' content='<div style=" font-size:14px; font-weight:600">Browser<br> Market <br />Shares</div>' region='Series'  x='50%' y='85%' >
+                </e-accumulation-annotation>
+            </e-accumulation-annotations>
             <e-accumulation-series-collection>
-                <e-accumulation-series name='Agricultural' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%" radius="90%" [explode]="explode" [dataLabel]="dataLabel" >
+                <e-accumulation-series name='Browser' [dataSource]='data' xName='Browser' yName='Users' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%" radius="90%" [explode]="explode" [dataLabel]="dataLabel" >
                 </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
-    </div>
-    <div class="col-md-4 property-section">
-        <div class="property-panel-section">
-            <div class="property-panel-header">Properties</div>
-            <div class="property-panel-content">
-                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
-                    <tr style="height: 50px">
-                        <td style="width: 60%">
-                            <div>Start Angle
-                            </div>
-                        </td>
-                        <td style="width: 40%;">
-                            <div data-role="rangeslider">
-                                <input type="range" name="range-min" id="range-min" value="270" min="0" max="360" (touchmove)='startangle($event)' (change)='startangle($event)' autocomplete="off" style="width:90%">
-                            </div>
-                        </td>
-                        <td style="width: 30%;">
-                            <p id="range-minText" style="font-weight: normal; padding-top: 15px">270</p>
-                    </td>
-                    </tr>
-                    <tr style="height: 50px">
-                        <td style="width: 60%">
-                            <div>End Angle
-                            </div>
-                        </td>
-                        <td style="width: 40%;">
-                            <div data-role="rangeslider">
-                                <input type="range" name="range-min" id="range-max" value="90" min="0" max="360" (touchmove)='endangle($event)' (change)='endangle($event)' autocomplete="off" style="width:90%">
-                            </div>
-                        </td>
-                        <td style="width: 30%;">
-                            <p id="range-maxText" style="font-weight: normal; padding-top: 15px">90</p>
-                    </td>
-                    </tr>
-                    <tr style="height: 50px">
-                        <td style="width: 60%">
-                            <div>Inner Radius
-                            </div>
-                        </td>
-                        <td style="width: 40%;">
-                            <div data-role="rangeslider">
-                                <input type="range" name="innerRadius" id="inner-radius" value="40" min="0" max="50" (touchmove)='onChange($event)' (change)='onChange($event)' autocomplete="off" style="width:90%">
-                            </div>
-                        </td>
-                        <td style="width: 30%;">
-                            <p id="inner-radiusText" style="font-weight: normal; padding-top: 15px">40</p>
-                    </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
 </div>
 <div id="description">
-    <p> In this example, you can see how to render semi pie and doughnut chart. Using <code>startAngle</code>, <code>endAngle</code> properties, we can achieve this semi pie chart. Property panel to change the angle is provided with this sample.</p>
-    <p> <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.</p>
+    <p> In this example, you can see how to render a semi pie chart using <code>StartAngle</code> and <code>EndAngle</code> properties.</p>
+    <p> <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch-enabled devices.</p>
 </div>
 <style>
     .control-section {

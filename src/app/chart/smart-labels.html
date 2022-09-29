@@ -1,21 +1,22 @@
 <div id="action-description">
     <p>
-        This sample illustrates the Rio Olympic’s gold medal count by using smart labels in the chart. The smart label placement for a series can be shown, when it contains more of points.
+        This sample shows the gold medal count scored by each country at the Rio Olympic Games using smart labels on the chart.
     </p>
 </div>
 <div class="control-section">
     <div>
-        <ejs-accumulationchart id='container' style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='onLoad($event)'>
+        <ejs-accumulationchart id='container' style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='onLoad($event)' [enableBorderOnMouseMove]='false'>
             <e-accumulation-series-collection>
-                <e-accumulation-series name='RIO' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" innerRadius="0%" [dataLabel]="dataLabel"> </e-accumulation-series>
+                <e-accumulation-series name='RIO' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" innerRadius="0%" radius="65%" [dataLabel]="dataLabel"> </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
     </div>
 </div>
 <div id="description">
-    <p> In this example, you can see how to arrange the labels smartly without overlapping with each other. You can use <code>enableSmartLabels</code> property to enable or disable the action. Legend with paging is enabled in this sample.</p>
+    <p> In this example, you can see how the labels can be arranged smartly without overlapping. You can use the <code>EnableSmartLabels</code> property to enable or disable the support.</p>
     <p style="font-weight: 500"> Injecting Module </p>
     <p> Accumulation chart component features are segregated into individual feature-wise modules. To use DataLabel, we need to inject <code>AccumulationDataLabel</code> into the <code>@NgModule.providers</code> section.</p>
+    <p>More information on the smart labels can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/data-label/#smart-labels">documentation section</a>..</p>
 </div>
 <style>
     .control-section {

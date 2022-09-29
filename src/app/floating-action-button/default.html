@@ -1,0 +1,51 @@
+<div class="control-section">
+    <div class="fab-default-container">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div id="target1" class="col-xs-12 col-sm-12 col-lg-6 col-md-6 custom-index">
+                </div>
+                <div id="target2" class="col-xs-12 col-sm-12 col-lg-6 col-md-6 custom-index">
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div id="target3" class="col-xs-12 col-sm-12 col-lg-6 col-md-6 custom-index">
+                </div>
+                <div id="target4" class="col-xs-12 col-sm-12 col-lg-6 col-md-6 custom-index">
+                </div>
+            </div>
+        </div>
+
+        <!-- Icon and isPrimary is false  -->
+        <button ejs-fab id="fab1" title="Mic" iconCss='fab-icons fab-icon-mic' position='MiddleCenter' isPrimary=false
+            target='#target1'></button>
+
+        <!-- Icon with Label -->
+        <button ejs-fab id="fab2" iconCss='fab-icons fab-icon-people' position='MiddleCenter' content="Contact"
+            target='#target2'></button>
+
+        <!-- Icon with Disabled true -->
+        <button ejs-fab id="fab3" content='Disabled' disabled={true} position='MiddleCenter'
+            iconCss='fab-icons fab-icon-people' target='#target3'></button>
+
+        <!-- Label only -->
+        <button ejs-fab id="fab4" content='Text Content' position='MiddleCenter' cssClass='e-warning'
+            target='#target4'></button>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates the default functionalities of the Floating Action Button (FAB).
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, each FAB showcases the usage of <code>iconCss</code>,<code>cssClass</code>,
+        <code>content</code>, and <code>disabled</code> properties, such as:
+    </p>
+    <ul>
+        <li>Icon only FAB</li>
+        <li>Icon with label FAB</li>
+        <li>Disabled FAB</li>
+        <li>Label Only FAB</li>
+    </ul>
+</div>

@@ -1,0 +1,51 @@
+<div class="control-section">
+    <div id="speed-dial-wrapper">
+        <div class="speeddial-template-target custom-index" id="target">
+            <button ejs-speeddial #popupTempSpeeddial id="speeddial" created="created" target="#target" popupTemplate="#popupTemplate"
+                content="Feedback" position="BottomLeft" openIconCss="speeddial-icons speeddial-icon-feedback"
+                [items]=items cssClass="popupSpeedDial">
+                <ng-template #popupTemplate>
+                    <div class="popuptempContent">
+                        <div class="speeddial-form">
+                            <div class="head" >
+                                <div class="textEle">Feedback & Question</div>
+                                <div class="iconEle"><span class="speeddial-icons speeddial-icon-close closeicon" (click)="closeClick()"></span></div>
+                            </div>
+                            <div class="content">
+                                <ejs-textbox id="name" floatLabelType="Always" [showClearButton]="true" placeholder="Enter your name" style="width: 100%"></ejs-textbox>
+                                <ejs-textbox id="email" floatLabelType="Always" [showClearButton]="true" placeholder="Enter your e-mail" style="width: 100%"></ejs-textbox>
+                                <ejs-textbox [multiline]="true" name="comment" floatLabelType="Always" [showClearButton]="true" placeholder="Share your comments" style="width: 100%"></ejs-textbox>
+                            </div>
+                            <div class="footer">
+                                <button id="primarybtn" class="e-btn e-success" (click)="submitClick()"> Submit </button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </button>
+            <button ejs-speeddial id="speeddial1" target="#target" itemTemplate="#itemTemplate"
+                content="Edit" openIconCss="speeddial-icons speeddial-icon-edit"
+                [items]=items>
+                <ng-template #itemTemplate let-items="">
+                    <div class="itemlist">
+                        <span class="icon {{items.iconCss}}" style="padding:3px"></span>
+                        <span class="text">{{items.text}}</span>
+                    </div>
+                </ng-template>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        The following sample demonstrates customization of action items and speed dial popup using templates. Click the
+        speed dial button to open action items.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In the above example, action items are customized using the <code>itemTemplate</code> and popup is customized to
+        load custom UI using the <code>popupTemplate</code>.
+    </p>
+</div>

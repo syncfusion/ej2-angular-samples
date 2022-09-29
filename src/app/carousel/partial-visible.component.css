@@ -1,0 +1,35 @@
+.partial-carousel-section .carousel-sample {
+  margin: 0 auto 2em;
+  max-width: 650px;
+  height: 300px;
+}
+
+.partial-carousel .e-carousel-items .e-carousel-item .img-container {
+  height: 100%;
+  width: 100%;
+  margin: 0 10px;
+}
+
+.partial-carousel .e-carousel-items .e-carousel-item .img-caption {
+  bottom: 4em;
+  color: #fff;
+  font-size: 12pt;
+  height: 2em;
+  position: relative;
+  padding: 0.3em 1em;
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .partial-carousel-section .carousel-sample {
+      height: 110px;
+  }
+
+  .partial-carousel .e-carousel-items .e-carousel-item .img-caption {
+      position: absolute;
+      top: 0;
+      font-size: 12px;
+      text-align: left;
+  }
+}

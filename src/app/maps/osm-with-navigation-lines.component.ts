@@ -16,14 +16,14 @@ Maps.Inject(Marker, MapsTooltip, DataLabel, NavigationLine, Annotations);
     encapsulation: ViewEncapsulation.None
 })
 export class MapsOsmWithNavigationComponent {
-    // custom code start
     public load = (args: ILoadEventArgs) => {
+        // custom code start
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
         args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() +
         theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
+        // custom code end
     }
-    // custom code end
     public zoomSettings: object = {
         zoomFactor: 5,
         enable: false
@@ -118,7 +118,9 @@ export class MapsOsmWithNavigationComponent {
                     longitude: [-102.832, -118.2437]
                 }]
         }];
+    // custom code start
     constructor() {
         //code
     };
+    // custom code end
 }

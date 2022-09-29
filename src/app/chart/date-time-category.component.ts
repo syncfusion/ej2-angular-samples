@@ -51,7 +51,7 @@ export class DateTimeCategoryAxisChartComponent {
     public tooltip: Object  = {
         enable: true
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
     public legendSettings: Object = { visible: false };
     public x: Date = new Date(2017, 11, 22);
     public x1: Date = new Date(2018, 0, 4);
@@ -63,7 +63,7 @@ export class DateTimeCategoryAxisChartComponent {
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
           if (selectedTheme === 'highcontrast') {
 args.chart.annotations[0].content = '<div style="color:#ffffff;font-family: bold; font-weight: 600">Christmas Offer<br> Dec 2017</div>';
-args.chart.annotations[1].content = '<div style="color:#ffffff;font-family: bold; font-weight: 600">Christmas Offer<br> Dec 2017</div>';
+args.chart.annotations[1].content = '<div style="color:#ffffff;font-family: bold; font-weight: 600">New Year Offer<br> Jan 2018</div>';
             }
     };
       // custom code end

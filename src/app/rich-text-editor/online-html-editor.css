@@ -101,31 +101,35 @@ border-left: none;
 .online-editor .e-richtexteditor.e-rte-tb-expand {
    border: none;
 }
-.fabric-dark .CodeMirror-gutters,
-.bootstrap5-dark .CodeMirror-gutters,
-.fluent-dark .CodeMirror-gutters,
-.bootstrap-dark .CodeMirror-gutters,
-.material-dark .CodeMirror-gutters,
-.tailwind-dark .CodeMirror-gutters,
-.highcontrast .CodeMirror-gutters {
-  background-color: #303030;
+.fabric-dark .CodeMirror-gutters, .fabric-dark .CodeMirror {
+  background-color: #201F1F;
+  color: #fff;
 }
-.fabric-dark .CodeMirror,
-.bootstrap5-dark .CodeMirror,
-.fluent-dark .CodeMirror, 
-.bootstrap-dark .CodeMirror, 
-.material-dark .CodeMirror, 
-.tailwind-dark .CodeMirror,
-.highcontrast .CodeMirror {
+.fluent-dark .CodeMirror-gutters, .fluent-dark .CodeMirror {
+  background-color: #1B1A19;
+  color: #fff;
+}
+.bootstrap-dark .CodeMirror-gutters, .bootstrap-dark .CodeMirror {
+  background-color: #1A1A1A;
+  color: #fff;
+}
+.bootstrap5-dark .CodeMirror-gutters, .bootstrap5-dark .CodeMirror {
+  background-color: #212529;
+  color: #fff;
+}
+.material-dark .CodeMirror-gutters, .material-dark .CodeMirror {
   background-color: #303030;
   color: #fff;
 }
-.fabric-dark .title,
-.bootstrap5-dark .title, 
-.bootstrap-dark .title, 
-.fluent-dark .title, 
-.material-dark .title, 
-.tailwind-dark .title, 
-.highcontrast .title {
+.tailwind-dark .CodeMirror-gutters, .tailwind-dark .CodeMirror {
+  background-color: #1F2937;
+  color: #fff;
+}
+.highcontrast .CodeMirror-gutters, .highcontrast .CodeMirror {
+  background-color: #000000;
+  color: #fff;
+}
+.fabric-dark .title, .bootstrap5-dark .title, .bootstrap-dark .title, .fluent-dark .title, 
+.material-dark .title, .tailwind-dark .title, .highcontrast .title {
   color: #fff;
 }

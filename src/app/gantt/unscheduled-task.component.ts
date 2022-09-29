@@ -31,7 +31,8 @@ export class GanttUnscheduledComponent implements OnInit {
         };
         this.editSettings = {
             allowAdding: true,
-            allowEditing: true
+            allowEditing: true,
+            allowDeleting: true
         };
         this.toolbar = [{ text: 'Insert task', tooltipText: 'Insert task at top', id: 'toolbarAdd', prefixIcon: 'e-add-icon tb-icons' }],
         this.labelSettings = {

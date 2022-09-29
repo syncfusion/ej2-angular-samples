@@ -1,19 +1,16 @@
 <div id="action-description">
     <p>
-        This sample visualizes the data about inflation rate comparision for three countries by using spline area series in the chart. 
-        Legend in the sample shows the information about the series.
+        This Angular Spline Area Chart example visualizes the inflation rate comparision for two countries by using spline area series.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [title]='title' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' (load)='load($event)'>
+            [primaryYAxis]='primaryYAxis' (load)='load($event)' [tooltip]='tooltip' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='SplineArea' xName='x' yName='y' [marker]='marker' name='US' opacity=0.5 border-color='transparent'>
+                <e-series [dataSource]='data' type='SplineArea' xName='Period' yName='US_InflationRate' [marker]='circleMarker' name='US' opacity=0.5 width='2' [border]='border'>
                 </e-series>
-                <e-series [dataSource]='data1' type='SplineArea' xName='x' yName='y' [marker]='marker' name='France' opacity=0.5 border-color='transparent'>
-                </e-series>
-                <e-series [dataSource]='data2' type='SplineArea' xName='x' yName='y' [marker]='marker' name='Germany' opacity=0.5 border-color='transparent'>
+                <e-series [dataSource]='data' type='SplineArea' xName='Period' yName='FR_InflationRate' [marker]='diamondMarker' name='France' opacity=0.5 width='2' [border]='border'>
                 </e-series>
             </e-series-collection>
         </ejs-chart>
@@ -21,9 +18,7 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the spline area type charts. Similar to line type series, but the spline area get closed and filled with series color.
-        You can use <code>border</code>, <code>fill</code> properties to customize the spline area. <code>marker</code> and <code>dataLabel</code> are used to represent individual data and its value.
-        Legend is enabled in this example with series type shape.
+        In this example, you can see how to render and configure the spline area chart. This chart plots a fitted curve through each data point in a series. It is used to represent time-dependent data and show trends in data at equal intervals.
      </p>     
       <br>
       <p style="font-weight: 500">Injecting Module</p>
@@ -32,7 +27,7 @@
           <code>SplineAreaService</code> into the <code>@NgModule.providers</code> section.
       </p>
       <p>
-          More information on the area types series can be found in this
+          More information about the area type series can be found in this
           <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#area-charts">documentation section</a>.
       </p>
 </div>

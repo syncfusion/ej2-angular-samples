@@ -119,7 +119,9 @@ export class MapsSelectionComponent {
             }
         }
     ];
+    // custom code start
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = [  'election-data.json', 'usa.json'];
     };
+    // custom code end
 }

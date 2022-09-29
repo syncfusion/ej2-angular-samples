@@ -13,10 +13,11 @@ import { Browser } from '@syncfusion/ej2-base';
 export class PercentStackedColumnChartComponent {
 
     public data: Object[] = [
-        { x: '2006', y: 900, y1: 190, y2: 250, y3: 150 },
-        { x: '2007', y: 544, y1: 226, y2: 145, y3: 120 },
-        { x: '2008', y: 880, y1: 194, y2: 190, y3: 115 },
-        { x: '2009', y: 675, y1: 250, y2: 220, y3: 125 }
+        { Year : "2013", General : 9628912, Honda : 4298390, Suzuki : 2842133, BMW : 2006366 },
+        { Year : "2014", General : 9609326, Honda : 4513769, Suzuki : 3016710, BMW : 2165566 },
+        { Year : "2015", General : 7485587, Honda : 4543838, Suzuki : 3034081, BMW : 2279503 },
+        { Year : "2016", General : 7793066, Honda : 4999266, Suzuki : 2945295, BMW : 2359756 },
+        { Year : "2017", General : 6856880, Honda : 5235842, Suzuki : 3302336, BMW : 2505741 },
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
@@ -29,12 +30,11 @@ export class PercentStackedColumnChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'GDP (%) per Annum',
+        title: 'Vehicles Production',
         rangePadding: 'None',
         interval: 20,
         majorTickLines: { width: 0 },
-        majorGridLines: { width: 1 },
-        minorGridLines: { width: 1 },
+        majorGridLines: { width: 1 },   
         minorTickLines: { width: 0 },
         lineStyle: {
             width: 0
@@ -46,19 +46,23 @@ export class PercentStackedColumnChartComponent {
     };
     public chartArea: Object = {
         border: {
-            width: 0
+            width: 0,
         }
     };
+    public border: Object = { color: '#ffffff', width:1 };
      // custom code start
-    public width: string = Browser.isDevice ? '100%' : '60%';
-
+    public width: string = Browser.isDevice ? '100%' : '75%';
+    public legend: Object = {
+        visible: true,
+        enableHighlight : true
+    }
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
      // custom code end
-    public title: string = 'Gross Domestic Product Growth';
+    public title: string = 'Motor Vehicle Production by Manufacturer';
     constructor() {
         //code
     };

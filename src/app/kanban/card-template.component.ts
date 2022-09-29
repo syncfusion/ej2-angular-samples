@@ -26,7 +26,7 @@ export class CardTemplateComponent {
   
   onDialogClose(args: DialogEventArgs) {
     if(args.element.querySelector('Date') as any){
-    args.data.Date = (args.element.querySelector('#Date') as any).ej2_instances[0].value.toLocaleString('es-PR').split(' ')[0];
+    args.data.Date = (args.element.querySelector('#Date') as any).ej2_instances[0].value.toLocaleString('es-PR').split(',')[0];
     }
   }
 

@@ -6,27 +6,27 @@
 </div>
 <div class="control-section">
     <div align='center'>
-        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [title]='title'
-            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)' [tooltip]='tooltip'>
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' [title]='title'
+            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)' [tooltip]='tooltip' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data1' type='Column' xName='x' yName='y' name='USA Total' width=2
+                <e-series [dataSource]='data' type='Column' xName='Year' yName='USA_Total' name='USA Total Medals' width=2
                     groupName='USA' columnWidth=0.7 columnSpacing=0.1 [marker]='marker'>
                 </e-series>
-                <e-series [dataSource]='data2' type='Column' xName='x' yName='y' name='USA Gold' width=2 groupName='USA'
+                <e-series [dataSource]='data' type='Column' xName='Year' yName='USA_Gold' name='USA Gold Medals' width=2 groupName='USA'
                     columnWidth=0.5 columnSpacing=0.1 [marker]='marker'>
                 </e-series>
 
-                <e-series [dataSource]='data3' type='Column' xName='x' yName='y' name='UK Total' width=2 groupName='UK'
+                <e-series [dataSource]='data' type='Column' xName='Year' yName='UK_Total' name='UK Total Medals' width=2 groupName='UK'
                     columnWidth=0.7 columnSpacing=0.1 [marker]='marker'>
                 </e-series>
-                <e-series [dataSource]='data4' type='Column' xName='x' yName='y' name='UK Gold' width=2 groupName='UK'
+                <e-series [dataSource]='data' type='Column' xName='Year' yName='UK_Gold' name='UK Gold Medals' width=2 groupName='UK'
                     columnWidth=0.5 columnSpacing=0.1 [marker]='marker'>
                 </e-series>
 
-                <e-series [dataSource]='data5' type='Column' xName='x' yName='y' name='China Total' width=2
+                <e-series [dataSource]='data' type='Column' xName='Year' yName='China_Total' name='China Total Medals' width=2
                     groupName='China' columnWidth=0.7 columnSpacing=0.1 [marker]='marker'>
                 </e-series>
-                <e-series [dataSource]='data6' type='Column' xName='x' yName='y' name='China Gold' width=2
+                <e-series [dataSource]='data' type='Column' xName='Year' yName='China_Gold' name='China Gold Medals' width=2
                     groupName='China' columnWidth=0.5 columnSpacing=0.1 [marker]='marker'>
                 </e-series>
             </e-series-collection>
@@ -35,14 +35,11 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the column type charts.
-        Column type charts are used for comparing the frequency, count, total or average of data in different
-        categories.
-        You can group the column series by using <code>groupName</code> property.
+        In this example, you can see how to render and configure column charts. Column charts are used for comparing the frequency, count, total, or average of data in different categories. You can group the column series by using the <code>GroupName</code> property.
     </p>
     <p>
-        <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point
-        in touch enabled devices.
+        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover a point or tap on a point
+        in touch-enabled devices.
     </p>
     <br>
     <p style="font-weight: 500"><b>Injecting Module</b></p>
@@ -51,7 +48,7 @@
         inject <code>ColumnSeriesService</code> into the <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the column series can be found in this
+        More information about the column type series can be found in this
         <a target="_blank"
             href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#column-chart">documentation
             section</a>.

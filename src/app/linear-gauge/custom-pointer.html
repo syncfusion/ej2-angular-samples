@@ -1,0 +1,75 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the inclusion of text and image pointers in the linear gauge. Additionally, multiple
+        pointer support is enabled.
+    </p>
+</div>
+<div class="control-section">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12"
+            style="display: flex;justify-content: center; align-items: center;">
+            <div style="margin: auto;padding: 10px;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div id='horizontal'
+                                    style="padding:6px;cursor:pointer;width:86px;color:black;font-size:15px;border:1px solid #0074E3;background-color:white;text-align:center"
+                                    (click)='horizontalGauge($event)'>Horizontal</div>
+                            </td>
+                            <td>
+                                <div id='vertical'
+                                    style="padding:6px;cursor:pointer;width:86px;color:white;font-size:15px;border:1px solid #0074E3;background-color: #0074E3;text-align:center"
+                                    (click)='verticalGauge($event)'>Vertical</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <pre style="background-color: inherit; border:hidden"></pre>
+    <div id="containerBox" style="float: left;"></div>
+    <div id='textWidget' class="col-xs-5 col-sm-5 col-lg-4 col-md-4"
+        style="display: flex;justify-content: center; align-items: center;">
+        <ejs-lineargauge (load)='load($event)' id='textWidget' #textWidget background='transparent' title='Text widget'
+            [titleStyle]='titleStyle' width='170px' height='350px' style='display:block;' orientation='Vertical'
+            [axes]='axesTextWidget' [annotations]='annotationsTextWidget'>
+        </ejs-lineargauge>
+    </div>
+    <div id='iconWidget' class="col-xs-5 col-sm-5 col-lg-4 col-md-4"
+        style="display: flex;justify-content: center; align-items: center;">
+        <ejs-lineargauge (load)='load($event)' id='iconWidget' #iconWidget background='transparent' title='Icon widget'
+            [titleStyle]='titleStyle' width='170px' height='350px' style='display:block;' orientation='Vertical'
+            [axes]='axesIconWidget'>
+        </ejs-lineargauge>
+    </div>
+    <div id='multipleWidget' class="col-xs-5 col-sm-5 col-lg-4 col-md-4"
+        style="display: flex;justify-content: center; align-items: center;">
+        <ejs-lineargauge (load)='load($event)' id='multipleWidget' #multipleWidget title='Multiple widget pointers'
+            [titleStyle]='titleStyle' width='170px' height='350px' style='display:block;' background='transparent'
+            orientation='Vertical' [axes]='axesMultipleWidget' [annotations]='annotationsMultipleWidget'>
+        </ejs-lineargauge>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure text and image pointers in the linear gauge. The
+        properties available in <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/pointerModel/">pointers</a> and <a
+            target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/annotationModel/">annotations</a>
+        help in the customization of the text and image pointers in the linear gauge.
+    </p>
+    <p>
+        More information on the pointers can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/linear-gauge/pointers/">documentation section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

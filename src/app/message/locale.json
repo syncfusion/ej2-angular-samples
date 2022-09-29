@@ -1,0 +1,27 @@
+{
+    "de": {
+        "message": {
+            "close": "schließen"
+        }
+    },
+    "ar": {
+        "message": {
+            "close": "أغلق"
+        }
+    },
+    "en": {
+        "message": {
+            "close": "Close"
+        }
+    },
+    "zh": {
+        "message": {
+            "close": "關"
+        }
+    },
+    "fr-CH": {
+        "message": {
+            "close": "Fermer"
+        }
+    }
+}

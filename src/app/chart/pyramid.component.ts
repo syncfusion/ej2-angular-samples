@@ -10,16 +10,17 @@ import { AccumulationChart, AccumulationChartComponent, IAccLoadedEventArgs, IAc
     encapsulation: ViewEncapsulation.None
 })
 export class PyramidComponent {
-    public data: Object[] = [{ x: 'Sweet Treats', y: 120, text: '120 cal' },
-    { x: 'Milk, Youghnut, Cheese', y: 435, text: '435 cal' },
-    { x: 'Vegetables', y: 470, text: '470 cal' },
-    { x: 'Meat, Poultry, Fish', y: 475, text: '475 cal' },
-    { x: 'Fruits', y: 520, text: '520 cal' },
-    { x: 'Bread, Rice, Pasta', y: 930, text: '930 cal' }];
+    public data: Object[] = [
+        { Foods :  "Milk, Youghnut, Cheese", Calories : 435, DataLabelMappingName : "Milk, Youghnut, Cheese: 435 cal" },
+        { Foods :  "Vegetables", Calories : 470, DataLabelMappingName : "Vegetables: 470 cal" },
+        { Foods :  "Meat, Poultry, Fish", Calories : 475, DataLabelMappingName : "Meat, Poultry, Fish: 475 cal" },
+        { Foods :  "Fruits", Calories : 520, DataLabelMappingName : "Fruits: 520 cal" },
+        { Foods :  "Bread, Rice, Pasta", Calories : 930, DataLabelMappingName : "Bread, Rice, Pasta: 930 cal" },
+    ];
     @ViewChild('pyramid')
     public pyramid: AccumulationChartComponent | AccumulationChart;
     public dataLabel: Object = {
-        name: 'text', visible: true, position: 'Inside', font: {
+        name: 'DataLabelMappingName', visible: true, position: 'Outside', font: {
             fontWeight: '600'
         }
     };
@@ -32,7 +33,7 @@ export class PyramidComponent {
     public load(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
     // custom code end
     public onChartResized(args: IAccResizeEventArgs): void {
@@ -51,7 +52,7 @@ export class PyramidComponent {
         fill: 'red', mode: 'Drop'
     };
     public explode: boolean = true;
-    public tooltip: Object = { enable: true, format: '${point.x} : <b>${point.y} cal</b>' };
+    public tooltip: Object = { header:'', enable: true, format: '${point.x} : <b>${point.y} cal</b>' };
     public title: string = 'Food Comparison Chart';
     constructor() {
         //code

@@ -1,0 +1,196 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates how to highlight a region in an axis using ranges in the circular gauge. The width,
+        corner radius, and start and end range of a range can all be customized.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-md-8">
+        <ejs-circulargauge (load)='load($event)' background='transparent' style='display:block;' id='range-container'
+            #range=''>
+            <e-axes>
+                <e-axis minimum=0 radius='80%' maximum=120 startAngle=210 endAngle=150 [majorTicks]='majorTicks'
+                    [labelStyle]='labelStyle' [lineStyle]='lineStyle' [minorTicks]='minorTicks'
+                    [annotations]='annotaions'>
+                    <e-ranges>
+                        <e-range start=0 end=40 color='#30B32D' startWidth=10 endWidth=10 roundedCornerRadius="0">
+                        </e-range>
+                        <e-range start=40 end=80 color='#FFDD00' startWidth=10 endWidth=10 roundedCornerRadius="0">
+                        </e-range>
+                        <e-range start=80 end=120 color='#F03E3E' startWidth=10 endWidth=10 roundedCornerRadius="0">
+                        </e-range>
+                    </e-ranges>
+                    <e-pointers>
+                        <e-pointer value=65 radius='60%' pointerWidth=8 [needleTail]='tail' [cap]="pointerCap"
+                            [animation]="animation">
+                        </e-pointer>
+                    </e-pointers>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
+    </div>
+    <div class="col-md-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties"
+                    style="width: 100%; margin-left: -10px">
+                    <tr style="height: 40px">
+                        <td>
+                            <div style="font-size:14px"> Select Range </div>
+                        </td>
+                        <td>
+                            <div>
+                                <select id="rangeSelect" class="form-control" style="width:90%">
+                                    <option value="0" selected=true>Low</option>
+                                    <option value="1">Medium</option>
+                                    <option value="2">High</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <table id="property1" class="property-panel-table" title="Properties"
+                    style="width: 100%; margin-left: -10px">
+                    <colgroup>
+                        <col span="1" style="width: 45%;">
+                        <col span="1" style="width: 35%;">
+                        <col span="1" style="width: 20%;">
+                    </colgroup>
+                    <tr style="height: 40px">
+                        <td>
+                            <div style="font-size:14px">Range Start</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="range" id="greenRangeStart" value="0" min="0" max="40" style="width: 100%;" />
+                            </div>
+                        </td>
+                        <td style="text-align: center; padding-top: 10px; padding-left: 5%">
+                            <span id='rangeStart' style="font-size:14px">0</span>
+                        </td>
+                    </tr>
+                </table>
+                <table id="property2" class="property-panel-table" title="Properties"
+                    style="width: 100%; margin-left: -10px">
+                    <colgroup>
+                        <col span="1" style="width: 45%;">
+                        <col span="1" style="width: 35%;">
+                        <col span="1" style="width: 20%;">
+                    </colgroup>
+                    <tr style="height: 40px">
+                        <td>
+                            <div style="font-size:14px">Range End</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="range" id="greenRangeEnd" value="40" min="0" max="40"
+                                    style="width: 100%;" />
+                            </div>
+                        </td>
+                        <td style="text-align: center; padding-top: 10px; padding-left: 5%">
+                            <span id='rangeEnd' style="font-size:14px">40</span>
+                        </td>
+                    </tr>
+                </table>
+                <table id="property3" class="property-panel-table" title="Properties"
+                    style="width: 100%; margin-left: -10px">
+                    <colgroup>
+                        <col span="1" style="width: 45%;">
+                        <col span="1" style="width: 35%;">
+                        <col span="1" style="width: 20%;">
+                    </colgroup>
+                    <tr style="height: 40px">
+                        <td>
+                            <div style="font-size:14px">Start Width</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="range" id="startWidth" value="10" min="0" max="30" style="width: 100%;" />
+                            </div>
+                        </td>
+                        <td style="text-align: center; padding-top: 10px; padding-left: 5%">
+                            <span id='rangeStartWidth' style="font-size:14px">10 </span>
+                        </td>
+                    </tr>
+                </table>
+                <table id="property4" class="property-panel-table" title="Properties"
+                    style="width: 100%; margin-left: -10px">
+                    <colgroup>
+                        <col span="1" style="width: 45%;">
+                        <col span="1" style="width: 35%;">
+                        <col span="1" style="width: 20%;">
+                    </colgroup>
+                    <tr style="height: 40px">
+                        <td>
+                            <div style="font-size:14px">End Width</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="range" id="endWidth" value="10" min="0" max="30" style="width: 100%;" />
+                            </div>
+                        </td>
+                        <td style="text-align: center; padding-top: 10px; padding-left: 5%">
+                            <span id='rangeEndWidth' style="font-size:14px">10 </span>
+                        </td>
+                    </tr>
+                </table>
+                <table id="property5" class="property-panel-table" title="Properties"
+                    style="width: 100%; margin-left: -10px">
+                    <colgroup>
+                        <col span="1" style="width: 45%;">
+                        <col span="1" style="width: 35%;">
+                        <col span="1" style="width: 20%;">
+                    </colgroup>
+                    <tr style="height: 40px">
+                        <td>
+                            <div style="font-size:14px">Corner Radius</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="range" id="radius" value="0" min="0" max="12" style="width: 100%;" />
+                            </div>
+                        </td>
+                        <td style="text-align: center; padding-top: 10px; padding-left: 5%">
+                            <span id='roundedRadius' style="font-size:14px">0 </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the ranges in the circular gauge. Ranges are used to
+        group the axis values, and you can use <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/rangeModel/#start">start</a>, <a
+            target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/rangeModel/#end">end</a>, <a
+            target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/rangeModel/#color">color</a>, <a
+            target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/rangeModel/#startwidth">startWidth</a>,
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/rangeModel/#endwidth">endWidth</a>,
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/rangeModel/#radius">radius</a> and
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/rangeModel/#roundedcornerradius">roundedCornerRadius</a>
+        properties to customize them. In addition, an axis with multiple ranges is shown in the circular gauge
+        component, as well as options to customize the range properties via the property panel.
+    </p>
+    <p>
+        More information on the ranges can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/gauge-ranges/">documentation
+            section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

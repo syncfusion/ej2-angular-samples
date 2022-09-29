@@ -19,3 +19,7 @@
 #filemanager_property tr{
     height: 50px;
 }
+
+#checkboxElement {
+    font-size:14px;
+}

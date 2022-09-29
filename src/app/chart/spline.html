@@ -1,13 +1,12 @@
 <div id="action-description">
     <p>
-        This sample visualizes the NC weather report for the year 2016 with default spline series in the chart. Low and high temperature
-        of the year are indicated by using annotation.
+        This Angular Spline Chart example represents the North Carolina weather report for the year 2016 with default spline series in the chart.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart id='spline-chartcontainer' align='center' [chartArea]='chartArea' [width]='width' style='display:block;' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' (load)='load($event)' [title]='title' [tooltip]='tooltip' [annotations]='annotations'>
+            [primaryYAxis]='primaryYAxis' (load)='load($event)' [title]='title' [tooltip]='tooltip' [annotations]='annotations' [legendSettings]='legend'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Spline' xName='x' yName='y' name='Max Temp' width=2 [marker]='marker'> </e-series>
                 <e-series [dataSource]='data1' type='Spline' xName='x' yName='y' name='Avg Temp' width=2 [marker]='marker'> </e-series>
@@ -21,16 +20,11 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the spline type charts. Spline chart connects each point in series
-        through a curved line. You can use
-        <code>dashArray</code>,
-        <code>width</code>,
-        <code>fill</code> properties to customize the spline.
-        <code>marker</code> and
-        <code>dataLabel</code> are used to represent individual data and its value.
+        In this example, you can see how to render and configure the spline chart. The Spline chart uses a curved line to connect points in a data series.
+        <code>Marker</code> are used to represent individual data and its value.
     </p>
     <p>
-        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+        <code>Tooltips</code> are enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch enabled devices.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
@@ -40,7 +34,7 @@
         <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the line type series can be found in this
+        More information about the line type series can be found in this
         <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#line-charts">documentation section</a>.
     </p>
 </div>

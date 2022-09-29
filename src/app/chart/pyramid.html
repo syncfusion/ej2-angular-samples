@@ -1,7 +1,6 @@
 <div id="action-description">
     <p>
-        This sample visualizes food comparison data by using pyramid series. 
-        Datalabel shows the Information about the points.
+        This Angular Pyramid Chart visualizes food comparison data by using pyramid series.
     </p>
 </div>
 <div class="control-section">
@@ -9,22 +8,23 @@
         <ejs-accumulationchart id="pyramidcontainer" #pyramid style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip"
             [title]="title" (load)='load($event)' (resized)='onChartResized($event)'>
             <e-accumulation-series-collection>
-                <e-accumulation-series  name='Food' [dataSource]='data' xName='x' yName='y' [neckWidth]="neckWidth" [gapRatio]="gapRatio" [emptyPointSettings]="emptyPointSettings"
+                <e-accumulation-series  name='Food' [dataSource]='data' xName='Foods' yName='Calories' [neckWidth]="neckWidth" [gapRatio]="gapRatio" [emptyPointSettings]="emptyPointSettings"
                     width="45%" height="80%" [explode]="explode" [dataLabel]="dataLabel" type='Pyramid'> </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
     </div>
 </div>
 <div id="description">
-    <p> In this example, you can see how to render pyramid chart. <code>dataLabel</code> is used to represent individual data
-        and its value.</p>
-    <p> <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch
-        enabled devices.</p>
-    <p> <code>Legends</code> are disabled in this example, the information about it can be read using <code>Tooltip</code>.</p>
+    <p> In this example, you can see how to render and configure a pyramid chart. This chart is shaped like a triangle, with lines dividing it into sections of varying widths. Depending on the Y coordinate, the width indicates a level of hierarchy among other categories. The DataLabel  represents individual data and its value.</p>
+    <p> <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch-enabled devices.</p>
     <p style="font-weight: 500">Injecting Module</p>
     <p>
         Chart component features are segregated into individual feature-wise modules. To use Pyramid feature, we need to inject
         <code>PyramidSeriesService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information about the pyramid series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/pyramid/">documentation section</a>.
     </p>
 </div>
 <style>

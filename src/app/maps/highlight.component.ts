@@ -17,14 +17,14 @@ import oklahoma from './oklahoma.json';
     encapsulation: ViewEncapsulation.None
 })
 export class MapsHighlightComponent {
-    // custom code start
     public load = (args: ILoadEventArgs) => {
+        // custom code start
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
         args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() +
         theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
+        // custom code end
     }
-    // custom code end
     public centerPosition: object = { latitude: 35.65, longitude: -97.3 };
 
     public zoomSettings: object = { enable: false, zoomFactor: 1.75 };
@@ -250,8 +250,10 @@ export class MapsHighlightComponent {
             ]
         }
     ];
+    // custom code start
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = [ 'oklahoma.json'];
     };
+    // custom code end
 
 }

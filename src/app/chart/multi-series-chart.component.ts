@@ -16,7 +16,7 @@ export class MultiSeriesChartComponent {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
 
     public data: Object[] = [
         { x: '2007', y: 1 }, { x: '2008', y: 0.25 },

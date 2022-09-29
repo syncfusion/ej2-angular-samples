@@ -1,0 +1,68 @@
+<div id="action-description">
+  <p>This sample demonstrates the partial visible functionality of the <a
+      href="https://www.syncfusion.com/angular-ui-components/angular-carousel" target="_blank">Angular Carousel</a>
+    component.
+  </p>
+</div>
+<div class="control-section partial-carousel-section">
+  <div class="col-lg-12 content-wrapper">
+    <div class="carousel-sample">
+      <ejs-carousel cssClass="partial-carousel" [partialVisible]="partialVisible">
+        <e-carousel-items>
+          <e-carousel-item>
+            <ng-template #template>
+              <figure class="img-container">
+                <img src="./assets/carousel/images/bridge.jpg" alt="bridge" style="height:100%;width:100%;" />
+                <figcaption class="img-caption">Golden Gate Bridge, San Francisco</figcaption>
+              </figure>
+            </ng-template>
+          </e-carousel-item>
+          <e-carousel-item>
+            <ng-template #template>
+              <figure class="img-container">
+                <img src="./assets/carousel/images/trees.jpg" alt="spring_trees" style="height:100%;width:100%;" />
+                <figcaption class="img-caption">Spring Flower Trees</figcaption>
+              </figure>
+            </ng-template>
+          </e-carousel-item>
+          <e-carousel-item>
+            <ng-template #template>
+              <figure class="img-container">
+                <img src="./assets/carousel/images/waterfall.jpg" alt="waterfall" style="height:100%;width:100%;" />
+                <figcaption class="img-caption">Oddadalen Waterfalls, Norway</figcaption>
+              </figure>
+            </ng-template>
+          </e-carousel-item>
+          <e-carousel-item>
+            <ng-template #template>
+              <figure class="img-container">
+                <img src="./assets/carousel/images/sea.jpg" alt="sea" style="height:100%;width:100%;" />
+                <figcaption class="img-caption">Anse Source d'Argent, Seychelles</figcaption>
+              </figure>
+            </ng-template>
+          </e-carousel-item>
+          <e-carousel-item>
+            <ng-template #template>
+              <figure class="img-container">
+                <img src="./assets/carousel/images/rocks.jpeg" alt="rocks" style="height:100%;width:100%;" />
+                <figcaption class="img-caption">Stonehenge, England</figcaption>
+              </figure>
+            </ng-template>
+          </e-carousel-item>
+        </e-carousel-items>
+      </ejs-carousel>
+    </div>
+  </div>
+</div>
+<div id="description">
+  <p>
+    The <code>Angular Carousel</code> component shows partially visible previous/next slides by setting the
+    <code>partialVisible</code> property to true. By default, this property is set to <code>false</code>.
+  </p>
+  <p>See also
+  </p>
+  <p>
+    <a target="_blank"
+      href="https://ej2.syncfusion.com/angular/documentation/carousel/getting-started/">Angular Carousel Getting Started</a>.
+  </p>
+</div>

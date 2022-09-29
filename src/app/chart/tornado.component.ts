@@ -13,38 +13,33 @@ import { Browser } from '@syncfusion/ej2-base';
 export class TornadoChartComponent {
 
     public data: Object[] = [
-        { x: '4.5', y: 31 }, { x: '4.8', y: 37 },
-        { x: '5.1', y: 49 }, { x: '5.4', y: 57 },
-        { x: '5.7', y: 63 }, { x: '6', y: 69 }
-    ];
-    public data1: Object[] = [
-        { x: '4.5', y: -31, text: '31 KG' }, { x: '4.8', y: -39, text: '39 KG' },
-        { x: '5.1', y: -52, text: '52 KG' }, { x: '5.4', y: -64, text: '64 KG' },
-        { x: '5.7', y: -70, text: '70 KG' }, { x: '6', y: -74, text: '74 KG' }
+        { Height : "4.5", Female : 31, Male : -31, Text : "31 KG", Female_Text : "31 KG" },
+        { Height : "4.8", Female : 37, Male : -39, Text : "39 KG", Female_Text : "37 KG" },
+        { Height : "5.1", Female : 49, Male : -52, Text : "52 KG", Female_Text : "49 KG" },
+        { Height : "5.4", Female : 57, Male : -64, Text : "64 KG", Female_Text : "57 KG" },
+        { Height : "5.7", Female : 63, Male : -70, Text : "70 KG", Female_Text : "63 KG" },
+        { Height : "6", Female : 69, Male : -74, Text : "74 KG", Female_Text : "69 KG" }
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'Category',
         title: 'Height in Inches',
-        minorGridLines: { width: 0 },
-        minorTickLines: { width: 0 },
+        majorTickLines: { width: 0 },
         interval: 1,
         majorGridLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        labelFormat: '{value} KG',
+        title: 'Weight (kg)',
+        labelFormat: '{value}',
         edgeLabelPlacement: 'Shift',
-        majorGridLines: { width: 0 },
-        majorTickLines: { width: 0 },
         lineStyle: { width: 0 },
-        labelStyle: {
-            color: 'transparent'
-        }
+        interval: 20,
     };
     public marker: Object = {
         dataLabel: {
             visible: true,
+            name: 'Female_Text',
             position: 'Top',
             font: {
                 fontWeight: '600'
@@ -53,7 +48,7 @@ export class TornadoChartComponent {
     }
     public marker1: Object = {
         dataLabel: {
-            name: 'text',
+            name: 'Text',
             visible: true,
             position: 'Top',
             font: {
@@ -66,14 +61,15 @@ export class TornadoChartComponent {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '80%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
 
     public title: string = 'Height vs Weight';
     public tooltip: Object = {
         enable: true
     };
     public legend: Object = {
-        position: Browser.isDevice ? 'Auto' : 'Right'
+        position: Browser.isDevice ? 'Auto' : 'Right',
+        enableHighlight : true
     }
      // custom code start
     public load(args: ILoadedEventArgs): void {
@@ -84,6 +80,7 @@ export class TornadoChartComponent {
      // custom code end
     public tooltipRender(args: ITooltipRenderEventArgs): void {
         args.text = args.text.indexOf('-') > 0 ? args.text.replace('-', '') : args.text;
+        args.text = args.text + " " + "<b>kg</b>";
     };
     constructor() {
         //code

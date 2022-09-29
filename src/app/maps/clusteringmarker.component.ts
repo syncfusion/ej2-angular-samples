@@ -14,14 +14,14 @@ import cities from './marker-cluster.json';
     encapsulation: ViewEncapsulation.None
 })
 export class MapsClusteringComponent {
-    // custom code start
     public load = (args: ILoadEventArgs) => {
+        // custom code start
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
         args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() +
         theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
+        // custom code end
     }
-    // custom code end
     public zoomSettings: object = {
         enable: true
     };
@@ -60,8 +60,10 @@ export class MapsClusteringComponent {
             }
         }]
     }];
+    // custom code start
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['marker-cluster.json', 'world-map.json'];
     };
+    // custom code end
 
 }

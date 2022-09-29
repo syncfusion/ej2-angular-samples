@@ -1,17 +1,16 @@
 <div id="action-description">
     <p>
-        Percentage of sales for four ethical products are visualized with default 100% stacked area series in chart. 
-        Legend in the sample shows the information about the series.
+        This Angular 100% Stacked Area Chart example visualizes the amount of sales by payment mode  with default 100% stacked area series. A legend in the sample shows information about the series.
     </p>
 </div>
 <div class="control-section">
         <div align='center'>
-            <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)'>
+            <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'>
                 <e-series-collection>
-                    <e-series [dataSource]='data' type='StackingArea100' xName='x' yName='y' [marker]='marker' name='Organic'> </e-series>
-                    <e-series [dataSource]='data1' type='StackingArea100' xName='x' yName='y' [marker]='marker' name='Fair-trade'> </e-series>
-                    <e-series [dataSource]='data2' type='StackingArea100' xName='x' yName='y' [marker]='marker' name='Veg Alternatives'> </e-series>
-                    <e-series [dataSource]='data3' type='StackingArea100' xName='x' yName='y' [marker]='marker' name='Others'> </e-series>
+                    <e-series [dataSource]='data' type='StackingArea100' xName='x' yName='y' name='Bank Transfer' [border]='border'> </e-series>
+                    <e-series [dataSource]='data1' type='StackingArea100' xName='x' yName='y' name='Credit Card' [border]='border'> </e-series>
+                    <e-series [dataSource]='data2' type='StackingArea100' xName='x' yName='y' name='Debit Card' [border]='border'> </e-series>
+                    <e-series [dataSource]='data3' type='StackingArea100' xName='x' yName='y' name='Cash' [border]='border'> </e-series>
                 </e-series-collection>
             </ejs-chart>
         </div>
@@ -21,8 +20,7 @@
 </div>
 <div id="description">
    <p>
-    In this example, you can see how to render and configure the 100% stacked area type charts. Stacks the series on top of another series to avoid the overlapping of series with one another, when rendering more than one area series in same chart.
-    You can use <code>fill</code> properties to customize the 100% stacked area.
+    In this example, you can see how to render and configure the 100% stacked area chart. This chart visualizes data with y-values stacked, ensuring that the cumulative proportion of each stacked element always totals 100%.
     </p>  
      <br>
       <p style="font-weight: 500">Injecting Module</p>
@@ -31,7 +29,7 @@
             <code>StackingAreaSeriesService</code> into the <code>@NgModule.providers</code> section.
         </p>
         <p>
-            More information on the area types series can be found in this
+            More information about the area type series can be found in this
             <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#area-charts">documentation section</a>.
         </p>     
 </div>

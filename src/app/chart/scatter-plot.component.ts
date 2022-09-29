@@ -18,47 +18,39 @@ export class ScatterPlotChartComponent {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '80%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
 
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-           minimum: 100,
-            maximum: 220,
+            minimum: 40,
+            maximum: 56,
             majorGridLines: { width: 0 },
-            edgeLabelPlacement: 'Shift',
-            title: 'Height (cm)'
-
+            title: 'Shoulder Breadth (cm)'
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-                majorTickLines: {
-                    width: 0
-                },
-                minimum: 50,
-                maximum: 80,
+                majorTickLines: { width: 0 },
+                minimum: 70,
+                maximum: 140,
+                interval: 10,
                 lineStyle: {
                     width: 0
                 },
-                  title: 'Weight (kg)',
-                rangePadding: 'None'
-
+                rangePadding: 'None',
+                title: 'Bust Chest Circumference (cm)'
     };
-    public marker1: Object = {
-       visible: false,
-       width: 12,
-       height: 12,
+    public marker: Object = {
+       width: 10,
+       height: 10,
        shape:  'Circle' 
-    };
-    public marker2: Object = {
-       visible: false,
-       width: 12,
-       height: 12,
-       shape: 'Diamond'
     };
     public tooltip: Object = {
         enable: true,
-        format: 'Weight: <b>${point.y} kg</b> <br/> Height: <b>${point.x} cm</b>'
     };
+    public legend: Object = {
+        visible: true,
+        enableHighlight : true
+    }
    // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
@@ -66,9 +58,11 @@ export class ScatterPlotChartComponent {
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
      // custom code end
-    public title: string = 'Height vs Weight';
-    public series1: Object = scatterData.getMaleData;
-    public series2: Object = scatterData.getFemaleData;
+    public series1: Object = scatterData.getCluster1Value;
+    public series2: Object = scatterData.getCluster2Value;
+    public series3: Object = scatterData.getCluster3Value;
+    public series4: Object = scatterData.getCluster4Value;
+    public series5: Object = scatterData.getCluster5Value;
     constructor() {
         //code
      };

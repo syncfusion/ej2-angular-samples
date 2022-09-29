@@ -1,6 +1,6 @@
 import { Component, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
-  ScheduleComponent, DragAndDropService, TimelineMonthService, GroupModel, EventSettingsModel, ResizeService, View
+  ScheduleComponent, DragAndDropService, TimelineMonthService, GroupModel, EventSettingsModel, ResizeService, View, MonthService
 } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
@@ -9,7 +9,7 @@ import {
   templateUrl: 'virtual-scrolling.html',
   styleUrls: ['virtual-scrolling.style.css'],
   encapsulation: ViewEncapsulation.None,
-  providers: [TimelineMonthService, ResizeService, DragAndDropService]
+  providers: [TimelineMonthService, MonthService, ResizeService, DragAndDropService]
 })
 
 export class VirtualScrollingComponent {

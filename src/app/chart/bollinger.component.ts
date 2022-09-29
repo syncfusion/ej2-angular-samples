@@ -78,7 +78,7 @@ export class BollingerIndicatorComponent {
         enable: false
     };
     public period: number = 14;
-    public width: string = Browser.isDevice ? '100%' : '80%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
       // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

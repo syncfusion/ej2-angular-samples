@@ -1,0 +1,35 @@
+<div id="action-description">
+    <p>
+        This example demonstrates how to show and hide the predefined dialog using a variety of animation effects. The dropdown item that displays the animation effects can be selected and set to it.
+    </p>
+</div>
+
+<div class="control-section">
+    <div class="col-lg-8" style="min-height:inherit;">
+        <div id="predefinedDialogAnimation">
+            <!-- Buttons to open the predefined Dialogs -->
+            <button ejs-button cssClass="e-success dlgbtn" #confirmButton (click)="confirmBtnClick()">Confirm</button>
+        </div>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-header">Properties</div>
+        <div>
+            <ejs-dropdownlist id='effectDropDown' #animationSample [dataSource]='effectData' (change)='onChange($event)' [value]='value' [fields]='fields' floatLabelType='Always' [placeholder]='waterMark' [popupHeight]='height'></ejs-dropdownlist>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        The dialog can be opened or closed with an animation effect using the <code>animationSettings</code> property. 
+        You can also customize the duration of the animation and delay to begin the animation or disable the dialog's animation by setting the animation effect as none. 
+    </p>
+    <p>
+        <b>See also</b>
+    </p>
+    <ul>
+        <li> <a target="_blank" 
+            href="https://ej2.syncfusion.com/angular/documentation/dialog/render-a-dialog-using-utility-functions/">
+            documentation section</a>    
+        </li>
+    </ul> 
+</div>

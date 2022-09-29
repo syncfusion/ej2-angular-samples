@@ -1,0 +1,58 @@
+<div id="action-description">
+    <p>
+        This sample shows temperature variations in a circular gauge using multiple ranges. In addition, the needle
+        pointer and annotation help in displaying the temperature that has been measured.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-circulargauge style='display:block;' (load)='load($event)' background='transparent'>
+        <e-axes>
+            <e-axis radius='90%' startAngle=230 endAngle=130 minimum=-30 maximum=120 [majorTicks]='majorTicks'
+                [minorTicks]='minorTicks' [annotations]='annotaions' [lineStyle]='lineStyle' [labelStyle]="labelStyle"
+                hideIntersectingLabel=true>
+                <e-pointers>
+                    <e-pointer value=22.5 radius='45%' pointerWidth=7 color='#F7B194' [cap]="cap" [needleTail]="tail"
+                        [animation]="animation">
+                    </e-pointer>
+                </e-pointers>
+                <e-ranges>
+                    <e-range start="-30" end="-20" radius='90%' color='#58ABD5' startWidth=35 endWidth=35></e-range>
+                    <e-range start="-20" end="-10" radius='90%' color='#58ABD5' startWidth=35 endWidth=35></e-range>
+                    <e-range start="-10" end="0" radius='90%' color='#58ABD5' startWidth=35 endWidth=35></e-range>
+                    <e-range start=0 end=10 radius='90%' color='#58D2D5' startWidth=35 endWidth=35></e-range>
+                    <e-range start=10 end=20 radius='90%' color='#9DD55A' startWidth=35 endWidth=35></e-range>
+                    <e-range start=20 end=30 radius='90%' color='#9DD55A' startWidth=35 endWidth=35></e-range>
+                    <e-range start=30 end=40 radius='90%' color='#F1D158' startWidth=35 endWidth=35></e-range>
+                    <e-range start=40 end=50 radius='90%' color='#F48C6F' startWidth=35 endWidth=35></e-range>
+                    <e-range start=50 end=60 radius='90%' color='#F48C6F' startWidth=35 endWidth=35></e-range>
+                    <e-range start=60 end=70 radius='90%' color='#F48C6F' startWidth=35 endWidth=35></e-range>
+                    <e-range start=70 end=80 radius='90%' color='#F48C6F' startWidth=35 endWidth=35></e-range>
+                    <e-range start=80 end=90 radius='90%' color='#F48C6F' startWidth=35 endWidth=35></e-range>
+                    <e-range start=90 end=100 radius='90%' color='#F48C6F' startWidth=35 endWidth=35></e-range>
+                    <e-range start=100 end=110 radius='90%' color='#F48C6F' startWidth=35 endWidth=35></e-range>
+                    <e-range start=110 end=120 radius='90%' color='#F48C6F' startWidth=35 endWidth=35></e-range>
+                </e-ranges>
+            </e-axis>
+        </e-axes>
+    </ejs-circulargauge>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure multiple ranges in the circular gauge. The <a
+            target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/rangeModel/">ranges</a> collection
+        can be used to define multiple ranges, each of which points to a different start and end value.
+    </p>
+    <p>
+        More information on the ranges can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/gauge-ranges/">documentation
+            section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

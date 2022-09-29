@@ -79,7 +79,6 @@ export class FileUploadController {
             file: this.contextmenuItems,
             folder: this.contextmenuItems
         };
-        this.uploadObj.autoUpload = true;
     }
 
     public ngOnDestroy(): void {

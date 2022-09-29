@@ -42,10 +42,12 @@ export class BlogPostComponent {
             logo.classList.remove('logos');
             if (empCount < 3) {
                 logo.classList.add(empList[empCount]);
+                logo.classList.add('blog-avatar');
                 authorName.innerHTML = nameListList[empCount];
                 empCount++;
             } else {
                 logo.classList.add('logo');
+                logo.classList.add('blog-avatar');
                 authorName.innerHTML = 'User';
             }
             const timeZone: HTMLElement = cloneAnswer.querySelector('.detailsAnswer') as HTMLElement;

@@ -75,7 +75,7 @@ export class CandleStickChartComponent {
                 args.fill = pointColors[args.point.index];
             }
     };
-    public width: string = Browser.isDevice ? '100%' : '80%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
     public legendSettings: Object = {
         visible: false
     };

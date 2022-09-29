@@ -14,54 +14,57 @@ import { Browser } from '@syncfusion/ej2-base';
 export class StepLineChartComponent {
 
     public data: Object[] = [
-        { x: new Date(1975, 0, 1), y: 16 },
-        { x: new Date(1980, 0, 1), y: 12.5 },
-        { x: new Date(1985, 0, 1), y: 19 },
-        { x: new Date(1990, 0, 1), y: 14.4 },
-        { x: new Date(1995, 0, 1), y: 11.5 },
-        { x: new Date(2000, 0, 1), y: 14 },
-        { x: new Date(2005, 0, 1), y: 10 },
-        { x: new Date(2010, 0, 1), y: 16 }
-    ];
-    public data1: Object[] = [
-        { x: new Date(1975, 0, 1), y: 10 },
-        { x: new Date(1980, 0, 1), y: 7.5 },
-        { x: new Date(1985, 0, 1), y: 11 },
-        { x: new Date(1990, 0, 1), y: 7 },
-        { x: new Date(1995, 0, 1), y: 8 },
-        { x: new Date(2000, 0, 1), y: 6 },
-        { x: new Date(2005, 0, 1), y: 3.5 },
-        { x: new Date(2010, 0, 1), y: 7 }
+        { Period : new Date(1975, 1, 1), CHN_UnemploymentRate : 16, AUS_UnemploymentRate : 35, ITA_UnemploymentRate : 3.4 },
+        { Period : new Date(1978, 1, 1), CHN_UnemploymentRate : 12.5, AUS_UnemploymentRate : 45, ITA_UnemploymentRate : 4.4 },
+        { Period : new Date(1981, 1, 1), CHN_UnemploymentRate : 19, AUS_UnemploymentRate : 55, ITA_UnemploymentRate : 6 },
+        { Period : new Date(1984, 1, 1), CHN_UnemploymentRate : 14.4, AUS_UnemploymentRate : 20, ITA_UnemploymentRate : 7 },
+        { Period : new Date(1987, 1, 1), CHN_UnemploymentRate : 11.5, AUS_UnemploymentRate : 10, ITA_UnemploymentRate : 11.3 },
+        { Period : new Date(1990, 1, 1), CHN_UnemploymentRate : 14, AUS_UnemploymentRate : 42, ITA_UnemploymentRate : 10.1 },
+        { Period : new Date(1993, 1, 1), CHN_UnemploymentRate : 10, AUS_UnemploymentRate : 35, ITA_UnemploymentRate : 7.8 },
+        { Period : new Date(1996, 1, 1), CHN_UnemploymentRate : 16, AUS_UnemploymentRate : 22, ITA_UnemploymentRate : 8.5 },
+        { Period : new Date(2000, 1, 1), CHN_UnemploymentRate : 16, AUS_UnemploymentRate : 65, ITA_UnemploymentRate : 8.5 },
+        { Period : new Date(2005, 1, 1), CHN_UnemploymentRate : 16, AUS_UnemploymentRate : 65, ITA_UnemploymentRate : 8.5 },
+        { Period : new Date(2010, 1, 1), CHN_UnemploymentRate : 16, AUS_UnemploymentRate : 58, ITA_UnemploymentRate : 8.5 }
     ];
     public chartArea: Object = {
         border: {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         labelFormat: 'y',
-        intervalType: 'Years',
+        intervalType: 'Months',
+        maximum: new Date(2015, 1, 1),
+        minimum: new Date(1971, 1, 1),
         majorGridLines: { width: 0 },
         valueType: 'DateTime',
         edgeLabelPlacement: 'Shift'
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
+        title: 'Production(In Percentage)',
         lineStyle: { width: 0 },
-        interval: 5,
+        interval: 10,
         majorTickLines: { width: 0 },
         labelFormat: '{value}%'
     };
     public marker: Object = {
         visible: true,
-        width: 10,
-        height: 10
+        width: 7,
+        height: 7
     };
     public tooltip: Object = {
-        enable: true
+        enable: true,
+        header: "<b>Fruit Production</b>",
+        shared: true,
+        format: '${point.x} : <b> ${point.y} </b>',
     };
+    public legend: Object = {
+        visible: true,
+        enableHighlight : true
+    }
      // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
@@ -69,7 +72,7 @@ export class StepLineChartComponent {
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
      // custom code end
-    public title: string = 'Unemployment Rates 1975-2010';
+    public title: string = 'Fruit Production Statistics';
     constructor() {
         //code
     };

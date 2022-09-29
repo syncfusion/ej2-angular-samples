@@ -6,7 +6,7 @@
     <ejs-dialog #template [height]='height' [animationSettings]='animationSettings' [showCloseIcon]='showCloseIcon'
         [target]='target' [width]='width' (open)="dialogOpen()" (close)="dialogClose()">
         <ng-template #footerTemplate>
-            <input id="inVal" #inVal class="e-input" type="text" placeholder="Enter your message here!" />
+            <input id="inVal" #inVal class="e-input" aria-label="Message" type="text" placeholder="Enter your message here!" />
             <button id="sendButton" #sendButton class="e-control e-btn e-primary sendButton" data-ripple="true">Send</button>
         </ng-template>
         <ng-template #content>

@@ -71,7 +71,9 @@ export class MapsProgrammaticZoomComponent {
       this.maps.zoomSettings.shouldZoomInitially = e.checked;
     };
   }
+  // custom code start
   constructor(@Inject('sourceFiles') private sourceFiles: any) {
     sourceFiles.files = ['southamerica-country-capitals.json', 'world-map.json'];
   };
+  // custom code end
 }

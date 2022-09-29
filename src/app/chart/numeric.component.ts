@@ -61,7 +61,7 @@ export class NumericAxisChartComponent {
             color: 'transparent'
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
     
      public tooltip: Object = {
         enable: true, format: '${point.x}th Over : <b>${point.y} Runs</b>'

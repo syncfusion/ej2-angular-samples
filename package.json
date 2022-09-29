@@ -1,6 +1,6 @@
 {
   "name": "ej2-angular-samples",
-  "version": "20.2.43",
+  "version": "20.3.47",
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.0.0",
@@ -47,6 +47,7 @@
     "@syncfusion/ej2-angular-spreadsheet": "*",
     "@syncfusion/ej2-angular-treegrid": "*",
     "@syncfusion/ej2-angular-treemap": "*",
+    "@syncfusion/ej2-angular-image-editor": "*",
     "@syncfusion/ej2-react-notifications": "*",
     "@types/codemirror": "0.0.56",
     "@types/marked": "^0.3.0",

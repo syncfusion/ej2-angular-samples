@@ -1,0 +1,39 @@
+
+#predefinedDialogCustomization {
+  padding: 25px 0 0 15px;
+}
+.fileEdit{
+  display:flex;
+  justify-content:space-evenly;
+  padding: 20px 0 0 50px;
+}
+#predefinedDialogCustomization .dlgbtn{
+  margin-right: 10px;
+}
+#predefinedDialogCustomization #statusText{
+  font-size: 16px;
+  margin-top: 20px;
+}
+.e-alert-dialog .e-footer-content {
+  display: flex;
+  justify-content: center;
+}
+.Table{
+  line-height: 2.0;
+}
+.circle-border{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: green;
+  width: 60px;
+  height: 60px;
+  border: 5px solid rgb(215,215,215);
+  border-radius: 50%;
+}
+.e-changes-reject{
+  display: inline;
+  float: left;
+  font-size: 40px;
+  padding-right: 10px; 
+}

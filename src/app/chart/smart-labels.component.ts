@@ -39,18 +39,20 @@ export class SmartLabelsComponent {
     public dataLabel: AccumulationDataLabelSettingsModel = {
         visible: true, position: 'Outside',
         connectorStyle: { length: '20px', type: 'Curve' }, name: 'text',
+        font: { fontWeight: '600' }
     };
     public startAngle: number = 60;
     //Initializing Tooltip
     public tooltip: TooltipSettingsModel = {
-        enable: true, format: '${point.x} : <b>${point.y}%</b>'
+        header:'',
+        enable: true, format: '<b>${point.x}</b><br> Gold Medals: <b>${point.y}</b>'
     };
     public title: string = 'Rio Olympics Gold ';
      // custom code start
     public onLoad(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     }
      // custom code end
     constructor() {

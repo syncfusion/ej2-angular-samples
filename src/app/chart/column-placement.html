@@ -1,6 +1,6 @@
 <div id="action-description">
     <p>
-        This sample illustrates four column series. Each column is rendered with different column width and it is placed  behind to another one.
+        This sample shows four series of columns in which each column is rendered with a different width and placed behind the previous column.
     </p>
 </div>
 <div class="control-section">
@@ -8,13 +8,13 @@
         <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
             [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [enableSideBySidePlacement]='placement'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Total' width=2 [marker]='marker1' columnWidth=0.5>
+                <e-series [dataSource]='data' type='Column' xName='ConsumerName' yName='TotalCount' name='Total' width=2 [marker]='dataLebelMarker' columnWidth=0.5>
                 </e-series>
-                <e-series [dataSource]='data1' type='Column' xName='x' yName='y' name='Apple' width=2 [marker]='marker' columnWidth=0.4>
+                <e-series [dataSource]='data' type='Column' xName='ConsumerName' yName='AppleCount' name='Apple' width=2 [marker]='marker' columnWidth=0.4>
                 </e-series>
-                <e-series [dataSource]='data2' type='Column' xName='x' yName='y' name='Orange' width=2 [marker]='marker' columnWidth=0.3>
+                <e-series [dataSource]='data' type='Column' xName='ConsumerName' yName='OrangeCount' name='Orange' width=2 [marker]='marker' columnWidth=0.3>
                 </e-series>
-                <e-series [dataSource]='data3' type='Column' xName='x' yName='y' name='Grapes' width=2 [marker]='marker' columnWidth=0.2>
+                <e-series [dataSource]='data' type='Column' xName='ConsumerName' yName='GrapesCount' name='Grapes' width=2 [marker]='marker' columnWidth=0.2>
                 </e-series>
             </e-series-collection>
         </ejs-chart>
@@ -22,14 +22,10 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the column type charts. Column type charts are used for comparing
-        the frequency, count, total or average of data in different categories. You can use
-        <code>border</code>,
-        <code>fill</code> properties to customize the data appearance.
-        <code>dataLabel</code> is used to represent individual data and its value.
+        In this example, you can see how to render and configure the column chart. The column chart is used to compare the frequency, count, total, or average of data in different categories. The <code>EnableSideBySidePlacement</code> property is used to enable and disable side-by-side positioning. <code>DataLabel</code> is used to present details about individual data points.
     </p>
     <p>
-        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch-enabled devices.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
@@ -39,7 +35,7 @@
         <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the column types series can be found in this
+        More information about the column type series can be found in this
         <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#column-charts">documentation section</a>.
     </p>
 </div>

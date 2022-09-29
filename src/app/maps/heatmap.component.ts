@@ -15,14 +15,14 @@ import population from './india-population.json';
     encapsulation: ViewEncapsulation.None
 })
 export class MapsHeatmapComponent {
-    // custom code start
     public load = (args: ILoadEventArgs) => {
+        // custom code start
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
         args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() +
         theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
+        // custom code end
     }
-    // custom code end
     public titleSettings: object = {
         text: 'State wise India\'s population - 2011',
         titleStyle: { size: '16px' }
@@ -71,8 +71,10 @@ export class MapsHeatmapComponent {
             }
         }
     ];
+    // custom code start
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = [ 'india-population.json', 'india.json'];
     };
+    // custom code end
 
 }

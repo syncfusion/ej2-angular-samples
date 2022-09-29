@@ -1,0 +1,89 @@
+<div class="control-section">
+    <div class="row skeleton-animation">
+        <div>
+            <button id="reloadSkeleton" class="e-btn e-primary" (click)="reload()">Reload</button>
+        </div>
+        <div class="col-sm-6">
+            <h5>Fade Effect</h5>
+            <br />
+            <div *ngIf="isDataLoading; else fadeBlock">
+                <div id="skeletonCard" class="e-card">
+                    <div class="cardProfile">
+                        <ejs-skeleton id="cardProfile" shape="Circle" width="60px" shimmerEffect="Fade"></ejs-skeleton>
+                    </div>
+                    <div class="cardinfo">
+                        <ejs-skeleton id="cardText1" width=30%; height="15px" shimmerEffect="Fade"></ejs-skeleton>
+                        <br />
+                        <ejs-skeleton id="cardText2" width=15%; height="15px" shimmerEffect="Fade"></ejs-skeleton>
+                    </div>
+                    <div class="cardContent">
+                        <ejs-skeleton id="cardContent" shape='Rectangle' width="100%" height="250px" shimmerEffect="Fade"></ejs-skeleton>
+                    </div>
+                    <div class="cardoptions">
+                        <ejs-skeleton id="cardLeftOptn" shape='Rectangle' width="20%" height="30px" shimmerEffect="Fade"></ejs-skeleton>
+                        <ejs-skeleton id="cardRightOptn" shape='Rectangle' width="20%" height="30px" shimmerEffect="Fade"></ejs-skeleton>
+                    </div>
+                </div>
+            </div>
+            <ng-template #fadeBlock>
+                <div id="skeletondatacard" class="e-card">
+                    <div class="cardProfile">
+                        <div [class]="profileimage"></div>
+                    </div>
+                    <div class="cardinfo">
+                        <label id="name" style="font-size: 15px;">{{cardname}}</label><br />
+                        <label id="time" style="font-weight:normal;">{{time}}</label>
+                    </div>
+                    <div class="cardContent">
+                        <div [class]="postimage"></div>
+                    </div>
+                    <div class="cardoptions">
+                        <div id="cardLeftOptn"><button class="e-btn e-outline e-primary"
+                                style="width: 100%;">Like</button></div>
+                        <div id="cardRightOptn"><button class="e-btn e-primary"
+                                style="width: 100%;">Share</button></div>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+        <div class="col-sm-6">
+            <h5>Pulse Effect</h5>
+            <br />
+            <ul id="skeleton-list" *ngIf="isDataLoading; else pulseBlock" class="e-card">
+                <li *ngFor="let e of [].constructor(8); index as i">
+                    <ejs-skeleton id="listProfile{{i}}" class="listProfile" shape='Circle'  shimmerEffect="Pulse"> </ejs-skeleton>
+                    <div>
+                        <ejs-skeleton id="listCtn{{i}}" class="listCtn" width="80%"  shimmerEffect="Pulse"> </ejs-skeleton>
+                        <br />
+                        <ejs-skeleton id="desCtn{{i}}" class="distCtn" width="60%"  shimmerEffect="Pulse"> </ejs-skeleton>
+                    </div>
+                </li>
+            </ul>
+            <ng-template #pulseBlock>
+                <ejs-listview id='skeleton-listview' [dataSource]='listData'  cssClass='e-list-template e-card' sortOrder='Ascending' height='420px'>
+                    <ng-template #template let-data="">
+                        <div class="e-list-wrapper e-list-multi-line e-list-avatar">
+                            <span class="e-avatar e-avatar-circle" *ngIf="data.avatar !== ''">{{data.avatar}}</span>
+                            <span class="{{data.pic}} e-avatar e-avatar-circle" *ngIf="data.pic !== '' "> </span>
+                            <span class="e-list-item-header">{{data.text}}</span>
+                            <span class="e-list-content">{{data.contact}}</span>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample demonstrates the fade and pulse shimmer effects of the skeleton with a card and a list layout. Click 
+        the reload button to load data to the card and list with a skeleton to show loading.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The default skeleton shimmer effect is wave. This can be changed to <b>Fade</b> and <b>Pulse</b> effects using 
+        the <code>shimmerEffect</code> property.
+    </p>
+</div>

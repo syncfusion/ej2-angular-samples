@@ -1,0 +1,53 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates how to create an analog clock that displays the time.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-circulargauge style='display:block;' background='transparent' #gauge (load)='load($event)' id="clock"
+        (loaded)='loaded($event)' (resized)='resize($event)'>
+        <e-axes>
+            <e-axis radius='90%' startAngle=0 endAngle=0 minimum=0 maximum=12 [majorTicks]='majorTicks'
+                [minorTicks]='minorTicks' [lineStyle]='lineStyle' [labelStyle]="labelStyle">
+                <e-pointers>
+                    <e-pointer value=10.2 radius='70%' pointerWidth=3 [needleStartWidth]="needleStartWidthOne"
+                        [animation]="animation" [cap]="cap" [needleTail]="needleTail">
+                    </e-pointer>
+                    <e-pointer value=2 radius='100%' pointerWidth=3 [needleStartWidth]="needleStartWidth"
+                        [animation]="animation" [cap]="cap" [needleTail]="needleTail">
+                    </e-pointer>
+                    <e-pointer value=12 radius='90%' pointerWidth=3 color='#00A8B5'
+                        [needleStartWidth]="needleStartWidth" [animation]="animation" [cap]="cap"
+                        [needleTail]="needleTailOne">
+                    </e-pointer>
+                </e-pointers>
+                <e-annotations>
+                    <e-annotation content='<div id="subGaugeOne" style="margin-left: -50%"></div>' angle=290 radius='0%'
+                        zIndex='1'>
+                    </e-annotation>
+                    <e-annotation content='<div id="subGaugeTwo" style="margin-left: -110%;margin-top: -50%;"></div>'
+                        angle=90 radius='0%' zIndex='1'>
+                    </e-annotation>
+                </e-annotations>
+            </e-axis>
+        </e-axes>
+    </ejs-circulargauge>
+</div>
+<div id="description">
+    <p>
+        In this example, a clock has been created by adding axis, minor ticks, major ticks, and needles in a circular
+        gauge and customizing it accordingly. In addition, the clock ticks, displaying the time in a lively manner.
+    </p>
+    <p>
+        More information on the circular gauge can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/getting-started/">documentation
+            section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

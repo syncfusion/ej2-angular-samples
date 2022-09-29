@@ -100,13 +100,6 @@ top:0%! important;
     font-weight: 500;
 }
 
-.bootstrap5-dark rect#chartcontainer_ChartBorder,
-.tailwind-dark rect#chartcontainer_ChartBorder,
-.bootstrap-dark rect#chartcontainer_ChartBorder,
-.fabric-dark rect#chartcontainer_ChartBorder {
-    fill: #000000;
-}
-
 .e-error,
 .e-float-text {
     font-weight: 500;

@@ -30,14 +30,13 @@ export class LineSegmentChartComponent {
         interval: 100,
         lineStyle: { width: 0 },
         majorTickLines: { width: 0 },
-        minorTickLines: { width: 0 }
     };
     public chartArea: Object = {
         border: {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
     public legend: Object = { visible: false };
     public segments: Object[] = [{
         value: 450,
@@ -49,7 +48,9 @@ export class LineSegmentChartComponent {
         color: 'blue'
     }];
     public tooltip: Object = {
-        enable: true, shared: true
+        enable: true, shared: true,
+        header: '<b>Rainfall</b>',
+        format: '${point.x} : <b>${point.y}</b>'
     };
     public load(args: ILoadedEventArgs): void {
         // custom code start
@@ -73,7 +74,7 @@ export class LineSegmentChartComponent {
             args.chart.series[0].segments[2].color = '#3F9BFF';
         }
     };
-    public title: string = 'Annual Mean Rainfall for Australia';
+    public title: string = 'Annual Mean Rainfall in Australia';
     constructor() {
         //code
     };

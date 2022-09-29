@@ -7,6 +7,13 @@
             "icon": "Icons"
         }
     },
+    "appbar": {
+        "ControlName": "AppBar",
+        "Samples": {
+            "default": "Default Functionalities",
+            "color": "Color"
+        }
+    },
     "auto-complete": {
         "ControlName": "AutoComplete",
         "Samples": {
@@ -369,7 +376,6 @@
         "ControlName": "Dialog",
         "Samples": {
             "default": "Default Functionalities",
-            "custom-dialog": "Custom Dialogs",
             "modal-dialog": "Modal",
             "template": "Template",
             "dialog-contents-via-ajax": "Ajax Content",
@@ -399,6 +405,13 @@
             "auto-save": "Auto Save",
             "chart": "Chart Preservation",
             "document-protection": "Document Protection"
+        }
+    },
+    "image-editor": {
+        "ControlName": "Image Editor",
+        "Samples": {
+            "default": "Default Functionalities",
+			"profile-picture": "Profile Picture"
         }
     },
     "drop-down-list": {
@@ -438,6 +451,15 @@
             "amazon-s3-file-provider": "Amazon S3 File Provider",
             "firebase": "Firebase Realtime File Provider",
             "ftp-file-provider":"FTP File Provider"
+        }
+    },
+    "floating-action-button": {
+        "ControlName": "Floating Action Button",
+        "Samples": {
+            "overview": "Overview",
+            "default": "Default Functionalities",
+            "position": "Position",
+            "styles": "Styles"
         }
     },
     "form-validator": {
@@ -684,6 +706,14 @@
             "toolbar-integration": "Toolbar Integration"
         }
     },
+    "mention": {
+        "ControlName": "Mention",
+        "Samples": {
+            "default": "Default Functionalities",
+            "multiple-list": "Multiple List",
+            "template": "Template"
+        }
+    },
     "multi-select": {
         "ControlName": "MultiSelect Dropdown",
         "Samples": {
@@ -762,6 +792,14 @@
             "exporting": "Export"
         }
     },
+      "predefined-dialogs" : {
+        "ControlName" : "Predefined Dialogs",
+        "Samples" : {
+            "default": "Default Functionalities",
+            "customization": "Customization",
+            "animation": "Animation"
+        }
+    },
     "progress-bar" : {
         "ControlName" : "Progress Bar",
         "Samples" : {
@@ -808,6 +846,7 @@
             "image": "Image",
             "inline": "Inline",
             "paste-cleanup": "name:Paste from MS Word'",
+            "mention-integration": "Mention Integration",
             "iframe": "IFrame",
             "print": "Print",
             "ajax-load": "Ajax Content",
@@ -823,8 +862,7 @@
             "markdown-editor-preview": "Preview",
             "markdown-editor-custom-format": "Custom Format",
             "reactive-form": "Reactive Form",
-            "template-driven": "Template Driven",
-            "tribute": "Tribute JS"
+            "template-driven": "Template Driven"
         }
     },
     "schedule": {
@@ -921,6 +959,13 @@
             "toolbar": "Toolbar"
         }
     },
+    "skeleton": {
+        "ControlName": "Skeleton",
+        "Samples": {
+            "default": "Default Functionalities",
+            "animation": "Animation"
+        }
+    },
     "smith-chart": {
         "ControlName": "Smith Chart",
         "Samples": {
@@ -939,6 +984,17 @@
             "customization": "Customization",
             "live-update": "Live Update",
             "range-band": "Range Band"
+        }
+    },
+    "speed-dial": {
+        "ControlName": "SpeedDial",
+        "Samples": {
+            "default": "Default Functionalities",
+            "linear": "Position (Linear)",
+            "radial": "Radial Menu",
+            "styles": "Styles",
+            "template": "Template",
+            "modal": "Modal"
         }
     },
     "splitter": {
@@ -1018,6 +1074,16 @@
             "template": "Template",
             "positions": "Positions",
             "api": "API"
+        }
+    },
+    "message": {
+        "ControlName": "Message",
+        "Samples": {
+            "default": "Default Functionalities",
+            "variants": "Variants",
+            "icons": "Icons",
+            "customization": "Customization",
+            "template": "Template"
         }
     },
     "toolbar": {

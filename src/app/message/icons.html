@@ -1,0 +1,47 @@
+<div id="action-description">
+    <p>This sample demonstrates the visibility customization of severity and close icons of the Angular Message component. Click the close icon to hide the message. Click the button to restore the hidden message. Check or uncheck the check box to show or hide the visibility of the severity icon. Check or uncheck the check box to show or hide the visibility of the close icon.</p>
+</div>
+
+<div class="col-lg-8 control-section msg-icon-section sb-property-border">
+    <div class="content-section">
+        <button #btn1 ejs-button content="Show Default Message" cssClass="e-outline e-primary msg-hidden" (click)="defaultClick()"></button>
+        <ejs-message #msg_default_icon id="msg_default_icon" [showCloseIcon]="true" (closed)="defaultClosed()">Editing is restricted</ejs-message>
+        <button #btn2 ejs-button content="Show Info Message" cssClass="e-outline e-primary e-info msg-hidden" (click)="infoClick()"></button>
+        <ejs-message #msg_info_icon id="msg_info_icon" severity="Info" [showCloseIcon]="true" (closed)="infoClosed()">Please read the comments carefully</ejs-message>
+        <button #btn3 ejs-button content="Show Success Message" cssClass="e-outline e-primary e-success msg-hidden" (click)="successClick()"></button>
+        <ejs-message #msg_success_icon id="msg_success_icon" severity="Success" [showCloseIcon]="true" (closed)="successClosed()">Your message has been sent successfully</ejs-message>
+        <button #btn4 ejs-button content="Show Warning Message" cssClass="e-outline e-primary e-warning msg-hidden" (click)="warningClick()"></button>
+        <ejs-message #msg_warning_icon id="msg_warning_icon" severity="Warning" [showCloseIcon]="true" (closed)="warningClosed()">There was a problem with your network connection</ejs-message>
+        <button #btn5 ejs-button content="Show Error Message" cssClass="e-outline e-primary e-error msg-hidden" (click)="errorClick()"></button>
+        <ejs-message #msg_error_icon id="msg_error_icon" severity="Error" [showCloseIcon]="true" (closed)="errorClosed()">A problem has been occurred while submitting your data</ejs-message>
+    </div>
+</div>
+<div class="col-lg-4 property-section">
+    <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+            <table id="property" title="Properties">
+                <tbody>
+                    <tr>
+                        <td style="padding: 10px;">
+                            <ejs-checkbox #showIcon label='Severity Icon' [checked]="true"
+                                (change)="severityIconChange($event)"></ejs-checkbox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">
+                            <ejs-checkbox #showCloseIcon label='Close Icon' [checked]="true"
+                                (change)="closeIconChange($event)"></ejs-checkbox>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<div id="description">
+    <p>The Message component can be rendered with and without the severity and close icons. The close icon is used to hide the message.</p>
+    <p>In this sample, the Message component is rendered with a severity icon and a close icon. The visibility of the severity icon is handled by the <code>showIcon</code> property. The visibility of the close icon is handled by the <code>showCloseIcon</code> property.</p>
+</div>

@@ -77,7 +77,9 @@ export class MapsTooltipComponent {
             }
         }
     ];
+    // custom code start
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = [  'world-cup.json', 'world-map.json'];
     };
+    // custom code end
 }

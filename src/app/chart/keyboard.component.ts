@@ -61,14 +61,13 @@ export class KeyboardComponent {
         }
         this.chart.refresh();
     }
-    //Initializing Primary X Axis
+
     public primaryXAxis: Object = {
         valueType: 'Category',
         majorGridLines: { width: 0 },
         labelStyle: { size: "0px" },
         majorTickLines: { width: 0 }
     };
-    //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         title: "Sales in Percentage",
         labelFormat: "{value}%",
@@ -172,7 +171,7 @@ export class KeyboardComponent {
     //Initializing Chart title
     public title: string = 'Quarterly Sales Chart';
 
-    public width: string = Browser.isDevice ? '100%' : '80%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
 
     public legendClick(args: ILegendClickEventArgs) {
         let seriesIndex = 0;

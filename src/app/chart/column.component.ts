@@ -13,28 +13,40 @@ import { Browser } from '@syncfusion/ej2-base';
 export class ColumnChartComponent {
 
     public data: Object[] = [
-        { x: 'USA', y: 46 }, { x: 'GBR', y: 27 }, { x: 'CHN', y: 26 }
-    ];
-    public data1: Object[] = [
-        { x: 'USA', y: 37 }, { x: 'GBR', y: 23 }, { x: 'CHN', y: 18 }
-    ];
-    public data2: Object[] = [
-        { x: 'USA', y: 38 }, { x: 'GBR', y: 17 }, { x: 'CHN', y: 26 }
+        { Country : "GBR", GoldMedal : 27, SilverMedal : 23, BronzeMedal : 17, MappingName : "Great Britain" },
+        { Country : "CHN", GoldMedal : 26, SilverMedal : 18, BronzeMedal : 26, MappingName : "China" },
+        { Country : "AUS", GoldMedal : 8, SilverMedal : 11, BronzeMedal : 10, MappingName : "Australia" },
+        { Country : "RUS", GoldMedal : 19, SilverMedal : 17, BronzeMedal : 20, MappingName : "Russia" },
+        { Country : "GER", GoldMedal : 17, SilverMedal : 10, BronzeMedal : 15, MappingName : "Germany" },
+        { Country : "UA", GoldMedal : 2, SilverMedal : 5, BronzeMedal : 24, MappingName : "Ukraine" },       
+        { Country : "ES", GoldMedal : 7, SilverMedal : 4, BronzeMedal : 6, MappingName : "Spain" },
+        { Country : "UZB", GoldMedal : 4, SilverMedal : 2, BronzeMedal : 7, MappingName : "Uzbekistan" },
+        { Country : "JPN", GoldMedal : 12, SilverMedal : 8, BronzeMedal : 21, MappingName : "Japan" },
+        { Country : "NL", GoldMedal : 8, SilverMedal : 7, BronzeMedal : 4, MappingName : "NetherLand" },
+        { Country : "USA", GoldMedal : 46, SilverMedal : 37, BronzeMedal : 38, MappingName : "United States" },
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        valueType: 'Category', interval: 1, majorGridLines: { width: 0 }
+        valueType: 'Category', interval: 1, majorGridLines: { width: 0 }, majorTickLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        majorGridLines: { width: 0 },
-        majorTickLines: { width: 0 }, lineStyle: { width: 0 }, labelStyle: { color: 'transparent' }
+        title: 'Medal Count',
+        maximum: 50,
+        interval: 10,
+        majorTickLines: { width: 0 }, lineStyle: { width: 0 }, 
     };
-    public marker: Object = { dataLabel: { visible: true, position: 'Top', font: { fontWeight: '600', color: '#ffffff' } } }
+    public marker: Object = { dataLabel: { visible: false, position: 'Top', font: { fontWeight: '600', color: '#ffffff' } } }
     public title: string = 'Olympic Medal Counts - RIO';
     public tooltip: Object = {
-        enable: true
+        enable: true,
+        header: '<b>${point.tooltip}</b>',
+        shared: true
     };
+    public legend: Object = {
+        visible: true,
+        enableHighlight : true
+    }
       // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
@@ -52,7 +64,7 @@ export class ColumnChartComponent {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
 
     constructor() {
         //code

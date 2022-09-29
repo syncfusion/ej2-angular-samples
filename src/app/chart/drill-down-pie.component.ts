@@ -40,7 +40,7 @@ export class DrilldownPieComponent {
     };
     //Initializing Datalabel
     public dataLabel: Object = {
-        visible: true, position: 'Inside', connectorStyle: { type: 'Curve', length: '5%' }, font: { size: '14px', color: 'white' }
+        visible: true, position: 'Inside', connectorStyle: { type: 'Curve', length: '10%' }, font: {color: 'white', fontWeight:'600' }
     };
     public explode: boolean = false;
     public content: string = '<div id= "white" style="cursor:pointer;padding:3px;width:30px; height:30px;"><img src="./assets/chart/images/white.png" id="back" /><div>';
@@ -50,7 +50,7 @@ export class DrilldownPieComponent {
     public title: string = 'Automobile Sales by Category';
     public isparent: boolean = true;
     public onTextRender(args: IAccTextRenderEventArgs): void {
-        args.text = args.point.x + ' ' + args.point.y + ' %';
+        args.text = args.point.x + ' ' + args.point.y + '%';
     }
     public onChartMouseClick(args: IMouseEventArgs): void {
         let index: Index = indexFinder(args.target);
@@ -139,7 +139,7 @@ export class DrilldownPieComponent {
     public load(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
         if (selectedTheme === 'highcontrast') {
             args.accumulation.series[0].dataLabel.font.color = "white";
         }

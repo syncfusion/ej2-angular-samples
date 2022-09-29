@@ -275,7 +275,16 @@
             "multipleAxisMode": "Mehrachsenmodus",
             "grandTotalPosition": "Gesamtposition",
             "top": "oben",
-            "bottom": "Unterseite"
+            "bottom": "Unterseite",
+            "none": "keiner",
+            "rowPage": "Reihe Seite",
+            "rowPerPage": "Zeile Pro Seite",
+            "columnPage": "Spalte Seite",
+            "columnPerPage": "Spalte Pro Seite",
+            "goToFirstPage": "Gehen Sie zur ersten Seite",
+            "goToPreviousPage": "Zurück zur letzten Seite",
+            "goToNextPage": "Gehen Sie zur nächsten Seite",
+            "goToLastPage": "Gehen Sie zur letzten Seite"
         },
         "pivotfieldlist": {
             "all": "alles",
@@ -721,7 +730,16 @@
             "multipleAxisMode": "وضع المحاور المتعددة",
             "grandTotalPosition": "الموضع الإجمالي الكبير",
             "top": "أعلى",
-            "bottom": "الأسفل"
+            "bottom": "الأسفل",
+            "none": "لا أحد",
+            "rowPage": "صفحة الفصل",
+            "rowPerPage": "صف لكل صفحة",
+            "columnPage": "صفحة العمود",
+            "columnPerPage": "أعمدة لكل صفحة",
+            "goToFirstPage": "اذهب الى الصفحة الاولى",
+            "goToPreviousPage": "الانتقال إلى الصفحة السابقة",
+            "goToNextPage": "انتقل إلى الصفحة التالية",
+            "goToLastPage": "اذهب إلى الصفحة الأخيرة"
         },
         "pivotfieldlist": {
             "all": "الكل",
@@ -1166,7 +1184,16 @@
             "multipleAxisMode": "Multiple Axis Mode",
             "grandTotalPosition": "Grand totals position",
             "top": "Top",
-            "bottom": "Bottom"
+            "bottom": "Bottom",
+            "none": "None",
+            "rowPage": "Row pager",
+            "rowPerPage": "Rows per page",
+            "columnPage": "Column pager",
+            "columnPerPage": "Columns per page",
+            "goToFirstPage": "Go to first page",
+            "goToPreviousPage": "Go to previous page",
+            "goToNextPage": "Go to next page",
+            "goToLastPage": "Go to last page"
         },
         "pivotfieldlist": {
             "all": "All",
@@ -1611,7 +1638,16 @@
             "multipleAxisMode": "多轴模式",
             "grandTotalPosition": "总头寸",
             "top": "最佳",
-            "bottom": "底部"
+            "bottom": "底部",
+            "none": "无",
+            "rowPage": "行页",
+            "rowPerPage": "每页行数",
+            "columnPage": "专栏页",
+            "columnPerPage": "每页列",
+            "goToFirstPage": "转到第一页",
+            "goToPreviousPage": "转到上一页",
+            "goToNextPage": "转到下一页",
+            "goToLastPage": "转到最后一页"
         },
         "pivotfieldlist": {
             "all": "所有",
@@ -2056,7 +2092,16 @@
             "multipleAxisMode": "Mode à axes multiples",
             "grandTotalPosition": "position du total général",
             "top": "Haut",
-            "bottom": "bas"
+            "bottom": "bas",
+            "none": "Aucune",
+            "rowPage": "page de ligne",
+            "rowPerPage": "Lignes par page",
+            "columnPage": "Page Colonne",
+            "columnPerPage": "Colonnes par page",
+            "goToFirstPage": "Aller à la première page",
+            "goToPreviousPage": "Aller à la page précédente",
+            "goToNextPage": "Aller à la page suivante",
+            "goToLastPage": "Aller à la dernière page"
         },
         "pivotfieldlist": {
             "all": "tout",

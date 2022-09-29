@@ -99,7 +99,7 @@ export class CategoryChartComponent {
     public legend: Object = {
         visible: false
     }
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
 
     public title: string = 'Internet Users – 2016';
     constructor() {

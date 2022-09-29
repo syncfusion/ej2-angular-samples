@@ -1,0 +1,22 @@
+<div id="action-description">
+    <p>This sample demonstrates the template functionality of the Angular Message component. Click the <b>dismiss</b> button to hide the message. Click the <b>Show pull request</b> button to restore the hidden message.</p>
+</div>
+<div class="col-lg-12 control-section msg-template-section">
+    <div class="content-section">
+        <button ejs-button #showBtn id='showBtn' content='Show pull request' cssClass="e-outline e-primary e-success msg-hidden"
+            (click)="showClick()"></button>
+        <ejs-message #msg_template id="msg_template" severity="Success" (closed)="closed()">
+            <ng-template #content>
+                <h1>Merged pull request</h1>
+                <p>Pull request #41 merged after a successful build</p>
+                <button ejs-button id='commitBtn' cssClass='e-link' content='View commit'></button>
+                <button ejs-button #closeBtn id='closeBtn' cssClass='e-link' content='Dismiss' (click)="dismissClick()"></button>
+            </ng-template>
+        </ejs-message>
+    </div>
+</div>
+
+<div id="description">
+    <p>The Message component has an option to customize the content with a custom structure. The content can be a string, paragraph, or any other HTML element.</p>
+    <p>In this sample, the Message component content is customized with HTML elements and Angular Button components.</p>
+</div>

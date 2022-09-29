@@ -39,7 +39,7 @@ export class MultiLineChartComponent {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
     public legend: Object = { visible: false };
     public segments: Object[] = [{
         value: 450,
@@ -51,7 +51,9 @@ export class MultiLineChartComponent {
         color: 'blue'
     }];
     public tooltip: Object = {
-        enable: true, shared: true
+        enable: true, shared: true,
+        format: '${point.x} : <b>${point.y}</b>',
+        header: '<b>Rainfall</b>'
     };
     public load(args: ILoadedEventArgs): void {
         // custom code start

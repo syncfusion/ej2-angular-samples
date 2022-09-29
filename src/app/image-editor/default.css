@@ -1,0 +1,23 @@
+ejs-imageeditor {
+    display: block;
+}
+
+.e-image-editor {
+	margin: 0 auto;
+}
+
+.e-img-editor-sample {
+	height: 80vh;
+	width: 100%;
+}
+
+.control-wrapper {
+	height: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+	.e-img-editor-sample {
+		height: 75vh;
+		width: 100%;
+	}
+}

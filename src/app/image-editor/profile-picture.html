@@ -1,0 +1,40 @@
+<div id="action-description">
+  <p>The Image Editor component provides built-in support to rotate an image using the rotate method and support to crop an image using the select and crop methods.</p>
+</div>
+  
+  
+  <div class="col-lg-12 control-section">
+    <div class="e-profile">
+      <div class="e-custom-wrapper">
+        <canvas id="img-canvas" (click)="canvasClicked()" style="max-width: 200px; max-height: 200px;"></canvas>
+        <img alt="img" id="demo-img" crossorigin="anonymous" src="./assets/image-editor/images/profile.png"
+        style="display: none;" (load)="imageLoaded()"/>
+        <input type="file" id="img-upload" (change)="imageChanged($event)" style="display:none"/>
+        <span id="custom-edit" class="e-custom-edit" (click)="canvasClicked()">
+            <span class="e-custom-icon sb-icons"></span>
+        </span>
+      </div>    
+    </div>
+    <div class="e-img-editor-sample" id="profile-dialog">
+        <ejs-dialog [position]="position" #Dialog [buttons]='dlgButtons' [visible]='visible' [header]='header' [showCloseIcon]='showCloseIcon' [target]='target' [width]='width' [height]='height' (open)="dialogOpen()" (close)="dialogClose()">
+        <ng-template #content>
+            <ejs-imageeditor #ImageEditor [toolbar]='toolbarItems' (created)="created()" (fileOpened)="fileOpened()"> </ejs-imageeditor>
+        </ng-template>
+    </ejs-dialog>
+    </div>
+  </div>
+  
+  <div id="description">
+    <p>In this demo, Image Editor is rendered within a dialog and opens an image by passing its URL path to the open method of the Image Editor control.</p>
+    <p> The following operations are supported in the Image Editor. :  </p>
+    <ul>
+        <li><b>Selection</b> : Multiple selection options are available. The selection region can be a square or circle, customized to various aspect ratios, and customized by dragging and resizing.</li>
+        <li><b>Crop</b> : The image can be cropped based on the selection.</li>
+        <li><b>Rotate</b> : The image can be rotated both clockwise and anticlockwise by 90 degrees.</li>
+    </ul>
+    <p>
+      More information about Image Editor can be found in this <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/image-editor/getting-started">documentation</a>
+      section.
+    </p>
+  </div>
+  

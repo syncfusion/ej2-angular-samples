@@ -1,0 +1,195 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates how to customize the ticks and labels on an axis. The position, offset, and height of
+        the ticks and labels can be changed.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-md-8">
+        <ejs-circulargauge (load)='load($event)' background="transparent" #label='' id='container1' [margin]='margin'
+            style='display:block;' [margin]='margin'>
+            <e-axes>
+                <e-axis [lineStyle]='lineStyle' radius='80%' [labelStyle]='labelStyle' [majorTicks]='majorTicks'
+                    [minorTicks]='minorTicks' minimum=0 maximum=170 startAngle=210 endAngle=150 [pointers]='pointers'>
+                    <e-annotations>
+                        <e-annotation zIndex='1'
+                            content='<div id="content" style="color:#518C03;font-size:20px;font-family:Segoe UI;font-weight:semibold;">145</div>'
+                            angle=0 radius='0%'>
+                        </e-annotation>
+                    </e-annotations>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
+    </div>
+    <div class="col-md-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" class="property-panel-table" title="Properties"
+                    style="width: 100%; margin-left: -11px;">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
+                    <tr style="height: 50px">
+                        <td>
+                            <div style="font-size:14px"> Ticks </div>
+                        </td>
+                        <td>
+                            <div>
+                                <select id="Ticks" class="form-control" style="width:90%">
+                                    <option value="major" selected=true>Major Ticks</option>
+                                    <option value="minor">Minor Ticks</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <table id="property" class="property-panel-table" title="Properties"
+                    style="width: 100%; margin-left: -11px;">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
+                    <tr style="height: 50px">
+                        <td>
+                            <div style="font-size:14px"> Tick Position </div>
+                        </td>
+                        <td>
+                            <div>
+                                <select id="tickposition" class="form-control" style="width:90%">
+                                    <option value="Inside" selected=true>Inside</option>
+                                    <option value="Cross">Cross</option>
+                                    <option value="Outside">Outside</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <table id="property" class="property-panel-table" title="Properties"
+                    style="width: 100%; margin-left: -11px;">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
+                    <tr style="height: 50px">
+                        <td>
+                            <div style="font-size:14px"> Label Position </div>
+                        </td>
+                        <td>
+                            <div>
+                                <select id="labelposition" class="form-control" style="width:90%">
+                                    <option value="Outside">Outside</option>
+                                    <option value="Cross">Cross</option>
+                                    <option value="Inside">Inside</option>
+
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <table id="property" class="property-panel-table" title="Properties"
+                    style="width: 100%; margin-left: -11px;">
+                    <colgroup>
+                        <col span="1" style="width: 45%;">
+                        <col span="1" style="width: 35%;">
+                        <col span="1" style="width: 20%;">
+                    </colgroup>
+                    <tr style="height: 50px">
+                        <td>
+                            <div style="font-size:14px">Tick Offset</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="range" id="tickOffset" value="0" min="0" max="50" />
+                            </div>
+                        </td>
+                        <td style="text-align: center; padding-top: 10px; padding-left: -4%">
+                            <span id='offset'>0</span>
+                        </td>
+                    </tr>
+                </table>
+                <table id="property" class="property-panel-table" title="Properties"
+                    style="width: 100%; margin-left: -11px;">
+                    <colgroup>
+                        <col span="1" style="width: 45%;">
+                        <col span="1" style="width: 35%;">
+                        <col span="1" style="width: 20%;">
+                    </colgroup>
+                    <tr style="height: 50px">
+                        <td>
+                            <div style="font-size:14px">Tick Height</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="range" id="tickHeight" value="10" min="1" max="50" />
+                            </div>
+                        </td>
+                        <td style="text-align: center; padding-top: 10px; padding-left: -4%">
+                            <span id='height'>10</span>
+                        </td>
+                    </tr>
+                </table>
+                <table id="property" class="property-panel-table" title="Properties"
+                    style="width: 100%; margin-left: -11px;">
+                    <colgroup>
+                        <col span="1" style="width: 45%;">
+                        <col span="1" style="width: 35%;">
+                        <col span="1" style="width: 20%;">
+                    </colgroup>
+                    <tr style="height: 50px">
+                        <td>
+                            <div style="font-size:14px">Label Offset</div>
+                        </td>
+                        <td style="width: 40%;">
+                            <div>
+                                <input type="range" id="labelOffset" value="0" min="0" max="50" />
+                            </div>
+                        </td>
+                        <td style="text-align: center; padding-top: 10px; padding-left: -4%">
+                            <span id='labelOffsetValue'>0</span>
+                        </td>
+                    </tr>
+                </table>
+                <table id="property" class="property-panel-table" title="Properties"
+                    style="width: 100%; margin-left: -11px;">
+                    <tr style="height: 50px">
+                        <td>
+                            <div id='enablePointer' style="margin-top: 10px;font-size:14px">Show Last Label </div>
+                        </td>
+                        <td>
+                            <div style="margin-left: -4%">
+                                <input type="checkbox" id="enable" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the ticks and labels of an axis in the circular gauge.
+        Labels are units that are used to display the values on the axis. Labels can be customized using <a
+            target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/labelModel/">labelStyle</a>. Ticks
+        are used to represent values on the axis. Ticks can be customized using <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/tickModel/">majorTicks</a> and <a
+            target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/tickModel/">minorTicks</a>.
+    </p>
+    <p>
+        More information on the ticks and labels can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/gauge-axes/">documentation
+            section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

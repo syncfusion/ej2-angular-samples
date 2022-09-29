@@ -1,13 +1,18 @@
 <div id="action-description">
     <p>
-        This sample illustrates an organization’s annual product-wise profit analysis with the empty point functionality in pie series.  The Mode of empty point can be changed by using <code>Empty Point Mode</code> in property panel.
+        This sample illustrates the annual product-wise profit analysis of an organization with empty point functionality in the pie series.
     </p>
 </div>
 <div class="control-section">
     <div class="col-lg-8">
-        <ejs-accumulationchart id="container" #chart [legendSettings]='legend' style='display:block;  width: 92%' [tooltip]="tooltip" [title]="title" (load)='load($event)'>
+        <ejs-accumulationchart id="container" #chart [legendSettings]='legend' style='display:block;  width: 92%' [tooltip]="tooltip" [title]="title" (load)='load($event)' (textRender)='DataLabelRenderEvent($event)' [enableBorderOnMouseMove]='false'>
+            <e-annotations>
+                <e-annotation content='<div style="font-size: 14px; font-weight: 600">Browser<br> Market <br />Shares</div>'
+                    x='50%' y='85%' coordinateUnits='Point'>
+                </e-annotation>
+            </e-annotations>
             <e-accumulation-series-collection>
-                <e-accumulation-series name='Profit' [dataSource]='data' xName='x' yName='y' [dataLabel]="dataLabel" [emptyPointSettings]='emptyPointSettings'>
+                <e-accumulation-series name='Profit' [dataSource]='data' xName='x' yName='y' [dataLabel]="dataLabel" [emptyPointSettings]='emptyPointSettings' >
                 </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
@@ -38,16 +43,15 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the empty points. You can use <code>border</code>,
-        <code>fill</code>, <code>mode</code> properties to customize the empty points.
+        In this example, you can see how to render and configure the pie series with empty points. The empty point in the chart can be handled using the <code>EmptyPointSettings</code> property.
     </p>
     <p>
-        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch-enabled devices.
     </p>
     <br>
     <p>
-        More information on the empty points can be found in this
-        <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#columnseriesmodule-columnseries">documentation section</a>.
+        More information about the empty points in accumulation chart can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/empty-points/">documentation section</a>.
     </p>
 </div>
 <style>

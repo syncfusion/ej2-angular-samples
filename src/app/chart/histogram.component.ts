@@ -66,7 +66,7 @@ export class HistogramChartComponent {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
     public binInterval: number = 20;
     public columnWidth: number = 0.99;
     public showNormalDistribution: boolean = true;

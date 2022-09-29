@@ -1,0 +1,23 @@
+<div class="control-section">
+    <div id="speed-dial-wrapper ">
+        <ejs-tooltip id="details" target=".tooltip-speeddial .e-speeddial-li" position="LeftCenter">
+            <div id="target" class="speeddial-appearence-target custom-index">
+                <button ejs-speeddial id="speeddial2" content="Edit" target="#target" position="BottomLeft" [items]=itemLabel></button>
+                <button ejs-speeddial id="speeddial1" content="Edit" target="#target" position="BottomCenter" openIconCss="speeddial-icons speeddial-icon-edit" iconPosition="Left" [items]=items></button>
+                <button ejs-speeddial id="speeddial3" title="Edit" target="#target" position="BottomRight" cssClass="tooltip-speeddial" openIconCss="speeddial-icons speeddial-icon-edit" [items]=tooltItem></button>
+            </div>
+        </ejs-tooltip>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates how to customize the appearance of the Speed Dial action items. Click the speed dial
+        button to open action items.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In the above example, Speed Dial items appearance is customized using the <code>text</code> and
+        <code>iconCss</code> properties of <code>SpeedDialItemModel</code>.
+    </p>
+</div>

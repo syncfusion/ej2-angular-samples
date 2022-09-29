@@ -5,7 +5,7 @@
 //tslint:disable
 // custom code end
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, MapsTooltip, DataLabel, Maps, Marker, Annotations,ILoadEventArgs, NavigationLine } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, MapsTooltip, DataLabel, Maps, Marker, Annotations, ILoadEventArgs, NavigationLine } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
 Maps.Inject(Marker, MapsTooltip, DataLabel, NavigationLine, Annotations);
 declare var require: any;
@@ -16,14 +16,14 @@ import africa from './africa.json';
     encapsulation: ViewEncapsulation.None
 })
 export class MapsOsmWithSublayerComponent {
-    // custom code start
     public load = (args: ILoadEventArgs) => {
+        // custom code start
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
         args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() +
-        theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
+            theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
+        // custom code end
     }
-    // custom code end
     public zoomSettings: object = {
         enable: true
     }
@@ -45,8 +45,10 @@ export class MapsOsmWithSublayerComponent {
             opacity: 0.4
         }
     }
-       ];
-       constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = [ 'africa.json'];
+    ];
+    // custom code start
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['africa.json'];
     };
+    // custom code end
 }

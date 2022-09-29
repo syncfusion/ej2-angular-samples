@@ -11,72 +11,16 @@ import { AccumulationChartComponent, AccumulationChart, IAccLoadedEventArgs, Acc
 })
 export class DefaultPieComponent {
     public data: Object[] = [
-        { 'x': 'Chrome', y: 37, text: '37%' }, { 'x': 'UC Browser', y: 17, text: '17%' },
-        { 'x': 'iPhone', y: 19, text: '19%' },
-        { 'x': 'Others', y: 4, text: '4%' }, { 'x': 'Opera', y: 11, text: '11%' },
-        { 'x': 'Android', y: 12, text: '12%' }
+        { Browser : "Chrome", Users : 59.28, DataLabelMappingName : "  Chrome: 59.28%"},
+        { Browser : "UC Browser", Users : 4.37, DataLabelMappingName : "  UC Browser: 4.37%"},
+        { Browser : "Opera", Users : 3.12, DataLabelMappingName : "  Opera: 3.12%"},
+        { Browser : "Sogou Explorer", Users : 1.73, DataLabelMappingName : "  Sogou Explorer: 1.73%"},
+        { Browser : "QQ", Users : 3.96, DataLabelMappingName : "  QQ: 3.96%"},
+        { Browser : "Safari", Users : 4.73, DataLabelMappingName : "  Safari: 4.73%"},
+        { Browser : "Internet Explorer", Users : 6.12, DataLabelMappingName : "  Internet Explorer: 6.12%"},
+        { Browser : "Edge", Users : 7.48, DataLabelMappingName : "  Edge: 7.48%"},
+        { Browser : "Others", Users : 9.57, DataLabelMappingName : "  Others: 9.57%"},
     ];
-
-    @ViewChild('pie')
-    public pie: AccumulationChartComponent | AccumulationChart;
-    public pieangle(e: Event): void {
-        let angle: string = (document.getElementById('pieangle') as HTMLInputElement).value;
-        this.pie.series[0].startAngle = parseFloat(angle);
-        this.pie.series[0].endAngle = parseFloat(angle);
-        this.pie.series[0].animation.enable = false;
-        document.getElementById('pieangleText').innerHTML = angle;
-        this.pie.removeSvg();
-        this.pie.refreshSeries();
-        this.pie.refreshChart();
-    };
-    public pieradius(e: Event): void {
-        let radius: string = (document.getElementById('pieradius') as HTMLInputElement).value;
-        this.pie.series[0].radius = radius + '%';
-        document.getElementById('pieradiusText').innerHTML = (parseInt(radius, 10) / 100).toFixed(2);
-        this.pie.series[0].animation.enable = false;
-        this.pie.removeSvg();
-        this.pie.refreshSeries();
-        this.pie.refreshChart();
-    };
-    public pieexploderadius(e: Event): void {
-        let radius: string = (document.getElementById('pieexploderadius') as HTMLInputElement).value;
-        this.pie.visibleSeries[0].explodeOffset = radius + '%';
-        document.getElementById('pieexploderadiusText').innerHTML = (parseInt(radius, 10) / 100).toFixed(2);
-        this.pie.series[0].animation.enable = false;
-        this.pie.removeSvg();
-        this.pie.refreshSeries();
-        this.pie.refreshChart();
-    };
-    public pieexplodeindex(e: Event): void {
-        let index: number = +(document.getElementById('pieexplodeindex') as HTMLInputElement).value;
-        this.pie.visibleSeries[0].explodeIndex = index;
-        document.getElementById('pieexplodeindexText').innerHTML = index.toString();
-        this.pie.series[0].animation.enable = false;
-        this.pie.removeSvg();
-        this.pie.refreshSeries();
-        this.pie.refreshChart();
-    };
-    public piecenterx(e: Event): void {
-        let x: string = (document.getElementById('x') as HTMLInputElement).value;
-        this.pie.center.x = x + '%';
-        document.getElementById('xvalue').innerHTML = x + '%';
-        this.pie.series[0].animation.enable = false;
-        this.pie.removeSvg();
-        this.pie.refreshSeries();
-        this.pie.refreshChart();
-    }
-    public piecentery(e: Event): void {
-        let y: string = (document.getElementById('y') as HTMLInputElement).value;
-        this.pie.center.y = y + '%';
-        document.getElementById('yvalue').innerHTML = y + '%';
-        this.pie.series[0].animation.enable = false;
-        this.pie.removeSvg();
-        this.pie.refreshSeries();
-        this.pie.refreshChart();
-    }
-    public animation: Object = {
-        enable: false
-    };
     //Initializing Legend
     public legendSettings: Object = {
         visible: false,
@@ -84,25 +28,30 @@ export class DefaultPieComponent {
     //Initializing Datalabel
     public dataLabel: Object = {
         visible: true,
-        position: 'Inside', name: 'text',
+        position: 'Outside', name: 'DataLabelMappingName',
         font: {
             fontWeight: '600'
-        }
+        },
+        connectorStyle: { length: '20px', type: 'Curve'}
     };
       // custom code start
     public load(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
       // custom code end
-    public center: Object = {x: '50%', y: '50%'};
-    public startAngle: number = 0;
-    public endAngle: number = 360;
+    public startAngle: number = 30;
     public explode: boolean = true;
-    public enableAnimation: boolean = false;
-    public tooltip: Object = { enable: true, format: '${point.x} : <b>${point.y}%</b>' };
-    public title: string = 'Mobile Browser Statistics';
+    public enableAnimation: boolean = true;
+    public tooltip: Object = { 
+        enable: true,
+        format: '<b>${point.x}</b><br>Browser Share: <b>${point.y}%</b>',
+        header:'',
+
+    };
+    
+    public title: string = 'Browser Market Share';
     constructor() {
         //code
     };

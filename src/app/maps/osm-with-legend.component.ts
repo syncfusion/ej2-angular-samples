@@ -82,5 +82,7 @@ export class MapsOsmWithLegendComponent {
     },
     
     ];
+    // custom code start
     constructor() {};
+    // custom code end
 }

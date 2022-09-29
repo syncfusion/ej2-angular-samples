@@ -17,32 +17,23 @@ export class SplineAreaChartComponent {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
     public data: Object[] = [
-        { x: new Date(2002, 0, 1), y: 2.2 }, { x: new Date(2003, 0, 1), y: 3.4 },
-        { x: new Date(2004, 0, 1), y: 2.8 }, { x: new Date(2005, 0, 1), y: 1.6 },
-        { x: new Date(2006, 0, 1), y: 2.3 }, { x: new Date(2007, 0, 1), y: 2.5 },
-        { x: new Date(2008, 0, 1), y: 2.9 }, { x: new Date(2009, 0, 1), y: 3.8 },
-        { x: new Date(2010, 0, 1), y: 1.4 }, { x: new Date(2011, 0, 1), y: 3.1 }
-    ];
-    public data1: Object[] = [
-        { x: new Date(2002, 0, 1), y: 2 }, { x: new Date(2003, 0, 1), y: 1.7 },
-        { x: new Date(2004, 0, 1), y: 1.8 }, { x: new Date(2005, 0, 1), y: 2.1 },
-        { x: new Date(2006, 0, 1), y: 2.3 }, { x: new Date(2007, 0, 1), y: 1.7 },
-        { x: new Date(2008, 0, 1), y: 1.5 }, { x: new Date(2009, 0, 1), y: 2.8 },
-        { x: new Date(2010, 0, 1), y: 1.5 }, { x: new Date(2011, 0, 1), y: 2.3 }
-    ];
-    public data2: Object[] = [
-        { x: new Date(2002, 0, 1), y: 0.8 }, { x: new Date(2003, 0, 1), y: 1.3 },
-        { x: new Date(2004, 0, 1), y: 1.1 }, { x: new Date(2005, 0, 1), y: 1.6 },
-        { x: new Date(2006, 0, 1), y: 2 }, { x: new Date(2007, 0, 1), y: 1.7 },
-        { x: new Date(2008, 0, 1), y: 2.3 }, { x: new Date(2009, 0, 1), y: 2.7 },
-        { x: new Date(2010, 0, 1), y: 1.1 }, { x: new Date(2011, 0, 1), y: 2.3 }
+        { Period : new Date(2002, 1, 1), US_InflationRate : 2.2, FR_InflationRate : 2    },
+        { Period : new Date(2003, 1, 1), US_InflationRate : 3.4, FR_InflationRate : 1.7  },
+        { Period : new Date(2004, 1, 1), US_InflationRate : 2.8, FR_InflationRate : 1.8, },
+        { Period : new Date(2005, 1, 1), US_InflationRate : 1.6, FR_InflationRate : 2.1, },
+        { Period : new Date(2006, 1, 1), US_InflationRate : 2.3, FR_InflationRate : 2.3, },
+        { Period : new Date(2007, 1, 1), US_InflationRate : 2.5, FR_InflationRate : 1.7, },
+        { Period : new Date(2008, 1, 1), US_InflationRate : 2.9, FR_InflationRate : 1.5, },
+        { Period : new Date(2009, 1, 1), US_InflationRate : 1.1, FR_InflationRate : 0.5, },
+        { Period : new Date(2010, 1, 1), US_InflationRate : 1.4, FR_InflationRate : 1.5, },
+        { Period : new Date(2011, 1, 1), US_InflationRate : 1.1, FR_InflationRate : 1.3, }
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
-        labelFormat: 'y',
+        labelFormat: 'yyyy',
         majorGridLines: { width: 0 },
         intervalType: 'Years',
         edgeLabelPlacement: 'Shift'
@@ -51,14 +42,21 @@ export class SplineAreaChartComponent {
     public primaryYAxis: Object = {
         labelFormat: '{value}%',
         lineStyle: { width: 0 },
+        minimum: 0,
         maximum: 4,
         interval: 1,
-        majorTickLines: { width: 0 },
-        minorTickLines: { width: 0 }
+        majorTickLines: { width: 0 },   
     };
-    public marker: Object = {
-        visible: false
+    public circleMarker: Object = { visible: true, height: 6, width: 6 , shape: 'Circle' , isFilled: true };
+    public diamondMarker: Object = { visible: true, height: 7, width: 7 , shape: 'Diamond' , isFilled: true };
+    public border: Object = {
+        width: 2,
     };
+    public tooltip: Object = {enable: true};
+    public legend: Object = {
+        visible: true,
+        enableHighlight : true
+    }
      // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

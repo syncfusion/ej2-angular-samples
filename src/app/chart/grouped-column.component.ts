@@ -18,21 +18,22 @@ export class GroupedColumnChartComponent {
         }
     };
     //Initializing Width
-    public width: string = Browser.isDevice ? '100%' : '60%';
-    public data1: Object[] = [{ x: '2012', y: 104 }, { x: '2016', y: 121 }, { x: '2020', y: 113 }];
-    public data2: Object[] = [{ x: '2012', y: 46 }, { x: '2016', y: 46 }, { x: '2020', y: 39 }];
-    public data3: Object[] = [{ x: '2012', y: 65 }, { x: '2016', y: 67 }, { x: '2020', y: 65 }];
-    public data4: Object[] = [{ x: '2012', y: 29 }, { x: '2016', y: 27 }, { x: '2020', y: 22 }];
-    public data5: Object[] = [{ x: '2012', y: 91 }, { x: '2016', y: 70 }, { x: '2020', y: 88 }];
-    public data6: Object[] = [{ x: '2012', y: 38 }, { x: '2016', y: 26 }, { x: '2020', y: 38 }];
+    public width: string = Browser.isDevice ? '100%' : '75%';
+    public data: Object[] = [
+        { Year : "2012", USA_Total : 104, USA_Gold : 46, UK_Total : 65, UK_Gold : 29, China_Total : 91, China_Gold : 38},
+        { Year : "2016", USA_Total : 121, USA_Gold : 46, UK_Total : 67, UK_Gold : 27, China_Total : 70, China_Gold : 26},
+        { Year : "2020", USA_Total : 113, USA_Gold : 39, UK_Total : 65, UK_Gold : 22, China_Total : 88, China_Gold : 38},
+];
+    
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'Category', interval: 1, majorGridLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        majorGridLines: { width: 0 }, majorTickLines: { width: 0 },
-        lineStyle: { width: 0 }, labelStyle: { color: 'transparent' }
+        title: 'Medal Count',
+        majorTickLines: { width: 0 },
+        lineStyle: { width: 0 }
     };
     public tooltip: Object = {
         enable: true
@@ -48,6 +49,9 @@ export class GroupedColumnChartComponent {
             }
         }
     };
+    public legend: Object = {
+        visible: true,
+    }
     // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
@@ -56,7 +60,7 @@ export class GroupedColumnChartComponent {
     };
     // custom code end
     //Initializing Chart Title
-    public title: string = 'Olympics Tally';
+    public title: string = 'Olympics Medal Tally';
     constructor() {
         // code
     };

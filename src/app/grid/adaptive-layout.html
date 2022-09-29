@@ -1,0 +1,193 @@
+<div class="control-section">
+    <div class="col-lg-9 e-bigger e-adaptive-demo">
+        <div *ngIf="isDeskTop" class="e-mobile-layout">
+            <div class="e-mobile-content">
+                <ejs-grid #adaptive id="adaptivebrowser" [dataSource]='data' enableAdaptiveUI='true'
+                    [rowRenderingMode]="rowMode" height='100%' allowPaging='true' allowFiltering='true'
+                    allowSorting='true' [pageSettings]='pageSettings' [editSettings]='editSettings'
+                    [filterSettings]='filterSettings' [toolbar]='toolbar' (load)='onLoad($event)'>
+                    <e-columns>
+                        <e-column field='OrderID' headerText='Order ID' width='180' isPrimaryKey='true' [validationRules]='orderidrules'>
+                        </e-column>
+                        <e-column field='Freight' headerText='Freight' width='180' format='C2' editType='numericedit'
+                            [validationRules]='customeridrules'>
+                        </e-column>
+                        <e-column field='CustomerName' headerText='Name' width='180' [validationRules]='customeridrules'></e-column>
+                        <e-column field='ShipCity' headerText='Ship City' width='180'>
+                        </e-column>
+                    </e-columns>
+                    <e-aggregates>
+                        <e-aggregate>
+                            <e-columns>
+                                <e-column type="Sum" field="Freight" format="C2">
+                                    <ng-template #footerTemplate let-data>Sum: {{data.Sum}}</ng-template>
+                                </e-column>
+                            </e-columns>
+                        </e-aggregate>
+                    </e-aggregates>
+                </ejs-grid>
+            </div>
+        </div>
+        <div *ngIf="!isDeskTop" class="e-default">
+            <ejs-grid #adaptive id="adaptivedevice" [dataSource]='data' enableAdaptiveUI='true'
+                [rowRenderingMode]="rowMode" height='100%' allowPaging='true' allowFiltering='true' allowSorting='true'
+                [pageSettings]='pageSettings' [editSettings]='editSettings' [filterSettings]='filterSettings'
+                [toolbar]='toolbar' (load)='onLoad($event)'>
+                <e-columns>
+                    <e-column field='OrderID' headerText='Order ID' width='180' isPrimaryKey='true'
+                        [validationRules]='orderidrules'>
+                    </e-column>
+                    <e-column field='Freight' headerText='Freight' width='180' format='C2' editType='numericedit'
+                        [validationRules]='customeridrules'>
+                    </e-column>
+                    <e-column field='CustomerName' headerText='Name' width='180' [validationRules]='customeridrules'>
+                    </e-column>
+                    <e-column field='ShipCity' headerText='Ship City' width='180'>
+                    </e-column>
+                </e-columns>
+                <e-aggregates>
+                    <e-aggregate>
+                        <e-columns>
+                            <e-column type="Sum" field="Freight" format="C2">
+                                <ng-template #footerTemplate let-data>Sum: {{data.Sum}}</ng-template>
+                            </e-column>
+                        </e-columns>
+                    </e-aggregate>
+                </e-aggregates>
+            </ejs-grid>
+        </div>
+    </div>
+
+
+    <div class="col-lg-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties" class="property-panel-table" style="width: 100%">
+                    <tr>
+                        <td style="width: 100%">
+                            <div style="padding-top: 7px">Enable horizontal row mode</div>
+                        </td>
+                        <td style="width: 50%;padding-right: 10px">
+                            <div id='typeddl'>
+                                <ejs-checkbox #checkbox (change)="changeHandler($event)"></ejs-checkbox>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="action-description">
+        <p>This sample demonstrates the rendering order of the grid row elements and adaptive dialogs.</p>
+    </div>
+    <div id="description">
+        <p>
+            The <code><a target="_blank" class="code"
+                href="http://ej2.syncfusion.com/vue/documentation/grid/api-gridComponent.html#enableadaptiveui">
+                enableAdaptiveUI</a></code> property is used to render the grid filter, sort and edit dialogs
+            adaptively and
+            <code><a target="_blank" class="code"
+                    href="http://ej2.syncfusion.com/vue/documentation/grid/api-gridComponent.html#rowrenderingmode"> rowRenderingMode</a></code>
+            property is used to render the grid row elements in the following directions,
+        </p>
+        <ul>
+            <li><code>Horizontal</code> - Renders the grid row elements in the horizontal direction.</li>
+            <li><code>Vertical</code> - Renders the grid row elements in the vertical direction.</li>
+        </ul>
+        <p> In this sample, you can change the row elements rendering direction by using the properties panel checkbox
+        </p>
+        <p>
+            More information on the rowRenderingMode configuration can be found in this
+            <a target="_blank"
+                href="http://ej2.syncfusion.com/vue/documentation/grid/api-gridComponent.html#rowrenderingmode">
+                documentation section</a>.
+        </p>
+    </div>
+</div>
+<style>
+    #typeddl {
+        min-width: 100px;
+    }
+
+    /* The device with borders */
+    .e-mobile-layout {
+        position: relative;
+        width: 360px;
+        height: 640px;
+        margin: auto;
+        border: 16px #f4f4f4 solid;
+        border-top-width: 60px;
+        border-bottom-width: 60px;
+        border-radius: 36px;
+        box-shadow: 0 0px 2px rgb(144 144 144), 0 0px 10px rgb(0 0 0 / 16%);
+    }
+
+    .tailwind-dark .e-mobile-layout,
+    .material-dark .e-mobile-layout,
+    .fabric-dark .e-mobile-layout,
+    .bootstrap-dark .e-mobile-layout,
+    .bootstrap5-dark .e-mobile-layout {
+      border: 16px rgb(255 255 255 / 10%) solid;
+      border-top-width: 60px;
+      border-bottom-width: 60px;
+    }
+
+    /* The horizontal line on the top of the device */
+    .e-mobile-layout:before {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 5px;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #ebebeb;
+        border-radius: 10px;
+    }
+
+    .tailwind-dark .e-mobile-layout::before,
+    .tailwind-dark .e-mobile-layout::after,
+    .material-dark .e-mobile-layout::before,
+    .material-dark .e-mobile-layout::after,
+    .fabric-dark .e-mobile-layout::before,
+    .fabric-dark .e-mobile-layout::after,
+    .bootstrap-dark .e-mobile-layout::before,
+    .bootstrap-dark .e-mobile-layout::after,
+    .bootstrap5-dark .e-mobile-layout::before,
+    .bootstrap5-dark .e-mobile-layout::after {
+      background: rgb(255 255 255  / 20%);
+    }
+
+    /* The circle on the bottom of the device */
+    .e-mobile-layout:after {
+        content: '';
+        display: block;
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        left: 50%;
+        bottom: -65px;
+        transform: translate(-50%, -50%);
+        background: #e8e8e8;
+        border-radius: 50%;
+    }
+
+    /* The screen (or content) of the device */
+    .e-mobile-layout .e-mobile-content {
+        overflow: hidden;
+        width: 328px;
+        height: 100%;
+        background: transparent;
+        border: 0px solid #dddddd;
+    }
+
+    .highcontrast .e-mobile-layout {
+        border: 16px #000000 solid;
+        border-top-width: 60px;
+        border-bottom-width: 60px;
+        box-shadow: -1px 2px white, -2px -2px white, 2px -2px white, 2px 1px white;
+    }
+</style>

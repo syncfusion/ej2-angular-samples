@@ -19,14 +19,14 @@ export class MapsAnnotationComponent {
     public zoomSettings: object= {
         enable: false
     };
-    // custom code start
     public load = (args: ILoadEventArgs) => { 
+        // custom code start
         let theme: string = location.hash.split('/')[1]; 
         theme = theme ? theme : 'Material'; 
         args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() +
         theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
+        // custom code end
     }
-    // custom code end
     public annotations: object[] = [
         {
             content: '<div id="maps-annotation"> <div id="annotation"> <div> <p style="margin-left:10px;font-size:13px;font-weight:500">Facts about Africa</p> </div> <hr style="margin-top:-3px;margin-bottom:10px;border:0.5px solid #DDDDDD"> <div> <ul style="list-style-type:disc; margin-left:-20px;margin-bottom:2px; font-weight:400"> <li>Africa is the second largest and second most populated continent in the world.</li> <li style="padding-top:5px;">Africa has 54 sovereign states and 10 non-sovereign territories.</li> <li style="padding-top:5px;">Algeria is the largest country in Africa, where as Mayotte is the smallest.</li> </ul> </div> </div> </div>',
@@ -56,8 +56,10 @@ export class MapsAnnotationComponent {
                 ]
             }
         ];
-        constructor(@Inject('sourceFiles') private sourceFiles: any) {
-            sourceFiles.files = ['africa-continent.json'];
-        }
+    // custom code start
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['africa-continent.json'];
+    }
+    // custom code end
 
 }

@@ -12,50 +12,53 @@ import { Browser } from '@syncfusion/ej2-base';
     encapsulation: ViewEncapsulation.None
 })
 export class LineChartComponent {
+
     public data: Object[] = [
-        { x: new Date(2005, 0, 1), y: 21 }, { x: new Date(2006, 0, 1), y: 24 },
-        { x: new Date(2007, 0, 1), y: 36 }, { x: new Date(2008, 0, 1), y: 38 },
-        { x: new Date(2009, 0, 1), y: 54 }, { x: new Date(2010, 0, 1), y: 57 },
-        { x: new Date(2011, 0, 1), y: 70 }
+        { Period : 2020, Can_Growth : 11.0, Viet_Growth : 19.5, Mal_Growth : 7.1, Egy_Growth : 8.2, Ind_Growth : 9.3 },
+        { Period : 2019, Can_Growth : 12.9, Viet_Growth : 17.5, Mal_Growth : 6.8, Egy_Growth : 7.3, Ind_Growth : 7.8 },
+        { Period : 2018, Can_Growth : 13.4, Viet_Growth : 15.5, Mal_Growth : 4.1, Egy_Growth : 7.8, Ind_Growth : 6.2  },
+        { Period : 2017, Can_Growth : 13.7, Viet_Growth : 10.3, Mal_Growth : 2.8, Egy_Growth : 6.8, Ind_Growth : 5.3 },
+        { Period : 2016, Can_Growth : 12.7, Viet_Growth : 7.8, Mal_Growth : 2.8, Egy_Growth : 5.0, Ind_Growth : 4.8 },
+        { Period : 2015, Can_Growth : 12.5, Viet_Growth : 5.7, Mal_Growth : 3.8, Egy_Growth : 5.5, Ind_Growth : 4.9 },
+        { Period : 2014, Can_Growth : 12.7, Viet_Growth : 5.9, Mal_Growth : 4.3, Egy_Growth : 6.5, Ind_Growth : 4.4 },
+        { Period : 2013, Can_Growth : 12.4, Viet_Growth : 5.6, Mal_Growth : 4.7, Egy_Growth : 6.8, Ind_Growth : 2.6 },
+        { Period : 2012, Can_Growth : 13.5, Viet_Growth : 5.3, Mal_Growth : 5.6, Egy_Growth : 6.6, Ind_Growth : 2.3 }
     ];
-    public data1: Object[] = [
-        { x: new Date(2005, 0, 1), y: 28 }, { x: new Date(2006, 0, 1), y: 44 },
-        { x: new Date(2007, 0, 1), y: 48 }, { x: new Date(2008, 0, 1), y: 50 },
-        { x: new Date(2009, 0, 1), y: 66 }, { x: new Date(2010, 0, 1), y: 78 }, { x: new Date(2011, 0, 1), y: 84 }
-    ];
+    
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        valueType: 'DateTime',
-        labelFormat: 'y',
-        intervalType: 'Years',
+        valueType: 'Category',
         edgeLabelPlacement: 'Shift',
         majorGridLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        labelFormat: '{value}%',
-        rangePadding: 'None',
+        title: 'Million Metric Tons',
         minimum: 0,
-        maximum: 100,
-        interval: 20,
+        maximum: 20,
+        interval: 4,
         lineStyle: { width: 0 },
         majorTickLines: { width: 0 },
-        minorTickLines: { width: 0 }
     };
     public chartArea: Object = {
         border: {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
-    public marker: Object = {
-        visible: true,
-        height: 10,
-        width: 10
-    };
+    public width: string = Browser.isDevice ? '100%' : '75%';
+    public circleMarker: Object = { visible: true, height: 7, width: 7 , shape: 'Circle' , isFilled: true };
+    public triangleMarker: Object = { visible: true, height: 6, width: 6 , shape: 'Triangle' , isFilled: true };
+    public diamondMarker: Object = { visible: true, height: 7, width: 7 , shape: 'Diamond' , isFilled: true };
+    public rectangleMarker: Object = { visible: true, height: 5, width: 5 , shape: 'Rectangle' , isFilled: true };
+    public pentagonMarker: Object = { visible: true, height: 7, width: 7 , shape: 'Pentagon' , isFilled: true };
+
     public tooltip: Object = {
         enable: true
     };
+    public legend: Object = {
+        visible: true,
+        enableHighlight : true
+    }
     // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
@@ -63,7 +66,7 @@ export class LineChartComponent {
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
     // custom code end
-    public title: string = 'Inflation - Consumer Price';
+    public title: string = 'Crude Steel Production Annual Growth';
     constructor() {
        //code
     };

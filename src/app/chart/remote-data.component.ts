@@ -104,7 +104,7 @@ export class RemoteDataChartComponent {
     public legend: Object = {
         visible: false
     };
-    public width: Object = Browser.isDevice ? '100%' : '60%';
+    public width: Object = Browser.isDevice ? '100%' : '75%';
     public tooltip: Object = {
         enable: true
     };

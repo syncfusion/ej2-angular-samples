@@ -214,8 +214,9 @@ export class MapsPieComponent {
             chart5.appendTo('#pieChart6');
             this.chartCollection.push(chart5);
         }
-
+        // custom code start
         constructor(@Inject('sourceFiles') private sourceFiles: any) {
             sourceFiles.files = [ 'world-map.json'];
         };
+        // custom code end
 };

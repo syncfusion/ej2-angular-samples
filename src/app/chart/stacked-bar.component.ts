@@ -14,24 +14,22 @@ import { Browser } from '@syncfusion/ej2-base';
 export class StackedBarChartComponent {
 
     public data: Object[] = [
-        { x: 'Jan', y: 6 }, { x: 'Feb', y: 8 }, { x: 'Mar', y: 12 }, { x: 'Apr', y: 15.5 },
-        { x: 'May', y: 20 }, { x: 'Jun', y: 24 }
-    ];
-    public data1: Object[] = [
-        { x: 'Jan', y: 6 }, { x: 'Feb', y: 8 }, { x: 'Mar', y: 11 }, { x: 'Apr', y: 16 },
-        { x: 'May', y: 21 }, { x: 'Jun', y: 25 }
-    ];
-    public data2: Object[] = [
-        { x: 'Jan', y: -1 }, { x: 'Feb', y: -1.5 }, { x: 'Mar', y: -2 }, { x: 'Apr', y: -2.5 },
-        { x: 'May', y: -3 }, { x: 'Jun', y: -3.5 }
+        { Month : "Jan", AppleSales : 6, OrangeSales : 6, Wastage : -1 },
+        { Month : "Feb", AppleSales : 8, OrangeSales : 8, Wastage : -1.5 },
+        { Month : "Mar", AppleSales : 12, OrangeSales : 11, Wastage : -2 },
+        { Month : "Apr", AppleSales : 15.5, OrangeSales : 16, Wastage : -2.5 },
+        { Month : "May", AppleSales : 20, OrangeSales : 21, Wastage : -3 },
+        { Month : "Jun", AppleSales : 24, OrangeSales : 25, Wastage : -3.5 }
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'Category',
-        majorGridLines: { width: 0 }
+        majorGridLines: { width: 0 },
+        majorTickLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
+        title: 'Sales (In Percentage)',
         lineStyle: { width: 0},
         majorTickLines: {width: 0},
         labelFormat: '{value}%',
@@ -53,8 +51,12 @@ export class StackedBarChartComponent {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
-
+    public border: Object = { color: '#ffffff', width:1 };
+    public width: string = Browser.isDevice ? '100%' : '75%';
+    public legend: Object = {
+        visible: true,
+        enableHighlight : true
+    }
     constructor() {
         //code
     };

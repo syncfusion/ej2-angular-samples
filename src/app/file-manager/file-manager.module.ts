@@ -7,6 +7,7 @@ import { DefaultFileController } from './default.component';
 import { OverViewController } from './overview.component';
 import { CustomThumnailController } from './custom.component';
 import { DragAndDropController } from './drag-drop.component';
+import { DirectoryUploadController } from './directory-upload.component';
 import { FileUploadController } from './file-upload.component';
 import { AzureController } from './azure-service.component';
 import { SQLController } from './sql-server-provider.component';
@@ -25,6 +26,7 @@ export const fileManagerAppRoutes: Object[] = [
     { path: ':theme/file-manager/custom', component: CustomThumnailController, name: 'Custom Thumbnails', order: '01', category: 'File Manager', description: 'Angular FileManager component with how to use the custom thumbnails for the files and folders.' },
     { path: ':theme/file-manager/default', component: DefaultFileController, name: 'API', order: '01', category: 'File Manager', description: 'Angular FileManager component with how to render the File Manager without the navigation pane and enable or disable toolbar dynamically.' },
     { path: ':theme/file-manager/drag-drop', component: DragAndDropController, name: 'Drag and Drop', order: '01', category: 'File Manager', description: 'Angular FileManager component with drag and drop feature to drag and drop the file.' },
+    { path: ':theme/file-manager/directory-upload', component: DirectoryUploadController, name: 'Directory upload', type: 'new', order: '01', category: 'File Manager', description: 'Angular FileManager component with folder (directory) upload feature by using custom toolbar item.' },
     { path: ':theme/file-manager/file-upload', component: FileUploadController, name: 'File Upload', order: '02', category: 'Use Case', description: 'Angular FileManager component with how to render the File Manager component inside the Dialog component.' },
     { path: ':theme/file-manager/azure-service', component: AzureController, name: 'Azure Blob Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the azure service.' },
     { path: ':theme/file-manager/sql-server-provider', component: SQLController, name: 'SQL Database Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the sql server database service.' },
@@ -44,6 +46,7 @@ export const fileRouter: ModuleWithProviders<any> = RouterModule.forChild(fileMa
         OverViewController,
         CustomThumnailController,
         DragAndDropController,
+        DirectoryUploadController,
         FileUploadController,
         AzureController,
         SQLController,

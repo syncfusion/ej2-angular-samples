@@ -1,0 +1,86 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the various options for customizing the axis labels, such as styling, formatting,
+        replacing text, and setting offset in the linear gauge.
+    </p>
+</div>
+<div class="control-section">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12"
+            style="display: flex;justify-content: center; align-items: center;">
+            <div style="margin: auto;padding: 10px;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div id='horizontal'
+                                    style="padding:6px;cursor:pointer;width:86px;color:black;font-size:15px;border:1px solid #0074E3;background-color:white;text-align:center"
+                                    (click)='horizontalGauge($event)'>Horizontal</div>
+                            </td>
+                            <td>
+                                <div id='vertical'
+                                    style="padding:6px;cursor:pointer;width:86px;color:white;font-size:15px;border:1px solid #0074E3;background-color: #0074E3;text-align:center"
+                                    (click)='verticalGauge($event)'>Vertical</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <pre style="background-color: inherit; border:hidden"></pre>
+    <div id="containerBox">
+        <div id='containerone' class="col-xs-5 col-sm-5 col-lg-3 col-md-3"
+            style="display: flex;justify-content: center; align-items: center;">
+            <ejs-lineargauge (load)='load($event)' id='customLabels' #customLabels background='transparent'
+                title='Custom labels' [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;'
+                orientation='Vertical' [axes]='customLabelAxes'>
+            </ejs-lineargauge>
+        </div>
+        <div id='containertwo' class="col-xs-5 col-sm-5 col-lg-3 col-md-3"
+            style="display: flex;justify-content: center; align-items: center;">
+            <ejs-lineargauge (axisLabelRender)='axisLabelRender($event)' (load)='load($event)' id='textLabels'
+                #textLabels background='transparent' title='Text labels' [titleStyle]='titleStyle' width='150px'
+                height='350px' style='display:block;' orientation='Vertical' [axes]='textLabelAxes'>
+            </ejs-lineargauge>
+        </div>
+        <div id='containerthree' class="col-xs-5 col-sm-5 col-lg-3 col-md-3"
+            style="display: flex;justify-content: center; align-items: center;">
+            <ejs-lineargauge (load)='load($event)' id='labelOffset' #labelOffset title='Label offset'
+                [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' background='transparent'
+                orientation='Vertical' [axes]='labelOffsetAxes'>
+            </ejs-lineargauge>
+        </div>
+        <div id='containerfour' class="col-xs-5 col-sm-5 col-lg-3 col-md-3"
+            style="display: flex;justify-content: center; align-items: center;">
+            <ejs-lineargauge (load)='load($event)' id='labelCustomization' #labelCustomization
+                title='Label customization' [titleStyle]='titleStyle' width='150px' height='350px'
+                style='display:block;' background='transparent' orientation='Vertical' [axes]='labelCustomizationAxes'>
+            </ejs-lineargauge>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure axis labels in the linear gauge. The properties in the
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/labelModel/">labelStyle</a> can be
+        used to style, format, and offset the label, while the label's text can be changed
+        dynamically via the <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/#axislabelrender">
+            axisLabelRender</a> event.
+    </p>
+    <p>
+        More information on the axis labels can be found in this
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/linear-gauge/axis/#labels-customization">documentation
+            section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

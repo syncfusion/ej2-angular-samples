@@ -4,6 +4,9 @@ import { FilterService, GridComponent,IFilter,VirtualScrollService  } from '@syn
 import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { CheckBox  } from '@syncfusion/ej2-buttons';
 import { getData } from './data';
+import { DataManager, Query, UrlAdaptor } from '@syncfusion/ej2-data';
+
+const SERVICE_URI: string = 'https://ej2services.syncfusion.com/production/web-services/';
 
 @Component({
     selector: 'ej-gridbatchedit',
@@ -22,10 +25,11 @@ export class OverViewComponent implements OnInit {
     public clrIntervalFun2: any;    
     public dropSlectedIndex: number = null;
     public stTime: any;
-    public data: Object;
-    public filter: Object;
+    public data: DataManager;
+    public query: Query;
     public filterSettings: Object;
-    public selectionSettings: Object;  
+    public selectionSettings: Object;
+    public loadingIndicator: Object;  
     public height: string = '240px';
     @ViewChild('sample') 
     public listObj: DropDownListComponent;
@@ -40,9 +44,10 @@ export class OverViewComponent implements OnInit {
     public item: number[] = [1, 2, 3, 4, 5];  
 
     public ngOnInit(): void {
-        this.data = getData(1000);
-        this.filterSettings = { type: "Menu" };      
-        this.filter = { type: "CheckBox" };    
+        this.data = new DataManager({ url: SERVICE_URI + 'api/UrlDataSource', adaptor: new UrlAdaptor });
+        this.query = new Query().addParams('dataCount', '1000');
+        this.filterSettings = { type: "Menu" };
+        this.loadingIndicator = {indicatorType: 'Shimmer'};  
        this.stTime = performance.now();
         this.selectionSettings = {persistSelection: true, type: "Multiple", checkboxOnly: true };
        
@@ -65,8 +70,7 @@ export class OverViewComponent implements OnInit {
             })
     }
     valueChange(args:any): void {
-		this.listObj.hidePopup();	
-        this.gridInstance.showSpinner();
+		this.listObj.hidePopup();
         this.dropSlectedIndex = null;
          let index: number = this.listObj.value as number;         
          clearTimeout(this.clrIntervalFun2);
@@ -78,8 +82,18 @@ export class OverViewComponent implements OnInit {
              contentElement.scrollTop = 0;
              this.gridInstance.pageSettings.currentPage = 1;
              this.stTime = performance.now();
-             this.gridInstance.dataSource = getData(index);
-             this.gridInstance.hideSpinner();     
+            if (this.gridInstance.query.params.length > 1) {
+                for (let i: number = 0; i < this.gridInstance.query.params.length; i++) {
+                    if (this.gridInstance.query.params[i].key === 'dataCount') {
+                        this.gridInstance.query.params[i].value = index.toString();
+                        break;
+                    }
+                }
+            }
+            else {
+                this.gridInstance.query.params[0].value = index.toString();
+            }
+            this.gridInstance.setProperties({dataSource: this.data});
          }, 100);
     }
     onDataBound(args:any):void {

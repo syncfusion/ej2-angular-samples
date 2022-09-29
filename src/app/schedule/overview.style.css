@@ -674,8 +674,8 @@
 
 @media (max-width: 481px) {
   .schedule-overview .overview-content .right-panel {
-    position: absolute;
-    width: 90%;
+      position: absolute;
+      width: 90%;
   }
   
   .schedule-overview .overview-header .overview-titlebar {

@@ -1,15 +1,17 @@
  <div id="action-description">
     <p>
-        This sample illustrates a rounded column series. Data points values are showed by using data label.
+        This sample shows the literacy rate by country in 2015 with the default column series in the chart.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart #roundcol style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='column-container' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' (loaded)='loaded($event)' [legendSettings]='legend'
-            (pointRender)='pointRender($event)'>
+            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'
+            (pointRender)='pointRender($event)' [enableSideBySidePlacement]='placement'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Tiger' width=2 [marker]='marker' [cornerRadius]='radius'>
+                <e-series [dataSource]='data' type='Column' xName='Country' yName='Rate' width=2 [cornerRadius]='radius' [enableTooltip] = false opacity=0.5 columnWidth=0.8>
+                </e-series>
+                <e-series [dataSource]='data' type='Column' xName='Country' yName='Literacy_Rate' width=2 [marker]='marker' [cornerRadius]='radius' tooltipMappingName='Text' columnWidth=0.8>
                 </e-series>
             </e-series-collection>
         </ejs-chart>
@@ -17,10 +19,7 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the column type charts with rounded corner.
-    </p>
-    <p>
-        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+        In this example, you can see how to render and configure the column chart. The column chart is used to compare the frequency, count, total, or average of data in different categories. You can use the <code>ChartCornerRadius</code> option to customize the vertical rectangle, resulting in a rounded column.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
@@ -30,7 +29,7 @@
         <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the column types series can be found in this
+        More information about the column type series can be found in this
         <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#column-charts">documentation section</a>.
     </p>
 </div>

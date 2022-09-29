@@ -89,8 +89,10 @@ export class MapsPrintComponent {
     public mode(e: Event): void {
         this.maps.print();
     }
+    // custom code start
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = [ 'usa.json', 'us-population.json'];
     };
+    // custom code end
 
 }

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, IAxisLabelRenderEventArgs } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -14,28 +14,11 @@ import { Browser } from '@syncfusion/ej2-base';
 export class StackedColumnChartComponent {
 
     public data: Object[] = [
-        { x: '2014', y: 111.1 },
-        { x: '2015', y: 127.3 },
-        { x: '2016', y: 143.4 },
-        { x: '2017', y: 159.9 }
-    ];
-    public data1: Object[] = [
-        { x: '2014', y: 76.9 },
-        { x: '2015', y: 99.5 },
-        { x: '2016', y: 121.7 },
-        { x: '2017', y: 142.5 }
-    ];
-    public data2: Object[] = [
-        { x: '2014', y: 66.1 },
-        { x: '2015', y: 79.3 },
-        { x: '2016', y: 91.3 },
-        { x: '2017', y: 102.4 }
-    ];
-    public data3: Object[] = [
-        { x: '2014', y: 34.1 },
-        { x: '2015', y: 38.2 },
-        { x: '2016', y: 44.0 },
-        { x: '2017', y: 51.6 }
+        { Year : "2013", General : 9628912, Honda : 4298390, Suzuki : 2842133, BMW : 2006366 },
+        { Year : "2014", General : 9609326, Honda : 4513769, Suzuki : 3016710, BMW : 2165566 },
+        { Year : "2015", General : 7485587, Honda : 4543838, Suzuki : 3034081, BMW : 2279503 },
+        { Year : "2016", General : 7793066, Honda : 4999266, Suzuki : 2945295, BMW : 2359756 },
+        { Year : "2017", General : 6856880, Honda : 5235842, Suzuki : 3302336, BMW : 2505741 },
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
@@ -50,13 +33,12 @@ export class StackedColumnChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Sales',
+        title: 'Vehicles Production (In Millions)',
         lineStyle: { width: 0 },
         majorTickLines: { width: 0 },
         majorGridLines: { width: 1 },
         minorGridLines: { width: 1 },
         minorTickLines: { width: 0 },
-        labelFormat: '{value}B',
     };
     public tooltip: Object = {
         enable: true
@@ -67,14 +49,24 @@ export class StackedColumnChartComponent {
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
+    OnChartAxisLabeRender(args: IAxisLabelRenderEventArgs){
+        if(args.value > 999999 || args.value < -999999) {
+            args.text = args.text.replace("0000000","0M").replace("000000", "M");
+        }
+      };
      // custom code end
-    public title: string = 'Mobile Game Market by Country';
+    public title: string = 'Motor Vehicle Production by Manufacturer';
     public chartArea: Object = {
         border: {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public legend: Object = {
+        visible: true,
+        enableHighlight : true
+    }
+    public border: Object = { color: '#ffffff', width:1 };
+    public width: string = Browser.isDevice ? '100%' : '75%';
 
     constructor() {
         //code

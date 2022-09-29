@@ -23,12 +23,19 @@ export class TreeGridAdaptiveComponent implements OnInit {
     public toolbar: string[];
     public isDeskTop: Boolean;
     public filterSettings: Object;
+    public tasknamerules: Object;
+    public taskidrules: Object;
+    public durationrules: Object;
+    public progressrules: Object;
     ngOnInit(): void {
         this.data = sampleData;
         this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Dialog' };
         this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel', 'Search'];
         this.filterSettings = { type: 'Excel' };
         this.isDeskTop = !Browser.isDevice;
+        this.tasknamerules = { required: true};
+        this.taskidrules = { required: true ,number: true};
+        this.durationrules = { required: true };
     }
     public onLoad(): void {
         this.treegrid.grid.adaptiveDlgTarget = document.getElementsByClassName('e-mobile-content')[0] as HTMLElement;

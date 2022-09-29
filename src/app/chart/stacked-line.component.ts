@@ -95,6 +95,10 @@ export class StackedLineChartComponent {
     public tooltip: Object = {
         enable: true
     };
+    public legend: Object = {
+        visible: true,
+        enableHighlight : true
+    }
      // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
@@ -102,14 +106,17 @@ export class StackedLineChartComponent {
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, 'Dark');
     };
      // custom code end
-    public title: string = 'Family Expense for Month';
+    public title: string = 'Family Expenses Per Month';
     public chartArea: Object = {
         border: {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '90%';
-    public marker: MarkerSettingsModel = { visible: true };
+    public width: string = Browser.isDevice ? '100%' : '75%';
+    public marker: Object = { visible: true, height: 7, width: 7 , shape: 'Circle' , isFilled: true };
+    public marker1: Object = { visible: true, height: 7, width: 7 , shape: 'Diamond' , isFilled: true };
+    public marker2: Object = { visible: true, height: 5, width: 5 , shape: 'Rectangle' , isFilled: true };
+    public marker3: Object = { visible: true, height: 6, width: 6 , shape: 'Triangle' , isFilled: true };
 
     constructor() {
         //code

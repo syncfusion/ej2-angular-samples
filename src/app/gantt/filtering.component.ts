@@ -1,16 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { filteredData } from './data';
+import { GanttComponent, FilterService } from '@syncfusion/ej2-angular-gantt';
+import { DropDownListComponent , ChangeEventArgs} from '@syncfusion/ej2-angular-dropdowns';
+
 @Component({
     selector: 'ej2-ganttfiltering',
-    templateUrl: 'filtering.html'
+    templateUrl: 'filtering.html',
+    providers: [ FilterService ]
 })
 export class GanttFilteringComponent implements OnInit {
     public data: object[];
     public taskSettings: object;
     public columns: object[];
     public timelineSettings: object;
+    public filterSettings: Object;
     public labelSettings: object;
     public projectStartDate: Date;
+    @ViewChild('gantt')
+    public gantt: GanttComponent;
+    @ViewChild('dropdown1')
+    public dropdown1: DropDownListComponent;
+    public d1data: Object;
+    public d1data2: Object;
+    public typefields: Object;
     public projectEndDate: Date;
     public toolbar: string[];
     public splitterSettings: object;
@@ -26,6 +38,16 @@ export class GanttFilteringComponent implements OnInit {
             dependency: 'Predecessor',
             child: 'subtasks'
         };
+        this.filterSettings = { type: 'Menu',hierarchyMode:'Parent' };
+        this.typefields = { text: 'mode' , value: 'id'};
+        this.d1data= [ { id: 'Menu', mode: 'Menu' },
+                       { id: 'Excel', mode: 'Excel' }
+        ];
+        this.d1data2= [ { id: 'Parent', mode: 'Parent' },
+                       { id: 'Child', mode: 'Child' },
+                       { id: 'Both', mode: 'Both' },
+                       { id: 'None', mode: 'None' },
+        ];
         this.columns = [
             { field: 'TaskName', headerText: 'Task Name', width: '250', clipMode: 'EllipsisWithTooltip' },
             { field: 'StartDate', headerText: 'Start Date' },
@@ -47,7 +69,6 @@ export class GanttFilteringComponent implements OnInit {
         this.splitterSettings = {
             columnIndex: 3
         };
-        this.toolbar = ['Search'];
         this.labelSettings = {
             rightLabel: 'TaskName',
         };
@@ -55,8 +76,20 @@ export class GanttFilteringComponent implements OnInit {
         this.projectStartDate = new Date('07/16/1969 01:00:00 AM');
         this.projectEndDate = new Date('07/25/1969');
     }
+    
+    change (e: ChangeEventArgs) : void {
+        let type: any = <string>e.value;
+        this.gantt.filterSettings.type = type;
+        this.gantt.clearFiltering();
+    }
+    change1 (e: ChangeEventArgs) : void {
+        let mode: any = <string>e.value;
+        this.gantt.filterSettings.hierarchyMode = mode;
+        this.gantt.clearFiltering();
+    }
     public onActionComplete(args: any): void {
-        if (args.requestType == "filterafteropen" && (args.columnName === "StartDate" || args.columnName === "EndDate")) {
+        if (args.requestType == "filterafteropen" && (args.columnName === "StartDate" || args.columnName === "EndDate")
+            && this.gantt.filterSettings.type === "Menu") {
             args.filterModel.dlgDiv.querySelector('.e-datetimepicker').ej2_instances[0].min = new Date(1969, 5, 1);
             args.filterModel.dlgDiv.querySelector('.e-datetimepicker').ej2_instances[0].max = new Date(1969, 8, 30);
             args.filterModel.dlgDiv.querySelector('.e-datetimepicker').ej2_instances[0].showTodayButton = false;

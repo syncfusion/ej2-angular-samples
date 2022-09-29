@@ -1,0 +1,118 @@
+
+<div id="action-description">
+  <p>
+    This sample shows an overview of <a target="_blank" href="https://www.syncfusion.com/angular-ui-components/angular-charts" >Angular Charts</a> that allows users to visualize data easily and take decisions based on it. There are different types of charts to create feature rich apps.
+  </p>
+</div>
+<div class="control-section">
+    <ejs-dashboardlayout [columns]="8" [cellSpacing]='cellSpacing' [cellAspectRatio]='cellAspectRatio'>
+      <e-panels>
+        <e-panel [sizeX]="5" [sizeY]="2" [row]="0" [col]="0">
+          <ng-template #header>
+            <div class="title" id="header1"> Sales - Yearly Performance </div>
+          </ng-template>
+          <ng-template #content>
+            <ejs-chart  style="height:100%; width:100%" [primaryXAxis]='columnChartprimaryXAxis' [primaryYAxis]='columnChartprimaryYAxis' [chartArea]='chartArea' [legendSettings]=" columnChartlegendSettings" (load)='load($event)'>
+              <e-series-collection>
+                <e-series [dataSource]='columnChartDataCollection' type='Column' name='Online' xName='Period' yName='Percentage' [marker]='columnChartmarker' [fill]="series1Fill">
+                </e-series>
+                <e-series [dataSource]='columnChartData' type='Column' name='Retail' xName='Period' yName='Percentage' [marker]='columnChartmarker' [fill]="series2Fill">
+                </e-series>
+              </e-series-collection>
+            </ejs-chart>
+          </ng-template>
+        </e-panel>
+        <e-panel [sizeX]="3" [sizeY]="2" [row]="0" [col]="5">
+          <ng-template #header>
+            <div class="title" id="header2">Product Wise Sales - 2021</div>
+          </ng-template>
+          <ng-template #content>
+            <ejs-accumulationchart  style="height:100%; width:100%" [legendSettings]="pielegendSettings" [tooltip]="pieTooltipSetting" [enableAnimation]= 'animation' [enableBorderOnMouseMove]='enableBorderOnMouseMove' [enableSmartLabels]='enableSmartLabels' (pointRender)='pointRender($event)' (load)='accumulationload($event)'>
+              <e-accumulation-series-collection>
+                <e-accumulation-series [dataSource]='data' xName='Product' yName='Percentage' innerRadius="40%" radius="80%" [palettes]="palettes" [dataLabel]="dataLabel" [border]='border' >
+                </e-accumulation-series>
+              </e-accumulation-series-collection>
+            </ejs-accumulationchart>
+          </ng-template>
+        </e-panel>
+        <e-panel [sizeX]="8" [sizeY]="3" [row]="4" [col]="0">
+          <ng-template #header>
+            <div class="title" id="header3"> Monthly Sales for 2021 </div>
+          </ng-template>
+          <ng-template #content>
+            <ejs-chart  style="height:100%; width:100%"  [primaryXAxis]='spLineAreaprimaryXAxis' [primaryYAxis]='spLineAreaprimaryYAxis' [tooltip]='spLineAreatooltipSettings' [chartArea]='chartArea' [legendSettings]="spLineLegendSettings"(load)='load($event)'>
+              <e-series-collection>
+                <e-series [dataSource]='spLineAreaData' name='Online' type='SplineArea' xName='Period' yName='Percentage' opacity='0.3' width='2.5' [fill]="spLineAreaFill" [border]='spLineAreaBorder' >
+                </e-series>
+                <e-series [dataSource]='spLineAreaData2' name='Retail' type='SplineArea' xName='Period' yName='Percentage' opacity='0.3' width='2.5' [fill]="spLineAreaFill1" [border]='spLineAreaBorder1'>
+                </e-series>
+              </e-series-collection>
+            </ejs-chart>
+          </ng-template>
+        </e-panel>
+      </e-panels>
+    </ejs-dashboardlayout>
+</div>
+<div id="description">
+  <p>
+    The Angular Chart is a well-crafted charting component to visualize data.
+    In this example, you will see how to render and configure line, column, and pie charts with different features such as highlight, legend, tooltip, and annotation. The Chart uses <code>SfDataManager</code>, which supports both RESTful JSON data services binding and IEnumerable binding. 
+  </p>
+  <p>
+      More information about the Angular Chart can be found in this
+      <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/getting-started/">documentation</a> section.
+  </p>
+</div>
+<style>
+  ellipse[id*=_Trackball_1] {
+      stroke-width: 1 !important;
+  }
+  .e-chart-focused:focus {
+      outline: none !important;
+  }
+</style>
+<style>
+.e-dashboardlayout {
+  padding: 20px;
+  z-index: 0;
+}
+.e-panel {
+  cursor: auto !important;
+}
+.e-panel-header{
+  border: none !important;
+  height: 50px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  font-size: 15px;
+  font-weight: bold;
+  color: #737373;
+}
+</style>
+
+<style>
+  .control-container {
+      padding: 0px !important;
+  }
+ #gradient-chart stop {
+      stop-color: #2485FA;        
+  }
+  #gradient-chart1 stop{
+      stop-color: #FEC200;
+  } 
+</style>
+<svg style="height: 0">
+  <defs>       
+      <linearGradient id="gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0"></stop>
+          <stop offset="1"></stop>
+      </linearGradient>
+       <linearGradient id="gradient-chart1" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0"></stop>
+          <stop offset="1"></stop>
+      </linearGradient>
+  </defs>
+</svg>

@@ -56,6 +56,8 @@ export class PercentStackedAreaChartComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
+        minimum: new Date(1999, 0, 1),
+        maximum: new Date(2015, 0, 1),
         majorGridLines: { width: 0 },
         intervalType: 'Years',
         labelFormat: 'y',
@@ -63,14 +65,24 @@ export class PercentStackedAreaChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Spends',
-        majorGridLines: { width: 0 },
+        title: 'Amount of sales in €',
+        majorTickLines: { width: 0 },
+        lineStyle: { width: 0 },
         rangePadding: 'None',
         interval: 20
     };
-    public marker: Object = {
-        visible: false
+    public border: Object = {
+        width: 1,
+        color: '#ffffff'
     };
+    //Initializing Tooltip
+    public tooltip: Object = {
+        enable: true,
+    };
+    public legend: Object = {
+        visible: true,
+        enableHighlight : true
+    }
      // custom code start
     public load(args: ILoadedEventArgs): void {       
         let selectedTheme: string = location.hash.split('/')[1];
@@ -83,9 +95,9 @@ export class PercentStackedAreaChartComponent {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
 
-    public title: string = 'Trend in Sales of Ethical Produce';
+    public title: string = 'Amount of Sales by Payment Method';
     constructor() {
         //code
     };

@@ -1,0 +1,9 @@
+.msg-default-section .content-section {
+    margin: 0 auto;
+    max-width: 520px;
+    padding-top: 10px;
+}
+
+.msg-default-section .e-message {
+    margin: 10px 0;
+}

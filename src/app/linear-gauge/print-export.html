@@ -1,0 +1,160 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the print and export functionalities of the linear gauge.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-lg-8">
+        <ejs-lineargauge (load)='load($event)' id='gauge' #gauge='' background='transparent' title='Speedometer' [titleStyle]='titleStyle'  [allowPrint]='allowPrint' [allowPdfExport]='allowPdfExport' [allowImageExport]='allowImageExport' style='display:block;' orientation='Horizontal'
+            [axes]='axes'>
+        </ejs-lineargauge>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties" style="width: 100%">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
+                        <tr style="height: 50px;">
+                            <td>
+                                <div>Export Type</div>
+                            </td>
+                            <td>
+                                <div>
+                                    <select name="selectIndex" autocomplete="off" id="exporttype" style="width: 90%">
+                                        <option value="JPEG">JPEG</option>
+                                        <option value="PNG">PNG</option>
+                                        <option value="SVG">SVG</option>
+                                        <option value="PDF">PDF</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        </table>
+                        <table id="property" title="Properties" style="width: 100%">
+                            <colgroup>
+                                <col span="1" style="width: 50%;">
+                                <col span="1" style="width: 50%;">
+                            </colgroup>
+                        <tr style="height: 50px;">
+                            <td>
+                                <div>File Name</div>
+                            </td>
+                            <td>
+                                <div class="e-float-input" style='margin-top: 0px;'>
+                                    <input type="text" value="Linear Gauge" id="fileName" style="width: 90%;">
+                                </div>
+                            </td>
+                        </tr>
+                        </table>
+                        
+                        <table id="property" title="Properties" style="width: 85%">
+                            <colgroup>
+                                <col span="1" style="width: 50%;">
+                                <col span="1" style="width: 50%;">
+                            </colgroup>
+                        <tr id="button-control" style="height: 70px" align='center'>
+                            <td style="width: 50%">
+                                <div style="text-align: center;margin-left: 30%;">
+                                    <button ejs-button isPrimary=true
+                                        (click)='onClickExport($event)' style="text-transform: capitalize;"
+                                        id="export">Export</button>
+                                </div>
+                            </td>
+                            <td style="width: 50%">
+                                <div style="text-align: center;margin-left: 20%;">
+                                    <button ejs-button isPrimary=true
+                                        (click)='onClickPrint($event)' style="text-transform: capitalize;"
+                                        id="print">Print</button>
+                                </div>
+                            </td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to print and export the rendered linear gauge. You can add print functionality by using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/#print">print</a> method when <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/#allowprint">allowPrint</a> is set as <b>true</b>. Also, you can add export functionality by using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/#export">export</a> method when <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/#allowimageexport">allowImageExport</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/#allowpdfexport">allowPdfExport</a> are set as <b>true</b>. The linear gauge can be exported to JPEG, PNG, SVG, and PDF formats.
+    </p>
+    <p>
+        More information about print and export can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/linear-gauge/print-and-export/">documentation section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+
+    #button-control {
+        width: 100%;
+        text-align: center;
+        text-transform: none !important;
+    }
+
+    .e-play-icon::before {
+        content: '\e728';
+    }
+
+    .e-play-icon1::before {
+        content: '\e813';
+    }
+
+    .e-view.fluent .e-play-icon::before, .e-view.fluent-dark .e-play-icon::before  {
+        content: '\e72e';
+    }
+
+    .e-view.fluent .e-play-icon1::before, .e-view.fluent-dark .e-play-icon1::before  {
+        content: '\e75d';
+    }
+
+    .e-view.fabric .e-play-icon1::before, .e-view.fabric-dark .e-play-icon1::before  {
+        content: '\e7df';
+    }
+
+    .e-view.fabric .e-play-icon::before, .e-view.fabric-dark .e-play-icon::before {
+        content: '\e710';
+    }
+
+    .e-view.bootstrap .e-play-icon1::before, .e-view.bootstrap-dark .e-play-icon1::before {
+        content: '\e34b';
+    }
+
+    .e-view.bootstrap4 .e-play-icon::before {
+        content: '\e780';
+    }
+
+    .e-view.bootstrap4 .e-play-icon1::before {
+        content: '\e743';
+    }
+
+    .e-view.tailwind .e-play-icon1::before, .e-view.tailwind-dark .e-play-icon1::before {
+        content: '\e76c';
+    }
+
+    .e-view.tailwind .e-play-icon::before, .e-view.tailwind-dark .e-play-icon::before {
+        content: '\e7bf';
+    }
+
+    .e-view.highcontrast .e-play-icon1::before {
+        content: '\ebf9';
+    }
+
+    .e-view.highcontrast .e-play-icon::before {
+        content: '\e710';
+    }
+
+    .e-view.bootstrap5 .e-play-icon1::before, .e-view.bootstrap5-dark .e-play-icon1::before {
+        content: '\e75d';
+    }
+
+    .e-view.bootstrap5 .e-play-icon::before, .e-view.bootstrap5-dark .e-play-icon::before {
+        content: '\e72e';
+    }
+</style>
+<!-- custom code end -->

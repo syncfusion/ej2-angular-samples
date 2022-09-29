@@ -13,29 +13,24 @@ import { Browser } from '@syncfusion/ej2-base';
 export class PlacementColumnChartComponent {
 
     public data: Object[] = [
-        { x: 'Jamesh', y: 10, text: 'Total 10' },
-        { x: 'Michael', y: 9, text: 'Total 9' }, { x: 'John', y: 11, text: 'Total 11' }
+        { ConsumerName : "Jamesh", TotalCount : 10, AppleCount : 5, OrangeCount : 4, GrapesCount : 1, DataLabelMappingName : "Total 10" },
+        { ConsumerName : "Michael", TotalCount : 9, AppleCount : 4, OrangeCount : 3, GrapesCount : 2, DataLabelMappingName : "Total 9" },
+        { ConsumerName : "John", TotalCount : 11, AppleCount : 5, OrangeCount : 4, GrapesCount : 2, DataLabelMappingName : "Total 11" },
+        { ConsumerName : "Jack", TotalCount : 8, AppleCount : 5, OrangeCount : 2, GrapesCount : 1, DataLabelMappingName : "Total 8" },
+        { ConsumerName : "Lucas", TotalCount : 10, AppleCount : 6, OrangeCount : 3, GrapesCount : 1, DataLabelMappingName : "Total 10" }
     ];
-    public data1: Object[] = [
-        { x: 'Jamesh', y: 5 }, { x: 'Michael', y: 4 }, { x: 'John', y: 5 }
-    ];
-    public data2: Object[] = [
-        { x: 'Jamesh', y: 4 }, { x: 'Michael', y: 3 }, { x: 'John', y: 4 }
-    ];
-    public data3: Object[] = [
-        { x: 'Jamesh', y: 1 }, { x: 'Michael', y: 2 }, { x: 'John', y: 2 }
-    ];
+    
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'Category', interval: 1, majorGridLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        minimum: 0, maximum: 12, interval: 3, majorGridLines: { width: 0 },
-        majorTickLines: { width: 0 }, lineStyle: { width: 0 }, labelStyle: { color: 'transparent' }
+        title: 'Fruits Count',
+        majorTickLines: { width: 0 }, lineStyle: { width: 0 },
     };
     public marker: Object = { dataLabel: { visible: true, position: 'Top', font: { fontWeight: '600', color: '#ffffff' } } };
-    public marker1: Object = { dataLabel: { visible: true, name: 'text', position: 'Top', font: { fontWeight: '600', color: '#ffffff' } } }
+    public dataLebelMarker: Object = { dataLabel: { visible: true, name: 'DataLabelMappingName', position: 'Top', font: { fontWeight: '600', color: '#ffffff' } } }
     public title: string = 'Fruit Consumption';
     public tooltip: Object = {
         enable: true,
@@ -47,7 +42,7 @@ export class PlacementColumnChartComponent {
         }
     };
     public placement: boolean = false;
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
   // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

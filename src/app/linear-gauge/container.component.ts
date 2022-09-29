@@ -1,5 +1,5 @@
 /**
- * Sample for containers
+ * Sample for containers in the Linear Gauge
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { LinearGaugeComponent } from '@syncfusion/ej2-angular-lineargauge';
@@ -11,39 +11,33 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
     templateUrl: 'container.html',
     encapsulation: ViewEncapsulation.None
 })
+
 export class ContainerComponent {
     @ViewChild('gauge')
     public gauge: LinearGaugeComponent;
     public orientation: DropDownList;
     public container: DropDownList;
-    // custom code start
-    public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
-        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
-    }
-    // custom code end
-    //Initializing Axes
-    public Axes: Object[] = [{
+
+    public axes: Object[] = [{
         minimum: 0,
         maximum: 180,
         line: {
             width: 0
         },
         majorTicks: {
-            interval: 20,
-            color: '#9e9e9e'
+            interval: 20, color: '#9e9e9e', height: 20
         },
         minorTicks: {
-            color: '#9e9e9e'
+            color: '#9e9e9e', height: 10, interval: 10
+        },
+        labelStyle: {
+            font: { fontFamily: 'inherit' }
         },
         pointers: [
             {
                 value: 90,
                 height: 13,
                 width: 13,
-                roundedCornerRadius: 5,
                 type: 'Bar',
                 color: '#f02828'
             }
@@ -56,9 +50,15 @@ export class ContainerComponent {
             width: 0
         },
         majorTicks: {
-            interval: 20
+            interval: 20, height: 20, color: '#9e9e9e'
+        },
+        minorTicks: {
+            height: 10, interval: 10, color: '#9e9e9e'
         },
         opposedPosition: true,
+        labelStyle: {
+            font: { fontFamily: 'inherit' }
+        },
         pointers: [
             {
                 width: 0
@@ -66,14 +66,25 @@ export class ContainerComponent {
         ]
     }];
 
-    public Container: Object = {
+    public containerType: Object = {
         width: 13,
         roundedCornerRadius: 5,
         type: 'Thermometer'
     };
-    constructor() {
-        //code
+
+    public titleStyle: Object = {
+        fontFamily: 'inherit'
     };
+
+    public load(args: ILoadedEventArgs): void {
+        // custom code start
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
+            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
+        // custom code end
+    }
+
     ngOnInit(): void {
         this.orientation = new DropDownList({
             index: 0, width: '110%',
@@ -94,5 +105,9 @@ export class ContainerComponent {
         });
         this.container.appendTo('#containerMode');
     }
+
+    constructor() {
+        //code
+    };
 }
 

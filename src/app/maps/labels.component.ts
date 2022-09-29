@@ -16,14 +16,14 @@ import usMap from './usa.json';
 export class MapsLabelComponent {
     @ViewChild('maps')
     public maps: Maps;
-    // custom code start
-    public load = (args: ILoadEventArgs) => { 
+    public load = (args: ILoadEventArgs) => {
+        // custom code start
         let theme: string = location.hash.split('/')[1]; 
         theme = theme ? theme : 'Material'; 
         args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() +
         theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
+        // custom code end
     }
-    // custom code end
     public zoomSettings: object = {
         enable: false
     };
@@ -99,8 +99,10 @@ export class MapsLabelComponent {
             this.maps.refresh();
         }
     }
+    // custom code start
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = [ 'usa.json'];
     };
+    // custom code end
 
 }

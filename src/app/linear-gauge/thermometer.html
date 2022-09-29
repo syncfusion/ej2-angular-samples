@@ -1,0 +1,25 @@
+<div id="action-description">
+    <p>
+        This sample shows a thermometer that displays temperature in both degrees and fahrenheit.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-lineargauge (load)='load($event)' id='defaultContainer' background='transparent' style='display:block;'
+        orientation='Vertical' [container]='conatiner' [annotations]='annotation' [axes]='axes'>
+    </ejs-lineargauge>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure a linear gauge to look like a thermometer. More
+        information about containers can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/linear-gauge/appearance/#customizing-the-linear-gauge-container">documentation
+            section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

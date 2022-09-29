@@ -18,7 +18,7 @@ export class RTLChartComponent {
         }
     };
     //Initializing Width
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
     public data: Object[] = [{ x: 2016, y: 1000 }, { x: 2017, y: 1170 }, { x: 2018, y: 660 }, { x: 2019, y: 1030 }];
     public data1: Object[] = [{ x: 2016, y: 400 }, { x: 2017, y: 460 }, { x: 2018, y: 1120 }, { x: 2019, y: 540 }];
     public data2: Object[] = [{ x: 2016, y: 200 }, { x: 2017, y: 250 }, { x: 2018, y: 300 }, { x: 2019, y: 350 }];

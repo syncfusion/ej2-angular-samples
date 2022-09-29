@@ -15,14 +15,14 @@ declare var require: any;
     encapsulation: ViewEncapsulation.None
 })
 export class MapsBubbleComponent {
-    // custom code start
-    public load = (args: ILoadEventArgs) => { 
+    public load = (args: ILoadEventArgs) => {
+        // custom code start
         let theme: string = location.hash.split('/')[1]; 
         theme = theme ? theme : 'Material'; 
         args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() +
         theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
+        // custom code end
     }
-    // custom code end
     public zoomSettings: object= {
         enable: true,
         horizontalAlignment: 'Near',
@@ -67,8 +67,10 @@ export class MapsBubbleComponent {
     public bubbleRendering = (args: IBubbleRenderingEventArgs) => { 
         args.radius = (args.data as Data).value; 
     }
+    // custom code start
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['population-data.ts', 'world-map.json'];
     };
+    // custom code end
 
 }

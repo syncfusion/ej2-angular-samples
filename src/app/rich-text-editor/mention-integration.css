@@ -1,0 +1,47 @@
+#mention-TemplateList {
+    position: relative;
+    display: inline-block;
+    padding:2px;
+}
+.mentionNameList .person, .mentionNameList.email {
+    display: block;
+    line-height: 20px;
+    text-indent: 5px;
+}
+.mentionNameList .person {
+    font-size: 16px;
+}
+.mentionEmpImage {
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    padding: 3px;
+    border-radius: 25px;
+}
+#mention-TemplateList .e-badge-success {
+    left: 76%;
+    bottom: 4px;
+    top: auto;
+}
+#mention_integration_rte-edit-view_popup .e-dropdownbase .e-list-item {
+    line-height: 8px;
+}
+#mention-TemplateList .e-badge-success {
+    background-color: #4d841d;
+    color: #fff;
+}
+#mention-TemplateList .e-badge-success.away {
+    background-color: #fedd2d;
+    color: #fff;
+}
+#mention-TemplateList .e-badge-success.busy {
+    background-color: #de1a1a;
+    color: #fff;
+}
+#mention-TemplateList .e-badge.e-badge-dot {
+    height: 10px;
+    width: 10px;
+}
+#mention_integration .e-mention-chip{
+    cursor: pointer;
+}

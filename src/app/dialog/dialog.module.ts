@@ -2,7 +2,6 @@ import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/
 import { RouterModule } from '@angular/router';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { BasicDialogComponent } from './default.component';
-import { DefaultDialogComponent } from './custom-dialog.component';
 import { ModalDialogComponent } from './modal-dialog.component';
 import { AjaxDialogComponent } from './dialog-contents-via-ajax.component';
 import { ResizableDialogComponent } from './resizable.component';
@@ -28,7 +27,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 export const dialogAppRoutes: Object[] = [
     { path: ':theme/dialog/default', component: BasicDialogComponent, name: 'Default Functionalities', category: 'Dialog', description: 'The example demonstrates the default rendering of the Angular dialog, which supports modal and non-modal (modeless), built-in buttons, and more.' },
-    { path: ':theme/dialog/custom-dialog', component: DefaultDialogComponent, name: 'Custom Dialogs', category: 'Dialog', description: 'This example demonstrates how to create custom dialogs such as alert dialogs, confirmation dialogs, and prompt dialogs using the Angular dialog component.' },
     { path: ':theme/dialog/modal-dialog', component: ModalDialogComponent, name: 'Modal', category: 'Dialog', description: 'This example demonstrates the modal pop-up behavior of the Angular dialog component, which helps display critical information such as errors and warnings.' },
     { path: ':theme/dialog/template', component: TemplateDialogComponent, name: 'Template', category: 'Dialog', description: 'This example demonstrates how to customize user interface elements like the header, footer, and content of the Angular dialog component using a template.' },
     { path: ':theme/dialog/dialog-contents-via-ajax', component: AjaxDialogComponent, name: 'Ajax Content', category: 'Dialog', description: 'The example demonstrates how to load the content of the Angular dialog component from external sources such as a file or website using Ajax library.' },
@@ -46,7 +44,6 @@ export const DialogRouter: ModuleWithProviders<any> = RouterModule.forChild(dial
     imports: [DialogRouter, RadioButtonModule, CheckBoxModule, SharedModule, ButtonModule, DialogModule, RadioButtonModule, ChartAllModule, RangeNavigatorAllModule, AccumulationChartAllModule, GridAllModule, RichTextEditorAllModule, ScheduleAllModule, RecurrenceEditorAllModule, CheckBoxModule, FormsModule, ReactiveFormsModule, CommonModule, BrowserModule, TabAllModule, DatePickerModule],
     declarations: [
         BasicDialogComponent,
-        DefaultDialogComponent,
         ModalDialogComponent,
         TemplateDialogComponent,
         AjaxDialogComponent,

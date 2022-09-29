@@ -15,6 +15,13 @@
             </div>
           </ng-template>
         </e-view>
+        <e-view option="Month" [allowVirtualScrolling]="virtualScroll">
+          <ng-template #eventTemplate let-data>
+            <div class='template-wrap' [style.background]="data.PrimaryColor">
+              <div class="subject" [style.background]="data.SecondaryColor">{{data.Subject}}</div>
+            </div>
+          </ng-template>
+        </e-view>
       </e-views>
     </ejs-schedule>
   </div>
@@ -28,8 +35,8 @@
   </p>
 </div>
 <div id="description">
-  <p>In this example, the virtual scrolling option is enabled on timeline month view to load the large number of
-    resources and its associated events. To enable the dynamic loading of events and resources in timeline view of
+  <p>In this example, the virtual scrolling option is enabled on timeline month and month views to load the large number of
+    resources and its associated events. To enable the dynamic loading of events and resources in the
     Scheduler, set the <code>allowVirtualScrolling</code> property to <code>true</code> within the view-specific
     settings.</p>
 </div>

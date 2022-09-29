@@ -1,15 +1,24 @@
-.e-schedule .template-wrap .subject {
+.virtual-scrolling.e-schedule .template-wrap .subject {
   padding: 10px 25px;
 }
 
-.e-schedule .e-more-event-popup .template-wrap .subject {
+.virtual-scrolling.e-schedule .e-more-event-popup .template-wrap .subject {
   padding: 0px 25px;
 }
 
-.e-schedule .template-wrap {
+.virtual-scrolling.e-schedule .template-wrap {
   width: 100%;
 }
 
-.e-schedule .e-timeline-month-view .e-resource-left-td {
+.virtual-scrolling.e-schedule .e-timeline-month-view .e-resource-left-td {
   width: 150px;
+}
+
+.virtual-scrolling.e-schedule .e-month-view .template-wrap .subject {
+  padding: 3px 10px;
+}
+
+.virtual-scrolling.e-schedule .e-month-view .e-date-header-wrap table col,
+.virtual-scrolling.e-schedule .e-month-view .e-work-cells {
+  width: 46px;
 }

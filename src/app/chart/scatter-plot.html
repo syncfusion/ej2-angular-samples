@@ -1,17 +1,22 @@
 <div id="action-description">
     <p>
-        This sample compares the height and weight of the genders by using default scatter series in the chart. Tooltip shows the
-        information about the data.
+        This Angular scatter plot chart example compares the shoulder and chest measurements for different age groups using the default scatter series.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
-        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [title]='title'
-            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)'>
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' 
+            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='series1' type='Scatter' xName='x' yName='y' opacity='0.6' name='Male' width=2 [marker]='marker1'>
+                <e-series [dataSource]='series1' type='Scatter' xName='Breadth' yName='Circumference' name='18-20 Years' width=2 [marker]='marker'>
                 </e-series>
-                <e-series [dataSource]='series2' type='Scatter' xName='x' yName='y' opacity='0.6' name='Female' width=2 [marker]='marker2'>
+                <e-series [dataSource]='series2' type='Scatter' xName='Breadth' yName='Circumference' name='21-25 Years' width=2 [marker]='marker'>
+                </e-series>
+                <e-series [dataSource]='series3' type='Scatter' xName='Breadth' yName='Circumference' name='26-30 Years' width=2 [marker]='marker'>
+                </e-series>
+                <e-series [dataSource]='series4' type='Scatter' xName='Breadth' yName='Circumference' name='31-35 years' width=2 [marker]='marker'>
+                </e-series>
+                <e-series [dataSource]='series5' type='Scatter' xName='Breadth' yName='Circumference' name='36+ Years' width=2 [marker]='marker'>
                 </e-series>
             </e-series-collection>
         </ejs-chart>
@@ -19,13 +24,10 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the scatter type charts. Scatter charts are used to plot financial
-        or scientific data. You can use
-        <code>shape</code> property in the marker to change the scatter shape.
-        <code>dataLabel</code> is used to represent individual data value.
+        In this example, you can see how to render and configure the scatter chart. The scatter chart is used to plot data with two numeric parameters. You can use the <code>Shape</code> property in the marker to change the scatter shape.
     </p>
     <p>
-        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch-enabled devices.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
@@ -35,7 +37,7 @@
         <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the Scatter series can be found in this
+        More information about the scatter series can be found in this
         <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#scatter-charts">documentation section</a>.
     </p>
 </div>

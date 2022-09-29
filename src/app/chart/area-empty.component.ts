@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, axisLabelClick } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -18,36 +18,46 @@ export class EmptyAreaChartComponent {
         }
     };
     //Initializing Width
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
     public data: Object[] = [
-        { x: '2002', y: 2 }, { x: '2003', y: 1.7 }, { x: '2004', y: 1.8 }, { x: '2005', y: 2.1 },
-        { x: '2006', y: 2.3 }, { x: '2007', y: 1.7 }, { x: '2008', y: 1.5 }, { x: '2009', y: 1.8 },
-        { x: '2010', y: 2 }, { x: 2011, y: 3.1 }
-    ];
-    public data1: Object[] = [
-        { x: '2002', y: 2.2 }, { x: '2003', y: 3.4 }, { x: '2004', y: 2.8 }, { x: '2005', y: null },
-        { x: '2006', y: null }, { x: '2007', y: 2.5 }, { x: '2008', y: 2.9 }, { x: '2009', y: 3.8 },
-        { x: '2010', y: 1.4 }, { x: 2011, y: 3.1 }
+        { Period : "Nov 14", US_InflationRate : 2.2, IN_InflationRate : 0.8 },
+        { Period : "Nov 15", US_InflationRate : 2.0, IN_InflationRate : 1.7 },
+        { Period : "Nov 16", US_InflationRate : 2.8, IN_InflationRate : 1.8 },
+        { Period : "Nov 17", US_InflationRate : 1.6, IN_InflationRate : 2.1 },
+        { Period : "Nov 18", US_InflationRate : 2.3, IN_InflationRate : null },
+        { Period : "Nov 19", US_InflationRate : 2.5, IN_InflationRate : 2.3 },
+        { Period : "Nov 20", US_InflationRate : 2.9, IN_InflationRate : 1.7 },
+        { Period : "Nov 21", US_InflationRate : 1.1, IN_InflationRate : 1.5 },
+        { Period : "Nov 22", US_InflationRate : 1.4, IN_InflationRate : 0.5 },
+        { Period : "Nov 23", US_InflationRate : 1.1, IN_InflationRate : 1.3 }
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'Category',
-        interval: 2,
         majorGridLines: { width: 0 },
-        edgeLabelPlacement: 'Shift'
+        edgeLabelPlacement: 'Shift',
+        axisLabelStyle:{fontStyle:'bold'}
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Rates',
-        majorGridLines: { width: 0 },
-        labelFormat: '{value}M',
+        maximum: 5,
+        minimum: 0,
+        interval: 1,
+        labelFormat: '{value}MB',
         lineStyle: { width: 0 },
         majorTickLines: { width: 0 },
-        minorTickLines: { width: 0 }
     };
-    public marker: Object = {
-        visible: false
+    public marker: Object = { visible: true, height: 7, width: 7 , isFilled: true };
+    public diamondMarker: Object = { visible: true, height: 7, width: 7 , shape: 'Diamond' , isFilled: true };
+    public tooltip: Object = {
+        enable: true,
+        format: '${point.x} : <b>${point.y}</b>'
     };
+    public legend: Object = {
+        visible: true,
+        enableHighlight : true
+    }
+    public border: Object = { width: 2 };
     // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
@@ -56,7 +66,7 @@ export class EmptyAreaChartComponent {
     };
     // custom code end
     //Initializing Chart Title
-    public title: string = 'Inflation Rate';
+    public title: string = 'Data Consumption';
     constructor() {
         // code
     };

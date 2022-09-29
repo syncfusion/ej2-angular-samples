@@ -1,0 +1,26 @@
+<div class="control-section" style="padding:10px;position:relative;">
+    <div id="predefinedDialogCustomization">
+        <!-- Buttons to open corresponding Dialogs -->
+        <button  ejs-button cssClass="e-danger" class='dlgbtn' id='alertbtn' #alertButton (click)="alertBtnClick()">Alert</button>
+        <button ejs-button cssClass="e-success" class='dlgbtn' #confirmButton (click)="confirmBtnClick()">Confirm</button>
+        <button ejs-button [isPrimary]="true" #promptButton (click)="promptBtnClick()">Prompt</button>
+        <span id="statusText"></span>
+    </div>
+</div>
+<div id="action-description">
+    <p>This example demonstrates how to customize the content of the predefined Alert, Confirm and Prompt dialogs. Three buttons have been added to this example, click one of them to open the relevant dialog box.</p>
+</div>
+<div id="description">
+    <p>The predefined dialog is used to display messages such as supplemental content like graphics, text, and interactive content like form components within a web page. It can use the <code>
+        content </code> property to load customized content.
+        The content property accepts both string and HTML elements as content.
+    </p>
+    <p>
+        <b>See also</b>
+    </p>
+    <ul>
+    <li> <a target="_blank" 
+        href="https://ej2.syncfusion.com/angular/documentation/dialog/render-a-dialog-using-utility-functions/">Customization of predefined dialogs </a>    
+    </li>
+    </ul>
+</div>

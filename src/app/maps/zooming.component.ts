@@ -119,8 +119,10 @@ export class MapsZoomingComponent {
             maps.refresh();
         };
     }
+    // custom code start
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = [ 'world-map.json'];
     };
+    // custom code end
 
 }

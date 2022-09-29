@@ -206,7 +206,7 @@ td.e-rowcell .statustxt.e-inactivecolor {
 #myBar.progressdisable {
   background-color: #df2222;
 }
-#label {
+#pbarlabel {
   position: relative;
   left:10px;
   line-height: 18px;

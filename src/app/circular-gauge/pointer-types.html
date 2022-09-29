@@ -1,0 +1,132 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the various pointer types available in the circular gauge.
+    </p>
+</div>
+<div class="control-section">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-4">
+                    <ejs-circulargauge (load)='load($event)' id="markerPointer" style='display: block; height:250px;'
+                        centerY='40%' background='transparent'>
+                        <e-axes>
+                            <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyleMarker'
+                                [labelStyle]='labelStyleMarker' [majorTicks]='majorTicks' [minorTicks]='minorTicks'
+                                radius='90%' minimum=0 maximum=100 [pointers]='pointerMarker'>
+                                <e-annotations>
+                                    <e-annotation
+                                        content='<div style="font-size:14px;margin-top:10px;">Marker pointer</div>'
+                                        angle=180 radius='28%' zIndex='1'></e-annotation>
+                                </e-annotations>
+                            </e-axis>
+                        </e-axes>
+                    </ejs-circulargauge>
+                </div>
+                <div class="col-sm-4">
+                    <ejs-circulargauge (load)='load($event)' id="rangeBarPointer" style='display: block; height:250px;'
+                        centerY='40%' background='transparent'>
+                        <e-axes>
+                            <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyleRangeBar'
+                                [labelStyle]='labelStyleRangeBar' [majorTicks]='majorTicks' [minorTicks]='minorTicks'
+                                radius='90%' minimum=0 maximum=100 [pointers]='pointerRangeBar'>
+                                <e-annotations>
+                                    <e-annotation
+                                        content='<div style="font-size:14px;margin-top:11px;">Range bar pointer</div>'
+                                        angle=180 radius='28%' zIndex='1'></e-annotation>
+                                </e-annotations>
+                            </e-axis>
+                        </e-axes>
+                    </ejs-circulargauge>
+                </div>
+                <div class="col-sm-4">
+                    <ejs-circulargauge (load)='load($event)' id="needlePointer" #needlePointer
+                        style='display: block; height:250px;' centerY='40%' background='transparent'>
+                        <e-axes>
+                            <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyleNeedle'
+                                [labelStyle]='labelStyleNeedle' [majorTicks]='majorTicks' [minorTicks]='minorTicks'
+                                radius='90%' minimum=0 maximum=100 [pointers]='pointerNeedle'>
+                                <e-annotations>
+                                    <e-annotation
+                                        content='<div style="font-size:14px;margin-top:10px;">Needle pointer</div>'
+                                        angle=180 radius='28%' zIndex='1'></e-annotation>
+                                </e-annotations>
+                            </e-axis>
+                        </e-axes>
+                    </ejs-circulargauge>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-4">
+                    <ejs-circulargauge (load)='load($event)' id="customizedPointer" centerY='40%'
+                        style='display: block; height:250px;' centerY='40%' background='transparent'>
+                        <e-axes>
+                            <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyleCustomized'
+                                [labelStyle]='labelStyleCustomized' [majorTicks]='majorTicks' [minorTicks]='minorTicks'
+                                radius='90%' minimum=0 maximum=100 [pointers]='pointerCustomized'>
+                                <e-annotations>
+                                    <e-annotation
+                                        content='<div style="font-size:14px;margin-top:29px;">Customized pointer</div>'
+                                        angle=180 radius='28%' zIndex='1'></e-annotation>
+                                </e-annotations>
+                            </e-axis>
+                        </e-axes>
+                    </ejs-circulargauge>
+                </div>
+                <div class="col-sm-4">
+                    <ejs-circulargauge (load)='load($event)' id="multiplePointer" centerY='40%'
+                        style='display: block; height:250px;' centerY='40%' background='transparent'>
+                        <e-axes>
+                            <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyleMultiple'
+                                [labelStyle]='labelStyleMultiple' [majorTicks]='majorTicks' [minorTicks]='minorTicks'
+                                radius='90%' minimum=0 maximum=100 [pointers]='pointerMultiple'>
+                                <e-annotations>
+                                    <e-annotation
+                                        content='<div style="font-size:14px;margin-top:22px;">Multiple pointers</div>'
+                                        angle=180 radius='32%' zIndex='1'></e-annotation>
+                                </e-annotations>
+                            </e-axis>
+                        </e-axes>
+                    </ejs-circulargauge>
+                </div>
+                <div class="col-sm-4">
+                    <ejs-circulargauge (load)='load($event)' id="liveUpdate" centerY='40%' #liveUpdate
+                        style='display: block; height:250px;' centerY='40%' background='transparent'>
+                        <e-axes>
+                            <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyleUpdate'
+                                [labelStyle]='labelStyleUpdate' [majorTicks]='majorTicks' [minorTicks]='minorTicks'
+                                radius='90%' minimum=0 maximum=100 [pointers]='pointerUpdate'>
+                                <e-annotations>
+                                    <e-annotation
+                                        content='<div style="font-size:14px;margin-top:22px;">Live update</div>'
+                                        angle=180 radius='32%' zIndex='1'></e-annotation>
+                                </e-annotations>
+                            </e-axis>
+                        </e-axes>
+                    </ejs-circulargauge>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to customize the pointer for an axis in the circular gauge. The circular gauge
+        supports a variety of pointers, including marker, needle, and range bar. Additionally, the pointer can be
+        customized, and multiple pointers can also be enabled.
+    </p>
+    <p>
+        More information on the pointers can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/gauge-pointers/">documentation
+            section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

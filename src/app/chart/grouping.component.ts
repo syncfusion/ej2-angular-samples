@@ -51,7 +51,8 @@ export class GroupingPieComponent {
         position: 'Outside',
         connectorStyle: { type: 'Line', length: '5%' },
         font: {
-            size: '14px'
+            size: '14px',
+            fontWeight: '600'
         }
     };
     public onChange(e: Event): void {
@@ -78,14 +79,14 @@ export class GroupingPieComponent {
     public load(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
     // custom code end
     public clubvalue: string = '9';
     public startAngle: number = 0;
     public endAngle: number = 360;
-    public tooltip: Object = { enable: false };
-    public title: string = 'RIO Olympics Gold ';
+    public tooltip: Object = { enable: true, header:'', format:'<b>${point.x}</b><br> Gold Medals: <b>${point.y}</b>' };
+    public title: string = 'Rio Olympic Gold Medals';
     public groupMode: DropDownList;
     ngOnInit(): void {
         this.groupMode = new DropDownList({

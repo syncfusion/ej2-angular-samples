@@ -47,18 +47,22 @@ export class TrendLineChartComponent {
     public period: NumericTextBox;
     public checkForwardForecast(e: Event): void {
         this.chart.series[0].trendlines[0].forwardForecast = this.forwardForecast.value;
+        this.chart.series[0].animation.enable = false;
         this.chart.refresh();
     }
     public checkBackwardForecast(e: Event): void {
         this.chart.series[0].trendlines[0].backwardForecast = this.backwardForecast.value;
+        this.chart.series[0].animation.enable = false;
         this.chart.refresh();
     }
     public checkPolynomialOrder(e: Event): void {
         this.chart.series[0].trendlines[0].polynomialOrder = this.polynomialOrder.value;
+        this.chart.series[0].animation.enable = false;
         this.chart.refresh();
     }
     public checkPeriod(e: Event): void {
         this.chart.series[0].trendlines[0].period = this.period.value;
+        this.chart.series[0].animation.enable = false;
         this.chart.refresh();
     }
     //Initializing Primary X Axis

@@ -1,0 +1,49 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates a circular gauge with an axis and a background image set for the axis.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-circulargauge style='display:block;' background='transparent' centerY='65%' (load)='load($event)'
+        (loaded)='loaded($event)' (resized)='resize($event)'>
+        <e-axes>
+            <e-axis radius='80%' startAngle=0 endAngle=0 [majorTicks]='ticks' [minorTicks]='ticks'
+                [lineStyle]='lineStyle' [labelStyle]="labelStyle">
+                <e-pointers>
+                    <e-pointer radius='0%'>
+                    </e-pointer>
+                </e-pointers>
+                <e-annotations>
+                    <e-annotation
+                        content='<div style="margin-top: -37%;"><img src="./assets/circular-gauge/images/axis-background.png" height="400" width="400" /></div>'
+                        angle=0 radius='0%' zIndex='1'></e-annotation>
+                    <e-annotation content='<div id="subGauge" style="margin-left: -50%; margin-top: -50%;"></div>'
+                        angle=0 radius='0%' zIndex='1'></e-annotation>
+                    <e-annotation
+                        content='<div style="color:orange;margin-top: -84px;margin-left: -2px;font-size: 18px;"> 90</div>'
+                        angle=10 radius='0%' zIndex='1'></e-annotation>
+                </e-annotations>
+            </e-axis>
+        </e-axes>
+    </ejs-circulargauge>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the axis in the circular gauge with a background image.
+        To accomplish this, the <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/annotationModel/">annotations</a>
+        is used and an image is set as the background content.
+    </p>
+    <p>
+        More information on the annotations can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/gauge-annotations/">documentation
+            section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

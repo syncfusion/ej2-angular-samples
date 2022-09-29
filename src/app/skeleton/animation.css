@@ -1,0 +1,115 @@
+.skeleton-animation .col-sm-6 {
+    padding: 30px;
+    min-height: 350px;
+    position: relative;
+}
+#reloadSkeleton {
+    margin-left: 30px;
+}
+/* Skeleton customization */
+#skeletondatacard,
+#skeletonCard {
+    padding: 10px;
+    line-height: inherit;
+    height: 420px;
+}
+.skeleton-animation .e-card {    
+    display: block;
+}
+.skeleton-animation .cardProfile {
+    float: left;
+    margin-right: 15px;
+}
+.skeleton-animation .cardinfo {
+    margin-top: 10px;
+    overflow: hidden;
+}
+.skeleton-animation #skeleton-list,
+.skeleton-animation .cardinfo label {
+    margin: 0;
+    white-space: nowrap;
+}
+.skeleton-animation .cardContent {
+    margin: 20px 0px 30px;
+}
+.skeleton-animation .cardoptions {
+    display: flex;
+    justify-content: space-between;
+}
+.skeleton-animation .cardoptions>div {
+     min-width: 60px;
+ }
+#skeleton-list {
+    padding-left: 12px;
+    padding-top: 7px;
+    height: 420px;
+    line-height: inherit;
+}
+#skeleton-list li {
+    list-style: none;
+    display: flow-root;
+    margin-bottom: 9px;
+}
+.skeleton-animation .listProfile {
+    float: left;
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+}
+.skeleton-animation .listCtn {
+    margin: 5px 0px;
+    width: 80%;
+    height: 14px;
+}
+.skeleton-animation .distCtn {
+    width: 60%;
+    height: 14px;
+}
+.skeleton-animation .image.profile-image {
+    background-image: url('/assets/skeleton/images/profile.png');
+    background-size: 60px 60px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+.skeleton-animation .image.post-image {
+    background: url('/assets/skeleton/images/post.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    width: 100%;
+}
+/* List view customization */
+#skeleton-listview .e-list-item {
+    position:relative;
+}
+#skeleton-listview .e-list-item .e-avatar {
+    color: white;
+}
+#skeleton-listview .e-list-item:nth-child(1) .e-avatar {
+    background-color: #039be5;
+}
+#skeleton-listview .e-list-item:nth-child(2) .e-avatar {
+    background-color: #e91e63;
+}
+#skeleton-listview .e-list-item:nth-child(6) .e-avatar {
+    background-color: #009688;
+}
+#skeleton-listview .e-list-item:nth-child(8) .e-avatar {
+    background-color: #0088;
+}
+#skeleton-listview .pic01 {
+    background-image: url('/assets/skeleton/images/1.png');
+}
+#skeleton-listview .pic02 {
+    background-image: url('/assets/skeleton/images/3.png');
+}
+#skeleton-listview .pic03 {
+    background-image: url('/assets/skeleton/images/5.png');
+}
+#skeleton-listview .pic04 {
+    background-image: url('/assets/skeleton/images/2.png');
+}

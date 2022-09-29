@@ -1,0 +1,48 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the available types of color in the <strong>Angular AppBar</strong>.
+    </p>
+</div>
+<div class="col-lg-12 control-section color-appbar-section">
+    <div class="color-appbar-container">
+        <ng-template ngFor let-appBarColor [ngForOf]="appBarColors">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5>{{ appBarColor.colorMode }}</h5>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-md-12">
+                    <ejs-appbar [colorMode]="appBarColor.colorMode">
+                        <button ejs-button cssClass="e-inherit menu" iconCss="e-icons e-menu" (created)='onCreate($event)'></button>
+                        <button ejs-button cssClass="e-inherit home e-appbar-menu">Home</button>
+                        <button ejs-dropdownbutton cssClass="e-inherit e-appbar-menu {{ appBarColor.colorClass }}"
+                            [items]='productDropDownButtonItems' content="Products"></button>
+                        <button ejs-dropdownbutton cssClass="e-inherit e-appbar-menu {{ appBarColor.colorClass }}"
+                            [items]='companyDropDownButtonItems' content="Company"></button>
+                        <div class="e-appbar-spacer"></div>
+                        <div style="width: 200px; margin-right:10px">
+                            <span class="e-input-group e-control-wrapper e-inherit">
+                                <input type="text" class="e-searchinput e-input" placeholder="Search"
+                                    (focus)="focusIn($event.target)" (blur)="focusOut($event.target)">
+                                <span class="e-icons e-search e-input-group-icon"></span>
+                            </span>
+                        </div>
+                        <div class="e-appbar-separator"></div>
+                        <button ejs-button [isPrimary]="appBarColor.isPrimary" [cssClass]="appBarColor.loginClass">Login</button>
+                        <ejs-menu cssClass="e-inherit e-appbar-icon-menu {{ appBarColor.colorClass }}" [items]='verticalMenuItems' (beforeItemRender)='onBeforeItemRender($event)'></ejs-menu>
+                    </ejs-appbar>
+                </div>
+            </div>
+            <br/>
+        </ng-template>
+    </div>
+</div>
+<div id="description">
+    <p>In this demo, the available types of background color for <strong>Angular AppBar</strong> are showcased. The background and font colors can be set using the <strong>ColorMode</strong> property. The different types are <code>light</code>, <code>dark</code>, <code>primary</code>, and <code>inherit</code>.</p>
+    <p><code>Light</code> - The AppBar can be displayed with a light background.</p>
+    <p><code>Dark</code> - The AppBar can be displayed with a dark background.</p>
+    <p><code>Primary</code> - The AppBar can be displayed with primary colors.</p>
+    <p><code>Inherit</code> - The AppBar inherits the color from its parent element.</p> <br />
+    <p> On <code>mobile devices</code>, media query is used to display the AppBar in adaptive views. You can click the menu to see the hidden AppBar content.</p>
+</div>

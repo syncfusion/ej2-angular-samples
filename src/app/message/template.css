@@ -1,0 +1,38 @@
+.msg-template-section .content-section {
+    margin: 0 auto;
+    max-width: 450px;
+    padding-top: 20px;
+}
+
+.msg-template-section .e-btn.msg-hidden {
+    display: none;
+}
+
+.msg-template-section .e-message h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.msg-template-section .e-message .e-msg-icon {
+    padding: 0 4px;
+    margin-top: 3px;
+}
+
+.msg-template-section .e-message p {
+    margin: 8px 0 4px;
+}
+
+.msg-template-section .e-message .e-btn {
+    padding: 0 5px 0 0;
+}
+
+.e-bigger .msg-template-section .e-message h1 {
+    font-size: 20px;
+}
+
+.e-bigger .msg-template-section .e-message .e-msg-icon {
+    padding: 4px;
+    font-size: 20px;
+}

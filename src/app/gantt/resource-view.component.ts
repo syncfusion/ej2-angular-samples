@@ -31,7 +31,7 @@ export class GanttResourceViewComponent implements OnInit {
             endDate: 'EndDate',
             duration: 'Duration',
             progress: 'Progress',
-			      dependency: 'Predecessor',
+			dependency: 'Predecessor',
             resourceInfo: 'resources',
             work: 'work',
             child: 'subtasks'

@@ -1,6 +1,6 @@
 <div id="action-description">
     <p>
-        This sample demonstrates drill down sample with pie chart for a automobiles sales by category. By clicking one category, you can navigate to other sub-category by which companies are differentiated.
+        This sample demonstrates a drill down chart with a pie for automobiles sales by category. By clicking one category, you can navigate to other sub-categories where companies are differentiated.
     </p>
 </div>
 <div class="control-section">
@@ -13,7 +13,7 @@
             <p id="text" style="display:inline-block;"></p>
         </div>
         <button type="button" id="back" style="visibility: hidden;" (click)="onClick($event)">Back</button>
-        <ejs-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [enableSmartLabels]='false' [title]="title" (textRender)="onTextRender($event)" (chartMouseClick)="onChartMouseClick($event)" (load)='load($event)'>>
+        <ejs-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [enableSmartLabels]='false' [title]="title" (textRender)="onTextRender($event)" (chartMouseClick)="onChartMouseClick($event)" (load)='load($event)' [enableBorderOnMouseMove]='false'>>
             <e-accumulation-series-collection>
                 <e-accumulation-series [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" radius="70%" [dataLabel]="dataLabel" [explode]="explode" explodeOffset='10%' [explodeIndex]='explodeIndex'>
                 </e-accumulation-series>
@@ -22,9 +22,7 @@
     </div>
 </div>
 <div id="description">
-    <p> In this example, you can see how to achieve <code>drilldown</code> concept using pie control. An automobile sales has been shown by different category, on clicking each category, you can navigate to next level, which shows the sales of those category
-        in terms of company.</p>
-    <p> Datalabel is used in this sample.</p>
+    <p> In this example, you can see how to achieve the drilldown concept using a pie chart. Automobile sales are shown in different categories. By clicking each category, you can navigate to the next level, which shows the sales by categories made by each company. <code>Datalabels</code> are used in this sample to show information about the data points.</p>
     <p style="font-weight: 500">Injecting Module</p>
     <p> Accumulation chart component features are segregated into individual feature-wise modules. To use datalabel, we need to inject <code>AccumulationDataLabelService</code> into the <code>@NgModule.providers</code> section.. </p>
 </div>

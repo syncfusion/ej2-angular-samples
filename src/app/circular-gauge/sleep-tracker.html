@@ -1,0 +1,67 @@
+<div id="action-description">
+    <p>
+        This sample represents the number of hours slept by a person using a sleep tracker. The sleep tracker also
+        displays the start and end time of each sleep cycle.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-circulargauge style='display:block;' (load)='load($event)' (axisLabelRender)='axisLabelRender($event)'
+        background='transparent'>
+        <e-axes>
+            <e-axis radius='70%' startAngle=0 endAngle=0 minimum=0 maximum=12 [majorTicks]='majorTicks'
+                [minorTicks]='minorTicks' [lineStyle]='lineStyle' [labelStyle]="labelStyle">
+                <e-pointers>
+                    <e-pointer type="Marker" value=4.7 markerShape='Image' radius='97%' markerWidth=28 markerHeight=28
+                        imageUrl="./assets/circular-gauge/images/sun-icon.png" [animation]='animation'>
+                    </e-pointer>
+                    <e-pointer type="Marker" value=9 markerShape='Image' radius='98%' markerWidth=28 markerHeight=28
+                        imageUrl="./assets/circular-gauge/images/moon-icon.png" [animation]='animation'>
+                    </e-pointer>
+                </e-pointers>
+                <e-ranges>
+                    <e-range start=0 end=4.7 startWidth=4 endWidth=4 color='#6453D0'>
+                    </e-range>
+                    <e-range start=12 end=9 startWidth=4 endWidth=4 color='#6453D0'>
+                    </e-range>
+                    <e-range start=4.7 end=9 startWidth=4 endWidth=4 color='#d7d3ed'>
+                    </e-range>
+                </e-ranges>
+                <e-annotations>
+                    <e-annotation
+                        content='<div style="font-size:15px;border-radius: 20px;border: 2px solid gray;padding: 5px 4px 5px;width: 93%;text-align: center;margin-left: 67px;">Mon, 5 Apr</div>'
+                        angle=342 radius='129%' zIndex='1'></e-annotation>
+                    <e-annotation content='<div style="font-size:15px;margin-left:25px">07 hrs 43 mins</div>' angle=185
+                        radius='120%' zIndex='1'> </e-annotation>
+                    <e-annotation content='<div style="font-size:15px;margin-left: 34px;">Sleep Time</div>' angle=185
+                        radius='140%' zIndex='1'></e-annotation>
+                    <e-annotation
+                        content='<div style="color:#6453D0;font-size:15px;margin-top: 54px;margin-left:28px"><p style="text-align: center;">4 Apr</p><p style="margin-top: -10px;">9:00 PM</p></div>'
+                        angle=285 radius='60%' zIndex='1'></e-annotation>
+                    <e-annotation content='<div style="color:#6453D0;margin-top: -8px;"> - </div>' angle=0 radius='0%'
+                        zIndex='1'></e-annotation>
+                    <e-annotation
+                        content='<div style="color:#6453D0;font-size:15px;margin-left: -15px;margin-top: 56px;"><p style="text-align: center;">5 Apr </p><p style="margin-top: -10px;">4:43 AM</p></div>'
+                        angle=70 radius='50%' zIndex='1'></e-annotation>
+                </e-annotations>
+            </e-axis>
+        </e-axes>
+    </ejs-circulargauge>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to make the circular gauge look like a sleep tracker. Additionally, the date,
+        start and end time, and duration of sleep are all displayed.
+    </p>
+    <p>
+        More information on the circular gauge can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/getting-started/">documentation
+            section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

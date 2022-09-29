@@ -1,0 +1,99 @@
+<div id="action-description">
+    <p>
+        This sample shows the various marker pointer shapes available in the linear gauge. Additionally, multiple marker
+        pointer, animation and drag support are enabled.
+    </p>
+</div>
+<div class="control-section">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12"
+            style="display: flex;justify-content: center; align-items: center;">
+            <div style="margin: auto;padding: 10px;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div id='horizontal'
+                                    style="padding:6px;cursor:pointer;width:86px;color:black;font-size:15px;border:1px solid #0074E3;background-color:white;text-align:center"
+                                    (click)='horizontalGauge($event)'>Horizontal</div>
+                            </td>
+                            <td>
+                                <div id='vertical'
+                                    style="padding:6px;cursor:pointer;width:86px;color:white;font-size:15px;border:1px solid #0074E3;background-color: #0074E3;text-align:center"
+                                    (click)='verticalGauge($event)'>Vertical</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <pre style="background-color: inherit; border:hidden"></pre>
+    <div id="containerBox" style="float: left;padding: 4%;"></div>
+    <div id='containerTriangle' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
+        style="display: flex;justify-content: center; align-items: center;">
+        <ejs-lineargauge (load)='load($event)' (dragStart)='dragStartTriangle($event)'
+            (dragMove)='dragMoveTriangle($event)' (dragEnd)='dragEndTriangle($event)' id='linearTriangle'
+            #linearTriangle background='transparent' title='Inverted triangle' [titleStyle]='titleStyle' width='150px'
+            height='350px' style='display:block;' orientation='Vertical' [axes]='axesTriangle'>
+        </ejs-lineargauge>
+    </div>
+    <div id='containerCircle' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
+        style="display: flex;justify-content: center; align-items: center;">
+        <ejs-lineargauge (load)='load($event)' (dragStart)='dragStartCircle($event)' (dragEnd)='dragEndCircle($event)'
+            (dragMove)='dragMoveCircle($event)' id='linearCircle' #linearCircle background='transparent' title='Circle'
+            [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' orientation='Vertical'
+            [axes]='axesCircle'>
+        </ejs-lineargauge>
+    </div>
+    <div id='containerDiamond' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
+        style="display: flex;justify-content: center; align-items: center;">
+        <ejs-lineargauge (load)='load($event)' (dragStart)='dragStartDiamond($event)' (dragEnd)='dragEndDiamond($event)'
+            (dragMove)='dragMoveDiamond($event)' id='linearDiamond' #linearDiamond title='Diamond'
+            [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' background='transparent'
+            orientation='Vertical' [axes]='axesDiamond'>
+        </ejs-lineargauge>
+    </div>
+    <div id='containerRectangle' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
+        style="display: flex;justify-content: center; align-items: center;">
+        <ejs-lineargauge (load)='load($event)' (dragStart)='dragStartRectangle($event)'
+            (dragMove)='dragMoveRectangle($event)' (dragEnd)='dragEndRectangle($event)' id='linearRectangle'
+            #linearRectangle title='Rectangle' [titleStyle]='titleStyle' width='150px' height='350px'
+            style='display:block;' background='transparent' orientation='Vertical' [axes]='axesRectangle'>
+        </ejs-lineargauge>
+    </div>
+    <div id='containerMultiple' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
+        style="display: flex;justify-content: center; align-items: center;">
+        <ejs-lineargauge (load)='load($event)' (dragStart)='dragStartMultiple($event)'
+            (dragMove)='dragMoveMultiple($event)' (dragEnd)='dragEndMultiple($event)' id='linearMultiple'
+            #linearMultiple title='Multiple pointers' [titleStyle]='titleStyle' width='150px' height='350px'
+            style='display:block;' background='transparent' orientation='Vertical' [axes]='axesMultiple'>
+        </ejs-lineargauge>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure marker pointer in the linear gauge. The <a
+            target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/pointerModel/">
+            pointers</a> collection is useful for displaying multiple pointers. The properties available in <a
+            target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/pointerModel/">
+            pointers</a> help in the customization of the marker pointer in the linear gauge. Drag pointers are
+        assisted by the <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/#dragstart">dragStart</a> and <a
+            target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/#dragend">dragEnd</a> events.
+    </p>
+    <p>
+        More information on the marker pointer can be found in this
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/linear-gauge/pointers/#marker-pointer">documentation
+            section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

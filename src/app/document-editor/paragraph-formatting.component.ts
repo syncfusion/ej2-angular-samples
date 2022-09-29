@@ -22,6 +22,7 @@ export class ParagraphFormattingComponent {
     onCreate(): void {
         let titleBarElement: HTMLElement = document.getElementById('default_title_bar');
         this.titleBar = new TitleBar(titleBarElement, this.container.documentEditor, true);
+        this.container.documentEditorSettings.showHiddenMarks = true;
         this.container.serviceUrl = this.hostUrl + WEB_API_ACTION;
         this.container.documentEditor.open(JSON.stringify(paragraphFormat));
         this.container.documentEditor.documentName = 'Paragraph Formatting';

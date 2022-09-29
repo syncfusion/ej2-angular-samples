@@ -1,0 +1,46 @@
+#mention-controls .e-input-group, #mention-controls .e-input-group.e-control-wrapper{
+    margin-bottom: 20px;
+}
+
+#commentsMention {
+    min-height: 100px;
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    width: 600px;
+}
+
+#mention-controls {
+    margin: 0 auto;
+    width: 600px;
+}
+
+div#commentsMention[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: #555;
+}
+
+#multipleList {
+    min-height: 100px;
+    border: 1px solid #D7D7D7;
+    width: 600px;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 4px;
+}
+#mention-controls #label, .default-size {
+    font-size: 15px;
+    font-weight: 600;
+}
+div#multipleList[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: #555;
+}
+
+@media screen and (max-width: 1010px) {
+    #multipleList,
+    #mention-controls, #mention-controls table{
+        width: 100%;
+    }
+}

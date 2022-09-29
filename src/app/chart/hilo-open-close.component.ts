@@ -67,7 +67,7 @@ export class HiloOpenCloseChartComponent {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '80%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
 
     constructor() {
         //code

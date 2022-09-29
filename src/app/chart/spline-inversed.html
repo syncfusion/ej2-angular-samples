@@ -1,7 +1,7 @@
 <div id="action-description">
     <p>
-        This sample illustrates a spline series by inversing X and Y Axis. 
-        Data points are enhanced with marker and tooltip.
+        This sample shows the music album sales with spline series by inverting X and Y Axes. 
+        Data points are enhanced by a marker and tooltip.
     </p>
 </div>
 <div class="control-section">
@@ -9,29 +9,27 @@
         <ejs-chart style='display:block' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
             [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' isTransposed='true' [width]='width'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Spline' xName='x' yName='y' name='London' width=2 [marker]='marker'> </e-series>
-                <e-series [dataSource]='data1' type='Spline' xName='x' yName='y' name='France' width=2 [marker]='marker'> </e-series>
+                <e-series [dataSource]='data' type='Spline' xName='Month' yName='FR_Temperature' width=2 opacity=1 [marker]='marker'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the spline type charts. Spline chart connects each point in series
-        through a curved line. You can use
-        <code>dashArray</code>,
-        <code>width</code>,
-        <code>fill</code> properties to customize the spline.
-        <code>marker</code> and
-        <code>dataLabel</code> are used to represent individual data and its value.
+        In this example, you can see how to render and configure the spline type charts. A Spline chart uses a curved line to connect points in a data series. 
+        <code>Markers</code>are used to represent individual data and its value.
     </p>
     <p>
-        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+        <code>Tooltips</code>are enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch enabled devices.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
     <p>
         Chart component features are segregated into individual feature-wise modules. To use spline series, we need to inject
         <code>SplineSeriesService</code> module into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information about the line type series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#line-charts">documentation section</a>.
     </p>
 </div>

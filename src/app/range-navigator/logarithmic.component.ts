@@ -35,7 +35,7 @@ export class LogarthmicComponent {
     public Chart: Chart;
     public primaryXAxis: Object = {
         valueType: 'Logarithmic',  interval: 1,
-        edgeLabelPlacement: 'Shift', majorGridLines: { width: 0 }, title: 'Numers of Goods Consumers',
+        edgeLabelPlacement: 'Shift', majorGridLines: { width: 0 }, title: 'Numbers of Goods Consumers',
     };
 
     public dataSource: Object = data;

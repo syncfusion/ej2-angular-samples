@@ -83,9 +83,10 @@ export class MapsSeatSelectionComponent {
             }
         };
     }
+    // custom code start
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = [ 'seat-data.json'];
     };
-
+    // custom code end
 
 }

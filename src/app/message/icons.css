@@ -1,0 +1,18 @@
+.msg-icon-section .content-section {
+    margin: 0 auto;
+    max-width: 520px;
+    padding-top: 10px;
+}
+
+.msg-icon-section .e-message {
+    margin: 10px 0;
+}
+
+.msg-icon-section .e-btn {
+    display: block;
+    margin: 10px 0;
+}
+
+.msg-icon-section .e-btn.msg-hidden {
+    display: none;
+}

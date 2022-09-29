@@ -2,7 +2,7 @@
  * Rich Text Editor - Online HTML Editor Sample
  */
 import { Component, ViewChild, ViewEncapsulation, OnInit, Inject } from '@angular/core';
-import { createElement } from '@syncfusion/ej2-base';
+import { createElement, KeyboardEventArgs } from '@syncfusion/ej2-base';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { ToolbarService, LinkService, ImageService, TableService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, ToolbarType } from '@syncfusion/ej2-angular-richtexteditor';
@@ -61,7 +61,9 @@ export class OnlineHtmlEditorComponent {
             this.textArea = this.rteObj.contentModule.getEditPanel() as HTMLElement;
             this.srcArea = document.querySelector('.source-code');
             if (this.srcArea) {
-                this.srcArea.addEventListener('keyup', this.updateHtmlValue);
+                this.srcArea.addEventListener('keyup', (e: KeyboardEventArgs) => {
+                  this.updateHtmlValue();
+                });
             }
         }, 400);
     }

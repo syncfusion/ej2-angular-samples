@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IAccLoadedEventArgs, AccumulationChartComponent, AccumulationTheme } from '@syncfusion/ej2-angular-charts';
+import { IAccLoadedEventArgs, AccumulationChartComponent, AccumulationTheme, IAccTextRenderEventArgs } from '@syncfusion/ej2-angular-charts';
 import { EmptyPointMode } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
@@ -24,20 +24,24 @@ export class PieEmptyPointChartComponent {
     public load(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
       // custom code end
     //Initializing Tooltip
     public tooltip: Object = {
-        enable: true, format: '${point.x} : <b>${point.y}</b>'
+        enable: true, format: '<b>${point.x}</b><br> Profit: <b>$${point.y}K</b>', header:''
     };
     //Initializing DataLabel
+    DataLabelRenderEvent(args: IAccTextRenderEventArgs) {
+        args.text = args.point.x + ": $" + args.point.y + "K";
+      }
     public dataLabel: Object = {
         visible: true, position: 'Inside', font: {
             fontWeight: '600',
-            color: '#ffffff'
+           
         }
     };
+    
     public title: string = 'Annual Product-Wise Profit Analysis';
     public legend: Object = { visible: false};
     public emptyPointSettings: Object = {

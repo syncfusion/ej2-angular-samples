@@ -1,7 +1,7 @@
 import { Component, ElementRef, HostListener, Inject, Input, ViewChild } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd, ActivatedRoute } from '@angular/router';
 import {
-    select, selectAll, isVisible, createElement, Ajax,
+    select, selectAll, isVisible, createElement, Ajax, getComponent,
     L10n, loadCldr, setCulture, setCurrencyCode, closest, classList, registerLicense
 } from '@syncfusion/ej2-base';
 import { Button } from '@syncfusion/ej2-buttons';
@@ -323,8 +323,8 @@ export class SBController {
         this.settingsPopup = new Popup(document.getElementById('settings-popup'), {
             offsetY: 5,
             relateTo: <any>select('.sb-setting-btn'),
-            position: { X: 'right', Y: 'bottom' }
-            , collision: { X: 'flip', Y: 'flip' },
+            position: { X: document.body.offsetWidth - 280, Y: 0 },
+            collision: { X: 'flip', Y: 'flip' },
             zIndex: 1002,
         });
 
@@ -622,7 +622,7 @@ export class SBController {
                 }
             } else {
                 if (e.target) {
-                    if ((e.target as any).classList && (e.target as any).classList.contains('e-ddl')) {
+                    if ((e.target as any).classList && ((e.target as any).classList.contains('e-ddl') || closest(<Element>e.target, '.sb-setting-popup'))) {
                         this.settingsPopup.show();
                     }
                     else {
@@ -711,6 +711,7 @@ export class SBController {
     }
 
     onSearchButtonClick(): void {
+        (this.searchBox as any).clear();
         document.querySelector('.e-search-overlay').classList.remove('sb-hide');
     }
 
@@ -733,7 +734,11 @@ export class SBController {
 
             });
         } else {
-            this.settingsPopup.show();
+            if (this.settingsPopup.element.classList.contains('e-popup-open')) {
+                this.settingsPopup.hide();
+            } else {
+                this.settingsPopup.show();
+            }
         }
         this.mobileOverlay.classList.remove('sb-hide');
     }

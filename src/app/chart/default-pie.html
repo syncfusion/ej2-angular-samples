@@ -1,122 +1,25 @@
 <div id="action-description">
     <p>
-        This sample demonstrates pie chart for mobile browser usage statistics. Datalabel shows the Information about the points.
-        While hovering on the slice, border will be highlighted.
+        This Angular Pie Chart example demonstrates a pie chart for mobile browsers usage statistics. Datalabels show information about the points.
     </p>
 </div>
 <div class="control-section">
-    <div class="col-md-8">
-        <ejs-accumulationchart id="container" #pie style='display:block;  width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='load($event)' [enableAnimation]= 'enableAnimation' [center]='center'>
+        <ejs-accumulationchart id="container" #pie style='display:block;  width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='load($event)' [enableAnimation]= 'enableAnimation' [enableBorderOnMouseMove]='false'>
             <e-accumulation-series-collection>
-                <e-accumulation-series name='Browser' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" radius="70%" [dataLabel]="dataLabel" [explode]='explode' explodeOffset='10%' [explodeIndex]='0' >
+                <e-accumulation-series name='Browser' [dataSource]='data' xName='Browser' yName='Users' [startAngle]='startAngle' innerRadius="0%" radius="60%" [dataLabel]="dataLabel" [explode]='explode' explodeOffset='10%' [explodeIndex]='0'>
                 </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
-    </div>
-    <div class="col-md-4 property-section">
-        <div class="property-panel-section">
-            <div class="property-panel-header">Properties</div>
-            <div class="property-panel-content">
-                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
-                    <tr style="height: 50px">
-                        <td style="width: 30%">
-                            <div>Pie Angle
-                            </div>
-                        </td>
-                        <td style="width: 70%;">
-                            <div data-role="rangeslider">
-                                <input type="range" name="range-min" value="0" min="0" max="360" (touchmove)='pieangle($event)' (pointermove)='pieangle($event)' (change)='pieangle($event)' autocomplete="off" id="pieangle" style="margin-left: -5px">
-                            </div>
-                        </td>
-                        <td style="width: 60%;">
-                                <p id="pieangleText" style="font-weight: normal; padding-top: 15px">0</p>
-                        </td>
-                    </tr>
-                    <tr style="height: 50px">
-                        <td style="width: 30%">
-                            <div>Outer Radius
-                            </div>
-                        </td>
-                        <td style="width: 70%;">
-                            <div data-role="rangeslider">
-                                <input type="range" name="range-min" id="pieradius" value="70" min="0" max="70" (touchmove)='pieradius($event)' (pointermove)='pieradius($event)' (change)='pieradius($event)' autocomplete="off" style="margin-left: -5px">
-                            </div>
-                        </td>
-                        <td style="width: 60%;">
-                            <p id="pieradiusText" style="font-weight: normal; padding-top: 15px">0.7</p>
-                    </td>
-                    </tr>
-                    <tr style="height: 50px">
-                        <td style="width: 30%">
-                            <div>Explode Radius
-                            </div>
-                        </td>
-                        <td style="width: 70%;">
-                            <div data-role="rangeslider">
-                                <input type="range" name="range-min" id="pieexploderadius" value="10" min="0" max="40" (touchmove)='pieexploderadius($event)' (pointermove)='pieexploderadius($event)' (change)='pieexploderadius($event)' autocomplete="off" style="margin-left: -5px">
-                            </div>
-                        </td>
-                        <td style="width: 60%;">
-                            <p id="pieexploderadiusText" style="font-weight: normal; padding-top: 15px">0.10</p>
-                    </td>
-                    </tr>
-                    <tr style="height: 50px">
-                        <td style="width: 30%">
-                            <div>Explode Index
-                            </div>
-                        </td>
-                        <td style="width: 70%;">
-                            <div data-role="rangeslider">
-                                <input type="range" name="range-min" id="pieexplodeindex" value="0" min="0" max="6" (touchmove)='pieexplodeindex($event)' (pointermove)='pieexplodeindex($event)' (change)='pieexplodeindex($event)' autocomplete="off" style="margin-left: -5px">
-                            </div>
-                        </td>
-                        <td style="width: 60%;">
-                            <p id="pieexplodeindexText" style="font-weight: normal; padding-top: 15px">0</p>
-                    </td>
-                    </tr>
-                    <tr style="height: 50px">
-                        <td style="width: 30%">
-                            <div>
-                                Center X
-                            </div>
-                        </td>
-                        <td style="width: 70%;">
-                            <div data-role="rangeslider">
-                                <input type="range" name="range-min" id="x" value="50" min="0" max="100" style="width:90%" (touchmove)='piecenterx($event)' (pointermove)='piecenterx($event)' (change)='piecenterx($event)' autocomplete="off">
-                            </div>
-                        </td>
-                        <td style="width: 60%;">
-                            <div data-role="rangeslider">
-                                <p id="xvalue" style="font-weight: normal;padding-top:10px;">50%</p>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr style="height: 50px">
-                        <td style="width: 30%">
-                            <div>
-                                Center Y
-                            </div>
-                        </td>
-                        <td style="width: 70%;">
-                            <div data-role="rangeslider">
-                                <input type="range" name="range-min" id="y" value="50" min="0" max="100" style="width:90%" (touchmove)='piecentery($event)' (pointermove)='piecentery($event)' (change)='piecentery($event)' autocomplete="off">
-                            </div>
-                        </td>
-                        <td style="width: 60%;">
-                            <div data-role="rangeslider">
-                                <p id="yvalue" style="font-weight: normal;padding-top:10px;">50%</p>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
 </div>
 <div id="description">
-    <p> In this example, you can see how to render and configure the pie chart. You can use <code>border</code>, <code>fill</code> properties to customize the pie point. <code>dataLabel</code> is used to represent individual data and its value.</p>
-    <p> <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.</p>
+    <p> In this example, you can see how to render and configure a pie chart. The pie chart is a circular graphic, which is ideal for displaying categories as a proportion or a percentage of the whole. The radius of the pie chart can be customized using the <code>Radius</code> property.</p>
+    <p> <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch-enabled devices.</p>
+    <p>
+        More information about the pie series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/pie-dough-nut/#pie-chart">documentation section</a>.
+    </p>
 </div>
+
 <style>
     .control-section {
         min-height: 450px;

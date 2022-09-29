@@ -1,29 +1,29 @@
 <div id="action-description">
     <p>
-        This sample visualizes the consumer price data with default line series in the chart. 
-        Data points are enhanced with marker and tooltip.
+        This Angular Line Chart example represents the crude steel production annual growth data with default line series in the chart. 
+        Data points are enhanced with markers and tooltips.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart style='display:block' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-            [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' [width]='width'>
+            [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' [width]='width' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Line' xName='x' yName='y' name='Germany' width=2 [marker]='marker'> </e-series>
-                <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='England' width=2 [marker]='marker'> </e-series>
+                <e-series [dataSource]='data' type='Line' xName='Period' yName='Viet_Growth' name='Vietnam' width=2 [marker]='circleMarker' opacity=1> </e-series>
+                <e-series [dataSource]='data' type='Line' xName='Period' yName='Can_Growth' name='Canada' width=2 [marker]='triangleMarker' opacity=1> </e-series>
+                <e-series [dataSource]='data' type='Line' xName='Period' yName='Mal_Growth' name='Malaysia' width=2 [marker]='diamondMarker' opacity=1> </e-series>
+                <e-series [dataSource]='data' type='Line' xName='Period' yName='Egy_Growth' name='Egypt' width=2 [marker]='rectangleMarker' opacity=1> </e-series>
+                <e-series [dataSource]='data' type='Line' xName='Period' yName='Ind_Growth' name='Indonesia' width=2 [marker]='pentagonMarker' opacity=1> </e-series>    
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the line type charts. Line type charts are used to represent time-dependent
-        data, showing trends in data at equal intervals. You can use <code>dashArray</code>, <code>width</code>,
-        <code>fill</code> properties to customize the line. <code>marker</code> and <code>dataLabel</code> are used to represent
-        individual data and its value.
+        Angular Line Chart represents and visualizes time-dependent data to show the trends at equal intervals. In this example, you can see how to render and configure a line chart. <code>Markers</code> are used to represent individual data and its values.  
     </p>
     <p>
-        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+        <code>Tooltips</code> are enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch enabled devices.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
@@ -32,7 +32,7 @@
         <code>LineSeriesService</code> into the <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the Line series can be found in this
+        More information about the line series can be found in this
         <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#line-charts">documentation section</a>.
     </p>
 </div>

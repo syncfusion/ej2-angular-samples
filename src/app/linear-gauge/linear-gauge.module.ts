@@ -5,34 +5,50 @@ import { NgModule, ModuleWithProviders, Type } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LinearGaugeAllModule } from '@syncfusion/ej2-angular-lineargauge';
 
-import { DefaultComponent } from './default.component';
+import { DefaultComponent } from './default-functionalities.component';
 import { ContainerComponent } from './container.component';
-import { DataComponent } from './data.component';
-import { AxesComponent } from './axes.component';
-import { RangesComponent } from './ranges.component';
-import { GradientColorComponent} from './gradient-color.component'
-import { AnnotationComponent } from './annotation.component';
+import { TrackComponent } from './track.component';
+import { TicksComponent} from './ticks.component';
+import { LabelsComponent } from './labels.component';
+import { RangesComponent } from './range.component';
+import { MarkerPointerComponent } from './marker-pointer.component';
+import { BarPointerComponent } from './bar-pointer.component';
+import { CustomPointerComponent } from './custom-pointer.component';
 import { TooltipComponent } from './tooltip.component';
-import { StyleComponent } from './style.component';
+import { ExportComponent } from './print-export.component';
+import { ProgressBarComponent } from './progress-bar.component';
+import { StepProgressBarComponent } from './step-progress-bar.component';
+import { SliderComponent } from './slider.component';
+import { ThermometerComponent } from './thermometer.component';
+import { StepsCounterComponent } from './steps-counter.component';
+import { VolumeSettingsComponent } from './volume-settings.component';
+import { BatteryIndicatorComponent } from './battery-indicator.component';
 import { ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
-import { ExportComponent } from './export.component';
 
 export const lineargaugeAppRoutes: Object[] = [
-    { path: ':theme/linear-gauge/default', component: DefaultComponent, name: 'Default', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control illustrates the default rendering of linear gauge.' },
-    { path: ':theme/linear-gauge/container', component: ContainerComponent, name: 'Container', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control demonstrates the various types of containers available in linear gauge.' },
-    { path: ':theme/linear-gauge/ranges', component: RangesComponent, name: 'Ranges', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control illustrates how to highlight specific regions in an axis by using ranges.' },
-    { path: ':theme/linear-gauge/data', component: DataComponent, name: 'Data Sample', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control illustrates exercise tracking of an athlete by using ranges, pointers, and annotation features.' },
-    { path: ':theme/linear-gauge/axes', component: AxesComponent, name: 'Axes and Pointers', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control shows various properties available to customize the axes and pointers.' },
-    { path: ':theme/linear-gauge/annotation', component: AnnotationComponent, name: 'Annotation', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control illustrates the CPU Utilization of a resource by using annotation feature.' },
-    { path: ':theme/linear-gauge/gradient-color', component: GradientColorComponent, name: 'Gradient Color', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control illustrates gradient support for pointers and ranges.' },
-    { path: ':theme/linear-gauge/style', component: StyleComponent, name: 'Styles', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control visualizes the available options for customization.' },
-    { path: ':theme/linear-gauge/tooltip', component: TooltipComponent, name: 'Tooltip', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control visualizes the tooltip functionality for bar pointer.' },
-    { path: ':theme/linear-gauge/export', component: ExportComponent, name: 'Print & Export', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control will print and export gauge in required format.' }
+    { path: ':theme/linear-gauge/default-functionalities', component: DefaultComponent, name: 'Default Functionalities', order: '01', category: 'Linear Gauge', description: 'This demo for Essential JS2 Linear Gauge control illustrates the default rendering of linear gauge.' },
+    { path: ':theme/linear-gauge/container', component: ContainerComponent, name: 'Container', order: '02', category: 'Axis', description: 'This demo for Essential JS2 Linear Gauge control demonstrates the various types of containers available in linear gauge.' },
+    { path: ':theme/linear-gauge/track', component: TrackComponent, type: 'new', name: 'Track', order: '02', category: 'Axis', description: 'This demo for Essential JS2 Linear Gauge control visualizes the available options for customization.' },
+    { path: ':theme/linear-gauge/ticks', component: TicksComponent, type: 'new', name: 'Ticks', order: '02', category: 'Axis', description: 'This demo for Essential JS2 Linear Gauge control illustrates gradient support for pointers and ranges.' },
+    { path: ':theme/linear-gauge/labels', component: LabelsComponent, type: 'new', name: 'Labels', order: '02', category: 'Axis', description: 'This demo for Essential JS2 Linear Gauge control illustrates the CPU Utilization of a resource by using annotation feature.' },
+    { path: ':theme/linear-gauge/range', component: RangesComponent, type: 'new', name: 'Range', order: '03', category: 'Range', description: 'This demo for Essential JS2 Linear Gauge control illustrates how to highlight specific regions in an axis by using ranges.' },
+    { path: ':theme/linear-gauge/marker-pointer', component: MarkerPointerComponent, type: 'new', name: 'Marker Pointer', order: '04', category: 'Pointer', description: 'This demo for Essential JS2 Linear Gauge control shows various properties available to customize the axes and pointers.' },
+    { path: ':theme/linear-gauge/bar-pointer', component: BarPointerComponent, type: 'new', name: 'Bar Pointer', order: '04', category: 'Pointer', description: 'This demo for Essential JS2 Linear Gauge control shows various properties available to customize the axes and pointers.' },
+    { path: ':theme/linear-gauge/custom-pointer', component: CustomPointerComponent, type: 'new', name: 'Custom Pointer', order: '04', category: 'Pointer', description: 'This demo for Essential JS2 Linear Gauge control shows various properties available to customize the axes and pointers.' },
+    { path: ':theme/linear-gauge/tooltip', component: TooltipComponent, name: 'Tooltip', order: '05', category: 'User Interaction', description: 'This demo for Essential JS2 Linear Gauge control visualizes the tooltip functionality for bar pointer.' },
+    { path: ':theme/linear-gauge/print-export', component: ExportComponent, name: 'Print & Export', order: '06', category: 'Print & Export', description: 'This demo for Essential JS2 Linear Gauge control will print and export gauge in required format.' },
+    { path: ':theme/linear-gauge/progress-bar', component: ProgressBarComponent, type: 'new', name: 'Progress Bar', order: '07', category: 'Use Cases', description: 'This demo for Essential JS2 Linear Gauge control illustrates exercise tracking of an athlete by using ranges, pointers, and annotation features.' },
+    { path: ':theme/linear-gauge/step-progress-bar', component: StepProgressBarComponent, type: 'new', name: 'Step Progress Bar', order: '07', category: 'Use Cases', description: 'This demo for Essential JS2 Linear Gauge control illustrates exercise tracking of an athlete by using ranges, pointers, and annotation features.' },
+    { path: ':theme/linear-gauge/slider', component: SliderComponent, type: 'new', name: 'Slider', order: '07', category: 'Use Cases', description: 'This demo for Essential JS2 Linear Gauge control illustrates exercise tracking of an athlete by using ranges, pointers, and annotation features.' },
+    { path: ':theme/linear-gauge/thermometer', component: ThermometerComponent, type: 'new', name: 'Thermometer', order: '07', category: 'Use Cases', description: 'This demo for Essential JS2 Linear Gauge control illustrates exercise tracking of an athlete by using ranges, pointers, and annotation features.' },
+    { path: ':theme/linear-gauge/steps-counter', component: StepsCounterComponent, type: 'new', name: 'Steps Counter', order: '07', category: 'Use Cases', description: 'This demo for Essential JS2 Linear Gauge control illustrates exercise tracking of an athlete by using ranges, pointers, and annotation features.' },
+    { path: ':theme/linear-gauge/volume-settings', component: VolumeSettingsComponent, type: 'new', name: 'Volume Settings', order: '07', category: 'Use Cases', description: 'This demo for Essential JS2 Linear Gauge control illustrates exercise tracking of an athlete by using ranges, pointers, and annotation features.' },
+    { path: ':theme/linear-gauge/battery-indicator', component: BatteryIndicatorComponent, type: 'new', name: 'Battery Indicator', order: '07', category: 'Use Cases', description: 'This demo for Essential JS2 Linear Gauge control illustrates exercise tracking of an athlete by using ranges, pointers, and annotation features.' }
 ];
 
 export const linearRouter: ModuleWithProviders<any> = RouterModule.forChild(lineargaugeAppRoutes);
 
-let declarations: Type<Object>[] = [DefaultComponent, ContainerComponent, GradientColorComponent,RangesComponent, DataComponent, AxesComponent, AnnotationComponent, TooltipComponent, StyleComponent, ExportComponent];
+let declarations: Type<Object>[] = [DefaultComponent, ContainerComponent, TrackComponent, TicksComponent, LabelsComponent, RangesComponent, MarkerPointerComponent, BarPointerComponent, CustomPointerComponent, TooltipComponent, ExportComponent, ProgressBarComponent, StepProgressBarComponent, SliderComponent, ThermometerComponent, StepsCounterComponent, VolumeSettingsComponent, BatteryIndicatorComponent ];
 
 @NgModule({
     imports: [linearRouter, LinearGaugeAllModule, ButtonModule, CheckBoxModule],

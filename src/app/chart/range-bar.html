@@ -1,28 +1,34 @@
 <div id="action-description">
     <p>
-        This sample illustrates a range column series by inversing its X and Y  Axes. Tooltip shows the information about the data points.
+        This sample shows the maximum and minimum temperatures for several months with the default range column series inverted. The tooltip shows the information for the data point.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)' isTransposed='true'>
             <e-series-collection>
-                <e-series [dataSource]='data1' type='RangeColumn' xName='x' high='high' low='low' name='California' width=2> </e-series>
-                <e-series [dataSource]='data2' type='RangeColumn' xName='x' high='high' low='low' name='Colorado' width=2> </e-series>
+                <e-series [dataSource]='data' type='RangeColumn' xName='Month' high='CA_HighTemp' low='CA_LowTemp' columnSpacing=0.1 tooltipMappingName='Text' [marker]='marker'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
 <div id='description'>
     <p>
-        In this example, you can see how to render and configure the range column type series. RangeColumn type charts are used for
-        datas having two values in y-axis. You can use <code>border</code>, <code>fill</code> properities to customize
-        the data appearance. <code>dataLabel</code> is used to represent individual data and its value.
+        In this example, you can see how to render and configure the range column chart in an inverted manner. You can use <code>IsTransposed</code> property to invert your chart.
+    </p>
+    <p>
+        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover over a point or tap on a point in touch-enabled devices.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
     <p>
         Chart component features are segregated into individual feature-wise modules. To use RangeColumn feature, we need to inject
         <code>RangeColumnSeriesService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information about the column type series can be found in this
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#column-chart">documentation
+            section</a>.
     </p>
 </div>

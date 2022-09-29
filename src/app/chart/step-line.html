@@ -1,29 +1,26 @@
 <div id="action-description">
     <p>
-        This sample visualizes the unemployment rate from 1975 to 2010 with default stepline series in the chart. 
-        Data points are enhanced with marker and tooltip.
+        This Angular Step Line Chart example visualizes the fruit production statistics with default stepline series in the chart. 
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart style='display:block;' align='center' [chartArea]='chartArea' [width]='width' id='chartcontainer' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)'>
+            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='StepLine' xName='x' yName='y' name='China' width=2 [marker]='marker'> </e-series>
-                <e-series [dataSource]='data1' type='StepLine' xName='x' yName='y' name='Australia' width=2 [marker]='marker'> </e-series>
+                <e-series [dataSource]='data' type='StepLine' xName='Period' yName='AUS_UnemploymentRate' width='5' opacity='1' [marker]='marker' > </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the stepline type charts. This series forms the step line progress,
-        by connecting points through vertical and horizontal lines. You can use <code>dashArray</code>, <code>width</code>,
-        <code>fill</code> properties to customize the line. <code>marker</code> and <code>dataLabel</code> are used to represent
-        individual data and its value.
+        In this example, you can see how to render and configure the stepline type chart. This chart forms the step line progress
+        by connecting points through vertical and horizontal lines. <code>Markers</code> are used to represent
+        individual data and its values.
     </p>
     <p>
-        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+        <code>Tooltips</code> are enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch enabled devices.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
@@ -32,7 +29,7 @@
         <code>StepLineSeriesService</code> into the <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the line type series can be found in this
+        More information about the line type series can be found in this
         <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#line-charts">documentation section</a>.
     </p>
 </div>

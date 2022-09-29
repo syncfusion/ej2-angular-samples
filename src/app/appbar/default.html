@@ -1,0 +1,65 @@
+<div id="action-description">
+  <p>
+    This sample demonstrates the default functionalities of the <strong>Angular AppBar</strong>.
+  </p>
+</div>
+<div class="col-lg-12 control-section default-appbar-section">
+  <div class="default-appbar-container">
+    <div class="row">
+      <div class="col-md-12">
+        <h5>Simple AppBar</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <ejs-appbar colorMode="Primary">
+          <button #regularBtn ejs-button cssClass="e-inherit menu" iconCss="e-icons e-menu"></button>
+          <span class="regular">Angular AppBar</span>
+          <div class="e-appbar-spacer"></div>
+          <button ejs-button cssClass="e-inherit login">FREE TRIAL</button>
+        </ejs-appbar>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-md-12">
+        <h5>Prominent</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <ejs-appbar cssClass="prominent-appbar" mode="Prominent" colorMode="Primary">
+          <button #prominentBtn ejs-button cssClass="e-inherit menu" iconCss="e-icons e-menu"></button>
+          <span class="prominent">Angular AppBar Component with Prominent mode</span>
+          <div class="e-appbar-spacer"></div>
+          <button ejs-button cssClass="e-inherit login">FREE TRIAL</button>
+        </ejs-appbar>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-md-12">
+        <h5>Dense</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <ejs-appbar mode="Dense" colorMode="Primary">
+          <button #denseBtn ejs-button cssClass="e-inherit menu" iconCss="e-icons e-menu"></button>
+          <span class="dense">Angular AppBar</span>
+          <div class="e-appbar-spacer"></div>
+          <button ejs-button cssClass="e-inherit login">FREE TRIAL</button>
+        </ejs-appbar>
+      </div>
+    </div>
+    <br/>
+  </div>
+</div>
+<div id="description">
+  <p>The <strong>>Angular AppBar</strong> is a navigation component that displays information and actions related to the current view horizontally. </p> <br />
+  <p>In this demo, the available types of Angular AppBar are showcased. They are <code>regular</code>, <code>prominent</code>, and <code>dense</code>, and can be set using the <strong>Mode</strong> property. </p>
+  <p><code>Regular</code> - The AppBar is displayed with the default height.</p>
+  <p><code>Prominent</code> - Prominent top app bars are longer than regular, and can be used for larger titles, images, or texts.</p>
+  <p><code>Dense</code> - The AppBar's layout is denser to accommodate all the AppBar content.</p>
+  <p>In this demo, <strong>Button</strong> component's styles are inherited from the <strong>AppBar</strong> component using the <code>e-inherit</code> CSS class. </p>
+</div>

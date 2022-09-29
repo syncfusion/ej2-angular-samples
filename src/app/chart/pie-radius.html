@@ -1,16 +1,15 @@
 <div id="action-description">
     <p>
-        This sample compares countries by population density and total area by using the various radius in pie series.
+        This sample compares countries by population density and total area using various radius in a pie series.
     </p>
 </div>
 <div class="control-section">
     <div>
         <ejs-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings"
             [tooltip]="tooltip" [title]="title" [enableSmartLabels]='enableSmartLabels'
-            [enableAnimation]='enableAnimation' (load)='load($event)'>
+            [enableAnimation]='enableAnimation' (load)='load($event)' [enableBorderOnMouseMove]='false'>
             <e-accumulation-series-collection>
-                <e-accumulation-series [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle"
-                    [endAngle]="endAngle" innerRadius="20%" [dataLabel]="dataLabel" [radius]='radius'>
+                <e-accumulation-series [dataSource]='data' xName='Country' yName='Population' innerRadius="20%" [dataLabel]="dataLabel" [radius]='radius' tooltipMappingName='Radius'>
                 </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
@@ -18,15 +17,15 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render doughnut chart with different radius. You can use <code>radius</code>
-        mapping property to achieve this feature. <code>dataLabel</code> is used to represent individual data and its
-        value.
-        In addition, the sample shows how to shift the order of the legend for the doughnut chart by using the
-        <code>reverse</code> property.
+        In this example, you can see how to render a doughnut chart with different radius. You can use the <code>Radius</code> mapping property to achieve this feature. DataLabels are used to represent individual data and its values. In addition, the sample shows how to change the order of legends for the doughnut chart by using the Reverse property.
     </p>
     <p>
         <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point
-        in touch enabled devices.
+        in touch-enabled devices.
+    </p>
+    <p>
+        More information about the pie series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/pie-dough-nut/#various-radius-pie-chart">documentation section</a>.
     </p>
 </div>
 <style>

@@ -1,17 +1,16 @@
 <div id="action-description">
     <p>
-        This sample visualizes the Olympic medal count in Rio with default column series in the chart. 
-        Data points values are showed by using data label.
+        This Angular column chart example visualizes the medal count from the Rio Olympics with the default column series in the chart. 
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)'>
+            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Gold' width=2 [marker]='marker'> </e-series>
-                <e-series [dataSource]='data1' type='Column' xName='x' yName='y' name='Silver' width=2 [marker]='marker'> </e-series>
-                <e-series [dataSource]='data2' type='Column' xName='x' yName='y' name='Bronze' width=2 [marker]='marker'> </e-series>
+                <e-series [dataSource]='data' type='Column' xName='Country' yName='GoldMedal' name='Gold' width=2 [marker]='marker' columnSpacing='0.1' tooltipMappingName='MappingName'> </e-series>
+                <e-series [dataSource]='data' type='Column' xName='Country' yName='SilverMedal' name='Silver' width=2 [marker]='marker' columnSpacing='0.1' tooltipMappingName='MappingName'> </e-series>
+                <e-series [dataSource]='data' type='Column' xName='Country' yName='BronzeMedal' name='Bronze' width=2 [marker]='marker' columnSpacing='0.1' tooltipMappingName='MappingName'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
@@ -21,14 +20,10 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the column type charts. Column type charts are used for comparing
-        the frequency, count, total or average of data in different categories. You can use
-        <code>border</code>,
-        <code>fill</code> properties to customize the data appearance.
-        <code>dataLabel</code> is used to represent individual data and its value.
+        In this example, you can see how to render and configure a column chart. The column chart is used to compare the frequency, count, total, or average of data in different categories.
     </p>
     <p>
-        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch-enabled devices.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
@@ -38,7 +33,7 @@
         <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the column series can be found in this
+        More information about the column series can be found in this
         <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#column-charts">documentation section</a>.
     </p>
 </div>

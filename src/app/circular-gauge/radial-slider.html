@@ -1,0 +1,50 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates how to create a range slider by utilizing the functions available in the circular
+        gauge.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-circulargauge style='display:block;' #gauge (load)='load($event)' background='transparent' (dragMove)='dragMove($event)'
+        enableRangeDrag='true' enablePointerDrag='true'>
+        <e-axes>
+            <e-axis radius='80%' startAngle=0 endAngle=0 [majorTicks]='ticks' [minorTicks]='ticks'
+                [lineStyle]='lineStyle' [labelStyle]="labelStyle">
+                <e-pointers>
+                    <e-pointer type="Marker" value=30 markerShape="Circle" color="#2C75DC" radius='97%' markerWidth=25
+                        markerHeight=25 [animation]="animation">
+                    </e-pointer>
+                </e-pointers>
+                <e-ranges>
+                    <e-range start=0 end=30 color='#2C75DC' startWidth=12 endWidth=12 radius='100%'></e-range>
+                    <e-range start=30 end=100 color='#BFD6F5' startWidth=12 endWidth=12 radius='100%'></e-range>
+                </e-ranges>
+                <e-annotations>
+                    <e-annotation
+                        content='<div style="font-style: oblique; margin-left: 8px;font-size: 20px;"><span>30%</span></div>'
+                        angle=180 radius='0%' zIndex='1'>
+                    </e-annotation>
+                </e-annotations>
+            </e-axis>
+        </e-axes>
+    </ejs-circulargauge>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure a new range slider in the circular gauge. It is
+        possible to achieve this by combining ranges and a marker pointer. The marker pointer has been made interactive,
+        so the value changes as you drag it.
+    </p>
+    <p>
+        More information on the circular gauge can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/getting-started/">documentation
+            section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->

@@ -12,7 +12,7 @@ import { Browser } from '@syncfusion/ej2-base';
     encapsulation: ViewEncapsulation.None
 })
 export class TooltipTemplateComponent {
-    public width: string = Browser.isDevice ? '100%' : '80%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
     public title: string = 'USA Wheat Production';
     public xAxis: AxisModel = {
         labelStyle: { color: 'white' },

@@ -17,48 +17,19 @@ export class StackedAreaChartComponent {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
 
     public data: Object[] = [
-        { x: new Date(2000, 0, 1), y: 0.61 },
-        { x: new Date(2001, 0, 1), y: 0.81 }, { x: new Date(2002, 0, 1), y: 0.91 },
-        { x: new Date(2003, 0, 1), y: 1.00 }, { x: new Date(2004, 0, 1), y: 1.19 },
-        { x: new Date(2005, 0, 1), y: 1.47 }, { x: new Date(2006, 0, 1), y: 1.74 },
-        { x: new Date(2007, 0, 1), y: 1.98 }, { x: new Date(2008, 0, 1), y: 1.99 },
-        { x: new Date(2009, 0, 1), y: 1.70 }, { x: new Date(2010, 0, 1), y: 1.48 },
-        { x: new Date(2011, 0, 1), y: 1.38 }, { x: new Date(2012, 0, 1), y: 1.66 },
-        { x: new Date(2013, 0, 1), y: 1.66 }, { x: new Date(2014, 0, 1), y: 1.67 }
+        { Period : new Date(2000, 1, 1), OrganicSales : 0.61, FairTradeSales : 0.03, VegAlternativesSales : 0.48, OtherSales : 0.23 },
+        { Period : new Date(2002, 1, 1), OrganicSales : 0.91, FairTradeSales : 0.06, VegAlternativesSales : 0.57, OtherSales : 0.17 },
+        { Period : new Date(2004, 1, 1), OrganicSales : 1.19, FairTradeSales : 0.14, VegAlternativesSales : 0.63, OtherSales : 0.23 },        
+        { Period : new Date(2006, 1, 1), OrganicSales : 1.74, FairTradeSales : 0.29, VegAlternativesSales : 0.66, OtherSales : 0.43 },        
+        { Period : new Date(2008, 1, 1), OrganicSales : 1.99, FairTradeSales : 0.64, VegAlternativesSales : 0.77, OtherSales : 0.72 },        
+        { Period : new Date(2010, 1, 1), OrganicSales : 1.48, FairTradeSales : 1.06, VegAlternativesSales : 0.54, OtherSales : 1.38 },        
+        { Period : new Date(2012, 1, 1), OrganicSales : 1.66, FairTradeSales : 1.55, VegAlternativesSales : 0.61, OtherSales : 2.16 },        
+        { Period : new Date(2014, 1, 1), OrganicSales : 1.67, FairTradeSales : 1.65, VegAlternativesSales : 0.67, OtherSales : 2.61 }
     ];
-    public data1: Object[] = [
-        { x: new Date(2000, 0, 1), y: 0.03 },
-        { x: new Date(2001, 0, 1), y: 0.05 }, { x: new Date(2002, 0, 1), y: 0.06 },
-        { x: new Date(2003, 0, 1), y: 0.09 }, { x: new Date(2004, 0, 1), y: 0.14 },
-        { x: new Date(2005, 0, 1), y: 0.20 }, { x: new Date(2006, 0, 1), y: 0.29 },
-        { x: new Date(2007, 0, 1), y: 0.46 }, { x: new Date(2008, 0, 1), y: 0.64 },
-        { x: new Date(2009, 0, 1), y: 0.75 }, { x: new Date(2010, 0, 1), y: 1.06 },
-        { x: new Date(2011, 0, 1), y: 1.25 }, { x: new Date(2012, 0, 1), y: 1.55 },
-        { x: new Date(2013, 0, 1), y: 1.55 }, { x: new Date(2014, 0, 1), y: 1.65 }
-    ];
-    public data2: Object[] = [
-        { x: new Date(2000, 0, 1), y: 0.48 },
-        { x: new Date(2001, 0, 1), y: 0.53 }, { x: new Date(2002, 0, 1), y: 0.57 },
-        { x: new Date(2003, 0, 1), y: 0.61 }, { x: new Date(2004, 0, 1), y: 0.63 },
-        { x: new Date(2005, 0, 1), y: 0.64 }, { x: new Date(2006, 0, 1), y: 0.66 },
-        { x: new Date(2007, 0, 1), y: 0.76 }, { x: new Date(2008, 0, 1), y: 0.77 },
-        { x: new Date(2009, 0, 1), y: 0.55 }, { x: new Date(2010, 0, 1), y: 0.54 },
-        { x: new Date(2011, 0, 1), y: 0.57 }, { x: new Date(2012, 0, 1), y: 0.61 },
-        { x: new Date(2013, 0, 1), y: 0.67 }, { x: new Date(2014, 0, 1), y: 0.67 }
-    ];
-    public data3: Object[] = [
-        { x: new Date(2000, 0, 1), y: 0.23 },
-        { x: new Date(2001, 0, 1), y: 0.17 }, { x: new Date(2002, 0, 1), y: 0.17 },
-        { x: new Date(2003, 0, 1), y: 0.20 }, { x: new Date(2004, 0, 1), y: 0.23 },
-        { x: new Date(2005, 0, 1), y: 0.36 }, { x: new Date(2006, 0, 1), y: 0.43 },
-        { x: new Date(2007, 0, 1), y: 0.51 }, { x: new Date(2008, 0, 1), y: 0.72 },
-        { x: new Date(2009, 0, 1), y: 1.29 }, { x: new Date(2010, 0, 1), y: 1.38 },
-        { x: new Date(2011, 0, 1), y: 1.82 }, { x: new Date(2012, 0, 1), y: 2.16 },
-        { x: new Date(2013, 0, 1), y: 2.51 }, { x: new Date(2014, 0, 1), y: 2.61 }
-    ];
+   
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
@@ -67,20 +38,29 @@ export class StackedAreaChartComponent {
         labelFormat: 'y',
         edgeLabelPlacement: 'Shift'
     };
-    public marker: Object = {
-        visible: false
-    };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Spends',
+        title: 'Amount of sales in €',
         minimum: 0,
         maximum: 7,
         interval: 1,
-        labelFormat: '{value}B',
+        labelFormat: '{value}K',
         lineStyle: { width: 0 },
         majorTickLines: { width: 0 },
         minorTickLines: { width: 0 }
     };
+    //Initializing Tooltip
+    public tooltip: Object = {
+        enable: true,
+    };
+    public border: Object = {
+        width: 1,
+        color: '#666666'
+    };
+    public legend: Object = {
+        visible: true,
+        enableHighlight : true
+    }
      // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
@@ -88,7 +68,7 @@ export class StackedAreaChartComponent {
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
      // custom code end
-    public title: string = 'Trend in Sales of Ethical Produce';
+    public title: string = 'Amount of Sales by Payment Method';
     constructor() {
         //code
     };

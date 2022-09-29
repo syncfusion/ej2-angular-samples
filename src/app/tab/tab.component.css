@@ -96,3 +96,11 @@
     display: inline-block;
     width: 130px;
 }
+
+.fluent #tab_orientation.e-tab .e-tab-header,
+.fluent #tab_orientation.e-tab .e-tab-header .e-toolbar-items,
+.fluent-dark #tab_orientation.e-tab .e-tab-header,
+.fluent-dark #tab_orientation.e-tab .e-tab-header .e-toolbar-items {
+    height: inherit !important;
+    min-height: inherit !important;
+}

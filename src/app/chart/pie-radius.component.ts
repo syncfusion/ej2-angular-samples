@@ -13,13 +13,13 @@ import {
 })
 export class PieRadiusComponent {
     public data: Object[] = [
-        { x: 'Argentina', y: 505370, r: '50%' },
-        { x: 'Belgium', y: 551500, r: '70%' },
-        { x: 'Cuba', y: 312685, r: '84%' },
-        { x: 'Dominican Republic', y: 350000, r: '97%' },
-        { x: 'Egypt', y: 301000, r: '84%' },
-        { x: 'Kazakhstan', y: 300000, r: '70%' },
-        { x: 'Somalia', y: 357022, r: '90%' }
+        { Country : " Argentina", Population : 505370, Radius : "100"},
+        { Country : " Belgium",    Population : 551500, Radius : "118.7"},
+        { Country : " Cuba",  Population : 312685 , Radius : "124.6"},
+        { Country : " Dominican Republic", Population : 350000 , Radius : "137.5"},
+        { Country : " Egypt", Population : 301000 , Radius : "150.8"},
+        { Country : " Kazakhstan", Population : 300000, Radius : "155.5"},
+        { Country : " Somalia",  Population : 357022, Radius : "160.6"}
     ];
     @ViewChild('pie')
     public pie: AccumulationChartComponent | AccumulationChart;
@@ -31,24 +31,29 @@ export class PieRadiusComponent {
     //Initializing Datalabel
     public dataLabel: Object = {
         visible: true, position: 'Outside',
-        name: 'x'
+        name: 'Country',
+        connectorStyle: { length: '20px', type:'Curve' },
+        font: {
+            fontWeight: '600'
+        },
     };
       // custom code start
     public load(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     }
       // custom code end
-    public startAngle: number = 0;
-    public endAngle: number = 360;
-    public radius: string = 'r';
+    public radius: string = 'Radius';
     public enableAnimation: boolean = true;
     public enableSmartLabels: boolean = true;
     public tooltip: Object = {
-        enable: true
+        enable: true,
+        header: '',
+        format: '<b>${point.x}</b><br>Area in square km: <b>${point.y}</b><br>Population density per square km: <b>${point.tooltip}',
+        name: 'Radius'
     };
-    public title: string = '';
+    public title: string = 'Pie with different Radius';
     constructor() {
         //code
     };

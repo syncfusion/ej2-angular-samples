@@ -17,7 +17,7 @@ export class ParetoSeriesChartComponent {
             width: 0
         }
     };
-    public width: string = Browser.isDevice ? '100%' : '60%';
+    public width: string = Browser.isDevice ? '100%' : '75%';
 
     public data: Object[] = [
         { x: 'Traffic', y: 56 }, { x: 'Child Care', y: 44.8 },

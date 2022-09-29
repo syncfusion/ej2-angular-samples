@@ -1,25 +1,31 @@
 <div id="action-description">
     <p>
-        This sample illustrates an educational institute’s revenue by using the pie with legend series. The legend will be displayed at right side of the chart.
+        This sample shows statistics on expenditure made in a year using the donut chart with legends shown at the right side of the chart.
     </p>
 </div>
-<div class="control-section">
-    <div style="padding-left: 35px;">
-        <ejs-accumulationchart id="donut-container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (textRender)="onTextRender($event)" (animationComplete)="onAnimationComplete($event)" selectionMode='Point' (load)='load($event)' (loaded)='loaded($event)'>
+<div class="control-section" >
+    <div>
+        <ejs-accumulationchart id="donut-container" align='center'[legendSettings]="legendSettings" [tooltip]="tooltip" selectionMode='Point' (load)='load($event)' [enableBorderOnMouseMove]='false'>
+            <e-accumulation-annotations>
+                <e-accumulation-annotation content='<div style=" font-size:15px; font-weight:600">Expense in Year</div>' region='Series'  x='50%' y='50%' >
+                </e-accumulation-annotation>
+            </e-accumulation-annotations>
             <e-accumulation-series-collection>
-                <e-accumulation-series name='Revenue' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%" [dataLabel]="dataLabel"> </e-accumulation-series>
+                <e-accumulation-series name='Revenue' [dataSource]='data' xName='x' yName='y' innerRadius="40%" [dataLabel]="dataLabel"> </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
-        <div id="center_title" style="visibility: hidden; position: absolute;">Expenses in Year</div>
     </div>
 </div>
 <div id="description">
-    <p> In this example, you can see how to render doughnut chart. You can use <code>radius</code> and <code>innerRadius</code> properties to render the doughnut and also use <code>border</code>, <code>fill</code> properties to customize the point. <code>dataLabel</code> is used to represent individual data and its value. 
-        Here the legend text is wrapped using <code>textWrap</code> property.</p>
+    <p> In this example, you can see how to render a doughnut chart with legends. You can use <code>Radius</code> and <code>InnerRadius</code> properties to render the doughnut. Here, the legend text is wrapped using the <code>TextWrap</code> property.</p>
     <p style="font-weight: 500">Injecting Module</p>
     <p>
         AccumulationChart component features are segregated into individual feature-wise modules. To use legend, we need to Inject
         <code>AccumulationLegend</code> into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information about the legend feature can be found in this 
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/legend/">documentation section</a>.
     </p>
 </div>
 <style>
