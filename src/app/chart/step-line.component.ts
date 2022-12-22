@@ -34,13 +34,8 @@ export class StepLineChartComponent {
     public width: string = Browser.isDevice ? '100%' : '75%';
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        labelFormat: 'y',
-        intervalType: 'Months',
-        maximum: new Date(2015, 1, 1),
-        minimum: new Date(1971, 1, 1),
-        majorGridLines: { width: 0 },
-        valueType: 'DateTime',
-        edgeLabelPlacement: 'Shift'
+        minimum : new Date(1971,6,11),
+        maximum : new Date(2012,6,11), valueType: 'DateTime', edgeLabelPlacement: 'Shift', majorGridLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

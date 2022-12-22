@@ -43,6 +43,7 @@ export class PreviewUploaderComponent implements OnInit {
             this.filesList = [];
             this.filesDetails = [];
             this.filesName = [];
+            this.uploadObj.element.value = '';
             if (this.dropElement.querySelector('#dropArea').classList.contains('e-spinner-pane')) {
                 hideSpinner(this.dropElement.querySelector('#dropArea'));
                 detach(this.dropElement.querySelector('.e-spinner-pane'));

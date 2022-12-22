@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { chartDataValues } from './financial-data';
 
 /**
  * Sample for Range Area Series
@@ -15,17 +16,19 @@ import { Browser } from '@syncfusion/ej2-base';
 export class SplineRangeAreaComponent {
   //Initializing Primary X Axis
   public primaryXAxis: Object = {
-    valueType: 'Category',
-    edgeLabelPlacement: 'Shift',
-    majorGridLines: { width: 0 }
+    valueType: 'DateTime',
+    labelFormat: 'dd MMM',
+    edgeLabelPlacement: (Browser.isDevice) ? 'Shift' : 'Hide',
+    majorGridLines: { width: 0 },
   };
   //Initializing Primary Y Axis
   public primaryYAxis: Object = {
     labelFormat: '{value}˚C',
     lineStyle: { width: 0 },
     majorTickLines: { width: 0 },
-    minimum: 0,
-    maximum: 40
+    minimum: -10,
+    maximum: 25,
+    interval: 5
   };
   public marker: Object = {
     visible: false
@@ -35,9 +38,12 @@ export class SplineRangeAreaComponent {
     enableHighlight : true
   }
 
-  public title: string = 'Monthly Temperature Range';
+  public title: string = 'Temperature Variation by Month';
   public tooltip: Object = {
-    enable: true
+    enable: true,
+    format:'Temperature : <b>${point.low} - ${point.high}</b>',
+    shared: false,
+    header: '<b>${point.x}</b>',
   };
   public chartArea: Object = {
     border: {
@@ -55,21 +61,7 @@ export class SplineRangeAreaComponent {
     args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
   };
   // custom code end
-  public data: Object[] = [
-    { x: 'Jan', high: 14, low: 4 },
-    { x: 'Feb', high: 17, low: 7 },
-    { x: 'Mar', high: 20, low: 10 },
-    { x: 'Apr', high: 22, low: 12 },
-    { x: 'May', high: 20, low: 10 },
-    { x: 'Jun', high: 17, low: 7 },
-    { x: 'Jul', high: 15, low: 5 },
-    { x: 'Aug', high: 17, low: 7 },
-    { x: 'Sep', high: 20, low: 10 },
-    { x: 'Oct', high: 22, low: 12 },
-    { x: 'Nov', high: 20, low: 10 },
-    { x: 'Dec', high: 17, low: 7 }
-
-  ];
+  public data: Object[] = chartDataValues;
 
   public data1: Object[] = [
     { x: 'Jan', high: 29, low: 19 },

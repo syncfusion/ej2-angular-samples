@@ -62,7 +62,7 @@ const idRegex: RegExp = /\{0\}/g;
 const sourceHeader: String = '<li class="nav-item {2}" role="presentation"><a class="nav-link" target-content="{0}" role="tab" {1}>{0}</a></li>';
 const sourcecontent: String = '<div class="tab-pane {2}" id="{0}" role="tabpanel" {4}><pre><code class="{3}">{1}</code></pre></div>';
 const plnk: string = '<li class="plnk" style="float:right"><a id="plnkr">Open in Plunker</a></li>\n' +
-    '<li class="open"><a id="openNew" target="_blank"><div class="openIcon e-icons"></div></a></li>';
+    '<li class="open"><a id="openNew" target="_blank" aria-label="Open new sample"><div class="openIcon e-icons"></div></a></li>';
 const themes: string[] = ['fluent', 'fluent-dark', 'bootstrap5', 'bootstrap5-dark', 'tailwind', 'tailwind-dark', 'material', 'material-dark', 'fabric', 'fabric-dark', 'bootstrap4', 'bootstrap', 'bootstrap-dark', 'highcontrast'];
 let selectedTheme: string;
 let themeFlag: boolean = true;
@@ -278,7 +278,7 @@ export class SBController {
     renderTabToolBar() {
         let hsplitter: string = '<div class="sb-toolbar-splitter sb-custom-item"></div>';
         // tslint:disable-next-line:no-multiline-string
-        let openNewTemplate: string = `<div class="sb-custom-item sb-open-new-wrapper"><a id="openNew" target="_blank">
+        let openNewTemplate: string = `<div class="sb-custom-item sb-open-new-wrapper"><a id="openNew" target="_blank" aria-label="Open new sample">
         <div class="sb-icons sb-icon-Popout"></div></a></div>`;
         // tslint:disable-next-line:no-multiline-string
         let sampleNavigation: string = `<div class="sb-custom-item sample-navigation"><button id='prev-sample' class="sb-navigation-prev">

@@ -13,30 +13,32 @@ import { Browser } from '@syncfusion/ej2-base';
 export class CategoryChartComponent {
     public data: Object[] = [
         { x: 'Germany', y: 72, country: 'GER: 72'},
-        { x: 'Russia', y: 103.1, country: 'RUS: 103.1'},
-        { x: 'Brazil', y: 139.1, country: 'BRZ: 139.1'},
-        { x: 'India', y: 462.1, country: 'IND: 462.1'},
-        { x: 'China', y: 721.4, country: 'CHN: 721.4'},
-        { x: 'United States<br>Of America', y: 286.9, country: 'USA: 286.9'},
-        { x: 'Great Britain', y: 115.1, country: 'GBR: 115.1'},
-        { x: 'Nigeria', y: 97.2, country: 'NGR: 97.2'},
+        { x: 'Russia', y: 103, country: 'RUS: 103'},
+        { x: 'Brazil', y: 139, country: 'BRZ: 139'},
+        { x: 'India', y: 462, country: 'IND: 462'},
+        { x: 'China', y: 721, country: 'CHN: 721'},
+        { x: 'United States<br>Of America', y: 286, country: 'USA: 286'},
+        { x: 'Great Britain', y: 115, country: 'GBR: 115'},
+        { x: 'Nigeria', y: 97, country: 'NGR: 97'},
     ];
     public tooltipMappingName: 'country';
     public marker: Object = {
         dataLabel: {
             visible: true,
-            position: 'Top', font: {
+            position: Browser.isDevice ? 'Outer': 'Top', font: {
                 fontWeight: '600',
-                color: '#ffffff'
+                color: Browser.isDevice ? '' : '#ffffff',
+                size: '11px'
             }
         }
     }
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Country',
         valueType: 'Category',
         majorGridLines: { width: 0 },
         enableTrim: false,
+        majorTickLines: {width : 0},
+        minorTickLines: {width: 0}
     };
     public pointRender(args: IPointRenderEventArgs): void {
         let materialColors: string[] = ['#00bdae', '#404041', '#357cd2', '#e56590', '#f8b883', '#70ad47', '#dd8abd', '#7f84e8', '#7bb4eb',
@@ -71,7 +73,7 @@ export class CategoryChartComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
       // custom code end
     //Initializing Primary Y Axis

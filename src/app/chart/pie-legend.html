@@ -5,20 +5,16 @@
 </div>
 <div class="control-section" >
     <div>
-        <ejs-accumulationchart id="donut-container" align='center'[legendSettings]="legendSettings" [tooltip]="tooltip" selectionMode='Point' (load)='load($event)' [enableBorderOnMouseMove]='false'>
-            <e-accumulation-annotations>
-                <e-accumulation-annotation content='<div style=" font-size:15px; font-weight:600">Expense in Year</div>' region='Series'  x='50%' y='50%' >
-                </e-accumulation-annotation>
-            </e-accumulation-annotations>
+        <ejs-accumulationchart id="donut-container" [title]="title"  align='center'[legendSettings]="legendSettings" [tooltip]="tooltip" selectionMode='Point' [annotations]='annotations' (load)='load($event)' [enableBorderOnMouseMove]='false'>
             <e-accumulation-series-collection>
-                <e-accumulation-series name='Revenue' [dataSource]='data' xName='x' yName='y' innerRadius="40%" [dataLabel]="dataLabel"> </e-accumulation-series>
+                <e-accumulation-series name='Revenue' [dataSource]='data' xName='x' [startAngle]="startAngle" yName='y' [radius]="radius" [innerRadius]="innerRadius" [dataLabel]="dataLabel"> </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
     </div>
 </div>
 <div id="description">
     <p> In this example, you can see how to render a doughnut chart with legends. You can use <code>Radius</code> and <code>InnerRadius</code> properties to render the doughnut. Here, the legend text is wrapped using the <code>TextWrap</code> property.</p>
-    <p style="font-weight: 500">Injecting Module</p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
     <p>
         AccumulationChart component features are segregated into individual feature-wise modules. To use legend, we need to Inject
         <code>AccumulationLegend</code> into the <code>@NgModule.providers</code> section.

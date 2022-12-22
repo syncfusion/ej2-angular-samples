@@ -1,5 +1,6 @@
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
-import { MonthService, View, ResizeService, DragAndDropService } from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, MonthService, View, ResizeService, DragAndDropService } from '@syncfusion/ej2-angular-schedule';
+import { extend } from '@syncfusion/ej2-base';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -12,6 +13,7 @@ import { MonthService, View, ResizeService, DragAndDropService } from '@syncfusi
 export class CellTemplateComponent {
   public currentView: View = 'Month';
   public selectedDate: Date = new Date(2021, 11, 15);
+  public eventSettings: EventSettingsModel = { dataSource: extend([], null, true) as Record<string, any>[] };
 
   constructor(@Inject('sourceFiles') private sourceFiles: any) {
     sourceFiles.files = ['cells.style.css'];

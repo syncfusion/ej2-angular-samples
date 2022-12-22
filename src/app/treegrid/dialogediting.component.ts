@@ -19,7 +19,7 @@ export class DialogEditingComponent implements OnInit {
     public durationrules: Object;
     public progressrules: Object;
     ngOnInit(): void {
-        this.data = sampleData;
+        this.data = sampleData.slice(0);
         this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true , mode: 'Dialog' , newRowPosition: 'Below'};
         this.toolbar = ['Add', 'Edit', 'Delete'];
         this.pageSettings = { pageCount: 5 };

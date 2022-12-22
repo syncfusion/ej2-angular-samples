@@ -18,7 +18,6 @@ export class GanttResourceMultiTaskbarComponent implements OnInit {
     public projectStartDate: Date;
     public projectEndDate: Date;
     public ngOnInit(): void {
-        debugger;
         this.data = multitaskbardata;
         this.resources = resources;
         this.taskSettings = {

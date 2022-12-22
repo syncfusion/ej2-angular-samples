@@ -1,0 +1,45 @@
+<div id="action-description">
+    <p>This sample shows the loading indicator while initial rendering, refreshing and all gantt action. In this sample, you can change the loading indicators from the properties panel.</p>
+</div>
+<div class="col-lg-9 control-section">
+    <ejs-gantt id="ganttDefault" #gantt height="450px" [dataSource]="data" [taskFields]="taskSettings" [loadingIndicator]="loadingIndicator" [treeColumnIndex]="1"
+    [splitterSettings]="splitterSettings" [allowSorting]="true" [allowFiltering]="true" [columns]="columns" [labelSettings]="labelSettings"
+    [allowSelection]="true" [enableVirtualization]="true" [highlightWeekends]="true">
+    </ejs-gantt>
+</div>
+<div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+               <div class="property-panel-header">Properties </div>
+       <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+           <tr style="height: 50px">
+               <td style=" padding-left: 0;">
+                   <div style="width: 100px; font-size: 14px;padding-left: 0;">Indicator Type</div>
+               </td>
+               <td style="width: 50%;padding-right: 10px">
+                     <div>
+                       <ejs-dropdownlist #dropdown1 id='typeelement'  width= '100px' [dataSource]='d1data' [fields]='typefields' value='Shimmer'  (change)="change($event)"></ejs-dropdownlist>
+                     </div>
+               </td>
+           </tr>
+       </table>
+   </div>
+</div>
+<div id="description">
+    <p>
+        The Gantt has an option to show a loading indicator in-between the time of fetching the data and binding it to the gantt during initial rendering, refreshing or 
+        while performing action like sorting, filtering and more.
+    </p>
+    <p>
+        The Gantt support the following loading indicator types
+    </p>
+    <ul>
+        <li><code>Shimmer</code></li>
+        <li><code>Spinner</code></li>
+    </ul>
+    <p>
+        Use the loading indicator by setting the <code>loadingIndicator.indicatorType</code> property as Spinner or Shimmer. The default value of the indicatorType is Spinner.
+    </p>
+    <p>
+        By default <code>enableVirtualMaskRow</code> is set to true which renders Shimmer during virtual scrolling.
+    </p>
+</div>

@@ -43,6 +43,9 @@ export class ApiSidebarComponent {
     }
     toggleBtnClick() {
         this.sidebarInstance.toggle();
+        if (this.backdropBtn.content == "True") {
+            this.sidebarInstance.showBackdrop = true;
+        }
     }
     positionBtnClick() {
         if (this.positionBtn.content == "Right") {
@@ -77,5 +80,8 @@ export class ApiSidebarComponent {
     }
     sidebarClose() {
         this.sidebarInstance.hide();
+        if (this.sidebarInstance.showBackdrop == true){
+            this.sidebarInstance.showBackdrop = false;
+        }
     }
 }

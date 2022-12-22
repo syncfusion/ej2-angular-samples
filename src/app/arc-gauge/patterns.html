@@ -1,0 +1,168 @@
+<div id="action-description">
+    <p>
+        This sample includes a wide range of arc gauges with varying appearances based on the built-in features and
+        customization options.
+    </p>
+</div>
+<div class="control-section">
+    <table>
+        <tr>
+            <td class="gaugeAlign">
+                <ejs-circulargauge (load)='loadOne($event)' width="280px" height="300px" id="gaugeOne" background='transparent'>
+                    <e-axes>
+                        <e-axis startAngle=230 endAngle=130 [lineStyle]='lineStyleOne'
+                            [labelStyle]='lableStyleGaugeOne' [majorTicks]='majorTicks' [minorTicks]='ticks'
+                            radius='100%' [pointers]='pointersGaugeOne' [ranges]='rangesGaugeOne'>
+                            <e-annotations>
+                                <e-annotation content='<div class="gaugeOneText" style="font-size:30px;font-family:inherit;">38</div>'
+                                    angle=10 radius='0%' zIndex='1'></e-annotation>
+                            </e-annotations>
+                        </e-axis>
+                    </e-axes>
+                </ejs-circulargauge>
+            </td>
+            <td class="gaugeAlign">
+                <ejs-circulargauge (load)='loadTwo($event)' width="280px" height="300px" id="gaugeTwo" centerY='60%' background='transparent'>
+                    <e-axes>
+                        <e-axis startAngle=270 endAngle=90 [lineStyle]='lineStyleOne' [labelStyle]='lableStyle'
+                            [majorTicks]='ticks' [minorTicks]='ticks' radius='80%' [pointers]='pointersGaugeTwo'>
+                            <e-annotations>
+                                <e-annotation content='<div style="font-size:25px;font-family:inherit;">75%</div>'
+                                    angle=1 radius='0%' zIndex='1'></e-annotation>
+                                <e-annotation content='<div style="font-size:22px;font-family:inherit;">0%</div>'
+                                    angle=255 radius='102%' zIndex='1'></e-annotation>
+                                <e-annotation content='<div style="font-size:22px;font-family:inherit;">100%</div>'
+                                    angle=105 radius='105%' zIndex='1'></e-annotation>
+                            </e-annotations>
+                        </e-axis>
+                    </e-axes>
+                </ejs-circulargauge>
+            </td>
+            <td class="gaugeAlign">
+                <ejs-circulargauge (load)='loadThree($event)' width="280px" height="300px" id="gaugeThree" background='transparent'>
+                    <e-axes>
+                        <e-axis startAngle=220 endAngle=140 [lineStyle]='lineStyle'
+                            [annotations]='annotationsGaugeThree' [labelStyle]='lableStyle' [majorTicks]='ticks'
+                            [minorTicks]='ticks' radius='75%' minimum=0 maximum=600 [pointers]='pointersGaugeThree'
+                            [ranges]='rangesGaugeThree'>
+                        </e-axis>
+                    </e-axes>
+                </ejs-circulargauge>
+            </td>
+        </tr>
+        <tr>
+            <td class="gaugeAlign">
+                <ejs-circulargauge (load)='loadFour($event)' width="280px" height="300px" id="gaugeFour" background='transparent'>
+                    <e-axes>
+                        <e-axis startAngle=220 endAngle=140 [lineStyle]='lineStyle' [labelStyle]='lableStyle'
+                            [majorTicks]='ticks' [minorTicks]='ticks' radius='80%' minimum=0 maximum=100
+                            [pointers]='pointersGaugeFour' [ranges]='rangesGaugeFour'>
+                            <e-annotations>
+                                <e-annotation
+                                    content='<div class="gaugeFourText" style="font-size:30px;font-family:inherit;">21%</div>'
+                                    angle=80 radius='5%' zIndex='1'></e-annotation>
+                            </e-annotations>
+                        </e-axis>
+                    </e-axes>
+                </ejs-circulargauge>
+            </td>
+            <td class="gaugeAlign">
+                <ejs-circulargauge (load)='loadFive($event)' width="280px" height="300px" id="gaugeFive" background='transparent'>
+                    <e-axes>
+                        <e-axis startAngle=220 endAngle=140 [lineStyle]='lineStyle' [labelStyle]='lableStyle'
+                            [majorTicks]='majorTicksSix' [minorTicks]='ticks' radius='80%' minimum=0 maximum=100
+                            [pointers]='pointersGaugeFive' [ranges]="rangesGaugeFive">
+                            <e-annotations>
+                                <e-annotation
+                                    content='<div class="gaugeFiveText" style="font-size:30px;font-family:inherit;">54%</div>'
+                                    angle=80 radius='5%' zIndex='1'></e-annotation>
+                            </e-annotations>
+                        </e-axis>
+                    </e-axes>
+                </ejs-circulargauge>
+            </td>
+            <td class="gaugeAlign">
+                <ejs-circulargauge (load)='loadSix($event)' width="280px" height="300px" id="gaugeSix" background='transparent' >
+                    <e-axes>
+                        <e-axis startAngle=220 endAngle=140 [lineStyle]='lineStyle' [labelStyle]='lableStyle'
+                            [majorTicks]='ticks' [minorTicks]='ticks' radius="80%" minimum=0 maximum=100
+                            [pointers]='pointersGaugeSix' [ranges]='rangesGaugeSix'>
+                            <e-annotations>
+                                <e-annotation
+                                    content='<div class="annotationText">80% <br/> <div> Completed </div> </div>'
+                                    angle=10 radius='7%' zIndex='1'></e-annotation>
+                            </e-annotations>
+                        </e-axis>
+                    </e-axes>
+                </ejs-circulargauge>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render an arc gauge in various styles. You can use <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/axisModel">axes</a>, <a
+            target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/rangeModel/">ranges</a>, <a
+            target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/pointerModel/">pointers</a> and <a
+            target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/annotationModel/">annotations</a>
+        oriented properties to customize the appearance of the arc gauge, in order to achieve the desired outcome.
+    </p>
+    <p>
+        More information on the pointers can be found in this
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/getting-started/">documentation
+            section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+    .gaugeOneText {
+        margin-top: 10px;margin-left: -1px;
+    }
+    .e-view.tailwind div.gaugeOneText, .e-view.tailwind-dark div.gaugeOneText {
+        margin-top: 0px;margin-left: -2px;
+    }
+    .gaugeThreeText {
+        margin-top: 15px;margin-left: 2px;
+    }
+    .e-view.tailwind div.gaugeThreeText, .e-view.tailwind-dark div.gaugeThreeText {
+        margin-top: 0px;margin-left: 0px;
+    }    
+    .gaugeFourText {
+        margin-top: 8px;margin-left: 1px;
+    }
+    .e-view.tailwind div.gaugeFourText, .e-view.tailwind-dark div.gaugeFourText {
+        margin-top: -10px;margin-left: 4px;
+    }    
+    .gaugeFiveText {
+        margin-left: 2px;margin-top: 10px;
+    }
+    .e-view.tailwind div.gaugeFiveText, .e-view.tailwind-dark div.gaugeFiveText {
+        margin-left: 3px;margin-top: -5px;
+    }
+    
+    .annotationText {
+        font-family:inherit;
+        font-size:22px;
+        text-align:center;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .e-view.tailwind div.annotationText, .e-view.tailwind-dark div.annotationText {
+        font-size:18px;
+        text-align:center;
+        margin-top: 10px;
+        margin-left: 7px;
+    }
+    .gaugeAlign {
+        width: 50%;
+    }
+</style>
+<!-- custom code end -->

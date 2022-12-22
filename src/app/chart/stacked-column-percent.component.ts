@@ -30,7 +30,6 @@ export class PercentStackedColumnChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Vehicles Production',
         rangePadding: 'None',
         interval: 20,
         majorTickLines: { width: 0 },

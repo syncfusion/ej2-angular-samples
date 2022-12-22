@@ -5,53 +5,65 @@
   </p>
 </div>
 <div class="control-section">
-    <ejs-dashboardlayout [columns]="8" [cellSpacing]='cellSpacing' [cellAspectRatio]='cellAspectRatio'>
-      <e-panels>
-        <e-panel [sizeX]="5" [sizeY]="2" [row]="0" [col]="0">
-          <ng-template #header>
-            <div class="title" id="header1"> Sales - Yearly Performance </div>
-          </ng-template>
-          <ng-template #content>
-            <ejs-chart  style="height:100%; width:100%" [primaryXAxis]='columnChartprimaryXAxis' [primaryYAxis]='columnChartprimaryYAxis' [chartArea]='chartArea' [legendSettings]=" columnChartlegendSettings" (load)='load($event)'>
-              <e-series-collection>
-                <e-series [dataSource]='columnChartDataCollection' type='Column' name='Online' xName='Period' yName='Percentage' [marker]='columnChartmarker' [fill]="series1Fill">
-                </e-series>
-                <e-series [dataSource]='columnChartData' type='Column' name='Retail' xName='Period' yName='Percentage' [marker]='columnChartmarker' [fill]="series2Fill">
-                </e-series>
-              </e-series-collection>
-            </ejs-chart>
-          </ng-template>
-        </e-panel>
-        <e-panel [sizeX]="3" [sizeY]="2" [row]="0" [col]="5">
-          <ng-template #header>
-            <div class="title" id="header2">Product Wise Sales - 2021</div>
-          </ng-template>
-          <ng-template #content>
-            <ejs-accumulationchart  style="height:100%; width:100%" [legendSettings]="pielegendSettings" [tooltip]="pieTooltipSetting" [enableAnimation]= 'animation' [enableBorderOnMouseMove]='enableBorderOnMouseMove' [enableSmartLabels]='enableSmartLabels' (pointRender)='pointRender($event)' (load)='accumulationload($event)'>
-              <e-accumulation-series-collection>
-                <e-accumulation-series [dataSource]='data' xName='Product' yName='Percentage' innerRadius="40%" radius="80%" [palettes]="palettes" [dataLabel]="dataLabel" [border]='border' >
-                </e-accumulation-series>
-              </e-accumulation-series-collection>
-            </ejs-accumulationchart>
-          </ng-template>
-        </e-panel>
-        <e-panel [sizeX]="8" [sizeY]="3" [row]="4" [col]="0">
-          <ng-template #header>
-            <div class="title" id="header3"> Monthly Sales for 2021 </div>
-          </ng-template>
-          <ng-template #content>
-            <ejs-chart  style="height:100%; width:100%"  [primaryXAxis]='spLineAreaprimaryXAxis' [primaryYAxis]='spLineAreaprimaryYAxis' [tooltip]='spLineAreatooltipSettings' [chartArea]='chartArea' [legendSettings]="spLineLegendSettings"(load)='load($event)'>
-              <e-series-collection>
-                <e-series [dataSource]='spLineAreaData' name='Online' type='SplineArea' xName='Period' yName='Percentage' opacity='0.3' width='2.5' [fill]="spLineAreaFill" [border]='spLineAreaBorder' >
-                </e-series>
-                <e-series [dataSource]='spLineAreaData2' name='Retail' type='SplineArea' xName='Period' yName='Percentage' opacity='0.3' width='2.5' [fill]="spLineAreaFill1" [border]='spLineAreaBorder1'>
-                </e-series>
-              </e-series-collection>
-            </ejs-chart>
-          </ng-template>
-        </e-panel>
-      </e-panels>
-    </ejs-dashboardlayout>
+  <ejs-dashboardlayout [columns]='columns' [cellSpacing]='cellSpacing' [cellAspectRatio]='cellAspectRatio'>
+    <e-panels>
+      <e-panel [sizeX]='columnSizeX' [sizeY]='columnSizeY' [row]="0" [col]="0">
+        <ng-template #header>
+          <div class="title" id="header1"> Sales - Yearly Performance </div>
+        </ng-template>
+        <ng-template #content>
+          <ejs-chart style="height:100%; width:100%" [primaryXAxis]='columnChartprimaryXAxis'
+            [primaryYAxis]='columnChartprimaryYAxis' [chartArea]='chartArea'
+            [legendSettings]=" columnChartlegendSettings" (load)='load($event)'>
+            <e-series-collection>
+              <e-series [dataSource]='columnChartDataCollection' type='Column' name='Online' xName='Period'
+                yName='Percentage' [marker]='columnChartmarker' [fill]="series1Fill">
+              </e-series>
+              <e-series [dataSource]='columnChartData' type='Column' name='Retail' xName='Period' yName='Percentage'
+                [marker]='columnChartmarker' [fill]="series2Fill">
+              </e-series>
+            </e-series-collection>
+          </ejs-chart>
+        </ng-template>
+      </e-panel>
+      <e-panel [sizeX]='pieSizeX' [sizeY]='pieSizeY' [row]="0" [col]='pieColumn'>
+        <ng-template #header>
+          <div class="title" id="header2">Product Wise Sales - 2021</div>
+        </ng-template>
+        <ng-template #content>
+          <ejs-accumulationchart style="height:100%; width:100%" [legendSettings]="pielegendSettings"
+            [tooltip]="pieTooltipSetting" [enableAnimation]='animation'
+            [enableBorderOnMouseMove]='enableBorderOnMouseMove' [enableSmartLabels]='enableSmartLabels'
+            (pointRender)='pointRender($event)' (load)='accumulationload($event)'>
+            <e-accumulation-series-collection>
+              <e-accumulation-series [dataSource]='data' xName='Product' yName='Percentage' innerRadius="40%"
+               [palettes]="palettes" [dataLabel]="dataLabel" [border]='border'>
+              </e-accumulation-series>
+            </e-accumulation-series-collection>
+          </ejs-accumulationchart>
+        </ng-template>
+      </e-panel>
+      <e-panel [sizeX]='splineSizeX' [sizeY]='splineSizeY' [row]='splineRow' [col]="0">
+        <ng-template #header>
+          <div class="title" id="header3"> Monthly Sales for 2021 </div>
+        </ng-template>
+        <ng-template #content>
+          <ejs-chart style="height:100%; width:100%" [primaryXAxis]='spLineAreaprimaryXAxis'
+            [primaryYAxis]='spLineAreaprimaryYAxis' [tooltip]='spLineAreatooltipSettings' [chartArea]='chartArea'
+            [legendSettings]="spLineLegendSettings" (load)='load($event)'>
+            <e-series-collection>
+              <e-series [dataSource]='spLineAreaData' name='Online' type='SplineArea' xName='Period' yName='Percentage'
+                opacity='0.3' width='2.5' [fill]="spLineAreaFill" [border]='spLineAreaBorder'>
+              </e-series>
+              <e-series [dataSource]='spLineAreaData2' name='Retail' type='SplineArea' xName='Period' yName='Percentage'
+                opacity='0.3' width='2.5' [fill]="spLineAreaFill1" [border]='spLineAreaBorder1'>
+              </e-series>
+            </e-series-collection>
+          </ejs-chart>
+        </ng-template>
+      </e-panel>
+    </e-panels>
+  </ejs-dashboardlayout>
 </div>
 <div id="description">
   <p>

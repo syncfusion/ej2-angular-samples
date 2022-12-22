@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ValueProvider, ViewEncapsulation } from '
 import { employeeDetails } from './data';
 import {
     GridComponent, ToolbarService, ExcelExportService, PdfExportService,
-    GroupService, ExcelQueryCellInfoEventArgs, PdfQueryCellInfoEventArgs
+    GroupService, ExcelQueryCellInfoEventArgs, PdfQueryCellInfoEventArgs, SortService
 } from '@syncfusion/ej2-angular-grids';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations'
 
@@ -11,7 +11,7 @@ import { ClickEventArgs } from '@syncfusion/ej2-navigations'
     templateUrl: 'default-exporting.html',
     styleUrls: ['column-template.style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, ExcelExportService, PdfExportService, GroupService]
+    providers: [ToolbarService, ExcelExportService, PdfExportService, GroupService, SortService]
 
 })
 export class ExportingComponent implements OnInit {

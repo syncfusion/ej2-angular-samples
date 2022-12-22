@@ -3,7 +3,7 @@
         to load data source and scroll the Grid content vertically and horizontally to load rows and columns respectively.
     </p>
 </div>
-<div class="control-section">      
+<div class="control-section">
     <div class='div-button'>
         <button ejs-button (click)='onClick($event)' cssClass='e-info'>Load 100K Data</button>
         <span id="popup">
@@ -13,7 +13,7 @@
     </div>
     <ejs-grid #grid [dataSource]='vData' [enableVirtualization]='true' [enableColumnVirtualization]='true' [editSettings]='editSettings' [toolbar]='toolbar' height='400' (dataBound)='hide()'>
         <e-columns>
-            <e-column field='SNo' headerText='S.No' width='140' isPrimaryKey='true' [validationRules]='validationRules'></e-column>
+            <e-column field='SNo' headerText='S.No' width='140' isPrimaryKey='true' [validationRules]='validationSno'></e-column>
             <e-column field='FIELD1' headerText='Player Name' width='140' [validationRules]='validationRules'></e-column>
             <e-column field='FIELD2' headerText='Year' width='100'></e-column>
             <e-column field='FIELD3' headerText='Sports' width='160' editType='dropdownedit' [validationRules]='validationRules'></e-column>

@@ -21,33 +21,32 @@ export class AreaNegativePointsComponent {
     public width: string = Browser.isDevice ? '100%' : '75%';
     public margin = { left : Browser.isDevice ? 2 : 10, right : Browser.isDevice ? 2 : 10, top : Browser.isDevice ? 2 : 10, bottom : Browser.isDevice ? 2 : 10};
     public MaryValues: Object[] = [
-        { Vegetable : "Onion",  Price : 3000 },
-        { Vegetable : "Potato", Price : 4000 },
-        { Vegetable : "Tomato", Price : -4000 },
-        { Vegetable : "Corn", Price : -2000 },
-        { Vegetable : "Carrot", Price : 5000 }
+        { Vegetable : new Date(2017, 0, 1),  Price : 3000 },
+        { Vegetable : new Date(2018, 0, 1), Price : 4000 },
+        { Vegetable : new Date(2019, 0, 1), Price : -4000 },
+        { Vegetable : new Date(2020, 0, 1), Price : -2000 },
+        { Vegetable : new Date(2021, 0, 1), Price : 5000 }
     ];
     public PatriciaValues : Object[] = [
-        { Vegetable : "Onion",  Price : 2000 },
-        { Vegetable : "Potato", Price : 3000 },
-        { Vegetable : "Tomato", Price : 4000 },
-        { Vegetable : "Corn", Price : 2000 },
-        { Vegetable : "Carrot", Price : 3000 }
+        { Vegetable : new Date(2017, 0, 1),  Price : 2000 },
+        { Vegetable : new Date(2018, 0, 1), Price : 3000 },
+        { Vegetable : new Date(2019, 0, 1), Price : 4000 },
+        { Vegetable : new Date(2020, 0, 1), Price : 2000 },
+        { Vegetable : new Date(2021, 0, 1), Price : 3000 }
     ];
     public LindaValues : Object[] = [
-        { Vegetable : "Onion",  Price : 2000 },
-        { Vegetable : "Potato", Price : -1000 },
-        { Vegetable : "Tomato", Price : -3000 },
-        { Vegetable : "Corn", Price : 4000 },
-        { Vegetable : "Carrot", Price : 1000 }
+        { Vegetable : new Date(2017, 0, 1),  Price : 2000 },
+        { Vegetable : new Date(2018, 0, 1), Price : -1000 },
+        { Vegetable : new Date(2019, 0, 1), Price : -3000 },
+        { Vegetable : new Date(2020, 0, 1), Price : 4000 },
+        { Vegetable : new Date(2021, 0, 1), Price : 1000 }
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        valueType: 'Category',
+        valueType: 'DateTime',
         majorGridLines: { width: 0 },
-        majorTickLines: { width: 0 },
         edgeLabelPlacement: 'Shift',
-        axisLabelStyle:{fontStyle:'bold'}
+        minimum:new Date(2017, 0, 1), maximum: new Date(2021, 0, 1), intervalType: 'Years', labelFormat: 'y',
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

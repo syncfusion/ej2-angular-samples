@@ -4,6 +4,7 @@ import {
     AccumulationChart, IAccLoadedEventArgs, AccumulationTheme
 } from '@syncfusion/ej2-angular-charts';
 import { getElement, indexFinder } from '@syncfusion/ej2-charts';
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Sample for Drilldown in Pie chart
@@ -40,7 +41,7 @@ export class DrilldownPieComponent {
     };
     //Initializing Datalabel
     public dataLabel: Object = {
-        visible: true, position: 'Inside', connectorStyle: { type: 'Curve', length: '10%' }, font: {color: 'white', fontWeight:'600' }
+        visible: true, position: 'Inside', enableRotation : false, connectorStyle: { type: 'Curve', length: '10%' }, font: {color: 'white', fontWeight:'600' }
     };
     public explode: boolean = false;
     public content: string = '<div id= "white" style="cursor:pointer;padding:3px;width:30px; height:30px;"><img src="./assets/chart/images/white.png" id="back" /><div>';
@@ -86,8 +87,11 @@ export class DrilldownPieComponent {
                     document.getElementById('text').innerHTML = 'Minivan';
                     break;
             }
-            this.pie.series[0].dataLabel.position = 'Outside';
-            this.pie.series[0].dataLabel.font.color = this.pie.theme === 'HighContrast' ? 'white' : 'black';
+            this.pie.series[0].radius = Browser.isDevice ? '90%' : '80%';
+            this.pie.series[0].dataLabel.connectorStyle.length = '20px'
+            this.pie.series[0].dataLabel.position = Browser.isDevice ? 'Inside' : 'Outside';
+            this.pie.series[0].dataLabel.enableRotation = true;
+            this.pie.series[0].dataLabel.font.color = '';
             this.pie.legendSettings.visible = false;
             this.pie.visibleSeries[0].explodeIndex = null;
             this.pie.enableSmartLabels = true;

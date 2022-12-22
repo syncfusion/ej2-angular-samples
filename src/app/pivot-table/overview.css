@@ -1,0 +1,43 @@
+#PivotView {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media only screen and (max-width: 400px) {
+  #pivot-table-section {
+    overflow: auto;
+  }
+}
+
+.sb-sample-content-area {
+  min-height: 255px !important;
+}
+
+.control-section {
+  min-height: 255px !important;
+}
+
+#PivotViewcontainerwrapper {
+  height: auto !important;
+}
+
+.e-hyperlinkcell {
+  text-decoration: auto;
+}
+
+.e-hyperlinkcell:hover {
+  text-decoration: underline;
+}
+
+.university-logo {
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.urllink {
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-size: 12px;
+}

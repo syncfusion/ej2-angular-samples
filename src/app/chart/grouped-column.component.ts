@@ -27,7 +27,7 @@ export class GroupedColumnChartComponent {
     
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        valueType: 'Category', interval: 1, majorGridLines: { width: 0 }
+        valueType: 'Category', interval: 1, majorGridLines: { width: 0 }, majorTickLines: {width: 0}, minorTickLines: {width: 0}
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

@@ -78,23 +78,14 @@ export class ExternalDragDropComponent {
     return this.getConsultantName(value).toLowerCase();
   }
 
-  public onItemDrag(event: any): void {
+  public onTreeDrag(event: any): void {
     if (this.scheduleObj.isAdaptive) {
       const classElement: HTMLElement = this.scheduleObj.element.querySelector('.e-device-hover');
       if (classElement) {
         classElement.classList.remove('e-device-hover');
       }
-      if (event.event.target.classList.contains('e-work-cells')) {
-        addClass([event.event.target], 'e-device-hover');
-      }
-    }
-    if (document.body.style.cursor === 'not-allowed') {
-      document.body.style.cursor = '';
-    }
-    if (event.name === 'nodeDragging') {
-      const dragElementIcon: NodeListOf<HTMLElement> = document.querySelectorAll('.e-drag-item.treeview-external-drag .e-icon-expandable');
-      for (const icon of [].slice.call(dragElementIcon)) {
-        icon.style.display = 'none';
+      if (event.target.classList.contains('e-work-cells')) {
+        addClass([event.target], 'e-device-hover');
       }
     }
   }
@@ -109,6 +100,10 @@ export class ExternalDragDropComponent {
         remove(element);
       }
     }
+  }
+
+  public onItemSelecting(args: any): void {
+    args.cancel = true;
   }
 
   public onTreeDragStop(event: DragAndDropEventArgs): void {
@@ -142,6 +137,10 @@ export class ExternalDragDropComponent {
         }
       }
     }
+    document.body.classList.remove('e-disble-not-allowed');
+  }
+  public onTreeDragStart() {
+    document.body.classList.add('e-disble-not-allowed');
   }
 
 }

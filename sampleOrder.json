@@ -233,6 +233,15 @@
             "chips-api": "API"
         }
     },
+    "arc-gauge":{
+      "ControlName": "Arc Gauge",
+      "Samples": {
+            "default": "Default Functionalities",
+            "customer-satisfaction-score": "Customer Satisfaction Score",
+            "key-performance-indicator": "Key Performance Indicator",
+            "patterns": "Patterns"
+        }
+    },
     "circular-gauge": {
         "ControlName": "Circular Gauge",
         "Samples": {
@@ -838,6 +847,17 @@
             "rtl": "RTL"
         }
     },
+    "rating": {
+        "ControlName": "Rating",
+        "Samples": {
+            "default":"Default Functionalities",
+            "precision": "Precision",
+            "tooltip": "Tooltip",
+            "label": "Label",
+            "template": "Template",
+            "keyboard-navigation": "Keyboard Navigations"
+        }
+    },
     "rich-text-editor": {
         "ControlName": "Rich Text Editor",
         "Samples": {
@@ -1091,7 +1111,9 @@
         "Samples": {
             "default": "Default Functionalities",
             "popup": "Popup",
-            "alignment": "Alignment"
+            "alignment": "Alignment",
+            "template": "Template",
+            "keyboard-interaction": "Keyboard Interaction"
         }
     },
     "tooltip": {
@@ -1111,6 +1133,8 @@
         "Samples": {
             "treegrid-overview": "Overview",
             "default": "Default Functionalities",
+            "adaptive": "Adaptive",
+            "loading-animation": "Loading Animation",
             "localdata": "Local Data",
             "remotedata": "Remote Data",
             "selfreference": "Self Reference",

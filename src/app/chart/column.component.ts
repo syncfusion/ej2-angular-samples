@@ -27,7 +27,7 @@ export class ColumnChartComponent {
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        valueType: 'Category', interval: 1, majorGridLines: { width: 0 }, majorTickLines: { width: 0 }
+        labelIntersectAction: Browser.isDevice ? 'None' : 'Rotate45', labelRotation: Browser.isDevice ? -45 : 0 , edgeLabelPlacement: 'Shift',valueType: 'Category', interval: 1, majorGridLines: { width: 0 }, majorTickLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

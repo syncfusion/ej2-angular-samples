@@ -20,9 +20,9 @@ export class ParetoSeriesChartComponent {
     public width: string = Browser.isDevice ? '100%' : '75%';
 
     public data: Object[] = [
-        { x: 'Traffic', y: 56 }, { x: 'Child Care', y: 44.8 },
-        { x: 'Transport', y: 27.2 }, { x: 'Weather', y: 19.6 },
-        { x: 'Emergency', y: 6.6 }
+        { x: 'Button Defect', y: 56 }, { x: 'Pocket Defect', y: 44.8 },
+        { x: 'Coller Defect', y: 27.2 }, { x: 'Cuff Defect', y: 19.6 },
+        { x: 'Sleeve Defect', y: 6.6 }
     ];
     
     public marker: Object = {
@@ -33,16 +33,16 @@ export class ParetoSeriesChartComponent {
    
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Defects',
         interval: 1,
         valueType: 'Category',
         majorGridLines: { width: 0 }, minorGridLines: { width: 0 },
         majorTickLines: { width: 0 }, minorTickLines: { width: 0 },
         lineStyle: { width: 0 },
+        labelIntersectAction: 'Rotate45',
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Frequency',
+        title: 'Frequency of Occurence',
         minimum: 0,
         maximum: 150,
         interval: 30,
@@ -52,8 +52,8 @@ export class ParetoSeriesChartComponent {
     };
     public legend: Object = {
         visible: false
-    };
-    public title: string = 'Defect vs Frequency';
+    };  
+    public title: string = 'Pareto chart - Defects in Shirts';
     // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

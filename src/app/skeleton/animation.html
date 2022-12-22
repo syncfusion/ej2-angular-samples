@@ -12,9 +12,9 @@
                         <ejs-skeleton id="cardProfile" shape="Circle" width="60px" shimmerEffect="Fade"></ejs-skeleton>
                     </div>
                     <div class="cardinfo">
-                        <ejs-skeleton id="cardText1" width=30%; height="15px" shimmerEffect="Fade"></ejs-skeleton>
+                        <ejs-skeleton id="cardText1" width="30%" height="15px" shimmerEffect="Fade"></ejs-skeleton>
                         <br />
-                        <ejs-skeleton id="cardText2" width=15%; height="15px" shimmerEffect="Fade"></ejs-skeleton>
+                        <ejs-skeleton id="cardText2" width="15%" height="15px" shimmerEffect="Fade"></ejs-skeleton>
                     </div>
                     <div class="cardContent">
                         <ejs-skeleton id="cardContent" shape='Rectangle' width="100%" height="250px" shimmerEffect="Fade"></ejs-skeleton>
@@ -49,28 +49,30 @@
         <div class="col-sm-6">
             <h5>Pulse Effect</h5>
             <br />
-            <ul id="skeleton-list" *ngIf="isDataLoading; else pulseBlock" class="e-card">
-                <li *ngFor="let e of [].constructor(8); index as i">
-                    <ejs-skeleton id="listProfile{{i}}" class="listProfile" shape='Circle'  shimmerEffect="Pulse"> </ejs-skeleton>
-                    <div>
-                        <ejs-skeleton id="listCtn{{i}}" class="listCtn" width="80%"  shimmerEffect="Pulse"> </ejs-skeleton>
-                        <br />
-                        <ejs-skeleton id="desCtn{{i}}" class="distCtn" width="60%"  shimmerEffect="Pulse"> </ejs-skeleton>
-                    </div>
-                </li>
-            </ul>
-            <ng-template #pulseBlock>
-                <ejs-listview id='skeleton-listview' [dataSource]='listData'  cssClass='e-list-template e-card' sortOrder='Ascending' height='420px'>
-                    <ng-template #template let-data="">
-                        <div class="e-list-wrapper e-list-multi-line e-list-avatar">
-                            <span class="e-avatar e-avatar-circle" *ngIf="data.avatar !== ''">{{data.avatar}}</span>
-                            <span class="{{data.pic}} e-avatar e-avatar-circle" *ngIf="data.pic !== '' "> </span>
-                            <span class="e-list-item-header">{{data.text}}</span>
-                            <span class="e-list-content">{{data.contact}}</span>
+            <div class="skeleton-listcard e-card">
+                <ul id="skeleton-list" *ngIf="isDataLoading; else pulseBlock" class="e-card">
+                    <li *ngFor="let e of [].constructor(8); index as i">
+                        <ejs-skeleton id="listProfile{{i}}" class="listProfile" shape='Circle'  shimmerEffect="Pulse"> </ejs-skeleton>
+                        <div>
+                            <ejs-skeleton id="listCtn{{i}}" class="listCtn" width="80%"  shimmerEffect="Pulse"> </ejs-skeleton>
+                            <br />
+                            <ejs-skeleton id="desCtn{{i}}" class="distCtn" width="60%"  shimmerEffect="Pulse"> </ejs-skeleton>
                         </div>
-                    </ng-template>
-                </ejs-listview>
-            </ng-template>
+                    </li>
+                </ul>
+                <ng-template #pulseBlock>
+                    <ejs-listview id='skeleton-listview' [dataSource]='listData'  cssClass='e-list-template' sortOrder='Ascending' height='420px'>
+                        <ng-template #template let-data="">
+                            <div class="e-list-wrapper e-list-multi-line e-list-avatar">
+                                <span class="e-avatar e-avatar-circle" *ngIf="data.avatar !== ''">{{data.avatar}}</span>
+                                <span class="{{data.pic}} e-avatar e-avatar-circle" *ngIf="data.pic !== '' "> </span>
+                                <span class="e-list-item-header">{{data.text}}</span>
+                                <span class="e-list-content">{{data.contact}}</span>
+                            </div>
+                        </ng-template>
+                    </ejs-listview>
+                </ng-template>
+            </div>
         </div>
     </div>
 </div>

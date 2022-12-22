@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { AccumulationChart, AccumulationChartComponent, IAccLoadedEventArgs, IAccResizeEventArgs, AccumulationTheme } from '@syncfusion/ej2-angular-charts';
-
+import { Browser } from '@syncfusion/ej2-base';
 /**
  * Sample for Pyramid chart
  */
@@ -11,16 +11,17 @@ import { AccumulationChart, AccumulationChartComponent, IAccLoadedEventArgs, IAc
 })
 export class PyramidComponent {
     public data: Object[] = [
-        { Foods :  "Milk, Youghnut, Cheese", Calories : 435, DataLabelMappingName : "Milk, Youghnut, Cheese: 435 cal" },
+        { Foods :  "Milk, Youghnut, Cheese", Calories : 435, DataLabelMappingName : Browser.isDevice ? 'Milk, Youghnut,<br> Cheese:  435 cal' :  "Milk, Youghnut, Cheese: 435 cal" },
         { Foods :  "Vegetables", Calories : 470, DataLabelMappingName : "Vegetables: 470 cal" },
-        { Foods :  "Meat, Poultry, Fish", Calories : 475, DataLabelMappingName : "Meat, Poultry, Fish: 475 cal" },
-        { Foods :  "Fruits", Calories : 520, DataLabelMappingName : "Fruits: 520 cal" },
-        { Foods :  "Bread, Rice, Pasta", Calories : 930, DataLabelMappingName : "Bread, Rice, Pasta: 930 cal" },
+        { Foods :  "Meat, Poultry, Fish", Calories : 475, DataLabelMappingName : Browser.isDevice ? 'Meat, Poultry,<br> Fish: 475 cal' : "Meat, Poultry, Fish: 475 cal" },
+        { Foods :  "Rice, Pasta", Calories : 930, DataLabelMappingName : Browser.isDevice ? 'Rice, Pasta:<br> 930 cal' : "Rice, Pasta: 930 cal" },
+        { Foods :  "Fruits", Calories : 520, DataLabelMappingName : Browser.isDevice ? 'Fruits: <br> 520 cal' : "Fruits: 520 cal" },
     ];
     @ViewChild('pyramid')
     public pyramid: AccumulationChartComponent | AccumulationChart;
     public dataLabel: Object = {
-        name: 'DataLabelMappingName', visible: true, position: 'Outside', font: {
+        name: 'DataLabelMappingName', visible: true,   position: 'Outside',
+        connectorStyle: {length: '1%'}, font: {
             fontWeight: '600'
         }
     };

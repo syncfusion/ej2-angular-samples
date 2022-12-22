@@ -15,7 +15,7 @@ import { Browser } from '@syncfusion/ej2-base';
 export class RangeColorMappingComponent {
 
     public data1: Object[] = [
-        { x: "Jan", y: 6.96 },
+        { x: "Jan", y: 6 },
         { x: "Feb", y: 8.9 },
         { x: "Mar", y: 12 },
         { x: "Apr", y: 17.5 },
@@ -32,7 +32,8 @@ export class RangeColorMappingComponent {
 
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        valueType: 'Category', majorGridLines: { width: 0 }
+        valueType: 'Category', majorGridLines: { width: 0 }, majorTickLines: {width : 0},
+        minorTickLines: {width: 0}
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

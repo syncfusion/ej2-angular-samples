@@ -22,7 +22,8 @@ export class ErrorBarChartComponent {
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        valueType: 'Category', interval: 1, majorGridLines: { width: 0 }
+        valueType: 'Category', interval: 1, majorGridLines: { width: 0 }, majorTickLines: {width : 0},
+        minorTickLines: {width: 0},
     };
     public pointRender(args: IPointRenderEventArgs): void {
         let materialColors: string[] = ['#00bdae', '#404041', '#357cd2', '#e56590', '#f8b883', '#70ad47', '#dd8abd', '#7f84e8', '#7bb4eb',

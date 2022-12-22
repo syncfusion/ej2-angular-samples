@@ -49,6 +49,7 @@ import { GanttSplitTasksComponent } from './split-tasks.component';
 import { GanttVirtualScrollComponent } from './virtual-scroll.component';
 import { GanttTimezoneComponent } from './timezone.component';
 import { GanttCriticalPathComponent } from './critical-path.component'
+import { GanttLoadingAnimationComponent } from './loading-animation.component';
 
 export const GanttAppRoutes: Object[] = [
     {
@@ -59,12 +60,17 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/editing', component: GanttEditingComponent,
         description: 'This example demonstrates the cell editing, dialog editing, taskbar editing and dependency editing support in Gantt',
-        name: 'Editing', order: '01', category: 'Gantt', type: "update"
+        name: 'Editing', order: '01', category: 'Gantt'
     },
     {
         path: ':theme/gantt/virtual-scroll', component: GanttVirtualScrollComponent,
         description: 'This example illustrates binding large data and smooth scrolling with large data using the Virtual Scroll feature in the Syncfusion Gantt chart.',
-        name: 'Virtual Scrolling', order: '01', category: 'Gantt'
+        name: 'Virtual Scrolling', order: '01', category: 'Gantt', type: "update"
+    },
+    {
+        path: ':theme/gantt/loading-animation', component: GanttLoadingAnimationComponent,
+        description: 'This demo for Essential JS 2 gantt component shows the loading indicator when gantt loading, refreshing and performing other action.',
+        name: 'Loading Animation', order: '01', category: 'Gantt', type: "new"
     },
     {
         path: ':theme/gantt/local-data', component: GanttLocalDataComponent,
@@ -234,7 +240,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/filtering', component: GanttFilteringComponent,
         description: 'This example demonstrates the filtering support with filter menu option for various types of columns in Gantt',
-        name: 'Filtering', order: '09', category: 'Miscellaneous', type: "update"
+        name: 'Filtering', order: '09', category: 'Miscellaneous'
     },
     {
         path: ':theme/gantt/drag-and-drop', component: GanttDragAndDropComponent,
@@ -273,6 +279,7 @@ let declarations: Type<Object>[] = [
     GanttEventMarkersComponent,
     GanttResourcesComponent,
     GanttTaskModeComponent,
+    GanttLoadingAnimationComponent,
     GanttBaselineComponent,
     GanttEditingComponent,
     GanttContextMenuComponent,

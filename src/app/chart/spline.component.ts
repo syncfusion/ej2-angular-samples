@@ -59,7 +59,10 @@ export class SplineChartComponent {
     public primaryXAxis: Object = {
         valueType: 'Category',
         interval: 1, majorGridLines: { width: 0 },
-        labelIntersectAction: 'Rotate90'
+        labelIntersectAction: 'Rotate90',
+        majorTickLines: {width: 0},
+        minorTickLines: {width: 0}
+
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

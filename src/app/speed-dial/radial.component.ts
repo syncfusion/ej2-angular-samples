@@ -36,5 +36,6 @@ export class RadialSpeedDialComponent {
     ];
 
     public radialSetting:RadialSettingsModel = { offset: '70px' };
+    public radialSetting1:RadialSettingsModel = { offset: '110px' };
 
 }

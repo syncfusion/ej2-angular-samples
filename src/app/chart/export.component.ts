@@ -21,9 +21,10 @@ export class ExportChartComponent {
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Countries',
         valueType: 'Category',
-        majorGridLines: { width: 0 }
+        majorGridLines: { width: 0 },
+        majorTickLines: { width: 0 },
+        minorTickLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
@@ -32,7 +33,9 @@ export class ExportChartComponent {
         minimum: 0,
         maximum: 40,
         interval: 10,
-        majorGridLines: { width: 0 }
+        lineStyle: {width : 0},
+        minorTickLines: {width: 0},
+        majorTickLines: {width : 0},
     };
     //Initializing Marker
     public marker: Object = {

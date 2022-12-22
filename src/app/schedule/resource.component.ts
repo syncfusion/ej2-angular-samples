@@ -12,9 +12,7 @@ import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
   // tslint:disable-next-line:component-selector
   selector: 'control-content',
   templateUrl: 'resource.html',
-  /* custom code start*/
   styleUrls: ['resource.style.css'],
-  /* custom code end*/
   encapsulation: ViewEncapsulation.None,
   providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
 })

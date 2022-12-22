@@ -81,6 +81,8 @@ export class RemoteDataChartComponent {
         valueType: 'Category',
         title: 'Assignee',
         majorGridLines: { width: 0 },
+        majorTickLines: { width: 0 },
+        minorTickLines: { width: 0 }
     };
     //Initializing Marker
     public marker: Object = {

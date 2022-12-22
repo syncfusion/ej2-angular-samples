@@ -22,7 +22,8 @@ export class PlacementColumnChartComponent {
     
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        valueType: 'Category', interval: 1, majorGridLines: { width: 0 }
+        valueType: 'Category', interval: 1, majorGridLines: { width: 0 }, majorTickLines: {width : 0},
+                        minorTickLines: {width: 0},
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
@@ -30,7 +31,7 @@ export class PlacementColumnChartComponent {
         majorTickLines: { width: 0 }, lineStyle: { width: 0 },
     };
     public marker: Object = { dataLabel: { visible: true, position: 'Top', font: { fontWeight: '600', color: '#ffffff' } } };
-    public dataLebelMarker: Object = { dataLabel: { visible: true, name: 'DataLabelMappingName', position: 'Top', font: { fontWeight: '600', color: '#ffffff' } } }
+    public dataLebelMarker: Object = { dataLabel: { visible: true, name: 'DataLabelMappingName', position: Browser.isDevice ? 'Outer' : 'Top', font: { fontWeight: '600', color: Browser.isDevice ? '' : '#ffffff' } } }
     public title: string = 'Fruit Consumption';
     public tooltip: Object = {
         enable: true,

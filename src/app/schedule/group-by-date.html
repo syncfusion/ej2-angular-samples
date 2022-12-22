@@ -1,5 +1,7 @@
 <div class="control-section">
-  <ejs-schedule width='100%' height='650px' [group]="group" [selectedDate]="selectedDate"
+  <ejs-checkbox label="Hide non working days" [checked]="true" (change)="onChange($event)"></ejs-checkbox>
+  <br> <br>
+  <ejs-schedule #scheduleObj width='100%' height='650px' [group]="group" [selectedDate]="selectedDate"
     [eventSettings]="eventSettings">
     <e-views>
       <e-view option="Day"></e-view>
@@ -9,7 +11,7 @@
     </e-views>
     <e-resources>
       <e-resource field='TaskId' title='Assignee' name='Owners' [allowMultiple]='allowMultiple'
-        [dataSource]='resourceDataSource' textField='text' idField='id' colorField='color'>
+        [dataSource]='resourceDataSource' textField='text' idField='id' colorField='color' workDaysField= 'workDays'>
       </e-resource>
     </e-resources>
   </ejs-schedule>
@@ -20,9 +22,12 @@
 </div>
 
 <div id="description">
-  <p>
-    In this demo, there are 2 resources defined namely <strong>Alice</strong> and <strong>Smith</strong> under the
+  <p> In this demo, there are 2 resources defined namely <strong>Alice</strong> and <strong>Smith</strong> under the
     resource <code>dataSource</code>. The Scheduler can be switched to group by date, by setting <code>true</code> to
     the option <code>byDate</code> within the <code>group</code> property.
+  </p>
+  <p>
+    The different work days for the each resources are provided by using the <code>workDaysField</code> property and the Scheduler
+    will be displayed the provided dates alone when <code>hideNonWorkingDays</code> property set as <code>true</code>.
   </p>
 </div>

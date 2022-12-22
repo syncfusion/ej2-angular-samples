@@ -78,7 +78,7 @@ export class TrendLineChartComponent {
       border: { width : 0}
     };
     public tooltip: Object = {
-        enable: true
+        enable: false
     };
     public marker: object = {
         visible: false

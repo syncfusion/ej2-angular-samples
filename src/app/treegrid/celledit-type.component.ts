@@ -22,7 +22,7 @@ export class CellEditTypeComponent implements OnInit {
     public format: Object;
 
     ngOnInit(): void {
-        this.data = sampleData;
+        this.data = sampleData.slice(0);
         this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true , mode: 'Row' , newRowPosition: 'Below' };
         this.toolbar = ['Add', 'Edit', 'Delete' , 'Update' , 'Cancel'];
         this.pageSettings = { pageCount: 5 };

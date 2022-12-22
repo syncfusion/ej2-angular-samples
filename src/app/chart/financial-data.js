@@ -5433,4 +5433,527 @@ export var chartDataValue = [
         volume: 27939544
     }
 ];
+export var chartDataValues = [
+    {
+        x: new Date(+values[0]),
+        high: 10.6657,
+        low: 5.7685,
+        lineTemp: 7.5
+    },
+    {
+        x: new Date(+values[1]),
+        high: 12,
+        low: 6.2157,
+        lineTemp: 9.5
+    },
+    {
+        x: new Date(+values[2]),
+        high: 8.6071,
+        low: 1.4885,
+        lineTemp: 4.5
+    },
+    {
+        x: new Date(+values[3]),
+        high: 8.2857,
+        low: 1.2857,
+        lineTemp: 5.5
+    },
+    {
+        x: new Date(+values[4]),
+        high: 5.4857,
+        low: 0.7385,
+        lineTemp: 2.5
+    },
+    {
+        x: new Date(+values[5]),
+        high: 2.2685,
+        low: 1.8185,
+        lineTemp: 1.5
+    },
+    {
+        x: new Date(+values[6]),
+        high: 4.0728,
+        low: 1.5971,
+        lineTemp: 2.5
+    },
+    {
+        x: new Date(+values[7]),
+        high: 6.3571,
+        low: 2.2928,
+        lineTemp: 4.5
+    },
+    {
+        x: new Date(+values[8]),
+        high: 3.0714,
+        low: 0.0743
+    },
+    {
+        x: new Date(+values[9]),
+        high: 8.9405,
+        low: 2.3571,
+        lineTemp: 5.5
+    },
+    {
+        x: new Date(+values[10]),
+        high: 4.0714,
+        low: 0.9571,
+        lineTemp: 2.5
+    },
+    {
+        x: new Date(+values[11]),
+        high: 4.2857,
+        low: 1.4814,
+        lineTemp: 2.5
+    },
+    {
+        x: new Date(+values[12]),
+        high: 3.4285,
+        low: 0.8014,
+        lineTemp: 1.5
+    },
+    {
+        x: new Date(+values[13]),
+        high: 7.7628,
+        low: 3.3714,
+        lineTemp: 5.5
+    },
+    {
+        x: new Date(+values[14]),
+        high: 8.5528,
+        low: 4.6685,
+        lineTemp: 6.5
+    },
+    {
+        x: new Date(+values[15]),
+        high: 7.9071,
+        low: 6.1643,
+        lineTemp: 6.5
+    },
+    {
+        x: new Date(+values[16]),
+        high: 7.0971,
+        low: 1.4285,
+        lineTemp: 5.5
+    },
+    {
+        x: new Date(+values[17]),
+        high: 8.2828,
+        low: 3.9743,
+        lineTemp: 7.5
+    },
+    {
+        x: new Date(+values[18]),
+        high: 9.2857,
+        low: 7.8943,
+    },
+    {
+        x: new Date(+values[19]),
+        high: 12.5985,
+        low: 9.0357,
+    },
+    {
+        x: new Date(+values[20]),
+        high: 16.4114,
+        low: 12.5871,
+    },
+    {
+        x: new Date(+values[21]),
+        high: 17.2671,
+        low: 13.8928
+    },
+    {
+        x: new Date(+values[22]),
+        high: 17.4971,
+        low: 14.9285,
+    },
+    {
+        x: new Date(+values[23]),
+        high: 19.5685,
+        low: 13.7143,
+    },
+    {
+        x: new Date(+values[24]),
+        high: 20.7243,
+        low: 19.0885
+    },
+    {
+        x: new Date(+values[25]),
+        high: 19.3028,
+        low: 14.3357
+    },
+    {
+        x: new Date(+values[26]),
+        high: 16.6785,
+        low: 12.95,
+    },
+    {
+        x: new Date(+values[27]),
+        high: 12.5085,
+        low: 9.0785,
+    },
+    {
+        x: new Date(+values[28]),
+        high: 13.2557,
+        low: 7.0885
+    },
+    {
+        x: new Date(+values[29]),
+        high: 10.7685,
+        low: 4.4285,
+    },
+    {
+        x: new Date(+values[30]),
+        high: 6.1428,
+        low: 2.1071,
+    },
+    {
+        x: new Date(+values[31]),
+        high: 6.3914,
+        low: 4.2457
+    },
+    {
+        x: new Date(+values[32]),
+        high: 9.2143,
+        low: 2.25,
+    },
+    {
+        x: new Date(+values[33]),
+        high: 7.7143,
+        low: 1.1257,
+    },
+    {
+        x: new Date(+values[34]),
+        high: 4.8928,
+        low: 1.7514,
+    },
+    {
+        x: new Date(+values[35]),
+        high: 14.9414,
+        low: 4.09,
+    },
+    {
+        x: new Date(+values[36]),
+        high: 8.5085,
+        low: 2.2257,
+    },
+    {
+        x: new Date(+values[37]),
+        high: 6.4143,
+        low: 1.6043
+    },
+    {
+        x: new Date(+values[38]),
+        high: 4.8928,
+        low: 2.0943,
+    },
+    {
+        x: new Date(+values[39]),
+        high: 9.2857,
+        low: 2.7143
+    },
+    {
+        x: new Date(+values[40]),
+        high: 10.6657,
+        low: 5.7685
+    },
+    {
+        x: new Date(+values[41]),
+        high: 12,
+        low: 6.2157
+    },
+    {
+        x: new Date(+values[42]),
+        high: 8.6071,
+        low: 1.4885,
+    },
+    {
+        x: new Date(+values[43]),
+        high: 18.2857,
+        low: 9.2857
+    },
+    {
+        x: new Date(+values[44]),
+        high: 5.4857,
+        low: 0.7385,
+    },
+    {
+        x: new Date(+values[45]),
+        high: 12.2685,
+        low: 9.8185
+    },
+    {
+        x: new Date(+values[46]),
+        high: 11.0728,
+        low: 4.5971
+    },
+    {
+        x: new Date(+values[47]),
+        high: 12.3571,
+        low: 6.2928
+    },
+    {
+        x: new Date(+values[48]),
+        high: 3.0714,
+        low: 0.0743,
+    },
+    {
+        x: new Date(+values[49]),
+        high: 12.9405,
+        low: 8.3571,
+    },
+    {
+        x: new Date(+values[50]),
+        high: 4.0714,
+        low: 0.9571
+    },
+    {
+        x: new Date(+values[51]),
+        high: 4.2857,
+        low: 1.4814,
+    },
+    {
+        x: new Date(+values[52]),
+        high: 3.4285,
+        low: 0.8014,
+    },
+    {
+        x: new Date(+values[53]),
+        high: 7.7628,
+        low: 3.3714,
+    },
+    {
+        x: new Date(+values[54]),
+        high: 8.5528,
+        low: 4.6685,
+    },
+    {
+        x: new Date(+values[55]),
+        high: 7.9071,
+        low: 6.1643,
+    },
+    {
+        x: new Date(+values[56]),
+        high: 7.0971,
+        low: 1.4285,
+    },
+    {
+        x: new Date(+values[57]),
+        high: 8.2828,
+        low: 3.9743,
+    },
+    {
+        x: new Date(+values[58]),
+        high: 9.2857,
+        low: 7.8943,
+    },
+    {
+        x: new Date(+values[59]),
+        high: 12.5985,
+        low: 9.0357,
+    },
+    {
+        x: new Date(+values[60]),
+        high: 16.4114,
+        low: 12.5871,
+    },
+    {
+        x: new Date(+values[61]),
+        high: 17.2671,
+        low: 13.8928,
+    },
+    {
+        x: new Date(+values[62]),
+        high: 17.4971,
+        low: 14.9285,
+    },
+    {
+        x: new Date(+values[63]),
+        high: 19.5685,
+        low: 13.7143,
+    },
+    {
+        x: new Date(+values[64]),
+        high: 20.7243,
+        low: 19.0885,
+    },
+    {
+        x: new Date(+values[65]),
+        high: 19.3028,
+        low: 14.3357,
+    },
+    {
+        x: new Date(+values[66]),
+        high: 16.6785,
+        low: 12.95,
+    },
+    {
+        x: new Date(+values[67]),
+        high: 12.5085,
+        low: 19.0785,
+    },
+    {
+        x: new Date(+values[68]),
+        high: 13.2557,
+        low: 7.0885,
+    },
+    {
+        x: new Date(+values[69]),
+        high: 10.7685,
+        low: 4.4285,
+    },
+    {
+        x: new Date(+values[70]),
+        high: 6.1428,
+        low: 2.1071,
+    },
+    {
+        x: new Date(+values[71]),
+        high: 14.3914,
+        low: 6.2457,
+    },
+    {
+        x: new Date(+values[72]),
+        high: 9.2143,
+        low: 2.25,
+    },
+    {
+        x: new Date(+values[73]),
+        high: 11.7143,
+        low: 7.1257,
+    },
+    {
+        x: new Date(+values[74]),
+        high: 4.8928,
+        low: 1.7514,
+    },
+    {
+        x: new Date(+values[75]),
+        high: 10.9414,
+        low: 4.09,
+    },
+    {
+        x: new Date(+values[76]),
+        high: 8.5085,
+        low: 2.2257,
+    },
+    {
+        x: new Date(+values[77]),
+        high: 6.4143,
+        low: 1.6043,
+    },
+    {
+        x: new Date(+values[78]),
+        high: 4.8928,
+        low: 2.0943,
+    },
+    {
+        x: new Date(+values[79]),
+        high: 9.2857,
+        low: 2.7143,
+    },
+    {
+        x: new Date(+values[80]),
+        high: 5.9843,
+        low: 3.6,
+    },
+    {
+        x: new Date(+values[81]),
+        high: 12.9643,
+        low: 9.0543,
+    },
+    {
+        x: new Date(+values[82]),
+        high: 9.57,
+        low: 2.1428,
+    },
+    {
+        x: new Date(+values[83]),
+        high: 6.0857,
+        low: 2.2657,
+    },
+    {
+        x: new Date(+values[84]),
+        high: 8.4014,
+        low: 3.1428,
+    }, {
+        x: new Date(+values[85]),
+        high: 9.2143,
+        low: 2.25,
+    },
+    {
+        x: new Date(+values[86]),
+        high: 11.7143,
+        low: 7.1257,
+    },
+    {
+        x: new Date(+values[87]),
+        high: 4.8928,
+        low: 1.7514,
+    },
+    {
+        x: new Date(+values[88]),
+        high: 10.9414,
+        low: 4.09,
+    },
+    {
+        x: new Date(+values[89]),
+        high: 8.5085,
+        low: 2.2257,
+    },
+    {
+        x: new Date(+values[90]),
+        high: 6.4143,
+        low: 1.6043,
+    },
+    {
+        x: new Date(+values[91]),
+        high: 4.8928,
+        low: 2.0943,
+    },
+    {
+        x: new Date(+values[92]),
+        high: 9.2857,
+        low: 2.7143,
+    },
+    {
+        x: new Date(+values[93]),
+        high: 5.9843,
+        low: 3.6,
+    },
+    {
+        x: new Date(+values[94]),
+        high: 12.9643,
+        low: 9.0543,
+    },
+    {
+        x: new Date(+values[95]),
+        high: 9.57,
+        low: 2.1428,
+    },
+    {
+        x: new Date(+values[96]),
+        high: 6.0857,
+        low: 2.2657,
+    },
+    {
+        x: new Date(+values[97]),
+        high: 8.4014,
+        low: 3.1428,
+    },
+    {
+        x: new Date(+values[98]),
+        high: 9.2771,
+        low: 5.7028,
+    },
+    {
+        x: new Date(+values[99]),
+        high: 6.1043,
+        low: 3.26,
+    },
+    {
+        x: new Date(+values[100]),
+        high: 5.0171,
+        low: 1.4257,
+    },
+];
 //# sourceMappingURL=financial-data.js.map

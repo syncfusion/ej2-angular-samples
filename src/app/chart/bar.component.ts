@@ -39,7 +39,6 @@ export class BarChartComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'Category',
-        title: 'Country',
         majorGridLines: { width: 0 }
     };
     //Initializing Primary Y Axis

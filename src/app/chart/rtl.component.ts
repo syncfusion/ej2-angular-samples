@@ -25,7 +25,8 @@ export class RTLChartComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'Double', majorGridLines: { width: 0 },
-        minimum: 2015, maximum: 2020, interval: 1
+        minimum: 2015, maximum: 2020, interval: 1, majorTickLines: {width : 0},
+        minorTickLines: {width: 0}
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

@@ -1,0 +1,57 @@
+<div id="action-description">
+    <p>This sample shows the loading indicator while tree grid loading and refreshing especially when using remote data. In this sample, you can change the loading indicators from the properties panel.
+    </p>
+</div>
+<div class="control-section">
+    <div class="col-lg-9">
+        <ejs-treegrid #treegrid [dataSource]='data' height='400' idMapping='TaskID' parentIdMapping='parentItem' hasChildMapping='isParent' [treeColumnIndex]='1' allowPaging='true' allowSorting='true' [pageSettings]='pageSetting' [loadingIndicator]='loadingIndicator'>
+            <e-columns>
+                <e-column field='TaskID' headerText='Task ID' width='120' textAlign='Right'></e-column>
+                <e-column field='TaskName' headerText='Task Name' width='240'></e-column>
+                <e-column field='StartDate' headerText='Start Date' width='140' format="yMd" textAlign='Right'></e-column>
+                <e-column field='Duration' headerText='Duration' width='130' textAlign='Right'></e-column>
+                <e-column field='Progress' headerText='Progress' width='130'></e-column>
+            </e-columns>
+        </ejs-treegrid>
+    </div>
+    <div class="col-lg-2 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                    <tr style="height: 50px">
+                        <td style="width: 30%">
+                            <div>Indicator Type</div>
+                        </td>
+                        <td style="width: 50%;padding-right: 10px">
+                            <div id='columnddl'>
+                                <ejs-dropdownlist id='dropdown' width='120px' #dropdown index='0' [dataSource]='indicatortypes'
+                                (change)='indicatorChange($event)' [fields]='fields'></ejs-dropdownlist>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+    </div>
+</div>
+
+     <!-- custom code start -->
+     <style>
+        #control-container {
+            padding: 0px !important;
+        }
+    </style>
+    <!-- custom code end -->
+
+    <div id="description">
+        <p>
+            The Tree Grid has an option to show a loading indicator in-between the time of fetching the data and binding it to the tree grid during initial rendering or refreshing or after performing any tree grid action like sorting, filtering, and more.
+         </p>
+         <p>The Tree Grid supports the following loading indicator types. They are: </p>
+             <ul>
+                 <li><code>Spinner</code></li>
+                 <li><code>Shimmer</code></li>
+             </ul>
+         <p>Use the loading indicator by setting the <code><a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#loadingindicator">
+            loadingIndicator.indicatorType</a></code> property as <code>Spinner</code> or <code>Shimmer</code>. The default value of the indicatorType is <code>Spinner</code>. In this demo, the <code>Shimmer</code> type is initially enabled.
+         </p>
+    </div>

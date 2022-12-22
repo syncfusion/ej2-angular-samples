@@ -4,6 +4,10 @@
     padding: 1em;
 }
 
+.select-wrap .e-ddl.e-input-group .e-ddl-hidden {
+    width: 0;
+}
+
 .select-wrap select {
     height: 28px;
     width: 100%;
@@ -16,7 +20,7 @@
     border-color: #ff4081;
 }
 
-.select-wrap select, 
+.select-wrap select,
 .select-wrap select option {
     outline: none;
     font-size: 14px;

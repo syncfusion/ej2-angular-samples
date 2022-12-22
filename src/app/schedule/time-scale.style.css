@@ -1,0 +1,9 @@
+.time-scale.e-schedule.e-device .e-vertical-view .e-left-indent,
+.time-scale.e-schedule.e-device .e-vertical-view .e-time-cells-wrap {
+    width: 50px;
+}
+
+.time-scale.e-schedule .e-timeline-view .e-date-header-wrap table col, 
+.time-scale.e-schedule .e-timeline-view .e-content-wrap table col {
+    width: 75px;
+}

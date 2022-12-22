@@ -16,7 +16,7 @@ export class HistogramChartComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         majorGridLines: { width: 0 }, title: 'Score of Final Examination',
-        minimum: 0, maximum: 100
+        minimum: 0, maximum: 100, edgeLabelPlacement: 'Shift'
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

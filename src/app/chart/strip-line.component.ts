@@ -60,7 +60,9 @@ export class StripLineChartComponent {
     public primaryXAxis: Object = {
         valueType: 'Category', majorGridLines: { width: 0 },
         //Initializing Striplines
-        stripLines: xAxisStripLine
+        stripLines: xAxisStripLine,
+        majorTickLines: {width : 0},
+        minorTickLines: {width: 0}
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

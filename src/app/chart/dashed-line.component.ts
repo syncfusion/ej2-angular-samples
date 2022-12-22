@@ -33,7 +33,12 @@ export class DashedLineChartComponent {
     public primaryXAxis: Object = {
         valueType: 'Category',
         edgeLabelPlacement: 'Shift',
-        majorGridLines: { width: 0 }
+        majorGridLines: { width: 0 },
+        interval: 1,
+        labelIntersectAction: Browser.isDevice ? 'None' : 'Trim',
+        labelRotation: Browser.isDevice ? -45 : 0,
+        majorTickLines: { width: 0 },
+        minorTickLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

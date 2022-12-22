@@ -284,7 +284,13 @@
             "goToFirstPage": "Gehen Sie zur ersten Seite",
             "goToPreviousPage": "Zurück zur letzten Seite",
             "goToNextPage": "Gehen Sie zur nächsten Seite",
-            "goToLastPage": "Gehen Sie zur letzten Seite"
+            "goToLastPage": "Gehen Sie zur letzten Seite",
+            "stackingline": "Gestapelte Linie",
+            "stackingline100": "100 % gestapelte Linie",
+            "combined": "Kombiniert",
+            "None": "Keiner",
+            "subTotalPosition": "Zwischensummenposition",
+            "auto": "Auto"
         },
         "pivotfieldlist": {
             "all": "alles",
@@ -451,7 +457,8 @@
             "numberFormatString": "Beispiel: C, P, 0000 %, ###0.##0#, etc.",
             "removeCalculatedField": "Möchten Sie dieses berechnete Feld wirklich löschen?",
             "yes": "Ja",
-            "no": "Nein"
+            "no": "Nein",
+            "None": "Keiner"
         }
     },
     "ar": {
@@ -739,7 +746,13 @@
             "goToFirstPage": "اذهب الى الصفحة الاولى",
             "goToPreviousPage": "الانتقال إلى الصفحة السابقة",
             "goToNextPage": "انتقل إلى الصفحة التالية",
-            "goToLastPage": "اذهب إلى الصفحة الأخيرة"
+            "goToLastPage": "اذهب إلى الصفحة الأخيرة",
+            "stackingline": "خط مكدس",
+            "stackingline100": "خط مكدس بنسبة 100٪",
+            "combined": "مجموع",
+            "None": "لا أحد",
+            "subTotalPosition": "موضع المجاميع الفرعية",
+            "auto": "تلقاءي"
         },
         "pivotfieldlist": {
             "all": "الكل",
@@ -905,7 +918,8 @@
             "numberFormatString": "مثال: C, P, 0000 %, ###0.##0#, إلخ",
             "removeCalculatedField": "هل أنت متأكد أنك تريد حذف هذا الحقل المحسوب؟",
             "yes": "نعم",
-            "no": "لا"
+            "no": "لا",
+            "None": "لا أحد"
         }
     },
     "en": {
@@ -1193,7 +1207,13 @@
             "goToFirstPage": "Go to first page",
             "goToPreviousPage": "Go to previous page",
             "goToNextPage": "Go to next page",
-            "goToLastPage": "Go to last page"
+            "goToLastPage": "Go to last page",
+            "stackingline": "Stacked Line",
+            "stackingline100": "100% Stacked Line",
+            "combined": "Combined",
+            "None": "None",
+            "subTotalPosition": "Subtotals position",
+            "auto": "Auto"
         },
         "pivotfieldlist": {
             "all": "All",
@@ -1359,7 +1379,8 @@
             "numberFormatString": "Example: C, P, 0000 %, ###0.##0#, etc.",
             "removeCalculatedField": "Are you sure you want to delete this calculated field?",
             "yes": "Yes",
-            "no": "No"
+            "no": "No",
+            "None": "None"
         }
     },
     "zh": {
@@ -1647,7 +1668,13 @@
             "goToFirstPage": "转到第一页",
             "goToPreviousPage": "转到上一页",
             "goToNextPage": "转到下一页",
-            "goToLastPage": "转到最后一页"
+            "goToLastPage": "转到最后一页",
+            "stackingline": "堆積線",
+            "stackingline100": "100% 堆疊線",
+            "combined": "聯合",
+            "None": "沒有任何",
+            "subTotalPosition": "小計位置",
+            "auto": "汽車"
         },
         "pivotfieldlist": {
             "all": "所有",
@@ -1813,7 +1840,8 @@
             "numberFormatString": "例: C, P, 0000 %, ###0.##0#, 等等",
             "removeCalculatedField": "您确定要删除此计算字段吗？",
             "yes": "是的",
-            "no": "不"
+            "no": "不",
+            "None": "沒有任何"
         }
     },
     "fr-CH": {
@@ -2101,7 +2129,13 @@
             "goToFirstPage": "Aller à la première page",
             "goToPreviousPage": "Aller à la page précédente",
             "goToNextPage": "Aller à la page suivante",
-            "goToLastPage": "Aller à la dernière page"
+            "goToLastPage": "Aller à la dernière page",
+            "stackingline": "Ligne empilée",
+            "stackingline100": "Ligne empilée à 100 %",
+            "combined": "Combinée",
+            "None": "Aucune",
+            "subTotalPosition": "Position des sous-totaux",
+            "auto": "Auto"
         },
         "pivotfieldlist": {
             "all": "tout",
@@ -2267,7 +2301,8 @@
             "numberFormatString": "Exemple: C, P, 0000 %, ###0.##0#, etc.",
             "removeCalculatedField": "Voulez-vous vraiment supprimer ce champ calculé?",
             "yes": "Oui",
-            "no": "Non"
+            "no": "Non",
+            "None": "Rien"
         }
     }
 }

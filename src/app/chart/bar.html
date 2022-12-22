@@ -9,7 +9,7 @@
             [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Bar' xName='Country' yName='GDP' name='GDP' [marker]='marker' columnSpacing=0.1> </e-series>
-                <e-series [dataSource]='data' type='Bar' xName='Country' yName='WorldShare' name='Share in Worlds GDP' columnSpacing=0.1 [marker]='marker'> </e-series>
+                <e-series [dataSource]='data' type='Bar' xName='Country' yName='WorldShare' name="Share in World's GDP" columnSpacing=0.1 [marker]='marker'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>

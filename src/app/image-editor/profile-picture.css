@@ -36,15 +36,11 @@ ejs-imageeditor {
 	font-size: 28px;
 	color: white;
 	left: 5px;
-	top: -2px;
+	top: 7px;
 	position: absolute;
 }
 
 #custom-edit:hover {
-	cursor: pointer;
-}
-
-canvas#img-canvas:hover {
 	cursor: pointer;
 }
 

@@ -30,7 +30,9 @@ export class DateTimeCategoryAxisChartComponent {
             { visible: true, start: new Date(2017, 11, 20), end: new Date(2017, 11, 27), color: 'skyblue', opacity: 0.5, },
             { visible: true, start: new Date(2018, 0, 2), end: new Date(2018, 0, 8), color: 'pink', opacity: 0.5 },
         ],
-        title: 'Business Days'
+        title: 'Business Days',
+        labelIntersectAction: Browser.isDevice ? 'None' : 'Rotate45',
+        labelRotation: Browser.isDevice ? -45 : 0
     };
     //Initializing Primary X Axis
     public primaryYAxis: Object = {

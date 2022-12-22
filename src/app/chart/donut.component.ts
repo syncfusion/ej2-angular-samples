@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { AccumulationChartComponent, AccumulationChart, AccumulationDataLabel, IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-angular-charts';
-
+import { Browser } from '@syncfusion/ej2-base';
 /**
  * Sample for doughnut 
  */
@@ -10,7 +10,12 @@ import { AccumulationChartComponent, AccumulationChart, AccumulationDataLabel, I
     encapsulation: ViewEncapsulation.None
 })
 export class DonutComponent {
-    public data: Object[] = [{ Browser : "Chrome", Users : 59.28, DataLabelMappingName : "  Chrome: 59.28%"},
+    public data: Object[] = Browser.isDevice ? [
+     { Browser : "Chrome", Users : 59.28, DataLabelMappingName : "Chrome: 59.28%"},
+     { Browser : "Safari", Users : 4.73, DataLabelMappingName : Browser.isDevice ? 'Safari <br> 5.73%'  : "Safari: 4.73%"},
+     { Browser : "Opera", Users : 6.12, DataLabelMappingName : "Opera: 6.12%"}, 
+     { Browser : "Edge", Users : 7.48, DataLabelMappingName : "Edge: 7.48%"},
+    { Browser : "Others", Users : 22.41, DataLabelMappingName : "Others: 22.41%"},] : [{ Browser : "Chrome", Users : 59.28, DataLabelMappingName : "  Chrome: 59.28%"},
     { Browser : "UC Browser", Users : 4.37, DataLabelMappingName : "  UC Browser: 4.37%"},
     { Browser : "Opera", Users : 3.12, DataLabelMappingName : "  Opera: 3.12%"},
     { Browser : "Sogou Explorer", Users : 1.73, DataLabelMappingName : "  Sogou Explorer: 1.73%"},
@@ -35,7 +40,8 @@ export class DonutComponent {
         connectorStyle: { 
             length: '20px',
             type: 'Curve'
-         }
+         },
+         
     };
      // custom code start
     public load(args: IAccLoadedEventArgs): void {
@@ -44,8 +50,8 @@ export class DonutComponent {
         args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
      // custom code end
-    public startAngle: number = 0;
-    public endAngle: number = 360;
+    public radius: string = Browser.isDevice ? '40%' : '75%'
+    public startAngle: number = Browser.isDevice ? 62 : 0 ;
     public tooltip: Object = {
         enable: true,
         header: '',

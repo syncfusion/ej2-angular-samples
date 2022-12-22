@@ -33,10 +33,12 @@ export class SplineAreaChartComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
-        labelFormat: 'yyyy',
+        labelFormat: 'y',
         majorGridLines: { width: 0 },
         intervalType: 'Years',
-        edgeLabelPlacement: 'Shift'
+        edgeLabelPlacement: 'Shift',
+        minimum: new Date(2001, 0, 1),
+        maximum: new Date(2012, 0, 1)
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

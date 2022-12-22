@@ -20,7 +20,7 @@ export class CommandColumnComponent implements OnInit {
     public pageSettings: Object;
 
     ngOnInit(): void {
-        this.data = sampleData;
+        this.data = sampleData.slice(0);
         this.editSettings = {
             allowAdding: true,
             allowEditing: true,

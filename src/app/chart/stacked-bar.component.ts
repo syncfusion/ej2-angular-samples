@@ -29,7 +29,6 @@ export class StackedBarChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Sales (In Percentage)',
         lineStyle: { width: 0},
         majorTickLines: {width: 0},
         labelFormat: '{value}%',

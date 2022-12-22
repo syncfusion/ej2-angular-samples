@@ -25,6 +25,9 @@
     margin: 30px auto;
     padding-top: 50px;
 }
+.e-bigger .e-inplaceeditor .e-editable-value-wrapper .e-editable-value{
+    margin-right: -3px;
+}
 @media (max-width: 768px) {
     .inplace-control-section.pickers-layout {
         padding-left: 0;

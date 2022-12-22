@@ -4,6 +4,7 @@ import {
     IAccPointRenderEventArgs, IAccLoadedEventArgs, AccumulationTheme
 } from '@syncfusion/ej2-angular-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Sample for groping in pie chart
@@ -15,15 +16,15 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 })
 export class GroupingPieComponent {
     public data: Object[] = [
-        { 'x': 'China', y: 26, text: 'China: 26' },
+        { 'x': 'Australia', y: 26, text: 'Australia: 8' },
         { 'x': 'Russia', y: 19, text: 'Russia: 19' },
-        { 'x': 'Germany', y: 17, text: 'Germany: 17' },
-        { 'x': 'Japan', y: 12, text: 'Japan: 12' },
+        { 'x': 'Japan', y: 17, text: 'Japan: 12' },
+        { 'x': 'Germany', y: 12, text: 'Germany: 17' },
         { 'x': 'France', y: 10, text: 'France: 10' },
         { 'x': 'South Korea', y: 9, text: 'South Korea: 9' },
         { 'x': 'Great Britain', y: 27, text: 'Great Britain: 27' },
         { 'x': 'Italy', y: 8, text: 'Italy: 8' },
-        { 'x': 'Australia', y: 8, text: 'Australia: 8' },
+        { 'x': 'China', y: 8, text: 'China: 26' },
         { 'x': 'Netherlands', y: 8, text: 'Netherlands: 8' },
         { 'x': 'Hungary', y: 8, text: 'Hungary: 8' },
         { 'x': 'Brazil', y: 7, text: 'Brazil: 7' },
@@ -40,6 +41,7 @@ export class GroupingPieComponent {
             args.fill = '#D3D3D3';
         }
     }
+    public radius: string = Browser.isDevice ? '40%' : '70%';
     public explode: boolean = true;
     //Initializing Legend
     public legendSettings: Object = {
@@ -49,9 +51,9 @@ export class GroupingPieComponent {
     public dataLabel: Object = {
         visible: true,
         position: 'Outside',
-        connectorStyle: { type: 'Line', length: '5%' },
+        connectorStyle: { type: 'Curve', length: '20px' },
         font: {
-            size: '14px',
+            size: '11px' ,
             fontWeight: '600'
         }
     };

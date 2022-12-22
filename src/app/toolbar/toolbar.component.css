@@ -262,7 +262,6 @@
 
 .e-tbar-section .e-sample-resize-container {
     margin: auto;
-    height: 40px;
     max-width: 700px;
 }
 
@@ -278,4 +277,24 @@
 .key-class {
     display: inline-block;
     width: 130px;
+}
+
+.template.e-toolbar .total-page {
+    padding-left: 4px;
+    cursor: default;
+    font-size:14px;
+    vertical-align: middle;
+}
+
+.template.e-toolbar .e-toolbar-pop .page-count,
+.template.e-toolbar .e-toolbar-pop .selection-tool,
+.template.e-toolbar .e-toolbar-pop .pan-mode,    
+.template.e-toolbar .e-toolbar-pop .percentage,
+.template.e-toolbar .e-toolbar-pop .find {
+    display: none;
+}
+
+.template.e-toolbar .e-toolbar-items .e-toolbar-item:not(.e-separator) {
+    padding-left: 2px;
+    line-height: 1;
 }

@@ -26,7 +26,7 @@
                         </td>
                         <td>
                             <div id='frozeninput'>
-                                <ejs-numerictextbox #rows min="0" max="5" format="n" value="2"></ejs-numerictextbox>
+                                <ejs-numerictextbox #rows min="0" max="5" [validateDecimalOnType]='true' decimals='0' format='n' value="2"></ejs-numerictextbox>
                             </div>
                         </td>
                     </tr>
@@ -36,7 +36,7 @@
                         </td>
                         <td>
                             <div id='frozeninput'>
-                                  <ejs-numerictextbox #columns min="0" [max]="columnValue" format="n" value="1"></ejs-numerictextbox>
+                                  <ejs-numerictextbox #columns min="0" [max]="columnValue" [validateDecimalOnType]='true' decimals='0' format='n' value="1"></ejs-numerictextbox>
                             </div>
                         </td>
                     </tr>
@@ -61,7 +61,7 @@
         </p>
         <p>
         In this demo sample, the first column and two rows are set to frozen by using the  <code><a target="_blank" class="code"
-        href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#frozenrows-number">frozenRows</a></code>  and 
+        href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#frozenrows-number">frozenRows</a></code>  and
         <code><a target="_blank" class="code" href="http://ej2.syncfusion.com/documentation/grid/api-gridComponent.html#frozenrows-number">frozenColumns
         </a></code>  properties.
     </p>
@@ -72,7 +72,7 @@
     </p>
     </div>
 </div>
-<style>  
+<style>
     #buttonSet {
         float: right;
     }

@@ -29,7 +29,8 @@ export class DirectoryUploadController {
     //DropDownButton items definition
     public items: ItemModel[] = [{ text: 'Folder' }, { text: 'Files' }];
 
-  onCreated(args: any) {
+  onSuccess(args: any) {
+    if (!document.getElementById("file_tb_upload").classList.contains("e-dropdown-btn")) {
     let customBtn: HTMLElement = document.getElementById('file_tb_upload');
     customBtn.onclick = (e) => {
       e.stopPropagation();
@@ -53,5 +54,6 @@ export class DirectoryUploadController {
       },
       '#file_tb_upload'
     );
+    }
   }
 }

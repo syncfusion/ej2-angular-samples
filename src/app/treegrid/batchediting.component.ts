@@ -20,7 +20,7 @@ export class BatchEditingComponent implements OnInit {
      @ViewChild('treegrid')
      public treegrid: TreeGridComponent;
     ngOnInit(): void {
-        this.data = sampleData;
+        this.data = sampleData.slice(0);
         this.editSettings ={ allowEditing: true, allowAdding: true, allowDeleting: true, mode:"Batch", newRowPosition: 'Below'}; 
         this.toolbar = ['Add', 'Delete', 'Update', 'Cancel'];
         this.taskidrules = { required: true , number: true};

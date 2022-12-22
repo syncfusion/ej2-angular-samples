@@ -54,21 +54,24 @@ export class RangeSelectionChartComponent {
     public primaryXAxis: Object = {
         minimum: 1970,
         maximum: 2016,
-        majorGridLines: { width: 0 }
+        majorGridLines: { width: 0 },
+        majorTickLines: {width : 0},
+        minorTickLines: {width: 0}
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Sales',
         labelFormat: '{value}%',
         interval: 25,
         minimum: 0,
         maximum: 100,
-        majorGridLines: { width: 0 }
-    };
-    public legend: Object = {
-        visible: true,
-        toggleVisibility: false
-    };
+        lineStyle: { width: 0 },
+        majorTickLines: { width: 0 },
+        minorTickLines: { width: 0 },
+    }
+
+    public legendSettings : Object = {
+       visible: true, toggleVisibility: false 
+    }
    // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

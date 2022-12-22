@@ -6,7 +6,7 @@
       </div>
       <ejs-schedule #scheduleObj cssClass='schedule-drag-drop' width='100%' height='650px' [group]="group"
         [currentView]="currentView" [selectedDate]="selectedDate" [workHours]="workHours"
-        [eventSettings]="eventSettings" (actionBegin)="onActionBegin($event)" (drag)="onItemDrag($event)">
+        [eventSettings]="eventSettings" (actionBegin)="onActionBegin($event)">
         <e-resources>
           <e-resource field='DepartmentID' title='Department' name='Departments' [dataSource]='departmentDataSource'
             textField='Text' idField='Id' colorField='Color'>
@@ -37,8 +37,8 @@
         <h1 class="title-text">Waiting List</h1>
       </div>
       <ejs-treeview #treeObj [fields]='field' cssClass='treeview-external-drag' dragArea=".drag-sample-wrapper"
-        [allowDragAndDrop]='allowDragAndDrop' (nodeDragStop)="onTreeDragStop($event)"
-        (nodeDragging)="onItemDrag($event)">
+        [allowDragAndDrop]='allowDragAndDrop' (nodeDragStop)="onTreeDragStop($event)" (nodeDragStart)="onTreeDragStart()"
+        (nodeDragging)="onTreeDrag($event)" (nodeSelecting)="onItemSelecting($event)">
         <ng-template #nodeTemplate let-data>
           <div id="waiting">
             <div id="waitdetails">

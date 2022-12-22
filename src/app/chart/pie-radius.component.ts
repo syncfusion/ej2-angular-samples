@@ -2,6 +2,7 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
     AccumulationChart, AccumulationChartComponent, IAccLoadedEventArgs, AccumulationTheme
 } from '@syncfusion/ej2-angular-charts';
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Sample for Pie with Various Radius
@@ -13,13 +14,13 @@ import {
 })
 export class PieRadiusComponent {
     public data: Object[] = [
-        { Country : " Argentina", Population : 505370, Radius : "100"},
-        { Country : " Belgium",    Population : 551500, Radius : "118.7"},
-        { Country : " Cuba",  Population : 312685 , Radius : "124.6"},
-        { Country : " Dominican Republic", Population : 350000 , Radius : "137.5"},
-        { Country : " Egypt", Population : 301000 , Radius : "150.8"},
-        { Country : " Kazakhstan", Population : 300000, Radius : "155.5"},
-        { Country : " Somalia",  Population : 357022, Radius : "160.6"}
+        { Country : "Argentina", Population : 505370, Radius : Browser.isDevice ? '110' : "100", text: 'Argentina'},
+        { Country : "Belgium",    Population : 551500, Radius : Browser.isDevice ? '120' :"118.7", text: 'Belgium' },
+        { Country : "Dominican Republic",  Population : 312685 , Radius : '137.5', text: Browser.isDevice ? 'Dominican <br> Republic' :  'Dominican Republic' },
+        { Country : "Cuba", Population : 350000 , Radius : '124.6', text: 'Cuba'},
+        { Country : "Egypt", Population : 301000 , Radius : "150.8", text: 'Egypt'},
+        { Country : "Kazakhstan", Population : 300000, Radius : "155.5",text: 'Kazakhstan'},
+        { Country : "Somalia",  Population : 357022, Radius : "160.6", text: 'Somalia'}
     ];
     @ViewChild('pie')
     public pie: AccumulationChartComponent | AccumulationChart;
@@ -30,12 +31,13 @@ export class PieRadiusComponent {
     };
     //Initializing Datalabel
     public dataLabel: Object = {
-        visible: true, position: 'Outside',
-        name: 'Country',
+        visible: true, position: Browser.isDevice ? 'Inside' : 'Outside',
+        name: 'text',
         connectorStyle: { length: '20px', type:'Curve' },
         font: {
             fontWeight: '600'
         },
+        enableRotation: true,
     };
       // custom code start
     public load(args: IAccLoadedEventArgs): void {

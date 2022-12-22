@@ -6,7 +6,7 @@
 <div class="control-section">
         <ejs-accumulationchart id="container" #pie style='display:block;  width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='load($event)' [enableAnimation]= 'enableAnimation' [enableBorderOnMouseMove]='false'>
             <e-accumulation-series-collection>
-                <e-accumulation-series name='Browser' [dataSource]='data' xName='Browser' yName='Users' [startAngle]='startAngle' innerRadius="0%" radius="60%" [dataLabel]="dataLabel" [explode]='explode' explodeOffset='10%' [explodeIndex]='0'>
+                <e-accumulation-series name='Browser' [dataSource]='data' xName='Browser' yName='Users' [startAngle]='startAngle' innerRadius="0%" [radius]="radius" [dataLabel]="dataLabel" [explode]='explode' explodeOffset='10%' [explodeIndex]='0'>
                 </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>

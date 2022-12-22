@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, FieldListService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { MultiSelect, SelectEventArgs, RemoveEventArgs, PopupEventArgs } from '@syncfusion/ej2-dropdowns';
+import { DropDownList, ChangeEventArgs, MultiSelect, SelectEventArgs, RemoveEventArgs, PopupEventArgs } from '@syncfusion/ej2-dropdowns';
 import { CheckBoxSelection } from '@syncfusion/ej2-dropdowns';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
@@ -23,6 +23,7 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
 export class SummaryCustomizationComponent implements OnInit {
     public dataSourceSettings: IDataOptions;
     public gridSettings: GridSettings;
+    public optionsdll: DropDownList;
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
@@ -46,7 +47,8 @@ export class SummaryCustomizationComponent implements OnInit {
             } else if (args.value === 'Both') {
                 this.pivotObj.dataSourceSettings.showGrandTotals = false;
             }
-        }       
+        }  
+        this.pivotObj.refreshData();     
     }
 
     onChange1(args: any) {
@@ -58,6 +60,42 @@ export class SummaryCustomizationComponent implements OnInit {
             this.pivotObj.setProperties({ dataSourceSettings: { grandTotalsPosition: 'Top' } }, true);
             this.pivotObj.dataSourceSettings.grandTotalsPosition = 'Bottom';
         }
+        this.pivotObj.refreshData();
+    }
+
+    onChange2(args: any) {
+        if (args.value === 'None') {
+            this.pivotObj.setProperties({ dataSourceSettings: { showSubTotals: false } }, true);
+            this.pivotObj.setProperties({ dataSourceSettings: { showRowSubTotals: true } }, true);
+            this.pivotObj.setProperties({ dataSourceSettings: { showColumnSubTotals: true } }, true);
+            this.pivotObj.dataSourceSettings.showSubTotals = true;
+        }
+        else {
+            this.pivotObj.setProperties({ dataSourceSettings: { showSubTotals: true } }, true);
+            this.pivotObj.setProperties({ dataSourceSettings: { showRowSubTotals: true } }, true);
+            this.pivotObj.setProperties({ dataSourceSettings: { showColumnSubTotals: true } }, true);
+            if (args.value === 'Column') {
+                this.pivotObj.dataSourceSettings.showColumnSubTotals = false;
+            } else if (args.value === 'Row') {
+                this.pivotObj.dataSourceSettings.showRowSubTotals = false;
+            } else if (args.value === 'Both') {
+                this.pivotObj.dataSourceSettings.showSubTotals = false;
+            }
+        }
+        this.pivotObj.refreshData();
+    }
+
+    onChange3(args: any) {
+        if (args.value === 'Top') {
+            this.pivotObj.setProperties({ dataSourceSettings: { subTotalsPosition: 'Top' } }, true);
+        }
+        else if(args.value === 'Bottom') {
+            this.pivotObj.setProperties({ dataSourceSettings: { subTotalsPosition: 'Bottom' } }, true);
+        }
+        else if(args.value === 'Auto') {
+            this.pivotObj.setProperties({ dataSourceSettings: { subTotalsPosition: 'Auto' } }, true);
+        }
+        this.pivotObj.refreshData();
     }
 
     ngOnInit(): void {
@@ -105,6 +143,7 @@ export class SummaryCustomizationComponent implements OnInit {
                         this.pivotObj.dataSourceSettings.rows[i].showSubTotals = false;
                     }
                 }
+                this.pivotObj.refreshData();
             },
             removed: (args: RemoveEventArgs): void => {
                 for (let i: number = 0; i < this.pivotObj.dataSourceSettings.columns.length; i++) {
@@ -117,12 +156,34 @@ export class SummaryCustomizationComponent implements OnInit {
                         this.pivotObj.dataSourceSettings.rows[i].showSubTotals = true;
                     }
                 }
+                this.pivotObj.refreshData();
             },
             open: (args: PopupEventArgs): void => {
                 (args.popup.element.querySelector(".e-filter-parent") as HTMLElement).style.display = 'none';
             }
         });
-        valuesddl.appendTo('#values');
+        valuesddl.appendTo('#summary-values');
 
+        let options: { [key: string]: Object; }[] = [
+            { value: 'grandTotals', text: 'Grand Totals' },
+            { value: 'subTotals', text: 'Sub-totals' }
+        ];
+
+        this.optionsdll = new DropDownList({
+            dataSource: options,
+            fields: { value: 'value', text: 'text' },
+            value: 'grandTotals',
+            width: '100%',
+            change: (args: ChangeEventArgs) => {
+                (document.getElementById('grandsum') as HTMLElement).style.display = 'none';
+                (document.getElementById('subsum') as HTMLElement).style.display = 'none';
+                if (args.value == 'grandTotals') {
+                    (document.getElementById('grandsum') as HTMLElement).style.display = '';
+                } else if (args.value == 'subTotals') {
+                    (document.getElementById('subsum') as HTMLElement).style.display = '';
+                }
+            }
+        });
+        this.optionsdll.appendTo('#options');
     }
 }

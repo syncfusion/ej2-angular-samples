@@ -4,7 +4,7 @@
     </p>
 </div>
 <div class="control-section">
-        <div align='center'>
+        <div class="trackball-control-section" align='center'>
             <ejs-chart style='display:block;' [width]='width' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
                 [title]='title' [tooltip]='tooltip' [legendSettings]='legend' (load)='load($event)' (pointRender)='pointRender($event)'>
                 <e-series-collection>
@@ -32,7 +32,7 @@
         </p>   
 </div>
 <style>
-    ellipse[id*=_Trackball_0] {
+    .trackball-control-section ellipse[id*=_Trackball_0] {
         stroke-width: 1 !important;
     }  
 </style>

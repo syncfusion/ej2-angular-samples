@@ -36,7 +36,7 @@ export class StackedAreaChartComponent {
         intervalType: 'Years',
         majorGridLines: { width: 0 },
         labelFormat: 'y',
-        edgeLabelPlacement: 'Shift'
+        edgeLabelPlacement: 'Shift', labelIntersectAction: Browser.isDevice ? 'None' : 'Rotate45'
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
@@ -68,7 +68,7 @@ export class StackedAreaChartComponent {
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
      // custom code end
-    public title: string = 'Amount of Sales by Payment Method';
+    public title: string = 'Amount of Sales by Payment Mode';
     constructor() {
         //code
     };

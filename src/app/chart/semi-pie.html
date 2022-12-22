@@ -1,23 +1,21 @@
 <div id="action-description">
     <p>
-        This example demonstrates a semi-pie chart for mobile browsers usage statistics. Datalabels show information about the points.
+        This example demonstrates a semi-pie chart for mobile browsers usage statistics. 
     </p>
 </div>
 <div class="control-section">
-        <ejs-accumulationchart id='container' [legendSettings]="legendSettings" [tooltip]="tooltip" (load)='load($event)' [enableAnimation]="enableAnimation" [enableBorderOnMouseMove]='false'>
-            <e-accumulation-annotations>
-                <e-accumulation-annotation id='annotation' content='<div style=" font-size:14px; font-weight:600">Browser<br> Market <br />Shares</div>' region='Series'  x='50%' y='85%' >
-                </e-accumulation-annotation>
-            </e-accumulation-annotations>
+        <ejs-accumulationchart id='container' [legendSettings]="legendSettings" [tooltip]="tooltip" (load)='load($event)' [annotations]='annotations' [enableAnimation]="enableAnimation" [enableBorderOnMouseMove]='false'>
             <e-accumulation-series-collection>
-                <e-accumulation-series name='Browser' [dataSource]='data' xName='Browser' yName='Users' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%" radius="90%" [explode]="explode" [dataLabel]="dataLabel" >
+                <e-accumulation-series name='Browser' [dataSource]='data' xName='Browser' yName='Users' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%" [radius]="radius" [explode]="explode" [dataLabel]="dataLabel" tooltipMappingName='tooltipMappingName'>
                 </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
 </div>
 <div id="description">
-    <p> In this example, you can see how to render a semi pie chart using <code>StartAngle</code> and <code>EndAngle</code> properties.</p>
-    <p> <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch-enabled devices.</p>
+    <p> In this example, you can see how to render a semi pie chart using <code>StartAngle</code> and <code>EndAngle</code> properties. Data labels are wrapped to fit inside the pie slice.</p>
+    <p>
+        More information on the data labels can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/data-label/">documentation section</a>.
+    </p>
 </div>
 <style>
     .control-section {

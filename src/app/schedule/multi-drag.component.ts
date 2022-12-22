@@ -14,7 +14,7 @@ import { timelineResourceData, resourceData } from './data';
 })
 
 export class MultiDragComponent {
-  public selectedDate: Date = new Date(2021, 3, 4);
+  public selectedDate: Date = new Date(2023, 0, 4);
   public currentView: View = 'Month';
   public allowMultiDrag = true;
   public showQuickInfo = false;

@@ -33,7 +33,7 @@ export class StepAreaChartComponent {
     public primaryXAxis: Object = {
         valueType: 'Double',
         majorGridLines: { width: 0 },
-        edgeLabelPlacement: 'Shift'
+        edgeLabelPlacement: 'Shift',
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

@@ -1,10 +1,13 @@
 <div id="action-description">
     <p>
-        This sample demonstrates the checkbox column selection functionality of Tree Grid. Click on any parent record checkbox then the child record checkboxes will get selected and parent record checkbox will get selected while checking all of its child items.
+        This sample demonstrates the checkbox column selection functionality of Tree Grid. Click on any parent record
+        checkbox then the child record checkboxes will get selected and parent record checkbox will get selected while
+        checking all of its child items.
     </p>
 </div>
-<div class="control-section">   
-    <ejs-treegrid [dataSource]='data' height = '400' autoCheckHierarchy='true' childMapping='subtasks' [treeColumnIndex]='1'>
+<div class="control-section">
+    <ejs-treegrid [dataSource]='data' height='400' autoCheckHierarchy='true' childMapping='subtasks'
+        [treeColumnIndex]='1'>
         <e-columns>
             <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='70' textAlign='Right'></e-column>
             <e-column field='taskName' headerText='Task Name' width='200' [showCheckbox]='true'></e-column>
@@ -15,18 +18,32 @@
         </e-columns>
     </ejs-treegrid>
 </div>
-    <div id="description">
-            <p>The Tree Grid component can be rendered with checkbox on existing column and also this can be enabled by <code>showCheckbox</code> property as true in columns API.
-            </p>
-            <p>
-                For hierarchy selection between the records, we need to enable the <code>autoCheckHierarchy</code> property.
-            </p>
-            <p>
-               While using Tree Grid in a touch device, you have an option to select the checkboxes by tapping on the checkbox.
-            </p>
-        <p>
-            More information on the Tree Grid instantiation can be found in the
-          documentation section.
-        </p>
-    </div>
+<div id="description">
+    <p>The Tree Grid component can be rendered with checkbox on existing column and also this can be enabled by
+        <code>showCheckbox</code> property as true in columns API.
+    </p>
+    <p>
+        For hierarchy selection between the records, we need to enable the <code>autoCheckHierarchy</code> property.
+    </p>
+    <p>
+        While using Tree Grid in a touch device, you have an option to select the checkboxes by tapping on the checkbox.
+    </p>
+    <p>
+        More information on the Tree Grid instantiation can be found in the
+        documentation section.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .e-bigger.bootstrap5 .e-treegrid .e-hierarchycheckbox .e-frame,
+    .e-bigger.bootstrap5-dark .e-treegrid .e-hierarchycheckbox .e-frame {
+        height: 17px;
+        width: 17px;
+    }
 
+    .e-bigger.bootstrap4 .e-treegrid .e-hierarchycheckbox .e-frame {
+        height: 18px;
+        width: 18px;
+    }
+</style>
+<!-- custom code end -->

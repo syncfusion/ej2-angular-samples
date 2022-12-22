@@ -187,3 +187,9 @@
     #Alarm_turn_on {
         margin-left: 10px;
     }
+
+    .fluent #toastcustom .e-toast-close-icon,
+    .fluent-dark #toastcustom .e-toast-close-icon
+    {
+        color: #000;
+    }

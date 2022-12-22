@@ -12,7 +12,16 @@ import { Browser } from '@syncfusion/ej2-base';
 export class OverViewChartComponent {
   public layoutColor: string;
   public cellSpacing: number[] = [15, 15];
-  public cellAspectRatio: number = 0.8;
+  public cellAspectRatio: number = Browser.isDevice ? 1 : 0.8;
+  public columns: number = Browser.isDevice ? 2 : 8;
+  public columnSizeX: number = Browser.isDevice ? 1: 5;
+  public columnSizeY: number = Browser.isDevice ? 1 : 2;
+  public pieColumn: number = Browser.isDevice ? 1 : 5;
+  public pieSizeX: number = Browser.isDevice ? 1 : 3;
+  public pieSizeY: number = Browser.isDevice ? 1 : 2;
+  public splineRow: number = Browser.isDevice ? 1 : 4;
+  public splineSizeX: number = Browser.isDevice ? 2 : 8;
+  public splineSizeY: number = Browser.isDevice ? 1 : 3;
   public chartArea: Object = {
     border: { width: 0,},
   };
@@ -45,7 +54,6 @@ export class OverViewChartComponent {
     lineStyle: { width: 0 },
     maximum: 100,
     minimum: 0,
-    interval: 20,
     majorTickLines: { width: 0 },
     lableStyle: { size: '11px' },
     titleStyle: { size: '13px' }
@@ -72,11 +80,11 @@ export class OverViewChartComponent {
   //Pie Chart
   
   public data: Object[] = [
-    { Product : "TV : 30 (12%)", Percentage : 12, TextMapping : "TV : 12%"},
-    { Product : "PC : 20 (8%)", Percentage : 8, TextMapping : "PC : 8%"},
-    { Product : "Laptop : 40 (16%)",  Percentage : 16, TextMapping : "Laptop : 16%"},
-    { Product : "Mobile : 90 (36%)", Percentage : 36, TextMapping : "Mobile : 36%"},
-    { Product : "Camera : 27 (11%)", Percentage : 11, TextMapping : "Camera : 11%"}
+    { Product : "TV : 30 (12%)", Percentage : 12, TextMapping : "TV, 30 <br>12%"},
+    { Product : "PC : 20 (8%)", Percentage : 8, TextMapping : "PC, 20 <br>(8%)"},
+    { Product : "Laptop : 40 (16%)",  Percentage : 16, TextMapping : "Laptop, 40 <br>(16%)"},
+    { Product : "Mobile : 90 (36%)", Percentage : 36, TextMapping : "Mobile, 90 <br>(36%)"},
+    { Product : "Camera : 27 (11%)", Percentage : 11, TextMapping : "Camera, 27 <br>(11%)"}
   ];
 
   public animation: Object = {
@@ -148,7 +156,6 @@ export class OverViewChartComponent {
     lineStyle: { width: 0 },
     maximum: 12000,
     minimum: 0,
-    interval: 2000,
     majorTickLines: { width: 0 },
     lableStyle: { size: '11px' },
     textStyle: { size: '13px' }

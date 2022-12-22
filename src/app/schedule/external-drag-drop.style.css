@@ -1,5 +1,3 @@
-/* custom code start*/
-
 .drag-sample-wrapper {
   display: -ms-flexbox;
   display: flex;
@@ -25,7 +23,6 @@
   text-align: center;
 }
 
-/* custom code end*/
 
 .treeview-external-drag #waiting {
   height: 100%;
@@ -91,6 +88,7 @@
 
 .treeview-external-drag .e-text-content, .e-bigger .treeview-external-drag .e-text-content, .treeview-external-drag.e-rtl .e-text-content, .e-bigger .treeview-external-drag.e-rtl .e-text-content {
   padding: 0;
+  background-color: inherit;
 }
 
 .e-drag-item.e-treeview.treeview-external-drag, .e-bigger .e-drag-item.e-treeview.treeview-external-drag {
@@ -154,9 +152,16 @@
   }
   /* custom code end*/
   .treeview-external-drag.e-treeview, .e-bigger .treeview-external-drag.e-treeview {
-    width: 225px;
+    width: 250px;
   }
   .e-bigger .treeview-external-drag.e-treeview.e-drag-item {
     position: relative !important;
   }
+}
+.e-disble-not-allowed {
+  cursor: unset !important;
+}
+
+.e-drag-item.treeview-external-drag .e-icon-expandable {
+  display: none;
 }

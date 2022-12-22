@@ -1,4 +1,3 @@
-/* custom code start*/
 .property-panel-content .e-checkbox-wrapper.personal .e-label {
   color: #808080;
 }
@@ -28,7 +27,6 @@
   color: #fff;
 }
 
-/* custom code end*/
 
 .schedule-add-remove-resources.e-schedule .e-timeline-view .e-resource-left-td,
 .schedule-add-remove-resources.e-schedule .e-timeline-month-view .e-resource-left-td {

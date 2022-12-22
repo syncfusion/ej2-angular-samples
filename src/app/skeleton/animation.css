@@ -13,6 +13,15 @@
     line-height: inherit;
     height: 420px;
 }
+.fluent-dark #skeletondatacard,
+.fluent-dark #skeletonCard,
+.fluent-dark #skeleton-list{
+    background-color: #313131;
+}
+.skeleton-listcard,
+.e-bigger .skeleton-listcard{
+    line-height: 20px;
+}
 .skeleton-animation .e-card {    
     display: block;
 }

@@ -24,7 +24,7 @@ import { resourceData, timelineResourceData } from './data';
 })
 export class AdaptiveGroupingComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;
-  public selectedDate: Date = new Date(2021, 3, 4);
+  public selectedDate: Date = new Date(2023, 0, 4);
   public currentView: View = 'Month';
   public group: GroupModel = {
     resources: ['Projects', 'Categories']

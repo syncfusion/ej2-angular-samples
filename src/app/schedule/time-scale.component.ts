@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Internationalization, extend } from '@syncfusion/ej2-base';
 import { ChangeEventArgs as DropDownChangeArgs } from '@syncfusion/ej2-angular-dropdowns';
 import {
@@ -23,6 +23,8 @@ interface TemplateFunction extends Window {
   // tslint:disable-next-line:component-selector
   selector: 'control-content',
   templateUrl: 'time-scale.html',
+  styleUrls: ['time-scale.style.css'],
+  encapsulation: ViewEncapsulation.None,
   providers: [DayService, WeekService, TimelineViewsService, ResizeService, DragAndDropService]
 })
 
@@ -61,7 +63,7 @@ export class TimescaleComponent {
 
   public changeTemplate(e: DropDownChangeArgs): void {
     const majorSlotTemplate = '<div>${majorSlotTemplate(data.date)}</div>';
-    const minorSlotTemplate = '<div style="text-align: right; margin-right: 15px">${minorSlotTemplate(data.date)}</div>';
+    const minorSlotTemplate = '<div style="text-align: center">${minorSlotTemplate(data.date)}</div>';
     this.scheduleObj.timeScale.majorSlotTemplate = (e.value === 'Yes') ? majorSlotTemplate : null;
     this.scheduleObj.timeScale.minorSlotTemplate = (e.value === 'Yes') ? minorSlotTemplate : null;
     this.scheduleObj.dataBind();

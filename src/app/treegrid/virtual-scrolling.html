@@ -3,7 +3,7 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-treegrid #treegrid [dataSource]='vData' [enableVirtualization]='400' childMapping='Crew' [treeColumnIndex]='1' [editSettings]='editSettings' [toolbar]='toolbar' height='600'>
+    <ejs-treegrid #treegrid [dataSource]='vData' [enableVirtualization]='400' [enableVirtualMaskRow]=true childMapping='Crew' [treeColumnIndex]='1' [editSettings]='editSettings' [toolbar]='toolbar' height='600'>
         <e-columns>
             <e-column field='TaskID' headerText='Player Jersey' [validationRules]='taskidrules' width='120' textAlign='Right' isPrimaryKey='true'></e-column>
             <e-column field='FIELD1' headerText='Player Name' [validationRules]='tasknamerules' width='120'></e-column>
@@ -18,15 +18,18 @@
     <p>
         The Tree Grid UI virtualization allows you to render only rows visible within the view-port without buffering the entire datasource.
         To enable the virtualization, set <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#enablevirtualization">
-        enableVirtualization </a></code> property as true.
+        href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#enablevirtualization">enableVirtualization</a></code> property as true.
+    </p>
+    <p>
+        By default, <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#enablevirtualmaskrow">
+        enableVirtualMaskRow </a></code> is set to true. we can change by setting <code>enableVirtualMaskRow</code> property to false.
     </p>
     <p>
         Note: The <code><a target="_blank" class="code"
         href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#height">
         height</a></code> property must be defined when enabling <code><a target="_blank" class="code"
         href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#enablevirtualization">
-        enableVirtualization </a></code>.
+        enableVirtualization</a></code>.
     </p>
     <p>
         In this demo, Tree Grid is enabled with row virtualization and also perform the CRUD (Add, Edit, Delete, Update) actions.

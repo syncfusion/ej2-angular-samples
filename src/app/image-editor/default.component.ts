@@ -19,6 +19,8 @@ export class DefaultImageEditorComponent {
         } else {
             imageEditor.open('./assets/image-editor/images/bridge.png');
         }
-        imageEditor.theme = window.location.href.split('#')[1].split('/')[1];
+        if (imageEditor.theme && window.location.href.split('#')[1]) {
+            imageEditor.theme = window.location.href.split('#')[1].split('/')[1];
+        }
     }
 }

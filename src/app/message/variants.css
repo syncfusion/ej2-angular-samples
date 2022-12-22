@@ -7,3 +7,7 @@
 .msg-variant-section .e-message {
     margin: 10px 0;
 }
+.msg-variant-section .content-wrapper {
+    max-width: 1560px; 
+    margin: 0 auto;
+}

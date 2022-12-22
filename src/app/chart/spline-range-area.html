@@ -8,8 +8,7 @@
         <ejs-chart id='spline_container' [chartArea]='chartArea' [width]='width' align='center' style="display:block; width: 92%" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis] = 'primaryYAxis' [tooltip] = 'tooltip'
          (load)='load($event)' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data' [border]='border' [marker]='marker' [opacity]='opacity' type='SplineRangeArea' xName='x' high='high' low='low'  name='England'> </e-series>
-                <e-series [dataSource]='data1' [border]='border' [marker]='marker' [opacity]='opacity' type='SplineRangeArea' xName='x' high='high' low='low'  name='India'> </e-series>
+                <e-series [dataSource]='data' [border]='border' [marker]='marker' [opacity]='opacity' type='SplineRangeArea' xName='x' high='high' low='low'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
@@ -23,7 +22,7 @@
         <code>Tooltips</code> are enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch enabled devices.
     </p>
     <br>
-    <p style="font-weight: 500">Injecting Module:</p>
+    <p style="font-weight: 500"><b>Injecting Module:</b></p>
     <p>
         Chart component features are segregated into individual feature-wise modules. To use Splinerangearea series, we need to inject
         <code>SplineRangeAreaSeriesService</code> into the <code>@NgModule.providers</code> section.

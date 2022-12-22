@@ -77,18 +77,14 @@ export class QuickInfoTemplateComponent {
   public buttonClickActions(e: Event): void {
     const quickPopup: HTMLElement = closest(e.target as HTMLElement, '.e-quick-popup-wrapper') as HTMLElement;
     const getSlotData: CallbackFunction = (): Record<string, any> => {
-      let cellDetails: CellClickEventArgs = this.scheduleObj.getCellDetails(this.scheduleObj.getSelectedElements());
-      if (isNullOrUndefined(cellDetails)) {
-        cellDetails = this.scheduleObj.getCellDetails(this.scheduleObj.activeCellsData.element);
-      }
       const subject = ((quickPopup.querySelector('#title') as EJ2Instance).ej2_instances[0] as TextBoxComponent).value;
       const notes = ((quickPopup.querySelector('#notes') as EJ2Instance).ej2_instances[0] as TextBoxComponent).value;
       const addObj: Record<string, any> = {};
       addObj.Id = this.scheduleObj.getEventMaxID();
       addObj.Subject = isNullOrUndefined(subject) ? 'Add title' : subject;
-      addObj.StartTime = new Date(+cellDetails.startTime);
-      addObj.EndTime = new Date(+cellDetails.endTime);
-      addObj.IsAllDay = cellDetails.isAllDay;
+      addObj.StartTime = new Date(this.scheduleObj.activeCellsData.startTime);
+      addObj.EndTime = new Date(this.scheduleObj.activeCellsData.endTime);
+      addObj.IsAllDay = this.scheduleObj.activeCellsData.isAllDay;
       addObj.Description = isNullOrUndefined(notes) ? 'Add notes' : notes;
       addObj.RoomId = ((quickPopup.querySelector('#eventType') as EJ2Instance).ej2_instances[0] as DropDownListComponent).value;
       return addObj;

@@ -22,7 +22,7 @@ import { timelineResourceData, resourceData } from './data';
 })
 
 export class TimelineResourceGroupingComponent {
-  public selectedDate: Date = new Date(2021, 3, 4);
+  public selectedDate: Date = new Date(2023, 0, 4);
   public workDays: number[] = [0, 1, 2, 3, 4, 5];
   public group: GroupModel = {
     resources: ['Projects', 'Categories']

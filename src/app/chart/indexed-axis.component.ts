@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-angular-charts';
-
+import { Browser } from '@syncfusion/ej2-base';
 /**
  * Sample for indexed category axis
  */
@@ -12,15 +12,15 @@ import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-an
 })
 export class IndexedAxisChartComponent {
     public data1: Object[] = [
-        { x: 'Myanmar', y: 7.3 },
-        { x: 'India', y: 7.9 },
+        { x: 'India', y: 7.3 },
+        { x: 'Myanmar', y: 7.9 },
         { x: 'Bangladesh', y: 6.8 },
         { x: 'Cambodia', y: 7.0 },
         { x: 'China', y: 6.9 }
     ];
     public data2: Object[] = [
-        { x: 'Poland', y: 2.7 },
-        { x: 'Australia', y: 2.5 },
+        { x: 'Australia', y: 2.7 },
+        { x: 'Poland', y: 2.5 },
         { x: 'Singapore', y: 2.0 },
         { x: 'Canada', y: 1.4 },
         { x: 'Germany', y: 1.8 }
@@ -29,11 +29,14 @@ export class IndexedAxisChartComponent {
     public primaryXAxis: Object = {
         valueType: 'Category',
         interval: 1, crosshairTooltip: { enable: true },
-        isIndexed: true
+        isIndexed: true,  
+        labelRotation: Browser.isDevice ? -45 : 0,
+        labelIntersectAction: Browser.isDevice ? 'None' : 'Rotate45',
+        majorTickLines: { width: 0 },
+        minorTickLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'GDP Growth Rate',
         labelFormat: '{value}%'
     };
     public marker: Object = {
@@ -44,7 +47,7 @@ export class IndexedAxisChartComponent {
             visible: true,
             position: 'Top', font: {
                 fontWeight: '600',
-                color: '#ffffff'
+                size : Browser.isDevice ? '8px' : '11px'
             }
         }
     };
@@ -56,7 +59,7 @@ export class IndexedAxisChartComponent {
             visible: true,
             position: 'Top', font: {
                 fontWeight: '600',
-                color: '#ffffff'
+                size : Browser.isDevice ? '8px' : '11px'
             }
         }
     };

@@ -41,7 +41,6 @@ export class LogarithmicScaleChartComponent {
         minimum: 0,
         maximum: 100000,
         interval: 1,
-        title: Browser.isDevice ? '' : 'Profit',
         labelFormat: '${value}'
     };
     public legend: Object = {

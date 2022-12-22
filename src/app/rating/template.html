@@ -1,0 +1,61 @@
+<div class="control-section">
+    <div id="template-rating-control">
+        <div class="rating-content" >
+            <label>Font Icon</label><br/>
+            <input ejs-rating id='rating1' [emptyTemplate]= "emptyFont" [fullTemplate]= "fullFont" value="3.0" />
+            <ng-template #emptyFont>
+                <span class='custom-font rating-icon-heart'></span>
+            </ng-template>
+            <ng-template #fullFont>
+                <span class='custom-font rating-icon-heart'></span>
+            </ng-template>
+        </div>
+        <div class="rating-content custom-svg">
+            <label>SVG Icon</label><br/>
+            <input ejs-rating id='rating2' [emptyTemplate]="emptyTemplate" [fullTemplate]="fullTemplate" [enableAnimation]='false' value="3.0"/>
+            <ng-template #emptyTemplate let-data="">
+                <svg width="35" height="25" class="e-rating-svg-icon">
+                    <rect width="35" height="25" fill="transparent" style="stroke-width:2;stroke:rgb(173,181,189)"/>
+                </svg>
+            </ng-template>
+            <ng-template #fullTemplate let-data="">
+                <svg width="35" height="25" class="e-rating-svg-icon">
+                    <defs>
+                        <linearGradient id="grad{{data.index}}" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop class="start" offset="0%" />
+                            <stop class="end" offset="100%" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="35" height="25" style="fill:url(#grad{{data.index}});stroke-width:2;stroke:rgb(173,181,189)"/>
+                </svg>
+            </ng-template>
+        </div>
+        <div class="rating-content">
+            <label>Emoji Icon</label><br/>
+            <input ejs-rating id='rating3' [emptyTemplate]="template" [enableAnimation]='false' [enableSingleSelection]='true' value= "3.0"/>
+            <ng-template #template let-data="">
+                <div [ngSwitch]="data.index">
+                    <span *ngSwitchCase="0" class='angry emoji'>😡</span>
+                    <span *ngSwitchCase="1" class='disagree emoji'>🙁</span>
+                    <span *ngSwitchCase="2" class='neutral emoji'>😐</span>
+                    <span *ngSwitchCase="3" class='agree emoji'>🙂</span>
+                    <span *ngSwitchDefault class='happy emoji'>😀</span>
+                </div>
+            </ng-template>
+        </div>
+        <div class="rating-content">
+            <label>Customization</label><br/>
+            <input ejs-rating id='rating4' cssClass="custom-icon" [enableAnimation]='false' value= "3.0"/>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates customization of rating items using templates in the Angular Rating component.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, rating item stars are customized using <code>emptyTemplate</code>, which defines the unrated items appearance, and <code>fullTemplate</code>, which defines the rated items appearance. 
+    </p>
+</div>

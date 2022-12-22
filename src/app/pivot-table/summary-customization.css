@@ -30,3 +30,8 @@
 .control-section {
     min-height: 255px !important;
 }
+
+.e-multiselect.e-input-group.e-control-wrapper {
+    padding-left: 0px;
+    padding-top: 0px;
+}

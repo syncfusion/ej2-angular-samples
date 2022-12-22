@@ -37,6 +37,7 @@ export class InversedSplineChartComponent {
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         title: 'Sales (In Millions)',
+        edgeLabelPlacement: 'Shift', 
         maximum: 25,
         minimum: 0,
         interval: 5,

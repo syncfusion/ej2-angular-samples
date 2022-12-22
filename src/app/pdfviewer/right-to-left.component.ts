@@ -1,4 +1,4 @@
-﻿import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import {
     PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
     ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService,  FormFieldsService, FormDesignerService
@@ -250,7 +250,9 @@ export class RightToLeftComponent implements OnInit {
                     'Up': 'فوق',
                     'Down': 'تحت',
                     'Multiline': 'متعدد الأسطر',
-                    'Initial': 'أولي'
+                    'Initial': 'أولي',
+                    'Export XFDF': 'تصدير التعليق التوضيحي إلى ملف XFDF',
+                    'Import XFDF': 'استيراد التعليقات التوضيحية من ملف XFDF'
                 }
             }
         });

@@ -15,7 +15,6 @@ export class ZoomingChartComponent {
 
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Years',
         valueType: 'DateTime',
         skeleton: 'yMMM',
         edgeLabelPlacement: 'Shift',

@@ -50,7 +50,6 @@ export class MultiSeriesChartComponent {
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Years',
         interval: Browser.isDevice ? 2 : 1,
         labelIntersectAction: 'Rotate45',
         valueType: 'Category',

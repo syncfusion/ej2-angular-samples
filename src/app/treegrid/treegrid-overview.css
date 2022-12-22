@@ -89,3 +89,7 @@
     #coordinates .e-image {
         filter: brightness(180%);
     }
+
+    .e-bigger .e-grid .e-rowcell {
+        line-height: 24px;
+    }

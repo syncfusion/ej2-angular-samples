@@ -1,6 +1,6 @@
 {
   "name": "ej2-angular-samples",
-  "version": "20.3.56",
+  "version": "20.4.38",
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.0.0",
@@ -113,7 +113,8 @@
     "webpack": "^4.16.1",
     "webpack-cli": "*",
     "webpack-stream": "^5.0.0",
-    "zone.js": "~0.10.3"
+    "zone.js": "~0.10.3",
+    "os": "^0.1.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.0",

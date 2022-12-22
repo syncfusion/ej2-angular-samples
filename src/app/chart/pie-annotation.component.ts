@@ -48,10 +48,9 @@ export class AnnotationChartComponent {
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Years',
         majorGridLines: { width: 0 }, minorGridLines: { width: 1 },
         minorTickLines: { width: 1 }, interval: 1,
-        labelIntersectAction: 'Rotate45',
+        labelIntersectAction: 'Rotate45',  majorTickLines: {width : 0}, 
         valueType: 'Category'
     };
     public chartArea: Object = {
@@ -69,7 +68,7 @@ export class AnnotationChartComponent {
     // custom code end
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Sales in Billions', lineStyle: { width: 0 },
+        title: 'Sales', lineStyle: { width: 0 },
         minimum: 0, maximum: 700, interval: 100,
         majorGridLines: { width: 1 }, minorGridLines: { width: 1 },
         majorTickLines: { width: 0 }, minorTickLines: { width: 0 }, labelFormat: '{value}B',

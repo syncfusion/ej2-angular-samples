@@ -5,11 +5,10 @@
 </div>
 <div class="control-section">
     <div align='center'>
-        <ejs-chart id='container' [chartArea]='chartArea' [width]='width' align='center' style="display:block; width: 92%" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis] = 'primaryYAxis' [tooltip] = 'tooltip' [zoomSettings] = 'zoomSettings'
-         (load)='load($event)' (seriesRender)='seriesRender($event)' [legendSettings]='legend'>
+        <ejs-chart id='container' [chartArea]='chartArea' [width]='width' align='center' style="display:block; width: 92%" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis] = 'primaryYAxis' [tooltip] = 'tooltip'
+         (load)='load($event)' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data' [border]='border' [opacity] = 'opacity' type='RangeArea' xName='Period' high = 'HighTemp' low = 'LowTemp'  [enableTooltip] = false > </e-series>
-                <e-series [dataSource]='data' type='Line' width=3 xName='Period' yName='LineTemp' [marker]='marker' high = 'HighTemp' low = 'LowTemp' tooltipMappingName='Text' [border]='border'> </e-series>
+                <e-series [dataSource]='data' [border]='border' [opacity] = 'opacity' type='RangeArea' xName='x' high = 'high' low = 'low'></e-series>                
             </e-series-collection>
         </ejs-chart>
     </div>
@@ -19,7 +18,7 @@
         In this example, you can see how to render and configure the range area chart. This chart is used to display continuous data points as a set of lines varying between high and low values over time intervals and across different categories.
     </p>
     <br>
-    <p style="font-weight: 500">Injecting Module</p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
     <p>
         Chart component features are segregated into individual feature-wise modules. To use Range area series feature, we need to inject
         <code>RangeAreaSeriesService</code> into the <code>@NgModule.providers</code> section.

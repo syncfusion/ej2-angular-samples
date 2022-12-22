@@ -18,7 +18,9 @@ export class InversedAxisChartComponent {
         valueType: 'Category',
         opposedPosition: true,
         isInversed: true,
-        majorGridLines: { width: 0 }
+        majorGridLines: { width: 0 },
+        majorTickLines: { width: 0},
+        minorTickLines: {width: 0}
     };
 
     //Initializing Primary Y Axis

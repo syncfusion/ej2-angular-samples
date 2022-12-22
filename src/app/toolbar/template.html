@@ -1,0 +1,62 @@
+<div id="action-description">
+    <div id="action-description">
+        <p>This sample demonstrates customization of the Angular Toolbar.</p>
+    </div> 
+</div>
+<div class="control-section e-tbar-section">
+    <div class="e-sample-resize-container" style="margin-top: 100px; width: 100%; max-width: 100%;">
+        <!-- Render the Toolbar Component -->
+        <ejs-toolbar overflowMode='Popup' cssClass="template">
+            <e-items>
+                <e-item prefixIcon='e-icons e-folder' tooltipText='Open File' text='Open' showTextOn='Overflow' align="Left"></e-item>
+                <e-item type='Separator'></e-item>
+                <e-item prefixIcon='e-icons e-first-page' tooltipText='Show first page' text='First' showTextOn='Overflow' align="Left" disabled="false"></e-item>
+                <e-item prefixIcon='e-icons e-chevron-left' tooltipText='Show previous page' text='Previous' showTextOn='Overflow' align="Left" disabled="false"></e-item>
+                <e-item prefixIcon='e-icons e-chevron-right' tooltipText='Show next page' text='Next' showTextOn='Overflow' align="Left"></e-item>
+                <e-item prefixIcon='e-icons e-last-page' tooltipText='Show last page' text='Last' showTextOn='Overflow' align="Left"></e-item>
+                <e-item cssClass="page-count" align="Left">
+                    <ng-template #template>
+                        <div style="width: 50px"><ejs-numerictextbox value="1" min="0" max="100" format="###.##" [showSpinButton]='false'></ejs-numerictextbox></div><span class="total-page">of 100</span>
+                    </ng-template>
+                </e-item>
+                <e-item type='Separator'></e-item>
+                <e-item prefixIcon='e-icons e-zoom-out' tooltipText='Zoom-Out' text='Zoom-Out' showTextOn='Overflow' align="Left"></e-item>
+                <e-item prefixIcon='e-icons e-zoom-in' tooltipText='Zoom-In' text='Zoom-In' showTextOn='Overflow' align="Left"></e-item>
+                <e-item cssClass="percentage" align="Left">
+                    <ng-template #template>
+                        <div style="width: 80px"><ejs-combobox id='comboelement' #samples [dataSource]='data' popupWidth="80px" value="100%" [showClearButton]='false'></ejs-combobox></div>     
+                    </ng-template>
+                </e-item>               
+                <e-item type='Separator'></e-item>            
+                <e-item prefixIcon='e-icons e-mouse-pointer' tooltipText='Text selection tool' text='Selection' showTextOn='Overflow' align="Left"></e-item>
+                <e-item prefixIcon='e-icons e-pan' tooltipText='Pan mode' text='Pan mode' showTextOn='Overflow' align="Left"></e-item>
+                <e-item type='Separator'></e-item>
+                <e-item prefixIcon='e-icons e-undo' tooltipText='Undo' text='Undo' showTextOn='Overflow' align="Left"></e-item>
+                <e-item prefixIcon='e-icons e-redo' tooltipText='Redo' text='Redo' showTextOn='Overflow' align="Left"></e-item>
+                <e-item type='Separator'></e-item>
+                <e-item prefixIcon='e-pv-comment-icon' tooltipText='Add Comments' text='Add Comments' showTextOn='Overflow' align="Left"></e-item>
+                <e-item type='Separator'></e-item>
+                <e-item text='Submit Form' align="Left"></e-item>
+                <e-item cssClass="find" align="Right" overflow="Show">
+                    <ng-template #template>
+                        <div style="width: 125px"><ejs-textbox #textboxobj placeholder="Find Text" (created)="onCreate($event)"></ejs-textbox></div>     
+                    </ng-template>
+                </e-item>                
+                <e-item prefixIcon='e-icons e-annotation-edit' tooltipText='Edit Annotations' text='Edit' showTextOn='Overflow' align="Right"></e-item>
+                <e-item prefixIcon='e-icons e-print' tooltipText='Print File' text='Print' showTextOn='Overflow' align="Right"></e-item>
+                <e-item prefixIcon='e-icons e-download' tooltipText='Download' text='Download' showTextOn='Overflow' align="Right"></e-item>
+           </e-items>
+        </ejs-toolbar>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this demo, the Angular Toolbar showcases customization options for toolbar items using the <code>template</code> property. The Toolbar items are arranged using the <code>align</code> property.
+    </p>
+    <p>
+        To add icons to the toolbar items, the <code>prefixIcon</code> property is used. When the <code>showTextOn</code> property's is set to <code>overflow</code>, the Toolbar items' <code>text</code> that overflows will be visible.
+    </p>
+    <p>
+        In this demo, <code>NumericTextBox</code>, <code>ComboBox</code> and <code>TextBox</code> are used inside the Toolbar .
+    </p>
+</div>

@@ -56,20 +56,16 @@ export class PercentStackedAreaChartComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
-        minimum: new Date(1999, 0, 1),
-        maximum: new Date(2015, 0, 1),
-        majorGridLines: { width: 0 },
         intervalType: 'Years',
+        majorGridLines: { width: 0 },
         labelFormat: 'y',
-        edgeLabelPlacement: 'Shift'
+        edgeLabelPlacement: 'Shift',
+        lineStyle: { width: 0 },
+        minimum: new Date(1999, 0, 1), maximum: new Date(2015, 0, 1),labelIntersectAction: Browser.isDevice ? 'None' : 'Rotate45'
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Amount of sales in €',
-        majorTickLines: { width: 0 },
-        lineStyle: { width: 0 },
-        rangePadding: 'None',
-        interval: 20
+        majorTickLines: { width: 0 }, rangePadding: 'None', interval: 20, lineStyle: {width : 0}
     };
     public border: Object = {
         width: 1,
@@ -97,7 +93,7 @@ export class PercentStackedAreaChartComponent {
     };
     public width: string = Browser.isDevice ? '100%' : '75%';
 
-    public title: string = 'Amount of Sales by Payment Method';
+    public title: string = 'Sales by Payment Mode';
     constructor() {
         //code
     };

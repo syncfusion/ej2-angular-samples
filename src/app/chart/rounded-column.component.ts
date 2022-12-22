@@ -123,7 +123,7 @@ export class RoundedColumnChartComponent {
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        valueType: 'Category', interval: 1, majorGridLines: { width: 0 }, majorTickLines: { width: 0 },
+        majorTickLines: {width : 0}, minorTickLines: {width: 0},valueType: 'Category', interval: 1, majorGridLines: { width: 0 }, labelRotation: Browser.isDevice ? -45 : 0, labelIntersectAction: Browser.isDevice ? 'None' : 'Rotate45'
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
@@ -132,8 +132,8 @@ export class RoundedColumnChartComponent {
         minimum: 0, maximum: 100, interval: 20, majorTickLines: { width: 0 },
         minorTickLines: { width: 0 }, lineStyle: { width: 0 }
     };
-    public radius: Object = { bottomLeft: 35, bottomRight: 35, topLeft: 35, topRight: 35 }
-    public marker: Object = { dataLabel: { visible: true, position: 'Top', name:'Text', font: { fontWeight: '600', color: '#ffffff' } } }
+    public radius: Object = { bottomLeft: Browser.isDevice ? 12 : 35, bottomRight: Browser.isDevice ? 12 : 35, topLeft: Browser.isDevice ? 12 : 35, topRight: Browser.isDevice ? 12 : 35 }
+    public marker: Object = { dataLabel: { visible: true, position: 'Top', name:'Text', font: { fontWeight: '600', color: '#ffffff', size: Browser.isDevice ? '9px' : '11px'  } } }
     public title: string = 'Literacy rate by Country in 2015';
     public tooltip: Object = {
         enable: true,

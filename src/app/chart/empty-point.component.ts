@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ILoadedEventArgs, ChartComponent } from '@syncfusion/ej2-angular-charts';
 import { ChartSeriesType, EmptyPointMode, ChartTheme } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Sample for empty points
@@ -22,11 +23,12 @@ export class EmptyPointChartComponent {
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Product', valueType: 'Category', interval: 1
+        valueType: 'Category', interval: 1, labelIntersectAction: Browser.isDevice ? 'None' : 'Trim', labelRotation: Browser.isDevice ? -45: 0, majorTickLines: {width : 0},
+        minorTickLines: {width: 0}
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Profit', minimum: 0, maximum: 100, interval: 20, labelFormat: '{value}%'
+       minimum: 0, maximum: 100, interval: 20, labelFormat: '{value}%'
     };
     //Initializing Marker
     public marker: Object = {

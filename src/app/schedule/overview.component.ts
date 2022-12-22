@@ -550,6 +550,7 @@ export class OverviewComponent implements AfterViewChecked {
       remove(newEventElement);
       removeClass([document.querySelector('.e-selected-cell')], 'e-selected-cell');
     }
+    this.scheduleObj.closeQuickInfoPopup();
     const targetElement: HTMLElement = args.event.target as HTMLElement;
     if (closest(targetElement, '.e-contextmenu')) {
       return;

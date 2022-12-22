@@ -14,22 +14,23 @@ import { Browser } from '@syncfusion/ej2-base';
 export class LineChartComponent {
 
     public data: Object[] = [
-        { Period : 2020, Can_Growth : 11.0, Viet_Growth : 19.5, Mal_Growth : 7.1, Egy_Growth : 8.2, Ind_Growth : 9.3 },
-        { Period : 2019, Can_Growth : 12.9, Viet_Growth : 17.5, Mal_Growth : 6.8, Egy_Growth : 7.3, Ind_Growth : 7.8 },
-        { Period : 2018, Can_Growth : 13.4, Viet_Growth : 15.5, Mal_Growth : 4.1, Egy_Growth : 7.8, Ind_Growth : 6.2  },
-        { Period : 2017, Can_Growth : 13.7, Viet_Growth : 10.3, Mal_Growth : 2.8, Egy_Growth : 6.8, Ind_Growth : 5.3 },
-        { Period : 2016, Can_Growth : 12.7, Viet_Growth : 7.8, Mal_Growth : 2.8, Egy_Growth : 5.0, Ind_Growth : 4.8 },
-        { Period : 2015, Can_Growth : 12.5, Viet_Growth : 5.7, Mal_Growth : 3.8, Egy_Growth : 5.5, Ind_Growth : 4.9 },
-        { Period : 2014, Can_Growth : 12.7, Viet_Growth : 5.9, Mal_Growth : 4.3, Egy_Growth : 6.5, Ind_Growth : 4.4 },
-        { Period : 2013, Can_Growth : 12.4, Viet_Growth : 5.6, Mal_Growth : 4.7, Egy_Growth : 6.8, Ind_Growth : 2.6 },
-        { Period : 2012, Can_Growth : 13.5, Viet_Growth : 5.3, Mal_Growth : 5.6, Egy_Growth : 6.6, Ind_Growth : 2.3 }
+        { Period : new Date(2012, 6, 11), Can_Growth : 13.5, Viet_Growth : 5.3, Mal_Growth : 5.6, Egy_Growth : 6.6, Ind_Growth : 2.3 },
+        { Period : new Date(2013, 6, 11), Can_Growth : 12.4, Viet_Growth : 5.6, Mal_Growth : 4.7, Egy_Growth : 6.8, Ind_Growth : 2.6 },
+        { Period : new Date(2014, 6, 11), Can_Growth : 12.7, Viet_Growth : 5.9, Mal_Growth : 4.3, Egy_Growth : 6.5, Ind_Growth : 4.4 },
+        { Period : new Date(2015, 6, 11), Can_Growth : 12.5, Viet_Growth : 5.7, Mal_Growth : 3.8, Egy_Growth : 5.5, Ind_Growth : 4.9 },
+        { Period : new Date(2016, 6, 11), Can_Growth : 12.7, Viet_Growth : 7.8, Mal_Growth : 2.8, Egy_Growth : 5.0, Ind_Growth : 4.8 },
+        { Period : new Date(2017, 6, 11), Can_Growth : 13.7, Viet_Growth : 10.3, Mal_Growth : 2.8, Egy_Growth : 6.8, Ind_Growth : 5.3 },
+        { Period : new Date(2018, 6, 11), Can_Growth : 13.4, Viet_Growth : 15.5, Mal_Growth : 4.1, Egy_Growth : 7.8, Ind_Growth : 6.2  },
+        { Period : new Date(2019, 6, 11), Can_Growth : 12.9, Viet_Growth : 17.5, Mal_Growth : 6.8, Egy_Growth : 7.3, Ind_Growth : 7.8 },
+        { Period : new Date(2020, 6, 11), Can_Growth : 11.0, Viet_Growth : 19.5, Mal_Growth : 7.1, Egy_Growth : 8.2, Ind_Growth : 9.3 },
     ];
     
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        valueType: 'Category',
+        valueType: 'DateTime',
         edgeLabelPlacement: 'Shift',
-        majorGridLines: { width: 0 }
+        majorGridLines: { width: 0 },
+        labelFormat: 'y'
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

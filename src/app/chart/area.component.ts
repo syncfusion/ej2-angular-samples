@@ -13,6 +13,24 @@ import { withLatestFrom } from 'rxjs/operators';
     encapsulation: ViewEncapsulation.None
 })
 export class AreaChartComponent {
+    public annotations: ChartAnnotationSettingsModel[] = [
+        {
+            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">8-TRACK</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">8-TRACK</div>',x: '8%', y: '95%' , region:'Series'
+        }, {
+            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">VINYL</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">VINYL</div>',x: "12%", y: "80%" ,region:'Series'
+        }, {
+            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">CASSETTE</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">CASSETTE</div>',x: "35%", y: "87%" ,region:'Series'
+        }, {
+            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">COMPACT DISC</div>' : '<div style="color:white; font-weight: bold">COMPACT DISC</div>',x: "63%", y: "70%" ,region:'Series'
+        }, {
+            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">CASSETTE</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">OTHERS</div>',x: "75%", y: '98%' ,region:'Series'
+        }, {
+            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">STREAMING</div>' : '<div style="color:white; font-size: 9px; font-weight: bold">DOWNLOADS</div>',x: '85%', y: '93%' ,region:'Series'
+        }, {
+            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">OTHERS</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">STREAMING</div>',x: '93%', y: '96%' ,region:'Series'
+        },
+
+    ];
     public chartArea: Object = {
         border: {
             width: 0
@@ -111,32 +129,10 @@ export class AreaChartComponent {
         { Period : new Date(1989, 1, 1), USD : 0.64 },
         { Period : new Date(1990, 1, 1), USD : 0 },
     ];
-    public annotations: ChartAnnotationSettingsModel[] = [
-        {
-            x: new Date(2017, 1, 1),
-            y: 10,
-            coordinateUnits: 'Point',
-            verticalAlignment: 'Top',
-            content: '<div id="chart_cloud">hi</div>'
-        }, {
-            x: 'Sat',
-            y: 34,
-            coordinateUnits: 'Point',
-            yAxisName: 'yAxis',
-            content: '<div id="chart_cloud"><img src="./assets/chart/images/sunny.png" style="width: 41px; height: 41px"/></div>'
-        }
-    ];
+   
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        valueType: 'DateTime',
-        labelFormat: 'yyyy',
-        maximum: new Date(1973, 1, 1),
-        minimum: new Date(2018, 1, 1),
-        interval: 5,
-        majorGridLines: { width: 0 },
-        minorTickLines: { width: 0 },
-        intervalType: 'Years',
-        edgeLabelPlacement: 'Shift'
+        valueType: 'DateTime', minimum: new Date(1973, 1, 1), maximum: new Date(2018, 1, 1), labelFormat: 'y', majorGridLines: { width: 0 }, edgeLabelPlacement: 'Shift'
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

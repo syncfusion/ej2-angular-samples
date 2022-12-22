@@ -1,6 +1,6 @@
 <div class="col-lg-9 control-section">
     <ejs-grid #grid [dataSource]='data' [toolbar]='toolbar' (toolbarClick)='toolbarClick($event)'
-                [allowExcelExport]='true' [allowPdfExport]='true' [allowGrouping]="true" (dataBound)='dataBound()'
+                [allowExcelExport]='true' [allowPdfExport]='true' [allowSorting]='true' [allowGrouping]="true" (dataBound)='dataBound()'
                 (excelQueryCellInfo)='exportQueryCellInfo($event)' (pdfQueryCellInfo)='exportQueryCellInfo($event)' height='350'>
         <e-columns>
             <e-column headerText='Employee Image' width='150' textAlign='Center'>
@@ -54,15 +54,15 @@
                excelQueryCellInfo</a></code> and <code><a target="_blank" class="code"
                    href="https://ej2.syncfusion.com/angular/documentation/api/grid/#pdfquerycellinfo">
                    pdfQueryCellInfo</a></code> events.
-                   The ExcelExport, PdfExport, and CsvExport items are defined in the toolbar, for which we have defined actions in toolbarClick event to export the Grid data using the 
+                   The ExcelExport, PdfExport, and CsvExport items are defined in the toolbar, for which we have defined actions in toolbarClick event to export the Grid data using the
             <code><a target="_blank" class="code"
-                
-                href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#excelexport">excelExport</a></code>, 
+
+                href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#excelexport">excelExport</a></code>,
                 <code><a target="_blank" class="code"
                     href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#pdfexport">pdfExport</a></code>
                     and <code><a target="_blank" class="code"
                         href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#csvexport">csvExport</a></code>  methods.</p>
-    
+
                         <p>
                             Note: Since CSV format is supported only plain text, images and hyperlinks will not be exported on this.</p>
                     <br/>

@@ -32,7 +32,9 @@ export class RangeColumnChartComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'Category',
-        majorGridLines: { width: 0 }
+        majorGridLines: { width: 0 },
+        majorTickLines: { width: 0 },
+        minorTickLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
@@ -44,7 +46,7 @@ export class RangeColumnChartComponent {
         majorTickLines: { width: 0 }
     };
     //Initializing Chart Title
-    public title: string = 'Temperature Variation';
+    public title: string = 'Temperature Variation by Week';
     public tooltip: Object = {
         enable: true,
         header: '<b>${point.x}</b>',
@@ -53,10 +55,6 @@ export class RangeColumnChartComponent {
     public marker :Object = {
         dataLabel:{visible: true, position: 'Outer'}
       }
-    public legend: Object = {
-        visible: true,
-        enableHighlight : true
-    }
      // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

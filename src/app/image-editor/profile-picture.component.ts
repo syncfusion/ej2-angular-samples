@@ -31,7 +31,9 @@
     public position: PositionDataModel = { X: 'center', Y: 100 };
 
     public created = (): void => {
-        this.ImageEditorInstance.theme = window.location.href.split('#')[1].split('/')[1];
+        if (this.ImageEditorInstance.theme && window.location.href.split('#')[1]) {
+            this.ImageEditorInstance.theme = window.location.href.split('#')[1].split('/')[1];
+        }
     }
 
     public imageLoaded = (): void => {
@@ -110,10 +112,14 @@
     }
 
     ngAfterViewInit(): void {
-        (document.getElementsByClassName('sb-desktop-wrapper')[0] as HTMLElement).onclick = (args: any) : void => {
-            if (args.target.className.indexOf('col-lg-12 control-section') > -1 || args.target.className.indexOf('sb-content') > -1) {
-                this.DialogInstance.hide();
+        let imageHide = document.getElementsByClassName('sb-desktop-wrapper')[0];
+        if (imageHide) {
+            (document.getElementsByClassName('sb-desktop-wrapper')[0] as HTMLElement).onclick = (args: any) : void => {
+                if (args.target.className.indexOf('col-lg-12 control-section') > -1 || args.target.className.indexOf('sb-content') > -1) {
+                    this.DialogInstance.hide();
+                }
             }
+          }
         }
-      }
+        
 }

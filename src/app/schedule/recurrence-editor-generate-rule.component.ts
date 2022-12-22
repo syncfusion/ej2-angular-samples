@@ -5,9 +5,7 @@ import { RecurrenceEditorChangeEventArgs } from '@syncfusion/ej2-angular-schedul
   // tslint:disable-next-line:component-selector
   selector: 'control-content',
   templateUrl: 'recurrence-editor-generate-rule.html',
-  /* custom code start*/
   styleUrls: ['recurrence-editor.style.css'],
-  /* custom code end*/
   encapsulation: ViewEncapsulation.None
 })
 export class RecGeneraterComponent {

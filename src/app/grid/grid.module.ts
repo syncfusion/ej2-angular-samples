@@ -72,12 +72,13 @@ import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { GridKeyboardNavigationComponent} from './keyboard-navigation.component';
 import { LazyLoadGroupingWithInfiniteScrollingComponent } from './lazy-load-grouping-with-infinite-scrolling.component';
 import { LoadingAnimationComponent } from './loading-animation.component';
+import { LazyLoadGroupingWithVirtualScrollingComponent } from './lazy-load-grouping-with-virtual-scrolling.component';
 
 export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/over-view', component: OverViewComponent, 'name': 'Overview', description: 'This demo for Essential JS 2 grid component is an overview of how to display and manipulate large data with configuration options.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/default', component: DefaultComponent, 'name': 'Default Functionalities', description: 'This demo for Essential JS 2 grid component shows the default rendering of the grid component with minimum configuration.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/adaptive-layout', component: AdaptiveLayoutComponent, name: 'Adaptive Layout',  description: 'This demo for Essential JS 2 grid component shows the Grid row in vertical direction.', order: '01', category: 'Data Grid' },
-    { 'path': ':theme/grid/loading-animation', 'type': 'new', component: LoadingAnimationComponent, name: 'Loading Animation',  description: 'This demo for Essential JS 2 grid component shows the loading indicator when grid loading and refreshing.', order: '01', category: 'Data Grid' },
+    { 'path': ':theme/grid/loading-animation', component: LoadingAnimationComponent, name: 'Loading Animation',  description: 'This demo for Essential JS 2 grid component shows the loading indicator when grid loading and refreshing.', order: '01', category: 'Data Grid' },
 
     { 'path': ':theme/grid/local-data', component: LocalDataComponent, 'name': 'Local Data', description: 'This demo for Essential JS 2 grid component shows how to bind with a local data source.', order: '02', category: 'Data Binding' },
     { 'path': ':theme/grid/remote-data', component: DataBindingComponent, 'name': 'Remote Data', description: 'This demo for Essential JS 2 grid component shows how to consume data from a remote data service.', order: '02', category: 'Data Binding' },
@@ -223,7 +224,8 @@ export const gridRouteConfig: Object[] = [
     },
 
     { 'path': ':theme/grid/lazy-load-grouping-with-paging', component: LazyLoadGroupingWithPagingComponent, name: 'Grouping with Paging', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature.', order: '14', category: 'Lazy Load Grouping' },
-    { 'path': ':theme/grid/lazy-load-grouping-with-infinite-scrolling', 'type': 'new', component: LazyLoadGroupingWithInfiniteScrollingComponent, name: 'Grouping with Infinite Scrolling', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature with infinite scrolling', order: '14', category: 'Lazy Load Grouping' },
+    { 'path': ':theme/grid/lazy-load-grouping-with-infinite-scrolling', component: LazyLoadGroupingWithInfiniteScrollingComponent, name: 'Grouping with Infinite Scrolling', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature with infinite scrolling', order: '14', category: 'Lazy Load Grouping' },
+    { 'path': ':theme/grid/lazy-load-grouping-with-virtual-scrolling', 'type': 'new', component: LazyLoadGroupingWithVirtualScrollingComponent, name: 'Grouping with Virtual Scrolling', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature with virtual scrolling', order: '14', category: 'Lazy Load Grouping' },
  
     {
         'path': ':theme/grid/default-exporting', component: ExportingComponent, name: 'Default Exporting', description: 'This demo for Essential JS 2 grid component shows the client-side exporting of grid content to Excel, PDF, and CSV formats.', order: '15',
@@ -262,7 +264,7 @@ let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     ExportingComponent, AdvancedExportingComponent, PrintComponent, CheckboxSelectionComponent, ClipboardComponent, CommandColumnComponent,
     FilteringMenuComponent, ColumnSpanningComponent, ContextMenuComponent, ColumnMenuComponent, FrozenRowsColumnsComponent, FrozenApiComponent,
     ForeignKeyColumnComponent, RowHeightComponent, AsyncPipeComponent, DialogReactiveFormComponent, TemplateDrivenFormComponent,
-    ReactiveAggregateComponent, RowSpanningComponent, DragWithinSingle, HierarchyExportComponent, AdaptiveLayoutComponent, LoadingAnimationComponent, LazyLoadGroupingWithInfiniteScrollingComponent
+    ReactiveAggregateComponent, RowSpanningComponent, DragWithinSingle, HierarchyExportComponent, AdaptiveLayoutComponent, LoadingAnimationComponent, LazyLoadGroupingWithInfiniteScrollingComponent, LazyLoadGroupingWithVirtualScrollingComponent
 ];
 
 @NgModule({

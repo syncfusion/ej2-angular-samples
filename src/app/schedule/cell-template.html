@@ -1,5 +1,5 @@
 <div class="control-section">
-  <ejs-schedule width='100%' height='650px' [selectedDate]="selectedDate" [(currentView)]="currentView">
+  <ejs-schedule width='100%' height='650px' [selectedDate]="selectedDate" [(currentView)]="currentView" [eventSettings]="eventSettings">
     <ng-template #cellTemplate let-data>
       <div class="templatewrap" [innerHTML]="getCellContent(data.date)"></div>
     </ng-template>

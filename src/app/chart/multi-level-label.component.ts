@@ -25,7 +25,7 @@ export class MultiLevelLabelsChartComponent {
     public primaryXAxis: Object = {
         valueType: 'Category', labelRotation: 90,
         border: { width: 1, type: 'Rectangle' },
-        isIndexed: true, interval: 1, majorGridLines: { width: 0 },
+        isIndexed: true, interval: 1, majorGridLines: { width: 0 }, labelIntersectAction : Browser.isDevice ? 'Rotate90' : 'Trim',
         multiLevelLabels: (Browser.isDevice ? ([
             {
                 border: { type: 'Rectangle' },

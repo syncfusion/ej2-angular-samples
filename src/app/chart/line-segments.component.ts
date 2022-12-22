@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, ChartAnnotationSettingsModel } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -16,8 +16,7 @@ export class LineSegmentChartComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
-        labelFormat: 'y',
-        intervalType: 'Years',
+        minimum : new Date(1910, 0, 1), maximum : new Date(2010, 0, 1),
         edgeLabelPlacement: 'Shift',
         majorGridLines: { width: 0 }
     };
@@ -36,6 +35,18 @@ export class LineSegmentChartComponent {
             width: 0
         }
     };
+    public annotations: ChartAnnotationSettingsModel[] = [
+        {
+            content : '<div style=" font-size: 14px; font-weight: bold ; width: 80px ; padding: 5px; color: green ">Medium</div>', x: Browser.isDevice ? '19%' : '20%', y: Browser.isDevice ? '42%' :'47%' ,region:'Series'
+        },
+        {
+            content : '<div style=" font-size: 14px; font-weight: bold ; width: 80px ; padding: 5px; color: blue ">High</div>', x:'69%', y:'10%' ,region:'Series'
+        },
+        {
+            content : '<div style=" font-size: 14px; font-weight: bold ; width: 80px ; padding: 5px; color: red ">Low</div>', x: Browser.isDevice ? '95%' : '95%', y:'85%' ,region:'Series'
+        },
+
+    ];
     public width: string = Browser.isDevice ? '100%' : '75%';
     public legend: Object = { visible: false };
     public segments: Object[] = [{

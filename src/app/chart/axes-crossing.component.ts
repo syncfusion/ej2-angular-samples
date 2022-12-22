@@ -44,13 +44,15 @@ export class AxisCrossingChartComponent {
         crossesAt: 0,
         minorTicksPerInterval: 3,
     };
+    public tooltip: object = {
+        enable: true
+    }
     public marker: Object = {
         visible: false,
         height: 12,
         width: 12,
     };
     //Initializing Tooltip
-    public tooltip: Object = { enable: true };
         // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

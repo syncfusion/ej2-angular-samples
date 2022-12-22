@@ -25,7 +25,7 @@ export class EditTemplateComponent implements OnInit {
      @ViewChild('treegrid')
      public treegrid: TreeGridComponent;
     ngOnInit(): void {
-        this.data = sampleData;
+        this.data = sampleData.slice(0);
         this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Row' };
         this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
         this.validationRules = {minLength: 0};

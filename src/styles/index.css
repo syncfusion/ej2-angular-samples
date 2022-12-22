@@ -827,6 +827,7 @@ display: none;
 .e-samplestatus.Preview {
   margin-top: 6.5px;
   margin-bottom: 6.5px;
+  max-width: 60px;
 }
 
 .e-bigger .e-samplestatus.new,
@@ -837,6 +838,7 @@ display: none;
 .e-bigger .e-samplestatus.Preview {
   margin-top: 13px;
   margin-bottom: 13px;
+  max-width: 65px;
 }
 
 .e-samplestatus.new.tree,
@@ -2725,7 +2727,19 @@ body.highcontrast,
   left: 0px;
   right: 0px;
 }
- 
+
+.bootstrap5 .e-samplestatus.new, .bootstrap5 .e-samplestatus.update, .bootstrap5 .e-samplestatus.preview {
+    margin: 12px 0;
+    height: 22px;
+    margin-top: 2px;
+}
+
+.fluent .e-samplestatus.new, .fluent .e-samplestatus.update, .fluent .e-samplestatus.preview {
+  margin: 12px 0;
+  height: 22px;
+  margin-top: 2px;
+}
+
 .tailwind .e-samplestatus.new, .tailwind .e-samplestatus.update, .tailwind .e-samplestatus.preview {
     margin: 12px 0;
     height: 22px;

@@ -37,6 +37,16 @@ export class SortingComponent {
             this.fieldObj.value = 'Priority';
             this.fieldObj.enabled = true;
         }
+        if (args.value === 'Ascending') {
+          const data: string = this.sortByObj.value === 'Index' ? 'RankId' : 'None';
+          this.setFieldValue(data);
+          this.directionObj.value = 'Ascending';
+        }
+        if (args.value === 'Descending') {
+          let data: string = this.sortByObj.value === 'Index' ? 'RankId' : 'None';
+          this.setFieldValue(data);
+          this.directionObj.value = 'Descending';
+        }
     }
     setFieldValue(data: string): void {
         this.fieldObj.dataSource = [data];

@@ -17,6 +17,7 @@ export class VirtualizationComponent implements OnInit {
     public date2: number;
     public flag: boolean = true;
     public ngOnInit(): void { }
+    public validationSno: Object = { required: true, digits: true };
     public validationRules: Object = { required: true };
     public toolbar: string[] = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
     public editSettings: Object = { allowEditing: true, allowDeleting: true , newRowPosition: 'Top' };;

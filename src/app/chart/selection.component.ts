@@ -61,10 +61,11 @@ export class SelectionChartComponent {
     }
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Countries',
         valueType: 'Category',
         interval: 1,
-        labelIntersectAction: 'Rotate90'
+        labelIntersectAction: 'Rotate90',
+        majorTickLines: { width: 0 },
+        minorTickLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

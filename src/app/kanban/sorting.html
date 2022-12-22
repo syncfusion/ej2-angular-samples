@@ -57,7 +57,7 @@
                             </td>
                             <td>
                                 <div>
-                                    <ejs-dropdownlist id="direction" #direction [dataSource]='directionData' index=0>
+                                    <ejs-dropdownlist id="direction" #direction [dataSource]='directionData' (change)="change($event)" index=0>
                                     </ejs-dropdownlist>
                                 </div>
                             </td>

@@ -3,7 +3,7 @@
         (load)='load($event)'>
             <e-accumulation-series-collection>
                 <e-accumulation-series [dataSource]='data' xName='InterviewProcess' yName='Candidates' [neckWidth]="neckWidth" [neckHeight]="neckHeight"
-                width = "45%"  [explode]="explode" [dataLabel]="dataLabel" type='Funnel' > </e-accumulation-series>
+                [width]="width"  [explode]="explode" [dataLabel]="dataLabel" type='Funnel' > </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
 </div>

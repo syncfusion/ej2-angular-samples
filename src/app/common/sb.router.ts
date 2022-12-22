@@ -30,6 +30,7 @@ import { SidebarSampleModule } from '../sidebar/sidebar.module';
 import { TextboxesModule } from '../textboxes/textboxes.module';
 import { InplaceEditorSampleModule } from '../inplace-editor/inplace-editor.module';
 import { TooltipSampleModule } from '../tooltip/tooltip.module';
+import { ArcGaugeSampleModule } from '../arc-gauge/arc-gauge.module';
 import { CircularGaugeSampleModule } from '../circular-gauge/circular-gauge.module';
 import { LinearGaugeSampleModule } from '../linear-gauge/linear-gauge.module';
 import { MaskedTextBoxSampleModule } from '../maskedtextbox/maskedtextbox.module';
@@ -76,6 +77,7 @@ import { ImageEditorSampleModule } from '../image-editor/image-editor.module';
 import { FloatingActionButtonSampleModule } from "../floating-action-button/floating-action-button.module";
 import { SpeedDialSampleModule } from "../speed-dial/speed-dial.module";
 import { SkeletonSampleModule } from "../skeleton/skeleton.module";
+import { RatingSampleModule } from "../rating/rating.module";
 
 const appRoutes: any = [
     // Grids
@@ -89,7 +91,10 @@ const appRoutes: any = [
     { path: ':theme/spreadsheet/:sample', redirectTo: 'material/spreadsheet/default' },
     // Data visualization
     { path: 'chart', loadChildren: ChartSampleModule },
+    { path: '', redirectTo: 'material/chart/overview-chart', pathMatch: 'full' },
+    { path: '**', redirectTo: 'material/chart/overview-chart' },
     { path: 'stockchart', loadChildren: StockChartSampleModule },
+    { path: 'arcgauge', loadChildren: ArcGaugeSampleModule },
     { path: 'circulargauge', loadChildren: CircularGaugeSampleModule },
     { path: 'diagram', loadChildren: DiagramSampleModule },
     { path: 'heatmap-chart', loadChildren: HeatmapSampleModule },
@@ -177,6 +182,7 @@ const appRoutes: any = [
     { path: 'range-slider', loadChildren: SliderSampleModule },
     { path: 'signature', loadChildren: SignatureSampleModule },
     { path: 'inplace-editor', loadChildren: InplaceEditorSampleModule },
+    { path: 'rating', loadChildren: RatingSampleModule },
     // layouts
     { path: ':theme/avatar/:sample', redirectTo: 'material/avatar/default' },
     { path: ':theme/card/:sample', redirectTo: 'material/card/default' },
@@ -198,6 +204,7 @@ const appRoutes: any = [
         SpreadsheetSampleModule,
         // Data visualization
         ChartSampleModule,
+        ArcGaugeSampleModule,
         CircularGaugeSampleModule,
         LinearGaugeSampleModule,
         DiagramSampleModule,
@@ -263,6 +270,7 @@ const appRoutes: any = [
         TextboxesModule,
         UploaderSampleModule,
         ColorPickerSampleModule,
+        RatingSampleModule,
         // layouts
         AvatarSampleModule,
         CardSampleModule,

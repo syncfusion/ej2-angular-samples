@@ -24,13 +24,18 @@ export class WaterfallChartComponent {
     public primaryXAxis: Object = {
         valueType: 'Category',
         majorGridLines: { width: 0 },
-        plotOffset: 20
+        labelRotation: Browser.isDevice ? -45 : 0,
+        labelIntersectAction: Browser.isDevice ? 'None' : 'Rotate45', majorTickLines: { width: 0 },
+        minorTickLines: { width: 0 },
+        
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         minimum: 0, maximum: 5000, interval: 1000,
-        majorGridLines: { width: 0 },
+        majorGridLines: { width: 1 },
         title: 'Expenditure',
+        minorTickLines: {width: 0},
+        lineStyle: {width: 0},
     };
     public chartArea: Object = {
         border: {
@@ -49,6 +54,9 @@ export class WaterfallChartComponent {
     public marker: Object = {
         dataLabel: { visible: true, font: { color: '#ffffff' } }
     };
+    public border: object = {
+        color:'black' , width: 1
+    }
     public connector: Object = {
         color: '#5F6A6A', width: 1.5
     };
@@ -58,7 +66,7 @@ export class WaterfallChartComponent {
     public textRender(args: ITextRenderEventArgs): void {
         let value: number = Number(args.text) / 1000;
         value = Math.round((value * 100)) / 100;
-        args.text = value.toString();
+        args.text = value.toString() + 'B';
     };
      // custom code start
     public load(args: ILoadedEventArgs): void {

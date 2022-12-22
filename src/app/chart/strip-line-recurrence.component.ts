@@ -25,9 +25,10 @@ export class StripLineRecurrenceChartComponent {
     ];
     //Initializing Primary Y Axis
     public primaryXAxis: Object = {
-        valueType: 'DateTime', interval: 5, intervalType: 'Years', majorGridLines: { width: 0 },
-        edgeLabelPlacement: 'Shift',
-        minimum: new Date(1965, 1, 1), maximum: new Date(2010, 1, 1),
+        valueType: 'DateTime', intervalType: 'Years', majorGridLines: { width: 0 },
+        edgeLabelPlacement: 'Shift', majorTickLines: {width : 0},
+        minorTickLines: {width: 0},
+        minimum: new Date(1965, 1, 1), maximum: new Date(2010, 1, 1), 
         //Initializing Striplines
         stripLines: [{
             startFromAxis: true, size: 5, sizeType: 'Years', isRepeat: true, repeatEvery: 10, visible: true,

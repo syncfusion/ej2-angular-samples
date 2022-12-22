@@ -145,7 +145,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/stacked-step-area', component: StackedStepAreaChartComponent, name: 'Stacked Step Area', description: "This demo for Essential JS2 Chart control shows how to render the stacking step area series.", order: '03', category: 'Area Charts'},
     { path: ':theme/chart/stacked-area-percent', component: PercentStackedAreaChartComponent, name: '100% Stacked Area', description: "This demo for Essential JS2 Chart control shows how to render the 100 percent stacking area series.", order: '03', category: 'Area Charts' },
     { path: ':theme/chart/area-empty', component: EmptyAreaChartComponent, name: 'Area - Empty Points', description: "This demo for Essential JS2 Chart control shows how to render the area series with empty points.", order: '03', category: 'Area Charts' },
-    { path: ':theme/chart/area-negative-points', component: AreaNegativePointsComponent, name: 'Area - Negative Points', description: "This demo for Essential JS2 Chart control shows how to render the area series with negative points.", order: '03', category: 'Area Charts', type: 'New'},
+    { path: ':theme/chart/area-negative-points', component: AreaNegativePointsComponent, name: 'Area - Negative Points', description: "This demo for Essential JS2 Chart control shows how to render the area series with negative points.", order: '03', category: 'Area Charts'},
     { path: ':theme/chart/area-segments', component: AreaSegmentChartComponent, name: 'Area Zone', description: "This demo for Essential JS2 Chart control shows how to render and configure the points in a particular range using MultiColoredArea series.", order: '03', category: 'Area Charts' },
 
     { path: ':theme/chart/column', component: ColumnChartComponent, name: 'Column', description: "This demo for Essential JS2 Chart control shows how to render the column series.", order: '04', category: 'Bar Charts' },
@@ -208,7 +208,7 @@ export const chartAppRoutes: Object[] = [
         path: ':theme/chart/pie-legend', component: DefaultDonutComponent, name: 'Pie with Legend', description: "This demo for Essential JS2 Chart control shows how to render and configure the legends in pie charts.", order: '10', category: 'Accumulation Charts'
     },
     {
-        path: ':theme/chart/semi-pie', component: SemiPieComponent, name: 'Semi Pie', description: "This demo for Essential JS2 Chart control shows how to render semi-pie and doughnut charts.", order: '10', category: 'Accumulation Charts'
+        path: ':theme/chart/semi-pie', component: SemiPieComponent, name: 'Semi Pie', description: "This demo for Essential JS2 Chart control shows how to render semi-pie and doughnut charts.", order: '10', category: 'Accumulation Charts', type: 'update'
     },
     {
         path: ':theme/chart/smart-labels', component: SmartLabelsComponent, name: 'Smart Labels', description: "This demo for Essential JS2 Chart control shows how to arrange the labels smartly without overlapping with each other.", order: '10', category: 'Accumulation Charts'

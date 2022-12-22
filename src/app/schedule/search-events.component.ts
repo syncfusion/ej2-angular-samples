@@ -13,9 +13,7 @@ import { Grid } from '@syncfusion/ej2-angular-grids';
   // tslint:disable-next-line:component-selector
   selector: 'control-content',
   templateUrl: 'search-events.html',
-  /* custom code start*/
   styleUrls: ['search-events.style.css'],
-  /* custom code end*/
   providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
 })
 export class SearchEventsComponent {

@@ -31,7 +31,7 @@ export class LockRowComponent implements OnInit {
     @ViewChild('multiselect')
     public multiselect: MultiSelectComponent;
     ngOnInit(): void {
-        this.data = sampleData;
+        this.data = sampleData.slice(0);
         this.editSettings ={ allowEditing: true,   mode: 'Row', newRowPosition: 'Child' }; 
         this.toolbar = ['Edit', 'Update', 'Cancel'];
         this.pageSettings= {pageSize: 2, pageSizeMode: 'Root'};

@@ -16,6 +16,7 @@ import { dateRangePickerAppRoutes } from '../daterangepicker/daterangepicker.mod
 import { calendarAppRoutes } from '../calendar/calendar.module';
 import { chartAppRoutes } from '../chart/chart.module';
 import { carouselAppRoutes } from '../carousel/carousel.module';
+import { arcgaugeAppRoutes } from '../arc-gauge/arc-gauge.module';
 import { circulargaugeAppRoutes } from '../circular-gauge/circular-gauge.module';
 import { lineargaugeAppRoutes } from '../linear-gauge/linear-gauge.module';
 import { rangeNavigatorAppRoutes } from '../range-navigator/range-navigator.module';
@@ -72,6 +73,7 @@ import { floatingActionButtonAppRoutes } from '../floating-action-button/floatin
 import { speedDialAppRoutes } from '../speed-dial/speed-dial.module';
 import { mentionAppRoutes } from '../mention/mention.module';
 import { skeletonAppRoutes } from '../skeleton/skeleton.module';
+import { ratingAppRoutes } from '../rating/rating.module';
 export let samplesList: any = [
     {
         'name': 'Data Grid', 'type':'update', 'category': 'Grids', 'order': '01', 'path': 'grid', 'samples': gridRouteConfig, 'ftName': 'datagrid'
@@ -92,7 +94,10 @@ export let samplesList: any = [
         'name': 'Stock Chart', 'category': 'Data visualization', 'order': '02', 'path': 'stock-chart', 'samples': stockChartAppRoutes
     },
     {
-        'name': 'Circular Gauge', 'type':'update', 'category': 'Data visualization', 'order': '02', 'path': 'circular-gauge', 'samples': circulargaugeAppRoutes
+        'name': 'Arc Gauge', 'type':'new', 'category': 'Data visualization', 'order': '02', 'path': 'arc-gauge', 'samples': arcgaugeAppRoutes
+    },
+    {
+        'name': 'Circular Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'circular-gauge', 'samples': circulargaugeAppRoutes
     },
     {
         'name': 'Diagram', 'category': 'Data visualization', 'order': '02', 'path': 'diagram', 'samples': diagramAppRoutes
@@ -101,7 +106,7 @@ export let samplesList: any = [
         'name': 'HeatMap Chart', 'category': 'Data visualization', 'order': '02', 'path': 'heatmap-chart', 'samples': heatmapAppRoutes, 'ftName': 'heatmap'
     },
     {
-        'name': 'Linear Gauge', 'type':'update', 'category': 'Data visualization', 'order': '02', 'path': 'linear-gauge', 'samples': lineargaugeAppRoutes
+        'name': 'Linear Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'linear-gauge', 'samples': lineargaugeAppRoutes
     },
     {
         'name': 'Maps', 'category': 'Data visualization', 'order': '02', 'path': 'maps', 'samples': mapAppRoutes
@@ -137,7 +142,7 @@ export let samplesList: any = [
         'name': "PDF Viewer", 'category': "File Viewers & Editors", 'order': '11', 'path': "pdfviewer", 'samples': pdfViewerAppRoutes, 'ftName': "pdfviewer"
     },
     {
-        'name': "Rich Text Editor", 'type':'update', 'category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "rich-text-editor", 'samples': rteAppRoutes
+        'name': "Rich Text Editor", 'category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "rich-text-editor", 'samples': rteAppRoutes
     },
     {
         'name': 'DocumentEditor', 'category': 'File Viewers & Editors', 'order': '03', 'path': 'document-editor', 'samples': documentEditorAppRoutes, 'ftName': 'document-editor', 'type': 'update'
@@ -173,10 +178,10 @@ export let samplesList: any = [
         'name': 'Chips', 'category': 'Buttons', 'order': '03', 'path': 'chips', 'samples': chipsAppRoutes
     },
     {
-        'name': "Floating Action Button", 'category': 'Buttons', 'order': '03', 'path': "floating-action-button", "type": "preview", 'samples': floatingActionButtonAppRoutes,
+        'name': "Floating Action Button", 'category': 'Buttons', 'order': '03', 'path': "floating-action-button", 'samples': floatingActionButtonAppRoutes,
     },
     {
-        'name': "SpeedDial", 'category': 'Buttons', 'order': '03', 'path': "speed-dial", "type": "preview", 'samples': speedDialAppRoutes,
+        'name': "SpeedDial", 'category': 'Buttons', 'order': '03', 'path': "speed-dial", 'samples': speedDialAppRoutes,
     },
     {
         'name': "AutoComplete", 'category': "Dropdowns", 'ftName': "autocomplete", 'order': '05', 'path': "auto-complete", 'samples': autoCompleteAppRoutes
@@ -197,19 +202,19 @@ export let samplesList: any = [
         "name": "List Box", "category": "Dropdowns", "ftName": "list-box", 'order': '03', "path": "list-box", "samples": listBoxAppRoutes
     },
     {
-        "name": "Mention", "category": "Dropdowns", 'order': '03', "path": "mention", "samples": mentionAppRoutes, 'type': 'preview'
+        "name": "Mention", "category": "Dropdowns", 'order': '03', "path": "mention", "samples": mentionAppRoutes
     },
     {
         'name': 'Accordion', 'category': 'Navigation', 'order': '06', 'path': 'accordion', 'samples': accordionAppRoutes, 'ftName': "accordion"
     },
     {
-        'name': 'AppBar', 'category': 'Navigation', 'type':'preview', 'order': '06', 'path': 'appbar', 'samples': appbarAppRoutes, "ftName": "appbar"
+        'name': 'AppBar', 'category': 'Navigation', 'order': '06', 'path': 'appbar', 'samples': appbarAppRoutes, "ftName": "appbar"
     },
     {
         'name': 'Breadcrumb', 'category': 'Navigation', 'order': '06', 'path': 'breadcrumb', 'samples': breadcrumbAppRoutes, "ftName": "breadcrumb"
     },
     {
-        'name': 'Carousel', 'category': 'Navigation', 'type':'update', 'order': '06', 'path': 'carousel', 'samples': carouselAppRoutes, 'ftName': "carousel"
+        'name': 'Carousel', 'category': 'Navigation', 'order': '06', 'path': 'carousel', 'samples': carouselAppRoutes, 'ftName': "carousel"
     },
     {
         'name': 'Context Menu', 'category': 'Navigation', 'order': '06', 'path': 'context-menu', 'samples': contextMenuAppRoutes, 'ftName': "context-menu"
@@ -224,19 +229,19 @@ export let samplesList: any = [
         'name': 'Tab', 'category': 'Navigation', 'order': '06', 'path': 'tab', 'samples': tabAppRoutes, 'ftName': "tabs"
     },
     {
-        'name': 'Toolbar', 'category': 'Navigation', 'order': '06', 'path': 'toolbar', 'samples': toolbarAppRoutes, 'ftName': "toolbar"
+        'name': 'Toolbar', 'category': 'Navigation', 'type':'update', 'order': '06', 'path': 'toolbar', 'samples': toolbarAppRoutes, 'ftName': "toolbar"
     },
     {
         'name': 'TreeView', 'category': 'Navigation', 'order': '06', 'path': 'treeview', 'samples': treeAppRoutes, 'ftName': "treeview"
     },
     {
-        'name': 'File Manager', 'category': 'Navigation', 'type': 'update', 'order': '06', 'path': 'file-manager', 'samples': fileManagerAppRoutes
+        'name': 'File Manager', 'category': 'Navigation', 'order': '06', 'path': 'file-manager', 'samples': fileManagerAppRoutes
     },
     {
         'name': "Badge", 'category': 'Notifications', 'order': '07', 'path': "badge", 'samples': badgeAppRoutes
     },
     {
-        'name': "Message", 'category': 'Notifications', 'order': '07', 'path': "message", "type": "preview", 'samples': messageAppRoutes, 'ftName': "message"
+        'name': "Message", 'category': 'Notifications', 'order': '07', 'path': "message", 'samples': messageAppRoutes, 'ftName': "message"
     },
     {
         'name': "Toast", 'category': 'Notifications', 'order': '07', 'path': "toast", 'samples': toastAppRoutes, 'ftName': "toast"
@@ -272,6 +277,9 @@ export let samplesList: any = [
         'name': 'In-place Editor', 'category': 'Inputs', 'order': '03', 'path': 'inplace-editor', 'samples': inplaceeditorAppRoutes, 'ftName': 'inplaceeditor'
     },
     {
+        'name': "Rating", 'category': 'Inputs',"ftName": "rating", 'order': '03', 'path': "rating", "type": "preview", 'samples': ratingAppRoutes
+    },
+    {
         'name': 'Avatar', 'category': 'Layout', 'order': '09', 'path': 'avatar', 'samples': avatarAppRoutes
     },
     {
@@ -281,7 +289,7 @@ export let samplesList: any = [
         'name': 'Dialog', 'category': 'Layout', 'order': '09', 'path': 'dialog', 'samples': dialogAppRoutes, 'ftName': 'modal-dialog'
     },
     {
-        'name': 'Predefined Dialogs', 'category': 'Layout', 'order': '09', 'path': 'predefined-dialogs', 'samples': predefinedDialogsAppRoutes, 'type': 'new'
+        'name': 'Predefined Dialogs', 'category': 'Layout', 'order': '09', 'path': 'predefined-dialogs', 'samples': predefinedDialogsAppRoutes
     },
     {
         'name': 'ListView', 'category': 'Layout', 'order': '09', 'path': 'listview', 'samples': listAppRoutes

@@ -46,6 +46,7 @@ export class PositionsController {
 
     public toastPosition: ToastPositionModel = { X: 'Right', Y: 'Bottom' };
     public target: HTMLElement = document.body;
+    public icon: string = "e-laura";
     private initialWid: string = '';
     public true: boolean = true;
     private customFlag: boolean = false;
@@ -78,6 +79,7 @@ export class PositionsController {
 
     public toastShow(timeOutDelay: number): void {
         setTimeout(function () {
+            this.toastObj.width = 350;
             this.toastObj.show();
         }.bind(this), timeOutDelay);
     }

@@ -24,9 +24,10 @@ export class PrintChartComponent {
      // custom code end
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Manager',
         valueType: 'Category',
-        majorGridLines: { width: 0 }
+        majorGridLines: { width: 0 },
+        majorTickLines: {width : 0},
+        minorTickLines: {width: 0}
     };
     public pointRender(args: IPointRenderEventArgs): void {
         let materialColors: string[] = ['#00bdae', '#404041', '#357cd2', '#e56590', '#f8b883', '#70ad47', '#dd8abd', '#7f84e8', '#7bb4eb',
@@ -60,9 +61,12 @@ export class PrintChartComponent {
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         title: 'Sales',
+        labelFormat: '${value}',
         minimum: 0,
         maximum: 20000,
-        majorGridLines: { width: 0 }
+        lineStyle: {width : 0},
+        minorTickLines: {width: 0},
+        majorTickLines: {width : 0},
     };
     public chartArea: Object = {
         border: {

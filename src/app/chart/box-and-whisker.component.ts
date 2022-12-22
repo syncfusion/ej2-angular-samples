@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { ILoadedEventArgs, ChartComponent, BoxPlotMode, IPointRenderEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { getSaturationColor} from '@syncfusion/ej2-charts';
+import { Browser } from '@syncfusion/ej2-base';
 /**
  * Sample for box and whisker series
  */
@@ -15,13 +16,13 @@ export class BoxandWhiskerChartComponent {
     public data1: Object[] = [
         { x: 'Development', y: [22, 22, 23, 25, 25, 25, 26, 27, 27, 28, 28, 29, 30, 32, 34, 32, 34, 36, 35, 38] },
         { x: 'Testing', y: [22, 33, 23, 25, 26, 28, 29, 30, 34, 33, 32, 31, 50] },
-        { x: 'HR', y: [22, 24, 25, 30, 32, 34, 36, 38, 39, 41, 35, 36, 40, 56] },
+        { x: 'Training', y: [22, 24, 25, 30, 32, 34, 36, 38, 39, 41, 35, 36, 40, 56] },
         { x: 'Finance', y: [26, 27, 28, 30, 32, 34, 35, 37, 35, 37, 45] },
         { x: 'R&D', y: [26, 27, 29, 32, 34, 35, 36, 37, 38, 39, 41, 43, 58] },
         { x: 'Sales', y: [27, 26, 28, 29, 29, 29, 32, 35, 32, 38, 53] },
         { x: 'Inventory', y: [21, 23, 24, 25, 26, 27, 28, 30, 34, 36, 38] },
         { x: 'Graphics', y: [26, 28, 29, 30, 32, 33, 35, 36, 52] },
-        { x: 'Training', y: [28, 29, 30, 31, 32, 34, 35, 36] }
+        { x: 'HR', y: [28, 29, 30, 31, 32, 34, 35, 36] }
     ];
     public pointRender(args: IPointRenderEventArgs): void {
         let materialColors: string[] = ['#00bdae', '#404041', '#357cd2', '#e56590', '#f8b883', '#70ad47', '#dd8abd', '#7f84e8', '#7bb4eb',
@@ -54,7 +55,10 @@ export class BoxandWhiskerChartComponent {
         valueType: 'Category',
         majorGridLines: { width: 0 },
         edgeLabelPlacement: 'Shift',
-        labelIntersectAction: 'Trim'
+        labelIntersectAction : Browser.isDevice ? 'None' : 'Rotate45',
+        majorTickLines: {width : 0},
+        minorTickLines: {width: 0},
+        labelRotation: Browser.isDevice ? -45 : 0
     };
     public chartArea: Object = {
         border: {

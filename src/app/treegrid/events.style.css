@@ -18,7 +18,3 @@
 .button-control .col-xs-12 {
     margin: 15px 0;
 }
-
-.e-small::before {
-    content: 'Clear';
-}

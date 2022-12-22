@@ -7,7 +7,7 @@
     <div>
         <ejs-accumulationchart id='container' style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='onLoad($event)' [enableBorderOnMouseMove]='false'>
             <e-accumulation-series-collection>
-                <e-accumulation-series name='RIO' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" innerRadius="0%" radius="65%" [dataLabel]="dataLabel"> </e-accumulation-series>
+                <e-accumulation-series name='RIO' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [radius]="radius" innerRadius="0%"  [dataLabel]="dataLabel"> </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
     </div>

@@ -6,9 +6,7 @@ import { RecurrenceEditor } from '@syncfusion/ej2-angular-schedule';
   // tslint:disable-next-line:component-selector
   selector: 'control-content',
   templateUrl: 'recurrence-editor-populate-rule.html',
-  /* custom code start*/
   styleUrls: ['recurrence-editor.style.css'],
-  /* custom code end*/
   encapsulation: ViewEncapsulation.None
 })
 export class RecPopulateComponent {

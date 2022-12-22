@@ -68,7 +68,7 @@ export class TornadoChartComponent {
         enable: true
     };
     public legend: Object = {
-        position: Browser.isDevice ? 'Auto' : 'Right',
+        position: Browser.isDevice ? 'Bottom' : 'Right',
         enableHighlight : true
     }
      // custom code start

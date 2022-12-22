@@ -37,9 +37,8 @@ export class PieEmptyPointChartComponent {
       }
     public dataLabel: Object = {
         visible: true, position: 'Inside', font: {
-            fontWeight: '600',
-           
-        }
+            fontWeight: '600', 
+        },enableRotation: true, 
     };
     
     public title: string = 'Annual Product-Wise Profit Analysis';

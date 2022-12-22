@@ -29,6 +29,7 @@ export class HiloChartComponent {
         minimum: new Date('2016-12-31'),
         maximum: new Date('2017-09-30'),
         crosshairTooltip: { enable: true },
+        edgeLabelPlacement: 'Shift',
         majorGridLines: { width: 0 }
     };
     //Initializing Primary Y Axis

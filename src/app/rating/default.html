@@ -1,0 +1,38 @@
+<div class="control-section">
+    <div id="default-rating-control">
+        <div class="rating-content" >
+            <label>Basic</label><br/>
+            <input ejs-rating id='rating1'/>
+        </div>
+        <div class="rating-content">
+            <label>Reset</label><br/>
+            <input ejs-rating id='rating2' [allowReset]="true" value="3.0"/>
+        </div>
+        <div class="rating-content">
+            <label>Single selection</label><br/>
+            <input ejs-rating id='rating5' [enableSingleSelection]="true" value="3.0"/>
+        </div>
+        <div class="rating-content">
+            <label>Disabled</label><br/>
+            <input ejs-rating id='rating4' [disabled]="true" value="3.0"/>
+        </div>
+        <div class="rating-content">
+            <label>ReadOnly</label><br/>
+            <input ejs-rating id='rating3' [readOnly]="true" value="3.0"/>
+        </div>
+        <div class="rating-content">
+            <label>Item count</label><br/>
+            <input ejs-rating id='rating6' itemsCount="8" value="3.0"/>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates the default functionalities of the Rating component. The component lets a user provide a star rating or view other people's ratings on a numeric scale for any service provided, such as for movies, applications, or products. 
+    </p>
+</div>
+<div id="description">
+    <p>
+        This example showcases the usage of the <code>allowReset</code>, <code>readOnly</code>, <code>enableSingleSelection</code>, <code>itemsCount</code>, and <code>disabled</code> properties in the Angular Rating component.
+    </p>
+</div>

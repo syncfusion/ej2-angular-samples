@@ -15,11 +15,11 @@ export class AreaSegmentChartComponent {
     public dataValues: Object[] = [];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        valueType: 'DateTime',
-        labelFormat: 'MMM',
-        intervalType: 'Months',
-        edgeLabelPlacement: 'Shift',
-        majorGridLines: { width: 0 }
+        valueType: 'DateTime', labelFormat: 'MMM', intervalType: 'Months',   majorGridLines: { width: 0 },
+        interval: 1,  majorTickLines: {width : 0},
+        minorTickLines: {width: 0},
+        labelRotation: Browser.isDevice ? -45 : 0,
+        labelIntersectAction: Browser.isDevice? 'None' : 'Rotate45'
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
