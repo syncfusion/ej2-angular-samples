@@ -1,0 +1,53 @@
+<div class="control-section">
+  <div style="margin-bottom: 10px;">
+      <h4 style="display: inline-block; font-size: 14px;">Feed Delay(ms):</h4>
+      <ejs-numerictextbox #feeddelay format="N0" value="1000" min="10" max="5000" step="1" width="150px"
+          style="margin-left: 7px;"></ejs-numerictextbox>
+      <button #update id="update" ejs-button (click)="updateClick($event)" style="margin-left: 10px;">
+          Start Data Update
+      </button>
+      <button #clear id="clear" ejs-button (click)="clearClick($event)" style="margin-left: 10px;">
+          Stop Data Update
+      </button>
+  </div>
+  <ejs-grid #livestream id="livestream" [enableVirtualization]="true" [enableVirtualMaskRow]="false"
+      [enableHover]="false" [dataSource]="data" (queryCellInfo)="queryCellInfoEvent($event)" rowHeight="38"
+      height="500" [allowSelection]="false" (destroyed)="destroyClear($event)">
+      <e-columns>
+          <e-column field="id" headerText="ID" width="140" [isPrimaryKey]="true" [visible]="false"></e-column>
+          <e-column field="CountryCode" headerText="Ticker" width="70"></e-column>
+          <e-column field="Change" headerText="Change % 1D" width="100" format="N0" textAlign="Right"></e-column>
+          <e-column field="Net" headerText="Net" width="100" format="C2" type="number" textAlign="Right"></e-column>
+          <e-column field="Rating" width="150" headerText="Technical Rating 1D"></e-column>
+          <e-column field="NetIncome" headerText="Net Income" width="150" format="C2" type="number"
+              textAlign="Right"></e-column>
+          <e-column field="Sector" width="160" headerText="Sector"> </e-column>
+          <e-column field="EmployeeCount" width="130" headerText="Employee Count" textAlign="Right"></e-column>
+      </e-columns>
+  </ejs-grid>
+
+  <div id="action-description">
+      <p>
+          This sample demonstrates how frequently Grid cells are updated in real-time data at a set interval.
+      </p>
+  </div>
+
+  <div id="description">
+      <p> The updating of Grid cells can be done without any performance lagging by using the <code>setCellValue</code>
+          method.
+          The style of Grid cells can be customized using the <code>queryCellInfo</code> event.</p>
+      <p>In this demo,</p>
+      <ul>
+          <li> Clicking the start update button triggers automatic updates of Grid cells at the interval set in the feed delay
+                text box which is a milliseconds format.</li>
+          <li> Clicking the stop update button will halt the automatic updating of Grid cells.</li>
+      </ul>
+      <p>
+          More information on the queryCellInfo can be found in this
+          <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/grid/#querycellinfo">documentation
+              section</a>.
+      </p>
+
+  </div>
+
+</div>
