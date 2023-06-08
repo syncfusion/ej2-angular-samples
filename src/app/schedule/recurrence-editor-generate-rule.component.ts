@@ -1,5 +1,4 @@
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
-import { RecurrenceEditorChangeEventArgs } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -13,11 +12,6 @@ export class RecGeneraterComponent {
 
   constructor(@Inject('sourceFiles') private sourceFiles: any) {
     sourceFiles.files = ['recurrence-editor.style.css'];
-  }
-
-  public onChange(args: RecurrenceEditorChangeEventArgs): void {
-    const outputElement: HTMLElement = document.querySelector('#rule-output') as HTMLElement;
-    outputElement.innerText = args.value;
   }
 
 }

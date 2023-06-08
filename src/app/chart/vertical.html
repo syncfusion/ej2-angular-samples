@@ -1,23 +1,23 @@
 <div id="action-description">
     <p>
-        This sample illustrates the vertical chart by changing the orientation of x-axis to vertical and y-axis to horizontal.
+        This sample illustrates a sales versus profit margin analysis using a vertical chart by changing the orientation of the x-axis to vertical and the y-axis to horizontal.
     </p>
 </div>
 <div class="control-section">
-    <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chart-vertical' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [isTransposed]='vertical' (load)='load($event)' (loaded)='loaded($event)'>
+    <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [legendSettings]='legendSettings' [tooltip]='tooltip' id='chart-vertical' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'  [axes]='axis' [title]='title' [isTransposed]='vertical' (load)='load($event)' >
         <e-series-collection>
-            <e-series [dataSource]='data1' type='Line' xName='x' yName='y' width=2 [animation]='animation1'>
+            <e-series [dataSource]='data1' type='Column' xName='Year' yName='column' name='Sales' width=2 [animation]='animation1'>
+            </e-series>
+            <e-series [dataSource]='data2' type='Line'  yAxisName='yAxis2' xName='Year' yName='series' [marker]='marker'  name='Profit Margin' width=2 [animation]='animation1'>
             </e-series>
         </e-series-collection>
     </ejs-chart>
 </div>
 <div id="description">
-    <p>
-        In this example, you can see how to render and configure the vertical type charts. To render a chart in vertical manner, you can use
-        <code>isTransposed</code> in chart.
+    <p> In this example, you can see how to render and configure a vertical chart. Use the <code>IsTransposed</code> property to render the chart vertically.
     </p>
     <p>
-        More information on the vertical chart can be found in this &nbsp;
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/other-types/#vertical-chart">documentation section</a>.
+        More information on the vertical chart can be found in this 
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/vertical">documentation section</a>.
     </p>
 </div>

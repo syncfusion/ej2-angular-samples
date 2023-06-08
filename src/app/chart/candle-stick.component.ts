@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ILoadedEventArgs, IAxisLabelRenderEventArgs, ChartTheme,  ISharedTooltipRenderEventArgs, IRangeLoadedEventArgs,
  IChangedEventArgs, ChartComponent, IPointRenderEventArgs} from '@syncfusion/ej2-angular-charts';
-import { chartDataValue } from './financial-data';
+import { chartValue } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -17,7 +17,7 @@ let pointColors: string[] = [];
 export class CandleStickChartComponent {
     @ViewChild('chartcontainer')
     public chart: ChartComponent;
-    public data1: Object[] = chartDataValue;
+    public data1: Object[] = chartValue;
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
@@ -26,15 +26,11 @@ export class CandleStickChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        valueType: 'Logarithmic',
+        title: 'Volume',
+        labelFormat: '{value}M',
         opposedPosition: true,
         majorGridLines: { width: 1 },
         lineStyle: { width: 0 },
-        stripLines: [
-            {
-                end: 1300000000, startFromAxis: true, text: '', color: 'black', visible: true,
-                opacity: 0.03, zIndex: 'Behind'
-            }]
     };
     public rows: Object = [
         {
@@ -46,16 +42,15 @@ export class CandleStickChartComponent {
 
     public axes: Object = [{
         name: 'secondary', opposedPosition: true, rowIndex: 1, majorGridLines: { width: 1 },
-        labelFormat: 'n0',  plotOffset: 30, lineStyle: { width: 0 }, rangePadding: 'None'
+        labelFormat: 'n0',  plotOffset: 30, lineStyle: { width: 0 }, rangePadding: 'None', maximum: 150, minimum: 55, title: 'Price'
 
     }];
     public tooltip: Object = {
         enable: true,
-        shared: true
+        header: "",format: "<b>Apple Inc.(AAPL)</b> <br> High : <b>${point.high}</b> <br> Low : <b>${point.low}</b> <br> Open : <b>${point.open}</b> <br> Close : <b>${point.close}</b> <br> Volume : <b>${point.volume}</b>"
     };
-    public crosshair: Object = {
-        enable: true, lineType: 'Vertical'
-    };
+    
+   
     public chartArea: Object = {
         border: { width: 0 }
     };
@@ -63,31 +58,15 @@ export class CandleStickChartComponent {
         visible: false
     };
     public axisLabelRender(args: IAxisLabelRenderEventArgs): void {
-        if (args.axis.name === 'primaryYAxis') {
-            args.text = this.getLabelText(+args.text);
-        }
-        if (args.axis.name === 'secondary') {
-                args.text = '$' + args.text;
-            }
+                args.text = args.text.replace("0000000M", "M"); 
     };
-    public pointRender(args: IPointRenderEventArgs): void {
-         if (args.series.type === 'Candle') { pointColors.push(args.fill); } else {
-                args.fill = pointColors[args.point.index];
-            }
-    };
+   
     public width: string = Browser.isDevice ? '100%' : '75%';
     public legendSettings: Object = {
         visible: false
     };
-    public sharedTooltipRender(args: ISharedTooltipRenderEventArgs): void {
-        if (!args.series[0].index) {
-            args.text[0] = 'Volume : <b>' +
-                this.getLabelText(args.text[0].split('<b>')[1].split('</b>')[0]) + '</b>';
-        }
-    }
-    public getLabelText: Function = (value: number): string => {
-        return (((value) / 1000000000)).toFixed(1) + 'bn';
-    };
+   
+   
      // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

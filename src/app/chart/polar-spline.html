@@ -6,7 +6,7 @@
 <div class="control-section">
     <div class="col-lg-9">
         <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [title]='title'
-            [tooltip]='tooltip' (load)='load($event)'>
+            [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'>
             <e-series-collection>
                 <e-series [dataSource]='series1' type='Polar' drawType='Spline' xName='x' yName='y' name='Cardioid (unidirectional)' width=2
                     dashArray='5 5 2' [isClosed] = 'closed'>
@@ -57,8 +57,8 @@
         <code>ColumnService</code> into the <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the polar line types series can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/polar-radar/#draw-types">documentation section</a>.
+        More information about the polar and radar chart with a spline series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/polar#spline">documentation section</a>.
     </p>
 </div>
 <style>

@@ -6,44 +6,7 @@ import { Browser} from '@syncfusion/ej2-base';
  * Sample for stripLines
  */
 let fontSize: string = Browser.isDevice ? '14px' : '18px';
-let xAxisStripLine: StripLineSettingsModel[] = [
-    {
-        start: -1, end: 1.5, text: 'Winter', color: 'url(#winter)',
-        textStyle: { size: fontSize, color: '#ffffff', fontWeight: '600' },
-        border: { width: 0 }, rotation: -90, visible: true
-    }, {
-        start: 1.5, end: 3.5, text: 'Summer', color: 'url(#summer)',
-        textStyle: { size: fontSize, color: '#ffffff', fontWeight: '600' },
-        border: { width: 0 }, rotation: -90, visible: true
-    }, {
-        start: 3.5, end: 4.5, text: 'Spring', color: 'url(#spring)',
-        textStyle: { size: fontSize, color: '#ffffff', fontWeight: '600' },
-        border: { width: 0 }, rotation: -90, visible: true
-    }, {
-        start: 4.5, end: 5.5, text: 'Autumn', color: 'url(#autumn)',
-        textStyle: { size: fontSize, color: '#ffffff', fontWeight: '600' },
-        border: { width: 0 }, rotation: -90, visible: true
-    }, {
-        start: 5.5, end: 7, text: 'Winter', color: 'url(#winter)',
-        textStyle: { size: fontSize, color: '#ffffff', fontWeight: '600' },
-        border: { width: 0 }, rotation: -90, visible: true
-    }, {
-        startFromAxis: true, size: 2, isSegmented: true, segmentStart: 22.5, text: 'Average Temperature',
-        segmentEnd: 27.5, visible: false, color: '#fc902a',
-        textStyle: { size: fontSize, color: '#ffffff', fontWeight: '600' }, border: { width: 0 },
-        rotation: 0
-    }, {
-        start: 3.5, size: 3, isSegmented: true, segmentStart: 22.5, text: 'Average Temperature',
-        segmentEnd: 27.5, visible: false, color: '#fc902a',
-        textStyle: { size: fontSize, color: '#ffffff', fontWeight: '600' }, border: { width: 0 },
-        rotation: 0
-    }, {
-        start: 1.5, size: 2, isSegmented: true, segmentStart: 32.5, text: 'High Temperature',
-        segmentEnd: 37.5, visible: false, color: '#ff512f',
-        textStyle: { size: fontSize, color: '#ffffff', fontWeight: '600' }, border: { width: 0 },
-        rotation: 0
-    },
-];
+
 @Component({
     selector: 'control-content',
     templateUrl: 'strip-line.html',
@@ -53,43 +16,121 @@ let xAxisStripLine: StripLineSettingsModel[] = [
 export class StripLineChartComponent {
 
     public data: Object[] = [
-        { x: 'Sun', y: 25 }, { x: 'Mon', y: 27 }, { x: 'Tue', y: 33 }, { x: 'Wed', y: 36 },
-        { x: 'Thu', y: 26 }, { x: 'Fri', y: 27.5 }, { x: 'Sat', y: 23 }
+        { Day: 'Jan', Temperature: 90 },
+        { Day: 'Feb', Temperature: 92 },
+        { Day: 'Mar', Temperature: 94 },
+        { Day: 'Apr', Temperature: 95 },
+        { Day: 'May', Temperature: 94 },
+        { Day: 'Jun', Temperature: 96 },
+        { Day: 'Jul', Temperature: 97 },
+        { Day: 'Aug', Temperature: 98 },
+        { Day: 'Sep', Temperature: 97 },
+        { Day: 'Oct', Temperature: 95 },
+        { Day: 'Nov', Temperature: 90 },
+        { Day: 'Dec', Temperature: 95 },
+    ];
+    public data1: Object[] = [
+        { Day: "Jan", Temperature: 85 },
+        { Day: "Feb", Temperature: 86 },
+        { Day: "Mar", Temperature: 87 },
+        { Day: "Apr", Temperature: 88 },
+        { Day: "May", Temperature: 87 },
+        { Day: "Jun", Temperature: 90 },
+        { Day: "Jul", Temperature: 91 },
+        { Day: "Aug", Temperature: 90 },
+        { Day: "Sep", Temperature: 93 },
+        { Day: "Oct", Temperature: 90 },
+        { Day: "Nov", Temperature: 85 },
+        { Day: "Dec", Temperature: 90 },
+    ];
+    public data2: Object[] = [
+        { Day: "Jan", Temperature: 80 },
+        { Day: "Feb", Temperature: 81 },
+        { Day: "Mar", Temperature: 82 },
+        { Day: "Apr", Temperature: 83 },
+        { Day: "May", Temperature: 84 },
+        { Day: "Jun", Temperature: 83 },
+        { Day: "Jul", Temperature: 82 },
+        { Day: "Aug", Temperature: 81 },
+        { Day: "Sep", Temperature: 85 },
+        { Day: "Oct", Temperature: 84 },
+        { Day: "Nov", Temperature: 83 },
+        { Day: "Dec", Temperature: 82 },
     ];
     //Initializing Primary Y Axis
     public primaryXAxis: Object = {
         valueType: 'Category', majorGridLines: { width: 0 },
         //Initializing Striplines
-        stripLines: xAxisStripLine,
         majorTickLines: {width : 0},
         minorTickLines: {width: 0}
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        minimum: 10, maximum: 40, interval: 5,
-        lineStyle: { color: '#808080' }, labelFormat: '{value} °C', rangePadding: 'None',
+        minimum: 80,
+        maximum: 100,
+        interval: 5,
+        lineStyle: { color: '#808080' },
+        labelFormat: '{value}%',
+        rangePadding: 'None',
+        majorTickLines: {width: 0},
         //Initializing Striplines
         stripLines: [
             {
-                start: 30, end: 40, text: 'High Temperature', color: '#ff512f', visible: false,
-                textStyle: { size: fontSize, color: '#ffffff', fontWeight: '600' }, border: { width: 0 },
-            }, {
-                start: 20, end: 30, text: 'Average Temperature', color: '#fc902a', visible: false,
-                textStyle: { size: fontSize, color: '#ffffff', fontWeight: '600' }, border: { width: 0 },
-            }, {
-                start: 10, end: 20, text: 'Low Temperature', visible: false,
-                textStyle: { size: fontSize, color: '#ffffff', fontWeight: '600' }, border: { width: 0 }, color: '#f9d423'
-            }
+                start: 95,
+                end: 100,
+                text: 'Good',
+                color: '#ff512f',
+                visible: true,
+                horizontalAlignment: 'Middle',
+                textStyle: {
+                    size: '16px',
+                    color: '#ffffff',
+                    fontWeight: '500',
+                },
+                border: { width: 0 },
+            },
+            {
+                start: 85,
+                end: 95,
+                text: 'Ok',
+                color: '#fc902a',
+                horizontalAlignment: 'Middle',
+                visible: true,
+                textStyle: {
+                    size: '16px',
+                    color: '#ffffff',
+                    fontWeight: '500',
+                },
+                border: { width: 0 },
+            },
+            {
+                start: 80,
+                end: 85,
+                text: 'Average',
+                horizontalAlignment: 'Middle',
+                visible: true,
+                textStyle: {
+                    size: '16px',
+                    color: '#ffffff',
+                    fontWeight: '500',
+                },
+                border: { width: 0 },
+                color: '#f9d423',
+              },
         ]
     };
     public marker: Object = {
-        visible: true, width: 10, height: 10, border: { width: 2, color: '#ffffff' }, fill: '#666666'
+        visible: true, width: 7, height: 7
     };
+    public width: string = Browser.isDevice ? '100%' : '75%';
     public tooltip: Object = {
-        enable: true
+        enable: true,
+        header: " ",
+        format: "<b>${point.x}</b> <br> Ratings : <b>${point.y}</b>"
     };
     public legendSettings: Object = {
-        visible: false
+        visible: true,
+        enableHighlight: true
     };
      // custom code start
     public load(args: ILoadedEventArgs): void {
@@ -98,45 +139,10 @@ export class StripLineChartComponent {
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
      // custom code end
-    public title: string = 'Weather Report';
+    public title: string = 'Customer Satisfication Rating';
     @ViewChild('chart')
     public chart: ChartComponent;
     public mode: DropDownList;
-    ngOnInit(): void {
-        this.mode = new DropDownList({
-            index: 0,
-            width: 100,
-            change: () => {
-                this.chart.series[0].fill = 'white';
-                this.chart.series[0].marker.fill = 'black';
-                this.chart.series[0].marker.border.color = 'white';
-                for (let i: number = 0; i < 3; i++) {
-                    this.chart.primaryYAxis.stripLines[i].visible = false;
-                }
-                if (this.mode.value === 'Vertical') {
-                    for (let i: number = 0; i <= 7; i++) {
-                        this.chart.primaryXAxis.stripLines[i].visible = !this.chart.primaryXAxis.stripLines[i].isSegmented;
-                    }
-                } else if (this.mode.value === 'Horizontal') {
-                    for (let i: number = 0; i < 3; i++) {
-                        this.chart.primaryYAxis.stripLines[i].visible = true;
-                    }
-                    for (let i: number = 0; i <= 7; i++) {
-                        this.chart.primaryXAxis.stripLines[i].visible = false;
-                    }
-                } else {
-                    for (let i: number = 0; i <= 7; i++) {
-                        this.chart.primaryXAxis.stripLines[i].visible = this.chart.primaryXAxis.stripLines[i].isSegmented;
-                    }
-                    this.chart.series[0].fill = 'black';
-                    this.chart.series[0].marker.fill = 'white';
-                    this.chart.series[0].marker.border.color = 'black';
-                }
-                this.chart.refresh();
-            }
-        });
-        this.mode.appendTo('#selmode');
-    }
     constructor() {
         //code
     };

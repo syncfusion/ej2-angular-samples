@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ILoadedEventArgs, ChartComponent } from '@syncfusion/ej2-angular-charts';
 import { ExportType, ChartTheme, IPointRenderEventArgs } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
-
+import { Browser } from '@syncfusion/ej2-base';
 /**
  * Sample for chart export
  */
@@ -15,20 +15,23 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 export class ExportChartComponent {
 
     public data: Object[] = [
-        { x: 'DEU', y: 35.5 }, { x: 'CHN', y: 18.3 }, { x: 'ITA', y: 17.6 }, { x: 'JPN', y: 13.6 },
-        { x: 'US', y: 12 }, { x: 'ESP', y: 5.6 }, { x: 'FRA', y: 4.6 }, { x: 'AUS', y: 3.3 },
-        { x: 'BEL', y: 3 }, { x: 'UK', y: 2.9 }
+        { x: 'India', y: 35.5, DataLabelMappingName:  Browser.isDevice ? "35.5" : "35.5GW" }, { x: 'China', y: 18.3, DataLabelMappingName:  Browser.isDevice ?"18.3" :  "18.3GW"  }, { x: 'Italy', y: 17.6, DataLabelMappingName:  Browser.isDevice ? "17.6" :  "17.6GW"  }, { x: 'Japan', y: 13.6, DataLabelMappingName: Browser.isDevice ? "13.6" : "13.6GW"  },
+        { x: 'United state', y: 12, DataLabelMappingName: Browser.isDevice ? "12" : "12GW"  }, { x: 'Spain', y: 5.6, DataLabelMappingName: Browser.isDevice ? "5.6" : "5.6GW"  }, { x: 'France', y: 4.6, DataLabelMappingName: Browser.isDevice ? "4.6" : "4.6GW"  }, { x: 'Australia', y: 3.3, DataLabelMappingName: Browser.isDevice ? "3.3" :"3.3GW"  },
+        { x: 'Belgium', y: 3, DataLabelMappingName:  Browser.isDevice ? "3" : "3GW"  }, { x: 'United Kingdom', y: 2.9, DataLabelMappingName: Browser.isDevice ? "2.9" : "2.9GW"  }
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'Category',
         majorGridLines: { width: 0 },
         majorTickLines: { width: 0 },
-        minorTickLines: { width: 0 }
+        minorTickLines: {width: 0},
+        labelIntersectAction: "None",
+        labelRotation: -45,
+        interval: 1
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Measurements',
+        title: 'Measurements (in Gigawatt)',
         labelFormat: '{value}GW',
         minimum: 0,
         maximum: 40,
@@ -36,12 +39,10 @@ export class ExportChartComponent {
         lineStyle: {width : 0},
         minorTickLines: {width: 0},
         majorTickLines: {width : 0},
+        majorGridLines: { width: 2 },
     };
     //Initializing Marker
-    public marker: Object = {
-        visible: true,
-        height: 10, width: 10
-    };
+    public marker: Object = { dataLabel: { visible: true, position: 'Top', enableRotation: Browser.isDevice ? true : false, angle : -90, name: 'DataLabelMappingName', font: {fontWeight: 600, color: '#ffffff', size: '9px'} } }
     // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
@@ -57,33 +58,81 @@ export class ExportChartComponent {
             width: 0
         }
     };
+   
     public pointRender(args: IPointRenderEventArgs): void {
-        let materialColors: string[] = ['#00bdae', '#404041', '#357cd2', '#e56590', '#f8b883', '#70ad47', '#dd8abd', '#7f84e8', '#7bb4eb',
-            '#ea7a57', '#404041', '#00bdae'];
-        let fabricColors: string[] = ['#4472c4', '#ed7d31', '#ffc000', '#70ad47', '#5b9bd5',
-            '#c1c1c1', '#6f6fe2', '#e269ae', '#9e480e', '#997300', '#4472c4', '#70ad47', '#ffc000', '#ed7d31'];
-        let bootstrapColors: string[] = ['#a16ee5', '#f7ce69', '#55a5c2', '#7ddf1e', '#ff6ea6',
-            '#7953ac', '#b99b4f', '#407c92', '#5ea716', '#b91c52'];
-        let highContrastColors: string[] = ['#79ECE4', '#E98272', '#DFE6B6', '#C6E773', '#BA98FF',
-            '#FA83C3', '#00C27A', '#43ACEF', '#D681EF', '#D8BC6E'];
-        let fluentColors: string[] = ['#614570', '#4C6FB1', '#CC6952', '#3F579A', '#4EA09B', '#6E7A89', '#D4515C', '#E6AF5D', '#639751',
-            '#9D4D69'];
-        let fluentDarkColors: string[] = ['#8AB113', '#2A72D5', '#43B786', '#584EC6', '#E85F9C', '#6E7A89', '#EA6266', '#EBA844', '#26BC7A', 
-            '#BC4870'];     
+        let pointMaterialColors: string[] = ["#00bdae", "#404041", "#357cd2", "#e56590", "#f8b883", "#70ad47", "#dd8abd", "#7f84e8", "#7bb4eb",
+        "#ea7a57", "#404041", "#00bdae"];
+    let pointMaterialDarkColors: string[] = ["#9ECB08", "#56AEFF", "#C57AFF", "#61EAA9", "#EBBB3E", "#F45C5C", "#8A77FF", "#63C7FF", "#FF84B0",
+        "#F7C928"];
+    let pointFabricColors: string[] = ["#4472c4", "#ed7d31", "#ffc000", "#70ad47", "#5b9bd5", "#c1c1c1", "#6f6fe2", "#e269ae", "#9e480e",
+        "#997300", "#4472c4", "#70ad47", "#ffc000", "#ed7d31"];
+    let pointBootstrapColors: string[] = ["#a16ee5", "#f7ce69", "#55a5c2", "#7ddf1e", "#ff6ea6", "#7953ac", "#b99b4f", "#407c92", "#5ea716",
+        "#b91c52"];
+    let pointHighContrastColors: string[] = ["#79ECE4", "#E98272", "#DFE6B6", "#C6E773", "#BA98FF", "#FA83C3", "#00C27A", "#43ACEF", "#D681EF",
+        "#D8BC6E"];
+    let pointBootstrap5Colors: string[] = ["#262E0B", "#668E1F", "#AF6E10", "#862C0B", "#1F2D50", "#64680B", "#311508", "#4C4C81", "#0C7DA0",
+        "#862C0B"];
+    let pointBootstrap5DarkColors: string[] = ["#5ECB9B", "#A860F1", "#EBA844", "#557EF7", "#E9599B", "#BFC529", "#3BC6CF", "#7A68EC", "#74B706",
+        "#EA6266"];
+    let pointFluentColors: string[] = ["#614570", "#4C6FB1", "#CC6952", "#3F579A", "#4EA09B", "#6E7A89", "#D4515C", "#E6AF5D", "#639751",
+        "#9D4D69"];
+    let pointFluentDarkColors: string[] = ["#8AB113", "#2A72D5", "#43B786", "#584EC6", "#E85F9C", "#6E7A89", "#EA6266", "#EBA844", "#26BC7A",
+        "#BC4870"];
+    let pointTailwindColors: string[] = ["#5A61F6", "#65A30D", "#334155", "#14B8A6", "#8B5CF6", "#0369A1", "#F97316", "#9333EA", "#F59E0B",
+        "#15803D"];
+    let pointTailwindDarkColors: string[] = ["#8B5CF6", "#22D3EE", "#F87171", "#4ADE80", "#E879F9", "#FCD34D", "#F97316", "#2DD4BF", "#F472B6",
+        "#10B981"];
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        if (selectedTheme && selectedTheme.indexOf('fabric') > -1) {
-            args.fill = fabricColors[args.point.index % 10];
-        } else if (selectedTheme === 'material') {
-            args.fill = materialColors[args.point.index % 10];
-        } else if (selectedTheme === 'highcontrast') {
-            args.fill = highContrastColors[args.point.index % 10];
-        }  else if (selectedTheme === 'fluent') {
-            args.fill = fluentColors[args.point.index % 10];
-        } else if (selectedTheme === 'fluent-dark') {
-            args.fill = fluentDarkColors[args.point.index % 10];
-        } else {
-            args.fill = bootstrapColors[args.point.index % 10];
+
+        if (selectedTheme==='material-dark')
+        {
+            args.border.color = pointMaterialDarkColors[args.point.index % 10];
+        }
+        else if(selectedTheme==='material')
+        {
+            args.fill = pointMaterialColors[args.point.index % 10];
+        }
+        else if (selectedTheme==='fabric-dark' || selectedTheme==='fabric')
+        {
+            args.fill= pointFabricColors[args.point.index % 10];
+        }
+        else if (selectedTheme==='bootstrap5-dark')
+        {
+            args.fill = pointBootstrap5DarkColors[args.point.index % 10];
+        }
+        else if (selectedTheme==='bootstrap5')
+        {
+            args.fill = pointBootstrap5Colors[args.point.index % 10];
+        }
+        else if (selectedTheme==='fluent-dark')
+        {
+            args.fill = pointFluentDarkColors[args.point.index % 10];
+        }
+        else if (selectedTheme==='fluent')
+        {
+            args.fill = pointFluentColors[args.point.index % 10];
+        }
+        else if (selectedTheme==='bootstrap4' || selectedTheme==='bootstrap')
+        {
+                args.fill = pointBootstrapColors[args.point.index % 10];           
+        }
+        else if (selectedTheme==='tailwind-dark')
+        {
+            args.fill = pointTailwindDarkColors[args.point.index % 10];                     
+
+        }
+        else if (selectedTheme==='tailwind')
+        {                    
+            args.fill = pointTailwindColors[args.point.index % 10];
+        }
+        else if (selectedTheme==='highcontrast')
+        {
+            args.fill = pointHighContrastColors[args.point.index % 10];           
+        }
+        else
+        {
+            args.fill = pointBootstrapColors[args.point.index % 10];           
         }
     };
     public title: string = 'Top 10 Countries Using Solar Power';

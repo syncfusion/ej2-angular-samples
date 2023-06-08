@@ -3,7 +3,7 @@ import { IDataOptions, PivotView, IDataSet, GroupingBarSettings, PivotActionComp
 import { DropDownList, ChangeEventArgs, MultiSelect, SelectEventArgs, RemoveEventArgs, PopupEventArgs, CheckBoxSelection } from '@syncfusion/ej2-dropdowns';
 import { CheckBox, Button } from '@syncfusion/ej2-buttons';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
-import { SortModel } from '@syncfusion/ej2-pivotview/src/pivotview/model/datasourcesettings-model';
+import { SortModel } from '@syncfusion/ej2-pivotview/src/model/datasourcesettings-model';
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(false);
 MultiSelect.Inject(CheckBoxSelection);

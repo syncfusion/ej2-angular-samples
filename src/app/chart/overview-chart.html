@@ -12,7 +12,7 @@
           <div class="title" id="header1"> Sales - Yearly Performance </div>
         </ng-template>
         <ng-template #content>
-          <ejs-chart style="height:100%; width:100%" [primaryXAxis]='columnChartprimaryXAxis'
+          <ejs-chart id = 'column' style="height:100%; width:100%" [primaryXAxis]='columnChartprimaryXAxis'
             [primaryYAxis]='columnChartprimaryYAxis' [chartArea]='chartArea'
             [legendSettings]=" columnChartlegendSettings" (load)='load($event)'>
             <e-series-collection>
@@ -31,7 +31,7 @@
           <div class="title" id="header2">Product Wise Sales - 2021</div>
         </ng-template>
         <ng-template #content>
-          <ejs-accumulationchart style="height:100%; width:100%" [legendSettings]="pielegendSettings"
+          <ejs-accumulationchart id = 'pie' style="height:100%; width:100%" [legendSettings]="pielegendSettings"
             [tooltip]="pieTooltipSetting" [enableAnimation]='animation'
             [enableBorderOnMouseMove]='enableBorderOnMouseMove' [enableSmartLabels]='enableSmartLabels'
             (pointRender)='pointRender($event)' (load)='accumulationload($event)'>
@@ -48,7 +48,7 @@
           <div class="title" id="header3"> Monthly Sales for 2021 </div>
         </ng-template>
         <ng-template #content>
-          <ejs-chart style="height:100%; width:100%" [primaryXAxis]='spLineAreaprimaryXAxis'
+          <ejs-chart id = 'spline' style="height:100%; width:100%" [primaryXAxis]='spLineAreaprimaryXAxis'
             [primaryYAxis]='spLineAreaprimaryYAxis' [tooltip]='spLineAreatooltipSettings' [chartArea]='chartArea'
             [legendSettings]="spLineLegendSettings" (load)='load($event)'>
             <e-series-collection>
@@ -76,12 +76,6 @@
   </p>
 </div>
 <style>
-  ellipse[id*=_Trackball_1] {
-      stroke-width: 1 !important;
-  }
-  .e-chart-focused:focus {
-      outline: none !important;
-  }
 </style>
 <style>
 .e-dashboardlayout {

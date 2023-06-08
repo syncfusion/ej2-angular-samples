@@ -3,3 +3,14 @@
     width:300px; 
     padding-top: 25px
 }
+
+.highcontrast button,
+.bootstrap-dark button,
+.bootstrap5-dark button, 
+.bootstrap4-dark button,
+.fluent-dark button,
+.fabric-dark button,
+.tailwind-dark button,
+.material-dark button {
+background: inherit;
+}

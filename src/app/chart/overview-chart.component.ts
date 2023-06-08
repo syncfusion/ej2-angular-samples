@@ -81,10 +81,10 @@ export class OverViewChartComponent {
   
   public data: Object[] = [
     { Product : "TV : 30 (12%)", Percentage : 12, TextMapping : "TV, 30 <br>12%"},
-    { Product : "PC : 20 (8%)", Percentage : 8, TextMapping : "PC, 20 <br>(8%)"},
-    { Product : "Laptop : 40 (16%)",  Percentage : 16, TextMapping : "Laptop, 40 <br>(16%)"},
-    { Product : "Mobile : 90 (36%)", Percentage : 36, TextMapping : "Mobile, 90 <br>(36%)"},
-    { Product : "Camera : 27 (11%)", Percentage : 11, TextMapping : "Camera, 27 <br>(11%)"}
+    { Product : "PC : 20 (8%)", Percentage : 8, TextMapping : "PC, 20 <br>8%"},
+    { Product : "Laptop : 40 (16%)",  Percentage : 16, TextMapping : "Laptop, 40 <br>16%"},
+    { Product : "Mobile : 90 (36%)", Percentage : 36, TextMapping : "Mobile, 90 <br>36%"},
+    { Product : "Camera : 27 (11%)", Percentage : 11, TextMapping : "Camera, 27 <br>11%"}
   ];
 
   public animation: Object = {
@@ -200,8 +200,8 @@ public pointRender(args: IAccPointRenderEventArgs): void {
     }
     else if(selectedTheme.indexOf('bootstrap5') > -1 )
     {
-      args.border.color = '#343a40' ;
-      this.layoutColor= '#343a40' ;
+      args.border.color = '#212529' ;
+      this.layoutColor= '#212529' ;
     }
     else if(selectedTheme.indexOf('bootstrap') > -1 )
     {
@@ -259,11 +259,17 @@ public pointRender(args: IAccPointRenderEventArgs): void {
     element2.style.padding='0';
   }
   let element =  document.querySelector('#layout_0template') as HTMLElement 
-  element.style.background=this.layoutColor;
+  element.style.background= this.layoutColor;
+  let elementBody = document.getElementById('column');
+  elementBody.style.background = this.layoutColor;
   let element1 =  document.querySelector('#layout_1template') as HTMLElement 
-  element1.style.background=this.layoutColor;
+  element1.style.background= this.layoutColor;
+  let element1Body = document.getElementById('pie');
+  element1Body.style.background = this.layoutColor;
   let element2 =  document.querySelector('#layout_2template') as HTMLElement 
   element2.style.background=this.layoutColor;
+  let element2Body = document.getElementById('spline');
+  element2Body.style.background = this.layoutColor;
 };
 
   constructor() {

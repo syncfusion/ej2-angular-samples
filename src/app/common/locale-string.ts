@@ -104,6 +104,13 @@ export let Locale: Object = {
             "ModeSwitcher": "Modus wechseln"
         },
         "spreadsheet": {
+            "Close": "Schließen",
+            "MoreOptions": "Mehr Optionen",
+            "AddCurrentSelection": "Aktuelle Auswahl zum Filter hinzufügen",
+            "Directional": "Gerichtet",
+            "Shapes": "Formen",
+            "Indicators": "Indikatoren",
+            "Ratings": "Bewertungen",
             "InsertingEmptyValue": "Referenzwert ist ungültig.",
             "FindValue": "Wert finden",
             "ReplaceValue": "Wert ersetzen",
@@ -372,8 +379,16 @@ export let Locale: Object = {
             "NotEqual": "Nicht gleich",
             "Equal": "Gleich",
             "Contains": "Enthält",
+            "NotContains": "Enthält nicht",
             "EndsWith": "Endet mit",
+            "NotEndsWith": "Endet nicht mit",
             "StartsWith": "Beginnt mit",
+            "NotStartsWith": "Beginnt nicht mit",
+            "Like": "Wie",
+            "IsNull": "Null",
+            "NotNull": "Nicht null",
+            "IsEmpty": "Leer",
+            "IsNotEmpty": "Nicht leer",
             "ClearButton": "Klar",
             "FilterButton": "Filter",
             "CancelButton": "Absagen",
@@ -634,7 +649,8 @@ export let Locale: Object = {
             "FillWithoutFormatting": "Ohne Formatierung ausfüllen",
             "CustomFormat": "Benutzerdefinierte Zahlenformate",
             "CustomFormatPlaceholder": "Geben Sie ein benutzerdefiniertes Format ein oder wählen Sie es aus",
-            "CustomFormatTypeList": "Typ"
+            "CustomFormatTypeList": "Typ",
+            "CellReferenceTypoError": "Wir haben einen Tippfehler in Ihrem Zellbezug gefunden. Möchten Sie diesen Verweis wie folgt korrigieren?"
         },
         "grid": {
             "EmptyRecord": "Keine Datensätze zur Anzeige",
@@ -1282,7 +1298,13 @@ export let Locale: Object = {
             "goToFirstPage": "Gehen Sie zur ersten Seite",
             "goToPreviousPage": "Zurück zur letzten Seite",
             "goToNextPage": "Gehen Sie zur nächsten Seite",
-            "goToLastPage": "Gehen Sie zur letzten Seite"
+            "goToLastPage": "Gehen Sie zur letzten Seite",
+            "stackingline": "Gestapelte Linie",
+            "stackingline100": "100 % gestapelte Linie",
+            "combined": "Kombiniert",
+            "None": "Keiner",
+            "subTotalPosition": "Zwischensummenposition",
+            "auto": "Auto"
         },
         "pivotfieldlist": {
             "all": "alles",
@@ -1449,7 +1471,8 @@ export let Locale: Object = {
             "numberFormatString": "Beispiel: C, P, 0000 %, ###0.##0#, etc.",
             "removeCalculatedField": "Möchten Sie dieses berechnete Feld wirklich löschen?",
             "yes": "Ja",
-            "no": "Nein"
+            "no": "Nein",
+            "None": "Keiner"
         },
         "querybuilder": {
             "AddGroup": "Gruppe hinzufügen",
@@ -1554,7 +1577,22 @@ export let Locale: Object = {
             "Medium": "Mittel",
             "Large": "Groß",
             "XLarge": "X-Groß",
-            "ABC": "ABC"
+            "ABC": "ABC",
+            "Finetune": "Feinabstimmung",
+            "Brightness": "Helligkeit",
+            "Contrast": "Kontrast",
+            "Hue": "Farbton",
+            "Saturation": "Sättigung",
+            "Opacity": "Opazität",
+            "Blur": "Verwischen",
+            "Exposure": "Belichtung",
+            "Filter": "Filter",
+            "Chrome": "Chrom",
+            "Cold": "Kalt",
+            "Warm": "Warm",
+            "Grayscale": "Graustufen",
+            "Sepia": "Sepia",
+            "Invert": "Umkehren"
         }
     },
     "ar": {
@@ -1662,6 +1700,13 @@ export let Locale: Object = {
             "ModeSwitcher": "مفتاح كهربائي الوضع"
         },
         "spreadsheet": {
+            "Close": "يغلق",
+            "MoreOptions": "المزيد من الخيارات",
+            "AddCurrentSelection": "إضافة التحديد الحالي للتصفية",
+            "Directional": "اتجاهي",
+            "Shapes": "الأشكال",
+            "Indicators": "المؤشرات",
+            "Ratings": "التقييمات",
             "InsertingEmptyValue": "القيمة المرجعية غير صحيحة.",
             "FindValue": "جد القيمة",
             "ReplaceValue": "استبدل القيمة",
@@ -1930,8 +1975,16 @@ export let Locale: Object = {
             "NotEqual": "غير متساوي",
             "Equal": "متساوي",
             "Contains": "يحتوعلى",
+            "NotContains": "لا يحتوي على",
             "EndsWith": "ينتهي بـ",
+            "NotEndsWith": "لا تنتهي بـ",
             "StartsWith": "ابدا ب",
+            "NotStartsWith": "لا تبدأ بـ",
+            "Like": "يحب",
+            "IsNull": "باطل",
+            "NotNull": "غير فارغة",
+            "IsEmpty": "فارغ",
+            "IsNotEmpty": "ليس فارغًا",
             "ClearButton": "صافي",
             "FilterButton": "منقي",
             "CancelButton": "يلغي",
@@ -2192,7 +2245,8 @@ export let Locale: Object = {
             "FillWithoutFormatting": "املأ بدون تنسيق",
             "CustomFormat": "تنسيقات الأرقام المخصصة",
             "CustomFormatPlaceholder": "اكتب أو حدد تنسيقًا مخصصًا",
-            "CustomFormatTypeList": "يكتب"
+            "CustomFormatTypeList": "يكتب",
+            "CellReferenceTypoError": "وجدنا خطأ مطبعي في مرجع الخلية الخاصة بك. هل تريد تصحيح هذا المرجع على النحو التالي؟"
         },
         "grid": {
             "EmptyRecord": "لا سجلات لعرضها",
@@ -2840,7 +2894,13 @@ export let Locale: Object = {
             "goToFirstPage": "اذهب الى الصفحة الاولى",
             "goToPreviousPage": "الانتقال إلى الصفحة السابقة",
             "goToNextPage": "انتقل إلى الصفحة التالية",
-            "goToLastPage": "اذهب إلى الصفحة الأخيرة"
+            "goToLastPage": "اذهب إلى الصفحة الأخيرة",
+            "stackingline": "خط مكدس",
+            "stackingline100": "خط مكدس بنسبة 100٪",
+            "combined": "مجموع",
+            "None": "لا أحد",
+            "subTotalPosition": "موضع المجاميع الفرعية",
+            "auto": "تلقاءي"
         },
         "pivotfieldlist": {
             "all": "الكل",
@@ -3006,7 +3066,8 @@ export let Locale: Object = {
             "numberFormatString": "مثال: C, P, 0000 %, ###0.##0#, إلخ",
             "removeCalculatedField": "هل أنت متأكد أنك تريد حذف هذا الحقل المحسوب؟",
             "yes": "نعم",
-            "no": "لا"
+            "no": "لا",
+            "None": "لا أحد"
         },
         "querybuilder": {
             "AddGroup": "إضافة مجموعة",
@@ -3111,7 +3172,22 @@ export let Locale: Object = {
             "Medium": "متوسط",
             "Large": "كبير",
             "XLarge": "X-كبير",
-            "ABC": "ABC"
+            "ABC": "ABC",
+            "Finetune": "ضبط دقيق",
+            "Brightness": "سطوع",
+            "Contrast": "التباين",
+            "Hue": "مسحة",
+            "Saturation": "التشبع",
+            "Opacity": "التعتيم",
+            "Blur": "طمس",
+            "Exposure": "التعرض",
+            "Filter": "منقي",
+            "Chrome": "كروم",
+            "Cold": "البرد",
+            "Warm": "دافيء",
+            "Grayscale": "تدرج الرمادي",
+            "Sepia": "بني داكن",
+            "Invert": "عكس"
         }
     },
     "en": {
@@ -3219,6 +3295,13 @@ export let Locale: Object = {
             "ModeSwitcher": "Switch Mode"
         },
         "spreadsheet": {
+            "Close": "Close",
+            "MoreOptions": "More Options",
+            "AddCurrentSelection": "Add current selection to filter",
+            "Directional": "Directional",
+            "Shapes": "Shapes",
+            "Indicators": "Indicators",
+            "Ratings": "Ratings",
             "InsertingEmptyValue": "Reference value is not valid.",
             "FindValue": "Find value",
             "ReplaceValue": "Replace value",
@@ -3487,8 +3570,16 @@ export let Locale: Object = {
             "NotEqual": "Not Equal",
             "Equal": "Equal",
             "Contains": "Contains",
+            "NotContains": "Does Not Contains",
             "EndsWith": "Ends With",
+            "NotEndsWith": "Does Not End With",
             "StartsWith": "Starts With",
+            "NotStartsWith": "Does Not Start With",
+            "Like": "Like",
+            "IsNull": "Null",
+            "NotNull": "Not Null",
+            "IsEmpty": "Empty",
+            "IsNotEmpty": "Not Empty",
             "ClearButton": "Clear",
             "FilterButton": "Filter",
             "CancelButton": "Cancel",
@@ -3749,7 +3840,8 @@ export let Locale: Object = {
             "FillWithoutFormatting": "Fill Without Formatting",
             "CustomFormat": "Custom Number Formats",
             "CustomFormatPlaceholder": "Type or Select a custom format",
-            "CustomFormatTypeList": "Type"
+            "CustomFormatTypeList": "Type",
+            "CellReferenceTypoError": "We found a typo in your cell reference. Do you want to correct this reference as follows?"
         },
         "grid": {
             "EmptyRecord": "No records to display",
@@ -4397,7 +4489,13 @@ export let Locale: Object = {
             "goToFirstPage": "Go to first page",
             "goToPreviousPage": "Go to previous page",
             "goToNextPage": "Go to next page",
-            "goToLastPage": "Go to last page"
+            "goToLastPage": "Go to last page",
+            "stackingline": "Stacked Line",
+            "stackingline100": "100% Stacked Line",
+            "combined": "Combined",
+            "None": "None",
+            "subTotalPosition": "Subtotals position",
+            "auto": "Auto"
         },
         "pivotfieldlist": {
             "all": "All",
@@ -4563,7 +4661,8 @@ export let Locale: Object = {
             "numberFormatString": "Example: C, P, 0000 %, ###0.##0#, etc.",
             "removeCalculatedField": "Are you sure you want to delete this calculated field?",
             "yes": "Yes",
-            "no": "No"
+            "no": "No",
+            "None": "None"
         },
         "querybuilder": {
             "AddGroup": "Add Group",
@@ -4668,7 +4767,22 @@ export let Locale: Object = {
             "Medium": "Medium",
             "Large": "Large",
             "XLarge": "X-Large",
-            "ABC": "ABC"
+            "ABC": "ABC",
+            "Finetune": "Finetune",
+            "Brightness": "Brightness",
+            "Contrast": "Contrast",
+            "Hue": "Hue",
+            "Saturation": "Saturation",
+            "Opacity": "Opacity",
+            "Blur": "Blur",
+            "Exposure": "Exposure",
+            "Filter": "Filter",
+            "Chrome": "Chrome",
+            "Cold": "Cold",
+            "Warm": "Warm",
+            "Grayscale": "Grayscale",
+            "Sepia": "Sepia",
+            "Invert": "Invert"
         }
     },
     "zh": {
@@ -4776,6 +4890,13 @@ export let Locale: Object = {
             "ModeSwitcher": "开关 模式"
         },
         "spreadsheet": {
+            "Close": "关闭",
+            "MoreOptions": "更多的选择",
+            "AddCurrentSelection": "将当前选择添加到过滤器",
+            "Directional": "方向性",
+            "Shapes": "形状",
+            "Indicators": "指示符",
+            "Ratings": "收视率",
             "InsertingEmptyValue": "參考值無效。",
             "FindValue": "尋找價值",
             "ReplaceValue": "替換值",
@@ -5044,8 +5165,16 @@ export let Locale: Object = {
             "NotEqual": "不相等",
             "Equal": "平等的",
             "Contains": "包含",
+            "NotContains": "不包含",
             "EndsWith": "以。。結束",
+            "NotEndsWith": "不結束於",
             "StartsWith": "以。。開始",
+            "NotStartsWith": "不以開頭",
+            "Like": "喜歡",
+            "IsNull": "無效的",
+            "NotNull": "不為空",
+            "IsEmpty": "空的",
+            "IsNotEmpty": "不是空的",
             "ClearButton": "清除",
             "FilterButton": "篩選",
             "CancelButton": "取消",
@@ -5306,7 +5435,8 @@ export let Locale: Object = {
             "FillWithoutFormatting": "無格式填充",
             "CustomFormat": "自定義數字格式",
             "CustomFormatPlaceholder": "鍵入或選擇自定義格式",
-            "CustomFormatTypeList": "類型"
+            "CustomFormatTypeList": "類型",
+            "CellReferenceTypoError": "我們在您的單元格引用中發現了拼寫錯誤。是否要按如下方式更正此引用？"
         },
         "grid": {
             "EmptyRecord": "无记录可显示",
@@ -5953,7 +6083,13 @@ export let Locale: Object = {
             "goToFirstPage": "转到第一页",
             "goToPreviousPage": "转到上一页",
             "goToNextPage": "转到下一页",
-            "goToLastPage": "转到最后一页"
+            "goToLastPage": "转到最后一页",
+            "stackingline": "堆積線",
+            "stackingline100": "100% 堆疊線",
+            "combined": "聯合",
+            "None": "沒有任何",
+            "subTotalPosition": "小計位置",
+            "auto": "汽車"
         },
         "pivotfieldlist": {
             "all": "所有",
@@ -6119,7 +6255,8 @@ export let Locale: Object = {
             "numberFormatString": "例: C, P, 0000 %, ###0.##0#, 等等",
             "removeCalculatedField": "您确定要删除此计算字段吗？",
             "yes": "是的",
-            "no": "不"
+            "no": "不",
+            "None": "沒有任何"
         },
         "querybuilder": {
             "AddGroup": "添加组",
@@ -6224,8 +6361,23 @@ export let Locale: Object = {
             "Small": "小的",
             "Medium": "中等的",
             "Large": "大的",
-            "XLarge": "超大",
-            "ABC": "ABC"
+            "XLarge": "特大号",
+            "ABC": "ABC",
+            "Finetune": "微调",
+            "Brightness": "亮度",
+            "Contrast": "对比",
+            "Hue": "色调",
+            "Saturation": "饱和",
+            "Opacity": "不透明度",
+            "Blur": "模糊",
+            "Exposure": "暴露",
+            "Filter": "筛选",
+            "Chrome": "铬合金",
+            "Cold": "寒冷的",
+            "Warm": "温暖的",
+            "Grayscale": "灰阶",
+            "Sepia": "棕褐色",
+            "Invert": "倒置"
         }
     },
     "fr-CH": {
@@ -6333,6 +6485,13 @@ export let Locale: Object = {
             "ModeSwitcher": "Commutateur Mode"
         },
         "spreadsheet": {
+            "Close": "Fermer",
+            "MoreOptions": "Plus d'options",
+            "AddCurrentSelection": "Ajouter la sélection actuelle au filtre",
+            "Directional": "Directionnel",
+            "Shapes": "Formes",
+            "Indicators": "Indicateurs",
+            "Ratings": "Notes",
             "InsertingEmptyValue": "La valeur de référence n'est pas valide.",
             "FindValue": "Trouver de la valeur",
             "ReplaceValue": "Remplacer la valeur",
@@ -6601,8 +6760,16 @@ export let Locale: Object = {
             "NotEqual": "Inégal",
             "Equal": "Égal",
             "Contains": "Contient",
+            "NotContains": "Ne contient pas",
             "EndsWith": "Se termine par",
+            "NotEndsWith": "Ne se termine pas par",
             "StartsWith": "Commence avec",
+            "NotStartsWith": "Ne commence pas par",
+            "Like": "Comme",
+            "IsNull": "Nul",
+            "NotNull": "Non nul",
+            "IsEmpty": "Vide",
+            "IsNotEmpty": "Pas vide",
             "ClearButton": "Dégager",
             "FilterButton": "Filtre",
             "CancelButton": "Annuler",
@@ -6863,7 +7030,8 @@ export let Locale: Object = {
             "FillWithoutFormatting": "Remplir sans formater",
             "CustomFormat": "Formats de nombre personnalisés",
             "CustomFormatPlaceholder": "Tapez ou sélectionnez un format personnalisé",
-            "CustomFormatTypeList": "Taper"
+            "CustomFormatTypeList": "Taper",
+            "CellReferenceTypoError": "Nous avons trouvé une faute de frappe dans votre référence de cellule. Voulez-vous corriger cette référence comme suit ?"
         },
         "grid": {
             "EmptyRecord": "Aucun enregistrement à afficher",
@@ -7511,7 +7679,13 @@ export let Locale: Object = {
             "goToFirstPage": "Aller à la première page",
             "goToPreviousPage": "Aller à la page précédente",
             "goToNextPage": "Aller à la page suivante",
-            "goToLastPage": "Aller à la dernière page"
+            "goToLastPage": "Aller à la dernière page",
+            "stackingline": "Ligne empilée",
+            "stackingline100": "Ligne empilée à 100 %",
+            "combined": "Combinée",
+            "None": "Aucune",
+            "subTotalPosition": "Position des sous-totaux",
+            "auto": "Auto"
         },
         "pivotfieldlist": {
             "all": "tout",
@@ -7677,7 +7851,8 @@ export let Locale: Object = {
             "numberFormatString": "Exemple: C, P, 0000 %, ###0.##0#, etc.",
             "removeCalculatedField": "Voulez-vous vraiment supprimer ce champ calculé?",
             "yes": "Oui",
-            "no": "Non"
+            "no": "Non",
+            "None": "Rien"
         },
         "querybuilder": {
             "AddGroup": "ajouter un groupe",
@@ -7742,7 +7917,7 @@ export let Locale: Object = {
             "close": "Fermer"
         },
         "image-editor": {
-            "Browse": "Feuilleter",
+            "Browse": "Parcourir",
             "Crop": "recadrer",
             "ZoomIn": "agrandir",
             "ZoomOut": "Dézoomer",
@@ -7781,8 +7956,23 @@ export let Locale: Object = {
             "Small": "Petit",
             "Medium": "Moyen",
             "Large": "Grand",
-            "XLarge": "X-Grand",
-            "ABC": "ABC"
+            "XLarge": "Très grand",
+            "ABC": "ABC",
+            "Finetune": "Affiner",
+            "Brightness": "Luminosité",
+            "Contrast": "Contraste",
+            "Hue": "Teinte",
+            "Saturation": "Saturation",
+            "Opacity": "Opacité",
+            "Blur": "Se brouiller",
+            "Exposure": "Exposition",
+            "Filter": "Filtre",
+            "Chrome": "Chrome",
+            "Cold": "Froid",
+            "Warm": "Chaleureuse",
+            "Grayscale": "Niveaux de gris",
+            "Sepia": "Sépia",
+            "Invert": "Inverser"
         }
     }
 };

@@ -25,7 +25,7 @@ export class LoadingAnimationComponent implements OnInit {
     ];
 
     ngOnInit(): void {
-        this.data =  new DataManager({ url: 'https://ej2services.syncfusion.com/production/web-services/api/SelfReferenceData', adaptor: new WebApiAdaptor });
+        this.data =  new DataManager({ url: 'https://services.syncfusion.com/angular/production/api/SelfReferenceData', adaptor: new WebApiAdaptor });
         this.pageSetting = { pageCount: 3 };
         this.loadingIndicator = {indicatorType: 'Shimmer'};
     }

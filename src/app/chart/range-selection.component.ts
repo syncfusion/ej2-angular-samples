@@ -37,11 +37,11 @@ export class RangeSelectionChartComponent {
     ];
     public marker1: Object = {
         shape: 'Triangle',
-        width: 10, height: 10
+        width: 7, height: 7
     }
     public marker2: Object = {
         shape: 'Pentagon',
-        width: 10, height: 10
+        width: 7, height: 7
     }
     @ViewChild('chart')
     public chart: ChartComponent;
@@ -60,6 +60,7 @@ export class RangeSelectionChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
+        title: 'Sales',
         labelFormat: '{value}%',
         interval: 25,
         minimum: 0,

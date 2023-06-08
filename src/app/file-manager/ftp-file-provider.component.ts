@@ -13,6 +13,8 @@ import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsVie
 
 export class FTPController {
     public ajaxSettings: object;
+    public toolbarSettings: object;
+    public contextMenuSettings: object;
     public hostUrl: string = 'https://ej2-ftp-aspcore-service.azurewebsites.net/';
     public ngOnInit(): void {
         this.ajaxSettings = {
@@ -21,5 +23,10 @@ export class FTPController {
             uploadUrl: this.hostUrl + 'api/FTPProvider/FTPUpload',
             downloadUrl: this.hostUrl + 'api/FTPProvider/FTPDownload'
         };
+        this.toolbarSettings = { items: ['NewFolder', 'SortBy', 'Cut', 'Copy', 'Paste', 'Delete', 'Refresh', 'Download', 'Rename', 'Selection', 'View', 'Details',] };
+        this.contextMenuSettings = {
+            layout: ['SortBy', 'View', 'Refresh', '|', 'Paste', '|', 'NewFolder', '|', 'Details', '|', 'SelectAll'],
+            visible: true
+        }
     }
 }

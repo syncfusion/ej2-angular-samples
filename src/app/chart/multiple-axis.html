@@ -1,7 +1,6 @@
 <div id="action-description">
     <p>
-        This sample illustrates multiple axis in chart to represent the temperature in Celsius in an axis and Fahrenheit in another
-        axis.
+        This example shows how to use a chart's multiple axes to depict temperatures in both Celsius and Fahrenheit.
     </p>
 </div>
 <div class="control-section">
@@ -9,9 +8,9 @@
         <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
             [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [axes]='axis' [legendSettings]='legend' [annotations]='annotations'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Germany' width=2>
+                <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Germany' [marker]='marker1' width=2>
                 </e-series>
-                <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='Japan' width=2 yAxisName='yAxis' [marker]='marker'>
+                <e-series [dataSource]='data1' type='Spline' xName='x' yName='y' name='Japan' width=2 yAxisName='yAxis' [marker]='marker'>
                 </e-series>
             </e-series-collection>
         </ejs-chart>
@@ -19,8 +18,7 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure multipe axes. Use axes collection to render secondary axis to the
-        chart and bind it to the specify series. You can also customize the axis line and its labels similar to primary axis.
+        In this example, you can see how to render and configure multiple axes. Use an Axes collection to render a secondary axis in the chart that can be bound to a specific series using YAxisName and XAxisName properties in the series. You can also customize the secondary axis similar to the primary axis.
     </p>
     <p>
         Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.

@@ -15,17 +15,36 @@ import { Browser } from '@syncfusion/ej2-base';
 export class VerticalChartComponent {
     public clrInterval: number;
 
-    public data1: Object[] = [{x: 0, y: 0}];
+    public data1: Object[] = [ { Year: "2016", column: 13600 },
+    { Year: "2017", column: 12900 },
+    { Year: "2018", column: 12500 },
+    { Year: "2019", column: 14500 },
+    { Year: "2020", column: 14500 },
+    { Year: "2021", column: 12000 }];
+
+    public data2: Object[] = [ { Year: "2016",  series: 0.5 },
+    { Year: "2017", series: 1.5 },
+    { Year: "2018", series: 3.5 },
+    { Year: "2019", series: 1.5 },
+    { Year: "2020", series: 3 },
+    { Year: "2021", series: 2.5 }];
 
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Time (s)', majorGridLines: { width: 0 } 
+         majorGridLines: { width: 0 } , valueType: 'Category', majorTickLines: {width: 0}, minorTickLines: {width: 0}
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Velocity (m/s)', majorGridLines: { width: 0 }, minimum: -15, maximum: 15, interval: 5
+        title: 'Sales in Billion',edgeLabelPlacement: 'Shift', majorGridLines: { width: 0 }, minimum: 11000 , maximum: 15000 , interval: 1000, lineStyle:{width: 0},majorTickLines: {width: 0}
     };
     public marker: Object = {
+        visible: true,
+        width: 7, height: 7, isFilled: true
+    };
+    public tooltip: Object = {
+        enable: true
+    };
+    public legendSettings: Object = {
         visible: false
     };
     public animation1: Object = {
@@ -46,44 +65,19 @@ export class VerticalChartComponent {
      // custom code end
     public vertical: boolean = true;
     public count: number = 0;
-    public loaded(args: ILoadedEventArgs): void {
-        this.clrInterval =
-            window.setInterval(() => {
-                args.chart.series[0].dataSource = this.liveData(args.chart.series[0].dataSource as any[], <Series>args.chart.series[0]);
-                args.chart.refresh();
-            },
-      // tslint:disable-next-line:align
-      100);
-    }
 
-    public liveData(data: any[], series: Series): any[] {
-        this.count = this.count + 1;
-        let newData: any[] = data;
-        if (this.count > 350 || getElement('chart-vertical') === null) {
-            clearInterval(this.clrInterval);
-        } else if (this.count > 300) {
-            newData.push({ x: this.getXValue(data), y: this.getYValue(0, 0) });
-        } else if (this.count > 250) {
-            newData.push({ x: this.getXValue(data), y: this.getYValue(-2, 1) });
-        } else if (this.count > 180) {
-            newData.push({ x: this.getXValue(data), y: this.getYValue(-3, 2) });
-        } else if (this.count > 100) {
-            newData.push({ x: this.getXValue(data), y: this.getYValue(-7, 6) });
-        } else if (this.count < 50) {
-            newData.push({ x: this.getXValue(data), y: this.getYValue(-3, 3) });
-        } else {
-            newData.push({ x: this.getXValue(data), y: this.getYValue(-9, 9) });
-        }
-        return newData;
-    }
-    public getXValue(data: any[]): number {
-        return data.length;
-    }
+    public axis: Object = [{
+        majorGridLines: { width: 0 }, title:'Profit(In Percentage)',
+        majorTickLines:{width: 0},
+        opposedPosition: true,
+        lineStyle: { width: 0 },
+        minimum: 0, maximum: 4, interval: 0.5,
+        edgeLabelPlacement: 'Shift',
+        name: 'yAxis2',
+        labelFormat: '{value}%'
+    }];
 
-    public getYValue(min: number, max: number): number {
-        return Math.random() * (max - min) + min;
-    }
-    public title: string = 'Indonesia - Seismograph Analysis';
+    public title: string = 'Sales Vs Profit Margins';
     constructor() {
         //code
      };

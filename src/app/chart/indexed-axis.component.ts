@@ -14,7 +14,7 @@ export class IndexedAxisChartComponent {
     public data1: Object[] = [
         { x: 'India', y: 7.3 },
         { x: 'Myanmar', y: 7.9 },
-        { x: 'Bangladesh', y: 6.8 },
+        { x: 'Bangladesh', y: 6.0 },
         { x: 'Cambodia', y: 7.0 },
         { x: 'China', y: 6.9 }
     ];
@@ -45,9 +45,12 @@ export class IndexedAxisChartComponent {
         width: 10,
         dataLabel: {
             visible: true,
-            position: 'Top', font: {
+            position:'Top',   
+            enableRotation: Browser.isDevice ? true : false,
+            angle: -90, 
+            font: {
                 fontWeight: '600',
-                size : Browser.isDevice ? '8px' : '11px'
+              
             }
         }
     };
@@ -57,9 +60,11 @@ export class IndexedAxisChartComponent {
         width: 10,
         dataLabel: {
             visible: true,
-            position: 'Top', font: {
+            position: 'Top',
+            enableRotation: Browser.isDevice ? true : false,
+            angle: -90, 
+            font: {
                 fontWeight: '600',
-                size : Browser.isDevice ? '8px' : '11px'
             }
         }
     };
@@ -72,7 +77,7 @@ export class IndexedAxisChartComponent {
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
     // custom code end
-    public title: string = 'Real GDP Growth';
+    public title: string = 'GDP by Countries';
     @ViewChild('chart')
     public chart: ChartComponent;
     public isIndexed(e: Event): void {
@@ -93,9 +98,11 @@ export class IndexedAxisChartComponent {
             this.chart.series[1].marker.visible = true;
             this.chart.series[0].marker.dataLabel.visible = true;
             this.chart.series[0].marker.dataLabel.position = 'Top';
+            this.chart.series[0].marker.dataLabel.enableRotation = false;
             this.chart.series[0].marker.dataLabel.font.color = '';
             this.chart.series[1].marker.dataLabel.visible = true;
             this.chart.series[1].marker.dataLabel.position = 'Top';
+            this.chart.series[1].marker.dataLabel.enableRotation = false;
             this.chart.series[1].marker.dataLabel.font.color = '';
             this.chart.primaryXAxis.labelRotation = 90;
         }

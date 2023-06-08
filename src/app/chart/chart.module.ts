@@ -120,6 +120,7 @@ import { RangeColorMappingComponent } from './range-color-mapping.component';
 import { KeyboardComponent } from './keyboard.component';
 import { OverViewChartComponent } from './overview-chart.component';
 import { AreaNegativePointsComponent } from './area-negative-points.component';
+import { RangeStepAreaComponent } from './range-step-area.component';
 
 export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/overview-chart', component: OverViewChartComponent, name: 'Overview', description: "This demo for overview of Essential JS2 Chart for data about the annual, monthly and product wise sales with different types of charts.",
@@ -139,6 +140,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/area', component: AreaChartComponent, name: 'Area', description: "This demo for Essential JS2 Chart control shows how to render the area series.", order: '03', category: 'Area Charts' },
     { path: ':theme/chart/spline-area', component: SplineAreaChartComponent, name: 'Spline Area', description: "This demo for Essential JS2 Chart control shows how to render the spline area series.", order: '03', category: 'Area Charts' },
     { path: ':theme/chart/step-area', component: StepAreaChartComponent, name: 'Step Area', description: "This demo for Essential JS2 Chart control shows how to render the step area series.", order: '03', category: 'Area Charts' },
+    { path: ':theme/chart/range-step-area', component: RangeStepAreaComponent, name: 'Range Step Area', description: "This demo for Essential JS2 Chart control shows how to render the range step area series.", order: '03', category: 'Area Charts', type: 'new' },
     { path: ':theme/chart/range-area', component: RangeAreaComponent, name: 'Range Area', description: "This demo for Essential JS2 Chart control shows how to render the range area series.", order: '03', category: 'Area Charts' },
     { path: ':theme/chart/spline-range-area', component: SplineRangeAreaComponent, name: 'Spline Range Area', description: "This demo for Essential JS2 Chart control shows how to render the spline range area series.", order: '03', category: 'Area Charts' },
     { path: ':theme/chart/stacked-area', component: StackedAreaChartComponent, name: 'Stacked Area', description: "This demo for Essential JS2 Chart control shows how to render the stacking area series.", order: '03', category: 'Area Charts' },
@@ -170,57 +172,58 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/scatter-plot', component: ScatterPlotChartComponent, name: 'Scatter Plot', description: "This demo for Essential JS2 Chart control shows how to render the scatter series.", order: '06', category: 'Scatter and Bubble' },
     { path: ':theme/chart/bubble', component: BubbleChartComponent, name: 'Bubble', description: "This demo for Essential JS2 Chart control shows how to render the bubble series.", order: '06', category: 'Scatter and Bubble' },
 
-    { path: ':theme/chart/waterfall', component: WaterfallChartComponent, name: 'Waterfall', description: "This demo for Essential JS2 Chart control shows how to render the waterfall series.", order: '07', category: 'Other Types' },
-    { path: ':theme/chart/histogram', component: HistogramChartComponent, name: 'Histogram', description: "This demo for Essential JS2 Chart control shows how to render the histogram series.", order: '07', category: 'Other Types' },
-    { path: ':theme/chart/box-and-whisker', component: BoxandWhiskerChartComponent, name: 'Box and Whisker', description: "This demo for Essential JS2 Chart control shows how to render the box and whisker series.", order: '07', category: 'Other Types' },
-    { path: ':theme/chart/error-bar', component: ErrorBarChartComponent, name: 'Error Bar', description: "This demo for Essential JS2 Chart control shows how to render and configure the error bars in charts.", order: '07', category: 'Other Types' },
-    { path: ':theme/chart/trend-lines', component: TrendLineChartComponent, name: 'Trendlines', description: "This demo for Essential JS2 Chart control shows how to render and configure the trend lines in charts.", order: '07', category: 'Other Types' },
+
+    { path: ':theme/chart/default-pie', component: DefaultPieComponent, name: 'Pie', description: "This demo for Essential JS2 Chart control shows how to render and configure the pie charts.", order: '07', category: 'Accumulation Charts' },
+    { path: ':theme/chart/pie-radius', component: PieRadiusComponent, name: 'Pie with Various Radius', description: "This demo for Essential JS2 Chart control shows how to render and configure the pie chart with different radius.", order: '07', category: 'Accumulation Charts' },
+    { path: ':theme/chart/donut', component: DonutComponent, name: 'Donut', description: "This demo for Essential JS2 Chart control shows how to render and configure the doughnut charts.", order: '07', category: 'Accumulation Charts', type: 'update' },
+    { path: ':theme/chart/pyramid', component: PyramidComponent, name: 'Pyramid', description: "This demo for Essential JS2 Chart control shows how to render and configure the pyramid charts.", order: '07', category: 'Accumulation Charts' },
+    { path: ':theme/chart/funnel', component: FunnelComponent, name: 'Funnel', description: "This demo for Essential JS2 Chart control shows how to render and configure the funnel charts.", order: '07', category: 'Accumulation Charts' },
+    {
+        path: ':theme/chart/pie-legend', component: DefaultDonutComponent, name: 'Pie with Legend', description: "This demo for Essential JS2 Chart control shows how to render and configure the legends in pie charts.", order: '07', category: 'Accumulation Charts'
+    },
+    {
+        path: ':theme/chart/semi-pie', component: SemiPieComponent, name: 'Semi Pie', description: "This demo for Essential JS2 Chart control shows how to render semi-pie and doughnut charts.", order: '07', category: 'Accumulation Charts'
+    },
+    {
+        path: ':theme/chart/smart-labels', component: SmartLabelsComponent, name: 'Smart Labels', description: "This demo for Essential JS2 Chart control shows how to arrange the labels smartly without overlapping with each other.", order: '07', category: 'Accumulation Charts'
+    },
+    {
+        path: ':theme/chart/drill-down-pie', component: DrilldownPieComponent, name: 'Drilldown', description: "This demo for Essential JS2 Chart control shows how to achieve the drill-down concept using pie charts.", order: '07', category: 'Accumulation Charts'
+    },
+    {
+        path: ':theme/chart/grouping', component: GroupingPieComponent, name: 'Grouping', description: "This demo for Essential JS2 Chart control shows how to group points in pie charts.", order: '07', category: 'Accumulation Charts'
+    }, {
+        path: ':theme/chart/pie-empty-point', component: PieEmptyPointChartComponent, name: 'Empty Points', description: "This demo for Essential JS2 Chart control shows how to render and configure the empty points.", order: '07', category: 'Accumulation Charts'
+    },
+
+    { path: ':theme/chart/waterfall', component: WaterfallChartComponent, name: 'Waterfall', description: "This demo for Essential JS2 Chart control shows how to render the waterfall series.", order: '08', category: 'Other Types' },
+    { path: ':theme/chart/histogram', component: HistogramChartComponent, name: 'Histogram', description: "This demo for Essential JS2 Chart control shows how to render the histogram series.", order: '08', category: 'Other Types' },
+    { path: ':theme/chart/box-and-whisker', component: BoxandWhiskerChartComponent, name: 'Box and Whisker', description: "This demo for Essential JS2 Chart control shows how to render the box and whisker series.", order: '08', category: 'Other Types' },
+    { path: ':theme/chart/error-bar', component: ErrorBarChartComponent, name: 'Error Bar', description: "This demo for Essential JS2 Chart control shows how to render and configure the error bars in charts.", order: '08', category: 'Other Types', type: 'update' },
+    { path: ':theme/chart/trend-lines', component: TrendLineChartComponent, name: 'Trendlines', description: "This demo for Essential JS2 Chart control shows how to render and configure the trend lines in charts.", order: '08', category: 'Other Types' },
     {
         path: ':theme/chart/multi-series-chart', component: MultiSeriesChartComponent, name: 'Multi Series Chart', description: "This demo for Essential JS2 Chart control shows how to combine different types of charts.",
-        order: '07', category: 'Other Types'
+        order: '08', category: 'Other Types'
     },
     {
         path: ':theme/chart/pare-to', component: ParetoSeriesChartComponent, name: 'Pareto Chart', description: "This demo for Essential JS2 Chart control shows how to render pareto charts.",
-        order: '07', category: 'Other Types'
+        order: '08', category: 'Other Types'
     },
 
 
-    { path: ':theme/chart/accumulation-distribution-indicator', component: AccumulationDistributionComponent, name: 'Accumulation Distribution', description: "This demo for Essential JS2 Chart control shows how to render and configure the accumulation distribution indicator.", order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/average-true-range-indicator', component: AtrIndicatorComponent, name: 'ATR', description: "This demo for Essential JS2 Chart control shows how to render and configure the average true range indicator.", order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/bollinger', component: BollingerIndicatorComponent, name: 'Bollinger', description: "This demo for Essential JS2 Chart control shows how to render and configure the bollinger band type indicator.", order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/exponential-moving-average-indicator', component: EmaIndicatorComponent, name: 'EMA', description: "This demo for Essential JS2 Chart control shows how to render and configure the exponential moving average indicator.", order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/moving-average-convergence-divergence-indicator', component: MacdIndicatorComponent, name: 'MACD', description: "This demo for Essential JS2 Chart control shows how to render and configure the moving average convergence divergence indicator.", order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/momentum', component: MomentumIndicatorComponent, name: 'Momentum', description: "This demo for Essential JS2 Chart control shows how to render and configure the momentum indicator.", order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/relative-strength-index-indicator', component: RsiIndicatorComponent, name: 'RSI', description: "This demo for Essential JS2 Chart control shows how to render and configure the relative strength index indicator.", order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/simple-moving-average-indicator', component: SmaIndicatorComponent, name: 'SMA', description: "This demo for Essential JS2 Chart control shows how to render and configure the simple moving average indicator.", order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/stochastic', component: StochasticIndicatorComponent, name: 'Stochastic', description: "This demo for Essential JS2 Chart control shows how to render and configure the stochastic indicator.", order: '08', category: 'Technical Indicators' },
-    { path: ':theme/chart/triangular-moving-average-indicator', component: TmaIndicatorComponent, name: 'TMA', description: "This demo for Essential JS2 Chart control shows how to render and configure the triangular moving average indicator.", order: '08', category: 'Technical Indicators' },
+    { path: ':theme/chart/accumulation-distribution-indicator', component: AccumulationDistributionComponent, name: 'Accumulation Distribution', description: "This demo for Essential JS2 Chart control shows how to render and configure the accumulation distribution indicator.", order: '09', category: 'Technical Indicators' },
+    { path: ':theme/chart/average-true-range-indicator', component: AtrIndicatorComponent, name: 'ATR', description: "This demo for Essential JS2 Chart control shows how to render and configure the average true range indicator.", order: '09', category: 'Technical Indicators' },
+    { path: ':theme/chart/bollinger', component: BollingerIndicatorComponent, name: 'Bollinger', description: "This demo for Essential JS2 Chart control shows how to render and configure the bollinger band type indicator.", order: '09', category: 'Technical Indicators' },
+    { path: ':theme/chart/exponential-moving-average-indicator', component: EmaIndicatorComponent, name: 'EMA', description: "This demo for Essential JS2 Chart control shows how to render and configure the exponential moving average indicator.", order: '09', category: 'Technical Indicators' },
+    { path: ':theme/chart/moving-average-convergence-divergence-indicator', component: MacdIndicatorComponent, name: 'MACD', description: "This demo for Essential JS2 Chart control shows how to render and configure the moving average convergence divergence indicator.", order: '09', category: 'Technical Indicators' },
+    { path: ':theme/chart/momentum', component: MomentumIndicatorComponent, name: 'Momentum', description: "This demo for Essential JS2 Chart control shows how to render and configure the momentum indicator.", order: '09', category: 'Technical Indicators' },
+    { path: ':theme/chart/relative-strength-index-indicator', component: RsiIndicatorComponent, name: 'RSI', description: "This demo for Essential JS2 Chart control shows how to render and configure the relative strength index indicator.", order: '09', category: 'Technical Indicators' },
+    { path: ':theme/chart/simple-moving-average-indicator', component: SmaIndicatorComponent, name: 'SMA', description: "This demo for Essential JS2 Chart control shows how to render and configure the simple moving average indicator.", order: '09', category: 'Technical Indicators' },
+    { path: ':theme/chart/stochastic', component: StochasticIndicatorComponent, name: 'Stochastic', description: "This demo for Essential JS2 Chart control shows how to render and configure the stochastic indicator.", order: '09', category: 'Technical Indicators' },
+    { path: ':theme/chart/triangular-moving-average-indicator', component: TmaIndicatorComponent, name: 'TMA', description: "This demo for Essential JS2 Chart control shows how to render and configure the triangular moving average indicator.", order: '09', category: 'Technical Indicators' },
 
-    { path: ':theme/chart/chart-performance', component: PerformanceChartComponent, name: 'Chart Performance', description: "This demo for Essential JS2 Chart control shows the performance when plotting large volumes of data and handling high frequency real-time data.", order: '09', category: 'Benchmark' },
+    { path: ':theme/chart/chart-performance', component: PerformanceChartComponent, name: 'Chart Performance', description: "This demo for Essential JS2 Chart control shows the performance when plotting large volumes of data and handling high frequency real-time data.", order: '10', category: 'Benchmark' },
 
-
-    { path: ':theme/chart/default-pie', component: DefaultPieComponent, name: 'Pie', description: "This demo for Essential JS2 Chart control shows how to render and configure the pie charts.", order: '10', category: 'Accumulation Charts' },
-    { path: ':theme/chart/pie-radius', component: PieRadiusComponent, name: 'Pie with Various Radius', description: "This demo for Essential JS2 Chart control shows how to render and configure the pie chart with different radius.", order: '10', category: 'Accumulation Charts' },
-    { path: ':theme/chart/donut', component: DonutComponent, name: 'Donut', description: "This demo for Essential JS2 Chart control shows how to render and configure the doughnut charts.", order: '10', category: 'Accumulation Charts' },
-    { path: ':theme/chart/pyramid', component: PyramidComponent, name: 'Pyramid', description: "This demo for Essential JS2 Chart control shows how to render and configure the pyramid charts.", order: '10', category: 'Accumulation Charts' },
-    { path: ':theme/chart/funnel', component: FunnelComponent, name: 'Funnel', description: "This demo for Essential JS2 Chart control shows how to render and configure the funnel charts.", order: '10', category: 'Accumulation Charts' },
-    {
-        path: ':theme/chart/pie-legend', component: DefaultDonutComponent, name: 'Pie with Legend', description: "This demo for Essential JS2 Chart control shows how to render and configure the legends in pie charts.", order: '10', category: 'Accumulation Charts'
-    },
-    {
-        path: ':theme/chart/semi-pie', component: SemiPieComponent, name: 'Semi Pie', description: "This demo for Essential JS2 Chart control shows how to render semi-pie and doughnut charts.", order: '10', category: 'Accumulation Charts', type: 'update'
-    },
-    {
-        path: ':theme/chart/smart-labels', component: SmartLabelsComponent, name: 'Smart Labels', description: "This demo for Essential JS2 Chart control shows how to arrange the labels smartly without overlapping with each other.", order: '10', category: 'Accumulation Charts'
-    },
-    {
-        path: ':theme/chart/drill-down-pie', component: DrilldownPieComponent, name: 'Drilldown', description: "This demo for Essential JS2 Chart control shows how to achieve the drill-down concept using pie charts.", order: '10', category: 'Accumulation Charts'
-    },
-    {
-        path: ':theme/chart/grouping', component: GroupingPieComponent, name: 'Grouping', description: "This demo for Essential JS2 Chart control shows how to group points in pie charts.", order: '10', category: 'Accumulation Charts'
-    }, {
-        path: ':theme/chart/pie-empty-point', component: PieEmptyPointChartComponent, name: 'Empty Points', description: "This demo for Essential JS2 Chart control shows how to render and configure the empty points.", order: '10', category: 'Accumulation Charts'
-    },
 
 
     { path: ':theme/chart/polar-line', component: PolarLineChartComponent, name: 'Line', description: "This demo for Essential JS2 Chart control shows how to render line in polar and radar charts.", order: '11', category: 'Polar Radar' },
@@ -298,7 +301,7 @@ let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, Ba
     RangeBarChartComponent, ParetoSeriesChartComponent, DonutComponent,
     RangeSelectionChartComponent, ExportChartComponent, SplineAreaChartComponent,
     MultiLevelLabelsChartComponent, LineSegmentChartComponent, RangeColorMappingComponent,
-    AxisCrossingChartComponent, AreaSegmentChartComponent, MultiLineChartComponent,
+    AxisCrossingChartComponent, AreaSegmentChartComponent, MultiLineChartComponent,RangeStepAreaComponent,
     DateTimeCategoryAxisChartComponent, SortingChartComponent, PieRadiusComponent, StackedStepAreaChartComponent,
     StackedLineChartComponent, PercentStackedLineChartComponent, DataEditingComponent, TooltipTemplateComponent, OverViewChartComponent , AreaNegativePointsComponent];
 @NgModule({

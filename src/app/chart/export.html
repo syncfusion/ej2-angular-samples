@@ -1,13 +1,13 @@
 <div id="action-description">
     <p>
-        This sample illustrates the export feature in chart. By clicking <code>Export</code>, you can export the chart in PNG or JPEG format.
+        This example demonstrates how to save the chart as a PDF file and in image formats including JPEG, PNG, and SVG.
     </p>
 </div>
-<div class="control-section">
-    <div class="col-lg-9">
+
+    <div class="control-section col-lg-9 sb-property-border">
         <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)' [chartArea]='chartArea' (pointRender)='pointRender($event)'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Column' xName='x' yName='y' width=2>
+                <e-series [dataSource]='data'  [marker]='marker' type='Column' xName='x' yName='y' width=2>
                 </e-series>
             </e-series-collection>
         </ejs-chart>
@@ -51,12 +51,12 @@
                     </tr>
                 </table>
             </div>
-        </div>
+        
     </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the export. The rendered chart can be exported as either JPEG, PNG, or SVG format.
+        By clicking on Export button, you can export the chart to the specific type using <code>ExportAsync</code> method. To be more precise, define parameters such as the export type and the file name while exporting.
     </p>
     <p>
         More information on the export can be found in this

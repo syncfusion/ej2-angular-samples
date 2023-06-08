@@ -13,6 +13,8 @@ import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsVie
 
 export class IBMCOSController {
     public ajaxSettings: object;
+    public toolbarSettings: object;
+    public contextMenuSettings: object;
     public rootAliasName: string;
     public hostUrl: string = 'https://ej2-ibm-cos-node-file-provider.azurewebsites.net/';
     public ngOnInit(): void {
@@ -23,5 +25,10 @@ export class IBMCOSController {
             downloadUrl: this.hostUrl + 'Download'
         };
         this.rootAliasName = 'Files';
+        this.toolbarSettings = { items: ['NewFolder', 'SortBy', 'Cut', 'Copy', 'Paste', 'Delete', 'Refresh', 'Download', 'Rename', 'Selection', 'View', 'Details',] };
+        this.contextMenuSettings = {
+            layout: ['SortBy', 'View', 'Refresh', '|', 'Paste', '|', 'NewFolder', '|', 'Details', '|', 'SelectAll'],
+            visible: true
+        }
     }
 }

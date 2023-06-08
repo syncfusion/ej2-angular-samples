@@ -18,8 +18,8 @@ export class DefaultController {
     @ViewChild('default')
     public spreadsheetObj: SpreadsheetComponent;
     public data: Object[] = getDefaultData();
-    public openUrl = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/open';
-    public saveUrl = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save';
+    public openUrl = 'https://services.syncfusion.com/angular/production/api/spreadsheet/open';
+    public saveUrl = 'https://services.syncfusion.com/angular/production/api/spreadsheet/save';
     created() {
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center', verticalAlign: 'middle' }, 'A1:F1');
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold' }, 'E31:F31');

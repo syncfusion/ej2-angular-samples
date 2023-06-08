@@ -13,10 +13,10 @@ import { Browser } from '@syncfusion/ej2-base';
 export class WaterfallChartComponent {
 
     public dataSource: Object[] = [
-        { x: 'Income', y: 4711 }, { x: 'Sales', y: -1015 },
-        { x: 'Development', y: -688 },
-        { x: 'Revenue', y: 1030 }, { x: 'Balance' },
-        { x: 'Expense', y: -361 }, { x: 'Tax', y: -695 },
+        { x: 'Income', y: 971  }, { x: 'Sales', y: -101 },
+        { x: 'Development', y: -268 },
+        { x: 'Revenue', y: 403  }, { x: 'Balance' },
+        { x: 'Expense', y: -136 }, { x: 'Tax', y:  -365 },
         { x: 'Net Profit' }
     ];
 
@@ -31,11 +31,12 @@ export class WaterfallChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        minimum: 0, maximum: 5000, interval: 1000,
+        minimum: 0, maximum: 1250, interval: 250,
         majorGridLines: { width: 1 },
-        title: 'Expenditure',
+        title: 'USD',
         minorTickLines: {width: 0},
         lineStyle: {width: 0},
+        labelFormat: "{value}K"
     };
     public chartArea: Object = {
         border: {
@@ -46,7 +47,8 @@ export class WaterfallChartComponent {
 
     public title: string = 'Company Revenue and Profit';
     public tooltip: Object = {
-        enable: true
+        enable: true,
+        format: '<b>${point.x}</b> <br> Product Revenue : <b>${point.y}</b>', header: " " 
     };
     public legendSettings: Object = {
         visible: false
@@ -63,11 +65,7 @@ export class WaterfallChartComponent {
     public sum: number[] = [7];
     public intermediate: number[] = [4];
     public columnWidth: number = 0.9;
-    public textRender(args: ITextRenderEventArgs): void {
-        let value: number = Number(args.text) / 1000;
-        value = Math.round((value * 100)) / 100;
-        args.text = value.toString() + 'B';
-    };
+   
      // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
@@ -75,11 +73,7 @@ export class WaterfallChartComponent {
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
     };
      // custom code end
-    public axisLabelRender(args: IAxisLabelRenderEventArgs): void {
-        if (args.axis.name === 'primaryYAxis') {
-            args.text = '$' + Number(args.text) / 1000 + 'B';
-        }
-    };
+  
     constructor() {
         //code
     };

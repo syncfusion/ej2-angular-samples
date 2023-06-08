@@ -30,6 +30,7 @@ export class LogarithmicScaleChartComponent {
         labelFormat: 'y',
         valueType: 'DateTime',
         edgeLabelPlacement: 'Shift'
+        
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
@@ -48,16 +49,17 @@ export class LogarithmicScaleChartComponent {
     };
     public marker: Object = {
         visible: true,
-        height: 10,
-        width: 10
+        height: 7,
+        width: 7,
+        isFilled: true,
     };
     public tooltip: Object = {
         enable: true,
-        header: 'Profit'
+        header: ' '
     };
     public chartArea: Object = {
         border: {
-            width: 1
+            width: 0
         }
     };
     public width: string = Browser.isDevice ? '100%' : '75%';

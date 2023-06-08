@@ -1,94 +1,25 @@
 <div id="action-description">
     <p>
-        This sample visualizes the trend of Indian rupees and US dollar variation with trendline in the chart. 
-        The type of trend line can be changed by using <code>TrendLine Type</code>, forward and backward forecasting of trendlines can be changed by <code>Forward Forecasting</code> and <code>Backward Forecast</code> respectively. 
-        Polynomial and period for a trendlines can be changed by using <code>Polynomial order</code> and <code>Period</code>.
+        This sample shows the trend of Indian rupees and US dollar variations in the chart.
     </p>
 </div>
 <div class="control-section">
-    <div class="col-lg-8">
-        <ejs-chart #chart id='chartcontainer' style='display:block; width: 92%' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [chartArea]='chartArea' [title]='title' [legendSettings]='legendSettings' (load)='load($event)'>
+    <div align='center'>
+        <ejs-chart #chart id='chartcontainer' style='display:block;' [primaryXAxis]='primaryXAxis'  [width]='width' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [chartArea]='chartArea' [title]='title' [legendSettings]='legendSettings' (load)='load($event)'>
             <e-series-collection>
-                <e-series [dataSource]='series1' type='Spline' xName='x' yName='y' name='Rupees' [marker]='marker1'>
+                <e-series [dataSource]='series' type='Spline' xName='Period' yName='Rupees' name='Rupees' [marker]='marker'>
                     <e-trendlines>
-                        <e-trendline type='Linear' width=3 [marker]='marker' name='Trends' fill='#C64A75'>
+                        <e-trendline type='Linear' width=3  name='Trends' fill='#C64A75'>
                         </e-trendline>
                     </e-trendlines>
                 </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
-    <div class="col-lg-4 property-section">
-        <div class="property-panel-section">
-            <div class="property-panel-header">Properties</div>
-            <div class="property-panel-content">
-                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
-                    <tr style="height: 50px">
-                        <td style="width: 50%">
-                            <div>TrendLine Type:
-                            </div>
-                        </td>
-                        <td style="width: 50%;padding-left: 10px; padding-right: 10px">
-                            <div>
-                                <select id="trendLineType" style="margin-left: -5px">				 
-                                    <option value= "Linear">Linear</option>
-                                    <option value= "Exponential">Exponential</option>
-                                    <option value= "Power">Power</option>
-                                    <option value= "Logarithmic">Logarithmic</option>
-                                    <option value = "Polynomial">Polynomial</option>
-                                    <option value= "MovingAverage">Moving Average</option>
-                                </select>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id='' style="height: 50px">
-                        <td style="width: 80%">
-                            <div> Forward Forecast:</div>
-                        </td>
-                        <td style="width: 20%;padding-left: 10px; padding-right: 10px">
-                            <div class="control-label">
-                                <ejs-numerictextbox #forwardForecast id="forwardForecast" [value]="value" [min]="min" [max]="max" [step]="step" width=120 (change)='checkForwardForecast($event)'></ejs-numerictextbox>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id='' style="height: 50px">
-                        <td style="width: 80%">
-                            <div>Backward Forecast:</div>
-                        </td>
-                        <td style="width: 20%;padding-left: 10px; padding-right: 10px">
-                            <div class="control-label">
-                                <ejs-numerictextbox #backwardForecast id="backwardForecast" [value]="value" [min]="min" [max]="max" [step]="step" width=120 (change)='checkBackwardForecast($event)'></ejs-numerictextbox>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id='' style="height: 50px">
-                        <td style="width: 80%">
-                            <div>Polynomial Order:</div>
-                        </td>
-                        <td style="width: 20%;padding-left: 10px; padding-right: 10px">
-                            <div class="control-label">
-                                <ejs-numerictextbox #polynomialOrder id="polynomialOrder" [value]="value" [min]="min" [max]="max" [step]="step" width=120 (change)='checkPolynomialOrder($event)' disabled=true></ejs-numerictextbox>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id='' style="height: 50px">
-                        <td style="width: 80%">
-                            <div>Period:</div>
-                        </td>
-                        <td style="width: 20%;padding-left: 10px; padding-right: 10px">
-                            <div class="control-label">
-                                <ejs-numerictextbox #period id="period" [value]="value" [min]="min" [max]="max" [step]="step" width=120 (change)='checkPeriod($event)' disabled=true></ejs-numerictextbox>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the Trend Lines. Trend Lines is used to represent the price movements in stock. You can use <code>border</code>, <code>fill</code> properities to customize the data appearance.
+        In this example, you can see how to render and configure the trendlines. The trendline is a line drawn over the chart to display the overall direction of the results.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
@@ -97,8 +28,8 @@
         <code>TrendlinesService</code> into the <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the Trend Lines can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/trend-lines/">documentation section</a>.
+        More information about the trendlines can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/trend-lines">documentation section</a>.
     </p>
 </div>
 <style>

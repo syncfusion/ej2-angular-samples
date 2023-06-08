@@ -19,8 +19,15 @@ box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.36);
 padding: 1% 4% 0%;
 background: #f9f9f9;
 }
-.highcontrast #control_wrapper {
-background: #000000;
+.highcontrast #control_wrapper,
+.bootstrap-dark #control_wrapper,
+.bootstrap5-dark #control_wrapper, 
+.bootstrap4-dark #control_wrapper,
+.fluent-dark #control_wrapper,
+.fabric-dark #control_wrapper,
+.tailwind-dark #control_wrapper,
+.material-dark #control_wrapper {
+background: inherit;
 }
 #template_driven .upload-area {
 width: 100%;

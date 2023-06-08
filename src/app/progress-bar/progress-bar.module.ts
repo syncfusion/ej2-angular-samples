@@ -15,12 +15,14 @@ import { ProgressBarLabelComponent } from './labels.component';
 import { ProgressBarRadiusComponent } from './Radius.component';
 import { ProgressBarStripesComponent } from './stripes.component';
 import { ProgressBarProgressSegmentComponent } from './progress-segment.component';
+import { ProgressBarTooltipComponent } from './tooltip.component';
 
 export const progressBarAppRoutes: Object[] = [
     {
         path: ':theme/progress-bar/Linear',
         component: ProgressBarLinearComponent,
         name: 'Linear',
+        type: "update",
         order: '01',
         category: 'Progress Bar',
     },
@@ -53,6 +55,14 @@ export const progressBarAppRoutes: Object[] = [
         category: 'Progress Bar',
     },
     {
+        path: ':theme/progress-bar/tooltip',
+        component: ProgressBarTooltipComponent,
+        name: 'Tooltip',
+        type: "new",
+        order: '01',
+        category: 'Progress Bar',
+    },
+    {
         path: ':theme/progress-bar/Radius',
         component: ProgressBarRadiusComponent,
         name: 'Radius',
@@ -78,7 +88,7 @@ export const progressBarAppRoutes: Object[] = [
 export const progressBarRouter: ModuleWithProviders<any> = RouterModule.forChild(progressBarAppRoutes);
 
 // tslint:disable-next-line:max-line-length
-const declarations: Type<Object>[] = [ProgressBarLinearComponent, ProgressBarCircularComponent, ProgressBarSemiComponent, ProgressBarCustomComponent, ProgressBarLabelComponent, ProgressBarRadiusComponent, ProgressBarStripesComponent, ProgressBarProgressSegmentComponent];
+const declarations: Type<Object>[] = [ProgressBarLinearComponent, ProgressBarTooltipComponent, ProgressBarCircularComponent, ProgressBarSemiComponent, ProgressBarCustomComponent, ProgressBarLabelComponent, ProgressBarRadiusComponent, ProgressBarStripesComponent, ProgressBarProgressSegmentComponent];
 @NgModule({
     imports: [progressBarRouter, ProgressBarAllModule, DropDownListModule, CheckBoxModule, TextBoxAllModule],
     exports: [],

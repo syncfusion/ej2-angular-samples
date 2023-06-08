@@ -1,5 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { multitaskbardata, resources } from './data';
+import { GanttComponent } from '@syncfusion/ej2-angular-gantt';
 @Component({
     selector: 'ej2-ganttresources',
     templateUrl: 'resource-multi-taskbar.html'
@@ -17,6 +18,8 @@ export class GanttResourceMultiTaskbarComponent implements OnInit {
     public resourceFields: object ;
     public projectStartDate: Date;
     public projectEndDate: Date;
+    @ViewChild('gantt')
+    public ganttObj: GanttComponent;
     public ngOnInit(): void {
         this.data = multitaskbardata;
         this.resources = resources;
@@ -64,5 +67,19 @@ export class GanttResourceMultiTaskbarComponent implements OnInit {
         };
         this.projectStartDate= new Date('03/28/2019');
         this.projectEndDate= new Date('07/28/2019');
+    }
+    public dragDropChange(args): any {
+        if (args.checked) {
+            this.ganttObj.allowTaskbarDragAndDrop = true;
+        } else {
+            this.ganttObj.allowTaskbarDragAndDrop = false;
+        }
+    }
+    public overlapChange(args): any {
+        if (args.checked) {
+            this.ganttObj.allowTaskbarOverlap = true;
+        } else {
+            this.ganttObj.allowTaskbarOverlap = false;
+        }
     }
 }

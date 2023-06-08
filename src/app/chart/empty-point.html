@@ -1,10 +1,10 @@
 <div id="action-description">
     <p>
-        This sample illustrates the empty point functionality in chart series. The mode of empty point can be changed by using <code>Empty Point Mode</code> in property panel.
+        This sample illustrates the annual profit by product analysis of an organization with empty point functionality.
     </p>
 </div>
-<div class="control-section">
-    <div class="col-lg-8">
+
+    <div class="col-lg-8 control-section  sb-property-border">
         <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
             [tooltip]='tooltip' (load)='load($event)' [legendSettings] = 'legendSettings'>
             <e-series-collection>
@@ -49,13 +49,12 @@
                     </tr>
                 </table>
             </div>
-        </div>
+        
     </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the empty points. You can use <code>border</code>,
-        <code>fill</code>, <code>mode</code> properties to customize the empty points.
+        In this example, you can see how to render and configure empty points for a chart. Users can customize the empty points using <code>ChartEmptyPointSettings</code> in series. Default empty point Mode is Gap.
     </p>
     <p>
         Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.

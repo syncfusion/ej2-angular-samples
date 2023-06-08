@@ -7,6 +7,7 @@ import {
 import { Button } from '@syncfusion/ej2-buttons';
 import { DropDownList, AutoComplete } from '@syncfusion/ej2-dropdowns';
 import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Browser, addClass, enableRipple, detach, Animation, AnimationOptions } from '@syncfusion/ej2-base';
 import { Popup, Tooltip } from '@syncfusion/ej2-popups';
 import { Tab, Accordion } from '@syncfusion/ej2-navigations';
@@ -470,13 +471,13 @@ export class SBController {
         for (let sb of sbArray) {
             let ele: HTMLFormElement = (select('#' + sb) as HTMLFormElement);
             if (sb === 'aspnetcore' || sb === 'aspnetmvc') {
-                ele.href = sb === 'aspnetcore' ? 'https://ej2.syncfusion.com/aspnetcore/' : 'https://ej2.syncfusion.com/aspnetmvc/';
+                ele['href'] = sb === 'aspnetcore' ? 'https://ej2.syncfusion.com/aspnetcore/' : 'https://ej2.syncfusion.com/aspnetmvc/';
             }
             else if (sb === 'blazor') {
-                ele.href = 'https://blazor.syncfusion.com/demos/';
+                ele['href'] = 'https://blazor.syncfusion.com/demos/';
             }
             else {
-                ele.href = ((link) ? ('http://' + link[1] + '/' + (link[3] ? (link[3] + '/') : '')) :
+                ele['href'] = ((link) ? ('http://' + link[1] + '/' + (link[3] ? (link[3] + '/') : '')) :
                     ('https://ej2.syncfusion.com/')) +
                     (sbObj[sb] ? (sb + '/') : '') + 'demos/#/' + (sample ? (sample[1] + (sb !== 'typescript' ? '' : '.html')) : '');
             }
@@ -966,12 +967,12 @@ export class SBController {
         let pathArray: string[] = path.split('/');
         pathArray = pathArray.slice(2);
         const localPath: string = './source/' + pathArray.join('/');
-        const tsRequest: Observable<Response> = this.http.get(localPath + '.component.ts');
-        const htmlRequst: Observable<Response> = this.http.get(localPath + '.html');
+        const tsRequest = this.http.get(localPath + '.component.ts');
+        const htmlRequst = this.http.get(localPath + '.html');
 
-        const plunk: Observable<Response> = this.http.get(localPath + '-stackb.json');
+        const plunk = this.http.get(localPath + '-stackb.json');
 
-        const observableCollection: Observable<Response>[] = [htmlRequst, tsRequest];
+        const observableCollection = [htmlRequst, tsRequest];
         if (this.sourceFiles.files.length) {
             let splitPath: string[] = localPath.split('/');
             splitPath.splice(splitPath.length - 1)[0];
@@ -1067,7 +1068,7 @@ export class SBController {
     }
 
     createOpenNewButton(): void {
-        (select('#openNew') as HTMLFormElement).href =
+        (select('#openNew') as HTMLFormElement)['href'] =
             location.href.split('#')[0] + this.router.url.split('/').splice(2).join('/');
     }
 
@@ -1139,7 +1140,7 @@ function loadTheme(theme: string): void {
     const ajax: Ajax = new Ajax('./styles/' + theme + '.css', 'GET', true);
     ajax.send().then((result: any) => {
         const doc: HTMLFormElement = <HTMLFormElement>select('#themelink');
-        doc.href = './styles/' + theme + '.css';
+        doc['href'] = './styles/' + theme + '.css';
         // select('#themeswitcher-icon').setAttribute('src', 'styles/images/SB_icon/SB_Switcher_icon_' + theme + '.png');
         themeFlag = false;
     });

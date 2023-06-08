@@ -38,7 +38,7 @@ export class ReactiveComponent {
    public dlgBtnClick: EmitType<object> = () => {
     this.dialogObj.hide();
   }
-  public dlgButtons: Object[] = [{ click: this.dlgBtnClick.bind(this), buttonModel: { content: 'Ok', isPrimary: true } }];
+  public dlgButtons: Object[] = [{ click: this.dlgBtnClick.bind(this) }];
   public uploadInput: string = '';
   public browseClick() {
       document.getElementsByClassName('e-file-select-wrap')[0].querySelector('button').click(); return false;

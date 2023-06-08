@@ -19,8 +19,8 @@ export class ChartController {
     spreadsheetObj: SpreadsheetComponent;
     public chart: ChartModel[] = [{ type: "Column", range: "A3:E10" }];
     data: Object[] = GDPData();
-    public openUrl = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/open';
-    public saveUrl = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save';
+    public openUrl = 'https://services.syncfusion.com/angular/production/api/spreadsheet/open';
+    public saveUrl = 'https://services.syncfusion.com/angular/production/api/spreadsheet/save';
     created() {
          // Formatting cells dynamically using cellFormat method
          this.spreadsheetObj.cellFormat({ backgroundColor: '#e56590', color: '#fff', fontWeight: 'bold', textAlign: 'center' }, 'A3:E3');

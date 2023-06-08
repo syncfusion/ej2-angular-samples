@@ -83,7 +83,7 @@ export class DragAndDropComponent {
     public selectedDate: Date = new Date(2020, 9, 20);
     public readonly: boolean = true;
     private dataManger: DataManager = new DataManager({
-        url: "https://ej2services.syncfusion.com/production/web-services/api/Schedule",
+        url: "https://services.syncfusion.com/angular/production/api/schedule",
         adaptor: new ODataV4Adaptor(),
         crossDomain: true
     });

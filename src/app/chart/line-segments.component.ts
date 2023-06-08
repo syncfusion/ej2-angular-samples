@@ -79,11 +79,6 @@ export class LineSegmentChartComponent {
         ].map((value: number, index: number) => {
             this.dataValues.push({ XValue: new Date(1900 + index, 0, 1), YValue: value });
         });
-        if (selectedTheme === 'highcontrast') {
-            args.chart.series[0].segments[0].color = '#FF4741';
-            args.chart.series[0].segments[1].color = '#00B400';
-            args.chart.series[0].segments[2].color = '#3F9BFF';
-        }
     };
     public title: string = 'Annual Mean Rainfall in Australia';
     constructor() {

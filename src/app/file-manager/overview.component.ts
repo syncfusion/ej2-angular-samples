@@ -13,6 +13,9 @@ import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsVie
 
 export class OverViewController {
     public ajaxSettings: object;
+    public toolbarSettings: object;
+    public contextMenuSettings: object;
+    public detailsViewSettings: object;
     public view: string;
     public hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
     public ngOnInit(): void {
@@ -22,6 +25,24 @@ export class OverViewController {
             uploadUrl: this.hostUrl + 'api/FileManager/Upload',
             downloadUrl: this.hostUrl + 'api/FileManager/Download'
         };
+        this.toolbarSettings = { items: ['NewFolder', 'SortBy', 'Cut', 'Copy', 'Paste', 'Delete', 'Refresh', 'Download', 'Rename', 'Selection', 'View', 'Details',] };
+        this.contextMenuSettings = {
+            layout: ['SortBy', 'View', 'Refresh', '|', 'Paste', '|', 'NewFolder', '|', 'Details', '|', 'SelectAll'],
+            visible: true
+        }
        this.view = "Details";
-       }
+       this.detailsViewSettings = {
+            columns: [
+                {
+                    field: 'name', headerText: 'Name', customAttributes: { class: 'e-fe-grid-name' }
+                },
+                {
+                    field: '_fm_modified', headerText: 'DateModified', format: 'MM/dd/yyyy hh:mm a'
+                },
+                {
+                    field: 'size', headerText: 'Size', template: '<span class="e-fe-size">${size}</span>', format: 'n2'
+                }
+            ]
+        }
+    }
 }

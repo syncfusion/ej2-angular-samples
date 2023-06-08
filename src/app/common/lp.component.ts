@@ -43,7 +43,7 @@ export class LPController {
     constructor(public ngEle: ElementRef, private router: Router) {
     }
 
-    onAllControlClick(e: SelectEventArgs) {
+    onAllControlClick(e: MouseEvent) {
         this.viewSwitch(this.ngEle.nativeElement.querySelector("#controlSamples"), this.ngEle.nativeElement.querySelector("#controlTree"), true)
     }
 
@@ -177,7 +177,7 @@ export class LPController {
     }
 
     updateListViewDataSource() {
-        this.listComponent.dataSource = <any>(this.controlSampleData[location.hash.split('/')[2]] || this.controlSampleData.grid);
+        this.listComponent.dataSource = <any>(this.controlSampleData[location.hash.split('/')[2]] || this.controlSampleData['grid']);
     }
 
     ngAfterViewInit(): void {

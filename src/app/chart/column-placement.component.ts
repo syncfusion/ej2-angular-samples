@@ -31,7 +31,7 @@ export class PlacementColumnChartComponent {
         majorTickLines: { width: 0 }, lineStyle: { width: 0 },
     };
     public marker: Object = { dataLabel: { visible: true, position: 'Top', font: { fontWeight: '600', color: '#ffffff' } } };
-    public dataLebelMarker: Object = { dataLabel: { visible: true, name: 'DataLabelMappingName', position: Browser.isDevice ? 'Outer' : 'Top', font: { fontWeight: '600', color: Browser.isDevice ? '' : '#ffffff' } } }
+    public dataLebelMarker: Object = { dataLabel: { visible: true, name: 'DataLabelMappingName', enableRotation: Browser.isDevice ? true : false, angle: -90, position: 'Top', font: { fontWeight: '600', color: '#ffffff' } } }
     public title: string = 'Fruit Consumption';
     public tooltip: Object = {
         enable: true,

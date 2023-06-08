@@ -95,13 +95,14 @@ export class DrilldownPieComponent {
             this.pie.legendSettings.visible = false;
             this.pie.visibleSeries[0].explodeIndex = null;
             this.pie.enableSmartLabels = true;
+            this.pie.series[0].animation.enable = false;
             this.pie.refresh();
             document.getElementById('category').style.visibility = 'visible';
             document.getElementById('symbol').style.visibility = 'visible';
             document.getElementById('text').style.visibility = 'visible';
         }
         if (args.target.indexOf('back') > -1) {
-            this.pie.annotations[0].content = null;
+            this.pie.annotations[0].content = '';
             this.pie.series[0].dataSource = this.data;
             this.pie.series[0].dataLabel = this.dataLabel;
             this.isparent = true;
@@ -110,11 +111,11 @@ export class DrilldownPieComponent {
             this.pie.visibleSeries[0].explodeIndex = this.explodeIndex;
             this.pie.enableSmartLabels = false;
             this.pie.series[0].innerRadius = '0%';
-            this.pie.refresh();
+            this.pie.series[0].animation.enable = false;
             (getElement('category') as HTMLElement).style.visibility = 'hidden';
             document.getElementById('symbol').style.visibility = 'hidden';
             document.getElementById('text').style.visibility = 'hidden';
-            
+            this.pie.refresh();
         }
     }
     public onClick(e: MouseEvent): void {
@@ -125,7 +126,7 @@ export class DrilldownPieComponent {
         this.pie.legendSettings.visible = false;
         this.pie.visibleSeries[0].explodeIndex = this.explodeIndex;
         this.pie.enableSmartLabels = false;
-        this.pie.annotations[0].content = null;
+        this.pie.annotations[0].content = '';
         this.pie.series[0].dataSource = this.data;
         this.pie.series[0].dataLabel = this.dataLabel;
         this.pie.title = this.title;
@@ -133,6 +134,7 @@ export class DrilldownPieComponent {
         this.pie.visibleSeries[0].explodeIndex = this.explodeIndex;
         this.pie.enableSmartLabels = false;
         this.pie.series[0].innerRadius = '0%';
+        this.pie.series[0].animation.enable = false;
         this.pie.refresh();
         (getElement('category') as HTMLElement).style.visibility = 'hidden';
         (e.target as HTMLButtonElement).style.visibility = 'hidden';

@@ -27,6 +27,9 @@ export class PolarSplineChartComponent {
         labelFormat: '{value}°',
         coefficient: Browser.isDevice ? 80 : 100
     };
+    public legend: Object = {
+        enableHighlight : true
+    };
     public title: string = 'Microphone Types Polar Patterns';
     public tooltip: Object = {
         enable: true

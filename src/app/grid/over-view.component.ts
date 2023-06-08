@@ -6,7 +6,7 @@ import { CheckBox  } from '@syncfusion/ej2-buttons';
 import { getData } from './data';
 import { DataManager, Query, UrlAdaptor } from '@syncfusion/ej2-data';
 
-const SERVICE_URI: string = 'https://ej2services.syncfusion.com/production/web-services/';
+const SERVICE_URI: string = 'https://services.syncfusion.com/angular/production/';
 
 @Component({
     selector: 'ej-gridbatchedit',
@@ -14,7 +14,7 @@ const SERVICE_URI: string = 'https://ej2services.syncfusion.com/production/web-s
     styleUrls: ['overview.style.css', '../../styles/Grid/style.css'],
     providers: [FilterService,VirtualScrollService]
 })
-export class OverViewComponent implements OnInit {   
+export class OverViewComponent implements OnInit {
     public dReady: boolean = false;
     public dtTime: boolean = false;
     public isDataBound: boolean = false;
@@ -22,46 +22,46 @@ export class OverViewComponent implements OnInit {
     public intervalFun: any;
     public clrIntervalFun: any;
     public clrIntervalFun1: any;
-    public clrIntervalFun2: any;    
+    public clrIntervalFun2: any;
     public dropSlectedIndex: number = null;
     public stTime: any;
     public data: DataManager;
     public query: Query;
     public filterSettings: Object;
     public selectionSettings: Object;
-    public loadingIndicator: Object;  
+    public loadingIndicator: Object;
     public height: string = '240px';
-    @ViewChild('sample') 
+    @ViewChild('sample')
     public listObj: DropDownListComponent;
     @ViewChild('overviewgrid')
-    public gridInstance : GridComponent ;  
+    public gridInstance : GridComponent ;
     public ddlData: Object[] = [
         { text: '1,000 Rows and 11 Columns', value: '1000' },
         { text: '10,000 Rows and 11 Columns', value: '10000' },
-        { text: '1,00,000 Rows and 11 Columns', value: '100000' }      
-    ]; 
+        { text: '1,00,000 Rows and 11 Columns', value: '100000' }
+    ];
     public fields: Object = { text: 'text', value: 'value' };
-    public item: number[] = [1, 2, 3, 4, 5];  
+    public item: number[] = [1, 2, 3, 4, 5];
 
     public ngOnInit(): void {
         this.data = new DataManager({ url: SERVICE_URI + 'api/UrlDataSource', adaptor: new UrlAdaptor });
         this.query = new Query().addParams('dataCount', '1000');
         this.filterSettings = { type: "Menu" };
-        this.loadingIndicator = {indicatorType: 'Shimmer'};  
+        this.loadingIndicator = {indicatorType: 'Shimmer'};
        this.stTime = performance.now();
         this.selectionSettings = {persistSelection: true, type: "Multiple", checkboxOnly: true };
-       
+
     }
-    
+
     ngAfterViewInit(args: any): void {
         this.gridInstance.on('data-ready', function () {
             this.dReady = true;
         });
-        document.getElementById('overviewgrid').addEventListener('DOMSubtreeModified', () => {  
+        document.getElementById('overviewgrid').addEventListener('DOMSubtreeModified', () => {
             if (this.stTime && this.isDataChanged) {
                 let msgEle = document.getElementById('msg');
                 let val: any = (performance.now() - this.stTime).toFixed(0);
-                this.stTime = null;                
+                this.stTime = null;
                 this.dtTime = false;
                 this.isDataChanged = false;
                 msgEle.innerHTML = 'Load Time: ' + "<b>" + val + "</b>" + '<b>ms</b>';
@@ -72,7 +72,7 @@ export class OverViewComponent implements OnInit {
     valueChange(args:any): void {
 		this.listObj.hidePopup();
         this.dropSlectedIndex = null;
-         let index: number = this.listObj.value as number;         
+         let index: number = this.listObj.value as number;
          clearTimeout(this.clrIntervalFun2);
          this.clrIntervalFun2 = setTimeout(() => {
              this.isDataChanged = true;
@@ -101,5 +101,5 @@ export class OverViewComponent implements OnInit {
         clearInterval(this.intervalFun);
         this.dtTime = true;
     }
-    
+
 }

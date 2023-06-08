@@ -43,7 +43,6 @@ export class SemiPieComponent {
         args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     }
      // custom code end
-    public explode: boolean = true;
     public  radius : string =  Browser.isDevice ? '85%' : '100%';
     public enableAnimation: boolean = false;
     public startAngle: number = 270;

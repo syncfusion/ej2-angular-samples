@@ -29,7 +29,7 @@ export class DataBindingDropDownListComponent {
     public localWaterMark: string = 'Select a game';
     // bind the DataManager instance to dataSource property
     public data: DataManager = new DataManager({
-        url: 'https://ej2services.syncfusion.com/production/web-services/api/Employees',
+        url: 'https://services.syncfusion.com/angular/production/api/Employees',
         adaptor: new WebApiAdaptor,
         crossDomain: true
     });

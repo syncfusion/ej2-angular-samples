@@ -46,6 +46,7 @@ export class ProgressBarLinearComponent {
     public min3: number = 0;
     public max3: number = 100;
     public value3: number = 100;
+    public secondaryProgressColor: string = '';
     public segmentCount3: number = 8;
     public gapWidth3: number = 10;
     public animation: AnimationModel = { enable: true, duration: 2000, delay: 0 };
@@ -74,7 +75,7 @@ export class ProgressBarLinearComponent {
         args.progressBar.theme = <ProgressTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
         if (args.progressBar.theme === 'HighContrast' || args.progressBar.theme === 'Bootstrap5Dark' || args.progressBar.theme === 'BootstrapDark' || args.progressBar.theme === 'FabricDark'
-        || args.progressBar.theme === 'TailwindDark' || args.progressBar.theme === 'MaterialDark') {
+        || args.progressBar.theme === 'TailwindDark' || args.progressBar.theme === 'MaterialDark' || args.progressBar.theme === 'FluentDark') {
                 for (let i = 0; i < div.length; i++) {
                     div[i].setAttribute('style', 'color:white');
                 }
@@ -82,6 +83,33 @@ export class ProgressBarLinearComponent {
             for (let i = 0; i < div.length; i++) {
                 div[i].setAttribute('style', 'top: 0px');
             }
+        }
+        if (selectedTheme === 'fabric') {
+            args.progressBar.secondaryProgressColor = '#b0d0e9'
+        } else if (selectedTheme === 'material-dark') {
+            args.progressBar.secondaryProgressColor = '#b8b8b8'
+        } else if (selectedTheme === 'material') {
+            args.progressBar.secondaryProgressColor = '#f087ab'
+        } else if (selectedTheme === 'bootstrap5-dark') {
+            args.progressBar.secondaryProgressColor = '#2b5288'
+        } else if (selectedTheme === 'bootstrap5') {
+            args.progressBar.secondaryProgressColor = '#98c5f5'
+        } else if (selectedTheme === 'bootstrap') {
+            args.progressBar.secondaryProgressColor = '#acc6dc'
+        } else if (selectedTheme === 'bootstrap4') {
+            args.progressBar.secondaryProgressColor = '#98c5f5'
+        } else if (selectedTheme === 'bootstrap-dark') {
+            args.progressBar.secondaryProgressColor = '#b8b8b8'
+        } else if (selectedTheme === 'highcontrast') {
+            args.progressBar.secondaryProgressColor = '#aca379'
+        } else if (selectedTheme === 'fluent-dark') {
+            args.progressBar.secondaryProgressColor = '#2b5288'
+        } else if (selectedTheme === 'fluent') {
+            args.progressBar.secondaryProgressColor = '#98c5f5'
+        } else if (selectedTheme === 'tailwind-dark') {
+            args.progressBar.secondaryProgressColor = '#386e7f'
+        } else if (selectedTheme === 'tailwind') {
+            args.progressBar.secondaryProgressColor = '#b1afe9'
         }
     }
 }

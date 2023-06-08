@@ -21,13 +21,13 @@ export class AreaChartComponent {
         }, {
             content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">CASSETTE</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">CASSETTE</div>',x: "35%", y: "87%" ,region:'Series'
         }, {
-            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">COMPACT DISC</div>' : '<div style="color:white; font-weight: bold">COMPACT DISC</div>',x: "63%", y: "70%" ,region:'Series'
+            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">COMPACT DISC</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">COMPACT DISC</div>',x: "63%", y: "70%" ,region:'Series'
         }, {
-            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">CASSETTE</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">OTHERS</div>',x: "75%", y: '98%' ,region:'Series'
+            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">OTHERS</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">OTHERS</div>',x: "75%", y: '98%' ,region:'Series'
         }, {
-            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">STREAMING</div>' : '<div style="color:white; font-size: 9px; font-weight: bold">DOWNLOADS</div>',x: '85%', y: '93%' ,region:'Series'
+            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">DOWNLOAD</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">DOWNLOAD</div>',x: '85%', y: '93%' ,region:'Series'
         }, {
-            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">OTHERS</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">STREAMING</div>',x: '93%', y: '96%' ,region:'Series'
+            content: Browser.isDevice ? '' : '<div style="color:white; font-size: 11px; font-weight: bold">STREAMING</div>',x: '93%', y: '96%' ,region:'Series'
         },
 
     ];
@@ -151,20 +151,6 @@ export class AreaChartComponent {
         width: 1.5,
         color: 'white'
     };
-    public otherSeriesX: Date = new Date(2006, 1, 1);
-    public otherSeriesY: Number = 0.74;
-    public streamingSeriesX: Date = new Date(2015, 1, 1);
-    public streamingSeriesY: Number = 1.2;
-    public downloadSeriesX: Date = new Date(2011, 6, 1);
-    public downloadSeriesY: Number = 1.9;
-    public compactSeriesX: Date = new Date(2001, 1, 1);
-    public compactSeriesY: Number = 10;
-    public casetteSeriesX: Date = new Date(1990, 1, 1);
-    public casetteSeriesY: Number = 3;
-    public vinylSeriesX: Date = new Date(1977, 1, 1);
-    public vinylSeriesY: Number = 6;
-    public trackSeriesX: Date = new Date(1976, 1, 1);
-    public trackSeriesY: Number = 1.5;
        // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

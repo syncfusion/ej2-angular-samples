@@ -18,6 +18,7 @@ export class GridKeyboardNavigationComponent implements OnInit {
     public pageSettings: Object;
     public editparams: Object;
     public filterSettings: Object;
+    public selectOptions: Object;
 
     public ngOnInit(): void {
         this.data = orderDetails;
@@ -29,5 +30,6 @@ export class GridKeyboardNavigationComponent implements OnInit {
         this.editparams = { params: { popupHeight: '300px' }};
         this.pageSettings = { pageCount: 5};
         this.filterSettings = {type: 'Menu'};
+        this.selectOptions = { type: 'Multiple' };
     }
 }

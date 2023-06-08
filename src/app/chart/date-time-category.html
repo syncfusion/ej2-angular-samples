@@ -1,6 +1,6 @@
 <div id="action-description">
     <p>
-        This sample illustrates sales of a product in business days. Data points in this sample are enhanced with tooltip.
+        This sample shows the date-time category axis with sample data about the sales of a product on different business days.
     </p>
 </div>
 <div class="control-section">
@@ -16,20 +16,16 @@
                 </e-annotation>
             </e-annotations>
             <e-series-collection>
-                <e-series [dataSource]='data1' type='Column' xName='x' yName='y' name='Product'> </e-series>
+                <e-series [dataSource]='data1' type='Column' xName='x' yName='y' [marker]='marker' name='Product'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
 <div id="description">
     <p>
-        In this sample, you can see how to render and configure the date time category axis. Datetime category axis is used to represent
-        only business days in datetime axis.
+        The date-time category axis is used to display date-time values with nonlinear intervals. For example, business days alone can be depicted here in a week. To use a date-time category axis, set the ValueType in axis to DateTimeCategory.
     </p>
-    <p>
-        In this sample, you can see how to render and configure the date time category axis. Date time category axis is used to represent
-        only business days in datetime axis.
-    </p>
+   
     <p>
         Tooltip is enabled in this example. To see the tooltip in action, hover a point or tap a point in touch enabled devices.
     </p>

@@ -14,32 +14,32 @@ import { Browser } from '@syncfusion/ej2-base';
 export class MarkerChartComponent {
 
     public data: Object[] = [
-        { x: 'WW', y: 12, text: 'World Wide' },
-        { x: 'EU', y: 9.9, text: 'Europe' },
-        { x: 'APAC', y: 4.4, text: 'Asia Pacific' },
-        { x: 'LATAM', y: 6.4, text: 'Latin America' },
-        { x: 'MEA', y: 30, text: 'Middle East Africa' },
-        { x: 'NA', y: 25.3, text: 'North America' }];
+        {  y: 12, x: 'World Wide' },
+        { y: 9.9, x: 'Europe' },
+        { y: 4.4, x: 'Asia Pacific' },
+        { y: 6.4, x: 'Latin America' },
+        { y: 30, x: 'Middle East Africa' },
+        { y: 25.3, x: 'North America' }];
     public data1: Object[] = [
-        { x: 'WW', y: 22, text: 'World Wide' },
-        { x: 'EU', y: 26, text: 'Europe' },
-        { x: 'APAC', y: 9.3, text: 'Asia Pacific' },
-        { x: 'LATAM', y: 28, text: 'Latin America' },
-        { x: 'MEA', y: 45.7, text: 'Middle East Africa' },
-        { x: 'NA', y: 35.9, text: 'North America' }];
+        { y: 22, x: 'World Wide' },
+        { y: 26, x: 'Europe' },
+        {  y: 9.3, x: 'Asia Pacific' },
+        {  y: 28, x: 'Latin America' },
+        {  y: 45.7, x: 'Middle East Africa' },
+        { y: 35.9, x: 'North America' }];
     public data2: Object[] = [
-        { x: 'WW', y: 38.3, text: 'World Wide' },
-        { x: 'EU', y: 45.2, text: 'Europe' },
-        { x: 'APAC', y: 18.2, text: 'Asia Pacific' },
-        { x: 'LATAM', y: 46.7, text: 'Latin America' },
-        { x: 'MEA', y: 61.5, text: 'Middle East Africa' },
-        { x: 'NA', y: 64, text: 'North America' }];
+        {  y: 38.3, x: 'World Wide' },
+        {  y: 45.2, x: 'Europe' },
+        {  y: 18.2, x: 'Asia Pacific' },
+        {  y: 46.7, x: 'Latin America' },
+        {  y: 61.5, x: 'Middle East Africa' },
+        {  y: 64, x: 'North America' }];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Countries', valueType: 'Category',
-        interval: 1, labelIntersectAction: 'Rotate45',
+         valueType: 'Category',
+        interval: 1, labelIntersectAction: Browser.isDevice ? 'None' : 'Trim', 
         majorGridLines: { width: 0 }, majorTickLines: {width : 0},
-        minorTickLines: {width: 0}
+        minorTickLines: {width: 0}, labelRotation: Browser.isDevice ? -45 : 0
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
@@ -50,25 +50,26 @@ export class MarkerChartComponent {
         maximum: 75, interval: 15
     };
     public legend: Object = {
-        visible: false
+        visible: true,
+        enableHighlight : true
     };
     //Initializing Marker
     public marker1: Object = {
-        visible: true, width: 10, height: 10,
-        shape: 'Diamond', dataLabel: { name: 'text' }
+        visible: true, width: 8, height: 8,
+        shape: 'Diamond', dataLabel: { name: 'x' }, isFilled: true
     };
     public marker2: Object = {
-        visible: true, width: 10, height: 10,
-        shape: 'Pentagon', dataLabel: { name: 'text' }
+        visible: true, width: 8, height: 8,
+        shape: 'Pentagon', dataLabel: { name: 'x' }, isFilled: true
     };
     public marker3: Object = {
         visible: true,
-        width: 10, height: 10,
+        width: 8, height: 8,
         shape: 'Triangle',
-        dataLabel: { name: 'text' }
+        dataLabel: { name: 'x' }, isFilled: true
     };
     public tooltip: Object = {
-        enable: true
+        enable: true, header:"" ,format:"<b>${point.x}</b> <br> ${series.name} : <b>${point.y}</b>"
     };
     public chartArea: Object = {
         border: {

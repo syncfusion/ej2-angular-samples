@@ -1,17 +1,20 @@
 <div id="action-description">
         <p>
-                This sample illustrates data label template support in charts. Each data label for each point is rendered using the template.
+                This sample illustrates data label template support in charts. Each data label for each point is
+                rendered using the template.
         </p>
 </div>
 <div class="control-section">
         <div align='center'>
-                <ejs-chart style='display:block' [chartArea]='chartArea' [title] = 'title' [width]='width' align='center' id='chartcontainer' 
-                        [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)' (textRender)='textRender($event)'
-                        [titleStyle]='titleStyle' >
+                <ejs-chart style='display:block' [chartArea]='chartArea' [title]='title' [width]='width' align='center'
+                        id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+                        (load)='load($event)' (textRender)='textRender($event)' [titleStyle]='titleStyle'>
                         <e-series-collection>
-                                <e-series [dataSource]='data' type='Column' xName='sports' columnWidth=0.75 columnSpacing=0.5 yName='boys' name='Boys' width=2 [marker]='marker1'>
+                                <e-series [dataSource]='data' type='Column' xName='sports' columnWidth=0.75
+                                        columnSpacing=0.5 yName='boys' name='Boys' width=2 [marker]='marker1'>
                                 </e-series>
-                                <e-series [dataSource]='data1' type='Column' xName='sports' columnWidth=0.75 columnSpacing=0.5 yName='girls' name='Girls' width=2 [marker]='marker2'>
+                                <e-series [dataSource]='data1' type='Column' xName='sports' columnWidth=0.75
+                                        columnSpacing=0.5 yName='girls' name='Girls' width=2 [marker]='marker2'>
                                 </e-series>
                         </e-series-collection>
                 </ejs-chart>
@@ -19,16 +22,24 @@
 </div>
 <div id="description">
         <p>
-                The Angular Charts data label template feature allows you to change the appearance and behavior of the data label for each data point using the <a target="_blank" href="https://ej2.syncfusion.com/react/documentation/chart/data-labels/#data-label-template"></a><code>Template</code> property in <a target="_blank" href="https://ej2.syncfusion.com/react/documentation/chart/data-labels/"></a> <code>ChartDataLabel</code>.
+                The Angular Charts data label template feature allows you to change the appearance and behavior of the
+                data label for each data point using the <a target="_blank"
+                        href="https://ej2.syncfusion.com/react/documentation/chart/data-labels/#data-label-template"></a><code>Template</code>
+                property in <a target="_blank"
+                        href="https://ej2.syncfusion.com/react/documentation/chart/data-labels/"></a>
+                <code>ChartDataLabel</code>.
         </p>
         <br>
         <p style="font-weight: 500"><b>Injecting Module</b></p>
         <p>
-                Chart component features are segregated into individual feature-wise modules. To use DataLabel, we need to inject
+                Chart component features are segregated into individual feature-wise modules. To use DataLabel, we need
+                to inject
                 <code>DataLabelService</code> into the <code>@NgModule.providers</code> section.
         </p>
         <p>
-                More information on the data label template can be found in this &nbsp;
-                <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/data-labels/#datalabel-template">documentation section</a>.
+                More information on the data label template can be found in this 
+                <a target="_blank"
+                        href="https://ej2.syncfusion.com/angular/documentation/chart/data-labels/#datalabel-template">documentation
+                        section</a>.
         </p>
 </div>
