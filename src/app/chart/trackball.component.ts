@@ -51,7 +51,7 @@ export class TrackBallChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Revenue',
+        title: 'Revenue (in Million)',
         labelFormat: '{value}M',
         majorTickLines: { width: 0 },
         minimum: 10, maximum: 80,
@@ -62,6 +62,10 @@ export class TrackBallChartComponent {
             width: 0
         }
     };
+    public legendSettings: Object = {
+        visible: true,
+        enableHighlight: true
+    };
    // custom code start
     public width: string = Browser.isDevice ? '100%' : '75%';
     public load(args: ILoadedEventArgs): void {
@@ -71,7 +75,7 @@ export class TrackBallChartComponent {
     };
      // custom code end
     public title: string = 'Average Sales per Person';
-    public marker: Object = { visible: true };
+    public marker: Object = { visible: true, isFilled: true, width: 7, height: 7 };
     public tooltip: Object = { enable: true, shared: true };
     public crosshair: Object = { enable: true, lineType: 'Vertical' };
     constructor() {

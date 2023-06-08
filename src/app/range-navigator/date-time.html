@@ -19,7 +19,7 @@
         <div align="center">
             <ejs-chart #chart style='display:block;' id='chart' align='center' [chartArea]='chartArea' [width]='width' [primaryXAxis]='primaryXAxis'
                 [primaryYAxis]='primaryYAxis' [crosshair]='crosshair' height='350' [theme]='theme' [tooltip]='chartTooltip'
-                [legendSettings]='legendSettings' (axisLabelRender)= 'axisLabelRender($event)'>
+                [legendSettings]='legendSettings'>
                 <e-series-collection>
                     <e-series [dataSource]='dataSource' type='Spline' xName='x' yName='y' width='2' name='Rate'>
                     </e-series>

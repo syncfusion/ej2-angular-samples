@@ -28,7 +28,7 @@ export class MindMapDiagramComponent {
   public items: DataManager = new DataManager((Data as any).mindMap);
   public data: Object = { id: 'id', parentId: 'parentId', dataSource: this.items, root: '1' };
   public layout: Object = {
-    type: 'MindMap', horizontalSpacing: 50,
+    type: 'MindMap',orientation:'LeftToRight', horizontalSpacing: 50,
     getBranch: (node: NodeModel, nodes: NodeModel[]) => {
       return ((node as Node).data as EmployeeInfo).branch;
     }

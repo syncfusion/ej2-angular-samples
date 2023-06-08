@@ -75,6 +75,11 @@ export class ScheduleContextMenuComponent {
         this.menuObj.hideItems(['Add', 'AddRecurrence', 'Today', 'EditRecurrenceEvent', 'DeleteRecurrenceEvent'], true);
       }
       return;
+    } else if ((this.selectedTarget.classList.contains('e-work-cells') || this.selectedTarget.classList.contains('e-all-day-cells')) &&
+      !this.selectedTarget.classList.contains('e-selected-cell')) {
+      removeClass([].slice.call(this.scheduleObj.element.querySelectorAll('.e-selected-cell')), 'e-selected-cell');
+      this.selectedTarget.classList.add('e-selected-cell');
+      this.selectedTarget.setAttribute('aria-selected', 'true');
     }
     this.menuObj.hideItems(['Save', 'Delete', 'EditRecurrenceEvent', 'DeleteRecurrenceEvent'], true);
     this.menuObj.showItems(['Add', 'AddRecurrence', 'Today'], true);

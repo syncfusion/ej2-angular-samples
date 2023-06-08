@@ -37,7 +37,7 @@ export class DataBindingMultiSelectComponent {
     public localWaterMark: string = 'Select countries';
     // bind the DataManager instance to dataSource property
     public data: DataManager = new DataManager({
-        url: 'https://ej2services.syncfusion.com/production/web-services/api/Employees',
+        url: 'https://services.syncfusion.com/angular/production/api/Employees',
         adaptor: new WebApiAdaptor,
         crossDomain: true
     });

@@ -39,9 +39,14 @@
                 <e-item text='Submit Form' align="Left"></e-item>
                 <e-item cssClass="find" align="Right" overflow="Show">
                     <ng-template #template>
-                        <div style="width: 125px"><ejs-textbox #textboxobj placeholder="Find Text" (created)="onCreate($event)"></ejs-textbox></div>     
+                        <div class="e-input-group e-float-icon-left">
+                            <span class="e-icons e-search e-input-group-icon"></span>
+                            <div class="e-input-in-wrap">
+                                <input class="e-input" name="input" type="text" placeholder="Find Text" />
+                            </div>
+                        </div>
                     </ng-template>
-                </e-item>                
+                </e-item>
                 <e-item prefixIcon='e-icons e-annotation-edit' tooltipText='Edit Annotations' text='Edit' showTextOn='Overflow' align="Right"></e-item>
                 <e-item prefixIcon='e-icons e-print' tooltipText='Print File' text='Print' showTextOn='Overflow' align="Right"></e-item>
                 <e-item prefixIcon='e-icons e-download' tooltipText='Download' text='Download' showTextOn='Overflow' align="Right"></e-item>

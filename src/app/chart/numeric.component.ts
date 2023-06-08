@@ -41,17 +41,12 @@ export class NumericAxisChartComponent {
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Death Overs',
         minimum: 15,
         maximum: 21,
         interval: 1,
         majorGridLines: { width: 0 }
     };
-    public labelRender(args: IAxisLabelRenderEventArgs): void {
-        if (args.axis.orientation === 'Horizontal') {
-            args.cancel = args.value === 15 || args.value === 21;
-        }
-    };
+    
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         majorGridLines: { width: 0 },
@@ -60,6 +55,10 @@ export class NumericAxisChartComponent {
         labelStyle: {
             color: 'transparent'
         }
+    };
+    public legend: Object = {
+        visible: true,
+        enableHighlight: true
     };
     public width: string = Browser.isDevice ? '100%' : '75%';
     

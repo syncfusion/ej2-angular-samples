@@ -13,6 +13,8 @@ import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsVie
 
 export class AzureController {
     public ajaxSettings: object;
+    public toolbarSettings: object;
+    public contextMenuSettings: object;
     public hostUrl: string = 'https://ej2-azure-aspcore-service.azurewebsites.net/';
     public ngOnInit(): void {
         this.ajaxSettings = {
@@ -21,5 +23,10 @@ export class AzureController {
             uploadUrl: this.hostUrl + 'api/AzureFileManager/AzureUpload',
             downloadUrl: this.hostUrl + 'api/AzureFileManager/AzureDownload'
         };
+        this.toolbarSettings = { items: ['NewFolder', 'SortBy', 'Cut', 'Copy', 'Paste', 'Delete', 'Refresh', 'Download', 'Rename', 'Selection', 'View', 'Details',] };
+        this.contextMenuSettings = {
+            layout: ['SortBy', 'View', 'Refresh', '|', 'Paste', '|', 'NewFolder', '|', 'Details', '|', 'SelectAll'],
+            visible: true
+        }
     }
 }

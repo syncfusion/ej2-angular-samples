@@ -16,3 +16,15 @@ table.box-table td.formtext {
 .highcontrast table.box-table td.formtext {
     color:#f8fc08;
 }
+
+.e-custom.e-btn {
+    padding: 2px 8px;
+}
+
+.e-bigger .e-custom.e-btn {
+    padding: 3px 12px;
+}
+
+.bootstrap .e-custom.e-btn {
+    line-height: 1.8em;
+}

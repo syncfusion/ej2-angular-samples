@@ -15,25 +15,19 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 export class SelectionChartComponent {
 
     public data: Object[] = [
-        { x: 'CHN', y: 17 },
-        { x: 'USA', y: 19 },
-        { x: 'IDN', y: 29 },
-        { x: 'JAP', y: 13 },
-        { x: 'BRZ', y: 24 }
+        { x: 'China', y: 17 }, { x: 'USA', y: 19 },
+        { x: 'India', y: 29 }, { x: 'Japan', y: 13 },
+        { x: 'Brazil', y: 24 }
     ];
     public data1: Object[] = [
-        { x: 'CHN', y: 54 },
-        { x: 'USA', y: 67 },
-        { x: 'IDN', y: 65 },
-        { x: 'JAP', y: 61 },
-        { x: 'BRZ', y: 68 }
+        { x: 'China', y: 54 }, { x: 'USA', y: 67 },
+        { x: 'India', y: 65 }, { x: 'Japan', y: 61 },
+        { x: 'Brazil', y: 68 }
     ];
     public data2: Object[] = [
-        { x: 'CHN', y: 9 },
-        { x: 'USA', y: 14 },
-        { x: 'IDN', y: 6 },
-        { x: 'JAP', y: 26 },
-        { x: 'BRZ', y: 8 }
+        { x: 'China', y: 9 }, { x: 'USA', y: 14 },
+        { x: 'India', y: 6 }, { x: 'Japan', y: 26 },
+        { x: 'Brazil', y: 8 }
     ];
     @ViewChild('chart')
     public chart: ChartComponent;
@@ -64,19 +58,27 @@ export class SelectionChartComponent {
         valueType: 'Category',
         interval: 1,
         labelIntersectAction: 'Rotate90',
+        majorGridLines: {width: 0},
         majorTickLines: { width: 0 },
         minorTickLines: { width: 0 }
+    };
+    public chartArea: Object = {
+        border: {
+            width: 0
+        }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         title: 'Distribution',
         labelFormat: '{value}%',
+        lineStyle : {width : 0},
         minimum: 0,
         maximum: 80
     };
     public legend: Object = {
         visible: true,
-        toggleVisibility: false
+        toggleVisibility: false,
+        
     };
     public animation: Object = {
         enable: false

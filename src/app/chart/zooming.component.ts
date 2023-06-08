@@ -16,7 +16,6 @@ export class ZoomingChartComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
-        skeleton: 'yMMM',
         edgeLabelPlacement: 'Shift',
         majorGridLines: { width: 0 }
     };
@@ -24,6 +23,7 @@ export class ZoomingChartComponent {
     public primaryYAxis: Object = {
         title: 'Profit ($)',
         rangePadding: 'None',
+        labelFormat: "${value}k",
         lineStyle: { width: 0 },
         majorTickLines: { width: 0 }
     };
@@ -36,7 +36,7 @@ export class ZoomingChartComponent {
         enableMouseWheelZooming: true,
         enablePinchZooming: true,
         enableSelectionZooming: true,
-        enableScrollbar: true
+       
     };
     public chartArea: Object = {
         border: {

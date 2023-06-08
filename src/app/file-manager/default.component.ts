@@ -19,7 +19,12 @@ export class DefaultFileController {
     @ViewChild('fileObj')
     public fileObj: FileManagerComponent;
     public ajaxSettings: object;
+    public toolbarSettings: object;
+    public contextMenuSettings: object;
     public navigationPaneSettings: object;
+    public disableItems: string[] = ['NewFolder', 'Cut', 'Copy', 'Paste', 'Download', 'Delete', 'Refresh', 'Selection', 'View', 'Details'];
+    public enableItems: string[] = ['NewFolder', 'Cut', 'Copy', 'Paste', 'Download', 'Delete', 'Refresh', 'Selection', 'View', 'Details'];
+    public waterMark: string = 'Select item';
     public hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
     public ngOnInit(): void {
         this.ajaxSettings = {
@@ -32,9 +37,33 @@ export class DefaultFileController {
         this.navigationPaneSettings = {
              visible: false
         };
+        this.toolbarSettings = { items: ['NewFolder', 'SortBy', 'Cut', 'Copy', 'Paste', 'Delete', 'Refresh', 'Download', 'Rename', 'Selection', 'View', 'Details',] };
+        this.contextMenuSettings = {
+            layout: ['SortBy', 'View', 'Refresh', '|', 'Paste', '|', 'NewFolder', '|', 'Details', '|', 'SelectAll'],
+            visible: true
+        };
     }
 
     toolClick(args: any) {
-        this.fileObj.toolbarSettings.visible = args.checked;
+        if (args.event.currentTarget.id == 'toolbar') {
+            this.fileObj.toolbarSettings.visible = args.checked;
+        }
+        if (args.event.currentTarget.id == 'multiSelect') {
+            this.fileObj.allowMultiSelection = args.checked;
+        }
+        if (args.event.currentTarget.id == 'fileExtension') {
+            this.fileObj.showFileExtension = args.checked;
+        }
+        if (args.event.currentTarget.id == 'thumbnail') {
+            this.fileObj.showThumbnail = args.checked;
+        }
+    }
+    itemChange(args: any) {
+        var changedItem = args.itemData.value;
+        if (args.element.id == 'enable') {
+            this.fileObj.enableToolbarItems([changedItem]);
+        } else {
+            this.fileObj.disableToolbarItems([changedItem]);
+        }
     }
 }

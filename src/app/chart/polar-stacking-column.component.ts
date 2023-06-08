@@ -54,6 +54,10 @@ export class PolarStackedColumnChartComponent {
     public tooltip: Object = {
         enable: true
     };
+    public legendSettings: Object = {
+        visible: true,
+        enableHighlight: true
+    };
     public title: string = 'Wind Rose Chart';
     @ViewChild('chart')
     public chart: ChartComponent;

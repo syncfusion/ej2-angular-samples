@@ -32,7 +32,7 @@ export class PercentStackedBarChartComponent {
         title: 'Sales (In Percentage)',
         lineStyle: { width: 0},
         majorTickLines: {width: 0},
-        labelFormat: '{value}%',
+       
         edgeLabelPlacement: 'Shift'
     };
     //Initializing Tooltip

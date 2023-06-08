@@ -10,7 +10,7 @@
        
         <div class="col-lg-10 control-section"  style='padding-left: 0px;padding-right: 0px; padding-top: 0px;' >
           <div>
-            <ejs-documenteditorcontainer #documenteditor_default id="container" [enableToolbar]=true [locale]="culture" (created)="onCreate()"  (documentChange)="onDocumentChange()" (toolbarClick)="toolbarClick($event)" height="600px" style="display:block" ></ejs-documenteditorcontainer>
+            <ejs-documenteditorcontainer #documenteditor_default id="container" [enableToolbar]=true [locale]="culture" (created)="onCreate()"  (documentChange)="onDocumentChange()" (toolbarClick)="toolbarClick($event)" [serviceUrl]="hostUrl"  height="600px" style="display:block" ></ejs-documenteditorcontainer>
           </div>
         </div>
           <div class="overlay" id="popup-overlay" style="display: none;"></div>

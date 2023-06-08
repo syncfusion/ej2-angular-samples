@@ -3,7 +3,7 @@
         <div id="default_title_bar" class="e-de-ctn-title"></div>
         <div>
             <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true [locale]="culture" (created)="onCreate()" [showPropertiesPane]=false
-                (documentChange)="onDocumentChange()" (commentDelete)="commentDelete($event)" height="600px" style="display:block;" currentUser = "Nancy Davolio" userColor="#b70f34"></ejs-documenteditorcontainer>
+                (documentChange)="onDocumentChange()" (commentDelete)="commentDelete($event)" height="600px" [serviceUrl]="hostUrl" style="display:block;" currentUser = "Nancy Davolio" userColor="#b70f34"></ejs-documenteditorcontainer>
         </div>
     </div>
 </div>

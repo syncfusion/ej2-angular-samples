@@ -71,3 +71,23 @@
 .e-chips.tomato:hover {
     background-color: #FF745C;
 }
+
+.fabric .e-chips.chocolate,
+.fabric .e-chips.chocolate:hover {
+    background-color: #3c2f27;
+}
+
+.fabric .e-chips.darkred,
+.fabric .e-chips.darkred:hover {
+    background-color: #960f0a;
+}
+
+.fabric .e-chips.cadetblue,
+.fabric .e-chips.cadetblue:hover {
+    background-color: #36bac7;
+}
+
+.fabric .e-chips.indigo,
+.fabric .e-chips.indigo:hover {
+    background-color: #58a4df;
+}

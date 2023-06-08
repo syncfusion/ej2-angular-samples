@@ -1,18 +1,13 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
-import { chartData } from './financial-data';
+import { chartValue } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Sample for Hilo Series
  */
-let date1: Date = new Date('2017-01-01');
-let returnValue: any = chartData.filter(filterValue);
-function filterValue(value: { x: Date, high: number, low: number }): any {
-    if (value.x >= date1) {
-        return value.x, value.high, value.low;
-    }
-}
+
+
 @Component({
     selector: 'control-content',
     templateUrl: 'hilo.html',
@@ -21,13 +16,11 @@ function filterValue(value: { x: Date, high: number, low: number }): any {
 })
 export class HiloChartComponent {
 
-    public data1: Object[] = returnValue;
+    public data1: Object[] = chartValue;
 
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
-        minimum: new Date('2016-12-31'),
-        maximum: new Date('2017-09-30'),
         crosshairTooltip: { enable: true },
         edgeLabelPlacement: 'Shift',
         majorGridLines: { width: 0 }
@@ -35,7 +28,7 @@ export class HiloChartComponent {
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         title: 'Price',
-        minimum: 100,
+        minimum: 10,
         maximum: 180,
         interval: 20,
         labelFormat: '${value}',
@@ -56,13 +49,14 @@ export class HiloChartComponent {
     public title: string = 'AAPL Historical';
     public tooltip: Object = {
         enable: true,
-        shared: true
+        shared: true,
+        enableMarker: false, header: "" 
     };
     public legendSettings: Object = {
         visible: false
     };
     public crosshair: Object = {
-        enable: true,
+        enable: false,
         lineType: 'Vertical', line: {
             width: 0,
         }

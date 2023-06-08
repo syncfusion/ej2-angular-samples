@@ -52,8 +52,8 @@ export class TooltipTemplateComponent {
 
     public marker: MarkerSettingsModel = {
         visible: true,
-        width: 10,
-        height: 10,
+        width: 7,
+        height: 7,
         fill: '#C1272D',
         border: {color: '#333333', width: 2}
     };

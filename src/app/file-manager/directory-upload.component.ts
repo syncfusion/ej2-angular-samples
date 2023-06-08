@@ -54,6 +54,6 @@ export class DirectoryUploadController {
       },
       '#file_tb_upload'
     );
-    }
+  }
   }
 }

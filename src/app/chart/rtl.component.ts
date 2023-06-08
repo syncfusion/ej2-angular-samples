@@ -41,6 +41,10 @@ export class RTLChartComponent {
             args.cancel = args.value === 2015 || args.value === 2020;
         }
     };
+    public legend: Object = {
+        visible: true,
+        enableHighlight : true
+    };
     // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

@@ -41,7 +41,22 @@
             "Medium": "Mittel",
             "Large": "Groß",
             "XLarge": "X-Groß",
-            "ABC": "ABC"
+            "ABC": "ABC",
+            "Finetune": "Feinabstimmung",
+            "Brightness": "Helligkeit",
+            "Contrast": "Kontrast",
+            "Hue": "Farbton",
+            "Saturation": "Sättigung",
+            "Opacity": "Opazität",
+            "Blur": "Verwischen",
+            "Exposure": "Belichtung",
+            "Filter": "Filter",
+            "Chrome": "Chrom",
+            "Cold": "Kalt",
+            "Warm": "Warm",
+            "Grayscale": "Graustufen",
+            "Sepia": "Sepia",
+            "Invert": "Umkehren"
         }
     },
     "ar": {
@@ -86,7 +101,22 @@
             "Medium": "متوسط",
             "Large": "كبير",
             "XLarge": "X-كبير",
-            "ABC": "ABC"
+            "ABC": "ABC",
+            "Finetune": "ضبط دقيق",
+            "Brightness": "سطوع",
+            "Contrast": "التباين",
+            "Hue": "مسحة",
+            "Saturation": "التشبع",
+            "Opacity": "التعتيم",
+            "Blur": "طمس",
+            "Exposure": "التعرض",
+            "Filter": "منقي",
+            "Chrome": "كروم",
+            "Cold": "البرد",
+            "Warm": "دافيء",
+            "Grayscale": "تدرج الرمادي",
+            "Sepia": "بني داكن",
+            "Invert": "عكس"
         }
     },
     "en": {
@@ -131,7 +161,22 @@
             "Medium": "Medium",
             "Large": "Large",
             "XLarge": "X-Large",
-            "ABC": "ABC"
+            "ABC": "ABC",
+            "Finetune": "Finetune",
+            "Brightness": "Brightness",
+            "Contrast": "Contrast",
+            "Hue": "Hue",
+            "Saturation": "Saturation",
+            "Opacity": "Opacity",
+            "Blur": "Blur",
+            "Exposure": "Exposure",
+            "Filter": "Filter",
+            "Chrome": "Chrome",
+            "Cold": "Cold",
+            "Warm": "Warm",
+            "Grayscale": "Grayscale",
+            "Sepia": "Sepia",
+            "Invert": "Invert"
         }
     },
     "zh": {
@@ -175,13 +220,28 @@
             "Small": "小的",
             "Medium": "中等的",
             "Large": "大的",
-            "XLarge": "超大",
-            "ABC": "ABC"
+            "XLarge": "特大号",
+            "ABC": "ABC",
+            "Finetune": "微调",
+            "Brightness": "亮度",
+            "Contrast": "对比",
+            "Hue": "色调",
+            "Saturation": "饱和",
+            "Opacity": "不透明度",
+            "Blur": "模糊",
+            "Exposure": "暴露",
+            "Filter": "筛选",
+            "Chrome": "铬合金",
+            "Cold": "寒冷的",
+            "Warm": "温暖的",
+            "Grayscale": "灰阶",
+            "Sepia": "棕褐色",
+            "Invert": "倒置"
         }
     },
     "fr-CH": {
         "image-editor": {
-            "Browse": "Feuilleter",
+            "Browse": "Parcourir",
             "Crop": "recadrer",
             "ZoomIn": "agrandir",
             "ZoomOut": "Dézoomer",
@@ -220,8 +280,23 @@
             "Small": "Petit",
             "Medium": "Moyen",
             "Large": "Grand",
-            "XLarge": "X-Grand",
-            "ABC": "ABC"
+            "XLarge": "Très grand",
+            "ABC": "ABC",
+            "Finetune": "Affiner",
+            "Brightness": "Luminosité",
+            "Contrast": "Contraste",
+            "Hue": "Teinte",
+            "Saturation": "Saturation",
+            "Opacity": "Opacité",
+            "Blur": "Se brouiller",
+            "Exposure": "Exposition",
+            "Filter": "Filtre",
+            "Chrome": "Chrome",
+            "Cold": "Froid",
+            "Warm": "Chaleureuse",
+            "Grayscale": "Niveaux de gris",
+            "Sepia": "Sépia",
+            "Invert": "Inverser"
         }
     }
 }

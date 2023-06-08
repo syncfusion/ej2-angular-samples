@@ -5,7 +5,7 @@
             <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' [validationRules]='orderidrules' isPrimaryKey='true'></e-column>
             <e-column field='CustomerID' headerText='Customer Name' width='150'
             foreignKeyValue='ContactName' foreignKeyField='CustomerID' [dataSource]='customerData' [validationRules]='orderidrules'></e-column>
-            <e-column field='Freight' headerText='Freight' width='100' format='C2' textAlign='Right' editType='numericedit'></e-column>
+            <e-column field='Freight' headerText='Freight' width='150' format='C2' textAlign='Right' editType='numericedit'></e-column>
             <e-column field='ShipName' headerText='Ship Name' width='170'></e-column>
             <e-column field='ShipCountry' headerText='Ship Country' width='150' editType='dropdownedit'></e-column>
         </e-columns>

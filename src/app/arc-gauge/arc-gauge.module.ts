@@ -12,10 +12,10 @@ import { PatternsComponent } from './patterns.component';
 import { ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 
 export const arcgaugeAppRoutes: Object[] = [
-    { path: ':theme/arc-gauge/default', component: DefaultComponent, type: 'new', name: 'Default Functionalities', order: '01', category: 'Arc Gauge', description: 'This Essential JS2 Arc Gauge demo shows the gauges basic rendering.'},
-    { path: ':theme/arc-gauge/customer-satisfaction-score', component: CustomerSatisfactionComponent, type: 'new', name: 'Customer Satisfaction Score', order: '01', category: 'Arc Gauge', description: 'This Essential JS2 Arc Gauge demo shows how the gauge can be customized to represent a customer satisfaction score scenario.'},
-    { path: ':theme/arc-gauge/key-performance-indicator', component: KeyPerformanceComponent, type: 'new', name: 'Key Performance Indicator', order: '01', category: 'Arc Gauge', description: 'This Essential JS2 Arc Gauge demo shows how the gauge can be customized to represent a key performance indicator scenario.'},
-    { path: ':theme/arc-gauge/patterns', component: PatternsComponent, type: 'new', name: 'Patterns', order: '01', category: 'Arc Gauge', description: 'This Essential JS2 Arc Gauge demo shows how the gauge can be rendered in many ways to demonstrate different user interfaces by customizing its axis, range, pointer, etc.'}
+    { path: ':theme/arc-gauge/default', component: DefaultComponent, name: 'Default Functionalities', order: '01', category: 'Arc Gauge', description: 'This Essential JS2 Arc Gauge demo shows the gauges basic rendering.'},
+    { path: ':theme/arc-gauge/customer-satisfaction-score', component: CustomerSatisfactionComponent, name: 'Customer Satisfaction Score', order: '01', category: 'Arc Gauge', description: 'This Essential JS2 Arc Gauge demo shows how the gauge can be customized to represent a customer satisfaction score scenario.'},
+    { path: ':theme/arc-gauge/key-performance-indicator', component: KeyPerformanceComponent, name: 'Key Performance Indicator', order: '01', category: 'Arc Gauge', description: 'This Essential JS2 Arc Gauge demo shows how the gauge can be customized to represent a key performance indicator scenario.'},
+    { path: ':theme/arc-gauge/patterns', component: PatternsComponent, name: 'Patterns', order: '01', category: 'Arc Gauge', description: 'This Essential JS2 Arc Gauge demo shows how the gauge can be rendered in many ways to demonstrate different user interfaces by customizing its axis, range, pointer, etc.'}
 ];
 
 export const arcRouter: ModuleWithProviders<any> = RouterModule.forChild(arcgaugeAppRoutes);

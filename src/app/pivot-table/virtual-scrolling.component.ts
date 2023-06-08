@@ -26,6 +26,7 @@ export class VirtualScrollingComponent implements OnInit {
     public pivotObj: PivotView;
     @ViewChild('loadbtn')
     public applyBtn: Button;
+    public width: string | number;
 
     data(count: number): Object[] {
         let result: Object[] = [];
@@ -102,5 +103,7 @@ export class VirtualScrollingComponent implements OnInit {
             columns: [{ name: 'Year' }],
             values: [{ name: 'Price', caption: 'Unit Price' }, { name: 'Sold', caption: 'Unit Sold' }]
         };
+        
+        this.width = Browser.isDevice ? '100%' : 860;
     }
 }

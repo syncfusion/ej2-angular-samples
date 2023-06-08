@@ -1,10 +1,10 @@
 <div id="action-description">
     <p>
-        This sample illustrates the range selection feature in chart. Data can be selected under region by drag and drop.
+        This sample demonstrates the range selection behavior and its mode in the charts.
     </p>
 </div>
-<div class="control-section">
-    <div class="col-md-8">
+
+    <div class="control-section col-md-8 sb-property-border">
             <ejs-chart #chart style='display:block; width: 92%' [chartArea]='chartArea'[primaryXAxis]='primaryXAxis' [legendSettings]='legendSettings' [primaryYAxis]='primaryYAxis'  [title]='title'
                 id='chartcontainer' selectionMode='DragXY' (load)='load($event)'>
                 <e-series-collection>
@@ -44,7 +44,7 @@
                     </td>
                 </tr>
             </table>
-          </div>
+        
        </div>
     </div>
 </div>
@@ -84,5 +84,8 @@
 <style>
 .control-section {
         min-height: 450px;
+    }
+    #select,#selmode:hover {
+        cursor: pointer;
     }
 </style>

@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsViewService } from '@syncfusion/ej2-angular-filemanager';
-import {AjaxSettingsModel, SearchSettingsModel } from '@syncfusion/ej2-filemanager';
+import {AjaxSettingsModel, ContextMenuSettings, SearchSettingsModel , ToolbarSettingsModel} from '@syncfusion/ej2-filemanager';
 /**
  * File Manager sample with amazon s3 service
  */
@@ -14,6 +14,8 @@ import {AjaxSettingsModel, SearchSettingsModel } from '@syncfusion/ej2-filemanag
 
 export class AmazonS3Controller {
     public ajaxSettings: AjaxSettingsModel;
+    public contextMenuSettings: object;
+    public toolbarSettings: ToolbarSettingsModel;    
     public searchSettings: SearchSettingsModel;
     public hostUrl: string = 'https://amazons3.azurewebsites.net/api/';
     public ngOnInit(): void {
@@ -22,6 +24,11 @@ export class AmazonS3Controller {
             getImageUrl: this.hostUrl + 'AmazonS3Provider/AmazonS3GetImage',
             uploadUrl: this.hostUrl + 'AmazonS3Provider/AmazonS3Upload',
             downloadUrl: this.hostUrl + 'AmazonS3Provider/AmazonS3Download'
+        };
+        this.toolbarSettings = { items: ['NewFolder', 'SortBy', 'Cut', 'Copy', 'Paste', 'Delete', 'Refresh', 'Download', 'Rename', 'Selection', 'View', 'Details',] };
+        this.contextMenuSettings = {
+            layout: ['SortBy', 'View', 'Refresh', '|', 'Paste', '|', 'NewFolder', '|', 'Details', '|', 'SelectAll'],
+            visible: true
         };
         this.searchSettings = {
             allowSearchOnTyping: false

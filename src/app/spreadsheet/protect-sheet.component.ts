@@ -18,8 +18,8 @@ export class ProtectSheetComponent {
     @ViewChild('spreadsheet')
     spreadsheetObj: SpreadsheetComponent;
     data: Object[] = protectSheetData();
-    public openUrl = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/open';
-    public saveUrl = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save';
+    public openUrl = 'https://services.syncfusion.com/angular/production/api/spreadsheet/open';
+    public saveUrl = 'https://services.syncfusion.com/angular/production/api/spreadsheet/save';
     created() {
         // Applied style and number formatting to a range
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center' }, 'EMI Schedule!A1:F1');

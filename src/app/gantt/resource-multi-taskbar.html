@@ -3,15 +3,34 @@
         This feature can be enabled by setting the <code>enableMultiTaskbar</code> property as "true".
     </p>
 </div>
-<div class="control-section">
-    <ejs-gantt id="multitaskbar" height="430px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns" [treeColumnIndex]="1"
+<div class="col-lg-12 control-section">
+    <div style="display: flex;">
+        <div style="display: flex;">
+            <label for="checked" style="margin:0px 5px 0px 0px;font-size: 15px;"> Allow Taskbar Drag And Drop </label>
+            <div>
+            <ejs-switch id="checked" (change)="dragDropChange($event)"></ejs-switch>
+        </div>
+        </div>
+        <div style="display: flex;">
+            <label for="unchecked" style="margin:0px 5px 0px 5px;font-size: 15px;"> Allow Taskbar Overlap </label>
+            <div>
+            <ejs-switch id="unchecked" (change)="overlapChange($event)" [checked]="true"></ejs-switch>
+           </div>
+        </div>
+    </div>
+    <div>
+    <ejs-gantt id="multitaskbar" #gantt height="430px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns" [treeColumnIndex]="1"
         [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" [editSettings]="editSettings" 
         height="450px" [allowSelection]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
         [toolbar]="toolbar" [resourceFields] = "resourceFields" [allowResizing]= "true"
         [resources]="resources" workUnit="Hour" viewType="ResourceView" [enableMultiTaskbar]= "true" [showOverAllocation]= "true">
     </ejs-gantt> 
 </div>
+</div>
 <div id="description">
+    <p>
+        In this example, you can enable taskbar drag and drop from one resource to another resource vertically by enabling <code>allowTaskbarDragAndDrop</code> property. Also, you can prevent the taskbar overlap  in resource task by disabling the <code>allowTaskbarOverlap</code> property.
+    </p>
     <p>
         In this example, you can see that, the resource breaks down from a bulk of tasks can be done by mapping the pre-defined resource ID-s to each task and the resource information can be shown by using the labelSetting property.
         Using the toolbar action, you can perform the CRUD operation for the resource allocation based on their availability and task complexity.

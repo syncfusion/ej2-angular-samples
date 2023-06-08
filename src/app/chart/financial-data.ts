@@ -5958,3 +5958,2973 @@ export let chartDataValues: object[] = [
     low: 1.4257,
 },
 ];
+export let chartValue: object[] = [
+  {
+    period: new Date('2012-04-02'),
+    open: 85.9757,
+    high: 90.6657,
+    low: 85.7685,
+    close: 90.5257,
+    volume: 660187068
+},
+{
+    period: new Date('2012-04-09'),
+    open: 89.4471,
+    high: 92,
+    low: 86.2157,
+    close: 86.4614,
+    volume: 912634864
+},
+{
+    period: new Date('2012-04-16'),
+    open: 87.1514,
+    high: 88.6071,
+    low: 81.4885,
+    close: 81.8543,
+    volume: 1221746066
+},
+{
+    period: new Date('2012-04-23'),
+    open: 81.5157,
+    high: 88.2857,
+    low: 79.2857,
+    close: 86.1428,
+    volume: 965935749
+},
+{
+    period: new Date('2012-04-30'),
+    open: 85.4,
+    high: 85.4857,
+    low: 80.7385,
+    close: 80.75,
+    volume: 615249365
+},
+{
+    period: new Date('2012-05-07'),
+    open: 80.2143,
+    high: 82.2685,
+    low: 79.8185,
+    close: 80.9585,
+    volume: 541742692
+},
+{
+    period: new Date('2012-05-14'),
+    open: 80.3671,
+    high: 81.0728,
+    low: 74.5971,
+    close: 75.7685,
+    volume: 708126233
+},
+{
+    period: new Date('2012-05-21'),
+    open: 76.3571,
+    high: 82.3571,
+    low: 76.2928,
+    close: 80.3271,
+    volume: 682076215
+},
+{
+    period: new Date('2012-05-28'),
+    open: 81.5571,
+    high: 83.0714,
+    low: 80.0743,
+    close: 80.1414,
+    volume: 480059584
+},
+{
+    period: new Date('2012-06-04'),
+    open: 80.2143,
+    high: 82.9405,
+    low: 78.3571,
+    close: 82.9028,
+    volume: 517577005
+},
+{
+    period: new Date('2012-06-11'),
+    open: 83.96,
+    high: 84.0714,
+    low: 80.9571,
+    close: 82.0185,
+    volume: 499693120
+},
+{
+    period: new Date('2012-06-18'),
+    open: 81.5657,
+    high: 84.2857,
+    low: 81.4814,
+    close: 83.1571,
+    volume: 442172142
+},
+{
+    period: new Date('2012-06-25'),
+    open: 82.4714,
+    high: 83.4285,
+    low: 80.8014,
+    close: 83.4285,
+    volume: 371529102
+},
+{
+    period: new Date('2012-07-02'),
+    open: 83.5328,
+    high: 87.7628,
+    low: 83.3714,
+    close: 86.5543,
+    volume: 385906790
+},
+{
+    period: new Date('2012-07-09'),
+    open: 86.4714,
+    high: 88.5528,
+    low: 84.6685,
+    close: 86.4243,
+    volume: 524235196
+},
+{
+    period: new Date('2012-07-16'),
+    open: 86.4457,
+    high: 87.9071,
+    low: 86.1643,
+    close: 86.3285,
+    volume: 419537217
+},
+{
+    period: new Date('2012-07-23'),
+    open: 84.9143,
+    high: 87.0971,
+    low: 81.4285,
+    close: 83.5943,
+    volume: 680773023
+},
+{
+    period: new Date('2012-07-30'),
+    open: 84.4171,
+    high: 88.2828,
+    low: 83.9743,
+    close: 87.9571,
+    volume: 475109323
+},
+{
+    period: new Date('2012-08-06'),
+    open: 88.1843,
+    high: 89.2857,
+    low: 87.8943,
+    close: 88.8143,
+    volume: 312826308
+},
+{
+    period: new Date('2012-08-13'),
+    open: 89.0557,
+    high: 92.5985,
+    low: 89.0357,
+    close: 92.5871,
+    volume: 392867193
+},
+{
+    period: new Date('2012-08-20'),
+    open: 92.8585,
+    high: 96.4114,
+    low: 92.5871,
+    close: 94.746,
+    volume: 708614692
+},
+{
+    period: new Date('2012-08-27'),
+    open: 97.1414,
+    high: 97.2671,
+    low: 93.8928,
+    close: 95.0343,
+    volume: 383807217
+},
+{
+    period: new Date('2012-09-03'),
+    open: 95.1085,
+    high: 97.4971,
+    low: 94.9285,
+    close: 97.2057,
+    volume: 355722047
+},
+{
+    period: new Date('2012-09-10'),
+    open: 97.2071,
+    high: 99.5685,
+    low: 93.7143,
+    close: 98.7543,
+    volume: 724042207
+},
+{
+    period: new Date('2012-09-17'),
+    open: 99.9071,
+    high: 100.7243,
+    low: 99.0885,
+    close: 100.0135,
+    volume: 500166040
+},
+{
+    period: new Date('2012-09-24'),
+    open: 98.1228,
+    high: 99.3028,
+    low: 94.3357,
+    close: 95.3007,
+    volume: 714507994
+},
+{
+    period: new Date('2012-10-01'),
+    open: 95.88,
+    high: 96.6785,
+    low: 92.95,
+    close: 93.2271,
+    volume: 638543622
+},
+{
+    period: new Date('2012-10-08'),
+    open: 92.4114,
+    high: 92.5085,
+    low: 89.0785,
+    close: 89.9591,
+    volume: 747127724
+},
+{
+    period: new Date('2012-10-15'),
+    open: 90.3357,
+    high: 93.2557,
+    low: 87.0885,
+    close: 87.12,
+    volume: 646996264
+},
+{
+    period: new Date('2012-10-22'),
+    open: 87.4885,
+    high: 90.7685,
+    low: 84.4285,
+    close: 86.2857,
+    volume: 866040680
+},
+{
+    period: new Date('2012-10-29'),
+    open: 84.9828,
+    high: 86.1428,
+    low: 82.1071,
+    close: 82.4,
+    volume: 367371310
+},
+{
+    period: new Date('2012-11-05'),
+    open: 83.3593,
+    high: 84.3914,
+    low: 76.2457,
+    close: 78.1514,
+    volume: 919719846
+},
+{
+    period: new Date('2012-11-12'),
+    open: 79.1643,
+    high: 79.2143,
+    low: 72.25,
+    close: 75.3825,
+    volume: 894382149
+},
+{
+    period: new Date('2012-11-19'),
+    open: 77.2443,
+    high: 81.7143,
+    low: 77.1257,
+    close: 81.6428,
+    volume: 527416747
+},
+{
+    period: new Date('2012-11-26'),
+    open: 82.2714,
+    high: 84.8928,
+    low: 81.7514,
+    close: 83.6114,
+    volume: 646467974
+},
+{
+    period: new Date('2012-12-03'),
+    open: 84.8071,
+    high: 84.9414,
+    low: 74.09,
+    close: 76.1785,
+    volume: 980096264
+},
+{
+    period: new Date('2012-12-10'),
+    open: 75,
+    high: 78.5085,
+    low: 72.2257,
+    close: 72.8277,
+    volume: 835016110
+},
+{
+    period: new Date('2012-12-17'),
+    open: 72.7043,
+    high: 76.4143,
+    low: 71.6043,
+    close: 74.19,
+    volume: 726150329
+},
+{
+    period: new Date('2012-12-24'),
+    open: 74.3357,
+    high: 74.8928,
+    low: 72.0943,
+    close: 72.7984,
+    volume: 321104733
+},
+{
+    period: new Date('2012-12-31'),
+    open: 72.9328,
+    high: 79.2857,
+    low: 72.7143,
+    close: 75.2857,
+    volume: 540854882
+},
+{
+    period: new Date('2013-01-07'),
+    open: 74.5714,
+    high: 75.9843,
+    low: 73.6,
+    close: 74.3285,
+    volume: 574594262
+},
+{
+    period: new Date('2013-01-14'),
+    open: 71.8114,
+    high: 72.9643,
+    low: 69.0543,
+    close: 71.4285,
+    volume: 803105621
+},
+{
+    period: new Date('2013-01-21'),
+    open: 72.08,
+    high: 73.57,
+    low: 62.1428,
+    close: 62.84,
+    volume: 971912560
+},
+{
+    period: new Date('2013-01-28'),
+    open: 62.5464,
+    high: 66.0857,
+    low: 62.2657,
+    close: 64.8028,
+    volume: 656549587
+},
+{
+    period: new Date('2013-02-04'),
+    open: 64.8443,
+    high: 68.4014,
+    low: 63.1428,
+    close: 67.8543,
+    volume: 743778993
+},
+{
+    period: new Date('2013-02-11'),
+    open: 68.0714,
+    high: 69.2771,
+    low: 65.7028,
+    close: 65.7371,
+    volume: 585292366
+},
+{
+    period: new Date('2013-02-18'),
+    open: 65.8714,
+    high: 66.1043,
+    low: 63.26,
+    close: 64.4014,
+    volume: 421766997
+},
+{
+    period: new Date('2013-02-25'),
+    open: 64.8357,
+    high: 65.0171,
+    low: 61.4257,
+    close: 61.4957,
+    volume: 582741215
+},
+{
+    period: new Date('2013-03-04'),
+    open: 61.1143,
+    high: 62.2043,
+    low: 59.8571,
+    close: 61.6743,
+    volume: 632856539
+},
+{
+    period: new Date('2013-03-11'),
+    open: 61.3928,
+    high: 63.4614,
+    low: 60.7343,
+    close: 63.38,
+    volume: 572066981
+},
+{
+    period: new Date('2013-03-18'),
+    open: 63.0643,
+    high: 66.0143,
+    low: 63.0286,
+    close: 65.9871,
+    volume: 552156035
+},
+{
+    period: new Date('2013-03-25'),
+    open: 66.3843,
+    high: 67.1357,
+    low: 63.0886,
+    close: 63.2371,
+    volume: 390762517
+},
+{
+    period: new Date('2013-04-01'),
+    open: 63.1286,
+    high: 63.3854,
+    low: 59.9543,
+    close: 60.4571,
+    volume: 505273732
+},
+{
+    period: new Date('2013-04-08'),
+    open: 60.6928,
+    high: 62.57,
+    low: 60.3557,
+    close: 61.4,
+    volume: 387323550
+},
+{
+    period: new Date('2013-04-15'),
+    open: 61,
+    high: 61.1271,
+    low: 55.0143,
+    close: 55.79,
+    volume: 709945604
+},
+{
+    period: new Date('2013-04-22'),
+    open: 56.0914,
+    high: 59.8241,
+    low: 55.8964,
+    close: 59.6007,
+    volume: 787007506
+},
+{
+    period: new Date('2013-04-29'),
+    open: 60.0643,
+    high: 64.7471,
+    low: 60,
+    close: 64.2828,
+    volume: 655020017
+},
+{
+    period: new Date('2013-05-06'),
+    open: 65.1014,
+    high: 66.5357,
+    low: 64.3543,
+    close: 64.71,
+    volume: 545488533
+},
+{
+    period: new Date('2013-05-13'),
+    open: 64.5014,
+    high: 65.4143,
+    low: 59.8428,
+    close: 61.8943,
+    volume: 633706550
+},
+{
+    period: new Date('2013-05-20'),
+    open: 61.7014,
+    high: 64.05,
+    low: 61.4428,
+    close: 63.5928,
+    volume: 494379068
+},
+{
+    period: new Date('2013-05-27'),
+    open: 64.2714,
+    high: 65.3,
+    low: 62.7714,
+    close: 64.2478,
+    volume: 362907830
+},
+{
+    period: new Date('2013-06-03'),
+    open: 64.39,
+    high: 64.9186,
+    low: 61.8243,
+    close: 63.1158,
+    volume: 443249793
+},
+{
+    period: new Date('2013-06-10'),
+    open: 63.5328,
+    high: 64.1541,
+    low: 61.2143,
+    close: 61.4357,
+    volume: 389680092
+},
+{
+    period: new Date('2013-06-17'),
+    open: 61.6343,
+    high: 62.2428,
+    low: 58.3,
+    close: 59.0714,
+    volume: 400384818
+},
+{
+    period: new Date('2013-06-24'),
+    open: 58.2,
+    high: 58.38,
+    low: 55.5528,
+    close: 56.6471,
+    volume: 519314826
+},
+{
+    period: new Date('2013-07-01'),
+    open: 57.5271,
+    high: 60.47,
+    low: 57.3171,
+    close: 59.6314,
+    volume: 343878841
+},
+{
+    period: new Date('2013-07-08'),
+    open: 60.0157,
+    high: 61.3986,
+    low: 58.6257,
+    close: 60.93,
+    volume: 384106977
+},
+{
+    period: new Date('2013-07-15'),
+    open: 60.7157,
+    high: 62.1243,
+    low: 60.5957,
+    close: 60.7071,
+    volume: 286035513
+},
+{
+    period: new Date('2013-07-22'),
+    open: 61.3514,
+    high: 63.5128,
+    low: 59.8157,
+    close: 62.9986,
+    volume: 395816827
+},
+{
+    period: new Date('2013-07-29'),
+    open: 62.9714,
+    high: 66.1214,
+    low: 62.8857,
+    close: 66.0771,
+    volume: 339668858
+},
+{
+    period: new Date('2013-08-05'),
+    open: 66.3843,
+    high: 67.4128,
+    low: 64.8071,
+    close: 64.9214,
+    volume: 368486781
+},
+{
+    period: new Date('2013-08-12'),
+    open: 65.2657,
+    high: 72.0357,
+    low: 65.2328,
+    close: 71.7614,
+    volume: 711563584
+},
+{
+    period: new Date('2013-08-19'),
+    open: 72.0485,
+    high: 73.3914,
+    low: 71.1714,
+    close: 71.5743,
+    volume: 417119660
+},
+{
+    period: new Date('2013-08-26'),
+    open: 71.5357,
+    high: 72.8857,
+    low: 69.4286,
+    close: 69.6023,
+    volume: 392805888
+},
+{
+    period: new Date('2013-09-02'),
+    open: 70.4428,
+    high: 71.7485,
+    low: 69.6214,
+    close: 71.1743,
+    volume: 317244380
+},
+{
+    period: new Date('2013-09-09'),
+    open: 72.1428,
+    high: 72.56,
+    low: 66.3857,
+    close: 66.4143,
+    volume: 669376320
+},
+{
+    period: new Date('2013-09-16'),
+    open: 65.8571,
+    high: 68.3643,
+    low: 63.8886,
+    close: 66.7728,
+    volume: 625142677
+},
+{
+    period: new Date('2013-09-23'),
+    open: 70.8714,
+    high: 70.9871,
+    low: 68.6743,
+    close: 68.9643,
+    volume: 475274537
+},
+{
+    period: new Date('2013-09-30'),
+    open: 68.1786,
+    high: 70.3357,
+    low: 67.773,
+    close: 69.0043,
+    volume: 368198906
+},
+{
+    period: new Date('2013-10-07'),
+    open: 69.5086,
+    high: 70.5486,
+    low: 68.3257,
+    close: 70.4017,
+    volume: 361437661
+},
+{
+    period: new Date('2013-10-14'),
+    open: 69.9757,
+    high: 72.7514,
+    low: 69.9071,
+    close: 72.6985,
+    volume: 342694379
+},
+{
+    period: new Date('2013-10-21'),
+    open: 73.11,
+    high: 76.1757,
+    low: 72.5757,
+    close: 75.1368,
+    volume: 490458997
+},
+{
+    period: new Date('2013-10-28'),
+    open: 75.5771,
+    high: 77.0357,
+    low: 73.5057,
+    close: 74.29,
+    volume: 508130174
+},
+{
+    period: new Date('2013-11-04'),
+    open: 74.4428,
+    high: 75.555,
+    low: 73.1971,
+    close: 74.3657,
+    volume: 318132218
+},
+{
+    period: new Date('2013-11-11'),
+    open: 74.2843,
+    high: 75.6114,
+    low: 73.4871,
+    close: 74.9987,
+    volume: 306711021
+},
+{
+    period: new Date('2013-11-18'),
+    open: 74.9985,
+    high: 75.3128,
+    low: 73.3814,
+    close: 74.2571,
+    volume: 282778778
+},
+{
+    period: new Date('2013-11-25'),
+    open: 74.4314,
+    high: 79.7614,
+    low: 74.4285,
+    close: 79.4385,
+    volume: 327405302
+},
+{
+    period: new Date('2013-12-02'),
+    open: 79.7143,
+    high: 82.1622,
+    low: 78.6885,
+    close: 80.0028,
+    volume: 522055676
+},
+{
+    period: new Date('2013-12-09'),
+    open: 80.1286,
+    high: 81.5671,
+    low: 79.0957,
+    close: 79.2043,
+    volume: 387271099
+},
+{
+    period: new Date('2013-12-16'),
+    open: 79.2885,
+    high: 80.377,
+    low: 76.9714,
+    close: 78.4314,
+    volume: 457580848
+},
+{
+    period: new Date('2013-12-23'),
+    open: 81.1428,
+    high: 81.6971,
+    low: 79.9285,
+    close: 80.0128,
+    volume: 274253503
+},
+{
+    period: new Date('2013-12-30'),
+    open: 79.6371,
+    high: 80.1828,
+    low: 77.2043,
+    close: 77.2828,
+    volume: 275734934
+},
+{
+  period: new Date( '2014-01-06'),
+  open: 76.7785,
+  high: 78.1228,
+  low: 75.8728,
+  close: 76.1343,
+  volume: 393462075
+},
+{
+  period: new Date( '2014-01-13'),
+  open: 75.7014,
+  high: 80.0285,
+  low: 75.6971,
+  close: 77.2385,
+  volume: 439557459
+},
+{
+  period: new Date( '2014-01-20'),
+  open: 77.2843,
+  high: 79.6128,
+  low: 77.2028,
+  close: 78.01,
+  volume: 385585525
+},
+{
+  period: new Date( '2014-01-27'),
+  open: 78.5814,
+  high: 79.2571,
+  low: 70.5071,
+  close: 71.5143,
+  volume: 813702575
+},
+{
+  period: new Date( '2014-02-03'),
+  open: 71.8014,
+  high: 74.7042,
+  low: 71.3286,
+  close: 74.24,
+  volume: 434447570
+},
+{
+  period: new Date( '2014-02-10'),
+  open: 74.0943,
+  high: 77.9971,
+  low: 74,
+  close: 77.7128,
+  volume: 379011880
+},
+{
+  period: new Date( '2014-02-17'),
+  open: 78,
+  high: 78.7414,
+  low: 74.9428,
+  close: 75.0357,
+  volume: 289609443
+},
+{
+  period: new Date( '2014-02-24'),
+  open: 74.7357,
+  high: 76.1071,
+  low: 73.6571,
+  close: 75.1771,
+  volume: 367569649
+},
+{
+  period: new Date( '2014-03-03'),
+  open: 74.7743,
+  high: 76.3928,
+  low: 74.6871,
+  close: 75.7771,
+  volume: 275972640
+},
+{
+  period: new Date( '2014-03-10'),
+  open: 75.48,
+  high: 77.0943,
+  low: 74.7143,
+  close: 74.9557,
+  volume: 287729528
+},
+{
+  period: new Date( '2014-03-17'),
+  open: 75.3857,
+  high: 76.6057,
+  low: 75.0286,
+  close: 76.1243,
+  volume: 303531061
+},
+{
+  period: new Date( '2014-03-24'),
+  open: 76.9171,
+  high: 78.4285,
+  low: 76.3214,
+  close: 76.6943,
+  volume: 338387221
+},
+{
+  period: new Date( '2014-03-31'),
+  open: 77.0328,
+  high: 77.64,
+  low: 75.7971,
+  close: 75.9743,
+  volume: 245749459
+},
+{
+  period: new Date( '2014-04-07'),
+  open: 75.4314,
+  high: 76.0343,
+  low: 73.8771,
+  close: 74.23,
+  volume: 312008139
+},
+{
+  period: new Date( '2014-04-14'),
+  open: 74.5571,
+  high: 75.3943,
+  low: 73.0471,
+  close: 74.9914,
+  volume: 241209047
+},
+{
+  period: new Date( '2014-04-21'),
+  open: 75.0485,
+  high: 81.7128,
+  low: 74.8514,
+  close: 81.7057,
+  volume: 476651465
+},
+{
+  period: new Date( '2014-04-28'),
+  open: 81.8285,
+  high: 85.6328,
+  low: 81.7928,
+  close: 84.6543,
+  volume: 473712709
+},
+{
+  period: new Date( '2014-05-05'),
+  open: 84.3057,
+  high: 86.3442,
+  low: 82.9043,
+  close: 83.6489,
+  volume: 365535013
+},
+{
+  period: new Date( '2014-05-12'),
+  open: 83.9271,
+  high: 85.3614,
+  low: 83.6285,
+  close: 85.3585,
+  volume: 260931637
+},
+{
+  period: new Date( '2014-05-19'),
+  open: 85.4071,
+  high: 87.8184,
+  low: 85.3328,
+  close: 87.7328,
+  volume: 294298274
+},
+{
+  period: new Date( '2014-05-26'),
+  open: 87.9828,
+  high: 92.0243,
+  low: 87.9471,
+  close: 90.4285,
+  volume: 400232120
+},
+{
+  period: new Date( '2014-06-02'),
+  open: 90.5657,
+  high: 93.0371,
+  low: 88.9285,
+  close: 92.2243,
+  volume: 412158024
+},
+{
+  period: new Date( '2014-06-09'),
+  open: 92.7,
+  high: 95.05,
+  low: 90.88,
+  close: 91.28,
+  volume: 292422550
+},
+{
+  period: new Date( '2014-06-16'),
+  open: 91.51,
+  high: 92.75,
+  low: 90.9,
+  close: 90.91,
+  volume: 234325480
+},
+{
+  period: new Date( '2014-06-23'),
+  open: 91.32,
+  high: 92,
+  low: 89.65,
+  close: 91.98,
+  volume: 213712160
+},
+{
+  period: new Date( '2014-06-30'),
+  open: 92.1,
+  high: 94.1,
+  low: 92.09,
+  close: 94.03,
+  volume: 138936570
+},
+{
+  period: new Date( '2014-07-07'),
+  open: 94.14,
+  high: 96.8,
+  low: 93.52,
+  close: 95.22,
+  volume: 229782440
+},
+{
+  period: new Date( '2014-07-14'),
+  open: 95.86,
+  high: 97.1,
+  low: 92.57,
+  close: 94.43,
+  volume: 248104390
+},
+{
+  period: new Date( '2014-07-21'),
+  open: 94.99,
+  high: 97.88,
+  low: 93.72,
+  close: 97.671,
+  volume: 273021350
+},
+{
+  period: new Date( '2014-07-28'),
+  open: 97.82,
+  high: 99.44,
+  low: 94.81,
+  close: 96.13,
+  volume: 235868530
+},
+{
+  period: new Date( '2014-08-04'),
+  open: 96.37,
+  high: 96.58,
+  low: 93.28,
+  close: 94.74,
+  volume: 222522120
+},
+{
+  period: new Date( '2014-08-11'),
+  open: 95.27,
+  high: 98.19,
+  low: 94.8355,
+  close: 97.98,
+  volume: 178806580
+},
+{
+  period: new Date( '2014-08-18'),
+  open: 98.49,
+  high: 101.47,
+  low: 97.98,
+  close: 101.32,
+  volume: 246446280
+},
+{
+  period: new Date( '2014-08-25'),
+  open: 101.79,
+  high: 102.9,
+  low: 100.7,
+  close: 102.5,
+  volume: 232858250
+},
+{
+  period: new Date( '2014-09-01'),
+  open: 103.06,
+  high: 103.74,
+  low: 97.79,
+  close: 98.97,
+  volume: 322045910
+},
+{
+  period: new Date( '2014-09-08'),
+  open: 99.3,
+  high: 103.08,
+  low: 96.14,
+  close: 101.66,
+  volume: 460851840
+},
+{
+  period: new Date( '2014-09-15'),
+  open: 102.81,
+  high: 103.05,
+  low: 98.89,
+  close: 100.96,
+  volume: 296425730
+},
+{
+  period: new Date( '2014-09-22'),
+  open: 101.8,
+  high: 102.94,
+  low: 97.72,
+  close: 100.75,
+  volume: 337617850
+},
+{
+  period: new Date( '2014-09-29'),
+  open: 98.65,
+  high: 101.54,
+  low: 98.04,
+  close: 99.62,
+  volume: 246900230
+},
+{
+  period: new Date( '2014-10-06'),
+  open: 99.95,
+  high: 102.38,
+  low: 98.31,
+  close: 100.73,
+  volume: 279646740
+},
+{
+  period: new Date( '2014-10-13'),
+  open: 101.33,
+  high: 101.78,
+  low: 95.18,
+  close: 97.67,
+  volume: 356408760
+},
+{
+  period: new Date( '2014-10-20'),
+  open: 98.315,
+  high: 105.49,
+  low: 98.22,
+  close: 105.22,
+  volume: 355329760
+},
+{
+  period: new Date( '2014-10-27'),
+  open: 104.85,
+  high: 108.04,
+  low: 104.7,
+  close: 108,
+  volume: 219443560
+},
+{
+  period: new Date( '2014-11-03'),
+  open: 108.22,
+  high: 110.3,
+  low: 107.72,
+  close: 109.01,
+  volume: 199332700
+},
+{
+  period: new Date( '2014-11-10'),
+  open: 109.02,
+  high: 114.19,
+  low: 108.4,
+  close: 114.18,
+  volume: 203976340
+},
+{
+  period: new Date( '2014-11-17'),
+  open: 114.27,
+  high: 117.57,
+  low: 113.3,
+  close: 116.47,
+  volume: 232574480
+},
+{
+  period: new Date( '2014-11-24'),
+  open: 116.85,
+  high: 119.75,
+  low: 116.62,
+  close: 118.93,
+  volume: 181158620
+},
+{
+  period: new Date( '2014-12-01'),
+  open: 118.81,
+  high: 119.25,
+  low: 111.27,
+  close: 115,
+  volume: 266118290
+},
+{
+  period: new Date( '2014-12-08'),
+  open: 114.1,
+  high: 114.85,
+  low: 109.35,
+  close: 109.73,
+  volume: 259311140
+},
+{
+  period: new Date( '2014-12-15'),
+  open: 110.7,
+  high: 113.24,
+  low: 106.26,
+  close: 111.78,
+  volume: 326382400
+},
+{
+  period: new Date( '2014-12-22'),
+  open: 112.16,
+  high: 114.52,
+  low: 111.97,
+  close: 113.99,
+  volume: 119248900
+},
+{
+  period: new Date( '2014-12-29'),
+  open: 113.79,
+  high: 114.77,
+  low: 107.35,
+  close: 109.33,
+  volume: 151780640
+},
+{
+  period: new Date( '2015-01-05'),
+  open: 108.29,
+  high: 113.25,
+  low: 104.63,
+  close: 112.01,
+  volume: 282690970
+},
+{
+  period: new Date( '2015-01-12'),
+  open: 112.6,
+  high: 112.8,
+  low: 105.2,
+  close: 105.99,
+  volume: 303531140
+},
+{
+  period: new Date( '2015-01-19'),
+  open: 107.84,
+  high: 113.75,
+  low: 106.5,
+  close: 112.98,
+  volume: 198362640
+},
+{
+  period: new Date( '2015-01-26'),
+  open: 113.74,
+  high: 120,
+  low: 109.03,
+  close: 117.16,
+  volume: 461747290
+},
+{
+  period: new Date( '2015-02-02'),
+  open: 118.05,
+  high: 120.51,
+  low: 116.08,
+  close: 118.93,
+  volume: 270190470
+},
+{
+  period: new Date( '2015-02-09'),
+  open: 118.55,
+  high: 127.48,
+  low: 118.43,
+  close: 127.08,
+  volume: 301354470
+},
+{
+  period:  new Date( '2015-02-16' ),
+  open: 127.49,
+  high: 129.5,
+  low: 126.92,
+  close: 129.495,
+  volume: 193883960
+},
+{
+  period: new Date( '2015-02-23' ),
+  open: 130.02,
+  high: 133.6,
+  low: 126.61,
+  close: 128.46,
+  volume: 369856960
+},
+{
+  period: new Date( '2015-03-02' ),
+  open: 129.25,
+  high: 130.28,
+  low: 125.76,
+  close: 126.6,
+  volume: 246472020
+},
+{
+  period: new Date( '2015-03-09' ),
+  open: 127.96,
+  high: 129.57,
+  low: 121.63,
+  close: 123.59,
+  volume: 325921230
+},
+{
+  period:  new Date( '2015-03-16' ),
+  open: 123.88,
+  high: 129.2451,
+  low: 122.87,
+  close: 125.9,
+  volume: 266016400
+},
+{
+  period: new Date( '2015-03-23' ),
+  open: 127.12,
+  high: 128.04,
+  low: 122.6,
+  close: 123.25,
+  volume: 208731730
+},
+{
+  period: new Date( '2015-03-30' ),
+  open: 124.05,
+  high: 126.49,
+  low: 123.1,
+  close: 125.32,
+  volume: 161628950
+},
+{
+  period: new Date( '2015-04-06' ),
+  open: 124.47,
+  high: 128.1218,
+  low: 124.33,
+  close: 127.1,
+  volume: 181454510
+},
+{
+  period: new Date( '2015-04-13' ),
+  open: 128.37,
+  high: 128.57,
+  low: 124.46,
+  close: 124.75,
+  volume: 170090870
+},
+{
+  period: new Date( '2015-04-20' ),
+  open: 125.57,
+  high: 130.63,
+  low: 125.17,
+  close: 130.28,
+  volume: 206698310
+},
+{
+  period:  new Date( '2015-04-27' ),
+  open: 132.31,
+  high: 134.54,
+  low: 124.58,
+  close: 128.95,
+  volume: 417115180
+},
+{
+  period: new Date( '2015-05-04' ),
+  open: 129.5,
+  high: 130.57,
+  low: 123.36,
+  close: 127.62,
+  volume: 270197900
+},
+{
+  period: new Date( '2015-05-11' ),
+  open: 127.39,
+  high: 129.49,
+  low: 124.82,
+  close: 128.77,
+  volume: 207858180
+},
+{
+  period: new Date( '2015-05-18' ),
+  open: 128.38,
+  high: 132.97,
+  low: 128.36,
+  close: 132.54,
+  volume: 216438970
+},
+{
+  period: new Date( '2015-05-25' ),
+  open: 132.6,
+  high: 132.91,
+  low: 129.12,
+  close: 130.28,
+  volume: 197468800
+},
+{
+  period: new Date( '2015-06-01' ),
+  open: 131.2,
+  high: 131.39,
+  low: 128.36,
+  close: 128.65,
+  volume: 170465550
+},
+{
+  period: new Date( '2015-06-08' ),
+  open: 128.9,
+  high: 130.18,
+  low: 125.62,
+  close: 127.17,
+  volume: 219812710
+},
+{
+  period: new Date( '2015-06-15' ),
+  open: 126.1,
+  high: 128.31,
+  low: 125.71,
+  close: 126.6,
+  volume: 197925030
+},
+{
+  period: new Date( '2015-06-22' ),
+  open: 127.49,
+  high: 129.8,
+  low: 126.51,
+  close: 126.75,
+  volume: 195104520
+},
+{
+  period: new Date( '2015-06-29' ),
+  open: 125.46,
+  high: 126.94,
+  low: 124.48,
+  close: 126.44,
+  volume: 150747530
+},
+{
+  period: new Date( '2015-07-06' ),
+  open: 124.94,
+  high: 126.23,
+  low: 119.22,
+  close: 123.28,
+  volume: 274904180
+},
+{
+  period: new Date( '2015-07-13' ),
+  open: 125.03,
+  high: 129.62,
+  low: 124.32,
+  close: 129.62,
+  volume: 188579340
+},
+{
+  period: new Date( '2015-07-20' ),
+  open: 130.97,
+  high: 132.97,
+  low: 121.99,
+  close: 124.5,
+  volume: 336423370
+},
+{
+  period: new Date( '2015-07-27' ),
+  open: 123.09,
+  high: 123.91,
+  low: 120.91,
+  close: 121.3,
+  volume: 191087840
+},
+{
+  period: new Date( '2015-08-03' ),
+  open: 121.5,
+  high: 122.57,
+  low: 112.1,
+  close: 115.52,
+  volume: 383883210
+},
+{
+  period: new Date( '2015-08-10' ),
+  open: 116.53,
+  high: 119.99,
+  low: 109.63,
+  close: 115.96,
+  volume: 344549090
+},
+{
+  period: new Date( '2015-08-17' ),
+  open: 116.04,
+  high: 117.65,
+  low: 105.645,
+  close: 105.76,
+  volume: 318855760
+},
+{
+  period: new Date( '2015-08-24' ),
+  open: 94.87,
+  high: 113.31,
+  low: 92,
+  close: 113.29,
+  volume: 498047270
+},
+{
+  period: new Date( '2015-08-31' ),
+  open: 112.03,
+  high: 114.53,
+  low: 107.36,
+  close: 109.27,
+  volume: 297402060
+},
+{
+  period: new Date( '2015-09-07' ),
+  open: 111.65,
+  high: 114.21,
+  low: 109.77,
+  close: 114.21,
+  volume: 251859600
+},
+{
+  period: new Date( '2015-09-14' ),
+  open: 116.58,
+  high: 116.89,
+  low: 111.87,
+  close: 113.45,
+  volume: 276281980
+},
+{
+  period: new Date( '2015-09-21' ),
+  open: 113.67,
+  high: 116.69,
+  low: 112.37,
+  close: 114.71,
+  volume: 238617740
+},
+{
+  period: new Date( '2015-09-28' ),
+  open: 113.85,
+  high: 114.57,
+  low: 107.31,
+  close: 110.38,
+  volume: 313017610
+},
+{
+  period: new Date( '2015-10-05' ),
+  open: 109.88,
+  high: 112.28,
+  low: 108.21,
+  close: 112.12,
+  volume: 261920950
+},
+{
+  period: new Date( '2015-10-12' ),
+  open: 112.73,
+  high: 112.75,
+  low: 109.56,
+  close: 111.04,
+  volume: 184208970
+},
+{
+  period: new Date( '2015-10-19' ),
+  open: 110.8,
+  high: 119.228,
+  low: 110.11,
+  close: 119.08,
+  volume: 221612230
+},
+{
+  period: new Date( '2015-10-26' ),
+  open: 118.08,
+  high: 121.22,
+  low: 113.99,
+  close: 119.5,
+  volume: 319660750
+},
+{
+  period: new Date( '2015-11-02' ),
+  open: 119.87,
+  high: 123.82,
+  low: 119.61,
+  close: 121.06,
+  volume: 194953700
+}
+  ];
+  export let chartDatas: object[] = [
+    
+    {
+      Distance_m: 3.580952381,
+      Distance: 0.003580952,
+      Speed: 287.5714286
+    },
+    {
+      Distance_m: 56.95238095,
+      Distance: 0.056952381,
+      Speed: 288.8571429
+    },
+    {
+      Distance_m: 94.28571429,
+      Distance: 0.094285714,
+      Speed: 288.8571429
+    },
+    {
+      Distance_m: 137.0666667,
+      Distance: 0.137066667,
+      Speed: 292.7142857
+    },
+    {
+      Distance_m: 169.0666667,
+      Distance: 0.169066667,
+      Speed: 292.7142857
+    },
+    {
+      Distance_m: 195.7714286,
+      Distance: 0.195771429,
+      Speed: 294
+    },
+    {
+      Distance_m: 249.0666667,
+      Distance: 0.249066667,
+      Speed: 292.7142857
+    },
+    {
+      Distance_m: 249.0666667,
+      Distance: 0.259066667,
+      Speed: 280.7142857
+    },
+    {
+      Distance_m: 249.0666667,
+      Distance: 0.269066667,
+      Speed: 278.7142857
+    },
+    
+    {
+      Distance_m: 253.752381,
+      Distance: 0.253752381,
+      Speed: 270.8571429
+    },
+    {
+      Distance_m: 253.752381,
+      Distance: 0.253752381,
+      Speed: 265.8571429
+    },
+    {
+      Distance_m: 253.752381,
+      Distance: 0.263752381,
+      Speed: 260.8571429
+    },
+    {
+      Distance_m: 269.1047619,
+      Distance: 0.258104762,
+      Speed: 249
+    },
+    {
+      Distance_m: 269.1047619,
+      Distance: 0.270104762,
+      Speed: 246
+    },
+    {
+      Distance_m: 269.1047619,
+      Distance: 0.271104762,
+      Speed: 242
+    },
+    {
+      Distance_m: 253.752381,
+      Distance: 0.253752381,
+      Speed: 234.8571429
+    },
+    {
+      Distance_m: 273.7904762,
+      Distance: 0.273790476,
+      Speed: 227.1428571
+    },
+    {
+      Distance_m: 274.0190476,
+      Distance: 0.274019048,
+      Speed: 214.8571429
+    },
+    {
+      Distance_m: 283.847619,
+      Distance: 0.2703847619,
+      Speed: 206.5714286
+    },
+    {
+      Distance_m: 283.847619,
+      Distance: 0.265847619,
+      Speed: 202.5714286
+    },
+    {
+      Distance_m: 283.847619,
+      Distance: 0.269847619,
+      Speed: 198.5714286
+    },
+    {
+      Distance_m: 283.847619,
+      Distance: 0.290847619,
+      Speed: 188.5714286
+    },
+    {
+      Distance_m: 293.6761905,
+      Distance: 0.29367619,
+      Speed: 188.2857143
+    },
+    {
+      Distance_m: 293.6761905,
+      Distance: 0.29767619,
+      Speed: 188.2857143
+    },
+    {
+      Distance_m: 303.6571429,
+      Distance: 0.303657143,
+      Speed: 175.1428571
+    },
+    {
+      Distance_m: 303.6571429,
+      Distance: 0.308657143,
+      Speed: 165.1428571
+    },
+    {
+      Distance_m: 314.0571429,
+      Distance: 0.314057143,
+      Speed: 146.1428571
+    },
+    {
+      Distance_m: 324.5333333,
+      Distance: 0.324533333,
+      Speed: 139.7142857
+    },
+    {
+      Distance_m: 329.6,
+      Distance: 0.3296,
+      Speed: 130.7142857
+    },
+    {
+      Distance_m: 334.6666667,
+      Distance: 0.334666667,
+      Speed: 121.7142857
+    },
+    {
+      Distance_m: 355.7714286,
+      Distance: 0.355771429,
+      Speed: 114
+    },
+    {
+      Distance_m: 366.247619,
+      Distance: 0.366247619,
+      Speed: 107.5714286
+    },
+    {
+      Distance_m: 382.3619048,
+      Distance: 0.382361905,
+      Speed: 111.4285714
+    },
+    {
+      Distance_m: 387.847619,
+      Distance: 0.387847619,
+      Speed: 116.5714286
+    },
+    {
+      Distance_m: 393.2952381,
+      Distance: 0.393295238,
+      Speed: 120.4285714
+    },
+    {
+      Distance_m: 404.152381,
+      Distance: 0.404152381,
+      Speed: 126.8571429
+    },
+    {
+      Distance_m: 409.6380952,
+      Distance: 0.409638095,
+      Speed: 132
+    },
+    {
+      Distance_m: 409.8666667,
+      Distance: 0.409866667,
+      Speed: 139.7142857
+    },
+    {
+      Distance_m: 431.2,
+      Distance: 0.4312,
+      Speed: 139.7142857
+    },
+    {
+      Distance_m: 441.9809524,
+      Distance: 0.441980952,
+      Speed: 143.5714286
+    },
+    {
+      Distance_m: 452.8380952,
+      Distance: 0.452838095,
+      Speed: 150
+    },
+    {
+      Distance_m: 474.4761905,
+      Distance: 0.47447619,
+      Speed: 160.2857143
+    },
+    {
+      Distance_m: 485.3714286,
+      Distance: 0.485371429,
+      Speed: 168
+    },
+    {
+      Distance_m: 496.3047619,
+      Distance: 0.496304762,
+      Speed: 177
+    },
+    {
+      Distance_m: 501.8666667,
+      Distance: 0.501866667,
+      Speed: 184.7142857
+    },
+    {
+      Distance_m: 512.7619048,
+      Distance: 0.512761905,
+      Speed: 192.4285714
+    },
+    {
+      Distance_m: 528.952381,
+      Distance: 0.528952381,
+      Speed: 198.8571429
+    },
+    {
+      Distance_m: 539.8095238,
+      Distance: 0.539809524,
+      Speed: 205.2857143
+    },
+    {
+      Distance_m: 556,
+      Distance: 0.556,
+      Speed: 211.7142857
+    },
+    {
+      Distance_m: 572.1904762,
+      Distance: 0.572190476,
+      Speed: 218.1428571
+    },
+    {
+      Distance_m: 593.6761905,
+      Distance: 0.59367619,
+      Speed: 223.2857143
+    },
+    {
+      Distance_m: 604.4571429,
+      Distance: 0.604457143,
+      Speed: 227.1428571
+    },
+    {
+      Distance_m: 615.2761905,
+      Distance: 0.61527619,
+      Speed: 232.2857143
+    },
+    {
+      Distance_m: 636.7238095,
+      Distance: 0.63672381,
+      Speed: 236.1428571
+    },
+    {
+      Distance_m: 652.9142857,
+      Distance: 0.652914286,
+      Speed: 242.5714286
+    },
+    {
+      Distance_m: 668.9904762,
+      Distance: 0.668990476,
+      Speed: 245.1428571
+    },
+    {
+      Distance_m: 679.7333333,
+      Distance: 0.679733333,
+      Speed: 247.7142857
+    },
+    {
+      Distance_m: 695.847619,
+      Distance: 0.695847619,
+      Speed: 251.5714286
+    },
+    {
+      Distance_m: 711.8857143,
+      Distance: 0.711885714,
+      Speed: 252.8571429
+    },
+    {
+      Distance_m: 722.6285714,
+      Distance: 0.722628571,
+      Speed: 255.4285714
+    },
+    {
+      Distance_m: 733.2952381,
+      Distance: 0.733295238,
+      Speed: 255.4285714
+    },
+    {
+      Distance_m: 749.447619,
+      Distance: 0.749447619,
+      Speed: 260.5714286
+    },
+    {
+      Distance_m: 765.5238095,
+      Distance: 0.76552381,
+      Speed: 263.1428571
+    },
+    {
+      Distance_m: 792.152381,
+      Distance: 0.792152381,
+      Speed: 261.8571429
+    },
+    {
+      Distance_m: 808.2666667,
+      Distance: 0.808266667,
+      Speed: 265.7142857
+    },
+    {
+      Distance_m: 819.047619,
+      Distance: 0.819047619,
+      Speed: 269.5714286
+    },
+    {
+      Distance_m: 845.752381,
+      Distance: 0.845752381,
+      Speed: 270.8571429
+    },
+    {
+      Distance_m: 861.8285714,
+      Distance: 0.861828571,
+      Speed: 273.4285714
+    },
+    {
+      Distance_m: 877.8666667,
+      Distance: 0.877866667,
+      Speed: 274.7142857
+    },
+    {
+      Distance_m: 893.9047619,
+      Distance: 0.893904762,
+      Speed: 276
+    },
+    {
+      Distance_m: 904.6095238,
+      Distance: 0.904609524,
+      Speed: 277.2857143
+    },
+    {
+      Distance_m: 931.352381,
+      Distance: 0.931352381,
+      Speed: 279.8571429
+    },
+    {
+      Distance_m: 958.1333333,
+      Distance: 0.958133333,
+      Speed: 283.7142857
+    },
+    {
+      Distance_m: 984.7619048,
+      Distance: 0.984761905,
+      Speed: 282.4285714
+    },
+    {
+      Distance_m: 1000.838095,
+      Distance: 1.000838095,
+      Speed: 285
+    },
+    {
+      Distance_m: 1022.209524,
+      Distance: 1.022209524,
+      Speed: 286.2857143
+    },
+    {
+      Distance_m: 1054.285714,
+      Distance: 1.054285714,
+      Speed: 288.8571429
+    },
+    {
+      Distance_m: 1091.619048,
+      Distance: 1.091619048,
+      Speed: 288.8571429
+    },
+    {
+      Distance_m: 1112.990476,
+      Distance: 1.112990476,
+      Speed: 290.1428571
+    },
+    {
+      Distance_m: 1129.028571,
+      Distance: 1.129028571,
+      Speed: 291.4285714
+    },
+    {
+      Distance_m: 1155.733333,
+      Distance: 1.155733333,
+      Speed: 292.7142857
+    },
+    {
+      Distance_m: 1187.733333,
+      Distance: 1.187733333,
+      Speed: 292.7142857
+    },
+    {
+      Distance_m: 1225.104762,
+      Distance: 1.225104762,
+      Speed: 294
+    },
+    {
+      Distance_m: 1241.104762,
+      Distance: 1.241104762,
+      Speed: 294
+    },
+    {
+      Distance_m: 1262.438095,
+      Distance: 1.262438095,
+      Speed: 294
+    },
+    {
+      Distance_m: 1289.142857,
+      Distance: 1.289142857,
+      Speed: 295.2857143
+    },
+    {
+      Distance_m: 1310.285714,
+      Distance: 1.310285714,
+      Speed: 288.8571429
+    },
+    {
+      Distance_m: 1315.27619,
+      Distance: 1.31527619,
+      Speed: 277.2857143
+    },
+    {
+      Distance_m: 1319.961905,
+      Distance: 1.319961905,
+      Speed: 255.4285714
+    },
+    {
+      Distance_m: 1320.190476,
+      Distance: 1.320190476,
+      Speed: 263.1428571
+    },
+    {
+      Distance_m: 1330.209524,
+      Distance: 1.330209524,
+      Speed: 241.2857143
+    },
+    {
+      Distance_m: 1330.32381,
+      Distance: 1.33032381,
+      Speed: 245.1428571
+    },
+    {
+      Distance_m: 1330.514286,
+      Distance: 1.330514286,
+      Speed: 251.5714286
+    },
+    {
+      Distance_m: 1334.933333,
+      Distance: 1.334933333,
+      Speed: 220.7142857
+    },
+    {
+      Distance_m: 1335.161905,
+      Distance: 1.335161905,
+      Speed: 228.4285714
+    },
+    {
+      Distance_m: 1335.27619,
+      Distance: 1.33527619,
+      Speed: 232.2857143
+    },
+    {
+      Distance_m: 1340.07619,
+      Distance: 1.34007619,
+      Speed: 214.2857143
+    },
+    {
+      Distance_m: 1345.104762,
+      Distance: 1.345104762,
+      Speed: 204
+    },
+    {
+      Distance_m: 1350.209524,
+      Distance: 1.350209524,
+      Speed: 196.2857143
+    },
+    {
+      Distance_m: 1354.628571,
+      Distance: 1.354628571,
+      Speed: 165.4285714
+    },
+    {
+      Distance_m: 1375.885714,
+      Distance: 1.375885714,
+      Speed: 162.8571429
+    },
+    {
+      Distance_m: 1386.361905,
+      Distance: 1.386361905,
+      Speed: 156.4285714
+    },
+    {
+      Distance_m: 1402.47619,
+      Distance: 1.40247619,
+      Speed: 160.2857143
+    },
+    {
+      Distance_m: 1413.371429,
+      Distance: 1.413371429,
+      Speed: 168
+    },
+    {
+      Distance_m: 1434.780952,
+      Distance: 1.434780952,
+      Speed: 170.5714286
+    },
+    {
+      Distance_m: 1434.780952,
+      Distance: 1.434780952,
+      Speed: 170.5714286
+    },
+    {
+      Distance_m: 1440.304762,
+      Distance: 1.440304762,
+      Speed: 177
+    },
+    {
+      Distance_m: 1456.342857,
+      Distance: 1.456342857,
+      Speed: 178.2857143
+    },
+    {
+      Distance_m: 1461.904762,
+      Distance: 1.461904762,
+      Speed: 186
+    },
+    {
+      Distance_m: 1467.314286,
+      Distance: 1.467314286,
+      Speed: 188.5714286
+    },
+    {
+      Distance_m: 1472.761905,
+      Distance: 1.472761905,
+      Speed: 192.4285714
+    },
+    {
+      Distance_m: 1478.285714,
+      Distance: 1.478285714,
+      Speed: 198.8571429
+    },
+    {
+      Distance_m: 1499.695238,
+      Distance: 1.499695238,
+      Speed: 201.4285714
+    },
+    {
+      Distance_m: 1510.666667,
+      Distance: 1.510666667,
+      Speed: 211.7142857
+    },
+    {
+      Distance_m: 1521.485714,
+      Distance: 1.521485714,
+      Speed: 216.8571429
+    },
+    {
+      Distance_m: 1532.342857,
+      Distance: 1.532342857,
+      Speed: 223.2857143
+    },
+    {
+      Distance_m: 1543.047619,
+      Distance: 1.543047619,
+      Speed: 224.5714286
+    },
+    {
+      Distance_m: 1559.238095,
+      Distance: 1.559238095,
+      Speed: 231
+    },
+    {
+      Distance_m: 1575.390476,
+      Distance: 1.575390476,
+      Speed: 236.1428571
+    },
+    {
+      Distance_m: 1591.466667,
+      Distance: 1.591466667,
+      Speed: 238.7142857
+    },
+    {
+      Distance_m: 1607.504762,
+      Distance: 1.607504762,
+      Speed: 240
+    },
+    {
+      Distance_m: 1628.990476,
+      Distance: 1.628990476,
+      Speed: 245.1428571
+    },
+    {
+      Distance_m: 1645.104762,
+      Distance: 1.645104762,
+      Speed: 249
+    },
+    {
+      Distance_m: 1671.885714,
+      Distance: 1.671885714,
+      Speed: 252.8571429
+    },
+    {
+      Distance_m: 1693.219048,
+      Distance: 1.693219048,
+      Speed: 252.8571429
+    },
+    {
+      Distance_m: 1704.038095,
+      Distance: 1.704038095,
+      Speed: 258
+    },
+    {
+      Distance_m: 1725.485714,
+      Distance: 1.725485714,
+      Speed: 261.8571429
+    },
+    {
+      Distance_m: 1746.933333,
+      Distance: 1.746933333,
+      Speed: 265.7142857
+    },
+    {
+      Distance_m: 1768.266667,
+      Distance: 1.768266667,
+      Speed: 265.7142857
+    },
+    {
+      Distance_m: 1800.419048,
+      Distance: 1.800419048,
+      Speed: 270.8571429
+    },
+    {
+      Distance_m: 1821.752381,
+      Distance: 1.821752381,
+      Speed: 270.8571429
+    },
+    {
+      Distance_m: 1848.495238,
+      Distance: 1.848495238,
+      Speed: 273.4285714
+    },
+    {
+      Distance_m: 1875.238095,
+      Distance: 1.875238095,
+      Speed: 276
+    },
+    {
+      Distance_m: 1896.609524,
+      Distance: 1.896609524,
+      Speed: 277.2857143
+    },
+    {
+      Distance_m: 1917.980952,
+      Distance: 1.917980952,
+      Speed: 278.5714286
+    },
+    {
+      Distance_m: 1939.428571,
+      Distance: 1.939428571,
+      Speed: 282.4285714
+    },
+    {
+      Distance_m: 1960.685714,
+      Distance: 1.960685714,
+      Speed: 279.8571429
+    },
+    {
+      Distance_m: 1976.190476,
+      Distance: 1.976190476,
+      Speed: 263.1428571
+    },
+    {
+      Distance_m: 1976.342857,
+      Distance: 1.976342857,
+      Speed: 268.2857143
+    },
+    {
+      Distance_m: 1986.552381,
+      Distance: 1.986552381,
+      Speed: 252.8571429
+    },
+    {
+      Distance_m: 2007.733333,
+      Distance: 2.007733333,
+      Speed: 247.7142857
+    },
+    {
+      Distance_m: 2028.990476,
+      Distance: 2.028990476,
+      Speed: 245.1428571
+    },
+    {
+      Distance_m: 2034.171429,
+      Distance: 2.034171429,
+      Speed: 240
+    },
+    {
+      Distance_m: 2055.238095,
+      Distance: 2.055238095,
+      Speed: 231
+    },
+    {
+      Distance_m: 2076.495238,
+      Distance: 2.076495238,
+      Speed: 228.4285714
+    },
+    {
+      Distance_m: 2097.714286,
+      Distance: 2.097714286,
+      Speed: 224.5714286
+    },
+    {
+      Distance_m: 2129.67619,
+      Distance: 2.12967619,
+      Speed: 223.2857143
+    },
+    {
+      Distance_m: 2151.085714,
+      Distance: 2.151085714,
+      Speed: 225.8571429
+    },
+    {
+      Distance_m: 2172.647619,
+      Distance: 2.172647619,
+      Speed: 233.5714286
+    },
+    {
+      Distance_m: 2204.647619,
+      Distance: 2.204647619,
+      Speed: 233.5714286
+    },
+    {
+      Distance_m: 2215.352381,
+      Distance: 2.215352381,
+      Speed: 234.8571429
+    },
+    {
+      Distance_m: 2242.019048,
+      Distance: 2.242019048,
+      Speed: 234.8571429
+    },
+    {
+      Distance_m: 2247.085714,
+      Distance: 2.247085714,
+      Speed: 225.8571429
+    },
+    {
+      Distance_m: 2247.2,
+      Distance: 2.2472,
+      Speed: 229.7142857
+    },
+    {
+      Distance_m: 2262.552381,
+      Distance: 2.262552381,
+      Speed: 207.8571429
+    },
+    {
+      Distance_m: 2266.971429,
+      Distance: 2.266971429,
+      Speed: 177
+    },
+    {
+      Distance_m: 2267.085714,
+      Distance: 2.267085714,
+      Speed: 180.8571429
+    },
+    {
+      Distance_m: 2267.2,
+      Distance: 2.2672,
+      Speed: 184.7142857
+    },
+    {
+      Distance_m: 2267.390476,
+      Distance: 2.267390476,
+      Speed: 191.1428571
+    },
+    {
+      Distance_m: 2267.542857,
+      Distance: 2.267542857,
+      Speed: 196.2857143
+    },
+    {
+      Distance_m: 2267.695238,
+      Distance: 2.267695238,
+      Speed: 201.4285714
+    },
+    {
+      Distance_m: 2271.885714,
+      Distance: 2.271885714,
+      Speed: 162.8571429
+    },
+    {
+      Distance_m: 2272.07619,
+      Distance: 2.27207619,
+      Speed: 169.2857143
+    },
+    {
+      Distance_m: 2276.228571,
+      Distance: 2.276228571,
+      Speed: 129.4285714
+    },
+    {
+      Distance_m: 2286.438095,
+      Distance: 2.286438095,
+      Speed: 114
+    },
+    {
+      Distance_m: 2296.952381,
+      Distance: 2.296952381,
+      Speed: 108.8571429
+    },
+    {
+      Distance_m: 2302.019048,
+      Distance: 2.302019048,
+      Speed: 99.85714286
+    },
+    {
+      Distance_m: 2323.161905,
+      Distance: 2.323161905,
+      Speed: 93.42857143
+    },
+    {
+      Distance_m: 2323.27619,
+      Distance: 2.32327619,
+      Speed: 97.28571429
+    },
+    {
+      Distance_m: 2339.580952,
+      Distance: 2.339580952,
+      Speed: 107.5714286
+    },
+    {
+      Distance_m: 2350.4,
+      Distance: 2.3504,
+      Speed: 112.7142857
+    },
+    {
+      Distance_m: 2366.742857,
+      Distance: 2.366742857,
+      Speed: 124.2857143
+    },
+    {
+      Distance_m: 2377.638095,
+      Distance: 2.377638095,
+      Speed: 132
+    },
+    {
+      Distance_m: 2393.295238,
+      Distance: 2.393295238,
+      Speed: 120.4285714
+    },
+    {
+      Distance_m: 2409.409524,
+      Distance: 2.409409524,
+      Speed: 124.2857143
+    },
+    {
+      Distance_m: 2425.6,
+      Distance: 2.4256,
+      Speed: 130.7142857
+    },
+    {
+      Distance_m: 2447.12381,
+      Distance: 2.44712381,
+      Speed: 137.1428571
+    },
+    {
+      Distance_m: 2473.904762,
+      Distance: 2.473904762,
+      Speed: 141
+    },
+    {
+      Distance_m: 2490.057143,
+      Distance: 2.490057143,
+      Speed: 146.1428571
+    },
+    {
+      Distance_m: 2500.914286,
+      Distance: 2.500914286,
+      Speed: 152.5714286
+    },
+    {
+      Distance_m: 2517.066667,
+      Distance: 2.517066667,
+      Speed: 157.7142857
+    },
+    {
+      Distance_m: 2527.961905,
+      Distance: 2.527961905,
+      Speed: 165.4285714
+    },
+    {
+      Distance_m: 2533.52381,
+      Distance: 2.53352381,
+      Speed: 173.1428571
+    },
+    {
+      Distance_m: 2544.380952,
+      Distance: 2.544380952,
+      Speed: 179.5714286
+    },
+    {
+      Distance_m: 2544.571429,
+      Distance: 2.544571429,
+      Speed: 186
+    },
+    {
+      Distance_m: 2566.057143,
+      Distance: 2.566057143,
+      Speed: 191.1428571
+    },
+    {
+      Distance_m: 2576.914286,
+      Distance: 2.576914286,
+      Speed: 197.5714286
+    },
+    {
+      Distance_m: 2577.028571,
+      Distance: 2.577028571,
+      Speed: 201.4285714
+    },
+    {
+      Distance_m: 2587.847619,
+      Distance: 2.587847619,
+      Speed: 206.5714286
+    },
+    {
+      Distance_m: 2598.590476,
+      Distance: 2.598590476,
+      Speed: 209.1428571
+    },
+    {
+      Distance_m: 2609.447619,
+      Distance: 2.609447619,
+      Speed: 215.5714286
+    },
+    {
+      Distance_m: 2620.228571,
+      Distance: 2.620228571,
+      Speed: 219.4285714
+    },
+    {
+      Distance_m: 2647.047619,
+      Distance: 2.647047619,
+      Speed: 224.5714286
+    },
+    {
+      Distance_m: 2662.209524,
+      Distance: 2.662209524,
+      Speed: 196.2857143
+    },
+    {
+      Distance_m: 2672.72381,
+      Distance: 2.67272381,
+      Speed: 191.1428571
+    },
+    {
+      Distance_m: 2677.6,
+      Distance: 2.6776,
+      Speed: 175.7142857
+    },
+    {
+      Distance_m: 2677.828571,
+      Distance: 2.677828571,
+      Speed: 183.4285714
+    },
+    {
+      Distance_m: 2682.361905,
+      Distance: 2.682361905,
+      Speed: 156.4285714
+    },
+    {
+      Distance_m: 2682.552381,
+      Distance: 2.682552381,
+      Speed: 162.8571429
+    },
+    {
+      Distance_m: 2686.819048,
+      Distance: 2.686819048,
+      Speed: 126.8571429
+    },
+    {
+      Distance_m: 2702.552381,
+      Distance: 2.702552381,
+      Speed: 117.8571429
+    },
+    {
+      Distance_m: 2723.695238,
+      Distance: 2.723695238,
+      Speed: 111.4285714
+    },
+    {
+      Distance_m: 2728.87619,
+      Distance: 2.72887619,
+      Speed: 106.2857143
+    },
+    {
+      Distance_m: 2755.542857,
+      Distance: 2.755542857,
+      Speed: 106.2857143
+    },
+    {
+      Distance_m: 2761.180952,
+      Distance: 2.761180952,
+      Speed: 116.5714286
+    },
+    {
+      Distance_m: 2777.257143,
+      Distance: 2.777257143,
+      Speed: 119.1428571
+    },
+    {
+      Distance_m: 2777.409524,
+      Distance: 2.777409524,
+      Speed: 124.2857143
+    },
+    {
+      Distance_m: 2788.380952,
+      Distance: 2.788380952,
+      Speed: 134.5714286
+    },
+    {
+      Distance_m: 2799.27619,
+      Distance: 2.79927619,
+      Speed: 142.2857143
+    },
+    {
+      Distance_m: 2804.952381,
+      Distance: 2.804952381,
+      Speed: 153.8571429
+    },
+    {
+      Distance_m: 2810.590476,
+      Distance: 2.810590476,
+      Speed: 164.1428571
+    },
+    {
+      Distance_m: 2821.409524,
+      Distance: 2.821409524,
+      Speed: 169.2857143
+    },
+    {
+      Distance_m: 2827.009524,
+      Distance: 2.827009524,
+      Speed: 178.2857143
+    },
+    {
+      Distance_m: 2843.238095,
+      Distance: 2.843238095,
+      Speed: 186
+    },
+    {
+      Distance_m: 2854.019048,
+      Distance: 2.854019048,
+      Speed: 189.8571429
+    },
+    {
+      Distance_m: 2864.914286,
+      Distance: 2.864914286,
+      Speed: 197.5714286
+    },
+    {
+      Distance_m: 2870.32381,
+      Distance: 2.87032381,
+      Speed: 200.1428571
+    },
+    {
+      Distance_m: 2875.809524,
+      Distance: 2.875809524,
+      Speed: 205.2857143
+    },
+    {
+      Distance_m: 2891.961905,
+      Distance: 2.891961905,
+      Speed: 210.4285714
+    },
+    {
+      Distance_m: 2918.819048,
+      Distance: 2.918819048,
+      Speed: 216.8571429
+    },
+    {
+      Distance_m: 2951.047619,
+      Distance: 2.951047619,
+      Speed: 224.5714286
+    },
+    {
+      Distance_m: 2972.533333,
+      Distance: 2.972533333,
+      Speed: 229.7142857
+    },
+    {
+      Distance_m: 2988.647619,
+      Distance: 2.988647619,
+      Speed: 233.5714286
+    },
+    {
+      Distance_m: 3004.72381,
+      Distance: 3.00472381,
+      Speed: 236.1428571
+    },
+    {
+      Distance_m: 3026.171429,
+      Distance: 3.026171429,
+      Speed: 240
+    },
+    {
+      Distance_m: 3036.990476,
+      Distance: 3.036990476,
+      Speed: 245.1428571
+    },
+    {
+      Distance_m: 3047.809524,
+      Distance: 3.047809524,
+      Speed: 250.2857143
+    },
+    {
+      Distance_m: 3079.847619,
+      Distance: 3.079847619,
+      Speed: 251.5714286
+    },
+    {
+      Distance_m: 3085.371429,
+      Distance: 3.085371429,
+      Speed: 258
+    },
+    {
+      Distance_m: 3112.152381,
+      Distance: 3.112152381,
+      Speed: 261.8571429
+    },
+    {
+      Distance_m: 3133.52381,
+      Distance: 3.13352381,
+      Speed: 263.1428571
+    },
+    {
+      Distance_m: 3144.152381,
+      Distance: 3.144152381,
+      Speed: 261.8571429
+    },
+    {
+      Distance_m: 3154.552381,
+      Distance: 3.154552381,
+      Speed: 252.8571429
+    },
+    {
+      Distance_m: 3164.647619,
+      Distance: 3.164647619,
+      Speed: 233.5714286
+    },
+    {
+      Distance_m: 3175.009524,
+      Distance: 3.175009524,
+      Speed: 223.2857143
+    },
+    {
+      Distance_m: 3179.085714,
+      Distance: 3.179085714,
+      Speed: 180.8571429
+    },
+    {
+      Distance_m: 3179.238095,
+      Distance: 3.179238095,
+      Speed: 186
+    },
+    {
+      Distance_m: 3184.07619,
+      Distance: 3.18407619,
+      Speed: 169.2857143
+    },
+    {
+      Distance_m: 3184.228571,
+      Distance: 3.184228571,
+      Speed: 174.4285714
+    },
+    {
+      Distance_m: 3188.838095,
+      Distance: 3.188838095,
+      Speed: 150
+    },
+    {
+      Distance_m: 3188.914286,
+      Distance: 3.188914286,
+      Speed: 152.5714286
+    },
+    {
+      Distance_m: 3204.761905,
+      Distance: 3.204761905,
+      Speed: 147.4285714
+    },
+    {
+      Distance_m: 3209.638095,
+      Distance: 3.209638095,
+      Speed: 132
+    },
+    {
+      Distance_m: 3209.866667,
+      Distance: 3.209866667,
+      Speed: 139.7142857
+    },
+    {
+      Distance_m: 3225.638095,
+      Distance: 3.225638095,
+      Speed: 132
+    },
+    {
+      Distance_m: 3246.895238,
+      Distance: 3.246895238,
+      Speed: 129.4285714
+    },
+    {
+      Distance_m: 3268.07619,
+      Distance: 3.26807619,
+      Speed: 124.2857143
+    },
+    {
+      Distance_m: 3273.714286,
+      Distance: 3.273714286,
+      Speed: 134.5714286
+    },
+    {
+      Distance_m: 3284.609524,
+      Distance: 3.284609524,
+      Speed: 142.2857143
+    },
+    {
+      Distance_m: 3300.952381,
+      Distance: 3.300952381,
+      Speed: 153.8571429
+    },
+    {
+      Distance_m: 3301.104762,
+      Distance: 3.301104762,
+      Speed: 159
+    },
+    {
+      Distance_m: 3312.152381,
+      Distance: 3.312152381,
+      Speed: 171.8571429
+    },
+    {
+      Distance_m: 3323.009524,
+      Distance: 3.323009524,
+      Speed: 178.2857143
+    },
+    {
+      Distance_m: 3333.904762,
+      Distance: 3.333904762,
+      Speed: 186
+    },
+    {
+      Distance_m: 3339.466667,
+      Distance: 3.339466667,
+      Speed: 193.7142857
+    },
+    {
+      Distance_m: 3355.657143,
+      Distance: 3.355657143,
+      Speed: 200.1428571
+    },
+    {
+      Distance_m: 3377.295238,
+      Distance: 3.377295238,
+      Speed: 210.4285714
+    },
+    {
+      Distance_m: 3393.409524,
+      Distance: 3.393409524,
+      Speed: 214.2857143
+    },
+    {
+      Distance_m: 3414.895238,
+      Distance: 3.414895238,
+      Speed: 219.4285714
+    },
+    {
+      Distance_m: 3425.714286,
+      Distance: 3.425714286,
+      Speed: 224.5714286
+    },
+    {
+      Distance_m: 3452.533333,
+      Distance: 3.452533333,
+      Speed: 229.7142857
+    },
+    {
+      Distance_m: 3479.352381,
+      Distance: 3.479352381,
+      Speed: 234.8571429
+    },
+    {
+      Distance_m: 3490.209524,
+      Distance: 3.490209524,
+      Speed: 241.2857143
+    },
+    {
+      Distance_m: 3506.32381,
+      Distance: 3.50632381,
+      Speed: 245.1428571
+    },
+    {
+      Distance_m: 3533.066667,
+      Distance: 3.533066667,
+      Speed: 247.7142857
+    },
+    {
+      Distance_m: 3559.847619,
+      Distance: 3.559847619,
+      Speed: 251.5714286
+    },
+    {
+      Distance_m: 3581.333333,
+      Distance: 3.581333333,
+      Speed: 256.7142857
+    },
+    {
+      Distance_m: 3597.333333,
+      Distance: 3.597333333,
+      Speed: 256.7142857
+    },
+    {
+      Distance_m: 3624.152381,
+      Distance: 3.624152381,
+      Speed: 261.8571429
+    },
+    {
+      Distance_m: 3634.857143,
+      Distance: 3.634857143,
+      Speed: 263.1428571
+    },
+    {
+      Distance_m: 3661.638095,
+      Distance: 3.661638095,
+      Speed: 267
+    },
+    {
+      Distance_m: 3699.047619,
+      Distance: 3.699047619,
+      Speed: 269.5714286
+    },
+    {
+      Distance_m: 3715.12381,
+      Distance: 3.71512381,
+      Speed: 272.1428571
+    },
+    {
+      Distance_m: 3763.161905,
+      Distance: 3.763161905,
+      Speed: 273.4285714
+    },
+    {
+      Distance_m: 3795.27619,
+      Distance: 3.79527619,
+      Speed: 277.2857143
+    },
+    {
+      Distance_m: 3832.72381,
+      Distance: 3.83272381,
+      Speed: 281.1428571
+    },
+    {
+      Distance_m: 3875.504762,
+      Distance: 3.875504762,
+      Speed: 285
+    },
+    {
+      Distance_m: 3923.542857,
+      Distance: 3.923542857,
+      Speed: 286.2857143
+    },
+    {
+      Distance_m: 3950.247619,
+      Distance: 3.950247619,
+      Speed: 287.5714286
+    },
+    {
+      Distance_m: 3976.952381,
+      Distance: 3.976952381,
+      Speed: 288.8571429
+    },
+    {
+      Distance_m: 4003.466667,
+      Distance: 4.003466667,
+      Speed: 283.7142857
+    },
+    {
+      Distance_m: 4040.8,
+      Distance: 4.0408,
+      Speed: 283.7142857
+    },
+    {
+      Distance_m: 4062.133333,
+      Distance: 4.062133333,
+      Speed: 283.7142857
+    },
+    {
+      Distance_m: 4094.133333,
+      Distance: 4.094133333,
+      Speed: 283.7142857
+    },
+    {
+      Distance_m: 4126.171429,
+      Distance: 4.126171429,
+      Speed: 285
+    },
+    {
+      Distance_m: 4147.542857,
+      Distance: 4.147542857,
+      Speed: 286.2857143
+    },
+    {
+      Distance_m: 4174.209524,
+      Distance: 4.174209524,
+      Speed: 286.2857143
+    },
+    {
+      Distance_m: 4200.952381,
+      Distance: 4.200952381,
+      Speed: 288.8571429
+    },
+    {
+      Distance_m: 4222.285714,
+      Distance: 4.222285714,
+      Speed: 288.8571429
+    },
+    {
+      Distance_m: 4243.619048,
+      Distance: 4.243619048,
+      Speed: 288.8571429
+    },
+    {
+      Distance_m: 4254.285714,
+      Distance: 4.254285714,
+      Speed: 288.8571429
+    },
+    {
+      Distance_m: 4275.619048,
+      Distance: 4.275619048,
+      Speed: 288.8571429
+    }
+  ];

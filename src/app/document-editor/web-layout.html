@@ -3,7 +3,7 @@
         <div id="default_title_bar" class="e-de-ctn-title"></div>
         <div>
             <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true [locale]="culture" [layoutType]="layoutType" (created)="onCreate()"
-                (documentChange)="onDocumentChange()" height="600px" style="display:block;"></ejs-documenteditorcontainer>
+                (documentChange)="onDocumentChange()" [serviceUrl]="hostUrl"  height="600px" style="display:block;"></ejs-documenteditorcontainer>
         </div>
     </div>
 </div>

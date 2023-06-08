@@ -17,7 +17,7 @@ import { DocumentEditorContainer, Toolbar, CommentDeleteEventArgs } from '@syncf
     providers: [ToolbarService]
 })
 export class CommentsComponent {
-    public hostUrl: string = 'https://ej2services.syncfusion.com/production/web-services/';
+    public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
     @ViewChild('documenteditor_default')
     public container: DocumentEditorContainerComponent;
     public culture: string = 'en-US';
@@ -25,7 +25,6 @@ export class CommentsComponent {
     onCreate(): void {
         let titleBarElement: HTMLElement = document.getElementById('default_title_bar');
         this.titleBar = new TitleBar(titleBarElement, this.container.documentEditor, true);
-        this.container.serviceUrl = this.hostUrl + WEB_API_ACTION;
         this.container.documentEditor.open(JSON.stringify(comments));
         this.container.documentEditor.documentName = 'Comments';        
 		this.container.documentEditor.showComments = true;

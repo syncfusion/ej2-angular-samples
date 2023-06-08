@@ -1,22 +1,22 @@
 <div class="control-section">
     <ejs-treegrid #treegrid [dataSource]='data' height='359' width='auto' childMapping='Children' [treeColumnIndex]='0' >
         <e-columns>
-            <e-column field='EmpID' headerText='Employee ID' width='100' ></e-column>
-            <e-column field='Name' headerText='Name' width='95'></e-column>
-            <e-column field='DOB' headerText='DOB' width='85' format="yMd" textAlign='Right'></e-column>
-            <e-column  headerText='Tax per annum' width='90' textAlign='Center'>
+            <e-column field='EmpID' headerText='Employee ID' width='180' ></e-column>
+            <e-column field='Name' headerText='Name' width='170'></e-column>
+            <e-column field='DOB' headerText='DOB' width='110' format="yMd" textAlign='Right'></e-column>
+            <e-column  headerText='Tax per annum' width='170' textAlign='Center'>
                 <ng-template #template let-data>
                     <ejs-sparkline id='treegridline{{data.EmployeeID}}' [dataSource]='getSparkLine(data.EmployeeID)' height='50px' width='150px' lineWidth='2' valueType='Numeric' fill='#3C78EF' (load)="sparkload($event)"></ejs-sparkline>
 
                 </ng-template>
             </e-column>
-            <e-column  headerText='One day index' width='90' textAlign='Center'>
+            <e-column  headerText='One day index' width='170' textAlign='Center'>
                     <ng-template #template let-data>
                         <ejs-sparkline id='treegridcolumn{{data.EmployeeID}}' type='Column' negativePointColor='#f7a816' [dataSource]='getSparkColumn(data.EmployeeID)' height='50px' width='150px' lineWidth='2' valueType='Numeric' fill='#3C78EF' (load)="sparkload($event)"></ejs-sparkline>
     
                     </ng-template>
                 </e-column>
-            <e-column  headerText='Year GR' width='95' textAlign='Center'>
+            <e-column  headerText='Year GR' width='180' textAlign='Center'>
                     <ng-template #template let-data>
                         <ejs-sparkline id='treegridwinloss{{data.EmployeeID}}' type='WinLoss' tiePointColor='darkgray' negativePointColor='#f7a816' [dataSource]='getSparkWinloss(data.EmployeeID)' height='50px' width='150px' lineWidth='2' valueType='Numeric' fill='#3C78EF' (load)="sparkload($event)"></ejs-sparkline>
     

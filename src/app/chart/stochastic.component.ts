@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme, TechnicalIndicatorModel } from '@syncfusion/ej2-angular-charts';
-import { chartData } from './financial-data';
+import { chartValue } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -15,26 +15,25 @@ import { Browser } from '@syncfusion/ej2-base';
 export class StochasticIndicatorComponent {
     public showZones: boolean = true;
     public period: number = 3;
-    public kPeriod: number = 2;
-    public dPeriod: number = 3;
-    public periodLine: string = 'yellow';
-    public upperLine: string = 'red';
-    public lowerLine: string = 'green';
+    public periodLine: string = '#f2ec2f';
+    public upperLine: string = '#ffb735';
+    public lowerLine: string = '#f2ec2f';
     // indicators
     public indicators: TechnicalIndicatorModel[] = [
         {
             type: 'Stochastic',
             field: 'Close',
             yAxisName: 'secondary',
-            fill: 'blue',
+          
+            fill: '#6063ff',
             period: this.period,
             seriesName: 'Apple Inc',
             upperLine: {
                 color: this.upperLine
             },
+            overBought: 70,
+            overSold: 30,
             showZones: this.showZones,
-            kPeriod: this.kPeriod,
-            dPeriod: this.dPeriod,
             periodLine: {
                 color: this.periodLine
             },
@@ -43,7 +42,7 @@ export class StochasticIndicatorComponent {
             }
         }
     ];
-    public data1: Object[] = chartData;
+    public data1: Object[] = chartValue;
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
@@ -54,7 +53,7 @@ export class StochasticIndicatorComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Price',
+        title: 'Price (in Million)',
         labelFormat: '${value}',
         minimum: 50, maximum: 170,
         plotOffset: 25,
@@ -84,7 +83,7 @@ export class StochasticIndicatorComponent {
         mode: 'X',
         enablePan : true
     };
-    public title: string = 'AAPL 2012-2017';
+    public title: string = 'AAPL Stock Price 2012-2017';
     public tooltip: Object = {
         enable: true,
         shared: true

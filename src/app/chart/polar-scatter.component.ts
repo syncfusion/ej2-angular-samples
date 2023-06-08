@@ -46,13 +46,18 @@ export class PolarScatterChartComponent {
     public primaryYAxis: Object = {
         minimum: 0, maximum: 8, interval: 2
     };
-    public marker: Object = { height: 10, width: 10, dataLabel: { name: 'text' } };
-    public marker1: Object = { height: 10, width: 10, shape: 'Diamond', dataLabel: { name: 'text' } };
-    public marker2: Object = { height: 10, width: 10, shape: 'Triangle', dataLabel: { name: 'text' } };
-    public title: string = 'Real GDP Growth';
+    public legendSettings: Object = {
+        visible: true,
+        enableHighlight: true
+    };
+    public marker: Object = { height: 7, width: 7, dataLabel: { name: 'text' } };
+    public marker1: Object = { height: 7, width: 7, shape: 'Diamond', dataLabel: { name: 'text' } };
+    public marker2: Object = { height: 7, width: 7, shape: 'Triangle', dataLabel: { name: 'text' } };
+    public title: string = 'GDP by Countries';
     public tooltip: Object = {
         enable: true,
-        format: '${point.text} : <b>${point.y}%</b>'
+        format: "<b>${point.text}</b> <br>GDP: <b>${point.y}%</b>",
+        header: " "
     };
       // custom code start
     public load(args: ILoadedEventArgs): void {

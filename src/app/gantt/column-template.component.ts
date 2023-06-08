@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { templateData, editingResources } from './data';
+import{isNullOrUndefined} from '@syncfusion/ej2-base';
 
 @Component({
     selector: 'ej2-ganttcolumntemplate',
@@ -45,7 +46,7 @@ export class ColumnTemplateComponent implements OnInit {
     }
     public queryCellInfo(args: any): void {
         let gantt = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
-        if (args.column.field === 'resources' && args.data.ganttProperties.resourceNames) {
+        if (args.column.field === 'resources' && args.data.ganttProperties.resourceNames && !isNullOrUndefined(args.cell.getElementsByClassName('image')[0]) ) {
            if (gantt.enableRtl) {
               args.cell.getElementsByClassName('image')[0].children[1].style.right = '30px';
            }

@@ -15,7 +15,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
     providers: [ToolbarService]
 })
 export class DocumentEditorProtectionComponent {
-    public hostUrl: string = 'https://ej2services.syncfusion.com/production/web-services/';
+    public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
     @ViewChild('documenteditor_default')
     public container: DocumentEditorContainerComponent;
     @ViewChild('colorpicker')
@@ -30,7 +30,6 @@ export class DocumentEditorProtectionComponent {
     onCreate(): void {
         let titleBarElement: HTMLElement = document.getElementById('default_title_bar');
         this.titleBar = new TitleBar(titleBarElement, this.container.documentEditor, true);
-        this.container.serviceUrl = this.hostUrl + WEB_API_ACTION;
         this.container.documentEditor.open(JSON.stringify(dataProtection));
         this.container.documentEditor.documentName = 'Document Protection';
         this.container.documentEditor.currentUser = 'engineer@mycompany.com';

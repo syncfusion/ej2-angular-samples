@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme, TechnicalIndicatorModel } from '@syncfusion/ej2-angular-charts';
-import { chartData } from './financial-data';
+import { chartValue } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -14,10 +14,12 @@ import { Browser } from '@syncfusion/ej2-base';
 })
 export class BollingerIndicatorComponent {
     public upperLine: Object = {
-        color: 'orange'
+        color: '#ffb735',
+        width: 1
     };
     public lowerLine: Object = {
-        color: 'yellow'
+        color: '#f2ec2f',
+        width: 1
     };
     // indicators
     public indicators: TechnicalIndicatorModel[] = [
@@ -25,38 +27,44 @@ export class BollingerIndicatorComponent {
             type: 'BollingerBands',
             xName: 'x',
             field: 'Close',
-            fill: 'blue',
-            period: 3,
+            fill: '#606eff',
+            period: 14,
             seriesName: 'Apple Inc',
             upperLine: this.upperLine,
-            lowerLine: this.lowerLine
+            lowerLine: this.lowerLine,
+            animation: {enable: true},
+            
         }
     ];
-    public data1: Object[] = chartData;
+    public data1: Object[] = chartValue;
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
+        intervalType: 'Months',
         majorGridLines: { width: 0 },
-        zoomFactor: 0.6, zoomPosition: 0.6,
-        crosshairTooltip: { enable: true }
+        zoomFactor: 0.2, zoomPosition: 0.6,
+        crosshairTooltip: { enable: true },
+      
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Price',
+        title: 'Price (in Million)',
         labelFormat: '${value}M',
         minimum: 50, maximum: 170, interval: 30,
         majorGridLines: { width: 1 },
-        lineStyle: { width: 0 }
+        lineStyle: { width: 0 },
+        
     };
 
     public zoomSettings: Object = {
-
+        enablePinchZooming: true,
+        enableDeferredZooming:true,
         enableSelectionZooming: true,
         mode: 'X',
         enablePan : true
     };
     //Initializing Chart Title
-    public title: string = 'AAPL 2012-2017';
+    public title: string = 'AAPL Stock Price 2012-2017';
     public tooltip: Object = {
         enable: true,
         shared: true
@@ -77,7 +85,7 @@ export class BollingerIndicatorComponent {
     public animation: Object = {
         enable: false
     };
-    public period: number = 14;
+    
     public width: string = Browser.isDevice ? '100%' : '75%';
       // custom code start
     public load(args: ILoadedEventArgs): void {

@@ -16,7 +16,7 @@ import { Dialog, DialogUtility } from '@syncfusion/ej2-popups';
     providers: [ToolbarService]
 })
 export class MailMergeComponent {
-    public hostUrl: string = 'https://ej2services.syncfusion.com/production/web-services/';
+    public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
     @ViewChild('documenteditor_default')
     public container: DocumentEditorContainerComponent;
     public culture: string = 'en-US';
@@ -74,7 +74,6 @@ export class MailMergeComponent {
     onCreate(): void {
         let titleBarElement: HTMLElement = document.getElementById('default_title_bar');
         this.titleBar = new TitleBar(titleBarElement, this.container.documentEditor, true);
-        this.container.serviceUrl = this.hostUrl + WEB_API_ACTION;
         this.container.documentEditor.open(JSON.stringify(mailmerge));
         this.container.documentEditor.documentName = 'Mail Merge';
         this.titleBar.updateDocumentTitle();
@@ -137,7 +136,7 @@ export class MailMergeComponent {
                 };
                
                 this.showHideWaitingIndicator(true);
-                let baseUrl: string = this.hostUrl + 'api/documenteditor/MailMerge';
+                let baseUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/MailMerge';
                 let httpRequest: XMLHttpRequest = new XMLHttpRequest();
                 httpRequest.open('POST', baseUrl, true);
                 httpRequest.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');

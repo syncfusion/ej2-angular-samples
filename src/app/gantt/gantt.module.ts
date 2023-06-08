@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../common/shared.module';
 import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
-import { CheckBoxAllModule } from '@syncfusion/ej2-angular-buttons';
+import { CheckBoxAllModule, SwitchAllModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { TextBoxAllModule, NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
@@ -65,12 +65,12 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/virtual-scroll', component: GanttVirtualScrollComponent,
         description: 'This example illustrates binding large data and smooth scrolling with large data using the Virtual Scroll feature in the Syncfusion Gantt chart.',
-        name: 'Virtual Scrolling', order: '01', category: 'Gantt', type: "update"
+        name: 'Virtual Scrolling', order: '01', category: 'Gantt'
     },
     {
         path: ':theme/gantt/loading-animation', component: GanttLoadingAnimationComponent,
         description: 'This demo for Essential JS 2 gantt component shows the loading indicator when gantt loading, refreshing and performing other action.',
-        name: 'Loading Animation', order: '01', category: 'Gantt', type: "new"
+        name: 'Loading Animation', order: '01', category: 'Gantt'
     },
     {
         path: ':theme/gantt/local-data', component: GanttLocalDataComponent,
@@ -190,7 +190,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/resource-multi-taskbar', component: GanttResourceMultiTaskbarComponent,
         description: 'This sample explains how to visualize the list of tasks assigned to each resource on a single parent row while collapsing the parent record.',
-        name: 'Resource Multi Taskbar', order: '06', category: 'Resources'
+        name: 'Resource Multi Taskbar', order: '06', category: 'Resources', type: "update"
     },
     {
         path: ':theme/gantt/sorting', component: GanttSortingComponent,
@@ -317,7 +317,7 @@ let declarations: Type<Object>[] = [
     GanttCriticalPathComponent
 ];
 @NgModule({
-    imports: [CommonModule, GanttRouter, SharedModule, GanttAllModule, DropDownListAllModule, CheckBoxAllModule, TextBoxAllModule, NumericTextBoxAllModule, MultiSelectAllModule],
+    imports: [CommonModule, GanttRouter, SharedModule, GanttAllModule, DropDownListAllModule, CheckBoxAllModule, SwitchAllModule, TextBoxAllModule, NumericTextBoxAllModule, MultiSelectAllModule],
     declarations: declarations,
     providers: [GanttAllModule]
 })
