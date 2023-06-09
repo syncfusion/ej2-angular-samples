@@ -30,7 +30,7 @@ export class TemplateDrivenComponent {
   public dlgBtnClick: EmitType<object> = () => {
     this.dialogObj.hide();
   }
-  public dlgButtons: Object[] = [{ click: this.dlgBtnClick.bind(this), buttonModel: { content: 'Ok', isPrimary: true } }];
+  public dlgButtons: Object[] = [{ click: this.dlgBtnClick.bind(this) }];
     @ViewChild('formElement') element: any;
 
   public browseClick() {

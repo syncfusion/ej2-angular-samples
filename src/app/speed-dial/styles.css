@@ -35,28 +35,24 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.speeddial-icon-close:before {
-    content: "\e700";
+.speeddial-icon-cut:before {
+    content: "\e70a";
 }
 
-.speeddial-icon-house:before {
-    content: "\e701";
+.speeddial-icon-copy:before {
+    content: "\e70b";
 }
 
-.speeddial-icon-people:before {
-    content: "\e702";
+.speeddial-icon-paste:before {
+    content: "\e70c";
 }
 
-.speeddial-icon-search:before {
-    content: "\e703";
+.speeddial-icon-delete:before {
+    content: "\e70d";
 }
 
-.speeddial-icon-message:before {
-    content: "\e704";
-}
-
-.speeddial-icon-menu:before {
-    content: "\e705";
+.speeddial-icon-save:before {
+    content: "\e70e";
 }
 
 .speeddial-icon-edit:before {

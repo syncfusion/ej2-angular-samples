@@ -1,15 +1,15 @@
 <div id="action-description">
     <p>
-        This sample demonstrates the rendering of <a href="https://www.syncfusion.com/angular-ui-components/angular-charts/chart-axis">numeric axis</a> in the chart with England and West indies cricket match data.
+        This sample shows the numeric axis in a chart with England and West Indies cricket match data.
     </p>
 </div>
 <div class="control-section">
         <div align='center'>
             <ejs-chart style='display:block;'[chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-                [title]='title' [tooltip]='tooltip' (axisLabelRender)='labelRender($event)' (load)='load($event)'>
+                [title]='title' [tooltip]='tooltip' [legendSettings]='legend'  (load)='load($event)'>
                 <e-series-collection>
-                    <e-series [dataSource]='data' type='Column' xName='x' yName='y' fill = '#1e90ff' name='England' width=2 [marker]='marker'> </e-series>
-                    <e-series [dataSource]='data1' type='Column' xName='x' yName='y' fill = '#b22222' name='West Indies' width=2 [marker]='marker'> </e-series>
+                    <e-series [dataSource]='data' type='Column' columnSpacing = '0.1' xName='x' yName='y' fill = '#1e90ff' name='England' width=2 [marker]='marker'> </e-series>
+                    <e-series [dataSource]='data1' type='Column'  columnSpacing = '0.1' xName='x' yName='y' fill = '#b22222' name='West Indies' width=2 [marker]='marker'> </e-series>
                 </e-series-collection>
             </ejs-chart>
         </div>
@@ -19,7 +19,7 @@
 </div>
 <div id="description">
    <p>
-        Numeric axis is used to plot numeric data in chart. To render numeric axis, set <code>valueType</code> in axis to <code>Double</code>.
+    You can use a numeric axis to represent numeric value data in a chart.To render numeric axis, set <code>valueType</code> in axis to <code>Double</code>.
     </p>
     <p>
         Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.

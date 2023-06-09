@@ -1,18 +1,18 @@
 <div id="action-description">
     <p>
-        This sample demonstrates polar series with scatter type for GDP for different countries in recent years. The switching between polar and radar series can be done by using <code>Series Type</code> in property panel.
+        This sample shows GDP growth of different countries for a few years in the polar and radar charts using the scatter series.
     </p>
 </div>
 <div class="control-section">
     <div class="col-lg-9">
-        <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
+        <ejs-chart #chart style='display:block;' id='chartcontainer'  [legendSettings]="legendSettings" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
             [tooltip]='tooltip' (load)='load($event)'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Polar' drawType='Scatter' xName='x' yName='y' name='2015' [marker]='marker'>
+                <e-series [dataSource]='data' type='Polar' drawType='Scatter' xName='text' yName='y' name='2015' [marker]='marker'>
                 </e-series>
-                <e-series [dataSource]='data' type='Polar' drawType='Scatter' xName='x' yName='y1' name='2016' [marker]='marker1'>
+                <e-series [dataSource]='data' type='Polar' drawType='Scatter' xName='text' yName='y1' name='2016' [marker]='marker1'>
                 </e-series>
-                <e-series [dataSource]='data' type='Polar' drawType='Scatter' xName='x' yName='y2' name='2017' [marker]='marker2'>
+                <e-series [dataSource]='data' type='Polar' drawType='Scatter' xName='text' yName='y2' name='2017' [marker]='marker2'>
                 </e-series>
             </e-series-collection>
         </ejs-chart>
@@ -42,7 +42,7 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the polar series with scatter type charts. 
+        In this example, you can see how to render and configure polar and radar charts with a scatter series. Switching between polar and radar series can be done using the <code>Series Type</code> in the property panel.
     </p>
     <p>
         Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
@@ -54,8 +54,8 @@
         <code>PolarSeriesService</code> and <code>ScatterSeriesService</code> into the <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the polar scatter series can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/polar-radar/#draw-types">documentation section</a>.
+        More information about the polar and radar chart with a scatter series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/polar#scatter">documentation section</a>.
     </p>
 </div>
 <style>

@@ -3,11 +3,10 @@
     <div style="padding-bottom:15px;">
       <label>Rule Output</label>
       <div class="rule-output-container">
-        <div id="rule-output">FREQ=DAILY;INTERVAL=1;</div>
+        <div id="rule-output">{{ recurrenceObj.value }}</div>
       </div>
     </div>
-    <ejs-recurrenceeditor #recurrenceObj id='RecurrenceEditor' [selectedType]='selectedType'
-      (change)="onChange($event)"></ejs-recurrenceeditor>
+    <ejs-recurrenceeditor #recurrenceObj [selectedType]='selectedType'></ejs-recurrenceeditor>
   </div>
 </div>
 

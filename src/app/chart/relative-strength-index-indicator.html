@@ -1,6 +1,6 @@
 <div id="action-description">
     <p>
-        This sample illustrates a stock chart with candle series and a Relative Strength Index indicator. Trackball shows the information about the stock, signalline, lowerline, and upperline value of a day. 
+        This sample illustrates a chart with candle series and a relative strength index indicator. The trackball shows information about the day’s stock, signal line, lower line, and upper line values.
    </p>
 </div>
 <div class="control-section">
@@ -8,15 +8,17 @@
         <ejs-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [crosshair] = 'crosshair' [zoomSettings] = 'zoomSettings'
         [axes] = 'axes' [indicators]='indicators' [rows]='rows' [legendSettings]='legendSettings' [chartArea]= 'chartArea' (load)='load($event)'>
             <e-series-collection>
-                <e-series [dataSource]='data1' type='Candle' xName='x' high='high' low='low' open='open' close='close' volume='volume' name='Apple Inc'> </e-series>
+                <e-series [dataSource]='data1' type='Candle' xName='period' high='high' low='low' open='open' close='close' volume='volume' name='Apple Inc'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
 <div id='description'>
     <p>
-        In this example, you can see how to render and configure the RSI Indicator. RSI Indicator is used
-        to represent the price movements in stock. 
+        In this example, you can see how to render and configure a relative strength index indicator. RSA measures the speed and magnitude of price movements studying the average gains and average losses, and shows how strongly the stock is moving in its current direction.
+    </p>
+    <p>
+        Tooltip is enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch enabled devices.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>

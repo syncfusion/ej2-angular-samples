@@ -1,12 +1,12 @@
 <div id="action-description">
     <p>
-        This sample illustrates trackball feature in chart. To show trackball, hover or long press the chart and you can see the point value near to the mouse point.
+        This sample depicts the trackball behavior in the chart. To view the trackball and its tooltip, hover over the chart or tap on it in touch-enabled devices.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart style='display:block;width: 92%' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' [crosshair]='crosshair' (load)='load($event)'>
+            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip'  [legendSettings]='legendSettings' [crosshair]='crosshair' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='john' type='Line' xName='x' yName='y' name='John' width=2 [marker]='marker'> </e-series>
                 <e-series [dataSource]='andrew' type='Line' xName='x' yName='y' name='Andrew' width=2 [marker]='marker'>
@@ -19,10 +19,7 @@
 </div>
 <div id="description">
     <p>
-        This sample demonstrates the trackball behavior in chart. Trackball is used to track a data point closer to the current mouse
-        position or touch contact point. You can show tooltip for individual point or group of points closer to mouse position
-        using <code><a target="_blank" class="code"
-        href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#tooltip-tooltipoptionsmodel">shared</a></code>        properties in tooltip.
+        The trackball is used to track a data point close to the mouse or touch position. The trackball can be enabled by setting the Enable property of the crosshair to true and the Shared property of the tooltip to true in the chart.       properties in tooltip.
     </p>
     <p>
         Hover the chart area to view trackball and its tooltip. Touch and hold to enable trackball in touch enabled devices.

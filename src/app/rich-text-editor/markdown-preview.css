@@ -27,7 +27,7 @@
     }
 
     .tailwind .e-icon-btn .e-md-preview::before,
-    .tailwind-dark .e-icon-btn .e-md-preview::before
+    .tailwind-dark .e-icon-btn .e-md-preview::before,
     .bootstrap5 .e-icon-btn .e-md-preview::before,
     .bootstrap5-dark .e-icon-btn .e-md-preview::before,
     .fluent .e-icon-btn .e-md-preview::before,

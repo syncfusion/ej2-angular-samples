@@ -1,10 +1,9 @@
 <div id="action-description">
     <p>
-        Labels in an axis can be placed smartly when it intersects with each other. Intersect action and edge label placement can be changed by using property panel.
+        This example shows the smart label placement for the chart axis labels.
     </p>
 </div>
-<div class="control-section">
-    <div class="col-md-8">
+    <div class="col-md-8 control-section  sb-property-border">
         <ejs-chart #chart style='display:block;' id='chartcontainer' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)' [tooltip]='tooltip' (pointRender)='pointRender($event)' [legendSettings]='legendSettings'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Column' xName='x' yName='y' width=2 [marker]='marker' name='Users'>
@@ -76,14 +75,14 @@
                         <td style="width: 60%">
                             <div>Maximum Label Width:</div>
                         </td>
-                        <td style="width: 40%;padding-left: 10px; padding-right: 10px">
+                        <td style="width: 40%;">
                             <div class="control-label">
                                 <ejs-numerictextbox #width [value]=34 [min]=1 [step]=1 (change)='labelWidth($event)'></ejs-numerictextbox>
                             </div>
                         </td>
                     </tr>
                 </table>
-            </div>
+         
         </div>
     </div>
 </div>

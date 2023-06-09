@@ -1,12 +1,12 @@
 <div id="action-description">
     <p>
-        This sample illustrates  plotting of local data about stock price analysis of two products for a certain period.
+        This sample shows the plotting of local data in a stock price analysis of two products over a period of time.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart id='charts' style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [title]='title' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' (load)='load($event)' [tooltip]='tooltip' [crosshair]='crosshair'>
+            [primaryYAxis]='primaryYAxis' (load)='load($event)' [tooltip]='tooltip' [crosshair]='crosshair' [legendSettings]='legend'>
             <e-series-collection>
                 <e-series [dataSource]='series1' type='Line' xName='x' yName='y' name='Product X' width=2 [animation]='animation'> </e-series>
                 <e-series [dataSource]='series2' type='Line' xName='x' yName='y' name='Product Y' width=2 [animation]='animation'> </e-series>
@@ -15,8 +15,8 @@
     </div>
 </div>
 <div id="description">
-    <p>The Chart supports local data binding. The <code>dataSource</code> property can be assigned either with the array of JavaScript
-        objects or instance of <code><a target="_blank" class="code"
-        href="http://ej2.syncfusion.com/documentation/data/api-dataManager.html">DataManager</a></code>.</p>
-    <p>In this demo, the array of JavaScript objects is assigned as the data source to the Chart.</p>
+    <p>The Chart supports local data binding. The <code>dataSource</code> property can be assigned either as list of objects or with instance of DataManager.</p>
+    <p>In this demo, the list of objects is assigned as the data source to the Charts control. The chart can be bound to IEnumerable, IQueryable, and ObservableCollection data sources.</p>
+    <p>More information about the local data binding can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/working-with-data/">documentation section</a>. </p>
 </div>

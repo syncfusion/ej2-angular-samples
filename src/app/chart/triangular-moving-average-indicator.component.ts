@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme, TechnicalIndicatorModel } from '@syncfusion/ej2-angular-charts';
-import { chartData } from './financial-data';
+import { chartValue } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 /**
  * Sample for TMA Indicator
@@ -24,7 +24,7 @@ export class TmaIndicatorComponent {
         }
     ];
 
-    public data1: Object[] = chartData;
+    public data1: Object[] = chartValue;
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
@@ -34,7 +34,7 @@ export class TmaIndicatorComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Price',
+        title: 'Price (In Million)',
         labelFormat: '${value}M',
         minimum: 50, maximum: 170, interval: 30,
         majorGridLines: { width: 1 }, lineStyle: { width: 0 }
@@ -46,7 +46,7 @@ export class TmaIndicatorComponent {
         mode: 'X',
         enablePan : true
     };
-    public title: string = 'AAPL 2012-2017';
+    public title: string = 'AAPL Stock Price 2012-2017';
     public tooltip: Object = {
         enable: true,
         shared: true

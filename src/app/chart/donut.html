@@ -1,23 +1,28 @@
 <div id="action-description">
     <p>
-        This Angular Donut Chart example visualizes the mobile browsers statistics by using doughnut series. Datalabels show information about the points.
+        This Angular donut chart example visualizes mobile browser statistics. The center label shows information about the data in the donut series.
     </p>
 </div>
 <div class="control-section">
-    <ejs-accumulationchart id="container" #pie style='display:block;  width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip"
-        [title]="title" (load)='load($event)' [enableBorderOnMouseMove]='false'>
+    <ejs-accumulationchart id="container" #pie style='display:block;  width: 92%'  [centerLabel]="centerLabel" (pointRender)='pointRender($event)' [legendSettings]="legendSettings" 
+     (load)='load($event)' [enableBorderOnMouseMove]='false'>
         <e-accumulation-series-collection>
-            <e-accumulation-series name='Project' [dataSource]='data' xName='Browser' yName='Users' [startAngle]="startAngle" innerRadius="40%" [radius]="radius"
-               [dataLabel]="dataLabel" explode=true explodeOffset='10%' [explodeIndex]='0'>
+            <e-accumulation-series name='Project' [dataSource]='data' xName='x' yName='y' [border]="border" [startAngle]="startAngle" innerRadius="65%" [radius]="radius"
+            [dataLabel]="dataLabel">
             </e-accumulation-series>
         </e-accumulation-series-collection>
     </ejs-accumulationchart>
     <div id="description">
-        <p> In this example, you can see how to render and configure a doughnut chart. To create a doughnut in pie series, customize the <code>InnerRadius</code> property. DataLabels are used to represent individual data and its values.</p>
-        <p>
-            <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch-enabled devices.</p>
-        <p>
-            More information about the doughnut in pie series can be found in this
+        <p>   In this example, you can see how to render and configure a donut chart. To create a donut in the pie series, we use the <code>innerRadius</code> property. 
+            The <code>centerLabel</code> property allows you to specify the default text that will be rendered in the center. You can also customize the text that will render when the mouse pointer is hovered over one of the donut slices using the <code>hoverTextFormat</code> property.</p>
+            <br>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        The Charts component’s features are segregated into individual feature modules. To use pie series feature, we need to
+        inject
+        <code>PieService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+          <p>More information about the donut series can be found in this 
             <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/pie-dough-nut/#doughnut-chart">documentation section</a>.
         </p>
     </div>

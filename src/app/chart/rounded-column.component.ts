@@ -133,7 +133,7 @@ export class RoundedColumnChartComponent {
         minorTickLines: { width: 0 }, lineStyle: { width: 0 }
     };
     public radius: Object = { bottomLeft: Browser.isDevice ? 12 : 35, bottomRight: Browser.isDevice ? 12 : 35, topLeft: Browser.isDevice ? 12 : 35, topRight: Browser.isDevice ? 12 : 35 }
-    public marker: Object = { dataLabel: { visible: true, position: 'Top', name:'Text', font: { fontWeight: '600', color: '#ffffff', size: Browser.isDevice ? '9px' : '11px'  } } }
+    public marker: Object = { dataLabel: { visible: true, position: 'Top', name:'Text', enableRotation: Browser.isDevice ? true : false, angle: -90, font: { fontWeight: '600', color: '#ffffff' } } }
     public title: string = 'Literacy rate by Country in 2015';
     public tooltip: Object = {
         enable: true,

@@ -1,0 +1,226 @@
+.e-grid .e-rowcell.e-poscell {
+  color: green;
+}
+
+.e-intermediate-state-2:before {
+  content: '\e87f';
+}
+
+.e-chevron-up:before {
+  content: '\e910';
+}
+
+.e-chevron-down:before {
+  content: '\e652';
+}
+
+.e-chevron-down-double:before {
+  content: '\e304';
+}
+
+.e-chevron-up-double:before {
+  content: '\e306';
+}
+
+.ic {
+  height: 14px;
+  width: 14px;
+  margin-left: 3px;
+}
+
+.fluent .e-grid .e-rowcell.e-increase,
+.bootstrap5 .e-grid .e-rowcell.e-increase,
+.tailwind .e-grid .e-rowcell.e-increase,
+.material .e-grid .e-rowcell.e-increase,
+.fabric .e-grid .e-rowcell.e-increase,
+.bootstrap4 .e-grid .e-rowcell.e-increase,
+.bootstrap .e-grid .e-rowcell.e-increase,
+.highcontrast .e-grid .e-rowcell.e-increase,
+.fluent .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap5 .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
+.tailwind .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
+.material .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
+.fabric .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap4 .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
+.highcontrast .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
+.e-grid .e-rowcell.e-increase,
+.e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd) {
+    background-color: #DFFFE2;
+    color: #00A653;
+}
+
+.fluent-dark .e-grid .e-rowcell.e-increase,
+.bootstrap5-dark .e-grid .e-rowcell.e-increase,
+.tailwind-dark .e-grid .e-rowcell.e-increase,
+.material-dark .e-grid .e-rowcell.e-increase,
+.fabric-dark .e-grid .e-rowcell.e-increase,
+.bootstrap-dark .e-grid .e-rowcell.e-increase,
+.fluent-dark .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap5-dark .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
+.tailwind-dark .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
+.material-dark .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
+.fabric-dark .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap-dark .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd) {
+    background-color: #315C35;
+    color: #38FF9C;
+}
+
+.fluent .e-grid .e-rowcell.e-decrease,
+.bootstrap5 .e-grid .e-rowcell.e-decrease,
+.tailwind .e-grid .e-rowcell.e-decrease,
+.material .e-grid .e-rowcell.e-decrease,
+.fabric .e-grid .e-rowcell.e-decrease,
+.bootstrap4 .e-grid .e-rowcell.e-decrease,
+.bootstrap .e-grid .e-rowcell.e-decrease,
+.highcontrast .e-grid .e-rowcell.e-decrease,
+.fluent .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap5 .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
+.tailwind .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
+.material .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
+.fabric .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap4 .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
+.highcontrast .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
+.e-grid .e-rowcell.e-decrease,
+.e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd) {
+  background-color: #FFEBE9;
+  color: #FF3740;
+}
+
+.fluent-dark .e-grid .e-rowcell.e-decrease,
+.bootstrap5-dark .e-grid .e-rowcell.e-decrease,
+.tailwind-dark .e-grid .e-rowcell.e-decrease,
+.material-dark .e-grid .e-rowcell.e-decrease,
+.fabric-dark .e-grid .e-rowcell.e-decrease,
+.bootstrap-dark .e-grid .e-rowcell.e-decrease,
+.fluent-dark .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap5-dark .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
+.tailwind-dark .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
+.material-dark .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
+.fabric-dark .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap-dark .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd) {
+    background-color: #55241E;
+    color: #FF9CA0;
+}
+
+#livestream .e-headercelldiv {
+  height: 43px;
+  line-height: 39px;
+}
+
+#livestream .e-rowcell .e-icons {
+  line-height: 0;
+}
+
+.fluent .above-0,
+.bootstrap5 .above-0,
+.tailwind .above-0,
+.material .above-0,
+.fabric .above-0,
+.bootstrap4 .above-0,
+.bootstrap .above-0,
+.highcontrast .above-0,
+.fluent .e-rowcell .e-icons.above-0,
+.bootstrap5 .e-rowcell .e-icons.above-0,
+.tailwind .e-rowcell .e-icons.above-0,
+.material .e-rowcell .e-icons.above-0,
+.fabric .e-rowcell .e-icons.above-0,
+.bootstrap4 .e-rowcell .e-icons.above-0,
+.bootstrap .e-rowcell .e-icons.above-0,
+.highcontrast .e-rowcell .e-icons.above-0,
+.above-0,
+.e-rowcell .e-icons.above-0 {
+    color: #00A653;
+}
+
+.fluent-dark .above-0,
+.bootstrap5-dark .above-0,
+.tailwind-dark .above-0,
+.material-dark .above-0,
+.fabric-dark .above-0,
+.bootstrap-dark .above-0,
+.fluent-dark .e-rowcell .e-icons.above-0,
+.bootstrap5-dark .e-rowcell .e-icons.above-0,
+.tailwind-dark .e-rowcell .e-icons.above-0,
+.material-dark .e-rowcell .e-icons.above-0,
+.fabric-dark .e-rowcell .e-icons.above-0,
+.bootstrap-dark .e-rowcell .e-icons.above-0 {
+    color: #38FF9C;
+}
+
+.fluent .below-0,
+.bootstrap5 .below-0,
+.tailwind .below-0,
+.material .below-0,
+.fabric .below-0,
+.bootstrap4 .below-0,
+.bootstrap .below-0,
+.highcontrast .below-0,
+.fluent .e-rowcell .e-icons.below-0,
+.bootstrap5 .e-rowcell .e-icons.below-0,
+.tailwind .e-rowcell .e-icons.below-0,
+.material .e-rowcell .e-icons.below-0,
+.fabric .e-rowcell .e-icons.below-0,
+.bootstrap4 .e-rowcell .e-icons.below-0,
+.bootstrap .e-rowcell .e-icons.below-0,
+.highcontrast .e-rowcell .e-icons.below-0,
+.below-0,
+.e-rowcell .e-icons.below-0 {
+    color: #FF3740;
+}
+
+.fluent-dark .below-0,
+.bootstrap5-dark .below-0,
+.tailwind-dark .below-0,
+.material-dark .below-0,
+.fabric-dark .below-0,
+.bootstrap-dark .below-0,
+.fluent-dark .e-rowcell .e-icons.below-0,
+.bootstrap5-dark .e-rowcell .e-icons.below-0,
+.tailwind-dark .e-rowcell .e-icons.below-0,
+.material-dark .e-rowcell .e-icons.below-0,
+.fabric-dark .e-rowcell .e-icons.below-0,
+.bootstrap-dark .e-rowcell .e-icons.below-0 {
+    color: #FF9CA0;
+}
+
+.fluent .neutral,
+.bootstrap5 .neutral,
+.tailwind .neutral,
+.material .neutral,
+.fabric .neutral,
+.bootstrap4 .neutral,
+.bootstrap .neutral,
+.highcontrast .neutral,
+.fluent .e-rowcell .e-icons.neutral,
+.bootstrap5 .e-rowcell .e-icons.neutral,
+.tailwind .e-rowcell .e-icons.neutral,
+.material .e-rowcell .e-icons.neutral,
+.fabric .e-rowcell .e-icons.neutral,
+.bootstrap4 .e-rowcell .e-icons.neutral,
+.bootstrap .e-rowcell .e-icons.neutral,
+.highcontrast .e-rowcell .e-icons.neutral,
+.neutral,
+.e-rowcell .e-icons.neutral {
+    color: #888888;
+}
+
+.fluent-dark .neutral,
+.bootstrap5-dark .neutral,
+.tailwind-dark .neutral,
+.material-dark .neutral,
+.fabric-dark .neutral,
+.bootstrap-dark .neutral,
+.fluent-dark .e-rowcell .e-icons.neutral,
+.bootstrap5-dark .e-rowcell .e-icons.neutral,
+.tailwind-dark .e-rowcell .e-icons.neutral,
+.material-dark .e-rowcell .e-icons.neutral,
+.fabric-dark .e-rowcell .e-icons.neutral,
+.bootstrap-dark .e-rowcell .e-icons.neutral {
+    color: #CCCCCC;
+}
+
+.side-space {
+    padding: 0 5px;
+}

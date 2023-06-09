@@ -2,7 +2,7 @@
  * Customization Sample
  */
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SmithchartTheme, ISmithchartLoadEventArgs, Smithchart} from '@syncfusion/ej2-angular-charts';
+import { SmithchartTheme, ISmithchartLoadEventArgs, Smithchart } from '@syncfusion/ej2-angular-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { Slider, SliderChangeEventArgs } from '@syncfusion/ej2-inputs';
 import { EmitType } from '@syncfusion/ej2-base';
@@ -83,7 +83,7 @@ export class SmithchartCustomComponent {
     public setRadius(e: SliderChangeEventArgs): void {
         let slider: Element = document.getElementById('radius');
         let slider1: SliderComponent = <SliderComponent>slider['ej2_instances'][0];
-        let smith: Element = document.getElementById('smithchartcontainer');
+        let smith: Element = document.getElementById('container');
         let smith1: Smithchart = <Smithchart>smith['ej2_instances'][0];
         smith1.radius = slider1.value as number;
         document.getElementById('radius1').innerHTML = 'Radius <span> ' + (slider1.value as number);
@@ -91,7 +91,7 @@ export class SmithchartCustomComponent {
     }
     public setMarker(e: CheckBoxChangeEvents): void {
         let boolean: boolean = e.checked;
-        let smith: Smithchart = <Smithchart>document.getElementById('smithchartcontainer')['ej2_instances'][0];
+        let smith: Smithchart = <Smithchart>document.getElementById('container')['ej2_instances'][0];
         if (boolean) {
             smith.series[0].marker.visible = true;
             smith.series[1].marker.visible = true;
@@ -103,7 +103,7 @@ export class SmithchartCustomComponent {
     }
     public setDataLabel(e: CheckBoxChangeEvents): void {
         let boolean: boolean = e.checked;
-        let smith: Smithchart = <Smithchart>document.getElementById('smithchartcontainer')['ej2_instances'][0];
+        let smith: Smithchart = <Smithchart>document.getElementById('container')['ej2_instances'][0];
         if (boolean) {
             smith.series[0].marker.dataLabel.visible = true;
             smith.series[1].marker.dataLabel.visible = true;
@@ -115,7 +115,7 @@ export class SmithchartCustomComponent {
     }
     public setAnimation(e: CheckBoxChangeEvents): void {
         let boolean: boolean = e.checked;
-        let smith: Smithchart = <Smithchart>document.getElementById('smithchartcontainer')['ej2_instances'][0];
+        let smith: Smithchart = <Smithchart>document.getElementById('container')['ej2_instances'][0];
         if (boolean) {
             smith.series[0].enableAnimation = true;
             smith.series[1].enableAnimation = true;
@@ -128,7 +128,7 @@ export class SmithchartCustomComponent {
 
     public setTooltip(e: CheckBoxChangeEvents): void {
         let boolean: boolean = e.checked;
-        let smith: Smithchart = <Smithchart>document.getElementById('smithchartcontainer')['ej2_instances'][0];
+        let smith: Smithchart = <Smithchart>document.getElementById('container')['ej2_instances'][0];
         if (boolean) {
             smith.series[0].tooltip.visible = true;
             smith.series[1].tooltip.visible = true;
@@ -140,7 +140,7 @@ export class SmithchartCustomComponent {
     }
     public setLegend(e: CheckBoxChangeEvents): void {
         let boolean: boolean = e.checked;
-        let smith: Smithchart = <Smithchart>document.getElementById('smithchartcontainer')['ej2_instances'][0];
+        let smith: Smithchart = <Smithchart>document.getElementById('container')['ej2_instances'][0];
         if (boolean) {
             smith.legendSettings.visible = true;
         } else {
@@ -154,7 +154,7 @@ export class SmithchartCustomComponent {
         width: 90,
         change: () => {
             let element: string = mode.value.toString();
-            let smith: Smithchart = <Smithchart>document.getElementById('smithchartcontainer')['ej2_instances'][0];
+            let smith: Smithchart = <Smithchart>document.getElementById('container')['ej2_instances'][0];
            smith.legendSettings.position = element;
             smith.refresh();
         }

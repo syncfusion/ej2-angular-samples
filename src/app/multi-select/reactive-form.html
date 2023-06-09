@@ -51,10 +51,10 @@
                             </div>
                             <div class="form-group" style="padding:10px;">
                                     <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
-                              <button ejs-button [disabled]="!skillForm.valid" >Submit</button>
+                              <button ejs-button [disabled]="!skillForm.valid" cssClass='e-custom'>Submit</button>
                               </div>
                               <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
-                                <button ejs-button (click)="onreset($event)" type="reset" [disabled]="!(skillForm.controls.sname.valid || skillForm.controls.smail.valid || skillForm.controls.skillname.valid)">Reset</button>
+                                <button ejs-button (click)="onreset($event)" type="reset" [disabled]="!(skillForm.controls.sname.valid || skillForm.controls.smail.valid || skillForm.controls.skillname.valid)" cssClass='e-custom'>Reset</button>
                               </div>
                             </div>
                           </form>

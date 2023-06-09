@@ -1,12 +1,12 @@
 <div id="action-description">
     <p>
-        This sample illustrates how to retrieve remote the data for chart.
+        This sample shows the way in which the Charts component can be bound to a remote service. The data source of the chart is bound to remote data using the DataManager component.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart #chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [legendSettings]='legend' [title]='title' [tooltip]='tooltip'
-            (axisLabelRender)='labelRender($event)' (loaded)='loadedChart($event)' (load)='loadChart($event)' (pointRender)='pointRender($event)'>
+             (loaded)='loadedChart($event)' (load)='loadChart($event)' (tooltipRender)='tooltipRender($event)' (axisLabelRender)='axisLabelRender($event)' (pointRender)='pointRender($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Column' xName='CustomerID' yName='Freight' [query]='query' name='Story Point' width=2 [marker]='marker'>
                 </e-series>

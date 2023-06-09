@@ -48,6 +48,9 @@ export class LocalDataChartComponent {
         },
         lineType: 'Vertical'
     };
+    public legend: Object = {
+        enableHighlight : true
+    };
     public width: string = Browser.isDevice ? '100%' : '75%';
     // custom code start
     public load(args: ILoadedEventArgs): void {

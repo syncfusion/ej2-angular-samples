@@ -18,7 +18,7 @@ background: #f9f9f9;
 background: #000000;
 }
 #reactive .form-group .upload-area {
-width: 100%;
+width: 75%;
 }
 .fabric #reactive .form-group .upload-area {
   background: transparent;
@@ -73,33 +73,56 @@ top: 14%;
 .material #reactive .form-group .e-upload, #reactive .form-group .e-upload {
 display: none;
 }
+.bootstrap5 #reactive .e-float-input input[readonly],
+.bootstrap5-dark #reactive .e-float-input input[readonly],
+.bootstrap4 #reactive .e-float-input input[readonly] {
+  background: none;
+}
 #reactive .upload-area button#browse {
 float: right;
-margin-top: -28px;
+margin-top: -32px;
+margin-right: -106px;
+
 }
-.material.e-bigger #reactive .upload-area button#browse {  
-  margin-top: -36px;
+.material.e-bigger #reactive .upload-area button#browse,
+.material-dark.e-bigger #reactive .upload-area button#browse {  
+  margin-top: -27px;
+  margin-right: -105px;
   }
-.fabric #reactive .upload-area button#browse,
-.highcontrast #reactive .upload-area button#browse {
-  float: right;
-  margin-top: -32px;
-  }
-.fabric.e-bigger #reactive .upload-area button#browse,
-.highcontrast.e-bigger #reactive .upload-area button#browse,
-.bootstrap.e-bigger #reactive .upload-area button#browse {
-    margin-top: -40px;
-  }
-  .bootstrap #reactive .upload-area button#browse {
+.bootstrap #reactive .upload-area button#browse,
+.bootstrap-dark #reactive .upload-area button#browse {
   float: right;
   margin-top: -35px;
-  }  
+  margin-right: -105px;
+  }
+.fluent-dark .e-bigger #reactive .e-float-input.upload-area button#browse,
+.fluent .e-bigger #reactive .e-float-input.upload-area button#browse,
+.bootstrap5-dark .e-bigger #reactive .e-float-input.upload-area button#browse,
+.bootstrap5 .e-bigger #reactive .e-float-input.upload-area button#browse,
+.tailwind-dark .e-bigger #reactive .e-float-input.upload-area button#browse,
+.tailwind .e-bigger #reactive .e-float-input.upload-area button#browse, 
+.fabric-dark .e-bigger #reactive .e-float-input.upload-area button#browse,
+.fabric .e-bigger #reactive .e-float-input.upload-area button#browse,
+.highcontrast .e-bigger #reactive .e-float-input.upload-area button#browse  {
+    margin-right: -120px;
+    margin-top: -40px;
+}
+  
+.material .e-bigger #reactive .e-float-input.upload-area button#browse,
+.material-dark .e-bigger #reactive .e-float-input.upload-area button#browse {
+    margin-top: -36px;
+    margin-right: -106px;
+}
+.bootstrap4 .e-bigger #reactive .e-float-input.upload-area button#browse{
+    margin-top: -38px;
+}
+.bootstrap-dark .e-bigger #reactive .e-float-input.upload-area button#browse,
+.bootstrap .e-bigger #reactive .e-float-input.upload-area button#browse {
+	margin-top: -40px;
+}
 #reactive .form-group .e-float-input.upload-area .e-float-line, .material .e-float-input.upload-area .e-float-line {  
   width: 70%;
   margin-top: initial;
-}
-#reactive .form-group .upload-area input {
-width: 70%;
 }
 
 .bootstrap4 button#browse {
@@ -136,4 +159,14 @@ text-align: center;
 }
 .tailwind-dark #control_wrapper.control_wrapper { 
     background: #6c757d;
+}
+.fluent .e-bigger .e-dialog .e-dlg-header-content,
+.fluent-dark .e-bigger .e-dialog .e-dlg-header-content,
+.tailwind .e-bigger .e-dialog .e-dlg-header-content,
+.tailwind-dark .e-bigger .e-dialog .e-dlg-header-content{
+    padding-bottom: 2%;
+}
+.material-dark .e-bigger .e-dialog .e-dlg-header-content,
+.material .e-bigger .e-dialog .e-dlg-header-content{
+    padding-bottom: 3%;
 }

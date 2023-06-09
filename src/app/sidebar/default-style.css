@@ -179,34 +179,34 @@
 }
 
 /* Specifies sample level styles for ListView*/
-.material-dark .e-listview.e-list-template .e-list-wrapper.e-list-multi-line .e-list-item-header,
-.material-dark .e-listview.e-list-template .e-list-wrapper.e-list-multi-line .e-list-content,
-.bootstrap-dark .e-listview.e-list-template .e-list-wrapper.e-list-multi-line .e-list-content {
+.material-dark #sidebar-wrapper .e-listview.e-list-template .e-list-wrapper.e-list-multi-line .e-list-item-header,
+.material-dark #sidebar-wrapper .e-listview.e-list-template .e-list-wrapper.e-list-multi-line .e-list-content,
+.bootstrap-dark #sidebar-wrapper .e-listview.e-list-template .e-list-wrapper.e-list-multi-line .e-list-content {
     color: #fff;
 }
 
-.e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar {
+#sidebar-wrapper .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar {
     margin: 18px 16px 18px 12px;
 }
 
-.tailwind .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
-.tailwind-dark .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar {
+.tailwind #sidebar-wrapper .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
+.tailwind-dark #sidebar-wrapper .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar {
     margin-left: 14px;
 }
 
-.material .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
-.material-dark .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar {
+.material #sidebar-wrapper .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
+.material-dark #sidebar-wrapper .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar {
     margin: 14px 16px 14px 0;
 }
 
-.fabric .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
-.fabric-dark .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
-.highcontrast .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar {
+.fabric #sidebar-wrapper .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
+.fabric-dark #sidebar-wrapper .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
+.highcontrast #sidebar-wrapper .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar {
     margin: 6px 0 0 -5px;
 }
 
-.bootstrap4 .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
-.bootstrap .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
-.bootstrap-dark .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar {
+.bootstrap4 #sidebar-wrapper .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
+.bootstrap #sidebar-wrapper .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
+.bootstrap-dark #sidebar-wrapper .e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar {
     margin: 12px 0 0 -4px;
 }

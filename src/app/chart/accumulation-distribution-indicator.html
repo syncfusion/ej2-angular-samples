@@ -1,6 +1,6 @@
 <div id="action-description">
     <p>
-        This sample illustrates a stock chart with candle series and an <a href="https://www.syncfusion.com/angular-ui-components/angular-charts/technical-indicators">accumulation distribution indicator</a>. Trackball shows the information about the stock and signal value of a day.
+        This sample illustrates a chart with candle series and an accumulation distribution indicator. The trackball shows information about the stock rates and signal values each day.
    </p>
 </div>
 <div class="control-section">
@@ -8,14 +8,14 @@
         <ejs-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [crosshair] = 'crosshair' [zoomSettings] = 'zoomSettings'
         [axes] = 'axes' [rows]='rows' [legendSettings]='legendSettings' (axisLabelRender)= 'axisLabelRender($event)' [chartArea]= 'chartArea' (load)='load($event)' [indicators]='indicators'>
             <e-series-collection>
-                <e-series [dataSource]='data1' type='Candle' xName='x' high='high' low='low' open='open' close='close' volume='volume' name='Apple Inc'> </e-series>
+                <e-series [dataSource]='data1' type='Candle' xName='period' high='high' low='low' open='open' close='close' volume='volume' name='Apple Inc'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
 <div id='description'>
     <p>
-        In this example, you can see how to render and configure the Accumulation Distribution Indicator. Accumulation Distribution Indicator is used to represent the price movements in stock.
+        In this example, you can see how to render and configure an accumulation distribution indicator. This uses volume and price to identify whether stock is accumulated or distributed. It also identifies divergences between the stock price and volume flow.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
@@ -24,7 +24,7 @@
         <code>AccumulationDistributionIndicatorService</code> into the <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the Accumulation Distribution Indicator can be found in this
+        Tooltip tooltip is enabled in this example. To see the tooltip in action, hover over a point or tap on a point in touch enabled devices.More information on the Accumulation Distribution Indicator can be found in this
         <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/technical-indicators/#accumulation-distribution">documentation section</a>.
     </p>
 </div>

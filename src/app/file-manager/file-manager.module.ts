@@ -8,6 +8,7 @@ import { OverViewController } from './overview.component';
 import { CustomThumnailController } from './custom.component';
 import { DragAndDropController } from './drag-drop.component';
 import { DirectoryUploadController } from './directory-upload.component';
+import { VirtualizationController } from './virtualization.component';
 import { FileUploadController } from './file-upload.component';
 import { AzureController } from './azure-service.component';
 import { SQLController } from './sql-server-provider.component';
@@ -17,6 +18,7 @@ import { CommonModule } from '@angular/common';
 import { FileManagerAllModule } from '@syncfusion/ej2-angular-filemanager';
 import { ContextMenuModule ,ToolbarModule  } from '@syncfusion/ej2-angular-navigations';
 import { ButtonModule, CheckBoxModule   } from '@syncfusion/ej2-angular-buttons';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { FirebaseController } from './firebase.component';
 import { FTPController } from './ftp-file-provider.component';
 import { IBMCOSController } from './ibm-cos-node-file-provider.component';
@@ -27,26 +29,27 @@ export const fileManagerAppRoutes: Object[] = [
     { path: ':theme/file-manager/default', component: DefaultFileController, name: 'API', order: '01', category: 'File Manager', description: 'Angular FileManager component with how to render the File Manager without the navigation pane and enable or disable toolbar dynamically.' },
     { path: ':theme/file-manager/drag-drop', component: DragAndDropController, name: 'Drag and Drop', order: '01', category: 'File Manager', description: 'Angular FileManager component with drag and drop feature to drag and drop the file.' },
     { path: ':theme/file-manager/directory-upload', component: DirectoryUploadController, name: 'Directory upload', order: '01', category: 'File Manager', description: 'Angular FileManager component with folder (directory) upload feature by using custom toolbar item.' },
+    { path: ':theme/file-manager/virtualization', component: VirtualizationController, name: 'Virtualization', order: '01', category: 'File Manager', description: 'Angular FileManager component with how to enable the virtual scrolling feature.' },
     { path: ':theme/file-manager/file-upload', component: FileUploadController, name: 'File Upload', order: '02', category: 'Use Case', description: 'Angular FileManager component with how to render the File Manager component inside the Dialog component.' },
     { path: ':theme/file-manager/azure-service', component: AzureController, name: 'Azure Blob Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the azure service.' },
     { path: ':theme/file-manager/sql-server-provider', component: SQLController, name: 'SQL Database Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the sql server database service.' },
     { path: ':theme/file-manager/nodejs-file-provider', component: NodeJSController, name: 'NodeJS File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the nodejs server database service.' },
     { path: ':theme/file-manager/amazon-s3-file-provider', component: AmazonS3Controller, name: 'Amazon S3 File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the Amazon S3 file provider service.' },
     { path: ':theme/file-manager/firebase', component: FirebaseController, name: 'Firebase Realtime File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the firebase realtime cloud storage database file provider service.' },
-    { path: ':theme/file-manager/ftp-file-provider', component: FTPController, name: 'FTP File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the File Transfer protocol service.' },
     { path: ':theme/file-manager/ibm-cos-node-file-provider', component: IBMCOSController, name: 'IBM Cloud File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the IBM Cloud Object Storage file provider service.' }
 ];
 
 export const fileRouter: ModuleWithProviders<any> = RouterModule.forChild(fileManagerAppRoutes);
 
 @NgModule({
-    imports: [fileRouter, FileManagerAllModule, UploaderModule , DialogModule, CheckBoxModule, ButtonModule, CommonModule, ContextMenuModule, ToolbarModule],
+    imports: [fileRouter, FileManagerAllModule, UploaderModule , DialogModule, CheckBoxModule, ButtonModule, DropDownListModule, CommonModule, ContextMenuModule, ToolbarModule],
     declarations: [
         DefaultFileController,
         OverViewController,
         CustomThumnailController,
         DragAndDropController,
         DirectoryUploadController,
+        VirtualizationController,
         FileUploadController,
         AzureController,
         SQLController,

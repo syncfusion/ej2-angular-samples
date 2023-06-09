@@ -36,7 +36,8 @@ ejs-imageeditor {
 	font-size: 28px;
 	color: white;
 	left: 5px;
-	top: 7px;
+	top: 4px;
+  line-height: initial;
 	position: absolute;
 }
 

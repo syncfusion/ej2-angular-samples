@@ -14,7 +14,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
     providers: [ToolbarService]
 })
 export class BulletsNumberingComponent {
-    public hostUrl: string = 'https://ej2services.syncfusion.com/production/web-services/';
+    public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
     @ViewChild('documenteditor_default')
     public container: DocumentEditorContainerComponent;
     public culture: string = 'en-US';
@@ -23,7 +23,6 @@ export class BulletsNumberingComponent {
     onCreate(): void {
         let titleBarElement: HTMLElement = document.getElementById('default_title_bar');
         this.titleBar = new TitleBar(titleBarElement, this.container.documentEditor, true);
-        this.container.serviceUrl = this.hostUrl + WEB_API_ACTION;
         this.container.documentEditor.open(JSON.stringify(bulletAndNumbering));
         this.container.documentEditor.documentName = 'Bullets and Numbering';
         this.titleBar.updateDocumentTitle();

@@ -2,11 +2,8 @@
     <div id="template-rating-control">
         <div class="rating-content" >
             <label>Font Icon</label><br/>
-            <input ejs-rating id='rating1' [emptyTemplate]= "emptyFont" [fullTemplate]= "fullFont" value="3.0" />
+            <input ejs-rating id='rating1' [emptyTemplate]= "emptyFont" value="3.0" />
             <ng-template #emptyFont>
-                <span class='custom-font rating-icon-heart'></span>
-            </ng-template>
-            <ng-template #fullFont>
                 <span class='custom-font rating-icon-heart'></span>
             </ng-template>
         </div>

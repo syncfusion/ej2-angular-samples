@@ -5,7 +5,7 @@ import { ScheduleAllModule, RecurrenceEditorAllModule } from '@syncfusion/ej2-an
 import { NumericTextBoxAllModule, TextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { DatePickerAllModule, TimePickerAllModule, DateTimePickerAllModule } from '@syncfusion/ej2-angular-calendars';
 import { ButtonAllModule, CheckBoxAllModule, SwitchAllModule } from '@syncfusion/ej2-angular-buttons';
-import { ToolbarAllModule, ContextMenuAllModule } from '@syncfusion/ej2-angular-navigations';
+import { ToolbarAllModule, ContextMenuAllModule, AppBarModule } from '@syncfusion/ej2-angular-navigations';
 import { MaskedTextBoxModule, UploaderAllModule } from '@syncfusion/ej2-angular-inputs';
 import { DropDownListAllModule, MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { TreeViewModule } from '@syncfusion/ej2-angular-navigations';
@@ -107,7 +107,7 @@ export const scheduleRouteConfig: Record<string, any>[] = [
   { path: ':theme/schedule/adaptive-rows', component: AdaptiveRowsComponent, name: 'Row Auto Height', order: '06', category: 'Multiple Resources', description: 'This demo shows how the work cells of the Angular Scheduler adjust their height automatically based on the number of events present in those time ranges.' },
   { path: ':theme/schedule/resource-grouping', component: GroupComponent, name: 'Horizontal Grouping', order: '07', category: 'Resource Grouping', description: 'This demo shows how to group multiple resources (e.g., airlines) in the Angular Scheduler. The resource header can be customized using a template.' },
   { path: ':theme/schedule/timeline-resource-grouping', component: TimelineResourceGroupingComponent, name: 'Timeline Grouping ', order: '07', category: 'Resource Grouping', description: 'This demo shows how to group multiple resources with timeline views in the Angular Schedule and how to display resources with expanded and collapsed headers.' },
-  { path: ':theme/schedule/group-by-date', component: GroupByDateComponent, name: 'Date-wise Grouping  ', order: '07', category: 'Resource Grouping', type: 'update', description: 'This demo shows how to group multiple resources by date in the Angular Scheduler. The resource row is rendered under each date in the header.' },
+  { path: ':theme/schedule/group-by-date', component: GroupByDateComponent, name: 'Date-wise Grouping  ', order: '07', category: 'Resource Grouping', description: 'This demo shows how to group multiple resources by date in the Angular Scheduler. The resource row is rendered under each date in the header.' },
   { path: ':theme/schedule/group-by-child', component: GroupByChildComponent, name: 'Hierarchical Grouping ', order: '07', category: 'Resource Grouping', description: 'This demo shows how to group resources in a hierarchical structure for parent-child resources in the Angular Scheduler control.' },
   { path: ':theme/schedule/adaptive-grouping', component: AdaptiveGroupingComponent, name: 'Adaptive Grouping', order: '07', category: 'Resource Grouping', description: 'This demo shows how to change the mode of the Schedule to Adaptive mode in the Angular Scheduler control.' },
   { path: ':theme/schedule/cell-template', component: CellTemplateComponent, name: 'Cell', order: '08', category: 'Template', description: 'This demo shows how to customize the default appearance of work cells with images, links, and coloring styles using cell templates in the Angular Scheduler.' },
@@ -158,7 +158,7 @@ const scheduleDeclarations: Type<Record<string, any>>[] = [
   imports: [RouterModule.forChild(scheduleRouteConfig), CommonModule, ScheduleAllModule, RecurrenceEditorAllModule,
     NumericTextBoxAllModule, TextBoxAllModule, DatePickerAllModule, TimePickerAllModule, DateTimePickerAllModule, CheckBoxAllModule,
     ToolbarAllModule, DropDownListAllModule, ContextMenuAllModule, MaskedTextBoxModule, UploaderAllModule, MultiSelectAllModule,
-    TreeViewModule, ButtonAllModule, DropDownButtonAllModule, SwitchAllModule, SharedModule, ToastAllModule],
+    TreeViewModule, ButtonAllModule, DropDownButtonAllModule, SwitchAllModule, SharedModule, ToastAllModule, AppBarModule],
   declarations: scheduleDeclarations,
   providers: [ScheduleAllModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

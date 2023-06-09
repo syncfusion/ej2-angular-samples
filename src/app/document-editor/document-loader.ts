@@ -3,7 +3,7 @@ import { DocumentEditor } from '@syncfusion/ej2-documenteditor';
  * Document editor - Document loader
  */
 export class DocumentLoader {
-    private hostUrl: string = 'https://ej2services.syncfusion.com/production/web-services/';
+    private hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
     private documentEditor: DocumentEditor = undefined;
 
 
@@ -14,7 +14,7 @@ export class DocumentLoader {
         this.documentEditor.open(JSON.stringify(defaultDocument));
     }
     public loadFile(path: any): void {
-        let baseUrl: string = this.hostUrl + 'api/documenteditor/import';
+        let baseUrl: string = this.hostUrl + 'import';
         let httpRequest: XMLHttpRequest = new XMLHttpRequest();
         httpRequest.open('POST', baseUrl, true);
         let waitingPopUp: HTMLElement = document.getElementById('waiting-popup');

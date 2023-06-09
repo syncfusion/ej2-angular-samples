@@ -3,7 +3,7 @@
  */
 var DocumentLoader = /** @class */ (function () {
     function DocumentLoader(documentEditor) {
-        this.hostUrl = 'https://ej2services.syncfusion.com/production/web-services/';
+        this.hostUrl = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
         this.documentEditor = undefined;
         this.documentEditor = documentEditor;
     }
@@ -12,7 +12,7 @@ var DocumentLoader = /** @class */ (function () {
     };
     DocumentLoader.prototype.loadFile = function (path) {
         var _this = this;
-        var baseUrl = this.hostUrl + 'api/documenteditor/import';
+        var baseUrl = this.hostUrl + 'import';
         var httpRequest = new XMLHttpRequest();
         httpRequest.open('POST', baseUrl, true);
         var waitingPopUp = document.getElementById('waiting-popup');

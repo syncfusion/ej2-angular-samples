@@ -1,11 +1,11 @@
 <div id="action-description">
     <p>
-        This sample demonstrates polar series with area type for average sales comparison of products in recent year.  The switching between polar and radar series can be done by using <code>Series Type</code> in property panel.
+        This sample shows the average product sales comparison for 6 years in polar and radar charts.
     </p>
 </div>
 <div class="control-section">
     <div class="col-lg-9">
-        <ejs-chart #chart style='display:block;' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
+        <ejs-chart #chart style='display:block;' [title]='title' [legendSettings]="legendSettings"  [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Polar' [marker]='marker' drawType='Area' xName='x' yName='y' name='Product A' opacity=0.5 width=2 border-color='transparent'>
                 </e-series>
@@ -41,10 +41,7 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the area type charts. Similar to line type series, but the area
-        get closed and filled with series color. You can use <code>border</code>, <code>fill</code> properties to
-        customize the area. <code>marker</code> and <code>dataLabel</code> are used to represent individual data and its
-        value. Legend is enabled in this example with series type shape.
+        In this example, you can see how to render and configure polar and radar charts with an area series. Switching between polar and radar series can be done using <b>Series Type</b> in the property panel
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
@@ -53,8 +50,8 @@
         <code>AreaService</code> into the <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the polar area types series can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/polar-radar/#draw-types">documentation section</a>.
+        More information about the polar and radar chart with an area series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/polar#area">documentation section</a>.
     </p>
 </div>
 <style>

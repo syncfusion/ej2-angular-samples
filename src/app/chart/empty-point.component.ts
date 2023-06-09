@@ -28,11 +28,11 @@ export class EmptyPointChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-       minimum: 0, maximum: 100, interval: 20, labelFormat: '{value}%'
+       minimum: 0, maximum: 100, interval: 20, labelFormat: '{value}%', 
     };
     //Initializing Marker
     public marker: Object = {
-        visible: true,
+        visible: false,
         height: 10, width: 10
     };
      // custom code start
@@ -43,7 +43,8 @@ export class EmptyPointChartComponent {
     };
      // custom code end
     public tooltip: Object = {
-        enable: true
+        enable: true,
+        header: " "
     };
     public title: string = 'Annual Product-Wise Profit Analysis';
     @ViewChild('chart')
@@ -60,6 +61,9 @@ export class EmptyPointChartComponent {
             change: () => {
                 let type: string = this.seriesType.value.toString();
                 this.chart.series[0].type = <ChartSeriesType>type;
+                if(this.chart.series[0].type === 'Spline') {
+                    this.chart.series[0].marker.visible = true;
+                }
                 this.chart.refresh();
             }
         });

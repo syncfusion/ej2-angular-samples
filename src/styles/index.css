@@ -4021,13 +4021,13 @@ body.fluent-dark,
     color: transparent;
 }
 
-.fluent .sb-content-tab .e-tab .e-tab-header .e-toolbar-item:not(.e-separator) {
+.fluent .sb-content-tab > .e-tab > .e-tab-header > .e-items > .e-toolbar-item:not(.e-separator) {
     height: 35px;
     margin: 0px 8px 0 0;
     min-height: 35px;
 }
 
-.fluent .sb-content-tab .e-tab .e-tab-header .e-toolbar-items,.fluent .e-tab .e-tab-header {
+.fluent .sb-content-tab > .e-tab > .e-tab-header > .e-toolbar-items,.fluent .sb-content-tab > .e-tab > .e-tab-header {
     min-height: 35px;
     height: 35px;
 }
@@ -4052,13 +4052,13 @@ body.fluent-dark,
     margin-left: 0px !important;
 }
 
-.fluent-dark .sb-content-tab .e-tab .e-tab-header .e-toolbar-item:not(.e-separator) {
+.fluent-dark .sb-content-tab > .e-tab > .e-tab-header > .e-items > .e-toolbar-item:not(.e-separator) {
     height: 35px;
     margin: 0px 8px 0 0;
     min-height: 35px;
 }
 
-.fluent-dark .sb-content-tab .e-tab .e-tab-header .e-toolbar-items,.fluent-dark .sb-content-tab .e-tab .e-tab-header {
+.fluent-dark .sb-content-tab > .e-tab > .e-tab-header > .e-toolbar-items,.fluent-dark .sb-content-tab > .e-tab > .e-tab-header {
     min-height: 35px;
     height: 35px;
 }
@@ -4126,11 +4126,6 @@ body.fluent-dark,
 
 .fluent.e-bigger #controlList .e-samplestatus, .fluent-dark.e-bigger #controlList .e-samplestatus {
   margin-top: 5px;
-}
-
-.material #controlList .e-samplestatus, .material-dark #controlList .e-samplestatus,
-.fabric #controlList .e-samplestatus, .fabric-dark #controlList .e-samplestatus {
-  margin-top: 7px;
 }
 
 .material.e-bigger #controlList .e-samplestatus, .material-dark.e-bigger #controlList .e-samplestatus,

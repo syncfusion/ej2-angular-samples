@@ -15,13 +15,13 @@ export class MultipleAxisChartComponent {
     public annotations: ChartAnnotationSettingsModel[] = [
     {
         x: 'Sun',
-        y: 35,
+        y: 62,
         coordinateUnits: 'Point',
         verticalAlignment: 'Top',
         content: '<div id="chart_cloud"><img src="./assets/chart/images/cloud.png" style="width: 41px; height: 41px"/></div>'
     }, {
         x: 'Sat',
-        y: 34,
+        y: 35,
         coordinateUnits: 'Point',
         yAxisName: 'yAxis',
         content: '<div id="chart_cloud"><img src="./assets/chart/images/sunny.png" style="width: 41px; height: 41px"/></div>'
@@ -33,15 +33,13 @@ export class MultipleAxisChartComponent {
         { x: 'Sat', y: 50 }
     ];
     public data1: Object[] = [
-        { x: 'Sun', y: 30 }, { x: 'Mon', y: 28 },
+        { x: 'Sun', y: 31 }, { x: 'Mon', y: 28 },
         { x: 'Tue', y: 29 }, { x: 'Wed', y: 30 }, { x: 'Thu', y: 33 }, { x: 'Fri', y: 32 },
         { x: 'Sat', y: 34 }
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'Category',
-        interval: 1,
-        labelIntersectAction: 'Rotate90',
         majorGridLines: { width: 0 },
         majorTickLines: {width : 0},
         minorTickLines: {width: 0}
@@ -69,11 +67,17 @@ export class MultipleAxisChartComponent {
     public legend: Object = {
         visible: false
     }
+   
     public marker: Object = {
         visible: true,
-        width: 10,
-        height: 10,
-        border: { width: 2, color: '#F8AB1D' }
+        width: 7,
+        height: 7,
+        isFilled: true
+    };
+    public marker1: Object = {
+        visible: true,
+        width: 7,
+        height: 7,
     };
     public axis: Object = [{
         majorGridLines: { width: 0 },
@@ -90,7 +94,7 @@ export class MultipleAxisChartComponent {
     public tooltip: Object = {
         enable: true
     };
-    public title: string = 'Weather Condition JPN vs DEU';
+    public title: string = 'Weather Data';
     constructor() {
         //code
     };

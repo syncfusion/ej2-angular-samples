@@ -50,12 +50,16 @@ export class PolarColumnChartComponent {
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
 
     };
+    public legendSettings: Object = {
+        visible: true,
+        enableHighlight: true
+    };
       // custom code end
     public border: Object = {
         width: 1, color: 'white'
     };
     public tooltip: Object = {
-        enable: true, format: '${point.text} : <b>${point.y}%</b>'
+        enable: true, format: "<b>${point.text}</b> <br> ${series.name} : <b>${point.y}</b>" , header: " "
     };
     public title: string = 'Top 10 Mobile Markets by Number of Subscriptions';
     @ViewChild('chart')

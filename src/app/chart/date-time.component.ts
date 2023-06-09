@@ -13,21 +13,22 @@ import { Browser } from '@syncfusion/ej2-base';
 })
 export class DateTimeAxisChartComponent {
     public data1: Object[] = [
-        { x: new Date(2016, 3, 1), y: 6.3 },
-        { x: new Date(2016, 4, 1), y: 13.3 }, { x: new Date(2016, 5, 1), y: 18.0 },
-        { x: new Date(2016, 6, 1), y: 19.8 }, { x: new Date(2016, 7, 1), y: 18.1 },
-        { x: new Date(2016, 8, 1), y: 13.1 }, { x: new Date(2016, 9, 1), y: 4.1 }
+        { x: new Date(2016, 2, 7), y: 6.3 },
+        { x: new Date(2016, 3, 15), y: 13.3 }, { x: new Date(2016, 4, 10), y: 18.0 },
+        { x: new Date(2016, 5, 17), y: 19.8 }, { x: new Date(2016, 6, 13), y: 18.1 },
+        { x: new Date(2016, 7, 11), y: 13.1 }, { x: new Date(2016, 8, 16), y: 4.1 }
     ];
     public data2: Object[] = [
-        { x: new Date(2016, 3, 1), y: -5.3 },
-        { x: new Date(2016, 4, 1), y: 1.0 }, { x: new Date(2016, 5, 1), y: 6.9 },
-        { x: new Date(2016, 6, 1), y: 9.4 }, { x: new Date(2016, 7, 1), y: 7.6 },
-        { x: new Date(2016, 8, 1), y: 2.6 }, { x: new Date(2016, 9, 1), y: -4.9 }
+        { x: new Date(2016, 2, 7), y: -5.3 },
+        { x: new Date(2016, 3, 15), y: 1.0 }, { x: new Date(2016, 4, 10), y: 6.9 },
+        { x: new Date(2016, 5, 17), y: 9.4 }, { x: new Date(2016, 6, 13), y: 7.6 },
+        { x: new Date(2016, 7, 11), y: 2.6 }, { x: new Date(2016, 8, 16), y: -4.9 }
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
-        labelFormat: 'MMM',
+        intervalType: 'Days',
+        labelFormat: 'MMM d',
         edgeLabelPlacement: 'Shift',
         majorGridLines: { width: 0 }
     };
@@ -46,13 +47,13 @@ export class DateTimeAxisChartComponent {
     //Initializing Marker
     public marker1: Object = {
         visible: true,
-        height: 10, width: 10,
-        shape: 'Pentagon',
-        dataLabel: { visible: true, position: 'Top' }
+        height: 8, width: 8,
+        shape: 'Pentagon',isFilled: true,
+        dataLabel: { visible: true, position: 'Top',  }
     };
     public marker2: Object = {
-        visible: true, height: 10, width: 10, shape: 'Diamond',
-        dataLabel: { visible: true, position: 'Bottom' }
+        visible: true, height: 8, width: 8, shape: 'Diamond',isFilled: true ,
+        dataLabel: { visible: true, position: 'Bottom', }
     };
     public chartArea: Object = {
         border: {

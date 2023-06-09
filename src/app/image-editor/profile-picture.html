@@ -9,7 +9,7 @@
         <canvas id="img-canvas" style="max-width: 200px; max-height: 200px;"></canvas>
         <img alt="img" id="demo-img" crossorigin="anonymous" src="./assets/image-editor/images/profile.png"
         style="display: none;" (load)="imageLoaded()"/>
-        <input type="file" id="img-upload" (change)="imageChanged($event)" style="display:none"/>
+        <input type="file" id="img-upload" (change)="imageChanged($event)" style="display:none" accept="image/*"/>
         <span id="custom-edit" class="e-custom-edit" (click)="canvasClicked()">
             <span class="e-custom-icon sb-icons"></span>
         </span>

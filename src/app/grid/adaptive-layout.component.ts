@@ -12,7 +12,7 @@ import { PageService, FilterService, SortService, AggregateService, EditService,
 })
 export class AdaptiveLayoutComponent implements OnInit {
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['adaptive.style.css'];
+        sourceFiles.files = ['adaptive-layout.style.css'];
     }
 
     @ViewChild('adaptive')
