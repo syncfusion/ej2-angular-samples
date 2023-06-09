@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { AccumulationChartComponent, AccumulationChart, AccumulationDataLabel, IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-angular-charts';
+import { AccumulationChartComponent, AccumulationChart, AccumulationDataLabel, IAccLoadedEventArgs, AccumulationTheme, IPointRenderEventArgs } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 /**
  * Sample for doughnut 
@@ -10,21 +10,64 @@ import { Browser } from '@syncfusion/ej2-base';
     encapsulation: ViewEncapsulation.None
 })
 export class DonutComponent {
-    public data: Object[] = Browser.isDevice ? [
-     { Browser : "Chrome", Users : 59.28, DataLabelMappingName : "Chrome: 59.28%"},
-     { Browser : "Safari", Users : 4.73, DataLabelMappingName : Browser.isDevice ? 'Safari <br> 5.73%'  : "Safari: 4.73%"},
-     { Browser : "Opera", Users : 6.12, DataLabelMappingName : "Opera: 6.12%"}, 
-     { Browser : "Edge", Users : 7.48, DataLabelMappingName : "Edge: 7.48%"},
-    { Browser : "Others", Users : 22.41, DataLabelMappingName : "Others: 22.41%"},] : [{ Browser : "Chrome", Users : 59.28, DataLabelMappingName : "  Chrome: 59.28%"},
-    { Browser : "UC Browser", Users : 4.37, DataLabelMappingName : "  UC Browser: 4.37%"},
-    { Browser : "Opera", Users : 3.12, DataLabelMappingName : "  Opera: 3.12%"},
-    { Browser : "Sogou Explorer", Users : 1.73, DataLabelMappingName : "  Sogou Explorer: 1.73%"},
-    { Browser : "QQ", Users : 3.96, DataLabelMappingName : "  QQ: 3.96%"},
-    { Browser : "Safari", Users : 4.73, DataLabelMappingName : "  Safari: 4.73%"},
-    { Browser : "Internet Explorer", Users : 6.12, DataLabelMappingName : "  Internet Explorer: 6.12%"},
-    { Browser : "Edge", Users : 7.48, DataLabelMappingName : "  Edge: 7.48%"},
-    { Browser : "Others", Users : 9.57, DataLabelMappingName : "  Others: 9.57%"}
-];
+    public data: Object[] = [
+        { x: 'Chrome', y: 61.3, DataLabelMappingName: Browser.isDevice ? 'Chrome: <br> 61.3%' : 'Chrome: 61.3%' },
+        { x: 'Safari', y: 24.6, DataLabelMappingName: Browser.isDevice ? 'Safari: <br> 24.6%' : 'Safari: 24.6%' },
+        { x: 'Edge', y: 5.0, DataLabelMappingName: 'Edge: 5.0%' },
+        { x: 'Samsung Internet', y: 2.7, DataLabelMappingName: Browser.isDevice ? 'Samsung Internet: <br> 2.7%' : 'Samsung Internet: 2.7%' },
+        { x: 'Firefox', y: 2.6, DataLabelMappingName: Browser.isDevice ? 'Firefox: <br> 2.6%' : 'Firefox: 2.6%' },
+        { x: 'Others', y: 3.6, DataLabelMappingName: Browser.isDevice ? 'Others: <br> 3.6%' :'Others: 3.6%' }
+    ];
+    public pointRender(args: IPointRenderEventArgs): void {
+        this.SetTheme(args);
+     };
+    public SetTheme(args: IPointRenderEventArgs): void {
+        let selectedTheme: string = location.hash.split('/')[1];
+        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        let seriesColor = ['#FFE066', "#FAB666", "#F68F6A", "#F3646A", "#CC555A", "#9C4649"];
+        if (selectedTheme === 'fluent' || selectedTheme === 'bootstrap5') {
+            args.fill = seriesColor[args.point.index % 10];
+        } 
+        if (selectedTheme.indexOf('dark') > -1 )
+        {
+          if(selectedTheme.indexOf('material') > -1 )
+          {
+            args.border.color = '#303030' ;
+          }
+          else if(selectedTheme.indexOf('bootstrap5') > -1 )
+          {
+            args.border.color = '#212529' ;
+          }
+          else if(selectedTheme.indexOf('bootstrap') > -1 )
+          {
+            args.border.color = '#1A1A1A' ;
+          }
+          else if(selectedTheme.indexOf('tailwind') > -1 )
+          {
+            args.border.color = '#1F2937' ;
+          }
+          else if(selectedTheme.indexOf('fluent') > -1 )
+          {
+            args.border.color = '#252423' ;
+          }
+          else if(selectedTheme.indexOf('fabric') > -1 )
+          {
+            args.border.color = '#201f1f' ;
+          }
+          else
+          {
+            args.border.color = '#222222' ;
+          }
+        }
+        else if(selectedTheme.indexOf('highcontrast') > -1)
+        {
+          args.border.color = '#000000' ;
+        }
+        else
+        {
+          args.border.color = '#FFFFFF' ;
+        }
+      };
     //Initializing Legend
     public legendSettings: Object = {
         visible: false,
@@ -41,7 +84,17 @@ export class DonutComponent {
             length: '20px',
             type: 'Curve'
          },
-         
+    };
+    public centerLabel: Object = {
+        text: 'Mobile<br>Browsers<br>Statistics',
+        hoverTextFormat: '${point.x}<br>Browser Share<br>${point.y}%',
+        textStyle: {
+            fontWeight: '600',
+            size: Browser.isDevice ? '7px' : '15px'
+        },
+    };
+    public border: object = {
+        width: 1
     };
      // custom code start
     public load(args: IAccLoadedEventArgs): void {
@@ -50,14 +103,8 @@ export class DonutComponent {
         args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
      // custom code end
-    public radius: string = Browser.isDevice ? '40%' : '75%'
-    public startAngle: number = Browser.isDevice ? 62 : 0 ;
-    public tooltip: Object = {
-        enable: true,
-        header: '',
-        format: '<b>${point.x}</b><br>Browser Share: <b>${point.y}%</b>'
-     };
-    public title: string = 'Mobile Browsers Statistics';
+    public radius: string = Browser.isDevice ? '40%' : '70%'
+    public startAngle: number =  Browser.isDevice ? 30 : 62;
     constructor() {
         //code
     };

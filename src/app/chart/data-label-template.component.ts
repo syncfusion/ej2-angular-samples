@@ -102,12 +102,12 @@ export class DataLabelComponent {
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
-    public tailwinddarkMan: string = '<div style="background-color:#5A61F6;border-radius: 3px;">' +
+    public tailwinddarkMan: string = '<div style="background-color:#8B5CF6;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
-    public tailwinddarkWomen: string = '<div style="background-color:#65A30D;border-radius: 3px;">' +
+    public tailwinddarkWomen: string = '<div style="background-color:#22D3EE;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" />' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +

@@ -1,12 +1,12 @@
 <div id="action-description">
     <p>
-        This sample demonstrates polar series with range column type for temperature variation. The switching between polar and radar series can be done by using <code>Series Type</code> in property panel.
+        This sample shows minimum and maximum temperature variations in polar and radar charts using a range column series.
     </p>
 </div>
 <div class="control-section">
     <div class="col-lg-9">
         <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'
-            [tooltip]='tooltip' [legendSettings]='legendSettings'(load)='load($event)' (textRender)='text($event)'>
+            [tooltip]='tooltip' [legendSettings]='legendSettings'(load)='load($event)' >
             <e-series-collection>
                 <e-series [dataSource]='data' type='Polar' drawType='RangeColumn' xName='x' high='high' low='low' name='Germany' [border]='border' [marker]='marker'>
                 </e-series>
@@ -38,9 +38,7 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the  range column type charts. You can use <code>border</code>,
-        <code>fill</code> properties to customize the data appearance. <code>dataLabel</code> is used to represent individual
-        data and its value.
+        In this example, you can see how to render and configure polar and radar charts with a range column series. Switching between polar and radar series can be done using <code>Series Type</code> in the property panel.
     </p>
     <p>
         Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
@@ -52,8 +50,8 @@
         <code>PolarSeriesService</code> into the <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the polar column types series can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/polar-radar/#draw-types">documentation section</a>.
+        More information about the polar and radar chart with a range column series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/polar#range-column">documentation section</a>.
     </p>
 </div>
 <style>

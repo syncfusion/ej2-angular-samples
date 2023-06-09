@@ -1,6 +1,6 @@
 <div id="action-description">
     <p>
-        This sample illustrates a stock chart with candle series and a Moving Average Convergence Divergence indicator. Trackball shows the information about the stock, signalline, Macdline, and Histogram value of a day.
+        This sample illustrates a chart with candle series and a moving average convergence divergence indicator. The trackball shows information about each day’s stock, MACD line, signal line, and MACD histogram values.
    </p>
 </div>
 <div class="control-section">
@@ -8,15 +8,17 @@
         <ejs-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [crosshair] = 'crosshair' [zoomSettings] = 'zoomSettings'
         [axes] = 'axes' [rows]='rows' [indicators]='indicators' [legendSettings]='legendSettings' [chartArea]= 'chartArea' (load)='load($event)' [indicators]='indicators'>
             <e-series-collection>
-                <e-series [dataSource]='data1' type='Candle' xName='x' high='high' low='low' open='open' close='close' volume='volume' name='Apple Inc'> </e-series>
+                <e-series [dataSource]='data1' type='Candle' xName='period' high='high' low='low' open='open' close='close' volume='volume' name='Apple Inc'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
 <div id='description'>
     <p>
-        In this example, you can see how to render and configure the MACD Indicator. MACD Indicator is used
-        to represent the price movements in stock. 
+        In this example, you can see how to render and configure a moving average convergence divergence indicator. The moving average is based on the difference between two EMA's. This indicator often provides valuable signals for trend analysis.
+    </p>
+    <p>
+        Tooltip is enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch enabled devices.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>

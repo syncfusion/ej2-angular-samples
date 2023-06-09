@@ -47,6 +47,7 @@ export class OverviewComponent implements AfterViewChecked {
   public intl: Internationalization = new Internationalization();
   public currentView: View = 'Week';
   public liveTimeUpdate: string = new Date().toLocaleTimeString('en-US', { timeZone: 'UTC' });
+  public timezone: string = 'UTC';
   public group: GroupModel = { resources: ['Calendars'] };
   public resourceDataSource: Record<string, any>[] = [
     { CalendarText: 'My Calendar', CalendarId: 1, CalendarColor: '#c43081' },
@@ -65,13 +66,13 @@ export class OverviewComponent implements AfterViewChecked {
   public firstDayOfWeek = 0;
   public workDays: number[] = [1, 2, 3, 4, 5];
   public calendarsValue: number[] = [1];
-  public selectedResource: number = 1;
   public fields: Record<string, any> = { text: 'text', value: 'value' };
   public calendarFields: Record<string, any> = { text: 'CalendarText', value: 'CalendarId' };
   public dayStartHourValue: Date = new Date(new Date().setHours(0, 0, 0));
   public dayEndHourValue: Date = new Date(new Date().setHours(23, 59, 59));
   public workStartHourValue: Date = new Date(new Date().setHours(9, 0, 0));
   public workEndHourValue: Date = new Date(new Date().setHours(18, 0, 0));
+  public liveTimeInterval: NodeJS.Timeout;
   public weekDays: Record<string, any>[] = [
     { text: 'Sunday', value: 0 },
     { text: 'Monday', value: 1 },
@@ -151,7 +152,12 @@ export class OverviewComponent implements AfterViewChecked {
     { Name: 'First Full Week', Value: 'FirstFullWeek' },
     { Name: 'First Four-Day Week', Value: 'FirstFourDayWeek' }
   ];
+  public tooltipData: Record<string, any>[] = [
+    { Name: 'Off', Value: 'Off' },
+    { Name: 'On', Value: 'On' },
+  ];
   public weekNumberValue = 'Off';
+  public tooltipValue = 'Off';
   public eventSettings: EventSettingsModel = { dataSource: this.generateEvents() };
   @ViewChild('menuObj') public menuObj: ContextMenuComponent;
   public selectedTarget: Element;
@@ -182,12 +188,10 @@ export class OverviewComponent implements AfterViewChecked {
   }
 
   public ngAfterViewChecked(): void {
-    this.viewSwitch?.element?.setAttribute('tabindex', '-1');
-    this.groupSwitch?.element?.setAttribute('tabindex', '-1');
-    this.gridlinesSwitch?.element?.setAttribute('tabindex', '-1');
-    this.rowHeightSwitch?.element?.setAttribute('tabindex', '-1');
-    this.tooltipSwitch?.element?.setAttribute('tabindex', '-1');
-    this.dragSwitch?.element?.setAttribute('tabindex', '-1');
+    this.viewSwitch?.element?.setAttribute('tabindex', '0');
+    this.groupSwitch?.element?.setAttribute('tabindex', '0');
+    this.gridlinesSwitch?.element?.setAttribute('tabindex', '0');
+    this.rowHeightSwitch?.element?.setAttribute('tabindex', '0');
   }
 
   public importTemplateFn(data: Record<string, any>): NodeList {
@@ -198,7 +202,7 @@ export class OverviewComponent implements AfterViewChecked {
   public generateEvents(): Record<string, any>[] {
     const eventData: Record<string, any>[] = [];
     const eventSubjects: string[] = [
-      'Bering Sea Gold', 'Technology', 'Maintenance', 'Meeting', 'Travelling', 'Annual Conference', 'Birthday Celebration',
+      'Bering Sea Gold', 'Technology', 'Maintenance', 'Meeting', 'Traveling', 'Annual Conference', 'Birthday Celebration',
       'Farewell Celebration', 'Wedding Anniversary', 'Alaska: The Last Frontier', 'Deadliest Catch', 'Sports Day', 'MoonShiners',
       'Close Encounters', 'HighWay Thru Hell', 'Daily Planet', 'Cash Cab', 'Basketball Practice', 'Rugby Match', 'Guitar Class',
       'Music Lessons', 'Doctor checkup', 'Brazil - Mexico', 'Opening ceremony', 'Final presentation'
@@ -256,7 +260,7 @@ export class OverviewComponent implements AfterViewChecked {
   }
 
   public onToolbarCreated(): void {
-    setInterval(() => { this.updateLiveTime(this.scheduleObj ? this.scheduleObj.timezone : 'UTC'); }, 1000);
+    this.liveTimeInterval = setInterval(() => { this.updateLiveTime(this.scheduleObj ? this.scheduleObj.timezone : 'UTC'); }, 1000);
   }
 
   public onToolbarItemClicked(args: ClickEventArgs): void {
@@ -305,7 +309,12 @@ export class OverviewComponent implements AfterViewChecked {
   }
 
   public updateLiveTime(timezone: string = 'UTC'): void {
-    this.liveTimeUpdate = new Date().toLocaleTimeString('en-US', { timeZone: timezone });
+    if(this.scheduleObj.isAdaptive) {
+      this.liveTimeUpdate = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: timezone });
+    }
+    else {
+      this.liveTimeUpdate = new Date().toLocaleTimeString('en-US', { timeZone: timezone });
+    }
   }
 
   public onTimelineViewChange(args: SwitchEventArgs): void {
@@ -337,10 +346,6 @@ export class OverviewComponent implements AfterViewChecked {
     }
   }
 
-  public onAllowMultiDrag(args: SwitchEventArgs): void {
-    this.scheduleObj.allowMultiDrag = args.checked;
-  }
-
   public onGroupingChange(args: SwitchEventArgs): void {
     this.scheduleObj.group.resources = args.checked ? ['Calendars'] : [];
   }
@@ -353,12 +358,13 @@ export class OverviewComponent implements AfterViewChecked {
     this.scheduleObj.rowAutoHeight = args.checked;
   }
 
-  public onTooltipChange(args: SwitchEventArgs): void {
-    this.scheduleObj.eventSettings.enableTooltip = args.checked;
-  }
-
   public onSelected(args: SelectedEventArgs): void {
     this.scheduleObj.importICalendar((args.event.target as HTMLInputElement).files[0]);
+  }
+
+  public OnUploaderCreated(): void {
+    const element = document.querySelector('.calendar-import .e-css.e-btn');
+    element.classList.add('e-inherit');
   }
 
   public onSettingsClick(args): void {
@@ -376,26 +382,29 @@ export class OverviewComponent implements AfterViewChecked {
   public getWeatherImage(value: Date): string {
     switch (value.getDay()) {
       case 0:
-        return '<img class="weather-image" src="./assets/schedule/images/weather-clear.svg"/><div class="weather-text">25°C</div>';
+        return '<img class="weather-image" src="./assets/schedule/images/weather-clear.svg"/>';
       case 1:
-        return '<img class="weather-image" src="./assets/schedule/images/weather-clouds.svg"/><div class="weather-text">18°C</div>';
+        return '<img class="weather-image" src="./assets/schedule/images/weather-clouds.svg"/>';
       case 2:
-        return '<img class="weather-image" src="./assets/schedule/images/weather-rain.svg"/><div class="weather-text">10°C</div>';
+        return '<img class="weather-image" src="./assets/schedule/images/weather-rain.svg"/>';
       case 3:
-        return '<img class="weather-image" src="./assets/schedule/images/weather-clouds.svg"/><div class="weather-text">16°C</div>';
+        return '<img class="weather-image" src="./assets/schedule/images/weather-clouds.svg"/>';
       case 4:
-        return '<img class="weather-image" src="./assets/schedule/images/weather-rain.svg"/><div class="weather-text">8°C</div>';
+        return '<img class="weather-image" src="./assets/schedule/images/weather-rain.svg"/';
       case 5:
-        return '<img class="weather-image" src="./assets/schedule/images/weather-clear.svg"/><div class="weather-text">27°C</div>';
+        return '<img class="weather-image" src="./assets/schedule/images/weather-clear.svg"/>';
       case 6:
-        return '<img class="weather-image" src="./assets/schedule/images/weather-clouds.svg"/><div class="weather-text">17°C</div>';
+        return '<img class="weather-image" src="./assets/schedule/images/weather-clouds.svg"/>';
       default:
         return null;
     }
   }
 
-  public getDateHeaderText(value: Date): string {
-    return this.intl.formatDate(value, { skeleton: 'Ed' });
+  public getDateHeaderDay(value: Date): string {
+    return this.intl.formatDate(value, { skeleton: 'E' });
+  }
+  public getDateHeaderDate(value: Date): string {
+    return this.intl.formatDate(value, { skeleton: 'd' });
   }
 
   public onWeekDayChange(args: ChangeEventArgs): void {
@@ -422,8 +431,7 @@ export class OverviewComponent implements AfterViewChecked {
   public onTimezoneChange(args: ChangeEventArgs): void {
     this.scheduleObj.timezone = args.value as string;
     this.updateLiveTime(this.scheduleObj.timezone);
-    document.querySelector('.schedule-overview #timezoneBtn').innerHTML =
-      '<span class="e-btn-icon e-icons e-time-zone e-icon-left"></span>' + args.itemData.text;
+    this.timezone = args.itemData.text;
   }
 
   public onDayStartHourChange(args: TimeEventArgs): void {
@@ -462,86 +470,12 @@ export class OverviewComponent implements AfterViewChecked {
       this.scheduleObj.weekRule = args.value as any;
     }
   }
-
-  public getResourceData(data: Record<string, any>): Record<string, any> {
-    const resources: ResourcesModel = this.scheduleObj.getResourceCollections()[0];
-    const resourceData: Record<string, any> = (resources.dataSource as Record<string, any>[]).filter((resource: Record<string, any>) =>
-      resource.CalendarId === data.CalendarId)[0] as Record<string, any>;
-    return resourceData;
-  }
-
-  public getHeaderStyles(data: Record<string, any>): Record<string, any> {
-    if (data.elementType === 'cell') {
-      return { 'align-items': 'center', color: '#919191' };
+  public onTooltipChange(args: ChangeEventArgs): void {
+    if (args.value === 'Off') {
+      this.scheduleObj.eventSettings.enableTooltip = false;
     } else {
-      const resourceData: Record<string, any> = this.getResourceData(data);
-      let calendarColor = '#3f51b5';
-      if (resourceData) {
-        calendarColor = (resourceData.CalendarColor).toString();
-      }
-      return { background: calendarColor, color: '#FFFFFF' };
+      this.scheduleObj.eventSettings.enableTooltip = true;
     }
-  }
-
-  public getHeaderTitle(data: Record<string, any>): string {
-    return (data.elementType === 'cell') ? 'Add Appointment' : 'Appointment Details';
-  }
-
-  public getHeaderDetails(data: { [key: string]: Date }): string {
-    return this.intl.formatDate(data.StartTime, { type: 'date', skeleton: 'full' }) + ' (' +
-      this.intl.formatDate(data.StartTime, { skeleton: 'hm' }) + ' - ' +
-      this.intl.formatDate(data.EndTime, { skeleton: 'hm' }) + ')';
-  }
-
-  public getEventType(data: { [key: string]: string }): string {
-    const resourceData: Record<string, any> = this.getResourceData(data);
-    let calendarText = '';
-    if (resourceData) {
-      calendarText = resourceData.CalendarText.toString();
-    }
-    return calendarText;
-  }
-
-  public buttonClickActions(e: Event): void {
-    const quickPopup: HTMLElement = closest(e.target as HTMLElement, '.e-quick-popup-wrapper') as HTMLElement;
-    const getSlotData: CallbackFunction = (): Record<string, any> => {
-      let cellDetails: CellClickEventArgs = this.scheduleObj.getCellDetails(this.scheduleObj.getSelectedElements());
-      if (isNullOrUndefined(cellDetails)) {
-        cellDetails = this.scheduleObj.getCellDetails(this.scheduleObj.activeCellsData.element);
-      }
-      const subject = ((quickPopup.querySelector('#title') as EJ2Instance).ej2_instances[0] as TextBoxComponent).value;
-      const notes = ((quickPopup.querySelector('#notes') as EJ2Instance).ej2_instances[0] as TextBoxComponent).value;
-      const addObj: Record<string, any> = {};
-      addObj.Id = this.scheduleObj.getEventMaxID();
-      addObj.Subject = isNullOrUndefined(subject) ? 'Add title' : subject;
-      addObj.StartTime = new Date(+cellDetails.startTime);
-      addObj.EndTime = new Date(+cellDetails.endTime);
-      addObj.IsAllDay = cellDetails.isAllDay;
-      addObj.Description = isNullOrUndefined(notes) ? 'Add notes' : notes;
-      addObj.CalendarId = ((quickPopup.querySelector('#eventType') as EJ2Instance).ej2_instances[0] as DropDownListComponent).value;
-      return addObj;
-    };
-    if ((e.target as HTMLElement).id === 'add') {
-      const addObj: Record<string, any> = getSlotData();
-      this.scheduleObj.addEvent(addObj);
-    } else if ((e.target as HTMLElement).id === 'delete') {
-      const eventDetails: Record<string, any> = this.scheduleObj.activeEventData.event as Record<string, any>;
-      let currentAction: CurrentAction;
-      if (eventDetails.RecurrenceRule) {
-        currentAction = 'DeleteOccurrence';
-      }
-      this.scheduleObj.deleteEvent(eventDetails, currentAction);
-    } else {
-      const isCellPopup: boolean = quickPopup.firstElementChild.classList.contains('e-cell-popup');
-      const eventDetails: Record<string, any> = isCellPopup ? getSlotData() :
-        this.scheduleObj.activeEventData.event as Record<string, any>;
-      let currentAction: CurrentAction = isCellPopup ? 'Add' : 'Save';
-      if (eventDetails.RecurrenceRule) {
-        currentAction = 'EditOccurrence';
-      }
-      this.scheduleObj.openEditor(eventDetails, currentAction, true);
-    }
-    this.scheduleObj.closeQuickInfoPopup();
   }
 
   public onContextMenuBeforeOpen(args: BeforeOpenCloseMenuEventArgs): void {
@@ -571,6 +505,11 @@ export class OverviewComponent implements AfterViewChecked {
         this.menuObj.hideItems(['Add', 'AddRecurrence', 'Today', 'EditRecurrenceEvent', 'DeleteRecurrenceEvent'], true);
       }
       return;
+    } else if ((this.selectedTarget.classList.contains('e-work-cells') || this.selectedTarget.classList.contains('e-all-day-cells')) &&
+      !this.selectedTarget.classList.contains('e-selected-cell')) {
+      removeClass([].slice.call(this.scheduleObj.element.querySelectorAll('.e-selected-cell')), 'e-selected-cell');
+      this.selectedTarget.classList.add('e-selected-cell');
+      this.selectedTarget.setAttribute('aria-selected', 'true');
     }
     this.menuObj.hideItems(['Save', 'Delete', 'EditRecurrenceEvent', 'DeleteRecurrenceEvent'], true);
     this.menuObj.showItems(['Add', 'AddRecurrence', 'Today'], true);
@@ -638,9 +577,9 @@ export class OverviewComponent implements AfterViewChecked {
     }
   }
 
-  public onPopupOpen(args: PopupOpenEventArgs): void {
-    if (args.type === 'QuickInfo') {
-      this.selectedResource = args.data.CalendarId;
+  public ngOnDestroy(): void {
+    if (this.liveTimeInterval) {
+      clearInterval(this.liveTimeInterval);
     }
   }
 

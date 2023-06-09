@@ -34,6 +34,7 @@ import { FormFieldsComponent } from './form-fields.component';
 import { MailMergeComponent } from './mail-merge.component';
 import { NotesComponent } from './notes.component';
 import { SharedModule } from '../common/shared.module';
+import { MultipleColumnsComponent } from './multiple-columns.component';
 
 export const documentEditorAppRoutes: Object[] = [
     // tslint:disable:max-line-length
@@ -42,7 +43,7 @@ export const documentEditorAppRoutes: Object[] = [
     { path: ':theme/document-editor/paragraph-formatting', component: ParagraphFormattingComponent, name: 'Paragraph Formatting', order: '02', category: 'Editing Features', description: "The Document Editor supports paragraph formatting such as indentation, paragraph spacing, line spacing, and text alignment." },
     { path: ':theme/document-editor/styles', component: StylesComponent, name: 'Styles', order: '02', category: 'Editing Features', description: "The Document Editor supports both built-in and custom styles for character format and paragraph format." },
     { path: ':theme/document-editor/bullets-numbering', component: BulletsNumberingComponent, name: 'Bullets and Numbering', order: '02', category: 'Editing Features', description: "The Document Editor supports bullets and numbering. Both single list and multi-level lists can be added." },
-    { path: ':theme/document-editor/links-bookmarks', component: HyperlinksBookmarksComponent, name: 'Hyperlinks and Bookmarks', order: '02', category: 'Editing Features', description: "The Document Editor supports hyperlinks and bookmarks. The link can be a file, mail, webpage, or bookmark." },
+    { path: ':theme/document-editor/links-bookmarks', component: HyperlinksBookmarksComponent, type: 'update', name: 'Hyperlinks and Bookmarks', order: '02', category: 'Editing Features', description: "The Document Editor supports hyperlinks and bookmarks. The link can be a file, mail, webpage, or bookmark." },
     { path: ':theme/document-editor/table-formatting', component: TableFormattingComponent, name: 'Table Formatting', order: '02', category: 'Editing Features', description: "The Document Editor supports table formatting such as cell margins, cell spacing, horizontal merge, vertical merge, border styles, background color, and more." },
     { path: ':theme/document-editor/section-formatting', component: SectionFormattingComponent, type: 'update', name: 'Section Formatting', order: '02', category: 'Editing Features', description: "The Document Editor supports section formatting such as page size, page margins, header distance, and footer distance." },
     { path: ':theme/document-editor/headers-footers', component: HeadersFootersComponent, name: 'Headers and Footers', order: '02', category: 'Editing Features', description: "The Document Editor supports headers and footers. Different headers and footers can be added to the first page, odd pages, and even pages." },
@@ -60,6 +61,7 @@ export const documentEditorAppRoutes: Object[] = [
     { path: ':theme/document-editor/track-changes', component: TrackChangesComponent, name: 'Track Changes', order: '10', category: 'Review', description: "The Document Editor component in JavaScript platform allows users to view, make changes and accept or reject them in a Word document." },
     { path: ':theme/document-editor/mail-merge', component: MailMergeComponent, name: 'Mail Merge', order: '11', category: 'Mail Merge', description: "The Document Editor component provides support to mail merge document with the help of Syncfusion DocIO." },
     { path: ':theme/document-editor/notes', component: NotesComponent, name: 'Footnotes and Endnotes', order: '03', category: 'References', description: "The DocumentEditor provides support to insert footnotes and endnotes to provide more information about something in the document." },
+    { path: ':theme/document-editor/multiple-columns', component: MultipleColumnsComponent, type: 'new', name: 'Multiple Columns', order: '02', category: 'References', description: "The Document Editor supports add or remove columns." },
 ];
 
 export const documentEditorRouter: ModuleWithProviders<any> = RouterModule.forChild(documentEditorAppRoutes);
@@ -75,7 +77,7 @@ export const documentEditorRouter: ModuleWithProviders<any> = RouterModule.forCh
         HeadersFootersComponent, TableOfContentsComponent, PrintComponent, RightToLeftComponent, CustomContextMenuComponent,
         AutoSaveComponent, ToolbarCustomizationComponent, DocumentEditorChartComponent,
         DocumentEditorProtectionComponent, CommentsComponent, WebLayoutComponent, TrackChangesComponent, FormFieldsComponent, MailMergeComponent,
-        NotesComponent],
+        NotesComponent, MultipleColumnsComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DocumentEditorSampleModule {

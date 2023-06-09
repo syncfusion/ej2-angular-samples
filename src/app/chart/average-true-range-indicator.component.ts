@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme, TechnicalIndicatorModel } from '@syncfusion/ej2-angular-charts';
-import { chartData } from './financial-data';
+import { chartValue } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -25,7 +25,7 @@ export class AtrIndicatorComponent {
             seriesName: 'Apple Inc'
         }
     ];
-    public data1: Object[] = chartData;
+    public data1: Object[] = chartValue;
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
@@ -72,7 +72,7 @@ export class AtrIndicatorComponent {
         enablePan : true
     };
     //Initializing Chart Title
-    public title: string = 'AAPL 2012-2017';
+    public title: string = 'AAPL Stock Price 2012-2017';
     public tooltip: Object = {
         enable: true,
         shared: true

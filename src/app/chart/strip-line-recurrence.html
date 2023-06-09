@@ -1,16 +1,15 @@
 <div id="action-description">
     <p>
-        This sample visualizes the World Population Report with default column series in the chart. Data points values are showed
-        by using data label.
+        This sample shows how to repeat a strip line in a chart.
     </p>
 </div>
-<div class="control-section">
-    <div class="col-lg-8">
+
+    <div class="col-lg-8 control-section  sb-property-border" >
         <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-            [title]='title' [tooltip]='tooltip' (load)='load($event)'>
+            [title]='title' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data1' type='Column' xName='x' yName='y' name='All sources'></e-series>
-                <e-series [dataSource]='data2' type='Column' xName='x' yName='y' name='Autos && Light Trucks'></e-series>
+                <e-series [dataSource]='data1' type='Column' xName='x' yName='y' name='All sources' columnSpacing='0.1' ></e-series>
+                <e-series [dataSource]='data2' type='Column' xName='x' yName='y' name='Autos & Light Trucks'></e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
@@ -41,16 +40,12 @@
                     </tr>
                 </table>
             </div>
-        </div>
+   
     </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the recurrence stripline in chart. Striplines are used to annotate
-        the highlighted region with some notes. You can use
-        <code>border</code>,
-        <code>fill</code>
-        <code>dash-array</code> properties to customize the striplines.
+        In this example, you can see how to render and configure a strip line for the chart. To repeat the strip line, you need to set the StartFromAxis, Size, IsRepeat, and RepeatEvery properties accordingly in ChartStripline.
     </p>
     <p>
         Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
@@ -64,12 +59,15 @@
     <p>
         More information on the stripline recurrence can be found in this
         <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/strip-line/#recurrence-stripline">documentation
-            section
+            section.
         </a>.
     </p>
 </div>
 <style>
     #control-container {
         padding: 0px !important;
+    }
+    #xIndex,#yIndex:hover {
+        cursor: pointer;
     }
 </style>

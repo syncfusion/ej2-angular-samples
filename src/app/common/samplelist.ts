@@ -74,15 +74,16 @@ import { speedDialAppRoutes } from '../speed-dial/speed-dial.module';
 import { mentionAppRoutes } from '../mention/mention.module';
 import { skeletonAppRoutes } from '../skeleton/skeleton.module';
 import { ratingAppRoutes } from '../rating/rating.module';
+import { ribbonAppRoutes } from '../ribbon/ribbon.module';
 export let samplesList: any = [
     {
         'name': 'Data Grid', 'type':'update', 'category': 'Grids', 'order': '01', 'path': 'grid', 'samples': gridRouteConfig, 'ftName': 'datagrid'
     },
     {
-        'name': 'Pivot Table', 'category': 'Grids', 'order': '01', 'path': 'pivot-table', 'samples': pivottableRouteConfig, 'type': 'update'
+        'name': 'Pivot Table', 'category': 'Grids', 'order': '01', 'path': 'pivot-table', 'samples': pivottableRouteConfig
     },
     {
-        'name': 'Tree Grid', 'category': 'Grids', 'order': '01', 'path': 'treegrid', 'samples': treegridRouteConfig, 'type': 'update'
+        'name': 'Tree Grid', 'category': 'Grids', 'order': '01', 'path': 'treegrid', 'samples': treegridRouteConfig
     },
     {
         'name': 'Spreadsheet', 'category': 'Grids', 'order': '04', 'path': 'spreadsheet', 'samples': spreadsheetAppRoutes, 'ftName': 'spreadsheet'
@@ -94,7 +95,7 @@ export let samplesList: any = [
         'name': 'Stock Chart', 'category': 'Data visualization', 'order': '02', 'path': 'stock-chart', 'samples': stockChartAppRoutes
     },
     {
-        'name': 'Arc Gauge', 'type':'new', 'category': 'Data visualization', 'order': '02', 'path': 'arc-gauge', 'samples': arcgaugeAppRoutes
+        'name': 'Arc Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'arc-gauge', 'samples': arcgaugeAppRoutes
     },
     {
         'name': 'Circular Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'circular-gauge', 'samples': circulargaugeAppRoutes
@@ -142,7 +143,7 @@ export let samplesList: any = [
         'name': "PDF Viewer", 'category': "File Viewers & Editors", 'order': '11', 'path': "pdfviewer", 'samples': pdfViewerAppRoutes, 'ftName': "pdfviewer"
     },
     {
-        'name': "Rich Text Editor", 'category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "rich-text-editor", 'samples': rteAppRoutes
+        'name': "Rich Text Editor", 'type':'update', 'category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "rich-text-editor", 'samples': rteAppRoutes
     },
     {
         'name': 'DocumentEditor', 'category': 'File Viewers & Editors', 'order': '03', 'path': 'document-editor', 'samples': documentEditorAppRoutes, 'ftName': 'document-editor', 'type': 'update'
@@ -151,7 +152,7 @@ export let samplesList: any = [
         "name": "Image Editor", 'category': 'File Viewers & Editors', 'ftName': 'image-editor', 'order': '03', 'path': 'image-editor', 'samples': ImageEditorAppRoutes, "type": "preview"
     },
     {
-        'name': 'Scheduler', 'category': 'Calendars', 'type':'update', 'order': '04', 'path': 'schedule', 'samples': scheduleRouteConfig, 'ftName': 'scheduler'
+        'name': 'Scheduler', 'category': 'Calendars', 'order': '04', 'path': 'schedule', 'samples': scheduleRouteConfig, 'ftName': 'scheduler'
     },
     {
         'name': 'Calendar', 'category': 'Calendars', 'order': '04', 'path': 'calendar', 'samples': calendarAppRoutes
@@ -229,13 +230,16 @@ export let samplesList: any = [
         'name': 'Tab', 'category': 'Navigation', 'order': '06', 'path': 'tab', 'samples': tabAppRoutes, 'ftName': "tabs"
     },
     {
-        'name': 'Toolbar', 'category': 'Navigation', 'type':'update', 'order': '06', 'path': 'toolbar', 'samples': toolbarAppRoutes, 'ftName': "toolbar"
+        'name': 'Toolbar', 'category': 'Navigation', 'order': '06', 'path': 'toolbar', 'samples': toolbarAppRoutes, 'ftName': "toolbar"
     },
     {
         'name': 'TreeView', 'category': 'Navigation', 'order': '06', 'path': 'treeview', 'samples': treeAppRoutes, 'ftName': "treeview"
     },
     {
         'name': 'File Manager', 'category': 'Navigation', 'order': '06', 'path': 'file-manager', 'samples': fileManagerAppRoutes
+    },
+    {
+        'name': 'Ribbon', 'category': 'Navigation', 'type':'preview', 'order': '06', 'path': 'ribbon', 'samples': ribbonAppRoutes
     },
     {
         'name': "Badge", 'category': 'Notifications', 'order': '07', 'path': "badge", 'samples': badgeAppRoutes
@@ -247,7 +251,7 @@ export let samplesList: any = [
         'name': "Toast", 'category': 'Notifications', 'order': '07', 'path': "toast", 'samples': toastAppRoutes, 'ftName': "toast"
     },
     {
-        'name': "Progress Bar", 'category': 'Notifications', 'order': '07', 'path': "progress-bar", 'samples': progressBarAppRoutes, 'ftName': "progress-bar"
+        'name': "Progress Bar", 'category': 'Notifications', 'order': '07', 'path': "progress-bar", 'samples': progressBarAppRoutes, 'ftName': "progress-bar","type": "update"
     },
     {
         'name': "Skeleton", 'category': 'Notifications',"ftName": "skeleton", 'order': '07', 'path': "skeleton", "type": "preview", 'samples': skeletonAppRoutes
@@ -277,7 +281,7 @@ export let samplesList: any = [
         'name': 'In-place Editor', 'category': 'Inputs', 'order': '03', 'path': 'inplace-editor', 'samples': inplaceeditorAppRoutes, 'ftName': 'inplaceeditor'
     },
     {
-        'name': "Rating", 'category': 'Inputs',"ftName": "rating", 'order': '03', 'path': "rating", "type": "preview", 'samples': ratingAppRoutes
+        'name': "Rating", 'category': 'Inputs',"ftName": "rating", 'order': '03', 'path': "rating", 'samples': ratingAppRoutes
     },
     {
         'name': 'Avatar', 'category': 'Layout', 'order': '09', 'path': 'avatar', 'samples': avatarAppRoutes

@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme, TechnicalIndicatorModel } from '@syncfusion/ej2-angular-charts';
-import { chartData } from './financial-data';
+import { chartValue } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -17,8 +17,8 @@ export class RsiIndicatorComponent {
     public showZones: boolean = true;
     public overBought: number = 70;
     public overSold: number = 30;
-    public upperLine: string = 'red';
-    public lowerLine: string = 'green';
+    public upperLine: string = '#ffb735';
+    public lowerLine: string = '#f2ec2f';
     // indicators
     public indicators: TechnicalIndicatorModel[] = [
         {
@@ -37,7 +37,7 @@ export class RsiIndicatorComponent {
         }
     ];
 
-    public data1: Object[] = chartData;
+    public data1: Object[] = chartValue;
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'DateTime',
@@ -47,7 +47,7 @@ export class RsiIndicatorComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Price',
+        title: 'Price(in Million)',
         labelFormat: '${value}',
         plotOffset: 25,
         minimum: 50, maximum: 170,
@@ -77,7 +77,7 @@ export class RsiIndicatorComponent {
         mode: 'X',
         enablePan : true
     };
-    public title: string = 'AAPL 2012-2017';
+    public title: string = 'AAPL Stock Price 2012-2017';
     public tooltip: Object = {
         enable: true,
         shared: true

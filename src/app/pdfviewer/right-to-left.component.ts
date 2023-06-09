@@ -18,7 +18,7 @@ import { L10n } from '@syncfusion/ej2-base';
 
 export class RightToLeftComponent implements OnInit {
     public pdfviewerControl: PdfViewerComponent;
-    public service: string = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
+    public service: string = 'https://services.syncfusion.com/angular/production/api/pdfviewer';
     public document: string = 'RTLText.pdf';
     public culture: string = 'ar-AE';
     public annotationSettings ={author: 'مقبول'};

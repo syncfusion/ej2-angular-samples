@@ -1,6 +1,6 @@
 <div id="action-description">
     <p>
-        This sample demonstrates the rendering of indexed category axis in the chart by using two series.
+        This sample shows an indexed category axis in a chart with details about GDP growth across different countries.
     </p>
 </div>
 <div class="control-section">
@@ -35,11 +35,10 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to indexed axis in chart. For indexed category axis you can use <code>isIndexed</code> property.
+        The category axis is also rendered on the basis of the index values in the data source. To render the indexed category axis, set ValueType to Category and IsIndexed property to true.
     </p>
-    <p>
-        Hover the chart area to view trackball and its tooltip. Touch and hold to enable trackball in touch enabled devices.
-    </p>
+  
+  
     <br>
     <p>
         More information on the indexed axis can be found in this
@@ -49,5 +48,8 @@
 <style>
     .control-section {
         min-height: 450px;
+    }
+    #isIndexed:hover {
+        cursor: pointer;
     }
 </style>

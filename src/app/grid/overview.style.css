@@ -76,19 +76,6 @@ font-size: 13px;
   position: relative;
 }
 
-.rating .star {
-  font-size: 132%;
-  color: lightgrey;
-}
-
-.rating .star.checked {
-  color: #ffa600;
-}
-
-.rating .star:before {
-  content: '★';
-}
-
 #overviewgrid ::ng-deep td.e-rowcell.e-selectionbackground.e-active {
   background-color: transparent;
 }
@@ -212,4 +199,17 @@ td.e-rowcell .statustxt.e-inactivecolor {
   line-height: 18px;
   font-size: 10px;
   color: white;
+}
+
+.custom-rating.e-rating-container .e-rating-item-container .e-rating-icon {
+  -webkit-text-fill-color: lightgrey;
+  -webkit-text-stroke: 1px lightgrey;
+  font-size: 11px;
+}
+
+.custom-rating.e-rating-container .e-rating-item-container.e-rating-selected .e-rating-icon {
+  background: linear-gradient(to right, #ffa600 var(--rating-value), #ffa600 var(--rating-value));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #ffa600;
 }

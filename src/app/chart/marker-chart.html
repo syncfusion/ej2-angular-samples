@@ -1,16 +1,16 @@
 <div id="action-description">
     <p>
-        This sample illustrates the rendering of symbols in chart. In line based series, data points can be annotated by using symbols.
+        This sample illustrates Facebook users in a chart for different countries over several years. In a line-based series, data points can be annotated using symbols.
     </p>
 </div>
 <div class="control-section">
         <div align='center'>
             <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [legendSettings]='legend'
-                [title]='title' [tooltip]='tooltip' (load)='load($event)'>
+                [title]='title' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'>
                 <e-series-collection>
-                    <e-series [dataSource]='data' type='Line' xName='x' yName='y' name='December 2007' width=2 [marker]='marker1'> </e-series>
-                    <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='December 2008' width=2 [marker]='marker2'> </e-series>
-                    <e-series [dataSource]='data2' type='Line' xName='x' yName='y' name='December 2009' width=2 [marker]='marker3'> </e-series>
+                    <e-series [dataSource]='data' type='Line' xName='x' yName='y' name='2007' width=2 [marker]='marker1'> </e-series>
+                    <e-series [dataSource]='data1' type='Line' xName='x' yName='y' name='2008' width=2 [marker]='marker2'> </e-series>
+                    <e-series [dataSource]='data2' type='Line' xName='x' yName='y' name='2009' width=2 [marker]='marker3'> </e-series>
                 </e-series-collection>
             </ejs-chart>
         </div>
@@ -20,7 +20,7 @@
 </div>
 <div id="description">
    <p>
-       Each points in a series can be represented as a symbol through marker. We can also customize the shape, size and color of a symbol through <code>marker</code> properties. 
+       Each points in a series can be represented as a symbol through marker. We can also customize the shape, size and color of a symbol through <code>Chartmarker</code> class. 
     </p>
      <p>
         Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.

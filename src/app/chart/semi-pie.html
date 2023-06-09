@@ -6,13 +6,13 @@
 <div class="control-section">
         <ejs-accumulationchart id='container' [legendSettings]="legendSettings" [tooltip]="tooltip" (load)='load($event)' [annotations]='annotations' [enableAnimation]="enableAnimation" [enableBorderOnMouseMove]='false'>
             <e-accumulation-series-collection>
-                <e-accumulation-series name='Browser' [dataSource]='data' xName='Browser' yName='Users' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%" [radius]="radius" [explode]="explode" [dataLabel]="dataLabel" tooltipMappingName='tooltipMappingName'>
+                <e-accumulation-series name='Browser' [dataSource]='data' xName='Browser' yName='Users' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%" [radius]="radius" [dataLabel]="dataLabel" tooltipMappingName='tooltipMappingName'>
                 </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
 </div>
 <div id="description">
-    <p> In this example, you can see how to render a semi pie chart using <code>StartAngle</code> and <code>EndAngle</code> properties. Data labels are wrapped to fit inside the pie slice.</p>
+    <p> In this example, you can see how to render a semi pie chart using <code>StartAngle</code> and <code>EndAngle</code> properties. Data labels are wrapped to fit inside the pie slice. To enable the datalabel wrap feature, use the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/data-label#text-wrap">textwrap</a> datalabel property.</p>
     <p>
         More information on the data labels can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/data-label/">documentation section</a>.
     </p>

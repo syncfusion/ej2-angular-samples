@@ -27,7 +27,7 @@ export class CustomToolbarComponent implements OnInit {
     public customToolbar: ToolbarComponent;
     @ViewChild('zoomToolbar')
     public zoomToolbar: ToolbarComponent;
-    public service: string = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
+    public service: string = 'https://services.syncfusion.com/angular/production/api/pdfviewer';
     public document: string = 'Hive_Succinctly.pdf';
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['pdfviewer.component.css'];

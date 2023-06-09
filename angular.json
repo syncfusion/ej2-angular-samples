@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngsb10": {
+    "ej2-angular-samples": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -16,8 +16,10 @@
             "outputPath": "output",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "./tsconfig.app.json",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
               "src/assets",
@@ -29,48 +31,52 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
               "optimization": true,
-              "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "ngsb10:build"
-          },
           "configurations": {
             "production": {
-              "browserTarget": "ngsb10:build:production"
+              "browserTarget": "ej2-angular-samples:build:production"
+            },
+            "development": {
+              "browserTarget": "ej2-angular-samples:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngsb10:build"
+            "browserTarget": "ej2-angular-samples:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "./tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -94,6 +100,9 @@
           }
         }
       }
-    }},
-  "defaultProject": "ngsb10"
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
 }

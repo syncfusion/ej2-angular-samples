@@ -25,13 +25,12 @@ export class PolarRangeColumnChartComponent {
         valueType: 'Category',
         title: 'Months',
         labelPlacement: 'OnTicks',
-        startAngle: 90,
         interval: 1,
         coefficient: Browser.isDevice ? 80 : 100
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        labelFormat: '{value}˚C',
+        
         minimum: 0, maximum: 15, interval: 5
     };
       // custom code start
@@ -42,9 +41,7 @@ export class PolarRangeColumnChartComponent {
 
     };
 
-    public text(args: ITextRenderEventArgs): void {
-        args.text = args.text.replace('˚C', '');
-    }
+   
 
     public marker: MarkerSettingsModel =  {
         dataLabel: {
@@ -59,12 +56,13 @@ export class PolarRangeColumnChartComponent {
         width: 3, color: 'white'
     };
     public tooltip: Object = {
-        enable: true
+        enable: true,
+        header: ""
     };
     public legendSettings: Object = {
         visible: false
     };
-    public title: string = 'Maximum and Minimum Temperature';
+    public title: string = 'Temperatures of Germany';
     @ViewChild('chart')
     public chart: ChartComponent;
     public seriesType: DropDownList;

@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, IAxisLabelRenderEventArgs, ChartTheme, TechnicalIndicatorModel } from '@syncfusion/ej2-angular-charts';
-import { chartData } from './financial-data';
+import { chartValue } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -13,7 +13,7 @@ import { Browser } from '@syncfusion/ej2-base';
     encapsulation: ViewEncapsulation.None
 })
 export class AccumulationDistributionComponent {
-    public data1: Object[] = chartData;
+    public data1: Object[] = chartValue;
     // indicators
     public indicators: TechnicalIndicatorModel[] = [
         {
@@ -73,7 +73,7 @@ export class AccumulationDistributionComponent {
         enablePan : true
     };
     //Initializing Title
-    public title: string = 'AAPL 2012-2017';
+    public title: string = 'AAPL Stock Price 2012-2017';
     public tooltip: Object = {
         enable: true, shared: true
     };

@@ -1,8 +1,10 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { SelectionSettingsModel } from '@syncfusion/ej2-dropdowns';
+import { ListBoxComponent, CheckBoxSelection } from '@syncfusion/ej2-angular-dropdowns';
 /**
  * ListBox Checkbox Selection sample
  */
+ListBoxComponent.Inject(CheckBoxSelection);
 @Component({
     selector: 'control-content',
     templateUrl: 'checkbox.html',

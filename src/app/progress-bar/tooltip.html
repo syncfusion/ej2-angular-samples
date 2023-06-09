@@ -1,0 +1,138 @@
+<div class="control-section">
+    <div class="tooltip-linear-parent">
+        <div class="col-lg-12 col-md-12" style="margin-top:0.5%">
+            <div class="col-lg-12 col-md-12 tooltip-progressbar-label">HTML5</div>
+            <div class="tooltip-linear-progress">
+                <div id="tooltip-lineardeterminate">
+                    <ejs-progressbar #linear id='linear' [type]='type'  [value]='75' [maximum]='max' [minimum]='min'
+                        [width]='width'
+                        [height]='height'
+                        [tooltip]='tooltip'
+                        [animation]='animation'
+                        [trackThickness] = '20'
+                        [progressThickness] = '20'
+                        (load)='load($event)'>
+                    </ejs-progressbar>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12" style="margin-top:0.5%">
+            <div class="col-lg-12 col-md-12 tooltip-progressbar-label">CSS3</div>
+            <div class="tooltip-linear-progress">
+                <div id="tooltip-linearindeterminate">
+                    <ejs-progressbar #linear1 id='linear1' [type]='type1' [maximum]='max1' [minimum]='min1'
+                        [value]='65' [width]='width' [height]='height1'
+                        [animation]='animation'
+                        [tooltip]='tooltip'
+                        [trackThickness] = '20'
+                        [progressThickness] = '20'
+                        (load)='load($event)'>
+                    </ejs-progressbar>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12" style="margin-top:0.5%">
+            <div class="col-lg-12 col-md-12 tooltip-progressbar-label">Bootstrap</div>
+            <div class="tooltip-linear-progress">
+                <div id="tooltip-linearsegment">
+                    <ejs-progressbar #linear3 id='linear3' [type]='type3' [maximum]='max3' [minimum]='min3'
+                        [value]='55' [width]='width' [height]='height3'
+                        [animation]='animation'
+                        [tooltip]='tooltip'
+                        [trackThickness] = '20'
+                        [progressThickness] = '20'
+                         (load)='load($event)'>
+                    </ejs-progressbar>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12" style="margin-top:0.5%">
+            <div class="col-lg-12 col-md-12 tooltip-progressbar-label">JavaScript</div>
+            <div class="tooltip-linear-progress">
+                <div id="tooltip-linearbuffer">
+                    <ejs-progressbar #linear2 id='linear2' [type]='type2' [maximum]='max3' [minimum]='min3'
+                        [value]='75' [width]='width' [height]='height2'
+                        [tooltip]='tooltip'
+                        [animation]='animation'   [trackThickness] = '20'
+                        [progressThickness] = '20'
+                        (load)='load($event)'>
+                    </ejs-progressbar>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12" style="margin-top:0.5%">
+            <div class="col-lg-12 col-md-12 tooltip-progressbar-label">MySQL</div>
+            <div class="tooltip-linear-progress">
+                <div id="tooltip-linearbuffer">
+                    <ejs-progressbar #linear4 id='linear4' [type]='type3' [maximum]='max3' [minimum]='min3'
+                        [value]='75' [width]='width' [animation]='animation'
+                        [height]='height2'
+                        [tooltip]='tooltip'
+                        [trackThickness] = '20'
+                        [progressThickness] = '20'
+                        (load)='load($event)'>
+                    </ejs-progressbar>
+                </div>
+            </div>
+        </div>
+    </div>
+<div id="action-description">
+    <p>
+        This sample illustrates a linear progress bar with a tooltip.
+    </p>
+</div>
+<div id="description">
+    <p>In this example, you can see how to render and configure the linear progress bar with a tooltip. The <code>format</code> and <code>textStyle</code> properties in the tooltip settings can be used to format and customize the tooltip text.</p>
+</div>
+<style>
+    .e-progressbar,
+    #tooltip-lineardeterminate,
+    #tooltip-linearindeterminate,
+    #tooltip-linearbuffer,
+    #tooltip-linearsegment {
+        display: block;
+    }
+
+    #control-container {
+        padding: 0px !important;
+    }
+
+    .replay-progressbar {
+        right: 100px;
+    }
+
+    .tooltip-linear-parent {
+        text-align: center;
+        width: 80%;
+        margin: auto !important;
+    }
+
+    .tooltip-progressbar-label {
+         text-align: left;
+        font-family: Roboto-Regular;
+        font-size: 14px;
+        color: #3D3E3C;
+        top: 10px;
+        margin-left: 10px;
+        padding: 0px;
+    }
+
+    #successtext {
+        color: black;
+        top: 20px;
+        right: 245px;
+    }
+
+    #warningtext {
+        color: black;
+        top: 20px;
+        right: 268px;
+    }
+
+    #errortext {
+        color: black;
+        top: 20px;
+        right: 260px;
+    }
+
+</style> 

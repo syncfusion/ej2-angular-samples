@@ -1,10 +1,10 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
 import { SpreadsheetComponent, SheetModel } from '@syncfusion/ej2-angular-spreadsheet';
-import { DataManager, Query } from '@syncfusion/ej2-data';
+import { DataManager, ODataAdaptor } from '@syncfusion/ej2-data';
 /**
  * Remote Data Binding Spreadsheet Controller
  */
-const SERVICE_URI: string = 'https://js.syncfusion.com/demos/ejServices//wcf/Northwind.svc/Orders';
+const SERVICE_URI: string = 'https://services.syncfusion.com/angular/production/api/Orders';
 
 @Component({
     selector: 'control-content',
@@ -19,15 +19,31 @@ export class RemoteDataBindingController {
     }
     @ViewChild('remoteDataBinding')
     public spreadsheetObj: SpreadsheetComponent;
-    public openUrl = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/open';
-    public saveUrl = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save';
-    public query: Query = new Query().select(['OrderID', 'CustomerID', 'ShipName', 'ShipCity', 'ShipCountry', 'Freight']).take(200);
+    public openUrl = 'https://services.syncfusion.com/angular/production/api/spreadsheet/open';
+    public saveUrl = 'https://services.syncfusion.com/angular/production/api/spreadsheet/save';
     public data: DataManager = new DataManager({
-        url: 'https://js.syncfusion.com/demos/ejServices//wcf/Northwind.svc/Orders',
-        crossDomain: true
+        url: 'https://services.syncfusion.com/angular/production/api/Orders',
+        adaptor: new CustomAdaptor(),
     });
     created() {
         // Apply style to a range
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center' }, 'A1:G1');
+    }
+}
+
+//Custom code to handle data
+class CustomAdaptor extends ODataAdaptor {
+    public processResponse(): Object {
+        let result: Object[] = [];
+        let original: { result: Object[]; count: number } = super.processResponse.apply(this, arguments);
+        original.result.forEach((item: { SNo: number }, idx: number) => {
+            result[idx] = {};
+            Object.keys(item).forEach((key: string) => {
+                if (['OrderID', 'CustomerID', 'Freight', 'ShipName', 'ShipCity', 'ShipCountry'].indexOf(key) > -1) {
+                    result[idx][key] = item[key];
+                }
+            });
+        });
+        return { result: result, count: original.count };
     }
 }

@@ -95,7 +95,7 @@ var ChartDataService = /** @class */ (function () {
             else {
                 value -= Math.random();
             }
-            point1 = { x: new Date(1950, i + 2, i), y: value.toFixed(1) };
+            point1 = { x: new Date(1960, i + 1, i), y: Math.round(value) };
             series1.push(point1);
         }
         return { 'series1': series1 };

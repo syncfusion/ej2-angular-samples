@@ -28,3 +28,11 @@
     border-color: transparent;
     box-shadow: none !important;
 }
+#TabContainer {
+    display: flex;
+}
+@media (max-width: 550px) {
+    #TabContainer {
+        display: block;
+    }
+}

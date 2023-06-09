@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme, TechnicalIndicatorModel } from '@syncfusion/ej2-angular-charts';
-import { chartData } from './financial-data';
+import { chartValue } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -13,9 +13,9 @@ import { Browser } from '@syncfusion/ej2-base';
     encapsulation: ViewEncapsulation.None
 })
 export class MomentumIndicatorComponent {
-    public data1: Object[] = chartData;
+    public data1: Object[] = chartValue;
     public period: number = 3;
-    public upperLine: string = 'red';
+    public upperLine: string = '#ffb735';
     // indicators
     public indicators: TechnicalIndicatorModel[] = [
         {
@@ -70,7 +70,7 @@ export class MomentumIndicatorComponent {
         mode: 'X',
         enablePan : true
     };
-    public title: string = 'AAPL 2012-2017';
+    public title: string = 'AAPL Stock Price 2012-2017';
     public tooltip: Object = {
         enable: true,
         shared: true

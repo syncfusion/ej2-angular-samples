@@ -42,6 +42,10 @@ export class PolarAreaChartComponent {
         title: 'Revenue in Millions',
         labelFormat: '{value}M'
     };
+    public legendSettings: Object = {
+        visible: true,
+        enableHighlight: true
+    };
     public marker: Object = {
         visible: false
     };

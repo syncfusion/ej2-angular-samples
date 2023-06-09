@@ -51,11 +51,17 @@ export class PolarLineChartComponent {
     };
     public marker: Object = {
         visible: true,
-        height: 10, width: 10,
+        height: 7, width: 7,
         shape: 'Pentagon',
+        isFilled: true
+    };
+    public legendSettings: Object = {
+        visible: true,
+        enableHighlight: true
     };
     public marker1: Object = {
-        visible: true, height: 10, width: 10, shape: 'Diamond'
+        visible: true, height: 7, width: 7, shape: 'Diamond',
+        isFilled: true
     };
       // custom code start
     public load(args: ILoadedEventArgs): void {

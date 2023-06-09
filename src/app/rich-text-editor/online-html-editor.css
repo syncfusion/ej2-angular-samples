@@ -61,6 +61,10 @@
   border-collapse: collapse;
 }
 
+.online-editor .content{
+  border: 1px solid #dddddd
+}
+
 .ej2-new .container-fluid {
   padding-right: 0px; 
   padding-left: 0px;
@@ -91,9 +95,6 @@ border-left: none;
 .online-editor .heading .right .e-pane .e-pane-horizontal .e-scrollable
 {
   padding:0px;
-}
-.online-editor .e-splitter.e-splitter-horizontal .e-pane.e-pane-horizontal, .e-splitter.e-splitter-vertical .e-pane.e-pane-horizontal {
-  min-width: 400px !important;
 }
 .sb-content-section .sb-content-tab-header {
   border-right: 1px solid #D7D7D7;

@@ -70,26 +70,37 @@ display: none;
 }
 #template_driven .upload-area button#browse {
 float: right;
-margin-top: -28px;
+margin-top: -32px;
 }
 .fabric #template_driven .upload-area button#browse,
 .highcontrast #template_driven .upload-area button#browse {
   float: right;
   margin-top: -32px;
   }
-  .bootstrap #template_driven .upload-area button#browse {
+  .bootstrap #template_driven .upload-area button#browse,
+ .bootstrap-dark #template_driven .upload-area button#browse {
   float: right;
   margin-top: -35px;
   }
   .fabric.e-bigger #template_driven .upload-area button#browse,
+  .fabric-dark.e-bigger #reactive .upload-area button#browse,
 .highcontrast.e-bigger #template_driven .upload-area button#browse,
-.bootstrap.e-bigger #template_driven .upload-area button#browse {
+.bootstrap.e-bigger #template_driven .upload-area button#browse,
+.bootstrap-dark.e-bigger #template_driven .upload-area button#browse {
     margin-top: -40px;
   }
-  .material.e-bigger #template_driven .upload-area button#browse {  
+.fluent-dark.e-bigger #reactive .upload-area button#browse,
+.fluent.e-bigger #reactive .upload-area button#browse,
+.tailwind-dark.e-bigger #reactive .upload-area button#browse,
+.tailwind.e-bigger #reactive .upload-area button#browse,
+.bootstrap5.e-bigger #reactive .upload-area button#browse,
+.bootstrap5-dark.e-bigger #reactive .upload-area button#browse {
+    margin-top: -41px;
+  }
+  .material.e-bigger #template_driven .upload-area button#browse,
+  .material-dark.e-bigger #template_driven .upload-area button#browse {  
     margin-top: -36px;
     }
-  .b
 #template_driven .form-group .e-float-input.upload-area .e-float-line, .material .e-float-input.upload-area .e-float-line {  
   width: 70%;
   margin-top: initial;

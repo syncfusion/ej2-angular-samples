@@ -14,6 +14,8 @@ import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsVie
 
 export class DragAndDropController {
     public ajaxSettings: object;
+    public toolbarSettings: object;
+    public contextMenuSettings: object;
     public hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
     public ngOnInit(): void {
         this.ajaxSettings = {
@@ -22,5 +24,10 @@ export class DragAndDropController {
             uploadUrl: this.hostUrl + 'api/FileManager/Upload',
             downloadUrl: this.hostUrl + 'api/FileManager/Download'
         };
+        this.toolbarSettings = { items: ['NewFolder', 'SortBy', 'Cut', 'Copy', 'Paste', 'Delete',  'Refresh', 'Download', 'Rename', 'Selection', 'View', 'Details',] };
+        this.contextMenuSettings = {
+            layout: ['SortBy', 'View', 'Refresh', '|', 'Paste', '|', 'NewFolder', '|', 'Details', '|', 'SelectAll'],
+            visible: true
+        }
     }
 }

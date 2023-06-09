@@ -1,6 +1,6 @@
 <div id="action-description">
     <p>
-        This sample illustrates a combination of line and stacked column series. Tooltip shows the information about the data point.
+        This sample shows the annual growth of Gross Domestic Product (GDP) in France in a combination of line and stacked column series. A tooltip shows information about the data points.
     </p>
 </div>
 <div class="control-section">
@@ -8,11 +8,11 @@
         <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
             [primaryYAxis]='primaryYAxis' [legendSettings]='legend' [title]='title' [tooltip]='tooltip' (load)='load($event)'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='StackingColumn' xName='x' yName='y' name='Private Consumption'> </e-series>
-                <e-series [dataSource]='data1' type='StackingColumn' xName='x' yName='y' name='Government Consumption'> </e-series>
-                <e-series [dataSource]='data2' type='StackingColumn' xName='x' yName='y' name='Investment'> </e-series>
-                <e-series [dataSource]='data3' type='StackingColumn' xName='x' yName='y' name='Net Foreign Trade'> </e-series>
-                <e-series [dataSource]='data4' type='Line' xName='x' yName='y' name='GDP' width=2 [marker]='marker'> </e-series>
+                <e-series [dataSource]='data' type='StackingColumn' xName='x' yName='y' name='Private Consumption' > </e-series>
+                <e-series [dataSource]='data' type='StackingColumn' xName='x' yName='y1' name='Government Consumption'> </e-series>
+                <e-series [dataSource]='data' type='StackingColumn' xName='x' yName='y2' name='Investment' > </e-series>
+                <e-series [dataSource]='data' type='StackingColumn' xName='x' yName='y3' name='Net Foreign Trade' > </e-series>
+                <e-series [dataSource]='data' type='Line' xName='x' yName='y4' name='GDP' width=2 [marker]='marker1'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
@@ -22,9 +22,8 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the different type of charts. You can render any combination of
-        series in chart except bar. Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap
-        on a point in touch enabled devices.
+        In this example, you can see how to render and configure different type of charts. You can chart multiple variables on the y-axis. 
+        Tooltip is enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch enabled devices.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>
@@ -33,7 +32,7 @@
         <code>ColumnService</code> <code>LineService</code> into the <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the multiple series can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-series/">documentation section</a>.
+        More information about the multiple series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-series#multiple-series">documentation section</a>.
     </p>
 </div>

@@ -16,7 +16,7 @@ import {
 })
 
 export class DefaultPdfViewerComponent implements OnInit {
-    public service: string = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
+    public service: string = 'https://services.syncfusion.com/angular/production/api/pdfviewer';
     public document: string = 'PDF_Succinctly.pdf';
     ngOnInit(): void {
         // ngOnInit function

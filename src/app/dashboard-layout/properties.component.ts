@@ -38,12 +38,15 @@ export class PropertiesComponent {
         sourceFiles.files = ['properties-style.css'];
     }
     onChange(args: any): void {
-        if (args.event.target.getAttribute('name') === 'floating') {
+        let targetElement = args.event.target;
+        let previousElement = targetElement.previousElementSibling;
+        let nextElement = targetElement.nextElementSibling;
+        if ((previousElement !== null && previousElement.id === 'floating') || nextElement !== null && nextElement.previousElementSibling.id === 'floating') {
             this.dashboardObject.allowFloating = args.checked;
-        }
-        if (args.event.target.getAttribute('name') === 'resizing') {
+         }
+         if ((previousElement !== null && previousElement.id === 'resizing') || nextElement !== null && nextElement.previousElementSibling.id === 'resizing') {
             this.dashboardObject.allowResizing = args.checked;
-        }
+         }
     }
 	
 	onChangeEvent(args: any): void  {

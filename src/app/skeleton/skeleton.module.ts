@@ -22,7 +22,7 @@ export const skeletonAppRoutes: Object[] = [
 
     },
     {
-        path: ':theme/skelton/animation',
+        path: ':theme/skeleton/animation',
         component: AnimationController,
         name: 'Animation',
         category: 'Skeleton',

@@ -67,11 +67,13 @@ export class HyperLinkComponent implements OnInit {
             args.currentCell.className.indexOf('e-summary') > -1) {
             cell += 'Summary ';
         }
-        if (args.currentCell.querySelector('.e-headercelldiv') && !(args.data as IAxisSet).indexObject) {
+        if ((args.currentCell.querySelector('.e-headercelldiv') && !(args.data as IAxisSet).indexObject) ||
+            args.currentCell.className.indexOf('e-cellvalue') > -1) {
             cell += 'Value Header ';
         } else if (args.currentCell.className.indexOf('e-rowsheader') > -1) {
             cell += 'Row Header ';
-        } else if (args.currentCell.className.indexOf('e-columnsheader') > -1) {
+        } else if (args.currentCell.className.indexOf('e-columnsheader') > -1 ||
+            args.currentCell.className.indexOf('e-pivotcell-container') > -1) {
             cell += 'Column Header ';
         } else if (args.currentCell.className.indexOf('e-valuescontent') > -1) {
             cell += 'Value ';

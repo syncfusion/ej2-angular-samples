@@ -19,8 +19,8 @@ export class FreezePaneComponent {
     public spreadsheetObj: SpreadsheetComponent;
     public data: Object[] = freezePaneData();
     public styles = { fontSize: "12pt", fontWeight: "bold", textAlign: "center", verticalAlign: "middle" }
-    public openUrl = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/open';
-    public saveUrl = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save';
+    public openUrl = 'https://services.syncfusion.com/angular/production/api/spreadsheet/open';
+    public saveUrl = 'https://services.syncfusion.com/angular/production/api/spreadsheet/save';
     public freezePane: number = 2;
     created() {
         this.spreadsheetObj.wrap("C2:P2");

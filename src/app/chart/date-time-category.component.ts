@@ -13,11 +13,11 @@ import { Browser } from '@syncfusion/ej2-base';
 })
 export class DateTimeCategoryAxisChartComponent {
     public data1: Object[] =  [
-        { x: new Date(2017, 11, 20), y: 21 }, { x: new Date(2017, 11, 21), y: 24 },
-        { x: new Date(2017, 11, 22), y: 24 }, { x: new Date(2017, 11, 26), y: 70 },
-        { x: new Date(2017, 11, 27), y: 75 }, { x: new Date(2018, 0, 2), y: 82 },
-        { x: new Date(2018, 0, 3), y: 53 }, { x: new Date(2018, 0, 4), y: 54 },
-        { x: new Date(2018, 0, 5), y: 53 }, { x: new Date(2018, 0, 8), y: 45 }
+        { x: new Date(2017, 11, 20), y: 21, DataLabelMappingName: "21M" }, { x: new Date(2017, 11, 21), y: 24, DataLabelMappingName: "24M" },
+        { x: new Date(2017, 11, 22), y: 24, DataLabelMappingName: "24M" }, { x: new Date(2017, 11, 26), y: 70, DataLabelMappingName: "70M" },
+        { x: new Date(2017, 11, 27), y: 75, DataLabelMappingName: "75M" }, { x: new Date(2018, 0, 2), y: 82, DataLabelMappingName: "82M" },
+        { x: new Date(2018, 0, 3), y: 53, DataLabelMappingName: "53M" }, { x: new Date(2018, 0, 4), y: 54, DataLabelMappingName: "54M" },
+        { x: new Date(2018, 0, 5), y: 53, DataLabelMappingName: "53M" }, { x: new Date(2018, 0, 8), y: 45, DataLabelMappingName: "45M" }
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
@@ -45,13 +45,14 @@ export class DateTimeCategoryAxisChartComponent {
         majorTickLines: { width: 0 },
         minorTickLines: { width: 0 },
     };
+    public marker: Object = { dataLabel: { visible: true, position: 'Top', enableRotation: Browser.isDevice ? true : false, angle: -90, name: 'DataLabelMappingName' } }
     public chartArea: Object = {
         border: {
             width: 0
         }
     };
     public tooltip: Object  = {
-        enable: true
+        enable: false
     };
     public width: string = Browser.isDevice ? '100%' : '75%';
     public legendSettings: Object = { visible: false };

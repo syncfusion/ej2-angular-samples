@@ -101,6 +101,11 @@
 .tailwind-dark #contentText .e-input-group.e-control-wrapper.e-ddl:hover,
 .tailwind-dark #contentText .e-input-group.e-ddl.e-input-focus,
 .tailwind-dark #contentText .e-input-group.e-ddl.e-input-focus::before,
-.tailwind-dark #contentText .e-input-group.e-ddl.e-input-focus::after {
+.tailwind-dark #contentText .e-input-group.e-ddl.e-input-focus::after,
+.fluent-dark #contentText .e-input-group.e-control-wrapper.e-ddl,
+.fluent-dark #contentText .e-input-group.e-control-wrapper.e-ddl:hover,
+.fluent-dark #contentText .e-input-group.e-ddl.e-input-focus,
+.fluent-dark #contentText .e-input-group.e-ddl.e-input-focus::before,
+.fluent-dark #contentText .e-input-group.e-ddl.e-input-focus::after {
     border-bottom: 1px dashed #f0f0f0;
 }

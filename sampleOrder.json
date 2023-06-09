@@ -858,6 +858,14 @@
             "keyboard-navigation": "Keyboard Navigations"
         }
     },
+    "ribbon": {
+        "ControlName": "Ribbon",
+        "Samples": {
+            "default":"Default Functionalities",
+            "simplified": "Simplified Mode",
+            "resize": "Ribbon Resizing"
+        }
+    },
     "rich-text-editor": {
         "ControlName": "Rich Text Editor",
         "Samples": {

@@ -13,7 +13,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
     providers: [ToolbarService]
 })
 export class TableOfContentsComponent {
-    public hostUrl: string = 'https://ej2services.syncfusion.com/production/web-services/';
+    public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
     @ViewChild('documenteditor_default')
     public container: DocumentEditorContainerComponent;
     public culture: string = 'en-US';
@@ -22,7 +22,6 @@ export class TableOfContentsComponent {
     onCreate(): void {
         let titleBarElement: HTMLElement = document.getElementById('default_title_bar');
         this.titleBar = new TitleBar(titleBarElement, this.container.documentEditor, true);
-        this.container.serviceUrl = this.hostUrl + WEB_API_ACTION;
         this.container.documentEditor.open(JSON.stringify(toc));
         this.container.documentEditor.documentName = 'Table of Contents';
         this.titleBar.updateDocumentTitle();

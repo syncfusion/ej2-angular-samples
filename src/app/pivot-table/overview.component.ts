@@ -8,6 +8,7 @@ import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/grid
 import { enableRipple, createElement, select } from '@syncfusion/ej2-base';
 import { ChartSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/chartsettings';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
+import { ExcelQueryCellInfoEventArgs } from '@syncfusion/ej2-grids';
 import { Observable } from 'rxjs';
 enableRipple(false);
 
@@ -79,6 +80,10 @@ export class OverviewComponent implements OnInit {
             reports = JSON.parse(localStorage.pivotviewReports);
         }
         if (args.report && args.reportName && args.reportName !== '') {
+            let report = JSON.parse(args.report);
+            report.dataSourceSettings.dataSource = [];
+            report.pivotValues = [];
+            args.report = JSON.stringify(report);
             reports.map(function (item: any): any {
                 if (args.reportName === item.reportName) {
                     item.report = args.report; isSaved = true;
@@ -110,7 +115,9 @@ export class OverviewComponent implements OnInit {
             }
         });
         if (args.report) {
-            this.pivotObj.dataSourceSettings = JSON.parse(args.report).dataSourceSettings;
+            let report = JSON.parse(args.report);
+            report.dataSourceSettings.dataSource = this.pivotObj.dataSourceSettings.dataSource;
+            this.pivotObj.dataSourceSettings = report.dataSourceSettings;
         }
     }
     removeReport(args: any) {
@@ -175,7 +182,12 @@ export class OverviewComponent implements OnInit {
         this.displayOption = { view: 'Both' } as DisplayOption;
         this.gridSettings = {
             columnWidth: 120, allowSelection: true, rowHeight: 36,
-            selectionSettings: { mode: 'Cell', type: 'Single', cellSelectionMode: 'Box' }
+            selectionSettings: { mode: 'Cell', type: 'Single', cellSelectionMode: 'Box' },
+            excelQueryCellInfo: this.observable.subscribe(args  => {
+                if (((args as ExcelQueryCellInfoEventArgs).cell as IAxisSet).axis === 'value' && ((args as ExcelQueryCellInfoEventArgs).cell as IAxisSet).value === undefined) {
+                    (args as ExcelQueryCellInfoEventArgs).style.numberFormat = undefined;
+                }
+            }) as any
         } as GridSettings;
 
         this.toolbarOptions = ['New', 'Save', 'SaveAs', 'Rename', 'Remove', 'Load',

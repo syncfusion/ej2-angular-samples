@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme, IRangeLoadedEventArgs, IChangedEventArgs,
 ChartComponent, IAxisLabelRenderEventArgs } from '@syncfusion/ej2-angular-charts';
-import { chartDataValue } from './financial-data';
+import { chartValue } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
 
 /**
@@ -17,7 +17,7 @@ import { Browser } from '@syncfusion/ej2-base';
 export class HiloOpenCloseChartComponent {
     @ViewChild('chartcontainer')
     public chart: ChartComponent;
-    public data1: Object[] = chartDataValue;
+    public data1: Object[] = chartValue;
 
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
@@ -36,25 +36,20 @@ export class HiloOpenCloseChartComponent {
 
     public tooltip: Object = {
         enable: true,
-        shared: true
+        shared: true,
+        header: ""
     };
     public marker: Object = {
         visible: false
     };
     public crosshair: Object = {
         enable: true,
-        lineType: 'Vertical', line: {
-            width: 0,
-        }
+        lineType: 'Vertical'
     };
     public legendSettings: Object = {
         visible: false
     };
-    public axisLabelRender(args: IAxisLabelRenderEventArgs): void {
-         if (args.axis.title === 'Price') {
-                args.text = '$' + args.text;
-            }
-    };
+   
     // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

@@ -1,17 +1,17 @@
 <div id="action-description">
     <p>
-        This sample demonstrates polar series with column type for mobile market subscriptions in different countries. The switching between polar and radar series can be done by using <code>Series Type</code> in property panel. 
+        This sample shows the top 10 mobile markets by the number of subscriptions in polar and radar charts using column series.
     </p>
 </div>
 <div class="control-section">
     <div class="col-lg-9">
-        <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)'>
+        <ejs-chart #chart style='display:block;' id='chartcontainer' [legendSettings]="legendSettings" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)'>
             <e-series-collection>
-                <e-series [marker]='marker' [dataSource]='data' type='Polar' drawType='Column' xName='x' yName='y' name='Mobile Subscriptions' [border]='border'>
+                <e-series [marker]='marker' [dataSource]='data' type='Polar' drawType='Column' xName='text' yName='y' name='Population' [border]='border'>
                 </e-series>
-                <e-series [marker]='marker' [dataSource]='data' type='Polar' drawType='Column' xName='x' yName='y1' name='Population in Millions' [border]='border'>
+                <e-series [marker]='marker' [dataSource]='data' type='Polar' drawType='Column' xName='text' yName='y1' name='Mobile Subscriptions' [border]='border'>
                 </e-series>
-                <e-series [marker]='marker' [dataSource]='data' type='Polar' drawType='Column' xName='x' yName='y2' name='3G/4G Subscriptions' [border]='border'>
+                <e-series [marker]='marker' [dataSource]='data' type='Polar' drawType='Column' xName='text' yName='y2' name='3G/4G Subscriptions' [border]='border'>
                 </e-series>
             </e-series-collection>
         </ejs-chart>
@@ -41,8 +41,7 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the column type charts. Column type charts are used for comparing the frequency, count, total or average of data in different categories. You can use <code>border</code>,
-        <code>fill</code> properties to customize the data appearance. <code>dataLabel</code> is used to represent individual data and its value.
+        In this example, you can see how to render and configure polar and radar charts with a column series. Switching between polar and radar series can be done using <b>Series Type</b> in the property panel.
     </p>
     <p>
         Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
@@ -54,8 +53,8 @@
         <code>PolarSeriesService</code> into the <code>@NgModule.providers</code> section.
     </p>
     <p>
-        More information on the polar column types series can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/polar-radar/#draw-types">documentation section</a>.
+        More information about the polar and radar chart with column series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/polar#column">documentation section</a>.
     </p>
 </div>
 <style>

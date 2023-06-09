@@ -3,7 +3,7 @@ import { IDataOptions, PivotView, Operators, IDataSet } from '@syncfusion/ej2-an
 import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
 import { Button } from '@syncfusion/ej2-buttons';
 import { NumericTextBox, ChangeEventArgs as NumericEventArgs } from '@syncfusion/ej2-inputs';
-import { FilterModel } from '@syncfusion/ej2-pivotview/src/pivotview/model/datasourcesettings-model';
+import { FilterModel } from '@syncfusion/ej2-pivotview/src/model/datasourcesettings-model';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(false);

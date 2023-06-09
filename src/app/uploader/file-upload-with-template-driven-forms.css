@@ -23,8 +23,7 @@ background: #f9f9f9;
 background: #000000;
 }
 #template_driven .upload-area {
-width: 100%;
-background: transparent;
+width: 75%;
 }
 #template_driven .form-group .submit-btn {
 margin-top: 15px;
@@ -69,34 +68,57 @@ top: 14%;
 .material #template_driven .form-group .e-upload, #template_driven .form-group .e-upload {
 display: none;
 }
+.bootstrap5 #template_driven .e-float-input input[readonly],
+.bootstrap5-dark #template_driven .e-float-input input[readonly],
+.bootstrap4 #template_driven .e-float-input input[readonly] {
+  background: none;
+}
 #template_driven .upload-area button#browse {
 float: right;
-margin-top: -28px;
+margin-top: -32px;
+margin-right: -106px;
 }
-.fabric #template_driven .upload-area button#browse,
-.highcontrast #template_driven .upload-area button#browse {
+.material #template_driven .upload-area button#browse,
+.material-dark #template_driven .upload-area button#browse {
   float: right;
-  margin-top: -32px;
+  margin-top: -27px;
+  margin-right: - 105px
   }
-  .bootstrap #template_driven .upload-area button#browse {
+.bootstrap #template_driven .upload-area button#browse,
+.bootstrap-dark #template_driven .upload-area button#browse {
   float: right;
   margin-top: -35px;
+  margin-right: -105px;
   }
-  .fabric.e-bigger #template_driven .upload-area button#browse,
-.highcontrast.e-bigger #template_driven .upload-area button#browse,
-.bootstrap.e-bigger #template_driven .upload-area button#browse {
+.fluent-dark .e-bigger #template_driven .e-float-input.upload-area button#browse,
+.fluent .e-bigger #template_driven .e-float-input.upload-area button#browse,
+.bootstrap5-dark .e-bigger #template_driven .e-float-input.upload-area button#browse,
+.bootstrap5 .e-bigger #template_driven .e-float-input.upload-area button#browse,
+.tailwind-dark .e-bigger #template_driven .e-float-input.upload-area button#browse,
+.tailwind .e-bigger #template_driven .e-float-input.upload-area button#browse, 
+.fabric-dark .e-bigger #template_driven .e-float-input.upload-area button#browse,
+.fabric .e-bigger #template_driven .e-float-input.upload-area button#browse,
+.highcontrast .e-bigger #template_driven .e-float-input.upload-area button#browse  {
+    margin-right: -120px;
     margin-top: -40px;
   }
-  .material.e-bigger #template_driven .upload-area button#browse {  
+  
+.material .e-bigger #template_driven .e-float-input.upload-area button#browse,
+.material-dark .e-bigger #template_driven .e-float-input.upload-area button#browse {
     margin-top: -36px;
-    }
-  .b
+    margin-right: -106px;
+}
+.bootstrap4 .e-bigger #template_driven .e-float-input.upload-area button#browse{
+  margin-top: -38px;
+}
+.bootstrap-dark .e-bigger #template_driven .e-float-input.upload-area button#browse,
+.bootstrap .e-bigger #template_driven .e-float-input.upload-area button#browse {
+	margin-top: -40px;
+}
+  
 #template_driven .form-group .e-float-input.upload-area .e-float-line, .material .e-float-input.upload-area .e-float-line {  
   width: 70%;
   margin-top: initial;
-}
-#template_driven .form-group .upload-area input {
-width: 70%;
 }
 
 .fabric #template_driven .form-group .upload-area input, .bootstrap #template_driven .form-group .upload-area input {
@@ -128,4 +150,14 @@ text-align: center;
 }
 .tailwind-dark #control_wrapper.control_wrapper { 
     background: #6c757d;
+}
+.fluent .e-bigger .e-dialog .e-dlg-header-content,
+.fluent-dark .e-bigger .e-dialog .e-dlg-header-content,
+.tailwind .e-bigger .e-dialog .e-dlg-header-content,
+.tailwind-dark .e-bigger .e-dialog .e-dlg-header-content{
+    padding-bottom: 2%;
+}
+.material-dark .e-bigger .e-dialog .e-dlg-header-content,
+.material .e-bigger .e-dialog .e-dlg-header-content{
+    padding-bottom: 3%;
 }

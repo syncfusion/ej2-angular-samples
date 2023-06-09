@@ -49,12 +49,6 @@ export class DateTimeComponent {
 
     public width: string = Browser.isDevice ? '100%' : '80%';
 
-    public axisLabelRender(args: IAxisLabelRenderEventArgs): void {
-        if (args.axis.name === 'primaryYAxis') {
-            args.text = '€' + args.text;
-        }
-    };
-
     public load(args: IRangeLoadedEventArgs) {
     args.rangeNavigator.rangeTooltipModule = new RangeTooltip(args.rangeNavigator);
     };

@@ -51,7 +51,7 @@ export class HeatmapEmptyPointComponent {
     };
     dataSource: Object = new SampleDataSource().emptyPointDataSource;
     public tooltipRender(args: ITooltipEventArgs): void {
-        args.content = [args.yLabel + ' | ' + args.xLabel + ' : ' + args.value + ' deffective units'];
+        args.content = [args.yLabel + ' | ' + args.xLabel + ' : ' + args.value + ' defective units'];
     };
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

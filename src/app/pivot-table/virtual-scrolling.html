@@ -30,7 +30,7 @@
         </span>
         <span id="performanceTime">Time Taken: 0 sec</span>
     </div>
-    <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings width='860' height='300' enableVirtualization='true'
+    <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings [width]='width' height='300' enableVirtualization='true'
         [gridSettings]='gridSettings'  (dataBound)='ondataBound($event)'>
     </ejs-pivotview>
 </div>

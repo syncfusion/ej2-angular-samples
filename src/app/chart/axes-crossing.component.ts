@@ -49,8 +49,8 @@ export class AxisCrossingChartComponent {
     }
     public marker: Object = {
         visible: false,
-        height: 12,
-        width: 12,
+        height: 7,
+        width: 7,
     };
     //Initializing Tooltip
         // custom code start
@@ -73,7 +73,8 @@ export class AxisCrossingChartComponent {
         this.chart.dataBind();
     };
     public legend: Object = {
-        visible: true
+        visible: true,
+        enableHighlight: true
     };
     public axis: DropDownList;
     public crossValue: NumericTextBox;

@@ -8,6 +8,26 @@
     margin: 25px auto;
 }
 
+.e-input-group-icon.e-date-icon::before, 
+*.e-control-wrapper .e-input-group-icon.e-date-icon::before {
+    transform: translate(0,1px);
+}
+
+.e-bigger .e-input-group-icon.e-date-icon::before, 
+.e-bigger *.e-control-wrapper .e-input-group-icon.e-date-icon::before {
+    transform: translate(0,2px);
+}
+
+.e-input-group .e-clear-icon, 
+.e-input-group.e-control-wrapper .e-clear-icon {
+    padding-top: 4px;
+}
+
+.e-bigger .e-input-group .e-clear-icon, 
+.e-bigger .e-input-group.e-control-wrapper .e-clear-icon {
+    padding-top: 5px;
+}
+
 .e-customStyle span.e-icons.highlight,
 .e-customStyle span.e-icons.highlight:before {
     color: rgb(0, 0, 255);

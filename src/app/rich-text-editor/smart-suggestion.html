@@ -1,0 +1,50 @@
+<div id="action-description">
+    <p>This example demonstrates how to easily apply formatting or insert media and tables in the Rich Text Editor content using the Mention component. To use it, simply type the slash (/) key in the editor and select the desired format from the suggestion list that appears.</p>
+</div>
+<div class="control-section e-rte-mention-format-section">
+    <div class="sample-container">
+        <div class="default-section" #mentionFormatIntegration id="mentionFormatIntegration">
+            <ejs-richtexteditor id="MentionInlineFormat" #MentionInlineFormat [toolbarSettings]='tools' placeholder="Type '/' and choose format" (actionBegin)="onActionBegin($event)" (created)="onCreate()">
+            </ejs-richtexteditor>
+            <ejs-mention #Mention [dataSource]='data' target='#MentionInlineFormat_rte-edit-view' [fields]='fieldsData' mentionChar="/" [allowSpaces]="true"  
+                popupWidth='320px' popupHeight='290px' (select)="applyCommand($event)" (beforeOpen)="beforeOpen()" (filtering)="filtering()">
+                <ng-template #itemTemplate let-data>
+                        <table class="format-table">
+                            <tr>
+                                <td>
+                                    <span id="icons" class={{data.icon}}></span>
+                                </td>
+                                <td>
+                                    <span class="font">{{data.formatName}}</span>
+                                    <span class="description">{{data.description}}</span>
+                                </td>
+                            </tr>
+                        </table>
+                </ng-template>
+            </ejs-mention>
+
+            <ejs-dialog #Dialog id="emojiDialog" [buttons]="dialogButtons" (overlayClick)="dialogOverlay()" [header]="header" [visible]="false"
+            width="37%" [isModal]="true" (created)="dialogCreate()" (open)="onDialogOpen()">
+                <ng-template #content>
+                    <div id="rteEmoticons-smiley">
+                        <div *ngFor="let smiley of smileys" class="char_block" title="{{ smiley.title }}" [innerHTML]="smiley.content"></div>
+                    </div>
+                </ng-template>
+            </ejs-dialog>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>The @mention component is integrated into the Rich Text Editor and shows the suggestion list when the slash (/) key is pressed in an editor and applies suggested formats. To achieve this, the sample is customized for the Mention and Rich Text Editor.</p>
+        <ul>
+          <li>Prevent the @mention default selection action by setting the <a target='_blank' href='https://ej2.syncfusion.com/angular/documentation/api/mention/selectEventArgs/#cancel'>args.cancel</a> as <code>true</code> at the <a target='_blank' href='https://ej2.syncfusion.com/angular/documentation/api/mention/selectEventArgs'>select</a> event.</li>
+          <li>Get the command name from the Mention component, select an event, and pass it to the public method <a target='_blank' href="https://ej2.syncfusion.com/angular/documentation/api/rich-text-editor#executecommand">executeCommand</a> to perform the specified formats on the selected text in an editor.</li>
+        </ul>
+    <p> The following formats are shown in the mention suggestion list; apply them in an editor.</p>
+    <ul>
+        <li><code>Basic blocks</code> - The Rich Text Editor supports basic text formatting blocks, including <code>paragraph</code>, <code>headings</code>, <code>code</code>,<code>quotation</code>, <code>lists</code>, and <code>table</code> making it easier for users to structure their content. When a user selects a basic block format, it will be applied to the next line or paragraph.</li>
+        <li><code>Inline formats</code> - The Rich Text Editor supports inline formatting, allowing you to add <code>emojis</code> to specific text within the the content.</li>
+        <li><code>Media formats</code> -  The Rich Text Editor also supports media formats, including <code>image</code>, <code>video</code>, and <code>audio</code>, making it an efficient tool for the content creation.</li>
+    </ul>
+</div>

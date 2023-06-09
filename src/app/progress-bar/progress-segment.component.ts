@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ProgressBar, ITextRenderEventArgs, AnimationModel, FontModel } from '@syncfusion/ej2-progressbar';
 import {ILoadedEventArgs, ProgressTheme} from '@syncfusion/ej2-progressbar';
-
+import { Browser } from '@syncfusion/ej2-base';
 /**
  * RTl sample
  */
@@ -20,7 +20,7 @@ export class ProgressBarProgressSegmentComponent {
     public height2: string = '200px';
     public trackThickness: number = 15;
     public progressThickness: number = 15;
-    public segmentCount: number = 50;
+    public segmentCount: number = Browser.isDevice ? 25 : 50;
     public gapWidth: number = 5;
     public min: number = 0;
     public max: number = 100;

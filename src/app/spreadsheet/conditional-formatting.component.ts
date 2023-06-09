@@ -18,8 +18,8 @@ export class ConditionalFormattingController {
     @ViewChild('spreadsheet')
     spreadsheetObj: SpreadsheetComponent;
     data: Object[] = conditionalFormatData();
-    public openUrl = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/open';
-    public saveUrl = 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save';
+    public openUrl = 'https://services.syncfusion.com/angular/production/api/spreadsheet/open';
+    public saveUrl = 'https://services.syncfusion.com/angular/production/api/spreadsheet/save';
     created() {
         this.spreadsheetObj.merge('A1:H1');
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center' }, 'A2:H2');

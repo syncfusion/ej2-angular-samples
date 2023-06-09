@@ -81,7 +81,7 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/adaptive', component: TreeGridAdaptiveComponent, 'name': 'Adaptive Layout',
     description: 'This example demonstrates the adaptive rendering behavior of Tree Grid features.', 
     order: '01', category: 'Tree Grid' },
-    { 'path': ':theme/treegrid/loading-animation', 'type': 'new', component: LoadingAnimationComponent, name: 'Loading Animation',
+    { 'path': ':theme/treegrid/loading-animation', component: LoadingAnimationComponent, name: 'Loading Animation',
     description: 'This demo for Essential JS 2 Tree Grid component shows the loading indicator when Tree Grid loading and refreshing.', 
     order: '01', category: 'Tree Grid' },
 
@@ -206,7 +206,7 @@ export const treegridRouteConfig: Object[] = [
     order: '09', category: 'Scrolling'},
     { 'path': ':theme/treegrid/virtual-scrolling', component: VirtualScrollingComponent, 'name': 'Virtual Scrolling',
     description: 'This demo demonstrates how to use Essential JS 2 Tree Grid to show a large data view without performance degradation by rendering only the required rows.', 
-    order: '09', category: 'Scrolling', type: 'update' },
+    order: '09', category: 'Scrolling'},
     { 'path': ':theme/treegrid/infinite-scrolling', component: InfiniteScrollingComponent, 'name': 'Infinite Scrolling',
     description: 'This demo demonstrates how to use Essential JS 2 Tree Grid to show a large data view without performance degradation by rendering only the required rows.', 
     order: '09', category: 'Scrolling' },

@@ -2,7 +2,7 @@
  * default sample
  */
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SmithchartTheme, ISmithchartLoadEventArgs, Smithchart, RenderType} from '@syncfusion/ej2-angular-charts';
+import { SmithchartTheme, ISmithchartLoadEventArgs, Smithchart, RenderType } from '@syncfusion/ej2-angular-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 @Component({

@@ -47,8 +47,8 @@ export class SummaryCustomizationComponent implements OnInit {
             } else if (args.value === 'Both') {
                 this.pivotObj.dataSourceSettings.showGrandTotals = false;
             }
-        }  
-        this.pivotObj.refreshData();     
+        }
+        this.pivotObj.refreshData();
     }
 
     onChange1(args: any) {
