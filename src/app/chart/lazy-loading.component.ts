@@ -44,7 +44,6 @@ export class LazyLoadingComponent {
     public chart: ChartComponent;
     // Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Day',
         valueType: 'DateTime',
         edgeLabelPlacement: 'Shift',
         skeleton: 'yMMM',
@@ -55,7 +54,9 @@ export class LazyLoadingComponent {
                 maximum: new Date(2014, 0, 1)
             },
             enable: true,
-            pointsLength: 1000
+            pointsLength: 1000,
+            enableZoom: false,
+            height: 14
         }
     };
     public height: string = '450';
@@ -91,7 +92,7 @@ export class LazyLoadingComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
     // custom code end
     public GetDateTimeData(start: Date, end: Date): { x: Date, y: number }[] {

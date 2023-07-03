@@ -10,4 +10,8 @@ import { Component, Inject, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 
-export class DefaultFABComponent { } 
+export class DefaultFABComponent {
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['default.css'];
+    }
+} 

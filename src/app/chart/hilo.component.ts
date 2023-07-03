@@ -50,7 +50,7 @@ export class HiloChartComponent {
     public tooltip: Object = {
         enable: true,
         shared: true,
-        enableMarker: false, header: "" 
+        enableMarker: false, header: "" ,format: "<b>Apple Inc.(AAPL)</b> <br> High : <b>${point.high}</b> <br> Low : <b>${point.low}</b>"
     };
     public legendSettings: Object = {
         visible: false
@@ -65,7 +65,7 @@ export class HiloChartComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
     // custom code end
     constructor() {

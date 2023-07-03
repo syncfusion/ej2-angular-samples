@@ -20,7 +20,7 @@ export class StripLineComponent {
 
     public primaryYAxis: Object = {
         lineStyle: { color: 'transparent' },
-        majorTickLines: { color: 'transparent', width: 0 },
+        majorTickLines: { color: 'transparent', height: 0 },
         stripLines: [{ start: 340, end: 380, color: '#3CB371', opacity: 0.1 }]
     };
     public chartArea: Object = {
@@ -32,11 +32,12 @@ export class StripLineComponent {
     public enable: boolean = true;
     public seriesType: string[] = [];
     public indicatorType: string[] = [];
+    public trendlineType: string[] = ['Linear', 'Exponential', 'Polynomial', 'Logarithmic', 'MovingAverage'];
      // custom code start
     public load(args: IStockChartEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
      // custom code end
     constructor() {

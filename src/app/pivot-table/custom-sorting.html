@@ -29,7 +29,7 @@
                         <tr style="height: 50px">
                             <td colspan="2">
                                 <div class="row">
-                                    <input id="sorting" type="checkbox">
+                                    <ejs-checkbox id="sorting" #sorting label="Enable Sorting" labelPosition="After" checked="true" (change)='changeSorting($event)'></ejs-checkbox>
                                 </div>
                             </td>
                         </tr>
@@ -40,7 +40,7 @@
                             </td>
                             <td>
                                 <div>
-                                    <input type="text" tabindex="1" id='sorting-fields' />
+                                    <ejs-dropdownlist id='sorting-fields' #sortingFields [dataSource]='fields' (change)='changeSortingFields($event)' index="0" enabled="true" [fields]='fieldsSortingFields'></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>
@@ -51,7 +51,9 @@
                             </td>
                             <td>
                                 <div>
-                                    <input type="text" placeholder="Select headers" tabindex="1" id='sorting-members' />
+                                    <ejs-multiselect id='sorting-members' #sortingMembers [dataSource]='data' [mode]='mode' [fields]='fieldsMembers' [showDropDownIcon]='true' [placeholder]='waterMarkMembers'
+                                    [showClearButton]="false" [enableSelectionOrder]="false" (select)='select($event)' (removed)='removed($event)' 
+                                    (open)='open($event)'></ejs-multiselect>
                                 </div>
                             </td>
                         </tr>
@@ -62,7 +64,7 @@
                             </td>
                             <td>
                                 <div>
-                                    <input type="text" tabindex="1" id='sorting-order' />
+                                    <ejs-dropdownlist id='sorting-order' #sortingOrder [dataSource]='order' (change)='changeSortingOrder($event)' index='0' enabled='true'></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>
@@ -70,7 +72,7 @@
                             <td></td>
                             <td>
                                 <div style="float: right;">
-                                    <button id="sorting-apply">Apply</button>
+                                    <button ejs-button #apply id="sorting-apply" [isPrimary]="true">Apply</button>
                                 </div>
                             </td>
                         </tr>

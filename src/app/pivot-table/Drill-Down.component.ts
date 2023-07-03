@@ -1,9 +1,8 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit,ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { DropDownList, ChangeEventArgs, MultiSelect, SelectEventArgs, RemoveEventArgs, PopupEventArgs, CheckBoxSelection } from '@syncfusion/ej2-dropdowns';
-import { CheckBox, Button } from '@syncfusion/ej2-buttons';
+import { ChangeEventArgs, MultiSelect, SelectEventArgs, RemoveEventArgs, PopupEventArgs, CheckBoxSelection, DropDownListComponent, MultiSelectComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
-import { SortModel } from '@syncfusion/ej2-pivotview/src/model/datasourcesettings-model';
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(false);
 MultiSelect.Inject(CheckBoxSelection);
@@ -23,16 +22,11 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
 
 export class DrillDownComponent implements OnInit {
     public dataSourceSettings: IDataOptions;
-    public field1: DropDownList
-    public membersOrder: MultiSelect;
-    public fieldsddl: MultiSelect;
-    public optionsdll: DropDownList;
     public gridSettings: GridSettings;
     public isRowSelect: boolean = false;
     public isColumnSelect: boolean = false;
     public values: { [key: string]: Object }[] = [];
     public index: number;
-    public applyBtn: Button;
     public fieldCollections: { [key: string]: { [key: string]: Object }[] } = {};
     public options: { [key: string]: Object; }[] = [
         { value: 'allHeaders', text: 'All headers' },
@@ -47,10 +41,29 @@ export class DrillDownComponent implements OnInit {
         { Field: 'Country', expandAll: false },
         { Field: 'Year', expandAll: false }
     ];
+    public fieldsOptionsdll: Object= { value: 'value', text: 'text' };
+    public valueOptionsdll: string= 'rowHeaders';
+    public fieldsFieldsddl: Object= { text: 'Field' };
+    public waterMarkfieldsddl: string= 'Select fields';
+    public fieldsField1:Object = { text: 'Field' };
+    public valueField1: string = 'Country';
+    public fieldsMembersOrder: Object = { text: 'Member' };
+    public waterMark: string = 'Select headers'; 
+    public mode: string;
     public data: { [key: string]: Object; }[] = [];
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
+    @ViewChild('expandall')
+    public optionsdll: DropDownListComponent;
+    @ViewChild('expandFields')
+    public fieldsddl: MultiSelectComponent;
+    @ViewChild('expandMembers')
+    public membersOrder: MultiSelectComponent;
+    @ViewChild('expandFields1')
+    public field1: DropDownListComponent;
+    @ViewChild('apply')
+    public applyBtn: ButtonComponent;
 
     /** To set the checked status of the members maintained in the object fieldCollections. */
     setMemberCheckedState(field: string, member: string, checkedState: string) {
@@ -127,128 +140,90 @@ export class DrillDownComponent implements OnInit {
         }
     }
 
+    changeOptionsdll (args: ChangeEventArgs): void {
+        (document.querySelector('.field_cls') as HTMLElement).style.display = 'none';
+        (document.querySelector('.field_cls_1') as HTMLElement).style.display = 'none';
+        (document.querySelector('.members_cls') as HTMLElement).style.display = 'none';
+        (document.querySelector('.apply_cls') as HTMLElement).style.display = 'none';
+        if (args.value == 'allHeaders') {
+            this.clear();
+            this.pivotObj.setProperties({ dataSourceSettings: { expandAll: true, drilledMembers: [{ name: 'Country', items: [] }, { name: 'Year', items: [] }] } }, true);
+            this.pivotObj.refreshData();
+        } else if (args.value == 'rowHeaders') {
+            this.clear();
+            this.pivotObj.setProperties({ dataSourceSettings: { drilledMembers: [{ name: 'Country', items: [] }, { name: 'Year', items: [] }] } }, true);
+            this.updateRowColumn(false, true, false);
+        } else if (args.value == 'columnHeader') {
+            this.clear();
+            this.pivotObj.setProperties({ dataSourceSettings: { drilledMembers: [{ name: 'Country', items: [] }, { name: 'Year', items: [] }] } }, true);
+            this.updateRowColumn(false, false, true);
+        } else if (args.value == 'specificFields') {
+            (document.querySelector('.field_cls') as HTMLElement).style.display = '';
+        } else if (args.value == 'specificHeaders') {
+            (document.querySelector('.field_cls_1') as HTMLElement).style.display = '';
+            (document.querySelector('.members_cls') as HTMLElement).style.display = '';
+            (document.querySelector('.apply_cls') as HTMLElement).style.display = '';
+        }
+    }
+  
+    selectMembersOrder (args: SelectEventArgs): void {
+        this.setMemberCheckedState((<any>this.field1).itemData.Field, args['item'].textContent, args['item'].textContent + '_' + true);
+        this.applyBtn.disabled = false;
+        this.storeMembers[(<any>this.field1).itemData.Field].push(args.itemData['Member']);
+    }
+    removedMembersOrder (args: RemoveEventArgs): void {
+        this.setMemberCheckedState((<any>this.field1).itemData.Field, args['item'].textContent, args['item'].textContent + '_' + false);
+        this.index = this.storeMembers[(<any>this.field1).itemData.Field].indexOf(args.itemData['Member']);
+        if (this.storeMembers[(<any>this.field1).itemData.Field].indexOf(args.itemData['Member']) > -1) {
+            this.storeMembers[(<any>this.field1).itemData.Field].splice(this.index, 1);
+        }
+    }
+    openMembersOrder (args: PopupEventArgs): void {
+        (args.popup.element.querySelector(".e-filter-parent") as HTMLElement).style.display = 'none';
+    } 
+  
+    selectFieldsddl (args: SelectEventArgs): void {
+        this.membersOrder.value = [];
+        if (this.storeMembers['Country'].length > 0 || this.storeMembers['Year'].length > 0) {
+            this.storeMembers = { 'Country': [], 'Year': [] };
+            this.isInitial = true;
+        }
+        if (args.itemData['Field'] === 'Country') {
+            this.pivotObj.setProperties({ dataSourceSettings: { drilledMembers: [{ name: 'Country', items: [] }, { name: 'Year', items: [] }] } }, true);
+            this.updateRowColumn(false, true, this.isColumnSelect);
+            this.isRowSelect = true;
+        }
+        else if (args.itemData['Field'] === 'Year') {
+            this.pivotObj.setProperties({ dataSourceSettings: { drilledMembers: [{ name: 'Country', items: [] }, { name: 'Year', items: [] }] } }, true);
+            this.updateRowColumn(false, this.isRowSelect, true);
+            this.isColumnSelect = true;
+        }
+    }
+    removedFieldsddl (args: RemoveEventArgs): void {
+        if (args.itemData['Field'] === 'Country') {
+            this.updateRowColumn(false, false, this.isColumnSelect);
+            this.isRowSelect = false;
+        }
+        else if (args.itemData['Field'] === 'Year') {
+            this.updateRowColumn(false, this.isRowSelect, false);
+            this.isColumnSelect = false;
+        }
+    }
+    openFieldsddl (args: PopupEventArgs): void {
+        (args.popup.element.querySelector(".e-filter-parent") as HTMLElement).style.display = 'none';
+    }
+    
+    changeField1 (args: ChangeEventArgs): void {
+        (this.membersOrder.dataSource as any) = this.fieldCollections[args.itemData['Field']];
+        this.membersOrder.value = this.getSelectedMembers(args.itemData['Field']);
+        this.membersOrder.dataBind();
+        this.field1.dataBind();
+    }
+
     ngOnInit(): void {
         this.gridSettings = {
             columnWidth: 140
         } as GridSettings;
-
-        this.membersOrder = new MultiSelect({
-            dataSource: this.values,
-            mode: 'CheckBox',
-            showDropDownIcon: true,
-            showClearButton: false,
-            enableSelectionOrder: false,
-            fields: { text: 'Member' },
-            select: (args: SelectEventArgs): void => {
-                this.setMemberCheckedState((<any>this.field1).itemData.Field, args['item'].textContent, args['item'].textContent + '_' + true);
-                this.applyBtn.disabled = false;
-                this.storeMembers[(<any>this.field1).itemData.Field].push(args.itemData['Member']);
-            },
-            removed: (args: RemoveEventArgs): void => {
-                this.setMemberCheckedState((<any>this.field1).itemData.Field, args['item'].textContent, args['item'].textContent + '_' + false);
-                this.index = this.storeMembers[(<any>this.field1).itemData.Field].indexOf(args.itemData['Member']);
-                if (this.storeMembers[(<any>this.field1).itemData.Field].indexOf(args.itemData['Member']) > -1) {
-                    this.storeMembers[(<any>this.field1).itemData.Field].splice(this.index, 1);
-                }
-            },
-            open: (args: PopupEventArgs): void => {
-                (args.popup.element.querySelector(".e-filter-parent") as HTMLElement).style.display = 'none';
-            }
-        });
-        this.membersOrder.appendTo('#expand-members');
-
-        this.fieldsddl = new MultiSelect({
-            dataSource: this.fields,
-            mode: 'CheckBox',
-            showDropDownIcon: true,
-            enabled: true,
-            showClearButton: false,
-            enableSelectionOrder: false,
-            fields: { text: 'Field' },
-            select: (args: SelectEventArgs): void => {
-                this.membersOrder.value = [];
-                if (this.storeMembers['Country'].length > 0 || this.storeMembers['Year'].length > 0) {
-                    this.storeMembers = { 'Country': [], 'Year': [] };
-                    this.isInitial = true;
-                }
-                if (args.itemData['Field'] === 'Country') {
-                    this.pivotObj.setProperties({ dataSourceSettings: { drilledMembers: [{ name: 'Country', items: [] }, { name: 'Year', items: [] }] } }, true);
-                    this.updateRowColumn(false, true, this.isColumnSelect);
-                    this.isRowSelect = true;
-                }
-                else if (args.itemData['Field'] === 'Year') {
-                    this.pivotObj.setProperties({ dataSourceSettings: { drilledMembers: [{ name: 'Country', items: [] }, { name: 'Year', items: [] }] } }, true);
-                    this.updateRowColumn(false, this.isRowSelect, true);
-                    this.isColumnSelect = true;
-                }
-            },
-            removed: (args: RemoveEventArgs): void => {
-                if (args.itemData['Field'] === 'Country') {
-                    this.updateRowColumn(false, false, this.isColumnSelect);
-                    this.isRowSelect = false;
-                }
-                else if (args.itemData['Field'] === 'Year') {
-                    this.updateRowColumn(false, this.isRowSelect, false);
-                    this.isColumnSelect = false;
-                }
-            },
-            open: (args: PopupEventArgs): void => {
-                (args.popup.element.querySelector(".e-filter-parent") as HTMLElement).style.display = 'none';
-            }
-        });
-        this.fieldsddl.appendTo('#expand-fields');
-
-        this.optionsdll = new DropDownList({
-            dataSource: this.options,
-            fields: { value: 'value', text: 'text' },
-            value: 'rowHeaders',
-            width: '100%',
-            change: (args: ChangeEventArgs) => {
-                (document.querySelector('.field_cls') as HTMLElement).style.display = 'none';
-                (document.querySelector('.field_cls_1') as HTMLElement).style.display = 'none';
-                (document.querySelector('.members_cls') as HTMLElement).style.display = 'none';
-                (document.querySelector('.apply_cls') as HTMLElement).style.display = 'none';
-                if (args.value == 'allHeaders') {
-                    this.clear();
-                    this.pivotObj.setProperties({ dataSourceSettings: { expandAll: true, drilledMembers: [{ name: 'Country', items: [] }, { name: 'Year', items: [] }] } }, true);
-                    this.pivotObj.refreshData();
-                } else if (args.value == 'rowHeaders') {
-                    this.clear();
-                    this.pivotObj.setProperties({ dataSourceSettings: { drilledMembers: [{ name: 'Country', items: [] }, { name: 'Year', items: [] }] } }, true);
-                    this.updateRowColumn(false, true, false);
-                } else if (args.value == 'columnHeader') {
-                    this.clear();
-                    this.pivotObj.setProperties({ dataSourceSettings: { drilledMembers: [{ name: 'Country', items: [] }, { name: 'Year', items: [] }] } }, true);
-                    this.updateRowColumn(false, false, true);
-                } else if (args.value == 'specificFields') {
-                    (document.querySelector('.field_cls') as HTMLElement).style.display = '';
-                } else if (args.value == 'specificHeaders') {
-                    (document.querySelector('.field_cls_1') as HTMLElement).style.display = '';
-                    (document.querySelector('.members_cls') as HTMLElement).style.display = '';
-                    (document.querySelector('.apply_cls') as HTMLElement).style.display = '';
-                }
-            }
-        });
-        this.optionsdll.appendTo('#expandall');
-
-        this.field1 = new DropDownList({
-            dataSource: this.fields,
-            fields: { text: 'Field' },
-            value: 'Country',
-            width: '100%',
-            change: (args: ChangeEventArgs) => {
-                (this.membersOrder.dataSource as any) = this.fieldCollections[args.itemData['Field']];
-                this.membersOrder.value = this.getSelectedMembers(args.itemData['Field']);
-                this.membersOrder.dataBind();
-                this.field1.dataBind();
-            }
-        });
-        this.field1.appendTo('#expand-fields-1');
-
-        this.applyBtn = new Button({
-            isPrimary: true
-        });
-        this.applyBtn.appendTo('#expand-apply');
 
         document.getElementById('expand-apply').onclick = () => {
             this.fieldsddl.value = [];
@@ -268,5 +243,7 @@ export class DrillDownComponent implements OnInit {
             { name: 'Amount', caption: 'Sold Amount' }],
             filters: [{ name: 'Product_Categories', caption: 'Product Categories' }]
         };
+
+        this.mode = 'CheckBox';
     }
 }

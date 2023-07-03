@@ -159,14 +159,13 @@
       <li><code>UrlAdaptor</code> - Use this to interact any remote services. This is the base adaptor for all remote
         based
         adaptors.</li>
-      <li><code>ODataAdaptor</code> - Use this to interact with OData endpoints.</li>
       <li><code>ODataV4Adaptor</code> - Use this to interact with OData V4 endpoints.</li>
       <li><code>WebApiAdaptor</code> - Use this to interact with Web API created under OData standards.</li>
       <li>Own Service - Custom databinding is used where data actions like paging, sorting are perfromed in
         <code>dataStateChange</code> event of grid.
       </li>
     </ul>
-    <p>By default ODataAdaptor is used in this demo. The adaptor type will be automatically assigned based on the
+    <p>By default ODataV4Adaptor is used in this demo. The adaptor type will be automatically assigned based on the
       selected
       data service. </p> <br>
     <p>The dataSource of grid can be dynamically changed using <code>changeDataSource</code> method by following the

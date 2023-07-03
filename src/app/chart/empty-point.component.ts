@@ -33,13 +33,13 @@ export class EmptyPointChartComponent {
     //Initializing Marker
     public marker: Object = {
         visible: false,
-        height: 10, width: 10
+        height: 7, width: 7
     };
      // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
      // custom code end
     public tooltip: Object = {
@@ -63,6 +63,9 @@ export class EmptyPointChartComponent {
                 this.chart.series[0].type = <ChartSeriesType>type;
                 if(this.chart.series[0].type === 'Spline') {
                     this.chart.series[0].marker.visible = true;
+                }
+                else {
+                    this.chart.series[0].marker.visible = false;
                 }
                 this.chart.refresh();
             }

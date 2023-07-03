@@ -54,8 +54,8 @@
         For API details, refer to the
         <b>"Field List"</b> sample description.
     </p>
-</div>
-<div>
+  </div>
+  <div>
     <div class="col-lg-8 control-section sb-property-border">
         <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings width='100%' height='300' (dataBound)='ondataBound($event)'
             [gridSettings]='gridSettings'>
@@ -74,7 +74,7 @@
                             </td>
                             <td style="padding-bottom: 16px">
                                 <div>
-                                    <input type="text" tabindex="1" id='fields' />
+                                    <ejs-dropdownlist id='fieldsddl' #fieldsddl [dataSource]='fields' (change)='changeFieldsddl($event)' index="0" width="100%"></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>
@@ -85,7 +85,7 @@
                             </td>
                             <td style="padding-bottom: 16px">
                                 <div class="conditionscls">
-                                    <input type="text" tabindex="1" id='conditions' />
+                                    <ejs-dropdownlist id='operatorddl' #operatorddl [dataSource]='operators' (change)='changeOperatorddl($event)' value="DoesNotEquals"></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>
@@ -96,7 +96,7 @@
                             </td>
                             <td style="padding-bottom: 16px">
                                 <div class="value1cls">
-                                    <input type="text" tabindex="1" id='value1' />
+                                    <ejs-maskedtextbox id='mask1' #mask1 value='' [placeholder]="waterMark" (change)='changeValue1($event)' width="100%"></ejs-maskedtextbox>
                                 </div>
                             </td>
                         </tr>
@@ -107,17 +107,17 @@
                             </td>
                             <td style="padding-bottom: 16px">
                                 <div class="value2cls">
-                                    <input type="text" tabindex="1" id='value2' />
+                                    <ejs-maskedtextbox id='value2' #value2 value='' [placeholder]="waterMark1" (change)='changeValue2($event)' width="100%"></ejs-maskedtextbox>
                                 </div>
                             </td>
                         </tr>
                         <tr style="height: 50px">
                             <td colspan="2">
                                 <div style="float:right;margin-right: 4px">
-                                    <button id="clear">Clear</button>
+                                    <button ejs-button #clear id="clear">Clear</button>
                                 </div>
                                 <div style="float:right;margin-right: 4px">
-                                    <button id="apply">Apply</button>
+                                    <button ejs-button #apply id="apply" [isPrimary]="true" [disabled]="true">Apply</button>
                                 </div>
                             </td>
                         </tr>
@@ -126,4 +126,4 @@
             </div>
         </div>
     </div>
-</div>
+  </div>

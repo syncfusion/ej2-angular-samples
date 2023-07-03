@@ -1,8 +1,8 @@
 <div id="action-description">
     <p>This sample demonstrates different types of grid cell selection options and an event for getting complete information about the selection. The selection of headers, value cells, and summary cells can be done through mouse and keyboard actions.
     </p>
-</div>
-<div id="description">
+  </div>
+  <div id="description">
     <p>
         This feature provides interactive support to highlight rows, columns, values, and summary cells that you select.
         Selection can be done through either mouse or keyboard interaction.
@@ -34,8 +34,8 @@
         The selected cell information can be seen in the Event Trace part with the help of the <code>cellSelected</code>
         event.
     </p>
-</div>
-<div id="pivot-table-section">
+  </div>
+  <div id="pivot-table-section">
     <div class="col-lg-8 control-section sb-property-border">
         <ejs-pivotview #pivotview id='PivotView' showTooltip='false' [dataSourceSettings]=dataSourceSettings width='100%' height='400'
             (cellSelected)='onCellSelected($event)' [gridSettings]='gridSettings'>
@@ -54,12 +54,7 @@
                             </td>
                             <td>
                                 <div>
-                                    <select id="mode" name="ddl-view-mode">
-                                        <option value='Cell' selected>Cell</option>
-                                        <option value='Row'>Row Only</option>
-                                        <option value='Column'>Column Only</option>
-                                        <option value='Both'>Both</option>
-                                    </select>
+                                    <ejs-dropdownlist id='mode' #mode [dataSource]='modeOptions' floatLabelType='Auto'  width="150" index='0' (change)='changeMode($event)'></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>
@@ -70,10 +65,7 @@
                             </td>
                             <td>
                                 <div>
-                                    <select id="type" name="ddl-view-mode">
-                                        <option value='Single'>Single</option>
-                                        <option value='Multiple' selected>Multiple</option>
-                                    </select>
+                                   <ejs-dropdownlist id='type' #type [dataSource]='typeOptions' floatLabelType='Auto' width="150" index='1' (change)='changeType($event)'></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>
@@ -97,4 +89,5 @@
             </div>
         </div>
     </div>
-</div>
+  </div>
+  

@@ -142,7 +142,7 @@
             </td>
             <td>
               <div>
-                <input type="text" tabindex="1" id='Pager_Position' />
+                <ejs-dropdownlist id='Pager_Position' #positionDropDown [dataSource]='pagerPositions' index="1" (change)='onDropDownChange($event)'></ejs-dropdownlist>
               </div>
             </td>
           </tr>
@@ -153,7 +153,7 @@
             </td>
             <td>
               <div>
-                <input type="text" tabindex="1" id='Pager_View' />
+                <ejs-dropdownlist id='Pager_View' #pagerViewDropDown [dataSource]='pagerViewData' index="2" (change)='onDropDownChange($event)'></ejs-dropdownlist>
               </div>
             </td>
           </tr>
@@ -164,7 +164,7 @@
             </td>
             <td>
               <div>
-                <input type="text" tabindex="1" id='Page_Size' />
+                <ejs-dropdownlist id='Page_Size' #pageSizeDropDown [dataSource]='pageSizes' index="2" (change)='onDropDownChange($event)'></ejs-dropdownlist>
               </div>
             </td>
           </tr>
@@ -175,7 +175,7 @@
             </td>
             <td>
               <div>
-                <input id="Compact_View" type="checkbox">
+                <ejs-checkbox id="Compact_View" [checked]="false" (change)='onCompactCheckBoxChange($event)'></ejs-checkbox>
               </div>
             </td>
           </tr>
@@ -186,7 +186,7 @@
             </td>
             <td>
               <div>
-                <input id="Inverse" type="checkbox">
+                <ejs-checkbox id="Inverse" [checked]="false" (change)='onInverseCheckBoxChange($event)'></ejs-checkbox>
               </div>
             </td>
           </tr>

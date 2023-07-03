@@ -25,32 +25,32 @@
         border-style: solid;
     }
     
-    .material-dark .photo,
+    .material-dark .rowphoto,
     .material-dark .details {
         border-color: #616161;
     }
 
-    .fabric-dark .photo,
+    .fabric-dark .rowphoto,
     .fabric-dark .details {
         border-color: #414040;
     }
 
-    .bootstrap-dark .photo,
+    .bootstrap-dark .rowphoto,
     .bootstrap-dark .details {
         border-color: #484848;
     }
 
-    .tailwind-dark .photo,
+    .tailwind-dark .rowphoto,
     .tailwind-dark .details {
         border-color: #4b5563;
     }
 
-    .bootstrap5-dark .photo,
+    .bootstrap5-dark .rowphoto,
     .bootstrap5-dark .details {
         border-color: rgb(68, 76, 84);
     }
 
-    .highcontrast .photo,
+    .highcontrast .rowphoto,
     .highcontrast .details {
         border-color: #969696;
     }

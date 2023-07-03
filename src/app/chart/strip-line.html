@@ -1,45 +1,41 @@
-<div id="action-description">
-    <p>
-        This sample highlights a certain temperature range recorded over a year using the strip line feature.
-    </p>
-</div>
 <div class="control-section">
     <div align='center'>
-        <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [width]='width'
+        <ejs-chart #chart style='display:block;' id='chartcontainer' [chartArea]="chartArea" [titleStyle]="titleStyle" [subTitle]="subTitle" [primaryXAxis]='primaryXAxis' [width]='width'
             [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' [legendSettings]='legendSettings'
             (load)='load($event)'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Spline' xName='Day' yName='Temperature' name='Product A' [marker]='marker' width=2
+                <e-series [dataSource]='data' type='Spline' xName='x' yName='wind' name='Wind Speed (km/h)' width=4 legendShape='HorizontalLine'
                     >
                 </e-series>
-                <e-series [dataSource]='data1' type='Spline' xName='Day' yName='Temperature' name='Product B' [marker]='marker' width=2
+                <e-series [dataSource]='data1' type='Spline' xName='x' yName='gust' name='Wind Gust (km/h)' width=4 legendShape='HorizontalLine'
                  >
             </e-series>
-            <e-series [dataSource]='data2' type='Spline' xName='Day' yName='Temperature' name='Product C' [marker]='marker' width=2
-            >
-        </e-series>
             </e-series-collection>
         </ejs-chart>
     </div> 
 </div>
+<div id="action-description">
+    <p>
+        This sample displays the changes in wind speed and gust with stripline feature.
+    </p>
+</div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure a strip line for the chart. Use the Start and End properties in the ChartStripline option to add a strip line to an axis. You can add more than one strip line to the axis.
+        In this example, you can see how to render and configure a strip line for the chart. Use the <code>start</code> and <code>end</code> properties in the <code>chartStripline</code> option to add a strip line to an axis. Additionally, the title for the chart can be positioned anywhere in the chart by using the <code>position</code> property in <code>titleStyle</code>.
     </p>
     <p>
-        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch
-        enabled devices.
+        <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
     </p>
     <br>
-    <p style="font-weight: 500">Injecting Module</p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
     <p>
-        Chart component features are segregated into individual feature-wise modules. To use strip line feature, we need
-        to inject <code>StriplineService</code> into the <code>@NgModule.providers</code> section.
+        Chart component features are segregated into individual feature-wise modules. To use strip line, we need to inject
+        <code>StripLineService</code> into the
+        <code>@NgModule.providers</code> section.
     </p>
     <p>
         More information on the strip line can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/strip-line/">documentation
-            section</a>.
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/strip-line">documentation section</a>.
     </p>
 </div>
 <style>
@@ -94,24 +90,7 @@
     #autumn stop[offset="0"] {
         stop-color: #b29f94;
     }
-    .productA {
-        width: 10px;
-        height: 10px;
-        color: black;
-        font-weight: bold;
-    }
-    .productB {
-        width: 10px;
-        height: 10px;
-        color: black;
-        font-weight: bold;
-    }
-    .productC {
-        width: 10px;
-        height: 10px;
-        color: black;
-        font-weight: bold;
-    }
+
     #autumn stop[offset="1"] {
         stop-color: #603813;
     }

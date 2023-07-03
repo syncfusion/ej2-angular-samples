@@ -23,7 +23,8 @@
     }
     .bootstrap5 #Indicators .description::before,
     .tailwind #Indicators .description::before, .tailwind-dark #Indicators .description::before,
-    .fluent #Indicators .description::before, .fluent-dark #Indicators .description::before {
+    .fluent #Indicators .description::before, .fluent-dark #Indicators .description::before,
+    .material3-dark #Indicators .okIcon::before,.material3 #Indicators .okIcon::before {
     content: '\e7c0';
     }
     .fabric #Indicators .description::before,

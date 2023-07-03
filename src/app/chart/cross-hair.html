@@ -5,8 +5,8 @@
 </div>
 <div class="control-section">
     <div align='center'>
-        <ejs-chart id='chartcontainer' style='display:block; width: 92%' [chartArea]='chartArea' [width]='width' align='center' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [axes]='axes' [title]='title' [crosshair]='crosshairLabel' (load)='load($event)' [legendSettings]='legend'>
+        <ejs-chart id='chartcontainer' style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [primaryXAxis]='primaryXAxis'
+            [primaryYAxis]='primaryYAxis' [axes]='axes' [title]='title' [crosshair]='crosshairLabel' (load)='load($event)' [zoomSettings]='zoomSettings' [legendSettings]='legend'>
             <e-series-collection>
                 <e-series [dataSource]='series1' type='Line' xName='xDate' yName='High' width=2 [border]='border' [marker]='marker'>
                 </e-series>

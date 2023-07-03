@@ -1,0 +1,163 @@
+<div class="control-section">
+<script src="script/diagram-common.ts"></script>
+<style>
+    .e-symbolpalette {
+        display: block;
+    }
+</style>
+
+<div style="width: 100%;">
+    <div id="palette-space" style="width:22%;float:left">
+        <ejs-symbolpalette id="symbolpalette" [expandMode]='expandMode' [palettes]='palettes' width="100%" height="700px" [symbolHeight]=60 [symbolWidth]=60 [symbolMargin]='symbolMargin' [getSymbolInfo]='getSymbolInfo' [getNodeDefaults]='getSymbolDefaults' [expandMode]="expandMode">
+        </ejs-symbolpalette>
+    </div>
+    <div id="diagram-space" style="width:55%;float:left">
+        <ejs-diagram #diagram id="diagram" width="100%" height="700px" [snapSettings]='snapSettings' (created)="created()" [getConnectorDefaults]='connDefaults' [getNodeDefaults]='nodeDefaults' (dragEnter)="dragEnter($event)" (created)="diagramCreate($event)" [scrollSettings] = "scrollSettings">
+        </ejs-diagram>
+    </div>
+    <div id="properties" style="width:22%;float:right">
+        <div class="property-panel-header">
+            Properties
+        </div>
+        <div class="row db-prop-row" style="margin-top: 10px;">
+            <div class="col-xs-12 db-col-left">
+                <div style="width:40%;float:left;margin-top: 5px;">
+                    <span>Scoll limit</span>
+                </div>
+                <div style="width:60%;float:right">
+                    <div class="db-text-input">
+                        <ejs-dropdownlist id='games' #sample [dataSource]='scrollLimitDatasource' (change)='scrollLimitChange($event)' [value]='value' ></ejs-dropdownlist>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="scrollableDiv">
+            <div class="property-panel-header">
+                Scrollable Area
+            </div>
+            <div class="row db-prop-row">
+                <div class="col-xs-12 db-col-left" >
+                    <div class="db-text-container">
+                        <div style="width:40%;float:left;margin-top: 5px;">
+                            <span>X</span>
+                        </div>
+                        <div style="width:60%;float:right">
+                            <ejs-textbox placeholder="10" (change)='scrollableX($event)'></ejs-textbox>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row db-prop-row" style="margin-top: 10px;">
+                <div class="col-xs-12 db-col-left">
+                    <div style="width:40%;float:left;margin-top: 5px;">
+                        <span>Y</span>
+                    </div>
+                    <div style="width:60%;float:right">
+                        <ejs-textbox placeholder="10" (change)='scrollableY($event)'></ejs-textbox>
+                    </div>
+                </div>
+            </div>
+            <div class="row db-prop-row" style="padding-top: 15px;">
+                <div class="col-xs-12 db-col-left" >
+                    <div class="db-text-container">
+                        <div style="width:40%;float:left;margin-top: 5px;">
+                            <span>Width</span>
+                        </div>
+                        <div style="width:60%;float:right">
+                            <ejs-textbox placeholder="1500" (change)='scrollableWidth($event)'></ejs-textbox>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row db-prop-row" style="padding-top: 10px;">
+                <div class="col-xs-12 db-col-left">
+                    <div style="width:40%;float:left;">
+                        <span>Height</span>
+                    </div>
+                    <div style="width:60%;float:right">
+                        <ejs-textbox placeholder="1500" (change)='scrollableHeight($event)'></ejs-textbox>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="canAutoScroll" style="padding-top: 20px;">
+            <div class="row db-prop-row">
+                <div class="col-xs-6 db-col-left">
+                    <span style="font-weight:550;font-size:14px;">Enable AutoScroll</span>
+                </div>
+                <div class="col-xs-6 db-col-right" style="padding-top: 10px;">
+                    <div class="db-text-input">
+                        <ejs-checkbox id='autoScroll' #sample [checked]='true' (change)='canAutoScrollFn($event)' ></ejs-checkbox>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div id="autoScrollDiv">
+            <div class="property-panel-header">
+                AutoScroll border
+            </div>
+            <div class="row db-prop-row">
+                <div class="col-xs-12 db-col-left">
+                    <div class="db-text-container">
+                        <div style="width:40%;float:left;margin-top: 5px;">
+                            <span>Left</span>
+                        </div>
+                        <div style="width:60%;float:right">
+                            <ejs-textbox value="30" (change)='autoScrollLeft($event)'></ejs-textbox>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row db-prop-row" style="padding-top: 10px;">
+                <div class="col-xs-12 db-col-left">
+                    <div style="width:40%;float:left;margin-top: 5px;">
+                        <span>Top</span>
+                    </div>
+                    <div style="width:60%;float:right">
+                        <ejs-textbox value="30" (change)='autoScrollTop($event)'></ejs-textbox>
+                    </div>
+                </div>
+            </div>
+            <div class="row db-prop-row" style="padding-top: 10px;">
+                <div class="col-xs-12 db-col-left">
+                    <div class="db-text-container">
+                        <div style="width:40%;float:left;margin-top: 5px;">
+                            <span>Right</span>
+                        </div>
+                        <div style="width:60%;float:right">
+                            <ejs-textbox value="30" (change)='autoScrollRight($event)'></ejs-textbox>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row db-prop-row" style="padding-top: 10px;">
+                <div class="col-xs-12 db-col-left">
+                    <div style="width:40%;float:left;margin-top: 5px;">
+                        <span>Bottom</span>
+                    </div>
+                    <div style="width:60%;float:right">
+                        <ejs-textbox value="30" (change)='autoScrollBottom($event)'></ejs-textbox>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
+</div>
+<div id="action-description">
+    <p>
+        This example illustrates how to scroll a diagram using vertical and horizontal scrollbars. The scroll limit property helps limit the scrolling area.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The scroll limit allows you to define the scrollable region of the Diagram while scrolling the page with a mouse.
+    </p>
+    <p> 
+        The scrollSettings <code>scrollLimit</code> property allows you to define the scrollable region of a Diagram. You may scroll inside the designated region if the scrollLimit is set to <code>limited</code>. When the scrollLimit is set to <code>Diagram</code>, you can scroll within the Diagram content. When the scrollLimit is set to <code>Infinity</code>, it allows infinite scrolling.
+    </p>
+    <p>
+        The scrollSettings <code>autoScrollBorder</code> property is used to specify the distance from the edge of a control at which auto-scrolling should occur. 
+    </p>
+    <br>
+</div>

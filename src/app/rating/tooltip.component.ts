@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 
 /**
  * Tooltip sample
@@ -11,4 +11,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 
 })
-export class TooltipRatingComponent {}
+export class TooltipRatingComponent {
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['tooltip.css'];
+    }
+}

@@ -16,130 +16,101 @@ let fontSize: string = Browser.isDevice ? '14px' : '18px';
 export class StripLineChartComponent {
 
     public data: Object[] = [
-        { Day: 'Jan', Temperature: 90 },
-        { Day: 'Feb', Temperature: 92 },
-        { Day: 'Mar', Temperature: 94 },
-        { Day: 'Apr', Temperature: 95 },
-        { Day: 'May', Temperature: 94 },
-        { Day: 'Jun', Temperature: 96 },
-        { Day: 'Jul', Temperature: 97 },
-        { Day: 'Aug', Temperature: 98 },
-        { Day: 'Sep', Temperature: 97 },
-        { Day: 'Oct', Temperature: 95 },
-        { Day: 'Nov', Temperature: 90 },
-        { Day: 'Dec', Temperature: 95 },
+        { x: new Date(2023, 4, 1), wind : 19 },
+        { x: new Date(2023, 4, 2), wind : 17 },
+        { x: new Date(2023, 4, 3), wind : 14 },
+        { x: new Date(2023, 4, 4), wind : 9 },
+        { x: new Date(2023, 4, 5), wind : 10 },
+        { x: new Date(2023, 4, 6), wind : 8 },
+        { x: new Date(2023, 4, 7), wind : 8 },
+        { x: new Date(2023, 4, 8), wind : 16 },
+        { x: new Date(2023, 4, 9), wind : 9 },
+        { x: new Date(2023, 4, 10), wind : 13 },
+        { x: new Date(2023, 4, 11), wind : 7 },
+        { x: new Date(2023, 4, 12), wind : 12 },
+        { x: new Date(2023, 4, 13), wind : 10 },
+        { x: new Date(2023, 4, 14), wind : 5 },
+        { x: new Date(2023, 4, 15), wind : 8 }
     ];
     public data1: Object[] = [
-        { Day: "Jan", Temperature: 85 },
-        { Day: "Feb", Temperature: 86 },
-        { Day: "Mar", Temperature: 87 },
-        { Day: "Apr", Temperature: 88 },
-        { Day: "May", Temperature: 87 },
-        { Day: "Jun", Temperature: 90 },
-        { Day: "Jul", Temperature: 91 },
-        { Day: "Aug", Temperature: 90 },
-        { Day: "Sep", Temperature: 93 },
-        { Day: "Oct", Temperature: 90 },
-        { Day: "Nov", Temperature: 85 },
-        { Day: "Dec", Temperature: 90 },
-    ];
-    public data2: Object[] = [
-        { Day: "Jan", Temperature: 80 },
-        { Day: "Feb", Temperature: 81 },
-        { Day: "Mar", Temperature: 82 },
-        { Day: "Apr", Temperature: 83 },
-        { Day: "May", Temperature: 84 },
-        { Day: "Jun", Temperature: 83 },
-        { Day: "Jul", Temperature: 82 },
-        { Day: "Aug", Temperature: 81 },
-        { Day: "Sep", Temperature: 85 },
-        { Day: "Oct", Temperature: 84 },
-        { Day: "Nov", Temperature: 83 },
-        { Day: "Dec", Temperature: 82 },
+        { x: new Date(2023, 4, 1), gust : 30 },
+        { x: new Date(2023, 4, 2), gust : 28 },
+        { x: new Date(2023, 4, 3), gust : 26 },
+        { x: new Date(2023, 4, 4), gust : 19 },
+        { x: new Date(2023, 4, 5), gust : 21 },
+        { x: new Date(2023, 4, 6), gust : 14 },
+        { x: new Date(2023, 4, 7), gust : 13 },
+        { x: new Date(2023, 4, 8), gust : 29 },
+        { x: new Date(2023, 4, 9), gust : 19 },
+        { x: new Date(2023, 4, 10), gust : 20 },
+        { x: new Date(2023, 4, 11), gust : 15 },
+        { x: new Date(2023, 4, 12), gust : 25 },
+        { x: new Date(2023, 4, 13), gust : 20 },
+        { x: new Date(2023, 4, 14), gust : 10 },
+        { x: new Date(2023, 4, 15), gust : 15 }
     ];
     //Initializing Primary Y Axis
-    public primaryXAxis: Object = {
-        valueType: 'Category', majorGridLines: { width: 0 },
+    public primaryXAxis: Object =  {
+        valueType: 'DateTimeCategory', majorGridLines: { width: 0}, labelFormat : 'E dd/MM', labelRotation: -90,
         //Initializing Striplines
-        majorTickLines: {width : 0},
-        minorTickLines: {width: 0}
-    };
+        majorTickLines: { width: 0 }
+    }
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        minimum: 80,
-        maximum: 100,
-        interval: 5,
-        lineStyle: { color: '#808080' },
-        labelFormat: '{value}%',
-        rangePadding: 'None',
-        majorTickLines: {width: 0},
+        minimum: 0, maximum: 30, interval: 10, rangePadding: 'None', majorTickLines: { width: 0 }, title: 'Wind Speed and Gust (km/h)', lineStyle: { width: 0 }, majorGridLines: { width: 0 },
         //Initializing Striplines
         stripLines: [
             {
-                start: 95,
-                end: 100,
-                text: 'Good',
-                color: '#ff512f',
-                visible: true,
-                horizontalAlignment: 'Middle',
-                textStyle: {
-                    size: '16px',
-                    color: '#ffffff',
-                    fontWeight: '500',
-                },
-                border: { width: 0 },
+                start: 0, end: 5, text: 'Calm', color: 'rgba(68, 170, 213, 0.1)', visible: true, horizontalAlignment: 'Start',
+                textStyle: { size: '13px' }, border: { width: 0 },
             },
             {
-                start: 85,
-                end: 95,
-                text: 'Ok',
-                color: '#fc902a',
-                horizontalAlignment: 'Middle',
-                visible: true,
-                textStyle: {
-                    size: '16px',
-                    color: '#ffffff',
-                    fontWeight: '500',
-                },
-                border: { width: 0 },
+                start: 5, end: 8, text: 'Light Air', color: 'rgba(0, 0, 0, 0)', visible: true, horizontalAlignment: 'Start',
+                textStyle: { size: '13px' }, border: { width: 0 },
             },
             {
-                start: 80,
-                end: 85,
-                text: 'Average',
-                horizontalAlignment: 'Middle',
-                visible: true,
-                textStyle: {
-                    size: '16px',
-                    color: '#ffffff',
-                    fontWeight: '500',
-                },
-                border: { width: 0 },
-                color: '#f9d423',
-              },
+                start: 8, end: 11, text: 'Light Breeze', visible: true, horizontalAlignment: 'Start',
+                textStyle: { size: '13px' }, border: { width: 0 }, color: 'rgba(68, 170, 213, 0.1)'
+            },
+            {
+                start: 11, end: 18, text: 'Gentle Breeze', color: 'rgba(0, 0, 0, 0)', visible: true, horizontalAlignment: 'Start',
+                textStyle: { size: '13px' }, border: { width: 0 },
+            },
+            {
+                start: 18, end: 28, text: 'Moderate Breeze', visible: true, horizontalAlignment: 'Start',
+                textStyle: { size: '13px' }, border: { width: 0 }, color: 'rgba(68, 170, 213, 0.1)'
+            },
+            {
+                start: 28, end: 30, text: 'Fresh Breeze', visible: true, horizontalAlignment: 'Start',
+                textStyle: { size: '13px' }, border: { width: 0 }, color: 'rgba(0, 0, 0, 0)'
+            }
         ]
     };
-    public marker: Object = {
-        visible: true, width: 7, height: 7
-    };
+    public chartArea: Object ={
+        border: { width: 0 }
+    }
     public width: string = Browser.isDevice ? '100%' : '75%';
     public tooltip: Object = {
         enable: true,
         header: " ",
-        format: "<b>${point.x}</b> <br> Ratings : <b>${point.y}</b>"
+        format: "<b>${point.x}</b> <br> ${series.name} : <b>${point.y}</b>",
+        enableMarker: false
     };
     public legendSettings: Object = {
         visible: true,
-        enableHighlight: true
+        enableHighlight: true,
+        shapeWidth: 15
     };
      // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
      // custom code end
-    public title: string = 'Customer Satisfication Rating';
+    public title: string = 'Wind Speed and Gust (km/h)';
+    public titleStyle: Object = { position : 'Bottom', textAlignment:'Far' }
+    public subTitle: Object = 'WorldWeatherOnline.com'
     @ViewChild('chart')
     public chart: ChartComponent;
     public mode: DropDownList;

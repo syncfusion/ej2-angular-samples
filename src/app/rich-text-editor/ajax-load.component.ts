@@ -2,7 +2,7 @@
  * Rich Text Editor Ajax Content Sample
  */
 import { Component, ViewChild } from '@angular/core';
-import { Ajax } from '@syncfusion/ej2-base';
+import { Fetch } from '@syncfusion/ej2-base';
 import { RichTextEditorComponent, ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
 @Component({
     selector: 'control-content',
@@ -13,9 +13,9 @@ export class AjaxLoadComponent {
     @ViewChild('ajaxLoad')
     public rteObj: RichTextEditorComponent;
     public onCreate(): void {
-        const ajax: Ajax = new Ajax('./assets/rich-text-editor/ajax-content.html', 'GET', false);
+        const fetch: Fetch = new Fetch('./assets/rich-text-editor/ajax-content.html', 'GET');
         const rte: RichTextEditorComponent = this.rteObj;
-        ajax.send().then((data: any): void => {
+        fetch.send().then((data: any): void => {
             rte.value = data;
         });
     }

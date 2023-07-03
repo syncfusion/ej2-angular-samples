@@ -5,7 +5,7 @@
 </div>
 <div class="control-section">
     <div class="col-lg-9">
-        <ejs-chart #chart style='display:block;' [title]='title' [legendSettings]="legendSettings" [primaryXAxis]='primaryXAxis' (load)='load($event)'>
+        <ejs-chart #chart style='display:block;' [title]='title' [legendSettings]="legendSettings" [tooltip]='tooltip' [primaryXAxis]='primaryXAxis' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Polar' [marker]='marker'drawType='StackingArea' xName='text' yName='y' name='2013' width=2>
                 </e-series>
@@ -44,6 +44,9 @@
 <div id="description">
     <p>
         In this example, you can see how to render and configure polar and radar charts with stacking area series. Switching between polar and radar series can be done using <code>Series Type</code> in the property panel.
+    </p>
+    <p>
+        Tooltip is enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch enabled devices.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>

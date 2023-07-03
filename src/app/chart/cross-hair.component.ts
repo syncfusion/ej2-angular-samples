@@ -50,6 +50,12 @@ export class CrosshairChartComponent {
     public legend: Object = {
         visible: false
     }
+    public zoomSettings: Object = {
+        mode: 'X',
+        enableMouseWheelZooming: true,
+        enablePinchZooming: true,
+        enableSelectionZooming: true,
+    };
     public chartArea: Object = {
         border: {
             width: 0
@@ -61,7 +67,7 @@ export class CrosshairChartComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
       // custom code end
     public marker: Object = {

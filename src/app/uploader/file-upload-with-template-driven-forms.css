@@ -78,6 +78,8 @@ float: right;
 margin-top: -32px;
 margin-right: -106px;
 }
+.material3 #template_driven .upload-area button#browse,
+.material3-dark #template_driven .upload-area button#browse,
 .material #template_driven .upload-area button#browse,
 .material-dark #template_driven .upload-area button#browse {
   float: right;
@@ -102,7 +104,8 @@ margin-right: -106px;
     margin-right: -120px;
     margin-top: -40px;
   }
-  
+.material3 .e-bigger #template_driven .e-float-input.upload-area button#browse,
+.material3-dark .e-bigger #template_driven .e-float-input.upload-area button#browse, 
 .material .e-bigger #template_driven .e-float-input.upload-area button#browse,
 .material-dark .e-bigger #template_driven .e-float-input.upload-area button#browse {
     margin-top: -36px;
@@ -143,6 +146,7 @@ text-align: center;
 }
 .highcontrast #control_wrapper.control_wrapper,
 .material-dark #control_wrapper.control_wrapper,
+.material3-dark #control_wrapper.control_wrapper,
 .fabric-dark #control_wrapper.control_wrapper,
 .bootstrap-dark #control_wrapper.control_wrapper,
 .bootstrap5-dark #control_wrapper.control_wrapper {
@@ -157,6 +161,8 @@ text-align: center;
 .tailwind-dark .e-bigger .e-dialog .e-dlg-header-content{
     padding-bottom: 2%;
 }
+.material3-dark .e-bigger .e-dialog .e-dlg-header-content,
+.material3 .e-bigger .e-dialog .e-dlg-header-content,
 .material-dark .e-bigger .e-dialog .e-dlg-header-content,
 .material .e-bigger .e-dialog .e-dlg-header-content{
     padding-bottom: 3%;

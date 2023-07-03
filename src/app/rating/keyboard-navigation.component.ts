@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 
 /**
  * Navigation sample
@@ -11,4 +11,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 
 })
-export class KeyboardNavigationRatingComponent {}
+export class KeyboardNavigationRatingComponent {
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['keyboard-navigation.css'];
+    }
+}

@@ -39,7 +39,8 @@
 .bootstrap-dark .schedule-resources.e-schedule .e-appointment .template-wrapper,
 .fabric-dark .schedule-resources.e-schedule .e-appointment .template-wrapper,
 .material-dark .schedule-resources.e-schedule .e-appointment .template-wrapper,
-.highcontrast .schedule-resources.e-schedule .e-appointment .template-wrapper {
+.highcontrast .schedule-resources.e-schedule .e-appointment .template-wrapper,
+.material3-dark .schedule-resources.e-schedule .e-appointment .template-wrapper {
   color: #fff;
 }
 
@@ -62,7 +63,8 @@
 .bootstrap-dark .schedule-resources.e-schedule .best-price:not(.e-work-cells),
 .fabric-dark .schedule-resources.e-schedule .best-price:not(.e-work-cells),
 .material-dark .schedule-resources.e-schedule .best-price:not(.e-work-cells),
-.highcontrast .schedule-resources.e-schedule .best-price:not(.e-work-cells) {
+.highcontrast .schedule-resources.e-schedule .best-price:not(.e-work-cells),
+.material3-dark .schedule-resources.e-schedule .best-price:not(.e-work-cells) {
   color: #33DB33;
 }
 
@@ -72,7 +74,8 @@
 .bootstrap-dark .schedule-resources.e-schedule .e-work-cells.best-price,
 .fabric-dark .schedule-resources.e-schedule .e-work-cells.best-price,
 .material-dark .schedule-resources.e-schedule .e-work-cells.best-price,
-.highcontrast .schedule-resources.e-schedule .e-work-cells.best-price {
+.highcontrast .schedule-resources.e-schedule .e-work-cells.best-price,
+.material3-dark .schedule-resources.e-schedule .e-work-cells.best-price {
   background-color: #393939;
 }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, SelectionMode, PivotCellSelectedEventArgs, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 import { SelectionType } from '@syncfusion/ej2-grids';
@@ -22,11 +22,23 @@ export class SelectionComponent implements OnInit {
     public dataSourceSettings: IDataOptions;
     public onInit: boolean = true;
     public gridSettings: GridSettings;
-    public modeddl: DropDownList;
-    public typeddl: DropDownList;
+    public modeOptions: { [key: string]: Object }[] = [
+        { value: 'Cell', text: 'Cell' },
+        { value: 'Row', text: 'Row' },
+        { value: 'Column', text: 'Column' },
+        { value: 'Both', text: 'Both' }
+    ];
+    public typeOptions: { [key: string]: Object }[] = [
+        { value: 'Single', text: 'Single' },
+        { value: 'Multiple', text: 'Multiple' }
+    ];
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
+    @ViewChild('mode')
+    public modeddl: DropDownListComponent;
+    @ViewChild('type')
+    public typeddl: DropDownListComponent;
 
     /* tslint:disable */
     onCellSelected(args: PivotCellSelectedEventArgs): void {
@@ -51,6 +63,16 @@ export class SelectionComponent implements OnInit {
         log.appendChild(span);
     }
 
+    changeMode (args: ChangeEventArgs) {
+        this.pivotObj.gridSettings.selectionSettings.mode = args.value as SelectionMode;
+        this.pivotObj.renderModule.updateGridSettings();
+    }
+
+    changeType (args: ChangeEventArgs) {
+        this.pivotObj.gridSettings.selectionSettings.type = args.value as SelectionType;
+        this.pivotObj.renderModule.updateGridSettings();
+    }
+
     ngOnInit(): void {
         this.gridSettings = {
             columnWidth: 120,
@@ -69,25 +91,5 @@ export class SelectionComponent implements OnInit {
             values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
             filters: []
         };
-
-        this.modeddl = new DropDownList({
-            floatLabelType: 'Auto',
-            width: 150,
-            change: (args: ChangeEventArgs) => {
-                this.pivotObj.gridSettings.selectionSettings.mode = args.value as SelectionMode;
-                this.pivotObj.renderModule.updateGridSettings();
-            }
-        });
-        this.modeddl.appendTo('#mode');
-
-        this.typeddl = new DropDownList({
-            floatLabelType: 'Auto',
-            width: 150,
-            change: (args: ChangeEventArgs) => {
-                this.pivotObj.gridSettings.selectionSettings.type = args.value as SelectionType;
-                this.pivotObj.renderModule.updateGridSettings();
-            }
-        });
-        this.typeddl.appendTo('#type');
     }
 }

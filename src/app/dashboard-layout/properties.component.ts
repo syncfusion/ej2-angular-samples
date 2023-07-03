@@ -43,10 +43,10 @@ export class PropertiesComponent {
         let nextElement = targetElement.nextElementSibling;
         if ((previousElement !== null && previousElement.id === 'floating') || nextElement !== null && nextElement.previousElementSibling.id === 'floating') {
             this.dashboardObject.allowFloating = args.checked;
-         }
-         if ((previousElement !== null && previousElement.id === 'resizing') || nextElement !== null && nextElement.previousElementSibling.id === 'resizing') {
+        }
+        if ((previousElement !== null && previousElement.id === 'resizing') || nextElement !== null && nextElement.previousElementSibling.id === 'resizing') {
             this.dashboardObject.allowResizing = args.checked;
-         }
+        }
     }
 	
 	onChangeEvent(args: any): void  {

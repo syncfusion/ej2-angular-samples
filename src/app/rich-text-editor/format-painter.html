@@ -49,7 +49,7 @@
                             <div>Allowed Formats</div>
                             <div>
                                 <ejs-textbox #allowedFormatInput class="e-outline" placeholder='span; strong; em; sup, sub; code;'
-                                (blur)="setAllowedFormats"></ejs-textbox>
+                                (blur)="setAllowedFormats($event)"></ejs-textbox>
                             </div>
                         </td>
                     </tr>
@@ -58,7 +58,7 @@
                             <div>Denied Formats</div>
                             <div>
                                 <ejs-textbox #deniedFormatInput class="e-outline" placeholder = "span(important)[title]{background-color,color};"
-                                (blur)="setdeniedFormats"></ejs-textbox>
+                                (blur)="setdeniedFormats($event)"></ejs-textbox>
                             </div>
                         </td>
                     </tr>
@@ -84,13 +84,13 @@
     <p><b>Keyboard Shortcut</b></p>
     <ul>
         <li>
-            <kbd>CTRL + SHIFT + C</kbd> - Copy the selection format or current range.
+            <kbd>ALT + SHIFT + C</kbd> - Copy the selection format or current range.
         </li>
         <li>
-            <kbd>CTRL + SHIFT + V</kbd> - Paint the copied format.
+            <kbd>ALT + SHIFT + V</kbd> - Paint the copied format.
         </li>
         <li>
-            <kbd>ESC</kbd> - Remove the previously copied format.
+            <kbd>ESC</kbd> - Remove the previously copied format and disable the sticky mode.
         </li>
     </ul>
     <p>The following settings are available to customize the format painter in the <code>formatPainterSettings</code> property.</p>

@@ -1,0 +1,24 @@
+.e-rte-quick-popup .e-rte-quick-toolbar .e-rte-image-editor::before {
+    content: '\e81e';
+}
+
+.fluent .e-rte-quick-popup .e-rte-quick-toolbar .e-rte-image-editor::before,
+.fluent-dark .e-rte-quick-popup .e-rte-quick-toolbar .e-rte-image-editor::before,
+.bootstrap5 .e-rte-quick-popup .e-rte-quick-toolbar .e-rte-image-editor::before,
+.bootstrap5-dark .e-rte-quick-popup .e-rte-quick-toolbar .e-rte-image-editor::before,
+.tailwind .e-rte-quick-popup .e-rte-quick-toolbar .e-rte-image-editor::before,
+.tailwind-dark .e-rte-quick-popup .e-rte-quick-toolbar .e-rte-image-editor::before,
+.material3 .e-rte-quick-popup .e-rte-quick-toolbar .e-rte-image-editor::before,
+.material3-dark .e-rte-quick-popup .e-rte-quick-toolbar .e-rte-image-editor::before {
+    content: '\e730';
+}
+
+.fabric .e-rte-quick-popup .e-rte-quick-toolbar .e-rte-image-editor::before,
+.fabric-dark .e-rte-quick-popup .e-rte-quick-toolbar .e-rte-image-editor::before,
+.highcontrast .e-rte-quick-popup .e-rte-quick-toolbar .e-rte-image-editor::before {
+    content: '\e97c';
+}
+
+.bootstrap4 .e-rte-quick-popup .e-rte-quick-toolbar .e-rte-image-editor::before {
+    content: '\e78f';
+}

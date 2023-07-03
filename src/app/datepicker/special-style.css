@@ -8,23 +8,23 @@
     margin: 25px auto;
 }
 
-.e-input-group-icon.e-date-icon::before, 
-*.e-control-wrapper .e-input-group-icon.e-date-icon::before {
+.e-customStyle .e-input-group-icon.e-date-icon::before, 
+*.e-control-wrapper.e-customStyle .e-input-group-icon.e-date-icon::before {
     transform: translate(0,1px);
 }
 
-.e-bigger .e-input-group-icon.e-date-icon::before, 
-.e-bigger *.e-control-wrapper .e-input-group-icon.e-date-icon::before {
+.e-bigger .e-customStyle .e-input-group-icon.e-date-icon::before, 
+.e-bigger *.e-control-wrapper.e-customStyle .e-input-group-icon.e-date-icon::before {
     transform: translate(0,2px);
 }
 
-.e-input-group .e-clear-icon, 
-.e-input-group.e-control-wrapper .e-clear-icon {
+.e-customStyle.e-input-group .e-clear-icon, 
+.e-customStyle.e-input-group.e-control-wrapper .e-clear-icon {
     padding-top: 4px;
 }
 
-.e-bigger .e-input-group .e-clear-icon, 
-.e-bigger .e-input-group.e-control-wrapper .e-clear-icon {
+.e-bigger .e-customStyle.e-input-group .e-clear-icon, 
+.e-bigger .e-customStyle.e-input-group.e-control-wrapper .e-clear-icon {
     padding-top: 5px;
 }
 
@@ -37,6 +37,8 @@
 .highcontrast .e-customStyle span.e-icons.highlight:before,
 .material-dark .e-customStyle span.e-icons.highlight,
 .material-dark .e-customStyle span.e-icons.highlight:before,
+.material3-dark .e-customStyle span.e-icons.highlight,
+.material3-dark .e-customStyle span.e-icons.highlight:before,
 .fabric-dark .e-customStyle span.e-icons.highlight,
 .fabric-dark .e-customStyle span.e-icons.highlight:before,
 .bootstrap-dark .e-customStyle span.e-icons.highlight,

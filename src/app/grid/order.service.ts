@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class OrdersService extends Subject<DataStateChangeEventArgs> {
-    private BASE_URL = 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Orders'; 
+    private BASE_URL = 'https://services.odata.org/V4/Northwind/Northwind.svc/Orders';
 
     constructor(private http: Http) {
         super();
@@ -28,11 +28,11 @@ export class OrdersService extends Subject<DataStateChangeEventArgs> {
         }
 
         return this.http 
-           .get(`${this.BASE_URL}?${pageQuery}${sortQuery}&$inlinecount=allpages&$format=json`) 
+           .get(`${this.BASE_URL}?${pageQuery}${sortQuery}&$count=true`) 
            .pipe(map((response: any) => response.json()))
            .pipe(map((response: any) => (<DataResult>{
-                result: response['d']['results'],
-                count: parseInt(response['d']['__count'], 10)
+                result: response['value'],
+                count: parseInt(response['@odata.count'], 10)
         })))
         .pipe((data: any) => data);
     }

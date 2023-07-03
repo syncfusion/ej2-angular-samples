@@ -62,7 +62,7 @@
                 </td>
                 <td>
                     <div>
-                        <input type="text" tabindex="1" id="expandall">
+                        <ejs-dropdownlist id='expandall' #expandall [dataSource]='options' (change)='changeOptionsdll($event)' [value]='valueOptionsdll' [fields]='fieldsOptionsdll'></ejs-dropdownlist>
                     </div>
                 </td>
             </tr>
@@ -73,7 +73,9 @@
                 </td>
                 <td>
                     <div>
-                        <input type="text" placeholder="Select fields" tabindex="1" id='expand-fields' />
+                        <ejs-multiselect id='expand-fields' #expandFields [dataSource]='fields' [mode]='mode' [fields]='fieldsFieldsddl' [showDropDownIcon]='true' [placeholder]='waterMarkfieldsddl'
+                      [showClearButton]="false" [enableSelectionOrder]="false" [enabled]="true" (select)='selectFieldsddl($event)' (removed)='removedFieldsddl($event)' 
+                      (open)='openFieldsddl($event)'></ejs-multiselect>
                     </div>
                 </td>
             </tr>
@@ -84,7 +86,7 @@
                 </td>
                 <td>
                     <div>
-                        <input type="text" placeholder="Select field" tabindex="1" id='expand-fields-1' />
+                        <ejs-dropdownlist id='expand-fields-1' #expandFields1 [dataSource]='fields' (change)='changeField1($event)' [value]='valueField1' [fields]='fieldsField1'></ejs-dropdownlist>
                     </div>
                 </td>
             </tr>
@@ -95,7 +97,9 @@
                 </td>
                 <td>
                     <div>
-                        <input type="text" placeholder="Select headers" tabindex="1" id='expand-members' />
+                      <ejs-multiselect id='expand-members' #expandMembers [dataSource]='values' [mode]='mode' [fields]='fieldsMembersOrder' [enabled]='true' [showDropDownIcon]='true' [placeholder]='waterMark'
+                      [showClearButton]="false" [enableSelectionOrder]="false" (select)='selectMembersOrder($event)' (removed)='removedMembersOrder($event)' 
+                      (open)='openMembersOrder($event)'></ejs-multiselect>
                     </div>
                 </td>
             </tr>
@@ -103,7 +107,7 @@
                 <td></td>
                 <td>
                     <div style="float: right;">
-                        <button id="expand-apply">Apply</button>
+                        <button ejs-button #apply id="expand-apply" [isPrimary]="true">Apply</button>
                     </div>
                 </td>
             </tr>

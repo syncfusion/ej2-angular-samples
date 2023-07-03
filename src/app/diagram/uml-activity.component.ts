@@ -53,9 +53,6 @@ export class UmlActivityComponent {
     public expandMode: ExpandMode = 'Multiple';
     public diagramCreate(args: Object): void {
         this.addEvents();
-        let rect: Rect = document.getElementById('diagram-space').getBoundingClientRect() as any;
-        let panX: number = (rect.width - rect.x)/ 2;
-        this.diagram.pan(panX, 0);
     };
     public symbolMargin: MarginModel = { left: 15, right: 15, top: 15, bottom: 15 };
 

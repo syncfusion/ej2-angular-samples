@@ -138,7 +138,7 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/drag-drop', component: DragDropComponent, 'name': 'Drag and Drop',
     description: 'This demo for Essential JS 2 Tree Grid component shows how the rows can be dragged within the Tree Grid using the row drag-and-drop feature.',
     order: '04', category: 'Rows'},
-    { 'path': ':theme/treegrid/row-hover', component: RowHover, 'name': 'Row Hover', 
+    { 'path': ':theme/treegrid/row-hover', component: RowHover, 'name': 'Row Hover', hideOnDevice: true, 
     description: 'This demo explains how the Tree Grid row color is changed while move the mouse over a row in Syncfusion Essential JS2 Tree Grid content.', 
     order: '04', category: 'Rows' },
     { 'path': ':theme/treegrid/rowheight', component: RowHeightComponent, 'name': 'Row Height',
@@ -198,7 +198,7 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/default-scrolling', component: DefaultScrollingComponent, 'name': 'Default Scrolling',
     description: 'This demo for Essential JS 2 Tree Grid control shows the usage of horizontal and vertical scrollbars to view Tree Grid content that exceeds the Tree Grid area.', 
     order: '09', category: 'Scrolling'},
-    { 'path': ':theme/treegrid/frozen-column', component: FreezeComponent, 'name': 'Frozen Columns',
+    { 'path': ':theme/treegrid/frozen-column', component: FreezeComponent, 'name': 'Frozen Columns', hideOnDevice: true,
     description: 'This demo for Essential JS 2 Tree Grid control shows frozen columns feature of Tree Grid. Scroll the movable content to view the frozen columns.', 
     order: '09', category: 'Scrolling'},
     { 'path': ':theme/treegrid/frozen-api', component: FrozenAPI, 'name': 'Freeze Direction',
@@ -253,7 +253,7 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/events', component: EventComponent, 'name': 'Events',
     description: 'This demo explains the basic functionalities of the events that are available in the Syncfusion Essential JS2 Tree Grid control.', 
     order: '13', category: 'Miscellaneous' },
-    { 'path': ':theme/treegrid/keyboard', component: KeyBoardComponent, 'name': 'Keyboard Navigation',
+    { 'path': ':theme/treegrid/keyboard', component: KeyBoardComponent, 'name': 'Keyboard Navigation', hideOnDevice: true, 
     description: 'This demo explains the key combinations used to perform corresponding Tree Grid actions in Syncfusion Essential JS2 Tree Grid control.', 
     order: '13', category: 'Miscellaneous' }
 ];

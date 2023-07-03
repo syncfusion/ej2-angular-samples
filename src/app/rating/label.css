@@ -5,6 +5,7 @@
     padding:0;
     text-align: center;
 }
+/* Represents the styles in touch mode */
 .e-bigger #label-rating-control .rating-content {
     width: 290px;
     margin: 15px 0;

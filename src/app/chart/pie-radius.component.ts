@@ -52,7 +52,7 @@ export class PieRadiusComponent {
     public tooltip: Object = {
         enable: true,
         header: '',
-        format: '<b>${point.x}</b><br>Area in square km: <b>${point.y}</b><br>Population density per square km: <b>${point.tooltip}',
+        format: '<b>${point.x}</b><br>Area in square km: <b>${point.y}</b><br>Population density per square km: <b>${point.tooltip}</b>',
         name: 'Radius'
     };
     public title: string = 'Pie with different Radius';

@@ -32,7 +32,6 @@ export class DashedLineChartComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'Category',
-        edgeLabelPlacement: 'Shift',
         majorGridLines: { width: 0 },
         interval: 1,
         labelIntersectAction: Browser.isDevice ? 'None' : 'Trim',
@@ -75,14 +74,14 @@ export class DashedLineChartComponent {
         header: '<b>Fruits Production</b>',
         enable: true,
         shared: true,
-        format: '${point.x} : <b>${point.y}'
+        format: '${point.x} : <b>${point.y}</b>'
     };
       // custom code start
     public AnnotationColor: string = "light";
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
         args.chart.annotations[0].content = '<div style="color:black; font-family: bold ">Actual</div>';
         args.chart.annotations[1].content = '<div style="color:black; font-family: bold ">Forecast</div>';
         if (selectedTheme==='material-dark')
@@ -139,7 +138,13 @@ export class DashedLineChartComponent {
         }
         else if (selectedTheme==='highcontrast')
         {
-            this.AnnotationColor = "dark";            
+            this.AnnotationColor = "dark";
+        }
+        else if (selectedTheme === 'material3-dark') {
+            this.AnnotationColor = 'dark';
+        }
+        else if (selectedTheme === 'material3') {
+            this.AnnotationColor = 'light';            
         }
         else
         {

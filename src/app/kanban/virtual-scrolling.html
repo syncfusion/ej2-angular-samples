@@ -1,0 +1,56 @@
+<div class="control-section">
+    <div class="content-wrapper">
+        <ejs-kanban #kanbanObj id="KanbanVirtualScrolling" enableVirtualization="true" [dataSource]='kanbanData' keyField='Status' 
+            enableTooltip="true" [columns]='columnsSettings' [cardSettings]='cardSettings' 
+            [dialogSettings]="dialogSettings" (cardRendered)="cardRendered($event)">
+           <ng-template #cardSettingsTemplate let-data>
+            <div class='e-card-header'>
+                <div class='e-card-header-caption'>
+                    <div class='e-text e-card-header-title e-tooltip-text'>
+                        {{data.Summary}}
+                    </div>
+                </div>
+            </div>
+            <div class='e-card-footer'>
+                <div class='e-link-wrapper'>
+                    <span class='e-{{data.Type.toLowerCase()}}' title={{data.Type}}></span>
+                    <a class='e-custom-link'>
+                        <span class='e-project'>TASK- </span>
+                        <span class='e-card-footer-text'>{{data.Id}}</span>
+                    </a>
+                </div>
+                <div class='e-custom-wrapper'>
+                    <div class='e-story-points-wrapper'>
+                        <div class='e-story-points' title='Story Point'>
+                            {{data.StoryPoints}}
+                        </div>
+                    </div>
+                    <div class='e-priority e-{{data.Priority.toLowerCase()}}-icon' title='{{data.Priority}}' ></div>
+                    <div class='e-card-avatar' title='{{data.Assignee}}'> {{getString(data.Assignee)}}</div>
+                </div>
+            </div>
+        </ng-template>
+        </ejs-kanban>
+       
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample demonstrates the Kanban board with the virtual scrolling feature. It configures a large
+        dataset as the data source, allowing smooth navigation and rendering of a significant amount of data
+        while scrolling through Kanban columns.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The Kanban board UI virtualization feature allows for rendering the column cards that are visible within
+        the viewport, without buffering the entire data source. To enable virtualization, you can set
+        the <code>enableVirtualization</code> property to true.
+    </p>
+    <p>
+        In this demo, a dataset of 100K items has been configured for the <a href="https://ej2.syncfusion.com/angular/documentation/api/kanban/#datasource"><code>dataSource</code></a> property. Despite the large
+        dataset, the Kanban board efficiently handles the rendering and interaction, ensuring a smooth user
+        experience. Users can seamlessly navigate and interact with the Kanban board, even with such a significant amount of data.
+    </p>
+</div>

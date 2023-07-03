@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { EditSettingsModel, GridComponent } from '@syncfusion/ej2-angular-grids';
 
 
@@ -15,6 +15,10 @@ export class OverviewFABComponent implements OnInit {
     public editSettings: EditSettingsModel;
     @ViewChild('Grid')
     public grid: GridComponent;
+
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['overview.css'];
+    }
 
     public ngOnInit(): void {
         let orders = [];

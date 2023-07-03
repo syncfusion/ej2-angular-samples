@@ -29,7 +29,7 @@
     public animationSettings: AnimationSettingsModel = { effect: 'None' };
     public target: string = '.sb-desktop-wrapper';
     public position: PositionDataModel = { X: 'center', Y: 100 };
-
+    public imgSrc: string = '';
     public created = (): void => {
         if (this.ImageEditorInstance.theme && window.location.href.split('#')[1]) {
             this.ImageEditorInstance.theme = window.location.href.split('#')[1].split('/')[1];
@@ -37,22 +37,25 @@
     }
 
     public imageLoaded = (): void => {
-        let canvas: HTMLCanvasElement = document.querySelector('#img-canvas');
-        let image: HTMLImageElement = document.querySelector('#demo-img');
-        let ctx: CanvasRenderingContext2D = canvas.getContext('2d');
-        canvas.width = image.width < image.height ? image.width : image.height; 
-        canvas.height = canvas.width;
-        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+        if (this.imgSrc === '') {
+            let canvas: HTMLCanvasElement = document.querySelector('#img-canvas');
+            let image: HTMLImageElement = document.querySelector('#demo-img');
+            let ctx: CanvasRenderingContext2D = canvas.getContext('2d');
+            canvas.width = image.width < image.height ? image.width : image.height; 
+            canvas.height = canvas.width;
+            ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+            document.querySelector('.e-profile').classList.remove('e-hide');
+        }
     }
     
     public dialogOpen = (): void => {
-        let canvas: HTMLCanvasElement = document.querySelector('#img-canvas');
-        this.ImageEditorInstance.open(canvas.toDataURL());
+        const img: HTMLImageElement = document.querySelector('#demo-img');
+        this.ImageEditorInstance.open(img.src);
     }
 
     public dialogClose = (): void => {
-        let canvas: HTMLCanvasElement = document.querySelector('#img-canvas');
-        this.ImageEditorInstance.open(canvas.toDataURL());
+        const img: HTMLImageElement = document.querySelector('#demo-img');
+        this.ImageEditorInstance.open(img.src);
     }
     
     // canvas click event
@@ -64,6 +67,7 @@
         const URL = window.URL; const url = URL.createObjectURL((args.target as any).files[0]);  
         this.ImageEditorInstance.open(url.toString());
         (document.getElementById('img-upload') as HTMLInputElement).value = null;
+        this.imgSrc = url.toString();
     }
 
     public fileOpened = (): void=> {
@@ -97,6 +101,10 @@
         tempCanvas.remove();
         parentDiv.style.borderRadius = '100%'; canvas.style.backgroundColor = '#fff';
         this.DialogInstance.hide();
+        if (this.imgSrc !== '') {
+		        const img: HTMLImageElement = document.querySelector('#demo-img');
+            img.src = this.imgSrc;
+		    }
     }
 
     public dlgButtons: ButtonPropsModel[] = 

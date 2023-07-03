@@ -23,7 +23,7 @@ export const stockChartAppRoutes: Object[] = [
     { path: ':theme/stock-chart/default', component: DefaultComponent, name: 'Default', order: '01', category: 'Stock Chart' },
     {
         path: ':theme/stock-chart/ohlc', component: HiloOpenCloseComponent,
-        name: 'OHLC', order: '01', category: 'Stock Chart'
+        name: 'OHLC', order: '01', category: 'Stock Chart', type: 'update'
     },
     {
         path: ':theme/stock-chart/multi-pane', component: MultiPaneComponent,

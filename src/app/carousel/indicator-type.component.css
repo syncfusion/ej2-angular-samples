@@ -1,0 +1,53 @@
+.indicator-type-section .carousel-sample {
+  margin: -0.5em 0 5.6em 0;
+  height: 200px;
+}
+
+.indicator-type .e-carousel-items .e-carousel-item .img-container {
+  height: 100%;
+}
+
+.indicator-type.e-carousel .e-progress {
+  background: none;
+}
+
+.indicator-type.e-carousel .e-next-icon::before,
+.indicator-type.e-carousel .e-previous-icon::before {
+  color: black;
+}
+
+.indicator-type {
+  border: 1px solid #d7d7d7;
+}
+
+.indicator-type .e-slide {
+  height: 100%;
+  width: 100%;
+  margin-top: 4em;
+  font-size: 21px;
+  text-align: center;
+  color: black;
+}
+
+.indicator-type.e-carousel .e-carousel-indicators.e-dynamic .e-indicator-bars .e-indicator-bar:not(.e-active),
+.indicator-type.e-carousel .e-carousel-indicators.e-default .e-indicator-bars .e-indicator-bar:not(.e-active) div {
+  background-color: gray;
+}
+
+.indicator-type.e-carousel .e-carousel-indicators.e-fraction .e-indicator-bars {
+  color: black;
+}
+
+.indicator-type.e-carousel .e-carousel-items .e-carousel-item {
+  background-color: #f9f8f8;
+}
+
+@media screen and (max-width: 768px) {
+  .indicator-type-section .carousel-sample {
+      margin: 5em 0;
+  }
+
+  .indicator-type-section .row {
+      margin-top: -5em;
+  }
+}

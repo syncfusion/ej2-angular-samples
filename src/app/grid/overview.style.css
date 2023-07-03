@@ -201,10 +201,15 @@ td.e-rowcell .statustxt.e-inactivecolor {
   color: white;
 }
 
+.custom-rating.e-rating-container .e-rating-item-container ,
+.e-bigger .custom-rating.e-rating-container .e-rating-item-container .e-rating-icon,
+.e-bigger.custom-rating.e-rating-container .e-rating-item-container .e-rating-icon {
+    font-size: 11px;
+}
+
 .custom-rating.e-rating-container .e-rating-item-container .e-rating-icon {
   -webkit-text-fill-color: lightgrey;
   -webkit-text-stroke: 1px lightgrey;
-  font-size: 11px;
 }
 
 .custom-rating.e-rating-container .e-rating-item-container.e-rating-selected .e-rating-icon {

@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView } from '@syncfusion/ej2-angular-pivotview';
 import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
-import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
+import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(false);
 
@@ -19,12 +19,19 @@ enableRipple(false);
 export class RemoteComponent implements OnInit {
     public jsonReport: IDataOptions;
     public csvReport: IDataOptions;
-    public contentDropDown: DropDownList;
     public gridSettings: GridSettings;
     public remoteData: DataManager;
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
+
+    public dropDownData: Object[] = [
+        { Id: 'JSON', Data: 'JSON' },
+        { Id: 'CSV', Data: 'CSV' }
+      ];
+    public fields: Object = { text: 'Data', value: 'Id' };
+    public waterMark: string = 'Select a Data type';
+    public value: string = 'JSON';
 
     onChange(args: ChangeEventArgs): void {
         if (args.value === 'JSON') {
@@ -81,11 +88,5 @@ export class RemoteComponent implements OnInit {
             ],
             filters: []
         };
-
-        this.contentDropDown = new DropDownList({
-            placeholder: 'Content Type',
-            change: this.onChange.bind(this)
-        });
-        this.contentDropDown.appendTo('#contenttype');
     }
 }

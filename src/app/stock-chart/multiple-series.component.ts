@@ -21,11 +21,12 @@ export class MultipleSeriesComponent {
 
     public primaryYAxis: Object = {
         interval: 40, lineStyle: { color: 'transparent' },
-        majorTickLines: { color: 'transparent', width: 0 },
+        majorTickLines: { color: 'transparent', height: 0 },
         crosshairTooltip: { enable: true}
     };
     public crosshair: Object = {
-        enable: true
+        enable: true,
+        lineType: 'Both' 
     };
     public legend: Object = {
         visible: true
@@ -39,11 +40,12 @@ export class MultipleSeriesComponent {
 
     public indicatorType: string[] = [];
     public trendlineType: string[] = [];
+    public seriesType: string[] = ['Line', 'Hilo', 'HiloOpenClose', 'Spline', 'Candle'];
      // custom code start
     public load(args: IStockChartEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
      // custom code end
     public enable: boolean = true;

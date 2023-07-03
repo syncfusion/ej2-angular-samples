@@ -34,7 +34,7 @@ export class PrintExportDiagramComponent {
 
     public exportTypes: ItemModel[] = [
         { text: 'JPG' }, { text: 'PNG' },
-        { text: 'BMP' }, { text: 'SVG' }
+        { text: 'SVG' }
     ];
 
     public multiplePage: boolean = false;

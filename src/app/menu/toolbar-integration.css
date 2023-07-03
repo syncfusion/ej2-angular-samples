@@ -88,7 +88,12 @@
 	color: #6c757d;
 	box-shadow: none;
 }
-
+.material3 .toolbar-menu-control .e-toolbar .e-input-group,
+.material3-dark .toolbar-menu-control .e-toolbar .e-input-group,
+.material3 .toolbar-menu-control .e-toolbar-items .e-dropdown-btn,
+.material3-dark .toolbar-menu-control .e-toolbar-items .e-dropdown-btn  {
+    background: transparent;
+}
 @media only screen and (max-width: 1300px) {
     .toolbar-menu-control {
         width: auto;

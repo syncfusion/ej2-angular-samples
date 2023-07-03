@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, SummaryTypes, FieldListService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(false);
@@ -20,12 +20,39 @@ let data: IDataSet[] = require('./rData.json');
 })
 export class AggregationComponent implements OnInit {
     public dataSourceSettings: IDataOptions;
-    public balanceDropDown: DropDownList;
-    public quantityDropDown: DropDownList;
     public gridSettings: GridSettings;
+    public options: { [key: string]: Object }[] = [
+        { value: 'Sum', text: 'Sum' },
+        { value: 'Avg', text: 'Avg' },
+        { value: 'Median', text: 'Median' },
+        { value: 'Min', text: 'Min' },
+        { value: 'Max', text: 'Max' },
+        { value: 'Count', text: 'Count' },
+        { value: 'DistinctCount', text: 'DistinctCount' },
+        { value: 'Product', text: 'Product' },
+        { value: 'Index', text: 'Index' },
+        { value: 'PopulationStDev', text: 'PopulationStDev' },
+        { value: 'SampleStDev', text: 'SampleStDev' },
+        { value: 'PopulationVar', text: 'PopulationVar' },
+        { value: 'SampleVar', text: 'SampleVar' },
+        { value: 'RunningTotals', text: 'RunningTotals' },
+        { value: 'DifferenceFrom', text: 'DifferenceFrom' },
+        { value: 'PercentageOfDifferenceFrom', text: 'PercentageOfDifferenceFrom' },
+        { value: 'PercentageOfGrandTotal', text: 'PercentageOfGrandTotal' },
+        { value: 'PercentageOfColumnTotal', text: 'PercentageOfColumnTotal' },
+        { value: 'PercentageOfRowTotal', text: 'PercentageOfRowTotal' },
+        { value: 'PercentageOfParentTotal', text: 'PercentageOfParentTotal' },
+        { value: 'PercentageOfParentColumnTotal', text: 'PercentageOfParentColumnTotal' },
+        { value: 'PercentageOfParentRowTotal', text: 'PercentageOfParentRowTotal' }
+    ];
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
+    @ViewChild('pricedrpdwn')
+    public balanceDropDown: DropDownListComponent;
+    @ViewChild('freightdrpdwn')
+    public summaryDropDown: DropDownListComponent;
+
     onLoad(): void {
         if (data[0].Year === undefined) {
             let date: Date;
@@ -62,25 +89,15 @@ export class AggregationComponent implements OnInit {
         }
     }
 
+    changePricedrpdwn (args: ChangeEventArgs) {
+        this.setSummaryType('ProCost', args.value as SummaryTypes);
+    }
+
+    changeFreightdrpdwn (args: ChangeEventArgs) {
+        this.setSummaryType('PowUnits', args.value as SummaryTypes);
+    }
+
     ngOnInit(): void {
-
-        let balanceDropDown: DropDownList = new DropDownList({
-            placeholder: 'Cost',
-            floatLabelType: 'Auto',
-            change: (args: ChangeEventArgs) => {
-                this.setSummaryType('ProCost', args.value as SummaryTypes);
-            }
-        });
-        balanceDropDown.appendTo('#pricedrpdwn');
-
-        let summaryDropDown: DropDownList = new DropDownList({
-            placeholder: 'Units',
-            floatLabelType: 'Auto',
-            change: (args: ChangeEventArgs) => {
-                this.setSummaryType('PowUnits', args.value as SummaryTypes);
-            }
-        });
-        summaryDropDown.appendTo('#freightdrpdwn');
 
         this.gridSettings = {
             columnWidth: 140

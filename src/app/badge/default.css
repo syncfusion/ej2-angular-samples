@@ -69,6 +69,24 @@
   border-top-right-radius: 8px;
 }
 
+.material3 #update.e-btn {
+	border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.material3 #task.e-btn {
+	border-radius: 0;
+}
+
+.material3 #notify.e-btn {
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+.material3 .e-btn-group.e-custom-button {
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
 .default .e-badge.e-badge-overlap {
   transform: translateX(-110%);
   z-index: 100;

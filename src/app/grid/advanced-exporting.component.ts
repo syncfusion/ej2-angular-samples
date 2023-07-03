@@ -21,13 +21,13 @@ export class AdvancedExportingComponent implements OnInit {
         this.pageSettings = { pageSize: 10 };
     }
     toolbarClick(args: ClickEventArgs): void {
-        switch (args.item.text) {
+        switch (args.item.id) {
             /* tslint:disable */
-            case 'Excel Export':
+            case 'AdvancedExport_excelexport':
                 this.grid.excelExport(this.getExcelExportProperties());
                 break;
             /* tslint:enable */
-            case 'PDF Export':
+            case 'AdvancedExport_pdfexport':
                 this.grid.pdfExport(this.getPdfExportProperties());
                 break;
         }

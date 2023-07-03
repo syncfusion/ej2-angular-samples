@@ -2,7 +2,7 @@
     <div class="col-lg-9">
         <ejs-smithchart style='display:block' align='center' id='container' #smithchart [legendSettings] = 'legend'  (load)='load($event)'>
             <e-seriesCollection>
-                <e-series [points]='data' name='Transmission'[marker]='marker' [enableAnimation] = true [tooltip] = 'tooltip'> </e-series>
+                <e-series [points]='data' name='Transmission'[marker]='marker' [enableAnimation] = false [tooltip] = 'tooltip'> </e-series>
             </e-seriesCollection>
         </ejs-smithchart>
     </div>

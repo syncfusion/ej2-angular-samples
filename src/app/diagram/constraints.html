@@ -1,0 +1,54 @@
+<script src="script/diagram-common.ts"></script>
+<style>
+    .e-symbolpalette {
+        display: block;
+    }
+</style>
+<div id="action-description">
+    <p>
+        This sample illustrates how node constraints are used to restrict end-users from performing certain operations on nodes and connector constraints are used to restrict end-users from performing certain operation on connectors.
+    </p>
+  </div>
+<div class="col-lg-10 control-section">
+            <div class="content-wrapper" style="width:100%;background: white">
+                <ejs-diagram #diagram id="diagram" width="100%" height="700px" [nodes]="nodes" [connectors]="connectors"  (created)="created($event)" (selectionChange)="selectionChange($event)" [getCustomTool]="getCustomTool"
+                [selectedItems]="selectedItems" [contextMenuSettings]="contextMenuSettings">
+                </ejs-diagram>
+            </div>
+</div>
+            <div  style="float:left;width:120px">
+                <div class="property-panel-header">
+                    <span>Diagram Constraints</span>
+                </div>
+                <div class="row property-panel-content">
+                    <div class="row" style="padding-top: 8px">
+                        <ejs-checkbox #checkbox label="Zooming" [checked]="true" (change)="zoomingChange($event)"></ejs-checkbox>
+                    </div>
+                    <div class="row" style="padding-top: 8px">
+                        <ejs-checkbox #checkbox label="Undo/Redo" [checked]="true" (change)="undoRedoChange($event)"></ejs-checkbox>
+                    </div>
+                    <div class="row" style="padding-top: 8px">
+                        <ejs-checkbox #checkbox label="Editing" [checked]="true" (change)="editingChange($event)"></ejs-checkbox>
+                    </div>
+                    <div class="row" style="padding-top: 8px">
+                        <ejs-checkbox #checkbox label="Context Menu" [checked]="true" (change)="contextChange($event)"></ejs-checkbox>
+                    </div>
+                    <div class="row" style="padding-top: 8px">
+                        <ejs-checkbox #checkbox label="Selectable" [checked]="true" (change)="selectableChange($event)"></ejs-checkbox>
+                    </div>
+                    <div class="row" style="padding-top: 8px">
+                        <ejs-checkbox #checkbox label="Draggable" [checked]="true" (change)="draggableChange($event)"></ejs-checkbox>
+                    </div>
+                </div>
+            </div>
+            <div id="description">
+                <p>This sample illustrates how node constraints are used to restrict end-users from performing certain operations on nodes and connector constraints are used to restrict end-users from performing certain operation on connectors.</p>
+                
+                <p>The <code>NodeConstraints</code> property allows you to enable or disable node behaviors like select, drag, resize, rotate, and delete.</p>
+            
+                <p>The <code>ConnectorConstraints</code> property allows you to enable or disable connector behaviors like select, drag, delete, drag source end, and drag target end.</p>
+            
+                <p>The <code>AnnotationConstraints</code> property allows you to enable or disable the annotation behavior, text editing.</p>
+            
+               <p> Using the <code>DiagramConstraints</code> property, enable or disable certain features of the diagram like zoom, undo/redo, context menu, drag, and select.</p>
+              </div>

@@ -1,0 +1,17 @@
+.control-fluid {
+    padding: 0px !important;
+}
+.btn-group button{ 
+    margin-right:16px;
+    }
+.btn-group button:last-child{
+    margin-right:0px;
+    }
+.icon span{
+    margin-top: -10px;
+    margin-right: 40px;
+}
+.icon svg{
+    margin-left: 20px;
+    margin-top: 15px;
+}

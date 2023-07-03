@@ -1,7 +1,7 @@
 <div class="control-section">
     <div>
         <ejs-stockchart id='stockChartPlotBand' [enablePeriodSelector]='enable' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis'
-            style="display:block;" [title]="title" [primaryYAxis]='primaryYAxis' [seriesType]='seriesType' [indicatorType]='indicatorType' (load)='load($event)'>
+            style="display:block;" [title]="title" [primaryYAxis]='primaryYAxis' [seriesType]='seriesType' [trendlineType]="trendlineType" [indicatorType]='indicatorType' (load)='load($event)'>
             <e-stockchart-series-collection>
                 <e-stockchart-series [dataSource]='data1' type='Line' xName='x' yName='close' name='google'>
                 </e-stockchart-series>
@@ -20,8 +20,11 @@
         us to navigate different of data.
         <code>StripLine</code> is used to represent selected data value.
     </p>
+    <p>
+        Stock Chart provides support to 6 types of <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/stock-chart/trend-lines">trendlines</a> namely <code>Linear</code>, <code>Exponential</code>, <code>Logarithmic</code>, <code>Polynomial</code>, <code>Power</code>, <code>Moving Average</code>. By using trendline dropdown button, the required trendline type can be added or removed.
+     </p>
     <br>
-    <p style="font-weight: 500">Injecting Module:</p>
+    <p style="font-weight: 500"><b>Injecting Module:</b></p>
     <p>Stock Chart features are segregated into individual feature-wise modules. To use Line Series, Stripline and DateTime axis in stock chart, we need to inject
         <code>LineSeriesService</code>, <code>StriplineService</code> and <code>DateTimeService</code> into the <code>@NgModule.providers</code> section.
     </p>

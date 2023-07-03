@@ -4,10 +4,9 @@
    </p>
 </div>
 <div class="control-section">
-    <div id="title" align="center" style="font-size: 15px; font-style: normal;font-family: 'Segoe UI'; font-weight: 500;">AAPL Historical</div>
     <div id="container" align="center">
          <ejs-chart #chartcontainer id='chartcontainer' style='display:block' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip'  
-        [axes] = 'axes' [rows]='rows' [legendSettings]='legendSettings' (axisLabelRender)= 'axisLabelRender($event)' (load)='load($event)'  >
+        [axes] = 'axes' [rows]='rows' [title]='title' [legendSettings]='legendSettings' (axisLabelRender)= 'axisLabelRender($event)' (load)='load($event)'  >
             <e-series-collection>
                 <e-series [dataSource]='data1' type='Column' xName='period' yName='volume' [enableTooltip]='false' name='Volume'> </e-series>
                  <e-series [dataSource]='data1' type='Candle' xName='period' yAxisName='secondary' high='high' low='low'

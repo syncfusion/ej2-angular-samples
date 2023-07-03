@@ -1,16 +1,16 @@
 <div id="action-description">
     <p>This sample demonstrates grouping feature of the Grid component. In this sample, the Grid data is grouped against
-        Country column. To group any other column simply drag the column header and drop on the group drop area.</p>
+        ShipCountry column. To group any other column simply drag the column header and drop on the group drop area.</p>
 </div>
 <div class="control-section">
-       <ejs-grid #grid [dataSource]='data' allowPaging='true' allowSorting="true" [allowGrouping]="true" [groupSettings]="groupOptions" [pageSettings]='pageSettings'
+       <ejs-grid #grid [dataSource]='data' allowPaging='true' allowSorting="true" [allowGrouping]="true" [editSettings]='editSettings' [groupSettings]="groupOptions" [toolbar]='toolbar' [pageSettings]='pageSettings'
         height="320" (dataBound)='dataBound()' (created)='created()' (load)='load()'>
         <e-columns>
-            <e-column field='Inventor' headerText='Inventor Name' width='180'></e-column>
-            <e-column field='NumberofPatentFamilies' headerText="Number of Patent Families" width='220' textAlign='Right'></e-column>
-            <e-column field='Country' headerText='Country' width='140'></e-column>
-            <e-column field='Active' width='120'></e-column>
-            <e-column field='Mainfieldsofinvention' headerText='Main fields of invention' [allowGrouping]="false" width='200'></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='140' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
+            <e-column field='CustomerID' headerText='Customer ID' width='140' [validationRules]='customeridrules'></e-column>
+            <e-column field='Freight' headerText='Freight' width='140' format='C2' textAlign='Right' editType='numericedit' [validationRules]='freightrules'></e-column>
+            <e-column field='OrderDate' [allowGrouping]="false" headerText='Order Date' width='120' editType='datetimepickeredit' [format]='formatoptions' textAlign='Right'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='150' editType='dropdownedit' [edit]='editparams'></e-column>
         </e-columns>
     </ejs-grid>
     <ejs-dialog #alertDialog [buttons]='alertDlgButtons' [visible]='hidden' [header]='alertHeader' [animationSettings]='animationSettings' [content]='alertContent' [showCloseIcon]='showCloseIcon' [target]='target' [width]='alertWidth'>
@@ -27,10 +27,16 @@
         allowGrouping</a></code> property as true.</p>
         <p>Columns can be grouped by simply dragging the column header and drop on the group drop area.</p>
         <p>In this demo, to group a specify column, drag and drop the column in the group drop area.</p>
+        <p>
+            In this demo, editing options can be enabled by setting <code>editSettings.allowEditing</code> as <code>true</code>.
+            You can start editing by double-clicking a row or the toolbar `Edit` button. 
+            Once in edit mode, you have the ability to modify the values of the selected row. 
+            When saving the record, the Grid will refresh the specific edited row without affecting the expanded group state.
+        </p>
         <p style="font-weight: 500">Injecting Module:</p>
         <p>
-            Grid component features are segregated into individual feature-wise modules. To use grouping feature, we need to inject
-            <code>GroupService</code> into the <code>@NgModule.providers</code> section.
+            Grid component features are segregated into individual feature-wise modules. To use grouping and editing features, we need to inject
+            <code>GroupService</code> and <code>EditService</code> into the <code>@NgModule.providers</code> section.
         </p>
         <p>
             More information on the grouping feature configuration can be found in this

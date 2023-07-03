@@ -16,7 +16,7 @@ export class AreaComponent {
     public primaryXAxis: Object = { valueType: 'DateTime', majorGridLines: { color: 'transparent' }, crosshairTooltip: { enable: true } };
     public primaryYAxis: Object = {
         lineStyle: { color: 'transparent' },
-        majorTickLines: { color: 'transparent' },
+        majorTickLines: { color: 'transparent', height: 0 },
         crosshairTooltip: { enable: true }
     };
     public chartArea: Object = {
@@ -25,7 +25,8 @@ export class AreaComponent {
         }
     };
     public crosshair: Object = {
-        enable: true
+        enable: true,
+        lineType: 'Both' 
     };
     public seriesType: string[] = [];
     public indicatorType: string[] = [];
@@ -34,7 +35,7 @@ export class AreaComponent {
     public load(args: IStockChartEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     }
     constructor() {
         //code

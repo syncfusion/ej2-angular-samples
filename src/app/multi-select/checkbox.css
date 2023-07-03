@@ -11,6 +11,7 @@
 .fluent-dark button,
 .fabric-dark button,
 .tailwind-dark button,
+.material3-dark button,
 .material-dark button {
 background: inherit;
 }

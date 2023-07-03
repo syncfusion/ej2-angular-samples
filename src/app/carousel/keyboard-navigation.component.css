@@ -64,12 +64,12 @@
   background-color: #d2e3f8;
 }
 
-.kb-carousel .e-carousel-indicators .e-indicator-bar .e-indicator div {
+.kb-carousel .e-carousel-indicators.e-default .e-indicator-bar .e-indicator div {
   background-color: #e5e5e5;
   border: 0px !important;
 }
 
-.kb-carousel .e-carousel-indicators .e-indicator-bar.e-active .e-indicator div {
+.kb-carousel .e-carousel-indicators.e-default .e-indicator-bar.e-active .e-indicator div {
   background-color: #4d8fe4 !important;
 }
 
@@ -99,7 +99,8 @@
 .material-dark .keyboard-carousel-section .carousel-sample,
 .fabric-dark .keyboard-carousel-section .carousel-sample,
 .bootstrap-dark .keyboard-carousel-section .carousel-sample,
-.highcontrast .keyboard-carousel-section .carousel-sample {
+.highcontrast .keyboard-carousel-section .carousel-sample,
+.material3-dark .keyboard-carousel-section .carousel-sample {
   background-color: #26292E;
 }
 
@@ -109,7 +110,8 @@
 .material-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .heading,
 .fabric-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .heading,
 .bootstrap-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .heading,
-.highcontrast .kb-carousel .e-carousel-items .e-carousel-item .product-container .heading {
+.highcontrast .kb-carousel .e-carousel-items .e-carousel-item .product-container .heading,
+.material3-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .heading {
   color: #bbbbbb;
 }
 
@@ -119,7 +121,8 @@
 .material-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .description,
 .fabric-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .description,
 .bootstrap-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .description,
-.highcontrast .kb-carousel .e-carousel-items .e-carousel-item .product-container .description {
+.highcontrast .kb-carousel .e-carousel-items .e-carousel-item .product-container .description,
+.material3-dark .kb-carousel .e-carousel-items .e-carousel-item .product-container .description {
   color: #9f9f9f
 }
 
@@ -136,7 +139,9 @@
 .bootstrap-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):hover,
 .bootstrap-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):focus,
 .highcontrast .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):hover,
-.highcontrast .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):focus {
+.highcontrast .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):focus,
+.material3-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):hover,
+.material3-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled):focus {
   background-color: #4e4e4e;
 }
 
@@ -146,7 +151,8 @@
 .material-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled) .e-btn-icon,
 .fabric-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled) .e-btn-icon,
 .bootstrap-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled) .e-btn-icon,
-.highcontrast .kb-carousel .e-carousel-navigators .e-btn:not(:disabled) .e-btn-icon {
+.highcontrast .kb-carousel .e-carousel-navigators .e-btn:not(:disabled) .e-btn-icon,
+.material3-dark .kb-carousel .e-carousel-navigators .e-btn:not(:disabled) .e-btn-icon {
   color: #dfdfdf;
 }
 
@@ -156,7 +162,8 @@
 .material-dark .kb-carousel .e-carousel-indicators .e-indicator-bar .e-indicator div,
 .fabric-dark .kb-carousel .e-carousel-indicators .e-indicator-bar .e-indicator div,
 .bootstrap-dark .kb-carousel .e-carousel-indicators .e-indicator-bar .e-indicator div,
-.highcontrast .kb-carousel .e-carousel-indicators .e-indicator-bar .e-indicator div {
+.highcontrast .kb-carousel .e-carousel-indicators .e-indicator-bar .e-indicator div,
+.material3-dark .kb-carousel .e-carousel-indicators .e-indicator-bar .e-indicator div {
   background-color: #626262;
 }
 

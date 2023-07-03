@@ -95,6 +95,9 @@ export class DrawingToolDiagramComponent {
                 case 'cubic':
                     drawingObject = { type: 'Bezier' };
                     break;
+                case 'freehand':
+                    drawingObject = { type: 'Freehand' };
+                    break;
                 case 'path':
                     drawingObject = {
                         shape: {

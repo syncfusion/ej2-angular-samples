@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation, ElementRef, AfterViewInit } from '@angular/core';
-import { Ajax } from '@syncfusion/ej2-base';
+import { Fetch } from '@syncfusion/ej2-base';
 import { DialogComponent, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
 import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
@@ -59,12 +59,12 @@ export class AjaxDialogComponent implements AfterViewInit {
         const localObj: any = this;
         if (document.querySelector('.e-footer-content .e-btn').textContent === 'More Details') {
             // Request to load AJAX content
-            const ajax: Ajax = new Ajax('./assets/dialog/blog.html', 'GET', true);
+            const fetchApi: Fetch = new Fetch('./assets/dialog/blog.html', 'GET');
             // Rendering Dialog on AJAX success
-            ajax.onSuccess = (data: string): void => {
+            fetchApi.onSuccess = (data: string): void => {
                 this.dialogObj.content = data;
             };
-            ajax.send();
+            fetchApi.send();
 
             document.querySelector('.e-footer-content .e-btn').textContent = 'Less Details';
             localObj.height = '250px';
