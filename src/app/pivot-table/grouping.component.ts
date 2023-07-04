@@ -1,12 +1,14 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, GroupingBarService, PivotView, DateGroup, IDataSet, LoadEventArgs } from '@syncfusion/ej2-angular-pivotview';
 import { ColumnRenderEventArgs } from '@syncfusion/ej2-angular-pivotview';
-import { NumericTextBox } from '@syncfusion/ej2-inputs';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple, extend } from '@syncfusion/ej2-base';
-import { MultiSelect, SelectEventArgs, RemoveEventArgs, CheckBoxSelection } from '@syncfusion/ej2-dropdowns';
-import { Button } from '@syncfusion/ej2-buttons';
+import { MultiSelect, SelectEventArgs, RemoveEventArgs, CheckBoxSelection } from '@syncfusion/ej2-angular-dropdowns';
 import { GroupSettingsModel } from '@syncfusion/ej2-pivotview/src/model/datasourcesettings-model';
+import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { Observable } from 'rxjs';
+
 enableRipple(false);
 MultiSelect.Inject(CheckBoxSelection);
 
@@ -27,12 +29,18 @@ export class GroupingComponent implements OnInit {
     public groupData: string[] = ['Years', 'Quarters', 'Months', 'Days'];
     public dataSourceSettings: IDataOptions;
     public gridSettings: GridSettings;
-    public numberGroup: NumericTextBox;
-    public dateGroup: MultiSelect;
-    public applyBtn: Button;
+    public value: string[] =  ['Years', 'Months', 'Days'];
+    public waterMark: string = 'Select group';
+    public filterBarWaterMark: string = 'Search group';
+    public mode: string = 'CheckBox';
+    public observable = new Observable();
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
+    @ViewChild('numbergroup')
+    public numberGroup: NumericTextBoxComponent;
+    @ViewChild('apply')
+    public applyBtn: ButtonComponent;
     /* tslint:disable */
     applyGroupSettings(args: any): void {
         if (args.name === 'select') {
@@ -47,15 +55,21 @@ export class GroupingComponent implements OnInit {
         }
     }
 
-    setColumnsRender(args: ColumnRenderEventArgs): void {
-        if (args.dataSourceSettings.rows.length > 3 && args.columns[0].width <= 250) {
-            args.columns[0].width = 285;
-        }
+    select (args: SelectEventArgs): void {
+        this.applyGroupSettings(args);
+    }
+    removed (args: RemoveEventArgs): void {
+        this.applyGroupSettings(args);
     }
 
     ngOnInit(): void {
         this.gridSettings = {
-            columnWidth: 140
+            columnWidth: 140,
+            columnRender: this.observable.subscribe(args => {
+                if (((args as any).dataSourceSettings.rows as any).length > 3 && (args as any).columns[0].width <= 250) {
+                    (args as any).columns[0].width = 285;
+                }
+            }) as any
         } as GridSettings;
 
         this.dataSourceSettings = {
@@ -73,40 +87,6 @@ export class GroupingComponent implements OnInit {
             { name: 'Product_ID', type: 'Number', rangeInterval: 4 }],
             dataSource: extend([], data, null, true) as IDataSet[]
         };
-
-        this.dateGroup = new MultiSelect({
-            dataSource: this.groupData,
-            mode: 'CheckBox',
-            showDropDownIcon: true,
-            enableSelectionOrder: false,
-            popupWidth: '150',
-            width: '150',
-            value: ['Years', 'Months', 'Days'],
-            placeholder: 'Select group',
-            filterBarPlaceholder: 'Search group',
-            select: (args: SelectEventArgs): void => {
-                this.applyGroupSettings(args);
-            },
-            removed: (args: RemoveEventArgs): void => {
-                this.applyGroupSettings(args);
-            }
-        });
-        this.dateGroup.appendTo('#dategroup');
-
-        this.numberGroup = new NumericTextBox({
-            width: '150',
-            format: '###',
-            min: 1,
-            max: 10,
-            value: 4,
-            placeholder: "Example: 4"
-        });
-        this.numberGroup.appendTo('#numbergroup');
-
-        this.applyBtn = new Button({
-            isPrimary: true
-        });
-        this.applyBtn.appendTo('#group-apply');
 
         document.getElementById('group-apply').onclick = () => {
             let groupSettings: GroupSettingsModel[] = [];

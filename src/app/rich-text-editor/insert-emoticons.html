@@ -1,59 +1,24 @@
 <div id="action-description">
-
     <p>
-        This sample shows how to add your own commands to toolbar of the Rich Text Editor.
-        The smiley is added to insert emoticons in the editor.
-        Click the emoticon icon to show the emoticons list, and then choose the emoticon to be inserted in the editor.
+        This sample demonstrates how to insert an emoji into the content of a Rich Text Editor. First, click the emoji button in the toolbar. This will open the emoji picker popup. Next, click on the desired emoji in the picker to insert it into the editor.
     </p>
 </div>
 <div class="control-section e-rte-custom-tbar-section">
     <div class="sample-container">
-        <div class="default-section" #rteSection id="rteSection">
-            <ejs-richtexteditor id='customRTE' #customRTE [toolbarSettings]='tools' (created)='onCreate()' (actionComplete)='actionCompleteHandler($event)'>
+        <div class="default-section">
+            <ejs-richtexteditor id='emojiPickerRTE' #emojiPickerRTE [toolbarSettings]="toolbarSettings">
                 <ng-template #valueTemplate>
-                    <div style="display:block;">
-                        <p style="margin-right:10px">The custom command "insert emoticons" is configured as the last item of the toolbar. Click on the command and choose the special character you want to include from the popup.
-                        </p>
-                    </div>
+                    <p style="margin-right:10px">An emoji picker in a Rich Text Editor is a tool that allows users to easily add emojis or emoticons to their text. Typically, it is a small window or panel that displays a variety of emojis, arranged in different categories, such as smileys, animals, food, and so on. Users can select the desired emoji by clicking on it or by typing its name in a search bar. </p>                
                 </ng-template>
             </ejs-richtexteditor>
-            <ejs-dialog #Dialog id="rteDialog" [buttons]='dlgButtons' (overlayClick)="dialogOverlay()" [header]='header' [visible]='false' [showCloseIcon]='false' width='43%' [target]='target' [isModal]='true'>
-                <ng-template #content>
-                    <div id="tab">
-                        <ejs-tab #tabdefault id="tab_default" (created)="dialogCreate()">
-                            <e-tabitems>
-                                <e-tabitem [header]='headerText[0]'>
-                                    <ng-template #content>
-                                        <div id='rteEmoticons-smiley'>
-                                            <div *ngFor="let smiley of smileys" class='char_block' title={{smiley.title}} [innerHTML]="smiley.content"></div>
-                                        </div>
-                                    </ng-template>
-                                </e-tabitem>
-                                <e-tabitem [header]='headerText[1]'>
-                                    <ng-template #content>
-                                        <div id='rteEmoticons-animal'>
-                                            <div *ngFor="let animal of animals" class='char_block' title={{animal.title}} [innerHTML]="animal.content"></div>
-                                        </div>
-                                    </ng-template>
-                                </e-tabitem>
-                            </e-tabitems>
-                        </ejs-tab>
-                    </div>
-                </ng-template>
-            </ejs-dialog>
         </div>
     </div>
 </div>
 
 <div id="description">
-    <p>The Rich Text Editor allows you to configure your own commands to its toolbar using <code>toolbarSettings</code>
-        property.
-        The command can be plain text, icon, or HTML template.
-        You can also define the order and group where the command should be included.
-        Bind the action to the command by getting its instance. </p>
+    <p>The <b>Emoji Picker</b> feature allows you to insert an emoji into an editor. The emoji picker has a grid of emojis grouped by categories, such as smileys, animals, food, and travel. You are able to scroll through the emojis and click on one to insert it into the editor.</p>
+    <p>In this demo, to enable this feature, configure the <b>EmojiPicker</b> command in the <a target='_blank' href='https://ej2.syncfusion.com/angular/documentation/api/rich-text-editor/toolbarSettingsModel/#items'>toolbarSettings.items</a> property.</p>
+    <p>You can also insert an emoji by pressing the colon (:) which will open the emoji picker. Choose an emoji from the picker and insert it into the editor. The feature also provides the option to filter emojis based on the typing character.</p>
     <p><b>Injecting Module</b></p>
-    <p>Rich Text Editor features are segregated into individual feature-wise modules. In this demo we have used following
-        injectable services
-        <code>ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService</code> into the
-        <code>@NgModule.providers section</code>.</p>
+    <p>The above features built as modules have to be included in your application. For example, to use image and link, inject the specific module using <code>RichTextEditor.Inject (Toolbar, Link, Image, HtmlEditor, QuickToolbar, EmojiPicker)</code>.</p>
 </div>

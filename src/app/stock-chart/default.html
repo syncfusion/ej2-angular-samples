@@ -12,16 +12,23 @@
 </div>
 <div id="action-description">
     <p>
-        This sample visualizes stock chart.
+        This <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-stock-chart">Angular Stock Chart</a> example visualizes the AAPL stock price with candle chart. Tooltip and crosshair show the information about the data and period.
     </p>
 </div>
 <div id="description">
+    <p>In this example, you can see how to render and configure the stock chart. The candle type series chart shows financial data and trends at equal intervals. The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/stock-chart/period-selector">Period Selector</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/stock-chart/range-selector">Range Selector</a> can be used to select a range with specified periods.</p>
     <p>
-        In this example, you can see how to render and configure the Stock chart.
-        <code>CandleSeries</code> is used to represent selected data value.
+        Stock Chart provides support to 10 types of <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/stock-chart/technical-indicators"> Technical Indicators </a> namely <code>Accumulation Distribution</code>, <code>ATR</code>, <code>EMA</code>, <code>SMA</code>, <code>TMA</code>, <code>Momentum</code>, <code>MACD</code>, <code>RSI</code>, <code>Stochastic</code>, <code>Bollinger Band</code>. By using indicator dropdown box, add and remove the required indicator types.
+    </p>
+    <p>
+        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover the chart or tap on it in touch enabled devices.
+    </p>
+    <p>
+        More information about the stock charts can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/stock-chart/getting-started">documentation section</a>.
     </p>
     <br>
-    <p style="font-weight: 500">Injecting Module:</p>
+    <p style="font-weight: 500"><b>Injecting Module:</b></p>
     <p>Stock Chart features are segregated into individual feature-wise modules. To use Candle Series, DateTime axis and Column series in stock chart, we need to inject
         <code>CandleSeriesService</code>, <code>ColumnSeriesService</code> and <code>DateTimeService</code> into the <code>@NgModule.providers</code> section.
     </p>

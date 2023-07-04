@@ -43,7 +43,7 @@
 <div id="pivot-table-section">
     <div class="col-lg-8 control-section sb-property-border">
         <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings showGroupingBar='true' width='100%'
-            height='450' [gridSettings]='gridSettings' (gridSettings.columnRender)='setColumnsRender($event)'>
+            height='450' [gridSettings]='gridSettings'>
         </ejs-pivotview>
     </div>
     <div class="col-lg-4 property-section pivot-table-property-section">
@@ -59,7 +59,9 @@
                             </td>
                             <td style="padding-bottom: 16px">
                                 <div class="datecls">
-                                    <input type="text" tabindex="1" id='dategroup' />
+                                    <ejs-multiselect id='dategroup' #dategroup [dataSource]='groupData' [mode]='mode' [showDropDownIcon]='true' [placeholder]='waterMark'
+                                        [enableSelectionOrder]="false" (select)='select($event)' (removed)='removed($event)'
+                                        [filterBarPlaceholder]="filterBarWaterMark" [width]="150" [popupWidth]="150" [value]="value"></ejs-multiselect>
                                 </div>
                             </td>
                         </tr>
@@ -70,7 +72,7 @@
                             </td>
                             <td style="padding-bottom: 16px">
                                 <div class="numbercls">
-                                    <input type="text" tabindex="1" id='numbergroup' />
+                                    <ejs-numerictextbox id='numbergroup' #numbergroup min='1' max='10' value='4' placeholder='Example: 4' format='###' width="150"></ejs-numerictextbox>
                                 </div>
                             </td>
                         </tr>
@@ -78,7 +80,7 @@
                             <td></td>
                             <td>
                                 <div style="float:right;margin-right: 4px">
-                                    <button id="group-apply">Apply</button>
+                                    <button ejs-button #apply id="group-apply" [isPrimary]="true">Apply</button>
                                 </div>
                             </td>
                         </tr>

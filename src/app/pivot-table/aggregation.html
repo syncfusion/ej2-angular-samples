@@ -29,58 +29,14 @@
                         <tr style="height: 50px">
                             <td>
                                 <div>
-                                    <select id="freightdrpdwn" name="ddl-view-mode">
-                                        <option value='Sum' selected>Sum</option>
-                                        <option value='Avg'>Average</option>
-                                        <option value='Median'>Median</option> 
-                                        <option value='Min'>Min</option>
-                                        <option value='Max'>Max</option>
-                                        <option value='Count'>Count</option>
-                                        <option value='DistinctCount'>Distinct Count</option>
-                                        <option value='Product'>Product</option>
-                                        <option value='Index'>Index</option>
-                                        <option value='PopulationStDev'>Population StDev</option>
-                                        <option value='SampleStDev'>Sample StDev</option>
-                                        <option value='PopulationVar'>Population Var</option>
-                                        <option value='SampleVar'>Sample Var</option>
-                                        <option value='RunningTotals'>Running Totals</option>
-                                        <option value='DifferenceFrom'>Difference From</option>
-                                        <option value='PercentageOfDifferenceFrom'>% of Difference From</option>
-                                        <option value='PercentageOfGrandTotal'>% of Grand Total</option>
-                                        <option value='PercentageOfColumnTotal'>% of Column Total</option>
-                                        <option value='PercentageOfRowTotal'>% of Row Total</option>
-                                        <option value='PercentageOfParentTotal'>% of Parent Total</option>
-                                        <option value='PercentageOfParentColumnTotal'>% of Parent Column Total</option>
-                                        <option value='PercentageOfParentRowTotal'>% of Parent Row Total</option>
-                                    </select>
+                                    <ejs-dropdownlist id='freightdrpdwn' #freightdrpdwn [dataSource]='options' floatLabelType='Auto' placeholder='Units' (change)='changeFreightdrpdwn($event)'></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>
                         <tr style="height: 50px">
                             <td>
                                 <div>
-                                    <select id="pricedrpdwn" name="ddl-view-mode">
-                                        <option value='Sum' selected>Sum</option>
-                                        <option value='Avg'>Average</option>
-                                        <option value='Median'>Median</option>
-                                        <option value='Min'>Min</option>
-                                        <option value='Max'>Max</option>
-                                        <option value='Product'>Product</option>
-                                        <option value='Index'>Index</option>
-                                        <option value='PopulationStDev'>Population StDev</option>
-                                        <option value='SampleStDev'>Sample StDev</option>
-                                        <option value='PopulationVar'>Population Var</option>
-                                        <option value='SampleVar'>Sample Var</option>
-                                        <option value='RunningTotals'>Running Totals</option>
-                                        <option value='DifferenceFrom'>Difference From</option>
-                                        <option value='PercentageOfDifferenceFrom'>% of Difference From</option>
-                                        <option value='PercentageOfGrandTotal'>% of Grand Total</option>
-                                        <option value='PercentageOfColumnTotal'>% of Column Total</option>
-                                        <option value='PercentageOfRowTotal'>% of Row Total</option>
-                                        <option value='PercentageOfParentTotal'>% of Parent Total</option>
-                                        <option value='PercentageOfParentColumnTotal'>% of Parent Column Total</option>
-                                        <option value='PercentageOfParentRowTotal'>% of Parent Row Total</option>
-                                    </select>
+                                    <ejs-dropdownlist id='pricedrpdwn' #pricedrpdwn [dataSource]='options' floatLabelType='Auto' placeholder='Cost' (change)='changePricedrpdwn($event)'></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>

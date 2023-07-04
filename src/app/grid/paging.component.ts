@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { L10n, setCulture } from '@syncfusion/ej2-base';
 import { data } from './data';
 
@@ -15,7 +15,9 @@ L10n.load({
 
 @Component({
     selector: 'ej2-gridpage',
-    templateUrl: 'paging.html'
+    styleUrls: ['paging.style.css'],
+    templateUrl: 'paging.html',
+    encapsulation: ViewEncapsulation.None
 })
 export class PageComponent implements OnInit {
     public data: Object[];

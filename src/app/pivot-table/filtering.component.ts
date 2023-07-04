@@ -1,11 +1,12 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, FilterType, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { DropDownList, MultiSelect, ChangeEventArgs, SelectEventArgs, RemoveEventArgs, PopupEventArgs } from '@syncfusion/ej2-dropdowns';
-import { CheckBoxSelection } from '@syncfusion/ej2-dropdowns';
-import { Button } from '@syncfusion/ej2-buttons';
+import { MultiSelect, ChangeEventArgs, SelectEventArgs, RemoveEventArgs, PopupEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { CheckBoxSelection } from '@syncfusion/ej2-angular-dropdowns';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 import { FilterModel } from '@syncfusion/ej2-pivotview/src/model/datasourcesettings-model';
+import { DropDownListComponent, MultiSelectComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 enableRipple(false);
 MultiSelect.Inject(CheckBoxSelection);
 /**
@@ -29,14 +30,20 @@ export class FilteringComponent implements OnInit {
     public type: string[] = ['Include', 'Exclude'];
     public values: { [key: string]: Object }[] = [];
     public fields: string[] = ['Country', 'Products', 'Year'];
-    public fieldsddl: DropDownList;
-    public typeddl: DropDownList;
-    public valuesddl: MultiSelect;
-    public applyBtn: Button;
     public gridSettings: GridSettings;
+    public mode: string = 'CheckBox';
+    public fieldsValuesddl: Object = { text: 'Member' };
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
+    @ViewChild('valuesddl')
+    public valuesddl: MultiSelectComponent;
+    @ViewChild('fieldsddl')
+    public fieldsddl: DropDownListComponent;
+    @ViewChild('typeddl')
+    public typeddl: DropDownListComponent;
+    @ViewChild('apply')
+    public applyBtn: ButtonComponent;
 
     /** To get the checked members here as string array. */
     getSelectedMembers(field: string): string[] {
@@ -122,6 +129,31 @@ export class FilteringComponent implements OnInit {
         }
     }
 
+    selectValuesddl (args: SelectEventArgs): void {
+        this.applyBtn.disabled = false;
+        this.applyBtn.dataBind();
+        this.setMemberCheckedState((<any>this.fieldsddl).itemData, args.item.textContent, args.item.textContent + '_' + true);
+    }
+    removedValuesddl (args: RemoveEventArgs): void {
+        this.setMemberCheckedState((<any>this.fieldsddl).itemData, args.item.textContent, args.item.textContent + '_' + false);
+        this.setApplyBtnState();
+        this.applyBtn.dataBind();
+    }
+    openValuesddl (args: PopupEventArgs): void {
+        if (args.popup.element.querySelector(".e-filter-parent")) {
+            (args.popup.element.querySelector(".e-filter-parent") as HTMLElement).style.display = 'none';
+        }
+    }
+
+    changeFieldsddl (args: ChangeEventArgs) {
+        this.valuesddl.dataSource = this.fieldCollections[args.value.toString()];
+        this.valuesddl.value = this.getSelectedMembers(args.value.toString());
+        if (this.filterCollections[args.value.toString()]) {
+            this.typeddl.value = this.filterCollections[args.value.toString()].type;
+        }
+        this.valuesddl.dataBind();
+        this.typeddl.dataBind();
+    }
     ngOnInit(): void {
         this.gridSettings = {
             columnWidth: 140
@@ -137,60 +169,6 @@ export class FilteringComponent implements OnInit {
             dataSource: Pivot_Data,
             expandAll: false
         };
-
-        this.valuesddl = new MultiSelect({
-            dataSource: this.values,
-            mode: 'CheckBox',
-            width: '98%',
-            showDropDownIcon: true,
-            showClearButton: false,
-            enableSelectionOrder: false,
-            fields: { text: 'Member' },
-            select: (args: SelectEventArgs): void => {
-                this.applyBtn.disabled = false;
-                this.applyBtn.dataBind();
-                this.setMemberCheckedState((<any>this.fieldsddl).itemData, args.item.textContent, args.item.textContent + '_' + true);
-            },
-            removed: (args: RemoveEventArgs): void => {
-                this.setMemberCheckedState((<any>this.fieldsddl).itemData, args.item.textContent, args.item.textContent + '_' + false);
-                this.setApplyBtnState();
-                this.applyBtn.dataBind();
-            },
-            open: (args: PopupEventArgs): void => {
-                if (args.popup.element.querySelector(".e-filter-parent")) {
-                    (args.popup.element.querySelector(".e-filter-parent") as HTMLElement).style.display = 'none';
-                }
-            }
-        });
-        this.valuesddl.appendTo('#values');
-
-        this.fieldsddl = new DropDownList({
-            dataSource: this.fields,
-            index: 0,
-            width: '98%',
-            change: (args: ChangeEventArgs) => {
-                this.valuesddl.dataSource = this.fieldCollections[args.value.toString()];
-                this.valuesddl.value = this.getSelectedMembers(args.value.toString());
-                if (this.filterCollections[args.value.toString()]) {
-                    this.typeddl.value = this.filterCollections[args.value.toString()].type;
-                }
-                this.valuesddl.dataBind();
-                this.typeddl.dataBind();
-            }
-        });
-        this.fieldsddl.appendTo('#fields');
-
-        this.typeddl = new DropDownList({
-            dataSource: this.type,
-            width: '98%',
-            index: 1
-        });
-        this.typeddl.appendTo('#type');
-
-        this.applyBtn = new Button({
-            isPrimary: true, disabled: true
-        });
-        this.applyBtn.appendTo('#apply');
 
         document.getElementById('apply').onclick = () => {
             /** You can set your filter settings here. */

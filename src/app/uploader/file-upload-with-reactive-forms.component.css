@@ -70,6 +70,8 @@ display: none;
 float: right;
 margin-top: -32px;
 }
+.material3.e-bigger #reactive .upload-area button#browse,
+.material3-dark.e-bigger #reactive .upload-area button#browse,
 .material.e-bigger #reactive .upload-area button#browse,
 .material-dark.e-bigger #reactive .upload-area button#browse {  
   margin-top: -36px;

@@ -73,31 +73,7 @@
                         <tr style="height: 50px">
                             <td>
                                 <div>
-                                    <select id="charttypesddl" name="ddl-view-mode">
-                                        <option value='Column' selected>Column</option>
-                                        <option value='Bar'>Bar</option>
-                                        <option value='Line'>Line</option>
-                                        <option value='Spline'>Spline</option>
-                                        <option value='Area'>Area</option>
-                                        <option value='SplineArea'>SplineArea</option>
-                                        <option value='StepLine'>StepLine</option>
-                                        <option value='StepArea'>StepArea</option>
-                                        <option value='StackingColumn'>StackingColumn</option>
-                                        <option value='StackingBar'>StackingBar</option>
-                                        <option value='StackingArea'>StackingArea</option>
-                                        <option value='StackingColumn100'>StackingColumn100</option>
-                                        <option value='StackingBar100'>StackingBar100</option>
-                                        <option value='StackingArea100'>StackingArea100</option>
-                                        <option value='Scatter'>Scatter</option>
-                                        <option value='Bubble'>Bubble</option>
-                                        <option value='Polar'>Polar</option>
-                                        <option value='Radar'>Radar</option>
-                                        <option value='Pareto'>Pareto</option>
-                                        <option value='Pie'>Pie</option>
-                                        <option value='Doughnut'>Doughnut</option>
-                                        <option value='Funnel'>Funnel</option>
-                                        <option value='Pyramid'>Pyramid</option>
-                                    </select>
+                                    <ejs-dropdownlist id='charttypesddl' #charttypesddl [dataSource]='options' floatLabelType='Auto' placeholder='Chart Types' width='100%' (change)='onChange($event)'></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>

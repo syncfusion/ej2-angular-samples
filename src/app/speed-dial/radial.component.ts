@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { SpeedDialItemModel,RadialSettingsModel } from '@syncfusion/ej2-angular-buttons';
 
 /**
@@ -12,6 +12,10 @@ import { SpeedDialItemModel,RadialSettingsModel } from '@syncfusion/ej2-angular-
 })
 
 export class RadialSpeedDialComponent {
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['radial.css'];
+    }
+
     public items: SpeedDialItemModel[] = [
         {
             title: 'Cut',

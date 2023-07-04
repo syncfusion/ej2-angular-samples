@@ -21,6 +21,7 @@ export class PlotLineComponent {
     public primaryYAxis: Object = {
         stripLines: [{ start: 320, sizeType: 'Pixel', size: 1, color: 'green', dashArray: '10,5' },
         { start: 380, sizeType: 'Pixel', size: 1, color: 'red', dashArray: '10,5' }],
+        majorTickLines: { color: 'transparent', height: 0 },
     };
     public chartArea: Object = {
         border: {
@@ -31,11 +32,12 @@ export class PlotLineComponent {
     public enable: boolean = true;
     public seriesType: string[] = [];
     public indicatorType: string[] = [];
+    public trendlineType: string[] = ['Linear', 'Exponential', 'Polynomial', 'Logarithmic', 'MovingAverage'];
      // custom code start
     public load(args: IStockChartEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
      // custom code end
     constructor() {

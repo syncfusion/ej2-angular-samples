@@ -100,3 +100,15 @@ canvas#img-canvas {
 .e-bigger.bootstrap-dark .e-custom-img-btn {
 	padding: 1px 10px !important;
 }
+
+.e-img-editor-sample .e-hide {
+	display: none;
+}
+
+.material3 .e-custom-img-btn,
+.material3-dark .e-custom-img-btn,
+.e-bigger.material3 .e-custom-img-btn,
+.e-bigger.material3-dark .e-custom-img-btn
+{ 
+  margin-left: 3px !important;
+}

@@ -46,13 +46,13 @@ export class StripLineRecurrenceChartComponent {
             }]
     };
     public tooltip: Object = {
-        enable: true, format: ' Year: ${point.x}<br> Tons Per Day: ${point.y}'
+        enable: true, format: ' Year: <b>${point.x}</b><br> Tons Per Day: <b>${point.y}</b>'
     };
      // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
     public legend: Object = {
         enableHighlight : true

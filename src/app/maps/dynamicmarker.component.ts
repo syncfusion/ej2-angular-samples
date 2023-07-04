@@ -90,7 +90,7 @@ export class MapsDynamicMarkerComponent {
     }
 
     public mapClicked = (args: any) => {
-        if (this.markerCheckedState && args['path'][1].id.indexOf('_Zooming_') == -1) {
+        if (this.markerCheckedState) {
             this.addMarker(args);
         }
         if (this.lineCheckedState && !this.connectLineCheckedState) {

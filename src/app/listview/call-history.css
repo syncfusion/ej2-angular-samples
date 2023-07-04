@@ -43,6 +43,7 @@ body.tailwind-dark .e-list-item .e-avatar.e-icon {
   margin: auto !important;
 }
 
+body.material3-dark .layout #list-container .e-icon,
 body.material-dark .layout #list-container .e-icon,
 body.tailwind-dark .layout #list-container .e-icon,
 body.bootstrap-dark .layout #list-container .e-icon,
@@ -149,6 +150,12 @@ body.tailwind .e-tab .e-tab-header .e-toolbar-item .e-tab-wrap {
     padding: 5px 50px 5px 5px;
 }
 
+.material3 .layout #list-container #all.e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
+.material3 .layout #list-container #received.e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
+.material3 .layout #list-container #missed.e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
+.material3-dark .layout #list-container #all.e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
+.material3-dark .layout #list-container #received.e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
+.material3-dark .layout #list-container #missed.e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
 .tailwind .layout #list-container #all.e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
 .tailwind .layout #list-container #received.e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
 .tailwind .layout #list-container #missed.e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar,
@@ -226,6 +233,7 @@ body.tailwind .e-tab .e-tab-header .e-toolbar-item .e-tab-wrap {
   color: white;
 }
 
+.material3-dark .layoutWrapper .layout, .material3-dark .layoutWrapper .camera, .material3-dark .layoutWrapper .outerButton, .material3-dark .layoutWrapper .speaker, .material3-dark .layoutWrapper,
 .highcontrast .layoutWrapper .layout,
 .highcontrast .layoutWrapper .camera,
 .highcontrast .layoutWrapper .outerButton,
@@ -234,6 +242,7 @@ body.tailwind .e-tab .e-tab-header .e-toolbar-item .e-tab-wrap {
   border-color: white;
 }
 
+.material3-dark .layout #list-container .e-listview .e-active .e-icon,
 .bootstrap4 .layout #list-container .e-listview .e-active .e-icon,
 .bootstrap5 .layout #list-container .e-listview .e-active .e-icon,
 .bootstrap5-dark .layout #list-container .e-listview .e-active .e-icon {

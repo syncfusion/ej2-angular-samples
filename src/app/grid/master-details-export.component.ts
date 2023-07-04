@@ -41,10 +41,10 @@ export class HierarchyExportComponent implements OnInit {
         };
     }
     toolbarClick(args: ClickEventArgs): void {
-        if (args.item.text === 'Excel Export') {
+        if (args.item.id === 'MasterDetailsExport_excelexport') {
             this.grid.excelExport({hierarchyExportMode: 'All'});
         }
-        if (args.item.text === 'PDF Export') {
+        if (args.item.id === 'MasterDetailsExport_pdfexport') {
             this.grid.pdfExport({hierarchyExportMode: 'All'});
         }
     }

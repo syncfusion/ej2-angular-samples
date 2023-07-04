@@ -22,12 +22,13 @@ import currencyData from './cldr-data/supplemental/currencyData.json';
 import de from './cldr-data/main/de/all.json';
 import ar from './cldr-data/main/ar/all.json';
 import frch from './cldr-data/main/fr-CH/all.json';
+import en from './cldr-data/main/en/all.json';
 import zh from './cldr-data/main/zh/all.json';
 
 loadCldr(
     numberSystem,
     currencyData,
-    de, ar, frch, zh
+    de, ar, frch, en, zh
 );
 
 registerLicense('{SyncfusionJSLicensekey}');
@@ -64,7 +65,7 @@ const sourceHeader: String = '<li class="nav-item {2}" role="presentation"><a cl
 const sourcecontent: String = '<div class="tab-pane {2}" id="{0}" role="tabpanel" {4}><pre><code class="{3}">{1}</code></pre></div>';
 const plnk: string = '<li class="plnk" style="float:right"><a id="plnkr">Open in Plunker</a></li>\n' +
     '<li class="open"><a id="openNew" target="_blank" aria-label="Open new sample"><div class="openIcon e-icons"></div></a></li>';
-const themes: string[] = ['fluent', 'fluent-dark', 'bootstrap5', 'bootstrap5-dark', 'tailwind', 'tailwind-dark', 'material', 'material-dark', 'fabric', 'fabric-dark', 'bootstrap4', 'bootstrap', 'bootstrap-dark', 'highcontrast'];
+const themes: string[] = ['fluent', 'fluent-dark', 'bootstrap5', 'bootstrap5-dark', 'tailwind', 'tailwind-dark', 'material', 'material-dark', 'material3', 'material3-dark', 'fabric', 'fabric-dark', 'bootstrap4', 'bootstrap', 'bootstrap-dark', 'highcontrast'];
 let selectedTheme: string;
 let themeFlag: boolean = true;
 let slideFlag: boolean = false;
@@ -369,7 +370,7 @@ export class SBController {
                         theme = location.hash.split('/')[1];
                         theme = themes.indexOf(theme) !== -1 ? theme : selectedTheme;
                     }
-                    theme = themes.indexOf(theme) !== -1 ? theme : 'bootstrap5';
+                    theme = themes.indexOf(theme) !== -1 ? theme : 'material3';
                     document.getElementById(theme).classList.add('active-theme');
                     loadTheme(theme);
                 }
@@ -417,10 +418,10 @@ export class SBController {
             .subscribe((event: any) => {
                 let hash: string[] = location.hash.split('/');
                 if (!document.querySelector('.active-theme')) {
-                    document.getElementById(hash[1] || 'bootstrap5').classList.add('active-theme');
+                    document.getElementById(hash[1] || 'material3').classList.add('active-theme');
                 }
                 hash[1] = document.querySelector('.active-theme').id;
-                enableRipple(hash[1] === 'material');
+                enableRipple(hash[1].indexOf('material') !== -1);
                 let href: string = location.href.split('#')[0];
                 history.replaceState({}, 'theme', href + hash.join('/'));
                 this.setThemeItemActive(location.hash.split('/')[1]);

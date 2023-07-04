@@ -5,8 +5,8 @@
             <e-column field='taskName' headerText='Task Name' width='180' editType='stringedit' [validationRules]='tasknamerules'></e-column>
             <e-column field='startDate' headerText='Start Date' width='170' [format]='format' editType='datetimepickeredit' [edit]='dpParams' textAlign='Right' [validationRules]='startdaterules'></e-column>
             <e-column field='approved' headerText='Approved' width='90' editType='booleanedit' type='boolean' displayAsCheckBox='true'></e-column>
-            <e-column field='progress' headerText='Progress' width='100' textAlign='Right' editType='numericedit' [edit]='numericParams' [validationRules]='progressrules'></e-column>
-            <e-column field='priority' headerText='Priority' width='100' textAlign='Right' editType='dropdownedit'  [validationRules]='priorityrules'></e-column>
+            <e-column field='progress' headerText='Progress' width='150' textAlign='Right' editType='numericedit' [edit]='numericParams' [validationRules]='progressrules'></e-column>
+            <e-column field='priority' headerText='Priority' width='150' textAlign='Right' editType='dropdownedit'  [validationRules]='priorityrules'></e-column>
         </e-columns>
     </ejs-treegrid>
 </div>

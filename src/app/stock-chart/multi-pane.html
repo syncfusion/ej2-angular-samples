@@ -1,7 +1,7 @@
 <div class="control-section">
     <div>
         <ejs-stockchart id='StockChartCandle' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' style="display:block;"
-            [primaryYAxis]='primaryYAxis' [crosshair]='crosshair' [title]='title' [tooltip]='tooltip'
+            [primaryYAxis]='primaryYAxis' [crosshair]='crosshair' [title]='title' [tooltip]='tooltip' [legendSettings]='legend'
             (tooltipRender)='tooltipRender($event)' (axisLabelRender)='axisLabelRender($event)' (load)='load($event)'>
             <e-stockchart-axes>
                 <e-stockchart-axis rowIndex=1 name='yAxis1' opposedPosition=true labelPosition='Inside' tickPosition='Inside'>
@@ -13,7 +13,7 @@
             </e-stockchart-rows>
             <e-stockchart-series-collection>
                 <e-stockchart-series [dataSource]='data1' type='Candle' xName='x' yName='high' yAxisName='yAxis1' high='high'
-                    low='low'> </e-stockchart-series>
+                    low='low' name="Volume"> </e-stockchart-series>
                 <e-stockchart-series [dataSource]='data1' type='Column' xName='x' yName='volume' high='high' low='low'
                     name='Apple Inc' [enableTooltip]='columnTooltip'> </e-stockchart-series>
             </e-stockchart-series-collection>
@@ -22,17 +22,16 @@
 </div>
 <div id="action-description">
     <p>
-        This sample visualizes stock chart with multiple panes.
+        This <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-stock-chart">Angular Stock Chart</a> example visualizes the AAPL stock price with Candle chart. Tooltip and crosshair show the information about the data and period.
     </p>
 </div>
 <div id="description">
+    <p>In this example, you can see how to render and configure a stock chart for AAPL data, as well as how to use column charts to display data volume. The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/stock-chart/period-selector">Period Selector</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/stock-chart/range-selector">Range Selector</a> can be used to select a range with specified periods.</p>
     <p>
-        In this example, you can see how to render and configure the Stock chart with volume.
-        <code>CandleSeries</code> is used to represent selected data value and <code>ColumnSeries</code> is used to
-        represent the volume.
+        The legend is enabled, and you can use it to toggle the visibility of series in the stock chart. To customize the legend in the stock chart, use the <code>legendSettings</code> property.
     </p>
     <br>
-    <p style="font-weight: 500">Injecting Module:</p>
+    <p style="font-weight: 500"><b>Injecting Module:</b></p>
     <p>Stock Chart features are segregated into individual feature-wise modules. To use Candle Series, Column Series and DateTime axis in stock chart, we need to inject
         <code>ColumnSeriesService</code>, <code>CandleSeriesService</code> and <code>DateTimeService</code> into the <code>@NgModule.providers</code> section.
     </p>

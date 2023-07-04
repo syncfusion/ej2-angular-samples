@@ -26,13 +26,19 @@
     height: 200px;
     width: 100%;
 }
+.bootstrap-dark .codeView{
+    border:1px solid rgb(80,80,80);
+}
+.highcontrast #codeView {
+    border:1px solid rgb(255,255,255);
+}
 .CodeMirror {
     height: 190px;
 }
 .codeViewContent {
     padding-left: 16px;
 }
-.bootstrap-dark .CodeMirror-scroll, .bootstrap5-dark .CodeMirror-scroll, .fluent-dark .CodeMirror-scroll, .fabric-dark .CodeMirror-scroll, .material-dark .CodeMirror-scroll, .tailwind-dark .CodeMirror-scroll, .highcontrast .CodeMirror-scroll{
+.bootstrap-dark .CodeMirror-scroll, .bootstrap5-dark .CodeMirror-scroll, .fluent-dark .CodeMirror-scroll,.material3-dark .CodeMirror-scroll, .fabric-dark .CodeMirror-scroll, .material-dark .CodeMirror-scroll, .tailwind-dark .CodeMirror-scroll, .highcontrast .CodeMirror-scroll{
     color: #fff;
 }
 .bootstrap-dark .CodeMirror-scroll{
@@ -44,6 +50,9 @@
 .fluent-dark .CodeMirror-scroll{
    background-color: #1b1a19;
 }
+.material3-dark .CodeMirror-scroll{
+    background-color: #1C1B1F;
+ }
 .fabric-dark .CodeMirror-scroll{
    background-color: #242424;
 }

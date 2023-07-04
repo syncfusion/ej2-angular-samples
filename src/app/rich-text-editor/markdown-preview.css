@@ -31,7 +31,9 @@
     .bootstrap5 .e-icon-btn .e-md-preview::before,
     .bootstrap5-dark .e-icon-btn .e-md-preview::before,
     .fluent .e-icon-btn .e-md-preview::before,
-    .fluent-dark .e-icon-btn .e-md-preview::before {
+    .fluent-dark .e-icon-btn .e-md-preview::before,
+    .material3 .e-icon-btn .e-md-preview::before,
+    .material3-dark .e-icon-btn .e-md-preview::before {
         content: '\e7de';
     }
     

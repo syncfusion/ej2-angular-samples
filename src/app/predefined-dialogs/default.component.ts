@@ -15,7 +15,8 @@ export class DefaultDialogComponent  {
       title: 'Low Battery',
       content: '10% of battery remaining',
       okButton: { click: this.alertOkAction.bind(this)  },
-      position: { X: 'center', Y: 'center' }
+      position: { X: 'center', Y: 'center' },
+      closeOnEscape: true
     });
   };
   private alertOkAction(): void {
@@ -30,7 +31,8 @@ export class DefaultDialogComponent  {
       content: "Are you sure you want to permanently delete these items?",
       okButton: { click: this.confirmOkAction.bind(this)},
       cancelButton: { click: this.confirmCancelAction.bind(this)},
-      position: { X: 'center', Y: 'center' }
+      position: { X: 'center', Y: 'center' },
+      closeOnEscape: true
     });
   };
   private confirmOkAction(): void {
@@ -50,7 +52,8 @@ export class DefaultDialogComponent  {
       content: 'Enter your name: <input id= "inputEle" type="text" name="Required" class="e-input" placeholder="Type here.." />',
       okButton: { click:this.promptOkAction.bind(this)},
       cancelButton: { click:this.promptCancelAction.bind(this)},
-      position: { X: 'center', Y: 'center' }
+      position: { X: 'center', Y: 'center' },
+      closeOnEscape: true
     });
   };
   private promptOkAction(): void {

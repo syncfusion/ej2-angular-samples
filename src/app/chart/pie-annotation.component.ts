@@ -56,7 +56,6 @@ export class AnnotationChartComponent {
         format: "Distance: ${point.x} KM <br> ${point.y} KM/H",
         fill: "white",
         textStyle: {
-            fontWeight: '600', 
             color: 'black'
         },
         border:{
@@ -119,7 +118,7 @@ export class AnnotationChartComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
         if (selectedTheme.match('Dark')) {
             args.chart.series[0].fill = 'url(#dark-gradient-chart)'; 
         }
@@ -149,7 +148,7 @@ export class AnnotationChartComponent {
     
             let selectedTheme: string = location.hash.split('/')[1];
             selectedTheme = selectedTheme ? selectedTheme : 'Material';
-            let theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+            let theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
             
     }
     constructor() {

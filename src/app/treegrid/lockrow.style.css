@@ -4,8 +4,11 @@
 /* custom code start*/
 .material-dark .disableRow .e-rowcell, .fabric-dark .disableRow .e-rowcell,
 .bootstrap-dark .disableRow .e-rowcell, .bootstrap5-dark .disableRow .highcontrast .disableRow .e-rowcell, 
-.tailwind .disableRow .e-rowcell, .tailwind-dark .disableRow .e-rowcell {
+.tailwind .disableRow .e-rowcell, .tailwind-dark .disableRow .e-rowcell, .material3-dark .disableRow .e-rowcell {
     color: #757575 !important;
+}
+.material3 .disableRow .e-rowcell{
+    color: rgba(0, 0, 0, .38) !important;
 }
 .fabric .disableRow .e-rowcell {
     color: #c8c8c8 !important;

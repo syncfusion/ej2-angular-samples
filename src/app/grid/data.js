@@ -23540,7 +23540,7 @@ var order = JSON.stringify([
     {
         "OrderID": 10290,
         "CustomerID": "COMMI",
-        "CustomerNames": "Renate Messner",
+        "CustomerName": "Renate Messner",
         "OrderDate": "1996-08-27T00:00:00.000Z",
         "ShippedDate": "1996-09-03T00:00:00.000Z",
         "Freight": 79.7,
@@ -23680,7 +23680,7 @@ var order = JSON.stringify([
     {
         "OrderID": 10300,
         "CustomerID": "MAGAA",
-        "CustomerNames": "Yvonne Moncada",
+        "CustomerName": "Yvonne Moncada",
         "OrderDate": "1996-09-09T00:00:00.000Z",
         "ShippedDate": "1996-09-18T00:00:00.000Z",
         "Freight": 17.68,

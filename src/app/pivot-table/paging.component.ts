@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IDataOptions, PagerSettings, PageSettings, PivotView, PagerPosition, PagerService } from '@syncfusion/ej2-angular-pivotview';
 import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
-import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
-import { CheckBox, ChangeEventArgs as CheckChange } from '@syncfusion/ej2-angular-buttons';
+import { ChangeEventArgs, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs as CheckChange, CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(false);
 
@@ -24,17 +24,22 @@ export class PagingComponent implements OnInit {
     public pagerSettings: PagerSettings;
     public gridSettings: GridSettings;
     public remoteData: DataManager;
-    public positionDropDown: DropDownList;
-    public pagerViewDropDown: DropDownList;
-    public pageSizeDropDown: DropDownList;
-    public compactCheckBoxObj: CheckBox;
-    public inverseCheckBoxObj: CheckBox;
     public pagerPositions: string[] = ['Top', 'Bottom'];
     public pageSizes: string[] = ['Row', 'Column', 'Both', 'None'];
     public pagerViewData: string[] = ['Row', 'Column', 'Both'];
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
+    @ViewChild('positionDropDown')
+    public positionDropDown: DropDownListComponent;
+    @ViewChild('pagerViewDropDown')
+    public pagerViewDropDown: DropDownListComponent;
+    @ViewChild('pageSizeDropDown')
+    public pageSizeDropDown: DropDownListComponent;
+    @ViewChild('Compact_View')
+    public compactCheckBoxObj: CheckBoxComponent;
+    @ViewChild('Inverse')
+    public inverseCheckBoxObj: CheckBoxComponent;
 
     onDropDownChange(args: ChangeEventArgs): void {
         if (args.element.id === 'Pager_Position') {
@@ -105,39 +110,5 @@ export class PagingComponent implements OnInit {
             showColumnPager: true,
             showRowPager: true
         } as PagerSettings;
-
-        this.positionDropDown = new DropDownList({
-            dataSource: this.pagerPositions,
-            index: 1,
-            change: this.onDropDownChange.bind(this)
-        });
-        this.positionDropDown.appendTo('#Pager_Position');
-
-        this.pagerViewDropDown = new DropDownList({
-            dataSource: this.pagerViewData,
-            index: 2,
-            change: this.onDropDownChange.bind(this)
-        });
-        this.pagerViewDropDown.appendTo('#Pager_View');
-
-        this.pageSizeDropDown = new DropDownList({
-            dataSource: this.pageSizes,
-            index: 2,
-            change: this.onDropDownChange.bind(this)
-        });
-        this.pageSizeDropDown.appendTo('#Page_Size');
-
-
-        this.compactCheckBoxObj = new CheckBox({
-            checked: false,
-            change: this.onCompactCheckBoxChange.bind(this)
-        });
-        this.compactCheckBoxObj.appendTo('#Compact_View');
-
-        this.inverseCheckBoxObj = new CheckBox({
-            checked: false,
-            change: this.onInverseCheckBoxChange.bind(this)
-        });
-        this.inverseCheckBoxObj.appendTo('#Inverse');
     }
 }

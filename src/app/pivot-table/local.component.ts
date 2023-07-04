@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, IDataSet, LoadEventArgs } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
-import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
+import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import { enableRipple, isNullOrUndefined } from '@syncfusion/ej2-base';
 import { csvdata } from './csvData';
 enableRipple(false);
@@ -21,11 +21,18 @@ let data: IDataSet[] = require('./rData.json');
 export class LocalComponent implements OnInit {
     public jsonReport: IDataOptions;
     public csvReport: IDataOptions;
-    public contentDropDown: DropDownList;
     public gridSettings: GridSettings;
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
+
+    public dropDownData: Object[] = [
+        { Id: 'JSON', Data: 'JSON' },
+        { Id: 'CSV', Data: 'CSV' }
+      ];
+    public fields: Object = { text: 'Data', value: 'Id' };
+    public waterMark: string = 'Select a Data type';
+    public value: string = 'JSON';
     groupDate(data: IDataSet[]): IDataSet[] {
         if (data[0].Year === undefined) {
             let date: Date;
@@ -119,11 +126,5 @@ export class LocalComponent implements OnInit {
             ],
             filters: []
         };
-
-        this.contentDropDown = new DropDownList({
-            placeholder: 'Content Type',
-            change: this.onChange.bind(this)
-        });
-        this.contentDropDown.appendTo('#contenttype');
     }
 }

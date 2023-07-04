@@ -81,7 +81,7 @@
                             </td>
                             <td style="padding-bottom: 16px">
                                 <div>
-                                    <input type="text" tabindex="1" id='fields' />
+                                    <ejs-dropdownlist id='fieldsddl' #fieldsddl [dataSource]='fields' index='0' width='100%' (change)='changeFieldsddl($event)'></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>
@@ -92,7 +92,7 @@
                             </td>
                             <td style="padding-bottom: 16px">
                                 <div>
-                                    <input type="text" tabindex="1" id='measures' />
+                                    <ejs-dropdownlist id='measures' #measuresddl [dataSource]='measures' [fields]='fieldsMeasuresddl' value='In_Stock' width='100%' (change)='changeMeasuresddl($event)'></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>
@@ -103,7 +103,7 @@
                             </td>
                             <td style="padding-bottom: 16px">
                                 <div class="conditionscls">
-                                    <input type="text" tabindex="1" id='conditions' />
+                                    <ejs-dropdownlist id='conditions' #operatorddl [dataSource]='operators' value='DoesNotEquals' (change)='changeOperatorddl($event)'></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>
@@ -114,7 +114,7 @@
                             </td>
                             <td style="padding-bottom: 16px">
                                 <div class="value1cls">
-                                    <input type="text" tabindex="1" id='value1' />
+                                    <ejs-numerictextbox id='value1' #value1 value='0' placeholder= "Example: 9590" width="100%" (change)='changeValue1($event)'></ejs-numerictextbox>
                                 </div>
                             </td>
                         </tr>
@@ -125,17 +125,17 @@
                             </td>
                             <td style="padding-bottom: 16px">
                                 <div class="value2cls">
-                                    <input type="text" tabindex="1" id='value2' />
+                                    <ejs-numerictextbox id='value2' #value2 value='0' placeholder= "Example: 17500" width="100%" (change)='changeValue2($event)'></ejs-numerictextbox>
                                 </div>
                             </td>
                         </tr>
                         <tr style="height: 50px">
                             <td colspan="2">
                                 <div style="float:right;margin-right: 4px">
-                                    <button id="clear">Clear</button>
+                                    <button ejs-button #clear id="clear">Clear</button>
                                 </div>
                                 <div style="float:right;margin-right: 4px">
-                                    <button id="apply">Apply</button>
+                                    <button ejs-button #apply id="apply" [isPrimary]="true">Apply</button>
                                 </div>
                             </td>
                         </tr>

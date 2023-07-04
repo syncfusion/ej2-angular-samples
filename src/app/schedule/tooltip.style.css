@@ -25,6 +25,10 @@
   background-color: #000;
 }
 
+.material3-dark .e-schedule-event-tooltip .tooltip-wrap .image {
+  background-color: #313033;
+}
+
 .e-schedule-event-tooltip .tooltip-wrap .content-area {
   padding-left: 6px;
   font-size: 12px;

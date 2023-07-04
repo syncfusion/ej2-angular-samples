@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, FieldListService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { DropDownList, ChangeEventArgs, MultiSelect, SelectEventArgs, RemoveEventArgs, PopupEventArgs } from '@syncfusion/ej2-dropdowns';
-import { CheckBoxSelection } from '@syncfusion/ej2-dropdowns';
+import { ChangeEventArgs, MultiSelect, SelectEventArgs, RemoveEventArgs, PopupEventArgs, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { CheckBoxSelection } from '@syncfusion/ej2-angular-dropdowns';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(false);
@@ -23,10 +23,24 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
 export class SummaryCustomizationComponent implements OnInit {
     public dataSourceSettings: IDataOptions;
     public gridSettings: GridSettings;
-    public optionsdll: DropDownList;
-
+    public data: { [key: string]: Object }[] = [
+        { Name: 'Country' },
+        { Name: 'Year' }
+    ];
+    public fields: Object= { text: 'Name' };
+    public waterMark: string = 'Select fields to hide its sub-totals';
+    public mode: string = 'CheckBox';
+    public optionsData: { [key: string]: Object }[] = [
+        { value: 'grandTotals', text: 'Grand Totals' },
+        { value: 'subTotals', text: 'Sub-totals' }
+    ];
+    public fieldsOptionsdll: Object= { value: 'value', text: 'text' };
+    public valueOptionsdll: string= 'grandTotals';
+    
     @ViewChild('pivotview')
     public pivotObj: PivotView;
+    @ViewChild('options')
+    public optionsdll: DropDownListComponent;
 
     /* tslint:disable */
     onChange(args: any) {
@@ -98,6 +112,44 @@ export class SummaryCustomizationComponent implements OnInit {
         this.pivotObj.refreshData();
     }
 
+    select (args: SelectEventArgs): void {
+        for (let i: number = 0; i < this.pivotObj.dataSourceSettings.columns.length; i++) {
+            if ((this.pivotObj.dataSourceSettings.columns[i].name || this.pivotObj.dataSourceSettings.columns[i].caption) === (args.itemData as any).Name) {
+                this.pivotObj.dataSourceSettings.columns[i].showSubTotals = false;
+            }
+        }
+        for (let i: number = 0; i < this.pivotObj.dataSourceSettings.rows.length; i++) {
+            if ((this.pivotObj.dataSourceSettings.rows[i].name || this.pivotObj.dataSourceSettings.rows[i].caption) === (args.itemData as any).Name) {
+                this.pivotObj.dataSourceSettings.rows[i].showSubTotals = false;
+            }
+        }
+        this.pivotObj.refreshData();
+    }
+    removed (args: RemoveEventArgs): void {
+        for (let i: number = 0; i < this.pivotObj.dataSourceSettings.columns.length; i++) {
+            if ((this.pivotObj.dataSourceSettings.columns[i].name || this.pivotObj.dataSourceSettings.columns[i].caption) === (args.itemData as any).Name) {
+                this.pivotObj.dataSourceSettings.columns[i].showSubTotals = true;
+            }
+        }
+        for (let i: number = 0; i < this.pivotObj.dataSourceSettings.rows.length; i++) {
+            if ((this.pivotObj.dataSourceSettings.rows[i].name || this.pivotObj.dataSourceSettings.rows[i].caption) === (args.itemData as any).Name) {
+                this.pivotObj.dataSourceSettings.rows[i].showSubTotals = true;
+            }
+        }
+        this.pivotObj.refreshData();
+    }
+    open (args: PopupEventArgs): void {
+        (args.popup.element.querySelector(".e-filter-parent") as HTMLElement).style.display = 'none';
+    }
+    changeOptionsdll (args: ChangeEventArgs) {
+        (document.getElementById('grandsum') as HTMLElement).style.display = 'none';
+        (document.getElementById('subsum') as HTMLElement).style.display = 'none';
+        if (args.value == 'grandTotals') {
+            (document.getElementById('grandsum') as HTMLElement).style.display = '';
+        } else if (args.value == 'subTotals') {
+            (document.getElementById('subsum') as HTMLElement).style.display = '';
+        }
+    }
     ngOnInit(): void {
         this.gridSettings = {
             columnWidth: 140
@@ -118,72 +170,5 @@ export class SummaryCustomizationComponent implements OnInit {
             showGrandTotals: true,
             grandTotalsPosition: 'Bottom',
         };
-
-        let fields: { [key: string]: Object; }[] = [
-            { Name: 'Country' },
-            { Name: 'Year' }
-        ];
-
-        let valuesddl: MultiSelect = new MultiSelect({
-            dataSource: fields,
-            mode: 'CheckBox',
-            showDropDownIcon: true,
-            showClearButton: false,
-            enableSelectionOrder: false,
-            fields: { text: 'Name' },
-            placeholder: 'Select fields to hide its sub-totals',
-            select: (args: SelectEventArgs): void => {
-                for (let i: number = 0; i < this.pivotObj.dataSourceSettings.columns.length; i++) {
-                    if ((this.pivotObj.dataSourceSettings.columns[i].name || this.pivotObj.dataSourceSettings.columns[i].caption) === (args.itemData as any).Name) {
-                        this.pivotObj.dataSourceSettings.columns[i].showSubTotals = false;
-                    }
-                }
-                for (let i: number = 0; i < this.pivotObj.dataSourceSettings.rows.length; i++) {
-                    if ((this.pivotObj.dataSourceSettings.rows[i].name || this.pivotObj.dataSourceSettings.rows[i].caption) === (args.itemData as any).Name) {
-                        this.pivotObj.dataSourceSettings.rows[i].showSubTotals = false;
-                    }
-                }
-                this.pivotObj.refreshData();
-            },
-            removed: (args: RemoveEventArgs): void => {
-                for (let i: number = 0; i < this.pivotObj.dataSourceSettings.columns.length; i++) {
-                    if ((this.pivotObj.dataSourceSettings.columns[i].name || this.pivotObj.dataSourceSettings.columns[i].caption) === (args.itemData as any).Name) {
-                        this.pivotObj.dataSourceSettings.columns[i].showSubTotals = true;
-                    }
-                }
-                for (let i: number = 0; i < this.pivotObj.dataSourceSettings.rows.length; i++) {
-                    if ((this.pivotObj.dataSourceSettings.rows[i].name || this.pivotObj.dataSourceSettings.rows[i].caption) === (args.itemData as any).Name) {
-                        this.pivotObj.dataSourceSettings.rows[i].showSubTotals = true;
-                    }
-                }
-                this.pivotObj.refreshData();
-            },
-            open: (args: PopupEventArgs): void => {
-                (args.popup.element.querySelector(".e-filter-parent") as HTMLElement).style.display = 'none';
-            }
-        });
-        valuesddl.appendTo('#summary-values');
-
-        let options: { [key: string]: Object; }[] = [
-            { value: 'grandTotals', text: 'Grand Totals' },
-            { value: 'subTotals', text: 'Sub-totals' }
-        ];
-
-        this.optionsdll = new DropDownList({
-            dataSource: options,
-            fields: { value: 'value', text: 'text' },
-            value: 'grandTotals',
-            width: '100%',
-            change: (args: ChangeEventArgs) => {
-                (document.getElementById('grandsum') as HTMLElement).style.display = 'none';
-                (document.getElementById('subsum') as HTMLElement).style.display = 'none';
-                if (args.value == 'grandTotals') {
-                    (document.getElementById('grandsum') as HTMLElement).style.display = '';
-                } else if (args.value == 'subTotals') {
-                    (document.getElementById('subsum') as HTMLElement).style.display = '';
-                }
-            }
-        });
-        this.optionsdll.appendTo('#options');
     }
 }

@@ -110,6 +110,26 @@
 #skeleton-listview .e-list-item:nth-child(8) .e-avatar {
     background-color: #0088;
 }
+
+body[class*="material3"] #skeleton-listview {
+    .pic01 {
+        background: url('/assets/skeleton/images/1.png') rgba(var(--color-sf-primary)) center;  
+        background-size: cover;
+    }
+    .pic02 {
+        background: url('/assets/skeleton/images/3.png') rgba(var(--color-sf-primary)) center;
+        background-size: cover;
+    }
+    .pic03 {
+        background: url('/assets/skeleton/images/5.png') rgba(var(--color-sf-primary)) center;
+        background-size: cover;
+    }
+    .pic04 {
+        background: url('/assets/skeleton/images/2.png') rgba(var(--color-sf-primary)) center;
+        background-size: cover;
+    }
+}
+
 #skeleton-listview .pic01 {
     background-image: url('/assets/skeleton/images/1.png');
 }

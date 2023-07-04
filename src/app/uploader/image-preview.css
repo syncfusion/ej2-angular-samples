@@ -82,6 +82,7 @@
 }
 
 .material-dark .imagepreview #dropArea .e-upload .e-upload-files .e-icons,
+.material3-dark .imagepreview #dropArea .e-upload .e-upload-files .e-icons,
 .fabric-dark .imagepreview #dropArea .e-upload .e-upload-files .e-icons,
 .bootstrap-dark .imagepreview #dropArea .e-upload .e-upload-files .e-icons, 
 .bootstrap5-dark .imagepreview #dropArea .e-upload .e-upload-files .e-icons,
@@ -126,6 +127,7 @@
 .highcontrast .imagepreview div.file-name,
 .highcontrast .imagepreview div.file-name,
 .material-dark .imagepreview div.file-name,
+.material3-dark .imagepreview div.file-name,
 .fabric-dark .imagepreview div.file-name,
 .bootstrap-dark .imagepreview div.file-name,
 .bootstrap5-dark .imagepreview div.file-name,
@@ -173,6 +175,7 @@
 }
 .highcontrast .imagepreview #dropArea progress,
 .material-dark .imagepreview #dropArea progress,
+.material3-dark .imagepreview #dropArea progress,
 .fabric-dark .imagepreview #dropArea progress,
 .bootstrap-dark .imagepreview #dropArea progress,
 .bootstrap5-dark .imagepreview #dropArea progress,
@@ -234,6 +237,7 @@
 .highcontrast .imagepreview #dropimage a {
     color: #ffd939;
 }
+.material3-dark .imagepreview #dropimage a,
 .material-dark .imagepreview #dropimage a {
     color:#56a4fd;
 }

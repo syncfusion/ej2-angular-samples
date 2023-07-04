@@ -66,7 +66,7 @@
                       <ejs-checkbox #gridlinesSwitch id="gridlines" [checked]="true" (change)="onGridlinesChange($event)">
                       </ejs-checkbox>
                     </div>
-                    <div class="text-child">TIme SLots</div>
+                    <div class="text-child">Time Slots</div>
                   </div>
                 </ng-template>
               </e-item>
@@ -165,7 +165,7 @@
                 <label style="line-height: 34px; margin: 0;">Day Start Hour</label>
               </div>
               <div class="col-right">
-                <ejs-timepicker id='dayStartHour' showClearButton='false' [value]='dayStartHourValue'
+                <ejs-timepicker id='dayStartHour' [showClearButton]='false' [value]='dayStartHourValue'
                   (change)='onDayStartHourChange($event)'>
                 </ejs-timepicker>
               </div>
@@ -175,7 +175,7 @@
                 <label style="line-height: 34px; margin: 0;">Day End Hour</label>
               </div>
               <div class="col-right">
-                <ejs-timepicker id='dayEndHour' showClearButton='false' [value]='dayEndHourValue'
+                <ejs-timepicker id='dayEndHour' [showClearButton]='false' [value]='dayEndHourValue'
                   (change)='onDayEndHourChange($event)'>
                 </ejs-timepicker>
               </div>
@@ -185,7 +185,7 @@
                 <label style="line-height: 34px; margin: 0;">Work Start Hour</label>
               </div>
               <div class="col-right">
-                <ejs-timepicker id='workHourStart' showClearButton='false' [value]='workStartHourValue'
+                <ejs-timepicker id='workHourStart' [showClearButton]='false' [value]='workStartHourValue'
                   (change)='onWorkStartHourChange($event)'>
                 </ejs-timepicker>
               </div>
@@ -195,7 +195,7 @@
                 <label style="line-height: 34px; margin: 0;">Work End Hour</label>
               </div>
               <div class="col-right">
-                <ejs-timepicker id='workHourEnd' showClearButton='false' [value]='workEndHourValue'
+                <ejs-timepicker id='workHourEnd' [showClearButton]='false' [value]='workEndHourValue'
                   (change)='onWorkEndHourChange($event)'></ejs-timepicker>
               </div>
             </div>

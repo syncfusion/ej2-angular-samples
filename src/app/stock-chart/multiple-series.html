@@ -1,7 +1,7 @@
 <div class="control-section">
     <div>
         <ejs-stockchart id='stockChartMultiSeries' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' [indicatorType]='indicatorType'
-            [trendlineType]='trendlineType' [title]='title' [crosshair]='crosshair' [legendSettings]='legend' style="display:block;"
+            [trendlineType]='trendlineType' [seriesType]="seriesType" [title]='title' [crosshair]='crosshair' [legendSettings]='legend' style="display:block;"
             [primaryYAxis]='primaryYAxis' (load)='load($event)'>
             <e-stockchart-series-collection>
                 <e-stockchart-series [dataSource]='data1' type='Spline' xName='x' yName='close' name='GOOG'>
@@ -14,17 +14,20 @@
 </div>
 <div id="action-description">
     <p>
-        This sample visualizes stock chart with multiple series and legend.
+        This sample visualizes the close value of multiple stock. Crosshair show the information about the data and period.
     </p>
 </div>
 <div id="description">
+    <p>In this example, you can see how to render and configure stock chart to visualize the data for multiple stock. Stock Chart supports 6 major types of series namely <code>Line</code>, <code>Spline</code>, <code>Hilo</code>, <code>HiloOpenClose</code>, <code>Hollow Candle</code> and <code>Candle</code>. By using the series dropdown button in period selector you can navigate between the above listed series types.</p>
     <p>
-        In this example, you can see how to render and configure the Stock Chart.
-        The <code>SplineSeries</code> is used to display data based on the selection made in the Range Selector. 
-        Since there are multiple series, the interactive legend has been enabled, which provides a quick overview of each series.
+       The legend is enabled, and you can use it to toggle the visibility of series in the stock chart. To customize the legend in the stock chart, use the <code>legendSettings</code> property.
+    </p>
+    <p>
+        More information about the series type can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/stock-chart/series-types">documentation section</a>.
     </p>
     <br>
-    <p style="font-weight: 500">Injecting Module:</p>
+    <p style="font-weight: 500"><b>Injecting Module:</b></p>
     <p>Stock Chart features are segregated into individual feature-wise modules.
         To use SplineSeries, inject <code>SplineSeriesService</code> into the <code>@NgModule.providers</code> section. 
         To use DateTime axis, inject <code>DateTimeService</code> into the <code>@NgModule.providers</code> section. 

@@ -1,13 +1,6 @@
 {
     "de": {
         "spreadsheet": {
-            "Close": "Schließen",
-            "MoreOptions": "Mehr Optionen",
-            "AddCurrentSelection": "Aktuelle Auswahl zum Filter hinzufügen",
-            "Directional": "Gerichtet",
-            "Shapes": "Formen",
-            "Indicators": "Indikatoren",
-            "Ratings": "Bewertungen",
             "InsertingEmptyValue": "Referenzwert ist ungültig.",
             "FindValue": "Wert finden",
             "ReplaceValue": "Wert ersetzen",
@@ -477,6 +470,9 @@
             "StackedArea100": "100 % gestapelter Bereich",
             "StackedLine": "Gestapelte Linie",
             "StackedLine100": "100 % gestapelte Linie",
+            "LineMarker": "Linie mit Markierungen",
+            "StackedLineMarker": "Gestapelte Linie mit Markierungen",
+            "StackedLine100Marker": "100 % gestapelte Linie mit Markierungen",
             "AddChartElement": "Diagrammelement hinzufügen",
             "Axes": "Achsen",
             "AxisTitle": "Achsentitel",
@@ -547,18 +543,20 @@
             "CustomFormat": "Benutzerdefinierte Zahlenformate",
             "CustomFormatPlaceholder": "Geben Sie ein benutzerdefiniertes Format ein oder wählen Sie es aus",
             "CustomFormatTypeList": "Typ",
-            "CellReferenceTypoError": "Wir haben einen Tippfehler in Ihrem Zellbezug gefunden. Möchten Sie diesen Verweis wie folgt korrigieren?"
+            "CellReferenceTypoError": "Wir haben einen Tippfehler in Ihrem Zellbezug gefunden. Möchten Sie diesen Verweis wie folgt korrigieren?",
+            "Close": "Schließen",
+            "MoreOptions": "Mehr Optionen",
+            "AddCurrentSelection": "Aktuelle Auswahl zum Filter hinzufügen",
+            "Directional": "Gerichtet",
+            "Shapes": "Formen",
+            "Indicators": "Indikatoren",
+            "Ratings": "Bewertungen",
+            "Material3": "Material 3",
+            "Material3Dark": "Material 3 Dunkel"
         }
     },
     "ar": {
         "spreadsheet": {
-            "Close": "يغلق",
-            "MoreOptions": "المزيد من الخيارات",
-            "AddCurrentSelection": "إضافة التحديد الحالي للتصفية",
-            "Directional": "اتجاهي",
-            "Shapes": "الأشكال",
-            "Indicators": "المؤشرات",
-            "Ratings": "التقييمات",
             "InsertingEmptyValue": "القيمة المرجعية غير صحيحة.",
             "FindValue": "جد القيمة",
             "ReplaceValue": "استبدل القيمة",
@@ -1028,6 +1026,9 @@
             "StackedArea100": "مساحة مكدسة 100٪",
             "StackedLine": "خط مكدس",
             "StackedLine100": "خط مكدس بنسبة 100٪",
+            "LineMarker": "خط مع علامات",
+            "StackedLineMarker": "خط مكدس بعلامات",
+            "StackedLine100Marker": "خط مكدس بنسبة 100٪ بعلامات",
             "AddChartElement": "إضافة عنصر مخطط",
             "Axes": "المحاور",
             "AxisTitle": "عنوان المحور",
@@ -1098,18 +1099,20 @@
             "CustomFormat": "تنسيقات الأرقام المخصصة",
             "CustomFormatPlaceholder": "اكتب أو حدد تنسيقًا مخصصًا",
             "CustomFormatTypeList": "يكتب",
-            "CellReferenceTypoError": "وجدنا خطأ مطبعي في مرجع الخلية الخاصة بك. هل تريد تصحيح هذا المرجع على النحو التالي؟"
+            "CellReferenceTypoError": "وجدنا خطأ مطبعي في مرجع الخلية الخاصة بك. هل تريد تصحيح هذا المرجع على النحو التالي؟",
+            "Close": "يغلق",
+            "MoreOptions": "المزيد من الخيارات",
+            "AddCurrentSelection": "إضافة التحديد الحالي للتصفية",
+            "Directional": "اتجاهي",
+            "Shapes": "الأشكال",
+            "Indicators": "المؤشرات",
+            "Ratings": "التقييمات",
+            "Material3": "المادة 3",
+            "Material3Dark": "المادة 3 الظلام"
         }
     },
     "en": {
         "spreadsheet": {
-            "Close": "Close",
-            "MoreOptions": "More Options",
-            "AddCurrentSelection": "Add current selection to filter",
-            "Directional": "Directional",
-            "Shapes": "Shapes",
-            "Indicators": "Indicators",
-            "Ratings": "Ratings",
             "InsertingEmptyValue": "Reference value is not valid.",
             "FindValue": "Find value",
             "ReplaceValue": "Replace value",
@@ -1579,6 +1582,9 @@
             "StackedArea100": "100% Stacked Area",
             "StackedLine": "Stacked Line",
             "StackedLine100": "100% Stacked Line",
+            "LineMarker": "Line with Markers",
+            "StackedLineMarker": "Stacked Line with Markers",
+            "StackedLine100Marker": "100% Stacked Line with Markers",
             "AddChartElement": "Add Chart Element",
             "Axes": "Axes",
             "AxisTitle": "Axis Title",
@@ -1649,18 +1655,20 @@
             "CustomFormat": "Custom Number Formats",
             "CustomFormatPlaceholder": "Type or Select a custom format",
             "CustomFormatTypeList": "Type",
-            "CellReferenceTypoError": "We found a typo in your cell reference. Do you want to correct this reference as follows?"
+            "CellReferenceTypoError": "We found a typo in your cell reference. Do you want to correct this reference as follows?",
+            "Close": "Close",
+            "MoreOptions": "More Options",
+            "AddCurrentSelection": "Add current selection to filter",
+            "Directional": "Directional",
+            "Shapes": "Shapes",
+            "Indicators": "Indicators",
+            "Ratings": "Ratings",
+            "Material3": "Material 3",
+            "Material3Dark": "Material 3 Dark"
         }
     },
     "zh": {
         "spreadsheet": {
-            "Close": "关闭",
-            "MoreOptions": "更多的选择",
-            "AddCurrentSelection": "将当前选择添加到过滤器",
-            "Directional": "方向性",
-            "Shapes": "形状",
-            "Indicators": "指示符",
-            "Ratings": "收视率",
             "InsertingEmptyValue": "參考值無效。",
             "FindValue": "尋找價值",
             "ReplaceValue": "替換值",
@@ -2130,6 +2138,9 @@
             "StackedArea100": "100% 堆積面積",
             "StackedLine": "疊線",
             "StackedLine100": "100% 堆疊線",
+            "LineMarker": "帶標記線",
+            "StackedLineMarker": "帶標記的堆疊線",
+            "StackedLine100Marker": "帶標記的 100% 堆疊線",
             "AddChartElement": "添加圖表元素",
             "Axes": "軸",
             "AxisTitle": "軸標題",
@@ -2200,18 +2211,20 @@
             "CustomFormat": "自定義數字格式",
             "CustomFormatPlaceholder": "鍵入或選擇自定義格式",
             "CustomFormatTypeList": "類型",
-            "CellReferenceTypoError": "我們在您的單元格引用中發現了拼寫錯誤。是否要按如下方式更正此引用？"
+            "CellReferenceTypoError": "我們在您的單元格引用中發現了拼寫錯誤。是否要按如下方式更正此引用？",
+            "Close": "关闭",
+            "MoreOptions": "更多的选择",
+            "AddCurrentSelection": "将当前选择添加到过滤器",
+            "Directional": "方向性",
+            "Shapes": "形状",
+            "Indicators": "指示符",
+            "Ratings": "收视率",
+            "Material3": "材料 3",
+            "Material3Dark": "材質 3 深色"
         }
     },
     "fr-CH": {
         "spreadsheet": {
-            "Close": "Fermer",
-            "MoreOptions": "Plus d'options",
-            "AddCurrentSelection": "Ajouter la sélection actuelle au filtre",
-            "Directional": "Directionnel",
-            "Shapes": "Formes",
-            "Indicators": "Indicateurs",
-            "Ratings": "Notes",
             "InsertingEmptyValue": "La valeur de référence n'est pas valide.",
             "FindValue": "Trouver de la valeur",
             "ReplaceValue": "Remplacer la valeur",
@@ -2681,6 +2694,9 @@
             "StackedArea100": "100 % de zone empilée",
             "StackedLine": "Ligne empilée",
             "StackedLine100": "Ligne empilée à 100 %",
+            "LineMarker": "Ligne avec marqueurs",
+            "StackedLineMarker": "Ligne empilée avec marqueurs",
+            "StackedLine100Marker": "Ligne empilée à 100 % avec marqueurs",
             "AddChartElement": "Ajouter un élément de graphique",
             "Axes": "Haches",
             "AxisTitle": "Titre de l'axe",
@@ -2751,7 +2767,16 @@
             "CustomFormat": "Formats de nombre personnalisés",
             "CustomFormatPlaceholder": "Tapez ou sélectionnez un format personnalisé",
             "CustomFormatTypeList": "Taper",
-            "CellReferenceTypoError": "Nous avons trouvé une faute de frappe dans votre référence de cellule. Voulez-vous corriger cette référence comme suit ?"
+            "CellReferenceTypoError": "Nous avons trouvé une faute de frappe dans votre référence de cellule. Voulez-vous corriger cette référence comme suit ?",
+            "Close": "Fermer",
+            "MoreOptions": "Plus d'options",
+            "AddCurrentSelection": "Ajouter la sélection actuelle au filtre",
+            "Directional": "Directionnel",
+            "Shapes": "Formes",
+            "Indicators": "Indicateurs",
+            "Ratings": "Notes",
+            "Material3": "Matériel 3",
+            "Material3Dark": "Matériau 3 foncé"
         }
     }
 }

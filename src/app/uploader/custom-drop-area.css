@@ -90,6 +90,7 @@ span.dropText {
     background-color: #393939;
 }
 
+.material3-dark .dropArea_wrap,
 .material-dark .dropArea_wrap {
     background-color: #616161;
 }

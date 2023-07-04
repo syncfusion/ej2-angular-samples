@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DataManager, ODataAdaptor, ODataV4Adaptor, WebApiAdaptor, UrlAdaptor, Query } from '@syncfusion/ej2-data';
+import { DataManager, ODataV4Adaptor, WebApiAdaptor, UrlAdaptor, Query } from '@syncfusion/ej2-data';
 import { CheckBoxChangeEventArgs, ColumnModel, DataResult, DataStateChangeEventArgs, GridComponent, Sorts } from '@syncfusion/ej2-angular-grids';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
@@ -35,10 +35,6 @@ export class FlexibleDataBindingComponent implements OnInit {
       value: 'ODataV4Adaptor',
     },
     {
-      text: 'https://js.syncfusion.com/ejServices/Wcf/Northwind.svc/Orders/',
-      value: 'ODataAdaptor',
-    },
-    {
       text: 'https://ej2services.syncfusion.com/js/development/api/Orders',
       value: 'WebApiAdaptor',
     },
@@ -47,7 +43,7 @@ export class FlexibleDataBindingComponent implements OnInit {
       value: 'UrlAdaptor',
     },
     {
-      text: 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Orders',
+      text: 'https://services.odata.org/V4/Northwind/Northwind.svc/Orders',
       value: 'Custom Binding',
     },
   ];
@@ -74,8 +70,7 @@ export class FlexibleDataBindingComponent implements OnInit {
       width: 140,
     },
   ];
-  public BASE_URL =
-    'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Orders';
+  public BASE_URL = 'https://services.odata.org/V4/Northwind/Northwind.svc/Orders';
   public ajax: Ajax = new Ajax({
     type: 'GET',
     mode: true,
@@ -103,9 +98,6 @@ export class FlexibleDataBindingComponent implements OnInit {
     removeClass(headerElements, 'hide_elem');
     if (this.changedAdaptor === 'Custom Binding') {
         addClass(paramElements, 'hide_elem');
-    }
-    if (this.changedAdaptor === 'ODataAdaptor') {
-        addClass(headerElements, 'hide_elem');
     }
   }
 
@@ -144,17 +136,16 @@ export class FlexibleDataBindingComponent implements OnInit {
     const pageQuery = `$skip=${state.skip}&$top=${state.take}`;
     if (this.checkboxInstance.checked) {
       this.ajax.url =
-        this.BASE_URL + '?' + pageQuery + '&$inlinecount=allpages&$format=json';
+        this.BASE_URL + '?' + pageQuery + '&$count=true';
     } else {
       this.ajax.url =
-        this.BASE_URL + '?' + '&$inlinecount=allpages&$format=json';
+        this.BASE_URL + '?' + '&$count=true';
     }
-    this.ajax.data = Object.assign({}, ...this.params);
     return this.ajax.send().then((response: any) => {
       let data: any = JSON.parse(response);
       return {
-        result: data['d']['results'],
-        count: parseInt(data['d']['__count'], 10),
+        result: data['value'],
+        count: parseInt(data['@odata.count'], 10),
       };
     });
   };
@@ -234,21 +225,12 @@ export class FlexibleDataBindingComponent implements OnInit {
           headers: this.header,
           crossDomain: true
         });
-      } else if (this.changedAdaptor === 'ODataAdaptor') {
-        newDataSource = new DataManager({
-          url: 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Orders',
-          adaptor: new ODataAdaptor(),
-          crossDomain: true
-        });
       }
       this.grid.changeDataSource(newDataSource, col);
     }
     let payloadInfo: string;
     if (this.changedAdaptor === 'Custom Binding') {
       payloadInfo = `<b>Payload Information</b> <br> Custom Binding <br> Service URL: ${this.selectedService} <br>`;
-    }
-    else if (this.changedAdaptor === 'ODataAdaptor') {
-      payloadInfo = `<b>Payload Information</b> <br> Service URL: ${this.selectedService} <br> Adaptor Type: ${this.changedAdaptor} <br> Additional Parameters: ${this.defaultParam}`;
     }
     else {
       payloadInfo = `<b>Payload Information</b> <br> Service URL: ${this.selectedService} <br> Adaptor Type: ${this.changedAdaptor} <br> Additional Parameters: ${this.defaultParam} <br> Headers: ${this.defaultHeader}`;

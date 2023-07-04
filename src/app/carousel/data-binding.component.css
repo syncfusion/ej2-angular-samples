@@ -38,7 +38,7 @@
   height: 3em;
 }
 
-.db-carousel .e-carousel-indicators .e-indicator-bar .e-indicator div {
+.db-carousel .e-carousel-indicators.e-default .e-indicator-bar .e-indicator div {
   background-color: #e7e7e7;
 }
 

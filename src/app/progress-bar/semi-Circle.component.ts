@@ -71,7 +71,7 @@ export class ProgressBarSemiComponent {
         }
         return ('<div id="point1" style="font-size:20px;font-weight:bold;color:' + color + '"><span>' + content + '</span></div>');
     }
-    public annotationColors: string[] = ['#e91e63', '#0078D6', '#317ab9', '#007bff', '#4F46E5', '#FFD939', '#9A9A9A', '#22D3EE', '#0D6EFD'];
+    public annotationColors: string[] = ['#e91e63', '#0078D6', '#317ab9', '#007bff', '#4F46E5', '#FFD939', '#9A9A9A', '#22D3EE', '#0D6EFD', '#6750A4', '#D0BCFF'];
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
@@ -103,12 +103,20 @@ export class ProgressBarSemiComponent {
             case 'material-dark':
                 args.progressBar.annotations[0].content = this.annotationElementContent(this.annotationColors[6], args.progressBar.element.id);
                 break;
+            case 'fluent':
+            case 'fluent-dark':
             case 'bootstrap5':
             case 'bootstrap5-dark':
                 args.progressBar.annotations[0].content = this.annotationElementContent(this.annotationColors[8], args.progressBar.element.id);
                 break;
             case 'tailwind-dark':
                 args.progressBar.annotations[0].content = this.annotationElementContent(this.annotationColors[7], args.progressBar.element.id);
+                break;
+            case 'material3':
+                args.progressBar.annotations[0].content = this.annotationElementContent(this.annotationColors[9], args.progressBar.element.id);
+                break;
+            case 'material3-dark':
+                args.progressBar.annotations[0].content = this.annotationElementContent(this.annotationColors[10], args.progressBar.element.id);
                 break;
             default:
                 args.progressBar.annotations[0].content =

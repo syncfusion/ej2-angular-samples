@@ -1,7 +1,6 @@
 <div id="action-description">
     <p>
-        This sample visualizes stock data with inversed axis. Period and range selector help us to navigate different
-        of data.
+        This sample uses area series and inversed axis to visualize stock data. The crosshair display information about the data and period.
     </p>
 </div>
 <div class="control-section">
@@ -17,11 +16,16 @@
     </div>
 </div>
 <div id="description">
+    <p>In this example, you can see how to render and configure stock chart to visualize the stock data with inversed axis and it can be inversed by setting <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/stock-chart/stockChartAxisDirective/#isinversed">isInversed</a> property as <b>true</b>.</p>
     <p>
-        In this example, you can see how to render and configure the Stock chart.
-        <code>AreaSeries</code> is used to represent selected data value.
+        <code>Crosshair</code> is enabled in this example. To see the crosshair in action, hover the chart or tap on touch enabled devices.
     </p>
-    <p style="font-weight: 500">Injecting Module:</p>
+    <p>
+        More information about the axis can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/stock-chart/axis-types">documentation section</a>.
+    </p>
+    <br>
+    <p style="font-weight: 500"><b>Injecting Module:</b></p>
     <p>Stock Chart features are segregated into individual feature-wise modules. To use Area Series, DateTime axis in stock chart, we need to inject
         <code>AreaSeriesService</code> and <code>DateTimeService</code> into the <code>@NgModule.providers</code> section.
     </p>

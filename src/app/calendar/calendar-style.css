@@ -24,6 +24,7 @@
 }
 .highcontrast .content-value,
 .material-dark .content-value,
+.material3-dark .content-value,
 .fabric-dark .content-value,
 .bootstrap-dark .content-value,
 .bootstrap5-dark .content-value,
@@ -35,6 +36,7 @@ body.fluent-dark #selected,
 body.bootstrap5-dark #selected,
 body.tailwind-dark #selected,
 body.material-dark #selected,
+body.material3-dark #selected,
 body.fabric-dark #selected,
 body.bootstrap-dark #selected,
 body.highcontrast #selected {

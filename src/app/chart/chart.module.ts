@@ -140,7 +140,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/area', component: AreaChartComponent, name: 'Area', description: "This demo for Essential JS2 Chart control shows how to render the area series.", order: '03', category: 'Area Charts' },
     { path: ':theme/chart/spline-area', component: SplineAreaChartComponent, name: 'Spline Area', description: "This demo for Essential JS2 Chart control shows how to render the spline area series.", order: '03', category: 'Area Charts' },
     { path: ':theme/chart/step-area', component: StepAreaChartComponent, name: 'Step Area', description: "This demo for Essential JS2 Chart control shows how to render the step area series.", order: '03', category: 'Area Charts' },
-    { path: ':theme/chart/range-step-area', component: RangeStepAreaComponent, name: 'Range Step Area', description: "This demo for Essential JS2 Chart control shows how to render the range step area series.", order: '03', category: 'Area Charts', type: 'new' },
+    { path: ':theme/chart/range-step-area', component: RangeStepAreaComponent, name: 'Range Step Area', description: "This demo for Essential JS2 Chart control shows how to render the range step area series.", order: '03', category: 'Area Charts' },
     { path: ':theme/chart/range-area', component: RangeAreaComponent, name: 'Range Area', description: "This demo for Essential JS2 Chart control shows how to render the range area series.", order: '03', category: 'Area Charts' },
     { path: ':theme/chart/spline-range-area', component: SplineRangeAreaComponent, name: 'Spline Range Area', description: "This demo for Essential JS2 Chart control shows how to render the spline range area series.", order: '03', category: 'Area Charts' },
     { path: ':theme/chart/stacked-area', component: StackedAreaChartComponent, name: 'Stacked Area', description: "This demo for Essential JS2 Chart control shows how to render the stacking area series.", order: '03', category: 'Area Charts' },
@@ -175,7 +175,7 @@ export const chartAppRoutes: Object[] = [
 
     { path: ':theme/chart/default-pie', component: DefaultPieComponent, name: 'Pie', description: "This demo for Essential JS2 Chart control shows how to render and configure the pie charts.", order: '07', category: 'Accumulation Charts' },
     { path: ':theme/chart/pie-radius', component: PieRadiusComponent, name: 'Pie with Various Radius', description: "This demo for Essential JS2 Chart control shows how to render and configure the pie chart with different radius.", order: '07', category: 'Accumulation Charts' },
-    { path: ':theme/chart/donut', component: DonutComponent, name: 'Donut', description: "This demo for Essential JS2 Chart control shows how to render and configure the doughnut charts.", order: '07', category: 'Accumulation Charts', type: 'update' },
+    { path: ':theme/chart/donut', component: DonutComponent, name: 'Donut', description: "This demo for Essential JS2 Chart control shows how to render and configure the doughnut charts.", order: '07', category: 'Accumulation Charts' },
     { path: ':theme/chart/pyramid', component: PyramidComponent, name: 'Pyramid', description: "This demo for Essential JS2 Chart control shows how to render and configure the pyramid charts.", order: '07', category: 'Accumulation Charts' },
     { path: ':theme/chart/funnel', component: FunnelComponent, name: 'Funnel', description: "This demo for Essential JS2 Chart control shows how to render and configure the funnel charts.", order: '07', category: 'Accumulation Charts' },
     {
@@ -199,7 +199,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/waterfall', component: WaterfallChartComponent, name: 'Waterfall', description: "This demo for Essential JS2 Chart control shows how to render the waterfall series.", order: '08', category: 'Other Types' },
     { path: ':theme/chart/histogram', component: HistogramChartComponent, name: 'Histogram', description: "This demo for Essential JS2 Chart control shows how to render the histogram series.", order: '08', category: 'Other Types' },
     { path: ':theme/chart/box-and-whisker', component: BoxandWhiskerChartComponent, name: 'Box and Whisker', description: "This demo for Essential JS2 Chart control shows how to render the box and whisker series.", order: '08', category: 'Other Types' },
-    { path: ':theme/chart/error-bar', component: ErrorBarChartComponent, name: 'Error Bar', description: "This demo for Essential JS2 Chart control shows how to render and configure the error bars in charts.", order: '08', category: 'Other Types', type: 'update' },
+    { path: ':theme/chart/error-bar', component: ErrorBarChartComponent, name: 'Error Bar', description: "This demo for Essential JS2 Chart control shows how to render and configure the error bars in charts.", order: '08', category: 'Other Types' },
     { path: ':theme/chart/trend-lines', component: TrendLineChartComponent, name: 'Trendlines', description: "This demo for Essential JS2 Chart control shows how to render and configure the trend lines in charts.", order: '08', category: 'Other Types' },
     {
         path: ':theme/chart/multi-series-chart', component: MultiSeriesChartComponent, name: 'Multi Series Chart', description: "This demo for Essential JS2 Chart control shows how to combine different types of charts.",
@@ -207,7 +207,7 @@ export const chartAppRoutes: Object[] = [
     },
     {
         path: ':theme/chart/pare-to', component: ParetoSeriesChartComponent, name: 'Pareto Chart', description: "This demo for Essential JS2 Chart control shows how to render pareto charts.",
-        order: '08', category: 'Other Types'
+        order: '08', category: 'Other Types', type: 'update'
     },
 
 
@@ -237,7 +237,7 @@ export const chartAppRoutes: Object[] = [
 
     { path: ':theme/chart/local-data', component: LocalDataChartComponent, name: 'Local Data', description: "This demo for Essential JS2 Chart control shows how to bind JSON data to chart.", order: '12', category: 'Data Binding' },
     { path: ':theme/chart/remote-data', component: RemoteDataChartComponent, name: 'Remote Data', description: "This demo for Essential JS2 Chart control shows how to consume data from remote data service.", order: '12', category: 'Data Binding' },
-    { path: ':theme/chart/lazy-loading', component: LazyLoadingComponent, name: 'Lazy Loading', description: "This demo for Essential JS2 Chart control demonstrates the Lazy Loading behavior in chart.", order: '12', category: 'Data Binding' },
+    { path: ':theme/chart/lazy-loading', component: LazyLoadingComponent, name: 'Lazy Loading', description: "This demo for Essential JS2 Chart control demonstrates the Lazy Loading behavior in chart.", order: '12', category: 'Data Binding', type: 'update' },
 
     { path: ':theme/chart/numeric', component: NumericAxisChartComponent, name: 'Numeric Axis', description: "This demo for Essential JS2 Chart control shows how to plot numeric data with the help of numeric axis in charts.", order: '13', category: 'Chart Axes' },
     { path: ':theme/chart/date-time', component: DateTimeAxisChartComponent, name: 'DateTime Axis', description: "This demo for Essential JS2 Chart control shows how to render the date-time axis in charts.", order: '13', category: 'Chart Axes' },
@@ -247,7 +247,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/logarithmic-scale', component: LogarithmicScaleChartComponent, name: 'Logarithmic Scale', description: "This demo for Essential JS2 Chart control shows how to render the logarithmic axis in charts.", order: '13', category: 'Chart Axes' },
     { path: ':theme/chart/multiple-axis', component: MultipleAxisChartComponent, name: 'Multiple Axis', description: "This demo for Essential JS2 Chart control shows how to render and configure the mulitple axis in charts.", order: '13', category: 'Chart Axes' },
     { path: ':theme/chart/inversed', component: InversedAxisChartComponent, name: 'Inversed Axes', description: "This demo for Essential JS2 Chart control shows how to invert the axis in charts.", order: '13', category: 'Chart Axes' },
-    { path: ':theme/chart/strip-line', component: StripLineChartComponent, name: 'Strip Line', description: "This demo for Essential JS2 Chart control shows how to render and configure the strip lines in charts.", order: '13', category: 'Chart Axes' },
+    { path: ':theme/chart/strip-line', component: StripLineChartComponent, name: 'Stripline', description: "This demo for Essential JS2 Chart control shows how to render and configure the strip lines in charts.", order: '13', category: 'Chart Axes', type: 'update' },
     { path: ':theme/chart/strip-line-recurrence', component: StripLineRecurrenceChartComponent, name: 'Strip Line Recurrence', description: "This demo for Essential JS2 Chart control shows how to render the strip line recurrence in charts.", order: '13', category: 'Chart Axes' },
     { path: ':theme/chart/smart-axis-labels', component: SmartAxisLabelsChartComponent, name: 'Smart Labels', description: "This demo for Essential JS2 Chart control shows how to arrange the labels smartly without overlapping with each other.", order: '13', category: 'Chart Axes' },
     { path: ':theme/chart/multi-level-label', component: MultiLevelLabelsChartComponent, name: 'Multi Level Labels', description: "This demo for Essential JS2 Chart control shows how to group the axis labels.", order: '13', category: 'Chart Axes' },
@@ -271,7 +271,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/keyboard', component: KeyboardComponent, name: 'Keyboard Navigation', description: "This demo for Essential JS2 Chart control demonstrates the Keyboard Navigation in chart.", order: '16', category: 'User Interaction'},
     { path: ':theme/chart/cross-hair', component: CrosshairChartComponent, name: 'Crosshair', description: "This demo for Essential JS2 Chart control demonstrates the crosshair behavior in chart.", order: '16', category: 'User Interaction' },
     { path: ':theme/chart/trackball', component: TrackBallChartComponent, name: 'TrackBall', description: "This demo for Essential JS2 Chart control demonstrates the trackball behavior in chart.", order: '16', category: 'User Interaction' },
-    { path: ':theme/chart/zooming', component: ZoomingChartComponent, name: 'Zooming and Panning', description: "This demo for Essential JS2 Chart control demonstrates the zooming and panning behavior in chart.", order: '16', category: 'User Interaction' },
+    { path: ':theme/chart/zooming', component: ZoomingChartComponent, name: 'Zooming and Panning', description: "This demo for Essential JS2 Chart control demonstrates the zooming and panning behavior in chart.", order: '16', category: 'User Interaction', type: 'update' },
     { path: ':theme/chart/data-editing', component: DataEditingComponent, name: 'Data Editing', description: "This demo for Essential JS2 Chart control demonstrates the data editing behavior in chart.", order: '16', category: 'User Interaction' }
 ];
 

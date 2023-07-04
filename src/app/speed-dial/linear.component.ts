@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { SpeedDialItemModel } from '@syncfusion/ej2-angular-buttons';
 
 /**
@@ -12,6 +12,10 @@ import { SpeedDialItemModel } from '@syncfusion/ej2-angular-buttons';
 })
 
 export class LinearSpeedDialComponent {
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['linear.css'];
+    }
+
     public items: SpeedDialItemModel[] = [
         {
             title:'Image',

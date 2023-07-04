@@ -33,11 +33,12 @@ export class HiloOpenCloseChartComponent {
         rangePadding: 'None',
         majorTickLines: { width: 0 }
     };
-
+    public title: string = "AAPL Historical"
     public tooltip: Object = {
         enable: true,
         shared: true,
-        header: ""
+        header: "",
+        format: "<b>Apple Inc.(AAPL)</b> <br> High : <b>${point.high}</b> <br> Low : <b>${point.low}</b> <br> Open : <b>${point.open}</b> <br> Close : <b>${point.close}</b>"
     };
     public marker: Object = {
         visible: false
@@ -54,7 +55,7 @@ export class HiloOpenCloseChartComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
     // custom code end
     public chartArea: Object = {

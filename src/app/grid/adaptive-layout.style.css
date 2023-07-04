@@ -23,6 +23,10 @@
         vertical-align: top;
         width: calc(60% - 48px);
     }
+    .material3 .e-adaptive-demo .e-pager div.e-parentmsgbar,
+    .material3-dark .e-adaptive-demo .e-pager div.e-parentmsgbar {
+        padding-top: 3px;
+    }
     .e-adaptive-demo .e-rtl.e-pager div.e-parentmsgbar {
         margin-top: 0;
     }
@@ -46,6 +50,16 @@
         box-sizing: border-box;
         display: inline-block;
         padding: 1% 5%;
+    }
+    .material3 .e-adaptive-demo .e-pager .e-mfirst,
+    .material3 .e-adaptive-demo .e-pager .e-mprev,
+    .material3 .e-adaptive-demo .e-pager .e-mnext,
+    .material3 .e-adaptive-demo .e-pager .e-mlast,
+    .material3-dark .e-adaptive-demo .e-pager .e-mfirst,
+    .material3-dark .e-adaptive-demo .e-pager .e-mprev,
+    .material3-dark .e-adaptive-demo .e-pager .e-mnext,
+    .material3-dark .e-adaptive-demo .e-pager .e-mlast {
+        padding: 1% 4%;
     }
     .e-adaptive-demo .e-pager .e-mfirst {
         margin-right: 4px;

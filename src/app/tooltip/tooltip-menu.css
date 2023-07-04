@@ -108,6 +108,8 @@
 @media screen and (max-width: 420px) {
     .e-bigger .toolbarContainer {
         width: 75%;
+        overflow: auto;
+        margin: auto;
     }
 }
 

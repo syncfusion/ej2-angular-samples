@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation, HostListener } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, HostListener, Inject } from '@angular/core';
 import { FileMenuSettingsModel, RibbonButtonSettingsModel, RibbonSplitButtonSettingsModel, RibbonComboBoxSettingsModel, RibbonDropDownSettingsModel, RibbonItemSize, RibbonCheckBoxSettingsModel, RibbonColorPickerSettingsModel, LauncherClickEventArgs, DisplayMode, FileMenuEventArgs } from '@syncfusion/ej2-ribbon';
 import { MenuItemModel } from "@syncfusion/ej2-navigations";
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
@@ -17,6 +17,10 @@ export class RibbonResizeComponent {
   @ViewChild('toast') toastObj: ToastComponent;
   @ViewChild('ribbon') ribbon: RibbonComponent;
   @ViewChild('slider') slider: SliderComponent; ;
+
+  constructor(@Inject('sourceFiles') private sourceFiles: any) {
+    sourceFiles.files = ['resize.component.css'];
+  }
 
   public pasteOptions: ItemModel[] = [{ text: "Keep Source Format" }, { text: "Merge format" }, { text: "Keep text only" }];
   public findOptions: ItemModel[] = [{ text: "Find", iconCss: "e-icons e-search" }, { text: "Advanced find", iconCss: "e-icons e-search" }, { text: "Go to", iconCss: "e-icons e-arrow-right" }];
@@ -68,7 +72,7 @@ export class RibbonResizeComponent {
   public fontStyle: string[] = ["Algerian", "Arial", "Calibri", "Cambria", "Cambria Math", "Courier New", "Candara", "Georgia", "Impact", "Segoe Print", "Segoe Script", "Segoe UI", "Symbol", "Times New Roman", "Verdana", "Windings"];
 
   public fontstyleSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontStyle, index: 3, width: '150px', allowFiltering: true, change: (args) => { this.updateContent("Font Style -> " + args.itemData.text); } };
-  public fontsizeSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontSize, index: 3, width: '80px', allowFiltering: true, change: (args) => { this.updateContent("Font Size -> " + args.itemData.text); } };
+  public fontsizeSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontSize, index: 3, width: '65px', popupWidth: '85px', allowFiltering: true, change: (args) => { this.updateContent("Font Size -> " + args.itemData.text); } };
 
   public colorSettings: RibbonColorPickerSettingsModel = { value: '#123456', change: (args) => { this.updateContent(args.currentValue.hex + " color"); } };
 
@@ -103,7 +107,7 @@ export class RibbonResizeComponent {
   public largeSize: RibbonItemSize = RibbonItemSize.Large;
   public smallSize: RibbonItemSize = RibbonItemSize.Small;
 
-  public Simplified: DisplayMode = DisplayMode.Simplified;
+  public colorPickerDisplayMode: DisplayMode = DisplayMode.Simplified | DisplayMode.Classic;
   public Overflow: DisplayMode = DisplayMode.Overflow;
 
   public position = { X: 'Right' };

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { SpeedDialComponent, SpeedDialItemModel } from '@syncfusion/ej2-angular-buttons';
 /**
  * Default Speed Dial component
@@ -13,6 +13,10 @@ import { SpeedDialComponent, SpeedDialItemModel } from '@syncfusion/ej2-angular-
 export class TemplateComponent {
     @ViewChild('popupTempSpeeddial')
     public speeddialObj:SpeedDialComponent;
+
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['template.css'];
+    }
 
     public items: SpeedDialItemModel[] = [
         {

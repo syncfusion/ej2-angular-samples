@@ -65,21 +65,12 @@
 
 <div id="description">
   <p>
-    In this demo, the event window is customized based on the doctor's required appointment related fields which can
-    be achieved by making use of the <code>editorTemplate</code> API. Here, the custom design is built with the required
-    fields through the script template and its type should be <code>ng-template</code>.
+    In this demo, the event window is customized based on the specific appointment-related fields required for doctors which can 
+    be achieved by making use of the <code>editorTemplate</code> API and its type should be <code>ng-template</code>.
   </p>
   <p>
-    Each field defined through it should contain the <code>e-field</code> class, so as to allow the processing of those
-    fields in the default event object from internal source. The ID of this customized script template section is
-    assigned to the <code>editorTemplate</code> option, so that this customized fields will be replaced onto the default
-    editor window.
-  </p>
-  <p>
-    As we are using our Syncfusion sub-components within this editor in this demo, therefore the custom defined form
-    elements needs to be configured as required Syncfusion components such as DropDownList and DateTimePicker which
-    needs to be done within the <code>popupOpen</code> event. This particular step can be skipped, if the user needs to
-    simply use the normal form design with applicable fields.
+    Each field defined through it should contain the <code>e-field</code> class, and <code>data-name</code> attribute, 
+    so as to allow the processing of those fields in the default event object from internal source
   </p>
   <p>
     Within the <code>eventRendered</code> event that triggers before every appointment getting rendered on the Scheduler

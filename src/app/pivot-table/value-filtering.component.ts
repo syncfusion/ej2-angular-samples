@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, Operators, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
-import { Button } from '@syncfusion/ej2-buttons';
-import { NumericTextBox, ChangeEventArgs as NumericEventArgs } from '@syncfusion/ej2-inputs';
+import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs as NumericEventArgs, NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 import { FilterModel } from '@syncfusion/ej2-pivotview/src/model/datasourcesettings-model';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
+import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(false);
 /**
@@ -30,17 +31,25 @@ export class ValueFilterComponent implements OnInit {
         { value: 'Sold', text: 'Units Sold' },
         { value: 'Amount', text: 'Sold Amount' }];
     public dataSourceSettings: IDataOptions;
-    public fieldsddl: DropDownList;
-    public measuresddl: DropDownList;
-    public operatorddl: DropDownList;
-    public valueInput1: NumericTextBox;
-    public valueInput2: NumericTextBox;
-    public applyBtn: Button;
-    public clearBtn: Button;
     public gridSettings: GridSettings;
+    public fieldsMeasuresddl: Object = { value: 'value', text: 'text' };
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
+    @ViewChild('fieldsddl')
+    public fieldsddl: DropDownListComponent;
+    @ViewChild('measuresddl')
+    public measuresddl: DropDownListComponent;
+    @ViewChild('operatorddl')
+    public operatorddl: DropDownListComponent;
+    @ViewChild('value1')
+    public valueInput1: NumericTextBoxComponent;
+    @ViewChild('value2')
+    public valueInput2: NumericTextBoxComponent;
+    @ViewChild('apply')
+    public applyBtn: ButtonComponent;
+    @ViewChild('clear')
+    public clearBtn: ButtonComponent;
 
     setFilters(fieldName: string, measureName: string, condition: Operators, operand1: string, operand2: string): void {
         this.fieldCollections[fieldName] = {
@@ -60,6 +69,42 @@ export class ValueFilterComponent implements OnInit {
         }
     }
 
+    changeFieldsddl (args: ChangeEventArgs) {
+        if (this.fieldCollections[args.value as string]) {
+            this.measuresddl.value = this.fieldCollections[args.value as string].measure;
+            this.operatorddl.value = this.fieldCollections[args.value as string].condition;
+        } else {
+            this.setFilters(args.value as string, 'In_Stock', 'DoesNotEquals', '', '');
+            this.operatorddl.value = 'DoesNotEquals';
+            this.measuresddl.value = 'In_Stock';
+        }
+    }
+
+    changeMeasuresddl (args: ChangeEventArgs) {
+        this.setFilters(this.fieldsddl.value as string,
+            args.value as string, this.operatorddl.value as Operators, this.valueInput1.value.toString(), this.valueInput2.value.toString());
+    }
+
+    changeOperatorddl (args: ChangeEventArgs) {
+        if (args.value === 'Between' || args.value === 'NotBetween') {
+            (document.querySelector('.input2cls') as HTMLElement).style.display = '';
+        } else {
+            (document.querySelector('.input2cls') as HTMLElement).style.display = 'none';
+        }
+        this.setFilters(this.fieldsddl.value as string,
+            this.measuresddl.value as string, args.value as Operators, this.valueInput1.value.toString(), this.valueInput2.value.toString());
+    }
+
+    changeValue1 (e: NumericEventArgs) {
+        this.setFilters(this.fieldsddl.value as string,
+            this.measuresddl.value as string, this.operatorddl.value as Operators, e.value.toString(), this.valueInput2.value.toString());
+    }
+
+    changeValue2 (e: NumericEventArgs) {
+        this.setFilters(this.fieldsddl.value as string,
+            this.measuresddl.value as string, this.operatorddl.value as Operators, this.valueInput1.value.toString(), e.value.toString());
+    }
+
     ngOnInit(): void {
         this.gridSettings = {
             columnWidth: 140
@@ -76,75 +121,6 @@ export class ValueFilterComponent implements OnInit {
             dataSource: Pivot_Data,
             expandAll: false
         };
-
-        this.fieldsddl = new DropDownList({
-            dataSource: this.fields,
-            index: 0,
-            width: '100%',
-            change: (args: ChangeEventArgs) => {
-                if (this.fieldCollections[args.value as string]) {
-                    this.measuresddl.value = this.fieldCollections[args.value as string].measure;
-                    this.operatorddl.value = this.fieldCollections[args.value as string].condition;
-                } else {
-                    this.setFilters(args.value as string, 'In_Stock', 'DoesNotEquals', '', '');
-                    this.operatorddl.value = 'DoesNotEquals';
-                    this.measuresddl.value = 'In_Stock';
-                }
-            }
-        });
-        this.fieldsddl.appendTo('#fields');
-        this.measuresddl = new DropDownList({
-            dataSource: this.measures,
-            fields: { value: 'value', text: 'text' },
-            value: 'In_Stock',
-            width: '100%',
-            change: (args: ChangeEventArgs) => {
-                this.setFilters(this.fieldsddl.value as string,
-                    args.value as string, this.operatorddl.value as Operators, this.valueInput1.value.toString(), this.valueInput2.value.toString());
-            }
-        });
-        this.measuresddl.appendTo('#measures');
-        this.operatorddl = new DropDownList({
-            dataSource: this.operators,
-            value: 'DoesNotEquals',
-            change: (args: ChangeEventArgs) => {
-                if (args.value === 'Between' || args.value === 'NotBetween') {
-                    (document.querySelector('.input2cls') as HTMLElement).style.display = '';
-                } else {
-                    (document.querySelector('.input2cls') as HTMLElement).style.display = 'none';
-                }
-                this.setFilters(this.fieldsddl.value as string,
-                    this.measuresddl.value as string, args.value as Operators, this.valueInput1.value.toString(), this.valueInput2.value.toString());
-            }
-        });
-        this.operatorddl.appendTo('#conditions');
-        this.valueInput1 = new NumericTextBox({
-            value: 0,
-            placeholder: "Example: 9590",
-            change: (e: NumericEventArgs) => {
-                this.setFilters(this.fieldsddl.value as string,
-                    this.measuresddl.value as string, this.operatorddl.value as Operators, e.value.toString(), this.valueInput2.value.toString());
-            },
-            width: '100%'
-        });
-        this.valueInput1.appendTo('#value1');
-        this.valueInput2 = new NumericTextBox({
-            value: 0,
-            placeholder: "Example: 17500",
-            change: (e: NumericEventArgs) => {
-                this.setFilters(this.fieldsddl.value as string,
-                    this.measuresddl.value as string, this.operatorddl.value as Operators, this.valueInput1.value.toString(), e.value.toString());
-            },
-            width: '100%'
-        });
-        this.valueInput2.appendTo('#value2');
-        this.applyBtn = new Button({
-            isPrimary: true
-        });
-        this.applyBtn.appendTo('#apply');
-
-        this.clearBtn = new Button();
-        this.clearBtn.appendTo('#clear');
 
         document.getElementById('apply').onclick = () => {
             let filterOptions: FilterModel[] = [];

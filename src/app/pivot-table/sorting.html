@@ -26,7 +26,7 @@
                         <tr style="height: 50px">
                             <td>
                                 <div class="row" style="margin-left: -10px">
-                                    <input id="sorting" type="checkbox">
+                                    <ejs-checkbox #sorting id="sorting" label="Enable Sorting" labelPosition='After' [checked]="true" (change)="changeCheckBoxObj($event)"></ejs-checkbox>
                                 </div>
                             </td>
                         </tr>
@@ -37,7 +37,7 @@
                             </td>
                             <td>
                                 <div style="margin-left: -20px">
-                                    <input type="text" tabindex="1" id='fields' />
+                                    <ejs-dropdownlist id='fields' #fieldsddl [dataSource]='fields' index="0" [fields]="fieldsFieldsddl" [enabled]="true" (change)='changeFieldsddl($event)'></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>
@@ -48,7 +48,7 @@
                             </td>
                             <td>
                                 <div style="margin-left: -20px">
-                                    <input type="text" tabindex="1" id='order' />
+                                    <ejs-dropdownlist id='order' #orderddl [dataSource]='order' index="0" [enabled]="true" (change)='changeOrderddl($event)'></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>
@@ -56,7 +56,7 @@
                             <td></td>
                             <td>
                                 <div style="float: right;">
-                                    <button id="apply">Apply</button>
+                                    <button ejs-button #apply id="apply" [isPrimary]="true">Apply</button>
                                 </div>
                             </td>
                         </tr>

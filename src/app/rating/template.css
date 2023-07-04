@@ -5,6 +5,7 @@
     padding:0;
     text-align: center;
 }
+/* Represents the styles in touch mode */
 .e-bigger #template-rating-control .rating-content {
     width: 260px;
     margin: 15px 0;
@@ -21,10 +22,14 @@
 }
 
 #template-rating-control .e-rating-container .custom-font {
+    /* To add the background color for the font icon. */
     background: linear-gradient(to right, rgb(254,87,133,255) var(--rating-value), transparent var(--rating-value));
+    /* To clip the background to the icon (text) alone. */
     background-clip: text;
     -webkit-background-clip: text;
+    /* To make the background color visible instead of font color. */
     -webkit-text-fill-color: transparent;
+    /* To provide a border for font icon. */
     -webkit-text-stroke: 1px rgb(254,87,133,255)
 }
 
@@ -44,6 +49,7 @@
     padding: 0px;
 }
 
+/* Represents the styles for icon */
 @font-face {
 font-family: 'rating';
 src:
@@ -88,10 +94,12 @@ line-height: 1;
 
 .sf-icon-star:before { content: "\e700"; }
 
+/* To change the color of an unselected rating item. */
 .e-rating-item-container:not(.e-rating-selected) .emoji {
         filter: grayscale(1);
     }
 
+/* To set the gradient color */
 .e-rating-svg-icon #grad0 .start {
     stop-color: #FF0000;
 }

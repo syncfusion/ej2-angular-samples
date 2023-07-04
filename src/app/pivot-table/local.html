@@ -17,10 +17,7 @@
                     </td>
                     <td>
                         <div>
-                            <select id="contenttype" name="ddl-view-mode">
-                                <option value='JSON' selected>JSON</option>
-                                <option value='CSV'>CSV</option>
-                            </select>
+                            <ejs-dropdownlist id='contenttype' #dropdown [dataSource]='dropDownData' (change)='onChange($event)'  [value]='value' [fields]='fields' [placeholder]='waterMark'></ejs-dropdownlist>
                         </div>
                     </td>
                 </tr>

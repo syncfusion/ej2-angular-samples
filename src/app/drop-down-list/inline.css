@@ -22,6 +22,8 @@
     margin: -2px 0px 0px 0px;
 }
 
+.material3 .inlinecss.e-ddl .e-control.e-dropdownlist.e-input,
+.material3-dark .inlinecss.e-ddl .e-control.e-dropdownlist.e-input,
 .material .inlinecss.e-ddl .e-control.e-dropdownlist.e-input,
 .material-dark .inlinecss.e-ddl .e-control.e-dropdownlist.e-input {
     margin: 0px;
@@ -77,6 +79,12 @@
 .material-dark #contentText .e-input-group.e-ddl.e-input-focus,
 .material-dark #contentText .e-input-group.e-ddl.e-input-focus::before,
 .material-dark #contentText .e-input-group.e-ddl.e-input-focus::after,
+.material3-dark #contentText .e-input-group.e-control-wrapper.e-ddl,
+.material3-dark #contentText .e-input-group.e-control-wrapper.e-ddl,
+.material3-dark #contentText .e-input-group.e-control-wrapper.e-ddl:hover,
+.material3-dark #contentText .e-input-group.e-ddl.e-input-focus,
+.material3-dark #contentText .e-input-group.e-ddl.e-input-focus::before,
+.material3-dark #contentText .e-input-group.e-ddl.e-input-focus::after,
 .fabric-dark #contentText .e-input-group.e-control-wrapper.e-ddl,
 .fabric-dark #contentText .e-input-group.e-control-wrapper.e-ddl,
 .fabric-dark #contentText .e-input-group.e-control-wrapper.e-ddl:hover,

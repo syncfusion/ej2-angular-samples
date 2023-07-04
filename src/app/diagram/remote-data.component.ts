@@ -31,16 +31,15 @@ export class RemoteDataDiagramComponent {
     };
 
     public data: Object = {
-        id: 'EmployeeID', parentId: 'ReportsTo',
+        id: 'Id', parentId: 'ParentId',
         dataSource: new DataManager(
-            { url: 'https://mvc.syncfusion.com/Services/Northwnd.svc/', crossDomain: true },
-            new Query().from('Employees').select('EmployeeID,ReportsTo,FirstName').take(9),
+            { url: 'https://ej2services.syncfusion.com/angular/development/api/RemoteData', crossDomain: true },
         ),
         //binds the external data with node
         doBinding: (nodeModel: NodeModel, data: DataInfo, diagram: Diagram) => {
             nodeModel.annotations = [{
                 /* tslint:disable:no-string-literal */
-                content: data['FirstName'],
+                content: data['Label'],
                 style: { color: 'white' }
             }];
         }
