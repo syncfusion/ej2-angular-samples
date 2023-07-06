@@ -34,14 +34,14 @@ export class ExportingComponent implements OnInit {
         }
     }
     toolbarClick(args: ClickEventArgs): void {
-        switch (args.item.text) {
-            case 'PDF Export':
+        switch (args.item.id) {
+            case 'DefaultExport_pdfexport':
                 this.grid.pdfExport();
                 break;
-            case 'Excel Export':
+            case 'DefaultExport_excelexport':
                 this.grid.excelExport();
                 break;
-            case 'CSV Export':
+            case 'DefaultExport_csvexport':
                 this.grid.csvExport();
                 break;
         }

@@ -33,6 +33,7 @@ export class MultiSeriesChartComponent {
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
+        title: 'Years',
         interval: Browser.isDevice ? 2 : 1,
         labelIntersectAction: 'Rotate45',
         valueType: 'Category',
@@ -67,7 +68,7 @@ export class MultiSeriesChartComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
     // custom code end
     public tooltip: Object = {

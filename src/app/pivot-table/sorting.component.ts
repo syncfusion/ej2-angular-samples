@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { CheckBox, Button } from '@syncfusion/ej2-angular-buttons';
+import { ChangeEventArgs, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { ButtonComponent, CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(false);
@@ -21,76 +21,59 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
 
 export class SortingComponent implements OnInit {
     public dataSourceSettings: IDataOptions;
-    public fieldsddl: DropDownList;
-    public orderddl: DropDownList;
     public gridSettings: GridSettings;
-    public applyBtn: Button;
+    public fieldsFieldsddl: Object = { text: 'Field', value: 'Order' };
+    public order: string[] = ['Ascending', 'Descending'];
+    public fields: { [key: string]: Object }[] = [
+        { Field: 'Country', Order: 'Country_asc' },
+        { Field: 'Products', Order: 'Products_asc' },
+        { Field: 'Year', Order: 'Year_asc' },
+        { Field: 'Order Source', Order: 'Order Source_asc' }
+    ];
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
+    @ViewChild('fieldsddl')
+    public fieldsddl: DropDownListComponent;
+    @ViewChild('orderddl')
+    public orderddl: DropDownListComponent;
+    @ViewChild('apply')
+    public applyBtn: ButtonComponent;
+    @ViewChild('sorting')
+    public checkBoxObj: CheckBoxComponent;
+
+    changeFieldsddl (args: ChangeEventArgs) {
+        if ((this.fieldsddl.dataSource as any)[this.fieldsddl.index].Order === (this.fieldsddl.dataSource as any)[this.fieldsddl.index].Field + '_asc') {
+            this.orderddl.index = 0;
+        } else {
+            this.orderddl.index = 1;
+        }
+    }
+
+    changeOrderddl (args: ChangeEventArgs) {
+        if (args.value === 'Ascending') {
+            (this.fieldsddl.dataSource as any)[this.fieldsddl.index].Order = (this.fieldsddl.dataSource as any)[this.fieldsddl.index].Field + '_asc';
+        } else {
+            (this.fieldsddl.dataSource as any)[this.fieldsddl.index].Order = (this.fieldsddl.dataSource as any)[this.fieldsddl.index].Field + '_desc';
+        }
+        this.fieldsddl.refresh();
+    }
+
+    changeCheckBoxObj (args: any) {
+        let ischecked: boolean = args.checked;
+        this.fieldsddl.enabled = ischecked;
+        this.orderddl.enabled = ischecked;
+        this.applyBtn.disabled = !ischecked;
+        this.pivotObj.dataSourceSettings.enableSorting = ischecked;
+    }
 
     ngOnInit(): void {
         this.gridSettings = {
             columnWidth: 140
         } as GridSettings;
 
-        let order: string[] = ['Ascending', 'Descending'];
-        let fields: { [key: string]: Object }[] = [
-            { Field: 'Country', Order: 'Country_asc' },
-            { Field: 'Products', Order: 'Products_asc' },
-            { Field: 'Year', Order: 'Year_asc' },
-            { Field: 'Order Source', Order: 'Order Source_asc' }
-        ];
-
-        this.fieldsddl = new DropDownList({
-            dataSource: fields,
-            fields: { text: 'Field', value: 'Order' },
-            index: 0,
-            enabled: true,
-            change: (args: ChangeEventArgs) => {
-                if ((this.fieldsddl.dataSource as any)[this.fieldsddl.index].Order === (this.fieldsddl.dataSource as any)[this.fieldsddl.index].Field + '_asc') {
-                    this.orderddl.index = 0;
-                } else {
-                    this.orderddl.index = 1;
-                }
-            }
-        });
-        this.fieldsddl.appendTo('#fields');
-
-        this.orderddl = new DropDownList({
-            dataSource: order,
-            index: 0,
-            enabled: true,
-            change: (args: ChangeEventArgs) => {
-                if (args.value === 'Ascending') {
-                    (this.fieldsddl.dataSource as any)[this.fieldsddl.index].Order = (this.fieldsddl.dataSource as any)[this.fieldsddl.index].Field + '_asc';
-                } else {
-                    (this.fieldsddl.dataSource as any)[this.fieldsddl.index].Order = (this.fieldsddl.dataSource as any)[this.fieldsddl.index].Field + '_desc';
-                }
-                this.fieldsddl.refresh();
-            }
-        });
-        this.orderddl.appendTo('#order');
-
-        this.applyBtn = new Button({
-            isPrimary: true
-        });
-        this.applyBtn.appendTo('#apply');
-
-        let checkBoxObj: CheckBox = new CheckBox({
-            label: 'Enable Sorting', labelPosition: 'After', checked: true,
-            change: (args: any) => {
-                let ischecked: boolean = args.checked;
-                this.fieldsddl.enabled = ischecked;
-                this.orderddl.enabled = ischecked;
-                this.applyBtn.disabled = !ischecked;
-                this.pivotObj.dataSourceSettings.enableSorting = ischecked;
-            }
-        });
-        checkBoxObj.appendTo('#sorting');
-
         document.getElementById('apply').onclick = () => {
-            if (checkBoxObj.checked) {
+            if (this.checkBoxObj.checked) {
                 this.pivotObj.dataSourceSettings.enableSorting = true;
                 this.pivotObj.dataSourceSettings.sortSettings = [
                     { name: 'Country', order: (this.fieldsddl.dataSource as any)[0].Order === 'Country_asc' ? 'Ascending' : 'Descending' },

@@ -1,6 +1,6 @@
 <div class="col-lg-12 control-section simplified-ribbon-section">
   <div id="simplified-ribbonContainer">
-    <ejs-ribbon #simplifiedRibbon id="simplified-ribbon" [fileMenu]='fileSettings' activeLayout="Simplified" launcherIconClick=launchClick($event)>
+    <ejs-ribbon #simplifiedRibbon id="simplified-ribbon" [fileMenu]='fileSettings' activeLayout="Simplified" (launcherIconClick)='launchClick($event)'>
       <e-ribbon-tabs>
         <e-ribbon-tab header="Home">
           <e-ribbon-groups>
@@ -36,7 +36,7 @@
                 </e-ribbon-collection>
                 <e-ribbon-collection>
                   <e-ribbon-items>
-                    <e-ribbon-item type="ColorPicker" [allowedSizes]='smallSize' [displayOptions]='Simplified' [colorPickerSettings]="colorSettings">
+                    <e-ribbon-item type="ColorPicker" [allowedSizes]='smallSize' [displayOptions]='colorPickerDisplayMode' [colorPickerSettings]="colorSettings">
                     </e-ribbon-item>
                     <e-ribbon-item type="Button" [allowedSizes]='smallSize' [buttonSettings]="boldButton">
                     </e-ribbon-item>

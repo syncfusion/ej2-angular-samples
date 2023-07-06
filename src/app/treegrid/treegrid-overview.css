@@ -93,3 +93,14 @@
     .e-bigger .e-grid .e-rowcell {
         line-height: 24px;
     }
+        .material3-dark .rating .star.checked, .material3 .rating .star.checked {
+        color: #6750A4;
+    }
+
+    .material3-dark #myBar, .material3 #myBar {
+        background-color: #53CA17;
+    }
+
+   .material3-dark #myBar.progressdisable, .material3 #myBar.progressdisable {
+        background-color: rgba(242, 184, 181, 1);
+    }

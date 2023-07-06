@@ -10,4 +10,8 @@ import { Component, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 
-export class StylesFABComponent { }
+export class StylesFABComponent {
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['styles.css'];
+    }
+ }

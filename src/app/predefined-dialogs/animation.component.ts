@@ -29,7 +29,8 @@ public value: string = 'FadeZoom';
     content: 'Are you sure you want to permanently delete these items?',
     animationSettings: { effect: 'Zoom', delay: 0, duration: 400 },
     position: { X: 'center', Y: 'center' },
-    width: '420px'
+    width: '420px',
+    closeOnEscape: true
   };
   public confirmBtnClick = (): void => {
     DialogUtility.confirm(this.dialogArgs);

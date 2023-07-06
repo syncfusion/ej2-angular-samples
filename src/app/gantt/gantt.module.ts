@@ -50,8 +50,14 @@ import { GanttVirtualScrollComponent } from './virtual-scroll.component';
 import { GanttTimezoneComponent } from './timezone.component';
 import { GanttCriticalPathComponent } from './critical-path.component'
 import { GanttLoadingAnimationComponent } from './loading-animation.component';
+import { GanttOverviewComponent } from './overview.component';
 
 export const GanttAppRoutes: Object[] = [
+    {
+        path: ':theme/gantt/overview', component: GanttOverviewComponent,
+        description: 'This example demonstrates the simple Gantt chart with summary task, child tasks, milestone tasks, dependencies with event markers of project',
+        name: 'Overview', order: '01', category: 'Gantt', type: "new"
+    },
     {
         path: ':theme/gantt/default', component: GanttDefaultComponent,
         description: 'This example demonstrates the simple Gantt chart with summary task, child tasks, milestone tasks, dependencies with event markers of project',
@@ -60,7 +66,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/editing', component: GanttEditingComponent,
         description: 'This example demonstrates the cell editing, dialog editing, taskbar editing and dependency editing support in Gantt',
-        name: 'Editing', order: '01', category: 'Gantt'
+        name: 'Editing', order: '01', category: 'Gantt', type: "update"
     },
     {
         path: ':theme/gantt/virtual-scroll', component: GanttVirtualScrollComponent,
@@ -190,7 +196,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/resource-multi-taskbar', component: GanttResourceMultiTaskbarComponent,
         description: 'This sample explains how to visualize the list of tasks assigned to each resource on a single parent row while collapsing the parent record.',
-        name: 'Resource Multi Taskbar', order: '06', category: 'Resources', type: "update"
+        name: 'Resource Multi Taskbar', order: '06', category: 'Resources'
     },
     {
         path: ':theme/gantt/sorting', component: GanttSortingComponent,
@@ -314,7 +320,8 @@ let declarations: Type<Object>[] = [
     GanttSplitTasksComponent,
     GanttVirtualScrollComponent,
     GanttTimezoneComponent,
-    GanttCriticalPathComponent
+    GanttCriticalPathComponent,
+    GanttOverviewComponent
 ];
 @NgModule({
     imports: [CommonModule, GanttRouter, SharedModule, GanttAllModule, DropDownListAllModule, CheckBoxAllModule, SwitchAllModule, TextBoxAllModule, NumericTextBoxAllModule, MultiSelectAllModule],

@@ -20,7 +20,7 @@ export class SplineComponent {
 
     public primaryYAxis: Object = {
         lineStyle: { width: 0 },
-        majorTickLines: { width: 0 }
+        majorTickLines: { height: 0 }
     };
     public tooltip: object = { enable: true };
     public crosshair: object = { enable: true };
@@ -35,7 +35,7 @@ export class SplineComponent {
     public load(args: IStockChartEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
      // custom code end
     public title: string = 'AAPL Stock Price';

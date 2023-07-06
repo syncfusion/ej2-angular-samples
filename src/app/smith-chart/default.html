@@ -3,9 +3,9 @@
         <ejs-smithchart style='display:block' align='center' id='container' #smithchart
             [legendSettings]='legend' [title]='title' (load)='load($event)' [renderType]='renderType'>
             <e-seriesCollection>
-                <e-series [points]='data' name='Transmission1' [enableAnimation]=true [marker]='marker'
+                <e-series [points]='data' name='Transmission1' [enableAnimation]=false [marker]='marker'
                     [tooltip]='tooltip'> </e-series>
-                <e-series [points]='data1' name='Transmission2' [enableAnimation]=true [marker]='marker'
+                <e-series [points]='data1' name='Transmission2' [enableAnimation]=false [marker]='marker'
                     [tooltip]='tooltip'> </e-series>
             </e-seriesCollection>
         </ejs-smithchart>

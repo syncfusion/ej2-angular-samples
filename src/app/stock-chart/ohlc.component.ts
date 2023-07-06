@@ -26,7 +26,7 @@ export class HiloOpenCloseComponent {
         labelFormat: 'n0',
         rangePadding: 'None',
         lineStyle: { color: 'transparent' },
-        majorTickLines: { color: 'transparent' },
+        majorTickLines: { color: 'transparent', height: 0 },
     };
     public chartArea: Object = {
         border: {
@@ -37,7 +37,7 @@ export class HiloOpenCloseComponent {
     public crosshair: Object = {
         enable: true,
     };
-    public tooltip: object = { enable: true, shared: true}
+    public tooltip: object = { enable: true, shared: true, position:'Nearest'}
     public tooltipRender(args: ITooltipRenderEventArgs): void {
         if (args.text.split('<br/>')[4]) {
         let target: number = parseInt(args.text.split('<br/>')[4].split('<b>')[1].split('</b>')[0], 10);
@@ -49,7 +49,7 @@ export class HiloOpenCloseComponent {
     public load(args: IStockChartEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
      // custom code end
     public title: string = 'AAPL Stock Price';

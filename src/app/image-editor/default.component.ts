@@ -18,7 +18,7 @@ export class DefaultImageEditorComponent {
         if (Browser.isDevice) {
             imageEditor.open('./assets/image-editor/images/flower.png');
         } else {
-            imageEditor.open('./assets/image-editor/images/bridge.png');
+            imageEditor.open('./assets/image-editor/images/default.png');
         }
         if (imageEditor.theme && window.location.href.split('#')[1]) {
             imageEditor.theme = window.location.href.split('#')[1].split('/')[1];

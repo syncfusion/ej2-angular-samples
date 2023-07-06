@@ -35,7 +35,9 @@
   }
 
   .bootstrap5 #toast_type .e-toast-icon.e-icons,
-  .bootstrap5-dark #toast_type .e-toast-icon.e-icons {
+  .bootstrap5-dark #toast_type .e-toast-icon.e-icons,
+  .material3 #toast_type .e-toast-icon.e-icons,
+  .material3-dark #toast_type .e-toast-icon.e-icons {
     height: 25px;
   }
 

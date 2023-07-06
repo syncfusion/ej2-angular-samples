@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, Operators, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
-import { Button } from '@syncfusion/ej2-buttons';
-import { MaskedTextBox, MaskChangeEventArgs } from '@syncfusion/ej2-inputs';
+import { ChangeEventArgs, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { MaskChangeEventArgs,  MaskedTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 import { FilterModel } from '@syncfusion/ej2-pivotview/src/model/datasourcesettings-model';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
+import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(false);
 /**
@@ -27,16 +27,24 @@ export class LabelFilterComponent implements OnInit {
         'GreaterThanOrEqualTo', 'LessThan', 'LessThanOrEqualTo', 'Between', 'NotBetween'];
     public fields: string[] = ['Country', 'Products', 'Year'];
     public dataSourceSettings: IDataOptions;
-    public fieldsddl: DropDownList;
-    public operatorddl: DropDownList;
-    public valueInput1: MaskedTextBox;
-    public valueInput2: MaskedTextBox;
-    public applyBtn: Button;
-    public clearBtn: Button;
     public gridSettings: GridSettings;
+    public waterMark: string = 'Example: "Germany"';
+    public waterMark1: string = 'Example: "States"';
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
+    @ViewChild('fieldsddl')
+    public fieldsddl: DropDownListComponent;
+    @ViewChild('operatorddl')
+    public operatorddl: DropDownListComponent;
+    @ViewChild('mask1')
+    public valueInput1: MaskedTextBoxComponent;
+    @ViewChild('value2')
+    public valueInput2: MaskedTextBoxComponent;
+    @ViewChild('apply')
+    public applyBtn: ButtonComponent;
+    @ViewChild('clear')
+    public clearBtn: ButtonComponent;
 
     setFilters(fieldName: string, condition: Operators, operand1: string, operand2: string): void {
         this.fieldCollections[fieldName] = {
@@ -67,6 +75,47 @@ export class LabelFilterComponent implements OnInit {
         }
     }
 
+    changeFieldsddl (args: ChangeEventArgs) {
+        if (this.fieldCollections[args.value as string]) {
+            this.operatorddl.value = this.fieldCollections[args.value as string].condition;
+            this.valueInput1.value = this.fieldCollections[args.value as string].value1 as string;
+            this.valueInput2.value = this.fieldCollections[args.value as string].value2 as string;
+        } else {
+            this.setFilters(args.value as string, 'DoesNotEquals', '', '');
+            this.operatorddl.value = 'DoesNotEquals';
+            this.valueInput1.value = '';
+            this.valueInput2.value = '';
+        }
+        this.operatorddl.dataBind();
+        this.valueInput1.dataBind();
+        this.valueInput2.dataBind();
+        this.updateButtonState();
+    }
+
+    changeOperatorddl (args: ChangeEventArgs) {
+        if (args.value === 'Between' || args.value === 'NotBetween') {
+            (document.querySelector('.input2cls') as HTMLElement).style.display = '';
+        } else {
+            (document.querySelector('.input2cls') as HTMLElement).style.display = 'none';
+        }
+        this.setFilters(this.fieldsddl.value as string, args.value as Operators, this.valueInput1.value, this.valueInput2.value);
+        this.updateButtonState();
+    }
+
+    changeValue1 (e: MaskChangeEventArgs) {
+        if(e.value){
+            this.setFilters(this.fieldsddl.value as string, this.operatorddl.value as Operators, e.value, this.valueInput2.value);
+            this.updateButtonState();
+        }
+    }
+
+    changeValue2 (e: MaskChangeEventArgs) {
+        if(e.value){
+            this.setFilters(this.fieldsddl.value as string, this.operatorddl.value as Operators, this.valueInput1.value, e.value);
+            this.updateButtonState();
+        }
+    }
+
     ngOnInit(): void {
         this.gridSettings = {
             columnWidth: 140
@@ -83,70 +132,6 @@ export class LabelFilterComponent implements OnInit {
             dataSource: Pivot_Data,
             expandAll: false
         };
-
-        this.fieldsddl = new DropDownList({
-            dataSource: this.fields,
-            index: 0,
-            width: '100%',
-            change: (args: ChangeEventArgs) => {
-                if (this.fieldCollections[args.value as string]) {
-                    this.operatorddl.value = this.fieldCollections[args.value as string].condition;
-                    this.valueInput1.value = this.fieldCollections[args.value as string].value1 as string;
-                    this.valueInput2.value = this.fieldCollections[args.value as string].value2 as string;
-                } else {
-                    this.setFilters(args.value as string, 'DoesNotEquals', '', '');
-                    this.operatorddl.value = 'DoesNotEquals';
-                    this.valueInput1.value = '';
-                    this.valueInput2.value = '';
-                }
-                this.operatorddl.dataBind();
-                this.valueInput1.dataBind();
-                this.valueInput2.dataBind();
-                this.updateButtonState();
-            }
-        });
-        this.fieldsddl.appendTo('#fields');
-        this.operatorddl = new DropDownList({
-            dataSource: this.operators,
-            value: 'DoesNotEquals',
-            change: (args: ChangeEventArgs) => {
-                if (args.value === 'Between' || args.value === 'NotBetween') {
-                    (document.querySelector('.input2cls') as HTMLElement).style.display = '';
-                } else {
-                    (document.querySelector('.input2cls') as HTMLElement).style.display = 'none';
-                }
-                this.setFilters(this.fieldsddl.value as string, args.value as Operators, this.valueInput1.value, this.valueInput2.value);
-                this.updateButtonState();
-            }
-        });
-        this.operatorddl.appendTo('#conditions');
-        this.valueInput1 = new MaskedTextBox({
-            value: '',
-            placeholder: 'Example: "Germany"',
-            change: (e: MaskChangeEventArgs) => {
-                this.setFilters(this.fieldsddl.value as string, this.operatorddl.value as Operators, e.value, this.valueInput2.value);
-                this.updateButtonState();
-            },
-            width: '100%'
-        });
-        this.valueInput1.appendTo('#value1');
-        this.valueInput2 = new MaskedTextBox({
-            value: '',
-            placeholder: 'Example: "States"',
-            change: (e: MaskChangeEventArgs) => {
-                this.setFilters(this.fieldsddl.value as string, this.operatorddl.value as Operators, this.valueInput1.value, e.value);
-                this.updateButtonState();
-            },
-            width: '100%'
-        });
-        this.valueInput2.appendTo('#value2');
-        this.applyBtn = new Button({
-            isPrimary: true, disabled: true
-        });
-        this.applyBtn.appendTo('#apply');
-
-        this.clearBtn = new Button();
-        this.clearBtn.appendTo('#clear');
 
         document.getElementById('apply').onclick = () => {
             let filterOptions: FilterModel[] = [];

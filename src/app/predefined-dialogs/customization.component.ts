@@ -17,6 +17,7 @@ export class CustomizationDialogComponent  {
       okButton: { text: 'OK', click: this.alertOkAction.bind(this) },
       position: { X: 'center', Y: 'center' },
       width: '240px',
+      closeOnEscape: true
     });
   };
   private alertOkAction(): void {
@@ -33,6 +34,7 @@ export class CustomizationDialogComponent  {
       cancelButton: {text: 'No',click: this.confirmCancelAction.bind(this) },
       position: { X: 'center', Y: 'center' },
       width: '420px',
+      closeOnEscape: true
     });
   };
   private confirmOkAction(): void {
@@ -55,12 +57,22 @@ export class CustomizationDialogComponent  {
       animationSettings: { effect: 'Zoom', delay: 0, duration: 250 },
       position: { X: 'center', Y: 'center' },
       width: '240px',
+      closeOnEscape: true
     });
   };
   private promptOkAction(): void {
-    this.dialogObj.hide();
-    document.getElementById('statusText').innerHTML ='The user confirmed the dialog box';
-    document.getElementById('statusText').style.display="block";
+    let value:string ;
+    value = (document.getElementById("password")as any).value;
+    if (value==""){
+        this.dialogObj.hide();
+        document.getElementById("statusText").innerHTML = "The user's input is returned as\" \" ";
+        document.getElementById("statusText").style.display="block";
+    }
+    else{
+      this.dialogObj.hide();
+      document.getElementById("statusText").innerHTML="The user's input is returned as" +" "+ value;
+      document.getElementById("statusText").style.display="block";
+    }
   }
   private promptCancelAction(): void {
     this.dialogObj.hide();

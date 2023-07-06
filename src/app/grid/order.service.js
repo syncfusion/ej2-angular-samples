@@ -20,7 +20,7 @@ var OrdersService = /** @class */ (function (_super) {
     function OrdersService(http) {
         var _this = _super.call(this) || this;
         _this.http = http;
-        _this.BASE_URL = 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Orders';
+        _this.BASE_URL = 'https://services.odata.org/V4/Northwind/Northwind.svc/Orders';
         return _this;
     }
     OrdersService.prototype.execute = function (state) {
@@ -36,11 +36,11 @@ var OrdersService = /** @class */ (function (_super) {
             }).reverse().join(',');
         }
         return this.http
-            .get(this.BASE_URL + "?" + pageQuery + sortQuery + "&$inlinecount=allpages&$format=json")
+            .get(this.BASE_URL + "?" + pageQuery + sortQuery + "&$count=true")
             .pipe(map(function (response) { return response.json(); }))
             .pipe(map(function (response) { return ({
-            result: response['d']['results'],
-            count: parseInt(response['d']['__count'], 10)
+            result: response['value'],
+            count: parseInt(response['@odata.count'], 10)
         }); }))
             .pipe(function (data) { return data; });
     };

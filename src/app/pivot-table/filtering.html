@@ -29,7 +29,7 @@
                             </td>
                             <td>
                                 <div>
-                                    <input type="text" tabindex="1" id='fields' />
+                                    <ejs-dropdownlist id='fields' #fieldsddl [dataSource]='fields' index="0" width='98%' (change)='changeFieldsddl($event)'></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>
@@ -40,7 +40,9 @@
                             </td>
                             <td>
                                 <div class="valuecls">
-                                    <input type="text" placeholder="Select members" tabindex="1" id='values' />
+                                    <ejs-multiselect id='values' #valuesddl [dataSource]='values' [mode]='mode' width="98%" [fields]='fieldsValuesddl' [showDropDownIcon]='true' placeholder='Select members'
+                                    [showClearButton]="false" [enableSelectionOrder]="false" (select)='selectValuesddl($event)' (removed)='removedValuesddl($event)' 
+                                    (open)='openValuesddl($event)'></ejs-multiselect>
                                 </div>
                             </td>
                         </tr>
@@ -51,7 +53,7 @@
                             </td>
                             <td>
                                 <div style="margin-top:-5px">
-                                    <input type="text" tabindex="1" id='type' />
+                                    <ejs-dropdownlist id='type' #typeddl [dataSource]='type' index="1" width='98%'></ejs-dropdownlist>
                                 </div>
                             </td>
                         </tr>
@@ -59,7 +61,7 @@
                             <td></td>
                             <td>
                                 <div style="float: right;margin-right: 4px">
-                                    <button id="apply">Apply</button>
+                                    <button ejs-button #apply id="apply" [isPrimary]="true" [disabled]="true">Apply</button>
                                 </div>
                             </td>
                         </tr>

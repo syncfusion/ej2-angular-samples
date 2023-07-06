@@ -10,4 +10,7 @@ import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
 })
 
 export class DefaultController {
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['default.css'];
+    }
 }

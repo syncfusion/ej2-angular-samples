@@ -42,6 +42,9 @@ export class PolarAreaChartComponent {
         title: 'Revenue in Millions',
         labelFormat: '{value}M'
     };
+    public tooltip: Object = {
+        enable: true
+    };
     public legendSettings: Object = {
         visible: true,
         enableHighlight: true
@@ -53,7 +56,7 @@ export class PolarAreaChartComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
       // custom code end
     public title: string = 'Average Sales Comparison';

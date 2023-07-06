@@ -23,7 +23,8 @@
 }
 
 .highcontrast .property-panel-content .e-checkbox-wrapper .e-frame.e-check,
-.bootstrap .property-panel-content .e-checkbox-wrapper .e-frame.e-check {
+.bootstrap .property-panel-content .e-checkbox-wrapper .e-frame.e-check,
+.material3-dark .property-panel-content .e-checkbox-wrapper .e-frame.e-check {
   color: #fff;
 }
 

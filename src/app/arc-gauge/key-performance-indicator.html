@@ -5,7 +5,7 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-circulargauge style='display:block;' background='transparent' (load)='loadGauge($event)'>
+    <ejs-circulargauge id="keyperform" style='display:block;' background='transparent' (load)='loadGauge($event)'>
         <e-axes>
             <e-axis radius='90%' minimum=0 maximum=100 startAngle=220 endAngle=140 [majorTicks]='ticks'
                 [minorTicks]='ticks' [lineStyle]='lineStyle' [labelStyle]="labelStyle" [annotations]="annotations">
@@ -53,6 +53,9 @@
 </div>
 <!-- custom code start -->
 <style>
+	#keyperform_Annotations_0 {
+				line-height: 0.7;
+	}
     .control-section {
         min-height: 450px;
     }

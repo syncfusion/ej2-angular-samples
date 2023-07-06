@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, FieldListService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { DropDownList } from '@syncfusion/ej2-angular-dropdowns';
-import { Button  } from '@syncfusion/ej2-buttons';
+import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 enableRipple(false);
 
 /**
@@ -22,34 +22,29 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
 
 export class ExportingComponent implements OnInit {
     public dataSourceSettings: IDataOptions;
-    public expandDropDown: DropDownList;
-    public exportType: DropDownList;
-    public exportBtn: Button;
     public gridSettings: GridSettings;
+    public options: { [key: string]: Object }[] = [
+        { value: 'pdf', text: 'PDF' },
+        { value: 'excel', text: 'Excel' },
+        { value: 'csv', text: 'CSV' }
+    ];
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
+    @ViewChild('export')
+    public exportBtn: ButtonComponent;
+    @ViewChild('exporttype')
+    public exportType: DropDownListComponent;
 
     ngOnInit(): void {
         this.gridSettings = {
             columnWidth: 140
         } as GridSettings;
 
-        this.exportType = new DropDownList({
-            index: 0,
-            width: 160
-        });
-        this.exportType.appendTo('#exporttype');
-
-        this.exportBtn = new Button({
-            isPrimary: true
-        });
-        this.exportBtn.appendTo('#export');
-
         document.getElementById('export').onclick = () => {
-            if (this.exportType.value === 'excel') {
+            if (this.exportType.value === 'Excel') {
                 this.pivotObj.excelExport();
-            } else if (this.exportType.value === 'csv') {
+            } else if (this.exportType.value === 'CSV') {
                 this.pivotObj.csvExport();
             } else {
                 this.pivotObj.pdfExport();

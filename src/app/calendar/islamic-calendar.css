@@ -20,6 +20,7 @@ body.fluent-dark #selected,
 body.bootstrap5-dark #selected,
 body.tailwind-dark #selected,
 body.material-dark #selected,
+body.material3-dark #selected,
 body.fabric-dark #selected,
 body.bootstrap-dark #selected,
 body.highcontrast #selected {
@@ -61,6 +62,7 @@ body.highcontrast #selected {
 
 .highcontrast .sf-icon-cup:before,
 .material-dark .sf-icon-cup:before,
+.material3-dark .sf-icon-cup:before,
 .fabric-dark .sf-icon-cup:before,
 .bootstrap-dark .sf-icon-cup:before,
 .bootstrap5-dark .sf-icon-cup:before,
@@ -70,6 +72,7 @@ body.highcontrast #selected {
 
 .highcontrast .sf-icon-start:before,
 .material-dark .sf-icon-start:before,
+.material3-dark .sf-icon-start:before,
 .fabric-dark .sf-icon-start:before,
 .bootstrap-dark .sf-icon-start:before,
 .bootstrap5-dark .sf-icon-start:before,

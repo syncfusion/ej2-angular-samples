@@ -44,6 +44,7 @@
   margin-top: 15px;
 }
 
+/* content customization */
 #ribbonPlaceHolder .content1 {
   background-color: #3a9ae5;
   width: 150px;
@@ -101,6 +102,7 @@ body[class*="high"] #ribbonContainer {
   min-width: 10ch;
 }
 
+/* Represents the styles for icons */
 @font-face {
 font-family: 'ribbon';
 src:

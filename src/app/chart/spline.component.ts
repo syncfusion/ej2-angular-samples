@@ -73,8 +73,8 @@ export class SplineChartComponent {
     };
     public marker: Object = {
         visible: true,
-        width: 7,
-        height: 7
+        width: 10,
+        height: 10
     };
     public tooltip: Object = {
         enable: true
@@ -88,7 +88,7 @@ export class SplineChartComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
      // custom code end
     public title: string = 'NC Weather Report - 2016';

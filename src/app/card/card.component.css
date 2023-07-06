@@ -4,6 +4,7 @@
         background-image: url('/assets/card/images/weather.png');
     }
     
+    .material3-dark .card-control-section.basic_card_layout .e-card .e-card-header,
     .material-dark .card-control-section.basic_card_layout .e-card .e-card-header {
         padding: 10px;
     }
@@ -324,6 +325,7 @@
         text-align: left
     }
     
+    .material3-dark .card-control-section.reveal_card_layout .e-card .e-card-header,
     .material-dark .card-control-section.reveal_card_layout .e-card .e-card-header {
         padding: 10px;
     }

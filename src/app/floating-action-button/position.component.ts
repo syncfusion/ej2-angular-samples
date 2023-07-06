@@ -11,5 +11,7 @@ import { Component, Inject, ViewEncapsulation } from '@angular/core';
 })
 
 export class PositionFABComponent {
-
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['position.css'];
+    }
 } 

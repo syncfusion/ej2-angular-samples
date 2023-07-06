@@ -34,7 +34,7 @@ span.questionSide {
     clear: both;
 }
 
-.bootstrap-dark .forum .header, .bootstrap5-dark .forum .header, .fluent-dark .forum .header, 
+.bootstrap-dark .forum .header, .bootstrap5-dark .forum .header, .fluent-dark .forum .header, .material3-dark .forum .header,
 .fabric-dark .forum .header, .material-dark .forum .header, .tailwind-dark .forum .header, .highcontrast .forum .header {
     color: #fff;
 }
@@ -85,7 +85,7 @@ span.questionSide {
     color: #000000;
 }
 
-.bootstrap-dark .forum .explain, .bootstrap5-dark .forum .explain, .fluent-dark .forum .explain,
+.bootstrap-dark .forum .explain, .bootstrap5-dark .forum .explain, .fluent-dark .forum .explain,.material3-dark .forum .explain,
 .fabric-dark .forum .explain, .material-dark .forum .explain, .tailwind-dark .forum .explain, .highcontrast .forum .explain {
     color: #fff;
 }
@@ -103,6 +103,7 @@ span.questionSide {
 .bootstrap-dark .tag, 
 .bootstrap5-dark .tag, 
 .fluent-dark .tag,
+.material3-dark .tag,
 .fabric-dark .tag, 
 .material-dark .tag, 
 .tailwind-dark .tag, 
@@ -222,7 +223,7 @@ span.questionSide {
     overflow-wrap: break-word;
 }
 
-.bootstrap-dark .forum .posting, .bootstrap5-dark .forum .posting, .fluent-dark .forum .posting, 
+.bootstrap-dark .forum .posting, .bootstrap5-dark .forum .posting, .fluent-dark .forum .posting, .material3-dark .forum .posting,
 .fabric-dark .forum .posting, .material-dark .forum .posting, .tailwind-dark .forum .posting, .highcontrast .forum .posting {
     color: #fff;
 }
@@ -233,7 +234,7 @@ span.questionSide {
     font-size: 13px;
 }
 
-.bootstrap-dark .forum .authorname, .bootstrap5-dark .forum .authorname, .fluent-dark .forum .authorname, 
+.bootstrap-dark .forum .authorname, .bootstrap5-dark .forum .authorname, .fluent-dark .forum .authorname, .material3-dark .forum .authorname,
 .fabric-dark .forum .authorname, .material-dark .forum .authorname, .tailwind-dark .forum .authorname, .highcontrast .forum .authorname {
     color: #fff;
 }

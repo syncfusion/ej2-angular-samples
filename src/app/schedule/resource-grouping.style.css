@@ -31,15 +31,7 @@
 }
 
 .schedule-group.e-schedule .e-vertical-view .e-resource-cells {
-  height: 76px;
-}
-
-.e-bigger .schedule-group.e-schedule .e-vertical-view .e-resource-cells {
   height: 80px;
-}
-
-.tailwind .e-schedule .e-vertical-view .e-resource-cells, .tailwind-dark .e-schedule .e-vertical-view .e-resource-cells {
-  height: 83px;
 }
 
 .schedule-group.e-schedule .template-wrap .airline-details {
@@ -79,11 +71,6 @@
 .schedule-group.e-schedule .e-agenda-view .template-wrap .airline-model, .schedule-group.e-schedule .e-agenda-view .template-wrap .airline-seats {
   display: none;
 }
-
-.tailwind .schedule-group.e-schedule .e-left-indent .e-header-cells {
-  height: 67px;
-}
-
 
 .schedule-group.schedule-demo-heading {
   font-size: 16px;

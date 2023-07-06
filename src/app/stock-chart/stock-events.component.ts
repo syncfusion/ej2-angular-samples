@@ -20,11 +20,11 @@ export class StockEventsComponent {
 
     public primaryYAxis: Object = {
         lineStyle: { color: 'transparent' },
-        majorTickLines: { color: 'transparent' },
+        majorTickLines: { color: 'transparent', height: 0 },
         crosshairTooltip: { enable: true }
     };
     public tooltip: object = { enable: true };
-    public crosshair: object = { enable: true };
+    public crosshair: object = { enable: true, lineType: 'Both' };
     public chartArea: Object = {
         border: {
             width: 0
@@ -37,7 +37,7 @@ export class StockEventsComponent {
     public load(args: IStockChartEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, 'Dark');
+        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
     };
     public tooltipRender(args: ITooltipRenderEventArgs): void {
         if (args.text.split('<br/>')[4]) {

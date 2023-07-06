@@ -24,6 +24,10 @@ export class AnimationController {
 
     public isDataLoading = true;
     
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['animation.css'];
+    }
+
     public getData():Promise<{ [key: string]: any; }> {
         return new Promise(resolve => setTimeout(() => {
             let data: { [key: string]: any; }={};

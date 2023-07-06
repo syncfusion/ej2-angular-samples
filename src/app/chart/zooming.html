@@ -1,8 +1,3 @@
-<div id="action-description">
-    <p>
-        This sample demonstrates the zooming and panning features of the charts.
-    </p>
-</div>
 <style>
     #material-gradient-chart stop {
         stop-color: #00bdae;
@@ -29,7 +24,7 @@
     }
 
     #bootstrap5-gradient-chart stop {
-        stop-color: #262E0B;
+        stop-color: #6355C7;
     }
 
     #material-dark-gradient-chart stop {
@@ -49,14 +44,22 @@
     }
 
     #bootstrap5-dark-gradient-chart stop {
-        stop-color: #5ECB9B;
+        stop-color: #8F80F4;
     }
     #fluent-gradient-chart stop {
-        stop-color: #614570;
+        stop-color: #1AC9E6;
     }
 
    #fluent-dark-gradient-chart stop {
-      stop-color: #8AB113;
+      stop-color: #1AC9E6;
+    }
+
+    #material3-gradient-chart stop {
+        stop-color: #6355C7;
+    }
+
+    #material3-dark-gradient-chart stop {
+        stop-color: #4EAAFF;
     }
 
     .chart-gradient stop[offset="0"] {
@@ -74,45 +77,50 @@
 
 <div class="control-section">
     <div align='center'>
-        <ejs-chart id='chartcontainer' style='display:block;width: 100%' [chartArea]='chartArea' [width]='width' align='center' [chartArea]='chartArea'
+        <ejs-chart id='chartcontainer' style='display:block;width: 100%' [chartArea]='chartArea' [width]='width' align='center'
             [primaryXAxis]='primaryXAxis' [legendSettings]='legend' [zoomSettings]='zoomSettings' [title]='title' [primaryYAxis]='primaryYAxis'
             (load)='load($event)'>
             <e-series-collection>
-                <e-series [dataSource]='series1' type='Area' xName='x' yName='y' [animation]='animation' [border]='border'>
+                <e-series [dataSource]='series1' type='SplineArea' xName='x' yName='y' name='Product X' [fill]="fill" [animation]='animation' [border]='border'>
                 </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
+<div id="action-description">
+    <p>
+        This sample demonstrates the zooming and panning features of the charts. 
+    </p>
+</div>
+
 <div id="description">
-    <p>This sample demonstrates the zooming and panning behavior in chart.</p>
+   <p>This sample shows the following zooming and panning behaviors.</p>
+   <ul>
+       <li>Click and drag the mouse on a chart area to enable selection zooming.</li>
+       <li>Hover the mouse on the toolbar at the top right corner of chart area to switch between zooming and panning.</li>
+       <li>Pinch in and pinch out the chart area to zoom in or zoom out the chart in touch enabled devices.</li>
+       <li>Touch and drag to pan the chart.</li>
+       <li>Double tap to reset the zoomed chart.</li>
+   </ul>
+    <p>The chart component supports four types of zooming which can be set using <a target="_blank" href="https://ej2.syncfusion.com/documentation/api/chart/zoomSettingsModel/#enableselectionzooming">enableSelectionZooming</a>, <a target="_blank" href="https://ej2.syncfusion.com/documentation/api/chart/zoomSettingsModel/#enablepinchzooming">enablePinchZooming</a>, <a target="_blank" href="https://ej2.syncfusion.com/documentation/api/chart/zoomSettingsModel/#enablemousewheelzooming">enableMouseWheelZooming</a>, and <a target="_blank" href="https://ej2.syncfusion.com/documentation/api/chart/zoomSettingsModel/#enabledeferredzooming">enableDeferredZooming</a> properties.
+    </p>
+    <p>The chart supports different mode of zooming which can be set using  <a target="_blank" href="http://ej2.syncfusion.com/documentation/chart/api-zoomSettings.html#mode-zoommode">mode</a> property.</p>
     <ul>
-        <li>Click and drag the mouse on a chart area to enable selection zooming.</li>
-        <li>Hover the mouse on the toolbar at the top right corner of chart area to switch between zooming and panning.</li>
-        <li>Pinch in and pinch out the chart area to zoom in or zoom out the chart in touch enabled devices.</li>
-        <li>Touch and drag to pan the chart.</li>
-        <li>Double tap to reset the zoomed chart.</li>
-    </ul>
-    <p>Chart component supports four types of zooming which can be set using <code>enableSelectionZooming</code>, <code>enablePinchZooming</code>,
-        <code>enableMouseWheelZooming</code>, <code>enableDeferredZooming</code> property.
-        <p>Chart supports two mode of zooming which can be set using <code><a target="_blank" class="code"
-        href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#zoomsettings-zoomsettingsmodel">mode</a></code>            property.
-        </p>
-        <ul>
-            <li><code>XY</code> - Zoom the chart with respect to both the axis.</li>
-            <li><code>X</code> - Zoom the chart with respect to horizontal axis.</li>
-            <li><code>Y</code> - Zoom the chart with respect to vertical axis.</li>
-        </ul>
-        <br>
-        <p style="font-weight: 500">Injecting Module</p>
-        <p>
-            Chart component features are segregated into individual feature-wise modules. To use zooming, we need to inject
-            <code>ZoomService</code> into the <code>@NgModule.providers</code> section.
-        </p>
-        <p>
-            More information on the Zooming can be found in this
-            <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/zooming/">documentation section</a>.
-        </p>
+         <li><code>XY</code> - Zoom the chart with respect to both the axis.</li>
+         <li><code>X</code> - Zoom the chart with respect to horizontal axis.</li>
+         <li><code>Y</code> - Zoom the chart with respect to vertical axis.</li>
+    </ul>     
+    <br>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+         Chart component features are segregated into individual feature-wise modules. To use zooming, we need to inject
+         <code>ZoomService</code> into the
+         <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+         More information on the Zooming can be found in this
+         <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/zooming">documentation section</a>.
+    </p> 
 </div>
 <svg style="height: 0">
     <defs>
@@ -169,6 +177,14 @@
             <stop offset="1"></stop>
         </linearGradient>
         <linearGradient id="fluent-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="material3-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="material3-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0"></stop>
             <stop offset="1"></stop>
         </linearGradient>

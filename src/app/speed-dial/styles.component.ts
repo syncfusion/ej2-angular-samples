@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { SpeedDialItemModel } from '@syncfusion/ej2-angular-buttons';
 /**
  * Default Speed Dial component
@@ -11,6 +11,10 @@ import { SpeedDialItemModel } from '@syncfusion/ej2-angular-buttons';
 })
 
 export class StylesComponent {
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['styles.css'];
+    }
+
     public items: SpeedDialItemModel[] = [
         {
             text:'Cut',

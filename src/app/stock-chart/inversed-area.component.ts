@@ -20,10 +20,11 @@ export class InversedAreaComponent {
     public primaryYAxis: Object = {
         lineStyle: { color: 'transparent' },
         crosshairTooltip: { enable: true },
-        majorTickLines: { color: 'transparent', width: 0 }, isInversed: true
+        majorTickLines: { color: 'transparent', height: 0 }, isInversed: true
     };
     public crosshair: Object = {
-        enable: true
+        enable: true,
+        lineType: 'Both' 
     };
     public title: string = 'AAPL Stock Price';
     public seriesType: string[] = [];
@@ -32,7 +33,7 @@ export class InversedAreaComponent {
     public load(args: IStockChartEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
      // custom code end
     public chartArea: Object = {

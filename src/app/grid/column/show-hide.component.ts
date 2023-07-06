@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { orderDetails } from './data';
 import { GridComponent } from '@syncfusion/ej2-angular-grids';
+import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
 import { addClass, removeClass } from '@syncfusion/ej2-base';
 
 @Component({
@@ -15,6 +16,9 @@ export class ShowHideComponent implements OnInit {
 
     @ViewChild('grid')
     public grid: GridComponent;
+
+    @ViewChild('toolbar')
+    public ToolbarInstance: ToolbarComponent;
 
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['show-hide.style.css'];
@@ -37,12 +41,21 @@ export class ShowHideComponent implements OnInit {
         this.flag = false;
         let hidden: boolean = element.classList.contains('e-ghidden');
         let classFn: Function = hidden ? removeClass : addClass;
-        classFn([element], 'e-ghidden');
+        const visibleColumns: HTMLElement[] = Array.from(this.ToolbarInstance.element.getElementsByClassName('e-tbar-btn-text'))
+        .filter((item) => !((item as HTMLElement).classList.contains('e-ghidden'))) as HTMLElement[];
+        const isLastVisibleColumn = visibleColumns.length === 1 && visibleColumns[0].parentElement === element.parentElement;
 
         if (hidden) {
-            this.grid.showColumns(element.innerHTML);
+          classFn([element], 'e-ghidden');
+          this.grid.showColumns(element.innerHTML);
         } else {
-            this.grid.hideColumns(element.innerHTML);
+          if (isLastVisibleColumn) {
+            alert("At least one column should be visible.");
+            this.flag = true;
+            return;
+          }
+          classFn([element], 'e-ghidden');
+          this.grid.hideColumns(element.innerHTML);
         }
         this.flag = true;
     }

@@ -176,6 +176,7 @@
     }
 
     .material-dark #snoozedropDown .e-input-group.e-control-wrapper,
+    .material3-dark #snoozedropDown .e-input-group.e-control-wrapper,
     .bootstrap-dark #snoozedropDown .e-input-group.e-control-wrapper,
     .bootstrap5-dark #snoozedropDown .e-input-group.e-control-wrapper,
     .fabric-dark #snoozedropDown .e-input-group.e-control-wrapper,

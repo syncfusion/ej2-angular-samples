@@ -22,7 +22,7 @@ export class MultiPaneComponent {
 
     public primaryYAxis: Object = {
         lineStyle: { color: 'transparent' },
-        majorTickLines: { color: 'transparent', width: 0 }
+        majorTickLines: { color: 'transparent', height: 0 }
     };
     public chartArea: Object = {
         border: {
@@ -32,7 +32,10 @@ export class MultiPaneComponent {
     public crosshair: Object = {
         enable: true
     };
-    public tooltip: object = { enable: true };
+    public legend: Object = {
+        visible: true,
+    };
+    public tooltip: object = { enable: true, format:'High : <b>${point.high}</b><br/>Low :<b>${point.low}</b><br/>Open : <b>${point.open}</b><br/>Close : <b>${point.close}</b><br/>Volume : <b>${point.volume}</b>' };
     public columnTooltip: boolean = false;
     public tooltipRender(args: ITooltipRenderEventArgs): void {
         if (args.text.split('<br/>')[4]) { 
@@ -50,7 +53,7 @@ export class MultiPaneComponent {
     public load(args: IStockChartEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     };
     public title: string = 'AAPL Historical';
     constructor() {

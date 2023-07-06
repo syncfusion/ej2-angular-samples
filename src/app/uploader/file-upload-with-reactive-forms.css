@@ -84,6 +84,8 @@ margin-top: -32px;
 margin-right: -106px;
 
 }
+.material3.e-bigger #reactive .upload-area button#browse,
+.material3-dark.e-bigger #reactive .upload-area button#browse,
 .material.e-bigger #reactive .upload-area button#browse,
 .material-dark.e-bigger #reactive .upload-area button#browse {  
   margin-top: -27px;
@@ -107,7 +109,8 @@ margin-right: -106px;
     margin-right: -120px;
     margin-top: -40px;
 }
-  
+.material3 .e-bigger #reactive .e-float-input.upload-area button#browse,
+.material3-dark .e-bigger #reactive .e-float-input.upload-area button#browse,
 .material .e-bigger #reactive .e-float-input.upload-area button#browse,
 .material-dark .e-bigger #reactive .e-float-input.upload-area button#browse {
     margin-top: -36px;
@@ -166,6 +169,8 @@ text-align: center;
 .tailwind-dark .e-bigger .e-dialog .e-dlg-header-content{
     padding-bottom: 2%;
 }
+.material3-dark .e-bigger .e-dialog .e-dlg-header-content,
+.material3 .e-bigger .e-dialog .e-dlg-header-content,
 .material-dark .e-bigger .e-dialog .e-dlg-header-content,
 .material .e-bigger .e-dialog .e-dlg-header-content{
     padding-bottom: 3%;

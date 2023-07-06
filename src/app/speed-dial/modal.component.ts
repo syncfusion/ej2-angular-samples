@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { SpeedDialItemModel } from '@syncfusion/ej2-angular-buttons';
 /**
  * Default Speed Dial component
@@ -11,6 +11,10 @@ import { SpeedDialItemModel } from '@syncfusion/ej2-angular-buttons';
 })
 
 export class ModalComponent {
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = ['modal.css'];
+    }
+
     public items: SpeedDialItemModel[] = [
         {
             title:'Home',

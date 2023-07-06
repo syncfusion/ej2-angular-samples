@@ -8,10 +8,10 @@
         <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
             [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' (axisLabelRender)='OnChartAxisLabeRender($event)' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='StackingColumn' xName='Year' yName='General' name='General Motors' width='2' columnWidth=0.5 [border]='border'> </e-series>
-                <e-series [dataSource]='data' type='StackingColumn' xName='Year' yName='Honda' name='Honda' width='2' columnWidth=0.5 [border]='border'> </e-series>
-                <e-series [dataSource]='data' type='StackingColumn' xName='Year' yName='Suzuki' name='Suzuki' width='2' columnWidth=0.5 [border]='border'> </e-series>
-                <e-series [dataSource]='data' type='StackingColumn' xName='Year' yName='BMW' name='BMW' width='2' columnWidth=0.5 [border]='border'> </e-series>
+                <e-series [dataSource]='data' type='StackingColumn' xName='Year' yName='General' name='General Motors' width='2' columnWidth=0.6 [border]='border'> </e-series>
+                <e-series [dataSource]='data' type='StackingColumn' xName='Year' yName='Honda' name='Honda' width='2' columnWidth=0.6 [border]='border'> </e-series>
+                <e-series [dataSource]='data' type='StackingColumn' xName='Year' yName='Suzuki' name='Suzuki' width='2' columnWidth=0.6 [border]='border'> </e-series>
+                <e-series [dataSource]='data' type='StackingColumn' xName='Year' yName='BMW' name='BMW' width='2' columnWidth=0.6 [border]='border'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>

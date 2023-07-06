@@ -2,7 +2,7 @@
  * Rich Text Editor Overview Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, EmojiPickerService } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, TableService, FileManagerService } from '@syncfusion/ej2-angular-richtexteditor';
 import { FileManagerSettingsModel, QuickToolbarSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, addClass, removeClass, Browser } from '@syncfusion/ej2-base';
@@ -17,7 +17,7 @@ import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
     templateUrl: 'tools.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['over-view.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, FileManagerService]
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, FileManagerService, EmojiPickerService]
 })
 export class FullFeatureComponent {
 
@@ -29,7 +29,7 @@ export class FullFeatureComponent {
     public tools: ToolbarModule = {
         items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
             'FontName', 'FontSize', 'FontColor', 'BackgroundColor',
-            'LowerCase', 'UpperCase','SuperScript', 'SubScript', '|',
+            'LowerCase', 'UpperCase','SuperScript', 'SubScript', 'EmojiPicker','|',
             'Formats', 'Alignments', 'NumberFormatList', 'BulletFormatList',
             'Outdent', 'Indent', '|',
             'CreateTable', 'CreateLink', 'Image', 'FileManager', '|', 'ClearFormat', 'Print',

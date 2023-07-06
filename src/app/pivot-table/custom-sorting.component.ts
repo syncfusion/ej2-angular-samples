@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, IDataSet, GroupingBarSettings, PivotActionCompleteEventArgs } from '@syncfusion/ej2-angular-pivotview';
-import { DropDownList, ChangeEventArgs, MultiSelect, SelectEventArgs, RemoveEventArgs, PopupEventArgs, CheckBoxSelection } from '@syncfusion/ej2-dropdowns';
-import { CheckBox, Button } from '@syncfusion/ej2-buttons';
+import { ChangeEventArgs, MultiSelect, SelectEventArgs, RemoveEventArgs, PopupEventArgs, CheckBoxSelection } from '@syncfusion/ej2-angular-dropdowns';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { SortModel } from '@syncfusion/ej2-pivotview/src/model/datasourcesettings-model';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { DropDownListComponent, MultiSelectComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { ButtonComponent, CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
 enableRipple(false);
 MultiSelect.Inject(CheckBoxSelection);
 
@@ -23,11 +24,7 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
 
 export class CustomSortingComponent implements OnInit {
     public dataSourceSettings: IDataOptions;
-    public membersOrder: MultiSelect;
-    public fieldsObj: DropDownList;
-    public orderInfo: DropDownList;
     public gridSettings: GridSettings;
-    public applyBtn: Button;
     public groupingBarSettings: GroupingBarSettings;
     public fieldCollections: { [key: string]: { [key: string]: Object }[] } = {};
     public memOrder: string[] = [];
@@ -44,9 +41,23 @@ export class CustomSortingComponent implements OnInit {
         { Field: 'Order_Source', Order: 'Order_Source_asc', caption: 'Order Source' }
     ];
     public data: { [key: string]: Object; }[] = [];
+    public fieldsMembers: Object = { text: 'Member' };
+    public waterMarkMembers: string = 'Select headers';
+    public mode: string = 'CheckBox';
+    public fieldsSortingFields: Object = { text: 'caption', value: 'Order' };
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;
+    @ViewChild('sortingMembers')
+    public membersOrder: MultiSelectComponent;
+    @ViewChild('sortingFields')
+    public fieldsObj: DropDownListComponent;
+    @ViewChild('sortingOrder')
+    public orderInfo: DropDownListComponent;
+    @ViewChild('apply')
+    public applyBtn: ButtonComponent;
+    @ViewChild('sorting')
+    public  checkBoxObj: CheckBoxComponent;
 
     /** To set the checked status of the members maintained in the object fieldCollections. */
     maintainCheckedState(field: string, member: string, checkedState: string) {
@@ -138,6 +149,74 @@ export class CustomSortingComponent implements OnInit {
         }
     }
 
+    select (args: SelectEventArgs): void {
+        this.applyBtn.disabled = false;
+        this.maintainCheckedState((<any>this.fieldsObj).itemData.Field, args.item.textContent, args.item.textContent + '_' + true);
+        this.getMembers[(<any>this.fieldsObj).itemData.Field].push(args.itemData['Member']);
+    }
+    removed (args: RemoveEventArgs): void {
+        this.maintainCheckedState((<any>this.fieldsObj).itemData.Field, args.item.textContent, args.item.textContent + '_' + false);
+        this.index = this.getMembers[(<any>this.fieldsObj).itemData.Field].indexOf(args.itemData['Member']);
+        if (this.getMembers[(<any>this.fieldsObj).itemData.Field].indexOf(args.itemData['Member']) > -1) {
+            this.getMembers[(<any>this.fieldsObj).itemData.Field].splice(this.index, 1);
+        }
+    }
+    open (args: PopupEventArgs): void {
+        if (args.popup.element.querySelector(".e-filter-parent")) {
+            (args.popup.element.querySelector(".e-filter-parent") as HTMLElement).style.display = 'none';
+        }
+    }
+
+    changeSortingFields (args: ChangeEventArgs) {
+        if ((this.fieldsObj.dataSource as any)[this.fieldsObj.index].Order === (this.fieldsObj.dataSource as any)[this.fieldsObj.index].Field + '_asc') {
+            this.orderInfo.index = 0;
+        } else {
+            this.orderInfo.index = 1;
+        }
+        if (this.memOrder.length > 0) {
+            if (this.memOrder[this.fieldsObj.index] === 'Ascending') {
+                this.orderInfo.index = 0;
+            }
+            else if (this.memOrder[this.fieldsObj.index] === 'Descending') {
+                this.orderInfo.index = 1;
+            }
+        }
+        if (args.itemData['Field'] === 'Year' && this.isMemberAdded) {
+            this.fieldCollections.Year[3].Checked = "FY 2018_true";
+            this.fieldCollections.Year[2].Checked = "FY 2017_true";
+            this.membersOrder.value = this.updateSelectedMembers("Year").reverse();
+            this.isMemberAdded = false;
+        }
+        else if (args.itemData['Field'] === 'Products' && this.isMemberAdded_1) {
+            this.fieldCollections.Products[9].Checked = "Gloves_true";
+            this.fieldCollections.Products[0].Checked = "Bottles and Cages_true";
+            this.membersOrder.value = this.updateSelectedMembers("Products").reverse();
+            this.isMemberAdded_1 = false;
+        }
+        (this.membersOrder.dataSource as any) = this.fieldCollections[args.itemData['Field']];
+        this.membersOrder.value = this.updateSelectedMembers(args.itemData['Field']);
+        this.membersOrder.dataBind();
+        this.orderInfo.dataBind();
+    }
+
+    changeSortingOrder (args: ChangeEventArgs) {
+        if (args.value === 'Ascending') {
+            (this.fieldsObj.dataSource as any)[this.fieldsObj.index].Order = (this.fieldsObj.dataSource as any)[this.fieldsObj.index].Field + '_asc';
+        } else {
+            (this.fieldsObj.dataSource as any)[this.fieldsObj.index].Order = (this.fieldsObj.dataSource as any)[this.fieldsObj.index].Field + '_desc';
+        }
+        this.fieldsObj.refresh();
+    }
+
+    changeSorting (args: any) {
+        let ischecked: boolean = args.checked;
+        this.fieldsObj.enabled = ischecked;
+        this.orderInfo.enabled = ischecked;
+        this.membersOrder.enabled = ischecked;
+        this.applyBtn.disabled = !ischecked;
+        this.pivotObj.dataSourceSettings.enableSorting = ischecked;
+    }
+
     ngOnInit(): void {
         this.gridSettings = {
             columnWidth: 140
@@ -147,107 +226,8 @@ export class CustomSortingComponent implements OnInit {
             showRemoveIcon: false, showFilterIcon: false, showSortIcon: true, showValueTypeIcon: false, allowDragAndDrop: false
         } as GroupingBarSettings;
 
-        this.membersOrder = new MultiSelect({
-            dataSource: this.data,
-            mode: 'CheckBox',
-            showDropDownIcon: true,
-            showClearButton: false,
-            enableSelectionOrder: false,
-            fields: { text: 'Member' },
-            select: (args: SelectEventArgs): void => {
-                this.applyBtn.disabled = false;
-                this.maintainCheckedState((<any>this.fieldsObj).itemData.Field, args.item.textContent, args.item.textContent + '_' + true);
-                this.getMembers[(<any>this.fieldsObj).itemData.Field].push(args.itemData['Member']);
-            },
-            removed: (args: RemoveEventArgs): void => {
-                this.maintainCheckedState((<any>this.fieldsObj).itemData.Field, args.item.textContent, args.item.textContent + '_' + false);
-                this.index = this.getMembers[(<any>this.fieldsObj).itemData.Field].indexOf(args.itemData['Member']);
-                if (this.getMembers[(<any>this.fieldsObj).itemData.Field].indexOf(args.itemData['Member']) > -1) {
-                    this.getMembers[(<any>this.fieldsObj).itemData.Field].splice(this.index, 1);
-                }
-            },
-            open: (args: PopupEventArgs): void => {
-                if (args.popup.element.querySelector(".e-filter-parent")) {
-                    (args.popup.element.querySelector(".e-filter-parent") as HTMLElement).style.display = 'none';
-                }
-            }
-        });
-        this.membersOrder.appendTo('#sorting-members');
-
-        this.fieldsObj = new DropDownList({
-            dataSource: this.fields,
-            fields: { text: 'caption', value: 'Order' },
-            index: 0,
-            enabled: true,
-            change: (args: ChangeEventArgs) => {
-                if ((this.fieldsObj.dataSource as any)[this.fieldsObj.index].Order === (this.fieldsObj.dataSource as any)[this.fieldsObj.index].Field + '_asc') {
-                    this.orderInfo.index = 0;
-                } else {
-                    this.orderInfo.index = 1;
-                }
-                if (this.memOrder.length > 0) {
-                    if (this.memOrder[this.fieldsObj.index] === 'Ascending') {
-                        this.orderInfo.index = 0;
-                    }
-                    else if (this.memOrder[this.fieldsObj.index] === 'Descending') {
-                        this.orderInfo.index = 1;
-                    }
-                }
-                if (args.itemData['Field'] === 'Year' && this.isMemberAdded) {
-                    this.fieldCollections.Year[3].Checked = "FY 2018_true";
-                    this.fieldCollections.Year[2].Checked = "FY 2017_true";
-                    this.membersOrder.value = this.updateSelectedMembers("Year").reverse();
-                    this.isMemberAdded = false;
-                }
-                else if (args.itemData['Field'] === 'Products' && this.isMemberAdded_1) {
-                    this.fieldCollections.Products[9].Checked = "Gloves_true";
-                    this.fieldCollections.Products[0].Checked = "Bottles and Cages_true";
-                    this.membersOrder.value = this.updateSelectedMembers("Products").reverse();
-                    this.isMemberAdded_1 = false;
-                }
-                (this.membersOrder.dataSource as any) = this.fieldCollections[args.itemData['Field']];
-                this.membersOrder.value = this.updateSelectedMembers(args.itemData['Field']);
-                this.membersOrder.dataBind();
-                this.orderInfo.dataBind();
-            }
-        });
-        this.fieldsObj.appendTo('#sorting-fields');
-
-        this.orderInfo = new DropDownList({
-            dataSource: this.order,
-            index: 0,
-            enabled: true,
-            change: (args: ChangeEventArgs) => {
-                if (args.value === 'Ascending') {
-                    (this.fieldsObj.dataSource as any)[this.fieldsObj.index].Order = (this.fieldsObj.dataSource as any)[this.fieldsObj.index].Field + '_asc';
-                } else {
-                    (this.fieldsObj.dataSource as any)[this.fieldsObj.index].Order = (this.fieldsObj.dataSource as any)[this.fieldsObj.index].Field + '_desc';
-                }
-                this.fieldsObj.refresh();
-            }
-        });
-        this.orderInfo.appendTo('#sorting-order');
-
-        this.applyBtn = new Button({
-            isPrimary: true
-        });
-        this.applyBtn.appendTo('#sorting-apply');
-
-        let checkBoxObj: CheckBox = new CheckBox({
-            label: 'Enable Sorting', labelPosition: 'After', checked: true,
-            change: (args: any) => {
-                let ischecked: boolean = args.checked;
-                this.fieldsObj.enabled = ischecked;
-                this.orderInfo.enabled = ischecked;
-                this.membersOrder.enabled = ischecked;
-                this.applyBtn.disabled = !ischecked;
-                this.pivotObj.dataSourceSettings.enableSorting = ischecked;
-            }
-        });
-        checkBoxObj.appendTo('#sorting');
-
         document.getElementById('sorting-apply').onclick = () => {
-            if (checkBoxObj.checked) {
+            if (this.checkBoxObj.checked) {
                 this.pivotObj.setProperties({
                     dataSourceSettings: {
                         enableSorting: true, sortSettings: [

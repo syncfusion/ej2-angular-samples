@@ -93,7 +93,7 @@
                 </td>
                 <td style="width: auto">
                   <div style="padding-left: 0;">
-                    <input type="text" tabindex="1" id="options">
+                    <ejs-dropdownlist id='options' #options [dataSource]='optionsData' (change)='changeOptionsdll($event)' value='grandTotals' [fields]='fieldsOptionsdll'></ejs-dropdownlist>
                   </div>
                 </td>
               </tr>
@@ -254,7 +254,9 @@
               <tr>
                 <td colspan="2">
                   <div style="padding-left: 0">
-                    <input type="text" tabindex="1" id='summary-values' />
+                    <ejs-multiselect id='summary-values' #summaryValues [dataSource]='data' [mode]='mode' [fields]='fields' [showDropDownIcon]='true' [placeholder]='waterMark'
+                          [showClearButton]="false" [enableSelectionOrder]="false" (select)='select($event)' (removed)='removed($event)' 
+                          (open)='open($event)'></ejs-multiselect>
                   </div>
                 </td>
               </tr>

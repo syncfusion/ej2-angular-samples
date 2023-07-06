@@ -4,8 +4,9 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { PivotViewAllModule } from '@syncfusion/ej2-angular-pivotview';
 import { PivotFieldListAllModule } from '@syncfusion/ej2-angular-pivotview';
-import { NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { DropDownListAllModule, MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { MaskedTextBoxAllModule, NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { DefaultComponent } from './default.component';
 import { OverviewComponent } from './overview.component';
 import { GroupingBarComponent } from './grouping-bar.component';
@@ -83,7 +84,7 @@ let declarations: Type<Object>[] = [OverviewComponent, DefaultComponent, LocalCo
     SelectionComponent,DrillDownComponent, IntegrationComponent, CellTemplateComponent, GroupingComponent, PagingComponent];
 
 @NgModule({
-    imports: [RouterModule.forChild(pivottableRouteConfig), CommonModule, HttpModule, ToolbarModule, PivotViewAllModule, PivotFieldListAllModule, SharedModule, NumericTextBoxAllModule, ButtonAllModule, CheckBoxAllModule, RadioButtonAllModule],
+    imports: [RouterModule.forChild(pivottableRouteConfig), CommonModule, HttpModule, ToolbarModule, PivotViewAllModule, PivotFieldListAllModule, SharedModule, NumericTextBoxAllModule, ButtonAllModule, CheckBoxAllModule, RadioButtonAllModule, DropDownListAllModule, MultiSelectAllModule, MaskedTextBoxAllModule],
     declarations: declarations,
     providers: [PivotViewAllModule, PivotFieldListAllModule],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

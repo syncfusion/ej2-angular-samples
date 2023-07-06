@@ -70,6 +70,8 @@ export class ProgressBarProgressSegmentComponent {
             case 'material-dark':
                 args.progressBar.annotations[0].content = '<div id="point1" style="font-size:24px;font-weight:bold;color:#9A9A9A"><span></span></div>';
                 break;
+            case 'fluent':
+            case 'fluent-dark':
             case 'bootstrap5':
             case 'bootstrap5-dark':
                 args.progressBar.annotations[0].content = '<div id="point1" style="font-size:24px;font-weight:bold;color:#0D6EFD"><span></span></div>';
@@ -77,6 +79,12 @@ export class ProgressBarProgressSegmentComponent {
             case 'tailwind-dark':
                 args.progressBar.annotations[0].content = '<div id="point1" style="font-size:24px;font-weight:bold;color:#22D3EE"><span></span></div>';
                 break; 
+            case 'material3':
+                args.progressBar.annotations[0].content = '<div id="point1" style="font-size:24px;font-weight:bold;color:#6750A4"><span></span></div>';
+                break;
+            case 'material3-dark':
+                args.progressBar.annotations[0].content = '<div id="point1" style="font-size:24px;font-weight:bold;color:#D0BCFF"><span></span></div>';
+                break;
             default:
                 args.progressBar.trackColor = '#969696';
                 args.progressBar.annotations[0].content = '<div id="point1" style="font-size:24px;font-weight:bold;color:#FFD939"><span></span></div>';

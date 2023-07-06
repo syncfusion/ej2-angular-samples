@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, FieldListService, PivotView, DisplayOption, PivotChartService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 import { ChartSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/chartsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
@@ -22,9 +22,33 @@ let data: IDataSet[] = require('./Pivot_Data.json');
 
 export class ChartComponent implements OnInit {
     public dataSourceSettings: IDataOptions;
-    public chartddl: DropDownList;
     public chartSettings: ChartSettings;
     public displayOption: DisplayOption;
+    public options: { [key: string]: Object }[] = [
+        { value: 'Column', text: 'Column' },
+        { value: 'Bar', text: 'Bar' },
+        { value: 'Line', text: 'Line' },
+        { value: 'Spline', text: 'Spline' },
+        { value: 'Area', text: 'Area' },
+        { value: 'SplineArea', text: 'SplineArea' },
+        { value: 'StepLine', text: 'StepLine' },
+        { value: 'StepArea', text: 'StepArea' },
+        { value: 'StackingColumn', text: 'StackingColumn' },
+        { value: 'StackingBar', text: 'StackingBar' },
+        { value: 'StackingArea', text: 'StackingArea' },
+        { value: 'StackingColumn100', text: 'StackingColumn100' },
+        { value: 'StackingBar100', text: 'StackingBar100' },
+        { value: 'StackingArea100', text: 'StackingArea100' },
+        { value: 'Scatter', text: 'Scatter' },
+        { value: 'Bubble', text: 'Bubble' },
+        { value: 'Polar', text: 'Polar' },
+        { value: 'Radar', text: 'Radar' },
+        { value: 'Pareto', text: 'Pareto' },
+        { value: 'Pie', text: 'Pie' },
+        { value: 'Doughnut', text: 'Doughnut' },
+        { value: 'Funnel', text: 'Funnel' },
+        { value: 'Pyramid', text: 'Pyramid' }
+    ];
     public observable = new Observable();
 
     @ViewChild('pivotview')
@@ -61,12 +85,5 @@ export class ChartComponent implements OnInit {
             values: [{ name: "Amount", caption: "Sales Amount" }],
             filters: []
         };
-
-        this.chartddl = new DropDownList({
-            placeholder: "Chart Types",
-            floatLabelType: "Auto",
-            change: this.onChange.bind(this) 
-        });
-        this.chartddl.appendTo('#charttypesddl');
     }
 }

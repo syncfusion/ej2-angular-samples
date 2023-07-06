@@ -21,11 +21,11 @@
     }
 
     #fluent-gradient-chart stop {
-        stop-color: #614570;
+        stop-color: #1AC9E6;
     }
 
     #fluent-dark-gradient-chart stop {
-        stop-color: #8AB113;
+        stop-color: #1AC9E6;
     }
 
     #highcontrast-gradient-chart stop {
@@ -37,7 +37,7 @@
     }
 
     #bootstrap5-gradient-chart stop {
-        stop-color: #262E0B;
+        stop-color: #6355C7;
     }
 
     #material-dark-gradient-chart stop {
@@ -57,7 +57,15 @@
     }
 
     #bootstrap5-dark-gradient-chart stop {
-        stop-color: #5ECB9B;
+        stop-color: #8F80F4;
+    }
+
+    #material3-gradient-chart stop {
+        stop-color: #6355C7;
+    }
+
+    #material3-dark-gradient-chart stop {
+        stop-color: #4EAAFF;
     }
 
     .chart-gradient stop[offset="0"] {
@@ -72,7 +80,7 @@
         padding: 0px !important;
     }
 </style>
-<div class="control-section">
+<div class="control-section" align="center">
                 <ejs-chart #chart style="display:block;" (loaded)="onChartLoad($event)" [chartArea]='chartArea' [enableCanvas]="false" [title]="title" [width]="width" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)' >
                     <e-series-collection>
                         <e-series type='Area' xName='x' yName='y'> </e-series>
@@ -139,6 +147,14 @@
             <stop offset="1"></stop>
         </linearGradient>
         <linearGradient id="fluent-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="material3-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="material3-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0"></stop>
             <stop offset="1"></stop>
         </linearGradient>
