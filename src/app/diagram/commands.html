@@ -1,0 +1,66 @@
+<script src="script/diagram-common.ts"></script>
+<style>
+    .e-symbolpalette {
+        display: block;
+    }
+</style>
+<div id="action-description">
+    <p>
+      This example illustrates the various commands supported in the diagram control.
+    </p>
+  </div>
+<div class="control-section">
+    <div style="width: 100%">
+        <ejs-toolbar
+        #toolbar
+        overflowMode="Scrollable"
+        id="toolbar_scrollable"
+        (clicked)="toolbarClick($event)"
+      >
+        <e-items>
+            <e-item prefixIcon='e-cut e-icons' tooltipText='Cut' disabled=true></e-item>
+            <e-item prefixIcon='e-copy e-icons' tooltipText='Copy' disabled=true></e-item>
+            <e-item prefixIcon='e-icons e-paste' tooltipText='Paste' disabled=true></e-item>
+            <e-item prefixIcon='e-icons e-undo tb-icons' tooltipText='Undo' disabled=true></e-item>
+            <e-item prefixIcon='e-icons e-redo tb-icons' tooltipText='Redo' disabled=true></e-item>
+          <e-item type="Separator"></e-item>
+          <e-item prefixIcon='sf-icon-align-left-1' tooltipText='Align Left' disabled=true></e-item>
+          <e-item prefixIcon='sf-icon-align-center-1' tooltipText='Align Center' disabled=true></e-item>
+          <e-item prefixIcon='sf-icon-align-right-1' tooltipText='Align Right' disabled=true></e-item>
+          <e-item prefixIcon='sf-icon-align-top-1' tooltipText='Align Top' disabled=true></e-item>
+          <e-item prefixIcon='sf-icon-align-middle-1' tooltipText='Align Middle' disabled=true></e-item>
+          <e-item prefixIcon='sf-icon-align-bottom-1' tooltipText='Align Bottom' disabled=true></e-item>
+          <e-item type="Separator"></e-item>
+          <e-item prefixIcon='e-icons e-transform-right' tooltipText='Rotate Right' disabled=true></e-item>
+          <e-item prefixIcon='e-icons e-transform-left' tooltipText='Rotate Left' disabled=true></e-item>
+          <e-item type="Separator"></e-item>
+          <e-item prefixIcon='e-icons e-flip-vertical' tooltipText='Flip Vertical' disabled=true></e-item>
+          <e-item prefixIcon='e-icons e-flip-horizontal' tooltipText='Flip Horizontal' disabled=true></e-item>
+          <e-item type="Separator"></e-item>
+          <e-item prefixIcon='sf-icon-distribute-horizontal' tooltipText='Distribute Objects Horizontally' disabled=true></e-item>
+          <e-item prefixIcon='sf-icon-distribute-vertical' tooltipText='Distribute Objects Vertically' disabled=true></e-item>
+          <e-item type="Separator"></e-item>
+          <e-item prefixIcon='sf-icon-same-width' tooltipText='Same Width' disabled=true></e-item>
+          <e-item prefixIcon='sf-icon-same-height' tooltipText='Same Height' disabled=true></e-item>
+          <e-item prefixIcon='sf-icon-same-size' tooltipText='Same Size' disabled=true></e-item>
+        </e-items>
+      </ejs-toolbar>
+            <div class="content-wrapper">
+                <ejs-diagram #diagram id="diagram" width="100%" height="900px" (created)="created()" [nodes]="nodes"
+                (selectionChange)="selectionChange($event)" (historyChange)="historyChange($event)">
+                </ejs-diagram>
+            </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        The align commands enable you to align selected objects such as nodes and connectors with respect to the selection boundary. The alignment options are left, right, center, middle, top, and bottom. Use the <code>align</code> method with the four mentioned parameters to align objects.</p>
+    <p>The sizing command changes the size of selected nodes with respect to the first selected object. The sizing options are same size (same height and width), same width, and same height. Use the <code>sameSize</code> method and pass <code>SizingOptions</code> such as height, width, and size as a parameter in it.</p>
+
+    <p>The distribute command is used to equally space the nodes vertically or horizontally within the selected boundary. Use the <code>distribute</code> method with the <code>DistributeOptions</code> as the parameter.</p>
+
+    <p>The <code>sendBackward</code> and <code>sendToBack</code> method allows you to send a selected object to the back of the z-order (the order in which objects are stacked on top of one another).</p>
+
+   <p> The clipboard commands are used to cut, copy, or paste selected elements. The <code>cut</code> command removes the selected diagram elements and copies them to the clipboard; <code>copy</code> duplicates the selected diagram elements and copies them to the clipboard; and <code>paste</code> adds diagram elements from the clipboard to the diagram. The flip command is used to give a horizontal or vertical mirror image of the selected node. Use <code>flip</code> and <code>flipMode</code> properties to flip a node along with the port and label.</p>
+  </div>
+  

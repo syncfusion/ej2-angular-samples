@@ -59,6 +59,11 @@
     width: 75px;
 }
 
+body[class*="material3"].e-bigger .fab-hover:hover .text-container,
+body[class*="material3-dark"].e-bigger .fab-hover:hover .text-container {
+    width: 65px;
+}
+
 .e-bigger .e-fab.e-btn.fab-hover {
     padding: 0 13px;
 }

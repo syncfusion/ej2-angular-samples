@@ -17,7 +17,7 @@
     </div>
     <div align="center">
         <ejs-chart #chartRtl style='display:block;' id='chartRtl' align='center' [chartArea]='chartArea' [width]='width' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [crosshair]='crosshair' height='350' [tooltip]='chartTooltip' [theme]='theme'
+            [primaryYAxis]='primaryYAxis' [crosshair]='crosshair' enableRtl=true height='350' [tooltip]='chartTooltip' [theme]='theme'
             [legendSettings]='legendSettings'>
             <e-series-collection>
                 <e-series [dataSource]='dataSource' name='Profit' type='Area' xName='xDate' yName='High' width='2' [fill]='fill' [border]='border'>

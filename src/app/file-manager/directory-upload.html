@@ -1,5 +1,24 @@
 <div class="sample-container">
-    <ejs-filemanager id='file' #fileObj [ajaxSettings]='ajaxSettings' (success)="onSuccess($event)">
+    <ejs-filemanager id='file' #fileObj [ajaxSettings]='ajaxSettings' (success)="onSuccess($event)" >
+      <e-toolbaritems>
+        <e-toolbaritem name="NewFolder"></e-toolbaritem>
+        <e-toolbaritem name="Upload">
+          <ng-template #template>
+            <button ejs-dropdownbutton id="dropButton" #dropButtonObj [items]='items' cssClass="e-tbar-btn e-tbtn-txt" iconCss="e-icons e-fe-upload" (select)="onSelect($event)">Upload</button>
+          </ng-template>
+        </e-toolbaritem>
+        <e-toolbaritem name="SortBy"></e-toolbaritem>
+        <e-toolbaritem name="Refresh"></e-toolbaritem>
+        <e-toolbaritem name="Cut"></e-toolbaritem>
+        <e-toolbaritem name="Copy"></e-toolbaritem>
+        <e-toolbaritem name="Paste"></e-toolbaritem>
+        <e-toolbaritem name="Delete"></e-toolbaritem>
+        <e-toolbaritem name="Download"></e-toolbaritem>
+        <e-toolbaritem name="Rename"></e-toolbaritem>
+        <e-toolbaritem name="Selection"></e-toolbaritem>
+        <e-toolbaritem name="View"></e-toolbaritem>
+        <e-toolbaritem name="Details"></e-toolbaritem>
+      </e-toolbaritems>        
     </ejs-filemanager>
 </div>
 <div id="action-description">

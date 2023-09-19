@@ -51,12 +51,13 @@ import { GanttTimezoneComponent } from './timezone.component';
 import { GanttCriticalPathComponent } from './critical-path.component'
 import { GanttLoadingAnimationComponent } from './loading-animation.component';
 import { GanttOverviewComponent } from './overview.component';
+import { GanttLoadOnDemandComponent } from './load-on-demand.component';
 
 export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/overview', component: GanttOverviewComponent,
         description: 'This example demonstrates the simple Gantt chart with summary task, child tasks, milestone tasks, dependencies with event markers of project',
-        name: 'Overview', order: '01', category: 'Gantt', type: "new"
+        name: 'Overview', order: '01', category: 'Gantt'
     },
     {
         path: ':theme/gantt/default', component: GanttDefaultComponent,
@@ -66,7 +67,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/editing', component: GanttEditingComponent,
         description: 'This example demonstrates the cell editing, dialog editing, taskbar editing and dependency editing support in Gantt',
-        name: 'Editing', order: '01', category: 'Gantt', type: "update"
+        name: 'Editing', order: '01', category: 'Gantt'
     },
     {
         path: ':theme/gantt/virtual-scroll', component: GanttVirtualScrollComponent,
@@ -87,6 +88,11 @@ export const GanttAppRoutes: Object[] = [
         path: ':theme/gantt/remote-data', component: GanttRemoteDataComponent,
         description: 'This sample demonstrates the way of binding data to Gantt chart with remote service. The Gantt chart data source is bound to remote data using DataManager.',
         name: 'Remote Data', order: '02', category: 'Data Binding'
+    },
+    {
+      path: ':theme/gantt/load-on-demand', component: GanttLoadOnDemandComponent,
+      description: 'This sample demonstrates the load on-demand data binding support in Gantt Chart.',
+      name: 'Load On Demand', order: '02', category: 'Data Binding', type: "new"
     },
     {
         path: ':theme/gantt/self-reference-data', component: GanttSelfDataComponent,
@@ -221,7 +227,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/tooltip-template', component: GanttTooltipTemplateComponent,
         description: 'This demo explains how to render tooltip template for taskbar and baseline in Syncfusion Essential JS2 Gantt.',
-        name: 'Tooltip Template', order: '08', category: 'Templates'
+        name: 'Tooltip Template', order: '08', category: 'Templates', hideOnDevice: true
     },
     {
         path: ':theme/gantt/toolbar-template', component: GanttToolbarTemplateComponent,
@@ -241,7 +247,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/exporting', component: GanttExportingComponent,
         description: 'This demo explains how to export Gantt content to Excel and CSV documents using the Syncfusion Gantt component.',
-        name: 'Exporting', order: '09', category: 'Miscellaneous'
+        name: 'Exporting', order: '09', category: 'Miscellaneous', type: "update"
     },
     {
         path: ':theme/gantt/filtering', component: GanttFilteringComponent,
@@ -271,7 +277,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/keyboard-interactions', component: GanttKeyboardInteractionsComponent,
         description: 'This demo demonstrates the key combinations used to perform corresponding Gantt actions in Syncfusion Essential JS2 Gantt.',
-        name: 'Keyboard Navigation', order: '09', category: 'Miscellaneous'
+        name: 'Keyboard Navigation', order: '09', category: 'Miscellaneous', hideOnDevice: true
     },
 ];
 
@@ -321,7 +327,8 @@ let declarations: Type<Object>[] = [
     GanttVirtualScrollComponent,
     GanttTimezoneComponent,
     GanttCriticalPathComponent,
-    GanttOverviewComponent
+    GanttOverviewComponent,
+    GanttLoadOnDemandComponent
 ];
 @NgModule({
     imports: [CommonModule, GanttRouter, SharedModule, GanttAllModule, DropDownListAllModule, CheckBoxAllModule, SwitchAllModule, TextBoxAllModule, NumericTextBoxAllModule, MultiSelectAllModule],

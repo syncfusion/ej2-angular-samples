@@ -2,8 +2,7 @@
     <p>This sample shows the loading indicator while grid loading and refreshing when using remote data. In this sample, you can change the loading indicators from the properties panel.
     </p>
 </div>
-<div class="control-section">
-    <div class="col-lg-9">
+<div class="col-lg-9 control-section">
         <ejs-grid #grid [dataSource]='data' allowPaging='true' allowSorting='true' allowFiltering='true' [pageSettings]='pageSettings' [loadingIndicator]='loadingIndicator'>
             <e-columns>
                 <e-column field='EmployeeID' headerText='Employee ID' width='130' textAlign='Right'></e-column>
@@ -35,7 +34,6 @@
             </div>
         </div>
     </div>
-</div>
 
      <!-- custom code start -->
      <style>

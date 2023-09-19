@@ -19,6 +19,7 @@ import { FileManagerAllModule } from '@syncfusion/ej2-angular-filemanager';
 import { ContextMenuModule ,ToolbarModule  } from '@syncfusion/ej2-angular-navigations';
 import { ButtonModule, CheckBoxModule   } from '@syncfusion/ej2-angular-buttons';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 import { FirebaseController } from './firebase.component';
 import { FTPController } from './ftp-file-provider.component';
 import { IBMCOSController } from './ibm-cos-node-file-provider.component';
@@ -28,7 +29,7 @@ export const fileManagerAppRoutes: Object[] = [
     { path: ':theme/file-manager/custom', component: CustomThumnailController, name: 'Custom Thumbnails', order: '01', category: 'File Manager', description: 'Angular FileManager component with how to use the custom thumbnails for the files and folders.' },
     { path: ':theme/file-manager/default', component: DefaultFileController, name: 'API', order: '01', category: 'File Manager', description: 'Angular FileManager component with how to render the File Manager without the navigation pane and enable or disable toolbar dynamically.' },
     { path: ':theme/file-manager/drag-drop', component: DragAndDropController, name: 'Drag and Drop', order: '01', category: 'File Manager', description: 'Angular FileManager component with drag and drop feature to drag and drop the file.' },
-    { path: ':theme/file-manager/directory-upload', component: DirectoryUploadController, name: 'Directory upload', order: '01', category: 'File Manager', description: 'Angular FileManager component with folder (directory) upload feature by using custom toolbar item.' },
+    { path: ':theme/file-manager/directory-upload', component: DirectoryUploadController, name: 'Directory upload', order: '01', type:'update', category: 'File Manager', description: 'Angular FileManager component with folder (directory) upload feature by using custom toolbar item.' },
     { path: ':theme/file-manager/virtualization', component: VirtualizationController, name: 'Virtualization', order: '01', category: 'File Manager', description: 'Angular FileManager component with how to enable the virtual scrolling feature.' },
     { path: ':theme/file-manager/file-upload', component: FileUploadController, name: 'File Upload', order: '02', category: 'Use Case', description: 'Angular FileManager component with how to render the File Manager component inside the Dialog component.' },
     { path: ':theme/file-manager/azure-service', component: AzureController, name: 'Azure Blob Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the azure service.' },
@@ -42,7 +43,7 @@ export const fileManagerAppRoutes: Object[] = [
 export const fileRouter: ModuleWithProviders<any> = RouterModule.forChild(fileManagerAppRoutes);
 
 @NgModule({
-    imports: [fileRouter, FileManagerAllModule, UploaderModule , DialogModule, CheckBoxModule, ButtonModule, DropDownListModule, CommonModule, ContextMenuModule, ToolbarModule],
+    imports: [fileRouter, FileManagerAllModule, UploaderModule , DialogModule, CheckBoxModule, ButtonModule,DropDownButtonModule, DropDownListModule, CommonModule, ContextMenuModule, ToolbarModule],
     declarations: [
         DefaultFileController,
         OverViewController,

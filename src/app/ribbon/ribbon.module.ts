@@ -9,11 +9,13 @@ import { RibbonSimplifiedComponent } from './simplified.component';
 import { RibbonResizeComponent } from './resize.component';
 import { SharedModule } from '../common/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { RibbonBackstageComponent } from './backstage.component';
 
 export const ribbonAppRoutes: Object[] = [
-  { path: ':theme/ribbon/default', component: RibbonDefaultComponent, name: 'Default Functionalities', description: 'This sample demonstrates the default functionalities of the Syncfusion Angular Ribbon component.', category: 'Ribbon' },
+  { path: ':theme/ribbon/default', component: RibbonDefaultComponent, name: 'Default Functionalities', description: 'This sample demonstrates the default functionalities of the Syncfusion Angular Ribbon component.', category: 'Ribbon', type: 'update' },
   { path: ':theme/ribbon/simplified', component: RibbonSimplifiedComponent, name: 'Simplified Mode', description: 'This sample demonstrates the simplified mode of the Syncfusion Angular Ribbon component.', category: 'Ribbon' },
-  { path: ':theme/ribbon/resize', component: RibbonResizeComponent, name: 'Ribbon Resizing', description: 'This sample demonstrates the resize functionalities of the Syncfusion Angular Ribbon component.', category: 'Ribbon' }
+  { path: ':theme/ribbon/resize', component: RibbonResizeComponent, name: 'Ribbon Resizing', description: 'This sample demonstrates the resize functionalities of the Syncfusion Angular Ribbon component.', category: 'Ribbon' },
+  { path: ':theme/ribbon/backstage', component: RibbonBackstageComponent, name: 'Ribbon Backstage', description: 'This sample demonstrates the backstage functionalities of the Syncfusion Angular Ribbon component.', category: 'Ribbon', type: 'new' }
 ];
 
 export const ribbonRouter: ModuleWithProviders<any> = RouterModule.forChild(ribbonAppRoutes);
@@ -23,7 +25,8 @@ export const ribbonRouter: ModuleWithProviders<any> = RouterModule.forChild(ribb
   declarations: [
     RibbonDefaultComponent,
     RibbonSimplifiedComponent,
-    RibbonResizeComponent
+    RibbonResizeComponent,
+    RibbonBackstageComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

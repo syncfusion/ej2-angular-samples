@@ -655,7 +655,16 @@ export let Locale: Object = {
             "Indicators": "Indikatoren",
             "Ratings": "Bewertungen",
             "Material3": "Material 3",
-            "Material3Dark": "Material 3 Dunkel"
+            "Material3Dark": "Material 3 Dunkel",
+            "InvalidFormulaError": "Wir haben festgestellt, dass Sie eine ungültige Formel eingegeben haben.",
+            "InvalidArguments": "Wir haben festgestellt, dass Sie eine Formel mit ungültigen Argumenten eingegeben haben.",
+            "EmptyExpression": "Wir haben festgestellt, dass Sie eine Formel mit einem leeren Ausdruck eingegeben haben.",
+            "MismatchedParenthesis": "Wir haben festgestellt, dass Sie eine Formel eingegeben haben, bei der eine oder mehrere öffnende oder schließende Klammern fehlten.",
+            "ImproperFormula": "Wir haben festgestellt, dass Sie eine Formel eingegeben haben, die falsch ist.",
+            "WrongNumberOfArguments": "Wir haben festgestellt, dass Sie eine Formel mit einer falschen Anzahl von Argumenten eingegeben haben.",
+            "Requires3Arguments": "Wir haben festgestellt, dass Sie eine Formel eingegeben haben, die drei Argumente erfordert.",
+            "MismatchedStringQuotes": "Wir haben festgestellt, dass Sie eine Formel mit nicht übereinstimmenden Anführungszeichen eingegeben haben.",
+            "FormulaCircularRef": "Wir haben festgestellt, dass Sie eine Formel mit einem Zirkelbezug eingegeben haben."
         },
         "grid": {
             "EmptyRecord": "Keine Datensätze zur Anzeige",
@@ -723,7 +732,17 @@ export let Locale: Object = {
             "SortDescending": "Absteigend sortieren",
             "EditRecord": "Datensatz bearbeiten",
             "DeleteRecord": "Aufzeichnung löschen",
-            "FilterMenu": "Filter"
+            "FilterMenu": "Filter",
+            "NotStartsWith": "beginnt nicht mit",
+            "Like": "Wie",
+            "NotEndsWith": "endet nicht mit",
+            "NotContains": "enthält nicht",
+            "IsNull": "Null",
+            "NotNull": "nicht null",
+            "IsEmpty": "leer",
+            "IsNotEmpty": "nicht leer",
+            "Between": "Zwischen",
+            "CustomFilter": "Benutzerdefinierte Filter"
         },
         "checkboxFilter": {
             "Search": "Suche",
@@ -2276,7 +2295,16 @@ export let Locale: Object = {
             "Indicators": "المؤشرات",
             "Ratings": "التقييمات",
             "Material3": "المادة 3",
-            "Material3Dark": "المادة 3 الظلام"
+            "Material3Dark": "المادة 3 الظلام",
+            "InvalidFormulaError": "وجدنا أنك كتبت صيغة غير صالحة.",
+            "InvalidArguments": "لقد اكتشفنا أنك كتبت صيغة تحتوي على وسيطات غير صالحة.",
+            "EmptyExpression": "وجدنا أنك كتبت صيغة بتعبير فارغ.",
+            "MismatchedParenthesis": "لقد اكتشفنا أنك قمت بكتابة صيغة تحتوي على قوس فتح أو إغلاق واحد أو أكثر مفقود.",
+            "ImproperFormula": "وجدنا أنك كتبت صيغة غير صحيحة.",
+            "WrongNumberOfArguments": "وجدنا أنك كتبت صيغة بعدد خاطئ من الوسائط.",
+            "Requires3Arguments": "وجدنا أنك كتبت صيغة تتطلب ثلاث وسيطات.",
+            "MismatchedStringQuotes": "لقد اكتشفنا أنك كتبت صيغة تحتوي على علامات اقتباس غير متطابقة.",
+            "FormulaCircularRef": "لقد وجدنا أنك كتبت صيغة بمرجع دائري."
         },
         "grid": {
             "EmptyRecord": "لا سجلات لعرضها",
@@ -2344,7 +2372,17 @@ export let Locale: Object = {
             "SortDescending": "ترتيب تنازلي",
             "EditRecord": "تحرير سجل",
             "DeleteRecord": "حذف سجل",
-            "FilterMenu": "منقي"
+            "FilterMenu": "منقي",
+            "NotStartsWith": "لا تبدأ بـ",
+            "Like": "يحب",
+            "NotEndsWith": "لا تنتهي ب",
+            "NotContains": "لا يحتوي",
+            "IsNull": "باطل",
+            "NotNull": "غير فارغة",
+            "IsEmpty": "فارغ",
+            "IsNotEmpty": "ليس فارغًا",
+            "Between": "ما بين",
+            "CustomFilter": "تصفية مخصص"
         },
         "checkboxFilter": {
             "Search": "بحث",
@@ -3896,7 +3934,16 @@ export let Locale: Object = {
             "Indicators": "Indicators",
             "Ratings": "Ratings",
             "Material3": "Material 3",
-            "Material3Dark": "Material 3 Dark"
+            "Material3Dark": "Material 3 Dark",
+            "InvalidFormulaError": "We found that you typed a formula which is invalid.",
+            "InvalidArguments": "We found that you typed a formula with an invalid arguments.",
+            "EmptyExpression": "We found that you typed a formula with an empty expression.",
+            "MismatchedParenthesis": "We found that you typed a formula with one or more missing opening or closing parenthesis.",
+            "ImproperFormula": "We found that you typed a formula which is improper.",
+            "WrongNumberOfArguments": "We found that you typed a formula with a wrong number of arguments.",
+            "Requires3Arguments": "We found that you typed a formula which requires 3 arguments.",
+            "MismatchedStringQuotes": "We found that you typed a formula with a mismatched quotes.",
+            "FormulaCircularRef": "We found that you typed a formula with a circular reference."
         },
         "grid": {
             "EmptyRecord": "No records to display",
@@ -3964,7 +4011,17 @@ export let Locale: Object = {
             "SortDescending": "Sort Descending",
             "EditRecord": "Edit Record",
             "DeleteRecord": "Delete Record",
-            "FilterMenu": "Filter"
+            "FilterMenu": "Filter",
+            "NotStartsWith": "Does Not Start With",
+            "Like": "Like",
+            "NotEndsWith": "Does Not End With",
+            "NotContains": "Does Not Contain",
+            "IsNull": "Null",
+            "NotNull": "Not Null",
+            "IsEmpty": "Empty",
+            "IsNotEmpty": "Not Empty",
+            "Between": "Between",
+            "CustomFilter": "Custom Filter"
         },
         "checkboxFilter": {
             "Search": "Search",
@@ -5516,7 +5573,16 @@ export let Locale: Object = {
             "Indicators": "指示符",
             "Ratings": "收视率",
             "Material3": "材料 3",
-            "Material3Dark": "材質 3 深色"
+            "Material3Dark": "材質 3 深色",
+            "InvalidFormulaError": "我们发现您输入的公式无效。",
+            "InvalidArguments": "我们发现您输入的公式包含无效参数。",
+            "EmptyExpression": "我們發現您輸入的公式包含空表達式。",
+            "MismatchedParenthesis": "我们发现您键入的公式缺少一个或多个左括号或右括号。",
+            "ImproperFormula": "我们发现您输入的公式不正确。",
+            "WrongNumberOfArguments": "我們發現您輸入的公式參數數量錯誤。",
+            "Requires3Arguments": "我们发现您输入的公式需要 3 个参数。",
+            "MismatchedStringQuotes": "我们发现您输入的公式的引号不匹配。",
+            "FormulaCircularRef": "我们发现您输入的公式带有循环引用。"
         },
         "grid": {
             "EmptyRecord": "无记录可显示",
@@ -5584,7 +5650,17 @@ export let Locale: Object = {
             "SortDescending": "按降序排序",
             "EditRecord": "编辑记录",
             "DeleteRecord": "删除记录",
-            "FilterMenu": "过滤"
+            "FilterMenu": "过滤",
+            "NotStartsWith": "不以開頭",
+            "Like": "喜歡",
+            "NotEndsWith": "不以結束",
+            "NotContains": "不含",
+            "IsNull": "無效的",
+            "NotNull": "不為空",
+            "IsEmpty": "空的",
+            "IsNotEmpty": "不是空的",
+            "Between": "之間",
+            "CustomFilter": "自定義過濾器"
         },
         "checkboxFilter": {
             "Search": "搜索",
@@ -7137,7 +7213,16 @@ export let Locale: Object = {
             "Indicators": "Indicateurs",
             "Ratings": "Notes",
             "Material3": "Matériel 3",
-            "Material3Dark": "Matériau 3 foncé"
+            "Material3Dark": "Matériau 3 foncé",
+            "InvalidFormulaError": "Nous avons constaté que vous avez saisi une formule non valide.",
+            "InvalidArguments": "Nous avons constaté que vous avez saisi une formule avec des arguments non valides.",
+            "EmptyExpression": "Nous avons constaté que vous avez tapé une formule avec une expression vide.",
+            "MismatchedParenthesis": "Nous avons constaté que vous avez tapé une formule avec une ou plusieurs parenthèses ouvrantes ou fermantes manquantes.",
+            "ImproperFormula": "Nous avons constaté que vous avez saisi une formule incorrecte.",
+            "WrongNumberOfArguments": "Nous avons constaté que vous avez tapé une formule avec un mauvais nombre d'arguments.",
+            "Requires3Arguments": "Nous avons constaté que vous avez tapé une formule qui nécessite 3 arguments.",
+            "MismatchedStringQuotes": "Nous avons constaté que vous aviez saisi une formule avec des guillemets incompatibles.",
+            "FormulaCircularRef": "Nous avons constaté que vous aviez tapé une formule avec une référence circulaire."
         },
         "grid": {
             "EmptyRecord": "Aucun enregistrement à afficher",
@@ -7205,7 +7290,17 @@ export let Locale: Object = {
             "SortDescending": "Trier par ordre décroissant",
             "EditRecord": "Modifier l'enregistrement",
             "DeleteRecord": "Supprimer l'enregistrement",
-            "FilterMenu": "Filtre"
+            "FilterMenu": "Filtre",
+            "NotStartsWith": "Ne commence pas par",
+            "Like": "Comme",
+            "NotEndsWith": "Ne se termine pas par",
+            "NotContains": "Ne contient pas",
+            "IsNull": "Nul",
+            "NotNull": "Non nul",
+            "IsEmpty": "Vide",
+            "IsNotEmpty": "Pas vide",
+            "Between": "Entre",
+            "CustomFilter": "Filtre personnalisé"
         },
         "checkboxFilter": {
             "Search": "Chercher",

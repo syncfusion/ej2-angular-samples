@@ -1,9 +1,11 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
 import {
     PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
     ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService,  FormFieldsService, FormDesignerService
 } from '@syncfusion/ej2-angular-pdfviewer';
 import { L10n } from '@syncfusion/ej2-base';
+import { SwitchComponent } from '@syncfusion/ej2-angular-buttons';
+import { ClickEventArgs } from '@syncfusion/ej2-buttons';
 
 /**
  * Default PdfViewer Controller
@@ -13,13 +15,18 @@ import { L10n } from '@syncfusion/ej2-base';
     templateUrl: 'right-to-left.html',
     encapsulation: ViewEncapsulation.None,
     // tslint:disable-next-line:max-line-length
-    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService ]
+    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, 
+                TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService ],
+    styleUrls: ['pdfviewer.component.css'],
 })
 
 export class RightToLeftComponent implements OnInit {
+    @ViewChild('pdfviewer')
     public pdfviewerControl: PdfViewerComponent;
-    public service: string = 'https://services.syncfusion.com/angular/production/api/pdfviewer';
-    public document: string = 'RTLText.pdf';
+    @ViewChild('switch')
+    public switch: SwitchComponent;
+   
+    public document: string = 'https://cdn.syncfusion.com/content/pdf/rtl-text.pdf';
     public culture: string = 'ar-AE';
     public annotationSettings ={author: 'مقبول'};
     ngOnInit(): void {
@@ -256,5 +263,15 @@ export class RightToLeftComponent implements OnInit {
                 }
             }
         });
+    }
+    public change(e: any): void {
+        if (e.checked) {
+            this.pdfviewerControl.serviceUrl = '';
+        }
+        else {
+            this.pdfviewerControl.serviceUrl = 'https://ej2services.syncfusion.com/angular/development/api/pdfviewer';
+        }
+        this.pdfviewerControl.dataBind();
+        this.pdfviewerControl.load(this.pdfviewerControl.documentPath, null);
     }
 }

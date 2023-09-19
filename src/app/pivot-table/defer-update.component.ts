@@ -32,9 +32,6 @@ export class DeferUpdateComponent implements OnInit {
     public fieldlistObj: PivotFieldListComponent;
 
     afterPopulate(arge: EnginePopulatedEventArgs): void {
-        if (this.fieldlistObj && this.pivotObj) {
-            this.fieldlistObj.updateView(this.pivotObj);
-        }
         if (this.fieldlistObj && this.pivotObj && this.fieldlistObj.isRequiredUpdate) {
             this.fieldlistObj.updateView(this.pivotObj);
         }

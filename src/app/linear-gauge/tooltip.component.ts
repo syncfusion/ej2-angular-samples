@@ -101,6 +101,34 @@ export class TooltipComponent {
         args.content = (args.axis.visibleRange.max === 25) ? Number(args.content).toFixed(1) + ' cm' : Number(args.content).toFixed(1) + ' in';
     }
 
+    public loaded(args: ILoadedEventArgs): void {
+        if (args.gauge.element.offsetWidth < 500) {
+            args.gauge.axes[1].majorTicks.interval = 2;
+            args.gauge.axes[1].minorTicks.interval = 1;
+            args.gauge.orientation = 'Vertical';
+            args.gauge.annotations[0].x = -57;
+            args.gauge.annotations[0].y = -30;
+            args.gauge.annotations[1].x = 50;
+            args.gauge.annotations[1].y = -45;
+            if (document.getElementById('tooltipContainer')) {
+                document.getElementById('tooltipContainer_Annotation_0')['style']['transform'] = 'rotate(270deg)';
+                document.getElementById('tooltipContainer_Annotation_1')['style']['transform'] = 'rotate(270deg)';
+            }
+        } else {
+            args.gauge.axes[1].majorTicks.interval = 1;
+            args.gauge.axes[1].minorTicks.interval = 0.2;
+            args.gauge.orientation = 'Horizontal';
+            args.gauge.annotations[0].x = 35;
+            args.gauge.annotations[0].y = -58;
+            args.gauge.annotations[1].x = 50;
+            args.gauge.annotations[1].y = 52;
+            if (document.getElementById('tooltipContainer')) {
+                document.getElementById('tooltipContainer_Annotation_0')['style']['transform'] = '';
+                document.getElementById('tooltipContainer_Annotation_1')['style']['transform'] = '';
+            }
+        }
+    }
+
     public load(args: ILoadedEventArgs): void {
         // custom code start
         let selectedTheme: string = location.hash.split('/')[1];

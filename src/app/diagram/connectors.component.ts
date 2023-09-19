@@ -1,11 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
     DiagramComponent, NodeModel, HierarchicalTree, ConnectorModel, StackPanel, TextElement, Segments,
-    ConnectorConstraints, NodeConstraints, PointPortModel, PortVisibility, BasicShapeModel, LayoutModel
+    ConnectorConstraints, NodeConstraints, PointPortModel, PortVisibility, BasicShapeModel, LayoutModel, ConnectorEditing, DecoratorShapes, SegmentThumbShapes
 } from '@syncfusion/ej2-angular-diagrams';
 import { Diagram, SnapConstraints, SnapSettingsModel, randomId } from '@syncfusion/ej2-diagrams';
-import { ChangeEventArgs as CheckBoxChangeEventArgs } from '@syncfusion/ej2-buttons';
-Diagram.Inject(HierarchicalTree);
+Diagram.Inject(HierarchicalTree,ConnectorEditing);
 
 
 /**
@@ -27,7 +26,19 @@ export class ConnectorDiagramComponent {
         type: 'HierarchicalTree', orientation: 'LeftToRight',
         verticalSpacing: 75, margin: { left: 90, right: 0, top: 0, bottom: 0 }
     }
-
+    public decoratorshape = [
+        { shape: 'None', text: 'None' },
+        { shape: 'Square', text: 'Square' },
+        { shape: 'Circle', text: 'Circle' },
+        { shape: 'Diamond', text: 'Diamond' },
+        { shape: 'Arrow', text: 'Arrow' },
+        { shape: 'OpenArrow', text: 'Open Arrow' },
+        { shape: 'Fletch', text: 'Fletch' },
+        { shape: 'OpenFetch', text: 'Open Fetch' },
+        { shape: 'IndentedArrow', text: 'Indented Arrow' },
+        { shape: 'OutdentedArrow', text: 'Outdented Arrow' },
+        { shape: 'DoubleArrow', text: 'Double Arrow' }
+    ];
     public shape: BasicShapeModel = { type: 'Basic', shape: 'Rectangle', cornerRadius: 10 };
     public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
 
@@ -59,6 +70,12 @@ export class ConnectorDiagramComponent {
         obj.style.strokeColor = '#6f409f';
         obj.style.strokeWidth = 2;
         obj.targetDecorator = { style: { strokeColor: '#6f409f', fill: '#6f409f' } };
+        obj.segments = [
+            {
+                type: 'Bezier',
+            }
+        ],
+        obj.constraints = ConnectorConstraints.Default | ConnectorConstraints.DragSegmentThumb 
     };
 
     public created(): void {
@@ -121,26 +138,6 @@ export class ConnectorDiagramComponent {
         return textElement;
     }
 
-    public onChangeLock(args: CheckBoxChangeEventArgs): void {
-        for (let i: number = 0; i < this.diagram.nodes.length; i++) {
-            let node: NodeModel = this.diagram.nodes[i];
-            if (args.checked) {
-                node.constraints = NodeConstraints.PointerEvents | NodeConstraints.Select;
-            } else {
-                node.constraints = NodeConstraints.Default & ~(NodeConstraints.ReadOnly);
-            }
-            this.diagram.dataBind();
-        }
-        for (let i: number = 0; i < this.diagram.connectors.length; i++) {
-            let connector: ConnectorModel = this.diagram.connectors[i];
-            if (args.checked) {
-                connector.constraints = ConnectorConstraints.PointerEvents | ConnectorConstraints.Select;
-            } else {
-                connector.constraints = ConnectorConstraints.Default & ~(ConnectorConstraints.ReadOnly);
-            }
-            this.diagram.dataBind();
-        }
-    }
     private documentClick(args: MouseEvent): void {
         let target: HTMLElement = args.target as HTMLElement;
         // custom code start
@@ -202,20 +199,65 @@ export class ConnectorDiagramComponent {
             if (sourceDec) {
                 this.diagram.connectors[i].sourceDecorator = {
                     style: {
-                        strokeColor: '#6f409f',
-                        fill: '#6f409f', strokeWidth: 2
+                        strokeColor: this.diagram.connectors[i].style.strokeColor,
+                        fill: this.diagram.connectors[i].style.strokeColor, strokeWidth: 2
                     }, shape: 'Circle'
                 };
+                (document.getElementById('sourceDecorator2') as any).value='Circle';
             } else {
                 this.diagram.connectors[i].sourceDecorator = { shape: 'None' };
+                (document.getElementById('sourceDecorator2') as any).value='None';
             }
             this.diagram.connectors[i].targetDecorator = {
                 style: {
-                    strokeColor: '#6f409f',
-                    fill: '#6f409f', strokeWidth: 2
+                    strokeColor: this.diagram.connectors[i].style.strokeColor,
+                    fill: this.diagram.connectors[i].style.strokeColor, strokeWidth: 2
                 }, shape: 'Arrow'
             };
             this.diagram.dataBind();
+            (document.getElementById('targetDecorator') as any).value='Arrow';
         }
+    }
+    public colorChange(args: any) {
+        for(let i=0;i<this.diagram.connectors.length;i++)
+        {
+            this.diagram.connectors[i].style.strokeColor=args.currentValue.hex;
+            this.diagram.connectors[i].targetDecorator.style.strokeColor= args.currentValue.hex;
+            this.diagram.connectors[i].targetDecorator.style.fill= args.currentValue.hex;
+            this.diagram.connectors[i].sourceDecorator.style.strokeColor= args.currentValue.hex;
+            this.diagram.connectors[i].sourceDecorator.style.fill= args.currentValue.hex;
+        }
+        this.diagram.dataBind();
+    }
+    public srcDecShapeChange(args:any) {
+        for (let i = 0; i < this.diagram.connectors.length; i++) {
+            this.diagram.connectors[i].sourceDecorator = {
+                shape: args.itemData.shape,
+                style: {
+                    strokeColor: this.diagram.connectors[i].style.strokeColor,
+                    fill: this.diagram.connectors[i].style.strokeColor,
+                }
+            };
+        }
+        this.diagram.dataBind();
+
+    }
+    public tarDecShapeChange(args:any) {
+        for (let i = 0; i < this.diagram.connectors.length; i++) {
+            this.diagram.connectors[i].targetDecorator = {
+                shape: args.itemData.shape,
+                style: {
+                    strokeColor: this.diagram.connectors[i].style.strokeColor,
+                    fill: this.diagram.connectors[i].style.strokeColor,
+                }
+            };
+            this.diagram.dataBind();
+        }
+    }
+    public segDecShapeChange(args:any) {
+        for (let i = 0; i < this.diagram.connectors.length; i++) {
+            this.diagram.segmentThumbShape = args.itemData.shape;
+        }
+        this.diagram.dataBind();
     }
 }

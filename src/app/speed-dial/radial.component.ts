@@ -32,10 +32,6 @@ export class RadialSpeedDialComponent {
         {
             title: 'Delete',
             iconCss: 'speeddial-icons speeddial-icon-delete'
-        },
-        {
-            title: 'Save',
-            iconCss: 'speeddial-icons speeddial-icon-save'
         }
     ];
 

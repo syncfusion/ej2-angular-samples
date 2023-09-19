@@ -56,7 +56,7 @@ export let projectNewData: Object[] = [
                 TaskID: 12, TaskName: 'Research complete', StartDate: new Date('04/04/2019'), Duration: 0, Predecessor: '10',
                 Indicators: [
                     {
-                        'date': new Date('04/20/2019'),
+                        'date': new Date('04/28/2019'),
                         'name': 'Research completed',
                         'tooltip': 'Research completed',
                         'iconClass': 'description e-icons'

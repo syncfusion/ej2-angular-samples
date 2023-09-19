@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'range-validation.html',
+    encapsulation: ViewEncapsulation.None,
 })
 export class RangeTextboxController {
     public minValue = 10;

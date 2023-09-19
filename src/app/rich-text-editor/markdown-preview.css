@@ -1,4 +1,24 @@
     /* csslint ignore:start */
+    .online-editor .heading {
+        float: left;
+        width: 100%;
+        position: relative;
+        box-sizing: border-box;
+        padding: 0px;
+        padding-left:0px;
+        padding-right:0px;
+      }
+      
+    .online-editor .title {
+        color: #333333;
+        letter-spacing: 1px;
+        padding-left: 10px;
+        text-align: center;
+        margin: 15px 0;
+    }
+    .online-editor .title-head {
+        text-align: center
+    }
     #mdPreview.e-richtexteditor textarea.e-content {
         float: left;
         border-right: 1px solid rgba(0, 0, 0, 0.12);
@@ -42,7 +62,9 @@
     .bootstrap5 .e-icon-btn.e-active .e-md-preview::before,
     .bootstrap5-dark .e-icon-btn.e-active .e-md-preview::before,
     .tailwind .e-icon-btn.e-active .e-md-preview::before,
-    .tailwind-dark .e-icon-btn.e-active .e-md-preview::before {
+    .tailwind-dark .e-icon-btn.e-active .e-md-preview::before,
+    .material3 .e-icon-btn.e-active .e-md-preview::before,
+    .material3-dark .e-icon-btn.e-active .e-md-preview::before {
         content: '\e80e';
     }
 

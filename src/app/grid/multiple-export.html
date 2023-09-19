@@ -1,0 +1,80 @@
+<div class="col-lg-9 control-section">
+    <div class='e-mastertext'>Master Grid</div>
+
+    <ejs-grid #MasterGrid id="MasterGrid" [dataSource]='data' [selectedRowIndex]="2" [allowExcelExport]='true'
+        [allowPdfExport]='true' [toolbar]='toolbar' (toolbarClick)='toolbarClick($event)' [exportGrids]='exportGrids'
+        (rowSelected)="onRowSelected($event)">
+        <e-columns>
+            <e-column field='ContactName' headerText='Customer Name' width='150'></e-column>
+            <e-column field='CompanyName' headerText='Company Name' width='150'></e-column>
+            <e-column field='Address' headerText='Address' width='150'></e-column>
+            <e-column field='Country' headerText='Country' width='150'></e-column>
+        </e-columns>
+    </ejs-grid>
+
+    <div class='e-statustext' *ngIf="key">Showing orders of Customer: <b>{{key}}</b></div>
+
+    <ejs-grid #DetailGrid id="DetailGrid" [dataSource]='data' [allowSelection]='false' [allowExcelExport]='true'
+        [allowPdfExport]='true'>
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' width='150' textAlign='Right'></e-column>
+            <e-column field='Freight' headerText='Freight' format='C2' width='150' textAlign='Right'></e-column>
+            <e-column field='ShipName' headerText="Ship Name" width='150'></e-column>
+            <e-column field='ShipCountry' headerText="Ship Country" width='150'></e-column>
+        </e-columns>
+    </ejs-grid>
+</div>
+<div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+            <table id="property" title="Properties" class="property-panel-table" style="width: 100%">
+                <tr>
+                    <div class="checkbox-control" style="padding-left: 5px">
+                        <div class="row">
+                            <ejs-checkbox #checkbox label="Export grids in same sheet" labelPosition='Before'
+                                [checked]="true"></ejs-checkbox>
+                        </div>
+                    </div>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the client-side exporting of mutliple grids, which allows you to export the data of
+        multiple grids in the same or different pages to Excel and PDF formats.
+    </p>
+</div>
+
+<div id='description'>
+    <p>Data Grids support client-side exporting which allows you to export data to Excel and PDF formats.</p>
+    <p>Multiple grids can be exported by providing their <code>IDs</code> in the <code>exportGrids</code> property.</p>
+    <p>In this demo, Excel and PDF exports are enabled in both grids by setting the <code>allowExcelExport</code> and 
+        <code>allowPdfExport</code> properties to true. In the master grid, the grid IDs are listed in the 
+        <code>exportGrids</code> property which can be exported to Excel and PDF formats by clicking the toolbar buttons.
+    </p>
+    <p>The ExcelExport and PdfExport items are defined in the toolbar of the Grid. Actions are defined in
+        the <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/grid/#toolbarclick">toolbarClick</a></code> event
+        to export Grid data using <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/grid/#excelexport">excelExport</a></code>  
+        and <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/grid/#pdfexport">pdfExport</a></code> methods.
+    </p>
+    <p>By default, in this demo grids are exported on the same page. They can be exported in separate pages by
+        unchecking the checkbox. This can be achieved by setting the multipleExport <code>type</code> of
+        <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/grid/excelExportProperties/">ExcelExportProperties</a></code> 
+        and <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/grid/pdfExportProperties/">PdfExportProperties.</a></code>
+    </p>
+
+    <p style="font-weight: 500">Injecting Modules</p>
+    <p>
+        Grid features are segregated into individual feature-wise modules.
+        To use selection and export features, inject <code>SelectionService</code>, <code>ExcelExportService</code>
+        and <code>PdfExportService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information on the exporting configuration can be found in this <a target="_blank"
+        href="https://ej2.syncfusion.com/angular/documentation/grid/excel-export/excel-exporting">Excel-export</a> 
+        and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/grid/pdf-export/pdf-export">PDF-export</a> documentation sections.
+    </p>
+</div>

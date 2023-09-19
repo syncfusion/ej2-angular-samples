@@ -78,7 +78,7 @@ export class GanttEditingComponent implements OnInit {
         ];
         this.resources = editingResources;
         this.splitterSettings = {
-            columnIndex: 2
+            position: "35%"
         };
     }
 }

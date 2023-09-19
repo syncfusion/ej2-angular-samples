@@ -1,0 +1,36 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the gold medal count from the Rio Olympics using a cylindrical column chart.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-chart #chart style='display:block' align='center' [chartArea]='chartArea' [title]='title'
+        [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)'
+        [width]='width'>
+        <e-series-collection>
+            <e-series [dataSource]='data' columnFacet= 'Cylinder' type='Column' xName='x' yName='y' width=2 columnSpacing=0.1 tooltipMappingName='tooltipMappingName'> </e-series>
+        </e-series-collection>
+    </ejs-chart>
+</div>
+<div id="description">
+    <p>
+        In this example, you can observe the rendering and configuration of a cylindrical column chart. The cylindrical column chart serves the purpose of comparing the frequency, count, total, or average of data across various categories using a cylindrical shape.
+    </p>
+    <p>
+        Tooltips have been enabled in this example. To experience the tooltip functionality, simply hover over a point or tap on it in touch-enabled devices.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use column feature, we need to
+        inject <code>ColumnSeriesService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information on the column series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/column">documentation section</a>.
+    </p>
+</div>
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+</style>

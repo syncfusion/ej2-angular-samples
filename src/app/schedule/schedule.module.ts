@@ -56,6 +56,7 @@ import { EditTempComponent } from './editor-template.component';
 import { ExternalDragDropComponent } from './external-drag-drop.component';
 import { ScheduleContextMenuComponent } from './context-menu.component';
 import { VirtualScrollingComponent } from './virtual-scrolling.component';
+import { DataVirtualizationComponent } from './data-virtualization.component';
 import { BlockEventsComponent } from './block-events.component';
 import { SearchEventsComponent } from './search-events.component';
 import { CalendarIntegrationComponent } from './calendar-integration.component';
@@ -90,6 +91,7 @@ export const scheduleRouteConfig: Record<string, any>[] = [
   { path: ':theme/schedule/multi-drag', component: MultiDragComponent, name: 'Multiple Events Drag', order: '03', category: 'Appointments', description: 'This demo explains you about the ability to select multiple appointments and drag them simultaneously.' },
   { path: ':theme/schedule/inline-editing', component: InlineEditingComponent, name: 'Inline Editing', order: '03', category: 'Appointments', description: 'The example showcases the inline mode of the Angular Scheduler that is used to create an appointment or edit an existing appointments subject easily and quickly.' },
   { path: ':theme/schedule/virtual-scrolling', component: VirtualScrollingComponent, name: 'Virtual Scrolling', order: '04', category: 'Scrolling', hideOnDevice: true, description: 'This example illustrates how to achieve high performance in the Angular Scheduler using virtual scrolling to load resources and events on demand.' },
+  { path: ':theme/schedule/data-virtualization', component: DataVirtualizationComponent , name: 'Data Virtualization', order: '04', hideOnDevice: true, type:'new', description: 'This example illustrates how to load events on demand in Angular Scheduler' },
   { path: ':theme/schedule/views', component: ViewsComponent, name: 'Basic Views ', order: '05', category: 'Views', description: 'This example demonstrates the basic views (day, week, workweek, and month) of the Angular Scheduler control with their default configurations.' },
   { path: ':theme/schedule/timeline', component: TimelineComponent, name: 'Timeline Views ', order: '05', category: 'Views', description: 'This example presents timeline views (day, week, workweek, and month) of the Angular Scheduler with their default configurations.' },
   { path: ':theme/schedule/agenda', component: AgendaComponent, name: 'Agenda View', order: '05', category: 'Views', description: 'This demo shows the agenda view of the Angular Schedule that displays events as a list with virtual scrolling, with a number of initially loaded days.' },
@@ -117,7 +119,7 @@ export const scheduleRouteConfig: Record<string, any>[] = [
   { path: ':theme/schedule/quick-info-template', component: QuickInfoTemplateComponent, name: 'Quick Info Template', order: '08', category: 'Template', description: 'The example showcases the customized quick info popups for cells and events using the templates that help to override the built-in style in the Angular Scheduler.' },
   { path: ':theme/schedule/editor-validation', component: EditorValidationComponent, name: 'Field Validation', order: '09', category: 'Editor Window', description: 'This demo covers the Appointment field validation that adds default and custom validation rules to the editor fields of the Angular Scheduler.' },
   { path: ':theme/schedule/editor-custom-field', component: EditorCustomFieldComponent, name: 'Additional Fields', order: '09', category: 'Editor Window', description: 'This demo shows how to customize appointment editor (event window) with additional fields using pop-up open events in the Angular event calendar.' },
-  { path: ':theme/schedule/editor-template', component: EditTempComponent, name: 'Editor Template', order: '09', category: 'Editor Window', description: 'This demo shows how to design custom appointment (event) editor windows by adding or removing fields from the Angular Scheduler appointment window.' },
+  { path: ':theme/schedule/editor-template', component: EditTempComponent, name: 'Editor Template', order: '09', category: 'Editor Window', type:'update', description: 'This demo shows how to design custom appointment (event) editor windows by adding or removing fields from the Angular Scheduler appointment window.' },
   { path: ':theme/schedule/header-rows', component: HeaderRowsComponent, name: 'Header Rows ', order: '10', category: 'Customization', description: 'This demo shows how to include additional header rows like week number and month number on the timeline view in the Angular event calendar.' },
   { path: ':theme/schedule/time-scale', component: TimescaleComponent, name: 'Timescale', order: '10', category: 'Customization', description: 'This demo shows how to customize the default timescale with interval, show/hide gridlines, slots count, and template in Angular Scheduler.' },
   { path: ':theme/schedule/context-menu', component: ScheduleContextMenuComponent, name: 'Context Menu', order: '10', category: 'Customization', description: 'This example shows how to integrate the context menu within the Angular Scheduler and control the related functionalities using menu options.' },
@@ -151,7 +153,8 @@ const scheduleDeclarations: Type<Record<string, any>>[] = [
   GroupComponent, AddRemoveResourcesComponent, TimelineComponent, TimelineResourceGroupingComponent, TimelineResourcesComponent,
   HeaderRowsComponent, ExternalDragDropComponent, ScheduleContextMenuComponent, VirtualScrollingComponent, CalendarIntegrationComponent,
   CalendarExportImportComponent, ExcelExportComponent, PrintComponent, YearComponent, InlineEditingComponent, QuickInfoTemplateComponent,
-  OverviewComponent, MultiDragComponent, AdaptiveGroupingComponent, RealTimeBindingComponent, ReminderComponent, CustomMonthViewComponent
+  OverviewComponent, MultiDragComponent, AdaptiveGroupingComponent, RealTimeBindingComponent, ReminderComponent, CustomMonthViewComponent,
+  DataVirtualizationComponent
 ];
 
 @NgModule({

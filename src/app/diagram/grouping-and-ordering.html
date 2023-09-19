@@ -1,0 +1,180 @@
+<script src="script/diagram-common.ts"></script>
+<style>
+  .e-symbolpalette {
+      display: block;
+  }
+</style>
+<div id="action-description">
+  <p>
+    This sample illustrates how to group, ungroup, and order commands with the diagram.
+  </p>
+</div>
+<div class="control-section">
+    <div style="width: 100%">
+      <ejs-toolbar
+        #toolbar
+        overflowMode="Scrollable"
+        id="toolbar_scrollable"
+        (clicked)="toolbarClick($event)"
+      >
+        <e-items>
+          <e-item
+            prefixIcon="e-icons e-group-1"
+            tooltipText="Group"
+            type="Button"
+            disabled="true"
+          ></e-item>
+          <e-item
+            prefixIcon="e-icons e-ungroup-1"
+            tooltipText="UnGroup"
+            type="Button"
+            disabled="true"
+          ></e-item>
+          <e-item type="Separator"></e-item>
+  
+          <e-item
+            prefixIcon="e-icons e-bring-forward"
+            tooltipText="Bring Forward"
+            type="Button"
+            disabled="true"
+          ></e-item>
+          <e-item
+            prefixIcon="e-icons e-bring-to-front"
+            tooltipText="Bring To Front"
+            type="Button"
+            disabled="true"
+          ></e-item>
+          <e-item
+            prefixIcon="e-icons e-send-backward"
+            tooltipText="Send Backward"
+            type="Button"
+            disabled="true"
+          ></e-item>
+          <e-item
+            prefixIcon="e-icons e-send-to-back"
+            tooltipText="Send To Back"
+            type="Button"
+            disabled="true"
+          ></e-item>
+          <e-item type="Separator">
+            <ng-template #template>
+              <div style="margin-left:1px;"></div>
+            </ng-template>
+          </e-item>
+          <e-item tooltipText="Font Style" type="Input" disabled="true">
+            <ng-template #template>
+              <ejs-combobox
+                id="games"
+                #sample
+                [dataSource]="fontTypeList"
+                (select)="fontFamily($event)"
+                [(value)]="value"
+              ></ejs-combobox>
+            </ng-template>
+          </e-item>
+          <e-item type="Separator">
+            <ng-template #template>
+              <div style="margin-left:1px;"></div>
+            </ng-template>
+          </e-item>
+          <e-item tooltipText="Font Size" disabled="true">
+            <ng-template #template>
+              <ejs-numerictextbox
+              id="range"
+              value="12"
+              format="##.##"
+              [step]="2"
+              [min]="1"
+              [max]="30"
+              width="90px"
+              (change)="fontSizeChange($event)"
+            ></ejs-numerictextbox>
+            </ng-template>
+          </e-item>
+          <e-item
+            prefixIcon="e-icons e-bold"
+            tooltipText="Bold"
+            type="Button"
+            disabled="true"
+          ></e-item>
+          <e-item
+            prefixIcon="e-icons e-italic"
+            tooltipText="Italic"
+            type="Button"
+            disabled="true"
+          ></e-item>
+          <e-item
+            prefixIcon="e-icons e-underline"
+            tooltipText="Underline"
+            type="Button"
+            disabled="true"
+          ></e-item>
+          <e-item disabled="true">
+            <ng-template #template>
+              <input
+                ejs-colorpicker
+                id="color-picker"
+                type="color"
+                (change)="colorChange($event)"
+              />
+            </ng-template>
+          </e-item>
+        </e-items>
+      </ejs-toolbar>
+      </div>
+      <div class="sb-mobile-palette-bar">
+        <div
+          id="palette-icon"
+          style="float: right;"
+          role="button"
+          class="e-ddb-icons1 e-toggle-palette"
+        ></div>
+      </div>
+      <div id="palette-space" class="sb-mobile-palette" style="width: 30%;">
+        <ejs-symbolpalette
+          id="symbolpalette"
+          [expandMode]="expandMode"
+          [palettes]="palettes"
+          width="100%"
+          height="700px"
+          [symbolHeight]="60"
+          [symbolWidth]="60"
+          [symbolMargin]="symbolMargin"
+          [getSymbolInfo]="getSymbolInfo"
+          [getNodeDefaults]="getSymbolDefaults"
+        >
+        </ejs-symbolpalette>
+      </div>
+      <div id="diagram-space" class="sb-mobile-diagram" style="width: 70%; height: 700px;">
+        <div class="content-wrapper">
+          <ejs-diagram
+            #diagram
+            id="diagram"
+            width="100%"
+            height="700px"
+            [nodes]="nodes"
+            (created)="created()"
+            (dragEnter)="dragEnter($event)"
+            (created)="diagramCreate($event)"
+            (selectionChange)="selectionChange($event)"
+            [getCustomTool]="getCustomTool"
+            [selectedItems]="selectedItems"
+            [drawingObject]="drawingObject"
+          >
+          </ejs-diagram>
+        </div>
+      </div>
+    </div>
+  <div id="description">
+    <p>
+    The <code>group</code> method groups diagram nodes and connectors into a single entity.</p>
+    <p>The <code>unGroup</code> method ungroups nodes and/or connectors that have been previously grouped together using the group method.</p>
+
+    <p>The <code>moveForward</code> and <code>bringToFront</code> methods adjust the visual order of nodes or connectors within a diagram. This method takes a single parameter that specifies the node or connector that you want to bring forward in the order.</p>
+
+    <p>The <code>sendBackward</code> and <code>sendToBack</code> method allows you to send a selected object to the back of the z-order (the order in which objects are stacked on top of one another).</p>
+
+   <p> In this sample, node annotation styles such as font family, font size, bold, italic, underline, and fontcolor can be customized.</p>
+  </div>
+
+  

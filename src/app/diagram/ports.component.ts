@@ -28,7 +28,7 @@ export class PortDiagramComponent {
   @ViewChild('diagram') public diagram: DiagramComponent;
 
   @ViewChild('portVisibilityDrop')
-  public portVisibilityDrop: MultiSelectComponent;
+  public portVisibilityDrop: DropDownListComponent;
   @ViewChild('portFillDrop') public portFillDrop: ColorPickerComponent;
   @ViewChild('portBorderDrop') public portBorderDrop: ColorPickerComponent;
   @ViewChild('portShapeDrop') public portShapeDrop: DropDownListComponent;
@@ -267,22 +267,7 @@ export class PortDiagramComponent {
         if (args.newValue[0] instanceof Node && appearance) {
           appearance.classList.remove('e-remove-selection');
           let port: PointPortModel = this.getPort()[0];
-          this.portVisibilityDrop.value = [] as number[];
-          if (PortVisibility.Visible & port.visibility) {
-            this.portVisibilityDrop.value.push(PortVisibility.Visible);
-          }
-          if (PortVisibility.Hidden & port.visibility) {
-            this.portVisibilityDrop.value.push(PortVisibility.Hidden);
-          }
-          if (PortVisibility.Hover & port.visibility) {
-            this.portVisibilityDrop.value.push(PortVisibility.Hover);
-          }
-          if (PortVisibility.Connect & port.visibility) {
-            this.portVisibilityDrop.value.push(PortVisibility.Connect);
-          }
-          if (this.portVisibilityDrop.value.length === 0) {
-            this.portVisibilityDrop.placeholder = 'Select Visibility';
-          }
+          this.portVisibilityDrop.value = port.visibility;
           this.portVisibilityDrop.dataBind();
           this.portFillDrop.value = port.style.fill;
           this.portFillDrop.dataBind();
@@ -324,11 +309,7 @@ export class PortDiagramComponent {
       } else if (propertyName === 'strokewidth') {
         port.style.strokeWidth = Number(propertyValue);
       } else if (propertyName === 'visibility') {
-        port.visibility = 0;
-        let propertyValue1: number[] = propertyValue as number[];
-        for (let i: number = 0; i < propertyValue1.length; i++) {
-          port.visibility += propertyValue1[i] as PortVisibility;
-        }
+        port.visibility = this.portVisibilityDrop.value as PortVisibility;
       } else if (propertyName === 'shape') {
         port.shape = propertyValue as PortShapes;
         if(port.shape === 'Custom') {

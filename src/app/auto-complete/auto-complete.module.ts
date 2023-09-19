@@ -15,6 +15,7 @@ import { TemplateDrivenAutoCompleteComponent } from './template-driven.component
 import { ReactiveFormAutoCompleteComponent } from './reactive-form.component';
 import { SharedModule } from '../common/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { VirtualScrollAutoCompleteComponent } from './virtual-scroll.component';
 export const autoCompleteAppRoutes: Object[] = [
     {
         path: ':theme/auto-complete/default', component: DefaultAutoCompleteComponent, order: '01',
@@ -31,6 +32,10 @@ export const autoCompleteAppRoutes: Object[] = [
     {
         path: ':theme/auto-complete/template', component: TemplateAutoCompleteComponent, order: '01',
         name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular autocomplete component pop-up list using template.', category: 'AutoComplete'
+    },
+    {
+        path: ':theme/auto-complete/virtual-scroll', component: VirtualScrollAutoCompleteComponent, order: '01', type : 'new', 
+        name: 'Virtualization', description: 'This example demonstrates how to utilize the virtualization support of Angular autocomplete component.', category: 'AutoComplete'
     },
     {
         path: ':theme/auto-complete/highlight', component: HighlightAutoCompleteComponent, order: '01',
@@ -63,6 +68,7 @@ export const AutoCompleteRouter: ModuleWithProviders<any> = RouterModule.forChil
         GroupAndIconAutoCompleteComponent,
         DataBindingAutoCompleteComponent,
         TemplateAutoCompleteComponent,
+        VirtualScrollAutoCompleteComponent,
         HighlightAutoCompleteComponent,
         CustomFilteringAutoCompleteComponent,
         DiacriticsFilteringAutoCompleteComponent,

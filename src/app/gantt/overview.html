@@ -1,0 +1,65 @@
+<div id="action-description">
+    <p>This sample shows an overview of the EJ2 Gantt Chart features that visualize the progress of each feature of the
+        product towards its release and make it easier to monitor the scheduling of the dependent items.</p>
+</div>
+<div class="control-section">
+    <ejs-gantt id="overviewSample" #gantt height="430px" [dataSource]="data" [taskFields]="taskSettings"
+        [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [treeColumnIndex]="1" height="450px"
+        width="100%" [allowResizing]="true" [allowSelection]="true" [highlightWeekends]="true"
+        [gridLines]="gridLines" showColumnMenu=true [projectStartDate]="projectStartDate" [taskbarHeight]="24" [rowHeight]="36"
+        [projectEndDate]="projectEndDate" [eventMarkers]="eventMarkers" [toolbar]="toolbar" [allowFiltering]="true"
+        [resourceFields]="resourceFields" [resources]="resources" [allowSorting]="true" [allowResizing]="true"
+        [splitterSettings]="splitterSettings" (load)="load()">
+
+        <e-columns>
+            <e-column field='TaskId' headerText='Task Id' width='180' [visible]='false'></e-column>
+            <e-column field='TaskName' headerText='Product Release' width='180'></e-column>
+            <e-column field='resources' headerText='Assignee' [allowSorting]='false' width='140'>
+                <ng-template #template let-data>
+                    <div class="image" *ngIf=data.ganttProperties.resourceNames>
+                        <img src="https://ej2.syncfusion.com/angular/demos/assets/gantt/images/{{data.ganttProperties.resourceNames}}.png"
+                            style="height:25px;width:25px" />
+                        <div style="display:inline-block;width:100%;position:relative;left:5px;">
+                            {{data.ganttProperties.resourceNames}}</div>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='Status' headerText='Status' minWidth="100" width="130">
+                <ng-template #template let-data>
+                    <div class="Status" *ngIf=data.taskData.Status>
+                        <div [style]="Status(data.taskData.Status)">
+                            <div [style]="StatusContent(data.taskData.Status)">{{data.taskData.Status}}</div>
+                        </div>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='Priority' headerText='Priority' minWidth='80' width='130'>
+                <ng-template #template let-data>
+                    <div class="Priority" *ngIf=data.taskData.Priority>
+                        <div [style]="Priority(data.taskData.Priority)">
+                            <div [style]="PriorityContent(data.taskData.Priority)">{{data.taskData.Priority}}</div>
+                        </div>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='Work' headerText='Planned Hours' width='120'></e-column>
+            <e-column field='TimeLog' headerText='Work Log' width='120'></e-column>
+        </e-columns>
+
+    </ejs-gantt>
+<style>
+    #overviewSample .e-gantt-child-taskbar,
+    #overviewSample .e-gantt-parent-taskbar {
+        border-radius: 10px ;
+    }
+</style>
+    <div style="float: right; margin: 10px;">Source:
+        <a href="https://en.wikipedia.org/wiki/Construction" target='_blank'>https://en.wikipedia.org/</a>
+    </div>
+</div>
+<div id="description">
+    <p>This example shows the three-quarter release planning of product features rendered in the EJ2 Gantt chart. It
+        tracks the quarterly release planning of product status, resources, and task scheduling.</p>
+    <p>EJ2 Gantt Chart features such as Sorting, Filtering, Column resizing, Column menu, column template and so on are
+        used in this demo.</p>
+</div>

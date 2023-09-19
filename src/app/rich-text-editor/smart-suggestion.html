@@ -4,7 +4,7 @@
 <div class="control-section e-rte-mention-format-section">
     <div class="sample-container">
         <div class="default-section" #mentionFormatIntegration id="mentionFormatIntegration">
-            <ejs-richtexteditor id="MentionInlineFormat" #MentionInlineFormat [toolbarSettings]='tools' placeholder="Type '/' and choose format" (actionBegin)="onActionBegin($event)" (created)="onCreate()">
+            <ejs-richtexteditor id="MentionInlineFormat" #MentionInlineFormat [toolbarSettings]='tools' placeholder="Type '/' and choose format" (actionBegin)="onActionBegin($event)" >
             </ejs-richtexteditor>
             <ejs-mention #Mention [dataSource]='data' target='#MentionInlineFormat_rte-edit-view' [fields]='fieldsData' mentionChar="/" [allowSpaces]="true"  
                 popupWidth='320px' popupHeight='290px' (select)="applyCommand($event)" (beforeOpen)="beforeOpen()" (filtering)="filtering()">
@@ -22,15 +22,6 @@
                         </table>
                 </ng-template>
             </ejs-mention>
-
-            <ejs-dialog #Dialog id="emojiDialog" [buttons]="dialogButtons" (overlayClick)="dialogOverlay()" [header]="header" [visible]="false"
-            width="37%" [isModal]="true" (created)="dialogCreate()" (open)="onDialogOpen()">
-                <ng-template #content>
-                    <div id="rteEmoticons-smiley">
-                        <div *ngFor="let smiley of smileys" class="char_block" title="{{ smiley.title }}" [innerHTML]="smiley.content"></div>
-                    </div>
-                </ng-template>
-            </ejs-dialog>
         </div>
     </div>
 </div>

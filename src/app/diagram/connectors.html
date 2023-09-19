@@ -1,4 +1,4 @@
-<style>
+<style scoped>
     .diagram-connectors .image-pattern-style {
         background-color: white;
         background-size: contain;
@@ -38,6 +38,21 @@
         border-color: #006CE6;
         border-width: 2px;
     }
+    .e-colorpicker-wrapper .e-split-btn-wrapper .e-split-colorpicker.e-split-btn .e-selected-color .e-split-preview{
+        width: 100px!important;
+        margin-left: -40px!important;
+    }
+    .e-colorpicker-wrapper .e-split-btn-wrapper .e-split-colorpicker.e-split-btn{
+        width: 110px!important;
+    }
+
+    label{
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 400;
+        width: 100%;
+        margin-top: auto;
+    }       
 </style>
 <div id="action-description">
     <p>
@@ -108,7 +123,7 @@
         </div>
         <div class="row property-panel-content" id="appearance">
             <div class="row row-header sb-child-row">
-                Appearance
+                <b>Connector types</b>
             </div>
             <div class="row sb-child-row">
                 <div class="image-pattern-style" id="straightConnector" style="background-image: url(./assets/diagram/Images/connector/Connectors_1.png); margin-right: 3px">
@@ -143,9 +158,36 @@
                 </div>
             </div>
         </div>
-        <div class="row property-panel-content" style="padding-top: 10px">
-            <div class="row sb-child-row">
-                <ejs-checkbox #diagram id="lock" label="Lock" [checked]="false" (change)="onChangeLock($event)"></ejs-checkbox>
+        <div class="row property-panel-content" id="decorators" style="padding-top: 10px">
+            <div class="row row-header" style="padding-top: 8px">
+                <b>Decorators</b>
+            </div>
+            <div class="row" style="padding-top: 8px; display: flex;">
+                <label>Source Decorators</label>
+                <div>
+                    <ejs-dropdownlist #sourceDecorator2 id="sourceDecorator2" [dataSource]="decoratorshape" value="None" (change)="srcDecShapeChange($event)"></ejs-dropdownlist>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 8px; display: flex;">
+                <label>Target Decorators</label>
+                <div>
+                    <ejs-dropdownlist #targetDecorator id="targetDecorator" [dataSource]="decoratorshape" value="Arrow" (change)="tarDecShapeChange($event)"></ejs-dropdownlist>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 8px; display: flex;">
+                <label>Segment Decorators</label>
+                <div>
+                    <ejs-dropdownlist #segmentDecorator id="segmentDecorator" [dataSource]="decoratorshape" value="Circle" (change)="segDecShapeChange($event)"></ejs-dropdownlist>
+                </div>
+            </div>
+        </div>
+        <div class="row property-panel-content" id="color-tab" style="padding-top: 10px">
+            <div class="row row-header">
+                <b>Appearance</b>
+            </div>
+            <div class="row" style="padding-top: 8px;  display: flex;">
+                <label>Line Color</label>
+                <input ejs-colorpicker #color id="color" value='#6f409f' type='color' (change)='colorChange($event)' />
             </div>
         </div>
     </div>
@@ -162,8 +204,7 @@
     </p>
 
     <p>
-        Additionally, you can see how to lock the connectors to disable editing. The
-        <code>constraints</code> property of connector enables/disables editing. In this example, the shapes are automatically arranged using hierarchical tree layout.
+        In this example, the shapes are automatically arranged using hierarchical tree layout.
     </p>
 
     <p style="font-weight: 500">Injecting Module</p>

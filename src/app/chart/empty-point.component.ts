@@ -24,11 +24,11 @@ export class EmptyPointChartComponent {
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
         valueType: 'Category', interval: 1, labelIntersectAction: Browser.isDevice ? 'None' : 'Trim', labelRotation: Browser.isDevice ? -45: 0, majorTickLines: {width : 0},
-        minorTickLines: {width: 0}
+        minorTickLines: {width: 0}, title: 'Product'
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-       minimum: 0, maximum: 100, interval: 20, labelFormat: '{value}%', 
+       minimum: 0, maximum: 100, interval: 20, labelFormat: '{value}%', title: 'Profit'
     };
     //Initializing Marker
     public marker: Object = {

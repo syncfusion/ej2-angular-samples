@@ -1,8 +1,10 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit,ViewChild} from '@angular/core';
 import {
     PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
     ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService
 } from '@syncfusion/ej2-angular-pdfviewer';
+import { SwitchComponent } from '@syncfusion/ej2-angular-buttons';
+import { ClickEventArgs } from '@syncfusion/ej2-buttons';
 
 /**
  * Default PdfViewer Controller
@@ -12,13 +14,29 @@ import {
     templateUrl: 'default.html',
     encapsulation: ViewEncapsulation.None,
     // tslint:disable-next-line:max-line-length
-    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService]
+    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, 
+                TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService],
+    styleUrls: ['pdfviewer.component.css'],
 })
 
 export class DefaultPdfViewerComponent implements OnInit {
-    public service: string = 'https://services.syncfusion.com/angular/production/api/pdfviewer';
-    public document: string = 'PDF_Succinctly.pdf';
+    @ViewChild('pdfviewer')
+    public pdfviewerControl: PdfViewerComponent;
+    @ViewChild('switch')
+    public switch: SwitchComponent;
+    
+    public document: string = 'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf';
     ngOnInit(): void {
         // ngOnInit function
+    }
+    public change(e: any): void {
+        if (e.checked) {
+            this.pdfviewerControl.serviceUrl = '';
+        }
+        else {
+            this.pdfviewerControl.serviceUrl = 'https://ej2services.syncfusion.com/angular/development/api/pdfviewer';
+        }
+        this.pdfviewerControl.dataBind();
+        this.pdfviewerControl.load(this.pdfviewerControl.documentPath, null);
     }
 }

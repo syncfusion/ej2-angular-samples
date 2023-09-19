@@ -1,0 +1,18 @@
+<div id="action-description">
+    <p>This example demonstrates the virtualization support of the ComboBox. The component has 150 items bound to it; however, when you open the suggestion list, only few items are loaded based on the popup height, and the remaining items are loaded while scrolling.</p> 
+</div>
+
+<div class="control-section">
+    <div class="col-lg-8  content-wrapper" style="height: 350px">
+        <div id='content' style="margin: 0 auto; width:250px; padding-top: 30px">
+            <ejs-combobox id='datas' #sample [dataSource]='records' [placeholder]='waterMark' [fields]='fields' [allowFiltering]='true' [enableVirtualization]='true' popupHeight='200px'></ejs-combobox>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>The <code>ComboBox</code> component supports virtualization, which improves UI performance for large amounts of data. To enable virtualization, set the <code>enableVirtualization</code> property to true. When virtualization is enabled, ComboBox doesn't render the entire suggestion data source on initial component rendering. It loads the N number of items in the popup on initial rendering and the remaining set number of items will load while scrolling.
+        Virtualization works with both local and remote data.</p>
+    <p>To perform the virtualization feature in the ComboBox, the <code>VirtualScroll</code> module has to be injected at the application level.</p>
+
+</div>

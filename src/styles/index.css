@@ -535,6 +535,13 @@
   background: #fff;
 }
 
+.fluent-dark #search-input-wrapper .e-input-group, .bootstrap-dark #search-input-wrapper .e-input-group,
+.tailwind-dark #search-input-wrapper .e-input-group, .material-dark #search-input-wrapper .e-input-group,
+.material3-dark #search-input-wrapper .e-input-group, .fabric-dark #search-input-wrapper .e-input-group,
+.bootstrap5-dark #search-input-wrapper .e-input-group, .highcontrast #search-input-wrapper .e-input-group {
+  background: #212529;
+}
+
 #search-input-wrapper .e-input-group,
 #search-input-wrapper .e-input-group.e-input-focus {
   top: -15px;
@@ -1854,21 +1861,6 @@ propertye pane
   .sb-mobile-setting {
     display: block;
     padding-top: 3px;
-  }
-  .fluent.e-bigger .sb-mobile-setting {
-    line-height: 20px;
-  }
-  .fluent-dark.e-bigger .sb-mobile-setting {
-      line-height: 22px;
-  }
-  .bootstrap5.e-bigger .sb-mobile-setting {
-      line-height: 27px;
-  }
-  .bootstrap5-dark.e-bigger .sb-mobile-setting {
-      line-height: 27px;
-  }
-  .bootstrap4.e-bigger .sb-mobile-setting {
-    line-height: 27px;
   }
 
   /*sb-right-pane*/
@@ -3777,7 +3769,7 @@ color:white;
   margin-top: 2px;
 }
 .e-samplestatus.new, .e-samplestatus.update, .e-samplestatus.preview {
-  margin: 8px 0;
+  margin: 8px 0 0;
   height: 22px;
   margin-top: 6px;
 }

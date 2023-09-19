@@ -39,7 +39,7 @@ export class GanttLocalDataComponent implements OnInit {
             leftLabel: 'TaskName',
         };
         this.splitterSettings = {
-            columnIndex: 2
+            position: "35%"
         };
     }
 }

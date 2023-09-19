@@ -1,5 +1,5 @@
 <div class="control-section">
-  <ejs-schedule #scheduleObj width='100%' height='600px' [selectedDate]="selectedDate" [eventSettings]="eventSettings">
+  <ejs-schedule #scheduleObj width='100%' cssClass='quick-info-template' height='600px' [selectedDate]="selectedDate" [eventSettings]="eventSettings">
     <e-resources>
       <e-resource field='RoomId' title='Room Type' name='MeetingRoom' textField='Name' idField='Id' colorField='Color'
         [dataSource]='roomData'>

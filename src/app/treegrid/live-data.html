@@ -1,0 +1,75 @@
+<div class="control-section">
+    <div style="margin-bottom: 10px;">
+        <h4 style="display: inline-block; font-size: 14px;">Feed Delay(ms):</h4>
+        <ejs-numerictextbox #feeddelay format="N0" value="1000" min="100" max="5000" step="1" width="200px"
+            style="margin-left: 7px;"></ejs-numerictextbox>
+
+
+        <button #update id="update" ejs-button (click)="updateClick($event)" style="margin-left: 10px;">
+            Start Data Update
+        </button>
+        <button #clear id="clear" ejs-button (click)="clearClick($event)" style="margin-left: 10px;">
+            Stop Data Update
+        </button>
+    </div>
+
+    <ejs-treegrid #treegrid id="treegrid" [enableHover]="false" [dataSource]="data"
+        (queryCellInfo)="queryCellInfoEvent($event)" height="350" childMapping='subtasks' [allowSelection]="false"
+        (destroyed)="destroyClear($event)" [treeColumnIndex]='1'>
+        <e-columns>
+            <e-column field='id' headerText='ID' width='140' [isPrimaryKey]=true [visible]=false></e-column>
+            <e-column field='indexfunds' headerText='Index Funds' width='200'></e-column>
+            <e-column field='Ltp' headerText='Last Traded Price' width='150' format='C2' type='number'
+                textAlign='Right'></e-column>
+            <e-column field='Change' headerText='Change' width='100' format='C2' type='number'
+                textAlign='Right'></e-column>
+            <e-column field='PercentageChange' headerText='% Change' width='110' format='N0'
+                textAlign='Right'></e-column>
+            <e-column field='Open' headerText='Open Price' width='150'></e-column>
+            <e-column field='High' headerText='High Price' width='170'></e-column>
+            <e-column field='Low' headerText='Low Price' width='150'></e-column>
+            <e-column field='Weekhigh' headerText='52W H' width='130' textAlign='Right'></e-column>
+            <e-column field='Weeklow' headerText='52W L' width='130' textAlign='Right'></e-column>
+        </e-columns>
+    </ejs-treegrid>
+    <br>
+    <p>
+        <b>
+            Disclaimer :
+        </b>The index fund data showcased in this sample is for demonstration purposes only and does not reflect
+        actual or
+        real-time data.
+    </p>
+    <div id="action-description">
+        <p>
+            This sample demonstrates how frequently Tree Grid cells are updated in real-time data at a set interval.
+        </p>
+    </div>
+
+    <div id="description">
+        <p> The updating of Tree Grid cells can be done without any performance lagging by using the<code>
+            <a target="_blank" href="https://ej2.syncfusion.com/documentation/api/treegrid/#setcellvalue">setCellValue
+            </a>
+        </code>
+            method.
+            The style of Tree Grid cells can be customized using the
+            <a target="_blank" href="https://ej2.syncfusion.com/documentation/api/treegrid/#querycellinfo">
+                queryCellInfo</a> event.
+        </p>
+        <p>In this demo,</p>
+        <ul>
+            <li> Clicking the start update button triggers automatic updates of Tree Grid cells at the interval set in
+                the
+                feed
+                delay
+                text box which is a milliseconds format.</li>
+            <li> Clicking the stop update button will halt the automatic updating of Tree Grid cells.</li>
+        </ul>
+        <p>
+            More information on the Tree Grid instantiation can be found in this
+            <a target="_blank" 
+            href="https://ej2.syncfusion.com/angular/documentation/treegrid/getting-started">
+            documentation section</a>.
+        </p>
+    </div>
+</div>

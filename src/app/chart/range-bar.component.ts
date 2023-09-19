@@ -45,8 +45,7 @@ export class RangeBarChartComponent {
     public tooltip: Object = {
         enable: true,
         header: '<b>${point.tooltip}</b>',
-        format: 'Temperature : <b>${point.low} - ${point.high}</b>',
-        enableMarker: false
+        format: 'Temperature : <b>${point.low} - ${point.high}</b>'
     };
     public marker: Object = {
         dataLabel:{ visible:true, position:'Outer'}

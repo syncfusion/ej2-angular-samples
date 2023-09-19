@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { editingData, editingResources } from './data';
 import { ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
-import { GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, PdfExportProperties } from '@syncfusion/ej2-angular-gantt';
 
 @Component({
     selector: 'ej2-ganttexporting',
@@ -11,6 +11,7 @@ export class GanttExportingComponent implements OnInit {
     @ViewChild('ganttExcel')
     public ganttObj: GanttComponent;
     public data: object[];
+    public isFitToWidth: boolean;
     public resources: object[];
     public resourceFields: object ;
     public taskSettings: object;
@@ -51,24 +52,17 @@ export class GanttExportingComponent implements OnInit {
         };
         this.gridLines = 'Both';
         this.labelSettings = {
-            leftLabel: 'TaskName',
-            rightLabel: 'resources'
+            leftLabel: 'TaskName'
         };
         this.projectStartDate = new Date('03/25/2019');
         this.projectEndDate = new Date('07/28/2019');
         this.resources = editingResources;
         this.splitterSettings = {
-            columnIndex: 2
+            position: "35%"
         };
         this.columns = [
             { field: 'TaskID', width: 80 },
-            { field: 'TaskName', width: 250 },
-            { field: 'StartDate' },
-            { field: 'EndDate' },
-            { field: 'Duration' },
-            { field: 'Predecessor' },
-            { field: 'resources' },
-            { field: 'Progress' }
+            { field: 'TaskName', width: 230 }
         ];
     }
     toolbarClick(args?: ClickEventArgs): void {
@@ -80,7 +74,20 @@ export class GanttExportingComponent implements OnInit {
             this.ganttObj.csvExport();
         }
         else if (args.item.id === "GanttExport_pdfexport") {
-            this.ganttObj.pdfExport();
+            let exportProperties: PdfExportProperties = {
+
+              fitToWidthSettings: {
+                isFitToWidth:this.isFitToWidth,
+              }
+            };
+          this.ganttObj.pdfExport(exportProperties);
         }
     }
+    public dragDropChange(args): any {
+      if (args.checked) {
+        this.isFitToWidth = true;
+      } else {
+        this.isFitToWidth = false;
+      }
+  }
 }

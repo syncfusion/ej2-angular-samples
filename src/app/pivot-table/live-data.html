@@ -1,0 +1,51 @@
+<div id="action-description">
+    <p> This sample demonstrates how frequently the pivot table and the pivot chart are updated with real-time data
+        at a given time interval.</p>
+</div>
+<div id="description">
+    <p>Both the pivot table and the pivot chart are receiving real-time data and
+        periodically updating themselves every 5000 milliseconds. Furthermore, in this demonstration,
+    </p>
+    <ul>
+        <li>
+            The <strong>"Feed Delay"</strong> numeric text box can be used to change the time interval.
+        </li>
+        <li>
+            The <strong>"Start Updating..."</strong> button causes the pivot table to automatically update at the
+            interval
+            specified in the <strong>"Feed Delay"</strong> numeric text box, which is measured in milliseconds.
+        </li>
+        <li>
+            The pivot table's automatic updating can be stopped by selecting the <strong>"Stop Updating..."</strong>
+            button.
+        </li>
+        <li>
+            Displayed the <strong>"Change(%)"</strong> values in the pivot table as red for negative values and
+            green for positive values using the cell template concept.
+        </li>
+    </ul>
+</div>
+<div>
+    <div class='control-pane'>
+        <div class="control-section">
+            <div style="margin-bottom: 10px">
+                <h4 style="display: 'inline-block; fontSize: 14px; paddingLeft: 5px">
+                    <strong>Feed Delay(ms)</strong>:
+                </h4>
+                <ejs-numerictextbox #feeddelay format="N0" value="5000" min="5000" step="1000" width="150px"
+                    style="margin-left: 7px;">
+                </ejs-numerictextbox>
+                <button #update id="update1" ejs-button (click)="updateClick()" style="margin-left: 10px;">
+                    Start Updating...
+                </button>
+                <button #clear id="clear" ejs-button (click)="clearClick()" style="margin-left: 10px;">
+                    Stop Updating...
+                </button>
+            </div>
+            <ejs-pivotview #pivotview id='PivotView-LiveData' [dataSourceSettings]=dataSourceSettings width='100%'
+                height='350' [chartSettings]='chartSettings' [gridSettings]='gridSettings'
+                [displayOption]='displayOption' (enginePopulated)='enginePopulated()'>
+            </ejs-pivotview>
+        </div>
+    </div>
+</div>

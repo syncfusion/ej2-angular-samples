@@ -2,10 +2,11 @@
  * Rich Text Editor - Online HTML Editor Sample
  */
 import { Component, ViewChild, ViewEncapsulation, OnInit, Inject } from '@angular/core';
-import { createElement, KeyboardEventArgs } from '@syncfusion/ej2-base';
+import { createElement, KeyboardEventArgs, Browser } from '@syncfusion/ej2-base';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { ToolbarService, LinkService, ImageService, TableService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, ToolbarType } from '@syncfusion/ej2-angular-richtexteditor';
+import { SplitterComponent } from '@syncfusion/ej2-angular-layouts';
 import * as CodeMirror from 'codemirror';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/css/css.js';
@@ -21,7 +22,7 @@ import 'codemirror/mode/htmlmixed/htmlmixed.js';
 export class OnlineHtmlEditorComponent {
     @ViewChild('defaultRTE', { static: false })
     public rteObj: RichTextEditorComponent;
-
+    @ViewChild('splitterInstance') splitterObj: SplitterComponent;
     public myCodeMirror: any;
     public srcArea: HTMLElement;
     public textArea: HTMLElement;
@@ -93,6 +94,12 @@ export class OnlineHtmlEditorComponent {
         }
         if(this.rteObj.value){
         this.renderCodeMirror(srcViewEle, this.rteObj.value);
+        }
+    }
+    public updateOrientation(): void {
+        if (Browser.isDevice) {
+            this.splitterObj.orientation = 'Vertical';
+            (document.body.querySelector('.heading') as HTMLElement).style.width = 'auto';
         }
     }
 }

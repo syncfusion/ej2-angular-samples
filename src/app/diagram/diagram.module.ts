@@ -78,14 +78,12 @@ export const diagramAppRoutes: Object[] = [
     {
         path: ':theme/diagram/default-functionalities', component: FlowDiagramComponent,
         name: 'Flow Chart', order: '01', category: 'Getting Started',
-        type: 'update',
         description: 'This sample visualizes the processing of an order placed using credit card with built-in flow shapes.',
     },
     {
         path: ':theme/diagram/nodes', component: NodeDiagramComponent,
         name: 'Nodes', category: 'Getting Started', order: '01',
-        description: 'This sample visualizes the different stages of a software development life cycle using a circular flow diagram. ' +
-            'Customizing the appearance of the nodes is illustrated in this example.'
+        description: 'This sample visualizes the different stages of a software development life cycle using a circular flow diagram. Customizing the appearance of the nodes is illustrated in this example.'
     },
     {
         path: ':theme/diagram/shapes', component: ShapesDiagramComponent,
@@ -97,35 +95,29 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/custom-shapes', component: ComplexShapesDiagramComponent,
         name: 'HTML Shapes',
         category: 'Getting Started', order: '01',
-        description: 'This sample demonstrates how to host a HTML element inside a node. In this example, ' +
-            'a Gauge control is hosted inside a HTML Node.'
+        description: 'This sample demonstrates how to host a HTML element inside a node. In this example, a Gauge control is hosted inside a HTML Node.'
     },
     {
         path: ':theme/diagram/connectors', component: ConnectorDiagramComponent,
         name: 'Connectors', category: 'Getting Started', order: '01',
-        description: 'This sample visualizes the data flow in a marketing process using predefined shapes and connectors. ' +
-            'Different types of connectors and decorators are used to customize the appearance, path, and direction of the data flow.'
+        description: 'This sample visualizes the data flow in a marketing process using predefined shapes and connectors. Different types of connectors and decorators are used to customize the appearance, path, and direction of the data flow.',
+        type:"update"
     },
     {
         path: ':theme/diagram/line-routing', component: LineRoutingComponent,
         name: 'Line Routing',
         category: 'Getting Started', order: '01',
-        description: 'This sample visualizes the connectors that are automatically re-routing or moving away if any shape ' +
-            'found on the connectors path'
+        description: 'This sample visualizes the connectors that are automatically re-routing or moving away if any shape found on the connectors path'
     },
     {
         path: ':theme/diagram/annotations', component: AnnotationDiagramComponent,
         name: 'Annotations', category: 'Getting Started', order: '01',
-        description: 'This sample illustrates the competitive environment of a business through five forces chart. ' +
-            'The elements of the five force chart is described using nodes and annotations. Customizing the position and appearance ' +
-            'of the annotation is illustrated in this example.'
+        description: 'This sample illustrates the competitive environment of a business through five forces chart. The elements of the five force chart is described using nodes and annotations. Customizing the position and appearance of the annotation is illustrated in this example.'
     },
     {
         path: ':theme/diagram/ports', component: PortDiagramComponent,
         name: 'Ports', category: 'Getting Started', order: '01',
-        description: 'This sample visualizes the process flow of publishing a book using connection points. ' +
-            'Connection points are static points over the shapes that allow creating connections to the shapes. ' +
-            'Customizing the size and appearance of the connection points is illustrated in this example.'
+        description: 'This sample visualizes the process flow of publishing a book using connection points. Connection points are static points over the shapes that allow creating connections to the shapes. Customizing the size and appearance of the connection points is illustrated in this example.'
     },
     {
         path: ':theme/diagram/swimlane', component: SwimLaneDiagramComponent,
@@ -136,7 +128,7 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/groupingandordering', component: GroupingAndOrderingComponent,
         name: 'Grouping and Ordering', category: 'Getting Started', order: '01',
         description: 'This sample illustrates how to group, ungroup, and order commands with the diagram.',
-        type: 'new'
+        
     },
     {
         path: ':theme/diagram/diagram-events', component: EventsDiagramComponent,
@@ -152,13 +144,13 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/commands', component: CommandComponent,
         name: 'Commands', category: 'Getting Started', order: '01',
         description: 'This example illustrates the various commands supported in the diagram control.',
-        type: 'new'
+        
     },
     {
         path: ':theme/diagram/constraints', component: ConstraintComponent,
         name: 'Constraints', category: 'Getting Started', order: '01',
         description: 'This sample illustrates how node constraints are used to restrict end-users from performing certain operations on nodes and connector constraints are used to restrict end-users from performing certain operation on connectors.',
-        type: 'new'
+        
 
     },
     {
@@ -170,8 +162,7 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/symbol-palette', component: SymbolPaletteDiagramComponent,
         name: 'Symbol Palette',
         category: 'Getting Started', order: '01',
-        description: 'This example illustrates predefining shapes in a palette that can be easily ' +
-            'dragged and dropped into the drawing area. Customizable options of the symbol palette are also illustrated in this example.'
+        description: 'This example illustrates predefining shapes in a palette that can be easily dragged and dropped into the drawing area. Customizable options of the symbol palette are also illustrated in this example.'
     },
 
     {
@@ -179,87 +170,75 @@ export const diagramAppRoutes: Object[] = [
         name: 'Zooming and Panning',
         category: 'Interactive Features', order: '02',
         description: 'This sample shows how diagram objects snap to the nearest intersection of gridlines or objects while being dragged or resized.',
-        type: 'new'
+        
     },
     {
         path: ':theme/diagram/snapping', component: SnappingComponent,
         name: 'Snapping',
         category: 'Interactive Features', order: '02',
         description: 'This sample illustrates how to zoom and pan in the diagram.',
-        type: 'new'
+        
     },
     {
         path: ':theme/diagram/scrolling', component: ScrollingComponent,
         name: 'Scrolling',
         category: 'Interactive Features', order: '02',
         description: 'This example illustrates how to scroll a diagram using vertical and horizontal scrollbars. The scroll limit property helps limit the scrolling area.',
-        type: 'new'
+        
     },
     {
         path: ':theme/diagram/drawing-tool', component: DrawingToolDiagramComponent,
         name: 'Drawing Tools',
         category: 'Interactive Features', order: '02',
-        description: 'This sample visualizes how to build a diagram interactively using drawing tools. ' +
-            'Continuous draw option, snapping, and undo/redo support are enabled to easily draw diagrams. Rulers, ' +
-            'gridlines, and snapping options are enabled to easily align objects.'
+        description: 'This sample visualizes how to build a diagram interactively using drawing tools. Continuous draw option, snapping, and undo/redo support are enabled to easily draw diagrams. Rulers, gridlines, and snapping options are enabled to easily align objects.'
     },
     {
         path: ':theme/diagram/key-board-functions', component: KeyBoardDiagramComponent,
         name: 'Keyboard Interaction',
         category: 'Interactive Features', order: '02',
-        description: 'This sample illustrates interaction with diagram control using shortcut keys. ' +
-            'Command Manager support is used to manage keyboard interactions.'
+        description: 'This sample illustrates interaction with diagram control using shortcut keys. Command Manager support is used to manage keyboard interactions.'
     },
     {
         path: ':theme/diagram/quick-commands', component: UserHandlediagramComponent,
         name: 'User Handles',
         category: 'Interactive Features', order: '02',
-        description: 'This sample visualizes a simple flow diagram along with options to ' +
-            'execute the frequently used commands using user handles.'
+        description: 'This sample visualizes a simple flow diagram along with options to execute the frequently used commands using user handles.'
     },
     {
         path: ':theme/diagram/overview', component: OverviewDiagramComponent,
         name: 'Overview Panel',
         category: 'Interactive Features', order: '02',
-        description: 'This sample visualizes an organizational structure along with an overview for ' +
-            'easily navigating the large organizational structure using Overview Panel.'
+        description: 'This sample visualizes an organizational structure along with an overview for easily navigating the large organizational structure using Overview Panel.'
     },
     {
         path: ':theme/diagram/organization-chart', component: OrganizationalChartDiagramComponent,
         name: 'Organizational Chart',
         category: 'Automatic Layouts', order: '03',
-        description: 'This sample illustrates a simple business management structure that is built ' +
-            'from an external data source. Hierarchical tree layout algorithm is used to build organizational charts. ' +
-            'Customizing the orientation and structure of the organizational chart is illustrated in this example.'
+        description: 'This sample illustrates a simple business management structure that is built from an external data source. Hierarchical tree layout algorithm is used to build organizational charts. Customizing the orientation and structure of the organizational chart is illustrated in this example.'
     },
     {
         path: ':theme/diagram/mind-map', component: MindMapDiagramComponent,
         name: 'Mind Map',
         category: 'Automatic Layouts', order: '03',
-        description: 'This sample demonstrates the concept of creativity using mind map layout ' +
-            'algorithm. User handles are used to extend the mind map interactively.'
+        description: 'This sample demonstrates the concept of creativity using mind map layout algorithm. User handles are used to extend the mind map interactively.'
     },
     {
         path: ':theme/diagram/hierarchical-tree', component: HierarchyDiagramComponent,
         name: 'Hierarchical Tree',
         category: 'Automatic Layouts', order: '03',
-        description: 'This sample illustrates a simple hierarchical tree that is built from an external data source. ' +
-            'Hierarchical tree layout algorithm is used to build hierarchical trees. Customizing the spacing between objects ' +
-            'and orientation of the trees is illustrated in this example.'
+        description: 'This sample illustrates a simple hierarchical tree that is built from an external data source. Hierarchical tree layout algorithm is used to build hierarchical trees. Customizing the spacing between objects and orientation of the trees is illustrated in this example.'
     },
     {
         path: ':theme/diagram/complex-hierarchical-tree', component: ComplexHierarchicalTreeDiagramComponent,
         name: 'Complex Hierarchical Tree',
         category: 'Automatic Layouts', order: '03',
-        description: 'This sample demonstrates a complex hierarchical template that is built from an external data ' +
-            'source using complex hierarchical tree algorithm.'
+        description: 'This sample demonstrates a complex hierarchical template that is built from an external data source using complex hierarchical tree algorithm.'
     },
     {
         path: ':theme/diagram/radial-tree', component: RadialTreeDiagramComponent,
         name: 'Radial Tree',
         category: 'Automatic Layouts', order: '03',
-        description: 'This sample demonstrates a huge organizational structure using a compact ' +
-            'layout model. Radial tree layout algorithm is used to build such a layout.'
+        description: 'This sample demonstrates a huge organizational structure using a compact layout model. Radial tree layout algorithm is used to build such a layout.'
     },
    
     {
@@ -278,22 +257,20 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/pert-chart', component: PertChartDiagramComponent,
         name: 'PERT chart',
         category: 'Automatic Layouts', order: '03',
-        description: 'This sample visualizes a project development process using Program Evaluation Review Technique (PERT). ' +
-            'Complex hierarchical tree layout algorithm is used to automatically arrange the nodes.'
+        description: 'This sample visualizes a project development process using Program Evaluation Review Technique (PERT). Complex hierarchical tree layout algorithm is used to automatically arrange the nodes.'
     },
     {
         path: ':theme/diagram/hierarchicallayout-with-multipleroots', component: HierarchicalLayoutWithMultipleRootComponent,
         name: 'Hierarchical Layout with multiple roots',
         category: 'Automatic Layouts', order: '03',
         description: 'This sample illustrates the structure of an Electricity Sector using complex hierarchical layout with multiple roots.',
-        type: 'new'
+        
     },
     {
         path: ':theme/diagram/local-data', component: LocalDataDiagramComponent,
         name: 'Local Data',
         category: 'Data Binding', order: '04',
-        description: 'This sample visualizes the classifications of species using hierarchical tree layout algorithm. ' +
-            'Data Manager support is used to bind data with the diagram.'
+        description: 'This sample visualizes the classifications of species using hierarchical tree layout algorithm. Data Manager support is used to bind data with the diagram.'
     },
     {
         path: ':theme/diagram/remote-data', component: RemoteDataDiagramComponent,
@@ -301,12 +278,6 @@ export const diagramAppRoutes: Object[] = [
         category: 'Data Binding', order: '04',
         description: 'This sample demonstrates binding remote data with the diagram using the Data Manager support.'
     },
-    // {
-    //     path: ':theme/diagram/crud', component: CRUDDiagramComponent,
-    //     name: 'CRUD',
-    //     category: 'Data Binding', order: '06',
-    //     description: 'This sample visualizes diagram elements created from database with diagram CRUD. Users can read, update, and delete database entities as diagram elements.'
-    // },
     {
         path: ':theme/diagram/Virtualization', component: VirtualizationComponent,
         name: 'Virtualization',
@@ -317,8 +288,7 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/serialization', component: SerializationDiagramComponent,
         name: 'Serialization',
         category: 'Save and Restore', order: '06',
-        description: 'This sample visualizes building diagrams interactively and editing the saved diagrams. ' +
-            'Symbol Palette is used to easily build diagrams.'
+        description: 'This sample visualizes building diagrams interactively and editing the saved diagrams. Symbol Palette is used to easily build diagrams.'
     },
     {
         path: ':theme/diagram/print-export', component: PrintExportDiagramComponent,
@@ -335,20 +305,18 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/logic-circuit', component: LogicCircuitComponent,
         name: 'Logic Circuit Diagram',
         category: 'Use Case Diagram', order: '08',
-        description: 'This sample visually represents a simple fishbone diagram (Ishikawa).'
-            + ' Diagram nodes and annotations are used to define fishbone diagrams. Read-only mode is enabled here.',
+        description: 'This sample visually represents a simple fishbone diagram (Ishikawa). Diagram nodes and annotations are used to define fishbone diagrams. Read-only mode is enabled here.',
     },
     {
         path: ':theme/diagram/uml-activity', component: UmlActivityComponent,
         name: 'UML Activity Diagram', category: 'Use Case Diagram', order: '08',
-        description: 'This sample visually represents the hotel booking reservation system.'
-            + 'It is built with readymade BPMN shapes.',
+        description: 'This sample visually represents the hotel booking reservation system. It is built with readymade BPMN shapes.',
     },
     {
         path: ':theme/diagram/uml-sequence-diagram', component: UmlSequenceComponent,
         name: 'UML Sequence Diagram', category: 'Use Case Diagram', order: '08',
         description: 'This sample illustrates an employees leave request sequence using a UML sequence diagram. The shapes for the sequence were designed with the port feature for Diagrams nodes.',
-        type: 'new'
+        
     },
     {
         path: ':theme/diagram/uml-Class-diagram', component: UmlClassDiagramComponent,
@@ -369,15 +337,14 @@ export const diagramAppRoutes: Object[] = [
     {
         path: ':theme/diagram/fishbone-diagram', component: FishboneDiagramComponent,
         name: 'Fishbone Diagram',
-        description: 'This sample visually represents a simple fishbone diagram (Ishikawa). Diagram nodes and ' +
-            'annotations are used to define fishbone diagrams. Read-only mode is enabled here.',
+        description: 'This sample visually represents a simple fishbone diagram (Ishikawa). Diagram nodes and annotations are used to define fishbone diagrams. Read-only mode is enabled here.',
         category: 'Real-time Diagrams', order: '09'
     },
     {
         path: ':theme/diagram/data-binding-with-treeview', component: DataBindingWithTreeviewComponent,
         name: 'Data Binding with TreeView',
         description: 'This example illustrates how to create a tree view and a diagram with a datasource. It provides support for selecting, adding, deleting, dragging and dropping, and editing annotations of the nodes during runtime. These actions will be reflected in the corresponding nodes of the tree view component.',
-        category: 'Real-time Diagrams', order: '09', type: 'new'
+        category: 'Real-time Diagrams', order: '09', 
     },
     {
         path: ':theme/diagram/flow-execution', component: FlowExecutionDiagramComponent,
@@ -431,3 +398,10 @@ let declarations: Type<Object>[] = [FlowDiagramComponent, ShapesDiagramComponent
 export class DiagramSampleModule {
 
 }
+
+    // {
+    //     path: ':theme/diagram/crud', component: CRUDDiagramComponent,
+    //     name: 'CRUD',
+    //     category: 'Data Binding', order: '06',
+    //     description: 'This sample visualizes diagram elements created from database with diagram CRUD. Users can read, update, and delete database entities as diagram elements.'
+    // },

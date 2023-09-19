@@ -121,8 +121,7 @@
                             Visibility
                         </div>
                         <div style="margin-top: -5px">
-                            <ejs-multiselect #portVisibilityDrop id='portVisibilityDrop' [dataSource]='visibility' [fields]='fields' mode='CheckBox'
-                                popupHeight='290px' popupWidth='180px' [showDropDownIcon]='true' showSelectAll='true' (change)="portVisibilityDropOnChange($event)"></ejs-multiselect>
+                            <ejs-dropdownlist #portVisibilityDrop id='portVisibilityDrop' [dataSource]='visibility' [fields]='fields' value='Visible' (change)="portVisibilityDropOnChange($event)"></ejs-dropdownlist>
                         </div>
                     </div>
                     <div class="col-xs-6">

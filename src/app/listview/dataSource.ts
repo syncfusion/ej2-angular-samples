@@ -175,11 +175,11 @@ export let virtualizationdata: any = [
     { "name": "Nancy", "icon": "N", "id": "0" },
     { "name": "Andrew", "icon": "A", "id": "1" },
     { "name": "Janet", "icon": "J", "id": "2" },
-    { "name": "Margaret", "imgUrl": "margaret", "id": "3" },
+    { "name": "Margaret", "imgUrl": "//ej2.syncfusion.com/demos/src/listview/images/margaret.png", "id": "3" },
     { "name": "Steven", "icon": "S", "id": "4" },
-    { "name": "Laura", "imgUrl": "laura", "id": "5" },
+    { "name": "Laura", "imgUrl": "//ej2.syncfusion.com/demos/src/listview/images/laura.png", "id": "5" },
     { "name": "Robert", "icon": "R", "id": "6" },
     { "name": "Michael", "icon": "M", "id": "7" },
-    { "name": "Albert", "imgUrl": "albert", "id": "8" },
+    { "name": "Albert", "imgUrl": "//ej2.syncfusion.com/demos/src/listview/images/albert.png", "id": "8" },
     { "name": "Nolan", "icon": "N", "id": "9" }
 ];

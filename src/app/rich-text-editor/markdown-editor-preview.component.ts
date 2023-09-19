@@ -3,137 +3,57 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';
-import { RichTextEditorComponent, ToolbarService, LinkService, EditorMode } from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorComponent, ToolbarService, LinkService, EditorMode, ToolbarType} from '@syncfusion/ej2-angular-richtexteditor';
 import { ImageService, MarkdownEditorService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, KeyboardEventArgs, isNullOrUndefined } from '@syncfusion/ej2-base';
 import * as Marked from 'marked';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SplitterComponent } from '@syncfusion/ej2-angular-layouts';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'markdown-editor-preview.html',
     styleUrls: ['markdown-preview.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, MarkdownEditorService, TableService]
+    providers: [ToolbarService, LinkService, ImageService, TableService, MarkdownEditorService]
 })
 export class MarkdownPreviewComponent {
 
-    @ViewChild('mdPreview')
+    @ViewChild('defaultRTE')
     public rteObj: RichTextEditorComponent;
-
-    public textArea: HTMLTextAreaElement;
-    public mdsource: HTMLElement;
-    public mdSplit: HTMLElement;
-    public htmlPreview: HTMLElement;
-
-    public tools: ToolbarModule = {
-        items: ['Bold', 'Italic', 'StrikeThrough', '|', 'Formats', 'OrderedList', 'UnorderedList', '|', 'CreateTable', 'CreateLink', 'Image', '|',
-            {
-                tooltipText: 'Preview',
-                template: '<button id="preview-code" class="e-tbar-btn e-control e-btn e-icon-btn">' +
-                    '<span class="e-btn-icon e-md-preview e-icons"></span></button>'
-            }, {
-                tooltipText: 'Split Editor',
-                template: '<button id="MD_Preview" class="e-tbar-btn e-control e-btn e-icon-btn">' +
-                    '<span class="e-btn-icon e-view-side e-icons"></span></button>'
-            }, 'FullScreen', '|', 'Undo', 'Redo']
-    };
+    @ViewChild('splitterInstance') splitterObj: SplitterComponent;
+    public srcArea: any;
+    public textArea: any;
     public mode: EditorMode = 'Markdown';
 
+    public tools: ToolbarModule = {
+        type: ToolbarType.Expand,
+        enableFloating :false,
+        items: ['Bold', 'Italic', 'StrikeThrough', '|', 'Formats', 'OrderedList',
+        'UnorderedList', '|', 'CreateLink', 'Image', 'CreateTable',
+        '|', 'Undo', 'Redo']
+    };
     public onCreate(): void {
-        this.textArea = this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement;
-        this.textArea.addEventListener('keyup', (e: KeyboardEventArgs) => {
-            this.markdownConversion();
-        });
-        this.mdsource = document.getElementById('preview-code');
-        this.mdsource.addEventListener('click', (e: MouseEvent) => {
-            this.fullPreview({ mode: true, type: 'preview' });
-            if ((e.target as HTMLElement).parentElement.classList.contains('e-active')) {
-                this.rteObj.disableToolbarItem(['Bold', 'Italic', 'StrikeThrough', 'Formats', 'OrderedList',
-                    'UnorderedList', 'CreateTable', 'CreateLink', 'Image']);
-                (e.target as HTMLElement).parentElement.parentElement.nextElementSibling.classList.add('e-overlay');
-            } else {
-                this.rteObj.enableToolbarItem(['Bold', 'Italic', 'StrikeThrough', 'Formats', 'OrderedList',
-                    'UnorderedList', 'CreateTable', 'CreateLink', 'Image']);
-                (e.target as HTMLElement).parentElement.parentElement.nextElementSibling.classList.remove('e-overlay');
-            }
-        });
-        this.mdSplit = document.getElementById('MD_Preview');
-        this.mdSplit.addEventListener('click', (e: MouseEvent) => {
-            if (this.rteObj.element.classList.contains('e-rte-full-screen')) {
-                this.fullPreview({ mode: true, type: '' });
-            }
-            this.mdsource.classList.remove('e-active');
-            this.rteObj.showFullScreen();
-        });
+        setTimeout(()=>{
+            this.rteObj.refreshUI();
+            this.textArea = this.rteObj.contentModule.getEditPanel();
+            this.srcArea = document.querySelector('.source-code');
+            this.updateValue();
+        },0)
     }
-    public actionComplete(e: any): void {
-        if (e.targetItem === 'Maximize' && isNullOrUndefined(e.args)) {
-            this.fullPreview({ mode: true, type: '' });
-        } else if (!this.mdSplit.parentElement.classList.contains('e-overlay')) {
-            if (e.targetItem === 'Minimize') {
-                this.textArea.style.display = 'block';
-                this.textArea.style.width = '100%';
-                if (this.htmlPreview) { this.htmlPreview.style.display = 'none'; }
-                this.mdSplit.classList.remove('e-active');
-                this.mdsource.classList.remove('e-active');
-            }
-            this.markdownConversion();
-        }
+    public onChange(): void {
+        this.updateValue();
     }
-    public markdownConversion(): void {
-        if (this.mdSplit.classList.contains('e-active')) {
-            const id: string = this.rteObj.getID() + 'html-preview';
-            const htmlPreview: HTMLElement = this.rteObj.element.querySelector('#' + id) as HTMLElement;
-            htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
-        }
+    public resizing(): void {
+        this.rteObj.refreshUI();
     }
-    public fullPreview(e: { [key: string]: string | boolean }): void {
-        const id: string = this.rteObj.getID() + 'html-preview';
-        this.htmlPreview = this.rteObj.element.querySelector('#' + id) as HTMLElement;
-        if ((this.mdsource.classList.contains('e-active') || this.mdSplit.classList.contains('e-active')) && e.mode) {
-            this.mdsource.classList.remove('e-active');
-            this.mdSplit.classList.remove('e-active');
-            this.textArea.style.display = 'block';
-            this.textArea.style.width = '100%';
-            this.htmlPreview.style.display = 'none';
-        } else {
-            this.mdsource.classList.add('e-active');
-            this.mdSplit.classList.add('e-active');
-            if (!this.htmlPreview) {
-                this.htmlPreview = createElement('div', { className: 'e-content' });
-                this.htmlPreview.id = id;
-                this.textArea.parentNode.appendChild(this.htmlPreview);
-            }
-            if (e.type === 'preview') {
-                this.textArea.style.display = 'none';
-                this.htmlPreview.classList.add('e-pre-source');
-            } else {
-                this.htmlPreview.classList.remove('e-pre-source');
-                this.textArea.style.width = '50%';
-            }
-            this.htmlPreview.style.display = 'block';
-            this.htmlPreview.innerHTML = Marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
-        }
+    public updateValue(): void {
+        this.srcArea.innerHTML = (Marked as any).marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
     }
-    public handleFullScreen(e: any): void {
-        const sbCntEle: HTMLElement = document.querySelector('.sb-content.e-view');
-        const sbHdrEle: HTMLElement = document.querySelector('.sb-header.e-view');
-        const leftBar: HTMLElement = document.querySelector('#left-sidebar');
-        if (e.targetItem === 'Maximize') {
-            if (Browser.isDevice && Browser.isIos) {
-                addClass([sbCntEle, sbHdrEle], ['hide-header']);
-            }
-            addClass([leftBar], ['e-close']);
-            removeClass([leftBar], ['e-open']);
-        } else if (e.targetItem === 'Minimize') {
-            if (Browser.isDevice && Browser.isIos) {
-                removeClass([sbCntEle, sbHdrEle], ['hide-header']);
-            }
-            removeClass([leftBar], ['e-close']);
-            if (!Browser.isDevice) {
-                addClass([leftBar], ['e-open']);
-            }
+    public updateOrientation(): void {
+        if (Browser.isDevice) {
+            this.splitterObj.orientation = 'Vertical';
+            (document.body.querySelector('.heading') as HTMLElement).style.width = 'auto';
         }
     }
 }

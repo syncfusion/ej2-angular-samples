@@ -1,13 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { orderDetails } from './data';
-import { FreezeService, GridComponent, Column, freezeDirection } from '@syncfusion/ej2-angular-grids';
+import { GridComponent, Column, freezeDirection } from '@syncfusion/ej2-angular-grids';
 import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import { DialogComponent, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
 
 @Component({
     selector: 'ej2-grid-col-frozen',
     templateUrl: 'frozen-api.html',
-    providers: [FreezeService]
 })
 export class FrozenApiComponent implements OnInit {
     @ViewChild('grid')
@@ -41,7 +40,8 @@ export class FrozenApiComponent implements OnInit {
     public directionData: Object[] = [
         { id: 'Left', name: 'Left' },
         { id: 'Right', name: 'Right' },
-        { id: 'Center', name: 'Center' }
+        { id: 'Center', name: 'Center' },
+        { id: 'Fixed', name: 'Fixed' }
     ];
 
 

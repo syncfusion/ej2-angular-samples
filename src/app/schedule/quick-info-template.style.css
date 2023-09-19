@@ -69,7 +69,7 @@
   padding-top: 10px;
 }
 
-.e-quick-popup-wrapper .e-cell-popup .e-popup-content {
+.quick-info-template .e-quick-popup-wrapper .e-cell-popup .e-popup-content {
   padding: 0 14px !important;
 }
 
@@ -82,13 +82,11 @@
   margin-right: 5px;
 }
 
-.e-quick-popup-wrapper .e-cell-popup,
-.e-quick-popup-wrapper .e-event-popup {
+.quick-info-template .e-quick-popup-wrapper .e-cell-popup {
   min-height: 265px;
 }
 
-.e-bigger .e-quick-popup-wrapper .e-cell-popup,
-.e-bigger .e-quick-popup-wrapper .e-event-popup {
+.e-bigger .quick-info-template .e-quick-popup-wrapper .e-cell-popup {
   min-height: 290px;
 }
 

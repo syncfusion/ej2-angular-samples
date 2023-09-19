@@ -99,7 +99,7 @@ import { DashedLineChartComponent } from './dashed-line.component';
 import { EmptyAreaChartComponent } from './area-empty.component';
 import { RoundedColumnChartComponent } from './rounded-column.component';
 import { PlacementColumnChartComponent } from './column-placement.component';
-import { TornadoChartComponent } from './tornado.component';
+import { TornadoChartComponent } from './negative-stack.component';
 import { RangeBarChartComponent } from './range-bar.component';
 import { ParetoSeriesChartComponent } from './pare-to.component';
 import { DonutComponent } from './donut.component';
@@ -121,6 +121,8 @@ import { KeyboardComponent } from './keyboard.component';
 import { OverViewChartComponent } from './overview-chart.component';
 import { AreaNegativePointsComponent } from './area-negative-points.component';
 import { RangeStepAreaComponent } from './range-step-area.component';
+import { CylindricalColumnChartComponent } from './cylindrical-column.component';
+import { SynchronizedChartsComponent } from './synchronized-chart.component';
 
 export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/overview-chart', component: OverViewChartComponent, name: 'Overview', description: "This demo for overview of Essential JS2 Chart for data about the annual, monthly and product wise sales with different types of charts.",
@@ -156,12 +158,13 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/column-placement', component: PlacementColumnChartComponent, name: 'Back to Back Column', description: "This demo for Essential JS2 Chart control shows how to render and configure the column charts.", order: '04', category: 'Bar Charts' },
     { path: ':theme/chart/range-column', component: RangeColumnChartComponent, name: 'Range Column', description: "This demo for Essential JS2 Chart control shows how to render the range column series.", order: '04', category: 'Bar Charts' },
     { path: ':theme/chart/range-bar', component: RangeBarChartComponent, name: 'Inversed Range Column', description: "This demo for Essential JS2 Chart control shows how to render the inversed range column series.", order: '04', category: 'Bar Charts' },
+    { path: ':theme/chart/cylindrical-column', component: CylindricalColumnChartComponent, name: 'Cylindrical Column', description: "This demo for Essential JS2 Chart control shows how to render the cylindrical column series.", order: '04', category: 'Bar Charts', type: 'new' },
     { path: ':theme/chart/bar', component: BarChartComponent, name: 'Bar', description: "This demo for Essential JS2 Chart control shows how to render bar series.", order: '04', category: 'Bar Charts' },
     { path: ':theme/chart/stacked-column', component: StackedColumnChartComponent, name: 'Stacked Column', description: "This demo for Essential JS2 Chart control shows how to render the stacking column series.", order: '04', category: 'Bar Charts' },
     { path: ':theme/chart/stacked-column-percent', component: PercentStackedColumnChartComponent, name: '100% Stacked Column', description: "This demo for Essential JS2 Chart control shows how to render the 100 percent stacking column series.", order: '04', category: 'Bar Charts' },
     { path: ':theme/chart/stacked-bar', component: StackedBarChartComponent, name: 'Stacked Bar', description: "This demo for Essential JS2 Chart control shows how to render the stacking bar series.", order: '04', category: 'Bar Charts' },
     { path: ':theme/chart/stacked-bar-percent', component: PercentStackedBarChartComponent, name: '100% Stacked Bar', description: "This demo for Essential JS2 Chart control shows how to render the 100 percent stacking bar series.", order: '04', category: 'Bar Charts' },
-    { path: ':theme/chart/tornado', component: TornadoChartComponent, name: 'Negative Stack', description: "This demo for Essential JS2 Chart control shows how to render and configure the bar charts.", order: '04', category: 'Bar Charts' },
+    { path: ':theme/chart/negative-stack', component: TornadoChartComponent, name: 'Negative Stack', description: "This demo for Essential JS2 Chart control shows how to render and configure the bar charts.", order: '04', category: 'Bar Charts' },
 
 
     { path: ':theme/chart/hilo', component: HiloChartComponent, name: 'Hilo', description: "This demo for Essential JS2 Chart control shows how to render the hilo series.", order: '05', category: 'Stock Charts' },
@@ -207,7 +210,7 @@ export const chartAppRoutes: Object[] = [
     },
     {
         path: ':theme/chart/pare-to', component: ParetoSeriesChartComponent, name: 'Pareto Chart', description: "This demo for Essential JS2 Chart control shows how to render pareto charts.",
-        order: '08', category: 'Other Types', type: 'update'
+        order: '08', category: 'Other Types'
     },
 
 
@@ -237,7 +240,7 @@ export const chartAppRoutes: Object[] = [
 
     { path: ':theme/chart/local-data', component: LocalDataChartComponent, name: 'Local Data', description: "This demo for Essential JS2 Chart control shows how to bind JSON data to chart.", order: '12', category: 'Data Binding' },
     { path: ':theme/chart/remote-data', component: RemoteDataChartComponent, name: 'Remote Data', description: "This demo for Essential JS2 Chart control shows how to consume data from remote data service.", order: '12', category: 'Data Binding' },
-    { path: ':theme/chart/lazy-loading', component: LazyLoadingComponent, name: 'Lazy Loading', description: "This demo for Essential JS2 Chart control demonstrates the Lazy Loading behavior in chart.", order: '12', category: 'Data Binding', type: 'update' },
+    { path: ':theme/chart/lazy-loading', component: LazyLoadingComponent, name: 'Lazy Loading', description: "This demo for Essential JS2 Chart control demonstrates the Lazy Loading behavior in chart.", order: '12', category: 'Data Binding' },
 
     { path: ':theme/chart/numeric', component: NumericAxisChartComponent, name: 'Numeric Axis', description: "This demo for Essential JS2 Chart control shows how to plot numeric data with the help of numeric axis in charts.", order: '13', category: 'Chart Axes' },
     { path: ':theme/chart/date-time', component: DateTimeAxisChartComponent, name: 'DateTime Axis', description: "This demo for Essential JS2 Chart control shows how to render the date-time axis in charts.", order: '13', category: 'Chart Axes' },
@@ -247,7 +250,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/logarithmic-scale', component: LogarithmicScaleChartComponent, name: 'Logarithmic Scale', description: "This demo for Essential JS2 Chart control shows how to render the logarithmic axis in charts.", order: '13', category: 'Chart Axes' },
     { path: ':theme/chart/multiple-axis', component: MultipleAxisChartComponent, name: 'Multiple Axis', description: "This demo for Essential JS2 Chart control shows how to render and configure the mulitple axis in charts.", order: '13', category: 'Chart Axes' },
     { path: ':theme/chart/inversed', component: InversedAxisChartComponent, name: 'Inversed Axes', description: "This demo for Essential JS2 Chart control shows how to invert the axis in charts.", order: '13', category: 'Chart Axes' },
-    { path: ':theme/chart/strip-line', component: StripLineChartComponent, name: 'Stripline', description: "This demo for Essential JS2 Chart control shows how to render and configure the strip lines in charts.", order: '13', category: 'Chart Axes', type: 'update' },
+    { path: ':theme/chart/strip-line', component: StripLineChartComponent, name: 'Stripline', description: "This demo for Essential JS2 Chart control shows how to render and configure the strip lines in charts.", order: '13', category: 'Chart Axes' },
     { path: ':theme/chart/strip-line-recurrence', component: StripLineRecurrenceChartComponent, name: 'Strip Line Recurrence', description: "This demo for Essential JS2 Chart control shows how to render the strip line recurrence in charts.", order: '13', category: 'Chart Axes' },
     { path: ':theme/chart/smart-axis-labels', component: SmartAxisLabelsChartComponent, name: 'Smart Labels', description: "This demo for Essential JS2 Chart control shows how to arrange the labels smartly without overlapping with each other.", order: '13', category: 'Chart Axes' },
     { path: ':theme/chart/multi-level-label', component: MultiLevelLabelsChartComponent, name: 'Multi Level Labels', description: "This demo for Essential JS2 Chart control shows how to group the axis labels.", order: '13', category: 'Chart Axes' },
@@ -256,6 +259,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/sorting', component: SortingChartComponent, name: 'Sorting', description: "This demo for Essential JS2 Chart control shows how to sort the series data in chart.", order: '14', category: 'Chart Customization' },
     { path: ':theme/chart/marker-chart', component: MarkerChartComponent, name: 'Marker Chart', description: "This demo for Essential JS2 Chart control shows how to render the marker symbols for data points.", order: '14', category: 'Chart Customization' },
     { path: ':theme/chart/pie-annotation', component: AnnotationChartComponent, name: 'Annotation', description: "This demo for Essential JS2 Chart control shows how to add more information to the chart using annotation.", order: '14', category: 'Chart Customization' },
+    { path: ':theme/chart/synchronized-chart', component: SynchronizedChartsComponent, name: 'Synchronized Charts', description: "This demo for Essential JS2 Chart control shows how to render the Synchronized Charts.", order: '14', category: 'Chart Customization', type: 'new' },
     { path: ':theme/chart/rtl', component: RTLChartComponent, name: 'RTL', description: "This demo sample for Essential JavaScript2 Chart control demonstrates how to render and configure the RTL feature in chart.", order: '14', category: 'Chart Customization' },
     { path: ':theme/chart/data-label-template', component: DataLabelComponent, name: 'Datalabel Template', description: "This demo for Essential JS2 Chart control shows how to render and configure the data label template.", order: '14', category: 'Chart Customization' },
     { path: ':theme/chart/tooltip-template', component: TooltipTemplateComponent, name: 'Tooltip Template', description: "This demo for Essential JS2 Chart control shows how to render and configure the tooltip template.", order: '14', category: 'Chart Customization' },
@@ -264,14 +268,14 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/range-color-mapping', component: RangeColorMappingComponent, name: 'Range Color Mapping', description: "This demo for Essential JS2 Chart control shows how to render and configure the range color mapping.", order: '14', category: 'Chart Customization'},
 
     { path: ':theme/chart/print', component: PrintChartComponent, name: 'Print', description: "This demo for Essential JS2 Chart control shows how to print the charts.", order: '15', category: 'Print and Export' },
-    { path: ':theme/chart/export', component: ExportChartComponent, name: 'Export', description: "This demo for Essential JS2 Chart control shows how to export the charts to Excel, PDF, and image formats such as SVG, JPEG, and PNG at client-side.", order: '15', category: 'Print and Export' },
+    { path: ':theme/chart/export', component: ExportChartComponent, name: 'Export', description: "This demo for Essential JS2 Chart control shows how to export the charts to Excel, PDF, and image formats such as SVG, JPEG, and PNG at client-side.", order: '15', category: 'Print and Export', type: 'update' },
 
     { path: ':theme/chart/selection', component: SelectionChartComponent, name: 'Selection', description: "This demo for Essential JS2 Chart control demonstrates the selection behavior in chart.", order: '16', category: 'User Interaction' },
     { path: ':theme/chart/range-selection', component: RangeSelectionChartComponent, name: 'Range Selection', description: "This demo for Essential JS2 Chart control demonstrates the range selection in chart.", order: '16', category: 'User Interaction' },
     { path: ':theme/chart/keyboard', component: KeyboardComponent, name: 'Keyboard Navigation', description: "This demo for Essential JS2 Chart control demonstrates the Keyboard Navigation in chart.", order: '16', category: 'User Interaction'},
     { path: ':theme/chart/cross-hair', component: CrosshairChartComponent, name: 'Crosshair', description: "This demo for Essential JS2 Chart control demonstrates the crosshair behavior in chart.", order: '16', category: 'User Interaction' },
     { path: ':theme/chart/trackball', component: TrackBallChartComponent, name: 'TrackBall', description: "This demo for Essential JS2 Chart control demonstrates the trackball behavior in chart.", order: '16', category: 'User Interaction' },
-    { path: ':theme/chart/zooming', component: ZoomingChartComponent, name: 'Zooming and Panning', description: "This demo for Essential JS2 Chart control demonstrates the zooming and panning behavior in chart.", order: '16', category: 'User Interaction', type: 'update' },
+    { path: ':theme/chart/zooming', component: ZoomingChartComponent, name: 'Zooming and Panning', description: "This demo for Essential JS2 Chart control demonstrates the zooming and panning behavior in chart.", order: '16', category: 'User Interaction' },
     { path: ':theme/chart/data-editing', component: DataEditingComponent, name: 'Data Editing', description: "This demo for Essential JS2 Chart control demonstrates the data editing behavior in chart.", order: '16', category: 'User Interaction' }
 ];
 
@@ -303,7 +307,8 @@ let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, Ba
     MultiLevelLabelsChartComponent, LineSegmentChartComponent, RangeColorMappingComponent,
     AxisCrossingChartComponent, AreaSegmentChartComponent, MultiLineChartComponent,RangeStepAreaComponent,
     DateTimeCategoryAxisChartComponent, SortingChartComponent, PieRadiusComponent, StackedStepAreaChartComponent,
-    StackedLineChartComponent, PercentStackedLineChartComponent, DataEditingComponent, TooltipTemplateComponent, OverViewChartComponent , AreaNegativePointsComponent];
+    StackedLineChartComponent, PercentStackedLineChartComponent, DataEditingComponent, TooltipTemplateComponent, OverViewChartComponent , AreaNegativePointsComponent, CylindricalColumnChartComponent,
+    SynchronizedChartsComponent];
 @NgModule({
     // tslint:disable-next-line:max-line-length
     imports: [chartRouter, ChartAllModule, RangeNavigatorAllModule, SharedModule, ButtonModule, AccumulationChartAllModule, NumericTextBoxModule, DatePickerModule, DropDownListAllModule, DashboardLayoutModule],

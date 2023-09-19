@@ -1,0 +1,90 @@
+
+<div class="control-section">
+    <div class="row">
+        <div class="col" >
+            <ejs-chart #chart3 style='display:block;' id="container3" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+                [chartArea]='chartArea' [zoomSettings]='zoomSettings' [title]='title' [titleStyle]="titleStyle" [tooltip]="tooltip" [crosshair]="crosshair" 
+                (zoomComplete)='zoomComplete($event)' (chartMouseLeave)= 'chart3MouseLeave($event)' (chartMouseMove)='chart3MouseMove($event)' (chartMouseUp)='chart3MouseUp($event)' (load)='load($event)'>
+
+                <e-series-collection>
+                    <e-series [dataSource]='dataSource' type='Line' xName='USD' yName='EUR' [width]="width" [emptyPointSettings]="emptyPointSettings">
+                    </e-series>
+                </e-series-collection>
+            </ejs-chart>
+        </div>
+        <div class="col" >
+            <ejs-chart #chart4 style='display:block;' id="container4" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis2'
+                [chartArea]='chartArea' [zoomSettings]='zoomSettings' [title]='title2' [titleStyle]="titleStyle"[tooltip]="tooltip2" [crosshair]="crosshair" 
+                (zoomComplete)='zoomComplete($event)' (chartMouseLeave)= 'chart4MouseLeave($event)' (chartMouseMove)='chart4MouseMove($event)' (chartMouseUp)='chart4MouseUp($event)' (load)='load($event)'>
+
+                <e-series-collection>
+                    <e-series [dataSource]='dataSource' type='Line' xName='USD' yName='JPY' [width]="width">
+                    </e-series>
+                </e-series-collection>
+            </ejs-chart>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <ejs-chart #chart style='display:block;' id="container1" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis3'
+                [chartArea]='chartArea' [zoomSettings]='zoomSettings' [title]='title3' [titleStyle]="titleStyle" [tooltip]="tooltip3" [crosshair]="crosshair" 
+                (zoomComplete)='zoomComplete($event)' (chartMouseLeave)= 'chartMouseLeave($event)' (chartMouseMove)='chartMouseMove($event)' (chartMouseUp)='chartMouseUp($event)' (load)='load($event)'>
+
+                <e-series-collection>
+                    <e-series [dataSource]='dataSource' type='Area' xName='USD' yName='SGD' [opacity]="opacity"
+                    [width]="width" [border]='border'>
+                    </e-series>
+                </e-series-collection>
+            </ejs-chart>
+        </div>
+        <div class="col" >
+            <ejs-chart #chartobj style='display:block;' id="container2" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis4'
+                [chartArea]='chartArea' [zoomSettings]='zoomSettings' [title]='title4' [titleStyle]="titleStyle" [tooltip]="tooltip4" [crosshair]="crosshair" 
+                (zoomComplete)='zoomComplete($event)' (chartMouseLeave)= 'chartobjMouseLeave($event)' (chartMouseMove)='chartobjMouseMove($event)' (chartMouseUp)='chartobjMouseUp($event)' (load)='load($event)'>
+
+                <e-series-collection>
+                    <e-series [dataSource]='dataSource' type='Area' xName='USD' yName='INR' [opacity]="opacity"
+                    [width]="width" [border]='border'>
+                    </e-series>
+                </e-series-collection>
+            </ejs-chart>
+        </div>
+    </div>
+
+</div>
+<div id="action-description">
+    <p>
+        This example visualizes the history of currency exchange rates using synchronized charts.
+    </p>
+</div>
+<div id="description">
+    <p>
+        This demo showcases the synchronization of multiple charts, with crosshair, tooltip, and zooming functionalities synchronized across the charts. Hover over or zoom in on one chart to observe the corresponding impact on the other charts as well.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use line series and area series, we need to inject 
+        <code>LineSeriesService</code> and <code>AreaSeriesService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information on the user interaction can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/cross-hair-and-track-ball">documentation section</a>.
+    </p>
+</div>
+<style>
+    #control-container {
+        padding: 1px !important;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .col {
+        width: 50%;
+        margin: 10px;
+        height: 270px;
+    }
+</style>
+

@@ -1,0 +1,31 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the AAPL stock price using the <code>DateTimeCategory</code> axis type in the stock chart to display the minimum number of labels without any overlap on various business days.
+    </p>
+</div>
+
+<div class="control-section">
+    <div>
+        <ejs-stockchart id='stockChart' [chartArea]='chartArea' [title]='title'[primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            [tooltip]="tooltip" [crosshair]='crosshair' (load)='load($event)'>
+            <e-stockchart-series-collection>
+                <e-stockchart-series [dataSource]='data1' type='Spline'>
+                </e-stockchart-series>
+            </e-stockchart-series-collection>
+        </ejs-stockchart>
+    </div>
+</div>
+
+<div id="description">
+    <p>In this example, you can see how to render and configure a stock chart to visualize stock data using the <code>DateTimeCategory</code> axis type. Use series <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/stock-chart/series-types">type</a> as <code>Spline</code> to render a spline series.</p>
+    <p>
+        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover the chart or tap on it in touch enabled devices.
+    </p>
+    <p>
+        More information about axis types can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/stock-chart/axis-types">documentation section</a>.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        The stock chart component features are segregated into individual feature-wise modules. To use datetime category axis and spline series, we need to inject the <code>DateTimeCategory</code> and <code>SplineSeriesService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>

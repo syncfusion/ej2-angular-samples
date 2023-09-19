@@ -50,6 +50,14 @@ export class HeatmapColorRangeComponent {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.heatmap.theme = <HeatMapTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        if(args.heatmap.element.offsetWidth < 500)
+        {
+            args.heatmap.xAxis.labelRotation = 0;
+            args.heatmap.xAxis.labelIntersectAction = 'Trim';
+        } else {
+            args.heatmap.xAxis.labelRotation = 45;
+            args.heatmap.xAxis.labelIntersectAction = 'None';
+        }
     };
     ngAfterViewInit() {
 

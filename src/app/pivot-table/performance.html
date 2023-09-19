@@ -1,0 +1,56 @@
+<div id="action-description">
+    <p>This sample demonstrates how the pivot table loads a large amount of data with ease using virtual scrolling.</p>
+</div>
+<div id="description">
+    <p>This sample demonstrates how the pivot table performs when bound with a million rows in a highly optimized manner
+        by
+        only displaying rows and columns to the current view port using the <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/pivotview/#enablevirtualization">
+            enableVirtualization</a> property. By choosing from the dropdown list options, a different number of rows
+        can be loaded into the pivot table.
+    </p>
+    <br />
+    <p>
+        <strong>Injecting Module:</strong>
+    </p>
+    <p>
+        The pivot table features are segregated into individual modules. To use the virtual scrolling option,
+        we need to inject the
+        <code>VirtualScrollService</code> module using the
+        <code>@NgModule.providers</code> section.
+    </p>
+    <br />
+    <p>
+        More information on the virtual scrolling can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/virtual-scrolling">
+            documentation section</a>.
+    </p>
+</div>
+<div class="control-section" style="overflow:auto;">
+    <div id="ddl-control">
+        <ejs-dropdownlist id='performance' #performance [dataSource]='options' [fields]='fields' width="240" index='0'
+            (change)='onChange($event)' placeholder="Select a Data Range" popupHeight="240px">
+        </ejs-dropdownlist>
+        <span id="performanceTime">Time Taken: 0 sec</span>
+    </div>
+    <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings [width]='width' height='300'
+        enableVirtualization='true' [gridSettings]='gridSettings' (dataBound)='ondataBound($event)' (load)='load()'>
+    </ejs-pivotview>
+</div>
+<style>
+    #ddl-control {
+        margin-bottom: 5px;
+        display: flex;
+    }
+
+    #performanceTime {
+        float: right;
+        margin-top: 10px;
+        margin-right: 27px;
+        margin-left: auto;
+    }
+
+    .e-bigger #performanceTime {
+        margin-top: 8px;
+    }
+</style>

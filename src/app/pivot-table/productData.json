@@ -1,0 +1,6002 @@
+[
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2001,
+        "SoldAmount": 737
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2001,
+        "SoldAmount": 862
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2001,
+        "SoldAmount": 1160
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2001,
+        "SoldAmount": 715
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2001,
+        "SoldAmount": 1284
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2001,
+        "SoldAmount": 221
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2001,
+        "SoldAmount": 179
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2001,
+        "SoldAmount": 1872
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2001,
+        "SoldAmount": 1447
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2001,
+        "SoldAmount": 771
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2001,
+        "SoldAmount": 1510
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2001,
+        "SoldAmount": 1083
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2002,
+        "SoldAmount": 1654
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2002,
+        "SoldAmount": 1750
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2002,
+        "SoldAmount": 1622
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2002,
+        "SoldAmount": 1048
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2002,
+        "SoldAmount": 1714
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2002,
+        "SoldAmount": 15
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2002,
+        "SoldAmount": 779
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2002,
+        "SoldAmount": 1081
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2002,
+        "SoldAmount": 1741
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2002,
+        "SoldAmount": 1491
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2002,
+        "SoldAmount": 1740
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2002,
+        "SoldAmount": 1476
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2003,
+        "SoldAmount": 886
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2003,
+        "SoldAmount": 1323
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2003,
+        "SoldAmount": 1882
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2003,
+        "SoldAmount": 1557
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2003,
+        "SoldAmount": 1014
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2003,
+        "SoldAmount": 1381
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2003,
+        "SoldAmount": 1450
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2003,
+        "SoldAmount": 1684
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2003,
+        "SoldAmount": 1717
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2003,
+        "SoldAmount": 1918
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2003,
+        "SoldAmount": 648
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2003,
+        "SoldAmount": 439
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2004,
+        "SoldAmount": 950
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2004,
+        "SoldAmount": 843
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2004,
+        "SoldAmount": 1364
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2004,
+        "SoldAmount": 1453
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2004,
+        "SoldAmount": 461
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2004,
+        "SoldAmount": 1398
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2004,
+        "SoldAmount": 1178
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2004,
+        "SoldAmount": 879
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2004,
+        "SoldAmount": 1675
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2004,
+        "SoldAmount": 1785
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2004,
+        "SoldAmount": 1924
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2004,
+        "SoldAmount": 1370
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2005,
+        "SoldAmount": 671
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2005,
+        "SoldAmount": 377
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2005,
+        "SoldAmount": 794
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2005,
+        "SoldAmount": 1838
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2005,
+        "SoldAmount": 568
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2005,
+        "SoldAmount": 1619
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2005,
+        "SoldAmount": 590
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2005,
+        "SoldAmount": 163
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2005,
+        "SoldAmount": 104
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2005,
+        "SoldAmount": 1905
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2005,
+        "SoldAmount": 703
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2005,
+        "SoldAmount": 1935
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2006,
+        "SoldAmount": 1394
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2006,
+        "SoldAmount": 1111
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2006,
+        "SoldAmount": 153
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2006,
+        "SoldAmount": 1074
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2006,
+        "SoldAmount": 739
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2006,
+        "SoldAmount": 1394
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2006,
+        "SoldAmount": 1847
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2006,
+        "SoldAmount": 219
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2006,
+        "SoldAmount": 1748
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2006,
+        "SoldAmount": 1211
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2006,
+        "SoldAmount": 1510
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2006,
+        "SoldAmount": 1482
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2007,
+        "SoldAmount": 1191
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2007,
+        "SoldAmount": 1527
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2007,
+        "SoldAmount": 1896
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2007,
+        "SoldAmount": 1691
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2007,
+        "SoldAmount": 1265
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2007,
+        "SoldAmount": 1272
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2007,
+        "SoldAmount": 182
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2007,
+        "SoldAmount": 652
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2007,
+        "SoldAmount": 1021
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2007,
+        "SoldAmount": 949
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2007,
+        "SoldAmount": 1640
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2007,
+        "SoldAmount": 127
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2008,
+        "SoldAmount": 655
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2008,
+        "SoldAmount": 641
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2008,
+        "SoldAmount": 1568
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2008,
+        "SoldAmount": 1309
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2008,
+        "SoldAmount": 394
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2008,
+        "SoldAmount": 12
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2008,
+        "SoldAmount": 663
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2008,
+        "SoldAmount": 1099
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2008,
+        "SoldAmount": 1657
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2008,
+        "SoldAmount": 1806
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2008,
+        "SoldAmount": 918
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2008,
+        "SoldAmount": 1858
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2009,
+        "SoldAmount": 729
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2009,
+        "SoldAmount": 1459
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2009,
+        "SoldAmount": 1718
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2009,
+        "SoldAmount": 1773
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2009,
+        "SoldAmount": 433
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2009,
+        "SoldAmount": 1046
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2009,
+        "SoldAmount": 25
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2009,
+        "SoldAmount": 1410
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2009,
+        "SoldAmount": 256
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2009,
+        "SoldAmount": 1821
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2009,
+        "SoldAmount": 287
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2009,
+        "SoldAmount": 329
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2010,
+        "SoldAmount": 316
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2010,
+        "SoldAmount": 650
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2010,
+        "SoldAmount": 822
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2010,
+        "SoldAmount": 771
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2010,
+        "SoldAmount": 1306
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2010,
+        "SoldAmount": 1219
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2010,
+        "SoldAmount": 1989
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2010,
+        "SoldAmount": 926
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2010,
+        "SoldAmount": 1619
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2010,
+        "SoldAmount": 768
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2010,
+        "SoldAmount": 1062
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2010,
+        "SoldAmount": 1519
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2011,
+        "SoldAmount": 1656
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2011,
+        "SoldAmount": 153
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2011,
+        "SoldAmount": 1962
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2011,
+        "SoldAmount": 250
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2011,
+        "SoldAmount": 1433
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2011,
+        "SoldAmount": 1476
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2011,
+        "SoldAmount": 1242
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2011,
+        "SoldAmount": 1606
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2011,
+        "SoldAmount": 1082
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2011,
+        "SoldAmount": 1243
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2011,
+        "SoldAmount": 1914
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2011,
+        "SoldAmount": 1994
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2012,
+        "SoldAmount": 1359
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2012,
+        "SoldAmount": 426
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2012,
+        "SoldAmount": 1337
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2012,
+        "SoldAmount": 401
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2012,
+        "SoldAmount": 876
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2012,
+        "SoldAmount": 1340
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2012,
+        "SoldAmount": 1252
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2012,
+        "SoldAmount": 364
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2012,
+        "SoldAmount": 1133
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2012,
+        "SoldAmount": 485
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2012,
+        "SoldAmount": 1190
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2012,
+        "SoldAmount": 1845
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2013,
+        "SoldAmount": 1861
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2013,
+        "SoldAmount": 1825
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2013,
+        "SoldAmount": 1589
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2013,
+        "SoldAmount": 26
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2013,
+        "SoldAmount": 23
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2013,
+        "SoldAmount": 767
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2013,
+        "SoldAmount": 1294
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2013,
+        "SoldAmount": 1013
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2013,
+        "SoldAmount": 1386
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2013,
+        "SoldAmount": 1681
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2013,
+        "SoldAmount": 185
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2013,
+        "SoldAmount": 1749
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2014,
+        "SoldAmount": 1664
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2014,
+        "SoldAmount": 363
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2014,
+        "SoldAmount": 849
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2014,
+        "SoldAmount": 407
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2014,
+        "SoldAmount": 1865
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2014,
+        "SoldAmount": 1224
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2014,
+        "SoldAmount": 1805
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2014,
+        "SoldAmount": 1855
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2014,
+        "SoldAmount": 1387
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2014,
+        "SoldAmount": 872
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2014,
+        "SoldAmount": 46
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2014,
+        "SoldAmount": 1457
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2015,
+        "SoldAmount": 1244
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2015,
+        "SoldAmount": 478
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2015,
+        "SoldAmount": 1591
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2015,
+        "SoldAmount": 636
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2015,
+        "SoldAmount": 65
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2015,
+        "SoldAmount": 44
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2015,
+        "SoldAmount": 1673
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2015,
+        "SoldAmount": 355
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2015,
+        "SoldAmount": 634
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2015,
+        "SoldAmount": 289
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2015,
+        "SoldAmount": 1567
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2015,
+        "SoldAmount": 337
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2016,
+        "SoldAmount": 1389
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2016,
+        "SoldAmount": 1239
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2016,
+        "SoldAmount": 1760
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2016,
+        "SoldAmount": 838
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2016,
+        "SoldAmount": 191
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2016,
+        "SoldAmount": 1058
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2016,
+        "SoldAmount": 1785
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2016,
+        "SoldAmount": 1863
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2016,
+        "SoldAmount": 750
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2016,
+        "SoldAmount": 1515
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2016,
+        "SoldAmount": 778
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2016,
+        "SoldAmount": 1264
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2017,
+        "SoldAmount": 965
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2017,
+        "SoldAmount": 1920
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2017,
+        "SoldAmount": 721
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2017,
+        "SoldAmount": 588
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2017,
+        "SoldAmount": 841
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2017,
+        "SoldAmount": 1303
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2017,
+        "SoldAmount": 563
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2017,
+        "SoldAmount": 701
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2017,
+        "SoldAmount": 109
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2017,
+        "SoldAmount": 932
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2017,
+        "SoldAmount": 1620
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2017,
+        "SoldAmount": 685
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2018,
+        "SoldAmount": 675
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2018,
+        "SoldAmount": 568
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2018,
+        "SoldAmount": 528
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2018,
+        "SoldAmount": 1341
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2018,
+        "SoldAmount": 1487
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2018,
+        "SoldAmount": 1981
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2018,
+        "SoldAmount": 1323
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2018,
+        "SoldAmount": 438
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2018,
+        "SoldAmount": 442
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2018,
+        "SoldAmount": 830
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2018,
+        "SoldAmount": 625
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2018,
+        "SoldAmount": 883
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2019,
+        "SoldAmount": 183
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2019,
+        "SoldAmount": 377
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2019,
+        "SoldAmount": 1744
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2019,
+        "SoldAmount": 1964
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2019,
+        "SoldAmount": 1691
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2019,
+        "SoldAmount": 1340
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2019,
+        "SoldAmount": 445
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2019,
+        "SoldAmount": 1570
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2019,
+        "SoldAmount": 461
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2019,
+        "SoldAmount": 1022
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2019,
+        "SoldAmount": 530
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2019,
+        "SoldAmount": 237
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2020,
+        "SoldAmount": 1062
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2020,
+        "SoldAmount": 739
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2020,
+        "SoldAmount": 828
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2020,
+        "SoldAmount": 1642
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2020,
+        "SoldAmount": 227
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2020,
+        "SoldAmount": 923
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2020,
+        "SoldAmount": 684
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2020,
+        "SoldAmount": 377
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2020,
+        "SoldAmount": 162
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2020,
+        "SoldAmount": 554
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2020,
+        "SoldAmount": 126
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2020,
+        "SoldAmount": 652
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2001,
+        "SoldAmount": 410
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2001,
+        "SoldAmount": 897
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2001,
+        "SoldAmount": 317
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2001,
+        "SoldAmount": 1803
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2001,
+        "SoldAmount": 1077
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2001,
+        "SoldAmount": 1229
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2001,
+        "SoldAmount": 1655
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2001,
+        "SoldAmount": 684
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2001,
+        "SoldAmount": 335
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2001,
+        "SoldAmount": 1664
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2001,
+        "SoldAmount": 114
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2001,
+        "SoldAmount": 1579
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2002,
+        "SoldAmount": 1512
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2002,
+        "SoldAmount": 1023
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2002,
+        "SoldAmount": 905
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2002,
+        "SoldAmount": 618
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2002,
+        "SoldAmount": 1437
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2002,
+        "SoldAmount": 54
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2002,
+        "SoldAmount": 1151
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2002,
+        "SoldAmount": 1313
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2002,
+        "SoldAmount": 721
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2002,
+        "SoldAmount": 91
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2002,
+        "SoldAmount": 817
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2002,
+        "SoldAmount": 1400
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2003,
+        "SoldAmount": 1354
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2003,
+        "SoldAmount": 937
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2003,
+        "SoldAmount": 1387
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2003,
+        "SoldAmount": 1472
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2003,
+        "SoldAmount": 229
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2003,
+        "SoldAmount": 1087
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2003,
+        "SoldAmount": 450
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2003,
+        "SoldAmount": 635
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2003,
+        "SoldAmount": 733
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2003,
+        "SoldAmount": 1729
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2003,
+        "SoldAmount": 1900
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2003,
+        "SoldAmount": 1952
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2004,
+        "SoldAmount": 982
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2004,
+        "SoldAmount": 1612
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2004,
+        "SoldAmount": 564
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2004,
+        "SoldAmount": 1997
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2004,
+        "SoldAmount": 1488
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2004,
+        "SoldAmount": 1345
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2004,
+        "SoldAmount": 1816
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2004,
+        "SoldAmount": 325
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2004,
+        "SoldAmount": 1776
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2004,
+        "SoldAmount": 1182
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2004,
+        "SoldAmount": 77
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2004,
+        "SoldAmount": 1124
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2005,
+        "SoldAmount": 1762
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2005,
+        "SoldAmount": 1016
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2005,
+        "SoldAmount": 295
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2005,
+        "SoldAmount": 954
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2005,
+        "SoldAmount": 253
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2005,
+        "SoldAmount": 499
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2005,
+        "SoldAmount": 640
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2005,
+        "SoldAmount": 51
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2005,
+        "SoldAmount": 1082
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2005,
+        "SoldAmount": 1174
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2005,
+        "SoldAmount": 1730
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2005,
+        "SoldAmount": 391
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2006,
+        "SoldAmount": 1681
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2006,
+        "SoldAmount": 975
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2006,
+        "SoldAmount": 414
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2006,
+        "SoldAmount": 67
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2006,
+        "SoldAmount": 1146
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2006,
+        "SoldAmount": 1134
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2006,
+        "SoldAmount": 1286
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2006,
+        "SoldAmount": 1943
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2006,
+        "SoldAmount": 394
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2006,
+        "SoldAmount": 1293
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2006,
+        "SoldAmount": 477
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2006,
+        "SoldAmount": 1053
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2007,
+        "SoldAmount": 326
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2007,
+        "SoldAmount": 644
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2007,
+        "SoldAmount": 63
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2007,
+        "SoldAmount": 869
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2007,
+        "SoldAmount": 703
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2007,
+        "SoldAmount": 1559
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2007,
+        "SoldAmount": 1498
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2007,
+        "SoldAmount": 1230
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2007,
+        "SoldAmount": 530
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2007,
+        "SoldAmount": 549
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2007,
+        "SoldAmount": 130
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2007,
+        "SoldAmount": 1850
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2008,
+        "SoldAmount": 912
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2008,
+        "SoldAmount": 574
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2008,
+        "SoldAmount": 548
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2008,
+        "SoldAmount": 1743
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2008,
+        "SoldAmount": 1012
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2008,
+        "SoldAmount": 1951
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2008,
+        "SoldAmount": 728
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2008,
+        "SoldAmount": 1101
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2008,
+        "SoldAmount": 1445
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2008,
+        "SoldAmount": 806
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2008,
+        "SoldAmount": 921
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2008,
+        "SoldAmount": 82
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2009,
+        "SoldAmount": 561
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2009,
+        "SoldAmount": 631
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2009,
+        "SoldAmount": 1856
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2009,
+        "SoldAmount": 1936
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2009,
+        "SoldAmount": 416
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2009,
+        "SoldAmount": 544
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2009,
+        "SoldAmount": 1122
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2009,
+        "SoldAmount": 47
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2009,
+        "SoldAmount": 1962
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2009,
+        "SoldAmount": 1391
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2009,
+        "SoldAmount": 1421
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2009,
+        "SoldAmount": 333
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2010,
+        "SoldAmount": 32
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2010,
+        "SoldAmount": 485
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2010,
+        "SoldAmount": 1336
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2010,
+        "SoldAmount": 207
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2010,
+        "SoldAmount": 700
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2010,
+        "SoldAmount": 357
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2010,
+        "SoldAmount": 1295
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2010,
+        "SoldAmount": 1007
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2010,
+        "SoldAmount": 1843
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2010,
+        "SoldAmount": 1409
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2010,
+        "SoldAmount": 101
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2010,
+        "SoldAmount": 702
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2011,
+        "SoldAmount": 1833
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2011,
+        "SoldAmount": 1326
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2011,
+        "SoldAmount": 417
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2011,
+        "SoldAmount": 1693
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2011,
+        "SoldAmount": 660
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2011,
+        "SoldAmount": 1830
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2011,
+        "SoldAmount": 1632
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2011,
+        "SoldAmount": 1565
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2011,
+        "SoldAmount": 1500
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2011,
+        "SoldAmount": 684
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2011,
+        "SoldAmount": 1579
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2011,
+        "SoldAmount": 1294
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2012,
+        "SoldAmount": 1802
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2012,
+        "SoldAmount": 720
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2012,
+        "SoldAmount": 387
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2012,
+        "SoldAmount": 1549
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2012,
+        "SoldAmount": 286
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2012,
+        "SoldAmount": 1750
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2012,
+        "SoldAmount": 1436
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2012,
+        "SoldAmount": 1097
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2012,
+        "SoldAmount": 1733
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2012,
+        "SoldAmount": 1135
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2012,
+        "SoldAmount": 20
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2012,
+        "SoldAmount": 738
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2013,
+        "SoldAmount": 567
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2013,
+        "SoldAmount": 1546
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2013,
+        "SoldAmount": 1092
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2013,
+        "SoldAmount": 326
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2013,
+        "SoldAmount": 1794
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2013,
+        "SoldAmount": 1445
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2013,
+        "SoldAmount": 1837
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2013,
+        "SoldAmount": 1960
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2013,
+        "SoldAmount": 356
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2013,
+        "SoldAmount": 17
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2013,
+        "SoldAmount": 138
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2013,
+        "SoldAmount": 787
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2014,
+        "SoldAmount": 844
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2014,
+        "SoldAmount": 1346
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2014,
+        "SoldAmount": 278
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2014,
+        "SoldAmount": 1098
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2014,
+        "SoldAmount": 1392
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2014,
+        "SoldAmount": 178
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2014,
+        "SoldAmount": 1735
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2014,
+        "SoldAmount": 503
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2014,
+        "SoldAmount": 1038
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2014,
+        "SoldAmount": 1821
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2014,
+        "SoldAmount": 1203
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2014,
+        "SoldAmount": 827
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2015,
+        "SoldAmount": 687
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2015,
+        "SoldAmount": 1277
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2015,
+        "SoldAmount": 1922
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2015,
+        "SoldAmount": 987
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2015,
+        "SoldAmount": 1393
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2015,
+        "SoldAmount": 1360
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2015,
+        "SoldAmount": 591
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2015,
+        "SoldAmount": 1518
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2015,
+        "SoldAmount": 1443
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2015,
+        "SoldAmount": 1944
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2015,
+        "SoldAmount": 804
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2015,
+        "SoldAmount": 1510
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2016,
+        "SoldAmount": 1173
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2016,
+        "SoldAmount": 1432
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2016,
+        "SoldAmount": 745
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2016,
+        "SoldAmount": 975
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2016,
+        "SoldAmount": 190
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2016,
+        "SoldAmount": 40
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2016,
+        "SoldAmount": 1191
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2016,
+        "SoldAmount": 718
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2016,
+        "SoldAmount": 569
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2016,
+        "SoldAmount": 931
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2016,
+        "SoldAmount": 608
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2016,
+        "SoldAmount": 1963
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2017,
+        "SoldAmount": 686
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2017,
+        "SoldAmount": 1484
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2017,
+        "SoldAmount": 1746
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2017,
+        "SoldAmount": 887
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2017,
+        "SoldAmount": 1457
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2017,
+        "SoldAmount": 1500
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2017,
+        "SoldAmount": 1894
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2017,
+        "SoldAmount": 1364
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2017,
+        "SoldAmount": 1280
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2017,
+        "SoldAmount": 188
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2017,
+        "SoldAmount": 698
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2017,
+        "SoldAmount": 85
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2018,
+        "SoldAmount": 995
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2018,
+        "SoldAmount": 1572
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2018,
+        "SoldAmount": 1244
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2018,
+        "SoldAmount": 1577
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2018,
+        "SoldAmount": 1536
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2018,
+        "SoldAmount": 1600
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2018,
+        "SoldAmount": 208
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2018,
+        "SoldAmount": 471
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2018,
+        "SoldAmount": 876
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2018,
+        "SoldAmount": 1211
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2018,
+        "SoldAmount": 1093
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2018,
+        "SoldAmount": 1435
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2019,
+        "SoldAmount": 140
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2019,
+        "SoldAmount": 1690
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2019,
+        "SoldAmount": 906
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2019,
+        "SoldAmount": 1159
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2019,
+        "SoldAmount": 1243
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2019,
+        "SoldAmount": 1325
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2019,
+        "SoldAmount": 512
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2019,
+        "SoldAmount": 1365
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2019,
+        "SoldAmount": 1852
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2019,
+        "SoldAmount": 1903
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2019,
+        "SoldAmount": 1770
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2019,
+        "SoldAmount": 960
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2020,
+        "SoldAmount": 1660
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2020,
+        "SoldAmount": 1100
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2020,
+        "SoldAmount": 1578
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2020,
+        "SoldAmount": 197
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2020,
+        "SoldAmount": 941
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2020,
+        "SoldAmount": 1348
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2020,
+        "SoldAmount": 1229
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2020,
+        "SoldAmount": 503
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2020,
+        "SoldAmount": 554
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2020,
+        "SoldAmount": 1964
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2020,
+        "SoldAmount": 1300
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2020,
+        "SoldAmount": 1119
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2001,
+        "SoldAmount": 1890
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2001,
+        "SoldAmount": 946
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2001,
+        "SoldAmount": 144
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2001,
+        "SoldAmount": 840
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2001,
+        "SoldAmount": 1601
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2001,
+        "SoldAmount": 821
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2001,
+        "SoldAmount": 698
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2001,
+        "SoldAmount": 123
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2001,
+        "SoldAmount": 397
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2001,
+        "SoldAmount": 1276
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2001,
+        "SoldAmount": 974
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2001,
+        "SoldAmount": 1091
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2002,
+        "SoldAmount": 815
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2002,
+        "SoldAmount": 428
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2002,
+        "SoldAmount": 1572
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2002,
+        "SoldAmount": 91
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2002,
+        "SoldAmount": 604
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2002,
+        "SoldAmount": 1322
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2002,
+        "SoldAmount": 1189
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2002,
+        "SoldAmount": 1014
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2002,
+        "SoldAmount": 179
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2002,
+        "SoldAmount": 162
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2002,
+        "SoldAmount": 873
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2002,
+        "SoldAmount": 1882
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2003,
+        "SoldAmount": 1607
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2003,
+        "SoldAmount": 357
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2003,
+        "SoldAmount": 127
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2003,
+        "SoldAmount": 1458
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2003,
+        "SoldAmount": 750
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2003,
+        "SoldAmount": 5
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2003,
+        "SoldAmount": 1140
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2003,
+        "SoldAmount": 1008
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2003,
+        "SoldAmount": 1176
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2003,
+        "SoldAmount": 1261
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2003,
+        "SoldAmount": 533
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2003,
+        "SoldAmount": 559
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2004,
+        "SoldAmount": 1783
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2004,
+        "SoldAmount": 911
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2004,
+        "SoldAmount": 863
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2004,
+        "SoldAmount": 455
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2004,
+        "SoldAmount": 972
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2004,
+        "SoldAmount": 1844
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2004,
+        "SoldAmount": 114
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2004,
+        "SoldAmount": 1363
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2004,
+        "SoldAmount": 534
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2004,
+        "SoldAmount": 710
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2004,
+        "SoldAmount": 1559
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2004,
+        "SoldAmount": 1981
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2005,
+        "SoldAmount": 554
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2005,
+        "SoldAmount": 1037
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2005,
+        "SoldAmount": 1393
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2005,
+        "SoldAmount": 904
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2005,
+        "SoldAmount": 1880
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2005,
+        "SoldAmount": 1078
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2005,
+        "SoldAmount": 1059
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2005,
+        "SoldAmount": 1125
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2005,
+        "SoldAmount": 397
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2005,
+        "SoldAmount": 205
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2005,
+        "SoldAmount": 1225
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2005,
+        "SoldAmount": 1599
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2006,
+        "SoldAmount": 1072
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2006,
+        "SoldAmount": 1201
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2006,
+        "SoldAmount": 286
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2006,
+        "SoldAmount": 483
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2006,
+        "SoldAmount": 1716
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2006,
+        "SoldAmount": 1348
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2006,
+        "SoldAmount": 1241
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2006,
+        "SoldAmount": 945
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2006,
+        "SoldAmount": 1404
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2006,
+        "SoldAmount": 1106
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2006,
+        "SoldAmount": 1173
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2006,
+        "SoldAmount": 1602
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2007,
+        "SoldAmount": 1586
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2007,
+        "SoldAmount": 401
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2007,
+        "SoldAmount": 963
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2007,
+        "SoldAmount": 221
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2007,
+        "SoldAmount": 1732
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2007,
+        "SoldAmount": 193
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2007,
+        "SoldAmount": 1722
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2007,
+        "SoldAmount": 925
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2007,
+        "SoldAmount": 282
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2007,
+        "SoldAmount": 281
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2007,
+        "SoldAmount": 881
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2007,
+        "SoldAmount": 1616
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2008,
+        "SoldAmount": 538
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2008,
+        "SoldAmount": 1015
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2008,
+        "SoldAmount": 1998
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2008,
+        "SoldAmount": 540
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2008,
+        "SoldAmount": 1643
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2008,
+        "SoldAmount": 949
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2008,
+        "SoldAmount": 1440
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2008,
+        "SoldAmount": 553
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2008,
+        "SoldAmount": 1827
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2008,
+        "SoldAmount": 1946
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2008,
+        "SoldAmount": 298
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2008,
+        "SoldAmount": 1063
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2009,
+        "SoldAmount": 374
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2009,
+        "SoldAmount": 1691
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2009,
+        "SoldAmount": 1357
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2009,
+        "SoldAmount": 935
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2009,
+        "SoldAmount": 856
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2009,
+        "SoldAmount": 103
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2009,
+        "SoldAmount": 1771
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2009,
+        "SoldAmount": 911
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2009,
+        "SoldAmount": 106
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2009,
+        "SoldAmount": 434
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2009,
+        "SoldAmount": 1118
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2009,
+        "SoldAmount": 443
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2010,
+        "SoldAmount": 559
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2010,
+        "SoldAmount": 422
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2010,
+        "SoldAmount": 18
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2010,
+        "SoldAmount": 1280
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2010,
+        "SoldAmount": 1889
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2010,
+        "SoldAmount": 1246
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2010,
+        "SoldAmount": 147
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2010,
+        "SoldAmount": 1454
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2010,
+        "SoldAmount": 720
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2010,
+        "SoldAmount": 162
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2010,
+        "SoldAmount": 1132
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2010,
+        "SoldAmount": 1475
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2011,
+        "SoldAmount": 1666
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2011,
+        "SoldAmount": 505
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2011,
+        "SoldAmount": 1728
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2011,
+        "SoldAmount": 336
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2011,
+        "SoldAmount": 1031
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2011,
+        "SoldAmount": 579
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2011,
+        "SoldAmount": 229
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2011,
+        "SoldAmount": 483
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2011,
+        "SoldAmount": 502
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2011,
+        "SoldAmount": 114
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2011,
+        "SoldAmount": 1875
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2011,
+        "SoldAmount": 1438
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2012,
+        "SoldAmount": 702
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2012,
+        "SoldAmount": 517
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2012,
+        "SoldAmount": 589
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2012,
+        "SoldAmount": 655
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2012,
+        "SoldAmount": 1218
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2012,
+        "SoldAmount": 1292
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2012,
+        "SoldAmount": 988
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2012,
+        "SoldAmount": 101
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2012,
+        "SoldAmount": 147
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2012,
+        "SoldAmount": 1965
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2012,
+        "SoldAmount": 1836
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2012,
+        "SoldAmount": 503
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2013,
+        "SoldAmount": 304
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2013,
+        "SoldAmount": 62
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2013,
+        "SoldAmount": 1296
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2013,
+        "SoldAmount": 1173
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2013,
+        "SoldAmount": 792
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2013,
+        "SoldAmount": 202
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2013,
+        "SoldAmount": 80
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2013,
+        "SoldAmount": 372
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2013,
+        "SoldAmount": 16
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2013,
+        "SoldAmount": 1101
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2013,
+        "SoldAmount": 559
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2013,
+        "SoldAmount": 1672
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2014,
+        "SoldAmount": 1221
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2014,
+        "SoldAmount": 238
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2014,
+        "SoldAmount": 314
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2014,
+        "SoldAmount": 1272
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2014,
+        "SoldAmount": 1492
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2014,
+        "SoldAmount": 1485
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2014,
+        "SoldAmount": 182
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2014,
+        "SoldAmount": 1468
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2014,
+        "SoldAmount": 1719
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2014,
+        "SoldAmount": 1383
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2014,
+        "SoldAmount": 754
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2014,
+        "SoldAmount": 1000
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2015,
+        "SoldAmount": 1787
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2015,
+        "SoldAmount": 1619
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2015,
+        "SoldAmount": 1142
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2015,
+        "SoldAmount": 191
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2015,
+        "SoldAmount": 987
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2015,
+        "SoldAmount": 772
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2015,
+        "SoldAmount": 875
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2015,
+        "SoldAmount": 758
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2015,
+        "SoldAmount": 113
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2015,
+        "SoldAmount": 585
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2015,
+        "SoldAmount": 362
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2015,
+        "SoldAmount": 788
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2016,
+        "SoldAmount": 1193
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2016,
+        "SoldAmount": 1195
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2016,
+        "SoldAmount": 564
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2016,
+        "SoldAmount": 1314
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2016,
+        "SoldAmount": 345
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2016,
+        "SoldAmount": 1453
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2016,
+        "SoldAmount": 1958
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2016,
+        "SoldAmount": 75
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2016,
+        "SoldAmount": 1692
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2016,
+        "SoldAmount": 1134
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2016,
+        "SoldAmount": 50
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2016,
+        "SoldAmount": 1376
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2017,
+        "SoldAmount": 1330
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2017,
+        "SoldAmount": 1055
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2017,
+        "SoldAmount": 13
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2017,
+        "SoldAmount": 1521
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2017,
+        "SoldAmount": 1466
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2017,
+        "SoldAmount": 1010
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2017,
+        "SoldAmount": 1835
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2017,
+        "SoldAmount": 385
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2017,
+        "SoldAmount": 954
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2017,
+        "SoldAmount": 1649
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2017,
+        "SoldAmount": 525
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2017,
+        "SoldAmount": 1215
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2018,
+        "SoldAmount": 339
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2018,
+        "SoldAmount": 1078
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2018,
+        "SoldAmount": 1610
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2018,
+        "SoldAmount": 135
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2018,
+        "SoldAmount": 1580
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2018,
+        "SoldAmount": 1766
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2018,
+        "SoldAmount": 792
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2018,
+        "SoldAmount": 435
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2018,
+        "SoldAmount": 1204
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2018,
+        "SoldAmount": 1624
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2018,
+        "SoldAmount": 759
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2018,
+        "SoldAmount": 983
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2019,
+        "SoldAmount": 871
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2019,
+        "SoldAmount": 1361
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2019,
+        "SoldAmount": 1973
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2019,
+        "SoldAmount": 1588
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2019,
+        "SoldAmount": 1911
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2019,
+        "SoldAmount": 483
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2019,
+        "SoldAmount": 965
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2019,
+        "SoldAmount": 997
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2019,
+        "SoldAmount": 51
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2019,
+        "SoldAmount": 688
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2019,
+        "SoldAmount": 5
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2019,
+        "SoldAmount": 489
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2020,
+        "SoldAmount": 1508
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2020,
+        "SoldAmount": 881
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2020,
+        "SoldAmount": 902
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2020,
+        "SoldAmount": 980
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2020,
+        "SoldAmount": 645
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2020,
+        "SoldAmount": 875
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2020,
+        "SoldAmount": 1676
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2020,
+        "SoldAmount": 846
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2020,
+        "SoldAmount": 1271
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2020,
+        "SoldAmount": 294
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2020,
+        "SoldAmount": 300
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2020,
+        "SoldAmount": 283
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2001,
+        "SoldAmount": 728
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2001,
+        "SoldAmount": 1930
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2001,
+        "SoldAmount": 1026
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2001,
+        "SoldAmount": 371
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2001,
+        "SoldAmount": 722
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2001,
+        "SoldAmount": 84
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2001,
+        "SoldAmount": 1827
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2001,
+        "SoldAmount": 1470
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2001,
+        "SoldAmount": 672
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2001,
+        "SoldAmount": 1390
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2001,
+        "SoldAmount": 272
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2001,
+        "SoldAmount": 1490
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2002,
+        "SoldAmount": 214
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2002,
+        "SoldAmount": 1012
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2002,
+        "SoldAmount": 694
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2002,
+        "SoldAmount": 443
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2002,
+        "SoldAmount": 958
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2002,
+        "SoldAmount": 1939
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2002,
+        "SoldAmount": 312
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2002,
+        "SoldAmount": 1866
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2002,
+        "SoldAmount": 460
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2002,
+        "SoldAmount": 1650
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2002,
+        "SoldAmount": 1480
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2002,
+        "SoldAmount": 9
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2003,
+        "SoldAmount": 1080
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2003,
+        "SoldAmount": 111
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2003,
+        "SoldAmount": 1082
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2003,
+        "SoldAmount": 948
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2003,
+        "SoldAmount": 54
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2003,
+        "SoldAmount": 1299
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2003,
+        "SoldAmount": 1212
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2003,
+        "SoldAmount": 493
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2003,
+        "SoldAmount": 943
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2003,
+        "SoldAmount": 1336
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2003,
+        "SoldAmount": 1872
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2003,
+        "SoldAmount": 1281
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2004,
+        "SoldAmount": 1457
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2004,
+        "SoldAmount": 469
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2004,
+        "SoldAmount": 119
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2004,
+        "SoldAmount": 139
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2004,
+        "SoldAmount": 1738
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2004,
+        "SoldAmount": 143
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2004,
+        "SoldAmount": 946
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2004,
+        "SoldAmount": 1305
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2004,
+        "SoldAmount": 1608
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2004,
+        "SoldAmount": 1868
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2004,
+        "SoldAmount": 603
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2004,
+        "SoldAmount": 737
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2005,
+        "SoldAmount": 701
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2005,
+        "SoldAmount": 1032
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2005,
+        "SoldAmount": 980
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2005,
+        "SoldAmount": 595
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2005,
+        "SoldAmount": 838
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2005,
+        "SoldAmount": 1468
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2005,
+        "SoldAmount": 311
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2005,
+        "SoldAmount": 827
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2005,
+        "SoldAmount": 776
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2005,
+        "SoldAmount": 435
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2005,
+        "SoldAmount": 882
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2005,
+        "SoldAmount": 1141
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2006,
+        "SoldAmount": 1316
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2006,
+        "SoldAmount": 441
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2006,
+        "SoldAmount": 862
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2006,
+        "SoldAmount": 64
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2006,
+        "SoldAmount": 450
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2006,
+        "SoldAmount": 53
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2006,
+        "SoldAmount": 412
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2006,
+        "SoldAmount": 1136
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2006,
+        "SoldAmount": 398
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2006,
+        "SoldAmount": 965
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2006,
+        "SoldAmount": 339
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2006,
+        "SoldAmount": 525
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2007,
+        "SoldAmount": 1582
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2007,
+        "SoldAmount": 1400
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2007,
+        "SoldAmount": 937
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2007,
+        "SoldAmount": 304
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2007,
+        "SoldAmount": 1211
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2007,
+        "SoldAmount": 680
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2007,
+        "SoldAmount": 1379
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2007,
+        "SoldAmount": 331
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2007,
+        "SoldAmount": 1354
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2007,
+        "SoldAmount": 806
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2007,
+        "SoldAmount": 1281
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2007,
+        "SoldAmount": 1016
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2008,
+        "SoldAmount": 538
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2008,
+        "SoldAmount": 396
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2008,
+        "SoldAmount": 1644
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2008,
+        "SoldAmount": 1861
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2008,
+        "SoldAmount": 859
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2008,
+        "SoldAmount": 964
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2008,
+        "SoldAmount": 1257
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2008,
+        "SoldAmount": 112
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2008,
+        "SoldAmount": 174
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2008,
+        "SoldAmount": 1500
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2008,
+        "SoldAmount": 1626
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2008,
+        "SoldAmount": 1141
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2009,
+        "SoldAmount": 1325
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2009,
+        "SoldAmount": 128
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2009,
+        "SoldAmount": 612
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2009,
+        "SoldAmount": 456
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2009,
+        "SoldAmount": 1083
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2009,
+        "SoldAmount": 293
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2009,
+        "SoldAmount": 636
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2009,
+        "SoldAmount": 1227
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2009,
+        "SoldAmount": 1894
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2009,
+        "SoldAmount": 1455
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2009,
+        "SoldAmount": 1308
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2009,
+        "SoldAmount": 423
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2010,
+        "SoldAmount": 613
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2010,
+        "SoldAmount": 119
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2010,
+        "SoldAmount": 1435
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2010,
+        "SoldAmount": 1885
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2010,
+        "SoldAmount": 1156
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2010,
+        "SoldAmount": 368
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2010,
+        "SoldAmount": 1759
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2010,
+        "SoldAmount": 734
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2010,
+        "SoldAmount": 226
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2010,
+        "SoldAmount": 1761
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2010,
+        "SoldAmount": 97
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2010,
+        "SoldAmount": 529
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2011,
+        "SoldAmount": 1044
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2011,
+        "SoldAmount": 1159
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2011,
+        "SoldAmount": 970
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2011,
+        "SoldAmount": 1389
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2011,
+        "SoldAmount": 1625
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2011,
+        "SoldAmount": 1907
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2011,
+        "SoldAmount": 158
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2011,
+        "SoldAmount": 965
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2011,
+        "SoldAmount": 949
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2011,
+        "SoldAmount": 1942
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2011,
+        "SoldAmount": 1455
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2011,
+        "SoldAmount": 811
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2012,
+        "SoldAmount": 140
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2012,
+        "SoldAmount": 1181
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2012,
+        "SoldAmount": 1501
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2012,
+        "SoldAmount": 1139
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2012,
+        "SoldAmount": 260
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2012,
+        "SoldAmount": 1132
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2012,
+        "SoldAmount": 937
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2012,
+        "SoldAmount": 1764
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2012,
+        "SoldAmount": 987
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2012,
+        "SoldAmount": 1447
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2012,
+        "SoldAmount": 560
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2012,
+        "SoldAmount": 1521
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2013,
+        "SoldAmount": 245
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2013,
+        "SoldAmount": 1977
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2013,
+        "SoldAmount": 1909
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2013,
+        "SoldAmount": 676
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2013,
+        "SoldAmount": 829
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2013,
+        "SoldAmount": 535
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2013,
+        "SoldAmount": 577
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2013,
+        "SoldAmount": 321
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2013,
+        "SoldAmount": 705
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2013,
+        "SoldAmount": 1440
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2013,
+        "SoldAmount": 1578
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2013,
+        "SoldAmount": 1416
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2014,
+        "SoldAmount": 1812
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2014,
+        "SoldAmount": 1289
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2014,
+        "SoldAmount": 1398
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2014,
+        "SoldAmount": 899
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2014,
+        "SoldAmount": 1724
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2014,
+        "SoldAmount": 1596
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2014,
+        "SoldAmount": 685
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2014,
+        "SoldAmount": 598
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2014,
+        "SoldAmount": 1212
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2014,
+        "SoldAmount": 1657
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2014,
+        "SoldAmount": 147
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2014,
+        "SoldAmount": 1257
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2015,
+        "SoldAmount": 602
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2015,
+        "SoldAmount": 1595
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2015,
+        "SoldAmount": 835
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2015,
+        "SoldAmount": 242
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2015,
+        "SoldAmount": 1063
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2015,
+        "SoldAmount": 1830
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2015,
+        "SoldAmount": 1722
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2015,
+        "SoldAmount": 1342
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2015,
+        "SoldAmount": 665
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2015,
+        "SoldAmount": 1302
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2015,
+        "SoldAmount": 187
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2015,
+        "SoldAmount": 1037
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2016,
+        "SoldAmount": 1911
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2016,
+        "SoldAmount": 1626
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2016,
+        "SoldAmount": 82
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2016,
+        "SoldAmount": 781
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2016,
+        "SoldAmount": 917
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2016,
+        "SoldAmount": 1756
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2016,
+        "SoldAmount": 1667
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2016,
+        "SoldAmount": 1454
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2016,
+        "SoldAmount": 1230
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2016,
+        "SoldAmount": 1063
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2016,
+        "SoldAmount": 1792
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2016,
+        "SoldAmount": 1287
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2017,
+        "SoldAmount": 476
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2017,
+        "SoldAmount": 1027
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2017,
+        "SoldAmount": 1379
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2017,
+        "SoldAmount": 1217
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2017,
+        "SoldAmount": 1870
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2017,
+        "SoldAmount": 1161
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2017,
+        "SoldAmount": 1909
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2017,
+        "SoldAmount": 148
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2017,
+        "SoldAmount": 723
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2017,
+        "SoldAmount": 139
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2017,
+        "SoldAmount": 764
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2017,
+        "SoldAmount": 614
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2018,
+        "SoldAmount": 1146
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2018,
+        "SoldAmount": 529
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2018,
+        "SoldAmount": 1917
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2018,
+        "SoldAmount": 1042
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2018,
+        "SoldAmount": 1516
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2018,
+        "SoldAmount": 1695
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2018,
+        "SoldAmount": 1273
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2018,
+        "SoldAmount": 525
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2018,
+        "SoldAmount": 137
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2018,
+        "SoldAmount": 828
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2018,
+        "SoldAmount": 745
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2018,
+        "SoldAmount": 158
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2019,
+        "SoldAmount": 1524
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2019,
+        "SoldAmount": 1316
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2019,
+        "SoldAmount": 329
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2019,
+        "SoldAmount": 1466
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2019,
+        "SoldAmount": 1520
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2019,
+        "SoldAmount": 1625
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2019,
+        "SoldAmount": 1431
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2019,
+        "SoldAmount": 1614
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2019,
+        "SoldAmount": 477
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2019,
+        "SoldAmount": 1624
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2019,
+        "SoldAmount": 1328
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2019,
+        "SoldAmount": 1483
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2020,
+        "SoldAmount": 1101
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2020,
+        "SoldAmount": 1508
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2020,
+        "SoldAmount": 1912
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2020,
+        "SoldAmount": 572
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2020,
+        "SoldAmount": 1580
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2020,
+        "SoldAmount": 959
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2020,
+        "SoldAmount": 1006
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2020,
+        "SoldAmount": 1965
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2020,
+        "SoldAmount": 1231
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2020,
+        "SoldAmount": 501
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2020,
+        "SoldAmount": 1557
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2020,
+        "SoldAmount": 588
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2001,
+        "SoldAmount": 1450
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2001,
+        "SoldAmount": 1571
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2001,
+        "SoldAmount": 1758
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2001,
+        "SoldAmount": 390
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2001,
+        "SoldAmount": 1389
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2001,
+        "SoldAmount": 1295
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2001,
+        "SoldAmount": 1810
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2001,
+        "SoldAmount": 1678
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2001,
+        "SoldAmount": 1023
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2001,
+        "SoldAmount": 1079
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2001,
+        "SoldAmount": 1176
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2001,
+        "SoldAmount": 1932
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2002,
+        "SoldAmount": 1265
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2002,
+        "SoldAmount": 764
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2002,
+        "SoldAmount": 261
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2002,
+        "SoldAmount": 1969
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2002,
+        "SoldAmount": 1503
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2002,
+        "SoldAmount": 1191
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2002,
+        "SoldAmount": 478
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2002,
+        "SoldAmount": 640
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2002,
+        "SoldAmount": 87
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2002,
+        "SoldAmount": 956
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2002,
+        "SoldAmount": 673
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2002,
+        "SoldAmount": 458
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2003,
+        "SoldAmount": 1131
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Gaming Console",
+        "Year": 2003,
+        "SoldAmount": 1151
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2003,
+        "SoldAmount": 159
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2003,
+        "SoldAmount": 1886
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Handbag",
+        "Year": 2003,
+        "SoldAmount": 1707
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Mobile",
+        "Year": 2003,
+        "SoldAmount": 502
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2003,
+        "SoldAmount": 30
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Furniture",
+        "Year": 2003,
+        "SoldAmount": 1915
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Apparel",
+        "Year": 2003,
+        "SoldAmount": 458
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "PC",
+        "Year": 2003,
+        "SoldAmount": 1350
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Cosmetics",
+        "Year": 2003,
+        "SoldAmount": 197
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Home Decor",
+        "Year": 2003,
+        "SoldAmount": 912
+    },
+    {
+        "ProductType": "Fashion",
+        "Product": "Watch",
+        "Year": 2004,
+        "SoldAmount": 1184
+    },
+    {
+        "ProductType": "Electronics",
+        "Product": "Laptop",
+        "Year": 2004,
+        "SoldAmount": 1805
+    },
+    {
+        "ProductType": "Beauty and Personal Care",
+        "Product": "Fragrance",
+        "Year": 2004,
+        "SoldAmount": 1940
+    },
+    {
+        "ProductType": "Household",
+        "Product": "Kitchenware",
+        "Year": 2004,
+        "SoldAmount": 1188
+    }
+]

@@ -1,13 +1,12 @@
 <div id="action-description">
     <p>
-        This example demonstrates how to save the chart as a PDF file and in image formats including JPEG, PNG, and SVG.
-    </p>
+        This sample demonstrates client-side exporting of the chart, enabling you to export its data to Excel, PDF, and CSV formats. Additionally, it allows you to save the chart in image formats such as JPEG, PNG, and SVG.    </p>
 </div>
 
     <div class="control-section col-lg-9 sb-property-border">
-        <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)' [chartArea]='chartArea' (pointRender)='pointRender($event)'>
+        <ejs-chart #chart style='display:block;' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [legendSettings]='legendSettings' [title]='title' (load)='load($event)' [chartArea]='chartArea' (pointRender)='pointRender($event)'>
             <e-series-collection>
-                <e-series [dataSource]='data'  [marker]='marker' type='Column' xName='x' yName='y' width=2>
+                <e-series [dataSource]='data'  [marker]='marker' type='Column' name='Measurements (in Gigawatt)' xName='x' yName='y' width=2>
                 </e-series>
             </e-series-collection>
         </ejs-chart>
@@ -18,34 +17,36 @@
             <div class="property-panel-content">
                 <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
                     <tr style="height: 50px">
-                        <td style="width: 40%">
-                            <div>Export Type:</div>
+                        <td style="width: 50%">
+                            <div style="padding-left: 0px;">Export Type:</div>
                         </td>
-                        <td style="width: 60%;">
+                        <td style="width: 80%;">
                             <div>
                                 <select name="selectIndex" autocomplete="off" id="exporttype" style="width: 90%">
                                              <option value="JPEG">JPEG</option>
                                              <option value="PNG">PNG</option>
                                              <option value="SVG">SVG</option>
                                              <option value="PDF">PDF</option>
+                                             <option value="XLSX">XLSX</option>
+                                             <option value="CSV">CSV</option>
                                          </select>
                             </div>
                         </td>
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 40%">
-                            <div>File Name:</div>
+                            <div style="padding-left: 0px;">File Name:</div>
                         </td>
                         <td style="width: 40%;">
                             <div class="e-float-input" style='margin-top: 0px;'>
-                                <input type="text" value="Chart" id="fileName">
+                                <input type="text" value="Chart" id="fileName" style="width: 90px;">
                             </div>
                         </td>
                     </tr>
                     <tr id="button-control" style="height: 50px" align='center'>
                         <td align='center' colspan="2">
-                            <div>
-                                <button ejs-button iconCss="e-icons e-export-icon" cssClass="e-flat" isPrimary=true (click)='onClick($event)' style="text-transform:none !important" id="togglebtn">EXPORT</button>
+                            <div style="padding-left: 0px;">
+                                <button ejs-button iconCss="e-icons e-export icon" isPrimary=true (click)='onClick($event)' style="text-transform:none !important" id="togglebtn">EXPORT</button>
                             </div>
                         </td>
                     </tr>
@@ -56,7 +57,12 @@
 </div>
 <div id="description">
     <p>
-        By clicking on Export button, you can export the chart to the specific type using <code>ExportAsync</code> method. To be more precise, define parameters such as the export type and the file name while exporting.
+        In this example, you can see how the export functionality is configured. The rendered chart can be exported in JPEG, PNG, SVG, and PDF file types. Data from the chart can also be exported to Excel and CSV files.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use export, we need to inject 
+        <code>ExportService</code> into the <code>@NgModule.providers</code> section.
     </p>
     <p>
         More information on the export can be found in this

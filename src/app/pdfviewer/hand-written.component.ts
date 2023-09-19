@@ -3,6 +3,8 @@ import {
     PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
     ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, LoadEventArgs, FormFieldsService, FormDesignerService
 } from '@syncfusion/ej2-angular-pdfviewer';
+import { ClickEventArgs } from '@syncfusion/ej2-buttons';
+import { SwitchComponent } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * Default PdfViewer Controller
@@ -12,19 +14,32 @@ import {
     templateUrl: 'hand-written.html',
     encapsulation: ViewEncapsulation.None,
     // tslint:disable-next-line:max-line-length
-    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService] 
+    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, 
+               TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService] ,
+    styleUrls: ['pdfviewer.component.css'],
 })
 
 export class HandwrittenComponent implements OnInit {
     @ViewChild('pdfviewer')
     public pdfviewerControl: PdfViewerComponent;
+    @ViewChild('switch')
+    public switch: SwitchComponent;
 
-    public service: string = 'https://services.syncfusion.com/angular/production/api/pdfviewer';
-    public document: string = 'HandwrittenSignature.pdf';
+    public document: string = 'https://cdn.syncfusion.com/content/pdf/handwritten-signature.pdf';
     ngOnInit(): void {
         // ngOnInit function
     }
     public documentLoad(e: LoadEventArgs): void {
         this.pdfviewerControl.annotationModule.setAnnotationMode('HandWrittenSignature');
+    }
+    public change(e: any): void {
+        if (e.checked) {
+            this.pdfviewerControl.serviceUrl = '';
+        }
+        else {
+            this.pdfviewerControl.serviceUrl = 'https://ej2services.syncfusion.com/angular/development/api/pdfviewer';
+        }
+        this.pdfviewerControl.dataBind();
+        this.pdfviewerControl.load(this.pdfviewerControl.documentPath, null);
     }
 }

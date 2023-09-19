@@ -4,7 +4,7 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-lineargauge (load)='load($event)' id='tooltipContainer' #gauge style='display:block;' background='transparent'
+    <ejs-lineargauge (load)='load($event)' (loaded)='loaded($event)' id='tooltipContainer' #gauge style='display:block;' background='transparent'
         (axisLabelRender)='labelRender($event)' (tooltipRender)='renderTooltip($event)' orientation='Horizontal'
         [container]='container' [tooltip]='tooltip' [axes]='axes' [annotations]='annotations'>
     </ejs-lineargauge>

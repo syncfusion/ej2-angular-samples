@@ -1,6 +1,3 @@
-/**
- * Sample for axis background in the Circular Gauge
- */
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, GaugeTheme, CircularGaugeComponent, CircularGauge, IResizeEventArgs } from '@syncfusion/ej2-angular-circulargauge';
 
@@ -38,12 +35,12 @@ export class AxisBackGroundComponent {
     };
 
     public load(args: ILoadedEventArgs): void {
-        // custom code start
+        /* custom code start */
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
-        // custom code end
+        /* custom code end */
     }
 
     public resize(args: IResizeEventArgs): void {

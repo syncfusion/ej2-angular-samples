@@ -4,9 +4,21 @@
 </div>
 <div class="control-section">
     <div class="content-wrapper">
-        <ejs-pdfviewer id="pdfViewer" [serviceUrl]='service' [documentPath]='document' [enableRtl]=true [locale]='culture' [annotationSettings]='annotationSettings' style="height:640px;display:block"></ejs-pdfviewer>
+        <div class="flex-container">
+            <label class="switchLabel" for="checked">Standalone PDF Viewer</label>
+            <div class="e-message render-mode-info">
+                <span class="e-msg-icon render-mode-info-icon"
+                    title="Turn OFF to render the PDF Viewer as server-backed"></span>
+            </div>
+            <div>
+                <ejs-switch cssClass="buttonSwitch" id="checked" (change)="change($event)" [checked]="true">
+                </ejs-switch>
+            </div>
+        </div>
+        <ejs-pdfviewer #pdfviewer id="pdfViewer" [documentPath]='document' [enableRtl]=true [locale]='culture' [annotationSettings]='annotationSettings' style="height:640px;display:block"></ejs-pdfviewer>
     </div>
 </div>
+
 <div id="description">
     <p>
         In this example, you can see PDF Viewer right-to-left and the locale set in arabic[locale value is ar-AE]

@@ -33,7 +33,7 @@ export const sliderAppRoutes: Object[] = [
         {displayName: 'tooltip.html', path: './src/range-slider/tooltip.html'},
         {displayName: 'slider.css', path: './src/range-slider/slider.css'}
     ] },
-    { path: ':theme/range-slider/orientation', component: OrientationSliderComponent, type: 'update', name: 'Vertical Orientation', order: '01', category: 'Range Slider', description: 'This example demonstrates the vertical and horizontal orientation of Syncfusion Angular slider control along with ticks and tooltip.', sourceFiles: [
+    { path: ':theme/range-slider/orientation', component: OrientationSliderComponent, name: 'Vertical Orientation', order: '01', category: 'Range Slider', description: 'This example demonstrates the vertical and horizontal orientation of Syncfusion Angular slider control along with ticks and tooltip.', sourceFiles: [
         {displayName: 'orientation.component.ts', path: './src/range-slider/orientation.component.ts'},
         {displayName: 'orientation.html', path: './src/range-slider/orientation.html'},
         {displayName: 'orientation.css', path: './src/range-slider/orientation.css'}

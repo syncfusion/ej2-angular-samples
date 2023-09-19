@@ -66,7 +66,17 @@
             "SortDescending": "Absteigend sortieren",
             "EditRecord": "Datensatz bearbeiten",
             "DeleteRecord": "Aufzeichnung löschen",
-            "FilterMenu": "Filter"
+            "FilterMenu": "Filter",
+            "NotStartsWith": "beginnt nicht mit",
+            "Like": "Wie",
+            "NotEndsWith": "endet nicht mit",
+            "NotContains": "enthält nicht",
+            "IsNull": "Null",
+            "NotNull": "nicht null",
+            "IsEmpty": "leer",
+            "IsNotEmpty": "nicht leer",
+            "Between": "Zwischen",
+            "CustomFilter": "Benutzerdefinierte Filter"
         },
         "checkboxFilter": {
             "Search": "Suche",
@@ -184,7 +194,17 @@
             "SortDescending": "ترتيب تنازلي",
             "EditRecord": "تحرير سجل",
             "DeleteRecord": "حذف سجل",
-            "FilterMenu": "منقي"
+            "FilterMenu": "منقي",
+            "NotStartsWith": "لا تبدأ بـ",
+            "Like": "يحب",
+            "NotEndsWith": "لا تنتهي ب",
+            "NotContains": "لا يحتوي",
+            "IsNull": "باطل",
+            "NotNull": "غير فارغة",
+            "IsEmpty": "فارغ",
+            "IsNotEmpty": "ليس فارغًا",
+            "Between": "ما بين",
+            "CustomFilter": "تصفية مخصص"
         },
         "checkboxFilter": {
             "Search": "بحث",
@@ -302,7 +322,17 @@
             "SortDescending": "Sort Descending",
             "EditRecord": "Edit Record",
             "DeleteRecord": "Delete Record",
-            "FilterMenu": "Filter"
+            "FilterMenu": "Filter",
+            "NotStartsWith": "Does Not Start With",
+            "Like": "Like",
+            "NotEndsWith": "Does Not End With",
+            "NotContains": "Does Not Contain",
+            "IsNull": "Null",
+            "NotNull": "Not Null",
+            "IsEmpty": "Empty",
+            "IsNotEmpty": "Not Empty",
+            "Between": "Between",
+            "CustomFilter": "Custom Filter"
         },
         "checkboxFilter": {
             "Search": "Search",
@@ -420,7 +450,17 @@
             "SortDescending": "按降序排序",
             "EditRecord": "编辑记录",
             "DeleteRecord": "删除记录",
-            "FilterMenu": "过滤"
+            "FilterMenu": "过滤",
+            "NotStartsWith": "不以開頭",
+            "Like": "喜歡",
+            "NotEndsWith": "不以結束",
+            "NotContains": "不含",
+            "IsNull": "無效的",
+            "NotNull": "不為空",
+            "IsEmpty": "空的",
+            "IsNotEmpty": "不是空的",
+            "Between": "之間",
+            "CustomFilter": "自定義過濾器"
         },
         "checkboxFilter": {
             "Search": "搜索",
@@ -538,7 +578,17 @@
             "SortDescending": "Trier par ordre décroissant",
             "EditRecord": "Modifier l'enregistrement",
             "DeleteRecord": "Supprimer l'enregistrement",
-            "FilterMenu": "Filtre"
+            "FilterMenu": "Filtre",
+            "NotStartsWith": "Ne commence pas par",
+            "Like": "Comme",
+            "NotEndsWith": "Ne se termine pas par",
+            "NotContains": "Ne contient pas",
+            "IsNull": "Nul",
+            "NotNull": "Non nul",
+            "IsEmpty": "Vide",
+            "IsNotEmpty": "Pas vide",
+            "Between": "Entre",
+            "CustomFilter": "Filtre personnalisé"
         },
         "checkboxFilter": {
             "Search": "Chercher",

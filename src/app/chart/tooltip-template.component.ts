@@ -44,9 +44,9 @@ export class TooltipTemplateComponent {
         '<div id="Tooltip"><table style="width:100%;  border: 1px solid black;" class="table-borderless">' +
         '<tr><th rowspan="2" style="background-color: #C1272D"><img src="assets/chart/images/grain.png" />' +
          // tslint:disable-next-line:max-line-length
-         '</th><td style="height: 25px; width: 50px; background-color: #C1272D; font-size: 14px; color: #E7C554; font-weight: bold; padding-left: 5px">' +
+         '</th>  <td style="height: 25px; width: 50px; background-color: #C1272D; font-size: 14px; color: #E7C554; font-weight: bold; padding-left: 5px">${x}</td> </tr>' +
          // tslint:disable-next-line:max-line-length
-         '${y}</td></tr><tr ><td style="height: 25px; width: 50px; background-color: #C1272D; font-size: 18px; color: #FFFFFF; font-weight: bold; padding-left: 5px">${x}</td>' +
+         '<tr> <td style="height: 25px; width: 50px; background-color: #C1272D; font-size: 18px; color: #FFFFFF; font-weight: bold; padding-left: 5px">${y}B</td>' +
          '</tr></table></div>'
     };
 

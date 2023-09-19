@@ -6,7 +6,7 @@
 <div class="control-section">
   <div align='center'>
       <ejs-chart style='display:block' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-          [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' [width]='width'>
+          (load)='load($event)' [chartArea]='chartArea' [width]='width'>
           <e-series-collection>
               <e-series [dataSource]='data' [dragSettings]='dragSettings' type='Column' xName='x' yName='y' name='Renewable' width=2 [marker]='marker'> </e-series>
               <e-series [dataSource]='data1' [dragSettings]='dragSettings' type='Line' xName='x' yName='y' name='Non-Renewable' width=2 [marker]='marker1'> </e-series>
@@ -17,9 +17,6 @@
 <div id="description">
   <p>
     In this example, you can see how to drag and drop the data points in the chart by setting <code>Enable</code> property in <code>ChartDataEditSettings</code> to true. Also, you can set data editing’s minimum and maximum range using the <code>MinY</code> and <code>MaxY</code> properties.
-  </p>
-  <p>
-      Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
   </p>
   <br>
   <p style="font-weight: 500">Injecting Module</p>

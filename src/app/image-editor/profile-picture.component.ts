@@ -1,7 +1,7 @@
 /**
  * Profile picture Sample
  */
- import { Component, ViewChild } from '@angular/core';
+ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
  import { ImageEditorComponent } from '@syncfusion/ej2-angular-image-editor';
  import { createElement } from '@syncfusion/ej2-base';
  import { DialogComponent, ButtonPropsModel, PositionDataModel } from '@syncfusion/ej2-angular-popups';
@@ -10,7 +10,8 @@
  @Component({
      selector: 'control-content',
      templateUrl: 'profile-picture.html',
-     styleUrls: ['profile-picture.css']
+     styleUrls: ['profile-picture.css'],
+     encapsulation: ViewEncapsulation.None
  })
  
  export class ProfilePictureImageEditorComponent {
@@ -27,7 +28,7 @@
     public height: string = '420px';
     public visible: boolean = false;
     public animationSettings: AnimationSettingsModel = { effect: 'None' };
-    public target: string = '.sb-desktop-wrapper';
+    public target: string = '.control-section';
     public position: PositionDataModel = { X: 'center', Y: 100 };
     public imgSrc: string = '';
     public created = (): void => {

@@ -6,7 +6,7 @@
 </div>
 <!-- custom code end -->
 <div class="control-section">
-    <ejs-spreadsheet #spreadsheet [showRibbon]="false" [allowResizing]="false" [showFormulaBar]="false" [allowOpen]="false" [allowSave]="false"
+    <ejs-spreadsheet #spreadsheet [showRibbon]="false" [allowResizing]="false" [showFormulaBar]="false" cssClass="e-custom-spreadsheet" [allowOpen]="false" [allowSave]="false"
         [scrollSettings]="{ isFinite: true }" (created)="created()" [allowEditing]="false" [selectionSettings]="{ mode: 'None' }">
         <e-sheets>
             <e-sheet name="Registration Form" [rowCount]=40 [colCount]=30 [showGridLines]="false">

@@ -66,6 +66,7 @@ import { DatePickerAllModule } from '@syncfusion/ej2-angular-calendars';
 import { DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { TemplateDrivenFormComponent } from './template-driven-form.component';
 import { HierarchyExportComponent } from './master-details-export.component';
+import { DetailTemplateExportComponent } from './detail-template-exporting.component';
 import { RowSpanningComponent} from './row-spanning.component';
 import { DragWithinSingle} from './drag-drop-within-grid.component';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
@@ -75,6 +76,7 @@ import { LazyLoadGroupingWithInfiniteScrollingComponent } from './lazy-load-grou
 import { LoadingAnimationComponent } from './loading-animation.component';
 import { LazyLoadGroupingWithVirtualScrollingComponent } from './lazy-load-grouping-with-virtual-scrolling.component';
 import { LiveDataComponent } from './live-data.component';
+import { MultipleExportComponent } from './multiple-export.component';
 
 export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/over-view', component: OverViewComponent, 'name': 'Overview', description: 'This demo for Essential JS 2 grid component is an overview of how to display and manipulate large data with configuration options.', order: '01', category: 'Data Grid' },
@@ -136,7 +138,7 @@ export const gridRouteConfig: Object[] = [
         hideOnDevice: true
     },
     {
-        'path': ':theme/grid/drag-drop-within-grid', 'type':'update', component: DragWithinSingle, name: 'Drag and Drop within Grid', description: 'This demo for Essential JS 2 grid control demonstrates how the rows can be dragged within the grids using the row drag-and-drop feature.', order: '04', category: 'Rows',
+        'path': ':theme/grid/drag-drop-within-grid', component: DragWithinSingle, name: 'Drag and Drop within Grid', description: 'This demo for Essential JS 2 grid control demonstrates how the rows can be dragged within the grids using the row drag-and-drop feature.', order: '04', category: 'Rows',
         hideOnDevice: true
     },
     {
@@ -181,9 +183,9 @@ export const gridRouteConfig: Object[] = [
     },
     { 'path': ':theme/grid/searching', component: SearchComponent, name: 'Search', description: 'This demo for Essential JS 2 grid component shows the content searching feature.', order: '07', category: 'Filtering' },
 
-    { 'path': ':theme/grid/paging', 'type':'update', component: PageComponent, name: 'Paging', description: 'This demo for Essential JS 2 grid component shows how you can display the contents of the grid in page segments using the paging feature.', order: '08', category: 'Paging' },
+    { 'path': ':theme/grid/paging', component: PageComponent, name: 'Paging', description: 'This demo for Essential JS 2 grid component shows how you can display the contents of the grid in page segments using the paging feature.', order: '08', category: 'Paging' },
 
-    { 'path': ':theme/grid/grouping', 'type':'update', component: GroupComponent, name: 'Grouping', description: 'This demo for Essential JS 2 grid component demonstrates the grouping feature of the grid component. The grid component has options to group records based on columns.', order: '09', category: 'Grouping' },
+    { 'path': ':theme/grid/grouping', component: GroupComponent, name: 'Grouping', description: 'This demo for Essential JS 2 grid component demonstrates the grouping feature of the grid component. The grid component has options to group records based on columns.', order: '09', category: 'Grouping' },
 
     {
         'path': ':theme/grid/aggregate-default', component: AggregateComponent,
@@ -215,7 +217,7 @@ export const gridRouteConfig: Object[] = [
         category: 'Scrolling'
     },
     {
-        'path': ':theme/grid/frozen-api', component: FrozenApiComponent, name: 'Frozen API', order: '13',description: 'This demo for Essential JS 2 grid component shows how the rows and columns can be frozen or pinned.',
+        'path': ':theme/grid/frozen-api', 'type':'update', component: FrozenApiComponent, name: 'Frozen API', order: '13',description: 'This demo for Essential JS 2 grid component shows how the rows and columns can be frozen or pinned.',
         category: 'Scrolling'
     },
     {
@@ -244,6 +246,14 @@ export const gridRouteConfig: Object[] = [
         category: 'Exporting'
     },
     {
+        'path': ':theme/grid/detail-template-exporting', component: DetailTemplateExportComponent, name: 'Detail Template Exporting', order: '15', description: 'This demo for Essential JS 2 grid control shows the client-side exporting of grid content with Detail template to Excel and PDF formats.',
+        category: 'Exporting', 'type': 'new'
+    },
+    {
+        'path': ':theme/grid/multiple-export', component: MultipleExportComponent, name: 'Multiple Exporting', order: '15', description: 'This demo for Essential JS 2 grid control shows the client-side exporting of multiple grid content to Excel and PDF formats.',
+        category: 'Exporting', 'type': 'new'
+    },
+    {
         'path': ':theme/grid/print', component: PrintComponent, name: 'Print', order: '15', description: 'This demo for Essential JS 2 grid component shows how to print the grid content.',
         category: 'Exporting'
     },
@@ -265,10 +275,10 @@ let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     SelectionComponent, ScrollComponent, StickyHeaderComponent, SearchComponent, SelectionApiComponent, DragAndDropComponent, AggregateComponent, RtlComponent,
     AggregateGroupComponent, RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent,GridKeyboardNavigationComponent,
     VirtualizationComponent, InfiniteScrollingComponent, NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent, ColumnResizingComponent,
-    ExportingComponent, AdvancedExportingComponent, PrintComponent, CheckboxSelectionComponent, ClipboardComponent, CommandColumnComponent,
+    ExportingComponent, AdvancedExportingComponent, MultipleExportComponent, PrintComponent, CheckboxSelectionComponent, ClipboardComponent, CommandColumnComponent,
     FilteringMenuComponent, ColumnSpanningComponent, ContextMenuComponent, ColumnMenuComponent, FrozenRowsColumnsComponent, FrozenApiComponent,
     ForeignKeyColumnComponent, RowHeightComponent, AsyncPipeComponent, DialogReactiveFormComponent, TemplateDrivenFormComponent,
-    ReactiveAggregateComponent, RowSpanningComponent, DragWithinSingle, HierarchyExportComponent, AdaptiveLayoutComponent, LoadingAnimationComponent,
+    ReactiveAggregateComponent, RowSpanningComponent, DragWithinSingle, HierarchyExportComponent, DetailTemplateExportComponent, AdaptiveLayoutComponent, LoadingAnimationComponent,
     LazyLoadGroupingWithInfiniteScrollingComponent, LazyLoadGroupingWithVirtualScrollingComponent, LiveDataComponent, FlexibleDataBindingComponent
 ];
 

@@ -1,0 +1,112 @@
+
+<div id="action-description">
+    <p>
+    This sample shows how diagram objects snap to the nearest intersection of gridlines or objects while being dragged or resized.
+    </p>
+  </div>
+    <div class="col-lg-8 control-section">
+        <style>
+            .diagram-key-board-functions .container-fluid {
+                padding-left: 0px;
+            }
+            #properties_Container{
+                /* background: #e3e3e3; */
+                width: 295px;
+                float: left;
+                height: 600px;
+                margin-top: 30px;
+                }
+        
+            .property-panel-header {
+                padding-bottom: 0px;
+            }
+        
+            .property-panel-content {
+                padding-top: 0px !important;
+            }
+        
+            @media (max-width: 550px) {
+                .property-panel-content {
+                    padding-top: 0px !important;
+                }
+            }
+        </style>
+        <div class="content-wrapper" style="width: 100%;">
+            <ejs-diagram #diagram id="diagram" width="100%" height="645px" [nodes]="nodes" [connectors]="connectors" [getNodeDefaults]='nodeDefaults' [getConnectorDefaults]='connDefaults'
+                [snapSettings]='snapSettings' (created)="created($event)" (selectionChange)="selectionChange($event)" [getCustomTool]="getCustomTool"
+                [selectedItems]="selectedItems" [scrollSettings] = "scrollSettings" [rulerSettings] = "rulerSettings" [drawingObject]="drawingObject">
+            </ejs-diagram>
+        </div>
+    </div>
+    <div id="properties_Container" >
+        <span class="property-panel-header">
+            Properties
+        </span>
+        <div class="db-prop-row">
+            <div class="db-prop-text-style">
+                <span class="db-prop-text-style text-content">Snapping Interval </span>
+                <div style="float: right;margin-right: 10px;">
+                    <ejs-numerictextbox #snappingInterval id="snappingInterval" format="n0" value="20" min="1" step="1" width="150" (change)="snappingInterval($event)"></ejs-numerictextbox>
+                </div>
+            </div>
+            <div class="db-prop-text-style">
+                <span class="db-prop-text-style text-content">Snapping Angle</span>
+                <div style="float: right;margin-right: 10px;">
+                    <ejs-numerictextbox format="n0" value="5" min="1" step="1" width="150" (change)="snappingAngle($event)"></ejs-numerictextbox>
+                </div>
+            </div>
+            <div class="db-prop-text-style">
+                <span class="db-prop-text-style text-content" style="width: 50%;">Snapping Line Color</span>
+                <div class="db-text-input" style="float: right;width:50%">
+                    <input
+                    ejs-colorpicker
+                    id="color-picker"
+                    width="100%"
+                    type="color"
+                    (change)="colorChange($event)"
+                  />
+                </div>
+            </div>
+            <div class="db-prop-text-style">
+                <ejs-checkbox #showGridLines  label="Show Gridline" [checked]="true" (change)="showGridLine($event)"></ejs-checkbox>
+            </div>
+            <div class="db-prop-text-style" style="margin-top: 7px!important;">
+                <ejs-checkbox #snappingToObject  label="Snapping To Objects" [checked]="true" (change)="snappToObjects($event)"></ejs-checkbox>
+            </div>
+    
+               <div class="db-prop-text-style">
+                <span class="db-prop-text-style text-content" style="font-weight: bold;">Snapping To Lines</span>
+            </div>
+    
+            <div class="row radio-text-style" style="margin-left: 7px;">
+                <ejs-radiobutton label="Snap To Gridlines" value="Snap To Gridlines" name="snapping" (change)="snapToLines($event)" checked></ejs-radiobutton>
+            </div>
+            <div class="row radio-text-style" style="margin-left: 7px;">
+                <ejs-radiobutton label="Snap To Horizontal Gridlines" value="Snap To Horizontal Gridlines" (change)="snapToLines($event)"  name="snapping"></ejs-radiobutton>
+            </div>
+            <div class="row radio-text-style" style="margin-left: 7px;">
+                <ejs-radiobutton label="Snap To Vertical Gridlines" value="Snap To Vertical Gridlines" (change)="snapToLines($event)"  name="snapping"></ejs-radiobutton>
+            </div>
+            <div class="row radio-text-style" style="margin-left: 7px;">
+                <ejs-radiobutton label="None" value="None" (change)="snapToLines($event)"  name="snapping"></ejs-radiobutton>
+            </div>
+        </div>
+    </div>
+        <div class="row">
+            
+            <div class="col-xs-6 db-col-right">
+                <div class="db-text-container" style="width: 77px; margin-left: 20px;">
+                    
+                </div>
+            </div>
+        </div>
+        <div id="description">
+            <p>The <code>SnapInterval</code> property in snapSettings allows you to specify the interval at which objects should snap to a grid or other objects in the control.</p>
+            
+            <p>The <code>snapAngle</code> property in snapSettings allows you to define the snap angle by which the object needs to be rotated.</p>
+        
+            <p>The <code>snapLineColor</code> property is used to set the color of the snap lines that appear when objects snap to a grid or other objects in the control.</p>
+        
+            <p>The <code>constraints</code> property controls the visibility of gridlines and enables or disables snapping.</p>
+        
+          </div>

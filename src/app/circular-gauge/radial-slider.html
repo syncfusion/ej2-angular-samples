@@ -1,12 +1,12 @@
 <div id="action-description">
     <p>
-        This sample demonstrates how to create a range slider by utilizing the functions available in the circular
+        This sample demonstrates how to create a range slider component by utilizing the functions available in the circular
         gauge.
     </p>
 </div>
 <div class="control-section">
     <ejs-circulargauge style='display:block;' #gauge (load)='load($event)' background='transparent' (dragMove)='dragMove($event)'
-        enableRangeDrag='true' enablePointerDrag='true'>
+        enablePointerDrag='true'>
         <e-axes>
             <e-axis radius='80%' startAngle=0 endAngle=0 [majorTicks]='ticks' [minorTicks]='ticks'
                 [lineStyle]='lineStyle' [labelStyle]="labelStyle">

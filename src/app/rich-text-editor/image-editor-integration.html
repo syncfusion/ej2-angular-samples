@@ -1,0 +1,55 @@
+<div id="action-description">
+    <p>This example demonstrates how to integrate Image Editor into Rich Text Editor component. To use it, simply click on the image to open the quick toolbar and select Image Editor custom quick toolbar. Then, the image will be opened in the Image Editor.</p>
+</div>
+<div class="control-section">
+    <ejs-richtexteditor
+     #toolsRTE
+     id="alltoolRTE"
+     [showCharCount]="true"
+     [quickToolbarSettings]="quickToolbarSettings"
+     (toolbarClick)="toolbarClick($event)"
+   >
+     <ng-template #valueTemplate>
+       <p>
+        An image can be edited within a Rich Text Editor using an Image Editor.
+         <img
+           id="img1"
+           style="height: 350px;"
+           src="https://ej2.syncfusion.com/demos/src/image-editor/images/bridge.png"
+         />
+       </p>
+       <p>
+        It allows users to quickly and easily add an Image Editor to their Rich Text Editor.
+        It provides a variety of features, including image cropping, resizing, rotation, and more.
+        Additionally, it supports a wide range of image formats, including JPEG, PNG, and GIF.
+       </p>
+     </ng-template>
+   </ejs-richtexteditor>
+</div>
+
+<ejs-dialog
+     #Dialog
+     [buttons]="dlgButtons"
+     (beforeOpen)="OnBeforeOpen()"
+     [header]="header"
+     [visible]="false"
+     [showCloseIcon]="true"
+     width="800px"
+     height="800px"
+     [isModal]="true"
+   >
+     <ng-template #content>
+       <ejs-imageeditor #ImageEditor id="image-editor" height="500px">
+       </ejs-imageeditor>
+     </ng-template>
+   </ejs-dialog>
+
+<div id="description">
+  <p>The Image Editor component is integrated into the Rich Text Editor and opens the Image Editor within a Dialog when the Image Editor custom quick toolbar is clicked and allows to edit the image. To achieve this, the sample is customized for the Image Editor and Rich Text Editor</p>
+  <ul>
+      <li>Include the Image Editor custom toolbar item in the <a target='_blank' href='https://helpej2.syncfusion.com/angular/documentation/api/rich-text-editor/quickToolbarSettingsModel/#image'>quickToolbarSettings.image</a> property of the Rich Text Editor</li>
+      <li>Configure the Image Editor within a Dialog using the <a target='_blank' href='https://helpej2.syncfusion.com/angular/documentation/api/dialog#beforeopen'>beforeOpen</a> event of the Dialog</li>
+      <li>Open the Dialog on clicking the Image Editor custom toolbar item</li>
+      <li>Insert the edited image into the Rich Text Editor by clicking the Insert button</li>
+  </ul>
+</div>

@@ -105,10 +105,15 @@ canvas#img-canvas {
 	display: none;
 }
 
+.e-custom-img-btn,
 .material3 .e-custom-img-btn,
 .material3-dark .e-custom-img-btn,
 .e-bigger.material3 .e-custom-img-btn,
 .e-bigger.material3-dark .e-custom-img-btn
 { 
   margin-left: 3px !important;
+}
+
+.control-section {
+	min-height: 450px;
 }

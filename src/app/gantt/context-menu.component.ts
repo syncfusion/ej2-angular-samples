@@ -88,7 +88,7 @@ export class GanttContextMenuComponent implements OnInit {
         ];
         this.resources = editingResources;
         this.splitterSettings = {
-            columnIndex: 2
+            position: "35%"
         };
     }
     contextMenuClick (args?: ContextMenuClickEventArgs): void {

@@ -18,12 +18,13 @@ import { DisabledPeriodComponent } from './disabled-period.component';
 import { DisabledNavigatorComponent } from './disabled-navigator.component';
 import { MultiPaneComponent } from './multi-pane.component';
 import {StockEventsComponent} from './stock-events.component';
+import { DateTimeCategoryComponent } from './datetime-category.component';
 
 export const stockChartAppRoutes: Object[] = [
     { path: ':theme/stock-chart/default', component: DefaultComponent, name: 'Default', order: '01', category: 'Stock Chart' },
     {
         path: ':theme/stock-chart/ohlc', component: HiloOpenCloseComponent,
-        name: 'OHLC', order: '01', category: 'Stock Chart', type: 'update'
+        name: 'OHLC', order: '01', category: 'Stock Chart'
     },
     {
         path: ':theme/stock-chart/multi-pane', component: MultiPaneComponent,
@@ -70,6 +71,10 @@ export const stockChartAppRoutes: Object[] = [
         name: 'Hide Period Selector', order: '01', category: 'Stock Chart'
     },
     {
+        path: ':theme/stock-chart/datetime-category', component: DateTimeCategoryComponent,
+        name: 'DateTime Category Axis', order: '01', category: 'Stock Chart', type: 'new'
+    },
+    {
         path: ':theme/stock-chart/stock-events', component: StockEventsComponent,
         name: 'Stock Events', order: '01', category: 'Stock Chart'
     },
@@ -79,7 +84,7 @@ export const stockChartRouter: ModuleWithProviders<any> = RouterModule.forChild(
 
 let declarations: Type<Object>[] = [AreaComponent, DefaultComponent, PlotLineComponent, InversedAreaComponent, HiloOpenCloseComponent,
      MultipleSeriesComponent, SplineAreaComponent, SplineComponent, StripLineComponent, PeriodCustomizationComponent,
-     DisabledNavigatorComponent, DisabledPeriodComponent, MultiPaneComponent, StockEventsComponent ];
+     DisabledNavigatorComponent, DisabledPeriodComponent, MultiPaneComponent, StockEventsComponent, DateTimeCategoryComponent];
 @NgModule({
     imports: [stockChartRouter, StockChartAllModule, RangeNavigatorAllModule, ChartAllModule],
     exports: [],

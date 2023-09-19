@@ -225,6 +225,7 @@ top: 50px;
 }
 
 #description-section {
+    clear:both;
     padding-left: 20px;
     padding-top: 30px;
     opacity: 0.87;

@@ -8,6 +8,6 @@
 .bootstrap5 #ganttUnscheduled .e-add-icon:before,.bootstrap5-dark #ganttUnscheduled .e-add-icon:before,
 .tailwind #ganttUnscheduled .e-add-icon:before,.tailwind-dark #ganttUnscheduled .e-add-icon:before,
 .fluent #ganttUnscheduled .e-add-icon:before, .fluent-dark #ganttUnscheduled .e-add-icon:before,
-.material3-dark #Unscheduled .e-add-icon:before ,.material3 #Unscheduled .e-add-icon:before {
+.material3-dark #ganttUnscheduled .e-add-icon:before ,.material3 #ganttUnscheduled .e-add-icon:before {
     content: "\e836"
 }

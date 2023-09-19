@@ -50,8 +50,8 @@ export class CellTemplateComponent implements OnInit {
     trend(): void {
         let cTable: HTMLElement[] = [].slice.call(document.getElementsByClassName("e-table"));
         let colLen: number = this.pivotObj.pivotValues[3].length;
-        let cLen: number = cTable[3].children[0].children.length;
-        let rLen: number = cTable[3].children[1].children.length;
+        let cLen: number = cTable[1].children[0].children.length - 1;
+        let rLen: number = cTable[1].children[1].children.length;
         let rowIndx: number;
 
         for (let k: number = 0; k < rLen; k++) {
@@ -60,7 +60,7 @@ export class CellTemplateComponent implements OnInit {
                 break;
             }
         }
-        let rowHeaders: HTMLElement[] = [].slice.call(cTable[2].children[1].querySelectorAll('td'));
+        let rowHeaders: HTMLElement[] = [].slice.call(cTable[1].children[1].querySelectorAll('.e-rowsheader'));
         let rows: IFieldOptions[] = this.pivotObj.dataSourceSettings.rows as IFieldOptions[];
         if (rowHeaders.length > 1) {
             for (let i: number = 0, Cnt = rows; i < Cnt.length; i++) {
@@ -79,12 +79,12 @@ export class CellTemplateComponent implements OnInit {
                         if (rnt !== 0) {
                             let row: number = fields[fieldHeaders[rnt]];
                             let prevRow: number = fields[fieldHeaders[rnt - 1]];
-                            for (let j: number = 0, ci = 1; j < cLen && ci < colLen; j++ , ci++) {
-                                if (!cTable[3].children[1].children[row]) {
+                            for (let j: number = 1, ci = 1; j < cLen && ci < colLen; j++ , ci++) {
+                                if (!cTable[1].children[1].children[row]) {
                                     break;
                                 }
-                                let node: HTMLElement = cTable[3].children[1].children[row].childNodes[j] as HTMLElement;
-                                let prevNode: HTMLElement = cTable[3].children[1].children[prevRow].childNodes[j] as HTMLElement;
+                                let node: HTMLElement = cTable[1].children[1].children[row].childNodes[j] as HTMLElement;
+                                let prevNode: HTMLElement = cTable[1].children[1].children[prevRow].childNodes[j] as HTMLElement;
                                 let ri: any = undefined;
                                 let prevRi: any = undefined;
                                 if (node) {
@@ -110,12 +110,12 @@ export class CellTemplateComponent implements OnInit {
                 } else {
                     for (let rnt: number = 0, Lnt = fieldHeaders; rnt < Lnt.length; rnt++) {
                         var cRow = fields[fieldHeaders[rnt]];
-                        for (let j: number = 0, ci = 1; j < cLen && ci < colLen; j++ , ci++) {
-                            if (!cTable[3].children[1].children[cRow]) {
+                        for (let j: number = 1, ci = 1; j < cLen && ci < colLen; j++ , ci++) {
+                            if (!cTable[1].children[1].children[cRow]) {
                                 break;
                             }
-                            let node: HTMLElement = cTable[3].children[1].children[cRow].childNodes[j] as HTMLElement;
-                            let prevNode: HTMLElement = cTable[3].children[1].children[cRow - 1].childNodes[j] as HTMLElement;
+                            let node: HTMLElement = cTable[1].children[1].children[cRow].childNodes[j] as HTMLElement;
+                            let prevNode: HTMLElement = cTable[1].children[1].children[cRow - 1].childNodes[j] as HTMLElement;
                             let ri: any = undefined;
                             let prevRi: any = undefined;
                             if (node) {
@@ -125,8 +125,8 @@ export class CellTemplateComponent implements OnInit {
                                 prevRi = prevNode.getAttribute("index");
                             }
                             if (ri && ri < [].slice.call(this.pivotObj.pivotValues).length) {
-                                let cRowFieldName: string = (cTable[2].children[1].children[cRow].childNodes[0] as HTMLElement).getAttribute('fieldname');
-                                let prevRowFieldName: string = (cTable[2].children[1].children[cRow - 1].childNodes[0] as HTMLElement).getAttribute('fieldname');
+                                let cRowFieldName: string = (cTable[1].children[1].children[cRow].childNodes[0] as HTMLElement).getAttribute('fieldname');
+                                let prevRowFieldName: string = (cTable[1].children[1].children[cRow - 1].childNodes[0] as HTMLElement).getAttribute('fieldname');
                                 if ((this.pivotObj.pivotValues[prevRi][ci] as IAxisSet).value > (this.pivotObj.pivotValues[ri][ci] as IAxisSet).value &&
                                  node.querySelector('.tempwrap') &&
                                     cRowFieldName === prevRowFieldName) {

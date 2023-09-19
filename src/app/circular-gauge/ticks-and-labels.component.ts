@@ -1,6 +1,3 @@
-/**
- * Samples for ticks and labels
- */
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-angular-circulargauge';
 import { Position, TickModel } from '@syncfusion/ej2-circulargauge';
@@ -8,9 +5,9 @@ import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/e
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { EmitType } from '@syncfusion/ej2-base';
 
-// custom code start
+/* custom code start */
 // tslint:disable
-// custom code end
+/* custom code end */
 
 @Component({
     selector: 'control-content',
@@ -57,12 +54,12 @@ export class LabelComponent {
     }];
 
     public load(args: ILoadedEventArgs): void {
-        // custom code start
+        /* custom code start */
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
-        // custom code end
+        /* custom code end */
     }
 
     ngOnInit(): void {

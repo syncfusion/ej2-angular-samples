@@ -1,6 +1,6 @@
 <div class="col-lg-12 control-section resize-ribbon-section">
   <div id="ribbonContainer">
-    <ejs-ribbon id="ribbon" #ribbon [fileMenu]='fileSettings' (launcherIconClick)='launchClick($event)'>
+    <ejs-ribbon id="ribbon" #ribbon [fileMenu]='fileSettings' [enablePersistence]="true" (launcherIconClick)='launchClick($event)'>
       <e-ribbon-tabs>
         <e-ribbon-tab header="Home">
           <e-ribbon-groups>
@@ -45,19 +45,30 @@
                 </e-ribbon-collection>
                 <e-ribbon-collection>
                   <e-ribbon-items>
+                    <e-ribbon-item type="GroupButton" [allowedSizes]="smallSize" [groupButtonSettings]="groupButtonMultiple">
+                    </e-ribbon-item>
                     <e-ribbon-item type="ColorPicker" [allowedSizes]='smallSize' [displayOptions]='colorPickerDisplayMode'
                       [colorPickerSettings]="colorSettings">
                     </e-ribbon-item>
-                    <e-ribbon-item type="Button" [allowedSizes]='smallSize' [buttonSettings]="boldButton">
+                  </e-ribbon-items>
+                </e-ribbon-collection>
+              </e-ribbon-collections>
+            </e-ribbon-group>
+            <e-ribbon-group header="Paragraph" orientation="Row" groupIconCss="e-icons e-align-center" >
+              <e-ribbon-collections>
+                <e-ribbon-collection>
+                  <e-ribbon-items>
+                    <e-ribbon-item type="Button" [allowedSizes]="smallSize" [buttonSettings]="decreaseIndent">
                     </e-ribbon-item>
-                    <e-ribbon-item type="Button" [allowedSizes]='smallSize' [buttonSettings]="italicButton">
+                    <e-ribbon-item type="Button" [allowedSizes]="smallSize" [buttonSettings]="increaseIndent">
                     </e-ribbon-item>
-                    <e-ribbon-item type="Button" [allowedSizes]='smallSize' [buttonSettings]="underlineButton">
+                    <e-ribbon-item type="Button" [allowedSizes]="smallSize" [buttonSettings]="paragraphBtn">
                     </e-ribbon-item>
-                    <e-ribbon-item type="Button" [allowedSizes]='smallSize' [buttonSettings]="strikethroughButton">
-                    </e-ribbon-item>
-                    <e-ribbon-item type="Button" [allowedSizes]='smallSize' [buttonSettings]="changecaseButton">
-                    </e-ribbon-item>
+                  </e-ribbon-items>
+                </e-ribbon-collection>
+                <e-ribbon-collection>
+                  <e-ribbon-items>
+                    <e-ribbon-item type="GroupButton" [allowedSizes]="smallSize" [groupButtonSettings]="groupButtonSingle"></e-ribbon-item>
                   </e-ribbon-items>
                 </e-ribbon-collection>
               </e-ribbon-collections>

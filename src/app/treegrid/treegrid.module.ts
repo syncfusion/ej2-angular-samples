@@ -70,11 +70,15 @@ import { ColumnChooserComponent } from './columnchooser.component';
 import { InfiniteScrollingComponent } from './infinite-scrolling.component';
 import { FrozenAPI } from './frozen-api.component';
 import { LoadingAnimationComponent } from './loading-animation.component';
+import { LiveDataComponent } from './live-data.component';
 
 export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/treegrid-overview', component: TreeGridOverviewComponent, 'name': 'Overview',
     description: 'This Angular Tree Grid example demonstrates the overview in Angular Tree Grid Component. Explore here for more details.', 
     order: '01', category: 'Tree Grid' },
+    { 'path': ':theme/treegrid/live-data', component: LiveDataComponent, name: 'Live Data',
+    description: 'This demo for Essential JS 2 Tree Grid component shows the grid Local Live Data Update.',
+    order: '01', category: 'Tree Grid', type: "new" },
     { 'path': ':theme/treegrid/default', component: DefaultComponent, 'name': 'Default Functionalities',
     description: 'This demo for Essential JS2 Tree Grid component shows the default rendering of the Tree Grid  component with minimum configuration.', 
     order: '01', category: 'Tree Grid' },
@@ -261,7 +265,7 @@ export const treegridRouteConfig: Object[] = [
 let declarations: Type<Object>[] = [TreeGridOverviewComponent, DefaultComponent, TreeGridClipboardComponent, TreeGridAdaptiveComponent, LocalDataComponent, RemoteData, SelfReferenceComponent, SortComponent, SortingAPIComponent, DefaultPagingComponent, PagingAPIComponent, ContextMenuComponent, CustomContextMenuComponent, AggregateComponent, CustomAggregateComponent, ColumnReorderComponent, ColumnFormattingComponent, ColumnTemplateComponent, ResizingComponent,
     ColumnMenuComponent, ColumnChooserComponent, CellAlignmentComponent, AutoWrap, ShowHideComponent, HeaderTemplateComponent, FilterComponent, InlineEditing, DialogEditingComponent, BatchEditingComponent, LockRowComponent, CellEditTypeComponent, CommandColumnComponent, EditTemplateComponent, ReactiveFormsComponent, TemplateFormsComponent, SearchComponent,
     StackedHeaderComponent, KeyBoardComponent, DefaultExportComponent, PrintComponent, EventComponent, ConditionalFormattingComponent, ToolbarTemplateComponent,InfiniteScrollingComponent,
-    GridLinesComponent, RowHover, RowHeightComponent, RowTemplateComponent, DragDropComponent, FilteringMenuComponent, FreezeComponent, DefaultScrollingComponent, VirtualScrollingComponent, SelectionComponent, SelectionAPIComponent, CheckboxSelectionComponent, CheckboxColumnComponent, FrozenAPI, LoadingAnimationComponent];
+    GridLinesComponent, RowHover, RowHeightComponent, RowTemplateComponent, DragDropComponent, FilteringMenuComponent, FreezeComponent, DefaultScrollingComponent, VirtualScrollingComponent, SelectionComponent, SelectionAPIComponent, CheckboxSelectionComponent, CheckboxColumnComponent, FrozenAPI, LoadingAnimationComponent, LiveDataComponent];
 
 @NgModule({
     imports: [RouterModule.forChild(treegridRouteConfig), CommonModule, HttpModule, TreeGridAllModule,

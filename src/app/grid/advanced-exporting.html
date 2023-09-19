@@ -1,6 +1,6 @@
 <div class="control-section">
     <div>
-        <ejs-grid #grid id="AdvancedExport" [dataSource]='gridData' [toolbar]='toolbar' (toolbarClick)='toolbarClick($event)' 
+        <ejs-grid #grid id='AdvancedExport' [dataSource]='gridData' [toolbar]='toolbar' (toolbarClick)='toolbarClick($event)'
         [allowExcelExport]='true' [pageSettings]='pageSettings' [allowPaging]='true' [allowPdfExport]='true'>
             <e-columns>
                 <e-column field='ProductID' headerText='Product ID' width='170' textAlign='Right'></e-column>
@@ -16,13 +16,13 @@
         </p>
     </div>
     <div id="description">
-        <p>Grid supports client-side exporting which allows you to export its data to the Excel, Pdf and CSV formats.</p>        
+        <p>Grid supports client-side exporting which allows you to export its data to the Excel, Pdf and CSV formats.</p>
         <p>In this demo, excelexport and pdfexport items are defined in the toolbar. For these toolbar items, we have defined actions
             in toolbarClick event to export the Grid data with header and footer using the
-            <code><a target="_blank" class="code"            
-                href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#excelexport">excelExport</a></code>,
             <code><a target="_blank" class="code"
-                href="http://ej2.syncfusion.com/angular/documentation/grid/api-gridComponent.html#pdfexport">pdfExport</a></code>            methods.</p>
+                href="https://ej2.syncfusion.com/angular/documentation/api/grid/#excelexport">excelExport</a></code>,
+            <code><a target="_blank" class="code"
+                href="https://ej2.syncfusion.com/angular/documentation/api/grid/#pdfexport">pdfExport</a></code>            methods.</p>
         <br/>
         <p style="font-weight: 500">Injecting Module:</p>
         <p>Grid features are segregated into individual feature-wise modules. To use exporting feature, we need to inject

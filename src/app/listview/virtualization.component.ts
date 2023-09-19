@@ -42,7 +42,7 @@ export class VirtualizationListViewComponent {
             target: this.liElement
         });
 
-        [[1010, 'data1'], [5010, 'data5'], [10010, 'data10'], [25010, 'data25']].forEach((ds: string[] | number[]) => {
+        [[1010, 'data1'], [5010, 'data5'], [10010, 'data10'], [25010, 'data25']].forEach((ds: any) => {
             let data: { [key: string]: string | object }[] = this.commonData.slice();
             let index: number;
             let spyIndex: number;
@@ -56,13 +56,6 @@ export class VirtualizationListViewComponent {
             this.dataSource[ds[1]] = data;
         });
     }
-
-    public template: string = '<div class="e-list-wrapper e-list-avatar">' +
-        '<span class="e-avatar e-avatar-circle ${icon} ${$imgUrl ? \'hideUI\' : \'showUI\' }">' +
-        '${icon}</span> <span class="e-avatar e-avatar-circle ${$imgUrl ? $imgUrl + \'-showUI\' : \'hideUI\' }" ' +
-        '></span>' +
-        '<span class="e-list-content">${name}</span></div>';
-
 
     public ddlDatasource: Object[] = [
         { value: '1', text: '1k' },

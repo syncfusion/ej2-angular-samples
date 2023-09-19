@@ -1,6 +1,3 @@
-/**
- * Circulargauge Control
- */
 import { NgModule, ModuleWithProviders, Type } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CircularGaugeAllModule } from '@syncfusion/ej2-angular-circulargauge';

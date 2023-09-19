@@ -1,6 +1,3 @@
-/**
- * Sample for image pointer in the Circular Gauge
- */
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-angular-circulargauge';
 
@@ -65,12 +62,21 @@ export class PointerImageComponent {
     };
 
     public load(args: ILoadedEventArgs): void {
-        // custom code start
+        /* custom code start */
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
-        // custom code end
+        /* custom code end */
+        if(args.gauge.element.offsetWidth < 500)
+        {
+            args.gauge.axes[0].annotations[0].angle = 98;
+            args.gauge.axes[0].annotations[1].angle = 82;
+            args.gauge.axes[0].annotations[2].angle = 72;
+            args.gauge.axes[0].annotations[3].angle = 188;
+            args.gauge.axes[0].annotations[4].angle = 179;
+            args.gauge.axes[0].annotations[5].angle = 174;
+        }
     }
 
     constructor() {

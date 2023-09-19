@@ -1,0 +1,30 @@
+.e-pivotview {
+    width: 100%;
+    height: 100%;
+}
+
+.sb-sample-content-area {
+    min-height: 255px !important;
+}
+
+.control-section {
+    min-height: 255px !important;
+}
+
+#PivotView-LiveData_chart {
+    margin-top: 15px;
+}
+
+.bg-fade {
+    background-color: #FFEBE9 !important;
+    color: #FF3740 !important;
+}
+
+.bg-fade1 {
+    background-color: #DFFFE2 !important;
+    color: #00A653 !important;
+}
+
+.bg-fade2 {
+    color: rgba(0, 0, 0, 0.87);
+}

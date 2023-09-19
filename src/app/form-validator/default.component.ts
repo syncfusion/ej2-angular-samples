@@ -1,11 +1,12 @@
 /* tslint:disable: member-ordering forin */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormsModule, AbstractControl } from '@angular/forms';
 import { FormValidators } from '@syncfusion/ej2-angular-inputs';
 
 @Component({
   selector: 'control-content',
-  templateUrl: './default.html'
+  templateUrl: './default.html',
+  encapsulation: ViewEncapsulation.None,
 })
 
 

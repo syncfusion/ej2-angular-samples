@@ -150,6 +150,22 @@ export class SBController {
                     this.renderCopyCode();
                     this.dynamicTabCreation(this.sourceTab);
                 }
+                if (e.selectedItem && e.selectedItem.innerText === 'DEMO') {
+                    let demoSection = document.getElementsByClassName('sb-demo-section')[0];
+                    if (demoSection) {
+                        let elementList = demoSection.getElementsByClassName('e-control e-lib');
+                        for (let i = 0; i < elementList.length; i++) {
+                            let instance = (elementList[i] as any).ej2_instances;
+                            if (instance && instance[0] && typeof instance[0].refresh === 'function') {
+                                if (instance[0].getModuleName() !== 'split-btn' && instance[0].getModuleName() !== 'checkbox' && instance[0].getModuleName() !== 'radio' && instance[0].getModuleName() !== 'switch') {
+                                    instance[0].refresh();
+                                }
+                            }
+                            if (instance && instance[0] && instance[0].getModuleName() !== 'DashboardLayout')
+                                break;
+                        }
+                    }
+                }
             }
         });
 
@@ -247,6 +263,11 @@ export class SBController {
     breadCrumbUpdate(controlName: string, category: string, sampleName: string) {
         let ele: Element = this.ngEle.nativeElement.querySelector('#sample-bread-crumb');
         this.breadCrumbObject.component.innerHTML = controlName;
+        if (controlName === 'PDF Viewer') {
+            (document.querySelector('.sb-desktop-setting') as HTMLElement).style.display = 'none';
+        } else {
+            (document.querySelector('.sb-desktop-setting') as HTMLElement).style.display = '';
+        }
         if (category && controlName.toLowerCase() !== category.toLowerCase()) {
             this.breadCrumbObject.subCategory.innerHTML = category;
             this.breadCrumbObject.subCategory.style.display = '';
@@ -693,6 +714,7 @@ export class SBController {
     }
 
     onNavButtonClick(e: any) {
+        document.querySelector('.e-search-overlay').classList.add('sb-hide');
         if (this.isMobile) {
             this.toggleLeftPane(e);
         } else {
@@ -729,6 +751,7 @@ export class SBController {
     }
 
     onOpenPreferenceButtonClick(e: Event) {
+        document.querySelector('.e-search-overlay').classList.add('sb-hide');
         if (this.isMobile) {
             this.settingsPopup.show({
                 name: 'SlideRightIn',
@@ -746,10 +769,12 @@ export class SBController {
     }
 
     onSwitcherClick(e: Event) {
+        document.querySelector('.e-search-overlay').classList.add('sb-hide');
         this.switcherPopup.show();
     }
 
     onThemeButtonClick(e: Event) {
+        document.querySelector('.e-search-overlay').classList.add('sb-hide');
         this.themePopup.show();
     }
 

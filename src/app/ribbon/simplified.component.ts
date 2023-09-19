@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
-import { Ribbon, FileMenuSettingsModel, RibbonButtonSettingsModel, RibbonSplitButtonSettingsModel, RibbonComboBoxSettingsModel, RibbonDropDownSettingsModel, RibbonItemSize, RibbonCheckBoxSettingsModel, RibbonColorPickerSettingsModel, LauncherClickEventArgs, DisplayMode, FileMenuEventArgs } from '@syncfusion/ej2-ribbon';
+import { Ribbon, FileMenuSettingsModel, RibbonButtonSettingsModel, RibbonSplitButtonSettingsModel, RibbonComboBoxSettingsModel, RibbonDropDownSettingsModel, RibbonItemSize, RibbonCheckBoxSettingsModel, RibbonColorPickerSettingsModel, LauncherClickEventArgs, DisplayMode, FileMenuEventArgs, RibbonGroupButtonSettingsModel, RibbonGroupButtonSelection } from '@syncfusion/ej2-ribbon';
 import { MenuItemModel } from "@syncfusion/ej2-navigations";
 import { ToastComponent } from '@syncfusion/ej2-angular-notifications';
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
@@ -19,7 +19,7 @@ export class RibbonSimplifiedComponent {
     sourceFiles.files = ['simplified.component.css'];
   }
 
-  public pasteOptions: ItemModel[] = [{ text: "Keep Source Format" }, { text: "Merge format" }, { text: "Keep text only" }];
+  public pasteOptions: ItemModel[] = [{ text: "Keep Source Format" }, { text: "Merge Format" }, { text: "Keep Text Only" }];
   public findOptions: ItemModel[] = [{ text: "Find", iconCss: "e-icons e-search" }, { text: "Advanced find", iconCss: "e-icons e-search" }, { text: "Go to", iconCss: "e-icons e-arrow-right" }];
   public selectOptions: ItemModel[] = [{ text: "Select All" }, { text: "Select Objects" }];
   public dictateOptions: ItemModel[] = [{ text: "Chinese" }, { text: "English" }, { text: "German" }, { text: "French" }];
@@ -30,6 +30,28 @@ export class RibbonSimplifiedComponent {
   public pageOptions: ItemModel[] = [{ text: "Insert Top of page" }, { text: "Format Page Number" }, { text: "Format Page Number" }];
   public linkOptions: ItemModel[] = [{ text: "Insert Link", iconCss: "e-icons e-link" }, { text: "Recent Links", iconCss: "e-icons e-clock" }, { text: "Bookmarks", iconCss: "e-icons e-bookmark" }];
 
+  public groupButtonMultiple: RibbonGroupButtonSettingsModel= {
+    selection: RibbonGroupButtonSelection.Multiple, 
+    items: [
+      { iconCss: 'e-icons e-bold', content: 'Bold', selected: true, click: () => { this.updateContent("Bold") } }, 
+      {iconCss: 'e-icons e-italic', content: 'Italic', click: () => { this.updateContent("Italic") }}, 
+      {iconCss: 'e-icons e-underline', content: 'Underline', click: () => { this.updateContent("Underline") }}, 
+      {iconCss: 'e-icons e-strikethrough', content: 'Strikethrough', click: () => { this.updateContent("Strikethrough") }}, 
+      {iconCss: 'e-icons e-change-case', content: 'Change Case', click: () => { this.updateContent("Change Case") }}]
+  };
+  public groupButtonSingle: RibbonGroupButtonSettingsModel = { 
+    selection: RibbonGroupButtonSelection.Single, 
+    items: [
+      {iconCss: 'e-icons e-align-left', selected: true, click: () => { this.updateContent("Align Left") }},
+      {iconCss: 'e-icons e-align-center', click: () => { this.updateContent("Align Center") }}, 
+      {iconCss: 'e-icons e-align-right', click: () => { this.updateContent("Align Right") }}, 
+      {iconCss: 'e-icons e-justify', click: () => { this.updateContent("Justify") }}
+    ]
+  }
+
+  public decreaseIndent: RibbonButtonSettingsModel = { iconCss: "e-icons e-decrease-indent", clicked: () => { this.updateContent("Decrease Indent"); } };
+  public increaseIndent: RibbonButtonSettingsModel = { iconCss: "e-icons e-increase-indent", clicked: () => { this.updateContent("Increase Indent"); } };
+  public paragraphBtn: RibbonButtonSettingsModel = { iconCss: "e-icons e-paragraph", clicked: () => { this.updateContent("Paragraph Mark"); } };
   public pasteSettings: RibbonSplitButtonSettingsModel = { iconCss: 'e-icons e-paste', items: this.pasteOptions, content: 'Paste', select: (args) => { this.updateContent("Paste -> " + args.item.text); }, click: () => { this.updateContent("Paste"); } };
   public findSettings: RibbonSplitButtonSettingsModel = { iconCss: "e-icons e-search", content: "Find", items: this.findOptions, select: (args) => { this.updateContent("Find -> " + args.item.text); }, click: () => { this.updateContent("Find"); } };
   public selectSettings: RibbonSplitButtonSettingsModel = { iconCss: "e-icons e-mouse-pointer", content: "Select", items: this.selectOptions, select: (args) => { this.updateContent("Select -> " + args.item.text); }, click: () => { this.updateContent("Select"); } };
@@ -68,8 +90,8 @@ export class RibbonSimplifiedComponent {
   public fontSize: string[] = ["8", "9", "10", "11", "12", "14", "16", "18", "20", "22", "24", "26", "28", "36", "48", "72", "96"];
   public fontStyle: string[] = ["Algerian", "Arial", "Calibri", "Cambria", "Cambria Math", "Courier New", "Candara", "Georgia", "Impact", "Segoe Print", "Segoe Script", "Segoe UI", "Symbol", "Times New Roman", "Verdana", "Windings"];
 
-  public fontstyleSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontStyle, index: 3, width: '150px', allowFiltering: true, change: (args) => { this.updateContent("Font Style -> " + args.itemData.text); } };
-  public fontsizeSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontSize, index: 3, width: '65px', popupWidth: '85px', allowFiltering: true, change: (args) => { this.updateContent("Font Size -> " + args.itemData.text); } };
+  public fontstyleSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontStyle, index: 3, width: '150px', allowFiltering: true, change: (args) => { if (args.itemData) { this.updateContent("Font Style -> " + args.itemData.text); } } };
+  public fontsizeSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontSize, index: 3, width: '65px', popupWidth: '85px', allowFiltering: true, change: (args) => { if (args.itemData) { this.updateContent("Font Size -> " + args.itemData.text); } } };
 
   public colorSettings: RibbonColorPickerSettingsModel = { value: '#123456', change: (args) => { this.updateContent(args.currentValue.hex + " color"); } };
 

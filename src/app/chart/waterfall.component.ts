@@ -64,7 +64,6 @@ export class WaterfallChartComponent {
     };
     public sum: number[] = [7];
     public intermediate: number[] = [4];
-    public columnWidth: number = 0.9;
    
      // custom code start
     public load(args: ILoadedEventArgs): void {

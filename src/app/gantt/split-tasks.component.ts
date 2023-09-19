@@ -47,7 +47,7 @@ export class GanttSplitTasksComponent implements OnInit {
             ];
         this.toolbar = ['Add', 'Edit', 'Update', 'Delete', 'Cancel', 'ExpandAll', 'CollapseAll'];
         this.splitterSettings = {
-            columnIndex: 2
+            position: "35%"
         };
         this.labelSettings = {
             leftLabel: 'TaskName',

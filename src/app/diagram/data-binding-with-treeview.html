@@ -1,0 +1,66 @@
+<div id="action-description">
+    <p>
+        This example illustrates how to create a tree view and a diagram with a datasource. It provides support for selecting, adding, deleting, dragging and dropping, and editing annotations of the nodes during runtime. These actions will be reflected in the corresponding nodes of the tree view component.
+    </p>
+  </div>
+  <style>
+         #palette-space {
+            border-style: solid;
+            border-color: #f2f2f2;
+            background: #f2f2f2
+        }
+
+        #diagram-space {
+            border-color: #f2f2f2;
+            border-style: solid;
+        }
+  </style>
+<div class="control-section">
+<div style="width: 100%;height: 50px;margin-bottom: 5px;"> 
+    <div class="btn-group" style="width:70%;float:left;">
+        <button ejs-button  [isPrimary]="true" id="addbtn"  (click)="addButton()"  [disabled]="addBtnDisabled">Add Node</button>
+        <button ejs-button [isPrimary]="true" id="deletebtn"  (click)="deleteButton()"  [disabled]="deleteBtnDisabled">Delete Node</button>
+    </div>
+    <div style="width:30%;float:right;font-size: 16px;">
+          <div class="col-xs-9 db-col-right db-prop-text-style" style="padding-top: 10px">
+            <span style="margin-left: 10px;">Diagram Binding with Treeview</span>
+          </div>
+          <div class="col-xs-3 db-col-left">
+            <svg height="45" width="47">
+                <path d="M27.573,21.885726 C26.039659,21.885726 24.796639,23.128786 24.796639,24.662178 L24.796639,37.3311 C24.796639,38.864491 26.039659,40.107552 27.573,40.107552 L40.064701,40.107552 C41.598042,40.107552 42.841061,38.864491 42.841061,37.3311 L42.841061,24.662178 C42.841061,23.128786 41.598042,21.885726 40.064701,21.885726 z M3.9060001,2.3436508 C2.9710598,2.3436508 2.2131386,3.1015863 2.2131386,4.0365477 L2.2131386,11.76122 C2.2131386,12.69618 2.9710598,13.454117 3.9060001,13.454117 L11.522699,13.454117 C12.457641,13.454117 13.21556,12.69618 13.21556,11.76122 L13.21556,4.0365477 C13.21556,3.1015863 12.457641,2.3436508 11.522699,2.3436508 z M2.7341995,0 L12.8898,0 C14.399857,0 15.624,1.2241688 15.624,2.7342587 L15.624,12.737741 C15.624,14.247831 14.399857,15.472 12.8898,15.472 L8.75,15.472 8.75,29.653 21.167,29.653 21.167,22.526347 C21.167,20.049711 23.174645,18.042 25.6512,18.042 L42.306801,18.042 C44.783356,18.042 46.791,20.049711 46.791,22.526347 L46.791,38.932653 C46.791,41.40929 44.783356,43.417 42.306801,43.417 L25.6512,43.417 C23.174645,43.417 21.167,41.40929 21.167,38.932653 L21.167,32.403 7.3190002,32.403 C6.5596085,32.403 5.9440002,31.787392 5.9440002,31.028 5.9440002,30.933076 5.953619,30.840399 5.9719353,30.75089 L6,30.641743 6,15.472 2.7341995,15.472 C1.2241421,15.472 0,14.247831 0,12.737741 L0,2.7342587 C0,1.2241688 1.2241421,0 2.7341995,0 z" fill="#FF8FABCA"></path>
+            </svg>
+          </div>
+    </div>
+  </div>
+  <div style="width: 100%;">
+    <div id="palette-space" style="width:27%;float:left;height: 700px;overflow: hidden;">
+        <ejs-treeview #treeview id="default" [fields]='field' width="90%" [allowEditing]='allowEditing' [allowDragAndDrop]='allowDragAndDrops' (keyPress) = "keyPress($event)" (nodeEdited) = "nodeEdited($event)" (nodeSelected) = "nodeSelected($event)" (nodeClicked) = "nodeClicked($event)"></ejs-treeview>
+    </div>
+    <div id="diagram-space" style="width:72%;float:right">
+      <div class="content-wrapper" style="width:100%;float:right">
+        <ejs-diagram
+          #diagram
+          id="diagram"
+          width="100%"
+          height="700px"
+          [getConnectorDefaults]="connDefaults"
+          [getNodeDefaults]="nodeDefaults"
+          [layout]="layout"
+          [dataSourceSettings]="dataSourceSettings"
+          [snapSettings]="snapSettings"
+          [tool]="tools"
+          (selectionChange)="selectionChange($event)"
+          (click)="click($event)"
+          (textEdit)="textEdit($event)"
+          (drop)="drop($event)"
+          (dragEnter)="dragEnter($event)"
+        >
+        </ejs-diagram>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div id="description">
+    <p>When a node is added or removed in a Diagram during runtime, the added or removed node is reflected in the tree view component. When an annotation in the diagram is changed it should also be updated in the treeView by using treeview updateNode method. When editing a text in a treeview, use selectedItems to update it in the diagram. You can drag text from the treeview and drop it onto the node in the diagram. Also, you can perform drag and drop operations in the diagram.</p>
+  </div>
+  

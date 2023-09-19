@@ -2,7 +2,7 @@
  * Rich Text Editor Overview Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, EmojiPickerService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, EmojiPickerService, VideoService, AudioService, FormatPainterService } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, TableService, FileManagerService } from '@syncfusion/ej2-angular-richtexteditor';
 import { FileManagerSettingsModel, QuickToolbarSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, addClass, removeClass, Browser } from '@syncfusion/ej2-base';
@@ -17,7 +17,7 @@ import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
     templateUrl: 'tools.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['over-view.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, FileManagerService, EmojiPickerService]
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, FileManagerService, EmojiPickerService, VideoService, AudioService, FormatPainterService]
 })
 export class FullFeatureComponent {
 
@@ -27,12 +27,12 @@ export class FullFeatureComponent {
     private hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
 
     public tools: ToolbarModule = {
-        items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
+        items: ['FormatPainter', 'Bold', 'Italic', 'Underline', 'StrikeThrough',
             'FontName', 'FontSize', 'FontColor', 'BackgroundColor',
             'LowerCase', 'UpperCase','SuperScript', 'SubScript', 'EmojiPicker','|',
             'Formats', 'Alignments', 'NumberFormatList', 'BulletFormatList',
             'Outdent', 'Indent', '|',
-            'CreateTable', 'CreateLink', 'Image', 'FileManager', '|', 'ClearFormat', 'Print',
+            'CreateTable', 'CreateLink', 'Image', 'Audio', 'Video', 'FileManager', '|', 'ClearFormat', 'Print',
             'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
     };
 

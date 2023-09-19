@@ -3,7 +3,7 @@
         This sample demonstrates volume adjustments made for music/video and alarm clock applications.
     </p>
 </div>
-<div class="control-section">
+<div class="control-section" id="lineargauge-volume-settings">
     <div style="display: flex; justify-content: center;padding-top: 12px;">
         <div style="padding:6px">
             <ejs-lineargauge (load)='musicIconLoad($event)' id='containerOne' width='60px' height='350px' background='transparent'
@@ -52,8 +52,8 @@
         font-style: normal;
     }
 
-    [class^="sf-icon-"],
-    [class*=" sf-icon-"] {
+    #lineargauge-volume-settings [class^="sf-icon-"],
+    #lineargauge-volume-settings [class*=" sf-icon-"] {
         font-family: 'font-v1' !important;
         color: white;
         speak: none;
@@ -69,16 +69,16 @@
         margin-top: 70%;
     }
 
-    .sf-icon-music:before {
+    #lineargauge-volume-settings .sf-icon-music:before {
         content: "\e701";
 
     }
 
-    .sf-icon-clock:before {
+    #lineargauge-volume-settings .sf-icon-clock:before {
         content: "\e702";
     }
 
-    .sf-icon-tick:before {
+    #lineargauge-volume-settings .sf-icon-tick:before {
         content: "\e704";
     }
 

@@ -1,13 +1,9 @@
-/**
- * Sample to design Apple watch ring using the Circular Gauge
- */
-
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-angular-circulargauge';
 
-// custom code start
+/* custom code start */
 // tslint:disable
-// custom code end
+/* custom code end */
 
 @Component({
     selector: 'control-content',
@@ -171,16 +167,16 @@ export class AppleWatchComponent {
     }];
 
     public load(args: ILoadedEventArgs): void {
-        // custom code start
+        /* custom code start */
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
-        // custom code end
+        /* custom code end */
     }
 
     public loadRedGauge(args: ILoadedEventArgs): void {
-        // custom code start
+        /* custom code start */
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
@@ -188,11 +184,11 @@ export class AppleWatchComponent {
         if (selectedTheme === 'highcontrast') {
             args.gauge.axes[0].annotations[0].content = '<div id="annotation5"><img style="width:17px;height:17px;" src="./assets/circular-gauge/images/image4.svg" /></div>';
         }
-        // custom code end
+        /* custom code end */
     }
 
     public loadGreenGauge(args: ILoadedEventArgs): void {
-        // custom code start
+        /* custom code start */
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
@@ -200,11 +196,11 @@ export class AppleWatchComponent {
         if (selectedTheme === 'highcontrast') {
             args.gauge.axes[0].annotations[0].content = '<div id="annotation5"><img style="width:15px;height:15px;" src="./assets/circular-gauge/images/image5.svg" /></div>';
         }
-        // custom code end
+        /* custom code end */
     }
 
     public loadBlueGauge(args: ILoadedEventArgs): void {
-        // custom code start
+        /* custom code start */
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
@@ -212,7 +208,7 @@ export class AppleWatchComponent {
         if (selectedTheme === 'highcontrast') {
             args.gauge.axes[0].annotations[0].content = '<div id="annotation5"><img style="width:17px;height:17px;" src="./assets/circular-gauge/images/image6.svg" /></div>';
         }
-        // custom code end
+        /* custom code end */
     }
 
     constructor() {

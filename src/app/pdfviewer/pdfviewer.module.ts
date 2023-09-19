@@ -12,6 +12,9 @@ import { FormFillingComponent } from './form-filling.component';
 import { HandwrittenComponent } from './hand-written.component';
 import { FormDesignerComponent } from './form-designer.component';
 import { AnnotationsComponent } from './annotations.component';
+import {InvisibleSignatureComponent} from './invisible-signature.component';
+import { MessageModule } from '@syncfusion/ej2-angular-notifications';
+import { SwitchModule } from '@syncfusion/ej2-angular-buttons';
 
 export const pdfViewerAppRoutes: Object[] = [
     // tslint:disable-next-line:max-line-length
@@ -23,18 +26,20 @@ export const pdfViewerAppRoutes: Object[] = [
 	// tslint:disable-next-line:max-line-length
     { path: ':theme/pdfviewer/form-filling', component: FormFillingComponent, name: 'Form Filling', order: '06', description: 'The PdfViewer component is used to  view and print pdf documents in web applications.' },
      // tslint:disable-next-line:max-line-length
-     { path: ':theme/pdfviewer/form-designer', component: FormDesignerComponent , name: 'Form Designer', type: 'update', order: '06', description: 'This sample demonstrates the creation of the supported Form fields in the PDF Viewer such as Textbox, Password, Checkbox, Radio Button, Drop Down, List box, Signature, and Initial. We can also customize these fields and can include new fields through the user interaction by switching to the designer mode.'},
+     { path: ':theme/pdfviewer/form-designer', component: FormDesignerComponent , name: 'Form Designer', order: '06', description: 'This sample demonstrates the creation of the supported Form fields in the PDF Viewer such as Textbox, Password, Checkbox, Radio Button, Drop Down, List box, Signature, and Initial. We can also customize these fields and can include new fields through the user interaction by switching to the designer mode.'},
     // tslint:disable-next-line:max-line-length
     { path: ':theme/pdfviewer/annotations', component: AnnotationsComponent , name: 'Annotations', order: '06', description: 'This sample demonstrates the creation of different types of annotations such as Text Markup, Shapes, Measurements, Free text, Stamps, Handwritten signature, ink, and sticky notes in the PDF Viewer. And also we can customize the added annotations or we can include new annotations through user interaction from the PDF Viewer.'},
      // tslint:disable-next-line:max-line-length
-    { path: ':theme/pdfviewer/hand-written', component: HandwrittenComponent , name: 'Handwritten Signature', order: '06', description: 'This sample demonstrates the Handwritten signature and initial support of the PDF Viewer. The signature or initial support reduces the paperwork of reviewing the contents and it is verified digitally.'}
+    { path: ':theme/pdfviewer/hand-written', component: HandwrittenComponent , name: 'Handwritten Signature', order: '06', description: 'This sample demonstrates the Handwritten signature and initial support of the PDF Viewer. The signature or initial support reduces the paperwork of reviewing the contents and it is verified digitally.'},
+    // tslint:disable-next-line:max-line-length
+    { path: ':theme/pdfviewer/invisible-signature', component: InvisibleSignatureComponent , name: 'Invisible Signature', type: 'new', order: '06', description: 'This sample demonstrates how to digitally sign a PDF document from code behind using Syncfusion PDF Viewer and PDF Library'}
 ];
 
 export const pdfViewerRouter: ModuleWithProviders<any> = RouterModule.forChild(pdfViewerAppRoutes);
 
 @NgModule({
-    imports: [SharedModule,pdfViewerRouter, PdfViewerModule, ToolbarModule, DialogModule],
-    declarations: [DefaultPdfViewerComponent,CustomToolbarComponent,RightToLeftComponent,FormFillingComponent, FormDesignerComponent, HandwrittenComponent, AnnotationsComponent],
+    imports: [SharedModule,pdfViewerRouter, PdfViewerModule, ToolbarModule, DialogModule,MessageModule,SwitchModule],
+    declarations: [DefaultPdfViewerComponent,CustomToolbarComponent,RightToLeftComponent,FormFillingComponent, FormDesignerComponent, HandwrittenComponent, AnnotationsComponent, InvisibleSignatureComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 

@@ -66,9 +66,6 @@ export class DataEditingComponent {
     public dragSettings: Object = {
         enable: true
     };
-    public tooltip: Object = {
-        enable: true
-    };
     // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];

@@ -15,4 +15,29 @@
     color: rgba(0, 0, 0, 0.87);
 }
 
+.material-dark .e-custom-spreadsheet.e-spreadsheet .e-sheet .e-sheet-content .e-cell-template .e-input-group.e-control-wrapper {
+    background-color: rgb(56, 56, 56);
+}
+
+.material-dark .e-custom-spreadsheet.e-spreadsheet .e-sheet .e-sheet-content .e-cell-template .e-radio + label .e-label {
+    color: #000;
+}
+
+.material-dark .e-custom-spreadsheet.e-spreadsheet .e-sheet .e-sheet-content .e-cell-template .e-radio + label::before {
+    background-color: #fff;
+    border-color: #757575;
+}
+
+.material-dark .e-custom-spreadsheet.e-spreadsheet .e-sheet .e-sheet-content .e-cell-template .e-radio:checked + label::before {
+    border-color: #00b0ff;
+}
+
+.material-dark .e-custom-spreadsheet.e-spreadsheet .e-sheet .e-sheet-content .e-cell-template .e-radio-wrapper {
+    padding-right: 10px;
+}
+
+.material-dark .e-custom-spreadsheet.e-spreadsheet .e-sheet .e-sheet-content .e-cell-template .e-btn.e-flat {
+    color: #000;
+}
+
 /* custom code end*/

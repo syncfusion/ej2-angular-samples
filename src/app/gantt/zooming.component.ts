@@ -41,7 +41,7 @@ export class GanttZoomingComponent implements OnInit {
             { field: 'Progress' },
         ];
         this.splitterSettings = {
-            columnIndex: 2
+            position: "35%"
         };
     }
 }

@@ -75,12 +75,13 @@ export class IntegrationComponent implements OnInit {
                     text: 'Sales Analysis'
                 },
                 legendSettings: {
-                    position: 'Top'
+                    position: 'Top',
+                    visible: false,
                 },
                 xAxis: {
                     title: { text: this.pivotObj.dataSourceSettings.rows.map(function (args) { return args.caption || args.name; }).join(' ~ ') },
                     labels: this.xLabels,
-                    labelRotation: 315
+                    labelIntersectAction: "Trim" 
                 },
                 yAxis: {
                     title: { text: this.pivotObj.dataSourceSettings.values.map(function (args) { return args.caption || args.name; }).join(' ~ ') },
@@ -103,7 +104,7 @@ export class IntegrationComponent implements OnInit {
             this.heatmap.xAxis = {
                 title: { text: this.pivotObj.dataSourceSettings.rows.map(function (args) { return args.caption || args.name; }).join(' ~ ') },
                 labels: this.xLabels,
-                labelRotation: 315
+                labelIntersectAction: "Trim" 
             };
             this.heatmap.yAxis = {
                 title: { text: this.pivotObj.dataSourceSettings.values.map(function (args) { return args.caption || args.name; }).join(' ~ ') },
@@ -142,7 +143,8 @@ export class IntegrationComponent implements OnInit {
             dataSource: data,
             expandAll: true,
             values: [{ name: 'Sold', caption: 'Units Sold' }],
-            filters: []
+            filters: [],
+            formatSettings: [{ name: 'Sold', format: 'N0' }],
         };
     }
 }

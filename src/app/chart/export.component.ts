@@ -31,7 +31,6 @@ export class ExportChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Measurements (in Gigawatt)',
         labelFormat: '{value}GW',
         minimum: 0,
         maximum: 40,
@@ -41,6 +40,7 @@ export class ExportChartComponent {
         majorTickLines: {width : 0},
         majorGridLines: { width: 2 },
     };
+    legendSettings: Object = { visible: false }
     //Initializing Marker
     public marker: Object = { dataLabel: { visible: true, position: 'Top', enableRotation: Browser.isDevice ? true : false, angle : -90, name: 'DataLabelMappingName', font: {fontWeight: 600, color: '#ffffff', size: '9px'} } }
     // custom code start

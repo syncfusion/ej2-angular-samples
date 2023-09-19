@@ -29,8 +29,8 @@ export class ChunkUploadComponent {
     // set the value to select an item based on mapped value at initial rendering
     public value: string = '500000';
     public path: Object = {
-        saveUrl: 'https://ej2.syncfusion.com/services/api/uploadbox/Save',
-        removeUrl: 'https://ej2.syncfusion.com/services/api/uploadbox/Remove',
+        saveUrl: 'https://services.syncfusion.com/angular/production/api/FileUploader/Save',
+        removeUrl: 'https://services.syncfusion.com/angular/production/api/FileUploader/Remove',
         chunkSize: 500000
     };
 

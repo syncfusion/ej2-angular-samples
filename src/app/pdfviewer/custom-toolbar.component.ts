@@ -8,6 +8,7 @@ import {
 import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
 import { DialogComponent } from '@syncfusion/ej2-angular-popups';
 import { ClickEventArgs } from '@syncfusion/ej2-buttons';
+import { SwitchComponent } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * Default PdfViewer Controller
@@ -27,8 +28,10 @@ export class CustomToolbarComponent implements OnInit {
     public customToolbar: ToolbarComponent;
     @ViewChild('zoomToolbar')
     public zoomToolbar: ToolbarComponent;
-    public service: string = 'https://services.syncfusion.com/angular/production/api/pdfviewer';
-    public document: string = 'Hive_Succinctly.pdf';
+    @ViewChild('switch')
+    public switch: SwitchComponent;
+
+    public document: string = 'https://cdn.syncfusion.com/content/pdf/hive-succinctly.pdf';
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['pdfviewer.component.css'];
     }
@@ -158,5 +161,15 @@ export class CustomToolbarComponent implements OnInit {
                 };
             }
         }
+    }
+    public change(e: any): void {
+        if (e.checked) {
+            this.pdfviewerControl.serviceUrl = '';
+        }
+        else {
+            this.pdfviewerControl.serviceUrl = 'https://ej2services.syncfusion.com/angular/development/api/pdfviewer';
+        }
+        this.pdfviewerControl.dataBind();
+        this.pdfviewerControl.load(this.pdfviewerControl.documentPath, null);
     }
 }

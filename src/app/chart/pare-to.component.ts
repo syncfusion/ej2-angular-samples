@@ -48,7 +48,7 @@ export class ParetoSeriesChartComponent {
         majorGridLines: { width: 0 }, minorGridLines: { width: 0 },
         majorTickLines: { width: 0 }, minorTickLines: { width: 0 },
         lineStyle: { width: 0 },
-        labelIntersectAction: 'Rotate90',
+        labelIntersectAction: 'Rotate45',
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

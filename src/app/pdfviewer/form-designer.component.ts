@@ -3,6 +3,8 @@ import {
     PdfViewerComponent, TextFieldSettings, RadioButtonFieldSettings, InitialFieldSettings, CheckBoxFieldSettings, SignatureFieldSettings, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
     ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService, LoadEventArgs, ValidateFormFieldsArgs
 } from '@syncfusion/ej2-angular-pdfviewer';
+import { SwitchComponent } from '@syncfusion/ej2-angular-buttons';
+import { ClickEventArgs } from '@syncfusion/ej2-buttons';
 
 /**
  * Default PdfViewer Controller
@@ -12,25 +14,28 @@ import {
     templateUrl: 'form-designer.html',
     encapsulation: ViewEncapsulation.None,
     // tslint:disable-next-line:max-line-length
-    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService]
+    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, 
+                TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService],
+    styleUrls: ['pdfviewer.component.css'],
 })
 
 export class FormDesignerComponent implements OnInit {
     @ViewChild('pdfviewer')
     public pdfviewerControl: PdfViewerComponent;
-    public service: string = 'https://services.syncfusion.com/angular/production/api/pdfviewer';
-    public document: string = 'FormDesigner.pdf';
+    @ViewChild('switch')
+    public switch: SwitchComponent;
+
+    public document: string = 'https://cdn.syncfusion.com/content/pdf/form-designer.pdf';
     ngOnInit(): void {
         // ngOnInit function
     }
-
     public documentLoaded(e: LoadEventArgs): void {
-        if (e.documentName === 'FormDesigner.pdf') {
+        if (e.documentName === 'form-designer.pdf') {
             this.pdfviewerControl.formDesignerModule.addFormField("Textbox", { name: "First Name", bounds: { X: 146, Y: 229, Width: 150, Height: 24 } } as TextFieldSettings);
             this.pdfviewerControl.formDesignerModule.addFormField("Textbox", { name: "Middle Name", bounds: { X: 338, Y: 229, Width: 150, Height: 24 } } as TextFieldSettings);
             this.pdfviewerControl.formDesignerModule.addFormField("Textbox", { name: "Last Name", bounds: { X: 530, Y: 229, Width: 150, Height: 24 } } as TextFieldSettings);
-            this.pdfviewerControl.formDesignerModule.addFormField("RadioButton", {bounds: { X: 148, Y: 289, Width: 18, Height: 18 }, name: "Gender", isSelected: false } as RadioButtonFieldSettings);
-            this.pdfviewerControl.formDesignerModule.addFormField("RadioButton", {bounds: { X: 292, Y: 289, Width: 18, Height: 18 }, name: "Gender", isSelected: false } as RadioButtonFieldSettings);
+            this.pdfviewerControl.formDesignerModule.addFormField("RadioButton", { bounds: { X: 148, Y: 289, Width: 18, Height: 18 }, name: "Gender", isSelected: false } as RadioButtonFieldSettings);
+            this.pdfviewerControl.formDesignerModule.addFormField("RadioButton", { bounds: { X: 292, Y: 289, Width: 18, Height: 18 }, name: "Gender", isSelected: false } as RadioButtonFieldSettings);
             this.pdfviewerControl.formDesignerModule.addFormField("Textbox", { name: "DOB Month", bounds: { X: 146, Y: 320, Width: 35, Height: 24 } } as TextFieldSettings);
             this.pdfviewerControl.formDesignerModule.addFormField("Textbox", { name: "DOB Date", bounds: { X: 193, Y: 320, Width: 35, Height: 24 } } as TextFieldSettings);
             this.pdfviewerControl.formDesignerModule.addFormField("Textbox", { name: "DOB Year", bounds: { X: 242, Y: 320, Width: 35, Height: 24 } } as TextFieldSettings);
@@ -48,7 +53,7 @@ export class FormDesignerComponent implements OnInit {
             this.pdfviewerControl.formDesignerModule.addFormField("Textbox", { name: "DOS Date", bounds: { X: 434, Y: 923, Width: 35, Height: 24 } } as TextFieldSettings);
             this.pdfviewerControl.formDesignerModule.addFormField("Textbox", { name: "DOS Year", bounds: { X: 482, Y: 923, Width: 35, Height: 24 } } as TextFieldSettings);
         }
-}
+    }
 
 public validateFormFields(e: ValidateFormFieldsArgs): void {
     let errorMessage : string = "Required Field(s): ";
@@ -92,5 +97,14 @@ public validateFormFields(e: ValidateFormFieldsArgs): void {
         this.pdfviewerControl.showNotificationPopup(errorMessage);
     }
 }
-
+    public change(e: any): void {
+        if (e.checked) {
+            this.pdfviewerControl.serviceUrl = '';
+        }
+        else {
+            this.pdfviewerControl.serviceUrl = 'https://ej2services.syncfusion.com/angular/development/api/pdfviewer';
+        }
+        this.pdfviewerControl.dataBind();
+        this.pdfviewerControl.load(this.pdfviewerControl.documentPath, null);
+    }
 }

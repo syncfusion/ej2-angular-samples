@@ -863,7 +863,8 @@
         "Samples": {
             "default":"Default Functionalities",
             "simplified": "Simplified Mode",
-            "resize": "Ribbon Resizing"
+            "resize": "Ribbon Resizing",
+            "backstage": "Ribbon Backstage"
         }
     },
     "rich-text-editor": {

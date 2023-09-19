@@ -1,0 +1,23 @@
+<div id="action-description">
+  <p>
+    This sample illustrates the structure of an Electricity Sector using complex hierarchical layout with multiple roots.
+  </p>
+</div>
+      <div class="content-wrapper" style="width: 100%;">
+        <ejs-diagram
+          #diagram
+          id="diagram"
+          width="100%"
+          height="499px"
+          [getConnectorDefaults]="connDefaults"
+          [getNodeDefaults]="nodeDefaults"
+          [layout]="layout"
+          [dataSourceSettings]="dataSourceSettings"
+          [snapSettings]="snapSettings"
+          [tool]="tools"
+        >
+        </ejs-diagram>
+      </div>
+      <div id="description">
+        <p>This example shows how to create a complex hierarchical layout with multiple root nodes.</p>
+      </div>

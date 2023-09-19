@@ -8,6 +8,14 @@
       <e-view option="WorkWeek"></e-view>
       <e-view option="Month"></e-view>
     </e-views>
+    <ng-template #editorHeaderTemplate let-data>
+      <div *ngIf="data.Subject; else createNewEvent">
+        {{ data.Subject }}
+      </div>
+      <ng-template #createNewEvent>
+        Create New Event
+      </ng-template>
+    </ng-template>
     <ng-template #editorTemplate let-data>
       <table *ngIf="data != undefined" class="custom-event-editor" width="100%" cellpadding="5">
         <tbody>
@@ -67,6 +75,10 @@
   <p>
     In this demo, the event window is customized based on the specific appointment-related fields required for doctors which can 
     be achieved by making use of the <code>editorTemplate</code> API and its type should be <code>ng-template</code>.
+  </p>
+  <p>
+    In this demo, the editor window header is customized based on the appointment subject field which can be achieved by
+    the <code>editorHeaderTemplate</code>.
   </p>
   <p>
     Each field defined through it should contain the <code>e-field</code> class, and <code>data-name</code> attribute, 

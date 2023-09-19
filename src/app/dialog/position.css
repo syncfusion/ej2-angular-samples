@@ -8,14 +8,6 @@
     margin-bottom: 15px;
     margin-top: 10px;    
 }
-.control-section .e-dialog {
-  width: 452px !important;
-}
-
-.fluent.e-bigger .control-section .e-dialog,
-.fluent-dark.e-bigger .control-section .e-dialog {
-  width: 502px !important;
-}
 
 #poschange {
   width: 405px;

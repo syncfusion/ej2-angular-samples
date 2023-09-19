@@ -1,7 +1,3 @@
-/**
- * Sample to design clock using the Circular Gauge
- */
-
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ILoadedEventArgs, GaugeTheme, CircularGaugeComponent, CircularGauge, IResizeEventArgs } from '@syncfusion/ej2-angular-circulargauge';
 
@@ -66,12 +62,12 @@ export class ClockComponent {
     };
 
     public load(args: ILoadedEventArgs): void {
-        // custom code start
+        /* custom code start */
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
-        // custom code end
+        /* custom code end */
     }
 
     public loaded(args: ILoadedEventArgs): void {
@@ -125,15 +121,15 @@ export class ClockComponent {
             (): void => {
                 if (document.getElementById('clock')) {
                     if (this.NeedlePointer <= 12) {
-                        this.NeedlePointer += 0.2;
                         this.gauge.setPointerValue(0, 2, this.NeedlePointer);
+                        this.NeedlePointer += 0.2;
                     } else {
                         this.NeedlePointer = 0.2;
                     }
                 } else {
                     clearInterval(+pointerInterval);
                 }
-            }, 2000)
+            }, 1000)
     }
 
     constructor() {

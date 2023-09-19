@@ -35,7 +35,7 @@
                                 <ejs-numerictextbox name="Freight" id="Freight" [(ngModel)]="orderData.Freight" floatLabelType='Never'></ejs-numerictextbox>
                             </td>
                             <td style="text-align: right" class='e-rowcell'>
-                                <ejs-datepicker id="OrderDate" name="OrderDate" required [(ngModel)]="orderData.OrderDate" floatLabelType='Never'></ejs-datepicker>                            
+                                <ejs-datepicker id="OrderDate" name="OrderDate" required [(ngModel)]="orderData.OrderDate" floatLabelType='Never'></ejs-datepicker>
                             </td>
                             <td class='e-rowcell'>
                                 <ejs-dropdownlist id="ShipCountry" name="ShipCountry" [(ngModel)]="orderData.ShipCountry" [dataSource]='shipCountryDistinctData' [fields]="{text: 'ShipCountry', value: 'ShipCountry' }" popupHeight='300px' floatLabelType='Never'></ejs-dropdownlist>
@@ -58,30 +58,26 @@
     </div>
     <div id="description">
         <p> The Grid supports CRUD operations. This CRUD operations can be configured in Grid using
-            <code><a target="_blank" class="code" href="http://ej2.syncfusion.com/angular/documentation/grid/api-editSettings.html">
+            <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/grid/#editsettings">
             editSettings</a></code>.
         </p>
         <p>
             In this demo, Angular <code><a target="_blank" class="code" href="https://angular.io/guide/forms#template-driven-forms">
             Template-driven </a></code> Forms is enabled for editing using Inline template.
-            We have created the form controls for editing the row data using NgTemplate content with <code><a target="_blank" class="code"
-            href="http://ej2.syncfusion.com/angular/documentation/grid/api-editSettings.html#mode-string"> editSettingsTemplate </a></code> as template variable.
+            We have created the form controls for editing the row data using NgTemplate content with <code>editSettingsTemplate</code> as template variable.
             The inline template editing can be enabled by defining <code><a target="_blank" class="code"
-            href="http://ej2.syncfusion.com/angular/documentation/grid/api-editSettings.html#mode-string">
+            href="https://ej2.syncfusion.com/angular/documentation/api/grid/editSettings/#mode">
             editSettings.mode
-            </a></code> as <code>Normal</code> and <code><a target="_blank" class="code"
-                href="http://ej2.syncfusion.com/angular/documentation/grid/api-editSettings.html#mode-string">
-                editSettingsTemplate
-                </a></code> as ng-template. You can start editing by double clicking a row or clicking on toolbar's <code>Edit</code>
+            </a></code> as <code>Normal</code> and <code>editSettingsTemplate</code> as ng-template. You can start editing by double clicking a row or clicking on toolbar's <code>Edit</code>
             button, then the currently selected row will be changed to edited state by using given template. you can change the row values and save edited data to the datasource.
         </p>
         <p style="font-weight: 500">Injecting Module:</p>
         <p>
             Grid component features are segregated into individual feature-wise modules. To use editing feature, we need to inject
             <code><a target="_blank" class="code"
-                href="http://ej2.syncfusion.com/angular/documentation/grid/api-edit.html">
-                EditService
-                </a></code> into the <code>@NgModule.providers</code> section.
+              href="https://ej2.syncfusion.com/angular/documentation/api/grid/edit/">
+              EditService
+              </a></code> into the <code>@NgModule.providers</code> section.
         </p>
     </div>
 </div>

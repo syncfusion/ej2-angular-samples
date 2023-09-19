@@ -1,0 +1,21 @@
+#PivotView-Heatmap {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.sb-sample-content-area {
+    min-height: 255px !important;
+}
+
+.control-section {
+    min-height: 255px !important;
+}
+
+#PivotViewcontainerwrapper {
+    height: auto !important;
+}
+
+.e-bigger .e-float-input.e-control-wrapper {
+    width: 100% !important;
+}

@@ -1,10 +1,6 @@
-// custom code start
+/* custom code start */
 // tslint:disable
-// custom code end
-
-/**
- * Sample to design Arc Gauge using the Circular Gauge
- */
+/* custom code end */
 
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-angular-circulargauge';
@@ -90,18 +86,21 @@ export class ArcGaugeComponent {
     }];
 
     public load(args: ILoadedEventArgs): void {
-        // custom code start
+        /* custom code start */
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
-        // custom code end
+        /* custom code end */
     }
 
     public loaded(args: ILoadedEventArgs): void {
         let annotation: Element = document.getElementById(args.gauge.element.id + '_Annotations_0');
         if (annotation) {
             this.annotationRender('slider', this.circulargauge.axes[0].pointers[0].value);
+            if (document.getElementById('pointervalue')) {
+                document.getElementById('pointervalue').innerHTML = this.circulargauge.axes[0].pointers[0].value.toString() + '/100';
+            }
         }
     };
 

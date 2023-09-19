@@ -30,7 +30,7 @@ export class ToolbarTypeComponent {
             'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
     };
     // Mapping DropDownList dataSource property
-    public dataSource: { [key: string]: Object }[] = [{ text: 'Expand', value: 1 }, { text: 'MultiRow', value: 2 }];
+    public dataSource: { [key: string]: Object }[] = [{ text: 'Expand', value: 1 }, { text: 'MultiRow', value: 2 },{ text: 'Scrollable', value: 3 }];
     public fltType: string = 'Auto';
     public placeholder: string = 'Types';
     // Mapping DropDownList fields property
@@ -45,6 +45,10 @@ export class ToolbarTypeComponent {
                 break;
             case 2:
                 this.rteObj.toolbarSettings.type = ToolbarType.MultiRow;
+                this.rteObj.toolbarSettings.enableFloating = this.rteFloatObj.checked;
+                break;
+            case 3:
+                this.rteObj.toolbarSettings.type = ToolbarType.Scrollable;
                 this.rteObj.toolbarSettings.enableFloating = this.rteFloatObj.checked;
                 break;
         }

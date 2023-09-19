@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { TemplateDrivenDropDownListComponent } from './template-driven.component';
 import { ReactiveFormDropDownListComponent } from './reactive-form.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { VirtualScrollDropDownListComponent } from './virtual-scroll.component';
 export const dropdownlistAppRoutes: Object[] = [
     { path: ':theme/drop-down-list/default', component: DefaultDropDownListComponent, name: 'Default Functionalities', description: 'This example demonstrates the default functionalities of the Angular drop-down list component with minimum configuration.', order: '01',
 		category: 'Dropdown List' },
@@ -22,6 +23,8 @@ export const dropdownlistAppRoutes: Object[] = [
     { path: ':theme/drop-down-list/data-binding', component: DataBindingDropDownListComponent, name: 'Data Binding', description: 'This example demonstrates how to bind with local data source and fetch data from remote data service in the Angular drop-down list component.', order: '01',
 		category: 'Dropdown List' },
     { path: ':theme/drop-down-list/template', component: TemplateDropDownListComponent, name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular drop-down list component pop-up list using the template.', order: '01',
+		category: 'Dropdown List' },
+    { path: ':theme/drop-down-list/virtual-scroll', component: VirtualScrollDropDownListComponent, type: 'new', name: 'Virtualization', description: 'This example demonstrates how to utilize the virtualization support of Angular drop-down list component.', order: '01',
 		category: 'Dropdown List' },
     { path: ':theme/drop-down-list/filtering', component: FilteringDropDownListComponent, name: 'Filtering', description: 'This example demonstrates how the filtering functionalities works based on the typed characters in the Angular drop-down list component.', order: '01',
 		category: 'Dropdown List' },
@@ -48,6 +51,7 @@ export const DropDownListRouter: ModuleWithProviders<any> = RouterModule.forChil
         GroupAndIconDropDownListComponent,
         DataBindingDropDownListComponent,
         TemplateDropDownListComponent,
+        VirtualScrollDropDownListComponent,
         CascadingDropDownListComponent,
         FilteringDropDownListComponent,
         InlineDropDownListComponent,

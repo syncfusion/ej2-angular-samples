@@ -66,7 +66,7 @@ export class GanttTasklabelTemplateComponent implements OnInit {
         { field: 'resources' },
       ];
       this.splitterSettings = {
-        columnIndex: 2,
+        position: "35%"
       };
       this.projectStartDate = new Date('03/24/2019');
       this.projectEndDate = new Date('05/04/2019');

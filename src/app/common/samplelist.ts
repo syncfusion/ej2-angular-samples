@@ -80,10 +80,10 @@ export let samplesList: any = [
         'name': 'Data Grid', 'type':'update', 'category': 'Grids', 'order': '01', 'path': 'grid', 'samples': gridRouteConfig, 'ftName': 'datagrid'
     },
     {
-        'name': 'Pivot Table', 'category': 'Grids', 'order': '01', 'path': 'pivot-table', 'samples': pivottableRouteConfig
+        'name': 'Pivot Table', 'type':'update', 'category': 'Grids', 'order': '01', 'path': 'pivot-table', 'samples': pivottableRouteConfig
     },
     {
-        'name': 'Tree Grid', 'category': 'Grids', 'order': '01', 'path': 'treegrid', 'samples': treegridRouteConfig
+        'name': 'Tree Grid', 'type':'update', 'category': 'Grids', 'order': '01', 'path': 'treegrid', 'samples': treegridRouteConfig
     },
     {
         'name': 'Spreadsheet', 'category': 'Grids', 'order': '04', 'path': 'spreadsheet', 'samples': spreadsheetAppRoutes, 'ftName': 'spreadsheet'
@@ -101,7 +101,7 @@ export let samplesList: any = [
         'name': 'Circular Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'circular-gauge', 'samples': circulargaugeAppRoutes
     },
     {
-        'name': 'Diagram', 'category': 'Data visualization', 'order': '02', 'path': 'diagram', 'samples': diagramAppRoutes
+        'name': 'Diagram', 'category': 'Data visualization', 'order': '02', 'path': 'diagram', 'type': 'update', 'samples': diagramAppRoutes
     },
     {
         'name': 'HeatMap Chart', 'category': 'Data visualization', 'order': '02', 'path': 'heatmap-chart', 'samples': heatmapAppRoutes, 'ftName': 'heatmap'
@@ -152,7 +152,7 @@ export let samplesList: any = [
         "name": "Image Editor", 'category': 'File Viewers & Editors', 'ftName': 'image-editor', 'order': '03', 'path': 'image-editor', 'samples': ImageEditorAppRoutes, 'type': 'update'
     },
     {
-        'name': 'Scheduler', 'category': 'Calendars', 'order': '04', 'path': 'schedule', 'samples': scheduleRouteConfig, 'ftName': 'scheduler'
+        'name': 'Scheduler', 'category': 'Calendars', 'order': '04', 'path': 'schedule', 'samples': scheduleRouteConfig, 'ftName': 'scheduler', 'type':'update'
     },
     {
         'name': 'Calendar', 'category': 'Calendars', 'order': '04', 'path': 'calendar', 'samples': calendarAppRoutes
@@ -185,13 +185,13 @@ export let samplesList: any = [
         'name': "SpeedDial", 'category': 'Buttons', 'order': '03', 'path': "speed-dial", 'samples': speedDialAppRoutes,
     },
     {
-        'name': "AutoComplete", 'category': "Dropdowns", 'ftName': "autocomplete", 'order': '05', 'path': "auto-complete", 'samples': autoCompleteAppRoutes
+        'name': "AutoComplete", 'category': "Dropdowns", 'ftName': "autocomplete", 'type': 'update', 'order': '05', 'path': "auto-complete", 'samples': autoCompleteAppRoutes
     },
     {
-        'name': "ComboBox", 'category': "Dropdowns", 'ftName': "combo-box", 'order': '05', 'path': "combo-box", 'samples': comboboxAppRoutes
+        'name': "ComboBox", 'category': "Dropdowns", 'ftName': "combo-box", 'type': 'update', 'order': '05', 'path': "combo-box", 'samples': comboboxAppRoutes
     },
     {
-        'name': "Dropdown List", 'category': "Dropdowns", 'ftName': "dropdown-list", 'order': '05', 'path': "drop-down-list", 'samples': dropdownlistAppRoutes
+        'name': "Dropdown List", 'category': "Dropdowns", 'ftName': "dropdown-list", 'type': 'update', 'order': '05', 'path': "drop-down-list", 'samples': dropdownlistAppRoutes
     },
     {
         'name': "Dropdown Tree", 'category': "Dropdowns", 'ftName': "dropdown-tree", 'order': '05', 'path': "drop-down-tree", 'samples': dropdowntreeAppRoutes
@@ -215,7 +215,7 @@ export let samplesList: any = [
         'name': 'Breadcrumb', 'category': 'Navigation', 'order': '06', 'path': 'breadcrumb', 'samples': breadcrumbAppRoutes, "ftName": "breadcrumb"
     },
     {
-        'name': 'Carousel', 'category': 'Navigation', 'type':'update', 'order': '06', 'path': 'carousel', 'samples': carouselAppRoutes, 'ftName': "carousel"
+        'name': 'Carousel', 'category': 'Navigation', 'order': '06', 'path': 'carousel', 'samples': carouselAppRoutes, 'ftName': "carousel"
     },
     {
         'name': 'Context Menu', 'category': 'Navigation', 'order': '06', 'path': 'context-menu', 'samples': contextMenuAppRoutes, 'ftName': "context-menu"
@@ -236,7 +236,7 @@ export let samplesList: any = [
         'name': 'TreeView', 'category': 'Navigation', 'order': '06', 'path': 'treeview', 'samples': treeAppRoutes, 'ftName': "treeview"
     },
     {
-        'name': 'File Manager', 'category': 'Navigation', 'order': '06', 'path': 'file-manager', 'samples': fileManagerAppRoutes
+        'name': 'File Manager', 'category': 'Navigation','type': 'update', 'order': '06', 'path': 'file-manager', 'samples': fileManagerAppRoutes
     },
     {
         'name': 'Ribbon', 'category': 'Navigation', 'type':'preview', 'order': '06', 'path': 'ribbon', 'samples': ribbonAppRoutes
@@ -272,7 +272,7 @@ export let samplesList: any = [
         'name': "File Upload", 'category': "Inputs", 'order': '08', 'path': "uploader", 'samples': uploaderAppRoutes, 'ftName': 'file-upload'
     },
     {
-        'name': "Range Slider", 'type':'update', 'category': "Inputs", 'order': '08', 'path': "range-slider", 'samples': sliderAppRoutes
+        'name': "Range Slider", 'category': "Inputs", 'order': '08', 'path': "range-slider", 'samples': sliderAppRoutes
     },
     {
         'name': 'Signature', 'category': 'Inputs', 'order': '03', 'path': 'signature', 'samples': signatureAppRoutes, "ftName": "signature"

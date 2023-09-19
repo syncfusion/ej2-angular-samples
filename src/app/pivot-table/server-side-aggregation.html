@@ -1,0 +1,52 @@
+<div id="action-description">
+    <p>This sample demonstrates how to use a server-side pivot engine to obtain, process and return the summarized data
+        via a remote service and display it in the pivot table.</p>
+</div>
+<div id="description">
+    <p>
+        The Pivot Table's server-side pivot engine (external pivot engine) uses the Syncfusion package <a
+        target="_blank" href="https://www.nuget.org/packages/Syncfusion.EJ2.Pivot/"> Syncfusion.EJ2.Pivot</a> to
+        gather data from the data source and perform all pivot operations such as <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/aggregation/#aggregation">
+            aggregation</a>, <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/filtering/#filtering">
+            filtering</a>, <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/sorting/#sorting">
+            sorting</a>, <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/pivotview/grouping">
+            grouping</a>, and more on a separate hosted server and only paged
+        data is sent to the pivot table viewport via web service.
+        The <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/pivotview/dataSourceSettings/#url">
+            dataSourceSettings-&gt;url</a> property allows this web service URL to be
+        connected to the pivot table.
+    </p>
+    <p>
+        In this demo, the pivot table is shown with the virtualization option enabled through the <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/pivotview/#enablevirtualization">
+            enableVirtualization</a> property
+        and an external server engine. This would improve pivot table rendering performance when working with large
+        amounts of data.
+    </p>
+    <br />
+    <p>
+        <strong>Injecting Module:</strong>
+    </p>
+    <p>
+        The pivot table features are segregated into individual modules. To use the virtual scrolling option,
+        we need to inject the
+        <code>VirtualScrollService</code> module using the
+        <code>@NgModule.providers</code> section.
+    </p>
+    <br />
+    <p>
+        More information about server-side aggregation can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/server-side-pivot-engine">
+            documentation section</a>.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-pivotview #pivotview id='PivotView' showFieldList='true' showGroupingBar='true' width='100%' height='450'
+        [dataSourceSettings]=dataSourceSettings (dataBound)='onDataBound()' enableVirtualization='true'
+        allowDataCompression='true'>
+    </ejs-pivotview>
+</div>
