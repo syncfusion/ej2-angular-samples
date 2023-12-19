@@ -39,7 +39,7 @@ export class LineChartComponent {
         maximum: 20,
         interval: 4,
         lineStyle: { width: 0 },
-        majorTickLines: { width: 0 },
+        majorTickLines: { width: 0 }
     };
     public chartArea: Object = {
         border: {

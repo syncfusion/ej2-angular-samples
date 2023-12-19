@@ -26,6 +26,7 @@ export class FormDesignerComponent implements OnInit {
     public switch: SwitchComponent;
 
     public document: string = 'https://cdn.syncfusion.com/content/pdf/form-designer.pdf';
+    public resource:string = "https://cdn.syncfusion.com/ej2/23.2.6/dist/ej2-pdfviewer-lib";
     ngOnInit(): void {
         // ngOnInit function
     }
@@ -102,9 +103,10 @@ public validateFormFields(e: ValidateFormFieldsArgs): void {
             this.pdfviewerControl.serviceUrl = '';
         }
         else {
-            this.pdfviewerControl.serviceUrl = 'https://ej2services.syncfusion.com/angular/development/api/pdfviewer';
+            this.pdfviewerControl.serviceUrl = 'https://services.syncfusion.com/angular/production/api/pdfviewer';
         }
         this.pdfviewerControl.dataBind();
         this.pdfviewerControl.load(this.pdfviewerControl.documentPath, null);
     }
+
 }

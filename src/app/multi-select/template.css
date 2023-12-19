@@ -174,7 +174,8 @@
     }
 
     .material .nameTemp,
-    .material-dark .nameTemp {
+    .material-dark .nameTemp
+     {
         width: 114px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -191,7 +192,7 @@
         position: relative;
         margin-right: -24px;
     }
-    
+
     .e-bigger.material .nameTemp {
         bottom: 24px;
     }

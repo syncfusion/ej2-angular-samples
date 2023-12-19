@@ -28,8 +28,17 @@
   padding-left: 5px;
 }
 
-.timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div:last-child {
+.timeline-resource.e-schedule:not(.e-rtl) .e-timeline-view .e-resource-left-td .e-resource-text>div:last-child {
   border-right: 0;
+}
+
+.timeline-resource.e-schedule.e-rtl .e-timeline-view .e-resource-cells, 
+.timeline-resource.e-schedule.e-rtl .e-timeline-month-view .e-resource-cells {
+    padding-right: 0;
+}
+
+.timeline-resource.e-schedule.e-rtl .template-wrap {
+    text-align: right;
 }
 
 .timeline-resource.e-schedule .e-timeline-view .e-block-appointment {
@@ -170,7 +179,7 @@
   line-height: 83px;
 }
 
-.timeline-resource.e-schedule .template-wrap>div:last-child {
+.timeline-resource.e-schedule:not(.e-rtl) .template-wrap>div:last-child {
   border-right: 0;
 }
 

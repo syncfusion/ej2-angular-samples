@@ -52,7 +52,7 @@
     display: none;
 }
 
-.e-richtexteditor .e-rte-content .e-content pre {
+.e-richtexteditor .e-rte-content .e-content[contenteditable="true"] pre {
     padding: 10px;
     background: #F4F5F7;
 }
@@ -64,4 +64,12 @@
 .highcontrast .e-richtexteditor .e-rte-content .e-content pre {
     padding: 10px;
     background: #303030;
+}
+
+.e-richtexteditor .e-rte-content .e-content .CodeMirror-line  {
+    background: transparent;
+}
+
+#alltoolRTEmirror-view {
+    padding: 0px;
 }

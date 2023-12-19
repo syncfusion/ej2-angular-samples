@@ -112,7 +112,11 @@ export class SpeedometerComponent {
         this.pointerInterval = setInterval(
             (): void => {
                 if (document.getElementById('container')) {
-                    this.pointerValue = Math.abs(this.pointerValue + ((Math.random() * 20) - 10));
+                    let newVal: number = Math.abs(this.pointerValue + (Math.floor(Math.random() * 20) - 10));
+                    if (newVal <= 0) {
+                        newVal = 5;
+                    }
+                    this.pointerValue = newVal;
                     if (this.circulargauge) {
                         this.circulargauge.setPointerValue(0, 0, this.pointerValue);
                         this.circulargauge.setAnnotationValue(0, 0, '<div style="width:90px;text-align:center;font-size:20px;font-family:inherit">' + Math.round(this.pointerValue).toString() + 'km/h' + '</div>');
@@ -136,22 +140,6 @@ export class SpeedometerComponent {
 
         let combineRange: EmitType<CheckBoxChangeEvents>;        
         let range: EmitType<CheckBoxChangeEvents>;
-
-        let gaugeInterval: any = setInterval(
-            (): void => {
-                let newVal: number = Math.abs(this.circulargauge.axes[0].pointers[0].value + (Math.floor(Math.random() * 20) - 10));
-                if (newVal <= 0) {
-                    newVal = 5;
-                }
-                if (document.getElementById('container') && this.circulargauge) {
-                    this.circulargauge.setPointerValue(0, 0, newVal);
-                    if (!isNullOrUndefined(document.getElementById('pointerannotation'))) {
-                        document.getElementById('pointerannotation').innerHTML = newVal.toString() + ' km/h';
-                    }
-                } else {
-                    clearInterval(gaugeInterval);
-                }
-            }, 1000);
 
         let rangeSet: CheckBox = new CheckBox(
             {

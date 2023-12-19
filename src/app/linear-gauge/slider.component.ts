@@ -1,6 +1,3 @@
-/**
- * Sample to design slider using the Linear Gauge
- */
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { LinearGaugeComponent } from '@syncfusion/ej2-angular-lineargauge';
 import { ILoadedEventArgs, LinearGaugeTheme, IPointerDragEventArgs } from '@syncfusion/ej2-lineargauge';

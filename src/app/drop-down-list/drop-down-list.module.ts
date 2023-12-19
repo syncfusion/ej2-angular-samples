@@ -24,7 +24,7 @@ export const dropdownlistAppRoutes: Object[] = [
 		category: 'Dropdown List' },
     { path: ':theme/drop-down-list/template', component: TemplateDropDownListComponent, name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular drop-down list component pop-up list using the template.', order: '01',
 		category: 'Dropdown List' },
-    { path: ':theme/drop-down-list/virtual-scroll', component: VirtualScrollDropDownListComponent, type: 'new', name: 'Virtualization', description: 'This example demonstrates how to utilize the virtualization support of Angular drop-down list component.', order: '01',
+    { path: ':theme/drop-down-list/virtual-scroll', component: VirtualScrollDropDownListComponent, name: 'Virtualization', type : 'update', description: 'This example demonstrates how to utilize the virtualization support of Angular drop-down list component.', order: '01',
 		category: 'Dropdown List' },
     { path: ':theme/drop-down-list/filtering', component: FilteringDropDownListComponent, name: 'Filtering', description: 'This example demonstrates how the filtering functionalities works based on the typed characters in the Angular drop-down list component.', order: '01',
 		category: 'Dropdown List' },

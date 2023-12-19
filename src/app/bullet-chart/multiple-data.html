@@ -1,12 +1,12 @@
 <div id="action-description">
     <p>
-            This sample illustrates a bullet chart with multiple data to compare different values.
+        This sample illustrates a bullet chart with multiple datasets, allowing for the comparison of different values.
     </p>
 </div>
 
 <div class="control-section">
-    <ejs-bulletchart id='localData' style="display: block; text-align: center;" valueField='completedStories' targetField='requiredStories'
-        categoryField='name' height='400px' [minimum]='minimum' [maximum]='maximum' [interval]='interval' [width]='width' valueFill='#304560' targetColor='#304560'
+    <ejs-bulletchart id='localData' style="display: block; text-align: center;" valueField='completedStories' targetField='requiredStories' [minorTickLines]="minorTicklines"
+        categoryField='name' height='400px' [minimum]='minimum' [maximum]='maximum' [interval]='interval' [width]='width' valueFill='color' targetColor='#304560'
         [title]='chartTitle' titlePosition='Top' [dataSource]='data' [animation]='animation' (load)='load($event)' subtitle='Estimated in story points' [tooltip]='tooltip'>
         <e-bullet-range-collection>
             <e-bullet-range end='25' color='#DBE7F3'></e-bullet-range>
@@ -18,6 +18,12 @@
 
 <div id="description">
     <p>
-            Tooltip is enabled in this example, to see the tooltip in action, hover a feature bar or comparative bar on the bullet chart.
+        In this example, you can observe how multiple datasets are compared in a bullet chart. Here, each value bar is assigned a different color from the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/bullet-chart/#datasource"><code>dataSource</code></a>.
+    </p>
+    <p>
+        <code>Tooltips</code> are enabled in this example, to see them in action, hover over a feature bar or comparative bar on the bullet chart.
+    </p>
+    <p>
+        More information on the data binding for the bullet chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/bullet-chart/data-binding">documentation section</a>.
     </p>
 </div>

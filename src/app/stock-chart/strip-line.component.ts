@@ -1,7 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { IStockChartEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { amzn } from './stock-data';
-
 /**
  * Sample for Plot line Series
  */

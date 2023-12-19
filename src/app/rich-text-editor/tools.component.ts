@@ -27,12 +27,12 @@ export class FullFeatureComponent {
     private hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
 
     public tools: ToolbarModule = {
-        items: ['FormatPainter', 'Bold', 'Italic', 'Underline', 'StrikeThrough',
-            'FontName', 'FontSize', 'FontColor', 'BackgroundColor',
-            'LowerCase', 'UpperCase','SuperScript', 'SubScript', 'EmojiPicker','|',
-            'Formats', 'Alignments', 'NumberFormatList', 'BulletFormatList',
-            'Outdent', 'Indent', '|',
-            'CreateTable', 'CreateLink', 'Image', 'Audio', 'Video', 'FileManager', '|', 'ClearFormat', 'Print',
+        items: ['Bold', 'Italic', 'Underline', 'StrikeThrough', 'SuperScript', 'SubScript', '|',
+            'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
+            'LowerCase', 'UpperCase', '|',
+            'Formats', 'Alignments', '|', 'NumberFormatList', 'BulletFormatList', '|',
+            'Outdent', 'Indent', '|', 'CreateLink', 'Image', 'FileManager', 'Video', 'Audio', 'CreateTable', '|', 'FormatPainter', 'ClearFormat',
+            '|', 'EmojiPicker', 'Print', '|',
             'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
     };
 

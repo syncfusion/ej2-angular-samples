@@ -60,8 +60,7 @@ export class MultiSeriesChartComponent {
     public marker1: Object = {
         visible: true,
         width: 7,
-        height: 7,
-       isFilled: true
+        height: 7
     };
    
     // custom code start

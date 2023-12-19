@@ -23,7 +23,7 @@ export class DataVirtualizationComponent {
   public readonly = true;
   public resourceDataSource: Record<string, any>[] = this.generateResourceData(1, 1000, 'Resource');
   private dataManager: DataManager = new DataManager({
-    url: 'https://ej2services.syncfusion.com/angular/development/api/VirtualEventData',
+    url: 'https://services.syncfusion.com/angular/production/api/VirtualEventData',
     adaptor: new WebApiAdaptor(),
     crossDomain: true
   });

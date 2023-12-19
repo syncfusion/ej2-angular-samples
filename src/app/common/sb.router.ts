@@ -78,6 +78,8 @@ import { SpeedDialSampleModule } from "../speed-dial/speed-dial.module";
 import { SkeletonSampleModule } from "../skeleton/skeleton.module";
 import { RatingSampleModule } from "../rating/rating.module";
 import { RibbonSampleModule } from "../ribbon/ribbon.module";
+import { StepperSampleModule } from '../stepper/stepper.module';
+import { ThreeDimensionChartSampleModule } from '../three-dimension-chart/three-dimension-chart.module';
 
 
 const appRoutes: any = [
@@ -94,6 +96,7 @@ const appRoutes: any = [
     { path: 'chart', loadChildren: import('../chart/chart.module').then(m=>m.ChartSampleModule) },
     { path: '', redirectTo: 'material/chart/overview-chart', pathMatch: 'full' },
     { path: '**', redirectTo: 'material/chart/overview-chart' },
+    { path: 'three-dimension-chart', loadChildren: import('../three-dimension-chart/three-dimension-chart.module').then(m=>m.ThreeDimensionChartSampleModule) },
     { path: 'stockchart', loadChildren: import('../stock-chart/stock-chart.module').then(m=>m.StockChartSampleModule) },
     { path: 'arcgauge', loadChildren: import('../arc-gauge/arc-gauge.module').then(m=>m.ArcGaugeSampleModule) },
     { path: 'circulargauge', loadChildren: import('../circular-gauge/circular-gauge.module').then(m=>m.CircularGaugeSampleModule) },
@@ -167,6 +170,8 @@ const appRoutes: any = [
     { path: ':theme/file-manager/:sample', redirectTo: 'material/file-manager/default' },
     { path: 'ribbon', loadChildren: import('../ribbon/ribbon.module').then(m=>m.RibbonSampleModule) },
     { path: ':theme/ribbon/:sample', redirectTo: 'material/ribbon/default' },
+    { path: 'stepper', loadChildren: StepperSampleModule },
+    { path: ':theme/stepper/:sample', redirectTo: 'material/stepper/default' },
     // Notifications
     { path: ':theme/badge/:sample', redirectTo: 'material/badge/default' },
     { path: 'message', loadChildren: import('../message/message.module').then(m=>m.MessageSampleModule) },
@@ -207,18 +212,19 @@ const appRoutes: any = [
         SpreadsheetSampleModule,
         // Data visualization
         ChartSampleModule,
+        ThreeDimensionChartSampleModule,
+        StockChartSampleModule,
         ArcGaugeSampleModule,
         CircularGaugeSampleModule,
-        LinearGaugeSampleModule,
         DiagramSampleModule,
-        StockChartSampleModule,
+        HeatmapSampleModule,
+        LinearGaugeSampleModule,
         MapsSampleModule,
         RangeNavigatorSampleModule,
-        SparklineSampleModule,
         SmithchartSampleModule,
         BarcodeSampleModule,
+        SparklineSampleModule,
         TreemapSampleModule,
-        HeatmapSampleModule,
         BulletChartSampleModule,
         KanbanSampleModule,
         // Editors
@@ -261,6 +267,7 @@ const appRoutes: any = [
         ToolbarSampleModule,
         TreeViewSampleModule,
         RibbonSampleModule,
+        StepperSampleModule,
         // Notifications
         MessageSampleModule,
         BadgeModule,

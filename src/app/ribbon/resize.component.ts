@@ -26,7 +26,7 @@ export class RibbonResizeComponent {
   public findOptions: ItemModel[] = [{ text: "Find", iconCss: "e-icons e-search" }, { text: "Advanced find", iconCss: "e-icons e-search" }, { text: "Go to", iconCss: "e-icons e-arrow-right" }];
   public selectOptions: ItemModel[] = [{ text: "Select All" }, { text: "Select Objects" }];
   public dictateOptions: ItemModel[] = [{ text: "Chinese" }, { text: "English" }, { text: "German" }, { text: "French" }];
-  public tableOptions: ItemModel[] = [{ text: "Insert Table" }, { text: "This device" }, { text: "Convert Table" }, { text: "Excel SpreadSheet" }];
+  public tableOptions: ItemModel[] = [{ text: "Insert Table" }, { text: "Draw Table" }, { text: "Convert Table" }, { text: "Excel SpreadSheet" }];
   public shapeOptions: ItemModel[] = [{ text: "Lines" }, { text: "Rectangles" }, { text: "Basic Arrows" }, { text: "Basic Shapes" }, { text: "FlowChart" }];
   public headerOptions: ItemModel[] = [{ text: "Insert Header" }, { text: "Edit Header" }, { text: "Remove Header" }];
   public footerOptions: ItemModel[] = [{ text: "Insert Footer" }, { text: "Edit Footer" }, { text: "Remove Footer" }];
@@ -34,7 +34,8 @@ export class RibbonResizeComponent {
   public linkOptions: ItemModel[] = [{ text: "Insert Link", iconCss: "e-icons e-link" }, { text: "Recent Links", iconCss: "e-icons e-clock" }, { text: "Bookmarks", iconCss: "e-icons e-bookmark" }];
 
   public groupButtonMultiple: RibbonGroupButtonSettingsModel = {
-    selection: RibbonGroupButtonSelection.Multiple, 
+    selection: RibbonGroupButtonSelection.Multiple,
+    header: 'Format Styles',
     items: [
       { iconCss: 'e-icons e-bold', content: 'Bold', selected: true, click: () => { this.updateContent("Bold") } }, 
       {iconCss: 'e-icons e-italic', content: 'Italic', click: () => { this.updateContent("Italic") }}, 
@@ -43,7 +44,8 @@ export class RibbonResizeComponent {
       {iconCss: 'e-icons e-change-case', content: 'Change Case', click: () => { this.updateContent("Change Case") }}]
   };
   public groupButtonSingle: RibbonGroupButtonSettingsModel = { 
-    selection: RibbonGroupButtonSelection.Single, 
+    selection: RibbonGroupButtonSelection.Single,
+    header: 'Alignment',
     items: [
       {iconCss: 'e-icons e-align-left', selected: true, click: () => { this.updateContent("Align Left") }},
       {iconCss: 'e-icons e-align-center', click: () => { this.updateContent("Align Center") }}, 
@@ -52,9 +54,9 @@ export class RibbonResizeComponent {
     ]
   }
 
-  public decreaseIndent: RibbonButtonSettingsModel = { iconCss: "e-icons e-decrease-indent", clicked: () => { this.updateContent("Decrease Indent"); } };
-  public increaseIndent: RibbonButtonSettingsModel = { iconCss: "e-icons e-increase-indent", clicked: () => { this.updateContent("Increase Indent"); } };
-  public paragraphBtn: RibbonButtonSettingsModel = { iconCss: "e-icons e-paragraph", clicked: () => { this.updateContent("Paragraph Mark"); } };
+  public decreaseIndent: RibbonButtonSettingsModel = { iconCss: "e-icons e-decrease-indent", content: 'Decrease Indent', clicked: () => { this.updateContent("Decrease Indent"); } };
+  public increaseIndent: RibbonButtonSettingsModel = { iconCss: "e-icons e-increase-indent", content: 'Increase Indent', clicked: () => { this.updateContent("Increase Indent"); } };
+  public paragraphBtn: RibbonButtonSettingsModel = { iconCss: "e-icons e-paragraph", content: 'Paragraph', clicked: () => { this.updateContent("Paragraph Mark"); } };
   public pasteSettings: RibbonSplitButtonSettingsModel = { iconCss: 'e-icons e-paste', items: this.pasteOptions, content: 'Paste', select: (args) => { this.updateContent("Paste -> " + args.item.text); }, click: () => { this.updateContent("Paste"); } };
   public findSettings: RibbonSplitButtonSettingsModel = { iconCss: "e-icons e-search", content: "Find", items: this.findOptions, select: (args) => { this.updateContent("Find -> " + args.item.text); }, click: () => { this.updateContent("Find"); } };
   public selectSettings: RibbonSplitButtonSettingsModel = { iconCss: "e-icons e-mouse-pointer", content: "Select", items: this.selectOptions, select: (args) => { this.updateContent("Select -> " + args.item.text); }, click: () => { this.updateContent("Select"); } };
@@ -93,8 +95,8 @@ export class RibbonResizeComponent {
   public fontSize: string[] = ["8", "9", "10", "11", "12", "14", "16", "18", "20", "22", "24", "26", "28", "36", "48", "72", "96"];
   public fontStyle: string[] = ["Algerian", "Arial", "Calibri", "Cambria", "Cambria Math", "Courier New", "Candara", "Georgia", "Impact", "Segoe Print", "Segoe Script", "Segoe UI", "Symbol", "Times New Roman", "Verdana", "Windings"];
 
-  public fontstyleSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontStyle, index: 3, width: '150px', allowFiltering: true, change: (args) => { if (args.itemData) { this.updateContent("Font Style -> " + args.itemData.text); } } };
-  public fontsizeSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontSize, index: 3, width: '65px', popupWidth: '85px', allowFiltering: true, change: (args) => { if (args.itemData) { this.updateContent("Font Size -> " + args.itemData.text); } } };
+  public fontstyleSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontStyle, label: 'Font Style', index: 3, width: '115px', popupWidth: '150px', allowFiltering: true, change: (args) => { if (args.itemData) { this.updateContent("Font Style -> " + args.itemData.text); } } };
+  public fontsizeSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontSize, label: 'Font Size', index: 3, width: '65px', popupWidth: '85px', allowFiltering: true, change: (args) => { if (args.itemData) { this.updateContent("Font Size -> " + args.itemData.text); } } };
 
   public colorSettings: RibbonColorPickerSettingsModel = { value: '#123456', change: (args) => { this.updateContent(args.currentValue.hex + " color"); } };
 
@@ -140,7 +142,7 @@ export class RibbonResizeComponent {
   public value = this.container?.offsetWidth;
 
   public pictureList: Object = [
-    { text: 'This device' },
+    { text: 'This Device' },
     { text: 'Stock Images' },
     { text: 'Online Images' }];
 

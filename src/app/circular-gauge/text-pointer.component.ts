@@ -36,6 +36,10 @@ export class TextPointerComponent {
         enable: false
     };
 
+    public needleAnimation: Object = {
+        enable: true
+    };
+
     public load(args: ILoadedEventArgs): void {
         /* custom code start */
         let selectedTheme: string = location.hash.split('/')[1];

@@ -12,6 +12,8 @@ export class GanttVirtualScrollComponent implements OnInit {
     public splitterSettings: object;
     public columns: object[];
     public labelSettings: object;
+    public projectStartDate: Date;
+    public projectEndDate: Date;
     public ngOnInit(): void {
         this.data = virtualData;
         this.taskSettings = {
@@ -37,5 +39,7 @@ export class GanttVirtualScrollComponent implements OnInit {
             leftLabel: 'TaskName',
             taskLabel: 'Progress'
         };
+        this.projectStartDate = new Date('04/01/2019');
+        this.projectEndDate = new Date('12/31/2025');
     }
 }

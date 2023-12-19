@@ -16,30 +16,26 @@
     <ejs-gantt id="GanttExport" #ganttExcel height="430px" [dataSource]="data" [taskFields]="taskSettings"
         [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [treeColumnIndex]="1"
         [allowExcelExport]="true" [allowPdfExport]="true" height="450px" [allowSelection]="true" dateFormat="MMM dd, y"
-        [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
-        [gridLines]="gridLines" [toolbar]="toolbar" [resourceFields] = "resourceFields"
+        [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true" [holidays]="holidays"
+        [gridLines]="gridLines" [toolbar]="toolbar" [resourceFields] = "resourceFields" [eventMarkers]="eventMarkers"
         [resources]="resources" (toolbarClick)="toolbarClick($event)" [splitterSettings]="splitterSettings" [columns]="columns">
     </ejs-gantt>
 </div>
 <div id="description">
-  <p>Gantt supports client-side exporting, which allows you to export its data to the Excel, PDF and CSV formats. </p>
-  <p>In this demo, we have defined actions in the
-    <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#toolbarclick">toolbarClick</a></code>
-    event to export the Gantt data using the
-    <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#excelexport">excelExport</a></code>
-    ,
-    <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#pdfexport">pdfExport</a></code>
-    and
-    <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#csvexport">csvExport</a></code>
-    methods.
-  </p>
-  <p>In addition we have provided support to export the Gantt component where each rows are auto-fit to the PDF document
-    page width using
-    <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#pdfexport">fitToWidthSettings</a></code>
-    in <code>PdfExportProperties</code></p>
+    <p>Gantt supports client-side exporting, which allows you to export its data to the Excel, PDF and CSV formats. </p>
+    <p>In this demo, we have defined actions in the
+      <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#toolbarclick">toolbarClick</a></code>
+      event to export the Gantt data using the
+      <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#excelexport">excelExport</a></code>
+      ,
+      <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#pdfexport">pdfExport</a></code>
+      and
+      <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#csvexport">csvExport</a></code>
+      methods.
+    </p>
+    <p>In addition we have provided support to export the Gantt component where each rows are auto-fit to the PDF document
+      page width using <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#pdfexport">fitToWidthSettings</a></code> in <code>PdfExportProperties</code> and also it includes the functionality allowing the PDF export of <code>holidays</code> and <code>eventMarkers</code>.</p>
   <p style="font-weight: 500">Injecting Module:</p>
-  <p>To use Excel and CSV export features, we need to inject the <code>ExcelExportService</code> into the
-    <code>@NgModule.providers</code> section.</p>
-  <p>To use PDF export feature, inject the <code>PdfExportService</code> into the <code>@NgModule.providers</code>
-    section.</p>
+    <p>To use Excel and CSV export features, we need to inject the <code>ExcelExportService</code> into the <code>@NgModule.providers</code> section.</p>
+    <p>To use PDF export feature, inject the <code>PdfExportService</code> into the <code>@NgModule.providers</code> section.</p>
 </div>

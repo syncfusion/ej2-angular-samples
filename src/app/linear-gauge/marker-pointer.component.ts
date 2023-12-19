@@ -1,6 +1,3 @@
-/**
- *  Sample for marker pointer in the Linear Gauge
- */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { LinearGaugeComponent } from '@syncfusion/ej2-angular-lineargauge';
 import { ILoadedEventArgs, LinearGaugeTheme, IPointerDragEventArgs } from '@syncfusion/ej2-lineargauge';
@@ -16,8 +13,8 @@ export class MarkerPointerComponent {
     public linearTriangle: LinearGaugeComponent;
     @ViewChild('linearCircle')
     public linearCircle: LinearGaugeComponent;
-    @ViewChild('linearDiamond')
-    public linearDiamond: LinearGaugeComponent;
+    @ViewChild('linearText')
+    public linearText: LinearGaugeComponent;
     @ViewChild('linearRectangle')
     public linearRectangle: LinearGaugeComponent;
     @ViewChild('linearMultiple')
@@ -95,7 +92,7 @@ export class MarkerPointerComponent {
         labelStyle: { font: { fontFamily: 'inherit' } }
     }];
 
-    public axesDiamond: Object[] = [{
+    public axesText: Object[] = [{
         line: {
             width: 5
         },
@@ -114,8 +111,10 @@ export class MarkerPointerComponent {
             value: 50,
             height: 15,
             enableDrag: true,
+            offset: -10,
             placement: 'Near',
-            markerType: 'Diamond',
+            markerType: 'Text',
+            text:'50 Points',
             animationDuration: 1500
          }
         ],
@@ -266,19 +265,20 @@ export class MarkerPointerComponent {
         }
     }
 
-    public dragEndDiamond(args: IPointerDragEventArgs): void {
-        this.linearDiamond.axes[0].pointers[0].animationDuration = 1500;
-        this.linearDiamond.axes[0].pointers[1].animationDuration = 1500;
+    public dragEndText(args: IPointerDragEventArgs): void {
+        this.linearText.axes[0].pointers[0].animationDuration = 1500;
+        this.linearText.axes[0].pointers[1].animationDuration = 1500;
     }
 
-    public dragStartDiamond(args: IPointerDragEventArgs): void {
-        this.linearDiamond.axes[0].pointers[0].animationDuration = 0;
-        this.linearDiamond.axes[0].pointers[1].animationDuration = 0;
+    public dragStartText(args: IPointerDragEventArgs): void {
+        this.linearText.axes[0].pointers[0].animationDuration = 0;
+        this.linearText.axes[0].pointers[1].animationDuration = 0;
     }
 
-    public dragMoveDiamond(args: IPointerDragEventArgs): void {
+    public dragMoveText(args: IPointerDragEventArgs): void {
         if (args.pointerIndex == 1) {
-            this.linearDiamond.setPointerValue(0, 0, args.currentValue);
+            this.linearText.axes[0].pointers[1].text = Math.round(args.currentValue).toString() + " Points";
+            this.linearText.setPointerValue(0, 0, args.currentValue);
         }
     }
 
@@ -319,32 +319,33 @@ export class MarkerPointerComponent {
     }
 
     public horizontalGauge(e: Event): void {
-        this.linearTriangle.width = this.linearCircle.width = this.linearDiamond.width = this.linearRectangle.width = this.linearMultiple.width = '450px';
-        this.linearTriangle.height = this.linearCircle.height = this.linearDiamond.height = this.linearRectangle.height = this.linearMultiple.height = '150px';
-        this.linearTriangle.orientation = this.linearCircle.orientation = this.linearDiamond.orientation = this.linearRectangle.orientation = this.linearMultiple.orientation = "Horizontal";
+        this.linearTriangle.width = this.linearCircle.width = this.linearText.width = this.linearRectangle.width = this.linearMultiple.width = '450px';
+        this.linearTriangle.height = this.linearCircle.height = this.linearText.height = this.linearRectangle.height = this.linearMultiple.height = '150px';
+        this.linearTriangle.orientation = this.linearCircle.orientation = this.linearText.orientation = this.linearRectangle.orientation = this.linearMultiple.orientation = "Horizontal";
         if (e.currentTarget != null) {
             e.currentTarget['style']['color'] = "white";
             e.currentTarget['style']['backgroundColor'] = "#0074E3";
             document.getElementById('vertical').style.color = "black";
             document.getElementById('vertical').style.backgroundColor = "white";
             document.getElementById('containerTriangle').className = document.getElementById('containerCircle').className =
-                document.getElementById('containerDiamond').className = document.getElementById('containerRectangle').className =
+                document.getElementById('containerText').className = document.getElementById('containerRectangle').className =
                 document.getElementById('containerMultiple').className = "col-xs-12 col-sm-12 col-lg-12 col-md-12";
                 document.getElementById('containerBox').style.padding = "0%";
         }
     };
 
     public verticalGauge(e: Event): void {
-        this.linearTriangle.width = this.linearCircle.width = this.linearDiamond.width = this.linearRectangle.width = this.linearMultiple.width = '150px';
-        this.linearTriangle.height = this.linearCircle.height = this.linearDiamond.height = this.linearRectangle.height = this.linearMultiple.height = '350px';
-        this.linearTriangle.orientation = this.linearCircle.orientation = this.linearDiamond.orientation = this.linearRectangle.orientation = this.linearMultiple.orientation = "Vertical";
+        this.linearTriangle.width = this.linearCircle.width = this.linearRectangle.width = this.linearMultiple.width = '150px';
+        this.linearText.width = '168px';
+        this.linearTriangle.height = this.linearCircle.height = this.linearText.height = this.linearRectangle.height = this.linearMultiple.height = '350px';
+        this.linearTriangle.orientation = this.linearCircle.orientation = this.linearText.orientation = this.linearRectangle.orientation = this.linearMultiple.orientation = "Vertical";
         if (e.currentTarget != null) {
             e.currentTarget['style']['color'] = "white";
             e.currentTarget['style']['backgroundColor'] = "#0074E3";
             document.getElementById('horizontal')['style']['color'] = "black";
             document.getElementById('horizontal')['style']['backgroundColor'] = "white";
             document.getElementById('containerTriangle').className = document.getElementById('containerCircle').className =
-                document.getElementById('containerDiamond').className = document.getElementById('containerRectangle').className =
+                document.getElementById('containerText').className = document.getElementById('containerRectangle').className =
                 document.getElementById('containerMultiple').className = "col-xs-4 col-sm-4 col-lg-2 col-md-2";
                 document.getElementById('containerBox').style.padding = "4%";
         }

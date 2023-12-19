@@ -20,13 +20,13 @@ export class TooltipTemplateComponent {
         edgeLabelPlacement: 'Shift',
         majorGridLines: { width: 0 },
         majorTickLines: { width: 0 },
-        lineStyle: { color: '#EFEFEF' },
+        lineStyle: { color: '#EFEFEF', width: 3 },
     };
 
     public yAxis: AxisModel = {
         rangePadding: 'None',
         labelStyle: { color: 'white'},
-        majorGridLines: { color: '#EFEFEF' },
+        majorGridLines: { color: '#EFEFEF', width: 2 },
         majorTickLines: { width: 0},
         title: 'Billion Bushels',
         titleStyle: { color: 'white'},
@@ -52,13 +52,12 @@ export class TooltipTemplateComponent {
 
     public marker: MarkerSettingsModel = {
         visible: true,
-        width: 7,
-        height: 7,
+        width: 10,
+        height: 10,
         fill: '#C1272D',
         border: {color: '#333333', width: 2}
     };
     
-
     public data: Object[] = [{ x: 2002, y: 1.61 }, { x: 2003, y: 2.34 }, { x: 2004, y: 2.16 }, { x: 2005, y: 2.10 },
         { x: 2006, y: 1.81 }, { x: 2007, y: 2.05 }, { x: 2008, y: 2.50 }, { x: 2009, y: 2.22 },
         { x: 2010, y: 2.21 }, { x: 2011, y: 2.00 }, { x: 2012, y: 1.7 }];

@@ -73,7 +73,8 @@ export class SelectionChartComponent {
         labelFormat: '{value}%',
         lineStyle : {width : 0},
         minimum: 0,
-        maximum: 80
+        maximum: 80,
+        interval: 20
     };
     public legend: Object = {
         visible: true,

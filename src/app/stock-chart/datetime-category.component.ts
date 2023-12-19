@@ -1,7 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { IStockChartEventArgs, ChartTheme, ITooltipRenderEventArgs } from '@syncfusion/ej2-angular-charts';
 import { datetimeCategoryData } from './stock-data';
-
 /**
  * Sample for Area Series
  */
@@ -13,7 +12,7 @@ import { datetimeCategoryData } from './stock-data';
 export class DateTimeCategoryComponent {
 
     public data1: Object[] = datetimeCategoryData;
-    public primaryXAxis: Object = { valueType: 'DateTimeCategory', majorGridLines: { width: 0 }, crosshairTooltip: { enable: true } };
+    public primaryXAxis: Object = { valueType: 'DateTimeCategory', majorGridLines: { width: 0 }, edgeLabelPlacement: 'Shift', crosshairTooltip: { enable: true } };
     public primaryYAxis: Object = {
         lineStyle: { width: 0 },
         majorTickLines: { width: 0 }

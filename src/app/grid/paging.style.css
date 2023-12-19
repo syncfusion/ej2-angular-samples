@@ -1,3 +1,14 @@
 .e-pager .e-pagecountmsg {
   display: inline-block;
 }
+.e-pager .e-pagenomsg {
+  display: none;
+}
+@media screen and (max-width: 451px) {
+  .e-grid .e-pager .e-pagecountmsg {
+    display: none;
+  }
+  .e-grid .e-pager .e-pagenomsg {
+      display: inline-block;
+  }
+}

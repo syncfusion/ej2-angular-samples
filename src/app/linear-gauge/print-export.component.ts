@@ -1,6 +1,3 @@
-/**
- * Sample for print and export in the Linear Gauge
- */
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ILoadedEventArgs, LinearGaugeTheme, LinearGauge, ExportType } from '@syncfusion/ej2-lineargauge';
 import { PrintService, PdfExportService, ImageExportService } from '@syncfusion/ej2-angular-lineargauge';

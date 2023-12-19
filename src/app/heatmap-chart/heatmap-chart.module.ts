@@ -7,33 +7,34 @@ import { SharedModule } from '../common/shared.module';
 import { HeatMapAllModule } from '@syncfusion/ej2-angular-heatmap';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { ChartAllModule } from '@syncfusion/ej2-angular-charts';
-import { HeatmapDefaultComponent } from './default.component';
+import { HeatmapDefaultComponent } from './default-functionalities.component';
 import { HeatmapCalendarComponent } from './calendar-heatmap.component';
-import { HeatmapRowJsonComponent } from './row-json-binding.component';
-import { HeatmapCellJsonComponent } from './cell-json-binding.component';
-import { HeatmapArrayRowComponent } from './array-row.component';
-import { HeatmapArrayCellComponent } from './array-cell.component';
-import { HeatmapInversedComponent } from './inversed.component';
-import { HeatmapOpposedComponent } from './opposed.component';
-import { HeatmapLegendComponent } from './legend.component';
+import { HeatmapRowJsonComponent } from './json-row.component';
+import { HeatmapCellJsonComponent } from './json-cell.component';
+import { HeatmapArrayRowComponent } from './row.component';
+import { HeatmapArrayCellComponent } from './cell.component';
+import { HeatmapInversedComponent } from './inversed-axis.component';
+import { HeatmapOpposedComponent } from './opposed-axis.component';
+import { HeatmapLegendComponent } from './legend-placement.component';
 import { HeatmapMultilevelLabelComponent } from './multi-level-labels.component';
 import { HeatmapCellSelectionComponent } from './cell-selection.component';
-import { HeatmapPaletteComponent } from './palette.component';
+import { HeatmapPaletteComponent } from './palette-mode.component';
 import { HeatmapColorRangeComponent } from './color-range.component';
 import { HeatmapLargeDataComponent } from './large-data.component';
 import { HeatmapRenderModeComponent } from './render-mode.component';
 import { HeatmapTooltipComponent } from './tooltip-template.component';
 import { HeatmapEmptyPointComponent } from './empty-points.component';
+import { LabelTemplateComponent } from './label-template.component';
 import { HeatmapBubbleTypesComponent } from './bubble-types.component';
 import { HeatmapColorAndSizeAttributesComponent } from './color-and-size-attributes.component'
 
 export const heatmapAppRoutes: Object[] = [
     {
-        path: ':theme/heatmap-chart/default', component: HeatmapDefaultComponent,
+        path: ':theme/heatmap-chart/default-functionalities', component: HeatmapDefaultComponent,
         description: 'This demo for Essential JS2 Heatmap control shows the heat map control displayed with minimum configuration.',
         name: 'Default Functionalities', order: '01', category: 'Heatmap Chart',
         sourceFiles: [
-            {displayName: 'default.component.ts', path: './src/heatmap-chart/default.component.ts'},
+            {displayName: 'default-functionalities.component.ts', path: './src/heatmap-chart/default-functionalities.component.ts'},
             {displayName: 'default-data.ts', path: './src/heatmap-chart/default-data.ts'}
         ]
     },
@@ -61,22 +62,22 @@ export const heatmapAppRoutes: Object[] = [
         name: 'Color and Size Attributes', order: '02', category: 'Bubble Heatmap'
     },
     {
-        path: ':theme/heatmap-chart/array-row', component: HeatmapArrayRowComponent,
+        path: ':theme/heatmap-chart/row', component: HeatmapArrayRowComponent,
         description: 'This demo for Essential JS2 Heatmap control demonstrates how to bind the data to heat map with series of array for each columns.',
         name: 'Row', order: '03', category: 'Data Binding'
     },
     {
-        path: ':theme/heatmap-chart/array-cell', component: HeatmapArrayCellComponent,
+        path: ':theme/heatmap-chart/cell', component: HeatmapArrayCellComponent,
         description: 'This demo for Essential JS2 Heatmap control demonstrates how to bind the array data with values for each cell to heatmap.',
         name: 'Cell', order: '03', category: 'Data Binding'
     },
     {
-        path: ':theme/heatmap-chart/row-json-binding', component: HeatmapRowJsonComponent,
+        path: ':theme/heatmap-chart/json-row', component: HeatmapRowJsonComponent,
         description: 'This demo for Essential JS2 Heatmap control demonstrates how to bind the JSON object with data for each columns to heatmap.',
         name: 'JSON Row', order: '03', category: 'Data Binding'
     },
     {
-        path: ':theme/heatmap-chart/cell-json-binding', component: HeatmapCellJsonComponent,
+        path: ':theme/heatmap-chart/json-cell', component: HeatmapCellJsonComponent,
         description: 'This demo for Essential JS2 Heatmap control demonstrates how to bind the JSON object with data for each cell to heat map.',
         name: 'JSON Cell', order: '03', category: 'Data Binding'
     },
@@ -90,7 +91,7 @@ export const heatmapAppRoutes: Object[] = [
         ]
     },
     {
-        path: ':theme/heatmap-chart/inversed', component: HeatmapInversedComponent,
+        path: ':theme/heatmap-chart/inversed-axis', component: HeatmapInversedComponent,
         description: 'This demo for Essential JS2 Heatmap control shows how to inverse the axis in heat map',
         name: 'Inversed Axis', order: '04', category: 'Features',
         sourceFiles: [
@@ -99,13 +100,19 @@ export const heatmapAppRoutes: Object[] = [
         ]
     },
     {
-        path: ':theme/heatmap-chart/opposed', component: HeatmapOpposedComponent,
+        path: ':theme/heatmap-chart/opposed-axis', component: HeatmapOpposedComponent,
         description: 'This demo for Essential JS2 Heatmap control shows how to place the axis opposite to the default position in heatmap.',
         name: 'Opposed Axis', order: '04', category: 'Features',
         sourceFiles: [
             {displayName: 'opposed.component.ts', path: './src/heatmap-chart/opposed.component.ts'},
             {displayName: 'opposed-axis-data.ts', path: './src/heatmap-chart/opposed-axis-data.ts'}
         ]
+    },
+    {
+        path: ':theme/heatmap-chart/label-template', component: LabelTemplateComponent,
+        description: 'This demo for Essential JS2 Heatmap control demonstrates how to bind the JSON object with data for each cell to heat map.',
+        name: 'Label Template', order: '04', category: 'Features',
+        type:'new'
     },
     {
         path: ':theme/heatmap-chart/multi-level-labels', component: HeatmapMultilevelLabelComponent,
@@ -126,11 +133,11 @@ export const heatmapAppRoutes: Object[] = [
         ]
     },
     {
-        path: ':theme/heatmap-chart/legend', component: HeatmapLegendComponent,
+        path: ':theme/heatmap-chart/legend-placement', component: HeatmapLegendComponent,
         description: 'This demo for Essential JS2 Heatmap control shows how to place the heatmap legend in different positions.',
         name: 'Legend Placement', order: '04', category: 'Features',
         sourceFiles: [
-            {displayName: 'legend.component.ts', path: './src/heatmap-chart/legend.component.ts'},
+            {displayName: 'legend-placement.component.ts', path: './src/heatmap-chart/legend-placement.component.ts'},
             {displayName: 'legend-sample-data.ts', path: './src/heatmap-chart/legend-sample-data.ts'}
         ]
     },
@@ -144,11 +151,11 @@ export const heatmapAppRoutes: Object[] = [
         ]
     },    
     {
-        path: ':theme/heatmap-chart/palette', component: HeatmapPaletteComponent,
+        path: ':theme/heatmap-chart/palette-mode', component: HeatmapPaletteComponent,
         description: 'This demo for Essential JS2 Heatmap control demonstrates applying gradient colors or solid colors for the heatmap cells.',
         name: 'Palette Mode', order: '04', category: 'Features',
         sourceFiles: [
-            {displayName: 'palette.component.ts', path: './src/heatmap-chart/palette.component.ts'},
+            {displayName: 'palette-mode.component.ts', path: './src/heatmap-chart/palette-mode.component.ts'},
             {displayName: 'palette-sample-data.ts', path: './src/heatmap-chart/palette-sample-data.ts'}
         ]
     },
@@ -201,7 +208,8 @@ let declarations: Type<Object>[] = [
     HeatmapRenderModeComponent,
     HeatmapTooltipComponent,
     HeatmapBubbleTypesComponent,
-    HeatmapColorAndSizeAttributesComponent
+    HeatmapColorAndSizeAttributesComponent,
+    LabelTemplateComponent
 ];
 @NgModule({
     imports: [heatmapRouter, SharedModule, HeatMapAllModule, ChartAllModule, ButtonModule],

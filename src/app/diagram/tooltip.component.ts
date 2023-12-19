@@ -2,6 +2,8 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { DiagramComponent, NodeModel, ConnectorModel } from '@syncfusion/ej2-angular-diagrams';
 import { NodeConstraints, SnapConstraints, SnapSettingsModel } from '@syncfusion/ej2-diagrams';
+import { ChangeEventArgs as CheckBoxChangeEventArgs } from '@syncfusion/ej2-buttons';
+import { TooltipModel } from '@syncfusion/ej2-angular-popups';
 
 /**
  * Sample for tooltip
@@ -140,36 +142,36 @@ export class TooltipDiagramComponent {
 
     // FontType Collection
     public PositionValue: { [key: string]: Object }[] = [
-        { type: 'TopLeft', text: 'TopLeft' },
-        { type: 'TopCenter', text: 'TopCenter' },
-        { type: 'TopRight', text: 'TopRight' },
-        { type: 'BottomLeft', text: 'BottomLeft' },
-        { type: 'BottomCenter', text: 'BottomCenter' },
-        { type: 'BottomRight', text: 'BottomRight' },
-        { type: 'LeftTop', text: 'LeftTop' },
-        { type: 'LeftCenter', text: 'LeftCenter' },
-        { type: 'LeftBottom', text: 'LeftBottom' },
-        { type: 'RightTop', text: 'RightTop' },
-        { type: 'RightCenter', text: 'RightCenter' },
-        { type: 'RightBottom', text: 'RightBottom' },
+        { type: 'TopLeft', text: 'Top Left' },
+        { type: 'TopCenter', text: 'Top Center' },
+        { type: 'TopRight', text: 'Top Right' },
+        { type: 'BottomLeft', text: 'Bottom Left' },
+        { type: 'BottomCenter', text: 'Bottom Center' },
+        { type: 'BottomRight', text: 'Bottom Right' },
+        { type: 'LeftTop', text: 'Left Top' },
+        { type: 'LeftCenter', text: 'Left Center' },
+        { type: 'LeftBottom', text: 'Left Bottom' },
+        { type: 'RightTop', text: 'Right Top' },
+        { type: 'RightCenter', text: 'Right Center' },
+        { type: 'RightBottom', text: 'Right Bottom' },
     ];
 
     //FontType Collection
     public EffectValue: { [key: string]: Object }[] = [
-        { type: 'FadeIn', text: 'FadeIn' },
-        { type: 'FadeOut', text: 'FadeOut' },
-        { type: 'FadeZoomIn', text: 'FadeZoomIn' },
-        { type: 'FadeZoomOut', text: 'FadeZoomOut' },
-        { type: 'FlipXDownIn', text: 'FlipXDownIn' },
-        { type: 'FlipXDownOut', text: 'FlipXDownOut' },
-        { type: 'FlipXUpIn', text: 'FlipXUpIn' },
-        { type: 'FlipXUpOut', text: 'FlipXUpOut' },
-        { type: 'FlipYLeftIn', text: 'FlipYLeftIn' },
-        { type: 'FlipYLeftOut', text: 'FlipYLeftOut' },
-        { type: 'FlipYRightIn', text: 'FlipYRightIn' },
-        { type: 'FlipYRightOut', text: 'FlipYRightOut' },
-        { type: 'ZoomIn', text: 'ZoomIn' },
-        { type: 'ZoomOut', text: 'ZoomOut' },
+        { type: 'FadeIn', text: 'Fade In' },
+        { type: 'FadeOut', text: 'Fade Out' },
+        { type: 'FadeZoomIn', text: 'Fade Zoom In' },
+        { type: 'FadeZoomOut', text: 'Fade Zoom Out' },
+        { type: 'FlipXDownIn', text: 'FlipX Down In' },
+        { type: 'FlipXDownOut', text: 'FlipX Down Out' },
+        { type: 'FlipXUpIn', text: 'FlipX Up In' },
+        { type: 'FlipXUpOut', text: 'FlipX Up Out' },
+        { type: 'FlipYLeftIn', text: 'FlipY Left In' },
+        { type: 'FlipYLeftOut', text: 'FlipY Left Out' },
+        { type: 'FlipYRightIn', text: 'FlipY Right In' },
+        { type: 'FlipYRightOut', text: 'FlipY Right Out' },
+        { type: 'ZoomIn', text: 'Zoom In' },
+        { type: 'ZoomOut', text: 'Zoom Out' },
         { type: 'None', text: 'None' },
     ];
 
@@ -252,5 +254,18 @@ export class TooltipDiagramComponent {
     }
     public created(): void {
         this.diagram.fitToPage({ mode: 'Width' });
+    }
+    public isStickyChange(args: CheckBoxChangeEventArgs): void {
+        for (let i: number = 0; i < this.diagram.nodes.length; i++) {
+            let node: NodeModel = this.diagram.nodes[i];
+            if (args.checked) {
+                (this.diagram.tooltipObject as TooltipModel).isSticky = true;
+                (node.tooltip as TooltipModel).isSticky = true;
+            } else {
+                (this.diagram.tooltipObject as TooltipModel).isSticky = false;
+                (node.tooltip as TooltipModel).isSticky = false;
+            }
+            this.diagram.dataBind();
+        }
     }
 }

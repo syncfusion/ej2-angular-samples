@@ -12,14 +12,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import * as i0 from "@angular/core";
 var OrdersService = /** @class */ (function (_super) {
     __extends(OrdersService, _super);
-    function OrdersService(http) {
+    function OrdersService() {
         var _this = _super.call(this) || this;
-        _this.http = http;
         _this.BASE_URL = 'https://services.odata.org/V4/Northwind/Northwind.svc/Orders';
         return _this;
     }
@@ -31,25 +30,48 @@ var OrdersService = /** @class */ (function (_super) {
         var pageQuery = "$skip=" + state.skip + "&$top=" + state.take;
         var sortQuery = '';
         if ((state.sorted || []).length) {
-            sortQuery = "&$orderby=" + state.sorted.map(function (obj) {
-                return obj.direction === 'descending' ? obj.name + " desc" : obj.name;
-            }).reverse().join(',');
+            sortQuery =
+                "&$orderby=" +
+                    state.sorted
+                        .map(function (obj) {
+                        return obj.direction === 'descending'
+                            ? obj.name + " desc"
+                            : obj.name;
+                    })
+                        .reverse()
+                        .join(',');
         }
-        return this.http
-            .get(this.BASE_URL + "?" + pageQuery + sortQuery + "&$count=true")
-            .pipe(map(function (response) { return response.json(); }))
-            .pipe(map(function (response) { return ({
-            result: response['value'],
-            count: parseInt(response['@odata.count'], 10)
-        }); }))
-            .pipe(function (data) { return data; });
+        return this.fetchData(this.BASE_URL + "?" + pageQuery + sortQuery + "&$count=true").pipe(map(function (response) {
+            var result = response['value'];
+            var count = response['@odata.count'];
+            return { result: result, count: count };
+        }));
     };
+    OrdersService.prototype.fetchData = function (url) {
+        return new Observable(function (observer) {
+            fetch(url)
+                .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+                .then(function (data) {
+                observer.next(data);
+                observer.complete();
+            })
+                .catch(function (error) {
+                observer.error(error);
+            });
+        });
+    };
+    OrdersService.ɵprov = i0.ɵɵdefineInjectable({ factory: function OrdersService_Factory() { return new OrdersService(); }, token: OrdersService, providedIn: "root" });
     OrdersService.decorators = [
-        { type: Injectable }
+        { type: Injectable, args: [{
+                    providedIn: 'root',
+                },] }
     ];
-    OrdersService.ctorParameters = function () { return [
-        { type: Http }
-    ]; };
+    OrdersService.ctorParameters = function () { return []; };
     return OrdersService;
 }(Subject));
 export { OrdersService };

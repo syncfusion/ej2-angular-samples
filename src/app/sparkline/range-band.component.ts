@@ -43,7 +43,7 @@ export class SparklineRangebandSample implements OnInit {
     public griddata: object[] = [];
     public sparkline: SparklineModel = {
         height: '50px',
-        width: '100%',
+        width: '150px',
         lineWidth: 2,
         fill: '#0d3c9b',
         dataSource: this.lineData[0] as Number[],

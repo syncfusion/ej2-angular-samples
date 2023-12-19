@@ -1,11 +1,6 @@
-<div id="action-description">
-    <p>
-        This sample demonstrates the print and export functionalities of the linear gauge.
-    </p>
-</div>
 <div class="control-section">
     <div class="col-lg-8">
-        <ejs-lineargauge (load)='load($event)' id='gauge' #gauge='' background='transparent' title='Speedometer' [titleStyle]='titleStyle'  [allowPrint]='allowPrint' [allowPdfExport]='allowPdfExport' [allowImageExport]='allowImageExport' style='display:block;' orientation='Horizontal'
+        <ejs-lineargauge (load)='load($event)' id='gauge' #gauge='' title='Speedometer' [titleStyle]='titleStyle'  [allowPrint]='allowPrint' [allowPdfExport]='allowPdfExport' [allowImageExport]='allowImageExport' style='display:block;' orientation='Horizontal'
             [axes]='axes'>
         </ejs-lineargauge>
     </div>
@@ -76,6 +71,11 @@
             </div>
         </div>
     </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates the print and export functionalities of the linear gauge.
+    </p>
 </div>
 <div id="description">
     <p>

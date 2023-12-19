@@ -110,8 +110,8 @@ export class PolarLineChartComponent {
                 let type: string = this.seriesType.value.toString();
                 this.chart.series[0].type = <ChartSeriesType>type;
                 this.chart.series[1].type = <ChartSeriesType>type;
-                this.chart.series[0].animation.enable = true;
-                this.chart.series[1].animation.enable = true;
+                this.chart.series[0].animation.enable = false;
+                this.chart.series[1].animation.enable = false;
                 this.chart.refresh();
             }
         });

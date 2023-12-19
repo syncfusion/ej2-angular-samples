@@ -19,8 +19,8 @@ export class IndexedAxisChartComponent {
         { x: 'China', y: 6.9 }
     ];
     public data2: Object[] = [
-        { x: 'Australia', y: 2.7 },
-        { x: 'Poland', y: 2.5 },
+        { x: 'Australia', y: 2.5 },
+        { x: 'Poland', y: 2.7 },
         { x: 'Singapore', y: 2.0 },
         { x: 'Canada', y: 1.4 },
         { x: 'Germany', y: 1.8 }
@@ -49,8 +49,7 @@ export class IndexedAxisChartComponent {
             enableRotation: Browser.isDevice ? true : false,
             angle: -90, 
             font: {
-                fontWeight: '600',
-              
+                size : Browser.isDevice ? '8px' : '11px'
             }
         }
     };
@@ -64,7 +63,7 @@ export class IndexedAxisChartComponent {
             enableRotation: Browser.isDevice ? true : false,
             angle: -90, 
             font: {
-                fontWeight: '600',
+                size : Browser.isDevice ? '8px' : '11px'
             }
         }
     };

@@ -226,6 +226,20 @@
             "data-editing": "Data Editing"
         }
     },
+    "three-dimension-chart": {
+        "ControlName": "3D Chart",
+        "Samples": {
+            "column": "Column",
+            "back-to-back-column": "Back to Back Column",
+            "cylinder": "Cylindrical Column",
+            "bar": "Bar",
+            "stacked-column": "Stacking Column with grouping",
+            "stacked-column-100": "100% Stacked Column",
+            "stacked-bar": "Stacked Bar",
+            "stacked-bar-100": "100% Stacked Bar",
+            "empty-point": "Column with null and 0 values"
+        }
+    },
     "chips": {
         "ControlName": "Chips",
         "Samples": {
@@ -1025,6 +1039,16 @@
             "template": "Template",
             "modal": "Modal"
         }
+    },
+    "stepper": {
+      	"ControlName" : "Stepper",
+      	"Samples": {
+      	    "default":"Default Functionalities",
+            "orientation": "Orientation",
+            "validation": "Validation",
+            "linear": "Linear Flow",
+      	    "template": "Template and Customization"
+      	}
     },
     "splitter": {
         "ControlName": "Splitter",

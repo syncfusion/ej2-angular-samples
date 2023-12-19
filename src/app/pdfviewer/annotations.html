@@ -13,7 +13,7 @@
             </div>
         </div>
         <div>
-            <ejs-pdfviewer #pdfviewer id="pdfViewer" [documentPath]='document' (documentLoad)='documentLoaded($event)' style="height:640px;display:block"></ejs-pdfviewer>
+            <ejs-pdfviewer #pdfviewer id="pdfViewer" [documentPath]='document' [resourceUrl]='resource' (documentLoad)='documentLoaded($event)' style="height:640px;display:block"></ejs-pdfviewer>
         </div>
     </div>
 </div>
@@ -26,3 +26,4 @@
         documentation section</a>.
     </p>
 </div>
+

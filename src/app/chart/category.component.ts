@@ -27,8 +27,7 @@ export class CategoryChartComponent {
             visible: true,
             position:  'Top', font: {
                 fontWeight: '600',
-                color:  '#ffffff',
-                size: Browser.isDevice ? '9px' :'11px'
+                color:  '#ffffff'
             }
         }
     }

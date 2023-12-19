@@ -9,6 +9,7 @@ import { ChecklistListViewComponent } from './checklist.component';
 import { TemplateListViewComponent } from './template.component';
 import { CallHistoryListViewComponent } from './call-history.component';
 import { VirtualizationListViewComponent } from './virtualization.component';
+import { ScrollingListViewComponent } from './scrolling.component';
 import { SharedModule } from '../common/shared.module';
 import { CommonModule } from '@angular/common';
 import { VirtualizationService,ListViewAllModule } from '@syncfusion/ej2-angular-lists';
@@ -50,6 +51,14 @@ export const listAppRoutes: Object[] = [
         name: 'Virtualization',
         category: 'ListView',
        description: 'Demo of Essential JS 2 ListView control loading items in the view port with virtualization, which improves performance when loading large amounts of data.'
+    },  {
+        path: ':theme/listview/scrolling',
+        component: ScrollingListViewComponent,
+        order: '01',
+        name: 'Scrolling',
+        category: 'ListView',
+        type: 'new',
+       description: 'Demo of Essential JS 2 ListView control loading items in the view port with virtualization, which improves performance when loading large amounts of data.'
     }, {
         path: ':theme/listview/group-template',
         component: GroupTemplateListViewComponent,
@@ -86,7 +95,8 @@ export const ListviewRouter: ModuleWithProviders<any> = RouterModule.forChild(li
         ChecklistListViewComponent,
         RemoteListViewComponent,
         NestedListViewComponent,
-        VirtualizationListViewComponent
+        VirtualizationListViewComponent,
+        ScrollingListViewComponent
     ],
     exports: [DefaultListViewComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],

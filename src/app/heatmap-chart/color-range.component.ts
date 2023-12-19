@@ -4,9 +4,6 @@ import { SampleDataSource } from './color-range-data';
 import { RadioButton, CheckBox } from '@syncfusion/ej2-buttons';
 HeatMap.Inject(Tooltip, Legend, Adaptor);
 
-/**
- * HeatMap palette sample
- */
 @Component({
     selector: 'control-content',
     templateUrl: 'color-range.html',
@@ -19,7 +16,8 @@ export class HeatmapColorRangeComponent {
         textStyle: {
             size: '15px',
             fontWeight: '500',
-            fontStyle: 'Normal'
+            fontStyle: 'Normal',
+            fontFamily: 'inherit'
         },
         text: 'U.S. Government Energy Consumption By Agency (Trillion Btu)',
     };
@@ -29,10 +27,16 @@ export class HeatmapColorRangeComponent {
             '2011', '2012', '2013', '2014', '2015'],
         labelRotation: 45,
         labelIntersectAction: 'None',
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     yAxis: Object = {
         labels: ['Agriculture', 'Energy', 'Administration', 'Health', 'Interior',
-            'Justice', 'NASA', 'Transportation']
+            'Justice', 'NASA', 'Transportation'],
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     public paletteSettings: Object = {
         palette: [
@@ -41,6 +45,16 @@ export class HeatmapColorRangeComponent {
             { startValue: 20, endValue: 31.7, minColor: '#36BCC6', maxColor: '#208FC6' },
         ],
         type: 'Gradient'
+    };
+    public legendSettings: Object = {
+        textStyle: {
+             fontFamily: 'inherit'
+         }
+     };
+    public tooltipSettings: Object = {
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     public cellSettings: Object = {
         border: { width: 0 },

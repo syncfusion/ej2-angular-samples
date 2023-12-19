@@ -1,5 +1,5 @@
     /* csslint ignore:start */
-    .online-editor .heading {
+    .markdown-preview .heading {
         float: left;
         width: 100%;
         position: relative;
@@ -9,14 +9,14 @@
         padding-right:0px;
       }
       
-    .online-editor .title {
+    .markdown-preview .title {
         color: #333333;
         letter-spacing: 1px;
         padding-left: 10px;
         text-align: center;
         margin: 15px 0;
     }
-    .online-editor .title-head {
+    .markdown-preview .title-head {
         text-align: center
     }
     #mdPreview.e-richtexteditor textarea.e-content {

@@ -1,6 +1,3 @@
-/**
- * Sample for ticks in Linear Gauge
- */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { LinearGaugeComponent } from '@syncfusion/ej2-angular-lineargauge';
 import { ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-lineargauge';
@@ -156,4 +153,3 @@ export class TicksComponent {
         //code
     }
 }
-

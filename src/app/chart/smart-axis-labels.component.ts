@@ -149,6 +149,7 @@ export class SmartAxisLabelsChartComponent {
     public trim(e: Event): void {
         let element: HTMLInputElement = <HTMLInputElement>e.target;
         this.chart.primaryXAxis.enableTrim = element.checked;
+        this.chart.series[0].animation.enable = false;
         this.chart.refresh();
     }
     public labelWidth(e: Event): void {

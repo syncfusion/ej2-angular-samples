@@ -1,0 +1,41 @@
+<div id="action-description">
+    <p>
+        This 3D stacked bar chart example visualizes a comparison of several Olympic medal-winning countries using the stacked bar series. The legend in the sample provides additional information about the series.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart3d style='display:block;' align='center' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            (load)='load($event)' [title]='title' [tooltip]="tooltip" [width]="width" [enableRotation]="enableRotation"
+            [rotation]='rotation' [depth]="depth" [legendSettings]="legendSettings" [height]="height">
+            <e-chart3d-series-collection>
+                <e-chart3d-series [dataSource]='dataSource' type='StackingBar' xName='x' yName='America' name="America"
+                    columnWidth="0.6">
+                </e-chart3d-series>
+                <e-chart3d-series [dataSource]='dataSource' type='StackingBar' xName='x' yName='Canada' name="Canada"
+                    columnWidth="0.6">
+                </e-chart3d-series>
+                <e-chart3d-series [dataSource]='dataSource' type='StackingBar' xName='x' yName='France' name="France"
+                    columnWidth="0.6">
+                </e-chart3d-series>
+                <e-chart3d-series [dataSource]='dataSource' type='StackingBar' xName='x' yName='Germany' name="Germany"
+                    columnWidth="0.6">
+                </e-chart3d-series>
+            </e-chart3d-series-collection>
+        </ejs-chart3d>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure a 3D stacked bar chart. The 3D stacked bar chart stacks points in the series horizontally. Additionally, the <code>stackingGroup</code> property can be used to group stacked collections based on category.
+    </p>
+    <p>
+        <code>Tooltips</code> are enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        3D chart component features are segregated into individual feature-wise modules. To use stacking bar series, we
+        need to inject
+        <code>StackingBarSeries3DService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>

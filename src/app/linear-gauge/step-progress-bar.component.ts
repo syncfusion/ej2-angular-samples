@@ -1,6 +1,3 @@
-/**
- * Sample to design step progress bar using the Linear Gauge
- */
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, LinearGaugeTheme, IAxisLabelRenderEventArgs } from '@syncfusion/ej2-lineargauge';
 
@@ -72,7 +69,8 @@ export class StepProgressBarComponent {
             }
         ],
         majorTicks: {
-            height: 0
+            height: 0,
+            interval: 5
         },
         minorTicks: {
             height: 0

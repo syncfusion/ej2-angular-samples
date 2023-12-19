@@ -2,9 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { HeatMap, Tooltip, ILoadedEventArgs,ICellEventArgs, ITooltipEventArgs, HeatMapTheme } from '@syncfusion/ej2-angular-heatmap';
 import { SampleDataSource } from './multi-level-label-data';
 HeatMap.Inject(Tooltip);
-/**
- * HeatMap default sample
- */
+
 @Component({
     selector: 'control-content',
     templateUrl: 'multi-level-labels.html',
@@ -18,7 +16,7 @@ export class HeatmapMultilevelLabelComponent {
             size: '15px',
             fontWeight: '500',
             fontStyle: 'Normal',
-            fontFamily: 'Segoe UI'
+            fontFamily: 'inherit'
         }
     };
     xAxis: Object = {
@@ -31,6 +29,7 @@ export class HeatmapMultilevelLabelComponent {
     },
     textStyle: {
         color: 'black',
+        fontFamily: 'inherit'
 
     },
     multiLevelLabels: [
@@ -38,7 +37,8 @@ export class HeatmapMultilevelLabelComponent {
             border: { type: 'Rectangle', color: '#a19d9d' },
             textStyle: {
                 color: 'black',
-                fontWeight: 'Bold'
+                fontWeight: 'Bold',
+                fontFamily: 'inherit'
             },
             categories: [
                 { start: 0, end: 2, text: 'Electronics', },
@@ -55,7 +55,8 @@ export class HeatmapMultilevelLabelComponent {
             width: 0
         },
         textStyle: {
-            color: 'black'
+            color: 'black',
+            fontFamily: 'inherit'
         },
         isInversed: true,
         multiLevelLabels: [
@@ -63,7 +64,8 @@ export class HeatmapMultilevelLabelComponent {
                 border: { type: 'Brace', color: '#a19d9d' },
                 textStyle: {
                     color: 'black',
-                    fontWeight: 'Bold'
+                    fontWeight: 'Bold',
+                    fontFamily: 'inherit'
                 },
                 categories: [
                     { start: 0, end: 2, text: 'Q1' },
@@ -77,6 +79,14 @@ export class HeatmapMultilevelLabelComponent {
     public cellSettings: Object = {
         border: {
             width: 0
+        },
+        textStyle: {
+            fontFamily: 'inherit'
+        }
+    };
+    public tooltipSettings: Object = {
+        textStyle: {
+            fontFamily: 'inherit'
         }
     };
     public paletteSettings: Object = {
@@ -96,9 +106,11 @@ export class HeatmapMultilevelLabelComponent {
         args.content = [args.xLabel + ' | ' + args.yLabel + ' : $ ' + (args.value as number / 10) + 'K']; 
     };
     public load(args: ILoadedEventArgs): void {
+        // custom code start
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.heatmap.theme = <HeatMapTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        // custom code end
         if(selectedTheme === 'highcontrast' || selectedTheme === 'bootstrap5-dark' || selectedTheme === 'material-dark' || selectedTheme === 'fabric-dark' || selectedTheme === 'bootstrap-dark' || selectedTheme === 'tailwind-dark' || selectedTheme === 'material3-dark' || selectedTheme === 'fluent-dark')
         {
             args.heatmap.xAxis.textStyle.color = 'White';

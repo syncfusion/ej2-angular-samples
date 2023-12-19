@@ -35,13 +35,13 @@ export class HeatMapComponent implements OnInit {
         }
     }
 
-    queryCell(args: QueryCellInfoEventArgs): void {
-        if (args != null && args.cell && args.data) {
-            var currentCell = (args as any).cell.getAttribute('data-colindex');
-            var data = (args as any).data[currentCell];
-            if (data.axis === 'value' && !data.isGrandSum) {
-                (args as any).cell.classList.add(this.cellColour(data.value));
-                (args as any).cell.innerText = '$' + (data.value / 1000).toFixed(1) + 'K';
+    getCellContent(args: any): void {
+        if (args != null && args.cellInfo) {
+            if (args.cellInfo.axis === 'value') {
+                if (args.cellInfo.axis === 'value' && !args.cellInfo.isGrandSum) {
+                    args.targetCell.classList.add(this.cellColour(args.cellInfo.value));
+                }
+                args.targetCell.querySelector('.e-cellvalue').innerText = '$' + (args.cellInfo.value / 1000).toFixed(1) + 'K';
             }
         }
     }
@@ -55,7 +55,6 @@ export class HeatMapComponent implements OnInit {
     enginePopulated(): any {
         this.minValue = this.minValue - 1000;
         this.maxValue = this.maxValue + 1000;
-        this.pivotObj.grid.queryCellInfo = this.queryCell.bind(this);
     }
 
     ngOnInit(): void {

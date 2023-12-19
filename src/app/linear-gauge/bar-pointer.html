@@ -1,10 +1,4 @@
-<div id="action-description">
-    <p>
-        This sample shows the various bar pointer shapes available in the linear gauge. Additionally, multiple bar
-        pointer and animation support are enabled.
-    </p>
-</div>
-<div class="control-section">
+<div class="control-section"> 
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12"
             style="display: flex;justify-content: center; align-items: center;">
@@ -32,39 +26,45 @@
     <div id="containerBox" style="float: left;padding: 4%;"></div>
     <div id='containerOutside' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
         style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' id='outsideBar' #outsideBar background='transparent' title='Outside'
+        <ejs-lineargauge (load)='load($event)' animationDuration=2000 id='outsideBar' #outsideBar background='transparent' title='Outside'
             [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' orientation='Vertical'
             [axes]='axesBarOutside'>
         </ejs-lineargauge>
     </div>
     <div id='containerCross' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
         style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' id='crossBar' #crossBar background='transparent' title='Cross'
+        <ejs-lineargauge (load)='load($event)' animationDuration=2000 id='crossBar' #crossBar background='transparent' title='Cross'
             [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' orientation='Vertical'
             [axes]='axesBarCross'>
         </ejs-lineargauge>
     </div>
     <div id='containerInside' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
         style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' id='insideBar' #insideBar title='Inside' [titleStyle]='titleStyle'
+        <ejs-lineargauge (load)='load($event)' animationDuration=2000 id='insideBar' #insideBar title='Inside' [titleStyle]='titleStyle'
             width='150px' height='350px' style='display:block;' background='transparent' orientation='Vertical'
             [axes]='axesBarInside'>
         </ejs-lineargauge>
     </div>
     <div id='containerGradient' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
         style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' id='gradientBar' #gradientBar title='Gradient shader'
+        <ejs-lineargauge (load)='load($event)' animationDuration=2000 id='gradientBar' #gradientBar title='Gradient shader'
             [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' background='transparent'
             orientation='Vertical' [axes]='axesBarGradient'>
         </ejs-lineargauge>
     </div>
     <div id='containerMultiple' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
         style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' id='multipleBar' #multipleBar title='Multiple bar pointers'
+        <ejs-lineargauge (load)='load($event)' animationDuration=2000 id='multipleBar' #multipleBar title='Multiple bar pointers'
             [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' background='transparent'
             orientation='Vertical' [axes]='axesBarMultiple'>
         </ejs-lineargauge>
     </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample shows the various bar pointer shapes available in the linear gauge. Additionally, multiple bar
+        pointer and animation support are enabled.
+    </p>
 </div>
 <div id="description">
     <p>
@@ -80,10 +80,3 @@
             section</a>.
     </p>
 </div>
-<!-- custom code start -->
-<style>
-    .control-section {
-        min-height: 450px;
-    }
-</style>
-<!-- custom code end -->

@@ -250,7 +250,7 @@
       line-height: 16px;
   }
 
-  .e-toolbar .e-toolbar-item .e-tbar-btn {
+  .schedule-overview .overview-toolbar.e-toolbar .e-toolbar-item .e-tbar-btn {
       padding-top: 2px;
       padding-bottom: 2px;
   }

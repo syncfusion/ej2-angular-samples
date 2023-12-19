@@ -1,0 +1,30 @@
+<div id="action-description">
+    <p>
+        This example of a 3D column chart visualizes the medal count from the Tokyo Olympics using the default column series in the 3D chart.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart3d style='display:block;' align='center' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            (load)='load($event)' [title]='title' [tooltip]="tooltip" [width]="width" [enableRotation]="enableRotation" [rotation]='rotation' [tilt]="tilt" [depth]="depth" (pointRender)="labelRender($event)" [wallColor]="wallColor" [height]="height" [legendSettings]="legendSettings">
+            <e-chart3d-series-collection>
+                <e-chart3d-series [dataSource]='dataSource' type='Column' xName='x' yName='y' name="Gold" columnSpacing="0.1">
+                </e-chart3d-series>
+            </e-chart3d-series-collection>
+        </ejs-chart3d>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure a 3D column chart, accommodating null and zero values. The null points represent missing data, while zero is considered a valid value in the 3D chart.
+    </p>
+    <p>
+        <code>Tooltips</code> are enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        3D chart component features are segregated into individual feature-wise modules. To use column series, we need
+        to
+        inject <code>ColumnSeries3DService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>

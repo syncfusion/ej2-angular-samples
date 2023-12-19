@@ -1,6 +1,3 @@
-/**
- * Sample for tooltip in the Linear Gauge
- */
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { LinearGaugeComponent, LinearGaugeTheme } from '@syncfusion/ej2-angular-lineargauge';
 import { ITooltipRenderEventArgs, IAxisLabelRenderEventArgs, ILoadedEventArgs } from '@syncfusion/ej2-lineargauge';

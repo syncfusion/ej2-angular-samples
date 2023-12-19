@@ -35,7 +35,7 @@ export class VerticalChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Sales in Billion',edgeLabelPlacement: 'Shift', majorGridLines: { width: 0 }, minimum: 11000 , maximum: 15000 , interval: 1000, lineStyle:{width: 0},majorTickLines: {width: 0}
+        title: 'Sales in Billion',edgeLabelPlacement: 'Shift', majorGridLines: { width: 0 }, minimum: 11000 , maximum: 15000 , interval: 500, lineStyle:{width: 0},majorTickLines: {width: 0}
     };
     public marker: Object = {
         visible: true,

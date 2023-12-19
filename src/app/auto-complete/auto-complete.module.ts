@@ -34,8 +34,8 @@ export const autoCompleteAppRoutes: Object[] = [
         name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular autocomplete component pop-up list using template.', category: 'AutoComplete'
     },
     {
-        path: ':theme/auto-complete/virtual-scroll', component: VirtualScrollAutoCompleteComponent, order: '01', type : 'new', 
-        name: 'Virtualization', description: 'This example demonstrates how to utilize the virtualization support of Angular autocomplete component.', category: 'AutoComplete'
+        path: ':theme/auto-complete/virtual-scroll', component: VirtualScrollAutoCompleteComponent, order: '01',
+        name: 'Virtualization', type : 'update', description: 'This example demonstrates how to utilize the virtualization support of Angular autocomplete component.', category: 'AutoComplete'
     },
     {
         path: ':theme/auto-complete/highlight', component: HighlightAutoCompleteComponent, order: '01',

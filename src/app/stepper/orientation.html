@@ -1,0 +1,38 @@
+<div class="control-section">
+    <div class="orientation-stepper-section">
+        <div id="orientation-options">
+            <div class="orientation-header-wrapper">
+                <p> Orientation </p>
+                <div class="e-btn-group">
+                    <input type="radio" id="horizontal" name="orientation" value="horizontal" (click)="updateOrientation($event)" checked/>
+                    <label class="e-btn" for="horizontal">Horizontal</label>
+                    <input type="radio" id="vertical" name="orientation" value="vertical" (click)="updateOrientation($event)"/>
+                    <label class="e-btn" for="vertical">Vertical</label>
+                </div>
+            </div>
+            <div class="orientation-header-wrapper">
+                <p> Label Position </p>
+                <div class="e-btn-group">
+                    <input type="radio" id="start" name="position" value="start" (click)="updateLabelPosition($event);" />
+                    <label class="e-btn" for="start">Start</label>
+                    <input type="radio" id="end" name="position" value="end" (click)="updateLabelPosition($event);" checked />
+                    <label class="e-btn" for="end">End</label>
+                    <input type="radio" id="top" name="position" value="top" (click)="updateLabelPosition($event);" />
+                    <label class="e-btn" for="top">Top</label>
+                    <input type="radio" id="bottom" name="position" value="bottom" (click)="updateLabelPosition($event);" />
+                    <label class="e-btn" for="bottom">Bottom</label>
+                </div>
+            </div>
+        </div>
+        <div class="orientation-stepper-control">
+            <ejs-stepper #orientationStepper [steps]="orientationSteps" activeStep=1 labelPosition="end" orientation="horizontal"></ejs-stepper>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample showcases the orientation option in the Stepper component.</p>
+</div>
+<div id="description">
+    <p>This example demonstrates how to switch between different orientations and change the label position within the Stepper (<code>start</code>, <code>end</code>, <code>top</code>, <code>bottom</code>). The Stepper control can be oriented <code>horizontally</code> or <code>vertically</code> using the <code>orientation</code> property.</p>
+</div>

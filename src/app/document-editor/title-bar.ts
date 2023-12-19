@@ -3,6 +3,7 @@ import { DocumentEditor, FormatType } from '@syncfusion/ej2-angular-documentedit
 import { Button } from '@syncfusion/ej2-angular-buttons';
 import { DropDownButton, ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
 import { MenuEventArgs } from '@syncfusion/ej2-angular-navigations';
+import { DialogComponent } from '@syncfusion/ej2-angular-popups';
 /**
  * Represents document editor title bar.
  */
@@ -11,15 +12,18 @@ export class TitleBar {
     private documentTitle: HTMLElement;
     private documentTitleContentEditor: HTMLElement;
     private export: DropDownButton;
+    private close: Button;
     private print: Button;
     private open: Button;
     private documentEditor: DocumentEditor;
     private isRtl: boolean;
-    constructor(element: HTMLElement, docEditor: DocumentEditor, isShareNeeded: Boolean, isRtl?: boolean) {
+    private dialogComponent: DialogComponent
+    constructor(element: HTMLElement, docEditor: DocumentEditor, isShareNeeded: Boolean, isRtl?: boolean, dialogComponent?: DialogComponent) {
         this.isRtl = isRtl;
         //initializes title bar elements.
         this.tileBarDiv = element;
         this.documentEditor = docEditor;
+        this.dialogComponent = dialogComponent;
         this.initializeTitleBar(isShareNeeded);
         this.wireEvents();
     }
@@ -27,6 +31,7 @@ export class TitleBar {
         let downloadText: string;
         let downloadToolTip: string;
         let printText: string;
+        let closeToolTip: string;
         let printToolTip: string;
         let openText: string;
         let documentTileText: string;
@@ -35,6 +40,7 @@ export class TitleBar {
             downloadToolTip = 'Download this document.';
             printText = 'Print';
             printToolTip = 'Print this document (Ctrl+P).';
+            closeToolTip = 'Close this document';
             openText = 'Open';
             documentTileText = 'Document Name. Click or tap to rename this document.';
         } else {
@@ -64,6 +70,7 @@ export class TitleBar {
             + 'border-radius: 2px;color:inherit;font-size:12px;text-transform:capitalize;margin-top:4px;height:28px;font-weight:400;'
             + 'margin-top: 2px;';
         // tslint:disable-next-line:max-line-length
+        this.close = this.addButton('e-icons e-close e-de-padding-right',"", btnStyles, 'de-close', closeToolTip, false) as Button;
         this.print = this.addButton('e-de-icon-Print ' + iconCss, printText, btnStyles, 'de-print', printToolTip, false) as Button;
         this.open = this.addButton('e-de-icon-Open ' + iconCss, openText, btnStyles, 'de-open', documentTileText, false) as Button;
         let items: ItemModel[] = [
@@ -77,6 +84,8 @@ export class TitleBar {
         } else {
             this.open.element.style.display = 'none';
         }
+        if(this.dialogComponent == null)
+            this.close.element.style.display = 'none';
     }
     private setTooltipForPopup(): void {
         // tslint:disable-next-line:max-line-length
@@ -86,6 +95,7 @@ export class TitleBar {
     }
     private wireEvents = (): void => {
         this.print.element.addEventListener('click', this.onPrint);
+        this.close.element.addEventListener('click', this.onClose);
         this.open.element.addEventListener('click', (e: Event) => {
             if ((e.target as HTMLInputElement).id === 'de-open') {
                 let fileUpload: HTMLInputElement = document.getElementById('uploadfileButton') as HTMLInputElement;
@@ -141,6 +151,9 @@ export class TitleBar {
     }
     private onPrint = (): void => {
         this.documentEditor.print();
+    }
+    private onClose= (): void => {
+        this.dialogComponent.hide();
     }
     private onExportClick = (args: MenuEventArgs): void => {
         let value: string = args.item.id;

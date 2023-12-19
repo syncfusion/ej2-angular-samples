@@ -1,7 +1,7 @@
-import { Component, ViewEncapsulation, OnInit, ViewChild, Inject, NgModule, AfterViewInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, ViewChild, Inject, AfterViewInit } from '@angular/core';
 import {
     PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService,
-    ToolbarService, NavigationService, TextSelectionService, PrintService,FormDesigner,FormField,
+    ToolbarService, NavigationService, TextSelectionService, PrintService,
     PageChangeEventArgs,
     LoadEventArgs,
     FormFieldsService,
@@ -14,14 +14,12 @@ import { ClickEventArgs } from '@syncfusion/ej2-buttons';
 import { Message } from '@syncfusion/ej2-notifications/src/message/message';
 import { MessageComponent } from '@syncfusion/ej2-angular-notifications';
 import { Toolbar as Tool, TreeView, NodeSelectEventArgs } from '@syncfusion/ej2-angular-navigations';
-import { MessageModule } from '@syncfusion/ej2-angular-notifications'; // Import the module
-import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
     selector: 'control-content',
     templateUrl:'invisible-signature.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ToolbarService, NavigationService, TextSelectionService, PrintService,FormFieldsService,FormDesignerService],
+    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ToolbarService, NavigationService,           TextSelectionService, PrintService,FormFieldsService,FormDesignerService],
     styleUrls: ['pdfviewer.component.css'],
 })
 
@@ -30,7 +28,7 @@ export class InvisibleSignatureComponent implements OnInit{
 @ViewChild('pdfviewer')
 public pdfviewerControl: PdfViewerComponent;
 public document: string = 'InvisibleDigitalSignature.pdf';
-public service:string ='https://ej2services.syncfusion.com/angular/development/api/pdfviewer';
+public service:string ='https://services.syncfusion.com/angular/production/api/pdfviewer';
 public msgWarning=  "The document has been digitally signed and at least one signature has problem ";
 public  msgError="The document has been digitally signed, but it has been modified since it was signed and at least one signature is invalid .";
 public msgSuccess="The document has been digitally signed and all the signatures are valid";
@@ -152,7 +150,7 @@ public  hasDigitalSignature: boolean = false;
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(postData)
         };
-        const apiUrl = 'https://ej2services.syncfusion.com/angular/development/api/pdfviewer/ValidateSignature';
+        const apiUrl = 'https://services.syncfusion.com/angular/production/api/pdfviewer/ValidateSignature';
         fetch(apiUrl, options)
             .then(response => response.json())
             .then(body => {

@@ -27,6 +27,7 @@ export class RightToLeftComponent implements OnInit {
     public switch: SwitchComponent;
    
     public document: string = 'https://cdn.syncfusion.com/content/pdf/rtl-text.pdf';
+    public resource:string = "https://cdn.syncfusion.com/ej2/23.2.6/dist/ej2-pdfviewer-lib";
     public culture: string = 'ar-AE';
     public annotationSettings ={author: 'مقبول'};
     ngOnInit(): void {
@@ -269,7 +270,7 @@ export class RightToLeftComponent implements OnInit {
             this.pdfviewerControl.serviceUrl = '';
         }
         else {
-            this.pdfviewerControl.serviceUrl = 'https://ej2services.syncfusion.com/angular/development/api/pdfviewer';
+            this.pdfviewerControl.serviceUrl = 'https://services.syncfusion.com/angular/production/api/pdfviewer';
         }
         this.pdfviewerControl.dataBind();
         this.pdfviewerControl.load(this.pdfviewerControl.documentPath, null);

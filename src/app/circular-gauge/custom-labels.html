@@ -1,17 +1,17 @@
 <div id="action-description">
     <p>
-        This example demonstrates how to introduce and position customer labels in a circular gauge. In addition,
+        This example demonstrates how to introduce and position custom labels in a circular gauge. In addition,
         gradient colors are used on the circular gauge elements such as the pointer and range.
     </p>
 </div>
 <div class="control-section">
-    <ejs-circulargauge style='display:block;' background='transparent' (axisLabelRender)='axisLabelRender($event)'
+    <ejs-circulargauge style='display:block;' animationDuration=2000 background='transparent' (axisLabelRender)='axisLabelRender($event)'
         (load)='load($event)'>
         <e-axes>
             <e-axis radius='80%' startAngle=210 endAngle=150 minimum=0 maximum=8 [majorTicks]='majorTicks'
                 [minorTicks]='minorTicks' [lineStyle]='lineStyle' [labelStyle]="labelStyle">
                 <e-pointers>
-                    <e-pointer value="6.2" radius='85%' [needleStartWidth]="needleStartWidth"
+                    <e-pointer [value]="pointerValue" radius='85%' [needleStartWidth]="needleStartWidth"
                         [needleEndWidth]="needleEndWidth" color='#E63B86' [linearGradient]="pointerLinearGradient"
                         [animation]='animation' pointerWidth="10" [cap]="cap" [needleTail]="tail">
                     </e-pointer>

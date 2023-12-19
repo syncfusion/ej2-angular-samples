@@ -26,7 +26,8 @@ export class BulletChartCustomizationComponent {
     public maximum1: number = 3;
     public interval1: number = 0.5;
     public data1: Object[] =  [{ value: 1.7, target: 2.5 }];
-    public titleStyle: FontModel = { textAlignment: 'Center'}
+    public titleStyle: FontModel = { textAlignment: 'Center'};
+    public minorTicklines: Object = { width: 0};
 
 
 

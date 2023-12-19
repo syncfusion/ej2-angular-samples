@@ -5,9 +5,6 @@ import { SampleDataSource } from './cell-seletion-data';
 HeatMap.Inject(Tooltip);
 Chart.Inject(ColumnSeries, DataLabel, Category, Legend, chartTooltip);
 
-/**
- * HeatMap default sample
- */
 @Component({
     selector: 'control-content',
     templateUrl: 'cell-selection.html',
@@ -19,21 +16,40 @@ export class HeatmapCellSelectionComponent {
     @ViewChild('chart')
     public chart: ChartComponent;
     titleSettings: Object = {
-        text:'Top export products 2014-2018, Value in USD million'
+        text:'Top export products 2014-2018, Value in USD million',
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     allowSelection : boolean = true;
     dataSource: Object = new SampleDataSource().cellSeletionData;
     xAxis: Object = {
-        labels: ['Cereals', 'Meat', 'Spices', 'Tea', 'Edible Oil', 'Dairy Products', 'Wheat']
+        labels: ['Cereals', 'Meat', 'Spices', 'Tea', 'Edible Oil', 'Dairy Products', 'Wheat'],
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     yAxis: Object = {
-        labels:['2014','2015','2016','2017','2018']
+        labels:['2014','2015','2016','2017','2018'],
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     paletteSettings: Object = {
         palette: [
             {color: '#3C5E62 '},
             {color: '#86C843 '}
         ],
+    };
+    cellSettings: Object = {
+        textStyle: {
+            fontFamily: 'inherit'
+        }
+    };
+    tooltipSettings: Object = {
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     legendSettings: Object = {
         visible: false
@@ -52,9 +68,11 @@ export class HeatmapCellSelectionComponent {
         enable: true
     };
     public load(args: ILoadedEventArgs): void {
+        // custom code start
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.heatmap.theme = <HeatMapTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        // custom code end
     };
     public cellSelected(args: ISelectedEventArgs): void {
         let data: SelectedCellDetails[]  = args.data
@@ -97,9 +115,11 @@ export class HeatmapCellSelectionComponent {
              this.chart.refresh();
     };
     public chartLoad(args: IChartLoadedEventsArgs): void {
+        // custom code start
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        // custom code end
     };
     public onSubmit(): void {
         this.heatmap.clearSelection();

@@ -73,6 +73,7 @@ import { ZoomingAndPanning } from './zooming-and-panning.component';
 import { SnappingComponent } from './snapping.component';
 import { ScrollingComponent } from './scrolling.component';
 import { DataBindingWithTreeviewComponent } from './data-binding-with-treeview.component';
+import { WorkFlowDiagramComponent } from './workflow-editor.component';
 
 export const diagramAppRoutes: Object[] = [
     {
@@ -100,8 +101,7 @@ export const diagramAppRoutes: Object[] = [
     {
         path: ':theme/diagram/connectors', component: ConnectorDiagramComponent,
         name: 'Connectors', category: 'Getting Started', order: '01',
-        description: 'This sample visualizes the data flow in a marketing process using predefined shapes and connectors. Different types of connectors and decorators are used to customize the appearance, path, and direction of the data flow.',
-        type:"update"
+        description: 'This sample visualizes the data flow in a marketing process using predefined shapes and connectors. Different types of connectors and decorators are used to customize the appearance, path, and direction of the data flow.'
     },
     {
         path: ':theme/diagram/line-routing', component: LineRoutingComponent,
@@ -156,7 +156,7 @@ export const diagramAppRoutes: Object[] = [
     {
         path: ':theme/diagram/tooltip', component: TooltipDiagramComponent,
         name: 'Tooltip', category: 'Getting Started', order: '01',
-        description: 'This sample visualize the tooltip feature of diagram'
+        description: 'This sample visualize the tooltip feature of diagram', type:"update"
     },
     {
         path: ':theme/diagram/symbol-palette', component: SymbolPaletteDiagramComponent,
@@ -321,7 +321,8 @@ export const diagramAppRoutes: Object[] = [
     {
         path: ':theme/diagram/uml-Class-diagram', component: UmlClassDiagramComponent,
         name: 'UML Class Diagram', category: 'Use Case Diagram', order: '08',
-        description: 'This sample visualizes the class shapes in diagram.'
+        description: 'This sample visualizes the class shapes in diagram.',
+        type:"update"
     },
     {
         path: ':theme/diagram/venn-diagram', component: VennDiagramComponent,
@@ -339,6 +340,11 @@ export const diagramAppRoutes: Object[] = [
         name: 'Fishbone Diagram',
         description: 'This sample visually represents a simple fishbone diagram (Ishikawa). Diagram nodes and annotations are used to define fishbone diagrams. Read-only mode is enabled here.',
         category: 'Real-time Diagrams', order: '09'
+    },
+    {
+        path: ':theme/diagram/workflow-editor', component: WorkFlowDiagramComponent,
+        name: 'WorkFlow Diagram', category: 'Real-time Diagrams', order: '09',type:'new',
+        description: 'This sample visualizes the Travel booking reservation system and its built with readymade BPMN shapes.'
     },
     {
         path: ':theme/diagram/data-binding-with-treeview', component: DataBindingWithTreeviewComponent,
@@ -382,7 +388,7 @@ let declarations: Type<Object>[] = [FlowDiagramComponent, ShapesDiagramComponent
     PertChartDiagramComponent, BPMNShapesDiagramComponent, FishboneDiagramComponent, LogicCircuitComponent,
     UmlActivityComponent, NetworkShapesDiagramComponent, CRUDDiagramComponent, UmlClassDiagramComponent, SwimLaneDiagramComponent,
     TooltipDiagramComponent, EventsDiagramComponent, LineRoutingComponent, DataBindingWithTreeviewComponent, ScrollingComponent, SnappingComponent, ZoomingAndPanning,
-    HierarchicalLayoutWithMultipleRootComponent,CommandComponent,ConstraintComponent, UmlSequenceComponent, GroupingAndOrderingComponent
+    HierarchicalLayoutWithMultipleRootComponent,CommandComponent,ConstraintComponent, UmlSequenceComponent, GroupingAndOrderingComponent,WorkFlowDiagramComponent
 
 ];
 @NgModule({

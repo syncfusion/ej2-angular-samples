@@ -56,6 +56,7 @@ export class ImageEditorIntegrationComponent {
       this.range = this.selection.getRange(document);
       this.saveSelection = this.selection.save(this.range, document);
       this.dialogObj.show();
+      this.defaultRTE.quickToolbarModule.imageQTBar.hidePopup();
     }
   }
 
@@ -84,6 +85,7 @@ export class ImageEditorIntegrationComponent {
   }
 
   public onCancel(): void {
+    this.imageEditorObj.reset();
     var dialog = this;
     (dialog as any).hide();
   }

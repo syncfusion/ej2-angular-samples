@@ -1,0 +1,98 @@
+<div id="action-description">
+    <p>This sample demonstrates the different Query functionality in QueryBuilder component using DropDownList and Button components. In this sample, user can change the Condition using DropDownList component and adding rules, groups and deleting groups by using Button component.</p>
+  </div>
+
+<div class="col-lg-12 control-section">
+    <ejs-querybuilder id="querybuilder" [dataSource]="dataSource" #querybuilder [columns]="filter" width="100%" [rule]="importRules" headerTemplate="headerTemplate" (ruleChange)="updateRule()">
+      <ng-template #headerTemplate let-data>
+        <div class = "query-template-control">
+        <div class = "e-groupheader">
+          <div class = "e-custom-hdr">
+            <ejs-dropdownlist id ="{{data.ruleID}}_cndtn" width="100px" [dataSource]='items' [value]='data.condition' [fields]='fields' cssClass="e-custom-group-btn" (change)="conditionChange($event)">
+            </ejs-dropdownlist>
+          </div>
+          <div class = "e-header">
+            <div class = "e-qb-hdr-content">
+              <button id = '{{data.ruleID}}_addbtn' class ="e-control e-btn e-primary e-grp-btn" (click)="addGroupClick($event)">Add Group</button>
+            </div>
+            <div class = "e-qb-hdr-content">
+              <button id = '{{data.ruleID}}_addbtn' class="e-control e-btn e-primary e-grp-btn" (click)="addRuleClick($event)">Add condition</button>
+            </div>
+            <button ejs-button *ngIf ="data.ruleID !== 'querybuilder_group0'" id= 'dltbtn' class= "e-control e-btn e-danger e-del-btn" (click)="onClick($event)">Delete Group</button>
+          </div>
+          </div>
+        </div>
+      </ng-template>
+    </ejs-querybuilder>
+    <div class="e-query-preview">
+      <ejs-tab id="tab_default" #tabDefault (created)="updateContent()" (selected)="tabChange($event)">
+        <e-tabitems>
+          <e-tabitem [header]='headerText[0]'>
+            <ng-template #content>
+              <div class="preview">
+                <div class="content">
+                  <ejs-radiobutton (change)="change($event)" label="Inline" checked="true" name="state" value="Inline"></ejs-radiobutton>
+                  <ejs-radiobutton style="margin-left: 20px" label="Parameterized" (change)="change($event)" name="state" value="Parameterized"></ejs-radiobutton>
+                  <ejs-radiobutton style="margin-left: 20px" (change)="change($event)" label="Named Parameter" name="state" value="NamedParameter"></ejs-radiobutton>
+                  <div id="content" style="margin-top: 10px;">
+                    <textarea readonly class='e-text-area-content e-sql-content'>{{content}}</textarea>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </e-tabitem>
+          <e-tabitem [header]='headerText[1]'>
+            <ng-template #content>
+              <div class="preview">
+                <div class="content">
+                  <div id="content" style="margin-top: 10px;">
+                    <textarea readonly class='e-text-area-content e-json-content'>{{content}}</textarea>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </e-tabitem>
+          <e-tabitem [header]='headerText[2]'>
+            <ng-template #content>
+              <div class="preview">
+                <div class="content">
+                  <div id="content" style="margin-top: 10px;">
+                    <textarea readonly class='e-text-area-content e-mongo-content'>{{content}}</textarea>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </e-tabitem>
+          <e-tabitem [header]='headerText[3]'>
+            <ng-template #content>
+              <div class="preview">
+                <div class="content">
+                  <div id="content" style="margin-top: 10px;">
+                    <textarea readonly class='e-text-area-content e-cel-content'>{{content}}</textarea>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </e-tabitem>
+          <e-tabitem [header]='headerText[4]'>
+            <ng-template #content>
+              <div class="preview">
+                <div class="content">
+                  <div id="content" style="margin-top: 10px;">
+                    <textarea readonly class='e-text-area-content e-spel-content'>{{content}}</textarea>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </e-tabitem>
+        </e-tabitems>
+      </ejs-tab>
+    </div>
+  </div>
+
+  <div id="description">
+    <p>This sample illustrates how to integrate different queries in the QueryBuilder. This is used for creating custom user interface for the header with custom components and update the rule collection by using the component events.</p>
+    <p>More information about Query Builder can be found in this
+      <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/query-builder"> documentation</a> section.
+    </p>
+  </div>

@@ -24,7 +24,7 @@ export class RibbonDefaultComponent {
   public findOptions: ItemModel[] = [{ text: "Find", iconCss: "e-icons e-search" }, { text: "Advanced find", iconCss: "e-icons e-search" }, { text: "Go to", iconCss: "e-icons e-arrow-right" }];
   public selectOptions: ItemModel[] = [{ text: "Select All" }, { text: "Select Objects" }];
   public dictateOptions: ItemModel[] = [{ text: "Chinese" }, { text: "English" }, { text: "German" }, { text: "French" }];
-  public tableOptions: ItemModel[] = [{ text: "Insert Table" }, { text: "This device" }, { text: "Convert Table" }, { text: "Excel SpreadSheet" }];
+  public tableOptions: ItemModel[] = [{ text: "Insert Table" }, { text: "Draw Table" }, { text: "Convert Table" }, { text: "Excel SpreadSheet" }];
   public shapeOptions: ItemModel[] = [{ text: "Lines" }, { text: "Rectangles" }, { text: "Basic Arrows" }, { text: "Basic Shapes" }, { text: "FlowChart" }];
   public headerOptions: ItemModel[] = [{ text: "Insert Header" }, { text: "Edit Header" }, { text: "Remove Header" }];
   public footerOptions: ItemModel[] = [{ text: "Insert Footer" }, { text: "Edit Footer" }, { text: "Remove Footer" }];
@@ -44,7 +44,8 @@ export class RibbonDefaultComponent {
   public linkSettings: RibbonDropDownSettingsModel = { iconCss: "e-icons e-link", content: "Link", items: this.linkOptions, select: (args) => { this.updateContent("Link -> " + args.item.text); } };
 
   public groupButtonMultiple: RibbonGroupButtonSettingsModel= {
-    selection: RibbonGroupButtonSelection.Multiple, 
+    selection: RibbonGroupButtonSelection.Multiple,
+    header: 'Format Styles',
     items: [
       { iconCss: 'e-icons e-bold', content: 'Bold', selected: true, click: () => { this.updateContent("Bold") } }, 
       {iconCss: 'e-icons e-italic', content: 'Italic', click: () => { this.updateContent("Italic") }}, 
@@ -53,7 +54,8 @@ export class RibbonDefaultComponent {
       {iconCss: 'e-icons e-change-case', content: 'Change Case', click: () => { this.updateContent("Change Case") }}]
   };
   public groupButtonSingle: RibbonGroupButtonSettingsModel = { 
-    selection: RibbonGroupButtonSelection.Single, 
+    selection: RibbonGroupButtonSelection.Single,
+    header: 'Alignment',
     items: [
       {iconCss: 'e-icons e-align-left', selected: true, click: () => { this.updateContent("Align Left") }},
       {iconCss: 'e-icons e-align-center', click: () => { this.updateContent("Align Center") }}, 
@@ -62,9 +64,9 @@ export class RibbonDefaultComponent {
     ]
   }
 
-  public decreaseIndent: RibbonButtonSettingsModel = { iconCss: "e-icons e-decrease-indent", clicked: () => { this.updateContent("Decrease Indent"); } };
-  public increaseIndent: RibbonButtonSettingsModel = { iconCss: "e-icons e-increase-indent", clicked: () => { this.updateContent("Increase Indent"); } };
-  public paragraphBtn: RibbonButtonSettingsModel = { iconCss: "e-icons e-paragraph", clicked: () => { this.updateContent("Paragraph Mark"); } };
+  public decreaseIndent: RibbonButtonSettingsModel = { iconCss: "e-icons e-decrease-indent", content: 'Decrease Indent', clicked: () => { this.updateContent("Decrease Indent"); } };
+  public increaseIndent: RibbonButtonSettingsModel = { iconCss: "e-icons e-increase-indent", content: 'Increase Indent', clicked: () => { this.updateContent("Increase Indent"); } };
+  public paragraphBtn: RibbonButtonSettingsModel = { iconCss: "e-icons e-paragraph", content: 'Paragraph', clicked: () => { this.updateContent("Paragraph Mark"); } };
   public cutButton: RibbonButtonSettingsModel = { iconCss: "e-icons e-cut", content: "Cut", clicked: () => { this.updateContent("Cut"); this.enablePaste(); } };
   public copyButton: RibbonButtonSettingsModel = { iconCss: "e-icons e-copy", content: "Copy", clicked: () => { this.updateContent("Copy"); this.enablePaste(); } };
   public formatButton: RibbonButtonSettingsModel = { iconCss: "e-icons e-format-painter", content: "Format Painter", clicked: () => { this.updateContent("Format Painter"); } };
@@ -91,8 +93,8 @@ export class RibbonDefaultComponent {
   public fontSize: string[] = ["8", "9", "10", "11", "12", "14", "16", "18", "20", "22", "24", "26", "28", "36", "48", "72", "96"];
   public fontStyle: string[] = ["Algerian", "Arial", "Calibri", "Cambria", "Cambria Math", "Courier New", "Candara", "Georgia", "Impact", "Segoe Print", "Segoe Script", "Segoe UI", "Symbol", "Times New Roman", "Verdana", "Windings"];
 
-  public fontstyleSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontStyle, index: 3, width: '150px', allowFiltering: true, change: (args) => { if (args.itemData) { this.updateContent("Font Style -> " + args.itemData.text); } } };
-  public fontsizeSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontSize, index: 3, width: '65px', popupWidth: '85px', allowFiltering: true, change: (args) => { if (args.itemData) { this.updateContent("Font Size -> " + args.itemData.text); } } };
+  public fontstyleSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontStyle, label: 'Font Style', index: 3, width: '115px', popupWidth: '150px', allowFiltering: true, change: (args) => { if (args.itemData) { this.updateContent("Font Style -> " + args.itemData.text); } } };
+  public fontsizeSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontSize, label: 'Font Size', index: 3, width: '65px', popupWidth: '85px', allowFiltering: true, change: (args) => { if (args.itemData) { this.updateContent("Font Size -> " + args.itemData.text); } } };
 
   public colorSettings: RibbonColorPickerSettingsModel = { value: '#123456', change: (args) => { this.updateContent(args.currentValue.hex + " color"); } };
 
@@ -142,7 +144,7 @@ export class RibbonDefaultComponent {
   }
 
   public pictureList: Object = [
-    { text: 'This device' },
+    { text: 'This Device' },
     { text: 'Stock Images' },
     { text: 'Online Images' }];
 

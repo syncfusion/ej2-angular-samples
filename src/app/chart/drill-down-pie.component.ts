@@ -112,6 +112,7 @@ export class DrilldownPieComponent {
             this.pie.enableSmartLabels = false;
             this.pie.series[0].innerRadius = '0%';
             this.pie.series[0].animation.enable = false;
+            this.pie.series[0].radius = '70%';
             (getElement('category') as HTMLElement).style.visibility = 'hidden';
             document.getElementById('symbol').style.visibility = 'hidden';
             document.getElementById('text').style.visibility = 'hidden';
@@ -135,6 +136,7 @@ export class DrilldownPieComponent {
         this.pie.enableSmartLabels = false;
         this.pie.series[0].innerRadius = '0%';
         this.pie.series[0].animation.enable = false;
+        this.pie.series[0].radius = '70%';
         this.pie.refresh();
         (getElement('category') as HTMLElement).style.visibility = 'hidden';
         (e.target as HTMLButtonElement).style.visibility = 'hidden';

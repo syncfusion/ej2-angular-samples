@@ -74,61 +74,28 @@
 .material .e-pv-current-page-number {
     border-width: 1px;
 }
-
-.e-icons {
-    font-family: "e-icons";
-    font-style: normal;
-    font-variant: normal;
-    font-weight: normal;
-    line-height: 1;
-    text-transform: none;
-}
-
-.e-pv-icon::before {
-    font-family: 'e-icons';
-}
-
-.e-pv-icon-search::before {
-    font-family: 'e-icons';
-    font-size: 12px;
-}
-
-.e-pv-download-document-icon::before {
-    content: '\e914';
-}
-
-.e-pv-print-document-icon::before {
-    content: '\e917';
-}
-
-.e-pv-previous-page-navigation-icon::before {
-    content: '\e910';
-}
-
-.e-pv-next-page-navigation-icon::before {
-    content: '\e911';
-}
-
-.e-pv-zoom-out-sample::before {
-    content: '\e912';
-}
-
 .e-pv-zoom-out-sample {    
     transform: rotate(90deg);
     padding-right: 2px;
 }
-
-.e-pv-zoom-in-icon::before {
-    content: '\e91d';
+.customtoolbar.e-toolbar {
+ background-color: #3f51b5;
+width: 50px;
+}
+.customtoolbar.e-toolbar .e-toolbar-items{
+    background-color: #3f51b5;
+    height: 40px;  
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.e-pv-icon-search::before {
+    font-size: 12px;
+}
+.e-pv-search-input.e-input-group .e-input-search-group-icon.e-input-group-icon {
+    background: rgba(0,0,0,0);
 }
 
-.e-pv-fit-page-icon::before {
-    content: '\e91b';
-}
-
-.e-pv-open-document-icon::before {
-    content: '\e91c';
-}
 
 @font-face {
     font-family: "e-icons";

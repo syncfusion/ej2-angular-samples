@@ -1,0 +1,27 @@
+<div class="control-section">
+    <div class="default-stepper-section"> 
+        <label>CustomText</label>
+        <div class="stepper-control">
+            <ejs-stepper #stepperCustom stepType="indicator" [steps]="customText" (created)="customStepperCreated()"></ejs-stepper>
+        </div>
+        <label>Icon Only</label>
+        <div class="stepper-control">
+            <ejs-stepper #stepperIcon [steps]="iconOnly" (created)="iconStepperCreated()"></ejs-stepper>
+        </div>
+        <label>Icon with Label</label>
+        <div class="stepper-control iconWithLabel">
+            <ejs-stepper #stepperIconLabel [steps]="iconWithLabel" (created)="iconLabelStepperCreated()"></ejs-stepper>
+        </div>
+        <label>Label Only</label>
+        <div class="stepper-control">
+            <ejs-stepper #stepperLabel [steps]="labelOnly" (created)="labelStepperCreated()"></ejs-stepper>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample showcases the Stepper component with all of its default combinations.</p>
+</div>
+<div id="description">
+    <p>The Stepper is commonly employed to guide users through a multistep process or workflow. This example demonstrates the usage of the <code>steps</code> and <code>stepType</code> properties in the Stepper, showcasing various default combinations.</p>
+</div>

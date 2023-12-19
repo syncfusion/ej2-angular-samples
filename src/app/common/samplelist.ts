@@ -75,12 +75,15 @@ import { mentionAppRoutes } from '../mention/mention.module';
 import { skeletonAppRoutes } from '../skeleton/skeleton.module';
 import { ratingAppRoutes } from '../rating/rating.module';
 import { ribbonAppRoutes } from '../ribbon/ribbon.module';
+import { stepperAppRoutes } from '../stepper/stepper.module';
+import { threeDimensionChartAppRoutes } from '../three-dimension-chart/three-dimension-chart.module';
+
 export let samplesList: any = [
     {
         'name': 'Data Grid', 'type':'update', 'category': 'Grids', 'order': '01', 'path': 'grid', 'samples': gridRouteConfig, 'ftName': 'datagrid'
     },
     {
-        'name': 'Pivot Table', 'type':'update', 'category': 'Grids', 'order': '01', 'path': 'pivot-table', 'samples': pivottableRouteConfig
+        'name': 'Pivot Table', 'category': 'Grids', 'order': '01', 'path': 'pivot-table', 'samples': pivottableRouteConfig
     },
     {
         'name': 'Tree Grid', 'type':'update', 'category': 'Grids', 'order': '01', 'path': 'treegrid', 'samples': treegridRouteConfig
@@ -89,28 +92,31 @@ export let samplesList: any = [
         'name': 'Spreadsheet', 'category': 'Grids', 'order': '04', 'path': 'spreadsheet', 'samples': spreadsheetAppRoutes, 'ftName': 'spreadsheet'
     },
     {
-        'name': 'Chart', 'category': 'Data visualization', 'order': '02', 'path': 'chart', 'samples': chartAppRoutes, 'type': 'update'
+        'name': 'Chart', 'category': 'Data visualization', 'order': '02', 'path': 'chart', 'samples': chartAppRoutes
     },
     {
-        'name': 'Stock Chart', 'category': 'Data visualization', 'order': '02', 'path': 'stock-chart', 'samples': stockChartAppRoutes, 'type': 'update'
+        'name': '3D Chart', 'category': 'Data visualization', 'order': '02', 'path': 'three-dimension-chart', 'samples': threeDimensionChartAppRoutes, 'type': 'preview'
+    },
+    {
+        'name': 'Stock Chart', 'category': 'Data visualization', 'order': '02', 'path': 'stock-chart', 'samples': stockChartAppRoutes
     },
     {
         'name': 'Arc Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'arc-gauge', 'samples': arcgaugeAppRoutes
     },
     {
-        'name': 'Circular Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'circular-gauge', 'samples': circulargaugeAppRoutes
+        'name': 'Circular Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'circular-gauge', 'type': 'update', 'samples': circulargaugeAppRoutes
     },
     {
         'name': 'Diagram', 'category': 'Data visualization', 'order': '02', 'path': 'diagram', 'type': 'update', 'samples': diagramAppRoutes
     },
     {
-        'name': 'HeatMap Chart', 'category': 'Data visualization', 'order': '02', 'path': 'heatmap-chart', 'samples': heatmapAppRoutes, 'ftName': 'heatmap'
+        'name': 'HeatMap Chart', 'category': 'Data visualization', 'order': '02', 'path': 'heatmap-chart', 'type': 'update', 'samples': heatmapAppRoutes, 'ftName': 'heatmap'
     },
     {
-        'name': 'Linear Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'linear-gauge', 'samples': lineargaugeAppRoutes
+        'name': 'Linear Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'linear-gauge', 'type': 'update', 'samples': lineargaugeAppRoutes
     },
     {
-        'name': 'Maps', 'category': 'Data visualization', 'order': '02', 'path': 'maps', 'samples': mapAppRoutes
+        'name': 'Maps', 'category': 'Data visualization', 'order': '02', 'path': 'maps', 'type': 'update', 'samples': mapAppRoutes
     },
     {
         'name': 'Range Navigator', 'category': 'Data visualization', 'order': '02', 'path': 'range-navigator', 'samples': rangeNavigatorAppRoutes
@@ -128,10 +134,10 @@ export let samplesList: any = [
         'name': 'TreeMap', 'category': 'Data visualization', 'order': '02', 'path': 'treemap', 'samples': treemapAppRoutes
     },
     {
-        'name': 'Bullet Chart', 'category': 'Data visualization', 'order': '02', 'path': 'bullet-chart', 'samples': bulletChartAppRoutes
+        'name': 'Bullet Chart', 'category': 'Data visualization', 'order': '02', 'path': 'bullet-chart', 'samples': bulletChartAppRoutes, 'type':'update'
     },
     {
-        'name': 'Kanban', 'category': 'Data visualization', 'order': '02', 'path': 'kanban', 'samples': kanbanRouteConfig,'ftName': 'kanban', 'type':'update',
+        'name': 'Kanban', 'category': 'Data visualization', 'order': '02', 'path': 'kanban', 'samples': kanbanRouteConfig,'ftName': 'kanban',
     },
     {
         'name': 'Form Validator', 'category': 'Forms', 'order': '03', 'path': 'form-validator', 'samples': formValidatorAppRoutes
@@ -143,7 +149,7 @@ export let samplesList: any = [
         'name': "PDF Viewer", 'type':'update','category': "File Viewers & Editors", 'order': '11', 'path': "pdfviewer", 'samples': pdfViewerAppRoutes, 'ftName': "pdfviewer"
     },
     {
-        'name': "Rich Text Editor", 'type':'update', 'category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "rich-text-editor", 'samples': rteAppRoutes
+        'name': "Rich Text Editor", 'category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "rich-text-editor", 'samples': rteAppRoutes
     },
     {
         'name': 'DocumentEditor', 'category': 'File Viewers & Editors', 'order': '03', 'path': 'document-editor', 'samples': documentEditorAppRoutes, 'ftName': 'document-editor', 'type': 'update'
@@ -242,6 +248,9 @@ export let samplesList: any = [
         'name': 'Ribbon', 'category': 'Navigation', 'type':'preview', 'order': '06', 'path': 'ribbon', 'samples': ribbonAppRoutes
     },
     {
+        'name': 'Stepper', 'type': 'preview','category': 'Navigation', 'order': '06', 'path': 'stepper', 'samples': stepperAppRoutes, "ftName": "stepper"
+    },
+    {
         'name': "Badge", 'category': 'Notifications', 'order': '07', 'path': "badge", 'samples': badgeAppRoutes
     },
     {
@@ -296,7 +305,7 @@ export let samplesList: any = [
         'name': 'Predefined Dialogs', 'category': 'Layout', 'order': '09', 'path': 'predefined-dialogs', 'samples': predefinedDialogsAppRoutes
     },
     {
-        'name': 'ListView', 'category': 'Layout', 'order': '09', 'path': 'listview', 'samples': listAppRoutes
+        'name': 'ListView', 'category': 'Layout', 'type': 'update', 'order': '09', 'path': 'listview', 'samples': listAppRoutes
     },
     {
         'name': 'Tooltip', 'category': 'Layout', 'order': '09', 'path': 'tooltip', 'samples': tooltipAppRoutes

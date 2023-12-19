@@ -113,6 +113,7 @@ export class PrintChartComponent {
         maximum: 20,
         lineStyle: {width : 0},
         minorTickLines: {width: 0},
+        interval: 4,
         majorTickLines: {width : 0},
     };
    

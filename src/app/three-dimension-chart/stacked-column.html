@@ -1,0 +1,42 @@
+<div id="action-description">
+    <p>
+        This example of a 3D stacked column chart visualizes the steel production of countries, grouped by continent. The legend in the sample provides information about these series.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart3d style='display:block;' align='center' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            (load)='load($event)' [title]='title' [tooltip]="tooltip" [width]="width" [enableRotation]="enableRotation"
+            [legendSettings]="legendSettings" (axisLabelRender)="axisLabelRender($event)"  [wallColor]="wallColor" [height]="height"
+            [rotation]='rotation' [tilt]="tilt" [depth]="depth">
+            <e-chart3d-series-collection>
+                <e-chart3d-series [dataSource]='dataSource' type='StackingColumn' xName='x' yName='Iran' name="Iran"
+                    columnWidth="0.6" stackingGroup="Asia">
+                </e-chart3d-series>
+                <e-chart3d-series [dataSource]='dataSource' type='StackingColumn' xName='x' yName='Indonesia'
+                    name="Indonesia" columnWidth="0.6" stackingGroup="Asia">
+                </e-chart3d-series>
+                <e-chart3d-series [dataSource]='dataSource' type='StackingColumn' xName='x' yName='Italy'
+                    name="Italy" columnWidth="0.6" stackingGroup="Europe">
+                </e-chart3d-series>
+                <e-chart3d-series [dataSource]='dataSource' type='StackingColumn' xName='x' yName='France' name="France"
+                    columnWidth="0.6" stackingGroup="Europe">
+                </e-chart3d-series>
+            </e-chart3d-series-collection>
+        </ejs-chart3d>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure a 3D stacked column chart. The 3D stacked column chart stacks points in the series vertically. Additionally, the <code>stackingGroup</code> property can be used to group stacked collections based on category.
+    </p>
+    <p>
+        <code>Tooltips</code> are enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        3D chart component features are segregated into individual feature-wise modules. To use stacking column series,
+        we need to inject
+        <code>StackingColumnSeries3DService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>

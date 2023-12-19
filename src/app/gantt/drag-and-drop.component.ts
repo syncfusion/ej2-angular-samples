@@ -13,8 +13,16 @@ export class GanttDragAndDropComponent implements OnInit {
     public projectStartDate: Date;
     public projectEndDate: Date;
     public splitterSettings: object;
+    public editSettings: any;
     public ngOnInit(): void {
         this.data = projectNewData;
+        this.editSettings = {
+            allowAdding: true,
+            allowEditing: true,
+            allowDeleting: true,
+            allowTaskbarEditing: true,
+            showDeleteConfirmDialog: true
+        };
         this.taskSettings = {
             id: 'TaskID',
             name: 'TaskName',

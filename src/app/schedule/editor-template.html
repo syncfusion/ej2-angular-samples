@@ -38,7 +38,7 @@
             <td class="e-textlabel">From</td>
             <td colspan="4">
               <ejs-datetimepicker id="StartTime" class="e-field" data-name="StartTime" format="M/dd/yy h:mm a"
-                (change)="onDateChange($event)" [value]="startDateParser(data.startTime || data.StartTime)">
+                (change)="onDateChange($event)" [showClearButton]="false" [value]="startDateParser(data.startTime || data.StartTime)">
               </ejs-datetimepicker>
             </td>
           </tr>
@@ -46,7 +46,7 @@
             <td class="e-textlabel">To</td>
             <td colspan="4">
               <ejs-datetimepicker id="EndTime" class="e-field" data-name="EndTime" format="M/dd/yy h:mm a"
-                (change)="onDateChange($event)" [value]="endDateParser(data.endTime || data.EndTime)">
+                (change)="onDateChange($event)" [showClearButton]="false" [value]="endDateParser(data.endTime || data.EndTime)">
               </ejs-datetimepicker>
             </td>
           </tr>

@@ -1,0 +1,7 @@
+.emptyRecordTemplate {
+    text-align: center;
+}
+.e-emptyRecord {
+    display: block;
+    margin: 10px auto;
+}

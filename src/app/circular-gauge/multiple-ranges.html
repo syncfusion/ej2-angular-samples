@@ -5,7 +5,7 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-circulargauge style='display:block;' (load)='load($event)' background='transparent'>
+    <ejs-circulargauge style='display:block;' animationDuration=2000 (load)='load($event)' background='transparent'>
         <e-axes>
             <e-axis radius='90%' startAngle=230 endAngle=130 minimum=-30 maximum=120 [majorTicks]='majorTicks'
                 [minorTicks]='minorTicks' [annotations]='annotaions' [lineStyle]='lineStyle' [labelStyle]="labelStyle"

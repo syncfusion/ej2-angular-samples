@@ -1,0 +1,43 @@
+<div id="action-description">
+    <p>
+        This example of a 100% 3D stacked bar chart visualizes motor vehicle production by manufacturer using a stacked bar series. The legend in the sample provides information about these series.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart3d style='display:block;' align='center' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            (load)='load($event)' [title]='title' [tooltip]="tooltip" [width]="width" [enableRotation]="enableRotation"
+            [legendSettings]="legendSettings" [height]="height" [rotation]='rotation' [depth]="depth">
+            <e-chart3d-series-collection>
+                <e-chart3d-series [dataSource]='dataSource' type='StackingBar100' xName='x' yName='y'
+                    name="General Motors" columnWidth="0.5">
+                </e-chart3d-series>
+                <e-chart3d-series [dataSource]='dataSource' type='StackingBar100' xName='x' yName='y1' name="Honda"
+                    columnWidth="0.5">
+                </e-chart3d-series>
+                <e-chart3d-series [dataSource]='dataSource' type='StackingBar100' xName='x' yName='y2' name="Suzuki"
+                    columnWidth="0.5">
+                </e-chart3d-series>
+                <e-chart3d-series [dataSource]='dataSource' type='StackingBar100' xName='x' yName='y3' name="BMW"
+                    columnWidth="0.5">
+                </e-chart3d-series>
+            </e-chart3d-series-collection>
+        </ejs-chart3d>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the 100% 3D stacked bar chart. The 100% 3D stacked bar chart displays multiple series of data as stacked bars, ensuring that the cumulative proportion of each stacked element always totals 100%.
+    </p>
+    <p>
+        <code>Tooltips</code> are enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        3D chart component features are segregated into individual feature-wise modules. To use 100% stacking bar
+        series,
+        we need to
+        inject
+        <code>StackingBarSeries3DService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>

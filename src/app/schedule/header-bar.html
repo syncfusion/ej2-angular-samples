@@ -1,12 +1,19 @@
 <div class="control-section">
   <div class="col-lg-9">
     <ejs-schedule #scheduleObj id="schedule" width='100%' height='650px' [selectedDate]="selectedDate"
-      [eventSettings]="eventSettings" [(currentView)]="currentView" (actionBegin)="onActionBegin($event)"
-      (actionComplete)="onActionComplete($event)" (eventRendered)="onEventRendered($event)"
-      [showHeaderBar]="showHeaderBar">
+      [eventSettings]="eventSettings" [(currentView)]="currentView" (actionComplete)="onActionComplete($event)"
+      (eventRendered)="onEventRendered($event)" [showHeaderBar]="showHeaderBar">
       <e-views>
         <e-view option="Month"></e-view>
       </e-views>
+      <e-toolbaritems>
+        <e-toolbaritem name="Previous" align="Left"></e-toolbaritem>
+        <e-toolbaritem name="Next" align="Left"></e-toolbaritem>
+        <e-toolbaritem name="DateRangeText" align="Left"></e-toolbaritem>
+        <e-toolbaritem name="Today" align="Right"></e-toolbaritem>
+        <e-toolbaritem align="Right" prefixIcon="user-icon" text="Nancy"
+          cssClass="e-schedule-user-icon"></e-toolbaritem>
+      </e-toolbaritems>
     </ejs-schedule>
   </div>
   <div class="col-lg-3 property-section">
@@ -35,14 +42,10 @@
 <div id="description">
   <p>
     In this demo, a popup has been designed separately with a person’s profile info and kept in a hidden state
-    initially. A custom item has been added to the Scheduler header bar within the <code>actionBegin</code> event by
-    checking for the request type as <code>toolbarItemRendering</code> which triggers at the time of header bar items
-    rendering on the Schedule.
-  </p>
-  <p>
-    Once the items are added, the click action is being bound to it in the <code>actionComplete</code> event by checking
-    for the request type as <code>toolbarItemRendered</code> which triggers after the items are rendered on the
-    Schedule. The appropriate action of showing or hiding the popup on clicking the custom item has been done within it.
+    initially. A custom item has been added to the Scheduler header bar by using the
+    <code><a href="https://ej2.syncfusion.com/angular/documentation/api/schedule/#toolbaritems">toolbarItems</a></code>
+    property. Here, the default items such as previous, next, date range text, and today have been used along with
+    external icon as custom items.
   </p>
   <p>
     In case, if the header bar of Scheduler needs to be hidden, it can be done by setting false to

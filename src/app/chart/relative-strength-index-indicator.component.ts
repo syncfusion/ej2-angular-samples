@@ -48,7 +48,7 @@ export class RsiIndicatorComponent {
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
         title: 'Price(in Million)',
-        labelFormat: '${value}',
+        labelFormat: '${value}M',
         plotOffset: 25,
         minimum: 50, maximum: 170,
         interval: 30, rowIndex: 1, opposedPosition: true, lineStyle: { width: 0 }
@@ -72,7 +72,6 @@ export class RsiIndicatorComponent {
             }]
     }];
     public zoomSettings: Object = {
-
         enableSelectionZooming: true,
         mode: 'X',
         enablePan : true

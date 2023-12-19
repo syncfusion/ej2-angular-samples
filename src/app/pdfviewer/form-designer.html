@@ -14,12 +14,11 @@
                 </ejs-switch>
             </div>
         </div>
-        <ejs-pdfviewer #pdfviewer id="pdfViewer" [documentPath]='document' (documentLoad)='documentLoaded($event)'
+        <ejs-pdfviewer #pdfviewer id="pdfViewer" [documentPath]='document' [resourceUrl]='resource' (documentLoad)='documentLoaded($event)'
             (validateFormFields)='validateFormFields($event)' [enableFormFieldsValidation]=true
             [showNotificationDialog]=false style="height:640px;display:block"></ejs-pdfviewer>
     </div>
 </div>
-
 <div id="description">   
     <p>
         More information on form designer support can be found in this

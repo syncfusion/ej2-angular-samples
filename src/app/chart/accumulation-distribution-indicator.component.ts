@@ -54,7 +54,7 @@ export class AccumulationDistributionComponent {
         name: 'secondary',
         opposedPosition: true, rowIndex: 0,
         majorGridLines: { width: 0 }, lineStyle: { width: 0 }, minimum: -7000000000, maximum: 5000000000,
-        interval: 6000000000, majorTickLines: { width: 0 }, title: 'Accumulation Distribution',
+        interval: 6000000000, majorTickLines: { width: 0 }, title: 'Accumulation Distribution (in Billion)',
         stripLines: [
             {
                 start: -7000000000, end: 6000000000, text: '', color: '#6063ff', visible: true,
@@ -83,7 +83,7 @@ export class AccumulationDistributionComponent {
     public axisLabelRender(args: IAxisLabelRenderEventArgs): void {
         if (args.axis.name === 'secondary') {
             let value: number = parseInt(args.text) / 1000000000;
-            args.text = String(value) + 'bn';
+            args.text = String(value) + 'B';
         }
     };
     public legendSettings: Object = {

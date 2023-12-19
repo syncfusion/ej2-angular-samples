@@ -21,12 +21,12 @@ export class ToolbarTypeComponent {
     @ViewChild('float') rteFloatObj: CheckBoxComponent;
     @ViewChild('typeRTE') rteObj: RichTextEditorComponent;
     public tools: ToolbarModule = {
-        items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
-            'FontName', 'FontSize', 'FontColor', 'BackgroundColor',
+        items: ['Bold', 'Italic', 'Underline', 'StrikeThrough', 'SuperScript', 'SubScript', '|',
+            'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
             'LowerCase', 'UpperCase', '|',
-            'Formats', 'Alignments', 'OrderedList', 'UnorderedList',
-            'Outdent', 'Indent', '|',
-            'CreateLink', 'Image', '|', 'ClearFormat', 'Print',
+            'Formats', 'Alignments', '|', 'NumberFormatList', 'BulletFormatList', '|',
+            'Outdent', 'Indent', '|', 'CreateLink', 'Image', 'Video', 'Audio', 'CreateTable', '|', 'FormatPainter', 'ClearFormat',
+            '|', 'EmojiPicker', 'Print', '|',
             'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
     };
     // Mapping DropDownList dataSource property

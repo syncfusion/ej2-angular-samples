@@ -12,6 +12,7 @@ export class CustomLabelComponent {
     public textValues: string[] = ['0', '2', '5', '10', '20', '50', '100', '150', '200'];
     public needleStartWidth: number = 10;
     public needleEndWidth: number = 5;
+    public pointerValue: number = 6.2;
 
     public majorTicks: Object = {
         width: 0,

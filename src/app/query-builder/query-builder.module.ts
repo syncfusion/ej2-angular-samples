@@ -13,7 +13,9 @@ import { GridQueryBuilderComponent } from './grid.component';
 import { TemplateQueryBuilderComponent } from './template.component';
 import { RuleTemplateQueryBuilderComponent } from './rule-template.component';
 import { HeaderTemplateQueryBuilderComponent } from './header-template.component';
+import { OverviewQueryBuilderComponent } from './overview.component';
 import { GridModule } from '@syncfusion/ej2-angular-grids';
+import { TabModule } from '@syncfusion/ej2-angular-navigations';
 export const QueryBuilderAppRoutes: Object[] = [
     {
         path: ':theme/query-builder/default',
@@ -62,14 +64,15 @@ export const QueryBuilderAppRoutes: Object[] = [
 export const QueryBuilderRouter: ModuleWithProviders<any> = RouterModule.forChild(QueryBuilderAppRoutes);
 
 @NgModule({
-    imports: [FormsModule, ReactiveFormsModule, QueryBuilderRouter, SharedModule, CommonModule, QueryBuilderModule, SliderModule, MultiSelectModule, DropDownListModule, RadioButtonModule, CheckBoxModule, GridModule],
+    imports: [FormsModule, ReactiveFormsModule, QueryBuilderRouter, SharedModule, CommonModule, QueryBuilderModule, SliderModule, MultiSelectModule, DropDownListModule, RadioButtonModule, CheckBoxModule, GridModule, TabModule],
     declarations: [
         DefaultQueryBuilderComponent,
         TemplateQueryBuilderComponent,
         GridQueryBuilderComponent,
         HeaderTemplateQueryBuilderComponent,
         RuleTemplateQueryBuilderComponent,
-        ComplexQueryBuilderComponent
+        ComplexQueryBuilderComponent,
+        OverviewQueryBuilderComponent
     ],
     exports: [DefaultQueryBuilderComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],

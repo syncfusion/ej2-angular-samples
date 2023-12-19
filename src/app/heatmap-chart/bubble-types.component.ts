@@ -5,9 +5,6 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { CheckBox } from '@syncfusion/ej2-buttons';
 HeatMap.Inject(Tooltip, Legend, Adaptor);
 
-/**
- * HeatMap Legend sample
- */
 @Component({
     selector: 'control-content',
     templateUrl: 'bubble-types.html',
@@ -22,16 +19,22 @@ export class HeatmapBubbleTypesComponent {
             size: '15px',
             fontWeight: '500',
             fontStyle: 'Normal',
-            fontFamily: 'Segoe UI'
+            fontFamily: 'inherit'
         }
     };
     xAxis: Object = {
         labels: ['Singapore', 'Spain', 'Australia', 'Germany', 'Belgium', 'USA', 'France', 'UK'],
         labelRotation: 45,
-        labelIntersectAction: 'None'
+        labelIntersectAction: 'None',
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     yAxis: Object = {
-        labels: ['1995', '2000', '2005', '2010', '2015']
+        labels: ['1995', '2000', '2005', '2010', '2015'],
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     public cellSettings: Object = {
         border: {
@@ -50,19 +53,28 @@ export class HeatmapBubbleTypesComponent {
         { value: 78, color: '#FFFFDA' }
         ],
     };
+    public tooltipSettings: Object = {
+        textStyle: {
+            fontFamily: 'inherit'
+        }
+    };
     public legendSettings: Object = {
         visible: true,
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     public tooltipRender(args: ITooltipEventArgs): void {
         args.content = [args.xLabel + ' | ' + args.yLabel + ' : ' + args.value + ' %'];
     };
     public load(args: ILoadedEventArgs): void {
+        // custom code start
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.heatmap.theme = <HeatMapTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        // custom code end
     };
     ngAfterViewInit() {
-
         let bubbleTypeObj: DropDownList = new DropDownList({
             index: 0,
             popupHeight: '200px',

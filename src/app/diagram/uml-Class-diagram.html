@@ -4,12 +4,104 @@
       service with built-in <code>UML Class</code> shapes.
   </p>
 </div>
+
 <div class="control-section">
-  <ejs-diagram #diagram id="diagram" width="100%" height="700" [getNodeDefaults]="getNodeDefaults"
-    [getConnectorDefaults]="getConnectorDefaults" [setNodeTemplate]='setNodeTemplate' [nodes]='nodes' 
-    [connectors]='connectors' (created)="created()">
-  </ejs-diagram>
+    <style>
+         .e-toggle-palette::before {
+             content: "\e700"
+         }
+    
+         .sb-mobile-palette {
+             width: 250px;
+             height: 559px;
+             float: left;
+         }
+    
+         .sb-mobile-palette-bar {
+             display: none;
+         }
+    
+         .sb-mobile-diagram {
+             width: calc(99% - 242px);
+             height: 559px;
+             float: left;
+             border: 1px solid rgba(0, 0, 0, 0.12);
+             border-left: none;
+         }
+    
+         .container-fluid {
+             padding-bottom: 15px;
+         }
+    
+         .e-upload {
+             height: 0px;
+             width: 0px;
+             display: none !important;
+             border: none !important;
+         }
+    
+         #dropArea {
+             height: 50px;
+             padding: 7px;
+             text-align: center;
+             position: relative;
+             border: 1px solid rgba(0, 0, 0, 0.12);
+             /* border-top: none; */
+         }
+    
+         @media (max-width: 550px) {
+             .sb-mobile-palette {
+                 z-index: 19;
+                 position: absolute;
+                 display: none;
+                 transition: transform 300ms linear, visibility 0s linear 300ms;
+                 width: 39%;
+                 height: 100%;
+             }
+             .sb-mobile-diagram {
+                 width: 60%;
+                 height: 100%;
+                 float: left;
+                 left: 0px;
+             }
+             .sb-mobile-palette-bar {
+                 display: block;
+                 width: 100%;
+                 background: #fafafa;
+                 padding: 10px 10px;
+                 border: 0.5px solid #e0e0e0;
+                 min-height: 40px;
+             }
+             #palette-icon {
+                 font-size: 20px;
+             }
+         }
+    
+         .sb-mobile-palette-open {
+             position: absolute;
+             display: block;
+             right: 15px;
+         }
+    
+     </style>
+  <div id="swimlaneDiagram" style="width: 100%;">
+      <div class="sb-mobile-palette-bar">
+          <div id="palette-icon" style="float: right;" role="button" class="e-ddb-icons1 e-toggle-palette"></div>
+      </div>
+      <div id="palette-space" class="sb-mobile-palette">
+          <ejs-symbolpalette id="symbolpalette" [expandMode]='expandMode' [palettes]='palettes' [getSymbolInfo]='getSymbolInfo' width="100%" height="100%" [symbolHeight]=90
+              [symbolWidth]=90 [symbolMargin]="symbolMargin" [getNodeDefaults]='getSymbolDefaults'>
+          </ejs-symbolpalette>
+      </div>
+      <div id="diagram-space" class="sb-mobile-diagram">
+        <ejs-diagram #diagram id="diagram" width="100%" height="100%" [getNodeDefaults]="getNodeDefaults"
+          [getConnectorDefaults]="getConnectorDefaults" [setNodeTemplate]='setNodeTemplate' [nodes]='nodes' 
+          [connectors]='connectors' (created)="created()" (dragEnter)="dragEnter($event)">
+        </ejs-diagram>
+      </div>
+  </div>
 </div>
+
 <div id="description">
   <p>
       This example shows how to create class shapes using diagram <code>UMLClass</code> shapes. The <code>type</code> property of the

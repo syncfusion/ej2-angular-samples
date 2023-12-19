@@ -16,8 +16,7 @@ import { FilterComponent } from './filter.component';
 import { RTLComponent } from './rtl.component';
 import { RangeNavigatorExportComponent } from './export.component';
 import { RangeNavigatorEmptyPointComponent } from './emptydata.component';
-import { PeriodicSelectorRNComponent } from './period-default.component';
-import { StockChartRNComponent } from './stock-chart.component';
+import { PeriodicSelectorRNComponent } from './period-selector.component';
 
 export const rangeNavigatorAppRoutes: Object[] = [
     { path: ':theme/range-navigator/default', component: DefaultComponent, name: 'Default', order: '01', category: 'Range Selector' },
@@ -30,33 +29,29 @@ export const rangeNavigatorAppRoutes: Object[] = [
     { path: ':theme/range-navigator/logarithmic', component: LogarthmicComponent, name: 'Logarithmic Axis', order: '02', category: 'Axis' },
     { path: ':theme/range-navigator/multilevel', component: MultilevelComponent, name: 'Multilevel Labels', order: '02', category: 'Axis' },
     {
-        path: ':theme/range-navigator/period-default', component: PeriodicSelectorRNComponent,
-        name: 'Default', order: '03', category: 'Period Selector'
-    },
-    {
-        path: ':theme/range-navigator/stock-chart', component: StockChartRNComponent,
-        name: 'Stock Chart', order: '03', category: 'Period Selector'
+        path: ':theme/range-navigator/period-selector', component: PeriodicSelectorRNComponent,
+        name: 'Period Selector', order: '03', category: 'Customization'
     },
     {
         path: ':theme/range-navigator/emptydata', component: RangeNavigatorEmptyPointComponent,
-        name: 'Empty Points', order: '04', category: 'Customization'
+        name: 'Empty Points', order: '03', category: 'Customization'
     },
     {
         path: ':theme/range-navigator/filter', component: FilterComponent, name: 'Filter',
-        order: '04', category: 'Customization'
+        order: '03', category: 'Customization'
     },
     {
         path: ':theme/range-navigator/export', component: RangeNavigatorExportComponent,
-        name: 'Print and Export', order: '05', category: 'Print and Export'
+        name: 'Print and Export', order: '04', category: 'Print and Export'
     },
-    { path: ':theme/range-navigator/rtl', component: RTLComponent, name: 'RTL', order: '06', category: 'RTL' }
+    { path: ':theme/range-navigator/rtl', component: RTLComponent, name: 'RTL', order: '05', category: 'RTL' }
 ];
 
 export const rangeNavigatorRouter: ModuleWithProviders<any> = RouterModule.forChild(rangeNavigatorAppRoutes);
 
 let declarations: Type<Object>[] = [DefaultComponent, LightWeightComponent, DateTimeComponent, DoubleComponent, LogarthmicComponent,
     MultilevelComponent, FilterComponent, RTLComponent, RangeNavigatorExportComponent,
-    RangeNavigatorEmptyPointComponent, PeriodicSelectorRNComponent, StockChartRNComponent];
+    RangeNavigatorEmptyPointComponent, PeriodicSelectorRNComponent];
 @NgModule({
     imports: [ rangeNavigatorRouter, ChartAllModule, RangeNavigatorAllModule, GridAllModule, ButtonAllModule, SwitchAllModule ],
     exports: [],

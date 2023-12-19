@@ -1,8 +1,10 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { orderDataSource } from './data';
 import { ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
 import { GridComponent, FilterService, FilterType, SortService  } from '@syncfusion/ej2-angular-grids';
+import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { Query, DataManager, UrlAdaptor } from '@syncfusion/ej2-data';
 
+const SERVICE_URI: string = 'https://ej2services.syncfusion.com/angular/release/';
 @Component({
     selector: 'ej-gridfiltermenu',
     templateUrl: 'filter-menu.html',
@@ -10,7 +12,8 @@ import { GridComponent, FilterService, FilterType, SortService  } from '@syncfus
     providers: [FilterService, SortService]
 })
 export class FilteringMenuComponent implements OnInit {
-    public data: Object[];
+    public data: DataManager;
+    public query: Query;
     public ddldata: Object[];
     public pageSettings: Object;
     public filterSettings: Object;
@@ -20,20 +23,32 @@ export class FilteringMenuComponent implements OnInit {
         { Id: 'Excel', type: 'Excel' }
     ];
     public ddlfields: Object = { text: 'type', value: 'Id' };
-    public formatoptions: Object;
 
     @ViewChild('grid')
     public grid: GridComponent;
 
+    @ViewChild('checkbox')
+    public checkBoxInstance: CheckBoxComponent;
+
     ngOnInit(): void {
-        this.data = orderDataSource;
+        this.data = new DataManager({ url: SERVICE_URI + 'api/UrlDataSource', adaptor: new UrlAdaptor });
+        this.query = new Query().addParams('dataCount', '10000');
         this.pageSettings = { pageCount: 5 };
         this.filterSettings = { type: 'Menu' };
         this.ddldata = this.filteringType;
-        this.formatoptions = { type: 'dateTime', format: 'M/d/y hh:mm a' }
     }
     public onChange(e: ChangeEventArgs): void {
+        this.checkBoxInstance.checked = false;
+        this.grid.filterSettings.enableInfiniteScrolling = false;
         this.grid.filterSettings.type = <FilterType>e.value;
         this.grid.clearFiltering();
+        if (this.grid.filterSettings.type === 'Excel' || this.grid.filterSettings.type === 'CheckBox') {
+            this.checkBoxInstance.disabled = false;
+        } else {
+            this.checkBoxInstance.disabled = true;
+        }
+    }
+    public changeHandler(e: any): void {
+        this.grid.filterSettings.enableInfiniteScrolling = e.checked;
     }
 }

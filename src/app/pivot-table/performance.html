@@ -26,7 +26,7 @@
             documentation section</a>.
     </p>
 </div>
-<div class="control-section" style="overflow:auto;">
+<div class="control-section">
     <div id="ddl-control">
         <ejs-dropdownlist id='performance' #performance [dataSource]='options' [fields]='fields' width="240" index='0'
             (change)='onChange($event)' placeholder="Select a Data Range" popupHeight="240px">
@@ -52,5 +52,16 @@
 
     .e-bigger #performanceTime {
         margin-top: 8px;
+    }
+
+    @media(max-width: 440px) {
+        #control-content .control-section #ddl-control {
+            margin-bottom: 30px !important;
+            display: block;
+
+            #performanceTime {
+                float: left;
+            }
+        }
     }
 </style>

@@ -3,7 +3,7 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-treegrid #treegrid [dataSource]='vData' [enableVirtualization]='400' [enableVirtualMaskRow]=true childMapping='Crew' [treeColumnIndex]='1' [editSettings]='editSettings' [toolbar]='toolbar' height='600'>
+    <ejs-treegrid #treegrid [dataSource]='vData' [enableVirtualization]=true [enableVirtualMaskRow]=true childMapping='Crew' [treeColumnIndex]='1' [editSettings]='editSettings' [toolbar]='toolbar' height='400'>
         <e-columns>
             <e-column field='TaskID' headerText='Player Jersey' [validationRules]='taskidrules' width='120' textAlign='Right' isPrimaryKey='true'></e-column>
             <e-column field='FIELD1' headerText='Player Name' [validationRules]='tasknamerules' width='120'></e-column>

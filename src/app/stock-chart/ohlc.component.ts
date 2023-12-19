@@ -3,7 +3,6 @@ import {
 AnimationModel, ITooltipRenderEventArgs, IStockChartEventArgs, ChartTheme
 } from '@syncfusion/ej2-angular-charts';
 import { googl } from './stock-data';
-
 /**
  * Sample for Hilo Open close Series
  */
@@ -19,7 +18,7 @@ export class HiloOpenCloseComponent {
     public primaryXAxis: Object = {
         valueType: 'DateTime',
         majorGridLines: { width: 0 },
-        crosshairTooltip: { enable: true },
+        crosshairTooltip: { enable: true }
     };
 
     public primaryYAxis: Object = {

@@ -53,7 +53,7 @@ export class StripLineChartComponent {
     public primaryXAxis: Object =  {
         valueType: 'DateTimeCategory', majorGridLines: { width: 0}, labelFormat : 'E dd/MM', labelRotation: -90,
         //Initializing Striplines
-        majorTickLines: { width: 0 }
+        majorTickLines: { width: 0 }, labelIntersectAction: Browser.isDevice ? 'Rotate90' : 'None',
     }
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

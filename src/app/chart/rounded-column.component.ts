@@ -129,7 +129,7 @@ export class RoundedColumnChartComponent {
     public primaryYAxis: Object = {
         labelFormat: '{value}%',
         title: 'Literacy Rate In Percentage',
-        minimum: 0, maximum: 100, interval: 20, majorTickLines: { width: 0 },
+        minimum: 0, maximum: 100, interval: 25, majorTickLines: { width: 0 },
         minorTickLines: { width: 0 }, lineStyle: { width: 0 }
     };
     public radius: Object = { bottomLeft: Browser.isDevice ? 12 : 35, bottomRight: Browser.isDevice ? 12 : 35, topLeft: Browser.isDevice ? 12 : 35, topRight: Browser.isDevice ? 12 : 35 }
@@ -148,6 +148,7 @@ export class RoundedColumnChartComponent {
             width: 0
         }
     };
+    public highlightColor: string = 'transparent';
     public placement: boolean = false;
     public width: string = Browser.isDevice ? '100%' : '75%';
    // custom code start

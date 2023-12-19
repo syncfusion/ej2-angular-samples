@@ -4,27 +4,75 @@
 
 <div class="col-lg-12 control-section">
     <div id="signature-toolbar-control">
-        <ejs-toolbar id="toolbar" (created)="onCreate($event)" (clicked)="clicked($event)" width="100%">
+        <ejs-toolbar id="toolbar" (created)="onCreated($event)" (clicked)="onClick($event)">
             <e-items>
-                <e-item text='Undo' prefixIcon='e-icons e-undo' tooltipText='Undo (Ctrl + Z)'></e-item>
-                <e-item text='Redo' prefixIcon='e-icons e-redo' tooltipText='Redo (Ctrl + Y)'></e-item>
-                <e-item type='Separator'></e-item>
-                <e-item tooltipText= 'Save (Ctrl + S)' type='Button' template= '<button id="save-option"></button>'>
+                <e-item text="Undo" tooltipText='Undo (Ctrl + Z)' prefixIcon="e-icons e-undo" ></e-item>
+                <e-item text="Redo" tooltipText='Redo (Ctrl + Y)' prefixIcon="e-icons e-redo" ></e-item>
+                <e-item type="Separator"></e-item>
+                <e-item >
+                    <ng-template #template>
+                        <ejs-splitbutton id="save-option" 
+                        iconCss= 'e-sign-icons e-save'
+                        [items]="items"
+                        content="Save"
+                        (created)="onCreated('save-option')"
+                        (select)="onSelect($event)"
+                        [disabled]=true
+                        ></ejs-splitbutton>
+                    </ng-template>
                 </e-item>
-                <e-item type='Separator'></e-item>
-                <e-item tooltipText= 'Stroke Color' template= '<input id="stroke-color" type="color"/>'>
+                <e-item type="Separator"></e-item>
+                <e-item tooltipText="Stroke Color">
+                    <ng-template #template>
+                        <input id="stroke-color" ejs-colorpicker mode='Palette' 
+                        cssClass='e-stroke-color'
+                        [modeSwitcher]= false
+                        [showButtons]= false
+                        [presetColors]="presetColors"
+                        (beforeTileRender)="tileRender($event)"
+                        (created)="onCreated('stroke-color')"
+                        (change)="onColorChange($event, 'stroke-color')"
+                        columns= 4 />
+                    </ng-template>
                 </e-item>
-                <e-item type='Separator'></e-item>
-                <e-item tooltipText= 'Background Color' type= 'Input' template= '<input id="bg-color" type="color"/>'></e-item>
-                <e-item type='Separator'></e-item>
-                <e-item tooltipText= 'Stroke Width' type= 'Input' template= '<input id="stroke-width" type="text"/>'></e-item>
-                <e-item type='Separator'></e-item>
-                <e-item text= 'Clear' prefixIcon= 'e-sign-icons e-clear' tooltipText= 'Clear'></e-item>
-                <e-item tooltipText= 'Disabled' type='Input' template='<input id="chkelement1" type="checkbox"/>' align='Right'></e-item>
+                <e-item type="Separator"></e-item>
+                <e-item tooltipText="Background Color">
+                    <ng-template #template>
+                        <input id="bg-color" ejs-colorpicker 
+                        mode='Palette' 
+                        [noColor]=true
+                        cssClass='e-bg-color'
+                        [modeSwitcher]= false
+                        [showButtons]= false
+                        [presetColors]="presetColors"
+                        (beforeTileRender)="tileRender($event)"
+                        (created)="onCreated('bg-color')"
+                        (change)="onColorChange($event, 'bg-color')"
+                        columns= 4 />
+                    </ng-template>
+                </e-item>
+                <e-item type="Separator"></e-item>
+                <e-item template="<button id='stroke-width'></button>">
+                    <ng-template #template>
+                        <ejs-dropdownlist [dataSource]="widthOptions"
+                        width="60"
+                        value="2"
+                        iconCss='e-icons e-stroke-width'
+                        (select)="onSelect($event,'width')"
+                        ></ejs-dropdownlist>
+                    </ng-template>
+                </e-item>
+                <e-item type="Separator"></e-item>
+                <e-item text="Clear" tooltipText= 'Clear' prefixIcon="e-sign-icons e-clear" (click)="onClick($event)"></e-item>
+                <e-item align="Right">
+                    <ng-template #template>
+                        <ejs-checkbox label='Disabled' [checked]=false (change)="valueChange($event)"></ejs-checkbox>
+                    </ng-template>
+                </e-item>
             </e-items>
         </ejs-toolbar>
         <div id="signature-control">
-            <canvas ejs-signature #signature id="signature" [maxStrokeWidth]="strokeWidth" style="height: 100%; width: 100%;" (change)="change()"></canvas>
+            <canvas ejs-signature #signature id="signature" style="height: 100%; width: 100%;" (change)="onChange()"></canvas>
         </div>
     </div>
 </div>

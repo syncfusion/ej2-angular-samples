@@ -1,6 +1,3 @@
-/**
- *  Sample for custom pointer in the Linear Gauge
- */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { LinearGaugeComponent } from '@syncfusion/ej2-angular-lineargauge';
 import { ILoadedEventArgs, LinearGaugeTheme, IPointerDragEventArgs } from '@syncfusion/ej2-lineargauge';

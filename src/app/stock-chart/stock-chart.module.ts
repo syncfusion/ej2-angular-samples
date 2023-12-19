@@ -72,7 +72,7 @@ export const stockChartAppRoutes: Object[] = [
     },
     {
         path: ':theme/stock-chart/datetime-category', component: DateTimeCategoryComponent,
-        name: 'DateTime Category Axis', order: '01', category: 'Stock Chart', type: 'new'
+        name: 'DateTime Category Axis', order: '01', category: 'Stock Chart'
     },
     {
         path: ':theme/stock-chart/stock-events', component: StockEventsComponent,

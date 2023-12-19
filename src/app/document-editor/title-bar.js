@@ -5,12 +5,13 @@ import { DropDownButton } from '@syncfusion/ej2-angular-splitbuttons';
  * Represents document editor title bar.
  */
 var TitleBar = /** @class */ (function () {
-    function TitleBar(element, docEditor, isShareNeeded, isRtl) {
+    function TitleBar(element, docEditor, isShareNeeded, isRtl, dialogComponent) {
         var _this = this;
         this.initializeTitleBar = function (isShareNeeded) {
             var downloadText;
             var downloadToolTip;
             var printText;
+            var closeToolTip;
             var printToolTip;
             var openText;
             var documentTileText;
@@ -19,6 +20,7 @@ var TitleBar = /** @class */ (function () {
                 downloadToolTip = 'Download this document.';
                 printText = 'Print';
                 printToolTip = 'Print this document (Ctrl+P).';
+                closeToolTip = 'Close this document';
                 openText = 'Open';
                 documentTileText = 'Document Name. Click or tap to rename this document.';
             }
@@ -49,6 +51,7 @@ var TitleBar = /** @class */ (function () {
                 + 'border-radius: 2px;color:inherit;font-size:12px;text-transform:capitalize;margin-top:4px;height:28px;font-weight:400;'
                 + 'margin-top: 2px;';
             // tslint:disable-next-line:max-line-length
+            _this.close = _this.addButton('e-icons e-close e-de-padding-right', "", btnStyles, 'de-close', closeToolTip, false);
             _this.print = _this.addButton('e-de-icon-Print ' + iconCss, printText, btnStyles, 'de-print', printToolTip, false);
             _this.open = _this.addButton('e-de-icon-Open ' + iconCss, openText, btnStyles, 'de-open', documentTileText, false);
             var items = [
@@ -63,9 +66,12 @@ var TitleBar = /** @class */ (function () {
             else {
                 _this.open.element.style.display = 'none';
             }
+            if (_this.dialogComponent == null)
+                _this.close.element.style.display = 'none';
         };
         this.wireEvents = function () {
             _this.print.element.addEventListener('click', _this.onPrint);
+            _this.close.element.addEventListener('click', _this.onClose);
             _this.open.element.addEventListener('click', function (e) {
                 if (e.target.id === 'de-open') {
                     var fileUpload = document.getElementById('uploadfileButton');
@@ -108,6 +114,9 @@ var TitleBar = /** @class */ (function () {
         this.onPrint = function () {
             _this.documentEditor.print();
         };
+        this.onClose = function () {
+            _this.dialogComponent.hide();
+        };
         this.onExportClick = function (args) {
             var value = args.item.id;
             switch (value) {
@@ -127,6 +136,7 @@ var TitleBar = /** @class */ (function () {
         //initializes title bar elements.
         this.tileBarDiv = element;
         this.documentEditor = docEditor;
+        this.dialogComponent = dialogComponent;
         this.initializeTitleBar(isShareNeeded);
         this.wireEvents();
     }

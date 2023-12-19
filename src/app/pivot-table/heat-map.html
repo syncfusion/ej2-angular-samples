@@ -3,23 +3,29 @@
     </p>
 </div>
 <div id="description">
-    <p>The Pivot Table provides custom styles for each cell's display with the help of the <a target="_blank"
-        href="https://ej2.syncfusion.com/angular/documentation/api/pivotview/gridSettingsModel/#querycellinfo">
-        queryCellInfo</a> event. Using
-        the <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/pivotview/gridSettingsModel/#querycellinfo">
-            queryCellInfo</a> event in this sample,
+    <p>The Pivot Table provides custom styles for each cell's display using the cell template. Using the 
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/pivotview/#celltemplate">
+            cellTemplate</a> property in this sample, 
         we are representing the product-specific monthly sales revenue of the goods sold
         by an online retailer in a year in the form of a heatmap-like appearance. Each pivot table cell was customized
         by calculating the lowest and highest values via the <a target="_blank"
             href="https://ej2.syncfusion.com/angular/documentation/api/pivotview/#enginepopulated">
-            enginePopulated</a> event and applying a color scheme based on their range.
+           enginePopulated</a> event and applying a color scheme based on their range.
+    </p>
+    <br />
+    <p>
+        More information on the cell template can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/row-and-column#cell-template">
+            documentation section</a>.
     </p>
 </div>
 <div class="control-section">
     <ejs-pivotview #pivotview id='PivotView-Heatmap' [dataSourceSettings]=dataSourceSettings width='100%' height='500'
-        [gridSettings]='gridSettings' (aggregateCellInfo)='aggregateCellInfo($event)'
-        (enginePopulated)='enginePopulated()'>
+        [gridSettings]='gridSettings' (aggregateCellInfo)='aggregateCellInfo($event)' (enginePopulated)="enginePopulated()">
+        <ng-template #cellTemplate let-data>
+            <span>{{getCellContent(data)}}</span>
+        </ng-template>
     </ejs-pivotview>
 </div>
 <style>

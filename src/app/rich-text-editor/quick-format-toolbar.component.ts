@@ -18,6 +18,6 @@ export class FormatQuicktoolbarComponent {
         enableFloating: false
     };
     public quickToolbarSettings: QuickToolbarSettingsModel = {
-        text: ['FormatPainter', 'Bold', 'Italic', 'Underline', 'Formats', '-', 'Alignments', 'OrderedList', 'UnorderedList', 'CreateLink', 'Image']
+        text: ['Bold', 'Italic', 'Underline', 'FontColor', 'BackgroundColor', 'Alignments', '-', 'FontSize', 'FontName', 'Formats', 'OrderedList', 'UnorderedList', 'FormatPainter']
     };
 }

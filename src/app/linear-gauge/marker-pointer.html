@@ -1,9 +1,3 @@
-<div id="action-description">
-    <p>
-        This sample shows the various marker pointer shapes available in the linear gauge. Additionally, multiple marker
-        pointer, animation and drag support are enabled.
-    </p>
-</div>
 <div class="control-section">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12"
@@ -32,7 +26,7 @@
     <div id="containerBox" style="float: left;padding: 4%;"></div>
     <div id='containerTriangle' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
         style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' (dragStart)='dragStartTriangle($event)'
+        <ejs-lineargauge (load)='load($event)' animationDuration=2000 (dragStart)='dragStartTriangle($event)'
             (dragMove)='dragMoveTriangle($event)' (dragEnd)='dragEndTriangle($event)' id='linearTriangle'
             #linearTriangle background='transparent' title='Inverted triangle' [titleStyle]='titleStyle' width='150px'
             height='350px' style='display:block;' orientation='Vertical' [axes]='axesTriangle'>
@@ -40,36 +34,42 @@
     </div>
     <div id='containerCircle' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
         style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' (dragStart)='dragStartCircle($event)' (dragEnd)='dragEndCircle($event)'
+        <ejs-lineargauge (load)='load($event)' animationDuration=2000 (dragStart)='dragStartCircle($event)' (dragEnd)='dragEndCircle($event)'
             (dragMove)='dragMoveCircle($event)' id='linearCircle' #linearCircle background='transparent' title='Circle'
             [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' orientation='Vertical'
             [axes]='axesCircle'>
         </ejs-lineargauge>
     </div>
-    <div id='containerDiamond' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
-        style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' (dragStart)='dragStartDiamond($event)' (dragEnd)='dragEndDiamond($event)'
-            (dragMove)='dragMoveDiamond($event)' id='linearDiamond' #linearDiamond title='Diamond'
-            [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' background='transparent'
-            orientation='Vertical' [axes]='axesDiamond'>
-        </ejs-lineargauge>
-    </div>
     <div id='containerRectangle' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
         style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' (dragStart)='dragStartRectangle($event)'
+        <ejs-lineargauge (load)='load($event)' animationDuration=2000 (dragStart)='dragStartRectangle($event)'
             (dragMove)='dragMoveRectangle($event)' (dragEnd)='dragEndRectangle($event)' id='linearRectangle'
             #linearRectangle title='Rectangle' [titleStyle]='titleStyle' width='150px' height='350px'
             style='display:block;' background='transparent' orientation='Vertical' [axes]='axesRectangle'>
         </ejs-lineargauge>
     </div>
+    <div id='containerText' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
+    style="display: flex;justify-content: center; align-items: center;">
+    <ejs-lineargauge (load)='load($event)' animationDuration=2000 (dragStart)='dragStartText($event)' (dragEnd)='dragEndText($event)'
+        (dragMove)='dragMoveText($event)' id='linearText' #linearText title='Text'
+        [titleStyle]='titleStyle' width='168px' height='350px' style='display:block;' background='transparent'
+        orientation='Vertical' [axes]='axesText'>
+        </ejs-lineargauge>
+    </div>
     <div id='containerMultiple' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
         style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' (dragStart)='dragStartMultiple($event)'
+        <ejs-lineargauge (load)='load($event)' animationDuration=2000 (dragStart)='dragStartMultiple($event)'
             (dragMove)='dragMoveMultiple($event)' (dragEnd)='dragEndMultiple($event)' id='linearMultiple'
             #linearMultiple title='Multiple pointers' [titleStyle]='titleStyle' width='150px' height='350px'
             style='display:block;' background='transparent' orientation='Vertical' [axes]='axesMultiple'>
         </ejs-lineargauge>
     </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample shows the various marker pointer shapes available in the linear gauge. Additionally, multiple marker
+        pointer, animation and drag support are enabled.
+    </p>
 </div>
 <div id="description">
     <p>
@@ -90,10 +90,3 @@
             section</a>.
     </p>
 </div>
-<!-- custom code start -->
-<style>
-    .control-section {
-        min-height: 450px;
-    }
-</style>
-<!-- custom code end -->

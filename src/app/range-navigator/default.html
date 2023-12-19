@@ -6,7 +6,7 @@
 </div>
 <div class="control-section">
     <h4 id="days" style="font-family: Segoe UI;font-weight: 500; font-style:normal; font-size:15px;" align="center">Bitcoin (USD) Price Range</h4>
-    <div align="center">
+    <div align="center" id="container">
         <ejs-rangenavigator id='defaultRn' [valueType]='valueType' [value]='value' [width]='width' [theme]='theme' [tooltip]='tooltip'
         [navigatorStyleSettings]='navigatorStyleSettings' [labelFormat]='labelFormat' (load)='load($event)'>
             <e-rangenavigator-series-collection>

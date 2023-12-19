@@ -3,16 +3,18 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid [dataSource]='data' height='350' [allowRowDragAndDrop]='true' allowSorting='true' [allowGrouping]="true" [selectionSettings]='selectOptions' height='400'>
+    <ejs-grid #grid [dataSource]='data' height='350' [allowRowDragAndDrop]='true' allowSorting='true' [allowGrouping]="true" [selectionSettings]='selectOptions' height='400' (created)='created()'>
         <e-columns>
             <e-column field='OrderID' isPrimaryKey='true' headerText='Order ID' width='80' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='120'></e-column>
             <e-column field='OrderDate' headerText='Order Date' width='100' format="yMd" textAlign='Right'></e-column>
             <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right'></e-column>
             <e-column field='ShipCity' headerText='Ship City' width='130'></e-column>
-            <e-column field='ShipCountry' headerText='Ship Country' width='130'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='130' [allowGrouping]="false"></e-column>
         </e-columns>
     </ejs-grid>
+    <ejs-dialog #alertDialog [buttons]='alertDlgButtons' [visible]='hidden' [header]='alertHeader' [animationSettings]='animationSettings' [content]='alertContent' [showCloseIcon]='showCloseIcon' [target]='target' [width]='alertWidth'>
+    </ejs-dialog>
     <div id="description">
         <p>Row drag and drop enabled by setting  
             <code><a target="_blank" class="code"

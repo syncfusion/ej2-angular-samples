@@ -57,7 +57,7 @@ export class ColumnReorderComponent implements OnInit {
             { id: '5', name: '6' },
             { id: '6', name: '7' }];
         this.splitterSettings = {
-            columnIndex: 3
+            columnIndex: 2
         },
         this.columns =  [
             { field: 'TaskID', headerText: 'ID', width: 100 },

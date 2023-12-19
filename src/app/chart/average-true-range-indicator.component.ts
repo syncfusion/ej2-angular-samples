@@ -55,8 +55,7 @@ export class AtrIndicatorComponent {
     public axes: Object = [{
         name: 'secondary',
         opposedPosition: true, rowIndex: 0,
-        majorGridLines: { width: 0 }, lineStyle: { width: 0 }, majorTickLines: { width: 0 },
-        maximum: 14, minimum: 0, interval: 7, title: 'ATR',
+        majorGridLines: { width: 0 }, lineStyle: { width: 0 }, majorTickLines: { width: 0 }, title: 'ATR',
         stripLines: [
             {
                 start: 0, end: 14, text: '', color: '#6063ff', visible: true,

@@ -1,0 +1,33 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the GDP data by country for the year 2017 using bar series in a 3D chart. Data points are enhanced with tooltips.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart3d style='display:block;' align='center' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            (load)='load($event)' [rotation]="rotation" [depth]="depth" [title]='title' [enableRotation]="enableRotation" [tooltip]="tooltip"
+            [legendSettings]="legendSettings" [width]="width" [height]="height">
+            <e-chart3d-series-collection>
+                <e-chart3d-series [dataSource]='dataSource' type='Bar' xName='x' yName='y' name='GDP' columnSpacing="0.1">
+                </e-chart3d-series>
+                <e-chart3d-series [dataSource]='dataSource1' type='Bar' xName='x' yName='y' name="Share in World's GDP" columnSpacing="0.1">
+                </e-chart3d-series>
+            </e-chart3d-series-collection>
+        </ejs-chart3d>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure a 3D bar chart. The 3D bar chart, similar to the 3D column chart, differs in that the orientation of the y-axis is horizontal rather than vertical.
+    </p>
+    <p>
+        <code>Tooltips</code> are enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        3D chart component features are segregated into individual feature-wise modules. To use bar series, we need to
+        inject
+        <code>BarSeries3DService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>

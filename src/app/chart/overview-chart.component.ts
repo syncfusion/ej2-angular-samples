@@ -101,10 +101,12 @@ export class OverViewChartComponent {
     connectorStyle: { length: '10px', type:'Curve' }
   };
   public enableBorderOnMouseMove: boolean = false;
-  public enableSmartLabels: boolean = true;
+  public enableSmartLabels: boolean = false;
   public pielegendSettings: Object = {
     visible: false,
   };
+  public startAngle: number = 270;
+  public endAngle: number = 270;
   public accumulationload(args: IAccLoadedEventArgs): void {
     let selectedTheme: string = location.hash.split('/')[1];
     selectedTheme = selectedTheme ? selectedTheme : 'Material';

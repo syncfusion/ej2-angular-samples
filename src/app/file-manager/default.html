@@ -82,7 +82,7 @@
         </td>
         <td style="width: 50%;padding-right: 10px">
           <div>
-            <ejs-dropdownlist [dataSource]="disableItems" (change)="itemChange($event)" [placeholder]="waterMark"></ejs-dropdownlist>
+            <ejs-dropdownlist id='disable' [dataSource]="items" (change)="itemChange($event)" [placeholder]="waterMark"></ejs-dropdownlist>
           </div>
         </td>
       </tr>
@@ -92,7 +92,7 @@
         </td>
         <td style="width: 50%;padding-right: 10px">
           <div>
-            <ejs-dropdownlist [dataSource]="enableItems" (change)="itemChange($event)" [placeholder]="waterMark"></ejs-dropdownlist>
+            <ejs-dropdownlist id='enable' [dataSource]="items" (change)="itemChange($event)" [placeholder]="waterMark"></ejs-dropdownlist>
           </div>
         </td>
       </tr>

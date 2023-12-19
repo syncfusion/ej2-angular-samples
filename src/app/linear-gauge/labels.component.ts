@@ -1,6 +1,3 @@
-/**
- * Sample for labels in the Linear Gauge
- */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { LinearGaugeComponent } from '@syncfusion/ej2-angular-lineargauge';
 import { ILoadedEventArgs, LinearGaugeTheme, IAxisLabelRenderEventArgs } from '@syncfusion/ej2-lineargauge';

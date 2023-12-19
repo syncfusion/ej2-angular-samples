@@ -73,7 +73,7 @@ export class CrosshairChartComponent {
     public marker: Object = {
         visible: true
     }
-    public title: string = 'Conns,Inc Stock Details';
+    public title: string = 'Conns, Inc Stock Details';
     public majorGridLines: Object = { width: 0 };
     public crosshairLabel: Object = { enable: true };
     public series1: Object = axesData;

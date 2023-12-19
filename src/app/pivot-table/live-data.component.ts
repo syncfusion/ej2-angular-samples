@@ -237,12 +237,13 @@ export class LiveDataComponent implements OnInit {
         }
     };
 
-    queryCell(args: QueryCellInfoEventArgs): void {
-        if (args != null && args.cell && args.data) {
-            var currentCell = (args as any).cell.getAttribute('data-colindex');
-            var data = (args as any).data[currentCell];
-            if (data.axis === 'value' && !data.isGrandSum && data.actualText === 'Change') {
-                (args as any).cell.classList.add(this.cellColour(data.value));
+    getCellContent(args): any {
+        if (args != null && args.cellInfo) {
+            if (args.cellInfo.axis === 'value') {
+                if (args.cellInfo.axis === 'value' && !args.cellInfo.isGrandSum && args.cellInfo.actualText === 'Change') {
+                    args.targetCell.classList.add(this.cellColour(args.cellInfo.value));
+                }
+                
             }
         }
     }
@@ -250,10 +251,6 @@ export class LiveDataComponent implements OnInit {
     cellColour(value: any): string {
         let colorIndex: number = value < 0 ? 0 : value > 0 ? 1 : 2;
         return this.colourScheme[colorIndex];
-    }
-
-    enginePopulated(): any {
-        this.pivotObj.grid.queryCellInfo = this.queryCell.bind(this);
     }
 
     ngOnInit(): void {

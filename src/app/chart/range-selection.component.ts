@@ -37,11 +37,11 @@ export class RangeSelectionChartComponent {
     ];
     public marker1: Object = {
         shape: 'Triangle',
-        width: 7, height: 7
+        width: 10, height: 10
     }
     public marker2: Object = {
         shape: 'Pentagon',
-        width: 7, height: 7
+        width: 10, height: 10
     }
     @ViewChild('chart')
     public chart: ChartComponent;

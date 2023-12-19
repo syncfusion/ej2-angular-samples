@@ -183,3 +183,26 @@ export let virtualizationdata: any = [
     { "name": "Albert", "imgUrl": "//ej2.syncfusion.com/demos/src/listview/images/albert.png", "id": "8" },
     { "name": "Nolan", "icon": "N", "id": "9" }
 ];
+export let foodData: any = [
+    { text: 'Hamburger', id: 'list-01', price: '$10', src: 'hamburger.jpg', type: 'non-veg', description: 'A patty of ground beef grilled and placed between two halves of a bun with slices of lettuce and mayonnaise', rating: 3 },
+    { text: 'Cheeseburger', id: 'list-02', price: '$12', src: 'cheeseburger.jpg', type: 'veg', description: 'A hamburger with a slice of melted cheese on top of the meat patty, added near the end of the cooking time', rating: 4  },
+    { text: 'Sandwich', id: 'list-03', price: '$8', src: 'sandwich.jpg', type: 'veg', description: 'A combination of vegetables, sliced cheese or meat, placed on or between slices of bread with layer of ingredients', rating: 5 },
+    { text: 'Milkshake', id: 'list-04', price: '$6', src: 'milkshake.jpg', type: 'veg', description: 'A sweet beverage made by blending milk, ice cream, and flavorings or fruit syrup into a thick, sweet, cold mixture', rating: 3 },
+    { text: 'Muffin', id: 'list-05', price: '$11', src: 'muffin.jpg', type: 'veg', description: 'Muffins are single-serving quick breads, which rise with the help of baking soda or baking powder and eggs instead of yeast', rating: 4 },
+    { text: 'Pizza', id: 'list-06', price: '$22', src: 'pizza.jpg', type: 'veg', description: 'A combination of a flattened disk of bread dough with olive oil, oregano, tomato, mozzarella cheese', rating: 3 },
+    { text: 'Onion ring', id: 'list-07', price: '$10', src: 'onionrings.jpg', type: 'veg', description: 'Consists of a cross-sectional "ring" of onion dipped in bread crumbs and then deep fried; variant is made with onion paste.', rating: 4 },
+    { text: 'Sausage', id: 'list-08', price: '$15', src: 'sausage.jpg', type: 'veg', description: 'Sausage is a combination of minced/ground meat, a binder, water and seasonings, mild but strongly spiced', rating: 5 },
+    { text: 'Pretzel', id: 'list-09', price: '$25', src: 'pretzel.jpg', type: 'veg', description: 'Made from a rope of dough, the pretzel is briefly boiled and then glazed with egg, salted, and baked', rating: 3 },
+    { text: 'Pancake', id: 'list-10', price: '$23', src: 'pancake.jpg', type: 'veg', description: 'A combination of eggs, milk on a hot surface such as a griddle or frying pan, often frying with oil or butter', rating: 4 },
+];
+export let  foodItems : any = [
+    { text: 'Taco', price: '$15', src: 'taco.jpg', type: 'veg', description: 'A crispy or soft corn or wheat tortilla that is folded or rolled and stuffed with a mixture of cheese, lettuce, and tomato' , rating: 5},
+    { text: 'Hot dog', price: '$50', src: 'hotdog.jpg', type: 'non-veg', description: 'A dish consisting of a grilled or steamed sausage served in the slit of a partially sliced bun also used as a wiener', rating: 3 },
+    { text: 'Fried chicken', price: '$19', src: 'friedchicken.jpg', type: 'non-veg', description: 'Chicken pieces coated with seasoned flour or batter and pan-fried, deep fried, pressure fried, or air fried', rating: 4 },
+    { text: 'Donuts', price: '$5', src: 'donuts.jpg', type: 'veg', description: 'A kind of ring-shaped snack food popular in many countries, which are usually deep fried from flour doughs', rating: 3 },
+    { text: 'Baguette', price: '$7', src: 'baguette.jpg', type: 'veg', description: 'French bread shaped like a long, thin loaf with a crisp and crunchy crust made using flour, yeast and water', rating: 4 },
+    { text: 'Soft drink', price: '$3', src: 'softdrink.jpg', type: 'veg', description: 'Flavored drinks usually with nutritive and/or intense sweeteners with other permitted food additives', rating: 5 },
+    { text: 'Bacon', price: '$12', src: 'bacon.jpg', type: 'non-veg', description: 'Salt-cured pork made from various cuts, typically the belly or less fatty parts of the back eaten as a side dish', rating: 3 },
+    { text: 'Chips', price: '$13', src: 'chips.jpg', type: 'veg', description: 'A small usually thin and flat piece (as of wood or stone) cut, struck, or flaked off also served as an appetizer', rating: 4 },
+    { text: 'Noodles', price: '$11', src: 'noodles.jpg', type: 'veg', description: 'A cooked egg-and-flour paste, generally distinguished from pasta by its elongated ribbonlike form', rating: 3 },
+];

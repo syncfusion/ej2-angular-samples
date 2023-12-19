@@ -1,13 +1,8 @@
-<div id="action-description">
-    <p>
-        This sample visualizes the female participation rate of the total female population in the country’s work force. In Bubble Heatmap, the data points can be visualized using bubble size, bubble shade and sector view types. In property panel, the options are available to change the view of the data points in the bubble Heatmap by means of dropdown.
-    </p>
-</div>
 <div>
     <div class="content-wrapper">
         <div class="col-lg-9">
             <ejs-heatmap id='container' #heatmap style="display:block;" [titleSettings]='titleSettings' [dataSource]='dataSource' [xAxis]='xAxis'
-                [yAxis]='yAxis' [cellSettings]='cellSettings' [paletteSettings]='paletteSettings' [legendSettings]='legendSettings'
+                [yAxis]='yAxis' [cellSettings]='cellSettings' [paletteSettings]='paletteSettings' [tooltipSettings]='tooltipSettings' [legendSettings]='legendSettings'
                 (load)='load($event)' (tooltipRender)='tooltipRender($event)'>
             </ejs-heatmap>
             <div style="float: right; margin-right: 10px;">Source:
@@ -40,21 +35,21 @@
             </div>
         </div>
     </div>
-    <div id="description">
+    <div id="action-description">
         <p>
-            In this example, you can see how to display the data points in bubble heatmap using multiple views such as bubble size, bubble shade and the sector. You can change the cell type to bubble by using the <code>tileType</code> property in <code>cellSettings</code>, and you can change the view of the bubble heatmap by using the bubbleType property in cellSettings.
-        </p>
-        <p>
-            Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
-        </p>
-        <br>
-        <p style="font-weight: 500">Injecting Module</p>
-        <p>
-            Heatmap component features are segregated into individual feature-wise modules. To use a tooltip, inject the <code>Tooltip </code>            module using the <code>Heatmap.Inject(Tooltip) </code> method, and use a legend by injecting the <code>Legend </code>            module using the <code>Heatmap.Inject(Legend) </code> method.
+            This sample visualizes the female participation rate of the total female population in the country’s work force. In Bubble Heatmap, the data points can be visualized using bubble size, bubble shade and sector view types. In property panel, the options are available to change the view of the data points in the bubble Heatmap by means of dropdown.
         </p>
     </div>
-    <style>
-        #control-container {
-            padding: 0px !important;
-        }
-    </style>
+    <div id="description">
+        <p>
+            In this example, you can see how to display the data points in bubble heatmap using multiple views such as bubble size, bubble shade and the sector. You can change the cell type to bubble by using the <a target='_blank' href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/cellSettingsModel/#tiletype">tileType</a> property in <a target='_blank' href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/cellSettingsModel/">cellSettings</a> , and you can change the view of the bubble heatmap by using the <a target='_blank' href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/cellSettingsModel/#bubbletype">bubbleType</a> property in <code>cellSettings</code>.
+        </p>
+        <p>The tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item on touch-enabled devices.</p>
+        <br>
+        <p><b>Injecting Module</b></p>
+        <p>
+          Heatmap component features are separated into discrete feature-based modules. To use a tooltip, inject the <a target="_blank"
+          href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/tooltip">Tooltip</a> module using the <code>Heatmap.Inject(Tooltip)</code> method, and to use a legend, inject the <a target="_blank"
+          href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/legend">Legend</a> module using the <code>Heatmap.Inject(Legend)</code> method.
+       </p>
+    </div>

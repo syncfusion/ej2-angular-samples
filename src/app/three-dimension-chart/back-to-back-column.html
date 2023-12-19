@@ -1,0 +1,41 @@
+<div id="action-description">
+    <p>
+        This sample displays four series of 3D column chart, with each column positioned behind the preceding one.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart3d style='display:block;' align='center' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            (load)='load($event)' [enableSideBySidePlacement]="enableSideBySidePlacement" [rotation]='rotation' [depth]="depth" [title]='title'
+            [tooltip]="tooltip" [legendSettings]="legendSettings" [width]="width" [height]="height">
+            <e-chart3d-series-collection>
+                <e-chart3d-series [dataSource]='dataSource' type='Column' xName='x' yName='grapes' name='Grapes'
+                    columnWidth="0.2">
+                </e-chart3d-series>
+                <e-chart3d-series [dataSource]='dataSource' type='Column' xName='x' yName='orange' name='Orange'
+                    columnWidth="0.2">
+                </e-chart3d-series>
+                <e-chart3d-series [dataSource]='dataSource' type='Column' xName='x' yName='apple' name='Apple'
+                    columnWidth="0.2">
+                </e-chart3d-series>
+                <e-chart3d-series [dataSource]='dataSource' type='Column' xName='x' yName='total' name='Total'
+                    columnWidth="0.2">
+                </e-chart3d-series>
+            </e-chart3d-series-collection>
+        </ejs-chart3d>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure a 3D column chart with each column positioned behind the preceding one. The 3D column chart serves the purpose of comparing the frequency, count, total, or average of data across different categories. The
+        <code>enableSideBySidePlacement</code> property is used to position the column behind another.
+    </p>
+    <p>
+        <code>Tooltips</code> are enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        3D chart component features are segregated into individual feature-wise modules. To use column series, we need
+        to inject <code>ColumnSeries3DService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>

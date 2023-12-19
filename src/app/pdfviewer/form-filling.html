@@ -13,7 +13,7 @@
                 <ejs-switch cssClass="buttonSwitch" id="checked" (change)="change($event)" [checked]="true"></ejs-switch>
             </div>
         </div>
-        <ejs-pdfviewer #pdfviewer id="pdfViewer" [documentPath]='document' (validateFormFields)='validateFormFields($event)' [enableFormFieldsValidation]=true [showNotificationDialog]=false style="height:640px;display:block"></ejs-pdfviewer>
+        <ejs-pdfviewer #pdfviewer id="pdfViewer" [documentPath]='document' [resourceUrl]='resource' (validateFormFields)='validateFormFields($event)' [enableFormFieldsValidation]=true [showNotificationDialog]=false style="height:640px;display:block"></ejs-pdfviewer>
     </div>
 </div>
 

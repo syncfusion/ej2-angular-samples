@@ -33,7 +33,7 @@ export class RemoteDataDiagramComponent {
     public data: Object = {
         id: 'Id', parentId: 'ParentId',
         dataSource: new DataManager(
-            { url: 'https://ej2services.syncfusion.com/angular/development/api/RemoteData', crossDomain: true },
+            { url: 'https://services.syncfusion.com/angular/production/api/RemoteData', crossDomain: true },
         ),
         //binds the external data with node
         doBinding: (nodeModel: NodeModel, data: DataInfo, diagram: Diagram) => {

@@ -74,6 +74,9 @@ export class PolarColumnChartComponent {
                 this.chart.series[0].type = <ChartSeriesType>type;
                 this.chart.series[1].type = <ChartSeriesType>type;
                 this.chart.series[2].type = <ChartSeriesType>type;
+                this.chart.series[0].animation.enable = false;
+                this.chart.series[1].animation.enable = false;
+                this.chart.series[2].animation.enable = false;
                 this.chart.refresh();
             }
         });

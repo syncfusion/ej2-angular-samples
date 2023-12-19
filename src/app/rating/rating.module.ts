@@ -1,6 +1,7 @@
 import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { SharedModule } from '../common/shared.module';
 import { RatingModule } from '@syncfusion/ej2-angular-inputs';
 import { DefaultRatingComponent } from './default.component';
@@ -22,7 +23,7 @@ export const ratingAppRoutes: Object[] = [
 export const ratingRouter: ModuleWithProviders<any> = RouterModule.forChild(ratingAppRoutes);
 
 @NgModule({
-    imports: [ratingRouter, SharedModule, RatingModule, BrowserModule],
+    imports: [ratingRouter, SharedModule, RatingModule, BrowserModule, CommonModule],
     declarations: [
         DefaultRatingComponent,
         PrecisionRatingComponent,

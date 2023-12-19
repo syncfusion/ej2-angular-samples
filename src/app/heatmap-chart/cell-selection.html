@@ -1,11 +1,5 @@
-<div id="action-description">
-    <p>
-        This sample visualizes the revenue from the top exported products between the year 2014 and 2018, valued in USD million.
-    </p>
-</div>
 <div class="col-lg-9">
-<div class="control-section">
-    
+<div class="control-section">    
         <ejs-heatmap id='container' #heatmap style="display:block;height:300px;" [titleSettings]='titleSettings' [dataSource]='dataSource' [xAxis]='xAxis'
             [yAxis]='yAxis' [allowSelection]='allowSelection' [paletteSettings]='paletteSettings' [legendSettings]='legendSettings' (load)='load($event)' (cellSelected)='cellSelected($event)'>
         </ejs-heatmap>
@@ -31,22 +25,19 @@
             </div>
         </div>
     </div>
-<div id="description"> 
-    <p>
-        In this example, you can see how to selected the cell in heat map and render the column chart based on selected data.
-    </p>
-    <p>
-        Tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item in touch enabled
-        devices.
-    </p>
-    <br>
-    <p style="font-weight: 500">Injecting Module</p>
-    <p>
-        Heatmap component features are segregated into individual feature-wise modules. To use a tooltip, inject the <code>Tooltip</code>        module using the <code>Heatmap.Inject(Tooltip)</code> method.
-    </p>
-</div>
-<style>
-    #control-container {
-        padding: 0px !important;
-    }
-</style>
+    <div id="action-description">
+        <p>
+            This sample visualizes the revenue from the top exported products between the year 2014 and 2018, valued in USD million
+        </p>
+    </div>
+    <div id="description">
+        <p>
+            In this example, you can see how to selected the cell in heatmap and render the column chart based on selected data.
+        </p>
+        <p>The tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item on touch-enabled devices.</p>
+        <br>
+        <p><b>Injecting Module</b></p>
+        <p>
+             Heatmap component features are separated into discrete feature-based modules. To use a tooltip, inject the <a href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/tooltip" target='_blank'> Tooltip </a> module using the <code>Heatmap.Inject(Tooltip) </code> method.
+        </p>
+    </div>

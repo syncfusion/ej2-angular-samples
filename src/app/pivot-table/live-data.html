@@ -29,7 +29,7 @@
     <div class='control-pane'>
         <div class="control-section">
             <div style="margin-bottom: 10px">
-                <h4 style="display: 'inline-block; fontSize: 14px; paddingLeft: 5px">
+                <h4 style="display: inline-block; fontSize: 14px; paddingLeft: 5px">
                     <strong>Feed Delay(ms)</strong>:
                 </h4>
                 <ejs-numerictextbox #feeddelay format="N0" value="5000" min="5000" step="1000" width="150px"
@@ -44,7 +44,10 @@
             </div>
             <ejs-pivotview #pivotview id='PivotView-LiveData' [dataSourceSettings]=dataSourceSettings width='100%'
                 height='350' [chartSettings]='chartSettings' [gridSettings]='gridSettings'
-                [displayOption]='displayOption' (enginePopulated)='enginePopulated()'>
+                [displayOption]='displayOption'>
+                <ng-template #cellTemplate let-data>
+                    <span>{{getCellContent(data)}} </span>
+                </ng-template>
             </ejs-pivotview>
         </div>
     </div>

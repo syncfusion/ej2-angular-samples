@@ -4,9 +4,6 @@ import { SampleDataSource } from './render-mode-data';
 import { RadioButton } from '@syncfusion/ej2-buttons';
 HeatMap.Inject(Tooltip, Legend, Adaptor);
 
-/**
- * HeatMap render-mode sample
- */
 @Component({
     selector: 'control-content',
     templateUrl: 'render-mode.html',
@@ -20,7 +17,8 @@ export class HeatmapRenderModeComponent {
         textStyle: {
             size: '15px',
             fontWeight: '500',
-            fontStyle: 'Normal'
+            fontStyle: 'Normal',
+            fontFamily: 'inherit'
         }
     };
     xAxis: Object = {
@@ -28,10 +26,16 @@ export class HeatmapRenderModeComponent {
             'Iceland', 'Ireland', 'Latvia', 'Lithuania', 'Norway', 'Sweden', 'UK'],
         labelRotation: -90,
         labelIntersectAction: 'None',
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     yAxis: Object = {
         labels: ['1965-1970', '1970-1975', '1975-1980', '1980-1985', '1985-1990',
-            '1990-1995', '1995-2000', '2000-2005', '2005-2010', '2010-2015']
+            '1990-1995', '1995-2000', '2000-2005', '2005-2010', '2010-2015'],
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     dataSource: Object = new SampleDataSource().renderModeData;
     public paletteSettings: Object = {
@@ -49,12 +53,22 @@ export class HeatmapRenderModeComponent {
     };
     public legendSettings: Object = {
         position: 'Bottom',
-        width: '200px'
+        width: '200px',
+        textStyle: {
+            fontFamily: 'inherit'
+        }
+    };
+    public tooltipSettings: Object = {
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     public load(args: ILoadedEventArgs): void {
+        // custom code start
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.heatmap.theme = <HeatMapTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        // custom code end
     };
     ngAfterViewInit() {
 

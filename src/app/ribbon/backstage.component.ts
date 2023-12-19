@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
-import { Ribbon, RibbonButtonSettingsModel, RibbonSplitButtonSettingsModel, RibbonComboBoxSettingsModel, RibbonDropDownSettingsModel, RibbonItemSize, BackstageItemModel, RibbonCheckBoxSettingsModel, RibbonColorPickerSettingsModel, LauncherClickEventArgs, DisplayMode } from '@syncfusion/ej2-ribbon';
+import { Ribbon, RibbonButtonSettingsModel, RibbonSplitButtonSettingsModel, RibbonComboBoxSettingsModel, RibbonDropDownSettingsModel, RibbonItemSize, BackstageItemModel, RibbonCheckBoxSettingsModel, RibbonColorPickerSettingsModel, RibbonGroupButtonSettingsModel, RibbonGroupButtonSelection, LauncherClickEventArgs, DisplayMode } from '@syncfusion/ej2-ribbon';
 import { SelectEventArgs as SelectListEventArgs } from "@syncfusion/ej2-lists";
 import { ToastComponent } from '@syncfusion/ej2-angular-notifications';
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
@@ -20,11 +20,24 @@ export class RibbonBackstageComponent {
     sourceFiles.files = ['backstage.component.css'];
   }
 
+  public groupButtonSingle: RibbonGroupButtonSettingsModel = { 
+    selection: RibbonGroupButtonSelection.Single,
+    header: 'Alignment',
+    items: [
+      {iconCss: 'e-icons e-align-left', selected: true, click: () => { this.updateContent("Align Left") }},
+      {iconCss: 'e-icons e-align-center', click: () => { this.updateContent("Align Center") }}, 
+      {iconCss: 'e-icons e-align-right', click: () => { this.updateContent("Align Right") }}, 
+      {iconCss: 'e-icons e-justify', click: () => { this.updateContent("Justify") }}
+    ]
+  }
+  public decreaseIndent: RibbonButtonSettingsModel = { iconCss: "e-icons e-decrease-indent", content: 'Decrease Indent', clicked: () => { this.updateContent("Decrease Indent"); } };
+  public increaseIndent: RibbonButtonSettingsModel = { iconCss: "e-icons e-increase-indent", content: 'Increase Indent', clicked: () => { this.updateContent("Increase Indent"); } };
+  public paragraphBtn: RibbonButtonSettingsModel = { iconCss: "e-icons e-paragraph", content: 'Paragraph', clicked: () => { this.updateContent("Paragraph Mark"); } };
   public pasteOptions: ItemModel[] = [{ text: "Keep Source Format" }, { text: "Merge Format" }, { text: "Keep Text Only" }];
   public findOptions: ItemModel[] = [{ text: "Find", iconCss: "e-icons e-search" }, { text: "Advanced find", iconCss: "e-icons e-search" }, { text: "Go to", iconCss: "e-icons e-arrow-right" }];
   public selectOptions: ItemModel[] = [{ text: "Select All" }, { text: "Select Objects" }];
   public dictateOptions: ItemModel[] = [{ text: "Chinese" }, { text: "English" }, { text: "German" }, { text: "French" }];
-  public tableOptions: ItemModel[] = [{ text: "Insert Table" }, { text: "This Device" }, { text: "Convert Table" }, { text: "Excel Spreadsheet" }];
+  public tableOptions: ItemModel[] = [{ text: "Insert Table" }, { text: "Draw Table" }, { text: "Convert Table" }, { text: "Excel Spreadsheet" }];
   public shapeOptions: ItemModel[] = [{ text: "Lines" }, { text: "Rectangles" }, { text: "Basic Arrows" }, { text: "Basic Shapes" }, { text: "FlowChart" }];
   public headerOptions: ItemModel[] = [{ text: "Insert Header" }, { text: "Edit Header" }, { text: "Remove Header" }];
   public footerOptions: ItemModel[] = [{ text: "Insert Footer" }, { text: "Edit Footer" }, { text: "Remove Footer" }];
@@ -69,8 +82,8 @@ export class RibbonBackstageComponent {
   public fontSize: string[] = ["8", "9", "10", "11", "12", "14", "16", "18", "20", "22", "24", "26", "28", "36", "48", "72", "96"];
   public fontStyle: string[] = ["Algerian", "Arial", "Calibri", "Cambria", "Cambria Math", "Courier New", "Candara", "Georgia", "Impact", "Segoe Print", "Segoe Script", "Segoe UI", "Symbol", "Times New Roman", "Verdana", "Windings"];
 
-  public fontstyleSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontStyle, index: 3, width: '150px', allowFiltering: true, change: (args) => { if (args.itemData) { this.updateContent("Font Style -> " + args.itemData.text); } } };
-  public fontsizeSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontSize, index: 3, width: '65px', popupWidth: '85px', allowFiltering: true, change: (args) => { if (args.itemData) { this.updateContent("Font Size -> " + args.itemData.text); } } };
+  public fontstyleSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontStyle, label: 'Font Style', index: 3, width: '115px', popupWidth: '150px', allowFiltering: true, change: (args) => { if (args.itemData) { this.updateContent("Font Style -> " + args.itemData.text); } } };
+  public fontsizeSettings: RibbonComboBoxSettingsModel = { dataSource: this.fontSize, label: 'Font Size', index: 3, width: '65px', popupWidth: '85px', allowFiltering: true, change: (args) => { if (args.itemData) { this.updateContent("Font Size -> " + args.itemData.text); } } };
 
   public colorSettings: RibbonColorPickerSettingsModel = { value: '#123456', change: (args) => { this.updateContent(args.currentValue.hex + " color"); } };
 
@@ -106,7 +119,7 @@ export class RibbonBackstageComponent {
   }
 
   public pictureList: Object = [
-    { text: 'This device' },
+    { text: 'This Device' },
     { text: 'Stock Images' },
     { text: 'Online Images' }
   ];
@@ -155,11 +168,11 @@ export class RibbonBackstageComponent {
   }
 
   public getBackstageContent(item: string): string {
-    var homeContentTemplate = "<div id='home-wrapper'>{{newSection}}{{recentSection}}</div>";
-    var newSection = "<div id='new-section' class='new-wrapper'><div class='section-title'> New </div><div class='category_container'><div class='doc_category_image'></div> <span class='doc_category_text'> New document </span></div></div>";
-    var recentSection = "<div id='block-wrapper'><div class='section-title'> Recent </div>{{recentWrapper}}</div>";
+    var homeContentTemplate = "<div class='home-wrapper'>{{newSection}}{{recentSection}}</div>";
+    var newSection = "<div class='new-wrapper'><div class='section-title'> New </div><div class='category_container'><div class='doc_category_image'></div> <span class='doc_category_text'> New document </span></div></div>";
+    var recentSection = "<div class='block-wrapper'><div class='section-title'> Recent </div>{{recentWrapper}}</div>";
     var recentWrapper = "<div class='section-content'><table><tbody><tr><td> <span class='doc_icon e-icons {{icon}}'></span> </td><td><span style='display: block; font-size: 14px'> {{title}} </span><span style='font-size: 12px'> {{description}} </span></td></tr></tbody></table></div>";
-    var blockSection = "<div id='block-wrapper'> <div class='section-title'> {{blockTitle}} </div> {{blockSection}} </div>";
+    var blockSection = "<div class='block-wrapper'> <div class='section-title'> {{blockTitle}} </div> {{blockSection}} </div>";
     var content = "";
     var recentDocUpdatedString = "";
     switch (item) {

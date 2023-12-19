@@ -3836,7 +3836,7 @@ export function generateObject(start, end, isWeekDaysOnly) {
         'Meet a small Mammal', 'Amazon Fish Feeding', 'Elephant Ride'
     ];
     var dayCount = 1000 * 60 * 60;
-    var appCount = isWeekDaysOnly ? 1 : 9;
+    var appCount = isWeekDaysOnly ? 4 : 9;
     for (var a = start, id = 1; a < end; a += (dayCount * 24)) {
         var count = Math.floor((Math.random() * appCount) + 1);
         for (var b = 0; b < count; b++) {

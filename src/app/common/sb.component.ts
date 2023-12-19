@@ -43,6 +43,7 @@ declare let window: MyWindow;
 const sbObj: { [index: string]: string } = { 'react': 'react', 'javascript': 'javascript', 'vue': 'vue', 'blazor': 'blazor' }
 const sbArray: string[] = ['react', 'ts', 'javascript', 'asp_core', 'asp_mvc', 'vue', 'blazor'];
 const urlRegex: RegExp = /(npmci\.syncfusion\.com|ej2\.syncfusion\.com)(\/)(development|production)*/;
+const reg: RegExp = /.*custom code start([\S\s]*?)custom code end.*/g;
 const sampleRegex: RegExp = /#\/(([^\/]+\/)+[^\/\.]+)/;
 const cBlock: string[] = ['ts-src-tab', 'html-src-tab'];
 const matchedCurrency: { [key: string]: string } = {
@@ -184,6 +185,7 @@ export class SBController {
                 }
                 let blockEle: Element = this.element.querySelector('#e-content' + this.tabId + '_' + e.selectedIndex).children[0];
                 blockEle.innerHTML = this.items[e.selectedIndex].data;
+                blockEle.innerHTML = blockEle.innerHTML.replace(reg,'');
                 blockEle.classList.add('sb-src-code');
                 hljs.highlightBlock(blockEle);
             }
@@ -263,11 +265,6 @@ export class SBController {
     breadCrumbUpdate(controlName: string, category: string, sampleName: string) {
         let ele: Element = this.ngEle.nativeElement.querySelector('#sample-bread-crumb');
         this.breadCrumbObject.component.innerHTML = controlName;
-        if (controlName === 'PDF Viewer') {
-            (document.querySelector('.sb-desktop-setting') as HTMLElement).style.display = 'none';
-        } else {
-            (document.querySelector('.sb-desktop-setting') as HTMLElement).style.display = '';
-        }
         if (category && controlName.toLowerCase() !== category.toLowerCase()) {
             this.breadCrumbObject.subCategory.innerHTML = category;
             this.breadCrumbObject.subCategory.style.display = '';
@@ -292,6 +289,7 @@ export class SBController {
         }
         let blockEle: Element = tabObj.element.querySelector('#e-content' + tabObj.tabId + '_' + tabObj.selectedItem).children[0];
         blockEle.innerHTML = tabObj.items[tabObj.selectedItem].data;
+        blockEle.innerHTML = blockEle.innerHTML.replace(reg,'');
         blockEle.classList.add('sb-src-code');
         if (blockEle) {
             hljs.highlightBlock(blockEle);

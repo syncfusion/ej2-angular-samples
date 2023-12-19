@@ -1,7 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { IStockChartEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { aapl } from './stock-data';
-
 /**
  * Sample for Area Series
  */

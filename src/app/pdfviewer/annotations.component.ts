@@ -26,6 +26,7 @@ export class AnnotationsComponent implements OnInit {
     public switch: SwitchComponent;
 
     public document: string = 'https://cdn.syncfusion.com/content/pdf/annotations.pdf';
+    public resource:string = "https://cdn.syncfusion.com/ej2/23.2.6/dist/ej2-pdfviewer-lib";
     ngOnInit(): void {
         // ngOnInit function
     }
@@ -34,7 +35,7 @@ export class AnnotationsComponent implements OnInit {
             this.pdfviewerControl.serviceUrl = '';
         }
         else {
-            this.pdfviewerControl.serviceUrl = 'https://ej2services.syncfusion.com/angular/development/api/pdfviewer';
+            this.pdfviewerControl.serviceUrl = 'https://services.syncfusion.com/angular/production/api/pdfviewer';
         }
         this.pdfviewerControl.dataBind();
         this.pdfviewerControl.load(this.pdfviewerControl.documentPath, null);

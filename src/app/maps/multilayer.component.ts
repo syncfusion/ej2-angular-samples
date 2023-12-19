@@ -47,7 +47,10 @@ export class MapsMultilayerComponent {
             dataLabelSettings: {
                 visible: true,
                 labelPath: 'iso_3166_2',
-                smartLabelMode: 'Hide'
+                smartLabelMode: 'Hide',
+                textStyle: {
+                    color: 'black'
+                }
             }
         },
         {
@@ -87,7 +90,7 @@ export class MapsMultilayerComponent {
                             longitude: -98.96484375
                         }
                     ],
-                    template: '<div>TX</div>'
+                    template: '<div style="color: black" >TX</div>'
                 }
             ]
         },
@@ -128,7 +131,7 @@ export class MapsMultilayerComponent {
                             longitude: -119.35546875000001
                         }
                     ],
-                    template: '<div>CA</div>'
+                    template: '<div style="color: black">CA</div>'
                 }
             ]
         }

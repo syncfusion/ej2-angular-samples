@@ -1,0 +1,30 @@
+<div id="action-description">
+    <p>This sample demonstrates the usage of the empty record template in the DataGrid. In this sample, we show a custom image in the place of the default no-record message typically shown by the DataGrid.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-grid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' [toolbar]='toolbar'>
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' width='140' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
+            <e-column field='CustomerID' headerText='Customer ID' width='140' [validationRules]='customeridrules'></e-column>
+            <e-column field='Freight' headerText='Freight' width='140' format='C2' textAlign='Right' editType='numericedit' [validationRules]='freightrules'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='120' editType='datetimepickeredit' [format]='formatoptions' textAlign='Right'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='150' editType='dropdownedit' [edit]='editparams'></e-column>
+        </e-columns>
+        
+        <ng-template #emptyRecordTemplate>
+            <div class='emptyRecordTemplate'>
+                <img src="./assets/grid/images/emptyRecordTemplate.svg" class="e-emptyRecord" alt="No record">
+                <span>There is no data available to display at the moment.</span>
+            </div>
+        </ng-template>
+    </ejs-grid>
+    <div id="description">
+        <p>The DataGrid provides a way to use a custom content when it has no data to present. 
+            The <code>emptyRecordTemplate</code> property accepts either a string or an HTML element ID value, which will be used as the template when there's no data.</p>
+        <p>
+            More information on the data binding can be found in this
+            <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/grid/data-binding/data-binding">documentation section</a>.
+        </p>
+    </div>
+</div>

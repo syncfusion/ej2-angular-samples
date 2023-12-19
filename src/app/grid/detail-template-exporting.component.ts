@@ -60,7 +60,7 @@ export class DetailTemplateExportComponent implements OnInit {
                                         height: 80,
                                         width: 80,
                                     }
-                                    : { base64: args.parentRow.data['EmployeeImage'], width: 80 },
+                                    : { base64: args.parentRow.data['EmployeeImage'] },
                         },
                         {
                             index: 1,

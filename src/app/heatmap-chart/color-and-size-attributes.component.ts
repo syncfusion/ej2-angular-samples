@@ -5,9 +5,6 @@ import {
 } from '@syncfusion/ej2-angular-heatmap';
 HeatMap.Inject(Tooltip, Legend, Adaptor);
 
-/**
- * HeatMap Legend sample
- */
 @Component({
     selector: 'control-content',
     templateUrl: 'color-and-size-attributes.html',
@@ -58,14 +55,20 @@ export class HeatmapColorAndSizeAttributesComponent {
             size: '15px',
             fontWeight: '500',
             fontStyle: 'Normal',
-            fontFamily: 'Segoe UI'
+            fontFamily: 'inherit'
         }
     };
     xAxis: Object = {
-        labels: ['2017', '2016', '2015', '2014', '2013', '2012']
+        labels: ['2017', '2016', '2015', '2014', '2013', '2012'],
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     yAxis: Object = {
-        labels:  ['Jan-Feb', 'Mar-Apr', 'May-Jun', 'Jul-Aug', 'Sep-Oct', 'Nov-Dec']
+        labels:  ['Jan-Feb', 'Mar-Apr', 'May-Jun', 'Jul-Aug', 'Sep-Oct', 'Nov-Dec'],
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     public cellSettings: Object = {
         border: {
@@ -91,6 +94,14 @@ export class HeatmapColorAndSizeAttributesComponent {
     };
     public legendSettings: Object = {
         visible: true,
+        textStyle: {
+            fontFamily: 'inherit'
+        }
+    };
+    public tooltipSettings: Object = {
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     public tooltipRender(args: ITooltipEventArgs): void {
         args.content = args.content = ['Year ' + ' : ' + args.xLabel + '<br/>' + 'Months ' + ' : ' + args.yLabel + '<br/>'
@@ -98,9 +109,11 @@ export class HeatmapColorAndSizeAttributesComponent {
             + (args.value as BubbleTooltipData[])[1].bubbleData];
     };
     public load(args: ILoadedEventArgs): void {
+        // custom code start
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.heatmap.theme = <HeatMapTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        // custom code end
     };
     ngAfterViewInit() {
     }

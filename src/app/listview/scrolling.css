@@ -1,0 +1,12 @@
+#listview-scrolling {
+  margin: auto;
+  max-width: 800px;
+}
+
+#listview-scrolling.e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar {
+  background: transparent;
+  width: 85px;
+  height: 85px;
+  top: 50%;
+  transform: translateY(-50%);
+}

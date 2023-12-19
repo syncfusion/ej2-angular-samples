@@ -180,7 +180,7 @@ body[class*="high"] #ribbonContainer {
   height: 510px;
 }
 
-#home_content #new-section {
+#home_content .new-wrapper {
   margin-bottom: 15px;
 }
 

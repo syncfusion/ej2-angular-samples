@@ -78,7 +78,7 @@ export const treegridRouteConfig: Object[] = [
     order: '01', category: 'Tree Grid' },
     { 'path': ':theme/treegrid/live-data', component: LiveDataComponent, name: 'Live Data',
     description: 'This demo for Essential JS 2 Tree Grid component shows the grid Local Live Data Update.',
-    order: '01', category: 'Tree Grid', type: "new" },
+    order: '01', category: 'Tree Grid' },
     { 'path': ':theme/treegrid/default', component: DefaultComponent, 'name': 'Default Functionalities',
     description: 'This demo for Essential JS2 Tree Grid component shows the default rendering of the Tree Grid  component with minimum configuration.', 
     order: '01', category: 'Tree Grid' },

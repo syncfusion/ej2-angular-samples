@@ -14,7 +14,7 @@ export class DefaultComponent {
 
     public data1: Object[] = chartData;
 
-    public primaryXAxis: Object = { majorGridLines: { color: 'transparent' }, crosshairTooltip: { enable: true } };
+    public primaryXAxis: Object = { majorGridLines: { color: 'transparent' }, crosshairTooltip: { enable: true }};
 
     public primaryYAxis: Object = {
         lineStyle: { color: 'transparent' },

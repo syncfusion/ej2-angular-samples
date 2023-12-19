@@ -8,6 +8,7 @@ import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { UploaderModule, SignatureModule, TextBoxModule, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { TabModule, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SplitButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 import { DefaultSignatureComponent } from './default.component';
 import { ToolbarSignatureComponent } from './toolbar.component';
 
@@ -19,7 +20,7 @@ export const signatureAppRoutes: Object[] = [
 export const signatureRouter: ModuleWithProviders<any> = RouterModule.forChild(signatureAppRoutes);
 
 @NgModule({
-    imports: [signatureRouter, SharedModule, ColorPickerModule, BrowserModule, CheckBoxModule, DropDownListModule, TabModule, ToolbarModule, UploaderModule, SignatureModule, TextBoxModule, DialogModule, ButtonModule, NumericTextBoxModule],
+    imports: [signatureRouter, SharedModule, ColorPickerModule, BrowserModule, CheckBoxModule, DropDownListModule, TabModule, ButtonModule, SplitButtonModule, ToolbarModule, UploaderModule, SignatureModule, TextBoxModule, DialogModule, ButtonModule, NumericTextBoxModule],
     declarations: [
         DefaultSignatureComponent,
         ToolbarSignatureComponent,

@@ -152,7 +152,7 @@ export class RemoteDataChartComponent {
         majorGridLines: { width: 1 },
         majorTickLines: { width: 0 },
         lineStyle: { width: 0 },
-        title: 'Freight rate in U.S. dollars'
+        title: 'Freight rate in U.S dollars'
     };
     public legend: Object = {
         visible: false

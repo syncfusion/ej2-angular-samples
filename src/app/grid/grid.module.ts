@@ -1,7 +1,6 @@
 import { NgModule, Type, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-// import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { GridAllModule } from '@syncfusion/ej2-angular-grids';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
@@ -77,13 +76,15 @@ import { LoadingAnimationComponent } from './loading-animation.component';
 import { LazyLoadGroupingWithVirtualScrollingComponent } from './lazy-load-grouping-with-virtual-scrolling.component';
 import { LiveDataComponent } from './live-data.component';
 import { MultipleExportComponent } from './multiple-export.component';
+import { EmptyRecordTemplateComponent } from './empty-record-template.component';
 
 export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/over-view', component: OverViewComponent, 'name': 'Overview', description: 'This demo for Essential JS 2 grid component is an overview of how to display and manipulate large data with configuration options.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/live-data', component: LiveDataComponent, name: 'Live Data', description: 'This demo for Essential JS 2 grid component shows how frequently the Grid cell is updated with real-time data.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/default', component: DefaultComponent, 'name': 'Default Functionalities', description: 'This demo for Essential JS 2 grid component shows the default rendering of the grid component with minimum configuration.', order: '01', category: 'Data Grid' },
-    { 'path': ':theme/grid/adaptive-layout', component: AdaptiveLayoutComponent, name: 'Adaptive Layout',  description: 'This demo for Essential JS 2 grid component shows the Grid row in vertical direction.', order: '01', category: 'Data Grid' },
+    { 'path': ':theme/grid/adaptive-layout', component: AdaptiveLayoutComponent, name: 'Adaptive Layout', 'type': 'update',  description: 'This demo for Essential JS 2 grid component shows the Grid row in vertical direction.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/loading-animation', component: LoadingAnimationComponent, name: 'Loading Animation',  description: 'This demo for Essential JS 2 grid component shows the loading indicator when grid loading and refreshing.', order: '01', category: 'Data Grid' },
+    { 'path': ':theme/grid/empty-record-template', component: EmptyRecordTemplateComponent, name: 'Empty Record Template', 'type': 'new',  description: 'This demo for Essential JS 2 grid component demonstrates usage of template in Grid to shown element or text or image or gif icon instead of displaying the empty record message.', order: '01', category: 'Data Grid' },
 
     { 'path': ':theme/grid/local-data', component: LocalDataComponent, 'name': 'Local Data', description: 'This demo for Essential JS 2 grid component shows how to bind with a local data source.', order: '02', category: 'Data Binding' },
     { 'path': ':theme/grid/remote-data', component: DataBindingComponent, 'name': 'Remote Data', description: 'This demo for Essential JS 2 grid component shows how to consume data from a remote data service.', order: '02', category: 'Data Binding' },
@@ -178,7 +179,7 @@ export const gridRouteConfig: Object[] = [
 
     { 'path': ':theme/grid/filtering', component: FilterComponent, name: 'Default Filtering', description: 'This demo for Essential JS 2 grid component shows how to place a filter bar row in the header to filter grid rows.', order: '07', category: 'Filtering' },
     {
-        'path': ':theme/grid/filter-menu', component: FilteringMenuComponent,  name: 'Filter Menu',
+        'path': ':theme/grid/filter-menu', component: FilteringMenuComponent,  name: 'Filter Menu', 'type': 'update',
         description: 'This demo for Essential JS 2 grid component demonstrates a way of filtering rows using a menu, check box, and Excel filter UI.', order: '07', category: 'Filtering'
     },
     { 'path': ':theme/grid/searching', component: SearchComponent, name: 'Search', description: 'This demo for Essential JS 2 grid component shows the content searching feature.', order: '07', category: 'Filtering' },
@@ -217,7 +218,7 @@ export const gridRouteConfig: Object[] = [
         category: 'Scrolling'
     },
     {
-        'path': ':theme/grid/frozen-api', 'type':'update', component: FrozenApiComponent, name: 'Frozen API', order: '13',description: 'This demo for Essential JS 2 grid component shows how the rows and columns can be frozen or pinned.',
+        'path': ':theme/grid/frozen-api', component: FrozenApiComponent, name: 'Frozen API', order: '13',description: 'This demo for Essential JS 2 grid component shows how the rows and columns can be frozen or pinned.',
         category: 'Scrolling'
     },
     {
@@ -247,11 +248,11 @@ export const gridRouteConfig: Object[] = [
     },
     {
         'path': ':theme/grid/detail-template-exporting', component: DetailTemplateExportComponent, name: 'Detail Template Exporting', order: '15', description: 'This demo for Essential JS 2 grid control shows the client-side exporting of grid content with Detail template to Excel and PDF formats.',
-        category: 'Exporting', 'type': 'new'
+        category: 'Exporting'
     },
     {
         'path': ':theme/grid/multiple-export', component: MultipleExportComponent, name: 'Multiple Exporting', order: '15', description: 'This demo for Essential JS 2 grid control shows the client-side exporting of multiple grid content to Excel and PDF formats.',
-        category: 'Exporting', 'type': 'new'
+        category: 'Exporting'
     },
     {
         'path': ':theme/grid/print', component: PrintComponent, name: 'Print', order: '15', description: 'This demo for Essential JS 2 grid component shows how to print the grid content.',
@@ -279,7 +280,7 @@ let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
     FilteringMenuComponent, ColumnSpanningComponent, ContextMenuComponent, ColumnMenuComponent, FrozenRowsColumnsComponent, FrozenApiComponent,
     ForeignKeyColumnComponent, RowHeightComponent, AsyncPipeComponent, DialogReactiveFormComponent, TemplateDrivenFormComponent,
     ReactiveAggregateComponent, RowSpanningComponent, DragWithinSingle, HierarchyExportComponent, DetailTemplateExportComponent, AdaptiveLayoutComponent, LoadingAnimationComponent,
-    LazyLoadGroupingWithInfiniteScrollingComponent, LazyLoadGroupingWithVirtualScrollingComponent, LiveDataComponent, FlexibleDataBindingComponent
+    LazyLoadGroupingWithInfiniteScrollingComponent, LazyLoadGroupingWithVirtualScrollingComponent, LiveDataComponent, FlexibleDataBindingComponent, EmptyRecordTemplateComponent
 ];
 
 @NgModule({

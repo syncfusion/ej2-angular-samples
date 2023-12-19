@@ -5,7 +5,7 @@
 <div class="col-lg-8  control-section">
     <!-- ListView element -->
     <ejs-listview id='ui-list' #listviewInstance [dataSource]='dataSource.data1' [cssClass]='cssClass' [enableVirtualization]=true
-        headerTitle='Contacts' [fields]='fields' height=500 (actionComplete)='onActionComplete()'
+        headerTitle='Contacts' [fields]='fields' height=500 [template]='template' (actionComplete)='onActionComplete()'
         (actionBegin)='onActionBegin()' [showHeader]='true'>
         <ng-template #template let-data>
             <div class="e-list-wrapper e-list-avatar">

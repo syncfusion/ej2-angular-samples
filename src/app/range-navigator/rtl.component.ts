@@ -25,7 +25,7 @@ export class RTLComponent {
     public Chart: Chart;
     public primaryXAxis: Object = {
         valueType: 'DateTime', crosshairTooltip: { enable: true }, edgeLabelPlacement: 'Shift',
-                isInversed: true, majorGridLines: { width: 0 }
+                majorGridLines: { width: 0 }
     };
 
     public dataSource: Object = axesData;

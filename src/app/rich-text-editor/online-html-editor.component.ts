@@ -32,10 +32,11 @@ export class OnlineHtmlEditorComponent {
         enableFloating :false,
         items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
             'FontName', 'FontSize', 'FontColor', 'BackgroundColor',
-            'Formats', 'Alignments', 'NumberFormatList', 'BulletFormatList',
+            'Formats', 'Alignments', 'OrderedList', 'UnorderedList',
             'Outdent', 'Indent',
-            'CreateTable', 'CreateLink', 'Image', 'FileManager', '|', 'ClearFormat', 'Print',
-            'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
+            'CreateLink', 'Image', 'Video', 'Audio', 'CreateTable', '|', 'FormatPainter', 'ClearFormat',
+            '|', 'EmojiPicker', 'SourceCode', '|', 'Undo', 'Redo'
+        ]
     };
 
     constructor(@Inject('sourceFiles') private sourceFiles: any) {

@@ -45,7 +45,10 @@
         #tooltipPropertySection .property-panel-header {
             margin-left: 10px;
         }
-
+        td{
+            width: 50%;
+            padding-top: 5px;
+        }
         .content-wrapper {
             border: 1px solid #D7D7D7;
         }
@@ -70,7 +73,7 @@
             </td>
             <td>
                 <div style="margin-left:15px">
-                    <ejs-dropdownlist id="mode" #mode [index]="dropdownIndex" [dataSource]="modevalue" [fields]="fields" popupWidth='150' width='100%' placeholder='select a relative mode'
+                    <ejs-dropdownlist id="mode" #mode [index]="dropdownIndex" [dataSource]="modevalue" [fields]="fields" popupWidth='150' width='85%' placeholder='select a relative mode'
                         (change)="relativeModeChange($event)">
                     </ejs-dropdownlist>
                 </div>
@@ -84,27 +87,13 @@
             </td>
             <td>
                 <div style="margin-left:15px">
-                    <ejs-dropdownlist id="position" #position [index]="dropdownIndex" [dataSource]="PositionValue" [fields]="fields" popupWidth='150' width='100%' placeholder='select a position'
+                    <ejs-dropdownlist id="position" #position [index]="dropdownIndex" [dataSource]="PositionValue" [fields]="fields" popupWidth='150' width='85%' placeholder='select a position'
                         (change)="positionChange($event)">
                     </ejs-dropdownlist>
                 </div>
             </td>
         </tr>
-        <tr>
-            <td></td>
-            <td>
-                <div id="textContentDiv" class="row" style="display: none">
-                    <div>
-                        <ejs-textbox id="textContent" placeholder="Enter text content" floatLabelType="Auto" (change)="textChange"></ejs-textbox>
-                    </div>
-                </div>
-                <div id="htmlContentDiv" class="row" style="display: none">
-                    <div>
-                        <ejs-textbox id="htmlContent" placeholder="Enter html content" floatLabelType="Auto" (change)="htmlChange"></ejs-textbox>
-                    </div>
-                </div>
-            </td>
-        </tr>
+        
         <tr>
             <td>
                 <div>
@@ -113,7 +102,7 @@
             </td>
             <td>
                 <div style="margin-left:15px">
-                    <ejs-numerictextbox id="duration" value="1000" min="1000" max="6000" step="100" (change)="animationChange"></ejs-numerictextbox>
+                    <ejs-numerictextbox id="duration" value="1000" min="1000" max="6000" step="100" width="85%" (change)="animationChange"></ejs-numerictextbox>
                 </div>
             </td>
         </tr>
@@ -125,9 +114,21 @@
             </td>
             <td>
                 <div style="margin-left:15px">
-                    <ejs-dropdownlist id="effect" #effect [dataSource]="EffectValue" [index]="dropdownIndex" [fields]="fields" popupWidth='150' width='100%' placeholder='select a effect type'
+                    <ejs-dropdownlist id="effect" #effect [dataSource]="EffectValue" [index]="dropdownIndex" [fields]="fields" popupWidth='150' width='85%' placeholder='select a effect type'
                         (change)="effectChange($event)">
                     </ejs-dropdownlist>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    Sticky Mode
+                </div>
+            </td>
+            <td>
+                <div style="margin-left:15px">                   
+                    <ejs-checkbox id="isSticky" #isSticky [checked]="false" (change)="isStickyChange($event)" ></ejs-checkbox>
                 </div>
             </td>
         </tr>

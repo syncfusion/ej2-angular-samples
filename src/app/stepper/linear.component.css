@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Linear_flow';
+    src:
+    url(data:application/x-font-ttf;charset=utf-8;base64,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) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.linear-stepper-control [class^="sf-icon-"], .linear-stepper-control [class*=" sf-icon-"] {
+    font-family: 'Linear_flow' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.linear-stepper-control .sf-icon-form:before { content: "\e700"; }
+.linear-stepper-control .sf-icon-tasksheet:before { content: "\e701"; }
+.linear-stepper-control .sf-icon-progress:before { content: "\e702"; }
+.linear-stepper-control .sf-icon-submit:before { content: "\e703"; }
+
+
+#linear-stepper-section .stepper-modes {
+    margin-left: 40%;
+}
+
+.linear-stepper-control {
+    margin: 45px 100px;
+}
+
+.linear-stepper-options {
+    margin: 30px 100px;
+}
+
+#linear-stepper-content {
+    height: 120px;
+    width: 75%;
+    margin: 0px 105px;
+}
+
+@media only screen and (max-width: 965px) {
+    .linear-stepper-control {
+        width: 100%;
+        margin: 30px auto;
+    }
+    #linear-stepper-content, .linear-stepper-options {
+        margin: 30px 0px 0px 0px;
+        width: auto;
+        height: auto;
+        left: 25%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #linear-stepper-section .stepper-modes {
+        margin-left: 20%;
+    }
+}

@@ -1,0 +1,21 @@
+.property-panel-content {
+    padding: 0 10px 10px 0;
+}
+
+.content {
+    width: 43%;
+    margin: 0 auto;
+    min-width: 185px;
+    padding: 25px 0px;
+}
+
+.control-label {
+    padding: 24px 0px 0px 0px;
+    font-size: 12px;
+    opacity: 0.54;
+}
+
+.control-section,
+.content-wrapper {
+    min-height: 350px;
+}

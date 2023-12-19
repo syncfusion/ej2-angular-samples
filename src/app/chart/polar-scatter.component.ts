@@ -44,7 +44,7 @@ export class PolarScatterChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        minimum: 0, maximum: 8, interval: 2
+        minimum: 0, maximum: 8, interval: 2, labelFormat:'{value}%'
     };
     public legendSettings: Object = {
         visible: true,
@@ -78,6 +78,9 @@ export class PolarScatterChartComponent {
                 this.chart.series[0].type = <ChartSeriesType>type;
                 this.chart.series[1].type = <ChartSeriesType>type;
                 this.chart.series[2].type = <ChartSeriesType>type;
+                this.chart.series[0].animation.enable = false;
+                this.chart.series[1].animation.enable = false;
+                this.chart.series[2].animation.enable = false;
                 this.chart.refresh();
             }
         });

@@ -56,8 +56,7 @@ export class PolarRangeColumnChartComponent {
         width: 3, color: 'white'
     };
     public tooltip: Object = {
-        enable: true,
-        header: ""
+        enable: true, header: '', format: '<b>${point.x}</b> <br> Low : <b>${point.low}°C</b> <br> High : <b>${point.high}°C'
     };
     public legendSettings: Object = {
         visible: false
@@ -73,6 +72,7 @@ export class PolarRangeColumnChartComponent {
             change: () => {
                 let type: string = this.seriesType.value.toString();
                 this.chart.series[0].type = <ChartSeriesType>type;
+                this.chart.series[0].animation.enable = false;
                 this.chart.refresh();
             }
         });

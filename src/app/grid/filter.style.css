@@ -2,6 +2,7 @@
     padding: 0 0 10px 0;
     font-family: Roboto;
     padding: 1em;
+    display: inline-block;
 }
 
 .select-wrap .e-ddl.e-input-group .e-ddl-hidden {

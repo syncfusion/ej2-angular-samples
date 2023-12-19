@@ -72,7 +72,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/virtual-scroll', component: GanttVirtualScrollComponent,
         description: 'This example illustrates binding large data and smooth scrolling with large data using the Virtual Scroll feature in the Syncfusion Gantt chart.',
-        name: 'Virtual Scrolling', order: '01', category: 'Gantt'
+        name: 'Virtual Scrolling', order: '01', category: 'Gantt', type: "update"
     },
     {
         path: ':theme/gantt/loading-animation', component: GanttLoadingAnimationComponent,
@@ -92,7 +92,7 @@ export const GanttAppRoutes: Object[] = [
     {
       path: ':theme/gantt/load-on-demand', component: GanttLoadOnDemandComponent,
       description: 'This sample demonstrates the load on-demand data binding support in Gantt Chart.',
-      name: 'Load On Demand', order: '02', category: 'Data Binding', type: "new"
+      name: 'Load On Demand', order: '02', category: 'Data Binding'
     },
     {
         path: ':theme/gantt/self-reference-data', component: GanttSelfDataComponent,
@@ -257,7 +257,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/drag-and-drop', component: GanttDragAndDropComponent,
         description: 'This demo for Essential JS 2 Gantt control how the rows can be dragged within the gantt using the row drag-and-drop feature.',
-        name: 'Row Drag and Drop', order: '09', category: 'Miscellaneous'
+        name: 'Row Drag and Drop', order: '09', category: 'Miscellaneous', type: "update"
     },
     {
         path: ':theme/gantt/split-tasks', component: GanttSplitTasksComponent,

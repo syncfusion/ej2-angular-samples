@@ -1,14 +1,7 @@
-<div id="action-description">
-    <p>
-        This sample visualizes the net migration rate for the northern European countries over the years. The data label is disabled
-        in this sample, the tooltip displays the data point values. In property panel, the options are available to change
-        the rendering mode between Canvas and SVG means of radio button.
-    </p>
-</div>
 <div class="content-wrapper">
     <div class="col-lg-9">
         <ejs-heatmap id='container' #heatmap style="display:block;" [titleSettings]='titleSettings' [dataSource]='dataSource' [xAxis]='xAxis'
-            [yAxis]='yAxis' [cellSettings]='cellSettings' [legendSettings]='legendSettings' [renderingMode]='renderingMode' [paletteSettings]='paletteSettings'
+            [yAxis]='yAxis' [cellSettings]='cellSettings' [tooltipSettings]='tooltipSettings' [legendSettings]='legendSettings' [renderingMode]='renderingMode' [paletteSettings]='paletteSettings'
             (load)='load($event)'>
         </ejs-heatmap>
     </div>
@@ -37,22 +30,19 @@
         </div>
     </div>
 </div>
-
-<div id="description">
+<div id="action-description">
     <p>
-        In this example, you can see how to change the rendering mode between <code>Canvas </code> and <code>SVG </code> types in Heatmap. You can change the rendering mode using the <code>renderingMode </code> property.
-    </p>
-    <p>
-        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
-    </p>
-    <br>
-    <p style="font-weight: 500">Injecting Module</p>
-    <p>
-        Heatmap component features are segregated into individual feature-wise modules. To use a tooltip, inject the <code>Tooltip </code>        module using the <code>Heatmap.Inject(Tooltip) </code> method, and use a legend by injecting the <code>Legend </code>        module using the <code>Heatmap.Inject(Legend) </code> method.
+        This sample visualizes the net migration rate for the northern European countries over the years. The data label is disabled in this sample, the tooltip displays the data point values.  In property panel, the options are available to change the rendering mode between Canvas and SVG means of radio button.
     </p>
 </div>
-<style>
-    #control-container {
-        padding: 0px !important;
-    }
-</style>
+<div id="description">
+    <p>
+        In this example, you can see how to change the rendering mode between <code>Canvas</code> and <code>SVG</code> types in Heatmap. You can change the rendering mode using the <a href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/rendering-mode" target="_blank">renderingMode</a> property.
+    </p>
+    <p>The tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item on touch-enabled devices.</p>
+    <br>
+    <p><b>Injecting Module</b></p>
+    <p>
+       Heatmap component features are separated into discrete feature-based modules. To use the tooltip, inject the <a href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/tooltip" target='_blank'>Tooltip</a> module using the <code>Heatmap.Inject(Tooltip)</code> method and to use a legend, inject the <a href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/legend" target='_blank'>Legend</a> module using the <code>Heatmap.Inject(Legend)</code> method.
+    </p>
+</div>

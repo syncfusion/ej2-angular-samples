@@ -1,9 +1,3 @@
-<div id="action-description">
-    <p>
-        This sample demonstrates the various options for customizing the axis labels, such as styling, formatting,
-        replacing text, and setting offset in the linear gauge.
-    </p>
-</div>
 <div class="control-section">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12"
@@ -32,7 +26,7 @@
     <div id="containerBox">
         <div id='containerone' class="col-xs-5 col-sm-5 col-lg-3 col-md-3"
             style="display: flex;justify-content: center; align-items: center;">
-            <ejs-lineargauge (load)='load($event)' id='customLabels' #customLabels background='transparent'
+            <ejs-lineargauge (load)='load($event)' animationDuration=1500 id='customLabels' #customLabels background='transparent'
                 title='Custom labels' [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;'
                 orientation='Vertical' [axes]='customLabelAxes'>
             </ejs-lineargauge>
@@ -46,19 +40,25 @@
         </div>
         <div id='containerthree' class="col-xs-5 col-sm-5 col-lg-3 col-md-3"
             style="display: flex;justify-content: center; align-items: center;">
-            <ejs-lineargauge (load)='load($event)' id='labelOffset' #labelOffset title='Label offset'
+            <ejs-lineargauge (load)='load($event)' id='labelOffset' animationDuration=1500 #labelOffset title='Label offset'
                 [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' background='transparent'
                 orientation='Vertical' [axes]='labelOffsetAxes'>
             </ejs-lineargauge>
         </div>
         <div id='containerfour' class="col-xs-5 col-sm-5 col-lg-3 col-md-3"
             style="display: flex;justify-content: center; align-items: center;">
-            <ejs-lineargauge (load)='load($event)' id='labelCustomization' #labelCustomization
+            <ejs-lineargauge (load)='load($event)' animationDuration=1500 id='labelCustomization' #labelCustomization
                 title='Label customization' [titleStyle]='titleStyle' width='150px' height='350px'
                 style='display:block;' background='transparent' orientation='Vertical' [axes]='labelCustomizationAxes'>
             </ejs-lineargauge>
         </div>
     </div>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates the various options for customizing the axis labels, such as styling, formatting,
+        replacing text, and setting offset in the linear gauge.
+    </p>
 </div>
 <div id="description">
     <p>
@@ -77,10 +77,3 @@
             section</a>.
     </p>
 </div>
-<!-- custom code start -->
-<style>
-    .control-section {
-        min-height: 450px;
-    }
-</style>
-<!-- custom code end -->

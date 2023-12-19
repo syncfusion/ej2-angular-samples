@@ -1,6 +1,3 @@
-/**
- * Sample to design volume settings using the Linear Gauge
- */
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-lineargauge';
 

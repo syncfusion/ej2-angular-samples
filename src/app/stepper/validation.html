@@ -1,0 +1,13 @@
+<div class="control-section">
+    <div class="validation-stepper-section">
+        <ejs-stepper #validationStepper linear="true" [steps]="stepperWithText" (stepChanging)="handleStepChange($event)" (created)="handleStepCreated()"></ejs-stepper>
+    </div>
+    <div #validationStepContent id="validation-step-content"></div>
+</div>
+
+<div id="action-description">
+    <p>This sample showcases the integration of validation support in the Stepper component.</p>
+</div>
+<div id="description">
+    <p>This example demonstrates using the <code>isValid</code> property for validating the state of each step within the Stepper. Stepper validation ensures that user inputs are correct and guides them to prevent errors before proceeding to the next steps.</p>
+</div>

@@ -44,12 +44,13 @@ import { Mention, SelectEventArgs } from '@syncfusion/ej2-dropdowns';
        public  fieldsData: { [key: string]: string } = { text: 'formatName', groupBy:'formatType' };
 
        public tools: ToolbarModule = {
-        items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
-            'FontName', 'FontSize', 'FontColor', 'BackgroundColor',
-            'LowerCase', 'UpperCase','SuperScript', 'SubScript', '|',
-            'Formats', 'Alignments', 'NumberFormatList', 'BulletFormatList',
-            'Outdent', 'Indent', 'EmojiPicker', '|', 'CreateTable', 'CreateLink', 'Image', 
-            'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
+           items: ['Bold', 'Italic', 'Underline', 'StrikeThrough', 'SuperScript', 'SubScript', '|',
+               'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
+               'LowerCase', 'UpperCase', '|',
+               'Formats', 'Alignments', '|', 'NumberFormatList', 'BulletFormatList', '|',
+               'Outdent', 'Indent', '|', 'CreateLink', 'Image', 'Video', 'Audio', 'CreateTable', '|', 'FormatPainter', 'ClearFormat',
+               '|', 'EmojiPicker', '|',
+               'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
         };
  
        onActionBegin(args){
@@ -105,9 +106,11 @@ import { Mention, SelectEventArgs } from '@syncfusion/ej2-dropdowns';
           this.beforeApplyFormat(true);
       }
       if ((args.itemData as  { [key: string]: Object }).command == 'OL') {
+          this.mentionObj.hidePopup();
           this.rteObj.executeCommand('insertOrderedList');
       }
       else if ((args.itemData as  { [key: string]: Object }).command == 'UL') {
+          this.mentionObj.hidePopup();
           this.rteObj.executeCommand('insertUnorderedList');
       }
       else if ((args.itemData as  { [key: string]: Object }).command == 'CreateTable') {
@@ -132,6 +135,7 @@ import { Mention, SelectEventArgs } from '@syncfusion/ej2-dropdowns';
           this.rteObj.showEmojiPicker();
       }
       else {
+          this.mentionObj.hidePopup();
           this.rteObj.executeCommand('formatBlock', (args.itemData as  { [key: string]: Object }).command);
       }
     }

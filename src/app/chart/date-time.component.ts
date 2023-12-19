@@ -53,7 +53,7 @@ export class DateTimeAxisChartComponent {
     };
     public marker2: Object = {
         visible: true, height: 8, width: 8, shape: 'Diamond',isFilled: true ,
-        dataLabel: { visible: true, position: 'Bottom', }
+        dataLabel: { visible: true, position: 'Top', }
     };
     public chartArea: Object = {
         border: {

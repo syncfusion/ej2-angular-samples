@@ -1,13 +1,13 @@
-<div id="action-description">
-    <p>
-        This sample depicts the linear gauge as a measuring scale and shows the tooltip in the linear gauge.
-    </p>
-</div>
 <div class="control-section">
     <ejs-lineargauge (load)='load($event)' (loaded)='loaded($event)' id='tooltipContainer' #gauge style='display:block;' background='transparent'
         (axisLabelRender)='labelRender($event)' (tooltipRender)='renderTooltip($event)' orientation='Horizontal'
         [container]='container' [tooltip]='tooltip' [axes]='axes' [annotations]='annotations'>
     </ejs-lineargauge>
+</div>
+<div id="action-description">
+    <p>
+        This sample depicts the linear gauge as a measuring scale and shows the tooltip in the linear gauge.
+    </p>
 </div>
 <div id="description">
     <p>
@@ -20,10 +20,3 @@
             section</a>.
     </p>
 </div>
-<!-- custom code start -->
-<style>
-    .control-section {
-        min-height: 450px;
-    }
-</style>
-<!-- custom code end -->

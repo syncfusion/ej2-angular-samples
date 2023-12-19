@@ -1,13 +1,13 @@
+<div class="control-section">
+    <ejs-lineargauge (load)='load($event)' id='defaultContainer' background='transparent' style='display:block;'
+        orientation='Horizontal' [annotations]='annotation' [axes]='axes'>
+    </ejs-lineargauge>
+</div>
 <div id="action-description">
     <p>
         This sample shows the linear gauge's basic rendering, which includes an axis, a pointer, major ticks, minor
         ticks and annotation.
     </p>
-</div>
-<div class="control-section">
-    <ejs-lineargauge (load)='load($event)' id='defaultContainer' background='transparent' style='display:block;'
-        orientation='Horizontal' [annotations]='annotation' [axes]='axes'>
-    </ejs-lineargauge>
 </div>
 <div id="description">
     <p>
@@ -21,10 +21,3 @@
             section</a>.
     </p>
 </div>
-<!-- custom code start -->
-<style>
-    .control-section {
-        min-height: 450px;
-    }
-</style>
-<!-- custom code end -->

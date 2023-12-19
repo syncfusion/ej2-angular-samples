@@ -22,8 +22,7 @@ export class DefaultFileController {
     public toolbarSettings: object;
     public contextMenuSettings: object;
     public navigationPaneSettings: object;
-    public disableItems: string[] = ['NewFolder', 'Cut', 'Copy', 'Paste', 'Download', 'Delete', 'Refresh', 'Selection', 'View', 'Details'];
-    public enableItems: string[] = ['NewFolder', 'Cut', 'Copy', 'Paste', 'Download', 'Delete', 'Refresh', 'Selection', 'View', 'Details'];
+    public items: string[] = ['NewFolder', 'SortBy', 'Cut', 'Copy', 'Paste', 'Download', 'Delete', 'Refresh', 'Selection', 'View', 'Details'];
     public waterMark: string = 'Select item';
     public hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
     public ngOnInit(): void {

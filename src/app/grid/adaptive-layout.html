@@ -4,8 +4,9 @@
             <div class="e-mobile-content">
                 <ejs-grid #adaptive id="adaptivebrowser" [dataSource]='data' enableAdaptiveUI='true'
                     [rowRenderingMode]="rowMode" height='100%' allowPaging='true' allowFiltering='true'
-                    allowSorting='true' [pageSettings]='pageSettings' [editSettings]='editSettings'
-                    [filterSettings]='filterSettings' [toolbar]='toolbar' (load)='onLoad($event)'>
+                    allowSorting='true' [allowGrouping]="false" [groupSettings]='groupOptions' showColumnChooser='true' showColumnMenu='true' [pageSettings]='pageSettings' [editSettings]='editSettings'
+                    [filterSettings]='filterSettings' [toolbar]='toolbar' (load)='onLoad($event)' (toolbarClick)='toolbarClick($event)'
+                    [allowExcelExport]='true' [allowPdfExport]='true'>
                     <e-columns>
                         <e-column field='OrderID' headerText='Order ID' width='180' isPrimaryKey='true' [validationRules]='orderidrules'>
                         </e-column>
@@ -30,9 +31,9 @@
         </div>
         <div *ngIf="!isDeskTop" class="e-default">
             <ejs-grid #adaptive id="adaptivedevice" [dataSource]='data' enableAdaptiveUI='true'
-                [rowRenderingMode]="rowMode" height='100%' allowPaging='true' allowFiltering='true' allowSorting='true'
-                [pageSettings]='pageSettings' [editSettings]='editSettings' [filterSettings]='filterSettings'
-                [toolbar]='toolbar' (load)='onLoad($event)'>
+                [rowRenderingMode]="rowMode" height='100%' allowPaging='true' allowFiltering='true' allowSorting='true' [allowGrouping]="false" [groupSettings]='groupOptions'
+                [pageSettings]='pageSettings' showColumnChooser='true' showColumnMenu='true' [editSettings]='editSettings' [filterSettings]='filterSettings'
+                [toolbar]='toolbar' (load)='onLoad($event)' (toolbarClick)='toolbarClick($event)' [allowExcelExport]='true' [allowPdfExport]='true'>
                 <e-columns>
                     <e-column field='OrderID' headerText='Order ID' width='180' isPrimaryKey='true'
                         [validationRules]='orderidrules'>
@@ -80,13 +81,13 @@
     </div>
 
     <div id="action-description">
-        <p>This sample demonstrates the rendering order of the grid row elements and adaptive dialogs.</p>
+        <p>This sample demonstrates optimal viewing experience and improve usability on small screens.</p>
     </div>
     <div id="description">
         <p>
             The <code><a target="_blank" class="code"
                 href="https://ej2.syncfusion.com/angular/documentation/api/grid/#enableadaptiveui">
-                enableAdaptiveUI</a></code> property is used to render the grid filter, sort and edit dialogs
+                enableAdaptiveUI</a></code> property is used to render the grid filter, sort, edit, pager and toolbars like column chooser, pdf export, excel export, etc... dialogs
             adaptively and
             <code><a target="_blank" class="code"
                     href="https://ej2.syncfusion.com/angular/documentation/api/grid/#rowrenderingmode"> rowRenderingMode</a></code>
@@ -97,6 +98,9 @@
             <li><code>Vertical</code> - Renders the grid row elements in the vertical direction.</li>
         </ul>
         <p> In this sample, you can change the row elements rendering direction by using the properties panel checkbox
+        </p>
+        <p> In this demo, the column menu feature is only supported for the Grid <code>rowRenderingMode</code> mode as <code>Vertical</code>. 
+            This feature includes grouping, sorting, autofit, filter, and column chooser feature.
         </p>
         <p>
             More information on the rowRenderingMode configuration can be found in this

@@ -36,8 +36,8 @@
             [enableBorderOnMouseMove]='enableBorderOnMouseMove' [enableSmartLabels]='enableSmartLabels'
             (pointRender)='pointRender($event)' (load)='accumulationload($event)'>
             <e-accumulation-series-collection>
-              <e-accumulation-series [dataSource]='data' xName='Product' yName='Percentage' innerRadius="40%"
-               [palettes]="palettes" [dataLabel]="dataLabel" [border]='border'>
+              <e-accumulation-series [dataSource]='data' xName='Product' yName='Percentage' innerRadius="40%" radius="75%"
+               [palettes]="palettes" [dataLabel]="dataLabel" [startAngle]="startAngle" [endAngle]="endAngle" [border]='border'>
               </e-accumulation-series>
             </e-accumulation-series-collection>
           </ejs-accumulationchart>

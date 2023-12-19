@@ -1,0 +1,31 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the top-selling electric car in China using the default column series in the 3D chart. Data points are enhanced with tooltips.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart3d style='display:block;' align='center' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            (load)='load($event)' [rotation]='rotation' [tilt]="tilt" [depth]="depth" [title]='title' [enableRotation]='enableRotation' [tooltip]="tooltip"
+            [legendSettings]="legendSettings" [width]="width" (axisLabelRender)="axisLabelRender($event)" (pointRender)="labelRender($event)" [wallColor]="wallColor" [height]="height">
+            <e-chart3d-series-collection>
+                <e-chart3d-series [dataSource]='dataSource' type='Column' xName='x' yName='y' columnSpacing="0.1">
+                </e-chart3d-series>
+            </e-chart3d-series-collection>
+        </ejs-chart3d>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure a 3D column chart. The 3D column chart serves the purpose of comparing the frequency, count, total, or average of data across different categories.
+    </p>
+    <p>
+        <code>Tooltips</code> are enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        3D chart component features are segregated into individual feature-wise modules. To use column series, we need to
+        inject
+        <code>ColumnSeries3DService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>

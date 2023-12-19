@@ -2,9 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { HeatMap, Legend, Tooltip, Adaptor, ILoadedEventArgs, ITooltipEventArgs, HeatMapTheme } from '@syncfusion/ej2-angular-heatmap';
 import { SampleDataSource } from './default-table-data-source';
 HeatMap.Inject(Tooltip, Legend, Adaptor);
-/**
- * HeatMap tooltiptemplate sample
- */
+
 @Component({
     selector: 'control-content',
     templateUrl: 'tooltip-template.html',
@@ -17,23 +15,32 @@ export class HeatmapTooltipComponent {
         textStyle: {
             size: '15px',
             fontWeight: '500',
-            fontStyle: 'Normal'
+            fontFamily: 'inherit'
         }
     };
     xAxis: Object = {
         labels: ['Canada', 'China', 'Egypt', 'Mexico', 'Norway', 'Russia', 'UK', 'USA'],
         labelRotation: 45,
         labelIntersectAction: 'None',
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     yAxis: Object = {
         labels: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010'],
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     dataSource: Object = new SampleDataSource().defaultTableDataSource;
     public cellSettings: Object = {
         border: {
             width: 0
         },
-        format: '{value} M'
+        format: '{value} M',
+        textStyle: {
+            fontFamily: 'inherit'
+        }
     };
     public legendSettings: Object = {
         visible: false,
@@ -42,12 +49,13 @@ export class HeatmapTooltipComponent {
         fill: '#265259',
         textStyle: {
             color: '#FFFFFF',
-            size: '12px'
+            size: '12px',
+            fontFamily: 'inherit'
         },
         border: {
             width: 1,
             color: '#98BABF'
-        }
+        },
     };
     public paletteSettings: Object = {
         palette: [{ value: 0, color: '#C2E7EC' },
@@ -68,13 +76,19 @@ export class HeatmapTooltipComponent {
         ],
         type: 'Fixed'
     };
-    public tooltipRender(args: ITooltipEventArgs): void {
-        args.content = ['In ' + args.yLabel + ', the ' + args.xLabel + ' produced ' + args.value + ' million barrels per day'];
-    };
     public load(args: ILoadedEventArgs): void {
+        // custom code start
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.heatmap.theme = <HeatMapTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        // custom code end
+        if (args.heatmap.theme.indexOf('Dark') > -1 || args.heatmap.theme.indexOf('Highcontrast') > -1) {
+            args.heatmap.tooltipSettings.template = '<div style=" border-radius: 5px;fontFamily: inherit; padding-left: 10px;padding-right: 10px;padding-bottom: 6px;padding-top: 6px;background:white; border: 1px #919191;" ><span style="color:black;font-size: 12px">In ${yLabel}, the ${xLabel} produced ${value} million barrels per day.<span></div>';
+
+        }
+        else {
+            args.heatmap.tooltipSettings.template = '<div style=" border-radius: 5px;fontFamily: inherit; padding-left: 10px;padding-right: 10px;padding-bottom: 6px;padding-top: 6px;background:#000000; border: 1px #919191;" ><span style="color:white;font-size: 12px">In ${yLabel}, the ${xLabel} produced ${value} million barrels per day.<span></div>';
+        }
     };
     constructor() {
         //code

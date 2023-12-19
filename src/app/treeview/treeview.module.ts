@@ -31,7 +31,7 @@ export const treeAppRoutes: Object[] = [
 export const TreeviewRouter: ModuleWithProviders<any> = RouterModule.forChild(treeAppRoutes);
 
 @NgModule({
-    imports: [TreeviewRouter, SharedModule , CommonModule, BrowserModule, CheckBoxModule, ListViewModule, TreeViewModule],
+    imports: [TreeviewRouter, SharedModule, CommonModule, BrowserModule, CheckBoxModule, ListViewModule, TreeViewModule],
     declarations: [
         DefaultTreeViewComponent,
         IconsTreeViewComponent,

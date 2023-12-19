@@ -1,0 +1,93 @@
+<div id="action-description">
+    <p>
+        This sample visualize the Bitcoin price change over the period with candle and line series.
+        Period Selector shows the information about the data.
+    </p>
+</div>
+<div class="control-section" align="center">
+     <div class="row">
+        <div class="col-sm-12">
+            <div class="row" style="width:80%;">
+                <div class="col-sm-8">
+                       <div id="text" style="
+                    display: flex; font-size: 36px; font-weight: 500;
+                    align-items: center;
+                    justify-content: space-between;">
+                        Bitcoin (USD) Price
+                    </div>
+                </div>
+                 <div class="col-sm-4" align="right" style="margin-top: 1%">
+                    <div>
+                        <label for="switch" style="font-size: 16px; margin-right: 2%">Closing Price </label>
+                        <ejs-switch id="checked" name='Closing Value' cssClass='custom-iOS' (change)='changeSwitch($event)' value='Closing value' checked=true></ejs-switch>
+                        <label for="switch1" style="font-size: 16px; margin-left: 2%">OHLC</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="col-sm-12">
+        <div align="center">
+            <ejs-rangenavigator #containerTop align='center' id='containerTop' labelPosition='Outside'
+            valueType= 'DateTime' [width]='width' (changed)='changedTop($event)' [theme]='theme' (load)='loadPeriodic($event)' disableRangeSelector=true
+            [periodSelectorSettings]='periodSelectorSettings' (loaded)='loaded($event)' [dataSource]='data'
+            xName='date' yName='Close'>     
+            </ejs-rangenavigator>
+        </div>
+        <div class="row" align="center">
+            <ejs-chart #chartPeriod id='chartPeriod' [chartArea]='chartArea' [width]='width' align='center' style="display:block;"
+            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [crosshair]='crosshair' [zoomSettings]='zoomSettings'
+            [legendSettings]='legendSettings' [chartArea]='chartArea' [theme]='theme' height='250' (axisLabelRender)='axisLabelRender($event)'
+            (load)='chartLoad($event)' (chartMouseMove)='chartMouseMove'  (tooltipRender)='tooltipRender($event)'>
+            <e-annotations>
+                <e-annotation content='<div id="annotation"></div>' coordinateUnits='Pixel' region='Chart' x='15%' y= '20%'>
+                </e-annotation>
+            </e-annotations>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='Candle' xName='date' yName='Close' name='Bitcoin' width=2 low='Low' high='High'
+                 close='Close' open='Open' volume='Volume' bearFillColor='#2ecd71' bullFillColor='#e74c3d' animation='animation'>
+                </e-series>
+            </e-series-collection>
+        </ejs-chart>
+        </div>
+        <div align="center">
+        <ejs-rangenavigator #containerBottom (changed)='changedBottom($event)'  align='center' id='containerBottom' valueType='DateTime'
+        labelPosition='Outside' [width]='width' [theme]='theme' [value]='value'>
+           <e-rangenavigator-series-collection>
+               <e-rangenavigator-series [dataSource]='data' type='Line' xName='date' yName='Close'>
+               </e-rangenavigator-series>
+           </e-rangenavigator-series-collection>
+       </ejs-rangenavigator>
+   </div>
+   </div>
+</div>
+    </div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the Period Selector.
+        Tooltip is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+     </p>     
+      <br>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Range Navigator component features are segregated into individual feature-wise modules. To use period selector,
+            <code>PeriodSelectorService</code> module into the
+            <code>@NgModule.providers</code> section.
+        </p>
+</div>
+<style>
+    .e-switch-wrapper {
+        margin-top: 5%;
+        width: 15%
+    }
+    #chartPeriod_tooltip {
+            opacity: 0;
+    }
+    #chartPeriod_HorizontalLine, #chartPeriod_VerticalLine {
+            stroke-dasharray: 2
+    }
+    @media only screen and (max-width: 300px) {
+    #text {
+        font-size: 10px
+    }
+    }
+</style>

@@ -42,10 +42,9 @@ export class TrackBallChartComponent {
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        inimum: new Date(2000, 1, 1), maximum: new Date(2006, 2, 11),
         valueType: 'DateTime',
-        skeleton: 'y',
-        lineStyle: { width: 0 },
+        labelFormat: 'yyyy',
+        intervalType: 'Years',
         majorGridLines: { width: 0 },
         edgeLabelPlacement: 'Shift'
     };

@@ -5,7 +5,7 @@
 </div>
 <div class="control-section">
     <div id="tooltip-container">
-        <ejs-circulargauge (load)='load($event)' id='gauge' (dragEnd)='dragEnd($event)' style="display: block;" background='transparent' #tooltipContainer='' enablePointerDrag='true'
+        <ejs-circulargauge (load)='load($event)' animationDuration=2000 id='gauge' (dragEnd)='dragEnd($event)' style="display: block;" background='transparent' #tooltipContainer='' enablePointerDrag='true'
             [tooltip]='tooltip'>
             <e-axes>
                 <e-axis radius='90%' minimum=0 maximum=120 startAngle=240 endAngle=120 [minorTicks]='minorTicks'

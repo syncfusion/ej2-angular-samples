@@ -6,7 +6,7 @@
 <div class="control-section">
     <div align='center'>
         <ejs-chart #roundcol style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='column-container' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'
+            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend' [highlightColor]='highlightColor'
             (pointRender)='pointRender($event)' [enableSideBySidePlacement]='placement'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Column' xName='Country' yName='Rate' width=2 [cornerRadius]='radius' [enableTooltip] = false opacity=0.5 columnWidth=0.8>

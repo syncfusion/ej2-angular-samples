@@ -1,0 +1,45 @@
+<div id="action-description">
+    <p>
+        This sample illustrates a bullet chart with vertical orientation to compare different values.
+    </p>
+</div>
+
+<div class="col-lg-8 control-section  sb-property-border">
+    <div class="control-section">
+        <ejs-bulletchart #bullet id='localData' style="display: block; text-align: center;" [width]='width' [tooltip]='tooltip'
+            [dataSource]='dataSource' [animation]='animation' [margin]="margin" valueField='value' (load)='load($event)'
+            [height]='height' [minimum]='minimum' [maximum]='maximum' [interval]='interval' targetField='target'
+            categoryField='name' [labelFormat]="labelFormat" [orientation]="orientation">
+            <e-bullet-range-collection>
+                <e-bullet-range end='20'></e-bullet-range>
+                <e-bullet-range end='25'></e-bullet-range>
+                <e-bullet-range end='30'></e-bullet-range>
+            </e-bullet-range-collection>
+        </ejs-bulletchart>
+    </div>
+</div>
+
+<div class="col-lg-4 property-section">
+    <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+            <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                <tr style="height: 50px">
+                    <td style="width: 60%">
+                        <div>Orientation</div>
+                    </td>
+                    <td style="width: 40%;">
+                        <div id="orientationSelect"> </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        Tooltips are enabled; to experience the tooltips, hover over a feature bar or comparative bar on the bullet
+        chart.
+    </p>
+</div>

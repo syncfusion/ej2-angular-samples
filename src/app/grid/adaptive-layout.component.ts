@@ -1,13 +1,14 @@
 import { Component, OnInit, ViewChild, Inject, ViewEncapsulation } from '@angular/core';
 import { data } from './data';
 import { Browser } from '@syncfusion/ej2-base';
-import { PageService, FilterService, SortService, AggregateService, EditService, GridComponent } from '@syncfusion/ej2-angular-grids';
+import { PageService, FilterService, SortService, GroupService, GroupSettingsModel, ResizeService, AggregateService, EditService, GridComponent, ExcelExportService, PdfExportService, ColumnChooserService, ColumnMenuService } from '@syncfusion/ej2-angular-grids';
+import { ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
 
 @Component({
     selector: 'ej2-adaptive',
     templateUrl: 'adaptive-layout.html',
     styleUrls: ['adaptive-layout.style.css'],
-    providers: [PageService, FilterService, SortService, AggregateService, EditService],
+    providers: [PageService, FilterService, GroupService, SortService, ResizeService, AggregateService, EditService, ExcelExportService, PdfExportService, ColumnChooserService, ColumnMenuService],
     encapsulation: ViewEncapsulation.None
 })
 export class AdaptiveLayoutComponent implements OnInit {
@@ -19,6 +20,7 @@ export class AdaptiveLayoutComponent implements OnInit {
     public grid: GridComponent;
     public data: Object[] = [];
     public editSettings: Object;
+    public groupOptions: GroupSettingsModel;
     public toolbar: string[];
     public orderidrules: Object;
     public customeridrules: Object;
@@ -29,23 +31,38 @@ export class AdaptiveLayoutComponent implements OnInit {
     ngOnInit(): void {
         this.data = data;
         this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Dialog' };
-        this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel', 'Search'];
+        this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel', 'Search', 'ColumnChooser', 'ExcelExport', 'PdfExport'];
         this.orderidrules = { required: true, number: true };
         this.customeridrules = { required: true };
-        this.pageSettings = { pageCount: 3 };
+        this.pageSettings = { pageCount: 3, pageSizes: true };
+        this.groupOptions = { showGroupedColumn: true };
         this.rowMode = 'Vertical';
         this.filterSettings = { type: 'Excel' };
         this.isDeskTop = !Browser.isDevice;
     }
     public changeHandler(e: any): void {
-        if (e.checked) {
-            this.grid.rowRenderingMode = 'Horizontal';
-        } else {
-            this.grid.rowRenderingMode = 'Vertical';
+        this.grid.rowRenderingMode = e.checked ? 'Horizontal' : 'Vertical';
+        this.grid.allowGrouping = e.checked;
+    }
+
+    public toolbarClick(args: ClickEventArgs): void {
+        switch (args.item.id) {
+            case this.grid.element.id + '_pdfexport':
+                this.grid.pdfExport();
+                break;
+            case this.grid.element.id + '_excelexport':
+                this.grid.excelExport();
+                break;
         }
     }
 
     public onLoad(): void {
         this.grid.adaptiveDlgTarget = document.getElementsByClassName('e-mobile-content')[0] as HTMLElement;
+        if(this.grid.pageSettings.pageSizes) {
+          document.querySelector('.e-adaptive-demo').classList.add('e-pager-pagesizes');
+        }
+        else{
+            document.querySelector('.e-adaptive-demo').classList.remove('e-pager-pagesizes');
+        }
     }
 }

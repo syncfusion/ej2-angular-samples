@@ -1,6 +1,8 @@
 import { Component, ViewChild, Inject, ViewEncapsulation } from '@angular/core';
+// custom code start
+import { fromEvent, Subscription } from 'rxjs';
+// custom code end
 import { Popup } from '@syncfusion/ej2-popups';
-import { ItemModel } from '@syncfusion/ej2-angular-navigations';
 import { ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
 import { createElement, compile, extend } from '@syncfusion/ej2-base';
 import {
@@ -29,52 +31,58 @@ export class HeaderBarComponent {
   public eventSettings: EventSettingsModel = { dataSource: extend([], employeeEventData, null, true) as Record<string, any>[] };
   public currentView: View = 'Month';
   public showHeaderBar: boolean;
+  // custom code start
+  private keydownSubscription: Subscription;
+  private clickSubscription: Subscription;
+  // custom code end
 
   constructor(@Inject('sourceFiles') private sourceFiles: any) {
     sourceFiles.files = ['header-bar.style.css'];
   }
 
-  public onActionBegin(args: ActionEventArgs): void {
-    if (args.requestType === 'toolbarItemRendering') {
-      const userIconItem: ItemModel = { align: 'Right', prefixIcon: 'user-icon', text: 'Nancy', cssClass: 'e-schedule-user-icon' };
-      args.items.push(userIconItem);
-    }
-  }
-
   public onActionComplete(args: ActionEventArgs): void {
-    const scheduleElement: HTMLElement = document.getElementById('schedule') as HTMLElement;
     if (args.requestType === 'toolBarItemRendered') {
+      const scheduleElement: HTMLElement = document.getElementById('schedule') as HTMLElement;
       const userIcon: HTMLElement = scheduleElement.querySelector('.e-schedule-user-icon') as HTMLElement;
       userIcon.onclick = () => {
-        this.profilePopup.relateTo = userIcon;
-        this.profilePopup.dataBind();
         if (this.profilePopup.element.classList.contains('e-popup-close')) {
           this.profilePopup.show();
         } else {
           this.profilePopup.hide();
         }
       };
-    }
-    const userContentEle: HTMLElement = createElement('div', { className: 'e-profile-wrapper' });
-    scheduleElement.parentElement.appendChild(userContentEle);
+      const userContentEle: HTMLElement = createElement('div', { className: 'e-profile-wrapper' });
+      scheduleElement.parentElement.appendChild(userContentEle);
+      const getDOMString: (data: Record<string, any>) => NodeList = compile('<div class="profile-container"><div class="profile-image">' +
+        '</div><div class="content-wrap"><div class="name">Nancy</div>' +
+        '<div class="destination">Product Manager</div><div class="status">' +
+        '<div class="status-icon"></div>Online</div></div></div>');
+      const output: NodeList = getDOMString({});
+      this.profilePopup = new Popup(userContentEle, {
+        content: output[0] as HTMLElement,
+        relateTo: '.e-schedule-user-icon',
+        position: { X: 'left', Y: 'bottom' },
+        collision: { X: 'flip', Y: 'flip' },
+        targetType: 'relative',
+        viewPortElement: scheduleElement,
+        width: 185,
+        height: 80
+      });
+      this.profilePopup.hide();
 
-    const userIconEle: HTMLElement = scheduleElement.querySelector('.e-schedule-user-icon') as HTMLElement;
-    const getDOMString: (data: Record<string, any>) => NodeList = compile('<div class="profile-container"><div class="profile-image">' +
-      '</div><div class="content-wrap"><div class="name">Nancy</div>' +
-      '<div class="destination">Product Manager</div><div class="status">' +
-      '<div class="status-icon"></div>Online</div></div></div>');
-    const output: NodeList = getDOMString({});
-    this.profilePopup = new Popup(userContentEle, {
-      content: output[0] as HTMLElement,
-      relateTo: userIconEle,
-      position: { X: 'left', Y: 'bottom' },
-      collision: { X: 'flip', Y: 'flip' },
-      targetType: 'relative',
-      viewPortElement: scheduleElement,
-      width: 185,
-      height: 80
-    });
-    this.profilePopup.hide();
+      // custom code start
+      const hidePopup: (event: KeyboardEvent | MouseEvent) => void = (event: KeyboardEvent | MouseEvent): void => {
+        if (this.profilePopup.element.classList.contains('e-popup-open') && (event.type === 'keydown' && ((event as KeyboardEvent).key === 'Escape') ||
+          (event.type === 'click' && event.target && !((event.target as HTMLElement).closest('.e-schedule-user-icon') ||
+            (event.target as HTMLElement).closest('.e-profile-wrapper'))))) {
+          this.profilePopup.hide();
+        }
+      }
+      this.keydownSubscription = fromEvent(document, 'keydown').subscribe(hidePopup.bind(this));
+      this.clickSubscription = fromEvent(document, 'click').subscribe(hidePopup.bind(this));
+      this.scheduleObj.toolbarItems[this.scheduleObj.toolbarItems.length - 1].click = null;
+      // custom code end
+    }
   }
 
   public onChange(args: ChangeEventArgs): void {
@@ -97,4 +105,10 @@ export class HeaderBarComponent {
     }
   }
 
+  // custom code start
+  ngOnDestroy() {
+    this.keydownSubscription.unsubscribe();
+    this.clickSubscription.unsubscribe();
+  }
+  // custom code end
 }

@@ -1,0 +1,27 @@
+<div class="control-section">
+    <div id="linear-stepper-section">
+        <div class="e-btn-group stepper-modes">
+            <input type="radio" id="linear" name="Linear" value="true" (click)="updateLinear($event)" checked/>
+            <label class="e-btn" for="linear">Linear</label>
+            <input type="radio" id="nonLinear" name="Linear" value="false" (click)="updateLinear($event)" />
+            <label class="e-btn" for="nonLinear">Non-Linear</label>
+        </div>
+        <div class="linear-stepper-control">
+            <ejs-stepper #linearStepper [steps]="stepper" linear=true (stepChanged)="handleStepChange($event)"></ejs-stepper>
+        </div>
+    </div>
+    <div #linearStepperContent id="linear-stepper-content">
+        <b>Description:</b> <br /><br /> <ul><li>During this phase, the project's scope and objectives are clearly defined, along with the establishment of initial settings and parameters.</li><li>This step involves outlining the primary goals, deliverables, and the overall vision of the project to ensure a comprehensive understanding among all stakeholders.</li></ul>
+    </div>
+    <div class="linear-stepper-options" style="display: inline-flex;">
+        <button #previousStep style="margin-right:15px; display: none;" (click)="updateBack()" class="e-btn">Back</button>
+        <button #nextStep style="display: block;" (click)="updateNext()" class="e-btn">Next</button>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample showcases the usage of the <code>linear</code> property in the Stepper component.</p>
+</div>
+<div id="description">
+    <p>In a linear process, users progress through steps one after the other in a sequential order. In a non-linear process, users have the flexibility to skip or complete steps in any order they prefer. In this example, the progress status can be interacted with in both a linear and nonlinear manner using the <code>linear</code> property.</p>
+</div>

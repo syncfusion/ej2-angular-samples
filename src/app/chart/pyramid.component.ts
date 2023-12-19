@@ -21,7 +21,7 @@ export class PyramidComponent {
     public pyramid: AccumulationChartComponent | AccumulationChart;
     public dataLabel: Object = {
         name: 'DataLabelMappingName', visible: true,   position: 'Outside',
-        connectorStyle: {length: '1%'}, font: {
+        connectorStyle: {length: '20px'}, font: {
             fontWeight: '600'
         }
     };

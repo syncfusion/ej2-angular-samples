@@ -14,7 +14,8 @@ import { BulletChartRtlComponent } from './right-to-left.component';
 import { BulletChartCustomizationComponent } from './customization.component';
 import { BulletChartBarCustomizationComponent} from './bar-customization.component';
 import { BulletChartTooltipComponent } from './tooltip.component';
-import { BulletChartLegendComponent } from './bullet-legend';
+import { BulletChartLegendComponent } from './bullet-legend.component';
+import { BulletChartOrientationComponent } from './orientation.component';
 
 export const bulletChartAppRoutes: Object[] = [
     {
@@ -29,10 +30,11 @@ export const bulletChartAppRoutes: Object[] = [
         component: BulletChartMultipleDataComponent,
         name: 'Multiple Data',
         order: '01',
+        type: 'update',
         category: 'Bullet Chart'
     },
     {
-        path: ':theme/bullet-chart/rtl',
+        path: ':theme/bullet-chart/right-to-left',
         component: BulletChartRtlComponent,
         name: 'RTL',
         order: '01',
@@ -60,6 +62,13 @@ export const bulletChartAppRoutes: Object[] = [
         category: 'Bullet Chart'
     },
     {
+        path: ':theme/bullet-chart/orientation',
+        component: BulletChartOrientationComponent,
+        name: 'Orientation',
+        order: '01',
+        category: 'Bullet Chart'
+    },
+    {
         path: ':theme/bullet-chart/bullet-legend',
         component: BulletChartLegendComponent,
         name: 'Legend',
@@ -72,7 +81,7 @@ export const bulletChartAppRoutes: Object[] = [
 export const bulletChartRouter: ModuleWithProviders<any> = RouterModule.forChild(bulletChartAppRoutes);
 
 // tslint:disable-next-line:max-line-length
-const declarations: Type<Object>[ ] = [BulletChartDefaultComponent, BulletChartMultipleDataComponent, BulletChartRtlComponent, BulletChartCustomizationComponent, BulletChartBarCustomizationComponent, BulletChartTooltipComponent, BulletChartLegendComponent];
+const declarations: Type<Object>[ ] = [BulletChartDefaultComponent, BulletChartMultipleDataComponent, BulletChartRtlComponent, BulletChartCustomizationComponent, BulletChartBarCustomizationComponent, BulletChartTooltipComponent, BulletChartLegendComponent, BulletChartOrientationComponent];
 @NgModule({
     imports: [bulletChartRouter, BulletChartAllModule, ColorPickerModule, DropDownListModule, SliderModule, CheckBoxModule],
     exports: [],

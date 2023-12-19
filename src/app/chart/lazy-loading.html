@@ -5,7 +5,7 @@
     <div class="col-md-8">
         <ejs-chart style='display:block;' #chart [legendSettings]='legend' id='container' [primaryXAxis]='primaryXAxis'
             [tooltip]='tooltip' [height]='height' [width]='width' (scrollEnd)='scrollEnd($event)'
-            [primaryYAxis]='primaryYAxis' [chartArea]='chartArea' [title]='title' (load)='load($event)'>
+            [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' [animation]='animation' type='Line' xName='x' yName='y'>
                 </e-series>
