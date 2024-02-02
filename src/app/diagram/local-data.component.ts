@@ -4,7 +4,7 @@ import {
     DataBinding, HierarchicalTree, DiagramTools
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import * as Data from './diagram-data.json';
+import {species} from './overview-data';
 
 export interface DataInfo {
     [key: string]: string;
@@ -32,7 +32,7 @@ export class LocalDataDiagramComponent {
         return obj;
     };
     public data: Object = {
-        id: 'Name', parentId: 'Category', dataSource: new DataManager((Data as any).species),
+        id: 'Name', parentId: 'Category', dataSource: new DataManager(species),
         //binds the external data with node
         doBinding: (nodeModel: NodeModel, data: DataInfo, diagram: Diagram) => {
             nodeModel.annotations = [{

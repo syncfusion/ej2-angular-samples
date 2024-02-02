@@ -4,7 +4,7 @@ import { GridComponent, FilterService, FilterType, SortService  } from '@syncfus
 import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
 import { Query, DataManager, UrlAdaptor } from '@syncfusion/ej2-data';
 
-const SERVICE_URI: string = 'https://ej2services.syncfusion.com/angular/release/';
+const SERVICE_URI: string = 'https://services.syncfusion.com/angular/production/';
 @Component({
     selector: 'ej-gridfiltermenu',
     templateUrl: 'filter-menu.html',

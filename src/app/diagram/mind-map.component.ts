@@ -8,7 +8,7 @@ import {
 } from '@syncfusion/ej2-angular-diagrams';
 
 import { DataManager } from '@syncfusion/ej2-data';
-import * as Data from './diagram-data.json';
+import {mindMap} from './overview-data';
 Diagram.Inject(DataBinding, MindMap, HierarchicalTree);
 
 /**
@@ -25,7 +25,7 @@ export class MindMapDiagramComponent {
   public tool: DiagramTools = DiagramTools.SingleSelect |
     DiagramTools.MultipleSelect;
 
-  public items: DataManager = new DataManager((Data as any).mindMap);
+  public items: DataManager = new DataManager(mindMap);
   public data: Object = { id: 'id', parentId: 'parentId', dataSource: this.items, root: '1' };
   public layout: Object = {
     type: 'MindMap',orientation:'Horizontal', horizontalSpacing: 50,
@@ -106,7 +106,7 @@ export class MindMapDiagramComponent {
     }
     return connector;
   }
-
+// Initializes user handle
   public handle: UserHandleModel[] = [
     {
       name: 'leftHandle', visible: true, backgroundColor: 'black', offset: 1, side: 'Left', pathColor: 'white',

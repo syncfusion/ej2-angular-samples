@@ -30,7 +30,7 @@ export class ImageEditorIntegrationComponent {
       buttonModel: { content: 'Insert', isPrimary: true },
       click: this.onInsert.bind(this),
     },
-    { buttonModel: { content: 'Cancel' }, click: this.onCancel },
+    { buttonModel: { content: 'Cancel' }, click: this.onCancel.bind(this), },
   ];
 
   public quickToolbarSettings = {
@@ -86,8 +86,7 @@ export class ImageEditorIntegrationComponent {
 
   public onCancel(): void {
     this.imageEditorObj.reset();
-    var dialog = this;
-    (dialog as any).hide();
+    this.dialogObj.hide();
   }
   
   public OnBeforeOpen(): void {

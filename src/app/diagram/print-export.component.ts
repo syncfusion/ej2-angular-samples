@@ -49,7 +49,7 @@ export class PrintExportDiagramComponent {
         this.diagram.dataBind();
     }
 
-    public onselect(args: MenuEventArgs): void {
+    public onSelect(args: MenuEventArgs): void {
         let exportOptions: IExportOptions = {};
         exportOptions.format = args.item.text as FileFormats;
         exportOptions.mode = 'Download';

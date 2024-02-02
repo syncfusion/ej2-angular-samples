@@ -19,12 +19,7 @@
         #networkDiagram .container-fluid{
             padding-bottom: 15px;
         }
-        #networkDiagram .e-upload {
-            height: 0px;
-            width: 0px;
-            display: none !important;
-            border: none !important;
-        }
+
         #dropArea {
             height: 50px;
             padding: 7px;
@@ -71,31 +66,6 @@
             right: 15px;
         }
 
-        .e-file-select-wrap {
-            display: none;
-        }
-
-         .material #networkDiagram #palette-space .e-accordion {
-            border: none;
-        }
-
-        .material #networkDiagram #palette-space {
-            border: 1px solid rgba(0, 0, 0, 0.12);
-        }
-        .material #dropArea {
-            border-width: 1px 0px 0px 0px;
-            border-style: solid;
-            border-color: rgba(0, 0, 0, 0.12);
-        }
-        .fabric #networkDiagram .sb-mobile-diagram {
-            border-left: 1px solid rgba(0, 0, 0, 0.12);
-        }
-        .bootstrap #networkDiagram .sb-mobile-diagram {
-            height: 554px;
-            margin-top: 5px;
-            border-radius: 4px;
-            border-left: 1px solid rgba(0, 0, 0, 0.12);
-        }
 
         @font-face {
             font-family: 'e-ddb-icons1';
@@ -137,7 +107,9 @@
             </ejs-symbolpalette>
             <div id='dropArea'>
                 <button ejs-button id="browse" [isPrimary]="true">IMPORT SVG FILES</button>
+                <div style="display: none;">
                 <ejs-uploader #templateupload id='templatefileupload'  [asyncSettings]='asyncSettings' [dropArea]='dropElement' (success)='onUploadSuccess($event)' (removing)='onFileRemove($event)'></ejs-uploader>
+                </div>
             </div>
         </div>
         <div id="diagram-space"  class="sb-mobile-diagram">

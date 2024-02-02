@@ -295,7 +295,7 @@ import { TreeViewComponent } from '@syncfusion/ej2-angular-navigations';
  }
  
  public add() {
-     let nodeId;
+     let nodeId:string;
      if (this.diagram.selectedItems.nodes.length > 0) {
          nodeId = this.diagram.selectedItems.nodes[0].id;
          this.addNode(nodeId);
@@ -304,7 +304,7 @@ import { TreeViewComponent } from '@syncfusion/ej2-angular-navigations';
          this.addNode(nodeId);
      }
  }
- public addNode(nodeId) {
+ public addNode(nodeId:string) {
      this.targetNodeId = nodeId ? nodeId : this.treeview.selectedNodes[0];
      let tempData = this.data1.filter((a: any) => a.Id === this.targetNodeId);
      (tempData[0] as any).hasChild = true;

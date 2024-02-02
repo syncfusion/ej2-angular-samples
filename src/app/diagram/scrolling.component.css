@@ -84,25 +84,12 @@
     content: "\e725";
 }
 
-.db-text {
-    float: left;
-    width: 20px;
-    text-align: center;
-    height: auto;
-    margin-top: 4px;
-    color: #8C8C8C;
-}
 
 .db-text-input {
     width: calc(100% - 25px);
     padding: 2px 2px 0px 0px;
 }
 
-.db-text-input input {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
 
 .disabledbutton {
     pointer-events: none;

@@ -5,7 +5,7 @@ import {
     Container, TextElement, StackPanel, ImageElement, DataBinding, HierarchicalTree, TreeInfo
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import * as Data from './overview-data.json';
+import {data} from './overview-data';
 import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
 Diagram.Inject(DataBinding, HierarchicalTree);
 
@@ -24,7 +24,7 @@ export class ZoomingAndPanning {
   //Diagram Properties
   public diagram: DiagramComponent;
     public data: Object = {
-        id: 'Id', parentId: 'ReportingPerson', dataSource: new DataManager((Data as any).data)
+        id: 'Id', parentId: 'ReportingPerson', dataSource: new DataManager(data)
     };
 
     public layout: LayoutModel = {
@@ -49,6 +49,7 @@ export class ZoomingAndPanning {
         connector.style.strokeColor = 'gray';
         return connector;
     };
+    //To handle toolbar click
      public toolbarClick(args) {
       switch (args.item.tooltipText) {
           case 'Zoom In':

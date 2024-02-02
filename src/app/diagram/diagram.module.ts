@@ -63,7 +63,7 @@ import { HistoryManagerDiagramComponent } from 'src/app/diagram/history-manager.
 import { EventsDiagramComponent } from './diagram-events.component';
 import { TooltipDiagramComponent } from './tooltip.component';
 import { LineRoutingComponent } from './line-routing.component';
-import { VirtualizationComponent } from './virtualization';
+import { VirtualizationComponent } from './virtualization.component';
 import { GroupingAndOrderingComponent } from './grouping-and-ordering.component';
 import { CommandComponent } from './commands.component';
 import { ConstraintComponent } from './constraints.component';
@@ -125,7 +125,7 @@ export const diagramAppRoutes: Object[] = [
         description: 'This sample visualizes the swimlane structure with diagram elements inside it.'
     },
     {
-        path: ':theme/diagram/groupingandordering', component: GroupingAndOrderingComponent,
+        path: ':theme/diagram/grouping-and-ordering', component: GroupingAndOrderingComponent,
         name: 'Grouping and Ordering', category: 'Getting Started', order: '01',
         description: 'This sample illustrates how to group, ungroup, and order commands with the diagram.',
         
@@ -166,7 +166,7 @@ export const diagramAppRoutes: Object[] = [
     },
 
     {
-        path: ':theme/diagram/zomming-and-panning', component: ZoomingAndPanning,
+        path: ':theme/diagram/zooming-and-panning', component: ZoomingAndPanning,
         name: 'Zooming and Panning',
         category: 'Interactive Features', order: '02',
         description: 'This sample shows how diagram objects snap to the nearest intersection of gridlines or objects while being dragged or resized.',
@@ -279,7 +279,7 @@ export const diagramAppRoutes: Object[] = [
         description: 'This sample demonstrates binding remote data with the diagram using the Data Manager support.'
     },
     {
-        path: ':theme/diagram/Virtualization', component: VirtualizationComponent,
+        path: ':theme/diagram/virtualization', component: VirtualizationComponent,
         name: 'Virtualization',
         category: 'Performance', order: '05',
         description: 'This sample demonstrates the default UI virtualization functionality. Scroll the diagram for UI virtualization.'
@@ -382,7 +382,7 @@ let declarations: Type<Object>[] = [FlowDiagramComponent, ShapesDiagramComponent
     ComplexShapesDiagramComponent, DrawingToolDiagramComponent, KeyBoardDiagramComponent,
     UserHandlediagramComponent, SymbolPaletteDiagramComponent, OverviewDiagramComponent,
     SerializationDiagramComponent, PrintExportDiagramComponent, FlowExecutionDiagramComponent,
-    HierarchyDiagramComponent,VirtualizationComponent, OrganizationalChartDiagramComponent, RadialTreeDiagramComponent,
+    HierarchyDiagramComponent, VirtualizationComponent, OrganizationalChartDiagramComponent, RadialTreeDiagramComponent,
     MindMapDiagramComponent, SymmetricLayoutDiagramComponent, ComplexHierarchicalTreeDiagramComponent,
     LocalDataDiagramComponent, RemoteDataDiagramComponent, VennDiagramComponent, RTLTreeDiagramComponent,
     PertChartDiagramComponent, BPMNShapesDiagramComponent, FishboneDiagramComponent, LogicCircuitComponent,
@@ -393,7 +393,7 @@ let declarations: Type<Object>[] = [FlowDiagramComponent, ShapesDiagramComponent
 ];
 @NgModule({
     imports: [diagramRouter, DiagramAllModule, ChartAllModule, GridAllModule, SymbolPaletteAllModule, OverviewAllModule, ButtonModule,
-        ColorPickerModule,  DateRangePickerModule, CheckBoxModule, AccumulationChartModule, BrowserModule,ToolbarModule, DropDownButtonModule, UploaderModule, CircularGaugeModule, DropDownListAllModule, ListViewAllModule,
+        ColorPickerModule, DateRangePickerModule, CheckBoxModule, AccumulationChartModule, BrowserModule,ToolbarModule, DropDownButtonModule, UploaderModule, CircularGaugeModule, DropDownListAllModule, ListViewAllModule,
         DialogAllModule, TextBoxModule, RadioButtonModule, ComboBoxAllModule, SplitButtonModule,
         MultiSelectModule, NumericTextBoxModule, SharedModule,TreeViewModule ],
     exports: [],

@@ -6,7 +6,7 @@ import {
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
 import { ChangeEventArgs as NumericChangeEventArgs } from '@syncfusion/ej2-inputs';
-import * as Data from './diagram-data.json';
+import {multiParentData} from './overview-data';
 import { ChangeEventArgs as CheckBoxChangeEventArgs } from '@syncfusion/ej2-buttons';
 Diagram.Inject(DataBinding, ComplexHierarchicalTree,LineDistribution);
 
@@ -36,7 +36,7 @@ export class ComplexHierarchicalTreeDiagramComponent {
     };
     public data: Object = {
         id: 'Name', parentId: 'ReportingPerson',
-        dataSource: new DataManager((Data as any).multiParentData),
+        dataSource: new DataManager(multiParentData),
         //binds the external data with node
         doBinding: (nodeModel: NodeModel, data: DataInfo, diagram: Diagram) => {
             /* tslint:disable:no-string-literal */
@@ -98,12 +98,12 @@ export class ComplexHierarchicalTreeDiagramComponent {
         }
     };
 
-    public onmarginLeftChange(args: NumericChangeEventArgs): void {
+    public onMarginLeftChange(args: NumericChangeEventArgs): void {
         this.diagram.layout.margin.left = args.value;
         this.diagram.dataBind();
     }
 
-    public onmarginTopChange(args: NumericChangeEventArgs): void {
+    public onMarginTopChange(args: NumericChangeEventArgs): void {
         this.diagram.layout.margin.top = args.value;
         this.diagram.dataBind();
     }

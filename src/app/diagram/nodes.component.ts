@@ -62,7 +62,7 @@ export class NodeDiagramComponent {
   public created(): void {
     this.diagram.fitToPage();
   }
-
+// To lock/unlock object
   public onChangeLock(args: CheckBoxChangeEventArgs): void {
     for (let i: number = 0; i < this.diagram.nodes.length; i++) {
       let node: NodeModel = this.diagram.nodes[i];

@@ -16,7 +16,6 @@ import {
     NodeModel, DecoratorModel, DiagramTools, ConnectorModel, SnapSettingsModel
 } from '@syncfusion/ej2-diagrams';
 import { ChangeEventArgs } from "@syncfusion/ej2-angular-calendars";
-import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
 /**
  * Sample for Fishbone publics
  */
@@ -33,7 +32,7 @@ export class FlowExecutionDiagramComponent {
     public diagram: DiagramComponent;
     public snapSettings = { constraints: SnapConstraints.None };
 
-    public CreateConnector(
+    public createConnector(
         name: string, source: string, target: string, content: string, type?: Segments,
         direction?: Direction, targePort?: string, length?: number): ConnectorModel {
         let connector: ConnectorModel = {};
@@ -66,7 +65,7 @@ export class FlowExecutionDiagramComponent {
         return connector;
     }
 
-    public CreateNodes(
+    public createNodes(
         name: string, offsetX: number, offsetY: number, shape: string, content: string,
         width: number, height: number, ports?: PointPortModel[]): NodeModel {
         let node: NodeModel = {};
@@ -89,58 +88,59 @@ export class FlowExecutionDiagramComponent {
 
     public port1: PointPortModel = { id: 'port1', offset: { x: 0.5, y: 1 } };
     public port: PointPortModel = { id: 'port', offset: { x: 1, y: 0.5 } };
-
+    //Initializes diagram nodes
     public nodes: NodeModel[] = [
-        this.CreateNodes('node1', 100, 125, 'Terminator', 'Begin', 100, 35),
-        this.CreateNodes('node2', 300, 125, 'Process', 'Specify collection', 120, 25, [this.port]),
-        this.CreateNodes('node3', 500, 125, 'Decision', 'Particulars \n required?', 100, 50, [this.port1]),
-        this.CreateNodes('node4', 730, 125, 'Process', 'Specify particulars', 90, 25),
-        this.CreateNodes('node5', 500, 225, 'Process', 'Design collection', 100, 25, [this.port]),
-        this.CreateNodes('node6', 500, 320, 'Process', 'Cluster of events', 100, 25),
-        this.CreateNodes('node7', 500, 420, 'Process', 'Start the process', 100, 25),
-        this.CreateNodes('node8', 730, 320, 'Process', 'Record and analyze \n results', 170, 25, [this.port]),
-        this.CreateNodes('node9', 730, 420, 'Terminator', 'End ', 100, 35)
+        this.createNodes('node1', 100, 125, 'Terminator', 'Begin', 100, 35),
+        this.createNodes('node2', 300, 125, 'Process', 'Specify collection', 120, 25, [this.port]),
+        this.createNodes('node3', 500, 125, 'Decision', 'Particulars \n required?', 100, 50, [this.port1]),
+        this.createNodes('node4', 730, 125, 'Process', 'Specify particulars', 90, 25),
+        this.createNodes('node5', 500, 225, 'Process', 'Design collection', 100, 25, [this.port]),
+        this.createNodes('node6', 500, 320, 'Process', 'Cluster of events', 100, 25),
+        this.createNodes('node7', 500, 420, 'Process', 'Start the process', 100, 25),
+        this.createNodes('node8', 730, 320, 'Process', 'Record and analyze \n results', 170, 25, [this.port]),
+        this.createNodes('node9', 730, 420, 'Terminator', 'End ', 100, 35)
     ];
+    //Initializes diagram connectors
     public connectors: ConnectorModel[] = [
-        this.CreateConnector('connector1', 'node1', 'node2', ''),
-        this.CreateConnector('connector2', 'node2', 'node3', ''),
-        this.CreateConnector('connector3', 'node3', 'node4', 'Yes'),
-        this.CreateConnector('connector4', 'node3', 'node5', 'No'),
-        this.CreateConnector('connector5', 'node5', 'node6', ''),
-        this.CreateConnector('connector6', 'node6', 'node7', ''),
-        this.CreateConnector('connector7', 'node8', 'node6', ''),
-        this.CreateConnector('connector8', 'node7', 'node9', ''),
-        this.CreateConnector('connector10', 'node4', 'node5', '', 'Orthogonal', 'Bottom', 'port', 220)
+        this.createConnector('connector1', 'node1', 'node2', ''),
+        this.createConnector('connector2', 'node2', 'node3', ''),
+        this.createConnector('connector3', 'node3', 'node4', 'Yes'),
+        this.createConnector('connector4', 'node3', 'node5', 'No'),
+        this.createConnector('connector5', 'node5', 'node6', ''),
+        this.createConnector('connector6', 'node6', 'node7', ''),
+        this.createConnector('connector7', 'node8', 'node6', ''),
+        this.createConnector('connector8', 'node7', 'node9', ''),
+        this.createConnector('connector10', 'node4', 'node5', '', 'Orthogonal', 'Bottom', 'port', 220)
     ];
     public highLightedObjects: string[] = [];
-    public currentButton: string = 'UnhighlightAll';
+    public currentButton: string = 'unHighlightAll';
     public buttonChange(args: ChangeEventArgs): void {
         this.currentButton = (args.event.srcElement as any).defaultValue;
         this.applyChanges((args.event.srcElement as any).defaultValue);
     }
     public applyChanges(id: string): void {
-        this.Unhighlight();
+        this.unHighlight();
         switch (id) {
             case 'LinksInto':
                 this.linkedIn();
                 break;
-            case 'LinksOutOf':
-                this.LinksOut();
+            case 'linksOutOf':
+                this.linksOut();
                 break;
             case 'LinksConnected':
-                this.LinksConnector();
+                this.linksConnector();
                 break;
-            case 'NodesInto':
-                this.NodesIn();
+            case 'nodesInto':
+                this.nodesIn();
                 break;
-            case 'NodesOutOf':
-                this.NodesOut();
+            case 'nodesOutOf':
+                this.nodesOut();
                 break;
-            case 'NodesConnected':
-                this.NodesConnect();
+            case 'nodesConnected':
+                this.nodesConnect();
                 break;
             case 'NodesReachable':
-                this.NodeReachable();
+                this.nodeReachable();
                 break;
         }
     }
@@ -158,7 +158,7 @@ export class FlowExecutionDiagramComponent {
         }
     }
 
-    public LinksOut(): void {
+    public linksOut(): void {
         if (this.diagram.selectedItems.nodes.length) {
             let node: string[] = (this.diagram.selectedItems.nodes[0] as Node).outEdges;
             for (let i: number = 0; i < node.length; i++) {
@@ -172,12 +172,12 @@ export class FlowExecutionDiagramComponent {
         }
     }
 
-    public LinksConnector(): void {
-        this.LinksOut();
+    public linksConnector(): void {
+        this.linksOut();
         this.linkedIn();
     }
 
-    public NodesIn(): void {
+    public nodesIn(): void {
         if (this.diagram.selectedItems.nodes.length) {
             let node: string[] = (this.diagram.selectedItems.nodes[0] as Node).inEdges;
             for (let i: number = 0; i < node.length; i++) {
@@ -190,7 +190,7 @@ export class FlowExecutionDiagramComponent {
         }
     }
 
-    public NodesOut(): void {
+    public nodesOut(): void {
         if (this.diagram.selectedItems.nodes.length) {
             let node: string[] = (this.diagram.selectedItems.nodes[0] as Node).outEdges;
             for (let i: number = 0; i < node.length; i++) {
@@ -204,13 +204,13 @@ export class FlowExecutionDiagramComponent {
     }
 
 
-    public NodesConnect(): void {
-        this.NodesOut();
-        this.NodesIn();
+    public nodesConnect(): void {
+        this.nodesOut();
+        this.nodesIn();
     }
 
 
-    public NodeReachable(): void {
+    public nodeReachable(): void {
         if (this.diagram.selectedItems.nodes.length) {
             let connectors: string[] = (this.diagram.selectedItems.nodes[0] as Node).outEdges;
             let nodeList: string[] = this.foundNode(connectors, []);
@@ -243,7 +243,7 @@ export class FlowExecutionDiagramComponent {
         return nodeList;
     }
 
-    public Unhighlight(): void {
+    public unHighlight(): void {
         for (let i: number = this.highLightedObjects.length - 1; i >= 0; i--) {
             if (this.diagram.nameTable[this.highLightedObjects[i]] instanceof Node) {
                 let index: number = this.diagram.nodes.indexOf(this.diagram.nameTable[this.highLightedObjects[i]]);

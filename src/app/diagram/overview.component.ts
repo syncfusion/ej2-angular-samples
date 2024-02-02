@@ -5,7 +5,7 @@ import {
     Container, TextElement, StackPanel, ImageElement, DataBinding, HierarchicalTree, TreeInfo
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import * as Data from './overview-data.json';
+import {data} from './overview-data';
 Diagram.Inject(DataBinding, HierarchicalTree);
 
 
@@ -21,7 +21,7 @@ Diagram.Inject(DataBinding, HierarchicalTree);
 export class OverviewDiagramComponent {
 
     public data: Object = {
-        id: 'Id', parentId: 'ReportingPerson', dataSource: new DataManager((Data as any).data)
+        id: 'Id', parentId: 'ReportingPerson', dataSource: new DataManager(data)
     };
 
     public layout: LayoutModel = {
@@ -48,7 +48,7 @@ export class OverviewDiagramComponent {
     };
 
     public tool: DiagramTools = DiagramTools.ZoomPan;
-    public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
+    public snapSettings: SnapSettingsModel = { constraints:SnapConstraints.None };
     public scrollSettings: ScrollSettingsModel = { scrollLimit: 'Infinity' };
 
     public setNodeTemplate(obj: NodeModel, diagram: Diagram): Container {
@@ -85,7 +85,7 @@ export class OverviewDiagramComponent {
         desigText.style.fontSize = 12;
         desigText.style.fill = 'none';
         desigText.horizontalAlignment = 'Left';
-        desigText.style.textWrapping = 'Wrap';
+        // desigText.style.textWrapping = 'Wrap';
         desigText.id = obj.id + '_desig';
         innerStack.children = [text, desigText];
 

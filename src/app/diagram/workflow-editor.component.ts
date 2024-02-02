@@ -158,12 +158,12 @@ public startWorkflow(args: number) {
     }
   }
 
-  const intervalDuration = 120;
+  let intervalDuration = 120;
   let completedCount = 0;
 
    this.myInterval = setInterval(() => {
      for (let j = 0; j < this.connectorCollection.length; j++) {
-       const connector = this.connectorCollection[j];
+       let connector = this.connectorCollection[j];
        if ((connector.id !== "checkApprovalStatus-setStatusAsRejected") && (connector.id !== "checkIfItIsAnInternaltionalTravel-setStatusAsAccepted") && (connector.id !== "checkLevel2-ApprovalStatus-setNextApprovalStatusAsRejected")) {
          connector.annotations[connector.annotations.length - 1].style.fill = '#76F543';
          if (connector.annotations[connector.annotations.length - 1].offset < 0.9) {
@@ -198,13 +198,13 @@ public startWorkflow(args: number) {
              }, 10);
              this.timeOut2 = setTimeout(() => {
                this.diagram.dataBind();
-               const loadingIndicator = document.getElementsByClassName('loading-indicator');
+               let loadingIndicator = document.getElementsByClassName('loading-indicator');
                // To remove loading indicator.
                for (let l: number = 0; l < loadingIndicator.length; l++) {
                  (loadingIndicator[l] as any).style.display = 'none';
                }
                // To add tick mark.
-               const tick: any = document.getElementsByClassName('tick');
+               let tick: any = document.getElementsByClassName('tick');
                for (let l: number = 0; l < tick.length; l++) {
                  (tick[l] as any).style.display = 'block';
                }

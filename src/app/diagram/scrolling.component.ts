@@ -307,7 +307,7 @@ public autoScrollBottom(args){
 }
 public scrollSettings : ScrollSettingsModel = {
   scrollLimit : 'Infinity',
-  canAutoScroll: false, autoScrollBorder: { left: 10, right: 10, top: 10, bottom: 10 },
+  canAutoScroll: true, autoScrollBorder: { left: 10, right: 10, top: 10, bottom: 10 },
   scrollableArea: this.scrollableArea
 };
 

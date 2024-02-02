@@ -4,7 +4,7 @@ import {
     Diagram, NodeModel, ConnectorModel, PointPortModel, DiagramTools,
     DataBinding, HierarchicalTree, SnapConstraints, SnapSettingsModel, ShapeAnnotationModel
 } from '@syncfusion/ej2-angular-diagrams';
-import * as Data from './diagram-data.json';
+import {artificialIntelligence} from './overview-data';
 
 export interface DataInfo {
     [key: string]: string;
@@ -27,7 +27,7 @@ export class RTLTreeDiagramComponent {
 
     public data: Object = {
         id: 'Name', parentId: 'Category',
-        dataSource: new DataManager((Data as any).artificialIntelligence),
+        dataSource: new DataManager(artificialIntelligence),
         doBinding: (nodeModel: NodeModel, data: DataInfo, diagram: Diagram) => {
             let nameKey: string = 'Name';
             nodeModel.annotations = [{ content: data[nameKey] }];

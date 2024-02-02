@@ -44,23 +44,10 @@ body{
     .db-text-input{
         height: 25px!important;
     }
-    .e-checkbox-wrapper .e-label{
-        font-size: 12px!important;
-    }
-    .e-radio+label .e-label{
-        font-size: 12px!important;
-    }
+
     #properties_Container{
-    /* background: #e3e3e3; */
     width: 300px;
     float: left;
     height: 600px;
     margin-top: 30px;   
-    }
-    .e-colorpicker-wrapper .e-split-btn-wrapper .e-split-colorpicker.e-split-btn .e-selected-color .e-split-preview{
-    width: 100px!important;
-    margin-left: -40px!important;
-    }
-    .e-colorpicker-wrapper .e-split-btn-wrapper .e-split-colorpicker.e-split-btn{
-        width: 110px!important;
     }

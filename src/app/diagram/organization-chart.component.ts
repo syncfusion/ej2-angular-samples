@@ -5,7 +5,7 @@ import {
     SubTreeOrientation, SubTreeAlignments, DiagramTools, Node, DataBinding, HierarchicalTree, SnapConstraints
 } from '@syncfusion/ej2-angular-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import * as Data from './diagram-data.json';
+import {localBindData} from './overview-data';
 Diagram.Inject(DataBinding, HierarchicalTree, LayoutAnimation);
 
 export interface EmployeeInfo {
@@ -32,7 +32,7 @@ export class OrganizationalChartDiagramComponent {
     public tool: DiagramTools = DiagramTools.ZoomPan;
     public data: Object = {
         id: 'Id', parentId: 'Manager',
-        dataSource: new DataManager((Data as any).localBindData),
+        dataSource: new DataManager(localBindData),
         doBinding: (nodeModel: NodeModel, data: object, diagram: Diagram) => {
             nodeModel.shape = {
                 type: 'Text', content: (data as EmployeeInfo).Role,

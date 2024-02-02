@@ -6,7 +6,7 @@ import {
     HierarchicalTree, ComplexHierarchicalTree, ConnectorModel, SnapSettingsModel, randomId
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import * as Data from './diagram-data.json';
+import {pertChartData} from './overview-data';
 
 export interface DataInfo {
     [key: string]: string;
@@ -29,7 +29,7 @@ export class PertChartDiagramComponent {
 
     public data: Object = {
         id: 'id', parentId: 'Category',
-        dataSource: new DataManager((Data as any).pertChartData),
+        dataSource: new DataManager(pertChartData),
         //binds the external data with node
         doBinding: (nodeModel: NodeModel, data: object, diagram: Diagram) => {
             nodeModel.shape = { type: 'Text' };

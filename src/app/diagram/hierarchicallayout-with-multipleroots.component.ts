@@ -35,6 +35,7 @@
  export class HierarchicalLayoutWithMultipleRootComponent {
    @ViewChild('diagram')
    public diagram: DiagramComponent;
+   //Initializes data source.
    public data: object[] = [
      { id: 1, Label: 'Production Manager' },
      { id: 2, Label: 'Control Room', parentId: 1 },
@@ -80,7 +81,7 @@
    public snapSettings: SnapSettingsModel = {
      constraints: SnapConstraints.None,
    };
- 
+ // Layout
    public layout: Object = {
      type: 'HierarchicalTree',
      verticalSpacing: 30, horizontalSpacing: 40,

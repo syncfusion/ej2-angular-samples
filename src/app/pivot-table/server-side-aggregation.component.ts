@@ -35,7 +35,7 @@ export class ServerSideAggregationComponent implements OnInit {
         } as GridSettings;
 
         this.dataSourceSettings = {
-            url: 'https://ej2services.syncfusion.com/angular/development/api/pivot/post',
+            url: 'https://services.syncfusion.com/angular/production/api/pivot/post',
             mode: 'Server',
             expandAll: false,
             enableSorting: true,

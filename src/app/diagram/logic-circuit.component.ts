@@ -11,7 +11,7 @@ import { paletteIconClick } from './script/diagram-common';
 Diagram.Inject(UndoRedo, ConnectorBridging);
 
 /**
- * Default FlowShape sample
+ * Default Logic gates sample
  */
 
 @Component({
@@ -328,7 +328,7 @@ export class LogicCircuitComponent {
     public expandMode: ExpandMode = 'Multiple';
 
     public palettes: PaletteModel[] = [
-        { id: 'flow', expanded: true, symbols: this.items, title: 'Flow Shapes' },
+        { id: 'logic', expanded: true, symbols: this.items, title: 'Logic Gates' },
         { id: 'connectors', expanded: true, symbols: this.connections, title: 'Connectors' },
     ];
 

@@ -24,7 +24,7 @@ export class IFrameComponent {
             'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
             'LowerCase', 'UpperCase', '|',
             'Formats', 'Alignments', '|', 'NumberFormatList', 'BulletFormatList', '|',
-            'Outdent', 'Indent', '|', 'CreateLink', 'Image', 'FileManager', 'Video', 'Audio', 'CreateTable', '|', 'FormatPainter', 'ClearFormat',
+            'Outdent', 'Indent', '|', 'CreateLink', 'Image', 'FileManager', 'Video', 'Audio', 'CreateTable', '|', 'ClearFormat',
             '|', 'EmojiPicker', 'Print', '|',
             'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
     };

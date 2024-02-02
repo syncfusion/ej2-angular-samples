@@ -26,7 +26,7 @@ export class TooltipDiagramComponent {
         content: this.getcontent(), position: 'TopLeft', relativeMode: 'Object',
         animation: { open: { effect: 'FadeZoomIn', delay: 0 }, close: { effect: 'FadeZoomOut', delay: 0 } }
     };
-
+    //Initializes diagram nodes
     public nodes: NodeModel[] = [
             {
                 id: 'node1', width: 60, height: 60, offsetX: 35, offsetY: 120,
@@ -106,7 +106,7 @@ export class TooltipDiagramComponent {
                 tooltip: { content: 'can log?' },
             },
     ];
-
+   // Initializes diagram connectors
     public connectors: ConnectorModel[] = [
         { id: 'connector1', sourceID: 'node1', targetID: 'node2' },
         { id: 'connector2', sourceID: 'node2', targetID: 'node3' },

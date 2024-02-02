@@ -6,7 +6,7 @@ import {
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
-import * as Data from './diagram-data.json';
+import {radialTree} from './overview-data';
 
 export interface DataInfo {
     [key: string]: string;
@@ -29,7 +29,7 @@ export class RadialTreeDiagramComponent {
     public data: Object = {
         //sets the fields to bind
         id: 'Id', parentId: 'ReportingPerson',
-        dataSource: new DataManager((Data as any).radialTree),
+        dataSource: new DataManager(radialTree),
         //binds the data with the nodes
         doBinding: (nodeModel: NodeModel, data: DataInfo, diagram: Diagram) => {
             nodeModel.annotations = [{

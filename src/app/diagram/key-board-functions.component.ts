@@ -10,7 +10,7 @@ import {
 } from '@syncfusion/ej2-diagrams';
 import { SnapConstraints } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import * as Data from './diagram-data.json';
+import {keyBoardData} from './overview-data';
 Diagram.Inject(UndoRedo, DiagramContextMenu, HierarchicalTree, DataBinding);
 
 export interface DataInfo {
@@ -39,7 +39,7 @@ export class KeyBoardDiagramComponent {
         return node;
     };
     public data: Object = {
-        id: 'id', parentId: 'ancestor', dataSource: new DataManager((Data as any).keyBoardData),
+        id: 'id', parentId: 'ancestor', dataSource: new DataManager(keyBoardData),
         doBinding: (nodeModel: NodeModel, data: DataInfo) => {
             nodeModel.annotations = [{ content: data.id, style: { color: 'white' } }];
             nodeModel.style = { strokeColor: 'transparent', fill: data.fill };

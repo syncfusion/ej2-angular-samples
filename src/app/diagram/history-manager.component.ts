@@ -31,6 +31,7 @@ export class HistoryManagerDiagramComponent {
     public created(): void {
         this.diagram.fitToPage();
     }
+    //Initializes nodes for diagram
     public nodes: NodeModel[] = [
         {
             id: 'node1', offsetX: 400, offsetY: 30, style: { fill: '#FFB2B2', strokeColor: '#FFB2B2' }, width: 70, height: 40,
@@ -69,7 +70,7 @@ export class HistoryManagerDiagramComponent {
             ]
         }
     ];
-
+    //Initializes connectors for diagram
     public connectors: ConnectorModel[] = [
         { id: 'connector1', sourceID: 'node1', targetID: 'node2' },
         { id: 'connector2', sourceID: 'node2', targetID: 'node3' },

@@ -47,6 +47,10 @@ export class OnlineHtmlEditorComponent {
         this.textArea.innerHTML = this.myCodeMirror.getValue();
     }
 
+    public onResizing(): void {
+        this.rteObj.refreshUI();
+    }
+
     public renderCodeMirror(mirrorView: HTMLElement, content: string): void {
         this.myCodeMirror = CodeMirror(mirrorView, {
             value: content,

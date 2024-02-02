@@ -11,7 +11,7 @@
         <div class="default-section">
             <div class="sample-view">
                 
-                <ejs-splitter #splitterInstance height='450px' width='100%' (created)='updateOrientation()'>
+                <ejs-splitter #splitterInstance height='450px' width='100%' (created)='updateOrientation()' (resizing)='onResizing()'>
                     <e-panes>
                         <e-pane size='50%' [resizable]='true' cssClass='pane1' min='40%' >
                             <ng-template #content>
