@@ -1,10 +1,9 @@
 import { Component, ViewEncapsulation, OnInit,ViewChild} from '@angular/core';
-import {
-    PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
-    ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService
-} from '@syncfusion/ej2-angular-pdfviewer';
-import { SwitchComponent } from '@syncfusion/ej2-angular-buttons';
+import { PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService, PageOrganizerService,PdfViewerModule } from '@syncfusion/ej2-angular-pdfviewer';
+import { SwitchComponent, SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { ClickEventArgs } from '@syncfusion/ej2-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Default PdfViewer Controller
@@ -14,9 +13,16 @@ import { ClickEventArgs } from '@syncfusion/ej2-buttons';
     templateUrl: 'default.html',
     encapsulation: ViewEncapsulation.None,
     // tslint:disable-next-line:max-line-length
-    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, 
-                TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService],
+    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService,
+        TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService,PageOrganizerService],
     styleUrls: ['pdfviewer.component.css'],
+    standalone: true,
+    imports: [
+        SBActionDescriptionComponent,
+        SwitchModule,
+        PdfViewerModule,
+        SBDescriptionComponent,
+    ],
 })
 
 export class DefaultPdfViewerComponent implements OnInit {

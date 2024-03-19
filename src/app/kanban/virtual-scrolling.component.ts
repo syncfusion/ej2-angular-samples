@@ -1,13 +1,18 @@
-import { KanbanComponent, CardRenderedEventArgs, ColumnsModel, CardSettingsModel, DialogSettingsModel } from '@syncfusion/ej2-angular-kanban';
+import { KanbanComponent, CardRenderedEventArgs, ColumnsModel, CardSettingsModel, DialogSettingsModel, KanbanModule } from '@syncfusion/ej2-angular-kanban';
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { generateKanbanDataVirtualScrollData } from './data';
 import { addClass } from '@syncfusion/ej2-base';
+import { NgClass } from '@angular/common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'virtual-scrolling.html',
     styleUrls: ['virtual-scrolling.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ KanbanModule, SBActionDescriptionComponent, SBDescriptionComponent, NgClass]
 })
 export class VirtualScrollingComponent {
     @ViewChild('kanbanObj') kanbanObj: KanbanComponent;

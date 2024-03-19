@@ -1,12 +1,18 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
-import { MenuItemModel, MenuEventArgs  } from '@syncfusion/ej2-angular-navigations';
+import { ItemModel, DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
+import { MenuItemModel, MenuEventArgs, AppBarModule, MenuModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { NgFor } from '@angular/common';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  selector: 'control-content',
-  templateUrl: 'color.html',
-  styleUrls: ['color.component.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'color.html',
+    styleUrls: ['color.component.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, NgFor, AppBarModule, ButtonModule, DropDownButtonModule, MenuModule, SBDescriptionComponent]
 })
 export class AppBarColorComponent {
   public productDropDownButtonItems: ItemModel[] = [

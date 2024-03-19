@@ -1,12 +1,16 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { data } from './data';
-import { SortService } from '@syncfusion/ej2-angular-grids';
+import { SortService, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-gridsort',
     templateUrl: 'sorting.html',
     styleUrls: ['sort.style.css'],
-    providers: [SortService]
+    providers: [SortService, PageService],
+    standalone: true,
+    imports: [GridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class SortComponent implements OnInit {
     public data: Object[];

@@ -14,7 +14,7 @@ import { OutlookSplitterComponent } from './outlook-style-layout.component';
 import { CodeEditorLayoutComponent } from './code-editor-layout.component';
 import { ExpandCollapseComponent } from './expand-and-collapse.component';
 
-import { SharedModule } from '../common/shared.module';
+
 export const splitterAppRoutes: Object[] = [
     { path: ':theme/splitter/default', component: DefaultSplitterComponent, name: 'Default Functionalities', order: '01', category: 'Splitter', description: 'The example explains the default functionalities of the Angular splitter with resizable panes, separator, and orientation (horizontal and vertical).' },
 	{ path: ':theme/splitter/expand-and-collapse', component: ExpandCollapseComponent, name: 'Expand and Collapse', order: '01', category: 'Splitter', description: 'The example presents collapsible JavaScript Splitter that exposes expand and collapse action of panes with a different orientation and resizable panes.' },
@@ -24,19 +24,5 @@ export const splitterAppRoutes: Object[] = [
     { path: ':theme/splitter/code-editor-layout', component: CodeEditorLayoutComponent, name: 'Code Editor Layout', order: '02', category: 'Use Case', description: 'The example shows how to construct code editor layout (UI) using Angular Splitter with multiple, nested, different oriented, and resizable panes.' }
 ];
 
-export const splitterRouter: ModuleWithProviders<any> = RouterModule.forChild(splitterAppRoutes);
+export const splitterSampleModule: ModuleWithProviders<any> = RouterModule.forChild(splitterAppRoutes);
 
-@NgModule({
-    imports: [splitterRouter, ButtonModule, RichTextEditorModule, TreeViewModule, SplitterModule, SharedModule,CommonModule, TextBoxModule, ListViewAllModule, AccordionAllModule],
-    declarations: [
-        DefaultSplitterComponent,
-        DetailsViewComponent,
-        OutlookSplitterComponent,
-        CodeEditorLayoutComponent,
-        AccordionNavigationMenuComponent,
-		ExpandCollapseComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class splitterSampleModule {
-}

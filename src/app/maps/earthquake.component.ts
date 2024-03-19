@@ -2,15 +2,18 @@
  * Earth quake map sample
  */
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, Maps, Zoom, Marker, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
-import { MapAjax } from '@syncfusion/ej2-maps';
-import asia from './asia.json';
+import { MapsTheme, Maps, Zoom, Marker, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+let asia: object[] = require('./asia.json');
 Maps.Inject(Zoom, Marker);
 declare var require: any;
 @Component({
     selector: 'control-content',
     templateUrl: 'earthquake.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, SBDescriptionComponent]
 })
 export class MapsEarthquakeComponent {
     public load = (args: ILoadEventArgs) => {

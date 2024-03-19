@@ -6,6 +6,7 @@ import {
 import { Browser, remove } from '@syncfusion/ej2-base';
 import { getElement } from '@syncfusion/ej2-svg-base/src/tooltip/helper';
 import { stockData } from './stock-data';
+import { RangeNavigatorAllModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 
 /**
  * Sample for range navigator with datetime axis
@@ -23,7 +24,9 @@ let regionColor: string[] = ['rgba(99, 85, 199, 0.3)', 'rgba(143, 128, 244, 0.3)
 @Component({
     selector: 'control-content',
     templateUrl: 'date-time.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [RangeNavigatorAllModule, ChartAllModule]
 })
 
 export class DateTimeComponent {

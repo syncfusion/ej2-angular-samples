@@ -1,12 +1,18 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
 import { isNullOrUndefined, EmitType } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NgClass, NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'sample',
-  styleUrls: ['template-driven.component.css'],
-  templateUrl: 'template-driven-forms.html',
-  encapsulation: ViewEncapsulation.None
+    selector: 'sample',
+    styleUrls: ['template-driven.component.css'],
+    templateUrl: 'template-driven-forms.html',
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [FormsModule, NgClass, NgIf, DialogModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class TemplateDrivenComponent {

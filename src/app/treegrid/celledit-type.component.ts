@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { EditService, ToolbarService, PageService } from '@syncfusion/ej2-angular-treegrid';
+import { EditService, ToolbarService, PageService, TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'celledit-type.html',
-    providers: [ToolbarService, EditService, PageService]
+    providers: [ToolbarService, EditService, PageService],
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class CellEditTypeComponent implements OnInit {
     public data: Object[] = [];

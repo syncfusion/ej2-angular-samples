@@ -1,16 +1,24 @@
 /**
  * Rich Text Editor Mention integration Functionality Sample
  */
-import { Component, ViewEncapsulation } from '@angular/core';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
+import { Component, ViewEncapsulation, ViewChild} from '@angular/core';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { MentionModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { Mention } from '@syncfusion/ej2-angular-dropdowns';
+
 @Component({
     selector: 'control-content',
     templateUrl: 'mention-integration.html',
     styleUrls: ['mention-integration.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService]
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, RichTextEditorModule, MentionModule, SBDescriptionComponent]
 })
 export class MentionIntegrationComponent {
+    @ViewChild('mention') mentionObj: Mention;
     public data: { [key: string]: Object }[] = [
         { Name: "Selma Rose", Status: "active", Eimg: "2", EmailId: "selma@gmail.com" },
         { Name: "Maria", Status: "active", Eimg: "1", EmailId: "maria@gmail.com" },
@@ -30,7 +38,7 @@ export class MentionIntegrationComponent {
       public  fieldsData: { [key: string]: string } = { text: 'Name' };
 
       onActionBegin(args){
-        if (args.requestType === 'EnterAction') {
+        if (args.requestType === 'EnterAction' && this.mentionObj.element.classList.contains('e-popup-open')) {
             args.cancel = true;
         }
       }

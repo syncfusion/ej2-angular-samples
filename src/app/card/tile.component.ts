@@ -3,6 +3,9 @@ import { compile, detach } from '@syncfusion/ej2-base';
 import { cardBook } from './data-source';
 import { MultiSelect, SelectEventArgs, RemoveEventArgs } from '@syncfusion/ej2-dropdowns';
 import { Query, DataManager, Predicate } from '@syncfusion/ej2-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NgFor } from '@angular/common';
 /**
  * Default Card Component
  */
@@ -21,7 +24,9 @@ let multiselectComp: MultiSelect;
     selector: 'control-content',
     templateUrl: 'tile.html',
     styleUrls: ['card.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [NgFor, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class TileViewCardComponent {
     public DataList: any = [];

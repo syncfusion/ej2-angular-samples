@@ -1,18 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import {
-    DiagramComponent, NodeModel, ConnectorModel, PaletteModel,
-    SnapSettingsModel, SnapConstraints, SymbolPaletteComponent, PointPortModel, PortVisibility,
-    PortConstraints, ContextMenuSettingsModel, IDragEnterEventArgs, DiagramBeforeMenuOpenEventArgs,
-    SwimLaneModel, Node,
-    SymbolInfo,
-    LaneModel,
-    randomId,
-    cloneObject, ShapeStyleModel,
-    HeaderModel,
-} from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, NodeModel, ConnectorModel, PaletteModel, SnapSettingsModel, SnapConstraints, SymbolPaletteComponent, PointPortModel, PortVisibility, PortConstraints, ContextMenuSettingsModel, IDragEnterEventArgs, DiagramBeforeMenuOpenEventArgs, SwimLaneModel, Node, SymbolInfo, LaneModel, randomId, cloneObject, ShapeStyleModel, HeaderModel, SymbolPaletteModule, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { MenuEventArgs } from '@syncfusion/ej2-splitbuttons';
 import { ExpandMode } from '@syncfusion/ej2-navigations';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 let pathData: string = 'M 120 24.9999 C 120 38.8072 109.642 50 96.8653 50 L 23.135' +
@@ -26,7 +18,9 @@ let pathData: string = 'M 120 24.9999 C 120 38.8072 109.642 50 96.8653 50 L 23.1
     selector: 'control-content',
     templateUrl: 'swimlane.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SymbolPaletteModule, DiagramModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class SwimLaneDiagramComponent {

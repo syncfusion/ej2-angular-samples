@@ -1,10 +1,9 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { 
-    AccumulationChartComponent, IAccTextRenderEventArgs, AccumulationChart, GroupModes,
-    IAccPointRenderEventArgs, IAccLoadedEventArgs, AccumulationTheme
-} from '@syncfusion/ej2-angular-charts';
+import { AccumulationChartComponent, IAccTextRenderEventArgs,ChartAllModule, AccumulationChart, GroupModes, IAccPointRenderEventArgs, IAccLoadedEventArgs, AccumulationTheme, AccumulationChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for groping in pie chart
@@ -12,7 +11,9 @@ import { Browser } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',
     templateUrl: 'grouping.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent,ChartAllModule, AccumulationChartAllModule, SBDescriptionComponent]
 })
 export class GroupingPieComponent {
     public data: Object[] = [

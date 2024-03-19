@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, IDataSet, LoadEventArgs } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView, PivotViewModule,IDataSet, LoadEventArgs } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
-import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { enableRipple, isNullOrUndefined } from '@syncfusion/ej2-base';
 import { csvdata } from './csvData';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -15,7 +17,9 @@ let data: IDataSet[] = require('./rData.json');
 @Component({
     selector: 'ej2-pivotview-container',
     styleUrls: ['local.css'],
-    templateUrl: 'local.html'
+    templateUrl: 'local.html',
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule]
 })
 
 export class LocalComponent implements OnInit {

@@ -6,6 +6,9 @@ import {
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
 import {data} from './overview-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { DiagramModule, OverviewModule } from '@syncfusion/ej2-angular-diagrams';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(DataBinding, HierarchicalTree);
 
 
@@ -16,7 +19,9 @@ Diagram.Inject(DataBinding, HierarchicalTree);
     selector: 'control-content',
     templateUrl: 'overview.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, OverviewModule, SBDescriptionComponent]
 })
 export class OverviewDiagramComponent {
 
@@ -48,7 +53,7 @@ export class OverviewDiagramComponent {
     };
 
     public tool: DiagramTools = DiagramTools.ZoomPan;
-    public snapSettings: SnapSettingsModel = { constraints:SnapConstraints.None };
+    public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
     public scrollSettings: ScrollSettingsModel = { scrollLimit: 'Infinity' };
 
     public setNodeTemplate(obj: NodeModel, diagram: Diagram): Container {
@@ -85,7 +90,7 @@ export class OverviewDiagramComponent {
         desigText.style.fontSize = 12;
         desigText.style.fill = 'none';
         desigText.horizontalAlignment = 'Left';
-        // desigText.style.textWrapping = 'Wrap';
+        desigText.style.textWrapping = 'Wrap';
         desigText.id = obj.id + '_desig';
         innerStack.children = [text, desigText];
 

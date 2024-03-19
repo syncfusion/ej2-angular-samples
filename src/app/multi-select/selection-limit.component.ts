@@ -1,11 +1,16 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
-import { MultiSelectComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { MultiSelectComponent, MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
 import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
     templateUrl: 'selection-limit.html',
     styleUrls: ['checkbox.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MultiSelectModule, NumericTextBoxModule, SBDescriptionComponent]
 })
 export class SelectLimitComponent implements OnInit {
     @ViewChild('checkbox')

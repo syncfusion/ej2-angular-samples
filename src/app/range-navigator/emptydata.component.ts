@@ -5,6 +5,7 @@ import {
 } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { chartData } from './stock-data';
+import { RangeNavigatorAllModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 
 /**
  * Sample for empty points
@@ -37,7 +38,9 @@ let regionColor: string[] = ['rgba(99, 85, 199, 0.3)', 'rgba(143, 128, 244, 0.3)
 @Component({
     selector: 'control-content',
     templateUrl: 'emptydata.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [RangeNavigatorAllModule, ChartAllModule]
 })
 
 export class RangeNavigatorEmptyPointComponent {

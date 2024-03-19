@@ -1,14 +1,18 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SidebarComponent, ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
+import { SidebarComponent, ClickEventArgs, ToolbarModule, SidebarModule, MenuModule } from '@syncfusion/ej2-angular-navigations';
 import { Menu, MenuItemModel } from '@syncfusion/ej2-navigations';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 @Component({
     selector: 'control-content',
     styleUrls: ['sidebar-menu.css'],
     templateUrl: 'sidebar-menu.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ToolbarModule, SidebarModule, MenuModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class SidebarMenuComponent {
     @ViewChild('sidebarMenuInstance')

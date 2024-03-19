@@ -8,7 +8,7 @@
             </e-items>
         </ejs-toolbar>
         <br/>
-        <ejs-grid [dataSource]='data' [toolbar]="toolbar" [childGrid]="childGrid" [allowSorting]="true" [hierarchyPrintMode]="hierarchyPrintMode">
+        <ejs-grid [dataSource]='data' [toolbar]="toolbar" [childGrid]="childGrid" [allowSorting]='true' [hierarchyPrintMode]="hierarchyPrintMode">
             <e-columns>
                 <e-column field='EmployeeID' headerText='Employee ID' width='120' textAlign='Right'></e-column>
                 <e-column field='FirstName' headerText='Name' width='150'></e-column>
@@ -49,7 +49,7 @@
         <p style="font-weight: 500">Injecting Module:</p>
         <p>
             Grid features are segregated into individual feature-wise modules.         
-            To use Hierarchy Grid feature, we need to inject <code>DetailRowService</code> into the <code>@NgModule.providers</code> section.
+            To use Hierarchy Grid feature, we need to inject <code>DetailRowService</code> into the <code>&#64;NgModule.providers</code> section.
         </p>
         <p>More information on the print feature can be found in this
             <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/grid/print">

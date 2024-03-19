@@ -1,17 +1,21 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { TreeGridComponent, PageService} from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent, TreeGridModule, PageService} from '@syncfusion/ej2-angular-treegrid';
 import { DropDownListComponent, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
-import { ChangeEventArgs as ChangeArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs as ChangeArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { PageEventArgs } from '@syncfusion/ej2-grids';
-import { NumericTextBoxComponent, ChangeEventArgs, NumericTextBoxAllModule} from '@syncfusion/ej2-angular-inputs';
+import { NumericTextBoxComponent, NumericTextBoxModule, ChangeEventArgs, NumericTextBoxAllModule} from '@syncfusion/ej2-angular-inputs';
 import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
-import { CheckBoxAllModule} from '@syncfusion/ej2-angular-buttons';
+import { CheckBoxAllModule , CheckBoxModule} from '@syncfusion/ej2-angular-buttons';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'paging-api.html',
     providers: [ PageService ],
+    standalone: true,
+    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent, CheckBoxModule, DropDownListModule, NumericTextBoxModule]
 
 })
 export class PagingAPIComponent implements OnInit {

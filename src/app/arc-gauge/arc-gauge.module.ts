@@ -18,15 +18,4 @@ export const arcgaugeAppRoutes: Object[] = [
     { path: ':theme/arc-gauge/patterns', component: PatternsComponent, name: 'Patterns', order: '01', category: 'Arc Gauge', description: 'This Essential JS2 Arc Gauge demo shows how the gauge can be rendered in many ways to demonstrate different user interfaces by customizing its axis, range, pointer, etc.'}
 ];
 
-export const arcRouter: ModuleWithProviders<any> = RouterModule.forChild(arcgaugeAppRoutes);
-
-let declarations: Type<Object>[] = [DefaultComponent, CustomerSatisfactionComponent, KeyPerformanceComponent, PatternsComponent];
-
-@NgModule({
-    imports: [arcRouter, CircularGaugeAllModule, GridModule, ButtonModule, CheckBoxModule],
-    exports: [],
-    declarations: declarations,
-    providers: [CircularGaugeAllModule]
-})
-export class ArcGaugeSampleModule {
-}
+export const ArcGaugeSampleModule: ModuleWithProviders<any> = RouterModule.forChild(arcgaugeAppRoutes);

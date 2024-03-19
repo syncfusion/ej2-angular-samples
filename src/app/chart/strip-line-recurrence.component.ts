@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, ChartComponent, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartComponent, ChartTheme, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for stripLineRecurrence
@@ -9,7 +11,9 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
     selector: 'control-content',
     templateUrl: 'strip-line-recurrence.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 export class StripLineRecurrenceChartComponent {
 

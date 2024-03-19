@@ -3,7 +3,7 @@
  */
 import { NgModule, ModuleWithProviders, Type } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '../common/shared.module';
+
 import { TreeMapAllModule } from '@syncfusion/ej2-angular-treemap';
 import { TreemapDefaultComponent } from './default.component';
 import { TreemapLayoutComponent } from './layout.component';
@@ -34,26 +34,4 @@ export const treemapAppRoutes: Object[] = [
     { path: ':theme/treemap/rtl', component: TreemapRTLComponent,  name: 'RTL', order: '01', category: 'TreeMap', description: 'This demo for Essential JS2 TreeMap control visualizes the population level of various continents in 2011 based on the gender and age group.' },
 ];
 
-export const treemapRouter: ModuleWithProviders<any> = RouterModule.forChild(treemapAppRoutes);
-let declarations: Type<Object>[] = [
-    TreemapDefaultComponent,
-    TreemapLayoutComponent,
-    TreemapDrillDownComponent,
-    TreemapCustomComponent,
-    TreemapLabelComponent,
-    TreemapTooltipComponent,
-    TreemapLegendComponent,
-    TreemapSelectComponent,
-    TreemapPrintComponent,
-    TreemapPieComponent,
-    TreemapcolorMappingComponent,
-    TreemapRTLComponent
-];
-@NgModule({
-    imports: [treemapRouter,  SharedModule, TreeMapAllModule],
-    exports: [],
-    declarations: declarations,
-    providers: [TreeMapAllModule]
-})
-export class TreemapSampleModule {
-}
+export const TreemapSampleModule: ModuleWithProviders<any> = RouterModule.forChild(treemapAppRoutes);

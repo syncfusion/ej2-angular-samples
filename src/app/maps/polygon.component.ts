@@ -1,11 +1,15 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, Maps,ILoadEventArgs, Polygon } from '@syncfusion/ej2-angular-maps';
-Maps.Inject(Polygon);
+import { MapsTheme, Maps, ILoadEventArgs, Polygon, MapsModule, MapsTooltip } from '@syncfusion/ej2-angular-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+Maps.Inject(Polygon, MapsTooltip);
 declare var require: any;
 @Component({
     selector: 'control-content',
     templateUrl: 'polygon.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [MapsModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class PolygonComponent {
     public load = (args: ILoadEventArgs) => {
@@ -23,8 +27,10 @@ export class PolygonComponent {
     public layers: object[] = [{
         urlTemplate: 'https://tile.openstreetmap.org/level/tileX/tileY.png',
         polygonSettings: {
+            tooltipSettings: { visible: true },
             polygons: [
                 {
+                    tooltipTemplate: '<div style="height: auto; width: 280px; background-color: #fff; padding: 10px;"><table style="padding:10px; border:1px solid #000;"><tr><td style="padding:5px; width: 40%; text-align: center;"><img src="./assets/maps/images/germany-flag.png" style="height:auto;width: 100%" alt="Germany" /></td><td style="padding:5px"><span style="font-size: 12px; font-weight: 500;display:block">Country Name : Germany</span><span style="font-size: 12px; font-weight: 500;display:block">Capital Name : Berlin</span><span style="font-size: 12px; font-weight: 500;display:block">Population : 83,252,474</span><span style="font-size: 12px; font-weight: 500;display:block">GDP : $4.509 trillion</span></td></tr></table></div>',
                     points: [
                         { longitude : 8.64898681640625, latitude : 54.909777539554824 },
                         { longitude : 8.5638427734375, latitude : 54.90030293114211 },

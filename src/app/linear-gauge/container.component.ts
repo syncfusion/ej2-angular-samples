@@ -1,12 +1,14 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { LinearGaugeComponent } from '@syncfusion/ej2-angular-lineargauge';
+import { LinearGaugeComponent, LinearGaugeModule } from '@syncfusion/ej2-angular-lineargauge';
 import { ContainerType, Orientation, ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-lineargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'container.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [LinearGaugeModule]
 })
 
 export class ContainerComponent {

@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, ViewChild, HostListener, ElementRef, Inject, Injector } from '@angular/core';
-import { ToastComponent, ToastCloseArgs, ToastPositionModel } from '@syncfusion/ej2-angular-notifications';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { ToastComponent, ToastCloseArgs, ToastPositionModel, ToastModule } from '@syncfusion/ej2-angular-notifications';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  *  Sample for Basic Toast
  */
@@ -8,7 +10,9 @@ import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
     selector: 'control-content',
     templateUrl: 'default.html',
     styleUrls: ['default.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToastModule, ButtonModule, SBDescriptionComponent]
 })
 
 export class DefaultController {

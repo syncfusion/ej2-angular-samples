@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
 import { splitTasksData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttsplittasks',
-    templateUrl: 'split-tasks.html'
+    templateUrl: 'split-tasks.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
 })
 
 export class GanttSplitTasksComponent implements OnInit {

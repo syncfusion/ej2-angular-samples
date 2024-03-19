@@ -1,13 +1,17 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { CarouselComponent, CarouselButtonVisibility } from '@syncfusion/ej2-angular-navigations';
-import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { ChangeEventArgs as SwitchChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
+import { CarouselComponent, CarouselButtonVisibility, CarouselModule } from '@syncfusion/ej2-angular-navigations';
+import { ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs as SwitchChangeEventArgs, SwitchModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  selector: 'control-content',
-  templateUrl: 'api.html',
-  styleUrls: ['api.component.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'api.html',
+    styleUrls: ['api.component.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, CarouselModule, SwitchModule, DropDownListModule, SBDescriptionComponent]
 })
 export class CarouselAPIComponent {
   @ViewChild('carousel') carouselObj: CarouselComponent;

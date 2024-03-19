@@ -1,8 +1,10 @@
 import { Component, ViewEncapsulation, Inject, ViewChild, HostListener, ElementRef } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';
-import { ButtonComponent, RadioButtonComponent, ChangeEventArgs as CheckBoxChange } from '@syncfusion/ej2-angular-buttons';
-import { DropDownListComponent, ChangeEventArgs, FieldSettingsModel } from '@syncfusion/ej2-angular-dropdowns';
-import { ToastComponent, ToastCloseArgs, ToastPositionModel } from '@syncfusion/ej2-angular-notifications';
+import { ButtonComponent, RadioButtonComponent, ChangeEventArgs as CheckBoxChange, RadioButtonModule, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { DropDownListComponent, ChangeEventArgs, FieldSettingsModel, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ToastComponent, ToastCloseArgs, ToastPositionModel, ToastModule } from '@syncfusion/ej2-angular-notifications';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  *  Sample for Positioning options in Toast
@@ -11,7 +13,9 @@ import { ToastComponent, ToastCloseArgs, ToastPositionModel } from '@syncfusion/
     selector: 'control-content',
     templateUrl: 'positions.html',
     styleUrls: ['positions.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToastModule, RadioButtonModule, DropDownListModule, ButtonModule, SBDescriptionComponent]
 })
 
 export class PositionsController {

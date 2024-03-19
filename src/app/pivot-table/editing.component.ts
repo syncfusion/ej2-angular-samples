@@ -1,8 +1,11 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView, IDataSet, PivotViewModule } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { CellEditSettings } from '@syncfusion/ej2-pivotview/src/pivotview';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { RadioButtonModule} from '@syncfusion/ej2-angular-buttons';
 enableRipple(false);
 
 /**
@@ -15,7 +18,9 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     selector: 'ej2-pivotview-container',
     templateUrl: 'editing.html',
     encapsulation: ViewEncapsulation.None,
-    styleUrls: ['editing.css']
+    styleUrls: ['editing.css'],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, RadioButtonModule]
 })
 export class EditingComponent implements OnInit {
     public dataSourceSettings: IDataOptions;

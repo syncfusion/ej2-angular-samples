@@ -2,13 +2,16 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ProgressBar, ITextRenderEventArgs, AnimationModel, FontModel } from '@syncfusion/ej2-progressbar';
 import {ILoadedEventArgs, ProgressTheme} from '@syncfusion/ej2-progressbar';
 import { Browser } from '@syncfusion/ej2-base';
+import { ProgressBarAllModule } from '@syncfusion/ej2-angular-progressbar';
 /**
  * RTl sample
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'progress-segment.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ProgressBarAllModule]
 })
 
 export class ProgressBarProgressSegmentComponent {

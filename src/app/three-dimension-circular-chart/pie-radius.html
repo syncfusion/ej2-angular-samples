@@ -1,0 +1,35 @@
+<div id="action-description">
+    <p>
+        This sample compares countries by population density and total area using various radii in a 3D pie series.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-circularchart3d style='display:block;' align='center' (load)='load($event)'
+            [title]='title' [tooltip]="tooltip" [rotation]='rotation' tilt='-15' enableAnimation='false'
+            [legendSettings]="legendSettings">
+            <e-circularchart3d-series-collection>
+                <e-circularchart3d-series [dataSource]='dataSource' xName='x' yName='y' [animation]="animation"
+                    radius='r' tooltipMappingName='r' innerRadius='20%' [dataLabel]='dataLabel'>
+                </e-circularchart3d-series>
+            </e-circularchart3d-series-collection>
+        </ejs-circularchart3d>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render a 3D donut chart with varying radii. You can use the
+        <code>radius</code> mapping property to achieve this feature. The data labels are used to represent individual
+        data and its values. In addition, the sample shows how to change the order of legend for the donut
+        chart by using the <code>reverse</code> property.
+    </p>
+    <p>
+        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover over a point or tap on a
+        point on touch-enabled devices.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        3D circular chart component features are segregated into individual feature-wise modules. To use legend, you
+        need to inject the <code>CircularChartLegend3DService</code> into the <code>&#64;NgModule.providers</code> section.
+    </p>
+</div>

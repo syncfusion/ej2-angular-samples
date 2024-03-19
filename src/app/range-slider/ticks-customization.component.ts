@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, ViewChild} from '@angular/core';
-import { SliderComponent } from '@syncfusion/ej2-angular-inputs';
-import { SliderTickRenderedEventArgs, SliderTickEventArgs, Placement } from '@syncfusion/ej2-inputs'; 
+import { SliderComponent, SliderModule } from '@syncfusion/ej2-angular-inputs';
+import { SliderTickRenderedEventArgs, SliderTickEventArgs, Placement } from '@syncfusion/ej2-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component'; 
 
 /**
  * Ticks Customization sample
@@ -10,7 +12,9 @@ import { SliderTickRenderedEventArgs, SliderTickEventArgs, Placement } from '@sy
     selector: 'control-content',
     templateUrl: 'ticks-customization.html',
     styleUrls: ['ticks-customization.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SliderModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class TicksCustomizationComponent {

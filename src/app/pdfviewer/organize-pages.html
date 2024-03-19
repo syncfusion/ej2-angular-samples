@@ -1,0 +1,37 @@
+<div id="action-description">
+    <p>This sample showcases the page organization features of the PDF Viewer component, allowing users to effortlessly insert, delete, and rotate pages. Additionally, users can select all pages for collective adjustments and save changes instantly or download the edited document.</p>
+</div>
+<div class="control-section">
+    <div class="content-wrapper">
+        <div class="flex-container">
+            <label class="switchLabel" for="checked">Standalone PDF Viewer</label>
+            <div class="e-message render-mode-info">
+                <span class="e-msg-icon render-mode-info-icon" title="Turn OFF to render the PDF Viewer as server-backed"></span>
+            </div>
+            <div>
+                <ejs-switch cssClass="buttonSwitch" id="checked" (change)="change($event)" [checked]="true"></ejs-switch>
+            </div>
+        </div>
+        <ejs-pdfviewer #pdfviewer id="pdfViewer" [documentPath]='document' [resourceUrl]='resource' (documentLoad)='documentLoad($event)' style="height:640px;display:block"></ejs-pdfviewer>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        Explore the comprehensive page organization capabilities of the PDF Viewer component through this sample. Users can seamlessly manage the PDF documents with the following functionalities:
+    </p>
+    <ul>
+        <li>Add new pages to the document to integrate additional content seamlessly.</li>
+        <li>Remove unnecessary pages with ease, streamlining document management.</li>
+        <li>Resolve orientation issues by rotating pages clockwise <code>right</code>  or counterclockwise <code>left</code> as required.</li>
+        <li>Conveniently select all pages for uniform adjustments and modifications.</li>
+        <li>Enjoy real-time updates as any changes made to the page organization are instantly reflected within the PDF Viewer, when you click on the <code>Save</code> button.</li>
+        <li>Utilize the <code>Save As</code> feature to preserve edits, enabling users to download the modified version of the PDF document for future reference.</li> 
+    </ul> 
+    <p>
+        More information on the PDF Viewer instantiation can be found in this
+        <a target="_blank" 
+        href="https://ej2.syncfusion.com/angular/documentation/pdfviewer/getting-started">
+        documentation section</a>.
+    </p>
+</div>

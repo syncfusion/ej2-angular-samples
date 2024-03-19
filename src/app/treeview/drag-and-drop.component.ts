@@ -2,6 +2,10 @@ import { Component, Inject ,  ViewChild, ViewEncapsulation } from '@angular/core
 import { TreeView, DragAndDropEventArgs } from '@syncfusion/ej2-navigations';
 import { ListView } from '@syncfusion/ej2-lists';
 import { closest } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ListViewModule } from '@syncfusion/ej2-angular-lists';
+import { TreeViewModule } from '@syncfusion/ej2-angular-navigations';
 
 /**
  * TreeView drag and drop sample
@@ -9,7 +13,9 @@ import { closest } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',
     templateUrl: 'drag-and-drop.html',
-	encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeViewModule, ListViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DragdropTreeViewComponent {
      @ViewChild('list')

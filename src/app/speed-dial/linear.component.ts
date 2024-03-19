@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { SpeedDialItemModel } from '@syncfusion/ej2-angular-buttons';
+import { SpeedDialItemModel, SpeedDialModule } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * Linear View of Speed Dial component.
@@ -8,7 +8,9 @@ import { SpeedDialItemModel } from '@syncfusion/ej2-angular-buttons';
     selector: 'control-content',
     templateUrl: 'linear.html',
     styleUrls: ['linear.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SpeedDialModule]
 })
 
 export class LinearSpeedDialComponent {

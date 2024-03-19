@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Sparkline } from '@syncfusion/ej2-charts';
 import { orderdata } from './spark-data';
+import { GridModule } from '@syncfusion/ej2-angular-grids';
+import { SparklineAllModule } from '@syncfusion/ej2-angular-charts';
 /**
  * Sample for axis type in Sparkline 
  */
 @Component({
     selector: 'control-content',
-    templateUrl: 'sparkline-grid.html'
+    templateUrl: 'sparkline-grid.html',
+    standalone: true,
+    imports: [GridModule, SparklineAllModule]
 })
 export class SparklineGridSample implements OnInit {
     public lineData: object[] = [

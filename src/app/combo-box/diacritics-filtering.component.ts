@@ -2,10 +2,15 @@
  * ComboBox Diacritics Filtering Sample
  */
 import { Component } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
-    templateUrl: 'diacritics-filtering.html'
+    templateUrl: 'diacritics-filtering.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ComboBoxModule, SBDescriptionComponent]
 })
 export class DiacriticsFilteringComboBoxComponent {
     // create local data

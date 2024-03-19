@@ -2,16 +2,20 @@ import { Component, OnInit, ViewChild, Inject, ViewEncapsulation } from '@angula
 import { sampleData, lockRowDropDownData} from './jsontreegriddata';
 import { RowDataBoundEventArgs, BeginEditArgs } from '@syncfusion/ej2-grids';
 import { addClass, removeClass } from '@syncfusion/ej2-base';
-import { TreeGridComponent, EditService  , PageService } from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent, EditService  ,TreeGridAllModule, PageService } from '@syncfusion/ej2-angular-treegrid';
 import { MultiSelect, CheckBoxSelection } from '@syncfusion/ej2-dropdowns';
-import { MultiSelectComponent, MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { MultiSelectComponent, MultiSelectAllModule, MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'lockrow.html',
     providers: [EditService, PageService],
     styleUrls: ['lockrow.style.css'],
-    encapsulation : ViewEncapsulation.None
+    encapsulation : ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, MultiSelectModule]
 })
 export class LockRowComponent implements OnInit {
     public data: Object[] = [];

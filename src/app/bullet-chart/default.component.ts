@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';
-import { BulletTooltipSettingsModel, AnimationModel } from '@syncfusion/ej2-angular-charts';
+import { BulletTooltipSettingsModel, AnimationModel, BulletChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { TextPosition, IBulletLoadedEventArgs, ChartTheme, MarginModel } from '@syncfusion/ej2-charts';
 /**
  * Local data Source sample
@@ -8,7 +8,9 @@ import { TextPosition, IBulletLoadedEventArgs, ChartTheme, MarginModel } from '@
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [BulletChartAllModule]
 })
 
 export class BulletChartDefaultComponent {

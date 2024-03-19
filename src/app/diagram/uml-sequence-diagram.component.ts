@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild,Inject } from '@angular/core';
-import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import {
   Diagram, NodeModel, UndoRedo, ConnectorModel, PointPortModel, Connector, FlowShapeModel,
   SymbolInfo, IDragEnterEventArgs, SnapSettingsModel, MarginModel, TextStyleModel, StrokeStyleModel,
@@ -7,6 +7,8 @@ import {
 } from '@syncfusion/ej2-diagrams';
 import { ExpandMode } from '@syncfusion/ej2-navigations';
 import { paletteIconClick } from './script/diagram-common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(UndoRedo);
 
 /**
@@ -14,9 +16,11 @@ Diagram.Inject(UndoRedo);
  */
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'uml-sequence-diagram.html',
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-root',
+    templateUrl: 'uml-sequence-diagram.html',
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, SBDescriptionComponent]
 })
 export class UmlSequenceComponent {
   @ViewChild('diagram')

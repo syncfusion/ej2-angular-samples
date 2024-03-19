@@ -1,12 +1,14 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ISparklineLoadEventArgs, SparklineTheme } from '@syncfusion/ej2-angular-charts';
+import { ISparklineLoadEventArgs, SparklineTheme, SparklineAllModule } from '@syncfusion/ej2-angular-charts';
 /**
  * Sample for axis type in Sparkline 
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'axis-type.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SparklineAllModule]
 })
 export class AxisTypeSparklineComponent {
     // custom code start

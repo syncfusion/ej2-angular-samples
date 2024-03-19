@@ -2,10 +2,15 @@
  * ComboBox Defaut functionality Sample
  */
 import { Component, ViewChild, NgModule } from '@angular/core';
-import { ComboBoxComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { ComboBoxComponent, ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { FormsModule } from '@angular/forms';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
-    templateUrl: 'default.html'
+    templateUrl: 'default.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ComboBoxModule, FormsModule, SBDescriptionComponent]
 })
 export class DefaultComboBoxComponent {
     @ViewChild('sample')

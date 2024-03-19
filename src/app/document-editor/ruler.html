@@ -1,9 +1,24 @@
 <div class="control-section">
-    <div>
+    <div class="col-lg-9 control-section">
         <div id="default_title_bar" class="e-de-ctn-title"></div>
         <div>
-            <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true [locale]="culture" (created)="onCreate()" (documentChange)="onDocumentChange()" height="600px" [serviceUrl]="hostUrl"  style="display:block;"></ejs-documenteditorcontainer>
+            <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true [showPropertiesPane]=false
+                [locale]="culture" (created)="onCreate()" (documentChange)="onDocumentChange()" height="600px" [serviceUrl]="hostUrl" 
+                style="display:block;">
+            </ejs-documenteditorcontainer>
         </div>
+    </div>
+    <div class="col-lg-3 property-section">
+        <div style="padding-top: 20px">
+            <b>Document Editor settings</b>
+        </div>
+        <table style="margin-top: 20px; margin-bottom: 30px;">
+            <tr>
+                <td style="width: 100%;">                
+                    <ejs-checkbox #checkbox label="Show ruler" [checked]="true" (change)="changeHandler()"></ejs-checkbox>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
 <div id="action-description">

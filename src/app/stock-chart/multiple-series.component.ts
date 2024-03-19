@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IStockChartEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { IStockChartEventArgs, ChartTheme, StockChartAllModule, ChartAllModule, RangeNavigatorAllModule } from '@syncfusion/ej2-angular-charts';
 import { goog, googl } from './stock-data';
 /**
  * Sample for Multiple series in stock chart
@@ -7,7 +7,9 @@ import { goog, googl } from './stock-data';
 @Component({
     selector: 'control-content',
     templateUrl: 'multiple-series.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ StockChartAllModule, ChartAllModule, RangeNavigatorAllModule]
 })
 export class MultipleSeriesComponent {
 

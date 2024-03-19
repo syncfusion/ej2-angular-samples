@@ -1,12 +1,15 @@
 import { Component, ViewChild, OnInit, ViewEncapsulation, ElementRef } from '@angular/core';
 
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
-import { TabComponent, SelectEventArgs } from '@syncfusion/ej2-angular-navigations';
-import { DatePickerComponent } from '@syncfusion/ej2-angular-calendars';
-import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
-import { GridComponent, RowSelectEventArgs } from '@syncfusion/ej2-angular-grids';
+import { DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
+import { TabComponent, SelectEventArgs, TabModule } from '@syncfusion/ej2-angular-navigations';
+import { DatePickerComponent, DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { NumericTextBoxComponent, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { GridComponent, RowSelectEventArgs, GridModule } from '@syncfusion/ej2-angular-grids';
 import { isNullOrUndefined as isNOU } from '@syncfusion/ej2-base';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ChartModule } from '@syncfusion/ej2-angular-charts';
 /**
  * Create wizard using Tab
  */
@@ -14,7 +17,9 @@ import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 @Component({
     selector: 'control-content',
     templateUrl: 'wizard.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TabModule, DropDownListModule, DatePickerModule, GridModule, ChartModule, NumericTextBoxModule, DialogModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class WizardTabComponent implements OnInit {

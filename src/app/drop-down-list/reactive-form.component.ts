@@ -2,13 +2,20 @@
  * DropDownList Reactive Form Sample
  */
 import { Component, ViewEncapsulation } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { NgIf } from '@angular/common';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'reactive-form.html',
     styleUrls: ['./form-support.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, FormsModule, ReactiveFormsModule, DropDownListModule, NgIf, ButtonModule, SBDescriptionComponent]
 })
 export class ReactiveFormDropDownListComponent {
     public autoreactiveskillset: string[] = [

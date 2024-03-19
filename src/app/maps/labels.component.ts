@@ -2,16 +2,20 @@
  * Maps data label sample
  */
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { MapsTheme, Maps, MapsTooltip, DataLabel, ILoadEventArgs, SmartLabelMode, IntersectAction } from '@syncfusion/ej2-angular-maps'; 
+import { MapsTheme, Maps, MapsTooltip, DataLabel, ILoadEventArgs, SmartLabelMode, IntersectAction, MapsModule } from '@syncfusion/ej2-angular-maps'; 
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
-import { MapAjax } from '@syncfusion/ej2-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { FormsModule } from '@angular/forms';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Maps.Inject(MapsTooltip, DataLabel);
 declare var require: any;
-import usMap from './usa.json';
+let usMap: object[] = require('./usa.json');
 @Component({
     selector: 'control-content',
-    templateUrl: 'labels.html',  
-    encapsulation: ViewEncapsulation.None
+    templateUrl: 'labels.html',
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, FormsModule, SBDescriptionComponent]
 })
 export class MapsLabelComponent {
     @ViewChild('maps')

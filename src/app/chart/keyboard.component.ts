@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { Chart, ChartComponent, Category, ColumnSeries, Legend, StripLine, ILoadedEventArgs, ChartTheme, ILegendClickEventArgs, legendClick, Selection, Zoom } from '@syncfusion/ej2-angular-charts';
+import { Chart, ChartComponent, Category, ColumnSeries, Legend, StripLine, ILoadedEventArgs, ChartTheme, ILegendClickEventArgs, legendClick, Selection, Zoom, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Keyboard Navigation Chart
@@ -9,7 +11,9 @@ import { Browser } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'keyboard.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 
 export class KeyboardComponent {

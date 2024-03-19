@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Sample for Pareto Series
  */
@@ -8,7 +10,9 @@ import { Browser } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'pare-to.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 export class ParetoSeriesChartComponent {
     //Initializing ChartArea
@@ -48,7 +52,8 @@ export class ParetoSeriesChartComponent {
         majorGridLines: { width: 0 }, minorGridLines: { width: 0 },
         majorTickLines: { width: 0 }, minorTickLines: { width: 0 },
         lineStyle: { width: 0 },
-        labelIntersectAction: 'Rotate45',
+        labelIntersectAction: Browser.isDevice ? 'None' : 'Rotate45',
+        labelRotation: Browser.isDevice ? -45 : 0
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {

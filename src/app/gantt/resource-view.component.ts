@@ -1,10 +1,14 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
-import { GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
 import { resourcesData, resourceCollection } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttresourceview',
-    templateUrl: 'resource-view.html'
+    templateUrl: 'resource-view.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
 })
 
 export class GanttResourceViewComponent implements OnInit {
@@ -19,11 +23,13 @@ export class GanttResourceViewComponent implements OnInit {
     public resourceFields: object ;
     public projectStartDate: Date;
     public projectEndDate: Date;
+    public taskType: string;
     @ViewChild('resourceview')
     public ganttObj: GanttComponent;
     public ngOnInit(): void {
         this.data = resourcesData;
         this.resources = resourceCollection;
+        this.taskType = "FixedWork"
         this.taskSettings = {
             id: 'TaskID',
             name: 'TaskName',

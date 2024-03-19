@@ -1,24 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { hierarchyOrderdata, customerData, employeeData } from './data';
-import { GridModel, HierarchyGridPrintMode, DetailRowService } from '@syncfusion/ej2-angular-grids';
+import { GridModel, HierarchyGridPrintMode, DetailRowService, SortService, GridModule, ToolbarService } from '@syncfusion/ej2-angular-grids';
 import { removeClass, addClass } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 
 @Component({
     selector: 'ej2-grid-hierarchyprint',
     templateUrl: 'print.html',
     styleUrls: ['./grid-lines.style.css'],
-    providers: [DetailRowService]
+    providers: [DetailRowService, SortService, ToolbarService],
+    standalone: true,
+    imports: [ToolbarModule, GridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class PrintComponent implements OnInit {
     public data: Object[] = [];
-    public toolbar: string[];
     public childGrid: GridModel;
     public hierarchyPrintMode: HierarchyGridPrintMode;
+    public toolbar: string[];
 
     ngOnInit(): void {
         this.data = employeeData;
-        this.toolbar = ["Print"];
         this.hierarchyPrintMode = "All";
+        this.toolbar = ["Print"];
         this.childGrid = {
             dataSource: hierarchyOrderdata,
             queryString: 'EmployeeID',

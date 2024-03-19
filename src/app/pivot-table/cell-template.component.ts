@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild, Inject, ViewEncapsulation } from '@angular/core';
-import { IDataOptions, PivotView, IAxisSet, IFieldOptions, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView, IAxisSet, IFieldOptions, IDataSet, PivotViewModule } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 enableRipple(false);
 
@@ -14,7 +16,9 @@ let data: IDataSet[] = require('./rData.json');
     selector: 'ej2-pivotview-container',
     styleUrls: ['cell-template.css'],
     templateUrl: 'cell-template.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class CellTemplateComponent implements OnInit {

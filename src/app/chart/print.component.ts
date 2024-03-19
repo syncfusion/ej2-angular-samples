@@ -1,6 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IPointRenderEventArgs, ChartComponent, ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { IPointRenderEventArgs, ChartComponent, ILoadedEventArgs, ChartTheme, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 /**
  * Sample for Chart Print
  */
@@ -8,7 +11,9 @@ import { Browser } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'print.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ChartAllModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class PrintChartComponent {
 

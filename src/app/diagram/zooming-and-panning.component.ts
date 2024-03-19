@@ -1,12 +1,15 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
     NodeModel, DiagramTools, ScrollSettingsModel, LayoutModel,
-    Diagram, ConnectorModel, Node, SnapConstraints, SnapSettingsModel,
+    Diagram, ConnectorModel, SnapConstraints, SnapSettingsModel,
     Container, TextElement, StackPanel, ImageElement, DataBinding, HierarchicalTree, TreeInfo
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
 import {data} from './overview-data';
-import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, DiagramModule, ISelectionChangeEventArgs,Node } from '@syncfusion/ej2-angular-diagrams';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ToolbarComponent, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(DataBinding, HierarchicalTree);
 
 
@@ -17,12 +20,18 @@ Diagram.Inject(DataBinding, HierarchicalTree);
     selector: 'control-content',
     templateUrl: 'zooming-and-panning.html',
     styleUrls: ['zooming-and-panning.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToolbarModule, DiagramModule, SBDescriptionComponent]
 })
 export class ZoomingAndPanning {
   @ViewChild('diagram')
   //Diagram Properties
   public diagram: DiagramComponent;
+
+  @ViewChild('toolbar')
+  //Diagram Properties
+  public toolbar: ToolbarComponent;
     public data: Object = {
         id: 'Id', parentId: 'ReportingPerson', dataSource: new DataManager(data)
     };
@@ -50,44 +59,44 @@ export class ZoomingAndPanning {
         return connector;
     };
     //To handle toolbar click
-     public toolbarClick(args) {
-      switch (args.item.tooltipText) {
-          case 'Zoom In':
-            var zoomin : any = { type: 'ZoomIn', zoomFactor: 0.2 };
-            this.diagram.zoomTo(zoomin);
-            break;
-          case 'Zoom Out':
-              var zoomout : any = { type: 'ZoomOut', zoomFactor: 0.2 };
-              this.diagram.zoomTo(zoomout);
-              break;
-          case 'Reset':
-              this.diagram.reset();
-              break;
-          case 'Pan Tool':
-               this.diagram.tool =  DiagramTools.ZoomPan;
-              break;
-          case 'Pointer':
+    public toolbarClick(args) {
+        switch (args.item.tooltipText) {
+            case 'Zoom In':
+                var zoomin: any = { type: 'ZoomIn', zoomFactor: 0.2 };
+                this.diagram.zoomTo(zoomin);
+                break;
+            case 'Zoom Out':
+                var zoomout: any = { type: 'ZoomOut', zoomFactor: 0.2 };
+                this.diagram.zoomTo(zoomout);
+                break;
+            case 'Reset':
+                this.diagram.reset();
+                break;
+            case 'Pan Tool':
+                this.diagram.tool = DiagramTools.ZoomPan;
+                break;
+            case 'Pointer':
                 this.diagram.clearSelection();
                 this.diagram.drawingObject = {};
-                this.diagram.tool =  DiagramTools.SingleSelect |  DiagramTools.MultipleSelect;
+                this.diagram.tool = DiagramTools.SingleSelect | DiagramTools.MultipleSelect;
                 break;
-          case 'Fit To Page':
+            case 'Fit To Page':
                 this.diagram.fitToPage();
                 break;
-          case 'Bring Into View':
-                if( this.diagram.selectedItems.nodes.length > 0){
-                var bound =  this.diagram.selectedItems.nodes[0].wrapper.bounds;
-                this.diagram.bringIntoView(bound);
+            case 'Bring Into View':
+                if (this.diagram.selectedItems.nodes.length > 0) {
+                    var bound = this.diagram.selectedItems.nodes[0].wrapper.bounds;
+                    this.diagram.bringIntoView(bound);
                 }
                 break;
-          case 'Bring Into Center':
-                if( this.diagram.selectedItems.nodes.length>0){
-                var bounds =  this.diagram.selectedItems.nodes[0].wrapper.bounds;
-                this.diagram.bringToCenter(bounds);
+            case 'Bring Into Center':
+                if (this.diagram.selectedItems.nodes.length > 0) {
+                    var bounds = this.diagram.selectedItems.nodes[0].wrapper.bounds;
+                    this.diagram.bringToCenter(bounds);
                 }
                 break;
-      }
-  }
+        }
+    }
     public tool: DiagramTools = DiagramTools.Default;
     public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
     public scrollSettings: ScrollSettingsModel = { scrollLimit: 'Infinity' };
@@ -134,6 +143,19 @@ export class ZoomingAndPanning {
 
         return content;
     };
+
+    public selectionChange(args:ISelectionChangeEventArgs){
+        debugger
+        if(args.state === 'Changed'){
+            if(args.newValue && args.newValue[0] instanceof Node){
+                this.toolbar.items[7].disabled = false;
+                this.toolbar.items[8].disabled = false;
+            }else{
+                this.toolbar.items[7].disabled = true;
+                this.toolbar.items[8].disabled = true;
+            }
+        }
+    }
 }
 export interface EmployeeInfo {
     Name: string;

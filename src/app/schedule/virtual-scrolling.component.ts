@@ -1,15 +1,17 @@
 import { Component, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
-import {
-  ScheduleComponent, DragAndDropService, TimelineMonthService, GroupModel, EventSettingsModel, ResizeService, View, MonthService
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, DragAndDropService, TimelineMonthService, GroupModel, EventSettingsModel, ResizeService, View, MonthService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'virtual-scrolling.html',
-  styleUrls: ['virtual-scrolling.style.css'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [TimelineMonthService, MonthService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'virtual-scrolling.html',
+    styleUrls: ['virtual-scrolling.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    providers: [TimelineMonthService, MonthService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class VirtualScrollingComponent {

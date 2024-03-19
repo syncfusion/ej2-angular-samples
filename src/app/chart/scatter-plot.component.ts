@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { scatterData } from './scatter-data';
 import { Browser } from '@syncfusion/ej2-base';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, ChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Scatter Series
@@ -10,7 +12,9 @@ import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
     selector: 'control-content',
     templateUrl: 'scatter-plot.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 export class ScatterPlotChartComponent {
     public chartArea: Object = {

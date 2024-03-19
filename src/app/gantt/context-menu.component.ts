@@ -1,10 +1,14 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { editingData, editingResources } from './data';
-import { GanttComponent, ContextMenuOpenEventArgs, ContextMenuClickEventArgs, IGanttData } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, ContextMenuOpenEventArgs, ContextMenuClickEventArgs, IGanttData, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-ganttcontextmenu',
-    templateUrl: 'context-menu.html'
+    templateUrl: 'context-menu.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
 })
 export class GanttContextMenuComponent implements OnInit {
     @ViewChild('gantt')
@@ -93,16 +97,16 @@ export class GanttContextMenuComponent implements OnInit {
     }
     contextMenuClick (args?: ContextMenuClickEventArgs): void {
         let record: IGanttData = args.rowData;
-                if (args.item.id === 'collapserow') {
+                if (args.item.id === 'collapserow' && record) {
                     this.ganttObj.collapseByID(Number(record.ganttProperties.taskId));
                 }
-                if (args.item.id === 'expandrow') {
+                if (args.item.id === 'expandrow' && record) {
                     this.ganttObj.expandByID(Number(record.ganttProperties.taskId));
                 }
     }
     contextMenuOpen (args?: ContextMenuOpenEventArgs): void {
         let record: IGanttData = args.rowData;
-        if (args.type !== 'Header') {
+        if (args.type !== 'Header' && record) {
             if (!record.hasChildRecords) {
                 args.hideItems.push('Collapse the Row');
                 args.hideItems.push('Expand the Row');

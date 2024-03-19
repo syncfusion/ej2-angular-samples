@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs,ChartTheme, ChartComponent } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, ChartComponent, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { sort } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 /**
@@ -11,7 +13,9 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
     selector: 'control-content',
     templateUrl: 'sorting.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 export class SortingChartComponent {
 

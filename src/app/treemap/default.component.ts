@@ -5,14 +5,18 @@
 /* tslint:disable:no-string-literal */
 // custom code end
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { TreeMap, TreeMapTooltip, TreeMapLegend } from '@syncfusion/ej2-angular-treemap';
+import { TreeMap, TreeMapTooltip, TreeMapLegend, TreeMapModule } from '@syncfusion/ej2-angular-treemap';
 import { CarSales } from './car-sale';
 import { IItemMoveEventArgs, ILoadEventArgs, TreeMapTheme, IItemClickEventArgs } from '@syncfusion/ej2-angular-treemap';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 TreeMap.Inject(TreeMapTooltip, TreeMapLegend);
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class TreemapDefaultComponent {
     public itemMove= (args: IItemMoveEventArgs) => {

@@ -3,19 +3,23 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';
-import { RichTextEditorComponent, ToolbarService, LinkService, EditorMode, ToolbarType} from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorComponent, ToolbarService, LinkService, EditorMode, ToolbarType, RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { ImageService, MarkdownEditorService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, KeyboardEventArgs, isNullOrUndefined } from '@syncfusion/ej2-base';
 import * as Marked from 'marked';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
-import { SplitterComponent } from '@syncfusion/ej2-angular-layouts';
+import { SplitterComponent, SplitterModule } from '@syncfusion/ej2-angular-layouts';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'markdown-editor-preview.html',
     styleUrls: ['markdown-preview.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, TableService, MarkdownEditorService]
+    providers: [ToolbarService, LinkService, ImageService, TableService, MarkdownEditorService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SplitterModule, RichTextEditorModule, SBDescriptionComponent]
 })
 export class MarkdownPreviewComponent {
 

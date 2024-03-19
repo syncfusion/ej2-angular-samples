@@ -4,7 +4,7 @@ import { MentionModule } from '@syncfusion/ej2-angular-dropdowns';
 import { DefaultMentionComponent } from './default.component';
 import { MultipleListMentionComponent } from './multiple-list.component';
 import { TemplateMentionComponent } from './template.component';
-import { SharedModule } from '../common/shared.module';
+
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,16 +17,6 @@ export const mentionAppRoutes: Object[] = [
 		category: 'Mention' }
 ];
 
-export const MentionRouter: ModuleWithProviders<any> = RouterModule.forChild(mentionAppRoutes);
+export const MentionSampleModule: ModuleWithProviders<any> = RouterModule.forChild(mentionAppRoutes);
 
-@NgModule({
-    imports: [MentionRouter, SharedModule, MentionModule, FormsModule, ReactiveFormsModule,BrowserModule,TextBoxModule],
-    declarations: [
-        DefaultMentionComponent,
-        MultipleListMentionComponent,
-        TemplateMentionComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class MentionSampleModule {
-}
+

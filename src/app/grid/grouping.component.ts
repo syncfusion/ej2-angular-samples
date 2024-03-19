@@ -1,13 +1,17 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { orderDataSource } from './data';
-import { GroupService, SortService, GridComponent, EditService, ToolbarService } from '@syncfusion/ej2-angular-grids';
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { GroupService, SortService, GridComponent, EditService, ToolbarService, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
+import { DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 @Component({
     selector: 'ej-gridgroup',
     templateUrl: 'grouping.html',
-    providers: [GroupService, ToolbarService, SortService, EditService]
+    providers: [GroupService, ToolbarService, SortService, EditService, PageService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GridModule, DialogModule, SBDescriptionComponent]
 })
 export class GroupComponent implements OnInit {
     public data: Object[];

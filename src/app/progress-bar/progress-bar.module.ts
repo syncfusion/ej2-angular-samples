@@ -83,15 +83,5 @@ export const progressBarAppRoutes: Object[] = [
     }
 ];
 
-export const progressBarRouter: ModuleWithProviders<any> = RouterModule.forChild(progressBarAppRoutes);
+export const ProgressBarSampleModule: ModuleWithProviders<any> = RouterModule.forChild(progressBarAppRoutes);
 
-// tslint:disable-next-line:max-line-length
-const declarations: Type<Object>[] = [ProgressBarLinearComponent, ProgressBarTooltipComponent, ProgressBarCircularComponent, ProgressBarSemiComponent, ProgressBarCustomComponent, ProgressBarLabelComponent, ProgressBarRadiusComponent, ProgressBarStripesComponent, ProgressBarProgressSegmentComponent];
-@NgModule({
-    imports: [progressBarRouter, ProgressBarAllModule, DropDownListModule, CheckBoxModule, TextBoxAllModule],
-    exports: [],
-    declarations: declarations,
-    providers: []
-})
-export class ProgressBarSampleModule {
-}

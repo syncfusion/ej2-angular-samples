@@ -1,4 +1,7 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { TabModule } from '@syncfusion/ej2-angular-navigations';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Default Tab Component
@@ -7,7 +10,9 @@ import { Component, ViewEncapsulation, Inject } from '@angular/core';
     selector: 'control-content',
     templateUrl: 'default.html',
     styleUrls: ['tab.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, TabModule, SBDescriptionComponent]
 })
 export class DefaultTabComponent {
 

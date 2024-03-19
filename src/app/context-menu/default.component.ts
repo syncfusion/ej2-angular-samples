@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';
-import { ContextMenuComponent, MenuEventArgs, MenuItemModel } from '@syncfusion/ej2-angular-navigations';
+import { ContextMenuComponent, MenuEventArgs, MenuItemModel, ContextMenuModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Default ContextMenu Controller
  */
@@ -8,7 +10,9 @@ import { ContextMenuComponent, MenuEventArgs, MenuItemModel } from '@syncfusion/
     selector: 'control-content',
     templateUrl: 'default.html',
     styleUrls: ['context-menu.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ContextMenuModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class DefaultContextMenuController {

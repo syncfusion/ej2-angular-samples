@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SliderComponent } from '@syncfusion/ej2-angular-inputs';
+import { SliderComponent, SliderModule } from '@syncfusion/ej2-angular-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Thumb Customization sample
@@ -9,7 +11,9 @@ import { SliderComponent } from '@syncfusion/ej2-angular-inputs';
     selector: 'control-content',
     templateUrl: 'thumb-customization.html',
     styleUrls: ['thumb-customization.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SliderModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class ThumbCustomizationComponent {

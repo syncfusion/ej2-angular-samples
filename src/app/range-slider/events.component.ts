@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SliderComponent, SliderChangeEventArgs } from '@syncfusion/ej2-angular-inputs';
+import { SliderComponent, SliderChangeEventArgs, SliderModule } from '@syncfusion/ej2-angular-inputs';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Default sample
@@ -9,7 +11,9 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'events.html',
     styleUrls: ['events.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SliderModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class EventComponent {

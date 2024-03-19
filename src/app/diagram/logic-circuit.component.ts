@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild,Inject } from '@angular/core';
-import { DiagramComponent, MarginModel } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, MarginModel, SymbolPaletteModule, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import {
     Diagram, UndoRedo, ConnectorBridging, SnapConstraints,
     NodeModel, ConnectorModel, PathAnnotationModel, DecoratorModel, PointModel,
@@ -8,6 +8,8 @@ import {
 } from '@syncfusion/ej2-angular-diagrams';
 import { ExpandMode } from '@syncfusion/ej2-navigations';
 import { paletteIconClick } from './script/diagram-common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(UndoRedo, ConnectorBridging);
 
 /**
@@ -18,7 +20,9 @@ Diagram.Inject(UndoRedo, ConnectorBridging);
     selector: 'control-content',
     templateUrl: 'logic-circuit.html',
     styleUrls: ['diagram-common.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SymbolPaletteModule, DiagramModule, SBDescriptionComponent]
 })
 export class LogicCircuitComponent {
     // Diagram Properties

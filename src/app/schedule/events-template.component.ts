@@ -1,15 +1,19 @@
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
 import { extend, Internationalization } from '@syncfusion/ej2-base';
-import { WeekService, EventSettingsModel, ResizeService, WorkHoursModel, DragAndDropService } from '@syncfusion/ej2-angular-schedule';
+import { WeekService, EventSettingsModel,TimelineViewsService, ResizeService, WorkHoursModel, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { webinarData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'events-template.html',
-  styleUrls: ['event-template.style.css'],
-  providers: [WeekService, ResizeService, DragAndDropService],
-  encapsulation: ViewEncapsulation.None
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'events-template.html',
+    styleUrls: ['event-template.style.css'],
+    providers: [WeekService, ResizeService, DragAndDropService, TimelineViewsService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class EventsTemplateComponent {
   public data: Record<string, any>[] = extend([], webinarData, null, true) as Record<string, any>[];

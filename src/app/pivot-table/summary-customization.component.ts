@@ -1,9 +1,12 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, FieldListService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { ChangeEventArgs, MultiSelect, SelectEventArgs, RemoveEventArgs, PopupEventArgs, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { IDataOptions, PivotView, PivotViewModule,FieldListService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { ChangeEventArgs, MultiSelect, MultiSelectModule, SelectEventArgs, RemoveEventArgs,DropDownListModule, PopupEventArgs, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { CheckBoxSelection } from '@syncfusion/ej2-angular-dropdowns';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { RadioButtonModule} from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 MultiSelect.Inject(CheckBoxSelection);
 
@@ -18,7 +21,9 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     templateUrl: 'summary-customization.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['summary-customization.css'],
-    providers: [FieldListService]
+    providers: [FieldListService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, MultiSelectModule, DropDownListModule, RadioButtonModule]
 })
 export class SummaryCustomizationComponent implements OnInit {
     public dataSourceSettings: IDataOptions;

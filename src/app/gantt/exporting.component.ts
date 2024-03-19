@@ -1,11 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { editingData, editingResources } from './data';
 import { ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
-import { GanttComponent, PdfExportProperties } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, PdfExportProperties, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SwitchAllModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-ganttexporting',
-    templateUrl: 'exporting.html'
+    templateUrl: 'exporting.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SwitchAllModule, GanttAllModule, SBDescriptionComponent]
 })
 export class GanttExportingComponent implements OnInit {
     @ViewChild('ganttExcel')

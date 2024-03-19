@@ -1,18 +1,19 @@
 import { Component, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
 import { doctorData } from './data';
 import { addClass, extend } from '@syncfusion/ej2-base';
-import {
-  EventSettingsModel, View, GroupModel, ResourceDetails, PopupOpenEventArgs, ScheduleComponent,
-  EventFieldsMapping, RenderCellEventArgs, MonthService, WorkWeekService, ActionEventArgs
-} from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, View, GroupModel, ResourceDetails, PopupOpenEventArgs, ScheduleComponent, EventFieldsMapping, RenderCellEventArgs, MonthService, WorkWeekService, ActionEventArgs, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'group-custom-work-days.html',
-  styleUrls: ['group-custom-work-days.style.css'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [MonthService, WorkWeekService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'group-custom-work-days.html',
+    styleUrls: ['group-custom-work-days.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    providers: [MonthService, WorkWeekService],
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class GroupCustomWorkDaysComponent {

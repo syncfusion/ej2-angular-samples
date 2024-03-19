@@ -1,10 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { projectNewData } from './data';
-import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { GanttComponent, GridLine } from '@syncfusion/ej2-angular-gantt';
+import { DropDownListComponent, ChangeEventArgs, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { GanttComponent, GridLine, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttgridlines',
-    templateUrl: 'grid-lines.html'
+    templateUrl: 'grid-lines.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, DropDownListAllModule, SBDescriptionComponent]
 })
 export class GanttGridLinesComponent implements OnInit {
     public data: object[];

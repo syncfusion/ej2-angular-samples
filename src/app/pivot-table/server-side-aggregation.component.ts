@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, FieldListService, PivotView, GroupingBarService, VirtualScrollService } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, FieldListService, PivotView,PivotViewModule, GroupingBarService, VirtualScrollService } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { Browser, enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -12,7 +14,9 @@ enableRipple(false);
     styleUrls: ['server-side-aggregation.css'],
     encapsulation: ViewEncapsulation.None,
     templateUrl: 'server-side-aggregation.html',
-    providers: [FieldListService, GroupingBarService, VirtualScrollService]
+    providers: [FieldListService, GroupingBarService, VirtualScrollService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class ServerSideAggregationComponent implements OnInit {

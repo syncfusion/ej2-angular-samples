@@ -2,10 +2,14 @@
  * DropDown Tree Default functionality Sample
  */
 import { Component, ViewChild } from '@angular/core';
-import { DropDownTreeComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownTreeComponent, DropDownTreeModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
-    templateUrl: 'default.html'
+    templateUrl: 'default.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DropDownTreeModule, SBDescriptionComponent]
 })
 export class DefaultDropDownTreeComponent {
     @ViewChild('sample')

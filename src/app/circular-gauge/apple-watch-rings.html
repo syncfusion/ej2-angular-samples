@@ -25,7 +25,7 @@
                     </e-axes>
                 </ejs-circulargauge>
             </div>
-            <div class="content">
+            <div class="bordercontent">
                 <span class="firstcontent" style="font-size: 17px;">MOVE </span>
                 <span class="firstcontent" style="font-size: 17px;color: #f4104d">65%</span><br />
                 <span class="secondcontent" style="color: #f4104d; font-size: 19px">338/520 CAL</span>
@@ -44,7 +44,7 @@
                     </e-axes>
                 </ejs-circulargauge>
             </div>
-            <div class="content">
+            <div class="bordercontent">
                 <span class="firstcontent" style="font-size: 17px;">EXERCISE </span>
                 <span class="firstcontent" style="font-size: 17px;color: #a6ff00">43%</span><br />
                 <span class="secondcontent" style="color: #a6ff00; font-size: 19px">13/30 MIN</span>
@@ -62,7 +62,7 @@
                     </e-axes>
                 </ejs-circulargauge>
             </div>
-            <div class="content">
+            <div class="bordercontent">
                 <span class="firstcontent" style="font-size: 17px;">STAND </span>
                 <span class="firstcontent" style="font-size: 17px;color: #00d8fe">58%</span><br />
                 <span class="secondcontent" style="color: #00d8fe; font-size: 19px">7/12 HR</span>
@@ -103,13 +103,13 @@
         background-color: transparent;
     }
 
-    .content {
+    .bordercontent {
         float: left !important;
         margin-left: 62px !important;
-        margin-top: 10px !important;
+        margin-top: -61px !important;
         text-align: left !important;
-        position: absolute;
-        width: 120px;
+        width: 125px;
+        height: auto;
     }
 
     @media screen and (max-width: 1160px) {
@@ -125,8 +125,8 @@
             font-size: 15px !important;
         }
 
-        .content {
-            margin-top: 15px !important;
+        .bordercontent {
+            margin-top: -55px !important;
         }
 
         .divide {
@@ -147,9 +147,9 @@
             margin-top: 1% !important;
         }
 
-        .content {
+        .bordercontent {
             margin-left: 63px !important;
-            margin-top: 10px !important;
+            margin-top: -61px !important;
         }
 
         .firstcontent {
@@ -188,8 +188,8 @@
             width: 165px !important;
         }
 
-        .content {
-            margin-top: 3% !important;
+        .bordercontent {
+            margin-top: -38% !important;
         }
     }
 

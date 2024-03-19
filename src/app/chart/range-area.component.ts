@@ -1,16 +1,20 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, IZoomCompleteEventArgs, ChartComponent, ChartTheme, ISeriesRenderEventArgs } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, IZoomCompleteEventArgs, ChartComponent, ChartTheme, ISeriesRenderEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { chartDataValues } from './financial-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Range Area Series
  */
 @Component({
-  selector: 'control-content',
-  templateUrl: 'range-area.html',
-  styleUrls: ['chart.style.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'range-area.html',
+    styleUrls: ['chart.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 
 export class RangeAreaComponent {

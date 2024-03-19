@@ -1,9 +1,11 @@
 import { Component, ViewEncapsulation, ViewChild, HostListener } from '@angular/core';
 import { createElement, Effect, EmitType } from '@syncfusion/ej2-base';
-import { ToastComponent, ToastBeforeOpenArgs, ToastCloseArgs, ToastPositionModel, ToastAnimationSettingsModel, ProgressDirectionType } from '@syncfusion/ej2-angular-notifications';
-import { DropDownListComponent, FieldSettingsModel } from '@syncfusion/ej2-angular-dropdowns';
+import { ToastComponent, ToastBeforeOpenArgs, ToastCloseArgs, ToastPositionModel, ToastAnimationSettingsModel, ProgressDirectionType, ToastModule } from '@syncfusion/ej2-angular-notifications';
+import { DropDownListComponent, FieldSettingsModel, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { ButtonComponent, CheckBoxModule, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Sample for Animation and Advanced APIs in toast
  */
@@ -11,7 +13,9 @@ import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
     selector: 'control-content',
     templateUrl: 'api.html',
     styleUrls: ['api.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToastModule, CheckBoxModule, DropDownListModule, ButtonModule, SBDescriptionComponent]
 })
 export class ApiController {
 

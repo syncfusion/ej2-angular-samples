@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ChartTheme, IRangeLoadedEventArgs, DateTime, AreaSeries, Chart, RangeTooltip } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { RangeNavigatorAllModule , ChartAllModule} from '@syncfusion/ej2-angular-charts';
 
 /**
  * Sample for multi level labels without series
@@ -19,7 +20,9 @@ selectedTheme = selectedTheme ? selectedTheme : 'Material';
 @Component({
     selector: 'control-content',
     templateUrl: 'multilevel.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [RangeNavigatorAllModule, ChartAllModule]
 })
 
 export class MultilevelComponent {

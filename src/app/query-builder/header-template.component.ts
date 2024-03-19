@@ -3,15 +3,22 @@
  */
 
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { QueryBuilderComponent, ColumnsModel } from '@syncfusion/ej2-angular-querybuilder';
+import { QueryBuilderComponent, ColumnsModel, QueryBuilderModule } from '@syncfusion/ej2-angular-querybuilder';
 import { closest } from '@syncfusion/ej2-base';
 import { RuleModel } from '@syncfusion/ej2-querybuilder';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { NgIf } from '@angular/common';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'header-template.html',
     styleUrls: ['header-template.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, QueryBuilderModule, DropDownListModule, NgIf, ButtonModule, SBDescriptionComponent]
 })
 
 export class HeaderTemplateQueryBuilderComponent {

@@ -1,14 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { summaryData } from './jsontreegriddata';
-import { getObject, CustomSummaryType } from '@syncfusion/ej2-grids';
-import { TreeGridComponent, AggregateService } from '@syncfusion/ej2-angular-treegrid';
+import { getObject, CustomSummaryType, GridModule } from '@syncfusion/ej2-angular-grids';
+import { TreeGridComponent, TreeGridModule, AggregateService } from '@syncfusion/ej2-angular-treegrid';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
-import { DropDownList } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownList, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'custom-aggregate.html',
-    providers:[AggregateService]
+    providers:[AggregateService],
+    standalone: true,
+    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent, GridModule, DropDownListModule]
 
 })
 export class CustomAggregateComponent implements OnInit {

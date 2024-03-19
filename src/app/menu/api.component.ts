@@ -1,7 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { MultiSelectChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { MenuComponent } from '@syncfusion/ej2-angular-navigations';
+import { MultiSelectChangeEventArgs, DropDownListModule, MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import { MenuComponent, MenuModule } from '@syncfusion/ej2-angular-navigations';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * Api Menu Controller
@@ -10,7 +13,9 @@ import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
     selector: 'control-content',
     templateUrl: 'api.html',
     styleUrls: ['api.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [MenuModule, DropDownListModule, MultiSelectModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class ApiMenuController {

@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SpreadsheetComponent, ImageModel } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent, ImageModel, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Image sample with import and export support.
  */
@@ -7,7 +9,9 @@ import { SpreadsheetComponent, ImageModel } from '@syncfusion/ej2-angular-spread
     selector: 'control-content',
     templateUrl: 'image.html',
     styleUrls: ['spreadsheet.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SpreadsheetModule, SBDescriptionComponent]
 })
 
 export class ImageController {

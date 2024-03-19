@@ -1,10 +1,10 @@
 <div class="control-section">
-    <ejs-grid class="sortingenabled" [dataSource]='data' allowPaging='true' allowSorting='true' [sortSettings]='initialSort' [pageSettings]='pageSettings'>
+    <ejs-grid class="sortingenabled" [dataSource]='data' allowPaging='true' [allowSorting]='true' [sortSettings]='initialSort' [pageSettings]='pageSettings'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='150' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='170'></e-column>
             <e-column field='OrderDate' headerText='Order Date' format="yMd" width='155' textAlign='Right'></e-column>
-            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right'></e-column>
+            <e-column field='Freight' headerText='Freight' width='150' format='C2' textAlign='Right'></e-column>
             <e-column field='ShippedDate' headerText='Shipped Date' format="yMd" width='150' textAlign='Right'></e-column>
             <e-column field='ShipCountry' headerText='Ship Country' width='150'></e-column>
         </e-columns>
@@ -37,7 +37,7 @@
         <p style="font-weight: 500">Injecting Module:</p>
         <p>
             Grid component features are segregated into individual feature-wise modules. To use sorting feature, we need to inject
-            <code>SortService</code> into the <code>@NgModule.providers</code> section.
+            <code>SortService</code> into the <code>&#64;NgModule.providers</code> section.
         </p>
         <p>
             More information on the sorting feature configuration can be found in this

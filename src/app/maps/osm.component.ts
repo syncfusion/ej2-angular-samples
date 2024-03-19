@@ -5,14 +5,18 @@
 //tslint:disable
 // custom code end
 import { Component, ViewEncapsulation } from '@angular/core';
-import { MapsTheme, MapsTooltip, DataLabel, Maps, Marker, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, MapsTooltip, DataLabel, Maps, Marker, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Maps.Inject(Marker, MapsTooltip, DataLabel);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'osm.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [MapsModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class MapsOsmComponent {
     // custom code start
@@ -45,7 +49,7 @@ export class MapsOsmComponent {
             markerSettings: [
                 {
                     visible: true,
-                    template: '<div><img src="./assets/maps/images/ballon.png" style="height:30px;width:20px;"></img></div>',
+                    template: '<div><img src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/ballon.png" style="height:30px;width:20px;"></img></div>',
                     dataSource: [{
                         name: 'Manhattan, New York, USA',
                         latitude: 40.7488758,

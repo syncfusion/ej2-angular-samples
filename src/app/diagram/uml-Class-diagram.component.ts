@@ -3,7 +3,7 @@
  */
 
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DiagramComponent,IDragEnterEventArgs , SymbolInfo,MarginModel} from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, IDragEnterEventArgs, SymbolInfo, MarginModel, SymbolPaletteModule, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import {
   Diagram,
   NodeModel,
@@ -13,15 +13,19 @@ import {
   UmlClassifierShapeModel
 } from '@syncfusion/ej2-diagrams';
 import { ExpandMode } from '@syncfusion/ej2-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for class diagram
  */
 @Component({
-  selector: 'control-content',
-  templateUrl: 'uml-Class-diagram.html',
-  styleUrls: ['diagram-style.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'uml-Class-diagram.html',
+    styleUrls: ['diagram-style.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SymbolPaletteModule, DiagramModule, SBDescriptionComponent]
 })
 export class UmlClassDiagramComponent {
   @ViewChild('diagram')

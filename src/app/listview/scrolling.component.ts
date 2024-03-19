@@ -6,12 +6,18 @@ import { Component, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ListView, ScrolledEventArgs } from '@syncfusion/ej2-lists';
 import { foodData, foodItems } from './dataSource';
 import { Rating } from '@syncfusion/ej2-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { NgIf } from '@angular/common';
+import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'scrolling.html',
     styleUrls: ['scrolling.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ListViewAllModule, NgIf, SBDescriptionComponent]
 })
 
 export class ScrollingListViewComponent {
@@ -52,6 +58,7 @@ export class ScrollingListViewComponent {
         }
     }
     onActionComplete(args) {
+      if(!this.isMobile){
         let ratingElements = this.listviewInstance.element.querySelectorAll('.ratings');
         for (let i = 0; i < args.data.length; i++) {
             ratingElements[i].setAttribute('id', 'rating' + i);
@@ -63,5 +70,6 @@ export class ScrollingListViewComponent {
             ratingObj.appendTo('#' + ratingElements[i].id);
         }
         this.count=args.data.length;
+      }
     }
 }

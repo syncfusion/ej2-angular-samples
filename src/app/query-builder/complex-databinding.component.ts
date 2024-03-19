@@ -3,13 +3,17 @@
  */
 import { Component, ViewChild } from '@angular/core';
 import { RuleModel } from '@syncfusion/ej2-querybuilder';
-import { ColumnsModel, FieldMode, QueryBuilderComponent } from '@syncfusion/ej2-angular-querybuilder';
+import { ColumnsModel, FieldMode, QueryBuilderComponent, QueryBuilderModule } from '@syncfusion/ej2-angular-querybuilder';
 import { complexData } from './data-source';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'complex-databinding.html',
-    styleUrls: ['complex-databinding.css']
+    styleUrls: ['complex-databinding.css'],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, QueryBuilderModule, SBDescriptionComponent]
 })
 
 export class ComplexQueryBuilderComponent {

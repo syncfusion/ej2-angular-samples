@@ -1,13 +1,17 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Internationalization } from '@syncfusion/ej2-base';
-import { HeatMap, Legend, Tooltip, Adaptor, ILoadedEventArgs, ITooltipEventArgs, HeatMapTheme } from '@syncfusion/ej2-angular-heatmap';
+import { HeatMap, Legend, Tooltip, Adaptor, ILoadedEventArgs, ITooltipEventArgs, HeatMapTheme, HeatMapModule } from '@syncfusion/ej2-angular-heatmap';
 import { SampleDataSource } from './large-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 HeatMap.Inject(Tooltip, Legend, Adaptor);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'large-data.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [HeatMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class HeatmapLargeDataComponent {
 

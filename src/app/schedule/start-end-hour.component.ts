@@ -1,17 +1,19 @@
 import { Component, ViewChild } from '@angular/core';
-import { TimePickerComponent } from '@syncfusion/ej2-angular-calendars';
+import { TimePickerComponent, TimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { extend, Internationalization } from '@syncfusion/ej2-base';
-import {
-  ScheduleComponent, EventSettingsModel, View, WorkHoursModel, DayService,
-  WeekService, EventRenderedArgs, TimelineViewsService, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, EventSettingsModel, View, WorkHoursModel, DayService, WeekService, EventRenderedArgs, TimelineViewsService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { employeeEventData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'start-end-hour.html',
-  providers: [DayService, WeekService, TimelineViewsService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'start-end-hour.html',
+    providers: [DayService, WeekService, TimelineViewsService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, TimePickerModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class StartEndHourComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

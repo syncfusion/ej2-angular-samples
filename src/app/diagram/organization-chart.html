@@ -31,11 +31,18 @@
         font-weight: 400;
     }
     
-    .diagram-organizationalchart .e-selected-style {
+    .diagram-organizationalchart .e-selected-orientation-style {
         border-color: #006CE6;
         border-width: 2px;
     }
-    
+    .diagram-organizationalchart .e-selected-pattern-style {
+       border-color: #006CE6;
+       border-width: 2px;
+   }
+   .image-pattern-style:hover {
+            border-color: gray;
+            border-width: 2px;
+        }
     
     .diagram-organizationalchart .col-xs-6 {
         padding-left: 0px;
@@ -64,8 +71,9 @@
                 <div class="row row-header sb-child-row">
                     Orientation
                 </div>
+                <div id="orientation">
                 <div class="row sb-child-row">
-                    <div class="image-pattern-style  e-selected-style" id="topToBottom" style="background-image: url(./assets/diagram/Images/common-orientation/toptobottom.png); margin-right: 3px">
+                    <div class="image-pattern-style e-selected-orientation-style" id="topToBottom" style="background-image: url(./assets/diagram/Images/common-orientation/toptobottom.png); margin-right: 3px">
                     </div>
                     <div class="image-pattern-style" id="bottomToTop" style="background-image: url(./assets/diagram/Images/common-orientation/bottomtotop.png); margin: 0px 3px">
                     </div>
@@ -76,9 +84,11 @@
                     <div class="image-pattern-style" id="rightToLeft" style="background-image: url(./assets/diagram/Images/common-orientation/righttoleft.png); margin: 0px 3px">
                     </div>
                 </div>
+                </div>
                 <div class="row row-header sb-child-row">
                     Subtree Alignment
                 </div>
+                <div id="pattern">
                 <div class="row sb-child-row">
                     <div class="image-pattern-style" id="pattern1" style="background-image: url(./assets/diagram/patternimages/Pattern_1.png); margin-right: 3px">
                     </div>
@@ -90,7 +100,7 @@
                 <div class="row sb-child-row">
                     <div class="image-pattern-style" id="pattern4" style="background-image: url(./assets/diagram/patternimages/Pattern_4.png); margin-right: 3px">
                     </div>
-                    <div class="image-pattern-style" id="pattern5" style="background-image: url(./assets/diagram/patternimages/Pattern_5.png); margin: 0px 3px">
+                    <div class="image-pattern-style e-selected-pattern-style" id="pattern5" style="background-image: url(./assets/diagram/patternimages/Pattern_5.png); margin: 0px 3px">
                     </div>
                     <div class="image-pattern-style" id="pattern6" style="background-image: url(./assets/diagram/patternimages/Pattern_6.png); margin: 0px 3px">
                     </div>
@@ -103,6 +113,7 @@
                     <div class="image-pattern-style" id="pattern9" style="background-image: url(./assets/diagram/patternimages/Pattern_9.png); margin: 0px 3px">
                     </div>
                 </div>
+            </div>
             </div>
         </div>
         <div class="row property-panel-content" style="padding-top: 10px">
@@ -144,9 +155,9 @@
     <p>
         The diagram component’s features are segregated into individual feature-wise modules. To generate diagrams from an external data source, inject
         <code>DataBinding</code> module into
-        <code>@NgModule.providers</code> section. To automatically arrange the objects in an organizational chart, inject
+        <code>&#64;NgModule.providers</code> section. To automatically arrange the objects in an organizational chart, inject
         <code>HierarchicalTree</code> module into
-        <code>@NgModule.providers</code> section.
+        <code>&#64;NgModule.providers</code> section.
     </p>
     <br>
 </div>

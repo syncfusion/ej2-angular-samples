@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SliderModule, SliderComponent, LimitDataModel, SliderType, TicksDataModel, TooltipDataModel } from '@syncfusion/ej2-angular-inputs';
+import { SliderModule, SliderComponent, LimitDataModel, SliderType, TicksDataModel, TooltipDataModel, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { SliderTooltipEventArgs, SliderTickEventArgs } from '@syncfusion/ej2-inputs';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Limits samples
  */
@@ -9,7 +11,9 @@ import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
 @Component({
     selector: 'control-content',
     templateUrl: 'limits.html',
-    styleUrls: ['slider.css']
+    styleUrls: ['slider.css'],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SliderModule, NumericTextBoxModule, CheckBoxModule, SBDescriptionComponent]
 })
 export class LimitsSliderComponent {
     @ViewChild('minrange')

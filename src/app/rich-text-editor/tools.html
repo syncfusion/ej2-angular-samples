@@ -5,7 +5,7 @@
 <div class="control-section">
     <ejs-richtexteditor #toolsRTE id='alltoolRTE' [toolbarSettings]='tools' [showCharCount]='true'
         [fileManagerSettings]='fileManagerSettings' [quickToolbarSettings]='quickToolbarSettings'
-        (actionBegin)='handleFullScreen($event)' (actionComplete)='actionCompleteHandler($event)'>
+        (actionBegin)='handleFullScreen($event)' (actionComplete)='actionCompleteHandler($event)' [enableTabKey]='true'>
         <ng-template #valueTemplate>
             <p>The Rich Text Editor is WYSIWYG ("what you see is what you get") editor useful to create and edit
                 content and return the valid <a href="https://ej2.syncfusion.com/home/" target="_blank">HTML markup</a>
@@ -54,6 +54,7 @@
 <div id="description">
     <p>This sample used <code>Code mirror</code> plugins helps to highlight the HTML content and when changes happens in
         code view, the same has been reflected in preview mode. </p>
+    <p>The quick toolbar provides a convenient way to customize Image, Video, Audio, Table, and Link elements. Simply right-click on the desired element, utilizing the <code>showOnRightClick</code> property, and the quick toolbar will appear, providing an easy way for customization.</p>
     <p>The editor’s toolbar contains commands to format the content. The toolbar consists of:</p>
     <ul>
         <li><code>Lists</code> - NumberFormat list and BulletFormat list types.</li>
@@ -82,6 +83,6 @@
     <p><b>Injecting Module</b></p>
     <p>Rich Text Editor features are segregated into individual feature-wise modules. In this demo we have used
         following
-        injectable services <code>ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, EmojiPickerService</code> into
-        the <code>@NgModule.providers section</code>.</p>
+        injectable services <code>ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, FileManagerService, EmojiPickerService, VideoService, AudioService, FormatPainterService, QuickToolbarService, PasteCleanupService, CountService</code> into
+        the <code>&#64;NgModule.providers section</code>.</p>
 </div>

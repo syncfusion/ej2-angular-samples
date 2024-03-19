@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { AccordionComponent } from '@syncfusion/ej2-angular-navigations';
+import { AccordionComponent, AccordionModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Keyboard Interactions In Accordion Component.
  */
@@ -7,7 +9,9 @@ import { AccordionComponent } from '@syncfusion/ej2-angular-navigations';
     selector: 'control-content',
     templateUrl: 'keyboard-interaction.html',
     styleUrls: ['accordion.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, AccordionModule, SBDescriptionComponent]
 })
 export class KeyboardAccordionComponent {
     @ViewChild('accordionObj')

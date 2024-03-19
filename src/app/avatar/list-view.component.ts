@@ -3,13 +3,19 @@
  */
 
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
-import * as dataSource from './dataSource.json';
+import  dataSource from './dataSource.json';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { NgIf } from '@angular/common';
+import { ListViewModule } from '@syncfusion/ej2-angular-lists';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'list-view.html',
     styleUrls: ['list-view.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ListViewModule, NgIf, SBDescriptionComponent]
 })
 
 export class ListViewAvatarComponent {
@@ -19,7 +25,7 @@ export class ListViewAvatarComponent {
     }
 
     // Listview datasource with avatar and image source fields
-    public dataSource: { [key: string]: Object; }[] = (dataSource as any).listdata;
+    public dataSource: { [key: string]: Object }[] = dataSource.listdata;
     public headerTitle: string = 'Contacts';
     public sortOrder: string = 'Ascending';
 }

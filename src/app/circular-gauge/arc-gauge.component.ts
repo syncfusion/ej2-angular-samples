@@ -3,7 +3,7 @@
 /* custom code end */
 
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-angular-circulargauge';
+import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme, CircularGaugeModule, AnnotationsService } from '@syncfusion/ej2-angular-circulargauge';
 import { Slider, SliderChangeEventArgs } from '@syncfusion/ej2-inputs';
 
 let sliderValue: number = 60;
@@ -11,7 +11,10 @@ let sliderValue: number = 60;
 @Component({
     selector: 'control-content',
     templateUrl: 'arc-gauge.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [CircularGaugeModule],
+    providers: [AnnotationsService]
 })
 
 export class ArcGaugeComponent {

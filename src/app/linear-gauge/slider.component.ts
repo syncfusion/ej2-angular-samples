@@ -1,11 +1,14 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { LinearGaugeComponent } from '@syncfusion/ej2-angular-lineargauge';
+import { LinearGaugeComponent, LinearGaugeModule, GaugeTooltipService } from '@syncfusion/ej2-angular-lineargauge';
 import { ILoadedEventArgs, LinearGaugeTheme, IPointerDragEventArgs } from '@syncfusion/ej2-lineargauge';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'slider.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [LinearGaugeModule],
+    providers: [GaugeTooltipService]
 })
 
 export class SliderComponent {

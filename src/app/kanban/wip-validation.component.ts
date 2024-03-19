@@ -1,17 +1,24 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { extend } from '@syncfusion/ej2-base';
 import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { FormValidators, NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
-import { KanbanComponent, CardSettingsModel, SwimlaneSettingsModel, ConstraintType } from '@syncfusion/ej2-angular-kanban';
+import { FormValidators, NumericTextBoxComponent, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { KanbanComponent, CardSettingsModel, SwimlaneSettingsModel, ConstraintType, KanbanModule } from '@syncfusion/ej2-angular-kanban';
 import { DialogComponent, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
 import { kanbanData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DialogModule } from '@syncfusion/ej2-angular-popups';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'wip-validation.html',
     styleUrls: ['wip-validation.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ DialogModule, KanbanModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule, ButtonModule, NumericTextBoxModule, FormsModule, ReactiveFormsModule]
 })
 export class WIPValidationComponent {
     @ViewChild('kanbanObj') kanbanObj: KanbanComponent;

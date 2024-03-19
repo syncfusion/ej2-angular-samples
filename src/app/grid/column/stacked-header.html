@@ -3,7 +3,7 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid [dataSource]="data" [allowPaging]='true' [allowResizing]="true">
+    <ejs-grid [dataSource]="data" [allowPaging]='true' [allowResizing]="true" [allowSorting]='true'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='120' textAlign="Center" minWidth=10></e-column>
             <e-column headerText='Order Details' [columns]='orderColumns'></e-column>
@@ -31,7 +31,7 @@
         <p style="font-weight: 500">Injecting Module:</p>
         <p>
             Grid features are segregated into individual feature-wise modules.
-            To use Resize feature, we need to inject <code>ResizeService</code> into the <code>@NgModule.providers</code> section.
+            To use Resize feature, we need to inject <code>ResizeService</code> into the <code>&#64;NgModule.providers</code> section.
         </p>
          <p>
             More information on the stacked header configuration can be found in this

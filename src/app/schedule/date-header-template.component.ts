@@ -1,22 +1,23 @@
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
-import {
-  ScheduleComponent, View, RenderCellEventArgs, EventRenderedArgs, MonthService,
-  DayService, WeekService, WorkWeekService, EventSettingsModel, TimelineMonthService, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, View, RenderCellEventArgs, EventRenderedArgs, MonthService, DayService, WeekService, WorkWeekService, EventSettingsModel, TimelineMonthService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { Internationalization, extend } from '@syncfusion/ej2-base';
 import { scheduleData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Schedule date header template sample
  */
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'date-header-template.html',
-  styleUrls: ['date-header.style.css'],
-  providers: [MonthService, DayService, WeekService, WorkWeekService, TimelineMonthService, ResizeService, DragAndDropService],
-  encapsulation: ViewEncapsulation.None
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'date-header-template.html',
+    styleUrls: ['date-header.style.css'],
+    providers: [MonthService, DayService, WeekService, WorkWeekService, TimelineMonthService, ResizeService, DragAndDropService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DateheaderTemplateComponent {
   public scheduleObj: ScheduleComponent;

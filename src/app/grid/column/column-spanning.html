@@ -1,12 +1,11 @@
 <div id="action-description">
-    <p>This sample demonstrates the Grid component with the column spanning feature. In this sample, we have spanned multiple
-        adjacent cells together.
+    <p>This sample demonstrates the Grid component with the column spanning feature. In this sample, you will see multiple columns spanning.
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid [dataSource]='data' [height]='height' [width]='width' [gridLines]='gridLines' [allowTextWrap]='textWrap' (queryCellInfo)='queryCellInfoEvent($event)'>
+    <ejs-grid [dataSource]='data' [height]='height' [width]='width' [gridLines]='gridLines' [enableHover]='false' [allowSelection]='false' [allowTextWrap]='textWrap' (queryCellInfo)='queryCellInfoEvent($event)'>
         <e-columns>
-            <e-column field='EmployeeID' headerText='Employee ID' width='150' textAlign='Right' isPrimaryKey={true}></e-column>
+            <e-column field='EmployeeID' headerText='Employee ID' width='150' textAlign='Right' freeze='Left' isPrimaryKey={true}></e-column>
             <e-column field='EmployeeName' headerText='Employee Name' width='200'></e-column>
             <e-column field='9:00' headerText='9:00 AM' width='120'></e-column>
             <e-column field='9:30' headerText='9:30 AM' width='120'></e-column>
@@ -25,12 +24,24 @@
         </e-columns>
     </ejs-grid>
     <div id="description">
+    <p>
+            This feature enables you to span multiple adjacent cells. Use the <code>colSpan</code> attribute to define how many cells are to be spanned in the <a href='https://ej2.syncfusion.com/angular/documentation/api/grid/queryCellInfoEventArgs/'><code>QueryCellInfo</code></a> event. 
+            Additionally, you can freeze columns at specific positions by setting the freeze property to left, right, center and fixed in the column definition.
+    </p>
         <p>
-            Grid allows to span the multiple adjacent cells. In <a href='https://ej2.syncfusion.com/angular/documentation/api/grid#querycellinfo'><code>QueryCellInfo</code></a>            event, you can define the <code>colSpan</code> attribute to span the cells.
+            In this demo, you can see that the employee named <b>Davolio</b> is analyzing data from 9.00 AM to 10.00 AM, so the cells for that time are spanned. Similarly, another employee <b>Buchanan</b> is doing support work from 9.30 AM to 11.00 AM, and the cells are spanned accordingly. 
+            Also, the <b>Employee ID</b> column is frozen to the left.
+    </p>
+        <p style="font-weight: 500">Injecting Module:</p>
+        <p>
+            Grid features are separated into feature-wise modules. 
+            To use the frozen rows and columns feature, inject the <code>FreezeService</code> using the <code>&#64;NgModule.providers</code> section.
         </p>
         <p>
-            In this demo, Employee <b>Davolio</b> doing analysis from 9.00 AM to 10.00 AM, so that cells have spanned and
-            Employee <b>Buchamann</b> doing support work from 9.30 AM to 11.00 AM, so that cells have spanned.
+            More information on the column spanning can be found in this
+            <a target="_blank" 
+            href="https://ej2.syncfusion.com/angular/documentation/grid/columns/column-spanning">
+            documentation section</a>.
         </p>
     </div>
 </div>

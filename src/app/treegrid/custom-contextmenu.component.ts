@@ -1,12 +1,17 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { TreeGridComponent} from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent, TreeGridAllModule, ContextMenuService} from '@syncfusion/ej2-angular-treegrid';
 import { getValue, isNullOrUndefined } from '@syncfusion/ej2-base';
 import { BeforeOpenCloseEventArgs } from '@syncfusion/ej2-inputs';
 import { MenuEventArgs } from '@syncfusion/ej2-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-treegrid-container',
-    templateUrl: 'custom-contextmenu.html'
+    templateUrl: 'custom-contextmenu.html',
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent],
+    providers: [ContextMenuService]
 })
 export class CustomContextMenuComponent implements OnInit {
     public data: Object[] = [];

@@ -1,4 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ListBoxModule } from '@syncfusion/ej2-angular-dropdowns';
 /**
  * Default ListBox sample
  */
@@ -6,7 +9,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
     selector: 'control-content',
     templateUrl: 'default.html',
     styleUrls: ['default.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ListBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class DefaultListBoxComponent {

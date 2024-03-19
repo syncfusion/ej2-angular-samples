@@ -1,17 +1,19 @@
 import { Component, ViewChild } from '@angular/core';
 import { recurrenceData } from './data';
 import { extend } from '@syncfusion/ej2-base';
-import {
-  ScheduleComponent, EventSettingsModel, EventRenderedArgs, View, DayService,
-  WeekService, MonthService, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, EventSettingsModel, EventRenderedArgs, View, DayService, WeekService, MonthService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'recurrence-events.html',
-  providers: [DayService, WeekService, MonthService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'recurrence-events.html',
+    providers: [DayService, WeekService, MonthService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class RecurrenceComponent {
   public data: Record<string, any>[] = extend([], recurrenceData, null, true) as Record<string, any>[];

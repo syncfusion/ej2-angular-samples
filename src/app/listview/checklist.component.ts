@@ -4,11 +4,16 @@
 
 import { Component, Inject } from '@angular/core';
 import { groupData, checkboxdata } from './dataSource';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'checklist.html',
-    styleUrls: ['listview.css']
+    styleUrls: ['listview.css'],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ListViewAllModule, SBDescriptionComponent]
 })
 
 export class ChecklistListViewComponent {

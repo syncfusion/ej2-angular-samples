@@ -1,11 +1,13 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, IDataSet, GroupingBarSettings, PivotActionCompleteEventArgs } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView, IDataSet, GroupingBarSettings, PivotViewModule, PivotActionCompleteEventArgs, GroupingBarService } from '@syncfusion/ej2-angular-pivotview';
 import { ChangeEventArgs, MultiSelect, SelectEventArgs, RemoveEventArgs, PopupEventArgs, CheckBoxSelection } from '@syncfusion/ej2-angular-dropdowns';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { SortModel } from '@syncfusion/ej2-pivotview/src/model/datasourcesettings-model';
 import { enableRipple } from '@syncfusion/ej2-base';
-import { DropDownListComponent, MultiSelectComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { ButtonComponent, CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { DropDownListComponent,DropDownListModule, MultiSelectComponent, MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ButtonComponent, ButtonModule, CheckBoxModule, CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 MultiSelect.Inject(CheckBoxSelection);
 
@@ -19,7 +21,10 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     selector: 'ej2-pivotview-container',
     templateUrl: 'custom-sorting.html',
     encapsulation: ViewEncapsulation.None,
-    styleUrls: ['custom-sorting.css']
+    styleUrls: ['custom-sorting.css'],
+    providers: [GroupingBarService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, CheckBoxModule, ButtonModule, DropDownListModule, MultiSelectModule]
 })
 
 export class CustomSortingComponent implements OnInit {

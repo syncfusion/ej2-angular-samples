@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ProgressBar, ITextRenderEventArgs, AnimationModel, FontModel,ILoadedEventArgs,ProgressTheme } from '@syncfusion/ej2-progressbar';
+import { ProgressBarAllModule } from '@syncfusion/ej2-angular-progressbar';
 
 
 /**
@@ -8,7 +9,9 @@ import { ProgressBar, ITextRenderEventArgs, AnimationModel, FontModel,ILoadedEve
 @Component({
     selector: 'control-content',
     templateUrl: 'labels.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ProgressBarAllModule]
 })
 
 export class ProgressBarLabelComponent {

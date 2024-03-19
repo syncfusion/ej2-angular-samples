@@ -1,17 +1,22 @@
 import { Component, ViewChild, ViewEncapsulation, Inject, AfterViewInit } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import { KanbanComponent, CardSettingsModel } from '@syncfusion/ej2-angular-kanban';
-import { FormValidators, NumericTextBoxComponent, TextBoxComponent } from '@syncfusion/ej2-angular-inputs';
-import { FormControl, FormGroup } from '@angular/forms';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { DialogComponent, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
+import { KanbanComponent, CardSettingsModel, KanbanModule } from '@syncfusion/ej2-angular-kanban';
+import { FormValidators, NumericTextBoxComponent, NumericTextBoxModule, TextBoxComponent, TextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { FormControl, FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DialogComponent, DialogModule, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
 import { kanbanData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'api.html',
     styleUrls: ['api.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [KanbanModule, SBActionDescriptionComponent, SBDescriptionComponent, DialogModule, TextBoxModule, DropDownListModule, ButtonModule, NumericTextBoxModule, FormsModule, ReactiveFormsModule]
 })
 export class APIComponent implements AfterViewInit {
     @ViewChild('kanbanObj') kanbanObj: KanbanComponent;

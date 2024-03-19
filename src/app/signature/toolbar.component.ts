@@ -1,12 +1,16 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { addClass, createElement, getComponent } from '@syncfusion/ej2-base';
-import { SignatureComponent } from '@syncfusion/ej2-angular-inputs';
+import { SignatureComponent, ColorPickerModule, SignatureModule } from '@syncfusion/ej2-angular-inputs';
 import { SplitButton, ItemModel, MenuEventArgs, DropDownButton } from '@syncfusion/ej2-splitbuttons';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
 import { Button, ChangeEventArgs, CheckBox } from '@syncfusion/ej2-buttons';
 import { ColorPicker, ColorPickerEventArgs, NumericTextBox, PaletteTileEventArgs, Signature, SignatureFileType } from '@syncfusion/ej2-inputs';
-import { debugOutputAstAsTypeScript } from '@angular/compiler';
-import { DropDownList } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownList, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SplitButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
+import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Default sample
@@ -16,8 +20,9 @@ import { DropDownList } from '@syncfusion/ej2-angular-dropdowns';
     selector: 'control-content',
     templateUrl: 'toolbar.html',
     styleUrls: ['toolbar.css'],
-    encapsulation: ViewEncapsulation.None
-
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToolbarModule, SplitButtonModule, ColorPickerModule, DropDownListModule, CheckBoxModule, SignatureModule, SBDescriptionComponent]
 })
 export class ToolbarSignatureComponent {
     @ViewChild('signature') signature !: SignatureComponent;

@@ -1,12 +1,13 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ChangeEventArgs as DropDownChangeEventArgs } from '@syncfusion/ej2-dropdowns';
 import { ChangeEventArgs, ColorPickerEventArgs } from '@syncfusion/ej2-inputs';
-import {
-    DiagramComponent, NodeModel, ConnectorModel, ShapeAnnotationModel, VerticalAlignment, HorizontalAlignment,
-    TextStyleModel, ISelectionChangeEventArgs, ConnectorConstraints, OrthogonalSegmentModel,
-    DecoratorModel, SnapSettingsModel, SnapConstraints, Node, AnnotationConstraints
-} from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, NodeModel, ConnectorModel, ShapeAnnotationModel, VerticalAlignment, HorizontalAlignment, TextStyleModel, ISelectionChangeEventArgs, ConnectorConstraints, OrthogonalSegmentModel, DecoratorModel, SnapSettingsModel, SnapConstraints, Node, AnnotationConstraints, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { CheckBoxChangeEventArgs } from '@syncfusion/ej2-grids';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ColorPickerModule, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Annotation
@@ -17,7 +18,9 @@ let node: NodeModel;
     selector: 'control-content',
     templateUrl: 'annotations.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, ButtonModule, ColorPickerModule, NumericTextBoxModule, DropDownListModule, CheckBoxModule, SBDescriptionComponent]
 })
 export class AnnotationDiagramComponent {
     @ViewChild('diagram')

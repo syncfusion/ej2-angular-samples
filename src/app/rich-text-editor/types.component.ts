@@ -3,18 +3,22 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';
-import { ToolbarService, ToolbarType, LinkService, ImageService } from '@syncfusion/ej2-angular-richtexteditor';
-import { DropDownListComponent, FieldSettingsModel } from '@syncfusion/ej2-angular-dropdowns';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { ToolbarService, ToolbarType, LinkService, ImageService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, FormatPainterService, EmojiPickerService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
+import { DropDownListComponent, FieldSettingsModel, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { RichTextEditorComponent, HtmlEditorService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'types.html',
     styleUrls: ['types.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService]
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, FormatPainterService, EmojiPickerService, TableService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, RichTextEditorModule, DropDownListModule, CheckBoxModule, SBDescriptionComponent]
 })
 export class ToolbarTypeComponent {
     @ViewChild('type') ddlObj: DropDownListComponent;

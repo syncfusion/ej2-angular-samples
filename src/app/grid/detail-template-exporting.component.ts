@@ -2,10 +2,13 @@ import { Component, OnInit, Inject, ViewEncapsulation, ViewChild } from '@angula
 import { employeeData } from './data';
 import {
     GridComponent, DetailRowService, PdfExportService,
-    ExcelExportService, ToolbarService, ExportDetailTemplateEventArgs
+    ExcelExportService, ToolbarService, ExportDetailTemplateEventArgs, SortService, GridModule
 } from '@syncfusion/ej2-angular-grids';
+
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
 import { Internationalization } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 let instance: Internationalization = new Internationalization();
 
@@ -13,15 +16,16 @@ let instance: Internationalization = new Internationalization();
     selector: 'ej2-griddetailtemplateexporting',
     templateUrl: 'detail-template-exporting.html',
     styleUrls: ['detail-template-exporting.style.css'],
-    providers: [DetailRowService, PdfExportService, ExcelExportService, ToolbarService],
-    encapsulation: ViewEncapsulation.None
+    providers: [DetailRowService, PdfExportService, ExcelExportService, ToolbarService, SortService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GridModule, SBDescriptionComponent]
 })
 export class DetailTemplateExportComponent implements OnInit {
     public data: any;
     public toolbar: string[];
     @ViewChild('grid')
     public grid: GridComponent;
-
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['detail-template-exporting.style.css'];
     }

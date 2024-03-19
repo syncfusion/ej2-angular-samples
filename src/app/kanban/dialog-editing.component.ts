@@ -1,12 +1,20 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import { KanbanComponent, CardSettingsModel } from '@syncfusion/ej2-angular-kanban';
+import { KanbanComponent, CardSettingsModel, KanbanModule } from '@syncfusion/ej2-angular-kanban';
 import { kanbanData } from './data';
+import { NgClass } from '@angular/common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 
 @Component({
   selector: 'control-content',
   templateUrl: 'dialog-editing.html',
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  standalone: true,
+  imports: [ KanbanModule, NgClass, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule, ButtonModule, TextBoxModule]
 })
 export class DialogEditingComponent {
   @ViewChild('kanbanObj') kanbanObj: KanbanComponent;

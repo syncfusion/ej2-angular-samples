@@ -1,25 +1,26 @@
 import { extend } from '@syncfusion/ej2-base';
-import {
-  ScheduleComponent, EventSettingsModel, PrintService, ScheduleModel,
-  DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { DatePickerComponent } from '@syncfusion/ej2-angular-calendars';
+import { ScheduleComponent, EventSettingsModel, PrintService, ScheduleModel, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { CheckBoxComponent, CheckBoxModule, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DatePickerComponent, DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { scheduleData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for print
  */
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'print.html',
-  styleUrls: ['print.style.css'],
-  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService, PrintService],
-  encapsulation: ViewEncapsulation.None
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'print.html',
+    styleUrls: ['print.style.css'],
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService, PrintService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ScheduleModule, CheckBoxModule, DropDownListModule, DatePickerModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class PrintComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

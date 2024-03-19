@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ProgressBar, ILoadedEventArgs, ProgressTheme, AnimationModel } from '@syncfusion/ej2-progressbar';
+import { ProgressBarAllModule } from '@syncfusion/ej2-angular-progressbar';
 
 /**
  * RTl sample
@@ -8,6 +9,8 @@ import { ProgressBar, ILoadedEventArgs, ProgressTheme, AnimationModel } from '@s
     selector: 'control-content',
     templateUrl: 'Radius.html',
     encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ProgressBarAllModule],
 })
 
 export class ProgressBarRadiusComponent {

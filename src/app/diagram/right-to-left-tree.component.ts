@@ -1,10 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { DataManager } from '@syncfusion/ej2-data';
-import {
-    Diagram, NodeModel, ConnectorModel, PointPortModel, DiagramTools,
-    DataBinding, HierarchicalTree, SnapConstraints, SnapSettingsModel, ShapeAnnotationModel
-} from '@syncfusion/ej2-angular-diagrams';
-import {artificialIntelligence} from './overview-data';
+import { Diagram, NodeModel, ConnectorModel, PointPortModel, DiagramTools, DataBinding, HierarchicalTree, SnapConstraints, SnapSettingsModel, ShapeAnnotationModel, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import {artificialIntelligence} from'./overview-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 export interface DataInfo {
     [key: string]: string;
@@ -18,7 +17,9 @@ Diagram.Inject(DataBinding, HierarchicalTree);
     selector: 'control-content',
     templateUrl: 'right-to-left-tree.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, SBDescriptionComponent]
 })
 export class RTLTreeDiagramComponent {
 

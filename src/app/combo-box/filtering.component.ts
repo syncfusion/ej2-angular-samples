@@ -5,10 +5,15 @@ import { Component } from '@angular/core';
 import { Query } from '@syncfusion/ej2-data';
 import { EmitType } from '@syncfusion/ej2-base';
 import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
-    templateUrl: 'filtering.html'
+    templateUrl: 'filtering.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ComboBoxModule, SBDescriptionComponent]
 })
 export class FilteringComboBoxComponent {
     //define the filtering data

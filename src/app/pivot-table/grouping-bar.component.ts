@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, GroupingBarService, PivotView, IDataSet, GroupingBarSettings } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, GroupingBarService, PivotView, IDataSet, PivotViewModule, GroupingBarSettings } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { CheckBoxModule} from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -15,7 +18,9 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     templateUrl: 'grouping-bar.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['grouping-bar.css'],
-    providers: [GroupingBarService]
+    providers: [GroupingBarService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, CheckBoxModule]
 })
 export class GroupingBarComponent implements OnInit {
     public dataSourceSettings: IDataOptions;

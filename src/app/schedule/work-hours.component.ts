@@ -1,18 +1,20 @@
 import { Component, ViewChild } from '@angular/core';
 import { extend, Internationalization } from '@syncfusion/ej2-base';
-import {
-  ScheduleComponent, EventSettingsModel, View, WorkHoursModel, DayService, DragAndDropService,
-  WeekService, WorkWeekService, MonthService, EventRenderedArgs, TimelineViewsService, TimelineMonthService, ResizeService
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, EventSettingsModel, View, WorkHoursModel, DayService, DragAndDropService, WeekService, WorkWeekService, MonthService, EventRenderedArgs, TimelineViewsService, TimelineMonthService, ResizeService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { employeeEventData } from './data';
-import { TimePickerComponent } from '@syncfusion/ej2-angular-calendars';
+import { TimePickerComponent, TimePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'work-hours.html',
-  providers: [DayService, WeekService, WorkWeekService, MonthService, TimelineViewsService,
-    TimelineMonthService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'work-hours.html',
+    providers: [DayService, WeekService, WorkWeekService, MonthService, TimelineViewsService,
+        TimelineMonthService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, TimePickerModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class WorkHoursComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

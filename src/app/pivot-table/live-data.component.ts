@@ -1,12 +1,15 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
-import { IDataOptions, IDataSet, PivotView, DisplayOption, PivotChartService, QueryCellInfoEventArgs } from '@syncfusion/ej2-angular-pivotview';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { IDataOptions, IDataSet, PivotView,PivotViewModule, DisplayOption, PivotChartService, QueryCellInfoEventArgs } from '@syncfusion/ej2-angular-pivotview';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { NumericTextBoxComponent, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { ChartSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/chartsettings';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 import { Observable } from 'rxjs';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
+import { NgClass } from '@angular/common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -18,7 +21,9 @@ enableRipple(false);
     templateUrl: 'live-data.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['live-data.css'],
-    providers: [PivotChartService]
+    providers: [PivotChartService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, NumericTextBoxModule, ButtonModule, NgClass]
 })
 
 export class LiveDataComponent implements OnInit {

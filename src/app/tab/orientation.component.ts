@@ -1,7 +1,9 @@
 import { Component, ViewChild, Inject, ViewEncapsulation } from '@angular/core';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { rippleEffect } from '@syncfusion/ej2-base';
-import { TabComponent } from '@syncfusion/ej2-angular-navigations';
+import { TabComponent, TabModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Orientation Tab Component
@@ -10,7 +12,9 @@ import { TabComponent } from '@syncfusion/ej2-angular-navigations';
     selector: 'control-content',
     templateUrl: 'orientation.html',
     styleUrls: ['tab.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, TabModule, DropDownListModule, SBDescriptionComponent]
 })
 export class OrientationTabComponent {
     @ViewChild('place')

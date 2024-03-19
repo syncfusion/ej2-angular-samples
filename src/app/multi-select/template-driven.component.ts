@@ -2,12 +2,20 @@
  * MultiSelect Template Driven Sample
  */
 import { Component, ViewEncapsulation } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { NgIf } from '@angular/common';
+import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import { FormsModule } from '@angular/forms';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'template-driven.html',
     styleUrls: ['./form-support.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, FormsModule, MultiSelectModule, NgIf, ButtonModule, SBDescriptionComponent]
 })
 export class TemplateDrivenMultiSelectComponent {
     public autoSkillsetData: string[] = [

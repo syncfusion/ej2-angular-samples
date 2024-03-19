@@ -1,10 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { projectNewData } from './data';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { DropDownListComponent, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
 @Component({
     selector: 'ej2-ganttselection',
-    templateUrl: 'selection.html'
+    templateUrl: 'selection.html',
+    standalone: true,
+    imports: [GanttAllModule, DropDownListAllModule, ButtonAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class GanttSelectionComponent implements OnInit {
     public data: object[];

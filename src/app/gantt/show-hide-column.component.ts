@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { projectNewData } from './data';
-import { DropDownListComponent , ChangeEventArgs} from '@syncfusion/ej2-angular-dropdowns';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { DropDownListComponent, ChangeEventArgs, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ButtonComponent, ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
+import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-ganttshowhide',
-    templateUrl: 'show-hide-column.html'
+    templateUrl: 'show-hide-column.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, DropDownListAllModule, ButtonAllModule, SBDescriptionComponent]
 })
 export class ShowHideComponent implements OnInit {
     

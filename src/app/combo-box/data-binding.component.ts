@@ -3,14 +3,18 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Query, DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
-import { ComboBoxComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { ComboBoxComponent, ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'data-binding.html',
     styleUrls: ['data-binding.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ComboBoxModule, CheckBoxModule, SBDescriptionComponent]
 })
 export class DataBindingComboBoxComponent {
     @ViewChild('local')

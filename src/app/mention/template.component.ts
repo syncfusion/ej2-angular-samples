@@ -2,11 +2,16 @@
  * Mention template Sample
  */
 import { Component } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { MentionModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'template.html',
-    styleUrls: ['template.css']
+    styleUrls: ['template.css'],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MentionModule, SBDescriptionComponent]
 })
 export class TemplateMentionComponent {
     // define the JSON of data

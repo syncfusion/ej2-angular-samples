@@ -7,7 +7,7 @@
 <div class="control-section">
     <div class="sample-container markdown-preview">
         <div class="default-section">
-            <ejs-splitter #splitterInstance height='450px' width='100%' (resizing)="resizing()" (created)='updateOrientation()'>
+            <ejs-splitter id="splitter-rte-markdown-preview" #splitterInstance height='450px' width='100%' (resizing)="resizing()" (created)='updateOrientation()'>
                 <e-panes>
                     <e-pane size='50%' [resizable]='true' cssClass='pane1' min='40%' >
                         <ng-template #content>
@@ -50,7 +50,7 @@
     <p>Rich Text Editor features are segregated into individual feature-wise modules. To use this MarkDown Preview feature
         we need to inject following services
         <code>ToolbarService, LinkService, ImageService, MarkdownEditorService</code> into the
-        <code>@NgModule.providers section</code>.</p>
+        <code>&#64;NgModule.providers section</code>.</p>
 
     <p>The third-party library <code>Marked</code> is used in this sample to convert markdown into HTML content.</p>
 </div>

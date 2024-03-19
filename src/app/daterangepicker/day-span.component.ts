@@ -1,12 +1,14 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { DateRangePickerComponent } from '@syncfusion/ej2-angular-calendars';
+import { DateRangePickerComponent, DateRangePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { loadCldr, L10n } from '@syncfusion/ej2-base';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'day-span.html',
     styleUrls: ['dayspan-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [DateRangePickerModule]
 })
 export class DaySpanComponent {
     public minDays: number = 5;

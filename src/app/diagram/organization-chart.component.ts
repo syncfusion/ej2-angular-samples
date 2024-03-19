@@ -1,11 +1,11 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ChangeEventArgs as NumericChangeEventArgs } from '@syncfusion/ej2-inputs';
-import {
-    DiagramComponent, Diagram, NodeModel, ConnectorModel, LayoutOrientation, LayoutAnimation, TreeInfo, SnapSettingsModel,
-    SubTreeOrientation, SubTreeAlignments, DiagramTools, Node, DataBinding, HierarchicalTree, SnapConstraints
-} from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, Diagram, NodeModel, ConnectorModel, LayoutOrientation, LayoutAnimation, TreeInfo, SnapSettingsModel, SubTreeOrientation, SubTreeAlignments, DiagramTools, Node, DataBinding, HierarchicalTree, SnapConstraints, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import {localBindData} from './overview-data';
+import {localBindData} from'./overview-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(DataBinding, HierarchicalTree, LayoutAnimation);
 
 export interface EmployeeInfo {
@@ -23,7 +23,9 @@ export interface DataInfo {
     selector: 'control-content',
     templateUrl: 'organization-chart.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, NumericTextBoxModule, SBDescriptionComponent]
 })
 export class OrganizationalChartDiagramComponent {
     @ViewChild('diagram')
@@ -72,7 +74,7 @@ export class OrganizationalChartDiagramComponent {
         obj.height = 30;
         return obj;
     };
-    public connDefaults(connector: ConnectorModel, diagram: Diagram): ConnectorModel {
+    public connDefaults(connector: any, diagram: Diagram): ConnectorModel {
         connector.targetDecorator.shape = 'None';
         connector.type = 'Orthogonal';
         connector.constraints = 0;
@@ -80,96 +82,109 @@ export class OrganizationalChartDiagramComponent {
         return connector;
     }
     ngOnInit(): void {
-        document.getElementById('appearance').onclick = this.documentClick.bind(this);
+        document.getElementById('pattern').onclick = this.documentClick.bind(this);
+        document.getElementById('orientation').onclick =
+          this.orientation.bind(this);
     }
-    private documentClick(args: MouseEvent): void {
-        let layoutOrientation: LayoutOrientation;
-        let subTreeOrientation: SubTreeOrientation;
-        let subTreeAlignment: SubTreeAlignments;
+     //To change orientation
+     private orientation(args: any) {
+      debugger
         let target: HTMLElement = args.target as HTMLElement;
-        // custom code start
-        let selectedElement: HTMLCollection = document.getElementsByClassName('e-selected-style');
+        let selectedElement: HTMLCollection = document.getElementsByClassName(
+          'e-selected-orientation-style'
+        );
         if (selectedElement.length) {
-            selectedElement[0].classList.remove('e-selected-style');
+          selectedElement[0].classList.remove('e-selected-orientation-style');
         }
-        // custom code end
-        if (target.className === 'image-pattern-style') {
-            switch (target.id) {
-                case 'pattern1':
-                    subTreeOrientation = 'Vertical';
-                    subTreeAlignment = 'Alternate';
-                    break;
-                case 'pattern2':
-                    subTreeOrientation = 'Vertical';
-                    subTreeAlignment = 'Left';
-                    break;
-                case 'pattern3':
-                    subTreeOrientation = 'Vertical';
-                    subTreeAlignment = 'Left';
-                    break;
-                case 'pattern4':
-                    subTreeOrientation = 'Vertical';
-                    subTreeAlignment = 'Right';
-                    break;
-                case 'pattern5':
-                    subTreeOrientation = 'Vertical';
-                    subTreeAlignment = 'Right';
-                    break;
-                case 'pattern6':
-                    subTreeOrientation = 'Horizontal';
-                    subTreeAlignment = 'Balanced';
-                    break;
-                case 'pattern7':
-                    subTreeOrientation = 'Horizontal';
-                    subTreeAlignment = 'Center';
-                    break;
-                case 'pattern8':
-                    subTreeOrientation = 'Horizontal';
-                    subTreeAlignment = 'Left';
-                    break;
-                case 'pattern9':
-                    subTreeOrientation = 'Horizontal';
-                    subTreeAlignment = 'Right';
-                    break;
-                case 'topToBottom':
-                    layoutOrientation = 'TopToBottom';
-                    break;
-                case 'bottomToTop':
-                    layoutOrientation = 'BottomToTop';
-                    break;
-                case 'leftToRight':
-                    layoutOrientation = 'LeftToRight';
-                    break;
-                case 'rightToLeft':
-                    layoutOrientation = 'RightToLeft';
-                    break;
-            }
-            if (layoutOrientation || subTreeOrientation) {
-                if (layoutOrientation) {
-                    this.diagram.layout.orientation = layoutOrientation;
-                }
-                // custom code start
-                target.classList.add('e-selected-style');
-                // custom code end
-            }
-            this.diagram.layout.getLayoutInfo = (node: NodeModel, options: TreeInfo) => {
-                if (target.id === 'pattern4' || target.id === 'pattern3') {
-                    options.offset = -50;
-                }
-                if ((node.data as DataInfo)['Role'] === 'General Manager') {
-                    options.assistants.push(options.children[0]);
-                    options.children.splice(0, 1);
-                }
-                if (!options.hasSubTree) {
-                    options.orientation = subTreeOrientation;
-                    options.type = subTreeAlignment;
-                }
-            };
-
-            this.diagram.doLayout();
-            this.diagram.dataBind();
+        if (!target.classList.contains('e-selected-orientation-style')) {
+          target.classList.add('e-selected-orientation-style');
         }
-    };
+        if (
+          target.className === 'image-pattern-style e-selected-orientation-style'
+        ) {
+          let id: string = target.id;
+          let orientation1: string =
+            id.substring(0, 1).toUpperCase() + id.substring(1, id.length);
+          this.diagram.layout.orientation = orientation1 as LayoutOrientation;
+          this.diagram.dataBind();
+          this.diagram.doLayout();
+        }
+      }
+    //To change subtree alignment
+    private documentClick(args: MouseEvent): void {
+      debugger
+        let target: HTMLElement = args.target as HTMLElement;
+        var selectedpatternElement = document.getElementsByClassName(
+          'e-selected-pattern-style'
+        );
+        if (selectedpatternElement.length) {
+          selectedpatternElement[0].classList.remove('e-selected-pattern-style');
+        }
+        if (!target.classList.contains('e-selected-pattern-style')) {
+          target.classList.add('e-selected-pattern-style');
+        }
+        if (target.className === 'image-pattern-style e-selected-pattern-style') {
+          let subTreeOrientation: SubTreeOrientation;
+          let subTreeAlignment: SubTreeAlignments;
+          switch (target.id) {
+            case 'pattern1':
+              subTreeOrientation = 'Vertical';
+              subTreeAlignment = 'Alternate';
+              break;
+            case 'pattern2':
+              subTreeOrientation = 'Vertical';
+              subTreeAlignment = 'Left';
+              break;
+            case 'pattern3':
+              subTreeOrientation = 'Vertical';
+              subTreeAlignment = 'Left';
+              break;
+              case 'pattern4':
+              subTreeOrientation = 'Vertical';
+              subTreeAlignment = 'Right';
+              break;
+            case 'pattern5':
+              subTreeOrientation = 'Vertical';
+              subTreeAlignment = 'Right';
+              break;
+            case 'pattern6':
+              subTreeOrientation = 'Horizontal';
+              subTreeAlignment = 'Balanced';
+              break;
+            case 'pattern7':
+              subTreeOrientation = 'Horizontal';
+              subTreeAlignment = 'Center';
+              break;
+            case 'pattern8':
+              subTreeOrientation = 'Horizontal';
+              subTreeAlignment = 'Left';
+              break;
+            case 'pattern9':
+              subTreeOrientation = 'Horizontal';
+              subTreeAlignment = 'Right';
+              break;
+          }
+    
+          this.diagram.layout.getLayoutInfo = (
+            node: NodeModel,
+            options: TreeInfo
+          ) => {
+            if (target.id === 'pattern4' || target.id === 'pattern3') {
+              options.offset = -50;
+            }
+            if ((node.data as DataInfo)['Role'] === 'General Manager') {
+              options.assistants.push(options.children[0]);
+              options.children.splice(0, 1);
+            }
+            if (!options.hasSubTree) {
+              options.orientation = subTreeOrientation;
+              options.type = subTreeAlignment;
+            }
+          };
+          this.diagram.dataBind();
+          this.diagram.doLayout();
+        }
+      }
 
     public onhSpacingChange(args: NumericChangeEventArgs): void {
         this.diagram.layout.horizontalSpacing = Number(args.value);

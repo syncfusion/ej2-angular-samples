@@ -80,16 +80,14 @@
     content: "\e724";
 }
 
-.e-connector::before {
+.e-diagram-connector::before {
     content: "\e725";
 }
-
 
 .db-text-input {
     width: calc(100% - 25px);
     padding: 2px 2px 0px 0px;
 }
-
 
 .disabledbutton {
     pointer-events: none;

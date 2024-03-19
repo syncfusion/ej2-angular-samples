@@ -1,5 +1,10 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { DropDownListModule, MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import { RadioButtonModule, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Cell Template Spreadsheet Component
  */
@@ -7,7 +12,9 @@ import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
     selector: 'control-content',
     templateUrl: 'cell-template.html',
     styleUrls: ['cell-template.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SpreadsheetModule, TextBoxModule, RadioButtonModule, DropDownListModule, MultiSelectModule, ButtonModule, SBDescriptionComponent]
 })
 
 export class CellTemplateComponent {

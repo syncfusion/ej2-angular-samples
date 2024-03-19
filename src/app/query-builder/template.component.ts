@@ -3,25 +3,39 @@
  */
 
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { RadioButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { QueryBuilderComponent, TemplateColumn, ColumnsModel, RuleChangeEventArgs  } from '@syncfusion/ej2-angular-querybuilder';
+import { QueryBuilderComponent, TemplateColumn, ColumnsModel, RuleChangeEventArgs, QueryBuilderModule } from '@syncfusion/ej2-angular-querybuilder';
 import { getComponent, createElement, isNullOrUndefined } from '@syncfusion/ej2-base';
 import { CheckBox } from '@syncfusion/ej2-buttons';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { Slider } from '@syncfusion/ej2-inputs';
 import { RuleModel } from '@syncfusion/ej2-querybuilder';
 import { expenseData } from './data-source';
-
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { TooltipModule } from '@syncfusion/ej2-angular-popups';
+import { TabAllModule } from '@syncfusion/ej2-angular-navigations';
+import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
+import { GridModule } from '@syncfusion/ej2-angular-grids';
+import { getCELQuery, getSpELQuery } from './util';
+declare let hljs: any;
 @Component({
     selector: 'control-content',
     templateUrl: 'template.html',
     styleUrls: ['template.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, QueryBuilderModule, GridModule, DropDownButtonModule, TabAllModule, TooltipModule, QueryBuilderModule, SBDescriptionComponent]
 })
 
 export class TemplateQueryBuilderComponent {
     @ViewChild('querybuilder') qryBldrObj: QueryBuilderComponent;
-    @ViewChild('radio') radioButton: RadioButtonComponent;
+    private selectedIndex: number = 0;
+    private selectedContent: HTMLElement | any;
+    private content: string = "";
+    public headerText: any = [
+        { text: "CEL" },
+        { text: "SpEL" }
+    ];
     dataSource: Object[] = expenseData;
 
     paymentTemplate: TemplateColumn = {
@@ -160,14 +174,57 @@ export class TemplateQueryBuilderComponent {
 
     displayRule: any = '';
 
-    updateRule(args: RuleChangeEventArgs ): void {
-        if (this.radioButton.checked) {
-            this.displayRule = this.qryBldrObj.getSqlFromRules(args.rule);
-        } else {
-            this.displayRule = JSON.stringify(args.rule, null, 4);
+    tabChange(args: any) {
+        this.selectedIndex = args.selectedIndex;
+        this.selectedContent = args.selectedContent;
+        this.updateRule();
+    }
+    
+    updateRule(): void {
+        if (isNullOrUndefined(this.selectedContent)) {
+            this.selectedContent = document.getElementsByClassName('e-text-area-content')[0].parentElement;
+        }
+        switch (this.selectedIndex) {
+            case 0:
+                this.updateCELContentTemplate();
+                break;
+            case 1:
+                this.updateSpCELContentTemplate();
+                break;
         }
     }
-    change(): void {
-        this.updateRule({rule: this.qryBldrObj.getValidRules(this.qryBldrObj.rule)})
+
+    updateCELContentTemplate(): void {
+        const allRules = this.qryBldrObj.getValidRules();
+        let celQuery: string = '';
+        celQuery = getCELQuery(allRules, celQuery);
+        this.content = celQuery
+        this.selectedContent.querySelector('.e-text-area-content .e-pre-content').textContent = this.content;
+        hljs.highlightBlock(this.selectedContent.querySelector('.e-text-area-content'));
+    }
+
+    updateSpCELContentTemplate(): void {
+        const allRules: any = this.qryBldrObj.getValidRules();
+        let spelQuery: string = '';
+        this.content = getSpELQuery(allRules, spelQuery);
+        this.selectedContent.querySelector('.e-text-area-content .e-pre-content').textContent = this.content;
+        hljs.highlightBlock(this.selectedContent.querySelector('.e-text-area-content'));
+    }
+
+    copyClipboard(e: any): void {
+        navigator.clipboard.writeText(this.content);
+        setTimeout(function() {
+            (getComponent(e.target.closest('.e-tooltip'), 'tooltip') as any).close();
+        }, 1000);
+    }
+
+    onmouseenter(e: any): void {
+        const copyElement: HTMLElement = e.target.closest('.preview').querySelector('.e-copy-tooltip');
+        copyElement.classList.remove('e-hidden');
+    }
+
+    onmouseleave(e: any): void {
+        const copyElement: HTMLElement = e.target.closest('.preview').querySelector('.e-copy-tooltip');
+        copyElement.classList.add('e-hidden');
     }
 }

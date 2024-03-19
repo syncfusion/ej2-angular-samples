@@ -1,13 +1,17 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { HeatMap, Legend, Tooltip, ILoadedEventArgs, ITooltipEventArgs, HeatMapTheme } from '@syncfusion/ej2-angular-heatmap';
+import { HeatMap, Legend, Tooltip, ILoadedEventArgs, ITooltipEventArgs, HeatMapTheme, HeatMapModule } from '@syncfusion/ej2-angular-heatmap';
 import { SampleDataSource } from './calendar-data-source';
 import { Internationalization } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 HeatMap.Inject(Tooltip, Legend);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'calendar-heatmap.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [HeatMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class HeatmapCalendarComponent {
     public height: String = '300px';

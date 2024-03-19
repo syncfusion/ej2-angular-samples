@@ -37,10 +37,6 @@
     padding-right: 0;
 }
 
-.timeline-resource.e-schedule.e-rtl .template-wrap {
-    text-align: right;
-}
-
 .timeline-resource.e-schedule .e-timeline-view .e-block-appointment {
   align-items: center;
   display: flex;
@@ -162,6 +158,10 @@
   display: flex;
   height: 100%;
   text-align: left;
+}
+
+.timeline-resource.e-schedule.e-rtl .template-wrap {
+  text-align: right;
 }
 
 .timeline-resource.e-schedule .template-wrap>div {

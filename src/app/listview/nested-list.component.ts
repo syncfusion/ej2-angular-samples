@@ -3,12 +3,17 @@
  */
 
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'nested-list.html',
     styleUrls: ['listview.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ListViewAllModule, SBDescriptionComponent]
 })
 
 export class NestedListViewComponent {

@@ -1,10 +1,13 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, IAxisLabelRenderEventArgs, GaugeTheme } from '@syncfusion/ej2-angular-circulargauge';
+import { ILoadedEventArgs, IAxisLabelRenderEventArgs, GaugeTheme, CircularGaugeModule, GradientService } from '@syncfusion/ej2-angular-circulargauge';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'custom-labels.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [CircularGaugeModule],
+    providers: [GradientService]
 })
 
 export class CustomLabelComponent {

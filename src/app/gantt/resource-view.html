@@ -9,7 +9,7 @@
     <ejs-gantt id="ResourceView" #resourceview height="450px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns" [treeColumnIndex]="1"
         [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" [editSettings]="editSettings" 
         [allowSelection]="true" [allowResizing]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
-        [toolbar]="toolbar" [resourceFields] = "resourceFields"
+        [toolbar]="toolbar" [resourceFields] = "resourceFields" [taskType] = "taskType"
         [resources]="resources" viewType="ResourceView" [showOverAllocation]= "true" (toolbarClick)="toolbarClick($event)">
     </ejs-gantt>
 </div>

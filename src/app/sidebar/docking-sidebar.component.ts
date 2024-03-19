@@ -1,11 +1,16 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SidebarComponent, ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
+import { SidebarComponent, ClickEventArgs, ToolbarModule, SidebarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 
 @Component({
     selector: 'control-content',
     styleUrls: ['dock-style.css'],
     templateUrl: 'docking-sidebar.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ToolbarModule, SidebarModule, ListViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DockSidebarComponent {
     @ViewChild('dockBar')

@@ -1,9 +1,12 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 @Component({
     selector: 'control-content',
     styleUrls: ['range-style.css'],
     templateUrl: 'date-range.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [DatePickerModule]
 })
 export class RangeDatePickerComponent {
     public today: Date = new Date();

@@ -1,8 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import {
-    DiagramComponent, NodeModel, ConnectorModel, PointPortModel, PaletteModel,
-    SymbolInfo, SnapSettingsModel, SnapConstraints, PortVisibility, Native, SymbolPaletteComponent, PointModel, DecoratorModel, StrokeStyleModel
-} from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, NodeModel, ConnectorModel, PointPortModel, PaletteModel, SymbolInfo, SnapSettingsModel, SnapConstraints, PortVisibility, Native, SymbolPaletteComponent, PointModel, DecoratorModel, StrokeStyleModel, SymbolPaletteModule, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { AsyncSettingsModel, RemovingEventArgs } from '@syncfusion/ej2-inputs';
 import { ExpandMode } from '@syncfusion/ej2-navigations';
 import {
@@ -10,9 +7,11 @@ import {
     template5, template6, template7, template10, template11, template12,
     template13, template14, template15, template16, template17, template18
 } from './network-shapes-templates';
-import { UploaderComponent } from '@syncfusion/ej2-angular-inputs';
+import { UploaderComponent, UploaderModule } from '@syncfusion/ej2-angular-inputs';
 import { paletteIconClick } from './script/diagram-common';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 
@@ -23,7 +22,9 @@ import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
     selector: 'control-content',
     templateUrl: 'network-diagram.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SymbolPaletteModule, ButtonModule, UploaderModule, DiagramModule, SBDescriptionComponent]
 })
 export class NetworkShapesDiagramComponent {
 

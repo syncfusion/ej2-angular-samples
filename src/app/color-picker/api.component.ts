@@ -1,7 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ColorPickerComponent, ColorPickerMode, ColorPickerEventArgs } from '@syncfusion/ej2-angular-inputs';
-import { ChangeEventArgs as DdlChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { ColorPickerComponent, ColorPickerMode, ColorPickerEventArgs, ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
+import { ChangeEventArgs as DdlChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * API sample
@@ -10,8 +13,9 @@ import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
     selector: 'control-content',
     templateUrl: 'api.html',
     styleUrls: ['api.css'],
-    encapsulation: ViewEncapsulation.None
-
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ColorPickerModule, DropDownListModule, CheckBoxModule, SBDescriptionComponent]
 })
 export class ApiColorPickerComponent {
     @ViewChild('colorpicker')

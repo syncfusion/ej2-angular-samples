@@ -1,4 +1,7 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
 
@@ -9,7 +12,9 @@ import { Component, ViewEncapsulation, Inject } from '@angular/core';
     selector: 'control-content',
     styleUrls: ['disabled-style.css'],
     templateUrl: 'disabled.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, CalendarModule, SBDescriptionComponent]
 })
 export class DisabledCalendarComponent {
     constructor(@Inject('sourceFiles') private sourceFiles:any) {

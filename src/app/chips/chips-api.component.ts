@@ -1,6 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import * as data from './data.json';
+import  data from './data.json';
 import { ChipList } from '@syncfusion/ej2-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ChipListModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 /**
  * API chips component
  */
@@ -8,13 +12,15 @@ import { ChipList } from '@syncfusion/ej2-buttons';
     selector: 'control-content',
     templateUrl: 'chips-api.html',
     styleUrls: ['chips-api.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ChipListModule, DropDownListModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class ApiChipsComponent {
     @ViewChild('chip') chip: ChipList;
-    public ddlData = (data as any).ddlData;
-    public avatarData = (data as any).avatarData;
+    public ddlData = data.ddlData;
+    public avatarData = data.avatarData;   
     outlineCss = '';
     colorCss = '';
     iconHandler(e): void {

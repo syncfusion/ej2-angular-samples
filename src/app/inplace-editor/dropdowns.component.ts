@@ -1,8 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild, OnInit } from '@angular/core';
-import { DropDownListComponent, ChangeEventArgs, AutoCompleteModel, DropDownListModel, ComboBoxModel, MultiSelectModel } from '@syncfusion/ej2-angular-dropdowns';
-import { InPlaceEditorComponent, MultiSelectService, RenderMode } from '@syncfusion/ej2-angular-inplace-editor';
+import { DropDownListComponent, ChangeEventArgs, AutoCompleteModel, DropDownListModel, ComboBoxModel, MultiSelectModel, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { InPlaceEditorComponent, MultiSelectService, RenderMode, InPlaceEditorModule } from '@syncfusion/ej2-angular-inplace-editor';
 import { ComboBoxService, AutoCompleteService } from '@syncfusion/ej2-angular-inplace-editor';
 import { PopupSettingsModel } from '@syncfusion/ej2-inplace-editor/src/inplace-editor/base/models-model';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * In-place Editor dropdowns sample
@@ -12,7 +14,9 @@ import { PopupSettingsModel } from '@syncfusion/ej2-inplace-editor/src/inplace-e
     templateUrl: 'dropdowns.html',
     styleUrls: ['dropdowns.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [AutoCompleteService, MultiSelectService, ComboBoxService]
+    providers: [AutoCompleteService, MultiSelectService, ComboBoxService],
+    standalone: true,
+    imports: [InPlaceEditorModule, DropDownListModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DropdownsInplaceEditorComponent implements OnInit {
 

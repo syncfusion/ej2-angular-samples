@@ -4,12 +4,18 @@
 
 import { Component, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
 import { dataSource } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { NgIf } from '@angular/common';
+import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'template.html',
     styleUrls: ['template.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ListViewAllModule, NgIf, SBDescriptionComponent]
 })
 
 export class TemplateListViewComponent {

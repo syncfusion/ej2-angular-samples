@@ -2,20 +2,21 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { eventsData } from './data';
 import { createElement, extend } from '@syncfusion/ej2-base';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
-import {
-  EventSettingsModel, ScheduleComponent, EventRenderedArgs, DayService, WeekService,
-  WorkWeekService, MonthService, AgendaService, PopupOpenEventArgs, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, ScheduleComponent, EventRenderedArgs, DayService, WeekService, WorkWeekService, MonthService, AgendaService, PopupOpenEventArgs, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'editor-custom-field.html',
-  styles: [`.custom-field-row {
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'editor-custom-field.html',
+    styles: [`.custom-field-row {
         margin-bottom: 20px;
     }`],
-  encapsulation: ViewEncapsulation.None,
-  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
+    encapsulation: ViewEncapsulation.None,
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class EditorCustomFieldComponent {

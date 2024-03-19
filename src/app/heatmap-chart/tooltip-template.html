@@ -1,7 +1,7 @@
 <div class="control-section">
     <ejs-heatmap id='container' style="display:block;" [titleSettings]='titleSettings' [dataSource]='dataSource' [xAxis]='xAxis'
         [yAxis]='yAxis' [legendSettings]='legendSettings' [paletteSettings]='paletteSettings' [cellSettings]='cellSettings' [tooltipSettings]='tooltipSettings'
-        (load)='load($event)'>
+        (load)='load($event)' (tooltipRender)='tooltipRender($event)'>
     </ejs-heatmap>
 </div>
 <div id="action-description">

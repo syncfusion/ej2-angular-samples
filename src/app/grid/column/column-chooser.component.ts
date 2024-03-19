@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { ToolbarService, ColumnChooserService } from '@syncfusion/ej2-angular-grids';
+import { ToolbarService, ColumnChooserService, SortService, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
 import { data } from './data';
+import { SBDescriptionComponent } from '../../common/dp.component';
+import { SBActionDescriptionComponent } from '../../common/adp.component';
 
 @Component({
     selector: 'ej2-grid-container',
     templateUrl: 'column-chooser.html',
-    providers: [ToolbarService, ColumnChooserService]
+    providers: [ToolbarService, ColumnChooserService, SortService, PageService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GridModule, SBDescriptionComponent]
 })
 export class ColumnChooserComponent implements OnInit {
     public data: Object[];

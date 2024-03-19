@@ -1,15 +1,19 @@
 import { Component, ViewChild, ViewEncapsulation } from "@angular/core";
 import { resourceData } from './data';
 import { extend } from '@syncfusion/ej2-base';
-import { ScheduleComponent, EventSettingsModel, GroupModel, DayService, MonthService, WeekService, AgendaService, ResizeService, DragAndDropService } from '@syncfusion/ej2-angular-schedule';
-import { ChangeEventArgs } from "@syncfusion/ej2-angular-buttons";
+import { ScheduleComponent, EventSettingsModel, GroupModel, DayService, MonthService, WeekService, AgendaService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { ChangeEventArgs, CheckBoxModule } from "@syncfusion/ej2-angular-buttons";
+import { SBDescriptionComponent } from "../common/dp.component";
+import { SBActionDescriptionComponent } from "../common/adp.component";
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'group-by-date.html',
-  encapsulation: ViewEncapsulation.None,
-  providers: [DayService, MonthService, WeekService, AgendaService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'group-by-date.html',
+    encapsulation: ViewEncapsulation.None,
+    providers: [DayService, MonthService, WeekService, AgendaService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [CheckBoxModule, ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class GroupByDateComponent {
   @ViewChild('scheduleObj')

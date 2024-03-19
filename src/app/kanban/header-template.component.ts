@@ -1,13 +1,18 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import { KanbanComponent, ColumnsModel, CardSettingsModel } from '@syncfusion/ej2-angular-kanban';
+import { KanbanComponent, ColumnsModel, CardSettingsModel, KanbanModule } from '@syncfusion/ej2-angular-kanban';
 import { kanbanData } from './data';
+import { NgClass, NgFor } from '@angular/common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'header-template.html',
     styleUrls: ['header-template.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ KanbanModule, NgFor, NgClass, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class HeaderTemplateComponent {
     @ViewChild('kanbanObj') kanbanObj: KanbanComponent;

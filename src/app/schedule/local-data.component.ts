@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { zooEventsData } from './data';
 import { extend } from '@syncfusion/ej2-base';
-import {
-  EventSettingsModel, View, EventRenderedArgs, DayService, WeekService, WorkWeekService,
-  MonthService, AgendaService, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, View, EventRenderedArgs, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'local-data.html',
-  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'local-data.html',
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class LocalDataComponent {
   public data: Record<string, any>[] = extend([], zooEventsData, null, true) as Record<string, any>[];

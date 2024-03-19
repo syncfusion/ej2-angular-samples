@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild,Inject } from '@angular/core';
-import { ConnectorConstraints, DiagramComponent, DiagramTools, IExportOptions, IHistoryChangeArgs, ISelectionChangeEventArgs, NodeConstraints, ZoomOptions } from '@syncfusion/ej2-angular-diagrams';
-import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
-import { ClickEventArgs, ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
+import { ConnectorConstraints, DiagramComponent, DiagramTools, IExportOptions, IHistoryChangeArgs, ISelectionChangeEventArgs, NodeConstraints, ZoomOptions, SymbolPaletteModule, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { ToolbarComponent, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { ClickEventArgs, ItemModel, MenuEventArgs, SplitButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 import {
   Diagram, NodeModel, UndoRedo, ConnectorModel, PointPortModel, Connector, FlowShapeModel,
   SymbolInfo, IDragEnterEventArgs, SnapSettingsModel, MarginModel, TextStyleModel, StrokeStyleModel,
@@ -10,6 +10,9 @@ import {
 import { ExpandMode } from '@syncfusion/ej2-navigations';
 import { paletteIconClick } from './script/diagram-common';
 import { AsyncSettingsModel } from '@syncfusion/ej2-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(UndoRedo);
 
 /**
@@ -17,10 +20,12 @@ Diagram.Inject(UndoRedo);
  */
 
 @Component({
-  selector: 'control-content',
-  templateUrl: 'default-functionalities.html',
-  styleUrls: ['default-functionalities.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'default-functionalities.html',
+    styleUrls: ['default-functionalities.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToolbarModule, SplitButtonModule, SymbolPaletteModule, DiagramModule, UploaderModule, SBDescriptionComponent]
 })
 export class FlowDiagramComponent {
   @ViewChild('diagram')
@@ -294,7 +299,7 @@ public enableItems()
     this.toolbar.items[29].disabled = false;
     this.toolbar.items[31].disabled = false;
 }
-//To disable toolbar items 
+//To disable toolbar items
 public disableMultiselectedItems()
 {
     this.toolbar.items[22].disabled = true;

@@ -27,6 +27,7 @@ import { PredefinedDialogsSampleModule } from '../predefined-dialogs/predefined-
 import { SliderSampleModule } from '../range-slider/range-slider.module';
 import { SidebarSampleModule } from '../sidebar/sidebar.module';
 import { TextboxesModule } from '../textboxes/textboxes.module';
+import { TextAreasModule } from '../textarea/textarea.module';
 import { InplaceEditorSampleModule } from '../inplace-editor/inplace-editor.module';
 import { TooltipSampleModule } from '../tooltip/tooltip.module';
 import { ArcGaugeSampleModule } from '../arc-gauge/arc-gauge.module';
@@ -80,6 +81,8 @@ import { RatingSampleModule } from "../rating/rating.module";
 import { RibbonSampleModule } from "../ribbon/ribbon.module";
 import { StepperSampleModule } from '../stepper/stepper.module';
 import { ThreeDimensionChartSampleModule } from '../three-dimension-chart/three-dimension-chart.module';
+import { ThreeDimensionCircularChartSampleModule } from '../three-dimension-circular-chart/three-dimension-circular-chart.module';
+import { TimelineSampleModule } from '../timeline/timeline.module';
 
 
 const appRoutes: any = [
@@ -97,6 +100,7 @@ const appRoutes: any = [
     { path: '', redirectTo: 'material/chart/overview-chart', pathMatch: 'full' },
     { path: '**', redirectTo: 'material/chart/overview-chart' },
     { path: 'three-dimension-chart', loadChildren: import('../three-dimension-chart/three-dimension-chart.module').then(m=>m.ThreeDimensionChartSampleModule) },
+    { path: 'three-dimension-circular-chart', loadChildren: import('../three-dimension-circular-chart/three-dimension-circular-chart.module').then(m=>m.ThreeDimensionCircularChartSampleModule) },
     { path: 'stockchart', loadChildren: import('../stock-chart/stock-chart.module').then(m=>m.StockChartSampleModule) },
     { path: 'arcgauge', loadChildren: import('../arc-gauge/arc-gauge.module').then(m=>m.ArcGaugeSampleModule) },
     { path: 'circulargauge', loadChildren: import('../circular-gauge/circular-gauge.module').then(m=>m.CircularGaugeSampleModule) },
@@ -182,6 +186,7 @@ const appRoutes: any = [
     { path: 'skeleton', loadChildren: import('../skeleton/skeleton.module').then(m=>m.SkeletonSampleModule) },
     // Inputs
     { path: ':theme/textboxes/:sample', redirectTo: 'material/textboxes/default' },
+    { path: ':theme/textarea/:sample', redirectTo: 'material/textarea/default' },
     { path: 'maskedtextbox', loadChildren: import('../maskedtextbox/maskedtextbox.module').then(m=>m.MaskedTextBoxSampleModule) },
     { path: 'numerictextbox', loadChildren: import('../numerictextbox/numerictextbox.module').then(m=>m.NumericModule) },
     { path: ':theme/color-picker/:sample', redirectTo: 'material/color-picker/default' },
@@ -201,6 +206,8 @@ const appRoutes: any = [
     { path: 'splitter', loadChildren: import('../splitter/splitter.module').then(m=>m.splitterSampleModule) },
     { path: 'dashboard-layout', loadChildren: import('../dashboard-layout/dashboard-layout.module').then(m=>m.DashboardLayoutSampleModule) },
     { path: ':theme/dashboard-layout/:sample', redirectTo: 'material/dashboard-layout/default' },
+    { path: ':theme/timeline/:sample', redirectTo: 'material/timeline/default' },
+    { path: 'timeline', loadChildren: import('../timeline/timeline.module').then(m=>m.TimelineSampleModule) }
 ];
 
 @NgModule({
@@ -212,21 +219,22 @@ const appRoutes: any = [
         SpreadsheetSampleModule,
         // Data visualization
         ChartSampleModule,
-        ThreeDimensionChartSampleModule,
-        StockChartSampleModule,
         ArcGaugeSampleModule,
         CircularGaugeSampleModule,
-        DiagramSampleModule,
-        HeatmapSampleModule,
         LinearGaugeSampleModule,
+        DiagramSampleModule,
+        StockChartSampleModule,
         MapsSampleModule,
         RangeNavigatorSampleModule,
+        SparklineSampleModule,
         SmithchartSampleModule,
         BarcodeSampleModule,
-        SparklineSampleModule,
         TreemapSampleModule,
+        HeatmapSampleModule,
         BulletChartSampleModule,
         KanbanSampleModule,
+        ThreeDimensionChartSampleModule,
+        ThreeDimensionCircularChartSampleModule,
         // Editors
         ButtonSampleModule,
         ChipsSampleModule,
@@ -279,6 +287,7 @@ const appRoutes: any = [
         NumericModule,
         SliderSampleModule,
         TextboxesModule,
+        TextAreasModule,
         UploaderSampleModule,
         ColorPickerSampleModule,
         RatingSampleModule,
@@ -291,6 +300,7 @@ const appRoutes: any = [
         ListViewSampleModule,
         splitterSampleModule,
         TooltipSampleModule,
+        TimelineSampleModule,
         // Forms
         QueryBuilderSampleModule,
         // Viewer

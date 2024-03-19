@@ -2,12 +2,13 @@
  * Maps selection sample
  */
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
-import { MapsTheme, Maps, MapsTooltip, ISelectionEventArgs, Selection, Highlight, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, Maps, MapsTooltip, ISelectionEventArgs, Selection, Highlight, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
-import { MapAjax } from '@syncfusion/ej2-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Maps.Inject(MapsTooltip, Selection, Highlight);
-import usMap from './usa.json';
-import election from './election-data.json';
+let usMap: object[] = require('./usa.json');
+let election: object[] = require('./election-data.json');
 
 interface PopulationData {
     State?: string;
@@ -19,7 +20,9 @@ declare var require: any;
 @Component({
     selector: 'control-content',
     templateUrl: 'selection.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, SBDescriptionComponent]
 })
 export class MapsSelectionComponent {
     public zoomSettings: object = {

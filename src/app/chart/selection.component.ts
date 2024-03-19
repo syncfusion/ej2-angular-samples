@@ -1,8 +1,10 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ChartComponent, ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ChartComponent, ILoadedEventArgs, ChartTheme, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { SelectionMode, SelectionPattern, HighlightMode } from '@syncfusion/ej2-charts';
 import { ColorPicker, ColorPickerEventArgs } from '@syncfusion/ej2-inputs';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Sample for Selection in chart
  */
@@ -10,7 +12,9 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
     selector: 'control-content',
     templateUrl: 'selection.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 export class SelectionChartComponent {
 

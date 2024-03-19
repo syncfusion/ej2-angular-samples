@@ -3,11 +3,16 @@
  */
 
 import { Component, ViewChild } from '@angular/core';
-import { TooltipComponent, Position } from '@syncfusion/ej2-angular-popups';
+import { TooltipComponent, Position, TooltipModule } from '@syncfusion/ej2-angular-popups';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
-    templateUrl: 'default.html'
+    templateUrl: 'default.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, TooltipModule, ButtonModule, SBDescriptionComponent]
 })
 export class DefaultTooltipComponent {
     @ViewChild('tooltip')

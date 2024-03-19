@@ -1,14 +1,17 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
 import { ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
-import { TreeGridComponent } from '@syncfusion/ej2-angular-treegrid';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
-
+import { TreeGridComponent, TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
+import { DropDownListComponent, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 @Component({
     selector: 'ej2-treegrid-container',
-    templateUrl: 'cellalignment.html'
+    templateUrl: 'cellalignment.html',
+    standalone: true,
+    imports: [DropDownListAllModule, TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class CellAlignmentComponent implements OnInit {
     public data: Object[] = [];

@@ -1,9 +1,11 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ToolbarService, DocumentEditorContainerComponent } from '@syncfusion/ej2-angular-documenteditor';
-import { GridComponent, CommandColumnService, CommandModel, CommandClickEventArgs } from '@syncfusion/ej2-angular-grids';
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { ToolbarService, DocumentEditorContainerComponent,DocumentEditorContainerModule } from '@syncfusion/ej2-angular-documenteditor';
+import { GridComponent, CommandColumnService, CommandModel, CommandClickEventArgs,GridModule  } from '@syncfusion/ej2-angular-grids';
+import { DialogComponent,DialogModule  } from '@syncfusion/ej2-angular-popups';
 import { TitleBar } from './title-bar';
 import { defaultDocument, characterFormat, paragraphFormat, styles, weblayout, WEB_API_ACTION } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
 
 /**
@@ -13,7 +15,9 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'document-list.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService,CommandColumnService]
+    providers: [ToolbarService,CommandColumnService],
+    standalone: true,
+    imports: [DocumentEditorContainerModule, SBActionDescriptionComponent, SBDescriptionComponent,GridModule ,DialogModule ]
 })
 export class DocumentListComponent {
     public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
@@ -98,6 +102,7 @@ export class DocumentListComponent {
             this.container.documentEditor.isReadOnly = false;
             this.container.documentEditor.enableContextMenu = true;
             this.container.showPropertiesPane = true;
+            this.container.documentEditorSettings.showRuler = true;
             document.getElementById('documenteditor-share').style.display ='block';
             this.container.toolbarItems = ['New', 'Open', 'Separator', 'Undo', 'Redo', 'Separator', 'Image', 'Table', 'Hyperlink', 'Bookmark', 'TableOfContents', 'Separator', 'Header', 'Footer', 'PageSetup', 'PageNumber', 'Break', 'InsertFootnote', 'InsertEndnote', 'Separator', 'Find', 'Separator', 'Comments', 'TrackChanges', 'Separator', 'LocalClipboard', 'RestrictEditing', 'Separator', 'FormFields', 'UpdateFields'];
         }

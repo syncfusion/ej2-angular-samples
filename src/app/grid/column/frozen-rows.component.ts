@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { orderDetails } from './data';
-import { FreezeService, ResizeService, GridComponent, SortService } from '@syncfusion/ej2-angular-grids';
+import { FreezeService, ResizeService, GridComponent, SortService, PageService } from '@syncfusion/ej2-angular-grids';
 import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 import { Browser } from '@syncfusion/ej2-base';
 
 @Component({
     selector: 'ej2-grid-frozen',
     templateUrl: 'frozen-rows.html',
-    providers: [FreezeService, ResizeService, SortService]
+    providers: [FreezeService, ResizeService, SortService, PageService]
 })
 export class FrozenRowsComponent implements OnInit {
     @ViewChild('grid')

@@ -1,9 +1,14 @@
 
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DiagramComponent, NodeModel, ConnectorModel } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, NodeModel, ConnectorModel, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { NodeConstraints, SnapConstraints, SnapSettingsModel } from '@syncfusion/ej2-diagrams';
 import { ChangeEventArgs as CheckBoxChangeEventArgs } from '@syncfusion/ej2-buttons';
 import { TooltipModel } from '@syncfusion/ej2-angular-popups';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for tooltip
@@ -13,7 +18,9 @@ import { TooltipModel } from '@syncfusion/ej2-angular-popups';
     selector: 'control-content',
     templateUrl: 'tooltip.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, DropDownListModule, NumericTextBoxModule, CheckBoxModule, SBDescriptionComponent]
 })
 
 export class TooltipDiagramComponent {
@@ -106,7 +113,7 @@ export class TooltipDiagramComponent {
                 tooltip: { content: 'can log?' },
             },
     ];
-   // Initializes diagram connectors
+// Initializes diagram connectors
     public connectors: ConnectorModel[] = [
         { id: 'connector1', sourceID: 'node1', targetID: 'node2' },
         { id: 'connector2', sourceID: 'node2', targetID: 'node3' },

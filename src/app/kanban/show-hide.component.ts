@@ -1,14 +1,18 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import { KanbanComponent, CardSettingsModel } from '@syncfusion/ej2-angular-kanban';
+import { KanbanComponent, CardSettingsModel, KanbanModule } from '@syncfusion/ej2-angular-kanban';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { kanbanData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'show-hide.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ KanbanModule, SBActionDescriptionComponent, SBDescriptionComponent, CheckBoxModule]
 })
 export class ShowHideComponent {
     @ViewChild('kanbanObj') kanbanObj: KanbanComponent;

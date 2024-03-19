@@ -1,14 +1,18 @@
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
-import { EventSettingsModel, MonthService, View, ResizeService, DragAndDropService } from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, MonthService, View, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { extend } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'cell-template.html',
-  styleUrls: ['cells.style.css'],
-  providers: [MonthService, ResizeService, DragAndDropService],
-  encapsulation: ViewEncapsulation.None
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'cell-template.html',
+    styleUrls: ['cells.style.css'],
+    providers: [MonthService, ResizeService, DragAndDropService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class CellTemplateComponent {
   public currentView: View = 'Month';

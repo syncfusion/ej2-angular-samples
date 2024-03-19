@@ -1,8 +1,10 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, IDataSet, VirtualScrollService } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView,PivotViewModule, IDataSet, VirtualScrollService } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { Browser, enableRipple } from '@syncfusion/ej2-base';
-import { ChangeEventArgs, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs, DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -13,7 +15,9 @@ enableRipple(false);
     templateUrl: 'performance.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['performance.css'],
-    providers: [VirtualScrollService]
+    providers: [VirtualScrollService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule]
 })
 export class PerformanceComponent implements OnInit {
     public gridSettings: GridSettings;

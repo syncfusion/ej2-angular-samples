@@ -2,17 +2,22 @@
  * Customization Sample
  */
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SmithchartTheme, ISmithchartLoadEventArgs, Smithchart } from '@syncfusion/ej2-angular-charts';
+import { SmithchartTheme, ISmithchartLoadEventArgs, Smithchart, SmithchartAllModule } from '@syncfusion/ej2-angular-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { Slider, SliderChangeEventArgs } from '@syncfusion/ej2-inputs';
 import { EmitType } from '@syncfusion/ej2-base';
 import {  ChangeEventArgs as CheckBoxChangeEvents} from '@syncfusion/ej2-buttons';
-import { SliderComponent } from '@syncfusion/ej2-angular-inputs';
+import { SliderComponent, SliderModule } from '@syncfusion/ej2-angular-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'custom.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SmithchartAllModule, SliderModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class SmithchartCustomComponent {
     @ViewChild('smithchart')

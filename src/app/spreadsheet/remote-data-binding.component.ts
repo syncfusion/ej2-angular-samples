@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SpreadsheetComponent, SheetModel } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent, SheetModel, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
 import { DataManager, ODataAdaptor } from '@syncfusion/ej2-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Remote Data Binding Spreadsheet Controller
  */
@@ -10,7 +12,9 @@ const SERVICE_URI: string = 'https://services.syncfusion.com/angular/production/
     selector: 'control-content',
     templateUrl: 'remote-data-binding.html',
     styleUrls: ['spreadsheet.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SpreadsheetModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class RemoteDataBindingController {

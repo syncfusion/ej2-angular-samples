@@ -2,12 +2,16 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { SliderModule, SliderComponent } from '@syncfusion/ej2-angular-inputs';
 import { Placement, SliderTooltipEventArgs, SliderTickEventArgs } from '@syncfusion/ej2-inputs';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'tooltip-customization.html',
     styleUrls: ['tooltip-customization.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SliderModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class TooltipCustomizationComponent {

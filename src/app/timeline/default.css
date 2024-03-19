@@ -1,0 +1,26 @@
+.default-timeline-section {
+    height: 350px;
+    width: 520px;
+    margin: 30px auto 30px calc(50% - 350px);
+}
+
+/* Customized dot color */
+.default-timeline-section .state-progress {
+    outline-color: #007bff;
+    background-color: #007bff;
+    --dot-size: 25px;
+}
+
+.default-timeline-section .state-success {
+    outline-color: #28a745;
+    background-color: #28a745;
+}
+
+/* Customized connector color */
+.default-timeline-section .completed.e-connector::after {
+    border-color:#28a745;
+}
+
+.default-timeline-section .intermediate.e-connector::after {
+    border-style: dashed;
+}

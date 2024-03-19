@@ -1,18 +1,19 @@
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
 import { resourceConferenceData } from './data';
 import { extend } from '@syncfusion/ej2-base';
-import {
-  EventSettingsModel, GroupModel, ResourceDetails, View, DayService,
-  MonthService, WorkWeekService, TimelineViewsService, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, GroupModel, ResourceDetails, View, DayService, MonthService, WorkWeekService, TimelineViewsService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'group-editing.html',
-  styleUrls: ['group-editing.style.css'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [DayService, MonthService, WorkWeekService, TimelineViewsService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'group-editing.html',
+    styleUrls: ['group-editing.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    providers: [DayService, MonthService, WorkWeekService, TimelineViewsService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class GroupEditingComponent {

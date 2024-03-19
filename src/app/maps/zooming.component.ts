@@ -2,18 +2,20 @@
  * Maps zooming sample
  */
 import { Component, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
-import { MapsTheme, Maps, Zoom, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, Maps, Zoom, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
 import { Slider, SliderChangeEventArgs } from '@syncfusion/ej2-inputs';
-import { EmitType } from '@syncfusion/ej2-base';
-import { SliderComponent } from '@syncfusion/ej2-angular-inputs';
-import { MapAjax } from '@syncfusion/ej2-maps';
+import { SliderComponent, SliderModule } from '@syncfusion/ej2-angular-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Maps.Inject(Zoom);
 declare var require: any;
-import worldMap from './world-map.json';
+let worldMap: object[] = require('./world-map.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'zooming.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, SliderModule, SBDescriptionComponent]
 })
 export class MapsZoomingComponent {
     @ViewChild('maps')

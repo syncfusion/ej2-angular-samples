@@ -1,10 +1,15 @@
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     styleUrls: ['textboxes-style.css'],
     templateUrl: 'default.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, TextBoxModule, SBDescriptionComponent]
 })
 export class DefaultTextboxController {
     constructor(@Inject('sourceFiles') private sourceFiles:any) {

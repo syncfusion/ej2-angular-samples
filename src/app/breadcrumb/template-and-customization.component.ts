@@ -1,12 +1,19 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { Breadcrumb, BreadcrumbBeforeItemRenderEventArgs } from '@syncfusion/ej2-navigations';
 import { getComponent } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NgIf } from '@angular/common';
+import { BreadcrumbModule } from '@syncfusion/ej2-angular-navigations';
+import { ButtonModule, ChipListModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'template-and-customization.html',
     styleUrls: ['template-and-customization.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ButtonModule, BreadcrumbModule, ChipListModule, NgIf, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class TemplateAndCustomizationController {

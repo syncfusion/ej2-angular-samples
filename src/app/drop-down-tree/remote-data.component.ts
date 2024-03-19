@@ -1,5 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Query, DataManager, ODataV4Adaptor } from '@syncfusion/ej2-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { DropDownTreeModule } from '@syncfusion/ej2-angular-dropdowns';
 /**
  *Dropdown Tree Remote data sample
  */
@@ -7,7 +10,9 @@ import { Query, DataManager, ODataV4Adaptor } from '@syncfusion/ej2-data';
     selector: 'control-content',
     templateUrl: 'remote-data.html',
     styleUrls: ['remote-data.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [DropDownTreeModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class RemoteDropDownTreeComponent {
     // Use data manager to get dropdown tree data from remote source

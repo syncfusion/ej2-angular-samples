@@ -2,18 +2,21 @@
  * Multi-layer map sample
  */
 import { Component, ViewEncapsulation, Inject} from '@angular/core';
-import { MapsTheme, MapsTooltip, DataLabel, Maps, Marker, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
-import { MapAjax } from '@syncfusion/ej2-maps'; 
+import { MapsTheme, MapsTooltip, DataLabel, Maps, Marker, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 Maps.Inject(Marker, MapsTooltip, DataLabel);
 declare var require: any;
-import usMap from './usa.json';
-import texas from './texas.json';
-import california from './california.json';
+let usMap: object[] = require('./usa.json');
+let texas: object[] = require('./texas.json');
+let california: object[] = require('./california.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'multilayer.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, SBDescriptionComponent]
 })
 export class MapsMultilayerComponent {
     public load = (args: ILoadEventArgs) => {

@@ -1,15 +1,19 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { TreeGridComponent } from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent, TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
 import { sampleData } from './jsontreegriddata';
 import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { DropDownListComponent , ChangeEventArgs} from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent , DropDownListAllModule, ChangeEventArgs} from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'gridlines.html',
     styleUrls: ['gridlines.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListAllModule]
 })
 export class GridLinesComponent implements OnInit {
     public data: Object[];

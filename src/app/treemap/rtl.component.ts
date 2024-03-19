@@ -1,10 +1,12 @@
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { TreeMap, TreeMapTooltip, IDrillStartEventArgs, ITreeMapTooltipRenderEventArgs } from '@syncfusion/ej2-angular-treemap';
+import { TreeMap, TreeMapTooltip, IDrillStartEventArgs, ITreeMapTooltipRenderEventArgs, TreeMapModule } from '@syncfusion/ej2-angular-treemap';
 import { RTLData } from './rtl-data';
 import { ILoadEventArgs, TreeMapTheme, Alignment, RenderingMode } from '@syncfusion/ej2-angular-treemap';
 import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { EmitType } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 TreeMap.Inject(TreeMapTooltip);
 
 /**
@@ -13,7 +15,9 @@ TreeMap.Inject(TreeMapTooltip);
 @Component({
     selector: 'control-content',
     templateUrl: 'rtl.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class TreemapRTLComponent {
     @ViewChild('treemap')

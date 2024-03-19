@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { stackedData } from './jsontreegriddata';
+import { TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
-    templateUrl: 'stackedheader.html'
+    templateUrl: 'stackedheader.html',
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class StackedHeaderComponent implements OnInit {
     public data: Object[] = [];

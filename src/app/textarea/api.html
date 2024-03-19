@@ -1,0 +1,77 @@
+<div class="col-lg-8 control-section api">
+    <div class="content-wrapper">
+        <div class="api-row">
+            <ejs-textarea id="api" #default floatLabelType="Auto" placeholder="Enter your comments"></ejs-textarea>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4 property-section">
+    <div class="property-panel-header">Properties</div>
+    <table id="property" class="api-property">
+
+        <tr>
+            <td class="left-side"> Rows </td>
+            <td>
+                <ejs-numerictextbox id="rows" #rows format="##" value="2" min="1" max="10" (change)="rowHandler($event)">
+                </ejs-numerictextbox>
+            </td>
+        </tr>
+        <tr>
+            <td class="left-side"> Columns </td>
+            <td>
+                <ejs-numerictextbox id="cols" #cols format="##" value="20" min="5" max="40" (change)="columnHandler($event)">
+                </ejs-numerictextbox>
+            </td>
+        </tr>
+        <tr>
+            <td class="left-side">Enable</td>
+            <td>
+                <ejs-checkbox id="enabled" #enabled (change)="enabledHandler($event)" cssClass="api" [checked]="true"></ejs-checkbox>
+            </td>
+        </tr>
+        <tr>
+            <td class="left-side">Read only</td>
+            <td>
+                <ejs-checkbox id="readonly" #readonly (change)="readonlyHandler($event)" cssClass="api" [checked]="false"></ejs-checkbox>
+            </td>
+        </tr>
+        <tr>
+            <td class="left-side"> MaxLength </td>
+            <td>
+                <ejs-numerictextbox id="maxlength" #maxlength format="##" value="-1" (change)="maxLengthHandler($event)"></ejs-numerictextbox>
+            </td>
+        </tr>
+        <tr>
+            <td class="left-side"> Value </td>
+            <td>
+                <ejs-textbox id="value" #value placeholder="Enter a value" (change)="valueHandler($event)"></ejs-textbox>
+            </td>
+        </tr>
+        <tr>
+            <td class="left-side">Show clear icon</td>
+            <td>
+                <ejs-checkbox id="clearicon" #clearicon (change)="clearIconHandler($event)" cssClass="api" [checked]="false"></ejs-checkbox>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="action-description">
+    <p>
+        This example demonstrates the api functionalities of the textarea control. You can customize the appearance and
+        behaviour of textarea component by choosing the corresponding option from the property panel.
+    </p>
+</div>
+<div id="description">
+    <p>The TextArea has the options to customize the appearance and behaviour of the component dynamically by updating
+        the following properties:</p>
+    <ul>
+        <li>Change the number of rows and columns of textarea by updating "Rows" and "Columns" options.</li>
+        <li>To make the textarea read-only, check the "read-only" option.</li>
+        <li>Disable the textarea by unchecking the "enabled" option.</li>
+        <li>Set the maximum length of characters that can be entered in textarea by customizing the "MaxLength" option.
+        </li>
+        <li>Update the value of textarea by entering text in "Value" option.</li>
+        <li>To make the clear button visible, check the "Show clear icon" option..</li>
+    </ul>
+</div>

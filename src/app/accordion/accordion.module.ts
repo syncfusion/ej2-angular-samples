@@ -9,7 +9,7 @@ import { IconAccordionComponent } from './icon.component';
 import { KeyboardAccordionComponent } from './keyboard-interaction.component';
 
 
-import { SharedModule } from '../common/shared.module';
+
 export const accordionAppRoutes: Object[] = [
     { path: ':theme/accordion/default', component: DefaultAccordionComponent, name: 'Default Functionalities', description: 'The sample demonstrates that default functionalities of the Accordion component which works by expand and collapse action in Angular platform.', category: 'Accordion' },
     { path: ':theme/accordion/templates', component: TemplatesAccordionComponent, name: 'Templates', description: 'This sample demonstrates the template functionalities of the Accordion with an example of loading an Accordion content using ngTemplate in Angular platform.', category: 'Accordion' },
@@ -17,17 +17,5 @@ export const accordionAppRoutes: Object[] = [
     { path: ':theme/accordion/keyboard-interaction', component: KeyboardAccordionComponent, name: 'Keyboard Interaction', description: 'The sample showcases the keyboard shortcuts applicable on Accordion component in Angular platform.', category: 'Accordion' }
 ];
 
-export const accordionRouter: ModuleWithProviders<any> = RouterModule.forChild(accordionAppRoutes);
+export const AccordionSampleModule: ModuleWithProviders<any> = RouterModule.forChild(accordionAppRoutes);
 
-@NgModule({
-    imports: [accordionRouter, AccordionModule, SharedModule],
-    declarations: [
-        DefaultAccordionComponent,
-        TemplatesAccordionComponent,
-        IconAccordionComponent,
-        KeyboardAccordionComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class AccordionSampleModule {
-}

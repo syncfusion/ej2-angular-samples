@@ -2,10 +2,14 @@
  * DropDownList Default functionality Sample
  */
 import { Component, ViewChild } from '@angular/core';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
-    templateUrl: 'default.html'
+    templateUrl: 'default.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DropDownListModule, SBDescriptionComponent]
 })
 export class DefaultDropDownListComponent {
     @ViewChild('sample')

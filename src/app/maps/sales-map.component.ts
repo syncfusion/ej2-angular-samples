@@ -2,17 +2,20 @@
  * Zoom Marker Sample
  */
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { MapsTheme, Maps, Marker, MapsTooltip, ILoadEventArgs, Zoom } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, Maps, Marker, MapsTooltip, ILoadEventArgs, Zoom, MapsModule } from '@syncfusion/ej2-angular-maps';
 import { salesMap } from './marker-location';
-import { EmitType } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Maps.Inject(Marker, MapsTooltip, Zoom);
 declare var require: any;
 let worlMap: object[] = require('./world-map.json');
 let population: object[] = require('./sales-map.json');
 @Component({
-  selector: 'control-content',
-  templateUrl: 'sales-map.html',
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'sales-map.html',
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, SBDescriptionComponent]
 })
 export class MapsSalesMapComponent {
   @ViewChild('maps')

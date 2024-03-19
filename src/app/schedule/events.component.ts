@@ -1,16 +1,16 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { scheduleData } from './data';
 import { extend } from '@syncfusion/ej2-base';
-import {
-  EventSettingsModel, EventRenderedArgs, View, DayService, WeekService, WorkWeekService,
-  MonthService, AgendaService, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, EventRenderedArgs, View, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'events.html',
-  styles: [`
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'events.html',
+    styles: [`
     #EventLog b {
         color: #388e3c;
     }
@@ -18,8 +18,10 @@ import {
         margin: 1px 10px 1px 0px;
         border-top: 1px solid #eee;
     }`],
-  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService],
-  encapsulation: ViewEncapsulation.None
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ScheduleModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class EventsComponent {
   public data: Record<string, any>[] = [] = extend([], scheduleData, null, true) as Record<string, any>[];

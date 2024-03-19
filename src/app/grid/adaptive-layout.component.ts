@@ -1,15 +1,22 @@
 import { Component, OnInit, ViewChild, Inject, ViewEncapsulation } from '@angular/core';
 import { data } from './data';
-import { Browser } from '@syncfusion/ej2-base';
-import { PageService, FilterService, SortService, GroupService, GroupSettingsModel, ResizeService, AggregateService, EditService, GridComponent, ExcelExportService, PdfExportService, ColumnChooserService, ColumnMenuService } from '@syncfusion/ej2-angular-grids';
+import { Browser, enableRipple } from '@syncfusion/ej2-base';
+import { PageService, FilterService, SortService, GroupService, ToolbarService, GroupSettingsModel, ResizeService, AggregateService, EditService, GridComponent, ExcelExportService, PdfExportService, ColumnChooserService, ColumnMenuService, GridModule } from '@syncfusion/ej2-angular-grids';
 import { ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { NgIf } from '@angular/common';
+enableRipple(false);
 
 @Component({
     selector: 'ej2-adaptive',
     templateUrl: 'adaptive-layout.html',
     styleUrls: ['adaptive-layout.style.css'],
-    providers: [PageService, FilterService, GroupService, SortService, ResizeService, AggregateService, EditService, ExcelExportService, PdfExportService, ColumnChooserService, ColumnMenuService],
-    encapsulation: ViewEncapsulation.None
+    providers: [PageService, FilterService, GroupService, ToolbarService, SortService, ResizeService, AggregateService, EditService, ExcelExportService, PdfExportService, ColumnChooserService, ColumnMenuService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [NgIf, GridModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class AdaptiveLayoutComponent implements OnInit {
     constructor(@Inject('sourceFiles') private sourceFiles: any) {

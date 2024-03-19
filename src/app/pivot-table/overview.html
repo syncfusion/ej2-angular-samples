@@ -43,10 +43,13 @@ a detailed or abstract view and display it as a grid and chart.</p>
         maxNodeLimitInMemberEditor='50' enableVirtualization='true' allowDeferLayoutUpdate='true'
         allowDrillThrough='true' showGroupingBar='true' allowGrouping='true' enableValueSorting='true' width='100%'
         [chartSettings]='chartSettings' [displayOption]='displayOption' height='600' [gridSettings]='gridSettings'
-        [toolbar]='toolbarOptions' [cellTemplate]='cellTemplate' (saveReport)='saveReport($event)'
+        [toolbar]='toolbarOptions' (saveReport)='saveReport($event)'
         (loadReport)='loadReport($event)' (fetchReport)='fetchReport($event)' (renameReport)='renameReport($event)'
         (removeReport)='removeReport($event)' (newReport)='newReport()' (toolbarRender)='beforeToolbarRender($event)'
-        (enginePopulated)='enginePopulated()' (chartSeriesCreated)='chartSeriesCreated()'>
+        (enginePopulated)='enginePopulated()' (chartSeriesCreated)='chartSeriesCreated()' enableFieldSearching='true'>
+        <ng-template #cellTemplate let-data>
+          <span class="tempwrap"></span>
+        </ng-template>
       </ejs-pivotview>
     </div>
     <div class="urllink">

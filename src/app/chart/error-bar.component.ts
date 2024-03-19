@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, ChartComponent, IPointRenderEventArgs } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartComponent, IPointRenderEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { ChartTheme } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Sample for Error bar 
  */
@@ -9,7 +11,9 @@ import { Browser } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'error-bar.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 export class ErrorBarChartComponent {
 

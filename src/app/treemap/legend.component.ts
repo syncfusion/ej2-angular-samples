@@ -5,16 +5,20 @@
  * Default sample
  */
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { TreeMap, TreeMapTooltip, TreeMapLegend, LegendMode, LegendPosition } from '@syncfusion/ej2-angular-treemap';
+import { TreeMap, TreeMapTooltip, TreeMapLegend, LegendMode, LegendPosition, TreeMapModule } from '@syncfusion/ej2-angular-treemap';
 import { electionData } from './election-data';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { ILoadEventArgs, TreeMapTheme, IResizeEventArgs } from '@syncfusion/ej2-angular-treemap';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 TreeMap.Inject(TreeMapTooltip, TreeMapLegend);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'legend.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class TreemapLegendComponent {
     @ViewChild('treemap')

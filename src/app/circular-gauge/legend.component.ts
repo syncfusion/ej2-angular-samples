@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme, GaugeShape } from '@syncfusion/ej2-angular-circulargauge';
+import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme, GaugeShape, CircularGaugeModule, LegendService } from '@syncfusion/ej2-angular-circulargauge';
 import { LegendPosition, Alignment } from '@syncfusion/ej2-circulargauge';
 import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
@@ -11,7 +11,10 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 @Component({
     selector: 'control-content',
     templateUrl: 'legend.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [CircularGaugeModule],
+    providers: [LegendService]
 })
 
 export class LegendComponent {

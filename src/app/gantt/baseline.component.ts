@@ -1,10 +1,15 @@
 import { Component, OnInit} from '@angular/core';
 import { baselineData } from './data';
 import { Internationalization } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 let instance: Internationalization = new Internationalization();
 @Component({
     selector: 'ej2-ganttbaseline',
-    templateUrl: 'baseline.html'
+    templateUrl: 'baseline.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
 })
 export class GanttBaselineComponent implements OnInit {
     public data: Object[];

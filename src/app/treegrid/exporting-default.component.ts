@@ -1,13 +1,17 @@
 import { Component, OnInit , ViewChild} from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { TreeGridComponent , TreeGridExcelExportProperties, TreeGridPdfExportProperties, ToolbarService, PageService, ExcelExportService, PdfExportService} from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent , TreeGridModule, TreeGridExcelExportProperties, TreeGridPdfExportProperties, ToolbarService, PageService, ExcelExportService, PdfExportService} from '@syncfusion/ej2-angular-treegrid';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
 import { DialogUtility } from '@syncfusion/ej2-popups';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'exporting-default.html',
-    providers: [ ToolbarService, PageService, ExcelExportService, PdfExportService]
+    providers: [ ToolbarService, PageService, ExcelExportService, PdfExportService],
+    standalone: true,
+    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent, CheckBoxModule]
 })
 export class DefaultExportComponent implements OnInit {
     public data: Object[] = [];

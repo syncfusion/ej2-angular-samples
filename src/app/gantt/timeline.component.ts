@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
-import { ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
-import { ChangedEventArgs, NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs, CheckBoxAllModule } from '@syncfusion/ej2-angular-buttons';
+import { ChangedEventArgs, NumericTextBoxAllModule, NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { DropDownListComponent, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { projectData } from './data';
-import { GanttComponent, TimelineViewMode } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, TimelineViewMode, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-gantttimeline',
-    templateUrl: 'timeline.html'
+    templateUrl: 'timeline.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, NumericTextBoxAllModule, CheckBoxAllModule, DropDownListAllModule, SBDescriptionComponent]
 })
 export class GanttTimelineComponent implements OnInit {
     @ViewChild('gantt')
@@ -72,6 +76,7 @@ export class GanttTimelineComponent implements OnInit {
     public tooltipSettings: object;
     public projectStartDate: Date;
     public projectEndDate: Date;
+    public columns: object[];
     public ngOnInit(): void {
         this.data = projectData;
         this.taskSettings = {
@@ -97,8 +102,17 @@ export class GanttTimelineComponent implements OnInit {
         this.labelSettings = {
             rightLabel: 'taskName',
         };
+        this.columns = [
+            { field: 'taskID', visible: false },
+            { field: 'taskName', headerText: 'Name', width: 250 },
+            { field: 'StartDate', headerText: 'Start Date', type: 'date', format: 'yMd' },
+            { field: 'endDate', headerText: 'End Date', type: 'date', format: 'yMd' },
+            { field: 'duration', headerText: 'Duration' },
+            { field: 'predecessor', headerText: 'Dependency' },
+            { field: 'progress', headerText: 'Progress' }
+        ];
         this.splitterSettings = {
-            columnIndex: 0
+            columnIndex: 1
         };
         this.projectStartDate = new Date('02/03/2019'),
         this.projectEndDate = new Date('03/23/2019')
@@ -213,7 +227,14 @@ export class GanttTimelineComponent implements OnInit {
             unitWidth = 25;
         }
         this.unitWidthNumericObject.value = unitWidth;
-    }  
+    }
+    public onMultitaskbarChange(args: ChangeEventArgs): void {
+        if (args.checked) {
+            this.ganttObj.enableMultiTaskbar = true;
+        } else {
+            this.ganttObj.enableMultiTaskbar = false;
+        }
+    }
 }
 
 

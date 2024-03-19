@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, CellSelectedObject, PivotCellSelectedEventArgs, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions,PivotViewModule, PivotView, CellSelectedObject, PivotCellSelectedEventArgs, IDataSet } from '@syncfusion/ej2-angular-pivotview';
 import { HeatMap, Adaptor, ILoadedEventArgs, HeatMapTheme, Legend, Tooltip } from '@syncfusion/ej2-heatmap';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -14,7 +16,9 @@ let data: IDataSet[] = require('./Pivot_Data.json');
     selector: 'ej2-pivotview-container',
     styleUrls: ['external-binding.css'],
     encapsulation: ViewEncapsulation.None,
-    templateUrl: 'external-binding.html'
+    templateUrl: 'external-binding.html',
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class IntegrationComponent implements OnInit {
@@ -115,7 +119,7 @@ export class IntegrationComponent implements OnInit {
     }
 
     onDataBound(): void {
-        if (this.onInit) {
+        if (this.onInit && this.pivotObj.grid.getRows().length > 1) {
             this.pivotObj.grid.selectionModule.selectCellsByRange({ cellIndex: 1, rowIndex: 1 }, { cellIndex: 3, rowIndex: 4 });
         }
     }

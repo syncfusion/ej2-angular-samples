@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
-import { TreeGridComponent , EditService , ToolbarService , PageService, RowDDService } from '@syncfusion/ej2-angular-treegrid';
+import { ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { TreeGridComponent , TreeGridModule, EditService , ToolbarService , PageService, RowDDService } from '@syncfusion/ej2-angular-treegrid';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'inlineediting.html',
-    providers: [EditService , ToolbarService , PageService, RowDDService]
+    providers: [EditService , ToolbarService , PageService, RowDDService],
+    standalone: true,
+    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule]
 })
 export class InlineEditing implements OnInit {
     public data: Object[] = [];

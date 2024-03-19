@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { TimePickerComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-calendars';
-import { ChangeEventArgs as checkboxChange } from '@syncfusion/ej2-angular-buttons';
+import { TimePickerComponent, ChangeEventArgs, TimePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { ChangeEventArgs as checkboxChange, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 
 /**
 
@@ -10,7 +10,9 @@ import { ChangeEventArgs as checkboxChange } from '@syncfusion/ej2-angular-butto
     selector: 'control-content',
     styleUrls: ['range-style.css'],
     templateUrl: 'time-range.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TimePickerModule, CheckBoxModule]
 })
 export class RangeTimePickerComponent {
     @ViewChild('startTime')

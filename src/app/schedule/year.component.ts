@@ -1,14 +1,15 @@
 import { Component, ViewChild } from '@angular/core';
-import {
-  ScheduleComponent, EventSettingsModel, EventRenderedArgs, YearService,
-  TimelineYearService, GroupModel, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, EventSettingsModel, EventRenderedArgs, YearService, TimelineYearService, GroupModel, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'year.html',
-  styles: [`
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'year.html',
+    styles: [`
     .year-view.e-schedule .e-timeline-year-view .e-resource-column-table,
     .year-view.e-schedule .e-timeline-year-view .e-resource-left-td {
       width: 120px;
@@ -17,7 +18,9 @@ import {
     .col-lg-2.property-section .property-panel-table td {
         padding-bottom: 1rem;
     }`],
-  providers: [YearService, TimelineYearService, ResizeService, DragAndDropService]
+    providers: [YearService, TimelineYearService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, DropDownListModule, NumericTextBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class YearComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

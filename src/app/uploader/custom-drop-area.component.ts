@@ -1,6 +1,8 @@
 import { Component, ViewChild, AfterViewInit, ViewEncapsulation, OnInit, Inject } from '@angular/core';
 import { EmitType, detach } from '@syncfusion/ej2-base';
-import { UploaderComponent, RemovingEventArgs } from '@syncfusion/ej2-angular-inputs';
+import { UploaderComponent, RemovingEventArgs, UploaderModule } from '@syncfusion/ej2-angular-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Default Uploader Default Component
@@ -9,7 +11,9 @@ import { UploaderComponent, RemovingEventArgs } from '@syncfusion/ej2-angular-in
     selector: 'control_wrapper',
     templateUrl: 'custom-drop-area.html',
     styleUrls: ['custom-drop-area.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [UploaderModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class CustomDropAreaComponent implements OnInit {
     @ViewChild('defaultupload')

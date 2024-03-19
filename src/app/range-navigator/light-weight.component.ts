@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { ChartTheme, IChangedEventArgs, RangeTooltip, IRangeLoadedEventArgs, DateTime } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { GetDateTimeData } from './data-service';
+import { RangeNavigatorModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 
 /**
  *  Sample for range navigator without series
@@ -13,7 +14,9 @@ selectedTheme = selectedTheme ? selectedTheme : 'Material';
 @Component({
     selector: 'control-content',
     templateUrl: 'light-weight.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [RangeNavigatorModule, ChartAllModule]
 })
 
 export class LightWeightComponent {

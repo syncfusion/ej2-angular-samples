@@ -1,10 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IDataOptions, PagerSettings, PageSettings, PivotView, PagerPosition, PagerService } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PagerSettings, PageSettings,PivotViewModule, PivotView, PagerPosition, PagerService } from '@syncfusion/ej2-angular-pivotview';
 import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
-import { ChangeEventArgs, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { ChangeEventArgs as CheckChange, CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { ChangeEventArgs, DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs as CheckChange, CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -15,7 +17,9 @@ enableRipple(false);
     selector: 'ej2-pivotview-container',
     styleUrls: ['paging.css'],
     templateUrl: 'paging.html',
-    providers: [PagerService]
+    providers: [PagerService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule, CheckBoxModule]
 })
 
 export class PagingComponent implements OnInit {

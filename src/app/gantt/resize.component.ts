@@ -1,9 +1,14 @@
 import { Component, OnInit} from '@angular/core';
 import { editingData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-ganttresize',
-    templateUrl: 'resize.html'
+    templateUrl: 'resize.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
 })
 
 export class ResizeComponent implements OnInit {

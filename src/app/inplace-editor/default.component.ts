@@ -1,8 +1,11 @@
 import { Component, ViewEncapsulation, ViewChild, OnInit } from '@angular/core';
-import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { InPlaceEditorComponent, RenderMode, EditableType } from '@syncfusion/ej2-angular-inplace-editor';
+import { DropDownListComponent, ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { InPlaceEditorComponent, RenderMode, EditableType, InPlaceEditorModule } from '@syncfusion/ej2-angular-inplace-editor';
 import { NumericTextBoxModel, MaskedTextBoxModel, TextBoxModel } from '@syncfusion/ej2-inputs';
 import { PopupSettingsModel } from '@syncfusion/ej2-inplace-editor/src/inplace-editor/base/models-model';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * In-place Editor default sample
@@ -11,7 +14,9 @@ import { PopupSettingsModel } from '@syncfusion/ej2-inplace-editor/src/inplace-e
     selector: 'control-content',
     templateUrl: 'default.html',
     styleUrls: ['default.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [InPlaceEditorModule, DropDownListModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DefaultInplaceEditorComponent implements OnInit {
 

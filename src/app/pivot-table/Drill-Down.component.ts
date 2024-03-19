@@ -1,9 +1,11 @@
 import { Component, OnInit,ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { ChangeEventArgs, MultiSelect, SelectEventArgs, RemoveEventArgs, PopupEventArgs, CheckBoxSelection, DropDownListComponent, MultiSelectComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { IDataOptions, PivotView, IDataSet , PivotViewModule} from '@syncfusion/ej2-angular-pivotview';
+import { ChangeEventArgs, MultiSelect, MultiSelectModule, DropDownListModule, SelectEventArgs, RemoveEventArgs, PopupEventArgs, CheckBoxSelection, DropDownListComponent, MultiSelectComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 MultiSelect.Inject(CheckBoxSelection);
 
@@ -17,7 +19,9 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     selector: 'ej2-pivotview-container',
     templateUrl: 'Drill-Down.html',
     encapsulation: ViewEncapsulation.None,
-    styleUrls: ['Drill-Down.css']
+    styleUrls: ['Drill-Down.css'],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, MultiSelectModule, DropDownListModule, ButtonModule]
 })
 
 export class DrillDownComponent implements OnInit {

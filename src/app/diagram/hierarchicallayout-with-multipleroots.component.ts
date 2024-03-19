@@ -3,7 +3,7 @@
  */
 
  import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
- import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+ import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
  import {
    Diagram,
    NodeModel,
@@ -20,6 +20,8 @@
  import { ChangeEventArgs as CheckBoxChangeEventArgs } from '@syncfusion/ej2-buttons';
  import { ChangeEventArgs as NumericChangeEventArgs } from '@syncfusion/ej2-inputs';
  import { DataManager, Query } from '@syncfusion/ej2-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
  Diagram.Inject(DataBinding, HierarchicalTree, LayoutAnimation);
  
  export interface EmployeeInfo {
@@ -27,11 +29,17 @@
  }
  
  @Component({
-   selector: 'control-content',
-   templateUrl: 'hierarchicallayout-with-multipleroots.html',
-   styleUrls: ['hierarchicallayout-with-multipleroots.component.css'],
-   encapsulation: ViewEncapsulation.None,
- })
+    selector: 'control-content',
+    templateUrl: 'hierarchicallayout-with-multipleroots.html',
+    styleUrls: ['hierarchicallayout-with-multipleroots.component.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [
+        SBActionDescriptionComponent,
+        DiagramModule,
+        SBDescriptionComponent,
+    ],
+})
  export class HierarchicalLayoutWithMultipleRootComponent {
    @ViewChild('diagram')
    public diagram: DiagramComponent;
@@ -81,7 +89,7 @@
    public snapSettings: SnapSettingsModel = {
      constraints: SnapConstraints.None,
    };
- // Layout
+  // Layout
    public layout: Object = {
      type: 'HierarchicalTree',
      verticalSpacing: 30, horizontalSpacing: 40,

@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { formatData } from './jsontreegriddata';
-import { TreeGridComponent } from '@syncfusion/ej2-angular-treegrid';
-import { DropDownListComponent , ChangeEventArgs} from '@syncfusion/ej2-angular-dropdowns';
+import { TreeGridComponent, TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
+import { DropDownListComponent , ChangeEventArgs, DropDownListAllModule} from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 @Component({
     selector: 'ej2-treegrid-container',
-    templateUrl: 'columnformatting.html'
+    templateUrl: 'columnformatting.html',
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListAllModule]
 })
 export class ColumnFormattingComponent implements OnInit {
     public data: Object[] = [];

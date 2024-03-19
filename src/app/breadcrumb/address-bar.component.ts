@@ -1,15 +1,21 @@
 import { ChangeDetectionStrategy, Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { BreadcrumbComponent } from '@syncfusion/ej2-angular-navigations';
+import { BreadcrumbComponent, BreadcrumbModule, MenuModule } from '@syncfusion/ej2-angular-navigations';
 import { MenuItemModel, BreadcrumbItemModel, MenuEventArgs, BreadcrumbBeforeItemRenderEventArgs, Menu, Breadcrumb } from '@syncfusion/ej2-navigations';
 import { getComponent } from '@syncfusion/ej2-base';
 import { Button } from '@syncfusion/ej2-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NgIf } from '@angular/common';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'address-bar.html',
     styleUrls: ['address-bar.css'],
     encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [ButtonModule, BreadcrumbModule, NgIf, MenuModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class AddressBarController {

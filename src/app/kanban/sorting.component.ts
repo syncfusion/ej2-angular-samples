@@ -1,13 +1,20 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import { KanbanComponent, CardSettingsModel, SortDirection, SortOrderBy } from '@syncfusion/ej2-angular-kanban';
+import { KanbanComponent, CardSettingsModel, SortDirection, SortOrderBy, KanbanModule } from '@syncfusion/ej2-angular-kanban';
 import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import { kanbanData } from './data';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { NgClass } from '@angular/common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'sorting.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ KanbanModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule, NgClass, ButtonModule]
 })
 export class SortingComponent {
     @ViewChild('kanbanObj') kanbanObj: KanbanComponent;

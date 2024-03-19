@@ -5,15 +5,18 @@
 //tslint:disable
 // custom code end
 import { Component, ViewEncapsulation } from '@angular/core';
-import { MapsTheme, MapsTooltip, DataLabel, Maps, Marker, ILoadEventArgs, NavigationLine, Annotations } from '@syncfusion/ej2-angular-maps';
-import { MapAjax } from '@syncfusion/ej2-maps'; 
+import { MapsTheme, MapsTooltip, DataLabel, Maps, Marker, ILoadEventArgs, NavigationLine, Annotations, MapsModule } from '@syncfusion/ej2-angular-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 Maps.Inject(Marker, MapsTooltip, DataLabel, NavigationLine, Annotations);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'osm-with-navigation-lines.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [MapsModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class MapsOsmWithNavigationComponent {
     public load = (args: ILoadEventArgs) => {
@@ -44,7 +47,7 @@ export class MapsOsmWithNavigationComponent {
                 markerSettings: [
                     {
                         visible: true,
-                        template: '<div><img src="./assets/maps/images/group.svg" style="height:15px;width:15px;"></img></div>',
+                        template: '<div><img src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/group.svg" style="height:15px;width:15px;"></img></div>',
                         dataSource: [{
                                 name: 'Mexico City',
                                 latitude: 23.6445,
@@ -57,7 +60,7 @@ export class MapsOsmWithNavigationComponent {
                     },
                     {
                         visible: true,
-                        template: '<div><img src="./assets/maps/images/ballon.png" style="height:30px;width:20px;"></img></div>',
+                        template: '<div><img src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/ballon.png" style="height:30px;width:20px;"></img></div>',
                         dataSource: [{
                                 name: 'Mexico City',
                                 latitude: 24.2005,
@@ -79,7 +82,7 @@ export class MapsOsmWithNavigationComponent {
                     },
                     {
                         visible: true,
-                        template: '<div><img src="./assets/maps/images/oval.svg" style="height:15px;width:15px;"></img></div>',
+                        template: '<div><img src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/oval.svg" style="height:15px;width:15px;"></img></div>',
                         dataSource: [{
                                 name: 'Los Angeles',
                                 latitude: 34.0522,
@@ -102,7 +105,7 @@ export class MapsOsmWithNavigationComponent {
                     },
                     {
                         visible: true,
-                        template: '<div><img src="./assets/maps/images/map-tooltip.svg" style="height:50px;width:100px;"></img></div>',
+                        template: '<div><img src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/map-tooltip.svg" style="height:50px;width:100px;"></img></div>',
                         dataSource: [{
                                 latitude: 28.5,
                                 longitude: -110.400

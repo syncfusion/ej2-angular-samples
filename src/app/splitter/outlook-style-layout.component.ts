@@ -1,6 +1,14 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorComponent, RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { FieldsSettingsModel } from '@syncfusion/ej2-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
+import { TextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
+import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
+import { NgIf } from '@angular/common';
+import { TreeViewAllModule } from '@syncfusion/ej2-angular-navigations';
+import { SplitterAllModule } from '@syncfusion/ej2-angular-layouts';
 /**
  * Splitter outlook layout style
  */
@@ -8,7 +16,9 @@ import { FieldsSettingsModel } from '@syncfusion/ej2-navigations';
     selector: 'control-content',
     templateUrl: 'outlook-style-layout.html',
     styleUrls: ['outlook-style-layout.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SplitterAllModule, TreeViewAllModule, NgIf, ListViewAllModule, TextBoxAllModule, RichTextEditorAllModule, ButtonAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class OutlookSplitterComponent {
 

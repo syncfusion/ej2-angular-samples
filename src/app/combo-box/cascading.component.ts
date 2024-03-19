@@ -3,12 +3,16 @@
  */
 import { Component, ViewChild } from '@angular/core';
 import { Query } from '@syncfusion/ej2-data';
-import { ComboBoxComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { ComboBoxComponent, ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'cascading.html',
-    styleUrls: ['combo-box.css']
+    styleUrls: ['combo-box.css'],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ComboBoxModule, SBDescriptionComponent]
 })
 
 export class CascadingComboBoxComponent {
@@ -79,7 +83,7 @@ export class CascadingComboBoxComponent {
         } else {
             this.stateObj.enabled = true;
             // query the data source based on country ComboBox selected value
-            let tempQuery: Query = new Query().where('CountryId', 'equal', this.countryObj.value);
+            let tempQuery: Query = new Query().where('CountryId', 'equal', this.countryObj.value as any);
             this.stateObj.query = tempQuery;
             // clear the existing selection
             this.stateObj.value = null;
@@ -103,7 +107,7 @@ export class CascadingComboBoxComponent {
             // enable the city ComboBox
             this.cityObj.enabled = true;
             // query the data source based on state ComboBox selected value
-            let tempQuery: Query = new Query().where('StateId', 'equal', this.stateObj.value);
+            let tempQuery: Query = new Query().where('StateId', 'equal', this.stateObj.value as any);
             this.cityObj.query = tempQuery;
             // clear the existing selection
             this.cityObj.value = null;

@@ -1,6 +1,8 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { DialogComponent, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { DialogComponent, ButtonPropsModel, DialogModule } from '@syncfusion/ej2-angular-popups';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Multiple Dialogs Component
@@ -8,7 +10,9 @@ import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 @Component({
     selector: 'control-content',
     styleUrls: ['multiple-dialogs.css'],
-    templateUrl: 'multiple-dialogs.html'
+    templateUrl: 'multiple-dialogs.html',
+    standalone: true,
+    imports: [ButtonModule, DialogModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class MultipleDialogsDialogComponent {

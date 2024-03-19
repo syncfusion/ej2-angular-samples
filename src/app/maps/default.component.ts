@@ -2,16 +2,19 @@
  * Maps default sample
  */
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, Maps, Legend, Marker, MapsTooltip, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
-import { MapAjax } from '@syncfusion/ej2-maps';
-import worldMap from './world-map.json';
-import datasource from './default-datasource.json';
+import { MapsTheme, Maps, Legend, Marker, MapsTooltip, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Maps.Inject(Legend, Marker, MapsTooltip);
 declare var require: any;
+let worldMap: object[] = require('./world-map.json');
+let datasource: object[] = require('./default-datasource.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, SBDescriptionComponent]
 })
 export class MapsDefaultComponent {
     titleSettings: object = {

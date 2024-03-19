@@ -1,22 +1,29 @@
 import { Component, ViewEncapsulation, OnInit,ViewChild} from '@angular/core';
-import {
-    PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
-    ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService
-} from '@syncfusion/ej2-angular-pdfviewer';
-import { SwitchComponent } from '@syncfusion/ej2-angular-buttons';
+import { PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService, PageOrganizerService, PdfViewerModule } from '@syncfusion/ej2-angular-pdfviewer';
+import { SwitchComponent, SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { pdfdata } from './grid-datasource';
-import { GridComponent, CommandColumnService, CommandModel, CommandClickEventArgs} from '@syncfusion/ej2-angular-grids';
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { GridComponent, CommandColumnService, CommandModel, CommandClickEventArgs, GridModule } from '@syncfusion/ej2-angular-grids';
+import { DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
  
-
 @Component({
     selector: 'document-list',
     templateUrl: 'document-list.html',
     encapsulation: ViewEncapsulation.None,
     // tslint:disable-next-line:max-line-length
     providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService,
-                TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService, CommandColumnService],
+        TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService, CommandColumnService, PageOrganizerService],
     styleUrls: ['pdfviewer.component.css'],
+    standalone: true,
+    imports: [
+        SBActionDescriptionComponent,
+        SwitchModule,
+        GridModule,
+        DialogModule,
+        PdfViewerModule,
+        SBDescriptionComponent,
+    ],
 })
  
 export class DocumentListComponent implements OnInit {
@@ -51,11 +58,10 @@ export class DocumentListComponent implements OnInit {
     openViewer(args: CommandClickEventArgs): void{
         let mode = args.target.title;
         this.dialog.header = args.rowData['FileName'];
-        this.pdfviewerControl.documentPath = args.rowData['Document'];
         if (mode === 'View') {
             this.pdfviewerControl.enableStickyNotesAnnotation = false;
             this.pdfviewerControl.enableAnnotationToolbar = false;
-            this.pdfviewerControl.enableFormDesignerToolbar = false;
+            this.pdfviewerControl.isAnnotationToolbarVisible = false;
             this.pdfviewerControl.toolbarSettings = { showTooltip: true, toolbarItems: ['OpenOption', 'PageNavigationTool', 'MagnificationTool', 'PanTool', 'SearchOption', 'PrintOption'] };
             this.pdfviewerControl.annotationSettings = {
                 isLock: true,
@@ -88,7 +94,6 @@ export class DocumentListComponent implements OnInit {
         } else {
             this.pdfviewerControl.enableStickyNotesAnnotation = true;
             this.pdfviewerControl.enableAnnotationToolbar = true;
-            this.pdfviewerControl.enableFormDesignerToolbar = true;
             this.pdfviewerControl.toolbarSettings = { showTooltip: true, toolbarItems: ['OpenOption', 'UndoRedoTool', 'PageNavigationTool', 'MagnificationTool', 'PanTool', 'SelectionTool', 'CommentTool', 'SubmitForm', 'SearchOption', 'AnnotationEditTool', 'FormDesignerEditTool', 'PrintOption', 'DownloadOption'] };
             this.pdfviewerControl.annotationSettings = {
                 isLock: false,
@@ -120,7 +125,7 @@ export class DocumentListComponent implements OnInit {
             this.pdfviewerControl.contextMenuOption ='RightClick';
         }
         this.pdfviewerControl.dataBind();
-        this.pdfviewerControl.load(this.pdfviewerControl.documentPath, null);
+        this.pdfviewerControl.load(args.rowData['Document'],null);
         this.dialog.show();
     }
 }

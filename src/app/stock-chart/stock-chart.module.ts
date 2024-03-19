@@ -80,16 +80,5 @@ export const stockChartAppRoutes: Object[] = [
     },
 ];
 
-export const stockChartRouter: ModuleWithProviders<any> = RouterModule.forChild(stockChartAppRoutes);
+export const StockChartSampleModule: ModuleWithProviders<any> = RouterModule.forChild(stockChartAppRoutes);
 
-let declarations: Type<Object>[] = [AreaComponent, DefaultComponent, PlotLineComponent, InversedAreaComponent, HiloOpenCloseComponent,
-     MultipleSeriesComponent, SplineAreaComponent, SplineComponent, StripLineComponent, PeriodCustomizationComponent,
-     DisabledNavigatorComponent, DisabledPeriodComponent, MultiPaneComponent, StockEventsComponent, DateTimeCategoryComponent];
-@NgModule({
-    imports: [stockChartRouter, StockChartAllModule, RangeNavigatorAllModule, ChartAllModule],
-    exports: [],
-    declarations: declarations,
-    providers: [ ChartAllModule, RangeNavigatorAllModule, StockChartAllModule ]
-})
-export class StockChartSampleModule {
-}

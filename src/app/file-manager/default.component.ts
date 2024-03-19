@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsViewService } from '@syncfusion/ej2-angular-filemanager';
+import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsViewService, FileManagerModule } from '@syncfusion/ej2-angular-filemanager';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * File Manager API sample
@@ -9,7 +11,9 @@ import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsVie
     templateUrl: 'default.html',
     styleUrls: ['default.css'],
     encapsulation: ViewEncapsulation.None,
-	providers: [ NavigationPaneService, ToolbarService, DetailsViewService]
+    providers: [NavigationPaneService, ToolbarService, DetailsViewService],
+    standalone: true,
+    imports: [FileManagerModule, CheckBoxModule, DropDownListModule]
 })
 
 export class DefaultFileController {

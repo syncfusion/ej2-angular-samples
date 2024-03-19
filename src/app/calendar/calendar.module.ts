@@ -10,7 +10,7 @@ import { MultiSelectionComponent } from './multi-select.component';
 import { IslamicCalendarComponent } from './islamic-calendar.component';
 import {MonthPickerComponent} from './month-picker.component';
 
-import { SharedModule } from '../common/shared.module';
+
 export const calendarAppRoutes: Object[] = [
     { path: ':theme/calendar/default', component: DefaultCalendarComponent, name: 'Default Functionalities', description: 'Angular Calendar component with two way binding support to select date easily by switching between Month, Year and Decade views with rich user interface', category: 'Calendar' },
     { path: ':theme/calendar/special-dates', component: SpecialCalendarComponent, name: 'Special Dates', description: 'Calendar forAngular to highlight multiple dates like weekends, holidays, events or a range of days with options to add custom styles and/or description', category: 'Calendar' },
@@ -21,21 +21,4 @@ export const calendarAppRoutes: Object[] = [
     { path: ':theme/calendar/islamic-calendar', component: IslamicCalendarComponent, name: 'Islamic Calendar' , category: 'Calendar' }
 ];
 
-export const CalendarRouter: ModuleWithProviders<any> = RouterModule.forChild(calendarAppRoutes);
-
-@NgModule({
-    imports: [CalendarRouter, CalendarModule, SharedModule],
-    declarations: [
-        DefaultCalendarComponent,
-        SpecialCalendarComponent,
-        DisabledCalendarComponent,
-        RangesCalendarComponent,
-        MultiSelectionComponent,
-        MonthPickerComponent,
-        IslamicCalendarComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    providers: [IslamicService]
-})
-export class CalendarSampleModule {
-}
+export const CalendarSampleModule: ModuleWithProviders<any> = RouterModule.forChild(calendarAppRoutes);

@@ -3,7 +3,7 @@
  */
 
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import {
     Diagram, NodeModel, ConnectorModel, LayoutAnimation, DataBinding,
     HierarchicalTree, SnapConstraints, SnapSettingsModel, TextModel, LayoutOrientation
@@ -11,7 +11,11 @@ import {
 import { ChangeEventArgs as CheckBoxChangeEventArgs } from '@syncfusion/ej2-buttons';
 import { ChangeEventArgs as NumericChangeEventArgs } from '@syncfusion/ej2-inputs';
 import { DataManager } from '@syncfusion/ej2-data';
-import {hierarchicalTree} from './overview-data';
+import {hierarchicalTree} from'./overview-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(DataBinding, HierarchicalTree, LayoutAnimation);
 
 export interface EmployeeInfo {
@@ -22,7 +26,9 @@ export interface EmployeeInfo {
     selector: 'control-content',
     templateUrl: 'hierarchical-tree.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, NumericTextBoxModule, CheckBoxModule, SBDescriptionComponent]
 })
 
 export class HierarchyDiagramComponent {
@@ -66,7 +72,7 @@ export class HierarchyDiagramComponent {
         return obj;
     };
 
-    public connDefaults(connector: ConnectorModel, diagram: Diagram): ConnectorModel {
+    public connDefaults(connector: any, diagram: Diagram): ConnectorModel {
         connector.targetDecorator.shape = 'None';
         connector.type = 'Orthogonal';
         connector.constraints = 0;

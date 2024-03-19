@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
     IDataOptions, PivotView, FieldListService, CalculatedFieldService,
     ToolbarService, ConditionalFormattingService, ToolbarItems, DisplayOption, IDataSet,
-    NumberFormattingService, IAxisSet, GroupingBarService, GroupingService, VirtualScrollService, DrillThroughService, QueryCellInfoEventArgs, PDFExportService, ExcelExportService
+    NumberFormattingService,PivotViewModule, IAxisSet, GroupingBarService, GroupingService, VirtualScrollService, DrillThroughService, QueryCellInfoEventArgs, PDFExportService, ExcelExportService
 } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple, createElement, select } from '@syncfusion/ej2-base';
@@ -10,6 +10,8 @@ import { ChartSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/cha
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 import { ExcelQueryCellInfoEventArgs } from '@syncfusion/ej2-grids';
 import { Observable } from 'rxjs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -22,7 +24,9 @@ let Universitydata: IDataSet[] = require('./universitydata.json');
     templateUrl: 'overview.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['overview.css'],
-    providers: [CalculatedFieldService, ToolbarService, ConditionalFormattingService, FieldListService, NumberFormattingService, GroupingBarService, GroupingService, VirtualScrollService, DrillThroughService, PDFExportService, ExcelExportService]
+    providers: [CalculatedFieldService, ToolbarService, ConditionalFormattingService, FieldListService, NumberFormattingService, GroupingBarService, GroupingService, VirtualScrollService, DrillThroughService, PDFExportService, ExcelExportService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class OverviewComponent implements OnInit {
     public dataSourceSettings: IDataOptions;
@@ -30,7 +34,6 @@ export class OverviewComponent implements OnInit {
     public toolbarOptions: ToolbarItems[];
     public chartSettings: ChartSettings;
     public displayOption: DisplayOption;
-    public cellTemplate: string;
     public observable = new Observable();
 
     @ViewChild('pivotview')
@@ -167,7 +170,6 @@ export class OverviewComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.cellTemplate = '<span class="tempwrap"></span>';
         this.chartSettings = {
             title: 'Top Universities Analysis',
             chartSeries: { type: 'Column' },

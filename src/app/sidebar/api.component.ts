@@ -1,13 +1,17 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SidebarComponent } from '@syncfusion/ej2-angular-navigations';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { SidebarComponent, SidebarModule } from '@syncfusion/ej2-angular-navigations';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { DropDownListComponent, ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
     styleUrls: ['api-style.css'],
     templateUrl: 'api.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ButtonModule, DropDownListModule, SidebarModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ApiSidebarComponent {
     @ViewChild('sidebarInstance')

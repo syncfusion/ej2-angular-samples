@@ -8,6 +8,7 @@ import {
 import { Browser, remove } from '@syncfusion/ej2-base';
 import { getElement } from '@syncfusion/ej2-svg-base/src/tooltip/helper';
 import { chartDataValue } from './stock-data';
+import { RangeNavigatorModule, ChartAllModule, StockChartAllModule } from '@syncfusion/ej2-angular-charts';
 
 /**
  * Sample for stock chart using period selector
@@ -63,7 +64,10 @@ let getContent: Function = (value: string): string => {
 @Component({
     selector: 'control-content',
     templateUrl: 'stock-chart.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [StockChartAllModule, RangeNavigatorModule, ChartAllModule]
+
 })
 
 export class StockChartRNComponent {

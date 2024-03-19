@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { SelectionSettingsModel } from '@syncfusion/ej2-dropdowns';
-import { ListBoxComponent, CheckBoxSelection } from '@syncfusion/ej2-angular-dropdowns';
+import { ListBoxComponent, CheckBoxSelection, ListBoxModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * ListBox Checkbox Selection sample
  */
@@ -9,7 +11,9 @@ ListBoxComponent.Inject(CheckBoxSelection);
     selector: 'control-content',
     templateUrl: 'checkbox.html',
     styleUrls: ['checkbox.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ListBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class CheckboxListBoxComponent {

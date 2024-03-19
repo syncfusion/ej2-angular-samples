@@ -1,13 +1,17 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { projectNewData } from './data';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListAllModule, DropDownListComponent} from '@syncfusion/ej2-angular-dropdowns';
 import { ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
 import { ActionEventArgs, Column } from '@syncfusion/ej2-grids';
-import { GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-ganttreorder',
-    templateUrl: 'reorder.html'
+    templateUrl: 'reorder.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, DropDownListAllModule, SBDescriptionComponent]
 })
 export class ColumnReorderComponent implements OnInit {
     public data: object[];

@@ -1,8 +1,8 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import {
-    AccumulationChart, AccumulationChartComponent, IAccLoadedEventArgs, AccumulationTheme
-} from '@syncfusion/ej2-angular-charts';
+import { AccumulationChart, AccumulationChartComponent,ChartAllModule, IAccLoadedEventArgs, AccumulationTheme, AccumulationChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Pie with Various Radius
@@ -10,7 +10,9 @@ import { Browser } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',
     templateUrl: 'pie-radius.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent,ChartAllModule, AccumulationChartAllModule, SBDescriptionComponent]
 })
 export class PieRadiusComponent {
     public data: Object[] = [

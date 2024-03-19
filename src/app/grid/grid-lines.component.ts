@@ -1,13 +1,19 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { removeClass, addClass } from '@syncfusion/ej2-base';
-import { GridLine, GridComponent } from '@syncfusion/ej2-angular-grids';
+import { GridLine, GridComponent, SortService, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
 import { customerData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej-gridlines',
     templateUrl: 'grid-lines.html',
     styleUrls: ['./grid-lines.style.css'],
-    encapsulation: ViewEncapsulation.None
+    providers: [SortService, PageService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToolbarModule, GridModule, SBDescriptionComponent]
 })
 export class GridLinesComponent implements OnInit {
     public data: Object[];

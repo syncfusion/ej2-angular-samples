@@ -1,7 +1,9 @@
 import { Component, ViewChild, ViewEncapsulation, OnInit, Inject } from '@angular/core';
-import { UploaderComponent, SelectedEventArgs, FileInfo, RemovingEventArgs } from '@syncfusion/ej2-angular-inputs';
+import { UploaderComponent, SelectedEventArgs, FileInfo, RemovingEventArgs, UploaderModule } from '@syncfusion/ej2-angular-inputs';
 import { createSpinner, showSpinner, hideSpinner } from '@syncfusion/ej2-popups';
 import { EmitType, detach, Browser, createElement, isNullOrUndefined, EventHandler } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Default Uploader Image Preview Component
@@ -10,7 +12,9 @@ import { EmitType, detach, Browser, createElement, isNullOrUndefined, EventHandl
     selector: 'control_wrapper',
     templateUrl: 'image-preview.html',
     styleUrls: ['image-preview.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [UploaderModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class PreviewUploaderComponent implements OnInit {
     @ViewChild('previewupload')

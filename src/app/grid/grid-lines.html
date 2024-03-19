@@ -14,7 +14,7 @@
         </e-items>
     </ejs-toolbar>
     <br/>
-    <ejs-grid #grid [dataSource]='data' [gridLines]="lines" allowPaging=true>
+    <ejs-grid #grid [dataSource]='data' [gridLines]="lines" allowPaging=true [allowSorting]='true'>
         <e-columns>
             <e-column field='ContactName' headerText='Contact Name' width='150'></e-column>
             <e-column field='CompanyName' headerText='Company Name' width='170'></e-column>

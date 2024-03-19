@@ -2,14 +2,18 @@
  * DatePicker Reactive Form Sample
  */
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { NgIf, DatePipe } from '@angular/common';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'reactiveform.html',
     styleUrls: ['./formsupport.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ReactiveFormsModule, DatePickerModule, NgIf, DatePipe]
 })
 export class ReactiveFormDatePickerComponent {
     skillForm: FormGroup;

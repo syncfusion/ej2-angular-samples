@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { filteredData } from './data';
-import { GanttComponent, FilterService } from '@syncfusion/ej2-angular-gantt';
-import { DropDownListComponent , ChangeEventArgs} from '@syncfusion/ej2-angular-dropdowns';
+import { GanttComponent, FilterService, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DropDownListComponent, ChangeEventArgs, DropDownListModule, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-ganttfiltering',
     templateUrl: 'filtering.html',
-    providers: [ FilterService ]
+    providers: [FilterService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, DropDownListAllModule, SBDescriptionComponent]
 })
 export class GanttFilteringComponent implements OnInit {
     public data: object[];

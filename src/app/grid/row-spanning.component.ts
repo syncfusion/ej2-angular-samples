@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { QueryCellInfoEventArgs } from '@syncfusion/ej2-angular-grids';
+import { QueryCellInfoEventArgs, FreezeService, GridModule } from '@syncfusion/ej2-angular-grids';
 import { columnSpanData, ColumnSpanDataType } from './data';
 import { EmitType } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-grid-container',
-    templateUrl: 'row-spanning.html'
+    templateUrl: 'row-spanning.html',
+    providers: [FreezeService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GridModule, SBDescriptionComponent]
 })
 export class RowSpanningComponent implements OnInit {
     public data: Object[];

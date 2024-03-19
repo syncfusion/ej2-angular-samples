@@ -1,13 +1,15 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, GroupingBarService, PivotView, DateGroup, IDataSet, LoadEventArgs } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, GroupingBarService, PivotViewModule,PivotView, DateGroup, IDataSet, LoadEventArgs } from '@syncfusion/ej2-angular-pivotview';
 import { ColumnRenderEventArgs } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple, extend } from '@syncfusion/ej2-base';
-import { MultiSelect, SelectEventArgs, RemoveEventArgs, CheckBoxSelection } from '@syncfusion/ej2-angular-dropdowns';
+import { MultiSelect, MultiSelectModule, SelectEventArgs, RemoveEventArgs, CheckBoxSelection } from '@syncfusion/ej2-angular-dropdowns';
 import { GroupSettingsModel } from '@syncfusion/ej2-pivotview/src/model/datasourcesettings-model';
-import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { NumericTextBoxComponent, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { Observable } from 'rxjs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 enableRipple(false);
 MultiSelect.Inject(CheckBoxSelection);
@@ -22,7 +24,9 @@ let data: any = require('./gData.json');
     templateUrl: 'grouping.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['grouping.css'],
-    providers: [GroupingBarService]
+    providers: [GroupingBarService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, NumericTextBoxModule, ButtonModule, PivotViewModule, MultiSelectModule]
 })
 export class GroupingComponent implements OnInit {
     public selectedGroups: string[] = ['Years', 'Months', 'Days'];

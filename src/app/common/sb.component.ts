@@ -1,12 +1,11 @@
 import { Component, ElementRef, HostListener, Inject, Input, ViewChild } from '@angular/core';
-import { Router, NavigationStart, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Router, NavigationStart, NavigationEnd, ActivatedRoute, RouterOutlet } from '@angular/router';
 import {
     select, selectAll, isVisible, createElement, Ajax, getComponent,
     L10n, loadCldr, setCulture, setCurrencyCode, closest, classList, registerLicense
 } from '@syncfusion/ej2-base';
 import { Button } from '@syncfusion/ej2-buttons';
 import { DropDownList, AutoComplete } from '@syncfusion/ej2-dropdowns';
-import { Http, Response } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { Browser, addClass, enableRipple, detach, Animation, AnimationOptions } from '@syncfusion/ej2-base';
 import { Popup, Tooltip } from '@syncfusion/ej2-popups';
@@ -40,10 +39,9 @@ interface DestroyMethod extends HTMLElement {
 }
 
 declare let window: MyWindow;
-const sbObj: { [index: string]: string } = { 'react': 'react', 'javascript': 'javascript', 'vue': 'vue', 'blazor': 'blazor' }
-const sbArray: string[] = ['react', 'ts', 'javascript', 'asp_core', 'asp_mvc', 'vue', 'blazor'];
+const sbObj: { [index: string]: string } = { 'react': 'react','nextjs': 'nextjs', 'javascript': 'javascript', 'vue': 'vue', 'blazor': 'blazor' }
+const sbArray: string[] = ['react', 'ts', 'javascript', 'nextjs', 'asp_core', 'asp_mvc', 'vue', 'blazor'];
 const urlRegex: RegExp = /(npmci\.syncfusion\.com|ej2\.syncfusion\.com)(\/)(development|production)*/;
-const reg: RegExp = /.*custom code start([\S\s]*?)custom code end.*/g;
 const sampleRegex: RegExp = /#\/(([^\/]+\/)+[^\/\.]+)/;
 const cBlock: string[] = ['ts-src-tab', 'html-src-tab'];
 const matchedCurrency: { [key: string]: string } = {
@@ -79,7 +77,9 @@ declare let hljs: any;
 @Component({
     selector: 'ng-app',
     templateUrl: 'page.html',
-    providers: []
+    providers: [],
+    standalone: true,
+    imports: [LPController, RouterOutlet]
 })
 export class SBController {
     public pathRoutes: string[] = [];
@@ -130,7 +130,7 @@ export class SBController {
         private ngEle: ElementRef,
         @Inject('sourceFiles') private sourceFiles: any,
         private router: Router,
-        private activatedRoute: ActivatedRoute, private http: Http) {
+        private activatedRoute: ActivatedRoute, private http: HttpClient) {
         for (let routes of this.router.config) {
             if ((!Browser.isDevice || !(<any>routes).hideOnDevice) && routes.path.indexOf('/') !== -1) {
                 this.pathRoutes.push(routes.path);
@@ -185,7 +185,6 @@ export class SBController {
                 }
                 let blockEle: Element = this.element.querySelector('#e-content' + this.tabId + '_' + e.selectedIndex).children[0];
                 blockEle.innerHTML = this.items[e.selectedIndex].data;
-                blockEle.innerHTML = blockEle.innerHTML.replace(reg,'');
                 blockEle.classList.add('sb-src-code');
                 hljs.highlightBlock(blockEle);
             }
@@ -289,7 +288,6 @@ export class SBController {
         }
         let blockEle: Element = tabObj.element.querySelector('#e-content' + tabObj.tabId + '_' + tabObj.selectedItem).children[0];
         blockEle.innerHTML = tabObj.items[tabObj.selectedItem].data;
-        blockEle.innerHTML = blockEle.innerHTML.replace(reg,'');
         blockEle.classList.add('sb-src-code');
         if (blockEle) {
             hljs.highlightBlock(blockEle);
@@ -299,19 +297,19 @@ export class SBController {
     renderTabToolBar() {
         let hsplitter: string = '<div class="sb-toolbar-splitter sb-custom-item"></div>';
         // tslint:disable-next-line:no-multiline-string
-        let openNewTemplate: string = `<div class="sb-custom-item sb-open-new-wrapper"><a id="openNew" target="_blank" aria-label="Open new sample">
+        let openNewTemplate: string = `<div class="sb-custom-item sb-open-new-wrapper"><a id="openNew" role='tab' target="_blank" aria-label="Open new sample">
         <div class="sb-icons sb-icon-Popout"></div></a></div>`;
         // tslint:disable-next-line:no-multiline-string
-        let sampleNavigation: string = `<div class="sb-custom-item sample-navigation"><button id='prev-sample' class="sb-navigation-prev">
+        let sampleNavigation: string = `<div class="sb-custom-item sample-navigation"><button id='prev-sample' role='tab' class="sb-navigation-prev" aria-label='Navigate to previous sample'>
         <span class='sb-icons sb-icon-Previous'></span>
         </button>
-        <button  id='next-sample' class="sb-navigation-next">
+        <button role='tab' id='next-sample' aria-label='Navigate to next sample' class="sb-navigation-next">
         <span class='sb-icons sb-icon-Next'></span>
         </button>
         </div>`;
-        let plnrTemplate: string = '<span class="sb-icons sb-icons-plnkr"></span><span class="sb-plnkr-text">Edit in StackBlitz</span>';
+        let plnrTemplate: string = '<span class="sb-icons sb-icons-plnkr"></span><span class="sb-plnkr-text" role="presentation">Edit in StackBlitz</span>';
         // tslint:disable-next-line:no-multiple-var-decl
-        let contentToolbarTemplate: string = '<div class="sb-desktop-setting"><button id="open-plnkr" class="sb-custom-item sb-plnr-section">' +
+        let contentToolbarTemplate: string = '<div class="sb-desktop-setting"><button id="open-plnkr"  role="tab" aria-label="Open Edit in StackBlitz" class="sb-custom-item sb-plnr-section">' +
             plnrTemplate + '</button>' + hsplitter + openNewTemplate + hsplitter +
             '</div>' + sampleNavigation + '<div class="sb-icons sb-mobile-setting"></div>';
 
@@ -492,6 +490,9 @@ export class SBController {
             let ele: HTMLFormElement = (select('#' + sb) as HTMLFormElement);
             if (sb === 'aspnetcore' || sb === 'aspnetmvc') {
                 ele['href'] = sb === 'aspnetcore' ? 'https://ej2.syncfusion.com/aspnetcore/' : 'https://ej2.syncfusion.com/aspnetmvc/';
+            }
+            else if (sb === 'nextjs') {
+                ele.href = 'https://ej2.syncfusion.com/nextjs/demos/';
             }
             else if (sb === 'blazor') {
                 ele['href'] = 'https://blazor.syncfusion.com/demos/';
@@ -800,6 +801,10 @@ export class SBController {
     }
 
     setListItemSelect(): void {
+        const listItems: any = document.querySelectorAll('#controlList .e-list-item.e-level-1');
+        for (const listItem of listItems) {
+            listItem.tabIndex = 0;
+        }
         let path: string[] = location.hash.split('/');
         path.splice(0, 2);
         let ele: Element = document.querySelector('[data-path="/:theme/' + path.join('/') + '"]')
@@ -920,8 +925,10 @@ export class SBController {
         let reverse: any = getComputedStyle(select('#left-sidebar')).display;
         if (reverse === 'none') {
             select('#sb-toggle-left').classList.add('toggle-active');
+            select('#sb-toggle-left').setAttribute('aria-expanded', 'true');
         } else {
             select('#sb-toggle-left').classList.remove('toggle-active');
+            select('#sb-toggle-left').setAttribute('aria-expanded', 'false');
         }
 
         let rightPane: HTMLElement = <HTMLElement>select('.sb-right-pane');
@@ -991,32 +998,25 @@ export class SBController {
         let pathArray: string[] = path.split('/');
         pathArray = pathArray.slice(2);
         const localPath: string = './source/' + pathArray.join('/');
-        const tsRequest = this.http.get(localPath + '.component.ts');
-        const htmlRequst = this.http.get(localPath + '.html');
-
-        const plunk = this.http.get(localPath + '-stackb.json');
-
-        const observableCollection = [htmlRequst, tsRequest];
+        const items: object[] = [];
+        const observableCollection = [localPath + '.html', localPath + '.component.ts', localPath + '-stackb.json'];
         if (this.sourceFiles.files.length) {
             let splitPath: string[] = localPath.split('/');
             splitPath.splice(splitPath.length - 1)[0];
             const resPath: string = splitPath.join('/');
             for (const name of this.sourceFiles.files) {
-                observableCollection.push(this.http.get(resPath + '/' + name));
+                observableCollection.push(resPath + '/' + name);
             }
             this.sourceFiles.files = [];
         }
-        observableCollection.push(plunk);
-        forkJoin(observableCollection).subscribe(
-            (resultCollection: any) => {
-                let count: number = 0;
-                const items: object[] = [];
-                for (const res of resultCollection) {
-                    const splitUrl: string[] = res.url.split('/');
+        for (let res of observableCollection) {
+            this.http.get(res, { responseType: 'text' }).subscribe(
+                (result: any) => {
+                    const splitUrl: string[] = res.split('/');
                     const fileName: string = splitUrl[splitUrl.length - 1];
                     const fileSplit: string[] = fileName.split('.');
                     const type: string = typeMapper[fileSplit[fileSplit.length - 1]];
-                    let content: string = res._body;
+                    let content: string = result;
                     if (/html/g.test(fileName)) {
                         content = this.getStringWithOutDescription(content, /(\'|\")description/g);
                         content = this.getStringWithOutDescription(content, /(\'|\")action-description/g)
@@ -1030,21 +1030,11 @@ export class SBController {
                             content: fileName
                         });
                     } else {
-                        this.plunker(res._body);
+                        this.plunker(result);
                     }
-
-                    count++;
-                }
-                this.sourceTabItems = items;
-                this.hideWaitingPopup();
-                if (!select('#overlay')) {
-                    hideLoader();
-                }
-            },
-            (res: any) => {
-                this.hideWaitingPopup();
-            }
-        );
+                });
+        }
+        this.sourceTabItems = items;
         let sampleIndex = this.pathRoutes.indexOf(this.getHash());
         let samLength: number = this.leftControl.listData.length - 1;
         if (sampleIndex === samLength) {

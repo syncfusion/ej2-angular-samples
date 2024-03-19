@@ -1,11 +1,14 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, IAxisSet, Condition, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { HyperCellClickEventArgs, HyperlinkSettings } from '@syncfusion/ej2-angular-pivotview';
+import { HyperCellClickEventArgs, HyperlinkSettings, PivotViewModule } from '@syncfusion/ej2-angular-pivotview';
 import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
 import { Button } from '@syncfusion/ej2-buttons';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { NumericTextBox, MaskedTextBox } from '@syncfusion/ej2-inputs';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 /**
  * Pivot Table Hyperlink Sample.
@@ -17,7 +20,9 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     selector: 'ej2-pivotview-container',
     templateUrl: 'hyper-link.html',
     encapsulation: ViewEncapsulation.None,
-    styleUrls: ['hyper-link.css']
+    styleUrls: ['hyper-link.css'],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, ButtonModule]
 })
 
 export class HyperLinkComponent implements OnInit {

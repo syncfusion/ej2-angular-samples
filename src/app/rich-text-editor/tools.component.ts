@@ -2,7 +2,7 @@
  * Rich Text Editor Overview Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, EmojiPickerService, VideoService, AudioService, FormatPainterService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, EmojiPickerService, VideoService, AudioService, FormatPainterService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, CountService} from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, TableService, FileManagerService } from '@syncfusion/ej2-angular-richtexteditor';
 import { FileManagerSettingsModel, QuickToolbarSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, addClass, removeClass, Browser } from '@syncfusion/ej2-base';
@@ -11,13 +11,17 @@ import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/css/css.js';
 import 'codemirror/mode/htmlmixed/htmlmixed.js';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'tools.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['over-view.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, FileManagerService, EmojiPickerService, VideoService, AudioService, FormatPainterService]
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, FileManagerService, EmojiPickerService, VideoService, AudioService, FormatPainterService, QuickToolbarService, PasteCleanupService, CountService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, RichTextEditorModule, SBDescriptionComponent]
 })
 export class FullFeatureComponent {
 
@@ -48,7 +52,8 @@ export class FullFeatureComponent {
     };
 
     public quickToolbarSettings: QuickToolbarSettingsModel = {
-        table: ['TableHeader', 'TableRows', 'TableColumns', 'TableCell', '-', 'BackgroundColor', 'TableRemove', 'TableCellVerticalAlign', 'Styles']
+        table: ['TableHeader', 'TableRows', 'TableColumns', 'TableCell', '-', 'BackgroundColor', 'TableRemove', 'TableCellVerticalAlign', 'Styles'],
+        showOnRightClick: true,
     };
 
     public textArea: HTMLElement;
@@ -77,7 +82,7 @@ export class FullFeatureComponent {
             }
             this.textArea.style.display = 'none';
             mirrorView.style.display = 'block';
-            this.renderCodeMirror(mirrorView, this.rteObj.value);
+            this.renderCodeMirror(mirrorView, this.rteObj.value===null ? "" :this.rteObj.value);
             charCount.style.display = 'none';
         }
     }

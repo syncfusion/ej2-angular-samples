@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '../common/shared.module';
+
 import { ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
@@ -17,17 +17,6 @@ export const colorPickerAppRoutes: Object[] = [
     { path: ':theme/color-picker/api', component: ApiColorPickerComponent, name: 'API', order: '01', category: 'Color Picker', description: 'This example demonstrates the supported APIs and its functionalities of the Syncfusion Angular ColorPicker.' }
 ];
 
-export const colorPickerRouter: ModuleWithProviders<any> = RouterModule.forChild(colorPickerAppRoutes);
+export const ColorPickerSampleModule: ModuleWithProviders<any> = RouterModule.forChild(colorPickerAppRoutes);
 
-@NgModule({
-    imports: [colorPickerRouter, SharedModule, ColorPickerModule, BrowserModule, CheckBoxModule, DropDownListModule],
-    declarations: [
-        DefaultColorPickerComponent,
-        InlineColorPickerComponent,
-        CustomColorPickerComponent,
-        ApiColorPickerComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class ColorPickerSampleModule {
-}
+

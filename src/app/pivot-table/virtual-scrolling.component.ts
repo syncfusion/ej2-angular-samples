@@ -1,8 +1,11 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, IDataSet, VirtualScrollService } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView, IDataSet, PivotViewModule, VirtualScrollService, VirtualScrollSettings } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { Browser, enableRipple } from '@syncfusion/ej2-base';
 import { Button } from '@syncfusion/ej2-buttons';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 @Component({
@@ -10,11 +13,14 @@ enableRipple(false);
     templateUrl: 'virtual-scrolling.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['virtual-scrolling.css'],
-    providers: [VirtualScrollService]
+    providers: [VirtualScrollService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, ButtonModule]
 })
 export class VirtualScrollingComponent implements OnInit {
     public gridSettings: GridSettings;
     public dataSourceSettings: IDataOptions;
+    public virtualScrollSettings: VirtualScrollSettings;
     public customername: string[] = ['TOM', 'Hawk', 'Jon', 'Chandler', 'Monica', 'Rachel', 'Phoebe', 'Gunther',
         'Ross', 'Geller', 'Joey', 'Bing', 'Tribbiani', 'Janice', 'Bong', 'Perk', 'Green', 'Ken', 'Adams'];
     public city: string[] = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Philadelphia', 'Phoenix', 'San Antonio', 'Austin',
@@ -56,7 +62,7 @@ export class VirtualScrollingComponent implements OnInit {
                 Price: Math.round(Math.random() * 5000) + 5000,
                 Sold: Math.round(Math.random() * 80) + 10,
             });
-            if (dt / 4 == 1) {
+            if (dt / 2 == 1) {
                 dt = 0;
             }
         }
@@ -94,6 +100,10 @@ export class VirtualScrollingComponent implements OnInit {
             columnWidth: 140
         } as GridSettings;
 
+        this.virtualScrollSettings = {
+            allowSinglePage: true
+        } as VirtualScrollSettings;
+        
         this.dataSourceSettings = {
             dataSource: [],
             enableSorting: false,
@@ -104,6 +114,6 @@ export class VirtualScrollingComponent implements OnInit {
             values: [{ name: 'Price', caption: 'Unit Price' }, { name: 'Sold', caption: 'Unit Sold' }]
         };
         
-        this.width = Browser.isDevice ? '100%' : 860;
+        this.width = Browser.isDevice ? '100%' : 1200;
     }
 }

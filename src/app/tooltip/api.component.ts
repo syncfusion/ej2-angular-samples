@@ -3,12 +3,19 @@
  */
 
 import { Component, ViewChild } from '@angular/core';
-import { TooltipComponent, Position } from '@syncfusion/ej2-angular-popups';
+import { TooltipComponent, Position, TooltipModule } from '@syncfusion/ej2-angular-popups';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'api.html',
-    styleUrls: ['api.css']
+    styleUrls: ['api.css'],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, TooltipModule, ButtonModule, NumericTextBoxModule, DropDownListModule, CheckBoxModule, SBDescriptionComponent]
 })
 export class ApiTooltipComponent {
     @ViewChild('tooltip')

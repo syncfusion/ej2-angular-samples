@@ -2,13 +2,15 @@ import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
     IDataOptions, PivotView, FieldListService, CalculatedFieldService,
     ToolbarService, ConditionalFormattingService, ToolbarItems, IDataSet,
-    NumberFormattingService, DrillThroughService, GroupingBarService
+    NumberFormattingService, DrillThroughService, GroupingBarService, PivotViewModule
 } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 import { ChartSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/chartsettings';
 import { CellEditSettings } from '@syncfusion/ej2-pivotview/src/pivotview';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -21,7 +23,10 @@ let data: IDataSet[] = require('./Pivot_Data.json');
     templateUrl: 'keyboard-navigation.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['keyboard-navigation.css'],
-    providers: [CalculatedFieldService, ToolbarService, ConditionalFormattingService, FieldListService, NumberFormattingService, DrillThroughService, GroupingBarService]
+    providers: [CalculatedFieldService, ToolbarService, ConditionalFormattingService, FieldListService, NumberFormattingService, DrillThroughService, GroupingBarService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
+
 })
 export class KeyboardNavigationComponent implements OnInit {
     public dataSourceSettings: IDataOptions;

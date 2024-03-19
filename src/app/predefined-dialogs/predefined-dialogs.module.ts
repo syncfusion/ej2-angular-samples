@@ -4,7 +4,7 @@ import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { DefaultDialogComponent } from './default.component';
 import { CustomizationDialogComponent } from './customization.component';
 import { AnimationDialogComponent } from './animation.component';
-import { SharedModule } from '../common/shared.module';
+
 import { CheckBoxModule , ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
@@ -25,16 +25,6 @@ export const predefinedDialogsAppRoutes: Object[] = [
     { path: ':theme/predefined-dialogs/animation', component: AnimationDialogComponent, name: 'Animation', category: 'Predefined Dialogs', description: 'This example demonstrates how to open or close the angular Predefined dialog with various animation effects and how to customize the animation duration and delay.' },
    ];
 
-export const PredefinedDialogsRouter: ModuleWithProviders<any> = RouterModule.forChild(predefinedDialogsAppRoutes);
+export const PredefinedDialogsSampleModule: ModuleWithProviders<any> = RouterModule.forChild(predefinedDialogsAppRoutes);
 
-@NgModule({
-    imports: [PredefinedDialogsRouter,DropDownListModule, RadioButtonModule, CheckBoxModule, SharedModule, ButtonModule, DialogModule, RadioButtonModule, ChartAllModule, RangeNavigatorAllModule, AccumulationChartAllModule, GridAllModule, RichTextEditorAllModule, ScheduleAllModule, RecurrenceEditorAllModule, CheckBoxModule, FormsModule, ReactiveFormsModule, CommonModule, BrowserModule, TabAllModule, DatePickerModule],
-    declarations: [
-        DefaultDialogComponent,
-        CustomizationDialogComponent,
-        AnimationDialogComponent,
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class PredefinedDialogsSampleModule {
-}
+

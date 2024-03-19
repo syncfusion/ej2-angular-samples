@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '../common/shared.module';
+
 import { CommonModule } from '@angular/common';
 import { DefaultBreadcrumbController } from './default.component';
 import { BindToLocationController } from './bind-to-location.component';
@@ -22,19 +22,5 @@ export const breadcrumbAppRoutes: Object[] = [
     { path: ':theme/breadcrumb/address-bar', component: AddressBarController, name: 'Address Bar', order: '02', category: 'Use Case', description: 'This example demonstrates the use case of the Syncfusion Angular Breadcrumb by integrating with Menu component using templates.' }
 ]
 
-export const breadcrumbRouter: ModuleWithProviders<any> = RouterModule.forChild(breadcrumbAppRoutes);
+export const BreadcrumbSampleModule: ModuleWithProviders<any> = RouterModule.forChild(breadcrumbAppRoutes);
 
-@NgModule({
-    imports: [breadcrumbRouter, BreadcrumbAllModule, ChipListModule, MenuModule, SharedModule, CommonModule],
-    declarations: [
-        DefaultBreadcrumbController,
-        TemplateAndCustomizationController,
-        BindToLocationController,
-        EventsController,
-        KeyboardNavigationController,
-        AddressBarController,
-        OverFlowModesController
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class BreadcrumbSampleModule { }

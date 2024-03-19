@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { ChartTheme, IRangeLoadedEventArgs, DateTime, AreaSeries, RangeTooltip } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { bitCoinData } from './default_data';
+import { RangeNavigatorAllModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 
 /**
  * Default appearance of the range navigator
@@ -19,7 +20,9 @@ let regionColor: string[] = ['rgba(99, 85, 199, 0.3)', 'rgba(143, 128, 244, 0.3)
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [RangeNavigatorAllModule, ChartAllModule]
 })
 
 export class DefaultComponent {

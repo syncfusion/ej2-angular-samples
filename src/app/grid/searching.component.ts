@@ -1,10 +1,19 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { categoryData } from './data';
-import { ToolbarService } from '@syncfusion/ej2-angular-grids';
+import { ToolbarService, SortService, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej-gridsearch',
     templateUrl: 'searching.html',
+    providers: [SortService, PageService, ToolbarService],
+    standalone: true,
+    imports: [
+        GridModule,
+        SBActionDescriptionComponent,
+        SBDescriptionComponent,
+    ],
 })
 export class SearchComponent implements OnInit {
     public data: Object[];

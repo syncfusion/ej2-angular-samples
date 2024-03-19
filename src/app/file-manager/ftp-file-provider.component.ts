@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsViewService } from '@syncfusion/ej2-angular-filemanager';
+import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsViewService, FileManagerModule } from '@syncfusion/ej2-angular-filemanager';
 /**
  * File Manager sample with File Tansfer Protocol
  */
@@ -8,7 +8,9 @@ import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsVie
     templateUrl: 'ftp-file-provider.html',
     styleUrls: ['ftp-file-provider.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ NavigationPaneService, ToolbarService, DetailsViewService]
+    providers: [NavigationPaneService, ToolbarService, DetailsViewService],
+    standalone: true,
+    imports: [FileManagerModule]
 })
 
 export class FTPController {

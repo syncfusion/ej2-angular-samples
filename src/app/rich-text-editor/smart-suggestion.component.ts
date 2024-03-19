@@ -3,17 +3,22 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
-import { DialogType, ToolbarService, NodeSelection, LinkService, ImageService } from '@syncfusion/ej2-angular-richtexteditor';
+import { DialogType, ToolbarService, NodeSelection, LinkService, ImageService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, FormatPainterService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, HtmlEditorService, QuickToolbarService, EmojiPickerService } from '@syncfusion/ej2-angular-richtexteditor';
 import { Dialog, ButtonPropsModel } from '@syncfusion/ej2-popups';
 import { Mention, SelectEventArgs } from '@syncfusion/ej2-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { MentionModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'smart-suggestion.html',
     styleUrls: ['smart-suggestion.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, QuickToolbarService, HtmlEditorService, EmojiPickerService]
+    providers: [ToolbarService, LinkService, ImageService, QuickToolbarService, HtmlEditorService, EmojiPickerService, PasteCleanupService, VideoService, AudioService, FormatPainterService, TableService ],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, RichTextEditorModule, MentionModule, SBDescriptionComponent]
 })
 export class MentionFormatIntegrationComponent {
 
@@ -110,13 +115,15 @@ export class MentionFormatIntegrationComponent {
             case 'Audio':
             case 'Video':
                 this.mentionObj.hidePopup();
-                this.rteObj.showDialog(command === 'Video'? DialogType.InsertVideo: command === 'Audio'
-                    ? DialogType.InsertAudio: command === 'Image'? DialogType.InsertImage: DialogType.InsertTable);
+                setTimeout(() => {
+                    this.rteObj.showDialog(command === 'Video' ? DialogType.InsertVideo : command === 'Audio'
+                        ? DialogType.InsertAudio : command === 'Image' ? DialogType.InsertImage : DialogType.InsertTable);
+                }, 150);
                 break;
             case 'EmojiPicker':
                 this.beforeApplyFormat(false);
                 this.mentionObj.hidePopup();
-                this.rteObj.showEmojiPicker();
+                setTimeout(() => { this.rteObj.showEmojiPicker(); }, 150);
                 break;
             default:
                 this.rteObj.executeCommand('formatBlock', command);

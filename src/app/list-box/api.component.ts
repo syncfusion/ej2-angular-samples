@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { FieldSettingsModel, ChangeEventArgs, SelectionMode, SelectionSettingsModel } from '@syncfusion/ej2-angular-dropdowns';
+import { FieldSettingsModel, ChangeEventArgs, SelectionMode, SelectionSettingsModel, ListBoxModule, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { SortOrder } from '@syncfusion/ej2-lists';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * ListBox Api sample
  */
@@ -8,7 +10,9 @@ import { SortOrder } from '@syncfusion/ej2-lists';
     selector: 'control-content',
     templateUrl: 'api.html',
     styleUrls: ['api.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ListBoxModule, DropDownListModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class ApiListBoxComponent {

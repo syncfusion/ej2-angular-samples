@@ -1,10 +1,14 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
-import { VirtualScroll } from '@syncfusion/ej2-angular-gantt';
+import { VirtualScroll, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttloadondemand',
     templateUrl: 'load-on-demand.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
 })
 export class GanttLoadOnDemandComponent implements OnInit {
     public data: object;

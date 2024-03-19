@@ -1,12 +1,16 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SidebarComponent, ClickEventArgs, NodeSelectEventArgs } from '@syncfusion/ej2-angular-navigations';
-import { ListViewComponent, SelectEventArgs } from '@syncfusion/ej2-angular-lists';
+import { SidebarComponent, ClickEventArgs, NodeSelectEventArgs, ToolbarModule, SidebarModule, TreeViewModule } from '@syncfusion/ej2-angular-navigations';
+import { ListViewComponent, SelectEventArgs, ListViewModule } from '@syncfusion/ej2-angular-lists';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     styleUrls: ['default-style.css'],
     templateUrl: 'default.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ToolbarModule, ListViewModule, SidebarModule, TreeViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DefaultSidebarComponent {
     @ViewChild('sidebar')

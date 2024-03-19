@@ -1,11 +1,13 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, Operators, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { ChangeEventArgs, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { MaskChangeEventArgs,  MaskedTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { IDataOptions, PivotView, Operators, IDataSet, PivotViewModule } from '@syncfusion/ej2-angular-pivotview';
+import { ChangeEventArgs, DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { MaskChangeEventArgs,  MaskedTextBoxComponent, MaskedTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { FilterModel } from '@syncfusion/ej2-pivotview/src/model/datasourcesettings-model';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 /**
  * Pivot Table Filtering Sample.
@@ -17,7 +19,9 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     selector: 'ej2-pivotview-container',
     templateUrl: 'label-filtering.html',
     encapsulation: ViewEncapsulation.None,
-    styleUrls: ['label-filtering.css']
+    styleUrls: ['label-filtering.css'],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, ButtonModule, MaskedTextBoxModule, DropDownListModule]
 })
 
 export class LabelFilterComponent implements OnInit {

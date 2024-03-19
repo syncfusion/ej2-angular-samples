@@ -8,12 +8,19 @@ import { Browser } from '@syncfusion/ej2-base';
 import { ListView } from '@syncfusion/ej2-lists';
 import { ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
 import { virtualizationdata }from './dataSource';
+import { DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { NgIf } from '@angular/common';
+import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'virtualization.html',
     styleUrls: ['virtualization.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ListViewAllModule, NgIf, SBDescriptionComponent, DropDownListAllModule]
 })
 
 export class VirtualizationListViewComponent {

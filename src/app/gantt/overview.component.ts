@@ -1,12 +1,17 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
 import { overviewData, editingResources } from './data';
 import { DropDownList } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { NgIf } from '@angular/common';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-ganttoverview',
     templateUrl: 'overview.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, NgIf, SBDescriptionComponent]
 })
 
 export class GanttOverviewComponent implements OnInit {
@@ -151,22 +156,22 @@ export class GanttOverviewComponent implements OnInit {
         switch (status) {
             case "In Progress":
                 this.statusStyleColor = (this.CurrentTheme) ? "#DFECFF" : "#2D3E57";
-                this.style = "display: flex; padding: 1px 12px; gap: 10px; width: 96px; height: 24px; border-radius: 24px; background:" + this.statusStyleColor;
+                this.style = "display: flex; padding: 1.5px 12px; gap: 10px; width: 96px; height: 24px; border-radius: 24px; background:" + this.statusStyleColor;
                 break;
             case "Open":
                 this.style = "background-color: red; color: white; border-radius: 15px; padding:6px";
                 break;
             case "On Hold":
                 this.statusStyleColor = (this.CurrentTheme) ? "#E4E4E7" : "#3C3B43";
-                this.style = "display: flex; border-radius: 24px; padding: 1px 12px; gap: 10px; width: 78px; height: 24px; background:" + this.statusStyleColor;
+                this.style = "display: flex; border-radius: 24px; padding: 1.5px 12px; gap: 10px; width: 78px; height: 24px; background:" + this.statusStyleColor;
                 break;
             case "Completed":
                 this.statusStyleColor = (this.CurrentTheme) ? "#DFFFE2" : "#16501C";
-                this.style = "display: flex; padding: 1px 12px; gap: 10px; width: 98px; height: 24px; border-radius: 24px;background:" + this.statusStyleColor;
+                this.style = "display: flex; padding: 1.5px 12px; gap: 10px; width: 98px; height: 24px; border-radius: 24px;background:" + this.statusStyleColor;
                 break;
             case "High":
                 this.statusStyleColor = (this.CurrentTheme) ? "#FFEBE9" : "#48211D";
-                this.style = "display: flex; padding: 1px 12px; gap: 10px; width: 55px; height: 24px; border-radius: 24px; background:" + this.statusStyleColor;
+                this.style = "display: flex; padding: 1.5px 12px; gap: 10px; width: 55px; height: 24px; border-radius: 24px; background:" + this.statusStyleColor;
                 break;
         }
         return this.style;
@@ -201,19 +206,19 @@ export class GanttOverviewComponent implements OnInit {
         switch (priority) {
             case "Low":
                 this.priorityStyle = (this.CurrentTheme) ? "#FFF6D1" : "#473F1E";
-                this.style = "display: flex; padding: 1px 12px; gap: 10px; width: 52px; height: 24px; border-radius: 24px; background: " + this.priorityStyle;
+                this.style = "display: flex; padding: 1.5px 12px; gap: 10px; width: 52px; height: 24px; border-radius: 24px; background: " + this.priorityStyle;
                 break;
             case "Normal":
                 this.priorityStyle = (this.CurrentTheme) ? "#F5DFFF" : "#4D2F5A";
-                this.style = "display: flex; padding: 1px 12px; gap: 10px; width: 73px; height: 24px; border-radius: 24px; background: " + this.priorityStyle;
+                this.style = "display: flex; padding: 1.5px 12px; gap: 10px; width: 73px; height: 24px; border-radius: 24px; background: " + this.priorityStyle;
                 break;
             case "Critical":
                 this.priorityStyle = (this.CurrentTheme) ? "#FFEBE9" : "#48211D";
-                this.style = "display: flex; padding: 1px 12px; gap: 10px; width: 72px; height: 24px; border-radius: 24px; background: " + this.priorityStyle;
+                this.style = "display: flex; padding: 1.5px 12px; gap: 10px; width: 72px; height: 24px; border-radius: 24px; background: " + this.priorityStyle;
                 break;
             case "High":
                 this.priorityStyle = (this.CurrentTheme) ? "#FFEBE9" : "#48211D";
-                this.style = "display: flex; padding: 1px 12px; gap: 10px; width: 55px; height: 24px; border-radius: 24px; background: " + this.priorityStyle;
+                this.style = "display: flex; padding: 1.5px 12px; gap: 10px; width: 55px; height: 24px; border-radius: 24px; background: " + this.priorityStyle;
                 break;
         }
         return this.style;

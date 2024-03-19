@@ -1,10 +1,12 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-angular-circulargauge';
+import { ILoadedEventArgs, GaugeTheme, CircularGaugeModule } from '@syncfusion/ej2-angular-circulargauge';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'default-functionalities.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [CircularGaugeModule]
 })
 
 export class DefaultComponent {

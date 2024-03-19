@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { categoryData } from './data';
-import { ToolbarService, GridComponent, ExcelExportService, PdfExportService, PageService } from '@syncfusion/ej2-angular-grids';
+import { ToolbarService, GridComponent, ExcelExportService, PdfExportService, PageService, SortService, GridModule } from '@syncfusion/ej2-angular-grids';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations'
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'advanced-exporting.html',
-    providers: [ToolbarService, PageService, ExcelExportService, PdfExportService]
+    providers: [ToolbarService, PageService, ExcelExportService, PdfExportService, SortService],
+    standalone: true,
+    imports: [GridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class AdvancedExportingComponent implements OnInit {
     public gridData: Object[];

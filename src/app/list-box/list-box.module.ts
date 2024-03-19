@@ -6,7 +6,7 @@ import { DragAndDropListBoxComponent } from './drag-and-drop.component';
 import { CheckboxListBoxComponent } from './checkbox.component';
 import { ApiListBoxComponent } from './api.component';
 import { ListBoxAllModule, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
-import { SharedModule } from '../common/shared.module';
+
 import { TemplateListBoxComponent } from './template.component';
 
 export const listBoxAppRoutes: Object[] = [
@@ -18,18 +18,6 @@ export const listBoxAppRoutes: Object[] = [
     { path: ':theme/list-box/api', component: ApiListBoxComponent, name: 'API', category: 'List Box', order: '01', description: 'This example how to customize the Syncfusion Typescript ListBox component using the available set of APIs.' }
 ];
 
-export const listBoxRouter: ModuleWithProviders<any> = RouterModule.forChild(listBoxAppRoutes);
+export const ListBoxSampleModule: ModuleWithProviders<any> = RouterModule.forChild(listBoxAppRoutes);
 
-@NgModule({
-    imports: [listBoxRouter, ListBoxAllModule, DropDownListModule, SharedModule],
-    declarations: [
-        DefaultListBoxComponent,
-        DualListBoxComponent,
-        DragAndDropListBoxComponent,
-        CheckboxListBoxComponent,
-        TemplateListBoxComponent,
-        ApiListBoxComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class ListBoxSampleModule { }
+

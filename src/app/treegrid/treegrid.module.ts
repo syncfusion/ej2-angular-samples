@@ -1,8 +1,7 @@
 import { TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
-import { NgModule, Type, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, Type, CUSTOM_ELEMENTS_SCHEMA, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HttpModule } from '@angular/http';
 import { NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { DatePickerModule, DatePickerAllModule } from '@syncfusion/ej2-angular-calendars';
 import { ButtonAllModule , CheckBoxAllModule} from '@syncfusion/ej2-angular-buttons';
@@ -262,16 +261,5 @@ export const treegridRouteConfig: Object[] = [
     order: '13', category: 'Miscellaneous' }
 ];
 
-let declarations: Type<Object>[] = [TreeGridOverviewComponent, DefaultComponent, TreeGridClipboardComponent, TreeGridAdaptiveComponent, LocalDataComponent, RemoteData, SelfReferenceComponent, SortComponent, SortingAPIComponent, DefaultPagingComponent, PagingAPIComponent, ContextMenuComponent, CustomContextMenuComponent, AggregateComponent, CustomAggregateComponent, ColumnReorderComponent, ColumnFormattingComponent, ColumnTemplateComponent, ResizingComponent,
-    ColumnMenuComponent, ColumnChooserComponent, CellAlignmentComponent, AutoWrap, ShowHideComponent, HeaderTemplateComponent, FilterComponent, InlineEditing, DialogEditingComponent, BatchEditingComponent, LockRowComponent, CellEditTypeComponent, CommandColumnComponent, EditTemplateComponent, ReactiveFormsComponent, TemplateFormsComponent, SearchComponent,
-    StackedHeaderComponent, KeyBoardComponent, DefaultExportComponent, PrintComponent, EventComponent, ConditionalFormattingComponent, ToolbarTemplateComponent,InfiniteScrollingComponent,
-    GridLinesComponent, RowHover, RowHeightComponent, RowTemplateComponent, DragDropComponent, FilteringMenuComponent, FreezeComponent, DefaultScrollingComponent, VirtualScrollingComponent, SelectionComponent, SelectionAPIComponent, CheckboxSelectionComponent, CheckboxColumnComponent, FrozenAPI, LoadingAnimationComponent, LiveDataComponent];
 
-@NgModule({
-    imports: [RouterModule.forChild(treegridRouteConfig), CommonModule, HttpModule, TreeGridAllModule,
-        NumericTextBoxAllModule, ToolbarModule, DropDownListAllModule, ButtonAllModule, DialogModule, MultiSelectAllModule, CheckBoxAllModule, ReactiveFormsModule, FormsModule, DatePickerModule, SparklineAllModule],
-    declarations: declarations,
-    providers: [TreeGridAllModule, SparklineAllModule],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class TreeGridSampleModule { }
+export const TreeGridSampleModule: ModuleWithProviders<any> = RouterModule.forChild(treegridRouteConfig);

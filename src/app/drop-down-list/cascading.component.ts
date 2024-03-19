@@ -3,12 +3,16 @@
  */
 import { Component, ViewChild } from '@angular/core';
 import { Query } from '@syncfusion/ej2-data';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'cascading.html',
-    styleUrls: ['drop-down-list.css']
+    styleUrls: ['drop-down-list.css'],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DropDownListModule, SBDescriptionComponent]
 })
 
 export class CascadingDropDownListComponent {
@@ -69,7 +73,7 @@ export class CascadingDropDownListComponent {
     public onChange1(): void {
         this.stateObj.enabled = true;
         // query the data source based on country DropDownList selected value
-        let tempQuery: Query = new Query().where('CountryId', 'equal', this.countryObj.value);
+        let tempQuery: Query = new Query().where('CountryId', 'equal', this.countryObj.value as any);
         this.stateObj.query = tempQuery;
         // clear the existing selection.
         this.stateObj.text = null;
@@ -84,7 +88,7 @@ export class CascadingDropDownListComponent {
     public onChange2(): void {
         this.cityObj.enabled = true;
         // query the data source based on state DropDownList selected value
-        let tempQuery1: Query = new Query().where('StateId', 'equal', this.stateObj.value);
+        let tempQuery1: Query = new Query().where('StateId', 'equal', this.stateObj.value as any);
         this.cityObj.query = tempQuery1;
         // clear the existing selection.
         this.cityObj.text = null;

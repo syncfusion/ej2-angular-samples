@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { TreeGridComponent } from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent , TreeGridAllModule} from '@syncfusion/ej2-angular-treegrid';
 import { sampleData } from './jsontreegriddata';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Row height sample
@@ -10,7 +12,9 @@ import { ClickEventArgs } from '@syncfusion/ej2-navigations';
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'rowheight.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class RowHeightComponent implements OnInit {
     public data: Object[];

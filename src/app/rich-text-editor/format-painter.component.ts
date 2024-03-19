@@ -1,13 +1,17 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { RichTextEditorComponent, HtmlEditorService, ToolbarService, FormatPainterService, QuickToolbarService, ImageService, LinkService, TableService, ToolbarSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
-import { TextBoxComponent, FocusOutEventArgs } from '@syncfusion/ej2-angular-inputs';
+import { RichTextEditorComponent, HtmlEditorService, ToolbarService, FormatPainterService, QuickToolbarService, ImageService, LinkService, TableService, ToolbarSettingsModel, RichTextEditorModule, PasteCleanupService, VideoService, AudioService } from '@syncfusion/ej2-angular-richtexteditor';
+import { TextBoxComponent, FocusOutEventArgs, TextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'format-painter.html',
     styleUrls: ['style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [HtmlEditorService, ToolbarService, FormatPainterService, QuickToolbarService, ImageService, LinkService, TableService]
+    providers: [HtmlEditorService, ToolbarService, FormatPainterService, QuickToolbarService, ImageService, LinkService, TableService, PasteCleanupService, VideoService, AudioService],
+    standalone: true,
+    imports: [RichTextEditorModule, TextBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class FormatPainterComponent {

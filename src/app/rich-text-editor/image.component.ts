@@ -2,18 +2,22 @@
  * Rich Text Editor Image Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ToolbarService, LinkService, ImageService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, QuickToolbarService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, TableService} from '@syncfusion/ej2-angular-richtexteditor';
 import { HtmlEditorService, NodeSelection, RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
-import { DropDownListComponent, FieldSettingsModel } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent, FieldSettingsModel, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
     templateUrl: 'image.html',
     styleUrls: ['image.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService]
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, RichTextEditorModule, CheckBoxModule, DropDownListModule, SBDescriptionComponent]
 })
 export class ImageComponent {
 

@@ -1,9 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import {
-    DiagramComponent, NodeModel, HierarchicalTree, ConnectorModel, StackPanel, TextElement, Segments,
-    ConnectorConstraints, NodeConstraints, PointPortModel, PortVisibility, BasicShapeModel, LayoutModel, ConnectorEditing, DecoratorShapes, SegmentThumbShapes
-} from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, NodeModel, HierarchicalTree, ConnectorModel, StackPanel, TextElement, Segments, ConnectorConstraints, NodeConstraints, PointPortModel, PortVisibility, BasicShapeModel, LayoutModel, ConnectorEditing, DecoratorShapes, SegmentThumbShapes, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { Diagram, SnapConstraints, SnapSettingsModel, randomId } from '@syncfusion/ej2-diagrams';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(HierarchicalTree,ConnectorEditing);
 
 
@@ -15,7 +16,9 @@ Diagram.Inject(HierarchicalTree,ConnectorEditing);
     selector: 'control-content',
     templateUrl: 'connectors.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, DropDownListModule, ColorPickerModule, SBDescriptionComponent]
 })
 
 export class ConnectorDiagramComponent {

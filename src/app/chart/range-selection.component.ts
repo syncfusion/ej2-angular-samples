@@ -1,7 +1,9 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ChartComponent, ILoadedEventArgs } from '@syncfusion/ej2-angular-charts';
+import { ChartComponent, ILoadedEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { SelectionMode, ChartTheme } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Sample for Range Selection in chart
  */
@@ -9,7 +11,9 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
     selector: 'control-content',
     templateUrl: 'range-selection.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 export class RangeSelectionChartComponent {
 

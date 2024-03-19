@@ -1,12 +1,15 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-angular-circulargauge';
+import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme, CircularGaugeModule, GradientService } from '@syncfusion/ej2-angular-circulargauge';
 import { IAxisLabelRenderEventArgs } from '@syncfusion/ej2-circulargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'direction-compass.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [CircularGaugeModule],
+    providers: [GradientService]
 })
 
 export class DirectionComponent {

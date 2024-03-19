@@ -1,11 +1,14 @@
 import { Component, ViewEncapsulation, ViewChild,  OnInit } from '@angular/core';
-import { ToolbarService, DocumentEditorContainerComponent } from '@syncfusion/ej2-angular-documenteditor';
+import { ToolbarService, DocumentEditorContainerComponent, DocumentEditorContainerModule } from '@syncfusion/ej2-angular-documenteditor';
 import { TitleBar } from './title-bar';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations/src/toolbar/toolbar';
 import { mailmerge, WEB_API_ACTION } from './data';
 import { ListView, SelectEventArgs } from '@syncfusion/ej2-lists';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
 import { Dialog, DialogUtility } from '@syncfusion/ej2-popups';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 /**
  * Document Editor Component
  */
@@ -13,7 +16,9 @@ import { Dialog, DialogUtility } from '@syncfusion/ej2-popups';
     selector: 'control-content',
     templateUrl: 'mail-merge.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService]
+    providers: [ToolbarService],
+    standalone: true,
+    imports: [ListViewModule, DocumentEditorContainerModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class MailMergeComponent {
     public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
@@ -76,6 +81,7 @@ export class MailMergeComponent {
         this.titleBar = new TitleBar(titleBarElement, this.container.documentEditor, true);
         this.container.documentEditor.open(JSON.stringify(mailmerge));
         this.container.documentEditor.documentName = 'Mail Merge';
+        this.container.documentEditorSettings.showRuler = true;
         this.titleBar.updateDocumentTitle();
         let toolbaritems : any = this.item;
         this.container.toolbarItems = toolbaritems;

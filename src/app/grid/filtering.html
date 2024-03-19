@@ -2,7 +2,7 @@
     <div class="select-wrap">
         <ejs-dropdownlist id='ddlelement' [dataSource]='ddldata' placeholder = 'Select category to filter' (change)="onChange($event)"></ejs-dropdownlist>
     </div>
-    <ejs-grid #grid [dataSource]='data' allowPaging='true' allowFiltering='true' [pageSettings]="pageOptions">
+    <ejs-grid #grid [dataSource]='data' allowPaging='true' allowSorting='true' allowFiltering='true' [pageSettings]="pageOptions">
         <e-columns>
             <e-column field='CategoryName' headerText='Category Name' width='150'></e-column>
             <e-column field='ProductName' headerText='Product Name' width='150'></e-column>
@@ -56,7 +56,7 @@
          <p style="font-weight: 500">Injecting Module:</p>
         <p>
             Grid features are segregated into individual feature-wise modules. To use filtering feature, inject the
-            <code>FilterService</code> using the <code>@NgModule.providers</code> section.
+            <code>FilterService</code> using the <code>&#64;NgModule.providers</code> section.
         </p>
           <p>
             More information on the filter configuration can be found in this

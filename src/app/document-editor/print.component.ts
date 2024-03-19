@@ -1,8 +1,12 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DocumentEditorComponent, ViewChangeEventArgs, PrintService } from '@syncfusion/ej2-angular-documenteditor';
+import { DocumentEditorComponent, ViewChangeEventArgs, PrintService, DocumentEditorModule } from '@syncfusion/ej2-angular-documenteditor';
 import { DocumentLoader } from './document-loader';
 import { TitleBar } from './title-bar';
 import { StatusBar } from './status-bar';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { TooltipModule } from '@syncfusion/ej2-angular-popups';
 /**
  * Print Component
  */
@@ -10,7 +14,9 @@ import { StatusBar } from './status-bar';
     selector: 'control-content',
     templateUrl: 'print.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [PrintService]
+    providers: [PrintService],
+    standalone: true,
+    imports: [DocumentEditorModule, TooltipModule, NumericTextBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class PrintComponent {
     @ViewChild("documenteditor_print")

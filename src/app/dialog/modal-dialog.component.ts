@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { DialogComponent, AnimationSettingsModel } from '@syncfusion/ej2-angular-popups';
-import { CheckBoxComponent, ButtonModel } from '@syncfusion/ej2-angular-buttons';
+import { DialogComponent, AnimationSettingsModel, DialogModule } from '@syncfusion/ej2-angular-popups';
+import { CheckBoxComponent, ButtonModel, ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Modal Dialog Component
  */
@@ -9,7 +11,9 @@ import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
     selector: 'control-content',
     templateUrl: 'modal-dialog.html',
     styleUrls: ['modal-dialog.css'],
-	encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ButtonModule, DialogModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class ModalDialogComponent implements AfterViewInit {

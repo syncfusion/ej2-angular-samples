@@ -2,17 +2,20 @@
  * Bubble sample
  */
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, Maps, Bubble, IBubbleRenderingEventArgs, MapsTooltip, ILoadEventArgs, } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, Maps, Bubble, IBubbleRenderingEventArgs, MapsTooltip, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
 import {  internetUsers } from './population-data';
-import { MapAjax } from '@syncfusion/ej2-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Maps.Inject(Bubble, MapsTooltip); 
-import worldMap from './world-map.json';
+let worldMap: object[] = require('./world-map.json');
 export interface Data { value?: number; }
 declare var require: any;
 @Component({
     selector: 'control-content',
-    templateUrl: 'bubble.html', 
-    encapsulation: ViewEncapsulation.None
+    templateUrl: 'bubble.html',
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, SBDescriptionComponent]
 })
 export class MapsBubbleComponent {
     public load = (args: ILoadEventArgs) => {

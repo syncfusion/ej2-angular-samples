@@ -1,4 +1,7 @@
 import { Component, Inject } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { DropDownTreeModule } from '@syncfusion/ej2-angular-dropdowns';
 
 /**
  * Dropdown Tree plain data sample
@@ -6,7 +9,9 @@ import { Component, Inject } from '@angular/core';
 @Component({
     selector: 'control-content',
     templateUrl: 'local-data.html',
-    styleUrls: ['local-data.css']
+    styleUrls: ['local-data.css'],
+    standalone: true,
+    imports: [DropDownTreeModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class LocalDropDownTreeComponent {
 

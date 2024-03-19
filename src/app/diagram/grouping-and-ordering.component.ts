@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild,Inject } from '@angular/core';
-import { ConnectorConstraints, DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
-import { ComboBoxComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
+import { ConnectorConstraints, DiagramComponent, SymbolPaletteModule, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { ComboBoxComponent, ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ToolbarComponent, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import {
   Diagram, NodeModel, UndoRedo, ConnectorModel, PointPortModel, Connector, FlowShapeModel,
   SymbolInfo, IDragEnterEventArgs, SnapSettingsModel, MarginModel, TextStyleModel, StrokeStyleModel,
@@ -9,6 +9,9 @@ import {
 } from '@syncfusion/ej2-diagrams';
 import { ExpandMode } from '@syncfusion/ej2-navigations';
 import { paletteIconClick } from './script/diagram-common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { NumericTextBoxModule, ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(UndoRedo);
 
 /**
@@ -16,10 +19,12 @@ Diagram.Inject(UndoRedo);
  */
 
 @Component({
-  selector: 'control-content',
-  templateUrl: 'grouping-and-ordering.html',
-  styleUrls: ['default-functionalities.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'grouping-and-ordering.html',
+    styleUrls: ['default-functionalities.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToolbarModule, ComboBoxModule, NumericTextBoxModule, ColorPickerModule, SymbolPaletteModule, DiagramModule, SBDescriptionComponent]
 })
 export class GroupingAndOrderingComponent {
   @ViewChild('diagram')

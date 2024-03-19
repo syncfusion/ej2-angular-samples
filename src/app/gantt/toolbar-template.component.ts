@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { projectNewData } from './data';
-import { GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
 import { ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-gantttoolbartemplate',
     templateUrl: 'toolbar-template.html',
     styleUrls: ['toolbar-template.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
 })
 export class GanttToolbarTemplateComponent implements OnInit {
     public data: object[];

@@ -3,7 +3,7 @@
  */
 import { NgModule, ModuleWithProviders, Type } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '../common/shared.module';
+
 import { HeatMapAllModule } from '@syncfusion/ej2-angular-heatmap';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { ChartAllModule } from '@syncfusion/ej2-angular-charts';
@@ -111,8 +111,7 @@ export const heatmapAppRoutes: Object[] = [
     {
         path: ':theme/heatmap-chart/label-template', component: LabelTemplateComponent,
         description: 'This demo for Essential JS2 Heatmap control demonstrates how to bind the JSON object with data for each cell to heat map.',
-        name: 'Label Template', order: '04', category: 'Features',
-        type:'new'
+        name: 'Label Template', order: '04', category: 'Features'
     },
     {
         path: ':theme/heatmap-chart/multi-level-labels', component: HeatmapMultilevelLabelComponent,
@@ -188,34 +187,5 @@ export const heatmapAppRoutes: Object[] = [
     },
 ];
 
-export const heatmapRouter: ModuleWithProviders<any> = RouterModule.forChild(heatmapAppRoutes);
-let declarations: Type<Object>[] = [
-    HeatmapDefaultComponent,
-    HeatmapCalendarComponent,
-    HeatmapRowJsonComponent,
-    HeatmapCellJsonComponent,
-    HeatmapArrayRowComponent,
-    HeatmapArrayCellComponent,
-    HeatmapEmptyPointComponent,
-    HeatmapInversedComponent,
-    HeatmapOpposedComponent,
-    HeatmapLegendComponent,
-    HeatmapLargeDataComponent,
-    HeatmapMultilevelLabelComponent,
-    HeatmapCellSelectionComponent,
-    HeatmapPaletteComponent,
-    HeatmapColorRangeComponent,
-    HeatmapRenderModeComponent,
-    HeatmapTooltipComponent,
-    HeatmapBubbleTypesComponent,
-    HeatmapColorAndSizeAttributesComponent,
-    LabelTemplateComponent
-];
-@NgModule({
-    imports: [heatmapRouter, SharedModule, HeatMapAllModule, ChartAllModule, ButtonModule],
-    exports: [HeatmapDefaultComponent],
-    declarations: declarations,
-    providers: [HeatMapAllModule]
-})
-export class HeatmapSampleModule {
-}
+
+export const HeatmapSampleModule: ModuleWithProviders<any> = RouterModule.forChild(heatmapAppRoutes);

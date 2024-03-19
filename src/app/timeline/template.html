@@ -1,0 +1,72 @@
+<div class="col-lg-12 control-section">
+    <div class="timeline-template-section">
+        <ejs-timeline #templateTimeline id="template" cssClass="custom-timeline" [template]="customTemplate">
+            <e-items>
+                @for (item of timelineItems; track item) {
+                    <e-item [dotCss]="item.dotCss" [content]="item.content"/>
+                }
+            </e-items>
+            <ng-template #customTemplate let-data="">
+                <div class='template-container'>
+                    <div class="progress-line">
+                        <span class="indicator {{data.item.dotCss}}"></span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="content-container">
+                            <span>{{data.item.content}}</span>
+                            <span class="e-icons e-more-vertical-1"></span>
+                        </div>
+                        @if(data.itemIndex == 1) {
+                            <div class="content-container">
+                                <span class="e-icons e-lock">
+                                    &nbsp; <span class="repo-name">Author/Getting-started-with-new-control</span>
+                                </span>
+                                <div>
+                                    <div class="mini-circle"></div>
+                                    <span class="mini-text">JavaScript</span>
+                                </div>
+                                <span class="mini-text"> Feb 15 </span>
+                            </div>
+                        }
+                        @else if(data.itemIndex == 2) {
+                            <div class="mention-group">
+                                <svg class="color-pr" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+                                    aria-hidden="true">
+                                    <path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218ZM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM5 3.25a.75.75 0 1 0 0 .005V3.25Z">
+                                    </path>
+                                </svg>
+                                <div class="mention-content">
+                                    <h5 style="font-weight: bold"> 87231 - Updated Roadmap for new control </h5>
+                                    <span> Updated new control roadmap </span>
+                                    <div class="diffstats">
+                                        <span class="color-success"> +95 </span>
+                                        <span class="color-danger"> -17 </span>
+                                        <span>
+                                            <span class="diff-block added"></span>
+                                            <span class="diff-block added"></span>
+                                            <span class="diff-block added"></span>
+                                            <span class="diff-block added"></span>
+                                            <span class="diff-block neutral"></span>
+                                            lines changed
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </ng-template>
+        </ejs-timeline>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the template functionality of the Timeline component.</p>
+</div>
+<div id="description">
+    <p>
+        In this example, we showcase repository activities by customizing each item using the <code>template</code>
+        property. It allows to create unique appearances for items, including the connector, dot container, and
+        contents.
+    </p>
+</div>

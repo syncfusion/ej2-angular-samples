@@ -1,4 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { MenuModule } from '@syncfusion/ej2-angular-navigations';
 
 /**
  * Data binding Menu Controller
@@ -7,7 +10,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
     selector: 'control-content',
     templateUrl: 'data-binding.html',
     styleUrls: ['data-binding.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [MenuModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class DataBindingMenuController {

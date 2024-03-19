@@ -1,6 +1,8 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { TabComponent } from '@syncfusion/ej2-angular-navigations';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { TabComponent, TabModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Adaptive Tab Component
@@ -9,7 +11,9 @@ import { TabComponent } from '@syncfusion/ej2-angular-navigations';
     selector: 'control-content',
     templateUrl: 'responsive-modes.html',
     styleUrls: ['tab.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, TabModule, DropDownListModule, SBDescriptionComponent]
 })
 export class ResponsiveTabComponent {
     @ViewChild('modes')

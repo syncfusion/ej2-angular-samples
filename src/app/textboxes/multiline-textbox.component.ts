@@ -1,8 +1,10 @@
 import { Component, Inject, ViewChild} from '@angular/core';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
-import { DropDownListComponent,ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { DropDownListComponent, ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { EmitType, detach } from '@syncfusion/ej2-base';
-import { TextBoxComponent, NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { TextBoxComponent, NumericTextBoxComponent, TextBoxModule, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Default Multiline TextBox sample
@@ -10,7 +12,9 @@ import { TextBoxComponent, NumericTextBoxComponent } from '@syncfusion/ej2-angul
 @Component({
     selector: 'control-content',
     styleUrls: ['multiline-textbox.css'],
-    templateUrl: 'multiline-textbox.html'
+    templateUrl: 'multiline-textbox.html',
+    standalone: true,
+    imports: [TextBoxModule, DropDownListModule, CheckBoxModule, NumericTextBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DefaultTextAreaController {
     @ViewChild('default')

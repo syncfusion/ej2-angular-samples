@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataManager, UrlAdaptor } from '@syncfusion/ej2-data';
-import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { GridComponent, PageService, SortService, FilterService } from '@syncfusion/ej2-angular-grids';
+import { DropDownListComponent, ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { GridComponent, PageService, SortService, FilterService, GridModule } from '@syncfusion/ej2-angular-grids';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-gridloadinganimation',
     templateUrl: 'loading-animation.html',
-    providers: [PageService, SortService, FilterService ]
+    providers: [PageService, SortService, FilterService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GridModule, DropDownListModule, SBDescriptionComponent]
 })
 export class LoadingAnimationComponent implements OnInit {
     public data: DataManager;

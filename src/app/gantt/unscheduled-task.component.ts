@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild} from '@angular/core';
 import { unscheduledData } from './data';
-import { GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'unscheduled-task.html',
     styleUrls: ['unscheduled.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
 })
 export class GanttUnscheduledComponent implements OnInit {
     @ViewChild('unscheduleGantt')

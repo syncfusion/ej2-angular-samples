@@ -3,7 +3,7 @@
     changed as <b>20px</b>, <b>40px</b> and <b>60px</b> on ToolBar button click.</p>
 </div>
 <div class="control-section">
-    <ejs-grid #grid [dataSource]='data' rowHeight='20' height='400' [toolbar]='toolbar' (toolbarClick)='clickHandler($event)'>
+    <ejs-grid #grid [dataSource]='data' rowHeight='20' height='400' [toolbar]='toolbar' [allowSorting]='true' (toolbarClick)='clickHandler($event)'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>

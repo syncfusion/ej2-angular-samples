@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { orderData } from './data';
-import { AggregateService, GroupService, EditService, ToolbarService } from '@syncfusion/ej2-angular-grids';
+import { AggregateService, GroupService, EditService, ToolbarService, SortService, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-gridaggregate',
     templateUrl: 'reactive-aggregate.html',
-    providers: [AggregateService, GroupService, EditService, ToolbarService]
+    providers: [AggregateService, GroupService, EditService, ToolbarService, SortService, PageService],
+    standalone: true,
+    imports: [GridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ReactiveAggregateComponent implements OnInit {
     public data: Object[];

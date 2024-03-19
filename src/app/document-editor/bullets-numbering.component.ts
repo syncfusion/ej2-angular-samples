@@ -1,8 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ToolbarService, DocumentEditorContainerComponent } from '@syncfusion/ej2-angular-documenteditor';
+import { ToolbarService, DocumentEditorContainerComponent, DocumentEditorContainerModule } from '@syncfusion/ej2-angular-documenteditor';
 import { TitleBar } from './title-bar';
 import { bulletAndNumbering, WEB_API_ACTION } from './data';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Document Editor Component
@@ -11,7 +13,9 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'bullets-numbering.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService]
+    providers: [ToolbarService],
+    standalone: true,
+    imports: [DocumentEditorContainerModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class BulletsNumberingComponent {
     public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
@@ -25,6 +29,7 @@ export class BulletsNumberingComponent {
         this.titleBar = new TitleBar(titleBarElement, this.container.documentEditor, true);
         this.container.documentEditor.open(JSON.stringify(bulletAndNumbering));
         this.container.documentEditor.documentName = 'Bullets and Numbering';
+        this.container.documentEditorSettings.showRuler = true;
         this.titleBar.updateDocumentTitle();
     }
 

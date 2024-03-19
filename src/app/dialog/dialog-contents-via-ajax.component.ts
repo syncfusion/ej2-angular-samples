@@ -1,8 +1,10 @@
 import { Component, ViewChild, ViewEncapsulation, ElementRef, AfterViewInit } from '@angular/core';
 import { Fetch } from '@syncfusion/ej2-base';
-import { DialogComponent, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
+import { DialogComponent, ButtonPropsModel, DialogModule } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Ajax Dialog Component
  */
@@ -10,7 +12,9 @@ import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
     selector: 'control-content',
     templateUrl: 'dialog-contents-via-ajax.html',
     styleUrls: ['dialog-contents-via-ajax.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ButtonModule, DialogModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class AjaxDialogComponent implements AfterViewInit {

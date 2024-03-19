@@ -1,8 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ToolbarService, DocumentEditorContainerComponent } from '@syncfusion/ej2-angular-documenteditor';
+import { ToolbarService, DocumentEditorContainerComponent, DocumentEditorContainerModule } from '@syncfusion/ej2-angular-documenteditor';
 import { TitleBar } from './title-bar';
 import { defaultDocument, WEB_API_ACTION } from './data';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Document Editor Component
@@ -11,7 +13,9 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'default.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService]
+    providers: [ToolbarService],
+    standalone: true,
+    imports: [DocumentEditorContainerModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DocEditorComponent {
     public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';

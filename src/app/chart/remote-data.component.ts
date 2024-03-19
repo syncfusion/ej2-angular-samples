@@ -1,9 +1,11 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { DataManager, Query } from '@syncfusion/ej2-data';
-import { IAxisLabelRenderEventArgs, ILoadedEventArgs, IPointRenderEventArgs } from '@syncfusion/ej2-angular-charts';
+import { IAxisLabelRenderEventArgs, ILoadedEventArgs, IPointRenderEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { ChartComponent } from '@syncfusion/ej2-angular-charts';
 import { Chart, ChartTheme } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Sample for Remote-Data binding
  */
@@ -11,7 +13,9 @@ import { Browser } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'remote-data.html',
     styleUrls: ['remotedata.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 export class RemoteDataChartComponent {
 

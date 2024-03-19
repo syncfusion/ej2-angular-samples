@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { BasicShapeModel, SnapConstraints, DiagramTools, SnapSettingsModel, PointModel, ShapeStyleModel } from '@syncfusion/ej2-diagrams';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Venn Diagram
@@ -10,7 +12,9 @@ import { BasicShapeModel, SnapConstraints, DiagramTools, SnapSettingsModel, Poin
     selector: 'control-content',
     templateUrl: 'venn-diagram.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, SBDescriptionComponent]
 })
 export class VennDiagramComponent {
     @ViewChild('diagram')

@@ -1,12 +1,18 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DataManager } from '@syncfusion/ej2-data';
 import { orderDataSource } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { GridModule, ToolbarService, EditService, PageService } from '@syncfusion/ej2-angular-grids';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej-gridemptytemplate',
     templateUrl: 'empty-record-template.html',
     styleUrls: ['empty-record-template.style.css'],
-    encapsulation: ViewEncapsulation.None
+    providers: [ToolbarService, EditService, PageService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GridModule, SBDescriptionComponent]
 })
 export class EmptyRecordTemplateComponent implements OnInit {
     public data: Object[];

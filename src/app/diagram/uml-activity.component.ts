@@ -1,12 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild,Inject } from '@angular/core';
-import {
-    DiagramComponent, OrthogonalSegmentModel, PaletteModel, PortVisibility,
-    SnapConstraints, SnapSettingsModel, UmlActivityShapeModel, UmlActivityFlows,
-    Diagram, NodeModel, UndoRedo, ConnectorModel, DiagramContextMenu, Rect,
-    StrokeStyleModel, DecoratorModel, PointModel, SymbolInfo, PointPortModel
-} from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, OrthogonalSegmentModel, PaletteModel, PortVisibility, SnapConstraints, SnapSettingsModel, UmlActivityShapeModel, UmlActivityFlows, Diagram, NodeModel, UndoRedo, ConnectorModel, DiagramContextMenu, Rect, StrokeStyleModel, DecoratorModel, PointModel, SymbolInfo, PointPortModel, SymbolPaletteModule, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { ExpandMode } from '@syncfusion/ej2-navigations';
 import { MarginModel } from '@syncfusion/ej2-lineargauge';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(UndoRedo, DiagramContextMenu);
 
 /**
@@ -17,7 +14,9 @@ Diagram.Inject(UndoRedo, DiagramContextMenu);
     selector: 'control-content',
     templateUrl: 'uml-activity.html',
     styleUrls: ['diagram-common.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SymbolPaletteModule, DiagramModule, SBDescriptionComponent]
 })
 export class UmlActivityComponent {
     @ViewChild('diagram')

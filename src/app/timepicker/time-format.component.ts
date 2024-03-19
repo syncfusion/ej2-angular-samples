@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { TimePickerComponent } from '@syncfusion/ej2-angular-calendars';
+import { TimePickerComponent, TimePickerModule } from '@syncfusion/ej2-angular-calendars';
 /**
 
  * Default TimePicker component
@@ -8,7 +8,9 @@ import { TimePickerComponent } from '@syncfusion/ej2-angular-calendars';
     selector: 'control-content',
     styleUrls: ['format-style.css'],
     templateUrl: 'time-format.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TimePickerModule]
 })
 export class FormatTimePickerComponent {
 

@@ -3,7 +3,7 @@
  */
 import { NgModule, ModuleWithProviders, Type } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '../common/shared.module';
+
 import { ButtonModule, CheckBoxModule, RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 import { NumericTextBoxModule, ColorPickerModule, UploaderModule, TextBoxModule } from '@syncfusion/ej2-angular-inputs';
@@ -118,19 +118,4 @@ export const barcodeAppRoutes: Object[] = [
     },
 ];
 
-export const barcodeRouter: ModuleWithProviders<any> = RouterModule.forChild(barcodeAppRoutes);
-let declarations: Type<Object>[] = [defaultFunctionalities, Code32Component,Code39Component,Code39ExtdComponent,Code93Component,Code128Component,Code128AComponent,Code128BComponent,Code128CComponent,
-    DataMatrixComponent,CodabarComponenet,Ean13Component,UpcAComponent,UpcEComponent,QrCodeComponent
-];
-@NgModule({
-    imports: [barcodeRouter, BarcodeGeneratorAllModule, ButtonModule,QRCodeGeneratorAllModule,DataMatrixGeneratorAllModule,
-        ColorPickerModule, CheckBoxModule, ToolbarModule, DropDownButtonModule, UploaderModule, DropDownListAllModule, ListViewAllModule,
-         TextBoxModule, RadioButtonModule,
-        MultiSelectModule, NumericTextBoxModule, SharedModule],
-    exports: [],
-    declarations: declarations,
-    providers: [BarcodeGeneratorAllModule,QRCodeGeneratorAllModule,DataMatrixGeneratorAllModule]
-})
-export class BarcodeSampleModule {
-
-}
+export const BarcodeSampleModule: ModuleWithProviders<any> = RouterModule.forChild(barcodeAppRoutes);

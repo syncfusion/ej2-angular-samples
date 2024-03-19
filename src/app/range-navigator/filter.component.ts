@@ -1,8 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ChartTheme, IRangeLoadedEventArgs, DateTime, IChangedEventArgs, Chart } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
-import { GridComponent } from '@syncfusion/ej2-angular-grids';
+import { GridComponent, GridModule } from '@syncfusion/ej2-angular-grids';
 import { employeeData } from './datasource';
+import { RangeNavigatorModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 
 /**
  * Range navigator with date time axis
@@ -14,7 +15,9 @@ selectedTheme = selectedTheme ? selectedTheme : 'Material';
 @Component({
     selector: 'control-content',
     templateUrl: 'filter.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [RangeNavigatorModule, GridModule, ChartAllModule]
 })
 
 export class FilterComponent {

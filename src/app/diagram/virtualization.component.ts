@@ -3,7 +3,7 @@
  */
 
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import {
     Diagram, NodeModel, ConnectorModel, DataBinding,ZoomOptions,
     HierarchicalTree, SnapConstraints, SnapSettingsModel,Rect,DiagramTools,DiagramConstraints
@@ -11,13 +11,18 @@ import {
 import { DataManager } from '@syncfusion/ej2-data';
 import { virtualizationData } from './complexShapes.data';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(DataBinding, HierarchicalTree);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'virtualization.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToolbarModule, DiagramModule, SBDescriptionComponent]
 })
 
 export class VirtualizationComponent {

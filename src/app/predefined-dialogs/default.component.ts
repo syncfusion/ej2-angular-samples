@@ -1,11 +1,16 @@
 import { Component, ViewEncapsulation, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { DialogUtility} from '@syncfusion/ej2-angular-popups'
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
     styleUrls: ['default.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DefaultDialogComponent  {
   public dialogObj;

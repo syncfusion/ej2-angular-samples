@@ -1,0 +1,30 @@
+<div class="col-lg-8 control-section resize">
+    <div class="content-wrapper">
+        <div class="resize-row">
+            <ejs-textarea id="resize" #default placeholder="Enter your comments" resizeMode='Vertical'></ejs-textarea>
+        </div>
+    </div>
+</div>  
+
+<div class="col-lg-4 property-section">
+    <div class="property-panel-header">Properties</div>
+    <table id="property" class="resize-property">
+        <tr>
+            <td class="left-side">Resize Mode </td>
+            <td><ejs-dropdownlist id="resizedropdown" #select [dataSource]='resizeData' [(value)]='value' [fields]='fields' (change)='resizeHandler($event)'>
+            </ejs-dropdownlist></td>
+        </tr>
+    </table>
+</div>
+<div id="action-description">
+<p>
+    This example demonstrates the resize functionalities of the textarea control.
+    Choose the corresponding resizeMode option from the property panel to update the resize behavior in the textarea.
+</p>
+</div>
+<div id="description">
+    <p>The textarea can be resized vertically, horizontally, or in both directions by selecting the following corresponding options:</p>
+    <ul>
+        <li>Choose resizeMode options such as 'Both', 'Vertical', 'Horizontal', or 'None' to control the resize behavior of the textarea.</li>
+    </ul>
+</div>

@@ -6,13 +6,16 @@ import { CheckBoxModule, RadioButtonModule } from '@syncfusion/ej2-angular-butto
 import { CheckBoxSelectionService, DropDownListModule, MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
 import { SliderModule } from '@syncfusion/ej2-angular-inputs';
 import { QueryBuilderModule } from '@syncfusion/ej2-angular-querybuilder';
-import { SharedModule } from '../common/shared.module';
+
 import { DefaultQueryBuilderComponent } from './default.component';
 import { ComplexQueryBuilderComponent } from './complex-databinding.component';
 import { GridQueryBuilderComponent } from './grid.component';
 import { TemplateQueryBuilderComponent } from './template.component';
 import { RuleTemplateQueryBuilderComponent } from './rule-template.component';
 import { HeaderTemplateQueryBuilderComponent } from './header-template.component';
+import { CloneComponent } from './clone.component';
+import { LockComponent } from './lock.component';
+import { MongoComponent } from './mongo.component';
 import { OverviewQueryBuilderComponent } from './overview.component';
 import { GridModule } from '@syncfusion/ej2-angular-grids';
 import { TabModule } from '@syncfusion/ej2-angular-navigations';
@@ -21,6 +24,7 @@ export const QueryBuilderAppRoutes: Object[] = [
         path: ':theme/query-builder/default',
         component: DefaultQueryBuilderComponent,
         order: '01',
+        type: 'update',
         name: 'Default Functionalities',
         category: 'Query Builder'
     },
@@ -29,6 +33,30 @@ export const QueryBuilderAppRoutes: Object[] = [
         component: ComplexQueryBuilderComponent,
         order: '01',
         name: 'Complex Databinding',
+        category: 'Query Builder'
+    },
+    {
+        path: ':theme/query-builder/mongo',
+        component: MongoComponent,
+        order: '01',
+        type: 'new',
+        name: 'Mongo and SQL Query',
+        category: 'Query Builder'
+    },
+    {
+        path: ':theme/query-builder/clone',
+        component: CloneComponent,
+        order: '01',
+        type: 'new',
+        name: 'Clone Group/ Rule',
+        category: 'Query Builder'
+    },
+    {
+        path: ':theme/query-builder/lock',
+        component: LockComponent,
+        order: '01',
+        type: 'new',
+        name: 'Lock Group/ Rule',
         category: 'Query Builder'
     },
     {
@@ -42,6 +70,7 @@ export const QueryBuilderAppRoutes: Object[] = [
         path: ':theme/query-builder/template',
         component: TemplateQueryBuilderComponent,
         order: '02',
+        type: 'update',
         name: 'Value Template',
         category: 'Template'
     },
@@ -61,21 +90,4 @@ export const QueryBuilderAppRoutes: Object[] = [
     }
 ];
 
-export const QueryBuilderRouter: ModuleWithProviders<any> = RouterModule.forChild(QueryBuilderAppRoutes);
-
-@NgModule({
-    imports: [FormsModule, ReactiveFormsModule, QueryBuilderRouter, SharedModule, CommonModule, QueryBuilderModule, SliderModule, MultiSelectModule, DropDownListModule, RadioButtonModule, CheckBoxModule, GridModule, TabModule],
-    declarations: [
-        DefaultQueryBuilderComponent,
-        TemplateQueryBuilderComponent,
-        GridQueryBuilderComponent,
-        HeaderTemplateQueryBuilderComponent,
-        RuleTemplateQueryBuilderComponent,
-        ComplexQueryBuilderComponent,
-        OverviewQueryBuilderComponent
-    ],
-    exports: [DefaultQueryBuilderComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    providers: [CheckBoxSelectionService]
-})
-export class QueryBuilderSampleModule { }
+export const QueryBuilderSampleModule: ModuleWithProviders<any> = RouterModule.forChild(QueryBuilderAppRoutes);

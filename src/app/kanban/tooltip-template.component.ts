@@ -1,15 +1,20 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import { KanbanComponent, CardSettingsModel } from '@syncfusion/ej2-angular-kanban';
+import { KanbanComponent, CardSettingsModel, KanbanModule } from '@syncfusion/ej2-angular-kanban';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
 import { kanbanData } from './data';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'tooltip-template.html',
     styleUrls: ['tooltip-template.style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: []
+    providers: [],
+    standalone: true,
+    imports: [ KanbanModule, SBActionDescriptionComponent, SBDescriptionComponent, CheckBoxModule]
 })
 export class TooltipTemplateComponent {
     @ViewChild('kanbanObj') kanbanObj: KanbanComponent;

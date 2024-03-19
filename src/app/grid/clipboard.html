@@ -4,8 +4,9 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid #grid [dataSource]='data' allowPaging='true' [enableHover]="false" [allowSelection]="true" [selectionSettings]="selectOptions"
-         [toolbar]='toolbar' (toolbarClick)='clickHandler($event)'>
+    <ejs-grid #grid [dataSource]='data' allowPaging='true' [allowSorting]='true' 
+    [enableHover]="false" [allowSelection]="true" [selectionSettings]="selectOptions"
+    [toolbar]='toolbar' (toolbarClick)='clickHandler($event)'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>

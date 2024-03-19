@@ -4,7 +4,7 @@
 import { NgModule, ModuleWithProviders, Type } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '../common/shared.module';
+
 import { MapsAllModule } from '@syncfusion/ej2-angular-maps';
 import { MapsAnnotationComponent } from './annotation.component';
 import { PolygonComponent } from './polygon.component';
@@ -58,7 +58,7 @@ export const mapAppRoutes: Object[] = [
     { path: ':theme/maps/legend', component: MapsLegendComponent, name: "Legend", order: "02", category: "Features",  description: 'This demo for Essential JS2 Maps control visualizes grouping of countries in the legend based on its population density.' },
     { path: ':theme/maps/color-mapping', component: ColorMappingComponent, name: "Color Mapping", order: "02", category: "Features", description: 'This demo for Essential JS2 Maps with color mapping.' },
     { path: ':theme/maps/annotation', component: MapsAnnotationComponent, name: 'Annotations', order: '02', category: 'Features', description: 'This demo for Essential JS2 Maps control depicts the facts about Africa continent and a direction compass in an annotation.' },
-    { path: ':theme/maps/polygon', component: PolygonComponent, name: 'Polygon', type:'new', order: '03', category: 'Polygon',  description: 'This demo for Essential JS2 Maps control depicts the polygon shape rendering over OSM map.' },
+    { path: ':theme/maps/polygon', component: PolygonComponent, name: 'Polygon', type: 'update', order: '03', category: 'Polygon',  description: 'This demo for Essential JS2 Maps control depicts the polygon shape rendering over OSM map.' },
     { path: ':theme/maps/osm', component: MapsOsmComponent, name: 'OpenStreetMap', order: '04', category: 'Map Providers',  description: 'This demo for Essential JS2 Maps control depicts the osm sample.' },
     { path: ':theme/maps/osm-with-navigation-lines', component: MapsOsmWithNavigationComponent, name: 'OSM with Navigation Lines',  order: '04', category: 'Map Providers', description: 'This demo for Essential JS2 Maps control depicts the flight route from Los Angeles to Mexico City using navigation lines in the OpenStreetMap..' },
     { path: ':theme/maps/osm-with-sublayers', component: MapsOsmWithSublayerComponent, name: 'OSM with Sublayer', order: '04', category: 'Map Providers', description: 'This demo for Essential JS2 Maps control depicts the flight route from Los Angeles to Mexico City using navigation lines in the OpenStreetMap.' },
@@ -82,32 +82,4 @@ export const mapAppRoutes: Object[] = [
     { path: ':theme/maps/seat-selection', component: MapsSeatSelectionComponent, name: "Bus seat booking", order: "07", category: "Use Cases", description: 'This demo for Essential JS2 Maps control demonstrates the rendering of normal geometry type shapes on the map.'  }
 ];
 
-export const mapRouter: ModuleWithProviders<any> = RouterModule.forChild(mapAppRoutes);
-let declarations: Type<Object>[] = [
-    MapsAnnotationComponent,
-    MapsDefaultComponent, MapsClusteringComponent,
-    MapsProjectionComponent, MapsMultilayerComponent,
-    MapsDrilldownComponent, MapsHeatmapComponent,
-    MapsMarkerComponent, MapsMarkerTemplateComponent, MapsLabelComponent,
-    MapsBubbleComponent,
-    MapsEarthquakeComponent, MapsLegendComponent,
-    MapsCurvedLinesComponent,
-    MapsProgrammaticZoomComponent,
-    MapsSalesMapComponent,
-    MapsPieComponent,
-    PolygonComponent,
-    MapsPrintComponent,
-    MapsExportComponent, ColorMappingComponent, MapsWithSliderComponent,
-    MapsOsmComponent, MapsOsmWithNavigationComponent,MapsOsmWithSublayerComponent, MapsOsmWithLegendComponent,
-    MapsTooltipComponent, MapsSeatSelectionComponent, MapsZoomingComponent,MapsDynamicMarkerComponent,
-    MapsSelectionComponent, MapsHighlightComponent, MapsCyberAttackComponent, MapsNavigationLineComponent
-
-];
-@NgModule({
-    imports: [mapRouter, MapsAllModule, SliderModule, SharedModule, FormsModule, TextBoxModule, CheckBoxModule, ButtonModule, DropDownListModule],
-    exports: [],
-    declarations: declarations,
-    providers: [MapsAllModule]
-})
-export class MapsSampleModule {
-}
+export const MapsSampleModule: ModuleWithProviders<any> = RouterModule.forChild(mapAppRoutes);

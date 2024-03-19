@@ -1,16 +1,19 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';
-import { BulletTooltipSettingsModel, AnimationModel, BulletChartComponent, FontModel } from '@syncfusion/ej2-angular-charts';
+import { BulletTooltipSettingsModel, AnimationModel, BulletChartComponent, FontModel, BulletChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { ColorPickerEventArgs } from '@syncfusion/ej2-inputs';
-import { ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
+import { ChangeEventArgs, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { IBulletLoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
+import { ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
 /**
  * RTl sample
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'customization.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [BulletChartAllModule, ColorPickerModule, CheckBoxModule]
 })
 
 export class BulletChartCustomizationComponent {

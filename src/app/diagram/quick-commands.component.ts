@@ -1,20 +1,19 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import {
-  DiagramComponent, FlowShapeModel, ConnectorModel, DataBinding, SelectorModel,
-  IElement, randomId, cloneObject, UserHandleModel, SelectorConstraints, ToolBase,
-  MouseEventArgs, NodeModel, MindMap, HierarchicalTree, MoveTool, Node, SnapSettingsModel,
-  SnapConstraints, Diagram
-} from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, FlowShapeModel, ConnectorModel, DataBinding, SelectorModel, IElement, randomId, cloneObject, UserHandleModel, SelectorConstraints, ToolBase, MouseEventArgs, NodeModel, MindMap, HierarchicalTree, MoveTool, Node, SnapSettingsModel, SnapConstraints, Diagram, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(DataBinding, MindMap, HierarchicalTree);
 
 /**
  * Sample for UserHandle
  */
 @Component({
-  selector: 'control-content',
-  templateUrl: 'quick-commands.html',
-  styleUrls: ['diagram-style.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'quick-commands.html',
+    styleUrls: ['diagram-style.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, SBDescriptionComponent]
 })
 
 export class UserHandlediagramComponent {

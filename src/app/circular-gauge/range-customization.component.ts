@@ -1,11 +1,14 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-angular-circulargauge';
+import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme, CircularGaugeModule, AnnotationsService } from '@syncfusion/ej2-angular-circulargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'range-customization.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [CircularGaugeModule],
+    providers: [AnnotationsService]
 })
 export class RangeComponent {
 

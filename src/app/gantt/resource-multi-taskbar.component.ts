@@ -1,9 +1,14 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { multitaskbardata, resources } from './data';
-import { GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SwitchAllModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttresources',
-    templateUrl: 'resource-multi-taskbar.html'
+    templateUrl: 'resource-multi-taskbar.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SwitchAllModule, GanttAllModule, SBDescriptionComponent]
 })
 
 export class GanttResourceMultiTaskbarComponent implements OnInit {
@@ -18,11 +23,13 @@ export class GanttResourceMultiTaskbarComponent implements OnInit {
     public resourceFields: object ;
     public projectStartDate: Date;
     public projectEndDate: Date;
+    public taskType: string;
     @ViewChild('gantt')
     public ganttObj: GanttComponent;
     public ngOnInit(): void {
         this.data = multitaskbardata;
         this.resources = resources;
+        this.taskType = 'FixedWork';
         this.taskSettings = {
             id: 'TaskID',
             name: 'TaskName',

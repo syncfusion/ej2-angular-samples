@@ -1,12 +1,16 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { HeatMap, Legend, Tooltip, ILoadedEventArgs, ITooltipEventArgs, HeatMapTheme } from '@syncfusion/ej2-angular-heatmap';
+import { HeatMap, Legend, Tooltip, ILoadedEventArgs, ITooltipEventArgs, HeatMapTheme, HeatMapModule } from '@syncfusion/ej2-angular-heatmap';
 import { SampleDataSource } from './empty-point-data-source';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 HeatMap.Inject(Tooltip, Legend);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'empty-points.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [HeatMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class HeatmapEmptyPointComponent {
 

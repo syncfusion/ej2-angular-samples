@@ -1,0 +1,88 @@
+<div class="control-section">
+    <div class="content-wrapper">
+        <div id="dropArea" class="viewer-file-droparea" style="height: auto; overflow: auto; margin-bottom: 25px;">
+            <button ejs-button id="browse">Browse...</button>
+            <div>
+                <p style="margin: 15px;">OR</p>
+                <p id="drop">Drop files (Word, Excel, PowerPoint, Image, PDF)</p>
+            </div>
+            <div id="progressBar" style="display: none;">
+                <div id="file-details">
+                    <p id="fileName"></p>
+                    <p id="fileSize"></p>
+                </div>
+                <div style="justify-content: center;" id="linearProgressBar">
+                    <ejs-progressbar #linear id="linear" [maximum]="max" [minimum]="min"
+                    [width]="width" [height]="height" [animation]="animation" (load)="load($event)" style="width: fit-content;">
+                    </ejs-progressbar><span id="progress-status" style="padding: 18px 5px;"></span>
+                </div>
+                <div id="uploadedMessage" style="display: none; margin-top: 10px;">
+                    <p style="color: rgb(110, 218, 110);">File successfully uploaded...</p>
+                </div>
+                <div id="fileSupportMessage" style="display: none; margin-top: 10px;">
+                    <p style="color: rgb(203, 38, 38);">File not supported!</p>
+                </div>
+                <div id="fileSizeValidation" style="display: none; margin-top: 10px;">
+                    <p style="color: rgb(203, 38, 38);">Maximum file size is (4.0 MB) for this operation...</p>
+                </div>
+            </div>
+            <div style="display: none;">
+                <ejs-uploader #templateupload id='templatefileupload' [dropArea]='dropElement' [allowedExtensions]="allowedExtensions" (selected)='onSelect($event)'
+                [multiple]="multipleFiles"></ejs-uploader>
+            </div>
+        </div>
+        <div id="pdfviewer-container" style="display: none;">
+            <div class="flex-container">
+                <label class="switchLabel" for="checked">Standalone PDF Viewer</label>
+                <div class="e-message render-mode-info">
+                    <span class="e-msg-icon render-mode-info-icon" title="Turn OFF to render the PDF Viewer as server-backed"></span>
+                </div>
+                <div>
+                    <ejs-switch cssClass="buttonSwitch" id="checked" (change)="change($event)" [checked]="true"></ejs-switch>
+                </div>
+            </div>
+            <ejs-pdfviewer #pdfviewer id="pdfViewer" [toolbarSettings]="toolbarSettings" [resourceUrl]='resource' 
+            (documentLoad)="documentLoaded()" (ajaxRequestSuccess)="ajaxRequestSuccess($event)" style="height:640px;"></ejs-pdfviewer>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>This sample shows how it loads various file types like PDFs, images, and Microsoft Office documents (Word, Excel, PowerPoint) into the PDF Viewer.</p>
+</div>
+<div id="description">
+    <p>
+        This sample provides a hands-on demonstration of the PDF Viewer's ability to load and display a diverse range of file formats, including PDFs, images, and Microsoft Office documents such as Word, Excel, and PowerPoint files. Users can interact with the sample in the following ways:
+    </p>
+    <ul>
+        <li>Use the Browse button to select any file of interest.</li>
+        <li>Alternatively, drag and drop a chosen file into the designated file pick area.</li>
+        <li>Once a valid file is selected, it will be seamlessly loaded into the PDF Viewer located below, allowing users to easily view and interact with the content.</li>
+        <li>Support for various file formats, including:</li>
+        <ul>
+            <li>PDF - '.pdf'</li>
+            <li>Excel - '.xlsx','.xls'</li>
+            <li>Image - '.jpeg','.jpg','.png','.bmp'</li>
+            <li>PowerPoint - '.pptx','.pptm','.potx','.potm'</li>
+            <li>Word - '.doc','.docx','dot','dotx','docm','dotm','rtf'</li>
+        </ul>
+    </ul>
+    <p>Note : The PDF conversions are performed using the appropriate libraries, while the role of the PDF Viewer is solely to display the converted PDF document.</p>
+    <p>
+        More information on the PDF Viewer instantiation can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/javascript/documentation/pdfviewer/getting-started">
+            documentation section</a>.
+    </p>
+</div>
+<style>
+    .content-wrapper .viewer-file-droparea {
+        border: 1px dashed #c3c3cc;
+        position: relative;
+        text-align: center;
+        padding: 20px 0 10px;
+    }
+
+    #pdfViewer_viewerContainer{
+        left: 0px !important;
+        width: 100% !important;
+    }
+</style>

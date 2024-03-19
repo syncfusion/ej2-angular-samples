@@ -2,15 +2,18 @@
  * Cyber attack maps sample
  */
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, Maps, Legend, Marker, MapsTooltip, ILoadEventArgs, ILoadedEventArgs, NavigationLineSettingsModel, NavigationLine } from '@syncfusion/ej2-angular-maps';
-import { MapAjax } from '@syncfusion/ej2-maps';
-import worldMap from './world-map.json';
+import { MapsTheme, Maps, Legend, Marker, MapsTooltip, ILoadEventArgs, ILoadedEventArgs, NavigationLineSettingsModel, NavigationLine, MapsModule } from '@syncfusion/ej2-angular-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Maps.Inject(Marker, NavigationLine, MapsTooltip);
 declare var require: any;
+let worldMap: object[] = require('./world-map.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'cyber-attack-map.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [MapsModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class MapsCyberAttackComponent {
     titleSettings: object = {

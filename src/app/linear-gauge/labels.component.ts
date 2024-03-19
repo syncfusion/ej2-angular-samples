@@ -1,11 +1,13 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { LinearGaugeComponent } from '@syncfusion/ej2-angular-lineargauge';
+import { LinearGaugeComponent, LinearGaugeModule } from '@syncfusion/ej2-angular-lineargauge';
 import { ILoadedEventArgs, LinearGaugeTheme, IAxisLabelRenderEventArgs } from '@syncfusion/ej2-lineargauge';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'labels.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [LinearGaugeModule]
 })
 
 export class LabelsComponent {

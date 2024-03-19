@@ -1,10 +1,9 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
-import {
-    PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
-    ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService, HighlightSettings, UnderlineSettings, StrikethroughSettings, LineSettings, ArrowSettings, RectangleSettings, CircleSettings, PolygonSettings, DistanceSettings, PerimeterSettings, AreaSettings, RadiusSettings, VolumeSettings, FreeTextSettings, DynamicStampItem, SignStampItem, StandardBusinessStampItem, CustomStampSettings, InkAnnotationSettings, StickyNotesSettings, StampSettings, LoadEventArgs, 
-} from '@syncfusion/ej2-angular-pdfviewer';
-import { SwitchComponent } from '@syncfusion/ej2-angular-buttons';
+import { PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService, PageOrganizerService, HighlightSettings, UnderlineSettings, StrikethroughSettings, LineSettings, ArrowSettings, RectangleSettings, CircleSettings, PolygonSettings, DistanceSettings, PerimeterSettings, AreaSettings, RadiusSettings, VolumeSettings, FreeTextSettings, DynamicStampItem, SignStampItem, StandardBusinessStampItem, CustomStampSettings, InkAnnotationSettings, StickyNotesSettings, StampSettings, LoadEventArgs, PdfViewerModule } from '@syncfusion/ej2-angular-pdfviewer';
+import { SwitchComponent, SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { ClickEventArgs } from '@syncfusion/ej2-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Default PdfViewer Controller
@@ -15,8 +14,15 @@ import { ClickEventArgs } from '@syncfusion/ej2-buttons';
     encapsulation: ViewEncapsulation.None,
     // tslint:disable-next-line:max-line-length
     providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService,
-        TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService],
+        TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService, PageOrganizerService],
     styleUrls: ['pdfviewer.component.css'],
+    standalone: true,
+    imports: [
+        SBActionDescriptionComponent,
+        SwitchModule,
+        PdfViewerModule,
+        SBDescriptionComponent,
+    ],
 })
 
 export class AnnotationsComponent implements OnInit {

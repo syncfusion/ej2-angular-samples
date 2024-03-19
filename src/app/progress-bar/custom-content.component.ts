@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ProgressBar, ProgressAnnotation, IProgressValueEventArgs, ILoadedEventArgs, ProgressTheme,
     AnimationModel } from '@syncfusion/ej2-progressbar';
 import { EmitType } from '@syncfusion/ej2-base';
+import { ProgressBarAllModule } from '@syncfusion/ej2-angular-progressbar';
 ProgressBar.Inject(ProgressAnnotation);
 
 /**
@@ -10,7 +11,9 @@ ProgressBar.Inject(ProgressAnnotation);
 @Component({
     selector: 'control-content',
     templateUrl: 'custom-content.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ProgressBarAllModule]
 })
 
 export class ProgressBarCustomComponent {

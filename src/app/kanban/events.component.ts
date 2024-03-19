@@ -1,15 +1,20 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
 import {
-    KanbanComponent, CardSettingsModel, SwimlaneSettingsModel, CardRenderedEventArgs, CardClickEventArgs
+    KanbanComponent, CardSettingsModel, SwimlaneSettingsModel, CardRenderedEventArgs, CardClickEventArgs, KanbanModule
 } from '@syncfusion/ej2-angular-kanban';
 import { kanbanData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'events.html',
     styleUrls: ['events.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ KanbanModule, SBActionDescriptionComponent, SBDescriptionComponent, ButtonModule]
 })
 export class EventsComponent {
     @ViewChild('kanbanObj') kanbanObj: KanbanComponent;

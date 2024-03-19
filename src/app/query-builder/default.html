@@ -1,26 +1,51 @@
 <div id="action-description">
-  <p>This sample demonstrates the default functionalities of the Query Builder component. Click the plus button to
-    add group or conditions.</p>
+  <p>This sample demonstrates the default functionalities of the Query Builder component with importing and exporting
+    the filter as JSON. Click the plus button to add
+    a group or conditions.</p>
 </div>
-
-
-<div class="col-lg-12 control-section">
-  <ejs-querybuilder #querybuilder class="row" [dataSource]="dataSource" [rule]="importRules" (created)="createdControl()">
-    <e-columns>
-      <e-column field="EmployeeID" label="Employee ID" type="number"></e-column>
-      <e-column field="FirstName" label="First Name" type="string"></e-column>
-      <e-column field="TitleOfCourtesy" label="Title Of Courtesy" type="boolean" [values]="values"></e-column>
-      <e-column field="Title" label="Title" type="string"></e-column>
-      <e-column field="HireDate" label="Hire Date" type="date" format="dd/MM/yyyy"></e-column>
-      <e-column field="Country" label="Country" type="string"></e-column>
-      <e-column field="City" label="City" type="string"></e-column>
-    </e-columns>
-  </ejs-querybuilder>
+<div class="control-section">
+  <div class="top-right-button">
+    <button ejs-button id="json-btn" (click)="importClick()" class="e-control e-btn">Import JSON</button>
+  </div>
+  <div class="col-lg-12 control-section">
+    <ejs-dialog id="dialog" #dialog header="JSON" width="700px" height="420px" [buttons]="buttons" [isModal]="true" [visible]="visible" (beforeOpen)="beforeopen()" showCloseIcon="true" [target]="targetElement" [animationSettings]="dialogAnimation">
+      <ng-template #content>
+          <textarea class="json-content-area" id="content-area"></textarea>
+          <span id="dlgSpan" style="visibility: hidden;">Invalid Query</span>
+      </ng-template>
+    </ejs-dialog>
+    <div>
+      <ejs-querybuilder #querybuilder [dataSource]="dataSource" [rule]="importRules" (created)="createdControl()" (ruleChange)="createdControl()">
+        <e-columns>
+          <e-column field="EmployeeID" label="Employee ID" type="number"></e-column>
+          <e-column field="FirstName" label="First Name" type="string"></e-column>
+          <e-column field="TitleOfCourtesy" label="Title Of Courtesy" type="boolean" [values]="values"></e-column>
+          <e-column field="Title" label="Title" type="string"></e-column>
+          <e-column field="HireDate" label="Hire Date" type="date" format="dd/MM/yyyy"></e-column>
+          <e-column field="Country" label="Country" type="string"></e-column>
+          <e-column field="City" label="City" type="string"></e-column>
+        </e-columns>
+      </ejs-querybuilder>
+    </div>
+    <div class="e-query-json-preview" (mouseenter)="onmouseenter($event)" (mouseleave)="onmouseleave($event)">
+      <div class="e-content-header" style="border: none; width: 100%;">
+        <label style="padding: 10px;">JSON</label>
+        <div class="copy-tooltip e-hidden" (click)="copyClipboard($event)">
+          <ejs-tooltip #tooltip opensOn="Click" target=".copy-tooltip" position="BottomCenter" width="auto" content="Copied to clipboard">
+            <div class="e-icons copycode"></div>
+          </ejs-tooltip>
+        </div>
+      </div>
+      <div readonly class="e-text-area-content e-json-content"><pre class="e-pre-content"></pre></div>
+    </div>
+  </div>
 </div>
 
 <div id="description">
   <p>
-    The Query Builder component is used to create or edit filters. You can edit filters by changing the fields.
+    This sample demonstrates the Query Builder component showing how to import and export a query in JSON format.
+    The query preview can be showcased in the tab component, and the query can be imported to Query Builder using
+    the Import button.
   </p>
   <p>
     In mobile mode, the component is shown vertically.

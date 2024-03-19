@@ -1,6 +1,9 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { ToolbarComponent, MenuItemModel } from '@syncfusion/ej2-angular-navigations';
+import { ToolbarComponent, MenuItemModel, MenuModule, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { removeClass } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 /**
  * Toolbar integration Menu Controller
  */
@@ -8,7 +11,9 @@ import { removeClass } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'toolbar-integration.html',
     styleUrls: ['toolbar-integration.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [MenuModule, DropDownButtonModule, ToolbarModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class ToolbarMenuController {

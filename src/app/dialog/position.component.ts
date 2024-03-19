@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
-import { DialogComponent, PositionDataModel } from '@syncfusion/ej2-angular-popups';
+import { DialogComponent, PositionDataModel, DialogModule } from '@syncfusion/ej2-angular-popups';
 import { ChangeArgs } from '@syncfusion/ej2-buttons';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { ButtonComponent, ButtonModule, RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Position Dialog Component
  */
@@ -9,7 +11,9 @@ import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
     selector: 'control-content',
     styleUrls: ['position.css'],
     templateUrl: 'position.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ButtonModule, DialogModule, RadioButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class PositioningDialogComponent {

@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { ColorPickerComponent, ColorPickerEventArgs, PaletteTileEventArgs } from '@syncfusion/ej2-angular-inputs';
+import { ColorPickerComponent, ColorPickerEventArgs, PaletteTileEventArgs, ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
 import { addClass, Browser, createElement } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Custom sample
@@ -9,8 +11,9 @@ import { addClass, Browser, createElement } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'custom.html',
     styleUrls: ['custom.css'],
-    encapsulation: ViewEncapsulation.None
-
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ColorPickerModule, SBDescriptionComponent]
 })
 export class CustomColorPickerComponent {
     @ViewChild('colorpicker')

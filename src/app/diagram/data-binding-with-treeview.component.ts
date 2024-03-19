@@ -3,7 +3,7 @@
  */
 
  import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
- import { DiagramComponent, IClickEventArgs, ISelectionChangeEventArgs, NodeConstraints } from '@syncfusion/ej2-angular-diagrams';
+ import { DiagramComponent, IClickEventArgs, ISelectionChangeEventArgs, NodeConstraints, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
  import {
    Diagram,
    NodeModel,
@@ -20,7 +20,10 @@
  import { ChangeEventArgs as CheckBoxChangeEventArgs } from '@syncfusion/ej2-buttons';
  import { ChangeEventArgs as NumericChangeEventArgs } from '@syncfusion/ej2-inputs';
  import { DataManager, Query } from '@syncfusion/ej2-data';
-import { TreeViewComponent } from '@syncfusion/ej2-angular-navigations';
+import { TreeViewComponent, TreeViewModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
  Diagram.Inject(DataBinding, HierarchicalTree, LayoutAnimation);
 
  export interface EmployeeInfo {
@@ -28,11 +31,19 @@ import { TreeViewComponent } from '@syncfusion/ej2-angular-navigations';
  }
  
  @Component({
-   selector: 'control-content',
-   templateUrl: 'data-binding-with-treeview.html',
-   styleUrls: ['data-binding-with-treeview.component.css'],
-   encapsulation: ViewEncapsulation.None,
- })
+    selector: 'control-content',
+    templateUrl: 'data-binding-with-treeview.html',
+    styleUrls: ['data-binding-with-treeview.component.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [
+        SBActionDescriptionComponent,
+        ButtonModule,
+        TreeViewModule,
+        DiagramModule,
+        SBDescriptionComponent,
+    ],
+})
  export class DataBindingWithTreeviewComponent {
     @ViewChild('diagram')
     public diagram: DiagramComponent;
@@ -295,7 +306,7 @@ import { TreeViewComponent } from '@syncfusion/ej2-angular-navigations';
  }
  
  public add() {
-     let nodeId:string;
+     let nodeId: string;
      if (this.diagram.selectedItems.nodes.length > 0) {
          nodeId = this.diagram.selectedItems.nodes[0].id;
          this.addNode(nodeId);

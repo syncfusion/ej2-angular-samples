@@ -1,14 +1,19 @@
 import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { categoryData } from './data';
 import { ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
-import { FilterService, GridComponent } from '@syncfusion/ej2-angular-grids';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { FilterService, SortService, GridComponent, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
 @Component({
     selector: 'ej2-gridfilter',
     templateUrl: 'filtering.html',
     styleUrls: ['filter.style.css'],
-    providers: [FilterService]
+    providers: [FilterService, SortService, PageService],
+    standalone: true,
+    imports: [DropDownListModule, GridModule, SBActionDescriptionComponent, SBDescriptionComponent, CheckBoxModule]
 })
 export class FilterComponent implements OnInit {
     public data: Object[];
@@ -37,7 +42,7 @@ export class FilterComponent implements OnInit {
         if (e.value === 'All') {
             this.grid.clearFiltering();
         } else {
-            this.grid.filterByColumn('CategoryName', 'equal', e.value);
+            this.grid.filterByColumn('CategoryName', 'equal', e.value as any);
         }
     }
 

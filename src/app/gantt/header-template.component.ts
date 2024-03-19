@@ -1,9 +1,14 @@
 import { Component, OnInit} from '@angular/core';
 import { templateData, editingResources } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-ganttheadertemplate',
-    templateUrl: 'header-template.html'
+    templateUrl: 'header-template.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
 })
 
 export class HeaderTemplateComponent implements OnInit {

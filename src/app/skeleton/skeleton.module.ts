@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { DefaultController } from './default.component';
 import { AnimationController } from './animation.component';
 import { CommonModule } from '@angular/common';  
-import { SharedModule } from '../common/shared.module';
+
 import { SkeletonModule } from '@syncfusion/ej2-angular-notifications';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 
@@ -35,14 +35,6 @@ export const skeletonAppRoutes: Object[] = [
     }
 ];
 
-export const skeletonRouter: ModuleWithProviders<any> = RouterModule.forChild(skeletonAppRoutes);
+export const SkeletonSampleModule: ModuleWithProviders<any> = RouterModule.forChild(skeletonAppRoutes);
 
-@NgModule({
-    imports: [skeletonRouter,CommonModule, SharedModule, SkeletonModule, ListViewModule],
-    declarations: [
-        DefaultController,
-        AnimationController
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class SkeletonSampleModule { }
+

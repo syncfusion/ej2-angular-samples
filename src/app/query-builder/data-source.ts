@@ -19,7 +19,10 @@ export let employeeData: Object[] = [{
   'Extension': '5467',
   'Photo': { 'Length': 21626 },
   'ReportsTo': 2,
-  'PhotoPath': 'http://accweb/emmployees/davolio.bmp'
+  'PhotoPath': 'http://accweb/emmployees/davolio.bmp',
+  'IsDeveloper': true,
+  'Age': 41, 
+  'PrimaryFramework': 'React'
 },
 {
   'EmployeeID': 2,
@@ -38,7 +41,10 @@ export let employeeData: Object[] = [{
   'Extension': '3457',
   'Photo': { 'Length': 21626 },
   'ReportsTo': 0,
-  'PhotoPath': 'http://accweb/emmployees/fuller.bmp'
+  'PhotoPath': 'http://accweb/emmployees/fuller.bmp',
+  'IsDeveloper': false,
+  'Age': 42,  
+  'PrimaryFramework': 'Angular'
 },
 {
   'EmployeeID': 3,
@@ -57,7 +63,10 @@ export let employeeData: Object[] = [{
   'Extension': '3355',
   'Photo': { 'Length': 21722 },
   'ReportsTo': 2,
-  'PhotoPath': 'http://accweb/emmployees/leverling.bmp'
+  'PhotoPath': 'http://accweb/emmployees/leverling.bmp',
+  'IsDeveloper': true, 
+  'Age': 43, 
+  'PrimaryFramework': 'Vue'
 },
 {
   'EmployeeID': 4,
@@ -76,7 +85,10 @@ export let employeeData: Object[] = [{
   'Extension': '5176',
   'Photo': { 'Length': 21626 },
   'ReportsTo': 2,
-  'PhotoPath': 'http://accweb/emmployees/peacock.bmp'
+  'PhotoPath': 'http://accweb/emmployees/peacock.bmp',
+  'IsDeveloper': false,
+  'Age': 44,  
+  'PrimaryFramework': 'Javascript'
 },
 {
   'EmployeeID': 5,
@@ -96,7 +108,10 @@ export let employeeData: Object[] = [{
   'Extension': '3453',
   'Photo': { 'Length': 21626 },
   'ReportsTo': 2,
-  'PhotoPath': 'http://accweb/emmployees/buchanan.bmp'
+  'PhotoPath': 'http://accweb/emmployees/buchanan.bmp',
+  'IsDeveloper': true,
+  'Age': 45,  
+  'PrimaryFramework': 'Typescript'
 },
 {
   'EmployeeID': 6,
@@ -115,7 +130,10 @@ export let employeeData: Object[] = [{
   'Extension': '428',
   'Photo': { 'Length': 21626 },
   'ReportsTo': 5,
-  'PhotoPath': 'http://accweb/emmployees/davolio.bmp'
+  'PhotoPath': 'http://accweb/emmployees/davolio.bmp',
+  'IsDeveloper': false,
+  'Age': 46,  
+  'PrimaryFramework': 'Blazor'
 },
 {
   'EmployeeID': 7,
@@ -134,7 +152,10 @@ export let employeeData: Object[] = [{
   'Extension': '465',
   'Photo': { 'Length': 21626 },
   'ReportsTo': 5,
-  'PhotoPath': 'http://accweb/emmployees/davolio.bmp'
+  'PhotoPath': 'http://accweb/emmployees/davolio.bmp',
+  'IsDeveloper': true,
+  'Age': 47,  
+  'PrimaryFramework': 'ASP.NET Core'
 },
 {
   'EmployeeID': 8,
@@ -153,7 +174,10 @@ export let employeeData: Object[] = [{
   'Extension': '2344',
   'Photo': { 'Length': 21626 },
   'ReportsTo': 2,
-  'PhotoPath': 'http://accweb/emmployees/davolio.bmp'
+  'PhotoPath': 'http://accweb/emmployees/davolio.bmp',
+  'IsDeveloper': false,
+  'Age': 48,  
+  'PrimaryFramework': 'ASP.NET MVC'
 },
 {
   'EmployeeID': 9,
@@ -172,7 +196,10 @@ export let employeeData: Object[] = [{
   'Extension': '452',
   'Photo': { 'Length': 21626 },
   'ReportsTo': 5,
-  'PhotoPath': 'http://accweb/emmployees/davolio.bmp'
+  'PhotoPath': 'http://accweb/emmployees/davolio.bmp',
+  'IsDeveloper': true,
+  'Age': 49,  
+  'PrimaryFramework': 'Java'
 }];
 export let expenseData: Object[]  = [{
     'UniqueId': 'T100001',

@@ -2,14 +2,19 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { countries } from './jsontreegriddata';
 import { QueryCellInfoEventArgs } from '@syncfusion/ej2-grids';
 import { addClass } from '@syncfusion/ej2-base';
-import { TreeGridModule, SortService, FilterService, ReorderService, ITreeData } from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridAllModule, SortService, FilterService, ReorderService, ITreeData } from '@syncfusion/ej2-angular-treegrid';
+import { NgClass, NgIf, NgFor } from '@angular/common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'treegrid-overview.html',
     styleUrls: ['treegrid-overview.css'],
     providers: [FilterService, SortService, ReorderService],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, NgClass, NgIf, NgFor]
 })
 export class TreeGridOverviewComponent implements OnInit {
     public data: Object[] = [];

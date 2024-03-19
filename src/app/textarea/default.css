@@ -1,0 +1,56 @@
+.content-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    min-width: 185px;
+}
+
+.content-wrapper div.row {
+    padding: 15px 0px;
+}
+
+.control-label {
+    padding: 24px 0px 0px 0px;
+    font-size: 12px;
+    opacity: 0.54;
+}
+
+@media only screen and (max-width: 480px) {
+    .content-wrapper {
+        width: 92%;
+    }
+    .col-xs-6,
+    .col-xs-4,
+    .col-xs-12 {
+        padding: 10px 5px;
+        width: 100%;
+    }
+    .content-wrapper div.row {
+        padding: 0px;
+    }
+}
+
+#description td {
+    vertical-align: top;
+}
+.e-outline.e-control-wrapper {
+    margin-top: 0;
+}
+.fabric .row.material,
+.bootstrap .row.material,
+.bootstrap4 .row.material,
+.highcontrast .row.material,
+.tailwind .row.material,
+.bootstrap5 .row.material,
+.bootstrap5-dark .row.material,
+.tailwind-dark .row.material,
+.fabric-dark .row.material,
+.bootstrap-dark .row.material,
+.fluent .row.material,
+.fluent-dark .row.material {
+    display: none;
+}
+
+.fluent .e-control-wrapper.e-filled,
+.fluent-dark .e-control-wrapper.e-filled {
+    margin-top: 0px;
+}

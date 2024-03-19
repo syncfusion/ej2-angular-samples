@@ -1,7 +1,9 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { SliderModule, SliderComponent, Placement } from '@syncfusion/ej2-angular-inputs';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { CheckBoxComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { CheckBoxComponent, ChangeEventArgs, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Ticks sample
  */
@@ -10,7 +12,9 @@ import { CheckBoxComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-butt
     selector: 'control-content',
     templateUrl: 'ticks.html',
     styleUrls: ['slider.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SliderModule, DropDownListModule, CheckBoxModule, SBDescriptionComponent]
 })
 
 export class TicksSliderComponent {

@@ -4,7 +4,7 @@
 </div>
 <div class="control-section">
     <ejs-grid #grid [dataSource]='data' id='DetailTemplateExport' [toolbar]="toolbar" 
-    [allowPdfExport]='true' [allowExcelExport]='true' (toolbarClick)="toolbarClick($event)" (exportDetailTemplate)="exportDetailTemplate($event)">
+    [allowPdfExport]='true' [allowExcelExport]='true' [allowSorting]='true' (toolbarClick)="toolbarClick($event)" (exportDetailTemplate)="exportDetailTemplate($event)">
         <ng-template #detailTemplate let-data>
             <table class="detailtable" width="100%">
                 <colgroup>
@@ -92,7 +92,7 @@
     <p>
         Grid features are segregated into individual feature-wise modules.
         To use the detail template, PdfExport and ExcelExport Grid features, inject <code>DetailRowService</code>,
-        <code>PdfExportService</code>, <code>ExcelExportService</code> modules into the <code>@NgModule.providers</code> section.
+        <code>PdfExportService</code>, <code>ExcelExportService</code> modules into the <code>&#64;NgModule.providers</code> section.
     </p>
     <p>
         More information on the exporting configuration can be found in this <a target="_blank"

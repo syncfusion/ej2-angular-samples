@@ -3,18 +3,22 @@
  */
 
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { RichTextEditorComponent, MarkdownFormatter, ToolbarService, EditorMode } from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorComponent, MarkdownFormatter, ToolbarService, EditorMode, RichTextEditorModule, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { LinkService, ImageService, MarkdownEditorService } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, KeyboardEventArgs } from '@syncfusion/ej2-base';
 import * as Marked from 'marked';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'markdown-editor-custom-format.html',
     styleUrls: ['style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, MarkdownEditorService]
+    providers: [ToolbarService, LinkService, ImageService, MarkdownEditorService, TableService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, RichTextEditorModule, SBDescriptionComponent]
 })
 export class MarkdownCustomComponent {
 

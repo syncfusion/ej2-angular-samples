@@ -3,8 +3,13 @@ import { ChangeEventArgs as DropDownChangeEventArgs } from '@syncfusion/ej2-drop
 import { ExpandMode } from '@syncfusion/ej2-navigations';
 import { ChangeEventArgs as CheckBoxChangeEventArgs } from '@syncfusion/ej2-buttons';
 import { ChangeEventArgs as NumericChangeEventArgs } from '@syncfusion/ej2-inputs';
-import { Node, Connector, NodeModel, ConnectorModel } from '@syncfusion/ej2-angular-diagrams';
+import { Node, Connector, NodeModel, ConnectorModel, SymbolPaletteModule } from '@syncfusion/ej2-angular-diagrams';
 import { SymbolPalette, SymbolInfo, MarginModel, PaletteModel } from '@syncfusion/ej2-diagrams';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Symbol Palette
@@ -13,7 +18,9 @@ import { SymbolPalette, SymbolInfo, MarginModel, PaletteModel } from '@syncfusio
     selector: 'control-content',
     templateUrl: 'symbol-palette.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SymbolPaletteModule, DropDownListModule, NumericTextBoxModule, CheckBoxModule, SBDescriptionComponent]
 })
 export class SymbolPaletteDiagramComponent {
     @ViewChild('symbolpalette')

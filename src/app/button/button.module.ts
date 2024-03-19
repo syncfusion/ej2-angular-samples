@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { DefaultButtonController } from './default.component';
 import { ButtonModule, CheckBoxModule, RadioButtonModule, SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownButtonModule, SplitButtonModule, ProgressButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
-import { SharedModule } from '../common/shared.module';
+
 import { CheckBoxController } from './checkbox.component';
 import { SwitchController } from './switch.component';
 import { RadioButtonController } from './radio-button.component';
@@ -23,20 +23,5 @@ export const buttonAppRoutes: Object[] = [
     { path: ':theme/button/progress-button', component: ProgressButtonController, name: 'Progress Button', category: 'Button', description: 'This example demonstrates the different functionalities of the Syncfusion Angular ProgressButton with spinner and progress indicator.', ftName: 'progress-button' }
 ];
 
-export const buttonRouter: ModuleWithProviders<any> = RouterModule.forChild(buttonAppRoutes);
+export const ButtonSampleModule: ModuleWithProviders<any> = RouterModule.forChild(buttonAppRoutes);
 
-@NgModule({
-    imports: [buttonRouter, ButtonModule, CheckBoxModule, RadioButtonModule, DropDownButtonModule, SplitButtonModule, SwitchModule, SharedModule, ProgressButtonModule],
-    declarations: [
-        DefaultButtonController,
-        ButtonGroupController,
-        CheckBoxController,
-        RadioButtonController,
-        DropDownButtonController,
-        SplitButtonController,
-        SwitchController,
-        ProgressButtonController
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class ButtonSampleModule { }

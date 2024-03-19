@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild  } from '@angular/core';
-import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsViewService } from '@syncfusion/ej2-angular-filemanager';
+import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsViewService, FileManagerModule } from '@syncfusion/ej2-angular-filemanager';
 import { DropDownButton, ItemModel } from '@syncfusion/ej2-splitbuttons';
+import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 /**
  * File Manager directory upload feature sample
  */
@@ -10,7 +11,9 @@ import { DropDownButton, ItemModel } from '@syncfusion/ej2-splitbuttons';
     templateUrl: 'directory-upload.html',
     styleUrls: ['directory-upload.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ NavigationPaneService, ToolbarService, DetailsViewService]
+    providers: [NavigationPaneService, ToolbarService, DetailsViewService],
+    standalone: true,
+    imports: [FileManagerModule, DropDownButtonModule]
 })
 
 export class DirectoryUploadController {

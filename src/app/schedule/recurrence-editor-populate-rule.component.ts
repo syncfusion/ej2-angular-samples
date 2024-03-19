@@ -1,13 +1,17 @@
 import { Component, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { RecurrenceEditor } from '@syncfusion/ej2-angular-schedule';
+import { ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { RecurrenceEditor, RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'recurrence-editor-populate-rule.html',
-  styleUrls: ['recurrence-editor.style.css'],
-  encapsulation: ViewEncapsulation.None
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'recurrence-editor-populate-rule.html',
+    styleUrls: ['recurrence-editor.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [DropDownListModule, RecurrenceEditorModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class RecPopulateComponent {
   @ViewChild('recObject') public recObject: RecurrenceEditor;

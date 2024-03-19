@@ -1,15 +1,17 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsViewService } from '@syncfusion/ej2-angular-filemanager';
+import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsViewService, FileManagerModule } from '@syncfusion/ej2-angular-filemanager';
 import {AjaxSettingsModel, ContextMenuSettings, SearchSettingsModel , ToolbarSettingsModel} from '@syncfusion/ej2-filemanager';
 /**
  * File Manager sample with amazon s3 service
  */
 @Component({
     selector: 'control-content',
-    templateUrl: 'amazon-s3-file-provider.html', 
+    templateUrl: 'amazon-s3-file-provider.html',
     styleUrls: ['amazon-s3-file-provider.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ NavigationPaneService, ToolbarService, DetailsViewService]
+    providers: [NavigationPaneService, ToolbarService, DetailsViewService],
+    standalone: true,
+    imports: [FileManagerModule]
 })
 
 export class AmazonS3Controller {

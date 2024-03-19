@@ -1,11 +1,15 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { CarouselAnimationEffect, CarouselButtonVisibility } from '@syncfusion/ej2-angular-navigations';
+import { CarouselAnimationEffect, CarouselButtonVisibility, CarouselModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  selector: 'control-content',
-  templateUrl: 'data-binding.html',
-  styleUrls: ['data-binding.component.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'data-binding.html',
+    styleUrls: ['data-binding.component.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, CarouselModule, SBDescriptionComponent]
 })
 export class CarouselDataBindingComponent {
 

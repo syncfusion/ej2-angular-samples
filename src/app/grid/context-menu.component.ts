@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { SortService, ResizeService, PageService, EditService, ExcelExportService, PdfExportService, ContextMenuService } from '@syncfusion/ej2-angular-grids';
+import { SortService, ResizeService, PageService, EditService, ExcelExportService, PdfExportService, ContextMenuService, GridModule } from '@syncfusion/ej2-angular-grids';
 import { ContextMenuItem, GroupSettingsModel, EditSettingsModel } from '@syncfusion/ej2-angular-grids';
 import { orderDetails } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-grid-container',
     templateUrl: 'context-menu.html',
-    providers: [SortService, ResizeService, PageService, EditService, ExcelExportService, PdfExportService, ContextMenuService]
+    providers: [SortService, ResizeService, PageService, EditService, ExcelExportService, PdfExportService, ContextMenuService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GridModule, SBDescriptionComponent]
 })
 export class ContextMenuComponent implements OnInit {
     public data: Object[];

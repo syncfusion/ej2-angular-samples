@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { AnimationModel, ProgressTheme, ILoadedEventArgs, ProgressBar } from '@syncfusion/ej2-progressbar';
 import { Button } from '@syncfusion/ej2-buttons';
+import { ProgressBarAllModule } from '@syncfusion/ej2-angular-progressbar';
 
 /**
  * RTl sample
@@ -8,7 +9,9 @@ import { Button } from '@syncfusion/ej2-buttons';
 @Component({
     selector: 'control-content',
     templateUrl: 'Linear.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ProgressBarAllModule]
 })
 
 export class ProgressBarLinearComponent {

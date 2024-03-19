@@ -1,9 +1,12 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
+import { DateRangePickerModule } from '@syncfusion/ej2-angular-calendars';
 @Component({
     selector: 'control-content',
     styleUrls: ['presets-style.css'],
     templateUrl: 'presets.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [DateRangePickerModule]
 })
 export class PresetsComponent {
 	

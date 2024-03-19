@@ -81,15 +81,5 @@ export const threeDimensionChartAppRoutes: Object[] = [
     }
 ];
 
-export const threeDimensionChartRouter: ModuleWithProviders<any> = RouterModule.forChild(threeDimensionChartAppRoutes);
+export const ThreeDimensionChartSampleModule: ModuleWithProviders<any> = RouterModule.forChild(threeDimensionChartAppRoutes);
 
-@NgModule({
-    imports: [threeDimensionChartRouter, Chart3DAllModule],
-    exports: [],
-    declarations: [BacktoBackColumnComponent, BarComponent, ColumnComponent, EmptyPointColumnComponent,
-        StackingBarComponent, StackingBar100Component, StackingColumnComponent, StackingColumn100Component, CylinderComponent],
-    providers: [Chart3DAllModule]
-})
-
-export class ThreeDimensionChartSampleModule {
-}

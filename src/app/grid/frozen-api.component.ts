@@ -1,12 +1,23 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { orderDetails } from './data';
-import { GridComponent, Column, freezeDirection } from '@syncfusion/ej2-angular-grids';
-import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { DialogComponent, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
+import { GridComponent, Column, freezeDirection, SortService, GridModule, FreezeService } from '@syncfusion/ej2-angular-grids';
+import { DropDownListComponent, ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DialogComponent, ButtonPropsModel, DialogModule } from '@syncfusion/ej2-angular-popups';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-grid-col-frozen',
     templateUrl: 'frozen-api.html',
+    providers: [SortService, FreezeService],
+    standalone: true,
+    imports: [
+        DropDownListModule,
+        GridModule,
+        DialogModule,
+        SBActionDescriptionComponent,
+        SBDescriptionComponent,
+    ],
 })
 export class FrozenApiComponent implements OnInit {
     @ViewChild('grid')

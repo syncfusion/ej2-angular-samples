@@ -13,9 +13,10 @@ import { CustomFilteringAutoCompleteComponent } from './custom-filtering.compone
 import { DiacriticsFilteringAutoCompleteComponent } from './diacritics-filtering.component';
 import { TemplateDrivenAutoCompleteComponent } from './template-driven.component';
 import { ReactiveFormAutoCompleteComponent } from './reactive-form.component';
-import { SharedModule } from '../common/shared.module';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { VirtualScrollAutoCompleteComponent } from './virtual-scroll.component';
+import { ObjectAutoCompleteComponent } from './object-value-binding';
 export const autoCompleteAppRoutes: Object[] = [
     {
         path: ':theme/auto-complete/default', component: DefaultAutoCompleteComponent, order: '01',
@@ -30,12 +31,16 @@ export const autoCompleteAppRoutes: Object[] = [
         name: 'Data Binding', description: 'This example demonstrates how to bind with local data source and fetch data from remote data service in the Angular autocomplete component.', category: 'AutoComplete'
     },
     {
+        path: ':theme/auto-complete/object-value-binding', component: ObjectAutoCompleteComponent, order: '01',
+        name: 'Object Value Binding', type : 'new', description: 'This example demonstrates how to bind with data source in the Angular autocomplete component.', category: 'AutoComplete'
+    },
+    {
         path: ':theme/auto-complete/template', component: TemplateAutoCompleteComponent, order: '01',
         name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular autocomplete component pop-up list using template.', category: 'AutoComplete'
     },
     {
         path: ':theme/auto-complete/virtual-scroll', component: VirtualScrollAutoCompleteComponent, order: '01',
-        name: 'Virtualization', type : 'update', description: 'This example demonstrates how to utilize the virtualization support of Angular autocomplete component.', category: 'AutoComplete'
+        name: 'Virtualization', description: 'This example demonstrates how to utilize the virtualization support of Angular autocomplete component.', category: 'AutoComplete'
     },
     {
         path: ':theme/auto-complete/highlight', component: HighlightAutoCompleteComponent, order: '01',
@@ -59,23 +64,5 @@ export const autoCompleteAppRoutes: Object[] = [
     }
 ];
 
-export const AutoCompleteRouter: ModuleWithProviders<any> = RouterModule.forChild(autoCompleteAppRoutes);
+export const AutoCompleteSampleModule: ModuleWithProviders<any> = RouterModule.forChild(autoCompleteAppRoutes);
 
-@NgModule({
-    imports: [AutoCompleteRouter, AutoCompleteModule, SharedModule, CheckBoxModule, DropDownListModule, FormsModule, ReactiveFormsModule, BrowserModule],
-    declarations: [
-        DefaultAutoCompleteComponent,
-        GroupAndIconAutoCompleteComponent,
-        DataBindingAutoCompleteComponent,
-        TemplateAutoCompleteComponent,
-        VirtualScrollAutoCompleteComponent,
-        HighlightAutoCompleteComponent,
-        CustomFilteringAutoCompleteComponent,
-        DiacriticsFilteringAutoCompleteComponent,
-        TemplateDrivenAutoCompleteComponent,
-        ReactiveFormAutoCompleteComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class AutoCompleteSampleModule {
-}

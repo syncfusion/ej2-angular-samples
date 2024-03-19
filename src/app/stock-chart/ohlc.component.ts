@@ -1,7 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import {
-AnimationModel, ITooltipRenderEventArgs, IStockChartEventArgs, ChartTheme
-} from '@syncfusion/ej2-angular-charts';
+import { AnimationModel, ITooltipRenderEventArgs, IStockChartEventArgs, ChartTheme, StockChartModule, ChartAllModule, RangeNavigatorAllModule } from '@syncfusion/ej2-angular-charts';
 import { googl } from './stock-data';
 /**
  * Sample for Hilo Open close Series
@@ -9,7 +7,9 @@ import { googl } from './stock-data';
 @Component({
     selector: 'control-content',
     templateUrl: 'ohlc.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ StockChartModule, ChartAllModule, RangeNavigatorAllModule]
 })
 export class HiloOpenCloseComponent {
 

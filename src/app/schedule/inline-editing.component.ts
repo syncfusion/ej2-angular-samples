@@ -1,20 +1,22 @@
 import { Component, ViewChild } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import {
-  ScheduleComponent, EventSettingsModel, TimelineViewsService, TimelineMonthService, GroupModel
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, EventSettingsModel, TimelineViewsService, TimelineMonthService, GroupModel, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { resourceData, timelineResourceData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'inline-editing.html',
-  styles: [`
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'inline-editing.html',
+    styles: [`
     .e-schedule .e-timeline-view .e-resource-left-td,
     .e-schedule .e-timeline-month-view .e-resource-left-td {
       width: 150px;
     }`],
-  providers: [TimelineViewsService, TimelineMonthService]
+    providers: [TimelineViewsService, TimelineMonthService],
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class InlineEditingComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

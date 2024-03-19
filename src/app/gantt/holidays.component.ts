@@ -1,8 +1,13 @@
 import { Component, OnInit} from '@angular/core';
 import { projectNewData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttholiday',
-    templateUrl: 'holidays.html'
+    templateUrl: 'holidays.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
 })
 export class GanttHolidaysComponent implements OnInit {
     public data: object[];

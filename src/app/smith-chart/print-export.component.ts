@@ -2,13 +2,18 @@
  * Print and export sample
  */
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SmithchartTheme, ISmithchartLoadEventArgs, Smithchart, SmithchartExportType } from '@syncfusion/ej2-angular-charts';
+import { SmithchartTheme, ISmithchartLoadEventArgs, Smithchart, SmithchartExportType, SmithchartAllModule } from '@syncfusion/ej2-angular-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'print-export.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SmithchartAllModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class SmithchartPrintExportComponent {
     @ViewChild('smithchart')

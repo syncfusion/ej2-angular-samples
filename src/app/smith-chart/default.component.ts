@@ -2,13 +2,17 @@
  * default sample
  */
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SmithchartTheme, ISmithchartLoadEventArgs, Smithchart, RenderType } from '@syncfusion/ej2-angular-charts';
+import { SmithchartTheme, ISmithchartLoadEventArgs, Smithchart, RenderType, SmithchartAllModule } from '@syncfusion/ej2-angular-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SmithchartAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class SmithchartDefaultComponent {
     @ViewChild('smithchart')

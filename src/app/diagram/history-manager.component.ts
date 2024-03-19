@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import {
     NodeModel,
     DecoratorModel,
@@ -11,6 +11,11 @@ import {
 import {
     DropDownList
 } from '@syncfusion/ej2-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { ListViewModule } from '@syncfusion/ej2-angular-lists';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * Sample for history manager
@@ -21,7 +26,9 @@ import {
     selector: 'control-content',
     templateUrl: 'history-manager.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [DiagramModule, ButtonModule, ListViewModule, NumericTextBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class HistoryManagerDiagramComponent {
     @ViewChild('diagram')

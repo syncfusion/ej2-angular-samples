@@ -1,20 +1,23 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import {
-  DiagramComponent, Node, NodeModel, SnapConstraints, Diagram, ConnectorModel, SnapSettingsModel,
-  DataBinding, BasicShapeModel, SymmetricLayout, DiagramTools
-} from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, Node, NodeModel, SnapConstraints, Diagram, ConnectorModel, SnapSettingsModel, DataBinding, BasicShapeModel, SymmetricLayout, DiagramTools, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import * as Data from './diagram-data.json';
+import  {symmetricData} from'./overview-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(DataBinding, SymmetricLayout);
 
 /**
  * Sample for Symmetric layout
  */
 @Component({
-  selector: 'control-content',
-  templateUrl: 'symmetric-layout.html',
-  styleUrls: ['diagram-style.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'symmetric-layout.html',
+    styleUrls: ['diagram-style.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, NumericTextBoxModule, ButtonModule, SBDescriptionComponent]
 })
 export class SymmetricLayoutDiagramComponent {
   @ViewChild('diagram') public diagram: DiagramComponent;
@@ -71,7 +74,7 @@ export class SymmetricLayoutDiagramComponent {
   public tool: DiagramTools = DiagramTools.ZoomPan;
   public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
 
-  public data: Object = { id: 'Id', parentId: 'Source', dataSource: new DataManager((Data as any).data) };
+  public data: Object = { id: 'Id', parentId: 'Source', dataSource: new DataManager(symmetricData) };
   public layout: Object = {
     type: 'SymmetricalLayout', springLength: 80, springFactor: 0.8, maxIteration: 500, margin: { left: 20, top: 20 }
   };

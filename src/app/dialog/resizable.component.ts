@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
-import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
+import { DialogComponent, ResizeDirections, DialogModule } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Resizable Dialog Component
  */
@@ -9,7 +11,9 @@ import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
     selector: 'control-content',
     styleUrls: ['resizable.css'],
     templateUrl: 'resizable.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ButtonModule, DialogModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class ResizableDialogComponent {

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject, OnInit, ViewChild } from '@angular/core';
-import { MaskedDateTimeService } from '@syncfusion/ej2-angular-calendars';
+import { MaskedDateTimeService, TimePickerModule } from '@syncfusion/ej2-angular-calendars';
 /**
 
  * Default TimePicker component
@@ -9,7 +9,9 @@ import { MaskedDateTimeService } from '@syncfusion/ej2-angular-calendars';
     styleUrls: ['default-style.css'],
     templateUrl: 'input-mask.html',
     providers: [MaskedDateTimeService],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TimePickerModule]
 })
 export class MaskSupportTimePickerComponent {
     public format: string = "h:mm a";

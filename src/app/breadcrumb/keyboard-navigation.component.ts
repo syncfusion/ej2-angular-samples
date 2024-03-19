@@ -1,12 +1,18 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { getComponent } from '@syncfusion/ej2-base';
 import { Breadcrumb } from '@syncfusion/ej2-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { BreadcrumbModule } from '@syncfusion/ej2-angular-navigations';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'keyboard-navigation.html',
     styleUrls: ['keyboard-navigation.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ButtonModule, BreadcrumbModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class KeyboardNavigationController {

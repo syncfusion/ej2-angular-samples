@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IStockChartEventArgs, ChartTheme, ITooltipRenderEventArgs } from '@syncfusion/ej2-angular-charts';
+import { IStockChartEventArgs, ChartTheme, ITooltipRenderEventArgs, StockChartModule, ChartAllModule, RangeNavigatorAllModule } from '@syncfusion/ej2-angular-charts';
 import { aapl } from './stock-data';
 
 /**
@@ -8,7 +8,9 @@ import { aapl } from './stock-data';
 @Component({
     selector: 'control-content',
     templateUrl: 'disabled-period.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ StockChartModule, ChartAllModule, RangeNavigatorAllModule]
 })
 export class DisabledPeriodComponent {
 

@@ -2,12 +2,15 @@
  * Sample for pointers in the Circular Gauge
  */
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-angular-circulargauge';
+import { ILoadedEventArgs, GaugeTheme, CircularGaugeModule, AnnotationsService, GradientService } from '@syncfusion/ej2-angular-circulargauge';
 
 @Component({
-  selector: 'control-content',
-  templateUrl: 'patterns.html',
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'patterns.html',
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [CircularGaugeModule],
+    providers: [AnnotationsService, GradientService]
 })
 
 export class PatternsComponent {

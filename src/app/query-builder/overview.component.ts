@@ -3,17 +3,24 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { RuleModel, ColumnsModel } from '@syncfusion/ej2-querybuilder';
-import { QueryBuilderComponent } from '@syncfusion/ej2-angular-querybuilder';
+import { QueryBuilderComponent, QueryBuilderModule } from '@syncfusion/ej2-angular-querybuilder';
 import { closest } from '@syncfusion/ej2-base';
-import { TabComponent } from '@syncfusion/ej2-angular-navigations'
+import { TabComponent, TabModule } from '@syncfusion/ej2-angular-navigations'
 import { updateRuleValue, getNamedParameterSql, getParameterSql, getMongoQuery, getCELQuery, getSpELQuery } from './util';
 import { employeeData } from './data-source';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonModule, RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { NgIf } from '@angular/common';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'overview.html',
     styleUrls: ['overview.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, QueryBuilderModule, DropDownListModule, NgIf, ButtonModule, TabModule, RadioButtonModule, SBDescriptionComponent]
 })
 
 export class OverviewQueryBuilderComponent {

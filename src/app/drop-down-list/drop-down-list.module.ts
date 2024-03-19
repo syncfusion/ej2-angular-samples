@@ -9,12 +9,13 @@ import { CascadingDropDownListComponent } from './cascading.component';
 import { FilteringDropDownListComponent } from './filtering.component';
 import { DiacriticsFilteringDropDownListComponent } from './diacritics-filtering.component';
 import { InlineDropDownListComponent } from './inline.component';
-import { SharedModule } from '../common/shared.module';
+
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { TemplateDrivenDropDownListComponent } from './template-driven.component';
 import { ReactiveFormDropDownListComponent } from './reactive-form.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { VirtualScrollDropDownListComponent } from './virtual-scroll.component';
+import { ObjectDropDownListComponent } from './object-value-binding';
 export const dropdownlistAppRoutes: Object[] = [
     { path: ':theme/drop-down-list/default', component: DefaultDropDownListComponent, name: 'Default Functionalities', description: 'This example demonstrates the default functionalities of the Angular drop-down list component with minimum configuration.', order: '01',
 		category: 'Dropdown List' },
@@ -22,9 +23,11 @@ export const dropdownlistAppRoutes: Object[] = [
 		category: 'Dropdown List' },
     { path: ':theme/drop-down-list/data-binding', component: DataBindingDropDownListComponent, name: 'Data Binding', description: 'This example demonstrates how to bind with local data source and fetch data from remote data service in the Angular drop-down list component.', order: '01',
 		category: 'Dropdown List' },
+    { path: ':theme/drop-down-list/object-value-binding', component: ObjectDropDownListComponent, name: 'Object Value Binding', type : 'new', description: 'This example demonstrates how to bind with data source in the Angular drop-down list component.', order: '01',
+		category: 'Dropdown List' },
     { path: ':theme/drop-down-list/template', component: TemplateDropDownListComponent, name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular drop-down list component pop-up list using the template.', order: '01',
 		category: 'Dropdown List' },
-    { path: ':theme/drop-down-list/virtual-scroll', component: VirtualScrollDropDownListComponent, name: 'Virtualization', type : 'update', description: 'This example demonstrates how to utilize the virtualization support of Angular drop-down list component.', order: '01',
+    { path: ':theme/drop-down-list/virtual-scroll', component: VirtualScrollDropDownListComponent, name: 'Virtualization', description: 'This example demonstrates how to utilize the virtualization support of Angular drop-down list component.', order: '01',
 		category: 'Dropdown List' },
     { path: ':theme/drop-down-list/filtering', component: FilteringDropDownListComponent, name: 'Filtering', description: 'This example demonstrates how the filtering functionalities works based on the typed characters in the Angular drop-down list component.', order: '01',
 		category: 'Dropdown List' },
@@ -42,24 +45,5 @@ export const dropdownlistAppRoutes: Object[] = [
 
 ];
 
-export const DropDownListRouter: ModuleWithProviders<any> = RouterModule.forChild(dropdownlistAppRoutes);
+export const DropDownListSampleModule: ModuleWithProviders<any> = RouterModule.forChild(dropdownlistAppRoutes);
 
-@NgModule({
-    imports: [DropDownListRouter, SharedModule, DropDownListModule, FormsModule, ReactiveFormsModule,BrowserModule],
-    declarations: [
-        DefaultDropDownListComponent,
-        GroupAndIconDropDownListComponent,
-        DataBindingDropDownListComponent,
-        TemplateDropDownListComponent,
-        VirtualScrollDropDownListComponent,
-        CascadingDropDownListComponent,
-        FilteringDropDownListComponent,
-        InlineDropDownListComponent,
-        DiacriticsFilteringDropDownListComponent,
-        TemplateDrivenDropDownListComponent,
-        ReactiveFormDropDownListComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class DropDownListSampleModule {
-}

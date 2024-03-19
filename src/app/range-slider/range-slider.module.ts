@@ -7,7 +7,7 @@ import { CheckBoxModule, ButtonModule  } from '@syncfusion/ej2-angular-buttons';
 import { NumericTextBoxModule, TextBoxModule} from '@syncfusion/ej2-angular-inputs';
 import { DefaultSliderComponent } from './default.component';
 import { OrientationSliderComponent } from './orientation.component';
-import { SharedModule } from '../common/shared.module';
+
 import { TicksSliderComponent } from './ticks.component';
 import { TooltipSliderComponent } from './tooltip.component';
 import { FormatSliderComponent } from './format.component';
@@ -85,23 +85,6 @@ export const sliderAppRoutes: Object[] = [
     ] }
 ];
 
-export const SliderRouter: ModuleWithProviders<any> = RouterModule.forChild(sliderAppRoutes);
+export const SliderSampleModule: ModuleWithProviders<any> = RouterModule.forChild(sliderAppRoutes);
 
-@NgModule({
-    imports: [SliderRouter, SharedModule, DialogModule, SliderModule, BrowserModule, CheckBoxModule, NumericTextBoxModule, TextBoxModule, DropDownListModule, ButtonModule],
-    declarations: [
-        DefaultSliderComponent,
-        OrientationSliderComponent,
-        TicksSliderComponent,
-        TooltipSliderComponent,
-        FormatSliderComponent,
-        AzureComponent,
-        TooltipCustomizationComponent,
-        EventComponent, APIComponent, TicksCustomizationComponent,
-        ThumbCustomizationComponent, SelectionBarComponent,
-        LimitsSliderComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class SliderSampleModule {
-}
+

@@ -1,4 +1,8 @@
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NgIf } from '@angular/common';
+import { TreeViewModule } from '@syncfusion/ej2-angular-navigations';
 
 /**
  * TreeView drag and drop sample
@@ -7,7 +11,9 @@ import { Component, Inject, ViewEncapsulation } from '@angular/core';
     selector: 'control-content',
     templateUrl: 'template.html',
     styleUrls: ['template.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeViewModule, NgIf, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class TemplateTreeViewComponent {
 

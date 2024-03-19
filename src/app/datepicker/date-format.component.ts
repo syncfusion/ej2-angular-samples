@@ -1,13 +1,16 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
 import { loadCldr, L10n } from '@syncfusion/ej2-base';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { FloatLabelType } from '@syncfusion/ej2-angular-inputs';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'date-format.html',
     styleUrls: ['format-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [DatePickerModule, DropDownListModule]
 })
 export class FormatDatePickerComponent {
     public date: Object = new Date();

@@ -1,14 +1,19 @@
 import { Component, OnInit, ViewChild, Inject, ViewEncapsulation } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';
 import { sampleData } from './jsontreegriddata';
-import { TreeGridComponent, PageService, FilterService, SortService, EditService} from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent, PageService, FilterService, SortService, EditService, TreeGridAllModule} from '@syncfusion/ej2-angular-treegrid';
+import { NgIf } from '@angular/common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'adaptive.html',
     styleUrls: ['adaptive.style.css'],
-    providers: [ PageService, FilterService, SortService, EditService ]
+    providers: [ PageService, FilterService, SortService, EditService ],
+    standalone: true,
+    imports: [NgIf, TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 
 })
 export class TreeGridAdaptiveComponent implements OnInit {

@@ -1,11 +1,15 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { MultiSelectComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { MultiSelectComponent, MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'custom-value.html',
     styleUrls: ['style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MultiSelectModule, SBDescriptionComponent]
 })
 export class CustomTagMultiSelectComponent {
     // define the JSON of data

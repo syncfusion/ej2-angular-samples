@@ -1,0 +1,56 @@
+<div class="control-section">
+    <div class="col-lg-12">
+			<h4 class="form-title">Feedback Form</h4>
+    <div class="control_wrapper" id="control_wrapper" style="margin: 25px auto;">
+        <form id="template_driven" #userForm="ngForm" novalidate>
+                <div class="form-group template">
+                    <div id="mobile-no" class="e-float-input" [ngClass]="{'e-success': email.valid}">
+                        <input type="text" id="email" name="email" [(ngModel)]="UserDetails.email" #email="ngModel" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                        <span class="e-float-line"></span>
+                        <label class="e-float-text" [ngClass]="{'e-label-top': UserDetails.email !== '' , 'e-label-bottom':  UserDetails.email == ''}" for="name">Email</label>                                                
+                    </div>
+                    <span class="e-error" *ngIf="email.errors && email.errors.required && (email.dirty || email.touched)" >
+                        * Enter your email address
+                    </span>
+                    <span  class="e-error" *ngIf="email.errors && email.errors.pattern && (email.dirty || email.touched)" >
+                        * Enter a valid email address
+                    </span>
+                </div>
+                <div class="form-group template">
+                    <ejs-textarea id="comment" name="comment" [(ngModel)]="UserDetails.comment" #comment="ngModel" placeholder="Comments" floatLabelType="Auto" [ngClass]="{'e-success': comment.valid}" required></ejs-textarea>
+                    <span class="e-error" *ngIf="comment.errors && comment.errors.required && (comment.dirty || comment.touched)" >
+                        * Enter your comments
+                    </span>  
+                </div>              
+                <div class="form-group template">
+                    <div class="submitBtn">
+                        <button class="submit-btn e-btn" id="submit-btn" [disabled]="userForm.invalid" type="submit"
+                            (click)="Submit()">Submit</button>
+                        <div class="desc"><span>*This button is not a submit type and the form submit handled from externally.</span>
+                        </div>
+                    </div>
+                </div>
+            </form> 
+            <ejs-dialog id="confirmationDialog" #Dialog [buttons]='dlgButtons' [animationSettings]='animationSettings' [header]='formHeader' [showCloseIcon]='showCloseIcon' [content]='content'  [target]='target' [width]='width' [visible]="visible" [isModal]="isModal" >
+            </ejs-dialog>
+    </div>
+  </div>
+</div>
+<div id="action-description">
+    <p> This example demonstrates how to design template-driven form using <code>TextArea</code> component. 
+    The submit button will be enabled after filling the form with valid values. You can fill the details and submit the form. </p>
+</div>
+
+<div id="description">
+    <p>
+        The <code>TextArea</code> component is integrated with template-driven forms and it allows you to bind the value to model using ngModel. The textarea appearance will be changed based on its <code>success or failure</code> state. 
+        After the form is submitted, the values will be reset to defaults.        
+        <td>The following validation is enabled in this example:
+            <ul>
+                <li><b>Email</b> - required and valid email address</li>
+                <li><b>Comments</b> - required</li>
+            </ul>
+        </td>
+        More information about template-driven forms is found in this <a target="_blank" href="https://angular.io/guide/forms#template-driven-forms"> reference link</a>.
+    </p>
+</div>

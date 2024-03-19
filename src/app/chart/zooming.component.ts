@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ChartDataService } from './chart-data.service';
-import { ILoadedEventArgs, ChartTheme, ScrollBar } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, ScrollBar, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Sample for Zooming in chart
  */
@@ -9,7 +11,9 @@ import { Browser } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'zooming.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ChartAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ZoomingChartComponent {
     public selectedTheme: string = (location.hash.split('/')[1]) ? (location.hash.split('/')[1]) : 'Material';

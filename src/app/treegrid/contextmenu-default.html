@@ -1,6 +1,6 @@
 <div class="control-section">
-    <ejs-treegrid [dataSource]='data'  childMapping='subtasks' height='350' [treeColumnIndex]='1' id="treegridcomp" allowPaging='true' [pageSettings]='pageSettings' allowExcelExport='true' allowPdfExport='true' allowSorting='true'
-    [contextMenuItems]="contextMenuItems" [editSettings]='editing' [toolbar]="toolbar">
+    <ejs-treegrid [dataSource]='data'  childMapping='subtasks' height='350' [treeColumnIndex]='1' id="treegridcomp" allowPaging='true' allowResizing='true' [pageSettings]='pageSettings' allowExcelExport='true' allowPdfExport='true' allowSorting='true'
+    [contextMenuItems]="contextMenuItems" [editSettings]='editing' [toolbar]="toolbar" allowResizing="true">
         <e-columns>
             <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='80' [edit]='editparams' textAlign='Right' editType='numericedit'></e-column>
             <e-column field='taskName' headerText='Task Name' width='190'></e-column>
@@ -54,7 +54,7 @@
 
     <p>Injecting Module</p>
 
-   <p> Tree Grid component features are segregated into individual feature-wise modules. To use Context Menu feature, we need to inject <code>ContextMenuService</code> into the @NgModule.providers section.</p>
+   <p> Tree Grid component features are segregated into individual feature-wise modules. To use Context Menu feature, we need to inject <code>ContextMenuService</code> into the &#64;NgModule.providers section.</p>
 
    <p>
     More information on the Context Menu can be found in this

@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { projectNewData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttlocaldata',
-    templateUrl: 'local-data.html'
+    templateUrl: 'local-data.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
 })
 export class GanttLocalDataComponent implements OnInit {
     public data: object[];

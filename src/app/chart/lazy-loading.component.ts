@@ -1,14 +1,16 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IPointRenderEventArgs, ChartComponent } from '@syncfusion/ej2-angular-charts';
+import { IPointRenderEventArgs, ChartComponent, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { ChartTheme, ScrollBar, Zoom, IScrollEventArgs, LineSeries, Tooltip } from '@syncfusion/ej2-charts';
 import { Chart, DateTime, ILoadedEventArgs } from '@syncfusion/ej2-charts';
 import { Internationalization, DateFormatOptions } from '@syncfusion/ej2-base';
 import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
 import { DatePicker, ChangedEventArgs } from '@syncfusion/ej2-calendars';
 import { NumericTextBox, ChangeEventArgs as NumericChange } from '@syncfusion/ej2-inputs';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { DatePickerComponent } from '@syncfusion/ej2-angular-calendars';
-import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DatePickerComponent, DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { NumericTextBoxComponent, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Lazy Loading
@@ -17,7 +19,9 @@ import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
     selector: 'control-content',
     templateUrl: 'lazy-loading.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ChartAllModule, DropDownListModule, DatePickerModule, NumericTextBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 // tslint:disable:max-func-body-length
 export class LazyLoadingComponent {

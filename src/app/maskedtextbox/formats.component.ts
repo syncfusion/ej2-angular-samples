@@ -1,11 +1,22 @@
 import { Component, ViewChild } from '@angular/core';
 import { MaskChangeEventArgs, Input } from '@syncfusion/ej2-inputs';
-import { MaskedTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { MaskedTextBoxComponent, MaskedTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'formats.html',
+    standalone: true,
+    imports: [
+        MaskedTextBoxModule,
+        FormsModule,
+        DropDownListModule,
+        SBActionDescriptionComponent,
+        SBDescriptionComponent,
+    ],
 })
 export class FormatMaskedTextboxController {
     constructor() { }

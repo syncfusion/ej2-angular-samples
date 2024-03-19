@@ -10,7 +10,7 @@
     <div class="sb-home-link sb-icons sb-icon-Home"></div>
     <div class="sb-home-text">
         <span>HOME</span>
-        <a id="sb-home" href="https://ej2.syncfusion.com/home/angular.html" aria-label="sample home page"></a>
+        <a id="sb-home" href="https://ej2.syncfusion.com/home/angular.html" aria-label="Essential JS2 home page"></a>
     </div>
 </div>
 <div class="sb-control-navigation e-view">
@@ -34,7 +34,7 @@
             (actionComplete)='afterListviewRendered($event)'>
             <ng-template #template let-data>
                 <div class="e-text-content e-icon-wrapper">
-                    <span class="e-list-text" role="listitem">{{data.name}}
+                    <span class="e-list-text">{{data.name}}
                     </span>
                     <span *ngIf="data.type === 'update'; else elseBlock" class="e-badge sb-badge e-samplestatus {{data.type}}">Updated</span>
                     <ng-template #elseBlock>
@@ -64,16 +64,16 @@
     </div>
     <div class="sb-footer-left">
         <div class="sb-footer-links">
-            <a href="https://help.syncfusion.com/essential-js2/angular/documentation/" target="_blank" aria-label="Documentation link">
+            <a href="https://help.syncfusion.com/essential-js2/angular/documentation/" target="_blank" aria-label="Documentation - Opens in a new window">
                 <div class="sb-footer-link">Documentation</div>
             </a>
-            <a href="https://www.syncfusion.com/forums/essentialjs2" target="_blank" aria-label="Forum link">
+            <a href="https://www.syncfusion.com/forums/essentialjs2" target="_blank" aria-label="Forum - Opens in a new window">
                 <div class="sb-footer-link">Forum</div>
             </a>
-            <a href="https://blog.syncfusion.com/" target="_blank" aria-label="Blog link">
+            <a href="https://blog.syncfusion.com/" target="_blank" aria-label="Blog - Opens in a new window">
                 <div class="sb-footer-link">Blog</div>
             </a>
-            <a href="https://www.syncfusion.com/kb" target="_blank" aria-label="Knowledge base">
+            <a href="https://www.syncfusion.com/kb" target="_blank" aria-label="Knowledge base - Opens in a new window">
                 <div class="sb-footer-link">Knowledge Base</div>
             </a>
         </div>

@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { FreezeService, TreeGridComponent, SortService, SelectionService } from '@syncfusion/ej2-angular-treegrid';
+import { FreezeService, TreeGridComponent, SortService, SelectionService, TreeGridModule } from '@syncfusion/ej2-angular-treegrid';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'frozencolumn.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [ FreezeService, SortService, SelectionService ]
+    providers: [ FreezeService, SortService, SelectionService ],
+    standalone: true,
+    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class FreezeComponent implements OnInit {

@@ -2,12 +2,16 @@
  * AutoComplete Highlight Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { AutoCompleteComponent, ChangeEventArgs, FilterType} from '@syncfusion/ej2-angular-dropdowns';
+import { AutoCompleteComponent, ChangeEventArgs, FilterType, AutoCompleteModule, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
     templateUrl: 'highlight.html',
     styleUrls: ['highlight.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, AutoCompleteModule, DropDownListModule, SBDescriptionComponent]
 })
 export class HighlightAutoCompleteComponent {
     @ViewChild('sample')

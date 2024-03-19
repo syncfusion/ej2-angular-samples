@@ -2,10 +2,10 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Sparkline, VisibleType } from '@syncfusion/ej2-charts';
 import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
 import { Slider, SliderChangeEventArgs } from '@syncfusion/ej2-inputs';
-import { SliderComponent } from '@syncfusion/ej2-angular-inputs';
+import { SliderComponent, SliderModule } from '@syncfusion/ej2-angular-inputs';
 import { EmitType } from '@syncfusion/ej2-base';
 import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
-import { ISparklineLoadEventArgs, SparklineTheme } from '@syncfusion/ej2-angular-charts';
+import { ISparklineLoadEventArgs, SparklineTheme, SparklineAllModule } from '@syncfusion/ej2-angular-charts';
 /**
  * Sample for axis type in Sparkline 
  */
@@ -13,7 +13,9 @@ import { ISparklineLoadEventArgs, SparklineTheme } from '@syncfusion/ej2-angular
 @Component({
     selector: 'control-content',
     templateUrl: 'customization.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SparklineAllModule, SliderModule]
 })
 export class SparklineCustomizationSample {
     // custom code start

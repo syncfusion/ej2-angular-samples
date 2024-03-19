@@ -1,7 +1,11 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { PagerComponent } from '@syncfusion/ej2-angular-grids';
+import { PagerComponent, GridModule } from '@syncfusion/ej2-angular-grids';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
-    templateUrl: 'api.html'
+    templateUrl: 'api.html',
+    standalone: true,
+    imports: [PagerComponent, GridModule, SBDescriptionComponent, SBActionDescriptionComponent]
 })
 export class ApiComponent implements OnInit {
     public pagesize: number;

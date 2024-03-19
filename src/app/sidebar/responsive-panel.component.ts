@@ -1,12 +1,17 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SidebarComponent } from '@syncfusion/ej2-angular-navigations';
+import { SidebarComponent, ToolbarModule, SidebarModule, TreeViewModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 
 
 @Component({
     selector: 'control-content',
     styleUrls: ['responsive-panel.css'],
     templateUrl: 'responsive-panel.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ToolbarModule, SidebarModule, TextBoxModule, TreeViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ResponsivePanelComponent {
     @ViewChild('sidebarTreeviewInstance')

@@ -1,7 +1,10 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
-import { IDataOptions, IDataSet, PivotView, QueryCellInfoEventArgs } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, IDataSet, PivotView, PivotViewModule, QueryCellInfoEventArgs } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NgClass } from '@angular/common';
 enableRipple(false);
 
 /**
@@ -15,6 +18,8 @@ let data: IDataSet[] = require('./productData.json');
     styleUrls: ['heat-map.css'],
     templateUrl: 'heat-map.html',
     encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, NgClass]
 })
 
 export class HeatMapComponent implements OnInit {

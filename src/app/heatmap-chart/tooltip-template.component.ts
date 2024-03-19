@@ -1,12 +1,16 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { HeatMap, Legend, Tooltip, Adaptor, ILoadedEventArgs, ITooltipEventArgs, HeatMapTheme } from '@syncfusion/ej2-angular-heatmap';
+import { HeatMap, Legend, Tooltip, Adaptor, ILoadedEventArgs, ITooltipEventArgs, HeatMapTheme, HeatMapModule } from '@syncfusion/ej2-angular-heatmap';
 import { SampleDataSource } from './default-table-data-source';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 HeatMap.Inject(Tooltip, Legend, Adaptor);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'tooltip-template.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [HeatMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class HeatmapTooltipComponent {
 
@@ -82,6 +86,8 @@ export class HeatmapTooltipComponent {
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.heatmap.theme = <HeatMapTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
         // custom code end
+    };
+    public tooltipRender(args: ITooltipEventArgs): void {
         if (args.heatmap.theme.indexOf('Dark') > -1 || args.heatmap.theme.indexOf('Highcontrast') > -1) {
             args.heatmap.tooltipSettings.template = '<div style=" border-radius: 5px;fontFamily: inherit; padding-left: 10px;padding-right: 10px;padding-bottom: 6px;padding-top: 6px;background:white; border: 1px #919191;" ><span style="color:black;font-size: 12px">In ${yLabel}, the ${xLabel} produced ${value} million barrels per day.<span></div>';
 

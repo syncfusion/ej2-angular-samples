@@ -3,16 +3,21 @@
  */
 import { Component, ViewChild, ViewEncapsulation, ElementRef } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, FormatPainterService, EmojiPickerService, FileManagerService } from '@syncfusion/ej2-angular-richtexteditor';
 import { ActionBeginEventArgs, ActionCompleteEventArgs } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, RichTextEditorModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
     templateUrl: 'client-side-events.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['events.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService]
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService, PasteCleanupService, VideoService, AudioService, FormatPainterService, EmojiPickerService, FileManagerService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, RichTextEditorModule, ButtonModule, SBDescriptionComponent]
 })
 export class EventsComponent {
 

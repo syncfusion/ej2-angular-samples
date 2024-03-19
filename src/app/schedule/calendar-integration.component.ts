@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
-import {
-  View, EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, AgendaService
-} from '@syncfusion/ej2-angular-schedule';
+import { View, EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'calendar-integration.html',
-  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'calendar-integration.html',
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService],
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class CalendarIntegrationComponent {
   public readonly = true;

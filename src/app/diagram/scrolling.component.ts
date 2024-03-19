@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild,Inject } from '@angular/core';
-import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, SymbolPaletteModule, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import {
   Diagram, NodeModel, UndoRedo, ConnectorModel, PointPortModel, Connector, FlowShapeModel,
   SymbolInfo, IDragEnterEventArgs, SnapSettingsModel, MarginModel, TextStyleModel, StrokeStyleModel,
@@ -7,6 +7,11 @@ import {
 } from '@syncfusion/ej2-diagrams';
 import { ExpandMode } from '@syncfusion/ej2-navigations';
 import { paletteIconClick } from './script/diagram-common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 Diagram.Inject(UndoRedo);
 
 /**
@@ -14,10 +19,12 @@ Diagram.Inject(UndoRedo);
  */
 
 @Component({
-  selector: 'control-content',
-  templateUrl: 'scrolling.html',
-  styleUrls: ['scrolling.component.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'scrolling.html',
+    styleUrls: ['scrolling.component.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SymbolPaletteModule, DiagramModule, DropDownListModule, TextBoxModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ScrollingComponent {
   @ViewChild('diagram')
@@ -224,7 +231,7 @@ export class ScrollingComponent {
       id: 'connectors',
       expanded: false,
       symbols: this.connectorSymbols,
-      iconCss: 'shapes',
+      iconCss: 'e-ddb-icons e-diagram-connector',
       title: 'Connectors'
     }
   ];

@@ -1,15 +1,27 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataManager, ODataV4Adaptor, WebApiAdaptor, UrlAdaptor, Query } from '@syncfusion/ej2-data';
-import { CheckBoxChangeEventArgs, ColumnModel, DataResult, DataStateChangeEventArgs, GridComponent, Sorts } from '@syncfusion/ej2-angular-grids';
-import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { CheckBoxChangeEventArgs, ColumnModel, DataResult, DataStateChangeEventArgs, GridComponent, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
+import { ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { CheckBox } from '@syncfusion/ej2-buttons';
 import { Ajax } from '@syncfusion/ej2-base';
 import { enableRipple, addClass, removeClass } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  selector: 'ej2-gridflexibledata',
-  templateUrl: 'flexible-data.html',
+    selector: 'ej2-gridflexibledata',
+    templateUrl: 'flexible-data.html',
+    providers: [PageService],
+    standalone: true,
+    imports: [
+        GridModule,
+        DropDownListModule,
+        CheckBoxModule,
+        ButtonModule,
+        SBActionDescriptionComponent,
+        SBDescriptionComponent,
+    ],
 })
 export class FlexibleDataBindingComponent implements OnInit {
   public data: DataManager;

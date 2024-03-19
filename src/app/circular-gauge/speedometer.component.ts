@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme, IAxisLabelRenderEventArgs, CircularGauge } from '@syncfusion/ej2-angular-circulargauge';
+import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme, IAxisLabelRenderEventArgs, CircularGauge, CircularGaugeModule, AnnotationsService } from '@syncfusion/ej2-angular-circulargauge';
 import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
 import { EmitType, isNullOrUndefined } from '@syncfusion/ej2-base';
 
@@ -10,7 +10,10 @@ import { EmitType, isNullOrUndefined } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',
     templateUrl: 'speedometer.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [CircularGaugeModule],
+    providers: [AnnotationsService]
 })
 
 export class SpeedometerComponent {

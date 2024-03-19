@@ -11,7 +11,7 @@ import { KeyboardToolbarComponent } from './keyboard-interaction.component';
 import { NumericTextBoxAllModule, TextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { ComboBoxAllModule } from '@syncfusion/ej2-angular-dropdowns';
 
-import { SharedModule } from '../common/shared.module';
+
 export const toolbarAppRoutes: Object[] = [
     { path: ':theme/toolbar/default', component: DefaultToolbarComponent, name: 'Default Functionalities', description: 'The sample demonstrates the default functionalities of the Toolbar component which place commands with the scrollable mode in Angular platform.', category: 'Toolbar' },
     { path: ':theme/toolbar/popup', component: PopupToolbarComponent, name: 'Popup', description: 'The sample exposes popup mode of Toolbar component which configures overflowing toolbar commands inside a popup based on priority in Angular platform.', category: 'Toolbar' },
@@ -21,18 +21,5 @@ export const toolbarAppRoutes: Object[] = [
 
 ];
 
-export const toolbarRouter: ModuleWithProviders<any> = RouterModule.forChild(toolbarAppRoutes);
+export const ToolbarSampleModule: ModuleWithProviders<any> = RouterModule.forChild(toolbarAppRoutes);
 
-@NgModule({
-    imports: [toolbarRouter, ToolbarModule, NumericTextBoxAllModule, TextBoxAllModule, ComboBoxAllModule, SharedModule],
-    declarations: [
-        DefaultToolbarComponent,
-        PopupToolbarComponent,
-        TemplateToolbarComponent,
-        AlignToolbarComponent,
-        KeyboardToolbarComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class ToolbarSampleModule {
-}

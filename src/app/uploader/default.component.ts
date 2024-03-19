@@ -1,8 +1,10 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { EmitType, detach } from '@syncfusion/ej2-base';
-import { UploaderComponent, RemovingEventArgs } from '@syncfusion/ej2-angular-inputs';
+import { UploaderComponent, RemovingEventArgs, UploaderModule } from '@syncfusion/ej2-angular-inputs';
 import { createSpinner, showSpinner, hideSpinner } from '@syncfusion/ej2-popups';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Default Uploader Default Component
@@ -11,7 +13,9 @@ import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
     selector: 'control_wrapper',
     templateUrl: 'default.html',
     styleUrls: ['default.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [UploaderModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DefaultUploaderComponent {
     @ViewChild('defaultupload')

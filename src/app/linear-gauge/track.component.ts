@@ -1,11 +1,13 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { LinearGaugeComponent, LinearGauge } from '@syncfusion/ej2-angular-lineargauge';
+import { LinearGaugeComponent, LinearGauge, LinearGaugeModule } from '@syncfusion/ej2-angular-lineargauge';
 import { ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-lineargauge';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'track.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [LinearGaugeModule]
 })
 
 export class TrackComponent {

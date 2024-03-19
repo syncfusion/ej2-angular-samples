@@ -1,9 +1,11 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, ChartComponent, IPointRenderEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartComponent, IPointRenderEventArgs, ChartTheme, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { LabelIntersectAction, EdgeLabelPlacement, AxisPosition } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
-import { NumericTextBox } from '@syncfusion/ej2-angular-inputs';
+import { NumericTextBox, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for smart axis labels Positions
@@ -12,7 +14,9 @@ import { NumericTextBox } from '@syncfusion/ej2-angular-inputs';
     selector: 'control-content',
     templateUrl: 'smart-axis-labels.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, NumericTextBoxModule, SBDescriptionComponent]
 })
 export class SmartAxisLabelsChartComponent {
 

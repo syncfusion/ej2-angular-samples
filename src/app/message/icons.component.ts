@@ -1,7 +1,9 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { Button, ButtonComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
-import { Message, MessageComponent } from '@syncfusion/ej2-angular-notifications';
+import { Button, ButtonComponent, ChangeEventArgs, ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { Message, MessageComponent, MessageModule } from '@syncfusion/ej2-angular-notifications';
 import { getComponent } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  *  Sample for Message
  */
@@ -9,7 +11,9 @@ import { getComponent } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'icons.html',
     styleUrls: ['icons.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ButtonModule, MessageModule, CheckBoxModule, SBDescriptionComponent]
 })
 
 export class IconsController {

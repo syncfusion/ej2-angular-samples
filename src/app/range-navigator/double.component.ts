@@ -4,6 +4,7 @@ import { ChartTheme, ChartAnnotation, ILoadedEventArgs, ChartAnnotationSettingsM
       IRangeTooltipRenderEventArgs , RangeTooltip, IAxisLabelRenderEventArgs } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { sl, aus } from './double_data';
+import { RangeNavigatorAllModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 
 /**
  * Sample for range navigator with numeric axis
@@ -39,7 +40,9 @@ getAnnotaiton(sl, getSeriesColor(theme)[1]);
 @Component({
     selector: 'control-content',
     templateUrl: 'double.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [RangeNavigatorAllModule, ChartAllModule]
 })
 
 export class DoubleComponent {

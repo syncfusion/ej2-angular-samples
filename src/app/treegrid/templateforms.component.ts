@@ -2,12 +2,20 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
 import { DataUtil } from '@syncfusion/ej2-data';
 import { DialogEditEventArgs, SaveEventArgs } from '@syncfusion/ej2-angular-grids';
-import { EditService, ToolbarService, PageService } from '@syncfusion/ej2-angular-treegrid';
-import { FormGroup } from '@angular/forms';
+import { EditService, ToolbarService, PageService, TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
+import { FormGroup, FormsModule } from '@angular/forms';
+import { DatePickerAllModule } from "@syncfusion/ej2-angular-calendars";
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { NumericTextBoxModule} from '@syncfusion/ej2-angular-inputs';
+import { NgClass, NgFor } from '@angular/common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'templateforms.html',
-    providers: [ToolbarService, EditService, PageService]
+    providers: [ToolbarService, EditService, PageService],
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, FormsModule, NgClass, NgFor, DatePickerAllModule, DropDownListModule, NumericTextBoxModule]
 })
 export class TemplateFormsComponent implements OnInit {
     public data: Object[] = [];

@@ -1,19 +1,21 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
 import { hospitalData, waitingList } from './data';
 import { extend, closest, remove, addClass } from '@syncfusion/ej2-base';
-import {
-  EventSettingsModel, View, GroupModel, TimelineViewsService, TimelineMonthService,
-  ResizeService, WorkHoursModel, DragAndDropService, ResourceDetails, ScheduleComponent, ActionEventArgs, CellClickEventArgs
-} from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, View, GroupModel, TimelineViewsService, TimelineMonthService, ResizeService, WorkHoursModel, DragAndDropService, ResourceDetails, ScheduleComponent, ActionEventArgs, CellClickEventArgs, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { DragAndDropEventArgs } from '@syncfusion/ej2-navigations';
-import { TreeViewComponent } from '@syncfusion/ej2-angular-navigations';
+import { TreeViewComponent, TreeViewModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NgIf } from '@angular/common';
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'external-drag-drop.html',
-  styleUrls: ['external-drag-drop.style.css'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'external-drag-drop.html',
+    styleUrls: ['external-drag-drop.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    providers: [TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, NgIf, TreeViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ExternalDragDropComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

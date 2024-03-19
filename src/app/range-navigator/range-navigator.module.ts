@@ -47,16 +47,5 @@ export const rangeNavigatorAppRoutes: Object[] = [
     { path: ':theme/range-navigator/rtl', component: RTLComponent, name: 'RTL', order: '05', category: 'RTL' }
 ];
 
-export const rangeNavigatorRouter: ModuleWithProviders<any> = RouterModule.forChild(rangeNavigatorAppRoutes);
+export const RangeNavigatorSampleModule: ModuleWithProviders<any> = RouterModule.forChild(rangeNavigatorAppRoutes);
 
-let declarations: Type<Object>[] = [DefaultComponent, LightWeightComponent, DateTimeComponent, DoubleComponent, LogarthmicComponent,
-    MultilevelComponent, FilterComponent, RTLComponent, RangeNavigatorExportComponent,
-    RangeNavigatorEmptyPointComponent, PeriodicSelectorRNComponent];
-@NgModule({
-    imports: [ rangeNavigatorRouter, ChartAllModule, RangeNavigatorAllModule, GridAllModule, ButtonAllModule, SwitchAllModule ],
-    exports: [],
-    declarations: declarations,
-    providers: []
-})
-export class RangeNavigatorSampleModule {
-}

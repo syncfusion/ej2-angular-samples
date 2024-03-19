@@ -1,13 +1,17 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DiagramComponent, LineDistribution } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, LineDistribution, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import {
     NodeModel, ConnectorModel, DiagramTools, Diagram, DataBinding, ComplexHierarchicalTree,
     SnapConstraints, SnapSettingsModel, LayoutModel, LayoutOrientation,ConnectionPointOrigin
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
 import { ChangeEventArgs as NumericChangeEventArgs } from '@syncfusion/ej2-inputs';
-import {multiParentData} from './overview-data';
+import {multiParentData} from'./overview-data';
 import { ChangeEventArgs as CheckBoxChangeEventArgs } from '@syncfusion/ej2-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(DataBinding, ComplexHierarchicalTree,LineDistribution);
 
 export interface DataInfo {
@@ -21,7 +25,9 @@ export interface DataInfo {
     selector: 'control-content',
     templateUrl: 'complex-hierarchical-tree.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, NumericTextBoxModule, CheckBoxModule, SBDescriptionComponent]
 })
 
 export class ComplexHierarchicalTreeDiagramComponent {

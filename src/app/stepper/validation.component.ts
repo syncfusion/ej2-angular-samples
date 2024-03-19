@@ -1,11 +1,15 @@
 import { Component, ViewChild, ViewEncapsulation, Inject, AfterViewInit, OnInit, ElementRef } from '@angular/core';
-import { StepModel, Stepper, StepperChangingEventArgs } from '@syncfusion/ej2-angular-navigations';
+import { StepModel, Stepper, StepperChangingEventArgs, StepperModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'validation.html',
     styleUrls: ['validation.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [StepperModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class StepperValidationComponent implements OnInit {
     constructor(@Inject('sourceFiles') private sourceFiles: any) {

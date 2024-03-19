@@ -1,5 +1,5 @@
 <div class="control-section">
-    <ejs-treegrid [dataSource]='data' childMapping='subtasks' height='350' allowPaging='true' [pageSettings]='pageSettings' allowFiltering='true' [filterSettings]='filterSettings' allowSorting='true' [treeColumnIndex]='1' showColumnMenu=true>
+    <ejs-treegrid [dataSource]='data' childMapping='subtasks' height='350' allowPaging='true' [pageSettings]='pageSettings' allowFiltering='true' allowResizing='true' [filterSettings]='filterSettings' allowSorting='true' [treeColumnIndex]='1' showColumnMenu=true>
         <e-columns>
             <e-column field='taskID' headerText='Task ID' width='100' textAlign='Right'></e-column>
             <e-column field='taskName' headerText='Task Name' width='190'></e-column>
@@ -37,7 +37,7 @@
         </p>
         <p>Injecting Module:</p>
 
-        <p>Tree Grid component features are segregated into individual feature-wise modules. To use Column Menu feature, we need to inject   <code>ColumnMenuService</code> into the <code>@NgModule.providers</code> section.</p> 
+        <p>Tree Grid component features are segregated into individual feature-wise modules. To use Column Menu feature, we need to inject   <code>ColumnMenuService</code> into the <code>&#64;NgModule.providers</code> section.</p> 
         <p>
             More information about Column Menu can be found in this
             <a target="_blank" 

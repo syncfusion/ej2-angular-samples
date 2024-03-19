@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, ChartComponent, ChartTheme, StripLineSettingsModel} from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartComponent, ChartTheme, StripLineSettingsModel, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { Browser} from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Sample for stripLines
  */
@@ -11,7 +13,9 @@ let fontSize: string = Browser.isDevice ? '14px' : '18px';
     selector: 'control-content',
     templateUrl: 'strip-line.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ChartAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class StripLineChartComponent {
 

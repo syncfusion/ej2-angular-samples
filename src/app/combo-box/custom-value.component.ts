@@ -5,12 +5,16 @@ import { Component, ViewChild } from '@angular/core';
 import { Query } from '@syncfusion/ej2-data';
 import { EmitType } from '@syncfusion/ej2-base';
 import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
-import { ComboBoxComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { ComboBoxComponent, ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     styleUrls: ['custom-value.css'],
-    templateUrl: 'custom-value.html'
+    templateUrl: 'custom-value.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ComboBoxModule, SBDescriptionComponent]
 })
 export class CustomValueComboBoxComponent {
     // defined the JSON of data

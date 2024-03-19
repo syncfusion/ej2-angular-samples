@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { EditService, FilterService, GridComponent, GroupService, ReorderService, SortService } from '@syncfusion/ej2-angular-grids';
+import { EditService, FilterService, GridComponent, GroupService, ReorderService, SortService, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
 import { L10n, setCulture } from '@syncfusion/ej2-base';
 import { data } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 
 @Component({
     selector: 'ej2-gridrtl',
     templateUrl: 'enable-rtl.html',
-    providers: [GroupService, SortService, ReorderService, EditService, FilterService ]
+    providers: [GroupService, SortService, ReorderService, EditService, FilterService, PageService],
+    standalone: true,
+    imports: [GridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class RtlComponent implements OnInit {
     public data: Object[];

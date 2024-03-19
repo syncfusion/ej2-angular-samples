@@ -27,4 +27,73 @@ ejs-querybuilder {
 .highcontrast textarea#ruleContent {
   background-color: #000;
 }
+
+.e-pre-content {
+  background: transparent;
+  border: none;
+}
+
+.e-query-preview {
+  margin-top: 20px !important;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  height: 300px;
+  margin-bottom: 10px;
+}
+
+.e-query-preview .e-tab {
+  height: 200px;
+}
+
+.e-query-preview .e-tab .e-content {
+  margin: 10px;
+}
+
+.e-query-preview .copycode::before {
+  padding-left: 4px;
+  content: '\e77c';
+  font-size: 25px;
+}
+
+.e-query-preview .e-copy-tooltip {
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+  top: 0px;
+  background: #f4f4f4;
+  border-radius: 2px;
+  padding-right: 4px;
+  padding-top: 4px !important;
+  color: rgba(0, 0, 0, .54);
+}
+
+.e-query-preview .copy-tooltip.e-control.e-tooltip:hover {
+  background: #D8D8D8;
+}
+
+
+
+.e-query-preview .e-cel-content,
+.e-query-preview .e-spel-content {
+  border: none;
+  height: 180px;
+  width: 98%;
+}
+
+.e-query-preview .e-text-area-content:focus-visible {
+  outline: none;
+}
+
+.e-query-preview .preview {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+  .e-query-preview .copy-tooltip {
+     display: block !important;
+  }
+}
+
 /* custom code end*/

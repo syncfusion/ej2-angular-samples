@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { GridComponent } from '@syncfusion/ej2-angular-grids';
+import { GridComponent, GridModule } from '@syncfusion/ej2-angular-grids';
 import { employeeData } from './data';
 import { Internationalization } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 let instance: Internationalization = new Internationalization();
 
@@ -10,7 +12,9 @@ let instance: Internationalization = new Internationalization();
     selector: 'ej2-gridrowtemplate',
     templateUrl: 'row-template.html',
     styleUrls: ['row-template.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GridModule, SBDescriptionComponent]
 })
 export class RowTemplateComponent implements OnInit {
     public data: Object[];

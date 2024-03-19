@@ -1,4 +1,7 @@
 import { Component, Inject } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { TreeViewModule } from '@syncfusion/ej2-angular-navigations';
 
 /**
  * TreeView plain data sample
@@ -6,7 +9,9 @@ import { Component, Inject } from '@angular/core';
 @Component({
     selector: 'control-content',
     templateUrl: 'plain-data.html',
-    styleUrls: ['plain-data.css']
+    styleUrls: ['plain-data.css'],
+    standalone: true,
+    imports: [TreeViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class PlainTreeViewComponent {
 

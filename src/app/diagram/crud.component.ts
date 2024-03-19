@@ -5,11 +5,15 @@ import {
 } from '@syncfusion/ej2-diagrams';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
 import { ChangeEventArgs, DropDownList } from '@syncfusion/ej2-dropdowns';
-import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
-import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
+import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
+import { ToolbarComponent, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { TextBox } from '@syncfusion/ej2-inputs';
 import { Ajax } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 Diagram.Inject(DataBinding, HierarchicalTree);
 /**
@@ -19,7 +23,9 @@ Diagram.Inject(DataBinding, HierarchicalTree);
     selector: 'control-content',
     templateUrl: 'crud.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToolbarModule, DiagramModule, DialogModule, TextBoxModule, DropDownListModule, SBDescriptionComponent]
 })
 
 export class CRUDDiagramComponent {

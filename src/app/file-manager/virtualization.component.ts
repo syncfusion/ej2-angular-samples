@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsViewService, VirtualizationService } from '@syncfusion/ej2-angular-filemanager';
+import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsViewService, VirtualizationService, FileManagerModule } from '@syncfusion/ej2-angular-filemanager';
 /**
  * File Manager virtualization feature sample
  */
@@ -9,7 +9,9 @@ import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsVie
     templateUrl: 'virtualization.html',
     styleUrls: ['virtualization.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ NavigationPaneService, ToolbarService, DetailsViewService, VirtualizationService]
+    providers: [NavigationPaneService, ToolbarService, DetailsViewService, VirtualizationService],
+    standalone: true,
+    imports: [FileManagerModule]
 })
 
 export class VirtualizationController {

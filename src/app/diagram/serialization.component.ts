@@ -1,11 +1,12 @@
 import { Component, ViewEncapsulation, ViewChild,Inject } from '@angular/core';
-import {
-    DiagramComponent, Diagram, NodeModel, UndoRedo, ConnectorModel, PointPortModel, Node, FlowShapeModel, MarginModel, PaletteModel,
-    SymbolInfo, DiagramContextMenu, GridlinesModel, SnapSettingsModel, ShapeStyleModel, TextStyleModel
-} from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, Diagram, NodeModel, UndoRedo, ConnectorModel, PointPortModel, Node, FlowShapeModel, MarginModel, PaletteModel, SymbolInfo, DiagramContextMenu, GridlinesModel, SnapSettingsModel, ShapeStyleModel, TextStyleModel, SymbolPaletteModule, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { AsyncSettingsModel } from '@syncfusion/ej2-inputs';
 import { ClickEventArgs, ExpandMode } from '@syncfusion/ej2-navigations';
 import { showPaletteIcon } from './script/diagram-common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
+import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(UndoRedo, DiagramContextMenu);
 
 
@@ -17,7 +18,9 @@ Diagram.Inject(UndoRedo, DiagramContextMenu);
     selector: 'control-content',
     templateUrl: 'serialization.html',
     styleUrls: ['diagram-common.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToolbarModule, SymbolPaletteModule, DiagramModule, UploaderModule, SBDescriptionComponent]
 })
 export class SerializationDiagramComponent {
     public terminator: FlowShapeModel = { type: 'Flow', shape: 'Terminator' };

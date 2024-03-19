@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IPointerDragEventArgs, CircularGaugeComponent, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-angular-circulargauge';
+import { IPointerDragEventArgs, CircularGaugeComponent, ILoadedEventArgs, GaugeTheme, CircularGaugeModule, AnnotationsService } from '@syncfusion/ej2-angular-circulargauge';
 import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
 import { getRangeColor, Range } from '@syncfusion/ej2-circulargauge';
 import { EmitType } from '@syncfusion/ej2-base';
@@ -7,7 +7,10 @@ import { EmitType } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',
     templateUrl: 'pointer-ranges-drag.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [CircularGaugeModule],
+    providers: [AnnotationsService]
 })
 
 export class UserInteractionComponent {

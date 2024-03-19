@@ -1,17 +1,18 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild, OnDestroy } from '@angular/core';
-import {
-  View, EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, ResizeService,
-  DragAndDropService, NavigatingEventArgs, ActionEventArgs, ScheduleComponent
-} from '@syncfusion/ej2-angular-schedule';
+import { View, EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService, NavigatingEventArgs, ActionEventArgs, ScheduleComponent, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
 import { scheduleData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'realtime-binding.html',
-  providers: [DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService],
-  encapsulation: ViewEncapsulation.None
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'realtime-binding.html',
+    providers: [DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class RealTimeBindingComponent implements OnInit, OnDestroy {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

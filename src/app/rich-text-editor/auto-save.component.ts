@@ -2,14 +2,20 @@
  * Rich Text Editor Auto save Sample
  */
 import { Component, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
-import { ToolbarService, RichTextEditorComponent, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, RichTextEditorComponent, LinkService, ImageService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { SwitchModule } from '@syncfusion/ej2-angular-buttons';
+import { isNullOrUndefined } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',
     templateUrl: 'auto-save.html',
     styleUrls: ['auto-save.css'],
-	encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService]
+    encapsulation: ViewEncapsulation.None,
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService],
+    standalone: true,
+    imports: [RichTextEditorModule, SwitchModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class AutoSaveComponent {
@@ -25,8 +31,10 @@ public updateStatus() {
     document.getElementById('saving').style.display = 'block';
     document.getElementById('saved').style.display = 'none';
     setTimeout(() => {
-      document.getElementById('saving').style.display = 'none';
-      document.getElementById('saved').style.display = 'block';
+      if (!isNullOrUndefined(document.getElementById('saving')) && !isNullOrUndefined(document.getElementById('saved'))) {
+        document.getElementById('saving').style.display = 'none';
+        document.getElementById('saved').style.display = 'block';
+      }
     }, 500);
   }
 

@@ -2,13 +2,15 @@ import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
     IDataOptions, PivotView, FieldListService, CalculatedFieldService,
     ToolbarService, ConditionalFormattingService, ToolbarItems, DisplayOption, IDataSet,
-    NumberFormattingService
+    NumberFormattingService, PivotViewModule
 } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 import { ChartSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/chartsettings';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 import { Observable } from 'rxjs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -21,7 +23,9 @@ let data: IDataSet[] = require('./Pivot_Data.json');
     templateUrl: 'toolbar.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['toolbar.css'],
-    providers: [CalculatedFieldService, ToolbarService, ConditionalFormattingService, FieldListService, NumberFormattingService]
+    providers: [CalculatedFieldService, ToolbarService, ConditionalFormattingService, FieldListService, NumberFormattingService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ToolbarComponent implements OnInit {
     public dataSourceSettings: IDataOptions;

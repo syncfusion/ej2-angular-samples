@@ -1,19 +1,20 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormControl
-} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmitType } from '@syncfusion/ej2-base';
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { FieldErrorDisplayComponent } from './field-error-display.backup';
+import { NgClass } from '@angular/common';
 
 
 @Component({
-  selector: 'about',
-  styleUrls: ['reactive.component.css'],
-  templateUrl: 'reactive-forms.html',
-  encapsulation: ViewEncapsulation.None
+    selector: 'about',
+    styleUrls: ['reactive.component.css'],
+    templateUrl: 'reactive-forms.html',
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, NgClass, FieldErrorDisplayComponent, DialogModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ReactiveComponent {
   form: FormGroup;

@@ -1,12 +1,15 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Sparkline, ISparklineLoadEventArgs, SparklineTheme } from '@syncfusion/ej2-charts';
+import { SparklineModule } from '@syncfusion/ej2-angular-charts';
 /**
  * Sample for axis type in Sparkline 
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'live-update.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SparklineModule]
 })
 export class SparkineLiveUpdateSample {
     @ViewChild('cpuspark')

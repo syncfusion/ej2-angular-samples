@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { EditService, ToolbarService, PageService } from '@syncfusion/ej2-angular-treegrid';
+import { EditService, ToolbarService, PageService, TreeGridModule } from '@syncfusion/ej2-angular-treegrid';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'dialogediting.html',
-    providers: [ToolbarService, EditService, PageService]
+    providers: [ToolbarService, EditService, PageService],
+    standalone: true,
+    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DialogEditingComponent implements OnInit {
     public data: Object[] = [];

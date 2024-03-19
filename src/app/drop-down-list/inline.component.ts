@@ -2,12 +2,17 @@
  * DropDownList inline Sample
  */
 import { Component, ViewEncapsulation } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'inline.html',
     styleUrls: ['inline.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DropDownListModule, SBDescriptionComponent]
 })
 export class InlineDropDownListComponent {
     // define the JSON of data

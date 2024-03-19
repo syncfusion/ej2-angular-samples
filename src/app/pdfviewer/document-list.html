@@ -29,7 +29,7 @@
         </e-columns>
     </ejs-grid>
 
-    <ejs-dialog id="component-dialog" #Dialog 
+    <ejs-dialog id="component-dialog" class="viewer-in-dialog" #Dialog 
         showCloseIcon='true' width='90%' height="90%" [enableResize]=true [visible]=false [isModal]='isModal'>
         <ng-template #content>
             <ejs-pdfviewer #pdfviewer id="pdfViewer" [documentPath]='document' [resourceUrl]="resource"></ejs-pdfviewer>
@@ -51,5 +51,8 @@
 #pdfViewer_viewerContainer{
     left: 0px !important;
     width: 100% !important;
+}
+.viewer-in-dialog{
+    min-height: 90% !important;
 }
 </style>

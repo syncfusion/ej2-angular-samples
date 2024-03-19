@@ -1,6 +1,6 @@
 <div class="control-section">
     <div>
-        <ejs-grid #grid id='AdvancedExport' [dataSource]='gridData' [toolbar]='toolbar' (toolbarClick)='toolbarClick($event)'
+        <ejs-grid #grid id='AdvancedExport' [dataSource]='gridData' [allowSorting]='true' [toolbar]='toolbar' (toolbarClick)='toolbarClick($event)'
         [allowExcelExport]='true' [pageSettings]='pageSettings' [allowPaging]='true' [allowPdfExport]='true'>
             <e-columns>
                 <e-column field='ProductID' headerText='Product ID' width='170' textAlign='Right'></e-column>
@@ -26,7 +26,7 @@
         <br/>
         <p style="font-weight: 500">Injecting Module:</p>
         <p>Grid features are segregated into individual feature-wise modules. To use exporting feature, we need to inject
-            <code>ExcelExportService</code> and <code>PdfExportService</code> into the <code>@NgModule.providers</code> section.
+            <code>ExcelExportService</code> and <code>PdfExportService</code> into the <code>&#64;NgModule.providers</code> section.
         </p>
     </div>
 </div>

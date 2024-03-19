@@ -1,18 +1,19 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import {
-  DiagramComponent, NodeModel, ConnectorModel, PortVisibility, UndoRedo, LineRouting,
-  ConnectorBridging, Diagram, SnapConstraints, SnapSettingsModel, DiagramConstraints
-} from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, NodeModel, ConnectorModel, PortVisibility, UndoRedo, LineRouting, ConnectorBridging, Diagram, SnapConstraints, SnapSettingsModel, DiagramConstraints, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(UndoRedo, LineRouting, ConnectorBridging);
 /**
  * Sample for Nodes Component
  */
 
 @Component({
-  selector: 'control-content',
-  templateUrl: 'line-routing.html',
-  styleUrls: ['diagram-style.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'line-routing.html',
+    styleUrls: ['diagram-style.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, SBDescriptionComponent]
 })
 
 export class LineRoutingComponent {

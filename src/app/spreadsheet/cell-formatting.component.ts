@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
 import { SheetModel, ColumnModel, RowModel, CellRenderEventArgs } from '@syncfusion/ej2-angular-spreadsheet';
 import { orderDetails } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Cell Formatting Spreadsheet Controller
  */
@@ -9,7 +11,9 @@ import { orderDetails } from './data';
     selector: 'control-content',
     templateUrl: 'cell-formatting.html',
     styleUrls: ['spreadsheet.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SpreadsheetModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class CellFormatController {

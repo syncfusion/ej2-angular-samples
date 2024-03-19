@@ -1,8 +1,11 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SplitterComponent } from '@syncfusion/ej2-angular-layouts';
+import { SplitterComponent, SplitterModule } from '@syncfusion/ej2-angular-layouts';
 import { Ajax } from '@syncfusion/ej2-base';
 import { ExpandEventArgs } from '@syncfusion/ej2-navigations';
-import { AccordionComponent } from '@syncfusion/ej2-angular-navigations';
+import { AccordionComponent, AccordionModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 /**
  *  Sample for accordion in splitter
  */
@@ -10,7 +13,9 @@ import { AccordionComponent } from '@syncfusion/ej2-angular-navigations';
     selector: 'control-content',
     templateUrl: 'accordion-navigation-menu.html',
     styleUrls: ['accordion-navigation-menu.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SplitterModule, AccordionModule, ListViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class AccordionNavigationMenuComponent {
     @ViewChild('accordioncontent1') accordioncontent: AccordionComponent;

@@ -4,6 +4,8 @@ import { ChartTheme, ExportType, IRangeLoadedEventArgs, IChangedEventArgs, DateT
 import { Browser } from '@syncfusion/ej2-base';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { dataCollection } from './data-service';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { RangeNavigatorModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 
 /**
  * Sample for range navigator with print and export functionalities.
@@ -19,10 +21,12 @@ let regionColor: string[] = ['rgba(99, 85, 199, 0.3)', 'rgba(143, 128, 244, 0.3)
 'rgba(68, 114, 196, 0.3)', 'rgba(121, 236, 228, 0.3)', 'rgba(26, 201, 230, 0.3)', 'rgba(26, 201, 230, 0.3)', 'rgba(99, 85, 199, 0.3)', 'rgba(78, 170, 255, 0.3)'];
 
     @Component({
-        selector: 'control-content',
-        templateUrl: 'export.html',
-        encapsulation: ViewEncapsulation.None
-    })
+    selector: 'control-content',
+    templateUrl: 'export.html',
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [RangeNavigatorModule, ChartAllModule, ButtonModule]
+})
 
     export class RangeNavigatorExportComponent {
         @ViewChild('chartExport')

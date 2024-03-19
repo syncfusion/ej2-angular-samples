@@ -240,6 +240,16 @@
             "empty-point": "Column with null and 0 values"
         }
     },
+    "three-dimension-circular-chart": {
+        "ControlName": "3D Circular Chart",
+        "Samples": {
+            "pie": "Pie",
+            "donut": "Donut",
+            "pie-legend": "Pie with Legend",
+            "pie-radius": "Pie with Various Radius",
+            "selection": "Selection"
+        }
+    },
     "chips": {
         "ControlName": "Chips",
         "Samples": {
@@ -1107,6 +1117,25 @@
             "template-driven-forms": "Template-driven Forms",
             "reactive-forms": "Reactive Forms",
             "multiline-textbox": "Multiline TextBox"
+        }
+    },
+    "textarea": {
+        "ControlName": "TextArea",
+        "Samples": {
+            "default": "Default Functionalities",
+            "floating-label": "Floating Label",
+            "resize": "Resize",
+            "api": "API",
+            "template-driven-forms": "Template-driven Forms",
+            "reactive-forms": "Reactive Forms"
+        }
+    },
+    "timeline": {
+        "ControlName": "Timeline",
+        "Samples": {
+            "default": "Default Functionalities",
+            "api": "API",
+            "template": "Template"
         }
     },
     "timepicker": {

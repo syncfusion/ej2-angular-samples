@@ -1,13 +1,17 @@
 import { Component, Inject , ViewChild } from '@angular/core';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
-import { TreeViewComponent } from '@syncfusion/ej2-angular-navigations';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { TreeViewComponent, TreeViewModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * TreeView Checkboxes sample
  */
 @Component({
     selector: 'control-content',
-    templateUrl: 'treeview-checkbox.html'
+    templateUrl: 'treeview-checkbox.html',
+    standalone: true,
+    imports: [TreeViewModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class CheckboxTreeViewComponent {
     @ViewChild('defaultCheck')

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsViewService, ContextMenuService } from '@syncfusion/ej2-angular-filemanager';
+import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsViewService, ContextMenuService, FileManagerModule } from '@syncfusion/ej2-angular-filemanager';
 /**
  * File Manager sample with  service
  */
@@ -8,7 +8,9 @@ import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsVie
     templateUrl: 'sql-server-provider.html',
     styleUrls: ['sql-server-provider.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ NavigationPaneService, ToolbarService, DetailsViewService, ContextMenuService]
+    providers: [NavigationPaneService, ToolbarService, DetailsViewService, ContextMenuService],
+    standalone: true,
+    imports: [FileManagerModule]
 })
 
 export class SQLController {

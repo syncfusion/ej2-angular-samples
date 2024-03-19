@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Default Button Controller
  */
@@ -7,7 +9,9 @@ import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
     selector: 'control-content',
     templateUrl: 'default.html',
     styleUrls: ['button.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class DefaultButtonController {

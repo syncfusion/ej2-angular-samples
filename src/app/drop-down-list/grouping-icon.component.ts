@@ -2,11 +2,16 @@
  * DropDownList Grouping & Icons Samples
  */
 import { Component, ViewEncapsulation } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
     templateUrl: 'grouping-icon.html',
     styleUrls: ['grouping-icon.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DropDownListModule, SBDescriptionComponent]
 })
 export class GroupAndIconDropDownListComponent {
     // define the data with category

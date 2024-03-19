@@ -1,11 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { QueryCellInfoEventArgs } from '@syncfusion/ej2-angular-grids';
-import { TreeGridComponent } from '@syncfusion/ej2-angular-treegrid';
+import { QueryCellInfoEventArgs, GridAllModule } from '@syncfusion/ej2-angular-grids';
+import { TreeGridComponent, TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
-    templateUrl: 'conditionalformatting.html'
+    templateUrl: 'conditionalformatting.html',
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, GridAllModule]
 })
 export class ConditionalFormattingComponent implements OnInit {
     public data: Object[] = [];

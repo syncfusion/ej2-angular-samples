@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { SpeedDialComponent, SpeedDialItemModel } from '@syncfusion/ej2-angular-buttons';
+import { SpeedDialComponent, SpeedDialItemModel, SpeedDialModule } from '@syncfusion/ej2-angular-buttons';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 /**
  * Default Speed Dial component
  */
@@ -7,7 +8,9 @@ import { SpeedDialComponent, SpeedDialItemModel } from '@syncfusion/ej2-angular-
     selector: 'control-content',
     templateUrl: 'template.html',
     styleUrls: ['template.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SpeedDialModule, TextBoxModule]
 })
 
 export class TemplateComponent {

@@ -3,7 +3,7 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid #grid [dataSource]='data' height='350' [allowRowDragAndDrop]='true' allowSorting='true' [allowGrouping]="true" [selectionSettings]='selectOptions' height='400' (created)='created()'>
+    <ejs-grid #grid [dataSource]='data' height='350' [allowRowDragAndDrop]='true' [allowSorting]='true' [allowGrouping]="true" [selectionSettings]='selectOptions' height='400' (created)='created()'>
         <e-columns>
             <e-column field='OrderID' isPrimaryKey='true' headerText='Order ID' width='80' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='120'></e-column>
@@ -27,7 +27,7 @@
         <p>
             Grid features are segregated into individual feature-wise modules. 
             To use row, drag and drop and grouping features we need to inject
-            <code>RowDDService</code> and <code>GroupService</code> into the <code>@NgModule.providers</code> section.            
+            <code>RowDDService</code> and <code>GroupService</code> into the <code>&#64;NgModule.providers</code> section.            
         </p>     
     </div>
 </div>

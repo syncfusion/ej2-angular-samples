@@ -1,10 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { editingData } from './data';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { GanttComponent, SortDirection } from '@syncfusion/ej2-angular-gantt';
+import { DropDownListComponent, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { GanttComponent, SortDirection, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttdynamicsort',
-    templateUrl: 'sorting-api.html'
+    templateUrl: 'sorting-api.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, DropDownListAllModule, ButtonAllModule, SBDescriptionComponent]
 })
 export class GanttSortingAPIComponent implements OnInit {
     public data: object[];

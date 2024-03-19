@@ -1,8 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SliderComponent, NumericTextBoxComponent, SliderChangeEventArgs } from '@syncfusion/ej2-angular-inputs';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { SliderComponent, NumericTextBoxComponent, SliderChangeEventArgs, SliderModule, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * slider property customization
@@ -11,7 +13,9 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'api.html',
     styleUrls: ['api.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SliderModule, NumericTextBoxModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class APIComponent {

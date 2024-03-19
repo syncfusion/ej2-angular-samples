@@ -1,24 +1,26 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import { SelectedEventArgs } from '@syncfusion/ej2-angular-inputs';
-import {
-  ScheduleComponent, EventSettingsModel, View, DayService, DragAndDropService,
-  WeekService, WorkWeekService, MonthService, AgendaService, ICalendarExportService, ICalendarImportService, ResizeService
-} from '@syncfusion/ej2-angular-schedule';
+import { SelectedEventArgs, UploaderModule } from '@syncfusion/ej2-angular-inputs';
+import { ScheduleComponent, EventSettingsModel, View, DayService, DragAndDropService, WeekService, WorkWeekService, MonthService, AgendaService, ICalendarExportService, ICalendarImportService, ResizeService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { scheduleData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'calendar-export-import.html',
-  /* custom code start*/
-  styleUrls: ['calendar-export-import.style.css'],
-  /* custom code end*/
-  encapsulation: ViewEncapsulation.None,
-  providers: [
-    DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService,
-    ICalendarExportService, ICalendarImportService, DragAndDropService
-  ]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'calendar-export-import.html',
+    /* custom code start*/
+    styleUrls: ['calendar-export-import.style.css'],
+    /* custom code end*/
+    encapsulation: ViewEncapsulation.None,
+    providers: [
+        DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService,
+        ICalendarExportService, ICalendarImportService, DragAndDropService
+    ],
+    standalone: true,
+    imports: [ScheduleModule, ButtonModule, UploaderModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class CalendarExportImportComponent {

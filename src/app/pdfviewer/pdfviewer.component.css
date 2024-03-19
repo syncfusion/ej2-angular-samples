@@ -12,6 +12,11 @@
     transform: rotate(90deg);
 }
 
+.e-pv-fit-page-icon::before {
+    content: '\e91b';
+    font-family: "e-icons";
+}
+
 #magnificationToolbar.e-toolbar .e-toolbar-items {
     background: transparent;
 }
@@ -139,4 +144,25 @@ width: 50px;
 .buttonSwitch {
     Width: 40px;
     Height: 24px;
+}
+
+.pdfviewer-property-section{
+    padding: 20px 15px;
+}
+
+.pdfviewer-contextmenu-checkbox-label{
+    padding: 10px;
+}
+
+.pdfviewer-control-section {
+    border-right: 1px solid #D7D7D7;
+}
+
+.pdfviewer-property-container{
+    padding-bottom: 20px;
+}
+
+.header-pdfviewer {
+    font-weight: 600;
+    padding: 20px 2px;
 }

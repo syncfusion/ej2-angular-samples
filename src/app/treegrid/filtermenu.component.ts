@@ -1,15 +1,19 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { removeClass, addClass } from '@syncfusion/ej2-base';
 import { sampleData } from './jsontreegriddata';
-import { TreeGridComponent, FilterService } from '@syncfusion/ej2-angular-treegrid';
-import { DropDownListComponent , ChangeEventArgs} from '@syncfusion/ej2-angular-dropdowns';
+import { TreeGridComponent, TreeGridAllModule, FilterService } from '@syncfusion/ej2-angular-treegrid';
+import { DropDownListComponent , DropDownListAllModule,  ChangeEventArgs} from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'filtermenu.html',
     styleUrls: ['filter.style.css'],
     providers: [ FilterService ],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListAllModule]
 })
 export class FilteringMenuComponent implements OnInit {
     public data: Object[];

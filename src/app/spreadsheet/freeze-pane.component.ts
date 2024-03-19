@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
 import { freezePaneData } from './data';
-import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Freeze pane Spreadsheet Controller
  */
@@ -8,7 +10,9 @@ import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
     selector: 'control-content',
     templateUrl: 'freeze-pane.html',
     styleUrls: ['spreadsheet.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SpreadsheetModule, SBDescriptionComponent]
 })
 
 export class FreezePaneComponent {

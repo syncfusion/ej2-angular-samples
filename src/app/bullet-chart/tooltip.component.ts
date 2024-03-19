@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';
-import { BulletTooltipSettingsModel, AnimationModel, FontModel } from '@syncfusion/ej2-angular-charts';
+import { BulletTooltipSettingsModel, AnimationModel, FontModel, BulletChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { IBulletLoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 /**
  * RTl sample
@@ -8,7 +8,9 @@ import { IBulletLoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 @Component({
     selector: 'control-content',
     templateUrl: 'tooltip.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [BulletChartAllModule]
 })
 
 export class BulletChartTooltipComponent {
@@ -20,7 +22,7 @@ export class BulletChartTooltipComponent {
         // tslint:disable-next-line:max-line-length
         'border-spacing: 0px; border-collapse:separate; border: 1px solid grey; border-radius:10px; padding-top: 5px; padding-bottom:5px">' +
         '<tr><td style="font-weight:bold; color:black; padding-left: 5px;padding-top: 2px;padding-bottom: 2px;">Sales</td></tr>'
-        + '<tr><td style="padding-left: 5px; color:black; padding-right: 5px; padding-bottom: 2px;">Target   : ${target}K </td></tr>' +
+        + '<tr><td style="padding-left: 5px; color:black; padding-right: 5px; padding-bottom: 2px;">Target : ${target}K </td></tr>' +
         '<tr><td style="padding-left: 5px; color:black; padding-right: 5px">Current : ${value} </td></tr></table></div>' };
     public animation: AnimationModel = { enable: false };
     public titleStyle: FontModel = { textAlignment: 'Center' };

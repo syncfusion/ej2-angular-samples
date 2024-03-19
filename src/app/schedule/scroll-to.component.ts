@@ -1,17 +1,18 @@
 import { Component, ViewChild } from '@angular/core';
 import { scheduleData } from './data';
 import { extend } from '@syncfusion/ej2-base';
-import {
-  ScheduleComponent, EventSettingsModel, View, DayService, WeekService,
-  EventRenderedArgs, TimelineViewsService, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
-import { ChangeEventArgs } from '@syncfusion/ej2-angular-calendars';
+import { ScheduleComponent, EventSettingsModel, View, DayService, WeekService, EventRenderedArgs, TimelineViewsService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { ChangeEventArgs, TimePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'scroll-to.html',
-  providers: [DayService, WeekService, TimelineViewsService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'scroll-to.html',
+    providers: [DayService, WeekService, TimelineViewsService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, TimePickerModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ScrollTimeComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

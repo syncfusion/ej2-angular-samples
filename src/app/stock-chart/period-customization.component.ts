@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { PeriodsModel, IStockChartEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { PeriodsModel, IStockChartEventArgs, ChartTheme, StockChartModule, ChartAllModule, RangeNavigatorAllModule } from '@syncfusion/ej2-angular-charts';
 
 /**
  * Sample for default stockchart
@@ -7,7 +7,9 @@ import { PeriodsModel, IStockChartEventArgs, ChartTheme } from '@syncfusion/ej2-
 @Component({
     selector: 'control-content',
     templateUrl: 'period-customization.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ StockChartModule, ChartAllModule, RangeNavigatorAllModule]
 })
 export class PeriodCustomizationComponent {
 

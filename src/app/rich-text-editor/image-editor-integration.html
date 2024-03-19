@@ -37,6 +37,7 @@
      width="800px"
      height="800px"
      [isModal]="true"
+     (close)="onclose()"
    >
      <ng-template #content>
        <ejs-imageeditor #ImageEditor id="image-editor" height="500px">

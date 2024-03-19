@@ -1,14 +1,18 @@
 import { Component, ViewChild } from '@angular/core';
-import { ChangeEventArgs } from '@syncfusion/ej2-angular-inputs';
-import { ChangeEventArgs as DropDownChangeArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { EventSettingsModel, View, ScheduleComponent, AgendaService } from '@syncfusion/ej2-angular-schedule';
+import { ChangeEventArgs, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { ChangeEventArgs as DropDownChangeArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { EventSettingsModel, View, ScheduleComponent, AgendaService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { generateObject } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'agenda.html',
-  providers: [AgendaService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'agenda.html',
+    providers: [AgendaService],
+    standalone: true,
+    imports: [ScheduleModule, DropDownListModule, NumericTextBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class AgendaComponent {
   @ViewChild('scheduleObj')

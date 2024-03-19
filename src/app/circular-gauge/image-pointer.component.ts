@@ -1,10 +1,13 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-angular-circulargauge';
+import { ILoadedEventArgs, GaugeTheme, CircularGaugeModule, AnnotationsService } from '@syncfusion/ej2-angular-circulargauge';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'image-pointer.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [CircularGaugeModule],
+    providers: [AnnotationsService]
 })
 
 export class PointerImageComponent {

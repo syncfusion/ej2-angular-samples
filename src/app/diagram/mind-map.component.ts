@@ -1,30 +1,35 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import {
-  DiagramComponent, Diagram, ConnectorModel, Connector, Node, HierarchicalTree,
-  DataBinding, PointPortModel, randomId, SnapSettingsModel, PortVisibility, MindMap,
-  UserHandleModel, SelectorConstraints, ToolBase, MouseEventArgs, SnapConstraints, NodeModel,
-  ISelectionChangeEventArgs, DiagramTools, NodeConstraints, SelectorModel, MarginModel,
-  VerticalAlignment, HorizontalAlignment, Side, TextModel, ConnectorConstraints, PointPort
-} from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, Diagram, ConnectorModel, Connector, Node, HierarchicalTree, DataBinding, PointPortModel, randomId, SnapSettingsModel, PortVisibility, MindMap, UserHandleModel, SelectorConstraints, ToolBase, MouseEventArgs, SnapConstraints, NodeModel, ISelectionChangeEventArgs, DiagramTools, NodeConstraints, SelectorModel, MarginModel, VerticalAlignment, HorizontalAlignment, Side, TextModel, ConnectorConstraints, PointPort, DiagramModule, ScrollSettingsModel } from '@syncfusion/ej2-angular-diagrams';
 
 import { DataManager } from '@syncfusion/ej2-data';
-import {mindMap} from './overview-data';
+import {mindMap} from'./overview-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(DataBinding, MindMap, HierarchicalTree);
 
 /**
  * Sample for Mind Map Tree
  */
 @Component({
-  selector: 'control-content',
-  templateUrl: 'mind-map.html',
-  styleUrls: ['diagram-style.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'mind-map.html',
+    styleUrls: ['diagram-style.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, SBDescriptionComponent]
 })
 export class MindMapDiagramComponent {
   @ViewChild('diagram') public diagram: DiagramComponent;
   public tool: DiagramTools = DiagramTools.SingleSelect |
     DiagramTools.MultipleSelect;
-
+  public scrollSettings?: ScrollSettingsModel;
+    ngOnInit(): void {
+      // Defines the pageSettings for the diagram
+      this.scrollSettings = {
+          //Sets the scroll limit
+          padding: { right: 50, left: 50 }
+      }
+    }
   public items: DataManager = new DataManager(mindMap);
   public data: Object = { id: 'id', parentId: 'parentId', dataSource: this.items, root: '1' };
   public layout: Object = {
@@ -106,7 +111,7 @@ export class MindMapDiagramComponent {
     }
     return connector;
   }
-// Initializes user handle
+  // Initializes user handle
   public handle: UserHandleModel[] = [
     {
       name: 'leftHandle', visible: true, backgroundColor: 'black', offset: 1, side: 'Left', pathColor: 'white',

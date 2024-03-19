@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { orderDetails } from './data';
-import { RowDDService, SelectionService } from '@syncfusion/ej2-angular-grids';
+import { RowDDService, SelectionService, GridModule, SortService, PageService } from '@syncfusion/ej2-angular-grids';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 @Component({
@@ -8,7 +10,9 @@ import { RowDDService, SelectionService } from '@syncfusion/ej2-angular-grids';
     templateUrl: 'drag-and-drop.html',
     styleUrls: ['drag-and-drop.style.css'],
     providers: [RowDDService,
-        SelectionService]
+        SelectionService, SortService, PageService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GridModule, SBDescriptionComponent]
 })
 export class DragAndDropComponent implements OnInit {
     public srcData: Object[] = [];

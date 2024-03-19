@@ -1,20 +1,21 @@
 import { Component } from '@angular/core';
-import {
-  ScheduleComponent, EventSettingsModel, View, TimelineMonthService, ResizeService,
-  EventRenderedArgs, DragAndDropService, CellTemplateArgs, getWeekNumber, getWeekLastDate
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, EventSettingsModel, View, TimelineMonthService, ResizeService, EventRenderedArgs, DragAndDropService, CellTemplateArgs, getWeekNumber, getWeekLastDate, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { headerRowData } from './data';
 import { extend, Internationalization } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Schedule header rows
  */
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'header-rows.html',
-  providers: [TimelineMonthService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'header-rows.html',
+    providers: [TimelineMonthService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class HeaderRowsComponent {
   public scheduleObj: ScheduleComponent;

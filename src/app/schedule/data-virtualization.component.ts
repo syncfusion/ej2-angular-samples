@@ -1,15 +1,17 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import {
-  ScheduleComponent, TimelineMonthService, GroupModel, EventSettingsModel, MonthService
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, TimelineMonthService, GroupModel, EventSettingsModel, MonthService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'data-virtualization.html',
-  encapsulation: ViewEncapsulation.None,
-  providers: [TimelineMonthService, MonthService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'data-virtualization.html',
+    encapsulation: ViewEncapsulation.None,
+    providers: [TimelineMonthService, MonthService],
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class DataVirtualizationComponent {

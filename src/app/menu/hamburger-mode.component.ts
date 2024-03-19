@@ -1,8 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { MenuComponent } from '@syncfusion/ej2-angular-navigations';
+import { ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { MenuComponent, MenuModule } from '@syncfusion/ej2-angular-navigations';
 // custom code start
 import { Browser, select } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 // custom code end
 
 /**
@@ -12,7 +14,9 @@ import { Browser, select } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'hamburger-mode.html',
     styleUrls: ['hamburger-mode.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [MenuModule, DropDownListModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class HamburgerMenuController {

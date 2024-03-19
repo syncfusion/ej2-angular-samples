@@ -4,14 +4,17 @@ import { SparklineModel, Sparkline} from '@syncfusion/ej2-charts';
 import { getInstance } from '@syncfusion/ej2-base';
 import {  ChangeEventArgs as CheckBoxChangeEvents} from '@syncfusion/ej2-buttons';
 import { Slider, SliderChangeEventArgs } from '@syncfusion/ej2-inputs';
-import { SliderComponent } from '@syncfusion/ej2-angular-inputs';
+import { SliderComponent, SliderModule } from '@syncfusion/ej2-angular-inputs';
+import { GridModule } from '@syncfusion/ej2-angular-grids';
 /**
  * Sample for axis type in Sparkline 
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'range-band.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [GridModule, SliderModule]
 })
 export class SparklineRangebandSample implements OnInit {
     @ViewChild('sparkline')

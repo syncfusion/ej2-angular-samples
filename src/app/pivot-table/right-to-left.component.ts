@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { IDataOptions, GroupingBarService, FieldListService, CalculatedFieldService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, GroupingBarService, FieldListService, CalculatedFieldService, PivotViewModule, IDataSet } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -14,7 +16,9 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     selector: 'ej2-pivotview-container',
     templateUrl: 'right-to-left.html',
     styleUrls: ['right-to-left.css'],
-    providers: [GroupingBarService, FieldListService, CalculatedFieldService]
+    providers: [GroupingBarService, FieldListService, CalculatedFieldService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class RTLComponent implements OnInit {
     public dataSourceSettings: IDataOptions;

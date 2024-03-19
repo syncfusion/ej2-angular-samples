@@ -16,7 +16,7 @@ import { TemplateDrivenComponent } from './file-upload-with-template-driven-form
 import { FieldErrorDisplayComponent } from './field-error-display.backup';
 import { CustomDropAreaComponent } from './custom-drop-area.component';
 import { ChunkUploadComponent } from './chunk-upload.component';
-import { SharedModule } from '../common/shared.module';
+
 
 export const uploaderAppRoutes: Object[] = [
     { path: ':theme/uploader/default', component: DefaultUploaderComponent, name: 'Default Functionalities', category: 'File Upload', description: 'This example demonstrates default functionalities of the Angular file uploader component, including automatic upload and asynchronous mode options.' },
@@ -30,24 +30,5 @@ export const uploaderAppRoutes: Object[] = [
     { path: ':theme/uploader/file-upload-with-reactive-forms', component: ReactiveComponent, name: 'Reactive Forms', category: 'Forms', order: '04', description: 'This example shows how to integrate the file upload component in an Angular (ng) reactive form that works based on form-group, form-builder, and form-control.' }
 ];
 
-export const UploaderRouter: ModuleWithProviders<any> = RouterModule.forChild(uploaderAppRoutes);
+export const UploaderSampleModule: ModuleWithProviders<any> = RouterModule.forChild(uploaderAppRoutes);
 
-@NgModule({
-    imports: [UploaderRouter, SharedModule, CheckBoxModule, UploaderModule,
-        DialogModule, DropDownListModule, FormsModule, CommonModule, ReactiveFormsModule],
-    declarations: [
-        DefaultUploaderComponent,
-        ChunkUploadComponent,
-        PreloadFileUploaderComponent,
-        ValidateUploaderComponent,
-        PreviewUploaderComponent,
-        TemplateUploaderComponent,
-        CustomDropAreaComponent,
-        TemplateDrivenComponent,
-        ReactiveComponent,
-        FieldErrorDisplayComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class UploaderSampleModule {
-}

@@ -2,17 +2,21 @@
  * Rich Text Editor Inline Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ToolbarService, LinkService, ImageService, FormatModel, FontFamilyModel } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, FormatModel, FontFamilyModel, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, TableService} from '@syncfusion/ej2-angular-richtexteditor';
 import { HtmlEditorService, QuickToolbarService, RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'inline.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['inline.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService]
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, RichTextEditorModule, CheckBoxModule, SBDescriptionComponent]
 })
 export class InlineComponent {
 

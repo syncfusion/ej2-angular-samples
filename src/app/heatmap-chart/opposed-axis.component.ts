@@ -1,13 +1,17 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { HeatMap, Legend, Tooltip, Adaptor, ILoadedEventArgs, HeatMapTheme } from '@syncfusion/ej2-angular-heatmap';
+import { HeatMap, Legend, Tooltip, Adaptor, ILoadedEventArgs, HeatMapTheme, HeatMapModule } from '@syncfusion/ej2-angular-heatmap';
 import { SampleDataSource } from './opposed-axis-data';
 import { CheckBox } from '@syncfusion/ej2-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 HeatMap.Inject(Tooltip, Legend, Adaptor);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'opposed-axis.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [HeatMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class HeatmapOpposedComponent {
     @ViewChild('heatmap')

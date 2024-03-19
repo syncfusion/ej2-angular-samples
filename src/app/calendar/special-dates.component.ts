@@ -1,6 +1,9 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { ChangedEventArgs } from '@syncfusion/ej2-calendars';
 import { addClass } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
 
@@ -10,7 +13,9 @@ import { addClass } from '@syncfusion/ej2-base';
     selector: 'control-content',
     styleUrls: ['special-style.css'],
     templateUrl: 'special-dates.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, CalendarModule, SBDescriptionComponent]
 })
 export class SpecialCalendarComponent {
      constructor(@Inject('sourceFiles') private sourceFiles:any) {

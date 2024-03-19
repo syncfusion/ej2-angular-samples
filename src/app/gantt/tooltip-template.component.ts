@@ -1,10 +1,16 @@
 import { Component, OnInit} from '@angular/core';
 import { tooltipData, editingResources } from './data';
 import { Internationalization } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { NgIf } from '@angular/common';
+import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 let instance: Internationalization = new Internationalization();
 @Component({
     selector: 'ej2-gantttooltiptemplate',
-    templateUrl: 'tooltip-template.html'
+    templateUrl: 'tooltip-template.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, NgIf, SBDescriptionComponent]
 })
 export class GanttTooltipTemplateComponent implements OnInit {
     public data: object[];

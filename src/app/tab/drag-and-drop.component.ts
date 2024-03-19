@@ -1,14 +1,15 @@
 import { Component, ViewEncapsulation, ViewChild, TemplateRef } from '@angular/core';
 import { isNullOrUndefined } from "@syncfusion/ej2-base";
-import {
-    TreeViewComponent, DragAndDropEventArgs, TabComponent, DragEventArgs
-} from '@syncfusion/ej2-angular-navigations';
-import {
-    EventSettingsModel, DayService, WeekService, WorkWeekService,
-    MonthService, AgendaService
-} from '@syncfusion/ej2-angular-schedule';
+import { TreeViewComponent, DragAndDropEventArgs, TabComponent, DragEventArgs, TreeViewModule, TabModule } from '@syncfusion/ej2-angular-navigations';
+import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ScheduleModule,View } from '@syncfusion/ej2-angular-schedule';
 import { DataManager, ODataV4Adaptor } from '@syncfusion/ej2-data';
-import { CategoryService, LineSeriesService } from '@syncfusion/ej2-angular-charts';
+import { CategoryService, LineSeriesService, ChartModule } from '@syncfusion/ej2-angular-charts';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
+import { DatePickerModule, CalendarModule } from '@syncfusion/ej2-angular-calendars';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { GridModule } from '@syncfusion/ej2-angular-grids';
 
 
 /**
@@ -19,7 +20,9 @@ import { CategoryService, LineSeriesService } from '@syncfusion/ej2-angular-char
     templateUrl: 'drag-and-drop.html',
     styleUrls: ['drag-and-drop.style.css'],
     providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, CategoryService, LineSeriesService],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [GridModule, ChartModule, ScheduleModule, DropDownListModule, DatePickerModule, UploaderModule, CalendarModule, TreeViewModule, TabModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DragAndDropComponent {
     @ViewChild('treeObj') public treeObj: TreeViewComponent;
@@ -80,7 +83,7 @@ export class DragAndDropComponent {
         { month: 'Nov', sales: 25 }, { month: 'Dec', sales: 32 }
     ];
 
-    public selectedDate: Date = new Date(2020, 9, 20);
+    public currentView: View = 'Month';
     public readonly: boolean = true;
     private dataManger: DataManager = new DataManager({
         url: "https://services.syncfusion.com/angular/production/api/schedule",

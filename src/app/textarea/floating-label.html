@@ -1,0 +1,32 @@
+<div class="col-lg-8 control-section floatinglabel">
+    <div class="content-wrapper">
+        <div class="floatinglabel-row">
+            <ejs-textarea id="floatlabel" #default placeholder="Enter your comments" floatLabelType='Auto'></ejs-textarea>
+        </div>
+    </div>
+</div>  
+
+<div class="col-lg-4 property-section">
+    <div class="property-panel-header">Properties</div>
+    <table id="property" class="floatinglabel-property">
+        <tr>
+            <td class="left-side">Float label type </td>
+            <td><ejs-dropdownlist id="float" #select [dataSource]='floatData' [(value)]='value' [fields]='fields' (change)='floatLabelHandler($event)'>
+            </ejs-dropdownlist></td>
+        </tr>
+    </table>
+</div>
+<div id="action-description">
+    <p>
+        This example demonstrates the floating label functionalities of the textarea control.
+        Choose the corresponding floatLabel option from the property panel to update the floating label behaviour in
+        textarea.
+    </p>
+</div>
+<div id="description">
+    <p>The floating label is used to float the placeholder text while the user enters text or focuses on the textarea element with a value.
+        In this sample, the floating label behavior can be changed using the following options:</p>
+    <ul>
+        <li>Choose float label types either 'Never', 'Always', or 'Auto' to control the floating behavior of the placeholder text.</li>
+    </ul>
+</div>

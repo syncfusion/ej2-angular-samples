@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { DashboardLayoutComponent, PanelModel } from '@syncfusion/ej2-angular-layouts';
+import { DashboardLayoutComponent, PanelModel, DashboardLayoutAllModule } from '@syncfusion/ej2-angular-layouts';
 import panelData from './panels-data';
+import { CheckBoxAllModule } from '@syncfusion/ej2-angular-buttons';
+import { NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 
 /**
 
@@ -10,7 +12,9 @@ import panelData from './panels-data';
     selector: 'control-content',
     styleUrls: ['properties-style.css'],
     templateUrl: 'properties.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [DashboardLayoutAllModule, NumericTextBoxAllModule, CheckBoxAllModule]
 })
 export class PropertiesComponent {
     @ViewChild('api_dashboard')

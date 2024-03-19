@@ -1,0 +1,146 @@
+<div id="action-description">
+  <p>This sample demonstrates a custom toolbar using the Image Editor Control.</p>
+</div>
+<div class="control-section">
+  <div class="col-lg-12 control-section">
+    <div class="row">
+      <div class="col-lg-12 control-section e-img-editor-sample">
+        <div class="customToolbar">
+          <div class="header">
+              <div class="header-details">
+                  <div class="header-name">Image Editor</div>
+              </div>
+          </div>
+              <div class="image-preview-container" id="imagePreviewContainer">
+                  <img src="./assets/image-editor/images/bridge.jpg" id="previewImgContainer" class="preview-img-container" alt="previewImage" />
+                  <br />
+                  <div class="button-container" id="button-container">
+                      <button ejs-fab id="edit" class="custom-button" iconCss="e-icons e-edit" position="BottomRight" target=".image-preview-container" isPrimary="true" (click)="editClicked()" content="Edit Image">
+                      </button>
+                  </div>
+              </div>
+              <div class="image-editor-container" id="image-editor-container" style="display: none">
+                  <div id="top-toolbarArea">
+                      <ejs-toolbar id="top-toolbar" (created)="onTopToolbarCreated()" (clicked)="toolbarClicked($event)">
+                          <e-items>
+                              <e-item id="cancel" prefixIcon="e-icons e-close" tooltipText="Cancel" align="Center"></e-item>
+                              <e-item id="undo" prefixIcon="e-icons e-undo" tooltipText="Undo" align="Center" disabled="true"></e-item>
+                              <e-item id="redo" prefixIcon="e-icons e-redo" tooltipText="Redo" align="Center" disabled="true"></e-item>
+                              <e-item id="ok" prefixIcon="e-icons e-save" tooltipText="Save" align="Center"></e-item>
+                          </e-items>
+                      </ejs-toolbar>
+                  </div>
+                  <div id="imageEditor">
+                      <ejs-imageeditor #imageEditor [zoomSettings]="zoomSettings" [showQuickAccessToolbar]="showQuickAccessToolbar" id="image-editor" [toolbar]="toolbarItems" showQuickAccessToolbar="false" (shapeChanging)="shapeChanging($event)" (shapeChange)="shapeChange($event)" (click)="click()" (created)="onIECreated()" (fileOpened)="fileOpened()">
+                      </ejs-imageeditor>                  
+                  </div>
+                  <div id="bottom-toolbarArea">
+                      <ejs-toolbar id="bottom-toolbar" (created)="onBottomToolbarCreated()" (clicked)="toolbarClicked($event)">
+                          <e-items>
+                              <e-item id="back" prefixIcon="e-icons e-arrow-left" tooltipText="Back" align="Center" visible="false"></e-item>
+                              <e-item id="cropAndTransform" prefixIcon="e-icons e-crop" tooltipText="Crop and Transform" align="Center"></e-item>
+                              <e-item id="rotateLeft" prefixIcon="e-icons e-transform-left" tooltipText="Rotate Left" align="Center" visible="false"></e-item>
+                              <e-item id="rotateRight" prefixIcon="e-icons e-transform-right" tooltipText="Rotate Right" align="Center" visible="false"></e-item>
+                              <e-item id="addText" prefixIcon="e-icons e-text-annotation" tooltipText="Text" align="Center"></e-item>
+                              <e-item id="fontColor" cssClass="top-icon e-text-fontColor" tooltipText="Font Color" align="Center" visible="false">
+                                <ng-template #template>
+                                  <button id="imageEditor_fontColorBtn"></button>
+                                </ng-template>
+                              </e-item>
+                              <e-item id="shapes" prefixIcon="e-icons e-shapes" tooltipText="Annotations" align="Center">
+                                <ng-template #template>
+                                  <button id="imageEditor_annotationButton"></button>
+                                </ng-template>
+                              </e-item>
+                              <e-item id="fillColor" prefixIcon="e-icons e-copy" cssClass="top-icon e-fill" tooltipText="Fill Color" align="Center" visible="false">
+                                <ng-template #template>
+                                  <button id="imageEditor_fillColorBtn"></button>
+                                </ng-template>
+                              </e-item>                    
+                              <e-item id="strokeColor" prefixIcon="e-icons e-copy" cssClass="top-icon e-stroke" tooltipText="Stroke Color" align="Center" visible="false">
+                                <ng-template #template>
+                                  <button id="imageEditor_borderColorBtn"></button>
+                                </ng-template>
+                              </e-item>
+                              <e-item id="penStrokeColor" prefixIcon="e-icons e-copy" cssClass="top-icon e-pen-stroke-color" tooltipText="Stroke Color" align="Center" visible="false">
+                                <ng-template #template>
+                                  <button id="imageEditor_penColorBtn"></button>
+                                </ng-template>
+                              </e-item>
+                              <e-item id="remove" prefixIcon="e-icons e-trash" tooltipText="Remove" align="Center" visible="false" disabled="false"></e-item>
+                              <e-item id="editText" prefixIcon="e-icons e-annotation-edit" cssClass="top-icon e-annotation-edit" tooltipText="Edit Text" align="Center" visible="false"></e-item>
+                              <e-item id="addPen" prefixIcon="e-icons e-free-pen" tooltipText="Pen" align="Center"></e-item>
+                              <e-item id="filters" prefixIcon="e-icons e-filters" tooltipText="Filters" align="Center"></e-item>
+                          </e-items>
+                        </ejs-toolbar>
+                      <ejs-toolbar #filterToolbar id="filter-toolbar" (created)="filterToolbarCreated()" (clicked)="filterImage($event)">
+                          <e-items>
+                              <e-item id="default" tooltipText="Default" align="Center">
+                                <ng-template #template>
+                                  <div class="filter-wrapper" style="box-sizing: content-box;"><canvas id="imageEditor_defaultCanvas"></canvas><div style="text-align:center;"><span>Default</span></div></div>
+                                </ng-template>
+                              </e-item>
+                              <e-item id="chrome" tooltipText="Chrome" align="Center">
+                                <ng-template #template>
+                                  <div class="filter-wrapper" style="box-sizing: content-box;"><canvas id="imageEditor_chromeCanvas"></canvas><div style="text-align:center;"><span>Chrome</span></div></div>
+                                </ng-template>
+                              </e-item>
+                              <e-item id="cold" tooltipText="Cold" align="Center">
+                                <ng-template #template>
+                                  <div class="filter-wrapper" style="box-sizing: content-box;"><canvas id="imageEditor_coldCanvas"></canvas><div style="text-align:center;"><span>Cold</span></div></div>
+                                </ng-template>
+                              </e-item>
+                              <e-item id="warm" tooltipText="Warm" align="Center">
+                                <ng-template #template>
+                                  <div class="filter-wrapper" style="box-sizing: content-box;"><canvas id="imageEditor_warmCanvas"></canvas><div style="text-align:center;"><span>Warm</span></div></div>
+                                </ng-template>
+                              </e-item>
+                              <e-item id="grayscale" tooltipText="Grayscale" align="Center">
+                                <ng-template #template>
+                                  <div class="filter-wrapper" style="box-sizing: content-box;"><canvas id="imageEditor_grayscaleCanvas"></canvas><div style="text-align:center;"><span>GrayScale</span></div></div>
+                                </ng-template>
+                              </e-item>
+                              <e-item id="sepia" tooltipText="Sepia" align="Center">
+                                <ng-template #template>
+                                  <div class="filter-wrapper" style="box-sizing: content-box;"><canvas id="imageEditor_sepiaCanvas"></canvas><div style="text-align:center;"><span>Sepia</span></div></div>
+                                </ng-template>
+                              </e-item>
+                              <e-item id="invert" tooltipText="Invert" align="Center">
+                                <ng-template #template>
+                                  <div class="filter-wrapper" style="box-sizing: content-box;">
+                                    <canvas id="imageEditor_invertCanvas"></canvas>
+                                    <div style="text-align:center;">
+                                      <span>Invert</span>
+                                    </div>
+                                  </div>
+                                </ng-template>
+                              </e-item>
+                          </e-items>
+                        </ejs-toolbar>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div id="description">
+  <p>
+    The Image Editor component provides built-in support for adding a custom toolbar through APIs in the following ways:
+  </p>
+  <ul>
+      <li><b>Selection</b> : Multiple selection options are available. The selection region can be a square or circle, customized to various aspects ratios, and customized by dragging and resizing.</li>
+      <li><b>Crop</b> : The image can be cropped based on the selection.</li>
+      <li><b>Rotate</b> : The image can be rotated both clockwise and anticlockwise by 90 degrees.</li>
+      <li><b>Freehand drawing</b> : Draw freehand on the image and adjust the pen's stroke width and stroke color.</li>
+      <li><b>Get Image data</b> : Retrieves the edited image in image data format.</li>
+      <li><b>Annotation</b> : Text, rectangle, ellipse, and line annotation shapes are supported.</li>
+      <li><b>Filters</b> : The predefined filters such as chrome, cold, warm, grayscale, sepia, and invert can be applied to the image.</li>
+  </ul>
+  <p>
+      More information about Image Editor can be found in this
+      <a target='_blank' 
+      href='https://ej2.syncfusion.com/documentation/image-editor/getting-started/'>
+      documentation section</a>.
+  </p>
+</div>

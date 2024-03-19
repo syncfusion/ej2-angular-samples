@@ -21,7 +21,7 @@ import { AjaxLoadComponent } from './ajax-load.component';
 import { FileBrowserComponent } from './file-browser.component';
 import { FormComponent } from './reactive-form.component';
 import { TemplateDrivenComponent } from './template-driven.component';
-import { SharedModule } from '../common/shared.module';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { SplitterModule } from '@syncfusion/ej2-angular-layouts';
@@ -79,46 +79,6 @@ export const rteAppRoutes: Object[] = [
     { path: ':theme/rich-text-editor/template-driven', component: TemplateDrivenComponent, name: 'Template Driven', description: 'This demo shows template-driven support of an Angular that helps two-way binding using ng-form and ng-model, and name attributes in Angular HTML Editor.', order: '06', category: 'Forms' }
 ];
 
-export const RTERouter: ModuleWithProviders<any> = RouterModule.forChild(rteAppRoutes);
+export const RTESampleModule: ModuleWithProviders<any> = RouterModule.forChild(rteAppRoutes);
 
-@NgModule({
-    imports: [BrowserModule, RTERouter, SharedModule, FormsModule, ImageEditorModule, ReactiveFormsModule,TabModule,
-        RichTextEditorAllModule, SplitterModule, CheckBoxModule, DialogModule, NumericTextBoxModule,ButtonModule,SwitchModule, RadioButtonModule, TextBoxModule, DropDownListModule, MentionModule],
-    exports: [RichTextEditorAllModule, SplitterModule, CheckBoxModule, SwitchModule, DialogModule,TabModule, NumericTextBoxModule,ButtonModule, RadioButtonModule, TextBoxModule, DropDownListModule, MentionModule],
-    declarations: [
-        DefaultRTEComponent,
-        FullFeatureComponent,
-        APIComponent,
-        EnterKeyComponent,
-        EventsComponent,
-        IFrameComponent,
-        ToolbarTypeComponent,
-        FormatQuicktoolbarComponent,
-        PasteCleanupComponent,
-        FormatPainterComponent,
-        ResizeComponent,
-        InlineComponent,
-        InsertSpecialCharactersComponent,
-        InsertEmoticonsComponent,
-        ImageComponent,
-        InsertMediaComponent,
-        MarkdownDefaultComponent,
-        MarkdownPreviewComponent,
-        MarkdownCustomComponent,
-        PrintComponent,
-        BlogPostComponent,
-        FileBrowserComponent,
-        AjaxLoadComponent,
-        FormComponent,
-        TemplateDrivenComponent,
-        InsertEmoticonsComponent,
-        AutoSaveComponent,
-        OnlineHtmlEditorComponent,
-        ImageEditorIntegrationComponent,
-        MentionIntegrationComponent,
-        MentionFormatIntegrationComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class RTESampleModule {
-}
+

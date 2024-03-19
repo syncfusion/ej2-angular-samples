@@ -1,12 +1,17 @@
 import { Component , ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs , ChartTheme , IAccPointRenderEventArgs , IAccLoadedEventArgs , AccumulationTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, IAccPointRenderEventArgs, IAccLoadedEventArgs, AccumulationTheme, ChartAllModule, AccumulationChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { DashboardLayoutModule } from '@syncfusion/ej2-angular-layouts';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  selector: 'control-content',
-  templateUrl: 'overview-chart.html',
-  styleUrls: ['chart.style.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'overview-chart.html',
+    styleUrls: ['chart.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DashboardLayoutModule, ChartAllModule, AccumulationChartAllModule, SBDescriptionComponent]
 })
 
 export class OverViewChartComponent {

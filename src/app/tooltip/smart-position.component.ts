@@ -3,14 +3,18 @@
  */
 
 import { Component, ViewChild, ViewEncapsulation, Inject, OnInit } from '@angular/core';
-import { TooltipComponent } from '@syncfusion/ej2-angular-popups';
+import { TooltipComponent, TooltipModule } from '@syncfusion/ej2-angular-popups';
 import { Draggable } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'smart-position.html',
     styleUrls: ['tooltip.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, TooltipModule, SBDescriptionComponent]
 })
 
 export class DraggableTooltipComponent implements OnInit {

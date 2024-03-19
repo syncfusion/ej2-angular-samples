@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject, OnInit, ViewChild } from '@angular/core';
-import { TimePickerComponent, ItemEventArgs } from '@syncfusion/ej2-angular-calendars';
+import { TimePickerComponent, ItemEventArgs, TimePickerModule } from '@syncfusion/ej2-angular-calendars';
 /**
 
  * List formatting TimePicker component
@@ -8,7 +8,9 @@ import { TimePickerComponent, ItemEventArgs } from '@syncfusion/ej2-angular-cale
     selector: 'control-content',
     styleUrls: ['list-formatting.css'],
     templateUrl: 'list-formatting.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TimePickerModule]
 })
 export class ListFormattingTimePickerComponent {
     @ViewChild('duration')

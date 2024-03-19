@@ -2,11 +2,16 @@
  * Mention default functionality Sample
  */
 import { Component } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { MentionModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
-    styleUrls: ['mention.css']
+    styleUrls: ['mention.css'],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MentionModule, SBDescriptionComponent]
 })
 export class DefaultMentionComponent {
     // define the JSON of data

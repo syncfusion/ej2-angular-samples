@@ -2,15 +2,19 @@
  * AutoComplete Default functionality Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { AutoCompleteComponent, VirtualScroll } from '@syncfusion/ej2-angular-dropdowns';
+import { AutoCompleteComponent, VirtualScroll, AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
 import { Query, DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 AutoCompleteComponent.Inject(VirtualScroll);
 @Component({
     selector: 'control-content',
     templateUrl: 'virtual-scroll.html',
     styleUrls: ['virtual-scroll.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, AutoCompleteModule, SBDescriptionComponent]
 })
 export class VirtualScrollAutoCompleteComponent {
     @ViewChild('sample')

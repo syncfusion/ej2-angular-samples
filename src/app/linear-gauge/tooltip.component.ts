@@ -1,11 +1,14 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { LinearGaugeComponent, LinearGaugeTheme } from '@syncfusion/ej2-angular-lineargauge';
+import { LinearGaugeComponent, LinearGaugeTheme, LinearGaugeModule,AnnotationsService, GaugeTooltipService } from '@syncfusion/ej2-angular-lineargauge';
 import { ITooltipRenderEventArgs, IAxisLabelRenderEventArgs, ILoadedEventArgs } from '@syncfusion/ej2-lineargauge';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'tooltip.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [LinearGaugeModule],
+    providers: [AnnotationsService, GaugeTooltipService]
 })
 
 export class TooltipComponent {

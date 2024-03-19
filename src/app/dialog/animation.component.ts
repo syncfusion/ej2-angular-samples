@@ -1,6 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DialogComponent, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
+import { DialogComponent, ButtonPropsModel, DialogModule } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * Animation Dialog Component
@@ -9,7 +12,9 @@ import { EmitType } from '@syncfusion/ej2-base';
     selector: 'control-content',
     styleUrls: ['animation.css'],
     templateUrl: 'animation.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ButtonModule, DialogModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class AnimationDialogComponent {

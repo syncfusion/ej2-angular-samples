@@ -2,7 +2,7 @@ import { NgModule, ModuleWithProviders, Type } from '@angular/core';
 import { SmithchartDefaultComponent} from './default.component';
 import { SmithchartCustomComponent} from './custom.component';
 import { SmithchartPrintExportComponent} from './print-export.component';
-import { SharedModule } from '../common/shared.module';
+
 import { RouterModule } from '@angular/router';
 import { SmithchartAllModule} from '@syncfusion/ej2-angular-charts';
 import { SliderModule } from '@syncfusion/ej2-angular-inputs';
@@ -16,13 +16,4 @@ export const smithchartAppRoutes: Object[] = [
      category: "Smith Chart", description: 'This demo for Essential JS2 Smith Chart control explores the exporting and printing functionality of smith chart.'},
 ];
 
-export const smithchartRouter: ModuleWithProviders<any> = RouterModule.forChild(smithchartAppRoutes);
-
-@NgModule({
-    imports: [smithchartRouter, SmithchartAllModule, SharedModule, SliderModule, DropDownListAllModule, CheckBoxModule],
-    exports: [],
-    declarations: [SmithchartDefaultComponent, SmithchartPrintExportComponent, SmithchartCustomComponent],
-    providers: [SmithchartAllModule]
-})
-export class SmithchartSampleModule {
-}
+export const SmithchartSampleModule: ModuleWithProviders<any> = RouterModule.forChild(smithchartAppRoutes);

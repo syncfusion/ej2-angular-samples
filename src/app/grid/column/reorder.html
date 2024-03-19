@@ -4,9 +4,9 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid [dataSource]='data' allowReordering='true'>
+    <ejs-grid [dataSource]='data' allowReordering='true' [allowSorting]='true'>
         <e-columns>
-            <e-column field='EmployeeID' headerText='Employee ID' width='120' textAlign='Right'></e-column>
+            <e-column field='EmployeeID' headerText='Employee ID' width='150' textAlign='Right'></e-column>
             <e-column field='FirstName' headerText='Name' width='140'></e-column>
             <e-column field='Title' headerText='Title' width='170'></e-column>
             <e-column field='HireDate' headerText='Hired Date' width='120' format='yMd' textAlign='Right'></e-column>
@@ -25,7 +25,7 @@
         <p style="font-weight: 500">Injecting Module:</p>
         <p>
             Grid component features are segregated into individual feature-wise modules. To use reordering feature, we need to inject
-            <code>ReorderService</code> into the <code>@NgModule.providers</code> section.
+            <code>ReorderService</code> into the <code>&#64;NgModule.providers</code> section.
         </p>
     </div>
 </div>

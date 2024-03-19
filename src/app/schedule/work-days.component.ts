@@ -1,18 +1,19 @@
 import { Component, ViewChild } from '@angular/core';
 import { scheduleData } from './data';
 import { extend } from '@syncfusion/ej2-base';
-import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import {
-  ScheduleComponent, EventSettingsModel, View, EventRenderedArgs, WeekService, WorkWeekService,
-  MonthService, TimelineViewsService, TimelineMonthService, ResizeService, WorkHoursModel, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ScheduleComponent, EventSettingsModel, View, EventRenderedArgs, WeekService, WorkWeekService, MonthService, TimelineViewsService, TimelineMonthService, ResizeService, WorkHoursModel, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'work-days.html',
-  providers: [WeekService, MonthService, WorkWeekService, TimelineViewsService,
-    TimelineMonthService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'work-days.html',
+    providers: [WeekService, MonthService, WorkWeekService, TimelineViewsService,
+        TimelineMonthService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, DropDownListModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class WorkDaysComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

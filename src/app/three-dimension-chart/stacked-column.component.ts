@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ChartTheme, Chart3DLoadedEventArgs, Chart3DAxisLabelRenderEventArgs } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { Chart3DAllModule } from '@syncfusion/ej2-angular-charts';
 
 /**
  * 3D Chart Stacking Column sample 
@@ -8,7 +9,9 @@ import { Browser } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',
     templateUrl: 'stacked-column.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [Chart3DAllModule]
 })
 
 export class StackingColumnComponent {

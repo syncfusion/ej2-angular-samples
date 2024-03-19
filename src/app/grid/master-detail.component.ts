@@ -1,7 +1,9 @@
 import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { customerData, data } from './data';
 import { DataManager, Query } from '@syncfusion/ej2-data';
-import { SelectionService, RowSelectEventArgs, GridComponent } from '@syncfusion/ej2-angular-grids';
+import { SelectionService, RowSelectEventArgs, GridComponent, GridModule } from '@syncfusion/ej2-angular-grids';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { NgIf } from '@angular/common';
 
 type carType = { CustomerID: string, CustomerName: string, ContactName: string };
 
@@ -9,7 +11,9 @@ type carType = { CustomerID: string, CustomerName: string, ContactName: string }
     selector: 'ejs-gridmaster',
     templateUrl: 'master-detail.html',
     styleUrls: ['master-detail.style.css'],
-    providers: [SelectionService]
+    providers: [SelectionService],
+    standalone: true,
+    imports: [GridModule, NgIf, SBDescriptionComponent]
 })
 export class MasterdetailComponent implements OnInit {
     public data: Object[];

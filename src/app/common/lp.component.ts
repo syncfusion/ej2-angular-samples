@@ -1,12 +1,13 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ListViewComponent, SelectEventArgs } from '@syncfusion/ej2-angular-lists';
-import { TreeViewComponent, NodeSelectEventArgs } from '@syncfusion/ej2-angular-navigations';
+import { ListViewComponent, SelectEventArgs, ListViewModule } from '@syncfusion/ej2-angular-lists';
+import { TreeViewComponent, NodeSelectEventArgs, TreeViewModule } from '@syncfusion/ej2-angular-navigations';
 import { Toast } from '@syncfusion/ej2-notifications'
 import { samplesList } from './samplelist';
 import { Browser, extend, Animation, addClass } from '@syncfusion/ej2-base';
 import { DataManager, Query, DataUtil } from '@syncfusion/ej2-data';
+import { NgIf } from '@angular/common';
 export interface MyWindow extends Window {
     isInteractedList: boolean;
 }
@@ -20,6 +21,12 @@ declare let window: MyWindow;
 @Component({
     selector: 'left-pane',
     templateUrl: 'left-pane.html',
+    standalone: true,
+    imports: [
+        TreeViewModule,
+        NgIf,
+        ListViewModule,
+    ],
 })
 export class LPController {
 

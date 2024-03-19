@@ -1,11 +1,16 @@
 import { Component, Inject } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { TreeViewModule } from '@syncfusion/ej2-angular-navigations';
 
 /**
  * TreeView node editing sample
  */
 @Component({
     selector: 'control-content',
-    templateUrl: 'node-editing.html'
+    templateUrl: 'node-editing.html',
+    standalone: true,
+    imports: [TreeViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class EditTreeViewComponent {
 

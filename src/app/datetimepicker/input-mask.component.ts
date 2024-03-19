@@ -1,11 +1,13 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MaskedDateTimeService } from '@syncfusion/ej2-angular-calendars';
+import { MaskedDateTimeService, DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 @Component({
     selector: 'control-content',
     styleUrls: ['default-style.css'],
     templateUrl: 'input-mask.html',
     providers: [MaskedDateTimeService],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [DateTimePickerModule]
 })
 export class MaskSupportDateTimePickerComponent {
 

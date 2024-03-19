@@ -1,17 +1,18 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { resourceTeamData } from './data';
 import { extend } from '@syncfusion/ej2-base';
-import {
-  EventSettingsModel, View, GroupModel, MonthService, DayService, WeekService,
-  WorkWeekService, AgendaService, ResizeService, WorkHoursModel, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, View, GroupModel, MonthService, DayService, WeekService, WorkWeekService, AgendaService, ResizeService, WorkHoursModel, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'group-by-child.html',
-  styleUrls: ['group-by-child.style.css'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [MonthService, DayService, WeekService, WorkWeekService, AgendaService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'group-by-child.html',
+    styleUrls: ['group-by-child.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    providers: [MonthService, DayService, WeekService, WorkWeekService, AgendaService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class GroupByChildComponent {
   public data: Record<string, any>[] = extend([], resourceTeamData, null, true) as Record<string, any>[];

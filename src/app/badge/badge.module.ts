@@ -9,7 +9,7 @@ import { ToolbarController } from './toolbar.component';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { AccordionModule } from '@syncfusion/ej2-angular-navigations';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
-import { SharedModule } from '../common/shared.module';
+
 
 export const badgeAppRoutes: Object[] = [
     { path: ':theme/badge/default', component: DefaultController, order: '01', name: 'Default', category: 'Badge', description: 'This example demonstrates to create Syncfusion notification badge to display notification count in Angular group button.',sourceFiles: [
@@ -45,13 +45,6 @@ export const badgeAppRoutes: Object[] = [
     ] }
 ];
 
-export const badgeRouter: ModuleWithProviders<any> = RouterModule.forChild(badgeAppRoutes);
+export const BadgeModule: ModuleWithProviders<any> = RouterModule.forChild(badgeAppRoutes);
 
-@NgModule({
-    imports: [badgeRouter, SharedModule, ToolbarModule, AccordionModule, ListViewModule],
-    declarations: [
-        DefaultController, TypesController, NotificationController, ListviewController, accordionController, ToolbarController
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class BadgeModule { }
+

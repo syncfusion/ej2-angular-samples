@@ -1,11 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { TreeGridComponent , EditService , ToolbarService } from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent , EditService , ToolbarService, TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'batchediting.html',
-    providers: [EditService , ToolbarService ]
+    providers: [EditService , ToolbarService ],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SBDescriptionComponent, TreeGridAllModule]
 })
 export class BatchEditingComponent implements OnInit {
     public data: Object[] = [];

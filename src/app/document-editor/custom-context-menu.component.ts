@@ -1,9 +1,11 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ToolbarService, DocumentEditorContainerComponent } from '@syncfusion/ej2-angular-documenteditor';
+import { ToolbarService, DocumentEditorContainerComponent, DocumentEditorContainerModule } from '@syncfusion/ej2-angular-documenteditor';
 import { MenuItemModel } from '@syncfusion/ej2-navigations';
 import { TitleBar } from './title-bar';
 import { defaultDocument, WEB_API_ACTION } from './data';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Document Editor Component
@@ -12,7 +14,9 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'custom-context-menu.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService]
+    providers: [ToolbarService],
+    standalone: true,
+    imports: [DocumentEditorContainerModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class CustomContextMenuComponent {
     public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
@@ -26,6 +30,7 @@ export class CustomContextMenuComponent {
         this.titleBar = new TitleBar(titleBarElement, this.container.documentEditor, true);
         this.container.documentEditor.open(JSON.stringify(defaultDocument));
         this.container.documentEditor.documentName = 'Custom Context Menu';
+        this.container.documentEditorSettings.showRuler = true;
         this.titleBar.updateDocumentTitle();
         // creating Custom Options
         let menuItems: MenuItemModel[] = [

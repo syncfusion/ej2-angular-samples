@@ -1,12 +1,14 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import {
     Diagram, NodeModel, DataBinding, DiagramElement, StackPanel, VerticalAlignment,
     SnapConstraints, TextStyleModel, TextElement, HorizontalAlignment, DiagramTools,
     HierarchicalTree, ComplexHierarchicalTree, ConnectorModel, SnapSettingsModel, randomId
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import {pertChartData} from './overview-data';
+import {pertChartData} from'./overview-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 export interface DataInfo {
     [key: string]: string;
@@ -21,7 +23,9 @@ Diagram.Inject(DataBinding, HierarchicalTree, ComplexHierarchicalTree);
     selector: 'control-content',
     templateUrl: 'pert-chart.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, SBDescriptionComponent]
 })
 export class PertChartDiagramComponent {
     @ViewChild('diagram')

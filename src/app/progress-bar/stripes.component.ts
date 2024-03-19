@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ProgressBar, ITextRenderEventArgs, AnimationModel, FontModel } from '@syncfusion/ej2-progressbar';
 import { ILoadedEventArgs, ProgressTheme, ModeType} from '@syncfusion/ej2-progressbar';
+import { ProgressBarAllModule } from '@syncfusion/ej2-angular-progressbar';
 
 
 /**
@@ -9,7 +10,9 @@ import { ILoadedEventArgs, ProgressTheme, ModeType} from '@syncfusion/ej2-progre
 @Component({
     selector: 'control-content',
     templateUrl: 'stripes.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ProgressBarAllModule]
 })
 
 export class ProgressBarStripesComponent {

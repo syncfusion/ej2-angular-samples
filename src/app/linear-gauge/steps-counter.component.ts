@@ -1,10 +1,14 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-lineargauge';
+import { LinearGaugeModule, AnnotationsService } from '@syncfusion/ej2-angular-lineargauge';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'steps-counter.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [LinearGaugeModule],
+    providers: [AnnotationsService]
 })
 
 export class StepsCounterComponent {
@@ -21,7 +25,7 @@ export class StepsCounterComponent {
             placement: 'Near',
             offset: -40,
             markerType: 'Image',
-            imageUrl: './assets/linear-gauge/images/step-count.png'
+            imageUrl: 'https://ej2.syncfusion.com/angular/demos/assets/linear-gauge/images/step-count.png'
         }],
         ranges: [
             {

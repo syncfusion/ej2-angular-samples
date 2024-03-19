@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { BulletTooltipSettingsModel, AnimationModel, BulletChartComponent, OrientationType } from '@syncfusion/ej2-angular-charts';
+import { BulletTooltipSettingsModel, AnimationModel, BulletChartComponent, OrientationType, BulletChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { IBulletLoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
 /**
@@ -8,7 +8,9 @@ import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
 @Component({
     selector: 'control-content',
     templateUrl: 'orientation.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [BulletChartAllModule]
 })
 
 export class BulletChartOrientationComponent {

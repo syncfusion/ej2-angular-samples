@@ -2,14 +2,20 @@ import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
 import { DropDownListComponent, ChangeEventArgs as DropDownChangeArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { KanbanComponent, CardSettingsModel, SwimlaneSettingsModel, SortDirection } from '@syncfusion/ej2-angular-kanban';
+import { KanbanComponent, CardSettingsModel, SwimlaneSettingsModel, SortDirection, KanbanModule } from '@syncfusion/ej2-angular-kanban';
 import { kanbanData } from './data';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'swimlane.html',
     styleUrls: ['swimlane.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ KanbanModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule, CheckBoxModule]
 })
 export class SwimlaneComponent {
     @ViewChild('kanbanObj') kanbanObj: KanbanComponent;

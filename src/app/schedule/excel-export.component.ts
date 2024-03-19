@@ -1,23 +1,24 @@
 import { extend } from '@syncfusion/ej2-base';
 import { ItemModel } from '@syncfusion/ej2-angular-navigations';
-import {
-  ScheduleComponent, EventSettingsModel, ActionEventArgs, View,
-  WeekService, ResizeService, DragAndDropService, ExcelExportService, ExportOptions, ExportFieldInfo
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, EventSettingsModel, ActionEventArgs, View, WeekService, ResizeService, DragAndDropService, ExcelExportService, ExportOptions, ExportFieldInfo, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { scheduleData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for excel exporting
  */
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'excel-export.html',
-  styleUrls: ['excel-export.style.css'],
-  providers: [WeekService, ResizeService, DragAndDropService, ExcelExportService],
-  encapsulation: ViewEncapsulation.None
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'excel-export.html',
+    styleUrls: ['excel-export.style.css'],
+    providers: [WeekService, ResizeService, DragAndDropService, ExcelExportService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ExcelExportComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

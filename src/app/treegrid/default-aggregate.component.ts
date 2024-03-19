@@ -2,13 +2,18 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { summaryRowData } from './jsontreegriddata';
 import { AggregateService } from '@syncfusion/ej2-angular-treegrid';
 import { FailureEventArgs } from '@syncfusion/ej2-grids';
-import { CheckBox, ChangeEventArgs } from '@syncfusion/ej2-buttons';
-import { TreeGridComponent } from '@syncfusion/ej2-angular-treegrid';
+import { CheckBox, CheckBoxModule, ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
+import { TreeGridComponent, TreeGridModule } from '@syncfusion/ej2-angular-treegrid';
+import { NgClass } from '@angular/common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'default-aggregate.html',
-    providers:[AggregateService]
+    providers:[AggregateService],
+    standalone: true,
+    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent, CheckBoxModule, NgClass]
 })
 export class AggregateComponent implements OnInit {
     public data: Object[] = [];

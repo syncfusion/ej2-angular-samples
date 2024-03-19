@@ -1,12 +1,23 @@
 /* tslint:disable: member-ordering forin */
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormsModule, AbstractControl } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormsModule, AbstractControl, ReactiveFormsModule } from '@angular/forms';
 import { FormValidators } from '@syncfusion/ej2-angular-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'control-content',
-  templateUrl: './default.html',
-  encapsulation: ViewEncapsulation.None,
+    selector: 'control-content',
+    templateUrl: './default.html',
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        NgIf,
+        SBActionDescriptionComponent,
+        SBDescriptionComponent,
+    ],
 })
 
 

@@ -2,17 +2,21 @@
  * Print sample
  */
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { MapsTheme, Maps, Legend, MapsTooltip, ILoadEventArgs, PrintService } from '@syncfusion/ej2-angular-maps';
-import { MapAjax } from '@syncfusion/ej2-maps';
+import { MapsTheme, Maps, Legend, MapsTooltip, ILoadEventArgs, PrintService, MapsModule } from '@syncfusion/ej2-angular-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 Maps.Inject( MapsTooltip, Legend);
 declare var require: any;
-import usMap from './usa.json';
-import population from './us-population.json';
+let usMap: object[] = require('./usa.json');
+let population: object[] = require('./us-population.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'print.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [PrintService]
+    providers: [PrintService],
+    standalone: true,
+    imports: [MapsModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class MapsPrintComponent {
     @ViewChild('maps')

@@ -14,7 +14,7 @@ import { CheckboxTreeViewComponent } from './treeview-checkbox.component';
 import { TreeViewModule  } from '@syncfusion/ej2-angular-navigations';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
-import { SharedModule } from '../common/shared.module';
+
 
 export const treeAppRoutes: Object[] = [
     { path: ':theme/treeview/default', component: DefaultTreeViewComponent, name: 'Default Functionalities', order: '01', category: 'TreeView', description: "This demo demonstrates the basic tree view component that display the data in a hierarchical structure with the configuration options." },
@@ -28,23 +28,6 @@ export const treeAppRoutes: Object[] = [
     { path: ':theme/treeview/remote-data', component: RemoteTreeViewComponent, name: 'Remote Data', order: '02', category: 'Data Binding', description: "This demo demonstrates the binding of data to the tree view from remote data source." },
 ];
 
-export const TreeviewRouter: ModuleWithProviders<any> = RouterModule.forChild(treeAppRoutes);
+export const TreeViewSampleModule: ModuleWithProviders<any> = RouterModule.forChild(treeAppRoutes);
 
-@NgModule({
-    imports: [TreeviewRouter, SharedModule, CommonModule, BrowserModule, CheckBoxModule, ListViewModule, TreeViewModule],
-    declarations: [
-        DefaultTreeViewComponent,
-        IconsTreeViewComponent,
-        EditTreeViewComponent,
-        MultiselectTreeViewComponent,
-        DragdropTreeViewComponent,
-        TemplateTreeViewComponent,
-        PlainTreeViewComponent,
-        RemoteTreeViewComponent,
-        CheckboxTreeViewComponent
-    ],
-    exports: [DefaultTreeViewComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class TreeViewSampleModule {
-}
+

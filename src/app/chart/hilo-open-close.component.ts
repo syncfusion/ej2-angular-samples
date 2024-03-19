@@ -1,8 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme, IRangeLoadedEventArgs, IChangedEventArgs,
-ChartComponent, IAxisLabelRenderEventArgs } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, IRangeLoadedEventArgs, IChangedEventArgs, ChartComponent, IAxisLabelRenderEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { chartValue } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for HiloOpenClose Series
@@ -12,7 +13,9 @@ import { Browser } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'hilo-open-close.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 export class HiloOpenCloseChartComponent {
     @ViewChild('chartcontainer')
@@ -30,7 +33,9 @@ export class HiloOpenCloseChartComponent {
         title: 'Price',
         labelFormat: 'n0',
         lineStyle: { width: 0 },
-        rangePadding: 'None',
+        minimum: 40,
+        maximum: 140,
+        interval: 20,
         majorTickLines: { width: 0 }
     };
     public title: string = "AAPL Historical"

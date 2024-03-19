@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild, OnInit } from '@angular/core';
-import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { InPlaceEditorComponent, TimePickerService, DateRangePickerService, RenderMode } from '@syncfusion/ej2-angular-inplace-editor';
+import { DropDownListComponent, ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { InPlaceEditorComponent, TimePickerService, DateRangePickerService, RenderMode, InPlaceEditorModule } from '@syncfusion/ej2-angular-inplace-editor';
 import { DatePickerModel, TimePickerModel, DateTimePickerModel, DateRangePickerModel } from '@syncfusion/ej2-calendars';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * In-place Editor pickers sample
@@ -10,8 +12,10 @@ import { DatePickerModel, TimePickerModel, DateTimePickerModel, DateRangePickerM
     selector: 'control-content',
     templateUrl: 'pickers.html',
     styleUrls: ['pickers.css'],
-	encapsulation: ViewEncapsulation.None,
-    providers: [TimePickerService, DateRangePickerService]
+    encapsulation: ViewEncapsulation.None,
+    providers: [TimePickerService, DateRangePickerService],
+    standalone: true,
+    imports: [InPlaceEditorModule, DropDownListModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class PickersInplaceEditorComponent implements OnInit {
 

@@ -1,4 +1,4 @@
-import { NgModule, Type, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, Type, CUSTOM_ELEMENTS_SCHEMA, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ScheduleAllModule, RecurrenceEditorAllModule } from '@syncfusion/ej2-angular-schedule';
@@ -68,7 +68,7 @@ import { YearComponent } from './year.component';
 import { InlineEditingComponent } from './inline-editing.component';
 import { QuickInfoTemplateComponent } from './quick-info-template.component';
 import { OverviewComponent } from './overview.component';
-import { SharedModule } from '../common/shared.module';
+
 import { MultiDragComponent } from './multi-drag.component';
 import { AdaptiveGroupingComponent } from './adaptive-grouping.component';
 import { RealTimeBindingComponent } from './realtime-binding.component';
@@ -97,7 +97,7 @@ export const scheduleRouteConfig: Record<string, any>[] = [
   { path: ':theme/schedule/agenda', component: AgendaComponent, name: 'Agenda View', order: '05', category: 'Views', description: 'This demo shows the agenda view of the Angular Schedule that displays events as a list with virtual scrolling, with a number of initially loaded days.' },
   { path: ':theme/schedule/month-agenda', component: MonthAgendaComponent, name: 'Month Agenda View', order: '05', category: 'Views', description: 'This demo presents the Angular Scheduler month-agenda view, which follows the month-view layout while displaying events for a selected date.' },
   { path: ':theme/schedule/year', component: YearComponent, name: 'Year View', order: '05', category: 'Views', description: 'This example presents a year view of the Angular Scheduler that displays appointments or events for an entire year with a horizontal or vertical layout.' },
-  { path: ':theme/schedule/custom-month-view', component: CustomMonthViewComponent, name: 'Custom Month View', order: '05', category: 'Views', type:'update', description: 'This example showcases how to customize the starting week, number of weeks, and number of events displayed in a single row in the Angular Scheduler month view.' },
+  { path: ':theme/schedule/custom-month-view', component: CustomMonthViewComponent, name: 'Custom Month View', order: '05', category: 'Views', description: 'This example showcases how to customize the starting week, number of weeks, and number of events displayed in a single row in the Angular Scheduler month view.' },
   { path: ':theme/schedule/view-configuration', component: ViewConfigComponent, name: 'Individual View Settings', order: '05', category: 'Views', description: 'This demo shows how to configure different settings for each view in the Angular Scheduler, like applying event templates to the month view alone.' },
   { path: ':theme/schedule/extended-views', component: ExtendedViewsComponent, name: 'View Intervals', order: '05', category: 'Views', description: 'This demo shows how to design own custom views like 3 days, 2 weeks, 4 months apart from the default day, work week, month in Angular Event Scheduler.' },
   { path: ':theme/schedule/timeline-resource', component: TimelineResourcesComponent, name: 'Room Scheduler', order: '06', category: 'Multiple Resources', description: 'This demo shows how to design a meeting room calendar, conference room calendar, and cabin room manager using our Angular event calendar control.' },
@@ -123,7 +123,7 @@ export const scheduleRouteConfig: Record<string, any>[] = [
   { path: ':theme/schedule/header-rows', component: HeaderRowsComponent, name: 'Header Rows ', order: '10', category: 'Customization', description: 'This demo shows how to include additional header rows like week number and month number on the timeline view in the Angular event calendar.' },
   { path: ':theme/schedule/time-scale', component: TimescaleComponent, name: 'Timescale', order: '10', category: 'Customization', description: 'This demo shows how to customize the default timescale with interval, show/hide gridlines, slots count, and template in Angular Scheduler.' },
   { path: ':theme/schedule/context-menu', component: ScheduleContextMenuComponent, name: 'Context Menu', order: '10', category: 'Customization', description: 'This example shows how to integrate the context menu within the Angular Scheduler and control the related functionalities using menu options.' },
-  { path: ':theme/schedule/header-bar', component: HeaderBarComponent, name: 'Header Bar', order: '10', type:'update', category: 'Customization', description: 'This demo shows how to use templating to customize the header bar of the Angular Scheduler with images, links, styles, and other UI controls.' },
+  { path: ':theme/schedule/header-bar', component: HeaderBarComponent, name: 'Header Bar', order: '10', category: 'Customization', description: 'This demo shows how to use templating to customize the header bar of the Angular Scheduler with images, links, styles, and other UI controls.' },
   { path: ':theme/schedule/scroll-to', component: ScrollTimeComponent, name: 'Scroll Time', order: '10', category: 'Customization', description: 'This example demonstrates how to scroll to a specific time programmatically based on the selected time in the Angular Scheduler control.' },
   { path: ':theme/schedule/work-days', component: WorkDaysComponent, name: 'Work Days', order: '10', category: 'Customization', description: 'This demo shows how to customize the workdays and the first day of the week to fit different work schedules in the Angular Scheduler.' },
   { path: ':theme/schedule/hide-weekend', component: HideWeekEndComponent, name: 'Hide Non-Working Days', order: '10', category: 'Customization', description: 'This demo shows how to show or hide weekend days in the Angular Scheduler, which is similar to the workweek view, but with customizable workdays.' },
@@ -142,28 +142,4 @@ export const scheduleRouteConfig: Record<string, any>[] = [
 ];
 // tslint:enable:max-line-length
 
-const scheduleDeclarations: Type<Record<string, any>>[] = [
-  AdaptiveRowsComponent, DefaultComponent, ScrollTimeComponent, TooltipComponent, EditorValidationComponent, KeyboardComponent,
-  EventsComponent, BlockEventsComponent, SearchEventsComponent, RecurrenceComponent, TimezoneComponent, ViewsComponent,
-  MonthAgendaComponent, ViewConfigComponent, AgendaComponent, LocalDataComponent, RemoteDataComponent, CellTemplateComponent,
-  DateheaderTemplateComponent, EventsTemplateComponent, WorkDaysComponent, HideWeekEndComponent, HeaderBarComponent,
-  CellDimensionComponent, StartEndHourComponent, EditorValidationComponent, EditorCustomFieldComponent, WorkHoursComponent,
-  TimescaleComponent, ReadOnlyComponent, RecGeneraterComponent, RecPopulateComponent, EditTempComponent, GroupEditingComponent,
-  GroupCustomWorkDaysComponent, GroupByDateComponent, GroupByChildComponent, ExtendedViewsComponent, ResourcesComponent, ResourceComponent,
-  GroupComponent, AddRemoveResourcesComponent, TimelineComponent, TimelineResourceGroupingComponent, TimelineResourcesComponent,
-  HeaderRowsComponent, ExternalDragDropComponent, ScheduleContextMenuComponent, VirtualScrollingComponent, CalendarIntegrationComponent,
-  CalendarExportImportComponent, ExcelExportComponent, PrintComponent, YearComponent, InlineEditingComponent, QuickInfoTemplateComponent,
-  OverviewComponent, MultiDragComponent, AdaptiveGroupingComponent, RealTimeBindingComponent, ReminderComponent, CustomMonthViewComponent,
-  DataVirtualizationComponent
-];
-
-@NgModule({
-  imports: [RouterModule.forChild(scheduleRouteConfig), CommonModule, ScheduleAllModule, RecurrenceEditorAllModule,
-    NumericTextBoxAllModule, TextBoxAllModule, DatePickerAllModule, TimePickerAllModule, DateTimePickerAllModule, CheckBoxAllModule,
-    ToolbarAllModule, DropDownListAllModule, ContextMenuAllModule, MaskedTextBoxModule, UploaderAllModule, MultiSelectAllModule,
-    TreeViewModule, ButtonAllModule, DropDownButtonAllModule, SwitchAllModule, SharedModule, ToastAllModule, AppBarModule],
-  declarations: scheduleDeclarations,
-  providers: [ScheduleAllModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class ScheduleSampleModule { }
+export const ScheduleSampleModule: ModuleWithProviders<any> = RouterModule.forChild(scheduleRouteConfig);

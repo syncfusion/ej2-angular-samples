@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
-import { DataMatrixGenerator, DisplayTextModel } from '@syncfusion/ej2-angular-barcode-generator';
-import { TextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { DataMatrixGenerator, DisplayTextModel, DataMatrixGeneratorModule } from '@syncfusion/ej2-angular-barcode-generator';
+import { TextBoxComponent, TextBoxModule, NumericTextBoxModule, ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
 import { ChangeEventArgs as NumericChangeEventArgs, FormValidator, FormValidatorModel } from '@syncfusion/ej2-inputs';
 import { ValidateEvent } from '@syncfusion/ej2-barcode-generator';
 import { CheckBoxChangeEventArgs } from '@syncfusion/ej2-grids';
@@ -9,11 +9,17 @@ import { ColorPickerEventArgs } from '@syncfusion/ej2-inputs';
 import { TextPosition, Alignment } from '@syncfusion/ej2-barcode-generator/src/barcode/enum/enum';
 import {  DataMatrixEncoding } from '@syncfusion/ej2-barcode-generator/src/barcode/enum/enum';
 import { TextBox, NumericTextBox, ChangedEventArgs } from '@syncfusion/ej2-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
-  selector: 'control-content',
-  templateUrl: 'datamatrix.html',
-  styleUrls: ['barcode-style.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'datamatrix.html',
+    styleUrls: ['barcode-style.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DataMatrixGeneratorModule, TextBoxModule, NumericTextBoxModule, CheckBoxModule, ColorPickerModule, DropDownListModule, SBDescriptionComponent]
 })
 export class DataMatrixComponent {
   @ViewChild('barcode')

@@ -1,12 +1,14 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, Operators, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView, Operators, IDataSet, PivotViewModule } from '@syncfusion/ej2-angular-pivotview';
 import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { ChangeEventArgs as NumericEventArgs, NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { ChangeEventArgs as NumericEventArgs, NumericTextBoxComponent, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { FilterModel } from '@syncfusion/ej2-pivotview/src/model/datasourcesettings-model';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 /**
  * Pivot Table Filtering Sample.
@@ -18,7 +20,9 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     selector: 'ej2-pivotview-container',
     templateUrl: 'value-filtering.html',
     encapsulation: ViewEncapsulation.None,
-    styleUrls: ['value-filtering.css']
+    styleUrls: ['value-filtering.css'],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, ButtonModule, DropDownListModule, NumericTextBoxModule]
 })
 
 export class ValueFilterComponent implements OnInit {

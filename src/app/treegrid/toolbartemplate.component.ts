@@ -2,10 +2,15 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
 import { TreeGridComponent } from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
-    templateUrl: 'toolbartemplate.html'
+    templateUrl: 'toolbartemplate.html',
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ToolbarTemplateComponent implements OnInit {
     public data: Object[] = [];

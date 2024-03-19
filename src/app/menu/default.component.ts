@@ -1,5 +1,8 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { MenuItemModel } from '@syncfusion/ej2-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { MenuModule } from '@syncfusion/ej2-angular-navigations';
 /**
  * Default Menu Controller
  */
@@ -7,7 +10,9 @@ import { MenuItemModel } from '@syncfusion/ej2-navigations';
     selector: 'control-content',
     templateUrl: 'default.html',
     styleUrls: ['default.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [MenuModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class DefaultMenuController {

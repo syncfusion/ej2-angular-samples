@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { orderDataSource } from './data';
-import { EditService, ToolbarService, PageService, NewRowPosition } from '@syncfusion/ej2-angular-grids';
-import { ChangeEventArgs, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { EditService, ToolbarService, PageService, SortService, NewRowPosition, GridModule } from '@syncfusion/ej2-angular-grids';
+import { ChangeEventArgs, DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej-gridnormaledit',
     templateUrl: 'normal-edit.html',
-    providers: [ToolbarService, EditService, PageService]
+    providers: [ToolbarService, EditService, PageService, SortService],
+    standalone: true,
+    imports: [GridModule, DropDownListModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class NormalEditComponent implements OnInit {
     @ViewChild('ddsample')
@@ -23,11 +27,11 @@ export class NormalEditComponent implements OnInit {
 
     public ngOnInit(): void {
         this.data = orderDataSource;
-        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true , newRowPosition: 'Top' };
+        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true , newRowPosition: 'Top', showAddNewRow: true };
         this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
         this.orderidrules = { required: true, number: true };
-        this.customeridrules = { required: true };
-        this.freightrules = { required: true };
+        this.customeridrules = { required: true, minLength: 5 };
+        this.freightrules = { required: true, min: 0 };
         this.editparams = { params: { popupHeight: '300px' } };
         this.pageSettings = { pageCount: 5 };
         this.formatoptions = { type: 'dateTime', format: 'M/d/y hh:mm a' }
@@ -42,6 +46,7 @@ export class NormalEditComponent implements OnInit {
     public onChange(e: ChangeEventArgs): void {
         let gridInstance: any = (<any>document.getElementById('Normalgrid')).ej2_instances[0];
         (gridInstance.editSettings as any).newRowPosition = <NewRowPosition>this.dropDown.value;
+        gridInstance.refresh();
     }
 
     actionBegin(args: any) :void {

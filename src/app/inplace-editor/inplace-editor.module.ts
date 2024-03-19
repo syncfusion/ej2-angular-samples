@@ -10,7 +10,7 @@ import { PickersInplaceEditorComponent } from './pickers.component';
 import { FormInplaceEditorComponent } from './form.component';
 
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
-import { SharedModule } from '../common/shared.module';
+
 export const inplaceeditorAppRoutes: Object[] = [
     { path: ':theme/inplace-editor/default', component: DefaultInplaceEditorComponent, name: 'Overview', order: '01', category: 'In-place Editor' },
     { path: ':theme/inplace-editor/dropdowns', component: DropdownsInplaceEditorComponent, name: 'DropDown Controls', order: '01', category: 'In-place Editor' },
@@ -18,17 +18,5 @@ export const inplaceeditorAppRoutes: Object[] = [
     { path: ':theme/inplace-editor/form', component: FormInplaceEditorComponent, name: 'Edit Post', order: '02', category: 'Use Case' }
 ];
 
-export const inplaceeditorRouter: ModuleWithProviders<any> = RouterModule.forChild(inplaceeditorAppRoutes);
+export const InplaceEditorSampleModule: ModuleWithProviders<any> = RouterModule.forChild(inplaceeditorAppRoutes);
 
-@NgModule({
-    imports: [inplaceeditorRouter, InPlaceEditorModule, DropDownListModule, SharedModule, CheckBoxModule],
-    declarations: [
-        DefaultInplaceEditorComponent,
-        DropdownsInplaceEditorComponent,
-        PickersInplaceEditorComponent,
-        FormInplaceEditorComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class InplaceEditorSampleModule {
-}

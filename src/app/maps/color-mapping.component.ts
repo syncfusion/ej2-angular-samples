@@ -5,19 +5,23 @@
 //tslint:disable
 // custom code end
 import { Component,ViewChild, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, Maps, Legend, Marker, MapsTooltip, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
-import { MapAjax } from '@syncfusion/ej2-maps';
+import { MapsTheme, Maps, Legend, Marker, MapsTooltip, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
 import { EmitType } from '@syncfusion/ej2-base';
-import usMap from './usa.json';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { FormsModule } from '@angular/forms';
+let usMap: object[] = require('./usa.json');
 Maps.Inject(Legend, Marker, MapsTooltip);
 declare var require: any;
 let colorMapping: object[] = require('./color-mapping.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'color-mapping.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [MapsModule, FormsModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ColorMappingComponent {
     @ViewChild('maps')

@@ -38,13 +38,4 @@ export const sparklineAppRoutes: Object[] = [
     { path: ':theme/sparkline/range-band', component: SparklineRangebandSample, name: 'Range Band', order: '01', category: 'Sparkline Charts', description: 'This demo for Essential JS2 Sparkline control depicts the range band feature and its customization options.' }
 ];
 
-export const sparklineRouter: ModuleWithProviders<any> = RouterModule.forChild(sparklineAppRoutes);
-@NgModule({
-    imports: [sparklineRouter, SparklineAllModule, GridAllModule, SliderModule, DropDownListAllModule, CheckBoxModule],
-    exports: [],
-    declarations: [DefaultSparklineComponent, AxisTypeSparklineComponent, SeriesTypeSparklineComponent,
-        SparklineGridSample, SparklineRangebandSample, SparklineCustomizationSample, SparkineLiveUpdateSample],
-    providers: [SparklineAllModule, GridAllModule]
-})
-export class SparklineSampleModule {
-}
+export const SparklineSampleModule: ModuleWithProviders<any> = RouterModule.forChild(sparklineAppRoutes);

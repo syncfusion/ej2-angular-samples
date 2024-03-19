@@ -3,11 +3,15 @@
  */
 
 import { Component, Inject } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'badge.html',
-    styleUrls: ['badge.css']
+    styleUrls: ['badge.css'],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class BadgeAvatarComponent {

@@ -1,4 +1,5 @@
 import { Component, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
+import { FabModule } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * Default Fav component
@@ -7,7 +8,9 @@ import { Component, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
     selector: 'control-content',
     templateUrl: 'styles.html',
     styleUrls: ['styles.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [FabModule]
 })
 
 export class StylesFABComponent {

@@ -2,17 +2,21 @@
  * Profile picture Sample
  */
  import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
- import { ImageEditorComponent } from '@syncfusion/ej2-angular-image-editor';
+ import { ImageEditorComponent, ImageEditorModule } from '@syncfusion/ej2-angular-image-editor';
  import { createElement } from '@syncfusion/ej2-base';
- import { DialogComponent, ButtonPropsModel, PositionDataModel } from '@syncfusion/ej2-angular-popups';
+ import { DialogComponent, ButtonPropsModel, PositionDataModel, DialogModule } from '@syncfusion/ej2-angular-popups';
  import { AnimationSettingsModel } from '@syncfusion/ej2-splitbuttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
  @Component({
-     selector: 'control-content',
-     templateUrl: 'profile-picture.html',
-     styleUrls: ['profile-picture.css'],
-     encapsulation: ViewEncapsulation.None
- })
+    selector: 'control-content',
+    templateUrl: 'profile-picture.html',
+    styleUrls: ['profile-picture.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DialogModule, ImageEditorModule, SBDescriptionComponent]
+})
  
  export class ProfilePictureImageEditorComponent {
     @ViewChild('Dialog')

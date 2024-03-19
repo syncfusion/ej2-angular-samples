@@ -1,13 +1,15 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import {
     Diagram, NodeModel, DiagramTools, BasicShapeModel, SnapSettingsModel,
     NodeConstraints, DataBinding, RadialTree, SnapConstraints, ZoomOptions
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
-import {radialTree} from './overview-data';
-
+import {radialTree} from'./overview-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 export interface DataInfo {
     [key: string]: string;
 }
@@ -20,7 +22,9 @@ Diagram.Inject(DataBinding, RadialTree);
     selector: 'control-content',
     templateUrl: 'radial-tree.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToolbarModule, DiagramModule, SBDescriptionComponent]
 })
 export class RadialTreeDiagramComponent {
     @ViewChild('diagram')

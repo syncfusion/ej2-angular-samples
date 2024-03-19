@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IStockChartEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { IStockChartEventArgs, ChartTheme, StockChartModule, ChartAllModule, RangeNavigatorAllModule } from '@syncfusion/ej2-angular-charts';
 import { googl } from './stock-data';   
 /**
  * Sample for Spline Area Series
@@ -7,7 +7,9 @@ import { googl } from './stock-data';
 @Component({
     selector: 'control-content',
     templateUrl: 'spline-area.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ StockChartModule, ChartAllModule, RangeNavigatorAllModule]
 })
 export class SplineAreaComponent {
 

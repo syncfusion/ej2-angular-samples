@@ -1,0 +1,84 @@
+<div id="action-description">
+    <p>This example demonstrates the virtualization support of the MultiSelect. The component has 150 items bound to it; however, when you open the suggestion list, only few items are loaded based on the popup height, and the remaining items are loaded while scrolling.</p>
+</div>
+
+<div class="control-section col-lg-8">
+    <div class="control-wrapper">
+      <h4>Local Data</h4>
+      <ejs-multiselect id='local' #local [dataSource]='records' [mode]='box' [fields]='fields' [allowFiltering]='true' [hideSelectedItem] ='true' [closePopupOnSelect]='true' [allowCustomValue]="true" [enableVirtualization]='true' [placeholder]='waterMark' [showDropDownIcon]='true' popupHeight='200px'></ejs-multiselect>
+    </div>
+    <div class="control-wrapper">
+      <h4>Remote Data</h4>
+      <ejs-multiselect id='remote' #remote [dataSource]='customerData' [mode]='delimiter' [fields]='customerField' [allowFiltering]='true' [hideSelectedItem] ='true' [closePopupOnSelect]='true' [allowCustomValue]="true" [enableVirtualization]='true' [placeholder]='customerWaterMark' [showDropDownIcon]='true' popupHeight='200px'></ejs-multiselect>
+    </div>
+    <div class="control-wrapper">
+      <h4>Default Values</h4>
+      <ejs-multiselect id='default' #default [dataSource]='customerData' [value]='value' [mode]='defaultMode' [fields]='customerField' [allowFiltering]='true' [hideSelectedItem] ='true' [closePopupOnSelect]='true' [allowCustomValue]="true" [enableVirtualization]='true' [placeholder]='customerWaterMark' [showDropDownIcon]='true' popupHeight='200px'></ejs-multiselect>
+    </div>
+    <div class="control-wrapper">
+      <h4>Grouping</h4>
+      <ejs-multiselect id='group' #group [dataSource]='records' [mode]='checkBox' [fields]='groupField' [allowFiltering]='true' [allowCustomValue]="true" [enableSelectionOrder]='false' [enableVirtualization]='true' [placeholder]='waterMark' [showDropDownIcon]='true' popupHeight='200px'></ejs-multiselect>
+    </div>
+    <div class="control-wrapper">
+      <h4>Template</h4>
+      <ejs-multiselect id='template' #template [dataSource]='records' [mode]='defaultMode' [fields]='fields' [allowFiltering]='true' [hideSelectedItem] ='true' [closePopupOnSelect]='true' [allowCustomValue]="true" [enableVirtualization]='true' [placeholder]='waterMark' [showDropDownIcon]='true' popupHeight='200px'>
+        <ng-template #headerTemplate>
+          <div class="header"><span style="margin-left:17px">Items Info</span></div>
+        </ng-template>
+        <ng-template #itemTemplate let-data>
+          <div class="ename" style="height: 40px"> {{data.text}} </div>
+        </ng-template>
+        <ng-template #valueTemplate let-data>
+          <div class="name"> {{data.text}} </div>
+        </ng-template>
+      </ejs-multiselect>
+    </div>
+  </div>
+  <div class="col-lg-4 property-section">
+    <div class="property-panel-section">
+      <div class="property-panel-header">Properties</div>
+      <div class="property-panel-content">
+        <table id="property" class="property-panel-table" title="Properties">
+          <tr>
+            <td style="width: 50%;">
+              <div>
+                <ejs-checkbox #allowFiltering label="AllowFiltering" [checked]="true"
+                  (change)="onChange()"></ejs-checkbox>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 50%;">
+              <div>
+                <ejs-checkbox #allowCustomValue label="AllowCustomValue" [checked]="true"
+                  (change)="onChangeCustom()"></ejs-checkbox>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 50%;">
+              <div>
+                <ejs-checkbox #hideSelectedItem label="HideSelectedItem" [checked]="true"
+                  (change)="onChangeHide()"></ejs-checkbox>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 50%;">
+              <div>
+                <ejs-checkbox #closePopupOnSelect label="ClosePopupOnSelect" [checked]="true"
+                  (change)="onChangeClose()"></ejs-checkbox>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+<div id="description">
+    <p>The <code>MultiSelect</code> component supports virtualization, which improves UI performance for large amounts of data. To enable virtualization, set the <code>enableVirtualization</code> property to true. When virtualization is enabled, ComboBox doesn't render the entire suggestion data source on initial component rendering. It loads the N number of items in the popup on initial rendering and the remaining set number of items will load while scrolling.
+        Virtualization works with both local and remote data.</p>
+    <p>To perform the virtualization feature in DropDownList, the <code>VirtualSCroll</code> module
+        have to be injected in the application end.</p>
+</div>

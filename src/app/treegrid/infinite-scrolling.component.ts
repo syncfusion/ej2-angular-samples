@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { InfiniteScrollService, TreeGridComponent, PageService } from '@syncfusion/ej2-angular-treegrid';
+import { InfiniteScrollService, TreeGridComponent, PageService, TreeGridModule} from '@syncfusion/ej2-angular-treegrid';
 import {dataSource, virtualData} from './jsontreegriddata';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'infinite-scrolling.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [InfiniteScrollService, PageService]
+    providers: [InfiniteScrollService, PageService],
+    standalone: true,
+    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class InfiniteScrollingComponent implements OnInit {
     public vData: Object[] = [];

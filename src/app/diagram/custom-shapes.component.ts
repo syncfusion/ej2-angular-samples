@@ -1,23 +1,22 @@
 import { Component, ViewEncapsulation, ViewChild } from "@angular/core";
 import { extend } from '@syncfusion/ej2-base';
 import { isNullOrUndefined as isNOU } from '@syncfusion/ej2-base';
-import { ChartComponent } from '@syncfusion/ej2-angular-charts';
+import { ChartComponent, AccumulationChartModule, ChartModule } from '@syncfusion/ej2-angular-charts';
 import {
     IAccTextRenderEventArgs, IAccLoadedEventArgs, AccumulationChartComponent,
     IAccAnimationCompleteEventArgs, ILoadedEventArgs
 } from '@syncfusion/ej2-angular-charts';
-import {
-   DiagramComponent,
-    DiagramTools,
-    NodeModel,
-     NodeConstraints
-} from "@syncfusion/ej2-angular-diagrams";
-import { GridComponent } from '@syncfusion/ej2-angular-grids';
+import { DiagramComponent, DiagramTools, NodeModel, NodeConstraints, DiagramModule } from "@syncfusion/ej2-angular-diagrams";
+import { GridComponent, GridModule } from '@syncfusion/ej2-angular-grids';
 import { expenseData, startDate, endDate} from './complexShapes.data';
 import { Query, DataManager, Predicate } from '@syncfusion/ej2-data';
 import { RangeEventArgs } from '@syncfusion/ej2-calendars';
-import { DateRangePickerComponent } from "@syncfusion/ej2-angular-calendars";
-
+import { DateRangePickerComponent, DateRangePickerModule } from "@syncfusion/ej2-angular-calendars";
+import { SBDescriptionComponent } from "../common/dp.component";
+import { CircularGaugeModule } from "@syncfusion/ej2-angular-circulargauge";
+import { NgIf, CurrencyPipe } from "@angular/common";
+import { SBActionDescriptionComponent } from "../common/adp.component";
+import { CommonModule } from '@angular/common';
 /**
  * Sample for ComplexShapes
  */
@@ -26,8 +25,9 @@ import { DateRangePickerComponent } from "@syncfusion/ej2-angular-calendars";
     selector: 'control-content',
     templateUrl: 'custom-shapes.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
-
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent,CommonModule, DiagramModule, NgIf, DateRangePickerModule, AccumulationChartModule, GridModule, ChartModule, CircularGaugeModule, SBDescriptionComponent, CurrencyPipe]
 })
 
 export class ComplexShapesDiagramComponent {

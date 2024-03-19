@@ -18,7 +18,7 @@ import { ProtectSheetComponent } from './protect-sheet.component';
 import { FreezePaneComponent } from './freeze-pane.component';
 import { SortinAndFilteringComponent } from './sorting-and-filtering.component';
 import { CellTemplateComponent } from './cell-template.component';
-import { SharedModule } from '../common/shared.module';
+
 import { ConditionalFormattingController } from './conditional-formatting.component';
 import { ImageController } from './image.component';
 import { ChartController } from './chart.component';
@@ -103,29 +103,5 @@ export const spreadsheetAppRoutes: Object[] = [
     }
 ];
 
-export const spreadsheetRouter: ModuleWithProviders<any> = RouterModule.forChild(spreadsheetAppRoutes);
+export const SpreadsheetSampleModule: ModuleWithProviders<any> = RouterModule.forChild(spreadsheetAppRoutes);
 
-@NgModule({
-    imports: [spreadsheetRouter, CommonModule, SpreadsheetAllModule, SharedModule, TextBoxAllModule, RadioButtonAllModule, DropDownListAllModule, MultiSelectAllModule, ButtonAllModule],
-    declarations: [
-        DefaultController,
-        FormulasController,
-        CellDataBindingController,
-        RemoteDataBindingController,
-        CellFormatController,
-        NumberFormattingController,
-        ProtectSheetComponent,
-        SortinAndFilteringComponent,
-        CellTemplateComponent,
-        ConditionalFormattingController,
-        ImageController,
-        ChartController,
-        FreezePaneComponent,
-        DataValidationComponent,
-        HyperlinkComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class SpreadsheetSampleModule {
-
-}

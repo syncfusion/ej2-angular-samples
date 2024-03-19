@@ -2,12 +2,17 @@
  * AutoComplete Template Sample
  */
 import { Component, ViewEncapsulation } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'template.html',
     styleUrls: ['template.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, AutoCompleteModule, SBDescriptionComponent]
 })
 export class TemplateAutoCompleteComponent {
     // defined the array of data

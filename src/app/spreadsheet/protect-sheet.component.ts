@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
 import { protectSheetData } from './data';
-import { SpreadsheetComponent, CellRenderEventArgs } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent, CellRenderEventArgs, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Protect sheet Spreadsheet Controller
  */
@@ -8,7 +10,9 @@ import { SpreadsheetComponent, CellRenderEventArgs } from '@syncfusion/ej2-angul
     selector: 'control-content',
     templateUrl: 'protect-sheet.html',
     styleUrls: ['spreadsheet.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SpreadsheetModule, SBDescriptionComponent]
 })
 
 export class ProtectSheetComponent {

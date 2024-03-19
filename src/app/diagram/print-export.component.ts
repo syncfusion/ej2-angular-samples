@@ -1,10 +1,12 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import {
-    DiagramComponent, PrintAndExport, IExportOptions, Diagram, MarginModel, FileFormats,
-    ConnectorModel, BasicShapeModel, ShapeStyleModel, SnapSettingsModel, SnapConstraints
-} from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, PrintAndExport, IExportOptions, Diagram, MarginModel, FileFormats, ConnectorModel, BasicShapeModel, ShapeStyleModel, SnapSettingsModel, SnapConstraints, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { ItemModel } from '@syncfusion/ej2-splitbuttons';
 import { ClickEventArgs, MenuEventArgs } from '@syncfusion/ej2-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
+import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(PrintAndExport);
 
 /**
@@ -14,7 +16,9 @@ Diagram.Inject(PrintAndExport);
     selector: 'control-content',
     templateUrl: 'print-export.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToolbarModule, DropDownButtonModule, CheckBoxModule, DiagramModule, SBDescriptionComponent]
 })
 
 export class PrintExportDiagramComponent {

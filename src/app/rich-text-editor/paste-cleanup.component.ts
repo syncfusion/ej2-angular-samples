@@ -3,19 +3,26 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { RadioButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { RichTextEditorComponent, ToolbarService,PasteCleanupSettingsModel, LinkService, ImageService } from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorComponent, ToolbarService, PasteCleanupSettingsModel, LinkService, ImageService, RichTextEditorModule, VideoService, AudioService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { PasteCleanupService } from '@syncfusion/ej2-angular-richtexteditor';
-import { HtmlEditorService, CountService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
+import { HtmlEditorService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
 import { Link, Count, HtmlEditor, QuickToolbar } from '@syncfusion/ej2-angular-richtexteditor';
 import { TextBox } from '@syncfusion/ej2-inputs'
-import { DropDownListComponent, FieldSettingsModel } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent, FieldSettingsModel, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { isNullOrUndefined } from '@syncfusion/ej2-base';
+
 
 @Component({
     selector: 'control-content',
     templateUrl: 'paste-cleanup.html',
     styleUrls: ['style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, CountService, QuickToolbarService, PasteCleanupService]
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService],
+    standalone: true,
+    imports: [RichTextEditorModule, DropDownListModule, TextBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class PasteCleanupComponent {
 
@@ -80,12 +87,19 @@ export class PasteCleanupComponent {
     }
 
     public deniedTagChange(): void {
-        this.rteObj.pasteCleanupSettings.deniedTags = (eval)('[' + this.deniedTags.value + ']');
+        this.onPasteCleanupSettingsChange(this.deniedTags.value, 'deniedTags');
     }
     public deniedAttrsChange(): void {
-        this.rteObj.pasteCleanupSettings.deniedAttrs = (eval)('[' + this.deniedAttributes.value + ']');
+        this.onPasteCleanupSettingsChange(this.deniedAttributes.value, 'deniedAttrs');
     }
     public allowStyleChange(): void {
-        this.rteObj.pasteCleanupSettings.allowedStyleProps = (eval)('[' + this.allowedStyleProperties.value + ']');
+        this.onPasteCleanupSettingsChange(this.allowedStyleProperties.value, 'allowedStyleProps');
+    }
+
+    public onPasteCleanupSettingsChange(value: any, settingsProperty: string): void {
+        if (!isNullOrUndefined(value)) {
+            const arrayValue = value.split(',').map((item) => item.trim().replace(/^['"]|['"]$/g, ''));
+            this.rteObj.pasteCleanupSettings[settingsProperty] = arrayValue.filter((prop) => prop !== '');
+        }
     }
 }

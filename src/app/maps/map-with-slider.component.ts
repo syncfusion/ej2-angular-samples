@@ -5,12 +5,13 @@
 //tslint:disable
 // custom code end
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, MapsTooltip, DataLabel, Maps, Marker, ILoadEventArgs, ILoadedEventArgs, Annotations } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, MapsTooltip, DataLabel, Maps, Marker, ILoadEventArgs, ILoadedEventArgs, Annotations, MapsModule } from '@syncfusion/ej2-angular-maps';
 import { Slider, SliderChangeEventArgs  } from '@syncfusion/ej2-inputs';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
-import { MapAjax } from '@syncfusion/ej2-maps'; 
-import north_america from './north-america.json';
-import population from './population-growth.json';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+let north_america: object[] = require('./north-america.json');
+let population: object[] = require('./population-growth.json');
 Maps.Inject(Marker, MapsTooltip, DataLabel, Annotations);
 let colorCodes: string[] = ['#7E9CDC', '#DCD57E', '#7EDCA2', '#6EB5D0', '#A6DC7E', '#DCA87E', '#d075c6'];
 let sliderVal: number | number[] = [-2 , 4];
@@ -18,7 +19,9 @@ declare var require: any;
 @Component({
     selector: 'control-content',
     templateUrl: 'map-with-slider.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [MapsModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class MapsWithSliderComponent {
 @ViewChild('maps')

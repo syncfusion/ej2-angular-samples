@@ -1,7 +1,9 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { EmitType, detach } from '@syncfusion/ej2-base';
-import { UploaderComponent, SelectedEventArgs, FileInfo, RemovingEventArgs } from '@syncfusion/ej2-angular-inputs';
+import { UploaderComponent, SelectedEventArgs, FileInfo, RemovingEventArgs, UploaderModule } from '@syncfusion/ej2-angular-inputs';
 import { createSpinner, showSpinner, hideSpinner } from '@syncfusion/ej2-popups';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Default Uploader Validation Component
@@ -10,7 +12,9 @@ import { createSpinner, showSpinner, hideSpinner } from '@syncfusion/ej2-popups'
     selector: 'control_wrapper',
     templateUrl: 'file-validation.html',
     styleUrls: ['file-validation.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [UploaderModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ValidateUploaderComponent {
     @ViewChild('fileupload')

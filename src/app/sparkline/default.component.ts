@@ -1,12 +1,14 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ISparklineLoadEventArgs, SparklineTheme } from '@syncfusion/ej2-angular-charts';
+import { ISparklineLoadEventArgs, SparklineTheme, SparklineAllModule } from '@syncfusion/ej2-angular-charts';
 /**
  * Sample for default in Sparkline 
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SparklineAllModule]
 })
 export class DefaultSparklineComponent {
     // custom code start

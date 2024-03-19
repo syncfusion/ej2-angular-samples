@@ -1,9 +1,12 @@
 import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { customerData, data } from './data';
 import { DataManager, Query } from '@syncfusion/ej2-data';
-import { SelectionService, RowSelectEventArgs, GridComponent, ToolbarService, ExcelExportService, PdfExportService, ExcelExportProperties, PdfExportProperties } from '@syncfusion/ej2-angular-grids';
+import { SelectionService, RowSelectEventArgs, GridComponent, ToolbarService, ExcelExportService, PdfExportService, ExcelExportProperties, PdfExportProperties, GridModule } from '@syncfusion/ej2-angular-grids';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NgIf } from '@angular/common';
 
 type carType = { CustomerID: string, CustomerName: string, ContactName: string };
 
@@ -11,7 +14,9 @@ type carType = { CustomerID: string, CustomerName: string, ContactName: string }
     selector: 'ejs-gridexport',
     templateUrl: 'multiple-export.html',
     styleUrls: ['master-detail.style.css'],
-    providers: [SelectionService, ToolbarService, ExcelExportService, PdfExportService]
+    providers: [SelectionService, ToolbarService, ExcelExportService, PdfExportService],
+    standalone: true,
+    imports: [GridModule, NgIf, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class MultipleExportComponent implements OnInit {
     public data: Object[];

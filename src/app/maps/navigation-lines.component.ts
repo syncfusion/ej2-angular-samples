@@ -5,17 +5,20 @@
 //tslint:disable
 // custom code end
 import { Component, ViewEncapsulation } from '@angular/core';
-import { MapsTheme, Maps, Marker, Zoom, NavigationLine, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
-import { MapAjax } from '@syncfusion/ej2-maps';
-import { penisular_location, penisular_marker } from './map-location'; 
+import { MapsTheme, Maps, Marker, Zoom, NavigationLine, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
+import { penisular_location, penisular_marker } from './map-location';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component'; 
 
 Maps.Inject(Marker, Zoom, NavigationLine);
 declare var require: any;
-import worldMap from './world-map.json';
+let worldMap: object[] = require('./world-map.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'navigation-lines.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, SBDescriptionComponent]
 })
 export class MapsNavigationLineComponent {
     

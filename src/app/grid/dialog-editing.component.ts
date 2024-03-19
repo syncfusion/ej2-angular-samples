@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { orderDetails } from './data';
-import { EditService, ToolbarService, PageService } from '@syncfusion/ej2-angular-grids';
+import { EditService, ToolbarService, PageService, SortService, GridModule } from '@syncfusion/ej2-angular-grids';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej-griddialogedit',
     templateUrl: 'dialog-editing.html',
-    providers: [ToolbarService, EditService, PageService]
+    providers: [ToolbarService, EditService, PageService, SortService],
+    standalone: true,
+    imports: [GridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DialogEditComponent implements OnInit {
     public data: Object[];

@@ -1,14 +1,18 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
-import { AccumulationChartComponent, AccumulationChart, IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-angular-charts';
+import { AccumulationChartComponent, AccumulationChart, IAccLoadedEventArgs, AccumulationTheme, AccumulationChartAllModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Sample for Pie chart
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'default-pie.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, AccumulationChartAllModule, ChartAllModule,SBDescriptionComponent]
 })
 export class DefaultPieComponent {
     public data: Object[] = Browser.isDevice ? [

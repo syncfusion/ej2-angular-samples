@@ -1,18 +1,19 @@
 import { Component, ViewEncapsulation, OnDestroy, ViewChild } from '@angular/core';
-import {
-  EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService,
-  ResizeService, DragAndDropService, ScheduleComponent, CallbackFunction
-} from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService, ScheduleComponent, CallbackFunction, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { compile } from '@syncfusion/ej2-base';
-import { ToastComponent, ToastPositionModel, ToastAnimationSettingsModel } from '@syncfusion/ej2-angular-notifications';
+import { ToastComponent, ToastPositionModel, ToastAnimationSettingsModel, ToastModule } from '@syncfusion/ej2-angular-notifications';
 import { getReminderEvents } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'reminder.html',
-  providers: [DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService],
-  encapsulation: ViewEncapsulation.None
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'reminder.html',
+    providers: [DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ScheduleModule, ToastModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ReminderComponent implements OnDestroy {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
-import { EditSettingsModel, GridComponent } from '@syncfusion/ej2-angular-grids';
+import { EditSettingsModel, EditService, GridComponent, GridModule } from '@syncfusion/ej2-angular-grids';
+import { FabModule } from '@syncfusion/ej2-angular-buttons';
 
 
 @Component({
     selector: 'control-content',
     templateUrl: 'overview.html',
     styleUrls: ['overview.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [GridModule, FabModule],
+    providers: [EditService]
 })
 
 export class OverviewFABComponent implements OnInit {

@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
 import { conditionalFormatData } from './data';
-import { SpreadsheetComponent, getFormatFromType } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent, getFormatFromType, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Conditional Formatting Spreadsheet Component
  */
@@ -8,7 +10,9 @@ import { SpreadsheetComponent, getFormatFromType } from '@syncfusion/ej2-angular
     selector: 'control-content',
     templateUrl: 'conditional-formatting.html',
     styleUrls: ['spreadsheet.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SpreadsheetModule, SBDescriptionComponent]
 })
 
 export class ConditionalFormattingController {

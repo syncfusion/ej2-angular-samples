@@ -1,22 +1,23 @@
 import { Component, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { extend } from '@syncfusion/ej2-base';
-import { MultiSelectChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import {
-  ScheduleComponent, EventSettingsModel, View, DayService, WeekService, MonthService,
-  EventRenderedArgs, TimelineViewsService, TimelineMonthService, WorkHoursModel, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { MultiSelectChangeEventArgs, MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ScheduleComponent, EventSettingsModel, View, DayService, WeekService, MonthService, EventRenderedArgs, TimelineViewsService, TimelineMonthService, WorkHoursModel, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { employeeEventData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Schedule hide weekend
  */
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'hide-weekend.html',
-  providers: [DayService, WeekService, MonthService, TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService],
-  encapsulation: ViewEncapsulation.None
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'hide-weekend.html',
+    providers: [DayService, WeekService, MonthService, TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ScheduleModule, MultiSelectModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class HideWeekEndComponent {
   public selectedDate: Date = new Date(2021, 1, 15);

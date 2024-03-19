@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { GanttComponent, VirtualScroll } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, VirtualScroll, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
 import { virtualData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttvirtualscroll',
-    templateUrl: 'virtual-scroll.html'
+    templateUrl: 'virtual-scroll.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
 })
 
 export class GanttVirtualScrollComponent implements OnInit {

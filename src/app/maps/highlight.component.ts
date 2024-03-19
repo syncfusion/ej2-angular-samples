@@ -2,19 +2,22 @@
  *  Highlighted region map sample
  */
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, Maps, Marker, Zoom, ILoadEventArgs, MapsTooltip } from '@syncfusion/ej2-angular-maps';
-import { MapAjax } from '@syncfusion/ej2-maps';
+import { MapsTheme, Maps, Marker, Zoom, ILoadEventArgs, MapsTooltip, MapsModule } from '@syncfusion/ej2-angular-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 Maps.Inject(Marker, Zoom, MapsTooltip);
 // custom code start
 //tslint:disable:max-func-body-length
 // custom code end
 declare var require: any;
-import oklahoma from './oklahoma.json';
+let oklahoma: object[] = require('./oklahoma.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'highlight.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, SBDescriptionComponent]
 })
 export class MapsHighlightComponent {
     public load = (args: ILoadEventArgs) => {
@@ -43,7 +46,7 @@ export class MapsHighlightComponent {
                     animationDuration: 0,
                     visible: true,
                     shape: 'Image',
-                    imageUrl: './assets/maps/images/ballon.png',
+                    imageUrl: 'https://ej2.syncfusion.com/angular/demos/assets/maps/images/ballon.png',
                     fill: '#000080',
                     border: {
                         color: 'transparent'
@@ -208,9 +211,6 @@ export class MapsHighlightComponent {
                         },
                         {
                             longitude: -97.1191406, latitude: 34.5042932, name: 'Davis'
-                        },
-                        {
-                            longitude: -98.0310059, latitude: 37.1537496, name: 'Anthony'
                         },
                         {
                             longitude: -98.3564758, latitude: 36.7542898, name: 'Cherokee'

@@ -1,0 +1,31 @@
+<div id="action-description">
+    <p>
+        This sample displays the browser market share using a 3D pie chart with selection and highlight behavior.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-circularchart3d style='display:block;' align='center' (load)='load($event)' selectionMode='Point' selectionPattern='DiagonalBackward' isMultiSelect='true'
+            tilt='-30' highlightMode='Point' [title]='title' [tooltip]="tooltip" [legendSettings]="legendSettings">
+            <e-circularchart3d-series-collection>
+                <e-circularchart3d-series [dataSource]='dataSource' xName='x' yName='y' [radius]='radius' [dataLabel]='dataLabel'>
+                </e-circularchart3d-series>
+            </e-circularchart3d-series-collection>
+        </ejs-circularchart3d>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this sample, you can select and highlight any point in the chart by clicking on or touching it. Additionally,
+        you have the option to select and highlight a point during the initial loading of the chart using the
+        <code>selectedDataIndexes</code> option.
+    </p>
+    <p>
+        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover over a point or tap on a
+        point on touch-enabled devices.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        3D circular chart component features are segregated into individual feature-wise modules. To use selection, you need to inject the <code>CircularChartSelection3DService</code> into the <code>&#64;NgModule.providers</code> section.
+    </p>
+</div>

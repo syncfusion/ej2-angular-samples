@@ -3,23 +3,28 @@
 </div>
 <div id="description">
     <p>The pivot table provides an optimized way to render rows and columns inside the view-port alone without
-        calculating the value of the entire pivot.
-        To enable virtual scrolling, set <code>enableVirtualization</code> property to true.
+        calculating the value of the entire pivot. To enable virtual scrolling, set <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/pivotview/#enablevirtualization">
+            enableVirtualization</a> property to <b>true</b>.
     </p>
     <p>
-        <strong>NOTE:</strong> The <code>height</code> and <code>width</code> properties must be defined when enabling
-        virtual
-        scrolling option.
+        In this sample, the <code>allowSinglePage</code> property is enabled by default, allowing
+        only the current page data to be displayed in the pivot table view. Previously, we were showing both the previous
+        and next pages along with the current page. The recent change has been introduced to enhance performance.
     </p>
-    <br />
     <p>
         <strong>Injecting Module:</strong>
     </p>
     <p>
-        The pivot table features are segregated into individual modules. To use the virtual scrolling option,
-        inject
+        The pivot table features are segregated into individual modules. To use the virtual scrolling option, we need to inject the
         <code>VirtualScrollService</code> module using the
-        <code>@NgModule.providers</code> section.
+        <code>&#64;NgModule.providers</code> section.
+    </p>
+    <br />
+    <p>
+        More information on the virtual scrolling can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/virtual-scrolling">
+            documentation section</a>.
     </p>
 </div>
 <div class="control-section" style="overflow:auto;">
@@ -31,7 +36,7 @@
         <span id="performanceTime">Time Taken: 0 sec</span>
     </div>
     <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings [width]='width' height='300' enableVirtualization='true'
-        [gridSettings]='gridSettings'  (dataBound)='ondataBound($event)'>
+        [gridSettings]='gridSettings' (dataBound)='ondataBound($event)' [virtualScrollSettings]='virtualScrollSettings'>
     </ejs-pivotview>
 </div>
 <style>

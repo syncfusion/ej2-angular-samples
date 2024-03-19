@@ -1,12 +1,14 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, FilterType, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView, FilterType, IDataSet, PivotViewModule } from '@syncfusion/ej2-angular-pivotview';
 import { MultiSelect, ChangeEventArgs, SelectEventArgs, RemoveEventArgs, PopupEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import { CheckBoxSelection } from '@syncfusion/ej2-angular-dropdowns';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 import { FilterModel } from '@syncfusion/ej2-pivotview/src/model/datasourcesettings-model';
-import { DropDownListComponent, MultiSelectComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { DropDownListComponent, MultiSelectComponent, DropDownListModule, MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 MultiSelect.Inject(CheckBoxSelection);
 /**
@@ -19,7 +21,9 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     selector: 'ej2-pivotview-container',
     templateUrl: 'filtering.html',
     encapsulation: ViewEncapsulation.None,
-    styleUrls: ['filtering.css']
+    styleUrls: ['filtering.css'],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule, MultiSelectModule, ButtonModule]
 })
 
 export class FilteringComponent implements OnInit {

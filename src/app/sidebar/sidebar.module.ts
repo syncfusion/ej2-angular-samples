@@ -11,7 +11,7 @@ import { SidebarModule, MenuAllModule, TreeViewAllModule, ToolbarAllModule} from
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { TextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
-import { SharedModule } from '../common/shared.module';
+
 
 export const sidebarAppRoutes: Object[] = [
     { path: ':theme/sidebar/default', component: DefaultSidebarComponent, name: 'Default Functionalities', category: 'Sidebar' },
@@ -22,18 +22,4 @@ export const sidebarAppRoutes: Object[] = [
     { path: ':theme/sidebar/sidebar-list', component: SidebarListComponent, name: 'Sidebar With ListView', category: 'Sidebar' },
     
 ];
-export const SidebarRouter: ModuleWithProviders<any> = RouterModule.forChild(sidebarAppRoutes);
-@NgModule({
-    imports: [SidebarRouter, SidebarModule, SharedModule, ToolbarAllModule, TextBoxAllModule, RadioButtonModule, MenuAllModule, DropDownListModule, ButtonModule, TreeViewAllModule, ListViewAllModule],
-    declarations: [
-        DefaultSidebarComponent,
-        DockSidebarComponent,
-        ApiSidebarComponent,
-        SidebarListComponent,
-        SidebarMenuComponent,
-        ResponsivePanelComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class SidebarSampleModule {
-}
+export const SidebarSampleModule: ModuleWithProviders<any> = RouterModule.forChild(sidebarAppRoutes);

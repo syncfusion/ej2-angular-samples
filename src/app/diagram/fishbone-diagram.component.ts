@@ -1,8 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import {
     NodeModel, DecoratorModel, DiagramTools, ConnectorModel, SnapSettingsModel
 } from '@syncfusion/ej2-diagrams';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Fishbone functions
@@ -13,13 +15,14 @@ import {
     selector: 'control-content',
     templateUrl: 'fishbone-diagram.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, SBDescriptionComponent]
 })
 export class FishboneDiagramComponent {
     @ViewChild('diagram')
     public diagram: DiagramComponent;
     public tool = DiagramTools.ZoomPan;
-    //Initializes diagram nodes
     public nodes: NodeModel[] = [
         {
             id: 'Equipment', width: 120, height: 40, offsetX: 300, offsetY: 80,

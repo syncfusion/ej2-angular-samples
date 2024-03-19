@@ -1,14 +1,19 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { HeatMap, Tooltip, ILoadedEventArgs, HeatMapTheme, ISelectedEventArgs, SelectedCellDetails, SeriesModel, HeatMapComponent } from '@syncfusion/ej2-angular-heatmap';
-import { ChartTheme, Chart, ChartComponent, ColumnSeries, Category, Legend, DataLabel, Tooltip as chartTooltip, ILoadedEventArgs as IChartLoadedEventsArgs, SeriesMarkerBorderModel } from '@syncfusion/ej2-angular-charts';
+import { HeatMap, Tooltip, ILoadedEventArgs, HeatMapTheme, ISelectedEventArgs, SelectedCellDetails, SeriesModel, HeatMapComponent, HeatMapModule } from '@syncfusion/ej2-angular-heatmap';
+import { ChartTheme, Chart, ChartComponent, ColumnSeries, Category, Legend, DataLabel, Tooltip as chartTooltip, ILoadedEventArgs as IChartLoadedEventsArgs, SeriesMarkerBorderModel, ChartModule } from '@syncfusion/ej2-angular-charts';
 import { SampleDataSource } from './cell-seletion-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 HeatMap.Inject(Tooltip);
 Chart.Inject(ColumnSeries, DataLabel, Category, Legend, chartTooltip);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'cell-selection.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [HeatMapModule, ChartModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class HeatmapCellSelectionComponent {
     @ViewChild('heatmap')

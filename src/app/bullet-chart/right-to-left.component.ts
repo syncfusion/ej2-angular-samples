@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';
-import { BulletTooltipSettingsModel, AnimationModel, FontModel } from '@syncfusion/ej2-angular-charts';
+import { BulletTooltipSettingsModel, AnimationModel, FontModel, BulletChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { IBulletLoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 /**
  * RTl sample
@@ -8,7 +8,9 @@ import { IBulletLoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 @Component({
     selector: 'control-content',
     templateUrl: 'right-to-left.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [BulletChartAllModule]
 })
 
 export class BulletChartRtlComponent {

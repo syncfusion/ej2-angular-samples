@@ -1,13 +1,16 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ILoadedEventArgs, LinearGaugeTheme, LinearGauge, ExportType } from '@syncfusion/ej2-lineargauge';
-import { PrintService, PdfExportService, ImageExportService } from '@syncfusion/ej2-angular-lineargauge';
+import { PrintService, PdfExportService, ImageExportService, LinearGaugeModule } from '@syncfusion/ej2-angular-lineargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'print-export.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [PrintService, PdfExportService, ImageExportService]
+    providers: [PrintService, PdfExportService, ImageExportService],
+    standalone: true,
+    imports: [LinearGaugeModule, ButtonModule]
 })
 
 export class ExportComponent {

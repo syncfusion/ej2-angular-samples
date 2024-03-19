@@ -2,14 +2,20 @@
  * Rich Text Editor Blog-post sample
  */
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { RichTextEditorComponent, ToolbarService, LinkService, ImageService } from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorComponent, ToolbarService, LinkService, ImageService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { HtmlEditorService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
 import { isNullOrUndefined as isNOU } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { FormsModule } from '@angular/forms';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
     templateUrl: 'blog-posting.html',
     styleUrls: ['blog-posting.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService]
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, FormsModule, RichTextEditorModule, ButtonModule, SBDescriptionComponent]
 })
 export class BlogPostComponent {
 

@@ -7,14 +7,18 @@ import { RuleModel , RuleChangeEventArgs} from '@syncfusion/ej2-querybuilder';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
 import { hardwareData } from './data-source';
 import { DataManager, Query, ReturnOption, Predicate } from '@syncfusion/ej2-data';
-import { QueryBuilderComponent } from '@syncfusion/ej2-angular-querybuilder';
-import { GridComponent, PageService, SelectionService } from '@syncfusion/ej2-angular-grids';
+import { QueryBuilderComponent, QueryBuilderModule } from '@syncfusion/ej2-angular-querybuilder';
+import { GridComponent, PageService, SelectionService, GridModule } from '@syncfusion/ej2-angular-grids';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'grid.html',
     styleUrls: ['grid.css'],
-    providers: [PageService, SelectionService]
+    providers: [PageService, SelectionService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, QueryBuilderModule, GridModule, SBDescriptionComponent]
 })
 
 export class GridQueryBuilderComponent {

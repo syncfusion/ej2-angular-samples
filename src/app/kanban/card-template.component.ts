@@ -1,13 +1,21 @@
 import { Component, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import { KanbanComponent, CardSettingsModel,DialogEventArgs } from '@syncfusion/ej2-angular-kanban';
+import { KanbanComponent, CardSettingsModel,DialogEventArgs, KanbanModule } from '@syncfusion/ej2-angular-kanban';
 import { kanbanPizzaData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NgIf, NgClass } from '@angular/common';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 
 @Component({
   selector: 'app-card-template',
   templateUrl: 'card-template.html',
   styleUrls: ['card-template.style.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  standalone: true,
+  imports: [KanbanModule, NgIf, NgClass, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule, TextBoxModule, DatePickerModule]
 })
 export class CardTemplateComponent {
   @ViewChild('kanbanObj') kanbanObj: KanbanComponent;

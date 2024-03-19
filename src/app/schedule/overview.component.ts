@@ -1,32 +1,31 @@
 import { Component, ViewEncapsulation, Inject, ViewChild, AfterViewChecked } from '@angular/core';
-import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
-import { SelectedEventArgs, TextBoxComponent } from '@syncfusion/ej2-angular-inputs';
-import {
-  ScheduleComponent, GroupModel, DayService, WeekService, WorkWeekService, MonthService, YearService, AgendaService,
-  TimelineViewsService, TimelineMonthService, TimelineYearService, View, EventSettingsModel, Timezone, CurrentAction,
-  CellClickEventArgs, ResourcesModel, EJ2Instance, PrintService, ExcelExportService, ICalendarExportService, CallbackFunction, PopupOpenEventArgs
-} from '@syncfusion/ej2-angular-schedule';
+import { ItemModel, DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
+import { SelectedEventArgs, TextBoxComponent, UploaderModule } from '@syncfusion/ej2-angular-inputs';
+import { ScheduleComponent, GroupModel, DayService, WeekService, WorkWeekService, MonthService, YearService, AgendaService, TimelineViewsService, TimelineMonthService, TimelineYearService, ResizeService, DragAndDropService, View, EventSettingsModel, Timezone, CurrentAction, CellClickEventArgs, ResourcesModel, EJ2Instance, PrintService, ExcelExportService, ICalendarExportService, ICalendarImportService, CallbackFunction, PopupOpenEventArgs, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { addClass, extend, removeClass, closest, remove, isNullOrUndefined, Internationalization, compile } from '@syncfusion/ej2-base';
-import { ChangeEventArgs as SwitchEventArgs, SwitchComponent } from '@syncfusion/ej2-angular-buttons';
-import { MultiSelectComponent, ChangeEventArgs, MultiSelectChangeEventArgs, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs as SwitchEventArgs, SwitchComponent, ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { MultiSelectComponent, ChangeEventArgs, MultiSelectChangeEventArgs, DropDownListComponent, MultiSelectModule, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { DataManager, Predicate, Query } from '@syncfusion/ej2-data';
-import {
-  ClickEventArgs, ContextMenuComponent, MenuItemModel, BeforeOpenCloseMenuEventArgs, MenuEventArgs
-} from '@syncfusion/ej2-angular-navigations';
+import { ClickEventArgs, ContextMenuComponent, MenuItemModel, BeforeOpenCloseMenuEventArgs, MenuEventArgs, AppBarModule, ToolbarModule, ContextMenuModule } from '@syncfusion/ej2-angular-navigations';
 import { ChangeEventArgs as TimeEventArgs } from '@syncfusion/ej2-calendars';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { TimePickerModule } from '@syncfusion/ej2-angular-calendars';
 declare var moment: any;
 
 /**
  * Sample for overview
  */
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'overview.html',
-  styleUrls: ['overview.style.css'],
-  providers: [DayService, WeekService, WorkWeekService, MonthService, YearService, AgendaService,
-    TimelineViewsService, TimelineMonthService, TimelineYearService, PrintService, ExcelExportService, ICalendarExportService],
-  encapsulation: ViewEncapsulation.None
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'overview.html',
+    styleUrls: ['overview.style.css'],
+    providers: [DayService, WeekService, WorkWeekService, MonthService, YearService, AgendaService,
+        TimelineViewsService, TimelineMonthService, TimelineYearService, ResizeService, DragAndDropService, PrintService, ExcelExportService, ICalendarExportService, ICalendarImportService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [AppBarModule, ButtonModule, UploaderModule, DropDownButtonModule, ToolbarModule, CheckBoxModule, ScheduleModule, ContextMenuModule, MultiSelectModule, DropDownListModule, TimePickerModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class OverviewComponent implements AfterViewChecked {
   @ViewChild('scheduleObj') scheduleObj: ScheduleComponent;
@@ -390,7 +389,7 @@ export class OverviewComponent implements AfterViewChecked {
       case 3:
         return '<img class="weather-image" src="./assets/schedule/images/weather-clouds.svg"/>';
       case 4:
-        return '<img class="weather-image" src="./assets/schedule/images/weather-rain.svg"/';
+        return '<img class="weather-image" src="./assets/schedule/images/weather-rain.svg"/>';
       case 5:
         return '<img class="weather-image" src="./assets/schedule/images/weather-clear.svg"/>';
       case 6:
@@ -419,9 +418,9 @@ export class OverviewComponent implements AfterViewChecked {
     let resourcePredicate: Predicate;
     for (const value of args.value) {
       if (resourcePredicate) {
-        resourcePredicate = resourcePredicate.or(new Predicate('CalendarId', 'equal', value));
+        resourcePredicate = resourcePredicate.or(new Predicate('CalendarId', 'equal', value as number));
       } else {
-        resourcePredicate = new Predicate('CalendarId', 'equal', value);
+        resourcePredicate = new Predicate('CalendarId', 'equal', value as number);
       }
     }
     this.scheduleObj.resources[0].query = resourcePredicate ? new Query().where(resourcePredicate) :

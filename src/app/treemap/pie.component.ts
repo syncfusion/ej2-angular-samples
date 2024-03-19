@@ -2,17 +2,21 @@
  * Pie sample
  */
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { TreeMap, ILoadedEventArgs, TreeMapTooltip, IResizeEventArgs } from '@syncfusion/ej2-angular-treemap';
+import { TreeMap, ILoadedEventArgs, TreeMapTooltip, IResizeEventArgs, TreeMapModule } from '@syncfusion/ej2-angular-treemap';
 import { Continent_Data } from './pie-chart';
 import { AccumulationChart, PieSeries, DataLabel, AccumulationTooltip } from '@syncfusion/ej2-charts';
 import { ILoadEventArgs, TreeMapTheme, ITreeMapTooltipRenderEventArgs } from '@syncfusion/ej2-angular-treemap';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 AccumulationChart.Inject(AccumulationChart, PieSeries, DataLabel, AccumulationTooltip);
 TreeMap.Inject(TreeMapTooltip);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'pie.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class TreemapPieComponent {

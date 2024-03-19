@@ -1,16 +1,17 @@
 import { Component, ViewChild } from '@angular/core';
 import { scheduleData } from './data';
 import { extend } from '@syncfusion/ej2-base';
-import {
-  ScheduleComponent, EventSettingsModel, EventRenderedArgs, DayService, WeekService,
-  WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, EventSettingsModel, EventRenderedArgs, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'keyboard-interaction.html',
-  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'keyboard-interaction.html',
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class KeyboardComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

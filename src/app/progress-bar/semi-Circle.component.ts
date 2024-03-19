@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ProgressBar, ILoadedEventArgs, ProgressTheme, AnimationModel } from '@syncfusion/ej2-progressbar';
+import { ProgressBarAllModule } from '@syncfusion/ej2-angular-progressbar';
 
 /**
  * RTl sample
@@ -7,7 +8,9 @@ import { ProgressBar, ILoadedEventArgs, ProgressTheme, AnimationModel } from '@s
 @Component({
     selector: 'control-content',
     templateUrl: 'semi-Circle.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ProgressBarAllModule]
 })
 
 export class ProgressBarSemiComponent {

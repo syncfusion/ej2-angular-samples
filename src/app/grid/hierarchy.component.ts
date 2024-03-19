@@ -1,17 +1,20 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { employeeData, orderDatas, customerData } from './data';
-import { DetailRowService } from '@syncfusion/ej2-angular-grids';
+import { DetailRowService, SortService, PageService, GridModule } from '@syncfusion/ej2-angular-grids';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej-gridhierarchy',
     templateUrl: 'hierarchy.html',
-    providers: [DetailRowService]
+    providers: [DetailRowService, SortService, PageService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GridModule, SBDescriptionComponent]
 })
 export class HierarchyComponent implements OnInit {
     public parentData: Object[];
     public childGrid: any;
     public secondChildGrid: any;
-
 
     ngOnInit(): void {
         this.parentData = employeeData;

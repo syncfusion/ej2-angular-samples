@@ -1,13 +1,19 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { UploaderComponent } from '@syncfusion/ej2-angular-inputs';
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { UploaderComponent, UploaderModule } from '@syncfusion/ej2-angular-inputs';
+import { DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
 import { isNullOrUndefined, EmitType } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'sample',
-  styleUrls: ['file-upload-with-template-driven-forms.css'],
-  templateUrl: 'file-upload-with-template-driven-forms.html',
-  encapsulation: ViewEncapsulation.None
+    selector: 'sample',
+    styleUrls: ['file-upload-with-template-driven-forms.css'],
+    templateUrl: 'file-upload-with-template-driven-forms.html',
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [FormsModule, NgIf, UploaderModule, DialogModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class TemplateDrivenComponent {

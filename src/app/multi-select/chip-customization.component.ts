@@ -1,11 +1,15 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { TaggingEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { TaggingEventArgs, MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'chip-customization.html',
     styleUrls: ['chip-customization.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MultiSelectModule, SBDescriptionComponent]
 })
 export class ChipCustomizeMultiSelectComponent {
     // define the JSON of data

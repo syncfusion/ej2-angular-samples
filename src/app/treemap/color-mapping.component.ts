@@ -5,7 +5,7 @@
 //tslint:disable
 // custom code end
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { TreeMap, TreeMapTooltip, LayoutMode, TreeMapAjax, ILoadEventArgs, TreeMapTheme } from '@syncfusion/ej2-angular-treemap';
+import { TreeMap, TreeMapTooltip, LayoutMode, TreeMapAjax, ILoadEventArgs, TreeMapTheme, TreeMapModule } from '@syncfusion/ej2-angular-treemap';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
 import { EmitType } from '@syncfusion/ej2-base';
@@ -15,7 +15,9 @@ TreeMap.Inject(TreeMapTooltip);
 @Component({
     selector: 'control-content',
     templateUrl: 'color-mapping.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeMapModule]
 })
 export class TreemapcolorMappingComponent {
     @ViewChild('treemap')

@@ -2,16 +2,21 @@ import { Component, ViewChild, ViewEncapsulation, HostListener, Inject } from '@
 import { FileMenuSettingsModel, RibbonButtonSettingsModel, RibbonSplitButtonSettingsModel, RibbonComboBoxSettingsModel, RibbonDropDownSettingsModel, RibbonItemSize, RibbonCheckBoxSettingsModel, RibbonColorPickerSettingsModel, LauncherClickEventArgs, DisplayMode, FileMenuEventArgs, RibbonGroupButtonSettingsModel, RibbonGroupButtonSelection  } from '@syncfusion/ej2-ribbon';
 import { MenuItemModel } from "@syncfusion/ej2-navigations";
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
-import { SliderChangeEventArgs, SliderComponent } from '@syncfusion/ej2-angular-inputs';
-import { ToastComponent } from '@syncfusion/ej2-angular-notifications';
-import { RibbonComponent } from '@syncfusion/ej2-angular-ribbon';
+import { SliderChangeEventArgs, SliderComponent, SliderAllModule } from '@syncfusion/ej2-angular-inputs';
+import { ToastComponent, ToastAllModule } from '@syncfusion/ej2-angular-notifications';
+import { RibbonComponent, RibbonAllModule } from '@syncfusion/ej2-angular-ribbon';
 import { SelectEventArgs as SelectListEventArgs } from "@syncfusion/ej2-lists";
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
 
 @Component({
-  selector: 'control-content',
-  templateUrl: 'resize.html',
-  styleUrls: ['resize.component.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'resize.html',
+    styleUrls: ['resize.component.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [RibbonAllModule, SliderAllModule, ToastAllModule, ListViewAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class RibbonResizeComponent {
   @ViewChild('toast') toastObj: ToastComponent;
@@ -30,7 +35,7 @@ export class RibbonResizeComponent {
   public shapeOptions: ItemModel[] = [{ text: "Lines" }, { text: "Rectangles" }, { text: "Basic Arrows" }, { text: "Basic Shapes" }, { text: "FlowChart" }];
   public headerOptions: ItemModel[] = [{ text: "Insert Header" }, { text: "Edit Header" }, { text: "Remove Header" }];
   public footerOptions: ItemModel[] = [{ text: "Insert Footer" }, { text: "Edit Footer" }, { text: "Remove Footer" }];
-  public pageOptions: ItemModel[] = [{ text: "Insert Top of page" }, { text: "Format Page Number" }, { text: "Format Page Number" }];
+  public pageOptions: ItemModel[] = [{ text: "Insert Top of page" }, { text: "Insert Bottom of page" }, { text: "Format Page Number" }];
   public linkOptions: ItemModel[] = [{ text: "Insert Link", iconCss: "e-icons e-link" }, { text: "Recent Links", iconCss: "e-icons e-clock" }, { text: "Bookmarks", iconCss: "e-icons e-bookmark" }];
 
   public groupButtonMultiple: RibbonGroupButtonSettingsModel = {

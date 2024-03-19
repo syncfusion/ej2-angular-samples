@@ -60,17 +60,4 @@ export const floatingActionButtonAppRoutes: Object[] = [
     },
 ];
 
-export const fabRouter: ModuleWithProviders<any> = RouterModule.forChild(floatingActionButtonAppRoutes);
-
-@NgModule({
-    imports: [fabRouter, FabModule, GridModule, BrowserModule],
-    declarations: [
-        OverviewFABComponent,
-        DefaultFABComponent,
-        PositionFABComponent,
-        StylesFABComponent
-    ],
-    providers: [EditService],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class FloatingActionButtonSampleModule { } 
+export const FloatingActionButtonSampleModule: ModuleWithProviders<any> = RouterModule.forChild(floatingActionButtonAppRoutes);

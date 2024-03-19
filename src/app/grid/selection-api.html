@@ -8,7 +8,7 @@
         </e-items>
     </ejs-toolbar>
     <br/>
-    <ejs-grid #grid [dataSource]='data' allowPaging='true' [enableHover]="false" [allowSelection]="true" [selectionSettings]="selectOptions" (rowSelecting)="selectingEvent($event)" (cellSelecting)="selectingEvent($event)">
+    <ejs-grid #grid [dataSource]='data' allowPaging='true' [allowSorting]='true' [enableHover]="false" [allowSelection]="true" [selectionSettings]="selectOptions" (rowSelecting)="selectingEvent($event)" (cellSelecting)="selectingEvent($event)">
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
@@ -64,7 +64,7 @@
         <p style="font-weight: 500">Injecting Module:</p>
         <p>
             Grid component features are segregated into individual feature-wise modules. To use selection feature, we need to inject
-            <code>SelectionService</code> into the <code>@NgModule.providers</code> section.
+            <code>SelectionService</code> into the <code>&#64;NgModule.providers</code> section.
         </p>
           <p>
             More information on the selection configuration can be found in this

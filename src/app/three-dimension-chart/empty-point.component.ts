@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ChartTheme, Chart3DLoadedEventArgs } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
-import { Chart3DPointRenderEventArgs } from '@syncfusion/ej2-angular-charts';
+import { Chart3DPointRenderEventArgs, Chart3DAllModule } from '@syncfusion/ej2-angular-charts';
 import {
     pointFabricColors, pointMaterialDarkColors, pointMaterialColors, pointBootstrap5DarkColors, pointBootstrap5Colors,
     pointBootstrapColors, pointHighContrastColors, pointFluentDarkColors, pointFluentColors, pointTailwindDarkColors,
@@ -14,7 +14,9 @@ import {
 @Component({
     selector: 'control-content',
     templateUrl: 'empty-point.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [Chart3DAllModule]
 })
 
 export class EmptyPointColumnComponent {

@@ -1,10 +1,12 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ToolbarService, DocumentEditorContainerComponent } from '@syncfusion/ej2-angular-documenteditor';
+import { ToolbarService, DocumentEditorContainerComponent, DocumentEditorContainerModule , DocumentEditorSettingsModel } from '@syncfusion/ej2-angular-documenteditor';
 import { TitleBar } from './title-bar';
 import { dataProtection, WEB_API_ACTION } from './data';
-import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { ColorPickerComponent, ColorPickerEventArgs } from '@syncfusion/ej2-angular-inputs';
+import { ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ColorPickerComponent, ColorPickerEventArgs, ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Document Editor Component
  */
@@ -12,7 +14,9 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'document-protection.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService]
+    providers: [ToolbarService],
+    standalone: true,
+    imports: [DocumentEditorContainerModule, DropDownListModule, ColorPickerModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DocumentEditorProtectionComponent {
     public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
@@ -22,7 +26,7 @@ export class DocumentEditorProtectionComponent {
     public colorpicker: ColorPickerComponent;
     public culture: string = 'en-US';
     titleBar: TitleBar;
-
+    public settings: DocumentEditorSettingsModel = { showRuler:true };
     userList: string[] = ['engineer@mycompany.com', 'manager@mycompany.com'];
 
     currentUser: string = 'engineer@mycompany.com';

@@ -1,5 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Query, DataManager, ODataV4Adaptor } from '@syncfusion/ej2-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { TreeViewModule } from '@syncfusion/ej2-angular-navigations';
 /**
  * TreeView Remote data sample
  */
@@ -7,7 +10,9 @@ import { Query, DataManager, ODataV4Adaptor } from '@syncfusion/ej2-data';
     selector: 'control-content',
     templateUrl: 'remote-data.html',
     styleUrls: ['remote-data.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class RemoteTreeViewComponent {
     // Use data manager to get tree data from remote source

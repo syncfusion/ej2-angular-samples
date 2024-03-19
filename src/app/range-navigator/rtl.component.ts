@@ -3,6 +3,7 @@ import { ChartTheme, IRangeLoadedEventArgs, DateTime, AreaSeries, IChangedEventA
     RangeTooltip, Chart } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { axesData } from './stock-data';
+import { RangeNavigatorAllModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 
 /**
  * Sample for range navigator with RTL support
@@ -17,7 +18,9 @@ let borderColor: string[] = ['#6355C7', '#8F80F4', '#5A61F6', '#8B5CF6', '#00bda
 @Component({
     selector: 'control-content',
     templateUrl: 'rtl.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [RangeNavigatorAllModule, ChartAllModule]
 })
 
 export class RTLComponent {

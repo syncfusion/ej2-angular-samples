@@ -1,10 +1,13 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, GaugeTheme, IAxisLabelRenderEventArgs } from '@syncfusion/ej2-angular-circulargauge';
+import { ILoadedEventArgs, GaugeTheme, IAxisLabelRenderEventArgs, CircularGaugeModule, AnnotationsService } from '@syncfusion/ej2-angular-circulargauge';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'sleep-tracker.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [CircularGaugeModule],
+    providers: [AnnotationsService]
 })
 
 export class SleepTrackerComponent {

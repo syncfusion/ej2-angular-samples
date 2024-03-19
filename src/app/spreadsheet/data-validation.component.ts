@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SpreadsheetComponent, getFormatFromType } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent, getFormatFromType, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
 import { grossPay } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Data Validation Spreadsheet Controller
  */
@@ -8,7 +10,9 @@ import { grossPay } from './data';
     selector: 'control-content',
     templateUrl: 'data-validation.html',
     styleUrls: ['spreadsheet.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SpreadsheetModule, SBDescriptionComponent]
 })
 
 export class DataValidationComponent {

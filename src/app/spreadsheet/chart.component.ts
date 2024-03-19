@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SpreadsheetComponent, getFormatFromType, ChartModel } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent, getFormatFromType, ChartModel, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
 import { GDPData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Chart sample with import and export support.
  */
@@ -8,7 +10,9 @@ import { GDPData } from './data';
     selector: 'control-content',
     templateUrl: 'chart.html',
     styleUrls: ['spreadsheet.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SpreadsheetModule, SBDescriptionComponent]
 })
 
 export class ChartController {

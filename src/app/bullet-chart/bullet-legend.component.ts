@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';
 // tslint:disable-next-line:max-line-length
-import { BulletTooltipSettingsModel, AnimationModel, BulletChartComponent, FontModel, BulletChartLegendSettingsModel } from '@syncfusion/ej2-angular-charts';
+import { BulletTooltipSettingsModel, AnimationModel, BulletChartComponent, FontModel, BulletChartLegendSettingsModel, BulletChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { IBulletLoadedEventArgs, ChartTheme, IBulletLegendRenderEventArgs } from '@syncfusion/ej2-charts';
 /**
  * RTl sample
@@ -9,7 +9,9 @@ import { IBulletLoadedEventArgs, ChartTheme, IBulletLegendRenderEventArgs } from
 @Component({
     selector: 'control-content',
     templateUrl: 'bullet-legend.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [BulletChartAllModule]
 })
 
 export class BulletChartLegendComponent {

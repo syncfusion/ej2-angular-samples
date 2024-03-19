@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { SliderModule, SliderComponent } from '@syncfusion/ej2-angular-inputs';
 import { TicksDataModel, TooltipDataModel, Placement } from '@syncfusion/ej2-inputs';
-import { CheckBoxComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
+import { CheckBoxComponent, ChangeEventArgs, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Orientation sample
@@ -11,7 +13,9 @@ import { CheckBoxComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-butt
     selector: 'control-content',
     templateUrl: 'orientation.html',
     styleUrls: ['orientation.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SliderModule, CheckBoxModule, SBDescriptionComponent]
 })
 export class OrientationSliderComponent {
     @ViewChild('default')

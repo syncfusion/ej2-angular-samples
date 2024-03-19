@@ -1,0 +1,29 @@
+<div id="action-description">
+    <p>
+        This sample shows the browser market share using a 3D donut chart with a legend displayed on the right side of the chart.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-circularchart3d style='display:block;' align='center' rotation='15' tilt='-15' (load)='load($event)' [title]='title' [tooltip]="tooltip" highlightMode='Point' [legendSettings]="legendSettings">
+            <e-circularchart3d-series-collection>
+                <e-circularchart3d-series [dataSource]='dataSource' xName='x' yName='y' innerRadius='55%' radius='75%' [dataLabel]='dataLabel'>
+                </e-circularchart3d-series>
+            </e-circularchart3d-series-collection>
+        </ejs-circularchart3d>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render a 3D donut chart with a legend. The legend provides information about
+        the data points in the chart. Clicking on a legend item can collapse the corresponding data point, and hovering
+        over a legend item can highlight the data point.
+    </p>
+    <p>
+        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover over a point or tap on a point on touch-enabled devices.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        3D circular chart component features are segregated into individual feature-wise modules. To use legend, you need to inject the <code>CircularChartLegend3DService</code> into the <code>&#64;NgModule.providers</code> section.
+    </p>
+</div>

@@ -1,8 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ToolbarService, DocumentEditorContainerComponent } from '@syncfusion/ej2-angular-documenteditor';
+import { ToolbarService, DocumentEditorContainerComponent, DocumentEditorContainerModule } from '@syncfusion/ej2-angular-documenteditor';
 import { TitleBar } from './title-bar';
 import { sectionFormat, WEB_API_ACTION } from './data';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Document Editor Component
  */
@@ -10,7 +12,9 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'section-formatting.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService]
+    providers: [ToolbarService],
+    standalone: true,
+    imports: [DocumentEditorContainerModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class SectionFormattingComponent {
     public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
@@ -24,6 +28,7 @@ export class SectionFormattingComponent {
         this.titleBar = new TitleBar(titleBarElement, this.container.documentEditor, true);
         this.container.documentEditor.open(JSON.stringify(sectionFormat));
         this.container.documentEditor.documentName = 'Section Formatting';
+        this.container.documentEditorSettings.showRuler = true;
         this.titleBar.updateDocumentTitle();
     }
 

@@ -1,6 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SplitterComponent } from '@syncfusion/ej2-angular-layouts';
-import { ListViewComponent } from '@syncfusion/ej2-angular-lists';
+import { SplitterComponent, SplitterModule } from '@syncfusion/ej2-angular-layouts';
+import { ListViewComponent, ListViewModule } from '@syncfusion/ej2-angular-lists';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NgIf } from '@angular/common';
 /**
  * Splitter details view sample
  */
@@ -8,7 +11,9 @@ import { ListViewComponent } from '@syncfusion/ej2-angular-lists';
     selector: 'control-content',
     templateUrl: 'details-view.html',
     styleUrls: ['details-view.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SplitterModule, ListViewModule, NgIf, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DetailsViewComponent {
     public dataSource: { [key: string]: Object; }[];

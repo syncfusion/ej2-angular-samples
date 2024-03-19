@@ -1,13 +1,17 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { AccumulationChartComponent, IAccLoadedEventArgs, AccumulationTheme, ChartAnnotationSettingsModel } from '@syncfusion/ej2-angular-charts';
+import { AccumulationChartComponent, IAccLoadedEventArgs,ChartAllModule, AccumulationTheme, ChartAnnotationSettingsModel, AccumulationChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Sample for Semi Pie Chart
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'semi-pie.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, AccumulationChartAllModule, SBDescriptionComponent]
 })
 export class SemiPieComponent {
     public annotations: ChartAnnotationSettingsModel[] = [

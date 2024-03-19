@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
+import { ToolbarComponent, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Keyboard Interactions in Toolbar Component
@@ -8,7 +10,9 @@ import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
     selector: 'control-content',
     templateUrl: 'keyboard-interaction.html',
     styleUrls: ['toolbar.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToolbarModule, SBDescriptionComponent]
 })
 export class KeyboardToolbarComponent {
     constructor( @Inject('sourceFiles') private sourceFiles: any) {

@@ -1,13 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild ,Inject} from '@angular/core';
-import {
-    DiagramComponent, MarginModel, Diagram, NodeModel, BpmnDiagrams, SnapSettingsModel, BpmnLoops, SnapConstraints, SymbolPalette,
-    BpmnShape, BpmnDataObjects, BpmnGateways, BpmnTasks, BpmnTriggers,
-    BpmnBoundary, NodeConstraints, BpmnShapeModel, ConnectorModel,
-    BpmnGatewayModel, ContextMenuSettingsModel, IDragEnterEventArgs, DiagramBeforeMenuOpenEventArgs,
-    BpmnEvents, PaletteModel
-} from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, MarginModel, Diagram, NodeModel, BpmnDiagrams, SnapSettingsModel, BpmnLoops, SnapConstraints, SymbolPalette, BpmnShape, BpmnDataObjects, BpmnGateways, BpmnTasks, BpmnTriggers, BpmnBoundary, NodeConstraints, BpmnShapeModel, ConnectorModel, BpmnGatewayModel, ContextMenuSettingsModel, IDragEnterEventArgs, DiagramBeforeMenuOpenEventArgs, BpmnEvents, PaletteModel, SymbolPaletteModule, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { MenuEventArgs, ExpandMode } from '@syncfusion/ej2-navigations';
 import { paletteIconClick } from './script/diagram-common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 SymbolPalette.Inject(BpmnDiagrams);
 Diagram.Inject(BpmnDiagrams);
 
@@ -15,7 +11,9 @@ Diagram.Inject(BpmnDiagrams);
     selector: 'control-content',
     templateUrl: 'bpmn-editor.html',
     styleUrls: ['diagram-common.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SymbolPaletteModule, DiagramModule, SBDescriptionComponent]
 })
 
 export class BPMNShapesDiagramComponent {

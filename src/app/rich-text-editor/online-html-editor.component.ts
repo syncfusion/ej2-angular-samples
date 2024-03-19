@@ -4,10 +4,11 @@
 import { Component, ViewChild, ViewEncapsulation, OnInit, Inject } from '@angular/core';
 import { createElement, KeyboardEventArgs, Browser } from '@syncfusion/ej2-base';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
-import { ToolbarService, LinkService, ImageService, TableService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, TableService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, CountService, VideoService, AudioService, FormatPainterService, EmojiPickerService } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, ToolbarType } from '@syncfusion/ej2-angular-richtexteditor';
-import { SplitterComponent } from '@syncfusion/ej2-angular-layouts';
+import { SplitterComponent, SplitterModule } from '@syncfusion/ej2-angular-layouts';
 import * as CodeMirror from 'codemirror';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/css/css.js';
 import 'codemirror/mode/htmlmixed/htmlmixed.js';
@@ -17,7 +18,9 @@ import 'codemirror/mode/htmlmixed/htmlmixed.js';
     encapsulation: ViewEncapsulation.None,
     templateUrl: 'online-html-editor.html',
     styleUrls: ['online-html-editor.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService]
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, QuickToolbarService, PasteCleanupService, CountService, VideoService, AudioService, FormatPainterService, EmojiPickerService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SplitterModule, RichTextEditorModule]
 })
 export class OnlineHtmlEditorComponent {
     @ViewChild('defaultRTE', { static: false })

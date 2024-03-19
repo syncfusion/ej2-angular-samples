@@ -1,7 +1,6 @@
-import { NgModule, Type, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, Type, CUSTOM_ELEMENTS_SCHEMA, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HttpModule } from '@angular/http';
 import { PivotViewAllModule } from '@syncfusion/ej2-angular-pivotview';
 import { PivotFieldListAllModule } from '@syncfusion/ej2-angular-pivotview';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
@@ -43,7 +42,7 @@ import { HeatMapComponent } from './heat-map.component';
 import { PerformanceComponent } from './performance.component';
 import { LiveDataComponent } from './live-data.component';
 import { ServerSideAggregationComponent } from './server-side-aggregation.component';
-import { SharedModule } from '../common/shared.module';
+
 import { CheckBoxAllModule, RadioButtonAllModule, ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
 import { KeyboardNavigationComponent } from './keyboard-navigation.component';
 
@@ -54,7 +53,7 @@ export const pivottableRouteConfig: Object[] = [
     { 'path': ':theme/pivot-table/local', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the basic rendering of the pivot table with local JSON and CSV data', component: LocalComponent, 'name': 'Local Data', order: '02', category: 'Data Binding' },
     { 'path': ':theme/pivot-table/remote', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the basic rendering of the pivot table with JSON and CSV remote data', component: RemoteComponent, 'name': 'Remote Data', order: '02', category: 'Data Binding' },
     { 'path': ':theme/pivot-table/server-side-aggregation', 'description': 'This sample demonstrates the ability to use an external pivot engine to bind and populate data from a remote service and display it in the pivot table.', component: ServerSideAggregationComponent, 'name': 'Server-side Aggregation', order: '02', category: 'Data Binding'},
-    { 'path': ':theme/pivot-table/olap', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the basic rendering of the pivot table with olap data', component: OlapComponent, 'name': 'OLAP', order: '02', category: 'Data Binding' },
+    { 'path': ':theme/pivot-table/olap', 'type': 'update', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the basic rendering of the pivot table with olap data', component: OlapComponent, 'name': 'OLAP', order: '02', category: 'Data Binding' },
     { 'path': ':theme/pivot-table/performance', 'description': 'This sample demonstrates how the pivot table loads a large amount of data with ease using virtual scrolling.', 'name': 'Performance', component: PerformanceComponent, order: '03', category: 'Benchmark' }, 
     { 'path': ':theme/pivot-table/pivot-chart', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate integration of pivot table data into a simple chart component', component: ChartComponent, 'name': 'Pivot Chart', order: '04', category: 'Integration' },
     { 'path': ':theme/pivot-table/external-binding', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the rendering of chart component with cell selection option', component: IntegrationComponent, 'name': 'External Binding', order: '04', category: 'Integration' },
@@ -76,7 +75,7 @@ export const pivottableRouteConfig: Object[] = [
     { 'path': ':theme/pivot-table/filtering', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate member filtering of field headers either by including or excluding them', component: FilteringComponent, 'name': 'Default Filtering', order: '09', category: 'Filtering' },
     { 'path': ':theme/pivot-table/label-filtering', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate label filtering of field headers either by including or excluding them', component: LabelFilterComponent, 'name': 'Label Filtering', order: '09', category: 'Filtering' },
     { 'path': ':theme/pivot-table/value-filtering', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate the filtering of field headers based on the grand total (value based)', component: ValueFilterComponent, 'name': 'Value Filtering', order: '09', category: 'Filtering' },
-    { 'path': ':theme/pivot-table/virtual-scrolling', 'description': 'This demo for Essential JS2 Pivot Table control shows virtual scrolling option available vertically and horizontally to load large records with ease', component: VirtualScrollingComponent, 'name': 'Virtual Scrolling', order: '10', category: 'Scrolling' },
+    { 'path': ':theme/pivot-table/virtual-scrolling', 'type': 'update', 'description': 'This demo for Essential JS2 Pivot Table control shows virtual scrolling option available vertically and horizontally to load large records with ease', component: VirtualScrollingComponent, 'name': 'Virtual Scrolling', order: '10', category: 'Scrolling' },
     { 'path': ':theme/pivot-table/paging', 'description': 'This demo for Essential JS2 Pivot Table control shows paging option available for rows and columns to load large records page by page', component: PagingComponent, 'name': 'Paging', order: '11', category: 'Paging' },
     { 'path': ':theme/pivot-table/cell-template', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate cell template option on cells of the pivot table', component: CellTemplateComponent, 'name': 'Cell Template', order: '12', category: 'Customization' },
     { 'path': ':theme/pivot-table/drill-through', 'description': 'This demo for Essential JS2 Pivot Table control shows the raw items of any value cells in pivot table', component: DrillThroughComponent, 'name': 'Drill Through', 'order': '13', 'category': 'Miscellaneous' },
@@ -86,15 +85,4 @@ export const pivottableRouteConfig: Object[] = [
     { 'path': ':theme/pivot-table/exporting', 'description': 'This demo for Essential JS2 Pivot Table control demonstrate client-side exporting of the pivot table to Excel, CSV and PDF formats', component: ExportingComponent, 'name': 'Export', order: '13', category: 'Miscellaneous' }
 ];
 
-let declarations: Type<Object>[] = [OverviewComponent, DefaultComponent, LocalComponent, RemoteComponent, OlapComponent, GroupingBarComponent, FieldListComponent, KeyboardNavigationComponent, CalculatedFieldComponent,
-    AggregationComponent, ExportingComponent, DrillThroughComponent, EditingComponent, ValueSortingComponent, RTLComponent, ChartComponent, SortingComponent, CustomSortingComponent,
-    FilteringComponent, LabelFilterComponent, ValueFilterComponent, ConditionalFormattingComponent, VirtualScrollingComponent, HyperLinkComponent, DeferUpdateComponent, SummaryCustomizationComponent, ToolbarComponent,
-    SelectionComponent,DrillDownComponent, IntegrationComponent, CellTemplateComponent, GroupingComponent, PagingComponent, HeatMapComponent, PerformanceComponent, LiveDataComponent, ServerSideAggregationComponent];
-
-@NgModule({
-    imports: [RouterModule.forChild(pivottableRouteConfig), CommonModule, HttpModule, ToolbarModule, PivotViewAllModule, PivotFieldListAllModule, SharedModule, NumericTextBoxAllModule, ButtonAllModule, CheckBoxAllModule, RadioButtonAllModule, DropDownListAllModule, MultiSelectAllModule, MaskedTextBoxAllModule],
-    declarations: declarations,
-    providers: [PivotViewAllModule, PivotFieldListAllModule],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class PivotTableSampleModule { }
+export const PivotTableSampleModule: ModuleWithProviders<any> = RouterModule.forChild(pivottableRouteConfig);

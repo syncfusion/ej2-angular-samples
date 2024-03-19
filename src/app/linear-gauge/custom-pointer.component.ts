@@ -1,11 +1,14 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { LinearGaugeComponent } from '@syncfusion/ej2-angular-lineargauge';
+import { LinearGaugeComponent, LinearGaugeModule, AnnotationsService } from '@syncfusion/ej2-angular-lineargauge';
 import { ILoadedEventArgs, LinearGaugeTheme, IPointerDragEventArgs } from '@syncfusion/ej2-lineargauge';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'custom-pointer.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [LinearGaugeModule],
+    providers: [AnnotationsService]
 })
 
 export class CustomPointerComponent {
@@ -52,7 +55,7 @@ export class CustomPointerComponent {
             height: 30,
             placement: 'Near',
             markerType: 'Image',
-            imageUrl: './assets/linear-gauge/images/thumb-icon.png'
+            imageUrl: 'https://ej2.syncfusion.com/angular/demos/assets/linear-gauge/images/thumb-icon.png'
         }
         ],
         majorTicks: {
@@ -86,7 +89,7 @@ export class CustomPointerComponent {
             placement: 'Near',
             markerType: 'Image',
             color: '#173BBB',
-            imageUrl: './assets/linear-gauge/images/thumb-icon.png'
+            imageUrl: 'https://ej2.syncfusion.com/angular/demos/assets/linear-gauge/images/thumb-icon.png'
         }
         ],
         minimum: 0,
@@ -165,7 +168,7 @@ export class CustomPointerComponent {
     };
 
     constructor() {
-        //code
+        // code
     }
 
 }

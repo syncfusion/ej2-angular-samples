@@ -1,13 +1,18 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { VirtualScrollService, GridComponent, EditService, ToolbarService } from '@syncfusion/ej2-angular-grids';
+import { VirtualScrollService, GridComponent, EditService, ToolbarService, GridModule } from '@syncfusion/ej2-angular-grids';
 import { datasource, virtualData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-gridvirtual',
     templateUrl: 'virtualization.html',
     styleUrls: ['virtualization.style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [VirtualScrollService, EditService, ToolbarService]
+    providers: [VirtualScrollService, EditService, ToolbarService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ButtonModule, GridModule, SBDescriptionComponent]
 })
 export class VirtualizationComponent implements OnInit {
     public vData: Object[] = virtualData;

@@ -1,11 +1,15 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { HeatMap, Legend, Adaptor, Tooltip, ILoadedEventArgs, HeatMapTheme } from '@syncfusion/ej2-angular-heatmap';
+import { HeatMap, Legend, Adaptor, Tooltip, ILoadedEventArgs, HeatMapTheme, HeatMapModule } from '@syncfusion/ej2-angular-heatmap';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 HeatMap.Inject(Tooltip, Legend, Adaptor);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'json-cell.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [HeatMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class HeatmapCellJsonComponent {

@@ -4,7 +4,7 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid [dataSource]='data' id="gridcomp" allowPaging='true' allowExcelExport='true' allowPdfExport='true' allowSorting='true'
+    <ejs-grid [dataSource]='data' id="gridcomp" allowPaging='true' allowExcelExport='true' allowPdfExport='true' [allowSorting]='true'
         [contextMenuItems]="contextMenuItems" [editSettings]='editing'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' isPrimaryKey='true'></e-column>
@@ -70,7 +70,7 @@
         <p>
             Grid component features are segregated into individual feature-wise modules. To use Context Menu feature, we need to inject
             <code>ContextMenuService</code> into the
-            <code>@NgModule.providers</code> section.
+            <code>&#64;NgModule.providers</code> section.
         </p>
     </div>
 </div>

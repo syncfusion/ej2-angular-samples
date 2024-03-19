@@ -1,4 +1,9 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ListViewModule } from '@syncfusion/ej2-angular-lists';
+import { SkeletonModule } from '@syncfusion/ej2-angular-notifications';
+import { NgIf, NgFor } from '@angular/common';
 
 /**
  *  Sample for CSS Basic Layout Badge
@@ -7,7 +12,9 @@ import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
     selector: 'control-content',
     templateUrl: 'animation.html',
     styleUrls: ['animation.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [NgIf, SkeletonModule, NgFor, ListViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class AnimationController {

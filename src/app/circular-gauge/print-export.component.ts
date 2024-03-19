@@ -1,13 +1,16 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, GaugeTheme, ExportType, CircularGaugeComponent, CircularGauge } from '@syncfusion/ej2-angular-circulargauge';
+import { ILoadedEventArgs, GaugeTheme, ExportType, CircularGaugeComponent, CircularGauge, CircularGaugeModule } from '@syncfusion/ej2-angular-circulargauge';
 import { PrintService, PdfExportService, ImageExportService } from '@syncfusion/ej2-angular-circulargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'print-export.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [PrintService, PdfExportService, ImageExportService]
+    providers: [PrintService, PdfExportService, ImageExportService],
+    standalone: true,
+    imports: [CircularGaugeModule, ButtonModule]
 })
 export class ExportComponent {
 

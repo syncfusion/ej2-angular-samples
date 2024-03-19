@@ -1,4 +1,7 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { DropDownTreeModule } from '@syncfusion/ej2-angular-dropdowns';
 
 /**
  * Dropdown Tree Component with Icons
@@ -7,7 +10,9 @@ import { Component, ViewEncapsulation, Inject } from '@angular/core';
     selector: 'control-content',
     templateUrl: 'icons.html',
     styleUrls: ['icons.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [DropDownTreeModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class IconsDropDownTreeComponent {
 

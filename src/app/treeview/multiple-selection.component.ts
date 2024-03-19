@@ -1,11 +1,16 @@
 import { Component, Inject } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { TreeViewModule } from '@syncfusion/ej2-angular-navigations';
 
 /**
  * TreeView multi selection sample
  */
 @Component({
     selector: 'control-content',
-    templateUrl: 'multiple-selection.html'
+    templateUrl: 'multiple-selection.html',
+    standalone: true,
+    imports: [TreeViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class MultiselectTreeViewComponent {
 

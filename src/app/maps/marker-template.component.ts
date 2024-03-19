@@ -2,15 +2,18 @@
  * Marker template sample
  */
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, Maps, Marker, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
-import { MapAjax } from '@syncfusion/ej2-maps';
+import { MapsTheme, Maps, Marker, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Maps.Inject(Marker);
 declare var require: any;
-import australia from './australia.json';
+let australia: object[] = require('./australia.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'marker-template.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, SBDescriptionComponent]
 })
 export class MapsMarkerTemplateComponent {
     public zoomSettings: object= {
@@ -39,7 +42,7 @@ export class MapsMarkerTemplateComponent {
                     height: 30,
                     width: 30,
                     visible: true,
-                    template: '<div id="marker1"><img class="markerTemplate" src="./assets/maps/images/weather-clear.png"/>' +
+                    template: '<div id="marker1"><img class="markerTemplate" src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/weather-clear.png"/>' +
                      '<p>{{:Name}}:{{:Temperature}}°C</p></div>',
                     dataSource: [
                         { Name: 'Perth', latitude: -31.950527, longitude: 115.860457 , Temperature: 31.6}
@@ -49,7 +52,7 @@ export class MapsMarkerTemplateComponent {
                     height: 30,
                     width: 30,
                     visible: true,
-                    template: '<div id="marker1"><img class="markerTemplate" src="./assets/maps/images/weather-clouds.png"/>' +
+                    template: '<div id="marker1"><img class="markerTemplate" src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/weather-clouds.png"/>' +
                     '<p>{{:Name}}:{{:Temperature}}°C</p></div>',
                     dataSource: [
                         { Name: 'Adelaide', latitude: -34.928499, longitude: 138.600746, Temperature: 28.5 }
@@ -59,7 +62,7 @@ export class MapsMarkerTemplateComponent {
                     height: 30,
                     width: 30,
                     visible: true,
-                    template: '<div id="marker1"><img class="markerTemplate" src="./assets/maps/images/weather-clear.png"/>' +
+                    template: '<div id="marker1"><img class="markerTemplate" src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/weather-clear.png"/>' +
                     '<p>{{:Name}}:{{:Temperature}}°C</p></div>',
                     dataSource: [
                         { Name: 'Townsville', latitude: -19.2589635, longitude: 146.8169483, Temperature: 31.3 }
@@ -69,7 +72,7 @@ export class MapsMarkerTemplateComponent {
                     height: 30,
                     width: 30,
                     visible: true,
-                    template: '<div id="marker1"><img class="markerTemplate" src="./assets/maps/images/weather-rain.png"/>' +
+                    template: '<div id="marker1"><img class="markerTemplate" src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/weather-rain.png"/>' +
                     '<p>{{:Name}}:{{:Temperature}}°C</p></div>',
                     dataSource: [
                         { Name: 'Sydney', latitude: -33.868820, longitude: 151.209296, Temperature: 26.4 }
@@ -79,7 +82,7 @@ export class MapsMarkerTemplateComponent {
                     height: 30,
                     width: 30,
                     visible: true,
-                    template: '<div id="marker1"><img class="markerTemplate" src="./assets/maps/images/weather-clear.png"/>' +
+                    template: '<div id="marker1"><img class="markerTemplate" src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/weather-clear.png"/>' +
                     '<p>{{:Name}}:{{:Temperature}}°C</p></div>',
                     dataSource: [
                         { Name: 'Alice Springs', latitude: -23.698042, longitude: 133.880747, Temperature: 36.4 },
@@ -89,7 +92,7 @@ export class MapsMarkerTemplateComponent {
                     height: 30,
                     width: 30,
                     visible: true,
-                    template: '<div id="marker1"><img class="markerTemplate" src="./assets/maps/images/weather-clouds.png"/>'
+                    template: '<div id="marker1"><img class="markerTemplate" src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/weather-clouds.png"/>'
                      + '<p>{{:Name}}:{{:Temperature}}°C</p></div>',
                     dataSource: [
                         { Name: 'Brisbane', latitude: -27.469771, longitude: 153.025124, Temperature: 29.1 }

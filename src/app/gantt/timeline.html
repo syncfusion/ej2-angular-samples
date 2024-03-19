@@ -3,15 +3,15 @@
         a conceptual model to a sellable product.</p>
 </div>
 
-    <div class="col-lg-8 control-section">
+    <div class="col-lg-9 control-section">
         <ejs-gantt id="ganttDefault" #gantt height="430px" [dataSource]="data" [taskFields]="taskSettings"
             [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [splitterSettings]="splitterSettings"
             [treeColumnIndex]="1" height="450px" [allowSelection]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
-            [highlightWeekends]="true">
+            [highlightWeekends]="true" [columns]="columns">
         </ejs-gantt>
     </div>
 
-    <div class="col-lg-4 property-section">
+    <div class="col-lg-3 property-section">
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
@@ -134,6 +134,17 @@
                                     </div>
                                 </td>
                             </tr>
+                          <tr>
+                                <td style="width: 30%">
+                                    <div>Enable multitaskbar</div>
+                                </td>
+                                <td style="width: 70%">
+                                    <div>
+                                        <ejs-checkbox [checked]="false" (change)="onMultitaskbarChange($event)">
+                                        </ejs-checkbox>
+                                    </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -160,5 +171,8 @@
     <p>
         Gantt component features are segregated into individual feature-wise modules. To use a selection support, inject the
         <code>Selection</code> module. To use markers in Gantt, inject the <code>DayMarkers</code> module.
+    </p>
+    <p>
+        If the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#enablemultitaskbar">enableMultiTaskbar</a> property is enabled, it displays child taskbars in the parent row when in collapsed state.
     </p>
 </div>

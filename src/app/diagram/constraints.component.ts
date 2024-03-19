@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild,Inject } from '@angular/core';
-import { ContextMenuSettingsModel, DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { ContextMenuSettingsModel, DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import {
   Diagram, NodeModel, UndoRedo, ConnectorModel, PointPortModel, Connector, FlowShapeModel,
   SymbolInfo, IDragEnterEventArgs, SnapSettingsModel, MarginModel, TextStyleModel, StrokeStyleModel,
@@ -7,6 +7,9 @@ import {
 } from '@syncfusion/ej2-diagrams';
 import { ExpandMode } from '@syncfusion/ej2-navigations';
 import { paletteIconClick } from './script/diagram-common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(UndoRedo);
 
 /**
@@ -14,10 +17,12 @@ Diagram.Inject(UndoRedo);
  */
 
 @Component({
-  selector: 'control-content',
-  templateUrl: 'constraints.html',
-  styleUrls: ['constraints.component.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'constraints.html',
+    styleUrls: ['constraints.component.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, CheckBoxModule, SBDescriptionComponent]
 })
 export class ConstraintComponent {
   @ViewChild('diagram')

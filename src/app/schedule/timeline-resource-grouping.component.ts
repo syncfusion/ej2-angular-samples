@@ -1,15 +1,15 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import {
-  TimelineViewsService, AgendaService, GroupModel, EventSettingsModel, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { TimelineViewsService, AgendaService, GroupModel, EventSettingsModel, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { timelineResourceData, resourceData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'timeline-resource-grouping.html',
-  styles: [`
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'timeline-resource-grouping.html',
+    styles: [`
     .timeline-resource-grouping.e-schedule:not(.e-device) .e-agenda-view .e-content-wrap table td:first-child {
         width: 90px;
     }
@@ -17,8 +17,10 @@ import { timelineResourceData, resourceData } from './data';
         width: 100px;
     }
     `],
-  encapsulation: ViewEncapsulation.None,
-  providers: [TimelineViewsService, AgendaService, ResizeService, DragAndDropService]
+    encapsulation: ViewEncapsulation.None,
+    providers: [TimelineViewsService, AgendaService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class TimelineResourceGroupingComponent {

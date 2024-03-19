@@ -1,15 +1,21 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { Ribbon, RibbonButtonSettingsModel, RibbonSplitButtonSettingsModel, RibbonComboBoxSettingsModel, RibbonDropDownSettingsModel, RibbonItemSize, BackstageItemModel, RibbonCheckBoxSettingsModel, RibbonColorPickerSettingsModel, RibbonGroupButtonSettingsModel, RibbonGroupButtonSelection, LauncherClickEventArgs, DisplayMode } from '@syncfusion/ej2-ribbon';
 import { SelectEventArgs as SelectListEventArgs } from "@syncfusion/ej2-lists";
-import { ToastComponent } from '@syncfusion/ej2-angular-notifications';
+import { ToastComponent, ToastAllModule } from '@syncfusion/ej2-angular-notifications';
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
 import { backstageData } from './data'
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
+import { RibbonAllModule } from '@syncfusion/ej2-angular-ribbon';
 
 @Component({
-  selector: 'control-content',
-  templateUrl: 'backstage.html',
-  styleUrls: ['backstage.component.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'backstage.html',
+    styleUrls: ['backstage.component.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [RibbonAllModule, ToastAllModule, ListViewAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class RibbonBackstageComponent {
   @ViewChild('toast') toastObj: ToastComponent;
@@ -41,7 +47,7 @@ export class RibbonBackstageComponent {
   public shapeOptions: ItemModel[] = [{ text: "Lines" }, { text: "Rectangles" }, { text: "Basic Arrows" }, { text: "Basic Shapes" }, { text: "FlowChart" }];
   public headerOptions: ItemModel[] = [{ text: "Insert Header" }, { text: "Edit Header" }, { text: "Remove Header" }];
   public footerOptions: ItemModel[] = [{ text: "Insert Footer" }, { text: "Edit Footer" }, { text: "Remove Footer" }];
-  public pageOptions: ItemModel[] = [{ text: "Insert Top of page" }, { text: "Format Page Number" }, { text: "Format Page Number" }];
+  public pageOptions: ItemModel[] = [{ text: "Insert Top of page" }, { text: "Insert Bottom of page" }, { text: "Format Page Number" }];
   public linkOptions: ItemModel[] = [{ text: "Insert Link", iconCss: "e-icons e-link" }, { text: "Recent Links", iconCss: "e-icons e-clock" }, { text: "Bookmarks", iconCss: "e-icons e-bookmark" }];
 
   public pasteSettings: RibbonSplitButtonSettingsModel = { iconCss: 'e-icons e-paste', items: this.pasteOptions, content: 'Paste', select: (args) => { this.updateContent("Paste -> " + args.item.text); }, click: () => { this.updateContent("Paste"); } };

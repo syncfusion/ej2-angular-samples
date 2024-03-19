@@ -1,9 +1,8 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import {
-    AccumulationChart, AccumulationChartComponent, IAccAnimationCompleteEventArgs, AccPoints,
-    IAccTextRenderEventArgs, IAccLoadedEventArgs, AccumulationTheme, Selection, ChartAnnotationSettingsModel
-} from '@syncfusion/ej2-angular-charts';
+import { AccumulationChart, AccumulationChartComponent,ChartAllModule, IAccAnimationCompleteEventArgs, AccPoints, IAccTextRenderEventArgs, IAccLoadedEventArgs, AccumulationTheme, Selection, ChartAnnotationSettingsModel, AccumulationChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Doughnut chart
@@ -11,7 +10,9 @@ import { Browser } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',
     templateUrl: 'pie-legend.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent,ChartAllModule, AccumulationChartAllModule, SBDescriptionComponent]
 })
 export class DefaultDonutComponent {
     public data: Object[] = [

@@ -7,7 +7,7 @@ import { TypesAvatarComponent } from './types.component';
 import { BadgeAvatarComponent } from './badge.component';
 import { ListViewAvatarComponent } from './list-view.component';
 import { CardAvatarComponent } from './card.component';
-import { SharedModule } from '../common/shared.module';
+
 import { CommonModule } from '@angular/common';
 export const avatarAppRoutes: Object[] = [
     { path: ':theme/avatar/default', component: DefaultAvatarComponent, order: '01', name: 'Default', category: 'Avatar', description: 'This example demonstrates to display profile images using Syncfusion avatar component in different sizes both in default & circle shapes in Angular application.', sourceFiles: [
@@ -38,19 +38,6 @@ export const avatarAppRoutes: Object[] = [
     ] }
 ]
 
-export const AvatarRouter: ModuleWithProviders<any> = RouterModule.forChild(avatarAppRoutes);
+export const AvatarSampleModule: ModuleWithProviders<any> = RouterModule.forChild(avatarAppRoutes);
 
-@NgModule({
-    imports: [AvatarRouter, SharedModule, CommonModule, ListViewModule],
-    declarations: [
-        DefaultAvatarComponent,
-        TypesAvatarComponent,
-        BadgeAvatarComponent,
-        ListViewAvatarComponent,
-        CardAvatarComponent
-    ],
-    exports: [DefaultAvatarComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class AvatarSampleModule {
-}
+

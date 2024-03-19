@@ -1,11 +1,14 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { LinearGaugeComponent, LinearGauge } from '@syncfusion/ej2-angular-lineargauge';
+import { LinearGaugeComponent, LinearGauge, LinearGaugeModule, GradientService } from '@syncfusion/ej2-angular-lineargauge';
 import { ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-lineargauge';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'bar-pointer.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [LinearGaugeModule],
+    providers: [GradientService]
 })
 
 export class BarPointerComponent {

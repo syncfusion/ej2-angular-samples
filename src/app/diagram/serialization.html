@@ -33,11 +33,12 @@
         content: "\e713";
     }
     
+   
+    
     .diagram-serialization .control-section {
         padding-top: 0px;
         padding-right: 0px;
     }
-
     
     .e-toggle-palette::before {
         content: "\e700"
@@ -153,7 +154,8 @@
                 </ejs-diagram>
             </div>
             <div style="display: none;">
-            <ejs-uploader #defaultupload id='fileupload' (success)='onUploadSuccess($event)' [asyncSettings]='asyncSettings'></ejs-uploader></div>
+                <ejs-uploader #defaultupload id='fileupload' (success)='onUploadSuccess($event)' [asyncSettings]='asyncSettings'></ejs-uploader>
+            </div>
         </div>
     </div>
 </div>
@@ -168,9 +170,9 @@
     <p>
         The diagram component’s features are segregated into individual feature-wise modules. To enable undo/redo support, inject
         <code>UndoRedo</code> module into
-        <code>@NgModule.providers</code> section. To enable context menu, inject
+        <code>&#64;NgModule.providers</code> section. To enable context menu, inject
         <code>DiagramContextMenu</code> module into
-        <code>@NgModule.providers</code> section.
+        <code>&#64;NgModule.providers</code> section.
     </p>
     <br>
 </div>

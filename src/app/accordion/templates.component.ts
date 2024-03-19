@@ -1,4 +1,7 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { AccordionModule } from '@syncfusion/ej2-angular-navigations';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 /**
@@ -8,7 +11,9 @@ import { Component, ViewEncapsulation, Inject } from '@angular/core';
     selector: 'control-content',
     templateUrl: 'templates.html',
     styleUrls: ['accordion.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, AccordionModule, SBDescriptionComponent]
 })
 export class TemplatesAccordionComponent {
 

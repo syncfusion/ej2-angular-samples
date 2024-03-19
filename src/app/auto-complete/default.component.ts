@@ -2,10 +2,15 @@
  * AutoComplete Default functionality Sample
  */
 import { Component, ViewChild } from '@angular/core';
-import { AutoCompleteComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { AutoCompleteComponent, AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { FormsModule } from '@angular/forms';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
-    templateUrl: 'default.html'
+    templateUrl: 'default.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, AutoCompleteModule, FormsModule, SBDescriptionComponent]
 })
 export class DefaultAutoCompleteComponent {
     @ViewChild('sample')

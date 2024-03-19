@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { GridComponent } from '@syncfusion/ej2-angular-grids';
+import { GridComponent, SortService, ToolbarService, GridModule } from '@syncfusion/ej2-angular-grids';
 import { orderDetails } from './data';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Row height sample
@@ -10,11 +12,13 @@ import { ClickEventArgs } from '@syncfusion/ej2-navigations';
 @Component({
     selector: 'ej2-gridrowheight',
     templateUrl: 'row-height.html',
-    encapsulation: ViewEncapsulation.None
+    providers: [SortService, ToolbarService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GridModule, SBDescriptionComponent]
 })
 export class RowHeightComponent implements OnInit {
     public data: Object[];
-
     @ViewChild('grid')
     public grid: GridComponent;
     public toolbar: Object[];
@@ -26,7 +30,7 @@ export class RowHeightComponent implements OnInit {
             { prefixIcon: 'e-medium-icon', id: 'medium', align: 'Right', tooltipText: 'Row-height-medium' },
             { prefixIcon: 'e-big-icon', id: 'small', align: 'Right', tooltipText: 'Row-height-small' }
             ];
-    }
+}
 
     clickHandler(args: ClickEventArgs): void {
     if (args.item.id === 'small') {

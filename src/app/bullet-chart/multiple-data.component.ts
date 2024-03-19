@@ -3,13 +3,16 @@ import { AnimationModel } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { IBulletLoadedEventArgs, ChartTheme, BulletTooltipSettingsModel } from '@syncfusion/ej2-charts';
 import { fabricColors, bootstrapColors, highContrastColors, materialColors, bootstarp5Colors, bootstarp5DarkColors, bootstrapDarkColors, tailwindColors, tailwindDarkColors, material3Colors, material3DarkColors, defaultColors, fluentColors } from './theme-color'
+import { BulletChartAllModule } from '@syncfusion/ej2-angular-charts';
 /**
  * Local data Source sample
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'multiple-data.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [BulletChartAllModule]
 })
 
 export class BulletChartMultipleDataComponent {

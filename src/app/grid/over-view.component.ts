@@ -1,10 +1,14 @@
 import { Component, OnInit, TemplateRef,ViewChild } from '@angular/core';
 import { orderData } from './data';
-import { FilterService, GridComponent,IFilter,VirtualScrollService  } from '@syncfusion/ej2-angular-grids';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { FilterService, SortService, GridComponent, IFilter, VirtualScrollService, GridModule } from '@syncfusion/ej2-angular-grids';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { CheckBox  } from '@syncfusion/ej2-buttons';
 import { getData } from './data';
 import { DataManager, Query, UrlAdaptor } from '@syncfusion/ej2-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { RatingModule } from '@syncfusion/ej2-angular-inputs';
+import { NgIf } from '@angular/common';
 
 const SERVICE_URI: string = 'https://services.syncfusion.com/angular/production/';
 
@@ -12,7 +16,9 @@ const SERVICE_URI: string = 'https://services.syncfusion.com/angular/production/
     selector: 'ej-gridbatchedit',
     templateUrl: 'over-view.html',
     styleUrls: ['overview.style.css', '../../styles/Grid/style.css'],
-    providers: [FilterService,VirtualScrollService]
+    providers: [FilterService, SortService, VirtualScrollService],
+    standalone: true,
+    imports: [DropDownListModule, GridModule, NgIf, RatingModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class OverViewComponent implements OnInit {
     public dReady: boolean = false;
@@ -57,17 +63,24 @@ export class OverViewComponent implements OnInit {
         this.gridInstance.on('data-ready', function () {
             this.dReady = true;
         });
-        document.getElementById('overviewgrid').addEventListener('DOMSubtreeModified', () => {
-            if (this.stTime && this.isDataChanged) {
-                let msgEle = document.getElementById('msg');
-                let val: any = (performance.now() - this.stTime).toFixed(0);
-                this.stTime = null;
-                this.dtTime = false;
-                this.isDataChanged = false;
-                msgEle.innerHTML = 'Load Time: ' + "<b>" + val + "</b>" + '<b>ms</b>';
-                msgEle.classList.remove('e-hide')
-           }
-            })
+        var observer = new MutationObserver((mutations: MutationRecord[]) => {
+            mutations.forEach(() => {
+                if (this.stTime && this.isDataChanged) {
+                    let msgEle = document.getElementById('msg');
+                    let val: any = (performance.now() - this.stTime).toFixed(0);
+                    this.stTime = null;
+                    this.dtTime = false;
+                    this.isDataChanged = false;
+                    msgEle.innerHTML = 'Load Time: ' + "<b>" + val + "</b>" + '<b>ms</b>';
+                    msgEle.classList.remove('e-hide')
+                }
+            });
+        });
+        observer.observe(document.getElementById('overviewgrid') as Node, {
+            attributes: true,
+            childList: true,
+            subtree: true,
+        });
     }
     valueChange(args:any): void {
 		this.listObj.hidePopup();

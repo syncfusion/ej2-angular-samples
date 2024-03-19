@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { FieldSettingsModel, DragEventArgs } from '@syncfusion/ej2-dropdowns';
 import { DataManager } from '@syncfusion/ej2-data';
-import { ListBoxComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { ListBoxComponent, ListBoxModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Drag And Drop ListBox sample
  */
@@ -9,7 +11,9 @@ import { ListBoxComponent } from '@syncfusion/ej2-angular-dropdowns';
     selector: 'control-content',
     templateUrl: 'drag-and-drop.html',
     styleUrls: ['drag-and-drop.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ListBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class DragAndDropListBoxComponent {

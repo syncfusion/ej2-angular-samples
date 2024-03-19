@@ -1,10 +1,13 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { addClass } from '@syncfusion/ej2-base';
+import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 @Component({
     selector: 'control-content',
     styleUrls: ['special-style.css'],
     templateUrl: 'special-dates.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [DateTimePickerModule]
 })
 export class SpecialDateTimePickerComponent {
 

@@ -2,17 +2,19 @@
  * Maps tooltip
  */
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, Maps, MapsTooltip, Legend, ITooltipRenderEventArgs, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
-import { MapAjax } from '@syncfusion/ej2-maps';
-
+import { MapsTheme, Maps, MapsTooltip, Legend, ITooltipRenderEventArgs, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Maps.Inject(MapsTooltip, Legend);
 declare var require: any;
-import worldMap from './world-map.json';
-import worldcup from './world-cup.json';
+let worldMap: object[] = require('./world-map.json');
+let worldcup: object[] = require('./world-cup.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'tooltip.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, SBDescriptionComponent]
 })
 export class MapsTooltipComponent {
     public tooltipRender = (args: ITooltipRenderEventArgs) => {

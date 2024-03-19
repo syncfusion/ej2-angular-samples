@@ -36,7 +36,7 @@
                 <e-item prefixIcon='e-mouse-pointer e-icons' tooltipText='Select Tool' cssClass ='tb-item-middle tb-item-selected'></e-item>
                 <e-item  tooltipText='Draw Connectors'>
                     <ng-template #template>
-                        <ejs-splitbutton [items]='conTypeItems' iconCss="e-ddb-icons e-connector e-icons" (select)='onConnectorSelect($event)'></ejs-splitbutton>
+                        <ejs-splitbutton [items]='conTypeItems' iconCss="e-ddb-icons e-diagram-connector e-icons" (select)='onConnectorSelect($event)'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
                 <e-item  tooltipText='Draw Shapes' >
@@ -241,7 +241,7 @@
     <p>
         The diagram component’s features are segregated into individual feature-wise modules. To enable undo and redo support, inject
         <code>UndoRedo</code> module into
-        <code>@NgModule.providers</code> section.
+        <code>&#64;NgModule.providers</code> section.
     </p>
     <br>
 </div>

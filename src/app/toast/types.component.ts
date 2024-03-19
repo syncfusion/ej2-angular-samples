@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, Inject, ViewChild, HostListener, ElementRef } from '@angular/core';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { ToastComponent, ToastCloseArgs, ToastPositionModel } from '@syncfusion/ej2-angular-notifications';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { ToastComponent, ToastCloseArgs, ToastPositionModel, ToastModule } from '@syncfusion/ej2-angular-notifications';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  *  Sample for types of toast
  */
@@ -8,7 +10,9 @@ import { ToastComponent, ToastCloseArgs, ToastPositionModel } from '@syncfusion/
     selector: 'control-content',
     templateUrl: 'types.html',
     styleUrls: ['types.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToastModule, ButtonModule, SBDescriptionComponent]
 })
 
 export class TypesController {

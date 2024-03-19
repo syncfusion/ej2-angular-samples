@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <!-- Google Tag Manager -->
@@ -11,9 +11,8 @@
     <!-- End Google Tag Manager --> 
     <title>Essential JS 2 for Angular</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Essential JS 2 for Angular is a modern JavaScript UI toolkit that has been built from the ground up to be lightweight, responsive, modular and touch friendly. It is written in TypeScript and has no external dependencies.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="manifest" href="./manifest.webmanifest">
 
@@ -53,12 +52,12 @@
         <div id="sample-header" class="sb-header e-view" role="banner">
             <div class="sb-header-left sb-left sb-table">
                 <div class="sb-header-item sb-table-cell">
-                    <div id="sb-toggle-left" class="sb-slide-nav sb-icons toggle-active sb-icon-Hamburger" aria-label="all controls navigation" style="cursor:pointer;" aria-selected="true"></div>
+                    <div id="sb-toggle-left" role="button" tabindex="0" class="sb-slide-nav sb-icons toggle-active sb-icon-Hamburger" aria-label="Toggle all controls navigation" aria-expanded="true" aria-controls="left-sidebar" title='toggle left pane' style="cursor:pointer;"></div>
                 </div>
                 <div class="sb-header-item sb-table-cell">
                     <div id="sb-header-text" class="e-sb-header-text">
                         <span class="sb-header-text-left">Essential Studio for</span>
-                        <span class="sb-header-text-right" style="cursor:pointer;">Angular</span>
+                        <span class="sb-header-text-right"  role="button" tabindex="0" style="cursor:pointer;">Angular</span>
                     </div>
                 </div>
                 <div class="sb-header-item sb-table-cell sb-lang-toggler-wrapper" style="cursor:pointer;">
@@ -67,38 +66,38 @@
             </div>
             <div class="sb-header-right sb-right sb-table">
                 <div class="sb-header-item sb-table-cell">
-                    <div id="header-theme-switcher" class="theme-wrapper">
+                    <div id="header-theme-switcher" role="button" tabindex="0" class="theme-wrapper" title="Theme Selection" class="theme-wrapper">
                         <div id="sb-theme-text" class="sb-theme-text">
                             <span class="sb-header-text-left">CHOOSE THEME</span>
                         </div>
                         <div class="sb-theme-switcher-wrapper">
-                            <span id="sb-theme-switcher" class="sb-theme-switch sb-icons sb-icon-Dropdown"></span>
+                            <span id="sb-theme-switcher" class="sb-theme-switch sb-icons sb-icon-Dropdown" role="presentation"></span>
                         </div>
                     </div>
                 </div>
                 <div class="sb-header-item sb-table-cell sb-search-wrapper">
-                    <div class="sb-search-btn" id="sb-trigger-search" style="cursor:pointer;">
-                        <span class="sb-settings sb-icons sb-icon-Search"></span>
+                    <div class="sb-search-btn" id="sb-trigger-search" role="button" tabindex="0" aria-label="toggle sample search" style="cursor:pointer;">
+                        <span class="sb-settings sb-icons sb-icon-Search" role="presentation"></span>
                     </div>
                 </div>
                 <div class="sb-header-item sb-table-cell sb-settings-wrapper">
-                    <div class="sb-setting-btn" style="cursor:pointer;">
-                        <span class="sb-settings sb-icons sb-icon-Settings-Preferences"></span>
+                    <div class="sb-setting-btn" role="button" tabindex="0" aria-label="toggle settings menu" style="cursor:pointer;">
+                        <span class="sb-settings sb-icons sb-icon-Settings-Preferences" role="presentation"></span>
                     </div>
                 </div>
                 <div class="sb-header-item sb-table-cell  sb-header-settings sb-icons"></div>
                 <div class="sb-header-splitter sb-download-splitter"></div>
                 <div class="sb-header-item sb-table-cell sb-download-wrapper">
-                    <a href="https://www.syncfusion.com/downloads/angular/" target="_blank" aria-label="Download Free Trial">
+                    <a href="https://www.syncfusion.com/downloads?tag=es-seo-ej2-angular-demo-menu-trail" target="_blank" aria-label="Free Trial (Opens in a new window)">
                         <button id="download-now" class="sb-download-btn">
                             <span class="sb-download-text">FREE TRIAL</span>
                     </button>
                     </a>
-                    <a href='https://www.npmjs.com/search?q=ej2-angular' target="_blank" aria-label="Install NPM">
+                    <!-- <a href='https://www.npmjs.com/search?q=ej2-angular' target="_blank" aria-label="Install NPM">
                         <button class='sb-npm-btn'>
                             <img class="npm-svg" src="styles/images/NPM.svg" alt="npm icon"></span><span class="doc-npm-link">Install NPM</span>
                         </button>
-                    </a>
+                    </a> -->
                 </div>
             </div>
 
@@ -108,6 +107,9 @@
                 <ul id="switch-sb">
                     <li class="sb-current">
                         <a>Angular</a>
+                    </li>
+                    <li>
+                        <a id='nextjs'>Next.js</a>
                     </li>
                     <li>
                         <a id="ts">JavaScript</a>

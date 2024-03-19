@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, FieldListService, ConditionalFormattingService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView, FieldListService, ConditionalFormattingService, IDataSet, PivotViewModule } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule} from '@syncfusion/ej2-angular-buttons';
 enableRipple(false);
 
 /**
@@ -15,7 +18,9 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     templateUrl: 'conditional-formatting.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['conditional-formatting.css'],
-    providers: [FieldListService, ConditionalFormattingService]
+    providers: [FieldListService, ConditionalFormattingService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, ButtonModule]
 })
 export class ConditionalFormattingComponent implements OnInit {
     public dataSourceSettings: IDataOptions;

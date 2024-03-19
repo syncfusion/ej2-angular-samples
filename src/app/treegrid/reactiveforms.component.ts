@@ -3,13 +3,22 @@ import { sampleData } from './jsontreegriddata';
 import { Browser } from '@syncfusion/ej2-base';
 import { DataUtil } from '@syncfusion/ej2-data';
 import { DialogEditEventArgs, SaveEventArgs } from '@syncfusion/ej2-angular-grids';
-import { EditService, ToolbarService, PageService } from '@syncfusion/ej2-angular-treegrid';
-import { FormGroup, AbstractControl, FormControl, Validators } from '@angular/forms';
+import { EditService, ToolbarService, PageService, TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
+import { FormGroup, AbstractControl, FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Dialog } from '@syncfusion/ej2-angular-popups';
+import { NgClass } from '@angular/common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { DatePickerModule } from "@syncfusion/ej2-angular-calendars";
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { NumericTextBoxModule} from '@syncfusion/ej2-angular-inputs';
+
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'reactiveforms.html',
-    providers: [ToolbarService, EditService, PageService]
+    providers: [ToolbarService, EditService, PageService],
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, NgClass, NumericTextBoxModule, DropDownListModule, DatePickerModule, FormsModule, ReactiveFormsModule]
 })
 export class ReactiveFormsComponent implements OnInit {
     public data: Object[] = [];

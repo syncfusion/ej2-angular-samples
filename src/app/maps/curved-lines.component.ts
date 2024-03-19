@@ -5,18 +5,21 @@
 //tslint:disable
 // custom code end
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, Maps, Marker, MapsTooltip, NavigationLine, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, Maps, Marker, MapsTooltip, NavigationLine, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
 import { markerLocation } from './map-location';
 import { data } from './navigation-data';
-import { MapAjax } from '@syncfusion/ej2-maps';
-import worldMap from './world-map.json';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+let worldMap: object[] = require('./world-map.json');
 declare var require: any;
 Maps.Inject(Marker, MapsTooltip, NavigationLine);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'curved-lines.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, SBDescriptionComponent]
 })
 export class MapsCurvedLinesComponent {
     public load = (args: ILoadEventArgs) => {

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { IDataOptions, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, IDataSet, PivotViewModule } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+
 enableRipple(false);
 
 /**
@@ -11,7 +14,9 @@ enableRipple(false);
 @Component({
     selector: 'ej2-pivotview-container',
     styleUrls: ['default.css'],
-    templateUrl: 'default.html'
+    templateUrl: 'default.html',
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class DefaultComponent implements OnInit {

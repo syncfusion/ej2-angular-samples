@@ -1,8 +1,12 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
-import { GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { GanttAllModule, GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-gantttimeline',
-    templateUrl: 'timezone.html'
+    templateUrl: 'timezone.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
 })
 export class GanttTimezoneComponent implements OnInit {
     @ViewChild('gantt')

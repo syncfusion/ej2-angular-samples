@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { getFormatFromType, SpreadsheetComponent, CellStyleModel } from '@syncfusion/ej2-angular-spreadsheet';
+import { getFormatFromType, SpreadsheetComponent, CellStyleModel, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
 import { numberFormatData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Cell Data Binding Spreadsheet Controller
  */
@@ -8,7 +10,9 @@ import { numberFormatData } from './data';
     selector: 'control-content',
     templateUrl: 'number-formatting.html',
     styleUrls: ['spreadsheet.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SpreadsheetModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class NumberFormattingController {

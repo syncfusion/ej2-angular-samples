@@ -1,11 +1,16 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { CarouselAnimationEffect, CarouselComponent } from '@syncfusion/ej2-angular-navigations';
+import { CarouselAnimationEffect, CarouselComponent, CarouselModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  selector: 'control-content',
-  templateUrl: 'templates.html',
-  styleUrls: ['templates.component.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'templates.html',
+    styleUrls: ['templates.component.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, CarouselModule, ButtonModule, SBDescriptionComponent]
 })
 export class CarouselTemplateComponent {
 

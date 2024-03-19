@@ -1,7 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import {
- IStockChartEventArgs, ChartTheme, ITooltipRenderEventArgs, IAxisLabelRenderEventArgs
-} from '@syncfusion/ej2-angular-charts';
+import { IStockChartEventArgs, ChartTheme, ITooltipRenderEventArgs, IAxisLabelRenderEventArgs, StockChartAllModule, ChartAllModule, RangeNavigatorAllModule } from '@syncfusion/ej2-angular-charts';
 import { chartData } from './indicator-data';
 
 /**
@@ -10,7 +8,9 @@ import { chartData } from './indicator-data';
 @Component({
     selector: 'control-content',
     templateUrl: 'multi-pane.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ StockChartAllModule, ChartAllModule, RangeNavigatorAllModule]
 })
 export class MultiPaneComponent {
 

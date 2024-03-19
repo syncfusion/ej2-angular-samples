@@ -1,5 +1,5 @@
 <div class="control-section">
-    <ejs-grid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings'>
+    <ejs-grid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' [allowSorting]='true'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
             <e-column field='CustomerID' headerText='Customer ID' width='120' textAlign='Right' [validationRules]='customeridrules'></e-column>
@@ -38,7 +38,7 @@
         <p style="font-weight: 500">Injecting Module</p>
         <p>
             Grid features are segregated into individual feature-wise modules. To use commandColumn feature,
-            we need to inject <code>CommandColumnService</code> into the <code>@NgModule.providers</code> section.
+            we need to inject <code>CommandColumnService</code> into the <code>&#64;NgModule.providers</code> section.
         </p>
         <p>
             More information on the commandcolumn configuration can be found in this

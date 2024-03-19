@@ -1,26 +1,28 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild, Inject, AfterViewInit } from '@angular/core';
-import {
-    PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService,
-    ToolbarService, NavigationService, TextSelectionService, PrintService,
-    PageChangeEventArgs,
-    LoadEventArgs,
-    FormFieldsService,
-    FormDesignerService,
-    AddSignatureEventArgs
-} from '@syncfusion/ej2-angular-pdfviewer';
-import { ToolbarComponent,Toolbar } from '@syncfusion/ej2-angular-navigations';
+import { PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ToolbarService, NavigationService, TextSelectionService, PrintService, PageChangeEventArgs, LoadEventArgs, FormFieldsService, FormDesignerService,PageOrganizerService, AddSignatureEventArgs, PdfViewerModule } from '@syncfusion/ej2-angular-pdfviewer';
+import { ToolbarComponent, Toolbar, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { DialogComponent } from '@syncfusion/ej2-angular-popups';
 import { ClickEventArgs } from '@syncfusion/ej2-buttons';
 import { Message } from '@syncfusion/ej2-notifications/src/message/message';
-import { MessageComponent } from '@syncfusion/ej2-angular-notifications';
+import { MessageComponent, MessageModule } from '@syncfusion/ej2-angular-notifications';
 import { Toolbar as Tool, TreeView, NodeSelectEventArgs } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
-    templateUrl:'invisible-signature.html',
+    templateUrl: 'invisible-signature.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ToolbarService, NavigationService,           TextSelectionService, PrintService,FormFieldsService,FormDesignerService],
+    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ToolbarService, NavigationService, TextSelectionService, PrintService, FormFieldsService, FormDesignerService,PageOrganizerService],
     styleUrls: ['pdfviewer.component.css'],
+    standalone: true,
+    imports: [
+        SBActionDescriptionComponent,
+        ToolbarModule,
+        MessageModule,
+        PdfViewerModule,
+        SBDescriptionComponent,
+    ],
 })
 
 export class InvisibleSignatureComponent implements OnInit{

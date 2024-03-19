@@ -10,7 +10,7 @@ import { TemplateDropDownTreeComponent } from './template.component';
 import { FilteringDropDownTreeComponent } from './filtering.component';
 import { LocalDropDownTreeComponent } from './local-data.component';
 import { RemoteDropDownTreeComponent } from './remote-data.component';
-import { SharedModule } from '../common/shared.module';
+
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
@@ -26,22 +26,5 @@ export const dropdowntreeAppRoutes: Object[] = [
     { path: ':theme/drop-down-tree/remote-data', component: RemoteDropDownTreeComponent, name: 'Remote Data',category: 'Data Binding', description: 'This demo demonstrates the binding of data to the Angular drop-down tree component from remote data source.', order: '02'},
 ];
 
-export const DropDownTreeRouter: ModuleWithProviders<any> = RouterModule.forChild(dropdowntreeAppRoutes);
+export const DropDownTreeSampleModule: ModuleWithProviders<any> = RouterModule.forChild(dropdowntreeAppRoutes);
 
-@NgModule({
-    imports: [DropDownTreeRouter, SharedModule, DropDownTreeModule, FormsModule, CheckBoxModule, ReactiveFormsModule,BrowserModule],
-    declarations: [
-        DefaultDropDownTreeComponent,
-        IconsDropDownTreeComponent,
-        CheckBoxDropDownTreeComponent,
-        MultiSelectDropDownTreeComponent,
-        CustomTemplateDropDownTreeComponent,
-        TemplateDropDownTreeComponent,
-        FilteringDropDownTreeComponent,
-        LocalDropDownTreeComponent,
-        RemoteDropDownTreeComponent ,
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class DropDownTreeSampleModule {
-}

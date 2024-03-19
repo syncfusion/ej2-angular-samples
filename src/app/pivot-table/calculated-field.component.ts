@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { IDataOptions, PivotView, FieldListService, CalculatedFieldService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView, FieldListService, PivotViewModule, CalculatedFieldService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple, Browser } from '@syncfusion/ej2-base';
+import { ButtonModule} from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -15,7 +18,9 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     templateUrl: 'calculated-field.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['calculated-field.css'],
-    providers: [FieldListService, CalculatedFieldService]
+    providers: [FieldListService, CalculatedFieldService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, ButtonModule]
 })
 export class CalculatedFieldComponent implements OnInit {
     public dataSourceSettings: IDataOptions;

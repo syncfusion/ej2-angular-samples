@@ -1,0 +1,10 @@
+/* custom code start*/
+.e-query-builder {
+    margin: 0 auto;
+    display: block;
+}
+
+ejs-querybuilder {
+    display: block;
+}
+/* custom code end*/

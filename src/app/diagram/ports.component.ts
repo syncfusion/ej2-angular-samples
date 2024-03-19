@@ -1,28 +1,21 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import {
-  DiagramComponent, ConnectorModel, SnapSettingsModel, SnapConstraints,
-  NodeModel, BasicShapeModel, PortVisibility, PointPortModel,
-  PortShapes, ISelectionChangeEventArgs, Node
-} from '@syncfusion/ej2-angular-diagrams';
-import {
-  DropDownListComponent, MultiSelectComponent, MultiSelect, MultiSelectChangeEventArgs, ChangeEventArgs as DropDownChangeEventArgs,
-  ChangeEventArgs,
-  CheckBoxSelection
-} from '@syncfusion/ej2-angular-dropdowns';
-import {
-  ColorPickerComponent, NumericTextBoxComponent,
-  ChangeEventArgs as NumericChangeEventArgs, ColorPickerEventArgs
-} from '@syncfusion/ej2-angular-inputs';
+import { DiagramComponent, ConnectorModel, SnapSettingsModel, SnapConstraints, NodeModel, BasicShapeModel, PortVisibility, PointPortModel, PortShapes, ISelectionChangeEventArgs, Node, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { DropDownListComponent, MultiSelectComponent, MultiSelect, MultiSelectChangeEventArgs, ChangeEventArgs as DropDownChangeEventArgs, ChangeEventArgs, CheckBoxSelection, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ColorPickerComponent, NumericTextBoxComponent, ChangeEventArgs as NumericChangeEventArgs, ColorPickerEventArgs, ColorPickerModule, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 MultiSelect.Inject(CheckBoxSelection);
 
 /**
  * Sample for Ports
  */
 @Component({
-  selector: 'control-content',
-  templateUrl: 'ports.html',
-  styleUrls: ['diagram-style.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'ports.html',
+    styleUrls: ['diagram-style.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, DropDownListModule, ColorPickerModule, NumericTextBoxModule, SBDescriptionComponent]
 })
 export class PortDiagramComponent {
   @ViewChild('diagram') public diagram: DiagramComponent;

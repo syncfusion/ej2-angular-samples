@@ -2,12 +2,17 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { Query } from '@syncfusion/ej2-data';
 import { EmitType } from '@syncfusion/ej2-base';
 import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'filtering.html',
     styleUrls: ['style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MultiSelectModule, SBDescriptionComponent]
 })
 export class FilteringMultiSelectComponent {
     // define the JSON of filtering data

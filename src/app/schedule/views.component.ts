@@ -1,16 +1,18 @@
 import { Component, ViewChild } from '@angular/core';
 import { zooEventsData } from './data';
 import { extend } from '@syncfusion/ej2-base';
-import {
-  ScheduleComponent, EventSettingsModel, View, EventRenderedArgs, DayService,
-  WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, EventSettingsModel, View, EventRenderedArgs, DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'views.html',
-  providers: [DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'views.html',
+    providers: [DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, DropDownListModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ViewsComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

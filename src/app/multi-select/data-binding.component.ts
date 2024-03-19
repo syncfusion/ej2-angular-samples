@@ -1,12 +1,16 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Query, DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
-import { MultiSelectComponent, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { MultiSelectComponent, DropDownListComponent, MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'data-binding.html',
     styleUrls: ['style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MultiSelectModule, SBDescriptionComponent]
 })
 export class DataBindingMultiSelectComponent {
     // define the JSON of data

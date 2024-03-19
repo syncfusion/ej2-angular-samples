@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SwitchComponent } from '@syncfusion/ej2-angular-buttons';
+import { SwitchComponent, SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { rippleMouseHandler } from '@syncfusion/ej2-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Switch Controller
@@ -9,7 +11,9 @@ import { rippleMouseHandler } from '@syncfusion/ej2-buttons';
     selector: 'control-content',
     templateUrl: 'switch.html',
     styleUrls: ['switch.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SwitchModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class SwitchController {

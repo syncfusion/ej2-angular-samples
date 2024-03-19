@@ -1,20 +1,22 @@
 import { Component, ViewChild, Inject, ViewEncapsulation } from '@angular/core';
 import { extend, closest, isNullOrUndefined, remove, removeClass } from '@syncfusion/ej2-base';
 import { DataManager, Query } from '@syncfusion/ej2-data';
-import {
-  EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ScheduleComponent, CellClickEventArgs
-} from '@syncfusion/ej2-angular-schedule';
-import { ContextMenuComponent, MenuItemModel, BeforeOpenCloseMenuEventArgs, MenuEventArgs } from '@syncfusion/ej2-angular-navigations';
+import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ScheduleComponent, CellClickEventArgs, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { ContextMenuComponent, MenuItemModel, BeforeOpenCloseMenuEventArgs, MenuEventArgs, ContextMenuModule } from '@syncfusion/ej2-angular-navigations';
 import { scheduleData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'context-menu.html',
-  styleUrls: ['context-menu.style.css'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'context-menu.html',
+    styleUrls: ['context-menu.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService],
+    standalone: true,
+    imports: [ScheduleModule, ContextMenuModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ScheduleContextMenuComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

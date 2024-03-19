@@ -1,15 +1,19 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
 import { ReorderService } from '@syncfusion/ej2-angular-treegrid';
-import { TreeGridComponent, Column } from '@syncfusion/ej2-angular-treegrid';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { TreeGridComponent, Column, TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
+import { DropDownListComponent, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
 import { ActionEventArgs } from '@syncfusion/ej2-grids';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'reorder.html',
-    providers: [ReorderService]
+    providers: [ReorderService],
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListAllModule]
 })
 export class ColumnReorderComponent implements OnInit {
     public data: Object[] = [];

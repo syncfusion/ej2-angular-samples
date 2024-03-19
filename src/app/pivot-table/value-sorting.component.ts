@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { IDataOptions, FieldListService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, FieldListService, IDataSet, PivotViewModule } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 /* tslint:disable */
 declare var require: any;
@@ -10,7 +12,9 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     selector: 'ej2-pivotview-container',
     templateUrl: 'value-sorting.html',
     styleUrls: ['value-sorting.css'],
-    providers: [FieldListService]
+    providers: [FieldListService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ValueSortingComponent implements OnInit {
     public dataSourceSettings: IDataOptions;

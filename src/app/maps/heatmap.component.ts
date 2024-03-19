@@ -2,17 +2,21 @@
  * Heat Map sample
  */
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, Maps, Marker, MapsTooltip, Legend, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, Maps, Marker, MapsTooltip, Legend, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 Maps.Inject(Marker, MapsTooltip, Legend);
 declare var require: any;
-import india from './india.json';
-import population from './india-population.json';
+let india: object[] = require('./india.json');
+let population: object[] = require('./india-population.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'heatmap.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, SBDescriptionComponent]
 })
 export class MapsHeatmapComponent {
     public load = (args: ILoadEventArgs) => {

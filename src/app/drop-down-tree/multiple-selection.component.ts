@@ -1,11 +1,16 @@
 import { Component, Inject } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { DropDownTreeModule } from '@syncfusion/ej2-angular-dropdowns';
 
 /**
  * Dropdown Tree multi selection sample
  */
 @Component({
     selector: 'control-content',
-    templateUrl: 'multiple-selection.html'
+    templateUrl: 'multiple-selection.html',
+    standalone: true,
+    imports: [DropDownTreeModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class MultiSelectDropDownTreeComponent {
 

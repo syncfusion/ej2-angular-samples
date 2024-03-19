@@ -1,8 +1,10 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme, ChartAnnotationSettingsModel, ILegendClickEventArgs, Chart, IZoomCompleteEventArgs, IMouseEventArgs, ISelectionCompleteEventArgs, ChartComponent } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, ChartAnnotationSettingsModel, ILegendClickEventArgs, Chart, IZoomCompleteEventArgs, IMouseEventArgs, ISelectionCompleteEventArgs, ChartComponent, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { withLatestFrom } from 'rxjs/operators';
 import { synchronizedData } from './financial-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Area Series
@@ -11,7 +13,9 @@ import { synchronizedData } from './financial-data';
     selector: 'control-content',
     templateUrl: 'synchronized-chart.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ChartAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class SynchronizedChartsComponent {
 

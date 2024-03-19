@@ -1,17 +1,21 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { SelectionService, TreeGridComponent, } from '@syncfusion/ej2-angular-treegrid';
+import { SelectionService, TreeGridComponent, TreeGridModule } from '@syncfusion/ej2-angular-treegrid';
 import { QueryCellInfoEventArgs } from '@syncfusion/ej2-angular-grids'
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { NumericTextBoxComponent, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { L10n, setCulture, EmitType } from '@syncfusion/ej2-base';
 import { getTradeData } from './jsontreegriddata';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'live-data.html',
     styleUrls: ['live-data.css'],
     providers: [SelectionService],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent, NumericTextBoxModule, ButtonModule]
 })
 export class LiveDataComponent implements OnInit {
     public isDataBound: boolean = true;

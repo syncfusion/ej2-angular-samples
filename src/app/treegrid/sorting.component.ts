@@ -1,15 +1,19 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { sortData } from './jsontreegriddata';
-import { TreeGridComponent , SortService} from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent , TreeGridAllModule, SortService} from '@syncfusion/ej2-angular-treegrid';
 import { addClass, removeClass } from '@syncfusion/ej2-base';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { CheckBoxAllModule} from '@syncfusion/ej2-angular-buttons';
 import { SortEventArgs } from '@syncfusion/ej2-grids';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'sorting.html',
-    providers: [SortService]
+    providers: [SortService],
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, CheckBoxAllModule]
     
 })
 export class SortComponent implements OnInit {

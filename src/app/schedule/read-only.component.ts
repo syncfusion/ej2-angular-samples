@@ -1,21 +1,22 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { readonlyEventsData } from './data';
 import { extend } from '@syncfusion/ej2-base';
-import {
-  View, EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, ResizeService,
-  DragAndDropService, PopupOpenEventArgs, DragEventArgs, ResizeEventArgs, ActionEventArgs
-} from '@syncfusion/ej2-angular-schedule';
+import { View, EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService, PopupOpenEventArgs, DragEventArgs, ResizeEventArgs, ActionEventArgs, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'read-only.html',
-  styles: [`
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'read-only.html',
+    styles: [`
     .e-schedule .e-read-only {
         opacity: .8;
     }`],
-  providers: [DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService],
-  encapsulation: ViewEncapsulation.None
+    providers: [DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ReadOnlyComponent {
   public data: Record<string, any>[] = extend([], readonlyEventsData, null, true) as Record<string, any>[];

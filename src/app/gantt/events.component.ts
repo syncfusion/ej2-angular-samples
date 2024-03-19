@@ -1,9 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { projectNewData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
+import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-ganttevents',
-    templateUrl: 'events.html'
+    templateUrl: 'events.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, ButtonAllModule, SBDescriptionComponent]
 })
 export class GanttEventsComponent implements OnInit {
     public data: object[];

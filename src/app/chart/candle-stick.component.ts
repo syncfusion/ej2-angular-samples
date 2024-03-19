@@ -1,8 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, IAxisLabelRenderEventArgs, ChartTheme,  ISharedTooltipRenderEventArgs, IRangeLoadedEventArgs,
- IChangedEventArgs, ChartComponent, IPointRenderEventArgs} from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, IAxisLabelRenderEventArgs, ChartTheme, ISharedTooltipRenderEventArgs, IRangeLoadedEventArgs, IChangedEventArgs, ChartComponent, IPointRenderEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { chartValue } from './financial-data';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Candle Series
@@ -12,7 +13,9 @@ let pointColors: string[] = [];
     selector: 'control-content',
     templateUrl: 'candle-stick.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 export class CandleStickChartComponent {
     @ViewChild('chartcontainer')

@@ -1,10 +1,14 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-lineargauge';
+import { LinearGaugeModule, AnnotationsService } from '@syncfusion/ej2-angular-lineargauge';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'progress-bar.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [LinearGaugeModule],
+    providers: [AnnotationsService]
 })
 
 export class ProgressBarComponent {

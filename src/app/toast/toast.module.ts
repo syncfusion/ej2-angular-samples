@@ -8,7 +8,7 @@ import { TypesController } from './types.component';
 import { TemplateController } from './template.component';
 import { ApiController } from './api.component';
 import { PositionsController } from './positions.component';
-import { SharedModule } from '../common/shared.module';
+
 
 export const toastAppRoutes: Object[] = [
     { path: ':theme/toast/default', component: DefaultController, order: '01', name: 'Default Functionalities', description: 'This demo for Essential JS2 Toast control shows the basic layout of a Toast to show simple notification and hide them.', category: 'Toast' },
@@ -18,16 +18,5 @@ export const toastAppRoutes: Object[] = [
     { path: ':theme/toast/api', component: ApiController, order: '01', name: 'API', description: 'This demo for Essential JS2 Toast control shows all the API functionalities available in Toast.', category: 'Toast' }
 ];
 
-export const toastRouter: ModuleWithProviders<any> = RouterModule.forChild(toastAppRoutes);
+export const ToastSampleModule: ModuleWithProviders<any> = RouterModule.forChild(toastAppRoutes);
 
-@NgModule({
-    imports: [toastRouter, DropDownListModule, SharedModule, ToastModule, RadioButtonModule, CheckBoxModule, ButtonModule],
-    declarations: [
-        DefaultController,
-        TypesController,
-        TemplateController,
-        PositionsController,
-        ApiController ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class ToastSampleModule { }

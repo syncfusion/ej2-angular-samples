@@ -2,14 +2,18 @@ import { Component, OnInit, ViewChild} from '@angular/core';
 import { projectNewData } from './data';
 import { extend } from '@syncfusion/ej2-base';
 import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
 import { EJ2Instance } from '@syncfusion/ej2-schedule';
 import { SelectEventArgs, RemoveEventArgs  } from '@syncfusion/ej2-dropdowns';
-import { MultiSelectComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { MultiSelectAllModule, MultiSelectComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-ganttworkweek',
-    templateUrl: 'work-week.html'
+    templateUrl: 'work-week.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, MultiSelectAllModule, SBDescriptionComponent]
 })
 export class GanttWorkWeekComponent implements OnInit {
     

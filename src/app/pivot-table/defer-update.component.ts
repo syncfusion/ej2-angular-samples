@@ -1,11 +1,13 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
     IDataOptions, PivotFieldListComponent, PivotViewComponent,
-    EnginePopulatedEventArgs, CalculatedFieldService, FieldListService, IDataSet
+    EnginePopulatedEventArgs, CalculatedFieldService, FieldListService, IDataSet, PivotFieldListModule, PivotViewModule
 } from '@syncfusion/ej2-angular-pivotview';
 import { Browser, setStyleAttribute, prepend } from '@syncfusion/ej2-base';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -19,7 +21,9 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     templateUrl: 'defer-update.html',
     styleUrls: ['defer-update.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [CalculatedFieldService, FieldListService]
+    providers: [CalculatedFieldService, FieldListService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, PivotFieldListModule]
 })
 export class DeferUpdateComponent implements OnInit {
     public dataSourceSettings: IDataOptions;

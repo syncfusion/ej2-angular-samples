@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SliderComponent, SliderChangeEventArgs } from '@syncfusion/ej2-angular-inputs';
-import { CheckBoxComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { SliderComponent, SliderChangeEventArgs, SliderModule } from '@syncfusion/ej2-angular-inputs';
+import { CheckBoxComponent, ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * slider property customization
@@ -10,7 +12,9 @@ import { DialogComponent } from '@syncfusion/ej2-angular-popups';
     selector: 'control-content',
     templateUrl: 'azure-pricing.html',
     styleUrls: ['azure-pricing.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SliderModule, ButtonModule, CheckBoxModule, DialogModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class AzureComponent {

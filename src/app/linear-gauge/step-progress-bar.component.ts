@@ -1,10 +1,13 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, LinearGaugeTheme, IAxisLabelRenderEventArgs } from '@syncfusion/ej2-lineargauge';
+import { LinearGaugeModule } from '@syncfusion/ej2-angular-lineargauge';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'step-progress-bar.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [LinearGaugeModule]
 })
 
 export class StepProgressBarComponent {
@@ -22,21 +25,21 @@ export class StepProgressBarComponent {
             width: 25,
             placement: 'Near',
             markerType: 'Image',
-            imageUrl: './assets/linear-gauge/images/tick-icon.png'
+            imageUrl: 'https://ej2.syncfusion.com/angular/demos/assets/linear-gauge/images/tick-icon.png'
         }, {
             value: 10,
             height: 25,
             width: 25,
             placement: 'Near',
             markerType: 'Image',
-            imageUrl: './assets/linear-gauge/images/tick-icon.png'
+            imageUrl: 'https://ej2.syncfusion.com/angular/demos/assets/linear-gauge/images/tick-icon.png'
         }, {
             value: 15,
             height: 25,
             width: 25,
             placement: 'Near',
             markerType: 'Image',
-            imageUrl: './assets/linear-gauge/images/tick-icon.png'
+            imageUrl: 'https://ej2.syncfusion.com/angular/demos/assets/linear-gauge/images/tick-icon.png'
         }, {
             value: 20,
             height: 25,

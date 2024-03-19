@@ -2,17 +2,21 @@
  * Selection and highglight sample
  */
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { TreeMap, TreeMapHighlight, TreeMapSelection, HighLightMode, SelectionMode } from '@syncfusion/ej2-angular-treemap';
+import { TreeMap, TreeMapHighlight, TreeMapSelection, HighLightMode, SelectionMode, TreeMapModule } from '@syncfusion/ej2-angular-treemap';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { ILoadEventArgs, TreeMapTheme } from '@syncfusion/ej2-angular-treemap';
 import { EmitType } from '@syncfusion/ej2-base';
 import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 TreeMap.Inject(TreeMapHighlight, TreeMapSelection);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'selection.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class TreemapSelectComponent {
    @ViewChild('treemap')

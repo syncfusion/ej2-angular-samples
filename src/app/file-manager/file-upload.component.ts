@@ -1,8 +1,9 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
-import { UploaderComponent } from '@syncfusion/ej2-angular-inputs';
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
-import { FileManagerComponent, FileOpenEventArgs } from '@syncfusion/ej2-angular-filemanager';
+import { UploaderComponent, UploaderModule } from '@syncfusion/ej2-angular-inputs';
+import { DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
+import { FileManagerComponent, FileOpenEventArgs, FileManagerModule } from '@syncfusion/ej2-angular-filemanager';
 import { EmitType } from '@syncfusion/ej2-base';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * File Manager real time use case sample
@@ -11,7 +12,9 @@ import { EmitType } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'file-upload.html',
     styleUrls: ['file-upload.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [UploaderModule, ButtonModule, DialogModule, FileManagerModule]
 })
 
 export class FileUploadController {

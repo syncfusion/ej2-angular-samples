@@ -5,7 +5,7 @@
     <ejs-checkbox #checkbox label='Enable OnDemand: ' labelPosition='Before' disabled="true" (change)="changeHandler($event)"></ejs-checkbox>
     <ejs-grid #grid [dataSource]='data' [query]='query' allowSorting='true' allowPaging='true' allowFiltering='true' [pageSettings]='pageSettings' [filterSettings]='filterSettings'>
         <e-columns>
-            <e-column field='EmployeeID' headerText='Employee ID' width='120' textAlign='Right'></e-column>
+            <e-column field='EmployeeID' headerText='Employee ID' width='120' textAlign='Right' ></e-column>
             <e-column field='Employees' headerText='Employee Name' width='150'></e-column>
             <e-column field='Designation' headerText='Designation' width='130' textAlign='Right'></e-column>
             <e-column field='CurrentSalary' headerText='CurrentSalary' width='120' format='C2' textAlign='Right'></e-column>

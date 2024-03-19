@@ -1,11 +1,13 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { DateRangePickerComponent, CalendarView } from '@syncfusion/ej2-angular-calendars';
+import { DateRangePickerComponent, CalendarView, DateRangePickerModule } from '@syncfusion/ej2-angular-calendars';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'month-range-picker.html',
     styleUrls: ['month-range-picker.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [DateRangePickerModule]
 })
 export class MonthRangePickerComponent {
     public start: CalendarView = 'Year';

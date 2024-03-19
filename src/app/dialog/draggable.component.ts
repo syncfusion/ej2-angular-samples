@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
-import { DialogComponent, AnimationSettingsModel } from '@syncfusion/ej2-angular-popups';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { DialogComponent, AnimationSettingsModel, DialogModule } from '@syncfusion/ej2-angular-popups';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Draggable Dialog Component
  */
@@ -8,7 +10,9 @@ import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
     selector: 'control-content',
     styleUrls: ['draggable.css'],
     templateUrl: 'draggable.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ButtonModule, DialogModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class DraggableDialogComponent {

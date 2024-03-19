@@ -8,3 +8,77 @@ ejs-querybuilder {
     display: block;
 }
 /* custom code end*/
+
+.e-query-json-preview {
+    margin-bottom: 20px !important;
+    margin-top: 20px !important;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    height: 330px;
+}
+
+.top-right-button {
+    height: 32px;
+}
+
+.e-query-json-preview .copy-tooltip {
+    margin: 10px 10px 0 10px !important;
+    position: unset;
+    margin-top: 10px;
+    float: right;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    background: #f4f4f4;
+    border-radius: 2px;
+}
+
+.e-query-json-preview .copy-tooltip.e-control.e-tooltip:hover {
+    background: #d8d8d8;
+}
+
+.e-query-json-preview .e-icons.copycode {
+    padding-left: 3px;
+    padding-top: 4px;
+    color: rgba(0, 0, 0, .54);
+}
+
+.e-query-json-preview .e-json-content {
+    margin: 10px;
+    border: none;
+    height: 260px;
+    width: 98%;
+}
+
+#json-btn {
+    float: right;
+}
+
+.json-content-area {
+    height: 260px !important;
+    width: 100% !important;
+    overflow-x: hidden;
+    padding: 10px !important;
+}
+
+.e-query-json-preview .e-pre-content {
+    height: 220px;
+    background: transparent;
+    border: none;
+}
+
+.e-query-json-preview .e-content-header .copycode::before {
+    content: '\e77c';
+    font-size: 25px;
+}
+
+#dlgSpan.error {
+    color: red;
+    padding-left: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+    .e-query-json-preview .e-json-content {
+        width: 95%;
+    }
+}

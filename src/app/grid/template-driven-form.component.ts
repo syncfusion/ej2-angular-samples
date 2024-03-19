@@ -1,8 +1,14 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { orderDetails } from './data';
-import { EditService, ToolbarService, PageService, DialogEditEventArgs, SaveEventArgs } from '@syncfusion/ej2-angular-grids';
+import { EditService, ToolbarService, PageService, DialogEditEventArgs, SaveEventArgs, GridModule, SortService } from '@syncfusion/ej2-angular-grids';
 import { DataUtil } from '@syncfusion/ej2-data';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { NgClass } from '@angular/common';
 
 /**
  * Template driven Forms sample
@@ -10,7 +16,9 @@ import { FormGroup } from '@angular/forms';
 @Component({
     selector: 'ej-gridedittemplate',
     templateUrl: 'template-driven-form.html',
-    providers: [ToolbarService, EditService, PageService]
+    providers: [ToolbarService, EditService, PageService, SortService],
+    standalone: true,
+    imports: [GridModule, ReactiveFormsModule, FormsModule, NgClass, NumericTextBoxModule, DatePickerModule, DropDownListModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class TemplateDrivenFormComponent implements OnInit {
     public data: Object[];

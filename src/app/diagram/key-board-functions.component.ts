@@ -3,14 +3,16 @@
  */
 
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { BasicShapeModel, DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { BasicShapeModel, DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import {
     Diagram, NodeModel, UndoRedo, Node, DataBinding, Keys, KeyModifiers, DiagramContextMenu,
     DiagramTools, HierarchicalTree, CommandManagerModel, ConnectorModel, LayoutModel, SnapSettingsModel
 } from '@syncfusion/ej2-diagrams';
 import { SnapConstraints } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import {keyBoardData} from './overview-data';
+import {keyBoardData} from'./overview-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(UndoRedo, DiagramContextMenu, HierarchicalTree, DataBinding);
 
 export interface DataInfo {
@@ -23,7 +25,9 @@ let shape: BasicShapeModel = { type: 'Basic', shape: 'Ellipse', cornerRadius: 10
     selector: 'control-content',
     templateUrl: 'key-board-functions.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, SBDescriptionComponent]
 })
 
 export class KeyBoardDiagramComponent {

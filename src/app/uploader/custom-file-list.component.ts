@@ -1,7 +1,9 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { EmitType, detach, isNullOrUndefined, createElement, EventHandler } from '@syncfusion/ej2-base';
-import { UploaderComponent, FileInfo, SelectedEventArgs, RemovingEventArgs } from '@syncfusion/ej2-angular-inputs';
+import { UploaderComponent, FileInfo, SelectedEventArgs, RemovingEventArgs, UploaderModule } from '@syncfusion/ej2-angular-inputs';
 import { createSpinner, showSpinner, hideSpinner  } from '@syncfusion/ej2-popups';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Uploader Custom Template sample
@@ -10,7 +12,9 @@ import { createSpinner, showSpinner, hideSpinner  } from '@syncfusion/ej2-popups
     selector: 'control_wrapper',
     templateUrl: 'custom-file-list.html',
     styleUrls: ['custom-file-list.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [UploaderModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class TemplateUploaderComponent {
     @ViewChild('templateupload')

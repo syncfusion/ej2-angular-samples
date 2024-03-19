@@ -3,7 +3,7 @@
         ShipCountry column. To group any other column simply drag the column header and drop on the group drop area.</p>
 </div>
 <div class="control-section">
-       <ejs-grid #grid [dataSource]='data' allowPaging='true' allowSorting="true" [allowGrouping]="true" [editSettings]='editSettings' [groupSettings]="groupOptions" [toolbar]='toolbar' [pageSettings]='pageSettings'
+       <ejs-grid #grid [dataSource]='data' allowPaging='true' [allowSorting]='true'[allowGrouping]="true" [editSettings]='editSettings' [groupSettings]="groupOptions" [toolbar]='toolbar' [pageSettings]='pageSettings'
         height="320" (dataBound)='dataBound()' (created)='created()' (load)='load()'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='140' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
@@ -36,7 +36,7 @@
         <p style="font-weight: 500">Injecting Module:</p>
         <p>
             Grid component features are segregated into individual feature-wise modules. To use grouping and editing features, we need to inject
-            <code>GroupService</code> and <code>EditService</code> into the <code>@NgModule.providers</code> section.
+            <code>GroupService</code> and <code>EditService</code> into the <code>&#64;NgModule.providers</code> section.
         </p>
         <p>
             More information on the grouping feature configuration can be found in this

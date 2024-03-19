@@ -1,6 +1,8 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ChartComponent, ILoadedEventArgs,ChartTheme, TrendlineTypes, LegendSettingsModel } from '@syncfusion/ej2-angular-charts';
+import { ChartComponent, ILoadedEventArgs, ChartTheme, TrendlineTypes, LegendSettingsModel, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Sample for trendlines
  */
@@ -8,7 +10,9 @@ import { Browser } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'trend-lines.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 export class TrendLineChartComponent {
 

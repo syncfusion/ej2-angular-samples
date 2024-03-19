@@ -4,7 +4,7 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid #Grid id='Grid' [dataSource]='parentData' [childGrid]='childGrid'>
+    <ejs-grid #Grid id='Grid' [dataSource]='parentData' [childGrid]='childGrid' [allowSorting]='true' >
         <e-columns>
             <e-column field='EmployeeID' headerText='Employee ID' width='120' textAlign='Right'></e-column>
             <e-column field='FirstName' headerText='Name' width='140'></e-column>
@@ -33,6 +33,6 @@
     <p style="font-weight: 500">Injecting Module:</p>
     <p>
         Grid features are segregated into individual feature-wise modules.
-        To use Hierarchy Grid feature, we need to inject <code>DetailRowService</code> into the <code>@NgModule.providers</code> section.
+        To use Hierarchy Grid feature, we need to inject <code>DetailRowService</code> into the <code>&#64;NgModule.providers</code> section.
     </p>
 </div>

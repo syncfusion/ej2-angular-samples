@@ -1,10 +1,12 @@
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { TreeMap, TreeMapTooltip, IDrillStartEventArgs, ITreeMapTooltipRenderEventArgs, Alignment } from '@syncfusion/ej2-angular-treemap';
+import { TreeMap, TreeMapTooltip, IDrillStartEventArgs, ITreeMapTooltipRenderEventArgs, Alignment, TreeMapModule } from '@syncfusion/ej2-angular-treemap';
 import { DrillDown } from './drilldown-sample';
 import { ILoadEventArgs, TreeMapTheme } from '@syncfusion/ej2-angular-treemap';
 import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
 import { EmitType } from '@syncfusion/ej2-base';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 TreeMap.Inject(TreeMapTooltip);
 
 /**
@@ -13,7 +15,9 @@ TreeMap.Inject(TreeMapTooltip);
 @Component({
     selector: 'control-content',
     templateUrl: 'drilldown.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class TreemapDrillDownComponent {
     @ViewChild('treemap')

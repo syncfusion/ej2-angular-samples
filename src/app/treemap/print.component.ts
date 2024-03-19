@@ -3,17 +3,22 @@
  */
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { TreeMap, ExportType, TreeMapTooltip } from '@syncfusion/ej2-treemap';
-import { PrintService, PdfExportService, ImageExportService } from '@syncfusion/ej2-angular-treemap';
+import { PrintService, PdfExportService, ImageExportService, TreeMapModule } from '@syncfusion/ej2-angular-treemap';
 import { ProductSale } from './product';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { ILoadEventArgs, TreeMapTheme } from '@syncfusion/ej2-angular-treemap';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 TreeMap.Inject(TreeMapTooltip);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'print.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [PrintService, PdfExportService, ImageExportService]
+    providers: [PrintService, PdfExportService, ImageExportService],
+    standalone: true,
+    imports: [TreeMapModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class TreemapPrintComponent {

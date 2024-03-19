@@ -2,16 +2,20 @@
  * Default sample
  */
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { TreeMap, LabelAlignment, TreeMapTooltip, TreeMapLegend } from '@syncfusion/ej2-angular-treemap';
+import { TreeMap, LabelAlignment, TreeMapTooltip, TreeMapLegend, TreeMapModule } from '@syncfusion/ej2-angular-treemap';
 import { Country_Population } from './country-population';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { ILoadEventArgs, TreeMapTheme } from '@syncfusion/ej2-angular-treemap';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 TreeMap.Inject(TreeMapTooltip, TreeMapLegend);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'label.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class TreemapLabelComponent {
     @ViewChild('treemap')

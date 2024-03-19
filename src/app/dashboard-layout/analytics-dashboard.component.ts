@@ -1,14 +1,12 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { DashboardLayoutComponent, PanelModel, ResizeEventArgs } from '@syncfusion/ej2-angular-layouts';
-import {
-    AccumulationChart, AccumulationLegend, PieSeries, AccumulationTooltip,
-    AccumulationDataLabel
-} from '@syncfusion/ej2-angular-charts';
-import { SidebarComponent } from '@syncfusion/ej2-angular-navigations';
+import { DashboardLayoutComponent, PanelModel, ResizeEventArgs, DashboardLayoutAllModule } from '@syncfusion/ej2-angular-layouts';
+import { AccumulationChart, AccumulationLegend, PieSeries, AccumulationTooltip, AccumulationDataLabel, AccumulationChartAllModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { SidebarComponent, SidebarAllModule } from '@syncfusion/ej2-angular-navigations';
 import { ILoadedEventArgs, ChartComponent, ChartTheme, IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-angular-charts';
 import { ChartSeriesType } from '@syncfusion/ej2-charts';
-import { MapsTheme, Maps, Legend, Marker, MapsTooltip, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, Maps, Legend, Marker, MapsTooltip, ILoadEventArgs, MapsAllModule } from '@syncfusion/ej2-angular-maps';
 import { MapAjax } from '@syncfusion/ej2-maps';
+import { NgClass } from '@angular/common';
 
 Maps.Inject(Legend, Marker, MapsTooltip);
 
@@ -20,7 +18,9 @@ Maps.Inject(Legend, Marker, MapsTooltip);
     selector: 'control-content',
     styleUrls: ['analytics-dashboard.css'],
     templateUrl: 'analytics-dashboard.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SidebarAllModule, DashboardLayoutAllModule, AccumulationChartAllModule, MapsAllModule, ChartAllModule, NgClass]
 })
 export class AnalyticsDashboardComponent {
 

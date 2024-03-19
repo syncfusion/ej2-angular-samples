@@ -1,19 +1,21 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ChangeEventArgs as CheckBoxChangeEventArgs } from '@syncfusion/ej2-buttons';
-import {
-  DiagramComponent, NodeModel, ConnectorModel, NodeConstraints, BasicShapeModel,
-  SnapSettingsModel, SnapConstraints, GradientType, GradientModel, LinearGradientModel, RadialGradientModel
-} from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, NodeModel, ConnectorModel, NodeConstraints, BasicShapeModel, SnapSettingsModel, SnapConstraints, GradientType, GradientModel, LinearGradientModel, RadialGradientModel, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Nodes Component
  */
 
 @Component({
-  selector: 'control-content',
-  templateUrl: 'nodes.html',
-  styleUrls: ['diagram-style.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'nodes.html',
+    styleUrls: ['diagram-style.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, CheckBoxModule, SBDescriptionComponent]
 })
 
 export class NodeDiagramComponent {
@@ -62,7 +64,7 @@ export class NodeDiagramComponent {
   public created(): void {
     this.diagram.fitToPage();
   }
-// To lock/unlock object
+
   public onChangeLock(args: CheckBoxChangeEventArgs): void {
     for (let i: number = 0; i < this.diagram.nodes.length; i++) {
       let node: NodeModel = this.diagram.nodes[i];

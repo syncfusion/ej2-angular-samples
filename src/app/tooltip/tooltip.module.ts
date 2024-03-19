@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { TooltipModule } from '@syncfusion/ej2-angular-popups';
-import { SharedModule } from '../common/shared.module';
+
 import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
@@ -93,20 +93,6 @@ export const tooltipAppRoutes: Object[] = [{
     ]   
 }];
 
-export const tooltipRouter: ModuleWithProviders<any> = RouterModule.forChild(tooltipAppRoutes);
+export const TooltipSampleModule: ModuleWithProviders<any> = RouterModule.forChild(tooltipAppRoutes);
 
-@NgModule({
-    imports: [tooltipRouter, TooltipModule, ToolbarModule, ListViewModule, DropDownListModule, CheckBoxModule,
-        NumericTextBoxModule, SharedModule, CommonModule],
-    declarations: [
-        DefaultTooltipComponent,
-        TemplateTooltipComponent,
-        AjaxContentTooltipComponent,
-        DraggableTooltipComponent,
-        HtmlContentComponent,
-        TooltipMenuComponent,
-        ApiTooltipComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class TooltipSampleModule { }
+

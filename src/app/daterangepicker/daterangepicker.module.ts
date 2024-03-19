@@ -26,21 +26,4 @@ export const dateRangePickerAppRoutes: Object[] = [
 
 ];
 
-export const DateRangePickerRouter: ModuleWithProviders<any> = RouterModule.forChild(dateRangePickerAppRoutes);
-
-@NgModule({
-    imports: [DateRangePickerRouter, DateRangePickerModule, DropDownListModule, BrowserModule, FormsModule, ReactiveFormsModule],
-    declarations: [
-        DefaultDateRangePickerComponent,
-        DateRangeComponent,
-        DaySpanComponent,
-        PresetsComponent,
-        FormatComponent,
-        MonthRangePickerComponent,
-        ReactiveFormDateRangePickerComponent
-
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class DateRangePickerSampleModule {
-}
+export const DateRangePickerSampleModule: ModuleWithProviders<any> = RouterModule.forChild(dateRangePickerAppRoutes);

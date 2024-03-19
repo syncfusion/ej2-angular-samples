@@ -1,17 +1,18 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
 import { blockData } from './data';
 import { extend } from '@syncfusion/ej2-base';
-import {
-  EventSettingsModel, View, GroupModel, TimelineViewsService, TimelineMonthService, DayService,
-  ResizeService, DragAndDropService, ResourceDetails, ScheduleComponent
-} from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, View, GroupModel, TimelineViewsService, TimelineMonthService, DayService, ResizeService, DragAndDropService, ResourceDetails, ScheduleComponent, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'block-events.html',
-  styleUrls: ['block-events.style.css'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [DayService, TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'block-events.html',
+    styleUrls: ['block-events.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    providers: [DayService, TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class BlockEventsComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

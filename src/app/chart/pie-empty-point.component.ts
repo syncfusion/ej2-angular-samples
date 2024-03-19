@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IAccLoadedEventArgs, AccumulationChartComponent, AccumulationTheme, IAccTextRenderEventArgs } from '@syncfusion/ej2-angular-charts';
+import { IAccLoadedEventArgs, AccumulationChartComponent, AccumulationTheme, IAccTextRenderEventArgs, AccumulationChartAllModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { EmptyPointMode } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Pie chart empty points
@@ -10,7 +12,9 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
     selector: 'control-content',
     templateUrl: 'pie-empty-point.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, AccumulationChartAllModule, ChartAllModule, SBDescriptionComponent]
 })
 export class PieEmptyPointChartComponent {
 

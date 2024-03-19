@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, SummaryTypes, FieldListService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { ChangeEventArgs, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { IDataOptions, PivotView, SummaryTypes, FieldListService, PivotViewModule, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { ChangeEventArgs, DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -16,7 +18,9 @@ let data: IDataSet[] = require('./rData.json');
     templateUrl: 'aggregation.html',
     encapsulation: ViewEncapsulation.None,
     providers: [FieldListService],
-    styleUrls: ['aggregation.css']
+    styleUrls: ['aggregation.css'],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule]
 })
 export class AggregationComponent implements OnInit {
     public dataSourceSettings: IDataOptions;

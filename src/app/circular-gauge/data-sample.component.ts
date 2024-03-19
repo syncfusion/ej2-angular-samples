@@ -1,11 +1,14 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-angular-circulargauge';
-import { GridComponent } from '@syncfusion/ej2-angular-grids';
+import { CircularGaugeComponent, ILoadedEventArgs, GaugeTheme, CircularGaugeModule, AnnotationsService } from '@syncfusion/ej2-angular-circulargauge';
+import { GridComponent, GridModule } from '@syncfusion/ej2-angular-grids';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'data-sample.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [CircularGaugeModule, GridModule],
+    providers: [AnnotationsService]
 })
 export class SampleDataComponent {
 

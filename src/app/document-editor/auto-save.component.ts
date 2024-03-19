@@ -1,8 +1,11 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ToolbarService, DocumentEditorContainerComponent } from '@syncfusion/ej2-angular-documenteditor';
+import { ToolbarService, DocumentEditorContainerComponent, DocumentEditorContainerModule } from '@syncfusion/ej2-angular-documenteditor';
 import { TitleBar } from './title-bar';
 import { defaultDocument, WEB_API_ACTION } from './data';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * Document Editor Component
@@ -11,7 +14,9 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'auto-save.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService]
+    providers: [ToolbarService],
+    standalone: true,
+    imports: [DocumentEditorContainerModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class AutoSaveComponent {
     public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
@@ -27,6 +32,7 @@ export class AutoSaveComponent {
         this.titleBar = new TitleBar(titleBarElement, this.container.documentEditor, true);
         this.container.documentEditor.open(JSON.stringify(defaultDocument));
         this.container.documentEditor.documentName = 'Getting Started';
+        this.container.documentEditorSettings.showRuler = true;
         this.titleBar.updateDocumentTitle();
 
         setInterval(() => {

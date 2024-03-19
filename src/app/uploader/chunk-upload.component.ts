@@ -1,8 +1,10 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { EmitType, detach, isNullOrUndefined } from '@syncfusion/ej2-base';
-import { UploaderComponent, RemovingEventArgs } from '@syncfusion/ej2-angular-inputs';
+import { UploaderComponent, RemovingEventArgs, UploaderModule } from '@syncfusion/ej2-angular-inputs';
 import { createSpinner, showSpinner, hideSpinner } from '@syncfusion/ej2-popups';
-import { DropDownListComponent,ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent, ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Chunk Upload sample
@@ -11,7 +13,9 @@ import { DropDownListComponent,ChangeEventArgs } from '@syncfusion/ej2-angular-d
     selector: 'control_wrapper',
     templateUrl: 'chunk-upload.html',
     styleUrls: ['default.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [UploaderModule, DropDownListModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ChunkUploadComponent {
     @ViewChild('chunkupload') chunkupload: UploaderComponent;

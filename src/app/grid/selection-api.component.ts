@@ -1,15 +1,19 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { orderDetails } from './data';
-import { SelectionService, GridComponent } from '@syncfusion/ej2-angular-grids';
+import { SelectionService, GridComponent, SortService, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
 import { CheckBox } from "@syncfusion/ej2-buttons";
-import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
+import { ToolbarComponent, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej-gridselect',
     templateUrl: 'selection-api.html',
-    providers: [SelectionService],
+    providers: [SelectionService, SortService, PageService],
     styleUrls: ['./selection-api.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ToolbarModule, GridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class SelectionApiComponent implements OnInit {
     @ViewChild('grid')

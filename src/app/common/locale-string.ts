@@ -1561,7 +1561,14 @@ export let Locale: Object = {
             "NOT": "nicht",
             "NotContains": "nicht enthält",
             "NotStartsWith": "nicht anfangen mit",
-            "NotEndsWith": "nicht enden mit"
+            "NotEndsWith": "nicht enden mit",
+            "AddButton": "Gruppe/Bedingung hinzufügen",
+            "CloneGroup": "Klongruppe",
+            "LockGroup": "Sperrgruppe",
+            "CloneRule": "Klonregel",
+            "LockRule": "Sperrregel",
+            "UnlockRule": "Regel freischalten",
+            "UnlockGroup": "Gruppe entsperren"
         },
         "uploader": {
             "invalidMinFileSize": "Bestandsgrootte is te klein!",
@@ -3211,7 +3218,14 @@ export let Locale: Object = {
             "IsEmpty": "فارغ",
             "IsNotEmpty": "ليس فارغا",
             "IsNull": "باطل",
-            "IsNotNull": "هو ليس لاشيء"
+            "IsNotNull": "هو ليس لاشيء",
+            "AddButton": "إضافة مجموعة/حالة",
+            "CloneGroup": "مجموعة استنساخ",
+            "LockGroup": "قفل المجموعة",
+            "CloneRule": "قاعدة الاستنساخ",
+            "LockRule": "قاعدة القفل",
+            "UnlockRule": "فتح القاعدة",
+            "UnlockGroup": "فتح المجموعة"
         },
         "uploader": {
             "invalidMinFileSize": "حجم الملف صغير جدا!",
@@ -4861,7 +4875,14 @@ export let Locale: Object = {
             "NOT": "NOT",
             "NotContains": "Not Contains",
             "NotStartsWith": "Not Starts With",
-            "NotEndsWith": "Not Ends With"
+            "NotEndsWith": "Not Ends With",
+            "AddButton": "Add Group/Condition",
+            "CloneGroup": "Clone Group",
+            "LockGroup": "Lock Group",
+            "CloneRule": "Clone Rule",
+            "LockRule": "Lock Rule",
+            "UnlockRule": "Unlock Rule",
+            "UnlockGroup": "Unlock Group"
         },
         "uploader": {
             "invalidMinFileSize": "File size is too small!",
@@ -6512,7 +6533,14 @@ export let Locale: Object = {
             "NOT": "不",
             "NotContains": "不包含",
             "NotStartsWith": "不是从开始",
-            "NotEndsWith": "不以...结尾"
+            "NotEndsWith": "不以...结尾",
+            "AddButton": "添加组/条件",
+            "CloneGroup": "克隆组",
+            "LockGroup": "锁集团",
+            "CloneRule": "克隆规则",
+            "LockRule": "锁定规则",
+            "UnlockRule": "解锁规则",
+            "UnlockGroup": "解锁组"
         },
         "uploader": {
             "invalidMinFileSize": "文件太小",
@@ -8162,7 +8190,14 @@ export let Locale: Object = {
             "NOT": "ne pas",
             "NotContains": "ne contient pas",
             "NotStartsWith": "ne commence pas avec",
-            "NotEndsWith": "ne se termine pas"
+            "NotEndsWith": "ne se termine pas",
+            "AddButton": "Ajouter un groupe/une condition",
+            "CloneGroup": "Groupe de clones",
+            "LockGroup": "Groupe de verrouillage",
+            "CloneRule": "Règle de clonage",
+            "LockRule": "Règle de verrouillage",
+            "UnlockRule": "Règle de déverrouillage",
+            "UnlockGroup": "Déverrouiller le groupe"
         },
         "uploader": {
             "invalidMinFileSize": "La taille du fichier est trop petite",

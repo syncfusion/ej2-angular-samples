@@ -7,7 +7,7 @@ import { VariantsController } from './variants.component';
 import { IconsController } from './icons.component';
 import { CustomizationController } from './customization.component';
 import { MessageTemplateController } from './template.component'
-import { SharedModule } from '../common/shared.module';
+
 
 export const messageAppRoutes: Object[] = [
     { path: ':theme/message/default', component: DefaultController, order: '01', name: 'Default Functionalities', description: 'This sample demonstrates the basic layout of Message with different severity types.', category: 'Message' },
@@ -18,12 +18,5 @@ export const messageAppRoutes: Object[] = [
 
 ];
 
-export const messageRouter: ModuleWithProviders<any> = RouterModule.forChild(messageAppRoutes);
+export const MessageSampleModule: ModuleWithProviders<any> = RouterModule.forChild(messageAppRoutes);
 
-@NgModule({
-    imports: [messageRouter, SharedModule, MessageModule, ButtonModule, CheckBoxModule],
-    declarations: [
-        DefaultController, VariantsController, IconsController, CustomizationController, MessageTemplateController],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class MessageSampleModule { }

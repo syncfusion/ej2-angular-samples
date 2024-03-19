@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ColorPickerEventArgs } from '@syncfusion/ej2-angular-inputs';
+import { ColorPickerEventArgs, ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Inline Mode sample
@@ -9,8 +11,9 @@ import { Browser } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'inline.html',
     styleUrls: ['inline.css'],
-    encapsulation: ViewEncapsulation.None
-
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ColorPickerModule, SBDescriptionComponent]
 })
 export class InlineColorPickerComponent {
     public ctrlSwitch: boolean = false;

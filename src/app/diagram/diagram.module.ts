@@ -3,7 +3,7 @@
  */
 import { NgModule, ModuleWithProviders, Type } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '../common/shared.module';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ButtonModule, CheckBoxModule, RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
@@ -156,7 +156,7 @@ export const diagramAppRoutes: Object[] = [
     {
         path: ':theme/diagram/tooltip', component: TooltipDiagramComponent,
         name: 'Tooltip', category: 'Getting Started', order: '01',
-        description: 'This sample visualize the tooltip feature of diagram', type:"update"
+        description: 'This sample visualize the tooltip feature of diagram',
     },
     {
         path: ':theme/diagram/symbol-palette', component: SymbolPaletteDiagramComponent,
@@ -322,7 +322,6 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/uml-Class-diagram', component: UmlClassDiagramComponent,
         name: 'UML Class Diagram', category: 'Use Case Diagram', order: '08',
         description: 'This sample visualizes the class shapes in diagram.',
-        type:"update"
     },
     {
         path: ':theme/diagram/venn-diagram', component: VennDiagramComponent,
@@ -343,7 +342,7 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/workflow-editor', component: WorkFlowDiagramComponent,
-        name: 'WorkFlow Diagram', category: 'Real-time Diagrams', order: '09',type:'new',
+        name: 'WorkFlow Diagram', category: 'Real-time Diagrams', order: '09',
         description: 'This sample visualizes the Travel booking reservation system and its built with readymade BPMN shapes.'
     },
     {
@@ -376,34 +375,7 @@ export const diagramAppRoutes: Object[] = [
    
 ];
 
-export const diagramRouter: ModuleWithProviders<any> = RouterModule.forChild(diagramAppRoutes);
-let declarations: Type<Object>[] = [FlowDiagramComponent, ShapesDiagramComponent, NodeDiagramComponent,
-    ConnectorDiagramComponent, AnnotationDiagramComponent, PortDiagramComponent, HistoryManagerDiagramComponent,
-    ComplexShapesDiagramComponent, DrawingToolDiagramComponent, KeyBoardDiagramComponent,
-    UserHandlediagramComponent, SymbolPaletteDiagramComponent, OverviewDiagramComponent,
-    SerializationDiagramComponent, PrintExportDiagramComponent, FlowExecutionDiagramComponent,
-    HierarchyDiagramComponent, VirtualizationComponent, OrganizationalChartDiagramComponent, RadialTreeDiagramComponent,
-    MindMapDiagramComponent, SymmetricLayoutDiagramComponent, ComplexHierarchicalTreeDiagramComponent,
-    LocalDataDiagramComponent, RemoteDataDiagramComponent, VennDiagramComponent, RTLTreeDiagramComponent,
-    PertChartDiagramComponent, BPMNShapesDiagramComponent, FishboneDiagramComponent, LogicCircuitComponent,
-    UmlActivityComponent, NetworkShapesDiagramComponent, CRUDDiagramComponent, UmlClassDiagramComponent, SwimLaneDiagramComponent,
-    TooltipDiagramComponent, EventsDiagramComponent, LineRoutingComponent, DataBindingWithTreeviewComponent, ScrollingComponent, SnappingComponent, ZoomingAndPanning,
-    HierarchicalLayoutWithMultipleRootComponent,CommandComponent,ConstraintComponent, UmlSequenceComponent, GroupingAndOrderingComponent,WorkFlowDiagramComponent
-
-];
-@NgModule({
-    imports: [diagramRouter, DiagramAllModule, ChartAllModule, GridAllModule, SymbolPaletteAllModule, OverviewAllModule, ButtonModule,
-        ColorPickerModule, DateRangePickerModule, CheckBoxModule, AccumulationChartModule, BrowserModule,ToolbarModule, DropDownButtonModule, UploaderModule, CircularGaugeModule, DropDownListAllModule, ListViewAllModule,
-        DialogAllModule, TextBoxModule, RadioButtonModule, ComboBoxAllModule, SplitButtonModule,
-        MultiSelectModule, NumericTextBoxModule, SharedModule,TreeViewModule ],
-    exports: [],
-    declarations: declarations,
-    providers: [DiagramAllModule, AccumulationLegendService, AccumulationTooltipService, AccumulationAnnotationService,
-        AccumulationDataLabelService]
-})
-export class DiagramSampleModule {
-
-}
+export const DiagramSampleModule: ModuleWithProviders<any> = RouterModule.forChild(diagramAppRoutes);
 
     // {
     //     path: ':theme/diagram/crud', component: CRUDDiagramComponent,

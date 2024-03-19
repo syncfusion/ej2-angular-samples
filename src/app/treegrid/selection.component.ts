@@ -1,12 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { TreeGridComponent } from '@syncfusion/ej2-angular-treegrid';
-import { DropDownListComponent , ChangeEventArgs} from '@syncfusion/ej2-angular-dropdowns';
-
+import { TreeGridComponent , TreeGridAllModule} from '@syncfusion/ej2-angular-treegrid';
+import { DropDownListComponent , DropDownListAllModule, ChangeEventArgs} from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
-    templateUrl: 'selection.html'
+    templateUrl: 'selection.html',
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListAllModule]
 })
 export class SelectionComponent implements OnInit {
     public data: Object[] = [];

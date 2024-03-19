@@ -6,11 +6,16 @@ import { Component, Inject } from '@angular/core';
 
 //Import DataManager related classes
 import { DataManager, Query } from '@syncfusion/ej2-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'remote-list.html',
-    styleUrls:['listview.css']
+    styleUrls: ['listview.css'],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ListViewAllModule, SBDescriptionComponent]
 })
 
 export class RemoteListViewComponent {

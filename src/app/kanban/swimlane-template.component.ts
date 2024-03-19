@@ -1,14 +1,19 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import { KanbanComponent, CardSettingsModel, SwimlaneSettingsModel } from '@syncfusion/ej2-angular-kanban';
+import { KanbanComponent, CardSettingsModel, SwimlaneSettingsModel, KanbanModule } from '@syncfusion/ej2-angular-kanban';
 import { kanbanData } from './data';
+import { NgClass } from '@angular/common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'swimlane-template.html',
     styleUrls: ['swimlane-template.style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: []
+    providers: [],
+    standalone: true,
+    imports: [ KanbanModule, SBActionDescriptionComponent, SBDescriptionComponent, NgClass]
 })
 export class SwimlaneTemplateComponent {
     @ViewChild('kanbanObj') kanbanObj: KanbanComponent;

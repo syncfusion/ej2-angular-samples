@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation, Inject, AfterViewInit } from '@angular/core';
 import { closest, SwipeEventArgs, Touch, isNullOrUndefined} from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  *  Sample for CSS Swipeable Cards.
@@ -30,7 +32,9 @@ function swipeable(): void {
     selector: 'control-content',
     templateUrl: 'swipeable.html',
     styleUrls: ['card.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class SwipeCardComponent implements AfterViewInit {

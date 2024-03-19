@@ -1,5 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FieldSettingsModel, ToolbarSettingsModel } from '@syncfusion/ej2-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ListBoxModule } from '@syncfusion/ej2-angular-dropdowns';
 /**
  * Dual ListBox Component
  */
@@ -7,7 +10,9 @@ import { FieldSettingsModel, ToolbarSettingsModel } from '@syncfusion/ej2-dropdo
     selector: 'control-content',
     templateUrl: 'dual-list-box.html',
     styleUrls: ['dual-list-box.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ListBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class DualListBoxComponent {

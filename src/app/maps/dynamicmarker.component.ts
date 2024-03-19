@@ -2,11 +2,14 @@
  * Dynamic Marker Sample
  */
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import {
-    Maps, Marker, Zoom, ILoadEventArgs, MapsTheme,
-    NavigationLine, MarkerSettingsModel, MarkerSettings, MarkerType
-} from '@syncfusion/ej2-angular-maps';
+import { Maps, Marker, Zoom, ILoadEventArgs, MapsTheme, NavigationLine, MarkerSettingsModel, MarkerSettings, MarkerType, MapsModule } from '@syncfusion/ej2-angular-maps';
 import { ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { FormsModule } from '@angular/forms';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { CheckBoxModule, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Maps.Inject(Marker, NavigationLine, Zoom);
 // custom code start
 //tslint:disable:max-func-body-length
@@ -18,7 +21,9 @@ Maps.Inject(Marker, NavigationLine, Zoom);
 @Component({
     selector: 'control-content',
     templateUrl: 'dynamicmarker.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, CheckBoxModule, DropDownListModule, TextBoxModule, FormsModule, ButtonModule, SBDescriptionComponent]
 })
 export class MapsDynamicMarkerComponent {
     public markerCheckedState: boolean = true;
@@ -85,7 +90,6 @@ export class MapsDynamicMarkerComponent {
         this.maps.layers[0].navigationLineSettings = [];
         this.navigationLines = [];
         this.emptySavedLinePositions();
-        this.maps.refresh();
         this.disableButton = true;
     }
 

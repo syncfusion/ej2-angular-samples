@@ -62,18 +62,6 @@ export const speedDialAppRoutes: Object[] = [
         }
 ];
 
-export const speedDialRouter: ModuleWithProviders<any> = RouterModule.forChild(speedDialAppRoutes);
+export const SpeedDialSampleModule: ModuleWithProviders<any> = RouterModule.forChild(speedDialAppRoutes);
 
-@NgModule({
-    imports: [speedDialRouter, SpeedDialModule, TooltipModule, BrowserModule, TextBoxModule],
-    declarations: [
-        DefaultSpeedDialComponent,
-        LinearSpeedDialComponent,
-        RadialSpeedDialComponent,
-        StylesComponent,
-        TemplateComponent,
-        ModalComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class SpeedDialSampleModule { }
+

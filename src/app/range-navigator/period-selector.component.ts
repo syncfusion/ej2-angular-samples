@@ -4,9 +4,9 @@ import {
     PeriodSelector, StepLineSeries, RangeNavigator, IAxisLabelRenderEventArgs, getElement, withInBounds,
     IAxisRangeCalculatedEventArgs, ITooltipRenderEventArgs, ILoadedEventArgs
 } from '@syncfusion/ej2-charts';
-import { ChartComponent, RangeNavigatorComponent } from '@syncfusion/ej2-angular-charts';
+import { ChartComponent, RangeNavigatorComponent, RangeNavigatorAllModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser, remove } from '@syncfusion/ej2-base';
-import { SwitchComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
+import { SwitchComponent, ChangeEventArgs, SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { periodData } from './period-data';
 
 /**
@@ -32,7 +32,9 @@ for (let i = 2100; i < periodData.length - 20; i++) {
 @Component({
     selector: 'control-content',
     templateUrl: 'period-selector.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SwitchModule, RangeNavigatorAllModule, ChartAllModule]
 })
 
 export class PeriodicSelectorRNComponent {

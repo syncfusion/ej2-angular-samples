@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MaskedTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
-import { SharedModule } from '../common/shared.module';
+
 
 import { DefaultMaskedTextboxController } from './default.component';
 import { CustomMaskedTextboxController } from './custom-mask.component';
@@ -15,16 +15,5 @@ export const maskedTextBoxAppRoutes: Object[] = [
     { path: ':theme/maskedtextbox/formats', component: FormatMaskedTextboxController, name: 'Formats', category: 'Input Mask', description: "This sample demonstrates the usage of different mask formats through the properties panel. You can also get the value and raw value of the masked textbox." }
 ];
 
-export const MaskedTextBoxRouter: ModuleWithProviders<any> = RouterModule.forChild(maskedTextBoxAppRoutes);
+export const MaskedTextBoxSampleModule: ModuleWithProviders<any> = RouterModule.forChild(maskedTextBoxAppRoutes);
 
-@NgModule({
-    imports: [MaskedTextBoxRouter, MaskedTextBoxModule, DropDownListModule, SharedModule, FormsModule],
-    declarations: [
-        DefaultMaskedTextboxController,
-        CustomMaskedTextboxController,
-        FormatMaskedTextboxController
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class MaskedTextBoxSampleModule {
-}

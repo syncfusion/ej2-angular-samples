@@ -1,6 +1,8 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ChartComponent,ChartTheme, ILoadedEventArgs } from '@syncfusion/ej2-angular-charts';
+import { ChartComponent, ChartTheme, ILoadedEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Chart Performance
@@ -9,7 +11,9 @@ import { Browser } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'chart-performance.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 export class PerformanceChartComponent {
     public dt1: number = 0;

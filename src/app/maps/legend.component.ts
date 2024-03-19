@@ -5,20 +5,24 @@
 //tslint:disable
 // custom code end
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, Maps, Legend, MapsTooltip, ILoadEventArgs, ITooltipRenderEventArgs,LegendPosition, LegendMode } from '@syncfusion/ej2-angular-maps';
-import { MapAjax } from '@syncfusion/ej2-maps';
+import { MapsTheme, Maps, Legend, MapsTooltip, ILoadEventArgs, ITooltipRenderEventArgs, LegendPosition, LegendMode, MapsModule } from '@syncfusion/ej2-angular-maps';
 import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
 import { EmitType } from '@syncfusion/ej2-base';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { FormsModule } from '@angular/forms';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 Maps.Inject(Legend, MapsTooltip);
 declare var require: any;
-import worldMap from './world-map.json';
-import population from './population-density.json';
+let worldMap: object[] = require('./world-map.json');
+let population: object[] = require('./population-density.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'legend.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, FormsModule, SBDescriptionComponent]
 })
 export class MapsLegendComponent {
  @ViewChild('maps')

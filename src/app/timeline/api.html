@@ -1,0 +1,59 @@
+<div class="col-lg-8 control-section sb-property-border">
+    <div class="timeline-api-section">
+        <p style="font-weight: 600;"> Travel Itenary </p>
+        <ejs-timeline #apiTimeline id="timeline">
+            <e-items >
+                @for (item of timelineItems; track item) {
+                    <e-item [dotCss]="item.dotCss" [content]="item.content" [oppositeContent]="item.oppositeContent" />
+                }
+            </e-items>
+        </ejs-timeline>
+    </div>
+</div>
+<div class="col-lg-4 property-section">
+    <div class="property-panel-header"> Properties </div>
+    <div class="property-panel-content">
+        <table>
+            <tbody>
+                <tr>
+                    <td> Orientation </td>
+                    <td>
+                        <ejs-dropdownlist #orientationList [dataSource]='orientationData' (change)='handleTimeline($event, "orientation")' index=1 popupHeight='200px'></ejs-dropdownlist>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Alignment </td>
+                    <td>
+                        <ejs-dropdownlist #alignmentList [dataSource]='alignData' (change)='handleTimeline($event, "align")' index=1 popupHeight='200px'></ejs-dropdownlist>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Opposite content </td>
+                    <td> <ejs-switch [checked]="true" (change)='handleTogglers($event, "oppositeContent")'></ejs-switch> </td>
+                </tr>
+                <tr>
+                    <td> Show Icon </td>
+                    <td> <ejs-switch [checked]="true" (change)='handleTogglers($event, "dotCss")'></ejs-switch> </td>
+                </tr>
+                <tr>
+                    <td> Reverse </td>
+                    <td> <ejs-switch (change)='toggleReverse($event)'></ejs-switch> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the properties available in the Timeline component.</p>
+</div>
+<div id="description">
+    <p>This sample can be customized further with the combination of Timeline properties from the property pane. For example,</p>
+    <ul>
+        <li>The layout can be changed by selecting the orientation dropdownlist from property pane.</li>
+        <li>Items alignment can be changed by selecting the alignment dropdownlist from property pane.</li>
+        <li>Show or hide the information opposite to the content by toggling the opposite content switcher button.</li>
+        <li>Show or hide the item icons by toggling the show icon switcher button.</li>
+        <li>Reverse the timeline items by toggling the reverse switcher button.</li>
+    </ul>
+</div>

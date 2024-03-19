@@ -1,12 +1,16 @@
 import { Component, Inject , ViewChild } from '@angular/core';
-import { DropDownTreeComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownTreeComponent, DropDownTreeModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Dropdown Tree Custom Template sample
  */
 @Component({
     selector: 'control-content',
-    templateUrl: 'custom-template.html'
+    templateUrl: 'custom-template.html',
+    standalone: true,
+    imports: [DropDownTreeModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class CustomTemplateDropDownTreeComponent {
 

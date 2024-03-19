@@ -2,7 +2,7 @@
     <div>
         <div id="default_title_bar" class="e-de-ctn-title"></div>
         <div>
-            <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true [locale]="culture" (created)="onCreate()" [showPropertiesPane]=false
+            <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true [locale]="culture" [documentEditorSettings]="settings" (created)="onCreate()" [showPropertiesPane]=false
                 (documentChange)="onDocumentChange()" (commentDelete)="commentDelete($event)" height="600px" [serviceUrl]="hostUrl" style="display:block;" currentUser = "Nancy Davolio" userColor="#b70f34"></ejs-documenteditorcontainer>
         </div>
     </div>
@@ -17,6 +17,7 @@
             <li>Add or edit a comment.</li>
             <li>Reply to a comment.</li>
             <li>Resolving the comment discussion.</li>
+            <li>&#64;mention in comments.</li>
         </ul>
         <p style="display: block">> More information about the document editor features can be found in this <a
              target="_blank" href="https://ej2.syncfusion.com/angular/documentation/document-editor/comments/">documentation

@@ -1,11 +1,15 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { DataManager } from '@syncfusion/ej2-data';
-import { KanbanComponent, CardSettingsModel, DialogEventArgs } from '@syncfusion/ej2-angular-kanban';
+import { KanbanComponent, CardSettingsModel, DialogEventArgs, KanbanModule } from '@syncfusion/ej2-angular-kanban';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'remote-data.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ KanbanModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class RemoteDataComponent {

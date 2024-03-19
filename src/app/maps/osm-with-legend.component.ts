@@ -5,12 +5,16 @@
 //tslint:disable
 // custom code end
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, MapsTooltip, Maps, Legend, Marker, ILoadEventArgs, Zoom } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, MapsTooltip, Maps, Legend, Marker, ILoadEventArgs, Zoom, MapsModule } from '@syncfusion/ej2-angular-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Maps.Inject(Marker, MapsTooltip, Legend, Zoom );
 @Component({
     selector: 'control-content',
     templateUrl: 'osm-with-legend.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [MapsModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class MapsOsmWithLegendComponent {    
     public load = (args: ILoadEventArgs) => {

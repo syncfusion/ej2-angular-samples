@@ -1,6 +1,8 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { SliderModule, SliderComponent, TooltipPlacement, TooltipShowOn } from '@syncfusion/ej2-angular-inputs';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Tooltip sample
@@ -10,7 +12,9 @@ import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
     selector: 'control-content',
     templateUrl: 'tooltip.html',
     styleUrls: ['slider.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SliderModule, DropDownListModule, SBDescriptionComponent]
 })
 
 export class TooltipSliderComponent {

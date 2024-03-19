@@ -1,41 +1,53 @@
 <div id="action-description">
-  <p>This sample demonstrates the integration of the Dropdown List and Slider components as templates in the Query
-    Builder control.</p>
+  <p>This sample demonstrates the integration of the Dropdown List and Slider components as templates in the Query Builder component and also showing the different types of queries such as CEL and SpEL. The query preview can be changed using the tab component.</p>
 </div>
-
 <div class="control-section">
-  <div class="col-lg-8 control-section">
-    <ejs-querybuilder id="querybuilder" #querybuilder cssClass="row" [dataSource]="dataSource" [columns]="filter" width="100%"
-      [rule]="importRules" (ruleChange)="updateRule($event)" (created)="change()">
-    </ejs-querybuilder>
-  </div>
-
-  <div class="col-lg-4 property-section template-property">
-    <div class="property-panel-header">Properties</div>
-    <div class="property-panel-content">
-      <table id="property" title="Properties" style="width:100%;">
-        <tr>
-          <td style="width: 50%; margin:10px">
-            <div class="row">
-              <ejs-radiobutton id="radio1" label="JSON Rule" name="rule" value="json" checked="true" (change)="change()"></ejs-radiobutton>
-            </div>
-          </td>
-          <td style="width: 50%;">
-            <div class="row">
-              <ejs-radiobutton id="radio2" #radio label="SQL Rule" name="rule" value="sql" (change)="change()"></ejs-radiobutton>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td style="width: 100%;" colspan="2">
-            <textarea id="ruleContent">{{displayRule}}</textarea>
-          </td>
-        </tr>
-      </table>
-    </div>
+  <div class="col-lg-12 control-section">
+      <ejs-querybuilder id="querybuilder" #querybuilder cssClass="row" [dataSource]="dataSource" [columns]="filter"
+        width="100%" [rule]="importRules" (ruleChange)="updateRule()">
+      </ejs-querybuilder>
+      <div class="e-query-preview">
+        <ejs-tab id="tab_default" #tabDefault (created)="updateRule()" (selected)="tabChange($event)">
+          <e-tabitems>
+            <e-tabitem [header]="headerText[0]">
+              <ng-template #content>
+                <div class="preview" (mouseenter)="onmouseenter($event)" (mouseleave)="onmouseleave($event)">
+                  <div class="e-preview-options" style="height: 40px;">
+                    <div class="e-copy-tooltip e-hidden" (click)="copyClipboard($event)">
+                      <ejs-tooltip #tooltip opensOn="Click" target=".e-copy-tooltip" position="BottomCenter"
+                        width="auto" content="Copied to clipboard">
+                        <div class="e-icons copycode"></div>
+                      </ejs-tooltip>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div readonly class="e-text-area-content e-cel-content"><pre class="e-pre-content"></pre></div>
+                  </div>
+                </div>
+              </ng-template>
+            </e-tabitem>
+            <e-tabitem [header]="headerText[1]">
+              <ng-template #content>
+                <div class="preview" (mouseenter)="onmouseenter($event)" (mouseleave)="onmouseleave($event)">
+                  <div class="e-preview-options" style="height: 40px;">
+                    <div class="e-copy-tooltip e-hidden" (click)="copyClipboard($event)">
+                      <ejs-tooltip #tooltip opensOn="Click" target=".e-copy-tooltip" position="BottomCenter"
+                        width="auto" content="Copied to clipboard">
+                        <div class="e-icons copycode"></div>
+                      </ejs-tooltip>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div readonly class="e-text-area-content e-spel-content"><pre class="e-pre-content"></pre></div>
+                  </div>
+                </div>
+              </ng-template>
+            </e-tabitem>
+          </e-tabitems>
+        </ejs-tab>
+      </div>
   </div>
 </div>
-
 <div id="description">
   <p>
     This sample illustrates how to integrate the Dropdown List, Slider, and Checkbox components with the Query Builder.
@@ -47,7 +59,8 @@
     <li><code>CheckBox</code></li>
     <li><code>Slider</code></li>
   </ul>
-  <p>This sample illustrates the created filters in JSON and SQL modes.</p>
+  <p>In this demo queries are exported and imported in CEL and SpEL formats. For Common Expression Language (CEL) output, use the "cel" format. CEL is used for validating data.
+    For Spring Expression Language (SpEL) output, use the "spel" format. The Spring Expression Language (SpEL) is a powerful expression language that supports querying and manipulating an object graph at runtime.</p>
   <p>More information about Query Builder can be found in this
     <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/query-builder"> documentation</a> section.
   </p>

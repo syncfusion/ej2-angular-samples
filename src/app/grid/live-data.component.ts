@@ -1,16 +1,20 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { VirtualScrollService, SelectionService, GridComponent, QueryCellInfoEventArgs } from '@syncfusion/ej2-angular-grids';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { VirtualScrollService, SelectionService, GridComponent, QueryCellInfoEventArgs, GridModule } from '@syncfusion/ej2-angular-grids';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { NumericTextBoxComponent, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { L10n, setCulture, EmitType } from '@syncfusion/ej2-base';
 import { getTradeData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-gridlivedata',
     templateUrl: 'live-data.html',
     styleUrls: ['live-data.style.css'],
     providers: [VirtualScrollService, SelectionService],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [NumericTextBoxModule, ButtonModule, GridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class LiveDataComponent implements OnInit {
     public isDataBound: boolean = true;

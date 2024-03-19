@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ViewChild,Inject } from '@angular/core';
-import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
-import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
+import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { ToolbarComponent, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import {
   Diagram, NodeModel, UndoRedo, ConnectorModel, PointPortModel, Connector, FlowShapeModel,
   SymbolInfo, IDragEnterEventArgs, SnapSettingsModel, MarginModel, TextStyleModel, StrokeStyleModel,
@@ -8,16 +8,20 @@ import {
 } from '@syncfusion/ej2-diagrams';
 import { ClickEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 import { paletteIconClick } from './script/diagram-common';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(UndoRedo);
 /**
  * Default FlowShape sample
  */
 
 @Component({
-  selector: 'control-content',
-  templateUrl: 'commands.html',
-  styleUrls: ['commands.component.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'commands.html',
+    styleUrls: ['commands.component.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToolbarModule, DiagramModule, SBDescriptionComponent]
 })
 export class CommandComponent {
   @ViewChild('diagram')

@@ -1,15 +1,19 @@
 /**
- * Default sample
+ * Default sample 
  */
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { ILoadEventArgs, TreeMapTheme, TreeMap } from '@syncfusion/ej2-angular-treemap';
+import { ILoadEventArgs, TreeMapTheme, TreeMap, TreeMapModule } from '@syncfusion/ej2-angular-treemap';
 import { Metals } from './metals';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'custom.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class TreemapCustomComponent {
     @ViewChild('treemap')
@@ -39,7 +43,7 @@ export class TreemapCustomComponent {
             templatePosition: 'Center',
             border: { color: 'black', width: 0.5 },
             labelFormat: ' ${Sport} - ${Gold}',
-             labelTemplate: '<div style="pointer-events: none;"><img src="./assets/treemap/image/{{:GameImage}}"' +
+             labelTemplate: '<div style="pointer-events: none;"><img src="https://ej2.syncfusion.com/angular/demos/assets/treemap/image/{{:GameImage}}"' +
             ' style="height:{{:ItemHeight}};width:{{:ItemWidth}};"></img></div>'
         };
         constructor(@Inject('sourceFiles') private sourceFiles: any) {

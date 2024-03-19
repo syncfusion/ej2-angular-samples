@@ -3,7 +3,9 @@ import {
     Diagram, NodeModel, BpmnDiagrams, SnapSettingsModel, SnapConstraints,
     FlowShapes, FlowShapeModel, TextModel
 } from '@syncfusion/ej2-diagrams';
-import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 Diagram.Inject(BpmnDiagrams);
 
@@ -11,7 +13,9 @@ Diagram.Inject(BpmnDiagrams);
     selector: 'control-content',
     templateUrl: 'shapes.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, SBDescriptionComponent]
 })
 
 export class ShapesDiagramComponent {

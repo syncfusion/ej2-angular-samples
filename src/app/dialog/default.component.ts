@@ -1,6 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild, AfterViewInit } from '@angular/core';
-import { DialogComponent, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
+import { DialogComponent, ButtonPropsModel, DialogModule } from '@syncfusion/ej2-angular-popups';
 import { AnimationSettingsModel } from '@syncfusion/ej2-splitbuttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * Default Dialog Component
@@ -9,7 +12,9 @@ import { AnimationSettingsModel } from '@syncfusion/ej2-splitbuttons';
     selector: 'control-content',
     templateUrl: 'default.html',
     styleUrls: ['default.css'],
-	encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ButtonModule, DialogModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class BasicDialogComponent implements AfterViewInit {
     @ViewChild('Dialog')

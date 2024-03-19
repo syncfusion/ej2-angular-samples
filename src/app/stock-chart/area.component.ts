@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IStockChartEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { IStockChartEventArgs, ChartTheme, StockChartModule, RangeNavigatorAllModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { aapl } from './stock-data';
 /**
  * Sample for Area Series
@@ -7,7 +7,9 @@ import { aapl } from './stock-data';
 @Component({
     selector: 'control-content',
     templateUrl: 'area.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ StockChartModule, ChartAllModule, RangeNavigatorAllModule]
 })
 export class AreaComponent {
 

@@ -1,41 +1,45 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { HeatMap, Adaptor, Tooltip, ILoadedEventArgs, HeatMapTheme } from '@syncfusion/ej2-angular-heatmap';
+import { HeatMap, Adaptor, Tooltip, ILoadedEventArgs, HeatMapTheme, HeatMapModule } from '@syncfusion/ej2-angular-heatmap';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 HeatMap.Inject(Tooltip, Adaptor);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'label-template.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [HeatMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class LabelTemplateComponent {
 
     public jsonCellData: Object = [
-        { 'rowId': 'Improbable', 'columnId': 'Negligible', 'value': '2', 'image': './assets/heatmap/images/green-cross.png' },
-        { 'rowId': 'Improbable', 'columnId': 'Low', 'value': '4', 'image': './assets/heatmap/images/green-cross.png' },
-        { 'rowId': 'Improbable', 'columnId': 'Moderate', 'value': '6', 'image': './assets/heatmap/images/green-cross.png' },
-        { 'rowId': 'Improbable', 'columnId': 'Significant', 'value': '8', 'image': './assets/heatmap/images/green-cross.png' },
-        { 'rowId': 'Improbable', 'columnId': 'Catastrophic', 'value': '10', 'image': './assets/heatmap/images/green-cross.png' },
-        { 'rowId': 'Remote', 'columnId': 'Negligible', 'value': '4', 'image': './assets/heatmap/images/green-cross.png' },
-        { 'rowId': 'Remote', 'columnId': 'Low', 'value': '16', 'image': './assets/heatmap/images/green-cross.png' },
-        { 'rowId': 'Remote', 'columnId': 'Moderate', 'value': '24', 'image': './assets/heatmap/images/orange-tick.png' },
-        { 'rowId': 'Remote', 'columnId': 'Significant', 'value': '32', 'image': './assets/heatmap/images/orange-tick.png' },
-        { 'rowId': 'Remote', 'columnId': 'Catastrophic', 'value': '40', 'image': './assets/heatmap/images/orange-tick.png' },
-        { 'rowId': 'Occasional', 'columnId': 'Negligible', 'value': '6', 'image': './assets/heatmap/images/green-cross.png' },
-        { 'rowId': 'Occasional', 'columnId': 'Low', 'value': '24', 'image': './assets/heatmap/images/orange-tick.png' },
-        { 'rowId': 'Occasional', 'columnId': 'Moderate', 'value': '36', 'image': './assets/heatmap/images/orange-tick.png' },
-        { 'rowId': 'Occasional', 'columnId': 'Significant', 'value': '48', 'image': './assets/heatmap/images/red-tick.png' },
-        { 'rowId': 'Occasional', 'columnId': 'Catastrophic', 'value': '60', 'image': './assets/heatmap/images/red-tick.png' },
-        { 'rowId': 'Probable', 'columnId': 'Negligible', 'value': '8', 'image': './assets/heatmap/images/green-cross.png' },
-        { 'rowId': 'Probable', 'columnId': 'Low', 'value': '32', 'image': './assets/heatmap/images/orange-tick.png' },
-        { 'rowId': 'Probable', 'columnId': 'Moderate', 'value': '48', 'image': './assets/heatmap/images/red-tick.png' },
-        { 'rowId': 'Probable', 'columnId': 'Significant', 'value': '64', 'image': './assets/heatmap/images/red-tick.png' },
-        { 'rowId': 'Probable', 'columnId': 'Catastrophic', 'value': '80', 'image': './assets/heatmap/images/red-tick.png' },
-        { 'rowId': 'Frequent', 'columnId': 'Negligible', 'value': '10', 'image': './assets/heatmap/images/green-cross.png' },
-        { 'rowId': 'Frequent', 'columnId': 'Low', 'value': '40', 'image': './assets/heatmap/images/orange-tick.png' },
-        { 'rowId': 'Frequent', 'columnId': 'Moderate', 'value': '60', 'image': './assets/heatmap/images/red-tick.png' },
-        { 'rowId': 'Frequent', 'columnId': 'Significant', 'value': '80', 'image': './assets/heatmap/images/red-tick.png' },
-        { 'rowId': 'Frequent', 'columnId': 'Catastrophic', 'value': '100', 'image': './assets/heatmap/images/red-tick.png' }
+        { 'rowId': 'Improbable', 'columnId': 'Negligible', 'value': '2', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/green-cross.png' },
+        { 'rowId': 'Improbable', 'columnId': 'Low', 'value': '4', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/green-cross.png' },
+        { 'rowId': 'Improbable', 'columnId': 'Moderate', 'value': '6', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/green-cross.png' },
+        { 'rowId': 'Improbable', 'columnId': 'Significant', 'value': '8', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/green-cross.png' },
+        { 'rowId': 'Improbable', 'columnId': 'Catastrophic', 'value': '10', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/green-cross.png' },
+        { 'rowId': 'Remote', 'columnId': 'Negligible', 'value': '4', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/green-cross.png' },
+        { 'rowId': 'Remote', 'columnId': 'Low', 'value': '16', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/green-cross.png' },
+        { 'rowId': 'Remote', 'columnId': 'Moderate', 'value': '24', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/orange-tick.png' },
+        { 'rowId': 'Remote', 'columnId': 'Significant', 'value': '32', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/orange-tick.png' },
+        { 'rowId': 'Remote', 'columnId': 'Catastrophic', 'value': '40', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/orange-tick.png' },
+        { 'rowId': 'Occasional', 'columnId': 'Negligible', 'value': '6', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/green-cross.png' },
+        { 'rowId': 'Occasional', 'columnId': 'Low', 'value': '24', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/orange-tick.png' },
+        { 'rowId': 'Occasional', 'columnId': 'Moderate', 'value': '36', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/orange-tick.png' },
+        { 'rowId': 'Occasional', 'columnId': 'Significant', 'value': '48', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/red-tick.png' },
+        { 'rowId': 'Occasional', 'columnId': 'Catastrophic', 'value': '60', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/red-tick.png' },
+        { 'rowId': 'Probable', 'columnId': 'Negligible', 'value': '8', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/green-cross.png' },
+        { 'rowId': 'Probable', 'columnId': 'Low', 'value': '32', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/orange-tick.png' },
+        { 'rowId': 'Probable', 'columnId': 'Moderate', 'value': '48', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/red-tick.png' },
+        { 'rowId': 'Probable', 'columnId': 'Significant', 'value': '64', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/red-tick.png' },
+        { 'rowId': 'Probable', 'columnId': 'Catastrophic', 'value': '80', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/red-tick.png' },
+        { 'rowId': 'Frequent', 'columnId': 'Negligible', 'value': '10', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/green-cross.png' },
+        { 'rowId': 'Frequent', 'columnId': 'Low', 'value': '40', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/orange-tick.png' },
+        { 'rowId': 'Frequent', 'columnId': 'Moderate', 'value': '60', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/red-tick.png' },
+        { 'rowId': 'Frequent', 'columnId': 'Significant', 'value': '80', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/red-tick.png' },
+        { 'rowId': 'Frequent', 'columnId': 'Catastrophic', 'value': '100', 'image': 'https://ej2.syncfusion.com/angular/demos/assets/heatmap/images/red-tick.png' }
     ];
     xAxis: Object = {
         labels: ["Improbable", "Remote", "Occasional", "Probable", "Frequent"],
@@ -98,6 +102,6 @@ export class LabelTemplateComponent {
         // custom code end
     };
     constructor() {
-        //code
+        // code
     };
 }

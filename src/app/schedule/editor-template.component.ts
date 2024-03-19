@@ -1,21 +1,23 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { extend, isNullOrUndefined } from '@syncfusion/ej2-base';
-import {
-  EventRenderedArgs, ScheduleComponent, MonthService, DayService, WeekService,
-  WorkWeekService, EventSettingsModel, ResizeService, DragAndDropService, ActionEventArgs
-} from '@syncfusion/ej2-angular-schedule';
+import { EventRenderedArgs, ScheduleComponent, MonthService, DayService, WeekService, WorkWeekService, EventSettingsModel, ResizeService, DragAndDropService, ActionEventArgs, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { ChangeEventArgs } from '@syncfusion/ej2-calendars';
 import { doctorsEventData } from './data';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { NgIf } from '@angular/common';
 
 /**
  * Schedule editor template sample
  */
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'editor-template.html',
-  styles: [`
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'editor-template.html',
+    styles: [`
     .custom-event-editor .e-textlabel {
         padding-right: 15px;
         text-align: right;
@@ -25,13 +27,20 @@ import { doctorsEventData } from './data';
         padding: 7px;
         padding-right: 16px;
     }`],
-  providers: [MonthService, DayService, WeekService, WorkWeekService, ResizeService, DragAndDropService],
-  encapsulation: ViewEncapsulation.None
+    providers: [MonthService, DayService, WeekService, WorkWeekService, ResizeService, DragAndDropService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ScheduleModule, NgIf, DropDownListModule, DateTimePickerModule, SBDescriptionComponent, SBActionDescriptionComponent]
 })
 export class EditTempComponent {
   @ViewChild('scheduleObj')
   public scheduleObj: ScheduleComponent;
-  public eventSettings: EventSettingsModel = { dataSource: extend([], doctorsEventData, null, true) as Record<string, any>[] };
+  public eventSettings: EventSettingsModel = {
+    dataSource: extend([], doctorsEventData, null, true) as Record<string, any>[], fields: {
+      startTime: { name: 'StartTime', validation: { required: true } },
+      endTime: { name: 'EndTime', validation: { required: true } }
+    }
+  };
   public selectedDate: Date = new Date(2021, 1, 15);
   public showQuickInfo = false;
   public startDate: Date;

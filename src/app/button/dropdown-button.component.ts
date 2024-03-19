@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
+import { ItemModel, MenuEventArgs, DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * DropDownButton Controller
@@ -8,7 +10,9 @@ import { ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
     selector: 'control-content',
     templateUrl: 'dropdown-button.html',
     styleUrls: ['dropdown-button.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [DropDownButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class DropDownButtonController {

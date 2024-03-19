@@ -13,9 +13,10 @@ import { CustomValueComboBoxComponent } from './custom-value.component';
 import { DiacriticsFilteringComboBoxComponent } from './diacritics-filtering.component';
 import { TemplateDrivenComboBoxComponent } from './template-driven.component';
 import { ReactiveFormComboBoxComponent } from './reactive-form.component';
-import { SharedModule } from '../common/shared.module';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { VirtualScrollComboBoxComponent } from './virtual-scroll.component';
+import { ObjectComboBoxComponent } from './object-value-binding';
 export const comboboxAppRoutes: Object[] = [
     { path: ':theme/combo-box/default', component: DefaultComboBoxComponent, name: 'Default Functionalities', description: 'This example demonstrates the default functionalities of the Angular combo box component with minimum configuration.', order: '01',
 	  category: 'ComboBox' },
@@ -23,11 +24,13 @@ export const comboboxAppRoutes: Object[] = [
     	category: 'ComboBox' },
     { path: ':theme/combo-box/data-binding', component: DataBindingComboBoxComponent, name: 'Data Binding', description: 'This example demonstrates how to bind with local data source and fetch data from remote data service in the Angular combo box component.', order: '01',
     	category: 'ComboBox' },
+    { path: ':theme/combo-box/object-value-binding', component: ObjectComboBoxComponent, name: 'Oject Value Binding', type : 'new', description: 'This example demonstrates how to bind with data source in the Angular combo box component.', order: '01',
+    category: 'ComboBox' },
     { path: ':theme/combo-box/custom-value', component: CustomValueComboBoxComponent, name: 'Custom Value', description: 'This example demonstrates the addition of a new value that is not present in the predefined list of the Angular combo box component.', order: '01',
 		category: 'ComboBox' },
     { path: ':theme/combo-box/template', component: TemplateComboBoxComponent, name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular combo box component pop-up list using the template.', order: '01',
 		category: 'ComboBox' },
-    { path: ':theme/combo-box/virtual-scroll', component: VirtualScrollComboBoxComponent, name: 'Virtualization', type : 'update', description: 'This example demonstrates how to utilize the virtualization support of Angular combo box component.', order: '01', 
+    { path: ':theme/combo-box/virtual-scroll', component: VirtualScrollComboBoxComponent, name: 'Virtualization', description: 'This example demonstrates how to utilize the virtualization support of Angular combo box component.', order: '01', 
     category: 'ComboBox' },
     { path: ':theme/combo-box/filtering', component: FilteringComboBoxComponent, name: 'Filtering', description: 'This example demonstrates how the filtering functionalities works based on the typed characters in the Angular combo box component.', order: '01',
 		category: 'ComboBox' },
@@ -44,24 +47,5 @@ export const comboboxAppRoutes: Object[] = [
 
 ];
 
-export const ComboBoxRouter: ModuleWithProviders<any> = RouterModule.forChild(comboboxAppRoutes);
+export const ComboBoxSampleModule: ModuleWithProviders<any> = RouterModule.forChild(comboboxAppRoutes);
 
-@NgModule({
-    imports: [ComboBoxRouter, ComboBoxModule, SharedModule, CheckBoxModule, FormsModule, ReactiveFormsModule, BrowserModule],
-    declarations: [
-        DefaultComboBoxComponent,
-        GroupAndIconComboBoxComponent,
-        DataBindingComboBoxComponent,
-        CustomValueComboBoxComponent,
-        TemplateComboBoxComponent,
-        VirtualScrollComboBoxComponent,
-        CascadingComboBoxComponent,
-        FilteringComboBoxComponent,
-        DiacriticsFilteringComboBoxComponent,
-        TemplateDrivenComboBoxComponent,
-        ReactiveFormComboBoxComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class ComboBoxSampleModule {
-}

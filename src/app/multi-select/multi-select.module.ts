@@ -14,11 +14,13 @@ import { DiacriticsFilteringMultiSelectComponent } from './diacritics-filtering.
 import { CheckboxMultiSelectComponent } from './checkbox.component';
 import { SelectLimitComponent } from './selection-limit.component';
 import {CheckboxGroupingMultiSelectComponent} from './grouping-with-checkbox.component';
-import { SharedModule } from '../common/shared.module';
+
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { TemplateDrivenMultiSelectComponent } from './template-driven.component';
 import { ReactiveFormMultiSelectComponent } from './reactive-form.component';
+import { VirtualScrollMultiSelectComponent } from './virtual-scroll.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { ObjectMultiselectComponent } from './object-value-binding';
 export const multiselectAppRoutes: Object[] = [
     {
         path: ':theme/multi-select/default', component: DefaultMultiselectComponent,
@@ -26,7 +28,11 @@ export const multiselectAppRoutes: Object[] = [
     },
     { path: ':theme/multi-select/data-binding', component: DataBindingMultiSelectComponent, name: 'Data Binding', description: 'This example demonstrates how to bind with local data source and fetch data from remote data service in the Angular multiselect component.', order: '01',
 		category: 'MultiSelect Dropdown' },
+    { path: ':theme/multi-select/object-value-binding', component: ObjectMultiselectComponent, name: 'Object Value Binding',  type : 'new', description: 'This example demonstrates how to bind with data source in the Angular multiselect component.', order: '01',
+		category: 'MultiSelect Dropdown' },
     { path: ':theme/multi-select/grouping', component: GroupMultiSelectComponent, name: 'Grouping', description: 'This example demonstrates how to group based on the different categories with individual header and icon support using the Angular multiselect component.', order: '01',
+		category: 'MultiSelect Dropdown' },
+    { path: ':theme/multi-select/virtual-scroll', component: VirtualScrollMultiSelectComponent, name: 'Virtualization', type : 'new', description: 'This example demonstrates how to utilize the virtualization support of Angular multiselect component.', order: '01',
 		category: 'MultiSelect Dropdown' },
     { path: ':theme/multi-select/template', component: TemplateMultiSelectComponent, name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular multiselect component pop-up list using the template.',order: '01',
 		category: 'MultiSelect Dropdown' },
@@ -64,27 +70,5 @@ export const multiselectAppRoutes: Object[] = [
     },
 ];
 
-export const MultiSelectRouter: ModuleWithProviders<any> = RouterModule.forChild(multiselectAppRoutes);
+export const MultiSelectSampleModule: ModuleWithProviders<any> = RouterModule.forChild(multiselectAppRoutes);
 
-@NgModule({
-    imports: [MultiSelectRouter, MultiSelectAllModule, SharedModule, ButtonModule, CheckBoxModule, NumericTextBoxModule, FormsModule,
-              ReactiveFormsModule,BrowserModule],
-    declarations: [
-        DefaultMultiselectComponent,
-        GroupMultiSelectComponent,
-        DataBindingMultiSelectComponent,
-        TemplateMultiSelectComponent,
-        FilteringMultiSelectComponent,
-        CustomTagMultiSelectComponent,
-        ChipCustomizeMultiSelectComponent,
-        CheckboxMultiSelectComponent,
-        CheckboxGroupingMultiSelectComponent,
-        SelectLimitComponent,
-        DiacriticsFilteringMultiSelectComponent,
-        TemplateDrivenMultiSelectComponent,
-        ReactiveFormMultiSelectComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class MultiSelectSampleModule {
-}

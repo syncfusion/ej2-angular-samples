@@ -1,12 +1,17 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import {ConfirmDialogArgs, DialogEffect, DialogUtility} from '@syncfusion/ej2-angular-popups'
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'animation.html',
     styleUrls: ['animation.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ButtonModule, DropDownListModule, SBDescriptionComponent]
 })
 export class AnimationDialogComponent  {
   @ViewChild('animationSample')

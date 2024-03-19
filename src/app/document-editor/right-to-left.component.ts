@@ -1,8 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild, OnInit } from '@angular/core';
-import { ToolbarService, DocumentEditorContainerComponent } from '@syncfusion/ej2-angular-documenteditor';
+import { ToolbarService, DocumentEditorContainerComponent, DocumentEditorContainerModule } from '@syncfusion/ej2-angular-documenteditor';
 import { TitleBar } from './title-bar';
 import { rtlDocument, WEB_API_ACTION } from './data';
 import { L10n, isNullOrUndefined } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Document Editor Component
  */
@@ -10,7 +12,9 @@ import { L10n, isNullOrUndefined } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'right-to-left.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService]
+    providers: [ToolbarService],
+    standalone: true,
+    imports: [DocumentEditorContainerModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class RightToLeftComponent implements OnInit {
     public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
@@ -125,6 +129,9 @@ export class RightToLeftComponent implements OnInit {
                     'Heading 4': 'عنوان 4',
                     'Heading 5': 'عنوان 5',
                     'Heading 6': 'عنوان 6',
+                    'Heading 7': 'عنوان 7',
+                    'Heading 8': '8 عنوان ',
+                    'Heading 9': 'عنوان 9',
                     'List Paragraph': 'فقره القائمة',
                     'Normal': 'العاديه',
                     'Outline levels': 'مستويات المخطط التفصيلي',
@@ -451,6 +458,8 @@ export class RightToLeftComponent implements OnInit {
 					"By URL": "حسب عنوان URL",
 					"Page Break": "فاصل الصفحات",
 					"Section Break": "فاصل المقطع",
+                    'Page Breaks':  'فواصل الصفحة',
+                    'Section Breaks': 'فواصل القسم',
 					"Header And Footer": "راس & تذييل",
 					"Options": "خيارات",
 					"Levels": "مستويات",
@@ -611,6 +620,7 @@ export class RightToLeftComponent implements OnInit {
         this.titleBar = new TitleBar(titleBarElement, this.container.documentEditor, true, true);
         this.container.documentEditor.open(JSON.stringify(rtlDocument));
         this.container.documentEditor.documentName = 'الشروع';
+        this.container.documentEditorSettings.showRuler = true;
         this.titleBar.updateDocumentTitle();
     }
 

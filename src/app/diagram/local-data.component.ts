@@ -4,7 +4,10 @@ import {
     DataBinding, HierarchicalTree, DiagramTools
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import {species} from './overview-data';
+import {species} from'./overview-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 export interface DataInfo {
     [key: string]: string;
@@ -19,7 +22,9 @@ Diagram.Inject(DataBinding, HierarchicalTree);
     selector: 'control-content',
     templateUrl: 'local-data.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, SBDescriptionComponent]
 })
 export class LocalDataDiagramComponent {
 

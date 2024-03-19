@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { CalendarComponent } from '@syncfusion/ej2-angular-calendars';
+import { CalendarComponent, CalendarModule } from '@syncfusion/ej2-angular-calendars';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * MultiSelection Calendar component
@@ -8,7 +10,9 @@ import { CalendarComponent } from '@syncfusion/ej2-angular-calendars';
     selector: 'control-content',
     styleUrls: ['calendar-style.css'],
     templateUrl: 'multi-select.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, CalendarModule, SBDescriptionComponent]
 })
 export class MultiSelectionComponent {
     public year: number = new Date().getFullYear();

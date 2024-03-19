@@ -9,7 +9,7 @@ import { CarouselDataBindingComponent } from './data-binding.component';
 import { CarouselAPIComponent } from './api.component';
 import { CarouselKeyboardNavigationComponent } from './keyboard-navigation.component';
 import { CarouselIndicatorComponent } from './indicator-type.component';
-import { SharedModule } from '../common/shared.module';
+
 import { CarouselPartialComponent } from './partial-visible.component';
 
 export const carouselAppRoutes: Object[] = [
@@ -22,19 +22,6 @@ export const carouselAppRoutes: Object[] = [
   { path: ':theme/carousel/api', component: CarouselAPIComponent, name: 'API', description: 'This example showcase the available APIs and its functionalities in Syncfusion Angular Carousel component.', category: 'Carousel' }
 ];
 
-export const carouselRouter: ModuleWithProviders<any> = RouterModule.forChild(carouselAppRoutes);
+export const CarouselSampleModule: ModuleWithProviders<any> = RouterModule.forChild(carouselAppRoutes);
 
-@NgModule({
-  imports: [carouselRouter, CarouselAllModule, DropDownListAllModule, ButtonAllModule, SwitchAllModule, SharedModule],
-  declarations: [
-    CarouselDefaultComponent,
-    CarouselPartialComponent,
-    CarouselTemplateComponent,
-    CarouselDataBindingComponent,
-    CarouselAPIComponent,
-    CarouselKeyboardNavigationComponent,
-    CarouselIndicatorComponent
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class CarouselSampleModule { }
+

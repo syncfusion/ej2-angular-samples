@@ -1,16 +1,20 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { TreeGridComponent } from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent, TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
 import { addClass, removeClass } from '@syncfusion/ej2-base';
-import { DropDownListComponent , ChangeEventArgs} from '@syncfusion/ej2-angular-dropdowns';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { DropDownListComponent , DropDownListAllModule, ChangeEventArgs} from '@syncfusion/ej2-angular-dropdowns';
+import { ButtonComponent, ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'showhide.html',
     styleUrls: ['showhide.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, ButtonAllModule, DropDownListAllModule]
 })
 export class ShowHideComponent implements OnInit {
     public data: Object[] = [];

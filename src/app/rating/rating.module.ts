@@ -2,7 +2,7 @@ import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../common/shared.module';
+
 import { RatingModule } from '@syncfusion/ej2-angular-inputs';
 import { DefaultRatingComponent } from './default.component';
 import { PrecisionRatingComponent } from './precision.component';
@@ -20,19 +20,6 @@ export const ratingAppRoutes: Object[] = [
     { path: ':theme/rating/keyboard-navigation', component: KeyboardNavigationRatingComponent, name: 'Keyboard Navigations', order: '01', category: 'Rating', description: 'This example demonstrates the keyboard navigations of Syncfusion Angular Rating control.' }
 ];
 
-export const ratingRouter: ModuleWithProviders<any> = RouterModule.forChild(ratingAppRoutes);
+export const RatingSampleModule: ModuleWithProviders<any> = RouterModule.forChild(ratingAppRoutes);
 
-@NgModule({
-    imports: [ratingRouter, SharedModule, RatingModule, BrowserModule, CommonModule],
-    declarations: [
-        DefaultRatingComponent,
-        PrecisionRatingComponent,
-        TooltipRatingComponent,
-        LabelRatingComponent,
-        TemplateRatingComponent,
-        KeyboardNavigationRatingComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class RatingSampleModule {
-}
+

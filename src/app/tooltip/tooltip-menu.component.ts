@@ -3,14 +3,19 @@
  */
 
 import { Component, ViewChild, ViewChildren, ViewEncapsulation, Inject } from '@angular/core';
-import { TooltipComponent, TooltipEventArgs } from '@syncfusion/ej2-angular-popups';
-import { ListViewComponent } from '@syncfusion/ej2-angular-lists';
+import { TooltipComponent, TooltipEventArgs, TooltipModule } from '@syncfusion/ej2-angular-popups';
+import { ListViewComponent, ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { closest } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
     templateUrl: 'tooltip-menu.html',
     styleUrls: ['tooltip-menu.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, TooltipModule, ToolbarModule, ListViewModule, SBDescriptionComponent]
 })
 
 export class TooltipMenuComponent {

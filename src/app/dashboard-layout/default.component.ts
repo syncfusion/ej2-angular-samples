@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { DashboardLayoutComponent, PanelModel } from '@syncfusion/ej2-angular-layouts';
+import { DashboardLayoutComponent, PanelModel, DashboardLayoutAllModule } from '@syncfusion/ej2-angular-layouts';
 
 /**
 
@@ -9,7 +9,9 @@ import { DashboardLayoutComponent, PanelModel } from '@syncfusion/ej2-angular-la
     selector: 'control-content',
     styleUrls: ['default-style.css'],
     templateUrl: 'default.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [DashboardLayoutAllModule]
 })
 export class DefaultCalendarComponent {
     @ViewChild('default_dashboard')

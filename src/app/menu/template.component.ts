@@ -1,5 +1,8 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MenuAnimationSettingsModel } from '@syncfusion/ej2-angular-navigations';
+import { MenuAnimationSettingsModel, MenuModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NgIf } from '@angular/common';
 
 /**
  * Template Menu Controller
@@ -9,7 +12,9 @@ import { MenuAnimationSettingsModel } from '@syncfusion/ej2-angular-navigations'
     selector: 'control-content',
     templateUrl: 'template.html',
     styleUrls: ['template.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [MenuModule, NgIf, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class TemplateMenuController {

@@ -4,7 +4,7 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid #grid [dataSource]='data' id='Grid'>
+    <ejs-grid #grid [dataSource]='data' id='Grid' [allowSorting]='true'>
         <ng-template #detailTemplate let-data>
             <table class="detailtable" width="100%">
                 <colgroup>
@@ -75,7 +75,7 @@
         <br/>
         <p style="font-weight: 500">Injecting Module:</p>
         <p>
-            Grid features are segregated into individual feature-wise modules. To use detail template feature, we need to inject <code>DetailRowService</code>            into the <code>@NgModule.providers</code> section.
+            Grid features are segregated into individual feature-wise modules. To use detail template feature, we need to inject <code>DetailRowService</code>            into the <code>&#64;NgModule.providers</code> section.
         </p>
     </div>
 </div>

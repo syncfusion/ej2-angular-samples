@@ -2,19 +2,22 @@
  * Seat Selection sample
  */
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, Maps, ISelectionEventArgs, Selection, ILoadEventArgs } from '@syncfusion/ej2-angular-maps';
-import { MapAjax } from '@syncfusion/ej2-maps';
+import { MapsTheme, Maps, ISelectionEventArgs, Selection, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Maps.Inject(Selection);
 interface SeatInfo {
     seatno?: number;
     fill?: string;
 }
 declare var require: any;
-import seat_selection from './seat-data.json';
+let seat_selection: object[] = require('./seat-data.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'seat-selection.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, SBDescriptionComponent]
 })
 export class MapsSeatSelectionComponent {
     public zoomSettings: object = {

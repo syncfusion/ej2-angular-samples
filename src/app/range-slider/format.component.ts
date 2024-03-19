@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { SliderModule, SliderComponent } from '@syncfusion/ej2-angular-inputs';
 import { SliderTooltipEventArgs, SliderTickEventArgs } from '@syncfusion/ej2-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Format samples
@@ -10,7 +12,9 @@ import { SliderTooltipEventArgs, SliderTickEventArgs } from '@syncfusion/ej2-inp
     selector: 'control-content',
     templateUrl: 'format.html',
     styleUrls: ['format.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SliderModule, SBDescriptionComponent]
 })
 export class FormatSliderComponent {
     @ViewChild('currency')

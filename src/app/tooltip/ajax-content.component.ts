@@ -3,14 +3,19 @@
  */
 
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
-import { TooltipComponent, TooltipEventArgs } from '@syncfusion/ej2-angular-popups';
+import { TooltipComponent, TooltipEventArgs, TooltipModule } from '@syncfusion/ej2-angular-popups';
 import { HttpClient } from '@angular/common/http';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ListViewModule } from '@syncfusion/ej2-angular-lists';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'ajax-content.html',
     styleUrls: ['tooltip.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, TooltipModule, ListViewModule, SBDescriptionComponent]
 })
 
 export class AjaxContentTooltipComponent {

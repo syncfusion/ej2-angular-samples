@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { ChangeEventArgs, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { ButtonComponent, CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { IDataOptions, PivotView, IDataSet, PivotViewModule } from '@syncfusion/ej2-angular-pivotview';
+import { ChangeEventArgs, DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ButtonComponent, CheckBoxComponent, ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -16,7 +18,9 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     selector: 'ej2-pivotview-container',
     templateUrl: 'sorting.html',
     encapsulation: ViewEncapsulation.None,
-    styleUrls: ['sorting.css']
+    styleUrls: ['sorting.css'],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule, ButtonModule, CheckBoxModule]
 })
 
 export class SortingComponent implements OnInit {

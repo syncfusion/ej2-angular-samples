@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { virtualData } from './data';
-import { GanttComponent, FilterService } from '@syncfusion/ej2-angular-gantt';
-import { DropDownListComponent , ChangeEventArgs} from '@syncfusion/ej2-angular-dropdowns';
+import { GanttComponent, FilterService, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DropDownListComponent, ChangeEventArgs, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-ganttfiltering',
     templateUrl: 'loading-animation.html',
-    providers: [ FilterService ]
+    providers: [FilterService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, DropDownListAllModule, SBDescriptionComponent]
 })
 export class GanttLoadingAnimationComponent implements OnInit {
     public data: object[];

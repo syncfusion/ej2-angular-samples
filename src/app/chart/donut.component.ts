@@ -1,13 +1,17 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { AccumulationChartComponent, AccumulationChart, AccumulationDataLabel, IAccLoadedEventArgs, AccumulationTheme, IPointRenderEventArgs } from '@syncfusion/ej2-angular-charts';
+import { AccumulationChartComponent, ChartAllModule,AccumulationChart, AccumulationDataLabel, IAccLoadedEventArgs, AccumulationTheme, IPointRenderEventArgs, AccumulationChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Sample for doughnut 
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'donut.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent,ChartAllModule, AccumulationChartAllModule, SBDescriptionComponent]
 })
 export class DonutComponent {
     public data: Object[] = [

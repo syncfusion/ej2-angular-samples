@@ -3,12 +3,16 @@
  */
 import { Component } from '@angular/core';
 import { Browser, getComponent } from '@syncfusion/ej2-base';
-import { ImageEditorComponent } from '@syncfusion/ej2-angular-image-editor';
+import { ImageEditorComponent, ImageEditorModule } from '@syncfusion/ej2-angular-image-editor';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
-    styleUrls: ['default.css']
+    styleUrls: ['default.css'],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ImageEditorModule, SBDescriptionComponent]
 })
 
 export class DefaultImageEditorComponent {

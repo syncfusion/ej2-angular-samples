@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme, ChartAnnotationSettingsModel} from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartTheme, ChartAnnotationSettingsModel, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { withLatestFrom } from 'rxjs/operators';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Area Series
@@ -10,7 +12,9 @@ import { withLatestFrom } from 'rxjs/operators';
     selector: 'control-content',
     templateUrl: 'area.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 export class AreaChartComponent {
     public annotations: ChartAnnotationSettingsModel[] = [

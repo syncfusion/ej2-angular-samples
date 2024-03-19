@@ -10,7 +10,7 @@ import { DraggableDialogComponent } from './draggable.component';
 import { PositioningDialogComponent } from './position.component';
 import { MultipleDialogsDialogComponent } from './multiple-dialogs.component';
 import { TemplateDialogComponent } from './template.component';
-import { SharedModule } from '../common/shared.module';
+
 import { DialogMultipleComponent } from './multiple-components.component';
 import { CheckBoxModule , ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
@@ -38,23 +38,6 @@ export const dialogAppRoutes: Object[] = [
     { path: ':theme/dialog/multiple-components', component: DialogMultipleComponent, name: 'Components inside Dialog', category: 'Dialog', description: 'This example demonstrates how to render other Javascript Syncfusion components inside the dialog component.' }
 ];
 
-export const DialogRouter: ModuleWithProviders<any> = RouterModule.forChild(dialogAppRoutes);
+export const DialogSampleModule: ModuleWithProviders<any> = RouterModule.forChild(dialogAppRoutes);
 
-@NgModule({
-    imports: [DialogRouter, RadioButtonModule, CheckBoxModule, SharedModule, ButtonModule, DialogModule, RadioButtonModule, ChartAllModule, RangeNavigatorAllModule, AccumulationChartAllModule, GridAllModule, RichTextEditorAllModule, ScheduleAllModule, RecurrenceEditorAllModule, CheckBoxModule, FormsModule, ReactiveFormsModule, CommonModule, BrowserModule, TabAllModule, DatePickerModule],
-    declarations: [
-        BasicDialogComponent,
-        ModalDialogComponent,
-        TemplateDialogComponent,
-        AjaxDialogComponent,
-        DraggableDialogComponent,
-        ResizableDialogComponent,
-        PositioningDialogComponent,
-        AnimationDialogComponent,
-        MultipleDialogsDialogComponent,
-        DialogMultipleComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class DialogSampleModule {
-}
+

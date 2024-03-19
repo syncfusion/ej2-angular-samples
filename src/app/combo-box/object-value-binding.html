@@ -1,0 +1,24 @@
+<div id="action-description">
+    <p>This sample demonstrates the object value binding functionalities of the ComboBox. Type a character in the
+        ComboBox element or click the drodown icon to choose an item from the <code>options</code> list. The
+        corresponding object value of the selected item is then assigned to the value property.
+    In the property panel, the <code>value</code> property of the selected item's will be displayed.</p>
+</div>
+
+<div class="col-lg-8 control-section">
+    <div class="control-wrapper">
+        <div id="default" style='padding-top:75px;'>
+            <ejs-combobox id='object' #sample [dataSource]='records' (change)='onChange($event)' [allowObjectBinding]='true' [fields]='fields' [placeholder]='waterMark' [popupHeight]='height'></ejs-combobox>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 property-section">
+    <textarea id="value" title="Properties" style="width: 100%; margin-top:90px; height: 60px;" readonly>Selected value : </textarea>
+</div>
+
+<div id="description">
+    <p>The <code>ComboBox</code> component allows the user to type a value, or choose an option from the list of
+        predefined options.Once an item is selected, its associated object value is automatically assigned to the
+        <code>value</code> property. This behavior is enabled by the <code>allowObjectBinding</code> property.
+    </p>
+</div>

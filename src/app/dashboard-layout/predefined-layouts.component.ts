@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { DashboardLayoutComponent, PanelModel } from '@syncfusion/ej2-angular-layouts';
+import { DashboardLayoutComponent, PanelModel, DashboardLayoutAllModule } from '@syncfusion/ej2-angular-layouts';
 import panelData from './panels-data';
+import { ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
 
 /**
 
@@ -10,7 +11,9 @@ import panelData from './panels-data';
     selector: 'control-content',
     styleUrls: ['predefined-layouts-style.css'],
     templateUrl: 'predefined-layouts.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [DashboardLayoutAllModule, ButtonAllModule]
 })
 export class PredefinedLayoutsComponent {
     @ViewChild('predefine_dashboard')

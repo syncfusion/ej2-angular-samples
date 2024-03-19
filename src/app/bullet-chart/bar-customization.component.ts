@@ -1,16 +1,19 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';
-import { AnimationModel, BulletChartComponent, TextPosition  } from '@syncfusion/ej2-angular-charts';
-import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { AnimationModel, BulletChartComponent, TextPosition, BulletChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { BulletTooltipSettingsModel, FeatureType, IBulletLoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 import { ColorPickerEventArgs, SliderChangeEventArgs, TooltipDataModel  } from '@syncfusion/ej2-inputs';
+import { SliderModule, ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
 /**
  * RTl sample
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'bar-customization.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [BulletChartAllModule, SliderModule, DropDownListModule, ColorPickerModule]
 })
 
 export class BulletChartBarCustomizationComponent {

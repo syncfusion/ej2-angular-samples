@@ -1,15 +1,20 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
-import { GridComponent, FilterService, FilterType, SortService  } from '@syncfusion/ej2-angular-grids';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { GridComponent, FilterService, FilterType, SortService, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { Query, DataManager, UrlAdaptor } from '@syncfusion/ej2-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
 const SERVICE_URI: string = 'https://services.syncfusion.com/angular/production/';
 @Component({
     selector: 'ej-gridfiltermenu',
     templateUrl: 'filter-menu.html',
     styleUrls: ['filter.style.css'],
-    providers: [FilterService, SortService]
+    providers: [FilterService, SortService, PageService],
+    standalone: true,
+    imports: [DropDownListModule, CheckBoxModule, GridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class FilteringMenuComponent implements OnInit {
     public data: DataManager;

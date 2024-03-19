@@ -2,11 +2,16 @@
  * AutoComplete Grouping & Icon Samples
  */
 import { Component, ViewEncapsulation } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
     templateUrl: 'grouping-icon.html',
     styleUrls: ['grouping-icon.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, AutoCompleteModule, SBDescriptionComponent]
 })
 export class GroupAndIconAutoCompleteComponent {
     // defined the array of vegetables data

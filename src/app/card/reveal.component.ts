@@ -1,4 +1,6 @@
 import { Component, ViewEncapsulation, Inject, AfterViewInit } from '@angular/core';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  *  Sample for CSS Reveal Cards.
@@ -7,7 +9,9 @@ import { Component, ViewEncapsulation, Inject, AfterViewInit } from '@angular/co
     selector: 'control-content',
     templateUrl: 'reveal.html',
     styleUrls: ['card.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class RevealCardComponent implements AfterViewInit {
 

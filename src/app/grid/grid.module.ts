@@ -41,7 +41,7 @@ import { InfiniteScrollingComponent } from './infinite-scrolling.component';
 import { NormalEditComponent } from './normal-edit.component';
 import { DialogEditComponent } from './dialog-editing.component';
 import { BatchEditComponent } from './batch-editing.component';
-import { SharedModule } from '../common/shared.module';
+
 import { ColumnChooserComponent } from './column/column-chooser.component';
 import { ColumnResizingComponent } from './column/column-resizing.component';
 import { ExportingComponent } from './default-exporting.component';
@@ -77,14 +77,15 @@ import { LazyLoadGroupingWithVirtualScrollingComponent } from './lazy-load-group
 import { LiveDataComponent } from './live-data.component';
 import { MultipleExportComponent } from './multiple-export.component';
 import { EmptyRecordTemplateComponent } from './empty-record-template.component';
+import { ModuleWithProviders } from '@angular/core';
 
 export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/over-view', component: OverViewComponent, 'name': 'Overview', description: 'This demo for Essential JS 2 grid component is an overview of how to display and manipulate large data with configuration options.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/live-data', component: LiveDataComponent, name: 'Live Data', description: 'This demo for Essential JS 2 grid component shows how frequently the Grid cell is updated with real-time data.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/default', component: DefaultComponent, 'name': 'Default Functionalities', description: 'This demo for Essential JS 2 grid component shows the default rendering of the grid component with minimum configuration.', order: '01', category: 'Data Grid' },
-    { 'path': ':theme/grid/adaptive-layout', component: AdaptiveLayoutComponent, name: 'Adaptive Layout', 'type': 'update',  description: 'This demo for Essential JS 2 grid component shows the Grid row in vertical direction.', order: '01', category: 'Data Grid' },
+    { 'path': ':theme/grid/adaptive-layout', component: AdaptiveLayoutComponent, name: 'Adaptive Layout',  description: 'This demo for Essential JS 2 grid component shows the Grid row in vertical direction.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/loading-animation', component: LoadingAnimationComponent, name: 'Loading Animation',  description: 'This demo for Essential JS 2 grid component shows the loading indicator when grid loading and refreshing.', order: '01', category: 'Data Grid' },
-    { 'path': ':theme/grid/empty-record-template', component: EmptyRecordTemplateComponent, name: 'Empty Record Template', 'type': 'new',  description: 'This demo for Essential JS 2 grid component demonstrates usage of template in Grid to shown element or text or image or gif icon instead of displaying the empty record message.', order: '01', category: 'Data Grid' },
+    { 'path': ':theme/grid/empty-record-template', component: EmptyRecordTemplateComponent, name: 'Empty Record Template',  description: 'This demo for Essential JS 2 grid component demonstrates usage of template in Grid to shown element or text or image or gif icon instead of displaying the empty record message.', order: '01', category: 'Data Grid' },
 
     { 'path': ':theme/grid/local-data', component: LocalDataComponent, 'name': 'Local Data', description: 'This demo for Essential JS 2 grid component shows how to bind with a local data source.', order: '02', category: 'Data Binding' },
     { 'path': ':theme/grid/remote-data', component: DataBindingComponent, 'name': 'Remote Data', description: 'This demo for Essential JS 2 grid component shows how to consume data from a remote data service.', order: '02', category: 'Data Binding' },
@@ -122,7 +123,7 @@ export const gridRouteConfig: Object[] = [
     },
     { 'path': ':theme/grid/column/show-hide', component: ShowHideComponent, 'name': 'Show or Hide Column', description: 'This demo for Essential JS 2 grid component demonstrates the dynamic show and hide columns feature.', order: '03', category: 'Columns' },
     {
-        'path': ':theme/grid/column/column-spanning', component: ColumnSpanningComponent, name: 'Column Spanning', order: '03',description: 'This demo for Essential JS 2 grid component shows the usage of the column spanning feature.',
+        'path': ':theme/grid/column/column-spanning', component: ColumnSpanningComponent, name: 'Column Spanning', 'type': 'update', order: '03',description: 'This demo for Essential JS 2 grid component shows the usage of the column spanning feature.',
         category: 'Columns'
     },
 
@@ -146,12 +147,12 @@ export const gridRouteConfig: Object[] = [
         'path': ':theme/grid/row-height', component: RowHeightComponent, name: 'Row Height', description: 'This demo for Essential JS 2 grid component shows the row height feature.', order: '04', category: 'Rows'
     },
     {
-        'path': ':theme/grid/row-spanning', component: RowSpanningComponent, name: 'Row Spanning', description: 'This demo for Essential JS 2 grid control shows the usage of the row and column spanning feature.', order: '04', category: 'Rows',
+        'path': ':theme/grid/row-spanning', component: RowSpanningComponent, name: 'Row Spanning', 'type': 'update', description: 'This demo for Essential JS 2 grid control shows the usage of the row and column spanning feature.', order: '04', category: 'Rows',
         hideOnDevice: true
     },
 
     {
-        'path': ':theme/grid/normal-edit', component: NormalEditComponent, name: 'Inline Editing', description: 'This demo for Essential JS 2 grid component shows the inline editing operation.', order: '05',
+        'path': ':theme/grid/normal-edit', component: NormalEditComponent, name: 'Inline Editing', 'type': 'update', description: 'This demo for Essential JS 2 grid component shows the inline editing operation.', order: '05',
         category: 'Editing'
     },
     {
@@ -179,7 +180,7 @@ export const gridRouteConfig: Object[] = [
 
     { 'path': ':theme/grid/filtering', component: FilterComponent, name: 'Default Filtering', description: 'This demo for Essential JS 2 grid component shows how to place a filter bar row in the header to filter grid rows.', order: '07', category: 'Filtering' },
     {
-        'path': ':theme/grid/filter-menu', component: FilteringMenuComponent,  name: 'Filter Menu', 'type': 'update',
+        'path': ':theme/grid/filter-menu', component: FilteringMenuComponent,  name: 'Filter Menu',
         description: 'This demo for Essential JS 2 grid component demonstrates a way of filtering rows using a menu, check box, and Excel filter UI.', order: '07', category: 'Filtering'
     },
     { 'path': ':theme/grid/searching', component: SearchComponent, name: 'Search', description: 'This demo for Essential JS 2 grid component shows the content searching feature.', order: '07', category: 'Filtering' },
@@ -226,7 +227,7 @@ export const gridRouteConfig: Object[] = [
         category: 'Scrolling'
     },
 	{
-        'path': ':theme/grid/infinite-scrolling', component: InfiniteScrollingComponent, name: 'Infinite Scrolling', description: 'This sample demonstrates the Grid component with the infinite scrolling feature.', order: '13',
+        'path': ':theme/grid/infinite-scrolling', component: InfiniteScrollingComponent, name: 'Infinite Scrolling', 'type': 'update', description: 'This sample demonstrates the Grid component with the infinite scrolling feature.', order: '13',
         category: 'Scrolling'
     },
 
@@ -270,24 +271,4 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/enable-rtl', component: RtlComponent, name: 'RTL',  description: 'This demo for Essential JS 2 grid component shows the Right to left(RTl) alignment.', order: '16', category: 'Miscellaneous' }
 ];
 
-let declarations: Type<Object>[] = [DefaultComponent, GridLinesComponent,
-    LocalDataComponent, DataBindingComponent, ShowHideComponent, MasterdetailComponent, ReorderComponent,
-    GroupComponent, LazyLoadGroupingWithPagingComponent, StackedHeaderComponent, AutoWrapComponent, OverViewComponent, SortComponent, PageComponent, FilterComponent,
-    SelectionComponent, ScrollComponent, StickyHeaderComponent, SearchComponent, SelectionApiComponent, DragAndDropComponent, AggregateComponent, RtlComponent,
-    AggregateGroupComponent, RowTemplateComponent, ColumnTemplateComponent, DetailTemplateComponent, HierarchyComponent,GridKeyboardNavigationComponent,
-    VirtualizationComponent, InfiniteScrollingComponent, NormalEditComponent, DialogEditComponent, ColumnChooserComponent, BatchEditComponent, ColumnResizingComponent,
-    ExportingComponent, AdvancedExportingComponent, MultipleExportComponent, PrintComponent, CheckboxSelectionComponent, ClipboardComponent, CommandColumnComponent,
-    FilteringMenuComponent, ColumnSpanningComponent, ContextMenuComponent, ColumnMenuComponent, FrozenRowsColumnsComponent, FrozenApiComponent,
-    ForeignKeyColumnComponent, RowHeightComponent, AsyncPipeComponent, DialogReactiveFormComponent, TemplateDrivenFormComponent,
-    ReactiveAggregateComponent, RowSpanningComponent, DragWithinSingle, HierarchyExportComponent, DetailTemplateExportComponent, AdaptiveLayoutComponent, LoadingAnimationComponent,
-    LazyLoadGroupingWithInfiniteScrollingComponent, LazyLoadGroupingWithVirtualScrollingComponent, LiveDataComponent, FlexibleDataBindingComponent, EmptyRecordTemplateComponent
-];
-
-@NgModule({
-    imports: [RouterModule.forChild(gridRouteConfig), CommonModule, ToolbarModule, GridAllModule, SharedModule,
-        NumericTextBoxAllModule, RatingAllModule , DialogModule, DatePickerAllModule, DropDownListAllModule, ReactiveFormsModule, FormsModule, CheckBoxModule],
-    declarations: declarations,
-    providers: [GridAllModule, OrdersService],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class GridSampleModule { }
+export const GridSampleModule: ModuleWithProviders<any> = RouterModule.forChild(gridRouteConfig);

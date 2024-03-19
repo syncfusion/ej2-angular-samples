@@ -30,7 +30,6 @@ export const bulletChartAppRoutes: Object[] = [
         component: BulletChartMultipleDataComponent,
         name: 'Multiple Data',
         order: '01',
-        type: 'update',
         category: 'Bullet Chart'
     },
     {
@@ -78,15 +77,4 @@ export const bulletChartAppRoutes: Object[] = [
     }
 ];
 
-export const bulletChartRouter: ModuleWithProviders<any> = RouterModule.forChild(bulletChartAppRoutes);
-
-// tslint:disable-next-line:max-line-length
-const declarations: Type<Object>[ ] = [BulletChartDefaultComponent, BulletChartMultipleDataComponent, BulletChartRtlComponent, BulletChartCustomizationComponent, BulletChartBarCustomizationComponent, BulletChartTooltipComponent, BulletChartLegendComponent, BulletChartOrientationComponent];
-@NgModule({
-    imports: [bulletChartRouter, BulletChartAllModule, ColorPickerModule, DropDownListModule, SliderModule, CheckBoxModule],
-    exports: [],
-    declarations: declarations,
-    providers: []
-})
-export class BulletChartSampleModule {
-}
+export const BulletChartSampleModule: ModuleWithProviders<any> = RouterModule.forChild(bulletChartAppRoutes);

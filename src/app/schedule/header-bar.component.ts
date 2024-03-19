@@ -3,25 +3,26 @@ import { Component, ViewChild, Inject, ViewEncapsulation } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
 // custom code end
 import { Popup } from '@syncfusion/ej2-popups';
-import { ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
+import { ChangeEventArgs, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { createElement, compile, extend } from '@syncfusion/ej2-base';
-import {
-  ScheduleComponent, EventSettingsModel, View, MonthService, ActionEventArgs,
-  EventRenderedArgs, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, EventSettingsModel, View, MonthService, ActionEventArgs, EventRenderedArgs, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { employeeEventData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for header bar customization
  */
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'header-bar.html',
-  styleUrls: ['header-bar.style.css'],
-  providers: [MonthService, ResizeService, DragAndDropService],
-  encapsulation: ViewEncapsulation.None
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'header-bar.html',
+    styleUrls: ['header-bar.style.css'],
+    providers: [MonthService, ResizeService, DragAndDropService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ScheduleModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class HeaderBarComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

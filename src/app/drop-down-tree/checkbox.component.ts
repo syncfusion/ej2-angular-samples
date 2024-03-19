@@ -1,13 +1,17 @@
 import { Component, Inject , ViewChild } from '@angular/core';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
-import { DropDownTreeComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { DropDownTreeComponent, DropDownTreeModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Dropdown Tree Checkboxes sample
  */
 @Component({
     selector: 'control-content',
-    templateUrl: 'checkbox.html'
+    templateUrl: 'checkbox.html',
+    standalone: true,
+    imports: [DropDownTreeModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class CheckBoxDropDownTreeComponent {
     @ViewChild('defaultCheck')

@@ -1,10 +1,10 @@
 import { Component, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
 import { extend, Internationalization, createElement, closest, remove, addClass, removeClass } from '@syncfusion/ej2-base';
 import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import {
-  ScheduleComponent, Schedule, ActionEventArgs, PopupOpenEventArgs,
-  EventFieldsMapping, MonthService, EventSettingsModel, CallbackFunction
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, Schedule, ActionEventArgs, PopupOpenEventArgs, EventFieldsMapping, MonthService, EventSettingsModel, CallbackFunction, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 
 (window as TemplateFunction).getAirwaysName = (value: number) => {
   return (value === 1) ? 'Airways 1' : (value === 2) ? 'Airways 2' : 'Airways 3';
@@ -23,12 +23,14 @@ interface TemplateFunction extends Window {
   getFormattedTime?: CallbackFunction;
 }
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'resources.html',
-  styleUrls: ['resources.style.css'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [MonthService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'resources.html',
+    styleUrls: ['resources.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    providers: [MonthService],
+    standalone: true,
+    imports: [ScheduleModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class ResourcesComponent {

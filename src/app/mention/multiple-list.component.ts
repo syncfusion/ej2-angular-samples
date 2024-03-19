@@ -3,11 +3,16 @@
  */
 import { Component } from '@angular/core';
 import { Query, DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { MentionModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'multiple-list.html',
-    styleUrls: ['mention.css']
+    styleUrls: ['mention.css'],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MentionModule, SBDescriptionComponent]
 })
 export class MultipleListMentionComponent {
     // define the JSON of data

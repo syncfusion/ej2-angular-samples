@@ -1,20 +1,23 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { extend, Internationalization, closest, isNullOrUndefined } from '@syncfusion/ej2-base';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
-import { TextBoxComponent } from '@syncfusion/ej2-angular-inputs';
-import {
-  ScheduleComponent, MonthService, DayService, WeekService, WorkWeekService, AgendaService,
-  MonthAgendaService, ResourcesModel, CellClickEventArgs, CurrentAction, EventSettingsModel, EJ2Instance, CallbackFunction
-} from '@syncfusion/ej2-angular-schedule';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { TextBoxComponent, TextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { ScheduleComponent, MonthService, DayService, WeekService, WorkWeekService, AgendaService, MonthAgendaService, ResourcesModel, CellClickEventArgs, CurrentAction, EventSettingsModel, EJ2Instance, CallbackFunction, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { quickInfoTemplateData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { NgStyle, NgTemplateOutlet } from '@angular/common';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'quick-info-template.html',
-  styleUrls: ['quick-info-template.style.css'],
-  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService],
-  encapsulation: ViewEncapsulation.None
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'quick-info-template.html',
+    styleUrls: ['quick-info-template.style.css'],
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ScheduleModule, NgStyle, NgTemplateOutlet, TextBoxModule, DropDownListModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class QuickInfoTemplateComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

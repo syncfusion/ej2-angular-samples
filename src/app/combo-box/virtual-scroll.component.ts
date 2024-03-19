@@ -2,8 +2,10 @@
  * ComboBox Defaut functionality Sample
  */
 import { Component, ViewChild, NgModule, ViewEncapsulation } from '@angular/core';
-import { ComboBoxComponent, VirtualScroll } from '@syncfusion/ej2-angular-dropdowns';
+import { ComboBoxComponent, VirtualScroll, ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
 import { Query, DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 ComboBoxComponent.Inject(VirtualScroll);
 
@@ -11,7 +13,9 @@ ComboBoxComponent.Inject(VirtualScroll);
     selector: 'control-content',
     templateUrl: 'virtual-scroll.html',
     styleUrls: ['virtual-scroll.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ComboBoxModule, SBDescriptionComponent]
 })
 export class VirtualScrollComboBoxComponent {
     @ViewChild('sample')

@@ -4,7 +4,7 @@ import { DefaultChipsComponent } from './default.component';
 import { ApiChipsComponent } from './chips-api.component';
 import { ChipListModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 
-import { SharedModule } from '../common/shared.module';
+
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
 export const chipsAppRoutes: Object[] = [
@@ -35,14 +35,6 @@ export const chipsAppRoutes: Object[] = [
     }
 ];
 
-export const chipsRouter: ModuleWithProviders<any> = RouterModule.forChild(chipsAppRoutes);
+export const ChipsSampleModule: ModuleWithProviders<any> = RouterModule.forChild(chipsAppRoutes);
 
-@NgModule({
-    imports: [chipsRouter, ChipListModule, SharedModule, DropDownListModule, CheckBoxModule],
-    declarations: [
-        DefaultChipsComponent,
-        ApiChipsComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class ChipsSampleModule { }
+

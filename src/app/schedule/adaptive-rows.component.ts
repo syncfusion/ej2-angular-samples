@@ -1,18 +1,21 @@
 import { Component, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
-import {
-  ScheduleComponent, DragAndDropService, TimelineViewsService, GroupModel, EventSettingsModel, ResizeService, View
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, DragAndDropService, TimelineViewsService, GroupModel, EventSettingsModel, ResizeService, View, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { roomData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'adaptive-rows.html',
-  styleUrls: ['adaptive-rows.style.css'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [TimelineViewsService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'adaptive-rows.html',
+    styleUrls: ['adaptive-rows.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    providers: [TimelineViewsService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class AdaptiveRowsComponent {

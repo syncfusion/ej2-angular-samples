@@ -3,15 +3,17 @@
  */
 
  import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
- import { BasicShapeModel, DiagramComponent, RulerSettingsModel, ScrollSettingsModel } from '@syncfusion/ej2-angular-diagrams';
+ import { BasicShapeModel, DiagramComponent, RulerSettingsModel, ScrollSettingsModel, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
  import {
      Diagram, NodeModel, UndoRedo, Node, DataBinding, Keys, KeyModifiers, DiagramContextMenu,
      DiagramTools, HierarchicalTree, CommandManagerModel, ConnectorModel, LayoutModel, SnapSettingsModel, PortConstraints, PortVisibility, Connector, ConnectorConstraints, UserHandleModel, SelectorModel, SelectorConstraints, ISelectionChangeEventArgs, IRotationEventArgs
  } from '@syncfusion/ej2-diagrams';
  import { SnapConstraints } from '@syncfusion/ej2-diagrams';
  import { DataManager } from '@syncfusion/ej2-data';
- import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
-import { CheckBox, CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+ import { NumericTextBoxModule, ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
+import { CheckBox, CheckBoxComponent, CheckBoxModule, RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
  
  Diagram.Inject(UndoRedo, DiagramContextMenu, HierarchicalTree, DataBinding);
  
@@ -22,11 +24,13 @@ import { CheckBox, CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
  let shape: BasicShapeModel = { type: 'Basic', shape: 'Ellipse', cornerRadius: 10 };
  
  @Component({
-     selector: 'control-content',
-     templateUrl: 'snapping.html',
-     styleUrls: ['snapping.component.css'],
-     encapsulation: ViewEncapsulation.None
- })
+    selector: 'control-content',
+    templateUrl: 'snapping.html',
+    styleUrls: ['snapping.component.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, NumericTextBoxModule, ColorPickerModule, CheckBoxModule, RadioButtonModule, SBDescriptionComponent]
+})
  
  export class SnappingComponent {
      @ViewChild('diagram')

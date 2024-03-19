@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { EditService, PageService, CommandColumnService /*, CommandModel*/ } from '@syncfusion/ej2-angular-treegrid';
-
+import { EditService, PageService, CommandColumnService /*, CommandModel*/, TreeGridModule } from '@syncfusion/ej2-angular-treegrid';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'commandcolumn.html',
-    providers: [ EditService, PageService, CommandColumnService]
+    providers: [ EditService, PageService, CommandColumnService],
+    standalone: true,
+    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class CommandColumnComponent implements OnInit {
     public data: Object[] = [];

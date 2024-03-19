@@ -1,11 +1,17 @@
 import { Component, OnInit,ViewEncapsulation} from '@angular/core';
 import { customizedData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { NgIf } from '@angular/common';
+import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-gantttaskbartemplate',
     templateUrl: 'taskbar-template.html',
     styleUrls: ['taskbar-template.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, NgIf, SBDescriptionComponent]
 })
 export class GanttTaskbarTemplateComponent implements OnInit {
     public data: object[];

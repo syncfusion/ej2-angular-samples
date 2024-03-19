@@ -1,18 +1,20 @@
 import { Component, ViewChild, Inject, ViewEncapsulation } from '@angular/core';
 import { holidayData, birthdayData, companyData, personalData } from './data';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
-import {
-  ScheduleComponent, EventSettingsModel, GroupModel, MonthService, TimelineViewsService,
-  TimelineMonthService, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, EventSettingsModel, GroupModel, MonthService, TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'add-remove-resources.html',
-  styleUrls: ['add-remove-resources.style.css'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [MonthService, TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'add-remove-resources.html',
+    styleUrls: ['add-remove-resources.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    providers: [MonthService, TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class AddRemoveResourcesComponent {
   public calendarCollections: Record<string, any>[] = [

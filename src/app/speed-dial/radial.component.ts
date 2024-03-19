@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { SpeedDialItemModel,RadialSettingsModel } from '@syncfusion/ej2-angular-buttons';
+import { SpeedDialItemModel, RadialSettingsModel, SpeedDialModule } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * Radial View of Speed Dial component.
@@ -8,7 +8,9 @@ import { SpeedDialItemModel,RadialSettingsModel } from '@syncfusion/ej2-angular-
     selector: 'control-content',
     templateUrl: 'radial.html',
     styleUrls: ['radial.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SpeedDialModule]
 })
 
 export class RadialSpeedDialComponent {

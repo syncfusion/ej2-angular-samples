@@ -1,11 +1,15 @@
 import { Component, ViewChild, ViewEncapsulation, Inject, AfterViewChecked } from '@angular/core';
-import { StepModel, Stepper } from '@syncfusion/ej2-angular-navigations';
+import { StepModel, Stepper, StepperModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
     styleUrls: ['default.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [StepperModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class StepperDefaultComponent{
     constructor(@Inject('sourceFiles') private sourceFiles: any) {

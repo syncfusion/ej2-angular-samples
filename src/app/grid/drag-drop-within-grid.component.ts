@@ -1,13 +1,17 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { orderDetails } from './data';
-import { RowDDService, SelectionService, GroupService, SortService, GridComponent } from '@syncfusion/ej2-angular-grids';
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { RowDDService, SelectionService, GroupService, SortService, GridComponent, GridModule } from '@syncfusion/ej2-angular-grids';
+import { DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-grid-container',
     templateUrl: 'drag-drop-within-grid.html',
     providers: [RowDDService,
-        SelectionService, GroupService, SortService]
+        SelectionService, GroupService, SortService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GridModule, DialogModule, SBDescriptionComponent]
 })
 export class DragWithinSingle implements OnInit {
     @ViewChild('grid')

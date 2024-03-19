@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SpreadsheetComponent, getFormatFromType, CellStyleModel } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent, getFormatFromType, CellStyleModel, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
 import { hyperlinkCart, hyperlinkStock } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Hyperlink
  */
@@ -8,7 +10,9 @@ import { hyperlinkCart, hyperlinkStock } from './data';
     selector: 'control-content',
     templateUrl: 'hyperlink.html',
     styleUrls: ['spreadsheet.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SpreadsheetModule, SBDescriptionComponent]
 })
 
 export class HyperlinkComponent {

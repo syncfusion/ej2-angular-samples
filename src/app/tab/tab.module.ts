@@ -6,7 +6,7 @@ import { ResponsiveTabComponent } from './responsive-modes.component';
 import { WizardTabComponent } from './wizard.component';
 import { DragAndDropComponent } from './drag-and-drop.component';
 import { KeyboardTabComponent } from './keyboard-interaction.component';
-import { SharedModule } from '../common/shared.module';
+
 
 import { TabAllModule } from '@syncfusion/ej2-angular-navigations';
 import { GridAllModule } from '@syncfusion/ej2-angular-grids';
@@ -30,19 +30,5 @@ export const tabAppRoutes: Object[] = [
     { path: ':theme/tab/keyboard-interaction', component: KeyboardTabComponent, name: 'Keyboard Interaction', description: 'This example showcases the keyboard shortcuts applicable on Tab component in Angular platform', category: 'Tab' }
 ];
 
-export const tabRouter: ModuleWithProviders<any> = RouterModule.forChild(tabAppRoutes);
+export const TabSampleModule: ModuleWithProviders<any> = RouterModule.forChild(tabAppRoutes);
 
-@NgModule({
-    imports: [tabRouter, SharedModule, NumericTextBoxAllModule, TabAllModule, GridAllModule, DialogAllModule, DatePickerAllModule, DropDownListModule, AutoCompleteAllModule, ScheduleAllModule, RichTextEditorAllModule, UploaderAllModule, CalendarAllModule, DateRangePickerAllModule, ChartAllModule, TreeViewModule],
-    declarations: [
-        DefaultTabComponent,
-        OrientationTabComponent,
-        ResponsiveTabComponent,
-        WizardTabComponent,
-        DragAndDropComponent,
-        KeyboardTabComponent
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class TabSampleModule {
-}

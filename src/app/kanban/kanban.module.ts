@@ -1,7 +1,6 @@
-import { NgModule, Type, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, Type, ModuleWithProviders,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HttpModule } from '@angular/http';
 import { KanbanAllModule } from '@syncfusion/ej2-angular-kanban';
 import { CheckBoxAllModule } from '@syncfusion/ej2-angular-buttons';
 import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
@@ -33,7 +32,7 @@ import { EventsComponent } from './events.component';
 import { APIComponent } from './api.component';
 import { VirtualScrollingComponent } from './virtual-scrolling.component';
 
-import { SharedModule } from '../common/shared.module';
+
 
 export const kanbanRouteConfig: Object[] = [
   { 'path': ':theme/kanban/overview', component: OverviewComponent, name: 'Overview', order: '01', category: 'Kanban', description: 'The example is designed to enable most essential features such as templating, swimlane, toggling columns, tooltip, and more in JS Kanban board.' },
@@ -58,34 +57,5 @@ export const kanbanRouteConfig: Object[] = [
   { 'path': ':theme/kanban/events', component: EventsComponent, name: 'Events', order: '06', category: 'Miscellaneous', description: 'The sample showcases the client- side events of JavaScript Kanban with event tracer, which is helpful to customize the Kanban board from application end.' }
 ];
 
-const declarations: Type<Object>[] = [
-  OverviewComponent,
-  DefaultComponent,
-  SwimlaneComponent,
-  WorkflowComponent,
-  StackedHeaderComponent,
-  DialogEditingComponent,
-  SearchFilterComponent,
-  SortingComponent,
-  VirtualScrollingComponent,
-  LocalDataComponent,
-  RemoteDataComponent,
-  HeaderTemplateComponent,
-  SwimlaneTemplateComponent,
-  CardTemplateComponent,
-  TooltipTemplateComponent,
-  ToggleColumnsComponent,
-  ShowHideComponent,
-  WIPValidationComponent,
-  APIComponent,
-  EventsComponent
-];
+export const KanbanSampleModule: ModuleWithProviders<any> = RouterModule.forChild(kanbanRouteConfig);
 
-@NgModule({
-  imports: [RouterModule.forChild(kanbanRouteConfig), CommonModule, HttpModule, KanbanAllModule, DialogModule,
-    CheckBoxAllModule,DatePickerModule,DropDownListAllModule, NumericTextBoxAllModule, TextBoxAllModule, ReactiveFormsModule, FormsModule, SharedModule],
-  declarations: declarations,
-  providers: [KanbanAllModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class KanbanSampleModule { }

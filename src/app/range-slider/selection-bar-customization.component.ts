@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SliderComponent, SliderChangeEventArgs } from '@syncfusion/ej2-angular-inputs';
+import { SliderComponent, SliderChangeEventArgs, SliderModule } from '@syncfusion/ej2-angular-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Bar Customization sample
@@ -8,7 +10,9 @@ import { SliderComponent, SliderChangeEventArgs } from '@syncfusion/ej2-angular-
     selector: 'control-content',
     templateUrl: 'selection-bar-customization.html',
     styleUrls: ['selection-bar.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SliderModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class SelectionBarComponent {
@@ -29,19 +33,20 @@ export class SelectionBarComponent {
     }
     // Handler used for slider change event
     change(args: SliderChangeEventArgs) {
-        if (args.value > 0 && args.value <= 25) {
+        const value = args.value as number;
+        if (value > 0 && value <= 25) {
             // Change handle and range bar color to green when
             (this.sliderHandle as HTMLElement).style.backgroundColor = 'green';
             (this.sliderTrack as HTMLElement).style.backgroundColor = 'green';
-        } else if (args.value > 25 && args.value <= 50) {
+        } else if (value > 25 && value <= 50) {
             // Change handle and range bar color to royal blue
             (this.sliderHandle as HTMLElement).style.backgroundColor = 'royalblue';
             (this.sliderTrack as HTMLElement).style.backgroundColor = 'royalblue';
-        } else if (args.value > 50 && args.value <= 75) {
+        } else if (value > 50 && value <= 75) {
             // Change handle and range bar color to dark orange
             (this.sliderHandle as HTMLElement).style.backgroundColor = 'darkorange';
             (this.sliderTrack as HTMLElement).style.backgroundColor = 'darkorange';
-        } else if (args.value > 75 && args.value <= 100) {
+        } else if (value > 75 && value <= 100) {
             // Change handle and range bar color to red
             (this.sliderHandle as HTMLElement).style.backgroundColor = 'red';
             (this.sliderTrack as HTMLElement).style.backgroundColor = 'red';

@@ -1,16 +1,20 @@
 import { Component, ViewChild, OnInit, ViewEncapsulation } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { TreeGridComponent } from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent, TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
 import { DropDownListComponent , ChangeEventArgs} from '@syncfusion/ej2-angular-dropdowns';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { ButtonComponent, ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
+import { NumericTextBoxComponent, NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'selection-api.html',
     styleUrls: ['selection.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, ButtonAllModule, NumericTextBoxAllModule]
 })
 export class SelectionAPIComponent implements OnInit {
     public data: Object[];

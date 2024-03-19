@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { ChangedEventArgs, IslamicService } from '@syncfusion/ej2-angular-calendars';
+import { ChangedEventArgs, IslamicService, CalendarModule } from '@syncfusion/ej2-angular-calendars';
 import { addClass , Internationalization } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
 
@@ -11,7 +13,9 @@ import { addClass , Internationalization } from '@syncfusion/ej2-base';
     styleUrls: ['islamic-calendar.css'],
     templateUrl: 'islamic-calendar.html',
     encapsulation: ViewEncapsulation.None,
-	providers: [IslamicService]
+    providers: [IslamicService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, CalendarModule, SBDescriptionComponent]
 })
 export class IslamicCalendarComponent {
      public globalize: Internationalization = new Internationalization('en');

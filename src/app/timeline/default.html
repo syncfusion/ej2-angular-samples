@@ -1,0 +1,22 @@
+<div class="control-section">
+    <div class="default-timeline-section">
+        <ejs-timeline #defaultTimeline id="default-timeline">
+            <e-items>
+                <e-item [content]=orderStatus[0] dotCss="state-success" cssClass="completed" />
+                <e-item [content]=orderStatus[1] dotCss="state-success" cssClass="completed"/>
+                <e-item [content]=orderStatus[2] dotCss="state-progress" cssClass="intermediate"/>
+                <e-item [content]=orderStatus[3] />
+            </e-items>
+        </ejs-timeline>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the default functionalities of the Timeline component including the highlighted customization.</p>
+</div>
+<div id="description">
+    <p>
+        The Timeline component enables users to display a series of data in chronological order, such as user activities, tracking progress, and more.
+        In this example, we have used the <code>content</code> property to display the item's content, <code>dotCss</code> property to customize the dot with background color and <code>cssClass</code> to customize the last connector as dashed style.
+    </p>
+</div>

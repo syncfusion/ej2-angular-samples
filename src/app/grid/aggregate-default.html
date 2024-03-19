@@ -1,6 +1,7 @@
 <div class="control-section">
-    <ejs-grid [dataSource]="data" [allowPaging]="true" [pageSettings]='pageOption'>
+    <ejs-grid [dataSource]="data" [allowPaging]="true" [pageSettings]='pageOption' [allowSorting]='true'>
         <e-columns>
+            <e-column field='OrderID' headerText='Order ID' width='150'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
             <e-column field='Freight' headerText='Freight' width='150' format='C2' textAlign='Right'></e-column>
             <e-column field='OrderDate' headerText='Order Date' width='150' format="yMd" textAlign='Right'></e-column>
@@ -68,7 +69,7 @@
         <p style="font-weight: 500">Injecting Module:</p>
         <p>
             Grid component features are segregated into individual feature-wise modules. To use aggregate feature, we need to inject
-            <code>AggregateService</code> into the <code>@NgModule.providers</code> section.
+            <code>AggregateService</code> into the <code>&#64;NgModule.providers</code> section.
         </p>
     </div>
 </div>

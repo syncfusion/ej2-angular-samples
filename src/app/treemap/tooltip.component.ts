@@ -2,15 +2,19 @@
  * Default sample
  */
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { TreeMap, TreeMapTooltip, TreeMapLegend} from '@syncfusion/ej2-angular-treemap';
+import { TreeMap, TreeMapTooltip, TreeMapLegend, TreeMapModule } from '@syncfusion/ej2-angular-treemap';
 import { Airport_Count } from './airport-count';
 import { ILoadEventArgs, TreeMapTheme } from '@syncfusion/ej2-angular-treemap';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 TreeMap.Inject(TreeMapTooltip, TreeMapLegend);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'tooltip.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class TreemapTooltipComponent {
     @ViewChild('treemap')

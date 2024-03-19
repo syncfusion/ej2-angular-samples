@@ -1,12 +1,16 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { HeatMap, Tooltip, ILoadedEventArgs,ICellEventArgs, ITooltipEventArgs, HeatMapTheme } from '@syncfusion/ej2-angular-heatmap';
+import { HeatMap, Tooltip, ILoadedEventArgs, ICellEventArgs, ITooltipEventArgs, HeatMapTheme, HeatMapModule } from '@syncfusion/ej2-angular-heatmap';
 import { SampleDataSource } from './multi-level-label-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 HeatMap.Inject(Tooltip);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'multi-level-labels.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [HeatMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class HeatmapMultilevelLabelComponent {
 

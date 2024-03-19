@@ -1,12 +1,17 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { VirtualScrollService, TreeGridComponent, EditService, ToolbarService } from '@syncfusion/ej2-angular-treegrid';
 import {dataSource, virtualData} from './jsontreegriddata';
+import { TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'virtual-scrolling.html',
     encapsulation: ViewEncapsulation.None,
     providers: [VirtualScrollService, ToolbarService, EditService],
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class VirtualScrollingComponent implements OnInit {
     public vData: Object[] = [];

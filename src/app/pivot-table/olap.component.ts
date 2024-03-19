@@ -1,13 +1,15 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
     PivotView, FieldListService, CalculatedFieldService,
-    ToolbarService, ConditionalFormattingService, ToolbarItems, DisplayOption, GroupingBarService
+    ToolbarService, ConditionalFormattingService, PivotViewModule, ToolbarItems, DisplayOption, GroupingBarService
 } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 import { ChartSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/chartsettings';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 import { Observable } from 'rxjs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -20,7 +22,9 @@ declare var require: any;
     templateUrl: 'olap.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['olap.css'],
-    providers: [CalculatedFieldService, ToolbarService, ConditionalFormattingService, FieldListService, GroupingBarService]
+    providers: [CalculatedFieldService, ToolbarService, ConditionalFormattingService, FieldListService, GroupingBarService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class OlapComponent implements OnInit {
     public dataSourceSettings;

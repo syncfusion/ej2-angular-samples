@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IStockChartEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { IStockChartEventArgs, ChartTheme, StockChartModule, ChartAllModule, RangeNavigatorAllModule } from '@syncfusion/ej2-angular-charts';
 import { amzn } from './stock-data';
 /**
  * Sample for Plot line Series
@@ -7,7 +7,9 @@ import { amzn } from './stock-data';
 @Component({
     selector: 'control-content',
     templateUrl: 'plot-line.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ StockChartModule, ChartAllModule, RangeNavigatorAllModule]
 })
 export class PlotLineComponent {
 

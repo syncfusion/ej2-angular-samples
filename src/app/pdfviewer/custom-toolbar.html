@@ -60,7 +60,10 @@
                 <ejs-menu #menu showItemOnClick='true' (select)='select($event)' [items]='menuItems'></ejs-menu>
                 </ng-template></e-item>
               <e-item type="Separator" tooltipText="separator" align="Center"></e-item>
-              <e-item id="signature" prefixIcon="e-icons e-signature" style="border:none;background:transparent;" (click)='addSign1($event)' tooltipText="Add Signature" align="Center"></e-item>
+              <e-item id="signature" tooltipText="Add Signature" align="Center"><ng-template #template>
+                <ejs-menu #menu showItemOnClick='true' (select)='onSignatureClick($event)' [items]='signatureMenuItems'></ejs-menu>
+                </ng-template>
+              </e-item>
               <e-item type="Separator" tooltipText="separator" align="Center"></e-item>
               <e-item prefixIcon="e-icons e-style"  (click)='ink($event)' id="ink" align="Center"></e-item>
             </e-items>
@@ -71,14 +74,12 @@
             <div class="e-pv-search-bar-elements" id="container_search_box_elements">
               <div class="e-input-group e-pv-search-input" id="container_search_input_container">
                 <input class="e-input" id="container_search_input" type="text" placeholder="Find in document" (keypress)="searchInputKeypressed($event)"  />
-                <span class="e-input-group-icon e-input-search-group-icon e-icons e-search" id="container_search_box-icon" (click)="initiateTextSearch()"></span>
-                <span class="e-input-group-icon e-input-search-group-icon e-icons e-close" id="container_close_search_box-icon" [style.display]="'none'"  (click)="clearTextSearch()" ></span>
+                <span class="e-input-group-icon e-input-search-group-icon e-icons e-search" id="container_search_box-icon" style="top: 4px;" (click)="initiateTextSearch()"></span>
+                <span class="e-input-group-icon e-input-search-group-icon e-icons e-close" id="container_close_search_box-icon" [style.display]="'none'" style="top: 4px;" (click)="clearTextSearch()" ></span>
               </div>
-              <button class="e-btn e-icon-btn e-pv-search-btn e-icons e-chevron-left" id="container_prev_occurrence" type="button" [disabled]="true" aria-label="Previous Search text">
-                <span class="e-pv-icon-search e-pv-prev-search-icon" id="container_prev_occurrenceIcon" (click)="previousTextSearch()"></span>
+              <button class="e-btn e-icon-btn e-pv-search-btn e-icons e-chevron-left" id="container_prev_occurrence" (click)="previousTextSearch()" type="button" [disabled]="true" aria-label="Previous Search text">
               </button>
-              <button class="e-btn e-icon-btn e-pv-search-btn e-icons e-chevron-right" id="container_next_occurrence" type="button" [disabled]="true" aria-label="Next Search text">
-                <span class="e-pv-icon-search e-pv-next-search-icon" id="container_next_occurrenceIcon"(click)="nextTextSearch()" ></span>
+              <button class="e-btn e-icon-btn e-pv-search-btn e-icons e-chevron-right" id="container_next_occurrence" type="button" (click)="nextTextSearch()" [disabled]="true" aria-label="Next Search text">
               </button>
             </div>
             <div class="e-pv-match-case-container" id="container_match_case_container">
@@ -95,33 +96,23 @@
       </div>
         
         
-<div id="formFieldToolbar" [style.display]="'none'">
-  <ejs-toolbar #toolbar >
-    <e-items>
-      <e-item id="textbox" prefixIcon="e-icons e-text-form" (click)='textBox($event)' tooltipText="Textbox" align="Center"></e-item>
-      <e-item id="password" prefixIcon="e-icons e-password"  (click)='passWord($event)' tooltipText="Password" align="Center"></e-item>
-      <e-item id="checkbox" prefixIcon="e-icons e-check-box" (click)='checkBox($event)' tooltipText="Checkbok" align="Center"></e-item>
-      <e-item id="radio_button" prefixIcon="e-icons e-radio-button" (click)='radioButton($event)' tooltipText="Radio Button" align="Center"></e-item>
-      <e-item id="drop_down" prefixIcon="e-icons e-drop-down" (click)='dropDown($event)' tooltipText="Drop Down" align="Center"></e-item>
-      <e-item id="list_box" prefixIcon="e-icons e-list-unordered" (click)='listBox($event)'  tooltipText="List Box" align="Center"></e-item>
-      <e-item id="formField_signature" prefixIcon="e-pv-handwritten-icon" (click)='addSign($event)' tooltipText="Add Signature" align="Center"></e-item>
-      <e-item id="separator" type="Separator" tooltipText="separator" align="Center"></e-item>
-    </e-items>
-  </ejs-toolbar>
-</div>
-<div id="SignatureToolbar" [style.display]="'none'">
-  <div class="e-dropdown-popup" id="container_annotation_signature-popup" style="z-index: 1111;" data-ripple="true">
-    <ul role="menu" tabindex="0">
-      <li id="e-dropdown-btn-item_63" role="menuitem" tabindex="-1" aria-label="ADD SIGNATURE"  (click)="onSignatureClick($event)" [style.width]="'206px'" [style.display]="'flex'" [style.flex-direction]="'column'" [style.height]="'auto'" [style.align-items]="'center'" [style.background]="'transparent'" [style.cursor]="'default'">
-        <button class="e-control e-btn e-lib e-outline e-primary" [style.width]="'auto'" [style.height]="'36px'">Add Signature</button>
-      </li>
-      <li class="e-separator" id="e-dropdown-btn-item_64" role="menuitem" tabindex="-1" aria-label="separator" [style.margin]="'8px 0px'"></li>
-      <li id="e-dropdown-btn-item_65" role="menuitem" tabindex="-1" aria-label="ADD INITIAL" (click)="onSignatureClick($event)" [style.width]="'206px'" [style.display]="'flex'" [style.flex-direction]="'column'" [style.height]="'auto'" [style.align-items]="'center'" [style.background]="'transparent'" [style.cursor]="'default'">
-        <button class="e-control e-btn e-lib e-outline e-primary" [style.width]="'auto'" [style.height]="'36px'">Add Initial</button>
-      </li>
-    </ul>
-  </div>
-</div>
+      <div id="formFieldToolbar" [style.display]="'none'">
+        <ejs-toolbar #toolbar >
+          <e-items>
+            <e-item id="textbox" prefixIcon="e-icons e-text-form" (click)='textBox($event)' tooltipText="Textbox" align="Center"></e-item>
+            <e-item id="password" prefixIcon="e-icons e-password"  (click)='passWord($event)' tooltipText="Password" align="Center"></e-item>
+            <e-item id="checkbox" prefixIcon="e-icons e-check-box" (click)='checkBox($event)' tooltipText="Checkbok" align="Center"></e-item>
+            <e-item id="radio_button" prefixIcon="e-icons e-radio-button" (click)='radioButton($event)' tooltipText="Radio Button" align="Center"></e-item>
+            <e-item id="drop_down" prefixIcon="e-icons e-drop-down" (click)='dropDown($event)' tooltipText="Drop Down" align="Center"></e-item>
+            <e-item id="list_box" prefixIcon="e-icons e-list-unordered" (click)='listBox($event)'  tooltipText="List Box" align="Center"></e-item>
+            <e-item id="formField_signature" tooltipText="Add Signature" align="Center"><ng-template #template>
+              <ejs-menu #menu showItemOnClick='true' (select)='onSignatureClick($event)' [items]='signatureMenuItems'></ejs-menu>
+              </ng-template>
+            </e-item>
+            <e-item id="separator" type="Separator" tooltipText="separator" align="Center"></e-item>
+          </e-items>
+        </ejs-toolbar>
+      </div>
       <ejs-toolbar id='magnificationToolbar' #zoomToolbar>
           <e-items>
               <e-item prefixIcon='e-pv-fit-page-icon' id='fitPage' tooltipText='Fit to page' (click)='pageFitClicked($event)'></e-item>

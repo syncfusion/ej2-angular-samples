@@ -2,12 +2,15 @@
  * Sample for Circular Gauge default functionalities
  */
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, GaugeTheme, Legend } from '@syncfusion/ej2-angular-circulargauge';
+import { ILoadedEventArgs, GaugeTheme, Legend, CircularGaugeModule, AnnotationsService, LegendService, GaugeTooltipService } from '@syncfusion/ej2-angular-circulargauge';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'customer-satisfaction-score.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [CircularGaugeModule],
+    providers: [AnnotationsService, LegendService, GaugeTooltipService]
 })
 
 export class CustomerSatisfactionComponent {

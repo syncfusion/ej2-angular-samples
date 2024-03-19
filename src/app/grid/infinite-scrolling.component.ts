@@ -1,13 +1,19 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { InfiniteScrollService, GridComponent } from '@syncfusion/ej2-angular-grids';
+import { InfiniteScrollService, VirtualScrollService, GridComponent, GridModule } from '@syncfusion/ej2-angular-grids';
+import { datasource, virtualData } from './data';
 import { getDatasource, infiniteData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-gridinfinite-scroll',
     templateUrl: 'infinite-scrolling.html',
     styleUrls: ['virtualization.style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [InfiniteScrollService]
+    providers: [InfiniteScrollService, VirtualScrollService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ButtonModule, GridModule, SBDescriptionComponent]
 })
 export class InfiniteScrollingComponent implements OnInit {
     public vData: Object[] = [];
@@ -18,8 +24,8 @@ export class InfiniteScrollingComponent implements OnInit {
 
     onClick = (args: any) => {
         if (!this.vData.length) {
-             getDatasource();
-            this.grid.dataSource = this.vData = infiniteData;
+             datasource();
+            this.grid.dataSource = this.vData = virtualData;
         }
         this.grid.refresh();
     }

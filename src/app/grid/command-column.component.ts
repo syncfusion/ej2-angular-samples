@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { orderDatas } from './data';
-import { EditService, PageService, CommandColumnService, CommandModel } from '@syncfusion/ej2-angular-grids';
+import { EditService, PageService, CommandColumnService, CommandModel, SortService, GridModule } from '@syncfusion/ej2-angular-grids';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej-grid-commandcolumn',
     templateUrl: 'command-column.html',
-    providers: [ EditService, PageService, CommandColumnService]
+    providers: [ EditService, PageService, CommandColumnService, SortService],
+    standalone: true,
+    imports: [GridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class CommandColumnComponent implements OnInit {
     public data: Object[];

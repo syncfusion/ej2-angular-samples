@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { ProgressButton, SpinSettingsModel, AnimationSettingsModel } from '@syncfusion/ej2-angular-splitbuttons';
+import { ProgressButton, SpinSettingsModel, AnimationSettingsModel, ProgressButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Progress Button Controller
  */
@@ -7,7 +9,9 @@ import { ProgressButton, SpinSettingsModel, AnimationSettingsModel } from '@sync
     selector: 'control-content',
     templateUrl: 'progress-button.html',
     styleUrls: ['progress-button.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ProgressButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class ProgressButtonController {

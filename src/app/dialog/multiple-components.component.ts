@@ -1,26 +1,35 @@
 import { Component, ViewEncapsulation, ViewChild, AfterViewInit, OnInit } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
 import { Query, DataManager } from '@syncfusion/ej2-data';
-import { DialogComponent, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
+import { DialogComponent, ButtonPropsModel, DialogModule } from '@syncfusion/ej2-angular-popups';
 import { AnimationSettingsModel } from '@syncfusion/ej2-splitbuttons';
-import { EventSettingsModel } from '@syncfusion/ej2-angular-schedule';
-import { SelectEventArgs } from '@syncfusion/ej2-angular-navigations';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
+import { EventSettingsModel, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SelectEventArgs, TabModule } from '@syncfusion/ej2-angular-navigations';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent, RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { scheduleData } from './scheduleDatasource';
 import { orderDetails } from './data';
 import { Browser } from '@syncfusion/ej2-base';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormValidators } from '@syncfusion/ej2-angular-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { NgIf } from '@angular/common';
+import { ChartModule } from '@syncfusion/ej2-angular-charts';
+import { GridModule } from '@syncfusion/ej2-angular-grids';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * Multiple components inside dialog
  */
 @Component({
-  selector: 'control-content',
-  templateUrl: 'multiple-components.html',
-  styleUrls: ['multiple-components.css'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [ToolbarService, LinkService, ImageService, HtmlEditorService]
+    selector: 'control-content',
+    templateUrl: 'multiple-components.html',
+    styleUrls: ['multiple-components.css'],
+    encapsulation: ViewEncapsulation.None,
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService],
+    standalone: true,
+    imports: [ButtonModule, DialogModule, TabModule, GridModule, ChartModule, ScheduleModule, RichTextEditorModule, FormsModule, ReactiveFormsModule, NgIf, DatePickerModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DialogMultipleComponent implements AfterViewInit {
   @ViewChild('Dialog')

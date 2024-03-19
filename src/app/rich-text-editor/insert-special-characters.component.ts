@@ -3,19 +3,24 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';
-import { ToolbarService, NodeSelection, LinkService, ImageService } from '@syncfusion/ej2-angular-richtexteditor';
-import { RichTextEditorComponent, HtmlEditorService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, NodeSelection, LinkService, ImageService, RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorComponent, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { Dialog } from '@syncfusion/ej2-popups';
 import { ToolbarSettingsModel } from '@syncfusion/ej2-dropdowns';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { ButtonComponent, ButtonModel } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { DialogModule } from '@syncfusion/ej2-angular-popups';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'insert-special-characters.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['style.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService]
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, RichTextEditorModule, DialogModule, SBDescriptionComponent]
 })
 
 export class InsertSpecialCharactersComponent {

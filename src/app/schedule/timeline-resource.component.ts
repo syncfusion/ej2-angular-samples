@@ -1,18 +1,19 @@
 import { Component, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
 import { extend, isNullOrUndefined } from '@syncfusion/ej2-base';
-import {
-  ScheduleComponent, ActionEventArgs, PopupOpenEventArgs, EventRenderedArgs, RenderCellEventArgs, DragAndDropService,
-  TimelineViewsService, GroupModel, EventSettingsModel, ResizeService, TimeScaleModel, WorkHoursModel, View
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, ActionEventArgs, PopupOpenEventArgs, EventRenderedArgs, RenderCellEventArgs, DragAndDropService, TimelineViewsService, GroupModel, EventSettingsModel, ResizeService, TimeScaleModel, WorkHoursModel, View, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { roomData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'timeline-resource.html',
-  styleUrls: ['timeline-resource.style.css'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [TimelineViewsService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'timeline-resource.html',
+    styleUrls: ['timeline-resource.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    providers: [TimelineViewsService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class TimelineResourcesComponent {

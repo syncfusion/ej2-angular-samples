@@ -2,15 +2,19 @@
  * layout sample.
  */
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { TreeMap, TreeMapTooltip, LayoutMode, TreeMapTheme, ILoadEventArgs, RenderingMode } from '@syncfusion/ej2-angular-treemap';
+import { TreeMap, TreeMapTooltip, LayoutMode, TreeMapTheme, ILoadEventArgs, RenderingMode, TreeMapModule } from '@syncfusion/ej2-angular-treemap';
 import { econmics } from './econmics';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 TreeMap.Inject(TreeMapTooltip);
 
 @Component({
     selector: 'control-content',
     templateUrl: 'layout.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [TreeMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class TreemapLayoutComponent {
     @ViewChild('treemap')

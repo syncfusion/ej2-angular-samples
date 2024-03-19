@@ -1,11 +1,14 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ILoadedEventArgs, IPointerDragEventArgs, GaugeTheme } from '@syncfusion/ej2-circulargauge';
-import { CircularGaugeComponent } from '@syncfusion/ej2-angular-circulargauge';
+import { CircularGaugeComponent, CircularGaugeModule, GaugeTooltipService } from '@syncfusion/ej2-angular-circulargauge';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'tooltip.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [CircularGaugeModule],
+    providers: [GaugeTooltipService]
 })
 
 export class TooltipComponent {

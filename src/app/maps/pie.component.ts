@@ -2,18 +2,21 @@
  * Dynamic pie demo
  */
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, Maps, Marker, ILoadEventArgs, Legend, ILoadedEventArgs, IResizeEventArgs } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, Maps, Marker, ILoadEventArgs, Legend, ILoadedEventArgs, IResizeEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
 import { AccumulationChart, PieSeries, DataLabel, AccumulationTooltip } from '@syncfusion/ej2-charts';
-import { MapAjax } from '@syncfusion/ej2-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 AccumulationChart.Inject(AccumulationChart, PieSeries, DataLabel, AccumulationTooltip);
 declare var require: any;
-import worldMap from './world-map.json';
+let worldMap: object[] = require('./world-map.json');
 Maps.Inject(Marker, Legend);
 @Component({
     selector: 'control-content',
     templateUrl: 'pie.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, SBDescriptionComponent]
 })
 
 export class MapsPieComponent {

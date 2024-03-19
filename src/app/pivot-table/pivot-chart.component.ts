@@ -1,10 +1,12 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, FieldListService, PivotView, DisplayOption, PivotChartService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { IDataOptions, FieldListService, PivotView, DisplayOption, PivotViewModule, PivotChartService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 import { ChartSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/chartsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 import { Observable } from 'rxjs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 enableRipple(false);
 
 /**
@@ -17,7 +19,9 @@ let data: IDataSet[] = require('./Pivot_Data.json');
     styleUrls: ['pivot-chart.css'],
     encapsulation: ViewEncapsulation.None,
     templateUrl: 'pivot-chart.html',
-    providers: [FieldListService, PivotChartService]
+    providers: [FieldListService, PivotChartService],
+    standalone: true,
+    imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule]
 })
 
 export class ChartComponent implements OnInit {

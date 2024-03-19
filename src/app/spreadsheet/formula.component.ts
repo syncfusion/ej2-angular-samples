@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SelectionService, EditService, SheetModel, DefineNameModel } from '@syncfusion/ej2-angular-spreadsheet';
+import { SelectionService, EditService, SheetModel, DefineNameModel, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
 import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
 import { formulaData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Cell Data Binding Spreadsheet Controller
  */
@@ -10,7 +12,9 @@ import { formulaData } from './data';
     templateUrl: 'formula.html',
     styleUrls: ['spreadsheet.css'],
     providers: [SelectionService, EditService],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SpreadsheetModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class FormulasController {

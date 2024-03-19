@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { L10n } from '@syncfusion/ej2-base';
-import { PagerComponent } from '@syncfusion/ej2-angular-grids';
+import { PagerComponent, GridModule } from '@syncfusion/ej2-angular-grids';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 L10n.load({
     'de-DE': {
         'pager': {
@@ -28,7 +30,9 @@ L10n.load({
     }
 });
 @Component({
-    templateUrl: 'localization.html'
+    templateUrl: 'localization.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GridModule, SBDescriptionComponent, PagerComponent]
 })
 export class LocalizationComponent implements OnInit {
     public locale: string;

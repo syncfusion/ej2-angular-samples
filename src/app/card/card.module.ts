@@ -9,7 +9,7 @@ import { FlipCardComponent } from './flip.component';
 import { RevealCardComponent } from './reveal.component';
 import { TileViewCardComponent} from './tile.component';
 
-import { SharedModule } from '../common/shared.module';
+
 export const cardAppRoutes: Object[] = [
     { path: ':theme/card/basic', component: BasicCardComponent, name: 'Basic Card', description: 'The sample demonstrates how to design basic card and weather layout card in Angular platform. The component is pure CSS component and more flexible.', category: 'Card' },
     { path: ':theme/card/vertical', component: VerticalCardComponent, name: 'Vertical Card', description: 'The sample demonstrates how to design a business card and profile card using a vertical layout of card component in Angular platform.', category: 'Card' },
@@ -20,21 +20,5 @@ export const cardAppRoutes: Object[] = [
     { path: ':theme/card/tile', component: TileViewCardComponent, name: 'Tile View',description: 'The sample demonstrates how to design tile-view with filtering and searching using a template engine, data manager, and card component in Angular platform.', category: 'Card' },
 ];
 
-export const cardRouter: ModuleWithProviders<any> = RouterModule.forChild(cardAppRoutes);
+export const CardSampleModule: ModuleWithProviders<any> = RouterModule.forChild(cardAppRoutes);
 
-@NgModule({
-    imports: [cardRouter, SharedModule, CommonModule],
-    declarations: [
-        BasicCardComponent,
-        VerticalCardComponent,
-        HorizontalCardComponent,
-        SwipeCardComponent,
-        FlipCardComponent,
-        RevealCardComponent,
-        TileViewCardComponent
-
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class CardSampleModule {
-}

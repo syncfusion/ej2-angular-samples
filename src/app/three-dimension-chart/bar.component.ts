@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ChartTheme, Chart3DLoadedEventArgs } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { Chart3DAllModule } from '@syncfusion/ej2-angular-charts';
 
 /**
  * 3D Chart Bar sample
@@ -8,7 +9,9 @@ import { Browser } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',
     templateUrl: 'bar.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [Chart3DAllModule]
 })
 
 export class BarComponent {

@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';  
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '../common/shared.module';
+
 import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
 import { CheckBoxAllModule, SwitchAllModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
@@ -52,6 +52,7 @@ import { GanttCriticalPathComponent } from './critical-path.component'
 import { GanttLoadingAnimationComponent } from './loading-animation.component';
 import { GanttOverviewComponent } from './overview.component';
 import { GanttLoadOnDemandComponent } from './load-on-demand.component';
+import { GanttUndoRedoComponent } from './undo-redo.component';
 
 export const GanttAppRoutes: Object[] = [
     {
@@ -72,7 +73,12 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/virtual-scroll', component: GanttVirtualScrollComponent,
         description: 'This example illustrates binding large data and smooth scrolling with large data using the Virtual Scroll feature in the Syncfusion Gantt chart.',
-        name: 'Virtual Scrolling', order: '01', category: 'Gantt', type: "update"
+        name: 'Virtual Scrolling', order: '01', category: 'Gantt'
+    },
+    {
+        path: ':theme/gantt/undo-redo', component: GanttUndoRedoComponent,
+        description: 'This sample demonstrates the undo-redo feature in the Gantt Chart provides users with the ability to reverse or redo their recent actions within the Gantt Chart.',
+        name: 'Undo Redo', order: '01', category: 'Gantt', type: "new"
     },
     {
         path: ':theme/gantt/loading-animation', component: GanttLoadingAnimationComponent,
@@ -152,7 +158,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/timeline', component: GanttTimelineComponent,
         description: 'This example demonstrates the various timeline mode options and properties available to customize the timeline in Gantt',
-        name: 'Timeline API', order: '04', category: 'Timeline'
+        name: 'Timeline API', order: '04', category: 'Timeline', type: "update"
     },
     {
         path: ':theme/gantt/zooming', component: GanttZoomingComponent,
@@ -247,7 +253,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/exporting', component: GanttExportingComponent,
         description: 'This demo explains how to export Gantt content to Excel and CSV documents using the Syncfusion Gantt component.',
-        name: 'Exporting', order: '09', category: 'Miscellaneous', type: "update"
+        name: 'Exporting', order: '09', category: 'Miscellaneous'
     },
     {
         path: ':theme/gantt/filtering', component: GanttFilteringComponent,
@@ -257,7 +263,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/drag-and-drop', component: GanttDragAndDropComponent,
         description: 'This demo for Essential JS 2 Gantt control how the rows can be dragged within the gantt using the row drag-and-drop feature.',
-        name: 'Row Drag and Drop', order: '09', category: 'Miscellaneous', type: "update"
+        name: 'Row Drag and Drop', order: '09', category: 'Miscellaneous'
     },
     {
         path: ':theme/gantt/split-tasks', component: GanttSplitTasksComponent,
@@ -281,59 +287,4 @@ export const GanttAppRoutes: Object[] = [
     },
 ];
 
-export const GanttRouter: ModuleWithProviders<any> = RouterModule.forChild(GanttAppRoutes);
-let declarations: Type<Object>[] = [
-    GanttDefaultComponent,
-    GanttWorkWeekComponent,
-    GanttWorkingTimeRangeComponent,
-    GanttHolidaysComponent,
-    GanttIndicatorsComponent,
-    GanttEventMarkersComponent,
-    GanttResourcesComponent,
-    GanttTaskModeComponent,
-    GanttLoadingAnimationComponent,
-    GanttBaselineComponent,
-    GanttEditingComponent,
-    GanttContextMenuComponent,
-    GanttExportingComponent,
-    GanttFilteringComponent,
-    GanttEventsComponent,
-    GanttKeyboardInteractionsComponent,
-    GanttLocalDataComponent,
-    GanttRemoteDataComponent,
-    GanttSelfDataComponent,
-    GanttBaselineComponent,
-    GanttUnscheduledComponent,
-    GanttTimelineComponent,
-    GanttZoomingComponent,
-    GanttColumnMenuComponent,
-    ShowHideComponent,
-    ColumnReorderComponent,
-    ResizeComponent,
-    ColumnTemplateComponent,
-    HeaderTemplateComponent,
-    GanttTaskbarTemplateComponent,
-    GanttTasklabelTemplateComponent,
-    GanttTooltipTemplateComponent,
-    GanttToolbarTemplateComponent,
-    GanttGridLinesComponent,
-    GanttSortingComponent,
-    GanttSortingAPIComponent,
-    GanttSelectionComponent,
-    GanttDragAndDropComponent,
-    GanttResourceViewComponent,
-    GanttResourceMultiTaskbarComponent,
-    GanttSplitTasksComponent,
-    GanttVirtualScrollComponent,
-    GanttTimezoneComponent,
-    GanttCriticalPathComponent,
-    GanttOverviewComponent,
-    GanttLoadOnDemandComponent
-];
-@NgModule({
-    imports: [CommonModule, GanttRouter, SharedModule, GanttAllModule, DropDownListAllModule, CheckBoxAllModule, SwitchAllModule, TextBoxAllModule, NumericTextBoxAllModule, MultiSelectAllModule],
-    declarations: declarations,
-    providers: [GanttAllModule]
-})
-export class GanttSampleModule {
-}
+export const GanttSampleModule: ModuleWithProviders<any> = RouterModule.forChild(GanttAppRoutes);

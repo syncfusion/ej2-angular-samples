@@ -57,7 +57,7 @@ import { SmartLabelsComponent } from './smart-labels.component';
 import { DrilldownPieComponent } from './drill-down-pie.component';
 import { GroupingPieComponent } from './grouping.component';
 import { InversedAxisChartComponent } from './inversed.component';
-import { SharedModule } from '../common/shared.module';
+
 import { CandleStickChartComponent } from './candle-stick.component';
 import { HiloChartComponent } from './hilo.component';
 import { HiloOpenCloseChartComponent } from './hilo-open-close.component';
@@ -279,42 +279,5 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/data-editing', component: DataEditingComponent, name: 'Data Editing', description: "This demo for Essential JS2 Chart control demonstrates the data editing behavior in chart.", order: '16', category: 'User Interaction' }
 ];
 
-export const chartRouter: ModuleWithProviders<any> = RouterModule.forChild(chartAppRoutes);
-let declarations: Type<Object>[] = [LineChartComponent, ColumnChartComponent, BarChartComponent, AreaChartComponent,
-    SplineChartComponent, StackedColumnChartComponent, StackedBarChartComponent,
-    StackedAreaChartComponent, StepLineChartComponent, StepAreaChartComponent,
-    ScatterPlotChartComponent, BubbleChartComponent, MultiSeriesChartComponent, PerformanceChartComponent, NumericAxisChartComponent,
-    CategoryChartComponent, LogarithmicScaleChartComponent, MultipleAxisChartComponent, MarkerChartComponent, SelectionChartComponent,
-    CrosshairChartComponent, TrackBallChartComponent, ZoomingChartComponent, LazyLoadingComponent, LocalDataChartComponent, RemoteDataChartComponent,
-    PercentStackedAreaChartComponent, PercentStackedBarChartComponent, PercentStackedColumnChartComponent, DefaultPieComponent,
-    DateTimeAxisChartComponent, RangeColumnChartComponent, DefaultDonutComponent, SemiPieComponent, SmartLabelsComponent,
-    DrilldownPieComponent, GroupingPieComponent, InversedAxisChartComponent, CandleStickChartComponent, HiloChartComponent,
-    HiloOpenCloseChartComponent, PyramidComponent, FunnelComponent, WaterfallChartComponent,
-    HistogramChartComponent, AccumulationDistributionComponent,
-    AtrIndicatorComponent, MomentumIndicatorComponent, RsiIndicatorComponent, StochasticIndicatorComponent, MacdIndicatorComponent,
-    TmaIndicatorComponent, SmaIndicatorComponent, EmaIndicatorComponent, BollingerIndicatorComponent, PolarAreaChartComponent,
-    PolarColumnChartComponent, PolarLineChartComponent,
-    PolarRangeColumnChartComponent, PolarScatterChartComponent, PolarSplineChartComponent,
-    PolarStackedAreaChartComponent, RTLChartComponent, GroupedColumnChartComponent,
-    PolarStackedColumnChartComponent, IndexedAxisChartComponent, VerticalChartComponent, AnnotationChartComponent, DataLabelComponent,
-    StripLineRecurrenceChartComponent, StripLineChartComponent, EmptyPointChartComponent,
-    PieEmptyPointChartComponent, PrintChartComponent, BoxandWhiskerChartComponent, RangeAreaComponent, SplineRangeAreaComponent,
-    SmartAxisLabelsChartComponent, ErrorBarChartComponent, TrendLineChartComponent,
-    InversedSplineChartComponent, DashedLineChartComponent, EmptyAreaChartComponent,KeyboardComponent,
-    RoundedColumnChartComponent, TornadoChartComponent, PlacementColumnChartComponent,
-    RangeBarChartComponent, ParetoSeriesChartComponent, DonutComponent,
-    RangeSelectionChartComponent, ExportChartComponent, SplineAreaChartComponent,
-    MultiLevelLabelsChartComponent, LineSegmentChartComponent, RangeColorMappingComponent,
-    AxisCrossingChartComponent, AreaSegmentChartComponent, MultiLineChartComponent,RangeStepAreaComponent,
-    DateTimeCategoryAxisChartComponent, SortingChartComponent, PieRadiusComponent, StackedStepAreaChartComponent,
-    StackedLineChartComponent, PercentStackedLineChartComponent, DataEditingComponent, TooltipTemplateComponent, OverViewChartComponent , AreaNegativePointsComponent, CylindricalColumnChartComponent,
-    SynchronizedChartsComponent];
-@NgModule({
-    // tslint:disable-next-line:max-line-length
-    imports: [chartRouter, ChartAllModule, RangeNavigatorAllModule, SharedModule, ButtonModule, AccumulationChartAllModule, NumericTextBoxModule, DatePickerModule, DropDownListAllModule, DashboardLayoutModule],
-    exports: [],
-    declarations: declarations,
-    providers: []
-})
-export class ChartSampleModule {
-}
+export const ChartSampleModule: ModuleWithProviders<any> = RouterModule.forChild(chartAppRoutes);
+

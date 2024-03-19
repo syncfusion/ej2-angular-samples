@@ -1,0 +1,13 @@
+.control-wrapper {
+    margin: 0 auto;
+    width: 250px;
+}
+
+.property-section .right-side {
+    padding-left: 10px;
+}
+
+.property-section .left-side {
+    padding: 5px;
+    width: 25%
+}

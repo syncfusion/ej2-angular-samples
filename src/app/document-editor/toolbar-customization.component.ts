@@ -1,9 +1,12 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ToolbarService, DocumentEditorContainerComponent } from '@syncfusion/ej2-angular-documenteditor';
+import { ToolbarService, DocumentEditorContainerComponent, DocumentEditorContainerModule } from '@syncfusion/ej2-angular-documenteditor';
 import { TitleBar } from './title-bar';
 import { defaultDocument, WEB_API_ACTION } from './data';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
-import { MultiSelectComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { MultiSelectComponent, MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 /**
  * Document Editor Component
@@ -12,7 +15,9 @@ import { MultiSelectComponent } from '@syncfusion/ej2-angular-dropdowns';
     selector: 'control-content',
     templateUrl: 'toolbar-customization.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService]
+    providers: [ToolbarService],
+    standalone: true,
+    imports: [DocumentEditorContainerModule, MultiSelectModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ToolbarCustomizationComponent {
     public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
@@ -53,6 +58,7 @@ export class ToolbarCustomizationComponent {
         this.titleBar = new TitleBar(titleBarElement, this.container.documentEditor, true);
         this.container.documentEditor.open(JSON.stringify(defaultDocument));
         this.container.documentEditor.documentName = 'Toolbar Customization';
+        this.container.documentEditorSettings.showRuler = true;
         this.titleBar.updateDocumentTitle();
     }
 

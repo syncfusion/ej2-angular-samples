@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ITooltipRenderEventArgs, IStockChartEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
-import { chartData } from './indicator-data';
+import { ITooltipRenderEventArgs, IStockChartEventArgs, ChartTheme, StockChartModule,  ChartAllModule, RangeNavigatorAllModule } from '@syncfusion/ej2-angular-charts';
+import { defaultData } from './indicator-data';
 
 /**
  * Sample for default stockchart
@@ -8,13 +8,15 @@ import { chartData } from './indicator-data';
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ StockChartModule, ChartAllModule, RangeNavigatorAllModule]
 })
 export class DefaultComponent {
 
-    public data1: Object[] = chartData;
+    public data1: Object[] = defaultData;
 
-    public primaryXAxis: Object = { majorGridLines: { color: 'transparent' }, crosshairTooltip: { enable: true }};
+    public primaryXAxis: Object = { valueType: 'DateTimeCategory', majorGridLines: { color: 'transparent' }, crosshairTooltip: { enable: true }};
 
     public primaryYAxis: Object = {
         lineStyle: { color: 'transparent' },

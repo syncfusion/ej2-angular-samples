@@ -1,20 +1,25 @@
 import { Component, ViewEncapsulation, OnInit,ViewChild} from '@angular/core';
-import {
-    PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
-    ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService, LoadEventArgs
-} from '@syncfusion/ej2-angular-pdfviewer';
-import { SwitchComponent } from '@syncfusion/ej2-angular-buttons';
+import { PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService, LoadEventArgs, PdfViewerModule } from '@syncfusion/ej2-angular-pdfviewer';
+import { SwitchComponent, SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { ClickEventArgs } from '@syncfusion/ej2-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'read-only.html',
     encapsulation: ViewEncapsulation.None,
     // tslint:disable-next-line:max-line-length
-    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, 
-                TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService],
+    providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService,
+        TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService],
     styleUrls: ['pdfviewer.component.css'],
-
+    standalone: true,
+    imports: [
+        SBActionDescriptionComponent,
+        SwitchModule,
+        PdfViewerModule,
+        SBDescriptionComponent,
+    ],
 })
 
 export class ReadOnlyComponent implements OnInit {

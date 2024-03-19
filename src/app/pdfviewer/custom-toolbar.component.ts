@@ -1,16 +1,11 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild, Inject } from '@angular/core';
-import {
-    PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService,
-    ToolbarService, NavigationService, TextSelectionService, PrintService,DynamicStampItem,SignStampItem,StandardBusinessStampItem,
-    PageChangeEventArgs,
-    LoadEventArgs,
-    AnnotationService,
-    FormDesignerService,TextSearchService,TextSelection
-} from '@syncfusion/ej2-angular-pdfviewer';
-import { ToolbarComponent,MenuItemModel } from '@syncfusion/ej2-angular-navigations';
+import { PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ToolbarService, NavigationService, TextSelectionService, PrintService, DynamicStampItem, SignStampItem, StandardBusinessStampItem, PageChangeEventArgs, LoadEventArgs, AnnotationService, FormDesignerService,PageOrganizerService, TextSearchService, TextSelection, PdfViewerModule } from '@syncfusion/ej2-angular-pdfviewer';
+import { ToolbarComponent, MenuItemModel, ToolbarModule, MenuModule } from '@syncfusion/ej2-angular-navigations';
 import { DialogComponent } from '@syncfusion/ej2-angular-popups';
 import { ClickEventArgs } from '@syncfusion/ej2-buttons';
-import { SwitchComponent } from '@syncfusion/ej2-angular-buttons';
+import { SwitchComponent, SwitchModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 /**
@@ -20,8 +15,17 @@ import { SwitchComponent } from '@syncfusion/ej2-angular-buttons';
     selector: 'control-content',
     templateUrl: 'custom-toolbar.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [LinkAnnotationService, BookmarkViewService,TextSearchService,TextSelectionService, MagnificationService, ToolbarService, NavigationService, TextSelectionService, PrintService,AnnotationService,FormDesignerService],
+    providers: [LinkAnnotationService, BookmarkViewService, TextSearchService, TextSelectionService, MagnificationService, ToolbarService, NavigationService, TextSelectionService, PrintService, AnnotationService, FormDesignerService,PageOrganizerService],
     styleUrls: ['pdfviewer.component.css'],
+    standalone: true,
+    imports: [
+        SwitchModule,
+        ToolbarModule,
+        MenuModule,
+        PdfViewerModule,
+        SBActionDescriptionComponent,
+        SBDescriptionComponent,
+    ],
 })
 
 export class CustomToolbarComponent implements OnInit {
@@ -84,7 +88,19 @@ export class CustomToolbarComponent implements OnInit {
         ],
       },
       ];
-    
+
+      public signatureMenuItems: MenuItemModel[] = [{
+        iconCss: 'e-icons e-signature',
+        items: [
+          {
+            text: 'ADD SIGNATURE'
+          },
+          {
+            text: 'ADD INITIAL'
+          }
+        ],
+      },
+      ];
 
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['pdfviewer.component.css'];
@@ -96,7 +112,7 @@ export class CustomToolbarComponent implements OnInit {
 
     public openDocument(e: ClickEventArgs): void {
       this.disableInkAnnotation(); 
-        document.getElementById('fileUpload').click();
+      document.getElementById('fileUpload').click();
     }
 
     public previousClicked(e: ClickEventArgs): void {
@@ -158,11 +174,6 @@ export class CustomToolbarComponent implements OnInit {
       const textSearchToolbarElement = document.getElementById('textSearchToolbar');
       if (textSearchToolbarElement !== null && textSearchToolbarElement.style.display === 'block') {
         textSearchToolbarElement.style.display = 'none';
-      }
-  
-      const signatureToolbarElement = document.getElementById('SignatureToolbar');
-      if (signatureToolbarElement !== null && signatureToolbarElement.style.display === 'block') {
-        signatureToolbarElement.style.display = 'none';
       }
   
       const formFieldToolbarElement = document.getElementById('formFieldToolbar');
@@ -262,11 +273,6 @@ export class CustomToolbarComponent implements OnInit {
           textSearchToolbarElement.style.display = 'none';
         }
     
-        const signatureToolbarElement = document.getElementById('SignatureToolbar');
-        if (signatureToolbarElement?.style.display === 'block') {
-          signatureToolbarElement.style.display = 'none';
-        }
-    
         const formFieldToolbarElement = document.getElementById('formFieldToolbar');
         if (formFieldToolbarElement?.style.display === 'block') {
           formFieldToolbarElement.style.display = 'none';
@@ -292,11 +298,6 @@ export class CustomToolbarComponent implements OnInit {
           textSearchToolbarElement.style.display = 'none';
         }
     
-        const signatureToolbarElement = document.getElementById('SignatureToolbar');
-        if (signatureToolbarElement?.style.display === 'block') {
-          signatureToolbarElement.style.display = 'none';
-        }
-    
         const formFieldToolbarElement = document.getElementById('formFieldToolbar');
         if (formFieldToolbarElement?.style.display === 'block') {
           formFieldToolbarElement.style.display = 'none';
@@ -308,11 +309,6 @@ export class CustomToolbarComponent implements OnInit {
         const textSearchToolbarElement = document.getElementById('textSearchToolbar');
         if (textSearchToolbarElement !== null && textSearchToolbarElement.style.display === 'block') {
           textSearchToolbarElement.style.display = 'none';
-        }
-    
-        const signatureToolbarElement = document.getElementById('SignatureToolbar');
-        if (signatureToolbarElement !== null && signatureToolbarElement.style.display === 'block') {
-          signatureToolbarElement.style.display = 'none';
         }
     
         const formFieldToolbarElement = document.getElementById('formFieldToolbar');
@@ -442,42 +438,6 @@ export class CustomToolbarComponent implements OnInit {
         this.pdfviewerControl.annotation.setAnnotationMode('FreeText');
       }
     
-      public addSign(e: ClickEventArgs) {
-        this.disableInkAnnotation(); 
-        if(this.pdfviewerControl.tool == 'Ink'){
-          this.pdfviewerControl.annotation.setAnnotationMode('Ink');
-        }
-        const element = document.querySelector('.e-dropdown-popup') as HTMLElement;
-        if (element !== null) {
-          if ('formField_signature') {
-            const editAnnotationToolbarElement = document.getElementById('editAnnotationToolbar');
-            if (editAnnotationToolbarElement !== null && editAnnotationToolbarElement.style.display === 'block') {
-              editAnnotationToolbarElement.style.display = 'none';
-            }
-    
-            element.style.left = '50%';
-            element.style.top = '128px';
-          } else {
-            element.style.left = '790px';
-            element.style.top = '137px';
-          }
-        }
-    
-        const signatureToolbarElement = document.getElementById('SignatureToolbar');
-        if (signatureToolbarElement !== null) {
-          if (signatureToolbarElement.style.display === 'block') {
-            signatureToolbarElement.style.display = 'none';
-          } else {
-            signatureToolbarElement.style.display = 'block';
-          }
-        }
-    
-        const textSearchToolbarElement = document.getElementById('textSearchToolbar');
-        if (textSearchToolbarElement !== null && textSearchToolbarElement.style.display === 'block') {
-          textSearchToolbarElement.style.display = 'none';
-        }
-    
-      }
       public addEditFormFields(e: ClickEventArgs): void {
         this.disableInkAnnotation(); 
         if(this.pdfviewerControl.tool == 'Ink'){
@@ -503,48 +463,8 @@ export class CustomToolbarComponent implements OnInit {
         if (textSearchToolbarElement !== null && textSearchToolbarElement.style.display === 'block') {
           textSearchToolbarElement.style.display = 'none';
         }
-    
-        const signatureToolbarElement = document.getElementById('SignatureToolbar');
-        if (signatureToolbarElement !== null && signatureToolbarElement.style.display === 'block') {
-          signatureToolbarElement.style.display = 'none';
-        }
       }
-      public addSign1(e: ClickEventArgs) {
-        this.disableInkAnnotation(); 
-        if(this.pdfviewerControl.tool == 'Ink'){
-          this.pdfviewerControl.annotation.setAnnotationMode('Ink');
-        }
-        const element = document.querySelector('.e-dropdown-popup') as HTMLElement;
-        if (element !== null) {
-          if ('signature') {
-            const editAnnotationToolbarElement = document.getElementById('editAnnotationToolbar');
-            if (editAnnotationToolbarElement !== null && editAnnotationToolbarElement.style.display === 'block') {
-              editAnnotationToolbarElement.style.display = 'block';
-            }
-    
-            element.style.left = '73%';
-            element.style.top = '155px';
-          } else {
-            element.style.left = '790px';
-            element.style.top = '137px';
-          }
-        }
-    
-        const signatureToolbarElement = document.getElementById('SignatureToolbar');
-        if (signatureToolbarElement !== null) {
-          if (signatureToolbarElement.style.display === 'block') {
-            signatureToolbarElement.style.display = 'none';
-          } else {
-            signatureToolbarElement.style.display = 'block';
-          }
-        }
-    
-        const textSearchToolbarElement = document.getElementById('textSearchToolbar');
-        if (textSearchToolbarElement !== null && textSearchToolbarElement.style.display === 'block') {
-          textSearchToolbarElement.style.display = 'none';
-        }
-    
-      }
+      
       public ink(e: ClickEventArgs) {
         if(!this.isInkEnabled)
           {
@@ -591,10 +511,10 @@ export class CustomToolbarComponent implements OnInit {
       onSignatureClick(event: any): void {
         const editAnnotationToolbarElement = document.getElementById('editAnnotationToolbar');
         if (editAnnotationToolbarElement?.style.display === 'block') {
-          if (event.target instanceof HTMLElement) {
-            if (event.target.innerText === 'ADD SIGNATURE') {
+          if (event.element instanceof HTMLElement) {
+            if (event.element.innerText === 'ADD SIGNATURE') {
               this.pdfviewerControl.annotationModule.setAnnotationMode('HandWrittenSignature');
-            } else if (event.target.innerText === 'ADD INITIAL') {
+            } else if (event.element.innerText === 'ADD INITIAL') {
               this.pdfviewerControl.annotationModule.setAnnotationMode('Initial');
             }
           }
@@ -602,21 +522,15 @@ export class CustomToolbarComponent implements OnInit {
     
         const formFieldToolbarElement = document.getElementById('formFieldToolbar');
         if (formFieldToolbarElement?.style.display === 'block') {
-          if (event.target instanceof HTMLElement) {
-            if (event.target.innerText === 'ADD SIGNATURE') {
+          if (event.element instanceof HTMLElement) {
+            if (event.element.innerText === 'ADD SIGNATURE') {
               this.pdfviewerControl.formDesignerModule.setFormFieldMode('SignatureField');
-            } else if (event.target.innerText === 'ADD INITIAL') {
+            } else if (event.element.innerText === 'ADD INITIAL') {
               this.pdfviewerControl.formDesignerModule.setFormFieldMode('InitialField');
             }
           }
         }
-    
-        const signatureToolbarElement = document.getElementById('SignatureToolbar');
-        if (signatureToolbarElement?.style.display === 'block') {
-          signatureToolbarElement.style.display = 'none';
-        }
       }
-    
     
   public findText(e: ClickEventArgs): void {
     if(this.pdfviewerControl.tool == 'Ink'){
@@ -642,7 +556,6 @@ export class CustomToolbarComponent implements OnInit {
       this.pdfviewerControl.designerMode = false;
     }
   }
-
   
   public searchInputKeypressed(event: KeyboardEvent): void {
     if (event.key === 'Enter') {
@@ -783,7 +696,7 @@ export class CustomToolbarComponent implements OnInit {
                 // tslint:disable-next-line
                 reader.onload = (e: any): void => {
                     let uploadedFileUrl: string = e.currentTarget.result;
-                    proxy.pdfviewerControl.load(uploadedFileUrl, null);
+                    proxy.pdfviewerControl.documentPath = uploadedFileUrl;
                 };
             }
         }

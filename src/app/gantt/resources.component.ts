@@ -1,8 +1,13 @@
 import { Component, OnInit} from '@angular/core';
 import { resourceData, resourceResources } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttresources',
-    templateUrl: 'resources.html'
+    templateUrl: 'resources.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
 })
 
 export class GanttResourcesComponent implements OnInit {
@@ -17,6 +22,7 @@ export class GanttResourcesComponent implements OnInit {
     public resourceFields: object ;
     public projectStartDate: Date;
     public projectEndDate: Date;
+    public taskType: string;
     public ngOnInit(): void {
         this.data = resourceData;
         this.resources = resourceResources;
@@ -31,6 +37,7 @@ export class GanttResourcesComponent implements OnInit {
             type: 'taskType',
             resourceInfo: 'resources'
         };
+        this.taskType = "FixedWork";
         this.resourceFields = {
             id: 'resourceId',
             name: 'resourceName',

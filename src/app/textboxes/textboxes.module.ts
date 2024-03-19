@@ -9,7 +9,7 @@ import { ReactiveComponent } from './reactive-forms.component';
 import { TemplateDrivenComponent } from './template-driven-forms.component';
 import { FieldErrorDisplayComponent } from './field-error-display.backup';
 import { DefaultTextboxController } from './default.component';
-import { SharedModule } from '../common/shared.module';
+
 import { DefaultTextAreaController } from './multiline-textbox.component';
 import { CheckBoxModule  } from '@syncfusion/ej2-angular-buttons';
 
@@ -21,19 +21,5 @@ export const textboxesAppRoutes: Object[] = [
     { path: ':theme/textboxes/reactive-forms', component: ReactiveComponent, name: 'Reactive Forms', category: 'Forms', order: '04', description: 'This example shows how to integrate the textbox component in an Angular (ng) reactive form that works based on form-group, form-builder, and form-control.'}
 ];
 
-export const textBoxesRouter: ModuleWithProviders<any> = RouterModule.forChild(textboxesAppRoutes);
+export const TextboxesModule: ModuleWithProviders<any> = RouterModule.forChild(textboxesAppRoutes);
 
-@NgModule({
-    imports: [textBoxesRouter, SharedModule, FormsModule, CommonModule, DialogModule, TextBoxModule,
-        ReactiveFormsModule, CheckBoxModule, DropDownListModule, NumericTextBoxModule],
-    declarations: [
-        DefaultTextboxController,
-        TemplateDrivenComponent,
-        ReactiveComponent,
-        FieldErrorDisplayComponent,
-        DefaultTextAreaController
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class TextboxesModule {
-}

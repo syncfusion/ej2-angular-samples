@@ -1,13 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { TreeGridComponent, SortService} from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent, TreeGridAllModule, SortService} from '@syncfusion/ej2-angular-treegrid';
 import { SortDirection } from '@syncfusion/ej2-grids';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'sortingapi.html',
-    providers:[SortService]
+    providers:[SortService],
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListAllModule, ButtonAllModule]
 })
 export class SortingAPIComponent implements OnInit {
     public data: Object[] = [];

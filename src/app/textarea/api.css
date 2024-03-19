@@ -1,0 +1,12 @@
+.content-wrapper div.api-row {
+    margin: 30px 150px;
+}
+
+.api-property .left-side {
+    font-size: 14px;
+    padding: 8px;
+}
+
+.api-property.property-panel-table div.api {
+    padding-left: 0px;
+}

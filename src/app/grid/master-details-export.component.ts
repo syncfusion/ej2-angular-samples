@@ -1,13 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { hierarchyOrderdata, customerData, employeeData } from './data';
-import { GridModel, GridComponent, DetailRowService, PdfExportService,
-    ExcelExportService, ToolbarService } from '@syncfusion/ej2-angular-grids';
+import { GridModel, GridComponent, DetailRowService, PdfExportService, ExcelExportService, ToolbarService, GridModule } from '@syncfusion/ej2-angular-grids';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-grid-masterdetailexport',
     templateUrl: 'master-details-export.html',
-    providers: [DetailRowService, PdfExportService, ExcelExportService, ToolbarService]
+    providers: [DetailRowService, PdfExportService, ExcelExportService, ToolbarService],
+    standalone: true,
+    imports: [GridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class HierarchyExportComponent implements OnInit {
     public data: Object[] = [];

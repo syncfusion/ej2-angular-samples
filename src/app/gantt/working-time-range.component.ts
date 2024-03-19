@@ -1,13 +1,17 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { WorkingTimeRangeData } from './data';
-import { ChangeEventArgs} from '@syncfusion/ej2-angular-inputs';
+import { ChangeEventArgs, NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
 import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-ganttworkingtimerange',
-    templateUrl: 'working-time-range.html'
+    templateUrl: 'working-time-range.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, NumericTextBoxAllModule, SBDescriptionComponent]
 })
 export class GanttWorkingTimeRangeComponent implements OnInit {
     

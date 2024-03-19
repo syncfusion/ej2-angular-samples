@@ -1,15 +1,19 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { frozenSampleData } from './jsontreegriddata';
-import { FreezeService, TreeGridComponent, SortService, SelectionService } from '@syncfusion/ej2-angular-treegrid';
+import { FreezeService, TreeGridModule, TreeGridComponent, SortService, SelectionService } from '@syncfusion/ej2-angular-treegrid';
 import { freezeDirection, Column } from '@syncfusion/ej2-grids';
-import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { DialogComponent, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
+import { DropDownListComponent, DropDownListModule, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { DialogComponent, DialogModule, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'frozen-api.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [ FreezeService, SortService ]
+    providers: [ FreezeService, SortService ],
+    standalone: true,
+    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule, DialogModule]
 })
 
 export class FrozenAPI implements OnInit {

@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
 import { ChangeEventArgs, AutoComplete } from '@syncfusion/ej2-dropdowns';
-import { TreeGridComponent , EditService , ToolbarService , PageService, Column } from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent , TreeGridModule, EditService , ToolbarService , PageService, Column } from '@syncfusion/ej2-angular-treegrid';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'edittemplate.html',
-    providers: [EditService , ToolbarService , PageService]
+    providers: [EditService , ToolbarService , PageService],
+    standalone: true,
+    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class EditTemplateComponent implements OnInit {
     public data: Object[] = [];

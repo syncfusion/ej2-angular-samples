@@ -1,20 +1,24 @@
 import { Component, ViewEncapsulation, ViewChild,Inject } from '@angular/core';
-import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
-import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
+import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { ToolbarComponent, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import {
   Diagram, NodeModel, UndoRedo, ConnectorModel, PointPortModel,  NodeConstraints,  DiagramTools, DiagramConstraints, AnnotationConstraints, randomId, PageSettingsModel, BpmnShapeModel,Node, BpmnGatewayModel, ShapeStyleModel, SnapSettingsModel, SnapConstraints
 } from '@syncfusion/ej2-diagrams';
 
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(UndoRedo);
 /**
  * Default FlowShape sample
  */
 
 @Component({
-  selector: 'control-content',
-  templateUrl: 'workflow-editor.html',
-  encapsulation: ViewEncapsulation.None
+    selector: 'control-content',
+    templateUrl: 'workflow-editor.html',
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToolbarModule, DiagramModule, SBDescriptionComponent]
 })
 export class WorkFlowDiagramComponent {
   @ViewChild('diagram')

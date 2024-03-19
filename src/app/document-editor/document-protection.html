@@ -2,7 +2,7 @@
     <div class="col-lg-9">
         <div id="default_title_bar" class="e-de-ctn-title"></div>
         <div>
-            <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true [showPropertiesPane]=false
+            <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true [showPropertiesPane]=false [documentEditorSettings]="settings"
                 [locale]="culture" (created)="onCreate()" (documentChange)="onDocumentChange()" height="600px" [serviceUrl]="hostUrl"  style="display:block;">
             </ejs-documenteditorcontainer>
         </div>

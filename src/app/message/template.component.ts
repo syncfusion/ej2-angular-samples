@@ -1,6 +1,8 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { MessageComponent } from '@syncfusion/ej2-angular-notifications';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { MessageComponent, MessageModule } from '@syncfusion/ej2-angular-notifications';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  *  Sample for Message
  */
@@ -8,7 +10,9 @@ import { MessageComponent } from '@syncfusion/ej2-angular-notifications';
     selector: 'control-content',
     templateUrl: 'template.html',
     styleUrls: ['template.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ButtonModule, MessageModule, SBDescriptionComponent]
 })
 
 export class MessageTemplateController {

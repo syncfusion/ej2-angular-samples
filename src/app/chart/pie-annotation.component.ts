@@ -1,14 +1,13 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import {
-    ILoadedEventArgs, IMouseEventArgs, ChartComponent, IAccLoadedEventArgs, AccumulationTheme,
-    SelectionMode, ChartTheme, Series, IAccResizeEventArgs, ChartAnnotationSettingsModel, IAxisLabelRenderEventArgs
-} from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, IMouseEventArgs, ChartComponent, IAccLoadedEventArgs, AccumulationTheme,AccumulationChartModule, SelectionMode, ChartTheme, Series, IAccResizeEventArgs, ChartAnnotationSettingsModel, IAxisLabelRenderEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import {
     AccumulationChart, AccumulationDataLabel
 } from '@syncfusion/ej2-charts';
 AccumulationChart.Inject(AccumulationDataLabel);
 import { Browser } from '@syncfusion/ej2-base';
 import { chartDatas } from './financial-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Sample for Annotation in chart
  */
@@ -16,7 +15,9 @@ import { chartDatas } from './financial-data';
     selector: 'control-content',
     templateUrl: 'pie-annotation.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent,AccumulationChartModule, ChartAllModule, SBDescriptionComponent]
 })
 export class AnnotationChartComponent {
     public pie: AccumulationChart;

@@ -1,19 +1,23 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { orderDetails } from './data';
-import { GridComponent } from '@syncfusion/ej2-angular-grids';
-import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
+import { GridComponent, SortService, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
+import { ToolbarComponent, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { addClass, removeClass } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../../common/dp.component';
+import { SBActionDescriptionComponent } from '../../common/adp.component';
 
 @Component({
     selector: 'ej2-grid-container',
     templateUrl: 'show-hide.html',
     styleUrls: ['show-hide.style.css'],
-    encapsulation: ViewEncapsulation.None
+    providers: [SortService, PageService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ToolbarModule, GridModule, SBDescriptionComponent]
 })
 export class ShowHideComponent implements OnInit {
     public data: Object[] = [];
     public flag: boolean = false;
-
     @ViewChild('grid')
     public grid: GridComponent;
 

@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, Series, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, Series, ChartTheme, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { getElement } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for vertical chart
@@ -10,7 +12,9 @@ import { Browser } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'vertical.html',
     styleUrls: ['chart.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 export class VerticalChartComponent {
     public clrInterval: number;
@@ -46,9 +50,6 @@ export class VerticalChartComponent {
     };
     public legendSettings: Object = {
         visible: false
-    };
-    public animation1: Object = {
-        enable: false
     };
     public chartArea: Object = {
         border: {

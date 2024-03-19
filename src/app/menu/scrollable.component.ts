@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MenuItemModel, BeforeOpenCloseMenuEventArgs, MenuAnimationSettingsModel } from '@syncfusion/ej2-angular-navigations';
+import { MenuItemModel, BeforeOpenCloseMenuEventArgs, MenuAnimationSettingsModel, MenuModule } from '@syncfusion/ej2-angular-navigations';
 import { closest } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Scrollable Menu Controller
@@ -9,7 +11,9 @@ import { closest } from '@syncfusion/ej2-base';
     selector: 'control-content',
     templateUrl: 'scrollable.html',
     styleUrls: ['scrollable.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [MenuModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class ScrollableMenuController {

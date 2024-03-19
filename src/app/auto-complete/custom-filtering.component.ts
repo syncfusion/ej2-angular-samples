@@ -2,13 +2,18 @@
  * AutoComplete Custom Filtering Sample
  */
 import { Component } from '@angular/core';
-import * as Fuse from 'fuse.js';
+import Fuse from 'fuse.js';
 import { EmitType } from '@syncfusion/ej2-base';
 import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
-    templateUrl: 'custom-filtering.html'
+    templateUrl: 'custom-filtering.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, AutoCompleteModule, SBDescriptionComponent]
 })
 export class CustomFilteringAutoCompleteComponent {
     // define the JSON of books data
@@ -65,7 +70,7 @@ export class CustomFilteringAutoCompleteComponent {
             findAllMatches: true
         };
         // create object from Fuse constructor
-        let fuse: Fuse<any, any> = new Fuse(this.booksData, options);
+        let fuse: Fuse<any> = new Fuse(this.booksData, options);
         // store the search result data based on typed characters
         let result: any = fuse.search(e.text);
         let data: { [key: string]: Object; }[] = [];

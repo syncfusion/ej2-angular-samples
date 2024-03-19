@@ -1,20 +1,22 @@
 import { Component, Inject, ViewChild, ElementRef } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import { DatePickerComponent } from '@syncfusion/ej2-angular-calendars';
-import {
-  ScheduleComponent, EJ2Instance, EventSettingsModel, DayService, WeekService,
-  WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { DatePickerComponent, DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { ScheduleComponent, EJ2Instance, EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { scheduleData } from './data';
 import { Query, Predicate, DataManager, ReturnOption } from '@syncfusion/ej2-data';
 import { Grid } from '@syncfusion/ej2-angular-grids';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'search-events.html',
-  styleUrls: ['search-events.style.css'],
-  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'search-events.html',
+    styleUrls: ['search-events.style.css'],
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, DatePickerModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class SearchEventsComponent {
   public selectedDate: Date = new Date(2021, 0, 10);

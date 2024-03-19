@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
-import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { TreeGridComponent, PageService, SortService } from '@syncfusion/ej2-angular-treegrid';
+import { DropDownListComponent, DropDownListModule, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { TreeGridComponent, TreeGridModule, PageService, SortService } from '@syncfusion/ej2-angular-treegrid';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'loading-animation.html',
-    providers: [PageService, SortService]
+    providers: [PageService, SortService],
+    standalone: true,
+    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule]
 })
 export class LoadingAnimationComponent implements OnInit {
     public data: DataManager;

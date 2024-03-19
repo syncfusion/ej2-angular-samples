@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <ejs-grid #grid [dataSource]='data' height='400' [frozenRows]='2' [enableHover]='false'>
+    <ejs-grid #grid [dataSource]='data' height='400' [frozenRows]='2' [enableHover]='false' [allowSorting]='true' >
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' freeze='Left'></e-column>
             <e-column field='Freight' headerText='Freight' width='125' format='C2' textAlign='Right'></e-column>

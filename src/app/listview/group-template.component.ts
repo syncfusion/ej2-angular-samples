@@ -5,12 +5,17 @@
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { grouptemplatedata } from './dataSource';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'group-template.html',
     styleUrls: ['group-template.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ListViewAllModule, SBDescriptionComponent]
 })
 
 export class GroupTemplateListViewComponent {

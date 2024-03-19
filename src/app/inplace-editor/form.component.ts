@@ -1,10 +1,12 @@
 import { Component, ViewEncapsulation, ViewChild, OnInit, ElementRef } from '@angular/core';
-import { DropDownListComponent, ChangeEventArgs, MultiSelectModel } from '@syncfusion/ej2-angular-dropdowns';
-import { InPlaceEditorComponent, RteService, MultiSelectService, RenderMode } from '@syncfusion/ej2-angular-inplace-editor';
+import { DropDownListComponent, ChangeEventArgs, MultiSelectModel, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { InPlaceEditorComponent, RteService, MultiSelectService, RenderMode, InPlaceEditorModule } from '@syncfusion/ej2-angular-inplace-editor';
 import { ActionEventArgs } from '@syncfusion/ej2-angular-inplace-editor';
 import { RichTextEditorModel } from '@syncfusion/ej2-richtexteditor';
 import { TextBoxModel } from '@syncfusion/ej2-inputs';
 import { PopupSettingsModel } from '@syncfusion/ej2-inplace-editor/src/inplace-editor/base/models-model';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * In-place Editor form sample
@@ -14,7 +16,9 @@ import { PopupSettingsModel } from '@syncfusion/ej2-inplace-editor/src/inplace-e
     templateUrl: 'form.html',
     styleUrls: ['form.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [RteService, MultiSelectService]
+    providers: [RteService, MultiSelectService],
+    standalone: true,
+    imports: [InPlaceEditorModule, DropDownListModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class FormInplaceEditorComponent implements OnInit {
 

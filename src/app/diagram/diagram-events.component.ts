@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, SymbolPaletteModule, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import {
     Diagram, NodeModel, UndoRedo, ConnectorModel,
     SymbolInfo, IDragEnterEventArgs, IDragLeaveEventArgs,
@@ -15,6 +15,10 @@ import {
 import { ExpandMode } from '@syncfusion/ej2-navigations';
 import { MenuEventArgs } from '@syncfusion/ej2-splitbuttons';
 import { ListView } from '@syncfusion/ej2-lists';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { ListViewModule } from '@syncfusion/ej2-angular-lists';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 Diagram.Inject(UndoRedo, DiagramContextMenu, Snapping);
 
@@ -26,7 +30,9 @@ Diagram.Inject(UndoRedo, DiagramContextMenu, Snapping);
     selector: 'control-content',
     templateUrl: 'diagram-events.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, SymbolPaletteModule, DiagramModule, ListViewModule, ButtonModule, SBDescriptionComponent]
 })
 export class EventsDiagramComponent {
     @ViewChild('diagram')
@@ -225,7 +231,7 @@ export class EventsDiagramComponent {
 
     public palettes: PaletteModel[] = [
         { id: 'basic', expanded: true, symbols: this.basicShapes, iconCss: 'e-ddb-icons e-basic', title: 'Basic Shapes' },
-        { id: 'connectors', expanded: true, symbols: this.connectorSymbols, iconCss: 'e-ddb-icons e-connector', title: 'Connectors' }
+        { id: 'connectors', expanded: true, symbols: this.connectorSymbols, iconCss: 'e-ddb-icons e-diagram-connector', title: 'Connectors' }
     ];
 
     public contextMenu: ContextMenuSettingsModel = {

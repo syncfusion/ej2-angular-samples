@@ -1,10 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';
 import { orderDetails } from './data';
-import { EditService, ToolbarService, PageService, DialogEditEventArgs, SaveEventArgs } from '@syncfusion/ej2-angular-grids';
+import { EditService, ToolbarService, PageService, SortService, DialogEditEventArgs, SaveEventArgs, GridModule } from '@syncfusion/ej2-angular-grids';
 import { DataUtil } from '@syncfusion/ej2-data';
-import { FormGroup, AbstractControl, FormControl, Validators } from '@angular/forms';
+import { FormGroup, AbstractControl, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Dialog } from '@syncfusion/ej2-angular-popups';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { NgClass } from '@angular/common';
 
 /**
  * Reactive Forms Dialog template sample
@@ -13,7 +19,9 @@ import { Dialog } from '@syncfusion/ej2-angular-popups';
     selector: 'ej-griddialogtemplate',
     templateUrl: 'dialog-reactive-form.html',
     styleUrls: ['dialog-reactive-form.style.css'],
-    providers: [ToolbarService, EditService, PageService]
+    providers: [ToolbarService, EditService, PageService, SortService],
+    standalone: true,
+    imports: [GridModule, ReactiveFormsModule, NgClass, NumericTextBoxModule, DatePickerModule, DropDownListModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class DialogReactiveFormComponent implements OnInit {
     public data: Object[];

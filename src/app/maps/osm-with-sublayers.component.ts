@@ -5,15 +5,18 @@
 //tslint:disable
 // custom code end
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, MapsTooltip, DataLabel, Maps, Marker, Annotations, ILoadEventArgs, NavigationLine } from '@syncfusion/ej2-angular-maps';
-import { MapAjax } from '@syncfusion/ej2-maps';
+import { MapsTheme, MapsTooltip, DataLabel, Maps, Marker, Annotations, ILoadEventArgs, NavigationLine, MapsModule } from '@syncfusion/ej2-angular-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Maps.Inject(Marker, MapsTooltip, DataLabel, NavigationLine, Annotations);
 declare var require: any;
-import africa from './africa.json';
+let africa: object[] = require('./africa.json');
 @Component({
     selector: 'control-content',
     templateUrl: 'osm-with-sublayers.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [MapsModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class MapsOsmWithSublayerComponent {
     public load = (args: ILoadEventArgs) => {

@@ -1,11 +1,10 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Internationalization, extend } from '@syncfusion/ej2-base';
-import { ChangeEventArgs as DropDownChangeArgs } from '@syncfusion/ej2-angular-dropdowns';
-import {
-  ScheduleComponent, View, TimeScaleModel, EventSettingsModel, DayService,
-  WeekService, TimelineViewsService, ResizeService, DragAndDropService, CallbackFunction
-} from '@syncfusion/ej2-angular-schedule';
+import { ChangeEventArgs as DropDownChangeArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ScheduleComponent, View, TimeScaleModel, EventSettingsModel, DayService, WeekService, TimelineViewsService, ResizeService, DragAndDropService, CallbackFunction, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { scheduleData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 const instance: Internationalization = new Internationalization();
 (window as TemplateFunction).majorSlotTemplate = (date: Date) => {
@@ -20,12 +19,14 @@ interface TemplateFunction extends Window {
 }
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'time-scale.html',
-  styleUrls: ['time-scale.style.css'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [DayService, WeekService, TimelineViewsService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'time-scale.html',
+    styleUrls: ['time-scale.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    providers: [DayService, WeekService, TimelineViewsService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, DropDownListModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class TimescaleComponent {

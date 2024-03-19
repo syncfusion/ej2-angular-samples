@@ -1,26 +1,28 @@
 import { extend } from '@syncfusion/ej2-base';
-import {
-  ScheduleComponent, EventSettingsModel, GroupModel, DayService, WeekService, MonthService, DragAndDropService, View
-} from '@syncfusion/ej2-angular-schedule';
+import { ScheduleComponent, EventSettingsModel, GroupModel, DayService, WeekService, MonthService, DragAndDropService, View, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { resourceData, timelineResourceData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for adaptive grouping
  */
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'adaptive-grouping.html',
-  styles: [`
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'adaptive-grouping.html',
+    styles: [`
     @media (min-width: 481px) {
         .schedule-wrapper {
             margin: 0 25%;
         }
     }`],
-  providers: [DayService, WeekService, MonthService, DragAndDropService],
-  encapsulation: ViewEncapsulation.None
+    providers: [DayService, WeekService, MonthService, DragAndDropService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class AdaptiveGroupingComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

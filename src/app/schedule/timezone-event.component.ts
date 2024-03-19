@@ -1,21 +1,22 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { Timezone, WorkHoursModel } from '@syncfusion/ej2-schedule';
-import {
-  EventSettingsModel, View, EventRenderedArgs, ScheduleComponent, DayService, WeekService,
-  WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, View, EventRenderedArgs, ScheduleComponent, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { fifaEventsData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 declare var moment: any;
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'timezone-event.html',
-  styleUrls: ['timezone-event.style.css'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'timezone-event.html',
+    styleUrls: ['timezone-event.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [DropDownListModule, ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class TimezoneComponent {

@@ -2,17 +2,21 @@ import { Component, OnInit, ViewChild, ValueProvider, ViewEncapsulation } from '
 import { employeeDetails } from './data';
 import {
     GridComponent, ToolbarService, ExcelExportService, PdfExportService,
-    GroupService, ExcelQueryCellInfoEventArgs, PdfQueryCellInfoEventArgs, SortService
+    GroupService, ExcelQueryCellInfoEventArgs, PdfQueryCellInfoEventArgs, SortService, GridModule
 } from '@syncfusion/ej2-angular-grids';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations'
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'ej2-grid-container',
     templateUrl: 'default-exporting.html',
     styleUrls: ['column-template.style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, ExcelExportService, PdfExportService, GroupService, SortService]
-
+    providers: [ToolbarService, ExcelExportService, PdfExportService, GroupService, SortService],
+    standalone: true,
+    imports: [GridModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ExportingComponent implements OnInit {
     public data: Object[];

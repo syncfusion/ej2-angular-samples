@@ -1,14 +1,18 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IAccLoadedEventArgs, AccumulationTheme } from '@syncfusion/ej2-angular-charts';
+import { IAccLoadedEventArgs, AccumulationTheme, AccumulationChartAllModule ,ChartAllModule} from '@syncfusion/ej2-angular-charts';
 import { AccumulationDataLabelSettingsModel, LegendSettingsModel, TooltipSettingsModel } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Sample for Smart Labels in Pie chart
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'smart-labels.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent,ChartAllModule, AccumulationChartAllModule, SBDescriptionComponent]
 })
 export class SmartLabelsComponent {
     public data: Object[] = [

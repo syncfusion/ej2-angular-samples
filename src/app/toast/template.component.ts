@@ -1,8 +1,10 @@
 import { Component, ViewEncapsulation, Inject, ViewChild, ElementRef } from '@angular/core';
 import { compile, Browser, closest } from '@syncfusion/ej2-base';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
-import { ToastComponent, ToastBeforeOpenArgs, ToastPositionModel, ToastAnimationSettingsModel } from '@syncfusion/ej2-angular-notifications';
+import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { DropDownList, ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ToastComponent, ToastBeforeOpenArgs, ToastPositionModel, ToastAnimationSettingsModel, ToastModule } from '@syncfusion/ej2-angular-notifications';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  *  Sample Dynamic and Static template support
  */
@@ -10,7 +12,9 @@ import { ToastComponent, ToastBeforeOpenArgs, ToastPositionModel, ToastAnimation
     selector: 'control-content',
     templateUrl: 'template.html',
     styleUrls: ['template.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ButtonModule, ToastModule, DropDownListModule, SBDescriptionComponent]
 })
 
 export class TemplateController {

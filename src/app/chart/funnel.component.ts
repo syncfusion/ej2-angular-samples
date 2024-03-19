@@ -1,9 +1,8 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import {
-    AccumulationChartComponent, AccumulationChart, IAccLoadedEventArgs,
-    IAccResizeEventArgs, AccumulationTheme
-} from '@syncfusion/ej2-angular-charts';
+import { AccumulationChartComponent, AccumulationChart,ChartAllModule, IAccLoadedEventArgs, IAccResizeEventArgs, AccumulationTheme, AccumulationChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Sample for Funnel Chart
@@ -11,7 +10,9 @@ import { Browser } from '@syncfusion/ej2-base';
 @Component({
     selector: 'control-content',
     templateUrl: 'funnel.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [AccumulationChartAllModule,ChartAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class FunnelComponent {
     public data: Object[] = [
@@ -37,7 +38,7 @@ export class FunnelComponent {
     };
    // custom code end
     public width: string = Browser.isDevice ? '65%' : '45%';
-    public neckWidth: string = Browser.isDevice ? '12%' : '10%';
+    public neckWidth: string = Browser.isDevice ? '12%' : '15%';
     public neckHeight: string = '18%';
     public explode: boolean = false;
     public enableAnimation: boolean = false;

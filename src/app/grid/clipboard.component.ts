@@ -1,15 +1,19 @@
 import { Component, OnInit, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
 import { orderDetails } from './data';
-import { SelectionService, GridComponent } from '@syncfusion/ej2-angular-grids';
+import { SelectionService, GridComponent, SortService, GridModule, ToolbarService, PageService } from '@syncfusion/ej2-angular-grids';6
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 
 @Component({
     selector: 'ej-gridclipboard',
     templateUrl: 'clipboard.html',
-    providers: [SelectionService],
-    encapsulation: ViewEncapsulation.None
+    providers: [SelectionService, SortService, ToolbarService, PageService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GridModule, DialogModule, SBDescriptionComponent]
 })
 export class ClipboardComponent implements OnInit {
     public data: Object[];
@@ -39,10 +43,7 @@ export class ClipboardComponent implements OnInit {
 
     clickHandler(args: ClickEventArgs): void {
         if(this.grid.getSelectedRecords().length>0) {
-            let withHeader: boolean = false;
-            if (args.item.id === 'copyHeader') {
-                withHeader = true;
-            }
+            let withHeader: boolean = args.item.id === 'copyHeader' ? true : false;
             this.grid.copy(withHeader);
         } else {
             this.alertDialog.show();

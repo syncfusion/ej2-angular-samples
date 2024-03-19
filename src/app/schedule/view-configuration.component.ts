@@ -1,10 +1,9 @@
 import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { fifaEventsData } from './data';
 import { Internationalization, extend } from '@syncfusion/ej2-base';
-import {
-  EventSettingsModel, TimeScaleModel, GroupModel, View, DragAndDropService, CallbackFunction,
-  ScheduleComponent, DayService, WeekService, MonthService, AgendaService, ResizeService
-} from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, TimeScaleModel, GroupModel, View, DragAndDropService, CallbackFunction, ScheduleComponent, DayService, WeekService, MonthService, AgendaService, ResizeService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 const instance: Internationalization = new Internationalization();
 (window as TemplateFunction).getTimeString = (value: Date) => {
@@ -15,12 +14,14 @@ interface TemplateFunction extends Window {
 }
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'view-configuration.html',
-  providers: [DayService, WeekService, MonthService, AgendaService, ResizeService, DragAndDropService],
-  styleUrls: ['view-configuration.style.css'],
-  encapsulation: ViewEncapsulation.None
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'view-configuration.html',
+    providers: [DayService, WeekService, MonthService, AgendaService, ResizeService, DragAndDropService],
+    styleUrls: ['view-configuration.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ViewConfigComponent {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;

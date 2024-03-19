@@ -2,18 +2,24 @@
  * Export sample
  */
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { MapsTheme, Maps, Marker, MapsTooltip, ILoadEventArgs, ExportType, ShapeLayerType } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, Maps, Marker, MapsTooltip, ILoadEventArgs, ExportType, ShapeLayerType, MapsModule } from '@syncfusion/ej2-angular-maps';
 import { PdfExportService, ImageExportService } from '@syncfusion/ej2-angular-maps';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { MapAjax } from '@syncfusion/ej2-maps';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { FormsModule } from '@angular/forms';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 declare var require: any;
-import worldMap from './world-map.json';
+let worldMap: object[] = require('./world-map.json');
 Maps.Inject(Marker, MapsTooltip);
 @Component({
     selector: 'control-content',
     templateUrl: 'export.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [PdfExportService, ImageExportService]
+    providers: [PdfExportService, ImageExportService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, MapsModule, FormsModule, ButtonModule, SBDescriptionComponent]
 })
 export class MapsExportComponent {
     @ViewChild('maps')

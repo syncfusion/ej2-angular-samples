@@ -1,10 +1,16 @@
 import { Component, OnInit} from '@angular/core';
 import { templateData, editingResources } from './data';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { NgIf } from '@angular/common';
+import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-ganttcolumntemplate',
-    templateUrl: 'column-template.html'
+    templateUrl: 'column-template.html',
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GanttAllModule, NgIf, SBDescriptionComponent]
 })
 
 export class ColumnTemplateComponent implements OnInit {

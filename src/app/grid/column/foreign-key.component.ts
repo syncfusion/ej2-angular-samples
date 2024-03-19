@@ -1,14 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { orderDetails, customerData } from './data';
-import {
-    FilterService, GridComponent, EditService, SortService, ToolbarService,
-    ToolbarItems, EditSettingsModel, ForeignKeyService
-} from '@syncfusion/ej2-angular-grids';
+import { FilterService, GridComponent, EditService, SortService, ToolbarService, PageService, ToolbarItems, EditSettingsModel, ForeignKeyService, GridModule } from '@syncfusion/ej2-angular-grids';
+import { SBDescriptionComponent } from '../../common/dp.component';
+import { SBActionDescriptionComponent } from '../../common/adp.component';
 
 @Component({
     selector: 'ej2-foreigngrid',
     templateUrl: 'foreign-key.html',
-    providers: [FilterService, EditService, SortService, ToolbarService, ForeignKeyService]
+    providers: [FilterService, EditService, SortService, ToolbarService, ForeignKeyService, PageService],
+    standalone: true,
+    imports: [GridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ForeignKeyColumnComponent implements OnInit {
     public data: Object[];

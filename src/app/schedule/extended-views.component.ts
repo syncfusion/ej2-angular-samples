@@ -1,15 +1,17 @@
 import { Component, ViewChild } from '@angular/core';
 import { fifaEventsData } from './data';
 import { extend } from '@syncfusion/ej2-base';
-import {
-  EventSettingsModel, EventRenderedArgs, ScheduleComponent, MonthService, DayService, WeekService, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, EventRenderedArgs, ScheduleComponent, MonthService, DayService, WeekService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'extended-views.html',
-  providers: [MonthService, DayService, WeekService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'extended-views.html',
+    providers: [MonthService, DayService, WeekService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ExtendedViewsComponent {
   public data: Record<string, any>[] = extend([], fifaEventsData, null, true) as Record<string, any>[];

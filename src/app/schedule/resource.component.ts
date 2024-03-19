@@ -2,19 +2,20 @@ import { Component, ViewChild, Inject, ViewEncapsulation } from '@angular/core';
 import { resourceSampleData } from './data';
 import { extend } from '@syncfusion/ej2-base';
 import { Query, Predicate } from '@syncfusion/ej2-data';
-import {
-  ScheduleComponent, EventSettingsModel, DayService, WeekService, WorkWeekService,
-  MonthService, AgendaService, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
-import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { ScheduleComponent, EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'resource.html',
-  styleUrls: ['resource.style.css'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'resource.html',
+    styleUrls: ['resource.style.css'],
+    encapsulation: ViewEncapsulation.None,
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ResourceComponent {
   public ownerCollections: Record<string, any>[] = [

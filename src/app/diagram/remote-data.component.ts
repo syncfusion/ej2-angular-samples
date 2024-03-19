@@ -4,6 +4,9 @@ import {
     DataBinding, HierarchicalTree, TreeInfo, DiagramTools,SnapSettingsModel
 } from '@syncfusion/ej2-diagrams';
 import { DataManager, Query } from '@syncfusion/ej2-data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(DataBinding, HierarchicalTree);
 
 export interface DataInfo {
@@ -17,7 +20,9 @@ export interface DataInfo {
     selector: 'control-content',
     templateUrl: 'remote-data.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, DiagramModule, SBDescriptionComponent]
 })
 export class RemoteDataDiagramComponent {
 

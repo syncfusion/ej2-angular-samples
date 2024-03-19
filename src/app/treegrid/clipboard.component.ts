@@ -1,13 +1,17 @@
 import { Component, OnInit , ViewChild} from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { TreeGridComponent , ToolbarService, PageService, ExcelExportService, PdfExportService} from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent , ToolbarService, PageService, ExcelExportService, TreeGridAllModule, PdfExportService} from '@syncfusion/ej2-angular-treegrid';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
-import { DialogComponent } from '@syncfusion/ej2-angular-popups';
-import { ChangeEventArgs} from '@syncfusion/ej2-angular-dropdowns';
+import { DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
+import { ChangeEventArgs, DropDownListAllModule} from '@syncfusion/ej2-angular-dropdowns';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'clipboard.html',
-    providers: [ ToolbarService, PageService, ExcelExportService, PdfExportService]
+    providers: [ ToolbarService, PageService, ExcelExportService, PdfExportService],
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, DialogModule, DropDownListAllModule]
 })
 export class TreeGridClipboardComponent implements OnInit {
     public data: Object[] = [];

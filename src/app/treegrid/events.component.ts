@@ -1,11 +1,17 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { TreeGridComponent } from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent, TreeGridAllModule, EditService } from '@syncfusion/ej2-angular-treegrid';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'events.html',
-    styleUrls: ['events.style.css']
+    styleUrls: ['events.style.css'],
+    standalone: true,
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, ButtonAllModule],
+    providers: [EditService],
 })
 export class EventComponent implements OnInit {
     public data: Object[] = [];

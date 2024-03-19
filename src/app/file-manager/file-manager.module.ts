@@ -33,7 +33,7 @@ export const fileManagerAppRoutes: Object[] = [
     { path: ':theme/file-manager/directory-upload', component: DirectoryUploadController, name: 'Directory upload', order: '01', category: 'File Manager', description: 'Angular FileManager component with folder (directory) upload feature by using custom toolbar item.' },
     { path: ':theme/file-manager/virtualization', component: VirtualizationController, name: 'Virtualization', order: '01', category: 'File Manager', description: 'Angular FileManager component with how to enable the virtual scrolling feature.' },
     { path: ':theme/file-manager/file-upload', component: FileUploadController, name: 'File Upload', order: '02', category: 'Use Case', description: 'Angular FileManager component with how to render the File Manager component inside the Dialog component.' },
-    { path: ':theme/file-manager/access-control', component: AccessControlController, name: 'Access Control', order: '02', type:'new', category: 'Use Case', description: 'Angular FileManager component with how to restrict the file operations in the File Manager component.' },
+    { path: ':theme/file-manager/access-control', component: AccessControlController, name: 'Access Control', order: '02', category: 'Use Case', description: 'Angular FileManager component with how to restrict the file operations in the File Manager component.' },
     { path: ':theme/file-manager/azure-service', component: AzureController, name: 'Azure Blob Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the azure service.' },
     { path: ':theme/file-manager/nodejs-file-provider', component: NodeJSController, name: 'NodeJS File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the nodejs server database service.' },
     { path: ':theme/file-manager/amazon-s3-file-provider', component: AmazonS3Controller, name: 'Amazon S3 File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the Amazon S3 file provider service.' },
@@ -41,27 +41,6 @@ export const fileManagerAppRoutes: Object[] = [
     { path: ':theme/file-manager/ibm-cos-node-file-provider', component: IBMCOSController, name: 'IBM Cloud File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the IBM Cloud Object Storage file provider service.' }
 ];
 
-export const fileRouter: ModuleWithProviders<any> = RouterModule.forChild(fileManagerAppRoutes);
+export const FileSampleModule: ModuleWithProviders<any> = RouterModule.forChild(fileManagerAppRoutes);
 
-@NgModule({
-    imports: [fileRouter, FileManagerAllModule, UploaderModule , DialogModule, CheckBoxModule, ButtonModule,DropDownButtonModule, DropDownListModule, CommonModule, ContextMenuModule, ToolbarModule],
-    declarations: [
-        DefaultFileController,
-        OverViewController,
-        CustomThumnailController,
-        DragAndDropController,
-        DirectoryUploadController,
-        VirtualizationController,
-        FileUploadController,
-        AccessControlController,
-        AzureController,
-        SQLController,
-        NodeJSController,
-        AmazonS3Controller,
-        FirebaseController,
-        FTPController,
-        IBMCOSController
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class FileSampleModule { }
+

@@ -1,21 +1,13 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import {
-    DiagramComponent,
-    Segments,
-    Direction,
-    PathAnnotationModel,
-    OrthogonalSegmentModel,
-    PointPortModel,
-    ShapeAnnotationModel,
-    SnapConstraints,
-    ISelectionChangeEventArgs,
-    Node,
-    FlowShapeModel
-} from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, Segments, Direction, PathAnnotationModel, OrthogonalSegmentModel, PointPortModel, ShapeAnnotationModel, SnapConstraints, ISelectionChangeEventArgs, Node, FlowShapeModel, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import {
     NodeModel, DecoratorModel, DiagramTools, ConnectorModel, SnapSettingsModel
 } from '@syncfusion/ej2-diagrams';
 import { ChangeEventArgs } from "@syncfusion/ej2-angular-calendars";
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
+import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
+
 /**
  * Sample for Fishbone publics
  */
@@ -25,7 +17,9 @@ import { ChangeEventArgs } from "@syncfusion/ej2-angular-calendars";
     selector: 'control-content',
     templateUrl: 'flow-execution.html',
     styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [DiagramModule, RadioButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class FlowExecutionDiagramComponent {
     @ViewChild('diagram')
@@ -88,7 +82,7 @@ export class FlowExecutionDiagramComponent {
 
     public port1: PointPortModel = { id: 'port1', offset: { x: 0.5, y: 1 } };
     public port: PointPortModel = { id: 'port', offset: { x: 1, y: 0.5 } };
-    //Initializes diagram nodes
+
     public nodes: NodeModel[] = [
         this.createNodes('node1', 100, 125, 'Terminator', 'Begin', 100, 35),
         this.createNodes('node2', 300, 125, 'Process', 'Specify collection', 120, 25, [this.port]),
@@ -100,7 +94,6 @@ export class FlowExecutionDiagramComponent {
         this.createNodes('node8', 730, 320, 'Process', 'Record and analyze \n results', 170, 25, [this.port]),
         this.createNodes('node9', 730, 420, 'Terminator', 'End ', 100, 35)
     ];
-    //Initializes diagram connectors
     public connectors: ConnectorModel[] = [
         this.createConnector('connector1', 'node1', 'node2', ''),
         this.createConnector('connector2', 'node2', 'node3', ''),
@@ -113,21 +106,21 @@ export class FlowExecutionDiagramComponent {
         this.createConnector('connector10', 'node4', 'node5', '', 'Orthogonal', 'Bottom', 'port', 220)
     ];
     public highLightedObjects: string[] = [];
-    public currentButton: string = 'unHighlightAll';
+    public currentButton: string = 'unhighlightAll';
     public buttonChange(args: ChangeEventArgs): void {
         this.currentButton = (args.event.srcElement as any).defaultValue;
         this.applyChanges((args.event.srcElement as any).defaultValue);
     }
     public applyChanges(id: string): void {
-        this.unHighlight();
+        this.unhighlight();
         switch (id) {
-            case 'LinksInto':
+            case 'linksInto':
                 this.linkedIn();
                 break;
             case 'linksOutOf':
                 this.linksOut();
                 break;
-            case 'LinksConnected':
+            case 'linksConnected':
                 this.linksConnector();
                 break;
             case 'nodesInto':
@@ -139,7 +132,7 @@ export class FlowExecutionDiagramComponent {
             case 'nodesConnected':
                 this.nodesConnect();
                 break;
-            case 'NodesReachable':
+            case 'nodesReachable':
                 this.nodeReachable();
                 break;
         }
@@ -243,7 +236,7 @@ export class FlowExecutionDiagramComponent {
         return nodeList;
     }
 
-    public unHighlight(): void {
+    public unhighlight(): void {
         for (let i: number = this.highLightedObjects.length - 1; i >= 0; i--) {
             if (this.diagram.nameTable[this.highLightedObjects[i]] instanceof Node) {
                 let index: number = this.diagram.nodes.indexOf(this.diagram.nameTable[this.highLightedObjects[i]]);

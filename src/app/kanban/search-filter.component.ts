@@ -3,14 +3,21 @@ import { extend } from '@syncfusion/ej2-base';
 import { Query } from '@syncfusion/ej2-data';
 import { DropDownListComponent, SelectEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import { TextBoxComponent } from '@syncfusion/ej2-angular-inputs';
-import { KanbanComponent, CardSettingsModel, SwimlaneSettingsModel } from '@syncfusion/ej2-angular-kanban';
+import { KanbanComponent, CardSettingsModel, SwimlaneSettingsModel, KanbanModule } from '@syncfusion/ej2-angular-kanban';
 import { kanbanData } from './data';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'search-filter.html',
     styleUrls: ['search-filter.style.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ KanbanModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule, ButtonModule, TextBoxModule]
 })
 export class SearchFilterComponent {
     @ViewChild('kanbanObj') kanbanObj: KanbanComponent;

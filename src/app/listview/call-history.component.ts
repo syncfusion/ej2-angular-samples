@@ -6,12 +6,18 @@ import { Component, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
 import { DataManager, Query, ReturnOption } from '@syncfusion/ej2-data';
 import { Browser } from '@syncfusion/ej2-base';
 import { callHistoryData } from './dataSource';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
+import { TabAllModule } from '@syncfusion/ej2-angular-navigations';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'call-history.html',
     styleUrls: ['call-history.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, TabAllModule, ListViewAllModule, SBDescriptionComponent]
 })
 
 export class CallHistoryListViewComponent {

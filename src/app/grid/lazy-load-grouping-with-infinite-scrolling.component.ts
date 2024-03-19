@@ -1,11 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { LazyLoadGroupService, GridComponent, InfiniteScrollService, SortService } from '@syncfusion/ej2-angular-grids';
+import { LazyLoadGroupService, GridComponent, InfiniteScrollService, SortService, GridModule, GroupService } from '@syncfusion/ej2-angular-grids';
 import { createLazyLoadData, lazyLoadData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: '',
     templateUrl: 'lazy-load-grouping-with-infinite-scrolling.html',
-    providers: [LazyLoadGroupService, InfiniteScrollService, SortService]
+    providers: [LazyLoadGroupService, InfiniteScrollService, SortService, GroupService],
+    standalone: true,
+    imports: [SBActionDescriptionComponent, GridModule, SBDescriptionComponent]
 })
 export class LazyLoadGroupingWithInfiniteScrollingComponent implements OnInit {
     public lazyLoadData: Object[] = lazyLoadData;

@@ -1,13 +1,17 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { AccumulationChart, AccumulationChartComponent, IAccLoadedEventArgs, IAccResizeEventArgs, AccumulationTheme } from '@syncfusion/ej2-angular-charts';
+import { AccumulationChart, AccumulationChartComponent,ChartAllModule, IAccLoadedEventArgs, IAccResizeEventArgs, AccumulationTheme, AccumulationChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
  * Sample for Pyramid chart
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'pyramid.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [SBActionDescriptionComponent, ChartAllModule,AccumulationChartAllModule, SBDescriptionComponent]
 })
 export class PyramidComponent {
     public data: Object[] = [

@@ -1,16 +1,18 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
-import {
-  TimelineViewsService, MonthService, View, GroupModel, EventSettingsModel, ResizeService, DragAndDropService
-} from '@syncfusion/ej2-angular-schedule';
+import { TimelineViewsService, MonthService, View, GroupModel, EventSettingsModel, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { timelineResourceData, resourceData } from './data';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'control-content',
-  templateUrl: 'multi-drag.html',
-  encapsulation: ViewEncapsulation.None,
-  providers: [TimelineViewsService, MonthService, ResizeService, DragAndDropService]
+    // tslint:disable-next-line:component-selector
+    selector: 'control-content',
+    templateUrl: 'multi-drag.html',
+    encapsulation: ViewEncapsulation.None,
+    providers: [TimelineViewsService, MonthService, ResizeService, DragAndDropService],
+    standalone: true,
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 
 export class MultiDragComponent {
