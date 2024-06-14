@@ -39,6 +39,7 @@ export class APIComponent {
     public numericValue: number = 1000;
     public numericmin: number = 555;
     public numericmax: number = 2000;
+    public numericplaceholder: string = "Maximum Length";
     public numericformat: string = 'n0';
 
     public onValChange(): void {

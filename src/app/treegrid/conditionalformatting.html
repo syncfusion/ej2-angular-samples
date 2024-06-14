@@ -1,4 +1,4 @@
-    <div class="control-section">
+    <div class="control-section" role="main" aria-label="Treegrid section">
         <ejs-treegrid #treegrid [dataSource]='data' childMapping='subtasks' height='350' [treeColumnIndex]='1' allowPaging=true [pageSettings]='pageSettings' (queryCellInfo)='queryCellInfo($event)'>
             <e-columns>
                 <e-column field='taskID' headerText='Task ID' width='70' textAlign='Right'></e-column>
@@ -11,12 +11,12 @@
             </e-columns>
         </ejs-treegrid>
     </div>
-        <div id="action-description">
+        <div id="action-description" role="contentinfo">
             <p>This samples demonstrates the way of customizing the cells by adding icons for Priority column and highlight the cells of Progress column based on certain condition using queryCellInfo event.
             </p>
         </div>
         
-        <div id="description">
+        <div id="description" role="contentinfo">
             <p>
                 The appearance of cells can be customized by using the queryCellInfo event. The queryCellInfo event triggers for every cell. In that event handler, you can get QueryCellInfoEventArgs 
                     that contains the details of the cell.

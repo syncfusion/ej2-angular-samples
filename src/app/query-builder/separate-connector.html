@@ -1,0 +1,122 @@
+<div id="action-description">
+    <p>This sample demonstrates the Separate Connector support of the Query Builder component.</p>
+</div>
+<div class="control-section">
+    <div class="col-lg-12 control-section">
+        <div class="child right-content">
+			<div class='top-right-content'>
+                <ejs-querybuilder #querybuilder [dataSource]="dataSource" [rule]="importRules" (ruleChange)="updateRule()" enableSeparateConnector="true">
+                    <e-columns>
+                      <e-column field="EmployeeID" label="Employee ID" type="number"></e-column>
+                      <e-column field="FirstName" label="First Name" type="string"></e-column>
+                      <e-column field="LastName" label="Title Of Courtesy" type="string"></e-column>
+                      <e-column field="Age" label="Age" type="number"></e-column>
+                      <e-column field="IsDeveloper" label="Is Developer" type="boolean"></e-column>
+                      <e-column field="PrimaryFramework" label="Primary Framework" type="string"></e-column>
+                      <e-column field="HireDate" label="Hire Date" type="date" format="dd/MM/yyyy"></e-column>
+                      <e-column field="Country" label="Country" type="string"></e-column>
+                    </e-columns>
+                </ejs-querybuilder>
+			</div>
+			<div class="bottom-right-content">
+			  <div class="e-query-preview">
+				<ejs-tab id="tab_default" #tabDefault (created)="updateContent()" (selected)="tabChange($event)">
+				  <e-tabitems>
+					<e-tabitem [header]="headerText[0]">
+					  <ng-template #content>
+						<div class="preview" (mouseenter)="onmouseenter($event)" (mouseleave)="onmouseleave($event)">
+						  <div class="e-content-header">
+							<ejs-radiobutton (change)="change($event)" label="Inline" checked="true" name="state" value="Inline"></ejs-radiobutton>
+							<ejs-radiobutton style="margin-left: 20px" label="Parameterized" (change)="change($event)" name="state" value="Parameterized">
+							</ejs-radiobutton>
+							<ejs-radiobutton style="margin-left: 20px" (change)="change($event)" label="Named Parameter" name="state" value="NamedParameter">
+							</ejs-radiobutton>
+							<div class="e-copy-tooltip e-hidden" (click)="copyClipboard($event)">
+							  <ejs-tooltip #tooltip opensOn="Click" target=".e-copy-tooltip" position="BottomCenter" width="auto" content="Copied to clipboard">
+								<div class="e-icons copycode"></div>
+							  </ejs-tooltip>
+							</div>
+						  </div>
+						  <div class="content">
+							<div readonly class="e-text-area-content e-sql-content"><pre class="e-pre-content"></pre></div>
+						  </div>
+						</div>
+					  </ng-template>
+					</e-tabitem>
+					<e-tabitem [header]="headerText[1]">
+					  <ng-template #content>
+						<div class="preview" (mouseenter)="onmouseenter($event)" (mouseleave)="onmouseleave($event)">
+						  <div class="e-content-header" style="height: 20px;">
+							<div class="e-copy-tooltip e-hidden" (click)="copyClipboard($event)">
+							  <ejs-tooltip #tooltip opensOn="Click" target=".e-copy-tooltip" position="BottomCenter" width="auto" content="Copied to clipboard">
+								<div class="e-icons copycode"></div>
+							  </ejs-tooltip>
+							</div>
+						  </div>
+						  <div class="content">
+							<div readonly class="e-text-area-content e-json-content"><pre class="e-pre-content"></pre></div>
+						  </div>
+						</div>
+					  </ng-template>
+					</e-tabitem>
+					<e-tabitem [header]="headerText[2]">
+					  <ng-template #content>
+						<div class="preview" (mouseenter)="onmouseenter($event)" (mouseleave)="onmouseleave($event)">
+						  <div class="e-content-header">
+							<div class="e-copy-tooltip e-hidden" (click)="copyClipboard($event)">
+							  <ejs-tooltip #tooltip opensOn="Click" target=".e-copy-tooltip" position="BottomCenter" width="auto" content="Copied to clipboard">
+								<div class="e-icons copycode"></div>
+							  </ejs-tooltip>
+							</div>
+						  </div>
+						  <div class="content">
+							<div readonly class="e-text-area-content e-json-content"><pre class="e-pre-content"></pre></div>
+						  </div>
+						</div>
+					  </ng-template>
+					</e-tabitem>
+					<e-tabitem [header]="headerText[3]">
+					  <ng-template #content>
+						<div class="preview" (mouseenter)="onmouseenter($event)" (mouseleave)="onmouseleave($event)">
+						  <div class="e-content-header">
+							<div class="e-copy-tooltip e-hidden" (click)="copyClipboard($event)">
+							  <ejs-tooltip #tooltip opensOn="Click" target=".e-copy-tooltip" position="BottomCenter" width="auto" content="Copied to clipboard">
+								<div class="e-icons copycode"></div>
+							  </ejs-tooltip>
+							</div>
+						  </div>
+						  <div class="content">
+							<div readonly class="e-text-area-content e-cel-content"><pre class="e-pre-content"></pre></div>
+						  </div>
+						</div>
+					  </ng-template>
+					</e-tabitem>
+					<e-tabitem [header]="headerText[4]">
+					  <ng-template #content>
+						<div class="preview" (mouseenter)="onmouseenter($event)" (mouseleave)="onmouseleave($event)">
+						  <div class="e-content-header">
+							<div class="e-copy-tooltip e-hidden" (click)="copyClipboard($event)">
+							  <ejs-tooltip #tooltip opensOn="Click" target=".e-copy-tooltip" position="BottomCenter" width="auto" content="Copied to clipboard">
+								<div class="e-icons copycode"></div>
+							  </ejs-tooltip>
+							</div>
+						  </div>
+						  <div class="content" (mouseenter)="onmouseenter($event)" (mouseleave)="onmouseleave($event)">
+							<div readonly class="e-text-area-content e-spel-content"><pre class="e-pre-content"></pre></div>
+						  </div>
+						</div>
+					  </ng-template>
+					</e-tabitem>
+				  </e-tabitems>
+				</ejs-tab>
+			  </div>
+			</div>
+		</div>
+    </div>
+</div>
+<div id="description">
+    <p>In this demo, the Query Builder includes a separate connector feature that displays a combinator between each neighboring pair of rules or groups within a group's rules. You can enable or disable this feature using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/query-builder/#enableseparateconnector">enableSeparateConnector</a> property.</p>
+	<p>More information about Query Builder can be found in this
+      <a target="_blank" href="http://ej2.syncfusion.com/angular/documentation/query-builder"> documentation</a> section.
+    </p>
+</div>

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { orderDetails } from './data';
-import { GridComponent, SortService, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
+import { GridComponent, SortService, GridModule, PageService, FilterService, ToolbarService, EditService } from '@syncfusion/ej2-angular-grids';
 import { ToolbarComponent, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { addClass, removeClass } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../../common/dp.component';
@@ -10,7 +10,7 @@ import { SBActionDescriptionComponent } from '../../common/adp.component';
     selector: 'ej2-grid-container',
     templateUrl: 'show-hide.html',
     styleUrls: ['show-hide.style.css'],
-    providers: [SortService, PageService],
+    providers: [SortService, PageService, FilterService, ToolbarService, EditService],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [SBActionDescriptionComponent, ToolbarModule, GridModule, SBDescriptionComponent]
@@ -20,7 +20,12 @@ export class ShowHideComponent implements OnInit {
     public flag: boolean = false;
     @ViewChild('grid')
     public grid: GridComponent;
-
+    public filterSettings: Object;
+    public gridToolbar: string[];
+    public editSettings: Object;
+    public orderidrules: Object;
+    public customeridrules: Object;
+    public freightrules: Object;
     @ViewChild('toolbar')
     public ToolbarInstance: ToolbarComponent;
 
@@ -30,6 +35,12 @@ export class ShowHideComponent implements OnInit {
 
     public ngOnInit(): void {
         this.data = orderDetails;
+        this.filterSettings = { type: 'Excel' };
+        this.gridToolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
+        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };
+        this.orderidrules = { required: true, number: true };
+        this.customeridrules = { required: true, minLength: 5 };
+        this.freightrules = { required: true, min: 0 };
     }
 
     public onClicked(e: MouseEvent): void {

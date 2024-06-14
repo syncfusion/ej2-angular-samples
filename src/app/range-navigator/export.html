@@ -8,7 +8,7 @@
     <div class="col-lg-9 control-section">
         <div class="content-wrapper">
             <br/>
-             <h4 id="days" align="center" style="font-family: Segoe UI;font-weight: 500; font-style:normal; font-size:15px;">Conns,Inc Stock Close Details</h4>
+             <h1 id="days" align="center" style="font-family: Segoe UI;font-weight: 500; font-style:normal; font-size:15px; margin-top: 10px;">Conns,Inc Stock Close Details</h1>
             <div align="center">
                 <ejs-rangenavigator #containerExport style='display:block' align='center' id='containerExport' [value]='value' labelPosition='Outside'
                     valueType='DateTime' intervalType='Months' labelFormat='MMM' enableGrouping=true [dataSource]='data' xName='xDate'
@@ -52,11 +52,11 @@
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 40%">
-                            <div>File Name:</div>
+                            <div id="filename">File Name:</div>
                         </td>
                         <td style="width: 40%;">
                             <div class="e-float-input" style='margin-top: 0px;'>
-                                <input type="text" value="Chart" id="fileName" style="margin-left: -10px">
+                                <input type="text" value="Chart" id="fileName" style="margin-left: -10px" aria-labelledby="Chart">
                             </div>
                         </td>
                     </tr>
@@ -70,7 +70,7 @@
                     <tr id="button-control" style="height: 50px" align='center'>
                         <td>
                             <div>
-                                <button ejs-button id="togglebtn" iconCss='e-icons e-print-icon' cssClass= 'e-flat' isPrimary=true (click)='mode($event)'>Print</button>
+                                <button ejs-button id="printbtn" iconCss='e-icons e-print-icon' cssClass= 'e-flat' isPrimary=true (click)='mode($event)'>Print</button>
                             </div>
                         </td>
                     </tr>
@@ -86,7 +86,7 @@
     </p>
     <p>
         More information on the export can be found in this 
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/range-navigator/export-print/#export">documentation section</a>.
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/range-navigator/export-print/#export" aria-label="Navigate to the documentation for Export in Angular Range Navigator component">documentation section</a>.
     </p>
 </div>
 <style>
@@ -103,64 +103,73 @@
         padding: 0px !important;
     }
 
-    .e-view.fabric .e-export-icon::before, .e-view.fabric-dark .e-export-icon::before {
-        content: '\e710';
-    }
-
-    .e-view.fluent .e-export-icon::before, .e-view.fluent-dark .e-export-icon::before {
-        content: '\e728';
-    }
-
-    .e-view.bootstrap4 .e-export-icon::before {
-        content: '\e780';
-    }
-
-    .e-view.tailwind-dark .e-export-icon::before, .e-view.tailwind .e-export-icon::before {
-        content: '\e7bf';
-    }
-
-    .e-view.highcontrast .e-export-icon::before {
-        content: '\e710';
-    }
-
-    .e-view.bootstrap5 .e-export-icon::before, .e-view.bootstrap5-dark .e-export-icon::before {
-        content: '\e72e';
-    }
-
     .e-print-icon::before {
         content: '\e34b';
     }
-
+ 
     .e-view.fabric .e-print-icon::before, .e-view.fabric-dark .e-print-icon::before {
         content: '\e7df';
     }
-
+ 
     .e-view.bootstrap .e-print-icon::before {
         content: '\ebd2';
     }
-
-    .e-view.bootstrap4 .e-print-icon::before {
+ 
+   .e-view.bootstrap4 .e-print-icon::before {
         content: '\e743';
     }
-
+ 
     .e-view.tailwind .e-print-icon::before, .e-view.tailwind-dark .e-print-icon::before {
         content: '\e76c';
     }
-
+ 
     .e-view.highcontrast .e-print-icon::before {
         content: '\ebf9';
     }
-
+ 
     .e-view.bootstrap5 .e-print-icon::before, .e-view.bootstrap5-dark .e-print-icon::before {
         content: '\e75d';
     }
-
+ 
     .e-view.fluent .e-print-icon::before, .e-view.fluent-dark .e-print-icon::before {
         content: '\e75d';
     }
-
+    .e-view.fluent2 .e-print-icon::before, .e-view.fluent2-dark .e-print-icon::before, .e-view.fluent2-highcontrast .e-print-icon::before {
+        content: '\e75d';
+    }
     .e-view.material3 .e-print-icon::before, .e-view.material3-dark .e-print-icon::before {
         content: '\e75d';
     }
-
+    .e-export-icon::before {
+        content: '\e728';
+    }
+ 
+    .e-view.fabric .e-export-icon::before, .e-view.fabric-dark .e-export-icon::before {
+        content: '\e710';
+    }
+ 
+    .e-view.bootstrap4 .e-export-icon::before {
+        content: '\e780';
+    }
+ 
+    .e-view.tailwind-dark .e-export-icon::before, .e-view.tailwind .e-export-icon::before {
+        content: '\e7bf';
+    }
+ 
+    .e-view.highcontrast .e-export-icon::before {
+        content: '\e710';
+    }
+ 
+    .e-view.bootstrap5 .e-export-icon::before, .e-view.bootstrap5-dark .e-export-icon::before {
+        content: '\e72e';
+    }
+    .e-view.fluent .e-export-icon::before, .e-view.fluent-dark .e-export-icon::before {
+        content: '\e72e';
+    }
+    .e-view.fluent2 .e-export-icon::before, .e-view.fluent2-dark .e-export-icon::before, .e-view.fluent2-highcontrast .e-export-icon::before {
+        content: '\e72e';
+    }
+    .e-view.material3 .e-export-icon::before, .e-view.material3-dark .e-export-icon::before {
+        content: '\e72e';
+    }
 </style>

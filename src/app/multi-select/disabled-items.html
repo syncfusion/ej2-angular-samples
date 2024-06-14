@@ -1,0 +1,34 @@
+<div id="action-description">
+    <p>This example showcases the disabled items of MultiSelect. When you click on the MultiSelect dropdown, the popup will open, and you will notice that the disabled items are greyed out and cannot be selected.</p>
+</div>
+
+<div class="control-section">
+    <div class="content-wrapper">
+        <div id='default' class='col-lg-6'>
+            <div class="content">
+                <label class="h4">Tags</label>
+                <ejs-multiselect id='ddlelement' [dataSource]='status' [fields]='defaultFields'
+                    [placeholder]='defaultText' allowFiltering="true"></ejs-multiselect>
+            </div>
+        </div>
+        <div id='group' class='col-lg-6'>
+            <div class="content">
+                <label class="h4">Vegetables</label>
+                <ejs-multiselect id='ddlelement' #checkbox [dataSource]='groupingData' [fields]='groupingFields'
+                    [mode]='mode' [placeholder]='groupingText'></ejs-multiselect>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>The MultiSelect Dropdown provides options for individual items to be in either an enabled or disabled state for specific scenarios. Once an item is disabled, it cannot be selected as a value for the component. To configure the disabled item columns, use the <code>fields.disabled</code> property.</p>
+</div>
+<style>
+    .content .h4 {
+        font-size: 16px;
+        margin: 0 0 10px;
+        font-weight: bold;
+    }
+
+</style>

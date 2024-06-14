@@ -43,7 +43,7 @@ export class GanttVirtualScrollComponent implements OnInit {
             leftLabel: 'TaskName',
             taskLabel: 'Progress'
         };
-        this.projectStartDate = new Date('04/01/2019');
-        this.projectEndDate = new Date('12/31/2025');
+        this.projectStartDate = new Date('04/01/2024');
+        this.projectEndDate = new Date('12/31/2030');
     }
 }

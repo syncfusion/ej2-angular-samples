@@ -151,7 +151,7 @@ export class CustomToolbarComponent {
                 canvas.width = imageData.width; canvas.height = imageData.height;
                 canvas.getContext('2d').putImageData(imageData, 0, 0);
                 (document.getElementById('previewImgContainer') as HTMLImageElement).src = canvas.toDataURL();
-                this.imageEditorObj.reset();
+                this.imageEditorObj.open(imageData);
                 document.getElementById('image-editor-container').style.display = 'none';
                 (document.getElementById('imagePreviewContainer') as HTMLElement).style.display = 'block';
             } else {

@@ -25,6 +25,14 @@ export class EmptyRecordTemplateComponent implements OnInit {
     public editparams: Object;
     public formatoptions: Object;
 
+    public imageSrc(): string {
+        if (document.body.classList.value.indexOf('dark') > -1 || document.body.classList.value.indexOf('highcontrast') > -1) {
+            return './assets/grid/images/emptyRecordTemplate_dark.svg';
+        } else {
+            return './assets/grid/images/emptyRecordTemplate_light.svg';
+        }
+    }
+
     ngOnInit(): void {
         this.data = [];        
         this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };

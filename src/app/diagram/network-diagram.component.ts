@@ -461,8 +461,8 @@ export class NetworkShapesDiagramComponent {
     }
 
     public asyncSettings: AsyncSettingsModel = {
-        saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
-        removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove'
+        saveUrl: 'https://services.syncfusion.com/angular/production/api/FileUploader/Save',
+        removeUrl: 'https://services.syncfusion.com/angular/production/api/FileUploader/Remove'
     };
 
     public dropElement: HTMLElement = document.getElementsByClassName('control-fluid')[0] as HTMLElement;

@@ -1,330 +1,334 @@
-<div>
-    <div align="center" class="col-xs-10 col-sm-10 col-lg-8 col-md-8">
-        <div class="divide">
-            <ejs-circulargauge (load)='load($event)' background='transparent' style='display:block;' id='gauge'
-                #circulargauge='' width='400px' height='400px'>
-                <e-axes>
-                    <e-axis minimum=0 maximum=100 startAngle=0 endAngle=360 [majorTicks]='majorTicks'
-                        [labelStyle]='labelStyle' [lineStyle]='lineStyle' [minorTicks]='minorTicks'
-                        [annotations]='annotaions' [ranges]='ranges' [pointers]='pointers'>
-                    </e-axis>
-                </e-axes>
-            </ejs-circulargauge>
+<main>
+    <div>
+        <div align="center" class="col-xs-10 col-sm-10 col-lg-8 col-md-8">
+            <div class="divide">
+                <ejs-circulargauge (load)='load($event)' background='transparent' style='display:block;' id='gauge'
+                    #circulargauge='' width='400px' height='400px'>
+                    <e-axes>
+                        <e-axis minimum=0 maximum=100 startAngle=0 endAngle=360 [majorTicks]='majorTicks'
+                            [labelStyle]='labelStyle' [lineStyle]='lineStyle' [minorTicks]='minorTicks'
+                            [annotations]='annotaions' [ranges]='ranges' [pointers]='pointers'>
+                        </e-axis>
+                    </e-axes>
+                </ejs-circulargauge>
+            </div>
+        </div>
+        <div align="center" class="col-xs-4 col-sm-4 col-lg-2 col-md-2" style="margin-top: 3%;">
+            <div class="panel" align="center">
+                <div class="subgauge" style="float: left;margin-top: 2%">
+                    <ejs-circulargauge (load)='loadRedGauge($event)' background='transparent' style='display:block;'
+                        id='redGauge' #circulargauge='' width='65px' height='65px'>
+                        <e-axes>
+                            <e-axis minimum=0 maximum=100 startAngle=0 endAngle=360 [majorTicks]='majorTicks'
+                                [labelStyle]='labelStyleRed' [lineStyle]='lineStyle' [minorTicks]='minorTicks'
+                                [annotations]='redGaugeAnnotaion' [ranges]='redGaugeRange' [pointers]='redGaugePointer'>
+                            </e-axis>
+                        </e-axes>
+                    </ejs-circulargauge>
+                </div>
+                <div class="bordercontent">
+                    <span class="firstcontent" style="font-size: 17px;">MOVE </span>
+                    <span class="firstcontent" style="font-size: 17px;color: #f4104d">65%</span><br />
+                    <span class="secondcontent" style="color: #f4104d; font-size: 19px">338/520 CAL</span>
+                </div>
+            </div>
+            <div class="panel" align="center">
+                <div class="subgauge" style="float: left;margin-top: 2%">
+                    <ejs-circulargauge (load)='loadGreenGauge($event)' background='transparent' style='display:block;'
+                        id='greenGauge' #circulargauge='' width='65px' height='65px'>
+                        <e-axes>
+                            <e-axis minimum=0 maximum=100 startAngle=0 endAngle=360 [majorTicks]='majorTicks'
+                                [labelStyle]='labelStyleGreen' [lineStyle]='lineStyle' [minorTicks]='minorTicks'
+                                [annotations]='greenGaugeAnnotaion' [ranges]='greenGaugeRange'
+                                [pointers]='greenGaugePointer'>
+                            </e-axis>
+                        </e-axes>
+                    </ejs-circulargauge>
+                </div>
+                <div class="bordercontent">
+                    <span class="firstcontent" style="font-size: 17px;">EXERCISE </span>
+                    <span class="firstcontent" style="font-size: 17px;color: #a6ff00">43%</span><br />
+                    <span class="secondcontent" style="color: #a6ff00; font-size: 19px">13/30 MIN</span>
+                </div>
+            </div>
+            <div class="panel" align="center">
+                <div class="subgauge" style="float: left;margin-top: 2%">
+                    <ejs-circulargauge (load)='loadBlueGauge($event)' background='transparent' style='display:block;'
+                        id='blueGauge' #circulargauge='' width='65px' height='65px'>
+                        <e-axes>
+                            <e-axis minimum=0 maximum=100 startAngle=0 endAngle=360 [majorTicks]='majorTicks'
+                                [labelStyle]='labelStyleBlue' [lineStyle]='lineStyle' [minorTicks]='minorTicks'
+                                [annotations]='blueGaugeAnnotaion' [ranges]='blueGaugeRange' [pointers]='blueGaugePointer'>
+                            </e-axis>
+                        </e-axes>
+                    </ejs-circulargauge>
+                </div>
+                <div class="bordercontent">
+                    <span class="firstcontent" style="font-size: 17px;">STAND </span>
+                    <span class="firstcontent" style="font-size: 17px;color: #00d8fe">58%</span><br />
+                    <span class="secondcontent" style="color: #00d8fe; font-size: 19px">7/12 HR</span>
+                </div>
+            </div>
         </div>
     </div>
-    <div align="center" class="col-xs-4 col-sm-4 col-lg-2 col-md-2" style="margin-top: 3%;">
-        <div class="panel" align="center">
-            <div class="subgauge" style="float: left;margin-top: 2%">
-                <ejs-circulargauge (load)='loadRedGauge($event)' background='transparent' style='display:block;'
-                    id='redGauge' #circulargauge='' width='65px' height='65px'>
-                    <e-axes>
-                        <e-axis minimum=0 maximum=100 startAngle=0 endAngle=360 [majorTicks]='majorTicks'
-                            [labelStyle]='labelStyle' [lineStyle]='lineStyle' [minorTicks]='minorTicks'
-                            [annotations]='redGaugeAnnotaion' [ranges]='redGaugeRange' [pointers]='redGaugePointer'>
-                        </e-axis>
-                    </e-axes>
-                </ejs-circulargauge>
-            </div>
-            <div class="bordercontent">
-                <span class="firstcontent" style="font-size: 17px;">MOVE </span>
-                <span class="firstcontent" style="font-size: 17px;color: #f4104d">65%</span><br />
-                <span class="secondcontent" style="color: #f4104d; font-size: 19px">338/520 CAL</span>
-            </div>
-        </div>
-        <div class="panel" align="center">
-            <div class="subgauge" style="float: left;margin-top: 2%">
-                <ejs-circulargauge (load)='loadGreenGauge($event)' background='transparent' style='display:block;'
-                    id='greenGauge' #circulargauge='' width='65px' height='65px'>
-                    <e-axes>
-                        <e-axis minimum=0 maximum=100 startAngle=0 endAngle=360 [majorTicks]='majorTicks'
-                            [labelStyle]='labelStyle' [lineStyle]='lineStyle' [minorTicks]='minorTicks'
-                            [annotations]='greenGaugeAnnotaion' [ranges]='greenGaugeRange'
-                            [pointers]='greenGaugePointer'>
-                        </e-axis>
-                    </e-axes>
-                </ejs-circulargauge>
-            </div>
-            <div class="bordercontent">
-                <span class="firstcontent" style="font-size: 17px;">EXERCISE </span>
-                <span class="firstcontent" style="font-size: 17px;color: #a6ff00">43%</span><br />
-                <span class="secondcontent" style="color: #a6ff00; font-size: 19px">13/30 MIN</span>
-            </div>
-        </div>
-        <div class="panel" align="center">
-            <div class="subgauge" style="float: left;margin-top: 2%">
-                <ejs-circulargauge (load)='loadBlueGauge($event)' background='transparent' style='display:block;'
-                    id='blueGauge' #circulargauge='' width='65px' height='65px'>
-                    <e-axes>
-                        <e-axis minimum=0 maximum=100 startAngle=0 endAngle=360 [majorTicks]='majorTicks'
-                            [labelStyle]='labelStyle' [lineStyle]='lineStyle' [minorTicks]='minorTicks'
-                            [annotations]='blueGaugeAnnotaion' [ranges]='blueGaugeRange' [pointers]='blueGaugePointer'>
-                        </e-axis>
-                    </e-axes>
-                </ejs-circulargauge>
-            </div>
-            <div class="bordercontent">
-                <span class="firstcontent" style="font-size: 17px;">STAND </span>
-                <span class="firstcontent" style="font-size: 17px;color: #00d8fe">58%</span><br />
-                <span class="secondcontent" style="color: #00d8fe; font-size: 19px">7/12 HR</span>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="action-description">
-    <p>
-        This sample resembles the appearance of Apple watch rings. This is similar to an activity tracker, which records
-        the specifics of each move, exercise, and stand.
-    </p>
-</div>
-<div id="description">
-    <p>
-        In this example, you can see how to make the circular gauge look like the Apple watch rings. Ranges have rounded
-        corners and annotations are used to indicate the move, exercise, and stand values.
-    </p>
-    <p>
-        More information on the annotations can be found in this <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/gauge-annotations/">documentation
-            section</a>.
-    </p>
-</div>
-<!-- custom code start -->
-<style>
-    .divide {
-        margin-left: 0%;
-    }
-
-    .panel {
-        width: 190px !important;
-        height: 70px !important;
-        margin-left: 5% !important;
-        margin-top: 10% !important;
-        border-color: lightgray;
-        float: left;
-        background-color: transparent;
-    }
-
-    .bordercontent {
-        float: left !important;
-        margin-left: 62px !important;
-        margin-top: -61px !important;
-        text-align: left !important;
-        width: 125px;
-        height: auto;
-    }
-
-    @media screen and (max-width: 1160px) {
-        .panel {
-            width: 165px !important;
-        }
-
-        .firstcontent {
-            font-size: 13px !important;
-        }
-
-        .secondcontent {
-            font-size: 15px !important;
-        }
-
-        .bordercontent {
-            margin-top: -55px !important;
-        }
-
+    <section id="action-description" aria-label="Description of Circular Gauge sample">
+        <p>
+            This sample resembles the appearance of Apple watch rings. This is similar to an activity tracker, which records
+            the specifics of each move, exercise, and stand.
+        </p>
+    </section>
+    <section id="description" aria-label="Description of the Circular Gauge features demonstrated in this sample">
+        <p>
+            In this example, you can see how to make the circular gauge look like the Apple watch rings. Ranges have rounded
+            corners and annotations are used to indicate the move, exercise, and stand values.
+        </p>
+        <p>
+            More information on the annotations can be found in this <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/gauge-annotations/">documentation
+                section</a>.
+        </p>
+    </section>
+    <!-- custom code start -->
+    <style>
         .divide {
             margin-left: 0%;
         }
-    }
-
-    @media screen and (max-width: 990px) {
+    
         .panel {
             width: 190px !important;
             height: 70px !important;
-            margin-left: 100% !important;
-            margin-top: 10px !important;
+            margin-left: 5% !important;
+            margin-top: 10% !important;
+            border-color: lightgray;
+            float: left;
+            background-color: transparent;
         }
-
-        .subgauge {
-            margin-left: 0% !important;
-            margin-top: 1% !important;
-        }
-
+    
         .bordercontent {
-            margin-left: 63px !important;
+            float: left !important;
+            margin-left: 62px !important;
             margin-top: -61px !important;
+            text-align: left !important;
+            width: 125px;
+            height: auto;
         }
-
-        .firstcontent {
-            font-size: 16px !important;
+    
+        @media screen and (max-width: 1160px) {
+            .panel {
+                width: 165px !important;
+            }
+    
+            .firstcontent {
+                font-size: 13px !important;
+            }
+    
+            .secondcontent {
+                font-size: 15px !important;
+            }
+    
+            .bordercontent {
+                margin-top: -55px !important;
+            }
+    
+            .divide {
+                margin-left: 0%;
+            }
         }
-
-        .secondcontent {
-            font-size: 18px !important;
+    
+        @media screen and (max-width: 990px) {
+            .panel {
+                width: 190px !important;
+                height: 70px !important;
+                margin-left: 100% !important;
+                margin-top: 10px !important;
+            }
+    
+            .subgauge {
+                margin-left: 0% !important;
+                margin-top: 1% !important;
+            }
+    
+            .bordercontent {
+                margin-left: 63px !important;
+                margin-top: -61px !important;
+            }
+    
+            .firstcontent {
+                font-size: 16px !important;
+            }
+    
+            .secondcontent {
+                font-size: 18px !important;
+            }
+    
+            .divide {
+                margin-left: 0%;
+            }
         }
-
-        .divide {
-            margin-left: 0%;
+    
+        @media screen and (min-width: 768px) {
+            .divide {
+                margin-left: 10%;
+            }
         }
-    }
-
-    @media screen and (min-width: 768px) {
-        .divide {
-            margin-left: 10%;
+    
+        @media screen and (max-width: 410px) {
+            .divide {
+                margin-left: 10%;
+            }
+    
+            #column1 {
+                margin-left: -9% !important;
+            }
+    
+            .subgauge {
+                margin-left: 3% !important;
+            }
+    
+            .panel {
+                width: 165px !important;
+            }
+    
+            .bordercontent {
+                margin-top: -38% !important;
+            }
         }
-    }
-
-    @media screen and (max-width: 410px) {
-        .divide {
-            margin-left: 10%;
+    
+        .fluent #redGauge_Axis_0_Annotation_0 .firstAnnotation,
+        .fluent-dark #redGauge_Axis_0_Annotation_0 .firstAnnotation {
+            margin-left: 4px;
+            margin-top: 2px;
+            height: 17px;
+            width: 17px;
         }
-
-        #column1 {
-            margin-left: -9% !important;
+    
+        .bootstrap5 #redGauge_Axis_0_Annotation_0 .firstAnnotation,
+        .bootstrap5-dark #redGauge_Axis_0_Annotation_0 .firstAnnotation {
+            margin-left: 4px;
+            margin-top: 2px;
+            height: 17px;
+            width: 17px;
         }
-
-        .subgauge {
-            margin-left: 3% !important;
+    
+        .tailwind #redGauge_Axis_0_Annotation_0 .firstAnnotation,
+        .tailwind-dark #redGauge_Axis_0_Annotation_0 .firstAnnotation {
+            height: 17px;
+            width: 17px;
+            margin-left: 3px;
+            margin-bottom: 4px;
+            margin-top: 4px;
         }
-
-        .panel {
-            width: 165px !important;
+    
+        .material #redGauge_Axis_0_Annotation_0 .firstAnnotation,
+        .material-dark #redGauge_Axis_0_Annotation_0 .firstAnnotation,
+        .material3 #redGauge_Axis_0_Annotation_0 .firstAnnotation,
+        .material3-dark #redGauge_Axis_0_Annotation_0 .firstAnnotation {
+            margin-left: 2px;
+            margin-top: 2px;
         }
-
-        .bordercontent {
-            margin-top: -38% !important;
+    
+        .fabric #redGauge_Axis_0_Annotation_0 .firstAnnotation,
+        .fabric-dark #redGauge_Axis_0_Annotation_0 .firstAnnotation {
+            height: 17px;
+            width: 17px;
+            margin-left: 2px;
+            margin-bottom: 2px;
+            margin-top: -3px;
         }
-    }
-
-    .fluent #redGauge_Axis_0_Annotation_0 .firstAnnotation,
-    .fluent-dark #redGauge_Axis_0_Annotation_0 .firstAnnotation {
-        margin-left: 4px;
-        margin-top: 2px;
-        height: 17px;
-        width: 17px;
-    }
-
-    .bootstrap5 #redGauge_Axis_0_Annotation_0 .firstAnnotation,
-    .bootstrap5-dark #redGauge_Axis_0_Annotation_0 .firstAnnotation {
-        margin-left: 4px;
-        margin-top: 2px;
-        height: 17px;
-        width: 17px;
-    }
-
-    .tailwind #redGauge_Axis_0_Annotation_0 .firstAnnotation,
-    .tailwind-dark #redGauge_Axis_0_Annotation_0 .firstAnnotation {
-        height: 17px;
-        width: 17px;
-        margin-left: 2px;
-        margin-bottom: 4px;
-    }
-
-    .material #redGauge_Axis_0_Annotation_0 .firstAnnotation,
-    .material-dark #redGauge_Axis_0_Annotation_0 .firstAnnotation,
-    .material3 #redGauge_Axis_0_Annotation_0 .firstAnnotation,
-    .material3-dark #redGauge_Axis_0_Annotation_0 .firstAnnotation {
-        margin-left: 2px;
-        margin-top: 1px;
-    }
-
-    .fabric #redGauge_Axis_0_Annotation_0 .firstAnnotation,
-    .fabric-dark #redGauge_Axis_0_Annotation_0 .firstAnnotation {
-        height: 17px;
-        width: 17px;
-        margin-left: 2px;
-        margin-bottom: 2px;
-        margin-top: -3px;
-    }
-
-    .bootstrap #redGauge_Axis_0_Annotation_0 .firstAnnotation,
-    .bootstrap-dark #redGauge_Axis_0_Annotation_0 .firstAnnotation,
-    .bootstrap4 #redGauge_Axis_0_Annotation_0 .firstAnnotation {
-        height: 17px;
-        width: 17px;
-        margin-left: 2px;
-        margin-top: 2px;
-    }
-
-    #redGauge_Axis_0_Annotation_0 .firstAnnotation {
-        height: 17px;
-        width: 17px;
-    }
-
-    #greenGauge_Axis_0_Annotation_0 .secondAnnotation {
-        height: 17px;
-        width: 17px;
-        margin-left: 1px;
-    }
-
-    .tailwind #greenGauge_Axis_0_Annotation_0 .secondAnnotation,
-    .tailwind-dark #greenGauge_Axis_0_Annotation_0 .secondAnnotation {
-        height: 17px;
-        width: 17px;
-        margin-left: 2px;
-        margin-bottom: 4px;
-    }
-
-    .material #greenGauge_Axis_0_Annotation_0 .secondAnnotation,
-    .material-dark #greenGauge_Axis_0_Annotation_0 .secondAnnotation {
-        height: 17px;
-        width: 17px;
-        margin-left: 2px;
-        margin-top: 2px;
-    }
-
-    .fabric #greenGauge_Axis_0_Annotation_0 .secondAnnotation,
-    .fabric-dark #greenGauge_Axis_0_Annotation_0 .secondAnnotation {
-        height: 17px;
-        width: 17px;
-        margin-left: 2px;
-        margin-bottom: 4px;
-    }
-
-    .bootstrap #greenGauge_Axis_0_Annotation_0 .secondAnnotation,
-    .bootstrap-dark #greenGauge_Axis_0_Annotation_0 .secondAnnotation,
-    .bootstrap4 #greenGauge_Axis_0_Annotation_0 .secondAnnotation {
-        height: 17px;
-        width: 17px;
-        margin-left: 1px;
-        margin-top: 2px;
-    }
-
-    #blueGauge_Axis_0_Annotation_0 .thirdAnnotation {
-        height: 17px;
-        width: 17px;
-        margin-top: -2px;
-        margin-left: 0px;
-    }
-
-    .tailwind #blueGauge_Axis_0_Annotation_0 .thirdAnnotation,
-    .tailwind-dark #blueGauge_Axis_0_Annotation_0 .thirdAnnotation {
-        height: 17px;
-        width: 17px;
-        margin-top: -7px;
-        margin-left: 1px;
-    }
-
-    .fabric #blueGauge_Axis_0_Annotation_0 .thirdAnnotation,
-    .fabric-dark #blueGauge_Axis_0_Annotation_0 .thirdAnnotation {
-        height: 17px;
-        width: 17px;
-        margin-left: 1px;
-        margin-top: -7px;
-    }
-
-    .bootstrap #blueGauge_Axis_0_Annotation_0 .thirdAnnotation,
-    .bootstrap-dark #blueGauge_Axis_0_Annotation_0 .thirdAnnotation,
-    .bootstrap4 #blueGauge_Axis_0_Annotation_0 .thirdAnnotation {
-        height: 17px;
-        width: 17px;
-        margin-left: 0.5px;
-        margin-top: 0px;
-    }
-
-    .material #blueGauge_Axis_0_Annotation_0 .thirdAnnotation,
-    .material-dark #blueGauge_Axis_0_Annotation_0 .thirdAnnotation {
-        height: 17px;
-        width: 17px;
-        margin-left: 0px;
-        margin-top: 0px;
-    }
-</style>
-<!-- custom code end -->
+    
+        .bootstrap #redGauge_Axis_0_Annotation_0 .firstAnnotation,
+        .bootstrap-dark #redGauge_Axis_0_Annotation_0 .firstAnnotation,
+        .bootstrap4 #redGauge_Axis_0_Annotation_0 .firstAnnotation {
+            height: 17px;
+            width: 17px;
+            margin-left: 2px;
+            margin-top: 2px;
+        }
+    
+        #redGauge_Axis_0_Annotation_0 .firstAnnotation {
+            height: 17px;
+            width: 17px;
+        }
+    
+        #greenGauge_Axis_0_Annotation_0 .secondAnnotation {
+            height: 17px;
+            width: 17px;
+            margin-left: 1px;
+        }
+    
+        .tailwind #greenGauge_Axis_0_Annotation_0 .secondAnnotation,
+        .tailwind-dark #greenGauge_Axis_0_Annotation_0 .secondAnnotation {
+            height: 17px;
+            width: 17px;
+            margin-left: 2px;
+            margin-bottom: 4px;
+            margin-top: 3px;
+        }
+    
+        .material #greenGauge_Axis_0_Annotation_0 .secondAnnotation,
+        .material-dark #greenGauge_Axis_0_Annotation_0 .secondAnnotation {
+            height: 17px;
+            width: 17px;
+            margin-left: 2px;
+            margin-top: 2px;
+        }
+    
+        .fabric #greenGauge_Axis_0_Annotation_0 .secondAnnotation,
+        .fabric-dark #greenGauge_Axis_0_Annotation_0 .secondAnnotation {
+            height: 17px;
+            width: 17px;
+            margin-left: 2px;
+            margin-bottom: 4px;
+        }
+    
+        .bootstrap #greenGauge_Axis_0_Annotation_0 .secondAnnotation,
+        .bootstrap-dark #greenGauge_Axis_0_Annotation_0 .secondAnnotation,
+        .bootstrap4 #greenGauge_Axis_0_Annotation_0 .secondAnnotation {
+            height: 17px;
+            width: 17px;
+            margin-left: 1px;
+            margin-top: 2px;
+        }
+    
+        #blueGauge_Axis_0_Annotation_0 .thirdAnnotation {
+            height: 17px;
+            width: 17px;
+            margin-top: -2px;
+            margin-left: 0px;
+        }
+    
+        .tailwind #blueGauge_Axis_0_Annotation_0 .thirdAnnotation,
+        .tailwind-dark #blueGauge_Axis_0_Annotation_0 .thirdAnnotation {
+            height: 17px;
+            width: 17px;
+            margin-top: -6px;
+            margin-left: 0px;
+        }
+    
+        .fabric #blueGauge_Axis_0_Annotation_0 .thirdAnnotation,
+        .fabric-dark #blueGauge_Axis_0_Annotation_0 .thirdAnnotation {
+            height: 17px;
+            width: 17px;
+            margin-left: 1px;
+            margin-top: -7px;
+        }
+    
+        .bootstrap #blueGauge_Axis_0_Annotation_0 .thirdAnnotation,
+        .bootstrap-dark #blueGauge_Axis_0_Annotation_0 .thirdAnnotation,
+        .bootstrap4 #blueGauge_Axis_0_Annotation_0 .thirdAnnotation {
+            height: 17px;
+            width: 17px;
+            margin-left: 0.5px;
+            margin-top: 0px;
+        }
+    
+        .material #blueGauge_Axis_0_Annotation_0 .thirdAnnotation,
+        .material-dark #blueGauge_Axis_0_Annotation_0 .thirdAnnotation {
+            height: 17px;
+            width: 17px;
+            margin-left: 0px;
+            margin-top: 0px;
+        }
+    </style>
+    <!-- custom code end -->
+</main>

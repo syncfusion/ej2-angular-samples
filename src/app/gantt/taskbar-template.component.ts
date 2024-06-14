@@ -23,7 +23,7 @@ export class GanttTaskbarTemplateComponent implements OnInit {
     public durationUnit: string;
     public timelineSettings: object;
     public taskbarTemplate: string;
-    public milestoneTemplate: string; 
+    public milestoneTemplate: string;
     public tooltipSettings: object;
     public labelSettings: object;
     public projectStartDate: Date;
@@ -39,11 +39,13 @@ export class GanttTaskbarTemplateComponent implements OnInit {
             img.className = 'moments';
             img.height = 32;
             img.width = 32;
+            img.alt = 'Oscar Moments svg';
             subContainer.append(img);
           } else {
             img.className = 'moments';
             img.height = 32;
             img.width = 32;
+            img.alt = 'Oscar Moments svg';
             var span1 = document.createElement('span');
             span1.innerHTML = data.Performance;
             span1.className = 'e-span';
@@ -55,10 +57,12 @@ export class GanttTaskbarTemplateComponent implements OnInit {
           if (data.ganttProperties.duration <= 5) {
             img.className = 'face-mask';
             img.height = 32;
+            img.alt = 'Oscar Performance svg';
             subContainer.append(img);
           } else {
             img.className = 'face-mask';
             img.height = 32;
+            img.alt = 'Oscar Performance svg';
             var span2 = document.createElement('span');
             span2.innerHTML = data.Performance;
             span2.className = 'e-span';
@@ -71,12 +75,14 @@ export class GanttTaskbarTemplateComponent implements OnInit {
             img.className = 'oscar';
             img.height = 32;
             img.width = 32;
+            img.alt = 'Oscar svg';
             subContainer.append(img);
           } else {
             if (data.Movie && data.Winner) {
               img.className = 'oscar';
               img.height = 32;
               img.width = 32;
+              img.alt = 'Oscar svg';
               var span3 = document.createElement('span');
               span3.innerHTML = data.taskData.Movie;
               span3.className = 'e-span';
@@ -86,6 +92,7 @@ export class GanttTaskbarTemplateComponent implements OnInit {
               img.className = 'oscar';
               img.height = 32;
               img.width = 32;
+              img.alt = 'Oscar svg';
               var span4 = document.createElement('span');
               span4.innerHTML = data.taskData.Movie;
               span4.className = 'e-span';
@@ -138,32 +145,32 @@ export class GanttTaskbarTemplateComponent implements OnInit {
         };
         this.eventMarkers = [
             {
-                day: new Date('03/05/2018 07:09:00 PM'),
+                day: new Date('03/05/2024 07:09:00 PM'),
                 label: 'Performance'
             }, {
-                day: new Date('03/05/2018 07:46:00 PM'),
+                day: new Date('03/05/2024 07:46:00 PM'),
                 label: 'Moments'
             }, {
-                day: new Date('03/05/2018 07:59:00 PM'),
+                day: new Date('03/05/2024 07:59:00 PM'),
                 label: 'Performance'
             }, {
-                day: new Date('03/05/2018 08:08:00 PM'),
+                day: new Date('03/05/2024 08:08:00 PM'),
                 label: 'Moments'
             }, {
-                day: new Date('03/05/2018 08:24:00 PM'),
+                day: new Date('03/05/2024 08:24:00 PM'),
                 label: 'Moments'
             }, {
-                day: new Date('03/05/2018 08:31:00 PM'),
+                day: new Date('03/05/2024 08:31:00 PM'),
                 label: 'Performance'
             }, {
-                day: new Date('03/05/2018 08:47:00 PM'),
+                day: new Date('03/05/2024 08:47:00 PM'),
                 label: 'Moments'
             }
         ];
         this.labelSettings = {
             leftLabel: 'TaskName',
         };
-        this.projectStartDate = new Date('03/05/2018 06:00 PM'),
-        this.projectEndDate = new Date('03/05/2018 09:50 PM')
+        this.projectStartDate = new Date('03/05/2024 06:00 PM'),
+        this.projectEndDate = new Date('03/05/2024 09:50 PM')
     }
 }

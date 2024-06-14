@@ -27,11 +27,11 @@
                 <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
                     <tr style="height: 50px">
                         <td style="width: 60%">
-                            <div>Descending:</div>
+                            <div id="checkValue">Descending:</div>
                         </td>
                         <td style="width: 40%;">
                             <div>
-                                <input id='decending' (change)='isCheck($event)' type="checkbox" disabled />
+                                <input id='decending' (change)='isCheck($event)' type="checkbox" disabled aria-labelledby="Checkbox unchecked"/>
                             </div>
                         </td>
                     </tr>
@@ -71,7 +71,7 @@
     </p>
     <p>
         More information on the stacked column series can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/stack-column">documentation section</a>.
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/stack-column" aria-label="Navigate to the documentation for Stacked Column Chart in Angular Chart component">documentation section</a>.
     </p>
 </div>
 <style>

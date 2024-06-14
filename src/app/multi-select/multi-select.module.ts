@@ -6,6 +6,7 @@ import { MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { DefaultMultiselectComponent } from './default.component';
 import { GroupMultiSelectComponent } from './grouping.component';
 import { DataBindingMultiSelectComponent } from './data-binding.component';
+import { DisabledItemsMultiSelectComponent } from './disabled-items.component';
 import { TemplateMultiSelectComponent } from './template.component';
 import { FilteringMultiSelectComponent } from './filtering.component';
 import { CustomTagMultiSelectComponent } from './custom-value.component';
@@ -28,11 +29,13 @@ export const multiselectAppRoutes: Object[] = [
     },
     { path: ':theme/multi-select/data-binding', component: DataBindingMultiSelectComponent, name: 'Data Binding', description: 'This example demonstrates how to bind with local data source and fetch data from remote data service in the Angular multiselect component.', order: '01',
 		category: 'MultiSelect Dropdown' },
-    { path: ':theme/multi-select/object-value-binding', component: ObjectMultiselectComponent, name: 'Object Value Binding',  type : 'new', description: 'This example demonstrates how to bind with data source in the Angular multiselect component.', order: '01',
+    { path: ':theme/multi-select/object-value-binding', component: ObjectMultiselectComponent, name: 'Object Value Binding', description: 'This example demonstrates how to bind with data source in the Angular multiselect component.', order: '01',
+		category: 'MultiSelect Dropdown' },
+    { path: ':theme/multi-select/disabled-items', component: DisabledItemsMultiSelectComponent, name: 'Disabled Items', type : 'new', description: 'This example showcases the disabled items of Angular multiselect component.', order: '01',
 		category: 'MultiSelect Dropdown' },
     { path: ':theme/multi-select/grouping', component: GroupMultiSelectComponent, name: 'Grouping', description: 'This example demonstrates how to group based on the different categories with individual header and icon support using the Angular multiselect component.', order: '01',
 		category: 'MultiSelect Dropdown' },
-    { path: ':theme/multi-select/virtual-scroll', component: VirtualScrollMultiSelectComponent, name: 'Virtualization', type : 'new', description: 'This example demonstrates how to utilize the virtualization support of Angular multiselect component.', order: '01',
+    { path: ':theme/multi-select/virtual-scroll', component: VirtualScrollMultiSelectComponent, name: 'Virtualization', description: 'This example demonstrates how to utilize the virtualization support of Angular multiselect component.', order: '01',
 		category: 'MultiSelect Dropdown' },
     { path: ':theme/multi-select/template', component: TemplateMultiSelectComponent, name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular multiselect component pop-up list using the template.',order: '01',
 		category: 'MultiSelect Dropdown' },

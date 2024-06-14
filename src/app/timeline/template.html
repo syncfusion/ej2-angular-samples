@@ -13,7 +13,7 @@
                     </div>
                     <div class="timeline-content">
                         <div class="content-container">
-                            <span>{{data.item.content}}</span>
+                            <span [innerHTML]=data.item.content></span>
                             <span class="e-icons e-more-vertical-1"></span>
                         </div>
                         @if(data.itemIndex == 1) {
@@ -36,7 +36,7 @@
                                     </path>
                                 </svg>
                                 <div class="mention-content">
-                                    <h5 style="font-weight: bold"> 87231 - Updated Roadmap for new control </h5>
+                                    <p style="font-weight: bold"> 87231 - Updated Roadmap for new control </p>
                                     <span> Updated new control roadmap </span>
                                     <div class="diffstats">
                                         <span class="color-success"> +95 </span>

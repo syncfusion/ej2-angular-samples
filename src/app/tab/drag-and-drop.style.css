@@ -6,9 +6,6 @@
 #draggableTab .e-upload {
     width: 300px;
 }
-#TabContainer .e-treeview .e-ul {
-    padding: 0 0 0 36px !important;
-}
 #TabContainer .property-panel-header {
     text-align: center;
 }
@@ -18,23 +15,8 @@
     line-height: 15px;
     padding: 0 5px;
 }
-.bootstrap5 .treeview-external-drag-tab .e-list-item.e-active>.e-text-content .e-list-text,
-.bootstrap4 .treeview-external-drag-tab .e-list-item.e-active>.e-text-content .e-list-text {
-    color: #212529;
-}
-
-.bootstrap .treeview-external-drag-tab .e-list-item.e-active>.e-text-content .e-list-text {
-    color: #333;
-}
-.treeview-external-drag-tab .e-list-item.e-hover>.e-fullrow,
-.treeview-external-drag-tab .e-list-item.e-active>.e-fullrow,
-.treeview-external-drag-tab .e-list-item.e-active.e-hover>.e-fullrow,
-.e-bigger .treeview-external-drag-tab .e-list-item.e-hover>.e-fullrow,
-.e-bigger .treeview-external-drag-tab .e-list-item.e-active>.e-fullrow,
-.e-bigger .treeview-external-drag-tab .e-list-item.e-active.e-hover>.e-fullrow {
-    background-color: transparent;
-    border-color: transparent;
-    box-shadow: none !important;
+.treeview-external-drag-tab.e-treeview .e-ul  {
+    padding: unset;
 }
 #TabContainer {
     display: flex;

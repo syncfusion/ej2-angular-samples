@@ -95,6 +95,9 @@ export class HeatmapCalendarComponent {
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.heatmap.theme = <HeatMapTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
         // custom code end
+        if (args.heatmap.theme === 'HighContrast' || args.heatmap.theme.indexOf("Dark") > -1) {
+            args.heatmap.cellSettings.border.color ='black';
+        }
     };
     constructor() {
         //code

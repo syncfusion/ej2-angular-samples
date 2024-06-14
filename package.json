@@ -1,6 +1,6 @@
 {
   "name": "ej2-angular-samples",
-  "version": "25.1.35",
+  "version": "26.1.35",
   "private": true,
   "dependencies": {
     "@angular/animations": "17.1.2",
@@ -33,6 +33,7 @@
     "@syncfusion/ej2-angular-lineargauge": "*",
     "@syncfusion/ej2-angular-lists": "*",
     "@syncfusion/ej2-angular-maps": "*",
+    "@syncfusion/ej2-angular-multicolumn-combobox": "*",
     "@syncfusion/ej2-angular-navigations": "*",
     "@syncfusion/ej2-angular-notifications": "*",
     "@syncfusion/ej2-angular-pdfviewer": "*",

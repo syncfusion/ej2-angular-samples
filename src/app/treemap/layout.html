@@ -1,4 +1,5 @@
-<div class="control-section">
+<main>
+    <div class="control-section">
         <div class="col-lg-9">
         <ejs-treemap id='container' #treemap style="display:block;" [titleSettings] = 'titleSettings' [dataSource] ='dataSource' [weightValuePath] ='weightValuePath' [leafItemSettings] ='leafItemSettings'
         [tooltipSettings] = 'tooltipSettings' renderDirection= 'TopLeftBottomRight' [rangeColorValuePath] = 'rangeColorValuePath' (load)='load($event)'  >
@@ -12,7 +13,7 @@
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
-                <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -10px">
+                <table class="property-panel-table" role="none" title="Properties" style="width: 100%; margin-left: -10px">
                     <colgroup>
                         <col span="1" style="width: 50%;">
                         <col span="1" style="width: 50%;">
@@ -34,7 +35,7 @@
                         </td>
                     </tr>
                     </table>
-                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -10px">
+                    <table class="property-panel-table" role="none" title="Properties" style="width: 100%; margin-left: -10px">
                         <colgroup>
                             <col span="1" style="width: 50%;">
                             <col span="1" style="width: 50%;">
@@ -60,21 +61,19 @@
         </div>
     </div>
 </div>
-<div id="action-description">
+<section id="action-description" aria-label="Description of TreeMap sample">
     <p>
         This sample illustrates the details of GDP Nominal of top 10 countries in the year 2015. Layout of the treemap can be changed by using the <code>Layout Type</code> in properties panel.
     </p>
-</div>
-<div id="description">
+</section>
+<section id="description" aria-label="Description of the TreeMap features demonstrated in this sample">
     <p>
          In this example, you can change the layout of the treemap and we have applied desaturation color mapping, to denote weightage of the items by varying the fill color. Also we have formatted the labels text and placed it in multiple lines.
     </p>
     <p>
         Tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item in touch enabled devices.
     </p>
-    
-
-</div>
+</section>
 <!-- custom code start -->
 <style>
 .control-section {
@@ -82,3 +81,4 @@
 }
 </style>
 <!-- custom code end -->
+</main>

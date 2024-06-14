@@ -54,8 +54,8 @@ export class GanttGridLinesComponent implements OnInit {
             columnIndex: 2
         };
         this.gridLines = 'Both';
-        this.projectStartDate = new Date('03/24/2019');
-        this.projectEndDate = new Date('07/06/2019');
+        this.projectStartDate = new Date('03/24/2024');
+        this.projectEndDate = new Date('07/06/2024');
         this.dropDownGridLinesData = [
             { id: 'Both', type: 'Both' },
             { id: 'Vertical', type: 'Vertical' },

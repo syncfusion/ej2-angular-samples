@@ -1,110 +1,118 @@
-<div id="action-description">
-    <p>
-        This sample visualizes the names of all the states in USA in data labels. Options have been provided to change the intersect
-        action and smart labels mode of the data labels.
-    </p>
-</div>
-
-<div class="control-section">
-    <div class="col-lg-9">
-        <ejs-maps id='maps' #maps style="display:block;" [zoomSettings]='zoomSettings' [layers]='layers' (load)="load($event)">
-        </ejs-maps>
-    </div>
-    <div class="col-lg-3 property-section">
-        <div class="property-panel-section">
-            <div class="property-panel-header">Properties</div>
-            <div class="property-panel-content">
-                <table id="property" title="Properties" width="100%">
-                    <colgroup>
-                        <col span="1" style="width: 50%;">
-                        <col span="1" style="width: 50%;">
-                    </colgroup>
-                        <tr style="height: 50px">
-                            <td>
-                                <div>Show Labels</div>
-                            </td>
-                            <td>
-                                <input checked="" id="select" style="margin-left: 5px" type="checkbox" class="labels">
-                            </td>
-                        </tr>
-                        </table>
-                        <table id="property" title="Properties"  width="100%">
-                            <colgroup>
-                                <col span="1" style="width: 50%;">
-                                <col span="1" style="width: 50%;">
-                            </colgroup>
-                        <tr style="height: 50px">
-                            <td>
-                                <div>Smart label mode</div>
-                            </td>
-                            <td>
-                                <div>
-                                <select id="smartlabelmode" style="margin-left: -25px">
-                                    <option value="trim">Trim</option>
-                                    <option value="none">None</option>
-                                    <option value="hide">Hide</option>
-                                </select>
-                                </div>
-                            </td>
-                        </tr>
-                        </table>
-                        <table id="property" title="Properties"  width="100%">
-                            <colgroup>
-                                <col span="1" style="width: 50%;">
-                                <col span="1" style="width: 50%;">
-                            </colgroup>
-                        <tr style="height: 50px">
-                            <td>
-                                <div style="width: 50%">Intersect action</div>
-                            </td>
-                            <td>
-                                <div>
-                                <select id="intersectaction" style="margin-left: -25px">
-                                    <option value="none">None</option>
-                                    <option value="trim">Trim</option>
-                                    <option value="hide">Hide</option>
-                                </select>
-                                </div>
-                            </td>
-                        </tr>
-                </table>
+<main>
+    <section id="action-description" aria-label="Description of Maps sample">
+        <p>
+            This sample visualizes the names of all the states in USA in data labels. Options have been provided to change the intersect
+            action and smart labels mode of the data labels.
+        </p>
+    </section>
+    
+    <div class="control-section">
+        <div class="col-lg-9">
+            <ejs-maps id='maps' #maps style="display:block;" [zoomSettings]='zoomSettings' [layers]='layers' (load)="load($event)">
+            </ejs-maps>
+        </div>
+        <div class="col-lg-3 property-section">
+            <div class="property-panel-section">
+                <div class="property-panel-header">Properties</div>
+                <div class="property-panel-content">
+                    <table id="property" title="Properties" width="100%" role="none">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
+                            <tr style="height: 50px">
+                                <td>
+                                    <div>Show Labels</div>
+                                </td>
+                                <td>
+                                    <input class="labelCheckBox" checked="" id="select" type="checkbox" class="labels">
+                                </td>
+                            </tr>
+                            </table>
+                            <table title="Properties"  width="100%" role="none">
+                                <colgroup>
+                                    <col span="1" style="width: 50%;">
+                                    <col span="1" style="width: 50%;">
+                                </colgroup>
+                            <tr style="height: 50px">
+                                <td>
+                                    <div>Smart label mode</div>
+                                </td>
+                                <td>
+                                    <div>
+                                    <select id="smartlabelmode" style="margin-left: -25px">
+                                        <option value="trim">Trim</option>
+                                        <option value="none">None</option>
+                                        <option value="hide">Hide</option>
+                                    </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            </table>
+                            <table title="Properties"  width="100%" role="none">
+                                <colgroup>
+                                    <col span="1" style="width: 50%;">
+                                    <col span="1" style="width: 50%;">
+                                </colgroup>
+                            <tr style="height: 50px">
+                                <td>
+                                    <div style="width: 50%">Intersect action</div>
+                                </td>
+                                <td>
+                                    <div>
+                                    <select id="intersectaction" style="margin-left: -25px">
+                                        <option value="none">None</option>
+                                        <option value="trim">Trim</option>
+                                        <option value="hide">Hide</option>
+                                    </select>
+                                    </div>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- custom code start -->
-<style>
-    #control-container {
-        padding: 0px !important;
-    }
-    .e-view.fabric .labels, .e-view.tailwind .labels {
-        margin-top: 10px;
-    }
-</style>
-<!-- custom code  end-->
-<div id='description'>
-
-    <p>
-        In this example, you can see how to render the data labels for each shape in a map. Data labels are used to display the values
-        of the shapes. You can use the
-        <code>autoFill</code> property in the
-        <code>shapeSettings</code> to apply the default palette colors to the shapes.
-
-    </p>
-    <p>
-        Tooltip is enabled in this example. To see the tooltip in action, hover the mouse over a shape or tap a shape in touch enabled
-        devices.
-    </p>
-    <br/>
-    <p style="font-weight: 500">Injecting Module</p>
-    <p>
-        Maps component features are segregated into individual feature-wise modules. To use a data label, inject the
-        <code>DataLabel</code> module using the
-        <code>Maps.Inject(DataLabel)</code> method.
-    </p>
-    <p>
-        More information on the maps layers can be found in this
-        <a target="_blank" href="">documentation section</a>.
-    </p>
-
-</div>
+    <!-- custom code start -->
+    <style>
+        #control-container {
+            padding: 0px !important;
+        }
+        .e-view.fabric .labels, .e-view.tailwind .labels {
+            margin-top: 10px;
+        }
+        .labelCheckBox {
+            margin-left: 5px;
+        }
+        .e-view.fluent2 #property .labelCheckBox, .e-view.fluent2-dark #property .labelCheckBox {
+            margin-left: 0px
+        }
+    </style>
+    <!-- custom code  end-->
+    <section id='description' aria-label="Description of the Maps features demonstrated in this sample">
+    
+        <p>
+            In this example, you can see how to render the data labels for each shape in a map. Data labels are used to display the values
+            of the shapes. You can use the
+            <code>autoFill</code> property in the
+            <code>shapeSettings</code> to apply the default palette colors to the shapes.
+    
+        </p>
+        <p>
+            Tooltip is enabled in this example. To see the tooltip in action, hover the mouse over a shape or tap a shape in touch enabled
+            devices.
+        </p>
+        <br/>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Maps component features are segregated into individual feature-wise modules. To use a data label, inject the
+            <code>DataLabel</code> module using the
+            <code>Maps.Inject(DataLabel)</code> method.
+        </p>
+        <p>
+            More information on the maps layers can be found in this
+            <a target="_blank" href="">documentation section</a>.
+        </p>
+    
+    </section>
+</main>

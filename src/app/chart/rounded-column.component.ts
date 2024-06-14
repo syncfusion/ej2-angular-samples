@@ -109,6 +109,13 @@ export class RoundedColumnChartComponent {
             if (args.series.yName == "Rate")
                 args.fill = "#f9fafb";
         }
+        else if (location.hash === 'fluent2-highcontrast' || location.hash === 'fluent2-dark') {
+            if (args.series.yName == "Rate")
+                args.fill = "#f9fafb";
+        } else if (location.hash === 'fluent2') {
+            if (args.series.yName == "Rate")
+                args.fill = "grey";
+        }
         else
         {
             if (args.series.yName == "Rate")
@@ -159,7 +166,7 @@ export class RoundedColumnChartComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
     };
     constructor() {
         //code

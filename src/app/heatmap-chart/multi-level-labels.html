@@ -1,32 +1,34 @@
-<div class="content-wrapper">
-    <ejs-heatmap id='container' #heatmap style="display:block;" [titleSettings]='titleSettings' [dataSource]='dataSource' [xAxis]='xAxis'
-            [yAxis]='yAxis' [cellSettings]='cellSettings' [paletteSettings]='paletteSettings' [legendSettings]='legendSettings' 
-            (load)='load($event)'  (tooltipRender)='tooltipRender($event)' (cellRender)='cellRender($event)'>
-        </ejs-heatmap>
-</div>
-<div id="action-description">
-    <p>
-        This sample visualizes the product wise monthly sales revenue of the items sold by an online retailer in a year.  The products are grouped based on the purchase domains and revenue is displayed as cell data.
-    </p>
-</div>
-<div id="description">
-    <p>
-        In this example, you can see how to group axis labels. 
-        You can customize text in each level by using <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/multiLevelLabelsModel/#alignment" target="_blank">alignment</a>, <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/multiLevelLabelsModel/#textstyle" target="_blank">textStyle</a> and <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/multiLevelLabelsModel/#border" target="_blank">border</a> properties.
-    </p>
-    <p>Border of the axis labels can be customized by using <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/axisLabelBorderModel/#type" target="_blank">type</a> property.
-    </p>
-    <ul>
-        <li><code>Rectangle</code></li>
-        <li><code>Brace</code></li>
-        <li><code>WithoutTopBorder</code></li>
-        <li><code>WithoutBottomBorder</code></li>
-        <li><code>WithoutTopandBottomBorder</code></li>
-        <li><code>WithoutBorder</code>.</li>
-    </ul>
-    <br>
-    <p><b>Injecting Module</b></p>
-    <p>
-        Heatmap component features are separated into discrete feature-based modules. To use a tooltip, inject the <a href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/tooltip" target='_blank'>Tooltip</a> module using the <code>Heatmap.Inject(Tooltip)</code> method.
-       </p>
-</div>
+<main>
+    <div class="content-wrapper">
+        <ejs-heatmap id='container' #heatmap style="display:block;" [titleSettings]='titleSettings' [dataSource]='dataSource' [xAxis]='xAxis'
+                [yAxis]='yAxis' [cellSettings]='cellSettings' [paletteSettings]='paletteSettings' [legendSettings]='legendSettings' 
+                (load)='load($event)'  (tooltipRender)='tooltipRender($event)' (cellRender)='cellRender($event)'>
+            </ejs-heatmap>
+    </div>
+    <section id="action-description" aria-label="Description of HeatMap sample">
+        <p>
+            This sample visualizes the product wise monthly sales revenue of the items sold by an online retailer in a year.  The products are grouped based on the purchase domains and revenue is displayed as cell data.
+        </p>
+    </section>
+    <section id="description" aria-label="Description of the HeatMap features demonstrated in this sample">
+        <p>
+            In this example, you can see how to group axis labels. 
+            You can customize text in each level by using <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/multiLevelLabelsModel/#alignment" target="_blank">alignment</a>, <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/multiLevelLabelsModel/#textstyle" target="_blank">textStyle</a> and <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/multiLevelLabelsModel/#border" target="_blank">border</a> properties.
+        </p>
+        <p>Border of the axis labels can be customized by using <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/axisLabelBorderModel/#type" target="_blank">type</a> property.
+        </p>
+        <ul>
+            <li><code>Rectangle</code></li>
+            <li><code>Brace</code></li>
+            <li><code>WithoutTopBorder</code></li>
+            <li><code>WithoutBottomBorder</code></li>
+            <li><code>WithoutTopandBottomBorder</code></li>
+            <li><code>WithoutBorder</code>.</li>
+        </ul>
+        <br>
+        <p><b>Injecting Module</b></p>
+        <p>
+            Heatmap component features are separated into discrete feature-based modules. To use a tooltip, inject the <a href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/tooltip" target='_blank'>Tooltip</a> module using the <code>Heatmap.Inject(Tooltip)</code> method.
+           </p>
+    </section>
+</main>

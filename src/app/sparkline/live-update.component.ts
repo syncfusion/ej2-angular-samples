@@ -237,7 +237,7 @@ export class SparkineLiveUpdateSample {
     public cpuload(args: ISparklineLoadEventArgs): void {
         var theme = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
-        args.sparkline.theme = <SparklineTheme>(theme.charAt(0).toUpperCase() + theme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
+        args.sparkline.theme = <SparklineTheme>(theme.charAt(0).toUpperCase() + theme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
     }
     public memloaded(args: ISparklineLoadEventArgs): void {
         clearInterval(this.time2);

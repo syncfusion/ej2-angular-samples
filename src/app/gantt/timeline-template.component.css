@@ -1,0 +1,19 @@
+.e-gantt .e-gantt-tree-grid-pane .e-timeline-single-header-outer-div{
+    height: 70px !important;
+}
+.e-gantt .e-gantt-chart .e-timeline-single-header-outer-div {
+    height: 70px !important;
+}
+.e-gantt .e-gantt-chart .e-timeline-single-header-cell {
+    height: 70px !important;
+}
+.e-header-cell-label.e-gantt-top-cell-text{
+    background-color: #fff
+}
+.fluent2-highcontrast .e-header-cell-label.e-gantt-top-cell-text {
+    background-color: #000
+}
+.fluent2-dark .e-header-cell-label.e-gantt-top-cell-text {
+    background-color: #000
+}
+   

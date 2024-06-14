@@ -123,7 +123,7 @@ export const gridRouteConfig: Object[] = [
     },
     { 'path': ':theme/grid/column/show-hide', component: ShowHideComponent, 'name': 'Show or Hide Column', description: 'This demo for Essential JS 2 grid component demonstrates the dynamic show and hide columns feature.', order: '03', category: 'Columns' },
     {
-        'path': ':theme/grid/column/column-spanning', component: ColumnSpanningComponent, name: 'Column Spanning', 'type': 'update', order: '03',description: 'This demo for Essential JS 2 grid component shows the usage of the column spanning feature.',
+        'path': ':theme/grid/column/column-spanning', component: ColumnSpanningComponent, name: 'Column Spanning', order: '03',description: 'This demo for Essential JS 2 grid component shows the usage of the column spanning feature.',
         category: 'Columns'
     },
 
@@ -147,12 +147,12 @@ export const gridRouteConfig: Object[] = [
         'path': ':theme/grid/row-height', component: RowHeightComponent, name: 'Row Height', description: 'This demo for Essential JS 2 grid component shows the row height feature.', order: '04', category: 'Rows'
     },
     {
-        'path': ':theme/grid/row-spanning', component: RowSpanningComponent, name: 'Row Spanning', 'type': 'update', description: 'This demo for Essential JS 2 grid control shows the usage of the row and column spanning feature.', order: '04', category: 'Rows',
+        'path': ':theme/grid/row-spanning', component: RowSpanningComponent, name: 'Row Spanning', description: 'This demo for Essential JS 2 grid control shows the usage of the row and column spanning feature.', order: '04', category: 'Rows',
         hideOnDevice: true
     },
 
     {
-        'path': ':theme/grid/normal-edit', component: NormalEditComponent, name: 'Inline Editing', 'type': 'update', description: 'This demo for Essential JS 2 grid component shows the inline editing operation.', order: '05',
+        'path': ':theme/grid/normal-edit', component: NormalEditComponent, name: 'Inline Editing', description: 'This demo for Essential JS 2 grid component shows the inline editing operation.', order: '05',
         category: 'Editing'
     },
     {
@@ -227,13 +227,13 @@ export const gridRouteConfig: Object[] = [
         category: 'Scrolling'
     },
 	{
-        'path': ':theme/grid/infinite-scrolling', component: InfiniteScrollingComponent, name: 'Infinite Scrolling', 'type': 'update', description: 'This sample demonstrates the Grid component with the infinite scrolling feature.', order: '13',
+        'path': ':theme/grid/infinite-scrolling', component: InfiniteScrollingComponent, name: 'Infinite Scrolling', description: 'This sample demonstrates the Grid component with the infinite scrolling feature.', order: '13',
         category: 'Scrolling'
     },
 
-    { 'path': ':theme/grid/lazy-load-grouping-with-paging', component: LazyLoadGroupingWithPagingComponent, name: 'Grouping with Paging', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature.', order: '14', category: 'Lazy Load Grouping' },
-    { 'path': ':theme/grid/lazy-load-grouping-with-infinite-scrolling', component: LazyLoadGroupingWithInfiniteScrollingComponent, name: 'Grouping with Infinite Scrolling', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature with infinite scrolling', order: '14', category: 'Lazy Load Grouping' },
-    { 'path': ':theme/grid/lazy-load-grouping-with-virtual-scrolling', component: LazyLoadGroupingWithVirtualScrollingComponent, name: 'Grouping with Virtual Scrolling', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature with virtual scrolling', order: '14', category: 'Lazy Load Grouping' },
+    { 'path': ':theme/grid/lazy-load-grouping-with-paging', component: LazyLoadGroupingWithPagingComponent, name: 'Grouping with Paging', 'type': 'update', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature.', order: '14', category: 'Lazy Load Grouping' },
+    { 'path': ':theme/grid/lazy-load-grouping-with-infinite-scrolling', component: LazyLoadGroupingWithInfiniteScrollingComponent, name: 'Grouping with Infinite Scrolling', 'type': 'update', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature with infinite scrolling', order: '14', category: 'Lazy Load Grouping' },
+    { 'path': ':theme/grid/lazy-load-grouping-with-virtual-scrolling', component: LazyLoadGroupingWithVirtualScrollingComponent, name: 'Grouping with Virtual Scrolling', 'type': 'update', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature with virtual scrolling', order: '14', category: 'Lazy Load Grouping' },
  
     {
         'path': ':theme/grid/default-exporting', component: ExportingComponent, name: 'Default Exporting', description: 'This demo for Essential JS 2 grid component shows the client-side exporting of grid content to Excel, PDF, and CSV formats.', order: '15',

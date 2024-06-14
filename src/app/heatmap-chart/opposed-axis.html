@@ -1,50 +1,60 @@
-<div class="content-wrapper">
-    <div class="col-lg-9">
-        <ejs-heatmap id='container' #heatmap style="display:block;" [titleSettings]='titleSettings' [dataSource]='dataSource' [xAxis]='xAxis'
-            [yAxis]='yAxis' [cellSettings]='cellSettings' [legendSettings]='legendSettings' (load)='load($event)'>
-        </ejs-heatmap>
-    </div>
-</div>
-<div class="col-md-3 property-section">
-    <div class="property-panel-section">
-        <div class="property-panel-header">Properties</div>
-        <div class="property-panel-content">
-            <table id="property" title="Properties" style="width: 100%">
-                <tbody>
-                    <tr style="height: 50px">
-                        <td style="width: 40%;">
-                            <div>
-                                <input id="XOpposedPosition" type="checkbox">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr style="height: 50px">
-                        <td style="width: 40%;">
-                            <div>
-                                <input id="YOpposedPosition" type="checkbox">
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+<main>
+    <div class="content-wrapper">
+        <div class="col-lg-9">
+            <ejs-heatmap id='container' #heatmap style="display:block;" [titleSettings]='titleSettings' [dataSource]='dataSource' [xAxis]='xAxis'
+                [yAxis]='yAxis' [cellSettings]='cellSettings' [legendSettings]='legendSettings' (load)='load($event)'>
+            </ejs-heatmap>
         </div>
     </div>
-</div>
-<div id="action-description">
-    <p>
-        This sample illustrates the monthly flight arrivals at JFK international airport, New York. The data label is disabled in this sample, the tooltip displays the data point values.  In property panel, the options are available to change the position of the axes by means of checkbox for each axis. 
-    </p>
-</div>
-<div id="description">
-    <p>
-        In this example, you can see how to change the display position of the axis. You can change the display position of axes
-        by enabling the
-        <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/axisModel/#opposedposition" target="_blank">opposedPosition </a> property for each axis.
-    </p>
-    <p>The tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item on touch-enabled devices.</p>
-    <br>
-    <p><b>Injecting Module</b></p>
-    <p>
-        Heatmap component features are separated into discrete feature-based modules. To use a tooltip, inject the <a href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/tooltip" target="_blank">Tooltip</a> module using the <code>Heatmap.Inject(Tooltip)</code> method.
-    </p>
-</div>
+    <div class="col-md-3 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties" style="width: 100%" role="none">
+                    <tbody>
+                        <tr style="height: 50px">
+                            <td style="width: 40%;">
+                                <div class="inversedCheckBox">
+                                    <input id="XOpposedPosition" type="checkbox">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 50px">
+                            <td style="width: 40%;">
+                                <div class="inversedCheckBox">
+                                    <input id="YOpposedPosition" type="checkbox">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <style>
+        .e-view.fluent2-dark #property .inversedCheckBox {
+            margin-left: -8px;
+        }
+        .e-view.fluent2 #property .inversedCheckBox {
+            margin-left: -4px;
+        }
+    </style>
+    <section id="action-description" aria-label="Description of HeatMap sample">
+        <p>
+            This sample illustrates the monthly flight arrivals at JFK international airport, New York. The data label is disabled in this sample, the tooltip displays the data point values.  In property panel, the options are available to change the position of the axes by means of checkbox for each axis. 
+        </p>
+    </section>
+    <section id="description" aria-label="Description of the HeatMap features demonstrated in this sample">
+        <p>
+            In this example, you can see how to change the display position of the axis. You can change the display position of axes
+            by enabling the
+            <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/axisModel/#opposedposition" target="_blank">opposedPosition </a> property for each axis.
+        </p>
+        <p>The tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item on touch-enabled devices.</p>
+        <br>
+        <p><b>Injecting Module</b></p>
+        <p>
+            Heatmap component features are separated into discrete feature-based modules. To use a tooltip, inject the <a href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/tooltip" target="_blank">Tooltip</a> module using the <code>Heatmap.Inject(Tooltip)</code> method.
+        </p>
+    </section>
+</main>

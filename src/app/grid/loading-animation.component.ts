@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DataManager, UrlAdaptor } from '@syncfusion/ej2-data';
+import { DataManager, UrlAdaptor, Query } from '@syncfusion/ej2-data';
 import { DropDownListComponent, ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { GridComponent, PageService, SortService, FilterService, GridModule } from '@syncfusion/ej2-angular-grids';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -14,6 +14,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 })
 export class LoadingAnimationComponent implements OnInit {
     public data: DataManager;
+    public query: Query;
     public pageSettings: Object;
     public loadingIndicator;
 
@@ -30,6 +31,7 @@ export class LoadingAnimationComponent implements OnInit {
 
     ngOnInit(): void {
         this.data = new DataManager({ url: 'https://services.syncfusion.com/angular/production/api/UrlDataSource', adaptor: new UrlAdaptor });
+        this.query = new Query().addParams('dataCount', '1000');
         this.pageSettings = { pageCount: 3 };
         this.loadingIndicator = {indicatorType: 'Shimmer'};
     }

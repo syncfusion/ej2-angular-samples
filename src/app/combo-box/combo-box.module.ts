@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { DefaultComboBoxComponent } from './default.component';
 import { GroupAndIconComboBoxComponent } from './grouping-icon.component';
 import { DataBindingComboBoxComponent } from './data-binding.component';
+import { DisabledItemsComboBoxComponent } from './disabled-items.component'
 import { TemplateComboBoxComponent } from './template.component';
 import { CascadingComboBoxComponent } from './cascading.component';
 import { FilteringComboBoxComponent } from './filtering.component';
@@ -24,8 +25,10 @@ export const comboboxAppRoutes: Object[] = [
     	category: 'ComboBox' },
     { path: ':theme/combo-box/data-binding', component: DataBindingComboBoxComponent, name: 'Data Binding', description: 'This example demonstrates how to bind with local data source and fetch data from remote data service in the Angular combo box component.', order: '01',
     	category: 'ComboBox' },
-    { path: ':theme/combo-box/object-value-binding', component: ObjectComboBoxComponent, name: 'Oject Value Binding', type : 'new', description: 'This example demonstrates how to bind with data source in the Angular combo box component.', order: '01',
+    { path: ':theme/combo-box/object-value-binding', component: ObjectComboBoxComponent, name: 'Oject Value Binding', description: 'This example demonstrates how to bind with data source in the Angular combo box component.', order: '01',
     category: 'ComboBox' },
+    { path: ':theme/combo-box/disabled-items', component: DisabledItemsComboBoxComponent, name: 'Disabled Items', type : 'new', description: 'This example showcases the disabled items of Angular combo box component.', order: '01',
+    	category: 'ComboBox' },
     { path: ':theme/combo-box/custom-value', component: CustomValueComboBoxComponent, name: 'Custom Value', description: 'This example demonstrates the addition of a new value that is not present in the predefined list of the Angular combo box component.', order: '01',
 		category: 'ComboBox' },
     { path: ':theme/combo-box/template', component: TemplateComboBoxComponent, name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular combo box component pop-up list using the template.', order: '01',

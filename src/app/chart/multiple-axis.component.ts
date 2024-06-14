@@ -22,13 +22,13 @@ export class MultipleAxisChartComponent {
         y: 62,
         coordinateUnits: 'Point',
         verticalAlignment: 'Top',
-        content: '<div id="chart_cloud"><img src="./assets/chart/images/cloud.png" style="width: 41px; height: 41px"/></div>'
+        content: '<div id="chart_cloud"><img src="./assets/chart/images/cloud.png" alt="Cloud Picture" style="width: 41px; height: 41px"/></div>'
     }, {
         x: 'Sat',
         y: 35,
         coordinateUnits: 'Point',
         yAxisName: 'yAxis',
-        content: '<div id="chart_cloud"><img src="./assets/chart/images/sunny.png" style="width: 41px; height: 41px"/></div>'
+        content: '<div id="chart_cloud"><img src="./assets/chart/images/sunny.png" alt="Sunny Picture" style="width: 41px; height: 41px"/></div>'
     }
 ];
     public data: Object[] = [
@@ -65,7 +65,7 @@ export class MultipleAxisChartComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
     };
     // custom code end
     public legend: Object = {

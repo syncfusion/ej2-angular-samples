@@ -28,13 +28,14 @@ export class MarkdownDefaultComponent {
 
     public textArea: HTMLTextAreaElement;
     public mdsource: HTMLElement;
+    public placeholder: string = 'Enter the text here...';
     public tools: ToolbarModule = {
         items: ['Bold', 'Italic', 'StrikeThrough', '|',
-            'Formats', 'OrderedList', 'UnorderedList','SuperScript', 'SubScript', '|',
+            'Formats', 'Blockquote', 'OrderedList', 'UnorderedList','SuperScript', 'SubScript', '|',
             'CreateTable', 'CreateLink', 'Image', '|',
             {
                 tooltipText: 'Preview',
-                template: '<button id="preview-code" class="e-tbar-btn e-control e-btn e-icon-btn">' +
+                template: '<button id="preview-code" class="e-tbar-btn e-control e-btn e-icon-btn" aria-label="Preview Code">' +
                     '<span class="e-btn-icon e-md-preview e-icons"></span></button>'
             }, '|', 'Undo', 'Redo']
     };
@@ -51,10 +52,10 @@ export class MarkdownDefaultComponent {
         this.mdsource.addEventListener('click', (e: MouseEvent) => {
             this.fullPreview();
             if ((e.target as HTMLElement).parentElement.classList.contains('e-active')) {
-                this.rteObj.disableToolbarItem(['Bold', 'Italic', 'StrikeThrough', 'Formats', 'OrderedList',
+                this.rteObj.disableToolbarItem(['Bold', 'Italic', 'StrikeThrough', 'Formats', 'Blockquote', 'OrderedList',
                     'UnorderedList', 'CreateTable', 'SuperScript', 'SubScript', 'CreateLink', 'Image']);
             } else {
-                this.rteObj.enableToolbarItem(['Bold', 'Italic', 'StrikeThrough', 'Formats', 'OrderedList',
+                this.rteObj.enableToolbarItem(['Bold', 'Italic', 'StrikeThrough', 'Formats', 'Blockquote', 'OrderedList',
                     'UnorderedList', 'CreateTable', 'SuperScript', 'SubScript', 'CreateLink', 'Image']);
             }
         });

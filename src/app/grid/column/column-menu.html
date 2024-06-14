@@ -5,13 +5,13 @@
         </p>
     </div>
     <ejs-grid [dataSource]='data' id="gridcomp" allowPaging='true' allowGrouping='true' allowSorting='true' showColumnMenu='true'
-        [groupSettings]='groupOptions' allowFiltering='true' [filterSettings]='filterSettings'>
+        [groupSettings]='groupOptions' [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbar'>
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='150' textAlign='Right'></e-column>
-            <e-column field='CustomerName' headerText='Customer Name' [showInColumnChooser]='false' width='200'></e-column>
-            <e-column field='Freight' headerText='Freight' format='C2' width='150' textAlign='Right'></e-column>
-            <e-column field='ShippedDate' headerText='Shipped Date' width='200' format="yMd" textAlign='Right'></e-column>
-            <e-column field='ShipCountry' headerText='Ship Country' [visible]='false' width='200'></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='150' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
+            <e-column field='CustomerName' headerText='Customer Name' [showInColumnChooser]='false' width='200' [validationRules]='customeridrules'></e-column>
+            <e-column field='Freight' headerText='Freight' format='C2' width='150' textAlign='Right' editType='numericedit' [validationRules]='freightrules'></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' width='200' format="yMd" textAlign='Right' editType='datepickeredit'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' [visible]='false' width='200' editType='dropdownedit'></e-column>
             <e-column field='ShipCity' headerText='Ship City' width='150'></e-column>
         </e-columns>
     </ejs-grid>

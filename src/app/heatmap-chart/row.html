@@ -1,23 +1,25 @@
-<div class="control-section">
-    <div>
-        <ejs-heatmap id='container' style="display:block;" [titleSettings]='titleSettings' [dataSource]='dataSource' [xAxis]='xAxis'
-            [yAxis]='yAxis' [paletteSettings]='paletteSettings' [legendSettings]='legendSettings' [cellSettings]='cellSettings' [tooltipSettings]='tooltipSettings' (tooltipRender)='tooltipRender($event)'
-            (load)='load($event)'>
-        </ejs-heatmap>
+<main>
+    <div class="control-section">
+        <div>
+            <ejs-heatmap id='container' style="display:block;" [titleSettings]='titleSettings' [dataSource]='dataSource' [xAxis]='xAxis'
+                [yAxis]='yAxis' [paletteSettings]='paletteSettings' [legendSettings]='legendSettings' [cellSettings]='cellSettings' [tooltipSettings]='tooltipSettings' (tooltipRender)='tooltipRender($event)'
+                (load)='load($event)'>
+            </ejs-heatmap>
+        </div>
     </div>
-</div>
-<div id="action-description">
-    <p>
-       This sample visualizes the GDP growth rate for the countries which are the world's major economies over the years. 
-    </p>
-</div>
-<div id="description">
-    <p>
-        In this example, you can see how to bind array object as data source for Heatmap and configure the Heatmap using the data adaptor support. You can directly bind the array object to the Heatmap data source with default property settings.</p>
-    <p>The tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item on touch-enabled devices.</p>
-    <br>
-    <p><b>Injecting Module</b></p>
-    <p>
-        Heatmap component features are separated into discrete feature-based modules. To use data adaptor support, we need to inject <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/adaptorType/" target='_blank'>Adaptor</a> module using <code>Heatmap.Inject(Adaptor)</code> method, to use a tooltip, inject the<a href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/tooltip" target='_blank'>Tooltip</a> module using the <code>Heatmap.Inject(Tooltip)</code> method, and to use a legend, inject the <a href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/legend" target='_blank'>Legend</a> module using the <code>Heatmap.Inject(Legend)</code> method.
-     </p>
-</div>
+    <section id="action-description" aria-label="Description of HeatMap sample">
+        <p>
+           This sample visualizes the GDP growth rate for the countries which are the world's major economies over the years. 
+        </p>
+    </section>
+    <section id="description" aria-label="Description of the HeatMap features demonstrated in this sample">
+        <p>
+            In this example, you can see how to bind array object as data source for Heatmap and configure the Heatmap using the data adaptor support. You can directly bind the array object to the Heatmap data source with default property settings.</p>
+        <p>The tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item on touch-enabled devices.</p>
+        <br>
+        <p><b>Injecting Module</b></p>
+        <p>
+            Heatmap component features are separated into discrete feature-based modules. To use data adaptor support, we need to inject <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/adaptorType/" target='_blank'>Adaptor</a> module using <code>Heatmap.Inject(Adaptor)</code> method, to use a tooltip, inject the<a href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/tooltip" target='_blank'>Tooltip</a> module using the <code>Heatmap.Inject(Tooltip)</code> method, and to use a legend, inject the <a href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/legend" target='_blank'>Legend</a> module using the <code>Heatmap.Inject(Legend)</code> method.
+         </p>
+    </section>
+</main>

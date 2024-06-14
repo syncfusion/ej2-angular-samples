@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ValueProvider, ViewEncapsulation } from '@angular/core';
 import { employeeDetails } from './data';
 import {
-    GridComponent, ToolbarService, ExcelExportService, PdfExportService,
+    GridComponent, ToolbarService, FilterService, ExcelExportService, PdfExportService,
     GroupService, ExcelQueryCellInfoEventArgs, PdfQueryCellInfoEventArgs, SortService, GridModule
 } from '@syncfusion/ej2-angular-grids';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations'
@@ -14,7 +14,7 @@ import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
     templateUrl: 'default-exporting.html',
     styleUrls: ['column-template.style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, ExcelExportService, PdfExportService, GroupService, SortService],
+    providers: [ToolbarService, FilterService, ExcelExportService, PdfExportService, GroupService, SortService],
     standalone: true,
     imports: [GridModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
@@ -22,6 +22,7 @@ export class ExportingComponent implements OnInit {
     public data: Object[];
     public toolbar: string[];
     public pageSettings: Object;
+    public filterSettings: Object;
     public isInitial: Boolean = true;
     @ViewChild('grid')
     public grid: GridComponent;
@@ -30,6 +31,7 @@ export class ExportingComponent implements OnInit {
         this.data = employeeDetails;
         this.toolbar = ['ExcelExport', 'PdfExport', 'CsvExport'];
         this.pageSettings = { pageCount: 5 };
+        this.filterSettings = { type: 'Excel'};
     }
     dataBound() {
         if(this.isInitial) {

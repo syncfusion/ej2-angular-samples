@@ -63,21 +63,21 @@
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 60%">
-                            <div>Enable Trim:</div>
+                            <div id="trim">Enable Trim:</div>
                         </td>
                         <td style="width: 40%;">
                             <div>
-                                <input type="checkbox" (change)='trim($event)' id="Trim" unchecked>
+                                <input type="checkbox" (change)='trim($event)' id="Trim" unchecked aria-labelledby="Checkbox unchecked">
                             </div>
                         </td>
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 60%">
-                            <div>Maximum Label Width:</div>
+                            <div id="labelWidth">Maximum Label Width:</div>
                         </td>
                         <td style="width: 40%;">
                             <div class="control-label">
-                                <ejs-numerictextbox #width [value]=34 [min]=1 [step]=1 (change)='labelWidth($event)'></ejs-numerictextbox>
+                                <ejs-numerictextbox #width [value]=34 [min]=1 [step]=1 (change)='labelWidth($event)' aria-labelledby="Text"></ejs-numerictextbox>
                             </div>
                         </td>
                     </tr>
@@ -111,7 +111,7 @@
     </ul>
     <p>
         More information on the smart axis labels can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/axis-labels/#smart-axis-labels"> documentation section </a>.
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/axis-labels/#smart-axis-labels" aria-label="Navigate to the documentation for Smart Axis Labels in Angular Chart component"> documentation section</a>.
 	</p>
 </div>
 <style>

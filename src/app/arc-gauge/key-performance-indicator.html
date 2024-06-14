@@ -1,129 +1,94 @@
-<div id="action-description">
-    <p>
-        This sample shows an arc gauge with a key performance indicator (KPI), which is a measurable value that shows
-        how an organization meets key business objectives.
-    </p>
-</div>
-<div class="control-section">
-    <ejs-circulargauge id="keyperform" style='display:block;' background='transparent' (load)='loadGauge($event)'>
-        <e-axes>
-            <e-axis radius='90%' minimum=0 maximum=100 startAngle=220 endAngle=140 [majorTicks]='ticks'
-                [minorTicks]='ticks' [lineStyle]='lineStyle' [labelStyle]="labelStyle" [annotations]="annotations">
-                <e-pointers>
-                    <e-pointer type="Marker" markerShape="Circle" [animation]="animation" markerWidth=30 markerHeight=30
-                        radius=82% color='#bdbdbf' value=30>
-                    </e-pointer>
-                    <e-pointer type="Marker" markerShape="Circle" [animation]="animation" markerWidth=30 markerHeight=30
-                        radius=82% color='#626866' value=50>
-                    </e-pointer>
-                    <e-pointer type="Marker" markerShape="InvertedTriangle" markerWidth=30
-                        markerHeight=30 radius=92% color='#b6b6b6' value=76.6>
-                    </e-pointer>
-                </e-pointers>
-                <e-ranges>
-                    <e-range start=0 end=100 startWidth=30 endWidth=30 color="#e3e3e3" radius="90%"
-                        roundedCornerRadius=20>
-                    </e-range>
-                    <e-range start=30 end=50 startWidth=30 endWidth=30 [linearGradient]="linearGradient" radius="90%">
-                    </e-range>
-                </e-ranges>
-            </e-axis>
-        </e-axes>
-    </ejs-circulargauge>
-</div>
-<div id="description">
-    <p>
-        In this example, you can see how to render an arc gauge showing key performance indicator (KPI). You can use <a
-            target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/axisModel/">axes</a>, <a
-            target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/rangeModel/">ranges</a>, <a
-            target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/pointerModel/">pointers</a> and <a
-            target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/annotationModel/">annotations</a>
-        oriented properties to customize the appearance of the arc gauge, in order to achieve the desired outcome.
-    </p>
-    <p>
-        More information on the gauge can be found in this
-        <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/getting-started/">documentation
-            section</a>.
-    </p>
-</div>
-<!-- custom code start -->
-<style>
-	#keyperform_Annotations_0 {
-				line-height: 0.7;
-	}
-    .control-section {
-        min-height: 450px;
-    }
-
-    .triangle-up {
-      width: 20;
-      height: 20;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-bottom: 20px solid #84cbb5;
-      margin-top: -18px;
-    }
-    .text {
-      font-family: inherit;
-      font-size:30px;
-      text-align:center;
-    }
-  .percentage {
-      font-family: inherit;
-      font-size:44px;
-      text-align:center;
-      margin-left:-8px;
-  }
-  .e-view.tailwind div.triangle-up {
-    margin-top: -12px;
-  }
-  .e-view.tailwind-dark div.triangle-up {
-    margin-top: -20px; 
-  }
-  .e-view.fabric div.triangle-up, .e-view.fabric-dark div.triangle-up {
-    margin-top: -18px;
-  }
-  .e-view.material div.triangle-up, .e-view.material-dark div.triangle-up, .e-view.bootstrap-dark div.triangle-up,
-  .e-view.bootstrap div.triangle-up, .e-view.bootstrap4 div.triangle-up {
-      width: 20;
-      height: 20;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-bottom: 20px solid #84cbb5;
-      margin-top: -22px;
-  }
-  @media screen and (max-width: 420px) {
-      .text {
-        font-size:20px;
-        text-align:center;
-        margin-left: 10px;
-      }
-      .percentage {
-          font-size:30px;
-          text-align:center;
-      }
-      .triangle-up {
+<main>
+    <section id="action-description" aria-label="Description of Circular Gauge sample">
+        <p>
+            This sample shows an arc gauge with a key performance indicator (KPI), which is a measurable value that shows
+            how an organization meets key business objectives.
+        </p>
+    </section>
+    <div class="control-section">
+        <ejs-circulargauge id="keyperform" style='display:block;' background='transparent' (load)='loadGauge($event)'>
+            <e-axes>
+                <e-axis radius='90%' minimum=0 maximum=100 startAngle=220 endAngle=140 [majorTicks]='ticks'
+                    [minorTicks]='ticks' [lineStyle]='lineStyle' [labelStyle]="labelStyle" [annotations]="annotations">
+                    <e-pointers>
+                        <e-pointer type="Marker" markerShape="Circle" [animation]="animation" markerWidth=30 markerHeight=30
+                            radius=82% color='#bdbdbf' value=30>
+                        </e-pointer>
+                        <e-pointer type="Marker" markerShape="Circle" [animation]="animation" markerWidth=30 markerHeight=30
+                            radius=82% color='#626866' value=50>
+                        </e-pointer>
+                        <e-pointer type="Marker" markerShape="InvertedTriangle" markerWidth=30
+                            markerHeight=30 radius=92% color='#b6b6b6' value=76.6>
+                        </e-pointer>
+                    </e-pointers>
+                    <e-ranges>
+                        <e-range start=0 end=100 startWidth=30 endWidth=30 color="#e3e3e3" radius="90%"
+                            roundedCornerRadius=20>
+                        </e-range>
+                        <e-range start=30 end=50 startWidth=30 endWidth=30 [linearGradient]="linearGradient" radius="90%">
+                        </e-range>
+                    </e-ranges>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
+    </div>
+    <section id="description" aria-label="Description of the Circular Gauge features demonstrated in this sample">
+        <p>
+            In this example, you can see how to render an arc gauge showing key performance indicator (KPI). You can use <a
+                target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/axisModel/">axes</a>, <a
+                target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/rangeModel/">ranges</a>, <a
+                target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/pointerModel/">pointers</a> and <a
+                target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/annotationModel/">annotations</a>
+            oriented properties to customize the appearance of the arc gauge, in order to achieve the desired outcome.
+        </p>
+        <p>
+            More information on the gauge can be found in this
+            <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/getting-started/">documentation
+                section</a>.
+        </p>
+    </section>
+    <!-- custom code start -->
+    <style>
+        #keyperform_Annotations_0 {
+                    line-height: 0.7;
+        }
+        .control-section {
+            min-height: 450px;
+        }
+    
+        .triangle-up {
           width: 20;
           height: 20;
           border-left: 10px solid transparent;
           border-right: 10px solid transparent;
           border-bottom: 20px solid #84cbb5;
-          margin-top: -2px;
+          margin-top: -18px;
+        }
+        .text {
+          font-family: inherit;
+          font-size:30px;
+          text-align:center;
+        }
+      .percentage {
+          font-family: inherit;
+          font-size:44px;
+          text-align:center;
+          margin-left:-8px;
       }
       .e-view.tailwind div.triangle-up {
-          margin-top: -4px;
+        margin-top: -12px;
       }
       .e-view.tailwind-dark div.triangle-up {
-          margin-top: -8px;
+        margin-top: -20px; 
       }
       .e-view.fabric div.triangle-up, .e-view.fabric-dark div.triangle-up {
-          margin-top: -2px;
-       }
+        margin-top: -18px;
+      }
       .e-view.material div.triangle-up, .e-view.material-dark div.triangle-up, .e-view.bootstrap-dark div.triangle-up,
       .e-view.bootstrap div.triangle-up, .e-view.bootstrap4 div.triangle-up {
           width: 20;
@@ -131,8 +96,45 @@
           border-left: 10px solid transparent;
           border-right: 10px solid transparent;
           border-bottom: 20px solid #84cbb5;
-          margin-top: -6px;
+          margin-top: -22px;
       }
-  }
-</style>
-<!-- custom code end -->
+      @media screen and (max-width: 420px) {
+          .text {
+            font-size:20px;
+            text-align:center;
+            margin-left: 10px;
+          }
+          .percentage {
+              font-size:30px;
+              text-align:center;
+          }
+          .triangle-up {
+              width: 20;
+              height: 20;
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-bottom: 20px solid #84cbb5;
+              margin-top: -2px;
+          }
+          .e-view.tailwind div.triangle-up {
+              margin-top: -4px;
+          }
+          .e-view.tailwind-dark div.triangle-up {
+              margin-top: -8px;
+          }
+          .e-view.fabric div.triangle-up, .e-view.fabric-dark div.triangle-up {
+              margin-top: -2px;
+           }
+          .e-view.material div.triangle-up, .e-view.material-dark div.triangle-up, .e-view.bootstrap-dark div.triangle-up,
+          .e-view.bootstrap div.triangle-up, .e-view.bootstrap4 div.triangle-up {
+              width: 20;
+              height: 20;
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-bottom: 20px solid #84cbb5;
+              margin-top: -6px;
+          }
+      }
+    </style>
+    <!-- custom code end -->
+</main>

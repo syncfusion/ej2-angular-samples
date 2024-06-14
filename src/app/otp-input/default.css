@@ -1,0 +1,8 @@
+.otp-container {
+    width: 240px;
+    margin: 50px auto;
+}
+
+.otp-container label {
+    margin-bottom: 15px;
+}

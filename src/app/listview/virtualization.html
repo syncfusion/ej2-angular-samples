@@ -10,7 +10,7 @@
         <ng-template #template let-data>
             <div class="e-list-wrapper e-list-avatar">
                 <span *ngIf="!data.imgUrl" class="e-avatar e-avatar-circle {{data.icon}} showUI">{{data.icon}}</span>
-                <img *ngIf="data.imgUrl" class="e-avatar e-avatar-circle showUI" src="{{data.imgUrl}}" />
+                <img *ngIf="data.imgUrl" class="e-avatar e-avatar-circle showUI" src="{{data.imgUrl}}" alt="{{data.altText}}" />
                 <span class="e-list-content">{{data.name}}</span>
             </div>
         </ng-template>

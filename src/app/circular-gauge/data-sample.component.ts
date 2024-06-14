@@ -23,12 +23,14 @@ export class SampleDataComponent {
 
     public data: Object[] = [];
     public tooltipInterval1: number;
-    public annotation1: string = "<div id='templateWrap'><img class='imageStyle' src='./assets/circular-gauge/images/positive.png' />" +
+    public annotation1: string = "<div id='positiveoneTemplateWrap'><img alt='positive image' class='imageStyle' src='./assets/circular-gauge/images/positive.png' />" +
         "<div class='fontDes'>${pointers[0].value}%</div></div></div>";
     public annotation2: string = "<div class='fontDes1'>Germany</div>"
     public annotation3: string = "<div class='fontDes1'>USA</div>"
     public annotation4: string = "<div class='fontDes1'>UK</div>"
-    public annotation5: string = "<div id='templateWrap'><img class='imageStyle' src='./assets/circular-gauge/images/negative.png' />" +
+    public annotation5: string = "<div id='negativeTemplateWrap'><img alt='negative image' class='imageStyle' src='./assets/circular-gauge/images/negative.png' />" +
+        "<div class='fontDes'>${pointers[0].value}%</div></div></div>";
+    public annotation6: string = "<div id='positivetwoTemplateWrap'><img alt='positive image' class='imageStyle' src='./assets/circular-gauge/images/positive.png' />" +
         "<div class='fontDes'>${pointers[0].value}%</div></div></div>";
 
     public load(args: ILoadedEventArgs): void {
@@ -52,13 +54,26 @@ export class SampleDataComponent {
         width: 0, height: 0
     };
 
-    public labelStyle: Object = {
+    public labelStyleOne: Object = {
         position: 'Outside',
+        format:'Germany Gauge {value} %',
+        font: { size: '0', color: 'transparent' }
+    };
+
+    public labelStyleTwo: Object = {
+        position: 'Outside',
+        format:'USA {value} %',
+        font: { size: '0', color: 'transparent' }
+    };
+
+    public labelStyleThree: Object = {
+        position: 'Outside',
+        format:'UK {value} %',
         font: { size: '0', color: 'transparent' }
     };
 
     public germanyAnnotation: Object[] = [{
-        content: "<div id='templateWrap'>"
+        content: "<div id='germanyTemplateWrap'>"
             + "<img style='width: 16px;height: 16px;margin-top: 4px;' src='./assets/circular-gauge/images/positive.png' />"
             + "<div style='float: right;color: #424242;font-size: 20px;'>${pointers[0].value}%</div></div></div>",
         angle: 180,
@@ -70,7 +85,7 @@ export class SampleDataComponent {
     }];
 
     public usaAnnotation: Object[] = [{
-        content: "<div id='templateWrap'>"
+        content: "<div id='usaTemplateWrap'>"
             + "<img style='width: 16px;height: 16px;margin-top: 4px;' src='./assets/circular-gauge/images/positive.png' />"
             + "<div style='float: right;color: #424242;font-size: 20px;'>${pointers[0].value}%</div></div></div>",
         angle: 180,
@@ -82,7 +97,7 @@ export class SampleDataComponent {
     }];
 
     public ukAnnotation: Object[] = [{
-        content: "<div id='templateWrap'>"
+        content: "<div id='ukTemplateWrap'>"
             + "<img style='width: 16px;height: 16px;margin-top: 4px;' src='./assets/circular-gauge/images/negative.png' />"
             + "<div style='float: right;color: #424242;font-size: 20px;'>${pointers[0].value}%</div></div></div>",
         angle: 180,

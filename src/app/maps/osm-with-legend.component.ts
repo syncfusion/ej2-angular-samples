@@ -52,7 +52,7 @@ export class MapsOsmWithLegendComponent {
         },
     };
     public layers: object[] = [{
-        layerType: 'OSM',
+        urlTemplate: 'https://tile.openstreetmap.org/level/tileX/tileY.png',
         markerSettings: [
             {
                 visible: true,

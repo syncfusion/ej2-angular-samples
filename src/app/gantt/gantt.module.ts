@@ -29,6 +29,7 @@ import { ColumnTemplateComponent  } from './column-template.component';
 import { HeaderTemplateComponent  } from './header-template.component';
 import { GanttTaskbarTemplateComponent } from './taskbar-template.component';
 import { GanttTasklabelTemplateComponent } from './tasklabel-template.component';
+import { GanttTimelineTemplateComponent } from './timeline-template.component';
 import { GanttTooltipTemplateComponent } from './tooltip-template.component';
 import { GanttToolbarTemplateComponent } from './toolbar-template.component';
 import { GanttGridLinesComponent } from './grid-lines.component';
@@ -78,7 +79,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/undo-redo', component: GanttUndoRedoComponent,
         description: 'This sample demonstrates the undo-redo feature in the Gantt Chart provides users with the ability to reverse or redo their recent actions within the Gantt Chart.',
-        name: 'Undo Redo', order: '01', category: 'Gantt', type: "new"
+        name: 'Undo Redo', order: '01', category: 'Gantt'
     },
     {
         path: ':theme/gantt/loading-animation', component: GanttLoadingAnimationComponent,
@@ -98,7 +99,7 @@ export const GanttAppRoutes: Object[] = [
     {
       path: ':theme/gantt/load-on-demand', component: GanttLoadOnDemandComponent,
       description: 'This sample demonstrates the load on-demand data binding support in Gantt Chart.',
-      name: 'Load On Demand', order: '02', category: 'Data Binding'
+      name: 'Big Data Set', order: '02', category: 'Data Binding'
     },
     {
         path: ':theme/gantt/self-reference-data', component: GanttSelfDataComponent,
@@ -116,7 +117,7 @@ export const GanttAppRoutes: Object[] = [
         name: 'Workweek', order: '03', category: 'Scheduling Concepts'
     },
     {
-        path: ':theme/gantt/working-time-range', component: GanttWorkingTimeRangeComponent,
+        path: ':theme/gantt/working-time-range', component: GanttWorkingTimeRangeComponent, type: "update",
         description: 'This example demonstrates how to customize the working time of a day for the whole project. We can define working time in different intervals.',
         name: 'Working Time Range', order: '03', category: 'Scheduling Concepts'
     },
@@ -158,7 +159,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/timeline', component: GanttTimelineComponent,
         description: 'This example demonstrates the various timeline mode options and properties available to customize the timeline in Gantt',
-        name: 'Timeline API', order: '04', category: 'Timeline', type: "update"
+        name: 'Timeline API', order: '04', category: 'Timeline'
     },
     {
         path: ':theme/gantt/zooming', component: GanttZoomingComponent,
@@ -224,6 +225,11 @@ export const GanttAppRoutes: Object[] = [
         path: ':theme/gantt/taskbar-template', component: GanttTaskbarTemplateComponent,
         description: 'This example demonstrates the taskbar template support with child taskbar template, parent taskbar template and milestone template.',
         name: 'Taskbar Template', order: '08', category: 'Templates'
+    },
+    {
+        path: ':theme/gantt/timeline-template', component: GanttTimelineTemplateComponent,
+        description: 'This sample explains the way of rendering timeline template by mapping template elements to the timelineTemplate property.',
+        name: 'Timeline Template', order: '08', category: 'Templates',type: "new"
     },
     {
         path: ':theme/gantt/tasklabel-template', component: GanttTasklabelTemplateComponent,

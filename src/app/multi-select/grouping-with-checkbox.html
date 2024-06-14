@@ -7,7 +7,7 @@
 <div id="multiselect-sample" class="control-section">
     <div class="col-lg-12 content-wrapper">
         <div class="control-styles">
-            <h4>Grouping with CheckBox</h4>
+            <label class="h4">Grouping with CheckBox</label>
             <ejs-multiselect id='multiselect-checkbox' #checkbox [dataSource]='vegetables' [placeholder]='checkWaterMark' [enableSelectionOrder]='false' [fields]='checkFields'
             [showDropDownIcon]='true' [mode]='mode' showSelectAll='true' [enableGroupCheckBox]= 'enableGroupCheckBox' [filterBarPlaceholder]='filterBarPlaceholder' ></ejs-multiselect>
         </div>
@@ -20,3 +20,11 @@
         should be injected in the application end.</p>
 
 </div>
+<style>
+    .control-styles .h4 {
+        font-size: 16px;
+        margin: 0 0 10px;
+        font-weight: bold;
+    }
+
+</style>

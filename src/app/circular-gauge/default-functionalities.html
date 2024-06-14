@@ -1,41 +1,43 @@
-<div id="action-description">
-    <p>
-        This sample shows the circular gauge's basic rendering, which includes an axis and a pointer.
-    </p>
-</div>
-<div class="control-section">
-    <ejs-circulargauge style='display:block;' animationDuration=2000 background='transparent' (load)='load($event)'>
-        <e-axes>
-            <e-axis radius='80%' startAngle=230 endAngle=130 [majorTicks]='ticks' [minorTicks]='ticks'
-                [lineStyle]='lineStyle' [labelStyle]="labelStyle">
-                <e-pointers>
-                    <e-pointer value=60 radius='60%' pointerWidth=7 color='#c06c84' [animation]='animation' [cap]="cap"
-                        [needleTail]="tail">
-                    </e-pointer>
-                </e-pointers>
-            </e-axis>
-        </e-axes>
-    </ejs-circulargauge>
-</div>
-<div id="description">
-    <p>
-        In this example, an axis with a pointer is used, and you can use <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/axisModel/">axes</a> and <a
-            target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/pointerModel/">pointers</a> to get
-        the circular gauge's basic appearance. The circular gauge component helps in the visualization of numerical
-        scale values on a circular scale.
-    </p>
-    <p>
-        More information on the circular gauge can be found in this <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/getting-started/">documentation
-            section</a>.
-    </p>
-</div>
-<!-- custom code start -->
-<style>
-    .control-section {
-        min-height: 450px;
-    }
-</style>
-<!-- custom code end -->
+<main>
+    <section id="action-description" aria-label="Description of Circular Gauge sample">
+        <p>
+            This sample shows the circular gauge's basic rendering, which includes an axis and a pointer.
+        </p>
+    </section>
+    <div class="control-section">
+        <ejs-circulargauge style='display:block;' animationDuration=2000 background='transparent' (load)='load($event)'>
+            <e-axes>
+                <e-axis radius='80%' startAngle=230 endAngle=130 [majorTicks]='ticks' [minorTicks]='ticks'
+                    [lineStyle]='lineStyle' [labelStyle]="labelStyle">
+                    <e-pointers>
+                        <e-pointer value=60 radius='60%' pointerWidth=7 color='#c06c84' [animation]='animation' [cap]="cap"
+                            [needleTail]="tail">
+                        </e-pointer>
+                    </e-pointers>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
+    </div>
+    <section id="description" aria-label="Description of the Circular Gauge features demonstrated in this sample">
+        <p>
+            In this example, an axis with a pointer is used, and you can use <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/axisModel/">axes</a> and <a
+                target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/pointerModel/">pointers</a> to get
+            the circular gauge's basic appearance. The circular gauge component helps in the visualization of numerical
+            scale values on a circular scale.
+        </p>
+        <p>
+            More information on the circular gauge can be found in this <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/getting-started/">documentation
+                section</a>.
+        </p>
+    </section>
+    <!-- custom code start -->
+    <style>
+        .control-section {
+            min-height: 450px;
+        }
+    </style>
+    <!-- custom code end -->
+</main>

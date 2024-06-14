@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { categoryData } from './data';
-import { ToolbarService, GridComponent, ExcelExportService, PdfExportService, PageService, SortService, GridModule } from '@syncfusion/ej2-angular-grids';
+import { ToolbarService, FilterService, EditService, GridComponent, ExcelExportService, PdfExportService, PageService, SortService, GridModule } from '@syncfusion/ej2-angular-grids';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations'
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -8,7 +8,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
     templateUrl: 'advanced-exporting.html',
-    providers: [ToolbarService, PageService, ExcelExportService, PdfExportService, SortService],
+    providers: [ToolbarService, FilterService, EditService, PageService, ExcelExportService, PdfExportService, SortService],
     standalone: true,
     imports: [GridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
@@ -16,13 +16,21 @@ export class AdvancedExportingComponent implements OnInit {
     public gridData: Object[];
     public toolbar: string[];
     public pageSettings: Object;
+    public filterSettings: Object;
+    public editSettings: Object;
+    public productidrules: Object;
+    public productnamerules: Object;
     @ViewChild('grid')
     public grid: GridComponent;
 
     public ngOnInit(): void {
         this.gridData = categoryData;
-        this.toolbar = ['ExcelExport', 'PdfExport'];
+        this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel', 'ExcelExport', 'PdfExport'];
         this.pageSettings = { pageSize: 10 };
+        this.filterSettings = { type: 'Excel' };
+        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };
+        this.productidrules = { required: true, number: true };
+        this.productnamerules = { required: true, minLength: 5 };
     }
     toolbarClick(args: ClickEventArgs): void {
         switch (args.item.id) {
@@ -75,7 +83,7 @@ export class AdvancedExportingComponent implements OnInit {
                         index: 5,
                         cells: [
                             { index: 1, colSpan: 2, value: 'Tel +1 888.936.8638 Fax +1 919.573.0306' },
-                            { index: 4, value: 'CUSOTMER ID', style: { fontColor: '#C67878', bold: true } },
+                            { index: 4, value: 'CUSTOMER ID', style: { fontColor: '#C67878', bold: true } },
                             { index: 5, value: 'TERMS', width: 150, style: { fontColor: '#C67878', bold: true } }
                         ]
                     },

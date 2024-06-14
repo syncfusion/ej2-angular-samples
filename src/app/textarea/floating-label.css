@@ -6,3 +6,7 @@
     font-size: 14px;
     padding: 8px;
 }
+
+#textarea-float .e-multi-line-input {
+    max-width: 100%;
+}

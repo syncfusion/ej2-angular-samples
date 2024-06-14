@@ -1,6 +1,6 @@
 <div class="control-section">
     <div class="col-lg-9">
-        <ejs-grid #normalgrid id='Normalgrid' [dataSource]='data' allowPaging='true' [allowSorting]='true' [pageSettings]='pageSettings' [editSettings]='editSettings' [toolbar]='toolbar' (actionBegin)='actionBegin($event)'>
+        <ejs-grid #normalgrid id='Normalgrid' [dataSource]='data' allowPaging='true' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [pageSettings]='pageSettings' [editSettings]='editSettings' [toolbar]='toolbar' (actionBegin)='actionBegin($event)'>
             <e-columns>
                 <e-column field='OrderID' headerText='Order ID' width='140' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
                 <e-column field='CustomerID' headerText='Customer ID' width='140' [validationRules]='customeridrules'></e-column>

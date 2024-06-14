@@ -37,21 +37,21 @@
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 50%">
-                            <div>Crosses Value:</div>
+                            <div id="crossValue">Crosses Value:</div>
                         </td>
                         <td style="width: 40%;">
                             <div style="margin-top: 0px;">
-                                <input type="text" id="crossingValue">
+                                <input type="text" id="crossingValue" aria-labelledby="Text">
                             </div>
                         </td>
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 50%">
-                            <div>Placing Label Near to Axis Line:</div>
+                            <div id="axis">Placing Label Near to Axis Line:</div>
                         </td>
                         <td style="width: 50%;padding-left: 10px; padding-right: 10px">
                             <div>
-                                <input type="checkbox" (change)='check($event)' id="axisElements" checked=true>
+                                <input type="checkbox" (change)='check($event)' id="axisElements" checked=true aria-labelledby="Checkbox checked">
                             </div>
                         </td>
                     </tr>
@@ -75,7 +75,7 @@
     </p>
     <p>
         More information on the axis crossing can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/axis-customization/#axis-crossing">documentation section</a>.
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/axis-customization/#axis-crossing" aria-label="Navigate to the documentation for Axis Crossing in Angular Chart component">documentation section</a>.
     </p>
 </div>
 <style>

@@ -1,12 +1,12 @@
 <div class="control-section">
     <div>
-        <ejs-grid #grid id='AdvancedExport' [dataSource]='gridData' [allowSorting]='true' [toolbar]='toolbar' (toolbarClick)='toolbarClick($event)'
+        <ejs-grid #grid id='AdvancedExport' [dataSource]='gridData' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbar' (toolbarClick)='toolbarClick($event)'
         [allowExcelExport]='true' [pageSettings]='pageSettings' [allowPaging]='true' [allowPdfExport]='true'>
             <e-columns>
-                <e-column field='ProductID' headerText='Product ID' width='170' textAlign='Right'></e-column>
-                <e-column field='ProductName' headerText='Product Name' width='150'></e-column>
+                <e-column field='ProductID' headerText='Product ID' width='170' textAlign='Right' isPrimaryKey='true' [validationRules]='productidrules'></e-column>
+                <e-column field='ProductName' headerText='Product Name' width='150' [validationRules]='productnamerules'></e-column>
                 <e-column field='QuantityPerUnit' headerText='Quantity per unit' width='180' textAlign='Right'></e-column>
-                <e-column field='UnitsInStock' headerText='Units In Stock' width='150' textAlign='Right'></e-column>
+                <e-column field='UnitsInStock' headerText='Units In Stock' width='150' textAlign='Right' editType='numericedit'></e-column>
             </e-columns>
         </ejs-grid>
     </div>

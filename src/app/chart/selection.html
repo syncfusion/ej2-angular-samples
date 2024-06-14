@@ -36,12 +36,11 @@
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 80%">
-                            <div>Enable Multi-selection:</div>
+                            <div id="multiSelection">Enable Multi-selection:</div>
                         </td>
                         <td style="width: 40%;">
                             <div>
-                                <input type="checkbox" (change)='setMultiSelect($event)' id="select"
-                                    style="margin-left: -10px">
+                                <input type="checkbox" (change)='setMultiSelect($event)' id="select" style="margin-left: -10px" aria-labelledby="Checkbox unchecked">
                             </div>
                         </td>
                     </tr>
@@ -71,10 +70,10 @@
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 50%">
-                            <div> Enable Highlight:</div>
+                            <div id="highLight"> Enable Highlight:</div>
                         </td>
                         <td>
-                            <input type="checkbox" id="highlight" style="margin-top: 15px">
+                            <input type="checkbox" id="highlight" style="margin-top: 15px" aria-labelledby="Checkbox unchecked">
                         </td>
                     </tr>
                     <tr style="height: 50px">
@@ -114,7 +113,7 @@
     </p>
     <p>Chart supports seven mode of selection which can be set using
         <code><a target="_blank" class="code"
-        href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#selectionmode-selectionmode">SelectionMode</a></code> property.
+        href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#selectionmode-selectionmode" aria-label="Navigate to the class reference for Angular Chart SelectionMode">SelectionMode</a></code> property.
     </p>
     <ul>
         <li><code>Series</code> - Select the series in chart.</li>
@@ -134,8 +133,7 @@
     </p>
     <p>
         More information on the selection feature can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/selection">documentation
-            section</a>.
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/selection" aria-label="Navigate to the documentation for Selection in Angular Chart component">documentation section</a>.
     </p>
 </div>
 <style>

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { removeClass, addClass } from '@syncfusion/ej2-base';
-import { GridLine, GridComponent, SortService, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
+import { GridLine, GridComponent, SortService, GridModule, PageService, FilterService } from '@syncfusion/ej2-angular-grids';
 import { customerData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
@@ -10,7 +10,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     selector: 'ej-gridlines',
     templateUrl: 'grid-lines.html',
     styleUrls: ['./grid-lines.style.css'],
-    providers: [SortService, PageService],
+    providers: [SortService, PageService, FilterService],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [SBActionDescriptionComponent, ToolbarModule, GridModule, SBDescriptionComponent]
@@ -18,7 +18,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 export class GridLinesComponent implements OnInit {
     public data: Object[];
     public lines: GridLine;
-
+    public filterSettings: Object;
     @ViewChild('grid')
     public grid: GridComponent;
 
@@ -29,6 +29,7 @@ export class GridLinesComponent implements OnInit {
     public ngOnInit(): void {
        this.data = customerData;
        this.lines = 'Default';
+       this.filterSettings = { type: 'Excel' };
     }
 
     public onClicked(e: HTMLElement): void {

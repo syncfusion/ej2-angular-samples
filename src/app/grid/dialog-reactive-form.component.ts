@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';
 import { orderDetails } from './data';
-import { EditService, ToolbarService, PageService, SortService, DialogEditEventArgs, SaveEventArgs, GridModule } from '@syncfusion/ej2-angular-grids';
+import { EditService, ToolbarService, PageService, SortService, FilterService, DialogEditEventArgs, SaveEventArgs, GridModule } from '@syncfusion/ej2-angular-grids';
 import { DataUtil } from '@syncfusion/ej2-data';
 import { FormGroup, AbstractControl, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Dialog } from '@syncfusion/ej2-angular-popups';
@@ -19,7 +19,7 @@ import { NgClass } from '@angular/common';
     selector: 'ej-griddialogtemplate',
     templateUrl: 'dialog-reactive-form.html',
     styleUrls: ['dialog-reactive-form.style.css'],
-    providers: [ToolbarService, EditService, PageService, SortService],
+    providers: [ToolbarService, EditService, PageService, SortService, FilterService],
     standalone: true,
     imports: [GridModule, ReactiveFormsModule, NgClass, NumericTextBoxModule, DatePickerModule, DropDownListModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
@@ -29,6 +29,7 @@ export class DialogReactiveFormComponent implements OnInit {
     public toolbar: string[];
     public orderForm: FormGroup;
     public pageSettings: Object;
+    public filterSettings: Object;
     public shipCityDistinctData: Object[];
     public shipCountryDistinctData: Object[];
     public submitClicked: boolean = false;
@@ -38,6 +39,7 @@ export class DialogReactiveFormComponent implements OnInit {
         this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Dialog' };
         this.toolbar = ['Add', 'Edit', 'Delete'];
         this.pageSettings = { pageCount: 5};
+        this.filterSettings = { type: 'Excel'};
         this.shipCityDistinctData = DataUtil.distinct(orderDetails, 'ShipCity', true);
         this.shipCountryDistinctData = DataUtil.distinct(orderDetails, 'ShipCountry', true );
     }

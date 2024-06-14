@@ -1,111 +1,112 @@
-<div id="action-description">
-    <p>
-        This sample shows live stock price data displayed in multiple circular gauges.
-    </p>
-</div>
-<div class="control-section">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="row">
-                <div class="col-sm-4">
-                    <ejs-circulargauge (load)='load($event)' background='transparent' #germanyGauge id="sample-data"
-                        style='display: block; height:250px;'>
-                        <e-axes>
-                            <e-axis startAngle=230 endAngle=130 [majorTicks]="majorTicks" [minorTicks]="minorTicks"
-                                minimum=-100 maximum=100 [labelStyle]="labelStyle" [lineStyle]="lineStyle"
-                                [ranges]="ranges" [pointers]="germanyPointer">
-                                <e-annotations>
-                                    <e-annotation [content]="annotation1" angle=180 radius='30%' zIndex='1'>
-                                    </e-annotation>
-                                    <e-annotation [content]="annotation2" angle=180 radius='65%' zIndex='1'>
-                                    </e-annotation>
-                                </e-annotations>
-                            </e-axis>
-                        </e-axes>
-                    </ejs-circulargauge>
-                </div>
-                <div class="col-sm-4">
-                    <ejs-circulargauge (load)='load($event)' background='transparent' #usaGauge id="container2"
-                        style='display: block; height:250px;'>
-                        <e-axes>
-                            <e-axis startAngle=230 endAngle=130 [majorTicks]="majorTicks" [minorTicks]="minorTicks"
-                                minimum=-100 maximum=100 [labelStyle]="labelStyle" [lineStyle]="lineStyle"
-                                [ranges]="ranges" [pointers]="usaPointer">
-                                <e-annotations>
-                                    <e-annotation [content]="annotation1" angle=180 radius='30%' zIndex='1'>
-                                    </e-annotation>
-                                    <e-annotation [content]="annotation3" angle=180 radius='65%' zIndex='1'>
-                                    </e-annotation>
-                                </e-annotations>
-                            </e-axis>
-                        </e-axes>
-                    </ejs-circulargauge>
-                </div>
-                <div class="col-sm-4">
-                    <ejs-circulargauge (load)='load($event)' background='transparent' #ukGauge id="container3"
-                        style='display: block; height:250px;'>
-                        <e-axes>
-                            <e-axis startAngle=230 endAngle=130 [majorTicks]="majorTicks" [minorTicks]="minorTicks"
-                                minimum=-100 maximum=100 [labelStyle]="labelStyle" [lineStyle]="lineStyle"
-                                [ranges]="ranges" [pointers]="ukPointer">
-                                <e-annotations>
-                                    <e-annotation [content]="annotation5" angle=180 radius='30%' zIndex='1'>
-                                    </e-annotation>
-                                    <e-annotation [content]="annotation4" angle=180 radius='65%' zIndex='1'>
-                                    </e-annotation>
-                                </e-annotations>
-                            </e-axis>
-                        </e-axes>
-                    </ejs-circulargauge>
+<main>
+    <section id="action-description" aria-label="Description of Circular Gauge sample">
+        <p>
+            This sample shows live stock price data displayed in multiple circular gauges.
+        </p>
+    </section>
+    <div class="control-section">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <ejs-circulargauge (load)='load($event)' background='transparent' #germanyGauge id="sample-data"
+                            style='display: block; height:250px;'>
+                            <e-axes>
+                                <e-axis startAngle=230 endAngle=130 [majorTicks]="majorTicks" [minorTicks]="minorTicks"
+                                    minimum=-100 maximum=100 [labelStyle]="labelStyleOne" [lineStyle]="lineStyle"
+                                    [ranges]="ranges" [pointers]="germanyPointer">
+                                    <e-annotations>
+                                        <e-annotation description="positive value gauge one image" [content]="annotation1" angle=180 radius='30%' zIndex='1'>
+                                        </e-annotation>
+                                        <e-annotation description="Germany" [content]="annotation2" angle=180 radius='65%' zIndex='1'>
+                                        </e-annotation>
+                                    </e-annotations>
+                                </e-axis>
+                            </e-axes>
+                        </ejs-circulargauge>
+                    </div>
+                    <div class="col-sm-4">
+                        <ejs-circulargauge (load)='load($event)' background='transparent' #usaGauge id="container2"
+                            style='display: block; height:250px;'>
+                            <e-axes>
+                                <e-axis startAngle=230 endAngle=130 [majorTicks]="majorTicks" [minorTicks]="minorTicks"
+                                    minimum=-100 maximum=100 [labelStyle]="labelStyleTwo" [lineStyle]="lineStyle"
+                                    [ranges]="ranges" [pointers]="usaPointer">
+                                    <e-annotations>
+                                        <e-annotation description="positive value gauge two image" [content]="annotation6" angle=180 radius='30%' zIndex='1'>
+                                        </e-annotation>
+                                        <e-annotation description="USA" [content]="annotation3" angle=180 radius='65%' zIndex='1'>
+                                        </e-annotation>
+                                    </e-annotations>
+                                </e-axis>
+                            </e-axes>
+                        </ejs-circulargauge>
+                    </div>
+                    <div class="col-sm-4">
+                        <ejs-circulargauge (load)='load($event)' background='transparent' #ukGauge id="container3"
+                            style='display: block; height:250px;'>
+                            <e-axes>
+                                <e-axis startAngle=230 endAngle=130 [majorTicks]="majorTicks" [minorTicks]="minorTicks"
+                                    minimum=-100 maximum=100 [labelStyle]="labelStyleThree" [lineStyle]="lineStyle"
+                                    [ranges]="ranges" [pointers]="ukPointer">
+                                    <e-annotations>
+                                        <e-annotation description="negative value gauge three image" [content]="annotation5" angle=180 radius='30%' zIndex='1'>
+                                        </e-annotation>
+                                        <e-annotation description="UK" [content]="annotation4" angle=180 radius='65%' zIndex='1'>
+                                        </e-annotation>
+                                    </e-annotations>
+                                </e-axis>
+                            </e-axes>
+                        </ejs-circulargauge>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-12">
-            <div class="row">
-                <ejs-grid #dataGrid [dataSource]='data'>
-                    <e-columns>
-                        <e-column field='Country' headerText='Country' width='80'></e-column>
-                        <e-column field='Sales' headerText='Sales $' width='80'></e-column>
-                        <e-column field='Target' headerText='Target $' width='80'></e-column>
-                        <e-column field='vsTarget' headerText='vs Target' width='80'></e-column>
-                    </e-columns>
-                </ejs-grid>
+            <div class="col-sm-12">
+                <div class="row">
+                    <ejs-grid #dataGrid [dataSource]='data'>
+                        <e-columns>
+                            <e-column field='Country' headerText='Country' width='80'></e-column>
+                            <e-column field='Sales' headerText='Sales $' width='80'></e-column>
+                            <e-column field='Target' headerText='Target $' width='80'></e-column>
+                            <e-column field='vsTarget' headerText='vs Target' width='80'></e-column>
+                        </e-columns>
+                    </ejs-grid>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div id="description">
-    <p>
-        The pointer value in the circular gauge can be dynamically updated using the <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/#setpointervalue">setPointerValue</a>
-        method. In this example, the stock price changes across countries are displayed in multiple circular gauges.
-    </p>
-    <p>
-        More information on the circular gauge can be found in this <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/getting-started/"> documentation
-            section</a>.
-    </p>
-</div>
-<style>
-    .control-section {
-        min-height: 450px;
-    }
-
-    .imageStyle {
-        width: 16px;
-        height: 16px;
-        margin-top: 4px;
-    }
-
-    .fontDes {
-        float: right;
-        padding-left: 5px;
-        color: #424242;
-        font-size: 20px;
-    }
-
-    .fontDes1 {
-        color: #9E9E9E;
-        font-size: 16px;
-    }
-</style>
+    <section id="description" aria-label="Description of the Circular Gauge features demonstrated in this sample">
+        <p>
+            The pointer value in the circular gauge can be dynamically updated using the <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/#setpointervalue">setPointerValue</a>
+            method. In this example, the stock price changes across countries are displayed in multiple circular gauges.
+        </p>
+        <p>
+            More information on the circular gauge can be found in this <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/getting-started/"> documentation
+                section</a>.
+        </p>
+    </section>
+    <style>
+        .control-section {
+            min-height: 450px;
+        }
+    
+        .imageStyle {
+            width: 16px;
+            height: 16px;
+            margin-top: 4px;
+        }
+    
+        .fontDes {
+            float: right;
+            padding-left: 5px;
+            font-size: 20px;
+        }
+    
+        .fontDes1 {
+            color: #9E9E9E;
+            font-size: 16px;
+        }
+    </style>
+</main>

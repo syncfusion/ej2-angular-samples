@@ -76,12 +76,14 @@ export class ArcGaugeComponent {
     };
 
     public annotaions: Object = [{
+        description:'RangeBar pointer value from the slider',
         content: '<div id="pointervalue" style="font-size:35px;width:120px;text-align:center;">' +
             sliderValue.toString() + '/100</div>',
         angle: 0,
         zIndex: '1',
         radius: '0%'
     }, {
+        description: 'Slider',
         content: '<div id="slider" style="height:70px;width:250px;"></div>',
         angle: 0,
         zIndex: '1',

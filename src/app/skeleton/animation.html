@@ -4,7 +4,7 @@
             <button id="reloadSkeleton" class="e-btn e-primary" (click)="reload()">Reload</button>
         </div>
         <div class="col-sm-6">
-            <h5>Fade Effect</h5>
+            <p class="displayText">Fade Effect</p>
             <br />
             <div *ngIf="isDataLoading; else fadeBlock">
                 <div id="skeletonCard" class="e-card">
@@ -47,7 +47,7 @@
             </ng-template>
         </div>
         <div class="col-sm-6">
-            <h5>Pulse Effect</h5>
+            <p class="displayText">Pulse Effect</p>
             <br />
             <div class="skeleton-listcard e-card">
                 <ul id="skeleton-list" *ngIf="isDataLoading; else pulseBlock" class="e-card">

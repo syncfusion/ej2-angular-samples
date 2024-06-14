@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { orderDetails } from './data';
-import { EditService, ToolbarService, PageService, SortService, GridModule } from '@syncfusion/ej2-angular-grids';
+import { EditService, ToolbarService, PageService, SortService, FilterService, GridModule } from '@syncfusion/ej2-angular-grids';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej-griddialogedit',
     templateUrl: 'dialog-editing.html',
-    providers: [ToolbarService, EditService, PageService, SortService],
+    providers: [ToolbarService, EditService, PageService, SortService, FilterService],
     standalone: true,
     imports: [GridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
@@ -19,6 +19,7 @@ export class DialogEditComponent implements OnInit {
     public customeridrules: Object;
     public freightrules: Object;
     public pageSettings: Object;
+    public filterSettings: Object;
     public editparams: Object;
 
     public ngOnInit(): void {
@@ -30,5 +31,6 @@ export class DialogEditComponent implements OnInit {
         this.freightrules =  { required: true };
         this.editparams = { params: { popupHeight: '300px' }};
         this.pageSettings = { pageCount: 5};
+        this.filterSettings = { type: 'Excel'};
     }
 }

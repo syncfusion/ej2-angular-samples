@@ -57,8 +57,8 @@ export class GanttSortingAPIComponent implements OnInit {
         this.splitterSettings = {
             columnIndex: 2
         };
-        this.projectStartDate = new Date('03/25/2019');
-        this.projectEndDate = new Date('07/28/2019');
+        this.projectStartDate = new Date('03/25/2024');
+        this.projectEndDate = new Date('07/28/2024');
         this.dropDownColumnListData = [
             { id: 'TaskID', type: 'TaskID' },
             { id: 'TaskName', type: 'TaskName' },

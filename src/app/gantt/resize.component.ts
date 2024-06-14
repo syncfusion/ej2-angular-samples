@@ -46,7 +46,7 @@ export class ResizeComponent implements OnInit {
         this.labelSettings = {
             rightLabel: 'TaskName'
         };
-        this.projectStartDate= new Date('03/25/2019');
-        this.projectEndDate= new Date('07/28/2019');
+        this.projectStartDate= new Date('03/25/2024');
+        this.projectEndDate= new Date('07/28/2024');
     }
 }

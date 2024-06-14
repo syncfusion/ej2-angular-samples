@@ -17,8 +17,9 @@
     <link rel="manifest" href="./manifest.webmanifest">
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./styles/roboto.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"></link>
-    <link href="./styles/material.css" rel="stylesheet" id="themelink" />
+    <link href="./styles/fluent2.css" rel="stylesheet" id="themelink" />
     <link href="./styles/index.css" rel="stylesheet" />
     <link href="./styles/codemirror/codemirror.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/highlight.css">
@@ -27,8 +28,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reflect-metadata/0.1.10/Reflect.min.js"></script>
     <script type="text/javascript">
         if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
-            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"><\/script>');
-            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.14/moment-timezone-with-data.min.js"><\/script>');
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"><\/script>');
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"><\/script>');
             if (window.NodeList && !NodeList.prototype.forEach) {
                 NodeList.prototype.forEach = Array.prototype.forEach;
             }
@@ -57,7 +58,7 @@
                 <div class="sb-header-item sb-table-cell">
                     <div id="sb-header-text" class="e-sb-header-text">
                         <span class="sb-header-text-left">Essential Studio for</span>
-                        <span class="sb-header-text-right"  role="button" tabindex="0" style="cursor:pointer;">Angular</span>
+                        <span class="sb-header-text-right" role="button" tabindex="0" style="cursor:pointer;">Angular</span>
                     </div>
                 </div>
                 <div class="sb-header-item sb-table-cell sb-lang-toggler-wrapper" style="cursor:pointer;">
@@ -75,6 +76,25 @@
                         </div>
                     </div>
                 </div>
+                <div class="sb-header-item sb-table-cell" id="sb-dark-theme">
+                    <div class="sb-switch-btn" role="button" data-theme="dark" id="buttoncolor"
+                        aria-label="Toggle dark theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" id="dark-icon"
+                        width="16" height="14" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16">
+                        <path
+                            d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"
+                        id="light-icon" width="16" height="14" fill="currentColor" class="bi bi-sun"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+                    </svg>
+                    <span id="sb-dark-span"></span>
+                </div>
+                </div>
+
+                <div class="sb-theme-splitter sb-download-splitter"></div>
                 <div class="sb-header-item sb-table-cell sb-search-wrapper">
                     <div class="sb-search-btn" id="sb-trigger-search" role="button" tabindex="0" aria-label="toggle sample search" style="cursor:pointer;">
                         <span class="sb-settings sb-icons sb-icon-Search" role="presentation"></span>
@@ -136,69 +156,29 @@
             </div>
             <div id="theme-switcher-popup" class="sb-theme-popup" style="padding-top: 0px;">
                 <ul id="themelist" class="options">
-                    <li class="e-list" id="fluent">
-                        <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
-                        <span class="switch-text">Fluent</span>
-                    </li>
-                    <li class="e-list" id="fluent-dark">
-                        <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
-                        <span class="switch-text">Fluent Dark</span>
+                    <li class="active e-list" id="material3">
+                        <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
+                        <span class="switch-text">Material 3</span>
                     </li>
                     <li class="e-list" id="bootstrap5">
                         <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
-                        <span class="switch-text">Bootstrap v5</span>
+                        <span class="switch-text">Bootstrap 5</span>
                     </li>
-                    <li class="e-list" id="bootstrap5-dark">
-                        <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
-                        <span class="switch-text">Bootstrap v5 Dark</span>
+                    <li class="e-list" id="fluent2">
+                        <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Fluent 2</span>
                     </li>
                     <li class="e-list" id="tailwind">
-                    <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
-                    <span class="switch-text">Tailwind CSS</span>
-                    </li>
-                    <li class="e-list" id="tailwind-dark">
                         <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
-                        <span class="switch-text">Tailwind CSS Dark</span>
-                    </li>
-                    <li class="e-list" id="material">
-                        <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
-                        <span class="switch-text">Material</span>
-                    </li>
-                    <li class="e-list" id="material-dark">
-                        <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
-                        <span class="switch-text">Material Dark</span>
-                    </li>
-                    <li class="active e-list" id="material3">
-                      <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
-                      <span class="switch-text">Material 3</span>
-                      </li>
-                    <li class="e-list" id="material3-dark">
-                        <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
-                        <span class="switch-text">Material 3 Dark</span>
-                    </li>
-                    <li class="e-list" id="fabric">
-                        <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
-                        <span class="switch-text">Fabric</span>
-                    </li>
-                    <li class="e-list" id="fabric-dark">
-                        <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
-                        <span class="switch-text">Fabric Dark</span>
-                    </li>
-                    <li class="e-list" id="bootstrap4">
-                        <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
-                        <span class="switch-text">Bootstrap v4</span>
-                    </li>
-                    <li class="e-list" id="bootstrap">
-                        <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
-                        <span class="switch-text">Bootstrap</span>
-                    </li>
-                    <li class="e-list" id="bootstrap-dark">
-                        <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
-                        <span class="switch-text">Bootstrap Dark</span>
+                        <span class="switch-text">Tailwind CSS</span>
                     </li>
                     <li class="e-list" id="highcontrast">
                         <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
                         <span class="switch-text">High Contrast</span>
+                    </li>
+                    <li class="e-list" id="fluent">
+                        <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Fluent</span>
                     </li>
                 </ul>
                   <div class="sb-theme-studio"><a target="_blank" href="https://ej2.syncfusion.com/themestudio/?theme=material" aria-label="Go to Theme Studio">Go to Theme Studio</a></div>
@@ -216,22 +196,28 @@
                         </div>
                         <div class="setting-content  setting-theme-change">
                             <select id="sb-setting-theme" class="sb-setting-theme-select">
-                                <option value="fluent">Fluent</option>
-                                <option value="fluent-dark">Fluent Dark</option>
-                                <option value="bootstrap5">Bootstrap v5</option>
-                                <option value="bootstrap5-dark">Bootstrap v5 Dark</option>
-                                <option value="tailwind">Tailwind CSS</option>
-                                <option value="tailwind-dark">Tailwind CSS Dark</option>
-                                <option value="material">Material</option>
-                                <option value="material-dark">Material Dark</option>
                                 <option value="material3">Material 3</option>
-                                <option value="material3-dark">Material 3 Dark</option>
-                                <option value="fabric">Fabric</option>
-                                <option value="fabric-dark">Fabric Dark</option>
-                                <option value="bootstrap4">Bootstrap v4</option>
-                                <option value="bootstrap">Bootstrap</option>
-                                <option value="bootstrap-dark">Bootstrap Dark</option>
+                                <option value="bootstrap5">Bootstrap 5</option>
+                                <option value="fluent2">Fluent 2</option>
+                                <option value="tailwind">Tailwind CSS</option>
                                 <option value="highcontrast">High Contrast</option>
+                                <option value="fluent">Fluent</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class='sb-setting-item sb-setting-theme-section' id="mobiledarkswitch">
+                        <div class='setting-label'>
+                            <div> <svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px;"
+                                    width="16" height="14" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+                                </svg></div>
+                            <div class='sb-setting-text'>Theme Mode</div>
+                        </div>
+                        <div class='setting-content  setting-theme-change'>
+                            <select id='sb-theme-mode' class='sb-setting-theme-select'>
+                                <option value="lightMode">Light mode</option>
+                                <option value="darkMode">Dark mode</option>
                             </select>
                         </div>
                     </div>

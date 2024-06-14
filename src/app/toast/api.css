@@ -24,3 +24,9 @@
     #toastBtnHide{
         margin-left: 3px;
     }
+    .input-form .h4,
+    .input-form.e-group .h4 {
+      font-size: 16px;
+      margin: 0 0 10px;
+      font-weight: bold;
+  }

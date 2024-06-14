@@ -7,7 +7,7 @@
 <div id="multiselect-sample" class="control-section">
     <div class="col-lg-8 content-wrapper">
         <div class="control-styles">
-            <h4>CheckBox</h4>
+            <label class="h4">CheckBox</label>
             <ejs-multiselect id='multiselect-checkbox' #checkbox [dataSource]='countries' [placeholder]='checkWaterMark' [fields]='checkFields'
                 [mode]='mode' [popupHeight]='popHeight' [showDropDownIcon]='true' showSelectAll='true' [filterBarPlaceholder]='filterPlaceholder'></ejs-multiselect>
         </div>
@@ -58,3 +58,11 @@
     <p>The checkbox sample illustrates using the countries data.</p>
 
 </div>
+<style>
+    .control-styles .h4 {
+        font-size: 16px;
+        margin: 0 0 10px;
+        font-weight: bold;
+    }
+
+</style>

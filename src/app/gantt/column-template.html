@@ -1,9 +1,9 @@
 <div id="action-description">
-	<p>This sample demonstrates the usage of template columns in Gantt. 
+	<p>This sample demonstrates the usage of template columns in Gantt.
         In this sample, we have shown custom images in the Resources column.</p>
 </div>
 <div class="control-section">
-    <ejs-gantt id="columnTemplate" height="430px" [dataSource]="data" [taskFields]="taskSettings" 
+    <ejs-gantt id="columnTemplate" height="430px" [dataSource]="data" [taskFields]="taskSettings"
         [labelSettings]="labelSettings" [splitterSettings]="splitterSettings" [rowHeight]=60 [treeColumnIndex]=1
         height="450px" [allowSelection]="true" [resourceFields] = "resourceFields" (queryCellInfo)="queryCellInfo($event)"
         [resources]="resources" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true">
@@ -13,7 +13,7 @@
             <e-column field='resources' headerText='Resources' width='250'>
                 <ng-template #template let-data>
                    <div class="image" *ngIf = data.ganttProperties.resourceNames>
-                        <img src="https://ej2.syncfusion.com/angular/demos/assets/gantt/images/{{data.ganttProperties.resourceNames}}.png" style="height:40px;width:40px" /><div style="display:inline-block;width:100%;position:relative;">{{data.ganttProperties.resourceNames}}</div>
+                        <img src="https://ej2.syncfusion.com/angular/demos/assets/gantt/images/{{data.ganttProperties.resourceNames}}.png" style="height:40px;width:40px" alt="{{data.ganttProperties.resourceNames}}"/><div style="display:inline-block;width:100%;position:relative;">{{data.ganttProperties.resourceNames}}</div>
                     </div>
                 </ng-template>
             </e-column>

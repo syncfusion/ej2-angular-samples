@@ -1,121 +1,139 @@
-<div class="control-section">
-    <div class="col-lg-9" align='center'>
-        <ejs-treemap id='container'  #treemap style="display:block;" [titleSettings] = 'titleSettings' [dataSource] ='dataSource' [weightValuePath] ='weightValuePath'
-        [tooltipSettings] = 'tooltipSettings' [leafItemSettings] = 'leafItemSettings' [palette] ='palette'  format ='n' useGroupingSeparator ="true"  enableDrillDown = "true" (load)='load($event)'  (drillStart)='drillStart($event)'(tooltipRendering)='tooltipRendering($event)' >
-        <e-levels>
-            <e-level groupPath= 'Continent' [border]='border' > </e-level>
-            <e-level groupPath= 'States' [border]='border' >  </e-level> 
-            <e-level groupPath= 'Region' showHeader= 'false' [border]='border' >     
-            </e-level>  
-            </e-levels>     
-    </ejs-treemap>
-	<div style="float: right; margin-right: 10px;">Source:
-        <a href="https://en.wikipedia.org/wiki/List_of_continents_by_population" target="_blank">en.wikipedia.org</a>
-    </div>
-    </div>
-    
-    <div class="col-lg-3 property-section">
-        <div class="property-panel-header">Properties</div>
-        <table id="property" title="Properties" style="width: 100%">
-            <colgroup>
-                <col span="1" style="width: 50%;">
-                <col span="1" style="width: 50%;">
-            </colgroup>
-                <tr style="height: 50px">
+<main>
+    <div class="control-section">
+        <div class="col-lg-9" align='center'>
+            <ejs-treemap id='container' #treemap style="display:block;" [titleSettings] = 'titleSettings' [dataSource] ='dataSource' [weightValuePath] ='weightValuePath'
+            [tooltipSettings] = 'tooltipSettings' [leafItemSettings] = 'leafItemSettings' [palette] ='palette'  format ='n' useGroupingSeparator ="true"  enableDrillDown = "true" (load)='load($event)'  (drillStart)='drillStart($event)'(tooltipRendering)='tooltipRendering($event)' >
+            <e-levels>
+                <e-level groupPath= 'Continent' [border]='border' > </e-level>
+                <e-level groupPath= 'States' [border]='border' >  </e-level> 
+                <e-level groupPath= 'Region' showHeader= 'false' [border]='border' >     
+                </e-level>  
+                </e-levels>     
+        </ejs-treemap>
+        <div style="float: right; margin-right: 10px;">Source:
+            <a href="https://en.wikipedia.org/wiki/List_of_continents_by_population" target="_blank">en.wikipedia.org</a>
+        </div>
+        </div>
+        
+        <div class="col-lg-3 property-section">
+            <div class="property-panel-header">Properties</div>
+            <table id="property" title="Properties" style="width: 100%" role="none">
+                <colgroup>
+                    <col span="1" style="width: 50%;">
+                    <col span="1" style="width: 50%;">
+                </colgroup>
+                    <tr style="height: 50px">
                     <td>
                         <div class="property-text">Drill Down View</div>
                     </td>
                     <td style="width: 70%;">
-                        <div style="margin-left: 20px">
+                        <div class="drilldownCheckBox">
                             <input type="checkbox" id="drillView"/>
                         </div>
                     </td>
-                </tr>
-                </table>
-                <table id="property" title="Properties" style="width: 100%">   
-                    <colgroup>
-                        <col span="1" style="width: 50%;">
-                        <col span="1" style="width: 50%;">
-                    </colgroup>                                                   
-                <tr style="height: 50px">
+                    </tr>
+                    </table>
+                    <table id="property" title="Properties" style="width: 100%" role="none">   
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>                                                   
+                    <tr style="height: 50px">
                     <td>
                         <div class="property-text">Enable Bread Crumb</div>
                     </td>
                     <td>
-                        <div style="margin-left: 20px">
+                        <div class="drilldownCheckBox">
                             <input type="checkbox" id="breadCrumb" />
                         </div>
                     </td>
-                </tr>
-                </table>
-                <table id="property" title="Properties" style="width: 100%">
-                    <colgroup>
-                        <col span="1" style="width: 50%;">
-                        <col span="1" style="width: 50%;">
-                    </colgroup>
-                <tr style="height: 50px">
-                    <td>
-                        <div class="property-text">Bread Crumb Connector</div>
-                    </td>
-                    <td style="width: 70%;">
-                        <div style="margin-left: 20px">
-                            <input type="text" id="connectorText" value=' - ' disabled= true style="width: 100%;"/>
-                        </div>
-                    </td>
-                </tr>
-                </table>
-                <table id="property" title="Properties" style="width: 100%">
-                    <colgroup>
-                        <col span="1" style="width: 50%;">
-                        <col span="1" style="width: 50%;">
-                    </colgroup>
-                <tr style="height: 50px">
-                    <td>
-                        <div class="property-text">Header Alignment</div>
-                    </td>
-                    <td style="width: 60%;">
-                        <div style="margin-left: 20px">
-                            <select name="selectIndex" id="header">
-                                <option value="Near" selected>Near</option>
-                                <option value="Far">Far</option>
-                                <option value="Center">Center</option>
-                            </select>
-                        </div>
-                    </td>
-                </tr>
-                </table>
-                <table id="property" title="Properties" style="width: 100%">
-                    <colgroup>
-                        <col span="1" style="width: 50%;">
-                        <col span="1" style="width: 50%;">
-                    </colgroup>
-                <tr style="height: 50px">
-                    <td>
-                        <div class="property-text">Label Alignment</div>
-                    </td>
-                    <td style="width: 60%;">
-                        <div style="margin-left: 20px">
-                            <select name="selectIndex" id="label">
-                                <option value="Near" selected>Near</option>
-                                <option value="Far">Far</option>
-                                <option value="Center">Center</option>
-                            </select>
-                        </div>
-                    </td>
-                </tr>
-        </table>
+                    </tr>
+                    </table>
+                    <table title="Properties" style="width: 100%" role="none">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
+                    <tr style="height: 50px">
+                        <td>
+                            <div class="property-text">Bread Crumb Connector</div>
+                        </td>
+                        <td style="width: 70%;">
+                            <div class="drilldownCheckBox">
+                                <ejs-textbox
+                                id="connectorText"
+                                style="width: 90%" value=" - "
+                                [enabled]="false"
+                                (change)="change($event)"
+                                ></ejs-textbox>
+                            </div>
+                        </td>
+                    </tr>
+                    </table>
+                    <table title="Properties" style="width: 100%" role="none">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
+                    <tr style="height: 50px">
+                        <td>
+                            <div class="property-text">Header Alignment</div>
+                        </td>
+                        <td style="width: 60%;">
+                            <div style="margin-left: 20px">
+                                <select name="selectIndex" id="header">
+                                    <option value="Near" selected>Near</option>
+                                    <option value="Far">Far</option>
+                                    <option value="Center">Center</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    </table>
+                    <table title="Properties" style="width: 100%" role="none">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
+                    <tr style="height: 50px">
+                        <td>
+                            <div class="property-text">Label Alignment</div>
+                        </td>
+                        <td style="width: 60%;">
+                            <div style="margin-left: 20px">
+                                <select name="selectIndex" id="label">
+                                    <option value="Near" selected>Near</option>
+                                    <option value="Far">Far</option>
+                                    <option value="Center">Center</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+            </table>
+        </div>
     </div>
-</div>
-<div id="action-description">
-    <p>
-        This sample demonstrates drill down with the continents in top level, followed by regions and countries. By clicking a continent, you can view the items available in that continent more clearly.
-    </p>
-</div>
-<div id="description">
-    <p>
-        In this example you can see how to render treemap with multiple items and drill it further.Tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item in touch enabled devices.
-    </p>
-   
+    <style>
+        .drilldownCheckBox {
+            margin-left: 20px;
+        }
+        .e-view.fluent2 #property .drilldownCheckBox {
+            margin-left: 16px;
+        }
+        .e-view.fluent2-dark #property .drilldownCheckBox {
+            margin-left: 10px;
+        }
+    </style>
+    <section id="action-description" aria-label="Description of TreeMap sample">
+        <p>
+            This sample demonstrates drill down with the continents in top level, followed by regions and countries. By clicking a continent, you can view the items available in that continent more clearly.
+        </p>
+    </section>
+    <section id="description" aria-label="Description of the TreeMap features demonstrated in this sample">
+        <p>
+            In this example you can see how to render treemap with multiple items and drill it further.Tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item in touch enabled devices.
+        </p>
+       
+        
     
-
-</div>
+    </section>
+</main>

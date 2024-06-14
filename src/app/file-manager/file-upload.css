@@ -39,3 +39,7 @@
 .bootstrap5-dark #openBtn {
     top: 16px;
 }
+
+.fluent2 .fileupload .e-file-select-wrap {
+    padding: 20px 0 20px 20px;
+}

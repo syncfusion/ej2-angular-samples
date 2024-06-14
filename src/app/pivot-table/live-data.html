@@ -23,17 +23,20 @@
             Displayed the <strong>"Change(%)"</strong> values in the pivot table as red for negative values and
             green for positive values using the cell template concept.
         </li>
-    </ul>
+    </ul><br />
+    <p>
+        More information on the Essential JS2 Pivot Table can be found in these <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/row-and-column#cell-template">Cell Template</a> & <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/pivot-chart">Pivot Chart</a> documentation section.
+    </p>
 </div>
 <div>
     <div class='control-pane'>
         <div class="control-section">
             <div style="margin-bottom: 10px">
-                <h4 style="display: inline-block; fontSize: 14px; paddingLeft: 5px">
-                    <strong>Feed Delay(ms)</strong>:
-                </h4>
+                <strong style="display: inline-block; font-size: 14px; padding-Left: 5px">Feed Delay(ms):</strong>
                 <ejs-numerictextbox #feeddelay format="N0" value="5000" min="5000" step="1000" width="150px"
-                    style="margin-left: 7px;">
+                    style="margin-left: 7px;" placeholder="0">
                 </ejs-numerictextbox>
                 <button #update id="update1" ejs-button (click)="updateClick()" style="margin-left: 10px;">
                     Start Updating...

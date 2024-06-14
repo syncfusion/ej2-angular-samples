@@ -618,6 +618,32 @@ export class RightToLeftComponent implements OnInit {
     onCreate(): void {
         let titleBarElement: HTMLElement = document.getElementById('default_title_bar');
         this.titleBar = new TitleBar(titleBarElement, this.container.documentEditor, true, true);
+      this.container.toolbarItems = ['New', 'Open', 'Separator', 'Undo',
+        'Redo',
+        'Separator',
+        'Image',
+        'Table',
+        'Hyperlink',
+        'Bookmark',
+        'TableOfContents',
+        'Separator',
+        'Header',
+        'Footer',
+        'PageSetup',
+        'PageNumber',
+        'Break',
+        'Separator',
+        'Find',
+        'Separator',
+        'Comments',
+        'TrackChanges',
+        'Separator',
+        'LocalClipboard',
+        'RestrictEditing',
+        'Separator',
+        'FormFields',
+        'UpdateFields',
+    ];
         this.container.documentEditor.open(JSON.stringify(rtlDocument));
         this.container.documentEditor.documentName = 'الشروع';
         this.container.documentEditorSettings.showRuler = true;

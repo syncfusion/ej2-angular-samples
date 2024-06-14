@@ -39,34 +39,29 @@ export class OverviewComponent implements OnInit {
     @ViewChild('pivotview')
     public pivotObj: PivotView;
 
-    queryCell(args: QueryCellInfoEventArgs): void {
-        (this.pivotObj.renderModule as any).rowCellBoundEvent(args);
-        let cellInfo: IAxisSet = args.data[Number(args.cell.getAttribute('data-colindex'))] as IAxisSet;
-        if (cellInfo && cellInfo.axis === 'value' && this.pivotObj.pivotValues[cellInfo.rowIndex] && ((this.pivotObj.pivotValues[cellInfo.rowIndex][0]) as IAxisSet).hasChild) {
-            if (args.cell.classList.contains(cellInfo.cssClass)) {
-                args.cell.classList.remove(cellInfo.cssClass);
-                cellInfo.style = undefined;
-            }
+    getCellContent(args: any): string {
+        if (args.cellInfo && args.cellInfo.axis === 'value' && this.pivotObj.pivotValues[args.cellInfo.rowIndex] && this.pivotObj.pivotValues[args.cellInfo.rowIndex][0].hasChild) {
+          if (args.targetCell.classList.contains(args.cellInfo.cssClass)) {
+            args.targetCell.classList.remove(args.cellInfo.cssClass);
+            args.cellInfo.style = undefined;
+          }
         }
-        if (cellInfo && cellInfo.axis === 'row' && cellInfo.valueSort.axis === 'university') {
-            let imgElement: Element = createElement('img', {
-                className: 'university-logo',
-                attrs: {
-                    'src': Universitydata[cellInfo.index[0]].logo as string,
-                    'alt': cellInfo.formattedText as string,
-                    'width': '30',
-                    'height': '30'
-                },
-            });
-            let cellValue: Element = select('.e-cellvalue', args.cell);
-            cellValue.classList.add('e-hyperlinkcell');
-            cellValue.addEventListener('click', this.hyperlinkCellClick.bind(this.pivotObj));
-            args.cell.insertBefore(imgElement, cellValue);
+        if (args.cellInfo && args.targetCell.querySelectorAll('.university-logo').length === 0 && args.cellInfo.axis === 'row' && args.cellInfo.valueSort.axis === 'university') {
+          let imgElement = createElement('img', {
+            className: 'university-logo',
+            attrs: {
+              'src': Universitydata[args.cellInfo.index[0]].logo as string,
+              'alt': args.cellInfo.formattedText,
+              'width': '30',
+              'height': '30'
+            },
+          });
+          let cellValue = select('.e-cellvalue', args.targetCell);
+          cellValue.classList.add('e-hyperlinkcell');
+          cellValue.addEventListener('click', this.hyperlinkCellClick.bind(this));
+          args.targetCell.insertBefore(imgElement, cellValue);
         }
-    }
-
-    enginePopulated(): void {
-        this.pivotObj.grid.queryCellInfo = this.queryCell.bind(this);
+        return '';
     }
 
     hyperlinkCellClick(args: MouseEvent) {
@@ -177,7 +172,7 @@ export class OverviewComponent implements OnInit {
                 let selectedTheme: string = location.hash.split('/')[1];
                 selectedTheme = selectedTheme ? selectedTheme : 'Material';
                 (args as ILoadedEventArgs).chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() +
-                    selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
+                    selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
             }) as any
         } as ChartSettings;
 

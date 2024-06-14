@@ -5,20 +5,20 @@
 <div class="control-section">
     <div class="content-wrapper">
         <div id='local' class='col-lg-6' style="margin: 0 auto;padding-top: 25px;">
-            <div style="width: 250px;margin: 0 auto;">
-                <h4> Local Data</h4>
+            <div class='drop-down-list-content'>
+                <label class="h4">Local Data</label>
                 <ejs-combobox id='local' #sample1 [dataSource]='records' [placeholder]='waterMark' [fields]='fields' [allowFiltering]='true' [enableVirtualization]='true' popupHeight='200px'></ejs-combobox>
             </div>
         </div>
         <div id='remote' class='col-lg-6' style="margin: 0 auto;padding-top: 25px;">
-            <div style="width: 250px;margin: 0 auto;">
-                <h4>Remote Data</h4>
+            <div class='drop-down-list-content'>
+                <label class="h4">Remote Data</label>
                 <ejs-combobox id='remote' #sample2 [dataSource]='customerData' [placeholder]='customerWaterMark' [fields]='customerField' [allowFiltering]='true' [enableVirtualization]='true' popupHeight='200px'></ejs-combobox>
             </div>
         </div>
         <div id='remote' class='col-lg-6' style="margin: 0 auto;padding-top: 25px;">
-            <div style="width: 250px;margin: 0 auto;">
-                <h4>Grouping</h4>
+            <div class='drop-down-list-content'>
+                <label class="h4">Grouping</label>
                 <ejs-combobox id='group' #sample3 [dataSource]='records' [placeholder]='waterMark' [fields]='groupField' [allowFiltering]='true' [enableVirtualization]='true' popupHeight='200px'></ejs-combobox>
             </div>
         </div>
@@ -31,3 +31,14 @@
     <p>To perform the virtualization feature in the ComboBox, the <code>VirtualScroll</code> module has to be injected at the application level.</p>
 
 </div>
+<style>
+    .drop-down-list-content {
+        margin: 0 auto; 
+        width: 250px;
+    }
+    .drop-down-list-content .h4 {
+        font-size: 16px;
+        margin: 0 0 10px;
+        font-weight: bold;
+    }
+</style>

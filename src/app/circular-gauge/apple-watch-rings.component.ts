@@ -24,6 +24,37 @@ export class AppleWatchComponent {
     };
 
     public labelStyle: Object = {
+        format:'{value} %',
+        font: {
+            size: '0px',
+            color: 'transparent'
+        },
+        position: 'Inside',
+        useRangeColor: true
+    };
+
+    public labelStyleRed: Object = {
+        format:'Red {value} %',
+        font: {
+            size: '0px',
+            color: 'transparent'
+        },
+        position: 'Inside',
+        useRangeColor: true
+    };
+
+    public labelStyleGreen: Object = {
+        format:'Green {value} %',
+        font: {
+            size: '0px',
+            color: 'transparent'
+        },
+        position: 'Inside',
+        useRangeColor: true
+    };
+
+    public labelStyleBlue: Object = {
+        format:'Blue {value} %',
         font: {
             size: '0px',
             color: 'transparent'
@@ -56,6 +87,7 @@ export class AppleWatchComponent {
     public pointers: Object[] = [{
         roundedCornerRadius: 25,
         value: 65,
+        description:'Rangebar pointer value :65',
         type: 'RangeBar',
         radius: '90%',
         color: '#fa114f',
@@ -64,6 +96,7 @@ export class AppleWatchComponent {
     },
     {
         roundedCornerRadius: 25,
+        description:'Rangebar pointer value :43',
         value: 43,
         type: 'RangeBar',
         radius: '68%',
@@ -73,6 +106,7 @@ export class AppleWatchComponent {
     },
     {
         roundedCornerRadius: 25,
+        description:'Rangebar pointer value: 58',
         value: 58,
         type: 'RangeBar',
         radius: '46%',
@@ -91,13 +125,13 @@ export class AppleWatchComponent {
 
     public annotaions: Object = [{
         angle: 8, radius: '80%', zIndex: '1',
-        content: '<div id="annotation1"><img style="width:22px;height:22px;" src="./assets/circular-gauge/images/image1.svg" /></div>'
+        description: 'The Gauge is indicated with a red arrow', content: '<div id="annotation1"><img alt="Red arrow" style="width:22px;height:22px;" src="./assets/circular-gauge/images/image1.svg" /></div>'
     }, {
-        angle: 11, radius: '58%', zIndex: '1',
-        content: '<div id="annotation2"><img style="width:22px;height:22px;" src="./assets/circular-gauge/images/image2.svg" /></div>'
+        angle: 11, radius: '58%', zIndex: '1',  description: 'The Gauge is indicated with a green arrow',
+        content: '<div id="annotation2"><img alt="Green arrow" style="width:22px;height:22px;" src="./assets/circular-gauge/images/image2.svg" /></div>'
     }, {
-        angle: 16, radius: '36%', zIndex: '1',
-        content: '<div id="annotation3"><img style="width:22px;height:22px;" src="./assets/circular-gauge/images/image3.svg" /></div>'
+        angle: 16, radius: '36%', zIndex: '1',  description: 'The Gauge is indicated with a blue arrow',
+        content: '<div id="annotation3"><img alt="Blue arrow" style="width:22px;height:22px;" src="./assets/circular-gauge/images/image3.svg" /></div>'
     }];
 
     public redGaugeRange: Object[] = [
@@ -111,6 +145,7 @@ export class AppleWatchComponent {
     public redGaugePointer: Object[] = [{
         roundedCornerRadius: 5,
         value: 65,
+        description:'Rangebar pointer value : 65',
         type: 'RangeBar',
         radius: '100%',
         color: '#fa114f',
@@ -119,8 +154,8 @@ export class AppleWatchComponent {
     }];
 
     public redGaugeAnnotaion: Object = [{
-        angle: 0, radius: '0%', zIndex: '1',
-        content: '<div id="annotation4"><img class="firstAnnotation" src="./assets/circular-gauge/images/image1.svg" /></div>'
+        angle: 0, radius: '0%', zIndex: '1',  description: 'The small gauge is indicated with a red arrow',
+        content: '<div id="annotation4"><img alt="Arrow placed within the small red gauge" class="firstAnnotation" src="./assets/circular-gauge/images/image1.svg" /></div>'
     }];
 
     public greenGaugeRange: Object[] = [
@@ -134,6 +169,7 @@ export class AppleWatchComponent {
     public greenGaugePointer: Object[] = [{
         roundedCornerRadius: 5,
         value: 43,
+        description:'Rangebar pointer value : 43',
         type: 'RangeBar',
         radius: '100%',
         color: '#99ff01',
@@ -142,21 +178,22 @@ export class AppleWatchComponent {
     }];
 
     public greenGaugeAnnotaion: Object = [{
-        angle: 0, radius: '0%', zIndex: '1',
-        content: '<div id="annotation6"><img class="secondAnnotation" src="./assets/circular-gauge/images/image2.svg" /></div>'
+        angle: 0, radius: '0%', zIndex: '1', description: 'The small gauge is indicated with a green arrow',
+        content: '<div id="green_gauge_annotation"><img class="secondAnnotation" alt="Arrow placed within the small green gauge" src="./assets/circular-gauge/images/image2.svg" /></div>'
     }];
 
     public blueGaugeRange: Object[] = [
-        {
+    {
             start: 0, end: 100,
             radius: '100%',
             startWidth: 8, endWidth: 8,
             color: '#00d8fe', opacity: 0.2
-        }];
-
+    }];
+	
     public blueGaugePointer: Object[] = [{
         roundedCornerRadius: 5,
         value: 58,
+        description:'Rangebar pointer value: 58',
         type: 'RangeBar',
         radius: '100%',
         color: '#00d8fe',
@@ -165,8 +202,8 @@ export class AppleWatchComponent {
     }];
 
     public blueGaugeAnnotaion: Object = [{
-        angle: 0, radius: '0%', zIndex: '1',
-        content: '<div id="annotation6"><img class="thirdAnnotation" src="./assets/circular-gauge/images/image3.svg" /></div>'
+        angle: 0, radius: '0%', zIndex: '1', description: 'The small gauge is indicated with a blue arrow',
+        content: '<div id="blue_gauge_annotation"><img class="thirdAnnotation" alt="Arrow placed within the small blue gauge" src="./assets/circular-gauge/images/image3.svg" /></div>'
     }];
 
     public load(args: ILoadedEventArgs): void {
@@ -185,7 +222,7 @@ export class AppleWatchComponent {
         args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
         if (selectedTheme === 'highcontrast') {
-            args.gauge.axes[0].annotations[0].content = '<div id="annotation5"><img style="width:17px;height:17px;" src="./assets/circular-gauge/images/image4.svg" /></div>';
+            args.gauge.axes[0].annotations[0].content = '<div id="red_annotation"><img alt="Red arrow" style="width:17px;height:17px;" src="./assets/circular-gauge/images/image4.svg" /></div>';
         }
         /* custom code end */
     }
@@ -197,7 +234,7 @@ export class AppleWatchComponent {
         args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
         if (selectedTheme === 'highcontrast') {
-            args.gauge.axes[0].annotations[0].content = '<div id="annotation5"><img style="width:15px;height:15px;" src="./assets/circular-gauge/images/image5.svg" /></div>';
+            args.gauge.axes[0].annotations[0].content = '<div id="green_annotation"><img alt="Green arrow" style="width:15px;height:15px;" src="./assets/circular-gauge/images/image5.svg" /></div>';
         }
         /* custom code end */
     }
@@ -209,7 +246,7 @@ export class AppleWatchComponent {
         args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
         if (selectedTheme === 'highcontrast') {
-            args.gauge.axes[0].annotations[0].content = '<div id="annotation5"><img style="width:17px;height:17px;" src="./assets/circular-gauge/images/image6.svg" /></div>';
+            args.gauge.axes[0].annotations[0].content = '<div id="blue_annotation"><img alt="Blue arrow" style="width:17px;height:17px;" src="./assets/circular-gauge/images/image6.svg" /></div>';
         }
         /* custom code end */
     }

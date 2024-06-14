@@ -132,7 +132,8 @@
 .bootstrap-dark .imagepreview div.file-name,
 .bootstrap5-dark .imagepreview div.file-name,
 .tailwind-dark .imagepreview div.file-name,
-.fluent-dark .imagepreview div.file-name {
+.fluent-dark .imagepreview div.file-name,
+.fluent2-dark .imagepreview div.file-name {
     color: white;
 }
 .imagepreview div.file-name {

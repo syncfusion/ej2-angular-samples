@@ -56,6 +56,7 @@ export class RemoteComponent implements OnInit {
             crossDomain: true
         });
         this.jsonReport = {
+            url: '',
             dataSource: this.remoteData,
             type: 'JSON',
             expandAll: true,

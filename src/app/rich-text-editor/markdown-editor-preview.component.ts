@@ -29,11 +29,11 @@ export class MarkdownPreviewComponent {
     public srcArea: any;
     public textArea: any;
     public mode: EditorMode = 'Markdown';
-
+    public placeholder: string = 'Enter the text here...';
     public tools: ToolbarModule = {
         type: ToolbarType.Expand,
         enableFloating :false,
-        items: ['Bold', 'Italic', 'StrikeThrough', '|', 'Formats', 'OrderedList',
+        items: ['Bold', 'Italic', 'StrikeThrough', '|', 'Formats', 'Blockquote', 'OrderedList',
         'UnorderedList', '|', 'CreateLink', 'Image', 'CreateTable',
         '|', 'Undo', 'Redo']
     };

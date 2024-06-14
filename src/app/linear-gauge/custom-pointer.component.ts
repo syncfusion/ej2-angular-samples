@@ -146,8 +146,8 @@ export class CustomPointerComponent {
             e.currentTarget['style']['backgroundColor'] = "#0074E3";
             document.getElementById('vertical').style.color = "black";
             document.getElementById('vertical').style.backgroundColor = "white";
-            document.getElementById('textWidget').className = document.getElementById('iconWidget').className =
-                document.getElementById('multipleWidget').className = "col-xs-12 col-sm-12 col-lg-12 col-md-12";
+            document.getElementById('textWidgetGauge').className = document.getElementById('iconWidgetGauge').className =
+                document.getElementById('multipleWidgetGauge').className = "col-xs-12 col-sm-12 col-lg-12 col-md-12";
         }
     };
 
@@ -162,8 +162,8 @@ export class CustomPointerComponent {
             e.currentTarget['style']['backgroundColor'] = "#0074E3";
             document.getElementById('horizontal')['style']['color'] = "black";
             document.getElementById('horizontal')['style']['backgroundColor'] = "white";
-            document.getElementById('textWidget').className = document.getElementById('iconWidget').className =
-                document.getElementById('multipleWidget').className = "col-xs-5 col-sm-5 col-lg-4 col-md-4";
+            document.getElementById('textWidgetGauge').className = document.getElementById('iconWidgetGauge').className =
+                document.getElementById('multipleWidgetGauge').className = "col-xs-5 col-sm-5 col-lg-4 col-md-4";
         }
     };
 

@@ -35,7 +35,7 @@ export class OnlineHtmlEditorComponent {
         enableFloating :false,
         items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
             'FontName', 'FontSize', 'FontColor', 'BackgroundColor',
-            'Formats', 'Alignments', 'OrderedList', 'UnorderedList',
+            'Formats', 'Alignments', 'Blockquote', 'OrderedList', 'UnorderedList',
             'Outdent', 'Indent',
             'CreateLink', 'Image', 'Video', 'Audio', 'CreateTable', '|', 'FormatPainter', 'ClearFormat',
             '|', 'EmojiPicker', 'SourceCode', '|', 'Undo', 'Redo'
@@ -47,7 +47,8 @@ export class OnlineHtmlEditorComponent {
     }
 
     public updateHtmlValue(): void {
-        this.textArea.innerHTML = this.myCodeMirror.getValue();
+        this.rteObj.value = this.myCodeMirror.getValue();
+        this.rteObj.dataBind();
     }
 
     public onResizing(): void {

@@ -3,6 +3,7 @@ import { ILoadedEventArgs, LinearGaugeTheme, LinearGauge, ExportType } from '@sy
 import { PrintService, PdfExportService, ImageExportService, LinearGaugeModule } from '@syncfusion/ej2-angular-lineargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 
 @Component({
     selector: 'control-content',
@@ -10,7 +11,7 @@ import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
     encapsulation: ViewEncapsulation.None,
     providers: [PrintService, PdfExportService, ImageExportService],
     standalone: true,
-    imports: [LinearGaugeModule, ButtonModule]
+    imports: [LinearGaugeModule, ButtonModule, TextBoxModule]
 })
 
 export class ExportComponent {
@@ -20,6 +21,7 @@ export class ExportComponent {
     public allowPdfExport: boolean = true;
     public allowImageExport: boolean = true;
     public exportType: DropDownList;
+    public downloadFileName: string = 'Linear Gauge';
 
     public titleStyle: Object = {
         fontFamily: 'inherit'
@@ -120,8 +122,10 @@ export class ExportComponent {
     };
 
     public onClickExport(e: Event): void {
-        let fileName: string = (<HTMLInputElement>(document.getElementById('fileName'))).value;
-        this.gauge.export(<ExportType>this.exportType.value, fileName);
+        this.gauge.export(<ExportType>this.exportType.value, this.downloadFileName);
+    }
+    public change(target: any): void {
+        this.downloadFileName = target.value;
     }
 
     ngOnInit(): void {

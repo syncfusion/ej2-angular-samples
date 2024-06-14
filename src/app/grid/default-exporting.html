@@ -1,6 +1,6 @@
 <div class="col-lg-9 control-section">
     <ejs-grid #grid id='DefaultExport' [dataSource]='data' [toolbar]='toolbar' (toolbarClick)='toolbarClick($event)'
-                [allowExcelExport]='true' [allowPdfExport]='true' [allowSorting]='true' [allowGrouping]="true" (dataBound)='dataBound()'
+                [allowExcelExport]='true' [allowPdfExport]='true' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [allowGrouping]="true" (dataBound)='dataBound()'
                 (excelQueryCellInfo)='exportQueryCellInfo($event)' (pdfQueryCellInfo)='exportQueryCellInfo($event)' height='350'>
         <e-columns>
             <e-column headerText='Employee Image' width='150' textAlign='Center'>

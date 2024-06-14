@@ -24,16 +24,16 @@
         </div>
     </div>
 
-    <ejs-grid #grid [dataSource]='data' height='400' [frozenRows]='2' [enableHover]='false' [allowSorting]='true' >
+    <ejs-grid #grid [dataSource]='data' height='400' [frozenRows]='2' [enableHover]='false' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbar' >
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' freeze='Left'></e-column>
-            <e-column field='Freight' headerText='Freight' width='125' format='C2' textAlign='Right'></e-column>
-            <e-column field='CustomerID' headerText='Customer ID' width='130' freeze='Right'></e-column>
-            <e-column field='OrderDate' headerText='Order Date' width='150' format="yMd" textAlign='Right'></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' freeze='Left' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
+            <e-column field='Freight' headerText='Freight' width='125' format='C2' textAlign='Right' editType='numericedit' [validationRules]='freightrules'></e-column>
+            <e-column field='CustomerID' headerText='Customer ID' width='130' freeze='Right' [validationRules]='customeridrules'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='150' format="yMd" textAlign='Right' editType='datepickeredit'></e-column>
             <e-column field='ShipName' headerText='Ship Name' width='300'></e-column>
             <e-column field='ShipAddress' headerText='Ship Address' width='270' freeze='Fixed'></e-column>
             <e-column field='ShipCity' headerText='Ship City' width='250'></e-column>
-            <e-column field='ShipCountry' headerText='Ship Country' width='250'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='250' editType='dropdownedit'></e-column>
         </e-columns>
     </ejs-grid>
     <ejs-dialog #alertDialog [buttons]='dlgButtons' [header]='header' [animationSettings]='animationSettings'

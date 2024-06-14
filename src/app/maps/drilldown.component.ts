@@ -81,7 +81,6 @@ export class MapsDrilldownComponent {
     
     public layers: object[] = [
         {
-            layerType: 'Geometry',
             shapePropertyPath: 'continent',
             shapeDataPath: 'continent',
             dataSource: datasource ,
@@ -151,7 +150,6 @@ export class MapsDrilldownComponent {
             ]
         },
         {
-            layerType: 'Geometry',
             shapeData: africa,
             shapeSettings: {
                 fill: '#80306A'
@@ -166,7 +164,6 @@ export class MapsDrilldownComponent {
             }
         },
         {
-            layerType: 'Geometry',
             shapeData: europe,
             shapeSettings: {
                 fill: '#622D6C'
@@ -181,7 +178,6 @@ export class MapsDrilldownComponent {
             }
         },
         {
-            layerType: 'Geometry',
             shapeData: asia,
             shapeSettings: {
                 fill: '#462A6D'
@@ -196,7 +192,6 @@ export class MapsDrilldownComponent {
             }
         },
         {
-            layerType: 'Geometry',
             shapeData: north_america,
             shapeSettings: {
                 fill: '#C13664'
@@ -211,7 +206,6 @@ export class MapsDrilldownComponent {
             }
         },
         {
-            layerType: 'Geometry',
             shapeData:  south_america,
             shapeSettings: {
                 fill: '#9C3367'
@@ -226,7 +220,6 @@ export class MapsDrilldownComponent {
             }
         },
         {
-            layerType: 'Geometry',
             shapeData: oceania,
             shapeSettings: {
                 fill: '#2A2870'

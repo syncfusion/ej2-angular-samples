@@ -98,6 +98,10 @@ export class BubbleChartComponent {
         "rgba(45, 212, 191, 0.5)", "rgba(244, 114, 182, 0.5)", "rgba(16, 185, 129, 0.5)"];    
         let bubbleMaterial3Colors: string[] = ["rgba(99, 85, 199, 0.5)", "rgba(0, 174, 224, 0.5)", "rgba(255, 180, 0, 0.5)", "rgba(247, 82, 63, 0.5)", "rgba(150, 60, 112, 0.5)", "rgba(253, 116, 0, 0.5)", "rgba(75, 224, 188, 0.5)", "rgba(33, 150, 245, 0.5)", "rgba(222, 61, 138, 0.5)", "rgba(22, 47, 136, 0.5)"];   
         let bubbleMaterial3DarkColors: string[] = ["rgba(78, 170, 255, 0.5)", "rgba(250, 78, 171, 0.5)", "rgba(255, 245, 0, 0.5)", "rgba(23, 234, 88, 0.5)", "rgba(56, 255, 231, 0.5)", "rgba(255, 158, 69, 0.5)", "rgba(179, 243, 47, 0.5)", "rgba(185, 60, 228, 0.5)", "rgba(252, 86, 100, 0.5)", "rgba(155, 85, 255, 0.5)"];
+        let bubbleFluent2Colors: string[] = ["rgba(98, 0, 238, 0.5)", "rgba(9, 175, 116, 0.5)", "rgba(0, 118, 229, 0.5)", "rgba(203, 53, 135, 0.5)", "rgba(231, 145, 15, 0.5)", "rgba(3, 100, 222, 0.5)", "rgba(102, 205, 21, 0.5)", "rgba(243, 169, 60, 0.5)",
+"rgba(16, 124, 16, 0.5)", "rgba(193, 156, 0, 0.5)"];
+        let bubbleFluent2DarkColors: string[] = ["rgba(155, 180, 73, 0.5)", "rgba(42, 114, 213, 0.5)", "rgba(67, 183, 134, 0.5)", "rgba(63, 87, 154, 0.5)", "rgba(88, 78, 198, 0.5)", "rgba(232, 95, 156, 0.5)", "rgba(110, 122, 137, 0.5)", "rgba(234, 98, 102, 0.5)",
+"rgba(11, 106, 11, 0.5)", "rgba(193, 156, 0, 0.5)"];
 
         let pointMaterialColors: string[] = ["#00bdae", "#404041", "#357cd2", "#e56590", "#f8b883", "#70ad47", "#dd8abd", "#7f84e8", "#7bb4eb",
         "#ea7a57", "#404041", "#00bdae"];
@@ -123,7 +127,10 @@ export class BubbleChartComponent {
         "#10B981"];
         let pointMaterial3Colors: string[] = ["#6355C7", "#00AEE0", "#FFB400", "#F7523F", "#963C70", "#FD7400", "#4BE0BC", "#2196F5", "#DE3D8A", "#162F88"];
         let pointMaterial3DarkColors: string[] = ["#4EAAFF", "#FA4EAB", "#FFF500", "#17EA58", "#38FFE7", "#FF9E45", "#B3F32F", "#B93CE4", "#FC5664", "#9B55FF"];
-
+        let pointFluent2Colors: string[] = ['#6200EE', '#09AF74', '#0076E5', '#CB3587', '#E7910F', '#0364DE', '#66CD15', '#F3A93C', '#107C10',
+            '#C19C00'];
+        let pointFluent2DarkColors: string[] = ['#9BB449', '#2A72D5', '#43B786', '#3F579A', '#584EC6', '#E85F9C', '#6E7A89', '#EA6266',
+            '#0B6A0B', '#C19C00'];
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
 
@@ -191,6 +198,15 @@ export class BubbleChartComponent {
             args.fill = bubbleMaterial3DarkColors[args.point.index % 10];
             args.border.color = pointMaterial3DarkColors[args.point.index % 10];
         }
+        else if (selectedTheme === 'fluent2') {
+            args.fill = bubbleFluent2Colors[args.point.index % 10];
+            args.border.color = pointFluent2Colors[args.point.index % 10];
+        }
+      
+        else if (selectedTheme === 'fluent2-dark') {
+            args.fill = bubbleFluent2DarkColors[args.point.index % 10];
+            args.border.color = pointFluent2DarkColors[args.point.index % 10];
+        }
         else
         {
             args.fill = bubblePointBootstrapColors[args.point.index % 10];
@@ -206,7 +222,7 @@ export class BubbleChartComponent {
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
     };
      // custom code end
     public width: string = Browser.isDevice ? '100%' : '75%';

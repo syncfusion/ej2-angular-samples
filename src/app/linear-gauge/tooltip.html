@@ -1,22 +1,24 @@
-<div class="control-section">
-    <ejs-lineargauge (load)='load($event)' (loaded)='loaded($event)' id='tooltipContainer' #gauge style='display:block;' background='transparent'
-        (axisLabelRender)='labelRender($event)' (tooltipRender)='renderTooltip($event)' orientation='Horizontal'
-        [container]='container' [tooltip]='tooltip' [axes]='axes' [annotations]='annotations'>
-    </ejs-lineargauge>
-</div>
-<div id="action-description">
-    <p>
-        This sample depicts the linear gauge as a measuring scale and shows the tooltip in the linear gauge.
-    </p>
-</div>
-<div id="description">
-    <p>
-        The tooltip is used to track the current value that is closest to the mouse position or touch contact. When
-        using a touch-enabled device, the tooltip is displayed by hovering or tapping.
-    </p>
-    <p>
-        More information about tooltip can be found in this <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/linear-gauge/user-interaction/#tooltip">documentation
-            section</a>.
-    </p>
-</div>
+<main>
+    <div class="control-section">
+        <ejs-lineargauge (load)='load($event)' (loaded)='loaded($event)' id='tooltipContainer' #gauge style='display:block;' background='transparent'
+            (axisLabelRender)='labelRender($event)' (tooltipRender)='renderTooltip($event)' orientation='Horizontal'
+            [container]='container' [tooltip]='tooltip' [axes]='axes' [annotations]='annotations'>
+        </ejs-lineargauge>
+    </div>
+    <section id="action-description" aria-label="Description of Linear Gauge sample">
+        <p>
+            This sample depicts the linear gauge as a measuring scale and shows the tooltip in the linear gauge.
+        </p>
+    </section>
+    <section id="description" aria-label="Description of the Linear Gauge features demonstrated in this sample">
+        <p>
+            The tooltip is used to track the current value that is closest to the mouse position or touch contact. When
+            using a touch-enabled device, the tooltip is displayed by hovering or tapping.
+        </p>
+        <p>
+            More information about tooltip can be found in this <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/linear-gauge/user-interaction/#tooltip">documentation
+                section</a>.
+        </p>
+    </section>
+</main>    

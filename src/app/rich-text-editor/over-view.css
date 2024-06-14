@@ -1,75 +1,76 @@
-.e-code-mirror::before {
-    content: '\e345';
+.e-rte-code-mirror-enabled .rte-code-mirror {
+    display: block !important; /* To show the custom source code view. */
 }
-.CodeMirror-linenumber,
-.CodeMirror-gutters {
-    display: none;
+.e-rte-code-mirror-enabled .e-rte-content {
+    display: none !important;  /* To hide the editor area when custom source code enabled. */
 }
-
-.fabric-dark .cm-s-default .cm-tag,
-.bootstrap5-dark .cm-s-default .cm-tag,
-.material-dark .cm-s-default .cm-tag,
-.tailwind-dark .cm-s-default .cm-tag,
-.highcontrast .cm-s-default .cm-tag {
+/** Mention template styles **/
+.editor-mention-item-template {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.em-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.em-avatar {
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 500;
+    text-indent: 0px;
+    line-height: 13px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.em-name {
+    color: rgb(16, 24, 40);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    margin-bottom: 5px;
+}
+.em-email {
+    color: gray;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+}
+#alltoolRTE_rte-edit-view_options li {
+    padding: 10px;
+    height: 60px;
+}
+body[class*="-dark"] .em-name {
+    color: #fff !important;
+}
+/** custom source code styles **/
+body[class*="-dark"] .rte-code-mirror .cm-tag {
     color: #00ff00;
 }
-
-.fabric-dark .cm-s-default .cm-string,
-.bootstrap5-dark .cm-s-default .cm-string,
-.material-dark .cm-s-default .cm-string,
-.tailwind-dark .cm-s-default .cm-string {
+body[class*="-dark"] .rte-code-mirror .cm-string {
     color: blue;
 }
-
-.highcontrast .cm-s-default .cm-string {
-    color: #ffd939;
-}
-
-.fabric-dark .cm-s-default .cm-attribute,
-.bootstrap5-dark .cm-s-default .cm-attribute,
-.material-dark .cm-s-default .cm-attribute,
-.tailwind-dark .cm-s-default .cm-attribute,
-.highcontrast .cm-s-default .cm-attribute {
+body[class*="-dark"] .rte-code-mirror .cm-attribute {
     color: #f00;
 }
-
-.fabric-dark .CodeMirror,
-.bootstrap5-dark .CodeMirror,
-.material-dark .CodeMirror,
-.tailwind-dark .CodeMirror {
-    background:  #303030;
+body[class*="-dark"] .rte-code-mirror .CodeMirror-gutters, body[class*="-dark"] .rte-code-mirror .CodeMirror{
+    background-color: transparent;
+    color: #fff;
 }
-
-.highcontrast .CodeMirror {
-    background: black;
+.sb-header {
+    z-index: 100;
 }
-
 .sb-content.e-view.hide-header {
     top: 0 !important;
 }
-
 .sb-header.e-view.hide-header {
     display: none;
-}
-
-.e-richtexteditor .e-rte-content .e-content[contenteditable="true"] pre {
-    padding: 10px;
-    background: #F4F5F7;
-}
-
-.fabric-dark .e-richtexteditor .e-rte-content .e-content pre,
-.bootstrap5-dark .e-richtexteditor .e-rte-content .e-content pre,
-.material-dark .e-richtexteditor .e-rte-content .e-content pre,
-.tailwind-dark .e-richtexteditor .e-rte-content .e-content pre,
-.highcontrast .e-richtexteditor .e-rte-content .e-content pre {
-    padding: 10px;
-    background: #303030;
-}
-
-.e-richtexteditor .e-rte-content .e-content .CodeMirror-line  {
-    background: transparent;
-}
-
-#alltoolRTEmirror-view {
-    padding: 0px;
 }

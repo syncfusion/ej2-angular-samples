@@ -10,6 +10,7 @@ import { ILoadEventArgs, TreeMapTheme } from '@syncfusion/ej2-angular-treemap';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 TreeMap.Inject(TreeMapTooltip);
 
 @Component({
@@ -18,7 +19,7 @@ TreeMap.Inject(TreeMapTooltip);
     encapsulation: ViewEncapsulation.None,
     providers: [PrintService, PdfExportService, ImageExportService],
     standalone: true,
-    imports: [TreeMapModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]
+    imports: [TreeMapModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent, TextBoxModule]
 })
 
 export class TreemapPrintComponent {
@@ -27,6 +28,7 @@ export class TreemapPrintComponent {
     public allowPrint: boolean = true;
     public allowPdfExport: boolean = true;
     public allowImageExport: boolean = true;
+    public downloadFileName: string = 'TreeMap';
     // custom code start
     public load = (args: ILoadEventArgs) => {
         let theme: string = location.hash.split('/')[1];
@@ -65,11 +67,13 @@ export class TreemapPrintComponent {
             ]
         };
         public onClick1(e: Event): void {
-            let fileName: string = (<HTMLInputElement>(document.getElementById('fileName'))).value;
-            this.treemap.export(<ExportType>this.exportType.value, fileName);
+            this.treemap.export(<ExportType>this.exportType.value, this.downloadFileName);
         }
         public onClick2(e: Event): void {
             this.treemap.print();
+        }
+        public change(target: any): void {
+            this.downloadFileName = target.value;
         }
         public exportType: DropDownList;
         ngOnInit(): void {

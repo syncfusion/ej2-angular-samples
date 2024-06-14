@@ -49,9 +49,11 @@ export class RangeComponent {
     };
 
     public annotaions: Object = [{
+        description: 'Speedometer',
         content: '<div><span style="font-size:14px;">Speedometer</span></div>',
         radius: '30%', angle: 0, zIndex: '1'
     }, {
+        description: '65 MPH',
         content: '<div><span style="font-size:20px;">65 MPH</span></div>',
         radius: '40%', angle: 180, zIndex: '1'
     }];

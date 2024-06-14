@@ -123,6 +123,10 @@ import { AreaNegativePointsComponent } from './area-negative-points.component';
 import { RangeStepAreaComponent } from './range-step-area.component';
 import { CylindricalColumnChartComponent } from './cylindrical-column.component';
 import { SynchronizedChartsComponent } from './synchronized-chart.component';
+import { UpdateSplineComponent } from './update-spline.component';
+import { LiveStockDataComponent } from './live-stock-data.component';
+import { UpdateDataSourceComponent } from './update-data-source.component';
+import { ClickAddPointComponent } from './click-add-point.component';
 
 export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/overview-chart', component: OverViewChartComponent, name: 'Overview', description: "This demo for overview of Essential JS2 Chart for data about the annual, monthly and product wise sales with different types of charts.",
@@ -227,7 +231,10 @@ export const chartAppRoutes: Object[] = [
 
     { path: ':theme/chart/chart-performance', component: PerformanceChartComponent, name: 'Chart Performance', description: "This demo for Essential JS2 Chart control shows the performance when plotting large volumes of data and handling high frequency real-time data.", order: '10', category: 'Benchmark' },
 
-
+    { path: ':theme/chart/update-spline', component: UpdateSplineComponent, type: 'new', name: 'Spline updating each second', description: "This demo for Essential JS2 Chart control shows the real time charts", order: '17', category: 'Real-time Charts' },
+    { path: ':theme/chart/live-stock-data', component: LiveStockDataComponent, type: 'new', name: 'Live stock data', description: "This demo for Essential JS2 Chart control shows the real time charts", order: '17', category: 'Real-time Charts' },
+    { path: ':theme/chart/update-data-source', component: UpdateDataSourceComponent, type: 'new', name: 'Update data source', description: "This demo for Essential JS2 Chart control shows the real time charts", order: '17', category: 'Real-time Charts' },
+    { path: ':theme/chart/click-add-point', component: ClickAddPointComponent, type: 'new', name: 'Click to add a point', description: "This demo for Essential JS2 Chart control shows the real time charts", order: '17', category: 'Real-time Charts' },
 
     { path: ':theme/chart/polar-line', component: PolarLineChartComponent, name: 'Line', description: "This demo for Essential JS2 Chart control shows how to render line in polar and radar charts.", order: '11', category: 'Polar Radar' },
     { path: ':theme/chart/polar-spline', component: PolarSplineChartComponent, name: 'Spline', description: "This demo for Essential JS2 Chart control shows how to render spline in polar and radar charts.", order: '11', category: 'Polar Radar' },

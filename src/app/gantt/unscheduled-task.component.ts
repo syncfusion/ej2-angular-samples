@@ -52,8 +52,8 @@ export class GanttUnscheduledComponent implements OnInit {
         this.splitterSettings = {
             columnIndex: 4
         };
-        this.projectStartDate = new Date('01/01/2019');
-        this.projectEndDate = new Date('01/20/2019');
+        this.projectStartDate = new Date('01/01/2024');
+        this.projectEndDate = new Date('01/20/2024');
     }
     public toolbarClickAction(args: object): void {
         var data = {
@@ -64,5 +64,5 @@ export class GanttUnscheduledComponent implements OnInit {
         };
         this.ganttObj.addRecord(data)
     }
- 
+
 }

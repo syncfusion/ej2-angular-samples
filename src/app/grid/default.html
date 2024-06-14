@@ -2,14 +2,14 @@
     <p>This sample demonstrates the default rendering of the Grid with minimum configuration.</p>
 </div>
 <div class="control-section">
-    <ejs-grid [dataSource]='data' height='350' [allowSorting]='true'>
+    <ejs-grid [dataSource]='data' height='350' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbar'>
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
-            <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
-            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign='Right' ></e-column>
-            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right'></e-column>
-            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign='Right'></e-column>
-            <e-column field='ShipCountry' headerText='Ship Country' width='150'></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
+            <e-column field='CustomerName' headerText='Customer Name' width='150' [validationRules]='customeridrules'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign='Right' editType='datepickeredit'></e-column>
+            <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right' editType='numericedit' [validationRules]='freightrules'></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' width='130' format="yMd" textAlign='Right' editType='datepickeredit'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='150' editType='dropdownedit'></e-column>
         </e-columns>
     </ejs-grid>
     <div id="description">

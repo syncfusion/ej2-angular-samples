@@ -32,7 +32,6 @@ export class HeatmapMultilevelLabelComponent {
         color: '#a19d9d'
     },
     textStyle: {
-        color: 'black',
         fontFamily: 'inherit'
 
     },
@@ -40,7 +39,6 @@ export class HeatmapMultilevelLabelComponent {
         {
             border: { type: 'Rectangle', color: '#a19d9d' },
             textStyle: {
-                color: 'black',
                 fontWeight: 'Bold',
                 fontFamily: 'inherit'
             },
@@ -59,7 +57,6 @@ export class HeatmapMultilevelLabelComponent {
             width: 0
         },
         textStyle: {
-            color: 'black',
             fontFamily: 'inherit'
         },
         isInversed: true,
@@ -67,7 +64,6 @@ export class HeatmapMultilevelLabelComponent {
             {
                 border: { type: 'Brace', color: '#a19d9d' },
                 textStyle: {
-                    color: 'black',
                     fontWeight: 'Bold',
                     fontFamily: 'inherit'
                 },
@@ -115,7 +111,7 @@ export class HeatmapMultilevelLabelComponent {
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.heatmap.theme = <HeatMapTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
         // custom code end
-        if(selectedTheme === 'highcontrast' || selectedTheme === 'bootstrap5-dark' || selectedTheme === 'material-dark' || selectedTheme === 'fabric-dark' || selectedTheme === 'bootstrap-dark' || selectedTheme === 'tailwind-dark' || selectedTheme === 'material3-dark' || selectedTheme === 'fluent-dark')
+        if(selectedTheme === 'highcontrast' || selectedTheme === 'bootstrap5-dark' || selectedTheme === 'material-dark' || selectedTheme === 'fabric-dark' || selectedTheme === 'bootstrap-dark' || selectedTheme === 'tailwind-dark' || selectedTheme === 'material3-dark' || selectedTheme === 'fluent-dark' || selectedTheme === 'fluent2-dark')
         {
             args.heatmap.xAxis.textStyle.color = 'White';
             args.heatmap.yAxis.textStyle.color = 'White';

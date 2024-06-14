@@ -1,31 +1,33 @@
-<div class="control-section">
-    <div>
-        <ejs-heatmap id='container' style="display:block;" [titleSettings]='titleSettings' [dataSource]='dataSource' [dataSourceSettings]='dataSourceSettings' [xAxis]='xAxis'
-            [yAxis]='yAxis' [paletteSettings]='paletteSettings' [cellSettings]='cellSettings' [legendSettings]='legendSettings' [tooltipSettings]='tooltipSettings' (tooltipRender)='tooltipRender($event)'
-            (load)='load($event)'>
-        </ejs-heatmap>
+<main>
+    <div class="control-section">
+        <div>
+            <ejs-heatmap id='container' style="display:block;" [titleSettings]='titleSettings' [dataSource]='dataSource' [dataSourceSettings]='dataSourceSettings' [xAxis]='xAxis'
+                [yAxis]='yAxis' [paletteSettings]='paletteSettings' [cellSettings]='cellSettings' [legendSettings]='legendSettings' [tooltipSettings]='tooltipSettings' (tooltipRender)='tooltipRender($event)'
+                (load)='load($event)'>
+            </ejs-heatmap>
+        </div>
+        <div style="float: right; margin-right: 10px;">Source:
+            <a href="https://en.wikipedia.org/wiki/2016_Summer_Olympics_medal_table" target="_blank">https://en.wikipedia.org/</a>
+        </div>
     </div>
-    <div style="float: right; margin-right: 10px;">Source:
-        <a href="https://en.wikipedia.org/wiki/2016_Summer_Olympics_medal_table" target="_blank">https://en.wikipedia.org/</a>
-    </div>
-</div>
-<div id="action-description">
-    <p>
-      This sample visualizes the overall Olympic medals won by the countries in all the summer Olympic events from the year 2000 to 2016.
-    </p>
-</div>
-<div id="description">
-    <p>
-        In this example, you can see how to bind JSON data and configure the Heatmap using the data adaptor support. You can bind
-        the JSON data with information for each row to the Heatmap using
-        <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/dataModel/#isjsondata" target="_blank">isJsonData</a> and by defining the
-        <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/dataModel/#adaptortype" target="_blank">adaptorType</a> properties. In row JSON data, the row header is mapped using the
-        <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/dataModel/#xdatamapping" target="_blank">xDataMapping</a>.
-    </p>     
-    <p>The tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item on touch-enabled devices.</p>
-    <br>
-    <p><b>Injecting Module</b></p>
-    <p>
-        Heatmap component features are separated into discrete feature-based modules. To use data adaptor support, inject the <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/adaptorType/" target='_blank'>Adaptor</a> module using <code>Heatmap.Inject(Adaptor)</code> method, to use a tooltip, inject the <a href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/tooltip" target='_blank'>Tooltip</a> module using the <code>Heatmap.Inject(Tooltip)</code> method, and to use a legend, inject the <a href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/legend" target='_blank'>Legend</a> module using the <code>Heatmap.Inject(Legend)</code> method.
-     </p>
-</div>
+    <section id="action-description" aria-label="Description of HeatMap sample">
+        <p>
+          This sample visualizes the overall Olympic medals won by the countries in all the summer Olympic events from the year 2000 to 2016.
+        </p>
+    </section>
+    <section id="description" aria-label="Description of the HeatMap features demonstrated in this sample">
+        <p>
+            In this example, you can see how to bind JSON data and configure the Heatmap using the data adaptor support. You can bind
+            the JSON data with information for each row to the Heatmap using
+            <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/dataModel/#isjsondata" target="_blank">isJsonData</a> and by defining the
+            <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/dataModel/#adaptortype" target="_blank">adaptorType</a> properties. In row JSON data, the row header is mapped using the
+            <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/dataModel/#xdatamapping" target="_blank">xDataMapping</a>.
+        </p>     
+        <p>The tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item on touch-enabled devices.</p>
+        <br>
+        <p><b>Injecting Module</b></p>
+        <p>
+            Heatmap component features are separated into discrete feature-based modules. To use data adaptor support, inject the <a href="https://ej2.syncfusion.com/angular/documentation/api/heatmap/adaptorType/" target='_blank'>Adaptor</a> module using <code>Heatmap.Inject(Adaptor)</code> method, to use a tooltip, inject the <a href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/tooltip" target='_blank'>Tooltip</a> module using the <code>Heatmap.Inject(Tooltip)</code> method, and to use a legend, inject the <a href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/legend" target='_blank'>Legend</a> module using the <code>Heatmap.Inject(Legend)</code> method.
+         </p>
+    </section>
+</main>

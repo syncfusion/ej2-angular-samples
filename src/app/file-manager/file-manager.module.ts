@@ -14,6 +14,7 @@ import { AccessControlController } from './access-control.component';
 import { AzureController } from './azure-service.component';
 import { SQLController } from './sql-server-provider.component';
 import { AmazonS3Controller } from './amazon-s3-file-provider.component';
+import { FlatDataController } from './flat-data.component';
 import { NodeJSController } from './nodejs-file-provider.component';
 import { CommonModule } from '@angular/common';
 import { FileManagerAllModule } from '@syncfusion/ej2-angular-filemanager';
@@ -27,6 +28,7 @@ import { IBMCOSController } from './ibm-cos-node-file-provider.component';
 
 export const fileManagerAppRoutes: Object[] = [
     { path: ':theme/file-manager/overview', component: OverViewController, name: 'Overview', order: '01', category: 'File Manager', description: 'Angular FileManager component with full view of the File Manager like a windows explorer User Interface.' },
+    { path: ':theme/file-manager/flat-data', component: FlatDataController, name: 'Flat Data', type: 'new', order: '01', category: 'File Manager', description: 'Angular FileManager component with how to render the File Manager with the flat data source.'},
     { path: ':theme/file-manager/custom', component: CustomThumnailController, name: 'Custom Thumbnails', order: '01', category: 'File Manager', description: 'Angular FileManager component with how to use the custom thumbnails for the files and folders.' },
     { path: ':theme/file-manager/default', component: DefaultFileController, name: 'API', order: '01', category: 'File Manager', description: 'Angular FileManager component with how to render the File Manager without the navigation pane and enable or disable toolbar dynamically.' },
     { path: ':theme/file-manager/drag-drop', component: DragAndDropController, name: 'Drag and Drop', order: '01', category: 'File Manager', description: 'Angular FileManager component with drag and drop feature to drag and drop the file.' },

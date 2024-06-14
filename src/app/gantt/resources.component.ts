@@ -65,7 +65,7 @@ export class GanttResourcesComponent implements OnInit {
         this.labelSettings = {
             rightLabel: 'resources'
         };
-        this.projectStartDate= new Date('03/28/2019');
-        this.projectEndDate= new Date('07/28/2019');
+        this.projectStartDate= new Date('03/28/2024');
+        this.projectEndDate= new Date('07/28/2024');
     }
 }

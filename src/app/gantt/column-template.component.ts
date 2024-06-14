@@ -47,8 +47,8 @@ export class ColumnTemplateComponent implements OnInit {
             rightLabel: 'TaskName'
         };
         this.resources = editingResources;
-        this.projectStartDate= new Date('03/25/2019');
-        this.projectEndDate= new Date('07/28/2019');
+        this.projectStartDate= new Date('03/25/2024');
+        this.projectEndDate= new Date('07/28/2024');
     }
     public queryCellInfo(args: any): void {
         let gantt = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];

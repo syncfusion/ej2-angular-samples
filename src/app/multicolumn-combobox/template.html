@@ -1,0 +1,73 @@
+<div id="action-description">
+    <p>This sample demonstrates the template functionalities of the MultiColumn ComboBox.</p>
+</div>
+
+<div class="control-section">
+    <div class='control-wrapper template-multicolumn'>
+        <div style='padding-top:60px;'>
+            <ejs-multicolumncombobox cssClass='multicolumn-customize' id='template' #template [dataSource]='empData' [fields]='fields' [placeholder]='waterMark' popupHeight='230px' [gridSettings]="gridSettings">
+                <e-columns>
+                    <e-column field='Eimg' width='90'>
+                        <ng-template #headerTemplate let-data>
+                            <div>
+                                <div class="header"> <span>Photo</span> </div>
+                            </div>
+                        </ng-template>
+                        <ng-template #template let-data>
+                            <div>
+                                <div><img class="empImage" src="./assets/auto-complete/Employees/{{data.Eimg}}.png" alt="employee"/> </div>
+                            </div>
+                        </ng-template>
+                    </e-column>
+                    <e-column field='Name' width='160'>
+                        <ng-template #headerTemplate let-data>
+                            <div>
+                                <div class="header"> <span class="e-icons e-multicolumn-userlogin"></span> <span>Employee info</span> </div>
+                            </div>
+                        </ng-template>
+                        <ng-template #template let-data>
+                            <div>
+                                <div class="ename"> {{data.Name}} </div><div class="job"> {{data.Designation}} </div>
+                            </div>
+                        </ng-template>
+                    </e-column>
+                    <e-column field='DateofJoining' width='165'>
+                        <ng-template #headerTemplate let-data>
+                            <div>
+                                <div class="header"> <span class="e-icons e-multicolumn-calender"></span> <span>Date of joining</span> </div>
+                            </div>
+                        </ng-template>
+                        <ng-template #template let-data>
+                            <div>
+                                <div class="dateOfJoining"> {{data.DateofJoining}} </div>
+                            </div>
+                        </ng-template>
+                    </e-column>
+                    <e-column field='Country' width='100'>
+                        <ng-template #headerTemplate let-data>
+                            <div>
+                                <div class="header"> <span>Country</span> </div>
+                            </div>
+                        </ng-template>
+                        <ng-template #template let-data>
+                            <div>
+                                <div class="country"> {{data.Country}} </div>
+                            </div>
+                        </ng-template>
+                    </e-column>
+                </e-columns>  
+            </ejs-multicolumncombobox>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>	The MultiColumn ComboBox provides several options to customize each list items, group title, header and footer elements.
+    </p>
+    
+    <p>This sample uses the following list of templates in ComboBox</p>
+    <ul>
+        <li><code>Template</code> - To customize the MultiColumn ComboBox list item's content.</li>
+        <li><code>HeaderTemplate</code> - To customize the header element.</li>
+    </ul>
+</div>

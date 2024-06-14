@@ -1,74 +1,76 @@
-<div id="action-description">
-    <p>
-        This sample depicts the appearance of a speedometer rendered using the circular gauge. The pointer value is
-        dynamically updated with random values in this case.
-    </p>
-</div>
-<div class="col-md-8 control-section">
-    <ejs-circulargauge (load)='load($event)' background='transparent' (loaded)='loaded($event)' style='display:block;'
-        id='container' centerY='75%' title='Speedometer' [titleStyle]='titleStyle' #circulargauge=''>
-        <e-axes>
-            <e-axis minimum=0 radius='120%' maximum=120 startAngle=270 endAngle=90 rangeGap=0 [majorTicks]='majorTicks'
-                [labelStyle]='labelStyle' [lineStyle]='lineStyle' [minorTicks]='minorTicks' [annotations]='annotaions'
-                [ranges]='ranges' [pointers]='pointers'>
-            </e-axis>
-        </e-axes>
-    </ejs-circulargauge>
-</div>
-<div class="col-md-4 property-section">
-    <div class="property-panel-section">
-        <div class="property-panel-header">Properties</div>
-        <table id="property" title="Properties" style="width: 100%;margin-top: 10px;">
-            <tbody>
-                <tr style="height: 27px">
-                    <td style="width: 60%; font-size: 14px;">
-                        <div> Combine Ranges</div>
-                    </td>
-                    <td>
-                        <div>
-                            <input type="checkbox" id="combineRange" checked />
-                        </div>
-                    </td>
-                </tr>
-                <br />
-                <tr style="height:21px">
-                    <td style="width: 60%; font-size: 14px;">
-                        <div> Gap Between Ranges</div>
-                    </td>
-                    <td>
-                        <div>
-                            <input type="checkbox" id="range" checked />
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+<main>
+    <section id="action-description" aria-label="Description of Circular Gauge sample">
+        <p>
+            This sample depicts the appearance of a speedometer rendered using the circular gauge. The pointer value is
+            dynamically updated with random values in this case.
+        </p>
+    </section>
+    <div class="col-md-8 control-section">
+        <ejs-circulargauge (load)='load($event)' background='transparent' (loaded)='loaded($event)' style='display:block;'
+            id='container' centerY='75%' title='Speedometer' [titleStyle]='titleStyle' #circulargauge=''>
+            <e-axes>
+                <e-axis minimum=0 radius='120%' maximum=120 startAngle=270 endAngle=90 rangeGap=0 [majorTicks]='majorTicks'
+                    [labelStyle]='labelStyle' [lineStyle]='lineStyle' [minorTicks]='minorTicks' [annotations]='annotaions'
+                    [ranges]='ranges' [pointers]='pointers'>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
     </div>
-</div>
-<script id='pointerValue' type="text/x-template">
-        <div id='templateWrap'>
-            <div class='des'>
-                <div id='pointerannotation' style="width:90px;text-align:center;font-size:20px;font-family:Roboto">${pointers[0].value} km/h</div>
-            </div>
+    <div class="col-md-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <table id="property" title="Properties" style="width: 100%;margin-top: 10px;" role="none">
+                <tbody>
+                    <tr style="height: 27px">
+                        <td style="width: 60%; font-size: 14px;">
+                            <div> Combine Ranges</div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="checkbox" id="combineRange" checked />
+                            </div>
+                        </td>
+                    </tr>
+                    <br />
+                    <tr style="height:21px">
+                        <td style="width: 60%; font-size: 14px;">
+                            <div> Gap Between Ranges</div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="checkbox" id="range" checked />
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </script>
-<svg style="height:0px;width:0px">
-    <defs>
-        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style="stop-color:#82b944;stop-opacity:1" />
-            <stop offset="50%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
-            <stop offset="100%" style="stop-color:red;stop-opacity:1" />
-        </linearGradient>
-    </defs>
-</svg>
-<div id="description">
-    <p>
-        In this example, you can see how to make a circular gauge look like a speedometer. Using the options in the
-        properties panel, a gap can be added between ranges or ranges can be combined to form a single range.
-    </p>
-    <p>
-        More information on the circular gauge can be found in this <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/getting-started/"> documentation
-            section</a>.
-    </p>
-</div>
+    </div>
+    <script id='pointerValue' type="text/x-template">
+            <div id='templateWrap'>
+                <div class='des'>
+                    <div id='pointerannotation' style="width:90px;text-align:center;font-size:20px;font-family:Roboto">${pointers[0].value} km/h</div>
+                </div>
+            </div>
+        </script>
+    <svg style="height:0px;width:0px">
+        <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#82b944;stop-opacity:1" />
+                <stop offset="50%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+                <stop offset="100%" style="stop-color:red;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+    <section id="description" aria-label="Description of the Circular Gauge features demonstrated in this sample">
+        <p>
+            In this example, you can see how to make a circular gauge look like a speedometer. Using the options in the
+            properties panel, a gap can be added between ranges or ranges can be combined to form a single range.
+        </p>
+        <p>
+            More information on the circular gauge can be found in this <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/getting-started/"> documentation
+                section</a>.
+        </p>
+    </section>
+</main>

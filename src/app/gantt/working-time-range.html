@@ -1,58 +1,116 @@
 <div id="action-description">
-    <p>This sample visualizes the support for changing the working hours in a day. The selected start and end hours from the property panel will be applied to each task available in the project.</p>
+  <p>This sample visualizes the support for changing the working hours in a day. The selected start and end hours from the property panel will be applied to each task available in the project.</p>
 </div>
 
-<div class="col-lg-9 control-section">
-    <ejs-gantt id="WorkTimeRange" #ganttObj height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
-    [treeColumnIndex]='1' [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" height="400px" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
-    [highlightWeekends]="true" [timelineSettings]="timelineSettings" [durationUnit] = "durationUnit">
-    </ejs-gantt>
+<div class="col-lg-8 control-section">
+  <ejs-gantt id="WorkTimeRange" #ganttObj height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
+  [treeColumnIndex]='1' [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" height="400px" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+  [highlightWeekends]="true" [timelineSettings]="timelineSettings" [durationUnit] = "durationUnit">
+  </ejs-gantt>
 </div>
 
-<div class="col-lg-3 property-section">
-    <div class="property-panel-section">
-            <div class="property-panel-header">Properties </div>
-        <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
-            <tr>
-                <td style="width: 100%">
-                    <div style="font-size: 15px;">Work Start Time</div>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 100%;padding-right: 10px">
-                    <div id='columnddl'>
-                        <ejs-numerictextbox  #StartTimeObj id='WorkStartTime' width= '150px' value='8' min='0' max='24' step='0.5' (change)="updateTime($event)" [showSpinButton]='true'></ejs-numerictextbox>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 100%;padding-top: 10px">
-                    <div style="font-size: 15px;">Work End Time</div>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 100%;padding-top: 10px;">
-                    <div>
-                        <ejs-numerictextbox  #EndTimeObj id='WorkEndTime' width= '150px' value='17' min='0' max='24' step='0.5' (change)="updateTime($event)" [showSpinButton]='true'></ejs-numerictextbox>
-                    </div>
-                </td>
-            </tr>           
-        </table>
-        </div>
+<div class="col-lg-4 property-section">
+    <div class="property-panel-section" style="padding-left: 0px;">
+      <div class="property-panel-header">Properties</div>
+      <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+        <tr>
+          <td colspan="2">
+            <label htmlFor='Time range'>Time Range for all days</label>
+          </td>
+        </tr>
+        <tr>
+          <td style="width: 45%;">
+            <div>Work Start Time</div>
+          </td>
+          <td style="width: 70%;">
+            <div style="width: 75%;">
+              <ejs-numerictextbox #StartTimeObj id='WorkStartTime' [value]="8" [min]="0" [max]="24" [step]="0.5" [showSpinButton]="true" (change)="change1($event)" style="width: 100%;"></ejs-numerictextbox>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="width: 45%;">
+            <div>Work End Time</div>
+          </td>
+          <td style="width: 70%;">
+            <div style="width: 75%;">
+              <ejs-numerictextbox #EndTimeObj id='WorkEndTime' [value]="17" [min]="0" [max]="24" [step]="0.5" [showSpinButton]="true" (change)="change1($event)" style="width: 100%;"></ejs-numerictextbox>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div>
+              <button ejs-button id="update" style="margin-top: 10px;" content="Update for all days" (click)="update()"></button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <label htmlFor='Time range' style="margin-top: 20px;">Time Range for each day</label>
+          </td>
+        </tr>
+        <tr>
+          <td style="width: 45%;">
+            <div>Working Days</div>
+          </td>
+          <td style="width: 70%;">
+            <div style="width: 75%;">
+              <ejs-dropdownlist id="dropdown" #WorkingDaysObj [dataSource]="dropDownData" (select)="select($event)" [value]="workWeek" [fields]="dropDownFields" popupHeight="350px" style="width: 100%;"></ejs-dropdownlist>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="width: 45%;">
+            <div>Work Start Time</div>
+          </td>
+          <td style="width: 70%;">
+            <div style="width: 75%;">
+              <ejs-numerictextbox #StartTime id='WorkStart' [value]="8" [min]="0" [max]="24" [step]="0.5" [showSpinButton]="true" (change)="change2($event)" style="width: 100%;"></ejs-numerictextbox>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="width: 45%;">
+            <div>Work End Time</div>
+          </td>
+          <td style="width: 70%;">
+            <div style="width: 75%;">
+              <ejs-numerictextbox #EndTime id='WorkEnd' [value]="17" [min]="0" [max]="24" [step]="0.5" [showSpinButton]="true" (change)="change2($event)" style="width: 100%;"></ejs-numerictextbox>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div>
+              <button ejs-button id="perform" style="margin-top: 10px;" content="Update for each day" (click)="perform()"></button>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
-
-    <div id="description">
+  </div> 
+  <div id="description">
+      <p>
+          In this example, you can see how to render a Gantt chart with the provided data source and customizable working hours in a day. You can split the working hours in a day to one or more range. So, you can also provide the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#dayworkingtime">
+            dayWorkingTime</a> property value as array of object collection. Gantt chart also supports different <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#durationunit">
+            durationUnit</a> values as follows:
+      </p>      
+          <ul>
+          <li><code>day</code></li>
+          <li><code>hour</code></li>
+          <li><code>minute</code></li>
+          </ul>
+      <p>
+        <p>You can also set different working time range for different working days using <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#weekworkingtime">
+            weekWorkingTime</a> property. The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#weekworkingtime">
+            weekWorkingTime</a> property enables you to specify different working hours for each day of the week in your Gantt chart.
+            By configuring this property, you can ensure that tasks are only scheduled during defined working periods, avoiding non-working hours.</p>
         <p>
-            In this example, you can see how to render a Gantt chart with the provided data source and customizable working hours in a day. You can split the working hours in a day to one or more range. So, You can also provide the <code>dayWorkingTime</code> property value as array of object collection. Gantt chart also supports different <code>durationUnit</code> values as follows:
-            <li><code>day</code></li>
-            <li><code>hour</code></li>       
-            <li><code>minute</code></li>
-        </p>
-        <p>
-            Given duration in dataSource will be considered with this unit. In this demo, the <code>hour</code> unit is used to render taskbars in day hour timeline mode. Gantt chart supports only 24hours format as of now. The working hours will differ between organizations. This feature will be helpful to keep track of each task and resource task status based on the working time of company.
-        </p>
-        <p>
-            Gantt component features are segregated into individual feature-wise modules. To use a selection, inject the
-            <code>Selection</code> module.To use markers, inject the <code>DayMarkers</code> module.
-        </p>
-    </div>
+          Given duration in dataSource will be considered with this unit. In this demo, the <code>hour</code> unit is used to render taskbars in day hour timeline mode. Gantt chart supports only 24hours format as of now. The working hours will differ between organizations. This feature will be helpful to keep track of each task and resource task status based on the working time of company.
+      </p>
+      <p>
+        Gantt component features are segregated into individual feature-wise modules. To use a selection and markers, inject the
+        <code>SelectionService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section respectively.
+      </p>
+  </div>

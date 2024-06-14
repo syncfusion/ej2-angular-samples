@@ -14,7 +14,7 @@
         
         <ng-template #emptyRecordTemplate>
             <div class='emptyRecordTemplate'>
-                <img src="./assets/grid/images/emptyRecordTemplate.svg" class="e-emptyRecord" alt="No record">
+                <img [src]="imageSrc()" class="e-emptyRecord" alt="No record">
                 <span>There is no data available to display at the moment.</span>
             </div>
         </ng-template>

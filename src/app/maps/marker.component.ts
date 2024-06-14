@@ -41,7 +41,6 @@ export class MapsMarkerComponent {
     shapeData: worlMap,
     dataSource: population,
     shapeSettings: { fill: '#C3E6ED' },
-
     markerSettings: [{
       dataSource: topPopulation,
       visible: true,

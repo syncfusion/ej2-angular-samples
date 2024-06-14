@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { orderDataSource } from './data';
-import { EditService, ToolbarService, PageService, SortService, NewRowPosition, GridModule } from '@syncfusion/ej2-angular-grids';
+import { EditService, ToolbarService, PageService, SortService, FilterService, NewRowPosition, GridModule } from '@syncfusion/ej2-angular-grids';
 import { ChangeEventArgs, DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -8,7 +8,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej-gridnormaledit',
     templateUrl: 'normal-edit.html',
-    providers: [ToolbarService, EditService, PageService, SortService],
+    providers: [ToolbarService, EditService, PageService, SortService, FilterService],
     standalone: true,
     imports: [GridModule, DropDownListModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
@@ -17,6 +17,7 @@ export class NormalEditComponent implements OnInit {
     public dropDown: DropDownListComponent;
     public data: Object[];
     public editSettings: Object;
+    public filterSettings: Object;
     public toolbar: string[];
     public orderidrules: Object;
     public customeridrules: Object;
@@ -34,6 +35,7 @@ export class NormalEditComponent implements OnInit {
         this.freightrules = { required: true, min: 0 };
         this.editparams = { params: { popupHeight: '300px' } };
         this.pageSettings = { pageCount: 5 };
+        this.filterSettings = { type: 'Excel'};
         this.formatoptions = { type: 'dateTime', format: 'M/d/y hh:mm a' }
     }
 

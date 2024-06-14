@@ -4,7 +4,7 @@ import { Browser } from '@syncfusion/ej2-base';
 import { Chart3DPointRenderEventArgs, Chart3DAxisLabelRenderEventArgs, Chart3DAllModule } from '@syncfusion/ej2-angular-charts';
 import { pointFabricColors, pointMaterialDarkColors, pointMaterialColors, pointBootstrap5DarkColors, pointBootstrap5Colors,
     pointBootstrapColors, pointHighContrastColors, pointFluentDarkColors, pointFluentColors, pointTailwindDarkColors,
-    pointTailwindColors, pointMaterial3Colors, pointMaterial3DarkColors } from './theme-color';
+    pointTailwindColors, pointMaterial3Colors, pointMaterial3DarkColors, pointFluent2Colors, pointFluent2DarkColors } from './theme-color';
 
 /**
  * 3D Chart Cylinder sample
@@ -51,7 +51,7 @@ export class CylinderComponent {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
+            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
     };
 
     public axisLabelRender(args: Chart3DAxisLabelRenderEventArgs): void {
@@ -94,6 +94,10 @@ export class CylinderComponent {
         }
         else if (selectedTheme === 'material3-dark') {
             args.fill = pointMaterial3DarkColors[args.point.index % 10];
+        } else if (selectedTheme === 'fluent2') {
+            args.fill = pointFluent2Colors[args.point.index % 10];
+        } else if (selectedTheme === 'fluent2-dark') {
+            args.fill = pointFluent2DarkColors[args.point.index % 10];
         }
     };
     constructor() {

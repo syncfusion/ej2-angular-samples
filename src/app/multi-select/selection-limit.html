@@ -6,7 +6,7 @@
 <div class="control-section">
     <div class="col-lg-8 content-wrapper">
         <div class="control-styles">
-            <h4>Selection Limit</h4>
+            <label class="h4">Selection Limit</label>
             <ejs-multiselect id='multiselect-checkbox' #checkbox [dataSource]='countries' [placeholder]='checkWaterMark' [fields]='checkFields'
                 [mode]='mode' [popupHeight]='popHeight' showDropDownIcon='true' [maximumSelectionLength]='maxSelection' [filterBarPlaceholder]='filterPlaceholder'></ejs-multiselect>
         </div>
@@ -24,7 +24,7 @@
                         </td>
                         <td style="width: 50%; padding:10px 10px 10px 0px">
                             <div>
-                                <ejs-numerictextbox id="maxSel" [(value)]="numericValue" min="1" width="150px"></ejs-numerictextbox>
+                                <ejs-numerictextbox id="maxSel" aria-label="number" [(value)]="numericValue" min="1" width="150px"></ejs-numerictextbox>
                             </div>
                         </td>
                     </tr>
@@ -48,3 +48,11 @@
     <p>The selection limit sample illustrates using the countries data.</p>
 
 </div>
+<style>
+    .control-styles .h4 {
+        font-size: 16px;
+        margin: 0 0 10px;
+        font-weight: bold;
+    }
+
+</style>

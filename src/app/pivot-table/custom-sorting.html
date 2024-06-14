@@ -9,7 +9,12 @@
         as well as the field name, sort order, and member(s) (which can be in any order) inside the pivot table's
         <code>sortSettings</code> property.
         The <code>dataSourceSettings</code> includes <code>enableSorting</code> and <code>sortSettings</code>
-        properties.</p>
+        properties.</p><br />
+    <p>
+        More information on the custom sorting can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/sorting#custom-sorting">
+        documentation section</a>.
+    </p>
 </div>
 
 <div class="col-lg-8 control-section" style="overflow:auto;">
@@ -53,7 +58,7 @@
                                 <div>
                                     <ejs-multiselect id='sorting-members' #sortingMembers [dataSource]='data' [mode]='mode' [fields]='fieldsMembers' [showDropDownIcon]='true' [placeholder]='waterMarkMembers'
                                     [showClearButton]="false" [enableSelectionOrder]="false" (select)='select($event)' (removed)='removed($event)' 
-                                    (open)='open($event)'></ejs-multiselect>
+                                    (open)='open($event)' aria-label="multiselect"></ejs-multiselect>
                                 </div>
                             </td>
                         </tr>

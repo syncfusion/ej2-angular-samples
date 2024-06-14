@@ -33,13 +33,14 @@ export class MapsLabelComponent {
     };
     
     public layers: object[] = [
-        {
+        { 
+            shapeData:  usMap,
+            shapePropertyPath:'iso_3166_2',
             dataLabelSettings: {
                 visible: true,
                 labelPath: 'name',
                 smartLabelMode: 'Trim'
             },
-            shapeData:  usMap,
             shapeSettings: {
                 autofill: true
             },

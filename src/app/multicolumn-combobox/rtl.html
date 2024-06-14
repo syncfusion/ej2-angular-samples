@@ -1,0 +1,22 @@
+<div id="action-description">
+    <p>This example demonstrates the RTL support in the MultiColumn ComboBox.</p>
+</div>
+
+<div class="control-section">
+    <div class='control-wrapper'>
+        <div style='padding-top:60px;'>
+            <ejs-multicolumncombobox id='rtl' #rtl [dataSource]='empData' [fields]='fields' [enableRtl]='true' [placeholder]='waterMark' popupHeight='230px'>
+                <e-columns>
+                    <e-column field='Eimg' header='Employee ID' width='120'></e-column>
+                    <e-column field='Name' header='Employee Name' width='160'></e-column>
+                    <e-column field='Designation' header='Designation' width='150'></e-column>
+                    <e-column field='Country' header='Country' width='100'></e-column>
+                </e-columns>
+            </ejs-multicolumncombobox>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>The MultiColumn ComboBox has the support to enable the right-to-left (RTL) text direction when the <code>enableRtl</code> property is enabled.</p>
+</div>

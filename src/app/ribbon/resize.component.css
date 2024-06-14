@@ -102,6 +102,13 @@ body[class*="high"] #ribbonContainer {
   min-width: 10ch;
 }
 
+p.displayText {
+  margin: 0 0 0 15px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
 /* Represents the styles for icons */
 @font-face {
 font-family: 'ribbon';

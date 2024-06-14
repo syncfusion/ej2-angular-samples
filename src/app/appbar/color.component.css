@@ -7,6 +7,10 @@
   display: none;
 }
 
+.color-appbar-section h1 {
+  font-size: 18px;
+}
+
 .color-appbar-section .e-appbar .e-appbar-separator {
   margin: 0 10px;
 }

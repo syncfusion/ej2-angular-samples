@@ -53,8 +53,8 @@ export class GanttDragAndDropComponent implements OnInit {
         this.labelSettings = {
             leftLabel: 'TaskName'
         };
-        this.projectStartDate= new Date('03/25/2019');
-        this.projectEndDate= new Date('07/06/2019');
+        this.projectStartDate= new Date('03/25/2024');
+        this.projectEndDate= new Date('07/06/2024');
         this.splitterSettings = {
             columnIndex: 3
         };

@@ -1,0 +1,16 @@
+.content {
+    width: 250px;
+    margin: 0 auto;
+} 
+
+.highcontrast button,
+.bootstrap-dark button,
+.bootstrap5-dark button, 
+.bootstrap4-dark button,
+.fluent-dark button,
+.fabric-dark button,
+.tailwind-dark button,
+.material3-dark button,
+.material-dark button {
+background: inherit;
+}

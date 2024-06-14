@@ -5,7 +5,7 @@
 
 <div id="multiselect-chip-customization" class="control-section">
     <div class="control-styles ms-chip-customize">
-        <h4>Chip Customization</h4>
+        <label class="h4">Chip Customization</label>
         <ejs-multiselect id='chip-customization' [value]='colorValues' [dataSource]='colorsData' (tagging)='onTagging($event)' [mode]='box'
             [placeholder]='waterMark' [fields]='fields'></ejs-multiselect>
     </div>
@@ -19,3 +19,11 @@
         through <code>tagging</code> event argument of the <code>setClass</code> method.
    </p>
 </div>
+<style>
+    .control-styles.ms-chip-customize .h4 {
+        font-size: 16px;
+        margin: 0 0 10px;
+        font-weight: bold;
+    }
+
+</style>

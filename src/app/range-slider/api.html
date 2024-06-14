@@ -14,41 +14,41 @@
                 <tbody>
                     <tr>
                         <td style="width: 50%">
-                            <div class="userselect">Value</div>
+                            <div id="valueLabel" class="userselect">Value</div>
                         </td>
                         <td style="width: 50%">
                             <div>
-                                <ejs-numerictextbox id='value' #numeric1 format="n0" value="30" (change)='change($event)'></ejs-numerictextbox>
+                                <ejs-numerictextbox id='value' #numeric1 format="n0" value="30" (change)='change($event)' aria-labelledby="valueLabel"></ejs-numerictextbox>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td style="width: 50%">
-                            <div class="userselect">Min</div>
+                            <div id="minLabel" class="userselect">Min</div>
                         </td>
                         <td style="width: 50%">
                             <div>
-                                <ejs-numerictextbox id='min' #numeric2 format="n0" value="0" (change)='min_change($event)'></ejs-numerictextbox>
+                                <ejs-numerictextbox id='min' #numeric2 format="n0" value="0" (change)='min_change($event)' aria-labelledby="minLabel"></ejs-numerictextbox>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td style="width: 50%">
-                            <div class="userselect">Max</div>
+                            <div id="maxLabel" class="userselect">Max</div>
                         </td>
                         <td style="width: 50%">
                             <div>
-                                <ejs-numerictextbox id='max' #numeric3 format="n0" value="100" (change)='max_change($event)'></ejs-numerictextbox>
+                                <ejs-numerictextbox id='max' #numeric3 format="n0" value="100" (change)='max_change($event)' aria-labelledby="maxLabel"></ejs-numerictextbox>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td style="width: 50%">
-                            <div class="userselect">Step</div>
+                            <div id="stepLabel" class="userselect">Step</div>
                         </td>
                         <td style="width: 50%">
                             <div>
-                                <ejs-numerictextbox id='step' #numeric4 value="1" format="n0" (change)='step_change($event)'></ejs-numerictextbox>
+                                <ejs-numerictextbox id='step' #numeric4 value="1" format="n0" (change)='step_change($event)' aria-labelledby="stepLabel"></ejs-numerictextbox>
                             </div>
                         </td>
                     </tr>

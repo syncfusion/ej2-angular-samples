@@ -16,6 +16,8 @@ import { HeaderTemplateQueryBuilderComponent } from './header-template.component
 import { CloneComponent } from './clone.component';
 import { LockComponent } from './lock.component';
 import { MongoComponent } from './mongo.component';
+import { DragDropComponent } from './drag-drop.component';
+import { SeparateConnectorComponent } from './separate-connector.component';
 import { OverviewQueryBuilderComponent } from './overview.component';
 import { GridModule } from '@syncfusion/ej2-angular-grids';
 import { TabModule } from '@syncfusion/ej2-angular-navigations';
@@ -24,7 +26,6 @@ export const QueryBuilderAppRoutes: Object[] = [
         path: ':theme/query-builder/default',
         component: DefaultQueryBuilderComponent,
         order: '01',
-        type: 'update',
         name: 'Default Functionalities',
         category: 'Query Builder'
     },
@@ -39,7 +40,6 @@ export const QueryBuilderAppRoutes: Object[] = [
         path: ':theme/query-builder/mongo',
         component: MongoComponent,
         order: '01',
-        type: 'new',
         name: 'Mongo and SQL Query',
         category: 'Query Builder'
     },
@@ -47,7 +47,6 @@ export const QueryBuilderAppRoutes: Object[] = [
         path: ':theme/query-builder/clone',
         component: CloneComponent,
         order: '01',
-        type: 'new',
         name: 'Clone Group/ Rule',
         category: 'Query Builder'
     },
@@ -55,8 +54,23 @@ export const QueryBuilderAppRoutes: Object[] = [
         path: ':theme/query-builder/lock',
         component: LockComponent,
         order: '01',
-        type: 'new',
         name: 'Lock Group/ Rule',
+        category: 'Query Builder'
+    },
+    {
+        path: ':theme/query-builder/drag-drop',
+        component: DragDropComponent,
+        order: '01',
+        name: 'Drag and Drop',
+        type: 'new',
+        category: 'Query Builder'
+    },
+    {
+        path: ':theme/query-builder/separate-connector',
+        component: SeparateConnectorComponent,
+        order: '01',
+        name: 'Separate Connector',
+        type: 'new',
         category: 'Query Builder'
     },
     {
@@ -70,7 +84,6 @@ export const QueryBuilderAppRoutes: Object[] = [
         path: ':theme/query-builder/template',
         component: TemplateQueryBuilderComponent,
         order: '02',
-        type: 'update',
         name: 'Value Template',
         category: 'Template'
     },

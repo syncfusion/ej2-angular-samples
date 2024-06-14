@@ -2,7 +2,7 @@
  * Export sample
  */
 import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
-import { MapsTheme, Maps, Marker, MapsTooltip, ILoadEventArgs, ExportType, ShapeLayerType, MapsModule } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, Maps, Marker, MapsTooltip, ILoadEventArgs, ExportType, MapsModule } from '@syncfusion/ej2-angular-maps';
 import { PdfExportService, ImageExportService } from '@syncfusion/ej2-angular-maps';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { MapAjax } from '@syncfusion/ej2-maps';
@@ -10,6 +10,7 @@ import { SBDescriptionComponent } from '../common/dp.component';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { FormsModule } from '@angular/forms';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 declare var require: any;
 let worldMap: object[] = require('./world-map.json');
 Maps.Inject(Marker, MapsTooltip);
@@ -19,13 +20,14 @@ Maps.Inject(Marker, MapsTooltip);
     encapsulation: ViewEncapsulation.None,
     providers: [PdfExportService, ImageExportService],
     standalone: true,
-    imports: [SBActionDescriptionComponent, MapsModule, FormsModule, ButtonModule, SBDescriptionComponent]
+    imports: [SBActionDescriptionComponent, MapsModule, FormsModule, ButtonModule, SBDescriptionComponent, TextBoxModule]
 })
 export class MapsExportComponent {
     @ViewChild('maps')
     public maps: Maps;
     public allowPdfExport: boolean = true;
     public allowImageExport: boolean = true;
+    public downloadFileName: string = 'Maps';
     public load = (args: ILoadEventArgs) => {
         // custom code start
         let theme: string = location.hash.split('/')[1];
@@ -73,8 +75,10 @@ export class MapsExportComponent {
             }
     ];
     public onClick(e: Event): void {
-        let fileName: string = (<HTMLInputElement>(document.getElementById('fileName'))).value;
-        this.maps.export(<ExportType>this.exportType.value, fileName);
+        this.maps.export(<ExportType>this.exportType.value, this.downloadFileName);
+    }
+    public change(target: any): void {
+        this.downloadFileName = target.value;
     }
     public exportType: DropDownList;
     public layerType: DropDownList;
@@ -91,15 +95,18 @@ export class MapsExportComponent {
             width: '100%',
             change: () => {
                 if (this.layerType.value === 'OSM') {
+                    this.maps.layers[this.maps.layersCollection.length - 1].urlTemplate = 'https://tile.openstreetmap.org/level/tileX/tileY.png';
+                    this.maps.layers[this.maps.layersCollection.length - 1].shapeData = null;
                     if (this.exportType.value === 'SVG') {
                         this.exportType.value = this.modeData[0];
                     }
                     this.exportType.dataSource = this.modeData.slice(0, 3);
                     
                 } else {
+                    this.maps.layers[this.maps.layersCollection.length - 1].shapeData = worldMap;
+                    this.maps.layers[this.maps.layersCollection.length - 1].urlTemplate = '';
                     this.exportType.dataSource = this.modeData;
                 }
-                this.maps.layers[this.maps.layersCollection.length - 1].layerType = <ShapeLayerType>this.layerType.value;
                 this.maps.refresh();
             }
         });

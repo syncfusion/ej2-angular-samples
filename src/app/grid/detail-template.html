@@ -4,7 +4,7 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid #grid [dataSource]='data' id='Grid' [allowSorting]='true'>
+    <ejs-grid #grid [dataSource]='data' id='Grid' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings'>
         <ng-template #detailTemplate let-data>
             <table class="detailtable" width="100%">
                 <colgroup>

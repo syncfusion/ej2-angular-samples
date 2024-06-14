@@ -115,6 +115,12 @@ export class LiveDataComponent implements OnInit {
         }
     }
 
+    public customizeRatingCell(span1: Element, span2: Element, span1_class: string[], span2_class: string, span2_text: string): void {
+        span1_class.forEach((item: string) => span1.classList.add(item));
+        span2.classList.add(span2_class);
+        (span2 as HTMLElement).innerText = span2_text;
+    }
+
     public queryCellInfoEvent: EmitType<QueryCellInfoEventArgs> = (
         args: QueryCellInfoEventArgs
     ) => {
@@ -144,60 +150,18 @@ export class LiveDataComponent implements OnInit {
                 const span: Element = document.createElement('span');
                 const span2: Element = document.createElement('span');
                 if (args.data['Change'] === 0) {
-                    span.classList.add('e-icons');
-                    span.classList.add('e-intermediate-state-2');
-                    span.classList.add('neutral');
-                    span.classList.add('ic');
-                    span.classList.add('side-space');
-                    span2.classList.add('neutral');
-                    (span2 as HTMLElement).innerText = 'Neutral';
-                    args.cell.appendChild(span);
-                    args.cell.appendChild(span2);
+                    this.customizeRatingCell(span, span2, ['e-icons', 'e-intermediate-state-2', 'neutral', 'ic', 'side-space'], 'neutral', 'Neutral');
                 } else if (args.data['Change'] < -2 && args.data['Net'] < 0) {
-                    span.classList.add('e-negc');
-                    span.classList.add('e-icons');
-                    span.classList.add('e-chevron-down-double');
-                    span.classList.add('below-0');
-                    span.classList.add('ic');
-                    span.classList.add('side-space');
-                    span2.classList.add('below-0');
-                    (span2 as HTMLElement).innerText = 'Strongly Sell';
-                    args.cell.appendChild(span);
-                    args.cell.appendChild(span2);
+                    this.customizeRatingCell(span, span2, ['e-icons', 'e-negc', 'e-chevron-down-double', 'below-0', 'ic', 'side-space'], 'below-0', 'Strongly Sell');
                 } else if (args.data['Net'] < 0) {
-                    span.classList.add('e-negc');
-                    span.classList.add('e-icons');
-                    span.classList.add('e-chevron-down');
-                    span.classList.add('below-0');
-                    span.classList.add('ic');
-                    span.classList.add('side-space');
-                    span2.classList.add('below-0');
-                    (span2 as HTMLElement).innerText = 'Sell';
-                    args.cell.appendChild(span);
-                    args.cell.appendChild(span2);
+                    this.customizeRatingCell(span, span2, ['e-icons', 'e-negc', 'e-chevron-down', 'below-0', 'ic', 'side-space'], 'below-0', 'Sell');
                 } else if (args.data['Change'] > 5 && args.data['Net'] > 10) {
-                    span.classList.add('e-posc');
-                    span.classList.add('e-icons');
-                    span.classList.add('e-chevron-up-double');
-                    span.classList.add('above-0');
-                    span.classList.add('ic');
-                    span.classList.add('side-space');
-                    span2.classList.add('above-0');
-                    (span2 as HTMLElement).innerText = 'Strongly Buy';
-                    args.cell.appendChild(span);
-                    args.cell.appendChild(span2);
+                    this.customizeRatingCell(span, span2, ['e-icons', 'e-posc', 'e-chevron-up-double', 'above-0', 'ic', 'side-space'], 'above-0', 'Strongly Buy');
                 } else {
-                    span.classList.add('e-posc');
-                    span.classList.add('e-icons');
-                    span.classList.add('e-chevron-up');
-                    span.classList.add('above-0');
-                    span.classList.add('ic');
-                    span.classList.add('side-space');
-                    span2.classList.add('above-0');
-                    (span2 as HTMLElement).innerText = 'Buy';
-                    args.cell.appendChild(span);
-                    args.cell.appendChild(span2);
+                    this.customizeRatingCell(span, span2, ['e-icons', 'e-posc', 'e-chevron-up', 'above-0', 'ic', 'side-space'], 'above-0', 'Buy');
                 }
+                args.cell.appendChild(span);
+                args.cell.appendChild(span2);
             }
         }
         this.isDataBound = true;

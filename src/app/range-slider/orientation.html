@@ -25,7 +25,7 @@
                     </td>
                     <td>
                         <div class="sliderwrap">
-                            <ejs-slider id='range' #reverse [value]='reversevalue' [min]=100 [max]=0 [type]='rangetype' [orientation]='orientation' [ticks]='ticks' [tooltip]='tooltipData'></ejs-slider>
+                            <ejs-slider id='reverse' #reverse [value]='reversevalue' [min]=100 [max]=0 [type]='rangetype' [orientation]='orientation' [ticks]='ticks' [tooltip]='tooltipData'></ejs-slider>
                         </div>
                     </td>
                 </tr>
@@ -42,18 +42,18 @@
                 <tbody>
                     <tr>
                         <td style="width: 30%">
-                            <div class="userselect">Ticks</div>
+                            <div id="ticksLabel" class="userselect">Ticks</div>
                         </td>
                         <td style="width: 70%;padding-right: 10px">
-                            <ejs-checkbox #checkbox id="ticks" [checked]="true" (change)="enableDisableTicks($event)"></ejs-checkbox>
+                            <ejs-checkbox #checkbox id="ticks" [checked]="true" (change)="enableDisableTicks($event)" aria-labelledby="ticksLabel"></ejs-checkbox>
                         </td>
                     </tr>
                     <tr>
                         <td style="width: 30%">
-                            <div class="userselect">Tooltip</div>
+                            <div id="tooltipLabel" class="userselect">Tooltip</div>
                         </td>
                         <td style="width: 70%;padding-right: 10px">
-                            <ejs-checkbox #tooltip id="tooltip" [checked]="true" (change)="enableDisableTooltip($event)"></ejs-checkbox>
+                            <ejs-checkbox #tooltip id="tooltip" [checked]="true" (change)="enableDisableTooltip($event)" aria-labelledby="tooltipLabel"></ejs-checkbox>
                         </td>
                     </tr>
                 </tbody>
@@ -73,12 +73,11 @@
             in vertical orientation</li>
         <li>Reverse – Allows to render the component in reverse order. To utilise this, set the maximum value to the Min
             property and set the minimum value to the Max property</li>
-        <p>The dragInterval is used to drag both handles using the range bar which is also applicable only to the range slider.</p>
-        <p>
-            In this demo, the default, MinRange, and range slider types can be seen.
-        </p>
-        <p>For more information, refer to the
-            <a target="_blank" href="http://ej2.syncfusion.com/documentation/slider/getting-started.html?lang=es6#orientation">orientation</a> section from the documentation.</p>
-
     </ul>
+    <p>The dragInterval is used to drag both handles using the range bar which is also applicable only to the range slider.</p>
+    <p>
+        In this demo, the default, MinRange, and range slider types can be seen.
+    </p>
+    <p>For more information, refer to the
+        <a target="_blank" href="http://ej2.syncfusion.com/documentation/slider/getting-started.html?lang=es6#orientation">orientation</a> section from the documentation.</p>
 </div>

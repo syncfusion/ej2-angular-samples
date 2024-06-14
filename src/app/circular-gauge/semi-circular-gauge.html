@@ -1,176 +1,186 @@
-<div id="action-description">
-    <p>
-        This sample shows how to create semi-circular or quarter-circular gauges by modifying a circular gauge with
-        different start and end angles.
-    </p>
-</div>
-<div class="control-section">
-    <div class="col-md-8 control-section">
-        <ejs-circulargauge (load)='load($event)' background='transparent' centerX='50%' centerY='50%' moveToCenter=false
-            style='display:block;' id='semi-circle' #circulargauge=''>
-            <e-axes>
-                <e-axis minimum=0 radius='100%' hideIntersectingLabel=true maximum=100 startAngle=270 endAngle=90
-                    [majorTicks]='majorTicks' [labelStyle]='labelStyle' [lineStyle]='lineStyle'
-                    [minorTicks]='minorTicks'>
-                    <e-pointers>
-                        <e-pointer value=30 radius='75%' [animation]='animation' pointerWidth=7 [needleTail]='tail'
-                            [cap]="pointerCap">
-                        </e-pointer>
-                    </e-pointers>
-                </e-axis>
-            </e-axes>
-        </ejs-circulargauge>
-    </div>
-
-    <div class="col-md-4 property-section">
-        <div class="property-panel-section">
-            <div class="property-panel-header">Properties</div>
-            <div class="property-panel-content">
-                <table id="property" title="Properties" style="width: 100%">
-                    <colgroup>
-                        <col span="1" style="width: 45%;">
-                        <col span="1" style="width: 35%;">
-                        <col span="1" style="width: 20%;">
-                    </colgroup>
-                    <tr style="height: 50px">
-                        <td>
-                            <div style="font-size:14px">Start Angle </div>
-                        </td>
-                        <td>
-                            <div>
-                                <input type="range" id="start" min="0" max="360" value="270" />
-                            </div>
-                        </td>
-                        <td style="text-align: center; padding-left: 5px">
-                            <span id='rangeStart' style="font-size:14px">270°&nbsp;</span>
-                        </td>
-                    </tr>
-                </table>
-                <table id="property" title="Properties" style="width: 100%">
-                    <colgroup>
-                        <col span="1" style="width: 45%;">
-                        <col span="1" style="width: 35%;">
-                        <col span="1" style="width: 20%;">
-                    </colgroup>
-                    <tr style="height: 50px">
-                        <td>
-                            <div style="font-size:14px">End Angle</div>
-                        </td>
-                        <td>
-                            <div>
-                                <input type="range" id="end" min="0" max="360" value="90" />
-                            </div>
-                        </td>
-                        <td style="text-align: center; padding-left: 5px">
-                            <span id='rangeEnd' style="font-size:14px">90°&nbsp;</span>
-                        </td>
-                    </tr>
-                </table>
-                <table id="property" title="Properties" style="width: 100%">
-                    <colgroup>
-                        <col span="1" style="width: 45%;">
-                        <col span="1" style="width: 35%;">
-                        <col span="1" style="width: 20%;">
-                    </colgroup>
-                    <tr style="height: 50px">
-                        <td>
-                            <div style="font-size:14px">Radius</div>
-                        </td>
-                        <td>
-                            <div>
-                                <input type="range" id="radius" min="30" max="100" value="100" />
-                            </div>
-                        </td>
-                        <td style="text-align: center; padding-left: 5px">
-                            <span id='radius1' style="font-size:14px">100%&nbsp;</span>
-                        </td>
-                    </tr>
-                </table>
-                <table id="property" title="Properties" style="width: 100%">
-                    <colgroup>
-                        <col span="1" style="width: 50%;">
-                        <col span="1" style="width: 50%;">
-                    </colgroup>
-                    <tr style="height: 50px;">
-                        <td>
-                            <div class="property-text" style="width: 80%;font-size: 14px"> Radius based on angle</div>
-                        </td>
-                        <td style="width: 40%;">
-                            <div style="margin-left: -11%;">
-                                <input type="checkbox" id="angle" checked />
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <table id="property" title="Properties" style="width: 100%">
-                    <colgroup>
-                        <col span="1" style="width: 45%;">
-                        <col span="1" style="width: 35%;">
-                        <col span="1" style="width: 20%;">
-                    </colgroup>
-                    <tr style="height: 50px">
-                        <td>
-                            <div style="font-size:14px">Center X</div>
-                        </td>
-                        <td>
-                            <div>
-                                <input type="range" id="centerX" min="0" max="100" value="50" />
-                            </div>
-                        </td>
-                        <td style="text-align: center; padding-left: 5px">
-                            <span id='centerx' style="font-size:14px">50%&nbsp;</span>
-                        </td>
-                    </tr>
-                </table>
-                <table id="property" title="Properties" style="width: 100%">
-                    <colgroup>
-                        <col span="1" style="width: 45%;">
-                        <col span="1" style="width: 35%;">
-                        <col span="1" style="width: 20%;">
-                    </colgroup>
-                    <tr style="height: 50px">
-                        <td>
-                            <div style="font-size:14px">Center Y </div>
-                        </td>
-                        <td>
-                            <div>
-                                <input type="range" id="centerY" min="0" max="100" value="50" />
-                            </div>
-                        </td>
-                        <td style="text-align: center; padding-left: 5px">
-                            <span id='centery' style="font-size:14px">50%&nbsp;</span>
-                        </td>
-                    </tr>
-                </table>
-                <table id="property" title="Properties" style="width: 100%">
-                    <colgroup>
-                        <col span="1" style="width: 50%;">
-                        <col span="1" style="width: 50%;">
-                    </colgroup>
-                    <tr style="height: 50px;">
-                        <td>
-                            <div class="property-text" style="width: 80%;font-size: 14px">Hide Intersecting Labels</div>
-                        </td>
-                        <td style="width: 40%;">
-                            <div style="margin-left: -11%;">
-                                <input type="checkbox" id="hidelabel" checked />
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+<main>
+    <section id="action-description" aria-label="Description of Circular Gauge sample">
+        <p>
+            This sample shows how to create semi-circular or quarter-circular gauges by modifying a circular gauge with
+            different start and end angles.
+        </p>
+    </section>
+    <div class="control-section">
+        <div class="col-md-8 control-section">
+            <ejs-circulargauge (load)='load($event)' background='transparent' centerX='50%' centerY='50%' moveToCenter=false
+                style='display:block;' id='semi-circle' #circulargauge=''>
+                <e-axes>
+                    <e-axis minimum=0 radius='100%' hideIntersectingLabel=true maximum=100 startAngle=270 endAngle=90
+                        [majorTicks]='majorTicks' [labelStyle]='labelStyle' [lineStyle]='lineStyle'
+                        [minorTicks]='minorTicks'>
+                        <e-pointers>
+                            <e-pointer value=30 radius='75%' [animation]='animation' pointerWidth=7 [needleTail]='tail'
+                                [cap]="pointerCap">
+                            </e-pointer>
+                        </e-pointers>
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+    
+        <div class="col-md-4 property-section">
+            <div class="property-panel-section">
+                <div class="property-panel-header">Properties</div>
+                <div class="property-panel-content">
+                    <table title="Properties" style="width: 100%" role="none">
+                        <colgroup>
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 35%;">
+                            <col span="1" style="width: 20%;">
+                        </colgroup>
+                        <tr style="height: 50px">
+                            <td>
+                                <div style="font-size:14px">Start Angle </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="range" id="start" min="0" max="360" value="270" />
+                                </div>
+                            </td>
+                            <td style="text-align: center; padding-left: 5px">
+                                <span id='rangeStart' style="font-size:14px">270°&nbsp;</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <table title="Properties" style="width: 100%" role="none">
+                        <colgroup>
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 35%;">
+                            <col span="1" style="width: 20%;">
+                        </colgroup>
+                        <tr style="height: 50px">
+                            <td>
+                                <div style="font-size:14px">End Angle</div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="range" id="end" min="0" max="360" value="90" />
+                                </div>
+                            </td>
+                            <td style="text-align: center; padding-left: 5px">
+                                <span id='rangeEnd' style="font-size:14px">90°&nbsp;</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <table title="Properties" style="width: 100%" role="none">
+                        <colgroup>
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 35%;">
+                            <col span="1" style="width: 20%;">
+                        </colgroup>
+                        <tr style="height: 50px">
+                            <td>
+                                <div style="font-size:14px">Radius</div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="range" id="radius" min="30" max="100" value="100" />
+                                </div>
+                            </td>
+                            <td style="text-align: center; padding-left: 5px">
+                                <span id='radius1' style="font-size:14px">100%&nbsp;</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <table id="property" title="Properties" style="width: 100%" role="none">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
+                        <tr style="height: 50px;">
+                            <td>
+                                <div class="property-text" style="width: 80%;font-size: 14px"> Radius based on angle</div>
+                            </td>
+                            <td style="width: 40%;">
+                                <div class="semiCircleCheckBox">
+                                    <input type="checkbox" id="angle" checked />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table title="Properties" style="width: 100%" role="none">
+                        <colgroup>
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 35%;">
+                            <col span="1" style="width: 20%;">
+                        </colgroup>
+                        <tr style="height: 50px">
+                            <td>
+                                <div style="font-size:14px">Center X</div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="range" id="centerX" min="0" max="100" value="50" />
+                                </div>
+                            </td>
+                            <td style="text-align: center; padding-left: 5px">
+                                <span id='centerx' style="font-size:14px">50%&nbsp;</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <table title="Properties" style="width: 100%" role="none">
+                        <colgroup>
+                            <col span="1" style="width: 45%;">
+                            <col span="1" style="width: 35%;">
+                            <col span="1" style="width: 20%;">
+                        </colgroup>
+                        <tr style="height: 50px">
+                            <td>
+                                <div style="font-size:14px">Center Y </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="range" id="centerY" min="0" max="100" value="50" />
+                                </div>
+                            </td>
+                            <td style="text-align: center; padding-left: 5px">
+                                <span id='centery' style="font-size:14px">50%&nbsp;</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <table id="property" title="Properties" style="width: 100%" role="none">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
+                        <tr style="height: 50px;">
+                            <td>
+                                <div class="property-text" style="width: 80%;font-size: 14px">Hide Intersecting Labels</div>
+                            </td>
+                            <td style="width: 40%;">
+                                <div class="semiCircleCheckBox">
+                                    <input type="checkbox" id="hidelabel" checked />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div id="description">
-    <p>
-        In this example, a circular gauge is rendered with different start and end angles to create semi-circular or
-        quarter-circular gauges. The radius, start angle, end angle, and center position of the circular gauge can all
-        be customized using the options in the properties panel.
-    </p>
-    <p>
-        More information on the semi-circular or quarter-circular gauges can be found in this <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/gauge-appearance/#radius-calculation-based-on-angles">documentation
-            section</a> .
-    </p>
-</div>
+    <style>
+        .semiCircleCheckBox {
+            margin-left: -11%;
+        }
+        .e-view.fluent2-dark #property .semiCircleCheckBox {
+            margin-left: -13%;
+        }
+    </style>
+    <section id="description" aria-label="Description of the Circular Gauge features demonstrated in this sample">
+        <p>
+            In this example, a circular gauge is rendered with different start and end angles to create semi-circular or
+            quarter-circular gauges. The radius, start angle, end angle, and center position of the circular gauge can all
+            be customized using the options in the properties panel.
+        </p>
+        <p>
+            More information on the semi-circular or quarter-circular gauges can be found in this <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/gauge-appearance/#radius-calculation-based-on-angles">documentation
+                section</a> .
+        </p>
+    </section>
+</main>

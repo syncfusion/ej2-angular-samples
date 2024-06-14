@@ -3,6 +3,7 @@ import { ILoadedEventArgs, GaugeTheme, ExportType, CircularGaugeComponent, Circu
 import { PrintService, PdfExportService, ImageExportService } from '@syncfusion/ej2-angular-circulargauge';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 
 @Component({
     selector: 'control-content',
@@ -10,7 +11,7 @@ import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
     encapsulation: ViewEncapsulation.None,
     providers: [PrintService, PdfExportService, ImageExportService],
     standalone: true,
-    imports: [CircularGaugeModule, ButtonModule]
+    imports: [CircularGaugeModule, ButtonModule, TextBoxModule]
 })
 export class ExportComponent {
 
@@ -20,6 +21,7 @@ export class ExportComponent {
     public allowPrint: boolean = true;
     public allowPdfExport: boolean = true;
     public allowImageExport: boolean = true;
+    public downloadFileName: string = 'Circular Gauge';
 
     public minorTicks: Object = {
         position: 'Outside',
@@ -86,10 +88,11 @@ export class ExportComponent {
     public onClickPrint(e: Event): void {
         this.gauge.print();
     }
-
+    public change(target: any): void {
+        this.downloadFileName = target.value;
+    }
     public onClickExport(e: Event): void {
-        let fileName: string = (<HTMLInputElement>(document.getElementById('fileName'))).value;
-        this.gauge.export(<ExportType>this.exportType.value, fileName);
+        this.gauge.export(<ExportType>this.exportType.value, this.downloadFileName);
     }
 
     ngOnInit(): void {

@@ -57,8 +57,8 @@ export class GanttSelectionComponent implements OnInit {
             type: 'Single',
             enableToggle: false
         };
-        this.projectStartDate = new Date('03/27/2019');
-        this.projectEndDate = new Date('07/06/2019');
+        this.projectStartDate = new Date('03/27/2024');
+        this.projectEndDate = new Date('07/06/2024');
         this.dropDownModeListData = [
             { id: 'Row', type: 'Row' },
             { id: 'Cell', type: 'Cell' }

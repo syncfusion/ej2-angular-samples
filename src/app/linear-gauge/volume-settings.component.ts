@@ -36,7 +36,8 @@ export class VolumeSettingsComponent {
             interval: 10, height: 0
         },
         labelStyle: {
-            font: { size: '0px' }
+            format:'Music {value} %' ,
+            font: { size: '0px'}
         }
     }];
 
@@ -63,6 +64,7 @@ export class VolumeSettingsComponent {
             interval: 10, height: 0
         },
         labelStyle: {
+            format:'Bell {value} %',
             font: { size: '0px' }
         }
     }];
@@ -90,6 +92,7 @@ export class VolumeSettingsComponent {
             interval: 10, height: 0
         },
         labelStyle: {
+            format: 'Clock {value} %',
             font: { size: '0px' }
         }
     }];

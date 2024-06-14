@@ -1,87 +1,6 @@
 <div class="col-lg-12 control-section contextual-tab">
   <div id="ribbonContainer">
     <ejs-ribbon #contextualRibbon id="ribbon" [fileMenu]='fileSettings' [enablePersistence]="true" (launcherIconClick)='launchClick($event)'>
-      <e-ribbon-contextual-tabs>
-        <!-- Contextual Tab 1 -->
-        <e-ribbon-contextual-tab [visible]=true>
-          <e-ribbon-tabs>
-            <e-ribbon-tab id="TableDesign" header="Table Design">
-              <e-ribbon-groups>
-                <e-ribbon-group header="Table Style" groupIconCss="e-icons e-field-settings">
-                  <e-ribbon-collections>
-                    <e-ribbon-collection>
-                      <e-ribbon-items>
-                        <e-ribbon-item type="DropDown" [allowedSizes]='largeSize' [dropDownSettings]="tableDropdown">
-                        </e-ribbon-item>
-                      </e-ribbon-items>
-                    </e-ribbon-collection>
-                  </e-ribbon-collections>
-                </e-ribbon-group>
-                <e-ribbon-group header="Borders Style" groupIconCss="e-icons e-field-settings">
-                  <e-ribbon-collections>
-                    <e-ribbon-collection>
-                      <e-ribbon-items>
-                        <e-ribbon-item type="DropDown" [allowedSizes]='largeSize' [dropDownSettings]="borderDropdown">
-                        </e-ribbon-item>
-                      </e-ribbon-items>
-                    </e-ribbon-collection>
-                  </e-ribbon-collections>
-                </e-ribbon-group>
-              </e-ribbon-groups>
-            </e-ribbon-tab>
-            <e-ribbon-tab id="TableLayout" header="Table Layout">
-              <e-ribbon-groups>
-                <e-ribbon-group header="Data" groupIconCss="e-icons e-custom-sort">
-                  <e-ribbon-collections>
-                    <e-ribbon-collection>
-                      <e-ribbon-items>
-                        <e-ribbon-item type="Button" [allowedSizes]='largeSize' [buttonSettings]="sortAscendingButton">
-                        </e-ribbon-item>
-                      </e-ribbon-items>
-                    </e-ribbon-collection>
-                    <e-ribbon-collection>
-                      <e-ribbon-items>
-                        <e-ribbon-item type="Button" [allowedSizes]='largeSize' [buttonSettings]="sortDescendingButton">
-                        </e-ribbon-item>
-                      </e-ribbon-items>
-                    </e-ribbon-collection>
-                  </e-ribbon-collections>
-                </e-ribbon-group>
-                <e-ribbon-group header="Merge" groupIconCss="e-icons e-merge-cells">
-                  <e-ribbon-collections>
-                    <e-ribbon-collection>
-                      <e-ribbon-items>
-                        <e-ribbon-item type="DropDown" [allowedSizes]='largeSize' [dropDownSettings]="mergeDropdown">
-                        </e-ribbon-item>
-                      </e-ribbon-items>
-                    </e-ribbon-collection>
-                  </e-ribbon-collections>
-                </e-ribbon-group>
-              </e-ribbon-groups>
-            </e-ribbon-tab>
-          </e-ribbon-tabs>
-        </e-ribbon-contextual-tab>
-        <!-- Contextual Tab 2 -->
-        <e-ribbon-contextual-tab [visible]=false>
-          <e-ribbon-tabs>
-            <e-ribbon-tab id="Format" header="Picture Format">
-              <e-ribbon-groups>
-                <e-ribbon-group header="Background" groupIconCss="e-icons e-image">
-                  <e-ribbon-collections>
-                    <e-ribbon-collection>
-                      <e-ribbon-items>
-                        <e-ribbon-item type="Button" [allowedSizes]='largeSize' [buttonSettings]="backgroundButton">
-                        </e-ribbon-item>
-                      </e-ribbon-items>
-                    </e-ribbon-collection>
-                  </e-ribbon-collections>
-                </e-ribbon-group>
-              </e-ribbon-groups>
-            </e-ribbon-tab>
-          </e-ribbon-tabs>
-        </e-ribbon-contextual-tab>
-      </e-ribbon-contextual-tabs>
-      
       <e-ribbon-tabs>
         <e-ribbon-tab header="Home">
           <e-ribbon-groups>
@@ -286,7 +205,7 @@
                 </e-ribbon-collection>
               </e-ribbon-collections>
             </e-ribbon-group>
-            <e-ribbon-group header="show" [isCollapsible]=false>
+            <e-ribbon-group header="Show" [isCollapsible]=false>
               <e-ribbon-collections>
                 <e-ribbon-collection>
                   <e-ribbon-items>
@@ -313,6 +232,87 @@
           </e-ribbon-groups>
         </e-ribbon-tab>
       </e-ribbon-tabs>
+
+      <e-ribbon-contextual-tabs>
+        <!-- Contextual Tab 1 -->
+        <e-ribbon-contextual-tab [visible]=true>
+          <e-ribbon-tabs>
+            <e-ribbon-tab id="TableDesign" header="Table Design">
+              <e-ribbon-groups>
+                <e-ribbon-group header="Table Style" groupIconCss="e-icons e-field-settings">
+                  <e-ribbon-collections>
+                    <e-ribbon-collection>
+                      <e-ribbon-items>
+                        <e-ribbon-item type="DropDown" [allowedSizes]='largeSize' [dropDownSettings]="tableDropdown">
+                        </e-ribbon-item>
+                      </e-ribbon-items>
+                    </e-ribbon-collection>
+                  </e-ribbon-collections>
+                </e-ribbon-group>
+                <e-ribbon-group header="Borders Style" groupIconCss="e-icons e-field-settings">
+                  <e-ribbon-collections>
+                    <e-ribbon-collection>
+                      <e-ribbon-items>
+                        <e-ribbon-item type="DropDown" [allowedSizes]='largeSize' [dropDownSettings]="borderDropdown">
+                        </e-ribbon-item>
+                      </e-ribbon-items>
+                    </e-ribbon-collection>
+                  </e-ribbon-collections>
+                </e-ribbon-group>
+              </e-ribbon-groups>
+            </e-ribbon-tab>
+            <e-ribbon-tab id="TableLayout" header="Table Layout">
+              <e-ribbon-groups>
+                <e-ribbon-group header="Data" groupIconCss="e-icons e-custom-sort">
+                  <e-ribbon-collections>
+                    <e-ribbon-collection>
+                      <e-ribbon-items>
+                        <e-ribbon-item type="Button" [allowedSizes]='largeSize' [buttonSettings]="sortAscendingButton">
+                        </e-ribbon-item>
+                      </e-ribbon-items>
+                    </e-ribbon-collection>
+                    <e-ribbon-collection>
+                      <e-ribbon-items>
+                        <e-ribbon-item type="Button" [allowedSizes]='largeSize' [buttonSettings]="sortDescendingButton">
+                        </e-ribbon-item>
+                      </e-ribbon-items>
+                    </e-ribbon-collection>
+                  </e-ribbon-collections>
+                </e-ribbon-group>
+                <e-ribbon-group header="Merge" groupIconCss="e-icons e-merge-cells">
+                  <e-ribbon-collections>
+                    <e-ribbon-collection>
+                      <e-ribbon-items>
+                        <e-ribbon-item type="DropDown" [allowedSizes]='largeSize' [dropDownSettings]="mergeDropdown">
+                        </e-ribbon-item>
+                      </e-ribbon-items>
+                    </e-ribbon-collection>
+                  </e-ribbon-collections>
+                </e-ribbon-group>
+              </e-ribbon-groups>
+            </e-ribbon-tab>
+          </e-ribbon-tabs>
+        </e-ribbon-contextual-tab>
+        <!-- Contextual Tab 2 -->
+        <e-ribbon-contextual-tab [visible]=false>
+          <e-ribbon-tabs>
+            <e-ribbon-tab id="Format" header="Picture Format">
+              <e-ribbon-groups>
+                <e-ribbon-group header="Background" groupIconCss="e-icons e-image">
+                  <e-ribbon-collections>
+                    <e-ribbon-collection>
+                      <e-ribbon-items>
+                        <e-ribbon-item type="Button" [allowedSizes]='largeSize' [buttonSettings]="backgroundButton">
+                        </e-ribbon-item>
+                      </e-ribbon-items>
+                    </e-ribbon-collection>
+                  </e-ribbon-collections>
+                </e-ribbon-group>
+              </e-ribbon-groups>
+            </e-ribbon-tab>
+          </e-ribbon-tabs>
+        </e-ribbon-contextual-tab>
+      </e-ribbon-contextual-tabs>
     </ejs-ribbon>
     <div #contextualRibbonPlaceHolder id="contextualRibbonPlaceHolder">
       <div class="content2">

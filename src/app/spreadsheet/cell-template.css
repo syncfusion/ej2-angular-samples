@@ -40,4 +40,7 @@
     color: #000;
 }
 
+.fluent2-dark .e-custom-spreadsheet.e-spreadsheet .e-sheet .e-sheet-content .e-cell-template .e-btn.e-flat {
+    background-color: #292929;
+}
 /* custom code end*/

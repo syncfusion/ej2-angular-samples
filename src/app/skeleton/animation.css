@@ -13,10 +13,18 @@
     line-height: inherit;
     height: 420px;
 }
+p.displayText {
+    margin: 10px 0px;
+    font-weight: 500;
+}
 .fluent-dark #skeletondatacard,
 .fluent-dark #skeletonCard,
 .fluent-dark #skeleton-list{
     background-color: #313131;
+}
+.fluent2 #skeletonCard,
+.fluent2 #skeleton-list {
+    background-color: #fff;
 }
 .skeleton-listcard,
 .e-bigger .skeleton-listcard{

@@ -38,25 +38,25 @@ export class GanttEventMarkersComponent implements OnInit {
             { field: 'Predecessor' },
             { field: 'Progress' },
         ];
-        this.projectStartDate = new Date('03/24/2019');
-        this.projectEndDate = new Date('07/06/2019');
+        this.projectStartDate = new Date('03/24/2024');
+        this.projectEndDate = new Date('07/06/2024');
         this.labelSettings = {
             leftLabel: 'TaskName',
         };
         this.eventMarkers = [
             {
-                day: new Date('04/02/2019'),
+                day: new Date('04/02/2024'),
             }, {
-                day: new Date("04/09/2019"),
+                day: new Date("04/09/2024"),
                 label: 'Research phase'
             }, {
-                day: new Date("04/30/2019"),
+                day: new Date("04/30/2024"),
                 label: 'Design phase'
             }, {
-                day: new Date("05/23/2019"),
+                day: new Date("05/23/2024"),
                 label: 'Production phase'
             }, {
-                day: new Date("06/20/2019"),
+                day: new Date("06/20/2024"),
                 label: 'Sales and marketing phase'
             }
         ];

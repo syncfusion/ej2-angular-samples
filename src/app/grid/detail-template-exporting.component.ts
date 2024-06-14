@@ -2,7 +2,7 @@ import { Component, OnInit, Inject, ViewEncapsulation, ViewChild } from '@angula
 import { employeeData } from './data';
 import {
     GridComponent, DetailRowService, PdfExportService,
-    ExcelExportService, ToolbarService, ExportDetailTemplateEventArgs, SortService, GridModule
+    ExcelExportService, ToolbarService, ExportDetailTemplateEventArgs, SortService, FilterService, GridModule
 } from '@syncfusion/ej2-angular-grids';
 
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
@@ -16,7 +16,7 @@ let instance: Internationalization = new Internationalization();
     selector: 'ej2-griddetailtemplateexporting',
     templateUrl: 'detail-template-exporting.html',
     styleUrls: ['detail-template-exporting.style.css'],
-    providers: [DetailRowService, PdfExportService, ExcelExportService, ToolbarService, SortService],
+    providers: [DetailRowService, PdfExportService, ExcelExportService, ToolbarService, SortService, FilterService],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [SBActionDescriptionComponent, GridModule, SBDescriptionComponent]
@@ -24,6 +24,7 @@ let instance: Internationalization = new Internationalization();
 export class DetailTemplateExportComponent implements OnInit {
     public data: any;
     public toolbar: string[];
+    public filterSettings: Object;
     @ViewChild('grid')
     public grid: GridComponent;
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
@@ -33,6 +34,7 @@ export class DetailTemplateExportComponent implements OnInit {
     ngOnInit(): void {
         this.data = employeeData;
         this.toolbar = ['ExcelExport', 'PdfExport'];
+        this.filterSettings = { type: 'Excel'};
     }
 
     public format(value: Date): string {

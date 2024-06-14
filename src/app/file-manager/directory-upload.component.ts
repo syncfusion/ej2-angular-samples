@@ -20,6 +20,7 @@ export class DirectoryUploadController {
   @ViewChild('fileObj')
   public fileObj: FileManagerComponent;
   public ajaxSettings: object;
+  public contextMenuSettings: object;
   public hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
   public ngOnInit(): void {
     this.ajaxSettings = {
@@ -28,6 +29,10 @@ export class DirectoryUploadController {
       uploadUrl: this.hostUrl + 'api/FileManager/Upload',
       downloadUrl: this.hostUrl + 'api/FileManager/Download'
     };
+    this.contextMenuSettings = {
+      file: [ 'Cut', 'Copy', '|', 'Delete', 'Download', 'Rename', '|', 'Details'],
+      visible: true
+  };
   }
   //DropDownButton items definition
   public items: ItemModel[] = [{ text: 'Folder' }, { text: 'Files' }];

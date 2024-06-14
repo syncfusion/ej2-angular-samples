@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { orderDetails } from './data';
-import { SelectionService, GridComponent, SortService, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
+import { SelectionService, GridComponent, SortService, GridModule, PageService, FilterService, ToolbarService, EditService } from '@syncfusion/ej2-angular-grids';
 import { CheckBox } from "@syncfusion/ej2-buttons";
 import { ToolbarComponent, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -9,7 +9,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej-gridselect',
     templateUrl: 'selection-api.html',
-    providers: [SelectionService, SortService, PageService],
+    providers: [SelectionService, SortService, PageService, FilterService, ToolbarService, EditService],
     styleUrls: ['./selection-api.style.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
@@ -21,6 +21,12 @@ export class SelectionApiComponent implements OnInit {
     @ViewChild("toolbar")
      public toolbar: ToolbarComponent;
     public data: Object[];
+    public filterSettings: Object;
+    public toolbarSettings: string[];
+    public editSettings: Object;
+    public orderidrules: Object;
+    public customeridrules: Object;
+    public freightrules: Object;
     public selectOptions: { type?: string, mode?: string, allowColumnSelection?: boolean };
     public columnSelectionCheckbox: any = new CheckBox({
         label: "Enable Column Selection",
@@ -35,6 +41,12 @@ export class SelectionApiComponent implements OnInit {
     public ngOnInit(): void {
         this.data = orderDetails;
         this.selectOptions = { type: 'Multiple' };
+        this.filterSettings = { type: 'Excel' };
+        this.toolbarSettings = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
+        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };
+        this.orderidrules = { required: true, number: true };
+        this.customeridrules = { required: true, minLength: 5 };
+        this.freightrules = { required: true, min: 0 };
     }
 
     public onChangeType(e: MouseEvent): void {

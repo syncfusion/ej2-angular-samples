@@ -1,21 +1,24 @@
-<div class="control-section">
-    <div align='center'>
-        <ejs-maps id='container' style="display:block;" [layers]='layers' (load)="load($event)" [zoomSettings]="zoomSettings" [titleSettings]="titleSettings" [legendSettings]="legendSettings" format='n' useGroupingSeparator="true">
-        </ejs-maps>
-    </div>       
-</div>
-
-<div id="action-description">
-    <p>
-        This sample illustrates the world's top 10 most populated cities by displaying markers in their locations and legend with the city names.
-    </p>
-</div>
-
-<div id="description">
-    <p>
-        In this example, you can see how to display markers and a legend on the OpenStreetMap. To enable the legend, set the <code>visible</code> property in <code>legendSettings</code> to <b>true</b>, and then use properties like <code>title</code>, <code>position</code>, <code>type</code>, <code>height</code>, <code>width</code>, and so on to customize the legend.</p>
-    <p style="font-weight: 500">Injecting Module</p>
-    <p>
-        The maps component features are segregated into individual modules by feature. To use markers and a legend, inject the <code>Marker</code> module and <code>Legend</code> using the <code>Maps.Inject(Marker)</code> and <code>Maps.Inject(Legend)</code> methods respectively.
-    </p>
-</div>
+<main>
+    <div class="control-section">
+        <div align='center'>
+            <ejs-maps id='container' style="display:block;" [layers]='layers' (load)="load($event)" [zoomSettings]="zoomSettings" [titleSettings]="titleSettings" [legendSettings]="legendSettings" format='n' useGroupingSeparator="true">
+            </ejs-maps>
+        </div>       
+    </div>
+    
+    <section id="action-description" aria-label="Description of Maps sample">
+        <p>
+            This sample illustrates the world's top 10 most populated cities by displaying markers in their locations and legend with the city names.
+        </p>
+    </section>
+    
+    <section id="description" aria-label="Description of the Maps features demonstrated in this sample">
+        <p>
+            In this example, you can see how to display markers and a legend on the OpenStreetMap. To enable the legend, set the <code>visible</code> property in <code>legendSettings</code> to <b>true</b>, and then use properties like <code>title</code>, <code>position</code>, <code>type</code>, <code>height</code>, <code>width</code>, and so on to customize the legend.</p>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            The maps component features are segregated into individual modules by feature. To use markers and a legend, inject the <code>Marker</code> module and <code>Legend</code> using the <code>Maps.Inject(Marker)</code> and <code>Maps.Inject(Legend)</code> methods respectively.
+        </p>
+    </section>
+    
+</main>

@@ -121,7 +121,7 @@ export class MapsCyberAttackComponent {
         markerSettings: [
             {
                 visible: true, height: 15, width: 15,
-                template: '<div id="template"><div class="pulse-css"><br /><div class="name">{{:name}}</div></div></div>',
+                template: '<div><div class="pulse-css"><br /><div class="name">{{:name}}</div></div></div>',
                 animationDuration: 0,
                 dataSource: [
                     { latitude: 15.758401, longitude: 101.155642, name: 'Thailand' },

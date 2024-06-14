@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { orderDetails } from './data';
-import { RowDDService, SelectionService, GridModule, SortService, PageService } from '@syncfusion/ej2-angular-grids';
+import { RowDDService, SelectionService, GridModule, SortService, PageService, FilterService, ToolbarService, EditService } from '@syncfusion/ej2-angular-grids';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
@@ -10,7 +10,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     templateUrl: 'drag-and-drop.html',
     styleUrls: ['drag-and-drop.style.css'],
     providers: [RowDDService,
-        SelectionService, SortService, PageService],
+        SelectionService, SortService, PageService, FilterService, ToolbarService, EditService],
     standalone: true,
     imports: [SBActionDescriptionComponent, GridModule, SBDescriptionComponent]
 })
@@ -21,6 +21,12 @@ export class DragAndDropComponent implements OnInit {
     public selectionOptions: Object;
     public srcDropOptions: Object;
     public destDropOptions: Object;
+    public filterSettings: Object;
+    public toolbar: string[];
+    public editSettings: Object;
+    public orderidrules: Object;
+    public customeridrules: Object;
+    public freightrules: Object;
 
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['drag-and-drop.style.css'];
@@ -32,5 +38,11 @@ export class DragAndDropComponent implements OnInit {
         this.selectionOptions = { type: 'Multiple' };
         this.srcDropOptions = { targetID: 'DestGrid' };
         this.destDropOptions = { targetID: 'Grid' };
+        this.filterSettings = { type: 'Excel' };
+        this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
+        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };
+        this.orderidrules = { required: true, number: true };
+        this.customeridrules = { required: true, minLength: 5 };
+        this.freightrules = { required: true, min: 0 };
     }
 }

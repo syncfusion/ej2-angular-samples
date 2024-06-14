@@ -16,7 +16,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     imports: [SBActionDescriptionComponent, GanttAllModule, MultiSelectAllModule, SBDescriptionComponent]
 })
 export class GanttWorkWeekComponent implements OnInit {
-    
+
     public data: object[];
     public workWeek: string[];
     public taskSettings: object;
@@ -67,10 +67,10 @@ export class GanttWorkWeekComponent implements OnInit {
             { field: 'Predecessor', headerText: 'Dependency' }
         ];
         this.splitterSettings = {
-            columnIndex: 2
+            columnIndex: 1
         },
-        this.projectStartDate = new Date('03/24/2019');
-        this.projectEndDate = new Date('07/06/2019');
+        this.projectStartDate = new Date('03/24/2024');
+        this.projectEndDate = new Date('07/06/2024');
         this.labelSettings = {
             leftLabel: 'TaskName',
         };
@@ -79,7 +79,7 @@ export class GanttWorkWeekComponent implements OnInit {
         let workingDays = Object[7];
         workingDays = extend([], this.WorkingDaysObj.value, [], true);
         workingDays.push(args.item.innerText);
-        this.ganttObj.workWeek = workingDays;      
+        this.ganttObj.workWeek = workingDays;
     }
     remove (args: RemoveEventArgs) : void {
         var index = this.ganttObj.workWeek.indexOf(args.item.innerText);
@@ -87,6 +87,6 @@ export class GanttWorkWeekComponent implements OnInit {
             if (index !== -1) {
                 workingDays = this.WorkingDaysObj.value;
                 this.ganttObj.workWeek = workingDays;
-            }     
-    }   
+            }
+    }
     }

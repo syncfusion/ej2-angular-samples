@@ -18,12 +18,20 @@ export class PrintComponent implements OnInit {
     public data: Object[] = [];
     public childGrid: GridModel;
     public hierarchyPrintMode: HierarchyGridPrintMode;
+    public filterSettings: Object;
     public toolbar: string[];
+    public editSettings: Object;
+    public employeeidrules: Object;
+    public firstnamerules: Object;
 
     ngOnInit(): void {
         this.data = employeeData;
         this.hierarchyPrintMode = "All";
-        this.toolbar = ["Print"];
+        this.filterSettings = { type: 'Excel' };
+        this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel', 'Print'];
+        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };
+        this.employeeidrules = { required: true, number: true };
+        this.firstnamerules = { required: true, minLength: 5 };
         this.childGrid = {
             dataSource: hierarchyOrderdata,
             queryString: 'EmployeeID',

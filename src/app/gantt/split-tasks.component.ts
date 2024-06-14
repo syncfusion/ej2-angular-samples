@@ -57,7 +57,7 @@ export class GanttSplitTasksComponent implements OnInit {
             leftLabel: 'TaskName',
             taskLabel: '${Progress}%'
         };
-        this.projectStartDate= new Date('01/30/2019');
-        this.projectEndDate= new Date('03/04/2019');
+        this.projectStartDate= new Date('01/30/2024');
+        this.projectEndDate= new Date('03/04/2024');
     }
 }

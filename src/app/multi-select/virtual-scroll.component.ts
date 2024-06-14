@@ -1,5 +1,5 @@
 /**
- * AutoComplete Default functionality Sample
+ * MultiSelect Virtualization Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MultiSelectComponent, VirtualScroll, MultiSelectModule, DropDownListComponent, DropDownListModule, visualMode } from '@syncfusion/ej2-angular-dropdowns';
@@ -111,7 +111,7 @@ export class VirtualScrollMultiSelectComponent {
     }
     // maps the appropriate column to fields property
     public fields: { [key: string]: string } = { text: 'text', value: 'id' };
-    public value = [10003, 10025, 10044, "custom"];
+    public value = ['id10', 'id50', 'id100', "custom"];
     public customerField: { [key: string]: string } = { text: 'OrderID', value: 'OrderID' };
     public groupField: { [key: string]: string } = { groupBy: 'group', text: 'text', value: 'id' };
     public waterMark: string = 'e.g. Item 1';

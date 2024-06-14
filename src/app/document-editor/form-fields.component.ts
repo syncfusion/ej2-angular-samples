@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ToolbarService, DocumentEditorContainerComponent, LayoutType, DocumentEditorContainerModule, DocumentEditorSettingsModel} from '@syncfusion/ej2-angular-documenteditor';
+import { ToolbarService, DocumentEditorContainerComponent, LayoutType, DocumentEditorContainerModule, DocumentEditorSettingsModel } from '@syncfusion/ej2-angular-documenteditor';
 import { TitleBar } from './title-bar';
 import { formfields, WEB_API_ACTION } from './data';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
@@ -19,11 +19,11 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 })
 export class FormFieldsComponent {
     public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
+    public settings: DocumentEditorSettingsModel = { showRuler:true  };
     @ViewChild('documenteditor_default')
     public container: DocumentEditorContainerComponent;
     public culture: string = 'en-US';
     titleBar: TitleBar;
-    public settings: DocumentEditorSettingsModel = { showRuler:true };
     layoutType: LayoutType = "Continuous";
     onCreate(): void {
         let titleBarElement: HTMLElement = document.getElementById('default_title_bar');

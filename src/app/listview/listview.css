@@ -24,9 +24,14 @@
 #group-list {
   float: right;
 }
-#flat-list h4,
-#group-list h4 {
+#flat-list .displayText,
+#group-list .displayText {
   padding-left: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .e-listview .e-list-icon,
 .e-bigger .e-listview .e-list-icon {

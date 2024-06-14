@@ -381,19 +381,19 @@ export class OverviewComponent implements AfterViewChecked {
   public getWeatherImage(value: Date): string {
     switch (value.getDay()) {
       case 0:
-        return '<img class="weather-image" src="./assets/schedule/images/weather-clear.svg"/>';
+        return '<img class="weather-image" src="./assets/schedule/images/weather-clear.svg" alt="Clear Weather"/>';
       case 1:
-        return '<img class="weather-image" src="./assets/schedule/images/weather-clouds.svg"/>';
+        return '<img class="weather-image" src="./assets/schedule/images/weather-clouds.svg" alt="Clouds Weather"/>';
       case 2:
-        return '<img class="weather-image" src="./assets/schedule/images/weather-rain.svg"/>';
+        return '<img class="weather-image" src="./assets/schedule/images/weather-rain.svg" alt="Rain Weather"/>';
       case 3:
-        return '<img class="weather-image" src="./assets/schedule/images/weather-clouds.svg"/>';
+        return '<img class="weather-image" src="./assets/schedule/images/weather-clouds.svg" alt="Clouds Weather"/>';
       case 4:
-        return '<img class="weather-image" src="./assets/schedule/images/weather-rain.svg"/>';
+        return '<img class="weather-image" src="./assets/schedule/images/weather-rain.svg" alt="Rain Weather"/>';
       case 5:
-        return '<img class="weather-image" src="./assets/schedule/images/weather-clear.svg"/>';
+        return '<img class="weather-image" src="./assets/schedule/images/weather-clear.svg" alt="Clear Weather"/>';
       case 6:
-        return '<img class="weather-image" src="./assets/schedule/images/weather-clouds.svg"/>';
+        return '<img class="weather-image" src="./assets/schedule/images/weather-clouds.svg" alt="Clouds Weather"/>';
       default:
         return null;
     }

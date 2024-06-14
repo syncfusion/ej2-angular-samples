@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { orderDetails } from './data';
-import { GridComponent, Column, freezeDirection, SortService, GridModule, FreezeService } from '@syncfusion/ej2-angular-grids';
+import { GridComponent, Column, freezeDirection, SortService, GridModule, FreezeService, FilterService, ToolbarService, EditService } from '@syncfusion/ej2-angular-grids';
 import { DropDownListComponent, ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { DialogComponent, ButtonPropsModel, DialogModule } from '@syncfusion/ej2-angular-popups';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -9,7 +9,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-grid-col-frozen',
     templateUrl: 'frozen-api.html',
-    providers: [SortService, FreezeService],
+    providers: [SortService, FreezeService, FilterService, ToolbarService, EditService],
     standalone: true,
     imports: [
         DropDownListModule,
@@ -37,6 +37,12 @@ export class FrozenApiComponent implements OnInit {
     public target: string = '.control-section';
     public width: string = '300px';
     public data: Object[] = [];
+    public filterSettings: Object;
+    public toolbar: string[];
+    public editSettings: Object;
+    public orderidrules: Object;
+    public customeridrules: Object;
+    public freightrules: Object;
     public refresh: boolean = true;
     public columnData: Object[] = [
         { id: 'OrderID', name: 'Order ID' },
@@ -58,6 +64,12 @@ export class FrozenApiComponent implements OnInit {
 
     ngOnInit(): void {
         this.data = orderDetails;
+        this.filterSettings = { type: 'Excel' };
+        this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
+        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };
+        this.orderidrules = { required: true, number: true };
+        this.customeridrules = { required: true, minLength: 5 };
+        this.freightrules = { required: true, min: 0 };
     }
 
     public columnChange(e: ChangeEventArgs): void {

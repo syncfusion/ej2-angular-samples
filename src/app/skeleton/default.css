@@ -9,3 +9,7 @@
     .skeleton {
         margin-left: 2px;
     }
+    p.displayText {
+        margin: 10px 0px;
+        font-weight: 500;
+    }

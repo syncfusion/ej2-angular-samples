@@ -747,6 +747,19 @@
             "template": "Template"
         }
     },
+    "multicolumn-combobox": {
+        "ControlName": "MultiColumn Combobox",
+        "Samples": {
+            "default": "Default Functionalities",
+            "remote-data": "Remote Data",
+            "filtering": "Filtering",
+            "virtualization": "Virtualization",
+            "sorting": "Sorting",
+            "rtl": "RTL",
+            "keyboard-navigation":"Keyboard Navigation",
+            "template": "Template"
+        }
+    },
     "multi-select": {
         "ControlName": "MultiSelect Dropdown",
         "Samples": {
@@ -772,6 +785,13 @@
             "range-validation": "Range Validation",
             "custom-format": "Custom Format",
             "restrict-decimals": "Restrict Decimals"
+        }
+    },
+    "otp-input": {
+        "ControlName": "OTP Input",
+        "Samples": {
+            "default": "Default Functionalities",
+            "api": "API"
         }
     },
     "pager": {

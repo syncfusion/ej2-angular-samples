@@ -20,11 +20,11 @@
                 <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
                     <tr style="height: 50px">
                         <td style="width: 60%">
-                            <div>Indexed:</div>
+                            <div id="indexed">Indexed:</div>
                         </td>
                         <td style="width: 40%;">
                             <div>
-                                <input type="checkbox" (change)='isIndexed($event)' id="isIndexed" checked>
+                                <input type="checkbox" (change)='isIndexed($event)' id="isIndexed" checked aria-labelledby="Checkbox checked">
                             </div>
                         </td>
                     </tr>
@@ -37,12 +37,10 @@
     <p>
         The category axis is also rendered on the basis of the index values in the data source. To render the indexed category axis, set ValueType to Category and IsIndexed property to true.
     </p>
-  
-  
     <br>
     <p>
         More information on the indexed axis can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/category-axis/#indexed-category-axis">documentation section</a>.
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/category-axis/#indexed-category-axis" aria-label="Navigate to the documentation for Indexed category axis in Angular Chart component">documentation section</a>.
     </p>
 </div>
 <style>

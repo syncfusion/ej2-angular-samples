@@ -51,7 +51,8 @@
   .fabric-dark .row.material,
   .bootstrap-dark .row.material,
   .fluent .row.material,
-  .fluent-dark .row.material {
+  .fluent-dark .row.material,
+  .fluent2-dark .row.material {
       display: none;
   }
   

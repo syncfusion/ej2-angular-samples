@@ -28,7 +28,7 @@ export class PieEmptyPointChartComponent {
     public load(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
+        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
     };
       // custom code end
     //Initializing Tooltip
@@ -61,6 +61,7 @@ export class PieEmptyPointChartComponent {
                 let mode: string = this.emptyPointMode.value.toString();
                 this.chart.series[0].emptyPointSettings.mode = <EmptyPointMode>mode;
                 this.chart.series[0].emptyPointSettings.fill = '#e6e6e6';
+                this.chart.series[0].animation.enable = false;
                 this.chart.refresh();
             }
         });

@@ -39,8 +39,8 @@ interface DestroyMethod extends HTMLElement {
 }
 
 declare let window: MyWindow;
-const sbObj: { [index: string]: string } = { 'react': 'react','nextjs': 'nextjs', 'javascript': 'javascript', 'vue': 'vue', 'blazor': 'blazor' }
-const sbArray: string[] = ['react', 'ts', 'javascript', 'nextjs', 'asp_core', 'asp_mvc', 'vue', 'blazor'];
+const sbObj: { [index: string]: string } = { 'react': 'react', 'nextjs': 'nextjs', 'javascript': 'javascript', 'vue': 'vue', 'blazor': 'blazor' }
+const sbArray: string[] = ['react', 'nextjs' , 'ts', 'javascript', 'asp_core', 'asp_mvc', 'vue', 'blazor'];
 const urlRegex: RegExp = /(npmci\.syncfusion\.com|ej2\.syncfusion\.com)(\/)(development|production)*/;
 const sampleRegex: RegExp = /#\/(([^\/]+\/)+[^\/\.]+)/;
 const cBlock: string[] = ['ts-src-tab', 'html-src-tab'];
@@ -64,7 +64,8 @@ const sourceHeader: String = '<li class="nav-item {2}" role="presentation"><a cl
 const sourcecontent: String = '<div class="tab-pane {2}" id="{0}" role="tabpanel" {4}><pre><code class="{3}">{1}</code></pre></div>';
 const plnk: string = '<li class="plnk" style="float:right"><a id="plnkr">Open in Plunker</a></li>\n' +
     '<li class="open"><a id="openNew" target="_blank" aria-label="Open new sample"><div class="openIcon e-icons"></div></a></li>';
-const themes: string[] = ['fluent', 'fluent-dark', 'bootstrap5', 'bootstrap5-dark', 'tailwind', 'tailwind-dark', 'material', 'material-dark', 'material3', 'material3-dark', 'fabric', 'fabric-dark', 'bootstrap4', 'bootstrap', 'bootstrap-dark', 'highcontrast'];
+const themes: string[] = ['material3', 'bootstrap5', 'fluent2', 'tailwind', 'highcontrast', 'fluent', 'material3-dark', 'bootstrap5-dark', 'fluent2-dark', 'tailwind-dark', 'fluent-dark'];
+const darkIgnore = ['highcontrast'];
 let selectedTheme: string;
 let themeFlag: boolean = true;
 let slideFlag: boolean = false;
@@ -92,12 +93,16 @@ export class SBController {
     public themePopup: Popup;
     public settingsPopup: Popup;
     public switcherPopup: Popup;
+    public themeDarkButton: HTMLElement = document.getElementById('sb-dark-theme');
+    public darkButton: HTMLElement = document.getElementById('sb-dark-span');
+    public themeModeDropDown: DropDownList;
     public themeDropDown: DropDownList;
     public currencyDropDown: DropDownList;
     public cultureDropDown: DropDownList;
     public isTablet: boolean;
     public isMobile: boolean;
     public isDesktop: boolean;
+    public isDarkTheme: boolean = location.hash?.split('/')[1]?.includes('-dark');
     public isInitialRender: boolean = true;
     public footer: Element;
     public aniObject: Animation = new Animation({ duration: 400 });
@@ -112,6 +117,7 @@ export class SBController {
     public prevSampleName: string = '';
     public prevControlName: string = '';
     public copyRight: number = new Date().getFullYear();
+    private isContentLoaded: boolean = false;
 
     //Bread Crumb Object
     public breadCrumbObject:
@@ -189,11 +195,17 @@ export class SBController {
                 hljs.highlightBlock(blockEle);
             }
         });
-
+        
+        let theme: string = location.hash ? location.hash.split('/')[1] : 'fluent2';
         this.themeDropDown = new DropDownList({
-            index: 0,
+            index: themes.indexOf(theme.split('-')[0]),
             change: (e: any) => { this.switchTheme(e.value); }
         });
+        this.themeModeDropDown = new DropDownList({
+            index: (location.hash.split('/')[1] && location.hash.split('/')[1].includes('-dark')) ? 1 : 0,
+            change: (e: any) => { this.darkSwitch(); }
+        });
+        
         this.cultureDropDown = new DropDownList({
             index: 0,
             zIndex: 1005,
@@ -309,7 +321,7 @@ export class SBController {
         </div>`;
         let plnrTemplate: string = '<span class="sb-icons sb-icons-plnkr"></span><span class="sb-plnkr-text" role="presentation">Edit in StackBlitz</span>';
         // tslint:disable-next-line:no-multiple-var-decl
-        let contentToolbarTemplate: string = '<div class="sb-desktop-setting"><button id="open-plnkr"  role="tab" aria-label="Open Edit in StackBlitz" class="sb-custom-item sb-plnr-section">' +
+        let contentToolbarTemplate: string = '<div class="sb-desktop-setting"><button id="open-plnkr" role="tab" aria-label="Open Edit in StackBlitz" class="sb-custom-item sb-plnr-section">' +
             plnrTemplate + '</button>' + hsplitter + openNewTemplate + hsplitter +
             '</div>' + sampleNavigation + '<div class="sb-icons sb-mobile-setting"></div>';
 
@@ -371,27 +383,32 @@ export class SBController {
         this.router.events.pipe(
             filter((event: NavigationStart) => event instanceof NavigationStart)
         )
-            .subscribe((event: any) => {
-                this.hideShowSBLoader();
-                this.tab.selectedItem = 0;
-                this.tab.dataBind();
-                let hashTheme: string = location.hash.split('/')[1];
-                let theme: string = localStorage.getItem('ej2-theme');
-                if (!hashTheme || theme || (selectedTheme && selectedTheme !== hashTheme) || themeFlag) {
-                    let activeTheme: Element = select('.active-theme');
-                    if (activeTheme) {
-                        activeTheme.classList.remove('active-theme');
-                    }
-                    localStorage.removeItem('ej2-theme');
-                    if (themes.indexOf(theme) === -1) {
-                        theme = location.hash.split('/')[1];
-                        theme = themes.indexOf(theme) !== -1 ? theme : selectedTheme;
-                    }
-                    theme = themes.indexOf(theme) !== -1 ? theme : 'material3';
-                    document.getElementById(theme).classList.add('active-theme');
-                    loadTheme(theme);
+        .subscribe((event: any) => {
+            this.hideShowSBLoader();
+            this.tab.selectedItem = 0;
+            this.tab.dataBind();
+            let hashTheme: string = location.hash.split('/')[1];
+            let theme: string = localStorage.getItem('ej2-theme');
+            if (!hashTheme || theme || (selectedTheme && selectedTheme !== hashTheme) || themeFlag) {
+                let activeTheme: Element = select('.active-theme');
+                if (activeTheme) {
+                    activeTheme.classList.remove('active-theme');
                 }
-            });
+                localStorage.removeItem('ej2-theme');
+                if (themes.indexOf(theme) === -1) {
+                    theme = location.hash.split('/')[1];
+                    theme = themes.indexOf(theme) !== -1 ? theme : selectedTheme;
+                }
+                theme = themes.indexOf(theme) !== -1 ? theme : 'fluent2';
+                if(this.isDarkTheme) {
+                    document.getElementById(theme.split('-dark')[0]).classList.add('active-theme');
+                }
+                else{
+                    document.getElementById(theme).classList.add('active-theme'); 
+                }
+                loadTheme(theme);       
+            }
+        });
 
         this.router.events
             .pipe(filter((event: NavigationEnd) => event instanceof NavigationEnd))
@@ -435,15 +452,20 @@ export class SBController {
             .subscribe((event: any) => {
                 let hash: string[] = location.hash.split('/');
                 if (!document.querySelector('.active-theme')) {
-                    document.getElementById(hash[1] || 'material3').classList.add('active-theme');
+                    document.getElementById(hash[1] || 'fluent2').classList.add('active-theme');
                 }
-                hash[1] = document.querySelector('.active-theme').id;
+                if(this.isDarkTheme){
+                    hash[1] = document.querySelector('.active-theme').id + '-dark';
+                }
+                else{
+                    hash[1] = document.querySelector('.active-theme').id;
+                }
                 enableRipple(hash[1].indexOf('material') !== -1);
                 let href: string = location.href.split('#')[0];
                 history.replaceState({}, 'theme', href + hash.join('/'));
                 this.setThemeItemActive(location.hash.split('/')[1]);
                 this.setSbLink();
-                this.hideShowSBLoader(true);
+                // this.hideShowSBLoader(true);
                 let mT: string = localStorage.getItem('pointer') || 'mouse';
                 if (Browser.isDevice) {
                     mT = 'touch';
@@ -488,8 +510,8 @@ export class SBController {
         let sample: string[] = href.match(sampleRegex);
         for (let sb of sbArray) {
             let ele: HTMLFormElement = (select('#' + sb) as HTMLFormElement);
-            if (sb === 'aspnetcore' || sb === 'aspnetmvc') {
-                ele['href'] = sb === 'aspnetcore' ? 'https://ej2.syncfusion.com/aspnetcore/' : 'https://ej2.syncfusion.com/aspnetmvc/';
+            if (sb === 'asp_core' || sb === 'asp_mvc') {
+                ele['href'] = sb === 'asp_core' ? 'https://ej2.syncfusion.com/aspnetcore/' : 'https://ej2.syncfusion.com/aspnetmvc/';
             }
             else if (sb === 'nextjs') {
                 ele.href = 'https://ej2.syncfusion.com/nextjs/demos/';
@@ -515,6 +537,7 @@ export class SBController {
         this.mobileOverlay = select('.sb-mobile-overlay ');
         this.loader = select('.sb-body-overlay');
         this.themeDropDown.appendTo('#sb-setting-theme');
+        this.themeModeDropDown.appendTo('#sb-theme-mode');
         this.cultureDropDown.appendTo('#sb-setting-culture');
         this.currencyDropDown.appendTo('#sb-setting-currency');
         this.searchBox.dataSource = this.leftControl.listData;
@@ -542,12 +565,19 @@ export class SBController {
         next.appendTo('#next-sample');
     }
 
+    ngAfterContentInit(): void {
+        setTimeout(() => {
+            this.isContentLoaded = true;
+            this.hideShowSBLoader(true);
+        }, 1000);
+    }
+
     ngAfterContentChecked(): void {
         // Don't perform any more operations in this method.
         if (this.cultureDropDown.value == "ar") {
             this.changeRtl(true);
         }
-        this.hideShowSBLoader(true);
+        if (this.isContentLoaded) { this.hideShowSBLoader(true); }
     }
 
     hideShowSBLoader(hide?: boolean): void {
@@ -581,6 +611,12 @@ export class SBController {
     switchTheme(str: string): void {
         let hash: string[] = location.hash.split('/');
         if (hash[1] !== str) {
+            if (this.isDarkTheme && darkIgnore.indexOf(str) === -1) {
+                str = str + '-dark';
+            }
+            if(darkIgnore.indexOf(str) !== -1){
+                this.isDarkTheme = false;
+            }
             hash[1] = str;
             location.hash = hash.join('/');
             if (document.querySelector('.sb-responsive-items.active').innerHTML.toLowerCase() === 'touch') {
@@ -588,6 +624,17 @@ export class SBController {
             }
             location.reload();
         }
+    }
+
+    darkSwitch(): void {
+        let hash: string[] = location.hash.split('/');
+        var darkTheme: string = hash[1]
+        darkTheme = darkTheme.includes("-dark") ? darkTheme.replace("-dark", "") : darkIgnore.indexOf(darkTheme) === 0 ? darkTheme : darkTheme + '-dark';
+        this.isDarkTheme = darkTheme.includes("-dark");
+        hash[1] = darkTheme;
+        location.hash = hash.join('/');
+        this.themeDarkButton.style.display = "none";
+        location.reload();
     }
 
     updateStaticView() {
@@ -612,7 +659,6 @@ export class SBController {
         this.settingsPopup.hide();
         this.switcherPopup.hide();
     }
-
 
     updateViewMode() {
         this.isMobile = window.matchMedia('(max-width:550px)').matches;
@@ -672,6 +718,7 @@ export class SBController {
         select('.sb-settings').addEventListener('click', this.onSearchButtonClick.bind(this));
         select('.e-search-overlay').addEventListener('click', this.onSearchOverlayClick.bind(this));
         this.mobileOverlay.addEventListener('click', this.onMobileOverlayClick.bind(this));
+        this.themeDarkButton.addEventListener('click', this.darkSwitch.bind(this));
         window.addEventListener('resize', this.onSBResize.bind(this));
         document.addEventListener('click', this.onDocClick.bind(this));
         document.getElementById('themelist').addEventListener('click', this.onChangeTheme.bind(this));
@@ -723,7 +770,6 @@ export class SBController {
                 this.toggleLeftPaneOnDesktop(e);
             }
         }
-
 
     }
 
@@ -822,12 +868,22 @@ export class SBController {
     }
 
     setThemeItemActive(theme: string) {
+        if (!document.body.classList.contains(theme)) {
+            this.isContentLoaded = false;
+            this.hideShowSBLoader();
+        }
         let actElement: Element = select('#themelist .active');
+        let darkChange:string;
         if (actElement) {
             actElement.classList.remove('active')
         }
-        select('#' + theme).classList.add('active');
-        this.themeDropDown.value = theme;
+        if(!theme.includes('-dark')){
+          select('#' + theme).classList.add('active');   
+        }
+        else{
+          select('#'+theme.replace('-dark','')).classList.add('active');
+        }
+        this.themeDropDown.value = theme; 
         document.body.classList.add(theme);
     }
 
@@ -1151,6 +1207,23 @@ export class SBController {
 
 function loadTheme(theme: string): void {
     selectedTheme = theme;
+    let isMobile: boolean = window.matchMedia('(max-width:550px)').matches;
+    if (darkIgnore.indexOf(theme) !== -1) {
+        if(document.getElementById('sb-dark-theme')){
+        document.getElementById('sb-dark-theme').style.display = "none";
+    }
+        document.getElementById("mobiledarkswitch")!.style.display = "none";
+    }
+    if(!isMobile){
+        if (!theme.includes('-dark')) {
+            document.getElementById('sb-dark-span').innerHTML = "DARK";
+            document.getElementById("dark-icon")!.style.display = "inline-block";    
+        }
+        else {
+            document.getElementById('sb-dark-span').innerHTML = "LIGHT";
+            document.getElementById("light-icon")!.style.display = "inline-block";
+        }
+    } 
     const ajax: Ajax = new Ajax('./styles/' + theme + '.css', 'GET', true);
     ajax.send().then((result: any) => {
         const doc: HTMLFormElement = <HTMLFormElement>select('#themelink');
@@ -1158,8 +1231,8 @@ function loadTheme(theme: string): void {
         // select('#themeswitcher-icon').setAttribute('src', 'styles/images/SB_icon/SB_Switcher_icon_' + theme + '.png');
         themeFlag = false;
     });
-}
 
+}
 
 function hideLoader(): void {
     // document.querySelector('.sb-loading').classList.add('hidden');

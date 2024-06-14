@@ -3,7 +3,7 @@
         <div id="container" style="width:92%"></div>
     </div>
     <div class="col-md-8">
-        <ejs-chart style='display:block;' #chart [legendSettings]='legend' id='container' [primaryXAxis]='primaryXAxis'
+        <ejs-chart style='display:block;' #chart [legendSettings]='legend' id='chart-container' [primaryXAxis]='primaryXAxis'
             [tooltip]='tooltip' [height]='height' [width]='width' (scrollEnd)='scrollEnd($event)'
             [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)'>
             <e-series-collection>
@@ -53,12 +53,12 @@
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 40%">
-                            <div>Point Length </div>
+                            <div id="pointLength">Point Length </div>
                         </td>
                         <td style="width: 60%;">
                             <div>
                                 <ejs-numerictextbox #point [value]="value" id="pointslength" [min]='1000' [max]='10000'
-                                    [step]="step" [enabled]="enabled" [format]="format" (change)='pointChange($event)'>
+                                    [step]="step" [enabled]="enabled" [format]="format" (change)='pointChange($event)' aria-labelledby="Text">
                                 </ejs-numerictextbox>
                             </div>
                         </td>

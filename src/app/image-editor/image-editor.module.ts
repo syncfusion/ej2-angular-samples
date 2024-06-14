@@ -15,7 +15,8 @@ export const ImageEditorAppRoutes: Object[] = [
         component: DefaultImageEditorComponent,
         order: '01',
         name: 'Default Functionalities',
-        category: 'Image Editor'
+        category: 'Image Editor',
+        type: 'update'
     },
     {
         path: ':theme/image-editor/profile-picture',
@@ -29,8 +30,7 @@ export const ImageEditorAppRoutes: Object[] = [
         component: CustomToolbarComponent,
         order: '01',
         name: 'Custom Toolbar',
-        category: 'Image Editor',
-        type: 'new'
+        category: 'Image Editor'
     }
 ];
 

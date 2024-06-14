@@ -56,7 +56,7 @@ export class MapsDynamicMarkerComponent {
     };
 
     public layers: object[] = [{
-        layerType: 'OSM'
+        urlTemplate: 'https://tile.openstreetmap.org/level/tileX/tileY.png'
     }];
 
 

@@ -27,7 +27,7 @@ export class RibbonGalleryComponent {
   }
 
   public pasteOptions: ItemModel[] = [{ text: "Keep Source Format" }, { text: "Merge Format" }, { text: "Keep Text Only" }];
-  public findOptions: ItemModel[] = [{ text: "Find", iconCss: "e-icons e-search" }, { text: "Advanced find", iconCss: "e-icons e-search" }, { text: "Go to", iconCss: "e-icons e-arrow-right" }];
+  public findOptions: ItemModel[] = [{ text: "Find", iconCss: "e-icons e-search" }, { text: "Advanced Find", iconCss: "e-icons e-search" }, { text: "Go to", iconCss: "e-icons e-arrow-right" }];
   public selectOptions: ItemModel[] = [{ text: "Select All" }, { text: "Select Objects" }];
   public dictateOptions: ItemModel[] = [{ text: "Chinese" }, { text: "English" }, { text: "German" }, { text: "French" }];
   public tableOptions: ItemModel[] = [{ text: "Insert Table" }, { text: "Draw Table" }, { text: "Convert Table" }, { text: "Excel SpreadSheet" }];
@@ -51,11 +51,11 @@ export class RibbonGalleryComponent {
       select: (args: GallerySelectEventArgs) => {
         this.updateContent("Gallery -> " + args.currentItem.content);
       },
-      popupWidth: '580px',
+      popupWidth: '544px',
       itemCount: 3,
       groups: [{
         itemWidth: '100',
-        itemHeight: '30',
+        itemHeight: '40',
         header: 'Title and Headings',
         items: [
             {
@@ -81,7 +81,7 @@ export class RibbonGalleryComponent {
         ]
       }, {
           itemWidth: '100',
-          itemHeight: '30',
+          itemHeight: '40',
           header: 'Data and Model',
           items: [
               {
@@ -107,7 +107,7 @@ export class RibbonGalleryComponent {
           ]
       }, {
           itemWidth: '100',
-          itemHeight: '30',
+          itemHeight: '40',
           header: 'Good, Bad and Neutral',
           items: [{
                   content: 'Normal',

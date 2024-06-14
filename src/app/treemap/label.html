@@ -1,6 +1,7 @@
-<div class="control-section">
+<main>
+    <div class="control-section">
         <div class="col-lg-9">
-        <ejs-treemap id='container'  #treemap style="display:block;" [titleSettings] = 'titleSettings' [dataSource] ='dataSource' [weightValuePath] ='weightValuePath'
+        <ejs-treemap id='container' #treemap style="display:block;" [titleSettings] = 'titleSettings' [dataSource] ='dataSource' [weightValuePath] ='weightValuePath'
        [leafItemSettings] = 'leafItemSettings' [tooltipSettings] = 'tooltipSettings' [legendSettings] = legendSettings 
        [rangeColorValuePath] = 'rangeColorValuePath'
        format='n' useGroupingSeparator="true" (load)='load($event)'  >
@@ -14,7 +15,7 @@
             <div class="property-panel-section">
                 <div class="property-panel-header">Properties</div>
                 <div class="property-panel-content">
-                    <table id="property" class="property-panel-table" title="Properties" style="width: 100%; margin-left: -10px">
+                    <table id="property" class="property-panel-table" role="none" title="Properties" style="width: 100%; margin-left: -10px">
                         <colgroup>
                             <col span="1" style="width: 50%;">
                             <col span="1" style="width: 50%;">
@@ -41,12 +42,12 @@
             </div>
         </div>
 </div>
-<div id="action-description">
+<section id="action-description" aria-label="Description of TreeMap sample">
     <p>
         This sample illustrates the population of various countries in 2017. Leaf item labels intersecting action can be changed by using the <code>Label Intersect Action</code> in properties panel.
     </p>
-</div>
-<div id="description">
+</section>
+<section id="description" aria-label="Description of the TreeMap features demonstrated in this sample">
     <p>
      In this example, you can see the various label intersect actions available in treemap. We have specified range color mapping and enabled default legend in this example.
     </p>
@@ -60,7 +61,7 @@
         Treemap component features are segregated into individual feature-wise modules. To use a tooltip, inject the <code>Tooltip</code> module using the <code>Treemap.Inject(TreeMapTooltip)</code> method, and use a legend by injecting the <code>Legend</code> module using the <code>Treemap.Inject(TreeMapLegend)</code> method.
     </p>
 
-</div>
+</section>
 <!-- custom code start -->
 <style>
         .control-section {
@@ -68,3 +69,4 @@
         }
         </style>
 <!-- custom code end -->
+</main>

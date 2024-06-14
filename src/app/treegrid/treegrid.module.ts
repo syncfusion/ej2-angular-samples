@@ -28,6 +28,7 @@ import { GridLinesComponent } from './gridlines.component';
 import { RowHover } from './row-hover.component';
 import { RowHeightComponent } from './rowheight.component';
 import { RowTemplateComponent } from './row-template.component';
+import { DragAndDropBetweenComponent} from './rowdrag-drop.component';
 import { DragDropComponent } from './drag-drop.component';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { InlineEditing } from './inlineediting.component';
@@ -138,7 +139,10 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/row-template', component: RowTemplateComponent, 'name': 'Row Template',
     description: 'This demo for Essential JS 2 Tree Grid component shows the usage of the row template feature.', 
     order: '04', category: 'Rows' },
-    { 'path': ':theme/treegrid/drag-drop', component: DragDropComponent, 'name': 'Drag and Drop',
+    { 'path': ':theme/treegrid/rowdrag-drop', component: DragAndDropBetweenComponent, 'name': 'Drag and Drop',
+    description: 'This demo for Essential JS 2 Tree Grid component shows how the rows can be dragged between the Tree Grid using the row drag-and-drop feature.',
+    order: '04', category: 'Rows',type:"new"},
+    { 'path': ':theme/treegrid/drag-drop', component: DragDropComponent, 'name': 'Drag and Drop within Tree Grid',
     description: 'This demo for Essential JS 2 Tree Grid component shows how the rows can be dragged within the Tree Grid using the row drag-and-drop feature.',
     order: '04', category: 'Rows'},
     { 'path': ':theme/treegrid/row-hover', component: RowHover, 'name': 'Row Hover', hideOnDevice: true, 

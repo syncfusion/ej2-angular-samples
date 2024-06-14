@@ -64,6 +64,19 @@ body.highcontrast #lists {
     margin-top: 8px !important;
 }
 
+.fluent2 .list_svg,
+.fluent2-dark .list_svg,
+.fluent2-highcontrast .list_svg {
+    margin-left: 10px;
+}
+
+.fluent2 .listWrapper .e-badge,
+.fluent2-dark .listWrapper .e-badge,
+.fluent2-highcontrast .listWrapper .e-badge {
+    margin-top: 13px;
+    margin-right: 10px;
+}
+
 .e-rtl .list_svg {
   margin-left: 16px;
   margin-right: 0;

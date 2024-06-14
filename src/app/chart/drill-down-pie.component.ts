@@ -45,7 +45,7 @@ export class DrilldownPieComponent {
         visible: true, position: 'Inside', enableRotation : false, connectorStyle: { type: 'Curve', length: '10%' }, font: {color: 'white', fontWeight:'600' }
     };
     public explode: boolean = false;
-    public content: string = '<div id= "white" style="cursor:pointer;padding:3px;width:30px; height:30px;"><img src="./assets/chart/images/white.png" id="back" /><div>';
+    public content: string = '<div id= "white" style="cursor:pointer;padding:3px;width:30px; height:30px;"><img src="./assets/chart/images/white.png" id="back" alt="White Icon"/><div>';
     public startAngle: number = 0;
     public explodeIndex: number = 2;
     public endAngle: number = 360;
@@ -57,9 +57,9 @@ export class DrilldownPieComponent {
     public onChartMouseClick(args: IMouseEventArgs): void {
         let index: Index = indexFinder(args.target);
         let lightThemeContent = '<div id="back" style="cursor:pointer;padding:3px;width:30px; height:30px;">' +
-        '<img src="./assets/chart/images/back.png" id="back" />';
+        '<img src="./assets/chart/images/back.png" id="back" alt="Back Icon"/>';
         let darkThemeContent = '<div id= "white" style="cursor:pointer;padding:3px;width:30px; height:30px;">'+
-        '<img src="./assets/chart/images/white.png" id="back" /><div>';
+        '<img src="./assets/chart/images/white.png" id="back" alt="White Icon"/><div>';
         if (this.isparent && document.getElementById('container_Series_' + index.series + '_Point_' + index.point)) {
             this.isparent = false;
             this.pie.annotations = [{
@@ -148,7 +148,7 @@ export class DrilldownPieComponent {
     public load(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
+        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
         if (selectedTheme === 'highcontrast') {
             args.accumulation.series[0].dataLabel.font.color = "white";
         }

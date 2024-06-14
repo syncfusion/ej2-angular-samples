@@ -74,7 +74,7 @@ export class LabelTemplateComponent {
         valueMapping: 'value'        
     };
     public cellSettings: Object = {
-        labelTemplate: '<div><img src="${image}" style="width: 35px; height: 35px;"/></div>',
+        labelTemplate: '<div><img alt="Description of the label template" src="${image}" style="width: 35px; height: 35px;"/></div>',
         textStyle: {
             fontFamily: 'inherit'
         }

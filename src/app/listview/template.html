@@ -9,7 +9,7 @@
         [headerTitle]='headerTitle' (actionComplete)='onActionComplete($event)' [showHeader]='true'>
         <ng-template #template let-dataSource="">
             <div class="{{dataSource.category ? 'clearfix desc e-list-wrapper e-list-multi-line e-list-avatar' : 'clearfix e-list-wrapper e-list-multi-line e-list-avatar'}}">
-                <img *ngIf="dataSource.imgSrc !== ''" class="e-avatar" src="//ej2.syncfusion.com/demos/src/listview/images/{{dataSource.imgSrc}}.png"/>
+                <img *ngIf="dataSource.imgSrc !== ''" class="e-avatar" src="//ej2.syncfusion.com/demos/src/listview/images/{{dataSource.imgSrc}}.png" alt="image"/>
                 <span class="e-list-item-header">{{dataSource.title}} </span>
                 <span class="e-list-content e-text-overflow" [innerHTML]="dataSource.description"></span>
                 <div id="list-logo" *ngIf="dataSource.timeStamp !== ''">

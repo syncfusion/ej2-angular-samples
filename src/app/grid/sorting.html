@@ -1,12 +1,12 @@
 <div class="control-section">
-    <ejs-grid class="sortingenabled" [dataSource]='data' allowPaging='true' [allowSorting]='true' [sortSettings]='initialSort' [pageSettings]='pageSettings'>
+    <ejs-grid class="sortingenabled" [dataSource]='data' allowPaging='true' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbar' [sortSettings]='initialSort' [pageSettings]='pageSettings'>
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='150' textAlign='Right'></e-column>
-            <e-column field='CustomerName' headerText='Customer Name' width='170'></e-column>
-            <e-column field='OrderDate' headerText='Order Date' format="yMd" width='155' textAlign='Right'></e-column>
-            <e-column field='Freight' headerText='Freight' width='150' format='C2' textAlign='Right'></e-column>
-            <e-column field='ShippedDate' headerText='Shipped Date' format="yMd" width='150' textAlign='Right'></e-column>
-            <e-column field='ShipCountry' headerText='Ship Country' width='150'></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='150' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
+            <e-column field='CustomerName' headerText='Customer Name' width='170' [validationRules]='customeridrules'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' format="yMd" width='155' textAlign='Right' editType='datepickeredit'></e-column>
+            <e-column field='Freight' headerText='Freight' width='150' format='C2' textAlign='Right' editType='numericedit' [validationRules]='freightrules'></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' format="yMd" width='150' textAlign='Right' editType='datepickeredit'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='150' editType='dropdownedit'></e-column>
         </e-columns>
     </ejs-grid>
 

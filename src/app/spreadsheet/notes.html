@@ -1,0 +1,128 @@
+<!-- custom code start -->
+<div id="action-description">
+    <p>
+        This sample demonstrates the <b>Notes</b> feature using the shopping cart scenario as an example. When you hover your
+        mouse over the red indicator in the right corner of the cell, any note attached to the cell will be displayed.
+    </p>
+</div>
+<!-- custom code end -->
+<div class="control-section">
+    <ejs-spreadsheet #default [openUrl]="openUrl" [saveUrl]="saveUrl" (created)="created()">
+        <e-sheets>
+            <e-sheet name="Cart">
+                <e-ranges>
+                    <e-range [dataSource]="data" startCell="B3"></e-range>
+                </e-ranges>
+                <e-rows>
+                    <e-row [index]="0">
+                        <e-cells>
+                            <e-cell value="Shopping Cart" rowSpan="2" colSpan="6"
+                                [style]="{fontSize: '20pt', fontWeight: 'bold',textAlign: 'center', backgroundColor: '#279377', verticalAlign: 'middle', color: '#ffffff'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row index="2">
+                        <e-cells>
+                            <e-cell value="Product ID" [style]="{fontWeight: 'bold', textAlign: 'center'}"></e-cell>
+                            <e-cell value="Product ID" [style]="{fontWeight: 'bold', textAlign: 'center'}"></e-cell>
+                            <e-cell value="Product ID" [style]="{fontWeight: 'bold', textAlign: 'center'}"></e-cell>
+                            <e-cell value="Product ID" [style]="{fontWeight: 'bold', textAlign: 'center'}"></e-cell>
+                            <e-cell value="Product ID" [style]="{fontWeight: 'bold', textAlign: 'center'}"></e-cell>
+                            <e-cell value="Product ID" [style]="{fontWeight: 'bold', textAlign: 'center'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="101" [style]="{textAlign: 'left'}"></e-cell>
+                            <e-cell index="1" notes='This product has been the most profitable this month.'></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="102" [style]="{textAlign: 'left'}"></e-cell>
+                            <e-cell index="1"
+                                notes="This product has had the lowest sales in terms of quantity this month."></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="103" [style]="{textAlign: 'left'}"></e-cell>
+                            <e-cell index="1"
+                                notes="This product has been the least profitable this month."></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="104" [style]="{textAlign: 'left'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="105" [style]="{textAlign: 'left'}"></e-cell>
+                            <e-cell index="1"
+                                notes="This product has had the highest sales in terms of quantity this month."></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="106" [style]="{textAlign: 'left'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="107" [style]="{textAlign: 'left'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="108" [style]="{textAlign: 'left'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="109" [style]="{textAlign: 'left'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="4" value="Total Amount"
+                                [style]="{border: '1px solid #A6A6A6', fontWeight: 'bold', textAlign: 'center', verticalAlign: 'middle'}"></e-cell>
+                            <e-cell index="5" formula="=Sum(F4:F12)"
+                                [style]="{border: '1px solid #A6A6A6', textAlign: 'right', verticalAlign: 'middle', fontWeight: 'bold'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                </e-rows>
+                <e-columns>
+                    <e-column [width]=88></e-column>
+                    <e-column [width]=120></e-column>
+                    <e-column [width]=100></e-column>
+                    <e-column [width]=100></e-column>
+                    <e-column [width]=100></e-column>
+                    <e-column [width]=110></e-column>
+                </e-columns>
+            </e-sheet>
+        </e-sheets>
+    </ejs-spreadsheet>
+</div>
+<!-- custom code start -->
+<div id="description">
+    <p>The <b>Notes</b> feature allows you to add comments while reviewing a document. You can enable or disable the notes option using the <code>enableNotes</code> property; by default, it's enabled. To insert a note into cells, use the
+        <b>"Add Note"</b> context menu option. Once added, notes can be edited or removed using the <b>"Edit Note"</b> and
+        <b>"Delete Note"</b> context menu options respectively.</p>
+    <p>The following keyboard shortcuts apply to the <b>Notes</b> feature:</p>
+    <ul>
+        <li>
+            <span class="key-class"><kbd>Shift</kbd> + <kbd>F2</kbd></span>
+            <span>- Add a note to the current cell.</span>
+        </li>
+        <li><span class="key-class"><kbd>Esc</kbd></span>
+            <span>- Save and close the note.</span>
+        </li>
+    </ul>
+</div>
+<style>
+    .key-class {
+        display: inline-block;
+        width: 130px;
+    }
+</style>
+<!-- custom code end -->

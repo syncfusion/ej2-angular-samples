@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { DefaultAutoCompleteComponent } from './default.component';
 import { GroupAndIconAutoCompleteComponent } from './grouping-icon.component';
 import { DataBindingAutoCompleteComponent } from './data-binding.component';
+import { DisabledItemsAutoCompleteComponent } from './disabled-items.component';
 import { TemplateAutoCompleteComponent } from './template.component';
 import { HighlightAutoCompleteComponent } from './highlight.component';
 import { CustomFilteringAutoCompleteComponent } from './custom-filtering.component';
@@ -32,8 +33,10 @@ export const autoCompleteAppRoutes: Object[] = [
     },
     {
         path: ':theme/auto-complete/object-value-binding', component: ObjectAutoCompleteComponent, order: '01',
-        name: 'Object Value Binding', type : 'new', description: 'This example demonstrates how to bind with data source in the Angular autocomplete component.', category: 'AutoComplete'
+        name: 'Object Value Binding', description: 'This example demonstrates how to bind with data source in the Angular autocomplete component.', category: 'AutoComplete'
     },
+    { path: ':theme/auto-complete/disabled-items', component: DisabledItemsAutoCompleteComponent, name: 'Disabled Items', type : 'new', description: 'This example showcases the disabled items of Angular autocomplete component.', order: '01',
+    	category: 'AutoComplete' },
     {
         path: ':theme/auto-complete/template', component: TemplateAutoCompleteComponent, order: '01',
         name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular autocomplete component pop-up list using template.', category: 'AutoComplete'

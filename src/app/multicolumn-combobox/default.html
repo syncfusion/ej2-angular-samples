@@ -1,0 +1,41 @@
+<div id="action-description">
+    <p>This sample demonstrates the default functionalities of the <code>MultiColumn ComboBox</code>.</p>
+</div>
+
+<div class="control-section">
+    <div class="col-lg-8 control-section">
+        <div class="control-wrapper">
+            <div style='padding-top:50px;'>
+                <ejs-multicolumncombobox id='default' #default [dataSource]='orderData' (change)='onChange($event)' [text]="text" [fields]='fields' [placeholder]='waterMark' popupHeight='230px' [showClearButton]='true'>
+                    <e-columns>
+                        <e-column field='OrderID' header='Order ID' width='110'></e-column>
+                        <e-column field='CustomerID' header='Customer ID' width='130'></e-column>
+                        <e-column field='Freight' header='Freight' width='90'></e-column>
+                        <e-column field='ShipCountry' header='Ship Country' width='140'></e-column>
+                    </e-columns>
+                </ejs-multicolumncombobox>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
+            <div class="property-panel-content">
+                <table id="property" title="Properties" style="width: 100%; margin:10px">
+                    <tr>
+                        <td class="left-side" style="padding:5px; width:25%">Value</td>
+                        <td class="right-side">:<span id='value' style='margin-left:10px; width:140px'>{{ value }}</span></td>
+                    </tr>
+                    <tr>
+                        <td class="left-side" style="padding:20px 5px; width:25%">Text</td>
+                        <td class="right-side">:<span id='text' style='padding-left:10px'>{{ text }}</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>The <code>MultiColumn ComboBox</code> allows the user to display detailed information about items in multiple columns. In the above sample, type any character in the MultiColumn ComboBox or click the dropdown icon to choose an item from the options available in the list. The selected item's <code>value</code> and <code>text</code> property values will be shown in the property panel.</p>
+</div>

@@ -24,7 +24,7 @@ export class AutoSaveComponent {
     public rteObj: RichTextEditorComponent;
 
     public tools: ToolbarModule = {
-        items: ['Bold', 'Italic', 'Underline', '|', 'Formats', 'Alignments',
+      items: ['Bold', 'Italic', 'Underline', '|', 'Formats', 'Alignments', 'Blockquote',
             'OrderedList', 'UnorderedList', '|', 'CreateLink', 'Image', '|', 'SourceCode', 'Undo', 'Redo']
     };
 public updateStatus() {

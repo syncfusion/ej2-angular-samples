@@ -1,5 +1,5 @@
 <div class="control-section">
-    <ejs-grid [dataSource]="data" [allowPaging]="true" [pageSettings]='pageOption' [allowSorting]='true' allowGrouping='true' [groupSettings]='groupSettings'  [editSettings]='editSettings' [toolbar]='toolbar'>
+    <ejs-grid [dataSource]="data" [allowPaging]="true" [pageSettings]='pageOption' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' allowGrouping='true' [groupSettings]='groupSettings'  [editSettings]='editSettings' [toolbar]='toolbar'>
         <e-columns>
                 <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' isPrimaryKey='true' ></e-column>
                 <e-column field='CustomerID' headerText='Customer ID' width='120'></e-column>

@@ -37,7 +37,7 @@ export class MapsOsmWithSublayerComponent {
         }
     };
     public layers: object[] = [{
-        layerType: 'OSM',
+        urlTemplate: 'https://tile.openstreetmap.org/level/tileX/tileY.png',
     },
     {
         type: 'SubLayer',

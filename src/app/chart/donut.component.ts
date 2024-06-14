@@ -67,6 +67,12 @@ export class DonutComponent {
         {
           args.border.color = '#000000' ;
         }
+        else if (selectedTheme.indexOf('fluent2') > -1) {
+          args.fill = seriesColor[args.point.index % 10];
+        }
+        else if (selectedTheme.indexOf('fluent2-highcontrast') > -1) {
+          args.fill = seriesColor[args.point.index % 10];
+        }
         else
         {
           args.border.color = '#FFFFFF' ;
@@ -104,7 +110,7 @@ export class DonutComponent {
     public load(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
+        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
     };
      // custom code end
     public radius: string = Browser.isDevice ? '40%' : '70%'

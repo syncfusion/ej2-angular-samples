@@ -62,7 +62,7 @@
 <div class="diagram-serialization" style="width: 100%;height: 10%">
     <ejs-toolbar width="100%" (clicked)="onClicked($event)">
         <e-items>
-            <e-item id='palette-icon' prefixIcon='e-ddb-icons2 e-toggle-palette' align='Right'></e-item>
+            <e-item id='palette-icon' prefixIcon='e-ddb-icons1 e-toggle-palette' align='Right'></e-item>
             <e-item text='New' tooltipText='New' prefixIcon='e-ddb-icons e-new'></e-item>
             <e-item type='Separator'></e-item>
             <e-item text='Save' tooltipText='Save' prefixIcon='e-ddb-icons e-save'></e-item>
@@ -173,6 +173,11 @@
         <code>&#64;NgModule.providers</code> section. To enable context menu, inject
         <code>DiagramContextMenu</code> module into
         <code>&#64;NgModule.providers</code> section.
+    </p>
+    <p>
+        The uploader API control is used to load the JSON data into a diagram asynchronously. Define the properties
+        <code>saveUrl</code>, which will receive the uploaded files and save them on the server, and <code>removeUrl</code>,
+        which will receive the file information and handle the removal of files from the server.
     </p>
     <br>
 </div>

@@ -42,13 +42,10 @@ export class PropertiesComponent {
         sourceFiles.files = ['properties-style.css'];
     }
     onChange(args: any): void {
-        let targetElement = args.event.target;
-        let previousElement = targetElement.previousElementSibling;
-        let nextElement = targetElement.nextElementSibling;
-        if ((previousElement !== null && previousElement.id === 'floating') || nextElement !== null && nextElement.previousElementSibling.id === 'floating') {
+        if (args.event.currentTarget.firstChild.childNodes[0].name === 'floating') {
             this.dashboardObject.allowFloating = args.checked;
         }
-        if ((previousElement !== null && previousElement.id === 'resizing') || nextElement !== null && nextElement.previousElementSibling.id === 'resizing') {
+        if (args.event.currentTarget.firstChild.childNodes[0].name === 'resizing') {
             this.dashboardObject.allowResizing = args.checked;
         }
     }

@@ -159,6 +159,10 @@ td.e-rowcell .statustxt.e-inactivecolor {
   margin-top: -24px;
 }
 
+.fabric-dark #msg, .bootstrap-dark #msg, .tailwind-dark #msg, .bootstrap5-dark #msg, .material-dark #msg, .material3-dark #msg, .fluent-dark #msg, .fluent2-dark #msg, .fluent2-highcontrast #msg {
+  color: #ffffff !important;
+}
+
 @media only screen and (max-width: 370px) {
   #msg {           
       float: left;

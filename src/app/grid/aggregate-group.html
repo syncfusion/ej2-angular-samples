@@ -1,5 +1,5 @@
 <div class="control-section">
-<ejs-grid #grid [dataSource]="data" [allowPaging]="true" [allowGrouping]="true" [pageSettings]='pageOption' [allowSorting]='true' [groupSettings]="groupSettings"
+<ejs-grid #grid [dataSource]="data" [allowPaging]="true" [allowGrouping]="true" [pageSettings]='pageOption' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [groupSettings]="groupSettings"
 (dataBound)='dataBound()' (load)='load()'>
     <e-columns>
         <e-column field='CategoryName' headerText='Category Name' width='170'></e-column>

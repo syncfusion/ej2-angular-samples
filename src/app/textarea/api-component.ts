@@ -35,10 +35,10 @@ export class ApiTextAreaController {
        this.textareaObj.showClearButton = this.clearIconObj.checked;
     }
     public rowHandler(args: any) :void {
-       this.textareaObj.rowsCount = args.value;
+       this.textareaObj.rows = args.value;
     }
     public columnHandler(args: any) :void {
-        this.textareaObj.columnsCount = args.value;
+        this.textareaObj.cols = args.value;
     }
     public maxLengthHandler(args: any) :void {
         this.textareaObj.maxLength = args.value;

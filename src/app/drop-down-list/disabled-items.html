@@ -1,0 +1,26 @@
+<div id="action-description">
+    <p>This example showcases the disabled items of DropDownList. When you click on the DropDownList the popup will open, and you will notice that the disabled items are greyed out and cannot be selected.</p>
+</div>
+
+<div class="control-section">
+    <div class="content-wrapper">
+        <div id='default' class='col-lg-6'>
+            <div class="content">
+                <h4>Status</h4>
+                <ejs-dropdownlist id='ddlelement' [dataSource]='status' [fields]='defaultFields'
+                    [placeholder]='defaultText' allowFiltering="true"></ejs-dropdownlist>
+            </div>
+        </div>
+        <div id='group' class='col-lg-6'>
+            <div class="content">
+                <h4>Vegetable</h4>
+                <ejs-dropdownlist id='ddlelement' [dataSource]='groupingData' [fields]='groupingFields'
+                    [placeholder]='groupingText'></ejs-dropdownlist>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>The DropDownList provides options for individual items to be in either an enabled or disabled state for specific scenarios. Once an item is disabled, it cannot be selected as a value for the component. To configure the disabled item columns, use the <code>fields.disabled</code> property.</p>
+</div>

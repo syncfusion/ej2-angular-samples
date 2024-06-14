@@ -7,17 +7,19 @@ import { EmitType } from '@syncfusion/ej2-base';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 TreeMap.Inject(TreeMapTooltip);
 
 /**
  * Default sample
  */
+
 @Component({
     selector: 'control-content',
     templateUrl: 'drilldown.html',
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [TreeMapModule, SBActionDescriptionComponent, SBDescriptionComponent]
+    imports: [TreeMapModule, SBActionDescriptionComponent, SBDescriptionComponent, TextBoxModule]
 })
 export class TreemapDrillDownComponent {
     @ViewChild('treemap')
@@ -63,7 +65,10 @@ export class TreemapDrillDownComponent {
             color: 'black',
             width: 0.5
         };
-
+        public change(target: any): void {
+            this.treemap.breadcrumbConnector = target.value;
+            this.treemap.refresh();
+         }
         ngAfterViewInit(): void {
             let breadCrumbChange: EmitType<CheckBoxChangeEvents>;
             let breadCrumbCheckBox: CheckBox = new CheckBox(
@@ -72,15 +77,11 @@ export class TreemapDrillDownComponent {
              },
             '#breadCrumb');
             breadCrumbCheckBox.change = breadCrumbChange = (e: CheckBoxChangeEvents) => {
-            this.treemap.enableBreadcrumb = e.checked;
-            let breadCrumbText: HTMLInputElement = document.getElementById('connectorText') as HTMLInputElement;
-            if (e.checked) {
-                breadCrumbText.disabled = false;
-            } else {
-                breadCrumbText.disabled = true;
-                }
-              this.treemap.refresh();
-    };
+                this.treemap.enableBreadcrumb = e.checked;
+                let breadCrumbText = document.getElementById('connectorText');
+                (breadCrumbText as any).ej2_instances[0].enabled = e.checked;
+                this.treemap.refresh();
+            };
     // Visiblity of drill-down view
              let drillChange: EmitType<CheckBoxChangeEvents>;
              let drillViewCheckBox: CheckBox = new CheckBox(
@@ -89,14 +90,10 @@ export class TreemapDrillDownComponent {
                 },
                  '#drillView');
              drillViewCheckBox.change = drillChange = (e: CheckBoxChangeEvents) => {
-             this.treemap.drillDownView = e.checked;
-             this.treemap.refresh();
+                this.treemap.drillDownView = e.checked;
+                this.treemap.refresh();
              };
-             document.getElementById('connectorText').onchange = () => {
-             let value: any = (document.getElementById('connectorText') as HTMLSelectElement).value;
-             this.treemap.breadcrumbConnector = value;
-             this.treemap.refresh();
-             };
+             
             let header: DropDownList = new DropDownList({
                 index: 0, placeholder: 'Select layout type', width: '100%',
                 change: () => {                    

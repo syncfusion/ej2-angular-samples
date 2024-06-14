@@ -45,11 +45,17 @@
 
 .bootstrap4 .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text,
 .bootstrap5 .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text,
-.bootstrap5-dark .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text {
+.bootstrap5-dark .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text,
+.fluent2 .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text,
+.fluent2-dark .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text,
+.fluent2-highcontrast .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text {
   height: 37px;
 }
 
-.bootstrap4 .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
+.bootstrap4 .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+.fluent2 .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+.fluent2-dark .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+.fluent2-highcontrast .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
   height: 37px;
   line-height: 37px;
 }
@@ -63,6 +69,21 @@
 .material3-dark .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
   height: 40px;
   line-height: 40px;
+}
+
+.fluent2 .timeline-resource.e-schedule .e-resource-cells .template-wrap>div,
+.fluent2 .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
+  border-color: #e0e0e0;
+}
+
+.fluent2-dark .timeline-resource.e-schedule .e-resource-cells .template-wrap>div,
+.fluent2-dark .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
+  border-color: #525252;
+}
+
+.fluent2-highcontrast .timeline-resource.e-schedule .e-resource-cells .template-wrap>div,
+.fluent2-highcontrast .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
+  border-color: #fff;
 }
 
 .material3 .timeline-resource.e-schedule .e-resource-cells .template-wrap>div,
@@ -109,11 +130,17 @@
 }
 
 .bootstrap4.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text,
-.bootstrap5.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text {
+.bootstrap5.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text,
+.fluent2.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text,
+.fluent2-dark.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text,
+.fluent2-highcontrast.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text {
   height: 39px;
 }
 
-.bootstrap4.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
+.bootstrap4.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+.fluent2.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+.fluent2-dark.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+.fluent2-highcontrast.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
   height: 39px;
   line-height: 39px;
 }

@@ -37,7 +37,6 @@ export class FileUploadController {
     public contextMenuSettings: object;
     public toolbarSettings: object;
     public hostUrl = 'https://ej2-aspcore-service.azurewebsites.net/';
-    public contextmenuItems: string[] = ['Open', '|', 'Cut', 'Copy', 'Delete', 'Rename', '|', 'Details'];
 
     public btnClick: EmitType<object> = () => {
         this.dialogObj.show();
@@ -79,8 +78,8 @@ export class FileUploadController {
             items: ['NewFolder', 'Upload', 'Delete', 'Cut', 'Copy', 'Rename', 'SortBy', 'Refresh', 'Selection', 'View', 'Details']
         };
         this.contextMenuSettings = {
-            file: this.contextmenuItems,
-            folder: this.contextmenuItems
+            file: [ 'Cut', 'Copy', '|', 'Delete', 'Download', 'Rename', '|', 'Details'],
+            visible: true
         };
     }
 

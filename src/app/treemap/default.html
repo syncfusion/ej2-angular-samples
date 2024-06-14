@@ -1,34 +1,36 @@
-<div class="control-section">
-    <div align='center'>
-        <ejs-treemap id='container' #treemap style="display:block;" [titleSettings] = 'titleSettings' [dataSource] ='dataSource' [weightValuePath] ='weightValuePath'
-        [tooltipSettings] = 'tooltipSettings' [palette] ='palette' [legendSettings] = 'legendSettings' [leafItemSettings] = 'leafItemSettings' format='n' useGroupingSeparator="true" (load)='load($event)' (itemClick)='itemClick($event)' (itemMove)='itemMove($event)'  >
-        <e-levels>
-            <e-level groupPath= 'Continent' [border]='border'>
-            </e-level>
-        </e-levels>    
-    </ejs-treemap>
+<main>
+    <div class="control-section">
+        <div align='center'>
+            <ejs-treemap id='container' #treemap style="display:block;" [titleSettings] = 'titleSettings' [dataSource] ='dataSource' [weightValuePath] ='weightValuePath'
+            [tooltipSettings] = 'tooltipSettings' [palette] ='palette' [legendSettings] = 'legendSettings' [leafItemSettings] = 'leafItemSettings' format='n' useGroupingSeparator="true" (load)='load($event)' (itemClick)='itemClick($event)' (itemMove)='itemMove($event)'  >
+            <e-levels>
+                <e-level groupPath= 'Continent' [border]='border'>
+                </e-level>
+            </e-levels>    
+        </ejs-treemap>
+        </div>
+        <div style="float: right; margin-right: 10px;">Source:
+            <a href=" https://www.factorywarrantylist.com/car-sales-by-country.html/" target="_blank"> www.factorywarrantylist.com</a>
+        </div>
     </div>
-    <div style="float: right; margin-right: 10px;">Source:
-        <a href=" https://www.factorywarrantylist.com/car-sales-by-country.html/" target="_blank"> www.factorywarrantylist.com</a>
-    </div>
-</div>
-<div id="action-description">
-    <p>
-        This sample visualizes the car sales of various countries in 2017 by rendering the countries at top level and car manufacturing companies as leaf items.
-    </p>
-</div>
-<div id="description">
-    <p>
-        In this example, you can see how to render a treemap with the provided data source. Palette color is applied for the items in treemap. Default legend is enabled in this example to represent the items in top level.
-    </p>
-    <p>
-        Tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item in touch enabled devices.
-    </p>
-    <br/>
-    <p style="font-weight: 500">Injecting Module</p>
-    <p>
-        Treemap component features are segregated into individual feature-wise modules. To use a tooltip, inject the 
-        <code>Tooltip</code> module using the <code>Treemap.Inject(TreeMapTooltip)</code> method, and use a legend by injecting the <code>Legend</code> module using the <code>Treemap.Inject(TreeMapLegend)</code> method.
-    </p>
-
-</div>
+    <section id="action-description" aria-label="Description of TreeMap sample">
+        <p>
+            This sample visualizes the car sales of various countries in 2017 by rendering the countries at top level and car manufacturing companies as leaf items.
+        </p>
+    </section>
+    <section id="description" aria-label="Description of the TreeMap features demonstrated in this sample">
+        <p>
+            In this example, you can see how to render a treemap with the provided data source. Palette color is applied for the items in treemap. Default legend is enabled in this example to represent the items in top level.
+        </p>
+        <p>
+            Tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item in touch enabled devices.
+        </p>
+        <br/>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Treemap component features are segregated into individual feature-wise modules. To use a tooltip, inject the 
+            <code>Tooltip</code> module using the <code>Treemap.Inject(TreeMapTooltip)</code> method, and use a legend by injecting the <code>Legend</code> module using the <code>Treemap.Inject(TreeMapLegend)</code> method.
+        </p>
+    
+    </section>
+</main>

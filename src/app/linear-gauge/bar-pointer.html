@@ -1,82 +1,84 @@
-<div class="control-section"> 
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12"
-            style="display: flex;justify-content: center; align-items: center;">
-            <div style="margin: auto;padding: 10px;">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div id='horizontal'
-                                    style="padding:6px;cursor:pointer;width:86px;color:black;font-size:15px;border:1px solid #0074E3;background-color:white;text-align:center"
-                                    (click)='horizontalGauge($event)'>Horizontal</div>
-                            </td>
-                            <td>
-                                <div id='vertical'
-                                    style="padding:6px;cursor:pointer;width:86px;color:white;font-size:15px;border:1px solid #0074E3;background-color: #0074E3;text-align:center"
-                                    (click)='verticalGauge($event)'>Vertical</div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+<main>
+    <div class="control-section"> 
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12"
+                style="display: flex;justify-content: center; align-items: center;">
+                <div style="margin: auto;padding: 10px;">
+                    <table role="none">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div id='horizontal'
+                                        style="padding:6px;cursor:pointer;width:86px;color:black;font-size:15px;border:1px solid #0074E3;background-color:white;text-align:center"
+                                        (click)='horizontalGauge($event)'>Horizontal</div>
+                                </td>
+                                <td>
+                                    <div id='vertical'
+                                        style="padding:6px;cursor:pointer;width:86px;color:white;font-size:15px;border:1px solid #0074E3;background-color: #0074E3;text-align:center"
+                                        (click)='verticalGauge($event)'>Vertical</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+        <pre style="background-color: inherit; border:hidden"></pre>
+        <div id="containerBox" style="float: left;padding: 4%;"></div>
+        <div id='containerOutside' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
+            style="display: flex;justify-content: center; align-items: center;">
+            <ejs-lineargauge (load)='load($event)' animationDuration=2000 id='outsideBar' #outsideBar background='transparent' title='Outside'
+                [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' orientation='Vertical'
+                [axes]='axesBarOutside'>
+            </ejs-lineargauge>
+        </div>
+        <div id='containerCross' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
+            style="display: flex;justify-content: center; align-items: center;">
+            <ejs-lineargauge (load)='load($event)' animationDuration=2000 id='crossBar' #crossBar background='transparent' title='Cross'
+                [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' orientation='Vertical'
+                [axes]='axesBarCross'>
+            </ejs-lineargauge>
+        </div>
+        <div id='containerInside' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
+            style="display: flex;justify-content: center; align-items: center;">
+            <ejs-lineargauge (load)='load($event)' animationDuration=2000 id='insideBar' #insideBar title='Inside' [titleStyle]='titleStyle'
+                width='150px' height='350px' style='display:block;' background='transparent' orientation='Vertical'
+                [axes]='axesBarInside'>
+            </ejs-lineargauge>
+        </div>
+        <div id='containerGradient' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
+            style="display: flex;justify-content: center; align-items: center;">
+            <ejs-lineargauge (load)='load($event)' animationDuration=2000 id='gradientBar' #gradientBar title='Gradient shader'
+                [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' background='transparent'
+                orientation='Vertical' [axes]='axesBarGradient'>
+            </ejs-lineargauge>
+        </div>
+        <div id='containerMultiple' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
+            style="display: flex;justify-content: center; align-items: center;">
+            <ejs-lineargauge (load)='load($event)' animationDuration=2000 id='multipleBar' #multipleBar title='Multiple bar pointers'
+                [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' background='transparent'
+                orientation='Vertical' [axes]='axesBarMultiple'>
+            </ejs-lineargauge>
+        </div>
     </div>
-    <pre style="background-color: inherit; border:hidden"></pre>
-    <div id="containerBox" style="float: left;padding: 4%;"></div>
-    <div id='containerOutside' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
-        style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' animationDuration=2000 id='outsideBar' #outsideBar background='transparent' title='Outside'
-            [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' orientation='Vertical'
-            [axes]='axesBarOutside'>
-        </ejs-lineargauge>
-    </div>
-    <div id='containerCross' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
-        style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' animationDuration=2000 id='crossBar' #crossBar background='transparent' title='Cross'
-            [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' orientation='Vertical'
-            [axes]='axesBarCross'>
-        </ejs-lineargauge>
-    </div>
-    <div id='containerInside' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
-        style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' animationDuration=2000 id='insideBar' #insideBar title='Inside' [titleStyle]='titleStyle'
-            width='150px' height='350px' style='display:block;' background='transparent' orientation='Vertical'
-            [axes]='axesBarInside'>
-        </ejs-lineargauge>
-    </div>
-    <div id='containerGradient' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
-        style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' animationDuration=2000 id='gradientBar' #gradientBar title='Gradient shader'
-            [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' background='transparent'
-            orientation='Vertical' [axes]='axesBarGradient'>
-        </ejs-lineargauge>
-    </div>
-    <div id='containerMultiple' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
-        style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' animationDuration=2000 id='multipleBar' #multipleBar title='Multiple bar pointers'
-            [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;' background='transparent'
-            orientation='Vertical' [axes]='axesBarMultiple'>
-        </ejs-lineargauge>
-    </div>
-</div>
-<div id="action-description">
-    <p>
-        This sample shows the various bar pointer shapes available in the linear gauge. Additionally, multiple bar
-        pointer and animation support are enabled.
-    </p>
-</div>
-<div id="description">
-    <p>
-        In this example, you can see how to render and configure bar pointer in the linear gauge. The <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/pointerModel/">pointers</a>
-        collection is useful for displaying multiple pointers. The properties available in <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/pointerModel/">pointers</a> help
-        in the customization of the bar pointer in the linear gauge.
-    </p>
-    <p>
-        More information on the bar pointer can be found in this <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/linear-gauge/pointers/#bar-pointer">documentation
-            section</a>.
-    </p>
-</div>
+    <section id="action-description" aria-label="Description of Linear Gauge sample">
+        <p>
+            This sample shows the various bar pointer shapes available in the linear gauge. Additionally, multiple bar
+            pointer and animation support are enabled.
+        </p>
+    </section>
+    <section id="description" aria-label="Description of the Linear Gauge features demonstrated in this sample">
+        <p>
+            In this example, you can see how to render and configure bar pointer in the linear gauge. The <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/pointerModel/">pointers</a>
+            collection is useful for displaying multiple pointers. The properties available in <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/pointerModel/">pointers</a> help
+            in the customization of the bar pointer in the linear gauge.
+        </p>
+        <p>
+            More information on the bar pointer can be found in this <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/linear-gauge/pointers/#bar-pointer">documentation
+                section</a>.
+        </p>
+    </section>
+</main>

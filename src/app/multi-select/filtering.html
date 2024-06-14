@@ -4,7 +4,7 @@
 
 <div id="multiselect-sample" class="control-section">
     <div class="control-styles">
-        <h4>Filtering</h4>
+        <label class="h4">Filtering</label>
         <ejs-multiselect id='multiselect-filtering' [dataSource]='data' [fields]='fields' (filtering)='onFiltering($event)' [allowFiltering]='true'
             [placeholder]='watermarks'></ejs-multiselect>
     </div>
@@ -19,3 +19,11 @@
         <a href="http://ej2.syncfusion.com/angular/documentation/multi-select/filtering.html" target="_blank"> documentation section</a>.
     </p>
 </div>
+<style>
+    .control-styles .h4 {
+        font-size: 16px;
+        margin: 0 0 10px;
+        font-weight: bold;
+    }
+
+</style>

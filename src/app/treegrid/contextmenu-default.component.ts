@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
-import { SortService,TreeGridModule, ResizeService, PageService, EditService, ExcelExportService, PdfExportService, ContextMenuService, RowDDService } from '@syncfusion/ej2-angular-treegrid';
+import { SortService,TreeGridAllModule, ResizeService, PageService, EditService, ExcelExportService, PdfExportService, ContextMenuService, RowDDService } from '@syncfusion/ej2-angular-treegrid';
 import {  EditSettingsModel } from '@syncfusion/ej2-treegrid';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -11,7 +11,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     templateUrl: 'contextmenu-default.html',
     providers: [SortService, ResizeService, PageService, EditService, ExcelExportService, PdfExportService, ContextMenuService, RowDDService],
     standalone: true,
-    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent]
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ContextMenuComponent implements OnInit {
     public data: Object[] = [];

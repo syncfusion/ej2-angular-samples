@@ -10,3 +10,13 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+.displayText {
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

@@ -2,7 +2,7 @@
     <div class="row filter">
         <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
             <div class="e-float-input">
-                <input type="text" required="" id="search_Card">
+                <input type="text" required="" id="search_Card" aria-label="search">
                 <span class="e-float-line"></span>
                 <label class="e-float-text" style="font-size:14px">Enter text to search</label>
             </div>
@@ -21,7 +21,7 @@
                 <div id='card_sample_{{task.id}}' class='card_sample'>
                   <div class='{{task.isHorizontal == true? "e-card e-card-horizontal" : "e-card"}}'>
                     <div class='e-card-image'>
-                      <img src="{{task.cardImage.url}}">
+                      <img src="{{task.cardImage.url}}" alt="card">
                     </div>
                     <div class='e-card-header'>
                       <div class='e-card-header-caption'>

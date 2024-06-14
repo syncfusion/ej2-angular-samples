@@ -1,0 +1,84 @@
+<div class="col-lg-8 control-section sb-property-border">
+    <div id="otp-container">
+        <div class="form-container">
+            <span class="otp-header"> Enter verification code </span>
+            <div ejs-otpinput #otpRef [separator]="separatorVal" [placeholder]="placeHolder" [length]="lengthVal"
+                [cssClass]="otpCssClass" [disabled]="disabledVal" [stylingMode]="styleMode"
+                (input)='handleOtpChange($event)'>
+            </div>
+            <div class="otp-actions">
+                <button #resetBtn class="e-btn" type="button" disabled=true (click)='handleResetClick()'> Clear
+                </button>
+                <button #verifyBtn class="e-btn e-primary" type="button" disabled=true (click)='handleVerifyClick()'>
+                    Verify </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4 property-section">
+    <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+            <table id="property" title="Properties">
+                <tbody>
+                    <tr>
+                        <td> Styling Mode </td>
+                        <td>
+                            <ejs-dropdownlist [dataSource]='styleModeData' (change)='dropDownHandler($event)' index=0 popupHeight='200px'></ejs-dropdownlist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Validation Status </td>
+                        <td>
+                            <ejs-dropdownlist [dataSource]='validationData' (change)="validationHandler($event)" index=0 popupHeight='200px'></ejs-dropdownlist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Placeholder </td>
+                        <td>
+                            <ejs-textbox value="X" (input)="placeHolderHandler($event)" [htmlAttributes]="{ 'maxlength': lengthVal }"></ejs-textbox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Seperator </td>
+                        <td>
+                            <ejs-textbox [value]="separatorVal" (input)="separatorHandler($event)" [htmlAttributes]="{ 'maxlength': 1 }"></ejs-textbox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Length </td>
+                        <td>
+                            <ejs-numerictextbox #lengthTextBox min="1" max="6" format="0" [value]="lengthVal" (change)="lengthHandler($event)"></ejs-numerictextbox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Disabled </td>
+                        <td>
+                            <ejs-switch (change)='toggleDisabled($event)'></ejs-switch>
+                        </td>
+                    </tr>
+                <tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample demonstrates the properties available in the OTP Input component.
+    </p>
+</div>
+<div id="description">
+    <p>
+        This sample can be customized further with the combination of OTP Input properties from the property pane. For example,
+    </p>
+    <ul>
+        <li>The input style can be changed by selecting the Styling Mode dropdownlist from the property pane.</li>
+        <li>The validation state can be changed by selecting the Validation Status dropdownlist from the property pane.</li>
+        <li>The hint placeholder character can be updated by using the Placeholder textbox from the property pane.</li>
+        <li>The separator character (-) can be updated by using the Separator textbox from the property pane.</li>
+        <li>The input field length can be changed by using the Length numerictextbox from the property pane.</li>
+        <li>Enable or Disable the OTP Input by toggling the Disabled switcher button.</li>
+    </ul>
+</div>

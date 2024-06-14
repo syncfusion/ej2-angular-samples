@@ -13,7 +13,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     imports: [SBActionDescriptionComponent, GanttAllModule, DropDownListAllModule, ButtonAllModule, SBDescriptionComponent]
 })
 export class ShowHideComponent implements OnInit {
-    
+
     public data: object[];
     public taskSettings: object;
     public splitterSettings: object;
@@ -65,8 +65,8 @@ export class ShowHideComponent implements OnInit {
         this.splitterSettings = {
             columnIndex: 3
         },
-        this.projectStartDate = new Date('03/24/2019');
-        this.projectEndDate = new Date('07/06/2019');
+        this.projectStartDate = new Date('03/24/2024');
+        this.projectEndDate = new Date('07/06/2024');
         this.labelSettings = {
             leftLabel: 'TaskName',
         };

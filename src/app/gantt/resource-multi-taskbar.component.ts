@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
-import { multitaskbardata, resources } from './data';
+import { Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import { multiTaskbarData, resources } from './data';
 import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SwitchAllModule } from '@syncfusion/ej2-angular-buttons';
@@ -7,6 +7,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttresources',
     templateUrl: 'resource-multi-taskbar.html',
+    styleUrls: ['reasource-multi-taskbar.component.css'],
+    encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [SBActionDescriptionComponent, SwitchAllModule, GanttAllModule, SBDescriptionComponent]
 })
@@ -27,7 +29,7 @@ export class GanttResourceMultiTaskbarComponent implements OnInit {
     @ViewChild('gantt')
     public ganttObj: GanttComponent;
     public ngOnInit(): void {
-        this.data = multitaskbardata;
+        this.data = multiTaskbarData;
         this.resources = resources;
         this.taskType = 'FixedWork';
         this.taskSettings = {
@@ -72,8 +74,8 @@ export class GanttResourceMultiTaskbarComponent implements OnInit {
         this.labelSettings = {
             taskLabel: 'TaskName'
         };
-        this.projectStartDate= new Date('03/28/2019');
-        this.projectEndDate= new Date('07/28/2019');
+        this.projectStartDate= new Date('03/24/2024');
+        this.projectEndDate= new Date('07/28/2024');
     }
     public dragDropChange(args): any {
         if (args.checked) {

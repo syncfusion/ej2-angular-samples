@@ -28,16 +28,16 @@
                     </td>
                 </tr>
                 <tr>
-                    <td> Opposite content </td>
-                    <td> <ejs-switch [checked]="true" (change)='handleTogglers($event, "oppositeContent")'></ejs-switch> </td>
+                    <td><label for="opposite"> Opposite content </label></td>
+                    <td> <ejs-switch id="opposite" [checked]="true" (change)='handleTogglers($event, "oppositeContent")'></ejs-switch> </td>
                 </tr>
                 <tr>
-                    <td> Show Icon </td>
-                    <td> <ejs-switch [checked]="true" (change)='handleTogglers($event, "dotCss")'></ejs-switch> </td>
+                    <td><label for="icon"> Show Icon </label></td>
+                    <td> <ejs-switch id="icon" [checked]="true" (change)='handleTogglers($event, "dotCss")'></ejs-switch> </td>
                 </tr>
                 <tr>
-                    <td> Reverse </td>
-                    <td> <ejs-switch (change)='toggleReverse($event)'></ejs-switch> </td>
+                    <td><label for="reverse"> Reverse </label></td>
+                    <td> <ejs-switch id="reverse" (change)='toggleReverse($event)'></ejs-switch> </td>
                 </tr>
             </tbody>
         </table>

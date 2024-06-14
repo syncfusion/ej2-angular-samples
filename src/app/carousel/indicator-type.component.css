@@ -3,6 +3,10 @@
   height: 200px;
 }
 
+.indicator-type-section .carousel-sample h1 {
+  font-size: 18px;
+}
+
 .indicator-type .e-carousel-items .e-carousel-item .img-container {
   height: 100%;
 }

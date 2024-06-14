@@ -108,7 +108,7 @@
 
 .ddt-template .e-badge.icons {
     padding: 0;
-    right: 0;
+    right: 10px;
     position: absolute;
     top: 25px;
     background: transparent;

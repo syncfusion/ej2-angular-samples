@@ -18,12 +18,13 @@ import { ProtectSheetComponent } from './protect-sheet.component';
 import { FreezePaneComponent } from './freeze-pane.component';
 import { SortinAndFilteringComponent } from './sorting-and-filtering.component';
 import { CellTemplateComponent } from './cell-template.component';
-
 import { ConditionalFormattingController } from './conditional-formatting.component';
 import { ImageController } from './image.component';
 import { ChartController } from './chart.component';
 import { DataValidationComponent } from './data-validation.component';
 import { HyperlinkComponent } from './hyperlink.component';
+import { NotesController } from './notes.component';
+import { PrintController } from './print.component';
 
 export const spreadsheetAppRoutes: Object[] = [
     {
@@ -100,6 +101,16 @@ export const spreadsheetAppRoutes: Object[] = [
         path: ':theme/spreadsheet/cell-template', component: CellTemplateComponent,
         name: 'Cell Template', category: 'Templates', order: '07',
         description: 'This demo for Syncfusion Angular Spreadsheet control shows cell template feature.'
+    },
+    {
+        path: ':theme/spreadsheet/notes', component: NotesController,
+        name: 'Notes', type: 'new', category: 'Review', order: '09',
+        description: 'This demo for Angular Spreadsheet control showcases notes feature.'
+    },
+    {
+        path: ':theme/spreadsheet/print', component: PrintController,
+        name: 'Print', type: 'new', category: 'Printing', order: '08',
+        description: 'This example demonstrates the printing functionalities of the Angular Spreadsheet.'
     }
 ];
 

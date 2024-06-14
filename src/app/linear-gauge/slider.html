@@ -1,33 +1,35 @@
-<div class="control-section" style="min-height: 290px;">
-    <div style="justify-content: center; display: flex; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' (dragMove)='dragMove($event)' id='enableSliderGauge' #enableSliderGauge
-            background='transparent' style='display:block;' title='Enabled' [titleStyle]='titleStyle'
-            orientation='Horizontal' height='150px' width='450px' format='N0' [tooltip]='tooltip' [axes]='enableSliderAxes'>
-        </ejs-lineargauge>
+<main>
+    <div class="control-section" style="min-height: 290px;">
+        <div style="justify-content: center; display: flex; align-items: center;">
+            <ejs-lineargauge (load)='load($event)' (dragMove)='dragMove($event)' id='enableSliderGauge' #enableSliderGauge
+                background='transparent' style='display:block;' title='Enabled' [titleStyle]='titleStyle'
+                orientation='Horizontal' height='150px' width='450px' format='N0' [tooltip]='tooltip' [axes]='enableSliderAxes'>
+            </ejs-lineargauge>
+        </div>
+        <div style="justify-content: center; display: flex; align-items: center;">
+            <ejs-lineargauge (load)='load($event)' id='disableSliderGauge' background='transparent' style='display:block;'
+                #disableSliderGauge title='Disabled' [titleStyle]='titleStyle' orientation='Horizontal' height='150px'
+                width='450px' [axes]='disableSliderAxes'>
+            </ejs-lineargauge>
+        </div>
     </div>
-    <div style="justify-content: center; display: flex; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' id='disableSliderGauge' background='transparent' style='display:block;'
-            #disableSliderGauge title='Disabled' [titleStyle]='titleStyle' orientation='Horizontal' height='150px'
-            width='450px' [axes]='disableSliderAxes'>
-        </ejs-lineargauge>
-    </div>
-</div>
-<div id="action-description">
-    <p>
-        This sample demonstrates how to create a slider by utilizing the functionalities available in the
-        linear gauge.
-    </p>
-</div>
-<div id="description">
-    <p>
-        In this example, you can see how to render and configure a new slider in the linear gauge. This can be
-        accomplished by combining axis, range, and pointer. The pointer has been made interactive, so the value changes
-        as you drag it.
-    </p>
-    <p>
-        More information on the linear gauge can be found in this
-        <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/linear-gauge/getting-started/">documentation
-            section</a>.
-    </p>
-</div>
+    <section id="action-description" aria-label="Description of Linear Gauge sample">
+        <p>
+            This sample demonstrates how to create a slider by utilizing the functionalities available in the
+            linear gauge.
+        </p>
+    </section>
+    <section id="description" aria-label="Description of the Linear Gauge features demonstrated in this sample">
+        <p>
+            In this example, you can see how to render and configure a new slider in the linear gauge. This can be
+            accomplished by combining axis, range, and pointer. The pointer has been made interactive, so the value changes
+            as you drag it.
+        </p>
+        <p>
+            More information on the linear gauge can be found in this
+            <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/linear-gauge/getting-started/">documentation
+                section</a>.
+        </p>
+    </section>
+</main>

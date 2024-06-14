@@ -4,7 +4,7 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid [dataSource]='data' id="gridcomp" allowPaging='true' allowExcelExport='true' allowPdfExport='true' [allowSorting]='true'
+    <ejs-grid [dataSource]='data' id="gridcomp" allowPaging='true' allowExcelExport='true' allowPdfExport='true' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings'
         [contextMenuItems]="contextMenuItems" [editSettings]='editing'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' isPrimaryKey='true'></e-column>

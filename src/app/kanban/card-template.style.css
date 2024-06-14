@@ -7,7 +7,10 @@
 }
 
 .kanban-card-template .e-card .e-size {
-  color: #b8860b
+  color: #795704;
+    }
+    .fluent-dark .e-kanban .e-size, .bootstrap5-dark .e-kanban .e-size, .tailwind-dark .e-kanban .e-sized, .material-dark .e-kanban .e-size, .fabric-dark .e-kanban .e-size, .bootstrap-dark .e-kanban .e-size, .highcontrast .e-kanban .e-size, .material3-dark .e-kanban .e-size {
+        color: #b8860b;
 }
 
 .kanban-card-template .e-card .e-mins {
@@ -99,16 +102,25 @@
 }
 
 .kanban-card-template .e-card .e-readyText {
-  color: #008000;
+  color: #018607;
+    }
+    .fluent-dark .e-kanban .e-readyText, .bootstrap5-dark .e-kanban .e-readyText, .tailwind-dark .e-kanban .e-readyText, .material-dark .e-kanban .e-readyText, .fabric-dark .e-kanban .e-readyText, .bootstrap-dark .e-kanban .e-readyText, .highcontrast .e-kanban .e-readyText, .material3-dark .e-kanban .e-readyText {
+        color:#21A32E;
 }
 
 .kanban-card-template .e-card .e-preparingText {
-  color: #9ACD32;
+  color: #527708;
   animation: blinker 1.5s linear infinite;
+}
+.fluent-dark .e-kanban .e-preparingText, .bootstrap5-dark .e-kanban .e-preparingText, .tailwind-dark .e-kanban .e-preparingText, .material-dark .e-kanban .e-preparingText, .fabric-dark .e-kanban .e-preparingText, .bootstrap-dark .e-kanban .e-preparingText, .highcontrast .e-kanban .e-preparingText, .material3-dark .e-kanban .e-preparingText {
+  color: #99d126;
 }
 
 .kanban-card-template .e-card .e-deliveredText {
-  color: #ff0000;
+  color: #c80e0e;
+}
+.fluent-dark .e-kanban .e-deliveredText, .bootstrap5-dark .e-kanban .e-deliveredText, .tailwind-dark .e-kanban .e-deliveredText, .material-dark .e-kanban .e-deliveredText, .fabric-dark .e-kanban .e-deliveredText, .bootstrap-dark .e-kanban .e-deliveredText, .highcontrast .e-kanban .e-deliveredText, .material3-dark .e-kanban .e-deliveredText {
+  color:#dc7c7c;
 }
 
 @keyframes blinker {

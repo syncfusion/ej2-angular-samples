@@ -1,86 +1,88 @@
-<div class="control-section">
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12"
-            style="display: flex;justify-content: center; align-items: center;">
-            <div style="margin: auto;padding: 10px;">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div id='horizontal'
-                                    style="padding:6px;cursor:pointer;width:86px;color:black;font-size:15px;border:1px solid #0074E3;background-color:white;text-align:center"
-                                    (click)='horizontalGauge($event)'>Horizontal</div>
-                            </td>
-                            <td>
-                                <div id='vertical'
-                                    style="padding:6px;cursor:pointer;width:86px;color:white;font-size:15px;border:1px solid #0074E3;background-color: #0074E3;text-align:center"
-                                    (click)='verticalGauge($event)'>Vertical</div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+<main>
+    <div class="control-section">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12"
+                style="display: flex;justify-content: center; align-items: center;">
+                <div style="margin: auto;padding: 10px;">
+                    <table role="none">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div id='horizontal'
+                                        style="padding:6px;cursor:pointer;width:86px;color:black;font-size:15px;border:1px solid #0074E3;background-color:white;text-align:center"
+                                        (click)='horizontalGauge($event)'>Horizontal</div>
+                                </td>
+                                <td>
+                                    <div id='vertical'
+                                        style="padding:6px;cursor:pointer;width:86px;color:white;font-size:15px;border:1px solid #0074E3;background-color: #0074E3;text-align:center"
+                                        (click)='verticalGauge($event)'>Vertical</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+        <pre style="background-color: inherit; border:hidden"></pre>
+        <div id="containerBox" style="float: left;padding: 4%;"></div>
+        <div id='containerDefault' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
+            style="display: flex;justify-content: center; align-items: center;">
+            <ejs-lineargauge (load)='load($event)' id='linearDefault' #linearDefault background='transparent'
+                title='Default axis' [titleStyle]='titleStyle' width='150px' height='350px'
+                style='display:block;height:100px;' orientation='Vertical' [axes]='axesDefault'>
+            </ejs-lineargauge>
+        </div>
+        <div id='containerEdge' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
+            style="display: flex;justify-content: center; align-items: center;">
+            <ejs-lineargauge (load)='load($event)' id='linearEdge' #linearEdge background='transparent' title='Edge style'
+                [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;height:100px;'
+                orientation='Vertical' [container]='containerEdge' [axes]='axesEdge'>
+            </ejs-lineargauge>
+        </div>
+        <div id='containerRange' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
+            style="display: flex;justify-content: center; align-items: center;">
+            <ejs-lineargauge (load)='load($event)' id='linearRange' #linearRange title='Range color for axis'
+                [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;height:130px;'
+                background='transparent' orientation='Vertical' [axes]='axesRange'>
+            </ejs-lineargauge>
+        </div>
+        <div id='containerInversed' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
+            style="display: flex;justify-content: center; align-items: center;">
+            <ejs-lineargauge (load)='load($event)' id='linearInversed' #linearInversed title='Inversed axis'
+                [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;height:100px;'
+                background='transparent' orientation='Vertical' [axes]='axesInversed'>
+            </ejs-lineargauge>
+        </div>
+        <div id='containerOpposed' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
+            style="display: flex;justify-content: center; align-items: center;">
+            <ejs-lineargauge (load)='load($event)' id='linearOpposed' #linearOpposed title='Opposed axis'
+                [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;height:100px;'
+                background='transparent' orientation='Vertical' [axes]='axesOpposed'>
+            </ejs-lineargauge>
+        </div>
     </div>
-    <pre style="background-color: inherit; border:hidden"></pre>
-    <div id="containerBox" style="float: left;padding: 4%;"></div>
-    <div id='containerDefault' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
-        style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' id='linearDefault' #linearDefault background='transparent'
-            title='Default axis' [titleStyle]='titleStyle' width='150px' height='350px'
-            style='display:block;height:100px;' orientation='Vertical' [axes]='axesDefault'>
-        </ejs-lineargauge>
-    </div>
-    <div id='containerEdge' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
-        style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' id='linearEdge' #linearEdge background='transparent' title='Edge style'
-            [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;height:100px;'
-            orientation='Vertical' [container]='containerEdge' [axes]='axesEdge'>
-        </ejs-lineargauge>
-    </div>
-    <div id='containerRange' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
-        style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' id='linearRange' #linearRange title='Range color for axis'
-            [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;height:130px;'
-            background='transparent' orientation='Vertical' [axes]='axesRange'>
-        </ejs-lineargauge>
-    </div>
-    <div id='containerInversed' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
-        style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' id='linearInversed' #linearInversed title='Inversed axis'
-            [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;height:100px;'
-            background='transparent' orientation='Vertical' [axes]='axesInversed'>
-        </ejs-lineargauge>
-    </div>
-    <div id='containerOpposed' class="col-xs-4 col-sm-4 col-lg-2 col-md-2"
-        style="display: flex;justify-content: center; align-items: center;">
-        <ejs-lineargauge (load)='load($event)' id='linearOpposed' #linearOpposed title='Opposed axis'
-            [titleStyle]='titleStyle' width='150px' height='350px' style='display:block;height:100px;'
-            background='transparent' orientation='Vertical' [axes]='axesOpposed'>
-        </ejs-lineargauge>
-    </div>
-</div>
-<div id="action-description">
-    <p>
-        This sample demonstrates the basic axis, its edge style, range color for axis, inversed and opposed axis.
-    </p>
-</div>
-<div id="description">
-    <p>
-        In this example, you can see how to render and configure axis in the linear gauge. The <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/containerModel/#roundedcornerradius">
-            roundedCornerRadius</a>, <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/labelModel/#userangecolor">
-            useRangeColor</a>, <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/axisModel/#isinversed">
-            isInversed</a>, and <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/axisModel/#opposedposition">
-            opposedPosition</a> properties can be used to set the edge style, range color for axis, inversed and opposed
-        axis respectively.
-    </p>
-    <p>
-        More information on the axis can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/linear-gauge/axis/">documentation
-            section</a>.
-    </p>
-</div>
+    <section id="action-description" aria-label="Description of Linear Gauge sample">
+        <p>
+            This sample demonstrates the basic axis, its edge style, range color for axis, inversed and opposed axis.
+        </p>
+    </section>
+    <section id="description" aria-label="Description of the Linear Gauge features demonstrated in this sample">
+        <p>
+            In this example, you can see how to render and configure axis in the linear gauge. The <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/containerModel/#roundedcornerradius">
+                roundedCornerRadius</a>, <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/labelModel/#userangecolor">
+                useRangeColor</a>, <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/axisModel/#isinversed">
+                isInversed</a>, and <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/linear-gauge/axisModel/#opposedposition">
+                opposedPosition</a> properties can be used to set the edge style, range color for axis, inversed and opposed
+            axis respectively.
+        </p>
+        <p>
+            More information on the axis can be found in this
+            <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/linear-gauge/axis/">documentation
+                section</a>.
+        </p>
+    </section>
+</main>    

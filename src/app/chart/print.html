@@ -12,6 +12,11 @@
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
                 <table id="property" title="Properties" style="width: 100%">
+                    <tr style="height: 50px; text-align: center">
+                        <td>
+                          <b>Print the chart</b>
+                        </td>
+                      </tr>
                     <tr id="button-control" style="height: 50px">
                         <td align='center'>
                             <div>
@@ -35,7 +40,7 @@
     </p>
     <p>
         More information on the print can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-print/#print">documentation section</a>.
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-print/#print" aria-label="Navigate to the documentation for Print in Angular Chart component">documentation section</a>.
     </p>
 </div>
 <style>
@@ -53,32 +58,35 @@
     .e-print-icon::before {
         content: '\e34b';
     }
-
+ 
     .e-view.fabric .e-print-icon::before, .e-view.fabric-dark .e-print-icon::before {
         content: '\e7df';
     }
-
+ 
     .e-view.bootstrap .e-print-icon::before {
         content: '\ebd2';
     }
-
-    .e-view.bootstrap4 .e-print-icon::before {
+ 
+   .e-view.bootstrap4 .e-print-icon::before {
         content: '\e743';
     }
-
+ 
     .e-view.tailwind .e-print-icon::before, .e-view.tailwind-dark .e-print-icon::before {
         content: '\e76c';
     }
-
+ 
     .e-view.highcontrast .e-print-icon::before {
         content: '\ebf9';
     }
-
+ 
     .e-view.bootstrap5 .e-print-icon::before, .e-view.bootstrap5-dark .e-print-icon::before {
         content: '\e75d';
     }
-
+ 
     .e-view.fluent .e-print-icon::before, .e-view.fluent-dark .e-print-icon::before {
+        content: '\e75d';
+    }
+    .e-view.fluent2 .e-print-icon::before, .e-view.fluent2-dark .e-print-icon::before, .e-view.fluent2-highcontrast .e-print-icon::before {
         content: '\e75d';
     }
     .e-view.material3 .e-print-icon::before, .e-view.material3-dark .e-print-icon::before {

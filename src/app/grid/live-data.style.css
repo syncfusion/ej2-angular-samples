@@ -29,6 +29,7 @@
 }
 
 .fluent .e-grid .e-rowcell.e-increase,
+.fluent2 .e-grid .e-rowcell.e-increase,
 .bootstrap5 .e-grid .e-rowcell.e-increase,
 .tailwind .e-grid .e-rowcell.e-increase,
 .material .e-grid .e-rowcell.e-increase,
@@ -37,6 +38,7 @@
 .bootstrap .e-grid .e-rowcell.e-increase,
 .highcontrast .e-grid .e-rowcell.e-increase,
 .fluent .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
+.fluent2 .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
 .bootstrap5 .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
 .tailwind .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
 .material .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
@@ -51,12 +53,16 @@
 }
 
 .fluent-dark .e-grid .e-rowcell.e-increase,
+.fluent2-dark .e-grid .e-rowcell.e-increase,
+.fluent2-highcontrast .e-grid .e-rowcell.e-increase,
 .bootstrap5-dark .e-grid .e-rowcell.e-increase,
 .tailwind-dark .e-grid .e-rowcell.e-increase,
 .material-dark .e-grid .e-rowcell.e-increase,
 .fabric-dark .e-grid .e-rowcell.e-increase,
 .bootstrap-dark .e-grid .e-rowcell.e-increase,
 .fluent-dark .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
+.fluent2-dark .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
+.fluent2-highcontrast .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
 .bootstrap5-dark .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
 .tailwind-dark .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
 .material-dark .e-grid .e-rowcell.e-increase:not(.e-editedbatchcell):not(.e-updatedtd),
@@ -73,6 +79,7 @@
 }
 
 .fluent .e-grid .e-rowcell.e-decrease,
+.fluent2 .e-grid .e-rowcell.e-decrease,
 .bootstrap5 .e-grid .e-rowcell.e-decrease,
 .tailwind .e-grid .e-rowcell.e-decrease,
 .material .e-grid .e-rowcell.e-decrease,
@@ -81,6 +88,7 @@
 .bootstrap .e-grid .e-rowcell.e-decrease,
 .highcontrast .e-grid .e-rowcell.e-decrease,
 .fluent .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
+.fluent2 .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
 .bootstrap5 .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
 .tailwind .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
 .material .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
@@ -95,12 +103,16 @@
 }
 
 .fluent-dark .e-grid .e-rowcell.e-decrease,
+.fluent2-dark .e-grid .e-rowcell.e-decrease,
+.fluent2-highcontrast .e-grid .e-rowcell.e-decrease,
 .bootstrap5-dark .e-grid .e-rowcell.e-decrease,
 .tailwind-dark .e-grid .e-rowcell.e-decrease,
 .material-dark .e-grid .e-rowcell.e-decrease,
 .fabric-dark .e-grid .e-rowcell.e-decrease,
 .bootstrap-dark .e-grid .e-rowcell.e-decrease,
 .fluent-dark .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
+.fluent2-dark .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
+.fluent2-highcontrast .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
 .bootstrap5-dark .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
 .tailwind-dark .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
 .material-dark .e-grid .e-rowcell.e-decrease:not(.e-editedbatchcell):not(.e-updatedtd),
@@ -126,6 +138,7 @@
 }
 
 .fluent .above-0,
+.fluent2 .above-0,
 .bootstrap5 .above-0,
 .tailwind .above-0,
 .material .above-0,
@@ -134,6 +147,7 @@
 .bootstrap .above-0,
 .highcontrast .above-0,
 .fluent .e-rowcell .e-icons.above-0,
+.fluent2 .e-rowcell .e-icons.above-0,
 .bootstrap5 .e-rowcell .e-icons.above-0,
 .tailwind .e-rowcell .e-icons.above-0,
 .material .e-rowcell .e-icons.above-0,
@@ -147,12 +161,16 @@
 }
 
 .fluent-dark .above-0,
+.fluent2-dark .above-0,
+.fluent2-highcontrast .above-0,
 .bootstrap5-dark .above-0,
 .tailwind-dark .above-0,
 .material-dark .above-0,
 .fabric-dark .above-0,
 .bootstrap-dark .above-0,
 .fluent-dark .e-rowcell .e-icons.above-0,
+.fluent2-dark .e-rowcell .e-icons.above-0,
+.fluent2-highcontrast .e-rowcell .e-icons.above-0,
 .bootstrap5-dark .e-rowcell .e-icons.above-0,
 .tailwind-dark .e-rowcell .e-icons.above-0,
 .material-dark .e-rowcell .e-icons.above-0,
@@ -162,6 +180,7 @@
 }
 
 .fluent .below-0,
+.fluent2 .below-0,
 .bootstrap5 .below-0,
 .tailwind .below-0,
 .material .below-0,
@@ -170,6 +189,7 @@
 .bootstrap .below-0,
 .highcontrast .below-0,
 .fluent .e-rowcell .e-icons.below-0,
+.fluent2 .e-rowcell .e-icons.below-0,
 .bootstrap5 .e-rowcell .e-icons.below-0,
 .tailwind .e-rowcell .e-icons.below-0,
 .material .e-rowcell .e-icons.below-0,
@@ -183,12 +203,16 @@
 }
 
 .fluent-dark .below-0,
+.fluent2-dark .below-0,
+.fluent2-highcontrast .below-0,
 .bootstrap5-dark .below-0,
 .tailwind-dark .below-0,
 .material-dark .below-0,
 .fabric-dark .below-0,
 .bootstrap-dark .below-0,
 .fluent-dark .e-rowcell .e-icons.below-0,
+.fluent2-dark .e-rowcell .e-icons.below-0,
+.fluent2-highcontrast .e-rowcell .e-icons.below-0,
 .bootstrap5-dark .e-rowcell .e-icons.below-0,
 .tailwind-dark .e-rowcell .e-icons.below-0,
 .material-dark .e-rowcell .e-icons.below-0,
@@ -198,6 +222,7 @@
 }
 
 .fluent .neutral,
+.fluent2 .neutral,
 .bootstrap5 .neutral,
 .tailwind .neutral,
 .material .neutral,
@@ -206,6 +231,7 @@
 .bootstrap .neutral,
 .highcontrast .neutral,
 .fluent .e-rowcell .e-icons.neutral,
+.fluent2 .e-rowcell .e-icons.neutral,
 .bootstrap5 .e-rowcell .e-icons.neutral,
 .tailwind .e-rowcell .e-icons.neutral,
 .material .e-rowcell .e-icons.neutral,
@@ -219,12 +245,16 @@
 }
 
 .fluent-dark .neutral,
+.fluent2-dark .neutral,
+.fluent2-highcontrast .neutral,
 .bootstrap5-dark .neutral,
 .tailwind-dark .neutral,
 .material-dark .neutral,
 .fabric-dark .neutral,
 .bootstrap-dark .neutral,
 .fluent-dark .e-rowcell .e-icons.neutral,
+.fluent2-dark .e-rowcell .e-icons.neutral,
+.fluent2-highcontrast .e-rowcell .e-icons.neutral,
 .bootstrap5-dark .e-rowcell .e-icons.neutral,
 .tailwind-dark .e-rowcell .e-icons.neutral,
 .material-dark .e-rowcell .e-icons.neutral,

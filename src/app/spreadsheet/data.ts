@@ -2012,3 +2012,786 @@ export function freezePaneData(): object[] {
       "Revised Total Gross Salary": "=SUM(D26,F26,H26,J26,L26,N26)"
   }];
 }
+export function printData(): object[] {
+  return [
+    {
+        "Customer Name": "Sarah Johnson",
+        "Mail ID": "sarah.johnson@example.com",
+        "Model": "Taurus",
+        "No. of cars": 2,
+        "Delivery Date": "7/11/2020",
+        "Amount": "8529.22"
+    },
+    {
+        "Customer Name": "Michael Smith",
+        "Mail ID": "michael.smith@example.com",
+        "Model": "Sparrow",
+        "No. of cars": 1,
+        "Delivery Date": "7/13/2021",
+        "Amount": "17866.19"
+    },
+    {
+        "Customer Name": "Emily Davis",
+        "Mail ID": "emily.davis@example.com",
+        "Model": "Grand Cherokee",
+        "No. of cars": 1,
+        "Delivery Date": "9/4/2020",
+        "Amount": "13853.09"
+    },
+    {
+        "Customer Name": "John Anderson",
+        "Mail ID": "john.anderson@example.com",
+        "Model": "GTO",
+        "No. of cars": 3,
+        "Delivery Date": "12/15/2022",
+        "Amount": "2338.74"
+    },
+    {
+        "Customer Name": "Jessica Martinez",
+        "Mail ID": "jessica.martinez@example.com",
+        "Model": "LX",
+        "No. of cars": 2,
+        "Delivery Date": "10/8/2019",
+        "Amount": "9578.45"
+    },
+    {
+        "Customer Name": "Daniel Thompson",
+        "Mail ID": "daniel.thompson@example.com",
+        "Model": "Catera",
+        "No. of cars": 1,
+        "Delivery Date": "7/1/2022",
+        "Amount": "19141.62"
+    },
+    {
+        "Customer Name": "Samantha Harris",
+        "Mail ID": "samantha.harris@example.com",
+        "Model": "Series 7",
+        "No. of cars": 3,
+        "Delivery Date": "12/20/2020",
+        "Amount": "6543.30"
+    },
+    {
+        "Customer Name": "Christopher Wilson",
+        "Mail ID": "christopher.wilson@example.com",
+        "Model": "Corvette",
+        "No. of cars": 2,
+        "Delivery Date": "11/24/2019",
+        "Amount": "13035.06"
+    },
+    {
+        "Customer Name": "Ashley Brown",
+        "Mail ID": "ashley.brown@example.com",
+        "Model": "Regal",
+        "No. of cars": 1,
+        "Delivery Date": "5/12/2019",
+        "Amount": "18488.80"
+    },
+    {
+        "Customer Name": "Matthew Taylor",
+        "Mail ID": "matthew.taylor@example.com",
+        "Model": "S4",
+        "No. of cars": 2,
+        "Delivery Date": "12/30/2019",
+        "Amount": "12317.04"
+    },
+    {
+        "Customer Name": "Olivia Garcia",
+        "Mail ID": "olivia.garcia@example.com",
+        "Model": "TL",
+        "No. of cars": 3,
+        "Delivery Date": "12/18/2023",
+        "Amount": "6230.13"
+    },
+    {
+        "Customer Name": "David Hernandez",
+        "Mail ID": "david.hernandez@example.com",
+        "Model": "Club Wagon",
+        "No. of cars": 2,
+        "Delivery Date": "2/2/2020",
+        "Amount": "9709.49"
+    },
+    {
+        "Customer Name": "Emma Moore",
+        "Mail ID": "emma.moore@example.com",
+        "Model": "V8 Vantage",
+        "No. of cars": 2,
+        "Delivery Date": "11/19/2019",
+        "Amount": "9766.10"
+    },
+    {
+        "Customer Name": "Andrew Lewis",
+        "Mail ID": "andrew.lewis@example.com",
+        "Model": "Caravan",
+        "No. of cars": 3,
+        "Delivery Date": "2/8/2019",
+        "Amount": "7685.49"
+    },
+    {
+        "Customer Name": "Elizabeth Clark",
+        "Mail ID": "elizabeth.clark@example.com",
+        "Model": "Bravada",
+        "No. of cars": 1,
+        "Delivery Date": "8/5/2021",
+        "Amount": "18012.45"
+    },
+    {
+        "Customer Name": "James Walker",
+        "Mail ID": "james.walker@example.com",
+        "Model": "Colorado",
+        "No. of cars": 3,
+        "Delivery Date": "5/30/2021",
+        "Amount": "2785.49"
+    },
+    {
+        "Customer Name": "Ava Rodriguez",
+        "Mail ID": "ava.rodriguez@example.com",
+        "Model": "Runner",
+        "No. of cars": 3,
+        "Delivery Date": "12/10/2021",
+        "Amount": "9967.74"
+    },
+    {
+        "Customer Name": "Ryan White",
+        "Mail ID": "ryan.white@example.com",
+        "Model": "TSX",
+        "No. of cars": 3,
+        "Delivery Date": "10/23/2019",
+        "Amount": "5584.33"
+    },
+    {
+        "Customer Name": "Madison Lee",
+        "Mail ID": "madison.lee@example.com",
+        "Model": "Pathfinder",
+        "No. of cars": 2,
+        "Delivery Date": "12/24/2020",
+        "Amount": "5286.53"
+    },
+    {
+        "Customer Name": "Nicholas Martin",
+        "Mail ID": "nicholas.martin@example.com",
+        "Model": "Charger",
+        "No. of cars": 2,
+        "Delivery Date": "11/20/2023",
+        "Amount": "13511.91"
+    },
+    {
+        "Customer Name": "Sophia Hall",
+        "Mail ID": "sophia.hall@example.com",
+        "Model": "Bonneville",
+        "No. of cars": 2,
+        "Delivery Date": "11/19/2023",
+        "Amount": "6498.19"
+    },
+    {
+        "Customer Name": "Joshua Young",
+        "Mail ID": "joshua.young@example.com",
+        "Model": "B-Series",
+        "No. of cars": 2,
+        "Delivery Date": "10/30/2019",
+        "Amount": "10359.67"
+    },
+    {
+        "Customer Name": "Isabella King",
+        "Mail ID": "isabella.king@example.com",
+        "Model": "Voyager",
+        "No. of cars": 3,
+        "Delivery Date": "4/6/2023",
+        "Amount": "8118.39"
+    },
+    {
+        "Customer Name": "Joseph Allen",
+        "Mail ID": "joseph.allen@example.com",
+        "Model": "Grand Prix",
+        "No. of cars": 1,
+        "Delivery Date": "10/13/2021",
+        "Amount": "10204.37"
+    },
+    {
+        "Customer Name": "Charlotte Scott",
+        "Mail ID": "charlotte.scott@example.com",
+        "Model": "Sunbird",
+        "No. of cars": 3,
+        "Delivery Date": "10/22/2023",
+        "Amount": "6528.06"
+    },
+    {
+        "Customer Name": "William Green",
+        "Mail ID": "william.green@example.com",
+        "Model": "Mirage",
+        "No. of cars": 2,
+        "Delivery Date": "9/12/2019",
+        "Amount": "5619.25"
+    },
+    {
+        "Customer Name": "Amelia Adams",
+        "Mail ID": "amelia.adams@example.com",
+        "Model": "XK",
+        "No. of cars": 1,
+        "Delivery Date": "5/12/2021",
+        "Amount": "5091.43"
+    },
+    {
+        "Customer Name": "Ethan Carter",
+        "Mail ID": "ethan.carter@example.com",
+        "Model": "Accord",
+        "No. of cars": 1,
+        "Delivery Date": "9/3/2023",
+        "Amount": "14566.08"
+    },
+    {
+        "Customer Name": "Mia Turner",
+        "Mail ID": "mia.turner@example.com",
+        "Model": "Range Rover Sport",
+        "No. of cars": 2,
+        "Delivery Date": "2/22/2023",
+        "Amount": "5284.87"
+    },
+    {
+        "Customer Name": "Alexander Baker",
+        "Mail ID": "alexander.baker@example.com",
+        "Model": "Runner",
+        "No. of cars": 3,
+        "Delivery Date": "12/25/2023",
+        "Amount": "5524.25"
+    },
+    {
+        "Customer Name": "Chloe Hill",
+        "Mail ID": "chloe.hill@example.com",
+        "Model": "TSX",
+        "No. of cars": 3,
+        "Delivery Date": "2/25/2023",
+        "Amount": "2543.25"
+    },
+    {
+        "Customer Name": "Benjamin Nelson",
+        "Mail ID": "benjamin.nelson@example.com",
+        "Model": "Pathfinder",
+        "No. of cars": 2,
+        "Delivery Date": "11/19/2023",
+        "Amount": "8524.35"
+    },
+    {
+        "Customer Name": "Grace Mitchell",
+        "Mail ID": "grace.mitchell@example.com",
+        "Model": "Charger",
+        "No. of cars": 2,
+        "Delivery Date": "10/30/2019",
+        "Amount": "9542.35"
+    },
+    {
+        "Customer Name": "Jacob Perez",
+        "Mail ID": "jacob.perez@example.com",
+        "Model": "Bonneville",
+        "No. of cars": 3,
+        "Delivery Date": "4/6/2023",
+        "Amount": "8872.52"
+    },
+    {
+        "Customer Name": "Avery Roberts",
+        "Mail ID": "avery.roberts@example.com",
+        "Model": "B-Series",
+        "No. of cars": 1,
+        "Delivery Date": "10/13/2021",
+        "Amount": "12884.52"
+    },
+    {
+        "Customer Name": "Ethan Thomas",
+        "Mail ID": "ethan.thomas@example.com",
+        "Model": "Voyager",
+        "No. of cars": 1,
+        "Delivery Date": "10/22/2023",
+        "Amount": "19352.24"
+    },
+    {
+        "Customer Name": "Lily Phillips",
+        "Mail ID": "lily.phillips@example.com",
+        "Model": "Grand Prix",
+        "No. of cars": 2,
+        "Delivery Date": "9/12/2019",
+        "Amount": "8546.24"
+    },
+    {
+        "Customer Name": "Samuel Davis",
+        "Mail ID": "samuel.davis@example.com",
+        "Model": "Sunbird",
+        "No. of cars": 3,
+        "Delivery Date": "2/8/2019",
+        "Amount": "8844.25"
+    },
+    {
+        "Customer Name": "Zoey Campbell",
+        "Mail ID": "zoey.campbell@example.com",
+        "Model": "Mirage",
+        "No. of cars": 2,
+        "Delivery Date": "8/5/2021",
+        "Amount": "9635.25"
+    },
+    {
+        "Customer Name": "Daniel Cooper",
+        "Mail ID": "daniel.cooper@example.com",
+        "Model": "XK",
+        "No. of cars": 3,
+        "Delivery Date": "5/30/2021",
+        "Amount": "7854.24"
+    },
+    {
+        "Customer Name": "Madeline Collins",
+        "Mail ID": "madeline.collins@example.com",
+        "Model": "Accord",
+        "No. of cars": 1,
+        "Delivery Date": "12/10/2021",
+        "Amount": "14297.36"
+    },
+    {
+        "Customer Name": "Nathan Edwards",
+        "Mail ID": "nathan.edwards@example.com",
+        "Model": "Range Rover Sport",
+        "No. of cars": 2,
+        "Delivery Date": "12/24/2020",
+        "Amount": "8745.35"
+    },
+    {
+        "Customer Name": "Evelyn Stewart",
+        "Mail ID": "evelyn.stewart@example.com",
+        "Model": "Runner",
+        "No. of cars": 1,
+        "Delivery Date": "11/20/2023",
+        "Amount": "17825.52"
+    },
+    {
+        "Customer Name": "Alexander Rivera",
+        "Mail ID": "alexander.rivera@example.com",
+        "Model": "TSX",
+        "No. of cars": 1,
+        "Delivery Date": "12/20/2020",
+        "Amount": "15994.34"
+    },
+    {
+        "Customer Name": "Sophia Henderson",
+        "Mail ID": "sophia.henderson@example.com",
+        "Model": "Pathfinder",
+        "No. of cars": 2,
+        "Delivery Date": "8/30/2019",
+        "Amount": "9154.34"
+    },
+    {
+        "Customer Name": "Isaac Morris",
+        "Mail ID": "isaac.morris@example.com",
+        "Model": "Charger",
+        "No. of cars": 3,
+        "Delivery Date": "12/13/2023",
+        "Amount": "13082.34"
+    },
+    {
+        "Customer Name": "Claire Rogers",
+        "Mail ID": "claire.rogers@example.com",
+        "Model": "Bonneville",
+        "No. of cars": 3,
+        "Delivery Date": "10/1/2019",
+        "Amount": "7963.35"
+    },
+    {
+        "Customer Name": "Luke Flores",
+        "Mail ID": "luke.flores@example.com",
+        "Model": "B-Series",
+        "No. of cars": 3,
+        "Delivery Date": "10/31/2023",
+        "Amount": "6734.35"
+    },
+    {
+        "Customer Name": "Aubrey Long",
+        "Mail ID": "aubrey.long@example.com",
+        "Model": "Voyager",
+        "No. of cars": 1,
+        "Delivery Date": "8/21/2019",
+        "Amount": "12864.35"
+    },
+    {
+        "Customer Name": "Julian Coleman",
+        "Mail ID": "julian.coleman@example.com",
+        "Model": "Grand Prix",
+        "No. of cars": 2,
+        "Delivery Date": "7/7/2021",
+        "Amount": "7985.36"
+    },
+    {
+        "Customer Name": "Leah Reed",
+        "Mail ID": "leah.reed@example.com",
+        "Model": "Sunbird",
+        "No. of cars": 1,
+        "Delivery Date": "2/3/2022",
+        "Amount": "19245.36"
+    },
+    {
+        "Customer Name": "Gabriel Bell",
+        "Mail ID": "gabriel.bell@example.com",
+        "Model": "Mirage",
+        "No. of cars": 3,
+        "Delivery Date": "1/23/2021",
+        "Amount": "7835.36"
+    },
+    {
+        "Customer Name": "Natalie Ward",
+        "Mail ID": "natalie.ward@example.com",
+        "Model": "XK",
+        "No. of cars": 1,
+        "Delivery Date": "8/6/2020",
+        "Amount": "16324.35"
+    },
+    {
+        "Customer Name": "Lucas Brooks",
+        "Mail ID": "lucas.brooks@example.com",
+        "Model": "Accord",
+        "No. of cars": 2,
+        "Delivery Date": "11/1/2019",
+        "Amount": "8845.34"
+    },
+    {
+        "Customer Name": "Hailey Mitchell",
+        "Mail ID": "hailey.mitchell@example.com",
+        "Model": "Range Rover Sport",
+        "No. of cars": 1,
+        "Delivery Date": "8/17/2023",
+        "Amount": "12684.35"
+    },
+    {
+        "Customer Name": "Jackson Ward",
+        "Mail ID": "jackson.ward@example.com",
+        "Model": "Runner",
+        "No. of cars": 1,
+        "Delivery Date": "3/3/2019",
+        "Amount": "15093.36"
+    }];
+}
+
+export function yearlyReport(): object[] {
+  return[
+    {
+      "Model": "Accord",
+      "Year 2018": 0,
+      "Year 2019": 2,
+      "Year 2020": 0,
+      "Year 2021": 1,
+      "Year 2022": 0,
+      "Year 2023": 1
+  },
+  {
+      "Model": "Bonneville",
+      "Year 2018": 2,
+      "Year 2019": 3,
+      "Year 2020": 0,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 3
+  },
+  {
+      "Model": "Bravada",
+      "Year 2018": 0,
+      "Year 2019": 0,
+      "Year 2020": 0,
+      "Year 2021": 1,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "B-Series",
+      "Year 2018": 3,
+      "Year 2019": 2,
+      "Year 2020": 0,
+      "Year 2021": 1,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Caravan",
+      "Year 2018": 0,
+      "Year 2019": 3,
+      "Year 2020": 0,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Catera",
+      "Year 2018": 0,
+      "Year 2019": 0,
+      "Year 2020": 0,
+      "Year 2021": 0,
+      "Year 2022": 1,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Charger",
+      "Year 2018": 5,
+      "Year 2019": 2,
+      "Year 2020": 0,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Club Wagon",
+      "Year 2018": 0,
+      "Year 2019": 0,
+      "Year 2020": 2,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Colorado",
+      "Year 2018": 0,
+      "Year 2019": 0,
+      "Year 2020": 0,
+      "Year 2021": 3,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Corvette",
+      "Year 2018": 0,
+      "Year 2019": 2,
+      "Year 2020": 0,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Grand Cherokee",
+      "Year 2018": 0,
+      "Year 2019": 0,
+      "Year 2020": 1,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Grand Prix",
+      "Year 2018": 0,
+      "Year 2019": 2,
+      "Year 2020": 0,
+      "Year 2021": 3,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "GTO",
+      "Year 2018": 0,
+      "Year 2019": 0,
+      "Year 2020": 0,
+      "Year 2021": 0,
+      "Year 2022": 3,
+      "Year 2023": 0
+  },
+  {
+      "Model": "LX",
+      "Year 2018": 0,
+      "Year 2019": 2,
+      "Year 2020": 0,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Mirage",
+      "Year 2018": 0,
+      "Year 2019": 2,
+      "Year 2020": 0,
+      "Year 2021": 5,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Pathfinder",
+      "Year 2018": 2,
+      "Year 2019": 2,
+      "Year 2020": 2,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Range Rover Sport",
+      "Year 2018": 1,
+      "Year 2019": 0,
+      "Year 2020": 2,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 2
+  },
+  {
+      "Model": "Regal",
+      "Year 2018": 0,
+      "Year 2019": 1,
+      "Year 2020": 0,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Runner",
+      "Year 2018": 1,
+      "Year 2019": 1,
+      "Year 2020": 0,
+      "Year 2021": 3,
+      "Year 2022": 0,
+      "Year 2023": 3
+  },
+  {
+      "Model": "S4",
+      "Year 2018": 0,
+      "Year 2019": 2,
+      "Year 2020": 0,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Series 7",
+      "Year 2018": 0,
+      "Year 2019": 0,
+      "Year 2020": 3,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Sparrow",
+      "Year 2018": 0,
+      "Year 2019": 0,
+      "Year 2020": 0,
+      "Year 2021": 1,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Sunbird",
+      "Year 2018": 3,
+      "Year 2019": 3,
+      "Year 2020": 0,
+      "Year 2021": 0,
+      "Year 2022": 1,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Taurus",
+      "Year 2018": 0,
+      "Year 2019": 0,
+      "Year 2020": 2,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "TL",
+      "Year 2018": 3,
+      "Year 2019": 0,
+      "Year 2020": 0,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "TSX",
+      "Year 2018": 0,
+      "Year 2019": 3,
+      "Year 2020": 1,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 3
+  },
+  {
+      "Model": "V8 Vantage",
+      "Year 2018": 0,
+      "Year 2019": 2,
+      "Year 2020": 0,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 0
+  },
+  {
+      "Model": "Voyager",
+      "Year 2018": 1,
+      "Year 2019": 1,
+      "Year 2020": 0,
+      "Year 2021": 0,
+      "Year 2022": 0,
+      "Year 2023": 3
+  },
+  {
+      "Model": "XK",
+      "Year 2018": 0,
+      "Year 2019": 0,
+      "Year 2020": 1,
+      "Year 2021": 4,
+      "Year 2022": 0,
+      "Year 2023": 0
+  }];
+}
+
+export function notesData(): object[] {
+  return [
+    {
+        "Product Name": "Coffee Maker",
+        "Category": "Kitchen",
+        "Quantity": "43",
+        "Price": "399",
+        "Total": "=PRODUCT(E4,D4)"
+    },
+    {
+        "Product Name": "Apple Pencil",
+        "Category": "Electronics",
+        "Quantity": "7",
+        "Price": "200",
+        "Total": "=PRODUCT(E5,D5)"
+    },
+    {
+        "Product Name": "Juicer",
+        "Category": "Kitchen",
+        "Quantity": "12",
+        "Price": "100",
+        "Total": "=PRODUCT(E6,D6)"
+    },
+    {
+        "Product Name": "Toaster",
+        "Category": "Kitchen",
+        "Quantity": "69",
+        "Price": "183",
+        "Total": "=PRODUCT(E7,D7)"
+    },
+    {
+        "Product Name": "Tea Kettle",
+        "Category": "Kitchen",
+        "Quantity": "83",
+        "Price": "169",
+        "Total": "=PRODUCT(E8,D8)"
+    },
+    {
+        "Product Name": "Logitech Mouse",
+        "Category": "Electronics",
+        "Quantity": "16",
+        "Price": "250",
+        "Total": "=PRODUCT(E9,D9)"
+    },
+    {
+        "Product Name": "Skillet",
+        "Category": "Kitchen",
+        "Quantity": "20",
+        "Price": "149",
+        "Total": "=PRODUCT(E10,D10)"
+    },
+    {
+        "Product Name": "Hamilton Blender",
+        "Category": "Appliances",
+        "Quantity": "68",
+        "Price": "109",
+        "Total": "=PRODUCT(E11,D11)"
+    },
+    {
+        "Product Name": "Plate set",
+        "Category": "Kitchen",
+        "Quantity": "59",
+        "Price": "168",
+        "Total": "=PRODUCT(E12,D12)"
+    }];
+}

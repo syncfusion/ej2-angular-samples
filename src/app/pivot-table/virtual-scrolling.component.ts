@@ -96,10 +96,6 @@ export class VirtualScrollingComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.gridSettings = {
-            columnWidth: 140
-        } as GridSettings;
-
         this.virtualScrollSettings = {
             allowSinglePage: true
         } as VirtualScrollSettings;
@@ -114,6 +110,6 @@ export class VirtualScrollingComponent implements OnInit {
             values: [{ name: 'Price', caption: 'Unit Price' }, { name: 'Sold', caption: 'Unit Sold' }]
         };
         
-        this.width = Browser.isDevice ? '100%' : 1200;
+        this.width = '100%';
     }
 }

@@ -44,12 +44,12 @@ export class MapsOsmComponent {
 
     public layers: object[] = [
         {
-            layerType: 'OSM',
+            urlTemplate: 'https://tile.openstreetmap.org/level/tileX/tileY.png',
             animationDuration: 0,
             markerSettings: [
                 {
                     visible: true,
-                    template: '<div><img src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/ballon.png" style="height:30px;width:20px;"></img></div>',
+                    template: '<div><img alt="Balloon image" src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/ballon.png" style="height:30px;width:20px;"></img></div>',
                     dataSource: [{
                         name: 'Manhattan, New York, USA',
                         latitude: 40.7488758,

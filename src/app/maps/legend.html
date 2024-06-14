@@ -1,120 +1,170 @@
-<div id="action-description">
-        <p>
-            This sample visualizes grouping of countries in the legend based on its population density. The legend will be displayed
-            at the top of the map.
-        </p>
-    </div>
-    
-    <div class="control-section">
-            <div class="col-lg-8">
-        <div align='center'>
-            <ejs-maps id='container' #maps style="display:block;" [zoomSettings]='zoomSettings' [layers]='layers' [legendSettings]="legendSettings"
-                [titleSettings]="titleSettings" (load)="load($event)" (tooltipRender)="tooltipRender($event)">
-            </ejs-maps>
-        </div>
-        <div style="float: right; margin-right: 10px;">Source:
-            <a href="https://simple.wikipedia.org/wiki/List_of_countries_by_population_density" target="_blank">simple.wikipedia.org</a>
-        </div>
+<main>
+  <section id="action-description" aria-label="Description of Maps sample">
+    <p>
+      This sample visualizes grouping of countries in the legend based on its
+      population density. The legend will be displayed at the top of the map.
+    </p>
+  </section>
+
+  <div class="control-section">
+    <div class="col-lg-8">
+      <div align="center">
+        <ejs-maps
+          id="container"
+          #maps
+          style="display: block"
+          [zoomSettings]="zoomSettings"
+          [layers]="layers"
+          [legendSettings]="legendSettings"
+          [titleSettings]="titleSettings"
+          (load)="load($event)"
+          (tooltipRender)="tooltipRender($event)"
+        >
+        </ejs-maps>
+      </div>
+      <div style="float: right; margin-right: 10px">
+        Source:
+        <a
+          href="https://simple.wikipedia.org/wiki/List_of_countries_by_population_density"
+          target="_blank"
+          >simple.wikipedia.org</a
+        >
+      </div>
     </div>
     <div class="col-lg-4 property-section">
-            <div class="property-panel-section">
-                    <div class="property-panel-header">Properties</div>
-                    <div class="property-panel-content">
-            <table id="property" title="Properties" style="width: 100%">
-                <colgroup>
-                    <col span="1" style="width: 50%;">
-                    <col span="1" style="width: 50%;">
-                </colgroup>
-                    <tr style="height: 50px">
-                        <td>
-                            <div class="property-text" style="padding: 0px;">Legend mode </div>
-                        </td>
-                        <td style="padding-left: 10px">
-                            <select name="selectIndex" autocomplete="off" id="legendMode" style="width:60%;">
-                                <option value="Default" selected>Default</option>
-                                <option value="Interactive">Interactive</option>
-                            </select>
-                        </td>
-                    </tr>
-                    </table>
-                    <table id="property" title="Properties" style="width: 100%">
-                        <colgroup>
-                            <col span="1" style="width: 50%;">
-                            <col span="1" style="width: 50%;">
-                        </colgroup>
-                    <tr style="height: 50px">
-                        <td>
-                            <div class="property-text" style="padding: 0px;">Legend position </div>
-                        </td>
-                        <td style="padding-left: 10px">
-                            <select name="legendPos" autocomplete="off" id="legendPosition" style="width:60%;">
-                                <option value="Top" selected>Top</option>
-                                <option value="Bottom">Bottom</option>
-                                <option value="Left">Left</option>
-                                <option value="Right">Right</option>
-                            </select>
-                        </td>
-                    </tr>
-                    </table>
-                    <table id="property" title="Properties" style="width: 100%">
-                        <colgroup>
-                            <col span="1" style="width: 50%;">
-                            <col span="1" style="width: 50%;">
-                        </colgroup>
-                    <tr style="height: 80px;">
-                        <td>
-                            <div class="property-text" style="padding: 0px;">Show legend for remaining data source items</div>
-                        </td>
-                        <td>
-                            <div style="padding-left: 10px">
-                                <input type="checkbox" id="opacity"/>
-                            </div>
-                        </td>
-                    </tr>
-                    </table>
-                    <table id="property" title="Properties" style="width: 100%">
-                        <colgroup>
-                            <col span="1" style="width: 50%;">
-                            <col span="1" style="width: 50%;">
-                        </colgroup>
-                    <tr style="height: 50px">
-                        <td>
-                            <div class="property-text" style="padding: 0px; margin-top: 15px">Show population density when the legend item is toggled</div>
-                        </td>
-                        <td>
-                            <div style="padding-left: 10px">
-                                <input type="checkbox" id="toggleLegend"/>
-                            </div>
-                        </td>
-                    </tr>
-            </table>
+      <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+          <table title="Properties" style="width: 100%" role="none">
+            <colgroup>
+              <col span="1" style="width: 50%" />
+              <col span="1" style="width: 50%" />
+            </colgroup>
+            <tr style="height: 50px">
+              <td>
+                <div class="property-text" style="padding: 0px">
+                  Legend mode
+                </div>
+              </td>
+              <td style="padding-left: 10px">
+                <select
+                  name="selectIndex"
+                  autocomplete="off"
+                  id="legendMode"
+                  style="width: 60%"
+                >
+                  <option value="Default" selected>Default</option>
+                  <option value="Interactive">Interactive</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <table title="Properties" style="width: 100%" role="none">
+            <colgroup>
+              <col span="1" style="width: 50%" />
+              <col span="1" style="width: 50%" />
+            </colgroup>
+            <tr style="height: 50px">
+              <td>
+                <div class="property-text" style="padding: 0px">
+                  Legend position
+                </div>
+              </td>
+              <td style="padding-left: 10px">
+                <select
+                  name="legendPos"
+                  autocomplete="off"
+                  id="legendPosition"
+                  style="width: 60%"
+                >
+                  <option value="Top" selected>Top</option>
+                  <option value="Bottom">Bottom</option>
+                  <option value="Left">Left</option>
+                  <option value="Right">Right</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <table id="property" title="Properties" style="width: 100%" role="none">
+            <colgroup>
+              <col span="1" style="width: 50%" />
+              <col span="1" style="width: 50%" />
+            </colgroup>
+            <tr style="height: 80px">
+              <td>
+                <div class="property-text" style="padding: 0px">
+                  Show legend for remaining data source items
+                </div>
+              </td>
+              <td>
+                <div class="legendCheckBox">
+                  <input type="checkbox" id="opacity" />
+                </div>
+              </td>
+            </tr>
+          </table>
+          <table id="property" title="Properties" style="width: 100%" role="none">
+            <colgroup>
+              <col span="1" style="width: 50%" />
+              <col span="1" style="width: 50%" />
+            </colgroup>
+            <tr style="height: 50px">
+              <td>
+                <div
+                  class="property-text"
+                  style="padding: 0px; margin-top: 15px"
+                >
+                  Show population density when the legend item is toggled
+                </div>
+              </td>
+              <td>
+                <div class="legendCheckBox" style="padding-top: 10px">
+                  <input type="checkbox" id="toggleLegend" />
+                </div>
+              </td>
+            </tr>
+          </table>
         </div>
-        </div>
+      </div>
     </div>
-    </div>
-    <div id='description'>
-    
-        <p>
-            In this example, you can see how to render a legend in the maps. A legend item denotes the value of a shape. Any number of
-            legend items can be added to the legend. You can bind the desired colors to the shapes, if its values are within
-            the specified range using the
-            <code>ColorMapping</code> property.
-    
-        </p>
-        <p>
-            Tooltip is enabled in this example. To see the tooltip in action, hover the mouse over a shape or tap a shape in touch enabled
-            devices.
-        </p>
-        <br/>
-        <p style="font-weight: 500">Injecting Module</p>
-        <p>
-            Maps component features are segregated into individual feature-wise modules. To use a legend, inject the
-            <code>Legend</code> module using the
-            <code>Maps.Inject(Legend)</code> method.
-        </p>
-        <p>
-            More information on the maps layers can be found in this
-            <a target="_blank" href="">documentation section</a>.
-        </p>
-    
-    </div>
+  </div>
+  <style>
+    .legendCheckBox {
+      padding-left: 10px;
+    }
+    .e-view.fluent2 #property .legendCheckBox {
+      padding-left: 6px;
+    }
+    .e-view.fluent2-dark #property .legendCheckBox {
+      padding-left: 0px;
+    }
+  </style>
+  <section
+    id="description"
+    aria-label="Description of the Maps features demonstrated in this sample"
+  >
+    <p>
+      In this example, you can see how to render a legend in the maps. A legend
+      item denotes the value of a shape. Any number of legend items can be added
+      to the legend. You can bind the desired colors to the shapes, if its
+      values are within the specified range using the
+      <code>ColorMapping</code> property.
+    </p>
+    <p>
+      Tooltip is enabled in this example. To see the tooltip in action, hover
+      the mouse over a shape or tap a shape in touch enabled devices.
+    </p>
+    <br />
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+      Maps component features are segregated into individual feature-wise
+      modules. To use a legend, inject the
+      <code>Legend</code> module using the
+      <code>Maps.Inject(Legend)</code> method.
+    </p>
+    <p>
+      More information on the maps layers can be found in this
+      <a target="_blank" href="">documentation section</a>.
+    </p>
+  </section>
+</main>

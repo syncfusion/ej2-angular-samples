@@ -1,6 +1,6 @@
 <div id="action-description">
     <p>
-        This sample demonstrates client-side exporting of the chart, enabling you to export its data to Excel, PDF, and CSV formats. Additionally, it allows you to save the chart in image formats such as JPEG, PNG, and SVG.    </p>
+        This sample demonstrates client-side exporting of the chart, enabling you to export its data to Excel, PDF, and CSV formats. Additionally, it allows you to save the chart in image formats such as JPEG, PNG, and SVG.</p>
 </div>
 
     <div class="control-section col-lg-9 sb-property-border">
@@ -35,11 +35,11 @@
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 40%">
-                            <div style="padding-left: 0px;">File Name:</div>
+                            <div style="padding-left: 0px;" id="exportFile">File Name:</div>
                         </td>
                         <td style="width: 40%;">
                             <div class="e-float-input" style='margin-top: 0px;'>
-                                <input type="text" value="Chart" id="fileName" style="width: 90px;">
+                                <input type="text" value="Chart" id="fileName" style="width: 90px;" aria-labelledby="Chart">
                             </div>
                         </td>
                     </tr>
@@ -66,7 +66,7 @@
     </p>
     <p>
         More information on the export can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-print/#export">documentation section</a>.
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-print/#export" aria-label="Navigate to the documentation for Export in Angular Chart component">documentation section</a>.
     </p>
 </div>
 <style>
@@ -83,31 +83,36 @@
         padding: 0px !important;
     }
     
-    .e-export-icon::before {
+    .e-icons.e-export::before {
         content: '\e728';
     }
-    
-    .e-view.fabric .e-export-icon::before, .e-view.fabric-dark .e-export-icon::before {
+ 
+    .e-view.fabric .e-icons.e-export::before, .e-view.fabric-dark .e-icons.e-export::before {
         content: '\e710';
     }
-
-    .e-view.bootstrap4 .e-export-icon::before {
+ 
+    .e-view.bootstrap4 .e-icons.e-export::before {
         content: '\e780';
     }
-
-    .e-view.tailwind-dark .e-export-icon::before, .e-view.tailwind .e-export-icon::before {
+ 
+    .e-view.tailwind-dark .e-icons.e-export::before, .e-view.tailwind .e-icons.e-export::before {
         content: '\e7bf';
     }
-
-    .e-view.highcontrast .e-export-icon::before {
+ 
+    .e-view.highcontrast .e-icons.e-export::before {
         content: '\e710';
     }
-
-    .e-view.bootstrap5 .e-export-icon::before, .e-view.bootstrap5-dark .e-export-icon::before {
+ 
+    .e-view.bootstrap5 .e-icons.e-export::before, .e-view.bootstrap5-dark .e-icons.e-export::before {
         content: '\e72e';
     }
-
-    .e-view.fluent .e-export-icon::before, .e-view.fluent-dark .e-export-icon::before {
-        content: '\e728';
+    .e-view.fluent .e-icons.e-export::before, .e-view.fluent-dark .e-icons.e-export::before {
+        content: '\e72e';
+    }
+    .e-view.fluent2 .e-icons.e-export::before, .e-view.fluent2-dark .e-icons.e-export::before, .e-view.fluent2-highcontrast .e-icons.e-export::before {
+        content: '\e72e';
+    }
+    .e-view.material3 .e-icons.e-export::before, .e-view.material3-dark .e-icons.e-export::before {
+        content: '\e72e';
     }
 </style>

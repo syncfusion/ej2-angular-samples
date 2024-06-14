@@ -153,6 +153,11 @@
 
 .listheader {
     text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 @media (max-width: 481px) {
@@ -161,6 +166,11 @@
     }
     .listheader {
         text-align: left;
+        font-size: 18px;
+	    font-weight: 500;
+	    line-height: 1.1;
+	    margin-top: 10px;
+	    margin-bottom: 10px;
     }
 }
 
@@ -186,9 +196,10 @@
 
 #targetContainer {
     display: block;
-    margin: 15px;
     border: 1px solid #dddddd;
     min-height: 350px;
+    position: relative;
+    overflow: hidden;
 }
 
 #demoSmart {

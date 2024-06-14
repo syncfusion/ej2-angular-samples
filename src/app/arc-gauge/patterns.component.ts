@@ -25,22 +25,33 @@ export class PatternsComponent {
     color: '#f6f7f9'
   };
 
-  public lableStyle: Object = {
+  public lableStyleGaugeTwo: Object = {
+    format:'{value} %',
     font: { fontFamily: 'inherit', size: '0px', fontWeight: 'Regular' }
   };
 
-  public labelStyleGaugeSix: Object = {
-    font: {
-      fontFamily: 'inherit',
-      size: '12px',
-      fontWeight: 'Regular',
-    },
-    autoAngle: true,
-    offset: -5,
-    position: 'Outside',
+  public lableStyleGaugeThree: Object = {
+    format:'{value}%',
+    font: { fontFamily: 'inherit', size: '0px', fontWeight: 'Regular' }
+  };
+
+  public lableStyleGaugeFour: Object = {
+    format:'Pointer {value} %',
+    font: { fontFamily: 'inherit', size: '0px', fontWeight: 'Regular' }
+  };
+
+  public lableStyleGaugeFive: Object = {
+    format:'$ {value}',
+    font: { fontFamily: 'inherit', size: '0px', fontWeight: 'Regular' }
+  };
+
+  public lableStyleGaugeSix: Object = {
+    format:'{value} % Completed',
+    font: { fontFamily: 'inherit', size: '0px', fontWeight: 'Regular' }
   };
 
   public lableStyleGaugeOne: Object = {
+    format:'{value}',
     font: {
       fontFamily: 'inherit',
       size: '12px'
@@ -48,6 +59,7 @@ export class PatternsComponent {
     position: 'Outside',
     offset: 20,
   };
+
 
   public ticks: Object = {
     width: 0
@@ -66,6 +78,7 @@ export class PatternsComponent {
 
   public annotationsGaugeThree: Object = [
     {
+      description:'450',
       content:
         '<div class="gaugeThreeText" style="font-size:30px;font-family:inherit;"> 450 </div> </div>',
       zIndex: '1',
@@ -73,18 +86,21 @@ export class PatternsComponent {
       radius: '10%',
     },
     {
+      description:'300',
       content: '<div style="font-size:12px;font-family:inherit;"> 300 </div>',
       zIndex: '1',
       angle: 0,
       radius: '112%',
     },
     {
+      description:'400',
       content: '<div style="font-size:12px;font-family:inherit;"> 400 </div>',
       zIndex: '1',
       angle: 48,
       radius: '112%',
     },
     {
+      description:'500',
       content: '<div style="font-size:12px;font-family:inherit;"> 500 </div>',
       zIndex: '1',
       angle: 93,
@@ -95,6 +111,7 @@ export class PatternsComponent {
   public pointersGaugeOne: Object[] = [
     {
       type: 'RangeBar',
+      description:'RangeBar pointer value : 38',
       color: '#7edfb4',
       value: 38,
       radius: '120%',
@@ -105,6 +122,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer  value: 38',
       markerShape: 'Rectangle',
       markerWidth: 28,
       markerHeight: 3,
@@ -120,6 +138,7 @@ export class PatternsComponent {
   public pointersGaugeTwo: Object[] = [
     {
       type: 'RangeBar',
+      description: 'RangeBar pointer value : 75',
       pointerWidth: 40,
       color: '#d6f5e8',
       value: 75,
@@ -127,6 +146,7 @@ export class PatternsComponent {
     },
     {
       type: 'RangeBar',
+      description: 'RangeBar pointer value: 75',
       pointerWidth: 30,
       color: '#7edfb4',
       value: 75,
@@ -137,6 +157,7 @@ export class PatternsComponent {
   public pointersGaugeFour: Object[] = [
     {
       type: 'RangeBar',
+      description:'RangeBar pointer value : 21',
       radius: '90%',
       value: 21,
       roundedCornerRadius: 10,
@@ -148,6 +169,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker Pointer value : 22',
       markerShape: 'Circle',
       markerWidth: 30,
       markerHeight: 30,
@@ -160,6 +182,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value: 22',
       markerShape: 'Circle',
       markerWidth: 18,
       markerHeight: 18,
@@ -175,6 +198,7 @@ export class PatternsComponent {
   public pointersGaugeSix: Object[] = [
     {
       type: 'Marker',
+      description:'Marker pointer value : 0',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -187,6 +211,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 1',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -199,6 +224,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 2',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -211,6 +237,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 3',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -223,6 +250,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 4',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -235,6 +263,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 5',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -247,6 +276,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 6',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -259,6 +289,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 7',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -271,6 +302,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 8',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -283,6 +315,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 9',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -295,6 +328,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 10',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -307,6 +341,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 11',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -319,6 +354,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 12',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -331,6 +367,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 13',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -343,6 +380,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 14',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -355,6 +393,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 15',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -367,6 +406,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 16',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -379,6 +419,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 17',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -391,6 +432,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 18',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -403,6 +445,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 19',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -415,6 +458,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 20',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -427,6 +471,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 21',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -439,6 +484,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 22',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -451,6 +497,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 23',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -463,6 +510,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 24',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -475,6 +523,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 25',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -487,6 +536,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 26',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -499,6 +549,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 27',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -511,6 +562,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 28',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -523,6 +575,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 29',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -535,6 +588,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 30',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -547,6 +601,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 31',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -559,6 +614,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 32',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -571,6 +627,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 33',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -583,6 +640,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 34',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -595,6 +653,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 35',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -607,6 +666,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 36',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -619,6 +679,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 37',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -631,6 +692,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 38',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -643,6 +705,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 39',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -655,6 +718,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 40',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -667,6 +731,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 41',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -679,6 +744,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 42',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -691,6 +757,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 43',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -703,6 +770,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 44',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -715,6 +783,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 45',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -727,6 +796,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 46',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -739,6 +809,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 47',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -751,6 +822,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 48',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -763,6 +835,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 49',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -775,6 +848,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 50',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -787,6 +861,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 51',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -799,6 +874,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 52',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -811,6 +887,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 53',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -823,6 +900,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 54',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -835,6 +913,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 55',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -847,6 +926,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 56',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -859,6 +939,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 57',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -871,6 +952,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 58',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -883,6 +965,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 59',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -895,6 +978,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 60',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -907,6 +991,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 61',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -919,6 +1004,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 62',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -931,6 +1017,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 63',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -943,6 +1030,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 64',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -955,6 +1043,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 65',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -967,6 +1056,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 66',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -979,6 +1069,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 67',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -991,6 +1082,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 68',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -1003,6 +1095,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 69',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -1015,6 +1108,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 70',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -1027,6 +1121,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 71',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -1039,6 +1134,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 72',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -1051,6 +1147,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 73',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -1063,6 +1160,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 74',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -1075,6 +1173,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 75',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -1087,6 +1186,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 76',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -1099,6 +1199,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 77',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -1111,6 +1212,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 78',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,
@@ -1123,6 +1225,7 @@ export class PatternsComponent {
     },
     {
       type: 'Marker',
+      description:'Marker pointer value : 79',
       markerShape: 'Rectangle',
       markerWidth: 38,
       markerHeight: 3,

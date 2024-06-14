@@ -1,67 +1,69 @@
-<div id="action-description">
-    <p>
-        This sample shows an arc gauge with a real-time scenario of a customer satisfaction score ranging from 0 to 10.
-    </p>
-</div>
-<div class="control-section" align="center">
-    <ejs-circulargauge style='display:block;' [height]="height" [allowMargin]="allowMargin"
-        background='transparent' (load)='load($event)' [tooltip]="tooltip" [legendSettings]="legendSettings"
-        title="Customer Satisfaction Score" [titleStyle]="titleStyle">
-        <e-axes>
-            <e-axis radius="105%" startAngle=270 endAngle=90 minimum=0 maximum=10 [majorTicks]='majorTicks'
-                [minorTicks]='minorTicks' [lineStyle]='lineStyle' [labelStyle]="labelStyle" [annotations]="annotations">
-                <e-ranges>
-                    <e-range start="0" end="2" startWidth=40 endWidth=40 radius="80%" color="#F03E3E" legendText="Poor">
-                    </e-range>
-                    <e-range start="6.5" end="9.5" startWidth=120 endWidth=120 radius="110%" color="#0477c2"
-                        legendText="Average Score"></e-range>
-                    <e-range start="2" end="5" startWidth=40 endWidth=40 radius="80%" color="#f6961e"
-                        legendText="Satisfied"></e-range>
-                    <e-range start="5" end="8" startWidth=40 endWidth=40 radius="80%" color="#FFDD00" legendText="Good">
-                    </e-range>
-                    <e-range start="8" end="10" startWidth=40 endWidth=40 radius="80%" color="#30B32D"
-                        legendText="Excellent"></e-range>
-                </e-ranges>
-                <e-pointers>
-                    <e-pointer value="7.5" radius='70%' [pointerWidth]="pointerWidth" [needleEndWidth]="needleEndWidth" [cap]="cap">
-                    </e-pointer>
-                    <e-pointer value="6.5" radius='68%' type="Marker" [animation]="animation" markerShape="Rectangle" markerWidth=40
-                        markerHeight=0.5 needleEndWidth=2 color='#0477c2'>
-                    </e-pointer>
-                    <e-pointer value="9.5" radius='68%' type="Marker" [animation]="animation" markerShape="Rectangle" markerWidth=40
-                        markerHeight=0.5 needleEndWidth=2 color='#0477c2'>
-                    </e-pointer>
-                </e-pointers>
-            </e-axis>
-        </e-axes>
-    </ejs-circulargauge>
-</div>
-<div id="description">
-    <p>
-        In this example, you can see how to render an arc gauge showing customer satisfaction score. You can use <a
-            target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/axisModel/">axes</a>, <a
-            target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/rangeModel/">ranges</a>, <a
-            target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/annotationModel/">annotations</a>,
-        <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/legendSettingsModel/">legend</a>
-        and <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/tooltipSettingsModel/">tooltip</a>
-        oriented properties to customize the appearance of the arc gauge, in order to achieve the desired outcome.
-    </p>
-    <p>
-        More information on the gauge can be found in this
-        <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/getting-started/">documentation
-            section</a>.
-    </p>
-</div>
-<!-- custom code start -->
-<style>
-    .control-section {
-        min-height: 450px;
-    }
-</style>
-<!-- custom code end -->
+<main>
+    <section id="action-description" aria-label="Description of Circular Gauge sample">
+        <p>
+            This sample shows an arc gauge with a real-time scenario of a customer satisfaction score ranging from 0 to 10.
+        </p>
+    </section>
+    <div class="control-section" align="center">
+        <ejs-circulargauge style='display:block;' [height]="height" [allowMargin]="allowMargin"
+            background='transparent' (load)='load($event)' [tooltip]="tooltip" [legendSettings]="legendSettings"
+            title="Customer Satisfaction Score" [titleStyle]="titleStyle">
+            <e-axes>
+                <e-axis radius="105%" startAngle=270 endAngle=90 minimum=0 maximum=10 [majorTicks]='majorTicks'
+                    [minorTicks]='minorTicks' [lineStyle]='lineStyle' [labelStyle]="labelStyle" [annotations]="annotations">
+                    <e-ranges>
+                        <e-range start="0" end="2" startWidth=40 endWidth=40 radius="80%" color="#F03E3E" legendText="Poor">
+                        </e-range>
+                        <e-range start="6.5" end="9.5" startWidth=120 endWidth=120 radius="110%" color="#0477c2"
+                            legendText="Average Score"></e-range>
+                        <e-range start="2" end="5" startWidth=40 endWidth=40 radius="80%" color="#f6961e"
+                            legendText="Satisfied"></e-range>
+                        <e-range start="5" end="8" startWidth=40 endWidth=40 radius="80%" color="#FFDD00" legendText="Good">
+                        </e-range>
+                        <e-range start="8" end="10" startWidth=40 endWidth=40 radius="80%" color="#30B32D"
+                            legendText="Excellent"></e-range>
+                    </e-ranges>
+                    <e-pointers>
+                        <e-pointer value="7.5" radius='70%' [pointerWidth]="pointerWidth" [needleEndWidth]="needleEndWidth" [cap]="cap">
+                        </e-pointer>
+                        <e-pointer value="6.5" radius='68%' type="Marker" [animation]="animation" markerShape="Rectangle" markerWidth=40
+                            markerHeight=0.5 needleEndWidth=2 color='#0477c2'>
+                        </e-pointer>
+                        <e-pointer value="9.5" radius='68%' type="Marker" [animation]="animation" markerShape="Rectangle" markerWidth=40
+                            markerHeight=0.5 needleEndWidth=2 color='#0477c2'>
+                        </e-pointer>
+                    </e-pointers>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
+    </div>
+    <section id="description" aria-label="Description of the Circular Gauge features demonstrated in this sample">
+        <p>
+            In this example, you can see how to render an arc gauge showing customer satisfaction score. You can use <a
+                target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/axisModel/">axes</a>, <a
+                target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/rangeModel/">ranges</a>, <a
+                target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/annotationModel/">annotations</a>,
+            <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/legendSettingsModel/">legend</a>
+            and <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/tooltipSettingsModel/">tooltip</a>
+            oriented properties to customize the appearance of the arc gauge, in order to achieve the desired outcome.
+        </p>
+        <p>
+            More information on the gauge can be found in this
+            <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/getting-started/">documentation
+                section</a>.
+        </p>
+    </section>
+    <!-- custom code start -->
+    <style>
+        .control-section {
+            min-height: 450px;
+        }
+    </style>
+    <!-- custom code end -->
+</main>

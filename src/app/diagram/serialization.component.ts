@@ -35,8 +35,8 @@ export class SerializationDiagramComponent {
     public delayStyle: ShapeStyleModel = { fill: '#f8eee5', strokeColor: '#797979' };
     public connectorTextStyle: TextStyleModel = { fill: 'white' };
     public asyncSettings: AsyncSettingsModel = {
-        saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
-        removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove'
+        saveUrl: 'https://services.syncfusion.com/angular/production/api/FileUploader/Save',
+        removeUrl: 'https://services.syncfusion.com/angular/production/api/FileUploader/Remove'
     };
 
     @ViewChild('diagram')

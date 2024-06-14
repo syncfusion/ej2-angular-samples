@@ -16,6 +16,7 @@
 .code-editor .h3 {
     font-size: 14px;
     margin: 4px;
+    font-weight: bold;
 }
 
 .code-editor .content:nth-child(even) {

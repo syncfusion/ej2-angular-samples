@@ -38,7 +38,7 @@ export class InsertSpecialCharactersComponent {
     public saveSelection: NodeSelection;
 
     public tools: ToolbarModule = {
-        items: ['Bold', 'Italic', 'Underline', '|', 'Formats', 'Alignments', 'OrderedList',
+        items: ['Bold', 'Italic', 'Underline', '|', 'Formats', 'Alignments', 'Blockquote', 'OrderedList',
             'UnorderedList', '|', 'CreateLink', 'Image', '|', 'SourceCode',
             {
                 tooltipText: 'Insert Symbol',

@@ -1,143 +1,158 @@
-<div id="action-description">
-    <p>
-        This sample directs the visualization of moving wind types based on their speed via the legend of the circular
-        gauge component. The visibility, shape, alignment, and position of the legend can all be customized.
-    </p>
-</div>
-<div class="control-section">
-    <div class="col-md-8">
-        <ejs-circulargauge (load)='load($event)' #Legend='' id='container1' background='transparent'
-            style='display:block;' [title]='title' [titleStyle]="titleStyle" [legendSettings]='legendSettings'>
-            <e-axes>
-                <e-axis [lineStyle]='lineStyle1' radius='80%' [labelStyle]='labelStyle1' [majorTicks]='majorTicks1'
-                    [minorTicks]='minorTicks1' minimum=0 maximum=120 startAngle=210 endAngle=150 [pointers]='pointers'>
-                    <e-ranges>
-                        <e-range start=0 end=5 color='#ccffff' radius='110%' legendText='Light Air'></e-range>
-                        <e-range start=5 end=11 color='#99ffff' radius='110%' legendText='Light Breeze'></e-range>
-                        <e-range start=11 end=19 color='#99ff99' radius='110%' legendText='Gentle Breeze'></e-range>
-                        <e-range start=19 end=28 color='#79ff4d' radius='110%' legendText='Moderate Breeze'></e-range>
-                        <e-range start=28 end=49 color='#c6ff1a' radius='110%' legendText='Strong Breeze'></e-range>
-                        <e-range start=49 end=74 color='#e6ac00' radius='110%' legendText='Gale'></e-range>
-                        <e-range start=74 end=102 color='#ff6600' radius='110%' legendText='Storm'></e-range>
-                        <e-range start=102 end=120 color='#ff0000' radius='110%' legendText='Hurricane Force'></e-range>
-                    </e-ranges>
-                </e-axis>
-            </e-axes>
-        </ejs-circulargauge>
-    </div>
-    <div class="col-md-4 property-section">
-        <div class="property-panel-section">
-            <div class="property-panel-header">Properties</div>
-            <div class="property-panel-content">
-                <table id="property" title="Properties" style="width: 100%">
-                    <colgroup>
-                        <col span="1" style="width: 50%;">
-                        <col span="1" style="width: 50%;">
-                    </colgroup>
-                    <tr style="height: 50px">
-                        <td>
-                            <div id="enablelegend" style="font-size: 14px">Show Legend </div>
-                        </td>
-                        <td style="width: 30%;">
-                            <div style="margin-left: 5px;">
-                                <input type="checkbox" id="enable">
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <table id="property" title="Properties" style="width: 100%">
-                    <colgroup>
-                        <col span="1" style="width: 50%;">
-                        <col span="1" style="width: 50%;">
-                    </colgroup>
-                    <tr style="height: 50px">
-                        <td>
-                            <div id="togglelegend" style="width: 80%; font-size: 14px;">Show range when the legend item is toggled</div>
-                        </td>
-                        <td style="width: 30%;">
-                            <div style="margin-left: 5px;">
-                                <input type="checkbox" id="toggle">
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <table id="property" title="Properties" style="width: 100%">
-                    <colgroup>
-                        <col span="1" style="width: 50%;">
-                        <col span="1" style="width: 50%;">
-                    </colgroup>
-                    <tr style="height: 50px">
-                        <td>
-                            <div style="font-size: 14px"> Position </div>
-                        </td>
-                        <td>
-                            <div>
-                                <select id="position" class="form-control">
-                                    <option value="Bottom" selected='true'>Bottom</option>
-                                    <option value="Top">Top</option>
-                                    <option value="Left">Left</option>
-                                    <option value="Right">Right</option>
-                                    <option value="Auto">Auto</option>
-                                </select>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <table id="property" title="Properties" style="width: 100%">
-                    <colgroup>
-                        <col span="1" style="width: 50%;">
-                        <col span="1" style="width: 50%;">
-                    </colgroup>
-                    <tr style="height: 50px">
-                        <td>
-                            <div style="font-size: 14px"> Alignment </div>
-                        </td>
-                        <td>
-                            <div>
-                                <select id="alignment" class="form-control">
-                                    <option value="Center" selected="true">Center</option>
-                                    <option value="Far">Far</option>
-                                    <option value="Near">Near</option>
-                                </select>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <table id="property" title="Properties" style="width: 100%">
-                    <colgroup>
-                        <col span="1" style="width: 50%;">
-                        <col span="1" style="width: 50%;">
-                    </colgroup>
-                    <tr style="height: 50px">
-                        <td>
-                            <div style="font-size: 14px"> Shape </div>
-                        </td>
-                        <td>
-                            <div>
-                                <select id="shape" class="form-control">
-                                    <option value="Circle" selected="true">Circle</option>
-                                    <option value="Rectangle">Rectangle</option>
-                                    <option value="Triangle">Triangle</option>
-                                    <option value="Diamond">Diamond</option>
-                                    <option value="InvertedTriangle">Inverted Triangle</option>
-                                </select>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+<main>
+    <section id="action-description" aria-label="Description of Circular Gauge sample"> 
+        <p>
+            This sample directs the visualization of moving wind types based on their speed via the legend of the circular
+            gauge component. The visibility, shape, alignment, and position of the legend can all be customized.
+        </p>
+    </section>
+    <div class="control-section">
+        <div class="col-md-8">
+            <ejs-circulargauge (load)='load($event)' #Legend='' id='container1' background='transparent'
+                style='display:block;' [title]='title' [titleStyle]="titleStyle" [legendSettings]='legendSettings'>
+                <e-axes>
+                    <e-axis [lineStyle]='lineStyle1' radius='80%' [labelStyle]='labelStyle1' [majorTicks]='majorTicks1'
+                        [minorTicks]='minorTicks1' minimum=0 maximum=120 startAngle=210 endAngle=150 [pointers]='pointers'>
+                        <e-ranges>
+                            <e-range start=0 end=5 color='#ccffff' radius='110%' legendText='Light Air'></e-range>
+                            <e-range start=5 end=11 color='#99ffff' radius='110%' legendText='Light Breeze'></e-range>
+                            <e-range start=11 end=19 color='#99ff99' radius='110%' legendText='Gentle Breeze'></e-range>
+                            <e-range start=19 end=28 color='#79ff4d' radius='110%' legendText='Moderate Breeze'></e-range>
+                            <e-range start=28 end=49 color='#c6ff1a' radius='110%' legendText='Strong Breeze'></e-range>
+                            <e-range start=49 end=74 color='#e6ac00' radius='110%' legendText='Gale'></e-range>
+                            <e-range start=74 end=102 color='#ff6600' radius='110%' legendText='Storm'></e-range>
+                            <e-range start=102 end=120 color='#ff0000' radius='110%' legendText='Hurricane Force'></e-range>
+                        </e-ranges>
+                    </e-axis>
+                </e-axes>
+            </ejs-circulargauge>
+        </div>
+        <div class="col-md-4 property-section">
+            <div class="property-panel-section">
+                <div class="property-panel-header">Properties</div>
+                <div class="property-panel-content">
+                    <table id="property" title="Properties" style="width: 100%" role="none">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
+                        <tr style="height: 50px">
+                            <td>
+                                <div id="enablelegend" style="font-size: 14px">Show Legend </div>
+                            </td>
+                            <td style="width: 30%;">
+                                <div class="legendCheckbox">
+                                    <input type="checkbox" id="enable">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table  id="property" title="Properties" style="width: 100%" role="none">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
+                        <tr style="height: 50px">
+                            <td>
+                                <div id="togglelegend" style="width: 80%; font-size: 14px;">Show range when the legend item is toggled</div>
+                            </td>
+                            <td style="width: 30%;">
+                                <div class="legendCheckbox">
+                                    <input type="checkbox" id="toggle">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table title="Properties" style="width: 100%" role="none">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
+                        <tr style="height: 50px">
+                            <td>
+                                <div style="font-size: 14px"> Position </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <select id="position" class="form-control">
+                                        <option value="Bottom" selected='true'>Bottom</option>
+                                        <option value="Top">Top</option>
+                                        <option value="Left">Left</option>
+                                        <option value="Right">Right</option>
+                                        <option value="Auto">Auto</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table title="Properties" style="width: 100%" role="none">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
+                        <tr style="height: 50px">
+                            <td>
+                                <div style="font-size: 14px"> Alignment </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <select id="alignment" class="form-control">
+                                        <option value="Center" selected="true">Center</option>
+                                        <option value="Far">Far</option>
+                                        <option value="Near">Near</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table title="Properties" style="width: 100%" role="none">
+                        <colgroup>
+                            <col span="1" style="width: 50%;">
+                            <col span="1" style="width: 50%;">
+                        </colgroup>
+                        <tr style="height: 50px">
+                            <td>
+                                <div style="font-size: 14px"> Shape </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <select id="shape" class="form-control">
+                                        <option value="Circle" selected="true">Circle</option>
+                                        <option value="Rectangle">Rectangle</option>
+                                        <option value="Triangle">Triangle</option>
+                                        <option value="Diamond">Diamond</option>
+                                        <option value="InvertedTriangle">Inverted Triangle</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
-        <div id="description">
-            <p>
-                The legend provides useful information for interpreting what the circular gauge's axis range displays,
-                and it can be represented in a variety of colors, shapes, and other identifiers depending on the data.
-                To do so, use the <a target="_blank"
-                    href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/legendSettingsModel/">legendSettings</a>
-                and its properties.
-            </p>
-            <p>
-                More information on the legend can be found in this <a target="_blank"
-                    href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/gauge-legend/">documentation
-                    section</a>.
-            </p>
-        </div>
+    </div>
+    <style>
+        .legendCheckbox {
+            margin-left: 5px;
+        }
+        .fluent2-dark #property .legendCheckbox {
+            margin-left: -7px !important;
+        }
+        .fluent2 #property .legendCheckbox {
+            margin-left: -4px !important;
+        }
+    </style>
+            <section id="description" aria-label="Description of the Circular Gauge features demonstrated in this sample">
+                <p>
+                    The legend provides useful information for interpreting what the circular gauge's axis range displays,
+                    and it can be represented in a variety of colors, shapes, and other identifiers depending on the data.
+                    To do so, use the <a target="_blank"
+                        href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/legendSettingsModel/">legendSettings</a>
+                    and its properties.
+                </p>
+                <p>
+                    More information on the legend can be found in this <a target="_blank"
+                        href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/gauge-legend/">documentation
+                        section</a>.
+                </p>
+            </section>
+</main>

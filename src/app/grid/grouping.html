@@ -3,7 +3,7 @@
         ShipCountry column. To group any other column simply drag the column header and drop on the group drop area.</p>
 </div>
 <div class="control-section">
-       <ejs-grid #grid [dataSource]='data' allowPaging='true' [allowSorting]='true'[allowGrouping]="true" [editSettings]='editSettings' [groupSettings]="groupOptions" [toolbar]='toolbar' [pageSettings]='pageSettings'
+       <ejs-grid #grid [dataSource]='data' allowPaging='true' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [allowGrouping]="true" [editSettings]='editSettings' [groupSettings]="groupOptions" [toolbar]='toolbar' [pageSettings]='pageSettings'
         height="320" (dataBound)='dataBound()' (created)='created()' (load)='load()'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='140' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>

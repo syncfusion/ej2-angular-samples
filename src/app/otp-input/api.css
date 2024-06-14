@@ -1,0 +1,44 @@
+#otp-container {
+    width: 240px;
+    height: 250px;
+    margin: 60px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    height: 220px;
+    min-width: 300px;
+    padding: 1rem 3rem;
+    box-shadow: 0 1px 3px #d4d4d5, 0 0 0 1px #d4d4d5;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container>div {
+    margin: 17px 0px;
+}
+
+.form-container .otp-header {
+    display: inline-block;
+    font-size: 1.4em;
+    font-weight: 500;
+    margin: 10px 0px;
+}
+
+.form-container .otp-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.otp-actions button {
+    width: 80px;
+}
+
+.property-panel-content td {
+    padding: 10px 0px;
+    width: 35%;
+}

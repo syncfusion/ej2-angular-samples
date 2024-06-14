@@ -1,0 +1,23 @@
+<div id="action-description">
+    <p>This sample demonstrates grouping feature of the MultiColumn ComboBox.</p>
+</div>
+
+<div class="control-section">
+    <div class='control-wrapper'>
+        <div style='padding-top:60px;'>
+            <ejs-multicolumncombobox id='grouping' #grouping [dataSource]='orderData' [fields]='fields' [placeholder]='waterMark' popupHeight='230px' [allowSorting]='false'>
+                <e-columns>
+                    <e-column field='OrderID' header='Order ID' width='80'></e-column>
+                    <e-column field='CustomerName' header='Customer Name' width='80'></e-column>
+                    <e-column field='Freight' header='Freight' width='80'></e-column>
+                    <e-column field='ShipPostalCode' header='Ship PostalCode' width='100'></e-column>
+                    <e-column field='ShipCountry' header='Ship Country' width='120'></e-column>
+                </e-columns>
+            </ejs-multicolumncombobox>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>The MultiColumn ComboBox allows to group the relevant items under a corresponding category by mapping the <code>groupBy</code> property in the <code>fieldSettings</code> which allows to load the list items. In this sample, the order data is grouped against <code>ShipCountry</code> column, which illustrates how the orders details are grouped based on its category.</p>
+</div>

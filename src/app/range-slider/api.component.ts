@@ -62,11 +62,9 @@ export class APIComponent {
     }
     orientation_onChange(args: ChangeEventArgs) {
         args.checked ? this.slider.orientation = 'Vertical' : this.slider.orientation = 'Horizontal';
-        this.slider.refresh();
     }
     readOnly_onChange(args: ChangeEventArgs) {
         this.slider.readonly = args.checked;
-        this.slider.refresh();
     }
     disabled_onChange(args: ChangeEventArgs) {
         this.slider.enabled = !args.checked;
@@ -79,11 +77,9 @@ export class APIComponent {
     }
     orientationM_onChange(args: ChangeEventArgs) {
         args.checked ? this.slider.orientation = 'Vertical' : this.slider.orientation = 'Horizontal';
-        this.slider.refresh();
     }
     readOnlyM_onChange(args: ChangeEventArgs) {
         this.slider.readonly = args.checked;
-        this.slider.refresh();
     }
     disabledM_onChange(args: ChangeEventArgs) {
         this.slider.enabled = !args.checked;

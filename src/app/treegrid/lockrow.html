@@ -1,5 +1,4 @@
-
-<div class="col-lg-8 control-section">
+<div class="col-lg-8 control-section" role="main" aria-label="Treegrid section">
         <div class="content-wrapper">
                 <ejs-treegrid #treegrid [dataSource]='data' height='350' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' [toolbar]='toolbar' enableHover='false' childMapping='subtasks' [treeColumnIndex]='1' 
                 (rowDataBound)="rowDataBound($event)" (beginEdit)="beginEdit($event)">
@@ -12,13 +11,13 @@
                 </ejs-treegrid>
         </div>
 </div>
-<div class="col-lg-3 property-section">
+<div class="col-lg-3 property-section" aria-label="Treegrid Properties">
         <div class="property-panel-section">
                 <div class="property-panel-header">Properties </div>
             <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
                 <tr style="height: 50px">
                     <td >
-                        <div style="width: 100px">Disable Rows</div>
+                        <label for="disableRows" style="width: 100px">Disable Rows</label>
                     </td>
                     <td style="width: 30%;padding-right: 10px">
                         <div id='columnddl'>

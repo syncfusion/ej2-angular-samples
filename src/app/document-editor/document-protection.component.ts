@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ToolbarService, DocumentEditorContainerComponent, DocumentEditorContainerModule , DocumentEditorSettingsModel } from '@syncfusion/ej2-angular-documenteditor';
+import { ToolbarService, DocumentEditorContainerComponent, DocumentEditorContainerModule, DocumentEditorSettingsModel } from '@syncfusion/ej2-angular-documenteditor';
 import { TitleBar } from './title-bar';
 import { dataProtection, WEB_API_ACTION } from './data';
 import { ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
@@ -20,13 +20,14 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 })
 export class DocumentEditorProtectionComponent {
     public hostUrl: string = 'https://services.syncfusion.com/angular/production/api/documenteditor/';
+    public settings: DocumentEditorSettingsModel = { showRuler:true  };
     @ViewChild('documenteditor_default')
     public container: DocumentEditorContainerComponent;
     @ViewChild('colorpicker')
     public colorpicker: ColorPickerComponent;
     public culture: string = 'en-US';
     titleBar: TitleBar;
-    public settings: DocumentEditorSettingsModel = { showRuler:true };
+
     userList: string[] = ['engineer@mycompany.com', 'manager@mycompany.com'];
 
     currentUser: string = 'engineer@mycompany.com';

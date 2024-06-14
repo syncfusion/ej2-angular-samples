@@ -1,22 +1,22 @@
-<div class="control-section">
-    <div align='center'>
-        <ejs-treemap id='container' #treemap style="display:block;" [titleSettings] = 'titleSettings' [dataSource] ='dataSource' [weightValuePath] ='weightValuePath'
-       [leafItemSettings] = 'leafItemSettings' [tooltipSettings] = 'tooltipSettings' (load)='load($event)' >
-        </ejs-treemap>
+<main>
+    <div class="control-section">
+        <div align='center'>
+            <ejs-treemap id='container' #treemap style="display:block;" [titleSettings] = 'titleSettings' [dataSource] ='dataSource' [weightValuePath] ='weightValuePath'
+           [leafItemSettings] = 'leafItemSettings' [tooltipSettings] = 'tooltipSettings' (load)='load($event)' >
+            </ejs-treemap>
+        </div>
+        <div style="float: right; margin-right: 10px;">Source:
+            <a href=" https://en.wikipedia.org/wiki/United_States_at_the_2016_Summer_Olympics" target="_blank"> en.wikipedia.org</a>
+        </div>
     </div>
-    <div style="float: right; margin-right: 10px;">Source:
-        <a href=" https://en.wikipedia.org/wiki/United_States_at_the_2016_Summer_Olympics" target="_blank"> en.wikipedia.org</a>
-    </div>
-</div>
-<div id="action-description">
-    <p>
-         This sample depicts the gold medal categories of US in 2016 summer Olympics. Each categories are denoted with label template.
-    </p>
-</div>
-<div id="description">
-    <p>
-        In this example, you can see how to place custom HTML templates in the treemap items. Also we have formatted the labels default text.
-    </p>
-
-
-</div>
+    <section id="action-description" aria-label="Description of TreeMap sample">
+        <p>
+             This sample depicts the gold medal categories of US in 2016 summer Olympics. Each categories are denoted with label template.
+        </p>
+    </section>
+    <section id="description" aria-label="Description of the TreeMap features demonstrated in this sample">
+        <p>
+            In this example, you can see how to place custom HTML templates in the treemap items. Also we have formatted the labels default text.
+        </p>
+    </section>
+</main>

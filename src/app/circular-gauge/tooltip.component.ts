@@ -35,7 +35,7 @@ export class TooltipComponent {
     };
 
     public majorTicks: Object = {
-        color: 'white', offset: -5, height: 12
+        color: 'white', offset: -4, height: 10
     };
 
     public minorTicks: Object = {

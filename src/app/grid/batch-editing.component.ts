@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { orderData } from './data';
-import { EditService, ToolbarService, PageService, SortService, GridModule } from '@syncfusion/ej2-angular-grids';
+import { EditService, ToolbarService, PageService, SortService, GridModule, FilterService } from '@syncfusion/ej2-angular-grids';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej-gridbatchedit',
     templateUrl: 'batch-editing.html',
-    providers: [ToolbarService, EditService, PageService, SortService],
+    providers: [ToolbarService, EditService, PageService, SortService, FilterService],
     standalone: true,
     imports: [GridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
@@ -21,6 +21,7 @@ export class BatchEditComponent implements OnInit {
     public orderdaterules: Object;
     public editparams: Object;
     public pageSettings: Object;
+    public filterSettings: Object;
 
     public ngOnInit(): void {
         this.data = orderData;
@@ -31,5 +32,6 @@ export class BatchEditComponent implements OnInit {
         this.freightrules =  { required: true, min: 0, number: true };
         this.editparams = { params: { popupHeight: '300px' }};
         this.pageSettings = {pageCount: 5};
+        this.filterSettings = { type: 'Excel'}
     }
 }

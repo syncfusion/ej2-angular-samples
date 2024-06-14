@@ -55,8 +55,8 @@ export class GanttEventsComponent implements OnInit {
         this.splitterSettings = {
             columnIndex: 2
         };
-        this.projectStartDate = new Date('03/24/2019');
-        this.projectEndDate = new Date('07/06/2019');
+        this.projectStartDate = new Date('03/24/2024');
+        this.projectEndDate = new Date('07/06/2024');
     }
     created(): void {
         this.appendElement('Gantt <b>created</b> event called<hr>');

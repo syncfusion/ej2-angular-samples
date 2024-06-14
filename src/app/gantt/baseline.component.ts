@@ -52,8 +52,8 @@ export class GanttBaselineComponent implements OnInit {
                 format: 'hh:mm a'
             },
         };
-        this.projectStartDate= new Date('03/05/2018 09:30:00 AM');
-        this.projectEndDate= new Date('03/05/2018 7:00:00 PM');
+        this.projectStartDate= new Date('03/05/2024 09:30:00 AM');
+        this.projectEndDate= new Date('03/05/2024 7:00:00 PM');
     }
     public format(value: Date): string {
         return instance.formatDate(value, { format: 'hh:mm a' });

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FilterService, PageService, SortService, ResizeService, TreeGridModule,  ColumnMenuService } from '@syncfusion/ej2-angular-treegrid';
+import { FilterService, PageService, SortService, ResizeService, TreeGridAllModule,  ColumnMenuService } from '@syncfusion/ej2-angular-treegrid';
 import { sampleData } from './jsontreegriddata';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -9,7 +9,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     templateUrl: 'columnmenu.html',
     providers: [FilterService, PageService, SortService, ResizeService, ColumnMenuService],
     standalone: true,
-    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent]
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ColumnMenuComponent implements OnInit {
     public data: Object[] = [];

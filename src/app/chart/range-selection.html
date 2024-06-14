@@ -35,11 +35,11 @@
                 </tr>
                 <tr style="height: 50px">
                     <td style="width: 80%">
-                        <div>Enable MultipleSelection:</div>
+                        <div id="multiSelection">Enable MultipleSelection:</div>
                     </td>
                     <td style="width: 40%;">
                         <div>
-                            <input type="checkbox" (change)='setMultiSelect($event)' id="select">
+                            <input type="checkbox" (change)='setMultiSelect($event)' id="select" aria-labelledby="Checkbox unchecked">
                         </div>
                     </td>
                 </tr>
@@ -52,14 +52,14 @@
     <p>
         This sample demonstrates the selection behavior in a chart. Any point or a series can be selected in a chart by clicking or touching the point. 
         We can also select the point while loading chart through <code><a target="_blank" class="code"
-        href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#selecteddataindexes-indexesmodel">selectedDataIndexes</a></code> properties. Click to select a point or series, click and drag to enable rectangular selection. 
+        href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#selecteddataindexes-indexesmodel" aria-label="Navigate to the reference for the Angular Chart selectedDataIndexes">selectedDataIndexes</a></code> properties. Click to select a point or series, click and drag to enable rectangular selection. 
         Rectangular selection will return the collection point that are selected under the region.  
     </p>
     <p>
          Tap to select a point or series, double tap and drag to enable rectangular selection in touch enabled devices.
     </p>
     <p>Chart supports seven mode of selection which can be set using <code><a target="_blank" class="code"
-        href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#selectionmode-selectionmode">SelectionMode</a></code> property.     
+        href="http://ej2.syncfusion.com/angular/documentation/chart/api-chartComponent.html#selectionmode-selectionmode" aria-label="Navigate to the reference for the Angular Chart SelectionMode">SelectionMode</a></code> property.     
     </p>
     <ul>
          <li><code>Series</code> - Select the series in chart.</li>
@@ -78,7 +78,7 @@
     </p>
     <p>
         More information on the range selection feature can be found in this 
-         <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/selection/#rectangular-selection ">documentation section</a>.
+         <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/selection/#rectangular-selection" aria-label="Navigate to the documentation for Rectangular Selection in Angular Chart component">documentation section</a>.
     </p> 
 </div>
 <style>

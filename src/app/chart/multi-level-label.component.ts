@@ -94,7 +94,7 @@ export class MultiLevelLabelsChartComponent {
       public load(args: ILoadedEventArgs): void {       
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
+        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
     };
     // custom code end
     public pointRender(args: IPointRenderEventArgs): void {
@@ -124,6 +124,10 @@ export class MultiLevelLabelsChartComponent {
             "#162F88"];
         let pointMaterial3DarkColors: string[] = ["#4EAAFF", "#FA4EAB", "#FFF500", "#17EA58", "#38FFE7", "#FF9E45", "#B3F32F", "#B93CE4", "#FC5664",
             "#9B55FF"];
+        let pointFluent2Colors: string[] = ['#6200EE', '#09AF74', '#0076E5', '#CB3587', '#E7910F', '#0364DE', '#66CD15', '#F3A93C', '#107C10',
+            '#C19C00'];
+        let pointFluent2DarkColors: string[] = ['#9BB449', '#2A72D5', '#43B786', '#3F579A', '#584EC6', '#E85F9C', '#6E7A89', '#EA6266',
+            '#0B6A0B', '#C19C00'];
             let selectedTheme: string = location.hash.split('/')[1];
             selectedTheme = selectedTheme ? selectedTheme : 'Material';
     
@@ -177,6 +181,11 @@ export class MultiLevelLabelsChartComponent {
             }
             else if (selectedTheme === 'material3') {
                 args.fill = pointMaterial3Colors[args.point.index % 10];
+            }
+            else if (selectedTheme === 'fluent2') {
+                args.fill = pointFluent2Colors[args.point.index % 10];
+            } else if (selectedTheme === 'fluent2-dark') {
+                args.fill = pointFluent2DarkColors[args.point.index % 10];
             }
             else
             {

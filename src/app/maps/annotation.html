@@ -1,65 +1,68 @@
-<div id="action-description">
-    <p> 
-        This sample depicts the facts about Africa in an annotation. Africa shape is filled with gradient color.
-    </p>
-</div>
-
-<div class="control-section">
-    <div align='center'>
-        <ejs-maps id='container' style="display:block;" [zoomSettings]='zoomSettings' [annotations]='annotations' [layers]='layers'
-            (load)="load($event)">
-        </ejs-maps>
+<main>
+    <section id="action-description" aria-label="Description of Maps sample">
+        <p> 
+            This sample depicts the facts about Africa in an annotation. Africa shape is filled with gradient color.
+        </p>
+    </section>
+    
+    <div class="control-section">
+        <div align='center'>
+            <ejs-maps id='container' style="display:block;" [zoomSettings]='zoomSettings' [annotations]='annotations' [layers]='layers'
+                (load)="load($event)">
+            </ejs-maps>
+        </div>
+        <div style="float: right; margin-right: 10px;">Source:
+            <a href="https://en.wikipedia.org/wiki/Africa" target="_blank">en.wikipedia.org</a>
+        </div>
     </div>
-    <div style="float: right; margin-right: 10px;">Source:
-        <a href="https://en.wikipedia.org/wiki/Africa" target="_blank">en.wikipedia.org</a>
-    </div>
-</div>
-<svg height="150" width="400">
-    <defs>
-        <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:#C5494B;stop-opacity:1"></stop>
-            <stop offset="100%" style="stop-color:#4C134F;stop-opacity:1"></stop>
-        </linearGradient>
-    </defs>
-</svg>
-
-<style>
-    #annotation {
-        text-align: left;
-        color: #DDDDDD;
-        font-size: 12px;
-        font-family: Roboto;
-        background: #3E464C;
-        margin: 20px;
-        padding: 10px;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        border-radius: 2px;
-        width: 300px;
-        -moz-box-shadow: 0px 2px 5px #666;
-        -webkit-box-shadow: 0px 2px 5px #666;
-        box-shadow: 0px 2px 5px #666;
-    }
-    .country-label {
-        color: white;
-        font-size: 25px;
-    }
-</style>
-
-<div id='description'>
-    <p>
-        In this example, you can see how to place a desired HTML element at desired location in the maps. Any number of annotation
-        can be placed on the maps. In this sample, the gradient fill color has been applied for the shape.
-    </p>
-    <br/>
-    <p style="font-weight: 500">Injecting Module</p>
-    <p>
-        Maps component features are segregated into individual feature-wise modules. To use an annotation, inject the
-        <code>Annotations</code> module using the
-        <code>Maps.Inject(Annotations)</code> method.
-    </p>
-    <p>
-        More information on the maps layers can be found in this
-        <a target="_blank" href="">documentation section</a>.
-    </p>
-</div>
+    <svg height="150" width="400">
+        <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#C5494B;stop-opacity:1"></stop>
+                <stop offset="100%" style="stop-color:#4C134F;stop-opacity:1"></stop>
+            </linearGradient>
+        </defs>
+    </svg>
+    
+    <style>
+        #annotation {
+            text-align: left;
+            color: #DDDDDD;
+            font-size: 12px;
+            font-family: Roboto;
+            background: #3E464C;
+            margin: 20px;
+            padding: 10px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            width: 300px;
+            -moz-box-shadow: 0px 2px 5px #666;
+            -webkit-box-shadow: 0px 2px 5px #666;
+            box-shadow: 0px 2px 5px #666;
+        }
+        .country-label {
+            color: white;
+            font-size: 25px;
+        }
+    </style>
+    
+    <section id='description' aria-label="Description of the Maps features demonstrated in this sample">
+        <p>
+            In this example, you can see how to place a desired HTML element at desired location in the maps. Any number of annotation
+            can be placed on the maps. In this sample, the gradient fill color has been applied for the shape.
+        </p>
+        <br/>
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            Maps component features are segregated into individual feature-wise modules. To use an annotation, inject the
+            <code>Annotations</code> module using the
+            <code>Maps.Inject(Annotations)</code> method.
+        </p>
+        <p>
+            More information on the maps layers can be found in this
+            <a target="_blank" href="">documentation section</a>.
+        </p>
+    </section>
+    
+</main>

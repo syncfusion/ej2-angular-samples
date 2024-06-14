@@ -1,24 +1,26 @@
-<div class="control-section">
-    <div>
-        <ejs-heatmap id='container' style="display:block;" [height]='height' [titleSettings]='titleSettings' [dataSource]='dataSource' [xAxis]='xAxis'
-            [yAxis]='yAxis' [paletteSettings]='paletteSettings' [cellSettings]='cellSettings' [tooltipSettings]='tooltipSettings' [legendSettings]='legendSettings'
-            (load)='load($event)' (tooltipRender)='tooltipRender($event)'>
-        </ejs-heatmap>
+<main>
+    <div class="control-section">
+        <div>
+            <ejs-heatmap id='container' style="display:block;" [height]='height' [titleSettings]='titleSettings' [dataSource]='dataSource' [xAxis]='xAxis'
+                [yAxis]='yAxis' [paletteSettings]='paletteSettings' [cellSettings]='cellSettings' [tooltipSettings]='tooltipSettings' [legendSettings]='legendSettings'
+                (load)='load($event)' (tooltipRender)='tooltipRender($event)'>
+            </ejs-heatmap>
+        </div>
     </div>
-</div>
-<div id="action-description">
-    <p> This sample visualizes the summary of user activities in the GitLab account such as merge requests, push events, and comments across 52 weeks in a year.</p>
-</div>
-<div id="description">
-    <p>
-        In this example, you can see how to display a calendar data using heatmap. You can make the axis labels to display at specific time intervals along the datetime axis using the showLabelOn property.  
-    </p>
-    <p>The tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item on touch-enabled devices.</p>
-    <br>
-    <p><b>Injecting Module</b></p>
-    <p>
-        Heatmap component features are separated into discrete feature-based modules. To use a tooltip, inject the <a target="_blank"
-        href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/tooltip">Tooltip</a> module using the <code>Heatmap.Inject(Tooltip)</code> method, and to use a legend, inject the <a target="_blank"
-        href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/legend">Legend</a> module using the <code>Heatmap.Inject(Legend)</code> method.
-     </p>
-</div>
+    <section id="action-description" aria-label="Description of HeatMap sample">
+        <p> This sample visualizes the summary of user activities in the GitLab account such as merge requests, push events, and comments across 52 weeks in a year.</p>
+    </section>
+    <section id="description" aria-label="Description of the HeatMap features demonstrated in this sample">
+        <p>
+            In this example, you can see how to display a calendar data using heatmap. You can make the axis labels to display at specific time intervals along the datetime axis using the showLabelOn property.  
+        </p>
+        <p>The tooltip is enabled in this example. To see the tooltip in action, hover the mouse over an item or tap an item on touch-enabled devices.</p>
+        <br>
+        <p><b>Injecting Module</b></p>
+        <p>
+            Heatmap component features are separated into discrete feature-based modules. To use a tooltip, inject the <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/tooltip">Tooltip</a> module using the <code>Heatmap.Inject(Tooltip)</code> method, and to use a legend, inject the <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/heatmap-chart/legend">Legend</a> module using the <code>Heatmap.Inject(Legend)</code> method.
+         </p>
+      </section>
+</main>

@@ -9,7 +9,7 @@ import { defaultDocument, WEB_API_ACTION } from './data';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-import { createSpinner, showSpinner, hideSpinner, DialogUtility  } from '@syncfusion/ej2-angular-popups';
+import { createSpinner, showSpinner, hideSpinner } from '@syncfusion/ej2-angular-popups';
 /**
  * Document Editor Component
  */
@@ -128,8 +128,7 @@ public change(args: SelectEventArgs) {
     
   public formatSave(type: string) {
     createSpinner({
-        target: document.getElementById('documenteditor_default') as any,
-        cssClass: 'e-de-spin-overlay'
+        target: document.getElementById('documenteditor_default') as any
     });
     showSpinner((document as any).getElementById('documenteditor_default'));
     let format: string = type;
@@ -171,17 +170,7 @@ public change(args: SelectEventArgs) {
             hideSpinner((document as any).getElementById('documenteditor_default'));
         }
     };
-    http.onloadend = function() {
-        hideSpinner((document as any).getElementById('documenteditor_default'));
-    };
-    http.onerror = function() {
-        DialogUtility.alert({
-            title: "Information",
-            content: "Error in establishing connection with web server.",
-            okButton: {  text: "OK" },
-            closeOnEscape: true,
-        });
-    };
+
     // Send the request with JSON.stringify(sfdt) as the request body
     http.send(JSON.stringify(sfdt));
 }

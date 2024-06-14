@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { orderDataSource } from './data';
-import { GroupService, SortService, GridComponent, EditService, ToolbarService, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
+import { GroupService, SortService, GridComponent, EditService, ToolbarService, GridModule, PageService, FilterService } from '@syncfusion/ej2-angular-grids';
 import { DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -9,7 +9,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej-gridgroup',
     templateUrl: 'grouping.html',
-    providers: [GroupService, ToolbarService, SortService, EditService, PageService],
+    providers: [GroupService, ToolbarService, SortService, EditService, PageService, FilterService],
     standalone: true,
     imports: [SBActionDescriptionComponent, GridModule, DialogModule, SBDescriptionComponent]
 })
@@ -17,6 +17,7 @@ export class GroupComponent implements OnInit {
     public data: Object[];
     public groupOptions: Object;
     public pageSettings: Object;
+    public filterSettings: Object;
     public editSettings: Object;
     public toolbar: string[];
     public orderidrules: Object;
@@ -44,6 +45,7 @@ export class GroupComponent implements OnInit {
         this.data = orderDataSource;
         this.groupOptions = { showGroupedColumn: false, columns: ['ShipCountry'] };
         this.pageSettings = { pageCount: 5 };
+        this.filterSettings = { type: 'Excel'};
         this.editSettings = { allowEditing: true };
         this.toolbar = ['Edit', 'Update', 'Cancel'];
         this.orderidrules = { required: true, number: true };

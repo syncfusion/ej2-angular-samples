@@ -25,7 +25,7 @@
         </div>
     </div>
     <div style="float: right; margin-right: 10px;">Source:
-        <a href=" http://carsalesbase.com/global-car-sales-2017" target="_blank">carsalesbase.com</a>
+        <a href=" http://carsalesbase.com/global-car-sales-2017" target="_blank" aria-label="Navigate to the documentation for car sales base">carsalesbase.com</a>
     </div>
 </div>
 
@@ -52,91 +52,91 @@
                 <td style="width: 50%">
                     <table>
                         <tr>
-                            <td>All</td>&nbsp; &nbsp;
+                            <td id="checkboxAll">All</td>&nbsp; &nbsp;
                             <td>
                                 <input type="checkbox" (change)="onchangeAll($event)" checked class="sparkinput"
-                                    checked=true id="all">
+                                    checked=true id="all" aria-labelledby="Checkbox checked">
                             </td> &nbsp; &nbsp;
-                            <td>Negative</td>&nbsp; &nbsp;
+                            <td id="checkboxNegative">Negative</td>&nbsp; &nbsp;
                             <td>
-                                <input type="checkbox" (change)="onchangeOthers($event)" disabled class="sparkinput" id="negative">
+                                <input type="checkbox" (change)="onchangeOthers($event)" disabled class="sparkinput" id="negative" aria-labelledby="Checkbox unchecked">
                             </td>
                         </tr>
                         <tr>
-                            <td>First</td>&nbsp; &nbsp;
+                            <td id="checkboxFirst">First</td>&nbsp; &nbsp;
                             <td>
-                                <input type="checkbox" (change)="onchangeOthers($event)" disabled class="sparkinput" id="first">
+                                <input type="checkbox" (change)="onchangeOthers($event)" disabled class="sparkinput" id="first" aria-labelledby="Checkbox unchecked">
                             </td>&nbsp; &nbsp;
-                            <td>Last</td>&nbsp; &nbsp;
+                            <td id="checkboxLast">Last</td>&nbsp; &nbsp;
                             <td>
-                                <input type="checkbox" (change)="onchangeOthers($event)" disabled class="sparkinput" id="last">
+                                <input type="checkbox" (change)="onchangeOthers($event)" disabled class="sparkinput" id="last" aria-labelledby="Checkbox unchecked">
                             </td>
                         </tr>
                         <tr>
-                            <td>High</td>&nbsp; &nbsp;
+                            <td id="checkboxHigh">High</td>&nbsp; &nbsp;
                             <td>
-                                <input type="checkbox" (change)="onchangeOthers($event)" disabled class="sparkinput" id="high">
+                                <input type="checkbox" (change)="onchangeOthers($event)" disabled class="sparkinput" id="high" aria-labelledby="Checkbox unchecked">
                             </td>&nbsp; &nbsp;
-                            <td>Low</td>&nbsp; &nbsp;
+                            <td id="checkboxLow">Low</td>&nbsp; &nbsp;
                             <td>
-                                <input type="checkbox" (change)="onchangeOthers($event)" disabled class="sparkinput" id="low">
+                                <input type="checkbox" (change)="onchangeOthers($event)" disabled class="sparkinput" id="low" aria-labelledby="Checkbox unchecked">
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
             <tr style="height: 40px">
-                <td style="width: 50%">
+                <td style="width: 50%" id="checkboxMarker">
                     Marker
                 </td>
                 <td style="width: 50%">
                     <input type="checkbox" [checked]="false" (change)="onchangeMarker($event)" class="sparkinput" name="marker"
-                        id="marker">
+                        id="marker" aria-labelledby="Checkbox unchecked">
                 </td>
             </tr>
             <tr style="height: 40px">
-                <td style="width: 50%">
+                <td style="width: 50%" id="checkboxDatalabel">
                     Data Label
                 </td>
                 <td style="width: 50%">
                     <input type="checkbox" [checked]="false" (change)="onchangeDatalabel($event)" class="sparkinput"
-                        name="datalabel" id="datalabel">
+                        name="datalabel" id="datalabel" aria-labelledby="Checkbox unchecked">
                 </td>
             </tr>
             <tr style="height: 40px">
-                <td style="width: 50%">
+                <td style="width: 50%" id="checkboxRtl">
                     Enable RTL
                 </td>
                 <td style="width: 50%">
                     <input type="checkbox" [checked]="false" (change)="onshowLastLabel($event)" class="sparkinput" name="enableRTL"
-                        id="enableRTL">
+                        id="enableRTL" aria-labelledby="Checkbox unchecked">
                 </td>
             </tr>
             <tr style="height: 40px">
-                <td style="width: 50%">
+                <td style="width: 50%" id="checkboxTooltip">
                     Tooltip
                 </td>
                 <td style="width: 50%">
                     <input type="checkbox" [checked]="false" (change)="onchangeTooltip($event)" class="sparkinput" name="tooltip"
-                        id="tooltip">
+                        id="tooltip" aria-labelledby="Checkbox unchecked">
                 </td>
             </tr>
             <tr style="height: 40px">
-                <td style="width: 50%">
+                <td style="width: 50%" id="checkboxTrackline">
                     Track Line
                 </td>
                 <td style="width: 50%">
                     <input type="checkbox" [checked]="false" (change)="onchangeTrackline($event)" class="sparkinput"
-                        name="trackline" id="trackline">
+                        name="trackline" id="trackline" aria-labelledby="Checkbox unchecked">
                 </td>
             </tr>
             <tr style="height: 40px">
-                <td style="width: 50%">
+                <td style="width: 50%" id="checkboxAxisline">
                     Axis Line
                 </td>
                 <td style="width: 50%">
                     <input type="checkbox" [checked]="false" (change)="onchangeline($event)" class="sparkinput" name="axis"
-                        id="axis1">
+                        id="axis1" aria-labelledby="Checkbox unchecked">
                 </td>
             </tr>
             <tr>

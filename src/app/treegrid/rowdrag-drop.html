@@ -1,0 +1,75 @@
+<div id="action-description">
+    <p>This sample demonstrates the TreeGrid component with the row drag and drop feature. Drag and drop rows between TreeGrids
+        to move rows.
+    </p>
+</div>
+<div class="control-section">
+
+<div class='e-mastertext'>Drag and Drop Rows between two TreeGrids</div>
+<div class="treegrids-container" >
+    <div class="treegrid-wrapper">
+    <ejs-treegrid  id='TreeGrid' [dataSource]='srcData' [allowRowDragAndDrop]="true" [treeColumnIndex]='1' childMapping='subtasks' [allowPaging]="true" [pageSettings]="pageOptions" [allowSelection]="true"
+        [selectionSettings]="selectionOptions" [rowDropSettings]="srcDropOptions">
+        <e-columns>
+            <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' textAlign='Right' width=100></e-column>
+            <e-column field='taskName' headerText='Task Name' textAlign='Left' width=180></e-column>
+            <e-column field='startDate' headerText='Start Date' textAlign='Right' format='yMd' width=110></e-column>                    
+        </e-columns>
+        </ejs-treegrid >
+    </div>
+    <div class="treegrid-wrapper">
+        <ejs-treegrid  id='DestGrid' [dataSource]='destData' childMapping='subtasks' [treeColumnIndex]='1' [allowPaging]="true" [pageSettings]="pageOptions" [allowSelection]="true"
+            [allowRowDragAndDrop]="true" [selectionSettings]="selectionOptions" [rowDropSettings]="destDropOptions" >
+            <e-columns>
+                <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' textAlign='Right' width=100></e-column>
+                <e-column field='taskName' headerText='Task Name' textAlign='Left' width=180></e-column>
+                <e-column field='startDate' headerText='Start Date' textAlign='Right' format='yMd' width=110></e-column>
+            </e-columns>
+            </ejs-treegrid >
+
+      </div>
+</div>
+<div id="description">
+    <p>By enabling the <code><a target="_blank"
+      href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#allowrowdraganddrop">
+      allowRowDragAndDrop
+  </a></code> property, Tree Grid rows can be dragged and dropped to another Tree Grid. The <code><a target="_blank" 
+      href="https://helpej2.syncfusion.com/angular/documentation/api/treegrid/rowDropSettings/">
+      TreeGridRowDropSettings
+  </a></code> component's <code>
+  <a target="_blank"
+  href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/rowDropSettings/#targetid">
+  targetID </a></code> property can be used to specify the target on which the Tree Grid rows should be dropped and it requires a primary key column for performing drag and drop.</p>
+
+  <p>To define the primary key, set <code><a target="_blank" 
+      href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/column/#isprimarykey">
+      isPrimaryKey
+  </a></code> to <code>true </code>for a unique data column.</p>
+
+  <p>To select the rows, enable the <code><a target="_blank"
+      href="https://ej2.syncfusion.com/angular/documentation/treegrid/selection/selection">
+      Selection </a></code>feature. Selecting multiple rows within the Tree Grid is as simple as clicking and dragging them.</p>
+
+  <p>The Row drag and drop feature is enabled in both TreeGrids in this demo. Drag and drop rows between TreeGrids by selecting the rows and dragging them to the adjacent TreeGrid.</p>
+  <p>Injecting module:</p>
+  <p>TreeGrid component features are segregated into individual feature-wise modules. To use row, drag and drop feature we need to inject <code>RowDDService</code> into the provide section.</p>
+  <p>
+      More information on the row drag and drop can be found in this
+      <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/treegrid/row/row-drag-and-drop#drag-and-drop-to-another-tree-grid">
+      documentation </a>section.
+  </p>  
+</div>
+
+</div>
+
+
+<style>
+    .treegrids-container {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .treegrid-wrapper {
+      width: 49%; /* Adjust as needed */
+    }
+  </style>

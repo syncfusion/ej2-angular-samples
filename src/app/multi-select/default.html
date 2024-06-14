@@ -6,18 +6,18 @@
        
         <div id='content'>
             <div class="control-styles">
-            <h4> Default Mode</h4>
+            <label class="h4"> Default Mode</label>
             <ejs-multiselect id='sample-list1' [dataSource]='sportsData' [mode]='default' [fields]='fields' [placeholder]='waterMark'></ejs-multiselect>
             </div>
         </div>
         
         <div class="control-styles">
-            <h4>Box Mode</h4>
+            <label class="h4">Box Mode</label>
             <ejs-multiselect id='sample-list2' [dataSource]='sportsData' [mode]='box' [fields]='fields' [placeholder]='waterMark'></ejs-multiselect>
         </div>
         
         <div class="control-styles">
-            <h4>Delimiter Mode</h4>
+            <label class="h4">Delimiter Mode</label>
             <ejs-multiselect id='sample-list3' [dataSource]='sportsData' [mode]='delimiter' [fields]='fields' [placeholder]='waterMark'></ejs-multiselect>
         </div>
 </div>
@@ -35,3 +35,10 @@
         <a href="http://ej2.syncfusion.com/angular/documentation/multi-select/getting-started.html" target="_blank"> documentation section</a>.
     </p>
 </div>
+<style>
+    .control-styles .h4 {
+        font-size: 16px;
+        margin: 0 0 10px;
+    }
+
+</style>

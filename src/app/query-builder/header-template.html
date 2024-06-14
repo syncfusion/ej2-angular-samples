@@ -15,10 +15,10 @@
             </div>
             <div class = "e-header">
               <div class = "e-qb-hdr-content">
-                <button id = '{{data.ruleID}}_addbtn' class ="e-control e-btn e-primary e-grp-btn" (click)="addGroupClick($event)">Add Group</button>
+                <button id = '{{data.ruleID}}_addGroupBtn' class ="e-control e-btn e-primary e-grp-btn" (click)="addGroupClick($event)">Add Group</button>
               </div>
               <div class = "e-qb-hdr-content">
-                <button id = '{{data.ruleID}}_addbtn' class="e-control e-btn e-primary e-grp-btn" (click)="addRuleClick($event)">Add condition</button>
+                <button id = '{{data.ruleID}}_addConditionBtn' class="e-control e-btn e-primary e-grp-btn" (click)="addRuleClick($event)">Add condition</button>
               </div>
               <button  ejs-button *ngIf ="data.ruleID !== 'querybuilder_group0'" id= 'dltbtn' class= "e-control e-btn e-danger e-del-btn" (click)="onClick($event)">Delete Group</button>
             </div>

@@ -19,7 +19,6 @@ export class LabelsComponent {
     public labelOffset: LinearGaugeComponent;
     @ViewChild('labelCustomization')
     public labelCustomization: LinearGaugeComponent;
-
     public customLabelAxes: Object[] = [{
         line: {
             width: 5
@@ -164,6 +163,9 @@ export class LabelsComponent {
         args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
         // custom code end
+        if (args.gauge.theme === 'Fluent2Dark') {
+            args.gauge.axes[0].pointers[3].color  = '#292827';
+        }
     }
 
     public axisLabelRender(args: IAxisLabelRenderEventArgs): void {

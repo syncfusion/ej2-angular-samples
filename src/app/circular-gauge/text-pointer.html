@@ -1,61 +1,63 @@
-<div id="action-description">
-    <p>
-        This sample visualizes the performance outcome of a work using the text pointer in the circular gauge.
-    </p>
-</div>
-<div class="control-section">
-    <ejs-circulargauge style='display:block;' (load)='load($event)' centerY='75%' background='transparent'>
-        <e-axes>
-            <e-axis radius='120%' startAngle=270 endAngle=90 minimum=0 maximum=120 rangeGap=3 [majorTicks]='ticks'
-                [minorTicks]='ticks' [lineStyle]='lineStyle' [labelStyle]="labelStyle">
-                <e-pointers>
-                    <e-pointer value=82 radius='60%' pointerWidth=10 needleStartWidth="1" needleEndWidth="1" [cap]="cap"
-                        [textStyle]="textStyle" [animation]="needleAnimation" fill="transparent">
-                    </e-pointer>
-                    <e-pointer value=20 radius='85%' text='Poor' pointerWidth=10 markerShape="Text" type="Marker"
-                        [textStyle]="textStyle" [animation]="animation"  fill="transparent">
-                    </e-pointer>
-                    <e-pointer value=60 radius='85%' text='Average' pointerWidth=10 markerShape="Text" type="Marker"
-                        [textStyle]="textStyle" [animation]="animation"  fill="transparent">
-                    </e-pointer>
-                    <e-pointer value=100 radius='85%' text='Good' pointerWidth=10 markerShape="Text" type="Marker"
-                        [textStyle]="textStyle" [animation]="animation"  fill="transparent">
-                    </e-pointer>
-                </e-pointers>
-                <e-ranges>
-                    <e-range start=0 end=20 radius='80%' startWidth=85 endWidth=85 color='#dd3800'></e-range>
-                    <e-range start=20.5 end=40 radius='80%' startWidth=85 endWidth=85 color='#ff4100'></e-range>
-                    <e-range start=40.5 end=60 radius='80%' startWidth=85 endWidth=85 color='#ffba00'></e-range>
-                    <e-range start=60.5 end=80 radius='80%' startWidth=85 endWidth=85 color='#ffdf10'></e-range>
-                    <e-range start=80.5 end=100 radius='80%' startWidth=85 endWidth=85 color='#8be724'></e-range>
-                    <e-range start=100.5 end=120 radius='80%' startWidth=85 endWidth=85 color='#64be00'></e-range>
-                </e-ranges>
-            </e-axis>
-        </e-axes>
-    </ejs-circulargauge>
-</div>
-<div id="description">
-    <p>
-        In this example, you can see how to use a text to customize the pointer in the circular gauge. The text can be
-        added to the circular gauge's pointer primarily through the use of the <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/pointerModel/#type">type</a>, <a
-            target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/pointerModel/#markershape">markerShape</a>
-        and <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/pointerModel/#text">text</a>
-        properties in the <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/pointerModel/">pointers</a>.
-    </p>
-    <p>
-        More information on the pointers can be found in this <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/gauge-pointers/">documentation
-            section</a>.
-    </p>
-</div>
-<!-- custom code start -->
-<style>
-    .control-section {
-        min-height: 450px;
-    }
-</style>
-<!-- custom code end -->
+<main>
+    <section id="action-description" aria-label="Description of Circular Gauge sample">
+        <p>
+            This sample visualizes the performance outcome of a work using the text pointer in the circular gauge.
+        </p>
+    </section>
+    <div class="control-section">
+        <ejs-circulargauge style='display:block;' (load)='load($event)' centerY='75%' background='transparent'>
+            <e-axes>
+                <e-axis radius='120%' startAngle=270 endAngle=90 minimum=0 maximum=120 rangeGap=3 [majorTicks]='ticks'
+                    [minorTicks]='ticks' [lineStyle]='lineStyle' [labelStyle]="labelStyle">
+                    <e-pointers>
+                        <e-pointer value=82 radius='60%' pointerWidth=10 needleStartWidth="1" needleEndWidth="1" [cap]="cap"
+                            [textStyle]="textStyle" [animation]="needleAnimation" fill="transparent">
+                        </e-pointer>
+                        <e-pointer value=20 radius='85%' text='Poor' pointerWidth=10 markerShape="Text" type="Marker"
+                            [textStyle]="textStyle" [animation]="animation"  fill="transparent">
+                        </e-pointer>
+                        <e-pointer value=60 radius='85%' text='Average' pointerWidth=10 markerShape="Text" type="Marker"
+                            [textStyle]="textStyle" [animation]="animation"  fill="transparent">
+                        </e-pointer>
+                        <e-pointer value=100 radius='85%' text='Good' pointerWidth=10 markerShape="Text" type="Marker"
+                            [textStyle]="textStyle" [animation]="animation"  fill="transparent">
+                        </e-pointer>
+                    </e-pointers>
+                    <e-ranges>
+                        <e-range start=0 end=20 radius='80%' startWidth=85 endWidth=85 color='#dd3800'></e-range>
+                        <e-range start=20.5 end=40 radius='80%' startWidth=85 endWidth=85 color='#ff4100'></e-range>
+                        <e-range start=40.5 end=60 radius='80%' startWidth=85 endWidth=85 color='#ffba00'></e-range>
+                        <e-range start=60.5 end=80 radius='80%' startWidth=85 endWidth=85 color='#ffdf10'></e-range>
+                        <e-range start=80.5 end=100 radius='80%' startWidth=85 endWidth=85 color='#8be724'></e-range>
+                        <e-range start=100.5 end=120 radius='80%' startWidth=85 endWidth=85 color='#64be00'></e-range>
+                    </e-ranges>
+                </e-axis>
+            </e-axes>
+        </ejs-circulargauge>
+    </div>
+    <section id="description" aria-label="Description of the Circular Gauge features demonstrated in this sample">
+        <p>
+            In this example, you can see how to use a text to customize the pointer in the circular gauge. The text can be
+            added to the circular gauge's pointer primarily through the use of the <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/pointerModel/#type">type</a>, <a
+                target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/pointerModel/#markershape">markerShape</a>
+            and <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/pointerModel/#text">text</a>
+            properties in the <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/api/circular-gauge/pointerModel/">pointers</a>.
+        </p>
+        <p>
+            More information on the pointers can be found in this <a target="_blank"
+                href="https://ej2.syncfusion.com/angular/documentation/circular-gauge/gauge-pointers/">documentation
+                section</a>.
+        </p>
+    </section>
+    <!-- custom code start -->
+    <style>
+        .control-section {
+            min-height: 450px;
+        }
+    </style>
+    <!-- custom code end -->
+</main>

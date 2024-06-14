@@ -78,6 +78,22 @@
             width: 5%;
         }
     }
+    .fluent2,
+    .fluent2-dark,
+    .fluent2-highcontrast {
+        .e-adaptive-demo.e-pager-pagesizes .e-pager {
+            .e-mfirst,
+            .e-mprev,
+            .e-mnext,
+            .e-mlast {
+                padding: 1% 1.4%;
+            }
+        }
+        
+        .e-pager.e-adaptive div.e-parentmsgbar {
+            margin: 0;
+        }
+    }
     .e-adaptive-demo .e-pager div.e-parentmsgbar {
         box-sizing: border-box;
         display: inline-block;

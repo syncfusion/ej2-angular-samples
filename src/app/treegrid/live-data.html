@@ -1,18 +1,19 @@
-<div class="control-section">
+<div class="control-section" role="main" aria-label="Treegrid section">
     <div style="margin-bottom: 10px;">
-        <h4 style="display: inline-block; font-size: 14px;">Feed Delay(ms):</h4>
+        <label for="feeddelay" style="display: inline-block; font-size: 14px;"><b>Feed Delay(ms):</b></label>
         <ejs-numerictextbox #feeddelay format="N0" value="1000" min="100" max="5000" step="1" width="200px"
             style="margin-left: 7px;"></ejs-numerictextbox>
 
 
-        <button #update id="update" ejs-button (click)="updateClick($event)" style="margin-left: 10px;">
+        <button #update id="update" ejs-button (click)="updateClick($event)" style="margin-left: 10px;" aria-label="StartData button">
             Start Data Update
         </button>
-        <button #clear id="clear" ejs-button (click)="clearClick($event)" style="margin-left: 10px;">
+        <button #clear id="clear" ejs-button (click)="clearClick($event)" style="margin-left: 10px;" aria-label="StopData button">
             Stop Data Update
         </button>
     </div>
 
+<div role="table" aria-label="Index Funds Information">
     <ejs-treegrid #treegrid id="treegrid" [enableHover]="false" [dataSource]="data"
         (queryCellInfo)="queryCellInfoEvent($event)" height="350" childMapping='subtasks' [allowSelection]="false"
         (destroyed)="destroyClear($event)" [treeColumnIndex]='1'>
@@ -32,6 +33,7 @@
             <e-column field='Weeklow' headerText='52W L' width='130' textAlign='Right'></e-column>
         </e-columns>
     </ejs-treegrid>
+</div>
     <br>
     <p>
         <b>

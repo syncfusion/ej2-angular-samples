@@ -43,11 +43,11 @@ export class MapsOsmWithNavigationComponent {
     };
     public layers: object[] = [
         {
-                layerType: 'OSM',
+            urlTemplate: 'https://tile.openstreetmap.org/level/tileX/tileY.png',
                 markerSettings: [
                     {
                         visible: true,
-                        template: '<div><img src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/group.svg" style="height:15px;width:15px;"></img></div>',
+                        template: '<div><img alt="Group image" src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/group.svg" style="height:15px;width:15px;"></img></div>',
                         dataSource: [{
                                 name: 'Mexico City',
                                 latitude: 23.6445,
@@ -60,7 +60,7 @@ export class MapsOsmWithNavigationComponent {
                     },
                     {
                         visible: true,
-                        template: '<div><img src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/ballon.png" style="height:30px;width:20px;"></img></div>',
+                        template: '<div><img alt="Balloon image" src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/ballon.png" style="height:30px;width:20px;"></img></div>',
                         dataSource: [{
                                 name: 'Mexico City',
                                 latitude: 24.2005,
@@ -73,7 +73,7 @@ export class MapsOsmWithNavigationComponent {
                     },
                     {
                         visible: true,
-                        template: '<div style= "font-weight:500; font-size: 13px; text-align: left">Mexico</div>',
+                        template: '<div style= "font-weight:500; font-size: 13px; text-align: left; color: #000;">Mexico</div>',
                         dataSource: [{
                                 name: 'Mexico City',
                                 latitude: 24.0005,
@@ -82,7 +82,7 @@ export class MapsOsmWithNavigationComponent {
                     },
                     {
                         visible: true,
-                        template: '<div><img src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/oval.svg" style="height:15px;width:15px;"></img></div>',
+                        template: '<div><img alt="Oval image" src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/oval.svg" style="height:15px;width:15px;"></img></div>',
                         dataSource: [{
                                 name: 'Los Angeles',
                                 latitude: 34.0522,
@@ -95,7 +95,7 @@ export class MapsOsmWithNavigationComponent {
                     },
                     {
                         visible: true,
-                        template: '<div><div style="text-align: right; font-weight:500; font-size: 13px;">Los Angeles</br>' +
+                        template: '<div><div style="text-align: right; font-weight:500; font-size: 13px; color: #000;">Los Angeles</br>' +
                         'International Airport</div></div>',
                         dataSource: [{
                                 name: 'Los Angeles City',
@@ -105,7 +105,7 @@ export class MapsOsmWithNavigationComponent {
                     },
                     {
                         visible: true,
-                        template: '<div><img src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/map-tooltip.svg" style="height:50px;width:100px;"></img></div>',
+                        template: '<div><img alt="Map tooltip" src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/map-tooltip.svg" style="height:50px;width:100px;"></img></div>',
                         dataSource: [{
                                 latitude: 28.5,
                                 longitude: -110.400

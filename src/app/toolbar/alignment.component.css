@@ -110,6 +110,10 @@
         height: 60px;
     }
 
+    .toolbar-type-section h1 {
+        font-size: 18px;
+    }
+
     @media only screen and (min-width: 1224px) {
         .e-sample-resize-container {
             width: 70%;

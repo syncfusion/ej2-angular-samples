@@ -28,8 +28,10 @@ export class MapsBubbleComponent {
     }
     public zoomSettings: object= {
         enable: true,
-        horizontalAlignment: 'Near',
-        toolBarOrientation: 'Vertical',
+        toolbarSettings: {
+            orientation:'Vertical',
+            horizontalAlignment: 'Near',
+        },
         pinchZooming: true
     }
     

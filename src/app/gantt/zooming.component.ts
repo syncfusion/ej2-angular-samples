@@ -31,8 +31,8 @@ export class GanttZoomingComponent implements OnInit {
             child: 'subtasks'
         };
         this.toolbar = ['ZoomIn', 'ZoomOut', 'ZoomToFit'];
-        this.projectStartDate = new Date('03/24/2019');
-        this.projectEndDate = new Date('07/06/2019');
+        this.projectStartDate = new Date('03/24/2024');
+        this.projectEndDate = new Date('07/06/2024');
         this.labelSettings = {
             leftLabel: 'TaskName'
         };

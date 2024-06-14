@@ -4,7 +4,7 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid #Grid id='Grid' [dataSource]='parentData' [childGrid]='childGrid' [allowSorting]='true' >
+    <ejs-grid #Grid id='Grid' [dataSource]='parentData' [childGrid]='childGrid' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings'>
         <e-columns>
             <e-column field='EmployeeID' headerText='Employee ID' width='120' textAlign='Right'></e-column>
             <e-column field='FirstName' headerText='Name' width='140'></e-column>

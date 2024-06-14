@@ -8,7 +8,6 @@ import { QueryLibrary } from '@syncfusion/ej2-querybuilder';
 import { TabComponent, TabAllModule } from '@syncfusion/ej2-angular-navigations';
 import { employeeData } from './data-source';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { GridModule } from '@syncfusion/ej2-angular-grids';
 import { DialogModule, TooltipModule } from '@syncfusion/ej2-angular-popups';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { DialogComponent } from '@syncfusion/ej2-angular-popups';
@@ -24,7 +23,7 @@ declare let hljs: any;
     templateUrl: 'mongo.html',
     styleUrls: ['mongo.css'],
     standalone: true,
-    imports: [SBActionDescriptionComponent, QueryBuilderModule, GridModule, RadioButtonAllModule, DropDownButtonModule, DialogModule, TabAllModule, TooltipModule, SBDescriptionComponent]
+    imports: [SBActionDescriptionComponent, QueryBuilderModule, RadioButtonAllModule, DropDownButtonModule, DialogModule, TabAllModule, TooltipModule, SBDescriptionComponent]
 })
 
 export class MongoComponent {

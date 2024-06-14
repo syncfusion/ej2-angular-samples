@@ -18,12 +18,14 @@ export class KeyPerformanceComponent {
   public selectedTheme: string = location.hash.split('/')[1];
   public annotations: Object = [
     {
+      description:'Triangle',
       content: '<div class="triangle-up"></div>',
       angle: 270,
       zIndex: '1',
       radius: '33%',
     },
     {
+      description:'Current',
       content:
         '<div class="text" style="color:#84cbb5;">Current</div>',
       angle: 0,
@@ -31,6 +33,7 @@ export class KeyPerformanceComponent {
       radius: '25%',
     },
     {
+      description:'76.6%',
       content:
         '<div class="percentage" style="color:#84cbb5;">76.6%</div>',
       angle: 105,
@@ -38,6 +41,7 @@ export class KeyPerformanceComponent {
       radius: '9%',
     },
     {
+      description:'0',
       content:
         '<div style="font-size:22px;">0</div>',
       angle: 213,
@@ -45,6 +49,7 @@ export class KeyPerformanceComponent {
       radius: '83%',
     },
     {
+      description:'100',
       content:
         '<div style="font-size:22px;">100</div>',
       angle: 150,
@@ -75,6 +80,7 @@ export class KeyPerformanceComponent {
   };
 
   public labelStyle: Object = {
+    format:'{value} %',
     font: {
       size: '0px',
     },

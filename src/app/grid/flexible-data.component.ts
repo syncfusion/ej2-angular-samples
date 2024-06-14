@@ -47,11 +47,11 @@ export class FlexibleDataBindingComponent implements OnInit {
       value: 'ODataV4Adaptor',
     },
     {
-      text: 'https://ej2services.syncfusion.com/js/development/api/Orders',
+      text: 'https://services.syncfusion.com/angular/production/api/Orders',
       value: 'WebApiAdaptor',
     },
     {
-      text: 'https://ej2services.syncfusion.com/js/development/api/UrlDataSource',
+      text: 'https://services.syncfusion.com/js/production/api/UrlDataSource',
       value: 'UrlAdaptor',
     },
     {
@@ -218,21 +218,22 @@ export class FlexibleDataBindingComponent implements OnInit {
         : this.defaultColumns;
       if (this.changedAdaptor === 'ODataV4Adaptor') {
         newDataSource = new DataManager({
-          url: 'https://ej2services.syncfusion.com/production/web-services/api/Orders',
+          url: 'https://services.syncfusion.com/angular/production/api/Orders',
           adaptor: new ODataV4Adaptor(),
           headers: this.header,
           crossDomain: true
         });
       } else if (this.changedAdaptor === 'UrlAdaptor') {
         newDataSource = new DataManager({
-          url: 'https://ej2services.syncfusion.com/production/web-services/api/UrlDataSource',
+          url: 'https://services.syncfusion.com/js/production/api/UrlDataSource',
           adaptor: new UrlAdaptor(),
           headers: this.header,
           crossDomain: true
         });
+        this.grid.query.addParams('dataCount', '1000');
       } else if (this.changedAdaptor === 'WebApiAdaptor') {
         newDataSource = new DataManager({
-          url: 'https://ej2services.syncfusion.com/production/web-services/api/Orders',
+          url: 'https://services.syncfusion.com/angular/production/api/Orders',
           adaptor: new WebApiAdaptor(),
           headers: this.header,
           crossDomain: true

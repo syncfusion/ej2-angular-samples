@@ -71,10 +71,10 @@ export class GanttResourceViewComponent implements OnInit {
         }
         this.labelSettings = {
             rightLabel: 'resources',
-            taskLabel: 'Progress' 
+            taskLabel: 'Progress'
         };
-        this.projectStartDate= new Date('03/28/2019');
-        this.projectEndDate= new Date('05/18/2019');
+        this.projectStartDate= new Date('03/28/2024');
+        this.projectEndDate= new Date('05/18/2024');
     }
     public toolbarClick(args: ClickEventArgs): void {
         if (args.item.id === 'showhidebar') {

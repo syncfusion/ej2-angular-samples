@@ -10,3 +10,7 @@
 .api-property.property-panel-table div.api {
     padding-left: 0px;
 }
+
+#textarea-api .e-multi-line-input {
+    max-width: 100%;
+}

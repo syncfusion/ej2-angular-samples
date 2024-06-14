@@ -100,7 +100,8 @@ export class IntegrationComponent implements OnInit {
                 load: (args: ILoadedEventArgs) => {
                     let selectedTheme: string = location.hash.split('/')[1];
                     selectedTheme = selectedTheme ? selectedTheme : 'Material';
-                    args.heatmap.theme = <HeatMapTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+                    args.heatmap.theme = <HeatMapTheme>(selectedTheme.charAt(0).toUpperCase() +
+                        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
                 },
             }, '#heatmap');
         } else {

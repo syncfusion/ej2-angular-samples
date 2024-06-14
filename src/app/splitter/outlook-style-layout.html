@@ -41,7 +41,7 @@
                                 </div>
                             </ng-template>
                         </ejs-listview>
-                        <div id="groupedList" tabindex="1"></div>
+                        <div id="groupedList" tabindex="0"></div>
                     </div>
                 </ng-template>
             </e-pane>
@@ -53,13 +53,13 @@
                                 <tr>
                                     <td><button class="e-btn e-flat e-outline">To...</button></td>
                                     <td>
-                                        <ejs-textbox id="firstname"></ejs-textbox>
+                                        <ejs-textbox id="firstname" aria-label="firstname"></ejs-textbox>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><button class="e-btn e-flat e-outline">Cc...</button></td>
                                     <td>
-                                        <ejs-textbox id="lastname"></ejs-textbox>
+                                        <ejs-textbox id="lastname" aria-label="lastname"></ejs-textbox>
                                     </td>
                                 </tr>
                                 <tr>
@@ -67,7 +67,7 @@
                                         <div id="subject-text">Subject</div>
                                     </td>
                                     <td>
-                                        <ejs-textbox id="subject"></ejs-textbox>
+                                        <ejs-textbox id="subject" aria-label="subject"></ejs-textbox>
                                     </td>
                                 </tr>
                             </table>

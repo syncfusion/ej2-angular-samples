@@ -326,6 +326,7 @@
             "ProtectContent": "Schützen Sie den Inhalt gesperrter Zellen",
             "ProtectAllowUser": " Allen Benutzern dieses Arbeitsblatts Folgendes erlauben:",
             "EditAlert": "Die Zelle, die Sie ändern möchten, ist geschützt. Heben Sie den Schutz des Blatts auf, um Änderungen vorzunehmen.",
+            "ReadonlyAlert" : "Sie versuchen, eine Zelle zu ändern, die sich im schreibgeschützten Modus befindet. Um Änderungen vorzunehmen, deaktivieren Sie bitte den schreibgeschützten Status.",
             "ClearValidation": "Klare Bestätigung",
             "ISNUMBER": "Gibt true zurück, wenn der Wert als numerischer Wert analysiert wird.",
             "ROUND": "Rundet eine Zahl auf eine angegebene Anzahl von Ziffern.",
@@ -562,6 +563,9 @@
             "Ratings": "Bewertungen",
             "Material3": "Material 3",
             "Material3Dark": "Material 3 Dunkel",
+            "Fluent2": "Fließend 2",
+            "Fluent2Dark": "Fließend 2 Dunkel",
+            "Fluent2HighContrast": "Fließend 2 HighContrast",
             "InvalidFormulaError": "Wir haben festgestellt, dass Sie eine ungültige Formel eingegeben haben.",
             "InvalidArguments": "Wir haben festgestellt, dass Sie eine Formel mit ungültigen Argumenten eingegeben haben.",
             "EmptyExpression": "Wir haben festgestellt, dass Sie eine Formel mit einem leeren Ausdruck eingegeben haben.",
@@ -570,7 +574,11 @@
             "WrongNumberOfArguments": "Wir haben festgestellt, dass Sie eine Formel mit einer falschen Anzahl von Argumenten eingegeben haben.",
             "Requires3Arguments": "Wir haben festgestellt, dass Sie eine Formel eingegeben haben, die drei Argumente erfordert.",
             "MismatchedStringQuotes" : "Wir haben festgestellt, dass Sie eine Formel mit nicht übereinstimmenden Anführungszeichen eingegeben haben.",
-            "FormulaCircularRef" : "Wir haben festgestellt, dass Sie eine Formel mit einem Zirkelbezug eingegeben haben."
+            "FormulaCircularRef" : "Wir haben festgestellt, dass Sie eine Formel mit einem Zirkelbezug eingegeben haben.",
+            "AddNote" : "Notiz hinzufügen",
+            "EditNote" : "Notiz bearbeiten",
+            "DeleteNote" : "Notiz löschen",
+            "Print" : "Drucken"
         }
     },
     "ar": {
@@ -900,6 +908,7 @@
             "ProtectContent": "حماية محتويات الخلايا المقفلة",
             "ProtectAllowUser": "السماح لكافة مستخدمي ورقة العمل هذه بما يلي:",
             "EditAlert": "الخلية التي تحاول تغييرها محمية. لإجراء تغيير ، قم بإلغاء حماية الورقة.",
+            "ReadonlyAlert" : "أنت تحاول تعديل خلية في وضع القراءة فقط. لإجراء تغييرات، يرجى تعطيل حالة القراءة فقط.",
             "ClearValidation": "التحقق من الصحة واضح",
             "ISNUMBER": "إرجاع صحيح عندما يتم تحليل القيمة كقيمة رقمية.",
             "ROUND": "لتقريب رقم إلى عدد محدد من الأرقام.",
@@ -1136,6 +1145,9 @@
             "Ratings": "التقييمات",
             "Material3": "المادة 3",
             "Material3Dark": "المادة 3 الظلام",
+            "Fluent2": "بطلاقة 2",
+            "Fluent2Dark": "بطلاقة 2 الظلام",
+            "Fluent2HighContrast": "بطلاقة 2 التباين العالي",
             "InvalidFormulaError": "وجدنا أنك كتبت صيغة غير صالحة.",
             "InvalidArguments": "لقد اكتشفنا أنك كتبت صيغة تحتوي على وسيطات غير صالحة.",
             "EmptyExpression": "وجدنا أنك كتبت صيغة بتعبير فارغ.",
@@ -1144,7 +1156,11 @@
             "WrongNumberOfArguments": "وجدنا أنك كتبت صيغة بعدد خاطئ من الوسائط.",
             "Requires3Arguments": "وجدنا أنك كتبت صيغة تتطلب ثلاث وسيطات.",
             "MismatchedStringQuotes": "لقد اكتشفنا أنك كتبت صيغة تحتوي على علامات اقتباس غير متطابقة.",
-            "FormulaCircularRef": "لقد وجدنا أنك كتبت صيغة بمرجع دائري."
+            "FormulaCircularRef": "لقد وجدنا أنك كتبت صيغة بمرجع دائري.",
+            "AddNote" : "اضف ملاحظة",
+            "EditNote" : "تحرير مذكرة",
+            "DeleteNote" : "حذف الملاحظة",
+            "Print" : "مطبعة"
         }
     },
     "en": {
@@ -1474,6 +1490,7 @@
             "ProtectContent": "Protect the contents of locked cells",
             "ProtectAllowUser": " Allow all users of this worksheet to:",
             "EditAlert": "The cell you're trying to change is protected. To make change, unprotect the sheet.",
+            "ReadonlyAlert" : "You are trying to modify a cell that is in read-only mode. To make changes, please disable the read-only status.",
             "ClearValidation": "Clear Validation",
             "ISNUMBER": "Returns true when the value parses as a numeric value.",
             "ROUND": "Rounds a number to a specified number of digits.",
@@ -1710,6 +1727,9 @@
             "Ratings": "Ratings",
             "Material3": "Material 3",
             "Material3Dark": "Material 3 Dark",
+            "Fluent2": "Fluent 2",
+            "Fluent2Dark": "Fluent 2 Dark",
+            "Fluent2HighContrast": "Fluent 2 HighContrast",
             "InvalidFormulaError": "We found that you typed a formula which is invalid.",
             "InvalidArguments" : "We found that you typed a formula with an invalid arguments.",
             "EmptyExpression" : "We found that you typed a formula with an empty expression.",
@@ -1718,7 +1738,11 @@
             "WrongNumberOfArguments" : "We found that you typed a formula with a wrong number of arguments.",
             "Requires3Arguments": "We found that you typed a formula which requires 3 arguments.",
             "MismatchedStringQuotes" : "We found that you typed a formula with a mismatched quotes.",
-            "FormulaCircularRef" : "We found that you typed a formula with a circular reference."
+            "FormulaCircularRef" : "We found that you typed a formula with a circular reference.",
+            "AddNote" : "Add Note",
+            "EditNote" : "Edit Note",
+            "DeleteNote" : "Delete Note",
+            "Print" : "Print"
         }
     },
     "zh": {
@@ -2048,6 +2072,7 @@
             "ProtectContent": "保護鎖定單元格的內容",
             "ProtectAllowUser": "允許此工作表的所有用戶：",
             "EditAlert": "您嘗試更改的單元格受到保護。要進行更改，請取消保護工作表。",
+            "ReadonlyAlert" : "您正在嘗試修改處於唯讀模式的儲存格。若要進行更改，請停用唯讀狀態。",
             "ClearValidation": "清除驗證",
             "ISNUMBER": "當值解析為數值時返回 true。",
             "ROUND": "將數字四捨五入到指定的位數。",
@@ -2284,6 +2309,9 @@
             "Ratings": "收视率",
             "Material3": "材料 3",
             "Material3Dark": "材質 3 深色",
+            "Fluent2": "流利2",
+            "Fluent2Dark": "流暢 2 深色",
+            "Fluent2HighContrast": "Fluent 2 高對比度",
             "InvalidFormulaError": "我们发现您输入的公式无效。",
             "InvalidArguments" : "我们发现您输入的公式包含无效参数。",
             "EmptyExpression" : "我們發現您輸入的公式包含空表達式。",
@@ -2292,7 +2320,11 @@
             "WrongNumberOfArguments" : "我們發現您輸入的公式參數數量錯誤。",
             "Requires3Arguments": "我们发现您输入的公式需要 3 个参数。",
             "MismatchedStringQuotes" : "我们发现您输入的公式的引号不匹配。",
-            "FormulaCircularRef" : "我们发现您输入的公式带有循环引用。"
+            "FormulaCircularRef" : "我们发现您输入的公式带有循环引用。",
+            "AddNote" : "添加注释",
+            "EditNote" : "編輯譯註釋",
+            "DeleteNote" : "删除注释",
+            "Print" : "打印"
         }
     },
     "fr-CH": {
@@ -2622,6 +2654,7 @@
             "ProtectContent": "Protéger le contenu des cellules verrouillées",
             "ProtectAllowUser": "Autoriser tous les utilisateurs de cette feuille de calcul à :",
             "EditAlert": "La cellule que vous essayez de modifier est protégée. Pour rendre la monnaie, déprotégez la feuille.",
+            "ReadonlyAlert" : "Vous essayez de modifier une cellule qui est en mode lecture seule. Pour apporter des modifications, veuillez désactiver le statut de lecture seule.",
             "ClearValidation": "Effacer la validation",
             "ISNUMBER": "Renvoie true lorsque la valeur est analysée en tant que valeur numérique.",
             "ROUND": "Arrondit un nombre à un nombre de chiffres spécifié.",
@@ -2858,6 +2891,9 @@
             "Ratings": "Notes",
             "Material3": "Matériel 3",
             "Material3Dark": "Matériau 3 foncé",
+            "Fluent2": "Courant 2",
+            "Fluent2Dark": "Courant 2 Foncé",
+            "Fluent2HighContrast": "Fluent 2 contraste élevé",
             "InvalidFormulaError": "Nous avons constaté que vous avez saisi une formule non valide.",
             "InvalidArguments" : "Nous avons constaté que vous avez saisi une formule avec des arguments non valides.",
             "EmptyExpression" : "Nous avons constaté que vous avez tapé une formule avec une expression vide.",
@@ -2866,7 +2902,11 @@
             "WrongNumberOfArguments" : "Nous avons constaté que vous avez tapé une formule avec un mauvais nombre d'arguments.",
             "Requires3Arguments": "Nous avons constaté que vous avez tapé une formule qui nécessite 3 arguments.",
             "MismatchedStringQuotes" : "Nous avons constaté que vous aviez saisi une formule avec des guillemets incompatibles.",
-            "FormulaCircularRef" : "Nous avons constaté que vous aviez tapé une formule avec une référence circulaire."
+            "FormulaCircularRef" : "Nous avons constaté que vous aviez tapé une formule avec une référence circulaire.",
+            "AddNote" : "Ajouter une note",
+            "EditNote" : "Note éditée",
+            "DeleteNote" : "Supprimer la note",
+            "Print" : "Imprimer"
         }
     }
 }

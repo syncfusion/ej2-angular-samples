@@ -20,21 +20,21 @@
                 <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
                     <tr style="height: 50px">
                         <td style="width: 60%">
-                            <div>X Axis:</div>
+                            <div id="xAxis">X Axis:</div>
                         </td>
                         <td style="width: 40%;">
                             <div>
-                                <input type="checkbox" (change)='xChange($event)' id="xIndex" checked>
+                                <input type="checkbox" (change)='xChange($event)' id="xIndex" checked aria-labelledby="Checkbox checked">
                             </div>
                         </td>
                     </tr>
                     <tr style="height: 50px">
                         <td style="width: 60%">
-                            <div>Y Axis:</div>
+                            <div id="yAxis">Y Axis:</div>
                         </td>
                         <td style="width: 40%;">
                             <div>
-                                <input type="checkbox" (change)='yChange($event)' id="yIndex" checked>
+                                <input type="checkbox" (change)='yChange($event)' id="yIndex" checked aria-labelledby="Checkbox checked">
                             </div>
                         </td>
                     </tr>
@@ -58,8 +58,7 @@
     </p>
     <p>
         More information on the stripline recurrence can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/strip-line/#recurrence-stripline">documentation
-            section.
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/strip-line/#recurrence-stripline" aria-label="Navigate to the documentation for Recurrence Stripline in Angular Chart component">documentation section.
         </a>.
     </p>
 </div>

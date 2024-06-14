@@ -324,3 +324,23 @@
 .customToolbar .e-image-editor {
 	border: none !important;
 }
+
+.fluent2-dark .customToolbar .e-toolbar .e-toolbar-items.e-tbar-pos .e-toolbar-center,
+.fluent2 .customToolbar .e-toolbar .e-toolbar-items.e-tbar-pos .e-toolbar-center {
+	margin: 0 auto !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.fluent2 .customToolbar .e-toolbar {
+	border: 1px solid #80808054 !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.fluent2-dark .customToolbar .e-toolbar {
+	border: 1px solid #ffffff30 !important;
+}
+
+.fluent2 .customToolbar #top-toolbar .e-toolbar-center,
+.fluent2 .customToolbar #bottom-toolbar .e-toolbar-center,
+.fluent2-dark .customToolbar #top-toolbar .e-toolbar-center,
+.fluent2-dark .customToolbar #bottom-toolbar .e-toolbar-center{
+    margin: 0 4px !important;
+}

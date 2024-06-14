@@ -19,7 +19,7 @@
           <div class="template-wrap">
             <div class="specialist-category">
               <div *ngIf="getConsultantStatus(data)">
-                <img src="./assets/schedule/images/{{getConsultantImageName(data)}}.png" class="specialist-image" />
+                <img src="./assets/schedule/images/{{getConsultantImageName(data)}}.png" alt="{{getConsultantImageName(data)}}" class="specialist-image" />
               </div>
               <div class="specialist-name">{{getConsultantName(data)}}</div>
               <div class="specialist-designation">{{getConsultantDesignation(data)}}</div>

@@ -74,6 +74,7 @@ import { AdaptiveGroupingComponent } from './adaptive-grouping.component';
 import { RealTimeBindingComponent } from './realtime-binding.component';
 import { ReminderComponent } from './reminder.component';
 import { CustomMonthViewComponent } from './custom-month-view.component';
+import { ReactiveFormsComponent } from './reactive-forms.component';
 
 // tslint:disable:max-line-length
 export const scheduleRouteConfig: Record<string, any>[] = [
@@ -120,6 +121,7 @@ export const scheduleRouteConfig: Record<string, any>[] = [
   { path: ':theme/schedule/editor-validation', component: EditorValidationComponent, name: 'Field Validation', order: '09', category: 'Editor Window', description: 'This demo covers the Appointment field validation that adds default and custom validation rules to the editor fields of the Angular Scheduler.' },
   { path: ':theme/schedule/editor-custom-field', component: EditorCustomFieldComponent, name: 'Additional Fields', order: '09', category: 'Editor Window', description: 'This demo shows how to customize appointment editor (event window) with additional fields using pop-up open events in the Angular event calendar.' },
   { path: ':theme/schedule/editor-template', component: EditTempComponent, name: 'Editor Template', order: '09', category: 'Editor Window', description: 'This demo shows how to design custom appointment (event) editor windows by adding or removing fields from the Angular Scheduler appointment window.' },
+  { path: ':theme/schedule/reactive-forms', component: ReactiveFormsComponent, name: 'Reactive Forms', 'type': 'new', order: '09', category: 'Editor Window', description: 'This demo shows about CRUD operations in Scheduler using the Reactive Angular Forms.' },
   { path: ':theme/schedule/header-rows', component: HeaderRowsComponent, name: 'Header Rows ', order: '10', category: 'Customization', description: 'This demo shows how to include additional header rows like week number and month number on the timeline view in the Angular event calendar.' },
   { path: ':theme/schedule/time-scale', component: TimescaleComponent, name: 'Timescale', order: '10', category: 'Customization', description: 'This demo shows how to customize the default timescale with interval, show/hide gridlines, slots count, and template in Angular Scheduler.' },
   { path: ':theme/schedule/context-menu', component: ScheduleContextMenuComponent, name: 'Context Menu', order: '10', category: 'Customization', description: 'This example shows how to integrate the context menu within the Angular Scheduler and control the related functionalities using menu options.' },

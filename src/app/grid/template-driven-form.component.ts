@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { orderDetails } from './data';
-import { EditService, ToolbarService, PageService, DialogEditEventArgs, SaveEventArgs, GridModule, SortService } from '@syncfusion/ej2-angular-grids';
+import { EditService, ToolbarService, PageService, DialogEditEventArgs, SaveEventArgs, GridModule, SortService, FilterService } from '@syncfusion/ej2-angular-grids';
 import { DataUtil } from '@syncfusion/ej2-data';
 import { FormGroup, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -16,7 +16,7 @@ import { NgClass } from '@angular/common';
 @Component({
     selector: 'ej-gridedittemplate',
     templateUrl: 'template-driven-form.html',
-    providers: [ToolbarService, EditService, PageService, SortService],
+    providers: [ToolbarService, EditService, PageService, SortService, FilterService],
     standalone: true,
     imports: [GridModule, ReactiveFormsModule, FormsModule, NgClass, NumericTextBoxModule, DatePickerModule, DropDownListModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
@@ -25,6 +25,7 @@ export class TemplateDrivenFormComponent implements OnInit {
     public editSettings: Object;
     public toolbar: string[];
     public pageSettings: Object;
+    public filterSettings: Object;
     public shipCityDistinctData: Object[];
     public shipCountryDistinctData: Object[];
     public orderData: IOrderModel;
@@ -40,6 +41,7 @@ export class TemplateDrivenFormComponent implements OnInit {
         this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Normal' };
         this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
         this.pageSettings = { pageCount: 5};
+        this.filterSettings = { type: 'Excel'};
         this.shipCityDistinctData = DataUtil.distinct(orderDetails, 'ShipCity', true);
         this.shipCountryDistinctData = DataUtil.distinct(orderDetails, 'ShipCountry', true );
     }

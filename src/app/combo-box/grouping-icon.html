@@ -5,14 +5,14 @@
 <div class="control-section">
     <div class="content-wrapper">
         <div id='group' class='col-lg-6'>
-            <div class="content">
-                <h4>Grouping</h4>
+            <div class='drop-down-list-content'>
+                <label class="h4">Grouping</label>
                 <ejs-combobox id='vegetables' [dataSource]='vegetableData' [placeholder]='groupWaterMark' [fields]='groupFields' [popupHeight]='height'></ejs-combobox>
             </div>
         </div>
         <div id='icon' class='col-lg-6'>
-            <div class="content">
-                <h4> Icons</h4>
+            <div class='drop-down-list-content'>
+                <label class="h4"> Icons</label>
                 <ejs-combobox id='icons' [dataSource]='socialMediaData' [placeholder]='iconWaterMark' [fields]='iconFields' [popupHeight]='height'></ejs-combobox>
             </div>
         </div>
@@ -29,3 +29,10 @@
         <a href="http://ej2.syncfusion.com/angular/documentation/combo-box/grouping.html" target="_blank"> documentation section</a>.
     </p>
 </div>
+<style>
+    .drop-down-list-content .h4 {
+    font-size: 16px;
+    margin: 0 0 10px;
+    font-weight: bold;
+    }
+</style>

@@ -6,13 +6,13 @@
 <div class="col-lg-12 control-section">
     <div style="display: flex;">
         <div style="display: flex;">
-            <label for="checked" style="margin:0px 5px 0px 0px;font-size: 15px;"> Allow Taskbar Drag And Drop </label>
+            <label for="checked"  id ="drag"style="margin:0px 5px 0px 0px;font-size: 15px;"> Allow Taskbar Drag And Drop </label>
             <div>
             <ejs-switch id="checked" (change)="dragDropChange($event)"></ejs-switch>
         </div>
         </div>
         <div style="display: flex;">
-            <label for="unchecked" style="margin:0px 5px 0px 5px;font-size: 15px;"> Allow Taskbar Overlap </label>
+            <label  id ="drag" for="unchecked" style="margin:0px 5px 0px 5px;font-size: 15px; "> Allow Taskbar Overlap </label>
             <div>
             <ejs-switch id="unchecked" (change)="overlapChange($event)" [checked]="true"></ejs-switch>
            </div>
@@ -42,10 +42,7 @@
         <p><code>Group</code>: To map resource group.</p>
     <p style="font-weight: 500">Injecting module:</p>
     <p>
-        The Gantt control features are segregated into individual feature-wise modules. To use a selection, inject the
-        <code>Selection</code> module using the <code>Gantt.Inject(Selection)</code> method. To use markers, inject the
-        <code>DayMarkers</code> module using the <code>Gantt.Inject(DayMarkers)</code> method.
-        To edit,  inject the <code>Toolbar</code> module using the <code>Gantt.Inject(Toolbar)</code> method and <code>Edit</code> module
-        using the <code>Gantt.Inject(Edit)</code> method.
+        The Gantt control features are segregated into individual feature-wise modules. To use a selection, markers, toolbar and edit inject the
+        <code>SelectionService</code> , <code>DayMarkersService</code> , <code>ToolbarService</code> , <code>EditService</code> into the <code>&#64;NgModule.providers</code> section respectively.
     </p> 
 </div>

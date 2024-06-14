@@ -4,6 +4,7 @@ import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { DefaultDropDownListComponent } from './default.component';
 import { GroupAndIconDropDownListComponent } from './grouping-icon.component';
 import { DataBindingDropDownListComponent } from './data-binding.component';
+import { DisabledItemsDropDownListComponent } from './disabled-items.component';
 import { TemplateDropDownListComponent } from './template.component';
 import { CascadingDropDownListComponent } from './cascading.component';
 import { FilteringDropDownListComponent } from './filtering.component';
@@ -23,7 +24,9 @@ export const dropdownlistAppRoutes: Object[] = [
 		category: 'Dropdown List' },
     { path: ':theme/drop-down-list/data-binding', component: DataBindingDropDownListComponent, name: 'Data Binding', description: 'This example demonstrates how to bind with local data source and fetch data from remote data service in the Angular drop-down list component.', order: '01',
 		category: 'Dropdown List' },
-    { path: ':theme/drop-down-list/object-value-binding', component: ObjectDropDownListComponent, name: 'Object Value Binding', type : 'new', description: 'This example demonstrates how to bind with data source in the Angular drop-down list component.', order: '01',
+    { path: ':theme/drop-down-list/object-value-binding', component: ObjectDropDownListComponent, name: 'Object Value Binding', description: 'This example demonstrates how to bind with data source in the Angular drop-down list component.', order: '01',
+		category: 'Dropdown List' },
+    { path: ':theme/drop-down-list/disabled-items', component: DisabledItemsDropDownListComponent, name: 'Disabled Items', type : 'new', description: 'This example showcases the disabled items of Angular drop-down list component.', order: '01',
 		category: 'Dropdown List' },
     { path: ':theme/drop-down-list/template', component: TemplateDropDownListComponent, name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular drop-down list component pop-up list using the template.', order: '01',
 		category: 'Dropdown List' },

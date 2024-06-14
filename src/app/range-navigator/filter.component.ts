@@ -34,7 +34,7 @@ export class FilterComponent {
 
     public width: string = Browser.isDevice ? '100%' : '80%';
 
-    public theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
+    public theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
 
     public value: object = [new Date(1992, 5, 1), new Date(1993, 4, 1)];
 

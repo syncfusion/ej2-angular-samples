@@ -1,0 +1,108 @@
+<div class="control-section">
+  <ejs-schedule width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
+    [showQuickInfo]="false" (popupOpen)="onPopupOpen($event)" (popupClose)="onPopupClose($event)"
+    (eventRendered)="onEventRendered($event)">
+    <e-views>
+      <e-view option="Day"></e-view>
+      <e-view option="Week"></e-view>
+      <e-view option="WorkWeek"></e-view>
+      <e-view option="Month"></e-view>
+    </e-views>
+    <ng-template #editorTemplate let-data>
+      <div [formGroup]="appointmentForm">
+        <div class="editor-titles">
+          <div>
+            <ejs-textbox placeholder="Title" formControlName="Subject" floatLabelType="Always"></ejs-textbox>
+          </div>
+          <div class="e-error" *ngIf="Subject?.invalid && (Subject?.dirty || Subject?.touched)">
+            @if (Subject?.errors?.['required']) {
+            <span>Title is required</span>
+            } @else if (Subject?.errors?.['minlength']) {
+            <span>Title must be at least 8 characters long</span>
+            }
+          </div>
+        </div>
+
+        <div class="editor-titles">
+
+          <div class="e-float-input e-btn-group e-button" id="type" style="width:auto;">
+            <input type="radio" id="meeting" formControlName="Type" value="meeting" />
+            <label class="e-btn" for="meeting">Meeting</label>
+            <input type="radio" id="task" formControlName="Type" value="task" />
+            <label class="e-btn" for="task">Task</label>
+            <input type="radio" id="timeoff" formControlName="Type" value="timeoff" />
+            <label class="e-btn" for="timeoff">Timeoff</label>
+            <span class="e-float-line"></span>
+            <label class="e-float-text e-label-top" for="type">Type</label>
+          </div>
+        </div>
+
+        <div class="editor-titles">
+          <div>
+            <ejs-datetimepicker formControlName="StartTime" placeholder="From" [floatLabelType]="'Always'">
+            </ejs-datetimepicker>
+            <div class="e-error" *ngIf="StartTime?.invalid &&
+                        (StartTime?.dirty || StartTime?.touched)">
+              @if (StartTime?.errors?.['required']) {
+              <span>StartTime is required</span>
+              }
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-titles">
+          <div>
+            <ejs-datetimepicker formControlName="EndTime" placeholder="To" [floatLabelType]="'Always'">
+            </ejs-datetimepicker>
+            <div class="e-error" *ngIf="
+                          EndTime?.invalid && (EndTime?.dirty || EndTime?.touched)
+                        ">
+              @if (EndTime?.errors?.['required']) {
+              <span>EndTime is required</span>
+              }
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-titles">
+          <div class="e-float-input e-control-wrapper e-input-group">
+            <textarea id="Description" class="e-input" formControlName="Description" rows="3" minlength="20"></textarea>
+            <label class="e-float-text e-label-top">Description</label>
+          </div>
+          <div class="e-error" *ngIf="
+                                  Description?.invalid &&
+                                  (Description?.dirty || Description?.touched)
+                                ">
+            @if (Description?.errors?.['required']) {
+            <span>Description is required</span>
+            } @else if (Description?.errors?.['minlength']) {
+            <span>Description must be at least 20 characters long</span>
+            }
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ejs-schedule>
+</div>
+
+<div id="action-description">
+  <p>
+    This sample showcases the reactive form integration in the Scheduler component. Any updates made within the
+    Scheduler's editor window will be automatically synchronized with the form model, ensuring that the data remains
+    consistent across the user interface and the underlying form structure.
+  </p>
+</div>
+
+<div id="description">
+  <p>
+    This demo highlights how Angular Reactive Forms are integrated with the Scheduler's event window for adding or editing
+    appointments. Using the <code>editorTemplate</code> API, which is an <code>ng-template</code>, we enable precise
+    control over the layout and functionality of the event window.
+  </p>
+  <p>
+    Each field in the Editor window is linked to the form model through the <code>formControlName</code> attribute,
+    allowing for real-time tracking of field values and validation statuses. These fields are part of a larger
+    collection managed by the <code>formGroup</code> attribute, ensuring that all data within the event window is
+    cohesively managed as a unit within the form's structure.
+  </p>
+</div>

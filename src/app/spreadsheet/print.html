@@ -1,0 +1,487 @@
+<!-- custom code start -->
+<div id="action-description">
+    <p>
+        This sample demonstrates the print functionality of the Spreadsheet within a car sales scenario as an example.
+    </p>
+</div>
+<!-- custom code end -->
+<div class="col-lg-8 control-section">
+    <ejs-spreadsheet #default [openUrl]="openUrl" [saveUrl]="saveUrl" (created)="created()">
+        <e-sheets>
+            <e-sheet name="Car Sales">
+                <e-ranges>
+                    <e-range [dataSource]="printData" startCell="A2"></e-range>
+                </e-ranges>
+                <e-rows>
+                    <e-row [index]="0" [height]="51">
+                        <e-cells>
+                            <e-cell [image]="image"></e-cell>
+                            <e-cell value="          Ivaa Premium Cars" colSpan="5"
+                                [style]="{fontSize: '30pt', fontWeight: 'bold',textAlign: 'left'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row index="1" [height]="45">
+                        <e-cells>
+                            <e-cell
+                                [style]="{fontSize: '13pt', fontWeight: 'bold', textAlign: 'center', verticalAlign:'middle', backgroundColor:'#919aff', color:'#ffffff'}"></e-cell>
+                            <e-cell
+                                [style]="{fontSize: '13pt', fontWeight: 'bold', textAlign: 'center', verticalAlign:'middle', backgroundColor:'#919aff', color:'#ffffff'}"></e-cell>
+                            <e-cell
+                                [style]="{fontSize: '13pt', fontWeight: 'bold', textAlign: 'center', verticalAlign:'middle', backgroundColor:'#919aff', color:'#ffffff'}"></e-cell>
+                            <e-cell wrap="true"
+                                [style]="{fontSize: '13pt', fontWeight: 'bold', textAlign: 'center', verticalAlign:'middle', backgroundColor:'#919aff', color:'#ffffff'}"></e-cell>
+                            <e-cell wrap="true"
+                                [style]="{fontSize: '13pt', fontWeight: 'bold', textAlign: 'center', verticalAlign:'middle', backgroundColor:'#919aff', color:'#ffffff'}"></e-cell>
+                            <e-cell
+                                [style]="{fontSize: '13pt', fontWeight: 'bold', textAlign: 'center', verticalAlign:'middle', backgroundColor:'#919aff', color:'#ffffff'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="sarah.johnson@example.com"></e-cell>
+                            <e-cell index="7" [chart]="chart"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="michael.smith@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="emily.davis@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="john.anderson@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="jessica.martinez@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="daniel.thompson@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="samantha.harris@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="christopher.wilson@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="ashley.brown@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="matthew.taylor@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="olivia.garcia@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="david.hernandez@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="emma.moore@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="andrew.lewis@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="elizabeth.clark@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="james.walker@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="ava.rodriguez@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="ryan.white@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="madison.lee@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="nicholas.martin@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="sophia.hall@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="joshua.young@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="isabella.king@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="joseph.allen@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="charlotte.scott@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="william.green@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="amelia.adams@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="ethan.carter@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="mia.turner@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="alexander.baker@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="chloe.hill@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="benjamin.nelson@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="grace.mitchell@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="jacob.perez@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="avery.roberts@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="ethan.thomas@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="lily.phillips@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="samuel.davis@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="zoey.campbell@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="daniel.cooper@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="madeline.collins@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="nathan.edwards@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="evelyn.stewart@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="alexander.rivera@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="sophia.henderson@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="isaac.morris@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="claire.rogers@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="luke.flores@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="aubrey.long@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="julian.coleman@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="leah.reed@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="gabriel.bell@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="natalie.ward@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="lucas.brooks@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="hailey.mitchell@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell index="1" hyperlink="jackson.ward@example.com"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row index="58" [height]="25">
+                        <e-cells>
+                            <e-cell index="4" value="Total Amount" [style]="{fontWeight: 'bold', textAlign: 'center', border: '1px solid #A6A6A6', verticalAlign: 'middle'}"></e-cell>
+                            <e-cell index="5" formula="=Sum(F3:F56)"
+                                [style]="{fontWeight: 'bold', textAlign: 'right', border: '1px solid #A6A6A6', verticalAlign: 'middle'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+
+                </e-rows>
+                <e-columns>
+                    <e-column [width]=125></e-column>
+                    <e-column [width]=205></e-column>
+                    <e-column [width]=115></e-column>
+                    <e-column [width]=50></e-column>
+                    <e-column [width]=90></e-column>
+                    <e-column [width]=80></e-column>
+                    <e-column [width]=20></e-column>
+                </e-columns>
+            </e-sheet>
+            <e-sheet name="Yearly Report">
+                <e-ranges>
+                    <e-range [dataSource]="yearlyReport" startCell="A2"></e-range>
+                </e-ranges>
+                <e-rows>
+                    <e-row [index]="0" [height]="51">
+                        <e-cells>
+                            <e-cell [image]="yearlyReportImage"></e-cell>
+                            <e-cell value="       Ivaa Premium Cars" colSpan="6"
+                                [style]="{fontSize: '30pt', fontWeight: 'bold',textAlign: 'left'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row [index]="1" [height]="23">
+                        <e-cells>
+                            <e-cell
+                                [style]="{fontSize: '13pt', fontWeight: 'bold',textAlign: 'center', backgroundColor: '#919aff', verticalAlign: 'middle', color: '#ffffff'}"></e-cell>
+                            <e-cell
+                                [style]="{fontSize: '13pt', fontWeight: 'bold',textAlign: 'center', backgroundColor: '#919aff', verticalAlign: 'middle', color: '#ffffff'}"></e-cell>
+                            <e-cell
+                                [style]="{fontSize: '13pt', fontWeight: 'bold',textAlign: 'center', backgroundColor: '#919aff', verticalAlign: 'middle', color: '#ffffff'}"></e-cell>
+                            <e-cell
+                                [style]="{fontSize: '13pt', fontWeight: 'bold',textAlign: 'center', backgroundColor: '#919aff', verticalAlign: 'middle', color: '#ffffff'}"></e-cell>
+                            <e-cell
+                                [style]="{fontSize: '13pt', fontWeight: 'bold',textAlign: 'center', backgroundColor: '#919aff', verticalAlign: 'middle', color: '#ffffff'}"></e-cell>
+                            <e-cell
+                                [style]="{fontSize: '13pt', fontWeight: 'bold',textAlign: 'center', backgroundColor: '#919aff', verticalAlign: 'middle', color: '#ffffff'}"></e-cell>
+                            <e-cell
+                                [style]="{fontSize: '13pt', fontWeight: 'bold',textAlign: 'center', backgroundColor: '#919aff', verticalAlign: 'middle', color: '#ffffff'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row [index]="31" [height]="25">
+                        <e-cells>
+                            <e-cell value="Total cars sold"
+                                [style]="{ fontWeight: 'bold',textAlign: 'left', border: '1px solid #A6A6A6', verticalAlign: 'middle'}"></e-cell>
+                            <e-cell formula="=Sum(B3:B31)"
+                                [style]="{ fontWeight: 'bold',textAlign: 'right', border: '1px solid #A6A6A6', verticalAlign: 'middle'}"></e-cell>
+                            <e-cell formula="=Sum(C3:C31)"
+                                [style]="{ fontWeight: 'bold',textAlign: 'right', border: '1px solid #A6A6A6', verticalAlign: 'middle'}"></e-cell>
+                            <e-cell formula="=Sum(D3:D31)"
+                                [style]="{ fontWeight: 'bold',textAlign: 'right', border: '1px solid #A6A6A6', verticalAlign: 'middle'}"></e-cell>
+                            <e-cell formula="=Sum(E3:E31)"
+                                [style]="{ fontWeight: 'bold',textAlign: 'right', border: '1px solid #A6A6A6', verticalAlign: 'middle'}"></e-cell>
+                            <e-cell formula="=Sum(F3:F31)"
+                                [style]="{ fontWeight: 'bold',textAlign: 'right', border: '1px solid #A6A6A6', verticalAlign: 'middle'}"></e-cell>
+                            <e-cell formula="=Sum(G3:G31)"
+                                [style]="{ fontWeight: 'bold',textAlign: 'right', border: '1px solid #A6A6A6', verticalAlign: 'middle'}"></e-cell>
+                        </e-cells>
+                    </e-row>
+                </e-rows>
+                <e-columns>
+                    <e-column [width]=120></e-column>
+                    <e-column [width]=80></e-column>
+                    <e-column [width]=80></e-column>
+                    <e-column [width]=80></e-column>
+                    <e-column [width]=80></e-column>
+                    <e-column [width]=80></e-column>
+                    <e-column [width]=80></e-column>
+                </e-columns>
+            </e-sheet>
+        </e-sheets>
+    </ejs-spreadsheet>
+</div>
+<div class="col-lg-4 property-section">
+    <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+            <table id="property" title="Properties" style="width: 100%">
+                <colgroup>
+                    <col span="1" style="width: 50%;">
+                    <col span="1" style="width: 50%;">
+                </colgroup>
+                <tr style="height: 50px">
+                    <td>
+                        <div class="property-text" style="font-size: 14px; padding: 0px;">Print type </div>
+                    </td>
+                    <td style="padding-left: 10px">
+                        <select name="selectIndex" autocomplete="off" id="printingOption" style="width:60%;">
+                            <option value="ActiveSheet" selected>Active Sheet</option>
+                            <option value="Workbook">Workbook</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <table id="property" title="Properties" style="width: 100%">
+                <colgroup>
+                    <col span="1" style="width: 50%;">
+                    <col span="1" style="width: 50%;">
+                </colgroup>
+                <tr style="height: 50px;">
+                    <td>
+                        <div class="property-text" style="font-size: 14px; padding: 0px;">Enable row and column headers
+                        </div>
+                    </td>
+                    <td>
+                        <div style="padding-left: 10px">
+                            <input type="checkbox" id="header" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table id="property" title="Properties" style="width: 100%">
+                <colgroup>
+                    <col span="1" style="width: 50%;">
+                    <col span="1" style="width: 50%;">
+                </colgroup>
+                <tr style="height: 50px">
+                    <td>
+                        <div class="property-text" style="font-size: 14px; padding: 0px;">Enable gridlines</div>
+                    </td>
+                    <td>
+                        <div style="padding-left: 10px">
+                            <input type="checkbox" id="gridline" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table id="property" title="Properties" style="width: 100%">
+                <tr id="button-control" style="height: 50px">
+                    <td align="center">
+                        <div>
+                            <button id="printbtn" style="text-transform:none !important;width: 80px;">Print</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- custom code start -->
+<div id="description">
+    <p>
+        In this example, the spreadsheet's <b>"File"</b> menu features a <b>"Print"</b> option, allowing you to print the
+        current worksheet without gridlines as well as row and column headers, which serves as the default print
+        setting.
+        You can also invoke the print option using the <kbd>Ctrl</kbd> + <kbd>P</kbd> keyboard shortcut. Any texts,
+        charts, images, and formatted content incorporated into the document will be previewed and then printed.
+    </p>
+    <p>
+        Furthermore, there are built-in customization options available. If you need to print either the current
+        worksheet or the entire workbook, you can select the appropriate option from the <b>"Print type"</b> dropdown list
+        in the property panel.
+        To include row and column headers in the printed output, you can check the <b>"Enable row and column headers"</b>
+        checkbox. Similarly, you can include gridlines in the printed output by checking the <b>"Enable gridlines"</b>
+        checkbox.
+        Upon selecting the desired options in the property panel and clicking the <b>"Print"</b> button, the
+        <code>print</code> method of the spreadsheet is invoked, facilitating customized printing.
+    </p>
+</div>
+<!-- custom code end -->

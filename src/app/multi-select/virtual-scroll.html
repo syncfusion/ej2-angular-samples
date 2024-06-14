@@ -4,23 +4,23 @@
 
 <div class="control-section col-lg-8">
     <div class="control-wrapper">
-      <h4>Local Data</h4>
+      <label class="h4">Local Data</label>
       <ejs-multiselect id='local' #local [dataSource]='records' [mode]='box' [fields]='fields' [allowFiltering]='true' [hideSelectedItem] ='true' [closePopupOnSelect]='true' [allowCustomValue]="true" [enableVirtualization]='true' [placeholder]='waterMark' [showDropDownIcon]='true' popupHeight='200px'></ejs-multiselect>
     </div>
     <div class="control-wrapper">
-      <h4>Remote Data</h4>
+      <label class="h4">Remote Data</label>
       <ejs-multiselect id='remote' #remote [dataSource]='customerData' [mode]='delimiter' [fields]='customerField' [allowFiltering]='true' [hideSelectedItem] ='true' [closePopupOnSelect]='true' [allowCustomValue]="true" [enableVirtualization]='true' [placeholder]='customerWaterMark' [showDropDownIcon]='true' popupHeight='200px'></ejs-multiselect>
     </div>
     <div class="control-wrapper">
-      <h4>Default Values</h4>
-      <ejs-multiselect id='default' #default [dataSource]='customerData' [value]='value' [mode]='defaultMode' [fields]='customerField' [allowFiltering]='true' [hideSelectedItem] ='true' [closePopupOnSelect]='true' [allowCustomValue]="true" [enableVirtualization]='true' [placeholder]='customerWaterMark' [showDropDownIcon]='true' popupHeight='200px'></ejs-multiselect>
+      <label class="h4">Default Values</label>
+      <ejs-multiselect id='default' #default [dataSource]='records' [value]='value' [mode]='defaultMode' [fields]='fields' [allowFiltering]='true' [hideSelectedItem] ='true' [closePopupOnSelect]='true' [allowCustomValue]="true" [enableVirtualization]='true' [placeholder]='waterMark' [showDropDownIcon]='true' popupHeight='200px'></ejs-multiselect>
     </div>
     <div class="control-wrapper">
-      <h4>Grouping</h4>
+      <label class="h4">Grouping</label>
       <ejs-multiselect id='group' #group [dataSource]='records' [mode]='checkBox' [fields]='groupField' [allowFiltering]='true' [allowCustomValue]="true" [enableSelectionOrder]='false' [enableVirtualization]='true' [placeholder]='waterMark' [showDropDownIcon]='true' popupHeight='200px'></ejs-multiselect>
     </div>
     <div class="control-wrapper">
-      <h4>Template</h4>
+      <label class="h4">Template</label>
       <ejs-multiselect id='template' #template [dataSource]='records' [mode]='defaultMode' [fields]='fields' [allowFiltering]='true' [hideSelectedItem] ='true' [closePopupOnSelect]='true' [allowCustomValue]="true" [enableVirtualization]='true' [placeholder]='waterMark' [showDropDownIcon]='true' popupHeight='200px'>
         <ng-template #headerTemplate>
           <div class="header"><span style="margin-left:17px">Items Info</span></div>
@@ -82,3 +82,11 @@
     <p>To perform the virtualization feature in DropDownList, the <code>VirtualSCroll</code> module
         have to be injected in the application end.</p>
 </div>
+<style>
+  .control-wrapper .h4 {
+      font-size: 16px;
+      margin: 0 0 10px;
+      font-weight: bold;
+  }
+
+</style>

@@ -129,6 +129,24 @@
     padding: 0 16px;
 }
 
+.fluent2 #sidelistwrapper #listToolbar,
+.fluent2-dark #sidelistwrapper #listToolbar,
+.fluent2-highcontrast #sidelistwrapper #listToolbar {
+    border-width: 1px;
+}
+
+.fluent2 #sidelistwrapper #listSidebarList,
+.fluent2-dark #sidelistwrapper #listSidebarList,
+.fluent2-highcontrast #sidelistwrapper #listSidebarList {
+    border: 0;
+}
+
+.fluent2 .e-template-list .e-list-item,
+.fluent2-dark .e-template-list .e-list-item,
+.fluent2-highcontrast .e-template-list .e-list-item {
+    padding: 4px 16px;
+}
+
 .list-wrapper {
     display: inline-flex;
     width: 100%;

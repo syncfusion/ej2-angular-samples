@@ -35,6 +35,7 @@ import { CircularGaugeSampleModule } from '../circular-gauge/circular-gauge.modu
 import { LinearGaugeSampleModule } from '../linear-gauge/linear-gauge.module';
 import { MaskedTextBoxSampleModule } from '../maskedtextbox/maskedtextbox.module';
 import { MultiSelectSampleModule } from '../multi-select/multi-select.module';
+import { MultiColumnComboBoxSampleModule } from '../multicolumn-combobox/multicolumn-combobox.module';
 import { MenuModule } from '../context-menu/context-menu.module';
 import { MenuSampleModule } from '../menu/menu.module';
 import { TabSampleModule } from '../tab/tab.module';
@@ -78,6 +79,7 @@ import { FloatingActionButtonSampleModule } from "../floating-action-button/floa
 import { SpeedDialSampleModule } from "../speed-dial/speed-dial.module";
 import { SkeletonSampleModule } from "../skeleton/skeleton.module";
 import { RatingSampleModule } from "../rating/rating.module";
+import { OtpInputSampleModule } from '../otp-input/otp-input.module';
 import { RibbonSampleModule } from "../ribbon/ribbon.module";
 import { StepperSampleModule } from '../stepper/stepper.module';
 import { ThreeDimensionChartSampleModule } from '../three-dimension-chart/three-dimension-chart.module';
@@ -155,6 +157,8 @@ const appRoutes: any = [
     { path: 'list-box', loadChildren: import('../list-box/list-box.module').then(m=>m.ListBoxSampleModule) },
     { path: ':theme/list-box/:sample', redirectTo: 'material/list-box/default' },
     { path: 'mention', loadChildren: import('../mention/mention.module').then(m=>m.MentionSampleModule) },
+    { path: 'multicolumn-combobox', loadChildren: import('../multicolumn-combobox/multicolumn-combobox.module').then(m=>m.MultiColumnComboBoxSampleModule) },
+    { path: ':theme/multicolumn-combobox/:sample', redirectTo: 'material/multicolumn-combobox/default' },
     // Navigation
     { path: ':theme/accordion/:sample', redirectTo: 'material/accordion/default' },
     { path: 'appbar', loadChildren: import('../appbar/appbar.module').then(m=>m.AppBarSampleModule) },
@@ -196,6 +200,8 @@ const appRoutes: any = [
     { path: 'signature', loadChildren: import('../signature/signature.module').then(m=>m.SignatureSampleModule) },
     { path: 'inplace-editor', loadChildren: import('../inplace-editor/inplace-editor.module').then(m=>m.InplaceEditorSampleModule) },
     { path: 'rating', loadChildren: import('../rating/rating.module').then(m=>m.RatingSampleModule) },
+    { path: 'otp-input', loadChildren: import('../otp-input/otp-input.module').then(m=>m.OtpInputSampleModule) },
+    { path: ':theme/otp-input/:sample', redirectTo: 'material/otp-input/default' },
     // layouts
     { path: ':theme/avatar/:sample', redirectTo: 'material/avatar/default' },
     { path: ':theme/card/:sample', redirectTo: 'material/card/default' },
@@ -254,6 +260,7 @@ const appRoutes: any = [
         MultiSelectSampleModule,
         ListBoxSampleModule,
         MentionSampleModule,
+        MultiColumnComboBoxSampleModule,
         // calendars
         ScheduleSampleModule,
         GanttSampleModule,
@@ -291,6 +298,7 @@ const appRoutes: any = [
         UploaderSampleModule,
         ColorPickerSampleModule,
         RatingSampleModule,
+        OtpInputSampleModule,
         // layouts
         AvatarSampleModule,
         CardSampleModule,

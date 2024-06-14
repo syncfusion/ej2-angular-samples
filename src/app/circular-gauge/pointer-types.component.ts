@@ -27,6 +27,7 @@ export class PointersComponent {
 
     public labelStyleRangeBar: Object = {
         position: 'Outside',
+        format: '$ {value}',
         font: { size: '0px' }
     };
 
@@ -54,6 +55,7 @@ export class PointersComponent {
         radius: '100%',
         value: 80,
         type: 'Marker',
+        description: 'Marker pointer value : 80',
         markerShape: 'InvertedTriangle',
         markerWidth: 15,
         markerHeight: 15,
@@ -64,6 +66,7 @@ export class PointersComponent {
     public pointerCustomized: Object[] = [{
         animation: { enable: true, duration: 1000 },
         value: 80,
+        description: 'Needle pointer value : 80',
         radius: '80%',
         color: 'green',
         pointerWidth: 2,
@@ -80,6 +83,7 @@ export class PointersComponent {
 
     public pointerNeedle: Object[] = [{
         radius: '100%',
+        description: 'Needle pointer value: 80',
         animation: { enable: true, duration: 900 },
         value: 80,
         color: '#923C99',
@@ -91,6 +95,7 @@ export class PointersComponent {
 
     public pointerUpdate: Object[] = [{
         radius: '100%',
+        description: 'Needle pointer value: 40',
         animation: { enable: false, duration: 100 },
         value: 40,
         color: '#067bc2',
@@ -98,6 +103,7 @@ export class PointersComponent {
         cap: { radius: 0 },
         needleTail: { length: '4%', color: '#067bc2' }
     }, {
+        description: 'RangeBar pointer value: 40',
         radius: '100%',
         type: 'RangeBar',
         animation: { enable: false, duration: 100 },
@@ -129,6 +135,7 @@ export class PointersComponent {
         }
     }, {
         radius: '60%', value: 40,
+        description: 'Needle pointer value :40',
         markerWidth: 5, markerHeight: 5,
         animation: { enable: true, duration: 1000 },
         color: '#ffb133',
@@ -152,6 +159,7 @@ export class PointersComponent {
     };
 
     public labelStyleMarker: Object = {
+        format:'{value}%',
         position: 'Outside',
         font: { size: '0px' }
     };
@@ -163,6 +171,7 @@ export class PointersComponent {
 
     public labelStyleCustomized: Object = {
         position: 'Outside',
+        format:'${value}',
         font: { size: '0px', color: '#1E7145' }
     };
 
@@ -173,6 +182,7 @@ export class PointersComponent {
 
     public labelStyleMultiple: Object = {
         position: 'Outside',
+        format:'{value} s',
         font: { size: '0px', color: '#e3a21a' }
     };
 
@@ -183,6 +193,7 @@ export class PointersComponent {
 
     public labelStyleNeedle: Object = {
         position: 'Outside',
+        format: '{value}',
         font: { size: '0px', color: '#9250e6' }
     };
 
@@ -192,6 +203,7 @@ export class PointersComponent {
 
     public labelStyleUpdate: Object = {
         position: 'Outside',
+        format:'{value} seconds',
         font: { size: '0px', color: '#067bc2' }
     };
 

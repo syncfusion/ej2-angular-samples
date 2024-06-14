@@ -48,14 +48,14 @@ export class ProgressBarRadiusComponent {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.progressBar.theme = <ProgressTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
+            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
     }
     public load1(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
         args.progressBar.progressColor = '#FFFFFF';
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.progressBar.theme = <ProgressTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
+            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
         switch (selectedTheme) {
             case 'material':
                 args.progressBar.trackColor = '#f8c2d4';
@@ -107,6 +107,14 @@ export class ProgressBarRadiusComponent {
                 args.progressBar.progressColor = '#D0BCFF';
                 args.progressBar.annotations[0].content = '<div id="point1" style="font-size:24px;font-weight:bold;color:#D0BCFF"><span></span></div>';
                 break; 
+            case 'fluent2':
+                args.progressBar.progressColor = '#0F6CBD';
+                args.progressBar.annotations[0].content = '<div id="point1" style="font-size:24px;font-weight:bold;color:#0F6CBD"><span></span></div>';
+                break;
+            case 'fluent2-dark':
+                args.progressBar.progressColor = '#115EA3';
+                args.progressBar.annotations[0].content = '<div id="point1" style="font-size:24px;font-weight:bold;color:#115EA3"><span></span></div>';
+                break;
             default :
                 args.progressBar.progressColor = '#D0BCFF';
                 args.progressBar.annotations[0].content = '<div id="point1" style="font-size:24px;font-weight:bold;color:#D0BCFF"><span></span></div>';

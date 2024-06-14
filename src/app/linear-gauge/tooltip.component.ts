@@ -34,7 +34,8 @@ export class TooltipComponent {
             minimum: 0,
             maximum: 10,
             line: {
-                offset: 140
+                offset: 140,
+                color: '#a6a6a6'
             },
             majorTicks: {
                 interval: 1, height: 20, color: '#9E9E9E'
@@ -56,6 +57,7 @@ export class TooltipComponent {
             maximum: 25,
             line: {
                 offset: -140,
+                color: '#a6a6a6'
             },
             majorTicks: {
                 interval: 1, height: 20, color: '#9E9E9E'

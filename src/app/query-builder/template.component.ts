@@ -15,7 +15,6 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 import { TooltipModule } from '@syncfusion/ej2-angular-popups';
 import { TabAllModule } from '@syncfusion/ej2-angular-navigations';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
-import { GridModule } from '@syncfusion/ej2-angular-grids';
 import { getCELQuery, getSpELQuery } from './util';
 declare let hljs: any;
 @Component({
@@ -24,7 +23,7 @@ declare let hljs: any;
     styleUrls: ['template.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [SBActionDescriptionComponent, QueryBuilderModule, GridModule, DropDownButtonModule, TabAllModule, TooltipModule, QueryBuilderModule, SBDescriptionComponent]
+    imports: [SBActionDescriptionComponent, QueryBuilderModule, DropDownButtonModule, TabAllModule, TooltipModule, QueryBuilderModule, SBDescriptionComponent]
 })
 
 export class TemplateQueryBuilderComponent {

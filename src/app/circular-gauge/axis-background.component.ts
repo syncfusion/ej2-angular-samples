@@ -23,6 +23,7 @@ export class AxisBackGroundComponent {
     };
 
     public labelStyle: Object = {
+        format:'{value} %',
         font: {
             size: '0px'
         }
@@ -65,6 +66,7 @@ export class AxisBackGroundComponent {
                 minorTicks: { height: 10, interval: 6 }, minimum: 0, maximum: 360,
                 pointers: [{
                     value: 90,
+                    description:'Marker pointer value : 90',
                     radius: '45%', markerWidth: 12, markerHeight: 12,
                     type: 'Marker', markerShape: 'Triangle', color: 'Orange',
                     animation: { enable: true, duration: 500 }

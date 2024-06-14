@@ -65,8 +65,8 @@ export class GanttTooltipTemplateComponent implements OnInit {
         this.tooltipSettings =  {
             showTooltip: true
         },
-        this.projectStartDate = new Date('03/24/2019');
-        this.projectEndDate = new Date('05/04/2019');
+        this.projectStartDate = new Date('03/24/2024');
+        this.projectEndDate = new Date('05/04/2024');
     }
     public format(value: Date): string {
         return instance.formatDate(value, { format: 'MM/dd/yyyy' });

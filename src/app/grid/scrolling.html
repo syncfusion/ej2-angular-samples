@@ -3,17 +3,17 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid #grid [dataSource]='data' height='400' [allowSorting]='true'>
+    <ejs-grid #grid [dataSource]='data' height='400' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbarSettings'>
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='150' textAlign='Right'></e-column>
-            <e-column field='CustomerName' headerText='Customer Name' width='160'></e-column>
-            <e-column field='OrderDate' headerText='Order Date' format="yMd" width='155' textAlign='Right'></e-column>
-            <e-column field='Freight' headerText='Freight' width='130' format='C2' textAlign='Right'></e-column>
-            <e-column field='ShippedDate' headerText='Shipped Date' format="yMd" width='155' textAlign='Right'></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='150' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
+            <e-column field='CustomerName' headerText='Customer Name' width='160' [validationRules]='customeridrules'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' format="yMd" width='155' textAlign='Right' editType='datepickeredit'></e-column>
+            <e-column field='Freight' headerText='Freight' width='130' format='C2' textAlign='Right' editType='numericedit' [validationRules]='freightrules'></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' format="yMd" width='155' textAlign='Right' editType='datepickeredit'></e-column>
             <e-column field='ShipName' headerText='Ship Name' width='170'></e-column>
             <e-column field='ShipAddress' headerText='Ship Address' width='170'></e-column>
             <e-column field='ShipCity' headerText='Ship City' width='150'></e-column>
-            <e-column field='ShipCountry' headerText='Ship Country' width='150'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='150' editType='dropdownedit'></e-column>
         </e-columns>
     </ejs-grid>
     <div id="description">

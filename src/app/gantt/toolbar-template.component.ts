@@ -51,8 +51,8 @@ export class GanttToolbarTemplateComponent implements OnInit {
         this.splitterSettings = {
             columnIndex: 2
         };
-        this.projectStartDate = new Date('03/24/2019');
-        this.projectEndDate = new Date('07/06/2019');
+        this.projectStartDate = new Date('03/24/2024');
+        this.projectEndDate = new Date('07/06/2024');
     }
     public toolbarClick(args: ClickEventArgs): void {
         if (args.item.text === 'Quick Filter') {

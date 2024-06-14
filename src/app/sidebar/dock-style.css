@@ -25,52 +25,83 @@
 
 .dockSidebar .e-listview .e-list-icon.sb-icons {
     margin: 0;
+    width: 24px;
 }
 
 .material3 .dockSidebar .e-listview .e-list-icon.sb-icons,
 .material3-dark .dockSidebar .e-listview .e-list-icon.sb-icons {
-    width: 24px;
     margin-right: 12px;
 }
 
+.fluent2 .dockSidebar .e-listview .e-list-icon.sb-icons,
+.fluent2-dark .dockSidebar .e-listview .e-list-icon.sb-icons,
+.fluent2-highcontrast .dockSidebar .e-listview .e-list-icon.sb-icons {
+    padding: 3px;
+}
+
+.fluent2 .dockSidebar.e-close .e-listview .e-list-icon.sb-icons,
+.fluent2-dark .dockSidebar.e-close .e-listview .e-list-icon.sb-icons,
+.fluent2-highcontrast .dockSidebar.e-close .e-listview .e-list-icon.sb-icons {
+    padding: 6px;
+    margin-left: 6px;
+}
+
+.fluent2 .dockSidebar.e-close .e-listview .e-list-text,
+.fluent2-dark .dockSidebar.e-close .e-listview .e-list-text,
+.fluent2-highcontrast .dockSidebar.e-close .e-listview .e-list-text {
+    padding: 0;
+}
+
+.bootstrap4 .dockSidebar .e-listview .e-list-icon.sb-icons,
 .material .dockSidebar .e-listview .e-list-icon.sb-icons,
 .material-dark .dockSidebar .e-listview .e-list-icon.sb-icons,
 .bootstrap .dockSidebar .e-listview .e-list-icon.sb-icons,
 .bootstrap-dark .dockSidebar .e-listview .e-list-icon.sb-icons {
-    margin-top: -8px;
+    margin-top: -14px;
+    margin-right: 8px;
 }
 
 .tailwind .dockSidebar .e-listview .e-list-icon.sb-icons,
-.tailwind-dark .dockSidebar .e-listview .e-list-icon.sb-icons {
-    margin: -4px 8px 0 4px;
-}
-
-.bootstrap4 .dockSidebar .e-listview .e-list-icon.sb-icons {
-    margin-top: -8px;
-}
-
+.tailwind-dark .dockSidebar .e-listview .e-list-icon.sb-icons,
 .bootstrap5 .dockSidebar .e-listview .e-list-icon.sb-icons,
-.bootstrap5-dark .dockSidebar .e-listview .e-list-icon.sb-icons {
-    margin-bottom: -12px;
+.bootstrap5-dark .dockSidebar .e-listview .e-list-icon.sb-icons,
+.fluent .dockSidebar .e-listview .e-list-icon.sb-icons,
+.fluent-dark .dockSidebar .e-listview .e-list-icon.sb-icons {
+    margin-right: 8px;
+    margin-bottom: -4px;
 }
 
 .fabric .dockSidebar .e-listview .e-list-icon.sb-icons,
 .fabric-dark .dockSidebar .e-listview .e-list-icon.sb-icons {
     margin-top: -4px;
+    margin-right: 8px;
 }
 
 /* Specifies sample level styles for ListView icon alignment for bigger mode */
 
+.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons {
+    width: 26px;
+    height: 26px;
+}
 
-.bootstrap4.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons,
-.bootstrap.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons,
+.fluent2.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons,
+.fluent2-dark.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons,
+.fluent2-highcontrast.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons {
+    margin: 6px;
+}
+
 .highcontrast.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons {
     margin-top: -10px;
 }
 
+.bootstrap4.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons,
+.fabric.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons,
+.fabric-dark.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons,
 .bootstrap.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons,
-.bootstrap-dark.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons {
-    margin-top: -15px;
+.bootstrap-dark.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons,
+.material.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons,
+.material-dark.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons {
+    margin-top: -18px;
 }
 
 .material.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons,
@@ -78,23 +109,13 @@
     margin-top: -18px;
 }
 
-.fabric.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons,
-.fabric-dark.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons {
-    margin-top: -18px;
+.material.e-bigger .dockSidebar .e-listview .e-list-icon+.e-list-text,
+.material-dark.e-bigger .dockSidebar .e-listview .e-list-icon+.e-list-text {
+    padding: 3px;
 }
 
 .e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons::before {
     font-size: 26px;
-}
-
-.bootstrap5.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons,
-.bootstrap5-dark.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons {
-    margin-bottom: -10px;
-}
-
-.tailwind.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons,
-.tailwind-dark.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons {
-    margin-bottom: -3px;
 }
 
 /* Specifies sample level styles for ListView and Toolbar border */
@@ -113,9 +134,7 @@
 .bootstrap .dockSidebar .e-listview:not(.e-list-template) .e-list-item,
 .fabric-dark .dockSidebar .e-listview:not(.e-list-template) .e-list-item,
 .bootstrap-dark .dockSidebar .e-listview:not(.e-list-template) .e-list-item,
-.bootstrap5 .dockSidebar .e-listview:not(.e-list-template) .e-list-item,
 .bootstrap4 .dockSidebar .e-listview:not(.e-list-template) .e-list-item,
-.bootstrap5-dark .dockSidebar .e-listview:not(.e-list-template) .e-list-item,
 .highcontrast .dockSidebar .e-listview:not(.e-list-template) .e-list-item {
     padding-left: 14px;
 }
@@ -134,6 +153,7 @@
 .material .dockToolbar.e-toolbar,
 .fabric .dockToolbar.e-toolbar,
 .tailwind .dockToolbar.e-toolbar,
+.fluent2 .dockToolbar.e-toolbar,
 .highcontrast .dockToolbar.e-toolbar,
 .bootstrap5 .dockToolbar.e-toolbar {
     border-bottom: 1px solid #eaeaeae0;
@@ -142,6 +162,8 @@
 /* Specifies the border bottom color for the toolbar in dark theme*/
 .material-dark .dockToolbar.e-toolbar,
 .fabric-dark .dockToolbar.e-toolbar,
+.fluent2-dark .dockToolbar.e-toolbar,
+.fluent2-highcontrast .dockToolbar.e-toolbar,
 .tailwind-dark .dockToolbar.e-toolbar,
 .bootstrap5-dark .dockToolbar.e-toolbar {
     border-bottom: 1px solid #eaeaea63;

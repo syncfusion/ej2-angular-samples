@@ -446,16 +446,18 @@
                 </li>
             </ul>
         </li>
-    </ul>
-    <p>More information can be found in this <a target='_blank'
-            href='https://ej2.syncfusion.com/angular/documentation/pivotview/accessibility'>documentation section</a>.
+    </ul><br />
+    <p>
+        More information on the keyboard navigation can be found in this <a target='_blank'
+            href='https://ej2.syncfusion.com/angular/documentation/pivotview/accessibility#keyboard-interaction'>
+        documentation section</a>.
     </p>
 </div>
 
 <div class="control-section" id="pivot-table-section">
     <div>
         <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings allowExcelExport='true'
-            showGroupingBar='true' allowConditionalFormatting='true' allowNumberFormatting='true' allowPdfExport='true'
+            showGroupingBar='true' enableValueSorting='true' allowConditionalFormatting='true' allowNumberFormatting='true' allowPdfExport='true'
             showToolbar='true' allowCalculatedField='true' showFieldList='true' showTooltip='false'
             allowDrillThrough='true' width='100%' [chartSettings]='chartSettings' height='450'
             [gridSettings]='gridSettings' [toolbar]='toolbarOptions' (saveReport)='saveReport($event)'

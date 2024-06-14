@@ -24,7 +24,7 @@ export class ColumnReorderComponent implements OnInit {
     public dropDownFields: Object;
     public columnsIndex: Object;
     public columnNames: Object;
-    
+
     @ViewChild('ganttObj')
     public ganttObj: GanttComponent;
     @ViewChild('columnsDropdownObj')
@@ -51,7 +51,7 @@ export class ColumnReorderComponent implements OnInit {
         { id: 'EndDate', name: 'End Date' },
         { id: 'Duration', name: 'Duration' },
         { id: 'Progress', name: 'Progress' },
-        { id: 'Predecessor', name: 'Dependency' 
+        { id: 'Predecessor', name: 'Dependency'
         }];
         this.columnsIndex = [{ id: '0', name: '1' },
             { id: '1', name: '2' },
@@ -72,8 +72,8 @@ export class ColumnReorderComponent implements OnInit {
             { field: 'Progress' },
             { field: 'Predecessor', headerText: 'Dependency' }
         ];
-        this.projectStartDate = new Date('03/24/2019');
-        this.projectEndDate = new Date('07/06/2019');
+        this.projectStartDate = new Date('03/24/2024');
+        this.projectEndDate = new Date('07/06/2024');
         this.labelSettings = {
             leftLabel: 'TaskName'
         };

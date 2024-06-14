@@ -27,7 +27,6 @@ export class GanttTasklabelTemplateComponent implements OnInit {
           var subContainer = document.createElement('div');
           var img = document.createElement('img');
           var span = document.createElement('span');
-          debugger;
           span.className = 'labelClass';
           span.innerHTML = resources[i];
           img.src =
@@ -35,6 +34,7 @@ export class GanttTasklabelTemplateComponent implements OnInit {
             resources[i] +
             '.png';
           img.height = 40;
+          img.alt = resources[i];
           subContainer.append(img);
           subContainer.append(span);
           container.append(subContainer);
@@ -73,10 +73,10 @@ export class GanttTasklabelTemplateComponent implements OnInit {
       this.splitterSettings = {
         position: "35%"
       };
-      this.projectStartDate = new Date('03/24/2019');
-      this.projectEndDate = new Date('05/04/2019');
+      this.projectStartDate = new Date('03/24/2024');
+      this.projectEndDate = new Date('05/04/2024');
       this.labelSettings = {
         taskLabel: '${Progress}%',
       };
-    }  
+    }
 }

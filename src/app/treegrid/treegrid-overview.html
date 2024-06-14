@@ -1,8 +1,8 @@
-<div class="control-section">
+<div class="control-section" role="main" aria-label="Treegrid section">
     <ejs-treegrid #treegrid [dataSource]='data' [treeColumnIndex]=0 childMapping='states' [height]=400 [allowReordering]=true
     [allowFiltering]=true [allowSorting]=true [filterSettings]="filterSettings" (queryCellInfo)="queryCellInfo($event)">
         <e-columns>
-            <e-column field='name' headerText='Province' filter="filter" width=190>
+            <e-column field='name' headerText='Province' filter="filter" width=210>
             </e-column>
             <e-column field='population' headerText='Population (Million)' [valueAccessor]="populationValue" textAlign='Right' width=188></e-column>
             <e-column field='gdp' headerText='GDP Rate %' width=120 [allowFiltering]='false'>
@@ -31,7 +31,7 @@
             <e-column field='coordinates' headerText='Coordinates' [allowSorting]='false' width=220 >
                 <ng-template #template let-data>
                     <div class="image" id="coordinates">
-                        <img src="./assets/treegrid/images/Map.png" class="e-image" alt="{{data.coordinates}}" /> &#160;
+                        <img src="./assets/treegrid/images/Map.png" class="e-image" alt="Map Image of {{ data.coordinates }}" /> &#160;
                         <a target="_blank" href="https://www.google.com/maps/place/{{data.coordinates}}">{{data.coordinates}}</a>
                     </div>             
                 </ng-template>

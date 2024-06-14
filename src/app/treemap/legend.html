@@ -1,6 +1,7 @@
-<div class="control-section">
+<main>
+    <div class="control-section">
         <div class="col-lg-9">
-        <ejs-treemap id='container'  #treemap style="display:block;" [dataSource] ='dataSource' [weightValuePath] ='weightValuePath'
+        <ejs-treemap id='container' #treemap style="display:block;" [dataSource] ='dataSource' [weightValuePath] ='weightValuePath'
        [titleSettings] = 'titleSettings' [legendSettings] = 'legendSettings' [leafItemSettings] = 'leafItemSettings' [tooltipSettings] = 'tooltipSettings' 
        [equalColorValuePath] = 'equalColorValuePath'  format = 'n' useGroupingSeparator = 'true' (load)='load($event)' (resize)='resize($event)' >
         </ejs-treemap>
@@ -13,7 +14,7 @@
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
                     <div class="property-panel-content">
-        <table id="property" title="Properties" style="width: 100%">
+        <table id="property" title="Properties" style="width: 100%" role="none">
             <tbody>
                 <tr style="height: 50px">
                     <td style="width: 40%">
@@ -46,12 +47,12 @@
     </div>
     </div>
 </div>
-<div id="action-description">
+<section id="action-description" aria-label="Description of TreeMap sample">
     <p>
         This sample visualizes USA president election results in the year 2016. Type of the legend can be changed by using the <code>Legend Type</code> in properties panel.
     </p>
-</div>
-<div id="description">
+</section>
+<section id="description" aria-label="Description of the TreeMap features demonstrated in this sample">
     <p>
         In this example, you can see the type of legend available in treemap. And we have applied equal color mapping based on certain value.
     </p>
@@ -65,7 +66,7 @@
         Treemap component features are segregated into individual feature-wise modules. To use a legend, inject the <code>Legend</code> module using the <code>Treemap.Inject(TreeMapLegend)</code> method.
     </p>
 
-</div>
+</section>
 <!-- custom code start -->
 <style>
     .control-section {
@@ -73,3 +74,4 @@
     }
     </style>
     <!-- custom code end -->
+</main>
